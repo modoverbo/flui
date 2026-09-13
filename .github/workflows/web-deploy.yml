@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies and generate code
         run: |
           flutter pub get
-          dart run build_runner build --delete-conflicting-outputs
+          dart run build_runner build
           flutter gen-l10n
 
       - name: Test before deploying
@@ -49,13 +49,17 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          # Optional environment variable (Settings → Environments → production → Variables).
+          # Used for Supabase email redirect links; empty falls back to the project Site URL.
+          APP_URL: ${{ vars.APP_URL }}
         run: |
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
             echo "::error::SUPABASE_URL and SUPABASE_ANON_KEY secrets are required"
             exit 1
           fi
-          jq -n --arg url "$SUPABASE_URL" --arg key "$SUPABASE_ANON_KEY" \
-            '{SUPABASE_URL: $url, SUPABASE_ANON_KEY: $key}' > "$RUNNER_TEMP/dart-defines.json"
+          jq -n --arg url "$SUPABASE_URL" --arg key "$SUPABASE_ANON_KEY" --arg app "$APP_URL" \
+            '{BACKEND: "supabase", SUPABASE_URL: $url, SUPABASE_ANON_KEY: $key, APP_URL: $app}' \
+            > "$RUNNER_TEMP/dart-defines.json"
 
       - name: Build web (release)
         run: flutter build web --release --dart-define-from-file="$RUNNER_TEMP/dart-defines.json"
