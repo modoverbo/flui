@@ -28,25 +28,25 @@ void main() {
       ),
     );
 
-    expect(find.text('1 de 3'), findsOneWidget);
+    expect(find.text('1 DE 3'), findsOneWidget);
     expect(find.text('La pregunta que nadie hizo'), findsOneWidget);
     expect(find.text('TRABAJO'), findsOneWidget);
-    expect(find.text('Antes decías…'), findsOneWidget);
+    expect(find.text('ANTES DECÍAS…'), findsOneWidget);
     expect(button('Anterior').onPressed, isNull);
 
     await tester.tap(find.byTooltip('Siguiente'));
     await tester.pump();
-    expect(find.text('2 de 3'), findsOneWidget);
+    expect(find.text('2 DE 3'), findsOneWidget);
     expect(find.text('Un café con Marta'), findsOneWidget);
 
     await tester.tap(find.byTooltip('Siguiente'));
     await tester.pump();
-    expect(find.text('3 de 3'), findsOneWidget);
+    expect(find.text('3 DE 3'), findsOneWidget);
     expect(button('Siguiente').onPressed, isNull);
 
     await tester.tap(find.byTooltip('Anterior'));
     await tester.pump();
-    expect(find.text('2 de 3'), findsOneWidget);
+    expect(find.text('2 DE 3'), findsOneWidget);
   });
 
   test('the daily rotation moves the first scene without losing any', () {

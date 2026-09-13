@@ -1,8 +1,8 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
 import 'package:flui/features/exercises/domain/production_check.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/highlighted_text.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
@@ -52,13 +52,14 @@ class _ProductionViewState extends State<ProductionView> {
     final l10n = context.l10n;
     final flow = widget.flow;
     final issue = flow.issue;
+    final type = context.type;
     final title = Semantics(
       header: true,
       child: Text(
         flow.phase == ProductionPhase.writing
             ? l10n.productionTitle
             : l10n.productionSelfCheckTitle,
-        style: FluiTypography.h2.copyWith(color: FluiColors.charcoal),
+        style: type.titleL.copyWith(color: FluiColors.charcoal),
       ),
     );
 
@@ -71,24 +72,20 @@ class _ProductionViewState extends State<ProductionView> {
           const SizedBox(height: FluiSpacing.xs),
           Text(
             l10n.productionSelfCheckBody,
-            style: FluiTypography.body.copyWith(color: FluiColors.gray),
+            style: type.body.copyWith(color: FluiColors.gray),
           ),
           const SizedBox(height: FluiSpacing.lg),
           DecoratedBox(
             decoration: const BoxDecoration(
               color: FluiColors.greenTint,
-              borderRadius: FluiRadii.lgAll,
+              borderRadius: FluiRadii.cardAll,
             ),
             child: Padding(
               padding: const EdgeInsets.all(FluiSpacing.lg),
               child: HighlightedText(
                 text: '«${flow.sentence}»',
                 forms: flow.forms,
-                style: FluiTypography.body.copyWith(
-                  color: FluiColors.charcoal,
-                  fontSize: 18,
-                  height: 28 / 18,
-                ),
+                style: type.bodyL.copyWith(color: FluiColors.charcoal),
               ),
             ),
           ),
@@ -96,13 +93,13 @@ class _ProductionViewState extends State<ProductionView> {
             const SizedBox(height: FluiSpacing.lg),
             Text(
               l10n.productionModelTitle,
-              style: FluiTypography.label.copyWith(color: FluiColors.gray),
+              style: type.label.copyWith(color: FluiColors.gray),
             ),
             const SizedBox(height: FluiSpacing.xxs),
             HighlightedText(
               text: '«$model»',
               forms: flow.forms,
-              style: FluiTypography.body.copyWith(color: FluiColors.gray),
+              style: type.body.copyWith(color: FluiColors.gray),
             ),
           ],
           const SizedBox(height: FluiSpacing.lg),
@@ -120,7 +117,7 @@ class _ProductionViewState extends State<ProductionView> {
             const SizedBox(height: FluiSpacing.xs),
             Text(
               l10n.productionRubricPending,
-              style: FluiTypography.caption.copyWith(color: FluiColors.gray),
+              style: type.body.copyWith(color: FluiColors.gray),
             ),
           ],
           const SizedBox(height: FluiSpacing.lg),
@@ -145,7 +142,7 @@ class _ProductionViewState extends State<ProductionView> {
         const SizedBox(height: FluiSpacing.xs),
         Text(
           l10n.productionPrompt(widget.beforePhrase, widget.lemma),
-          style: FluiTypography.body.copyWith(color: FluiColors.charcoal),
+          style: type.bodyL.copyWith(color: FluiColors.charcoal),
         ),
         const SizedBox(height: FluiSpacing.lg),
         FluiTextField(
@@ -192,7 +189,7 @@ class _RubricTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onChanged,
-      borderRadius: FluiRadii.mdAll,
+      borderRadius: FluiRadii.chipAll,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: FluiSpacing.xxs),
         child: Row(
@@ -208,9 +205,7 @@ class _RubricTile extends StatelessWidget {
                 padding: const EdgeInsets.only(top: FluiSpacing.sm),
                 child: Text(
                   label,
-                  style: FluiTypography.body.copyWith(
-                    color: FluiColors.charcoal,
-                  ),
+                  style: context.type.body.copyWith(color: FluiColors.charcoal),
                 ),
               ),
             ),

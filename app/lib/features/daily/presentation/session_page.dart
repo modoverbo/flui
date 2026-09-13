@@ -5,9 +5,9 @@ import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
 import 'package:flui/features/daily/domain/session_step.dart';
 import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
@@ -21,12 +21,14 @@ import 'package:flui/features/reading/presentation/widgets/readings_carousel.dar
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/word_detail_view.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
-import 'package:flui/shared/widgets/content_column.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
+import 'package:flui/shared/widgets/flui_glyph.dart';
+import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/flui_notice.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
+import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -112,44 +114,37 @@ class _SessionBody extends StatelessWidget {
     return Column(
       children: [
         if (!state.isFinished)
-          ContentColumn(
-            maxWidth: FluiSpacing.appContentMaxWidth,
-            padding: const EdgeInsets.fromLTRB(
-              FluiSpacing.xs,
-              FluiSpacing.xs,
-              FluiSpacing.lg,
-              0,
-            ),
-            child: Row(
-              children: [
-                IconButton(
-                  tooltip: l10n.sessionCloseTooltip,
-                  onPressed: () => unawaited(_confirmClose(context)),
-                  icon: const Icon(LucideIcons.x),
-                ),
-                const SizedBox(width: FluiSpacing.xs),
-                Text(
-                  l10n.sessionProgress(flow.position, flow.total),
-                  style: FluiTypography.label.copyWith(color: FluiColors.gray),
-                ),
-                const SizedBox(width: FluiSpacing.sm),
-                Expanded(
-                  child: FluiProgressBar(
-                    value: flow.total == 0 ? 1 : flow.index / flow.total,
-                    semanticLabel: l10n.sessionProgress(
-                      flow.position,
-                      flow.total,
-                    ),
-                    height: 6,
+          PageFrame.column(
+            child: Padding(
+              padding: const EdgeInsets.only(top: FluiSpacing.xs),
+              child: Row(
+                children: [
+                  IconButton(
+                    tooltip: l10n.sessionCloseTooltip,
+                    onPressed: () => unawaited(_confirmClose(context)),
+                    icon: const Icon(LucideIcons.x),
                   ),
-                ),
-              ],
+                  const SizedBox(width: FluiSpacing.xs),
+                  FluiLabel(l10n.sessionStepOf(flow.position, flow.total)),
+                  const SizedBox(width: FluiSpacing.sm),
+                  Expanded(
+                    child: FluiProgressBar(
+                      value: flow.total == 0 ? 1 : flow.index / flow.total,
+                      semanticLabel: l10n.sessionProgress(
+                        flow.position,
+                        flow.total,
+                      ),
+                      height: 6,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         Expanded(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: FluiSpacing.lg),
-            child: ContentColumn(
+            padding: EdgeInsets.symmetric(vertical: context.layout.blockGap),
+            child: PageFrame.column(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -243,7 +238,7 @@ class _StepContent extends ConsumerWidget {
             word: word,
             badge: _TodayBadge(label: l10n.wordTodayBadge),
           ),
-          const SizedBox(height: FluiSpacing.xl),
+          SizedBox(height: context.layout.blockGap),
           FluiButton.primary(
             label: l10n.wordSeeContext,
             isLoading: busy,
@@ -258,7 +253,7 @@ class _StepContent extends ConsumerWidget {
           if (step is SeedingReadingStep) ...[
             FluiNotice(
               tone: FluiNoticeTone.info,
-              icon: LucideIcons.sprout,
+              glyph: const FluiGlyphIcon(FluiGlyph.onda),
               message: l10n.sessionSeeding,
             ),
             const SizedBox(height: FluiSpacing.lg),
@@ -267,13 +262,14 @@ class _StepContent extends ConsumerWidget {
             header: true,
             child: Text(
               l10n.readingsTitle,
-              style: FluiTypography.h2.copyWith(color: FluiColors.charcoal),
+              style: context.type.titleL.copyWith(color: FluiColors.charcoal),
             ),
           ),
           const SizedBox(height: FluiSpacing.xxs),
           Text(
             word.lemma,
-            style: FluiTypography.bodyEmphasis.copyWith(
+            style: context.type.bodyL.copyWith(
+              fontWeight: FontWeight.w600,
               color: FluiColors.greenSecondary,
             ),
           ),
@@ -373,20 +369,13 @@ class _TodayBadge extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
-              LucideIcons.sparkles,
-              size: 14,
+            const FluiGlyphIcon(
+              FluiGlyph.wordOfTheDay,
+              size: FluiIconSize.inline,
               color: FluiColors.charcoal,
             ),
-            const SizedBox(width: FluiSpacing.xxs),
-            Flexible(
-              child: Text(
-                label,
-                style: FluiTypography.label.copyWith(
-                  color: FluiColors.charcoal,
-                ),
-              ),
-            ),
+            const SizedBox(width: 6),
+            Flexible(child: FluiLabel(label, color: FluiColors.charcoal)),
           ],
         ),
       ),

@@ -30,6 +30,8 @@ final class TodayOverview {
     required this.practiceWords,
     required this.activeDays,
     required this.activeDaysThisWeek,
+    required this.weekDays,
+    required this.streak,
     required this.dueCount,
     required this.canReviewFreely,
     this.emptyReason,
@@ -51,6 +53,12 @@ final class TodayOverview {
   final int practiceWords;
   final int activeDays;
   final int activeDaysThisWeek;
+
+  /// Monday to Sunday of the current week: `true` when active.
+  final List<bool> weekDays;
+
+  /// Consecutive active days ending today (or yesterday, before today's run).
+  final int streak;
 
   /// Reviews due today, whether or not today's plan covers them.
   final int dueCount;
@@ -128,6 +136,8 @@ Future<TodayOverview> todayOverview(Ref ref) async {
     practiceWords: stats.inPractice,
     activeDays: stats.activeDays,
     activeDaysThisWeek: streak.activeDaysThisWeek,
+    weekDays: streak.weekDays,
+    streak: streak.currentStreak,
     dueCount: known.where((row) => row.isDueOn(today)).length,
     canReviewFreely: known.any((row) => row.state != WordState.nueva),
     emptyReason: session != null && session.isEmpty

@@ -78,8 +78,9 @@ void main() {
       for (final lemma in ['perspicaz', 'plantear', 'matizar']) {
         expect(find.text(lemma), findsOneWidget);
       }
-      // Chips: filter labels plus one state chip per word.
-      expect(find.text('Tuya'), findsNWidgets(2));
+      // The filter chip keeps sentence case; the state chip is set in caps.
+      expect(find.text('Tuya'), findsOneWidget);
+      expect(find.text('TUYA'), findsOneWidget);
 
       await tester.tap(find.widgetWithText(ChoiceChip, 'Tuya'));
       await tester.pumpAndSettle();
@@ -117,9 +118,10 @@ void main() {
       );
 
       expect(find.text('plantear'), findsOneWidget);
-      expect(find.text('Reemplaza'), findsOneWidget);
-      expect(find.text('Cuándo no usarla'), findsOneWidget);
-      expect(find.text('Practica'), findsOneWidget);
+      expect(find.text('ASÍ SE USA'), findsOneWidget);
+      expect(find.text('REEMPLAZA'), findsWidgets);
+      expect(find.text('CUÁNDO NO USARLA'), findsOneWidget);
+      expect(find.text('PRACTICA'), findsOneWidget);
 
       await tester.ensureVisible(find.text('Practicar ahora'));
       await tester.tap(find.text('Practicar ahora'));
@@ -158,13 +160,13 @@ void main() {
       );
 
       // "Practica" is coarse: the five rungs show the work behind it.
-      expect(find.text('El camino de esta palabra'), findsOneWidget);
+      expect(find.text('EL CAMINO DE ESTA PALABRA'), findsOneWidget);
       expect(find.text('Descubierta'), findsOneWidget);
       expect(find.text('Recordada sin ayuda'), findsOneWidget);
       expect(find.text('Ya es tuya'), findsOneWidget);
-      expect(find.text('2 de 5'), findsOneWidget);
+      expect(find.text('2 DE 5'), findsOneWidget);
       // "En contexto" is a section here now, not a tab of its own.
-      expect(find.text('En contexto'), findsOneWidget);
+      expect(find.text('EN CONTEXTO'), findsOneWidget);
       expect(find.byType(ReadingsCarousel), findsOneWidget);
     });
   });

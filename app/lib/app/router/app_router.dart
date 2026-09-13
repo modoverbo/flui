@@ -2,6 +2,7 @@ import 'package:flui/app/pages/not_found_page.dart';
 import 'package:flui/app/pages/splash_page.dart';
 import 'package:flui/app/router/app_redirect.dart';
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/app/router/flui_transitions.dart';
 import 'package:flui/app/shell/app_shell.dart';
 import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/pages/password_reset_page.dart';
@@ -17,6 +18,7 @@ import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
 import 'package:flui/features/subscription/presentation/pages/checkout_return_page.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
+import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
@@ -66,9 +68,25 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
   GoRoute(path: AppRoutes.root, builder: (_, _) => const SplashPage()),
   GoRoute(path: AppRoutes.splash, builder: (_, _) => const SplashPage()),
   GoRoute(path: AppRoutes.welcome, builder: (_, _) => const WelcomePage()),
-  GoRoute(path: AppRoutes.intro, builder: (_, _) => const IntroPage()),
+  // The onboarding chain shares a horizontal axis: same flow, next step.
+  GoRoute(
+    path: AppRoutes.intro,
+    pageBuilder: (_, state) =>
+        FluiTransitions.sharedAxisX(const IntroPage(), key: state.pageKey),
+  ),
+  GoRoute(
+    path: AppRoutes.plan,
+    pageBuilder: (_, state) => FluiTransitions.sharedAxisX(
+      const PlanPreviewPage(),
+      key: state.pageKey,
+    ),
+  ),
   GoRoute(path: AppRoutes.login, builder: (_, _) => const LoginPage()),
-  GoRoute(path: AppRoutes.register, builder: (_, _) => const RegisterPage()),
+  GoRoute(
+    path: AppRoutes.register,
+    pageBuilder: (_, state) =>
+        FluiTransitions.sharedAxisX(const RegisterPage(), key: state.pageKey),
+  ),
   GoRoute(
     path: AppRoutes.resetPassword,
     builder: (_, _) => const PasswordResetPage(),
@@ -81,7 +99,11 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
   GoRoute(
     path: AppRoutes.session,
     parentNavigatorKey: rootKey,
-    builder: (_, state) => SessionPage(mode: _modeOf(state.uri)),
+    // A different place, not the next step: the session scales in.
+    pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
+      SessionPage(mode: _modeOf(state.uri)),
+      key: state.pageKey,
+    ),
   ),
   StatefulShellRoute.indexedStack(
     parentNavigatorKey: rootKey,

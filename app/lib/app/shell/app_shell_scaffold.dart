@@ -1,9 +1,9 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
+import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
 import 'package:flui/shared/widgets/flui_symbol.dart';
-import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Order of the shell branches. Keep in sync with `app_router.dart`.
@@ -14,6 +14,9 @@ import 'package:material_ui/material_ui.dart';
 enum ShellDestination { today, words, progress }
 
 /// Navigation chrome: bottom bar on phones, side rail on wide screens.
+///
+/// The tab glyphs are the custom family at 22 px, never a library icon
+/// inside a tinted square.
 class AppShellScaffold extends StatelessWidget {
   const new({
     required this.selectedIndex,
@@ -26,19 +29,28 @@ class AppShellScaffold extends StatelessWidget {
   final ValueChanged<int> onDestinationSelected;
   final Widget child;
 
+  static FluiGlyph glyphOf(ShellDestination destination) =>
+      switch (destination) {
+        ShellDestination.today => FluiGlyph.onda,
+        // The word-entry glyph: a dictionary entry, which is what the
+        // repertoire is.
+        ShellDestination.words => FluiGlyph.wordOfTheDay,
+        ShellDestination.progress => FluiGlyph.streak,
+      };
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final items = [
       for (final destination in ShellDestination.values)
-        switch (destination) {
-          ShellDestination.today => (LucideIcons.sun, l10n.navToday),
-          ShellDestination.words => (LucideIcons.whole_word, l10n.navWords),
-          ShellDestination.progress => (
-            LucideIcons.chart_line,
-            l10n.navProgress,
-          ),
-        },
+        (
+          glyphOf(destination),
+          switch (destination) {
+            ShellDestination.today => l10n.navToday,
+            ShellDestination.words => l10n.navWords,
+            ShellDestination.progress => l10n.navProgress,
+          },
+        ),
     ];
 
     return LayoutBuilder(
@@ -47,13 +59,29 @@ class AppShellScaffold extends StatelessWidget {
         if (width < FluiBreakpoints.rail) {
           return Scaffold(
             body: child,
-            bottomNavigationBar: NavigationBar(
-              selectedIndex: selectedIndex,
-              onDestinationSelected: onDestinationSelected,
-              destinations: [
-                for (final (icon, label) in items)
-                  NavigationDestination(icon: Icon(icon), label: label),
-              ],
+            bottomNavigationBar: DecoratedBox(
+              decoration: const BoxDecoration(
+                border: Border(
+                  top: BorderSide(color: FluiColors.hairlineOnCream),
+                ),
+              ),
+              child: NavigationBar(
+                selectedIndex: selectedIndex,
+                onDestinationSelected: onDestinationSelected,
+                destinations: [
+                  for (final (index, (glyph, label)) in items.indexed)
+                    NavigationDestination(
+                      icon: FluiGlyphIcon(
+                        glyph,
+                        size: FluiIconSize.tab,
+                        color: index == selectedIndex
+                            ? FluiColors.greenDeep
+                            : FluiColors.gray,
+                      ),
+                      label: label,
+                    ),
+                ],
+              ),
             ),
           );
         }
@@ -81,9 +109,15 @@ class AppShellScaffold extends StatelessWidget {
                         : const FluiSymbol(size: 32, semanticLabel: 'flui'),
                   ),
                   destinations: [
-                    for (final (icon, label) in items)
+                    for (final (index, (glyph, label)) in items.indexed)
                       NavigationRailDestination(
-                        icon: Icon(icon),
+                        icon: FluiGlyphIcon(
+                          glyph,
+                          size: FluiIconSize.tab,
+                          color: index == selectedIndex
+                              ? FluiColors.greenDeep
+                              : FluiColors.gray,
+                        ),
                         label: Text(label),
                         padding: const EdgeInsets.symmetric(
                           vertical: FluiSpacing.xxs,
@@ -92,7 +126,10 @@ class AppShellScaffold extends StatelessWidget {
                   ],
                 ),
               ),
-              const VerticalDivider(width: 1, color: FluiColors.outline),
+              const VerticalDivider(
+                width: 1,
+                color: FluiColors.hairlineOnCream,
+              ),
               Expanded(child: child),
             ],
           ),

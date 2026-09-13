@@ -100,7 +100,7 @@ void main() {
 
     await choose(tester, 'perspicaz');
     expect(find.text('¡Ahí está!'), findsOneWidget);
-    expect(find.text('Por qué no las otras'), findsOneWidget);
+    expect(find.text('POR QUÉ NO LAS OTRAS'), findsOneWidget);
     expect(find.textContaining('Andrés confía en su equipo.'), findsOneWidget);
     expect(find.textContaining('Andrés no explica: descubre.'), findsOneWidget);
   });

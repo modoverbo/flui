@@ -1,18 +1,22 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
 import 'package:flui/features/exercises/domain/cloze_attempt_flow.dart';
 import 'package:flui/features/exercises/domain/cloze_exercise.dart';
+import 'package:flui/shared/motion/feedback_motion.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
+import 'package:flui/shared/widgets/flui_glyph.dart';
+import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Elige: sentence with a blank, three option tiles and kind feedback.
 ///
-/// One primary action at a time: "Confirmar", "Intentar de nuevo" after a
-/// "Casi." hint, or "Continuar" once resolved.
+/// Right: a yellow underline draws under the answer, left to right.
+/// Wrong: the options shake three times and take an amber border. Never red,
+/// never a cross.
 class ClozeView extends StatefulWidget {
   const new({
     required this.flow,
@@ -39,13 +43,21 @@ class ClozeView extends StatefulWidget {
 
 class _ClozeViewState extends State<ClozeView> {
   String? _selectedId;
+  var _wrongAttempts = 0;
 
   @override
   void didUpdateWidget(ClozeView oldWidget) {
     super.didUpdateWidget(oldWidget);
     final selected = _selectedId;
-    if (oldWidget.flow.exercise.id != widget.flow.exercise.id ||
-        (selected != null && !widget.flow.isEnabled(selected))) {
+    if (oldWidget.flow.exercise.id != widget.flow.exercise.id) {
+      _selectedId = null;
+      _wrongAttempts = 0;
+      return;
+    }
+    if (widget.flow.feedback != null && oldWidget.flow.feedback == null) {
+      _wrongAttempts++;
+    }
+    if (selected != null && !widget.flow.isEnabled(selected)) {
       _selectedId = null;
     }
   }
@@ -53,6 +65,7 @@ class _ClozeViewState extends State<ClozeView> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final layout = context.layout;
     final flow = widget.flow;
     final feedback = flow.feedback;
     final resolution = flow.resolution;
@@ -88,44 +101,49 @@ class _ClozeViewState extends State<ClozeView> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         if (label != null) ...[
-          Text(
-            label,
-            style: FluiTypography.label.copyWith(color: FluiColors.gray),
-          ),
-          const SizedBox(height: FluiSpacing.xxs),
+          FluiLabel(label),
+          const SizedBox(height: FluiSpacing.xs),
         ],
         Semantics(
           header: true,
           child: Text(
             l10n.clozeTitle,
-            style: FluiTypography.h2.copyWith(color: FluiColors.charcoal),
+            style: layout.type.titleL.copyWith(color: FluiColors.charcoal),
           ),
         ),
-        const SizedBox(height: FluiSpacing.lg),
+        SizedBox(height: layout.blockGap),
         _Sentence(exercise: flow.exercise, resolved: resolution != null),
-        const SizedBox(height: FluiSpacing.lg),
+        SizedBox(height: layout.blockGap),
         if (feedback != null)
           _AlmostPanel(hint: feedback)
         else ...[
-          for (final option in flow.options) ...[
-            _OptionTile(
-              option: option,
-              selected: option.id == selected,
-              enabled: flow.isEnabled(option.id) && !widget.busy,
-              discarded: flow.discardedOptionIds.contains(option.id),
-              showAsAnswer: resolution != null && option.isCorrect,
-              onTap: () => setState(() => _selectedId = option.id),
+          ShakeBox(
+            attempt: _wrongAttempts,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                for (final option in flow.options) ...[
+                  _OptionTile(
+                    option: option,
+                    selected: option.id == selected,
+                    enabled: flow.isEnabled(option.id) && !widget.busy,
+                    discarded: flow.discardedOptionIds.contains(option.id),
+                    showAsAnswer: resolution != null && option.isCorrect,
+                    onTap: () => setState(() => _selectedId = option.id),
+                  ),
+                  const SizedBox(height: FluiSpacing.sm),
+                ],
+              ],
             ),
-            const SizedBox(height: FluiSpacing.sm),
-          ],
+          ),
           if (flow.mustPickRemaining)
             Text(
               l10n.clozeOneLeft,
-              style: FluiTypography.body.copyWith(color: FluiColors.gray),
+              style: layout.type.body.copyWith(color: FluiColors.gray),
             ),
           if (resolution != null) _ResolvedPanel(resolution: resolution),
         ],
-        const SizedBox(height: FluiSpacing.lg),
+        SizedBox(height: layout.blockGap),
         action,
       ],
     );
@@ -141,11 +159,7 @@ class _Sentence extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final parts = exercise.sentenceParts;
-    final style = FluiTypography.body.copyWith(
-      color: FluiColors.charcoal,
-      fontSize: 18,
-      height: 28 / 18,
-    );
+    final style = context.type.bodyL.copyWith(color: FluiColors.charcoal);
     final blank = resolved ? exercise.correctOption.text : '________';
     return Semantics(
       label:
@@ -203,9 +217,9 @@ class _OptionTile extends StatelessWidget {
           : option.text,
       excludeSemantics: true,
       child: Material(
-        color: highlighted ? FluiColors.greenTint : FluiColors.surface,
+        color: showAsAnswer ? FluiColors.greenTint : FluiColors.surface,
         shape: RoundedRectangleBorder(
-          borderRadius: FluiRadii.lgAll,
+          borderRadius: FluiRadii.cardAll,
           side: BorderSide(
             color: highlighted ? FluiColors.greenDeep : FluiColors.outline,
             width: highlighted ? 2 : 1,
@@ -215,7 +229,7 @@ class _OptionTile extends StatelessWidget {
         child: InkWell(
           onTap: enabled ? onTap : null,
           child: ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 56),
+            constraints: const BoxConstraints(minHeight: 60),
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: FluiSpacing.md,
@@ -223,24 +237,32 @@ class _OptionTile extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  Icon(
-                    showAsAnswer
-                        ? LucideIcons.circle_check
-                        : selected
-                        ? LucideIcons.circle_dot
-                        : LucideIcons.circle,
-                    size: 20,
-                    color: highlighted ? FluiColors.greenDeep : FluiColors.gray,
-                  ),
+                  if (showAsAnswer)
+                    const FluiGlyphIcon(
+                      FluiGlyph.achievement,
+                      color: FluiColors.greenDeep,
+                    )
+                  else
+                    Icon(
+                      selected ? LucideIcons.circle_dot : LucideIcons.circle,
+                      size: 20,
+                      color: highlighted
+                          ? FluiColors.greenDeep
+                          : FluiColors.gray,
+                    ),
                   const SizedBox(width: FluiSpacing.sm),
                   Expanded(
-                    child: Text(
-                      option.text,
-                      style: FluiTypography.bodyEmphasis.copyWith(
-                        color: foreground,
-                        decoration: discarded
-                            ? TextDecoration.lineThrough
-                            : null,
+                    child: DrawUnderline(
+                      drawn: showAsAnswer,
+                      child: Text(
+                        option.text,
+                        style: context.type.bodyL.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: foreground,
+                          decoration: discarded
+                              ? TextDecoration.lineThrough
+                              : null,
+                        ),
                       ),
                     ),
                   ),
@@ -262,26 +284,28 @@ class _AlmostPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final type = context.type;
     return Semantics(
       liveRegion: true,
       child: DecoratedBox(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: FluiColors.yellowTint,
-          borderRadius: FluiRadii.lgAll,
+          borderRadius: FluiRadii.cardAll,
+          border: Border.all(color: FluiColors.amber, width: 2),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(FluiSpacing.lg),
+          padding: const EdgeInsets.all(FluiSpacing.ml),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 l10n.clozeAlmost,
-                style: FluiTypography.h1.copyWith(color: FluiColors.charcoal),
+                style: type.titleL.copyWith(color: FluiColors.charcoal),
               ),
               const SizedBox(height: FluiSpacing.xxs),
               Text(
                 l10n.clozeNotYet,
-                style: FluiTypography.body.copyWith(color: FluiColors.charcoal),
+                style: type.body.copyWith(color: FluiColors.charcoal),
               ),
               const SizedBox(height: FluiSpacing.md),
               Row(
@@ -292,18 +316,13 @@ class _AlmostPanel extends StatelessWidget {
                     color: FluiColors.charcoal,
                   ),
                   const SizedBox(width: FluiSpacing.xs),
-                  Text(
-                    l10n.clozeHint,
-                    style: FluiTypography.label.copyWith(
-                      color: FluiColors.charcoal,
-                    ),
-                  ),
+                  FluiLabel(l10n.clozeHint, color: FluiColors.charcoal),
                 ],
               ),
               const SizedBox(height: FluiSpacing.xxs),
               Text(
                 hint.text,
-                style: FluiTypography.body.copyWith(color: FluiColors.charcoal),
+                style: type.body.copyWith(color: FluiColors.charcoal),
               ),
             ],
           ),
@@ -321,33 +340,29 @@ class _ResolvedPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final body = FluiTypography.body.copyWith(color: FluiColors.charcoal);
+    final type = context.type;
+    final body = type.body.copyWith(color: FluiColors.charcoal);
     return Semantics(
       liveRegion: true,
       child: DecoratedBox(
         decoration: const BoxDecoration(
           color: FluiColors.greenTint,
-          borderRadius: FluiRadii.lgAll,
+          borderRadius: FluiRadii.cardAll,
         ),
         child: Padding(
-          padding: const EdgeInsets.all(FluiSpacing.lg),
+          padding: const EdgeInsets.all(FluiSpacing.ml),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 resolution.revealed ? l10n.clozeRevealed : l10n.clozeCorrect,
-                style: FluiTypography.h2.copyWith(color: FluiColors.greenDeep),
+                style: type.titleM.copyWith(color: FluiColors.greenDeep),
               ),
               const SizedBox(height: FluiSpacing.xs),
               Text(resolution.explanation, style: body),
               if (resolution.whyNot.isNotEmpty) ...[
                 const SizedBox(height: FluiSpacing.md),
-                Text(
-                  l10n.clozeWhyNotTitle,
-                  style: FluiTypography.label.copyWith(
-                    color: FluiColors.greenDeep,
-                  ),
-                ),
+                FluiLabel(l10n.clozeWhyNotTitle),
                 for (final item in resolution.whyNot) ...[
                   const SizedBox(height: FluiSpacing.xs),
                   Text.rich(

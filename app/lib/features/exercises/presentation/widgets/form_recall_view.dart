@@ -1,7 +1,7 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
 import 'package:flui/features/exercises/domain/form_recall_check.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_notice.dart';
@@ -58,7 +58,8 @@ class _FormRecallViewState extends State<FormRecallView> {
     final check = widget.check;
     final before = widget.sentenceBefore;
     final after = widget.sentenceAfter;
-    final body = FluiTypography.body.copyWith(color: FluiColors.charcoal);
+    final type = context.type;
+    final body = type.body.copyWith(color: FluiColors.charcoal);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -67,13 +68,13 @@ class _FormRecallViewState extends State<FormRecallView> {
           header: true,
           child: Text(
             l10n.formRecallTitle,
-            style: FluiTypography.h2.copyWith(color: FluiColors.charcoal),
+            style: type.titleL.copyWith(color: FluiColors.charcoal),
           ),
         ),
         const SizedBox(height: FluiSpacing.xs),
         Text(
           before == null ? l10n.formRecallMeaningOnly : l10n.formRecallBody,
-          style: FluiTypography.body.copyWith(color: FluiColors.gray),
+          style: type.body.copyWith(color: FluiColors.gray),
         ),
         const SizedBox(height: FluiSpacing.lg),
         Text(widget.explanation, style: body),
@@ -84,7 +85,7 @@ class _FormRecallViewState extends State<FormRecallView> {
             excludeSemantics: true,
             child: Text.rich(
               TextSpan(
-                style: body.copyWith(fontSize: 18, height: 28 / 18),
+                style: type.bodyL.copyWith(color: FluiColors.charcoal),
                 children: [
                   TextSpan(text: before),
                   TextSpan(
@@ -128,8 +129,9 @@ class _FormRecallViewState extends State<FormRecallView> {
             liveRegion: true,
             child: Text(
               l10n.formRecallRejected,
-              style: FluiTypography.bodyEmphasis.copyWith(
+              style: type.bodyL.copyWith(
                 color: FluiColors.charcoal,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),

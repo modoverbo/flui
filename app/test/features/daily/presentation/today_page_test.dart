@@ -5,6 +5,8 @@ import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
+import 'package:flui/shared/widgets/bento_grid.dart';
+import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -53,18 +55,18 @@ void main() {
     await pumpPage(tester);
 
     expect(find.text('Hola, Ana'), findsOneWidget);
-    expect(find.text('Tu sesión de hoy'), findsOneWidget);
+    // The one action of the day is docked, with the budget under it.
     expect(find.text('10 minutos'), findsOneWidget);
-    // No "tuya" yet, so the hero shows the work instead of a bare zero.
-    expect(find.text('palabras tuyas'), findsNothing);
-    expect(find.text('en práctica'), findsOneWidget);
-    expect(find.text('días activos'), findsOneWidget);
+    // Nothing to count on day one, so no tile renders a bare zero at all.
+    expect(find.text('PALABRAS TUYAS'), findsNothing);
+    expect(find.text('EN PRÁCTICA'), findsNothing);
+    expect(find.text('PRECISIÓN'), findsNothing);
+    expect(find.text('0'), findsNothing);
+    expect(find.text('—'), findsNothing);
     expect(find.text('Camino a tu primera palabra tuya.'), findsOneWidget);
-    expect(find.text('—'), findsOneWidget);
-    expect(find.text('Tu palabra de hoy'), findsOneWidget);
+    expect(find.text('TU PALABRA DE HOY'), findsOneWidget);
     expect(find.text('perspicaz'), findsOneWidget);
-    expect(find.text('Nueva'), findsOneWidget);
-    expect(find.text('Repasos de hoy: 1'), findsOneWidget);
+    expect(find.text('TU RACHA'), findsOneWidget);
     expect(find.text('Cambiar tiempo'), findsOneWidget);
 
     await tester.tap(find.text('Empezar'));
@@ -93,7 +95,7 @@ void main() {
 
     expect(find.text('Hoy ya sumaste. Vuelve mañana.'), findsOneWidget);
     expect(find.text('Empezar'), findsNothing);
-    expect(find.text('Tu palabra de hoy'), findsNothing);
+    expect(find.text('TU PALABRA DE HOY'), findsNothing);
     expect(find.text('1 de 7 días esta semana'), findsOneWidget);
   });
 
@@ -108,8 +110,7 @@ void main() {
     );
     await pumpPage(tester);
 
-    expect(find.text('palabras tuyas'), findsOneWidget);
-    expect(find.text('en práctica'), findsOneWidget);
+    expect(find.text('PALABRAS TUYAS'), findsOneWidget);
     expect(find.text('Camino a tu primera palabra tuya.'), findsNothing);
   });
 
@@ -158,7 +159,12 @@ void main() {
     await plan(reviews: [perspicaz.id]);
     await pumpPage(tester);
 
-    expect(find.text('Repaso extra'), findsOneWidget);
+    expect(find.text('REPASO EXTRA'), findsOneWidget);
+    await tester.ensureVisible(find.text('REPASO EXTRA'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('REPASO EXTRA'), warnIfMissed: false);
+    await tester.pumpAndSettle();
+    expect(find.text('route:${AppRoutes.session}'), findsOneWidget);
   });
 
   testWidgets('an empty 5-minute plan suggests 10 minutes', (tester) async {
@@ -188,7 +194,6 @@ void main() {
     expect(find.text('No pudimos cargar tu sesión.'), findsOneWidget);
     await tester.tap(find.text('Reintentar'));
     await tester.pumpAndSettle();
-    expect(find.text('Tu sesión de hoy'), findsNothing);
     expect(
       find.text('Elige cuánto tiempo tienes y armamos tu sesión.'),
       findsOneWidget,
@@ -201,5 +206,21 @@ void main() {
     await pumpPage(tester);
 
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('the bento anchors on one dark streak tile', (tester) async {
+    await plan(newWords: [perspicaz.id]);
+    await pumpPage(tester);
+
+    // Exactly one dark plate on the screen, and it is the 2x2 anchor: full
+    // grid width and taller than one cell.
+    expect(find.byType(FluiPlate), findsOneWidget);
+    final grid = tester.getSize(find.byType(BentoGrid));
+    final anchor = tester.getSize(find.byType(FluiPlate));
+    expect(anchor.width, closeTo(grid.width, 1));
+    // Two cells tall, so it anchors the composition instead of sitting in a
+    // row of identical boxes.
+    expect(anchor.height, greaterThan(grid.width / 2));
+    expect(find.text('TU RACHA'), findsOneWidget);
   });
 }

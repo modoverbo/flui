@@ -1,10 +1,9 @@
 import 'package:flui/core/l10n/l10n.dart';
-import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
 import 'package:flui/features/exercises/domain/word_forms.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/reading/presentation/widgets/reading_card.dart';
+import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
@@ -40,12 +39,17 @@ class _ReadingsCarouselState extends State<ReadingsCarousel> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        ReadingCard(reading: readings[_index], forms: widget.forms),
+        const SizedBox(height: FluiSpacing.md),
         Row(
           children: [
-            Text(
-              position,
-              style: FluiTypography.label.copyWith(color: FluiColors.gray),
+            IconButton.outlined(
+              tooltip: l10n.commonPrevious,
+              onPressed: _index == 0 ? null : () => setState(() => _index--),
+              icon: const Icon(LucideIcons.arrow_left, size: 18),
             ),
+            const SizedBox(width: FluiSpacing.sm),
+            FluiLabel(position),
             const SizedBox(width: FluiSpacing.sm),
             Expanded(
               child: FluiProgressBar(
@@ -54,25 +58,13 @@ class _ReadingsCarouselState extends State<ReadingsCarousel> {
                 height: 4,
               ),
             ),
-          ],
-        ),
-        const SizedBox(height: FluiSpacing.md),
-        ReadingCard(reading: readings[_index], forms: widget.forms),
-        const SizedBox(height: FluiSpacing.sm),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton.outlined(
-              tooltip: l10n.commonPrevious,
-              onPressed: _index == 0 ? null : () => setState(() => _index--),
-              icon: const Icon(LucideIcons.arrow_left),
-            ),
+            const SizedBox(width: FluiSpacing.sm),
             IconButton.outlined(
               tooltip: l10n.commonNext,
               onPressed: _index >= total - 1
                   ? null
                   : () => setState(() => _index++),
-              icon: const Icon(LucideIcons.arrow_right),
+              icon: const Icon(LucideIcons.arrow_right, size: 18),
             ),
           ],
         ),

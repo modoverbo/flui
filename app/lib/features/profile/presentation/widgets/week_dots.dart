@@ -1,11 +1,13 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_motion.dart';
+import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
-import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Monday to Sunday of the current week, for dark surfaces.
+/// Monday to Sunday of the current week, for dark surfaces. An active day is
+/// a yellow bar: a streak moment, one of yellow's four roles.
 class WeekDots extends StatelessWidget {
   const new({required this.activeDays, super.key});
 
@@ -18,50 +20,41 @@ class WeekDots extends StatelessWidget {
     final initials = l10n.weekdayInitials.split(',');
     final names = l10n.weekdayNames.split(',');
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        for (var i = 0; i < 7; i++)
-          Semantics(
-            label: activeDays[i]
-                ? l10n.progressWeekdayActive(names[i])
-                : l10n.progressWeekdayInactive(names[i]),
-            excludeSemantics: true,
-            child: Column(
-              children: [
-                Text(
-                  initials[i],
-                  style: FluiTypography.caption.copyWith(
-                    color: FluiColors.greenTint,
-                  ),
-                ),
-                const SizedBox(height: FluiSpacing.xxs),
-                Container(
-                  key: ValueKey('week-dot-$i'),
-                  width: 32,
-                  height: 32,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: activeDays[i]
-                        ? FluiColors.yellowElectric
-                        : Colors.transparent,
-                    border: Border.all(
+        for (var i = 0; i < 7; i++) ...[
+          if (i > 0) const SizedBox(width: 6),
+          Expanded(
+            child: Semantics(
+              label: activeDays[i]
+                  ? l10n.progressWeekdayActive(names[i])
+                  : l10n.progressWeekdayInactive(names[i]),
+              excludeSemantics: true,
+              child: Column(
+                children: [
+                  AnimatedContainer(
+                    key: ValueKey('week-dot-$i'),
+                    duration: FluiMotion.resolve(context, FluiMotion.quick),
+                    curve: FluiMotion.enter,
+                    height: activeDays[i] ? 28 : 14,
+                    decoration: BoxDecoration(
                       color: activeDays[i]
                           ? FluiColors.yellowElectric
                           : FluiColors.greenSecondary,
-                      width: 2,
+                      borderRadius: FluiRadii.pill,
                     ),
                   ),
-                  child: activeDays[i]
-                      ? const Icon(
-                          LucideIcons.check,
-                          size: 16,
-                          color: FluiColors.charcoal,
-                        )
-                      : null,
-                ),
-              ],
+                  const SizedBox(height: FluiSpacing.xxs),
+                  Text(
+                    initials[i],
+                    style: FluiTypeScale.compact.label.copyWith(
+                      color: FluiColors.creamMuted,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
+        ],
       ],
     );
   }

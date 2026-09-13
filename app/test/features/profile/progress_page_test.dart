@@ -80,6 +80,7 @@ void main() {
     }
     await pumpPage(tester);
 
+    expect(find.text('TU SEMANA'), findsOneWidget);
     expect(find.text('2 de 7 días esta semana'), findsOneWidget);
     expect(find.bySemanticsLabel('lunes: activo'), findsOneWidget);
     expect(find.bySemanticsLabel('martes: sin actividad'), findsOneWidget);
@@ -117,8 +118,10 @@ void main() {
     await answeredOn(16);
     await pumpPage(tester);
 
-    expect(find.text('palabras tuyas'), findsOneWidget);
-    expect(find.text('en práctica'), findsOneWidget);
+    expect(find.text('PALABRAS TUYAS'), findsOneWidget);
+    expect(find.text('EN PRÁCTICA'), findsOneWidget);
+    expect(find.text('PRECISIÓN'), findsOneWidget);
+    expect(find.text('DÍAS ACTIVOS'), findsOneWidget);
     expect(find.text('100 %'), findsOneWidget);
     expect(find.text('Primera palabra'), findsOneWidget);
     expect(find.text('Completado'), findsNWidgets(3));

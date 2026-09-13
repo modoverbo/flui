@@ -57,12 +57,12 @@ void main() {
     await planNewWord();
     await pumpSession(tester);
 
-    expect(find.text('Tu palabra de hoy'), findsOneWidget);
+    expect(find.text('TU PALABRA DE HOY'), findsOneWidget);
     expect(find.text('perspicaz'), findsOneWidget);
-    expect(find.text('1 de 7'), findsOneWidget);
-    expect(find.text('Reemplaza'), findsOneWidget);
-    expect(find.text('Cuándo no usarla'), findsOneWidget);
-    expect(find.text('No la confundas con'), findsOneWidget);
+    expect(find.text('1 DE 7'), findsOneWidget);
+    expect(find.text('REEMPLAZA'), findsWidgets);
+    expect(find.text('CUÁNDO NO USARLA'), findsOneWidget);
+    expect(find.text('NO LA CONFUNDAS CON'), findsOneWidget);
     expect(find.bySemanticsLabel('Sílabas: pers-pi-caz'), findsOneWidget);
     expect(find.text('Ver en contexto'), findsOneWidget);
   });
@@ -77,7 +77,7 @@ void main() {
 
     await tester.tap(find.text('Seguir aquí'));
     await tester.pumpAndSettle();
-    expect(find.text('Tu palabra de hoy'), findsOneWidget);
+    expect(find.text('TU PALABRA DE HOY'), findsOneWidget);
 
     await tester.tap(find.byTooltip('Salir de la sesión'));
     await tester.pumpAndSettle();
@@ -120,7 +120,7 @@ void main() {
       size: const Size(400, 1400),
     );
 
-    expect(find.text('Repaso'), findsOneWidget);
+    expect(find.text('REPASO'), findsOneWidget);
     await tapVisible(tester, 'planteó');
     await tapVisible(tester, 'Confirmar');
     await tapVisible(tester, 'Continuar');

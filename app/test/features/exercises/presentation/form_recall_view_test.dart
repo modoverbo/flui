@@ -2,7 +2,6 @@ import 'package:flui/features/exercises/domain/form_recall_check.dart';
 import 'package:flui/features/exercises/presentation/widgets/form_recall_view.dart';
 import 'package:flui/features/vocabulary/domain/form_recall_prompt.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
-import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -82,10 +81,7 @@ void main() {
   testWidgets('accepts accents, case and one typo', (tester) async {
     await pumpRecall(tester);
 
-    await tester.enterText(
-      find.widgetWithText(FluiTextField, 'Tu palabra'),
-      'PERSPÍKAZ',
-    );
+    await tester.enterText(fluiField('Tu palabra'), 'PERSPÍKAZ');
     await tester.tap(find.text('Comprobar'));
     await tester.pump();
 

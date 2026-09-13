@@ -7,6 +7,9 @@ abstract final class AppRoutes {
   static const welcome = '/welcome';
   static const intro = '/intro';
   static const login = '/login';
+
+  /// The paywall before the account exists: real prices, no email yet.
+  static const plan = '/plan';
   static const register = '/register';
   static const resetPassword = '/reset-password';
 
@@ -48,6 +51,7 @@ abstract final class AppRoutes {
   static const Set<String> publicRoutes = {
     welcome,
     intro,
+    plan,
     login,
     register,
     resetPassword,

@@ -3,24 +3,26 @@ import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
+import 'package:flui/core/theme/flui_surfaces.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
 import 'package:flui/shared/widgets/choice_chips.dart';
-import 'package:flui/shared/widgets/content_column.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
-import 'package:flui/shared/widgets/flui_card.dart';
+import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
-import 'package:flui/shared/widgets/page_header.dart';
+import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flui/shared/widgets/state_chip.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// "Palabras": the user's repertoire, filterable by state.
+/// "Palabras": the repertoire, filterable by state. Two columns on a wide
+/// window, so the list uses the page instead of a strip down the middle.
 class WordsPage extends ConsumerStatefulWidget {
   const new({super.key});
 
@@ -34,18 +36,30 @@ class _WordsPageState extends ConsumerState<WordsPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final layout = context.layout;
     final words = ref.watch(myWordsProvider);
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: FluiSpacing.lg),
-          child: ContentColumn(
-            maxWidth: FluiSpacing.appContentMaxWidth,
+          child: PageFrame(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                PageHeader(title: l10n.navWords, subtitle: l10n.wordsSubtitle),
-                const SizedBox(height: FluiSpacing.lg),
+                SizedBox(height: layout.blockGap),
+                switch (words) {
+                  AsyncValue(hasValue: true, :final value?) => PageHeader(
+                    title: l10n.navWords,
+                    subtitle: value.isEmpty
+                        ? l10n.wordsSubtitle
+                        : l10n.wordsCountLabel(value.length),
+                  ),
+                  _ => PageHeader(
+                    title: l10n.navWords,
+                    subtitle: l10n.wordsSubtitle,
+                  ),
+                },
+                SizedBox(height: layout.blockGap),
                 switch (words) {
                   AsyncValue(hasValue: true, :final value?)
                       when value.isEmpty =>
@@ -70,6 +84,7 @@ class _WordsPageState extends ConsumerState<WordsPage> {
                     child: LoadingWave(semanticLabel: l10n.commonLoading),
                   ),
                 },
+                SizedBox(height: layout.sectionGap),
               ],
             ),
           ),
@@ -93,10 +108,13 @@ class _WordList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final layout = context.layout;
     final visible = [
       for (final entry in entries)
         if (filter == null || entry.progress.state == filter) entry,
     ];
+    final columns = layout.isWide ? 2 : 1;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -111,50 +129,91 @@ class _WordList extends StatelessWidget {
           },
           onSelected: onFilter,
         ),
-        const SizedBox(height: FluiSpacing.md),
+        SizedBox(height: layout.blockGap),
         if (visible.isEmpty)
           Text(
             l10n.wordsFilterEmpty,
-            style: FluiTypography.body.copyWith(color: FluiColors.gray),
-          ),
-        for (final entry in visible) ...[
-          FluiCard(
-            onTap: () => context.go(AppRoutes.wordDetail(entry.word.id)),
-            padding: const EdgeInsets.all(FluiSpacing.md),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        entry.word.lemma,
-                        style: FluiTypography.h3.copyWith(
-                          color: FluiColors.charcoal,
-                        ),
-                      ),
-                      const SizedBox(height: FluiSpacing.xxs),
-                      Text(
-                        entry.word.explanation,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        style: FluiTypography.body.copyWith(
-                          color: FluiColors.gray,
-                          fontSize: 14,
-                          height: 20 / 14,
-                        ),
-                      ),
-                    ],
-                  ),
+            style: layout.type.bodyL.copyWith(color: FluiColors.gray),
+          )
+        else
+          Wrap(
+            spacing: FluiSpacing.sm,
+            runSpacing: FluiSpacing.sm,
+            children: [
+              for (final entry in visible)
+                LayoutBuilder(
+                  builder: (context, _) =>
+                      _WordRow(entry: entry, columns: columns),
                 ),
-                const SizedBox(width: FluiSpacing.sm),
-                StateChip(state: entry.progress.state.chipKind),
-              ],
+            ],
+          ),
+      ],
+    );
+  }
+}
+
+class _WordRow extends StatelessWidget {
+  const new({required this.entry, required this.columns});
+
+  final WordEntry entry;
+  final int columns;
+
+  @override
+  Widget build(BuildContext context) {
+    final type = context.type;
+    final width = columns == 1
+        ? double.infinity
+        : (FluiSpacing.pageMaxWidth -
+                  FluiSpacing.gutterWide * 2 -
+                  FluiSpacing.sm) /
+              2;
+
+    return ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: width),
+      child: SizedBox(
+        width: columns == 1 ? double.infinity : width,
+        child: Material(
+          color: FluiColors.surface,
+          shape: const RoundedRectangleBorder(
+            borderRadius: FluiRadii.cardAll,
+            side: FluiSurfaces.hairlineOnCream,
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: () => context.go(AppRoutes.wordDetail(entry.word.id)),
+            child: Padding(
+              padding: const EdgeInsets.all(FluiSpacing.md),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          entry.word.lemma,
+                          style: type.titleM.copyWith(
+                            color: FluiColors.charcoal,
+                          ),
+                        ),
+                        const SizedBox(height: FluiSpacing.xxs),
+                        Text(
+                          entry.word.explanation,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: type.body.copyWith(color: FluiColors.gray),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: FluiSpacing.sm),
+                  StateChip(state: entry.progress.state.chipKind),
+                ],
+              ),
             ),
           ),
-          const SizedBox(height: FluiSpacing.sm),
-        ],
-      ],
+        ),
+      ),
     );
   }
 }

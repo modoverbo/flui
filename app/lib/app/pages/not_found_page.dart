@@ -1,7 +1,8 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/l10n/l10n.dart';
-import 'package:flui/shared/widgets/content_column.dart';
+import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
+import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -14,12 +15,15 @@ class NotFoundPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Center(
-          child: ContentColumn(
-            child: EmptyState(
-              title: l10n.notFoundTitle,
-              message: l10n.appTitle,
-              actionLabel: l10n.notFoundAction,
-              onAction: () => context.go(AppRoutes.root),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(vertical: FluiSpacing.xl),
+            child: PageFrame.column(
+              child: EmptyState(
+                title: l10n.notFoundTitle,
+                message: l10n.appTitle,
+                actionLabel: l10n.notFoundAction,
+                onAction: () => context.go(AppRoutes.root),
+              ),
             ),
           ),
         ),
