@@ -1,0 +1,77 @@
+name: web-deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - ".github/workflows/web-deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Build Flutter web and deploy to Vercel
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    defaults:
+      run:
+        working-directory: app
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.4
+          channel: stable
+          cache: true
+
+      - name: Install dependencies and generate code
+        run: |
+          flutter pub get
+          dart run build_runner build --delete-conflicting-outputs
+          flutter gen-l10n
+
+      - name: Test before deploying
+        run: flutter test
+
+      - name: Write build configuration from secrets (never committed)
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "::error::SUPABASE_URL and SUPABASE_ANON_KEY secrets are required"
+            exit 1
+          fi
+          jq -n --arg url "$SUPABASE_URL" --arg key "$SUPABASE_ANON_KEY" \
+            '{SUPABASE_URL: $url, SUPABASE_ANON_KEY: $key}' > "$RUNNER_TEMP/dart-defines.json"
+
+      - name: Build web (release)
+        run: flutter build web --release --dart-define-from-file="$RUNNER_TEMP/dart-defines.json"
+
+      - name: Remove temporary build configuration
+        if: always()
+        run: rm -f "$RUNNER_TEMP/dart-defines.json"
+
+      - name: Add Vercel configuration (SPA rewrites)
+        run: cp vercel.json build/web/vercel.json
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Deploy to Vercel (production)
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: npx --yes vercel@59.16.0 deploy build/web --prod --yes --token "$VERCEL_TOKEN"
