@@ -3,8 +3,9 @@
 Flutter app of flui (web first, Android and iOS scaffolded). Phase A ships the brand system,
 onboarding, email/password auth, the Whop trial paywall, the checkout return flow and the app
 shell. Phase B ships the learning experience: daily time budget, session planner, the session
-runner (Descubre → Mira → Elige → Úsala → check), reviews, Palabras, Practica, En contexto and
-Tu progreso. It runs fully offline with an in-memory **fake backend** or against **Supabase**.
+runner (Descubre → Mira → Elige → Úsala → check), reviews and three tabs — **Hoy**, **Palabras**
+and **Tu progreso**. It runs fully offline with an in-memory **fake backend** or against
+**Supabase**.
 
 ## Quick path (fake backend, no network)
 
@@ -85,9 +86,9 @@ lib/
     auth/ subscription/       # domain (pure Dart) · data (Supabase + fake) · presentation
     onboarding/               # welcome, intro
     daily/                    # time budget, SessionPlanner, SessionFlow, Hoy, session runner
-    vocabulary/               # words, progress, ReviewScheduler, MasteryPolicy, Palabras
-    exercises/                # cloze flow, form recall, production, attempts, Practica
-    reading/                  # readings, En contexto
+    vocabulary/               # words, progress, ReviewScheduler, MasteryPolicy/Meter, Palabras
+    exercises/                # cloze flow, form recall, production with its rubric, attempts
+    reading/                  # readings, the "En contexto" sections
     profile/                  # streaks and repairs, stats, achievements, Tu progreso
 ```
 
@@ -120,11 +121,16 @@ table-driven tests. Interpretations where the spec leaves room:
 |-------|--------|
 | Preselected budget | Today's choice, else the latest earlier session ("yesterday", also after a skipped day), else 10 min |
 | Warm-up | Up to 2 planned due reviews whose last grade was `good` go first; no extra items |
+| Session order | Warm-up reviews, then one **blocked** acquisition run per new word (Descubre, one scene, Elige) with the remaining due reviews between the runs, then the form recalls, the held-back scenes, the productions, and a mixed end-of-session check in a per-day order. Acquisition is never interleaved: interleaving hurts vocabulary material (Brunmair & Richter 2019); see the `SessionFlow` doc comment |
 | Introduced word | `word_progress` row on leaving Descubre, `next_due_on = today + 1` so an abandoned session still brings it back |
 | Form recall prompt | The example sentence with the word masked; typo tolerance (1 edit) only for forms of 6+ letters |
 | Úsala situation | "Antes decías: «first `replaces.before`»" |
 | Re-queue | Forced reveal → once per word with an unused sentence; a first-try re-queue of a `nueva` word counts as its unaided check |
-| Resume | Rebuilt from `word_progress` and today's `exercise_attempts`; pending re-queues are not restored; forced reveals count per local day |
+| Resume | Rebuilt from `word_progress` and today's `exercise_attempts`. Every step is done only on its **own** evidence (a row for Descubre, an attempt for a cloze, `form_recall_done`, `production_done`) or when a later step of the same word is; pending re-queues are not restored; forced reveals count per local day |
+| Empty day | The planner says *why* (`EmptyPlanReason`): too small a budget, no candidates left, or every candidate still too close to this week's words. Each gets its own copy and its own way out |
+| Active day | Opening a session marks the day active, even with an empty plan: the gap is ours, not the user's |
+| Free run | `/session?mode=free` practises words that are **not** due. Attempts are recorded; the ladder is untouched |
+| Visible progress | The three states are coarse, so `MasteryMeter` shows five rungs per word (descubierta → practicada → recall → producción → tuya), and precision is a rolling 30-day window |
 | Daily guard | Without today's `daily_sessions` row, app routes go to `/today/time`; `/progress` stays reachable |
 
 ## Phase B entry points (for later phases)
@@ -132,7 +138,7 @@ table-driven tests. Interpretations where the spec leaves room:
 | Need | Use |
 |------|-----|
 | Learning data of the user | `learningDataControllerProvider(userId)` (writes go through it), `currentLearningDataProvider` |
-| Session runner | `/session` (`?mode=review` for Practica), `SessionController`, `SessionFlow` |
+| Session runner | `/session` (`?mode=review` for "Repaso extra", `?mode=free` for "Repaso libre"), `SessionController`, `SessionFlow` |
 | Content | `catalogProvider`, `wordsByIdProvider` |
 | Signed-in user / access | `authUserProvider`, `currentAccessProvider`, `accessGateProvider` |
 | Supabase client in data sources | `supabaseClientProvider` (override set in `bootstrap.dart`) |

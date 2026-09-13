@@ -6,8 +6,9 @@ import 'app_harness.dart';
 
 /// First day on the fake backend:
 /// welcome → intro → register → paywall → fake checkout → time budget
-/// (10 min) → Hoy → session for one new word (Descubre, Mira, Elige with a
-/// "Casi.", Úsala, final check) → summary → Hoy done → Tu progreso.
+/// (10 min) → Hoy → session for one new word (Descubre, one scene, Elige with
+/// a "Casi.", Úsala recall, the rest of the scenes, Úsala production, final
+/// check) → summary → Hoy done → Tu progreso.
 Future<void> runFirstRunFlow(WidgetTester tester) async {
   final harness = AppHarness();
   await harness.pumpApp(tester);
@@ -69,15 +70,12 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   // Descubre + Entiende.
   expect(find.text('Tu palabra de hoy'), findsOneWidget);
   expect(find.text('perspicaz'), findsOneWidget);
-  expect(find.text('1 de 6'), findsOneWidget);
+  expect(find.text('1 de 7'), findsOneWidget);
   await tapText('Ver en contexto');
 
-  // Mira.
+  // Mira: one scene now, the rest after the form recall.
   expect(find.text('Mira cómo suena'), findsOneWidget);
-  expect(find.text('1 de 3'), findsOneWidget);
-  await tester.tap(find.byTooltip('Siguiente'));
-  await tester.pumpAndSettle();
-  expect(find.text('2 de 3'), findsOneWidget);
+  expect(find.text('1 de 1'), findsOneWidget);
   await tapText('Continuar');
 
   // Elige: one wrong answer first.
@@ -105,6 +103,14 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   expect(find.text('¡Eso es!'), findsOneWidget);
   await tapText('Continuar');
 
+  // Mira again: the scenes that were held back.
+  expect(find.text('Mira cómo suena'), findsOneWidget);
+  expect(find.text('1 de 2'), findsOneWidget);
+  await tester.tap(find.byTooltip('Siguiente'));
+  await tester.pumpAndSettle();
+  expect(find.text('2 de 2'), findsOneWidget);
+  await tapText('Continuar');
+
   expect(find.text('Úsala'), findsOneWidget);
   await tester.enterText(
     find.widgetWithText(FluiTextField, 'Tu frase'),
@@ -112,6 +118,17 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   );
   await tapText('Comprobar');
   expect(find.text('¿Suena natural?'), findsOneWidget);
+  // The model sentence is shown to compare against, and every rubric item
+  // has to be ticked before the sentence is accepted.
+  expect(find.text('Una frase que funciona'), findsOneWidget);
+  expect(find.text('Marca lo que se cumple para seguir.'), findsOneWidget);
+  for (final item in [
+    'Dice lo que quiero decir',
+    'La diría en voz alta sin sonar raro',
+    'La palabra encaja, no está forzada',
+  ]) {
+    await tapText(item);
+  }
   await tapText('Sí, suena natural');
 
   // End-of-session check: a fresh sentence, first try.
@@ -120,9 +137,15 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   expect(find.text('¡Eso es!'), findsOneWidget);
   await tapText('Continuar');
 
-  // Summary.
+  // Summary: what moved, how it went, and what waits tomorrow.
   expect(find.text('Una palabra más en tu repertorio.'), findsOneWidget);
   expect(find.text('Practica'), findsOneWidget);
+  expect(find.text('1 día seguido'), findsOneWidget);
+  // Elige took two tries, the check one: half of the answers were first-try.
+  expect(find.text('50 % a la primera en esta sesión'), findsOneWidget);
+  expect(find.text('Mañana: 1 repaso'), findsOneWidget);
+  // The five-rung meter shows the work the "Practica" chip hides.
+  expect(find.text('4 de 5'), findsOneWidget);
   await tapText('Volver a Hoy');
 
   // Hoy is done for today, and Tu progreso counts the day.
