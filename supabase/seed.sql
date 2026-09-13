@@ -16,14 +16,14 @@
 -- autocommit mode.
 
 -- ============================================================================
--- 1. Subscription plans (PLACEHOLDER prices, Whop sandbox plan ids)
+-- 1. Subscription plans (founder-confirmed prices; Whop sandbox plan ids)
 -- ============================================================================
 
 insert into public.subscription_plans
   (id, whop_plan_id, billing_period_days, price_cents, currency, label, savings_label, sort_order, active)
 values
-  ('monthly', 'plan_rtRdHbN0gLgBh', 30, 999, 'USD', 'Mensual', null, 1, true),     -- PLACEHOLDER price
-  ('quarterly', 'plan_xr6Skp0dSxxcz', 90, 2499, 'USD', 'Trimestral', 'Ahorra 17%', 2, true) -- PLACEHOLDER price
+  ('monthly', 'plan_rtRdHbN0gLgBh', 30, 699, 'USD', 'Mensual', null, 1, true),     -- founder-confirmed price
+  ('quarterly', 'plan_xr6Skp0dSxxcz', 90, 1615, 'USD', 'Trimestral', 'Ahorra 23%', 2, true) -- founder-confirmed price
 on conflict (id) do update
   set whop_plan_id = excluded.whop_plan_id,
       billing_period_days = excluded.billing_period_days,

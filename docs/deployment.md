@@ -141,8 +141,8 @@ final prices (the seed prices are placeholders):
 insert into public.subscription_plans
   (id, whop_plan_id, billing_period_days, price_cents, currency, label, savings_label, sort_order, active)
 values
-  ('monthly',   'plan_PRODUCTION_MONTHLY',   30,  999, 'USD', 'Mensual',    null,         1, true),
-  ('quarterly', 'plan_PRODUCTION_QUARTERLY', 90, 2499, 'USD', 'Trimestral', 'Ahorra 17%', 2, true)
+  ('monthly',   'plan_PRODUCTION_MONTHLY',   30,  699, 'USD', 'Mensual',    null,         1, true),
+  ('quarterly', 'plan_PRODUCTION_QUARTERLY', 90, 1615, 'USD', 'Trimestral', 'Ahorra 23%', 2, true)
 on conflict (id) do update
   set whop_plan_id = excluded.whop_plan_id,
       price_cents = excluded.price_cents,
