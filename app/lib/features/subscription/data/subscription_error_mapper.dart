@@ -1,8 +1,8 @@
-import 'dart:async';
-
 import 'package:flui/core/error/failure.dart';
-import 'package:http/http.dart' as http;
+import 'package:flui/core/supabase/data_error_mapper.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
+
+export 'package:flui/core/supabase/data_error_mapper.dart' show mapDataError;
 
 /// Maps `whop-checkout` Edge Function errors (`{error: {code, message}}`).
 Failure mapCheckoutError(Object error) {
@@ -23,12 +23,4 @@ Failure mapCheckoutError(Object error) {
     _ => SubscriptionErrorCode.unknown,
   };
   return SubscriptionFailure(kind);
-}
-
-/// Maps PostgREST and transport errors.
-Failure mapDataError(Object error) {
-  if (error is http.ClientException || error is TimeoutException) {
-    return const NetworkFailure();
-  }
-  return UnexpectedFailure(error);
 }
