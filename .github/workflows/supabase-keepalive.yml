@@ -16,6 +16,8 @@ jobs:
     name: Lightweight REST request
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    # Secrets live in the "production" environment, not at repository level.
+    environment: production
     steps:
       - name: Read one active plan with the anon key
         env:
