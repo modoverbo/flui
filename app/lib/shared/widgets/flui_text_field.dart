@@ -1,6 +1,7 @@
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
+import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -57,8 +58,9 @@ class _FluiTextFieldState extends State<FluiTextField> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            widget.label,
-            style: FluiTypography.label.copyWith(color: FluiColors.charcoal),
+            FluiTypeScale.labelText(widget.label),
+            style: context.type.label.copyWith(color: FluiColors.charcoal),
+            semanticsLabel: widget.label,
           ),
           const SizedBox(height: FluiSpacing.xs),
           TextField(
@@ -73,7 +75,7 @@ class _FluiTextFieldState extends State<FluiTextField> {
             autofillHints: widget.autofillHints,
             onSubmitted: widget.onSubmitted,
             onChanged: widget.onChanged,
-            style: FluiTypography.body.copyWith(color: FluiColors.charcoal),
+            style: context.type.bodyL.copyWith(color: FluiColors.charcoal),
             decoration: InputDecoration(
               hintText: widget.hint,
               errorText: widget.errorText,

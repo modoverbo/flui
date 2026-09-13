@@ -1,12 +1,17 @@
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_radii.dart';
-import 'package:flui/core/theme/flui_typography.dart';
+import 'package:flui/core/theme/flui_spacing.dart';
+import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:material_ui/material_ui.dart';
 
 enum FluiButtonVariant { primary, accent, outline, text }
 
-/// Buttons. Use one [FluiButtonVariant.primary] (or accent on dark green)
+/// Buttons. Use one [FluiButtonVariant.primary] (or accent on deep green)
 /// per screen; everything else is outline or text.
+///
+/// A primary action is a 14 px rectangle. It is never a pill: a pill floating
+/// over a half-empty screen is the shape every subscription app ships, and it
+/// reads as a banking app, not as a place where you learn a word.
 class FluiButton extends StatelessWidget {
   const new({
     required this.label,
@@ -14,6 +19,7 @@ class FluiButton extends StatelessWidget {
     super.key,
     this.variant = FluiButtonVariant.primary,
     this.icon,
+    this.glyph,
     this.isLoading = false,
     this.expand = true,
     this.onDark = false,
@@ -24,17 +30,19 @@ class FluiButton extends StatelessWidget {
     required this.onPressed,
     super.key,
     this.icon,
+    this.glyph,
     this.isLoading = false,
     this.expand = true,
   }) : variant = FluiButtonVariant.primary,
        onDark = false;
 
-  /// Yellow call to action, for deep green surfaces.
+  /// Yellow call to action, always with charcoal text.
   const new accent({
     required this.label,
     required this.onPressed,
     super.key,
     this.icon,
+    this.glyph,
     this.isLoading = false,
     this.expand = true,
   }) : variant = FluiButtonVariant.accent,
@@ -45,6 +53,7 @@ class FluiButton extends StatelessWidget {
     required this.onPressed,
     super.key,
     this.icon,
+    this.glyph,
     this.isLoading = false,
     this.expand = true,
     this.onDark = false,
@@ -55,6 +64,7 @@ class FluiButton extends StatelessWidget {
     required this.onPressed,
     super.key,
     this.icon,
+    this.glyph,
     this.isLoading = false,
     this.expand = false,
     this.onDark = false,
@@ -66,6 +76,9 @@ class FluiButton extends StatelessWidget {
   final VoidCallback? onPressed;
   final FluiButtonVariant variant;
   final IconData? icon;
+
+  /// A custom glyph instead of a library icon.
+  final Widget? glyph;
   final bool isLoading;
   final bool expand;
   final bool onDark;
@@ -78,12 +91,12 @@ class FluiButton extends StatelessWidget {
         (states) =>
             states.contains(WidgetState.disabled) &&
                 background != Colors.transparent
-            ? FluiColors.disabled
+            ? (onDark ? FluiColors.greenSecondary : FluiColors.disabled)
             : background,
       ),
       foregroundColor: WidgetStateProperty.resolveWith(
         (states) => states.contains(WidgetState.disabled)
-            ? FluiColors.gray
+            ? (onDark ? FluiColors.creamMuted : FluiColors.gray)
             : foreground,
       ),
       overlayColor: WidgetStatePropertyAll(foreground.withValues(alpha: 0.08)),
@@ -91,10 +104,14 @@ class FluiButton extends StatelessWidget {
         Size(expand ? double.infinity : 0, height),
       ),
       padding: const WidgetStatePropertyAll(
-        EdgeInsets.symmetric(horizontal: 20),
+        EdgeInsets.symmetric(horizontal: FluiSpacing.lg),
       ),
-      shape: const WidgetStatePropertyAll(
-        RoundedRectangleBorder(borderRadius: FluiRadii.lgAll),
+      shape: WidgetStatePropertyAll(
+        RoundedRectangleBorder(
+          borderRadius: variant == FluiButtonVariant.text
+              ? FluiRadii.chipAll
+              : FluiRadii.ctaAll,
+        ),
       ),
       side: variant == FluiButtonVariant.outline
           ? WidgetStateProperty.resolveWith(
@@ -106,7 +123,9 @@ class FluiButton extends StatelessWidget {
               ),
             )
           : null,
-      textStyle: const WidgetStatePropertyAll(FluiTypography.label),
+      textStyle: WidgetStatePropertyAll(
+        FluiTypeScale.compact.body.copyWith(fontWeight: FontWeight.w600),
+      ),
       elevation: const WidgetStatePropertyAll(0),
     );
 
@@ -118,7 +137,7 @@ class FluiButton extends StatelessWidget {
               color: foreground,
             ),
           )
-        : _Label(label: label, icon: icon);
+        : _Label(label: label, icon: icon, glyph: glyph);
     final action = onPressed == null ? null : (isLoading ? _ignore : onPressed);
 
     final button = switch (variant) {
@@ -149,6 +168,7 @@ class FluiButton extends StatelessWidget {
     final onSurface = onDark ? FluiColors.cream : FluiColors.greenDeep;
     return switch (variant) {
       FluiButtonVariant.primary => (FluiColors.greenDeep, FluiColors.cream),
+      // A yellow surface always carries charcoal, never green.
       FluiButtonVariant.accent => (
         FluiColors.yellowElectric,
         FluiColors.charcoal,
@@ -162,22 +182,25 @@ class FluiButton extends StatelessWidget {
 }
 
 class _Label extends StatelessWidget {
-  const new({required this.label, this.icon});
+  const new({required this.label, this.icon, this.glyph});
 
   final String label;
   final IconData? icon;
+  final Widget? glyph;
 
   @override
   Widget build(BuildContext context) {
     final icon = this.icon;
+    final glyph = this.glyph;
     final text = Text(label, textAlign: TextAlign.center);
-    if (icon == null) return text;
+    if (icon == null && glyph == null) return text;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         Flexible(child: text),
-        const SizedBox(width: 8),
-        Icon(icon, size: 20),
+        const SizedBox(width: FluiSpacing.xs),
+        ?glyph,
+        if (icon != null) Icon(icon, size: 18),
       ],
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_radii.dart';
-import 'package:flui/core/theme/flui_typography.dart';
-import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:flui/core/theme/flui_type_scale.dart';
+import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Word progress states (docs/brand.md §8).
@@ -16,24 +16,25 @@ class StateChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final (label, background, foreground, icon) = switch (state) {
+    final (label, background, foreground, glyph) = switch (state) {
+      // "Nueva" is one of yellow's four roles: the word of the day.
       WordStateKind.nueva => (
         l10n.wordStateNew,
         FluiColors.yellowElectric,
         FluiColors.charcoal,
-        LucideIcons.sparkles,
+        FluiGlyph.wordOfTheDay,
       ),
       WordStateKind.practica => (
         l10n.wordStatePractice,
         FluiColors.greenSecondary,
         FluiColors.cream,
-        LucideIcons.repeat,
+        FluiGlyph.review,
       ),
       WordStateKind.tuya => (
         l10n.wordStateOwned,
         FluiColors.greenDeep,
         FluiColors.cream,
-        LucideIcons.check,
+        FluiGlyph.achievement,
       ),
     };
     return DecoratedBox(
@@ -42,15 +43,16 @@ class StateChip extends StatelessWidget {
         borderRadius: FluiRadii.pill,
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+        padding: const EdgeInsets.fromLTRB(10, 5, 12, 5),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(icon, size: 14, color: foreground),
-            const SizedBox(width: 4),
+            FluiGlyphIcon(glyph, size: FluiIconSize.inline, color: foreground),
+            const SizedBox(width: 6),
             Text(
-              label,
-              style: FluiTypography.label.copyWith(color: foreground),
+              FluiTypeScale.labelText(label),
+              style: FluiTypeScale.compact.label.copyWith(color: foreground),
+              semanticsLabel: label,
             ),
           ],
         ),

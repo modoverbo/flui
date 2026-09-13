@@ -1,5 +1,5 @@
 import 'package:flui/core/theme/flui_colors.dart';
-import 'package:flui/core/theme/flui_typography.dart';
+import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:flui/shared/widgets/flui_symbol.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -35,9 +35,10 @@ class FluiLogo extends StatelessWidget {
     );
     final text = Text(
       wordmark,
-      style: FluiTypography.h1.copyWith(
+      style: FluiTypeScale.compact.displayL.copyWith(
         fontSize: symbolSize * 0.9,
         height: 1,
+        letterSpacing: symbolSize * 0.9 * -0.03,
         color: onDark ? FluiColors.cream : FluiColors.greenDeep,
       ),
     );

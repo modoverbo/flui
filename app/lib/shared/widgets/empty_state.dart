@@ -1,11 +1,12 @@
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
-import 'package:flui/shared/widgets/flui_symbol.dart';
+import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Friendly placeholder with the wave symbol.
+/// An empty state is a green plate with something to say, never a grey
+/// circle in the middle of a white page.
 class EmptyState extends StatelessWidget {
   const new({
     required this.title,
@@ -22,37 +23,29 @@ class EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final type = context.type;
     final actionLabel = this.actionLabel;
-    return Padding(
-      padding: const EdgeInsets.all(FluiSpacing.lg),
+    return FluiPlate(
+      padding: const EdgeInsets.all(FluiSpacing.xl),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          const DecoratedBox(
-            decoration: BoxDecoration(
-              color: FluiColors.greenTint,
-              shape: BoxShape.circle,
-            ),
-            child: Padding(
-              padding: EdgeInsets.all(FluiSpacing.lg),
-              child: FluiSymbol(size: 56),
+          Semantics(
+            header: true,
+            child: Text(
+              title,
+              style: type.titleL.copyWith(color: FluiColors.cream),
             ),
           ),
-          const SizedBox(height: FluiSpacing.lg),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: FluiTypography.h2.copyWith(color: FluiColors.charcoal),
-          ),
-          const SizedBox(height: FluiSpacing.xs),
+          const SizedBox(height: FluiSpacing.sm),
           Text(
             message,
-            textAlign: TextAlign.center,
-            style: FluiTypography.body.copyWith(color: FluiColors.gray),
+            style: type.body.copyWith(color: FluiColors.creamMuted),
           ),
           if (actionLabel != null) ...[
             const SizedBox(height: FluiSpacing.lg),
-            FluiButton.outline(
+            FluiButton.accent(
               label: actionLabel,
               onPressed: onAction,
               expand: false,
