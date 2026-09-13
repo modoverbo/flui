@@ -125,7 +125,23 @@ abstract final class SessionPlanner {
       newWordIds: [for (final word in picked) word.id],
       afianzar: afianzar,
       warmUpCount: warmUp.length,
+      emptyReason: planned.isEmpty && picked.isEmpty
+          ? emptyReasonFor(
+              candidatesLeft: sortedCandidates.isNotEmpty,
+              newSlots: newSlots,
+            )
+          : null,
     );
+  }
+
+  /// Why an empty day is empty (see [EmptyPlanReason]).
+  static EmptyPlanReason emptyReasonFor({
+    required bool candidatesLeft,
+    required int newSlots,
+  }) {
+    if (!candidatesLeft) return EmptyPlanReason.noCandidatesLeft;
+    if (newSlots == 0) return EmptyPlanReason.budgetTooSmall;
+    return EmptyPlanReason.allReviewsDone;
   }
 
   /// Oldest `next_due_on` first, then lower `ladder_step`, then `sort_order`.

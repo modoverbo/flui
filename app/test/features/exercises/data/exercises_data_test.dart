@@ -1,3 +1,4 @@
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/features/exercises/data/dtos/exercise_attempt_dto.dart';
 import 'package:flui/features/exercises/data/fake_exercise_attempt_repository.dart';
@@ -65,6 +66,12 @@ void main() {
       await repository.recordAttempt(attempt.copyWith(exerciseId: 'e2'));
 
       final stored = (await repository.fetchAttempts()).valueOrNull!;
+      expect(
+        (await repository.fetchAttempts(since: attempt.localDate.addDays(1)))
+            .valueOrNull,
+        isEmpty,
+        reason: 'the fake honours the window too',
+      );
       expect(stored.map((a) => a.exerciseId), ['e1', 'e2']);
       expect(stored.first.createdAt, isNotNull);
       user = 'b';
@@ -113,6 +120,33 @@ void main() {
       expect(
         recorder.last.url.queryParameters['order'],
         'created_at.asc.nullslast',
+      );
+    });
+
+    test('a date window is pushed to the server, not filtered here', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <Object?>[]);
+      addTearDown(recorder.dispose);
+
+      await SupabaseExerciseAttemptRepository(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).fetchAttempts(since: LocalDate(2026, 6, 15));
+
+      expect(recorder.last.url.queryParameters['local_date'], 'gte.2026-06-15');
+    });
+
+    test('without a window it still asks for everything', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <Object?>[]);
+      addTearDown(recorder.dispose);
+
+      await SupabaseExerciseAttemptRepository(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).fetchAttempts();
+
+      expect(
+        recorder.last.url.queryParameters.containsKey('local_date'),
+        isFalse,
       );
     });
 

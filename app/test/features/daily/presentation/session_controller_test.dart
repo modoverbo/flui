@@ -75,7 +75,7 @@ void main() {
 
     expect(read(daily).step, SessionStep.discover(wordId: perspicaz.id));
     expect(read(daily).word, perspicaz);
-    expect(read(daily).flow.total, 6);
+    expect(read(daily).flow.total, 7);
 
     await session.continueStep();
     final introduced = (await fakes.progress.fetchProgress()).valueOrNull!;
@@ -115,6 +115,10 @@ void main() {
       isTrue,
     );
 
+    // The scenes held back during discovery come before Úsala.
+    await session.continueStep();
+    expect(read(daily).step, isA<ReadingsStep>());
+
     await session.continueStep();
     expect(read(daily).step, isA<ProductionStep>());
     session.submitProduction('Hola');
@@ -124,6 +128,11 @@ void main() {
     session
       ..reviseProduction()
       ..submitProduction('Tu pregunta fue muy perspicaz, Carla.');
+
+    // The rubric gates acceptance: one tap on "Sí" is not enough.
+    await session.confirmProduction();
+    expect(read(daily).production!.isAccepted, isFalse);
+    ProductionRubric.values.forEach(session.toggleProductionRubric);
     await session.confirmProduction();
 
     expect(
@@ -157,9 +166,14 @@ void main() {
     await session.takeFormRecallHint();
     expect(read(daily).formRecall!.status, FormRecallStatus.revealed);
     await session.continueStep();
+    expect(read(daily).step, isA<ReadingsStep>());
+    await session.continueStep();
+    expect(read(daily).step, isA<ProductionStep>());
     session.submitProduction('Mi jefa es muy perspicaz con los clientes.');
+    ProductionRubric.values.forEach(session.toggleProductionRubric);
     await session.confirmProduction();
 
+    expect(read(daily).step, isA<FinalCheckStep>());
     await session.answerCloze(option(perspicaz, 2, 'locuaz'));
     await session.answerCloze(option(perspicaz, 2, 'perspicaz'));
 
@@ -294,7 +308,12 @@ void main() {
 
   test('a finished session found on reload is completed', () async {
     await fakes.progress.saveProgress(
-      buildProgress(wordId: plantear.id, nextDueOn: day(20)),
+      buildProgress(
+        wordId: plantear.id,
+        formRecallDone: true,
+        productionDone: true,
+        nextDueOn: day(20),
+      ),
     );
     await fakes.attempts.recordAttempt(
       ExerciseAttemptFixture.good(plantear.id, plantear.exercises.first.id),
@@ -313,5 +332,66 @@ void main() {
 
     expect(read(daily).isFinished, isTrue);
     expect(read(daily).flow.total, 0);
+  });
+
+  test('an empty plan still counts the day as active', () async {
+    await planToday();
+
+    await open(daily);
+
+    expect(read(daily).flow.total, 0);
+    final saved = (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+    expect(saved.isCompleted, isTrue);
+  });
+
+  test('a free run practises words that are not due', () async {
+    await fakes.progress.saveProgress(
+      buildProgress(
+        wordId: plantear.id,
+        formRecallDone: true,
+        productionDone: true,
+        ladderStep: 2,
+        nextDueOn: day(20),
+      ),
+    );
+    await planToday();
+    final session = await open(SessionMode.free);
+
+    expect(read(SessionMode.free).step, isA<ReviewClozeStep>());
+    await session.answerCloze(option(plantear, 1, 'planteó'));
+
+    // The attempt counts for the streak and for precision...
+    expect((await fakes.attempts.fetchAttempts()).valueOrNull, hasLength(1));
+    // ...but answering early must not push the real review away.
+    final progress = (await fakes.progress.fetchProgress()).valueOrNull!.single;
+    expect(progress.ladderStep, 2);
+    expect(progress.nextDueOn, day(20));
+    expect(progress.firstTrySuccessDays, isEmpty);
+  });
+
+  test('a free review run counts a day the plan left empty', () async {
+    await fakes.progress.saveProgress(
+      buildProgress(
+        wordId: plantear.id,
+        formRecallDone: true,
+        productionDone: true,
+        nextDueOn: day(20),
+      ),
+    );
+    await planToday();
+
+    await open(SessionMode.review);
+
+    final saved = (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+    expect(saved.isCompleted, isTrue);
+  });
+
+  test('a free review run never closes a day that still has a plan', () async {
+    await planToday(newWords: [perspicaz.id]);
+
+    await open(SessionMode.review);
+
+    final saved = (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+    expect(saved.isCompleted, isFalse);
   });
 }

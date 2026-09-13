@@ -31,8 +31,14 @@ enum SessionMode {
   /// Today's planned session (`daily_sessions`).
   daily,
 
-  /// Every due review, from "Practica".
+  /// Every due review ("repaso extra").
   review,
+
+  /// "Repaso libre": practice with words that are *not* due, offered when the
+  /// planner has nothing to give. It records attempts, so the day counts, but
+  /// it never touches the ladder — answering a word early must not push its
+  /// real review away.
+  free,
 }
 
 @freezed
@@ -53,6 +59,11 @@ abstract class SessionState with _$SessionState {
 
     /// Words that reached "tuya" during this session.
     @Default(<String>[]) List<String> ownedWordIds,
+
+    /// Clozes resolved in this session, and how many on the first try. The
+    /// summary reports the session, not a lifetime average.
+    @Default(0) int answeredCount,
+    @Default(0) int firstTryCount,
     DateTime? stepStartedAt,
   }) = _SessionState;
 
@@ -66,6 +77,10 @@ abstract class SessionState with _$SessionState {
   }
 
   bool get isFinished => flow.isFinished;
+
+  /// First-try share of this session, `null` before the first answer.
+  int? get accuracyPercent =>
+      answeredCount == 0 ? null : (firstTryCount * 100 / answeredCount).round();
 
   ClozeExercise? get exercise {
     final id = step?.exerciseId;
@@ -130,6 +145,10 @@ class SessionController extends _$SessionController {
         ).map((review) => review.wordId).toList(),
         const <String>[],
       ),
+      SessionMode.free => (
+        _freeReviewIds(data, words, today),
+        const <String>[],
+      ),
     };
     final progress = {for (final row in data.progress) row.wordId: row};
     final flow = SessionFlow.build(
@@ -152,8 +171,9 @@ class SessionController extends _$SessionController {
         },
       ),
     );
-    // Everything was already done (for example, after a reload).
-    if (flow.isFinished && flow.total > 0) await _completeDailySession(initial);
+    // Everything was already done (for example, after a reload). An empty
+    // plan counts too: the user showed up, and the gap is ours.
+    if (flow.isFinished) await _completeDailySession(initial);
     return initial;
   }
 
@@ -230,7 +250,13 @@ class SessionController extends _$SessionController {
         ? null
         : _progressAfterCloze(current, step, before, resolution.grade, now);
 
-    _set(current.copyWith(cloze: next));
+    _set(
+      current.copyWith(
+        cloze: next,
+        answeredCount: current.answeredCount + 1,
+        firstTryCount: current.firstTryCount + (attempt.firstTry ? 1 : 0),
+      ),
+    );
     await _save(
       [
         () => _learning.recordAttempt(attempt),
@@ -269,6 +295,14 @@ class SessionController extends _$SessionController {
     final production = current?.production;
     if (current == null || production == null) return;
     _set(current.copyWith(production: production.submit(text)));
+  }
+
+  /// Ticks or unticks one item of the self-check rubric.
+  void toggleProductionRubric(ProductionRubric item) {
+    final current = state.value;
+    final production = current?.production;
+    if (current == null || production == null) return;
+    _set(current.copyWith(production: production.toggle(item)));
   }
 
   /// "Quiero ajustarla".
@@ -333,6 +367,10 @@ class SessionController extends _$SessionController {
     Grade grade,
     DateTime now,
   ) {
+    // A free run is extra practice: the attempt is recorded, the schedule is
+    // not touched. Grading a word that is not due would push its real review
+    // away and quietly break the ladder.
+    if (current.mode == SessionMode.free) return before;
     final discovery = current.flow.discoveryCompletedFor(step.wordId);
     return switch (step) {
       ReviewClozeStep() => MasteryPolicy.review(
@@ -411,22 +449,26 @@ class SessionController extends _$SessionController {
         ),
       ),
       ProductionStep() => base.copyWith(
-        production: ProductionFlow(forms: word.forms),
+        production: ProductionFlow(
+          forms: word.forms,
+          modelSentence: word.exampleSentence,
+        ),
       ),
       _ => base,
     };
   }
 
+  /// Marks today active. Opening a session is enough: an empty plan is our
+  /// gap, not the user's, and it must never cost a streak. A review run only
+  /// closes the day when the plan had nothing to offer, so it never hides a
+  /// session the user still owes.
   Future<void> _completeDailySession(SessionState current) async {
     final userId = _userId;
-    if (userId == null ||
-        current.mode != SessionMode.daily ||
-        !current.isFinished) {
-      return;
-    }
+    if (userId == null || !current.isFinished) return;
     final data = ref.read(learningDataControllerProvider(userId)).value;
     final session = data?.sessionOn(current.today);
     if (session == null || session.isCompleted) return;
+    if (current.mode != SessionMode.daily && !session.isEmpty) return;
     await _learning.completeSession(
       current.today,
       ref.read(clockProvider).now(),
@@ -471,3 +513,27 @@ class SessionController extends _$SessionController {
 
   void _set(SessionState next) => state = AsyncData(next);
 }
+
+/// Words for a free run: everything past `nueva`, the ones due furthest in
+/// the future last, capped so a free run still respects the user's time.
+List<String> _freeReviewIds(
+  LearningData data,
+  Map<String, Word> words,
+  LocalDate today,
+) {
+  final rows =
+      [
+        for (final row in data.progress)
+          if (words.containsKey(row.wordId) && row.state != WordState.nueva)
+            row,
+      ]..sort((a, b) {
+        final dueA = a.nextDueOn ?? a.introducedOn;
+        final dueB = b.nextDueOn ?? b.introducedOn;
+        final byDue = dueA.compareTo(dueB);
+        return byDue != 0 ? byDue : a.wordId.compareTo(b.wordId);
+      });
+  return [for (final row in rows.take(freeReviewLimit)) row.wordId];
+}
+
+/// How many words one free run offers.
+const freeReviewLimit = 8;

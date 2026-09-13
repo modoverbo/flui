@@ -1,3 +1,4 @@
+import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
@@ -67,11 +68,21 @@ abstract class LearningData with _$LearningData {
 /// repository first; the state changes only when they succeed.
 @Riverpod(keepAlive: true)
 class LearningDataController extends _$LearningDataController {
+  /// How far back answers are read. `exercise_attempts` grows by one row per
+  /// answer for ever; this window still covers today's resume, the rolling
+  /// precision window and the longest review interval with room to spare.
+  /// Active days older than this survive through `daily_sessions`.
+  static const attemptWindowDays = 120;
+
   @override
   Future<LearningData> build(String userId) async {
+    final since = ref
+        .watch(clockProvider)
+        .localToday()
+        .addDays(-attemptWindowDays);
     final results = await (
       ref.watch(wordProgressRepositoryProvider).fetchProgress(),
-      ref.watch(exerciseAttemptRepositoryProvider).fetchAttempts(),
+      ref.watch(exerciseAttemptRepositoryProvider).fetchAttempts(since: since),
       ref.watch(dailySessionRepositoryProvider).fetchSessions(),
       ref.watch(streakRepairRepositoryProvider).fetchRepairs(),
     ).wait;

@@ -2,7 +2,9 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
+import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
+import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -53,8 +55,11 @@ void main() {
     expect(find.text('Hola, Ana'), findsOneWidget);
     expect(find.text('Tu sesión de hoy'), findsOneWidget);
     expect(find.text('10 minutos'), findsOneWidget);
-    expect(find.text('palabras tuyas'), findsOneWidget);
-    expect(find.text('0 de 7'), findsOneWidget);
+    // No "tuya" yet, so the hero shows the work instead of a bare zero.
+    expect(find.text('palabras tuyas'), findsNothing);
+    expect(find.text('en práctica'), findsOneWidget);
+    expect(find.text('días activos'), findsOneWidget);
+    expect(find.text('Camino a tu primera palabra tuya.'), findsOneWidget);
     expect(find.text('—'), findsOneWidget);
     expect(find.text('Tu palabra de hoy'), findsOneWidget);
     expect(find.text('perspicaz'), findsOneWidget);
@@ -89,7 +94,71 @@ void main() {
     expect(find.text('Hoy ya sumaste. Vuelve mañana.'), findsOneWidget);
     expect(find.text('Empezar'), findsNothing);
     expect(find.text('Tu palabra de hoy'), findsNothing);
-    expect(find.text('1 de 7'), findsOneWidget);
+    expect(find.text('1 de 7 días esta semana'), findsOneWidget);
+  });
+
+  testWidgets('an owned word becomes the hero number', (tester) async {
+    await plan(newWords: [perspicaz.id]);
+    await fakes.progress.saveProgress(
+      buildProgress(
+        wordId: perspicaz.id,
+        state: WordState.tuya,
+        introducedOn: day(1),
+      ),
+    );
+    await pumpPage(tester);
+
+    expect(find.text('palabras tuyas'), findsOneWidget);
+    expect(find.text('en práctica'), findsOneWidget);
+    expect(find.text('Camino a tu primera palabra tuya.'), findsNothing);
+  });
+
+  testWidgets('an exhausted catalog says so and offers a free run', (
+    tester,
+  ) async {
+    for (final word in seedWords) {
+      await fakes.progress.saveProgress(
+        buildProgress(
+          wordId: word.id,
+          introducedOn: day(1),
+          nextDueOn: day(20),
+        ),
+      );
+    }
+    await plan(minutes: 20);
+    await pumpPage(tester);
+
+    // Not "Con 10 minutos te presento una palabra nueva": a bigger budget
+    // cannot conjure words that do not exist.
+    expect(
+      find.text('Con 10 minutos te presento una palabra nueva.'),
+      findsNothing,
+    );
+    expect(
+      find.text(
+        'Ya recorriste todas mis palabras. Estoy escribiendo las que siguen.',
+      ),
+      findsOneWidget,
+    );
+    expect(find.textContaining('repasos te esperan'), findsOneWidget);
+
+    await tester.tap(find.text('Repaso libre'));
+    await tester.pumpAndSettle();
+    expect(find.text('route:${AppRoutes.session}'), findsOneWidget);
+  });
+
+  testWidgets('due reviews offer a repaso extra on Hoy', (tester) async {
+    await fakes.progress.saveProgress(
+      buildProgress(
+        wordId: perspicaz.id,
+        introducedOn: day(1),
+        nextDueOn: day(13),
+      ),
+    );
+    await plan(reviews: [perspicaz.id]);
+    await pumpPage(tester);
+
+    expect(find.text('Repaso extra'), findsOneWidget);
   });
 
   testWidgets('an empty 5-minute plan suggests 10 minutes', (tester) async {

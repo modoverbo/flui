@@ -18,6 +18,7 @@ class ProductionView extends StatefulWidget {
     required this.onSubmit,
     required this.onConfirm,
     required this.onRevise,
+    required this.onToggle,
     super.key,
     this.busy = false,
   });
@@ -30,6 +31,7 @@ class ProductionView extends StatefulWidget {
   final ValueChanged<String> onSubmit;
   final VoidCallback onConfirm;
   final VoidCallback onRevise;
+  final ValueChanged<ProductionRubric> onToggle;
   final bool busy;
 
   @override
@@ -61,6 +63,7 @@ class _ProductionViewState extends State<ProductionView> {
     );
 
     if (flow.phase != ProductionPhase.writing) {
+      final model = flow.modelSentence;
       return Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -89,11 +92,42 @@ class _ProductionViewState extends State<ProductionView> {
               ),
             ),
           ),
-          const SizedBox(height: FluiSpacing.xl),
+          if (model != null) ...[
+            const SizedBox(height: FluiSpacing.lg),
+            Text(
+              l10n.productionModelTitle,
+              style: FluiTypography.label.copyWith(color: FluiColors.gray),
+            ),
+            const SizedBox(height: FluiSpacing.xxs),
+            HighlightedText(
+              text: '«$model»',
+              forms: flow.forms,
+              style: FluiTypography.body.copyWith(color: FluiColors.gray),
+            ),
+          ],
+          const SizedBox(height: FluiSpacing.lg),
+          for (final item in ProductionRubric.values)
+            _RubricTile(
+              label: switch (item) {
+                ProductionRubric.meaning => l10n.productionRubricMeaning,
+                ProductionRubric.natural => l10n.productionRubricNatural,
+                ProductionRubric.fits => l10n.productionRubricFits,
+              },
+              checked: flow.confirmed.contains(item),
+              onChanged: widget.busy ? null : () => widget.onToggle(item),
+            ),
+          if (!flow.isRubricComplete) ...[
+            const SizedBox(height: FluiSpacing.xs),
+            Text(
+              l10n.productionRubricPending,
+              style: FluiTypography.caption.copyWith(color: FluiColors.gray),
+            ),
+          ],
+          const SizedBox(height: FluiSpacing.lg),
           FluiButton.primary(
             label: l10n.productionYes,
             isLoading: widget.busy,
-            onPressed: widget.onConfirm,
+            onPressed: flow.isRubricComplete ? widget.onConfirm : null,
           ),
           const SizedBox(height: FluiSpacing.sm),
           FluiButton.outline(
@@ -126,6 +160,8 @@ class _ProductionViewState extends State<ProductionView> {
             ProductionIssue.missingWord => l10n.productionMissingWord(
               widget.lemma,
             ),
+            ProductionIssue.repeated => l10n.productionRepeatedWords,
+            ProductionIssue.copiedModel => l10n.productionTooSimilar,
             null => null,
           },
         ),
@@ -136,6 +172,51 @@ class _ProductionViewState extends State<ProductionView> {
           onPressed: () => widget.onSubmit(_controller.text),
         ),
       ],
+    );
+  }
+}
+
+/// One rubric line: a checkbox the user ticks about their own sentence.
+class _RubricTile extends StatelessWidget {
+  const new({
+    required this.label,
+    required this.checked,
+    required this.onChanged,
+  });
+
+  final String label;
+  final bool checked;
+  final VoidCallback? onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onChanged,
+      borderRadius: FluiRadii.mdAll,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: FluiSpacing.xxs),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Checkbox(
+              value: checked,
+              onChanged: onChanged == null ? null : (_) => onChanged!(),
+            ),
+            const SizedBox(width: FluiSpacing.xs),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(top: FluiSpacing.sm),
+                child: Text(
+                  label,
+                  style: FluiTypography.body.copyWith(
+                    color: FluiColors.charcoal,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

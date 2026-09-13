@@ -14,8 +14,14 @@ sealed class SessionStep with _$SessionStep {
   /// Descubre + Entiende: the word detail.
   const factory discover({required String wordId}) = DiscoverStep;
 
-  /// Mira: the readings carousel.
-  const factory readings({required String wordId}) = ReadingsStep;
+  /// Mira: a slice of the readings carousel. Discovery shows one scene first
+  /// and the rest later in the session, so the word comes back between
+  /// exercises instead of in one block.
+  const factory readings({
+    required String wordId,
+    @Default(0) int fromIndex,
+    int? maxCount,
+  }) = ReadingsStep;
 
   /// Elige: the first cloze of a new word.
   const factory practiceCloze({

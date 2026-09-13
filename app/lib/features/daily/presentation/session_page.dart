@@ -10,10 +10,13 @@ import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_typography.dart';
 import 'package:flui/features/daily/domain/session_step.dart';
 import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
+import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
 import 'package:flui/features/daily/presentation/widgets/session_summary_view.dart';
 import 'package:flui/features/exercises/presentation/widgets/cloze_view.dart';
 import 'package:flui/features/exercises/presentation/widgets/form_recall_view.dart';
 import 'package:flui/features/exercises/presentation/widgets/production_view.dart';
+import 'package:flui/features/profile/domain/streak_calculator.dart';
+import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/word_detail_view.dart';
@@ -35,8 +38,8 @@ class SessionPage extends ConsumerWidget {
 
   final SessionMode mode;
 
-  String get _exitLocation =>
-      mode == SessionMode.daily ? AppRoutes.today : AppRoutes.practice;
+  // Every mode is entered from Hoy now that "Practica" is a tab no longer.
+  String get _exitLocation => AppRoutes.today;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -175,7 +178,7 @@ class _SessionBody extends StatelessWidget {
   }
 }
 
-class _StepContent extends StatelessWidget {
+class _StepContent extends ConsumerWidget {
   const new({
     required this.state,
     required this.controller,
@@ -187,7 +190,7 @@ class _StepContent extends StatelessWidget {
   final VoidCallback onExit;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final step = state.step;
     final word = state.word;
@@ -195,6 +198,13 @@ class _StepContent extends StatelessWidget {
     void next() => unawaited(controller.continueStep());
 
     if (step == null || word == null) {
+      final data = ref.watch(currentLearningDataProvider).value;
+      final tomorrow = state.today.addDays(1);
+      final streak = StreakCalculator.summarize(
+        activityDates: data?.activityDates ?? const {},
+        repairedDates: data?.repairs.toSet() ?? const {},
+        today: state.today,
+      );
       return SessionSummaryView(
         newWordCount: state.summaryNewWordIds.length,
         words: [
@@ -206,12 +216,19 @@ class _StepContent extends StatelessWidget {
               (
                 lemma: state.words[id]!.lemma,
                 state: state.progress[id]!.state.chipKind,
+                progress: state.progress[id],
               ),
         ],
         ownedLemmas: [
           for (final id in state.ownedWordIds) ?state.words[id]?.lemma,
         ],
         seeding: state.flow.seeding,
+        weekDays: streak.weekDays,
+        streak: streak.currentStreak,
+        tomorrowReviews: (data?.progress ?? const [])
+            .where((row) => row.nextDueOn == tomorrow)
+            .length,
+        accuracyPercent: state.accuracyPercent,
         onDone: onExit,
       );
     }
@@ -261,7 +278,7 @@ class _StepContent extends StatelessWidget {
             ),
           ),
           const SizedBox(height: FluiSpacing.md),
-          ReadingsCarousel(readings: word.readings, forms: word.forms),
+          ReadingsCarousel(readings: _scenesOf(word, step), forms: word.forms),
           const SizedBox(height: FluiSpacing.lg),
           FluiButton.primary(
             label: l10n.commonContinue,
@@ -315,10 +332,19 @@ class _StepContent extends StatelessWidget {
           onSubmit: controller.submitProduction,
           onConfirm: () => unawaited(controller.confirmProduction()),
           onRevise: controller.reviseProduction,
+          onToggle: controller.toggleProductionRubric,
         ),
         null => const SizedBox.shrink(),
       },
     };
+  }
+
+  /// Discovery splits Mira: one scene before Elige, the rest later on.
+  static List<Reading> _scenesOf(Word word, SessionStep step) {
+    if (step is! ReadingsStep) return word.readings;
+    final rest = word.readings.skip(step.fromIndex);
+    final maxCount = step.maxCount;
+    return (maxCount == null ? rest : rest.take(maxCount)).toList();
   }
 
   static String _situation(Word word) =>

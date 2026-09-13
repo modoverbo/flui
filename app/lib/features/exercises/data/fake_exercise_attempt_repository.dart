@@ -1,3 +1,4 @@
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/fake/fake_remote.dart';
 import 'package:flui/features/exercises/domain/exercise_attempt.dart';
@@ -22,11 +23,16 @@ final class FakeExerciseAttemptRepository
   final _rows = <String, List<ExerciseAttempt>>{};
 
   @override
-  Future<Result<List<ExerciseAttempt>>> fetchAttempts() async {
+  Future<Result<List<ExerciseAttempt>>> fetchAttempts({
+    LocalDate? since,
+  }) async {
     if (await simulateCall() case final failure?) return Result.err(failure);
     final userId = currentUserId();
     if (userId == null) return const Result.err(notSignedInFailure);
-    return Result.ok([...?_rows[userId]]);
+    return Result.ok([
+      for (final attempt in _rows[userId] ?? const <ExerciseAttempt>[])
+        if (since == null || !attempt.localDate.isBefore(since)) attempt,
+    ]);
   }
 
   @override

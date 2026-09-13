@@ -29,7 +29,7 @@ void main() {
       tester,
       location: AppRoutes.session,
       page: SessionPage(mode: mode),
-      otherRoutes: const [AppRoutes.today, AppRoutes.practice],
+      otherRoutes: const [AppRoutes.today],
       overrides: fakes.overrides,
       surfaceSize: size,
     );
@@ -59,7 +59,7 @@ void main() {
 
     expect(find.text('Tu palabra de hoy'), findsOneWidget);
     expect(find.text('perspicaz'), findsOneWidget);
-    expect(find.text('1 de 6'), findsOneWidget);
+    expect(find.text('1 de 7'), findsOneWidget);
     expect(find.text('Reemplaza'), findsOneWidget);
     expect(find.text('Cuándo no usarla'), findsOneWidget);
     expect(find.text('No la confundas con'), findsOneWidget);
@@ -129,7 +129,7 @@ void main() {
     expect(find.text('«plantear» ya es parte de cómo hablas.'), findsOneWidget);
     expect(find.text('Tu repertorio sigue firme.'), findsOneWidget);
     await tapVisible(tester, 'Volver a Hoy');
-    expect(find.text('route:${AppRoutes.practice}'), findsOneWidget);
+    expect(find.text('route:${AppRoutes.today}'), findsOneWidget);
   });
 
   testWidgets('steps fit at 130 % text size on a phone', (tester) async {

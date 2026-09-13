@@ -1,3 +1,4 @@
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/fake/fake_remote.dart';
 import 'package:flui/core/supabase/data_error_mapper.dart';
@@ -16,14 +17,22 @@ final class SupabaseExerciseAttemptRepository
   final String? Function() currentUserId;
 
   @override
-  Future<Result<List<ExerciseAttempt>>> fetchAttempts() async {
+  Future<Result<List<ExerciseAttempt>>> fetchAttempts({
+    LocalDate? since,
+  }) async {
     try {
       final rows = await fetchAllPages(
-        (from, to) => _client
-            .from('exercise_attempts')
-            .select(ExerciseAttemptDto.columns)
-            .order('created_at', ascending: true)
-            .range(from, to),
+        (from, to) =>
+            (since == null
+                    ? _client
+                          .from('exercise_attempts')
+                          .select(ExerciseAttemptDto.columns)
+                    : _client
+                          .from('exercise_attempts')
+                          .select(ExerciseAttemptDto.columns)
+                          .gte('local_date', since.toIso()))
+                .order('created_at', ascending: true)
+                .range(from, to),
       );
       return Result.ok([
         for (final row in rows) ExerciseAttemptDto.fromJson(row).toDomain(),
