@@ -1,0 +1,191 @@
+{
+  "@@locale": "es",
+  "commonRetry": "Reintentar",
+  "commonLoading": "Cargando",
+  "commonComingSoon": "Muy pronto",
+  "errorNetwork": "Sin conexión. Revisa tu internet y vuelve a intentarlo.",
+  "errorUnexpected": "Algo no salió bien. Inténtalo de nuevo.",
+  "splashError": "No pudimos conectar con flui.",
+  "welcomeTagline": "Habla como quieres sonar.",
+  "welcomeTaglineHighlight": "sonar.",
+  "@welcomeTaglineHighlight": {
+    "description": "Exact ending of welcomeTagline that is shown in yellow."
+  },
+  "welcomeStart": "Empezar",
+  "welcomeHaveAccount": "Ya tengo una cuenta",
+  "introSkip": "Saltar",
+  "introNext": "Siguiente",
+  "introCreateAccount": "Crear mi cuenta",
+  "introSlideOneTitle": "No te faltan ideas. Te faltan palabras.",
+  "introSlideOneBody": "flui te ayuda a encontrar la palabra que encaja, justo cuando la necesitas.",
+  "introSlideTwoTitle": "Tú eliges cuánto. flui se adapta.",
+  "introSlideTwoBody": "5, 10, 20 o 30 minutos al día. Tu sesión cabe en tu agenda.",
+  "introSlideThreeTitle": "Aprende una palabra. Úsala hoy.",
+  "introSlideThreeBody": "La descubres, la entiendes y la usas en conversaciones reales. Así se vuelve tuya.",
+  "fieldNameLabel": "Nombre",
+  "fieldNameHint": "¿Cómo te llamamos?",
+  "fieldEmailLabel": "Correo",
+  "fieldEmailHint": "tu@correo.com",
+  "fieldPasswordLabel": "Contraseña",
+  "fieldPasswordHint": "Mínimo 8 caracteres",
+  "passwordShow": "Mostrar contraseña",
+  "passwordHide": "Ocultar contraseña",
+  "validationNameEmpty": "Dinos cómo te llamas.",
+  "validationNameTooLong": "Usa 80 caracteres o menos.",
+  "validationEmailEmpty": "Escribe tu correo.",
+  "validationEmailInvalid": "Revisa tu correo: parece incompleto.",
+  "validationPasswordEmpty": "Escribe tu contraseña.",
+  "validationPasswordTooShort": "Usa al menos 8 caracteres.",
+  "authErrorInvalidCredentials": "Ese correo y esa contraseña no coinciden. Prueba otra vez.",
+  "authErrorEmailInUse": "Ya hay una cuenta con ese correo. ¿Entras con ella?",
+  "authErrorWeakPassword": "Elige una contraseña más segura.",
+  "authErrorEmailNotConfirmed": "Confirma tu correo para entrar. Revisa tu bandeja.",
+  "authErrorRateLimited": "Demasiados intentos. Espera un momento y vuelve a probar.",
+  "authErrorSignUpDisabled": "Por ahora no aceptamos cuentas nuevas. Vuelve pronto.",
+  "registerTitle": "Crea tu cuenta",
+  "registerSubtitle": "Suena como tú, con las palabras justas.",
+  "registerSubmit": "Crear cuenta",
+  "registerHaveAccount": "Ya tengo una cuenta",
+  "registerGoogleSoon": "Continuar con Google (muy pronto)",
+  "registerConfirmEmailTitle": "Revisa tu correo",
+  "registerConfirmEmailBody": "Te enviamos un enlace a {email} para confirmar tu cuenta.",
+  "@registerConfirmEmailBody": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "registerGoToLogin": "Ir a entrar",
+  "loginTitle": "Hola de nuevo",
+  "loginSubtitle": "Tu repertorio te espera.",
+  "loginSubmit": "Entrar",
+  "loginForgotPassword": "¿Olvidaste tu contraseña?",
+  "loginNoAccount": "Crear una cuenta",
+  "resetTitle": "Recupera tu acceso",
+  "resetBody": "Escribe tu correo y te enviaremos un enlace para crear una contraseña nueva.",
+  "resetSubmit": "Enviar enlace",
+  "resetSent": "Listo. Si {email} tiene una cuenta, te llegará un enlace en unos minutos.",
+  "@resetSent": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
+  "resetBackToLogin": "Volver a entrar",
+  "paywallTitle": "Empieza tus 7 días gratis",
+  "paywallSubtitle": "Cada día, palabras que encajan en tu forma de hablar.",
+  "paywallTerms": "Hoy no te cobramos nada. Tu plan empieza el día 8. Cancela cuando quieras.",
+  "paywallCta": "Empezar prueba gratis",
+  "paywallSignOut": "Cerrar sesión",
+  "paywallRecommended": "Recomendado",
+  "paywallPlansError": "No pudimos cargar los planes.",
+  "paywallCheckoutError": "No pudimos abrir el pago. Inténtalo de nuevo.",
+  "paywallCheckoutUnavailable": "Este plan no está disponible ahora. Elige otro o vuelve más tarde.",
+  "paywallAlreadySubscribed": "Ya tienes acceso. Te llevamos a flui.",
+  "paywallOpeningCheckout": "Abriendo el pago seguro…",
+  "planPriceMonthly": "{price} al mes",
+  "@planPriceMonthly": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "planPriceMonths": "{price} cada {months} meses",
+  "@planPriceMonths": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      },
+      "months": {
+        "type": "int"
+      }
+    }
+  },
+  "planPriceDays": "{price} cada {days} días",
+  "@planPriceDays": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "planMonthlyEquivalent": "Equivale a {price} al mes",
+  "@planMonthlyEquivalent": {
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "checkoutReturnActivating": "Activando tu prueba…",
+  "checkoutReturnActivatingBody": "Esto tarda unos segundos.",
+  "checkoutReturnTimeoutTitle": "Está tardando más de lo normal",
+  "checkoutReturnTimeoutBody": "Si ya confirmaste tu prueba, espera un minuto y vuelve a intentarlo. Si sigue sin activarse, escríbenos y lo resolvemos.",
+  "checkoutReturnRetry": "Volver a intentar",
+  "checkoutReturnBackToPlans": "Ver planes",
+  "navToday": "Hoy",
+  "navWords": "Palabras",
+  "navPractice": "Practica",
+  "navContext": "En contexto",
+  "navProgress": "Tu progreso",
+  "todayComingSoonBody": "Aquí vivirá tu sesión del día.",
+  "wordsComingSoonBody": "Aquí verás tu repertorio crecer.",
+  "practiceComingSoonBody": "Aquí afianzarás tus palabras.",
+  "contextComingSoonBody": "Aquí verás tus palabras en escenas reales.",
+  "timeBudgetTitle": "¿Cuánto tiempo tienes hoy?",
+  "timeBudgetBody": "Muy pronto podrás elegir 5, 10, 20 o 30 minutos. flui se adapta.",
+  "timeBudgetContinue": "Ir a Hoy",
+  "progressGreeting": "Hola, {name}",
+  "@progressGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "progressGreetingAnonymous": "Hola",
+  "progressPlanTitle": "Tu plan",
+  "progressTrialUntil": "Prueba gratis hasta el {date}",
+  "@progressTrialUntil": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "progressPlanActive": "Plan activo",
+  "progressPlanActiveUntil": "Plan activo hasta el {date}",
+  "@progressPlanActiveUntil": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "progressPlanInactive": "Sin plan activo",
+  "progressSignOut": "Cerrar sesión",
+  "wordStateNew": "Nueva",
+  "wordStatePractice": "Practica",
+  "wordStateOwned": "Tuya",
+  "notFoundTitle": "No encontramos esta página.",
+  "notFoundAction": "Ir al inicio",
+  "appTitle": "flui — Habla como quieres sonar.",
+  "paywallPlanSelected": "Plan seleccionado",
+  "introSlideLabel": "Paso {current} de {total}",
+  "@introSlideLabel": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  }
+}

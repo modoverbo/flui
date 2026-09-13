@@ -1,0 +1,123 @@
+import 'package:flui/app/flui_app.dart';
+import 'package:flui/app/licenses.dart';
+import 'package:flui/app/router/app_router.dart';
+import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/clock/clock.dart';
+import 'package:flui/core/config/app_config.dart';
+import 'package:flui/core/config/app_config_provider.dart';
+import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/error/result.dart';
+import 'package:flui/core/supabase/supabase_client_provider.dart';
+import 'package:flui/features/auth/data/fake_auth_repository.dart';
+import 'package:flui/features/auth/data/supabase_auth_repository.dart';
+import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/features/subscription/data/fake_checkout_launcher.dart';
+import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
+import 'package:flui/features/subscription/data/supabase_subscription_repository.dart';
+import 'package:flui/features/subscription/data/url_checkout_launcher.dart';
+import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/misc.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+/// Composition root: picks the backend and wires repositories into Riverpod.
+Future<void> bootstrap(Result<AppConfig> configResult) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Path URLs (no #) so Whop can redirect to /checkout/return.
+  usePathUrlStrategy();
+  registerBundledLicenses();
+
+  switch (configResult) {
+    case Err(:final failure):
+      runApp(ProviderScope(child: ConfigErrorApp(failure: failure)));
+    case Ok(value: final config):
+      final overrides = switch (config.backend) {
+        Backend.fake => fakeBackendOverrides(),
+        Backend.supabase => await supabaseBackendOverrides(config),
+      };
+      runApp(
+        ProviderScope(
+          overrides: [
+            appConfigProvider.overrideWithValue(config),
+            ...overrides,
+          ],
+          // Failures are typed and shown to the user; no silent retries.
+          retry: (_, _) => null,
+          child: const FluiApp(),
+        ),
+      );
+  }
+}
+
+/// In-memory backend (`BACKEND=fake`): the whole Phase A flow, no network.
+List<Override> fakeBackendOverrides({
+  Duration latency = const Duration(milliseconds: 350),
+}) {
+  final auth = FakeAuthRepository(latency: latency);
+  final subscriptions = FakeSubscriptionRepository(
+    clock: const SystemClock(),
+    currentUserId: () => auth.currentUser?.id,
+    latency: latency,
+  );
+  return [
+    authRepositoryProvider.overrideWithValue(auth),
+    subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+    checkoutLauncherProvider.overrideWith(
+      (ref) => FakeCheckoutLauncher(
+        subscriptions: subscriptions,
+        onReturn: () => ref.read(goRouterProvider).go(AppRoutes.checkoutReturn),
+      ),
+    ),
+  ];
+}
+
+/// Supabase backend. `Supabase.initialize` restores a persisted session
+/// before the first frame, so reloads keep the user signed in.
+Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
+  await Supabase.initialize(
+    url: config.supabaseUrl.toString(),
+    publishableKey: config.supabaseAnonKey,
+  );
+  final client = Supabase.instance.client;
+  return [
+    supabaseClientProvider.overrideWithValue(client),
+    authRepositoryProvider.overrideWithValue(
+      SupabaseAuthRepository(client.auth, appUrl: config.appUrl),
+    ),
+    subscriptionRepositoryProvider.overrideWithValue(
+      SupabaseSubscriptionRepository(client),
+    ),
+    checkoutLauncherProvider.overrideWithValue(const UrlCheckoutLauncher()),
+  ];
+}
+
+/// Developer-facing screen for a broken build configuration.
+class ConfigErrorApp extends StatelessWidget {
+  const new({required this.failure, super.key});
+
+  final Failure failure;
+
+  @override
+  Widget build(BuildContext context) {
+    final message = failure is ConfigFailure
+        ? (failure as ConfigFailure).message
+        : failure.toString();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Text(
+              'No pudimos iniciar flui.\n\n$message\n\n'
+              'flutter run --dart-define-from-file=config/fake.json',
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
