@@ -135,7 +135,7 @@ Store the key only as the `WHOP_API_KEY` function secret.
 ### 2.4 Link plans to the database
 
 Production does not use the seed. Insert the plans with the **production** Whop plan ids and your
-final prices (the seed prices are placeholders):
+the confirmed prices (monthly 6.99 USD, quarterly 16.15 USD):
 
 ```sql
 insert into public.subscription_plans
