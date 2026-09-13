@@ -1,6 +1,7 @@
 import 'package:flui/app/router/app_redirect.dart';
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/features/auth/domain/auth_status.dart';
+import 'package:flui/features/daily/domain/daily_gate.dart';
 import 'package:flui/features/subscription/domain/access_gate.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -90,6 +91,7 @@ void main() {
         final result = appRedirect(
           auth: auth,
           access: access,
+          daily: DailyGate.planned,
           location: Uri.parse(location),
         );
 
@@ -98,10 +100,76 @@ void main() {
     }
   });
 
+  // Once per local day: without today's session the app asks for the time
+  // budget first. Tu progreso stays reachable (account and sign out).
+  final dailyCases = <(DailyGate, String location, String?)>[
+    (DailyGate.needsBudget, '/today', '/today/time'),
+    (DailyGate.needsBudget, '/', '/today/time'),
+    (DailyGate.needsBudget, '/login', '/today/time'),
+    (DailyGate.needsBudget, '/words', '/today/time'),
+    (DailyGate.needsBudget, '/words/abc', '/today/time'),
+    (DailyGate.needsBudget, '/practice', '/today/time'),
+    (DailyGate.needsBudget, '/reading', '/today/time'),
+    (DailyGate.needsBudget, '/session', '/today/time'),
+    (DailyGate.needsBudget, '/checkout/return', '/today/time'),
+    (DailyGate.needsBudget, splashFrom('/words'), '/today/time'),
+    (DailyGate.needsBudget, '/today/time', null),
+    (DailyGate.needsBudget, '/progress', null),
+    (DailyGate.unknown, '/today', splashFrom('/today')),
+    (DailyGate.unknown, '/session', splashFrom('/session')),
+    (DailyGate.unknown, splashFrom('/today'), null),
+    (DailyGate.unknown, '/today/time', null),
+    (DailyGate.unknown, '/progress', null),
+    (DailyGate.planned, '/session', null),
+    (DailyGate.planned, '/session?mode=review', null),
+    (DailyGate.planned, '/words/abc', null),
+    (DailyGate.planned, '/today/time', null),
+    (DailyGate.unavailable, '/today', null),
+    (DailyGate.unavailable, splashFrom('/today'), '/today'),
+  ];
+
+  group('daily time budget guard', () {
+    for (final (daily, location, expected) in dailyCases) {
+      test('granted + $daily at $location -> $expected', () {
+        expect(
+          appRedirect(
+            auth: inn,
+            access: granted,
+            daily: daily,
+            location: Uri.parse(location),
+          ),
+          expected,
+        );
+      });
+    }
+
+    test('signed out and paywall rules win over the daily guard', () {
+      expect(
+        appRedirect(
+          auth: out,
+          access: loading,
+          daily: DailyGate.needsBudget,
+          location: Uri.parse('/today'),
+        ),
+        '/welcome',
+      );
+      expect(
+        appRedirect(
+          auth: inn,
+          access: denied,
+          daily: DailyGate.needsBudget,
+          location: Uri.parse('/today'),
+        ),
+        '/paywall',
+      );
+    });
+  });
+
   test('keeps query parameters of the remembered destination', () {
     final result = appRedirect(
       auth: inn,
       access: granted,
+      daily: DailyGate.planned,
       location: Uri.parse(splashFrom('/words?filter=tuya')),
     );
 

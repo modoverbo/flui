@@ -2,7 +2,9 @@
 
 Flutter app of flui (web first, Android and iOS scaffolded). Phase A ships the brand system,
 onboarding, email/password auth, the Whop trial paywall, the checkout return flow and the app
-shell. It runs fully offline with an in-memory **fake backend** or against **Supabase**.
+shell. Phase B ships the learning experience: daily time budget, session planner, the session
+runner (Descubre → Mira → Elige → Úsala → check), reviews, Palabras, Practica, En contexto and
+Tu progreso. It runs fully offline with an in-memory **fake backend** or against **Supabase**.
 
 ## Quick path (fake backend, no network)
 
@@ -16,13 +18,16 @@ flutter run -d chrome --web-port 3000 --dart-define-from-file=config/fake.json
 ```
 
 Walk it: Empezar → Saltar → create an account (any valid email, 8+ character password) →
-Empezar prueba gratis → "Activando tu prueba…" → time budget → Hoy.
+Empezar prueba gratis → "Activando tu prueba…" → time budget → Hoy → Empezar (first word:
+perspicaz) → session → Tu progreso.
 
 | Fake backend behavior | Detail |
 |-----------------------|--------|
 | Sign in | Any valid email and password; a registered email must use its password |
 | Plans | Same as `supabase/seed.sql` (monthly, quarterly with "Ahorra 17%") |
 | Checkout | No redirect: grants a 7-day trial after one extra `my_access()` poll (webhook lag) |
+| Content | The 8 words of `supabase/seed.sql`, generated into `lib/features/vocabulary/data/fake/seed_content.dart` |
+| Learning data | Progress, attempts, daily sessions and streak repairs per user, in memory |
 | State | In memory; a page reload starts signed out |
 
 ## Against local Supabase
@@ -62,6 +67,7 @@ Only `*.example.json` files are committed. An invalid config shows a developer e
 | Integration flow (headless) | `flutter test integration_test -d flutter-tester` |
 | Web release build | `flutter build web --release --dart-define-from-file=config/fake.json` |
 | Brand SVGs and web icons | see the header of `tool/generate_brand_assets.mjs` |
+| Fake content from the seed | `dart run tool/seed_to_fixture.dart` (a test fails when it drifts) |
 | Android/iOS launcher icons | `dart run flutter_launcher_icons` |
 
 Generated files (`*.g.dart`, `*.freezed.dart`, `lib/core/l10n/gen/`) are **not committed**; CI
@@ -78,7 +84,11 @@ lib/
   features/
     auth/ subscription/       # domain (pure Dart) · data (Supabase + fake) · presentation
     onboarding/               # welcome, intro
-    daily/ vocabulary/ exercises/ reading/ profile/   # Phase B (placeholders today)
+    daily/                    # time budget, SessionPlanner, SessionFlow, Hoy, session runner
+    vocabulary/               # words, progress, ReviewScheduler, MasteryPolicy, Palabras
+    exercises/                # cloze flow, form recall, production, attempts, Practica
+    reading/                  # readings, En contexto
+    profile/                  # streaks and repairs, stats, achievements, Tu progreso
 ```
 
 - **Dependency rule:** `presentation → domain ← data`. Domain imports no Flutter, Supabase or
@@ -101,12 +111,29 @@ lib/
 | Web | Path URL strategy, SPA rewrite and revalidating cache headers in `vercel.json` (no COOP/COEP), branded loading splash in `web/index.html`. CanvasKit loads from Google's CDN by default. |
 | Google sign-in | Visible, disabled button with a `TODO(auth)`; not in Phase A. |
 
-## Phase B entry points
+## Learning rules
+
+`docs/learning-method.md` is the spec; the rules are pure Dart under `features/*/domain` with
+table-driven tests. Interpretations where the spec leaves room:
+
+| Topic | Choice |
+|-------|--------|
+| Preselected budget | Today's choice, else the latest earlier session ("yesterday", also after a skipped day), else 10 min |
+| Warm-up | Up to 2 planned due reviews whose last grade was `good` go first; no extra items |
+| Introduced word | `word_progress` row on leaving Descubre, `next_due_on = today + 1` so an abandoned session still brings it back |
+| Form recall prompt | The example sentence with the word masked; typo tolerance (1 edit) only for forms of 6+ letters |
+| Úsala situation | "Antes decías: «first `replaces.before`»" |
+| Re-queue | Forced reveal → once per word with an unused sentence; a first-try re-queue of a `nueva` word counts as its unaided check |
+| Resume | Rebuilt from `word_progress` and today's `exercise_attempts`; pending re-queues are not restored; forced reveals count per local day |
+| Daily guard | Without today's `daily_sessions` row, app routes go to `/today/time`; `/progress` stays reachable |
+
+## Phase B entry points (for later phases)
 
 | Need | Use |
 |------|-----|
-| Session planner, time budget | `features/daily/` (`today_page.dart`, `time_budget_page.dart` at `/today/time`) |
-| Words, exercises, readings, stats | `features/vocabulary/`, `exercises/`, `reading/`, `profile/` pages already in the shell |
+| Learning data of the user | `learningDataControllerProvider(userId)` (writes go through it), `currentLearningDataProvider` |
+| Session runner | `/session` (`?mode=review` for Practica), `SessionController`, `SessionFlow` |
+| Content | `catalogProvider`, `wordsByIdProvider` |
 | Signed-in user / access | `authUserProvider`, `currentAccessProvider`, `accessGateProvider` |
 | Supabase client in data sources | `supabaseClientProvider` (override set in `bootstrap.dart`) |
 | Today's local date | `clockProvider` → `clock.today()`; `FixedClock` in tests |

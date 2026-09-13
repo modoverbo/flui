@@ -22,6 +22,23 @@ abstract final class AppRoutes {
   static const reading = '/reading';
   static const progress = '/progress';
 
+  // Full screen, outside the shell.
+  static const session = '/session';
+  static const sessionReview = '/session?mode=review';
+
+  static String wordDetail(String wordId) =>
+      '$words/${Uri.encodeComponent(wordId)}';
+
+  /// Routes that need today's time budget first (asked once per local day).
+  /// "Tu progreso" stays reachable for the account and sign out.
+  static bool needsDailyBudget(String path) =>
+      path == today ||
+      path == session ||
+      path == practice ||
+      path == reading ||
+      path == words ||
+      path.startsWith('$words/');
+
   static const Set<String> publicRoutes = {
     welcome,
     intro,

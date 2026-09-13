@@ -6,9 +6,10 @@ import 'support/app_flow.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('welcome → register → paywall → fake checkout → return → shell', (
-    tester,
-  ) async {
-    await runFirstRunFlow(tester);
-  });
+  testWidgets(
+    'first day: register → paywall → time budget → session → progress',
+    (tester) async {
+      await runFirstRunFlow(tester);
+    },
+  );
 }

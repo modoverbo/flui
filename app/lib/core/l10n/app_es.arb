@@ -2,7 +2,6 @@
   "@@locale": "es",
   "commonRetry": "Reintentar",
   "commonLoading": "Cargando",
-  "commonComingSoon": "Muy pronto",
   "errorNetwork": "Sin conexión. Revisa tu internet y vuelve a intentarlo.",
   "errorUnexpected": "Algo no salió bien. Inténtalo de nuevo.",
   "splashError": "No pudimos conectar con flui.",
@@ -134,13 +133,8 @@
   "navPractice": "Practica",
   "navContext": "En contexto",
   "navProgress": "Tu progreso",
-  "todayComingSoonBody": "Aquí vivirá tu sesión del día.",
-  "wordsComingSoonBody": "Aquí verás tu repertorio crecer.",
-  "practiceComingSoonBody": "Aquí afianzarás tus palabras.",
-  "contextComingSoonBody": "Aquí verás tus palabras en escenas reales.",
   "timeBudgetTitle": "¿Cuánto tiempo tienes hoy?",
-  "timeBudgetBody": "Muy pronto podrás elegir 5, 10, 20 o 30 minutos. flui se adapta.",
-  "timeBudgetContinue": "Ir a Hoy",
+  "timeBudgetBody": "Elige y flui arma tu sesión a tu medida.",
   "progressGreeting": "Hola, {name}",
   "@progressGreeting": {
     "placeholders": {
@@ -187,5 +181,352 @@
         "type": "int"
       }
     }
-  }
+  },
+  "commonContinue": "Continuar",
+  "commonClose": "Salir",
+  "commonNext": "Siguiente",
+  "commonPrevious": "Anterior",
+  "commonNoData": "—",
+  "timeBudgetMinutes": "{minutes} min",
+  "@timeBudgetMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "timeBudgetFiveLine": "Solo repasos",
+  "timeBudgetTenLine": "1 palabra nueva + repaso",
+  "timeBudgetTwentyLine": "2 palabras nuevas + repaso",
+  "timeBudgetThirtyLine": "Hasta 3 palabras nuevas + repaso",
+  "timeBudgetChoiceSemantics": "{minutes} minutos: {line}",
+  "@timeBudgetChoiceSemantics": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "line": {
+        "type": "String"
+      }
+    }
+  },
+  "timeBudgetStart": "Empezar",
+  "todaySubtitle": "Un paso más hacia cómo quieres sonar.",
+  "todaySessionTitle": "Tu sesión de hoy",
+  "todaySessionMinutes": "{minutes} minutos",
+  "@todaySessionMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "todayStart": "Empezar",
+  "todayContinue": "Continuar",
+  "todayChangeTime": "Cambiar tiempo",
+  "todayAfianzar": "Hoy toca afianzar",
+  "todayDone": "Hoy ya sumaste. Vuelve mañana.",
+  "todayWordTitle": "Tu palabra de hoy",
+  "todayReviews": "Repasos de hoy: {count}",
+  "@todayReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "todayEmptyPlan": "Con 10 minutos te presento una palabra nueva.",
+  "todayEmptyPlanAction": "Cambiar a 10 minutos",
+  "todayLoadError": "No pudimos cargar tu sesión.",
+  "statOwnedWords": "palabras tuyas",
+  "statWeekValue": "{count} de 7",
+  "@statWeekValue": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "statWeekLabel": "días esta semana",
+  "statPrecisionValue": "{percent} %",
+  "@statPrecisionValue": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "statPrecisionLabel": "precisión",
+  "statPracticeWords": "en práctica",
+  "statActiveDays": "días activos",
+  "sessionProgress": "{current} de {total}",
+  "@sessionProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionCloseTooltip": "Salir de la sesión",
+  "sessionCloseTitle": "¿Salir por ahora?",
+  "sessionCloseBody": "Tu avance queda guardado. Puedes seguir cuando quieras.",
+  "sessionCloseStay": "Seguir aquí",
+  "sessionCloseLeave": "Salir",
+  "sessionLoadError": "No pudimos preparar tu sesión.",
+  "sessionSeeding": "Hoy estás sembrando; mañana cosechas.",
+  "sessionReviewLabel": "Repaso",
+  "sessionFinalCheckLabel": "Una frase nueva",
+  "sessionRequeueLabel": "Otra oportunidad",
+  "sessionEndNewWords": "{count, plural, =0{Tu repertorio sigue firme.} =1{Una palabra más en tu repertorio.} other{{count} palabras más en tu repertorio.}}",
+  "@sessionEndNewWords": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionEndOwned": "Ya es tuya.",
+  "sessionEndOwnedBody": "«{word}» ya es parte de cómo hablas.",
+  "@sessionEndOwnedBody": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "sessionEndWordsTitle": "Tus palabras de hoy",
+  "sessionEndDone": "Volver a Hoy",
+  "sessionNothingPending": "No hay nada pendiente ahora.",
+  "wordTodayBadge": "Tu palabra de hoy",
+  "wordSyllablesSemantics": "Sílabas: {syllables}",
+  "@wordSyllablesSemantics": {
+    "placeholders": {
+      "syllables": {
+        "type": "String"
+      }
+    }
+  },
+  "wordReplacesTitle": "Reemplaza",
+  "wordUsageTipTitle": "Consejo",
+  "wordWhenNotTitle": "Cuándo no usarla",
+  "wordConfusionsTitle": "No la confundas con",
+  "wordSeeContext": "Ver en contexto",
+  "wordPractice": "Practicar",
+  "wordPracticeNow": "Practicar ahora",
+  "wordNextReview": "Próximo repaso: {date}",
+  "@wordNextReview": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "wordNotFound": "No encontramos esta palabra.",
+  "wordBackToWords": "Volver a Palabras",
+  "readingsTitle": "Mira cómo suena",
+  "readingPosition": "{current} de {total}",
+  "@readingPosition": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "readingBefore": "Antes decías…",
+  "readingAfter": "Ahora:",
+  "sceneTrabajo": "Trabajo",
+  "sceneSocial": "Social",
+  "sceneEntrevista": "Entrevista",
+  "sceneFamilia": "Familia",
+  "clozeTitle": "Encuentra la palabra que encaja",
+  "clozeConfirm": "Confirmar",
+  "clozeAlmost": "Casi.",
+  "clozeNotYet": "Todavía no. Piensa otra vez.",
+  "clozeHint": "Pista",
+  "clozeTryAgain": "Intentar de nuevo",
+  "clozeCorrect": "¡Eso es!",
+  "clozeRevealed": "¡Ahí está!",
+  "clozeOneLeft": "Solo queda una opción. Tócala para verla.",
+  "clozeWhyNotTitle": "Por qué no las otras",
+  "clozeBlankSemantics": "espacio en blanco",
+  "clozeOptionDiscarded": "{option}, descartada",
+  "@clozeOptionDiscarded": {
+    "placeholders": {
+      "option": {
+        "type": "String"
+      }
+    }
+  },
+  "formRecallTitle": "Ahora dilo tú.",
+  "formRecallBody": "Escribe la palabra que falta.",
+  "formRecallMeaningOnly": "Escribe la palabra que significa esto.",
+  "formRecallFieldLabel": "Tu palabra",
+  "formRecallCheck": "Comprobar",
+  "formRecallHint": "Pista",
+  "formRecallReveal": "Ver la palabra",
+  "formRecallHintSyllables": "{count, plural, =1{Tiene 1 sílaba.} other{Tiene {count} sílabas.}}",
+  "@formRecallHintSyllables": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "formRecallHintFirstLetter": "Empieza por «{letter}».",
+  "@formRecallHintFirstLetter": {
+    "placeholders": {
+      "letter": {
+        "type": "String"
+      }
+    }
+  },
+  "formRecallRejected": "Casi. Prueba otra vez.",
+  "formRecallAccepted": "¡Eso es!",
+  "formRecallRevealed": "La palabra es «{word}». La tendrás de nuevo pronto.",
+  "@formRecallRevealed": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "productionTitle": "Úsala",
+  "productionPrompt": "Antes decías: «{before}». Escribe una frase tuya con «{word}».",
+  "@productionPrompt": {
+    "placeholders": {
+      "before": {
+        "type": "String"
+      },
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "productionFieldLabel": "Tu frase",
+  "productionSubmit": "Comprobar",
+  "productionTooShort": "Escribe una frase de al menos 4 palabras.",
+  "productionMissingWord": "Incluye «{word}» o una de sus formas.",
+  "@productionMissingWord": {
+    "placeholders": {
+      "word": {
+        "type": "String"
+      }
+    }
+  },
+  "productionSelfCheckTitle": "¿Suena natural?",
+  "productionSelfCheckBody": "Léela en voz alta. ¿Dice lo que quieres y suena a ti?",
+  "productionYes": "Sí, suena natural",
+  "productionNo": "Quiero ajustarla",
+  "wordsSubtitle": "Tu repertorio, palabra por palabra.",
+  "wordsFilterAll": "Todas",
+  "wordsEmptyTitle": "Tu repertorio empieza hoy.",
+  "wordsEmptyBody": "Aquí verás tus palabras crecer.",
+  "wordsFilterEmpty": "No hay palabras en este estado todavía.",
+  "practiceSubtitle": "Afianza lo que ya empezaste.",
+  "practiceDueCount": "{count, plural, =1{1 palabra para afianzar hoy} other{{count} palabras para afianzar hoy}}",
+  "@practiceDueCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceStart": "Empezar repaso",
+  "practiceAllDone": "Todo al día. Vuelve mañana.",
+  "practiceNextDue": "Tu próximo repaso: {date}",
+  "@practiceNextDue": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "practiceNoWords": "Cuando descubras tu primera palabra, aquí la afianzarás.",
+  "contextSubtitle": "Tus palabras en escenas reales.",
+  "contextFilterAll": "Todas",
+  "contextEmptyTitle": "Aún no hay escenas.",
+  "contextEmptyBody": "Aquí verás tus palabras en escenas reales.",
+  "progressTitle": "Tu progreso",
+  "progressWeekDays": "{count} de 7 días esta semana",
+  "@progressWeekDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progressStreak": "{count, plural, =0{Tu racha empieza con tu próxima sesión} =1{1 día seguido} other{{count} días seguidos}}",
+  "@progressStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progressRepairOffer": "Recupera el {date} sin costo: tu racha sería de {count} días.",
+  "@progressRepairOffer": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "progressRepairAction": "Recuperar día",
+  "progressRepairUsed": "Esta semana ya recuperaste un día.",
+  "progressStatsTitle": "Tus números",
+  "progressAchievementsTitle": "Tus logros",
+  "progressAccountTitle": "Tu cuenta",
+  "progressWeekdayActive": "{day}: activo",
+  "@progressWeekdayActive": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    },
+    "description": "Semantics label of a week dot; day is a full weekday name."
+  },
+  "progressWeekdayInactive": "{day}: sin actividad",
+  "@progressWeekdayInactive": {
+    "placeholders": {
+      "day": {
+        "type": "String"
+      }
+    }
+  },
+  "achievementFirstWord": "Primera palabra",
+  "achievementFirstOwnedWord": "Primera palabra tuya",
+  "achievementFiveActiveDays": "5 días activos",
+  "achievementTenWords": "10 palabras",
+  "achievementFirstOwnSentence": "Primera frase propia",
+  "achievementCompleted": "Completado",
+  "achievementProgress": "{current} de {target}",
+  "@achievementProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "target": {
+        "type": "int"
+      }
+    }
+  },
+  "weekdayInitials": "L,M,X,J,V,S,D",
+  "@weekdayInitials": {
+    "description": "Comma-separated initials, Monday to Sunday."
+  },
+  "weekdayNames": "lunes,martes,miércoles,jueves,viernes,sábado,domingo",
+  "@weekdayNames": {
+    "description": "Comma-separated names, Monday to Sunday."
+  },
+  "todayNoSession": "Elige cuánto tiempo tienes y armamos tu sesión.",
+  "todayChooseTime": "Elegir tiempo"
 }

@@ -7,6 +7,9 @@ import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/pages/password_reset_page.dart';
 import 'package:flui/features/auth/presentation/pages/register_page.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
+import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
+import 'package:flui/features/daily/presentation/session_page.dart';
 import 'package:flui/features/daily/presentation/time_budget_page.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/exercises/presentation/practice_page.dart';
@@ -17,6 +20,7 @@ import 'package:flui/features/reading/presentation/reading_page.dart';
 import 'package:flui/features/subscription/presentation/pages/checkout_return_page.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
+import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
@@ -35,7 +39,8 @@ GoRouter goRouter(Ref ref) {
   // Listening also keeps both providers active for the router's lifetime.
   ref
     ..listen(authStatusProvider, (_, _) => refresh.notify())
-    ..listen(accessGateProvider, (_, _) => refresh.notify());
+    ..listen(accessGateProvider, (_, _) => refresh.notify())
+    ..listen(dailyGateProvider, (_, _) => refresh.notify());
 
   // Created per router so tests can build many routers.
   final rootKey = GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -46,6 +51,7 @@ GoRouter goRouter(Ref ref) {
     redirect: (context, state) => appRedirect(
       auth: ref.read(authStatusProvider),
       access: ref.read(accessGateProvider),
+      daily: ref.read(dailyGateProvider),
       location: state.uri,
     ),
     errorBuilder: (context, state) => const NotFoundPage(),
@@ -74,6 +80,15 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
     path: AppRoutes.checkoutReturn,
     builder: (_, _) => const CheckoutReturnPage(),
   ),
+  GoRoute(
+    path: AppRoutes.session,
+    parentNavigatorKey: rootKey,
+    builder: (_, state) => SessionPage(
+      mode: state.uri.queryParameters['mode'] == SessionMode.review.name
+          ? SessionMode.review
+          : SessionMode.daily,
+    ),
+  ),
   StatefulShellRoute.indexedStack(
     parentNavigatorKey: rootKey,
     builder: (context, state, navigationShell) =>
@@ -96,7 +111,17 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
       ),
       StatefulShellBranch(
         routes: [
-          GoRoute(path: AppRoutes.words, builder: (_, _) => const WordsPage()),
+          GoRoute(
+            path: AppRoutes.words,
+            builder: (_, _) => const WordsPage(),
+            routes: [
+              GoRoute(
+                path: ':wordId',
+                builder: (_, state) =>
+                    WordDetailPage(wordId: state.pathParameters['wordId']!),
+              ),
+            ],
+          ),
         ],
       ),
       StatefulShellBranch(
