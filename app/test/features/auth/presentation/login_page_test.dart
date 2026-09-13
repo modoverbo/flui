@@ -2,9 +2,9 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
-import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../../../helpers/pump_app.dart';
 import '../../../helpers/pump_router.dart';
 
 void main() {
@@ -21,7 +21,7 @@ void main() {
     overrides: [authRepositoryProvider.overrideWithValue(auth)],
   );
 
-  Finder field(String label) => find.widgetWithText(FluiTextField, label);
+  Finder field(String label) => fluiField(label);
 
   testWidgets('empty submit shows kind validation messages', (tester) async {
     await pumpLogin(tester);

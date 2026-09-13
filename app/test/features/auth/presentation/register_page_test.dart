@@ -2,10 +2,10 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/presentation/pages/register_page.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
-import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../helpers/pump_app.dart';
 import '../../../helpers/pump_router.dart';
 
 void main() {
@@ -23,15 +23,9 @@ void main() {
   );
 
   Future<void> fillAndSubmit(WidgetTester tester) async {
-    await tester.enterText(find.widgetWithText(FluiTextField, 'Nombre'), 'Ana');
-    await tester.enterText(
-      find.widgetWithText(FluiTextField, 'Correo'),
-      'ana@correo.com',
-    );
-    await tester.enterText(
-      find.widgetWithText(FluiTextField, 'Contraseña'),
-      'secreta1',
-    );
+    await tester.enterText(fluiField('Nombre'), 'Ana');
+    await tester.enterText(fluiField('Correo'), 'ana@correo.com');
+    await tester.enterText(fluiField('Contraseña'), 'secreta1');
     await tester.tap(find.text('Crear cuenta'));
     await tester.pump();
   }
@@ -40,10 +34,7 @@ void main() {
     auth = FakeAuthRepository();
     await pumpRegister(tester);
 
-    await tester.enterText(
-      find.widgetWithText(FluiTextField, 'Contraseña'),
-      '123',
-    );
+    await tester.enterText(fluiField('Contraseña'), '123');
     await tester.tap(find.text('Crear cuenta'));
     await tester.pump();
 

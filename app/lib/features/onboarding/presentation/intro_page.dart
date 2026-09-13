@@ -1,153 +1,234 @@
+import 'dart:async';
+
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
-import 'package:flui/shared/widgets/content_column.dart';
+import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
+import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
+import 'package:flui/features/onboarding/presentation/widgets/micro_lesson_view.dart';
+import 'package:flui/features/onboarding/presentation/widgets/onboarding_questions.dart';
+import 'package:flui/shared/motion/reveal_lines.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
+import 'package:flui/shared/widgets/flui_plate.dart';
+import 'package:flui/shared/widgets/flui_progress_bar.dart';
+import 'package:flui/shared/widgets/headline_text.dart';
+import 'package:flui/shared/widgets/page_frame.dart';
+import 'package:flui/shared/widgets/sticky_cta_dock.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Three short, skippable slides before creating the account.
-class IntroPage extends StatefulWidget {
+/// The steps before the account: three plates that make the promise, two
+/// questions that make it personal, and one real word so the promise is
+/// something the user has already felt.
+enum OnboardingStep { promise, rhythm, ownership, contexts, tone, lesson }
+
+class IntroPage extends ConsumerStatefulWidget {
   const new({super.key});
 
   @override
-  State<IntroPage> createState() => _IntroPageState();
+  ConsumerState<IntroPage> createState() => _IntroPageState();
 }
 
-class _IntroPageState extends State<IntroPage> {
-  final _controller = PageController();
+class _IntroPageState extends ConsumerState<IntroPage> {
   var _index = 0;
+  var _lessonDone = false;
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
+  OnboardingStep get _step => OnboardingStep.values[_index];
+
+  void _finish() => context.go(AppRoutes.plan);
+
+  void _next() {
+    if (_index == OnboardingStep.values.length - 1) return _finish();
+    setState(() => _index++);
   }
 
-  void _finish() => context.go(AppRoutes.register);
-
-  void _next(int count) {
-    if (_index == count - 1) return _finish();
-    _controller.nextPage(
-      duration: const Duration(milliseconds: 280),
-      curve: Curves.easeOutCubic,
-    );
+  void _back() {
+    if (_index == 0) return context.go(AppRoutes.welcome);
+    setState(() => _index--);
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final slides = [
-      (
-        LucideIcons.message_square_quote,
-        l10n.introSlideOneTitle,
-        l10n.introSlideOneBody,
-      ),
-      (LucideIcons.timer, l10n.introSlideTwoTitle, l10n.introSlideTwoBody),
-      (
-        LucideIcons.sparkles,
-        l10n.introSlideThreeTitle,
-        l10n.introSlideThreeBody,
-      ),
-    ];
-    final isLast = _index == slides.length - 1;
+    final answers =
+        ref.watch(onboardingAnswersControllerProvider).value ??
+        OnboardingAnswers.empty;
+    final controller = ref.read(onboardingAnswersControllerProvider.notifier);
+    final step = _step;
+    final onDark = step != OnboardingStep.lesson;
 
-    return Scaffold(
-      body: SafeArea(
-        child: ContentColumn(
-          child: Column(
-            children: [
-              const SizedBox(height: FluiSpacing.md),
-              Row(
-                children: [
-                  const Expanded(
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: FluiLogo(symbolSize: 28),
-                      ),
-                    ),
+    final body = switch (step) {
+      OnboardingStep.promise => _Slide(
+        title: l10n.introSlideOneTitle,
+        highlight: l10n.introSlideOneHighlight,
+        body: l10n.introSlideOneBody,
+      ),
+      OnboardingStep.rhythm => _Slide(
+        title: l10n.introSlideTwoTitle,
+        highlight: l10n.introSlideTwoHighlight,
+        body: l10n.introSlideTwoBody,
+      ),
+      OnboardingStep.ownership => _Slide(
+        title: l10n.introSlideThreeTitle,
+        highlight: l10n.introSlideThreeHighlight,
+        body: l10n.introSlideThreeBody,
+      ),
+      OnboardingStep.contexts => ContextsQuestion(
+        selected: answers.contexts,
+        onToggle: (scene) => unawaited(controller.toggleContext(scene)),
+      ),
+      OnboardingStep.tone => ToneQuestion(
+        selected: answers.tone,
+        onSelected: (tone) => unawaited(controller.chooseTone(tone)),
+      ),
+      OnboardingStep.lesson => MicroLessonView(
+        onResolved: () => setState(() => _lessonDone = true),
+      ),
+    };
+
+    final canContinue = switch (step) {
+      OnboardingStep.contexts => answers.contexts.isNotEmpty,
+      OnboardingStep.tone => answers.tone != null,
+      OnboardingStep.lesson => _lessonDone,
+      _ => true,
+    };
+
+    final content = StickyCtaDock(
+      onDark: onDark,
+      dock: _Dock(
+        label: step == OnboardingStep.lesson
+            ? l10n.onboardingSeePlan
+            : l10n.onboardingNext,
+        onDark: onDark,
+        onPressed: canContinue ? _next : null,
+        onSkip: step == OnboardingStep.lesson ? _finish : null,
+      ),
+      child: SafeArea(
+        child: Column(
+          children: [
+            _Rail(
+              index: _index,
+              total: OnboardingStep.values.length,
+              onDark: onDark,
+              onBack: _back,
+              onSkip: _finish,
+            ),
+            Expanded(
+              // The step is centred in what is left after the rail and the
+              // dock, so a short slide composes instead of leaving a void.
+              child: LayoutBuilder(
+                builder: (context, constraints) => SingleChildScrollView(
+                  padding: const EdgeInsets.only(
+                    bottom: StickyCtaDock.reservedHeight,
                   ),
-                  FluiButton.text(label: l10n.introSkip, onPressed: _finish),
-                ],
-              ),
-              Expanded(
-                child: PageView(
-                  controller: _controller,
-                  onPageChanged: (index) => setState(() => _index = index),
-                  children: [
-                    for (final (i, (icon, title, body)) in slides.indexed)
-                      _Slide(
-                        icon: icon,
-                        title: title,
-                        body: body,
-                        label: l10n.introSlideLabel(i + 1, slides.length),
-                      ),
-                  ],
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight:
+                          constraints.maxHeight - StickyCtaDock.reservedHeight,
+                    ),
+                    child: Center(child: PageFrame.column(child: body)),
+                  ),
                 ),
               ),
-              _Dots(count: slides.length, index: _index),
-              const SizedBox(height: FluiSpacing.lg),
-              FluiButton.primary(
-                label: isLast ? l10n.introCreateAccount : l10n.introNext,
-                onPressed: () => _next(slides.length),
-              ),
-              const SizedBox(height: FluiSpacing.lg),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+    );
+
+    return Scaffold(
+      backgroundColor: onDark ? FluiColors.greenDeep : FluiColors.cream,
+      body: onDark ? FluiPlate.fullBleed(child: content) : content,
     );
   }
 }
 
-class _Slide extends StatelessWidget {
+class _Dock extends StatelessWidget {
   const new({
-    required this.icon,
-    required this.title,
-    required this.body,
     required this.label,
+    required this.onDark,
+    required this.onPressed,
+    this.onSkip,
   });
 
-  final IconData icon;
-  final String title;
-  final String body;
   final String label;
+  final bool onDark;
+  final VoidCallback? onPressed;
+  final VoidCallback? onSkip;
 
   @override
   Widget build(BuildContext context) {
-    return Semantics(
-      label: label,
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.symmetric(vertical: FluiSpacing.xl),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    final button = onDark
+        ? FluiButton.accent(label: label, onPressed: onPressed)
+        : FluiButton.primary(label: label, onPressed: onPressed);
+    if (onSkip == null) return button;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        button,
+        const SizedBox(height: FluiSpacing.xxs),
+        FluiButton.text(
+          label: context.l10n.onboardingSkipLesson,
+          onPressed: onSkip,
+          onDark: onDark,
+        ),
+      ],
+    );
+  }
+}
+
+/// Where you are, what you can leave: a progress rail instead of dots.
+class _Rail extends StatelessWidget {
+  const new({
+    required this.index,
+    required this.total,
+    required this.onDark,
+    required this.onBack,
+    required this.onSkip,
+  });
+
+  final int index;
+  final int total;
+  final bool onDark;
+  final VoidCallback onBack;
+  final VoidCallback onSkip;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    return PageFrame(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: FluiSpacing.sm),
+        child: Row(
           children: [
-            DecoratedBox(
-              decoration: const BoxDecoration(
-                color: FluiColors.greenTint,
-                borderRadius: FluiRadii.xlAll,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(FluiSpacing.lg),
-                child: Icon(icon, size: 40, color: FluiColors.greenDeep),
+            IconButton(
+              tooltip: l10n.onboardingBack,
+              onPressed: onBack,
+              icon: Icon(
+                LucideIcons.arrow_left,
+                color: onDark ? FluiColors.cream : FluiColors.charcoal,
               ),
             ),
-            const SizedBox(height: FluiSpacing.xl),
-            Text(
-              title,
-              style: FluiTypography.h1.copyWith(color: FluiColors.charcoal),
+            const SizedBox(width: FluiSpacing.xs),
+            Expanded(
+              child: FluiProgressBar(
+                value: (index + 1) / total,
+                semanticLabel: l10n.onboardingStepSemantics(index + 1, total),
+                height: 6,
+                onDark: onDark,
+              ),
             ),
-            const SizedBox(height: FluiSpacing.md),
-            Text(
-              body,
-              style: FluiTypography.body.copyWith(color: FluiColors.gray),
+            const SizedBox(width: FluiSpacing.sm),
+            FluiButton.text(
+              label: l10n.introSkip,
+              onPressed: onSkip,
+              onDark: onDark,
             ),
           ],
         ),
@@ -156,31 +237,60 @@ class _Slide extends StatelessWidget {
   }
 }
 
-class _Dots extends StatelessWidget {
-  const new({required this.count, required this.index});
+/// One promise, on the plate, with the noun that carries it in yellow.
+/// No pastel icon tile: there is nothing an icon would add here.
+class _Slide extends StatelessWidget {
+  const new({required this.title, required this.highlight, required this.body});
 
-  final int count;
-  final int index;
+  final String title;
+  final String highlight;
+  final String body;
 
   @override
   Widget build(BuildContext context) {
-    return ExcludeSemantics(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+    final layout = context.layout;
+    final type = layout.type;
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: layout.sectionGap),
+      child: RevealLines(
+        key: ValueKey(title),
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          for (var i = 0; i < count; i++)
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 200),
-              margin: const EdgeInsets.symmetric(horizontal: 4),
-              width: i == index ? 24 : 8,
-              height: 8,
-              decoration: BoxDecoration(
-                color: i == index ? FluiColors.greenDeep : FluiColors.outline,
-                borderRadius: FluiRadii.pill,
+          HeadlineText(text: title, highlight: highlight, style: type.displayL),
+          Padding(
+            padding: const EdgeInsets.only(top: FluiSpacing.lg),
+            child: Text(
+              body,
+              style: type.bodyL.copyWith(color: FluiColors.creamMuted),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: FluiSpacing.xxl),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              // Bleeds off the gutter: the mark is a field, not a spot
+              // illustration sitting in a column.
+              child: Transform.translate(
+                offset: const Offset(-FluiSpacing.xxl, 0),
+                child: const PlateWaveMark(size: 240, opacity: 0.16),
               ),
             ),
+          ),
         ],
       ),
     );
   }
+}
+
+/// The logo, for the steps that are not a plate.
+class OnboardingMark extends StatelessWidget {
+  const new({super.key, this.onDark = false});
+
+  final bool onDark;
+
+  @override
+  Widget build(BuildContext context) => DecoratedBox(
+    decoration: const BoxDecoration(borderRadius: FluiRadii.chipAll),
+    child: FluiLogo(onDark: onDark, symbolSize: 28),
+  );
 }

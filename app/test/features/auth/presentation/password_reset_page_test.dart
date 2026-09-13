@@ -2,9 +2,9 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/presentation/pages/password_reset_page.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
-import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../../../helpers/pump_app.dart';
 import '../../../helpers/pump_router.dart';
 
 void main() {
@@ -36,10 +36,7 @@ void main() {
   ) async {
     await pumpReset(tester);
 
-    await tester.enterText(
-      find.widgetWithText(FluiTextField, 'Correo'),
-      'ana@correo.com',
-    );
+    await tester.enterText(fluiField('Correo'), 'ana@correo.com');
     await tester.tap(find.text('Enviar enlace'));
     await tester.pump();
 
