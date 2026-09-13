@@ -1,0 +1,22 @@
+{
+  "lock": false,
+  "compilerOptions": {
+    "strict": true
+  },
+  "fmt": {
+    "lineWidth": 100,
+    "indentWidth": 2,
+    "semiColons": true,
+    "singleQuote": false
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  },
+  "tasks": {
+    "test": "deno test",
+    "check": "deno check whop-checkout/index.ts whop-webhook/index.ts",
+    "ci": "deno fmt --check && deno lint && deno task check && deno task test"
+  }
+}
