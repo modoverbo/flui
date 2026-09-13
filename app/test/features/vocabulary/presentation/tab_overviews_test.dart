@@ -1,6 +1,5 @@
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/exercises/domain/exercise_attempt.dart';
-import 'package:flui/features/exercises/presentation/providers/practice_overview.dart';
 import 'package:flui/features/profile/domain/achievements.dart';
 import 'package:flui/features/profile/presentation/providers/progress_overview.dart';
 import 'package:flui/features/reading/domain/reading.dart';
@@ -78,21 +77,37 @@ void main() {
     expect(await load(wordEntryProvider('missing').future), isNull);
   });
 
-  test('practiceOverview counts due reviews and the next due date', () async {
-    final overview = await load(practiceOverviewProvider.future);
-
-    expect(overview.dueCount, 1);
-    expect(overview.nextDueOn, day(17));
-    expect(overview.hasWords, isTrue);
-  });
-
-  test('contextReadings: readings of words introduced in 7 days', () async {
+  test('contextReadings keeps every word the user has met', () async {
     final readings = await load(contextReadingsProvider.future);
 
-    expect(readings.map((r) => r.word.lemma).toSet(), {'matizar', 'plantear'});
-    expect(readings, hasLength(6));
-    expect(readings.first.word.lemma, 'matizar');
+    // perspicaz was introduced on day 1: the old seven-day window dropped it.
+    expect(readings.map((r) => r.word.lemma).toSet(), {
+      'matizar',
+      'plantear',
+      'perspicaz',
+    });
+    expect(readings, hasLength(9));
     expect(readings.where((r) => r.reading.scene == Scene.trabajo), isNotEmpty);
+  });
+
+  test('contextReadings rotates the order once a day', () async {
+    final first = await load(contextReadingsProvider.future);
+    final tomorrow = LearningFakes(now: DateTime(2026, 9, 17, 9));
+    addTearDown(tomorrow.dispose);
+    for (final row in (await fakes.progress.fetchProgress()).valueOrNull!) {
+      await tomorrow.progress.saveProgress(row);
+    }
+    final next = createTestContainer(overrides: tomorrow.overrides);
+    addTearDown(next.dispose);
+    next.listen(contextReadingsProvider.future, (_, _) {});
+
+    final second = await next.read(contextReadingsProvider.future);
+
+    expect(
+      second.map((r) => r.reading.id).toSet(),
+      first.map((r) => r.reading.id).toSet(),
+    );
+    expect(second.first.reading.id, isNot(first.first.reading.id));
   });
 
   test('progressOverview: week, streak, stats and achievements', () async {

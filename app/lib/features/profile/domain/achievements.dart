@@ -12,8 +12,9 @@ enum AchievementKind {
   /// 5 días activos.
   fiveActiveDays,
 
-  /// 10 palabras.
-  tenWords,
+  /// "{n} palabras": the target follows the catalog, so it is always
+  /// reachable. A fixed 10 was unreachable while the catalog had 8 words.
+  repertoire,
 
   /// Primera frase propia.
   firstOwnSentence,
@@ -36,9 +37,15 @@ final class Achievement {
 
 /// Achievements computed from the learning data (never stored).
 abstract final class Achievements {
+  /// Words to collect for [AchievementKind.repertoire] while the catalog is
+  /// big enough. A smaller catalog lowers the target instead of leaving the
+  /// achievement permanently out of reach.
+  static const repertoireTarget = 10;
+
   static List<Achievement> compute({
     required List<WordProgress> progress,
     required int activeDays,
+    required int catalogSize,
   }) {
     final introduced = progress.length;
     final owned = progress.where((row) => row.state == WordState.tuya).length;
@@ -53,7 +60,11 @@ abstract final class Achievements {
       build(AchievementKind.firstWord, introduced, 1),
       build(AchievementKind.firstOwnedWord, owned, 1),
       build(AchievementKind.fiveActiveDays, activeDays, 5),
-      build(AchievementKind.tenWords, introduced, 10),
+      build(
+        AchievementKind.repertoire,
+        introduced,
+        catalogSize < repertoireTarget ? catalogSize.clamp(1, 10) : 10,
+      ),
       build(AchievementKind.firstOwnSentence, sentences, 1),
     ];
   }

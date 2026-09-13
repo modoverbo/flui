@@ -1,5 +1,6 @@
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/supabase/data_error_mapper.dart';
+import 'package:flui/core/supabase/paged_query.dart';
 import 'package:flui/features/vocabulary/data/dtos/word_dto.dart';
 import 'package:flui/features/vocabulary/domain/content_repository.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
@@ -15,11 +16,17 @@ final class SupabaseContentRepository implements ContentRepository {
   @override
   Future<Result<List<Word>>> fetchCatalog() async {
     try {
-      final rows = await _client
-          .from('words')
-          .select(WordDto.columns)
-          .eq('published', true)
-          .order('sort_order', ascending: true);
+      // PostgREST caps a response at `max_rows`: a catalog past that limit
+      // would silently lose its tail, and the tail is what a long-time user
+      // still has left to learn.
+      final rows = await fetchAllPages(
+        (from, to) => _client
+            .from('words')
+            .select(WordDto.columns)
+            .eq('published', true)
+            .order('sort_order', ascending: true)
+            .range(from, to),
+      );
       return Result.ok([
         for (final row in rows) WordDto.fromJson(row).toDomain(),
       ]);

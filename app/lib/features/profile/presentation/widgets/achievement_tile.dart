@@ -13,12 +13,14 @@ class AchievementTile extends StatelessWidget {
 
   final Achievement achievement;
 
-  static String titleOf(AppLocalizations l10n, AchievementKind kind) =>
-      switch (kind) {
+  static String titleOf(AppLocalizations l10n, Achievement achievement) =>
+      switch (achievement.kind) {
         AchievementKind.firstWord => l10n.achievementFirstWord,
         AchievementKind.firstOwnedWord => l10n.achievementFirstOwnedWord,
         AchievementKind.fiveActiveDays => l10n.achievementFiveActiveDays,
-        AchievementKind.tenWords => l10n.achievementTenWords,
+        AchievementKind.repertoire => l10n.achievementRepertoire(
+          achievement.target,
+        ),
         AchievementKind.firstOwnSentence => l10n.achievementFirstOwnSentence,
       };
 
@@ -43,7 +45,7 @@ class AchievementTile extends StatelessWidget {
               AchievementKind.firstWord => LucideIcons.sparkles,
               AchievementKind.firstOwnedWord => LucideIcons.badge_check,
               AchievementKind.fiveActiveDays => LucideIcons.calendar_check,
-              AchievementKind.tenWords => LucideIcons.library,
+              AchievementKind.repertoire => LucideIcons.library,
               AchievementKind.firstOwnSentence => LucideIcons.message_circle,
             }, color: FluiColors.cream),
             const SizedBox(width: FluiSpacing.md),
@@ -52,7 +54,7 @@ class AchievementTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    titleOf(l10n, achievement.kind),
+                    titleOf(l10n, achievement),
                     style: FluiTypography.bodyEmphasis.copyWith(
                       color: FluiColors.cream,
                     ),

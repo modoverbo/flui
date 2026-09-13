@@ -8,6 +8,7 @@ import 'package:flui/features/daily/presentation/providers/learning_data_control
 import 'package:flui/features/profile/domain/achievements.dart';
 import 'package:flui/features/profile/domain/progress_stats.dart';
 import 'package:flui/features/profile/domain/streak_calculator.dart';
+import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:meta/meta.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -35,6 +36,7 @@ Future<ProgressOverview> progressOverview(Ref ref) async {
     progress: data.progress,
     attempts: data.attempts,
     activeDates: data.activeDates,
+    today: today,
   );
   return ProgressOverview(
     streak: StreakCalculator.summarize(
@@ -46,6 +48,7 @@ Future<ProgressOverview> progressOverview(Ref ref) async {
     achievements: Achievements.compute(
       progress: data.progress,
       activeDays: stats.activeDays,
+      catalogSize: (await ref.watch(catalogProvider.future)).length,
     ),
   );
 }

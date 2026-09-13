@@ -255,6 +255,22 @@ void main() {
       expect(url.queryParameters['select'], contains('exercise_options('));
     });
 
+    test('pages through a catalog past the PostgREST cap', () async {
+      // A catalog bigger than `max_rows` used to lose its tail silently.
+      final recorder = SupabaseRecorder(
+        respond: (request) => request.url.queryParameters['offset'] == '0'
+            ? List.filled(1000, wordRow())
+            : [wordRow()],
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseContentRepository(recorder.client)
+          .fetchCatalog();
+
+      expect(result.valueOrNull, hasLength(1001));
+      expect(recorder.requests, hasLength(2));
+    });
+
     test('maps transport errors to a network failure', () async {
       final recorder = SupabaseRecorder(
         respond: (_) => throw http.ClientException('offline'),

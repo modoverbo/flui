@@ -1,5 +1,5 @@
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/features/exercises/presentation/practice_page.dart';
+import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
@@ -147,39 +147,25 @@ void main() {
 
       expect(find.text('No encontramos esta palabra.'), findsOneWidget);
     });
-  });
 
-  group('Practica', () {
-    testWidgets('due reviews start a review-only session', (tester) async {
+    testWidgets('the detail shows the mastery meter and the scenes', (
+      tester,
+    ) async {
       await pump(
         tester,
-        location: AppRoutes.practice,
-        page: const PracticePage(),
-        otherRoutes: const [AppRoutes.session],
+        location: AppRoutes.wordDetail(plantear.id),
+        page: WordDetailPage(wordId: plantear.id),
       );
 
-      expect(find.text('1 palabra para afianzar hoy'), findsOneWidget);
-      await tester.tap(find.text('Empezar repaso'));
-      await tester.pumpAndSettle();
-      expect(find.text('route:${AppRoutes.session}'), findsOneWidget);
-    });
-
-    testWidgets('all caught up shows the next date', (tester) async {
-      await fakes.progress.saveProgress(
-        buildProgress(
-          wordId: plantear.id,
-          introducedOn: day(5),
-          nextDueOn: day(15),
-        ),
-      );
-      await pump(
-        tester,
-        location: AppRoutes.practice,
-        page: const PracticePage(),
-      );
-
-      expect(find.text('Todo al día. Vuelve mañana.'), findsOneWidget);
-      expect(find.text('Tu próximo repaso: 14 de septiembre'), findsOneWidget);
+      // "Practica" is coarse: the five rungs show the work behind it.
+      expect(find.text('El camino de esta palabra'), findsOneWidget);
+      expect(find.text('Descubierta'), findsOneWidget);
+      expect(find.text('Recordada sin ayuda'), findsOneWidget);
+      expect(find.text('Ya es tuya'), findsOneWidget);
+      expect(find.text('2 de 5'), findsOneWidget);
+      // "En contexto" is a section here now, not a tab of its own.
+      expect(find.text('En contexto'), findsOneWidget);
+      expect(find.byType(ReadingsCarousel), findsOneWidget);
     });
   });
 }

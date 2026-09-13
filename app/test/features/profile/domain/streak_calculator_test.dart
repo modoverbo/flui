@@ -147,4 +147,22 @@ void main() {
       {day(1), day(2), day(3), day(5)},
     );
   });
+
+  test('a day with nothing to answer keeps the streak alive', () {
+    // The catalog ran out, so the session had no exercises. The completed
+    // session is the only evidence that the user showed up.
+    final dates = StreakCalculator.activeDates(
+      attemptDates: [day(11), day(12)],
+      completedSessionDates: [day(11), day(12), day(13)],
+      repairedDates: const [],
+    );
+
+    final summary = StreakCalculator.summarize(
+      activityDates: dates,
+      repairedDates: const {},
+      today: day(13),
+    );
+
+    expect(summary.currentStreak, 3);
+  });
 }
