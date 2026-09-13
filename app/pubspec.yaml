@@ -7,8 +7,10 @@ environment:
   sdk: ^3.13.3
 
 dependencies:
+  animations: ^3.0.0
   flutter:
     sdk: flutter
+  flutter_animate: ^4.5.2
   flutter_localizations:
     sdk: flutter
   flutter_lucide: ^1.45.0
@@ -24,6 +26,7 @@ dependencies:
   material_ui: ^1.2.0
   meta: ^1.19.0
   riverpod_annotation: ^4.0.7
+  shared_preferences: ^2.5.5
   supabase_flutter: ^2.17.2
   url_launcher: ^6.3.2
 
@@ -49,12 +52,19 @@ flutter:
     - assets/brand/flui_symbol.svg
     - assets/brand/flui_symbol_green.svg
     - assets/brand/LICENSE-tabler-icons.txt
+    # The ten custom glyphs (tool/generate_glyphs.mjs).
+    - assets/icons/
+    # The green plate, pre-baked at 1x / 2x / 3x
+    # (tool/generate_texture_plates.mjs).
+    - assets/textures/
     - assets/fonts/plus_jakarta_sans/OFL.txt
     - assets/fonts/inter/OFL.txt
 
   fonts:
     - family: PlusJakartaSans
       fonts:
+        - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-SemiBold.ttf
+          weight: 600
         - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-Bold.ttf
           weight: 700
         - asset: assets/fonts/plus_jakarta_sans/PlusJakartaSans-ExtraBold.ttf

@@ -1,7 +1,7 @@
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_typography.dart';
+import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:material_ui/material_ui.dart';
 
 abstract final class FluiTheme {
@@ -30,10 +30,10 @@ abstract final class FluiTheme {
       surfaceContainerLow: FluiColors.surface,
       surfaceContainer: FluiColors.surface,
       surfaceContainerHigh: FluiColors.surface,
-      outline: FluiColors.outline,
-      outlineVariant: FluiColors.outline,
+      outline: FluiColors.hairlineOnCream,
+      outlineVariant: FluiColors.hairlineOnCream,
     );
-    return _build(scheme);
+    return _build(scheme, onDark: false);
   }
 
   /// Dark surface for progress and stats areas.
@@ -50,24 +50,33 @@ abstract final class FluiTheme {
       onError: FluiColors.charcoal,
       surface: FluiColors.progressSurface,
       onSurface: FluiColors.cream,
-      onSurfaceVariant: FluiColors.greenTint,
+      // Never gray on green: 2.49:1.
+      onSurfaceVariant: FluiColors.creamMuted,
       surfaceContainer: FluiColors.greenDeep,
-      outline: FluiColors.greenSecondary,
+      outline: FluiColors.hairlineOnGreen,
+      outlineVariant: FluiColors.hairlineOnGreen,
     );
-    return _build(scheme);
+    return _build(scheme, onDark: true);
   }
 
-  static ThemeData _build(ColorScheme scheme) {
-    final textTheme = FluiTypography.textTheme(
+  static ThemeData _build(ColorScheme scheme, {required bool onDark}) {
+    // Material widgets get the compact scale; screens resolve the responsive
+    // one through `context.type`.
+    const scale = FluiTypeScale.compact;
+    final textTheme = scale.textTheme(
       scheme.onSurface,
       scheme.onSurfaceVariant,
     );
+    final hairline = onDark
+        ? FluiColors.hairlineOnGreen
+        : FluiColors.hairlineOnCream;
     return ThemeData(
       useMaterial3: true,
       colorScheme: scheme,
-      fontFamily: FluiTypography.textFamily,
+      fontFamily: FluiFonts.text,
       textTheme: textTheme,
       scaffoldBackgroundColor: scheme.surface,
+      // Flat by design: the only shadow is FluiSurfaces.ctaDockShadow.
       appBarTheme: AppBarTheme(
         backgroundColor: scheme.surface,
         foregroundColor: scheme.onSurface,
@@ -76,78 +85,82 @@ abstract final class FluiTheme {
         centerTitle: false,
         titleTextStyle: textTheme.titleLarge,
       ),
-      dividerTheme: DividerThemeData(color: scheme.outline, thickness: 1),
+      dividerTheme: DividerThemeData(color: hairline, thickness: 1),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
-        fillColor: FluiColors.surface,
+        fillColor: onDark ? FluiColors.greenDeep : FluiColors.surface,
         contentPadding: const EdgeInsets.symmetric(
           horizontal: FluiSpacing.md,
           vertical: FluiSpacing.md,
         ),
-        border: const OutlineInputBorder(borderRadius: FluiRadii.mdAll),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: FluiRadii.mdAll,
-          borderSide: BorderSide(color: scheme.outline),
+        border: const OutlineInputBorder(borderRadius: FluiRadii.chipAll),
+        enabledBorder: const OutlineInputBorder(
+          borderRadius: FluiRadii.chipAll,
+          borderSide: BorderSide(color: FluiColors.outline),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: FluiRadii.mdAll,
+          borderRadius: FluiRadii.chipAll,
           borderSide: BorderSide(color: scheme.primary, width: 2),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: FluiRadii.mdAll,
+          borderRadius: FluiRadii.chipAll,
           borderSide: BorderSide(color: scheme.error),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: FluiRadii.mdAll,
+          borderRadius: FluiRadii.chipAll,
           borderSide: BorderSide(color: scheme.error, width: 2),
         ),
-        labelStyle: FluiTypography.label.copyWith(color: FluiColors.gray),
-        floatingLabelStyle: FluiTypography.label.copyWith(
-          color: scheme.primary,
-        ),
-        hintStyle: FluiTypography.body.copyWith(color: FluiColors.gray),
-        errorStyle: FluiTypography.caption.copyWith(color: scheme.error),
+        labelStyle: scale.label.copyWith(color: scheme.onSurfaceVariant),
+        floatingLabelStyle: scale.label.copyWith(color: scheme.primary),
+        hintStyle: scale.body.copyWith(color: scheme.onSurfaceVariant),
+        errorStyle: scale.body.copyWith(color: scheme.error, fontSize: 14),
         errorMaxLines: 3,
       ),
       navigationBarTheme: NavigationBarThemeData(
-        backgroundColor: FluiColors.surface,
-        indicatorColor: FluiColors.greenTint,
-        height: 72,
+        backgroundColor: onDark ? FluiColors.greenDeep : FluiColors.surface,
+        indicatorColor: Colors.transparent,
+        height: 68,
+        elevation: 0,
         labelTextStyle: WidgetStatePropertyAll(
-          FluiTypography.caption.copyWith(
-            color: scheme.onSurface,
-            fontWeight: FontWeight.w600,
-          ),
+          scale.label.copyWith(color: scheme.onSurface),
         ),
         iconTheme: WidgetStateProperty.resolveWith(
           (states) => IconThemeData(
+            size: 22,
             color: states.contains(WidgetState.selected)
                 ? scheme.primary
-                : FluiColors.gray,
+                : scheme.onSurfaceVariant,
           ),
         ),
       ),
       navigationRailTheme: NavigationRailThemeData(
-        backgroundColor: FluiColors.surface,
-        indicatorColor: FluiColors.greenTint,
-        selectedIconTheme: IconThemeData(color: scheme.primary),
-        unselectedIconTheme: const IconThemeData(color: FluiColors.gray),
-        selectedLabelTextStyle: FluiTypography.label.copyWith(
-          color: scheme.primary,
+        backgroundColor: onDark ? FluiColors.greenDeep : FluiColors.surface,
+        indicatorColor: Colors.transparent,
+        selectedIconTheme: IconThemeData(color: scheme.primary, size: 22),
+        unselectedIconTheme: IconThemeData(
+          color: scheme.onSurfaceVariant,
+          size: 22,
         ),
-        unselectedLabelTextStyle: FluiTypography.label.copyWith(
-          color: FluiColors.gray,
+        selectedLabelTextStyle: scale.label.copyWith(color: scheme.primary),
+        unselectedLabelTextStyle: scale.label.copyWith(
+          color: scheme.onSurfaceVariant,
         ),
       ),
       snackBarTheme: SnackBarThemeData(
         behavior: SnackBarBehavior.floating,
         backgroundColor: FluiColors.charcoal,
-        contentTextStyle: FluiTypography.body.copyWith(color: FluiColors.cream),
-        shape: const RoundedRectangleBorder(borderRadius: FluiRadii.mdAll),
+        contentTextStyle: scale.body.copyWith(color: FluiColors.cream),
+        shape: const RoundedRectangleBorder(borderRadius: FluiRadii.cardAll),
       ),
       progressIndicatorTheme: ProgressIndicatorThemeData(
         color: scheme.primary,
-        linearTrackColor: FluiColors.greenTint,
+        linearTrackColor: onDark
+            ? FluiColors.greenSecondary
+            : FluiColors.greenTint,
+      ),
+      checkboxTheme: CheckboxThemeData(
+        shape: const RoundedRectangleBorder(borderRadius: FluiRadii.chipAll),
+        side: BorderSide(color: scheme.onSurfaceVariant, width: 1.5),
       ),
     );
   }

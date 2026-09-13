@@ -60,34 +60,95 @@ out, income or "99%" claims, and the "#SinMuletillas" trademark.
 | `greenSecondary` | `#165A4B` | Secondary surfaces, "Practica", pressed states | (included above) |
 | `charcoal` | `#0F0F0F` | Primary text, icons | 10% |
 | `yellowElectric` | `#FFD60A` | Single highlight per screen, "Nueva", celebration | 5% |
-| `gray` | `#687280` | Secondary text, hints, disabled | as needed |
+| `gray` | `#687280` | Secondary text on cream only | as needed |
+| `creamMuted` | `#B9C4BF` | Secondary text on any green surface | as needed |
+| `amber` | `#B26A00` | The border of a "todavía no" — never red | rare |
 
-**Contrast rules** (WCAG 2.2):
+**Contrast rules** (WCAG 2.2). They live as data in
+`app/lib/core/theme/flui_color_rules.dart` and a test fails when a pairing drifts.
 
 | Pair | Ratio | Use |
 |------|------:|-----|
-| `charcoal` on `cream` | ~18:1 | body text |
-| `cream` on `greenDeep` | ~11:1 | primary button, headers |
-| `cream` on `greenSecondary` | ~7.6:1 | chips, secondary buttons |
-| `charcoal` on `yellowElectric` | ~13:1 | highlight chip |
-| `yellowElectric` on `greenDeep` | ~8.6:1 | accent on dark surfaces |
-| `gray` on `cream` | ~4.6:1 | secondary text (≥ 14 px) |
-| `yellowElectric` on `cream` | ~1.3:1 | **never** for text or essential icons |
+| `charcoal` on `cream` | 18.03:1 | body text |
+| `cream` on `greenDeep` | 11.41:1 | primary button, headers |
+| `cream` on `greenSecondary` | 7.60:1 | chips, secondary buttons |
+| `charcoal` on `yellowElectric` | 13.58:1 | yellow surfaces carry charcoal, never green |
+| `yellowElectric` on `greenDeep` | 8.59:1 | accent on dark surfaces |
+| `creamMuted` on `greenDeep` | 6.76:1 | secondary text on green |
+| `gray` on `cream` | 4.59:1 | secondary text on cream |
+| `amber` on `cream` | 3.99:1 | border only, never text |
+| `gray` on `greenDeep` | 2.49:1 | **never**: use `creamMuted` |
+| `yellowElectric` on `cream` | 1.33:1 | **never** as text or a bare fill |
+
+**Yellow has exactly four roles** (`YellowRole`), and no others: the filled part of a
+progress bar, the "tu palabra de hoy" marker, a streak day or unlocked achievement,
+and one word of a marketing headline.
 
 ## 6. Typography
 
 Both families are OFL-1.1 and bundled as assets (no runtime font fetching).
 
-| Level | Family | Weight | Size / line height |
-|-------|--------|--------|--------------------|
-| Featured word | Plus Jakarta Sans | ExtraBold 800 | 40 / 48 |
-| H1 | Plus Jakarta Sans | ExtraBold 800 | 28 / 36 |
-| H2 | Plus Jakarta Sans | Bold 700 | 22 / 28 |
-| H3 / card title | Plus Jakarta Sans | Bold 700 | 18 / 24 |
-| Body | Inter | Regular 400 | 16 / 24 |
-| Body emphasis | Inter | SemiBold 600 | 16 / 24 |
-| Label / button | Inter | SemiBold 600 | 14 / 20 |
-| Caption / hint | Inter | Regular 400 | 12 / 16 |
+Eight roles, two viewport variants. A screen picks a **role**, never a size, and takes
+it from `context.type` (`FluiTypeScale`); nothing calls `MediaQuery` for sizing.
+Display roles grow on the web; text roles do not, because reading measure does not
+depend on the window.
+
+| Role | Family | Weight | Mobile | Web | Tracking |
+|------|--------|--------|--------|-----|---------:|
+| `wordHero` | Plus Jakarta Sans | ExtraBold 800 | 72 / 68 | 112 / 104 | −3 % |
+| `displayL` | Plus Jakarta Sans | Bold 700 | 44 / 46 | 64 / 62 | −2 % |
+| `titleL` | Plus Jakarta Sans | Bold 700 | 28 / 32 | 34 / 38 | −1.5 % |
+| `titleM` | Plus Jakarta Sans | SemiBold 600 | 22 / 28 | 24 / 30 | −1 % |
+| `bodyL` | Inter | Regular 400 | 18 / 28 | 18 / 28 | 0 |
+| `body` | Inter | Regular 400 | 16 / 26 | 16 / 26 | 0 |
+| `label` | Inter | SemiBold 600 | 13 / 16 | 13 / 16 | +6 %, UPPERCASE |
+| `phonetic` | Inter | Regular 400 | 15 / 20 | 15 / 20 | 0, `tnum` |
+
+Two rules hold in both variants and are tested: **display leading ≤ 1.05**, **body
+leading ≥ 1.55**. Labels are set in caps by `FluiLabel`; the ARB copy stays sentence
+case and that is what screen readers announce.
+
+## 6b. Spacing, radii and surfaces
+
+- **Spacing scale:** 4 · 8 · 12 · 16 · 20 · 24 · 32 · 40 · 56 · 80 · 120. Nothing uses
+  a value outside it. Block gap 32 mobile / 40 web; section gap 56 / 80.
+- **One content max-width policy:** text columns 720, page grids 1120. The web hero is
+  a 12-column grid split 7 / 5.
+- **Radii, one per role:** 8 chips and inputs · **14 the primary call to action** ·
+  16 cards · 28 hero plates and sheets · 999 chips only. A primary action is a
+  rectangle; it is never a pill.
+- **Surfaces are flat.** Depth comes from hairlines — `rgba(11,61,52,.08)` on cream,
+  `rgba(248,248,246,.10)` on green — and from the green plate. There is exactly **one
+  shadow** in the app, under the sticky call-to-action dock.
+- **Texture:** the green plate is a radial deep-green field lifting to `#165A4B` with
+  5 % grain, pre-baked as WebP at 1x / 2x / 3x (`app/tool/generate_texture_plates.mjs`).
+  Every empty state and every green section uses a plate, never flat white.
+
+## 6c. Layout patterns
+
+| Pattern | Where | What it does |
+|---------|-------|--------------|
+| P1 Hero plate + rail | word detail, Descubre | the word owns the top ~55 % at `wordHero`; a horizontal rail shows how it is used |
+| P2 Asymmetric bento | Hoy, Tu progreso | 2 columns, one 2×2 dark anchor, 1×1s and a 2×1, fixed aspect ratio so it reaches the fold |
+| P3 Section rhythm | long web pages | cream → full-bleed green → cream; never three cream sections in a row |
+| P4 Sticky CTA dock | welcome, onboarding, paywall, Hoy, time budget, word detail | content scrolls behind the action instead of a pill floating over empty space |
+| P5 Web split hero | welcome, auth | 12 columns, max 1120, 7 / 5 |
+
+## 6d. Motion
+
+Four durations — 120 / 200 / 320 / 900 ms — `easeOutCubic` arriving, `easeOut` leaving
+at 0.8× the duration, and Material's emphasized curve for shared-axis route
+transitions. Everything resolves through `FluiMotion.resolve`, so "reduce motion"
+turns motion **off**, never merely shortens it.
+
+| Moment | Motion |
+|--------|--------|
+| Word reveal | per-line mask slide-up, 40 ms stagger, 1.02 → 1.0, 320 ms |
+| Right answer | yellow underline draws left to right, 220 ms, one light haptic on mobile |
+| Wrong answer | three 6 px cycles in 260 ms and an **amber** border, never red |
+| Progress | 400 ms `easeOutCubic` with a brief yellow glow |
+| Streak | celebrated only at 3, 7, 14 and 30 days |
+| Web sections | 200 ms fade plus a 12 px rise, 60 ms apart |
 
 ## 7. UI principles
 
@@ -103,14 +164,26 @@ Both families are OFL-1.1 and bundled as assets (no runtime font fetching).
 
 | State | Label | Chip background | Chip text | Icon (Lucide) |
 |-------|-------|-----------------|-----------|---------------|
-| `nueva` | Nueva | `yellowElectric` | `charcoal` | `sparkles` |
-| `practica` | Practica | `greenSecondary` | `cream` | `repeat` |
-| `tuya` | Tuya / "Ya es tuya" | `greenDeep` | `cream` | `check` |
+| `nueva` | Nueva | `yellowElectric` | `charcoal` | `palabra del día` |
+| `practica` | Practica | `greenSecondary` | `cream` | `repaso` |
+| `tuya` | Tuya / "Ya es tuya" | `greenDeep` | `cream` | `logro` |
+
+The chip label is set in caps; the word itself is what a screen reader announces.
 
 ## 9. Iconography
 
-- UI icons: **Lucide** (ISC), 24 px grid, 2 px stroke, round caps and joins.
-- Keep one stroke weight per screen; icons use `charcoal` or `cream` on dark surfaces.
+Ten concepts are ours, and only those ten get a drawing of their own. Everything else
+is boring on purpose.
+
+- **Custom glyphs** (`app/assets/icons`, generated by `app/tool/generate_glyphs.mjs`):
+  `onda` · `palabra-del-dia` · `reemplaza` · `racha` · `en-contexto` ·
+  `matiz-registro` · `microfono` · `meta` · `logro` · `repaso`. All are drawn on the
+  logo's wave on a 24 grid with a 2 px stroke and round terminals, so they read as one
+  family; a test checks every asset against those numbers.
+- **Everything else:** Lucide (ISC, `flutter_lucide`), same 24 grid and 2 px stroke.
+- **Three sizes only:** 22 tab bar, 20 section headers, 18 inline.
+- Icons are never placed inside a tinted square, and they take `charcoal`,
+  `greenSecondary` or `cream`/`creamMuted` on green.
 
 ## 10. Logo
 
