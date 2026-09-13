@@ -1,0 +1,152 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000002"
+sort_order: 2
+slug: "plantear"
+status: "approved"
+lemma: "plantear"
+part_of_speech: "verbo"
+syllables:
+  - "plan"
+  - "te"
+  - "ar"
+stressed_syllable: 3
+ipa_latam: "[plan.teˈar]"
+ipa_es: "[plan.teˈar]"
+explanation: "Poner sobre la mesa un tema, una duda o una propuesta para hablarlo con otros."
+example_sentence: "En la reunión de mañana voy a plantear la posibilidad de trabajar desde casa los viernes."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Abre conversaciones delicadas con respeto: «Quiero plantearte algo» suena directo y amable a la vez."
+when_not_to_use: "No la confundas con «plantar» (sembrar o dejar a alguien esperando) ni la uses para imponer una decisión: eso es «implantar»."
+collocations:
+  - "plantear un tema"
+  - "plantear una duda"
+  - "plantear una propuesta"
+  - "plantear un problema"
+replaces:
+  - before: "Quiero sacar un tema"
+    after: "Quiero plantear un tema"
+  - before: "Le dije lo de cambiar el horario"
+    after: "Le planteé cambiar el horario"
+  - before: "Esto trae un problema"
+    after: "Esto plantea un problema"
+family:
+  - "planteamiento"
+  - "replantear"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "plantar"
+    difference: "«Plantar» es poner algo en la tierra o, en lenguaje coloquial, dejar a alguien esperando. «Plantear» es proponer un tema para hablarlo."
+    memory_trick: "Plantas una semilla; planteas una idea."
+  - confused_with: "implantar"
+    difference: "«Implantar» es establecer algo, a menudo sin consultarlo. «Plantear» abre la conversación antes de decidir."
+    memory_trick: "Plantear pregunta; implantar impone."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000021"
+    position: 1
+    sentence: "Antes de firmar el contrato, Valeria le {{blank}} a su jefa una duda sobre las vacaciones, y juntas encontraron una solución."
+    hint_general: "Busca el verbo para poner una duda sobre la mesa y hablarla con otra persona."
+    explanation: "Planteó: puso su duda sobre la mesa para hablarla. «Plantó» es sembrar o dejar a alguien esperando, e «implantó» sería imponer algo; aquí la duda se conversa y se resuelve entre las dos."
+    options:
+      - position: 1
+        text: "plantó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Plantar» es sembrar o dejar a alguien esperando. Valeria no dejó plantada a su jefa: le habló de su duda."
+        hint_specific: "«Plantar» se usa con semillas o con quien no llega a una cita. ¿Eso pasó aquí?"
+      - position: 2
+        text: "implantó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implantar» es imponer o establecer algo. Valeria no impuso nada: abrió una conversación y la resolvieron juntas."
+        hint_specific: "«Implantar» es establecer algo, casi siempre desde arriba. ¿Valeria impone o propone?"
+      - position: 3
+        text: "planteó"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - id: "b0000000-0000-4000-8000-000000000022"
+    position: 2
+    sentence: "En el correo al comité, Raúl {{blank}} tres alternativas para reducir gastos y pidió que votaran la mejor."
+    hint_general: "Busca el verbo que presenta opciones para que otros decidan."
+    explanation: "Planteó: presentó las alternativas para que el comité decidiera. «Soltó» es demasiado coloquial y suena improvisado para un correo formal, e «implantó» significaría imponerlas sin votación."
+    options:
+      - position: 1
+        text: "planteó"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "soltó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y sugiere decir algo de golpe, sin pensarlo. Un correo al comité con tres alternativas es justo lo contrario."
+        hint_specific: "«Soltar» es decir algo de repente y en tono informal. ¿Así se escribe un correo al comité?"
+      - position: 3
+        text: "implantó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implantar» es establecer algo sin consultar. Raúl pide que voten: no impone nada."
+        hint_specific: "Fíjate en el final: Raúl pide que voten. ¿Quien implanta algo pide opinión?"
+  - id: "b0000000-0000-4000-8000-000000000023"
+    position: 3
+    sentence: "Si algo del plan no te convence, lo mejor es {{blank}} con calma en la reunión en vez de quejarte después por los pasillos."
+    hint_general: "Busca el verbo para sacar un tema y hablarlo abiertamente con el grupo."
+    explanation: "Plantearlo: ponerlo sobre la mesa para hablarlo. «Plantarlo» es sembrar o dejar a alguien esperando, y «reclamarlo» es exigir algo que te corresponde, no conversar sobre una duda."
+    options:
+      - position: 1
+        text: "reclamarlo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» es exigir algo que crees que te corresponde. Lo que no te convence no se exige: se pone sobre la mesa para hablarlo."
+        hint_specific: "«Reclamar» es pedir algo que te deben. ¿Quieres exigir lo que no te convence o conversarlo?"
+      - position: 2
+        text: "plantearlo"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "plantarlo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Plantar» es sembrar o dejar a alguien esperando. Un punto del plan no se planta: se comenta."
+        hint_specific: "«Plantar» va con semillas o con citas a las que no se llega. ¿Encaja con una duda sobre un plan?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los viernes en casa"
+    body: "Ana llevaba semanas pensando que los viernes rendía más en casa. En la reunión mensual respiró hondo y dijo: «Quiero plantear algo: probar un mes con los viernes en remoto y medir los resultados». Su jefe asintió: «Me parece razonable; hagamos la prueba»."
+    before_phrase: "Quería sacar el tema de los viernes."
+    after_phrase: "Quiero plantear algo sobre los viernes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Una conversación pendiente"
+    body: "Gabriel no sabía cómo decirle a su padre que ya no podía llevarlo al médico todos los martes. Esperó a que estuvieran tranquilos y le dijo: «Papá, quiero plantearte algo y me importa lo que pienses». Hablaron una hora y acordaron turnarse con su tía."
+    before_phrase: "Papá, te tengo que decir una cosa."
+    after_phrase: "Papá, quiero plantearte algo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El viaje del grupo"
+    body: "En el chat de amigos todos opinaban a la vez sobre el viaje. Paula escribió: «Planteo dos opciones: playa en julio o montaña en septiembre. Votamos hasta el viernes». En media hora, el caos se convirtió en una decisión."
+    before_phrase: "Bueno, ¿qué hacemos al final?"
+    after_phrase: "Planteo dos opciones."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null

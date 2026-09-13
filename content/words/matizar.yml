@@ -1,0 +1,152 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000003"
+sort_order: 3
+slug: "matizar"
+status: "approved"
+lemma: "matizar"
+part_of_speech: "verbo"
+syllables:
+  - "ma"
+  - "ti"
+  - "zar"
+stressed_syllable: 3
+ipa_latam: "[ma.tiˈsar]"
+ipa_es: "[ma.tiˈθar]"
+explanation: "Precisar o suavizar algo que se dijo, añadiendo detalles o excepciones para que sea más justo."
+example_sentence: "Estoy de acuerdo con la propuesta, pero quiero matizar un punto sobre los plazos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para no estar ni del todo a favor ni del todo en contra: «Lo matizaría» abre espacio sin confrontar."
+when_not_to_use: "No la uses para esconder un error o hacer que algo parezca mejor de lo que es: eso es «maquillar»."
+collocations:
+  - "matizar una afirmación"
+  - "matizar lo dicho"
+  - "matizar una crítica"
+  - "conviene matizar"
+replaces:
+  - before: "Sí, pero no es tan así"
+    after: "Sí, aunque conviene matizarlo"
+  - before: "Bueno, depende, o sea, no siempre"
+    after: "Lo matizo: no pasa siempre"
+  - before: "Aclarar un poquito lo que dije"
+    after: "Matizar lo que dije"
+family:
+  - "matiz"
+  - "matización"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "atizar"
+    difference: "«Atizar» es avivar el fuego o, en sentido figurado, empeorar un conflicto. «Matizar» busca precisión y suele calmar la conversación."
+    memory_trick: "Matizas para precisar; atizas para encender."
+  - confused_with: "maquillar"
+    difference: "«Maquillar» es disimular algo para que parezca mejor. «Matizar» añade detalles verdaderos que hacen la idea más justa."
+    memory_trick: "Matizar aclara; maquillar tapa."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000031"
+    position: 1
+    sentence: "Inés dijo que el proyecto había sido un fracaso, pero enseguida lo quiso {{blank}}: «Fallamos en los plazos, aunque el cliente quedó contento con el resultado»."
+    hint_general: "Inés añade un detalle verdadero que hace su opinión más justa."
+    explanation: "Matizar: Inés precisa su opinión con un dato que la hace más justa. «Atizar» sería avivar un conflicto, y «maquillar» sería esconder el fallo, pero ella lo reconoce."
+    options:
+      - position: 1
+        text: "atizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» es avivar un fuego o un conflicto. Inés no enciende nada: suaviza lo que dijo con un dato."
+        hint_specific: "«Atizar» se usa con el fuego o con las peleas. ¿Inés empeora la situación o la precisa?"
+      - position: 2
+        text: "matizar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "maquillar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Maquillar» es disimular algo para que parezca mejor. Inés reconoce el fallo en los plazos: no esconde nada."
+        hint_specific: "Quien maquilla un resultado oculta lo malo. ¿Inés oculta el problema de los plazos?"
+  - id: "b0000000-0000-4000-8000-000000000032"
+    position: 2
+    sentence: "Cuando su amiga dijo que en esa ciudad nadie es amable, Mateo prefirió {{blank}}: «A mí me costó al principio, pero conocí gente muy acogedora»."
+    hint_general: "Mateo no dice que su amiga se equivoque del todo: le da parte de razón y añade un detalle."
+    explanation: "Matizar: Mateo reconoce parte de lo que dice su amiga y añade un detalle. «Rebatir» sería contradecirla por completo, y «atizar» sería avivar la discusión, justo lo contrario de su tono."
+    options:
+      - position: 1
+        text: "rebatir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rebatir» es contradecir por completo. Mateo le da parte de razón («me costó al principio») y solo añade un matiz."
+        hint_specific: "«Rebatir» es contradecir del todo. ¿Mateo le quita toda la razón a su amiga?"
+      - position: 2
+        text: "atizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» sería echar leña a la discusión. Mateo responde con calma y con su propia experiencia."
+        hint_specific: "«Atizar» es avivar una discusión. ¿La respuesta de Mateo busca pelea?"
+      - position: 3
+        text: "matizar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - id: "b0000000-0000-4000-8000-000000000033"
+    position: 3
+    sentence: "Mi hermana me pidió que {{blank}} mi crítica a su novio: «Di que no te gusta cómo habla de su ex, no que es mala persona»."
+    hint_general: "Tu hermana acepta la crítica, pero quiere que sea más precisa y más justa."
+    explanation: "Matizara: tu hermana pide precisar la crítica para que sea justa. «Maquillara» sería disimularla, y «retirara» sería dejar de decirla, pero ella acepta una parte."
+    options:
+      - position: 1
+        text: "matizara"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "maquillara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Maquillar» una crítica es disfrazarla para que no se note. Tu hermana no pide ocultarla: pide que sea más precisa."
+        hint_specific: "Quien maquilla algo lo disimula. ¿Tu hermana te pide que disimules o que precises?"
+      - position: 3
+        text: "retirara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retirar» una crítica es no decirla más. Tu hermana acepta que la hagas, pero con un límite claro."
+        hint_specific: "Fíjate: tu hermana acepta una parte de la crítica. ¿Te pide que la quites entera?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El dato que faltaba"
+    body: "En la presentación, Tomás dijo que las ventas habían caído. Su compañera levantó la mano: «Quiero matizar eso: cayeron en tienda, pero en internet crecieron un 20 %». La conversación cambió por completo: ya no hablaban de un problema, sino de dónde invertir."
+    before_phrase: "Sí, pero no es tan así."
+    after_phrase: "Quiero matizar eso."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Sobremesa"
+    body: "Durante la sobremesa, alguien dijo que las redes sociales solo sirven para perder el tiempo. Lucía sonrió: «Lo matizaría: a mí me sirvieron para encontrar trabajo, aunque también pierdo horas ahí». Nadie se sintió atacado y la charla siguió con buen ambiente."
+    before_phrase: "Bueno, depende, o sea, no siempre."
+    after_phrase: "Lo matizaría."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que quise decir"
+    body: "Después de discutir, Raúl le escribió a su madre: «Ayer dije que nunca me escuchas. Quiero matizarlo: a veces siento que no me escuchas cuando hablo de mi trabajo». Su madre respondió con un corazón y, al rato, con una llamada."
+    before_phrase: "Perdón, no era tan así lo que dije."
+    after_phrase: "Quiero matizar lo que dije."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null

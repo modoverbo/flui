@@ -1,0 +1,153 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000005"
+sort_order: 5
+slug: "pertinente"
+status: "approved"
+lemma: "pertinente"
+part_of_speech: "adjetivo"
+syllables:
+  - "per"
+  - "ti"
+  - "nen"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[per.tiˈnen.te]"
+ipa_es: "[per.tiˈnen.te]"
+explanation: "Que viene al caso: tiene relación directa con el tema o es oportuno en ese momento."
+example_sentence: "Tu comentario es muy pertinente: justo estábamos hablando de ese riesgo."
+register: "culto"
+pedantry_risk: 2
+usage_tip: "Valora un aporte sin exagerar: «Es un punto pertinente» reconoce la idea con elegancia. En una charla muy informal puede sonar formal."
+when_not_to_use: "No la confundas con «pertinaz» (terco, que persiste) ni con «impertinente», que hoy significa sobre todo «insolente»."
+collocations:
+  - "pregunta pertinente"
+  - "comentario pertinente"
+  - "datos pertinentes"
+  - "en el momento pertinente"
+replaces:
+  - before: "Eso viene al caso"
+    after: "Eso es pertinente"
+  - before: "Esa pregunta tiene mucho que ver con esto"
+    after: "Es una pregunta pertinente"
+  - before: "No sé si es el momento de decirlo"
+    after: "No sé si es pertinente decirlo ahora"
+family:
+  - "pertinencia"
+  - "pertinentemente"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "pertinaz"
+    difference: "«Pertinaz» describe algo que persiste o a alguien terco: una tos pertinaz, una lluvia pertinaz. «Pertinente» es lo que viene al caso."
+    memory_trick: "Lo pertinente viene al caso; lo pertinaz no se va."
+  - confused_with: "impertinente"
+    difference: "«Impertinente» se usa sobre todo para lo insolente o molesto. No funciona como simple contrario de «pertinente»."
+    memory_trick: "Una pregunta pertinente ayuda; una impertinente incomoda."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000051"
+    position: 1
+    sentence: "En la reunión sobre el presupuesto, Julián preguntó cuánto costaría el mantenimiento; era una pregunta muy {{blank}}, porque nadie lo había calculado."
+    hint_general: "La pregunta de Julián tenía todo que ver con el tema de la reunión."
+    explanation: "Pertinente: la pregunta venía al caso y cubría un gasto olvidado. «Pertinaz» describe lo que persiste o a alguien terco, e «impertinente» es lo que molesta; ninguna describe una pregunta útil."
+    options:
+      - position: 1
+        text: "pertinaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pertinaz» describe lo que persiste o a alguien terco. Julián hizo una sola pregunta, y venía al caso."
+        hint_specific: "«Pertinaz» se dice de algo que no se va, como una tos. ¿La frase habla de insistencia?"
+      - position: 2
+        text: "pertinente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "impertinente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» es lo insolente o molesto. La pregunta de Julián ayudó: cubría algo que nadie había calculado."
+        hint_specific: "Una pregunta impertinente incomoda. ¿La de Julián molestó o ayudó con el presupuesto?"
+  - id: "b0000000-0000-4000-8000-000000000052"
+    position: 2
+    sentence: "Valeria revisó su currículum y dejó solo la experiencia {{blank}} para el puesto de ventas: quitó los trabajos de diseño, aunque eran del año pasado."
+    hint_general: "Valeria se queda con lo que tiene relación directa con el puesto de ventas."
+    explanation: "Pertinente: Valeria dejó la experiencia relacionada con ventas. «Reciente» no encaja porque quitó trabajos del año pasado, y «pertinaz» describe algo que persiste, no algo que viene al caso."
+    options:
+      - position: 1
+        text: "reciente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reciente» habla de tiempo. Valeria quitó trabajos del año pasado, así que no eligió por fecha, sino por relación con ventas."
+        hint_specific: "Fíjate en el final: quitó trabajos del año pasado. ¿Eligió por fecha o por relación con el puesto?"
+      - position: 2
+        text: "pertinaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pertinaz» es lo que persiste o quien es terco. La experiencia no insiste en nada: se elige por su relación con el puesto."
+        hint_specific: "«Pertinaz» se usa para algo obstinado, como una lluvia que no para. ¿Encaja con «experiencia»?"
+      - position: 3
+        text: "pertinente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - id: "b0000000-0000-4000-8000-000000000053"
+    position: 3
+    sentence: "Tu comentario sobre el tráfico fue muy {{blank}}: justo estábamos decidiendo a qué hora salir hacia la boda de tu primo."
+    hint_general: "El comentario tenía relación directa con lo que se estaba decidiendo."
+    explanation: "Pertinente: el comentario venía justo al caso de la decisión. «Oportunista» critica a quien busca su propio beneficio, e «impertinente» describe lo que molesta; aquí el comentario solo ayudó."
+    options:
+      - position: 1
+        text: "pertinente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "oportunista"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Oportunista» describe a quien aprovecha una situación en beneficio propio. Tu comentario no buscaba ventaja: ayudaba a decidir."
+        hint_specific: "Ojo: «oportunista» es una crítica, no un elogio. ¿Tu comentario buscaba sacar provecho?"
+      - position: 3
+        text: "impertinente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» es lo que molesta o falta al respeto. Hablar del tráfico justo cuando se decide la hora ayuda."
+        hint_specific: "Lo impertinente incomoda. ¿Hablar del tráfico en ese momento incomodaba o ayudaba?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El punto clave"
+    body: "El equipo llevaba una hora discutiendo colores para la campaña. Inés intervino: «Antes de elegir el diseño, ¿no sería pertinente revisar qué funcionó el año pasado?». La directora cerró la discusión: «Muy pertinente. Traigamos esos datos el jueves»."
+    before_phrase: "¿Eso no tendría que ver con lo del año pasado?"
+    after_phrase: "¿No sería pertinente revisar el año pasado?"
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Preguntas al final"
+    body: "Cuando le ofrecieron hacer preguntas, Gabriel no preguntó por las vacaciones. Dijo: «¿Qué retos tendrá esta persona en sus primeros seis meses?». El entrevistador sonrió: «Es una pregunta muy pertinente; te cuento»."
+    before_phrase: "Eso tiene mucho que ver con el puesto."
+    after_phrase: "Es una pregunta muy pertinente."
+  - position: 3
+    scene: "social"
+    conversation_type: "emocional"
+    title: "Ni el lugar ni el momento"
+    body: "En plena fiesta, un amigo empezó a contarle a Sofía un problema serio con su pareja. Ella lo escuchó un momento y le dijo con cariño: «Esto me importa mucho, pero no creo que sea pertinente hablarlo aquí, con tanto ruido. ¿Nos vemos mañana para un café?»."
+    before_phrase: "No sé si es el momento de hablar de esto."
+    after_phrase: "No creo que sea pertinente hablarlo aquí."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null

@@ -1,0 +1,233 @@
+# Reference word #2 for AUTHORING.md. A verb, so the blank takes conjugated
+# forms and the agreement check watches the subject.
+# test/examples_test.dart proves this file passes every validator.
+schema_version: 1
+sort_order: 1002
+slug: "matizar"
+status: "approved"
+lemma: "matizar"
+part_of_speech: "verbo"
+syllables: ["ma", "ti", "zar"]
+stressed_syllable: 3
+ipa_latam: "[ma.tiˈsar]"
+ipa_es: "[ma.tiˈθar]"
+explanation: "Precisar algo que se dijo, añadiendo detalles o excepciones para que sea más justo."
+example_sentence: "Estoy de acuerdo con la propuesta, pero quiero matizar un punto sobre los plazos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para no estar ni del todo a favor ni del todo en contra: abre espacio sin confrontar."
+when_not_to_use: "No la uses para esconder un fallo o hacer que algo parezca mejor de lo que es."
+collocations:
+  - "matizar una afirmación"
+  - "matizar una crítica"
+replaces:
+  - before: "Sí, pero no es tan así"
+    after: "Sí, aunque conviene matizarlo"
+  - before: "Aclarar un poquito lo que dije"
+    after: "Matizar lo que dije"
+family: ["matiz", "matización"]
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin: ["aclarar"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "atizar"
+    difference: "«Atizar» es avivar el fuego o, en sentido figurado, empeorar un conflicto; lo otro busca precisión y calma la conversación."
+    memory_trick: "Precisas para aclarar; atizas para encender."
+  - confused_with: "maquillar"
+    difference: "«Maquillar» es disimular algo para que parezca mejor; aquí se añaden detalles verdaderos que hacen la idea más justa."
+    memory_trick: "Uno aclara; maquillar tapa."
+exercises:
+  - position: 1
+    sentence: "Inés dijo que el proyecto había sido un fracaso, pero enseguida lo quiso {{blank}}: «Fallamos en los plazos, aunque el cliente quedó contento»."
+    hint_general: "Añade un detalle verdadero que hace su opinión más justa."
+    explanation: "Matizar: precisa la opinión con un dato que la hace más justa. «Atizar» sería avivar un conflicto, y «maquillar» sería esconder el fallo, pero ella lo reconoce."
+    options:
+      - position: 1
+        text: "atizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» es avivar un fuego o un conflicto, y aquí nadie enciende nada: se suaviza lo dicho con un dato."
+        hint_specific: "«Atizar» se usa con el fuego o con las peleas. ¿La escena empeora la situación o la precisa?"
+      - position: 2
+        text: "matizar"
+        is_correct: true
+      - position: 3
+        text: "maquillar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Maquillar» es disimular algo para que parezca mejor, y en la frase el fallo de los plazos se reconoce en voz alta."
+        hint_specific: "Quien maquilla un resultado oculta lo malo. ¿Se oculta aquí el problema de los plazos?"
+  - position: 2
+    sentence: "Cuando su amiga afirmó que en esa ciudad nadie es amable, Mateo prefirió {{blank}}: «A mí me costó al principio, pero conocí gente muy acogedora»."
+    hint_general: "No dice que su amiga se equivoque del todo: le da parte de razón y añade algo."
+    explanation: "Matizar: reconoce parte de lo que dice su amiga y añade un detalle. «Rebatir» sería contradecirla por completo, y «atizar» sería avivar la discusión."
+    options:
+      - position: 1
+        text: "rebatir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rebatir» es contradecir por completo, y él le da parte de razón antes de añadir su experiencia."
+        hint_specific: "«Rebatir» es contradecir del todo. ¿Le quita toda la razón a su amiga?"
+      - position: 2
+        text: "atizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» sería echar leña a la discusión, y la respuesta llega con calma y con un ejemplo propio."
+        hint_specific: "«Atizar» es avivar una discusión. ¿Esa respuesta busca pelea?"
+      - position: 3
+        text: "matizar"
+        is_correct: true
+  - position: 3
+    sentence: "Mi hermana me pidió que {{blank}} mi crítica a su pareja: «Di que no te gusta cómo habla de su ex, no que es mala persona»."
+    hint_general: "Acepta la crítica, pero quiere que sea más precisa y más justa."
+    explanation: "Matizara: pide precisar la crítica para que sea justa. «Maquillara» sería disimularla, y «retirara» sería dejar de decirla, pero ella acepta una parte."
+    options:
+      - position: 1
+        text: "matizara"
+        is_correct: true
+      - position: 2
+        text: "maquillara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Maquillar» una crítica es disfrazarla para que no se note, y aquí se pide precisión, no disimulo."
+        hint_specific: "Quien maquilla algo lo disimula. ¿Te piden disimular o precisar?"
+      - position: 3
+        text: "retirara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retirar» una crítica es no decirla más, y ella acepta que la hagas con un límite claro."
+        hint_specific: "Fíjate: tu hermana acepta una parte. ¿Te pide quitarla entera?"
+  - position: 4
+    sentence: "En la presentación, Lucía {{blank}} el dato de ventas: cayeron en tienda, pero en internet crecieron un 20 %."
+    hint_general: "Corrige el dato con una precisión que cambia su sentido."
+    explanation: "Matizó: precisó el dato y cambió su sentido. «Atizó» sería avivar una discusión, e «infló» es coloquial y sugiere exagerar la cifra."
+    options:
+      - position: 1
+        text: "atizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» es avivar un conflicto, y en la sala nadie discute: se completa una cifra."
+        hint_specific: "«Atizar» va de encender peleas. ¿Hay pelea en esa sala?"
+      - position: 2
+        text: "infló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inflar» una cifra es coloquial y acusa de exagerarla, y la corrección aquí es honesta y verificable."
+        hint_specific: "«Inflar» suena a exagerar a propósito. ¿Alguien exagera o alguien precisa?"
+      - position: 3
+        text: "matizó"
+        is_correct: true
+  - position: 5
+    sentence: "En el chat del equipo, Javier quiso {{blank}} su comentario sobre el retraso antes de que alguien lo tomara a mal."
+    hint_general: "Quiere precisar lo dicho para que no se entienda como un reproche."
+    explanation: "Matizar: precisar lo dicho para que no suene a reproche. «Endulzar» es coloquial y sugiere falsear el tono, y «atizar» sería echar leña al retraso."
+    options:
+      - position: 1
+        text: "matizar"
+        is_correct: true
+      - position: 2
+        text: "endulzar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Endulzar» es coloquial y sugiere falsear el tono para caer bien, y él solo quiere ser preciso."
+        hint_specific: "«Endulzar» suena a maquillar el tono. ¿Quiere gustar o quiere ser preciso?"
+      - position: 3
+        text: "atizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» sería echar leña al retraso, justo lo que intenta evitar antes de que alguien se moleste."
+        hint_specific: "«Atizar» empeora las cosas. ¿Quiere calmar el chat o encenderlo?"
+  - position: 6
+    sentence: "Paula aceptó la propuesta, aunque pidió {{blank}} un punto sobre los plazos antes de firmar."
+    hint_general: "Pide precisar un punto antes de comprometerse del todo."
+    explanation: "Matizar: precisar un punto antes de comprometerse. «Pulir» habla de mejorar la forma, y «finiquitar» suena a trámite de oficina y cerraría el tema."
+    options:
+      - position: 1
+        text: "pulir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pulir» habla de mejorar la forma de algo, y lo que ella pide es precisar el contenido de un punto."
+        hint_specific: "«Pulir» va de acabado y forma. ¿Pide otra forma o más precisión?"
+      - position: 2
+        text: "matizar"
+        is_correct: true
+      - position: 3
+        text: "finiquitar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Finiquitar» suena a trámite de oficina y cerraría el punto, cuando ella todavía quiere hablarlo."
+        hint_specific: "«Finiquitar» es propio de contratos. ¿Quiere cerrar el punto o afinarlo?"
+  - position: 7
+    sentence: "Clara escuchó la queja hasta el final y luego {{blank}} su respuesta con dos ejemplos concretos."
+    hint_general: "Precisa su respuesta con datos en lugar de generalizar."
+    explanation: "Matizó: precisó su respuesta con datos concretos. «Atizó» sería avivar la queja, y «adornó» es coloquial y sugiere embellecer lo dicho."
+    options:
+      - position: 1
+        text: "matizó"
+        is_correct: true
+      - position: 2
+        text: "atizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» sería avivar la queja, y ella responde con ejemplos para bajar la tensión."
+        hint_specific: "«Atizar» aviva. ¿Su respuesta calienta la queja o la aterriza?"
+      - position: 3
+        text: "adornó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adornar» una respuesta es coloquial y sugiere embellecerla, no aportar dos datos verificables."
+        hint_specific: "«Adornar» suena a añadir floritura. ¿Aporta floritura o aporta datos?"
+  - position: 8
+    sentence: "Hugo siempre {{blank}} antes que discutir: añade un detalle cierto en vez de llevar la contraria."
+    hint_general: "Busca el verbo para precisar sin convertir la charla en una pelea."
+    explanation: "Matiza: precisa sin convertir la charla en pelea. «Rebate» sería contradecir del todo, y «atiza» sería avivar la discusión."
+    options:
+      - position: 1
+        text: "rebate"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rebatir» es contradecir del todo, y la frase dice que él evita llevar la contraria."
+        hint_specific: "«Rebatir» contradice entero. ¿Eso encaja con quien evita la contraria?"
+      - position: 2
+        text: "matiza"
+        is_correct: true
+      - position: 3
+        text: "atiza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atizar» es avivar una discusión, y él hace justo lo contrario para evitarla."
+        hint_specific: "«Atizar» enciende. ¿Quien evita discutir enciende la charla?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El dato que faltaba"
+    body: "En la presentación, Rocío dijo que las ventas habían caído. Su compañera levantó la mano: «Quiero matizar eso: cayeron en tienda, pero en internet crecieron un 20 %». La conversación cambió: ya no hablaban de un problema, sino de dónde invertir."
+    before_phrase: "Sí, pero no es tan así."
+    after_phrase: "Quiero matizar eso."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que quise decir"
+    body: "Después de discutir, Bruno le escribió a su madre: «Ayer dije que nunca me escuchas. Quiero matizarlo: a veces siento que no me escuchas cuando hablo de mi trabajo». Su madre respondió con un corazón y, al rato, con una llamada."
+    before_phrase: "Perdón, no era tan así lo que dije."
+    after_phrase: "Quiero matizar lo que dije."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Sobremesa"
+    body: "Alguien dijo que las redes sociales solo sirven para perder el tiempo. Pilar sonrió: «Lo matizaría: a mí me sirvieron para encontrar trabajo, aunque también pierdo horas ahí». Nadie se sintió atacado y la charla siguió con buen ambiente."
+    before_phrase: "Bueno, depende, no siempre."
+    after_phrase: "Lo matizaría."
+provenance:
+  generator: "hand-written reference for AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

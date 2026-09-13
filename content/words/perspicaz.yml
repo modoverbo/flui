@@ -1,0 +1,152 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000001"
+sort_order: 1
+slug: "perspicaz"
+status: "approved"
+lemma: "perspicaz"
+part_of_speech: "adjetivo"
+syllables:
+  - "pers"
+  - "pi"
+  - "caz"
+stressed_syllable: 3
+ipa_latam: "[pers.piˈkas]"
+ipa_es: "[pers.piˈkaθ]"
+explanation: "Que se da cuenta rápido de lo que no es obvio: capta detalles, intenciones o problemas que otros no ven."
+example_sentence: "Qué observación tan perspicaz: nadie más había notado que el cliente no mencionó el precio."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Suena natural como elogio a otra persona o a una idea. Para describirte a ti, «soy muy perspicaz» suena a presumir."
+when_not_to_use: "No la uses para decir que alguien desconfía (eso es «suspicaz») ni para decir que algo se entiende bien (eso es «claro» o «perspicuo»)."
+collocations:
+  - "observación perspicaz"
+  - "pregunta perspicaz"
+  - "mirada perspicaz"
+  - "ser perspicaz para los negocios"
+replaces:
+  - before: "Es muy listo, se da cuenta de todo"
+    after: "Es muy perspicaz"
+  - before: "¡Qué buena pregunta, qué lista!"
+    after: "Qué pregunta tan perspicaz"
+  - before: "Tiene buen ojo para los problemas"
+    after: "Es perspicaz para detectar problemas"
+family:
+  - "perspicacia"
+  - "perspicazmente"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "suspicaz"
+    difference: "«Suspicaz» describe a quien tiende a desconfiar y sospechar de los demás. «Perspicaz» describe a quien capta lo que no es evidente."
+    memory_trick: "El suspicaz sospecha; el perspicaz descubre."
+  - confused_with: "perspicuo"
+    difference: "«Perspicuo» se dice de lo que se entiende con claridad, como un texto o una explicación. Comparte raíz con «perspicaz», pero no describe a quien observa."
+    memory_trick: "El perspicaz ve; lo perspicuo se ve."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000011"
+    position: 1
+    sentence: "Andrés confía plenamente en su equipo, pero es tan {{blank}} que detectó en dos minutos el error de las cifras que nadie había visto."
+    hint_general: "La palabra describe a alguien que capta rápido lo que no es evidente."
+    explanation: "Perspicaz: que se da cuenta rápido de lo que no es obvio. «Suspicaz» se parece, pero es quien desconfía. «Perspicuo» comparte raíz, pero describe lo que se entiende fácilmente. El perspicaz ve; lo perspicuo se ve."
+    options:
+      - position: 1
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» es quien sospecha de los demás, y Andrés confía en su equipo."
+        hint_specific: "Fíjate en el inicio: Andrés confía en su equipo. ¿Encaja alguien que sospecha de todos?"
+      - position: 2
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "perspicuo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perspicuo» se dice de lo que se entiende con claridad, como una explicación. Andrés no explica: descubre."
+        hint_specific: "«Perspicuo» describe algo fácil de entender, como un texto. ¿Andrés es fácil de entender o descubre algo?"
+  - id: "b0000000-0000-4000-8000-000000000012"
+    position: 2
+    sentence: "Tomás notó que su hermana cambiaba de tema cada vez que alguien mencionaba la mudanza. Fue muy {{blank}}: sin que nadie le dijera nada, entendió que algo le preocupaba."
+    hint_general: "Busca la palabra para alguien que entiende lo que pasa sin que se lo digan."
+    explanation: "Perspicaz: Tomás captó una señal que nadie le explicó. «Locuaz» describe a quien habla mucho y «tenaz» a quien no se rinde; ninguna de las dos habla de darse cuenta."
+    options:
+      - position: 1
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» es quien habla mucho y con facilidad. Aquí lo importante es que Tomás se dio cuenta de algo, no cuánto habló."
+        hint_specific: "«Locuaz» tiene que ver con hablar mucho. ¿La frase cuenta cuánto habla Tomás?"
+      - position: 3
+        text: "tenaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tenaz» es quien no se rinde. Tomás no insistió en nada: captó una señal que otros no vieron."
+        hint_specific: "«Tenaz» describe a quien persiste. Relee: ¿Tomás insiste o se da cuenta?"
+  - id: "b0000000-0000-4000-8000-000000000013"
+    position: 3
+    sentence: "Camila no desconfía de nadie, pero es muy {{blank}}: en la primera reunión intuyó que el plazo del proveedor era imposible, y acertó."
+    hint_general: "La frase elogia a Camila por notar un problema antes que los demás."
+    explanation: "Perspicaz: Camila captó a tiempo lo que no era evidente. «Suspicaz» no encaja porque no desconfía de nadie, y «fisgona» es un reproche coloquial para quien curiosea, no un elogio."
+    options:
+      - position: 1
+        text: "fisgona"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fisgona» es coloquial y describe a quien curiosea en asuntos ajenos; es una crítica, y aquí se elogia su intuición."
+        hint_specific: "«Fisgona» es un reproche por meterse en lo ajeno. ¿La frase critica o elogia a Camila?"
+      - position: 2
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe a quien desconfía, y la frase dice que Camila no desconfía de nadie."
+        hint_specific: "Relee el inicio: Camila no desconfía de nadie. ¿Encaja una palabra que significa desconfiar?"
+      - position: 3
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La pregunta que nadie hizo"
+    body: "Mientras todos discutían el calendario, Carla preguntó: «¿Y quién aprueba los cambios si el cliente no responde?». Silencio. Nadie lo había pensado. El director sonrió: «Muy perspicaz, Carla. Eso nos habría retrasado un mes»."
+    before_phrase: "¡Qué buena pregunta, qué lista!"
+    after_phrase: "Qué pregunta tan perspicaz."
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "Un café con Marta"
+    body: "Sofía escuchaba a Marta hablar de su nuevo trabajo con entusiasmo, pero notó que nunca mencionaba a su jefe. «Oye, ¿todo bien con él?». Marta suspiró: «Eres muy perspicaz… la verdad, no»."
+    before_phrase: "Te das cuenta de todo."
+    after_phrase: "Eres muy perspicaz."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La última pregunta"
+    body: "Al final de la entrevista, Diego preguntó cómo medían el éxito en los primeros tres meses. La entrevistadora anotó algo y dijo: «Es una pregunta perspicaz; casi nadie la hace». Diego no tuvo que decir que era observador: se notó."
+    before_phrase: "Buena pregunta, ¿no?"
+    after_phrase: "Es una pregunta perspicaz."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null

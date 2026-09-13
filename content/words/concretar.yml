@@ -1,0 +1,153 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000006"
+sort_order: 6
+slug: "concretar"
+status: "approved"
+lemma: "concretar"
+part_of_speech: "verbo"
+syllables:
+  - "con"
+  - "cre"
+  - "tar"
+stressed_syllable: 3
+ipa_latam: "[koŋ.kreˈtar]"
+ipa_es: "[koŋ.kreˈtar]"
+explanation: "Pasar de una idea general a algo preciso: poner fecha, cifra, lugar o pasos claros."
+example_sentence: "Me encanta la idea del taller; ahora hay que concretar la fecha y el presupuesto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es una forma amable de pedir claridad: «¿Puedes concretar?» suena mejor que «no entiendo qué quieres»."
+when_not_to_use: "No la confundas con «concertar» (acordar una cita o un precio con alguien). Y no la uses para exigir detalles cuando la conversación todavía está explorando ideas."
+collocations:
+  - "concretar una fecha"
+  - "concretar un plan"
+  - "concretar una propuesta"
+  - "concretar los detalles"
+replaces:
+  - before: "Hay que aterrizar la idea"
+    after: "Hay que concretar la idea"
+  - before: "Quedamos en vernos un día de estos"
+    after: "Concretemos un día para vernos"
+  - before: "¿Qué quieres decir exactamente?"
+    after: "¿Puedes concretar?"
+family:
+  - "concreto"
+  - "concreción"
+  - "concretamente"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "concertar"
+    difference: "«Concertar» es acordar algo entre varias personas, como una cita o un precio. «Concretar» es precisar los detalles de algo."
+    memory_trick: "Concertar une a las personas; concretar precisa los detalles."
+  - confused_with: "completar"
+    difference: "«Completar» es terminar o añadir lo que falta. «Concretar» es convertir algo vago en algo preciso."
+    memory_trick: "Completas lo que falta; concretas lo que era vago."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000061"
+    position: 1
+    sentence: "El proyecto suena bien, pero es muy general; antes de pedir dinero, tienes que {{blank}} cuántas personas participarán y qué harán cada semana."
+    hint_general: "El proyecto es muy general: busca el verbo para pasar de la idea a los datos exactos."
+    explanation: "Concretar: pasar de la idea general a cifras y pasos claros. «Concertar» es acordar algo con otras personas, y «resumir» es acortar, pero al proyecto le faltan detalles, no le sobran."
+    options:
+      - position: 1
+        text: "resumir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es decir algo en menos palabras. El proyecto ya es demasiado general: le faltan datos, no le sobran."
+        hint_specific: "Resumir es acortar. ¿Al proyecto le sobran palabras o le faltan detalles?"
+      - position: 2
+        text: "concretar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otras personas, como una cita. Aquí no se trata de ponerse de acuerdo con nadie, sino de precisar el proyecto."
+        hint_specific: "«Concertar» es acordar algo con otras personas. ¿Con quién tendrías que ponerte de acuerdo aquí?"
+  - id: "b0000000-0000-4000-8000-000000000062"
+    position: 2
+    sentence: "Nos pidieron {{blank}} la propuesta: en lugar de «mejorar la atención», quieren saber qué cambiará, quién lo hará y para cuándo."
+    hint_general: "Piden pasar de una frase vaga a qué, quién y cuándo."
+    explanation: "Concretar: convertir una frase vaga en qué, quién y cuándo. «Ampliar» sería abarcar más, y «concertar» sería llegar a un acuerdo con alguien; ninguna de las dos pide precisión."
+    options:
+      - position: 1
+        text: "concretar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "ampliar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ampliar» es hacer algo más grande o abarcar más. No piden más ideas, sino detalles exactos: qué, quién y cuándo."
+        hint_specific: "Ampliar es hacer algo más grande. ¿Piden más contenido o más precisión?"
+      - position: 3
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es ponerse de acuerdo con alguien. Lo que piden aquí es precisión: qué cambiará, quién y para cuándo."
+        hint_specific: "«Concertar» es acordar algo entre partes. ¿La frase pide un acuerdo o detalles exactos?"
+  - id: "b0000000-0000-4000-8000-000000000063"
+    position: 3
+    sentence: "Tu hermano dice que quiere «cambiar de vida». Antes de darle consejos, pídele que {{blank}}: ¿quiere otro trabajo, otra ciudad o más tiempo libre?"
+    hint_general: "La pregunta del final pide pasar de una idea vaga a algo preciso."
+    explanation: "Concrete: que pase de «cambiar de vida» a algo preciso. «Se explaye» sería hablar más, no mejor, y «recapacite» sugiere que se equivocó, cuando solo le falta precisión."
+    options:
+      - position: 1
+        text: "se explaye"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explayarse» es hablar largo y tendido. No hace falta que tu hermano hable más, sino que diga qué quiere exactamente."
+        hint_specific: "Explayarse es extenderse al hablar. ¿Buscas más palabras o una respuesta precisa?"
+      - position: 2
+        text: "recapacite"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recapacitar» es reconsiderar algo, como si fuera un error. Querer cambiar de vida no es un error: solo es una idea vaga."
+        hint_specific: "Recapacitar es pensar si uno se equivocó. ¿Tu hermano hizo algo mal o solo habla en general?"
+      - position: 3
+        text: "concrete"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Del «ya veremos» al plan"
+    body: "Al terminar la lluvia de ideas, Mateo dijo: «Muy buenas propuestas. Antes de irnos, concretemos: ¿quién hace qué y para cuándo?». En cinco minutos, cada idea tenía responsable y fecha, y la reunión por fin sirvió para algo."
+    before_phrase: "Bueno, ya vemos cómo lo hacemos."
+    after_phrase: "Antes de irnos, concretemos."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El café pendiente"
+    body: "Elena y su amiga llevaban un año diciendo «a ver cuándo nos vemos». Esta vez Elena escribió: «Concretemos: ¿el sábado a las once, en la cafetería de siempre?». La respuesta llegó en un minuto: «¡Hecho!»."
+    before_phrase: "A ver cuándo nos vemos."
+    after_phrase: "Concretemos: el sábado a las once."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Menos adjetivos, más ejemplos"
+    body: "Cuando le preguntaron por sus logros, Paula empezó con «soy muy trabajadora». Se detuvo y concretó: «En mi último empleo reduje a la mitad el tiempo de respuesta a clientes en seis meses». La entrevistadora tomó nota."
+    before_phrase: "Soy muy trabajadora y todo eso."
+    after_phrase: "Lo concreto: reduje a la mitad el tiempo de respuesta."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null

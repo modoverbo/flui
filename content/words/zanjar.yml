@@ -1,0 +1,150 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000008"
+sort_order: 8
+slug: "zanjar"
+status: "approved"
+lemma: "zanjar"
+part_of_speech: "verbo"
+syllables:
+  - "zan"
+  - "jar"
+stressed_syllable: 2
+ipa_latam: "[sanˈxar]"
+ipa_es: "[θanˈxar]"
+explanation: "Terminar de forma definitiva una discusión, un problema o un asunto pendiente."
+example_sentence: "Llamé a mi hermano para zanjar el malentendido antes de la cena familiar."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para cerrar con respeto: «Zanjemos el tema así» propone un final sin imponerlo."
+when_not_to_use: "No la uses para cortar a alguien que todavía no ha podido opinar: zanjar antes de escuchar suena autoritario."
+collocations:
+  - "zanjar un tema"
+  - "zanjar una discusión"
+  - "zanjar un conflicto"
+  - "zanjar la cuestión"
+replaces:
+  - before: "Cerremos el tema"
+    after: "Zanjemos el tema"
+  - before: "Ya, se acabó la discusión"
+    after: "Con esto zanjamos la discusión"
+  - before: "Dejarlo resuelto de una vez"
+    after: "Zanjarlo de una vez"
+family:
+  - "zanja"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "saldar"
+    difference: "«Saldar» se usa sobre todo con deudas y cuentas: es pagarlas por completo. «Zanjar» es poner fin a una discusión o a un asunto."
+    memory_trick: "Saldas lo que debes; zanjas lo que discutes."
+  - confused_with: "zafarse"
+    difference: "«Zafarse» es librarse de algo que molesta o de una obligación. «Zanjar» no es escapar del problema, sino resolverlo."
+    memory_trick: "Quien se zafa huye; quien zanja resuelve."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000081"
+    position: 1
+    sentence: "Llevaban media hora discutiendo el orden de las diapositivas, hasta que Laura decidió {{blank}} el asunto: «Vamos por orden cronológico y seguimos con lo demás»."
+    hint_general: "Laura pone fin a la discusión con una decisión clara."
+    explanation: "Zanjar: Laura terminó la discusión con una decisión definitiva. «Esquivar» sería evitar el asunto y «aplazar» sería dejarlo para después; ella lo resolvió en el momento."
+    options:
+      - position: 1
+        text: "esquivar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esquivar» un asunto es evitarlo. Laura hace lo contrario: lo enfrenta y lo resuelve."
+        hint_specific: "Quien esquiva un tema no lo toca. ¿Laura evita el tema o toma una decisión?"
+      - position: 2
+        text: "zanjar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "aplazar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» es dejar algo para después. Laura no lo deja pendiente: decide en ese momento y cierra el tema."
+        hint_specific: "Aplazar es dejar para más tarde. ¿Laura deja la decisión para otro día?"
+  - id: "b0000000-0000-4000-8000-000000000082"
+    position: 2
+    sentence: "Después de años sin hablarse por la herencia, los dos hermanos se reunieron a comer para {{blank}} el conflicto de una vez."
+    hint_general: "Los hermanos quieren que el problema quede terminado para siempre."
+    explanation: "Zanjar: poner fin definitivo al conflicto. «Finiquitar» significa algo parecido, pero suena a trámite de oficina, y «sobrellevar» es aguantar el problema, no terminarlo."
+    options:
+      - position: 1
+        text: "finiquitar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Finiquitar» suena a trámite de oficina, como cerrar un contrato. Para una comida entre hermanos resulta demasiado frío."
+        hint_specific: "«Finiquitar» es propio de contratos y cuentas. ¿Suena natural en una comida familiar?"
+      - position: 2
+        text: "sobrellevar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sobrellevar» es aguantar algo difícil con paciencia. Los hermanos no quieren aguantar más: quieren terminarlo de una vez."
+        hint_specific: "Sobrellevar es soportar. ¿Encaja con «de una vez»?"
+      - position: 3
+        text: "zanjar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - id: "b0000000-0000-4000-8000-000000000083"
+    position: 3
+    sentence: "En el grupo de amigos, la discusión por el lugar de la cena ya duraba dos días, así que Marta la {{blank}} con una encuesta: el restaurante más votado ganaba."
+    hint_general: "Marta termina de forma definitiva una discusión que se alargaba."
+    explanation: "Zanjó: Marta terminó la discusión de forma definitiva con la encuesta. «Aplazó» sería dejarla para después, y «dirimió» tiene un sentido cercano, pero suena a juzgado, no a un chat de amigos."
+    options:
+      - position: 1
+        text: "zanjó"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "aplazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» es dejar algo para más tarde. Con la encuesta, Marta no pospone nada: la decisión queda tomada."
+        hint_specific: "Fíjate en el final: el más votado ganaba. ¿Eso deja la decisión para después?"
+      - position: 3
+        text: "dirimió"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dirimir» se parece en significado, pero suena a juzgado o a arbitraje. En un grupo de amigos resulta demasiado solemne."
+        hint_specific: "«Dirimir» es propio de jueces y árbitros. ¿Suena natural en el chat de tus amigos?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Reunión sin fin"
+    body: "La discusión sobre el logo nuevo ya iba por la tercera reunión. Gabriel propuso: «Hagamos una prueba con veinte clientes y que decidan ellos. Así lo zanjamos esta semana». Todos aceptaron, aliviados."
+    before_phrase: "Ya, cerremos el tema de una vez."
+    after_phrase: "Así lo zanjamos esta semana."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El malentendido"
+    body: "Valeria y su hermano no se hablaban desde el cumpleaños de su madre. Ella lo llamó: «No quiero que esto siga creciendo. Te pido perdón por lo que dije y quiero zanjarlo hoy». Hubo un silencio, y luego una risa: «Yo también»."
+    before_phrase: "Ya olvidémonos de eso, ¿sí?"
+    after_phrase: "Quiero zanjarlo hoy."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Quién paga"
+    body: "Cada vez que salían, el grupo discutía cómo repartir la cuenta. Tomás zanjó el tema con humor: «Propuesta: cada uno paga lo suyo y quien llegue tarde invita el postre». Desde entonces, nadie llega tarde."
+    before_phrase: "Bueno, ya, se acabó la discusión."
+    after_phrase: "Tomás zanjó el tema con humor."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null

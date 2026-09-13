@@ -1,0 +1,152 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000004"
+sort_order: 4
+slug: "sopesar"
+status: "approved"
+lemma: "sopesar"
+part_of_speech: "verbo"
+syllables:
+  - "so"
+  - "pe"
+  - "sar"
+stressed_syllable: 3
+ipa_latam: "[so.peˈsar]"
+ipa_es: "[so.peˈsar]"
+explanation: "Pensar con calma las ventajas y desventajas de algo antes de decidir."
+example_sentence: "Antes de aceptar la oferta, quiero sopesar si el sueldo compensa las horas de viaje."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Transmite que tu decisión es pensada, no impulsiva: «Déjame sopesarlo» suena mejor que «lo pienso y te digo»."
+when_not_to_use: "No la uses para decir que algo supera un límite (eso es «sobrepasar») ni como excusa elegante para no decidir nunca."
+collocations:
+  - "sopesar las opciones"
+  - "sopesar los pros y los contras"
+  - "sopesar una decisión"
+  - "sopesar los riesgos"
+replaces:
+  - before: "Lo voy a pensar bien"
+    after: "Voy a sopesarlo"
+  - before: "Ver lo bueno y lo malo"
+    after: "Sopesar los pros y los contras"
+  - before: "Pensar qué me conviene más"
+    after: "Sopesar las opciones"
+family:
+  - "peso"
+  - "pesar"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sobrepasar"
+    difference: "«Sobrepasar» es superar un límite o una cantidad. «Sopesar» es valorar con cuidado antes de decidir."
+    memory_trick: "Sopesas antes de decidir; sobrepasas un límite."
+  - confused_with: "posponer"
+    difference: "«Posponer» es dejar una decisión para más tarde. «Sopesar» es pensarla ahora, con cuidado."
+    memory_trick: "Quien sopesa decide mejor; quien pospone decide después."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000041"
+    position: 1
+    sentence: "Camila tiene dos ofertas de trabajo; antes de responder, quiere {{blank}} el sueldo, el horario y la distancia de cada una."
+    hint_general: "Busca el verbo para comparar con calma lo bueno y lo malo de cada opción."
+    explanation: "Sopesar: comparar con calma cada factor antes de decidir. «Sobrepasar» es superar un límite, y «posponer» es aplazar una decisión, no analizar el sueldo o la distancia."
+    options:
+      - position: 1
+        text: "sopesar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "sobrepasar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite. Camila no quiere superar el sueldo ni la distancia: quiere compararlos."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿Camila quiere superar algo o comparar?"
+      - position: 3
+        text: "posponer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posponer» es dejar una decisión para más tarde. La frase dice que Camila quiere analizar cada oferta antes de responder."
+        hint_specific: "«Posponer» es aplazar. ¿Se puede aplazar un sueldo o una distancia?"
+  - id: "b0000000-0000-4000-8000-000000000042"
+    position: 2
+    sentence: "Mis padres {{blank}} durante semanas si vender la casa de la playa: les daba pena, pero mantenerla les costaba demasiado."
+    hint_general: "Tus padres comparan dos cosas: lo que sienten por la casa y lo que les cuesta."
+    explanation: "Sopesaron: pusieron en la balanza la pena y el gasto antes de decidir. «Sobrepasaron» significa superar un límite, y «despacharon» sería resolverlo deprisa, no durante semanas."
+    options:
+      - position: 1
+        text: "despacharon"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Despachar» un asunto es resolverlo rápido y sin más vueltas. Tus padres tardaron semanas en decidir."
+        hint_specific: "«Despachar» es resolver algo deprisa. ¿Encaja con «durante semanas»?"
+      - position: 2
+        text: "sopesaron"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "sobrepasaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite. Tus padres no superaron nada: comparaban la pena con el gasto."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿Qué límite superaron tus padres?"
+  - id: "b0000000-0000-4000-8000-000000000043"
+    position: 3
+    sentence: "Antes de reservar el viaje con sus amigos, Diego se tomó un día para {{blank}} los gastos frente a lo que tenía ahorrado."
+    hint_general: "Diego pone en la balanza dos cosas antes de decidir: lo que costará y lo que tiene."
+    explanation: "Sopesar: comparar los gastos con lo ahorrado antes de decidir. «Sobrepasar» es superar un límite, y «saldar» es terminar de pagar una deuda, algo que Diego aún no está haciendo."
+    options:
+      - position: 1
+        text: "saldar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Saldar» es pagar por completo una deuda o una cuenta. Diego todavía no paga nada: compara los gastos con sus ahorros."
+        hint_specific: "«Saldar» es terminar de pagar. ¿Diego ya está pagando o todavía está comparando?"
+      - position: 2
+        text: "sobrepasar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite. Diego justo quiere evitar pasarse: por eso compara."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿La frase habla de pasarse o de comparar?"
+      - position: 3
+        text: "sopesar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La oferta"
+    body: "A Elena le ofrecieron dirigir un equipo en otra ciudad. En lugar de responder en el momento, dijo: «Me entusiasma mucho. Déjame sopesarlo hasta el lunes: quiero hablarlo en casa». Su directora valoró la respuesta: demostraba que se tomaba la decisión en serio."
+    before_phrase: "Lo pienso y te digo."
+    after_phrase: "Déjame sopesarlo hasta el lunes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "¿Nos mudamos?"
+    body: "Carlos y Andrea llevaban meses dudando si mudarse cerca de los abuelos. Una noche hicieron dos columnas en un papel. «Vamos a sopesarlo en serio», dijo ella. Al terminar, la lista de ventajas era más larga, y por primera vez se sintieron tranquilos con la decisión."
+    before_phrase: "Vamos a pensarlo bien."
+    after_phrase: "Vamos a sopesarlo en serio."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta difícil"
+    body: "La entrevistadora le preguntó a Andrés por qué había dejado su empleo anterior. Él respondió: «Sopesé la estabilidad que tenía frente a la posibilidad de aprender algo nuevo, y elegí crecer». La respuesta sonó madura y honesta."
+    before_phrase: "Pues lo pensé y ya, me fui."
+    after_phrase: "Sopesé la estabilidad frente a la posibilidad de crecer."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null

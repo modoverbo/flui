@@ -1,0 +1,134 @@
+# flui theme taxonomy — the 16 launch themes.
+#
+# family: trabajo | social | publico | precision | emocion
+# content_type: word_driven | expression_driven | mixed
+# Copy is Spanish, brand voice (warm, direct, "tú", never school words).
+schema_version: 1
+themes:
+  - slug: reuniones
+    family: trabajo
+    name: Reuniones
+    tagline: Que se note que estabas ahí.
+    jtbd: Quiero intervenir en una reunión y que mi idea se entienda a la primera.
+    content_type: word_driven
+    sort_order: 1
+
+  - slug: presentaciones-oratoria
+    family: publico
+    name: Presentaciones
+    tagline: Hablar delante de gente sin sonar a guion.
+    jtbd: Quiero presentar mi trabajo y sonar seguro sin memorizar cada frase.
+    content_type: mixed
+    sort_order: 2
+
+  - slug: entrevistas
+    family: trabajo
+    name: Entrevistas
+    tagline: Contar lo que vales sin exagerar.
+    jtbd: Quiero responder en una entrevista con ejemplos concretos y palabras justas.
+    content_type: mixed
+    sort_order: 3
+
+  - slug: negociacion
+    family: trabajo
+    name: Negociación
+    tagline: Pedir claro y quedar bien.
+    jtbd: Quiero pedir un aumento o cerrar un trato sin sonar agresivo ni inseguro.
+    content_type: mixed
+    sort_order: 4
+
+  - slug: liderazgo-feedback
+    family: trabajo
+    name: Liderazgo y feedback
+    tagline: Decir lo que hay que decir sin romper nada.
+    jtbd: Quiero dar feedback a mi equipo de forma que se entienda y no duela.
+    content_type: word_driven
+    sort_order: 5
+
+  - slug: conflicto-desacuerdo
+    family: emocion
+    name: Desacuerdos
+    tagline: No estar de acuerdo sin convertirlo en pelea.
+    jtbd: Quiero discrepar en voz alta y que la conversación siga siendo posible.
+    content_type: expression_driven
+    sort_order: 6
+
+  - slug: correos-mensajes
+    family: trabajo
+    name: Correos y mensajes
+    tagline: Escribir corto y que no suene seco.
+    jtbd: Quiero escribir un correo breve que consiga respuesta y no parezca brusco.
+    content_type: expression_driven
+    sort_order: 7
+
+  - slug: redaccion-ejecutiva
+    family: trabajo
+    name: Escribir para que te lean
+    tagline: Menos palabras, más decisión.
+    jtbd: Quiero resumir un tema complejo en un párrafo que alguien ocupado entienda.
+    content_type: word_driven
+    sort_order: 8
+
+  - slug: persuasion-storytelling
+    family: publico
+    name: Convencer y contar
+    tagline: Una idea se recuerda cuando tiene forma de historia.
+    jtbd: Quiero contar lo que hice de modo que la otra persona lo recuerde mañana.
+    content_type: mixed
+    sort_order: 9
+
+  - slug: conversaciones-dificiles
+    family: emocion
+    name: Conversaciones difíciles
+    tagline: Abrir el tema que llevas semanas evitando.
+    jtbd: Quiero empezar una conversación incómoda sin que la otra persona se cierre.
+    content_type: expression_driven
+    sort_order: 10
+
+  - slug: matices-precision
+    family: precision
+    name: Matices
+    tagline: La diferencia entre parecido y exacto.
+    jtbd: Quiero decir exactamente lo que pienso, ni más fuerte ni más flojo.
+    content_type: word_driven
+    sort_order: 11
+
+  - slug: conectores-estructura
+    family: precision
+    name: Conectores
+    tagline: Las palabras que sostienen una idea larga.
+    jtbd: Quiero enlazar mis ideas para que se sigan sin perderse a la mitad.
+    content_type: expression_driven
+    sort_order: 12
+
+  - slug: paronimos
+    family: precision
+    name: Palabras que se parecen
+    tagline: Dos palabras casi iguales, dos significados distintos.
+    jtbd: Quiero dejar de confundir pares que se parecen y suenan a descuido.
+    content_type: word_driven
+    sort_order: 13
+
+  - slug: elogio-reconocimiento
+    family: social
+    name: Reconocer a otros
+    tagline: Un elogio preciso vale por diez genéricos.
+    jtbd: Quiero reconocer el trabajo de alguien de forma específica y creíble.
+    content_type: word_driven
+    sort_order: 14
+
+  - slug: decir-que-no
+    family: emocion
+    name: Decir que no
+    tagline: Negarte sin dar diez explicaciones.
+    jtbd: Quiero rechazar una petición y mantener la relación intacta.
+    content_type: expression_driven
+    sort_order: 15
+
+  - slug: conversacion-cotidiana
+    family: social
+    name: Conversación diaria
+    tagline: Hablar del día a día con palabras que encajan.
+    jtbd: Quiero contar lo que me pasa sin repetir siempre cosa, tema y hacer.
+    content_type: mixed
+    sort_order: 16

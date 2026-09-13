@@ -1,0 +1,153 @@
+# Imported from ../supabase/seed.sql by dart run content:import.
+# This file is now the source of truth; regenerate the seed with
+# dart run content:emit. Authored before the validator suite existed,
+# so dart run content:validate is expected to report gaps.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000007"
+sort_order: 7
+slug: "contundente"
+status: "approved"
+lemma: "contundente"
+part_of_speech: "adjetivo"
+syllables:
+  - "con"
+  - "tun"
+  - "den"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[kon.tunˈden.te]"
+ipa_es: "[kon.tunˈden.te]"
+explanation: "Tan claro y firme que convence o no deja lugar a dudas."
+example_sentence: "Los datos del estudio son contundentes: la nueva ruta ahorra veinte minutos al día."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Brilla con pruebas, datos y respuestas. Con personas, cuidado: «fue muy contundente» puede sonar a duro."
+when_not_to_use: "No la uses para una opinión que solo es agresiva o ruidosa: lo contundente convence por su claridad, no por el volumen."
+collocations:
+  - "argumento contundente"
+  - "respuesta contundente"
+  - "prueba contundente"
+  - "resultados contundentes"
+replaces:
+  - before: "Un argumento muy bueno"
+    after: "Un argumento contundente"
+  - before: "Le respondió clarísimo, sin dar vueltas"
+    after: "Le dio una respuesta contundente"
+  - before: "Los resultados son súper claros"
+    after: "Los resultados son contundentes"
+family:
+  - "contundencia"
+  - "contundentemente"
+themes: []
+tags:
+  comodin: []
+  funcion: []
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "condescendiente"
+    difference: "«Condescendiente» describe a quien trata a los demás con aire de superioridad. «Contundente» describe algo claro y firme."
+    memory_trick: "Lo contundente convence; lo condescendiente ofende."
+  - confused_with: "convincente"
+    difference: "«Convincente» es lo que logra convencer. «Contundente» añade firmeza: además de convencer, no deja lugar a dudas."
+    memory_trick: "Lo convincente te persuade; lo contundente te deja sin réplica."
+exercises:
+  - id: "b0000000-0000-4000-8000-000000000071"
+    position: 1
+    sentence: "Cuando le preguntaron si el proyecto seguiría adelante, la directora dio una respuesta {{blank}}: «Sí, sin cambios y con el mismo equipo»."
+    hint_general: "La respuesta es tan firme y clara que no deja ninguna duda."
+    explanation: "Contundente: una respuesta firme que no deja dudas. «Condescendiente» sería hablar con superioridad, y «contenciosa» se refiere a disputas o juicios; la directora solo fue clara."
+    options:
+      - position: 1
+        text: "condescendiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Condescendiente» es hablar con aire de superioridad. La respuesta de la directora es breve y clara, sin mirar a nadie por encima del hombro."
+        hint_specific: "Lo condescendiente suena a superioridad. ¿La respuesta de la directora trata mal a alguien?"
+      - position: 2
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "contenciosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contencioso» se usa para disputas, sobre todo legales. La directora no está peleando: responde con total claridad."
+        hint_specific: "«Contencioso» suena a pleito o juicio. ¿La respuesta abre una disputa o la cierra?"
+  - id: "b0000000-0000-4000-8000-000000000072"
+    position: 2
+    sentence: "Lucía llevaba media hora discutiendo con su hermano sobre si su sobrino dormía lo suficiente, hasta que le mostró el registro de sueño de toda la semana: fue una prueba {{blank}}."
+    hint_general: "La prueba fue tan clara que terminó la discusión."
+    explanation: "Contundente: la prueba no dejó lugar a dudas y cerró la discusión. «Llamativa» solo describe algo que atrae la atención, y «contingente» es lo que puede ocurrir o no."
+    options:
+      - position: 1
+        text: "llamativa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Llamativa» es lo que atrae la atención. Aquí importa que la prueba terminó la discusión, no que fuera vistosa."
+        hint_specific: "Algo llamativo se nota mucho, pero ¿basta para terminar una discusión?"
+      - position: 2
+        text: "contingente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contingente» es lo que puede suceder o no. El registro de la semana ya existe y cerró la discusión."
+        hint_specific: "«Contingente» es lo que podría pasar o no. ¿El registro de la semana es una posibilidad o un hecho?"
+      - position: 3
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - id: "b0000000-0000-4000-8000-000000000073"
+    position: 3
+    sentence: "Cuando le pidieron un ejemplo de liderazgo, Raúl no dio rodeos: contó con cifras claras cómo sacó adelante un proyecto en crisis. Fue {{blank}} y convenció al comité."
+    hint_general: "Raúl fue directo, con datos claros, y no dejó dudas."
+    explanation: "Contundente: directo, con cifras y sin dejar dudas. «Condescendiente» sería tratar al comité con superioridad, y «redundante» sería repetirse, justo lo contrario de ir al grano."
+    options:
+      - position: 1
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "condescendiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Condescendiente» es tratar a otros con superioridad, y eso no convence a un comité. Raúl fue directo y aportó cifras."
+        hint_specific: "Lo condescendiente molesta a quien escucha. ¿La frase dice que el comité se molestó?"
+      - position: 3
+        text: "redundante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Redundante» es repetir lo que ya se dijo. Raúl no dio rodeos: fue al grano con cifras."
+        hint_specific: "Lo redundante se repite. ¿Encaja con alguien que «no dio rodeos»?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los números hablan"
+    body: "Nadie creía que el nuevo horario funcionara. Camila no discutió: presentó una tabla con tres meses de datos. Las quejas habían bajado un 40 %. Su jefe cerró el tema: «Los resultados son contundentes; lo mantenemos»."
+    before_phrase: "Los resultados son súper claros."
+    after_phrase: "Los resultados son contundentes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Un no con cariño"
+    body: "Su hija adolescente insistía en volver a casa a las tres de la mañana. Andrea la escuchó hasta el final y respondió, tranquila y contundente: «Entiendo que quieras quedarte más. La respuesta es no: a la una paso a buscarte»."
+    before_phrase: "Que no y punto, porque lo digo yo."
+    after_phrase: "Fue una respuesta tranquila y contundente."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Fin del rumor"
+    body: "En el grupo de amigos corría el rumor de que Diego se iba de la ciudad. Él escribió un mensaje breve y contundente: «No me mudo. Cambio de trabajo, pero sigo aquí». Nadie volvió a preguntar."
+    before_phrase: "Que no, que no es así, de verdad."
+    after_phrase: "Un mensaje breve y contundente."
+provenance:
+  generator: "content:import from supabase/seed.sql"
+  gate: null
+  checked_on: null
