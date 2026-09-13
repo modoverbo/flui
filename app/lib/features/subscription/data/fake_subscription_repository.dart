@@ -18,12 +18,12 @@ final class FakeSubscriptionRepository implements SubscriptionRepository {
     this.webhookLagPolls = 1,
   });
 
-  /// Same plans as `supabase/seed.sql` (placeholder prices).
+  /// Same plans as `supabase/seed.sql` (kept in sync by a test).
   static const seedPlans = [
     SubscriptionPlan(
       id: 'monthly',
       billingPeriodDays: 30,
-      priceCents: 999,
+      priceCents: 699,
       currency: 'USD',
       label: 'Mensual',
       sortOrder: 1,
@@ -31,10 +31,10 @@ final class FakeSubscriptionRepository implements SubscriptionRepository {
     SubscriptionPlan(
       id: 'quarterly',
       billingPeriodDays: 90,
-      priceCents: 2499,
+      priceCents: 1615,
       currency: 'USD',
       label: 'Trimestral',
-      savingsLabel: 'Ahorra 17%',
+      savingsLabel: 'Ahorra 23%',
       sortOrder: 2,
     ),
   ];

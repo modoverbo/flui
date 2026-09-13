@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/features/subscription/data/fake_checkout_launcher.dart';
@@ -24,6 +26,22 @@ void main() {
 
     expect(plans.map((plan) => plan.id), ['monthly', 'quarterly']);
     expect(plans.last.savingsLabel, isNotNull);
+  });
+
+  test('seed plans match supabase/seed.sql prices and labels', () {
+    final seed = File('../supabase/seed.sql').readAsStringSync();
+
+    for (final plan in FakeSubscriptionRepository.seedPlans) {
+      final savings = plan.savingsLabel == null
+          ? 'null'
+          : "'${plan.savingsLabel}'";
+      final row = RegExp(
+        "\\('${plan.id}',\\s*'[^']*',\\s*${plan.billingPeriodDays},\\s*"
+        "${plan.priceCents},\\s*'${plan.currency}',\\s*'${plan.label}',\\s*"
+        '$savings,\\s*${plan.sortOrder},',
+      );
+      expect(seed, matches(row), reason: 'plan ${plan.id} drifted from seed');
+    }
   });
 
   test('new users have no access', () async {

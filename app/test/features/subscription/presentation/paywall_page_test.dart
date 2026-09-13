@@ -63,11 +63,11 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('Mensual'), findsOneWidget);
-    expect(find.text(r'US$ 9.99 al mes'), findsOneWidget);
+    expect(find.text(r'US$ 6.99 al mes'), findsOneWidget);
     expect(find.text('Trimestral'), findsOneWidget);
-    expect(find.text(r'US$ 24.99 cada 3 meses'), findsOneWidget);
-    expect(find.text(r'Equivale a US$ 8.33 al mes'), findsOneWidget);
-    expect(find.text('Ahorra 17%'), findsOneWidget);
+    expect(find.text(r'US$ 16.15 cada 3 meses'), findsOneWidget);
+    expect(find.text(r'Equivale a US$ 5.38 al mes'), findsOneWidget);
+    expect(find.text('Ahorra 23%'), findsOneWidget);
     expect(find.text('Recomendado'), findsOneWidget);
     expect(find.text('Empezar prueba gratis'), findsOneWidget);
   });

@@ -23,7 +23,7 @@ final class SupabaseSubscriptionRepository implements SubscriptionRepository {
           .from('subscription_plans')
           .select(SubscriptionPlanDto.columns)
           .eq('active', true)
-          .order('sort_order');
+          .order('sort_order', ascending: true);
       return Result.ok([
         for (final row in rows) SubscriptionPlanDto.fromJson(row).toDomain(),
       ]);
