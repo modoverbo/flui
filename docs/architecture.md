@@ -356,16 +356,20 @@ Feature-first, with Clean Architecture layers inside each feature.
 
 ```text
 app/lib/
-  core/                 # app-wide infrastructure: config, router, theme tokens, Supabase client,
-                        # error/Result types, l10n setup. No feature imports.
+  main.dart, bootstrap.dart   # config parsing, backend selection (fake | supabase), DI overrides
+  app/                  # FluiApp, router + guards, responsive shell, top-level pages
+  core/                 # app-wide infrastructure: config, clock, theme tokens, Supabase client,
+                        # error/Result types, l10n (app_es.arb). No feature imports.
   shared/               # reusable UI (atoms, molecules) and pure helpers. No feature imports.
   features/
-    auth/               # sign-up, sign-in, session
-    access/             # my_access, paywall, checkout return polling
-    session/            # time budget, SessionPlanner, daily_sessions
-    practice/           # exercise flow, hint policy, grading, attempts
-    words/              # catalog, word detail, mastery state machine
-    progress/           # streaks, weekly consistency, stats
+    auth/               # sign-up, sign-in, sign-out, session stream
+    onboarding/         # welcome and intro slides
+    subscription/       # plans, my_access, paywall, checkout return polling
+    daily/              # time budget, SessionPlanner, daily_sessions, "Hoy"
+    vocabulary/         # catalog, word detail, mastery state machine, review scheduling
+    exercises/          # cloze flow, hint policy, grading, attempts
+    reading/            # "En contexto" scenes
+    profile/            # "Tu progreso": streaks, weekly consistency, stats, account
       domain/           # entities, value objects, use cases, repository interfaces (pure Dart)
       data/             # Supabase data sources, DTOs, repository implementations
       presentation/     # Riverpod notifiers (view models), screens (containers), widgets (presentational)
