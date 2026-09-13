@@ -18,9 +18,10 @@ flutter gen-l10n
 flutter run -d chrome --web-port 3000 --dart-define-from-file=config/fake.json
 ```
 
-Walk it: Empezar → Saltar → create an account (any valid email, 8+ character password) →
-Empezar prueba gratis → "Activando tu prueba…" → time budget → Hoy → Empezar (first word:
-perspicaz) → session → Tu progreso.
+Walk it: Empezar → two questions and one real word (or Saltar) → your plan, the trial
+timeline and the prices (no account yet) → Crear mi cuenta (any valid email, 8+ character
+password) → Empezar prueba gratis → "Activando tu prueba…" → time budget → Hoy →
+Empezar (first word: perspicaz) → session → Tu progreso.
 
 | Fake backend behavior | Detail |
 |-----------------------|--------|
@@ -69,6 +70,8 @@ Only `*.example.json` files are committed. An invalid config shows a developer e
 | Web release build | `flutter build web --release --dart-define-from-file=config/fake.json` |
 | Brand SVGs and web icons | see the header of `tool/generate_brand_assets.mjs` |
 | Fake content from the seed | `dart run tool/seed_to_fixture.dart` (a test fails when it drifts) |
+| Custom glyphs | `node tool/generate_glyphs.mjs` |
+| Green texture plates | see the header of `tool/generate_texture_plates.mjs` (needs `sharp`) |
 | Android/iOS launcher icons | `dart run flutter_launcher_icons` |
 
 Generated files (`*.g.dart`, `*.freezed.dart`, `lib/core/l10n/gen/`) are **not committed**; CI
@@ -81,10 +84,14 @@ lib/
   main.dart, bootstrap.dart   # config → backend overrides → ProviderScope → FluiApp
   app/                        # FluiApp, go_router (routes, pure redirect), shell, splash, licenses
   core/                       # config, error (Result, Failure), clock, theme, l10n, supabase client
-  shared/widgets/             # FluiSymbol, FluiLogo, FluiButton, FluiCard, FluiTextField, ...
+  shared/
+    layout/                   # bento packing, section rhythm (pure, tested)
+    motion/                   # RevealLines, DrawUnderline, ShakeBox, SectionEntrance
+    widgets/                  # FluiPlate, BentoGrid, StickyCtaDock, SplitHero, PageFrame,
+                              # FluiGlyphIcon, FluiButton, FluiCard, FluiLabel, ...
   features/
     auth/ subscription/       # domain (pure Dart) · data (Supabase + fake) · presentation
-    onboarding/               # welcome, intro
+    onboarding/               # welcome, the two questions, the pre-signup micro-lesson
     daily/                    # time budget, SessionPlanner, SessionFlow, Hoy, session runner
     vocabulary/               # words, progress, ReviewScheduler, MasteryPolicy/Meter, Palabras
     exercises/                # cloze flow, form recall, production with its rubric, attempts
@@ -106,11 +113,18 @@ lib/
 | Material | `package:material_ui` (Flutter 3.47 standalone). Localizations use material_ui's `GlobalMaterialLocalizations.delegates`. No dependency exposes legacy Material types, so `MaterialUiCompatibilityBridge` is not needed. |
 | State | Riverpod 3 with code generation. Automatic retry is disabled (`ProviderScope(retry:)`): failures are typed and shown. Access is keyed by user id to avoid stale sessions. |
 | Lints | very_good_analysis 11, including the Dart 3.13 `new` / `factory name` constructor style. `public_member_api_docs` is off (app, not package). `invalid_annotation_target` is ignored as freezed documents for `@JsonSerializable` on factories. |
-| Icons | `flutter_lucide` (one font, tree-shaken). `lucide_icons_flutter` also ships six weight fonts (~2.7 MB) that web would download at startup. |
-| Fonts | Static OFL TTFs, only the weights in the type scale: Plus Jakarta Sans 700/800, Inter 400/600. Licenses are registered with `LicenseRegistry`. |
+| Design system | `core/theme/`: `FluiTypeScale` (8 roles, compact/wide), `FluiSpacing` (one scale, one content max-width policy), `FluiRadii` (14 px CTA, never a pill), `FluiSurfaces` (hairlines, one shadow), `FluiMotion`, `FluiColorRules`. Screens read `context.type` / `context.layout`; no screen calls `MediaQuery` for sizing. |
+| Icons | `flutter_lucide` (one font, tree-shaken) plus ten custom SVG glyphs on the wave motif (`assets/icons`, `tool/generate_glyphs.mjs`), rendered with `flutter_svg`. `lucide_icons_flutter` also ships six weight fonts (~2.7 MB) that web would download at startup. Three icon sizes only: 22 / 20 / 18. |
+| Texture | One green plate, pre-baked WebP at 1x/2x/3x (`tool/generate_texture_plates.mjs`). A live fragment shader would cost a first-frame stall on CanvasKit for a background that never moves. |
+| Motion | `flutter_animate` 4.5.2 for the one declarative section entrance (stable but dormant upstream since Nov 2024, so it is confined to `shared/motion/section_entrance.dart`); `animations` 3.0.0 for shared-axis route transitions; everything else is a plain `AnimationController`. Reduce-motion is honoured through `FluiMotion.resolve`. |
+| Fonts | Static OFL TTFs, only the weights in the type scale: Plus Jakarta Sans 600/700/800, Inter 400/600. Licenses are registered with `LicenseRegistry`. |
 | Logo | Three waves derived from Tabler Icons `ripple` (MIT): thicker strokes, left-to-right phase offset, calmer lower waves. `FluiSymbolGeometry` and the SVG assets share numbers; a test keeps them in sync. |
 | Web | Path URL strategy, SPA rewrite and revalidating cache headers in `vercel.json` (no COOP/COEP), branded loading splash in `web/index.html`. CanvasKit loads from Google's CDN by default. |
 | Google sign-in | Visible, disabled button with a `TODO(auth)`; not in Phase A. |
+| Pre-signup paywall | `/plan` shows the real `subscription_plans` prices before the account exists (`anon` can read active plans). The chosen plan is kept on the device, so `/paywall` opens straight on the decision after sign-up instead of repeating the pitch. |
+| Onboarding answers | Two questions before the account, kept in `shared_preferences` (`OnboardingStore`). A `TODO(flui)` marks the move to an `onboarding_answers` table; inventing the schema before the questions settle would migrate it twice. |
+| Trial reminder | `FluiFeatures.trialReminder` is **off**: there are no notifications or reminder emails yet, so the paywall's day-5 line promises only what "Tu progreso" already shows. |
+| Rive / Lottie | Not used. Rive community files are CC BY and the LottieFiles free plan is non-commercial for authoring, and both need asset authoring we have not scoped. `TODO` left for a separate decision. |
 
 ## Learning rules
 

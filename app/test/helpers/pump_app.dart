@@ -1,5 +1,7 @@
 import 'package:flui/core/l10n/gen/app_localizations.dart';
 import 'package:flui/core/theme/flui_theme.dart';
+import 'package:flui/core/theme/flui_type_scale.dart';
+import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -42,6 +44,11 @@ extension PumpFlui on WidgetTester {
     await pump();
   }
 }
+
+/// A [FluiTextField] by the label the user typed in the ARB file; the field
+/// renders it in caps.
+Finder fluiField(String label) =>
+    find.widgetWithText(FluiTextField, FluiTypeScale.labelText(label));
 
 /// Spanish strings for assertions.
 final AppLocalizations l10nEs = lookupAppLocalizations(const Locale('es'));

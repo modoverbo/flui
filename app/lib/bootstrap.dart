@@ -18,6 +18,9 @@ import 'package:flui/features/daily/presentation/providers/daily_providers.dart'
 import 'package:flui/features/exercises/data/fake_exercise_attempt_repository.dart';
 import 'package:flui/features/exercises/data/supabase_exercise_attempt_repository.dart';
 import 'package:flui/features/exercises/presentation/providers/exercise_providers.dart';
+import 'package:flui/features/onboarding/data/preferences_onboarding_store.dart';
+import 'package:flui/features/onboarding/domain/onboarding_store.dart';
+import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/profile/data/fake_streak_repair_repository.dart';
 import 'package:flui/features/profile/data/supabase_streak_repair_repository.dart';
 import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
@@ -35,6 +38,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:material_ui/material_ui.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// Composition root: picks the backend and wires repositories into Riverpod.
@@ -80,6 +84,7 @@ List<Override> fakeBackendOverrides({
   );
   return [
     authRepositoryProvider.overrideWithValue(auth),
+    onboardingStoreProvider.overrideWithValue(InMemoryOnboardingStore()),
     subscriptionRepositoryProvider.overrideWithValue(subscriptions),
     contentRepositoryProvider.overrideWithValue(
       FakeContentRepository(latency: latency),
@@ -119,6 +124,9 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
   String? currentUserId() => client.auth.currentUser?.id;
   return [
     supabaseClientProvider.overrideWithValue(client),
+    onboardingStoreProvider.overrideWithValue(
+      PreferencesOnboardingStore(SharedPreferencesAsync()),
+    ),
     authRepositoryProvider.overrideWithValue(
       SupabaseAuthRepository(client.auth, appUrl: config.appUrl),
     ),
