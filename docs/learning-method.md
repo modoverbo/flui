@@ -150,14 +150,17 @@ Wrong options are marked **"Casi."**, disabled, and never revealed as the answer
 
 - Prompt: the word's `explanation` plus a sentence with the word masked.
 - Normalize input and target: lowercase, trim, remove diacritics.
-- Accept when the Levenshtein distance between normalized input and the expected form is ≤ 1.
+- Accept an exact normalized match with the lemma or a family/inflected form. Tolerate a
+  Levenshtein distance of 1 only when the expected form has **6 or more letters**, so short words
+  are not accepted as near neighbours.
 - Up to 2 hints (the second reveals the first letter), then reveal. Accepted without reveal →
   `form_recall_done = true`.
 
 ### Production ("Úsala")
 
-The user writes a sentence for a given situation. It is accepted when it uses the word (any
-inflection) and the user confirms the self-check rubric: right meaning, natural register. Accepted →
+The user writes a sentence (at least 4 words) for a situation built from the word's first
+`replaces` pair. It is accepted when it uses the word (any inflection) and the user confirms the
+self-check rubric ("¿Suena natural?"): right meaning, natural register. Accepted →
 `production_done = true`. Real-world use ("¿La usaste hoy?") is a badge only and never gates mastery.
 
 ---
