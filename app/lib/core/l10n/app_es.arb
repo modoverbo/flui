@@ -237,6 +237,75 @@
   },
   "todayEmptyPlan": "Con 10 minutos te presento una palabra nueva.",
   "todayEmptyPlanAction": "Cambiar a 10 minutos",
+  "todayNoCandidates": "Ya recorriste todas mis palabras. Estoy escribiendo las que siguen.",
+  "todayBlockedCandidates": "Las palabras que quedan se parecen a las de esta semana. Un poco de distancia y encajan mejor.",
+  "todayNextReviews": "{count, plural, =1{Vuelve el {date}: 1 repaso te espera} other{Vuelve el {date}: {count} repasos te esperan}}",
+  "@todayNextReviews": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "todayFreeReview": "Repaso libre",
+  "todayFreeReviewHint": "Practica sin cambiar tu calendario.",
+  "todayExtraReview": "Repaso extra",
+  "todayContextTitle": "En contexto",
+  "statTowardsFirstOwned": "Camino a tu primera palabra tuya.",
+  "statPrecisionWindow": "últimos 30 días",
+  "masteryTitle": "El camino de esta palabra",
+  "masteryProgress": "{current} de {total}",
+  "@masteryProgress": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "masteryStepDiscovered": "Descubierta",
+  "masteryStepPracticed": "Practicada",
+  "masteryStepRecall": "Recordada sin ayuda",
+  "masteryStepProduction": "Usada en tu frase",
+  "masteryStepOwned": "Ya es tuya",
+  "sessionEndAccuracy": "{percent} % a la primera",
+  "@sessionEndAccuracy": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionEndAccuracyLabel": "en esta sesión",
+  "sessionEndTomorrow": "{count, plural, =0{Mañana no tienes repasos} =1{Mañana: 1 repaso} other{Mañana: {count} repasos}}",
+  "@sessionEndTomorrow": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionEndStreak": "{count, plural, =1{1 día seguido} other{{count} días seguidos}}",
+  "@sessionEndStreak": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sessionFreeLabel": "Repaso libre",
+  "productionModelTitle": "Una frase que funciona",
+  "productionRubricMeaning": "Dice lo que quiero decir",
+  "productionRubricNatural": "La diría en voz alta sin sonar raro",
+  "productionRubricFits": "La palabra encaja, no está forzada",
+  "productionRubricPending": "Marca lo que se cumple para seguir.",
+  "productionTooSimilar": "Esa es la frase de ejemplo. Escribe una tuya.",
+  "productionRepeatedWords": "Escribe una frase completa, no la misma palabra repetida.",
   "todayLoadError": "No pudimos cargar tu sesión.",
   "statOwnedWords": "palabras tuyas",
   "statWeekValue": "{count} de 7",
@@ -505,7 +574,15 @@
   "achievementFirstWord": "Primera palabra",
   "achievementFirstOwnedWord": "Primera palabra tuya",
   "achievementFiveActiveDays": "5 días activos",
-  "achievementTenWords": "10 palabras",
+  "achievementRepertoire": "{count} palabras en tu repertorio",
+  "@achievementRepertoire": {
+    "description": "Target follows the catalog size so it stays reachable.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "achievementFirstOwnSentence": "Primera frase propia",
   "achievementCompleted": "Completado",
   "achievementProgress": "{current} de {target}",

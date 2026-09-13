@@ -14,17 +14,25 @@ abstract final class AppRoutes {
   static const paywall = '/paywall';
   static const checkoutReturn = '/checkout/return';
 
-  // App shell (signed in with access).
+  // App shell (signed in with access): three tabs.
   static const today = '/today';
   static const timeBudget = '/today/time';
   static const words = '/words';
+  static const progress = '/progress';
+
+  /// Was a tab of its own. "Repaso extra" now lives on Hoy, and the scenes
+  /// live in the word detail, so both redirect instead of 404-ing old links.
   static const practice = '/practice';
   static const reading = '/reading';
-  static const progress = '/progress';
+  static const Map<String, String> retiredRoutes = {
+    practice: today,
+    reading: words,
+  };
 
   // Full screen, outside the shell.
   static const session = '/session';
   static const sessionReview = '/session?mode=review';
+  static const sessionFree = '/session?mode=free';
 
   static String wordDetail(String wordId) =>
       '$words/${Uri.encodeComponent(wordId)}';
@@ -34,8 +42,6 @@ abstract final class AppRoutes {
   static bool needsDailyBudget(String path) =>
       path == today ||
       path == session ||
-      path == practice ||
-      path == reading ||
       path == words ||
       path.startsWith('$words/');
 

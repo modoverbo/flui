@@ -7,7 +7,11 @@ import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Order of the shell branches. Keep in sync with `app_router.dart`.
-enum ShellDestination { today, words, practice, reading, progress }
+///
+/// Three tabs, not five: "Practica" became the "Repaso extra" action on Hoy
+/// and "En contexto" became a section of the word detail, because both were
+/// places the user had to remember to visit.
+enum ShellDestination { today, words, progress }
 
 /// Navigation chrome: bottom bar on phones, side rail on wide screens.
 class AppShellScaffold extends StatelessWidget {
@@ -30,11 +34,6 @@ class AppShellScaffold extends StatelessWidget {
         switch (destination) {
           ShellDestination.today => (LucideIcons.sun, l10n.navToday),
           ShellDestination.words => (LucideIcons.whole_word, l10n.navWords),
-          ShellDestination.practice => (LucideIcons.repeat, l10n.navPractice),
-          ShellDestination.reading => (
-            LucideIcons.message_square_quote,
-            l10n.navContext,
-          ),
           ShellDestination.progress => (
             LucideIcons.chart_line,
             l10n.navProgress,

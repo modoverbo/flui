@@ -54,6 +54,8 @@ String? _destinationFor(
               : AppRoutes.paywall;
         case AccessGate.granted:
           if (path == AppRoutes.checkoutReturn) return AppRoutes.timeBudget;
+          // Old deep links to the tabs that were merged away.
+          if (AppRoutes.retiredRoutes[path] case final moved?) return moved;
           final resolved =
               path == AppRoutes.root ||
                   path == AppRoutes.splash ||

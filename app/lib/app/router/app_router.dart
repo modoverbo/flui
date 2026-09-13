@@ -12,11 +12,9 @@ import 'package:flui/features/daily/presentation/providers/daily_providers.dart'
 import 'package:flui/features/daily/presentation/session_page.dart';
 import 'package:flui/features/daily/presentation/time_budget_page.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
-import 'package:flui/features/exercises/presentation/practice_page.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
-import 'package:flui/features/reading/presentation/reading_page.dart';
 import 'package:flui/features/subscription/presentation/pages/checkout_return_page.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
@@ -83,11 +81,7 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
   GoRoute(
     path: AppRoutes.session,
     parentNavigatorKey: rootKey,
-    builder: (_, state) => SessionPage(
-      mode: state.uri.queryParameters['mode'] == SessionMode.review.name
-          ? SessionMode.review
-          : SessionMode.daily,
-    ),
+    builder: (_, state) => SessionPage(mode: _modeOf(state.uri)),
   ),
   StatefulShellRoute.indexedStack(
     parentNavigatorKey: rootKey,
@@ -127,22 +121,6 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
       StatefulShellBranch(
         routes: [
           GoRoute(
-            path: AppRoutes.practice,
-            builder: (_, _) => const PracticePage(),
-          ),
-        ],
-      ),
-      StatefulShellBranch(
-        routes: [
-          GoRoute(
-            path: AppRoutes.reading,
-            builder: (_, _) => const ReadingPage(),
-          ),
-        ],
-      ),
-      StatefulShellBranch(
-        routes: [
-          GoRoute(
             path: AppRoutes.progress,
             builder: (_, _) => const ProgressPage(),
           ),
@@ -151,6 +129,12 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
     ],
   ),
 ];
+
+SessionMode _modeOf(Uri uri) {
+  final mode = uri.queryParameters['mode'];
+  return SessionMode.values.where((value) => value.name == mode).firstOrNull ??
+      SessionMode.daily;
+}
 
 class _RouterRefresh extends ChangeNotifier {
   void notify() => notifyListeners();

@@ -88,15 +88,12 @@ void main() {
     final harness = AppHarness(signedInAs: ana, access: trialing);
     await harness.pumpApp(
       tester,
-      initialLocation: AppRoutes.practice,
+      initialLocation: AppRoutes.words,
       arrange: (h) => h.planToday(),
     );
 
-    expect(location(harness), AppRoutes.practice);
-    expect(
-      find.text('Cuando descubras tu primera palabra, aquí la afianzarás.'),
-      findsOneWidget,
-    );
+    expect(location(harness), AppRoutes.words);
+    expect(find.text('Tu repertorio empieza hoy.'), findsOneWidget);
   });
 
   testWidgets('wide screens show the navigation rail', (tester) async {
