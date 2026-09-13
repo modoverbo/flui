@@ -1,0 +1,15 @@
+include: package:very_good_analysis/analysis_options.yaml
+
+analyzer:
+  exclude:
+    - words/**
+
+linter:
+  rules:
+    # This is an internal toolkit, not a published package.
+    public_member_api_docs: false
+    # Spanish content data is full of long literal strings.
+    lines_longer_than_80_chars: false
+    # gate-prepare.dart / gate-apply.dart must keep their hyphens: the file
+    # name is the `dart run content:<command>` name.
+    file_names: false

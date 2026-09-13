@@ -1,0 +1,239 @@
+# Canonical "everything passes" word. Every validator test starts from this
+# file, so a change here that breaks a rule breaks the suite loudly.
+schema_version: 1
+id: "a0000000-0000-4000-8000-000000000001"
+sort_order: 1
+slug: "perspicaz"
+status: "approved"
+lemma: "perspicaz"
+part_of_speech: "adjetivo"
+syllables: ["pers", "pi", "caz"]
+stressed_syllable: 3
+ipa_latam: "[pers.piˈkas]"
+ipa_es: "[pers.piˈkaθ]"
+explanation: "Que se da cuenta rápido de lo que no es obvio y capta detalles que otros no ven."
+example_sentence: "Qué observación tan perspicaz: nadie más había notado ese detalle del contrato."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Suena natural como elogio a otra persona o a una idea; sobre ti mismo suena a presumir."
+when_not_to_use: "No la uses para quien desconfía de todo, ni para decir que algo se entiende con facilidad."
+collocations:
+  - "observación perspicaz"
+  - "pregunta perspicaz"
+replaces:
+  - before: "Es muy listo"
+    after: "Es muy perspicaz"
+  - before: "Tiene buen ojo para los problemas"
+    after: "Es perspicaz para detectar problemas"
+family: ["perspicacia", "perspicazmente"]
+themes:
+  - slug: "reuniones"
+    relevance: 3
+tags:
+  comodin: ["listo"]
+  funcion: ["elogiar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "suspicaz"
+    difference: "«Suspicaz» describe a quien tiende a desconfiar; «perspicaz» describe a quien capta lo que no es evidente."
+    memory_trick: "El suspicaz sospecha; el perspicaz descubre."
+  - confused_with: "perspicuo"
+    difference: "«Perspicuo» se dice de lo que se entiende con claridad, como un texto; no describe a quien observa."
+    memory_trick: "El perspicaz ve; lo perspicuo se ve."
+exercises:
+  - position: 1
+    sentence: "Andrés confía plenamente en su equipo, pero es tan {{blank}} que detectó en dos minutos el error de las cifras que nadie había visto."
+    hint_general: "La palabra describe a alguien que capta rápido lo que no es evidente."
+    explanation: "Perspicaz: se da cuenta rápido de lo que no es obvio. «Suspicaz» es quien desconfía, y «perspicuo» describe lo que se entiende sin esfuerzo."
+    options:
+      - position: 1
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» es quien sospecha de los demás, y la frase dice que confía plenamente en su equipo."
+        hint_specific: "Fíjate en el inicio: confía en su equipo. ¿Encaja alguien que sospecha de todos?"
+      - position: 2
+        text: "perspicaz"
+        is_correct: true
+      - position: 3
+        text: "perspicuo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perspicuo» se dice de lo que se entiende con claridad, como una explicación; aquí alguien descubre algo."
+        hint_specific: "«Perspicuo» describe algo fácil de entender. ¿La frase habla de entender o de descubrir?"
+  - position: 2
+    sentence: "Camila no desconfía de nadie, pero es muy {{blank}}: en la primera reunión intuyó que el plazo del proveedor era imposible, y acertó."
+    hint_general: "Busca la palabra para quien nota un problema antes que los demás."
+    explanation: "Perspicaz: notó a tiempo lo que no era evidente. «Suspicaz» no encaja porque no desconfía de nadie, y «fisgona» es un reproche coloquial, no un elogio."
+    options:
+      - position: 1
+        text: "fisgona"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fisgona» es coloquial y acusa de curiosear en asuntos ajenos; aquí se elogia su intuición."
+        hint_specific: "«Fisgona» es un reproche por meterse en lo ajeno. ¿La frase critica o elogia?"
+      - position: 2
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe a quien desconfía, y la frase dice justo lo contrario."
+        hint_specific: "Relee el inicio: no desconfía de nadie. ¿Encaja una palabra que significa desconfiar?"
+      - position: 3
+        text: "perspicaz"
+        is_correct: true
+  - position: 3
+    sentence: "Tomás notó que su hermana cambiaba de tema cada vez que alguien mencionaba la mudanza; fue muy {{blank}} y entendió que algo le preocupaba."
+    hint_general: "La palabra sirve para quien entiende lo que pasa sin que se lo digan."
+    explanation: "Perspicaz: captó una señal que nadie le explicó. «Locuaz» describe a quien habla mucho y «tenaz» a quien no se rinde."
+    options:
+      - position: 1
+        text: "perspicaz"
+        is_correct: true
+      - position: 2
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» es quien habla mucho y con facilidad; aquí lo importante es lo que entendió, no cuánto habló."
+        hint_specific: "«Locuaz» tiene que ver con hablar mucho. ¿La frase cuenta cuánto habla?"
+      - position: 3
+        text: "tenaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tenaz» es quien no se rinde; aquí nadie insiste en nada, solo capta una señal."
+        hint_specific: "«Tenaz» describe a quien persiste. Relee: ¿alguien insiste o alguien se da cuenta?"
+  - position: 4
+    sentence: "En la entrevista, Valeria hizo una pregunta tan {{blank}} que el jurado se miró entre sí antes de contestar."
+    hint_general: "La pregunta apuntó justo a un punto que nadie había mirado."
+    explanation: "Perspicaz: la pregunta apuntó a lo que nadie había mirado. «Veraz» solo dice que algo es verdadero, y «curiosa» habla de interés, no de agudeza."
+    options:
+      - position: 1
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» dice que algo se ajusta a la verdad; una pregunta no se juzga así."
+        hint_specific: "«Veraz» habla de decir la verdad. ¿Eso es lo que sorprende al jurado?"
+      - position: 2
+        text: "perspicaz"
+        is_correct: true
+      - position: 3
+        text: "curiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosa» dice que alguien quiere saber; no dice que haya visto algo que los demás pasaron por alto."
+        hint_specific: "«Curiosa» habla de interés. ¿El jurado se sorprende por el interés o por la agudeza?"
+  - position: 5
+    sentence: "Cuando su hijo empezó a contestar con monosílabos, Elena fue {{blank}} y supo que algo le estaba pasando."
+    hint_general: "Entendió el problema por una señal muy pequeña, sin que nadie se lo dijera."
+    explanation: "Perspicaz: leyó una señal mínima y acertó. «Metiche» es coloquial y suena a entrometido, y «locuaz» describe a quien habla mucho."
+    options:
+      - position: 1
+        text: "perspicaz"
+        is_correct: true
+      - position: 2
+        text: "metiche"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Metiche» es muy coloquial y acusa de entrometerse; aquí una madre lee a su hijo, no se entromete."
+        hint_specific: "«Metiche» suena a reproche coloquial. ¿La frase acusa a alguien o lo elogia?"
+      - position: 3
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» es quien habla mucho; en la frase el que habla poco es el hijo."
+        hint_specific: "«Locuaz» va de hablar mucho. ¿Quién habla poco en esta escena?"
+  - position: 6
+    sentence: "Raúl leyó el correo dos veces y, {{blank}} como siempre, vio que faltaba la firma del responsable."
+    hint_general: "Se trata de darse cuenta de un detalle que pasa desapercibido."
+    explanation: "Perspicaz: vio un detalle que pasaba desapercibido. «Pertinaz» describe lo que persiste, y «sagaz» se acerca, pero subraya la astucia para sacar ventaja."
+    options:
+      - position: 1
+        text: "pertinaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pertinaz» describe lo que no cesa, como una lluvia; no dice nada sobre notar detalles."
+        hint_specific: "«Pertinaz» se dice de algo que no para. ¿La frase habla de insistir?"
+      - position: 2
+        text: "sagaz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sagaz» subraya la astucia para sacar ventaja; aquí solo se nota un fallo en un correo."
+        hint_specific: "«Sagaz» sugiere astucia con un fin. ¿Alguien busca ventaja en esta escena?"
+      - position: 3
+        text: "perspicaz"
+        is_correct: true
+  - position: 7
+    sentence: "Durante la cena, Nuria prefirió callar, aunque su mirada {{blank}} ya había leído la tensión entre sus primos."
+    hint_general: "La mirada capta algo que nadie dice en voz alta."
+    explanation: "Perspicaz: la mirada leyó la tensión sin palabras. «Voraz» habla de un apetito enorme, y «chismosa» es coloquial y acusa de curiosear."
+    options:
+      - position: 1
+        text: "perspicaz"
+        is_correct: true
+      - position: 2
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme o un consumo desmedido; una mirada que lee tensiones no es eso."
+        hint_specific: "«Voraz» va de comer o devorar. ¿Encaja con leer una tensión familiar?"
+      - position: 3
+        text: "chismosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismosa» es coloquial y acusa de contar lo ajeno; en la frase esa persona calla."
+        hint_specific: "«Chismosa» acusa de contar lo ajeno. ¿Quién calla durante la cena?"
+  - position: 8
+    sentence: "Diego apenas habló en la reunión, pero su comentario final fue tan {{blank}} que cambió la decisión del grupo."
+    hint_general: "El comentario mostró algo que el grupo no había visto hasta entonces."
+    explanation: "Perspicaz: el comentario mostró lo que el grupo no había visto. «Falaz» califica de engañoso un argumento, e «insistente» solo dice que alguien repite."
+    options:
+      - position: 1
+        text: "falaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Falaz» dice que un argumento engaña; aquí el comentario convence porque es certero."
+        hint_specific: "«Falaz» acusa de engañar. ¿El grupo cambia de idea por un engaño?"
+      - position: 2
+        text: "perspicaz"
+        is_correct: true
+      - position: 3
+        text: "insistente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistente» dice que alguien repite lo mismo, y en la frase esa persona apenas habla."
+        hint_specific: "«Insistente» va de repetir. ¿Cuánto habló esa persona en la reunión?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La pregunta que nadie hizo"
+    body: "Mientras el equipo discutía el calendario, Carla preguntó: «¿Y quién aprueba los cambios si el cliente no responde?». Silencio. Nadie lo había pensado. El director sonrió: «Muy perspicaz, Carla. Eso nos habría retrasado un mes»."
+    before_phrase: "¡Qué buena pregunta, qué lista!"
+    after_phrase: "Qué pregunta tan perspicaz."
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "Un café con Marta"
+    body: "Sofía escuchaba a Marta hablar de su nuevo trabajo con entusiasmo, pero notó que nunca mencionaba a su jefe. «Oye, ¿todo bien con él?». Marta suspiró: «Eres muy perspicaz… la verdad, no»."
+    before_phrase: "Te das cuenta de todo."
+    after_phrase: "Eres muy perspicaz."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La última pregunta"
+    body: "Al final de la entrevista, Gabriel preguntó cómo medían el éxito en los primeros tres meses. La entrevistadora anotó algo y dijo: «Es una pregunta perspicaz; casi nadie la hace»."
+    before_phrase: "Buena pregunta, ¿no?"
+    after_phrase: "Es una pregunta perspicaz."
+metrics:
+  zipf_overall: 3.41
+  zipf_by_country:
+    mx: 3.38
+    es: 3.55
+  dispersion_dp: 0.21
+  pedantry_proxy: 0.42
+  family_size: 2
+provenance:
+  generator: "test-fixture"
+  gate: "manual"
+  checked_on: "2026-09-13"

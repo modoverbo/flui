@@ -1,0 +1,210 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://flui.app/schema/word.schema.json",
+  "title": "flui word",
+  "description": "One authored word of the flui catalog. The authoritative implementation of these rules is content/lib/src/validation/schema.dart; this document exists so editors and agents can see the shape. Content strings are Spanish.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "slug",
+    "status",
+    "lemma",
+    "part_of_speech",
+    "syllables",
+    "stressed_syllable",
+    "explanation",
+    "example_sentence",
+    "register",
+    "pedantry_risk",
+    "collocations",
+    "replaces",
+    "family",
+    "themes",
+    "tags",
+    "confusions",
+    "exercises",
+    "readings"
+  ],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "id": {
+      "type": "string",
+      "description": "Database identity. Written by content:import, or derived deterministically from the slug by content:emit.",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "sort_order": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Introduction order for the session planner."
+    },
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "status": { "enum": ["draft", "validated", "gated", "approved"] },
+    "lemma": { "type": "string", "minLength": 1 },
+    "part_of_speech": {
+      "enum": ["adjetivo", "adverbio", "conector", "sustantivo", "verbo"]
+    },
+    "syllables": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "stressed_syllable": { "type": "integer", "minimum": 1 },
+    "ipa_latam": { "type": ["string", "null"] },
+    "ipa_es": { "type": ["string", "null"] },
+    "explanation": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Original, at most 20 words, common vocabulary, never circular."
+    },
+    "example_sentence": { "type": "string", "minLength": 1 },
+    "register": { "enum": ["neutral", "culto", "coloquial"] },
+    "pedantry_risk": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "usage_tip": { "type": ["string", "null"] },
+    "when_not_to_use": { "type": ["string", "null"] },
+    "collocations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "replaces": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["before", "after"],
+        "properties": {
+          "before": { "type": "string", "minLength": 1 },
+          "after": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "family": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "themes": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slug", "relevance"],
+        "properties": {
+          "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+          "relevance": { "type": "integer", "minimum": 1, "maximum": 3 }
+        }
+      }
+    },
+    "tags": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["comodin", "funcion", "canal", "formalidad", "variedad"],
+      "properties": {
+        "comodin": { "type": "array", "items": { "type": "string" } },
+        "funcion": { "type": "array", "items": { "type": "string" } },
+        "canal": { "enum": ["hablado", "escrito", "ambos"] },
+        "formalidad": { "enum": ["informal", "neutral", "formal"] },
+        "variedad": { "enum": ["panhispanico", "latam", "es"] }
+      }
+    },
+    "confusions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["confused_with", "difference"],
+        "properties": {
+          "confused_with": { "type": "string", "minLength": 1 },
+          "difference": { "type": "string", "minLength": 1 },
+          "memory_trick": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "exercises": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["position", "sentence", "hint_general", "explanation", "options"],
+        "properties": {
+          "id": { "type": "string" },
+          "position": { "type": "integer", "minimum": 1, "maximum": 8 },
+          "sentence": { "type": "string", "pattern": "\\{\\{blank\\}\\}" },
+          "hint_general": { "type": "string", "minLength": 1 },
+          "explanation": { "type": "string", "minLength": 1 },
+          "options": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["position", "text", "is_correct"],
+              "properties": {
+                "position": { "type": "integer", "minimum": 1, "maximum": 3 },
+                "text": { "type": "string", "minLength": 1 },
+                "is_correct": { "type": "boolean" },
+                "distractor_type": {
+                  "enum": ["paronym", "near_synonym", "register", null]
+                },
+                "why_not": { "type": ["string", "null"] },
+                "hint_specific": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      }
+    },
+    "readings": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "position",
+          "scene",
+          "conversation_type",
+          "title",
+          "body",
+          "before_phrase",
+          "after_phrase"
+        ],
+        "properties": {
+          "position": { "type": "integer", "minimum": 1, "maximum": 3 },
+          "scene": { "enum": ["trabajo", "social", "entrevista", "familia"] },
+          "conversation_type": { "enum": ["practica", "emocional", "social"] },
+          "title": { "type": "string", "minLength": 1 },
+          "body": { "type": "string", "minLength": 1 },
+          "before_phrase": { "type": "string", "minLength": 1 },
+          "after_phrase": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Computed by content:corpus. Never authored by hand.",
+      "properties": {
+        "zipf_overall": { "type": ["number", "null"] },
+        "zipf_by_country": {
+          "type": "object",
+          "additionalProperties": { "type": "number" }
+        },
+        "dispersion_dp": { "type": ["number", "null"] },
+        "pedantry_proxy": { "type": ["number", "null"] },
+        "family_size": { "type": ["integer", "null"] },
+        "metrics_pending": { "type": "boolean" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "generator": { "type": ["string", "null"] },
+        "gate": { "type": ["string", "null"] },
+        "checked_on": { "type": ["string", "null"] }
+      }
+    }
+  }
+}
