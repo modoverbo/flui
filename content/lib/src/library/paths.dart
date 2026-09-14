@@ -47,6 +47,12 @@ final class ContentPaths {
 
   String get candidatesFile => p.join(dataDir, 'candidates.csv');
 
+  /// Wikidata Spanish lexeme lemmas (CC0), the pool's dictionary gate.
+  String get lexiconFile => p.join(dataDir, 'lexemes_es.tsv');
+
+  /// Where `content:corpus` keeps the downloaded Leipzig packages.
+  String get corpusCacheDir => p.join(root, '.corpus-cache');
+
   String get seedPreambleFile => p.join(root, 'templates', 'seed_preamble.sql');
 
   String get gateDir => p.join(root, 'gate');

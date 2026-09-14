@@ -29,7 +29,9 @@ Run them from `content/`.
 | `dart run content:emit --out ../supabase/seed.sql` | Deterministic SQL for every `status: approved` word. `--check` fails when the target is stale, `--stdout` prints instead of writing |
 | `dart run content:import --from ../supabase/seed.sql` | One-shot converter from the hand-written seed into word files. Already run |
 | `dart run content:stats [--json]` | Counts by theme, part of speech and status, exercises per word, days of content, coverage gaps |
-| `dart run content:corpus [--offline]` | Rebuilds `data/candidates.csv` and `data/common_lemmas_es.txt` from the Leipzig Corpora Collection |
+| `dart run content:corpus [--offline]` | Rebuilds `data/candidates.csv`, `data/common_lemmas_es.txt` and `data/lexemes_es.tsv` from the Leipzig Corpora Collection and Wikidata Lexemes |
+| `dart run content:metrics --lemma <x> [--json] [--evidence]` | Zipf, dispersion, pedantry proxy, family size and flags for **any** lemma in the cached corpus, not only the 1500 in the CSV. Says so plainly when the corpus has never seen it |
+| `dart run content:shortlist --theme <slug> [--limit <n>]` | Candidates for one theme, already clear of duplicate-lemma, paronym and semantic-set clashes with the current library. `--all-themes` prints the count per theme |
 | `dart run content:gate-prepare [--word <slug>]` | Two blind task packs per word, answers withheld |
 | `dart run content:gate-apply --results <file>` | Scores the reviewers and flips `status` to `gated`, or writes precise failure reasons |
 
@@ -55,6 +57,43 @@ itself to a warning, and only while `data/common_lemmas_es.txt` is missing.
 session planner per theme under the paronym rule (learning-method §7) and a
 semantic-set rule, and fails when a theme would run out of eligible words.
 `--word <slug>` turns it off so an authoring agent can check one file.
+
+## How the candidate pool is filtered
+
+Four gates run **before** anything is scored, so noise is dropped rather than
+ranked:
+
+1. **Shape** — function word, too short, an inflected form rather than a lemma,
+   a spelling Spanish orthography does not produce.
+2. **Dictionary** — the lemma must appear in `data/lexemes_es.tsv` (Wikidata
+   Lexemes, CC0) *and* be morphologically consistent with the category the
+   dictionary gives it. This is what keeps `desir`, `servier` and `heliar` out.
+3. **Country attestation** — pan-Hispanic is a selection criterion, so a form
+   no country subcorpus attests cannot be judged.
+4. **Domain** — the candidate's company, measured from Leipzig's same-sentence
+   co-occurrence, must be positively abstract rather than physical. This is
+   what keeps `frotar`, `masticar` and `regar` out.
+
+What survives is then ranked. `comodin_leverage` is the substitutability
+signal: Leipzig's **immediate-neighbour** table says which words take the same
+neighbours as `hacer`, `poner`, `dar`, `decir`, `tener`, `cosa`, `tema`, and a
+candidate's leverage is its rank inside that set. It is a rank, not a raw
+share, because a raw share saturates — every frequent word keeps company with
+everything.
+
+`suggested_themes` is evidence too: a theme appears only when the candidate
+keeps that theme's vocabulary at least 4x more than the average candidate
+does, and no theme may own more than 15 % of the pool. Around 60 % of rows
+carry no theme, which is the honest answer when the evidence does not support
+one.
+
+**Limits, stated plainly.** Sentence co-occurrence is a topical signal, not a
+dependency parse: it cannot prove a shared syntactic *slot*, only a shared
+context, and the neighbour table only approximates the slot through adjacency.
+The seed lexicons in `lib/src/corpus/domain_seeds.dart` are markers, not a
+taxonomy. Residual noise survives at the edges — trade and medical nouns such
+as `albañil` still clear the abstract gate. The column is a ranked suggestion
+an author checks, never an authority.
 
 ## The seed round trip
 

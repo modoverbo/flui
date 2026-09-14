@@ -34,8 +34,29 @@ already half-recognize. A word earns a place only if **all** of these hold
 6. Explainable with common words.
 
 `content/data/candidates.csv` ranks candidates by exactly these properties
-(`score`, `zipf`, `dp`, `pedantry_proxy`, `comodin_leverage`). Pick from there
-when you are given a theme instead of a word.
+(`score`, `zipf`, `dp`, `pedantry_proxy`, `comodin_leverage`). When you are
+given a theme instead of a word, do not read the CSV by hand — ask for the
+candidates that are still free:
+
+```bash
+dart run content:shortlist --theme reuniones --limit 20
+```
+
+That list is already clear of every catalog clash: no duplicate lemma, no
+family member of an existing word, no paronym of one, no semantic-set collision.
+
+If you want to propose a word that is **not** in the pool, justify it with the
+corpus instead of asserting it:
+
+```bash
+dart run content:metrics --lemma vislumbrar
+```
+
+It prints Zipf, dispersion across the 17 country subcorpora, the pedantry
+proxy, family size and the flags, for any lemma the corpus contains — and says
+so plainly when it contains none. A word the corpus has never seen is not
+automatically wrong, but you have no evidence for criteria 3 and 4, so say so
+in the pull request rather than inventing numbers.
 
 ---
 

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:content/src/corpus/cooccurrence.dart';
 import 'package:path/path.dart' as p;
 
 /// Which slice of Spanish a Leipzig package represents.
@@ -26,6 +27,13 @@ final class LeipzigPackage {
       'https://downloads.wortschatz-leipzig.de/corpora/$name.tar.gz';
 
   String get wordsMember => '$name/$name-words.txt';
+
+  /// Sentence co-occurrence: `id1 id2 frequency significance`.
+  String get cooccurrenceMember => '$name/$name-co_s.txt';
+
+  /// Immediate-neighbour co-occurrence, same columns. Adjacency is the
+  /// closest thing the packages give to a syntactic slot.
+  String get neighbourMember => '$name/$name-co_n.txt';
 }
 
 /// The packages the pool is built from.
@@ -66,16 +74,27 @@ const defaultPackages = <LeipzigPackage>[
 // A single-method interface on purpose: it is the seam that keeps the tests
 // off the network.
 // ignore: one_member_abstracts
-abstract interface class CorpusSource {
+abstract class CorpusSource {
+  const CorpusSource();
+
   /// `surface -> frequency` for one package.
   Future<Map<String, int>> wordFrequencies(LeipzigPackage package);
+
+  /// `id -> surface` for one package, or null when unavailable.
+  Future<Map<int, String>?> wordIds(LeipzigPackage package) async => null;
+
+  /// Raw `co_s.txt` for one package, or null when unavailable.
+  Future<String?> cooccurrences(LeipzigPackage package) async => null;
+
+  /// Raw `co_n.txt` for one package, or null when unavailable.
+  Future<String?> neighbours(LeipzigPackage package) async => null;
 }
 
 /// Downloads (and caches) the `.tar.gz` and reads its `-words.txt` member.
 ///
 /// Extraction shells out to `tar`, which every supported dev machine has; that
 /// keeps the package free of an archive dependency.
-final class LeipzigDownloader implements CorpusSource {
+final class LeipzigDownloader extends CorpusSource {
   LeipzigDownloader({required this.cacheDir, this.log});
 
   final String cacheDir;
@@ -83,29 +102,69 @@ final class LeipzigDownloader implements CorpusSource {
   final HttpClient _client = HttpClient();
 
   @override
-  Future<Map<String, int>> wordFrequencies(LeipzigPackage package) async {
-    final wordsFile = File(p.join(cacheDir, '${package.name}-words.txt'));
-    if (!wordsFile.existsSync()) {
-      final archive = File(p.join(cacheDir, '${package.name}.tar.gz'));
-      if (!archive.existsSync()) {
-        log?.call('downloading ${package.name}');
-        await _download(package.url, archive);
-      }
-      log?.call('extracting ${package.name}');
-      final extracted = await Process.run('tar', [
-        '-xzf',
-        archive.path,
-        '-C',
-        cacheDir,
-        package.wordsMember,
-      ]);
-      if (extracted.exitCode != 0) {
-        throw StateError('tar failed for ${package.name}: ${extracted.stderr}');
-      }
-      File(p.join(cacheDir, package.wordsMember)).renameSync(wordsFile.path);
-      Directory(p.join(cacheDir, package.name)).deleteSync(recursive: true);
+  Future<Map<String, int>> wordFrequencies(LeipzigPackage package) async =>
+      parseWordsFile(
+        File(await _member(package, package.wordsMember, 'words'))
+            .readAsStringSync(),
+      );
+
+  @override
+  Future<Map<int, String>?> wordIds(LeipzigPackage package) async =>
+      parseWordIds(
+        File(await _member(package, package.wordsMember, 'words'))
+            .readAsStringSync(),
+      );
+
+  @override
+  Future<String?> cooccurrences(LeipzigPackage package) async =>
+      _readMember(package, package.cooccurrenceMember, 'co_s');
+
+  @override
+  Future<String?> neighbours(LeipzigPackage package) async =>
+      _readMember(package, package.neighbourMember, 'co_n');
+
+  Future<String?> _readMember(
+    LeipzigPackage package,
+    String member,
+    String suffix,
+  ) async {
+    try {
+      return File(await _member(package, member, suffix)).readAsStringSync();
+    } on Object catch (error) {
+      log?.call('no $suffix table for ${package.name}: $error');
+      return null;
     }
-    return parseWordsFile(wordsFile.readAsStringSync());
+  }
+
+  /// Ensures one member of the package archive is on disk and returns its
+  /// path. The archive itself is downloaded once and kept.
+  Future<String> _member(
+    LeipzigPackage package,
+    String member,
+    String suffix,
+  ) async {
+    final target = File(p.join(cacheDir, '${package.name}-$suffix.txt'));
+    if (target.existsSync()) return target.path;
+    final archive = File(p.join(cacheDir, '${package.name}.tar.gz'));
+    if (!archive.existsSync()) {
+      log?.call('downloading ${package.name}');
+      await _download(package.url, archive);
+    }
+    log?.call('extracting $suffix from ${package.name}');
+    final extracted = await Process.run('tar', [
+      '-xzf',
+      archive.path,
+      '-C',
+      cacheDir,
+      member,
+    ]);
+    if (extracted.exitCode != 0) {
+      throw StateError('tar failed for $member: ${extracted.stderr}');
+    }
+    File(p.join(cacheDir, member)).renameSync(target.path);
+    final unpacked = Directory(p.join(cacheDir, package.name));
+    if (unpacked.existsSync()) unpacked.deleteSync(recursive: true);
+    return target.path;
   }
 
   Future<void> _download(String url, File target) async {

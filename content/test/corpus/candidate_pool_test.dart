@@ -1,5 +1,6 @@
 import 'package:content/src/corpus/candidate_pool.dart';
 import 'package:content/src/corpus/leipzig.dart';
+import 'package:content/src/corpus/lexicon.dart';
 import 'package:test/test.dart';
 
 PackageCounts counts(LeipzigPackage package, Map<String, int> words) =>
@@ -38,6 +39,15 @@ List<PackageCounts> tinyCorpus({
   ];
 }
 
+/// These tests predate the dictionary and domain gates and exercise the parts
+/// that run before them, so they use an empty lexicon and no evidence index.
+List<CandidateRow> poolOf(List<PackageCounts> packages, {int limit = 1500}) =>
+    buildCandidatePool(
+      packages,
+      lexicon: const SpanishLexicon({}),
+      limit: limit,
+    );
+
 void main() {
   group('parseWordsFile', () {
     test('reads the Leipzig rank/word/frequency table', () {
@@ -49,7 +59,7 @@ void main() {
 
   group('buildCandidatePool', () {
     test('drops function words, short words and tokens with digits', () {
-      final pool = buildCandidatePool(
+      final pool = poolOf(
         tinyCorpus(
           ar: {'perspicaz': 60, 'de': 900000, 'sol': 400, 'h2o': 300},
           mx: {'perspicaz': 55},
@@ -64,7 +74,7 @@ void main() {
     });
 
     test('flags a lemma that only one country uses', () {
-      final pool = buildCandidatePool(
+      final pool = poolOf(
         tinyCorpus(ar: {'laburo': 400}, mx: {'perspicaz': 200, 'trabajo': 200}),
       );
       final laburo = pool.firstWhere((r) => r.lemma == 'laburo');
@@ -73,7 +83,7 @@ void main() {
     });
 
     test('flags paronyms inside the pool', () {
-      final pool = buildCandidatePool(
+      final pool = poolOf(
         tinyCorpus(
           ar: {'actitud': 200, 'aptitud': 180},
           mx: {'actitud': 190, 'aptitud': 170},
@@ -88,7 +98,7 @@ void main() {
     });
 
     test('drops a lemma that no country subcorpus attests', () {
-      final pool = buildCandidatePool(
+      final pool = poolOf(
         tinyCorpus(
           ar: {'perspicaz': 200},
           news: {'ficcin': 900},
@@ -100,7 +110,7 @@ void main() {
     });
 
     test('drops conjugated forms that are not lemmas', () {
-      final pool = buildCandidatePool(
+      final pool = poolOf(
         tinyCorpus(
           ar: {'organizamos': 300, 'perspicaz': 200},
           mx: {'organizamos': 280, 'perspicaz': 190},
@@ -112,7 +122,7 @@ void main() {
     });
 
     test('merges accent variants and keeps the dominant spelling', () {
-      final pool = buildCandidatePool(
+      final pool = poolOf(
         tinyCorpus(
           ar: {'solución': 300, 'solucion': 40},
           mx: {'solución': 280, 'solucion': 30},
@@ -125,7 +135,7 @@ void main() {
     });
 
     test('gives every row a semantic-set id', () {
-      final pool = buildCandidatePool(tinyCorpus(ar: {'matizar': 200}));
+      final pool = poolOf(tinyCorpus(ar: {'matizar': 200}));
 
       expect(
         pool.every((r) => r.flags.any((f) => f.startsWith('semantic-set:'))),
@@ -133,13 +143,16 @@ void main() {
       );
     });
 
-    test('suggests themes from the stem lexicon', () {
-      final pool = buildCandidatePool(
+    test('suggests no theme without co-occurrence evidence', () {
+      // Themes used to fall back to a part-of-speech default, which made
+      // almost every row say the same two themes. A theme is evidence now or
+      // it is nothing.
+      final pool = poolOf(
         tinyCorpus(ar: {'matizar': 200}, mx: {'matizar': 180}),
       );
       final row = pool.firstWhere((r) => r.lemma == 'matizar');
 
-      expect(row.suggestedThemes, contains('matices-precision'));
+      expect(row.suggestedThemes, isEmpty);
     });
 
     test('ranks by score and honours the limit', () {
@@ -156,7 +169,7 @@ void main() {
         ])
           lemma: 200,
       };
-      final pool = buildCandidatePool(tinyCorpus(ar: mid, mx: mid), limit: 5);
+      final pool = poolOf(tinyCorpus(ar: mid, mx: mid), limit: 5);
 
       expect(pool, hasLength(5));
       for (var i = 1; i < pool.length; i++) {
@@ -165,7 +178,7 @@ void main() {
     });
 
     test('computes a pedantry proxy above 0.5 for a news-only lemma', () {
-      final pool = buildCandidatePool(
+      final pool = poolOf(
         tinyCorpus(
           ar: {'pertinente': 30},
           mx: {'pertinente': 30},
@@ -200,7 +213,7 @@ void main() {
       final csv = toCsv(rows);
       expect(
         csv.split('\n')[1],
-        'matizar,verbo,,,,,,matices-precision,,editorial-fallback,true',
+        'matizar,verbo,,,,,,,,editorial-fallback,true',
       );
     });
   });

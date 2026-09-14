@@ -1,69 +1,13 @@
-import 'package:content/src/corpus/leipzig.dart';
+import 'package:content/src/corpus/cooccurrence.dart';
+import 'package:content/src/corpus/corpus_index.dart';
+import 'package:content/src/corpus/domain_seeds.dart';
+import 'package:content/src/corpus/lexicon.dart';
 import 'package:content/src/corpus/metrics.dart';
+import 'package:content/src/corpus/pipeline.dart' show slotGroup;
 import 'package:content/src/text/spanish_morphology.dart';
-import 'package:content/src/text/spanish_text.dart';
 
-/// The comodines each part of speech is supposed to displace.
-const comodinesByPartOfSpeech = <String, List<String>>{
-  'verbo': ['hacer', 'poner', 'tener', 'decir', 'dar', 'ver', 'sacar'],
-  'sustantivo': ['cosa', 'tema', 'asunto', 'gente', 'parte'],
-  'adjetivo': ['bueno', 'malo', 'grande', 'importante', 'interesante'],
-  'adverbio': ['muy', 'bien', 'mucho', 'bastante'],
-  'conector': ['y', 'pero', 'entonces', 'porque'],
-};
-
-/// Stem triggers that suggest a theme. Advisory only: the authoring agent or a
-/// human confirms the theme when the word actually enters the catalog.
-const themeStemLexicon = <String, List<String>>{
-  'reuniones': ['reun', 'acuerd', 'propuest', 'plante', 'orden', 'convoc'],
-  'presentaciones-oratoria': [
-    'expon',
-    'discurs',
-    'present',
-    'public',
-    'audien',
-  ],
-  'entrevistas': ['entrevist', 'curricul', 'candidat', 'contrat', 'empleo'],
-  'negociacion': ['negoci', 'acuerd', 'oferta', 'contrapart', 'condicion'],
-  'liderazgo-feedback': ['lider', 'equipo', 'desempen', 'reconoc', 'orient'],
-  'conflicto-desacuerdo': ['discrep', 'objet', 'rebat', 'conflict', 'disput'],
-  'correos-mensajes': ['correo', 'mensaj', 'escrib', 'respond', 'redact'],
-  'redaccion-ejecutiva': ['resum', 'sintet', 'concret', 'precis', 'informe'],
-  'persuasion-storytelling': [
-    'convenc',
-    'persuad',
-    'relat',
-    'argument',
-    'ilustr',
-  ],
-  'conversaciones-dificiles': [
-    'aborda',
-    'delicad',
-    'incomod',
-    'confront',
-    'disculp',
-  ],
-  'matices-precision': ['matiz', 'precis', 'sutil', 'grad', 'atenu'],
-  'conectores-estructura': [
-    'ademas',
-    'asimism',
-    'obstante',
-    'consiguient',
-    'cambio',
-  ],
-  'paronimos': [],
-  'elogio-reconocimiento': ['elogi', 'admir', 'valor', 'destac', 'merit'],
-  'decir-que-no': ['rechaz', 'negar', 'declin', 'limit', 'excus'],
-  'conversacion-cotidiana': ['cotidian', 'charl', 'contar', 'coment'],
-};
-
-const _defaultThemesByPartOfSpeech = <String, List<String>>{
-  'verbo': ['reuniones', 'conversacion-cotidiana'],
-  'sustantivo': ['redaccion-ejecutiva', 'conversacion-cotidiana'],
-  'adjetivo': ['elogio-reconocimiento', 'matices-precision'],
-  'adverbio': ['matices-precision'],
-  'conector': ['conectores-estructura'],
-};
+export 'package:content/src/corpus/corpus_index.dart'
+    show CorpusIndex, PackageCounts;
 
 final class CandidateRow {
   const CandidateRow({
@@ -92,6 +36,34 @@ final class CandidateRow {
   final List<String> flags;
   final bool metricsPending;
 
+  CandidateRow withThemes(List<String> themes) => CandidateRow(
+    lemma: lemma,
+    pos: pos,
+    zipf: zipf,
+    dp: dp,
+    pedantryProxy: pedantryProxy,
+    familySize: familySize,
+    comodinLeverage: comodinLeverage,
+    suggestedThemes: themes,
+    score: score,
+    flags: flags,
+    metricsPending: metricsPending,
+  );
+
+  CandidateRow withFlags(List<String> extra) => CandidateRow(
+    lemma: lemma,
+    pos: pos,
+    zipf: zipf,
+    dp: dp,
+    pedantryProxy: pedantryProxy,
+    familySize: familySize,
+    comodinLeverage: comodinLeverage,
+    suggestedThemes: suggestedThemes,
+    score: score,
+    flags: [...flags, ...extra],
+    metricsPending: metricsPending,
+  );
+
   /// Numeric columns stay empty while metrics are pending: the toolkit never
   /// invents a frequency it did not measure.
   List<String> toCsvRow() => [
@@ -107,6 +79,20 @@ final class CandidateRow {
     flags.join('|'),
     '$metricsPending',
   ];
+
+  Map<String, Object?> toJson() => {
+    'lemma': lemma,
+    'pos': pos,
+    'zipf': zipf,
+    'dp': dp,
+    'pedantry_proxy': pedantryProxy,
+    'family_size': familySize,
+    'comodin_leverage': comodinLeverage,
+    'suggested_themes': suggestedThemes,
+    'score': score,
+    'flags': flags,
+    'metrics_pending': metricsPending,
+  };
 }
 
 const candidateCsvHeader = <String>[
@@ -131,6 +117,63 @@ String toCsv(List<CandidateRow> rows) {
   return buffer.toString();
 }
 
+/// Reads a `candidates.csv` back, for `content:shortlist`.
+List<CandidateRow> parseCsv(String csv) {
+  final rows = <CandidateRow>[];
+  final lines = csv.split('\n');
+  for (final line in lines.skip(1)) {
+    if (line.trim().isEmpty) continue;
+    final fields = _splitCsvLine(line);
+    if (fields.length < candidateCsvHeader.length) continue;
+    rows.add(
+      CandidateRow(
+        lemma: fields[0],
+        pos: fields[1],
+        zipf: double.tryParse(fields[2]) ?? 0,
+        dp: double.tryParse(fields[3]) ?? 0,
+        pedantryProxy: double.tryParse(fields[4]) ?? 0,
+        familySize: int.tryParse(fields[5]) ?? 0,
+        comodinLeverage: double.tryParse(fields[6]) ?? 0,
+        suggestedThemes: fields[7].isEmpty ? const [] : fields[7].split('|'),
+        score: double.tryParse(fields[8]) ?? 0,
+        flags: fields[9].isEmpty ? const [] : fields[9].split('|'),
+        metricsPending: fields[10] == 'true',
+      ),
+    );
+  }
+  return rows;
+}
+
+List<String> _splitCsvLine(String line) {
+  final fields = <String>[];
+  final buffer = StringBuffer();
+  var quoted = false;
+  for (var i = 0; i < line.length; i++) {
+    final char = line[i];
+    if (quoted) {
+      if (char == '"') {
+        if (i + 1 < line.length && line[i + 1] == '"') {
+          buffer.write('"');
+          i++;
+        } else {
+          quoted = false;
+        }
+      } else {
+        buffer.write(char);
+      }
+    } else if (char == '"') {
+      quoted = true;
+    } else if (char == ',') {
+      fields.add(buffer.toString());
+      buffer.clear();
+    } else {
+      buffer.write(char);
+    }
+  }
+  fields.add(buffer.toString());
+  return fields;
+}
+
 String _csvField(String value) {
   if (value.contains(',') || value.contains('"') || value.contains('\n')) {
     return '"${value.replaceAll('"', '""')}"';
@@ -138,164 +181,104 @@ String _csvField(String value) {
   return value;
 }
 
-/// One package's word counts plus the role it plays.
-final class PackageCounts {
-  const PackageCounts(this.package, this.counts);
+/// The tunable half of the pool: where each evidence gate sits.
+///
+/// Fixed thresholds do not survive a change of corpus — a raw share saturates,
+/// and a lift threshold has to be re-tuned whenever the seed sets move — so
+/// the comodín gate is a percentile of the candidates themselves and leverage
+/// is the rank inside the survivor set. These are policy, not physics, which
+/// is why they are a parameter and not a constant buried in the loop.
+final class PoolPolicy {
+  const PoolPolicy({
+    this.comodinKeepShare = 0.92,
+    this.abstractMinimumLift = 1.2,
+    this.themeMinimumLift = 4.0,
+    this.themeMinimumShare = 0.01,
+    this.themeShareCap = 0.15,
+  });
 
-  final LeipzigPackage package;
-  final Map<String, int> counts;
+  /// Everything passes, for tests that exercise a mechanism rather than a
+  /// threshold on a population of two.
+  static const permissive = PoolPolicy(
+    comodinKeepShare: 1,
+    abstractMinimumLift: 0,
+    themeMinimumLift: 1,
+    themeMinimumShare: 0,
+  );
 
-  int get total => counts.values.fold(0, (a, b) => a + b);
+  /// Share of the candidates with comodín evidence that survive the gate.
+  final double comodinKeepShare;
+
+  /// Abstract-vocabulary lift needed to count as communication vocabulary.
+  final double abstractMinimumLift;
+
+  /// Lift a theme's vocabulary needs before the theme is suggested.
+  final double themeMinimumLift;
+
+  /// Floor under the theme lift, so one lucky marker in a small seed set
+  /// cannot manufacture a theme.
+  final double themeMinimumShare;
+
+  /// Share of the pool a single theme may own.
+  final double themeShareCap;
 }
 
-/// Builds the ranked candidate pool from the downloaded packages.
+/// Builds the ranked candidate pool.
+///
+/// Four gates run before anything is scored, so noise is dropped rather than
+/// ranked:
+/// 1. shape — function word, too short, inflected form, foreign spelling;
+/// 2. dictionary — the lemma must be in [lexicon] and must be morphologically
+///    consistent with the category the dictionary gives it;
+/// 3. country attestation — pan-Hispanic is a selection criterion;
+/// 4. domain — the candidate's company must be abstract, not physical.
 List<CandidateRow> buildCandidatePool(
   List<PackageCounts> packages, {
+  required SpanishLexicon lexicon,
+  EvidenceIndex? evidence,
+  EvidenceIndex? slotEvidence,
+  CorpusIndex? prebuiltIndex,
   int limit = 1500,
+  PoolPolicy policy = const PoolPolicy(),
 }) {
-  // 1. Merge accent variants ("solucion" into "solución"), keeping whichever
-  // spelling the corpus uses most, then fold every form onto a corpus-attested
-  // base form.
-  final globalSurface = <String, int>{};
-  final spellings = <String, Map<String, int>>{};
-  for (final package in packages) {
-    for (final entry in package.counts.entries) {
-      final surface = normalizeSurface(entry.key);
-      if (surface == null) continue;
-      final key = foldForComparison(surface);
-      globalSurface[key] = (globalSurface[key] ?? 0) + entry.value;
-      final variants = spellings.putIfAbsent(key, () => <String, int>{});
-      variants[surface] = (variants[surface] ?? 0) + entry.value;
-    }
-  }
-  String display(String key) {
-    final variants = spellings[key];
-    if (variants == null || variants.isEmpty) return key;
-    return variants.entries.reduce((a, b) => b.value > a.value ? b : a).key;
-  }
-
-  final lemmaOf = <String, String>{
-    for (final surface in globalSurface.keys)
-      surface: surfaceToLemma(surface, globalSurface),
-  };
-
-  // 2. Per-package lemma counts.
-  final perPackage = <String, Map<String, int>>{};
-  final packageTotals = <String, int>{};
-  for (final package in packages) {
-    final counts = <String, int>{};
-    var total = 0;
-    for (final entry in package.counts.entries) {
-      final surface = normalizeSurface(entry.key);
-      if (surface == null) continue;
-      final lemma = lemmaOf[foldForComparison(surface)]!;
-      counts[lemma] = (counts[lemma] ?? 0) + entry.value;
-      total += entry.value;
-    }
-    perPackage[package.package.name] = counts;
-    packageTotals[package.package.name] = total;
-  }
-
-  final countryPackages = [
-    for (final package in packages)
-      if (package.package.role == CorpusRole.country) package,
-  ];
-  final formalPackages = [
-    for (final package in packages)
-      if (package.package.role == CorpusRole.formal) package,
-  ];
-  final informalPackages = [
-    for (final package in packages)
-      if (package.package.role == CorpusRole.informal) package,
-  ];
-
-  final totalTokens = packageTotals.values.fold(0, (a, b) => a + b);
-  final lemmaTotals = <String, int>{};
-  for (final counts in perPackage.values) {
-    for (final entry in counts.entries) {
-      lemmaTotals[entry.key] = (lemmaTotals[entry.key] ?? 0) + entry.value;
-    }
-  }
-
-  // 3. Derivational family size: lemmas sharing a 5-character stem.
-  final familyByStem = <String, int>{};
-  for (final lemma in lemmaTotals.keys) {
-    if (lemma.length < 5) continue;
-    final key = stem(lemma, 5);
-    familyByStem[key] = (familyByStem[key] ?? 0) + 1;
-  }
-
-  double perMillion(List<PackageCounts> group, String lemma) {
-    var frequency = 0;
-    var total = 0;
-    for (final package in group) {
-      frequency += perPackage[package.package.name]![lemma] ?? 0;
-      total += packageTotals[package.package.name]!;
-    }
-    return total == 0 ? 0 : frequency / total * 1e6;
-  }
-
-  final zipfByLemma = <String, double>{
-    for (final entry in lemmaTotals.entries)
-      entry.key: zipf(frequency: entry.value, totalTokens: totalTokens),
-  };
-
-  double leverageOf(String lemma, String pos) {
-    final comodines = comodinesByPartOfSpeech[pos] ?? const [];
-    var best = 0.0;
-    for (final comodin in comodines) {
-      final comodinZipf = zipfByLemma[comodin];
-      if (comodinZipf == null) continue;
-      final gap = (comodinZipf - (zipfByLemma[lemma] ?? 0)) / 3;
-      if (gap > best) best = gap;
-    }
-    return best.clamp(0.0, 1.0);
-  }
-
-  List<String> themesFor(String lemma, String pos) {
-    final themes = <String>{};
-    for (final entry in themeStemLexicon.entries) {
-      for (final trigger in entry.value) {
-        if (lemma.startsWith(trigger)) themes.add(entry.key);
-      }
-    }
-    if (themes.isEmpty) {
-      themes.addAll(_defaultThemesByPartOfSpeech[pos] ?? const []);
-    }
-    return themes.toList()..sort();
-  }
-
-  // 4. Candidate rows, pre-filtered to plausible content words.
+  final index = prebuiltIndex ?? CorpusIndex.build(packages);
   final rows = <CandidateRow>[];
-  for (final entry in lemmaTotals.entries) {
-    final lemma = entry.key;
-    final spelled = display(lemma);
+
+  for (final lemma in index.lemmas) {
+    final spelled = index.display(lemma);
     if (spanishFunctionWords.contains(lemma)) continue;
     if (lemma.length < 4) continue;
     if (looksInflected(spelled)) continue;
     if (looksForeign(spelled)) continue;
-    final lemmaZipf = zipfByLemma[lemma]!;
+
+    final dictionaryPos = lexicon.partOfSpeechFor(lemma);
+    if (lexicon.isNotEmpty) {
+      if (!lexicon.contains(lemma)) continue;
+      if (!_inflectsConsistently(lemma, dictionaryPos)) continue;
+    }
+
+    final observed = index.countryCountsOf(lemma);
+    if (observed.fold<int>(0, (a, b) => a + b) == 0) continue;
+
+    final lemmaZipf = index.zipfOf(lemma);
     if (lemmaZipf < minCandidateZipf || lemmaZipf > maxCandidateZipf) continue;
 
-    final observed = [
-      for (final package in countryPackages)
-        perPackage[package.package.name]![lemma] ?? 0,
-    ];
-    // Pan-Hispanic is a selection criterion: a form no country subcorpus
-    // attests cannot be judged, and is usually an extraction artefact.
-    if (observed.fold<int>(0, (a, b) => a + b) == 0) continue;
-    final sizes = [
-      for (final package in countryPackages)
-        packageTotals[package.package.name]!,
-    ];
-    final dp = griesDp(observed: observed, partSizes: sizes);
-    final pos = guessPartOfSpeech(lemma);
-    final family = (familyByStem[stem(lemma, 5)] ?? 1) - 1;
-    final proxy = pedantryProxy(
-      formalPerMillion: perMillion(formalPackages, lemma),
-      informalPerMillion: perMillion(informalPackages, lemma),
-    );
-    final leverage = leverageOf(lemma, pos);
+    if (evidence != null &&
+        !_isCommunicationVocabulary(evidence, lemma, policy)) {
+      continue;
+    }
+
+    final dp = index.dispersionOf(lemma);
+    final pos = dictionaryPos ?? guessPartOfSpeech(spelled);
+    final family = index.familySizeOf(lemma);
+    final proxy = index.pedantryOf(lemma);
+    // The slot signal (immediate neighbours) is the substitutability test and
+    // wins when it is available; the argument signal (same sentence) is the
+    // topical fallback.
+    final comodinLift =
+        slotEvidence?.liftOf(lemma, slotGroup) ??
+        evidence?.liftOf(lemma, comodinGroup) ??
+        0;
     final missingCountries =
         observed.where((value) => value == 0).length /
         (observed.isEmpty ? 1 : observed.length);
@@ -308,29 +291,168 @@ List<CandidateRow> buildCandidatePool(
         dp: dp,
         pedantryProxy: proxy,
         familySize: family,
-        comodinLeverage: leverage,
-        suggestedThemes: themesFor(lemma, pos),
-        score: candidateScore(
-          zipf: lemmaZipf,
-          dp: dp,
-          pedantryProxy: proxy,
-          comodinLeverage: leverage,
-          familySize: family,
-        ),
+        // Filled in once the whole population is known.
+        comodinLeverage: comodinLift,
+        suggestedThemes: evidence == null
+            ? const []
+            : _themesFor(evidence, lemma, policy),
+        score: 0,
         flags: [
           if (dp > 0.45 || missingCountries > 0.6) 'regional-only',
-          'semantic-set:${stem(lemma, 5)}',
+          if (lexicon.isEmpty) 'dictionary-unverified',
+          if (evidence == null) 'domain-unverified',
+          'semantic-set:${index.semanticSetOf(lemma)}',
         ],
       ),
     );
   }
 
-  rows.sort((a, b) {
-    final byScore = b.score.compareTo(a.score);
-    return byScore != 0 ? byScore : a.lemma.compareTo(b.lemma);
-  });
-  final top = rows.take(limit).toList();
-  return _flagParonyms(top);
+  final scored = evidence == null
+      ? [for (final row in rows) _rescored(row, leverage: 0)]
+      : _gateAndRankByComodin(rows, policy);
+
+  final top =
+      (scored..sort((a, b) {
+            final byScore = b.score.compareTo(a.score);
+            return byScore != 0 ? byScore : a.lemma.compareTo(b.lemma);
+          }))
+          .take(limit)
+          .toList();
+  return _capThemeShare(_flagParonyms(top), policy.themeShareCap);
+}
+
+/// Keeps the candidates that most keep the comodines' company, and turns each
+/// survivor's rank in that set into its 0..1 leverage.
+List<CandidateRow> _gateAndRankByComodin(
+  List<CandidateRow> rows,
+  PoolPolicy policy,
+) {
+  final withEvidence =
+      [
+        for (final row in rows)
+          if (row.comodinLeverage > 0) row,
+      ]..sort((a, b) {
+        final byLift = b.comodinLeverage.compareTo(a.comodinLeverage);
+        return byLift != 0 ? byLift : a.lemma.compareTo(b.lemma);
+      });
+  // Nothing to gate on: pass 1 found no comodín arguments at all. Gating the
+  // whole pool away on missing evidence would be worse than letting it
+  // through unranked.
+  if (withEvidence.isEmpty) {
+    return [for (final row in rows) _rescored(row, leverage: 0)];
+  }
+  final keep = (withEvidence.length * policy.comodinKeepShare).ceil().clamp(
+    1,
+    withEvidence.length,
+  );
+  final survivors = withEvidence.take(keep).toList();
+  return [
+    for (var i = 0; i < survivors.length; i++)
+      _rescored(
+        survivors[i],
+        leverage: survivors.length == 1 ? 1 : 1 - i / (survivors.length - 1),
+      ),
+  ];
+}
+
+CandidateRow _rescored(CandidateRow row, {required double leverage}) =>
+    CandidateRow(
+      lemma: row.lemma,
+      pos: row.pos,
+      zipf: row.zipf,
+      dp: row.dp,
+      pedantryProxy: row.pedantryProxy,
+      familySize: row.familySize,
+      comodinLeverage: leverage,
+      suggestedThemes: row.suggestedThemes,
+      score: candidateScore(
+        zipf: row.zipf,
+        dp: row.dp,
+        pedantryProxy: row.pedantryProxy,
+        comodinLeverage: leverage,
+        familySize: row.familySize,
+      ),
+      flags: row.flags,
+      metricsPending: row.metricsPending,
+    );
+
+/// The dictionary says what the word is; morphology says whether this
+/// particular form is the lemma of that category.
+bool _inflectsConsistently(String lemma, String? dictionaryPos) {
+  if (dictionaryPos == null) return true;
+  final isInfinitive =
+      lemma.endsWith('ar') || lemma.endsWith('er') || lemma.endsWith('ir');
+  if (dictionaryPos == 'verbo') return isInfinitive;
+  return true;
+}
+
+/// A candidate has to be positively abstract, not merely not-physical: most
+/// concrete nouns never meet a physical marker either.
+bool _isCommunicationVocabulary(
+  EvidenceIndex evidence,
+  String lemma,
+  PoolPolicy policy,
+) {
+  final abstractMass = evidence.massOf(lemma, abstractGroup);
+  final physicalMass = evidence.massOf(lemma, physicalGroup);
+  if (abstractMass <= 0) return false;
+  if (abstractMass <= physicalMass) return false;
+  return evidence.liftOf(lemma, abstractGroup) >= policy.abstractMinimumLift;
+}
+
+List<String> _themesFor(
+  EvidenceIndex evidence,
+  String lemma,
+  PoolPolicy policy,
+) {
+  final scored = <String, double>{};
+  for (final theme in themeMarkers.keys) {
+    final lift = evidence.liftOf(lemma, themeGroup(theme));
+    final share = evidence.shareOf(lemma, themeGroup(theme));
+    if (lift >= policy.themeMinimumLift && share >= policy.themeMinimumShare) {
+      scored[theme] = lift;
+    }
+  }
+  if (scored.isEmpty) return const [];
+  final sorted = scored.entries.toList()
+    ..sort((a, b) {
+      final byShare = b.value.compareTo(a.value);
+      return byShare != 0 ? byShare : a.key.compareTo(b.key);
+    });
+  // One theme, the best supported one: two were mostly noise.
+  return [sorted.first.key];
+}
+
+/// No theme may own more than [cap] of the pool. The weakest holders lose it
+/// and are left with no suggestion, which is more useful than a wrong one.
+List<CandidateRow> _capThemeShare(List<CandidateRow> rows, double cap) {
+  if (rows.isEmpty) return rows;
+  final allowed = (rows.length * cap).ceil();
+  final holders = <String, List<int>>{};
+  for (var i = 0; i < rows.length; i++) {
+    for (final theme in rows[i].suggestedThemes) {
+      holders.putIfAbsent(theme, () => []).add(i);
+    }
+  }
+  final dropped = <int, Set<String>>{};
+  for (final entry in holders.entries) {
+    if (entry.value.length <= allowed) continue;
+    // rows are already sorted by score, so the tail is the weakest evidence.
+    for (final i in entry.value.skip(allowed)) {
+      dropped.putIfAbsent(i, () => <String>{}).add(entry.key);
+    }
+  }
+  if (dropped.isEmpty) return rows;
+  return [
+    for (var i = 0; i < rows.length; i++)
+      if (dropped.containsKey(i))
+        rows[i].withThemes([
+          for (final theme in rows[i].suggestedThemes)
+            if (!dropped[i]!.contains(theme)) theme,
+        ])
+      else
+        rows[i],
+  ];
 }
 
 /// Adds `paronym-of:<lemma>` for near neighbours inside the pool.
@@ -362,21 +484,7 @@ List<CandidateRow> _flagParonyms(List<CandidateRow> rows) {
       if (neighbours.length == 3) break;
     }
     result.add(
-      CandidateRow(
-        lemma: row.lemma,
-        pos: row.pos,
-        zipf: row.zipf,
-        dp: row.dp,
-        pedantryProxy: row.pedantryProxy,
-        familySize: row.familySize,
-        comodinLeverage: row.comodinLeverage,
-        suggestedThemes: row.suggestedThemes,
-        score: row.score,
-        flags: [
-          ...row.flags,
-          for (final neighbour in neighbours) 'paronym-of:$neighbour',
-        ],
-      ),
+      row.withFlags([for (final n in neighbours) 'paronym-of:$n']),
     );
   }
   return result;
@@ -384,21 +492,8 @@ List<CandidateRow> _flagParonyms(List<CandidateRow> rows) {
 
 /// Top-N lemmas by total frequency, for the common-word validator.
 List<String> topLemmas(List<PackageCounts> packages, {int limit = 5000}) {
-  final totals = <String, int>{};
-  for (final package in packages) {
-    for (final entry in package.counts.entries) {
-      final surface = normalizeSurface(entry.key);
-      if (surface == null) continue;
-      final key = foldForComparison(surface);
-      totals[key] = (totals[key] ?? 0) + entry.value;
-    }
-  }
-  final lemmaTotals = <String, int>{};
-  for (final entry in totals.entries) {
-    final lemma = surfaceToLemma(entry.key, totals);
-    lemmaTotals[lemma] = (lemmaTotals[lemma] ?? 0) + entry.value;
-  }
-  final sorted = lemmaTotals.entries.toList()
+  final index = CorpusIndex.build(packages);
+  final sorted = index.lemmaTotals.entries.toList()
     ..sort((a, b) {
       final byCount = b.value.compareTo(a.value);
       return byCount != 0 ? byCount : a.key.compareTo(b.key);
@@ -417,10 +512,7 @@ List<CandidateRow> fallbackPool(List<String> lemmas) => [
       pedantryProxy: 0,
       familySize: 0,
       comodinLeverage: 0,
-      suggestedThemes: themeStemLexicon.entries
-          .where((e) => e.value.any(lemma.startsWith))
-          .map((e) => e.key)
-          .toList(),
+      suggestedThemes: const [],
       score: 0,
       flags: const ['editorial-fallback'],
       metricsPending: true,

@@ -4,13 +4,17 @@ import 'package:args/args.dart';
 import 'package:content/src/cli/common.dart';
 import 'package:content/src/corpus/candidate_pool.dart';
 import 'package:content/src/corpus/leipzig.dart';
+import 'package:content/src/corpus/lexicon.dart';
+import 'package:content/src/corpus/pipeline.dart';
+import 'package:content/src/text/spanish_morphology.dart';
 import 'package:path/path.dart' as p;
 
 /// `dart run content:corpus`
 ///
 /// Downloads the Leipzig Corpora Collection Spanish packages (CC BY 4.0; the
-/// attribution lives in content/data/LICENSES.md), then computes the candidate
-/// pool and the common-word list. The CC BY-NC web API is never used.
+/// attribution lives in content/data/LICENSES.md) and the Wikidata Spanish
+/// lexeme list (CC0), then computes the candidate pool, the common-word list
+/// and the dictionary. The CC BY-NC Leipzig web API is never used.
 Future<void> main(List<String> arguments) async {
   final parser = ArgParser()
     ..addOption(
@@ -24,6 +28,16 @@ Future<void> main(List<String> arguments) async {
       help: 'Lemmas in common_lemmas_es.txt.',
     )
     ..addOption('root', help: 'Path to the content package.')
+    ..addFlag(
+      'refresh-lexicon',
+      help: 'Re-query Wikidata even when data/lexemes_es.tsv exists.',
+    )
+    ..addFlag(
+      'no-cooccurrence',
+      help:
+          'Skip the co-occurrence passes. The pool then carries '
+          'domain-unverified and has no evidence-based themes.',
+    )
     ..addFlag(
       'offline',
       help:
@@ -64,10 +78,7 @@ Future<void> main(List<String> arguments) async {
   final cacheDir =
       args.option('cache') ?? p.join(library.paths.root, '.corpus-cache');
   Directory(cacheDir).createSync(recursive: true);
-  final source = LeipzigDownloader(
-    cacheDir: cacheDir,
-    log: stdout.writeln,
-  );
+  final source = LeipzigDownloader(cacheDir: cacheDir, log: stdout.writeln);
 
   final loaded = <PackageCounts>[];
   final failures = <String>[];
@@ -94,13 +105,68 @@ Future<void> main(List<String> arguments) async {
     '${loaded.fold<int>(0, (a, b) => a + b.total)} tokens',
   );
 
+  // The dictionary gate. CC0, so it ships with the repository.
+  final lexiconFile = File(library.paths.lexiconFile);
+  var lexicon = const SpanishLexicon({});
+  if (!args.flag('refresh-lexicon') && lexiconFile.existsSync()) {
+    lexicon = await CachedLexiconSource(lexiconFile.path).fetch();
+    stdout.writeln('dictionary: ${lexicon.length} lemmas from the cached list');
+  } else {
+    try {
+      lexicon = await WikidataLexiconSource(log: stdout.writeln).fetch();
+      lexiconFile.writeAsStringSync(lexicon.toTsv());
+      stdout.writeln(
+        'dictionary: ${lexicon.length} Spanish lexemes written to '
+        '${p.relative(lexiconFile.path)}',
+      );
+    } on Object catch (error) {
+      stderr.writeln(
+        'warning: could not fetch the Wikidata lexeme list ($error); '
+        'the pool will be dictionary-unverified',
+      );
+    }
+  }
+
+  final corpus = CorpusIndex.build(loaded);
+
+  CorpusEvidence? evidence;
+  if (!args.flag('no-cooccurrence')) {
+    final interesting = <String>{
+      for (final lemma in corpus.lemmas)
+        if (lemma.length >= 4 &&
+            !spanishFunctionWords.contains(lemma) &&
+            (lexicon.isEmpty || lexicon.contains(lemma)))
+          lemma,
+    };
+    evidence = await buildCorpusEvidence(
+      packages: defaultPackages,
+      source: source,
+      corpus: corpus,
+      lexicon: lexicon,
+      interesting: interesting,
+      log: stdout.writeln,
+    );
+    if (evidence == null) {
+      stderr.writeln(
+        'warning: no co-occurrence tables were available; the pool will be '
+        'domain-unverified and carry no themes',
+      );
+    }
+  }
+
   final pool = buildCandidatePool(
     loaded,
+    lexicon: lexicon,
+    evidence: evidence?.topic,
+    slotEvidence: evidence?.slot,
+    prebuiltIndex: corpus,
     limit: int.parse(args.option('limit')!),
   );
   candidatesFile.writeAsStringSync(toCsv(pool));
+  final themed = pool.where((r) => r.suggestedThemes.isNotEmpty).length;
   stdout.writeln(
-    'wrote ${pool.length} candidates to ${p.relative(candidatesFile.path)}',
+    'wrote ${pool.length} candidates to ${p.relative(candidatesFile.path)} '
+    '($themed with an evidence-backed theme)',
   );
 
   final common = topLemmas(
