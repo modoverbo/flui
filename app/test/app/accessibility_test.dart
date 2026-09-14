@@ -1,8 +1,6 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/features/onboarding/domain/onboarding_store.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
-import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
@@ -20,11 +18,9 @@ typedef Screen = ({String name, String location, Widget page});
 
 void main() {
   late LearningFakes fakes;
-  late InMemoryOnboardingStore store;
 
   setUp(() async {
     fakes = LearningFakes();
-    store = InMemoryOnboardingStore();
     await fakes.progress.saveProgress(
       buildProgress(
         wordId: seedWord('perspicaz').id,
@@ -36,10 +32,7 @@ void main() {
 
   tearDown(() => fakes.dispose());
 
-  List<Override> allOverrides() => [
-    ...fakes.overrides,
-    onboardingStoreProvider.overrideWithValue(store),
-  ];
+  List<Override> allOverrides() => fakes.overrides;
 
   List<Screen> screens() => [
     (name: 'welcome', location: AppRoutes.welcome, page: const WelcomePage()),

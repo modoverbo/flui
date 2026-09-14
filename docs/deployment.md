@@ -40,6 +40,14 @@ npx supabase@latest db push             # applies supabase/migrations only
 > AI-drafted starter content. Load reviewed content with a dedicated SQL script after linguistic
 > review (see [learning-method.md](learning-method.md#legal-and-quality-guardrails)).
 
+> **Two seed files.** `supabase/config.toml` lists `seed.sql` then `seed_themes.sql`, in that order,
+> and `supabase db reset` applies both. `seed.sql` is **generated** from `content/` by
+> `dart run content:emit`; never hand-edit it (`dart run content:emit --check` and
+> `app/tool/seed_fixture_check.dart` both fail if you do). `seed_themes.sql` is hand-written and holds
+> the 16 themes, the `word_themes` links and the `words.semantic_set_id` values, because the emitter
+> does not write those yet. When it learns to, move its rows into
+> `content/templates/seed_preamble.sql` and delete the file.
+
 ### 1.3 Function secrets and deploy
 
 `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are injected automatically. Set the rest (production

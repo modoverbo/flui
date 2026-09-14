@@ -1,6 +1,7 @@
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
+import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
@@ -68,6 +69,8 @@ Word buildWord({
   PartOfSpeech partOfSpeech = PartOfSpeech.adjetivo,
   List<String> family = const [],
   List<WordConfusion> confusions = const [],
+  List<String> themeIds = const [],
+  String? semanticSetId,
   int exerciseCount = 3,
   int readingCount = 3,
 }) {
@@ -85,6 +88,8 @@ Word buildWord({
     pedantryRisk: 1,
     sortOrder: sortOrder,
     family: family,
+    themeIds: themeIds,
+    semanticSetId: semanticSetId,
     confusions: confusions,
     replaces: [Replacement(before: 'antes $wordLemma', after: wordLemma)],
     exercises: [
@@ -95,6 +100,29 @@ Word buildWord({
       for (var p = 1; p <= readingCount; p++)
         buildReading(wordId: id, position: p),
     ],
+  );
+}
+
+Theme buildTheme({
+  String? id,
+  String? slug,
+  ThemeFamily family = ThemeFamily.trabajo,
+  ThemeContentType contentType = ThemeContentType.wordDriven,
+  ThemeStatus status = ThemeStatus.live,
+  int sortOrder = 1,
+  String? name,
+}) {
+  final themeSlug = slug ?? 'tema$sortOrder';
+  return Theme(
+    id: id ?? themeSlug,
+    slug: themeSlug,
+    family: family,
+    name: name ?? 'Tema $sortOrder',
+    tagline: 'Una línea de $themeSlug.',
+    jtbd: 'Quiero practicar $themeSlug.',
+    contentType: contentType,
+    status: status,
+    sortOrder: sortOrder,
   );
 }
 

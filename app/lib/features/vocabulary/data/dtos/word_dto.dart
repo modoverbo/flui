@@ -1,5 +1,6 @@
 import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
+import 'package:flui/features/themes/data/dtos/theme_dto.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -26,9 +27,11 @@ abstract class WordDto with _$WordDto {
     String? ipaEs,
     String? usageTip,
     String? whenNotToUse,
+    String? semanticSetId,
     @Default(<String>[]) List<String> collocations,
     @Default(<ReplacementDto>[]) List<ReplacementDto> replaces,
     @Default(<String>[]) List<String> family,
+    @Default(<WordThemeDto>[]) List<WordThemeDto> wordThemes,
     @Default(<WordConfusionDto>[]) List<WordConfusionDto> wordConfusions,
     @Default(<ExerciseDto>[]) List<ExerciseDto> exercises,
     @Default(<ReadingDto>[]) List<ReadingDto> readings,
@@ -42,7 +45,8 @@ abstract class WordDto with _$WordDto {
       'id, slug, lemma, part_of_speech, syllables, stressed_syllable, '
       'ipa_latam, ipa_es, explanation, example_sentence, register, '
       'pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, '
-      'family, sort_order, '
+      'family, semantic_set_id, sort_order, '
+      '${WordThemeDto.columns}, '
       'word_confusions(id, word_id, confused_with, confused_word_id, '
       'difference, memory_trick), '
       'exercises(id, word_id, sentence, hint_general, explanation, position, '
@@ -66,12 +70,14 @@ abstract class WordDto with _$WordDto {
     pedantryRisk: pedantryRisk,
     usageTip: usageTip,
     whenNotToUse: whenNotToUse,
+    semanticSetId: semanticSetId,
     collocations: collocations,
     replaces: [
       for (final pair in replaces)
         Replacement(before: pair.before, after: pair.after),
     ],
     family: family,
+    themeIds: themeIdsOf(wordThemes),
     sortOrder: sortOrder,
     confusions: [for (final row in wordConfusions) row.toDomain()],
     exercises: [

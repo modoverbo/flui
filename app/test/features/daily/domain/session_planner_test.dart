@@ -1,4 +1,5 @@
 import 'package:flui/core/date/local_date.dart';
+import 'package:flui/features/daily/domain/session_plan.dart';
 import 'package:flui/features/daily/domain/session_planner.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
@@ -303,6 +304,332 @@ void main() {
     test('isAfianzar recomputes the flag from a saved session', () {
       expect(SessionPlanner.isAfianzar(minutes: 10, reviewCount: 12), isTrue);
       expect(SessionPlanner.isAfianzar(minutes: 10, reviewCount: 10), isFalse);
+    });
+  });
+
+  group('the semantic-set rule (§7)', () {
+    test('skips a candidate of a set introduced in the last 7 days', () {
+      final contundente = buildWord(
+        id: 'contundente',
+        lemma: 'contundente',
+        semanticSetId: 'fuerza-de-la-afirmacion',
+      );
+      final matizar = buildWord(
+        id: 'matizar',
+        lemma: 'matizar',
+        sortOrder: 2,
+        semanticSetId: 'fuerza-de-la-afirmacion',
+      );
+      final zanjar = buildWord(id: 'zanjar', lemma: 'zanjar', sortOrder: 3);
+
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: [matizar, zanjar],
+        recentIntroductions: [contundente],
+      );
+
+      expect(plan.newWordIds, ['zanjar']);
+    });
+
+    test('never picks two words of one set on the same day', () {
+      final contundente = buildWord(
+        id: 'contundente',
+        semanticSetId: 'fuerza-de-la-afirmacion',
+      );
+      final matizar = buildWord(
+        id: 'matizar',
+        sortOrder: 2,
+        semanticSetId: 'fuerza-de-la-afirmacion',
+      );
+      final zanjar = buildWord(id: 'zanjar', sortOrder: 3);
+
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 20,
+        today: today,
+        dueReviews: const [],
+        candidates: [contundente, matizar, zanjar],
+        recentIntroductions: const [],
+      );
+
+      expect(plan.newWordIds, ['contundente', 'zanjar']);
+    });
+
+    test('two words of one theme are still introducible together', () {
+      final a = buildWord(id: 'a', themeIds: const ['reuniones']);
+      final b = buildWord(id: 'b', sortOrder: 2, themeIds: const ['reuniones']);
+
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 20,
+        today: today,
+        dueReviews: const [],
+        candidates: [a, b],
+        recentIntroductions: const [],
+      );
+
+      expect(plan.newWordIds, ['a', 'b']);
+    });
+  });
+
+  group('the theme filter touches new words only', () {
+    final themed = buildWord(
+      id: 'themed',
+      sortOrder: 5,
+      themeIds: const ['reuniones'],
+    );
+    final other = buildWord(id: 'other', themeIds: const ['negociacion']);
+
+    test('a new word comes from the chosen theme, not from sort order', () {
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: [other, themed],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+        neighbourThemeIds: const ['negociacion'],
+      );
+
+      expect(plan.newWordIds, ['themed']);
+      expect(plan.themeId, 'reuniones');
+      expect(plan.themeFallback, isNull);
+    });
+
+    test('the due-review queue stays global and keeps its order', () {
+      final due = reviews(6);
+
+      final themedPlan = SessionPlanner.plan(
+        budgetMinutes: 20,
+        today: today,
+        dueReviews: due,
+        candidates: [other, themed],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+      );
+      final globalPlan = SessionPlanner.plan(
+        budgetMinutes: 20,
+        today: today,
+        dueReviews: due,
+        candidates: [other, themed],
+        recentIntroductions: const [],
+      );
+
+      expect(themedPlan.reviewWordIds, globalPlan.reviewWordIds);
+      expect(themedPlan.warmUpCount, globalPlan.warmUpCount);
+    });
+
+    test('the theme changes neither the slots nor the afianzar flag', () {
+      final due = reviews(32);
+
+      final themedPlan = SessionPlanner.plan(
+        budgetMinutes: 30,
+        today: today,
+        dueReviews: due,
+        candidates: catalog(5),
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+      );
+      final globalPlan = SessionPlanner.plan(
+        budgetMinutes: 30,
+        today: today,
+        dueReviews: due,
+        candidates: catalog(5),
+        recentIntroductions: const [],
+      );
+
+      expect(themedPlan.afianzar, globalPlan.afianzar);
+      expect(themedPlan.reviewWordIds, hasLength(32));
+    });
+  });
+
+  group('the exhaustion cascade never leaves an empty day', () {
+    final neighbourWord = buildWord(
+      id: 'neighbour',
+      sortOrder: 4,
+      themeIds: const ['negociacion'],
+    );
+    final strangerWord = buildWord(
+      id: 'stranger',
+      sortOrder: 9,
+      themeIds: const ['cocina'],
+    );
+
+    test('(a) themed recombination over the words already in practica', () {
+      final known = buildWord(id: 'known', themeIds: const ['reuniones']);
+
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: [neighbourWord, strangerWord],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+        practiceWords: [known],
+        neighbourThemeIds: const ['negociacion'],
+      );
+
+      expect(plan.newWordIds, isEmpty);
+      expect(plan.recombinationWordIds, ['known']);
+      expect(plan.themeFallback, ThemeFallback.themedPractice);
+      expect(plan.isEmpty, isFalse);
+      expect(plan.emptyReason, isNull);
+    });
+
+    test('(b) the nearest neighbour theme when nothing is in practica', () {
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: [neighbourWord, strangerWord],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+        neighbourThemeIds: const ['negociacion'],
+      );
+
+      expect(plan.newWordIds, ['neighbour']);
+      expect(plan.themeFallback, ThemeFallback.neighbourTheme);
+      expect(plan.fallbackThemeId, 'negociacion');
+    });
+
+    test('(c) the global next word when there is no neighbour left', () {
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: [strangerWord],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+        neighbourThemeIds: const ['negociacion'],
+      );
+
+      expect(plan.newWordIds, ['stranger']);
+      expect(plan.themeFallback, ThemeFallback.globalCatalog);
+      // The copy names where the word does come from, when it comes from
+      // somewhere: "Te traigo una de {otro}".
+      expect(plan.fallbackThemeId, 'cocina');
+    });
+
+    test('a word with no theme at all is still offered, unnamed', () {
+      final untagged = buildWord(id: 'untagged', sortOrder: 9);
+
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: [untagged],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+      );
+
+      expect(plan.newWordIds, ['untagged']);
+      expect(plan.themeFallback, ThemeFallback.globalCatalog);
+      expect(plan.fallbackThemeId, isNull);
+    });
+
+    test('the cascade still respects the interference rules', () {
+      final blocked = buildWord(
+        id: 'blocked',
+        lemma: 'matizar',
+        semanticSetId: 'fuerza-de-la-afirmacion',
+      );
+      final contundente = buildWord(
+        id: 'contundente',
+        lemma: 'contundente',
+        semanticSetId: 'fuerza-de-la-afirmacion',
+      );
+
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: [blocked],
+        recentIntroductions: [contundente],
+        themeId: 'reuniones',
+      );
+
+      expect(plan.newWordIds, isEmpty);
+      expect(plan.emptyReason, EmptyPlanReason.allReviewsDone);
+    });
+
+    test('recombination never exceeds the slots the theme left empty', () {
+      final known = [
+        for (var i = 0; i < 5; i++)
+          buildWord(id: 'k$i', sortOrder: i + 1, themeIds: const ['reuniones']),
+      ];
+
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 30,
+        today: today,
+        dueReviews: const [],
+        candidates: const [],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+        practiceWords: known,
+      );
+
+      expect(plan.recombinationWordIds, ['k0', 'k1', 'k2']);
+    });
+
+    test('a themed day with nothing anywhere is honestly empty', () {
+      final plan = SessionPlanner.plan(
+        budgetMinutes: 10,
+        today: today,
+        dueReviews: const [],
+        candidates: const [],
+        recentIntroductions: const [],
+        themeId: 'reuniones',
+      );
+
+      expect(plan.isEmpty, isTrue);
+      expect(plan.emptyReason, EmptyPlanReason.noCandidatesLeft);
+      expect(plan.themeFallback, isNull);
+    });
+  });
+
+  group('SessionPlanInputs.derive with themes', () {
+    test('collects the words already in practica and the neighbours', () {
+      final reuniones = buildTheme(slug: 'reuniones');
+      final negociacion = buildTheme(slug: 'negociacion', sortOrder: 2);
+      final words = [
+        buildWord(id: 'known', themeIds: const ['reuniones', 'negociacion']),
+        buildWord(
+          id: 'nueva',
+          sortOrder: 2,
+          themeIds: const ['reuniones', 'negociacion'],
+        ),
+        buildWord(id: 'fresh', sortOrder: 3, themeIds: const ['negociacion']),
+      ];
+      final progress = [
+        buildProgress(wordId: 'known', nextDueOn: day(20)),
+        buildProgress(
+          wordId: 'nueva',
+          state: WordState.nueva,
+          nextDueOn: day(20),
+        ),
+      ];
+
+      final inputs = SessionPlanInputs.derive(
+        catalog: words,
+        progress: progress,
+        today: today,
+        themes: [reuniones, negociacion],
+        themeId: 'reuniones',
+      );
+
+      expect(inputs.practiceWords.map((w) => w.id), ['known']);
+      expect(inputs.neighbourThemeIds, ['negociacion']);
+    });
+
+    test('no theme means no neighbours and no practice list', () {
+      final inputs = SessionPlanInputs.derive(
+        catalog: [buildWord(id: 'a')],
+        progress: [buildProgress(wordId: 'a', nextDueOn: day(20))],
+        today: today,
+      );
+
+      expect(inputs.neighbourThemeIds, isEmpty);
+      expect(inputs.practiceWords, isEmpty);
     });
   });
 

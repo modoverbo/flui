@@ -23,7 +23,19 @@ void main() {
         'minutes': 10,
         'planned_word_ids': ['w1'],
         'review_word_ids': ['w2', 'w3'],
+        // Written even when empty, so replanning a day without a theme
+        // clears the one it had instead of keeping it silently.
+        'theme_id': null,
       });
+    });
+
+    test('writes the theme chosen for the day', () {
+      final json = DailySessionDto.fromDomain(
+        session.copyWith(themeId: 't1'),
+        userId: 'u1',
+      ).toJson();
+
+      expect(json['theme_id'], 't1');
     });
 
     test('reads a completed session', () {
@@ -32,12 +44,25 @@ void main() {
         'minutes': 20,
         'planned_word_ids': <String>[],
         'review_word_ids': ['w2'],
+        'theme_id': 't1',
         'completed_at': '2026-09-13T18:30:00Z',
       }).toDomain();
 
       expect(domain.minutes, 20);
+      expect(domain.themeId, 't1');
       expect(domain.isCompleted, isTrue);
       expect(domain.completedAt, DateTime.utc(2026, 9, 13, 18, 30));
+    });
+
+    test('reads a session planned before themes existed', () {
+      final domain = DailySessionDto.fromJson({
+        'local_date': '2026-09-13',
+        'minutes': 20,
+        'planned_word_ids': <String>[],
+        'review_word_ids': ['w2'],
+      }).toDomain();
+
+      expect(domain.themeId, isNull);
     });
   });
 

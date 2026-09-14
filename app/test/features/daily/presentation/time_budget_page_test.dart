@@ -90,6 +90,126 @@ void main() {
     expect(find.text('route:${AppRoutes.today}'), findsNothing);
   });
 
+  Future<void> tapText(WidgetTester tester, String text) async {
+    final finder = find.text(text);
+    await tester.ensureVisible(finder);
+    await tester.pumpAndSettle();
+    await tester.tap(finder);
+    await tester.pumpAndSettle();
+  }
+
+  group('the second question of the day', () {
+    testWidgets('asks for a theme with three cards, a door and a dice', (
+      tester,
+    ) async {
+      await pumpPage(tester);
+
+      expect(find.text('¿Sobre qué tema?'), findsOneWidget);
+      // Patall (2008): choice helps most at two to four options.
+      for (final name in ['Reuniones', 'Presentaciones', 'Entrevistas']) {
+        expect(find.text(name), findsOneWidget);
+      }
+      expect(find.text('Explorar'), findsOneWidget);
+      expect(find.text('Sorpréndeme'), findsOneWidget);
+    });
+
+    testWidgets('says what a theme does and does not change', (tester) async {
+      await pumpPage(tester);
+
+      expect(
+        find.text(
+          'El tema elige tu palabra nueva. Tus repasos siguen su propio '
+          'calendario.',
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets("preselects yesterday's theme", (tester) async {
+      await fakes.sessions.saveSession(
+        DailySession(
+          localDate: day(12),
+          minutes: 10,
+          themeId: seedTheme('entrevistas').id,
+        ),
+      );
+      await pumpPage(tester);
+
+      expect(isThemeSelected(tester, 'Entrevistas'), isTrue);
+      expect(isThemeSelected(tester, 'Reuniones'), isFalse);
+    });
+
+    testWidgets('saves the theme and picks its word', (tester) async {
+      await pumpPage(tester);
+
+      await tapText(tester, 'Entrevistas');
+      await tapText(tester, 'Empezar');
+
+      final saved = (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+      expect(saved.themeId, seedTheme('entrevistas').id);
+      // 10 minutes buys one new word, and it comes from that theme.
+      expect(saved.plannedWordIds, [seedWord('sopesar').id]);
+    });
+
+    testWidgets('changing the theme replans exactly like changing minutes', (
+      tester,
+    ) async {
+      await pumpPage(tester);
+      await tapText(tester, 'Entrevistas');
+      await tapText(tester, 'Reuniones');
+      await tapText(tester, 'Empezar');
+
+      final saved = (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+      expect(saved.themeId, seedTheme('reuniones').id);
+      expect(saved.plannedWordIds, [seedWord('perspicaz').id]);
+    });
+
+    testWidgets('"Explorar" lists every theme, grouped by family', (
+      tester,
+    ) async {
+      await pumpPage(tester);
+
+      await tapText(tester, 'Explorar');
+
+      expect(find.text('Todos los temas'), findsOneWidget);
+      // FluiLabel sets an eyebrow in caps; the ARB copy stays sentence case.
+      expect(find.text('EN EL TRABAJO'), findsOneWidget);
+      expect(find.text('LO QUE CUESTA DECIR'), findsOneWidget);
+      // A theme with no content behind it is never offered.
+      expect(find.text('Conectores'), findsNothing);
+
+      await tapText(tester, 'Desacuerdos');
+      expect(find.text('Todos los temas'), findsNothing);
+      expect(isThemeSelected(tester, 'Desacuerdos'), isTrue);
+    });
+
+    testWidgets('"Sorpréndeme" moves off the theme already showing', (
+      tester,
+    ) async {
+      await pumpPage(tester);
+      expect(isThemeSelected(tester, 'Reuniones'), isTrue);
+
+      await tapText(tester, 'Sorpréndeme');
+
+      expect(isThemeSelected(tester, 'Reuniones'), isFalse);
+    });
+
+    testWidgets('asks for no theme when none is offered yet', (tester) async {
+      fakes = LearningFakes(themes: const []);
+      await pumpPage(tester);
+
+      expect(
+        find.text('Todavía no hay temas para elegir. Seguimos escribiendo.'),
+        findsOneWidget,
+      );
+      await tapText(tester, 'Empezar');
+
+      final saved = (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+      expect(saved.themeId, isNull);
+      expect(saved.plannedWordIds, [seedWord('perspicaz').id]);
+    });
+  });
+
   testWidgets('fits at 130 % text size on a phone', (tester) async {
     scaleText(tester, 1.3);
     await pumpPage(tester);
@@ -97,3 +217,10 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 }
+
+/// A theme card announces itself as "{name}: {tagline}".
+bool isThemeSelected(WidgetTester tester, String name) => tester
+    .getSemantics(find.bySemanticsLabel(RegExp('^$name:')))
+    .flagsCollection
+    .isSelected
+    .toBoolOrNull()!;

@@ -211,6 +211,34 @@
     }
   },
   "timeBudgetStart": "Empezar",
+  "themeSectionLabel": "Tema de hoy",
+  "themeQuestionTitle": "¿Sobre qué tema?",
+  "themeQuestionBody": "El tema elige tu palabra nueva. Tus repasos siguen su propio calendario.",
+  "themeExplore": "Explorar",
+  "themeSurprise": "Sorpréndeme",
+  "themeExploreTitle": "Todos los temas",
+  "themeExploreBody": "Elige el que te haga falta hoy. Mañana puedes cambiar.",
+  "themeExploreClose": "Listo",
+  "themeYours": "Tus temas",
+  "themeRecommended": "Para ti",
+  "themeNoneAvailable": "Todavía no hay temas para elegir. Seguimos escribiendo.",
+  "themeChoiceSemantics": "{name}: {tagline}",
+  "@themeChoiceSemantics": {
+    "description": "Screen-reader label of a theme card.",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "tagline": {
+        "type": "String"
+      }
+    }
+  },
+  "themeFamilyTrabajo": "En el trabajo",
+  "themeFamilySocial": "Con la gente",
+  "themeFamilyPublico": "Delante de gente",
+  "themeFamilyPrecision": "Decirlo exacto",
+  "themeFamilyEmocion": "Lo que cuesta decir",
   "todaySubtitle": "Un paso más hacia cómo quieres sonar.",
   "todaySessionTitle": "Tu sesión de hoy",
   "todaySessionMinutes": "{minutes} minutos",
@@ -239,6 +267,38 @@
   "todayEmptyPlanAction": "Cambiar a 10 minutos",
   "todayNoCandidates": "Ya recorriste todas mis palabras. Estoy escribiendo las que siguen.",
   "todayBlockedCandidates": "Las palabras que quedan se parecen a las de esta semana. Un poco de distancia y encajan mejor.",
+  "todayThemeLabel": "Tema de hoy",
+  "todayChangeTheme": "Cambiar tema",
+  "todayThemeFallbackOther": "Hoy no me quedan palabras nuevas de {theme}. Te traigo una de {other}: se usa igual.",
+  "@todayThemeFallbackOther": {
+    "description": "The chosen theme ran out and a neighbouring theme lent today's word.",
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      },
+      "other": {
+        "type": "String"
+      }
+    }
+  },
+  "todayThemeFallbackCatalog": "Hoy no me quedan palabras nuevas de {theme}. Te traigo otra que te sirve igual.",
+  "@todayThemeFallbackCatalog": {
+    "description": "The chosen theme ran out and today's word comes from the general catalog.",
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      }
+    }
+  },
+  "todayThemeFallbackPractice": "Hoy no me quedan palabras nuevas de {theme}. Afianzamos las que ya tienes de ese tema.",
+  "@todayThemeFallbackPractice": {
+    "description": "The chosen theme ran out of new words, so the day recombines words already in practica.",
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      }
+    }
+  },
   "todayNextReviews": "{count, plural, =1{Vuelve el {date}: 1 repaso te espera} other{Vuelve el {date}: {count} repasos te esperan}}",
   "@todayNextReviews": {
     "placeholders": {
@@ -497,6 +557,8 @@
   "wordsEmptyTitle": "Tu repertorio empieza hoy.",
   "wordsEmptyBody": "Aquí verás tus palabras crecer.",
   "wordsFilterEmpty": "No hay palabras en este estado todavía.",
+  "wordsFilterThemeAll": "Todos los temas",
+  "wordsFilterThemeEmpty": "No hay palabras de este tema todavía.",
   "practiceSubtitle": "Afianza lo que ya empezaste.",
   "practiceDueCount": "{count, plural, =1{1 palabra para afianzar hoy} other{{count} palabras para afianzar hoy}}",
   "@practiceDueCount": {

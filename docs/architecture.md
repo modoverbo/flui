@@ -110,10 +110,10 @@ sequenceDiagram
   participant A as Flutter app (domain)
   participant DB as Postgres (RLS)
 
-  A->>DB: select word_progress (own), words + exercises + readings (published, has_access)
-  U->>A: picks 10 min
-  A->>A: SessionPlanner(budget, dueReviews, candidates, confusions)
-  A->>DB: upsert daily_sessions(local_date, minutes, planned_word_ids, review_word_ids)
+  A->>DB: select word_progress (own), words + exercises + readings (published, has_access), themes
+  U->>A: picks 10 min and a theme
+  A->>A: SessionPlanner(budget, dueReviews, candidates, confusions, semantic sets, themeId)
+  A->>DB: upsert daily_sessions(local_date, minutes, theme_id, planned_word_ids, review_word_ids)
   A-->>U: reviews first, then Descubre → Entiende → Mira → Elige → Úsala
 ```
 
@@ -316,7 +316,8 @@ erDiagram
 | Table / function | anon | authenticated | service role |
 |------------------|------|---------------|--------------|
 | `profiles` | — | select own; update own `display_name` only | all |
-| `words`, `word_confusions`, `exercises`, `exercise_options`, `readings` | — | select published content **only when `has_access()`** | all |
+| `words`, `word_confusions`, `exercises`, `exercise_options`, `readings`, `word_themes` | — | select published content **only when `has_access()`** | all |
+| `themes` | — | select published rows (the taxonomy is the shape of the offer, not the paid content) | all |
 | `daily_sessions`, `word_progress` | — | select, insert, update own rows | all |
 | `exercise_attempts`, `streak_repairs` | — | select, insert own rows (append-only) | all |
 | `subscription_plans` | select active | select active | all |
@@ -365,7 +366,8 @@ app/lib/
     auth/               # sign-up, sign-in, sign-out, session stream
     onboarding/         # welcome and intro slides
     subscription/       # plans, my_access, paywall, checkout return polling
-    daily/              # time budget, SessionPlanner, daily_sessions, "Hoy"
+    daily/              # time budget, theme choice, SessionPlanner, daily_sessions, "Hoy"
+    themes/             # theme taxonomy, recommender, neighbours, "Explorar"
     vocabulary/         # catalog, word detail, mastery state machine, review scheduling
     exercises/          # cloze flow, hint policy, grading, attempts
     reading/            # "En contexto" scenes

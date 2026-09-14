@@ -39,12 +39,14 @@ void main() {
     int minutes = 10,
     List<String> newWords = const [],
     List<String> reviews = const [],
+    String? themeId,
   }) => fakes.sessions.saveSession(
     DailySession(
       localDate: day(13),
       minutes: minutes,
       plannedWordIds: newWords,
       reviewWordIds: reviews,
+      themeId: themeId,
     ),
   );
 
@@ -206,6 +208,104 @@ void main() {
     await pumpPage(tester);
 
     expect(tester.takeException(), isNull);
+  });
+
+  group('the theme of the day', () {
+    testWidgets('is shown, with one tap to change it', (tester) async {
+      await plan(
+        newWords: [perspicaz.id],
+        themeId: seedTheme('elogio-reconocimiento').id,
+      );
+      await pumpPage(tester);
+
+      expect(find.text('TEMA DE HOY'), findsOneWidget);
+      expect(find.text('Reconocer a otros'), findsOneWidget);
+
+      await tester.tap(find.text('Cambiar tema'));
+      await tester.pumpAndSettle();
+      expect(find.text('route:${AppRoutes.timeBudget}'), findsOneWidget);
+    });
+
+    testWidgets('a day without a theme shows no theme row', (tester) async {
+      await plan(newWords: [perspicaz.id]);
+      await pumpPage(tester);
+
+      expect(find.text('TEMA DE HOY'), findsNothing);
+      expect(find.text('Cambiar tema'), findsNothing);
+    });
+
+    testWidgets('says nothing when the word came from the theme', (
+      tester,
+    ) async {
+      await plan(
+        newWords: [perspicaz.id],
+        themeId: seedTheme('elogio-reconocimiento').id,
+      );
+      await pumpPage(tester);
+
+      expect(find.textContaining('no me quedan palabras nuevas'), findsNothing);
+    });
+
+    testWidgets('names the neighbour that lent the word', (tester) async {
+      // «perspicaz» is not tagged "Entrevistas", but it is tagged
+      // "Reuniones", which shares «pertinente» with it: a neighbour loan.
+      await plan(
+        newWords: [perspicaz.id],
+        themeId: seedTheme('entrevistas').id,
+      );
+      await pumpPage(tester);
+
+      expect(
+        find.text(
+          'Hoy no me quedan palabras nuevas de Entrevistas. Te traigo una de '
+          'Reuniones: se usa igual.',
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('admits when the word comes from the catalog at large', (
+      tester,
+    ) async {
+      // «perspicaz» carries none of the themes "Decir que no" reaches.
+      await plan(
+        newWords: [perspicaz.id],
+        themeId: seedTheme('decir-que-no').id,
+      );
+      await pumpPage(tester);
+
+      expect(
+        find.textContaining('Hoy no me quedan palabras nuevas de Decir que no'),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('an exhausted theme with words in practica is not empty', (
+      tester,
+    ) async {
+      await fakes.progress.saveProgress(
+        buildProgress(
+          wordId: perspicaz.id,
+          introducedOn: day(1),
+          nextDueOn: day(30),
+        ),
+      );
+      await plan(themeId: seedTheme('elogio-reconocimiento').id);
+      await pumpPage(tester);
+
+      expect(
+        find.text(
+          'Hoy no me quedan palabras nuevas de Reconocer a otros. Afianzamos '
+          'las que ya tienes de ese tema.',
+        ),
+        findsOneWidget,
+      );
+      // Not the honest-but-wrong "come back tomorrow" of an empty day.
+      expect(
+        find.text('Con 10 minutos te presento una palabra nueva.'),
+        findsNothing,
+      );
+    });
   });
 
   testWidgets('the bento anchors on one dark streak tile', (tester) async {

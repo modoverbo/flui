@@ -15,6 +15,10 @@ abstract class DailySession with _$DailySession {
 
     /// Reviews for today, in order (warm-up first).
     @Default(<String>[]) List<String> reviewWordIds,
+
+    /// The theme chosen for the day, `null` for the global pool. Changing it
+    /// recomputes the plan exactly like [minutes] does.
+    String? themeId,
     DateTime? completedAt,
   }) = _DailySession;
 

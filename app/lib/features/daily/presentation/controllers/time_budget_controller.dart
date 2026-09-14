@@ -8,6 +8,8 @@ import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/domain/session_planner.dart';
 import 'package:flui/features/daily/domain/time_budget.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
+import 'package:flui/features/exercises/presentation/providers/exercise_providers.dart';
+import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -31,12 +33,20 @@ abstract class TimeBudgetState with _$TimeBudgetState {
   const factory({
     /// The user's tap; `null` shows the preselected budget.
     TimeBudget? selected,
+
+    /// The user's theme tap; `null` shows the preselected theme.
+    String? selectedThemeId,
     @Default(false) bool saving,
     Failure? failure,
   }) = _TimeBudgetState;
 }
 
-/// "¿Cuánto tiempo tienes hoy?": plans the day and saves `daily_sessions`.
+/// "¿Cuánto tiempo tienes hoy?" and "¿sobre qué tema?": plans the day and
+/// saves `daily_sessions`.
+///
+/// The two answers are symmetric. Changing the theme recomputes the plan
+/// exactly like changing the minutes does, and neither is locked in: there is
+/// no minimum streak on a theme, so tomorrow can be a different one for free.
 @riverpod
 class TimeBudgetController extends _$TimeBudgetController {
   @override
@@ -45,15 +55,41 @@ class TimeBudgetController extends _$TimeBudgetController {
   void select(TimeBudget budget) =>
       state = state.copyWith(selected: budget, failure: null);
 
-  /// Plans with [budget] and saves today's session (recomputing an existing
-  /// one). Returns whether it was saved.
-  Future<bool> start(TimeBudget budget) async {
+  void selectTheme(String themeId) =>
+      state = state.copyWith(selectedThemeId: themeId, failure: null);
+
+  /// "Sorpréndeme": any offered theme other than the one already showing.
+  /// Deliberately not the "best" one — the point is to widen the catalog, and
+  /// a recommendation the user did not ask for is not a surprise.
+  Future<String?> surpriseTheme(String? current) async {
+    final offered = await ref.readFuture(offeredThemesProvider.future);
+    if (offered.isEmpty) return null;
+    final pool = [
+      for (final theme in offered)
+        if (theme.id != current) theme,
+    ];
+    if (pool.isEmpty) return null;
+    final random = ref.read(shuffleRandomProvider);
+    final picked = pool[random == null ? 0 : random.nextInt(pool.length)];
+    selectTheme(picked.id);
+    return picked.id;
+  }
+
+  /// Plans with [budget] and [themeId] and saves today's session (recomputing
+  /// an existing one). Returns whether it was saved.
+  Future<bool> start(TimeBudget budget, {String? themeId}) async {
     if (state.saving) return false;
-    state = state.copyWith(selected: budget, saving: true, failure: null);
+    state = state.copyWith(
+      selected: budget,
+      selectedThemeId: themeId,
+      saving: true,
+      failure: null,
+    );
     try {
       final userId = (await ref.readFuture(authUserProvider.future))?.id;
       if (userId == null) throw notSignedInFailure;
       final catalog = await ref.readFuture(catalogProvider.future);
+      final themes = await ref.readFuture(themesProvider.future);
       final data = await ref.readFuture(
         learningDataControllerProvider(userId).future,
       );
@@ -62,6 +98,8 @@ class TimeBudgetController extends _$TimeBudgetController {
         catalog: catalog,
         progress: data.progress,
         today: today,
+        themes: themes,
+        themeId: themeId,
       );
       final plan = SessionPlanner.plan(
         budgetMinutes: budget.minutes,
@@ -69,6 +107,9 @@ class TimeBudgetController extends _$TimeBudgetController {
         dueReviews: inputs.dueReviews,
         candidates: inputs.candidates,
         recentIntroductions: inputs.recentIntroductions,
+        themeId: themeId,
+        practiceWords: inputs.practiceWords,
+        neighbourThemeIds: inputs.neighbourThemeIds,
       );
       final result = await ref
           .read(learningDataControllerProvider(userId).notifier)
@@ -78,6 +119,7 @@ class TimeBudgetController extends _$TimeBudgetController {
               minutes: budget.minutes,
               plannedWordIds: plan.newWordIds,
               reviewWordIds: plan.reviewWordIds,
+              themeId: themeId,
             ),
           );
       if (!ref.mounted) return result.isOk;

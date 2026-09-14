@@ -22,6 +22,11 @@ abstract final class FluiRadii {
   static const BorderRadius ctaAll = BorderRadius.all(Radius.circular(cta));
   static const BorderRadius cardAll = BorderRadius.all(Radius.circular(card));
   static const BorderRadius plateAll = BorderRadius.all(Radius.circular(plate));
+
+  /// A bottom sheet: the plate radius, on the two corners that show.
+  static const BorderRadius sheetTop = BorderRadius.vertical(
+    top: Radius.circular(plate),
+  );
   static const BorderRadius pill = BorderRadius.all(
     Radius.circular(pillRadius),
   );

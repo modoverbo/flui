@@ -4,9 +4,13 @@ import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/domain/session_plan.dart';
 import 'package:flui/features/daily/domain/session_planner.dart';
+import 'package:flui/features/daily/domain/theme_outcome.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
 import 'package:flui/features/profile/domain/progress_stats.dart';
 import 'package:flui/features/profile/domain/streak_calculator.dart';
+import 'package:flui/features/themes/domain/theme.dart';
+import 'package:flui/features/themes/domain/theme_neighbours.dart';
+import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
@@ -35,6 +39,10 @@ final class TodayOverview {
     required this.dueCount,
     required this.canReviewFreely,
     this.emptyReason,
+    this.theme,
+    this.otherTheme,
+    this.themeFallback,
+    this.recombinationCount = 0,
     this.nextReviewOn,
     this.nextReviewCount = 0,
     this.precisionPercent,
@@ -69,6 +77,18 @@ final class TodayOverview {
   /// Why today has nothing planned; `null` when the plan is not empty.
   final EmptyPlanReason? emptyReason;
 
+  /// The theme today was planned with, `null` for the global pool.
+  final Theme? theme;
+
+  /// The theme today's word actually came from, when it was not [theme].
+  final Theme? otherTheme;
+
+  /// Set when the new word did not come from [theme]; the copy says so.
+  final ThemeFallback? themeFallback;
+
+  /// Words of the theme the day recombines because it had no new word left.
+  final int recombinationCount;
+
   /// The next day with reviews waiting, and how many land on it.
   final LocalDate? nextReviewOn;
   final int nextReviewCount;
@@ -76,7 +96,9 @@ final class TodayOverview {
 
   bool get completed => session?.isCompleted ?? false;
 
-  bool get emptyPlan => session?.isEmpty ?? false;
+  /// A day with nothing to do. Themed recombination counts as something: the
+  /// theme ran out of new words, not out of work.
+  bool get emptyPlan => (session?.isEmpty ?? false) && recombinationCount == 0;
 
   /// The hero number is never a bare zero: before the first `tuya`, it shows
   /// the words in practice instead.
@@ -96,9 +118,30 @@ final class TodayOverview {
 Future<TodayOverview> todayOverview(Ref ref) async {
   final data = await ref.watch(currentLearningDataProvider.future);
   final words = await ref.watch(wordsByIdProvider.future);
+  final allThemes = await ref.watch(themesProvider.future);
+  final themesById = await ref.watch(themesByIdProvider.future);
   final name = ref.watch(authUserProvider.select((u) => u.value?.displayName));
   final today = ref.watch(clockProvider).localToday();
   final session = data.sessionOn(today);
+  final theme = themesById[session?.themeId];
+  final outcome = session == null
+      ? ThemeOutcome.onTheme
+      : ThemeOutcome.of(
+          session: session,
+          wordsById: words,
+          practiceWords: [
+            for (final row in data.progress)
+              if (row.state == WordState.practica && words[row.wordId] != null)
+                words[row.wordId]!,
+          ],
+          neighbourThemeIds: theme == null
+              ? const []
+              : ThemeNeighbours.nearestIds(
+                  theme: theme,
+                  themes: allThemes,
+                  catalog: words.values.toList(),
+                ),
+        );
   final stats = ProgressStats.compute(
     progress: data.progress,
     attempts: data.attempts,
@@ -148,6 +191,10 @@ Future<TodayOverview> todayOverview(Ref ref) async {
             today: today,
           )
         : null,
+    theme: theme,
+    otherTheme: themesById[outcome.otherThemeId],
+    themeFallback: outcome.fallback,
+    recombinationCount: outcome.recombinationWordIds.length,
     nextReviewOn: nextReviewOn,
     nextReviewCount: nextReviewOn == null
         ? 0

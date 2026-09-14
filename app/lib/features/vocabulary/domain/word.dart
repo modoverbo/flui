@@ -51,9 +51,18 @@ abstract class Word with _$Word {
     String? ipaEs,
     String? usageTip,
     String? whenNotToUse,
+
+    /// Synonym / antonym / category-mate group (`words.semantic_set_id`). Two
+    /// words of one set are never introduced within 7 days of each other; see
+    /// `SemanticSetRule`.
+    String? semanticSetId,
     @Default(<String>[]) List<String> collocations,
     @Default(<Replacement>[]) List<Replacement> replaces,
     @Default(<String>[]) List<String> family,
+
+    /// Themes this word belongs to (`word_themes`), most relevant first. A
+    /// theme filters the new-word candidate pool and nothing else.
+    @Default(<String>[]) List<String> themeIds,
     @Default(<WordConfusion>[]) List<WordConfusion> confusions,
     @Default(<ClozeExercise>[]) List<ClozeExercise> exercises,
     @Default(<Reading>[]) List<Reading> readings,

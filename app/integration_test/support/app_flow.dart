@@ -71,16 +71,26 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   await tapText('Empezar prueba gratis');
 
   // Fake checkout returns to /checkout/return, which polls until the fake
-  // webhook grants the trial, then the router opens the time budget.
+  // webhook grants the trial, then the router opens the two questions of the
+  // day: how long, and about what.
   expect(harness.subscriptions.checkoutRequests, ['quarterly']);
   expect(find.text('¿Cuánto tiempo tienes hoy?'), findsOneWidget);
   await tapText('10 min');
+
+  // The theme: three recommendations, and a door to the rest of them.
+  expect(find.text('¿Sobre qué tema?'), findsOneWidget);
+  expect(find.text('Reuniones'), findsOneWidget);
+  await tapText('Explorar');
+  expect(find.text('Todos los temas'), findsOneWidget);
+  await tapText('Reconocer a otros');
   await tapText('Empezar');
 
-  // Hoy.
+  // Hoy, with the chosen theme and a word that belongs to it.
   expect(find.byType(NavigationBar), findsOneWidget);
   expect(find.text('Hola, Ana'), findsOneWidget);
   expect(find.text('10 minutos'), findsOneWidget);
+  expect(find.text('TEMA DE HOY'), findsOneWidget);
+  expect(find.text('Reconocer a otros'), findsOneWidget);
   expect(find.text('perspicaz'), findsOneWidget);
   await tapText('Empezar');
 

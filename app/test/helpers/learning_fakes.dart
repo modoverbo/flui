@@ -8,9 +8,14 @@ import 'package:flui/features/daily/data/fake_daily_session_repository.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/exercises/data/fake_exercise_attempt_repository.dart';
 import 'package:flui/features/exercises/presentation/providers/exercise_providers.dart';
+import 'package:flui/features/onboarding/domain/onboarding_store.dart';
+import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/profile/data/fake_streak_repair_repository.dart';
 import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
-import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
+import 'package:flui/features/themes/data/fake/seed_themes.dart';
+import 'package:flui/features/themes/data/fake_theme_repository.dart';
+import 'package:flui/features/themes/domain/theme.dart';
+import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_word_progress_repository.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
@@ -22,7 +27,9 @@ import 'package:flutter_riverpod/misc.dart';
 final class LearningFakes {
   new({
     DateTime? now,
-    List<Word> words = seedWords,
+    List<Word>? words,
+    List<Theme>? themes,
+    InMemoryOnboardingStore? onboarding,
     String displayName = 'Ana',
     bool signedIn = true,
   }) : clock = FixedClock(now ?? DateTime(2026, 9, 13, 10)),
@@ -35,7 +42,9 @@ final class LearningFakes {
                )
              : null,
        ),
-       content = FakeContentRepository(words: words) {
+       content = FakeContentRepository(words: words),
+       themes = FakeThemeRepository(themes: themes ?? seedThemes),
+       onboarding = onboarding ?? InMemoryOnboardingStore() {
     progress = FakeWordProgressRepository(currentUserId: _userId);
     attempts = FakeExerciseAttemptRepository(
       currentUserId: _userId,
@@ -48,6 +57,8 @@ final class LearningFakes {
   final FixedClock clock;
   final FakeAuthRepository auth;
   final FakeContentRepository content;
+  final FakeThemeRepository themes;
+  final InMemoryOnboardingStore onboarding;
   late final FakeWordProgressRepository progress;
   late final FakeExerciseAttemptRepository attempts;
   late final FakeDailySessionRepository sessions;
@@ -62,6 +73,8 @@ final class LearningFakes {
   List<Override> get overrides => [
     authRepositoryProvider.overrideWithValue(auth),
     contentRepositoryProvider.overrideWithValue(content),
+    themeRepositoryProvider.overrideWithValue(themes),
+    onboardingStoreProvider.overrideWithValue(onboarding),
     wordProgressRepositoryProvider.overrideWithValue(progress),
     exerciseAttemptRepositoryProvider.overrideWithValue(attempts),
     dailySessionRepositoryProvider.overrideWithValue(sessions),
@@ -73,4 +86,10 @@ final class LearningFakes {
   Future<void> dispose() => auth.dispose();
 }
 
-Word seedWord(String lemma) => seedWords.firstWhere((w) => w.lemma == lemma);
+/// A seed word by lemma, with its themes and semantic set.
+Word seedWord(String lemma) =>
+    seedWordsWithThemes.firstWhere((w) => w.lemma == lemma);
+
+/// A seed theme by slug.
+Theme seedTheme(String slug) =>
+    seedThemes.firstWhere((theme) => theme.slug == slug);

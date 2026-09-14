@@ -20,6 +20,9 @@ The product rules of flui, specified so they can be implemented and unit-tested 
 | Options per cloze | 3 (1 correct, 2 typed distractors) |
 | Forced reveals before easy mode | 3 per session |
 | Confusable words | never introduced within 7 days of each other |
+| Words of one semantic set | never introduced within 7 days of each other |
+| Themes offered per day | 3 recommended + "Explorar" + "Sorpréndeme" |
+| Themes kept as "tus temas" | at most 3; changing theme any day is free |
 | Weekly streak repair | 1 free repair per ISO week |
 
 ---
@@ -36,6 +39,10 @@ The product rules of flui, specified so they can be implemented and unit-tested 
 | `candidates` | published words without a `word_progress` row, ordered by `sort_order` |
 | `recentIntroductions` | `word_progress` rows with `introduced_on >= today - 6` |
 | `confusions` | `word_confusions` rows (see §7) |
+| `semanticSets` | `words.semantic_set_id` (see §7) |
+| `themeId` | user choice, or none; filters **candidates only** (see §10) |
+| `practiceWords` | words in `practica`, for the theme cascade (see §10) |
+| `neighbourThemeIds` | themes nearest to `themeId` by shared words (see §10) |
 
 ### Constants
 
@@ -57,12 +64,16 @@ const afianzarThreshold = 0.5; // share of the budget
    - otherwise `newSlots = min(floor((budgetMinutes - reviewTime) / newWordMinutes), maxNewWordsPerDay)`.
 5. **"Hoy toca afianzar":** if `reviewTime > afianzarThreshold * budgetMinutes`, then
    `afianzar = true` and `newSlots = min(newSlots, 1)`.
-6. **Pick new words:** walk `candidates` in order and take a candidate only if it is not confusable
-   (§7) with any word in `recentIntroductions` or already picked today. Stop at `newSlots`.
+6. **Pick new words:** walk `candidates` in order and take a candidate only if neither interference
+   rule of §7 holds against any word in `recentIntroductions` or already picked today. Stop at
+   `newSlots`. When a theme is chosen, walk only the candidates tagged with it, then the cascade of
+   §10. The theme changes nothing else: not `newSlots`, not the afianzar threshold, not the ladder,
+   and never the due-review queue.
 7. **Empty plan:** if `plannedReviews == 0` and no new word was picked, return an empty plan.
    With a 5-minute budget the UI suggests 10 minutes ("Con 10 minutos te presento una palabra nueva.").
-8. Persist `daily_sessions(local_date, minutes, planned_word_ids, review_word_ids)`. Choosing a
-   different budget on the same day recomputes and updates the row.
+8. Persist `daily_sessions(local_date, minutes, theme_id, planned_word_ids, review_word_ids)`.
+   Choosing a different budget **or a different theme** on the same day recomputes and updates the
+   row; the two answers are symmetric.
 
 ### Session order
 
@@ -229,15 +240,26 @@ reset to `nueva`. The word returns to `tuya` once criteria 1–5 hold again afte
 
 ---
 
-## 7. Paronym interference rule
+## 7. Interference rules
 
-Two words **A** and **B** are *confusable* when a `word_confusions` row of either word points to the
-other one, by `confused_word_id` or by a case-insensitive match of `confused_with` with the other
-word's `lemma`.
+Two rules keep a candidate out of today's plan. Both use the same 7-day window, and both apply to
+words introduced earlier today as well as to `recentIntroductions`.
 
-A candidate is **not introduced** while any confusable word has `introduced_on >= today - 6`
-(including words picked earlier today). A "contraste" exercise for a confusable pair unlocks only
-when one of the pair is in `practica` with ≥ 2 first-try success days (future feature).
+**Paronyms.** Two words **A** and **B** are *confusable* when a `word_confusions` row of either word
+points to the other one, by `confused_word_id` or by a case-insensitive match of `confused_with`
+with the other word's `lemma`.
+
+**Semantic sets.** Two words are *in the same set* when they share a non-empty
+`words.semantic_set_id`. A semantic set is a synonym, antonym or category-mate group. Tinkham
+(1993, 1997) and Nation (2000) found that words presented as such a set are learned more slowly than
+the same words presented apart, because the shared meaning makes them compete at retrieval; the same
+research found **thematic** or scenario clusters harmless. That is exactly why a *theme* (§10) is
+not a semantic set: it groups words by the situation you use them in, never by the meaning they
+share, so choosing a theme never slows the words it exists to teach.
+
+A candidate is **not introduced** while any word it interferes with has `introduced_on >= today - 6`.
+A "contraste" exercise for a confusable pair unlocks only when one of the pair is in `practica` with
+≥ 2 first-try success days (future feature).
 
 ---
 
@@ -284,3 +306,46 @@ Avoid prestige words that sound affected ("solaz", "inexorable").
   The starter seed in `supabase/seed.sql` is AI-drafted and must be reviewed before launch.
 - A register distractor must be clearly wrong *in that context* (e.g. bureaucratic "finiquitar" at a
   family lunch), so the exercise still has exactly one right answer.
+
+---
+
+## 10. Themes
+
+A theme ("¿sobre qué tema?") is the second half of the daily choice. It answers one question and
+only one: **which new word shows up today**.
+
+### What a theme does not touch
+
+The due-review queue stays global and lands on its computed dates, whatever theme is chosen.
+Reordering a schedule around a filter is what Anki's own documentation warns filtered decks do to a
+collection, and Bjork's desirable difficulties are the reason that spacing is worth protecting. A
+theme also never changes `newSlots`, the "Hoy toca afianzar" threshold, or the ladder.
+
+### Exhaustion cascade
+
+A chosen theme runs out of new words long before the catalog does, and an empty day would punish the
+user for choosing. So, in order:
+
+| Step | When | What happens | What the user is told |
+|------|------|--------------|-----------------------|
+| a | the theme has no new candidate, but the user has words of it in `practica` | today recombines those words; the ladder is untouched, because this is practice, not a review pulled forward | "Hoy no me quedan palabras nuevas de {tema}. Afianzamos las que ya tienes de ese tema." |
+| b | no words in `practica` either | the nearest theme by **shared-word overlap** over the whole catalog lends its next word | "Hoy no me quedan palabras nuevas de {tema}. Te traigo una de {otro}: se usa igual." |
+| c | no neighbour has one either | the next catalog word comes in | the same line, naming the theme that word does belong to, or "Te traigo otra que te sirve igual." when it belongs to none |
+
+Both interference rules of §7 still apply at every step. The substitution is never silent: a user who
+picked "Entrevistas" is told when the word came from somewhere else.
+
+### Autonomy over lock-in
+
+- No minimum streak on a theme. Changing it any day is free, and the plan is recomputed exactly as a
+  changed budget recomputes it.
+- The daily prompt offers **3 recommended** themes plus "Explorar" and "Sorpréndeme". Patall, Cooper
+  and Robinson (2008) found the motivational benefit of choice largest at two to four options;
+  Scheibehenne, Greifeneder and Todd (2010) then showed that longer lists are not actively harmful,
+  merely not more helpful — so the full list is a door, not the front of the screen.
+- "Tus temas" holds **at most 3**.
+- Recommendations are ranked from the two pre-signup answers (`ThemeRecommender`): where the user's
+  words let them down maps to a theme family, and how they want to sound nudges it. Ties keep catalog
+  order, so the prompt never shuffles between two builds of the same screen.
+- A theme with no content behind it is `soon` and is never offered: an empty theme is a promise the
+  catalog cannot keep.

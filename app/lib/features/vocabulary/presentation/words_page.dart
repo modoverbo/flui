@@ -8,6 +8,8 @@ import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_surfaces.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
+import 'package:flui/features/themes/domain/theme.dart';
+import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
@@ -19,7 +21,9 @@ import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flui/shared/widgets/state_chip.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:material_ui/material_ui.dart';
+// The domain entity is called Theme, like Flutter's inherited widget; this
+// screen needs the entity, never the widget.
+import 'package:material_ui/material_ui.dart' hide Theme;
 
 /// "Palabras": the repertoire, filterable by state. Two columns on a wide
 /// window, so the list uses the page instead of a strip down the middle.
@@ -32,12 +36,14 @@ class WordsPage extends ConsumerStatefulWidget {
 
 class _WordsPageState extends ConsumerState<WordsPage> {
   WordState? _filter;
+  String? _themeFilter;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final layout = context.layout;
     final words = ref.watch(myWordsProvider);
+    final themes = ref.watch(themesByIdProvider).value ?? const {};
 
     return Scaffold(
       body: SafeArea(
@@ -71,6 +77,9 @@ class _WordsPageState extends ConsumerState<WordsPage> {
                     entries: value,
                     filter: _filter,
                     onFilter: (state) => setState(() => _filter = state),
+                    themes: themes,
+                    themeFilter: _themeFilter,
+                    onThemeFilter: (id) => setState(() => _themeFilter = id),
                   ),
                   AsyncError(:final error) => EmptyState(
                     title: l10n.todayLoadError,
@@ -99,19 +108,37 @@ class _WordList extends StatelessWidget {
     required this.entries,
     required this.filter,
     required this.onFilter,
+    required this.themes,
+    required this.themeFilter,
+    required this.onThemeFilter,
   });
 
   final List<WordEntry> entries;
   final WordState? filter;
   final ValueChanged<WordState?> onFilter;
 
+  /// The taxonomy, for naming a theme chip.
+  final Map<String, Theme> themes;
+  final String? themeFilter;
+  final ValueChanged<String?> onThemeFilter;
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final layout = context.layout;
+    // Only the themes the user actually has words in: a filter that returns
+    // nothing on every chip is a worse list, not a longer one.
+    final themeIds = [
+      for (final theme
+          in themes.values.toList()
+            ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder)))
+        if (entries.any((e) => e.word.themeIds.contains(theme.id))) theme.id,
+    ];
     final visible = [
       for (final entry in entries)
-        if (filter == null || entry.progress.state == filter) entry,
+        if ((filter == null || entry.progress.state == filter) &&
+            (themeFilter == null || entry.word.themeIds.contains(themeFilter)))
+          entry,
     ];
     final columns = layout.isWide ? 2 : 1;
 
@@ -129,10 +156,22 @@ class _WordList extends StatelessWidget {
           },
           onSelected: onFilter,
         ),
+        if (themeIds.isNotEmpty) ...[
+          const SizedBox(height: FluiSpacing.xs),
+          ChoiceChips<String?>(
+            values: [null, ...themeIds],
+            selected: themeFilter,
+            labelOf: (id) =>
+                id == null ? l10n.wordsFilterThemeAll : themes[id]!.name,
+            onSelected: onThemeFilter,
+          ),
+        ],
         SizedBox(height: layout.blockGap),
         if (visible.isEmpty)
           Text(
-            l10n.wordsFilterEmpty,
+            themeFilter == null
+                ? l10n.wordsFilterEmpty
+                : l10n.wordsFilterThemeEmpty,
             style: layout.type.bodyL.copyWith(color: FluiColors.gray),
           )
         else

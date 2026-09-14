@@ -15,6 +15,10 @@ abstract class DailySessionDto with _$DailySessionDto {
     required List<String> plannedWordIds,
     required List<String> reviewWordIds,
     String? userId,
+
+    /// Always written, even as null: dropping the key from the upsert would
+    /// leave yesterday's theme on a day the user planned without one.
+    @JsonKey(includeIfNull: true) String? themeId,
     DateTime? completedAt,
   }) = _DailySessionDto;
 
@@ -29,18 +33,21 @@ abstract class DailySessionDto with _$DailySessionDto {
         minutes: session.minutes,
         plannedWordIds: session.plannedWordIds,
         reviewWordIds: session.reviewWordIds,
+        themeId: session.themeId,
       );
 
   const new _();
 
   static const columns =
-      'local_date, minutes, planned_word_ids, review_word_ids, completed_at';
+      'local_date, minutes, planned_word_ids, review_word_ids, theme_id, '
+      'completed_at';
 
   DailySession toDomain() => DailySession(
     localDate: LocalDate.parse(localDate),
     minutes: minutes,
     plannedWordIds: plannedWordIds,
     reviewWordIds: reviewWordIds,
+    themeId: themeId,
     completedAt: completedAt,
   );
 }

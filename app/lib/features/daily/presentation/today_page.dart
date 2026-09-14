@@ -13,6 +13,7 @@ import 'package:flui/features/daily/presentation/providers/today_overview.dart';
 import 'package:flui/features/profile/presentation/widgets/week_dots.dart';
 import 'package:flui/features/reading/presentation/providers/context_readings.dart';
 import 'package:flui/features/reading/presentation/widgets/reading_card.dart';
+import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:flui/shared/layout/bento_layout.dart';
 import 'package:flui/shared/widgets/bento_grid.dart';
@@ -25,7 +26,9 @@ import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flui/shared/widgets/sticky_cta_dock.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:material_ui/material_ui.dart';
+// The domain entity is called Theme, like Flutter's inherited widget; this
+// screen needs the entity, never the widget.
+import 'package:material_ui/material_ui.dart' hide Theme;
 
 /// "Hoy": an asymmetric bento that reaches the fold, and the one action of
 /// the day docked at the bottom instead of floating over empty space.
@@ -150,6 +153,10 @@ class _TodayScaffold extends StatelessWidget {
                     : l10n.progressGreeting(name),
                 subtitle: _subtitleFor(l10n, overview),
               ),
+              if (overview.theme case final theme?) ...[
+                const SizedBox(height: FluiSpacing.md),
+                _TodayTheme(theme: theme, overview: overview),
+              ],
               SizedBox(height: layout.blockGap),
               _TodayBento(overview: overview),
               SizedBox(height: layout.sectionGap),
@@ -204,6 +211,76 @@ class _TodayScaffold extends StatelessWidget {
     }
     if (overview.afianzar) return l10n.todayAfianzar;
     return l10n.todaySubtitle;
+  }
+}
+
+/// The theme of the day, and the one tap that changes it.
+///
+/// When the theme could not supply today's word, this is where the day says
+/// so. A silent substitution would be the same screen either way, and a user
+/// who picked "Entrevistas" deserves to know the word came from somewhere
+/// else.
+class _TodayTheme extends StatelessWidget {
+  const new({required this.theme, required this.overview});
+
+  final Theme theme;
+  final TodayOverview overview;
+
+  /// The cascade, in words. `null` when the day is on theme.
+  static String? fallbackMessage(
+    AppLocalizations l10n,
+    TodayOverview overview,
+  ) {
+    final theme = overview.theme;
+    if (theme == null) return null;
+    final other = overview.otherTheme;
+    return switch (overview.themeFallback) {
+      null => null,
+      ThemeFallback.themedPractice => l10n.todayThemeFallbackPractice(
+        theme.name,
+      ),
+      ThemeFallback.neighbourTheme || ThemeFallback.globalCatalog =>
+        other == null
+            ? l10n.todayThemeFallbackCatalog(theme.name)
+            : l10n.todayThemeFallbackOther(theme.name, other.name),
+    };
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final type = context.type;
+    final message = fallbackMessage(l10n, overview);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            const FluiGlyphIcon(
+              FluiGlyph.onda,
+              color: FluiColors.greenSecondary,
+            ),
+            const SizedBox(width: FluiSpacing.xs),
+            Expanded(child: FluiLabel(l10n.todayThemeLabel)),
+            // Changing theme is free and always available: no minimum streak,
+            // no "you are on a roll with Reuniones".
+            FluiButton.text(
+              label: l10n.todayChangeTheme,
+              onPressed: () => context.go(AppRoutes.timeBudget),
+            ),
+          ],
+        ),
+        Text(
+          theme.name,
+          style: type.titleM.copyWith(color: FluiColors.greenDeep),
+        ),
+        if (message != null) ...[
+          const SizedBox(height: FluiSpacing.xxs),
+          Text(message, style: type.body.copyWith(color: FluiColors.gray)),
+        ],
+      ],
+    );
   }
 }
 

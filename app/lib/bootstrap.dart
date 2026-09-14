@@ -29,6 +29,9 @@ import 'package:flui/features/subscription/data/fake_subscription_repository.dar
 import 'package:flui/features/subscription/data/supabase_subscription_repository.dart';
 import 'package:flui/features/subscription/data/url_checkout_launcher.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
+import 'package:flui/features/themes/data/fake_theme_repository.dart';
+import 'package:flui/features/themes/data/supabase_theme_repository.dart';
+import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_word_progress_repository.dart';
 import 'package:flui/features/vocabulary/data/supabase_content_repository.dart';
@@ -89,6 +92,9 @@ List<Override> fakeBackendOverrides({
     contentRepositoryProvider.overrideWithValue(
       FakeContentRepository(latency: latency),
     ),
+    themeRepositoryProvider.overrideWithValue(
+      FakeThemeRepository(latency: latency),
+    ),
     wordProgressRepositoryProvider.overrideWithValue(
       FakeWordProgressRepository(currentUserId: currentUserId),
     ),
@@ -137,6 +143,7 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     contentRepositoryProvider.overrideWithValue(
       SupabaseContentRepository(client),
     ),
+    themeRepositoryProvider.overrideWithValue(SupabaseThemeRepository(client)),
     wordProgressRepositoryProvider.overrideWithValue(
       SupabaseWordProgressRepository(client, currentUserId: currentUserId),
     ),

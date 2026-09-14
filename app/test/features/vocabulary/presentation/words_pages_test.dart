@@ -100,11 +100,47 @@ void main() {
       );
     });
 
+    testWidgets('filters by theme, and only by themes it has words in', (
+      tester,
+    ) async {
+      await pump(tester, location: AppRoutes.words, page: const WordsPage());
+
+      expect(find.text('Todos los temas'), findsOneWidget);
+      // «perspicaz», «plantear» and «matizar» all carry "Reuniones".
+      expect(find.widgetWithText(ChoiceChip, 'Reuniones'), findsOneWidget);
+      // No word of the repertoire belongs to these, so no dead chip.
+      expect(find.widgetWithText(ChoiceChip, 'Entrevistas'), findsNothing);
+      expect(find.widgetWithText(ChoiceChip, 'Negociación'), findsNothing);
+
+      await tester.tap(find.widgetWithText(ChoiceChip, 'Reconocer a otros'));
+      await tester.pumpAndSettle();
+      expect(find.text('perspicaz'), findsOneWidget);
+      expect(find.text('plantear'), findsNothing);
+      expect(find.text('matizar'), findsNothing);
+    });
+
+    testWidgets('the two filters combine, and say so when nothing is left', (
+      tester,
+    ) async {
+      await pump(tester, location: AppRoutes.words, page: const WordsPage());
+
+      await tester.tap(find.widgetWithText(ChoiceChip, 'Reconocer a otros'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.widgetWithText(ChoiceChip, 'Practica'));
+      await tester.pumpAndSettle();
+
+      expect(
+        find.text('No hay palabras de este tema todavía.'),
+        findsOneWidget,
+      );
+    });
+
     testWidgets('empty before the first word', (tester) async {
       fakes = LearningFakes();
       await pump(tester, location: AppRoutes.words, page: const WordsPage());
 
       expect(find.text('Tu repertorio empieza hoy.'), findsOneWidget);
+      expect(find.text('Todos los temas'), findsNothing);
     });
   });
 
