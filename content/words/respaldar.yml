@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "respaldar"
+status: "draft"
+lemma: "respaldar"
+part_of_speech: "verbo"
+syllables: ["res", "pal", "dar"]
+stressed_syllable: 3
+ipa_latam: "[res.palˈdaɾ]"
+ipa_es: "[res.palˈdaɾ]"
+explanation: "Dar peso a una idea con datos, ejemplos o la firma de alguien de confianza."
+example_sentence: "No defendí la idea con adjetivos: la respaldé con las cifras de los últimos seis meses."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve igual para una idea y para una persona: en los dos casos pones algo tuyo detrás, no solo palabras."
+when_not_to_use: "No la uses si solo estás de acuerdo: apoyar de boquilla no pone nada detrás de la idea."
+collocations:
+  - "respaldar una propuesta"
+  - "respaldar con datos"
+  - "respaldar a un compañero"
+replaces:
+  - before: "Te apoyo en eso, cuenta conmigo"
+    after: "Respaldo tu propuesta"
+  - before: "Lo digo porque hay números detrás"
+    after: "Está respaldado por los números"
+  - before: "Necesito que alguien lo diga conmigo"
+    after: "Necesito que alguien lo respalde"
+family: ["respaldo"]
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin: ["apoyar"]
+  funcion: ["sostener"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "resaltar"
+    difference: "«Resaltar» hace que algo se vea más; la otra palabra pone algo detrás para que se sostenga."
+    memory_trick: "Resaltas con un rotulador; sostienes con datos."
+  - confused_with: "justificar"
+    difference: "«Justificar» explica por qué hiciste algo; la otra palabra añade pruebas o personas que sostienen la idea."
+    memory_trick: "Justificar mira hacia atrás; sostener pone un suelo debajo."
+exercises:
+  - position: 1
+    sentence: "Ámbar no defendió la idea con adjetivos: la {{blank}} con las cifras de los últimos seis meses."
+    hint_general: "Puso datos debajo para que la idea se sostuviera."
+    explanation: "Respaldó: puso datos debajo de la idea. «Resaltó» la habría hecho más visible sin sostenerla, y «adornó» solo añadiría cosas bonitas."
+    options:
+      - position: 1
+        text: "resaltó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resaltar» hace que algo se vea más, y unas cifras debajo no hacen la idea más visible: la sostienen."
+        hint_specific: "«Resaltar» destaca a la vista. ¿Qué hacen esas cifras por la idea?"
+      - position: 2
+        text: "respaldó"
+        is_correct: true
+      - position: 3
+        text: "adornó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adornar» añade cosas bonitas, y la frase dice justo que Ámbar no usó adjetivos."
+        hint_specific: "«Adornar» embellece. ¿Con qué defendió Ámbar su idea?"
+  - position: 2
+    sentence: "Nadie discutió la propuesta porque dos áreas distintas la {{blank}} por escrito antes de la reunión."
+    hint_general: "Dos áreas pusieron su nombre detrás de la propuesta."
+    explanation: "Respaldaron: dos áreas pusieron su nombre detrás. «Resaltaron» la habrían hecho más visible, y «arroparon» es coloquial y suena a cariño, no a compromiso escrito."
+    options:
+      - position: 1
+        text: "respaldaron"
+        is_correct: true
+      - position: 2
+        text: "resaltaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resaltar» hace que algo se vea más, y lo que calló las discusiones fue que dos áreas se comprometieran."
+        hint_specific: "«Resaltar» solo destaca. ¿Por qué nadie discutió la propuesta?"
+      - position: 3
+        text: "arroparon"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arropar» es coloquial y suena a cariño, y aquí hay dos áreas firmando por escrito."
+        hint_specific: "«Arropar» abriga. ¿Qué hicieron esas áreas exactamente?"
+  - position: 3
+    sentence: "Si vas a pedir un cambio grande, {{blank}} la petición con un ejemplo concreto y una fecha."
+    hint_general: "Pon algo sólido debajo de lo que pides."
+    explanation: "Respalda: pon algo sólido debajo de la petición. «Resalta» la haría más visible, y «justifica» explicaría tus motivos sin añadir ninguna prueba."
+    options:
+      - position: 1
+        text: "resalta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resaltar» hace que algo se vea más, y una petición muy visible sin pruebas se cae igual."
+        hint_specific: "«Resaltar» destaca a la vista. ¿Qué añaden el ejemplo y la fecha?"
+      - position: 2
+        text: "respalda"
+        is_correct: true
+      - position: 3
+        text: "justifica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» explica tus motivos, y lo que pide el consejo es una prueba y una fecha."
+        hint_specific: "«Justificar» da razones. ¿Qué dos cosas concretas pide la frase?"
+  - position: 4
+    sentence: "Delia pidió ver un dato más antes de {{blank}} el informe con su firma."
+    hint_general: "Firmar es poner su nombre detrás del informe."
+    explanation: "Respaldar: firmar es poner su nombre detrás. «Restaurar» es arreglar algo estropeado, y «aplaudir» celebraría el informe sin comprometerse con él."
+    options:
+      - position: 1
+        text: "restaurar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Restaurar» es arreglar algo estropeado, como un mueble, y aquí el informe no está roto: falta una firma."
+        hint_specific: "«Restaurar» repara cosas viejas. ¿Qué le falta al informe?"
+      - position: 2
+        text: "respaldar"
+        is_correct: true
+      - position: 3
+        text: "aplaudir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplaudir» celebra el informe sin comprometerse, y una firma es justo lo contrario."
+        hint_specific: "«Aplaudir» no compromete a nada. ¿Qué implica firmar?"
+  - position: 5
+    sentence: "Gonzalo prefiere callarse antes que {{blank}} algo que no ha leído entero."
+    hint_general: "No pone su nombre detrás de lo que no conoce."
+    explanation: "Respaldar: no pone su nombre detrás de lo que no conoce. «Resaltar» sería destacarlo a la vista, y «arropar» es coloquial y habla de acompañar, no de comprometerse."
+    options:
+      - position: 1
+        text: "respaldar"
+        is_correct: true
+      - position: 2
+        text: "resaltar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resaltar» es destacar algo a la vista, y lo que Gonzalo evita es comprometerse con un texto."
+        hint_specific: "«Resaltar» destaca. ¿Qué se juega Gonzalo si habla?"
+      - position: 3
+        text: "arropar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arropar» es coloquial y habla de acompañar con cariño, y aquí se trata de un documento sin leer."
+        hint_specific: "«Arropar» abriga a una persona. ¿Qué hay delante de Gonzalo?"
+  - position: 6
+    sentence: "Cuando su hermano montó el taller, la familia lo {{blank}} con horas y con manos, no solo con ánimos."
+    hint_general: "Pusieron algo real detrás, no solo palabras."
+    explanation: "Respaldó: pusieron horas y manos detrás. «Resaltó» lo habría hecho más visible, y «arropó» es coloquial y se queda en el cariño que la frase descarta."
+    options:
+      - position: 1
+        text: "arropó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arropar» es coloquial y se queda en el cariño, justo lo que la frase distingue de las horas y las manos."
+        hint_specific: "«Arropar» abriga. ¿Qué aportó la familia además de ánimos?"
+      - position: 2
+        text: "respaldó"
+        is_correct: true
+      - position: 3
+        text: "resaltó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resaltar» hace que algo se vea más, y el taller no necesitaba visibilidad: necesitaba trabajo."
+        hint_specific: "«Resaltar» destaca a la vista. ¿Qué necesitaba ese taller?"
+  - position: 7
+    sentence: "Un argumento sin nada que lo {{blank}} se cae en la primera pregunta difícil."
+    hint_general: "Sin algo debajo, el argumento no aguanta."
+    explanation: "Respalde: sin algo debajo, el argumento no aguanta. «Resalte» lo haría más visible sin sostenerlo, y «explique» lo aclararía sin añadirle pruebas."
+    options:
+      - position: 1
+        text: "respalde"
+        is_correct: true
+      - position: 2
+        text: "resalte"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resaltar» hace que algo se vea más, y un argumento muy visible se cae igual en la primera pregunta."
+        hint_specific: "«Resaltar» destaca. ¿Qué necesita un argumento para aguantar?"
+      - position: 3
+        text: "explique"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explicar» aclara el argumento, y aclarado sin pruebas sigue cayéndose."
+        hint_specific: "«Explicar» aclara. ¿Basta con entender bien un argumento?"
+  - position: 8
+    sentence: "La propuesta era buena, aunque llegó sin un solo dato que la {{blank}} ante quien tenía que pagarla."
+    hint_general: "Faltaba algo debajo que la sostuviera."
+    explanation: "Respaldara: faltaba algo debajo que la sostuviera. «Resaltara» la haría más visible, y «repitiera» solo la diría otra vez."
+    options:
+      - position: 1
+        text: "resaltara"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resaltar» hace que algo se vea más, y quien paga no pide visibilidad: pide pruebas."
+        hint_specific: "«Resaltar» destaca a la vista. ¿Qué pide quien tiene que pagar?"
+      - position: 2
+        text: "repitiera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» diría la propuesta otra vez, y repetida sin datos sigue sin sostenerse."
+        hint_specific: "«Repetir» insiste. ¿Qué le faltaba a la propuesta?"
+      - position: 3
+        text: "respaldara"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos firmas antes del martes"
+    body: "Otilia sabía que su propuesta se caería sola en la reunión. Antes del martes la enseñó a dos áreas y les pidió una línea por escrito. Llegó respaldada por finanzas y por almacén, y la discusión duró nueve minutos."
+    before_phrase: "Yo creo que esto se puede hacer, ¿no?"
+    after_phrase: "Llega respaldada por dos áreas."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El taller del hermano"
+    body: "Cuando su hermano alquiló el local, todos dijeron «qué valiente». Gonzalo apareció el sábado con una furgoneta y dos amigos. «Lo de decir que sí está bien», contó después, «pero respaldarlo es aparecer con las manos»."
+    before_phrase: "Cuenta conmigo para lo que necesites."
+    after_phrase: "Respaldarlo es aparecer con las manos."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "«Mejoré la atención»"
+    body: "A Ámbar le pidieron un ejemplo y no se quedó en el adjetivo: «Bajamos las quejas de 40 a 12 al mes, y lo puede confirmar mi antigua jefa, que está en la carta». La entrevistadora anotó: afirmación respaldada."
+    before_phrase: "Mejoré mucho la atención al cliente, de verdad."
+    after_phrase: "Lo respaldo con la cifra y con quien la firmó."
+metrics:
+  zipf_overall: 4.9639
+  dispersion_dp: 0.0893
+  pedantry_proxy: 0.5259
+  family_size: 36
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

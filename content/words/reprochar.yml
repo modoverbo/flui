@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2128
+slug: "reprochar"
+status: "draft"
+lemma: "reprochar"
+part_of_speech: "verbo"
+syllables: ["re", "pro", "char"]
+stressed_syllable: 3
+ipa_latam: "[re.pɾoˈt͡ʃaɾ]"
+ipa_es: "[re.pɾoˈt͡ʃaɾ]"
+explanation: "Echarle en cara a alguien algo que hizo o dejó de hacer."
+example_sentence: "Cada vez que discuten, le reprocha algo que pasó hace cuatro años."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombrarlo ayuda a frenarlo: decir «no quiero reprocharte nada» abre una conversación en vez de una lista."
+when_not_to_use: "No la uses para una crítica con datos y una petición clara: eso no es echar nada en cara, es pedir un cambio."
+collocations:
+  - "reprochar algo a alguien"
+  - "reprochar en público"
+  - "reprochar un olvido"
+replaces:
+  - before: "Siempre me está echando en cara lo del verano"
+    after: "Siempre me reprocha lo del verano"
+  - before: "No te lo digo para hacerte sentir mal"
+    after: "No te lo reprocho, te lo cuento"
+  - before: "Me lo sacó en medio de la discusión"
+    after: "Me lo reprochó en medio de la discusión"
+family: ["reproche"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+tags:
+  comodin: ["decir"]
+  funcion: ["criticar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reprobar"
+    difference: "«Reprobar» es rechazar algo por considerarlo malo, casi desde arriba; lo otro se hace de cerca y siempre duele."
+    memory_trick: "Reprobar juzga; reprochar duele."
+  - confused_with: "reclamar"
+    difference: "«Reclamar» pide algo que te corresponde y mira al futuro; echar algo en cara mira al pasado y no pide nada concreto."
+    memory_trick: "Reclamas para conseguir; reprochas para doler."
+exercises:
+  - position: 1
+    sentence: "Cada vez que discuten, Alejandro le {{blank}} algo que pasó hace cuatro años."
+    hint_general: "Le echa en cara algo de hace cuatro años."
+    explanation: "Reprocha: le echa en cara algo antiguo. «Reprueba» sería condenarlo desde fuera, y «cuenta» sería solo narrarlo, sin herir."
+    options:
+      - position: 1
+        text: "reprueba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reprobar» es rechazar algo desde fuera, como quien juzga una conducta ajena; aquí hay dos personas discutiendo de cerca."
+        hint_specific: "Reprobar juzga desde fuera. ¿Alguien juzga desde fuera en esta discusión?"
+      - position: 2
+        text: "reprocha"
+        is_correct: true
+      - position: 3
+        text: "cuenta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Contar» es narrar algo sin más; lo que ocurre cada vez que discuten no es una narración, es una herida vieja."
+        hint_specific: "Contar solo narra. ¿Para qué saca ese asunto de hace cuatro años?"
+  - position: 2
+    sentence: "No te lo {{blank}}: te lo digo para que la próxima vez lo hablemos antes."
+    hint_general: "No busca hacerte sentir mal, busca hablarlo antes la próxima vez."
+    explanation: "Reprocho: aclara que no te lo echa en cara. «Reprimo» sería contener algo dentro, y «explico» no serviría porque la frase ya distingue las dos cosas."
+    options:
+      - position: 1
+        text: "reprimo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reprimir» es contener algo dentro de uno mismo; aquí se habla de lo que se le dice a la otra persona."
+        hint_specific: "Reprimir guarda algo dentro. ¿Esta frase guarda o dice?"
+      - position: 2
+        text: "explico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explicar» es lo que viene después de los dos puntos; la frase contrapone dos cosas, así que la primera tiene que ser otra."
+        hint_specific: "Fíjate en los dos puntos. ¿Puede ser lo mismo antes y después?"
+      - position: 3
+        text: "reprocho"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} cada olvido, la otra persona acaba dejando de contarte los suyos."
+    hint_general: "Si echas en cara cada olvido, dejan de contarte los suyos."
+    explanation: "Reprochas: echas en cara cada olvido. «Reproduces» es volver a hacer o copiar algo, y «recriminas» dice lo mismo con tono de tribunal."
+    options:
+      - position: 1
+        text: "reprochas"
+        is_correct: true
+      - position: 2
+        text: "reproduces"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reproducir» es volver a hacer o copiar algo, como un sonido o una imagen; un olvido ajeno no se copia."
+        hint_specific: "Reproducir copia algo. ¿Qué se hace aquí con el olvido?"
+      - position: 3
+        text: "recriminas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recriminar» tiene tono de tribunal y de acusación formal; entre dos personas que conviven suena a juicio."
+        hint_specific: "«Recriminar» suena a acusación formal. ¿Encaja entre dos personas cercanas?"
+  - position: 4
+    sentence: "Mi madre nunca {{blank}} nada en público: esperaba a que no hubiera nadie delante."
+    hint_general: "Nunca echaba nada en cara delante de la gente."
+    explanation: "Reprochaba: nunca echaba nada en cara delante de nadie. «Reprobaba» sería condenar desde fuera, y «pedía» miraría al futuro, no al pasado."
+    options:
+      - position: 1
+        text: "reprobaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reprobar» es rechazar algo desde una posición de juez; una madre que espera a estar a solas no está dictando sentencias."
+        hint_specific: "Reprobar juzga desde arriba. ¿Qué hace ella cuando no hay nadie delante?"
+      - position: 2
+        text: "pedía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pedir» mira hacia delante y no necesita esperar a estar a solas; lo que se guarda para la intimidad es lo que duele."
+        hint_specific: "Pedir mira al futuro. ¿Por qué esperaba a que no hubiera nadie?"
+      - position: 3
+        text: "reprochaba"
+        is_correct: true
+  - position: 5
+    sentence: "La reunión se torció cuando alguien le {{blank}} a Marta un correo de marzo que ya nadie recordaba."
+    hint_general: "Alguien le echó en cara un correo viejo."
+    explanation: "Reprochó: le echó en cara un correo viejo. «Reprodujo» no encaja con la construcción de la frase, y «reclamó» pediría algo, no removería el pasado."
+    options:
+      - position: 1
+        text: "reprodujo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reproducir» es copiar o volver a mostrar algo, y no se construye así: no se le reproduce un correo a alguien."
+        hint_specific: "Reproducir copia algo. ¿Suena natural decir que le reprodujo un correo a Marta?"
+      - position: 2
+        text: "reprochó"
+        is_correct: true
+      - position: 3
+        text: "reclamó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» es pedir algo que te corresponde; un correo de marzo que nadie recordaba no se pide, se saca para doler."
+        hint_specific: "Reclamar pide algo. ¿Se puede pedir un correo de hace meses?"
+  - position: 6
+    sentence: "Antes de {{blank}} nada, Nicolás preguntó qué había pasado de verdad aquel viernes."
+    hint_general: "Antes de echar nada en cara, pregunta qué pasó."
+    explanation: "Reprochar: antes de echar nada en cara, pregunta. «Reprimir» sería guardarse algo dentro, y «avisar» sería anunciar algo que todavía no ha ocurrido."
+    options:
+      - position: 1
+        text: "avisar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Avisar» anuncia algo que puede pasar; la frase mira hacia atrás, hacia un viernes que ya ocurrió."
+        hint_specific: "Avisar mira hacia delante. ¿Hacia dónde mira Nicolás?"
+      - position: 2
+        text: "reprimir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reprimir» es contener algo dentro de uno mismo; Nicolás no se está guardando nada, está preguntando."
+        hint_specific: "Reprimir guarda algo dentro. ¿Nicolás guarda o pregunta?"
+      - position: 3
+        text: "reprochar"
+        is_correct: true
+  - position: 7
+    sentence: "Cuando el tono sube, resulta fácil {{blank}} cosas que no vienen al caso."
+    hint_general: "Con el tono alto es fácil sacar cosas que no vienen al caso."
+    explanation: "Reprochar: sacar viejas cuentas que no vienen al caso. «Reproducir» sería copiar algo, y «recriminar» tiene tono de acusación formal."
+    options:
+      - position: 1
+        text: "reproducir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reproducir» es copiar o volver a mostrar algo; lo que sale cuando sube el tono son cuentas viejas, no copias."
+        hint_specific: "Reproducir copia. ¿Qué sale cuando sube el tono?"
+      - position: 2
+        text: "recriminar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recriminar» suena a acusación formal, casi de sala de juicio; una discusión doméstica no llega a tanto."
+        hint_specific: "«Recriminar» suena a sala de juicio. ¿De qué tamaño es esta discusión?"
+      - position: 3
+        text: "reprochar"
+        is_correct: true
+  - position: 8
+    sentence: "Julia dejó de {{blank}} y empezó a pedir, y la convivencia cambió en dos semanas."
+    hint_general: "Cambió echar cosas en cara por pedir lo que necesita."
+    explanation: "Reprochar: cambió echar en cara por pedir. «Reprobar» sería juzgar desde fuera, y «agradecer» no se opone a pedir, así que no encaja en el cambio."
+    options:
+      - position: 1
+        text: "reprobar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reprobar» es rechazar algo desde una posición de juez; en casa nadie dicta sentencias, se echan cosas en cara."
+        hint_specific: "Reprobar juzga desde arriba. ¿Quién juzga en una convivencia?"
+      - position: 2
+        text: "reprochar"
+        is_correct: true
+      - position: 3
+        text: "agradecer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agradecer» no se opone a pedir; la frase describe un cambio de una cosa por su contraria."
+        hint_specific: "La frase opone dos maneras de hablar. ¿Agradecer se opone a pedir?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo de marzo"
+    body: "La reunión iba bien hasta que alguien sacó un correo de hacía cinco meses. Marta respiró y lo dijo sin subir la voz: «Esto ya no lo podemos arreglar. ¿Me reprochas el correo o me pides algo para la semana que viene?». Se pidió algo, y se hizo."
+    before_phrase: "No me saques cosas de hace meses."
+    after_phrase: "¿Me reprochas el correo o me pides algo?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo del verano"
+    body: "En casa había una lista invisible que salía en cada discusión. Un domingo, Teresa la nombró: «No quiero reprocharte lo del verano otra vez. Quiero pedirte una cosa concreta para el que viene». Su hermano se sentó, y por primera vez escuchó entera la petición."
+    before_phrase: "Siempre acabo echándote en cara lo mismo."
+    after_phrase: "No quiero reprocharte lo del verano otra vez."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La lista del piso"
+    body: "Compartían piso desde septiembre y la convivencia se llenó de cuentas viejas. Álvaro propuso una regla: «Si algo tiene más de una semana, no se reprocha; se habla el domingo o se olvida». Funcionó tan bien que la copiaron en el piso de al lado."
+    before_phrase: "Dejemos de sacarnos cosas antiguas."
+    after_phrase: "Si tiene más de una semana, no se reprocha."
+metrics:
+  zipf_overall: 3.7997
+  dispersion_dp: 0.253
+  pedantry_proxy: 0.6413
+  family_size: 117
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

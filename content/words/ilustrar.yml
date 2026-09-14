@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 113
+slug: "ilustrar"
+status: "gated"
+lemma: "ilustrar"
+part_of_speech: "verbo"
+syllables:
+  - "i"
+  - "lus"
+  - "trar"
+stressed_syllable: 3
+ipa_latam: "[i.lusˈtrar]"
+ipa_es: "[i.lusˈtrar]"
+explanation: "Explicar una idea con un ejemplo o una imagen concreta."
+example_sentence: "Voy a ilustrar el dato con la factura de una casa como la tuya."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Anúncialo en voz alta y el público se prepara para entender: «Te lo ilustro con un caso»."
+when_not_to_use: "No la uses si el ejemplo no viene a cuento; un caso que no encaja confunde más que una lista."
+collocations:
+  - "ilustrar una idea"
+  - "ilustrar con un ejemplo"
+  - "ilustrar un punto"
+replaces:
+  - before: "Te pongo un ejemplo"
+    after: "Te lo ilustro con un ejemplo"
+  - before: "Voy a poner un caso para que se entienda"
+    after: "Voy a ilustrarlo con un caso"
+  - before: "Mira, es como cuando llueve y no llevas paraguas"
+    after: "Déjame ilustrarlo: es como salir sin paraguas"
+family:
+  - "ilustración"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "poner"
+  funcion:
+    - "ejemplificar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "lustrar"
+    difference: "«Lustrar» es sacar brillo a una superficie, como unos zapatos; la otra palabra explica una idea con un ejemplo."
+    memory_trick: "Lustras zapatos; explicas con ejemplos."
+  - confused_with: "ilusionar"
+    difference: "«Ilusionar» es despertar ganas y esperanza; la otra palabra busca que algo se entienda, no que emocione."
+    memory_trick: "Ilusionas el ánimo; aclaras la cabeza."
+exercises:
+  - position: 1
+    sentence: "Para que el dato se entendiera, Fernanda lo {{blank}} con la factura de su propia casa."
+    hint_general: "Explica el dato con un caso real para que se entienda."
+    explanation: "Ilustró: explicó el dato con un caso real. «Lustró» es sacar brillo, y «adornó» sugiere añadir floritura."
+    options:
+      - position: 1
+        text: "lustró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Lustrar» es sacar brillo a algo, como unos zapatos, y aquí se explica un dato con un caso real."
+        hint_specific: "«Lustró» pide un trapo y betún. ¿Qué se hace con un dato?"
+      - position: 2
+        text: "ilustró"
+        is_correct: true
+      - position: 3
+        text: "adornó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adornar» es coloquial aquí y sugiere añadir floritura, y ella aporta una factura verdadera."
+        hint_specific: "«Adornó» añade bonito. ¿Una factura es adorno o prueba?"
+  - position: 2
+    sentence: "Antes de mostrar la gráfica, Emilio quiso {{blank}} la idea con una historia de dos minutos."
+    hint_general: "Usa una historia para que la idea se vea clara."
+    explanation: "Ilustrar: usa una historia para que la idea se vea. «Ilusionar» es despertar esperanza, y «demostrar» sería probarla con datos."
+    options:
+      - position: 1
+        text: "ilustrar"
+        is_correct: true
+      - position: 2
+        text: "ilusionar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ilusionar» es despertar ganas y esperanza, y él busca que la idea se entienda, no que emocione."
+        hint_specific: "«Ilusionar» mueve el ánimo. ¿Qué quiere mover Emilio?"
+      - position: 3
+        text: "demostrar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Demostrar» es probar que algo es cierto con datos, y para eso él ya tiene la gráfica que viene después."
+        hint_specific: "«Demostrar» necesita pruebas. ¿Para qué guarda entonces la gráfica?"
+  - position: 3
+    sentence: "Mi madre {{blank}} cualquier consejo con una historia del pueblo, y así no se me olvida ninguno."
+    hint_general: "Acompaña cada consejo con una historia para que se entienda."
+    explanation: "Ilustra: acompaña el consejo con una historia. «Lustra» es dar brillo, y «resume» sería acortar en vez de añadir."
+    options:
+      - position: 1
+        text: "lustra"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Lustrar» es dar brillo a una superficie, y un consejo no se pule: se explica con un ejemplo."
+        hint_specific: "«Lustra» saca brillo. ¿Un consejo brilla o se entiende?"
+      - position: 2
+        text: "resume"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar lo dicho, y ella añade una historia entera para que el consejo se quede."
+        hint_specific: "«Resume» quita palabras. ¿Tu madre quita o añade?"
+      - position: 3
+        text: "ilustra"
+        is_correct: true
+  - position: 4
+    sentence: "Un solo ejemplo bien elegido {{blank}} mejor que tres párrafos de teoría."
+    hint_general: "El ejemplo hace entender más que la teoría."
+    explanation: "Ilustra: el ejemplo hace entender. «Ilusiona» es dar esperanza, y «decora» sugiere adornar el texto."
+    options:
+      - position: 1
+        text: "ilustra"
+        is_correct: true
+      - position: 2
+        text: "ilusiona"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ilusionar» es dar esperanza, y la frase compara qué hace entender mejor una idea."
+        hint_specific: "«Ilusiona» levanta el ánimo. ¿Qué se compara en esta frase?"
+      - position: 3
+        text: "decora"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Decorar» es coloquial en este uso y sugiere adornar el texto, y el ejemplo hace entender."
+        hint_specific: "«Decora» pone bonito. ¿El ejemplo embellece o aclara?"
+  - position: 5
+    sentence: "En la entrevista, Gonzalo {{blank}} su experiencia con un caso de tres meses, en vez de dar una lista de puestos."
+    hint_general: "Cuenta un caso concreto para que se entienda su experiencia."
+    explanation: "Ilustró: contó un caso concreto. «Lustró» sería sacar brillo, y «exageró» sería agrandar lo hecho."
+    options:
+      - position: 1
+        text: "lustró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Lustrar» es sacar brillo a una superficie, y él no pule nada: cuenta un caso con fechas."
+        hint_specific: "«Lustró» necesita algo que brille. ¿Qué contó Gonzalo?"
+      - position: 2
+        text: "exageró"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Exagerar» es coloquial y sugiere agrandar lo que hizo, y él cuenta un caso real de tres meses."
+        hint_specific: "«Exageró» estira la verdad. ¿Un caso con fechas suena estirado?"
+      - position: 3
+        text: "ilustró"
+        is_correct: true
+  - position: 6
+    sentence: "Cuando el equipo no veía el problema, Silvia lo {{blank}} con un dibujo en la pizarra."
+    hint_general: "Lo pone a la vista con un dibujo para que se entienda."
+    explanation: "Ilustró: lo puso a la vista con un dibujo. «Ilusionó» sería dar esperanza, y «disimuló» sería esconderlo."
+    options:
+      - position: 1
+        text: "ilustró"
+        is_correct: true
+      - position: 2
+        text: "ilusionó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ilusionar» es dar esperanza, y al equipo no le faltaba ánimo: le faltaba entender."
+        hint_specific: "«Ilusionó» anima. ¿Qué le faltaba al equipo?"
+      - position: 3
+        text: "disimuló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disimular» es esconder algo, y ella lo puso a la vista de todos en la pizarra."
+        hint_specific: "«Disimuló» tapa. ¿Una pizarra tapa o muestra?"
+  - position: 7
+    sentence: "Si {{blank}} cada número con una escena de la tienda, el informe se lee en la mitad de tiempo."
+    hint_general: "Cada número se entiende mejor si va con una escena real."
+    explanation: "Ilustras: cada número va con una escena real. «Lustras» es dar brillo, e «inflas» sugiere agrandarlo."
+    options:
+      - position: 1
+        text: "lustras"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Lustrar» es dar brillo a una superficie, y un número no se pule: se explica con una escena."
+        hint_specific: "«Lustras» pulen superficies. ¿Qué se le hace a un número para entenderlo?"
+      - position: 2
+        text: "ilustras"
+        is_correct: true
+      - position: 3
+        text: "inflas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inflar» un número es coloquial y sugiere agrandarlo, y aquí solo se explica lo que significa."
+        hint_specific: "«Inflas» hace el número más grande. ¿Cambia la cifra o su explicación?"
+  - position: 8
+    sentence: "Nuria abrió la charla con una foto de su primera oficina para {{blank}} el cambio de diez años."
+    hint_general: "La foto está ahí para que se vea el cambio de diez años."
+    explanation: "Ilustrar: la foto hace ver el cambio. «Ilusionar» sería despertar ganas, y «adelantar» sería contar algo que aún no llegó."
+    options:
+      - position: 1
+        text: "ilusionar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ilusionar» es despertar ganas, y la foto está ahí para que se vea lo que ya cambió."
+        hint_specific: "«Ilusionar» mira hacia adelante con ganas. ¿Hacia dónde mira esa foto?"
+      - position: 2
+        text: "adelantar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adelantar» es contar antes algo que viene después, y la foto muestra lo que ya pasó."
+        hint_specific: "«Adelantar» habla del futuro. ¿De cuándo es la primera oficina?"
+      - position: 3
+        text: "ilustrar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La factura de una casa"
+    body: "El dato del ahorro energético no le decía nada a nadie. Fernanda cambió de estrategia: «Déjenme ilustrarlo con una factura real: esta casa pagaba ochenta y ahora paga cuarenta». La sala entendió la propuesta en diez segundos."
+    before_phrase: "Os pongo un ejemplo, a ver si se entiende."
+    after_phrase: "Déjenme ilustrarlo con una factura real."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Historias del pueblo"
+    body: "Mi madre nunca da consejos secos. Cuando quiere decirme que tenga paciencia, cuenta la historia del vecino que plantó nogales a los sesenta. «Lo ilustro así para que no se te olvide», dice. Y tiene razón: no se me olvida."
+    before_phrase: "Te lo digo con un ejemplo, así lo ves."
+    after_phrase: "Lo ilustro así para que no se te olvide."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Un caso, no una lista"
+    body: "Gonzalo llevaba la lista de puestos preparada, pero eligió otra cosa. «Prefiero ilustrar mi experiencia con un caso: tres meses, un almacén y un problema de stock». Hablaron de ese caso durante veinte minutos."
+    before_phrase: "Bueno, te cuento un ejemplo de lo que hice."
+    after_phrase: "Prefiero ilustrar mi experiencia con un caso."
+metrics:
+  zipf_overall: 4.4296
+  dispersion_dp: 0.1357
+  pedantry_proxy: 0.4541
+  family_size: 33
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

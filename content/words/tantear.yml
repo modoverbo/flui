@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 305
+slug: "tantear"
+status: "draft"
+lemma: "tantear"
+part_of_speech: "verbo"
+syllables: ["tan", "te", "ar"]
+stressed_syllable: 3
+ipa_latam: "[tan.teˈar]"
+ipa_es: "[tan.teˈar]"
+explanation: "Probar con cuidado cómo va a reaccionar alguien antes de decir lo importante."
+example_sentence: "Antes de pedir el cambio de turno, quiso tantear cómo estaba su responsable esa mañana."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Avisar de que vas despacio relaja la escena: «Déjame tantear el terreno y te cuento»."
+when_not_to_use: "No la uses si ya decidiste hablar: entonces no exploras nada, abres el tema."
+collocations:
+  - "tantear el terreno"
+  - "tantear a alguien"
+  - "tantear una respuesta"
+replaces:
+  - before: "A ver cómo reacciona"
+    after: "Voy a tantear cómo reacciona"
+  - before: "Le preguntó por encima para ver qué decía"
+    after: "Lo tanteó antes de proponérselo"
+  - before: "Primero hay que ver cómo está el ambiente"
+    after: "Primero hay que tantear el ambiente"
+family: ["tanteo"]
+themes:
+  - slug: "conversaciones-dificiles"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["ver", "probar"]
+  funcion: ["explorar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "tentar"
+    difference: "«Tentar» es despertar en alguien las ganas de algo; la otra palabra es explorar con cuidado cómo va a reaccionar."
+    memory_trick: "Te tienta lo que deseas; tanteas lo que exploras."
+  - confused_with: "sondear"
+    difference: "«Sondear» se usa sobre todo con grupos, encuestas y cifras; lo otro cabe en una charla con una sola persona."
+    memory_trick: "Sondeas a cien; tanteas a uno."
+exercises:
+  - position: 1
+    sentence: "Antes de proponerle la mudanza, Alejandro quiso {{blank}} cómo estaba su hermana esa semana."
+    hint_general: "Quiere saber cómo está antes de soltarle una propuesta que puede pesarle."
+    explanation: "Tantear: explora el ánimo de su hermana antes de proponer. «Tentar» sería despertarle las ganas, y «adivinar» sería acertar sin preguntar nada."
+    options:
+      - position: 1
+        text: "tentar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tentar» es despertar las ganas de algo, y él todavía no ha puesto ninguna propuesta encima de la mesa."
+        hint_specific: "«Tentar» despierta ganas. ¿Alejandro ya propuso algo o aún está mirando cómo está ella?"
+      - position: 2
+        text: "tantear"
+        is_correct: true
+      - position: 3
+        text: "adivinar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adivinar» es acertar sin preguntar, y aquí la idea es justo acercarse y comprobar."
+        hint_specific: "«Adivinar» no necesita acercarse. ¿Él se acerca o se queda suponiendo?"
+  - position: 2
+    sentence: "Rosa {{blank}} el terreno con dos preguntas suaves y solo entonces pidió el viernes libre."
+    hint_general: "Lanza dos preguntas suaves para ver cómo está el ambiente antes de pedir nada."
+    explanation: "Tanteó: probó el ambiente con dos preguntas suaves. «Tensó» sería ponerlo todo más rígido, y «sondeó» suena a encuesta con muchas personas."
+    options:
+      - position: 1
+        text: "tanteó"
+        is_correct: true
+      - position: 2
+        text: "tensó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tensar» es poner algo más rígido, y dos preguntas suaves buscan lo contrario."
+        hint_specific: "«Tensar» aprieta. ¿Dos preguntas suaves aprietan o aflojan?"
+      - position: 3
+        text: "sondeó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sondear» suena a encuesta con muchas personas y cifras; aquí hay dos preguntas a una sola persona."
+        hint_specific: "«Sondear» va de encuestas y grupos grandes. ¿Cuántas personas hay en la escena?"
+  - position: 3
+    sentence: "«No hace falta {{blank}} tanto, Manuel: pregúntaselo y sales de dudas en un minuto»."
+    hint_general: "Le dicen que deje de dar vueltas midiendo el ambiente y pregunte de una vez."
+    explanation: "Tantear: le piden que deje de medir el ambiente. «Tentar» sería despertar ganas en alguien, e «insistir» sería repetir la pregunta que aún no ha hecho."
+    options:
+      - position: 1
+        text: "tentar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tentar» es despertar las ganas de algo, y aquí lo que sobra son las vueltas antes de preguntar."
+        hint_specific: "«Tentar» despierta ganas. ¿Manuel está despertando ganas o dando rodeos?"
+      - position: 2
+        text: "tantear"
+        is_correct: true
+      - position: 3
+        text: "insistir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistir» es repetir una petición, y la frase dice que todavía no ha preguntado ni una vez."
+        hint_specific: "«Insistir» repite algo ya dicho. ¿Manuel ya preguntó alguna vez?"
+  - position: 4
+    sentence: "Durante el café, Lucas {{blank}} a su socia con un «¿y si lo dejamos para marzo?», solo para ver qué cara ponía."
+    hint_general: "Lanza una idea de prueba para observar la reacción antes de decidir nada."
+    explanation: "Tanteó: lanzó una idea de prueba para ver la reacción. «Tentó» sería despertarle las ganas, y «presionó» sería empujarla a decidir ya."
+    options:
+      - position: 1
+        text: "tentó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tentar» es despertar las ganas de algo atractivo, y retrasar un proyecto hasta marzo no lo es."
+        hint_specific: "«Tentar» ofrece algo apetecible. ¿Aplazar a marzo suena apetecible?"
+      - position: 2
+        text: "presionó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presionar» es empujar a decidir, y él solo mira qué cara pone su socia."
+        hint_specific: "«Presionar» empuja. Relee el final: ¿qué está observando Lucas?"
+      - position: 3
+        text: "tanteó"
+        is_correct: true
+  - position: 5
+    sentence: "Sofía prefiere {{blank}} antes de proponer nada: dice que así nadie se siente puesto contra la pared."
+    hint_general: "Explora primero cómo está la otra parte para que nadie se sienta acorralado."
+    explanation: "Tantear: explora antes de proponer. «Tensar» sería poner la situación más rígida, y «olfatear» es coloquial y suena a andar husmeando."
+    options:
+      - position: 1
+        text: "tensar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tensar» es poner la situación más rígida, y ella busca justo que nadie se sienta acorralado."
+        hint_specific: "«Tensar» aprieta la cuerda. ¿Eso evita que alguien se sienta contra la pared?"
+      - position: 2
+        text: "tantear"
+        is_correct: true
+      - position: 3
+        text: "olfatear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Olfatear» es coloquial y sugiere husmear en lo ajeno, no acercarse con cuidado a una conversación."
+        hint_specific: "«Olfatear» suena a husmear. ¿Sofía husmea o se acerca con cuidado?"
+  - position: 6
+    sentence: "Lo {{blank}} durante toda la comida y, solo cuando vio que su tío sonreía, Andrea se atrevió a pedírselo."
+    hint_general: "Estuvo midiendo el ambiente hasta que una señal le dijo que podía hablar."
+    explanation: "Tanteó: estuvo midiendo el ambiente hasta ver una señal. «Tentó» sería despertarle las ganas, y «decidió» sería resolverlo por su cuenta."
+    options:
+      - position: 1
+        text: "tanteó"
+        is_correct: true
+      - position: 2
+        text: "tentó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tentar» es despertar las ganas de algo, y ella no ofrece nada hasta el final de la comida."
+        hint_specific: "«Tentar» ofrece algo atractivo. ¿Andrea ofrece algo durante la comida?"
+      - position: 3
+        text: "decidió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decidir» es resolverlo por su cuenta, y lo que hace ella es observar a su tío antes de hablar."
+        hint_specific: "«Decidir» no mira a nadie. ¿Qué esperaba Andrea para atreverse?"
+  - position: 7
+    sentence: "Si Clara {{blank}} demasiado, la otra persona nota que hay algo detrás y se pone nerviosa antes de tiempo."
+    hint_general: "Medir el ambiente demasiado rato deja ver que hay algo grande detrás."
+    explanation: "Tantea: medir el ambiente demasiado rato se nota. «Tensa» sería endurecer la conversación, e «interrumpe» sería cortar a alguien que habla."
+    options:
+      - position: 1
+        text: "tensa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tensar» es endurecer la conversación de golpe, y aquí el problema es alargar demasiado la aproximación."
+        hint_specific: "«Tensar» endurece. ¿Lo que inquieta es la dureza o la espera?"
+      - position: 2
+        text: "tantea"
+        is_correct: true
+      - position: 3
+        text: "interrumpe"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interrumpir» es cortar a quien está hablando, y en la frase nadie ha empezado a hablar del tema."
+        hint_specific: "«Interrumpir» corta a alguien. ¿Hay alguien hablando del asunto?"
+  - position: 8
+    sentence: "Ignacio no {{blank}} nada: entró, dijo lo que pensaba y se sentó en la primera silla libre."
+    hint_general: "Entra sin medir el ambiente y va directo a lo que quería decir."
+    explanation: "Tanteó: entró sin medir el ambiente. «Tensó» sería endurecerlo todo, y «midió» habla de calcular distancias o cantidades, no de explorar a alguien."
+    options:
+      - position: 1
+        text: "tensó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tensar» es endurecer la situación, y la frase solo dice que fue directo, no que la pusiera dura."
+        hint_specific: "«Tensar» endurece. ¿Ir directo es lo mismo que poner a todos rígidos?"
+      - position: 2
+        text: "midió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Medir» se refiere a calcular distancias o cantidades, no a explorar cómo está alguien antes de hablar."
+        hint_specific: "«Medir» va de cantidades. ¿Qué cantidad habría que calcular al entrar en una sala?"
+      - position: 3
+        text: "tanteó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos preguntas antes"
+    body: "Patricia quería pedir una semana libre en plena entrega. En vez de escribir el correo, preguntó primero cómo iba el calendario. «Déjame tantear el terreno», le dijo a su compañera. El jueves ya sabía qué semana pedir."
+    before_phrase: "Voy a ver cómo está la cosa primero."
+    after_phrase: "Déjame tantear el terreno."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena del domingo"
+    body: "Óscar llevaba semanas queriendo contarle a su madre que se mudaba de ciudad. Empezó preguntándole por su hermana, por el trabajo, por el barrio. Luego se rio: «Perdona, mamá, te estoy tanteando. Me voy a vivir a otro sitio»."
+    before_phrase: "Perdona, te estoy midiendo el ánimo."
+    after_phrase: "Perdona, te estoy tanteando."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El regalo compartido"
+    body: "Renata no sabía si el grupo querría poner dinero para el regalo. Escribió un mensaje corto y sin cifras, solo para ver quién respondía. «Estoy tanteando», avisó. Contestaron cinco personas en media hora y salió a cuenta."
+    before_phrase: "Solo estoy viendo qué dice la gente."
+    after_phrase: "Estoy tanteando al grupo."
+metrics:
+  zipf_overall: 3.1976
+  dispersion_dp: 0.3251
+  pedantry_proxy: 0.4814
+  family_size: 4
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

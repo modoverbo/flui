@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "sintetizar"
+status: "gated"
+lemma: "sintetizar"
+part_of_speech: "verbo"
+syllables:
+  - "sin"
+  - "te"
+  - "ti"
+  - "zar"
+stressed_syllable: 4
+ipa_latam: "[sin.te.tiˈsaɾ]"
+ipa_es: "[sin.te.tiˈθaɾ]"
+explanation: "Decir en pocas palabras lo esencial de algo largo, sin perder lo que importa."
+example_sentence: "Antes de mandar el informe voy a sintetizar los hallazgos en un párrafo que se lea de pie."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala cuando quieras dejar claro que no has cortado al azar: has elegido lo que sostiene la idea."
+when_not_to_use: "No la uses si solo estás quitando páginas para que entre en el espacio: eso es recortar, no elegir."
+collocations:
+  - "sintetizar un informe"
+  - "sintetizar una idea"
+  - "sintetizar el debate"
+replaces:
+  - before: "A ver si lo digo con menos palabras"
+    after: "Déjame sintetizarlo"
+  - before: "Voy a intentar acortar todo esto"
+    after: "Voy a sintetizar esto"
+  - before: "Resúmelo en dos líneas, por favor"
+    after: "Sintetiza la idea en dos líneas"
+family:
+  - "síntesis"
+themes:
+  - slug: "redaccion-ejecutiva"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+tags:
+  comodin:
+    - "resumir"
+  funcion:
+    - "condensar"
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sintonizar"
+    difference: "«Sintonizar» es ajustar una emisora o entenderse bien con alguien; la otra palabra reduce un texto a lo esencial."
+    memory_trick: "Sintonizas con una persona; reduces un texto a lo que sostiene la idea."
+  - confused_with: "recortar"
+    difference: "«Recortar» quita trozos hasta que quepa; la otra palabra elige lo que sostiene la idea y deja fuera el resto."
+    memory_trick: "Recortar mira el espacio; elegir lo esencial mira la idea."
+exercises:
+  - position: 1
+    sentence: "El comité tenía once páginas y quince minutos, así que Ámbar tuvo que {{blank}} el informe en un solo párrafo."
+    hint_general: "Un párrafo con lo esencial, sin perder lo que sostiene el informe."
+    explanation: "Sintetizar: un párrafo con lo esencial. «Sintonizar» es ajustar una emisora o entenderse con alguien, y «achicar» es coloquial y solo habla de hacer algo más pequeño."
+    options:
+      - position: 1
+        text: "sintonizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintonizar» es ajustar una emisora o entenderse bien con alguien, y aquí hay un informe que reducir."
+        hint_specific: "«Sintonizar» va de emisoras y de entenderse con la gente. ¿Qué hay sobre la mesa en esta escena?"
+      - position: 2
+        text: "sintetizar"
+        is_correct: true
+      - position: 3
+        text: "achicar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Achicar» es coloquial y solo dice que algo se hace más pequeño, sin garantizar que quede lo importante."
+        hint_specific: "«Achicar» habla de tamaño. ¿Basta con que el informe sea más corto?"
+  - position: 2
+    sentence: "Nadie iba a leer las cuarenta diapositivas, así que Gonzalo prefirió {{blank}} la idea en tres frases."
+    hint_general: "Tres frases que guarden el centro de la idea."
+    explanation: "Sintetizar: tres frases que guardan el centro de la idea. «Sistematizar» sería ordenarlo todo por reglas, y «recortar» quitaría diapositivas sin elegir qué sostiene la idea."
+    options:
+      - position: 1
+        text: "sintetizar"
+        is_correct: true
+      - position: 2
+        text: "sistematizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sistematizar» es ordenar algo siguiendo un método, y aquí lo que hace falta es decir menos, no ordenar más."
+        hint_specific: "«Sistematizar» pone orden y método. ¿El problema son cuarenta diapositivas desordenadas o demasiadas?"
+      - position: 3
+        text: "recortar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recortar» quita trozos hasta que quepa, y tres frases exigen elegir lo que sostiene la idea."
+        hint_specific: "«Recortar» solo mira el espacio. ¿Con quitar diapositivas se salva la idea?"
+  - position: 3
+    sentence: "Tras dos horas de debate, Delia logró {{blank}} en una línea lo que todos pensaban y nadie decía."
+    hint_general: "Una línea que recoge el fondo de dos horas."
+    explanation: "Sintetizar: una línea recoge el fondo de dos horas. «Sintonizar» es entenderse con alguien o ajustar una emisora, y «repetir» solo devolvería lo ya dicho."
+    options:
+      - position: 1
+        text: "repetir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» devuelve lo que ya se dijo, y la frase destaca que nadie lo había dicho todavía."
+        hint_specific: "«Repetir» necesita algo ya dicho. ¿Qué dice la frase que pasaba con esa idea?"
+      - position: 2
+        text: "sintetizar"
+        is_correct: true
+      - position: 3
+        text: "sintonizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintonizar» es entenderse bien con alguien, y lo que Delia hace es poner en una línea el contenido del debate."
+        hint_specific: "«Sintonizar» habla de entenderse. ¿Qué cabe en esa única línea?"
+  - position: 4
+    sentence: "Si tu correo pasa de una pantalla, {{blank}} el motivo arriba y deja todo el detalle debajo."
+    hint_general: "Arriba va lo esencial en pocas palabras; el resto puede esperar."
+    explanation: "Sintetiza: arriba va lo esencial en pocas palabras. «Sintoniza» es ajustar una emisora, y «despacha» es coloquial y suena a quitarse el correo de encima."
+    options:
+      - position: 1
+        text: "sintoniza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintonizar» es ajustar una emisora o entenderse con alguien, y aquí se trata de ordenar tu propio correo."
+        hint_specific: "«Sintonizar» va de emisoras y de entenderse. ¿Qué se coloca arriba del correo?"
+      - position: 2
+        text: "sintetiza"
+        is_correct: true
+      - position: 3
+        text: "despacha"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despachar» es coloquial y suena a quitarse el asunto de encima, y el consejo busca que se entienda a la primera."
+        hint_specific: "«Despachar» suena a salir del paso. ¿El consejo busca rapidez o claridad?"
+  - position: 5
+    sentence: "Cuando su hija le preguntó a qué se dedicaba, Amalia {{blank}} veinte años de trabajo en una sola frase."
+    hint_general: "Veinte años caben en una frase si eliges lo que de verdad cuenta."
+    explanation: "Sintetizó: veinte años en una frase con lo que de verdad cuenta. «Sistematizó» sería ordenarlos por método, y «enumeró» los habría listado uno a uno."
+    options:
+      - position: 1
+        text: "sintetizó"
+        is_correct: true
+      - position: 2
+        text: "sistematizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sistematizar» es ordenar algo con un método, y una niña que pregunta no espera un método, sino una frase."
+        hint_specific: "«Sistematizar» ordena por reglas. ¿Qué esperaba la hija, un orden o una respuesta?"
+      - position: 3
+        text: "enumeró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enumerar» habría listado los trabajos uno por uno, y la frase dice que todo cupo en una sola."
+        hint_specific: "«Enumerar» hace una lista. ¿Cuántas frases usó Amalia?"
+  - position: 6
+    sentence: "El acta de la reunión no repetía cada intervención: {{blank}} los acuerdos y dejaba fuera los rodeos."
+    hint_general: "Guarda los acuerdos y suelta lo que no aporta."
+    explanation: "Sintetizaba: guardaba los acuerdos y soltaba lo demás. «Sintonizaba» es entenderse con alguien, y «copiaba» habría devuelto las intervenciones enteras."
+    options:
+      - position: 1
+        text: "copiaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» devolvería las intervenciones enteras, y la frase dice que el acta no repetía ninguna."
+        hint_specific: "«Copiar» reproduce todo. ¿Qué dice la frase sobre repetir intervenciones?"
+      - position: 2
+        text: "sintetizaba"
+        is_correct: true
+      - position: 3
+        text: "sintonizaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintonizar» es entenderse bien con alguien o ajustar una emisora, y un acta no hace ninguna de las dos cosas."
+        hint_specific: "«Sintonizar» habla de entenderse. ¿Con quién se entendería un acta?"
+  - position: 7
+    sentence: "Para el titular del boletín, Ivo tuvo que {{blank}} tres noticias distintas sin dejar ninguna coja."
+    hint_general: "Un titular con lo esencial de las tres, sin traicionar a ninguna."
+    explanation: "Sintetizar: un titular con lo esencial de las tres. «Sistematizar» sería ordenarlas con un método, y «mezclar» las confundiría en vez de elegir lo que sostiene cada una."
+    options:
+      - position: 1
+        text: "sistematizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sistematizar» es ordenar con un método, y un titular no ordena las noticias: las reduce a lo esencial."
+        hint_specific: "«Sistematizar» ordena por reglas. ¿Qué cabe en un titular?"
+      - position: 2
+        text: "mezclar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mezclar» confundiría las tres noticias, y la frase pide que ninguna quede coja."
+        hint_specific: "«Mezclar» las funde. ¿Qué pasaría con cada noticia si se mezclan?"
+      - position: 3
+        text: "sintetizar"
+        is_correct: true
+  - position: 8
+    sentence: "Nuestra jefa pide siempre lo mismo: {{blank}} primero y, si hace falta, ya explicarás después."
+    hint_general: "Primero lo esencial en pocas palabras; la explicación, si la piden."
+    explanation: "Sintetizar: primero lo esencial en pocas palabras. «Sintonizar» es entenderse con alguien, y «adelantar» solo diría que algo llega antes, no que esté condensado."
+    options:
+      - position: 1
+        text: "sintetizar"
+        is_correct: true
+      - position: 2
+        text: "adelantar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adelantar» dice que algo llega antes, pero no que esté reducido a lo esencial."
+        hint_specific: "«Adelantar» habla de orden en el tiempo. ¿Qué pide la jefa además de rapidez?"
+      - position: 3
+        text: "sintonizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintonizar» es entenderse bien con alguien, y la jefa pide algo sobre la forma de escribir, no sobre la relación."
+        hint_specific: "«Sintonizar» va de relaciones y emisoras. ¿Qué se pide aquí sobre el texto?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Once páginas, un párrafo"
+    body: "El informe llevaba dos semanas sin leerse. Otilia escribió arriba del todo: «Síntesis: subimos el precio un 4 %, perdemos dos clientes pequeños y ganamos margen en los grandes». Ese párrafo se discutió el martes; las once páginas, nunca."
+    before_phrase: "Te mando el informe y ya lo miras cuando puedas."
+    after_phrase: "Te lo sintetizo en un párrafo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "¿Y tú qué haces?"
+    body: "La sobrina de Amalia tenía siete años y una sola pregunta. Amalia no contó veinte años de trabajo: «Ayudo a que la gente entienda papeles difíciles». La niña asintió, satisfecha, y su hermana le dijo: «Nunca te había oído sintetizarlo tan bien»."
+    before_phrase: "Uf, es complicado de explicar."
+    after_phrase: "Nunca te había oído sintetizarlo tan bien."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Cuéntame tu carrera"
+    body: "«Tienes dos minutos», le dijeron a Ivo. En vez de empezar por su primer empleo, sintetizó: «Hago que equipos que no se hablan compartan datos. Lo he hecho en tres sitios y en el último ahorramos medio año de trabajo». Le pidieron el detalle después."
+    before_phrase: "Bueno, empecé en 2011 y luego, a ver…"
+    after_phrase: "Te lo sintetizo: hago que equipos que no se hablan compartan datos."
+metrics:
+  zipf_overall: 3.914
+  dispersion_dp: 0.2587
+  pedantry_proxy: 0.4899
+  family_size: 37
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

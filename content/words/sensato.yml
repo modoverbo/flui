@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 320
+slug: "sensato"
+status: "draft"
+lemma: "sensato"
+part_of_speech: "adjetivo"
+syllables: ["sen", "sa", "to"]
+stressed_syllable: 2
+ipa_latam: "[senˈsa.to]"
+ipa_es: "[senˈsa.to]"
+explanation: "Que piensa antes de actuar y evita los riesgos que no hacen falta."
+example_sentence: "Fue una decisión sensata: menos brillante, pero la única que podían sostener."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Reconoce el juicio de la otra persona: «Me parece muy sensato» elogia cómo decidió, no solo qué decidió."
+when_not_to_use: "No la uses para llamar aburrido a alguien: aquí es un elogio, no un reproche disfrazado."
+collocations:
+  - "una decisión sensata"
+  - "parecer sensato"
+  - "una propuesta sensata"
+replaces:
+  - before: "Me parece una buena decisión"
+    after: "Me parece una decisión sensata"
+  - before: "Tiene la cabeza en su sitio"
+    after: "Es una persona sensata"
+  - before: "Eso es lo más lógico"
+    after: "Eso es lo más sensato"
+family: ["sensatez"]
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["bueno", "lógico"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sensible"
+    difference: "«Sensible» describe a quien se emociona con facilidad o nota lo que otros no notan; la otra palabra habla del buen juicio al decidir."
+    memory_trick: "El sensible siente; el sensato piensa."
+  - confused_with: "sensacional"
+    difference: "«Sensacional» dice que algo impresiona mucho; aquí se valora el buen juicio, no el golpe de efecto."
+    memory_trick: "Lo sensacional deslumbra; lo sensato aguanta."
+exercises:
+  - position: 1
+    sentence: "Después de dos horas de discusión, la propuesta de Mateo resultó ser la más {{blank}} de todas."
+    hint_general: "Fue la propuesta con mejor juicio, la que tenía en cuenta lo que podía fallar."
+    explanation: "Sensata: la propuesta con mejor juicio. «Sensible» describe a quien se emociona fácil, y «modesta» solo dice que pide poco."
+    options:
+      - position: 1
+        text: "sensible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensible» describe a quien se emociona con facilidad, y una propuesta de trabajo no se emociona."
+        hint_specific: "«Sensible» va de emociones. ¿Qué se está juzgando aquí, un sentimiento o un criterio?"
+      - position: 2
+        text: "sensata"
+        is_correct: true
+      - position: 3
+        text: "modesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Modesta» dice que pide poco, y una propuesta pequeña puede seguir siendo un disparate."
+        hint_specific: "«Modesta» mide el tamaño de lo que se pide. ¿Pedir poco garantiza acertar?"
+  - position: 2
+    sentence: "Julia prefirió esperar al lunes para contestar, y a todos les pareció lo más {{blank}}."
+    hint_general: "Esperar fue la opción con más cabeza en ese momento."
+    explanation: "Sensato: esperar fue la opción con más cabeza. «Sensacional» dice que algo impresiona, y «juicioso» apunta a lo mismo, pero suena a informe escolar antiguo."
+    options:
+      - position: 1
+        text: "sensacional"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensacional» dice que algo impresiona mucho, y esperar al lunes no impresiona a nadie: acierta."
+        hint_specific: "«Sensacional» deslumbra. ¿Esperar tres días deslumbra o acierta?"
+      - position: 2
+        text: "juicioso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Juicioso» apunta a lo mismo, pero suena a informe antiguo sobre la conducta de alguien."
+        hint_specific: "«Juicioso» suena a boletín de otra época. ¿Pega al comentar una decisión de hoy?"
+      - position: 3
+        text: "sensato"
+        is_correct: true
+  - position: 3
+    sentence: "Raúl es {{blank}} con el dinero sin ser tacaño: mira las cuentas y luego invita igual."
+    hint_general: "Decide con la cabeza cuando hay dinero en juego, y aun así es generoso."
+    explanation: "Sensato: decide con la cabeza y aun así invita. «Sensible» describe a quien se emociona fácil, y «frío» habla de no mostrar emociones."
+    options:
+      - position: 1
+        text: "sensato"
+        is_correct: true
+      - position: 2
+        text: "sensible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensible» describe a quien se emociona con facilidad, y la frase cuenta cómo decide, no cómo siente."
+        hint_specific: "«Sensible» va de emociones. ¿Se describe lo que siente o cómo calcula?"
+      - position: 3
+        text: "frío"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frío» describe a quien no muestra emociones, y el final de la frase dice que invita igual."
+        hint_specific: "«Frío» se guarda todo. Relee el final: ¿qué hace Raúl después de mirar las cuentas?"
+  - position: 4
+    sentence: "Fue una decisión {{blank}}: menos brillante, pero la única que Blanca podía sostener hasta junio."
+    hint_general: "Eligió lo que podía mantener en el tiempo en lugar de lo que lucía más."
+    explanation: "Sensata: eligió lo sostenible antes que lo vistoso. «Sensorial» se refiere a los sentidos, y «tímida» habla de falta de atrevimiento."
+    options:
+      - position: 1
+        text: "sensorial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensorial» se refiere a los sentidos, como la vista o el oído, y una decisión no se percibe con los sentidos."
+        hint_specific: "«Sensorial» va de vista, oído y tacto. ¿Qué sentido interviene al decidir?"
+      - position: 2
+        text: "tímida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tímida» habla de falta de atrevimiento, y aquí no falta valor: hay cálculo de lo que se puede sostener."
+        hint_specific: "«Tímida» se achica. ¿Blanca se achica o calcula?"
+      - position: 3
+        text: "sensata"
+        is_correct: true
+  - position: 5
+    sentence: "Nadie esperaba una respuesta tan {{blank}} de alguien que llevaba dos noches sin dormir, y Óscar la dio."
+    hint_general: "Contestó con buen juicio a pesar del cansancio."
+    explanation: "Sensata: contestó con buen juicio pese al cansancio. «Sensible» describe a quien se emociona fácil, y «ponderada» suena a lenguaje de informe."
+    options:
+      - position: 1
+        text: "sensible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensible» describe a quien se emociona con facilidad, y lo que sorprende aquí es la cabeza fría de la respuesta."
+        hint_specific: "«Sensible» va de emociones. ¿Qué sorprende de Óscar, su emoción o su criterio?"
+      - position: 2
+        text: "sensata"
+        is_correct: true
+      - position: 3
+        text: "ponderada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ponderada» apunta a lo mismo, pero suena a lenguaje de informe y desentona al contar una escena de cansancio."
+        hint_specific: "«Ponderada» suena a documento formal. ¿Pega contando a alguien sin dormir?"
+  - position: 6
+    sentence: "Lo más {{blank}} habría sido avisar antes, y Marcos lo reconoció en voz alta delante de todos."
+    hint_general: "Avisar a tiempo era la opción con más cabeza, y él lo admite."
+    explanation: "Sensato: avisar a tiempo era lo que pedía la cabeza. «Sensacional» dice que algo impresiona, y «cómodo» habla de lo que cuesta menos esfuerzo."
+    options:
+      - position: 1
+        text: "sensato"
+        is_correct: true
+      - position: 2
+        text: "sensacional"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensacional» dice que algo impresiona mucho, y avisar antes no impresiona: simplemente evita el lío."
+        hint_specific: "«Sensacional» deslumbra. ¿Avisar a tiempo deslumbra a alguien?"
+      - position: 3
+        text: "cómodo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cómodo» es lo que cuesta menos esfuerzo, y avisar antes de un problema nunca es lo más cómodo."
+        hint_specific: "«Cómodo» evita el esfuerzo. ¿Dar una mala noticia pronto es lo fácil?"
+  - position: 7
+    sentence: "Su plan era {{blank}} y hasta aburrido, y por eso llegó entero al final del año, cuenta Cecilia."
+    hint_general: "El plan no era llamativo, pero estaba pensado para aguantar doce meses."
+    explanation: "Sensato: el plan estaba pensado para aguantar. «Sensible» describe a quien se emociona fácil, y «lento» solo mide la velocidad."
+    options:
+      - position: 1
+        text: "sensible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensible» describe a quien se emociona con facilidad, y un plan anual no tiene emociones."
+        hint_specific: "«Sensible» va de emociones. ¿Un plan se emociona?"
+      - position: 2
+        text: "lento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lento» mide la velocidad, y un plan puede ir despacio y romperse igual a mitad de año."
+        hint_specific: "«Lento» mide velocidad. ¿Ir despacio garantiza llegar entero?"
+      - position: 3
+        text: "sensato"
+        is_correct: true
+  - position: 8
+    sentence: "Pilar da consejos {{blank}}: piensa en lo que puede salir mal antes de abrir la boca."
+    hint_general: "Sus consejos salen de pensar antes en lo que podría fallar."
+    explanation: "Sensatos: sus consejos salen de pensar antes en lo que podría fallar. «Sensibles» describe lo que se emociona fácil, y «rápidos» apunta a contestar sin pensar."
+    options:
+      - position: 1
+        text: "sensibles"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sensibles» describe a quien se emociona con facilidad, y aquí se elogia que piense antes de hablar."
+        hint_specific: "«Sensible» va de emociones. ¿Qué hace Pilar antes de abrir la boca?"
+      - position: 2
+        text: "sensatos"
+        is_correct: true
+      - position: 3
+        text: "rápidos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rápidos» apunta a contestar enseguida, y la frase dice que primero piensa en lo que puede salir mal."
+        hint_specific: "«Rápido» contesta ya. ¿Pilar contesta al momento o piensa antes?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El coche de segunda mano"
+    body: "Marta quería el coche caro y su hermano le propuso otro más barato y revisado. Ella lo pensó dos días y dijo: «Me parece más sensato el tuyo». Un año después seguía sin darle un solo problema."
+    before_phrase: "La verdad es que tienes razón, es lo lógico."
+    after_phrase: "Me parece más sensato el tuyo."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La propuesta pequeña"
+    body: "En la reunión había dos planes: uno enorme y uno que cabía en el presupuesto. Iván defendió el segundo sin adornos. Su responsable cerró así: «Es la propuesta más sensata que hemos visto este mes»."
+    before_phrase: "Es la propuesta más lógica de todas."
+    after_phrase: "Es la propuesta más sensata."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La respuesta que no lucía"
+    body: "Le preguntaron a Gabriela qué haría con un plazo imposible. Contestó: «Diría cuánto puedo entregar bien y qué parte necesita otra semana». La entrevistadora sonrió: «Es la respuesta más sensata del día»."
+    before_phrase: "Es la respuesta más razonable que hemos oído."
+    after_phrase: "Es la respuesta más sensata del día."
+metrics:
+  zipf_overall: 3.4265
+  dispersion_dp: 0.2027
+  pedantry_proxy: 0.4203
+  family_size: 21
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 104
+slug: "consensuar"
+status: "gated"
+lemma: "consensuar"
+part_of_speech: "verbo"
+syllables:
+  - "con"
+  - "sen"
+  - "suar"
+stressed_syllable: 3
+ipa_latam: "[kon.senˈswar]"
+ipa_es: "[kon.senˈswar]"
+explanation: "Llegar entre varias personas a una decisión que todas aceptan sin imponerla."
+example_sentence: "Prefiero consensuar la fecha con todo el equipo antes de anunciarla."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Dicho antes de decidir, baja la tensión: promete que nadie va a enterarse por un correo."
+when_not_to_use: "No la uses cuando la decisión ya está tomada; entonces solo estás pidiendo permiso tarde."
+collocations:
+  - "consensuar una fecha"
+  - "consensuar una decisión"
+  - "consensuar el plan"
+replaces:
+  - before: "Vamos a ponernos de acuerdo en la fecha"
+    after: "Vamos a consensuar la fecha"
+  - before: "Que lo decidamos entre todos"
+    after: "Que lo consensuemos entre todos"
+  - before: "Habría que hablarlo hasta que todos digan que sí"
+    after: "Habría que consensuarlo con todos"
+family:
+  - "consenso"
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin:
+    - "poner"
+  funcion:
+    - "acordar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "consentir"
+    difference: "«Consentir» es permitir lo que otro propone; la otra palabra construye la decisión entre varios desde el principio."
+    memory_trick: "Consientes lo que ya trae otro; la decisión compartida se fabrica entre todos."
+  - confused_with: "consultar"
+    difference: "«Consultar» es pedir opinión y decidir tú; la otra palabra exige que el resultado tenga el sí de todos."
+    memory_trick: "Consultas y decides tú; el acuerdo lo firman todos."
+exercises:
+  - position: 1
+    sentence: "Después de tres correos cruzados, Lorena propuso {{blank}} la fecha en una llamada de diez minutos."
+    hint_general: "Buscan una fecha que salga del acuerdo de todos, no de una orden."
+    explanation: "Consensuar: la fecha sale del acuerdo de todos. «Consentir» es permitir lo que otro propone, e «imponer» sería decidir por encima."
+    options:
+      - position: 1
+        text: "consentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consentir» es permitir algo que otro propone, y aquí la fecha todavía no existe: hay que construirla."
+        hint_specific: "«Consentir» llega cuando alguien ya trae la propuesta. ¿Hay propuesta sobre la mesa?"
+      - position: 2
+        text: "consensuar"
+        is_correct: true
+      - position: 3
+        text: "imponer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» es decidir por encima de los demás, y ella propone una llamada para decidirlo juntos."
+        hint_specific: "«Imponer» decide una sola persona. ¿Para qué sirve entonces la llamada?"
+  - position: 2
+    sentence: "Álvaro no quiso {{blank}} el nuevo horario y lo anunció por correo sin preguntar a nadie."
+    hint_general: "Lo que evita es decidir el horario junto con los demás."
+    explanation: "Consensuar: decidir el horario junto con los demás. «Consentir» es permitir lo que otro propone, y «dictaminar» suena a informe de juzgado."
+    options:
+      - position: 1
+        text: "consensuar"
+        is_correct: true
+      - position: 2
+        text: "consentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consentir» sería permitir un horario que otro trae, y el horario lo trae él mismo."
+        hint_specific: "«Consentir» necesita que otro proponga. ¿Quién propone el horario aquí?"
+      - position: 3
+        text: "dictaminar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dictaminar» suena a informe técnico o a juzgado, y aquí se habla de un horario de oficina."
+        hint_specific: "«Dictaminar» va de peritos y sentencias. ¿Encaja con un correo de trabajo?"
+  - position: 3
+    sentence: "El equipo tardó dos reuniones en {{blank}} el reparto del trabajo, pero después nadie protestó."
+    hint_general: "Tardaron porque la decisión tenía que salir de todo el equipo."
+    explanation: "Consensuar: la decisión salió de todo el equipo. «Consultar» sería pedir opinión y decidir solo, y «decretar» suena a orden desde arriba."
+    options:
+      - position: 1
+        text: "consultar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Consultar» es pedir opinión y decidir tú solo, y aquí la decisión sale del grupo entero."
+        hint_specific: "«Consultar» deja la última palabra a una persona. ¿Por qué nadie protestó luego?"
+      - position: 2
+        text: "consensuar"
+        is_correct: true
+      - position: 3
+        text: "decretar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Decretar» suena a autoridad que manda desde arriba, y dos reuniones de charla no son un decreto."
+        hint_specific: "«Decretar» viene con sello y firma. ¿Eso explica las dos reuniones?"
+  - position: 4
+    sentence: "Mis hermanos y yo logramos {{blank}} el menú de la cena de fin de año sin una sola discusión."
+    hint_general: "Arman el menú entre todos y nadie se queda fuera de la decisión."
+    explanation: "Consensuar: arman el menú entre todos. «Consentir» sería dejar pasar lo que otro decide, y «sortear» lo dejaría al azar."
+    options:
+      - position: 1
+        text: "sortear"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sortear» es dejarlo al azar, y un menú hablado hasta el final no es cosa de suerte."
+        hint_specific: "«Sortear» reparte por suerte. ¿Un papelito habría evitado la discusión?"
+      - position: 2
+        text: "consensuar"
+        is_correct: true
+      - position: 3
+        text: "consentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consentir» es dejar pasar lo que otro decide, y aquí el menú lo arman los tres a la vez."
+        hint_specific: "«Consentir» es aguantar la idea ajena. ¿Quién trae el menú en esta escena?"
+  - position: 5
+    sentence: "Antes de firmar, las dos socias quisieron {{blank}} cada punto del contrato."
+    hint_general: "Quieren que cada punto tenga el acuerdo de las dos antes de la firma."
+    explanation: "Consensuar: cada punto lleva el acuerdo de las dos. «Repasar» sería solo leerlo de nuevo, y «consentir» sería aceptar lo ya escrito."
+    options:
+      - position: 1
+        text: "repasar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repasar» es leerlo otra vez para ver si está bien, y ellas buscan que cada punto tenga el sí de las dos."
+        hint_specific: "«Repasar» revisa un texto ya cerrado. ¿El texto está cerrado o se está haciendo?"
+      - position: 2
+        text: "consensuar"
+        is_correct: true
+      - position: 3
+        text: "consentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consentir» es aceptar lo que ya está escrito, y ellas todavía están construyendo el texto."
+        hint_specific: "«Consentir» llega al final. ¿En qué momento del contrato estamos?"
+  - position: 6
+    sentence: "Olga prefirió {{blank}} el cambio con el turno de noche antes de colgarlo en el tablón."
+    hint_general: "Habla con el turno para que el cambio salga del acuerdo de todos."
+    explanation: "Consensuar: el cambio sale del acuerdo de todos. «Anunciar» sería comunicar algo ya decidido, y «consentir» es permitir lo que otro propone."
+    options:
+      - position: 1
+        text: "anunciar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anunciar» es comunicar algo ya decidido, y la frase dice que habla con el turno antes de colgarlo."
+        hint_specific: "«Anunciar» llega después de decidir. ¿Qué pasa antes del tablón?"
+      - position: 2
+        text: "consentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consentir» es permitir el cambio que otro propone, y el cambio lo trae ella misma."
+        hint_specific: "«Consentir» responde a una idea ajena. ¿De quién es la idea aquí?"
+      - position: 3
+        text: "consensuar"
+        is_correct: true
+  - position: 7
+    sentence: "En la entrevista, Rodrigo contó cómo su equipo {{blank}} los criterios de calidad en dos sesiones."
+    hint_general: "El equipo construyó los criterios juntos, en dos sesiones."
+    explanation: "Consensuó: el equipo construyó los criterios juntos. «Consintió» sería dejar pasar lo que otro trae, e «impuso» sería fijarlos una sola persona."
+    options:
+      - position: 1
+        text: "consintió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consentir» es dejar pasar lo que otro trae, y en la frase el equipo entero fabrica los criterios."
+        hint_specific: "«Consintió» acepta algo de fuera. ¿De dónde salen esos criterios?"
+      - position: 2
+        text: "consensuó"
+        is_correct: true
+      - position: 3
+        text: "impuso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» sería que una sola persona los fijara, y la frase habla del equipo entero durante dos sesiones."
+        hint_specific: "«Impuso» necesita una sola voz. ¿Cuántas voces aparecen en la frase?"
+  - position: 8
+    sentence: "Cuando los vecinos {{blank}} el horario de la obra, las quejas del portal bajaron a cero."
+    hint_general: "El horario salió de un acuerdo que todos los vecinos aceptaron."
+    explanation: "Consensuaron: el horario salió de un acuerdo de todos. «Consintieron» sería aguantar lo impuesto, y «votaron» dejaría a una parte en minoría."
+    options:
+      - position: 1
+        text: "consintieron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consentir» es aguantar lo que otro impone, y aquí el horario lo fijan ellos mismos."
+        hint_specific: "«Consintieron» aguanta algo de fuera. ¿Quién puso el horario?"
+      - position: 2
+        text: "votaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Votar» deja a una parte en minoría, y el resultado fue que ya nadie se quejó."
+        hint_specific: "«Votaron» crea ganadores y perdedores. ¿Encaja con cero quejas?"
+      - position: 3
+        text: "consensuaron"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La fecha imposible"
+    body: "Tres áreas querían la misma semana de lanzamiento. En lugar de decidir sola, Macarena abrió una hoja compartida: «Vamos a consensuar la fecha hoy; traigan sus dos peores semanas». En cuarenta minutos había una fecha y ningún enfado."
+    before_phrase: "Habría que ponernos de acuerdo en la fecha."
+    after_phrase: "Vamos a consensuar la fecha hoy."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El viaje de los cuatro"
+    body: "Cada año el viaje de verano acababa con alguien enfadado. Este año, Ernesto propuso otra cosa: «Consensuamos destino y presupuesto antes de mirar precios». Tardaron una tarde, pero por primera vez salieron los cuatro contentos."
+    before_phrase: "A ver si esta vez nos ponemos de acuerdo."
+    after_phrase: "Consensuamos destino y presupuesto antes de mirar precios."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del edificio"
+    body: "El chat del edificio ardía por el horario de la obra. Una vecina escribió: «¿Y si lo consensuamos en diez minutos el sábado?». Se juntaron nueve personas en el portal y salió un horario que ninguna odiaba."
+    before_phrase: "A ver si llegamos a algo entre todos."
+    after_phrase: "¿Y si lo consensuamos el sábado?"
+metrics:
+  zipf_overall: 3.7793
+  dispersion_dp: 0.2483
+  pedantry_proxy: 0.5014
+  family_size: 251
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

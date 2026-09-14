@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 307
+slug: "halagar"
+status: "draft"
+lemma: "halagar"
+part_of_speech: "verbo"
+syllables: ["ha", "la", "gar"]
+stressed_syllable: 3
+ipa_latam: "[a.laˈɣar]"
+ipa_es: "[a.laˈɣar]"
+explanation: "Decir algo bueno de alguien que le gusta oír y le hace sentir valorado."
+example_sentence: "Me halaga que hayas pensado en mí para esto, aunque esta vez no pueda."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "En primera persona suena agradecido y sin presumir: «Me halaga que me lo pidas a mí»."
+when_not_to_use: "No la uses para un elogio interesado: si buscas algo a cambio, eso ya es adular."
+collocations:
+  - "halagar a alguien"
+  - "me halaga que"
+  - "sentirse halagado"
+replaces:
+  - before: "Le dijo cosas bonitas delante de todos"
+    after: "Lo halagó delante de todos"
+  - before: "Me da gusto que me lo pidas a mí"
+    after: "Me halaga que me lo pidas a mí"
+  - before: "Se puso contento con el comentario"
+    after: "Se sintió halagado por el comentario"
+family: ["halago", "halagador"]
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["decir", "bueno"]
+  funcion: ["elogiar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "alegar"
+    difference: "«Alegar» es dar una razón para defenderse o justificarse; la otra palabra es decirle a alguien algo bueno que le gusta oír."
+    memory_trick: "Alegas para defenderte; halagas para reconocer."
+  - confused_with: "adular"
+    difference: "«Adular» es elogiar de más para conseguir algo a cambio; lo otro es reconocer de verdad y sin segunda intención."
+    memory_trick: "Quien adula busca algo; quien halaga reconoce."
+exercises:
+  - position: 1
+    sentence: "A Nuria le {{blank}} que su equipo le pidiera consejo antes de decidir nada."
+    hint_general: "Le gusta que hayan contado con ella y se siente reconocida por ese gesto."
+    explanation: "Halagó: se sintió reconocida por el gesto. «Alegó» es dar una razón para defenderse, y «agradeció» sería dar las gracias, no sentirse valorada."
+    options:
+      - position: 1
+        text: "alegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alegar» es dar una razón para defenderse, y aquí nadie se está defendiendo de nada."
+        hint_specific: "«Alegar» defiende una postura. ¿Nuria se defiende o recibe un gesto agradable?"
+      - position: 2
+        text: "halagó"
+        is_correct: true
+      - position: 3
+        text: "agradeció"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agradecer» es dar las gracias, y la frase habla de lo que ella sintió, no de lo que respondió."
+        hint_specific: "«Agradecer» es responder con gracias. ¿La frase cuenta lo que dijo o lo que sintió?"
+  - position: 2
+    sentence: "Cuando Iván dijo en voz alta que el mejor informe era el suyo, Sandra se sintió {{blank}} delante de todos."
+    hint_general: "Alguien dice algo bueno de ella en público y eso la hace sentir reconocida."
+    explanation: "Halagada: el elogio público la hizo sentir reconocida. «Alargada» habla de longitud, y «agasajada» suena a homenaje con discursos y comida."
+    options:
+      - position: 1
+        text: "halagada"
+        is_correct: true
+      - position: 2
+        text: "alargada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alargada» describe algo que se ha hecho más largo, y aquí se habla de cómo se sintió una persona."
+        hint_specific: "«Alargada» va de longitud. ¿Qué se alargaría en esa frase?"
+      - position: 3
+        text: "agasajada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Agasajada» suena a homenaje con discursos y comida; aquí solo hay una frase dicha en una reunión."
+        hint_specific: "«Agasajar» suena a banquete con brindis. ¿Eso pasa en esta escena?"
+  - position: 3
+    sentence: "«No hace falta {{blank}} a nadie, Julia: basta con nombrar en voz alta lo que hizo bien»."
+    hint_general: "No hay que decirle a alguien cosas que le gusten: basta con nombrar el mérito."
+    explanation: "Halagar: no hace falta decir cosas agradables, basta con nombrar el mérito. «Alegar» es dar razones para defenderse, y «adular» es elogiar de más buscando algo."
+    options:
+      - position: 1
+        text: "alegar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alegar» es dar razones para defenderse, y aquí nadie tiene que justificar nada."
+        hint_specific: "«Alegar» defiende. ¿Alguien se está defendiendo en esta frase?"
+      - position: 2
+        text: "adular"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adular» es elogiar de más para sacar algo a cambio, y el consejo no va de eso, sino de reconocer con precisión."
+        hint_specific: "«Adular» busca algo a cambio. ¿El consejo habla de sacar provecho?"
+      - position: 3
+        text: "halagar"
+        is_correct: true
+  - position: 4
+    sentence: "A Emilio le {{blank}} más un mensaje privado que un aplauso en la sala: dice que así sabe que es de verdad."
+    hint_general: "Se siente más reconocido por un gesto discreto que por uno público."
+    explanation: "Halaga: le llega más el gesto discreto. «Alarga» habla de hacer algo más largo, y «lisonjea» tiene ese sentido, pero suena a novela antigua."
+    options:
+      - position: 1
+        text: "alarga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alargar» es hacer algo más largo, y un mensaje privado no alarga nada en esta frase."
+        hint_specific: "«Alargar» estira algo. ¿Qué se estaría estirando aquí?"
+      - position: 2
+        text: "halaga"
+        is_correct: true
+      - position: 3
+        text: "lisonjea"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Lisonjear» tiene ese sentido, pero suena a novela antigua y desentona al hablar de un mensaje de móvil."
+        hint_specific: "«Lisonjear» suena a siglo pasado. ¿Pega con un mensaje en el móvil?"
+  - position: 5
+    sentence: "Susana {{blank}} a su compañera con dos frases exactas, sin exagerar nada y sin pedirle nada después."
+    hint_general: "Le dice algo bueno y medido, sin inflarlo y sin esperar nada a cambio."
+    explanation: "Halagó: dijo algo bueno y medido, sin esperar nada. «Alegó» es dar razones para defenderse, y «aduló» sería inflar el elogio para sacar provecho."
+    options:
+      - position: 1
+        text: "halagó"
+        is_correct: true
+      - position: 2
+        text: "alegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alegar» es dar razones para defenderse, y en la escena no hay ninguna acusación de la que defenderse."
+        hint_specific: "«Alegar» defiende una postura. ¿Hay alguna acusación en juego?"
+      - position: 3
+        text: "aduló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adular» es inflar el elogio para sacar provecho, y la frase dice que no exageró ni pidió nada."
+        hint_specific: "«Adular» exagera y busca algo. Relee el final: ¿pidió algo después?"
+  - position: 6
+    sentence: "«Me {{blank}} que me lo cuentes a mí antes que a nadie, Leonor», respondió su amiga por mensaje."
+    hint_general: "Recibe la confianza como un reconocimiento y lo dice en voz alta."
+    explanation: "Halaga: recibe esa confianza como un reconocimiento. «Alarga» va de hacer algo más largo, y «alaba» sería que ella elogiara a otra persona."
+    options:
+      - position: 1
+        text: "alarga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alargar» es hacer algo más largo, y aquí no se estira nada: se recibe un gesto de confianza."
+        hint_specific: "«Alargar» estira algo. ¿Qué se alargaría en ese mensaje?"
+      - position: 2
+        text: "halaga"
+        is_correct: true
+      - position: 3
+        text: "alaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alabar» es elogiar a otra persona, y quien escribe está contando lo que ella misma siente."
+        hint_specific: "«Alabar» sale hacia fuera. ¿La frase cuenta lo que da o lo que recibe?"
+  - position: 7
+    sentence: "Lo que {{blank}} a Roberto no fue el premio, sino que su hija dijera delante de todos que estaba orgullosa."
+    hint_general: "Lo que le llega no es el premio, sino oír un reconocimiento de alguien cercano."
+    explanation: "Halagó: le llegó el reconocimiento de su hija. «Alegó» es dar razones para defenderse, y «felicitó» sería dar la enhorabuena, no describir lo que él sintió."
+    options:
+      - position: 1
+        text: "alegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alegar» es dar razones para defenderse, y en esta escena no hay nada que justificar."
+        hint_specific: "«Alegar» defiende. ¿Roberto se defiende de algo en esta escena?"
+      - position: 2
+        text: "felicitó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Felicitar» es dar la enhorabuena a alguien, y la frase describe lo que a Roberto le llegó por dentro."
+        hint_specific: "«Felicitar» es algo que se hace. ¿La frase cuenta un gesto o un efecto?"
+      - position: 3
+        text: "halagó"
+        is_correct: true
+  - position: 8
+    sentence: "Marcos {{blank}} a todo el mundo por costumbre, y por eso nadie se cree ya sus elogios."
+    hint_general: "Dice cosas agradables a todos por rutina y eso les quita todo el valor."
+    explanation: "Halaga: reparte elogios por rutina y pierden valor. «Alarga» va de hacer algo más largo, y «agasaja» suena a comidas y homenajes."
+    options:
+      - position: 1
+        text: "alarga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alargar» es hacer algo más largo, y lo que reparte Marcos son frases agradables, no minutos."
+        hint_specific: "«Alargar» estira algo. ¿Qué estiraría Marcos con todo el mundo?"
+      - position: 2
+        text: "agasaja"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Agasajar» suena a comidas y homenajes preparados; aquí solo hay frases sueltas repetidas a diario."
+        hint_specific: "«Agasajar» monta un homenaje. ¿Marcos organiza algo o solo habla?"
+      - position: 3
+        text: "halaga"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo de las ocho"
+    body: "Elisa recibió un correo corto de su responsable: «Tu forma de llevar la reunión de ayer nos sacó del atasco». Lo leyó dos veces. Después escribió a una amiga: «Me halaga más esto que cualquier premio»."
+    before_phrase: "Me hizo mucha ilusión ese mensaje."
+    after_phrase: "Me halaga más esto que cualquier premio."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La receta de la abuela"
+    body: "Ramiro hizo por primera vez el arroz de su abuela y ella lo probó despacio. «Te ha salido mejor que a mí». Él se rio: «Me halagas, pero le falta tu mano». Repitieron la comida el domingo siguiente."
+    before_phrase: "Qué cosas bonitas dices."
+    after_phrase: "Me halagas, pero le falta tu mano."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La invitación"
+    body: "Le propusieron a Lucía dar la charla de apertura del encuentro del barrio. Contestó ese mismo día: «Me halaga la propuesta y la acepto, con una condición: quiero cinco minutos menos». Se los dieron encantados."
+    before_phrase: "Me da mucho gusto que me lo propongan."
+    after_phrase: "Me halaga la propuesta."
+metrics:
+  zipf_overall: 3.3648
+  dispersion_dp: 0.1934
+  pedantry_proxy: 0.4229
+  family_size: 13
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

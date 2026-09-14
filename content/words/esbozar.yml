@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "esbozar"
+status: "draft"
+lemma: "esbozar"
+part_of_speech: "verbo"
+syllables: ["es", "bo", "zar"]
+stressed_syllable: 3
+ipa_latam: "[es.boˈsaɾ]"
+ipa_es: "[es.boˈθaɾ]"
+explanation: "Presentar una idea a grandes rasgos, sin cerrar los detalles, para ver si vale la pena."
+example_sentence: "Te esbozo la propuesta en media página y, si te convence, la trabajamos con números."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Avisa de que lo que enseñas todavía se puede mover: así recibes ideas en vez de correcciones."
+when_not_to_use: "No la uses para algo cerrado y revisado: llamarlo así invita a cambiarlo cuando ya no quieres cambios."
+collocations:
+  - "esbozar un plan"
+  - "esbozar una idea"
+  - "esbozar una respuesta"
+replaces:
+  - before: "Te hago un borrador rápido y lo vemos"
+    after: "Te esbozo la idea y la vemos"
+  - before: "Te lo cuento por encima, sin detalles"
+    after: "Te lo esbozo"
+  - before: "Todavía no está cerrado, es solo una idea"
+    after: "Todavía está esbozado"
+family: ["esbozo"]
+themes:
+  - slug: "redaccion-ejecutiva"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 1
+tags:
+  comodin: ["hacer"]
+  funcion: ["proponer"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "esgrimir"
+    difference: "«Esgrimir» es sacar un argumento para defenderte; la otra palabra solo enseña una idea a medio hacer."
+    memory_trick: "Se esgrime un argumento para ganar; se enseña un borrador para mejorarlo."
+  - confused_with: "detallar"
+    difference: "«Detallar» baja hasta la última cifra; la otra palabra se queda arriba, en los trazos gruesos."
+    memory_trick: "Detallar mira con lupa; la otra palabra mira desde lejos."
+exercises:
+  - position: 1
+    sentence: "Con un lápiz y dos minutos, Ámbar {{blank}} el plan en una servilleta y el equipo entendió por dónde iba."
+    hint_general: "Con cuatro trazos basta para que se vea la idea."
+    explanation: "Esbozó: con cuatro trazos se vio la idea. «Esgrimió» sería sacar un argumento para defenderse, y «garabateó» es coloquial y sugiere un dibujo sin sentido."
+    options:
+      - position: 1
+        text: "esgrimió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esgrimir» es sacar un argumento para defenderse, y aquí nadie discute: se enseña un plan."
+        hint_specific: "«Esgrimir» aparece en discusiones. ¿Hay discusión en esta servilleta?"
+      - position: 2
+        text: "esbozó"
+        is_correct: true
+      - position: 3
+        text: "garabateó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Garabatear» es coloquial y sugiere trazos sin sentido, y la frase dice que el equipo entendió el plan."
+        hint_specific: "«Garabatear» no deja nada legible. ¿Qué pasó con el equipo al verlo?"
+  - position: 2
+    sentence: "Antes de escribir cuarenta páginas, conviene {{blank}} la idea en media carilla y enseñarla a alguien."
+    hint_general: "Media carilla con lo grueso, antes de invertir semanas."
+    explanation: "Esbozar: media carilla con lo grueso. «Esparcir» es repartir algo por un espacio, y «detallar» exigiría bajar al detalle antes de saber si la idea vale."
+    options:
+      - position: 1
+        text: "esbozar"
+        is_correct: true
+      - position: 2
+        text: "esparcir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esparcir» es repartir algo por un espacio, como semillas, y aquí se trata de presentar una idea."
+        hint_specific: "«Esparcir» reparte cosas por el suelo o el aire. ¿Eso encaja con media carilla?"
+      - position: 3
+        text: "detallar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallar» baja hasta la última cifra, justo el trabajo que la frase quiere evitar por ahora."
+        hint_specific: "«Detallar» exige bajar al detalle. ¿Qué se quiere ahorrar antes de las cuarenta páginas?"
+  - position: 3
+    sentence: "Nadie pedía un documento cerrado: bastaba con {{blank}} tres caminos posibles y elegir uno el viernes."
+    hint_general: "Tres caminos a grandes rasgos, sin cerrarlos."
+    explanation: "Esbozar: tres caminos a grandes rasgos. «Esgrimir» sería defenderlos con argumentos, y «rematar» los daría por cerrados antes del viernes."
+    options:
+      - position: 1
+        text: "esgrimir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esgrimir» es sacar argumentos para defender una postura, y aquí todavía no hay postura que defender."
+        hint_specific: "«Esgrimir» sirve para defenderse. ¿Alguien defiende algo el viernes?"
+      - position: 2
+        text: "rematar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rematar» daría los tres caminos por cerrados, y la frase dice que nadie pedía un documento cerrado."
+        hint_specific: "«Rematar» termina el trabajo. ¿Qué dice la frase sobre lo cerrado?"
+      - position: 3
+        text: "esbozar"
+        is_correct: true
+  - position: 4
+    sentence: "Gonzalo {{blank}} una respuesta en el chat y avisó de que todavía faltaba pulirla con calma."
+    hint_general: "Deja la idea a la vista aunque no esté acabada."
+    explanation: "Esbozó: dejó la idea a la vista sin acabarla. «Esposó» es poner unas esposas, y «redactó» daría por escrita una respuesta que aún hay que pulir."
+    options:
+      - position: 1
+        text: "esposó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esposar» es poner unas esposas en las muñecas, algo que no tiene nada que ver con escribir en un chat."
+        hint_specific: "«Esposar» pertenece a otro mundo del todo. ¿Qué ocurre en ese chat?"
+      - position: 2
+        text: "esbozó"
+        is_correct: true
+      - position: 3
+        text: "redactó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Redactar» da la respuesta por escrita y terminada, y él mismo avisa de que falta pulirla."
+        hint_specific: "«Redactar» deja el texto hecho. ¿Qué avisó Gonzalo después?"
+  - position: 5
+    sentence: "Cuando su socia le preguntó cómo lo veía, Delia {{blank}} la idea con tres frases y una flecha."
+    hint_general: "Tres frases y una flecha alcanzan para mostrar el camino."
+    explanation: "Esbozó: tres frases y una flecha muestran el camino. «Esparció» es repartir algo por un espacio, y «pintó» es coloquial cuando se usa así y suena a adornar la idea."
+    options:
+      - position: 1
+        text: "esparció"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esparcir» es repartir algo por una superficie, y aquí la idea se concentra en tres frases."
+        hint_specific: "«Esparcir» reparte. ¿La idea se reparte o se concentra?"
+      - position: 2
+        text: "pintó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pintar» una idea es coloquial y sugiere adornarla para que luzca, y aquí solo se muestra el camino."
+        hint_specific: "«Pintar» suena a adornar. ¿Delia adorna o muestra?"
+      - position: 3
+        text: "esbozó"
+        is_correct: true
+  - position: 6
+    sentence: "Si la reunión es mañana, {{blank}} la propuesta esta noche y deja los números para el lunes."
+    hint_general: "Esta noche, solo la forma general; las cifras, después."
+    explanation: "Esboza: esta noche solo la forma general. «Esgrime» sería defenderla con argumentos, y «cierra» la daría por terminada cuando faltan los números."
+    options:
+      - position: 1
+        text: "esboza"
+        is_correct: true
+      - position: 2
+        text: "esgrime"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esgrimir» es sacar argumentos para defenderse, y esta noche todavía no hay nada que defender."
+        hint_specific: "«Esgrimir» sirve en una discusión. ¿Cuándo empieza la discusión aquí?"
+      - position: 3
+        text: "cierra"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cerrar» daría la propuesta por terminada, y la frase deja los números para el lunes."
+        hint_specific: "«Cerrar» termina el asunto. ¿Qué queda pendiente hasta el lunes?"
+  - position: 7
+    sentence: "La arquitecta no trajo planos: {{blank}} la casa a mano sobre la mesa y preguntó qué sobraba."
+    hint_general: "Dibuja lo esencial para que el otro pueda opinar."
+    explanation: "Esbozó: dibujó lo esencial para que opinaran. «Esposó» es poner unas esposas, y «describió» habría contado la casa con palabras en vez de mostrarla."
+    options:
+      - position: 1
+        text: "describió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Describir» cuenta la casa con palabras, y la frase dice que la hizo a mano sobre la mesa."
+        hint_specific: "«Describir» usa palabras. ¿Qué hizo la arquitecta sobre la mesa?"
+      - position: 2
+        text: "esbozó"
+        is_correct: true
+      - position: 3
+        text: "esposó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esposar» es poner unas esposas en las muñecas, y aquí solo hay una mesa y una mano dibujando."
+        hint_specific: "«Esposar» pertenece a otro contexto. ¿Qué hay sobre esa mesa?"
+  - position: 8
+    sentence: "Un plan {{blank}} a tiempo vale más que un documento perfecto dos semanas tarde."
+    hint_general: "Vale más lo general y a tiempo que lo acabado y tarde."
+    explanation: "Esbozado: vale más lo general y a tiempo. «Esgrimido» sería usado como arma en una discusión, y «garabateado» es coloquial y sugiere que no se entiende nada."
+    options:
+      - position: 1
+        text: "esgrimido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esgrimido» describe un argumento usado para defenderse, y aquí se compara con un documento acabado."
+        hint_specific: "«Esgrimido» habla de argumentos en una pelea. ¿Con qué se compara el plan?"
+      - position: 2
+        text: "garabateado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Garabateado» es coloquial y sugiere que no se entiende nada, y un plan así no vale más que nada."
+        hint_specific: "«Garabateado» no deja nada legible. ¿Serviría un plan ilegible?"
+      - position: 3
+        text: "esbozado"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Media carilla el jueves"
+    body: "Otilia llevaba tres semanas puliendo un documento que nadie había pedido. Su jefa la paró: «Esbózamelo en media carilla y lo miramos el jueves». En media carilla se vio que faltaba un permiso, y esas tres semanas se habrían perdido igual."
+    before_phrase: "Todavía no te lo enseño, que está a medias."
+    after_phrase: "Te lo esbozo en media carilla."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La idea del bar"
+    body: "En la sobremesa, Leandro sacó una servilleta y esbozó el local que llevaba años imaginando: barra corta, cinco mesas, cocina pequeña. Nadie lo tomó por un proyecto cerrado, y por eso todos se atrevieron a proponer cosas."
+    before_phrase: "Algún día pondré un bar, ya te contaré."
+    after_phrase: "Te lo esbozo: barra corta, cinco mesas."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Los primeros noventa días"
+    body: "Le preguntaron qué haría al entrar y Ámbar no prometió un plan cerrado: «Te esbozo los tres primeros meses: escuchar, medir y arreglar lo que duela más. El detalle lo escribo cuando conozca al equipo». Le dijeron que era la primera respuesta honesta del día."
+    before_phrase: "Pues haría muchas cosas, depende de todo."
+    after_phrase: "Te esbozo los tres primeros meses."
+metrics:
+  zipf_overall: 3.7839
+  dispersion_dp: 0.3057
+  pedantry_proxy: 0.4916
+  family_size: 11
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

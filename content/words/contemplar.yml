@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 2105
+slug: "contemplar"
+status: "gated"
+lemma: "contemplar"
+part_of_speech: "verbo"
+syllables:
+  - "con"
+  - "tem"
+  - "plar"
+stressed_syllable: 3
+ipa_latam: "[kon.temˈplaɾ]"
+ipa_es: "[kon.temˈplaɾ]"
+explanation: "Incluir algo en un plan o en un acuerdo desde el principio, para que luego no sorprenda a nadie."
+example_sentence: "El acuerdo contempla dos revisiones al año, así que nadie se sorprendió en junio."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Preguntar qué contempla un acuerdo antes de firmarlo te ahorra la discusión del día en que algo se tuerce."
+when_not_to_use: "No la uses para mirar algo con calma, como un paisaje: en un acuerdo significa tenerlo previsto."
+collocations:
+  - "contemplar un escenario"
+  - "contemplar una excepción"
+  - "contemplar un plazo"
+replaces:
+  - before: "El papel no dice nada de ese caso"
+    after: "El acuerdo no contempla ese caso"
+  - before: "¿Y si falla el proveedor? ¿Lo tenemos en cuenta?"
+    after: "¿Contemplamos que falle el proveedor?"
+  - before: "Habría que meter también el día de lluvia"
+    after: "Habría que contemplar también el día de lluvia"
+family: []
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "tener"
+  funcion:
+    - "prever"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "completar"
+    difference: "«Completar» es acabar de llenar algo que estaba a medias; lo otro es dejar un caso previsto desde el principio."
+    memory_trick: "Completas lo que falta; contemplas lo que puede pasar."
+  - confused_with: "contentar"
+    difference: "«Contentar» es dejar satisfecha a una persona; aquí no hay nadie a quien agradar, hay un caso que prever."
+    memory_trick: "Contentas a alguien; contemplas un caso."
+exercises:
+  - position: 1
+    sentence: "El seguro no {{blank}} los daños por lluvia, y eso nos costó dos semanas de discusión."
+    hint_general: "Habla de si el seguro tenía ese daño previsto de antemano."
+    explanation: "Contemplaba: el seguro no tenía ese daño previsto. «Completaba» sería acabar de llenar algo, y «mencionaba» diría solo que lo nombraba de pasada."
+    options:
+      - position: 1
+        text: "completaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Completar» es acabar de llenar algo a medias; un seguro no llena nada, incluye o deja fuera cada caso."
+        hint_specific: "Completar llena un hueco. ¿Un seguro llena algo o prevé casos?"
+      - position: 2
+        text: "contemplaba"
+        is_correct: true
+      - position: 3
+        text: "mencionaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mencionar» es nombrar algo de pasada; un seguro puede nombrar la lluvia y aun así dejarla fuera de la cobertura."
+        hint_specific: "Mencionar es solo nombrar. ¿Basta con nombrar la lluvia para cobrar el seguro?"
+  - position: 2
+    sentence: "Antes de firmar, Gabriel preguntó si el acuerdo {{blank}} una salida anticipada."
+    hint_general: "Pregunta si esa salida estaba prevista dentro del acuerdo."
+    explanation: "Contemplaba: pregunta si esa salida estaba prevista. «Contentaba» hablaría de dejar satisfecho a alguien, y «prometía» daría por hecho un compromiso que nadie ha dado."
+    options:
+      - position: 1
+        text: "contentaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contentar» es dejar satisfecha a una persona; un acuerdo no contenta una salida, la incluye o no la incluye."
+        hint_specific: "Contentar se hace con personas. ¿Gabriel pregunta por personas o por un caso?"
+      - position: 2
+        text: "prometía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prometer» supone un compromiso dado en voz alta; Gabriel solo quiere saber si ese caso está previsto en el papel."
+        hint_specific: "Prometer es comprometerse. ¿Gabriel busca una promesa o una previsión?"
+      - position: 3
+        text: "contemplaba"
+        is_correct: true
+  - position: 3
+    sentence: "Antes de cerrar el presupuesto, conviene {{blank}} el caso de que llueva el día del evento."
+    hint_general: "Conviene dejar ese caso previsto antes de cerrar el número."
+    explanation: "Contemplar: dejar ese caso previsto antes de cerrar. «Meter» dice algo parecido, pero es muy coloquial para un presupuesto, y «completar» sería acabar algo a medias."
+    options:
+      - position: 1
+        text: "meter"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Meter» es muy coloquial y suena a empujar algo dentro de cualquier manera; un presupuesto pide una palabra más seria."
+        hint_specific: "«Meter» suena a empujar algo dentro. ¿Encaja al cerrar un presupuesto?"
+      - position: 2
+        text: "contemplar"
+        is_correct: true
+      - position: 3
+        text: "completar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Completar» es terminar algo que estaba a medias; aquí el presupuesto todavía no está cerrado y falta prever un caso."
+        hint_specific: "Completar termina lo que estaba a medias. ¿Falta terminar algo o falta prever algo?"
+  - position: 4
+    sentence: "El contrato que firmó Rosa {{blank}} tres revisiones al año, ni una más."
+    hint_general: "El papel deja fijado ese número desde el principio."
+    explanation: "Contempla: el papel deja fijado ese número. «Completa» sería terminar algo inacabado, y «promete» sonaría a compromiso de una persona, no a un texto firmado."
+    options:
+      - position: 1
+        text: "contempla"
+        is_correct: true
+      - position: 2
+        text: "completa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Completar» es terminar algo inacabado; el contrato no termina las revisiones, fija cuántas hay."
+        hint_specific: "Completar termina algo. ¿El papel termina las revisiones o las fija?"
+      - position: 3
+        text: "promete"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prometer» es algo que hace una persona con su palabra; aquí quien fija el número es un texto firmado."
+        hint_specific: "Las promesas las hacen personas. ¿Quién fija aquí las revisiones?"
+  - position: 5
+    sentence: "Cuando organizó el viaje, Fernando {{blank}} un día extra por si había retrasos."
+    hint_general: "Dejó ese día previsto por si algo salía mal."
+    explanation: "Contempló: dejó ese día previsto por si algo fallaba. «Contentó» hablaría de agradar a alguien, y «aprobó» supondría que otra persona lo había propuesto antes."
+    options:
+      - position: 1
+        text: "contentó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contentar» es dejar satisfecho a alguien; un día extra en el calendario no contenta a nadie, previene un retraso."
+        hint_specific: "Contentar va de personas satisfechas. ¿Ese día extra agrada o previene?"
+      - position: 2
+        text: "aprobó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aprobar» supone que otra persona lo propuso y él dijo que sí; en la frase es Fernando quien organiza el viaje."
+        hint_specific: "Aprobar responde a una propuesta ajena. ¿Quién organiza aquí el viaje?"
+      - position: 3
+        text: "contempló"
+        is_correct: true
+  - position: 6
+    sentence: "Al repartir los turnos de la casa, Blanca pidió {{blank}} también las semanas en que ella viaja."
+    hint_general: "Pide que esas semanas queden previstas dentro del reparto."
+    explanation: "Contemplar: pide que esas semanas queden previstas. «Estipular» suena a contrato en un reparto casero, e «imaginar» dejaría la idea en la cabeza de alguien."
+    options:
+      - position: 1
+        text: "estipular"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Estipular» pertenece a los contratos y a las escrituras; repartiendo turnos en casa suena a lenguaje de oficina."
+        hint_specific: "«Estipular» vive en los contratos. ¿Encaja repartiendo turnos en casa?"
+      - position: 2
+        text: "imaginar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imaginar» deja la idea dentro de la cabeza de alguien; Blanca quiere que esas semanas queden escritas en el reparto."
+        hint_specific: "Imaginar se queda en la cabeza. ¿Blanca quiere pensarlo o dejarlo fijado?"
+      - position: 3
+        text: "contemplar"
+        is_correct: true
+  - position: 7
+    sentence: "Si {{blank}} desde ahora una segunda ronda de cambios, nadie se enfadará en marzo."
+    hint_general: "Dejar prevista hoy una segunda ronda para evitar enfados."
+    explanation: "Contemplamos: dejamos prevista hoy esa segunda ronda. «Completamos» sería acabar algo empezado, y «aceptamos» supondría que alguien ya la pidió."
+    options:
+      - position: 1
+        text: "contemplamos"
+        is_correct: true
+      - position: 2
+        text: "completamos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Completar» es acabar algo ya empezado; esa segunda ronda todavía no existe, se deja prevista por si llega."
+        hint_specific: "Completar acaba lo empezado. ¿La segunda ronda ya existe?"
+      - position: 3
+        text: "aceptamos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aceptar» responde a una petición que ya se hizo; aquí nadie ha pedido nada todavía, se previene marzo."
+        hint_specific: "Aceptar responde a una petición. ¿Alguien ha pedido ya esa ronda?"
+  - position: 8
+    sentence: "El acuerdo de los socios {{blank}} qué pasa si uno quiere salir, y por eso la salida fue tranquila."
+    hint_general: "El acuerdo deja previsto qué ocurre si alguien se va."
+    explanation: "Contempla: el acuerdo deja previsto qué ocurre. «Contenta» hablaría de agradar a alguien, y «asegura» prometería un resultado que nadie puede garantizar."
+    options:
+      - position: 1
+        text: "contenta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contentar» es dejar satisfecha a una persona; un acuerdo no contenta una situación, la deja prevista."
+        hint_specific: "Contentar va de agradar. ¿El acuerdo agrada o prevé?"
+      - position: 2
+        text: "asegura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asegurar» promete un resultado; el acuerdo no promete que la salida sea tranquila, solo deja escrito qué pasa."
+        hint_specific: "Asegurar promete un resultado. ¿El papel promete calma o describe el camino?"
+      - position: 3
+        text: "contempla"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El día de lluvia"
+    body: "Faltaba una semana para el evento y el cielo no ayudaba. Victoria repasó el presupuesto y preguntó: «¿Contemplamos una carpa por si llueve?». Nadie lo había pensado. Llovió, hubo carpa, y el cliente lo contó durante meses."
+    before_phrase: "¿Y si llueve? Habría que tenerlo en cuenta."
+    after_phrase: "¿Contemplamos una carpa por si llueve?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El reparto de agosto"
+    body: "El calendario de vacaciones siempre acababa en discusión. Ramiro propuso otra cosa: «Vamos a contemplar los dos casos: si la abuela viene, y si no viene». Escribieron las dos versiones en la nevera. Ese agosto nadie tuvo que improvisar."
+    before_phrase: "¿Y si al final no viene? No lo hemos pensado."
+    after_phrase: "Vamos a contemplar los dos casos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La cuota del club"
+    body: "El grupo de la cancha discutía la cuota nueva. Olga levantó la mano: «¿Contemplamos a quien solo juega un mes al año?». Se hizo un silencio corto y salió una cuota reducida. Volvieron tres personas que se habían ido."
+    before_phrase: "¿Y los que juegan poco? Nadie los tuvo en cuenta."
+    after_phrase: "¿Contemplamos a quien solo juega un mes?"
+metrics:
+  zipf_overall: 4.9045
+  dispersion_dp: 0.082
+  pedantry_proxy: 0.4623
+  family_size: 262
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

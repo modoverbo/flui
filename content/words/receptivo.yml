@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2113
+slug: "receptivo"
+status: "draft"
+lemma: "receptivo"
+part_of_speech: "adjetivo"
+syllables: ["re", "cep", "ti", "vo"]
+stressed_syllable: 3
+ipa_latam: "[re.sepˈti.βo]"
+ipa_es: "[re.θepˈti.βo]"
+explanation: "Que escucha una crítica con calma y está abierto a cambiar algo de lo que hace."
+example_sentence: "Le dije lo del informe con miedo y estuvo receptivo: al día siguiente ya lo había cambiado."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es un elogio útil después de una charla difícil: describe cómo recibió lo que le dijiste, no si tenía razón."
+when_not_to_use: "No la uses para quien solo asiente y luego no cambia nada: eso es educación, no apertura."
+collocations:
+  - "estar receptivo"
+  - "un equipo receptivo"
+  - "mostrarse receptivo"
+replaces:
+  - before: "Estuvo muy abierto a lo que le dije"
+    after: "Estuvo muy receptivo"
+  - before: "Escuchó bien las críticas"
+    after: "Se mostró receptivo a las críticas"
+  - before: "Hoy no está para que le digan nada"
+    after: "Hoy no está receptivo"
+family: ["receptividad"]
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin: ["abierto"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "receloso"
+    difference: "«Receloso» describe a quien desconfía y se pone en guardia; aquí alguien baja la guardia y escucha lo que le dicen."
+    memory_trick: "El receloso se cierra; el receptivo se abre."
+  - confused_with: "recesivo"
+    difference: "«Recesivo» es una palabra de biología para un rasgo que no se manifiesta; no dice nada sobre escuchar a nadie."
+    memory_trick: "Recesivo se esconde; receptivo se abre."
+exercises:
+  - position: 1
+    sentence: "Beatriz entró a la charla a la defensiva, aunque salió {{blank}} y con dos cosas que quería probar."
+    hint_general: "Salió abierta a escuchar y con ganas de probar algo."
+    explanation: "Receptiva: salió abierta y con ganas de probar. «Recelosa» sería lo contrario, seguir en guardia, y «callada» solo diría que no habló."
+    options:
+      - position: 1
+        text: "recelosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recelosa» describe a quien sigue desconfiando; la frase dice que salió con dos ideas que quería probar."
+        hint_specific: "Recelosa sigue en guardia. ¿Con qué sale Beatriz de la charla?"
+      - position: 2
+        text: "receptiva"
+        is_correct: true
+      - position: 3
+        text: "callada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callada» solo dice que no habló; se puede salir en silencio y sin intención de cambiar nada."
+        hint_specific: "Callada describe el silencio. ¿Lo importante aquí es su silencio o su apertura?"
+  - position: 2
+    sentence: "El equipo estuvo {{blank}} al cambio de horario porque alguien se lo explicó antes de imponerlo."
+    hint_general: "El equipo escuchó el cambio sin ponerse en contra."
+    explanation: "Receptivo: escuchó el cambio sin ponerse en contra. «Recesivo» es un término de biología, y «amable» hablaría de buenos modales, no de apertura."
+    options:
+      - position: 1
+        text: "recesivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recesivo» se usa en biología para un rasgo que no aparece; un equipo no se describe con esa palabra."
+        hint_specific: "Recesivo vive en la biología. ¿Encaja al hablar de un horario?"
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» habla de buenos modales; un equipo puede ser amabilísimo y aun así rechazar el cambio por dentro."
+        hint_specific: "Amable describe los modales. ¿Los modales bastan para aceptar un cambio?"
+      - position: 3
+        text: "receptivo"
+        is_correct: true
+  - position: 3
+    sentence: "Si quieres decirle algo difícil a alguien, busca un momento en que esté {{blank}}."
+    hint_general: "Busca un momento en que la otra persona pueda escuchar de verdad."
+    explanation: "Receptivo: busca el momento en que pueda escuchar. «Receloso» sería el peor momento posible, y «permeable» suena a material de construcción."
+    options:
+      - position: 1
+        text: "receptivo"
+        is_correct: true
+      - position: 2
+        text: "receloso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Receloso» describe a quien desconfía; buscar ese momento sería justo lo contrario de lo que aconseja la frase."
+        hint_specific: "Receloso desconfía. ¿Buscarías ese momento para decir algo difícil?"
+      - position: 3
+        text: "permeable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Permeable» describe materiales que dejan pasar el agua; aplicado a una persona suena a manual técnico."
+        hint_specific: "«Permeable» describe materiales. ¿Se lo dirías así a un compañero?"
+  - position: 4
+    sentence: "Mi jefa no siempre está de acuerdo, pero siempre se muestra {{blank}} cuando le llevo un problema."
+    hint_general: "Escucha los problemas con calma aunque no siempre coincida."
+    explanation: "Receptiva: escucha con calma aunque no coincida. «Recelosa» diría que desconfía, y «atenta» hablaría de educación, no de apertura al cambio."
+    options:
+      - position: 1
+        text: "atenta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atenta» dice que escucha con interés; se puede escuchar con toda la atención y no mover nada después."
+        hint_specific: "Atenta describe el interés. ¿Basta con escuchar bien un problema?"
+      - position: 2
+        text: "recelosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recelosa» describe a quien desconfía de lo que le cuentan; la frase la presenta como alguien a quien se puede acudir."
+        hint_specific: "Recelosa desconfía. ¿La jefa desconfía o acoge el problema?"
+      - position: 3
+        text: "receptiva"
+        is_correct: true
+  - position: 5
+    sentence: "Después del primer mes, los nuevos estaban más {{blank}} a las correcciones que al principio."
+    hint_general: "Con el tiempo aceptan mejor que les corrijan."
+    explanation: "Receptivos: aceptan mejor las correcciones. «Recesivos» es palabra de biología, y «tranquilos» hablaría de su estado de ánimo, no de su apertura."
+    options:
+      - position: 1
+        text: "recesivos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recesivos» describe rasgos biológicos que no se manifiestan; unas personas que aceptan correcciones no se describen así."
+        hint_specific: "Recesivos vive en la biología. ¿Encaja para describir a los nuevos?"
+      - position: 2
+        text: "receptivos"
+        is_correct: true
+      - position: 3
+        text: "tranquilos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tranquilos» habla del estado de ánimo; alguien puede estar tranquilísimo y aun así no aceptar una corrección."
+        hint_specific: "Tranquilos describe el ánimo. ¿La frase compara nervios o apertura?"
+  - position: 6
+    sentence: "Nadie es {{blank}} a las tres de la tarde de un viernes que salió torcido."
+    hint_general: "A esa hora casi nadie está en condiciones de escuchar."
+    explanation: "Receptivo: a esa hora nadie escucha bien. «Receloso» diría que todos desconfían, y «paciente» hablaría de aguantar sin quejarse."
+    options:
+      - position: 1
+        text: "paciente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciente» es quien aguanta sin quejarse; se puede aguantar una charla entera y no escuchar ni una frase."
+        hint_specific: "Paciente aguanta. ¿Aguantar es lo mismo que escuchar?"
+      - position: 2
+        text: "receptivo"
+        is_correct: true
+      - position: 3
+        text: "receloso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Receloso» diría que todo el mundo desconfía a esa hora; lo que falta un viernes por la tarde es cabeza para escuchar."
+        hint_specific: "Receloso desconfía. ¿Qué falta un viernes a las tres, confianza o cabeza?"
+  - position: 7
+    sentence: "Gabriela preparó la conversación para que su compañero llegara {{blank}} y no a la defensiva."
+    hint_general: "Prepara la charla para que él llegue abierto, no en guardia."
+    explanation: "Receptivo: quiere que llegue abierto, no en guardia. «Recesivo» pertenece a la biología, y «maleable» sugeriría que se deja moldear sin criterio."
+    options:
+      - position: 1
+        text: "recesivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recesivo» es un término de biología; no describe cómo llega alguien a una conversación difícil."
+        hint_specific: "Recesivo es palabra de biología. ¿Describe cómo llega alguien a una charla?"
+      - position: 2
+        text: "maleable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maleable» se dice de los metales que se dejan moldear; aplicado a una persona suena a que no tiene criterio propio."
+        hint_specific: "«Maleable» se dice de los metales. ¿Es eso lo que busca Gabriela en su compañero?"
+      - position: 3
+        text: "receptivo"
+        is_correct: true
+  - position: 8
+    sentence: "Un equipo {{blank}} no es el que dice que sí a todo, sino el que escucha y luego decide."
+    hint_general: "Escuchar de verdad no es decir que sí a todo."
+    explanation: "Receptivo: escucha y luego decide. «Respectivo» significa que corresponde a cada uno, y «obediente» describe justo lo que la frase descarta."
+    options:
+      - position: 1
+        text: "respectivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Respectivo» significa que algo corresponde a cada uno por separado; no dice nada sobre escuchar críticas."
+        hint_specific: "Respectivo reparte lo que toca a cada cual. ¿De eso habla la frase?"
+      - position: 2
+        text: "obediente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obediente» es justo lo que la frase descarta: el equipo que dice que sí a todo sin decidir nada."
+        hint_specific: "Obediente dice que sí a todo. ¿Eso es lo que la frase alaba o lo que rechaza?"
+      - position: 3
+        text: "receptivo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La charla que daba miedo"
+    body: "Llevaba tres semanas posponiendo la conversación. Cuando por fin se la dijo, Miguel escuchó sin interrumpir y solo preguntó un par de cosas. Al salir, Irene escribió en su cuaderno: «Estuvo receptivo. La próxima no espero tres semanas»."
+    before_phrase: "Estuvo muy abierto a lo que le dije."
+    after_phrase: "Estuvo receptivo de principio a fin."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El momento justo"
+    body: "Quería hablar con su hermano de las visitas a casa, pero siempre elegía mal la hora. Un domingo lo pilló tranquilo, con café y sin prisa. «Hoy estás receptivo», le dijo medio en broma, y le contó todo. Él no se cerró ni una vez."
+    before_phrase: "Hoy sí se te puede decir algo."
+    after_phrase: "Hoy estás receptivo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Dos preguntas al final"
+    body: "Tras la entrevista, Emilio preguntó cómo se daban las opiniones difíciles en el equipo. La responsable respondió con un ejemplo concreto y sin adornos. Él lo anotó: un sitio con gente receptiva vale más que un sueldo un poco mejor."
+    before_phrase: "Buscaba gente que escuche de verdad."
+    after_phrase: "Un sitio con gente receptiva vale mucho."
+metrics:
+  zipf_overall: 3.5117
+  dispersion_dp: 0.1506
+  pedantry_proxy: 0.4427
+  family_size: 45
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

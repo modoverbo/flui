@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "ambiguo"
+status: "gated"
+lemma: "ambiguo"
+part_of_speech: "adjetivo"
+syllables:
+  - "am"
+  - "bi"
+  - "guo"
+stressed_syllable: 2
+ipa_latam: "[amˈbi.ɣwo]"
+ipa_es: "[amˈbi.ɣwo]"
+explanation: "Que se puede entender de dos maneras, así que cada persona lo lee a su modo."
+example_sentence: "El plazo del correo era ambiguo: la mitad del equipo entendió el viernes y la otra mitad, el lunes."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra el problema sin culpar a nadie: no es que el otro leyera mal, es que la frase daba dos salidas."
+when_not_to_use: "No la uses para un texto que simplemente no se entiende: eso es confuso, no dos caminos posibles."
+collocations:
+  - "una respuesta ambigua"
+  - "un mensaje ambiguo"
+  - "una frase ambigua"
+replaces:
+  - before: "No se entiende bien qué quiso decir"
+    after: "Su frase es ambigua"
+  - before: "Dijo que sí, pero no sé si era un sí"
+    after: "Su respuesta fue ambigua"
+  - before: "Cada uno entendió una cosa distinta"
+    after: "El mensaje era ambiguo"
+family:
+  - "ambigüedad"
+semantic_set_id: "claridad-del-mensaje"
+themes:
+  - slug: "redaccion-ejecutiva"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+tags:
+  comodin:
+    - "raro"
+  funcion:
+    - "precisar"
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ambivalente"
+    difference: "«Ambivalente» describe a quien siente dos cosas a la vez; la otra palabra describe un texto que admite dos lecturas."
+    memory_trick: "Lo ambivalente pasa dentro de una persona; las dos lecturas pasan dentro de la frase."
+  - confused_with: "impreciso"
+    difference: "«Impreciso» es que falta detalle; la otra palabra es que hay dos caminos igual de válidos."
+    memory_trick: "Lo impreciso se queda corto; lo otro se abre en dos."
+exercises:
+  - position: 1
+    sentence: "El «lo miramos pronto» de la respuesta era tan {{blank}} que medio equipo lo entendió como un sí."
+    hint_general: "La misma frase deja dos lecturas posibles y cada uno elige una."
+    explanation: "Ambiguo: la frase deja dos lecturas. «Ambicioso» describe a quien quiere llegar lejos, y «rarísimo» es coloquial y solo dice que suena extraño."
+    options:
+      - position: 1
+        text: "ambicioso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambicioso» describe a quien quiere llegar muy lejos, y aquí el problema es que la respuesta admitía dos lecturas."
+        hint_specific: "«Ambicioso» habla de querer mucho. ¿Qué pasó con la mitad del equipo?"
+      - position: 2
+        text: "ambiguo"
+        is_correct: true
+      - position: 3
+        text: "rarísimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rarísimo» es coloquial y solo dice que algo suena extraño, sin explicar que había dos lecturas."
+        hint_specific: "«Rarísimo» se queda en la extrañeza. ¿Por qué se dividió el equipo?"
+  - position: 2
+    sentence: "Delia reescribió la frase porque era {{blank}}: podía significar subir el precio o subir la producción."
+    hint_general: "Dos significados posibles, los dos razonables."
+    explanation: "Ambigua: dos significados posibles y razonables. «Ambiciosa» describe a quien quiere llegar lejos, e «incompleta» diría que falta información, cuando aquí sobra un camino."
+    options:
+      - position: 1
+        text: "ambigua"
+        is_correct: true
+      - position: 2
+        text: "ambiciosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambiciosa» describe a quien quiere mucho, y aquí la frase ofrecía dos lecturas distintas."
+        hint_specific: "«Ambiciosa» habla de aspiraciones. ¿Qué dos cosas podía significar la frase?"
+      - position: 3
+        text: "incompleta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Incompleta» diría que falta información, y la frase tenía de más: dos caminos igual de válidos."
+        hint_specific: "«Incompleta» apunta a lo que falta. ¿Faltaba algo o sobraba un camino?"
+  - position: 3
+    sentence: "Un «depende» sin explicación suena {{blank}} y obliga al otro a adivinar de qué depende."
+    hint_general: "Permite dos lecturas y deja el trabajo al que lee."
+    explanation: "Ambiguo: permite dos lecturas y deja el trabajo al lector. «Ambiental» se refiere al entorno, y «seco» describe el tono, no el número de lecturas posibles."
+    options:
+      - position: 1
+        text: "ambiental"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambiental» se refiere al entorno o al medio, y aquí se habla de cómo se entiende una palabra."
+        hint_specific: "«Ambiental» pertenece al entorno. ¿De qué se habla en esta frase?"
+      - position: 2
+        text: "seco"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seco» describe un tono cortante, y el problema del «depende» es que admite varias lecturas."
+        hint_specific: "«Seco» valora el tono. ¿Qué obliga a hacer ese «depende»?"
+      - position: 3
+        text: "ambiguo"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando el cliente pidió «algo más moderno», nadie supo qué hacer con una indicación tan {{blank}}."
+    hint_general: "Cada persona del equipo puede entender otra cosa distinta."
+    explanation: "Ambigua: cada uno entiende otra cosa. «Ambivalente» describe a quien siente dos cosas a la vez, y «exigente» diría que pide mucho, no que se pueda leer de dos formas."
+    options:
+      - position: 1
+        text: "ambivalente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambivalente» describe a una persona que siente dos cosas a la vez, y aquí lo que falla es una indicación."
+        hint_specific: "«Ambivalente» ocurre dentro de alguien. ¿Dónde está el problema, en el cliente o en su frase?"
+      - position: 2
+        text: "ambigua"
+        is_correct: true
+      - position: 3
+        text: "exigente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigente» diría que el cliente pide mucho, y el problema es que nadie sabe qué está pidiendo."
+        hint_specific: "«Exigente» mide cuánto pide. ¿El equipo sabe qué quiere el cliente?"
+  - position: 5
+    sentence: "Si tu correo puede leerse de dos formas, alguien elegirá la peor: no dejes ningún punto {{blank}}."
+    hint_general: "Ningún punto debería admitir dos lecturas."
+    explanation: "Ambiguo: ningún punto debería admitir dos lecturas. «Ambicioso» habla de querer llegar lejos, y «turbio» es coloquial y sugiere mala intención donde solo hay descuido."
+    options:
+      - position: 1
+        text: "turbio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Turbio» es coloquial y sugiere mala intención, y el consejo habla de un descuido al escribir."
+        hint_specific: "«Turbio» acusa de mala fe. ¿El consejo habla de intención o de claridad?"
+      - position: 2
+        text: "ambiguo"
+        is_correct: true
+      - position: 3
+        text: "ambicioso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambicioso» describe a quien quiere llegar lejos, y aquí se habla de puntos de un correo."
+        hint_specific: "«Ambicioso» habla de aspiraciones. ¿Qué se revisa en el correo?"
+  - position: 6
+    sentence: "Ivo prefirió una negativa clara antes que un sí {{blank}} que dejara a la otra parte esperando tres semanas."
+    hint_general: "Un sí que también podía leerse como un no."
+    explanation: "Ambiguo: un sí que también podía leerse como un no. «Ambiental» se refiere al entorno, y «tardío» diría que llegó tarde, no que se pudiera entender de dos formas."
+    options:
+      - position: 1
+        text: "ambiguo"
+        is_correct: true
+      - position: 2
+        text: "tardío"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tardío» dice que el sí llegó tarde, y lo que Ivo evita es un sí que se pueda entender de dos formas."
+        hint_specific: "«Tardío» habla del momento. ¿Qué problema tiene ese sí, cuándo llega o qué significa?"
+      - position: 3
+        text: "ambiental"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambiental» se refiere al entorno, y aquí se habla de una respuesta que se puede leer de dos maneras."
+        hint_specific: "«Ambiental» pertenece al entorno. ¿Qué se está describiendo?"
+  - position: 7
+    sentence: "El título del informe era {{blank}} a propósito, y por eso nadie supo si valía la pena abrirlo."
+    hint_general: "Dejaba dos lecturas abiertas y ninguna ganaba."
+    explanation: "Ambiguo: dejaba dos lecturas abiertas. «Ambivalente» describe a quien siente dos cosas a la vez, y «largo» hablaría del tamaño del título."
+    options:
+      - position: 1
+        text: "ambivalente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambivalente» describe a una persona con sentimientos encontrados, y aquí se habla de un título."
+        hint_specific: "«Ambivalente» ocurre en las personas. ¿Quién o qué se describe aquí?"
+      - position: 2
+        text: "largo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largo» habla del tamaño del título, y el problema era no saber qué prometía."
+        hint_specific: "«Largo» mide el tamaño. ¿Qué impidió que lo abrieran?"
+      - position: 3
+        text: "ambiguo"
+        is_correct: true
+  - position: 8
+    sentence: "Nadie discute una fecha exacta; en cambio, un plazo {{blank}} se estira solo, semana tras semana."
+    hint_general: "Si admite dos lecturas, cada parte elegirá la que le conviene."
+    explanation: "Ambiguo: admite dos lecturas y cada parte elige. «Ambicioso» habla de querer llegar lejos, y «raro» es coloquial y solo dice que suena extraño."
+    options:
+      - position: 1
+        text: "ambicioso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ambicioso» describe a quien quiere llegar lejos, y un plazo que se estira no es ambicioso: es poco claro."
+        hint_specific: "«Ambicioso» habla de metas altas. ¿Por qué se estira ese plazo?"
+      - position: 2
+        text: "raro"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Raro» es coloquial y solo dice que algo suena extraño, sin explicar que cada parte lo lee a su favor."
+        hint_specific: "«Raro» se queda en la extrañeza. ¿Por qué se alarga el plazo semana tras semana?"
+      - position: 3
+        text: "ambiguo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El viernes de quién"
+    body: "«Lo tenemos para final de semana», decía el correo. El cliente entendió viernes; el equipo, domingo. Cuando estalló, Otilia lo dijo sin culpar a nadie: «El plazo era ambiguo». Desde entonces escriben la fecha y la hora, y no ha vuelto a pasar."
+    before_phrase: "Es que cada uno entendió una cosa."
+    after_phrase: "El plazo era ambiguo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "«Como quieras»"
+    body: "Casandra llevaba años respondiendo «como quieras» y enfadándose después. Su pareja se lo dijo con cariño: «Tu respuesta es ambigua, y yo elijo mal la mitad de las veces». Ahora dice lo que prefiere, y discuten mucho menos."
+    before_phrase: "Yo dije que como quisieras, no me entendiste."
+    after_phrase: "Mi respuesta fue ambigua."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "«Habrá flexibilidad»"
+    body: "Al hablar del horario le dijeron que habría flexibilidad. Ámbar sonrió y preguntó: «Eso puede ser ambiguo; ¿significa entrar más tarde o trabajar desde casa?». Le contestaron lo segundo, y evitó una sorpresa en su primer mes."
+    before_phrase: "No sé muy bien a qué se refieren con eso."
+    after_phrase: "Eso puede ser ambiguo: ¿a qué se refiere?"
+metrics:
+  zipf_overall: 3.3825
+  dispersion_dp: 0.1825
+  pedantry_proxy: 0.6114
+  family_size: 5
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

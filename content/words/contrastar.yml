@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 129
+slug: "contrastar"
+status: "draft"
+lemma: "contrastar"
+part_of_speech: "verbo"
+syllables: ["con", "tras", "tar"]
+stressed_syllable: 3
+ipa_latam: "[kon.tɾasˈtar]"
+ipa_es: "[kon.tɾasˈtar]"
+explanation: "Comparar dos datos o dos versiones para ver en qué se diferencian."
+example_sentence: "Antes de decidir conviene contrastar el presupuesto con el del año pasado."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Pedirlo en voz alta baja la tensión: se duda del dato, no de la persona que lo trajo."
+when_not_to_use: "No la uses si solo quieres confirmar lo que ya crees; aquí se miran los dos lados de verdad."
+collocations:
+  - "contrastar datos"
+  - "contrastar dos versiones"
+  - "contrastar con la fuente"
+replaces:
+  - before: "Vamos a mirar los dos y ver qué cambia"
+    after: "Vamos a contrastar los dos"
+  - before: "Habría que comprobarlo con otra fuente"
+    after: "Habría que contrastarlo con otra fuente"
+  - before: "Compara esto con lo del mes pasado"
+    after: "Contrasta esto con lo del mes pasado"
+family: ["contraste"]
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+  - slug: "entrevistas"
+    relevance: 1
+tags:
+  comodin: ["mirar"]
+  funcion: ["comparar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "constatar"
+    difference: "«Constatar» es comprobar que algo es cierto; la otra palabra pone dos cosas una al lado de la otra para ver la diferencia."
+    memory_trick: "Constatas un hecho; comparas dos."
+  - confused_with: "contrarrestar"
+    difference: "«Contrarrestar» es compensar un efecto con otro; la otra palabra solo compara, no compensa nada."
+    memory_trick: "Contrarrestar equilibra; comparar mide."
+exercises:
+  - position: 1
+    sentence: "Antes de aprobar la cifra, Beatriz pidió {{blank}} el presupuesto con el del año pasado."
+    hint_general: "Pide poner las dos cifras juntas para ver la diferencia."
+    explanation: "Contrastar: poner las dos cifras juntas. «Constatar» sería comprobar un hecho, y «cotejar» suena a archivo y a notaría."
+    options:
+      - position: 1
+        text: "constatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es comprobar que algo es cierto, y aquí hacen falta dos cifras, no una sola comprobación."
+        hint_specific: "«Constatar» mira un dato. ¿Cuántos datos se ponen juntos?"
+      - position: 2
+        text: "contrastar"
+        is_correct: true
+      - position: 3
+        text: "cotejar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cotejar» suena a archivo y a notaría, y esto es una reunión de equipo con dos presupuestos."
+        hint_specific: "«Cotejar» huele a papeles sellados. ¿Encaja entre compañeros?"
+  - position: 2
+    sentence: "Los dos vecinos daban versiones distintas del ruido, así que la administradora quiso {{blank}}las."
+    hint_general: "Quiere poner las dos versiones una junto a otra."
+    explanation: "Contrastarlas: poner las dos versiones juntas. «Constatarlas» sería dar por ciertas las dos, y «zanjarlas» sería cerrar el asunto sin mirar."
+    options:
+      - position: 1
+        text: "contrastar"
+        is_correct: true
+      - position: 2
+        text: "constatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es dar por comprobado que algo es cierto, y aquí las dos versiones no pueden serlo a la vez."
+        hint_specific: "«Constatar» acepta el dato. ¿Se pueden aceptar dos versiones opuestas?"
+      - position: 3
+        text: "zanjar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Zanjar» sería cerrar el asunto sin mirar nada, y ella quiere ver primero en qué se diferencian."
+        hint_specific: "«Zanjar» pone el punto final. ¿Qué quiere hacer antes la administradora?"
+  - position: 3
+    sentence: "Mi padre nunca compra un electrodoméstico sin {{blank}} al menos tres precios."
+    hint_general: "Pone los precios juntos para ver las diferencias."
+    explanation: "Contrastar: poner los precios juntos. «Constatar» sería comprobar un hecho, y «regatear» sería discutir el precio en la tienda."
+    options:
+      - position: 1
+        text: "constatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es comprobar que algo es cierto, y aquí la gracia está en poner tres precios uno al lado del otro."
+        hint_specific: "«Constatar» confirma un dato. ¿Cuántos precios mira tu padre?"
+      - position: 2
+        text: "regatear"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Regatear» es discutir el precio con el vendedor, y él compara antes de entrar en la tienda."
+        hint_specific: "«Regatear» negocia en el mostrador. ¿Cuándo hace su trabajo tu padre?"
+      - position: 3
+        text: "contrastar"
+        is_correct: true
+  - position: 4
+    sentence: "La periodista {{blank}} la cifra con dos fuentes distintas antes de publicar la noticia."
+    hint_general: "Pone la cifra frente a otras dos para ver si coinciden."
+    explanation: "Contrastó: puso la cifra frente a dos fuentes. «Constató» sería darla por buena sin más, y «contrarrestó» sería compensar un efecto."
+    options:
+      - position: 1
+        text: "contrastó"
+        is_correct: true
+      - position: 2
+        text: "constató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es dar por comprobado un dato, y ella todavía está buscando con qué compararlo."
+        hint_specific: "«Constató» ya cierra el dato. ¿Qué hace antes de publicar?"
+      - position: 3
+        text: "contrarrestó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contrarrestar» es compensar un efecto con otro, y aquí no se compensa nada: se comparan cifras."
+        hint_specific: "«Contrarrestó» equilibra fuerzas. ¿Hay fuerzas o cifras en la frase?"
+  - position: 5
+    sentence: "Si {{blank}} lo que te cuentan con lo que ves, te llevas menos sorpresas."
+    hint_general: "Poner las dos cosas juntas evita sorpresas."
+    explanation: "Contrastas: pones lo que te cuentan junto a lo que ves. «Constatas» sería dar algo por cierto, y «tragas» es coloquial y suena a aceptarlo sin más."
+    options:
+      - position: 1
+        text: "constatas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es dar algo por comprobado, y el consejo pide comparar dos versiones antes de eso."
+        hint_specific: "«Constatas» cierra el asunto. ¿Qué se junta en este consejo?"
+      - position: 2
+        text: "contrastas"
+        is_correct: true
+      - position: 3
+        text: "tragas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tragar» algo es coloquial y sugiere aceptarlo sin discutir, y el consejo propone justo lo opuesto."
+        hint_specific: "«Tragas» acepta sin mirar. ¿Eso evita las sorpresas?"
+  - position: 6
+    sentence: "En la entrevista, Samuel pidió permiso para {{blank}} los datos del puesto con lo que había leído."
+    hint_general: "Quiere poner lo que le cuentan junto a lo que leyó."
+    explanation: "Contrastar: poner lo que le cuentan junto a lo leído. «Constatar» sería dar algo por cierto, y «desmentir» sería decir que es falso."
+    options:
+      - position: 1
+        text: "contrastar"
+        is_correct: true
+      - position: 2
+        text: "constatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es dar algo por comprobado, y él todavía quiere poner las dos versiones juntas."
+        hint_specific: "«Constatar» da el asunto por cerrado. ¿En qué momento está Samuel?"
+      - position: 3
+        text: "desmentir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desmentir» es afirmar que algo es falso, y él solo quiere comparar dos informaciones con respeto."
+        hint_specific: "«Desmentir» acusa de mentira. ¿Samuel acusa o compara?"
+  - position: 7
+    sentence: "El taller empezó pidiendo {{blank}} dos formas de hacer la misma receta."
+    hint_general: "Se ponen las dos formas juntas para ver en qué cambian."
+    explanation: "Contrastar: poner las dos formas juntas. «Constatar» sería comprobar un hecho, y «fusionar» sería mezclarlas en una sola."
+    options:
+      - position: 1
+        text: "constatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es comprobar que algo es cierto, y en el taller se miran dos maneras distintas a la vez."
+        hint_specific: "«Constatar» trabaja con un hecho. ¿Cuántas formas hay en el taller?"
+      - position: 2
+        text: "contrastar"
+        is_correct: true
+      - position: 3
+        text: "fusionar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fusionar» sería mezclar las dos recetas en una, y la idea es ver en qué se diferencian."
+        hint_specific: "«Fusionar» las une. ¿Se quiere una receta o dos comparadas?"
+  - position: 8
+    sentence: "Nadie {{blank}} la cifra del informe, y por eso el fallo llegó hasta la reunión del jueves."
+    hint_general: "Faltó poner esa cifra junto a otra para revisarla."
+    explanation: "Contrastó: faltó poner la cifra junto a otra. «Constató» sería confirmarla, y «objetó» sería poner una pega en voz alta."
+    options:
+      - position: 1
+        text: "contrastó"
+        is_correct: true
+      - position: 2
+        text: "constató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Constatar» es confirmar que un dato es cierto, y lo que faltó fue compararlo con otra fuente."
+        hint_specific: "«Constató» confirma sin comparar. ¿Qué habría descubierto el fallo?"
+      - position: 3
+        text: "objetó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Objetar» es poner una pega en voz alta, y aquí nadie llegó siquiera a mirar la cifra dos veces."
+        hint_specific: "«Objetó» habla en la sala. ¿Qué faltó antes de la reunión?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos presupuestos"
+    body: "La cifra del proveedor parecía razonable hasta que alguien sacó el archivo del año anterior. «Antes de aprobar, vamos a contrastar los dos», propuso Beatriz. La diferencia era del 40 %, y la reunión cambió de tema en dos minutos."
+    before_phrase: "Mejor lo comparamos con lo del año pasado."
+    after_phrase: "Antes de aprobar, vamos a contrastar los dos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "practica"
+    title: "Tres precios y una libreta"
+    body: "Mi padre lleva una libreta pequeña para las compras grandes. Apunta tres precios, la garantía y el plazo de entrega. «Sin contrastar no se compra nada», dice. La lavadora que eligió lleva once años funcionando."
+    before_phrase: "Hay que mirar varios sitios antes de comprar."
+    after_phrase: "Sin contrastar no se compra nada."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Lo que leí y lo que me cuentan"
+    body: "Samuel había leído que el equipo crecía rápido, y en la entrevista le hablaron de estabilidad. Preguntó con calma: «¿Puedo contrastar una cosa que leí?». La respuesta fue larga y honesta, y él supo mucho más que antes."
+    before_phrase: "Quería comprobar una cosa que había leído."
+    after_phrase: "¿Puedo contrastar una cosa que leí?"
+metrics:
+  zipf_overall: 4.5126
+  dispersion_dp: 0.0984
+  pedantry_proxy: 0.4919
+  family_size: 795
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

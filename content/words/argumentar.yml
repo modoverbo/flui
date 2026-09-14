@@ -1,0 +1,247 @@
+schema_version: 1
+sort_order: 130
+slug: "argumentar"
+status: "gated"
+lemma: "argumentar"
+part_of_speech: "verbo"
+syllables:
+  - "ar"
+  - "gu"
+  - "men"
+  - "tar"
+stressed_syllable: 4
+ipa_latam: "[aɾ.ɣu.menˈtar]"
+ipa_es: "[aɾ.ɣu.menˈtar]"
+explanation: "Dar razones claras para sostener lo que piensas delante de otros."
+example_sentence: "No basta con decir que no te convence: hay que argumentar por qué."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Anunciarlo ordena la sala: «Voy a argumentarlo en dos puntos» promete un final y lo cumple."
+when_not_to_use: "No la uses para insistir en lo mismo más alto; sin razones nuevas no hay razones."
+collocations:
+  - "argumentar una postura"
+  - "argumentar con datos"
+  - "saber argumentar"
+replaces:
+  - before: "Explica por qué piensas eso"
+    after: "Argumenta por qué piensas eso"
+  - before: "Lo dijo sin dar ni una razón"
+    after: "Lo dijo sin argumentar nada"
+  - before: "Voy a explicar mis motivos uno por uno"
+    after: "Voy a argumentar mis motivos uno por uno"
+family:
+  - "argumento"
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "conflicto-desacuerdo"
+    relevance: 1
+tags:
+  comodin:
+    - "decir"
+  funcion:
+    - "razonar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "aumentar"
+    difference: "«Aumentar» es hacer algo más grande o más numeroso; la otra palabra da razones para sostener una idea."
+    memory_trick: "Aumentas una cifra; sostienes una idea con razones."
+  - confused_with: "discutir"
+    difference: "«Discutir» puede acabar en pelea; dar razones ordenadas busca convencer sin levantar la voz."
+    memory_trick: "Discutir sube el tono; razonar baja el ruido."
+exercises:
+  - position: 1
+    sentence: "A Marcos no le gustó la propuesta, pero tuvo que {{blank}} su postura con tres datos concretos."
+    hint_general: "Tiene que dar razones ordenadas para sostener lo que piensa."
+    explanation: "Argumentar: dar razones ordenadas. «Aumentar» sería hacer algo más grande, y «vociferar» es alzar la voz sin razones."
+    options:
+      - position: 1
+        text: "aumentar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» es hacer algo más grande o más numeroso, y aquí lo que hace falta son razones."
+        hint_specific: "«Aumentar» agranda una cantidad. ¿Qué le piden a Marcos?"
+      - position: 2
+        text: "argumentar"
+        is_correct: true
+      - position: 3
+        text: "vociferar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vociferar» es alzar mucho la voz, y lo que sostiene su postura son los tres datos, no el volumen."
+        hint_specific: "«Vociferar» sube el volumen. ¿Qué convence en esa sala?"
+  - position: 2
+    sentence: "La propuesta cayó porque nadie supo {{blank}} por qué era mejor que la anterior."
+    hint_general: "Faltaron razones ordenadas que sostuvieran la idea."
+    explanation: "Argumentar: dar razones que sostengan la idea. «Aumentar» sería hacerla más grande, y «repetir» sería decir lo mismo otra vez."
+    options:
+      - position: 1
+        text: "argumentar"
+        is_correct: true
+      - position: 2
+        text: "aumentar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» es hacer algo mayor, y la propuesta no cayó por su tamaño, sino por falta de razones."
+        hint_specific: "«Aumentar» mira el tamaño. ¿Qué le faltó a la propuesta?"
+      - position: 3
+        text: "repetir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» es decir lo mismo otra vez, y lo que faltaba eran motivos nuevos que la sostuvieran."
+        hint_specific: "«Repetir» no añade nada. ¿Qué habría cambiado la votación?"
+  - position: 3
+    sentence: "Mi hija aprendió a {{blank}} su hora de vuelta: horario del metro, entreno del lunes y llave propia."
+    hint_general: "Da razones ordenadas para sostener lo que pide."
+    explanation: "Argumentar: da razones ordenadas para lo que pide. «Aumentar» sería alargar la hora, y «suplicar» sería pedirlo con lástima."
+    options:
+      - position: 1
+        text: "aumentar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» sería alargar la hora sin más, y lo que ella hace es explicar con qué razones."
+        hint_specific: "«Aumentar» solo añade minutos. ¿Qué añade tu hija además?"
+      - position: 2
+        text: "suplicar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Suplicar» es pedir con lástima, y ella pone tres motivos sobre la mesa, no pena."
+        hint_specific: "«Suplicar» da pena. ¿Qué trae tu hija en lugar de pena?"
+      - position: 3
+        text: "argumentar"
+        is_correct: true
+  - position: 4
+    sentence: "Antes de votar, cada parte tuvo dos minutos para {{blank}} su posición sin interrupciones."
+    hint_general: "Cada parte da sus razones antes de la votación."
+    explanation: "Argumentar: dar sus razones antes de votar. «Aumentar» sería hacer algo más grande, y «arengar» suena a discurso de batalla."
+    options:
+      - position: 1
+        text: "argumentar"
+        is_correct: true
+      - position: 2
+        text: "aumentar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» es hacer algo más grande o más numeroso, y en esos dos minutos se dan motivos."
+        hint_specific: "«Aumentar» necesita algo que crezca. ¿Qué cabe en dos minutos?"
+      - position: 3
+        text: "arengar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arengar» suena a discurso de batalla para animar a una tropa, y aquí se dan motivos antes de votar."
+        hint_specific: "«Arengar» levanta al ejército. ¿Hay tropa en esa votación?"
+  - position: 5
+    sentence: "Gonzalo {{blank}} la subida de precio con el coste del transporte, y el cliente lo entendió."
+    hint_general: "Da una razón concreta que sostiene la subida."
+    explanation: "Argumentó: dio una razón concreta. «Aumentó» sería subir el precio otra vez, y «disfrazó» sugiere esconder el motivo real."
+    options:
+      - position: 1
+        text: "aumentó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» sería subir el precio otra vez, y lo que él hace es explicar la subida que ya existe."
+        hint_specific: "«Aumentó» toca el precio. ¿Qué explicó Gonzalo?"
+      - position: 2
+        text: "argumentó"
+        is_correct: true
+      - position: 3
+        text: "disfrazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disfrazar» sugiere esconder el motivo real, y él da la causa exacta: el coste del transporte."
+        hint_specific: "«Disfrazó» tapa la causa. ¿El cliente entendió o quedó confuso?"
+  - position: 6
+    sentence: "En la entrevista pidieron a Leonor {{blank}} una decisión difícil que tomó el año pasado."
+    hint_general: "Le piden las razones ordenadas de aquella decisión."
+    explanation: "Argumentar: dar las razones de la decisión. «Aumentar» sería agrandar algo, y «lamentar» sería quejarse de lo ocurrido."
+    options:
+      - position: 1
+        text: "aumentar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» es hacer algo más grande, y a ella le piden los motivos de lo que decidió."
+        hint_specific: "«Aumentar» agranda. ¿Qué quieren saber de esa decisión?"
+      - position: 2
+        text: "argumentar"
+        is_correct: true
+      - position: 3
+        text: "lamentar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lamentar» es quejarse de lo ocurrido, y la pregunta busca entender por qué decidió así."
+        hint_specific: "«Lamentar» mira el arrepentimiento. ¿Qué busca quien pregunta?"
+  - position: 7
+    sentence: "Si {{blank}} con dos razones claras, la sala te sigue mejor que con diez ideas sueltas."
+    hint_general: "Dos razones ordenadas convencen más que diez ideas sueltas."
+    explanation: "Argumentas: das dos razones ordenadas. «Aumentas» sería hacer algo más grande, y «divagas» sería hablar sin llegar a nada."
+    options:
+      - position: 1
+        text: "argumentas"
+        is_correct: true
+      - position: 2
+        text: "aumentas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» es hacer algo más grande, y el consejo trata de cuántas razones das, no de tamaño."
+        hint_specific: "«Aumentas» añade cantidad. ¿Qué recomienda la frase: más o mejor?"
+      - position: 3
+        text: "divagas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Divagar» es hablar sin llegar a ninguna parte, y eso se parece más a las diez ideas sueltas."
+        hint_specific: "«Divagas» se va por las ramas. ¿Qué recomienda el consejo?"
+  - position: 8
+    sentence: "El grupo de lectura funciona porque cada quien {{blank}} su opinión con una página del libro."
+    hint_general: "Cada persona sostiene su opinión con una razón del texto."
+    explanation: "Argumenta: sostiene su opinión con una razón. «Aumenta» sería hacerla más grande, e «impone» sería obligar a aceptarla."
+    options:
+      - position: 1
+        text: "aumenta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aumentar» es hacer algo más grande o más numeroso, y aquí cada opinión viene con una página detrás."
+        hint_specific: "«Aumenta» agranda. ¿Con qué acompaña cada uno su opinión?"
+      - position: 2
+        text: "impone"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» es obligar a aceptar algo, y en ese grupo cada quien enseña la página que apoya su idea."
+        hint_specific: "«Impone» no admite réplica. ¿Para qué sirve entonces la página?"
+      - position: 3
+        text: "argumenta"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos minutos por parte"
+    body: "La votación llevaba tres reuniones empatada. Esta vez cambiaron la regla: dos minutos por parte y nadie interrumpe. «Voy a argumentar en dos puntos y me callo», empezó Marcos. La votación salió a la primera."
+    before_phrase: "Voy a explicar por qué pienso esto."
+    after_phrase: "Voy a argumentar en dos puntos y me callo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La hora de vuelta"
+    body: "Mi hija llegó con tres motivos escritos en el móvil: el último metro, el entreno del lunes y que ya tiene llave. No hubo gritos ni portazos. «Sabe argumentar mejor que yo a su edad», admití, y ampliamos la hora media hora."
+    before_phrase: "Me explicó sus razones una por una."
+    after_phrase: "Sabe argumentar mejor que yo a su edad."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Aquella decisión difícil"
+    body: "«Cuénteme una decisión difícil», le pidieron a Leonor. Ella eligió la peor del año pasado y no la adornó. «La argumento con lo que sabía entonces: dos datos y un plazo. Hoy elegiría distinto». La sala tomó notas."
+    before_phrase: "Te explico por qué decidí así en ese momento."
+    after_phrase: "La argumento con lo que sabía entonces."
+metrics:
+  zipf_overall: 4.8887
+  dispersion_dp: 0.0964
+  pedantry_proxy: 0.5947
+  family_size: 33
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

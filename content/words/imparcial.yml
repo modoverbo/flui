@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2115
+slug: "imparcial"
+status: "draft"
+lemma: "imparcial"
+part_of_speech: "adjetivo"
+syllables: ["im", "par", "cial"]
+stressed_syllable: 3
+ipa_latam: "[im.paɾˈsjal]"
+ipa_es: "[im.paɾˈθjal]"
+explanation: "Que juzga sin ponerse de parte de nadie, aunque una de las personas le guste más."
+example_sentence: "Escribimos los puntos antes de mirar los nombres para que la elección fuera imparcial."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Muy útil al explicar una decisión difícil: nombras el criterio y demuestras que no hubo favoritismos."
+when_not_to_use: "No la uses para decir que no tienes opinión: se puede opinar con fuerza y decidir sin favorecer a nadie."
+collocations:
+  - "un criterio imparcial"
+  - "una mirada imparcial"
+  - "ser imparcial"
+replaces:
+  - before: "Lo decidí sin favorecer a nadie"
+    after: "La decisión fue imparcial"
+  - before: "Necesitamos a alguien de fuera que no tire para ningún lado"
+    after: "Necesitamos a alguien imparcial"
+  - before: "Intento ser justo con los dos"
+    after: "Intento ser imparcial con los dos"
+family: ["imparcialidad"]
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin: ["neutral"]
+  funcion: ["juzgar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "indiferente"
+    difference: "«Indiferente» es a quien el asunto le da igual; aquí el asunto importa mucho, lo que no se hace es tomar partido."
+    memory_trick: "Al indiferente le da igual; el imparcial se implica sin inclinarse."
+  - confused_with: "impasible"
+    difference: "«Impasible» describe a quien no mueve un músculo ni muestra emoción; el otro adjetivo habla de cómo decide, no de su cara."
+    memory_trick: "Impasible no se inmuta; imparcial no se inclina."
+exercises:
+  - position: 1
+    sentence: "Para elegir al nuevo coordinador pidieron un criterio {{blank}}, con puntos escritos antes de mirar los nombres."
+    hint_general: "El criterio se fijó antes de ver quién era cada candidato."
+    explanation: "Imparcial: el criterio se fijó antes de ver los nombres. «Impasible» describe una cara sin gestos, y «frío» hablaría del trato con la gente."
+    options:
+      - position: 1
+        text: "impasible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impasible» se dice de quien no mueve un músculo; un criterio escrito en un papel no tiene gestos que contener."
+        hint_specific: "Impasible describe una cara. ¿Un criterio tiene cara?"
+      - position: 2
+        text: "imparcial"
+        is_correct: true
+      - position: 3
+        text: "frío"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frío» habla del trato con las personas; se puede tratar con mucha calidez y aun así decidir sin favorecer a nadie."
+        hint_specific: "Frío describe el trato. ¿Lo que se mide aquí es el trato o la decisión?"
+  - position: 2
+    sentence: "Cuando el conflicto es entre dos amigos tuyos, cuesta muchísimo ser {{blank}}."
+    hint_general: "Con dos amigos de por medio, cuesta juzgar sin inclinarse."
+    explanation: "Imparcial: cuesta juzgar sin inclinarse. «Implacable» describe a quien no perdona nada, y «neutral» sería no meterse, cuando aquí hay que decidir."
+    options:
+      - position: 1
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» se dice de quien no perdona ni una; con dos amigos lo difícil no es la dureza, es no inclinarse."
+        hint_specific: "Implacable no perdona. ¿Lo difícil aquí es perdonar o no tomar partido?"
+      - position: 2
+        text: "neutral"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Neutral» es quedarse fuera del conflicto; la frase habla de meterse dentro y aun así no favorecer a ninguno."
+        hint_specific: "Neutral se queda fuera. ¿Aquí te quedas fuera o tienes que decidir?"
+      - position: 3
+        text: "imparcial"
+        is_correct: true
+  - position: 3
+    sentence: "La comisión buscaba una mirada {{blank}} y por eso llamó a alguien de otro departamento."
+    hint_general: "Buscan a quien juzgue sin deberle nada a ninguna parte."
+    explanation: "Imparcial: alguien que no le debe nada a ninguna parte. «Impasible» hablaría de una cara sin gestos, y «aséptica» suena a quirófano."
+    options:
+      - position: 1
+        text: "imparcial"
+        is_correct: true
+      - position: 2
+        text: "impasible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impasible» describe a quien no muestra ninguna emoción; la comisión no busca una cara seria, busca alguien sin deudas con nadie."
+        hint_specific: "Impasible describe gestos. ¿Qué busca la comisión, gestos o distancia?"
+      - position: 3
+        text: "aséptica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Aséptica» pertenece al lenguaje de los hospitales y de la limpieza; para una mirada humana suena a quirófano."
+        hint_specific: "«Aséptica» suena a quirófano. ¿Encaja al describir a una persona?"
+  - position: 4
+    sentence: "Mi hermano fue {{blank}} en el reparto del piso, aunque a él le convenía otra cosa."
+    hint_general: "Repartió sin favorecerse a sí mismo."
+    explanation: "Imparcial: repartió sin favorecerse. «Implacable» diría que fue durísimo, y «generoso» diría que dio de más, cuando lo que hizo fue no inclinar la balanza."
+    options:
+      - position: 1
+        text: "generoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generoso» sería dar más de lo que le toca a los demás; él no regala nada, simplemente no se favorece."
+        hint_specific: "Generoso regala una parte. ¿Regaló algo o solo no se favoreció?"
+      - position: 2
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» se dice de quien no hace ni una concesión; el reparto del piso no fue duro, fue equilibrado."
+        hint_specific: "Implacable suena a dureza. ¿El reparto fue duro o equilibrado?"
+      - position: 3
+        text: "imparcial"
+        is_correct: true
+  - position: 5
+    sentence: "Si vas a mediar entre los dos, di en voz alta cómo piensas ser {{blank}} y a qué te comprometes."
+    hint_general: "Antes de mediar, deja claro que no vas a inclinarte por nadie."
+    explanation: "Imparcial: dejas claro que no te inclinas por nadie. «Impasible» hablaría de tu cara, e «insobornable» suena a novela de intriga."
+    options:
+      - position: 1
+        text: "impasible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impasible» se refiere a no mostrar emoción; quien media puede emocionarse y aun así no favorecer a ninguna parte."
+        hint_specific: "Impasible habla de la cara. ¿Lo que prometes es tu cara o tu criterio?"
+      - position: 2
+        text: "insobornable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Insobornable» suena a novela de intriga y da por hecho que alguien intenta comprarte; entre dos personas que discuten resulta desmedido."
+        hint_specific: "«Insobornable» suena a novela de intriga. ¿Alguien intenta comprarte aquí?"
+      - position: 3
+        text: "imparcial"
+        is_correct: true
+  - position: 6
+    sentence: "Los dos equipos aceptaron el resultado porque los jueces habían sido {{blank}} toda la temporada."
+    hint_general: "Los jueces no favorecieron a ningún equipo en todo el año."
+    explanation: "Imparciales: no favorecieron a ningún equipo. «Impasibles» hablaría de sus gestos, y «estrictos» diría que fueron duros, que no es lo mismo."
+    options:
+      - position: 1
+        text: "impasibles"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impasibles» describiría unas caras sin emoción; los equipos no aceptan el resultado por sus caras, sino por su criterio."
+        hint_specific: "Impasibles describe caras. ¿Por qué aceptan los equipos el resultado?"
+      - position: 2
+        text: "imparciales"
+        is_correct: true
+      - position: 3
+        text: "estrictos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estrictos» dice que aplicaron las reglas con dureza; se puede ser durísimo y favorecer siempre al mismo equipo."
+        hint_specific: "Estrictos habla de dureza. ¿La dureza evita el favoritismo?"
+  - position: 7
+    sentence: "Nadie es del todo {{blank}} cuando juzga a alguien que le cae muy bien, y reconocerlo ya ayuda."
+    hint_general: "Juzgar a un amigo siempre inclina un poco la balanza."
+    explanation: "Imparcial: con un amigo la balanza se inclina sola. «Implacable» hablaría de dureza, y «sincero» describe decir la verdad, no repartir sin favorecer."
+    options:
+      - position: 1
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» se dice de quien no perdona nada; con un amigo cerca lo que falla no es la dureza, es el equilibrio."
+        hint_specific: "Implacable no perdona. ¿Qué se tuerce al juzgar a un amigo?"
+      - position: 2
+        text: "imparcial"
+        is_correct: true
+      - position: 3
+        text: "sincero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincero» es decir lo que piensas; se puede ser muy sincero y aun así inclinarse siempre hacia el mismo lado."
+        hint_specific: "Sincero dice lo que piensa. ¿Decir la verdad evita inclinarse?"
+  - position: 8
+    sentence: "El informe salió {{blank}}: señalaba los fallos del jefe y los del recién llegado con la misma vara."
+    hint_general: "El texto mide a todos con la misma vara."
+    explanation: "Imparcial: mide a todos con la misma vara. «Impasible» describiría una cara sin emoción, y «duro» hablaría del tono, no del reparto de la crítica."
+    options:
+      - position: 1
+        text: "duro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Duro» habla del tono del texto; un informe puede ser durísimo y aun así perdonarle todo al jefe."
+        hint_specific: "Duro describe el tono. ¿Lo que llama la atención es el tono o la vara?"
+      - position: 2
+        text: "impasible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impasible» se dice de una persona que no muestra emoción; un informe escrito no tiene gestos que controlar."
+        hint_specific: "Impasible describe a personas sin gestos. ¿Un informe tiene gestos?"
+      - position: 3
+        text: "imparcial"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los puntos antes que los nombres"
+    body: "Había dos candidatas y mucha amistad de por medio. Lucas propuso algo incómodo: «Escribamos los cinco puntos hoy y miremos los nombres mañana. Así la decisión es imparcial y lo podemos contar». Nadie discutió el resultado, ni la que no salió elegida."
+    before_phrase: "Vamos a decidirlo sin favorecer a nadie."
+    after_phrase: "Así la decisión es imparcial y lo podemos contar."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El reparto de la casa del pueblo"
+    body: "Tres hermanos, una casa y muchos recuerdos. Carmen pidió una sola cosa antes de empezar: «Quiero ser imparcial, y para eso necesito que la tasación la haga alguien de fuera». Costó una tarde entera aceptarlo. Ahorró tres años de silencios."
+    before_phrase: "Quiero hacerlo sin tirar para mi lado."
+    after_phrase: "Quiero ser imparcial, y por eso llamamos a alguien de fuera."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El árbitro del domingo"
+    body: "En la liga del barrio nadie quería pitar. Rubén se ofreció con una condición: «Pito yo, pero soy imparcial hasta con mi propio equipo. Si alguien protesta, dejo el silbato». Ese domingo no protestó nadie, y el silbato siguió siendo suyo."
+    before_phrase: "Voy a pitar sin favorecer a nadie."
+    after_phrase: "Pito yo, y soy imparcial hasta con mi equipo."
+metrics:
+  zipf_overall: 3.7907
+  dispersion_dp: 0.1846
+  pedantry_proxy: 0.4734
+  family_size: 45
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

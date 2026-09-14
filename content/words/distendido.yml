@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 326
+slug: "distendido"
+status: "draft"
+lemma: "distendido"
+part_of_speech: "adjetivo"
+syllables: ["dis", "ten", "di", "do"]
+stressed_syllable: 3
+ipa_latam: "[dis.tenˈdi.ðo]"
+ipa_es: "[dis.tenˈdi.ðo]"
+explanation: "Ambiente tranquilo y sin tensión, en el que nadie tiene que cuidar sus palabras."
+example_sentence: "La sobremesa fue distendida y acabó con planes para el sábado."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Describe el clima, no a las personas: «una charla distendida» cuenta cómo fue el rato."
+when_not_to_use: "No la uses para algo aburrido: aquí hay calma, no falta de interés."
+collocations:
+  - "un ambiente distendido"
+  - "una charla distendida"
+  - "un tono distendido"
+replaces:
+  - before: "Fue una charla muy tranquila"
+    after: "Fue una charla distendida"
+  - before: "Se habló sin tensión"
+    after: "Se habló en un tono distendido"
+  - before: "El ambiente estaba relajado"
+    after: "El ambiente estaba distendido"
+family: ["distender"]
+themes:
+  - slug: "conversacion-cotidiana"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin: ["tranquilo", "relajado"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "distraído"
+    difference: "«Distraído» describe a quien tiene la cabeza en otro sitio; la otra palabra describe un ambiente sin tensión."
+    memory_trick: "El distraído no se entera; lo distendido no aprieta."
+  - confused_with: "aburrido"
+    difference: "«Aburrido» dice que no pasa nada que interese; aquí hay calma, y aun así la conversación funciona."
+    memory_trick: "Lo aburrido no engancha; lo distendido no tensa."
+exercises:
+  - position: 1
+    sentence: "La sobremesa fue {{blank}} y acabó con planes para el sábado siguiente, cuenta Lucas."
+    hint_general: "El rato transcurrió sin tensión y de ahí salieron planes nuevos."
+    explanation: "Distendida: el rato transcurrió sin tensión. «Distraída» describe a quien tiene la cabeza en otro sitio, y «aburrida» diría que no interesaba nada."
+    options:
+      - position: 1
+        text: "distraída"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Distraída» describe a quien tiene la cabeza en otro sitio, y aquí el grupo estaba muy pendiente de la charla."
+        hint_specific: "«Distraída» mira a otro lado. ¿Se quedaron a medias o salieron con planes?"
+      - position: 2
+        text: "distendida"
+        is_correct: true
+      - position: 3
+        text: "aburrida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburrida» diría que no interesaba nada, y de ahí salieron planes para el fin de semana."
+        hint_specific: "«Aburrida» no engancha a nadie. ¿Qué salió de esa sobremesa?"
+  - position: 2
+    sentence: "Iván prefiere un tono {{blank}} para hablar de dinero con sus hermanos."
+    hint_general: "Busca hablar sin tensión de un asunto que suele ponerla."
+    explanation: "Distendido: busca hablar sin tensión de un asunto delicado. «Extendido» significa amplio o muy repartido, y «plácido» suena a texto literario."
+    options:
+      - position: 1
+        text: "extendido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Extendido» significa amplio o muy repartido, y aquí se elige cómo suena una conversación, no cuánto abarca."
+        hint_specific: "«Extendido» mide alcance. ¿Iván elige el alcance o el clima?"
+      - position: 2
+        text: "plácido"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Plácido» suena a texto literario y a paisaje en calma, no al tono de una charla familiar sobre dinero."
+        hint_specific: "«Plácido» suena a novela y a atardecer. ¿Pega en una charla sobre gastos?"
+      - position: 3
+        text: "distendido"
+        is_correct: true
+  - position: 3
+    sentence: "El ambiente era tan {{blank}} que Carmen se atrevió a contar lo del trabajo nuevo."
+    hint_general: "Había tan poca tensión que se animó a contar algo que guardaba."
+    explanation: "Distendido: había tan poca tensión que se animó a hablar. «Distraído» describe a quien tiene la cabeza en otro sitio, y «formal» apunta a normas y rigidez."
+    options:
+      - position: 1
+        text: "distendido"
+        is_correct: true
+      - position: 2
+        text: "distraído"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Distraído» describe a quien tiene la cabeza en otro sitio, y Carmen habla justo porque siente que la escuchan."
+        hint_specific: "«Distraído» no está a lo que está. ¿Contarías algo así a quien no te escucha?"
+      - position: 3
+        text: "formal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Formal» apunta a normas y rigidez, y en un ambiente así nadie suelta una noticia personal."
+        hint_specific: "«Formal» pone reglas. ¿Ayudan las reglas a contar algo personal?"
+  - position: 4
+    sentence: "Fue una charla {{blank}}: nadie levantó la voz y nadie miró el reloj en toda la tarde."
+    hint_general: "Ni gritos ni prisas: el rato pasó sin ninguna tensión."
+    explanation: "Distendida: ni gritos ni prisas. «Desatendida» significa que alguien la dejó abandonada, y «silenciosa» diría que casi no se habló."
+    options:
+      - position: 1
+        text: "desatendida"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desatendida» significa que alguien la dejó abandonada, y aquí la charla dura toda la tarde."
+        hint_specific: "«Desatendida» queda sin cuidar. ¿Alguien abandonó esa conversación?"
+      - position: 2
+        text: "distendida"
+        is_correct: true
+      - position: 3
+        text: "silenciosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silenciosa» diría que casi no se habló, y lo que cuenta la frase es que se habló sin gritar."
+        hint_specific: "«Silenciosa» casi no suena. ¿Hubo charla o hubo silencio?"
+  - position: 5
+    sentence: "Después de media hora rígida, la conversación se volvió {{blank}} y todo fue más fácil para Nuria."
+    hint_general: "La tensión del principio se soltó y hablar dejó de costar."
+    explanation: "Distendida: la tensión del principio se soltó. «Distraída» describe a quien tiene la cabeza en otro sitio, y «apacible» suena a texto literario."
+    options:
+      - position: 1
+        text: "distraída"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Distraída» describe a quien tiene la cabeza en otro sitio, y aquí lo que cambia es la tensión, no la atención."
+        hint_specific: "«Distraída» se despista. ¿Qué se soltó a la media hora, la atención o la tensión?"
+      - position: 2
+        text: "apacible"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apacible» suena a texto literario y a paisaje tranquilo, no al giro de una conversación difícil."
+        hint_specific: "«Apacible» suena a poema sobre un lago. ¿Pega describiendo una charla tensa?"
+      - position: 3
+        text: "distendida"
+        is_correct: true
+  - position: 6
+    sentence: "Rubén consiguió un clima {{blank}} con dos preguntas sobre el perro de su vecina."
+    hint_general: "Con dos preguntas fáciles quitó la tensión del encuentro."
+    explanation: "Distendido: quitó la tensión con dos preguntas fáciles. «Extendido» significa amplio o muy repartido, y «alegre» habla de buen humor, no de ausencia de tensión."
+    options:
+      - position: 1
+        text: "extendido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Extendido» significa amplio o muy repartido, y aquí lo que cambia es cómo se siente la gente en la sala."
+        hint_specific: "«Extendido» mide alcance. ¿Qué se repartiría con dos preguntas?"
+      - position: 2
+        text: "distendido"
+        is_correct: true
+      - position: 3
+        text: "alegre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alegre» habla de buen humor, y se puede estar muy alegre y seguir con la tensión en el aire."
+        hint_specific: "«Alegre» va de humor. ¿Reírse quita siempre la tensión?"
+  - position: 7
+    sentence: "Lo que más recuerda Patricia de esa cena es lo {{blank}} que estuvo todo el mundo desde el principio."
+    hint_general: "Lo que se le quedó grabado es que nadie estuvo tenso en ningún momento."
+    explanation: "Distendido: nadie estuvo tenso en toda la cena. «Distraído» describe a quien tiene la cabeza en otro sitio, y «corto» hablaría de la duración."
+    options:
+      - position: 1
+        text: "distraído"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Distraído» describe a quien tiene la cabeza en otro sitio, y lo que recuerda ella es la falta de tensión."
+        hint_specific: "«Distraído» no está presente. ¿Recuerda ausencias o recuerda calma?"
+      - position: 2
+        text: "corto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corto» hablaría de la duración, y la frase dice cómo estuvo la gente, no cuánto duró la cena."
+        hint_specific: "«Corto» mide minutos. ¿Se recuerda la duración o el clima?"
+      - position: 3
+        text: "distendido"
+        is_correct: true
+  - position: 8
+    sentence: "Un comienzo {{blank}} evita que la charla se convierta en un interrogatorio, dice Andrés."
+    hint_general: "Arrancar sin tensión impide que la conversación parezca una lista de preguntas."
+    explanation: "Distendido: arrancar sin tensión cambia toda la charla. «Desatendido» significa que algo queda abandonado, y «vacío» diría que no hay contenido."
+    options:
+      - position: 1
+        text: "distendido"
+        is_correct: true
+      - position: 2
+        text: "desatendido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desatendido» significa que algo queda abandonado, y aquí el comienzo está muy cuidado."
+        hint_specific: "«Desatendido» queda sin cuidar. ¿Ese arranque se cuida o se abandona?"
+      - position: 3
+        text: "vacío"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vacío» diría que no hay contenido, y lo que evita el interrogatorio es la falta de tensión, no la falta de temas."
+        hint_specific: "«Vacío» no tiene nada dentro. ¿Falta contenido o falta tensión?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena de los cuñados"
+    body: "Nadie tenía muchas ganas y la mesa empezó en silencio. Beatriz preguntó por el viaje de uno y por el perro de otro, y a los diez minutos hablaban todos. «Ha sido una cena muy distendida», escribió después en el grupo."
+    before_phrase: "Ha sido una cena muy tranquila, la verdad."
+    after_phrase: "Ha sido una cena muy distendida."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Antes del tema serio"
+    body: "Joaquín tenía que hablar con su padre de la casa del pueblo. Antes de entrar en materia, estuvieron veinte minutos hablando del huerto. «Prefiero empezar distendido y luego ya vamos al asunto», le dijo. Lo resolvieron sin gritos."
+    before_phrase: "Prefiero empezar tranquilo y luego ya hablamos."
+    after_phrase: "Prefiero empezar distendido y luego ir al asunto."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Los dos primeros minutos"
+    body: "La entrevistadora empezó preguntando por el trayecto y por el café de la esquina. Cuando llegaron a las preguntas duras, Silvia ya no tenía las manos frías. «Fue todo muy distendido», contó luego en casa."
+    before_phrase: "Fue todo muy relajado, no como esperaba."
+    after_phrase: "Fue todo muy distendido."
+metrics:
+  zipf_overall: 3.2998
+  dispersion_dp: 0.3147
+  pedantry_proxy: 0.4383
+  family_size: 21
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

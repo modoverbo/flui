@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 128
+slug: "ensayar"
+status: "gated"
+lemma: "ensayar"
+part_of_speech: "verbo"
+syllables:
+  - "en"
+  - "sa"
+  - "yar"
+stressed_syllable: 3
+ipa_latam: "[en.saˈʝar]"
+ipa_es: "[en.saˈʝar]"
+explanation: "Practicar algo en voz alta o de mentira antes de hacerlo de verdad."
+example_sentence: "Ensayé la respuesta difícil dos veces antes de entrar a la entrevista."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dicho en voz alta quita vergüenza: convierte los nervios en algo que se puede entrenar."
+when_not_to_use: "No la uses para aprenderte un texto palabra por palabra; aquí se practica, no se recita."
+collocations:
+  - "ensayar una respuesta"
+  - "ensayar en voz alta"
+  - "ensayar la presentación"
+replaces:
+  - before: "Lo practiqué antes en casa"
+    after: "Lo ensayé antes en casa"
+  - before: "Voy a repasarlo en voz alta"
+    after: "Voy a ensayarlo en voz alta"
+  - before: "Hicimos una prueba antes de la reunión"
+    after: "Ensayamos antes de la reunión"
+family:
+  - "ensayo"
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "practicar"
+  funcion:
+    - "prepararse"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "enseñar"
+    difference: "«Enseñar» es mostrar algo o explicárselo a otra persona; la otra palabra es practicar tú antes del momento real."
+    memory_trick: "Enseñas a otro; practicas para ti."
+  - confused_with: "improvisar"
+    difference: "«Improvisar» es hacerlo sin ninguna preparación; la otra palabra es justo la preparación previa."
+    memory_trick: "Improvisar llega sin plan; practicar llega con plan."
+exercises:
+  - position: 1
+    sentence: "La noche anterior, Camila {{blank}} en voz alta la respuesta sobre el año que estuvo parada."
+    hint_general: "Practica esa respuesta en voz alta antes del momento real."
+    explanation: "Ensayó: practicó la respuesta en voz alta. «Enseñó» sería mostrársela a otro, e «improvisó» sería llegar sin preparación."
+    options:
+      - position: 1
+        text: "enseñó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» es mostrar algo a otra persona, y ella está sola en casa preparando su respuesta."
+        hint_specific: "«Enseñar» necesita alguien delante. ¿Con quién está Camila?"
+      - position: 2
+        text: "ensayó"
+        is_correct: true
+      - position: 3
+        text: "improvisó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisar» es hacerlo sin preparación, y la frase cuenta justo la preparación de la noche anterior."
+        hint_specific: "«Improvisó» va sin preparar. ¿Qué hizo ella la noche antes?"
+  - position: 2
+    sentence: "El equipo quiso {{blank}} la demostración dos veces antes de enseñársela al cliente."
+    hint_general: "Practican la demostración antes de hacerla de verdad."
+    explanation: "Ensayar: practicar la demostración antes de hacerla. «Enseñar» sería mostrarla a alguien, y «machacar» es coloquial y suena a repetir hasta cansar."
+    options:
+      - position: 1
+        text: "ensayar"
+        is_correct: true
+      - position: 2
+        text: "enseñar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» es mostrarla a alguien, y eso ocurre después, cuando llega el cliente."
+        hint_specific: "«Enseñar» pide público. ¿Cuándo llega el cliente según la frase?"
+      - position: 3
+        text: "machacar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Machacar» es coloquial y sugiere repetir algo hasta agotarse, y aquí son solo dos pasadas de prueba."
+        hint_specific: "«Machacar» repite sin parar. ¿Cuántas veces lo hacen?"
+  - position: 3
+    sentence: "Mi hermana y yo quisimos {{blank}} la conversación con nuestro padre antes de sentarnos con él."
+    hint_general: "Practican antes lo que van a decirle."
+    explanation: "Ensayar: practicar antes lo que iban a decirle. «Enseñar» sería mostrarle algo, y «recitar» suena a repetir un texto fijo."
+    options:
+      - position: 1
+        text: "enseñar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» es mostrarle algo a alguien, y ellos practican entre los dos antes de la charla."
+        hint_specific: "«Enseñar» necesita algo que mostrar. ¿Qué hacen antes de sentarse?"
+      - position: 2
+        text: "recitar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recitar» es repetir un texto aprendido, y una charla con tu padre no se aprende de corrido."
+        hint_specific: "«Recitar» repite un texto fijo. ¿Una charla familiar tiene guion?"
+      - position: 3
+        text: "ensayar"
+        is_correct: true
+  - position: 4
+    sentence: "Antes de la feria, Héctor {{blank}} su presentación delante de dos compañeros con el reloj en marcha."
+    hint_general: "Practica la presentación en condiciones parecidas a las reales."
+    explanation: "Ensayó: practicó en condiciones parecidas a las reales. «Enseñó» sería mostrarla sin más, e «improvisó» sería no prepararla."
+    options:
+      - position: 1
+        text: "ensayó"
+        is_correct: true
+      - position: 2
+        text: "enseñó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» es mostrar algo a alguien, y aquí lo importante es el cronómetro y la repetición."
+        hint_specific: "«Enseñó» solo muestra. ¿Para qué pone en marcha el reloj?"
+      - position: 3
+        text: "improvisó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisar» es hacerlo sin preparación, y él prepara la feria con dos compañeros de público."
+        hint_specific: "«Improvisó» llega sin plan. ¿Qué hace Héctor antes de la feria?"
+  - position: 5
+    sentence: "Si {{blank}} la llamada difícil una vez, la segunda te sale la mitad de tensa."
+    hint_general: "Practicarla una vez baja la tensión de la llamada real."
+    explanation: "Ensayas: practicas la llamada una vez. «Enseñas» sería mostrársela a otro, y «pospones» sería dejarla para después."
+    options:
+      - position: 1
+        text: "enseñas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» es mostrar algo a otra persona, y el consejo trata de practicar tú antes de llamar."
+        hint_specific: "«Enseñas» va dirigido a otro. ¿A quién ayuda ese ensayo?"
+      - position: 2
+        text: "ensayas"
+        is_correct: true
+      - position: 3
+        text: "pospones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posponer» es dejar la llamada para más adelante, y aquí se recomienda prepararla, no retrasarla."
+        hint_specific: "«Pospones» retrasa. ¿Qué baja la tensión según la frase?"
+  - position: 6
+    sentence: "La obra del colegio salió bien porque los niños {{blank}} tres tardes en el patio."
+    hint_general: "Practicaron la obra antes del día de la función."
+    explanation: "Ensayaron: practicaron la obra antes de la función. «Enseñaron» sería mostrarla al público, y «jugaron» describe otra cosa."
+    options:
+      - position: 1
+        text: "ensayaron"
+        is_correct: true
+      - position: 2
+        text: "enseñaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» es mostrar la obra al público, y eso ocurre el día de la función, no en el patio."
+        hint_specific: "«Enseñaron» necesita espectadores. ¿Dónde pasan esas tres tardes?"
+      - position: 3
+        text: "jugaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Jugar» describe un rato libre, y estas tres tardes tenían un objetivo concreto: la función."
+        hint_specific: "«Jugaron» no persigue nada. ¿Para qué eran esas tardes?"
+  - position: 7
+    sentence: "Renata recomienda {{blank}} la primera frase, porque es la que más cuesta cuando hay nervios."
+    hint_general: "Aconseja practicar esa primera frase antes del momento real."
+    explanation: "Ensayar: practicar la primera frase antes. «Enseñar» sería mostrársela a otro, y «escribir» la dejaría en el papel, sin voz."
+    options:
+      - position: 1
+        text: "ensayar"
+        is_correct: true
+      - position: 2
+        text: "enseñar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» es mostrarle algo a otra persona, y el consejo es para ti, antes de hablar."
+        hint_specific: "«Enseñar» mira a otro. ¿A quién ayuda practicar la primera frase?"
+      - position: 3
+        text: "escribir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escribir» la frase la deja en el papel, y lo que quita los nervios es decirla en voz alta."
+        hint_specific: "«Escribir» se queda en el cuaderno. ¿Qué parte de ti se entrena al hablar?"
+  - position: 8
+    sentence: "Aquel grupo de teatro {{blank}} los martes en un local prestado, dos horas exactas."
+    hint_general: "Se juntan a practicar la obra cada martes."
+    explanation: "Ensayaba: se juntaba a practicar cada martes. «Enseñaba» sería dar clases, y «tocaba» hablaría de música."
+    options:
+      - position: 1
+        text: "enseñaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enseñar» sería dar clases a alguien, y el grupo se junta a practicar su propia obra."
+        hint_specific: "«Enseñaba» pide un público que aprenda. ¿Quién aprende en ese local?"
+      - position: 2
+        text: "ensayaba"
+        is_correct: true
+      - position: 3
+        text: "tocaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tocar» se usa con instrumentos y música, y aquí se trata de un grupo de teatro."
+        hint_specific: "«Tocaba» pide instrumentos. ¿Qué clase de grupo es?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta del año parado"
+    body: "Camila sabía que la pregunta iba a llegar y decidió no dejarla al azar. Se puso delante del espejo de la cocina y la contestó dos veces en voz alta. «Ensayé esa respuesta hasta que dejó de temblarme la voz», contó después."
+    before_phrase: "La practiqué antes en casa, en voz alta."
+    after_phrase: "Ensayé esa respuesta hasta que dejó de temblarme la voz."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos pasadas con reloj"
+    body: "La demostración duraba siete minutos y en la feria tendrían cinco. Héctor reunió a dos compañeros: «Vamos a ensayarla dos veces con el reloj en marcha». La segunda pasada cayó a cuatro minutos y medio, y sobró tiempo para preguntas."
+    before_phrase: "Hagamos una prueba antes, a ver cuánto dura."
+    after_phrase: "Vamos a ensayarla dos veces con el reloj en marcha."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Antes de hablar con papá"
+    body: "Mi hermana y yo llevábamos meses queriendo hablar con nuestro padre del coche y siempre acabábamos discutiendo. Esta vez lo preparamos: ella hacía de él y yo decía mi parte. «Ensayarlo nos quitó la mitad del miedo», me dijo luego."
+    before_phrase: "Lo practicamos antes entre nosotros."
+    after_phrase: "Ensayarlo nos quitó la mitad del miedo."
+metrics:
+  zipf_overall: 4.6078
+  dispersion_dp: 0.1564
+  pedantry_proxy: 0.5134
+  family_size: 27
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

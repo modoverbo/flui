@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 111
+slug: "aludir"
+status: "gated"
+lemma: "aludir"
+part_of_speech: "verbo"
+syllables:
+  - "a"
+  - "lu"
+  - "dir"
+stressed_syllable: 3
+ipa_latam: "[a.luˈðir]"
+ipa_es: "[a.luˈðir]"
+explanation: "Mencionar algo o a alguien de paso, sin llegar a decir su nombre."
+example_sentence: "El jefe habló de los correos de medianoche sin aludir a nadie en concreto."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Deja hablar del problema sin poner a nadie en el centro de la sala."
+when_not_to_use: "No la uses cuando hace falta un nombre y una fecha; entonces rodear el asunto solo confunde."
+collocations:
+  - "aludir a alguien"
+  - "aludir a un asunto"
+  - "darse por aludido"
+replaces:
+  - before: "No quiero decir nombres, pero ya me entienden"
+    after: "Prefiero no aludir a nadie"
+  - before: "Estaba hablando de lo de ayer sin decirlo"
+    after: "Estaba aludiendo a lo de ayer"
+  - before: "Creo que se refería a mí"
+    after: "Creo que me aludía"
+family:
+  - "alusión"
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "decir"
+  funcion:
+    - "mencionar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "eludir"
+    difference: "«Eludir» es esquivar un asunto para no tratarlo; la otra palabra lo nombra de forma indirecta, pero lo nombra."
+    memory_trick: "Eludir escapa del asunto; nombrarlo de lado lo pone en la mesa."
+  - confused_with: "insinuar"
+    difference: "«Insinuar» deja caer una sospecha sin pruebas; la otra palabra solo evita el nombre de algo que todos conocen."
+    memory_trick: "Insinuar siembra dudas; mencionar de lado ahorra nombres."
+exercises:
+  - position: 1
+    sentence: "Sin dar nombres, Renata {{blank}} a los correos que llegan de madrugada y todos supieron de qué hablaba."
+    hint_general: "Nombra el asunto de lado, sin decir de quién habla."
+    explanation: "Aludió: nombró el asunto de lado. «Eludió» sería esquivarlo, y «acusó» señalaría a una persona concreta."
+    options:
+      - position: 1
+        text: "eludió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» es esquivar un asunto para no tratarlo, y ella lo pone sobre la mesa aunque no dé nombres."
+        hint_specific: "«Eludió» deja el asunto fuera. ¿El equipo entendió de qué hablaba o no?"
+      - position: 2
+        text: "aludió"
+        is_correct: true
+      - position: 3
+        text: "acusó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acusar» señala a una persona concreta, y el inicio de la frase dice que no dio ningún nombre."
+        hint_specific: "«Acusó» necesita un culpable con nombre. ¿Hubo nombres?"
+  - position: 2
+    sentence: "Cuando el director habló de llegar tarde a lo importante, Hugo pensó que lo estaba {{blank}}."
+    hint_general: "Cree que el director habla de él sin decir su nombre."
+    explanation: "Aludiendo: habla de él sin decir su nombre. «Eludiendo» sería pasar de largo, y «delatando» sería descubrirlo ante todos."
+    options:
+      - position: 1
+        text: "aludiendo"
+        is_correct: true
+      - position: 2
+        text: "eludiendo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» sería pasar de largo por el asunto, y el director lo está señalando, aunque sin nombres."
+        hint_specific: "«Eludiendo» esquiva. ¿Por qué se siente señalado Hugo entonces?"
+      - position: 3
+        text: "delatando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Delatar» es descubrir a alguien ante los demás, y el director no dice de quién habla."
+        hint_specific: "«Delatando» descubre a la persona. ¿Se dijo algún nombre?"
+  - position: 3
+    sentence: "Mi abuela decía «lo de tu tío» cada vez que quería {{blank}} a la mudanza sin nombrarla."
+    hint_general: "Quiere tocar el asunto sin decir su nombre."
+    explanation: "Aludir: toca el asunto sin nombrarlo. «Eludir» sería evitarlo del todo, y «soltar» es coloquial y suena a decirlo de golpe."
+    options:
+      - position: 1
+        text: "eludir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» sería evitar el asunto por completo, y ella lo saca cada vez que puede."
+        hint_specific: "«Eludir» calla del todo. ¿Tu abuela callaba o rodeaba?"
+      - position: 2
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» algo es coloquial y sugiere decirlo de golpe, y ella rodea el asunto con cuidado."
+        hint_specific: "«Soltar» va sin filtro. ¿Tu abuela va de frente o da rodeos?"
+      - position: 3
+        text: "aludir"
+        is_correct: true
+  - position: 4
+    sentence: "En su discurso, la responsable del club {{blank}} al esfuerzo de los voluntarios sin citar ni un apellido."
+    hint_general: "Reconoce ese esfuerzo sin decir ningún nombre."
+    explanation: "Aludió: reconoció el esfuerzo sin nombres. «Eludió» sería esquivar el asunto, y «evocó» suena literario y mira al pasado."
+    options:
+      - position: 1
+        text: "aludió"
+        is_correct: true
+      - position: 2
+        text: "eludió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» es esquivar un asunto, y ella le dedica una parte del discurso a ese esfuerzo."
+        hint_specific: "«Eludió» pasa de largo. ¿El esfuerzo aparece en el discurso o no?"
+      - position: 3
+        text: "evocó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Evocar» suena literario y trae recuerdos lejanos, y aquí se reconoce un trabajo reciente."
+        hint_specific: "«Evocó» huele a memorias antiguas. ¿De cuándo es ese esfuerzo?"
+  - position: 5
+    sentence: "Nadie dijo su nombre, pero las tres respuestas {{blank}} al mismo problema del almacén."
+    hint_general: "Las tres respuestas apuntaban al mismo problema sin nombrarlo."
+    explanation: "Aludían: apuntaban al mismo problema sin nombrarlo. «Eludían» sería pasar por encima, y «resolvían» sería arreglarlo."
+    options:
+      - position: 1
+        text: "eludían"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» es pasar por encima del asunto, y las tres respuestas apuntan justo a él."
+        hint_specific: "«Eludían» rodean sin tocar. ¿A qué apuntaban las tres respuestas?"
+      - position: 2
+        text: "aludían"
+        is_correct: true
+      - position: 3
+        text: "resolvían"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resolver» sería arreglar el problema, y la frase solo dice que las respuestas lo señalaban."
+        hint_specific: "«Resolvían» arregla. ¿Alguien arregló algo en esa frase?"
+  - position: 6
+    sentence: "Prefiero {{blank}} al retraso en general antes que señalar a la persona que lo causó."
+    hint_general: "Habla del retraso en general y deja fuera los nombres."
+    explanation: "Aludir: habla del retraso sin nombres. «Eludir» sería no hablar de él, y «denunciar» busca un culpable."
+    options:
+      - position: 1
+        text: "aludir"
+        is_correct: true
+      - position: 2
+        text: "eludir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» sería no hablar del retraso, y la frase dice que sí se habla, solo que sin nombres."
+        hint_specific: "«Eludir» calla el asunto. ¿El retraso se menciona o no?"
+      - position: 3
+        text: "denunciar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Denunciar» suena a oficina o a juzgado y busca un culpable, justo lo que la frase quiere evitar."
+        hint_specific: "«Denunciar» abre un expediente. ¿Se busca un culpable aquí?"
+  - position: 7
+    sentence: "Durante la entrevista, Adriana {{blank}} a un proyecto difícil sin dar el nombre del cliente."
+    hint_general: "Menciona ese proyecto sin decir para quién era."
+    explanation: "Aludió: mencionó el proyecto sin decir el cliente. «Eludió» sería callarlo, y «presumió» sería contarlo para lucirse."
+    options:
+      - position: 1
+        text: "eludió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» sería callar ese proyecto, y ella lo cuenta, solo que sin el nombre del cliente."
+        hint_specific: "«Eludió» esconde el proyecto entero. ¿Qué es lo único que oculta Adriana?"
+      - position: 2
+        text: "aludió"
+        is_correct: true
+      - position: 3
+        text: "presumió"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Presumir» es coloquial y significa contarlo para lucirse, y ella lo menciona con discreción."
+        hint_specific: "«Presumió» saca pecho. ¿Guardar el nombre del cliente es lucirse?"
+  - position: 8
+    sentence: "El correo no culpaba a nadie, aunque {{blank}} con claridad a los turnos del sábado."
+    hint_general: "Señala con claridad el asunto de los turnos, pero sin culpables."
+    explanation: "Aludía: señalaba el asunto sin culpables. «Eludía» sería esquivarlo, e «insinuaba» dejaría caer una sospecha."
+    options:
+      - position: 1
+        text: "eludía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eludir» sería esquivar los turnos, y el correo los señala con claridad."
+        hint_specific: "«Eludía» evita. Relee el final: ¿con qué claridad aparecen los turnos?"
+      - position: 2
+        text: "insinuaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insinuar» deja caer una sospecha sin pruebas, y aquí el asunto se nombra abiertamente, solo que sin culpables."
+        hint_specific: "«Insinuaba» siembra dudas. ¿Hay dudas sobre de qué habla el correo?"
+      - position: 3
+        text: "aludía"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los correos de medianoche"
+    body: "El equipo tenía una costumbre mala y nadie quería señalar a quien la empezó. Renata lo planteó así: «Voy a aludir a un hábito, no a una persona: los correos de medianoche». Nadie se sintió atacado y la costumbre cambió."
+    before_phrase: "No quiero decir nombres, pero ya se entiende a qué me refiero."
+    after_phrase: "Voy a aludir a un hábito, no a una persona."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo de tu tío"
+    body: "Mi abuela tenía una fórmula para todo lo incómodo: «lo de tu tío». Nunca daba detalles y todos entendíamos. Años después mi madre me lo explicó: «Aludía a la mudanza para no hacerle daño a nadie en la mesa»."
+    before_phrase: "Hablaba de eso sin decirlo nunca."
+    after_phrase: "Aludía a la mudanza para no hacer daño."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Sin decir el cliente"
+    body: "Adriana quería contar su mejor proyecto, pero había firmado un acuerdo de confidencialidad. Resolvió así: «Puedo aludir al sector y al tamaño, no al cliente». Contó el problema, la solución y los números, y la entrevistadora quedó satisfecha."
+    before_phrase: "Es de una empresa que no puedo nombrar."
+    after_phrase: "Puedo aludir al sector y al tamaño."
+metrics:
+  zipf_overall: 4.1213
+  dispersion_dp: 0.1677
+  pedantry_proxy: 0.5277
+  family_size: 10
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

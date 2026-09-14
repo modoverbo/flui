@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2103
+slug: "viable"
+status: "draft"
+lemma: "viable"
+part_of_speech: "adjetivo"
+syllables: ["via", "ble"]
+stressed_syllable: 1
+ipa_latam: "[ˈbja.βle]"
+ipa_es: "[ˈbja.βle]"
+explanation: "Que se puede llevar a cabo de verdad, con el tiempo, el dinero y la gente que hay."
+example_sentence: "Me encantó la idea, aunque con dos personas y un mes no la veo viable."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para decir que sí sin prometer de más: hablas de plazos y de gente, no de gustos."
+when_not_to_use: "No la uses para decir que algo te gusta o que conviene: solo mide si se puede hacer."
+collocations:
+  - "una opción viable"
+  - "un plan viable"
+  - "hacerlo viable"
+replaces:
+  - before: "Eso sí se puede hacer"
+    after: "Eso es viable"
+  - before: "Suena bien, pero no sé si podremos"
+    after: "Suena bien, pero no sé si es viable"
+  - before: "Con ese presupuesto, ni de broma"
+    after: "Con ese presupuesto no es viable"
+family: ["viabilidad"]
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "decir-que-no"
+    relevance: 2
+tags:
+  comodin: ["poder"]
+  funcion: ["valorar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "visible"
+    difference: "«Visible» es lo que se ve a simple vista; esto mide si algo se puede hacer con los recursos que hay."
+    memory_trick: "Lo visible se ve; lo viable se hace."
+  - confused_with: "fiable"
+    difference: "«Fiable» es aquello en lo que confías porque no falla; aquí se mide si la cosa se puede llevar a cabo."
+    memory_trick: "En lo fiable confías; lo viable lo sacas adelante."
+exercises:
+  - position: 1
+    sentence: "Con el equipo que queda y tres semanas por delante, la única propuesta {{blank}} es la más corta."
+    hint_general: "Es la única que cabe en el tiempo y con la gente que hay."
+    explanation: "Viable: es la única que cabe en el tiempo y con la gente disponible. «Visible» habla de lo que se ve, y «rentable» habla de dinero ganado, no de si se puede hacer."
+    options:
+      - position: 1
+        text: "visible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Visible» dice que algo se ve a simple vista; las tres propuestas se ven igual de bien, el problema es el tiempo."
+        hint_specific: "«Visible» va de lo que se ve. ¿El problema aquí es verla o poder hacerla?"
+      - position: 2
+        text: "viable"
+        is_correct: true
+      - position: 3
+        text: "rentable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rentable» mide el dinero que deja algo; la frase no habla de ganancias, sino de semanas y personas."
+        hint_specific: "Rentable mide ganancias. ¿La frase habla de dinero ganado o de tiempo?"
+  - position: 2
+    sentence: "El plan sonaba precioso, pero con ese presupuesto no era {{blank}}."
+    hint_general: "El dinero disponible no daba para llevarlo a cabo."
+    explanation: "Viable: el dinero no daba para llevarlo a cabo. «Visible» no dice nada del presupuesto, y «barato» solo mide el precio, no si el plan se sostiene."
+    options:
+      - position: 1
+        text: "barato"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Barato» mide cuánto cuesta algo; un plan puede ser caro y aun así salir adelante si hay dinero para él."
+        hint_specific: "Barato compara precios. ¿La frase compara precios o mide si se puede hacer?"
+      - position: 2
+        text: "visible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Visible» es lo que se ve; el presupuesto no hace que un plan se vea menos, hace que no se pueda pagar."
+        hint_specific: "«Visible» va de lo que se ve. ¿Qué impide aquí el presupuesto?"
+      - position: 3
+        text: "viable"
+        is_correct: true
+  - position: 3
+    sentence: "Camilo presentó dos rutas {{blank}} y una tercera que necesitaba el doble de gente."
+    hint_general: "Dos de ellas se pueden hacer con el personal actual."
+    explanation: "Viables: dos rutas se pueden hacer con el personal actual. «Fiables» hablaría de confianza, y «factibles» diría casi lo mismo, pero con tono de informe técnico."
+    options:
+      - position: 1
+        text: "viables"
+        is_correct: true
+      - position: 2
+        text: "fiables"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fiable» es lo que no te falla; aquí lo que separa a las rutas es cuánta gente hacen falta, no la confianza."
+        hint_specific: "«Fiable» habla de confianza. ¿Qué separa a la tercera ruta de las otras dos?"
+      - position: 3
+        text: "factibles"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Factible» significa algo parecido, pero suena a informe técnico; presentando rutas a un equipo resulta frío."
+        hint_specific: "«Factible» suena a informe técnico. ¿Encaja al hablarle a tu equipo?"
+  - position: 4
+    sentence: "Antes de prometer una fecha, Beatriz preguntó si el calendario era {{blank}} con las personas que hay."
+    hint_general: "Quiere saber si ese calendario se puede cumplir con el personal actual."
+    explanation: "Viable: quiere saber si el calendario se puede cumplir. «Fiable» hablaría de confiar en él, y «flexible» diría que se puede mover, que es otra cosa."
+    options:
+      - position: 1
+        text: "fiable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fiable» es aquello en lo que confías porque no falla; Beatriz no pregunta si confía, pregunta si se puede cumplir."
+        hint_specific: "«Fiable» habla de confianza. ¿Qué está calculando Beatriz antes de prometer?"
+      - position: 2
+        text: "flexible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Flexible» dice que las fechas se pueden mover; ella pregunta otra cosa: si se pueden cumplir tal como están."
+        hint_specific: "Flexible significa que se puede mover. ¿Pregunta si se mueve o si se cumple?"
+      - position: 3
+        text: "viable"
+        is_correct: true
+  - position: 5
+    sentence: "Abrir los sábados solo será {{blank}} si contratamos a dos personas más."
+    hint_general: "Sin esas dos personas, la idea no se puede sostener."
+    explanation: "Viable: sin esas dos personas la idea no se sostiene. «Variable» habla de algo que cambia, y «sostenible» mira si aguanta en el tiempo, no si arranca."
+    options:
+      - position: 1
+        text: "variable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Variable» describe algo que cambia de un día para otro; abrir los sábados no cambia solo, hace falta gente."
+        hint_specific: "«Variable» habla de algo que cambia. ¿La frase habla de cambios o de personal?"
+      - position: 2
+        text: "sostenible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sostenible» mira si algo aguanta a lo largo del tiempo; aquí ni siquiera se puede empezar sin esas dos personas."
+        hint_specific: "Sostenible mira el largo plazo. ¿El problema es aguantar o arrancar?"
+      - position: 3
+        text: "viable"
+        is_correct: true
+  - position: 6
+    sentence: "El taller de los martes no era {{blank}}: nadie del grupo podía llegar antes de las siete."
+    hint_general: "Con esos horarios, el taller no se podía llevar a cabo."
+    explanation: "Viable: con esos horarios el taller no se podía hacer. «Visible» no tiene que ver con horarios, y «cómodo» solo dice que resulta incómodo, no imposible."
+    options:
+      - position: 1
+        text: "cómodo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cómodo» dice que algo cuesta un poco; la frase va más lejos, porque nadie podía llegar a esa hora."
+        hint_specific: "Cómodo mide molestias. ¿El grupo estaba incómodo o directamente no llegaba?"
+      - position: 2
+        text: "viable"
+        is_correct: true
+      - position: 3
+        text: "visible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Visible» es lo que se ve; un horario que no le sirve a nadie no es un problema de vista."
+        hint_specific: "«Visible» va de ver. ¿El problema de los martes es de vista o de horario?"
+  - position: 7
+    sentence: "Martín quería mudarse en enero, pero con los plazos del banco eso no parecía {{blank}}."
+    hint_general: "Los plazos del banco no dejaban espacio para hacerlo en enero."
+    explanation: "Viable: los plazos del banco no dejaban hacerlo en enero. «Variable» hablaría de algo que cambia, y «realizable» suena a palabra de manual."
+    options:
+      - position: 1
+        text: "variable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Variable» describe lo que cambia de un momento a otro; los plazos del banco son fijos, y ese es justo el problema."
+        hint_specific: "«Variable» va de cambios. ¿Los plazos cambian o son los que son?"
+      - position: 2
+        text: "realizable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Realizable» significa algo parecido, pero suena a palabra de manual; hablando de una mudanza resulta rara."
+        hint_specific: "«Realizable» suena a manual. ¿Se lo dirías así a un amigo que se muda?"
+      - position: 3
+        text: "viable"
+        is_correct: true
+  - position: 8
+    sentence: "Entre las tres propuestas, la única {{blank}} este trimestre era la que no tocaba el sistema."
+    hint_general: "Solo una cabía en el trimestre sin obras mayores."
+    explanation: "Viable: solo una cabía en el trimestre. «Visible» no aporta nada sobre plazos, y «sencilla» habla de dificultad, no de si entra en el calendario."
+    options:
+      - position: 1
+        text: "viable"
+        is_correct: true
+      - position: 2
+        text: "sencilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sencilla» mide lo difícil que es algo; una propuesta puede ser difícil y aun así caber en el trimestre."
+        hint_specific: "Sencilla mide dificultad. ¿Aquí se compara dificultad o calendario?"
+      - position: 3
+        text: "visible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Visible» es lo que se ve; las tres propuestas estaban a la vista, y solo una cabía en el plazo."
+        hint_specific: "«Visible» va de ver. ¿Alguna propuesta estaba escondida?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La idea y el calendario"
+    body: "La propuesta ocupaba doce páginas y emocionó a todos. Silvia esperó a que bajara el entusiasmo: «Me gusta mucho. Con cuatro personas y hasta marzo, ¿es viable?». Nadie contestó enseguida. Al día siguiente llegó una versión más corta, y esa sí salió adelante."
+    before_phrase: "Está muy bien, pero no sé si podremos."
+    after_phrase: "Me gusta mucho, ¿pero es viable?"
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El viaje de los seis"
+    body: "El grupo llevaba dos semanas soñando con tres países en diez días. Hugo abrió el mapa y dijo: «Con seis personas y un coche, lo viable son dos países». Hubo protestas, y luego un acuerdo. Volvieron descansados, cosa rara."
+    before_phrase: "Eso no lo vamos a poder hacer."
+    after_phrase: "Con un coche, lo viable son dos países."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La mudanza de enero"
+    body: "Su madre insistía en adelantar la mudanza. Ximena la escuchó entera y luego dijo: «Te entiendo, y me gustaría. Con los plazos del banco no es viable en enero; en marzo sí». Su madre suspiró, pero no discutió: era un número, no un capricho."
+    before_phrase: "Es que no se puede, mamá."
+    after_phrase: "En enero no es viable; en marzo sí."
+metrics:
+  zipf_overall: 4.2877
+  dispersion_dp: 0.1239
+  pedantry_proxy: 0.4745
+  family_size: 0
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

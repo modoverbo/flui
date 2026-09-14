@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 105
+slug: "objetar"
+status: "draft"
+lemma: "objetar"
+part_of_speech: "verbo"
+syllables: ["ob", "je", "tar"]
+stressed_syllable: 3
+ipa_latam: "[oβ.xeˈtar]"
+ipa_es: "[oβ.xeˈtar]"
+explanation: "Decir en voz alta qué parte de una propuesta no te convence y por qué."
+example_sentence: "Nadie objetó nada, así que la propuesta salió adelante en cinco minutos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Suena firme y educado a la vez: señala el punto, no a la persona que lo propuso."
+when_not_to_use: "No la uses para un malestar general sin motivo claro; pide un punto concreto y una razón."
+collocations:
+  - "objetar algo"
+  - "objetar una propuesta"
+  - "no tener nada que objetar"
+replaces:
+  - before: "Quiero poner una pega a eso"
+    after: "Quiero objetar algo a eso"
+  - before: "No estoy de acuerdo con el punto dos"
+    after: "Quiero objetar el punto dos"
+  - before: "¿Alguien tiene algo en contra?"
+    after: "¿Alguien quiere objetar algo?"
+family: ["objeción"]
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin: ["decir"]
+  funcion: ["discrepar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "obviar"
+    difference: "«Obviar» es pasar algo por alto y dejarlo fuera; la otra palabra lo pone sobre la mesa con razones."
+    memory_trick: "Obviar salta el punto; la pega lo pone justo en el centro."
+  - confused_with: "protestar"
+    difference: "«Protestar» es quejarse en voz alta, a veces sin razones; la otra palabra señala un punto concreto y explica el porqué."
+    memory_trick: "Protestas por el ruido; señalas la cifra."
+exercises:
+  - position: 1
+    sentence: "Cuando Julián terminó de leer el plan, Marcos levantó la mano para {{blank}} el punto del presupuesto."
+    hint_general: "Señala en voz alta el punto que no le convence."
+    explanation: "Objetar: señala en voz alta el punto que no le convence. «Obviar» sería pasarlo por alto, y «refunfuñar» es quejarse entre dientes."
+    options:
+      - position: 1
+        text: "obviar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obviar» es pasar algo por alto, y él levanta la mano justo para señalar ese punto."
+        hint_specific: "«Obviar» deja el punto fuera. ¿Para qué levanta la mano Marcos?"
+      - position: 2
+        text: "objetar"
+        is_correct: true
+      - position: 3
+        text: "refunfuñar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Refunfuñar» es coloquial y sugiere quejarse entre dientes; él habla claro y delante de todos."
+        hint_specific: "«Refunfuñar» se hace por lo bajo. ¿Marcos habla bajo o levanta la mano?"
+  - position: 2
+    sentence: "El contrato parecía cerrado, pero Sara quiso {{blank}} la cláusula de los plazos antes de firmar."
+    hint_general: "Pone sobre la mesa lo que no le encaja de esa parte del contrato."
+    explanation: "Objetar: pone sobre la mesa lo que no le encaja. «Obviar» sería saltarse la cláusula, y «aprobar» sería darle el visto bueno."
+    options:
+      - position: 1
+        text: "objetar"
+        is_correct: true
+      - position: 2
+        text: "obviar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obviar» la cláusula sería saltársela, y ella quiere hablar precisamente de ella."
+        hint_specific: "«Obviar» pasa de largo. ¿Sara pasa de largo o se detiene?"
+      - position: 3
+        text: "aprobar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aprobar» es dar el visto bueno, y la frase dice que algo no le encaja antes de firmar."
+        hint_specific: "«Aprobar» da luz verde. ¿Por qué se frena entonces la firma?"
+  - position: 3
+    sentence: "Nadie {{blank}} nada cuando Carolina propuso adelantar la entrega, y eso la dejó intranquila."
+    hint_general: "Nadie puso ni una pega razonada a la propuesta."
+    explanation: "Objetó: nadie puso una pega razonada. «Obvió» sería dejar algo fuera a propósito, y «protestó» es quejarse sin dar razones."
+    options:
+      - position: 1
+        text: "obvió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obviar» es dejar algo fuera a propósito, y la frase cuenta que no hubo ni una pega."
+        hint_specific: "«Obvió» supone que alguien apartó un asunto. ¿Alguien habló siquiera?"
+      - position: 2
+        text: "objetó"
+        is_correct: true
+      - position: 3
+        text: "protestó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Protestar» es quejarse en voz alta por el malestar propio, y lo que echa en falta Carolina son razones."
+        hint_specific: "«Protestó» expresa enfado. ¿Qué le habría gustado oír a Carolina?"
+  - position: 4
+    sentence: "Mi madre me escuchó el plan entero y solo {{blank}} el precio del billete."
+    hint_general: "De todo el plan, solo le puso una pega concreta."
+    explanation: "Objetó: le puso una pega concreta al precio. «Objetivó» sería convertirlo en un dato medible, y «gruñó» es un ruido de mal humor."
+    options:
+      - position: 1
+        text: "objetivó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Objetivar» es convertir algo en un dato medible, y ella no mide nada: le pone una pega al precio."
+        hint_specific: "«Objetivó» transforma opiniones en números. ¿Tu madre midió algo?"
+      - position: 2
+        text: "gruñó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gruñir» es coloquial y describe un ruido de mal humor, no una pega concreta y razonada."
+        hint_specific: "«Gruñó» es un sonido, no un argumento. ¿Qué señaló exactamente ella?"
+      - position: 3
+        text: "objetó"
+        is_correct: true
+  - position: 5
+    sentence: "En la entrevista, Emilio explicó que prefiere {{blank}} en el momento antes que callarse y guardar rencor."
+    hint_general: "Prefiere decir su pega a tiempo en vez de guardársela."
+    explanation: "Objetar: dice su pega a tiempo. «Obviar» sería dejarla fuera, y «estallar» sugiere perder los nervios de golpe."
+    options:
+      - position: 1
+        text: "objetar"
+        is_correct: true
+      - position: 2
+        text: "obviar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obviar» es dejar el asunto fuera, justo lo que él dice que no quiere hacer."
+        hint_specific: "«Obviar» esconde el asunto. ¿Qué es lo que Emilio evita?"
+      - position: 3
+        text: "estallar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Estallar» sugiere perder los nervios de golpe, y él habla de decir las cosas a tiempo y con calma."
+        hint_specific: "«Estallar» llega tarde y fuerte. ¿Emilio habla de calma o de explosión?"
+  - position: 6
+    sentence: "La comisión aceptó el diseño entero; solo la arquitecta {{blank}} la altura de la fachada."
+    hint_general: "Fue la única que puso una pega, y sobre un detalle concreto."
+    explanation: "Objetó: fue la única que puso una pega concreta. «Obvió» sería pasarla por alto, y «elogió» sería alabar el diseño."
+    options:
+      - position: 1
+        text: "obvió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obviar» es pasar algo por alto, y la arquitecta es la única que se detiene en la altura."
+        hint_specific: "«Obvió» mira hacia otro lado. ¿Qué hace ella con la fachada?"
+      - position: 2
+        text: "elogió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elogiar» es alabar, y la frase la separa del resto justo porque algo no le cuadra."
+        hint_specific: "«Elogió» va a favor. ¿Por qué la frase la pone aparte del grupo?"
+      - position: 3
+        text: "objetó"
+        is_correct: true
+  - position: 7
+    sentence: "Si alguien quiere {{blank}} algo, Ramiro deja siempre dos minutos al final de la reunión."
+    hint_general: "El hueco del final sirve para poner pegas con razones."
+    explanation: "Objetar: el hueco sirve para poner pegas con razones. «Quejarse» apunta al malestar propio, y «obviar» sería saltarse el asunto."
+    options:
+      - position: 1
+        text: "quejarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Quejarse» apunta al malestar de uno mismo, y esos dos minutos sirven para señalar fallos del plan."
+        hint_specific: "«Quejarse» habla de cómo te sientes. ¿Para qué se reservan esos minutos?"
+      - position: 2
+        text: "obviar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obviar» es saltarse algo, y ese hueco del final existe justo para lo contrario."
+        hint_specific: "«Obviar» calla el asunto. ¿Ramiro busca silencio o palabras?"
+      - position: 3
+        text: "objetar"
+        is_correct: true
+  - position: 8
+    sentence: "Ximena {{blank}} dos cifras del informe y, gracias a eso, el equipo corrigió la tabla a tiempo."
+    hint_general: "Dijo en voz alta que dos cifras no cuadraban."
+    explanation: "Objetó: dijo que dos cifras no cuadraban. «Obvió» sería dejarlas fuera, y «anotó» sería solo apuntarlas."
+    options:
+      - position: 1
+        text: "obvió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obviar» sería dejar esas cifras fuera, y ella las señaló para que alguien las revisara."
+        hint_specific: "«Obvió» las habría dejado pasar. ¿Se corrigió la tabla o no?"
+      - position: 2
+        text: "anotó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anotar» es apuntar algo en un papel, y lo que cambió la tabla fue decirlo en voz alta."
+        hint_specific: "«Anotó» se queda en su cuaderno. ¿Cómo se entera el equipo?"
+      - position: 3
+        text: "objetó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos minutos al final"
+    body: "Vicente cerraba cada reunión igual: «Quedan dos minutos. ¿Alguien quiere objetar algo?». Casi nunca salía nada, pero el día del presupuesto salió una cifra mal puesta. Esos dos minutos ahorraron una semana de trabajo."
+    before_phrase: "¿Nadie tiene nada en contra?"
+    after_phrase: "¿Alguien quiere objetar algo?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El precio del billete"
+    body: "Silvia contó el plan del viaje de fin de curso de su hijo con todo detalle. Su madre escuchó hasta el final y luego dijo una sola cosa: «Solo objeto el precio del billete; lo demás me parece muy bien». Buscaron otro vuelo juntas."
+    before_phrase: "A ver, lo único que le veo mal es el precio."
+    after_phrase: "Solo objeto el precio del billete."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Decirlo a tiempo"
+    body: "Le preguntaron a Ernesto cómo reaccionaba ante una decisión que no compartía. Contestó sin adornos: «Prefiero objetar en el momento, con un dato en la mano, antes que callarme y quejarme un mes después»."
+    before_phrase: "Pues digo lo que pienso, supongo."
+    after_phrase: "Prefiero objetar en el momento, con un dato en la mano."
+metrics:
+  zipf_overall: 5.1353
+  dispersion_dp: 0.1548
+  pedantry_proxy: 0.4490
+  family_size: 67
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 114
+slug: "recalcar"
+status: "draft"
+lemma: "recalcar"
+part_of_speech: "verbo"
+syllables: ["re", "cal", "car"]
+stressed_syllable: 3
+ipa_latam: "[re.kalˈkar]"
+ipa_es: "[re.kalˈkar]"
+explanation: "Insistir en una idea con fuerza para que quede bien clara."
+example_sentence: "Antes de terminar quiero recalcar que la fecha no se mueve."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala una sola vez por charla: si todo se subraya, ya no destaca nada."
+when_not_to_use: "No la uses para echar algo en cara; señala la idea, nunca a la persona que falló."
+collocations:
+  - "recalcar una idea"
+  - "recalcar un dato"
+  - "recalcar la importancia"
+replaces:
+  - before: "Lo digo otra vez porque es importante"
+    after: "Quiero recalcar esto porque es importante"
+  - before: "Que quede muy claro: el jueves"
+    after: "Recalco que es el jueves"
+  - before: "Insisto mucho en esto"
+    after: "Lo recalco: esto no cambia"
+family: []
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin: ["decir"]
+  funcion: ["enfatizar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "recargar"
+    difference: "«Recargar» es volver a llenar algo o ponerle demasiado encima; la otra palabra le da relieve a una idea, no peso."
+    memory_trick: "Recargas una batería; destacas una idea."
+  - confused_with: "reprochar"
+    difference: "«Reprochar» echa algo en cara a una persona; la otra palabra solo insiste en una idea."
+    memory_trick: "El reproche mira a la persona; la insistencia mira a la idea."
+exercises:
+  - position: 1
+    sentence: "Al cerrar la presentación, Marta quiso {{blank}} el único dato que la sala debía llevarse: el plazo."
+    hint_general: "Insiste con fuerza en el dato que debe quedar grabado."
+    explanation: "Recalcar: insiste con fuerza en el dato clave. «Recargar» sería llenar la charla de más, y «susurrar» la dejaría sin fuerza."
+    options:
+      - position: 1
+        text: "recargar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» es llenar algo de más, y ella quiere que la sala se lleve un solo dato, no muchos."
+        hint_specific: "«Recargar» añade peso. ¿Cuántos datos quiere dejar Marta?"
+      - position: 2
+        text: "recalcar"
+        is_correct: true
+      - position: 3
+        text: "susurrar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Susurrar» es decirlo en voz muy baja, y el dato tiene que quedar grabado en toda la sala."
+        hint_specific: "«Susurrar» apenas se oye. ¿Eso ayuda a que algo quede grabado?"
+  - position: 2
+    sentence: "El correo era corto, pero Ernesto {{blank}} dos veces que la reserva caduca el viernes."
+    hint_general: "Insiste dos veces en la fecha para que nadie la pase por alto."
+    explanation: "Recalcó: insistió en la fecha para que no se pasara por alto. «Recalentó» es volver a calentar comida, y «reprochó» echaría algo en cara."
+    options:
+      - position: 1
+        text: "recalentó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recalentar» es volver a calentar algo, normalmente comida, y aquí se habla de una fecha en un correo."
+        hint_specific: "«Recalentó» pide un horno. ¿Qué hay dentro de ese correo?"
+      - position: 2
+        text: "recalcó"
+        is_correct: true
+      - position: 3
+        text: "reprochó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reprochar» es echar algo en cara a alguien, y el correo solo avisa de una fecha."
+        hint_specific: "«Reprochó» necesita una culpa previa. ¿Alguien hizo algo mal aquí?"
+  - position: 3
+    sentence: "Mi padre siempre {{blank}} lo mismo antes de un viaje largo: parar cada dos horas."
+    hint_general: "Insiste siempre en el mismo consejo antes de salir."
+    explanation: "Recalca: insiste siempre en el mismo consejo. «Recarga» es volver a llenar algo, y «machaca» es coloquial y suena a cansar con el tema."
+    options:
+      - position: 1
+        text: "recalca"
+        is_correct: true
+      - position: 2
+        text: "recarga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» es volver a llenar algo, como un móvil o un depósito, y aquí se repite un consejo."
+        hint_specific: "«Recarga» llena un depósito. ¿Qué le da tu padre antes del viaje?"
+      - position: 3
+        text: "machaca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Machacar» es coloquial y sugiere repetir hasta cansar, y la frase describe un consejo dicho con cariño."
+        hint_specific: "«Machaca» agota al que escucha. ¿La escena suena pesada o cariñosa?"
+  - position: 4
+    sentence: "En su charla sobre seguridad, Leonor {{blank}} que el casco se ajusta antes de subir, no después."
+    hint_general: "Insiste con fuerza en el momento exacto de ajustar el casco."
+    explanation: "Recalcó: insistió con fuerza en ese momento. «Recargó» sería llenar algo de nuevo, y «mencionó» sería nombrarlo de pasada."
+    options:
+      - position: 1
+        text: "recargó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» es volver a llenar algo, y un consejo de seguridad no se llena: se subraya."
+        hint_specific: "«Recargó» tiene que ver con llenar. ¿Qué se llena en una charla?"
+      - position: 2
+        text: "mencionó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mencionar» es nombrar algo de pasada, y el detalle del momento es justo lo que no puede pasar de largo."
+        hint_specific: "«Mencionó» pasa de puntillas. ¿Un consejo de seguridad puede pasar de puntillas?"
+      - position: 3
+        text: "recalcó"
+        is_correct: true
+  - position: 5
+    sentence: "Cuando alguien preguntó por el precio, Hugo {{blank}} que el montaje ya venía incluido."
+    hint_general: "Insiste en que ese punto ya estaba dentro del precio."
+    explanation: "Recalcó: insistió en que el montaje estaba incluido. «Recargó» sería subir el precio, y «rezongó» es coloquial y suena a queja entre dientes."
+    options:
+      - position: 1
+        text: "recalcó"
+        is_correct: true
+      - position: 2
+        text: "recargó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» un precio es subirlo, y él dice justo lo contrario: que ese servicio no cuesta más."
+        hint_specific: "«Recargó» sube la cuenta. ¿Sube o tranquiliza lo que dice Hugo?"
+      - position: 3
+        text: "rezongó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rezongar» es coloquial y describe una queja entre dientes, y él responde con claridad a una pregunta."
+        hint_specific: "«Rezongó» suena a protesta baja. ¿Hugo protesta o informa?"
+  - position: 6
+    sentence: "La guía del museo {{blank}} tres veces que no se puede tocar la piedra, y aun así alguien la tocó."
+    hint_general: "Insiste tres veces en la misma norma para que se cumpla."
+    explanation: "Recalcó: insistió tres veces en la norma. «Recargó» es volver a llenar algo, y «martilleó» es coloquial y suena a golpe repetido."
+    options:
+      - position: 1
+        text: "recargó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» es volver a llenar algo, y una norma no se llena: se repite con fuerza."
+        hint_specific: "«Recargó» llena de nuevo. ¿Qué se repitió tres veces?"
+      - position: 2
+        text: "martilleó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Martillear» es coloquial y sugiere repetir la misma frase hasta molestar, y ella solo cumplía su trabajo."
+        hint_specific: "«Martilleó» suena a taladro. ¿Encaja con una guía de museo?"
+      - position: 3
+        text: "recalcó"
+        is_correct: true
+  - position: 7
+    sentence: "En la entrevista, Adriana {{blank}} que su equipo entregó a tiempo los seis meses seguidos."
+    hint_general: "Insiste en ese dato porque sostiene todo su ejemplo."
+    explanation: "Recalcó: insistió en el dato que sostiene su ejemplo. «Recargó» sería llenar algo de nuevo, y «presumió» suena a lucirse."
+    options:
+      - position: 1
+        text: "recalcó"
+        is_correct: true
+      - position: 2
+        text: "recargó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» es volver a llenar algo, y un dato de una entrevista no se llena: se destaca."
+        hint_specific: "«Recargó» llena. ¿Qué hizo Adriana con ese dato?"
+      - position: 3
+        text: "presumió"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Presumir» es coloquial y sugiere lucirse, y ella aporta una cifra concreta y verificable."
+        hint_specific: "«Presumió» saca pecho. ¿Seis meses medidos son alarde o dato?"
+  - position: 8
+    sentence: "Si {{blank}} una sola idea al final, el público se lleva algo a casa."
+    hint_general: "Insistir en una sola idea al cierre deja huella en quien escucha."
+    explanation: "Recalcas: insistes en una sola idea al cierre. «Recargas» sería llenar el final de más, y «alargas» daría más minutos, no más fuerza."
+    options:
+      - position: 1
+        text: "recargas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» el final sería llenarlo de más, y la frase habla de quedarse con una sola idea."
+        hint_specific: "«Recargas» amontona. ¿Cuántas ideas propone la frase?"
+      - position: 2
+        text: "recalcas"
+        is_correct: true
+      - position: 3
+        text: "alargas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alargar» es dar más minutos, y lo que deja huella no es el tiempo, sino la fuerza del cierre."
+        hint_specific: "«Alargas» añade minutos. ¿Más minutos dejan más huella?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Una idea al cierre"
+    body: "La presentación tenía dieciocho diapositivas y Marta sabía que nadie recordaría dieciocho cosas. Cerró así: «Si solo se llevan una frase, quiero recalcar esta: el plazo es el 30 y no se mueve». Tres semanas después seguían citando la fecha."
+    before_phrase: "Y esto lo repito porque es lo importante."
+    after_phrase: "Quiero recalcar esta idea: el plazo es el 30."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Parar cada dos horas"
+    body: "Cada vez que salgo de viaje, mi padre me acompaña al coche y dice lo mismo. «Te lo recalco: para cada dos horas, aunque no estés cansado». Lo dice con la mano en la ventanilla, y por eso paro siempre."
+    before_phrase: "Te lo digo otra vez porque es importante."
+    after_phrase: "Te lo recalco: para cada dos horas."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Seis meses seguidos"
+    body: "Adriana contó su proyecto sin adornos y luego se detuvo un segundo. «Quiero recalcar un dato: entregamos a tiempo seis meses seguidos, con el mismo equipo». La entrevistadora subrayó esa línea en su cuaderno."
+    before_phrase: "Ah, y lo de los seis meses es importante."
+    after_phrase: "Quiero recalcar un dato: seis meses seguidos."
+metrics:
+  zipf_overall: 4.5437
+  dispersion_dp: 0.2016
+  pedantry_proxy: 0.6656
+  family_size: 42
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 324
+slug: "coincidir"
+status: "draft"
+lemma: "coincidir"
+part_of_speech: "verbo"
+syllables: ["coin", "ci", "dir"]
+stressed_syllable: 3
+ipa_latam: "[koin.siˈðir]"
+ipa_es: "[koin.θiˈðir]"
+explanation: "Estar dos personas en el mismo lugar o momento sin haberlo planeado."
+example_sentence: "Coincidimos en la panadería y acabamos hablando media hora."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Cuenta el encuentro sin adornos: «Coincidimos en el tren» resume en dos palabras cómo pasó."
+when_not_to_use: "No la uses si ya habías quedado con esa persona: eso no es casualidad, es una cita."
+collocations:
+  - "coincidir en un sitio"
+  - "coincidir con alguien"
+  - "volver a coincidir"
+replaces:
+  - before: "Nos encontramos por casualidad"
+    after: "Coincidimos por casualidad"
+  - before: "Me lo crucé en el ascensor"
+    after: "Coincidí con él en el ascensor"
+  - before: "Estuvimos en la misma fiesta"
+    after: "Coincidimos en la misma fiesta"
+family: ["coincidencia"]
+themes:
+  - slug: "conversacion-cotidiana"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 1
+tags:
+  comodin: ["encontrarse"]
+  funcion: ["contar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "incidir"
+    difference: "«Incidir» es influir en algo o insistir en un punto; la otra palabra es estar en el mismo sitio que alguien sin haberlo buscado."
+    memory_trick: "Incides cuando influyes; coincides cuando te cruzas."
+  - confused_with: "quedar"
+    difference: "«Quedar» con alguien es acordar antes la hora y el sitio; aquí el encuentro ocurre sin que nadie lo haya preparado."
+    memory_trick: "Quedas porque lo decides; coincides porque pasa."
+exercises:
+  - position: 1
+    sentence: "Ayer Cecilia {{blank}} con su vecina en la cola del pan y las dos se rieron de la sorpresa."
+    hint_general: "Se encontraron sin buscarse y les hizo gracia el azar."
+    explanation: "Coincidió: se encontraron sin buscarse. «Incidió» es influir o insistir en algo, y «quedó» significa que lo habrían acordado antes."
+    options:
+      - position: 1
+        text: "incidió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incidir» es influir en algo o insistir en un punto, y aquí solo se cruzan dos vecinas en una cola."
+        hint_specific: "«Incidir» influye o insiste. ¿Cecilia influye en algo o se cruza con alguien?"
+      - position: 2
+        text: "coincidió"
+        is_correct: true
+      - position: 3
+        text: "quedó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Quedar» con alguien es acordarlo antes, y la frase dice que las dos se sorprendieron."
+        hint_specific: "«Quedar» se acuerda por adelantado. ¿Por qué se sorprenden si estaba pactado?"
+  - position: 2
+    sentence: "Álvaro y su hermano llevaban años sin verse y {{blank}} por casualidad en un aeropuerto pequeño."
+    hint_general: "Se encontraron sin plan después de mucho tiempo sin saber el uno del otro."
+    explanation: "Coincidieron: se encontraron sin plan. «Decidieron» habla de tomar una decisión, y «buscaron» sería que uno fue a por el otro."
+    options:
+      - position: 1
+        text: "coincidieron"
+        is_correct: true
+      - position: 2
+        text: "decidieron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Decidir» es tomar una decisión, y aquí nadie decide nada: el encuentro ocurre solo."
+        hint_specific: "«Decidir» elige entre opciones. ¿Qué eligieron los hermanos?"
+      - position: 3
+        text: "buscaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Buscar» implica ir a por alguien, y la frase dice que fue pura casualidad."
+        hint_specific: "«Buscar» va a propósito. Relee el final: ¿fue casualidad o intención?"
+  - position: 3
+    sentence: "«Si {{blank}} con Paula en el pasillo, dile que la llamo esta tarde», le pidió Simón a Blanca."
+    hint_general: "Si te la encuentras sin buscarla, dale ese recado."
+    explanation: "Coincides: si te la encuentras sin buscarla. «Incides» es influir o insistir en algo, y «topas» es coloquial y suena a tropezón."
+    options:
+      - position: 1
+        text: "incides"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incidir» es influir en algo o insistir en un punto, y aquí solo se habla de cruzarse en un pasillo."
+        hint_specific: "«Incidir» influye o insiste. ¿En qué influiría Blanca al pasar por el pasillo?"
+      - position: 2
+        text: "coincides"
+        is_correct: true
+      - position: 3
+        text: "topas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Topar» es coloquial y suena a tropezón brusco, no al encuentro tranquilo que se está pidiendo."
+        hint_specific: "«Topar» suena a choque. ¿El recado pide un choque o un encuentro normal?"
+  - position: 4
+    sentence: "Ramón y Silvia {{blank}} en la misma clase de cocina sin saber que vivían en el mismo edificio."
+    hint_general: "Acabaron en el mismo sitio sin conocerse de antes."
+    explanation: "Coincidieron: acabaron en el mismo sitio sin conocerse. «Residieron» es vivir en un lugar, y «quedaron» implica un acuerdo previo entre ellos."
+    options:
+      - position: 1
+        text: "residieron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Residir» es vivir en un lugar, y lo que comparten los dos es una clase, no una vivienda."
+        hint_specific: "«Residir» habla de dónde vives. ¿Qué comparten en la frase?"
+      - position: 2
+        text: "coincidieron"
+        is_correct: true
+      - position: 3
+        text: "quedaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Quedar» implica un acuerdo previo, y la frase dice que ni siquiera sabían que eran vecinos."
+        hint_specific: "«Quedar» se pacta antes. ¿Podían pactar algo sin conocerse?"
+  - position: 5
+    sentence: "No habían quedado: {{blank}} en el andén y el viaje se les hizo corto a Elisa y a Gonzalo."
+    hint_general: "Se encontraron sin plan y el trayecto se pasó volando."
+    explanation: "Coincidieron: se encontraron sin plan. «Incidieron» es influir o insistir en algo, y «convergieron» suena a informe técnico."
+    options:
+      - position: 1
+        text: "incidieron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incidir» es influir en algo o insistir en un punto, y aquí dos personas se encuentran en un andén."
+        hint_specific: "«Incidir» influye. ¿En qué influirían Elisa y Gonzalo en un andén?"
+      - position: 2
+        text: "convergieron"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Converger» suena a informe técnico sobre líneas o datos, no a dos personas que se ven en una estación."
+        hint_specific: "«Converger» suena a gráfico o a mapa. ¿Pega contando un viaje en tren?"
+      - position: 3
+        text: "coincidieron"
+        is_correct: true
+  - position: 6
+    sentence: "«Me encanta {{blank}} contigo en el mercado y que la compra dure el doble», le escribió Marta a su amiga."
+    hint_general: "Le gusta encontrársela sin haberlo planeado y alargar la mañana."
+    explanation: "Coincidir: le gusta encontrársela sin planearlo. «Incidir» es influir o insistir en algo, y «esperar» sería quedarse parada aguardando."
+    options:
+      - position: 1
+        text: "coincidir"
+        is_correct: true
+      - position: 2
+        text: "incidir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incidir» es influir en algo o insistir en un punto, y lo que le gusta a Marta es encontrarse con su amiga."
+        hint_specific: "«Incidir» influye o insiste. ¿Sobre qué insistiría Marta en el mercado?"
+      - position: 3
+        text: "esperar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esperar» es quedarse parada aguardando a alguien, y aquí la gracia está en que ocurre por azar."
+        hint_specific: "«Esperar» sabe a quién aguarda. ¿Marta sabe que su amiga irá?"
+  - position: 7
+    sentence: "Nunca {{blank}} en los horarios, y por eso Diego y su compañera de piso casi no se conocen."
+    hint_general: "Sus horas nunca se juntan y por eso apenas se ven."
+    explanation: "Coinciden: sus horas nunca se juntan. «Deciden» es tomar una decisión, y «cruzan» necesitaría otra construcción y habla de pasar de largo."
+    options:
+      - position: 1
+        text: "deciden"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Decidir» es tomar una decisión, y aquí el problema es que sus horarios no se encuentran nunca."
+        hint_specific: "«Decidir» elige entre opciones. ¿Qué estarían eligiendo con los horarios?"
+      - position: 2
+        text: "coinciden"
+        is_correct: true
+      - position: 3
+        text: "cruzan"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cruzar» habla de pasar de largo y además pide otra construcción con esta frase."
+        hint_specific: "«Cruzar» es pasar al lado un segundo. ¿Eso encaja con no verse nunca?"
+  - position: 8
+    sentence: "Volvieron a {{blank}} diez años después, en la boda de una amiga común, cuenta Susana."
+    hint_general: "Se encontraron otra vez sin haberlo buscado, una década más tarde."
+    explanation: "Coincidir: se encontraron otra vez sin buscarlo. «Residir» es vivir en un lugar, y «visitar» sería que uno fuera a ver al otro a propósito."
+    options:
+      - position: 1
+        text: "residir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Residir» es vivir en un lugar, y una boda no es el sitio donde vive nadie."
+        hint_specific: "«Residir» habla de vivienda. ¿Dónde ocurre este reencuentro?"
+      - position: 2
+        text: "visitar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Visitar» es ir a ver a alguien a propósito, y aquí los dos van a una boda ajena."
+        hint_specific: "«Visitar» va a propósito. ¿A quién iban a ver ese día?"
+      - position: 3
+        text: "coincidir"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La cola del cine"
+    body: "Adriana se giró y vio a una compañera de la universidad a la que no veía en seis años. «¡Qué fuerte, coincidimos aquí!», dijo. Entraron a la misma sesión y salieron con el teléfono de la otra."
+    before_phrase: "¡Qué casualidad encontrarnos aquí!"
+    after_phrase: "¡Qué fuerte, coincidimos aquí!"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El tren de las siete"
+    body: "Martín y su prima se veían una vez al año y llevaban tiempo sin hablar de verdad. Un martes coincidieron en el mismo vagón. «Ya que coincidimos, te cuento lo de papá», dijo ella. Hablaron hasta el final del trayecto."
+    before_phrase: "Ya que nos hemos encontrado, te cuento."
+    after_phrase: "Ya que coincidimos, te cuento."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El café de las cuatro"
+    body: "Valeria bajaba a por café siempre a la misma hora y allí empezó a ver al responsable de otro equipo. «Como coincidimos cada tarde, aprovecho y te pregunto una cosa», le dijo un jueves. De ahí salió un proyecto compartido."
+    before_phrase: "Como nos vemos siempre por aquí, te pregunto."
+    after_phrase: "Como coincidimos cada tarde, te pregunto."
+metrics:
+  zipf_overall: 4.8019
+  dispersion_dp: 0.1237
+  pedantry_proxy: 0.5294
+  family_size: 33
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 311
+slug: "atinado"
+status: "draft"
+lemma: "atinado"
+part_of_speech: "adjetivo"
+syllables: ["a", "ti", "na", "do"]
+stressed_syllable: 3
+ipa_latam: "[a.tiˈna.ðo]"
+ipa_es: "[a.tiˈna.ðo]"
+explanation: "Que da justo en el punto: dice o elige lo que hacía falta."
+example_sentence: "Fue un comentario muy atinado: nadie había mirado el problema desde ahí."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Elogia una idea concreta: «Qué observación tan atinada» dice mucho más que «qué buena idea»."
+when_not_to_use: "No la uses para algo simplemente correcto: esta palabra dice que acertó donde importaba."
+collocations:
+  - "un comentario atinado"
+  - "una decisión atinada"
+  - "una pregunta atinada"
+replaces:
+  - before: "Qué buen comentario"
+    after: "Qué comentario tan atinado"
+  - before: "Elegiste muy bien"
+    after: "Fue una elección muy atinada"
+  - before: "Dijo justo lo que había que decir"
+    after: "Dijo algo muy atinado"
+family: ["atinar"]
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["bueno", "bien"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "afinado"
+    difference: "«Afinado» es ajustado en el tono, como un instrumento o una voz; la otra palabra dice que algo da justo en el punto."
+    memory_trick: "Lo afinado suena bien; lo atinado da en el punto."
+  - confused_with: "obstinado"
+    difference: "«Obstinado» describe a quien no cambia de idea aunque no funcione; aquí se elogia haber acertado, no haber insistido."
+    memory_trick: "El obstinado repite; lo atinado acierta."
+exercises:
+  - position: 1
+    sentence: "En mitad del lío, Ximena hizo una pregunta tan {{blank}} que todos se quedaron callados un segundo."
+    hint_general: "La pregunta dio justo en el punto que hacía falta mirar."
+    explanation: "Atinada: la pregunta dio justo en el punto. «Afinada» habla del tono de un instrumento, y «curiosa» solo dice que hay interés detrás."
+    options:
+      - position: 1
+        text: "afinada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinada» describe algo ajustado en el tono, como una guitarra o una voz; una pregunta no se afina."
+        hint_specific: "«Afinada» va de tono musical. ¿La frase mide el sonido o el acierto?"
+      - position: 2
+        text: "atinada"
+        is_correct: true
+      - position: 3
+        text: "curiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosa» dice que hay interés detrás, y lo que deja mudo al grupo es que la pregunta acierta."
+        hint_specific: "«Curiosa» habla de interés. ¿Por qué se callan todos, por el interés o por el acierto?"
+  - position: 2
+    sentence: "El comentario de Álvaro fue {{blank}}: señaló el único dato que nadie había mirado en tres semanas."
+    hint_general: "Puso el dedo justo en lo que llevaba semanas pasando desapercibido."
+    explanation: "Atinado: puso el dedo en lo que nadie miraba. «Obstinado» describe a quien no cede, y «sesudo» suena a texto académico y pesado."
+    options:
+      - position: 1
+        text: "obstinado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obstinado» describe a quien no cambia de idea, y aquí se elogia un solo comentario, no una postura repetida."
+        hint_specific: "«Obstinado» se aferra. ¿Álvaro repite algo o señala algo nuevo?"
+      - position: 2
+        text: "atinado"
+        is_correct: true
+      - position: 3
+        text: "sesudo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sesudo» suena a texto académico y pesado; aquí el elogio es por dar en el clavo, no por la profundidad."
+        hint_specific: "«Sesudo» suena a tratado largo. ¿Se elogia la hondura o la puntería?"
+  - position: 3
+    sentence: "De todas las opciones, la elección de Julia fue la más {{blank}} para el poco tiempo que les quedaba."
+    hint_general: "Entre varias opciones, eligió la que encajaba con el tiempo disponible."
+    explanation: "Atinada: eligió la opción que encajaba con el tiempo. «Afinada» habla de tono musical, y «rápida» solo mide la velocidad de la decisión."
+    options:
+      - position: 1
+        text: "atinada"
+        is_correct: true
+      - position: 2
+        text: "afinada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinada» describe algo ajustado en el tono, como un instrumento, y una elección no tiene tono."
+        hint_specific: "«Afinada» va de música. ¿Qué sonaría aquí?"
+      - position: 3
+        text: "rápida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rápida» mide la velocidad de la decisión, y lo que se elogia es que fue la que encajaba."
+        hint_specific: "«Rápida» mide segundos. ¿Se valora la prisa o el acierto?"
+  - position: 4
+    sentence: "Fernando dijo algo poco {{blank}} en la cena y tardó media hora en arreglarlo."
+    hint_general: "Dijo algo que no daba en el punto y luego tuvo que recomponerlo."
+    explanation: "Atinado: lo que dijo no dio en el punto. «Afinado» describe el tono de un instrumento, y «amable» habla del trato, no de la puntería."
+    options:
+      - position: 1
+        text: "afinado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinado» describe algo ajustado en el tono, como una guitarra, y aquí se juzga lo que dijo, no cómo sonaba."
+        hint_specific: "«Afinado» va de música. ¿Fernando desafinó o se equivocó de contenido?"
+      - position: 2
+        text: "atinado"
+        is_correct: true
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» habla del trato, y se puede decir algo amabilísimo que no venga a cuento."
+        hint_specific: "«Amable» va del trato. ¿Lo que falla es la simpatía o la puntería?"
+  - position: 5
+    sentence: "Sandra tomó una decisión {{blank}} y sin dramas: cambió la fecha antes de que nadie protestara."
+    hint_general: "Decidió justo lo que hacía falta y a tiempo, sin montar ningún ruido."
+    explanation: "Atinada: decidió justo lo que hacía falta y a tiempo. «Destinada» significa reservada para un fin, y «genial» es coloquial y exagera el elogio."
+    options:
+      - position: 1
+        text: "destinada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Destinada» significa reservada para un fin o enviada a un sitio, y una decisión no se destina a nada."
+        hint_specific: "«Destinada» apunta a un destino. ¿Adónde iría esta decisión?"
+      - position: 2
+        text: "genial"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Genial» es coloquial y exagera; la frase subraya que fue justa y sin ruido, no espectacular."
+        hint_specific: "«Genial» suena a exageración entre amigos. ¿Encaja con «sin dramas»?"
+      - position: 3
+        text: "atinada"
+        is_correct: true
+  - position: 6
+    sentence: "«Qué observación tan {{blank}}», escribió Ramón debajo del mensaje de su compañera."
+    hint_general: "Reconoce que la observación apuntó justo a lo que importaba."
+    explanation: "Atinada: la observación apuntó a lo que importaba. «Afinada» habla de tono musical, y «original» valora la novedad, no el acierto."
+    options:
+      - position: 1
+        text: "afinada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinada» describe algo ajustado en el tono, como una voz o un piano, y una observación escrita no suena."
+        hint_specific: "«Afinada» va de sonido. ¿Se puede afinar un mensaje escrito?"
+      - position: 2
+        text: "original"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Original» valora que algo sea nuevo, y una idea muy nueva puede no venir a cuento."
+        hint_specific: "«Original» premia la novedad. ¿Lo nuevo es siempre lo que hacía falta?"
+      - position: 3
+        text: "atinada"
+        is_correct: true
+  - position: 7
+    sentence: "Lo más {{blank}} que hizo Carolina fue callarse hasta que los demás terminaron de hablar."
+    hint_general: "Su mejor movimiento fue justo el que hacía falta en ese momento: esperar."
+    explanation: "Atinado: esperar fue justo lo que hacía falta. «Obstinado» describe a quien no cede, y «prudente» habla de evitar riesgos, no de acertar."
+    options:
+      - position: 1
+        text: "atinado"
+        is_correct: true
+      - position: 2
+        text: "obstinado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Obstinado» describe a quien no cambia de idea pase lo que pase, y ella lo que hace es adaptarse al momento."
+        hint_specific: "«Obstinado» no se mueve. ¿Carolina se aferra a algo o lee la sala?"
+      - position: 3
+        text: "prudente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prudente» habla de evitar riesgos, y aquí no se elogia el cuidado, sino haber elegido el movimiento exacto."
+        hint_specific: "«Prudente» esquiva riesgos. ¿Se elogia la cautela o el acierto?"
+  - position: 8
+    sentence: "No fue un consejo brillante, pero sí {{blank}}: le sirvió a Esteban justo esa semana y en ese lío."
+    hint_general: "No deslumbra, pero acierta con lo que esa persona necesitaba en ese momento."
+    explanation: "Atinado: acierta con lo que hacía falta en ese momento. «Afinado» habla del tono musical, y «correcto» dice solo que no está mal."
+    options:
+      - position: 1
+        text: "afinado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinado» describe algo ajustado en el tono, como un instrumento, y un consejo no se afina."
+        hint_specific: "«Afinado» va de música. ¿Qué instrumento hay en esta frase?"
+      - position: 2
+        text: "correcto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Correcto» dice que algo no está mal, y la frase va más lejos: sirvió justo esa semana."
+        hint_specific: "«Correcto» es no estar mal. ¿Eso explica que le sirviera justo entonces?"
+      - position: 3
+        text: "atinado"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La pregunta del final"
+    body: "La reunión iba a terminar sin decidir nada. Emma levantó la mano: «¿Quién avisa al cliente si el martes no llegamos?». El responsable anotó su nombre y dijo: «Pregunta atinada; eso era lo que faltaba»."
+    before_phrase: "Buena pregunta, ¿eh?"
+    after_phrase: "Qué pregunta tan atinada."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El consejo de la tía"
+    body: "Felipe no sabía si aceptar el traslado. Su tía lo escuchó entero y solo dijo una frase: «Pregúntale a tu pareja antes de decidir tú solo». Meses después él lo contaba así: «Fue el consejo más atinado que me han dado»."
+    before_phrase: "Fue el mejor consejo que me dieron."
+    after_phrase: "Fue el consejo más atinado que me han dado."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El regalo del grupo"
+    body: "Nadie se ponía de acuerdo con el regalo de despedida. Claudia propuso un cuaderno con una foto de cada uno y una frase. La destinataria lloró un poco y luego dijo: «Qué idea tan atinada»."
+    before_phrase: "Qué buena idea has tenido."
+    after_phrase: "Qué idea tan atinada."
+metrics:
+  zipf_overall: 3.4212
+  dispersion_dp: 0.2672
+  pedantry_proxy: 0.5628
+  family_size: 5
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

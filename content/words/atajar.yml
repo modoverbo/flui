@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 109
+slug: "atajar"
+status: "draft"
+lemma: "atajar"
+part_of_speech: "verbo"
+syllables: ["a", "ta", "jar"]
+stressed_syllable: 3
+ipa_latam: "[a.taˈxar]"
+ipa_es: "[a.taˈxar]"
+explanation: "Parar un problema cuando todavía es pequeño y no ha crecido."
+example_sentence: "Si atajamos la queja hoy, mañana no habrá que dar explicaciones a nadie."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Va bien para proponer acción sin dramatizar: señala el problema y el momento, no al culpable."
+when_not_to_use: "No la uses cuando el asunto ya explotó; entonces toca repararlo, no frenarlo."
+collocations:
+  - "atajar un problema"
+  - "atajar el rumor"
+  - "atajar a tiempo"
+replaces:
+  - before: "Hay que parar esto antes de que vaya a más"
+    after: "Hay que atajar esto antes de que vaya a más"
+  - before: "Cortemos el rumor cuanto antes"
+    after: "Atajemos el rumor cuanto antes"
+  - before: "Si no lo frenamos ahora, luego será peor"
+    after: "Si no lo atajamos ahora, luego será peor"
+family: ["atajo"]
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin: ["parar"]
+  funcion: ["prevenir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "atacar"
+    difference: "«Atacar» va contra alguien o contra algo; la otra palabra frena un problema a tiempo, sin culpar a nadie."
+    memory_trick: "Atacas a una persona; frenas un problema."
+  - confused_with: "acallar"
+    difference: "«Acallar» es hacer que alguien deje de hablar; frenar un problema a tiempo quita la causa, no la voz."
+    memory_trick: "Acallar tapa la boca; frenar a tiempo quita el motivo."
+exercises:
+  - position: 1
+    sentence: "Cuando dos clientes seguidos preguntaron por el mismo cobro raro, Camila quiso {{blank}} el fallo antes del cierre de mes."
+    hint_general: "Quiere parar el fallo mientras sigue siendo pequeño."
+    explanation: "Atajar: parar el fallo mientras es pequeño. «Atacar» iría contra alguien, y «acallar» sería hacer callar a los clientes."
+    options:
+      - position: 1
+        text: "atacar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» se dirige contra alguien o contra algo, y aquí solo se quiere corregir un cobro mal hecho."
+        hint_specific: "«Atacar» busca un enemigo. ¿Quién sería el enemigo de esta escena?"
+      - position: 2
+        text: "atajar"
+        is_correct: true
+      - position: 3
+        text: "acallar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acallar» sería hacer callar a los clientes, y lo que se corrige es el cobro, no las preguntas."
+        hint_specific: "«Acallar» apaga voces. ¿El problema son las voces o el cobro?"
+  - position: 2
+    sentence: "Un rumor sobre el cierre de la tienda corrió por el grupo, y Fernando lo {{blank}} con un mensaje claro esa misma tarde."
+    hint_general: "Lo para el mismo día, antes de que se haga grande."
+    explanation: "Atajó: lo paró el mismo día. «Atacó» iría contra una persona, y «tapó» es coloquial y sugiere esconder la verdad."
+    options:
+      - position: 1
+        text: "atajó"
+        is_correct: true
+      - position: 2
+        text: "atacó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» va contra alguien, y él escribe para aclarar, no para señalar a nadie."
+        hint_specific: "«Atacó» apunta a una persona. ¿A quién apunta ese mensaje?"
+      - position: 3
+        text: "tapó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tapar» un rumor es coloquial y sugiere esconder algo, y la frase dice que el mensaje fue claro."
+        hint_specific: "«Tapó» esconde. Relee el final: ¿el mensaje escondía o aclaraba?"
+  - position: 3
+    sentence: "Mi hermana notó que su hijo faltaba a la piscina y prefirió {{blank}} el asunto con una charla corta."
+    hint_general: "Prefiere frenar el asunto mientras es pequeño, sin montar un drama."
+    explanation: "Atajar: frenar el asunto mientras es pequeño. «Atacar» iría contra el niño, y «rehuir» sería apartarse del asunto."
+    options:
+      - position: 1
+        text: "atacar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» se dirige contra alguien, y ella busca una charla corta con su hijo, no una pelea."
+        hint_specific: "«Atacar» pone a alguien en el punto de mira. ¿Esa charla apunta a alguien?"
+      - position: 2
+        text: "rehuir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rehuir» es apartarse del asunto, y ella hace justo lo contrario: lo trata enseguida."
+        hint_specific: "«Rehuir» se aparta. ¿Ella se aparta o se acerca?"
+      - position: 3
+        text: "atajar"
+        is_correct: true
+  - position: 4
+    sentence: "En la obra apareció una grieta pequeña y el jefe decidió {{blank}} el problema antes de seguir con la planta de arriba."
+    hint_general: "Para el problema mientras sigue siendo una grieta pequeña."
+    explanation: "Atajar: parar el problema mientras es pequeño. «Atacar» iría contra alguien, y «disimular» sería taparlo con pintura."
+    options:
+      - position: 1
+        text: "atajar"
+        is_correct: true
+      - position: 2
+        text: "atacar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» va contra alguien o algo, y una grieta se repara, no se combate."
+        hint_specific: "«Atacar» necesita un rival. ¿Una grieta es un rival?"
+      - position: 3
+        text: "disimular"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disimular» sería taparla con pintura, y él para la obra justo para arreglarla de verdad."
+        hint_specific: "«Disimular» esconde a la vista. ¿Por qué para entonces la planta de arriba?"
+  - position: 5
+    sentence: "Nadie quiso {{blank}} las llegadas tarde al principio, y seis meses después la reunión empezaba siempre a y cuarto."
+    hint_general: "Nadie paró la costumbre cuando todavía era pequeña."
+    explanation: "Atajar: parar la costumbre cuando era pequeña. «Atacar» iría contra las personas, y «premiar» sería lo contrario de corregir."
+    options:
+      - position: 1
+        text: "atacar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» iría contra las personas que llegan tarde, y lo que faltó fue corregir la costumbre a tiempo."
+        hint_specific: "«Atacar» señala culpables. ¿Qué se debería haber frenado?"
+      - position: 2
+        text: "atajar"
+        is_correct: true
+      - position: 3
+        text: "premiar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premiar» es recompensar algo, y la frase cuenta el efecto de no haber corregido nada."
+        hint_specific: "«Premiar» celebra. ¿La frase celebra o lamenta?"
+  - position: 6
+    sentence: "Gloria vio dos correos secos entre compañeros y {{blank}} la tensión con un café de quince minutos."
+    hint_general: "Frena la tensión cuando todavía cabe en un café corto."
+    explanation: "Atajó: frenó la tensión cuando aún era pequeña. «Atacó» iría contra alguien, y «zurció» es coloquial y suena a costura."
+    options:
+      - position: 1
+        text: "atacó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» va contra una persona, y ella junta a los dos compañeros para hablar."
+        hint_specific: "«Atacó» busca a quién culpar. ¿Gloria culpa a alguien?"
+      - position: 2
+        text: "zurció"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Zurcir» es coser una rotura de la ropa y suena a costura; una tensión entre compañeros se habla."
+        hint_specific: "«Zurció» pide aguja e hilo. ¿Qué había roto aquí?"
+      - position: 3
+        text: "atajó"
+        is_correct: true
+  - position: 7
+    sentence: "En la entrevista, Ximena contó que su método es sencillo: {{blank}} los desacuerdos pequeños el mismo día."
+    hint_general: "Para los desacuerdos el mismo día, cuando aún son pequeños."
+    explanation: "Atajar: parar los desacuerdos el mismo día. «Atacar» iría contra las personas, y «aguantar» sería dejarlos crecer en silencio."
+    options:
+      - position: 1
+        text: "atajar"
+        is_correct: true
+      - position: 2
+        text: "atacar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» va contra las personas, y su método trata sobre los desacuerdos, no sobre la gente."
+        hint_specific: "«Atacar» elige un blanco humano. ¿Su método apunta a personas?"
+      - position: 3
+        text: "aguantar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aguantar» es soportarlos en silencio, y ella habla de resolverlos el mismo día."
+        hint_specific: "«Aguantar» deja pasar el tiempo. ¿Cuánto tiempo deja pasar Ximena?"
+  - position: 8
+    sentence: "La fuga del grifo goteaba desde el martes; Samuel la {{blank}} el sábado y se ahorró un suelo nuevo."
+    hint_general: "La para cuando todavía es un goteo y no una inundación."
+    explanation: "Atajó: la paró cuando era un goteo. «Atacó» iría contra alguien, y «denunció» llevaría el asunto a otra instancia."
+    options:
+      - position: 1
+        text: "denunció"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Denunciar» lleva el asunto a una oficina o a un juzgado, y él simplemente arregló el grifo el sábado."
+        hint_specific: "«Denunció» abre un expediente. ¿Eso seca un grifo?"
+      - position: 2
+        text: "atajó"
+        is_correct: true
+      - position: 3
+        text: "atacó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atacar» va contra alguien o contra algo con fuerza, y una fuga se repara con una llave inglesa."
+        hint_specific: "«Atacó» suena a combate. ¿Hay combate con un grifo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos preguntas iguales"
+    body: "Dos clientes preguntaron lo mismo el mismo día por un cobro raro. En vez de esperar al informe mensual, Camila escribió al equipo: «Vamos a atajar esto hoy; si son dos, mañana serán veinte». El fallo estaba corregido antes del viernes."
+    before_phrase: "Habría que parar esto antes de que vaya a más."
+    after_phrase: "Vamos a atajar esto hoy."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La piscina de los jueves"
+    body: "Mi hermana notó dos ausencias seguidas y no montó ningún drama. «Prefiero atajarlo ahora», dijo, y se sentó con su hijo quince minutos. Resultó que le daba vergüenza el vestuario nuevo, y eso tenía arreglo."
+    before_phrase: "Mejor lo corto antes de que se haga costumbre."
+    after_phrase: "Prefiero atajarlo ahora."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El rumor del portal"
+    body: "Alguien dijo en el chat del edificio que iban a subir la cuota un treinta por ciento. El presidente de la comunidad contestó en diez minutos con la cifra real. «Mejor atajarlo ya», escribió. Nadie volvió a mencionarlo."
+    before_phrase: "Habría que cortar eso cuanto antes."
+    after_phrase: "Mejor atajarlo ya."
+metrics:
+  zipf_overall: 3.7088
+  dispersion_dp: 0.2525
+  pedantry_proxy: 0.6122
+  family_size: 13
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

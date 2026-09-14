@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "calar"
+status: "gated"
+lemma: "calar"
+part_of_speech: "verbo"
+syllables:
+  - "ca"
+  - "lar"
+stressed_syllable: 2
+ipa_latam: "[kaˈlaɾ]"
+ipa_es: "[kaˈlaɾ]"
+explanation: "Entrar dentro de alguien y quedarse: una idea que vuelve días después."
+example_sentence: "La charla duró veinte minutos, y la última frase me caló durante semanas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Mide lo único que importa al convencer: no si gustó en el momento, sino si sigue ahí tres días después."
+when_not_to_use: "No la uses para algo que solo hizo gracia un rato: si se apaga al salir de la sala, no entró en nadie."
+collocations:
+  - "calar hondo"
+  - "calar en el público"
+  - "un mensaje que cala"
+replaces:
+  - before: "Esa idea le llegó de verdad"
+    after: "Esa idea le caló"
+  - before: "Se le quedó grabado aquello"
+    after: "Aquello le caló"
+  - before: "Gustó mucho y encima se quedó"
+    after: "Gustó y caló"
+family:
+  - "calado"
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "gustar"
+  funcion:
+    - "persuadir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "callar"
+    difference: "«Callar» es no decir nada; la otra palabra describe una idea que entra en alguien y se queda."
+    memory_trick: "Quien calla no dice; lo que entra hondo no se va."
+  - confused_with: "gustar"
+    difference: "«Gustar» se nota en el momento; la otra palabra se comprueba días después, cuando la idea sigue ahí."
+    memory_trick: "Gustar se mide al salir; lo otro, al cabo de una semana."
+exercises:
+  - position: 1
+    sentence: "La charla duró veinte minutos y nadie tomó notas, aunque la frase del final {{blank}} durante semanas."
+    hint_general: "Entró dentro de la gente y se quedó mucho tiempo."
+    explanation: "Caló: entró dentro y se quedó semanas. «Calló» es no decir nada, y «arrasó» es coloquial y habla de un éxito inmediato, no de lo que dura."
+    options:
+      - position: 1
+        text: "calló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Callar» es no decir nada, y una frase que dura semanas dentro de la gente hace justo lo contrario."
+        hint_specific: "«Callar» es guardar silencio. ¿Qué hizo esa frase durante semanas?"
+      - position: 2
+        text: "caló"
+        is_correct: true
+      - position: 3
+        text: "arrasó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arrasar» es coloquial y habla del éxito del momento, y la frase mide lo que quedó después."
+        hint_specific: "«Arrasar» mide el aplauso de ese día. ¿Qué mide la frase?"
+  - position: 2
+    sentence: "Ámbar no buscaba aplausos: quería que la idea {{blank}} en quien tuviera que decidir el lunes."
+    hint_general: "Quiere que la idea siga dentro cuando llegue el momento de decidir."
+    explanation: "Calara: que la idea siguiera dentro hasta el lunes. «Callara» es no decir nada, y «gustara» se conformaría con el momento, que es lo que Ámbar descarta."
+    options:
+      - position: 1
+        text: "calara"
+        is_correct: true
+      - position: 2
+        text: "callara"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Callar» es no decir nada, y Ámbar quiere justo que la idea siga sonando en la cabeza de alguien."
+        hint_specific: "«Callar» es guardar silencio. ¿Qué quiere Ámbar que pase con su idea?"
+      - position: 3
+        text: "gustara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gustar» se queda en el momento, y la frase dice que Ámbar no buscaba aplausos."
+        hint_specific: "«Gustar» se mide al salir de la sala. ¿Qué momento le importa a Ámbar?"
+  - position: 3
+    sentence: "Nadie repitió los datos del informe, y sin embargo el ejemplo de la abuela {{blank}} en toda la sala."
+    hint_general: "Ese ejemplo entró dentro de todos y se quedó."
+    explanation: "Caló: el ejemplo entró y se quedó. «Coló» es colar un líquido o meter algo sin permiso, y «sonó» diría que se oyó, sin decir que permaneciera."
+    options:
+      - position: 1
+        text: "coló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Colar» es filtrar un líquido o meter algo sin que lo vean, y aquí el ejemplo se dijo abiertamente."
+        hint_specific: "«Colar» se hace a escondidas o con un colador. ¿Ese ejemplo se escondió?"
+      - position: 2
+        text: "caló"
+        is_correct: true
+      - position: 3
+        text: "sonó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sonar» dice que se oyó, y lo que destaca la frase es que se quedó cuando los datos se olvidaron."
+        hint_specific: "«Sonar» se queda en el oído. ¿Qué distingue al ejemplo de los datos?"
+  - position: 4
+    sentence: "Si quieres que tu mensaje {{blank}}, elige una imagen y repítela dos veces, en vez de soltar diez ideas."
+    hint_general: "Que entre en el otro y aguante ahí."
+    explanation: "Cale: que entre en el otro y aguante. «Calle» es no decir nada, y «pegue» es coloquial y habla del golpe del momento, no de lo que permanece."
+    options:
+      - position: 1
+        text: "calle"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Callar» es no decir nada, y un mensaje que se calla no llega a ninguna parte."
+        hint_specific: "«Callar» guarda silencio. ¿Qué quieres que haga tu mensaje?"
+      - position: 2
+        text: "cale"
+        is_correct: true
+      - position: 3
+        text: "pegue"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pegar» es coloquial y habla del golpe del momento, y el consejo busca algo que se quede."
+        hint_specific: "«Pegar fuerte» dura un día. ¿Qué busca el consejo?"
+  - position: 5
+    sentence: "Gonzalo cambió el cartel lleno de texto por una foto, y el aviso {{blank}} por fin entre los vecinos."
+    hint_general: "El aviso entró en la gente y se quedó."
+    explanation: "Caló: el aviso entró y se quedó. «Calzó» es ponerse zapatos o poner una cuña, y «gustó» diría que agradó, sin garantizar que nadie lo recordara."
+    options:
+      - position: 1
+        text: "caló"
+        is_correct: true
+      - position: 2
+        text: "calzó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Calzar» es ponerse zapatos o meter una cuña para que algo no se mueva, y aquí se habla de un aviso."
+        hint_specific: "«Calzar» va de zapatos y cuñas. ¿Qué pasó con el aviso?"
+      - position: 3
+        text: "gustó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gustar» diría que agradó, y el cartel anterior también podía agradar sin que nadie lo recordara."
+        hint_specific: "«Gustar» se nota al verlo. ¿Qué cambió de verdad con la foto?"
+  - position: 6
+    sentence: "El discurso era correcto, educado y bien ordenado, aunque no {{blank}} en nadie."
+    hint_general: "No llegó a entrar dentro de quien lo escuchaba."
+    explanation: "Caló: no llegó a entrar en nadie. «Calló» es no decir nada, y «duró» hablaría del tiempo del discurso, no de lo que dejó."
+    options:
+      - position: 1
+        text: "calló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Callar» es no decir nada, y el discurso sí se pronunció: ordenado, educado y entero."
+        hint_specific: "«Callar» es no hablar. ¿Hubo discurso o hubo silencio?"
+      - position: 2
+        text: "duró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Durar» hablaría de cuánto tiempo se alargó, y lo que faltó fue que dejara algo dentro."
+        hint_specific: "«Durar» mide minutos. ¿Qué le faltó al discurso?"
+      - position: 3
+        text: "caló"
+        is_correct: true
+  - position: 7
+    sentence: "Cuando su hija le dijo «tú nunca preguntas», aquello {{blank}} más que cualquier reproche largo."
+    hint_general: "Tres palabras entraron más adentro que un discurso entero."
+    explanation: "Caló: tres palabras entraron más adentro. «Coló» es filtrar un líquido o meter algo sin permiso, y «arrasó» es coloquial y suena a éxito ruidoso."
+    options:
+      - position: 1
+        text: "caló"
+        is_correct: true
+      - position: 2
+        text: "coló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Colar» es filtrar un líquido o meter algo a escondidas, y su hija lo dijo de frente."
+        hint_specific: "«Colar» se hace sin que se note. ¿Cómo lo dijo la hija?"
+      - position: 3
+        text: "arrasó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arrasar» es coloquial y suena a éxito ruidoso, y esto ocurre en una conversación entre dos."
+        hint_specific: "«Arrasar» necesita público. ¿Cuánta gente hay en esta escena?"
+  - position: 8
+    sentence: "Una idea {{blank}} cuando vuelve sola a tu cabeza tres días después, sin que nadie te la recuerde."
+    hint_general: "Vuelve sola: eso demuestra que entró de verdad."
+    explanation: "Cala: vuelve sola y eso demuestra que entró. «Calla» es no decir nada, y «convence» ocurre en el momento, no tres días más tarde."
+    options:
+      - position: 1
+        text: "calla"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Callar» es no decir nada, y aquí una idea vuelve sola a la cabeza de alguien."
+        hint_specific: "«Callar» es guardar silencio. ¿Qué hace la idea tres días después?"
+      - position: 2
+        text: "convence"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencer» ocurre en el momento, y la prueba de la frase llega tres días más tarde."
+        hint_specific: "«Convencer» pasa mientras te lo cuentan. ¿Cuándo se comprueba esto?"
+      - position: 3
+        text: "cala"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La frase del jueves"
+    body: "Otilia presentó doce diapositivas y solo repitió una idea: «Cada correo sin contestar cuesta once minutos a otra persona». Nadie aplaudió. El martes siguiente, dos equipos habían cambiado su forma de responder. Aquella frase caló."
+    before_phrase: "Creo que gustó la presentación, ¿no?"
+    after_phrase: "Aquella frase caló: lo vi el martes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Tú nunca preguntas"
+    body: "La discusión con su hija duró una hora y no sirvió de nada. Lo que le caló fue una frase suelta del final: «Tú nunca preguntas». Gonzalo la recordó toda la semana, y el domingo empezó la llamada preguntando."
+    before_phrase: "Se me quedó grabado lo que me dijo."
+    after_phrase: "Esa frase me caló toda la semana."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Lo que recordaron de mí"
+    body: "Ámbar contó un solo ejemplo y lo repitió al despedirse. Dos semanas después la llamaron y le dijeron: «Seguimos hablando de tu caso del almacén». Había preparado seis historias y con una que calara fue suficiente."
+    before_phrase: "Conté un montón de cosas, a ver si alguna les sonó."
+    after_phrase: "Con que calara una historia, bastaba."
+metrics:
+  zipf_overall: 4.049
+  dispersion_dp: 0.1605
+  pedantry_proxy: 0.514
+  family_size: 8
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

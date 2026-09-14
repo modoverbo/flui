@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 106
+slug: "secundar"
+status: "draft"
+lemma: "secundar"
+part_of_speech: "verbo"
+syllables: ["se", "cun", "dar"]
+stressed_syllable: 3
+ipa_latam: "[se.kunˈdar]"
+ipa_es: "[se.kunˈdar]"
+explanation: "Apoyar en voz alta la idea de otra persona delante del grupo."
+example_sentence: "Basta con que alguien secunde tu idea para que la sala entera cambie de ánimo."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Dicho enseguida, salva ideas buenas que iban a morir en el silencio."
+when_not_to_use: "No la uses si no estás de acuerdo del todo; entonces di qué parte apoyas y qué parte no."
+collocations:
+  - "secundar una propuesta"
+  - "secundar la idea"
+  - "secundar a alguien"
+replaces:
+  - before: "Yo también estoy de acuerdo con eso"
+    after: "Secundo eso"
+  - before: "Yo apoyo lo que dice Renata"
+    after: "Secundo lo que dice Renata"
+  - before: "Que conste que yo digo lo mismo"
+    after: "Que conste que lo secundo"
+family: []
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin: ["apoyar"]
+  funcion: ["respaldar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acatar"
+    difference: "«Acatar» es obedecer una orden sin opinar; la otra palabra es sumarse a una idea porque te parece buena."
+    memory_trick: "Acatas porque te mandan; te sumas porque te convence."
+  - confused_with: "suscribir"
+    difference: "«Suscribir» se usa sobre todo para firmar documentos o pagar un servicio; el apoyo en una reunión es de viva voz."
+    memory_trick: "Suscribes con la firma; apoyas con la voz."
+exercises:
+  - position: 1
+    sentence: "Nadie decía nada después de la propuesta de Camila, hasta que Ignacio decidió {{blank}}la en voz alta."
+    hint_general: "Se pone del lado de una idea ajena delante de todo el grupo."
+    explanation: "Secundarla: se pone del lado de la idea ajena. «Acatarla» sería obedecer una orden, y «aplaudirla» se queda en el gesto, sin sumar apoyo."
+    options:
+      - position: 1
+        text: "acatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer una orden, y una propuesta en una reunión todavía no manda sobre nadie."
+        hint_specific: "«Acatar» necesita una orden que cumplir. ¿Camila manda o propone?"
+      - position: 2
+        text: "secundar"
+        is_correct: true
+      - position: 3
+        text: "aplaudir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplaudir» es celebrar el gesto, y lo que hacía falta era una voz que se pusiera del mismo lado."
+        hint_specific: "«Aplaudir» se queda en el gesto. ¿Un aplauso saca adelante una propuesta?"
+  - position: 2
+    sentence: "La idea del horario partido salió adelante porque tres personas la {{blank}} una detrás de otra."
+    hint_general: "Tres voces se pusieron del lado de la misma idea, una tras otra."
+    explanation: "Secundaron: tres voces se pusieron del lado de la idea. «Acataron» sería obedecerla, y «adularon» sería halagar por interés."
+    options:
+      - position: 1
+        text: "secundaron"
+        is_correct: true
+      - position: 2
+        text: "acataron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer algo ya decidido, y esa idea todavía estaba buscando apoyos."
+        hint_specific: "«Acataron» llega cuando ya hay una orden. ¿La idea estaba aprobada?"
+      - position: 3
+        text: "adularon"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adular» es halagar a alguien por interés, y aquí se apoya una idea, no se hace la rosca a nadie."
+        hint_specific: "«Adular» busca caer bien. ¿Lo que salió adelante fue una persona o una idea?"
+  - position: 3
+    sentence: "Cuando mi hermana propuso turnarse para cuidar la casa del pueblo, yo la {{blank}} sin dudarlo."
+    hint_general: "Te pones de su lado en voz alta y en el momento."
+    explanation: "Secundé: me puse de su lado en el momento. «Acaté» sería obedecer una orden, y «toleré» sugiere aguantar algo que no me gusta."
+    options:
+      - position: 1
+        text: "acaté"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer lo que otro decide, y tu hermana está proponiendo, no mandando."
+        hint_specific: "«Acaté» agacha la cabeza. ¿Hay una orden en esta escena?"
+      - position: 2
+        text: "toleré"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tolerar» es aguantar algo que no te gusta, y la frase dice que no dudaste ni un segundo."
+        hint_specific: "«Toleré» suena a resignación. ¿Encaja con «sin dudarlo»?"
+      - position: 3
+        text: "secundé"
+        is_correct: true
+  - position: 4
+    sentence: "Durante la asamblea del edificio, Héctor {{blank}} la propuesta del portero antes que nadie."
+    hint_general: "Fue el primero en ponerse del lado de esa propuesta."
+    explanation: "Secundó: fue el primero en ponerse de ese lado. «Suscribió» apunta a firmar un papel, y «acató» sería obedecer una orden."
+    options:
+      - position: 1
+        text: "suscribió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Suscribir» apunta a firmar un documento o contratar un servicio, y aquí solo se habla en voz alta."
+        hint_specific: "«Suscribió» pide un papel firmado. ¿Alguien firma algo en la asamblea?"
+      - position: 2
+        text: "secundó"
+        is_correct: true
+      - position: 3
+        text: "acató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es cumplir una orden, y la propuesta del portero todavía no obliga a nadie."
+        hint_specific: "«Acató» supone algo ya decidido. ¿En qué momento de la asamblea estamos?"
+  - position: 5
+    sentence: "Elisa aprendió una regla sencilla: si una idea buena se queda en silencio, hay que {{blank}}la enseguida."
+    hint_general: "La regla es dar apoyo en voz alta a una idea que nadie ha respaldado todavía."
+    explanation: "Secundarla: darle apoyo en voz alta enseguida. «Acatarla» sería obedecerla, y «celebrarla» llega después, cuando ya funcionó."
+    options:
+      - position: 1
+        text: "secundar"
+        is_correct: true
+      - position: 2
+        text: "acatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer, y una idea en silencio no manda sobre nadie: lo que necesita es apoyo."
+        hint_specific: "«Acatar» llega con una orden. ¿Qué le falta a esa idea?"
+      - position: 3
+        text: "celebrar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Celebrar» llega cuando la idea ya funcionó, y aquí todavía no ha conseguido ni un apoyo."
+        hint_specific: "«Celebrar» viene después del resultado. ¿Hay resultado todavía?"
+  - position: 6
+    sentence: "El comité entero {{blank}} la propuesta de becas, y la votación duró menos de un minuto."
+    hint_general: "Todo el comité se puso del lado de esa propuesta en voz alta."
+    explanation: "Secundó: el comité se puso de ese lado. «Sucumbió» es rendirse ante algo, y «escenificó» sugiere un apoyo fingido para la foto."
+    options:
+      - position: 1
+        text: "sucumbió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sucumbir» es rendirse ante algo más fuerte, y aquí el comité apoya porque quiere, no porque pierda."
+        hint_specific: "«Sucumbió» implica resistencia vencida. ¿Hubo pelea en esa votación?"
+      - position: 2
+        text: "secundó"
+        is_correct: true
+      - position: 3
+        text: "escenificó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Escenificar» suena a montaje para la foto, y la frase describe un apoyo real y rapidísimo."
+        hint_specific: "«Escenificó» huele a teatro. ¿La escena sugiere sinceridad o postureo?"
+  - position: 7
+    sentence: "En la entrevista le preguntaron a Gonzalo qué hace cuando alguien del equipo propone algo bueno: «Lo {{blank}} en el momento»."
+    hint_general: "Contesta que apoya esa idea en voz alta y sin esperar."
+    explanation: "Secundo: apoyo la idea en el momento. «Acato» sería obedecer una orden, y «fiscalizo» sería vigilarla con lupa."
+    options:
+      - position: 1
+        text: "acato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es cumplir órdenes, y una idea de un compañero no es una orden."
+        hint_specific: "«Acato» obedece. ¿Un compañero le manda a Gonzalo?"
+      - position: 2
+        text: "fiscalizo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fiscalizar» suena a inspección de cuentas y a desconfianza, y la pregunta era qué hace con una idea buena."
+        hint_specific: "«Fiscalizo» viene con lupa y sospecha. ¿La idea era buena o dudosa?"
+      - position: 3
+        text: "secundo"
+        is_correct: true
+  - position: 8
+    sentence: "Aunque tenía dudas sobre el presupuesto, Virginia {{blank}} el plan de su compañera y lo dijo delante de todos."
+    hint_general: "Se pone del lado del plan ajeno y lo deja claro delante del grupo."
+    explanation: "Secundó: se puso del lado del plan ajeno. «Acató» sería obedecer una orden, y «capitaneó» sería ponerse al frente, no detrás."
+    options:
+      - position: 1
+        text: "secundó"
+        is_correct: true
+      - position: 2
+        text: "acató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es cumplir lo que mandan, y aquí Virginia elige apoyar un plan que aún se discute."
+        hint_specific: "«Acató» no deja margen de elección. ¿Virginia elige o cumple?"
+      - position: 3
+        text: "capitaneó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Capitanear» es ponerse al frente del plan, y el plan es de su compañera: ella lo empuja desde atrás."
+        hint_specific: "«Capitaneó» toma el mando. ¿De quién era el plan?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La idea que casi se pierde"
+    body: "Renata propuso adelantar la entrega dos días y hubo tres segundos de silencio. Entonces habló Adriana: «Secundo lo de Renata, y explico por qué: nos deja margen si falla el proveedor». La propuesta salió adelante."
+    before_phrase: "Yo también estoy de acuerdo con lo que dijo."
+    after_phrase: "Secundo lo de Renata, y explico por qué."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Turnos en la casa del pueblo"
+    body: "Nadie quería abrir el asunto de los turnos hasta que la hermana menor propuso un calendario. Su primo levantó la mano: «Yo la secundo, y me pido agosto». Esa misma tarde hubo calendario colgado en la nevera."
+    before_phrase: "A mí me parece bien lo que dice ella."
+    after_phrase: "Yo la secundo, y me pido agosto."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Asamblea del edificio"
+    body: "El portero propuso cambiar la hora de la basura y nadie reaccionó. Un vecino del cuarto dijo: «Lo secundo; con mi horario me viene mejor». Otras dos manos se levantaron detrás y el cambio quedó aprobado."
+    before_phrase: "Pues yo digo lo mismo que él."
+    after_phrase: "Lo secundo; con mi horario me viene mejor."
+metrics:
+  zipf_overall: 3.5286
+  dispersion_dp: 0.3144
+  pedantry_proxy: 0.6122
+  family_size: 55
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 124
+slug: "versatil"
+status: "gated"
+lemma: "versátil"
+part_of_speech: "adjetivo"
+syllables:
+  - "ver"
+  - "sá"
+  - "til"
+stressed_syllable: 2
+ipa_latam: "[beɾˈsa.til]"
+ipa_es: "[beɾˈsa.til]"
+explanation: "Que sirve para cosas muy distintas y se adapta sin problema."
+example_sentence: "Buscan un perfil versátil: alguien que pueda cambiar de área sin empezar de cero."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dilo con dos ejemplos detrás; si no, suena a que no sabes hacer nada del todo."
+when_not_to_use: "No la uses para quien cambia de idea a cada rato: eso no es adaptarse, es no decidirse."
+collocations:
+  - "un perfil versátil"
+  - "una herramienta versátil"
+  - "ser versátil"
+replaces:
+  - before: "Sabe hacer de todo un poco"
+    after: "Es muy versátil"
+  - before: "Se adapta a lo que le pongas delante"
+    after: "Es una persona versátil"
+  - before: "Sirve para muchas cosas distintas"
+    after: "Es muy versátil"
+family:
+  - "versatilidad"
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin:
+    - "bueno"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "voluble"
+    difference: "«Voluble» describe a quien cambia de ánimo o de idea sin motivo; la otra palabra elogia a quien vale para funciones distintas."
+    memory_trick: "Voluble cambia de humor; lo otro cambia de función."
+  - confused_with: "versado"
+    difference: "«Versado» dice que alguien sabe mucho de un tema concreto; la otra palabra dice que vale para varios."
+    memory_trick: "Versado domina uno; lo otro sirve para varios."
+exercises:
+  - position: 1
+    sentence: "Buscan a alguien {{blank}}: que lleve compras un mes y almacén al siguiente."
+    hint_general: "Debe valer para funciones muy distintas sin empezar de cero."
+    explanation: "Versátil: vale para funciones distintas. «Versado» sabe mucho de un solo tema, y «voluble» cambia de ánimo sin motivo."
+    options:
+      - position: 1
+        text: "versado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versado» dice que alguien sabe mucho de un tema concreto, y aquí se piden dos áreas distintas."
+        hint_specific: "«Versado» domina un solo campo. ¿Cuántas áreas pide la frase?"
+      - position: 2
+        text: "versátil"
+        is_correct: true
+      - position: 3
+        text: "voluble"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Voluble» describe a quien cambia de ánimo o de idea sin motivo, y eso no es una virtud en un puesto."
+        hint_specific: "«Voluble» cambia por dentro. ¿Se pide cambio de humor o de función?"
+  - position: 2
+    sentence: "Esa mesa plegable es la más {{blank}} de la casa: sirve para comer, trabajar y planchar."
+    hint_general: "Vale para tres usos muy distintos sin cambiar nada."
+    explanation: "Versátil: vale para tres usos distintos. «Versada» sabe mucho de un tema, y «voluble» cambia de humor sin motivo."
+    options:
+      - position: 1
+        text: "versátil"
+        is_correct: true
+      - position: 2
+        text: "versada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versada» se dice de quien sabe mucho de un tema, y aquí hablamos de una mesa con tres usos."
+        hint_specific: "«Versada» necesita una persona con conocimientos. ¿Qué se describe aquí?"
+      - position: 3
+        text: "voluble"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Voluble» describe a quien cambia de ánimo, y una mesa no tiene estados de ánimo."
+        hint_specific: "«Voluble» habla de humores. ¿Una mesa tiene humor?"
+  - position: 3
+    sentence: "En la entrevista, Samuel contó dos ejemplos para demostrar que es {{blank}} y no solo para decirlo."
+    hint_general: "Quiere probar que vale para funciones distintas."
+    explanation: "Versátil: vale para funciones distintas. «Versado» sabe mucho de un tema, y «apañado» es coloquial y suena a salir del paso."
+    options:
+      - position: 1
+        text: "versado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versado» dice que alguien sabe mucho de un tema concreto, y sus dos ejemplos son de áreas diferentes."
+        hint_specific: "«Versado» apunta a un solo campo. ¿Cuántos ejemplos cuenta Samuel?"
+      - position: 2
+        text: "apañado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apañado» es coloquial y sugiere que se las arregla como puede, y él está probando algo con ejemplos."
+        hint_specific: "«Apañado» suena a salir del paso. ¿Eso convence en una entrevista?"
+      - position: 3
+        text: "versátil"
+        is_correct: true
+  - position: 4
+    sentence: "Mi prima es {{blank}}: toca el bajo, arregla bicicletas y lleva la contabilidad del taller."
+    hint_general: "Hace tres cosas muy distintas y todas bien."
+    explanation: "Versátil: hace tres cosas distintas y todas bien. «Versada» sabe mucho de un tema, y «volátil» describe lo que se evapora."
+    options:
+      - position: 1
+        text: "versátil"
+        is_correct: true
+      - position: 2
+        text: "versada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versada» dice que sabe mucho de un solo tema, y la frase enumera tres oficios distintos."
+        hint_specific: "«Versada» se queda en un campo. ¿Cuántos campos aparecen?"
+      - position: 3
+        text: "volátil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Volátil» describe lo que se evapora rápido, como un líquido o un precio, no a una persona con tres oficios."
+        hint_specific: "«Volátil» se evapora. ¿Qué describe la frase?"
+  - position: 5
+    sentence: "Un programa de edición {{blank}} te salva el día: vale para un vídeo corto y para un cartel."
+    hint_general: "Sirve para trabajos muy distintos sin cambiar de herramienta."
+    explanation: "Versátil: sirve para trabajos distintos. «Versado» se dice de personas con conocimientos, y «puntero» es coloquial y habla de estar a la última."
+    options:
+      - position: 1
+        text: "versado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versado» se dice de una persona que sabe mucho de un tema, no de un programa informático."
+        hint_specific: "«Versado» necesita alguien que sepa. ¿Aquí hay una persona o un programa?"
+      - position: 2
+        text: "versátil"
+        is_correct: true
+      - position: 3
+        text: "puntero"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Puntero» es coloquial y dice que algo está a la última, y aquí lo que importa es que valga para dos trabajos."
+        hint_specific: "«Puntero» habla de modernidad. ¿Qué se valora del programa?"
+  - position: 6
+    sentence: "El equipo es pequeño, así que buscan gente {{blank}} más que especialistas muy cerrados."
+    hint_general: "Con poca gente, hace falta quien valga para varias funciones."
+    explanation: "Versátil: vale para varias funciones. «Versada» sabe mucho de un tema, y «dócil» habla de obedecer sin discutir."
+    options:
+      - position: 1
+        text: "versátil"
+        is_correct: true
+      - position: 2
+        text: "versada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versada» describe a quien sabe mucho de un tema, que es justo lo que la frase contrapone."
+        hint_specific: "«Versada» es el especialista. ¿A quién prefieren en ese equipo?"
+      - position: 3
+        text: "dócil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dócil» describe a quien obedece sin discutir, y lo que necesita el equipo es gente que cubra varias funciones."
+        hint_specific: "«Dócil» mide obediencia. ¿Qué mide la frase?"
+  - position: 7
+    sentence: "Aquella chaqueta resultó tan {{blank}} que la usó para la boda y para el campo."
+    hint_general: "Sirvió para dos ocasiones muy distintas."
+    explanation: "Versátil: sirvió para dos ocasiones distintas. «Versada» se dice de personas con conocimientos, y «vistosa» habla de llamar la atención."
+    options:
+      - position: 1
+        text: "versada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versada» se dice de una persona que sabe mucho de un tema, no de una prenda de ropa."
+        hint_specific: "«Versada» pide conocimientos. ¿Una chaqueta sabe de algo?"
+      - position: 2
+        text: "versátil"
+        is_correct: true
+      - position: 3
+        text: "vistosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vistosa» dice que llama la atención, y aquí lo notable es que valió para dos ocasiones opuestas."
+        hint_specific: "«Vistosa» mira el aspecto. ¿Qué sorprende de esa chaqueta?"
+  - position: 8
+    sentence: "Decir que eres {{blank}} sin dar ejemplos suena a que no dominas nada."
+    hint_general: "La palabra necesita ejemplos que prueben que vales para varias cosas."
+    explanation: "Versátil: vales para varias cosas, con ejemplos. «Versado» sabe mucho de un tema, y «multiusos» suena a etiqueta de producto."
+    options:
+      - position: 1
+        text: "versado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versado» dice que sabes mucho de un tema, y el consejo va sobre valer para varias cosas."
+        hint_specific: "«Versado» apunta a un solo campo. ¿De qué trata el consejo?"
+      - position: 2
+        text: "multiusos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Multiusos» suena a etiqueta de producto de limpieza, y aquí se habla de una persona en una entrevista."
+        hint_specific: "«Multiusos» viene del supermercado. ¿Encaja para describirte a ti?"
+      - position: 3
+        text: "versátil"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos ejemplos, no una etiqueta"
+    body: "Samuel podía decir que se adapta a todo, pero eligió probarlo. «Soy versátil, y lo digo con dos casos: llevé compras seis meses y monté el inventario del almacén después». Le preguntaron por el inventario durante diez minutos."
+    before_phrase: "Yo hago un poco de todo, la verdad."
+    after_phrase: "Soy versátil, y lo digo con dos casos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "La mesa de la cocina"
+    body: "En casa de mis padres hay una mesa plegable que ha visto de todo: comidas de doce, deberes, una máquina de coser y dos mudanzas. Mi madre la defiende siempre: «Es la más versátil que hemos tenido». Nadie se atreve a tirarla."
+    before_phrase: "Esa mesa sirve para todo."
+    after_phrase: "Es la más versátil que hemos tenido."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Equipo de cuatro"
+    body: "Con cuatro personas no se puede tener un especialista por área. Al abrir el puesto, Héctor lo escribió sin rodeos: «Buscamos un perfil versátil, no el mayor experto del mundo en una sola cosa». Llegaron el doble de solicitudes que otras veces."
+    before_phrase: "Buscamos a alguien que sepa hacer de todo un poco."
+    after_phrase: "Buscamos un perfil versátil."
+metrics:
+  zipf_overall: 4.1469
+  dispersion_dp: 0.2361
+  pedantry_proxy: 0.4037
+  family_size: 29
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

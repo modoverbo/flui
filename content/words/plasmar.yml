@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "plasmar"
+status: "draft"
+lemma: "plasmar"
+part_of_speech: "verbo"
+syllables: ["plas", "mar"]
+stressed_syllable: 2
+ipa_latam: "[plazˈmaɾ]"
+ipa_es: "[plazˈmaɾ]"
+explanation: "Poner una idea por escrito de forma que se vea entera, tal como la tienes dentro."
+example_sentence: "Tardé tres borradores en plasmar en una página lo que llevaba meses pensando."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para el momento exacto en que algo pasa de tu cabeza al papel, que es donde se pierden las buenas ideas."
+when_not_to_use: "No la uses para copiar algo que ya existía escrito: entonces no sacas nada de dentro, solo lo trasladas."
+collocations:
+  - "plasmar una idea"
+  - "plasmar un acuerdo"
+  - "plasmar en papel"
+replaces:
+  - before: "Ponlo por escrito tal como lo piensas"
+    after: "Plásmalo tal como lo piensas"
+  - before: "A ver si consigo escribir lo que quiero decir"
+    after: "A ver si consigo plasmar lo que quiero decir"
+  - before: "Hay que pasar la idea al papel de una vez"
+    after: "Hay que plasmar la idea de una vez"
+family: ["plasmación"]
+themes:
+  - slug: "redaccion-ejecutiva"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin: ["poner"]
+  funcion: ["escribir"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "pasmar"
+    difference: "«Pasmar» es dejar a alguien con la boca abierta por la sorpresa; la otra palabra saca una idea al papel."
+    memory_trick: "Pasmas a quien te escucha; sacas al papel lo que piensas."
+  - confused_with: "reflejar"
+    difference: "«Reflejar» muestra algo que ya existe fuera, como un espejo; la otra palabra saca al papel algo que solo estaba en tu cabeza."
+    memory_trick: "El espejo copia lo de fuera; la hoja recoge lo de dentro."
+exercises:
+  - position: 1
+    sentence: "Ámbar llevaba meses con la idea en la cabeza y una tarde logró {{blank}} el proyecto entero en dos páginas."
+    hint_general: "Lo que vivía en su cabeza pasó al papel de una pieza."
+    explanation: "Plasmar: lo que vivía en su cabeza pasó al papel. «Pasmar» es dejar a alguien boquiabierto, y «soltar» es coloquial y sugiere escribir de cualquier manera."
+    options:
+      - position: 1
+        text: "pasmar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pasmar» es dejar a alguien con la boca abierta, y aquí no hay público: hay dos páginas escritas."
+        hint_specific: "«Pasmar» necesita a alguien sorprendido. ¿Quién mira mientras Ámbar escribe?"
+      - position: 2
+        text: "plasmar"
+        is_correct: true
+      - position: 3
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y sugiere escribir de cualquier manera, y la frase habla de una idea trabajada durante meses."
+        hint_specific: "«Soltar» suena a hacerlo sin cuidado. ¿Cuánto tiempo llevaba con esa idea?"
+  - position: 2
+    sentence: "El acta servía para {{blank}} los acuerdos por escrito, no para repetir la conversación entera."
+    hint_general: "Los acuerdos quedan fijados en el papel, con su forma final."
+    explanation: "Plasmar: los acuerdos quedan fijados en el papel. «Plastificar» es cubrir algo con plástico, y «resumir» acortaría la charla en vez de dejar los acuerdos asentados."
+    options:
+      - position: 1
+        text: "plasmar"
+        is_correct: true
+      - position: 2
+        text: "plastificar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Plastificar» es cubrir algo con una lámina de plástico, y aquí se habla de dejar acuerdos por escrito."
+        hint_specific: "«Plastificar» protege un carné o un cartel. ¿Qué hace un acta?"
+      - position: 3
+        text: "resumir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» acortaría la conversación, y el acta no acorta la charla: fija los acuerdos."
+        hint_specific: "«Resumir» encoge lo dicho. ¿Qué guarda el acta exactamente?"
+  - position: 3
+    sentence: "Delia dibuja antes de escribir: dice que así {{blank}} mejor lo que lleva dentro."
+    hint_general: "Consigue que lo de dentro salga fuera tal como es."
+    explanation: "Plasma: consigue que lo de dentro salga tal como es. «Pasma» es dejar boquiabierto a alguien, y «copia» daría por hecho que eso ya estaba escrito en algún sitio."
+    options:
+      - position: 1
+        text: "pasma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pasmar» es dejar a alguien con la boca abierta, y Delia dibuja para entenderse a sí misma."
+        hint_specific: "«Pasmar» necesita público. ¿Para quién dibuja Delia?"
+      - position: 2
+        text: "plasma"
+        is_correct: true
+      - position: 3
+        text: "copia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» supone que el texto ya existía en algún sitio, y lo que ella tiene dentro todavía no está escrito."
+        hint_specific: "«Copiar» necesita un original. ¿Dónde está esa idea antes de dibujar?"
+  - position: 4
+    sentence: "Si no lo escribes, la idea se deforma con los días: conviene {{blank}} hoy lo que hoy ves claro."
+    hint_general: "Deja hoy en el papel lo que hoy ves entero."
+    explanation: "Plasmar: dejar hoy en el papel lo que hoy ves entero. «Aplastar» es apretar algo hasta deformarlo, y «recordar» se queda en la memoria, que es justo lo que falla."
+    options:
+      - position: 1
+        text: "aplastar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplastar» es apretar algo hasta deformarlo, y aquí lo que se propone es escribirlo."
+        hint_specific: "«Aplastar» apachurra. ¿Qué se hace con la idea en este consejo?"
+      - position: 2
+        text: "recordar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recordar» deja la idea en la memoria, y la frase empieza avisando de que ahí se deforma."
+        hint_specific: "«Recordar» no usa papel. ¿Qué le pasa a la idea si se queda en la cabeza?"
+      - position: 3
+        text: "plasmar"
+        is_correct: true
+  - position: 5
+    sentence: "Gonzalo tardó tres borradores en {{blank}} el tono que quería para la carta de despedida."
+    hint_general: "Hasta el tercer intento el papel no sonó como él por dentro."
+    explanation: "Plasmar: el papel por fin sonó como él. «Pasmar» es dejar boquiabierto a alguien, e «imitar» copiaría un tono ajeno en vez de sacar el propio."
+    options:
+      - position: 1
+        text: "plasmar"
+        is_correct: true
+      - position: 2
+        text: "pasmar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pasmar» es dejar a alguien con la boca abierta, y Gonzalo pelea consigo mismo, no con un público."
+        hint_specific: "«Pasmar» busca sorprender. ¿Con quién pelea Gonzalo en los tres borradores?"
+      - position: 3
+        text: "imitar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imitar» copiaría el tono de otra persona, y la frase dice que era el tono que él quería."
+        hint_specific: "«Imitar» toma el tono de otro. ¿De quién era ese tono?"
+  - position: 6
+    sentence: "Nadie le pedía una novela: bastaba con {{blank}} en una página lo aprendido durante el año."
+    hint_general: "Una página con lo aprendido, salido de su propia experiencia."
+    explanation: "Plasmar: una página con lo aprendido, salido de dentro. «Plastificar» es cubrir algo con plástico, y «volcar» es coloquial y sugiere vaciarlo todo sin elegir."
+    options:
+      - position: 1
+        text: "plastificar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Plastificar» es cubrir algo con plástico, y aquí se trata de escribir lo aprendido."
+        hint_specific: "«Plastificar» protege documentos. ¿Qué hay que hacer con lo aprendido?"
+      - position: 2
+        text: "volcar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Volcar» es coloquial y sugiere vaciarlo todo de golpe, y aquí solo hay una página para lo esencial."
+        hint_specific: "«Volcar» vacía sin elegir. ¿Cuánto espacio hay en esa página?"
+      - position: 3
+        text: "plasmar"
+        is_correct: true
+  - position: 7
+    sentence: "Cuando su abuela le contó la receta de memoria, Ivo la {{blank}} en una libreta hasta con los gestos de las manos."
+    hint_general: "Pasó al papel algo que solo existía en la cabeza de otra persona."
+    explanation: "Plasmó: pasó al papel algo que solo existía en su memoria. «Pasmó» sería dejarla boquiabierta, y «resumió» habría dejado fuera los gestos que la frase destaca."
+    options:
+      - position: 1
+        text: "pasmó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pasmar» es dejar a alguien con la boca abierta, y aquí quien habla es la abuela, no Ivo."
+        hint_specific: "«Pasmar» sorprende a alguien. ¿Quién cuenta y quién escribe en esta escena?"
+      - position: 2
+        text: "plasmó"
+        is_correct: true
+      - position: 3
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» habría dejado fuera los gestos de las manos, y la frase dice que también los recogió."
+        hint_specific: "«Resumir» quita lo accesorio. ¿Qué guardó Ivo además de los ingredientes?"
+  - position: 8
+    sentence: "Un plan que nadie {{blank}} por escrito acaba convertido en cinco planes distintos."
+    hint_general: "Si no queda en el papel, cada uno lo guarda a su manera."
+    explanation: "Plasma: si no queda en el papel, cada uno lo guarda a su manera. «Pasma» es dejar boquiabierto a alguien, y «aprueba» habla de dar el visto bueno, no de escribirlo."
+    options:
+      - position: 1
+        text: "plasma"
+        is_correct: true
+      - position: 2
+        text: "pasma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pasmar» es dejar a alguien boquiabierto, y el problema del plan es que nadie lo escribió."
+        hint_specific: "«Pasmar» sorprende. ¿Qué le faltó a ese plan?"
+      - position: 3
+        text: "aprueba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aprobar» es dar el visto bueno, y un plan aprobado de palabra también se convierte en cinco planes."
+        hint_specific: "«Aprobar» da permiso. ¿Qué evita que el plan se multiplique?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "De la cabeza a dos páginas"
+    body: "Otilia contaba su idea en cada pasillo y cada vez sonaba distinta. Un viernes se sentó dos horas y la plasmó en dos páginas con tres decisiones y un calendario. El lunes ya no tuvo que contarla: la leyeron."
+    before_phrase: "Es difícil de explicar, pero lo tengo clarísimo en la cabeza."
+    after_phrase: "Lo plasmé en dos páginas."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La receta de la abuela"
+    body: "La abuela cocinaba a ojo y nadie conseguía repetirlo. Ivo se sentó con una libreta durante tres domingos y plasmó las cantidades, los tiempos y hasta cómo movía la muñeca. Ahora la tarta sale igual en tres casas distintas."
+    before_phrase: "Habría que apuntarlo antes de que se pierda."
+    after_phrase: "Lo plasmé en una libreta, gesto a gesto."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Lo que aprendí en un año"
+    body: "Le pidieron a Ámbar un texto corto sobre su último proyecto. En vez de un currículo, plasmó en una página las tres decisiones que cambiaron el resultado y qué haría distinto. Se lo reenviaron a dos equipos antes de llamarla."
+    before_phrase: "Te mando el currículo de siempre y ya está."
+    after_phrase: "Lo plasmé en una página: tres decisiones."
+metrics:
+  zipf_overall: 4.4439
+  dispersion_dp: 0.1131
+  pedantry_proxy: 0.4407
+  family_size: 35
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

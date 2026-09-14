@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2104
+slug: "concesion"
+status: "draft"
+lemma: "concesión"
+part_of_speech: "sustantivo"
+syllables: ["con", "ce", "sión"]
+stressed_syllable: 3
+ipa_latam: "[kon.seˈsjon]"
+ipa_es: "[kon.θeˈsjon]"
+explanation: "Cada cosa que una parte deja de pedir para que el acuerdo avance y las dos ganen algo."
+example_sentence: "El contrato salió adelante gracias a dos concesiones que ninguna de las dos partes celebró."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Decir en voz alta lo que ya cediste te da fuerza para pedir lo siguiente sin sonar exigente."
+when_not_to_use: "No la uses para un favor suelto: aquí cedes un punto dentro de un trato y esperas algo del otro lado."
+collocations:
+  - "hacer una concesión"
+  - "una concesión mutua"
+  - "pedir una concesión"
+replaces:
+  - before: "Yo ya puse de mi parte"
+    after: "Yo ya hice una concesión"
+  - before: "Algo tendrás que soltar tú también"
+    after: "Tú también tendrás que hacer alguna concesión"
+  - before: "Les dimos una cosa para desbloquear el trato"
+    after: "Les hicimos una concesión para desbloquear el trato"
+family: ["conceder"]
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin: ["cosa"]
+  funcion: ["ceder"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "confesión"
+    difference: "Una «confesión» es contar algo que callabas; lo otro es ceder un punto dentro de un trato, y no tiene nada de secreto."
+    memory_trick: "La confesión se cuenta; la concesión se entrega."
+  - confused_with: "consenso"
+    difference: "El «consenso» es el acuerdo al que llegan todos; una concesión es lo que cada parte pone para poder llegar ahí."
+    memory_trick: "El consenso es el destino; la concesión, el peaje."
+exercises:
+  - position: 1
+    sentence: "Para desbloquear el contrato, cada lado tuvo que hacer una {{blank}} que le dolía un poco."
+    hint_general: "Cada lado entrega algo que le cuesta para que el trato avance."
+    explanation: "Concesión: cada lado entrega algo que le cuesta. «Confesión» sería contar un secreto, y «promesa» sería comprometerse a algo futuro, no ceder hoy."
+    options:
+      - position: 1
+        text: "confesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «confesión» es contar algo que guardabas; aquí nadie cuenta secretos, cada lado entrega un punto del trato."
+        hint_specific: "Una confesión revela algo guardado. ¿Aquí se revela algo o se entrega algo?"
+      - position: 2
+        text: "concesión"
+        is_correct: true
+      - position: 3
+        text: "promesa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «promesa» compromete algo para más adelante; lo que duele aquí es lo que cada lado suelta en el momento."
+        hint_specific: "Una promesa mira al futuro. ¿Lo que duele es futuro o presente?"
+  - position: 2
+    sentence: "Bajar el precio fue la única {{blank}} que Lorenzo puso sobre la mesa; el plazo ni lo tocó."
+    hint_general: "Es lo único que soltó de su lado; lo demás siguió igual."
+    explanation: "Concesión: es lo único que soltó de su lado. «Dádiva» suena a lenguaje antiguo y a regalo, y «ventaja» sería un beneficio para él, no algo que cede."
+    options:
+      - position: 1
+        text: "dádiva"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dádiva» suena a lenguaje antiguo y sugiere un regalo generoso; en una mesa de trabajo nadie habla así."
+        hint_specific: "«Dádiva» suena a otro siglo. ¿Encaja al hablar de un precio con un proveedor?"
+      - position: 2
+        text: "concesión"
+        is_correct: true
+      - position: 3
+        text: "ventaja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «ventaja» es algo que ganas tú; bajar el precio es justo lo contrario, algo que Lorenzo pierde para avanzar."
+        hint_specific: "La ventaja la ganas tú. ¿Bajar el precio le da o le quita a Lorenzo?"
+  - position: 3
+    sentence: "Nadie se movía, así que Mariana abrió con una {{blank}} pequeña: adelantar la primera entrega."
+    hint_general: "Da el primer paso cediendo algo pequeño para desatascar el trato."
+    explanation: "Concesión: cede algo pequeño para desatascar el trato. «Confesión» sería revelar un secreto, y «disculpa» sería pedir perdón, cuando aquí nadie ha ofendido a nadie."
+    options:
+      - position: 1
+        text: "concesión"
+        is_correct: true
+      - position: 2
+        text: "confesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «confesión» saca a la luz algo que callabas; adelantar una entrega no es un secreto, es un punto que Mariana cede."
+        hint_specific: "Una confesión saca algo a la luz. ¿Mariana revela algo o entrega algo?"
+      - position: 3
+        text: "disculpa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «disculpa» repara una ofensa; en la frase nadie ha ofendido a nadie, solo está todo atascado."
+        hint_specific: "Una disculpa repara una ofensa. ¿Hay alguien ofendido en esta mesa?"
+  - position: 4
+    sentence: "El acuerdo se firmó gracias a dos {{blank}} que nadie contó fuera de la sala."
+    hint_general: "Dos cosas que cada parte dejó de pedir para poder firmar."
+    explanation: "Concesiones: dos cosas que cada parte dejó de pedir. «Confesiones» serían secretos contados, y «renuncias» sonaría a abandonar algo para siempre, sin nada a cambio."
+    options:
+      - position: 1
+        text: "confesiones"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Unas «confesiones» son secretos que alguien cuenta; lo que hubo en esa sala fueron puntos cedidos dentro del trato."
+        hint_specific: "Las confesiones cuentan secretos. ¿Qué cerró el acuerdo, secretos o puntos cedidos?"
+      - position: 2
+        text: "concesiones"
+        is_correct: true
+      - position: 3
+        text: "renuncias"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «renuncia» es soltar algo y punto; aquí lo que se cede va a cambio de la firma del otro lado."
+        hint_specific: "Renunciar es soltar sin más. ¿Se soltó a cambio de nada o a cambio de la firma?"
+  - position: 5
+    sentence: "Aceptar la fecha de ellos no fue una derrota, fue una {{blank}} calculada."
+    hint_general: "No es perder: es ceder un punto a propósito para ganar otro."
+    explanation: "Concesión: cede un punto a propósito para ganar otro. «Sucesión» habla de cosas que van una detrás de otra, y «excusa» sería una razón para escaparse."
+    options:
+      - position: 1
+        text: "sucesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «sucesión» es una serie de cosas que van una detrás de otra; aquí hay un único punto cedido a propósito."
+        hint_specific: "Una sucesión es una serie. ¿La frase habla de una serie o de un punto?"
+      - position: 2
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «excusa» es una razón para librarse de algo; aceptar su fecha no libra de nada, cuesta algo y se hace a propósito."
+        hint_specific: "Una excusa te libra de algo. ¿Aceptar su fecha libra o cuesta?"
+      - position: 3
+        text: "concesión"
+        is_correct: true
+  - position: 6
+    sentence: "El jefe de compras pidió una {{blank}} más antes de firmar, y esta vez Nuria no cedió nada."
+    hint_general: "Pide que le suelten un punto más, y esta vez no lo consigue."
+    explanation: "Concesión: pide que le suelten un punto más. «Regalito» es coloquial y suena a broma, y «confesión» sería pedirle a Nuria que cuente un secreto."
+    options:
+      - position: 1
+        text: "regalito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Regalito» es coloquial y suena a broma entre amigos; en una mesa de compras rebaja el tono de lo que está en juego."
+        hint_specific: "«Regalito» suena a broma. ¿Encaja con una firma de contrato?"
+      - position: 2
+        text: "concesión"
+        is_correct: true
+      - position: 3
+        text: "confesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «confesión» es contar algo que callabas; el jefe de compras no quiere secretos, quiere otro punto del trato."
+        hint_specific: "Una confesión pide un secreto. ¿Qué está pidiendo el jefe de compras?"
+  - position: 7
+    sentence: "Después de tres rondas, lo único que seguía sobre la mesa era una {{blank}}: el plazo de pago."
+    hint_general: "Queda un solo punto que una parte puede soltar al otro lado."
+    explanation: "Concesión: queda un solo punto por soltar. «Conversión» es cambiar una cosa en otra, y «rebaja» solo serviría para el precio, no para un plazo."
+    options:
+      - position: 1
+        text: "conversión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «conversión» es transformar una cosa en otra distinta; el plazo de pago no se transforma, se cede o no se cede."
+        hint_specific: "Una conversión transforma algo. ¿El plazo se transforma o se entrega?"
+      - position: 2
+        text: "rebaja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «rebaja» baja un precio; lo que queda sobre la mesa es una fecha de pago, y las fechas no se rebajan."
+        hint_specific: "Una rebaja baja precios. ¿Qué queda sobre la mesa, un precio o una fecha?"
+      - position: 3
+        text: "concesión"
+        is_correct: true
+  - position: 8
+    sentence: "Sara insistió en que el descuento no era una {{blank}}, sino el precio de siempre para clientes antiguos."
+    hint_general: "Ella niega que el precio sea un punto cedido a propósito."
+    explanation: "Concesión: niega que el precio sea un punto cedido. «Confesión» no encaja porque no hay ningún secreto, y «trampa» acusaría a Sara de querer engañar."
+    options:
+      - position: 1
+        text: "concesión"
+        is_correct: true
+      - position: 2
+        text: "confesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «confesión» revela algo guardado; un descuento de tarifa no revela nada, se aplica y ya está."
+        hint_specific: "Una confesión revela algo. ¿Un descuento de tarifa revela algún secreto?"
+      - position: 3
+        text: "trampa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «trampa» acusaría a Sara de querer engañar; ella explica justo lo contrario, que ese precio es el de siempre."
+        hint_specific: "Una trampa supone engaño. ¿Sara engaña o aclara su tarifa?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La ronda que se destrabó"
+    body: "Llevaban cuatro reuniones en el mismo punto. Andrea puso las cartas boca arriba: «Hago una concesión: acepto tu fecha. A cambio, quiero el pago en dos partes». El otro lado se miró un segundo y aceptó. El contrato se firmó el jueves."
+    before_phrase: "Yo pongo de mi parte, pero tú también."
+    after_phrase: "Hago una concesión: acepto tu fecha."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El turno del coche"
+    body: "La discusión por el coche duraba ya tres domingos. Joaquín cambió el tono: «Voy a hacerte una concesión y no la voy a usar en tu contra: quédatelo en agosto. Pero en diciembre es mío». Su hermana se rio y dijo que sí."
+    before_phrase: "Está bien, yo cedo esta vez."
+    after_phrase: "Voy a hacerte una concesión, y no la usaré en tu contra."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "El horario y el sueldo"
+    body: "La oferta llegó con menos dinero del esperado. Leonor respondió con calma: «Puedo hacer una concesión en el sueldo si entramos a las diez». La responsable anotó y dijo que lo consultaba. Al día siguiente había acuerdo."
+    before_phrase: "Puedo ceder algo si me dan algo a cambio."
+    after_phrase: "Puedo hacer una concesión en el sueldo."
+metrics:
+  zipf_overall: 4.6441
+  dispersion_dp: 0.1893
+  pedantry_proxy: 0.5519
+  family_size: 282
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

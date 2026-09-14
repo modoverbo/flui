@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 122
+slug: "trayectoria"
+status: "draft"
+lemma: "trayectoria"
+part_of_speech: "sustantivo"
+syllables: ["tra", "yec", "to", "ria"]
+stressed_syllable: 3
+ipa_latam: "[tɾa.ʝekˈto.ɾja]"
+ipa_es: "[tɾa.ʝekˈto.ɾja]"
+explanation: "Camino que alguien ha recorrido en su trabajo a lo largo del tiempo."
+example_sentence: "En quince minutos conté mi trayectoria sin mirar el currículo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Convierte una lista de empleos en un relato con dirección: de dónde vienes y hacia dónde vas."
+when_not_to_use: "No la uses para un solo empleo de tres meses; aquí hace falta un recorrido con varios pasos."
+collocations:
+  - "una trayectoria larga"
+  - "la trayectoria profesional"
+  - "contar tu trayectoria"
+replaces:
+  - before: "Te cuento las cosas que he hecho"
+    after: "Te cuento mi trayectoria"
+  - before: "Llevo muchos años en esto"
+    after: "Tengo una trayectoria larga en esto"
+  - before: "Todo lo que hizo antes de llegar aquí"
+    after: "Su trayectoria antes de llegar aquí"
+family: []
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin: ["cosa"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "trayecto"
+    difference: "«Trayecto» es el camino entre dos puntos, como el del autobús; la otra palabra habla de años de trabajo."
+    memory_trick: "El trayecto dura una hora; el recorrido profesional dura años."
+  - confused_with: "currículo"
+    difference: "«Currículo» es el papel donde se escribe todo; la otra palabra es el recorrido en sí, lo hayas escrito o no."
+    memory_trick: "El currículo se imprime; el recorrido se vive."
+exercises:
+  - position: 1
+    sentence: "En quince minutos, Adriana contó su {{blank}} sin mirar el papel ni una vez."
+    hint_general: "Cuenta el recorrido de años que la trajo hasta aquí."
+    explanation: "Trayectoria: el recorrido de años que la trajo hasta aquí. «Trayecto» es el camino entre dos puntos, y «racha» es una temporada de suerte."
+    options:
+      - position: 1
+        text: "trayecto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trayecto» es el camino entre dos puntos, como el del autobús, y aquí se cuentan años de trabajo."
+        hint_specific: "«Trayecto» se mide en kilómetros. ¿En qué se mide lo que cuenta Adriana?"
+      - position: 2
+        text: "trayectoria"
+        is_correct: true
+      - position: 3
+        text: "racha"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Racha» es coloquial y habla de una temporada con suerte buena o mala, no de un recorrido construido."
+        hint_specific: "«Racha» depende de la suerte. ¿Lo que cuenta ella es suerte o trabajo?"
+  - position: 2
+    sentence: "Su {{blank}} es corta, pero en tres años cambió dos veces de sector y aprendió mucho."
+    hint_general: "Se habla del recorrido profesional, no del papel donde se escribe."
+    explanation: "Trayectoria: el recorrido profesional. «Travesía» es un viaje largo por mar, y «hoja» es el papel del currículo."
+    options:
+      - position: 1
+        text: "trayectoria"
+        is_correct: true
+      - position: 2
+        text: "travesía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Travesía» es un viaje largo, sobre todo por mar, y aquí se resumen tres años de trabajo."
+        hint_specific: "«Travesía» pide barco o desierto. ¿De qué habla la frase?"
+      - position: 3
+        text: "hoja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Hoja» es el papel donde se escribe el currículo, no el recorrido que esa persona ha hecho."
+        hint_specific: "«Hoja» es papel. ¿Lo corto es el papel o el recorrido?"
+  - position: 3
+    sentence: "El premio reconoce la {{blank}} de una librera que abrió su tienda hace cuarenta años."
+    hint_general: "Se premian cuarenta años de oficio, no un solo día."
+    explanation: "Trayectoria: cuarenta años de oficio. «Trayecto» es el camino entre dos puntos, y «hazaña» es una acción heroica concreta."
+    options:
+      - position: 1
+        text: "trayecto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trayecto» es el camino entre dos puntos, y lo que se premia son cuarenta años detrás de un mostrador."
+        hint_specific: "«Trayecto» va de ir de un sitio a otro. ¿Qué se premia aquí?"
+      - position: 2
+        text: "hazaña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Hazaña» es una acción heroica concreta, y aquí se reconoce un trabajo sostenido durante décadas."
+        hint_specific: "«Hazaña» ocurre un día. ¿Cuántos años lleva esa librería abierta?"
+      - position: 3
+        text: "trayectoria"
+        is_correct: true
+  - position: 4
+    sentence: "Mi abuelo resume su {{blank}} en una frase: entró de aprendiz y salió de encargado."
+    hint_general: "Resume en una frase todo su recorrido de trabajo."
+    explanation: "Trayectoria: todo su recorrido de trabajo. «Trayecto» es el camino entre dos puntos, y «rutina» es lo que se repite cada día."
+    options:
+      - position: 1
+        text: "trayectoria"
+        is_correct: true
+      - position: 2
+        text: "trayecto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trayecto» es el camino entre dos puntos, y él resume décadas en el mismo oficio."
+        hint_specific: "«Trayecto» tiene principio y final en un mapa. ¿Qué resume tu abuelo?"
+      - position: 3
+        text: "rutina"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rutina» es lo que se repite cada día, y la frase cuenta un cambio: de aprendiz a encargado."
+        hint_specific: "«Rutina» no cambia. ¿Qué cambió entre el principio y el final?"
+  - position: 5
+    sentence: "Para el puesto pedían una {{blank}} de al menos cinco años en el sector."
+    hint_general: "Piden años de recorrido dentro de ese sector."
+    explanation: "Trayectoria: años de recorrido en el sector. «Travesía» es un viaje por mar, y «titulación» habla de títulos."
+    options:
+      - position: 1
+        text: "travesía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Travesía» es un viaje largo, sobre todo por mar, y lo que se pide son años de trabajo en el sector."
+        hint_specific: "«Travesía» necesita un mar o un desierto. ¿Qué piden para el puesto?"
+      - position: 2
+        text: "trayectoria"
+        is_correct: true
+      - position: 3
+        text: "titulación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Titulación» habla de los títulos que tienes, y aquí se piden años dentro del sector."
+        hint_specific: "«Titulación» va de estudios. ¿Qué se mide en años en esta frase?"
+  - position: 6
+    sentence: "Nadie pregunta por tu {{blank}} si no sabes contar un ejemplo concreto."
+    hint_general: "Sin un ejemplo, nadie se interesa por tu recorrido."
+    explanation: "Trayectoria: tu recorrido de trabajo. «Trayecto» es el camino entre dos puntos, y «palmarés» suena a lista de títulos deportivos."
+    options:
+      - position: 1
+        text: "trayecto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trayecto» es el camino entre dos puntos, y aquí se habla del recorrido de tu vida laboral."
+        hint_specific: "«Trayecto» se dibuja en un mapa. ¿Qué se cuenta con ejemplos?"
+      - position: 2
+        text: "palmarés"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Palmarés» suena a deporte y a lista de títulos ganados, no al recorrido de trabajo de una persona."
+        hint_specific: "«Palmarés» pide copas y medallas. ¿Hay medallas en una entrevista?"
+      - position: 3
+        text: "trayectoria"
+        is_correct: true
+  - position: 7
+    sentence: "La {{blank}} de Beatriz tiene un salto raro: de la cocina al diseño gráfico."
+    hint_general: "Se describe el recorrido, con su salto de un oficio a otro."
+    explanation: "Trayectoria: el recorrido con su salto de oficio. «Travesía» es un viaje por mar, y «vocación» es la inclinación que sientes."
+    options:
+      - position: 1
+        text: "trayectoria"
+        is_correct: true
+      - position: 2
+        text: "travesía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Travesía» es un viaje largo, sobre todo por mar, y aquí se describe un cambio de oficio."
+        hint_specific: "«Travesía» cruza un mar. ¿Qué cruza Beatriz?"
+      - position: 3
+        text: "vocación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vocación» es la inclinación que sientes hacia un oficio, y la frase describe los pasos que dio."
+        hint_specific: "«Vocación» está dentro de ti. ¿La frase habla de sentir o de hacer?"
+  - position: 8
+    sentence: "Cuenta tu {{blank}} como una historia, no como una lista de fechas."
+    hint_general: "El consejo es contar tu recorrido de trabajo como una historia."
+    explanation: "Trayectoria: tu recorrido de trabajo. «Trayecto» es el camino entre dos puntos, y «biografía» abarca la vida entera."
+    options:
+      - position: 1
+        text: "trayecto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trayecto» es el camino entre dos puntos, y el consejo trata de cómo contar tus años de trabajo."
+        hint_specific: "«Trayecto» es un viaje corto. ¿Qué se cuenta en una entrevista?"
+      - position: 2
+        text: "biografía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Biografía» abarca la vida entera, y aquí se habla solo del recorrido de trabajo."
+        hint_specific: "«Biografía» incluye la infancia. ¿Tanto hace falta contar?"
+      - position: 3
+        text: "trayectoria"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Quince minutos sin papel"
+    body: "Adriana había llevado el currículo impreso por costumbre, pero lo dejó bocabajo. «Le cuento mi trayectoria en tres pasos: almacén, compras y ahora proveedores». Tardó quince minutos y no leyó ni una línea."
+    before_phrase: "Le cuento un poco lo que he ido haciendo."
+    after_phrase: "Le cuento mi trayectoria en tres pasos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "De aprendiz a encargado"
+    body: "Mi abuelo resume cuarenta años en once palabras: entró de aprendiz con catorce y salió de encargado con cincuenta y cuatro. «Toda mi trayectoria cabe en una frase», dice, y se ríe. Luego cuenta la parte larga, que dura dos cafés."
+    before_phrase: "Todo lo que hice cabe en una frase."
+    after_phrase: "Toda mi trayectoria cabe en una frase."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El premio de la librera"
+    body: "La asociación del barrio premió a la librera de la esquina, que abrió en 1985 y sigue abriendo a las nueve. En la placa pusieron una sola línea: «Por una trayectoria de cuarenta años». Ella dijo gracias y volvió al mostrador."
+    before_phrase: "Por todos estos años de trabajo."
+    after_phrase: "Por una trayectoria de cuarenta años."
+metrics:
+  zipf_overall: 4.7869
+  dispersion_dp: 0.0806
+  pedantry_proxy: 0.5328
+  family_size: 9
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

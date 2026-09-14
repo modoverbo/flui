@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 120
+slug: "exponer"
+status: "gated"
+lemma: "exponer"
+part_of_speech: "verbo"
+syllables:
+  - "ex"
+  - "po"
+  - "ner"
+stressed_syllable: 3
+ipa_latam: "[ek.spoˈner]"
+ipa_es: "[ek.spoˈner]"
+explanation: "Contar una idea entera y en orden delante de otras personas."
+example_sentence: "Me tocó exponer el plan en diez minutos delante del comité."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Anuncia el orden antes de empezar y la sala te sigue: primero el problema, luego la idea."
+when_not_to_use: "No la uses para una charla de ida y vuelta; aquí uno cuenta y los demás escuchan hasta el final."
+collocations:
+  - "exponer una idea"
+  - "exponer un caso"
+  - "exponer los motivos"
+replaces:
+  - before: "Me toca contar el plan delante de todos"
+    after: "Me toca exponer el plan"
+  - before: "Voy a explicar mis razones una por una"
+    after: "Voy a exponer mis razones una por una"
+  - before: "Cuéntanos el caso desde el principio"
+    after: "Expón el caso desde el principio"
+family:
+  - "exposición"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "contar"
+  funcion:
+    - "presentar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "imponer"
+    difference: "«Imponer» es obligar a aceptar algo; la otra palabra solo presenta la idea para que los demás la juzguen."
+    memory_trick: "Imponer obliga; presentar invita."
+  - confused_with: "posponer"
+    difference: "«Posponer» es dejar algo para más adelante; la otra palabra lo pone delante de la sala hoy."
+    memory_trick: "Posponer retrasa; presentar enseña."
+exercises:
+  - position: 1
+    sentence: "En el comité del martes, a Camila le tocó {{blank}} el plan de ahorro en diez minutos."
+    hint_general: "Tiene que contar el plan entero y en orden ante el comité."
+    explanation: "Exponer: contar el plan entero y en orden. «Imponer» sería obligar a aceptarlo, y «posponer» sería dejarlo para otro día."
+    options:
+      - position: 1
+        text: "imponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y a ella le piden que lo cuente, no que lo haga obligatorio."
+        hint_specific: "«Imponer» no deja elegir. ¿Camila decide o presenta?"
+      - position: 2
+        text: "exponer"
+        is_correct: true
+      - position: 3
+        text: "posponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Posponer» es dejar algo para más adelante, y la frase dice que tiene diez minutos el martes."
+        hint_specific: "«Posponer» retrasa. ¿Hay fecha y hora en la frase?"
+  - position: 2
+    sentence: "Antes de votar, cada grupo tuvo cinco minutos para {{blank}} su propuesta con un ejemplo."
+    hint_general: "Cada grupo cuenta su propuesta entera antes de la votación."
+    explanation: "Exponer: contar la propuesta entera antes de votar. «Imponer» sería obligar a aceptarla, y «soltar» es coloquial y suena a decirla de golpe."
+    options:
+      - position: 1
+        text: "exponer"
+        is_correct: true
+      - position: 2
+        text: "imponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y justo después hay una votación libre."
+        hint_specific: "«Imponer» cierra la puerta. ¿Qué pasa después de los cinco minutos?"
+      - position: 3
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y sugiere decirlo de golpe y sin orden, y aquí hay cinco minutos y un ejemplo preparado."
+        hint_specific: "«Soltar» va sin preparación. ¿Cuánto tiempo tiene cada grupo?"
+  - position: 3
+    sentence: "Mi hermana practicó tres veces en la cocina antes de {{blank}} su proyecto en el ayuntamiento."
+    hint_general: "Practica para contar el proyecto entero delante de gente."
+    explanation: "Exponer: contar el proyecto entero ante gente. «Imponer» sería obligar a aceptarlo, y «posponer» sería dejarlo para otro día."
+    options:
+      - position: 1
+        text: "posponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Posponer» es dejarlo para otro día, y ella ensaya justo porque la cita ya está puesta."
+        hint_specific: "«Posponer» aplaza. ¿Para qué ensayaría tres veces?"
+      - position: 2
+        text: "exponer"
+        is_correct: true
+      - position: 3
+        text: "imponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y ella va a contar su proyecto ante quien decide."
+        hint_specific: "«Imponer» manda. ¿Tu hermana manda en el ayuntamiento?"
+  - position: 4
+    sentence: "El moderador dejó que cada vecino {{blank}} su queja entera antes de responder ninguna."
+    hint_general: "Les deja contar la queja entera, en orden y sin cortes."
+    explanation: "Expusiera: les dejó contar la queja entera. «Impusiera» sería obligar a aceptar algo, y «resumiera» sería acortarla."
+    options:
+      - position: 1
+        text: "impusiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y los vecinos solo están contando lo que les molesta."
+        hint_specific: "«Impusiera» obliga a alguien. ¿Quién obligaría a quién aquí?"
+      - position: 2
+        text: "expusiera"
+        is_correct: true
+      - position: 3
+        text: "resumiera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» sería acortarla, y la frase dice que cada uno la contó entera antes de cualquier respuesta."
+        hint_specific: "«Resumiera» recorta. ¿Cuánto les dejó contar el moderador?"
+  - position: 5
+    sentence: "Si {{blank}} primero el problema y luego la solución, la sala te sigue sin perderse."
+    hint_general: "El orden al contar hace que la sala no se pierda."
+    explanation: "Expones: cuentas primero el problema y luego la solución. «Impones» sería obligar, y «improvisas» sería hablar sin orden."
+    options:
+      - position: 1
+        text: "expones"
+        is_correct: true
+      - position: 2
+        text: "impones"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y el consejo trata del orden en que cuentas las cosas."
+        hint_specific: "«Impones» obliga. ¿De qué trata el consejo: de mandar o de ordenar?"
+      - position: 3
+        text: "improvisas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisar» es hablar sin preparación, y aquí lo que ayuda es justo el orden preparado."
+        hint_specific: "«Improvisas» va sin plan. ¿El consejo pide plan o espontaneidad?"
+  - position: 6
+    sentence: "Aquel día, Héctor {{blank}} el caso del almacén con tres cifras y un mapa, y nadie preguntó nada."
+    hint_general: "Cuenta el caso entero y en orden con muy poco material."
+    explanation: "Expuso: contó el caso entero con poco material. «Impuso» sería obligar a aceptarlo, y «recitó» suena a repetir de memoria sin pensar."
+    options:
+      - position: 1
+        text: "expuso"
+        is_correct: true
+      - position: 2
+        text: "impuso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y la frase dice que nadie tuvo ni una duda después."
+        hint_specific: "«Impuso» fuerza una decisión. ¿Qué reacción hubo en la sala?"
+      - position: 3
+        text: "recitó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recitar» suena a repetir un texto aprendido sin pensar, y él usó cifras y un mapa para explicarse."
+        hint_specific: "«Recitó» repite de carrerilla. ¿Eso encaja con un mapa y tres cifras?"
+  - position: 7
+    sentence: "En la entrevista pidieron a Virginia {{blank}} un proyecto difícil de principio a fin."
+    hint_general: "Le piden contar ese proyecto entero y en orden."
+    explanation: "Exponer: contar el proyecto entero y en orden. «Imponer» sería obligar a aceptarlo, y «posponer» sería dejarlo para luego."
+    options:
+      - position: 1
+        text: "imponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y a ella le piden que cuente lo que hizo."
+        hint_specific: "«Imponer» manda sobre otros. ¿Qué le piden a Virginia?"
+      - position: 2
+        text: "exponer"
+        is_correct: true
+      - position: 3
+        text: "posponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Posponer» es dejarlo para más adelante, y la petición es para ese mismo momento."
+        hint_specific: "«Posponer» aplaza. ¿Cuándo tiene que contarlo?"
+  - position: 8
+    sentence: "Nadie entendió la idea porque Marcos la {{blank}} al revés: primero la solución y al final el problema."
+    hint_general: "Contó la idea en un orden que confundió a todos."
+    explanation: "Expuso: contó la idea en mal orden. «Impuso» sería obligar a aceptarla, y «vendió» es coloquial y suena a convencer a toda costa."
+    options:
+      - position: 1
+        text: "impuso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Imponer» es obligar a aceptar algo, y el problema aquí fue el orden, no la obligación."
+        hint_specific: "«Impuso» obliga. ¿Qué falló según la frase?"
+      - position: 2
+        text: "vendió"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vender» una idea es coloquial y sugiere convencer a toda costa, y aquí lo que falló fue el orden."
+        hint_specific: "«Vendió» busca convencer. ¿La frase habla de convencer o de ordenar?"
+      - position: 3
+        text: "expuso"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez minutos y un comité"
+    body: "Camila tenía diez minutos para el plan de ahorro y doce diapositivas preparadas. Quitó nueve. «Voy a exponer primero el problema y luego dos opciones», anunció al empezar. Terminó en ocho minutos y le sobraron dos para preguntas."
+    before_phrase: "Os voy a contar el plan, a ver si se entiende."
+    after_phrase: "Voy a exponer primero el problema y luego dos opciones."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Ensayo en la cocina"
+    body: "Mi hermana llevaba un mes con el proyecto del huerto del barrio y le tocaba defenderlo en el ayuntamiento. Ensayó tres veces con nosotros de público. «Si lo expongo en orden, no me van a poder decir que no se entiende», repetía."
+    before_phrase: "Si lo cuento bien, no tendrán excusa."
+    after_phrase: "Si lo expongo en orden, no me podrán decir que no se entiende."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "De principio a fin"
+    body: "«Cuéntenos un proyecto difícil», pidieron a Virginia. Ella respiró y avisó: «Lo expongo de principio a fin: qué pasó, qué hicimos y qué cambiaría hoy». Nadie la interrumpió en seis minutos."
+    before_phrase: "Os cuento un poco lo que pasó."
+    after_phrase: "Lo expongo de principio a fin."
+metrics:
+  zipf_overall: 4.7809
+  dispersion_dp: 0.113
+  pedantry_proxy: 0.4861
+  family_size: 48
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

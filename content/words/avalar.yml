@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 126
+slug: "avalar"
+status: "gated"
+lemma: "avalar"
+part_of_speech: "verbo"
+syllables:
+  - "a"
+  - "va"
+  - "lar"
+stressed_syllable: 3
+ipa_latam: "[a.βaˈlar]"
+ipa_es: "[a.βaˈlar]"
+explanation: "Sostener con hechos o con tu nombre que algo es verdad."
+example_sentence: "Tres años de resultados avalan lo que digo en esta entrevista."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Deja que los datos hablen: «lo avalan los números» convence más que «soy muy bueno»."
+when_not_to_use: "No la uses si no tienes con qué respaldarlo; sin pruebas detrás, la palabra queda vacía."
+collocations:
+  - "avalar una idea"
+  - "avalar con datos"
+  - "avalar a alguien"
+replaces:
+  - before: "Lo que digo lo demuestran los números"
+    after: "Los números avalan lo que digo"
+  - before: "Mi jefa puede dar la cara por mí"
+    after: "Mi jefa puede avalarme"
+  - before: "Tengo pruebas de que funcionó"
+    after: "Tengo datos que lo avalan"
+family:
+  - "aval"
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin:
+    - "decir"
+  funcion:
+    - "demostrar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "alabar"
+    difference: "«Alabar» es decir cosas buenas de alguien; la otra palabra aporta pruebas o pone tu nombre como garantía."
+    memory_trick: "Alabas con palabras; garantizas con pruebas."
+  - confused_with: "evaluar"
+    difference: "«Evaluar» es juzgar desde fuera cuánto vale algo; la otra palabra es ponerse detrás para sostenerlo."
+    memory_trick: "Evalúas desde fuera; sostienes desde detrás."
+exercises:
+  - position: 1
+    sentence: "No hizo falta que Fernanda se defendiera: tres años de resultados {{blank}} cada palabra suya."
+    hint_general: "Los resultados sostienen con hechos lo que ella dice."
+    explanation: "Avalaban: los resultados sostenían sus palabras. «Alababan» sería decirle cosas bonitas, y «evaluaban» sería juzgarla desde fuera."
+    options:
+      - position: 1
+        text: "alababan"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es decir cosas buenas de alguien, y unos resultados no hablan bien de nadie: prueban."
+        hint_specific: "«Alababan» reparte elogios. ¿Qué hacen exactamente unos resultados?"
+      - position: 2
+        text: "avalaban"
+        is_correct: true
+      - position: 3
+        text: "evaluaban"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Evaluar» es juzgar desde fuera cuánto vale algo, y aquí los resultados están de su lado, no juzgándola."
+        hint_specific: "«Evaluaban» juzga desde fuera. ¿Los resultados están a favor o en contra?"
+  - position: 2
+    sentence: "Mi antigua jefa se ofreció a {{blank}}me si alguien pedía referencias."
+    hint_general: "Se ofrece a poner su nombre como garantía."
+    explanation: "Avalarme: poner su nombre como garantía. «Alabarme» sería decir cosas bonitas, y «evaluarme» sería juzgar mi trabajo."
+    options:
+      - position: 1
+        text: "avalar"
+        is_correct: true
+      - position: 2
+        text: "alabar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es decir cosas buenas, y una referencia laboral compromete el nombre de quien la da."
+        hint_specific: "«Alabar» solo habla bien. ¿Qué arriesga quien da una referencia?"
+      - position: 3
+        text: "evaluar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Evaluar» es juzgar cuánto vale tu trabajo, y ella se pone de tu lado, no a calificarte."
+        hint_specific: "«Evaluar» juzga. ¿Tu antigua jefa juzga o respalda?"
+  - position: 3
+    sentence: "La propuesta no gustó al principio, pero dos estudios independientes la {{blank}} y cambió la votación."
+    hint_general: "Los estudios sostienen con hechos que la propuesta funciona."
+    explanation: "Avalaron: los estudios la sostuvieron con hechos. «Alabaron» sería hablar bien de ella, y «adornaron» sugiere añadirle floritura."
+    options:
+      - position: 1
+        text: "avalaron"
+        is_correct: true
+      - position: 2
+        text: "alabaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es hablar bien de algo, y un estudio no opina: aporta pruebas medibles."
+        hint_specific: "«Alabaron» son palabras bonitas. ¿Qué aporta un estudio?"
+      - position: 3
+        text: "adornaron"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adornar» es coloquial aquí y sugiere añadir floritura, y lo que cambió la votación fueron los datos."
+        hint_specific: "«Adornaron» pone lazos. ¿Qué convenció a los que votaron?"
+  - position: 4
+    sentence: "Mi hermano pidió un préstamo y mi padre tuvo que {{blank}}lo con su casa."
+    hint_general: "Pone su casa como garantía de la deuda."
+    explanation: "Avalarlo: poner su casa como garantía. «Alabarlo» sería decir cosas buenas de él, y «evaluarlo» sería juzgar su situación."
+    options:
+      - position: 1
+        text: "alabar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es decir cosas buenas de alguien, y un banco no acepta elogios como garantía."
+        hint_specific: "«Alabar» son palabras. ¿Qué pide un banco además de palabras?"
+      - position: 2
+        text: "avalar"
+        is_correct: true
+      - position: 3
+        text: "evaluar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Evaluar» es juzgar cuánto vale algo, y eso lo hace el banco, no el padre con su casa."
+        hint_specific: "«Evaluar» pone nota. ¿Quién pone la casa en esta escena?"
+  - position: 5
+    sentence: "Si dices que el método funciona, trae un caso que lo {{blank}} con números."
+    hint_general: "Hace falta un caso que lo sostenga con hechos."
+    explanation: "Avale: un caso que lo sostenga con hechos. «Alabe» sería hablar bien de él, y «venda» es coloquial y suena a convencer a toda costa."
+    options:
+      - position: 1
+        text: "alabe"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es hablar bien de algo, y lo que se pide son números que lo demuestren."
+        hint_specific: "«Alabe» solo elogia. ¿Qué se pide traer en la frase?"
+      - position: 2
+        text: "avale"
+        is_correct: true
+      - position: 3
+        text: "venda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vender» una idea es coloquial y sugiere convencer a toda costa, y aquí se piden pruebas, no persuasión."
+        hint_specific: "«Venda» busca convencer. ¿Se piden argumentos o cifras?"
+  - position: 6
+    sentence: "La asociación pidió a dos vecinas conocidas que {{blank}} el proyecto del huerto ante el ayuntamiento."
+    hint_general: "Les piden poner su nombre detrás del proyecto."
+    explanation: "Avalaran: poner su nombre detrás del proyecto. «Alabaran» sería decir cosas buenas, y «evaluaran» sería juzgarlo desde fuera."
+    options:
+      - position: 1
+        text: "avalaran"
+        is_correct: true
+      - position: 2
+        text: "alabaran"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es decir cosas buenas, y lo que hace falta ante el ayuntamiento es un nombre que responda."
+        hint_specific: "«Alabaran» son buenas palabras. ¿Qué pide una institución?"
+      - position: 3
+        text: "evaluaran"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Evaluar» es juzgar desde fuera, y a las vecinas se les pide ponerse a favor, no calificar nada."
+        hint_specific: "«Evaluaran» juzga desde fuera. ¿De qué lado están las vecinas?"
+  - position: 7
+    sentence: "En la entrevista, Ernesto dejó que los datos {{blank}} su respuesta en vez de repetir que era el mejor."
+    hint_general: "Deja que los datos sostengan lo que dice."
+    explanation: "Avalaran: que los datos sostuvieran su respuesta. «Alabaran» sería que hablasen bien de él, y «maquillaran» sugiere disimular."
+    options:
+      - position: 1
+        text: "alabaran"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es decir cosas buenas de alguien, y unos datos no elogian: demuestran."
+        hint_specific: "«Alabaran» reparte cumplidos. ¿Qué hacen los números?"
+      - position: 2
+        text: "maquillaran"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maquillar» es coloquial y sugiere disimular lo que no cuadra, y él presenta los datos tal cual."
+        hint_specific: "«Maquillaran» tapa algo. ¿Ernesto tapa o muestra?"
+      - position: 3
+        text: "avalaran"
+        is_correct: true
+  - position: 8
+    sentence: "Una recomendación vale poco si quien la firma no puede {{blank}} lo que dice."
+    hint_general: "Quien firma tiene que poder sostenerlo con hechos."
+    explanation: "Avalar: sostener con hechos lo que firma. «Alabar» es decir cosas buenas, y «evaluar» sería juzgar desde fuera."
+    options:
+      - position: 1
+        text: "avalar"
+        is_correct: true
+      - position: 2
+        text: "alabar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alabar» es decir cosas buenas, y la frase dice justo que solo con palabras la recomendación vale poco."
+        hint_specific: "«Alabar» son palabras. ¿Qué le falta a esa recomendación?"
+      - position: 3
+        text: "evaluar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Evaluar» es juzgar desde fuera cuánto vale algo, y quien firma se está poniendo del lado de la persona."
+        hint_specific: "«Evaluar» se queda fuera. ¿Dónde se coloca quien firma?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Que hablen los números"
+    body: "Ernesto podía repetir que era bueno en su trabajo, pero eligió otra cosa. «Lo avalan los datos: bajamos las incidencias un 30 % en seis meses y las mantuvimos ahí un año». No volvió a hablar de sí mismo en toda la entrevista."
+    before_phrase: "Creo que se me da bastante bien, la verdad."
+    after_phrase: "Lo avalan los datos."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos estudios y una votación"
+    body: "La propuesta del turno partido perdió la primera votación por seis votos. Un mes después llegaron dos estudios de otras dos ciudades con el mismo resultado. «Ahora hay algo que la avala», dijo Vicente. La segunda votación salió al revés."
+    before_phrase: "Ahora sí tenemos pruebas de que funciona."
+    after_phrase: "Ahora hay algo que la avala."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La firma de mi padre"
+    body: "Mi hermano necesitaba un préstamo para el taller y le faltaba garantía. Mi padre lo pensó dos noches y fue con él al banco. «Te avalo, pero quiero ver las cuentas cada mes», le dijo. Los dos cumplieron su parte."
+    before_phrase: "Doy la cara por ti, pero con condiciones."
+    after_phrase: "Te avalo, pero quiero ver las cuentas cada mes."
+metrics:
+  zipf_overall: 4.3393
+  dispersion_dp: 0.1333
+  pedantry_proxy: 0.4173
+  family_size: 18
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

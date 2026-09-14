@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2112
+slug: "encauzar"
+status: "draft"
+lemma: "encauzar"
+part_of_speech: "verbo"
+syllables: ["en", "cau", "zar"]
+stressed_syllable: 3
+ipa_latam: "[en.kawˈsaɾ]"
+ipa_es: "[en.kawˈθaɾ]"
+explanation: "Llevar de vuelta al buen camino algo que se estaba perdiendo, como una charla o un proyecto."
+example_sentence: "La reunión se iba en quejas hasta que Julia la encauzó hacia una sola decisión."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para corregir sin regañar: dices hacia dónde va la cosa en vez de señalar quién la desvió."
+when_not_to_use: "No la uses para cortar a quien todavía no ha terminado: llevar la charla a su sitio no es quitarle el turno."
+collocations:
+  - "encauzar una conversación"
+  - "encauzar un proyecto"
+  - "encauzar al equipo"
+replaces:
+  - before: "Vamos a volver al tema"
+    after: "Vamos a encauzar la conversación"
+  - before: "Hay que enderezar esto antes de que empeore"
+    after: "Hay que encauzar esto antes de que empeore"
+  - before: "Le ayudé a ponerse en el buen camino"
+    after: "Le ayudé a encauzar su trabajo"
+family: []
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin: ["arreglar"]
+  funcion: ["reconducir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "encausar"
+    difference: "«Encausar» es abrir un proceso judicial contra alguien; lo otro lleva una charla o un trabajo de vuelta a su camino."
+    memory_trick: "Encausas a un acusado; encauzas un proyecto."
+  - confused_with: "encajar"
+    difference: "«Encajar» es que dos piezas ajusten bien entre sí; aquí algo se estaba desviando y alguien lo devuelve a su sitio."
+    memory_trick: "Encaja lo que ajusta; encauza lo que se desvía."
+exercises:
+  - position: 1
+    sentence: "La reunión se estaba convirtiendo en una lista de quejas hasta que Joaquín la {{blank}} hacia una decisión concreta."
+    hint_general: "Lleva la reunión desde las quejas hasta una decisión."
+    explanation: "Encauzó: llevó la reunión hacia una decisión. «Encausó» sería llevar a alguien ante un juez, y «cortó» sería pararla en seco, no darle rumbo."
+    options:
+      - position: 1
+        text: "encausó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encausar» es abrir un proceso judicial contra alguien; en una reunión de trabajo nadie está siendo juzgado."
+        hint_specific: "Encausar lleva a alguien ante un juez. ¿Hay un juicio en esa sala?"
+      - position: 2
+        text: "encauzó"
+        is_correct: true
+      - position: 3
+        text: "cortó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cortar» una reunión es pararla en seco; Joaquín no la para, le da una dirección nueva."
+        hint_specific: "Cortar detiene. ¿La reunión se detiene o cambia de rumbo?"
+  - position: 2
+    sentence: "Después de dos meses perdidos, la nueva responsable {{blank}} el proyecto con un plan de seis semanas."
+    hint_general: "Pone el proyecto otra vez en camino con un plan corto."
+    explanation: "Encauzó: puso el proyecto otra vez en camino. «Encajó» sería hacer que dos piezas ajusten, y «recondujo» dice algo parecido, pero suena a informe interno."
+    options:
+      - position: 1
+        text: "encajó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encajar» es que dos piezas ajusten entre sí; un proyecto parado durante dos meses no necesita encaje, necesita rumbo."
+        hint_specific: "Encajar ajusta piezas. ¿Al proyecto le faltaba ajuste o dirección?"
+      - position: 2
+        text: "recondujo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Reconducir» es correcto, pero vive en los informes y las actas; contando la historia de un equipo suena a documento."
+        hint_specific: "«Reconducir» suena a acta de reunión. ¿Encaja al contar lo que hizo una persona?"
+      - position: 3
+        text: "encauzó"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} la charla en cuanto empieza a torcerse, luego no hace falta levantar la voz."
+    hint_general: "Corriges el rumbo de la charla en cuanto se tuerce."
+    explanation: "Encauzas: corriges el rumbo a tiempo. «Encausas» sería denunciar a alguien, y «canalizas» suena a manual de empresa."
+    options:
+      - position: 1
+        text: "encauzas"
+        is_correct: true
+      - position: 2
+        text: "encausas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encausar» es llevar a alguien ante la justicia; una charla que se tuerce no acaba en un juzgado."
+        hint_specific: "Encausar va de juzgados. ¿Esta charla termina ahí?"
+      - position: 3
+        text: "canalizas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Canalizar» suena a manual de empresa y a tuberías; para una charla entre dos personas resulta frío."
+        hint_specific: "«Canalizar» suena a manual y a tuberías. ¿Encaja en una charla entre dos?"
+  - position: 4
+    sentence: "Mi tía {{blank}} la comida familiar con una pregunta sobre el viaje, justo cuando la cosa se ponía tensa."
+    hint_general: "Devuelve la comida familiar a un terreno tranquilo."
+    explanation: "Encauzó: devolvió la comida a un terreno tranquilo. «Encaró» sería enfrentarse al problema de cara, y «paró» sería detener la charla del todo."
+    options:
+      - position: 1
+        text: "encaró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encarar» es plantarle cara a un problema; la tía hace lo contrario, lleva la charla a un terreno suave."
+        hint_specific: "Encarar planta cara. ¿La tía se enfrenta o desvía con suavidad?"
+      - position: 2
+        text: "encauzó"
+        is_correct: true
+      - position: 3
+        text: "paró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Parar» la comida sería cortar la conversación; con su pregunta la charla sigue, solo que por otro camino."
+        hint_specific: "Parar detiene todo. ¿La charla se detiene o continúa?"
+  - position: 5
+    sentence: "El entrenador no gritó a nadie: {{blank}} al equipo con tres instrucciones y dos cambios."
+    hint_general: "Pone al equipo otra vez en su sitio sin levantar la voz."
+    explanation: "Encauzó: puso al equipo en su sitio sin gritar. «Encajó» hablaría de piezas que ajustan, y «ordenó» sugeriría órdenes secas, cuando lo que hubo fue rumbo."
+    options:
+      - position: 1
+        text: "ordenó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ordenar» suena a mandato seco; la frase empieza diciendo que no gritó, y describe instrucciones que dan dirección."
+        hint_specific: "Ordenar manda en seco. ¿Qué dice la primera parte de la frase?"
+      - position: 2
+        text: "encajó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encajar» es hacer que dos piezas ajusten; un equipo desordenado necesita dirección, no encaje mecánico."
+        hint_specific: "Encajar ajusta piezas. ¿Un equipo es un puzle o un grupo con rumbo?"
+      - position: 3
+        text: "encauzó"
+        is_correct: true
+  - position: 6
+    sentence: "Nadie sabía cómo {{blank}} una conversación que llevaba media hora dando vueltas."
+    hint_general: "Devolver al camino una charla que ya no va a ninguna parte."
+    explanation: "Encauzar: devolver al camino una charla perdida. «Encausar» sería denunciar a alguien, y «acelerar» solo la haría ir más rápido en círculos."
+    options:
+      - position: 1
+        text: "encauzar"
+        is_correct: true
+      - position: 2
+        text: "encausar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encausar» es abrir un proceso contra alguien; una charla que da vueltas no tiene acusados."
+        hint_specific: "Encausar necesita un acusado. ¿Hay alguno en esta charla?"
+      - position: 3
+        text: "acelerar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acelerar» la haría ir más rápido, pero seguiría dando vueltas; lo que falta es una dirección."
+        hint_specific: "Acelerar da velocidad. ¿Ir más rápido en círculos ayuda?"
+  - position: 7
+    sentence: "Rafael {{blank}} la llegada de los nuevos: menos ruido, más acompañamiento y una persona de referencia."
+    hint_general: "Pone la llegada de los nuevos en un rumbo mejor."
+    explanation: "Encauzó: puso la llegada de los nuevos en mejor rumbo. «Encaró» sería enfrentarse a ella, y «aprobó» supondría que otro la había diseñado."
+    options:
+      - position: 1
+        text: "encaró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encarar» es plantarle cara a algo difícil; aquí no hay enfrentamiento, hay una llegada que se ordena mejor."
+        hint_specific: "Encarar planta cara a un problema. ¿Hay aquí un enfrentamiento?"
+      - position: 2
+        text: "encauzó"
+        is_correct: true
+      - position: 3
+        text: "aprobó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aprobar» supondría que otra persona lo diseñó y él dijo que sí; los dos puntos muestran que el plan es suyo."
+        hint_specific: "Aprobar responde a un plan ajeno. ¿De quién es el plan de los dos puntos?"
+  - position: 8
+    sentence: "Un buen jefe {{blank}} el trabajo cuando se desvía, en vez de esperar a que se estrelle."
+    hint_general: "Corrige el rumbo del trabajo antes de que choque."
+    explanation: "Encauza: corrige el rumbo antes del choque. «Encausa» sería llevar a alguien ante un juez, y «canaliza» suena a manual corporativo."
+    options:
+      - position: 1
+        text: "encausa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encausar» es abrir un proceso judicial; un jefe que corrige un trabajo no está juzgando a nadie."
+        hint_specific: "Encausar abre un proceso judicial. ¿Eso hace un buen jefe?"
+      - position: 2
+        text: "canaliza"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Canalizar» pertenece al lenguaje de los manuales y los conductos; describiendo a un jefe suena impersonal."
+        hint_specific: "«Canalizar» suena a manual. ¿Encaja al describir a una persona?"
+      - position: 3
+        text: "encauza"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Media hora de vueltas"
+    body: "La reunión llevaba media hora repitiendo las mismas quejas. Lorena tomó aire: «Voy a encauzar esto: quedan diez minutos y salimos con una fecha». Nadie se sintió cortado, y salieron con la fecha."
+    before_phrase: "A ver, volvamos al tema."
+    after_phrase: "Voy a encauzar esto: salimos con una fecha."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La sobremesa tensa"
+    body: "Se notaba que la conversación iba hacia la discusión de siempre. Su tía preguntó por el viaje de Isabel y todo cambió de rumbo. Más tarde, Isabel se lo dijo: «Gracias por encauzar eso, iba directo al choque»."
+    before_phrase: "Gracias por cambiar de tema a tiempo."
+    after_phrase: "Gracias por encauzar eso a tiempo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del maratón"
+    body: "El chat del grupo era un caos de horarios y rutas. Antonio escribió tres líneas: «Encauzo esto: salimos a las siete, ruta del río, y quien no pueda avisa el viernes». El caos se acabó esa misma noche."
+    before_phrase: "Voy a poner orden en esto."
+    after_phrase: "Encauzo esto: salimos a las siete."
+metrics:
+  zipf_overall: 3.4159
+  dispersion_dp: 0.2968
+  pedantry_proxy: 0.3882
+  family_size: 23
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

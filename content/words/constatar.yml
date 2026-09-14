@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "constatar"
+status: "gated"
+lemma: "constatar"
+part_of_speech: "verbo"
+syllables:
+  - "cons"
+  - "ta"
+  - "tar"
+stressed_syllable: 3
+ipa_latam: "[kons.taˈtaɾ]"
+ipa_es: "[kons.taˈtaɾ]"
+explanation: "Comprobar con tus propios ojos que algo es cierto y dejarlo dicho, sin opinar."
+example_sentence: "Después de dos meses con el método nuevo, puedo constatar que los correos se contestan el mismo día."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Separa el hecho de la opinión: primero dices lo que se puede comprobar y después lo que propones."
+when_not_to_use: "No la uses para algo que solo intuyes o que te contaron: si no lo has comprobado, es una suposición."
+collocations:
+  - "constatar un hecho"
+  - "constatar la mejora"
+  - "constatar el avance"
+replaces:
+  - before: "Vimos que sí funciona"
+    after: "Constatamos que funciona"
+  - before: "Se nota que ha mejorado un montón"
+    after: "Constatamos la mejora"
+  - before: "Ya miré y el pago entró"
+    after: "Constaté que el pago entró"
+family:
+  - "constatación"
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin:
+    - "ver"
+  funcion:
+    - "comprobar"
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "contrastar"
+    difference: "«Contrastar» compara dos versiones para ver en qué se diferencian; la otra palabra solo confirma que algo ocurrió."
+    memory_trick: "Contrastas dos datos entre sí; confirmas uno con tus ojos."
+  - confused_with: "opinar"
+    difference: "«Opinar» añade tu juicio; la otra palabra se queda en lo que cualquiera podría comprobar igual que tú."
+    memory_trick: "La opinión es tuya; el hecho lo puede repetir cualquiera."
+exercises:
+  - position: 1
+    sentence: "Tras dos meses con la agenda compartida, Ámbar pudo {{blank}} que las reuniones empezaban a la hora."
+    hint_general: "Lo comprobó con los datos delante, sin necesidad de defenderlo."
+    explanation: "Constatar: lo comprobó con los datos delante. «Contrastar» compararía dos versiones distintas, y «chequear» es coloquial y suena a revisión rápida, no a conclusión."
+    options:
+      - position: 1
+        text: "contrastar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contrastar» compara dos versiones entre sí, y aquí hay un solo dato comprobado durante dos meses."
+        hint_specific: "«Contrastar» necesita dos cosas que comparar. ¿Cuántas hay en esta frase?"
+      - position: 2
+        text: "constatar"
+        is_correct: true
+      - position: 3
+        text: "chequear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chequear» es coloquial y suena a mirada rápida, y la frase habla de dos meses de observación."
+        hint_specific: "«Chequear» suena a vistazo rápido. ¿Cuánto tiempo llevó esa comprobación?"
+  - position: 2
+    sentence: "El informe no opinaba: se limitaba a {{blank}} lo que mostraban las cifras del trimestre."
+    hint_general: "Solo recoge lo que cualquiera vería en las cifras."
+    explanation: "Constatar: recoge lo que cualquiera vería en las cifras. «Contactar» es ponerse en contacto con alguien, e «interpretar» añadiría el juicio que el informe evita."
+    options:
+      - position: 1
+        text: "contactar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contactar» es ponerse en contacto con una persona, y aquí el informe trabaja con cifras."
+        hint_specific: "«Contactar» necesita a alguien al otro lado. ¿Quién aparece en esta frase?"
+      - position: 2
+        text: "interpretar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interpretar» añade una lectura propia, y la frase empieza diciendo que el informe no opinaba."
+        hint_specific: "«Interpretar» pone tu lectura encima. ¿Qué dice la frase sobre las opiniones?"
+      - position: 3
+        text: "constatar"
+        is_correct: true
+  - position: 3
+    sentence: "Delia miró la cuenta y quiso {{blank}} que el pago había entrado antes de avisar al equipo."
+    hint_general: "Quiere estar segura mirándolo ella misma."
+    explanation: "Constatar: quiere verlo ella misma antes de avisar. «Contrastar» compararía dos versiones, y «suponer» sería dar por hecho justo lo que ella va a verificar."
+    options:
+      - position: 1
+        text: "constatar"
+        is_correct: true
+      - position: 2
+        text: "contrastar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contrastar» compara dos versiones, y Delia solo mira una cuenta para ver si el dinero está."
+        hint_specific: "«Contrastar» compara dos fuentes. ¿Cuántas mira Delia?"
+      - position: 3
+        text: "suponer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Suponer» da algo por hecho sin mirarlo, y la frase dice que ella abrió la cuenta."
+        hint_specific: "«Suponer» no mira nada. ¿Qué hizo Delia antes de avisar?"
+  - position: 4
+    sentence: "Al volver a la casa del pueblo, Ivo {{blank}} que el tejado había aguantado bien el invierno."
+    hint_general: "Lo vio con sus ojos y lo dio por cierto."
+    explanation: "Constató: lo vio con sus ojos y lo dio por cierto. «Contactó» sería llamar a alguien, y «chequeó» es coloquial y describe un vistazo, no una conclusión."
+    options:
+      - position: 1
+        text: "chequeó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chequear» es coloquial y suena a vistazo rápido, y la frase cuenta a qué conclusión llegó Ivo."
+        hint_specific: "«Chequear» se queda en el vistazo. ¿La frase cuenta la mirada o el resultado?"
+      - position: 2
+        text: "constató"
+        is_correct: true
+      - position: 3
+        text: "contactó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contactar» es ponerse en contacto con alguien, y en la escena Ivo está solo mirando un tejado."
+        hint_specific: "«Contactar» busca a una persona. ¿Con quién habla Ivo aquí?"
+  - position: 5
+    sentence: "Nadie discutió el resultado, porque cualquiera podía {{blank}} lo mismo abriendo la carpeta compartida."
+    hint_general: "Cualquiera puede llegar a lo mismo mirando los datos."
+    explanation: "Constatar: cualquiera llega a lo mismo mirando los datos. «Contrastar» pediría una segunda fuente, e «imaginar» no comprueba nada."
+    options:
+      - position: 1
+        text: "imaginar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imaginar» no comprueba nada, y la frase dice que basta con abrir la carpeta para verlo."
+        hint_specific: "«Imaginar» trabaja sin datos. ¿Qué hay dentro de esa carpeta?"
+      - position: 2
+        text: "constatar"
+        is_correct: true
+      - position: 3
+        text: "contrastar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contrastar» necesita dos versiones para comparar, y aquí todos miran la misma carpeta."
+        hint_specific: "«Contrastar» compara dos fuentes. ¿Cuántas carpetas hay en la frase?"
+  - position: 6
+    sentence: "En su correo, Amalia separó dos partes: primero {{blank}} los hechos y después proponía un cambio."
+    hint_general: "La primera parte solo recoge lo comprobado; la propuesta viene después."
+    explanation: "Constataba: la primera parte solo recoge lo comprobado. «Contactaba» sería escribir a alguien, y «juzgaba» mezclaría la opinión con los hechos que ella separó."
+    options:
+      - position: 1
+        text: "constataba"
+        is_correct: true
+      - position: 2
+        text: "contactaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contactar» es ponerse en contacto con alguien, y aquí la primera parte del correo habla de hechos."
+        hint_specific: "«Contactar» busca a una persona. ¿Qué contiene la primera parte del correo?"
+      - position: 3
+        text: "juzgaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Juzgar» pone la opinión dentro, y Amalia separó justamente los hechos de la propuesta."
+        hint_specific: "«Juzgar» mete la valoración. ¿Por qué separó Amalia las dos partes?"
+  - position: 7
+    sentence: "Si vas a pedir un cambio grande, {{blank}} primero lo que ya funciona: así nadie se siente atacado."
+    hint_general: "Reconoce con datos lo que va bien antes de proponer nada."
+    explanation: "Constata: reconoce con datos lo que va bien. «Contrasta» compararía dos versiones, e «insinúa» diría a medias algo que aquí conviene afirmar con claridad."
+    options:
+      - position: 1
+        text: "contrasta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contrastar» compara dos versiones entre sí, y el consejo habla de reconocer lo que ya funciona."
+        hint_specific: "«Contrastar» compara dos cosas. ¿Cuántas menciona el consejo?"
+      - position: 2
+        text: "constata"
+        is_correct: true
+      - position: 3
+        text: "insinúa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insinuar» dice las cosas a medias, y aquí conviene decir con claridad lo que va bien."
+        hint_specific: "«Insinuar» deja la idea a medias. ¿Eso evita que alguien se sienta atacado?"
+  - position: 8
+    sentence: "Tras medir las visitas durante un mes, Tadeo pudo {{blank}} una mejora pequeña y sostenida."
+    hint_general: "Un mes de medidas le permite afirmarlo con datos."
+    explanation: "Constatar: un mes de medidas le permite afirmarlo. «Contactar» es hablar con alguien, y «celebrar» festejaría el dato en lugar de dejarlo comprobado."
+    options:
+      - position: 1
+        text: "contactar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contactar» es ponerse en contacto con alguien, y lo que Tadeo tiene delante son números."
+        hint_specific: "«Contactar» busca a una persona. ¿Qué midió Tadeo durante un mes?"
+      - position: 2
+        text: "celebrar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Celebrar» festeja el dato, y la frase se queda en dejar la mejora comprobada."
+        hint_specific: "«Celebrar» añade fiesta. ¿La frase festeja o comprueba?"
+      - position: 3
+        text: "constatar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Hechos arriba, propuesta abajo"
+    body: "Otilia dividió su correo en dos bloques. Arriba: «Constato tres cosas: los plazos se cumplen, las quejas bajaron a la mitad y seguimos sin manual». Abajo, una propuesta de tres líneas. Nadie discutió la primera parte y el debate fue corto."
+    before_phrase: "Yo creo que va mejor, ¿no?"
+    after_phrase: "Constato tres cosas."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La casa del pueblo"
+    body: "Su madre temía encontrarse el tejado hundido tras el invierno. Ivo subió con una escalera, miró despacio y la llamó: «Constato que aguantó; solo faltan dos tejas». Ella respiró por primera vez en tres meses."
+    before_phrase: "Yo lo veo bien, pero vete a saber."
+    after_phrase: "Constato que aguantó."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Antes de opinar"
+    body: "Le preguntaron qué mejoraría del equipo al que iba a entrar. Amalia no repartió juicios: «Desde fuera solo puedo constatar dos cosas: el equipo publica muy rápido y responde poco en redes. Lo demás tendría que verlo por dentro». Le ofrecieron el puesto."
+    before_phrase: "Pues yo cambiaría un montón de cosas."
+    after_phrase: "Desde fuera solo puedo constatar dos cosas."
+metrics:
+  zipf_overall: 4.5182
+  dispersion_dp: 0.1951
+  pedantry_proxy: 0.5563
+  family_size: 406
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

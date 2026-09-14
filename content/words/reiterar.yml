@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "reiterar"
-status: "draft"
+status: "gated"
 lemma: "reiterar"
 part_of_speech: "verbo"
-syllables: ["re", "i", "te", "rar"]
+syllables:
+  - "re"
+  - "i"
+  - "te"
+  - "rar"
 stressed_syllable: 4
 ipa_latam: "[re.i.teˈɾaɾ]"
 ipa_es: "[re.i.teˈɾaɾ]"
@@ -24,15 +28,19 @@ replaces:
     after: "Reitero mi petición"
   - before: "Como ya dije, lo repito"
     after: "Reitero el compromiso"
-family: ["reiteración", "reiteradamente"]
+family:
+  - "reiteración"
+  - "reiteradamente"
 themes:
   - slug: "correos-mensajes"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 1
 tags:
-  comodin: ["decir"]
-  funcion: ["recordar"]
+  comodin:
+    - "decir"
+  funcion:
+    - "recordar"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -227,11 +235,11 @@ readings:
     before_phrase: "Bueno, lo vuelvo a decir por si acaso."
     after_phrase: "Reitero el plan: sábado a las nueve."
 metrics:
-  zipf_overall: 4.8589
-  dispersion_dp: 0.1458
-  pedantry_proxy: 0.6234
+  zipf_overall: 4.8594
+  dispersion_dp: 0.146
+  pedantry_proxy: 0.623
   family_size: 27
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "prescindir"
+status: "draft"
+lemma: "prescindir"
+part_of_speech: "verbo"
+syllables: ["pres", "cin", "dir"]
+stressed_syllable: 3
+ipa_latam: "[pɾe.sinˈdiɾ]"
+ipa_es: "[pɾes.θinˈdiɾ]"
+explanation: "Dejar algo fuera a propósito porque no hace falta, y seguir adelante sin ello."
+example_sentence: "Cuando el texto pasó de dos páginas, decidí prescindir de la introducción entera."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Deja claro que la decisión es tuya y está pensada: no se te olvidó, lo dejaste fuera."
+when_not_to_use: "No la uses para algo que sí hace falta y estás quitando por prisa: eso no es elegir, es recortar."
+collocations:
+  - "prescindir de los rodeos"
+  - "prescindir de un dato"
+  - "prescindir de la introducción"
+replaces:
+  - before: "Quita todo lo que sobre"
+    after: "Prescinde de lo que sobra"
+  - before: "Se puede hacer igual sin esa parte"
+    after: "Se puede prescindir de esa parte"
+  - before: "No hace falta que pongas eso"
+    after: "Puedes prescindir de eso"
+family: ["prescindible"]
+themes:
+  - slug: "redaccion-ejecutiva"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin: ["quitar"]
+  funcion: ["elegir"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "prescribir"
+    difference: "«Prescribir» es recetar algo o marcar una norma; la otra palabra deja algo fuera porque no hace falta."
+    memory_trick: "Se prescribe lo que hay que tomar; se deja fuera lo que no hace falta."
+  - confused_with: "descartar"
+    difference: "«Descartar» elige entre varias opciones y tira una; la otra palabra sigue adelante sin algo que sí podría estar."
+    memory_trick: "Descartas una carta entre varias; sigues sin la pieza que sobraba."
+exercises:
+  - position: 1
+    sentence: "Cuando el texto pasó de dos páginas, Ámbar decidió {{blank}} de la introducción entera."
+    hint_general: "La quita a propósito y el texto sigue funcionando igual."
+    explanation: "Prescindir: la quita a propósito y el texto sigue igual. «Prescribir» es recetar o marcar una norma, y «pasar» es coloquial y suena a desentenderse."
+    options:
+      - position: 1
+        text: "prescribir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prescribir» es recetar algo o marcar una norma, y aquí se decide qué queda fuera de un texto."
+        hint_specific: "«Prescribir» aparece en recetas y normas. ¿Qué está decidiendo Ámbar?"
+      - position: 2
+        text: "prescindir"
+        is_correct: true
+      - position: 3
+        text: "pasar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pasar de algo» es coloquial y suena a desentenderse, y aquí hay una decisión pensada sobre el texto."
+        hint_specific: "«Pasar de algo» suena a no darle importancia. ¿Ámbar se desentiende o decide?"
+  - position: 2
+    sentence: "El equipo probó una semana {{blank}} de las reuniones diarias y nadie las echó de menos."
+    hint_general: "Trabajan sin ellas a propósito, para ver qué pasa."
+    explanation: "Prescindiendo: trabajan sin ellas a propósito. «Prescribiendo» sería recetarlas o convertirlas en norma, y «huyendo» sugiere escapar de algo, no probar sin ello."
+    options:
+      - position: 1
+        text: "prescindiendo"
+        is_correct: true
+      - position: 2
+        text: "prescribiendo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prescribir» es recetar algo o convertirlo en norma, y el equipo hace lo contrario: se queda sin ellas."
+        hint_specific: "«Prescribir» impone algo. ¿El equipo añade reuniones o las quita?"
+      - position: 3
+        text: "huyendo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Huir» sugiere escapar de algo que temes, y aquí se trata de una prueba acordada de una semana."
+        hint_specific: "«Huir» implica miedo. ¿Esto es una huida o un experimento?"
+  - position: 3
+    sentence: "Si el gráfico ya lo dice todo, puedes {{blank}} del párrafo que lo repite debajo."
+    hint_general: "Quítalo a propósito: el gráfico ya hace ese trabajo."
+    explanation: "Prescindir: lo quitas porque el gráfico ya hace ese trabajo. «Presidir» es dirigir una reunión o un acto, y «librarte» es coloquial y suena a quitarte un peso, no a decidir."
+    options:
+      - position: 1
+        text: "presidir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Presidir» es dirigir una reunión o un acto, y aquí se decide si un párrafo se queda o se va."
+        hint_specific: "«Presidir» se hace en una mesa, delante de gente. ¿Qué se decide sobre el párrafo?"
+      - position: 2
+        text: "prescindir"
+        is_correct: true
+      - position: 3
+        text: "librarte"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Librarte» es coloquial y suena a quitarte un peso de encima, y aquí la razón es que el gráfico ya lo dice."
+        hint_specific: "«Librarte» habla de un peso molesto. ¿Por qué sobra ese párrafo?"
+  - position: 4
+    sentence: "Delia entregó la propuesta sin anexos: quiso {{blank}} de todo lo que nadie iba a leer."
+    hint_general: "Lo deja fuera porque sabe que no se va a usar."
+    explanation: "Prescindir: lo deja fuera porque no se va a usar. «Prescribir» es recetar o imponer una norma, y «olvidarse» convertiría una decisión en un descuido."
+    options:
+      - position: 1
+        text: "olvidarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Olvidarse» convierte la decisión en un descuido, y la frase dice que Delia lo quiso así."
+        hint_specific: "«Olvidarse» pasa sin querer. ¿Delia quiso dejarlos fuera o se le pasó?"
+      - position: 2
+        text: "prescindir"
+        is_correct: true
+      - position: 3
+        text: "prescribir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prescribir» es recetar algo o marcar una norma, y aquí se deciden qué anexos no van."
+        hint_specific: "«Prescribir» manda hacer algo. ¿Qué hizo Delia con los anexos?"
+  - position: 5
+    sentence: "Nadie te reprochará que {{blank}} de un adjetivo; sí de tres párrafos que no dicen nada."
+    hint_general: "Quitar una palabra a propósito no molesta a nadie."
+    explanation: "Prescindas: quitar una palabra a propósito no molesta. «Prescribas» sería recetarla o imponerla como norma, y «pases» es coloquial y suena a desentenderse del texto."
+    options:
+      - position: 1
+        text: "prescribas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prescribir» es recetar o marcar una norma, y aquí se habla de quitar palabras de un texto."
+        hint_specific: "«Prescribir» impone algo. ¿Qué se hace con ese adjetivo?"
+      - position: 2
+        text: "prescindas"
+        is_correct: true
+      - position: 3
+        text: "pases"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pasar de algo» es coloquial y suena a desentenderse, y aquí hay una elección consciente de palabras."
+        hint_specific: "«Pasar de algo» suena a desinterés. ¿Quitar un adjetivo es desinterés?"
+  - position: 6
+    sentence: "Cuando se rompió la impresora, Gonzalo aprendió a {{blank}} de los papeles en las reuniones."
+    hint_general: "Aprendió a trabajar sin ellos, y siguió igual de bien."
+    explanation: "Prescindir: aprendió a trabajar sin ellos. «Presidir» es dirigir la reunión, y «alejarse» hablaría de distancia, no de dejar algo fuera."
+    options:
+      - position: 1
+        text: "prescindir"
+        is_correct: true
+      - position: 2
+        text: "presidir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Presidir» es dirigir la reunión desde la cabecera, y lo que aprendió Gonzalo fue a trabajar sin papeles."
+        hint_specific: "«Presidir» es un papel dentro de la reunión. ¿Qué desapareció en esta escena?"
+      - position: 3
+        text: "alejarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alejarse» habla de poner distancia, y aquí los papeles simplemente ya no están sobre la mesa."
+        hint_specific: "«Alejarse» mide distancia. ¿Los papeles están lejos o no están?"
+  - position: 7
+    sentence: "Un buen resumen no esconde nada: {{blank}} de lo que sobra y deja lo que decide."
+    hint_general: "Deja fuera lo que no aporta y conserva lo que pesa."
+    explanation: "Prescinde: deja fuera lo que no aporta. «Prescribe» sería recetarlo o imponerlo, y «desconfía» pondría en duda el material en vez de apartarlo."
+    options:
+      - position: 1
+        text: "prescribe"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prescribir» es recetar algo o marcar una norma, y un resumen no receta nada: elige."
+        hint_specific: "«Prescribir» manda hacer algo. ¿Qué hace un resumen con lo que sobra?"
+      - position: 2
+        text: "desconfía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desconfiar» pone en duda el material, y aquí lo que sobra simplemente se queda fuera."
+        hint_specific: "«Desconfiar» sospecha. ¿El resumen sospecha o decide?"
+      - position: 3
+        text: "prescinde"
+        is_correct: true
+  - position: 8
+    sentence: "Si tienes cinco minutos para contarlo, {{blank}} del contexto y empieza por la decisión."
+    hint_general: "Déjalo fuera a propósito y ve directo a lo que importa."
+    explanation: "Prescinde: lo dejas fuera a propósito. «Prescribe» sería recetarlo o imponerlo como norma, y «pasa» es coloquial y suena a desprecio por el contexto."
+    options:
+      - position: 1
+        text: "prescinde"
+        is_correct: true
+      - position: 2
+        text: "prescribe"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prescribir» es recetar o imponer una norma, y el consejo dice qué dejar fuera en cinco minutos."
+        hint_specific: "«Prescribir» ordena hacer algo. ¿Qué recomienda el consejo sobre el contexto?"
+      - position: 3
+        text: "pasa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pasar de algo» es coloquial y suena a despreciarlo, y aquí el contexto solo se deja para después."
+        hint_specific: "«Pasar de algo» suena a desprecio. ¿El contexto no vale o no cabe?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Sin introducción"
+    body: "El documento de Otilia empezaba con media página sobre la historia del proyecto. La borró y escribió una línea: «Prescindo del contexto; si hace falta, está en el anexo». La decisión llegó en la reunión siguiente y nadie pidió el anexo."
+    before_phrase: "Bueno, primero te cuento de dónde viene todo esto."
+    after_phrase: "Prescindo del contexto: vamos a la decisión."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena sin postre"
+    body: "Faltaban dos horas y la lista de la compra no cabía en el presupuesto. Leandro miró la lista y dijo: «Prescindimos del postre y ponemos fruta; nadie se va a acordar mañana». Sobró comida, sobró dinero y nadie echó nada en falta."
+    before_phrase: "Habrá que quitar algo, no sé qué."
+    after_phrase: "Prescindimos del postre."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos minutos, una historia"
+    body: "Ámbar tenía siete años de trabajo y dos minutos para contarlos. Empezó avisando: «Voy a prescindir de los primeros empleos y te cuento el proyecto que me enseñó lo que sé». Le preguntaron por ese proyecto durante veinte minutos."
+    before_phrase: "Empiezo por el principio, aunque sea largo."
+    after_phrase: "Voy a prescindir de los primeros empleos."
+metrics:
+  zipf_overall: 3.8234
+  dispersion_dp: 0.1774
+  pedantry_proxy: 0.4866
+  family_size: 60
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

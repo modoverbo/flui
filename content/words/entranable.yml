@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 325
+slug: "entranable"
+status: "draft"
+lemma: "entrañable"
+part_of_speech: "adjetivo"
+syllables: ["en", "tra", "ña", "ble"]
+stressed_syllable: 3
+ipa_latam: "[en.tɾaˈɲa.βle]"
+ipa_es: "[en.tɾaˈɲa.βle]"
+explanation: "Que te produce cariño, porque hay una historia larga de años detrás."
+example_sentence: "Fue una cena entrañable: cuatro amigos y las mismas bromas de siempre."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra el cariño sin exagerar: «Qué persona tan entrañable» dice mucho en tres palabras."
+when_not_to_use: "No la uses para alguien que acabas de conocer: aquí pesa el tiempo compartido."
+collocations:
+  - "una persona entrañable"
+  - "un recuerdo entrañable"
+  - "una cena entrañable"
+replaces:
+  - before: "Es un señor muy bueno y todos lo quieren"
+    after: "Es un señor entrañable"
+  - before: "Fue una noche muy bonita"
+    after: "Fue una noche entrañable"
+  - before: "Le tengo mucho cariño a ese sitio"
+    after: "Ese sitio me parece entrañable"
+family: []
+themes:
+  - slug: "conversacion-cotidiana"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin: ["bonito", "querido"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "intratable"
+    difference: "«Intratable» describe a quien está de tan mal humor que no hay quien se le acerque; la otra palabra dice justo lo contrario."
+    memory_trick: "Al intratable no te acercas; al entrañable no lo sueltas."
+  - confused_with: "agradable"
+    difference: "«Agradable» dice que algo se pasa bien en el momento; aquí además hay cariño y tiempo compartido detrás."
+    memory_trick: "Lo agradable gusta hoy; lo entrañable se recuerda años."
+exercises:
+  - position: 1
+    sentence: "La comida del domingo fue {{blank}}: los mismos platos y las mismas bromas de Felipe desde hace veinte años."
+    hint_general: "Da cariño justo porque se repite igual desde hace mucho tiempo."
+    explanation: "Entrañable: da cariño porque se repite desde hace años. «Intratable» describe a quien no hay quien se le acerque, y «agradable» solo dice que se pasa bien ese rato."
+    options:
+      - position: 1
+        text: "intratable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intratable» describe a quien está de tan mal humor que nadie se le acerca, y aquí hay bromas y risas."
+        hint_specific: "«Intratable» aleja a la gente. ¿La comida aleja o reúne?"
+      - position: 2
+        text: "entrañable"
+        is_correct: true
+      - position: 3
+        text: "agradable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agradable» dice que se pasa bien ese día, y lo que hace especial esta comida son los veinte años repitiéndola."
+        hint_specific: "«Agradable» mira solo hoy. ¿Qué añade la frase al final?"
+  - position: 2
+    sentence: "Blanca guarda un recuerdo {{blank}} de aquellos veranos en casa de sus abuelos."
+    hint_general: "Ese recuerdo le despierta cariño por todo lo que vivió allí."
+    explanation: "Entrañable: el recuerdo le despierta cariño por lo vivido. «Impagable» dice que algo no tiene precio, y «antiguo» solo mide los años."
+    options:
+      - position: 1
+        text: "impagable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impagable» dice que algo no tiene precio, y lo que describe la frase es el cariño, no el valor."
+        hint_specific: "«Impagable» habla de precio. ¿Se mide el precio de un recuerdo aquí?"
+      - position: 2
+        text: "entrañable"
+        is_correct: true
+      - position: 3
+        text: "antiguo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Antiguo» solo dice que pasó hace mucho, y hay recuerdos viejos que no dan ningún cariño."
+        hint_specific: "«Antiguo» mide años. ¿Ser viejo basta para querer un recuerdo?"
+  - position: 3
+    sentence: "Nadie diría que ese bar es bonito, y aun así a Pedro le parece {{blank}}."
+    hint_general: "No es bonito, pero le da cariño por lo que ha vivido ahí."
+    explanation: "Entrañable: le da cariño por lo vivido allí. «Inalterable» significa que algo no cambia nunca, y «adorable» suena empalagoso para hablar de un bar."
+    options:
+      - position: 1
+        text: "inalterable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inalterable» significa que algo no cambia nunca, y la frase habla de lo que Pedro siente, no de lo que cambia."
+        hint_specific: "«Inalterable» describe lo que no cambia. ¿La frase mide cambios o cariño?"
+      - position: 2
+        text: "adorable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adorable» suena empalagoso y se usa más con niños o animales que con un bar de barrio."
+        hint_specific: "«Adorable» suena a cachorro. ¿Pega dicho de un bar?"
+      - position: 3
+        text: "entrañable"
+        is_correct: true
+  - position: 4
+    sentence: "Su abuela era una mujer {{blank}}: hablaba poco y se acordaba de todos los cumpleaños, cuenta Renata."
+    hint_general: "Despertaba cariño por detalles pequeños repetidos durante años."
+    explanation: "Entrañable: despertaba cariño por detalles repetidos durante años. «Intratable» describe a quien nadie puede acercarse, y «amable» habla solo del buen trato."
+    options:
+      - position: 1
+        text: "entrañable"
+        is_correct: true
+      - position: 2
+        text: "intratable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intratable» describe a quien está de tan mal humor que nadie se le acerca, y esta abuela se acuerda de todos."
+        hint_specific: "«Intratable» espanta a la gente. ¿Qué hace la abuela con los cumpleaños?"
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» habla del buen trato en el momento, y aquí lo que pesa es el cariño acumulado durante años."
+        hint_specific: "«Amable» es de hoy y con cualquiera. ¿Qué añade acordarse de todos los cumpleaños?"
+  - position: 5
+    sentence: "Fue una despedida {{blank}} y sin discursos largos, tal como habría querido Manuel."
+    hint_general: "Estuvo llena de cariño aunque nadie hiciera nada solemne."
+    explanation: "Entrañable: llena de cariño y sin solemnidad. «Impagable» dice que algo no tiene precio, y «venerable» suena a respeto solemne, no a cariño cercano."
+    options:
+      - position: 1
+        text: "impagable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impagable» dice que algo no tiene precio, y aquí se describe el cariño de un rato, no su valor."
+        hint_specific: "«Impagable» habla de precio. ¿Qué se estaría valorando en dinero?"
+      - position: 2
+        text: "entrañable"
+        is_correct: true
+      - position: 3
+        text: "venerable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Venerable» suena a respeto solemne y distante, justo lo contrario de una despedida sin discursos."
+        hint_specific: "«Venerable» suena a homenaje con protocolo. ¿Hubo discursos en esa despedida?"
+  - position: 6
+    sentence: "Lo que hace {{blank}} a ese grupo no es lo que hacen, sino los años que llevan juntos."
+    hint_general: "El cariño no viene de los planes, sino del tiempo compartido."
+    explanation: "Entrañable: el cariño viene del tiempo compartido. «Intratable» describe a quien nadie puede acercarse, y «divertido» apunta a los planes, que la frase descarta."
+    options:
+      - position: 1
+        text: "intratable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intratable» describe a quien está de tan mal humor que nadie se le acerca, y aquí el grupo sigue unido."
+        hint_specific: "«Intratable» separa. ¿Ese grupo se junta o se dispersa?"
+      - position: 2
+        text: "entrañable"
+        is_correct: true
+      - position: 3
+        text: "divertido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Divertido» dependería de lo que hacen, y la frase dice justo que no es eso."
+        hint_specific: "«Divertido» viene de los planes. Relee: ¿de dónde dice la frase que viene?"
+  - position: 7
+    sentence: "Ximena describe a su tío como alguien {{blank}} al que todos llaman por su apodo de niño."
+    hint_general: "Le tienen cariño desde hace tanto que ni usan su nombre."
+    explanation: "Entrañable: le tienen cariño desde hace años. «Inalterable» significa que algo no cambia nunca, y «correcto» habla de cumplir las formas, no de querer a alguien."
+    options:
+      - position: 1
+        text: "inalterable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inalterable» significa que algo no cambia nunca, y aquí se describe el cariño de la familia, no su carácter fijo."
+        hint_specific: "«Inalterable» mide cambios. ¿Qué mide la frase, cambios o afecto?"
+      - position: 2
+        text: "entrañable"
+        is_correct: true
+      - position: 3
+        text: "correcto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Correcto» habla de cumplir las formas, y a quien solo cumple las formas no se le pone un apodo de niño."
+        hint_specific: "«Correcto» cumple las normas. ¿Eso explica el apodo de la infancia?"
+  - position: 8
+    sentence: "Después de veinte años, el saludo entre Gloria y el portero del edificio sigue siendo {{blank}}."
+    hint_general: "Ese saludo guarda el cariño de dos décadas viéndose a diario."
+    explanation: "Entrañable: guarda el cariño de dos décadas. «Impagable» dice que algo no tiene precio, y «ruidoso» solo describiría el volumen."
+    options:
+      - position: 1
+        text: "entrañable"
+        is_correct: true
+      - position: 2
+        text: "impagable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impagable» dice que algo no tiene precio, y lo que describe la frase es el afecto de ese saludo."
+        hint_specific: "«Impagable» habla de precio. ¿Cuánto costaría un saludo?"
+      - position: 3
+        text: "ruidoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ruidoso» describiría el volumen del saludo, y lo que se cuenta es lo que significa después de veinte años."
+        hint_specific: "«Ruidoso» mide decibelios. ¿Se mide el volumen o el cariño?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La misma mesa"
+    body: "Carla se dio cuenta en Navidad de que llevaban treinta años sentándose en el mismo orden. Se lo dijo a su hermano mientras recogían: «Es todo muy repetido y muy entrañable». Él se rio y le pasó otro plato."
+    before_phrase: "Es todo muy repetido y muy bonito."
+    after_phrase: "Es todo muy repetido y muy entrañable."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El bar del ocho"
+    body: "El bar tenía sillas viejas y una máquina que no funcionaba desde hacía años. Aun así, el grupo llevaba una década quedando allí. «Este sitio es feo y entrañable», dijo Sergio, y todos levantaron el vaso."
+    before_phrase: "Este sitio es feo, pero le tengo cariño."
+    after_phrase: "Este sitio es feo y entrañable."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La despedida de Olga"
+    body: "Olga se iba después de doce años y pidió que no hubiera discursos. El equipo le dio una caja con notas escritas a mano. Al abrirla dijo: «Esto es lo más entrañable que me han dado nunca». Se la llevó bajo el brazo."
+    before_phrase: "Es el regalo con más cariño que me han hecho."
+    after_phrase: "Es lo más entrañable que me han dado."
+metrics:
+  zipf_overall: 3.7169
+  dispersion_dp: 0.2250
+  pedantry_proxy: 0.4730
+  family_size: 89
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

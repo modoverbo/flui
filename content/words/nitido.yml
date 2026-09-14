@@ -1,0 +1,238 @@
+schema_version: 1
+slug: "nitido"
+status: "draft"
+lemma: "nítido"
+part_of_speech: "adjetivo"
+syllables: ["ní", "ti", "do"]
+stressed_syllable: 1
+ipa_latam: "[ˈni.ti.ðo]"
+ipa_es: "[ˈni.ti.ðo]"
+explanation: "Tan claro que nadie tiene que leerlo de nuevo ni preguntar qué querías decir."
+example_sentence: "El acuerdo quedó nítido: ella entrega el martes, yo pago el jueves y nadie llama el fin de semana."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien para elogiar un texto ajeno: dice que se entendió a la primera, que es el mejor cumplido."
+when_not_to_use: "No la uses para algo que solo es corto: un mensaje breve también puede dejar dudas."
+semantic_set_id: "claridad-del-mensaje"
+collocations:
+  - "una idea nítida"
+  - "un mensaje nítido"
+  - "un límite nítido"
+replaces:
+  - before: "Se entiende clarísimo"
+    after: "Queda nítido"
+  - before: "Que no haya dudas de hasta dónde llegamos"
+    after: "Que el límite quede nítido"
+  - before: "Explícamelo bien clarito"
+    after: "Explícamelo de forma nítida"
+family: ["nitidez"]
+themes:
+  - slug: "redaccion-ejecutiva"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+tags:
+  comodin: ["claro"]
+  funcion: ["elogiar"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "nimio"
+    difference: "«Nimio» dice que algo es tan pequeño que no importa; la otra palabra dice que se entiende a la primera."
+    memory_trick: "Lo nimio no vale la pena; lo otro se ve de un vistazo."
+  - confused_with: "evidente"
+    difference: "«Evidente» dice que cualquiera lo daría por sabido; la otra palabra dice que está bien contado, aunque sea nuevo."
+    memory_trick: "Lo evidente ya lo sabías; lo otro te lo acaban de explicar bien."
+exercises:
+  - position: 1
+    sentence: "Tras tres correos confusos, el cuarto llegó tan {{blank}} que nadie tuvo que preguntar nada."
+    hint_general: "Se entendió a la primera y las preguntas sobraron."
+    explanation: "Nítido: se entendió a la primera. «Nimio» significa insignificante, y «clarísimo» es coloquial y suena a exageración en boca de quien se defiende."
+    options:
+      - position: 1
+        text: "nimio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Nimio» significa insignificante, y ese cuarto correo fue justo el que resolvió el asunto."
+        hint_specific: "«Nimio» resta importancia. ¿Ese correo importó poco o mucho?"
+      - position: 2
+        text: "nítido"
+        is_correct: true
+      - position: 3
+        text: "clarísimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clarísimo» es coloquial y suena a exageración, y aquí se está valorando un texto de trabajo."
+        hint_specific: "«Clarísimo» sube el volumen. ¿Qué registro pide este comentario?"
+  - position: 2
+    sentence: "Ámbar puso un límite {{blank}}: contesta correos hasta las siete y a partir de ahí no responde."
+    hint_general: "El límite se entiende sin explicaciones ni excepciones."
+    explanation: "Nítido: el límite se entiende sin explicaciones. «Íntimo» habla de cercanía personal, y «estricto» diría que es duro, no que se entienda a la primera."
+    options:
+      - position: 1
+        text: "nítido"
+        is_correct: true
+      - position: 2
+        text: "íntimo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Íntimo» habla de cercanía personal, y aquí se describe una regla sobre los horarios."
+        hint_specific: "«Íntimo» pertenece a la vida privada. ¿Qué se está describiendo?"
+      - position: 3
+        text: "estricto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estricto» dice que el límite es duro, y lo que destaca la frase es que se entiende a la primera."
+        hint_specific: "«Estricto» mide dureza. ¿Qué valora la frase de ese horario?"
+  - position: 3
+    sentence: "La idea era {{blank}} en su cabeza y borrosa en el papel, así que Delia la reescribió dos veces."
+    hint_general: "Dentro se veía perfecta; fuera, no."
+    explanation: "Nítida: dentro de su cabeza se veía perfecta. «Nimia» significa insignificante, y «evidente» diría que cualquiera la daba por sabida, cuando aquí ni siquiera salía bien al papel."
+    options:
+      - position: 1
+        text: "nimia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Nimia» significa insignificante, y Delia reescribió el texto dos veces porque la idea le importaba."
+        hint_specific: "«Nimia» quita importancia. ¿Cuánto le importaba esa idea?"
+      - position: 2
+        text: "nítida"
+        is_correct: true
+      - position: 3
+        text: "evidente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Evidente» significa que cualquiera lo daría por sabido, y esta idea ni siquiera llegaba bien al papel."
+        hint_specific: "«Evidente» supone que ya lo sabes. ¿Quién veía bien esa idea?"
+  - position: 4
+    sentence: "Si el primer párrafo no deja una imagen {{blank}}, casi nadie llegará al segundo."
+    hint_general: "La imagen tiene que verse a la primera lectura."
+    explanation: "Nítida: la imagen se ve a la primera. «Mítica» describe algo legendario, y «extensa» hablaría del tamaño del párrafo, no de si se entiende."
+    options:
+      - position: 1
+        text: "mítica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mítica» describe algo legendario, y aquí se pide que la imagen se entienda a la primera."
+        hint_specific: "«Mítica» habla de leyendas. ¿Qué debe hacer ese primer párrafo?"
+      - position: 2
+        text: "nítida"
+        is_correct: true
+      - position: 3
+        text: "extensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extensa» habla del tamaño, y un párrafo largo puede dejar una imagen borrosa igualmente."
+        hint_specific: "«Extensa» mide longitud. ¿El problema es el largo o lo que se ve?"
+  - position: 5
+    sentence: "Gonzalo prefiere un no {{blank}} y explicado a un quizá que se alargue tres semanas."
+    hint_general: "Mejor una respuesta que se entienda del todo que una que deje esperando."
+    explanation: "Nítido: una respuesta que se entiende del todo. «Nimio» significa insignificante, y «educado» valora las formas, no si la respuesta se entiende."
+    options:
+      - position: 1
+        text: "nítido"
+        is_correct: true
+      - position: 2
+        text: "nimio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Nimio» significa insignificante, y un no que cierra el asunto es cualquier cosa menos insignificante."
+        hint_specific: "«Nimio» quita importancia. ¿Qué peso tiene ese no para Gonzalo?"
+      - position: 3
+        text: "educado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Educado» valora las formas, y lo que Gonzalo compara es con un quizá que deja esperando."
+        hint_specific: "«Educado» habla de modales. ¿Qué le molesta del quizá?"
+  - position: 6
+    sentence: "Cuando su padre le pidió instrucciones para el horno, Delia escribió cinco pasos {{blank}} y una foto."
+    hint_general: "Cinco pasos que se siguen sin llamar por teléfono."
+    explanation: "Nítidos: cinco pasos que se siguen sin llamar. «Nimios» significa insignificantes, y «clarísimos» es coloquial y exagera donde basta con decir que se entienden."
+    options:
+      - position: 1
+        text: "nimios"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Nimios» significa insignificantes, y esos cinco pasos son justo lo que su padre necesita."
+        hint_specific: "«Nimios» quita importancia. ¿Para qué sirven esos pasos?"
+      - position: 2
+        text: "clarísimos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clarísimos» es coloquial y exagera, y aquí basta con decir que se entienden a la primera."
+        hint_specific: "«Clarísimos» sube el tono. ¿Hace falta exagerar para describir cinco pasos?"
+      - position: 3
+        text: "nítidos"
+        is_correct: true
+  - position: 7
+    sentence: "El gráfico no era bonito, aunque sí {{blank}}: en dos segundos se veía qué mes había caído."
+    hint_general: "En dos segundos se entiende lo que muestra."
+    explanation: "Nítido: en dos segundos se entiende. «Mítico» describe algo legendario, y «colorido» habla del aspecto, que la frase ya descarta."
+    options:
+      - position: 1
+        text: "colorido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Colorido» habla del aspecto, y la frase empieza diciendo que el gráfico no era bonito."
+        hint_specific: "«Colorido» valora el aspecto. ¿Qué dice la frase sobre la belleza del gráfico?"
+      - position: 2
+        text: "nítido"
+        is_correct: true
+      - position: 3
+        text: "mítico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mítico» describe algo legendario, y aquí solo se valora que el gráfico se entienda rápido."
+        hint_specific: "«Mítico» habla de leyendas. ¿Qué se valora del gráfico?"
+  - position: 8
+    sentence: "Un acuerdo {{blank}} ahorra seis correos: quién hace qué, para cuándo y con qué presupuesto."
+    hint_general: "Con esos tres datos ya no hacen falta preguntas."
+    explanation: "Nítido: con esos tres datos no hacen falta preguntas. «Íntimo» habla de cercanía personal, y «extenso» hablaría del tamaño del acuerdo, no de su claridad."
+    options:
+      - position: 1
+        text: "íntimo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Íntimo» habla de cercanía personal, y aquí se describe un acuerdo de trabajo con fechas y cifras."
+        hint_specific: "«Íntimo» pertenece a la vida privada. ¿Qué contiene ese acuerdo?"
+      - position: 2
+        text: "extenso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extenso» habla del tamaño, y un acuerdo larguísimo puede dejar igual de dudas."
+        hint_specific: "«Extenso» mide el largo. ¿Qué ahorra los seis correos?"
+      - position: 3
+        text: "nítido"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres líneas y ninguna pregunta"
+    body: "El proyecto llevaba semanas de correos cruzados. Otilia escribió: «Tú cierras el texto el martes, yo maqueto el miércoles, publicamos el jueves a las diez». No hubo respuestas, y eso fue la mejor señal. «Qué nítido», le dijeron después."
+    before_phrase: "A ver si nos aclaramos con las fechas."
+    after_phrase: "Qué nítido quedó."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El horno de mi padre"
+    body: "Su padre llamaba cada vez que intentaba usar el horno nuevo. Delia le escribió cinco pasos y una foto con el mando señalado. Esa semana no sonó el teléfono, y el domingo él dijo: «Con tus instrucciones tan nítidas, hasta yo puedo»."
+    before_phrase: "Te lo explico otra vez, pero por teléfono."
+    after_phrase: "Te lo dejo nítido en cinco pasos."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos frases sobre el sueldo"
+    body: "Ivo llevaba meses evitando la pregunta del dinero. Esta vez la dejó nítida: «Busco una cifra entre estas dos y valoro los días desde casa». La conversación duró cuatro minutos y salió sabiendo a qué atenerse."
+    before_phrase: "Pues no sé, lo que sea razonable."
+    after_phrase: "Lo dejo nítido: busco una cifra entre estas dos."
+metrics:
+  zipf_overall: 3.5681
+  dispersion_dp: 0.1988
+  pedantry_proxy: 0.3423
+  family_size: 9
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

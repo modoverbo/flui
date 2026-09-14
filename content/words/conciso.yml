@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 116
+slug: "conciso"
+status: "draft"
+lemma: "conciso"
+part_of_speech: "adjetivo"
+syllables: ["con", "ci", "so"]
+stressed_syllable: 2
+ipa_latam: "[konˈsi.so]"
+ipa_es: "[konˈθi.so]"
+explanation: "Que dice lo necesario con pocas palabras y sin dar vueltas."
+example_sentence: "Su correo fue tan conciso que lo entendí en diez segundos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es un elogio que se agradece: dice que el otro respetó tu tiempo sin perder contenido."
+when_not_to_use: "No la uses para algo que se quedó corto y dejó dudas; entonces falta información, no palabras."
+collocations:
+  - "un mensaje conciso"
+  - "una respuesta concisa"
+  - "ser conciso"
+replaces:
+  - before: "Su correo era muy corto y claro"
+    after: "Su correo era muy conciso"
+  - before: "Habla poco y se entiende todo"
+    after: "Es muy conciso al hablar"
+  - before: "Dilo en pocas palabras"
+    after: "Sé conciso"
+family: ["concisión"]
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin: ["corto"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "preciso"
+    difference: "«Preciso» dice que algo da en el dato exacto; la otra palabra dice que cabe todo lo necesario en poco espacio."
+    memory_trick: "Preciso apunta al centro; lo breve y completo cabe en dos líneas."
+  - confused_with: "escueto"
+    difference: "«Escueto» subraya que no hay adorno y a veces suena seco; la otra palabra elogia que además se entienda a la primera."
+    memory_trick: "Lo escueto te deja con hambre; lo breve y completo, no."
+exercises:
+  - position: 1
+    sentence: "El informe de Nicolás era tan {{blank}} que cabía en media página y no faltaba nada."
+    hint_general: "Dice todo lo necesario en muy poco espacio."
+    explanation: "Conciso: dice lo necesario en muy poco espacio. «Preciso» habla de exactitud, y «lacónico» suena culto y sugiere casi monosílabos."
+    options:
+      - position: 1
+        text: "preciso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Preciso» dice que algo da el dato exacto, y aquí lo que sorprende es que quepa en media página."
+        hint_specific: "«Preciso» mide el acierto. ¿Qué sorprende del informe: el acierto o el tamaño?"
+      - position: 2
+        text: "conciso"
+        is_correct: true
+      - position: 3
+        text: "lacónico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Lacónico» suena culto y sugiere responder casi con monosílabos; un informe completo en media página es otra cosa."
+        hint_specific: "«Lacónico» apenas suelta palabra. ¿El informe deja huecos o está completo?"
+  - position: 2
+    sentence: "Prefiero un mensaje {{blank}} a uno largo que hay que leer dos veces."
+    hint_general: "Es corto y aun así se entiende a la primera."
+    explanation: "Conciso: corto y claro a la primera. «Incisivo» describe algo mordaz, y «escueto» subraya la falta de adorno y suena seco."
+    options:
+      - position: 1
+        text: "conciso"
+        is_correct: true
+      - position: 2
+        text: "incisivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incisivo» describe algo cortante que va al hueso, y un mensaje breve no tiene por qué ser mordaz."
+        hint_specific: "«Incisivo» hace daño al morder. ¿Qué se valora en ese mensaje?"
+      - position: 3
+        text: "escueto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escueto» subraya que falta todo adorno y a veces suena seco, y aquí lo importante es entenderlo a la primera."
+        hint_specific: "«Escueto» puede dejarte con dudas. ¿Cuántas veces quieres leer el mensaje?"
+  - position: 3
+    sentence: "La respuesta de Ximena fue {{blank}}: dos frases y una fecha."
+    hint_general: "Cabe en dos frases y no le falta nada."
+    explanation: "Concisa: cabe en dos frases y no le falta nada. «Precisa» habla de exactitud, y «seca» sugiere falta de calidez."
+    options:
+      - position: 1
+        text: "precisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precisa» dice que es exacta, y lo que llama la atención es que quepa en dos frases."
+        hint_specific: "«Precisa» mira si acierta. ¿Qué destaca la frase: el acierto o el tamaño?"
+      - position: 2
+        text: "concisa"
+        is_correct: true
+      - position: 3
+        text: "seca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Seca» es coloquial y sugiere una respuesta sin calidez, y esta solo es corta y completa."
+        hint_specific: "«Seca» suena a frialdad. ¿Hay frialdad o solo brevedad?"
+  - position: 4
+    sentence: "Mi tío cuenta las historias con mil detalles; mi tía es mucho más {{blank}}."
+    hint_general: "Cuenta lo mismo con muchas menos palabras."
+    explanation: "Concisa: cuenta lo mismo con menos palabras. «Precisa» habla de acertar con los datos, y «parca» suena fría y culta."
+    options:
+      - position: 1
+        text: "concisa"
+        is_correct: true
+      - position: 2
+        text: "precisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precisa» dice que acierta con los datos, y la frase compara cuánto se alarga cada uno al contar."
+        hint_specific: "«Precisa» mide exactitud. ¿Qué compara la frase entre tu tío y tu tía?"
+      - position: 3
+        text: "parca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parca» suena culta y algo fría, como quien habla poco por carácter; aquí solo cuenta con menos palabras."
+        hint_specific: "«Parca» describe un carácter callado. ¿Tu tía calla o resume?"
+  - position: 5
+    sentence: "En la entrevista, una respuesta {{blank}} deja tiempo para que te pregunten más."
+    hint_general: "Es corta, clara y deja espacio para más preguntas."
+    explanation: "Concisa: corta y clara. «Incisiva» sería cortante, y «vaga» sería la que no dice nada claro."
+    options:
+      - position: 1
+        text: "incisiva"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incisiva» describe una respuesta cortante, y aquí lo útil es que sea corta y comprensible."
+        hint_specific: "«Incisiva» corta. ¿Qué gana quien contesta breve en una entrevista?"
+      - position: 2
+        text: "concisa"
+        is_correct: true
+      - position: 3
+        text: "vaga"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vaga» es la que no dice nada claro, y una respuesta corta tiene que decirlo todo."
+        hint_specific: "«Vaga» deja dudas. ¿Una respuesta con dudas invita a más preguntas o a desconfiar?"
+  - position: 6
+    sentence: "Los mensajes de Samuel son {{blank}}: sujeto, verbo y lo que necesita."
+    hint_general: "Ocupan lo mínimo y llevan todo lo que hace falta."
+    explanation: "Concisos: ocupan lo mínimo y llevan lo necesario. «Precisos» habla de exactitud, y «cortantes» sugiere que hacen daño."
+    options:
+      - position: 1
+        text: "precisos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precisos» dice que son exactos, y lo que describe la frase es cuánto ocupan."
+        hint_specific: "«Precisos» habla de exactitud. ¿Qué mide la frase: acierto o extensión?"
+      - position: 2
+        text: "concisos"
+        is_correct: true
+      - position: 3
+        text: "cortantes"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cortantes» sugiere que hacen daño a quien los lee, y estos mensajes solo van al grano."
+        hint_specific: "«Cortantes» hieren. ¿Hay daño en un mensaje con sujeto y verbo?"
+  - position: 7
+    sentence: "Si quieres que te lean, sé {{blank}}: tres líneas y una pregunta clara."
+    hint_general: "El consejo es escribir corto y claro para que te lean."
+    explanation: "Conciso: escribe corto y claro. «Preciso» habla del dato exacto, y «parlanchín» describe a quien no para de hablar."
+    options:
+      - position: 1
+        text: "conciso"
+        is_correct: true
+      - position: 2
+        text: "preciso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Preciso» habla de dar el dato exacto, y el consejo trata del tamaño del mensaje."
+        hint_specific: "«Preciso» mira el contenido exacto. ¿De qué habla el consejo: de cuánto o de qué?"
+      - position: 3
+        text: "parlanchín"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parlanchín» es coloquial y describe a quien habla sin parar, justo lo contrario del consejo."
+        hint_specific: "«Parlanchín» no para de hablar. ¿Eso ayuda a que te lean?"
+  - position: 8
+    sentence: "Aquel cartel {{blank}} funcionó mejor que el folleto de ocho páginas."
+    hint_general: "Con muy poco texto dijo lo que hacía falta."
+    explanation: "Conciso: con poco texto dijo lo necesario. «Consciente» se dice de quien se da cuenta, y «farragoso» describe lo enredado."
+    options:
+      - position: 1
+        text: "consciente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consciente» se dice de quien se da cuenta de algo, y un cartel no se da cuenta de nada."
+        hint_specific: "«Consciente» necesita una persona detrás. ¿Quién piensa en esta frase?"
+      - position: 2
+        text: "conciso"
+        is_correct: true
+      - position: 3
+        text: "farragoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Farragoso» suena culto y describe lo enredado y pesado, que es justo el folleto de ocho páginas."
+        hint_specific: "«Farragoso» pesa y enreda. ¿Cuál de los dos ganó según la frase?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Media página"
+    body: "El informe mensual llegaba siempre con doce páginas y nadie pasaba de la tercera. Nicolás probó otra cosa: media página con tres cifras y una recomendación. «Prefiero un informe conciso a uno completo que nadie lee», explicó. Desde entonces le contestan el mismo día."
+    before_phrase: "Lo escribí corto para que se entienda rápido."
+    after_phrase: "Prefiero un informe conciso."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "Las historias de sobremesa"
+    body: "En mi familia hay dos escuelas. Mi tío empieza por el año y el pueblo; mi tía dice quién, qué y cómo acabó. Las dos versiones gustan, pero la de mi tía es tan concisa que da tiempo al café."
+    before_phrase: "Ella lo cuenta muy corto y se entiende igual."
+    after_phrase: "Su versión es tan concisa que da tiempo al café."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos frases y una fecha"
+    body: "Le preguntaron a Ximena cuándo podía empezar. Contestó: «El día 1, y puedo cerrar mi proyecto actual antes». Nada más. La entrevistadora sonrió y siguió preguntando; una respuesta concisa le había dejado tiempo para tres preguntas más."
+    before_phrase: "Bueno, depende de varias cosas, te explico."
+    after_phrase: "Una respuesta concisa deja tiempo para más preguntas."
+metrics:
+  zipf_overall: 3.1976
+  dispersion_dp: 0.3080
+  pedantry_proxy: 0.3795
+  family_size: 120
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 313
+slug: "declinar"
+status: "draft"
+lemma: "declinar"
+part_of_speech: "verbo"
+syllables: ["de", "cli", "nar"]
+stressed_syllable: 3
+ipa_latam: "[de.kliˈnar]"
+ipa_es: "[de.kliˈnar]"
+explanation: "Decir que no a una invitación o a una propuesta de forma clara y amable."
+example_sentence: "Agradeció la invitación y la declinó el mismo día, sin dar diez explicaciones."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Funciona mejor con el agradecimiento delante: «Te lo agradezco mucho, pero esta vez lo declino»."
+when_not_to_use: "No la uses con personas: se declina lo que te ofrecen, no a quien te lo ofrece."
+collocations:
+  - "declinar una invitación"
+  - "declinar una oferta"
+  - "declinar una propuesta"
+replaces:
+  - before: "Al final le dije que no iba"
+    after: "Al final decliné la invitación"
+  - before: "Tuve que decirle que no a lo que me proponía"
+    after: "Tuve que declinar su propuesta"
+  - before: "No acepté el puesto y se lo dije"
+    after: "Decliné el puesto y se lo agradecí"
+family: []
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin: ["decir que no"]
+  funcion: ["rechazar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "declarar"
+    difference: "«Declarar» es decir algo en voz alta y dejarlo claro ante otros; la otra palabra es no aceptar algo que te ofrecen."
+    memory_trick: "Declaras lo que afirmas; declinas lo que no aceptas."
+  - confused_with: "desistir"
+    difference: "«Desistir» es dejar algo que ya habías empezado; aquí se dice que no antes de empezar nada."
+    memory_trick: "Desistes de lo tuyo; declinas lo que te ofrecen."
+exercises:
+  - position: 1
+    sentence: "Rafael agradeció la invitación a la boda y la {{blank}} el mismo día, para que pudieran contar con otra persona."
+    hint_general: "Dice que no enseguida y con buenas formas, para que puedan organizarse."
+    explanation: "Declinó: dijo que no enseguida y con buenas formas. «Declaró» sería anunciar algo en voz alta, y «aplazó» dejaría la respuesta para más adelante."
+    options:
+      - position: 1
+        text: "declaró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Declarar» es anunciar algo en voz alta ante otros, y aquí lo que hace es no aceptar una invitación."
+        hint_specific: "«Declarar» anuncia. ¿Rafael anuncia algo o responde que no?"
+      - position: 2
+        text: "declinó"
+        is_correct: true
+      - position: 3
+        text: "aplazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» deja la respuesta para más adelante, y él contesta el mismo día justo para que puedan organizarse."
+        hint_specific: "«Aplazar» retrasa la respuesta. Relee: ¿cuándo contesta Rafael?"
+  - position: 2
+    sentence: "Cuando le ofrecieron llevar el proyecto, Silvia {{blank}} la propuesta sin pedir tiempo para pensarlo."
+    hint_general: "Dice que no a lo que le ofrecen, en el momento y sin rodeos."
+    explanation: "Declinó: dijo que no en el momento. «Declamó» es recitar en voz alta, y «denegó» suena a ventanilla y papeles oficiales."
+    options:
+      - position: 1
+        text: "declamó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Declamar» es recitar un texto en voz alta, y aquí nadie recita: se responde a una oferta."
+        hint_specific: "«Declamar» es recitar. ¿Hay algún texto que leer en esta escena?"
+      - position: 2
+        text: "declinó"
+        is_correct: true
+      - position: 3
+        text: "denegó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Denegar» suena a ventanilla y papeles oficiales; quien dice que no aquí es la persona a la que se lo ofrecen."
+        hint_specific: "«Denegar» suena a trámite administrativo. ¿Hay algún expediente en juego?"
+  - position: 3
+    sentence: "Saber {{blank}} una oferta a tiempo ahorra tres meses de excusas, repite Ernesto a quien le pregunta."
+    hint_general: "Decir que no pronto evita meses de justificaciones incómodas."
+    explanation: "Declinar: decir que no pronto evita meses de excusas. «Reclinar» es echar algo hacia atrás, y «desistir» es dejar algo que ya habías empezado."
+    options:
+      - position: 1
+        text: "reclinar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reclinar» es echar algo hacia atrás, como un asiento, y una oferta no se echa hacia atrás."
+        hint_specific: "«Reclinar» mueve un respaldo. ¿Qué se estaría inclinando aquí?"
+      - position: 2
+        text: "declinar"
+        is_correct: true
+      - position: 3
+        text: "desistir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desistir» es dejar algo que ya habías empezado, y aquí la oferta todavía no se ha aceptado."
+        hint_specific: "«Desistir» abandona lo empezado. ¿Ya se había empezado la oferta?"
+  - position: 4
+    sentence: "Ana {{blank}} el puesto por escrito y en dos líneas: gracias por pensar en mí, no es el momento."
+    hint_general: "Contesta que no de forma breve y clara, agradeciendo la oferta."
+    explanation: "Declinó: contestó que no de forma breve y clara. «Declaró» sería anunciar algo en público, y «rehusó» suena antiguo y algo tieso."
+    options:
+      - position: 1
+        text: "declinó"
+        is_correct: true
+      - position: 2
+        text: "declaró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Declarar» es anunciar algo ante otros, y ella responde en privado a quien le hizo la oferta."
+        hint_specific: "«Declarar» es anunciar en público. ¿Cuántas personas leen esas dos líneas?"
+      - position: 3
+        text: "rehusó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rehusar» significa algo parecido, pero suena antiguo y tieso al lado de un mensaje breve y agradecido."
+        hint_specific: "«Rehusar» suena a novela del siglo pasado. ¿Pega con dos líneas de hoy?"
+  - position: 5
+    sentence: "«Si {{blank}} la invitación con cariño, nadie se lo toma a mal», le explicó su madre a Simón."
+    hint_general: "Decir que no con buenas formas no rompe nada con la otra persona."
+    explanation: "Declinas: decir que no con buenas formas no rompe nada. «Declaras» sería anunciar algo, y «dudas» dejaría la respuesta en el aire."
+    options:
+      - position: 1
+        text: "declaras"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Declarar» es anunciar algo ante otros, y aquí se trata de responder que no a quien te invita."
+        hint_specific: "«Declarar» anuncia algo. ¿Qué se anunciaría al recibir una invitación?"
+      - position: 2
+        text: "dudas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dudar» deja la respuesta en el aire, y el consejo va justo de contestar con claridad."
+        hint_specific: "«Dudar» no responde nada. ¿El consejo pide claridad o tiempo?"
+      - position: 3
+        text: "declinas"
+        is_correct: true
+  - position: 6
+    sentence: "Nuria no supo {{blank}} a tiempo y acabó en una cena a la que no le apetecía ir."
+    hint_general: "No consiguió decir que no cuando tocaba y terminó donde no quería."
+    explanation: "Declinar: no dijo que no cuando tocaba. «Declamar» es recitar en voz alta, y «aceptar» es justo lo contrario de lo que le faltó hacer."
+    options:
+      - position: 1
+        text: "declamar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Declamar» es recitar un texto en voz alta, y en la frase nadie recita nada."
+        hint_specific: "«Declamar» es recitar. ¿Qué texto habría que recitar para librarse de una cena?"
+      - position: 2
+        text: "aceptar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aceptar» es decir que sí, y la frase cuenta que acabó yendo justo por no haber dicho que no."
+        hint_specific: "«Aceptar» dice que sí. ¿Le faltó decir que sí o decir que no?"
+      - position: 3
+        text: "declinar"
+        is_correct: true
+  - position: 7
+    sentence: "Lo más difícil para Ramón fue {{blank}} la oferta de su mejor amigo sin que sonara a desprecio."
+    hint_general: "Le costó decir que no a alguien cercano sin que pareciera un rechazo personal."
+    explanation: "Declinar: decir que no a alguien cercano cuidando la relación. «Reclinar» es echar algo hacia atrás, e «ignorar» sería no contestar."
+    options:
+      - position: 1
+        text: "reclinar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reclinar» es echar algo hacia atrás, como un respaldo, y una oferta no se inclina."
+        hint_specific: "«Reclinar» mueve un respaldo. ¿Qué objeto se inclinaría aquí?"
+      - position: 2
+        text: "declinar"
+        is_correct: true
+      - position: 3
+        text: "ignorar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» es no contestar, y eso sí sonaría a desprecio, justo lo que Ramón quiere evitar."
+        hint_specific: "«Ignorar» calla. ¿Callar ayudaría a que no sonara a desprecio?"
+  - position: 8
+    sentence: "Ximena {{blank}} tres encargos ese mes y, por primera vez en un año, durmió del tirón."
+    hint_general: "Dijo que no a tres cosas seguidas y eso le devolvió el descanso."
+    explanation: "Declinó: dijo que no a tres encargos. «Declaró» sería anunciarlos en voz alta, y «olvidó» sería no acordarse de ellos."
+    options:
+      - position: 1
+        text: "declaró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Declarar» es anunciar algo ante otros, y lo que hizo ella fue no aceptar esos encargos."
+        hint_specific: "«Declarar» anuncia. ¿Ximena anunció los encargos o los rechazó?"
+      - position: 2
+        text: "olvidó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Olvidar» es no acordarse de algo, y ella responde a propósito para quitárselos de la agenda."
+        hint_specific: "«Olvidar» es un descuido. ¿Esto le pasó sin querer o lo decidió?"
+      - position: 3
+        text: "declinó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena del viernes"
+    body: "A Lorena la invitaron a una cena el mismo día que había prometido descansar. Contestó en dos líneas: «Me hace mucha ilusión, pero esta vez lo declino; avísame de la próxima». Nadie se molestó y la próxima llegó en quince días."
+    before_phrase: "Uf, es que no sé, mejor otro día."
+    after_phrase: "Esta vez lo declino, avísame de la próxima."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El encargo del jueves"
+    body: "Le ofrecieron a Salvador coordinar un segundo equipo. Pidió una hora para mirar su calendario y respondió: «Declino el encargo; con los dos proyectos actuales no lo haría bien». Su responsable le agradeció la claridad."
+    before_phrase: "Es que no sé si voy a poder, la verdad."
+    after_phrase: "Declino el encargo y te explico por qué."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El verano de siempre"
+    body: "Carmen llevaba quince años yendo a la casa del pueblo en agosto. Este año llamó a su hermana antes de que hicieran los planes: «Voy a declinar lo de agosto, y quiero contártelo yo». Hablaron una hora y quedaron en septiembre."
+    before_phrase: "Este año creo que no voy a ir."
+    after_phrase: "Voy a declinar lo de agosto."
+metrics:
+  zipf_overall: 3.8984
+  dispersion_dp: 0.2188
+  pedantry_proxy: 0.5724
+  family_size: 14
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

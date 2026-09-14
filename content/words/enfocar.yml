@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 112
+slug: "enfocar"
+status: "gated"
+lemma: "enfocar"
+part_of_speech: "verbo"
+syllables:
+  - "en"
+  - "fo"
+  - "car"
+stressed_syllable: 3
+ipa_latam: "[en.foˈkar]"
+ipa_es: "[en.foˈkar]"
+explanation: "Dirigir la atención a una sola parte de un asunto y dejar el resto."
+example_sentence: "Vamos a enfocar la reunión en una sola decisión: el precio."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dicho al empezar, ahorra media hora: anuncia dónde se mira hoy y dónde no."
+when_not_to_use: "No la uses si el problema necesita mirarse entero; elegir una parte deja el resto sin tratar."
+collocations:
+  - "enfocar la reunión"
+  - "enfocar el problema"
+  - "enfocar la charla"
+replaces:
+  - before: "Centremos esto en una sola cosa"
+    after: "Vamos a enfocar esto en una sola cosa"
+  - before: "Hay que mirar esto desde otro lado"
+    after: "Hay que enfocar esto de otra manera"
+  - before: "Pongamos la atención en el precio"
+    after: "Vamos a enfocar el precio"
+family:
+  - "enfoque"
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "poner"
+  funcion:
+    - "centrar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sofocar"
+    difference: "«Sofocar» es apagar algo o quedarse sin aire; la otra palabra elige a qué parte mirar."
+    memory_trick: "Sofocas un fuego; eliges dónde mirar."
+  - confused_with: "encarar"
+    difference: "«Encarar» es ponerse delante de una dificultad entera; la otra palabra elige una parte y aparta el resto."
+    memory_trick: "Encaras el problema completo; eliges qué trozo mirar."
+exercises:
+  - position: 1
+    sentence: "La reunión tenía nueve puntos y hora y media, así que Beatriz decidió {{blank}}la en los dos que corrían prisa."
+    hint_general: "Elige dos puntos y deja el resto para otro día."
+    explanation: "Enfocarla: elige dos puntos y aparta el resto. «Sofocarla» sería apagarla, y «encararla» sería ponerse delante de los nueve."
+    options:
+      - position: 1
+        text: "sofocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» es apagar algo, como un fuego, y aquí la reunión sigue: solo cambia dónde se mira."
+        hint_specific: "«Sofocar» apaga. ¿Beatriz cancela la reunión o la recorta?"
+      - position: 2
+        text: "enfocar"
+        is_correct: true
+      - position: 3
+        text: "encarar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encarar» sería ponerse delante de los nueve puntos, y ella deja siete fuera a propósito."
+        hint_specific: "«Encarar» se planta ante todo el problema. ¿Cuántos puntos se tratan?"
+  - position: 2
+    sentence: "El informe salía confuso hasta que Marcos lo {{blank}} en una sola pregunta: por qué se cayeron las ventas de abril."
+    hint_general: "El informe mejora al mirar una sola pregunta."
+    explanation: "Enfocó: miró una sola pregunta. «Sofocó» sería apagarlo, y «rellenó» sería añadir texto sin elegir nada."
+    options:
+      - position: 1
+        text: "enfocó"
+        is_correct: true
+      - position: 2
+        text: "sofocó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» es apagar algo o quedarse sin aire, y un informe confuso no se apaga: se ordena."
+        hint_specific: "«Sofocó» apaga o ahoga. ¿Qué le pasaba al informe?"
+      - position: 3
+        text: "rellenó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rellenar» es añadir texto, y el informe no mejoró por tener más páginas, sino por mirar una sola cosa."
+        hint_specific: "«Rellenó» añade. ¿El problema era que faltaba texto?"
+  - position: 3
+    sentence: "Mi hermano quería hablar de todo el verano, pero preferí {{blank}} la charla en el coche compartido."
+    hint_general: "Elige un solo asunto de la charla y deja el resto fuera."
+    explanation: "Enfocar: elige un solo asunto. «Sofocar» sería apagar la charla, y «zapear» es coloquial y suena a saltar de tema en tema."
+    options:
+      - position: 1
+        text: "sofocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» la charla sería apagarla del todo, y aquí sigue habiendo conversación, solo que sobre un asunto."
+        hint_specific: "«Sofocar» corta el aire. ¿La charla se acaba o se estrecha?"
+      - position: 2
+        text: "zapear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Zapear» es coloquial y significa saltar de un canal a otro, justo lo contrario de quedarse en un asunto."
+        hint_specific: "«Zapear» salta sin parar. ¿Eso es elegir un solo tema?"
+      - position: 3
+        text: "enfocar"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando el cliente se quejó de todo a la vez, Ernesto le pidió {{blank}} la queja en el caso más reciente."
+    hint_general: "Pide mirar un solo caso en lugar de todos juntos."
+    explanation: "Enfocar: mirar un solo caso. «Sofocar» sería apagar la queja, y «ampliar» abriría todavía más el asunto."
+    options:
+      - position: 1
+        text: "enfocar"
+        is_correct: true
+      - position: 2
+        text: "ampliar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ampliar» abriría el asunto todavía más, y el problema es que el cliente se queja de todo a la vez."
+        hint_specific: "«Ampliar» abre el campo. ¿Hace falta más campo o menos?"
+      - position: 3
+        text: "sofocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» sería apagar la queja, y Ernesto quiere escucharla, solo que de una en una."
+        hint_specific: "«Sofocar» silencia. ¿Ernesto calla al cliente o lo ordena?"
+  - position: 5
+    sentence: "Con dos minutos de vídeo por delante, Fernanda {{blank}} el mensaje en un único beneficio."
+    hint_general: "Con tan poco tiempo, elige un solo beneficio y deja el resto."
+    explanation: "Enfocó: eligió un solo beneficio. «Sofocó» sería apagar el mensaje, y «machacó» es coloquial y suena a repetirlo hasta cansar."
+    options:
+      - position: 1
+        text: "sofocó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» es apagar algo, y ella no apaga el mensaje: decide qué parte cabe en dos minutos."
+        hint_specific: "«Sofocó» apaga. ¿El vídeo se queda sin mensaje?"
+      - position: 2
+        text: "machacó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Machacar» un mensaje es coloquial y sugiere repetirlo hasta cansar, y aquí solo se elige cuál contar."
+        hint_specific: "«Machacó» insiste sin parar. ¿Insistir es lo mismo que elegir?"
+      - position: 3
+        text: "enfocó"
+        is_correct: true
+  - position: 6
+    sentence: "Si {{blank}} la búsqueda en tres empresas, Leonor tendrá tiempo de preparar cada entrevista."
+    hint_general: "Mirar solo tres empresas le deja tiempo para preparar bien."
+    explanation: "Enfoca: mira solo tres empresas. «Sofoca» sería apagar la búsqueda, y «abarca» sería intentar llegar a todas."
+    options:
+      - position: 1
+        text: "enfoca"
+        is_correct: true
+      - position: 2
+        text: "sofoca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» es apagar algo, y la búsqueda sigue viva: lo que cambia es cuántas empresas entran."
+        hint_specific: "«Sofoca» apaga. ¿Leonor deja de buscar trabajo?"
+      - position: 3
+        text: "abarca"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abarcar» es intentar llegar a todas, y eso le quitaría el tiempo que la frase quiere darle."
+        hint_specific: "«Abarca» estira los brazos. ¿Eso deja tiempo para preparar?"
+  - position: 7
+    sentence: "Le preguntaron a Ruben cómo prepara una presentación difícil: «Primero {{blank}} el problema en una frase»."
+    hint_general: "Empieza reduciendo el problema a una sola frase."
+    explanation: "Enfoco: reduzco el problema a una frase. «Sofoco» sería apagarlo, y «esquivo» sería dejarlo fuera."
+    options:
+      - position: 1
+        text: "sofoco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» es apagar algo o quedarse sin aire, y él no apaga el problema: lo reduce a una frase."
+        hint_specific: "«Sofoco» ahoga. ¿Qué hace Ruben con el problema?"
+      - position: 2
+        text: "enfoco"
+        is_correct: true
+      - position: 3
+        text: "esquivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esquivar» es dejar el problema fuera, y la frase dice que lo pone en el centro, resumido."
+        hint_specific: "«Esquivo» aparta. ¿El problema entra en la presentación o no?"
+  - position: 8
+    sentence: "El taller funcionó porque cada mesa tuvo que {{blank}} su trabajo en un solo usuario, con nombre y edad."
+    hint_general: "Cada mesa mira a un usuario concreto y deja al resto fuera."
+    explanation: "Enfocar: mirar a un usuario concreto. «Sofocar» sería apagar el trabajo, y «universalizar» suena a jerga de despacho."
+    options:
+      - position: 1
+        text: "enfocar"
+        is_correct: true
+      - position: 2
+        text: "sofocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sofocar» es apagar algo, y las mesas siguen trabajando: solo eligen para quién."
+        hint_specific: "«Sofocar» apaga. ¿Las mesas paran de trabajar?"
+      - position: 3
+        text: "universalizar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Universalizar» suena a jerga de despacho y significa extenderlo a todos, lo contrario de un solo usuario."
+        hint_specific: "«Universalizar» abre a todo el mundo. ¿Cuántos usuarios pedía el taller?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Nueve puntos, hora y media"
+    body: "El orden del día no cabía y todos lo sabían. Beatriz lo dijo al empezar: «Vamos a enfocar la reunión en los dos puntos con fecha; el resto pasa al jueves». Salieron veinte minutos antes con dos decisiones firmadas."
+    before_phrase: "A ver si nos centramos en lo urgente."
+    after_phrase: "Vamos a enfocar la reunión en los dos puntos con fecha."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El viaje en coche"
+    body: "Mi hermano sube al coche con quince temas pendientes y dos horas de viaje. Aprendí a decírselo sin ofenderlo: «Enfoquemos esto en el coche compartido y lo demás lo hablamos con calma en casa». Llegamos con una decisión tomada."
+    before_phrase: "Vamos a hablar de una cosa cada vez."
+    after_phrase: "Enfoquemos esto en el coche compartido."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El problema en una frase"
+    body: "«¿Cómo prepara una presentación difícil?», le preguntaron a Ruben. «Enfoco el problema en una frase y la escribo en un papel. Si no cabe ahí, es que aún no lo entiendo bien». Le pidieron que lo hiciera en voz alta."
+    before_phrase: "Intento centrarme en lo importante."
+    after_phrase: "Enfoco el problema en una frase."
+metrics:
+  zipf_overall: 5.1357
+  dispersion_dp: 0.1337
+  pedantry_proxy: 0.4946
+  family_size: 30
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

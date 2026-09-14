@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "tangible"
+status: "draft"
+lemma: "tangible"
+part_of_speech: "adjetivo"
+syllables: ["tan", "gi", "ble"]
+stressed_syllable: 2
+ipa_latam: "[tanˈxi.βle]"
+ipa_es: "[tanˈxi.βle]"
+explanation: "Que se puede tocar, medir o contar, y por eso nadie lo discute."
+example_sentence: "Tras seis meses de reuniones, por fin hay un resultado tangible: dos días menos de espera."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsala para pedir pruebas sin desconfiar de nadie: no dudas de la idea, pides algo que se pueda medir."
+when_not_to_use: "No la uses para un avance real que todavía no se puede medir: hay cosas que se notan antes de contarse."
+collocations:
+  - "un resultado tangible"
+  - "un beneficio tangible"
+  - "una mejora tangible"
+replaces:
+  - before: "Algo que se note de verdad"
+    after: "Un resultado tangible"
+  - before: "Que se vea, no solo palabras bonitas"
+    after: "Algo tangible, no solo palabras"
+  - before: "Yo quiero cosas concretas, no promesas"
+    after: "Quiero resultados tangibles"
+family: ["intangible"]
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin: ["concreto"]
+  funcion: ["probar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "tangente"
+    difference: "«Tangente» es la línea que roza una curva, o irse por las ramas; la otra palabra describe algo que se puede medir."
+    memory_trick: "Irse por la tangente es escapar; lo que se mide se queda sobre la mesa."
+  - confused_with: "visible"
+    difference: "«Visible» es que se ve; la otra palabra añade que se puede contar o medir, y eso es lo que zanja una discusión."
+    memory_trick: "Lo visible se mira; lo otro se cuenta con números."
+exercises:
+  - position: 1
+    sentence: "Tras seis meses de reuniones, el equipo por fin enseñó un resultado {{blank}}: dos días menos de espera."
+    hint_general: "Un resultado que se puede medir con un número."
+    explanation: "Tangible: el resultado se mide en días. «Tangente» es la línea que roza una curva, y «gordo» es coloquial y solo dice que el resultado es grande."
+    options:
+      - position: 1
+        text: "tangente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangente» es la línea que roza una curva, o irse por las ramas, y aquí hay una cifra sobre la mesa."
+        hint_specific: "«Tangente» aparece en geometría y en las evasivas. ¿Qué enseñó el equipo?"
+      - position: 2
+        text: "tangible"
+        is_correct: true
+      - position: 3
+        text: "gordo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gordo» es coloquial y solo dice que algo es grande, sin decir que se pueda medir."
+        hint_specific: "«Gordo» habla de tamaño. ¿Qué hace que dos días menos convenzan?"
+  - position: 2
+    sentence: "Ámbar no prometió una revolución: prometió una mejora {{blank}} y con fecha de entrega."
+    hint_general: "Una mejora que se podrá contar cuando llegue el día."
+    explanation: "Tangible: la mejora se podrá contar. «Tangencial» significa secundario o de refilón, y «visible» diría que se ve, sin garantizar que se pueda medir."
+    options:
+      - position: 1
+        text: "tangible"
+        is_correct: true
+      - position: 2
+        text: "tangencial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangencial» significa secundario o de refilón, y Ámbar promete justo lo contrario: algo central y medible."
+        hint_specific: "«Tangencial» roza el asunto. ¿Qué promete Ámbar, algo lateral o algo medible?"
+      - position: 3
+        text: "visible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Visible» solo dice que se ve, y una mejora se puede ver y seguir siendo imposible de contar."
+        hint_specific: "«Visible» se queda en la vista. ¿Qué añade una fecha de entrega?"
+  - position: 3
+    sentence: "Si el beneficio no es {{blank}}, la gente se cansa antes de que llegue el momento de notarlo."
+    hint_general: "Si no se puede medir, nadie aguanta la espera."
+    explanation: "Tangible: si no se puede medir, nadie aguanta. «Tangente» es la línea que roza una curva, y «teórico» describiría justo lo que la frase señala como problema."
+    options:
+      - position: 1
+        text: "tangente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangente» es la línea que roza una curva, o una salida por las ramas, y aquí se habla de un beneficio."
+        hint_specific: "«Tangente» pertenece a la geometría. ¿Qué se describe en la frase?"
+      - position: 2
+        text: "teórico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Teórico» nombra el problema, no la solución: la frase dice qué hace falta para que la gente aguante."
+        hint_specific: "«Teórico» es lo que cansa a la gente. ¿Qué se necesita en su lugar?"
+      - position: 3
+        text: "tangible"
+        is_correct: true
+  - position: 4
+    sentence: "Delia cambió veinte diapositivas por una caja con el producto dentro: algo {{blank}} convence antes."
+    hint_general: "Lo que se puede tocar gana a lo que solo se explica."
+    explanation: "Tangible: lo que se puede tocar gana. «Tangencial» significa secundario, y «brutal» es coloquial y habla del efecto, no de que se pueda tocar."
+    options:
+      - position: 1
+        text: "tangencial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangencial» significa secundario o de refilón, y una caja con el producto dentro es lo más central posible."
+        hint_specific: "«Tangencial» queda al margen. ¿Qué papel tiene esa caja?"
+      - position: 2
+        text: "tangible"
+        is_correct: true
+      - position: 3
+        text: "brutal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Brutal» es coloquial y habla del efecto que causa, no de que el producto se pueda tocar."
+        hint_specific: "«Brutal» describe el impacto. ¿Por qué convence una caja?"
+  - position: 5
+    sentence: "Nadie discutió la cifra porque venía con una prueba {{blank}}: las facturas del trimestre."
+    hint_general: "Las facturas se pueden contar una a una."
+    explanation: "Tangible: las facturas se cuentan una a una. «Tangente» es la línea que roza una curva, y «enorme» hablaría del tamaño de la prueba."
+    options:
+      - position: 1
+        text: "tangible"
+        is_correct: true
+      - position: 2
+        text: "tangente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangente» es la línea que roza una curva, o una evasiva, y aquí hay facturas encima de la mesa."
+        hint_specific: "«Tangente» va de geometría y evasivas. ¿Qué acompañaba a la cifra?"
+      - position: 3
+        text: "enorme"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enorme» habla del tamaño de la prueba, y lo que cerró la discusión fue poder contarlas."
+        hint_specific: "«Enorme» mide tamaño. ¿Por qué nadie discutió?"
+  - position: 6
+    sentence: "Cuando su hijo preguntó para qué servía ahorrar, Gonzalo le enseñó algo {{blank}}: la bici del escaparate."
+    hint_general: "Una cosa que se puede tocar explica más que una charla."
+    explanation: "Tangible: una bici se puede tocar. «Tangencial» significa secundario, y «lejano» hablaría del tiempo que falta, no de poder tocarlo."
+    options:
+      - position: 1
+        text: "lejano"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lejano» habla del tiempo que falta, y el niño entiende justo porque la bici está ahí delante."
+        hint_specific: "«Lejano» pone distancia. ¿Dónde está esa bici?"
+      - position: 2
+        text: "tangible"
+        is_correct: true
+      - position: 3
+        text: "tangencial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangencial» significa secundario o de refilón, y la bici es el centro de la explicación."
+        hint_specific: "«Tangencial» queda al margen. ¿Qué papel juega la bici?"
+  - position: 7
+    sentence: "Un elogio {{blank}} dura más que diez generales: «tu resumen me ahorró media hora el martes»."
+    hint_general: "El elogio que señala algo medible se recuerda."
+    explanation: "Tangible: el elogio señala algo medible. «Tangente» es la línea que roza una curva, y «cariñoso» habla del afecto, no de la media hora."
+    options:
+      - position: 1
+        text: "tangente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangente» es la línea que roza una curva, o una evasiva, y aquí hay media hora contada."
+        hint_specific: "«Tangente» pertenece a la geometría. ¿Qué hace fuerte a ese elogio?"
+      - position: 2
+        text: "cariñoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cariñoso» habla del afecto, y lo que hace memorable el elogio es la media hora que se puede contar."
+        hint_specific: "«Cariñoso» mide el afecto. ¿Qué dato aparece en el ejemplo?"
+      - position: 3
+        text: "tangible"
+        is_correct: true
+  - position: 8
+    sentence: "El plan sonaba precioso, aunque no llevaba detrás ni un solo dato {{blank}} que lo sostuviera."
+    hint_general: "Faltaba algo que se pudiera contar o medir."
+    explanation: "Tangible: faltaba algo que se pudiera contar. «Tangencial» significa secundario, y «gordo» es coloquial y solo pide un dato grande."
+    options:
+      - position: 1
+        text: "gordo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gordo» es coloquial y solo pide un dato grande, y lo que falta es uno que se pueda medir."
+        hint_specific: "«Gordo» habla de tamaño. ¿Qué le falta al plan para sostenerse?"
+      - position: 2
+        text: "tangible"
+        is_correct: true
+      - position: 3
+        text: "tangencial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tangencial» significa secundario, y un dato secundario tampoco sostendría el plan."
+        hint_specific: "«Tangencial» queda al margen. ¿Qué tipo de dato sostiene un plan?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La caja sobre la mesa"
+    body: "Después de veinte diapositivas, la sala seguía fría. Otilia abrió una caja y puso la pieza encima de la mesa: «Esto es lo tangible; el resto es cómo llegamos hasta aquí». Tres personas se levantaron para tocarla y la reunión cambió de sitio."
+    before_phrase: "Te enseño unos gráficos y ya lo verás."
+    after_phrase: "Esto es lo tangible; lo demás es el camino."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La bici del escaparate"
+    body: "«¿Para qué ahorro?», preguntó su hijo por cuarta vez. Gonzalo dejó la charla y lo llevó a la tienda: «Faltan once semanas para esta». Volvieron andando y el niño empezó a contar las semanas. El objetivo se había vuelto tangible."
+    before_phrase: "Ahorrar es bueno, ya lo entenderás."
+    after_phrase: "Faltan once semanas para algo tangible."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Un número, no un adjetivo"
+    body: "A Ámbar le pidieron un ejemplo de su trabajo y evitó los adjetivos: «Bajamos de nueve días a cuatro en el plazo de respuesta, y eso se mide cada lunes». Le dijeron que era el primer dato tangible de toda la mañana."
+    before_phrase: "Soy muy resolutiva, de verdad."
+    after_phrase: "Te doy algo tangible: de nueve días a cuatro."
+metrics:
+  zipf_overall: 3.5719
+  dispersion_dp: 0.2294
+  pedantry_proxy: 0.5105
+  family_size: 6
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "subsanar"
-status: "draft"
+status: "gated"
 lemma: "subsanar"
 part_of_speech: "verbo"
-syllables: ["sub", "sa", "nar"]
+syllables:
+  - "sub"
+  - "sa"
+  - "nar"
 stressed_syllable: 3
 ipa_latam: "[suβ.saˈnaɾ]"
 ipa_es: "[suβ.saˈnaɾ]"
@@ -24,15 +27,19 @@ replaces:
     after: "Lo subsano ahora mismo"
   - before: "Se nos pasó, ya lo estamos solucionando"
     after: "Se nos pasó y ya lo estamos subsanando"
-family: ["subsanable", "subsanación"]
+family:
+  - "subsanable"
+  - "subsanación"
 themes:
   - slug: "correos-mensajes"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 1
 tags:
-  comodin: ["arreglar"]
-  funcion: ["corregir"]
+  comodin:
+    - "arreglar"
+  funcion:
+    - "corregir"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -226,7 +233,12 @@ readings:
     body: "A mitad de la conversación, Amalia notó que había escrito mal un año en su currículo. En vez de esperar, lo dijo: «Veo un dato desajustado en la fecha; lo subsano y te mando la versión buena esta tarde». La entrevistadora lo agradeció."
     before_phrase: "Ay, creo que ahí puse mal la fecha, luego lo cambio."
     after_phrase: "Lo subsano y te mando la versión buena."
+metrics:
+  zipf_overall: 3.8654
+  dispersion_dp: 0.3141
+  pedantry_proxy: 0.5189
+  family_size: 20
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

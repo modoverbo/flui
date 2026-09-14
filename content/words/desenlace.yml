@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "desenlace"
+status: "gated"
+lemma: "desenlace"
+part_of_speech: "sustantivo"
+syllables:
+  - "de"
+  - "sen"
+  - "la"
+  - "ce"
+stressed_syllable: 3
+ipa_latam: "[de.senˈla.se]"
+ipa_es: "[de.senˈla.θe]"
+explanation: "El final de una historia: cómo se resuelve todo lo que venía antes."
+example_sentence: "Conté la anécdota entera y guardé el desenlace para la última frase."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombrarlo te obliga a tener uno: si tu historia no tiene final, todavía es una lista de hechos."
+when_not_to_use: "No la uses para el resultado de algo que sigue abierto: mientras haya capítulos, no hay final."
+collocations:
+  - "un desenlace inesperado"
+  - "el desenlace de la historia"
+  - "adelantar el desenlace"
+replaces:
+  - before: "Y al final pasó una cosa increíble"
+    after: "El desenlace fue increíble"
+  - before: "Te cuento cómo acabó todo"
+    after: "Te cuento el desenlace"
+  - before: "Lo de cómo termina te lo dejo para luego"
+    after: "El desenlace lo dejo para el final"
+family:
+  - "desenlazar"
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "final"
+  funcion:
+    - "narrar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "enlace"
+    difference: "«Enlace» es lo que une dos cosas, como una dirección web o una boda; la otra palabra es cómo acaba una historia."
+    memory_trick: "El enlace une dos puntos; el otro cierra el camino."
+  - confused_with: "moraleja"
+    difference: "«Moraleja» es lo que aprendes de una historia; la otra palabra es lo que ocurre al final, aunque no aporte nada."
+    memory_trick: "La moraleja explica; el final solo ocurre."
+exercises:
+  - position: 1
+    sentence: "Ámbar contó la historia entera con calma y guardó el {{blank}} para la última frase."
+    hint_general: "Lo guardó para el final: cómo acabó todo."
+    explanation: "Desenlace: guardó para el final cómo acabó todo. «Enlace» es lo que une dos cosas, y «bombazo» es coloquial y promete un escándalo, no un cierre."
+    options:
+      - position: 1
+        text: "enlace"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enlace» es lo que une dos cosas, como una dirección web o una boda, y aquí se guarda el final de una historia."
+        hint_specific: "«Enlace» une dos puntos. ¿Qué se guarda para la última frase?"
+      - position: 2
+        text: "desenlace"
+        is_correct: true
+      - position: 3
+        text: "bombazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bombazo» es coloquial y promete un escándalo, y la frase describe una historia contada con calma."
+        hint_specific: "«Bombazo» suena a escándalo. ¿Cómo cuenta Ámbar la historia?"
+  - position: 2
+    sentence: "Nadie recordaba los datos de la charla al día siguiente, aunque todos recordaban el {{blank}}."
+    hint_general: "Lo que queda es cómo terminó aquello."
+    explanation: "Desenlace: lo que queda es cómo terminó. «Desencanto» es la decepción que sientes, y «resumen» sería una versión corta de todo, no el final."
+    options:
+      - position: 1
+        text: "desencanto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desencanto» es la decepción que alguien siente, y la frase habla de lo que la gente recordaba."
+        hint_specific: "«Desencanto» es un sentimiento. ¿Qué recordaba la gente al día siguiente?"
+      - position: 2
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumen» sería una versión corta de toda la charla, y lo que quedó fue solo cómo terminaba."
+        hint_specific: "«Resumen» cubre todo en pequeño. ¿Qué parte se quedó en la memoria?"
+      - position: 3
+        text: "desenlace"
+        is_correct: true
+  - position: 3
+    sentence: "Si cuentas el {{blank}} al principio, la historia pierde la única razón para seguir escuchándola."
+    hint_general: "Adelantar cómo acaba deja a quien escucha sin motivo para continuar."
+    explanation: "Desenlace: adelantar cómo acaba quita el motivo para seguir. «Enlace» es lo que une dos cosas, y «argumento» es todo lo que pasa, no solo el final."
+    options:
+      - position: 1
+        text: "desenlace"
+        is_correct: true
+      - position: 2
+        text: "enlace"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enlace» es lo que une dos cosas, y contar un enlace al principio no arruina ninguna historia."
+        hint_specific: "«Enlace» une dos puntos. ¿Qué es lo que no se debe adelantar?"
+      - position: 3
+        text: "argumento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Argumento» es todo lo que ocurre en la historia, y contarlo entero es otra cosa que adelantar el final."
+        hint_specific: "«Argumento» abarca la historia completa. ¿Qué parte arruina la sorpresa?"
+  - position: 4
+    sentence: "Gonzalo cambió el orden del correo: primero el {{blank}} y después el camino que llevó hasta ahí."
+    hint_general: "Pone el final arriba y el recorrido debajo."
+    explanation: "Desenlace: pone el final arriba y el recorrido debajo. «Desenfoque» es una imagen borrosa, y «preámbulo» es lo que se dice antes de entrar en materia."
+    options:
+      - position: 1
+        text: "desenfoque"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desenfoque» describe una imagen borrosa, y aquí se habla del orden de un correo."
+        hint_specific: "«Desenfoque» pertenece a las fotos. ¿Qué se coloca arriba del correo?"
+      - position: 2
+        text: "preámbulo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preámbulo» es lo que se dice antes de entrar en materia, y la frase dice que el camino va después."
+        hint_specific: "«Preámbulo» va delante por definición. ¿Qué queda entonces para el final?"
+      - position: 3
+        text: "desenlace"
+        is_correct: true
+  - position: 5
+    sentence: "La historia de la mudanza tuvo un {{blank}} que nadie esperaba: al final se quedaron en el mismo barrio."
+    hint_general: "Cómo acabó todo sorprendió a quien escuchaba."
+    explanation: "Desenlace: cómo acabó sorprendió a todos. «Enlace» es lo que une dos cosas, y «culebrón» es coloquial y describe un lío largo, no un final."
+    options:
+      - position: 1
+        text: "culebrón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Culebrón» es coloquial y describe un lío largo y enredado, no el momento en que algo termina."
+        hint_specific: "«Culebrón» habla de un enredo que dura. ¿Qué parte sorprendió aquí?"
+      - position: 2
+        text: "desenlace"
+        is_correct: true
+      - position: 3
+        text: "enlace"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enlace» es lo que une dos cosas, y lo que sorprendió fue cómo terminó la mudanza."
+        hint_specific: "«Enlace» une dos puntos. ¿Qué sorprendió de esa mudanza?"
+  - position: 6
+    sentence: "Delia pidió que no le contaran el {{blank}} de la serie antes del fin de semana."
+    hint_general: "No quiere saber cómo termina hasta verlo."
+    explanation: "Desenlace: no quiere saber cómo termina. «Desencanto» es una decepción personal, y «comienzo» es justo la parte que ya ha visto."
+    options:
+      - position: 1
+        text: "desenlace"
+        is_correct: true
+      - position: 2
+        text: "desencanto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desencanto» es la decepción que alguien siente, y no es algo que se pueda contar de una serie."
+        hint_specific: "«Desencanto» es un sentimiento. ¿Qué le pueden estropear a Delia?"
+      - position: 3
+        text: "comienzo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comienzo» es la parte que ya conoce, y lo que pide es que no le adelanten lo que queda."
+        hint_specific: "«Comienzo» está al principio. ¿Qué parte todavía no ha visto?"
+  - position: 7
+    sentence: "Cuando el cliente preguntó cómo terminó el proyecto anterior, Ivo fue directo al {{blank}}."
+    hint_general: "Va directo a cómo acabó, sin rodeos."
+    explanation: "Desenlace: va directo a cómo acabó. «Enlace» es lo que une dos cosas, y «moraleja» sería lo que se aprende, no lo que ocurrió."
+    options:
+      - position: 1
+        text: "enlace"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enlace» es lo que une dos cosas, y el cliente pregunta cómo terminó un proyecto."
+        hint_specific: "«Enlace» une dos puntos. ¿Qué pregunta el cliente exactamente?"
+      - position: 2
+        text: "moraleja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Moraleja» sería lo que se aprende de la historia, y el cliente pregunta qué pasó al final."
+        hint_specific: "«Moraleja» deja un aprendizaje. ¿El cliente quiere eso o un resultado?"
+      - position: 3
+        text: "desenlace"
+        is_correct: true
+  - position: 8
+    sentence: "Un buen caso de éxito tiene tres partes: el problema, lo que hiciste y el {{blank}}."
+    hint_general: "La tercera parte cuenta en qué acabó todo."
+    explanation: "Desenlace: la tercera parte cuenta en qué acabó. «Desenfoque» es una imagen borrosa, y «prólogo» va antes de la historia, no después."
+    options:
+      - position: 1
+        text: "prólogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prólogo» va antes de la historia, y aquí falta la parte que la cierra."
+        hint_specific: "«Prólogo» abre el libro. ¿Qué falta después de contar lo que hiciste?"
+      - position: 2
+        text: "desenlace"
+        is_correct: true
+      - position: 3
+        text: "desenfoque"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desenfoque» describe una imagen borrosa, y aquí se enumeran las partes de un relato."
+        hint_specific: "«Desenfoque» pertenece a las fotos. ¿Qué partes se están enumerando?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El final primero"
+    body: "Otilia empezaba sus informes por el contexto y los perdía a todos en la segunda línea. Cambió el orden: «Desenlace: recuperamos a los dos clientes y el proceso tarda cuatro días menos. Abajo cuento cómo». Esa semana el informe se leyó tres veces."
+    before_phrase: "Bueno, te cuento desde el principio cómo fue todo."
+    after_phrase: "Desenlace primero: recuperamos a los dos clientes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La historia del abuelo"
+    body: "El abuelo contaba siempre la misma historia del tren, y siempre paraba antes del final. «Sin desenlace no hay historia», protestaba Casandra. Aquel domingo lo contó entero: perdió el tren y por eso conoció a su mujer en la estación."
+    before_phrase: "Y luego ya pasaron cosas, ya te contaré."
+    after_phrase: "Sin desenlace no hay historia."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "«Cuéntame un proyecto difícil»"
+    body: "Ivo tenía el problema y el trabajo bien contados, pero se quedaba a medias. Esta vez cerró: «El desenlace fue que entregamos con un día de retraso y el cliente renovó por dos años». Le preguntaron cómo había conseguido esa renovación."
+    before_phrase: "Y bueno, al final salió, más o menos."
+    after_phrase: "El desenlace fue que renovaron por dos años."
+metrics:
+  zipf_overall: 3.8399
+  dispersion_dp: 0.2074
+  pedantry_proxy: 0.5548
+  family_size: 223
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

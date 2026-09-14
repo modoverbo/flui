@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 309
+slug: "esmero"
+status: "draft"
+lemma: "esmero"
+part_of_speech: "sustantivo"
+syllables: ["es", "me", "ro"]
+stressed_syllable: 2
+ipa_latam: "[esˈme.ɾo]"
+ipa_es: "[esˈme.ɾo]"
+explanation: "Cuidado y atención que alguien pone en hacer algo lo mejor posible."
+example_sentence: "Se nota el esmero con que preparó cada parte de la despedida."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Elogia el camino y no solo el final: «Se nota el esmero» reconoce las horas que nadie vio."
+when_not_to_use: "No la uses para algo que salió bien por suerte: esta palabra premia el cuidado, no el azar."
+collocations:
+  - "con esmero"
+  - "poner esmero"
+  - "el esmero de alguien"
+replaces:
+  - before: "Lo hizo con muchas ganas y mucho cuidado"
+    after: "Lo hizo con esmero"
+  - before: "Se nota que le puso un montón"
+    after: "Se nota el esmero que le puso"
+  - before: "Preparó todo muy cuidado"
+    after: "Preparó todo con esmero"
+family: ["esmerado"]
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["ganas", "cuidado"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "empeño"
+    difference: "«Empeño» es la fuerza con que alguien persigue algo; la otra palabra es el cuidado con que lo hace mientras lo hace."
+    memory_trick: "El empeño empuja; el esmero pule."
+  - confused_with: "afán"
+    difference: "«Afán» habla de las ganas y de la prisa por conseguir algo; aquí se mide el cuidado, no la urgencia."
+    memory_trick: "El afán corre; el esmero se detiene."
+exercises:
+  - position: 1
+    sentence: "Se nota el {{blank}} con que Daniela preparó cada parte de la despedida de su compañera."
+    hint_general: "Se ve el cuidado que puso en cada parte, una por una."
+    explanation: "Esmero: se ve el cuidado puesto en cada parte. «Esmalte» es la capa brillante que cubre algo, y «mimo» es coloquial y suena a cariño más que a trabajo cuidado."
+    options:
+      - position: 1
+        text: "esmalte"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esmalte» es la capa brillante que cubre una superficie, y aquí se habla de cómo se preparó una despedida."
+        hint_specific: "«Esmalte» es una capa que cubre algo. ¿Qué se estaría cubriendo en esa frase?"
+      - position: 2
+        text: "esmero"
+        is_correct: true
+      - position: 3
+        text: "mimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mimo» es coloquial y apunta al cariño; aquí se elogia el cuidado con que se hizo cada parte."
+        hint_specific: "«Mimo» suena a caricia. ¿Se elogia el cariño o la manera de trabajar?"
+  - position: 2
+    sentence: "Rafael responde todos los correos con el mismo {{blank}}, sea un cliente enorme o el vecino de al lado."
+    hint_general: "Pone el mismo cuidado en todos los casos, sin mirar quién está al otro lado."
+    explanation: "Esmero: pone el mismo cuidado con todos. «Estreno» es la primera vez que algo se muestra, y «orden» habla de colocar bien, no de cuidar el resultado."
+    options:
+      - position: 1
+        text: "estreno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estreno» es la primera vez que algo se muestra en público, y aquí se habla de correos de todos los días."
+        hint_specific: "«Estreno» es una primera vez. ¿Cuántas veces responde correos Rafael?"
+      - position: 2
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Orden» es colocar cada cosa en su sitio, y lo que se elogia aquí es el cuidado en lo que escribe."
+        hint_specific: "«Orden» va de colocar. ¿Se elogia cómo coloca o cómo trabaja?"
+      - position: 3
+        text: "esmero"
+        is_correct: true
+  - position: 3
+    sentence: "Lo que distingue a Mónica no es la rapidez, sino el {{blank}} que pone en cada revisión."
+    hint_general: "No destaca por ir deprisa, sino por el cuidado que pone al revisar."
+    explanation: "Esmero: destaca por el cuidado al revisar. «Esmalte» es una capa brillante, y «empeño» es la fuerza con que se persigue algo, no el cuidado al hacerlo."
+    options:
+      - position: 1
+        text: "esmero"
+        is_correct: true
+      - position: 2
+        text: "esmalte"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esmalte» es la capa brillante que cubre una superficie y no dice nada sobre cómo trabaja alguien."
+        hint_specific: "«Esmalte» cubre objetos. ¿Qué objeto se estaría cubriendo aquí?"
+      - position: 3
+        text: "empeño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Empeño» es la fuerza con que alguien persigue algo, y la frase habla de cómo revisa, no de cuánto insiste."
+        hint_specific: "«Empeño» empuja hacia delante. ¿Se mide aquí la fuerza o el cuidado?"
+  - position: 4
+    sentence: "Ana y su hermano prepararon la mudanza de su abuela con tanto {{blank}} que ella no tuvo que buscar nada."
+    hint_general: "Lo prepararon con tanto cuidado que la abuela encontró cada cosa en su sitio."
+    explanation: "Esmero: lo prepararon con un cuidado enorme. «Estreno» es una primera vez en público, y «primor» tiene ese sentido, pero suena a labor antigua."
+    options:
+      - position: 1
+        text: "estreno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estreno» es la primera vez que algo se muestra en público, y una mudanza no se estrena."
+        hint_specific: "«Estreno» habla de una primera función. ¿Hay público en esta escena?"
+      - position: 2
+        text: "primor"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Primor» apunta a lo mismo, pero suena a labor antigua hecha a mano y desentona al contar una mudanza."
+        hint_specific: "«Primor» suena a bordado de otra época. ¿Pega con cajas y camiones?"
+      - position: 3
+        text: "esmero"
+        is_correct: true
+  - position: 5
+    sentence: "Un poco de {{blank}} en el primer mensaje ahorra tres correos después, dice Gabriel a quien quiera oírlo."
+    hint_general: "Cuidar el primer mensaje evita tener que aclararlo tres veces más."
+    explanation: "Esmero: cuidar el primer mensaje ahorra aclaraciones. «Esmalte» es una capa brillante, y «talento» es una capacidad que se tiene, no un cuidado que se pone."
+    options:
+      - position: 1
+        text: "esmalte"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esmalte» es la capa brillante que cubre una superficie, y un mensaje no se cubre con nada."
+        hint_specific: "«Esmalte» cubre objetos. ¿Cómo se cubriría un mensaje?"
+      - position: 2
+        text: "esmero"
+        is_correct: true
+      - position: 3
+        text: "talento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Talento» es una capacidad que se tiene, y la frase habla de algo que se decide poner en cada mensaje."
+        hint_specific: "«Talento» se tiene o no se tiene. ¿Aquí se habla de tener o de poner?"
+  - position: 6
+    sentence: "A Enrique le sobra talento y le falta {{blank}}: entrega rapidísimo y luego hay que repasarlo todo."
+    hint_general: "Es capaz, pero no dedica cuidado, y por eso su trabajo hay que revisarlo entero."
+    explanation: "Esmero: le falta cuidado al entregar. «Esmalte» es una capa brillante, y «afán» son las ganas de conseguir algo, que a él no le faltan."
+    options:
+      - position: 1
+        text: "afán"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Afán» son las ganas y la prisa por conseguir algo, y de eso le sobra: entrega rapidísimo."
+        hint_specific: "«Afán» corre con prisa. ¿Enrique va lento o va sobrado de prisa?"
+      - position: 2
+        text: "esmalte"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esmalte» es la capa brillante que cubre una superficie y no describe cómo trabaja una persona."
+        hint_specific: "«Esmalte» cubre superficies. ¿Qué superficie hay en esta frase?"
+      - position: 3
+        text: "esmero"
+        is_correct: true
+  - position: 7
+    sentence: "Nadie le pidió tanto {{blank}}, pero Patricia repitió la portada hasta que quedó como la había imaginado."
+    hint_general: "Puso más cuidado del que le pedían, por decisión propia."
+    explanation: "Esmero: puso más cuidado del que le pedían. «Estreno» es una primera vez en público, e «interés» dice que algo le importa, no cuánto lo cuida."
+    options:
+      - position: 1
+        text: "esmero"
+        is_correct: true
+      - position: 2
+        text: "estreno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estreno» es la primera vez que algo se muestra, y aquí Patricia repite la misma portada una y otra vez."
+        hint_specific: "«Estreno» es una primera vez. ¿Cuántas veces rehace la portada?"
+      - position: 3
+        text: "interés"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interés» dice que algo le importa, y la frase mide cuánto lo cuidó, no cuánto le importaba."
+        hint_specific: "«Interés» mide lo que te llama. ¿Aquí se mide la atracción o el trabajo?"
+  - position: 8
+    sentence: "El {{blank}} de Antonio se nota en lo pequeño: el orden del guion y los nombres bien escritos."
+    hint_general: "Su cuidado aparece en las cosas mínimas que casi nadie mira."
+    explanation: "Esmero: su cuidado aparece en lo mínimo. «Esmalte» es una capa brillante, y «cariño» habla del afecto hacia alguien, no del cuidado en el trabajo."
+    options:
+      - position: 1
+        text: "esmalte"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esmalte» es la capa brillante que cubre una superficie, y un guion no lleva ninguna capa encima."
+        hint_specific: "«Esmalte» cubre objetos. ¿Qué se cubriría en un guion?"
+      - position: 2
+        text: "esmero"
+        is_correct: true
+      - position: 3
+        text: "cariño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cariño» habla del afecto hacia alguien, y aquí lo que se mide es cómo trabaja con los nombres y el orden."
+        hint_specific: "«Cariño» va hacia personas. ¿La frase mide afecto o manera de trabajar?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El álbum del abuelo"
+    body: "Mariana pasó tres domingos ordenando fotos y escribiendo una fecha detrás de cada una. Cuando se lo dio a su abuelo, él pasó las páginas despacio y dijo: «Se nota el esmero, hija». No hizo falta nada más."
+    before_phrase: "Se nota que le pusiste muchas ganas."
+    after_phrase: "Se nota el esmero."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena del jueves"
+    body: "Tomás invitó a cinco amigos y preparó hasta los nombres en las sillas. Una de ellas levantó la copa: «Brindo por el esmero: nadie hace esto por cinco personas». Todos se rieron y él se puso rojo."
+    before_phrase: "Qué bien lo has preparado todo."
+    after_phrase: "Brindo por el esmero."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La plantilla nueva"
+    body: "Verónica rehízo la plantilla de informes tres veces hasta que cualquiera pudiera rellenarla sin preguntar. Su compañero la usó y escribió: «Se agradece el esmero; he tardado la mitad». La plantilla sigue usándose dos años después."
+    before_phrase: "Se agradece que lo hayas hecho con tanto cuidado."
+    after_phrase: "Se agradece el esmero."
+metrics:
+  zipf_overall: 3.9816
+  dispersion_dp: 0.1685
+  pedantry_proxy: 0.3577
+  family_size: 41
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

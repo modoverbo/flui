@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 115
+slug: "titubear"
+status: "draft"
+lemma: "titubear"
+part_of_speech: "verbo"
+syllables: ["ti", "tu", "be", "ar"]
+stressed_syllable: 4
+ipa_latam: "[ti.tu.βeˈar]"
+ipa_es: "[ti.tu.βeˈar]"
+explanation: "Dudar al hablar y quedarse a medias, sin decidir qué decir."
+example_sentence: "Preparé la respuesta tres veces para no titubear delante del comité."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombrar la duda le quita peso: «Titubeé, sí, y luego contesté» suena honesto y tranquilo."
+when_not_to_use: "No la uses para una pausa elegida a propósito; callar un segundo no es dudar."
+collocations:
+  - "titubear al hablar"
+  - "titubear un segundo"
+  - "responder sin titubear"
+replaces:
+  - before: "Me quedé trabado al contestar"
+    after: "Titubeé al contestar"
+  - before: "Contestó sin dudar ni un segundo"
+    after: "Contestó sin titubear"
+  - before: "Se le notó que dudaba mucho"
+    after: "Se le notó que titubeaba"
+family: ["titubeo"]
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["dudar"]
+  funcion: ["describir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "titular"
+    difference: "«Titular» es poner un título o ser quien ocupa un puesto fijo; no tiene nada que ver con dudar al hablar."
+    memory_trick: "Titulas un texto; dudas delante del micrófono."
+  - confused_with: "tutear"
+    difference: "«Tutear» es hablarle a alguien de tú; la otra palabra describe a quien se queda a medias por la duda."
+    memory_trick: "Tutear elige el trato; dudar corta la frase."
+exercises:
+  - position: 1
+    sentence: "Le preguntaron por el presupuesto y Mariana {{blank}} dos segundos antes de dar la cifra exacta."
+    hint_general: "Se queda un momento sin saber qué decir antes de contestar."
+    explanation: "Titubeó: se quedó un momento sin saber qué decir. «Tituló» sería poner un título, y «tuteó» sería hablarle de tú a alguien."
+    options:
+      - position: 1
+        text: "tituló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título a algo, y aquí no hay ningún texto al que ponerle nombre."
+        hint_specific: "«Tituló» necesita un texto. ¿Qué está pasando en esa sala?"
+      - position: 2
+        text: "titubeó"
+        is_correct: true
+      - position: 3
+        text: "tuteó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tutear» es hablarle a alguien de tú, y la frase cuenta que tardó en dar la cifra."
+        hint_specific: "«Tuteó» habla del trato. ¿Qué tardó dos segundos?"
+  - position: 2
+    sentence: "El vídeo salió bien porque Fernando ensayó hasta dejar de {{blank}} en la primera frase."
+    hint_general: "Ensayó hasta que la primera frase le salió sin quedarse a medias."
+    explanation: "Titubear: dejar de quedarse a medias al empezar. «Titular» es poner un título, y «trabarse» es coloquial y suena a lengua enredada."
+    options:
+      - position: 1
+        text: "titubear"
+        is_correct: true
+      - position: 2
+        text: "titular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título, y lo que ensaya Fernando es decir la frase de corrido."
+        hint_specific: "«Titular» pone nombre a algo. ¿Qué practicó Fernando tantas veces?"
+      - position: 3
+        text: "trabarse"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Trabarse» es coloquial y apunta a que la lengua se enreda; aquí el problema es no saber qué decir."
+        hint_specific: "«Trabarse» habla de la lengua. ¿El problema es la lengua o la duda?"
+  - position: 3
+    sentence: "Cuando mi sobrino me preguntó por qué nos mudábamos, {{blank}} un poco antes de contarle la verdad."
+    hint_general: "Se queda un momento a medias antes de decidir qué contar."
+    explanation: "Titubeé: me quedé a medias antes de decidir qué contar. «Titulé» sería poner un título, y «enmudecí» sería quedarme sin decir nada."
+    options:
+      - position: 1
+        text: "titulé"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título a un texto, y en esa cocina no había ningún texto."
+        hint_specific: "«Titulé» pide un texto delante. ¿Qué había delante en esa escena?"
+      - position: 2
+        text: "enmudecí"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enmudecer» es quedarse sin decir nada, y el final de la frase dice que sí contó la verdad."
+        hint_specific: "«Enmudecí» significa silencio total. ¿Hubo respuesta o no?"
+      - position: 3
+        text: "titubeé"
+        is_correct: true
+  - position: 4
+    sentence: "La pregunta sobre el año sin trabajar hizo {{blank}} a Camila, aunque después respondió con calma."
+    hint_general: "Esa pregunta la dejó un momento sin saber cómo empezar."
+    explanation: "Titubear: la dejó sin saber cómo empezar. «Titular» es poner un título, y «atascarse» es coloquial y sugiere quedarse bloqueada del todo."
+    options:
+      - position: 1
+        text: "titubear"
+        is_correct: true
+      - position: 2
+        text: "titular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título o tener un puesto fijo, y aquí solo hay una pregunta incómoda."
+        hint_specific: "«Titular» va de títulos y puestos. ¿Qué provoca esa pregunta?"
+      - position: 3
+        text: "atascarse"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Atascarse» es coloquial y sugiere quedarse bloqueada del todo, y ella siguió respondiendo con calma."
+        hint_specific: "«Atascarse» no deja avanzar. ¿Camila llegó a contestar?"
+  - position: 5
+    sentence: "Aprendí a no {{blank}} cuando me preguntan el precio: lo digo entero y me callo."
+    hint_general: "Aprendió a decir el precio sin quedarse a medias."
+    explanation: "Titubear: decir el precio sin quedarse a medias. «Titular» es poner un título, y «regatear» sería discutir la cifra."
+    options:
+      - position: 1
+        text: "titular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título a algo, y lo que se practica aquí es decir una cifra de corrido."
+        hint_specific: "«Titular» pone nombres. ¿Qué se dice entero en esta frase?"
+      - position: 2
+        text: "titubear"
+        is_correct: true
+      - position: 3
+        text: "regatear"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Regatear» es discutir la cifra para bajarla, y aquí el precio se dice completo y sin discusión."
+        hint_specific: "«Regatear» negocia el número. ¿Se negocia algo o se dice y punto?"
+  - position: 6
+    sentence: "Durante el juicio del concurso, el jurado notó que Vicente {{blank}} solo en la parte de los números."
+    hint_general: "Se quedaba a medias justo en esa parte de su explicación."
+    explanation: "Titubeaba: se quedaba a medias en esa parte. «Titulaba» sería poner títulos, y «tanteaba» sería probar a propósito."
+    options:
+      - position: 1
+        text: "titulaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título, y lo que ve el jurado es una duda al llegar a las cifras."
+        hint_specific: "«Titulaba» pone nombres a cosas. ¿Qué nota el jurado?"
+      - position: 2
+        text: "titubeaba"
+        is_correct: true
+      - position: 3
+        text: "tanteaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tantear» es probar con cuidado a propósito, y aquí la duda le sale sin querer."
+        hint_specific: "«Tantear» es una estrategia. ¿Vicente duda a propósito o sin querer?"
+  - position: 7
+    sentence: "Renata contestó sin {{blank}}: «Sí, ese proyecto lo dirigí yo de principio a fin»."
+    hint_general: "Contesta de corrido, sin un solo momento de duda."
+    explanation: "Titubear: contesta de corrido, sin dudar. «Titular» sería poner un título, y «balbucear» apunta a un habla entrecortada."
+    options:
+      - position: 1
+        text: "titubear"
+        is_correct: true
+      - position: 2
+        text: "titular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título o dirigir un puesto fijo, y aquí lo que se describe es cómo contesta."
+        hint_specific: "«Titular» va de nombres. ¿Qué describe la frase: qué dice o cómo lo dice?"
+      - position: 3
+        text: "balbucear"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Balbucear» apunta a un habla entrecortada, y aquí la clave es que no hubo ni un momento de duda."
+        hint_specific: "«Balbucear» describe el sonido. ¿Qué es lo que no ocurrió en esa respuesta?"
+  - position: 8
+    sentence: "Si {{blank}} al empezar, respira y repite la primera frase: nadie se dará cuenta."
+    hint_general: "El consejo sirve para cuando te quedas a medias al empezar."
+    explanation: "Titubeas: te quedas a medias al empezar. «Titulas» sería poner un título, y «tartamudeas» describe otra cosa distinta."
+    options:
+      - position: 1
+        text: "titulas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Titular» es poner un título, y el consejo trata de qué hacer cuando dudas al arrancar."
+        hint_specific: "«Titulas» pone nombre a un texto. ¿De qué trata el consejo?"
+      - position: 2
+        text: "titubeas"
+        is_correct: true
+      - position: 3
+        text: "tartamudeas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tartamudear» describe una forma de hablar entrecortada, y el consejo va de la duda al elegir las palabras."
+        hint_specific: "«Tartamudeas» habla del sonido. ¿El consejo mira al sonido o a la duda?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los dos segundos del presupuesto"
+    body: "Mariana llevaba la cifra exacta y aun así tardó dos segundos en decirla. Al salir comentó: «Titubeé y me molestó. La próxima vez la digo entera y me callo». Lo practicó en voz alta y en la siguiente reunión salió limpia."
+    before_phrase: "Me quedé trabada al decir el número."
+    after_phrase: "Titubeé y me molestó."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Por qué nos mudamos"
+    body: "Mi sobrino preguntó en mitad de la merienda por qué nos íbamos de la casa. Dudé más de la cuenta buscando una versión suave. Al final le dije la verdad simple, y él siguió con su galleta. Titubear delante de un niño no sirve de nada."
+    before_phrase: "Me quedé sin saber qué decir."
+    after_phrase: "Titubear delante de un niño no sirve de nada."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "El año que faltaba"
+    body: "La pregunta llegó a mitad de la entrevista: el año sin trabajar. Camila se quedó un momento en blanco y luego contestó despacio. «Titubeé un segundo y seguí», contó después. La contrataron igual."
+    before_phrase: "Me quedé cortada un segundo y luego seguí."
+    after_phrase: "Titubeé un segundo y seguí."
+metrics:
+  zipf_overall: 3.1307
+  dispersion_dp: 0.2655
+  pedantry_proxy: 0.6074
+  family_size: 4
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

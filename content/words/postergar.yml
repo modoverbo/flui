@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 315
+slug: "postergar"
+status: "draft"
+lemma: "postergar"
+part_of_speech: "verbo"
+syllables: ["pos", "ter", "gar"]
+stressed_syllable: 3
+ipa_latam: "[pos.terˈɣar]"
+ipa_es: "[pos.terˈɣar]"
+explanation: "Dejar algo para más adelante, sin quitarlo del todo de tu lista."
+example_sentence: "Prefiero postergar esa conversación una semana antes que tenerla con prisa."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es un «ahora no» honesto: si le pones fecha, deja de parecer una excusa."
+when_not_to_use: "No la uses si en realidad no piensas volver a ello: eso es descartarlo, no moverlo de día."
+collocations:
+  - "postergar una decisión"
+  - "postergar una respuesta"
+  - "postergar un encuentro"
+replaces:
+  - before: "Lo dejo para más adelante"
+    after: "Lo postergo hasta el mes que viene"
+  - before: "Ya lo veremos otro día"
+    after: "Lo postergamos al lunes"
+  - before: "Mejor lo dejamos para luego"
+    after: "Mejor lo postergamos y le ponemos fecha"
+family: []
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin: ["dejar"]
+  funcion: ["aplazar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "postrar"
+    difference: "«Postrar» es dejar a alguien sin fuerzas o de rodillas; la otra palabra solo mueve algo a otro día."
+    memory_trick: "Te postras de rodillas; postergas una fecha."
+  - confused_with: "cancelar"
+    difference: "«Cancelar» quita algo del calendario para siempre; aquí la cita sigue existiendo, solo cambia de día."
+    memory_trick: "Lo cancelado desaparece; lo postergado vuelve."
+exercises:
+  - position: 1
+    sentence: "Antes de contestar enfadada, Elena decidió {{blank}} la respuesta hasta la mañana siguiente."
+    hint_general: "Mueve la respuesta a otro momento en vez de soltarla en caliente."
+    explanation: "Postergar: mueve la respuesta a otro momento. «Postrar» es dejar a alguien sin fuerzas, y «cancelar» sería no responder nunca."
+    options:
+      - position: 1
+        text: "postrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Postrar» es dejar a alguien sin fuerzas o de rodillas, y aquí lo que se mueve es el momento de contestar."
+        hint_specific: "«Postrar» deja sin fuerzas. ¿Quién se quedaría sin fuerzas en esta frase?"
+      - position: 2
+        text: "postergar"
+        is_correct: true
+      - position: 3
+        text: "cancelar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cancelar» sería no responder nunca, y ella solo espera a la mañana siguiente."
+        hint_specific: "«Cancelar» borra algo del todo. ¿Elena piensa contestar mañana o nunca?"
+  - position: 2
+    sentence: "Ricardo {{blank}} la conversación dos semanas, pero la apuntó en el calendario para no perderla de vista."
+    hint_general: "La mueve dos semanas y la deja apuntada para volver a ella."
+    explanation: "Postergó: la movió dos semanas y la dejó apuntada. «Posó» es colocar algo o quedarse quieto para una foto, y «difirió» suena a lenguaje de oficina."
+    options:
+      - position: 1
+        text: "posó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Posar» es colocar algo con cuidado o quedarse quieto para una foto, y una conversación no se posa."
+        hint_specific: "«Posar» pide una cámara o una superficie. ¿Dónde se posaría una charla?"
+      - position: 2
+        text: "postergó"
+        is_correct: true
+      - position: 3
+        text: "difirió"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Diferir» dice algo parecido, pero suena a lenguaje de oficina y desentona al contar una charla pendiente."
+        hint_specific: "«Diferir» suena a acta de reunión. ¿Pega al contar una conversación personal?"
+  - position: 3
+    sentence: "«No es lo mismo {{blank}} algo que quitarlo: en un caso vuelve y en el otro no», le dijo Gloria a su hijo."
+    hint_general: "Mover algo a otro día no es lo mismo que borrarlo de la lista."
+    explanation: "Postergar: moverlo a otro día, no borrarlo. «Postrar» es dejar sin fuerzas a alguien, y «adelantar» sería ponerlo antes, no después."
+    options:
+      - position: 1
+        text: "postergar"
+        is_correct: true
+      - position: 2
+        text: "postrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Postrar» es dejar a alguien sin fuerzas o de rodillas, y aquí se comparan dos maneras de tratar una lista."
+        hint_specific: "«Postrar» habla de cuerpos cansados. ¿La frase habla de personas o de fechas?"
+      - position: 3
+        text: "adelantar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adelantar» es ponerlo antes, y la frase contrapone mover hacia delante con quitarlo del todo."
+        hint_specific: "«Adelantar» lo acerca. ¿Se compara con quitarlo o con hacerlo antes?"
+  - position: 4
+    sentence: "Mónica prefiere {{blank}} una decisión antes que tomarla con la mitad de los datos."
+    hint_general: "Prefiere mover la decisión a otro día que decidir sin información."
+    explanation: "Postergar: mueve la decisión hasta tener datos. «Posar» es colocar algo o quedarse quieto para una foto, y «dilatar» suena a informe formal."
+    options:
+      - position: 1
+        text: "posar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Posar» es colocar algo con cuidado o quedarse quieto para una foto, y una decisión no se posa en ningún sitio."
+        hint_specific: "«Posar» necesita una superficie o una cámara. ¿Cuál habría aquí?"
+      - position: 2
+        text: "dilatar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dilatar» apunta a lo mismo, pero suena a informe formal y desentona al contar cómo trabaja alguien."
+        hint_specific: "«Dilatar» suena a texto técnico. ¿Encaja al describir a una compañera?"
+      - position: 3
+        text: "postergar"
+        is_correct: true
+  - position: 5
+    sentence: "«Si {{blank}} el viaje hasta octubre, sale más barato y hay menos gente», propuso Samuel en el chat."
+    hint_general: "Propone moverlo a un mes mejor, sin renunciar a hacerlo."
+    explanation: "Postergas: mover el viaje a otro mes sin renunciar a él. «Postras» es dejar sin fuerzas, y «cancelas» sería no ir en todo el año."
+    options:
+      - position: 1
+        text: "postras"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Postrar» es dejar a alguien sin fuerzas, y aquí lo que se mueve es la fecha de un viaje."
+        hint_specific: "«Postrar» deja sin fuerzas. ¿Quién caería rendido en este plan?"
+      - position: 2
+        text: "postergas"
+        is_correct: true
+      - position: 3
+        text: "cancelas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cancelar» sería no ir, y la propuesta mantiene el viaje: solo lo mueve a octubre."
+        hint_specific: "«Cancelar» borra el plan. ¿El viaje sigue en pie en la propuesta?"
+  - position: 6
+    sentence: "Lo que Lucía {{blank}} en enero le cayó todo junto en marzo, y lo contó riéndose."
+    hint_general: "Lo que movió a más adelante volvió, todo a la vez, dos meses después."
+    explanation: "Postergó: lo movió y volvió más tarde. «Postró» es dejar sin fuerzas, y «resolvió» sería haberlo terminado en enero."
+    options:
+      - position: 1
+        text: "postró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Postrar» es dejar a alguien sin fuerzas, y lo que se mueve aquí son asuntos pendientes, no personas."
+        hint_specific: "«Postrar» habla de agotamiento físico. ¿Qué es lo que se mueve de enero a marzo?"
+      - position: 2
+        text: "resolvió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resolver» sería terminarlo en enero, y entonces no le habría caído nada encima en marzo."
+        hint_specific: "«Resolver» cierra el asunto. ¿Por qué volvería en marzo algo ya cerrado?"
+      - position: 3
+        text: "postergó"
+        is_correct: true
+  - position: 7
+    sentence: "Andrés le pidió a su equipo {{blank}} la entrega una semana y nadie protestó."
+    hint_general: "Pide mover la entrega siete días, no quitarla del calendario."
+    explanation: "Postergar: mover la entrega siete días. «Posar» es colocar algo o quedarse quieto para una foto, y «acelerar» sería pedir lo contrario."
+    options:
+      - position: 1
+        text: "postergar"
+        is_correct: true
+      - position: 2
+        text: "posar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Posar» es colocar algo con cuidado o quedarse quieto para una foto, y una entrega no se posa."
+        hint_specific: "«Posar» pide una cámara o una mesa. ¿Cuál hay en esta escena?"
+      - position: 3
+        text: "acelerar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acelerar» sería entregar antes, y él pide justo una semana más de plazo."
+        hint_specific: "«Acelerar» corre. ¿Andrés pide más tiempo o menos?"
+  - position: 8
+    sentence: "Carmen dejó de {{blank}} la llamada al banco y por fin la hizo un martes por la mañana."
+    hint_general: "Deja de moverla de día en día y la hace de una vez."
+    explanation: "Postergar: deja de moverla de día en día. «Postrar» es dejar sin fuerzas, y «repetir» sería llamar otra vez, cuando no había llamado ninguna."
+    options:
+      - position: 1
+        text: "postrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Postrar» es dejar a alguien sin fuerzas, y aquí lo que se mueve es una llamada pendiente."
+        hint_specific: "«Postrar» habla de quedarse sin fuerzas. ¿Quién se quedaría así por una llamada?"
+      - position: 2
+        text: "postergar"
+        is_correct: true
+      - position: 3
+        text: "repetir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» sería llamar otra vez, y en la frase esa llamada no se había hecho ninguna vez."
+        hint_specific: "«Repetir» necesita una primera vez. ¿Había llamado antes Carmen?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El martes que no era"
+    body: "Natalia tenía dos reuniones el mismo día y un informe a medias. Escribió a la más flexible: «¿Podemos postergar la nuestra al jueves? Así llego con algo que enseñarte». Le contestaron con un sí y un emoticono."
+    before_phrase: "¿Lo dejamos para otro día mejor?"
+    after_phrase: "¿Podemos postergarla al jueves?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La charla del domingo"
+    body: "Hugo quería hablar con su hermana del dinero del alquiler, pero llegó cansado y con hambre. «Prefiero postergarlo al miércoles y hablarlo bien», le dijo. El miércoles lo resolvieron en veinte minutos."
+    before_phrase: "Mejor lo hablamos otro día."
+    after_phrase: "Prefiero postergarlo al miércoles."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena que sobrevivió"
+    body: "Del grupo de seis, cuatro podían el viernes y dos no. Benjamín propuso: «Postergamos una semana, que vengamos todos». Nadie se enfadó y esa cena acabó siendo la más larga del año."
+    before_phrase: "Pues nada, lo dejamos para más adelante."
+    after_phrase: "Postergamos una semana y venimos todos."
+metrics:
+  zipf_overall: 3.9054
+  dispersion_dp: 0.3263
+  pedantry_proxy: 0.5223
+  family_size: 84
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

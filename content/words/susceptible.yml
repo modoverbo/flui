@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2123
+slug: "susceptible"
+status: "draft"
+lemma: "susceptible"
+part_of_speech: "adjetivo"
+syllables: ["sus", "cep", "ti", "ble"]
+stressed_syllable: 3
+ipa_latam: "[sus.sepˈti.βle]"
+ipa_es: "[sus.θepˈti.βle]"
+explanation: "Que se molesta con facilidad, incluso cuando nadie quería atacarlo."
+example_sentence: "Hoy está susceptible: déjale el comentario del proyecto para mañana."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dicho con cariño describe un momento, no un carácter: «hoy está susceptible» no juzga a nadie para siempre."
+when_not_to_use: "No la uses para descalificar a quien tiene una queja razonable: entonces el problema no es su piel."
+collocations:
+  - "estar susceptible"
+  - "ponerse susceptible"
+  - "andar susceptible"
+replaces:
+  - before: "Hoy se lo toma todo a mal"
+    after: "Hoy está susceptible"
+  - before: "Se ofende por cualquier cosa"
+    after: "Es muy susceptible"
+  - before: "Cuidado con lo que le dices, que salta"
+    after: "Ve con cuidado, que está susceptible"
+family: ["susceptibilidad"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+tags:
+  comodin: ["sensible"]
+  funcion: ["describir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "suspicaz"
+    difference: "«Suspicaz» describe a quien desconfía de las intenciones de los demás; el otro adjetivo describe a quien se ofende, que no es lo mismo."
+    memory_trick: "El suspicaz sospecha; el susceptible se ofende."
+  - confused_with: "sensible"
+    difference: "«Sensible» es quien nota y siente mucho, también lo bueno; el otro adjetivo se centra en lo fácil que es herirlo."
+    memory_trick: "El sensible siente; el susceptible se pica."
+exercises:
+  - position: 1
+    sentence: "No le digas nada del proyecto hoy: está {{blank}} y se lo toma todo a mal."
+    hint_general: "Hoy se ofende con cualquier comentario."
+    explanation: "Susceptible: hoy se ofende con cualquier comentario. «Suspicaz» sería desconfiar de las intenciones, y «nervioso» hablaría de su inquietud, no de ofenderse."
+    options:
+      - position: 1
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» es quien sospecha de las intenciones ajenas; la frase no dice que desconfíe, dice que se lo toma todo a mal."
+        hint_specific: "Suspicaz sospecha de los demás. ¿Qué dice la frase que le pasa hoy?"
+      - position: 2
+        text: "susceptible"
+        is_correct: true
+      - position: 3
+        text: "nervioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Nervioso» habla de inquietud; alguien puede estar nerviosísimo y aceptar cualquier comentario sin ofenderse."
+        hint_specific: "Nervioso habla de inquietud. ¿El problema es su inquietud o su piel?"
+  - position: 2
+    sentence: "Mi hermano se puso {{blank}} con el comentario del pelo, y era una broma de nada."
+    hint_general: "Se ofendió por una broma sin importancia."
+    explanation: "Susceptible: se ofendió por una broma pequeña. «Irascible» describe a quien estalla en furia, y «quisquilloso» es coloquial y suena a reproche."
+    options:
+      - position: 1
+        text: "irascible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Irascible» describe a quien estalla con furia; la frase habla de ofenderse, que es mucho más callado que estallar."
+        hint_specific: "Irascible estalla con furia. ¿Hubo furia o hubo enfado callado?"
+      - position: 2
+        text: "quisquilloso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Quisquilloso» es coloquial y suena a reproche por protestar por todo; aquí solo se cuenta que se ofendió una vez."
+        hint_specific: "«Quisquilloso» reprocha protestar por todo. ¿La frase acusa o cuenta?"
+      - position: 3
+        text: "susceptible"
+        is_correct: true
+  - position: 3
+    sentence: "Si el equipo anda {{blank}}, cualquier corrección suena a ataque personal."
+    hint_general: "Con la piel fina, cualquier corrección duele."
+    explanation: "Susceptible: con la piel fina, todo suena a ataque. «Perceptible» se dice de lo que se puede notar, y «callado» hablaría de su silencio."
+    options:
+      - position: 1
+        text: "perceptible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perceptible» se dice de algo que se puede notar, como un ruido o un cambio; no describe el ánimo de un equipo."
+        hint_specific: "Perceptible se dice de cosas que se notan. ¿Un equipo es una de esas cosas?"
+      - position: 2
+        text: "susceptible"
+        is_correct: true
+      - position: 3
+        text: "callado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callado» describe a quien habla poco; un equipo callado puede recibir una corrección estupendamente."
+        hint_specific: "Callado habla poco. ¿Hablar poco hace que una corrección duela?"
+  - position: 4
+    sentence: "Tania no es nada {{blank}}: pidió más críticas y se quedó con las tres peores."
+    hint_general: "No se ofende: pidió más críticas y se quedó con las duras."
+    explanation: "Susceptible: no se ofende con las críticas. «Suspicaz» sería desconfiar de quien las hace, y «sensible» describiría a quien siente mucho, también lo bueno."
+    options:
+      - position: 1
+        text: "sensible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sensible» describe a quien siente mucho, también lo bueno; se puede ser muy sensible y aceptar críticas duras."
+        hint_specific: "Sensible siente mucho de todo. ¿Eso impide aceptar una crítica?"
+      - position: 2
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» es quien desconfía de las intenciones; Tania no desconfía de nadie, pide justo más comentarios."
+        hint_specific: "Suspicaz desconfía. ¿Tania desconfía de quien la critica?"
+      - position: 3
+        text: "susceptible"
+        is_correct: true
+  - position: 5
+    sentence: "Después de dos semanas durísimas, en esa sala andábamos todos {{blank}}."
+    hint_general: "Todos con la piel más fina de lo normal."
+    explanation: "Susceptibles: todos con la piel más fina de lo normal. «Suspicaces» diría que desconfiábamos unos de otros, y «cansados» solo hablaría del sueño."
+    options:
+      - position: 1
+        text: "susceptibles"
+        is_correct: true
+      - position: 2
+        text: "suspicaces"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaces» diría que desconfiábamos unos de otros; dos semanas duras dejan la piel fina, no la desconfianza."
+        hint_specific: "Suspicaces desconfían entre sí. ¿Eso deja una temporada dura?"
+      - position: 3
+        text: "cansados"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cansados» habla del sueño y del esfuerzo; se puede estar agotado y encajar bien cualquier comentario."
+        hint_specific: "Cansados habla de sueño. ¿El sueño hace que te ofendas?"
+  - position: 6
+    sentence: "Hay días en que una pregunta normal le pone {{blank}}, y al día siguiente se ríe de lo mismo."
+    hint_general: "Unos días se ofende y otros se ríe de lo mismo."
+    explanation: "Susceptible: unos días se ofende y otros no. «Perceptible» se dice de lo que se nota, y «puntilloso» describe a quien exige precisión en los detalles."
+    options:
+      - position: 1
+        text: "puntilloso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Puntilloso» es una palabra culta para quien exige precisión hasta en lo mínimo; aquí se habla de ofenderse, no de exigir."
+        hint_specific: "«Puntilloso» exige precisión. ¿Qué le pasa a esta persona con la pregunta?"
+      - position: 2
+        text: "susceptible"
+        is_correct: true
+      - position: 3
+        text: "perceptible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perceptible» se dice de un sonido o un cambio que se puede notar; una persona no se pone perceptible."
+        hint_specific: "Perceptible se dice de cosas que se notan. ¿Aquí hablamos de cosas o de alguien?"
+  - position: 7
+    sentence: "El asunto del reparto lo deja {{blank}}, así que conviene tratarlo con datos y sin ironías."
+    hint_general: "Ese asunto le toca una fibra y se ofende enseguida."
+    explanation: "Susceptible: ese asunto le toca una fibra. «Suspicaz» sería desconfiar de las intenciones, y «triste» hablaría de pena, no de ofensa."
+    options:
+      - position: 1
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe a quien sospecha; el consejo de evitar las ironías apunta a alguien que se ofende, no que desconfía."
+        hint_specific: "Suspicaz sospecha. ¿Por qué se aconseja evitar las ironías?"
+      - position: 2
+        text: "triste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Triste» habla de pena; con alguien triste no hace falta cuidar las ironías, hace falta acompañarlo."
+        hint_specific: "Triste habla de pena. ¿Qué se recomienda aquí, cuidado o compañía?"
+      - position: 3
+        text: "susceptible"
+        is_correct: true
+  - position: 8
+    sentence: "Ser {{blank}} no es un defecto de carácter: casi siempre hay algo debajo que duele."
+    hint_general: "Ofenderse con facilidad suele tener una causa debajo."
+    explanation: "Susceptible: ofenderse con facilidad tiene una causa. «Irascible» describe a quien estalla de furia, y «atento» hablaría de escuchar bien a los demás."
+    options:
+      - position: 1
+        text: "irascible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Irascible» es quien estalla con furia; la frase habla de una herida callada, no de gritos."
+        hint_specific: "Irascible estalla. ¿La frase describe gritos o algo que duele por dentro?"
+      - position: 2
+        text: "atento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atento» es quien escucha y se fija en los demás; eso no tiene nada que ver con lo fácil que resulta herirlo."
+        hint_specific: "Atento escucha bien. ¿La frase habla de escuchar o de dolerse?"
+      - position: 3
+        text: "susceptible"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Hoy no es el día"
+    body: "Silvia llevaba el comentario preparado desde el lunes. Al ver cómo entraba su compañero, lo guardó: «Hoy está susceptible; se lo digo el jueves». El jueves la conversación duró ocho minutos y acabó con un plan. El lunes habría acabado en un portazo."
+    before_phrase: "Hoy se lo toma todo a mal."
+    after_phrase: "Hoy está susceptible; se lo digo el jueves."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La broma del pelo"
+    body: "La broma fue tonta y la reacción, enorme. Más tarde, su hermana se acercó: «Perdona, no vi que estabas susceptible con eso». Él respiró: «Llevo un mes oyéndolo en el trabajo». La broma no volvió a repetirse."
+    before_phrase: "No sabía que te lo ibas a tomar tan mal."
+    after_phrase: "No vi que estabas susceptible con eso."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo después del viaje"
+    body: "Volvieron cansados y con cuentas sin cerrar. Durante una semana, cualquier mensaje sonaba a reproche. Cecilia lo puso en el chat: «Creo que estamos todos susceptibles. ¿Lo hablamos el sábado con calma?». El sábado se rieron del viaje entero."
+    before_phrase: "Estamos todos saltando por cualquier cosa."
+    after_phrase: "Creo que estamos todos susceptibles."
+metrics:
+  zipf_overall: 3.8171
+  dispersion_dp: 0.2495
+  pedantry_proxy: 0.4598
+  family_size: 7
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2107
+slug: "desglosar"
+status: "draft"
+lemma: "desglosar"
+part_of_speech: "verbo"
+syllables: ["des", "glo", "sar"]
+stressed_syllable: 3
+ipa_latam: "[des.ɣloˈsaɾ]"
+ipa_es: "[des.ɣloˈsaɾ]"
+explanation: "Separar un total en sus partes para mostrar de dónde sale cada número."
+example_sentence: "En cuanto desglosé el presupuesto, el cliente dejó de pelear con el total."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Muy útil cuando te dicen que tu precio es alto: mostradas las partes, el total deja de parecer inventado."
+when_not_to_use: "No la uses para alargar una respuesta: separar en partes solo sirve si cada parte aporta algo nuevo."
+collocations:
+  - "desglosar un presupuesto"
+  - "desglosar las horas"
+  - "desglosar el gasto"
+replaces:
+  - before: "Explícame de dónde sale ese número"
+    after: "¿Puedes desglosar ese número?"
+  - before: "Mándame el precio separado por partes"
+    after: "Mándame el precio desglosado"
+  - before: "Voy a explicar punto por punto lo que cobramos"
+    after: "Voy a desglosar lo que cobramos"
+family: ["desglose"]
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin: ["explicar"]
+  funcion: ["detallar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "desgajar"
+    difference: "«Desgajar» es arrancar una parte de algo, como un gajo de una naranja; aquí nada se rompe, solo se muestra por partes."
+    memory_trick: "Desgajas arrancando; desglosas ordenando."
+  - confused_with: "resumir"
+    difference: "«Resumir» deja menos información de la que había; separar un total en partes deja la misma, pero ordenada y a la vista."
+    memory_trick: "Resumir encoge; desglosar despliega."
+exercises:
+  - position: 1
+    sentence: "El cliente no discutía el total, solo pedía {{blank}} las horas de cada persona del equipo."
+    hint_general: "Quiere ver el reparto de horas por persona, no el total."
+    explanation: "Desglosar: quiere ver las horas repartidas por persona. «Desgajar» sería arrancar una parte, y «resumir» daría todavía menos información de la que ya hay."
+    options:
+      - position: 1
+        text: "desgajar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desgajar» es arrancar un trozo de algo entero, como un gajo; las horas no se arrancan, se reparten a la vista."
+        hint_specific: "Desgajar arranca un trozo. ¿El cliente quiere arrancar algo o ver el reparto?"
+      - position: 2
+        text: "desglosar"
+        is_correct: true
+      - position: 3
+        text: "resumir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» deja menos información; el cliente pide justo lo contrario, que aparezca el detalle de cada persona."
+        hint_specific: "Resumir deja menos. ¿Este cliente quiere menos detalle o más?"
+  - position: 2
+    sentence: "Antes de aprobar el gasto, Silvia pidió que alguien {{blank}} el presupuesto en cuatro bloques."
+    hint_general: "Pide que el dinero aparezca separado en cuatro bloques."
+    explanation: "Desglosara: pide el dinero separado en bloques. «Desgastara» sería gastarlo por el uso, y «pormenorizara» diría lo mismo con voz de manual."
+    options:
+      - position: 1
+        text: "desgastara"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desgastar» es estropear algo con el uso; un presupuesto no se desgasta al mirarlo, se separa en partes."
+        hint_specific: "Desgastar estropea con el uso. ¿El presupuesto se estropea o se reparte?"
+      - position: 2
+        text: "pormenorizara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pormenorizar» es correcto, pero suena a manual antiguo; pidiendo un presupuesto a un compañero resulta pomposo."
+        hint_specific: "«Pormenorizar» suena a manual antiguo. ¿Se lo pedirías así a un compañero?"
+      - position: 3
+        text: "desglosara"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} la factura, se ve enseguida que el transporte es la mitad del precio."
+    hint_general: "Al separar el papel en partes, salta a la vista el transporte."
+    explanation: "Desglosas: al separarla en partes, salta a la vista el transporte. «Desgajas» sería arrancar un trozo, y «sumas» daría un total, no un reparto."
+    options:
+      - position: 1
+        text: "desglosas"
+        is_correct: true
+      - position: 2
+        text: "desgajas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desgajar» es separar arrancando, como un gajo de una naranja; una factura no se arranca, se despliega."
+        hint_specific: "Desgajar arranca. ¿La factura se rompe o se despliega?"
+      - position: 3
+        text: "sumas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sumar» da un total; sumando nunca verías qué parte se lleva el transporte, que es justo lo que dice la frase."
+        hint_specific: "Sumar devuelve un total. ¿Un total te enseña quién se lleva la mitad?"
+  - position: 4
+    sentence: "Los socios aceptaron la cifra en cuanto Julián la {{blank}} delante de ellos, partida en seis líneas."
+    hint_general: "La enseñó parte por parte y la cifra dejó de asustar."
+    explanation: "Desglosó: la enseñó parte por parte. «Desgajó» sería arrancarle un trozo, y «repasó» sería mirarla otra vez, sin separarla en líneas."
+    options:
+      - position: 1
+        text: "desgajó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desgajar» es arrancar un trozo de algo; Julián no quita nada de la cifra, la reparte en seis líneas."
+        hint_specific: "Desgajar quita un trozo. ¿Julián quita algo o lo reparte?"
+      - position: 2
+        text: "desglosó"
+        is_correct: true
+      - position: 3
+        text: "repasó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repasar» es volver a mirar lo mismo; la frase dice que la cifra apareció partida en seis líneas, y eso es otra cosa."
+        hint_specific: "Repasar mira lo mismo otra vez. ¿La cifra se mira o se reparte?"
+  - position: 5
+    sentence: "En el correo, Marina {{blank}} el viaje: vuelos, hotel, comidas y traslados."
+    hint_general: "Escribe el gasto separado en cada uno de sus trozos."
+    explanation: "Desglosó: escribió el gasto separado en trozos. «Despiezó» suena a taller mecánico, y «resumió» habría dado menos detalle, no más."
+    options:
+      - position: 1
+        text: "despiezó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despiezar» pertenece a los talleres y a las máquinas; un viaje con hotel y comidas no se despieza."
+        hint_specific: "«Despiezar» suena a taller mecánico. ¿Encaja con vuelos y hoteles?"
+      - position: 2
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» habría dado menos detalle; los dos puntos de la frase abren justo la lista completa."
+        hint_specific: "Resumir da menos detalle. ¿Qué viene después de los dos puntos?"
+      - position: 3
+        text: "desglosó"
+        is_correct: true
+  - position: 6
+    sentence: "Nadie entendía la subida del alquiler hasta que el administrador la {{blank}} línea por línea."
+    hint_general: "La explicó línea por línea hasta que la subida tuvo sentido."
+    explanation: "Desglosó: la explicó línea por línea. «Desgastó» hablaría de estropear algo con el uso, y «tradujo» supondría pasarla a otro idioma."
+    options:
+      - position: 1
+        text: "desglosó"
+        is_correct: true
+      - position: 2
+        text: "desgastó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desgastar» es estropear algo poco a poco con el uso; una subida de alquiler no se desgasta, se reparte en conceptos."
+        hint_specific: "Desgastar estropea con el uso. ¿Qué le hizo el administrador a esa subida?"
+      - position: 3
+        text: "tradujo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Traducir» es pasar algo a otro idioma; aquí el problema no era el idioma, era no ver de dónde salía el dinero."
+        hint_specific: "Traducir cambia de idioma. ¿El problema era el idioma?"
+  - position: 7
+    sentence: "Mi hermano {{blank}} la cuenta de la cena para que cada uno pagara lo que había pedido."
+    hint_general: "Separó la cuenta para que cada uno pagara lo suyo."
+    explanation: "Desglosó: separó la cuenta por persona. «Desgajó» sería arrancarle un trozo al papel, y «amplió» sería hacer la cuenta más grande."
+    options:
+      - position: 1
+        text: "desgajó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desgajar» es arrancar una parte; el papel de la cuenta no se rompe, se reparte entre los comensales."
+        hint_specific: "Desgajar arranca una parte. ¿Se rompe la cuenta o se reparte?"
+      - position: 2
+        text: "amplió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ampliar» haría la cuenta más grande; la frase busca lo contrario, que cada uno pague solo su parte."
+        hint_specific: "Ampliar hace algo más grande. ¿Alguien quiere pagar más?"
+      - position: 3
+        text: "desglosó"
+        is_correct: true
+  - position: 8
+    sentence: "Cuando un presupuesto llega sin {{blank}}, el cliente casi siempre sospecha del total."
+    hint_general: "Un total sin sus partes a la vista levanta sospechas."
+    explanation: "Desglosar: faltan las partes a la vista. «Desgajar» sería arrancar trozos del papel, y «revisar» hablaría de repasarlo, no de mostrar su reparto."
+    options:
+      - position: 1
+        text: "revisar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Revisar» es comprobar que está bien; un presupuesto revisado y sin partes a la vista sigue levantando la misma sospecha."
+        hint_specific: "Revisar comprueba. ¿Al cliente le falta una comprobación o le falta el reparto?"
+      - position: 2
+        text: "desglosar"
+        is_correct: true
+      - position: 3
+        text: "desgajar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desgajar» es arrancar trozos de algo; nadie espera recibir un presupuesto roto, sino repartido en conceptos."
+        hint_specific: "Desgajar rompe en trozos. ¿Qué espera recibir ese cliente?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El total que asustaba"
+    body: "El número final hizo que el cliente se echara atrás en la silla. Sandra no bajó el precio: «Déjame desglosarlo: diseño, programación, textos y dos meses de soporte». El cliente miró las cuatro líneas y solo quitó el soporte."
+    before_phrase: "Te explico de dónde sale ese número."
+    after_phrase: "Déjame desglosarlo en cuatro líneas."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cuenta de los doce"
+    body: "Doce personas, una cuenta y la promesa de que nadie discutiría. Benjamín cogió el papel: «Voy a desglosarla por mesa, así nadie paga el vino que no bebió». Tardó cuatro minutos y se acabó el problema de siempre."
+    before_phrase: "Voy a separar esto por partes, un momento."
+    after_phrase: "Voy a desglosarla por mesa."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La factura de la luz"
+    body: "Su madre creía que alguien dejaba luces encendidas toda la noche. Nicolás se sentó con ella: «Vamos a desglosar la factura, que aquí hay una parte fija que no depende de nosotros». Al ver los conceptos, la sospecha se apagó sola."
+    before_phrase: "A ver de dónde sale todo esto."
+    after_phrase: "Vamos a desglosar la factura."
+metrics:
+  zipf_overall: 3.7793
+  dispersion_dp: 0.2245
+  pedantry_proxy: 0.5401
+  family_size: 15
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

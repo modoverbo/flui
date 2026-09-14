@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 107
+slug: "agilizar"
+status: "draft"
+lemma: "agilizar"
+part_of_speech: "verbo"
+syllables: ["a", "gi", "li", "zar"]
+stressed_syllable: 4
+ipa_latam: "[a.xi.liˈsar]"
+ipa_es: "[a.xi.liˈθar]"
+explanation: "Hacer que algo avance más rápido quitando pasos que no hacen falta."
+example_sentence: "Cambiamos el formulario para agilizar las devoluciones y pasamos de diez días a tres."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para pedir velocidad sin acusar a nadie: el problema es el proceso, no la persona."
+when_not_to_use: "No la uses cuando lo que quieres es hacerlo deprisa y mal; aquí se quitan pasos, no cuidado."
+collocations:
+  - "agilizar un proceso"
+  - "agilizar los trámites"
+  - "agilizar la reunión"
+replaces:
+  - before: "Vamos a hacerlo más rápido"
+    after: "Vamos a agilizarlo"
+  - before: "Hay que darle velocidad a esto"
+    after: "Hay que agilizar esto"
+  - before: "A ver si esto va menos lento"
+    after: "A ver si agilizamos esto"
+family: ["agilidad"]
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["hacer"]
+  funcion: ["acelerar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "agitar"
+    difference: "«Agitar» es mover algo con fuerza o poner nervioso a alguien; la otra palabra quita pasos para que avance antes."
+    memory_trick: "Agitas un frasco; le quitas trabas a un trámite."
+  - confused_with: "aligerar"
+    difference: "«Aligerar» es quitar peso o cantidad; la otra palabra quita esperas y papeles, no kilos."
+    memory_trick: "Aligeras la mochila; quitas pasos al proceso."
+exercises:
+  - position: 1
+    sentence: "Después de tres quejas seguidas, Mariana propuso {{blank}} la devolución: un solo formulario en vez de cuatro."
+    hint_general: "Quita pasos para que la devolución avance más rápido."
+    explanation: "Agilizar: quita pasos para que avance antes. «Agitar» es mover algo con fuerza, y «aligerar» quitaría peso, no papeles."
+    options:
+      - position: 1
+        text: "agitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» es mover algo con fuerza o alterar a alguien, y aquí se quitan formularios, no se sacude nada."
+        hint_specific: "«Agitar» mueve un objeto o los ánimos. ¿Qué se está quitando en esa propuesta?"
+      - position: 2
+        text: "agilizar"
+        is_correct: true
+      - position: 3
+        text: "aligerar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aligerar» es quitar peso o cantidad, y lo que sobra aquí son pasos y esperas, no kilos."
+        hint_specific: "«Aligerar» piensa en balanzas. ¿El problema era el peso o la espera?"
+  - position: 2
+    sentence: "Para que la reunión del lunes no se eternizara, Lucas repartió los datos el viernes y así logró {{blank}}la."
+    hint_general: "Prepara antes para que la reunión avance sin paradas."
+    explanation: "Agilizarla: preparar antes para que avance sin paradas. «Agitarla» sería alterar a la gente, y «despacharla» suena a quitársela de encima."
+    options:
+      - position: 1
+        text: "agilizar"
+        is_correct: true
+      - position: 2
+        text: "agitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» una reunión sería alterar a la gente, y él lo que busca es que no se alargue."
+        hint_specific: "«Agitar» pone nervioso al grupo. ¿Eso hace que una reunión termine antes?"
+      - position: 3
+        text: "despachar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despachar» una reunión es coloquial y suena a quitársela de encima, y él la prepara con cuidado."
+        hint_specific: "«Despachar» suena a salir del paso. ¿Repartir datos el viernes es salir del paso?"
+  - position: 3
+    sentence: "El ayuntamiento cambió la web y consiguió {{blank}} los permisos de obra en la mitad de tiempo."
+    hint_general: "Los permisos salen antes porque sobran menos vueltas."
+    explanation: "Agilizar: los permisos salen antes con menos vueltas. «Agitar» sería sacudirlos, y «abaratar» hablaría del precio, no del tiempo."
+    options:
+      - position: 1
+        text: "agitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» es mover algo con fuerza, y un permiso no se mueve: se tramita en más o menos días."
+        hint_specific: "«Agitar» necesita algo que sacudir. ¿Qué se sacudiría aquí?"
+      - position: 2
+        text: "abaratar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abaratar» es bajar el precio, y la frase habla de la mitad de tiempo, no de dinero."
+        hint_specific: "«Abaratar» mira el precio. ¿Qué se redujo a la mitad según la frase?"
+      - position: 3
+        text: "agilizar"
+        is_correct: true
+  - position: 4
+    sentence: "Mi padre pidió cita por internet para {{blank}} la renovación del carné, y entró sin cola."
+    hint_general: "La cita previa le ahorra esperas y pasos."
+    explanation: "Agilizar: ahorrarse esperas y pasos. «Agitar» es mover algo con fuerza, y «aplazar» sería dejarlo para más adelante."
+    options:
+      - position: 1
+        text: "agilizar"
+        is_correct: true
+      - position: 2
+        text: "agitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» es sacudir algo o alterar a alguien, y un carné no se sacude para renovarlo antes."
+        hint_specific: "«Agitar» mueve cosas o ánimos. ¿Qué gana tu padre con la cita previa?"
+      - position: 3
+        text: "aplazar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» es dejarlo para más adelante, y el final de la frase dice que entró sin cola."
+        hint_specific: "«Aplazar» retrasa. ¿Entrar sin cola suena a retraso?"
+  - position: 5
+    sentence: "Silvia tardó una semana en firmar y, por eso, nadie pudo {{blank}} el resto del proceso."
+    hint_general: "Sin esa firma, el proceso no pudo avanzar más rápido."
+    explanation: "Agilizar: hacer que el proceso avance antes. «Agitar» sería sacudirlo, y «forzar» sugiere empujar contra las reglas."
+    options:
+      - position: 1
+        text: "agitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» es mover algo con fuerza, y un proceso parado no se resuelve sacudiéndolo."
+        hint_specific: "«Agitar» sacude. ¿Qué le faltaba realmente al proceso?"
+      - position: 2
+        text: "forzar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Forzar» sugiere empujar contra las reglas, y aquí solo se esperaba una firma que llegó tarde."
+        hint_specific: "«Forzar» rompe algo por el camino. ¿Alguien quería saltarse una norma?"
+      - position: 3
+        text: "agilizar"
+        is_correct: true
+  - position: 6
+    sentence: "Con dos plantillas y una carpeta compartida, Emilio {{blank}} las respuestas a clientes sin perder calidad."
+    hint_general: "Responde antes porque se ahorra pasos repetidos."
+    explanation: "Agilizó: responde antes ahorrándose pasos. «Agitó» es mover con fuerza, y «atropelló» sugiere hacerlo deprisa y mal."
+    options:
+      - position: 1
+        text: "agilizó"
+        is_correct: true
+      - position: 2
+        text: "agitó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» es mover algo con fuerza o alterar a la gente, y él solo organizó plantillas."
+        hint_specific: "«Agitó» remueve. ¿Unas plantillas remueven algo?"
+      - position: 3
+        text: "atropelló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Atropellar» un trabajo es coloquial y sugiere hacerlo deprisa y mal, y la frase dice que no perdió calidad."
+        hint_specific: "«Atropelló» va rápido y mal. Relee el final: ¿qué pasó con la calidad?"
+  - position: 7
+    sentence: "En la entrevista, Nuria contó cómo {{blank}} el cierre mensual: pasó de cinco días a dos."
+    hint_general: "Cuenta cómo hizo que el cierre saliera en menos días."
+    explanation: "Agilizó: el cierre salió en menos días. «Agitó» sería sacudirlo, y «maquilló» sugiere disimular los números."
+    options:
+      - position: 1
+        text: "agitó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» es mover algo con fuerza, y un cierre mensual se organiza, no se sacude."
+        hint_specific: "«Agitó» necesita algo físico que mover. ¿Qué mejoró Nuria?"
+      - position: 2
+        text: "agilizó"
+        is_correct: true
+      - position: 3
+        text: "maquilló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maquillar» un cierre es coloquial y sugiere disimular los números, y ella solo ganó tres días."
+        hint_specific: "«Maquilló» esconde algo. ¿Nuria esconde datos o gana tiempo?"
+  - position: 8
+    sentence: "Si cada firma pasa por tres personas, no hay manera de {{blank}} nada en esta oficina."
+    hint_general: "Con tantos pasos, nada puede avanzar más rápido."
+    explanation: "Agilizar: nada avanza más rápido con tantos pasos. «Agitar» es mover con fuerza, y «recortar» apunta a gastar menos."
+    options:
+      - position: 1
+        text: "recortar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recortar» apunta a gastar menos o quitar una parte, y el problema de la frase es la cadena de firmas."
+        hint_specific: "«Recortar» piensa en presupuesto. ¿De qué se queja la frase?"
+      - position: 2
+        text: "agitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agitar» es mover algo con fuerza, y tres firmas seguidas no se arreglan sacudiendo nada."
+        hint_specific: "«Agitar» remueve. ¿Remover ayuda cuando el problema son tres firmas?"
+      - position: 3
+        text: "agilizar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuatro formularios, uno"
+    body: "Las devoluciones tardaban diez días y llegaban quejas cada semana. Mariana llevó una idea concreta: «Podemos agilizar esto: un formulario en vez de cuatro». El equipo lo probó un mes y bajó a tres días."
+    before_phrase: "Habría que hacer esto más rápido."
+    after_phrase: "Podemos agilizar esto."
+  - position: 2
+    scene: "familia"
+    conversation_type: "practica"
+    title: "La cola del carné"
+    body: "Mi padre odiaba las colas de las oficinas y salía de casa a las seis. Este año probó otra cosa: «Pedí cita por internet para agilizar el trámite». Entró a las diez, salió a las diez y cuarto."
+    before_phrase: "A ver si así voy más rápido."
+    after_phrase: "Pedí cita por internet para agilizar el trámite."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "De cinco días a dos"
+    body: "Cuando le pidieron un ejemplo de mejora, Nuria no habló de ideas. «Agilicé el cierre mensual: quité dos revisiones repetidas y monté una plantilla. Pasamos de cinco días a dos». Le preguntaron por la plantilla el resto de la entrevista."
+    before_phrase: "Hice que el cierre fuera más rápido."
+    after_phrase: "Agilicé el cierre mensual."
+metrics:
+  zipf_overall: 4.1683
+  dispersion_dp: 0.1727
+  pedantry_proxy: 0.5017
+  family_size: 20
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 310
+slug: "constancia"
+status: "draft"
+lemma: "constancia"
+part_of_speech: "sustantivo"
+syllables: ["cons", "tan", "cia"]
+stressed_syllable: 2
+ipa_latam: "[konsˈtan.sja]"
+ipa_es: "[konsˈtan.θja]"
+explanation: "Seguir haciendo algo cada día, aunque sea lento y no se vean resultados rápido."
+example_sentence: "Su constancia con el idioma se nota: dos años seguidos, veinte minutos al día."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Reconoce lo que nadie ve: «Admiro tu constancia» valora el camino, no solo el resultado final."
+when_not_to_use: "No la uses para quien repite lo mismo sin cambiar nada: insistir a ciegas es otra cosa."
+collocations:
+  - "con constancia"
+  - "la constancia de alguien"
+  - "falta de constancia"
+replaces:
+  - before: "Lo que más admiro es que no se rinde"
+    after: "Lo que más admiro es su constancia"
+  - before: "Siguió yendo cada semana sin fallar"
+    after: "Fue con constancia cada semana"
+  - before: "Le cuesta seguir el ritmo todos los días"
+    after: "Le falta constancia"
+family: ["constante"]
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["seguir"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "insistencia"
+    difference: "«Insistencia» es repetir lo mismo hasta cansar a alguien; la otra palabra es mantener un hábito propio sin molestar a nadie."
+    memory_trick: "La insistencia repite; la constancia sostiene."
+  - confused_with: "terquedad"
+    difference: "«Terquedad» es no cambiar de idea aunque quede claro que no funciona; aquí se valora seguir con algo que sí avanza."
+    memory_trick: "El terco no se mueve; el que tiene constancia avanza poco a poco."
+exercises:
+  - position: 1
+    sentence: "Lo que más admira Elena de su hermano no es el talento, sino la {{blank}} de levantarse a las seis cada día."
+    hint_general: "Valora que repita el mismo hábito cada mañana, un día detrás de otro."
+    explanation: "Constancia: repite el hábito cada mañana. «Instancia» es un escrito oficial o un momento de un proceso, y «perseverancia» suena más solemne de lo que pide esta frase."
+    options:
+      - position: 1
+        text: "instancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instancia» es un escrito oficial o un momento dentro de un proceso, y aquí se habla de un hábito diario."
+        hint_specific: "«Instancia» suena a papeleo. ¿Qué trámite habría en levantarse temprano?"
+      - position: 2
+        text: "constancia"
+        is_correct: true
+      - position: 3
+        text: "perseverancia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Perseverancia» dice algo parecido, pero suena a discurso de entrega de premios y aquí se habla entre hermanos."
+        hint_specific: "«Perseverancia» suena a discurso solemne. ¿Pega en una charla de familia?"
+  - position: 2
+    sentence: "Marcos dejó el curso tres veces; lo que le faltó no fue tiempo, sino {{blank}}."
+    hint_general: "Tenía horas de sobra: lo que no logró fue sostener el hábito hasta el final."
+    explanation: "Constancia: no sostuvo el hábito hasta el final. «Distancia» habla de kilómetros, y «paciencia» es saber esperar, que no es lo mismo que volver cada semana."
+    options:
+      - position: 1
+        text: "distancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Distancia» habla del espacio que separa dos puntos, y aquí el problema no es dónde estaba el curso."
+        hint_specific: "«Distancia» se mide en kilómetros. ¿La frase habla de trayecto o de repetición?"
+      - position: 2
+        text: "constancia"
+        is_correct: true
+      - position: 3
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciencia» es saber esperar sin ponerse nervioso, y lo que a él le falló fue volver, no esperar."
+        hint_specific: "«Paciencia» es esperar. ¿Marcos se impacientó o dejó de aparecer?"
+  - position: 3
+    sentence: "Con {{blank}} y veinte minutos al día, Sara terminó leyendo un libro entero en el idioma nuevo."
+    hint_general: "Con ratos cortos repetidos cada día llega a un resultado grande."
+    explanation: "Constancia: ratos cortos repetidos cada día. «Consonancia» es que dos cosas suenen o encajen entre sí, e «ilusión» son las ganas del principio, que suelen bajar."
+    options:
+      - position: 1
+        text: "consonancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consonancia» es que dos cosas encajen o suenen bien juntas, y aquí solo hay una persona repitiendo un hábito."
+        hint_specific: "«Consonancia» habla de dos cosas que encajan. ¿Cuáles serían aquí?"
+      - position: 2
+        text: "ilusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ilusión» son las ganas del principio, y un libro entero se termina cuando se repite incluso sin ganas."
+        hint_specific: "«Ilusión» empuja al principio. ¿Qué hace falta el día ciento veinte?"
+      - position: 3
+        text: "constancia"
+        is_correct: true
+  - position: 4
+    sentence: "La {{blank}} de Ricardo con un equipo pequeño acabó dando frutos dos años después."
+    hint_general: "Siguió en lo mismo durante dos años hasta que aparecieron los resultados."
+    explanation: "Constancia: siguió dos años hasta ver resultados. «Instancia» es un escrito oficial, y «porfía» apunta a lo mismo, pero suena a libro de otro siglo."
+    options:
+      - position: 1
+        text: "constancia"
+        is_correct: true
+      - position: 2
+        text: "instancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instancia» es un escrito oficial o un momento de un proceso, y aquí se habla de dos años de trabajo seguido."
+        hint_specific: "«Instancia» suena a papel sellado. ¿Qué trámite hay en esta historia?"
+      - position: 3
+        text: "porfía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Porfía» apunta a lo mismo, pero suena a libro de otro siglo y desentona al contar un proyecto de hoy."
+        hint_specific: "«Porfía» suena a novela antigua. ¿Encaja al hablar de un equipo actual?"
+  - position: 5
+    sentence: "A Pilar le sobra energía en enero y le falta {{blank}} en marzo, y lo dice ella misma riéndose."
+    hint_general: "Arranca con mucha fuerza y no logra mantener el hábito dos meses después."
+    explanation: "Constancia: no mantiene el hábito pasados dos meses. «Distancia» se mide en kilómetros, e «insistencia» es repetir algo hasta cansar a otra persona."
+    options:
+      - position: 1
+        text: "distancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Distancia» es el espacio entre dos puntos, y aquí lo que cambia es el mes, no el lugar."
+        hint_specific: "«Distancia» se mide en kilómetros. ¿Qué cambia de enero a marzo?"
+      - position: 2
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistencia» es repetir algo hasta cansar a otra persona, y aquí nadie está pidiéndole nada a nadie."
+        hint_specific: "«Insistencia» va dirigida a alguien. ¿A quién insistiría Pilar?"
+      - position: 3
+        text: "constancia"
+        is_correct: true
+  - position: 6
+    sentence: "Según Bruno, nadie aplaude la {{blank}}: se ve en los resultados, nunca en un momento brillante."
+    hint_general: "Mantener algo cada día no se aplaude porque no ocurre en un instante visible."
+    explanation: "Constancia: mantener algo cada día no se ve en un instante. «Consonancia» es que dos cosas encajen entre sí, y «rutina» puede ser repetir sin avanzar nada."
+    options:
+      - position: 1
+        text: "consonancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consonancia» es que dos cosas encajen o suenen bien juntas, y aquí no se comparan dos cosas."
+        hint_specific: "«Consonancia» necesita dos elementos. ¿Cuáles serían en esta frase?"
+      - position: 2
+        text: "constancia"
+        is_correct: true
+      - position: 3
+        text: "rutina"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rutina» puede ser repetir sin avanzar, y la frase habla de algo que sí acaba dando resultados."
+        hint_specific: "«Rutina» puede girar en círculos. ¿La frase habla de avanzar o de repetir?"
+  - position: 7
+    sentence: "El entrenador valoró más la {{blank}} de Simón que los dos partidos brillantes de otro jugador."
+    hint_general: "Prefiere a quien rinde todas las semanas antes que a quien brilla dos días."
+    explanation: "Constancia: prefiere a quien rinde todas las semanas. «Instancia» es un escrito oficial, y «terquedad» es no cambiar de idea aunque no funcione."
+    options:
+      - position: 1
+        text: "instancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instancia» es un escrito oficial o un momento de un proceso, y aquí se comparan temporadas de juego."
+        hint_specific: "«Instancia» suena a trámite. ¿Qué papel se presentaría en un partido?"
+      - position: 2
+        text: "terquedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Terquedad» es no cambiar de idea aunque falle, y a Simón se le valora justo porque lo suyo funciona."
+        hint_specific: "«Terquedad» se aferra a algo que no sale. ¿Lo de Simón sale bien o mal?"
+      - position: 3
+        text: "constancia"
+        is_correct: true
+  - position: 8
+    sentence: "Cambiar de método cada semana mata cualquier {{blank}}, le dijo Carmen a su sobrina antes de la prueba de conducir."
+    hint_general: "Si se cambia el método cada semana, nada llega a repetirse el tiempo suficiente."
+    explanation: "Constancia: nada se repite el tiempo suficiente. «Distancia» se mide en kilómetros, y «voluntad» son las ganas de hacer algo, que pueden estar intactas."
+    options:
+      - position: 1
+        text: "constancia"
+        is_correct: true
+      - position: 2
+        text: "distancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Distancia» es el espacio entre dos puntos, y cambiar de método no acerca ni aleja nada."
+        hint_specific: "«Distancia» se mide en kilómetros. ¿Qué recorrido hay al cambiar de método?"
+      - position: 3
+        text: "voluntad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Voluntad» son las ganas de hacer algo, y quien cambia de método cada semana puede tenerlas intactas."
+        hint_specific: "«Voluntad» son las ganas. ¿Alguien que cambia de método se ha quedado sin ganas?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Veinte minutos al día"
+    body: "Ignacio llevaba ocho meses estudiando al volver de trabajar, sin contárselo a nadie. Cuando aprobó, su hija le preguntó cómo lo había hecho. «Con constancia, no con tiempo libre», contestó él, y guardó los apuntes en una caja."
+    before_phrase: "Simplemente no lo dejé nunca."
+    after_phrase: "Lo saqué con constancia."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo de los martes"
+    body: "Cinco vecinos empezaron a salir a andar juntos en octubre. En febrero quedaban tres. Rosa escribió en el chat: «Brindo por la constancia de los martes, llueva o no». Aquella noche volvieron a aparecer cinco."
+    before_phrase: "Lo bueno es que no fallamos."
+    after_phrase: "Brindo por la constancia de los martes."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe mensual"
+    body: "Nadie leía el resumen que Óscar mandaba cada mes. Al año y medio, una responsable nueva lo usó para entender el área entera en una tarde. Le escribió: «Tu constancia me acaba de ahorrar dos semanas»."
+    before_phrase: "Menos mal que lo mandaste siempre."
+    after_phrase: "Tu constancia me ahorró dos semanas."
+metrics:
+  zipf_overall: 4.6864
+  dispersion_dp: 0.2910
+  pedantry_proxy: 0.4411
+  family_size: 406
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

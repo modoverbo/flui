@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 2108
+slug: "formalizar"
+status: "gated"
+lemma: "formalizar"
+part_of_speech: "verbo"
+syllables:
+  - "for"
+  - "ma"
+  - "li"
+  - "zar"
+stressed_syllable: 4
+ipa_latam: "[for.ma.liˈsaɾ]"
+ipa_es: "[for.ma.liˈθaɾ]"
+explanation: "Dejar un acuerdo por escrito y con firma, para que deje de ser solo una charla."
+example_sentence: "Trabajamos seis meses de palabra y solo formalizamos el acuerdo cuando llegó el jefe nuevo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Pedir que algo se formalice no desconfía de nadie: protege a las dos partes el día en que alguien cambia de puesto."
+when_not_to_use: "No la uses para un favor entre amigos: pedir papeles donde bastaba la palabra enfría la relación."
+collocations:
+  - "formalizar un acuerdo"
+  - "formalizar una propuesta"
+  - "formalizar por escrito"
+replaces:
+  - before: "Habría que dejarlo por escrito"
+    after: "Habría que formalizarlo"
+  - before: "Lo hablamos y ya, nunca lo pusimos en papel"
+    after: "Lo hablamos, pero nunca lo formalizamos"
+  - before: "Vamos a hacerlo oficial"
+    after: "Vamos a formalizarlo"
+family:
+  - "formalización"
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "hacer"
+  funcion:
+    - "cerrar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "formular"
+    difference: "«Formular» es enunciar una pregunta o una propuesta; lo otro es darle carácter oficial a algo que ya se habló."
+    memory_trick: "Formulas una pregunta; formalizas un acuerdo."
+  - confused_with: "firmar"
+    difference: "«Firmar» es solo poner tu nombre; darle carácter oficial a un trato incluye fechas, condiciones y a veces varias firmas."
+    memory_trick: "Firmar es un gesto; formalizar es el proceso entero."
+exercises:
+  - position: 1
+    sentence: "Llevaban medio año trabajando de palabra, hasta que decidieron {{blank}} el acuerdo con fecha y firma."
+    hint_general: "Deciden darle carácter oficial al acuerdo, con fecha y firma."
+    explanation: "Formalizar: le dan carácter oficial al acuerdo. «Formular» sería enunciarlo con palabras, y «anunciar» sería contarlo, no dejarlo firmado."
+    options:
+      - position: 1
+        text: "formular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formular» es enunciar algo con palabras; el acuerdo ya estaba enunciado desde hacía medio año, lo que faltaba era la firma."
+        hint_specific: "Formular enuncia con palabras. ¿Qué llevaba medio año faltando aquí?"
+      - position: 2
+        text: "formalizar"
+        is_correct: true
+      - position: 3
+        text: "anunciar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anunciar» es contarlo a los demás; se puede anunciar un trato y seguir sin nada escrito ni firmado."
+        hint_specific: "Anunciar cuenta algo a otros. ¿Contarlo deja el trato por escrito?"
+  - position: 2
+    sentence: "Antes de empezar la obra, Héctor quiso {{blank}} el presupuesto por escrito."
+    hint_general: "Quiere el presupuesto puesto en papel antes de empezar."
+    explanation: "Formalizar: quiere el presupuesto en papel antes de empezar. «Formatear» tiene que ver con discos y archivos, y «protocolizar» suena a notaría."
+    options:
+      - position: 1
+        text: "formatear"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formatear» es borrar un disco o dar estilo a un archivo; no tiene nada que ver con dejar un precio cerrado."
+        hint_specific: "Formatear vive entre discos y archivos. ¿De qué habla esta frase?"
+      - position: 2
+        text: "protocolizar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Protocolizar» pertenece al lenguaje de las notarías; para un presupuesto de obra entre dos personas suena exagerado."
+        hint_specific: "«Protocolizar» suena a notaría. ¿Hace falta tanto para un presupuesto de obra?"
+      - position: 3
+        text: "formalizar"
+        is_correct: true
+  - position: 3
+    sentence: "El trato existía en el chat, pero nadie lo {{blank}} nunca, y al cambiar de jefe se cayó."
+    hint_general: "El trato nunca llegó a ser oficial, y por eso se perdió."
+    explanation: "Formalizó: el trato nunca llegó a ser oficial. «Formuló» sería enunciarlo, algo que ya estaba hecho en el chat, y «repitió» solo diría que se dijo dos veces."
+    options:
+      - position: 1
+        text: "formuló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formular» es enunciar algo; en el chat el trato ya estaba enunciado, y aun así se cayó por no estar firmado."
+        hint_specific: "Formular enuncia. ¿El trato estaba sin enunciar o sin firmar?"
+      - position: 2
+        text: "repitió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» solo diría que alguien lo dijo otra vez; repetirlo en el chat no lo habría salvado del cambio de jefe."
+        hint_specific: "Repetir dice lo mismo dos veces. ¿Decirlo otra vez habría salvado el trato?"
+      - position: 3
+        text: "formalizó"
+        is_correct: true
+  - position: 4
+    sentence: "Si {{blank}} la propuesta esta semana, con firma y fecha, el proveedor puede empezar el lunes."
+    hint_general: "Dejar la propuesta cerrada con firma para que el otro arranque."
+    explanation: "Formalizamos: dejamos la propuesta cerrada con firma. «Formulamos» sería redactarla, y «comentamos» se quedaría en hablar de ella."
+    options:
+      - position: 1
+        text: "formalizamos"
+        is_correct: true
+      - position: 2
+        text: "formulamos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formular» una propuesta es redactarla; la frase dice que ya existe y que lo que falta son la firma y la fecha."
+        hint_specific: "Formular redacta la propuesta. ¿Qué falta aquí, el texto o la firma?"
+      - position: 3
+        text: "comentamos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comentar» se queda en hablar de la propuesta; ningún proveedor empieza un lunes por un comentario."
+        hint_specific: "Comentar se queda en la charla. ¿Con eso arranca el proveedor?"
+  - position: 5
+    sentence: "La colaboración funcionaba bien, así que las dos partes la {{blank}} con un contrato de un año."
+    hint_general: "Pasan de la palabra al contrato porque la cosa funciona."
+    explanation: "Formalizaron: pasaron de la palabra al contrato. «Formularon» sería enunciarla, y «celebraron» hablaría de una fiesta, no de un documento."
+    options:
+      - position: 1
+        text: "celebraron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Celebrar» sugiere brindis y alegría; lo que hicieron las dos partes fue firmar un contrato de un año."
+        hint_specific: "Celebrar suena a brindis. ¿La frase habla de una fiesta o de un contrato?"
+      - position: 2
+        text: "formalizaron"
+        is_correct: true
+      - position: 3
+        text: "formularon"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formular» es enunciar algo con palabras; la colaboración ya estaba en marcha y lo que llegó fue el contrato."
+        hint_specific: "Formular enuncia con palabras. ¿Qué llegó al final de la frase?"
+  - position: 6
+    sentence: "Nadie quería un documento enorme, pero sí {{blank}} lo básico: quién pone qué y hasta cuándo."
+    hint_general: "Sin papeles enormes, quieren lo esencial escrito y firmado."
+    explanation: "Formalizar: quieren lo esencial escrito y firmado. «Escriturar» es palabra de notaría, y «formular» se quedaría en enunciarlo de viva voz."
+    options:
+      - position: 1
+        text: "escriturar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Escriturar» pertenece a las notarías y a la compra de pisos; para dos líneas sobre quién pone qué resulta desmedido."
+        hint_specific: "«Escriturar» suena a notaría. ¿Hace falta eso para dos líneas?"
+      - position: 2
+        text: "formular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formular» es decirlo con palabras claras; la frase pide además que quede escrito y con firma."
+        hint_specific: "Formular se queda en las palabras. ¿Qué más piden aquí?"
+      - position: 3
+        text: "formalizar"
+        is_correct: true
+  - position: 7
+    sentence: "Mi hermana y su socia {{blank}} el reparto de las ganancias antes de abrir la tienda."
+    hint_general: "Dejan el reparto por escrito antes de abrir el negocio."
+    explanation: "Formalizaron: dejaron el reparto por escrito. «Formularon» sería enunciarlo, y «discutieron» diría que hubo pelea, cuando aquí hubo acuerdo."
+    options:
+      - position: 1
+        text: "formalizaron"
+        is_correct: true
+      - position: 2
+        text: "formularon"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formular» un reparto es enunciarlo en voz alta; la frase habla de dejarlo cerrado antes de abrir la tienda."
+        hint_specific: "Formular lo enuncia. ¿Basta con decirlo antes de abrir una tienda?"
+      - position: 3
+        text: "discutieron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» sugiere desacuerdo; la frase cuenta que el reparto quedó resuelto antes de abrir, no que hubiera pelea."
+        hint_specific: "Discutir sugiere pelea. ¿Cómo llegan las dos socias a la apertura?"
+  - position: 8
+    sentence: "Cuando un acuerdo no se {{blank}}, cada parte recuerda una versión distinta seis meses después."
+    hint_general: "Sin nada escrito ni firmado, cada parte recuerda otra versión."
+    explanation: "Formaliza: sin nada escrito, cada parte recuerda otra versión. «Formula» sería enunciarlo, y «protocoliza» llevaría el trato a una notaría."
+    options:
+      - position: 1
+        text: "formula"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Formular» es enunciar el trato; los dos lo enunciaron y aun así cada uno recuerda algo distinto medio año después."
+        hint_specific: "Formular enuncia. ¿Enunciarlo evita que cada uno recuerde otra cosa?"
+      - position: 2
+        text: "formaliza"
+        is_correct: true
+      - position: 3
+        text: "protocoliza"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Protocolizar» lleva el trato a una notaría; la frase habla de acuerdos normales, no de escrituras públicas."
+        hint_specific: "«Protocolizar» pasa por notaría. ¿Todos los acuerdos llegan ahí?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Medio año de palabra"
+    body: "Llevaban seis meses colaborando sin un solo papel. Cuando cambió la jefa, Rocío se adelantó: «Propongo formalizar lo que ya hacemos: mismas condiciones, con fecha y firma». Tardaron dos días. La jefa nueva llegó y no hubo nada que renegociar."
+    before_phrase: "Habría que dejar esto por escrito."
+    after_phrase: "Propongo formalizar lo que ya hacemos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El piso de los primos"
+    body: "Los tres primos compartían el piso del pueblo sin normas escritas. Después del verano tenso, Mariana propuso: «Vamos a formalizar los turnos: un papel de media página, nada más». Nadie se ofendió, y el verano siguiente fue el mejor en años."
+    before_phrase: "Deberíamos poner esto en claro de una vez."
+    after_phrase: "Vamos a formalizar los turnos."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Lo que se dijo en la sala"
+    body: "Le prometieron revisión de sueldo a los seis meses. Álvaro sonrió y preguntó: «¿Podemos formalizar esa revisión en el contrato?». La responsable dudó un segundo y dijo que sí. Aquella frase valió más que toda la entrevista."
+    before_phrase: "¿Eso lo podemos dejar por escrito?"
+    after_phrase: "¿Podemos formalizar esa revisión en el contrato?"
+metrics:
+  zipf_overall: 4.0838
+  dispersion_dp: 0.1788
+  pedantry_proxy: 0.5092
+  family_size: 155
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

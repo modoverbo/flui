@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 317
+slug: "comprometerse"
+status: "draft"
+lemma: "comprometerse"
+part_of_speech: "verbo"
+syllables: ["com", "pro", "me", "ter", "se"]
+stressed_syllable: 4
+ipa_latam: "[kom.pro.meˈteɾ.se]"
+ipa_es: "[kom.pro.meˈteɾ.se]"
+explanation: "Decir que sí a algo y quedar obligado a cumplirlo, pase lo que pase."
+example_sentence: "Prefiero no comprometerme a una fecha que sé que no voy a cumplir."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "«Prefiero no comprometerme» es un no honesto: cuida tu palabra y también la relación."
+when_not_to_use: "No la uses para un plan suelto entre amigos: para un café basta con decir que sí."
+collocations:
+  - "comprometerse a algo"
+  - "comprometerse con alguien"
+  - "no comprometerse"
+replaces:
+  - before: "Le dije que sí y ahora no puedo"
+    after: "Me comprometí y ahora no puedo"
+  - before: "Prefiero no decir que sí todavía"
+    after: "Prefiero no comprometerme todavía"
+  - before: "Dio su palabra y la cumplió"
+    after: "Se comprometió y cumplió"
+family: ["comprometido"]
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin: ["decir que sí"]
+  funcion: ["poner límites"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "someterse"
+    difference: "«Someterse» es aceptar la voluntad de otro y obedecerla; la otra palabra es dar tu palabra por decisión propia."
+    memory_trick: "Quien se somete obedece; quien se compromete elige."
+  - confused_with: "implicarse"
+    difference: "«Implicarse» es poner interés y esfuerzo en algo; aquí además se da una fecha o una palabra que alguien puede reclamar."
+    memory_trick: "Te implicas con ganas; te comprometes con fecha."
+exercises:
+  - position: 1
+    sentence: "Antes de {{blank}} a una fecha, Adriana miró su calendario dos veces y llamó a su equipo."
+    hint_general: "Revisa lo que tiene por delante antes de dar su palabra sobre un día."
+    explanation: "Comprometerse: antes de dar su palabra revisa el calendario. «Someterse» es obedecer la voluntad de otro, y «adelantarse» es ir por delante de algo, no dar la palabra."
+    options:
+      - position: 1
+        text: "someterse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Someterse» es aceptar la voluntad de otro, y aquí Adriana decide ella misma si acepta la fecha."
+        hint_specific: "«Someterse» obedece a otro. ¿Quién decide en esta frase?"
+      - position: 2
+        text: "comprometerse"
+        is_correct: true
+      - position: 3
+        text: "adelantarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adelantarse» es ir por delante de algo o de alguien, y aquí solo se decide si acepta un día concreto."
+        hint_specific: "«Adelantarse» se pone por delante. ¿Adriana adelanta algo o decide si acepta?"
+  - position: 2
+    sentence: "«Prefiero no {{blank}} este mes: si digo que sí, quiero cumplirlo», explicó Víctor por teléfono."
+    hint_general: "No quiere dar su palabra si no está seguro de poder cumplirla."
+    explanation: "Comprometerme: no quiere dar su palabra sin estar seguro. «Someterme» es obedecer a otro, y «obligarme» suena a contrato y a lenguaje de despacho."
+    options:
+      - position: 1
+        text: "someterme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Someterme» sería aceptar lo que otro decide, y aquí él está decidiendo por su cuenta."
+        hint_specific: "«Someterse» obedece. ¿Víctor obedece a alguien o toma una decisión?"
+      - position: 2
+        text: "obligarme"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Obligarme» suena a contrato y a lenguaje de despacho; aquí se habla por teléfono con una persona conocida."
+        hint_specific: "«Obligarse» suena a papel firmado. ¿Pega en una llamada entre conocidos?"
+      - position: 3
+        text: "comprometerme"
+        is_correct: true
+  - position: 3
+    sentence: "Ernesto se {{blank}} a entregar el martes y entregó el lunes por la noche, sin avisar a nadie."
+    hint_general: "Dio su palabra para un día concreto y la cumplió antes de tiempo."
+    explanation: "Comprometió: dio su palabra para un día y la cumplió antes. «Sometió» es aceptar lo que otro decide, y «apuntó» sería anotarlo o inscribirse."
+    options:
+      - position: 1
+        text: "comprometió"
+        is_correct: true
+      - position: 2
+        text: "sometió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Someterse» es aceptar la voluntad de otro, y en la frase él fija su propio plazo y lo mejora."
+        hint_specific: "«Someterse» obedece órdenes. ¿Quién eligió el martes?"
+      - position: 3
+        text: "apuntó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apuntarse» es inscribirse en algo, y lo que hace él es dar su palabra sobre una fecha."
+        hint_specific: "«Apuntarse» entra en una lista. ¿A qué lista entraría Ernesto?"
+  - position: 4
+    sentence: "Lo que valoran de Julia no es que diga que sí a todo, sino que se {{blank}} solo cuando puede cumplir."
+    hint_general: "Da su palabra únicamente cuando sabe que podrá cumplirla."
+    explanation: "Compromete: da su palabra solo cuando puede cumplir. «Somete» es obedecer lo que decide otro, e «implica» habla del interés que pone, no de la palabra que da."
+    options:
+      - position: 1
+        text: "somete"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Someterse» es aceptar la voluntad de otro, y lo que se elogia de Julia es justo que decide ella."
+        hint_specific: "«Someterse» obedece. ¿Se valora que obedezca o que elija?"
+      - position: 2
+        text: "implica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Implicarse» habla del interés y el esfuerzo que se pone, y aquí se valora que dé su palabra solo cuando puede sostenerla."
+        hint_specific: "«Implicarse» mide las ganas. ¿Lo que se elogia son las ganas o la palabra dada?"
+      - position: 3
+        text: "compromete"
+        is_correct: true
+  - position: 5
+    sentence: "Si te {{blank}} con tres personas el mismo sábado, alguna se va a quedar esperando en la puerta."
+    hint_general: "Dar tu palabra a tres personas para el mismo día deja a alguien colgado."
+    explanation: "Comprometes: dar tu palabra a tres personas el mismo día deja a alguien esperando. «Sometes» es obedecer a otro, y «apalabras» suena coloquial y de trato rápido."
+    options:
+      - position: 1
+        text: "sometes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Someterse» es aceptar la voluntad de otro, y aquí el problema es haber dado tu palabra tres veces."
+        hint_specific: "«Someterse» obedece. ¿El lío viene de obedecer o de prometer de más?"
+      - position: 2
+        text: "comprometes"
+        is_correct: true
+      - position: 3
+        text: "apalabras"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apalabrar» suena coloquial y de trato cerrado a mano alzada, no de un plan entre amigos un sábado."
+        hint_specific: "«Apalabrar» suena a trato de mercado. ¿Pega con quedar con amigos?"
+  - position: 6
+    sentence: "Sandra decidió no {{blank}} hasta hablar con su equipo, y lo explicó así en el chat del grupo."
+    hint_general: "No da su palabra hasta consultarlo con las personas a las que afecta."
+    explanation: "Comprometerse: no da su palabra hasta consultarlo. «Acometer» es lanzarse a hacer algo, y «colaborar» es trabajar con otros, que no es lo mismo que dar tu palabra."
+    options:
+      - position: 1
+        text: "acometer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acometer» es lanzarse a hacer algo, y ella todavía no ha empezado nada: está decidiendo si dice que sí."
+        hint_specific: "«Acometer» ya está en marcha. ¿Sandra empezó algo o está decidiendo?"
+      - position: 2
+        text: "comprometerse"
+        is_correct: true
+      - position: 3
+        text: "colaborar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Colaborar» es trabajar con otros, y se puede colaborar sin haber dado la palabra sobre nada."
+        hint_specific: "«Colaborar» es arrimar el hombro. ¿Eso incluye dar una fecha?"
+  - position: 7
+    sentence: "«Nadie te pidió que te {{blank}} para siempre; bastaba con seis meses», le aclaró Leonor."
+    hint_general: "Le explican que la palabra que le pedían tenía fecha de final."
+    explanation: "Comprometieras: la palabra que le pedían tenía fecha de final. «Sometieras» es obedecer a otro, e «implicaras» habla del interés puesto, no del plazo."
+    options:
+      - position: 1
+        text: "sometieras"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Someterse» es aceptar la voluntad de otro, y aquí se habla de cuánto tiempo debía durar su palabra."
+        hint_specific: "«Someterse» obedece. ¿La aclaración va de obediencia o de duración?"
+      - position: 2
+        text: "comprometieras"
+        is_correct: true
+      - position: 3
+        text: "implicaras"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Implicarse» habla del interés que se pone, y lo que se discute aquí es el plazo de lo prometido."
+        hint_specific: "«Implicarse» mide las ganas. ¿Qué se está midiendo, ganas o meses?"
+  - position: 8
+    sentence: "Mateo se {{blank}} con la mudanza de su vecino y apareció a las ocho con el café y una furgoneta."
+    hint_general: "Dio su palabra para ayudar y se presentó puntual con todo listo."
+    explanation: "Comprometió: dio su palabra y se presentó puntual. «Cometió» se usa con fallos o delitos, y «excusó» sería justo no ir."
+    options:
+      - position: 1
+        text: "cometió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cometer» se usa con fallos o faltas, y ayudar en una mudanza no es ninguna de las dos cosas."
+        hint_specific: "«Cometer» acompaña a faltas y fallos. ¿Mateo hizo algo malo?"
+      - position: 2
+        text: "excusó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Excusarse» es dar una razón para no ir, y la frase cuenta que apareció a las ocho."
+        hint_specific: "«Excusarse» no aparece. ¿A qué hora llegó Mateo?"
+      - position: 3
+        text: "comprometió"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La fecha del jueves"
+    body: "A Gabriela le pidieron una fecha cerrada delante de todo el equipo. Respiró y dijo: «Hoy no me comprometo; mañana te digo un día que pueda sostener». Al día siguiente dio una fecha y la cumplió."
+    before_phrase: "No sé, ya te digo algo."
+    after_phrase: "Hoy no me comprometo; mañana te doy fecha."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los domingos de su madre"
+    body: "Esteban llevaba meses diciendo que iría y luego cancelando. Su madre no se quejó, pero él se dio cuenta. «Me comprometo a un domingo al mes, y ese no falla», le dijo. Llevan siete seguidos."
+    before_phrase: "Voy a intentar ir más a menudo."
+    after_phrase: "Me comprometo a un domingo al mes."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del huerto"
+    body: "Nadie quería encargarse del riego en agosto. Nicolás escribió: «Me comprometo con la primera quincena, pero necesito a alguien para la segunda». Apareció un voluntario en once minutos y el huerto sobrevivió."
+    before_phrase: "Yo puedo echar una mano, supongo."
+    after_phrase: "Me comprometo con la primera quincena."
+metrics:
+  zipf_overall: 3.7223
+  dispersion_dp: 0.1872
+  pedantry_proxy: 0.4808
+  family_size: 360
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

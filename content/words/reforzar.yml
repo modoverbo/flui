@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2118
+slug: "reforzar"
+status: "draft"
+lemma: "reforzar"
+part_of_speech: "verbo"
+syllables: ["re", "for", "zar"]
+stressed_syllable: 3
+ipa_latam: "[re.forˈsaɾ]"
+ipa_es: "[re.forˈθaɾ]"
+explanation: "Hacer más fuerte algo que ya existe, con más ayuda, más gente o más peso."
+example_sentence: "En vez de un elogio general, reforzó la costumbre que quería ver: nombró el resumen de Diego."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Muy útil al dar una opinión buena: en vez de un elogio vago, nombras la conducta que quieres que se repita."
+when_not_to_use: "No la uses cuando hay que cambiar de rumbo: dar más peso a lo que hay no sirve si el camino está mal."
+collocations:
+  - "reforzar un equipo"
+  - "reforzar un mensaje"
+  - "reforzar una costumbre"
+replaces:
+  - before: "Hay que hacer más fuerte esa parte del plan"
+    after: "Hay que reforzar esa parte del plan"
+  - before: "Lo dije otra vez para que quedara claro"
+    after: "Lo repetí para reforzar el mensaje"
+  - before: "Le puse dos personas más al equipo"
+    after: "Reforcé el equipo con dos personas"
+family: ["refuerzo"]
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 1
+tags:
+  comodin: ["muy"]
+  funcion: ["fortalecer"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reformar"
+    difference: "«Reformar» es cambiar algo para que sea distinto; lo otro deja igual lo que hay y le da más fuerza."
+    memory_trick: "Reformas cambiando; refuerzas sumando."
+  - confused_with: "repetir"
+    difference: "«Repetir» es decir lo mismo otra vez; dar fuerza a una idea puede pedir repetición, y también ejemplos, gente o dinero."
+    memory_trick: "Repetir suena igual; reforzar suena más firme."
+exercises:
+  - position: 1
+    sentence: "En vez de un elogio general, Lucía {{blank}} la costumbre que le interesaba: nombró el resumen de Diego delante de todos."
+    hint_general: "Nombra en público la conducta que quiere ver más."
+    explanation: "Reforzó: nombró en público la conducta que quiere ver más. «Reformó» sería cambiarla por otra, y «repitió» solo diría que la mencionó dos veces."
+    options:
+      - position: 1
+        text: "reformó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es cambiar algo para que sea distinto; Lucía no cambia la costumbre, la señala para que siga."
+        hint_specific: "Reformar cambia una cosa por otra. ¿Lucía quiere cambiar esa costumbre o mantenerla?"
+      - position: 2
+        text: "reforzó"
+        is_correct: true
+      - position: 3
+        text: "repitió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» diría que lo dijo dos veces; lo que hace es dar peso a esa conducta nombrándola en público."
+        hint_specific: "Repetir dice lo mismo otra vez. ¿Lucía repite o da peso?"
+  - position: 2
+    sentence: "El equipo iba justo de manos, así que {{blank}} el turno de tarde con dos personas más."
+    hint_general: "Suman dos personas para que el turno aguante."
+    explanation: "Reforzaron: sumaron dos personas al turno. «Reformaron» sería cambiar el turno entero, y «apuntalaron» suena a obra y a andamios."
+    options:
+      - position: 1
+        text: "reformaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» el turno sería cambiar su estructura; aquí el turno sigue igual, solo que con dos personas más."
+        hint_specific: "Reformar cambia la estructura. ¿Cambia el turno o crece?"
+      - position: 2
+        text: "apuntalaron"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apuntalar» pertenece al mundo de la obra y los andamios; hablando de personas en un turno suena a edificio en ruinas."
+        hint_specific: "«Apuntalar» suena a obra y andamios. ¿Encaja al hablar de un turno de tarde?"
+      - position: 3
+        text: "reforzaron"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} lo que ya funciona, la gente sabe a qué atenerse contigo."
+    hint_general: "Si das peso a lo que ya funciona, la gente sabe qué esperar."
+    explanation: "Refuerzas: das peso a lo que ya funciona. «Reformas» sería cambiarlo por otra cosa, y «blindas» es jerga de oficina y suena a cerrarlo a cal y canto."
+    options:
+      - position: 1
+        text: "refuerzas"
+        is_correct: true
+      - position: 2
+        text: "reformas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» lo que funciona sería cambiarlo; la frase habla de sostener lo que ya va bien."
+        hint_specific: "Reformar cambia algo. ¿La frase quiere cambiar lo que funciona?"
+      - position: 3
+        text: "blindas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Blindar» es jerga de oficina y sugiere cerrar algo a cal y canto para que nadie lo toque."
+        hint_specific: "«Blindar» suena a cerrar con candado. ¿Eso es dar peso a una costumbre?"
+  - position: 4
+    sentence: "Mi madre {{blank}} la costumbre de la llamada del domingo sin decir una palabra: siempre estaba al otro lado."
+    hint_general: "Sostuvo la costumbre del domingo solo estando siempre ahí."
+    explanation: "Reforzó: sostuvo la costumbre estando siempre ahí. «Reformó» sería cambiarla por otra, y «cambió» diría justo lo contrario de lo que cuenta la frase."
+    options:
+      - position: 1
+        text: "cambió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cambiar» la costumbre sería sustituirla por otra; la frase dice que ella la mantuvo domingo tras domingo."
+        hint_specific: "Cambiar sustituye una cosa por otra. ¿Qué hizo ella cada domingo?"
+      - position: 2
+        text: "reformó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es cambiar la manera de hacer algo; ella no cambió nada, sostuvo lo que ya existía."
+        hint_specific: "Reformar cambia la manera. ¿Ella cambió algo o lo sostuvo?"
+      - position: 3
+        text: "reforzó"
+        is_correct: true
+  - position: 5
+    sentence: "Antes del acto, Ignacio {{blank}} el mensaje con tres datos y una historia corta."
+    hint_general: "Añade datos y una historia para que el mensaje pese más."
+    explanation: "Reforzó: añadió datos e historia para dar peso al mensaje. «Refrescó» sería recordarlo, y «amplió» sería alargarlo, que no es lo mismo que hacerlo más firme."
+    options:
+      - position: 1
+        text: "refrescó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Refrescar» un mensaje es traerlo de nuevo a la memoria; aquí el mensaje no se recuerda, se apoya con pruebas."
+        hint_specific: "Refrescar trae algo a la memoria. ¿Qué hacen los tres datos por el mensaje?"
+      - position: 2
+        text: "reforzó"
+        is_correct: true
+      - position: 3
+        text: "amplió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ampliar» es hacerlo más largo; tres datos y una historia corta lo hacen más firme, no más extenso."
+        hint_specific: "Ampliar alarga. ¿El mensaje queda más largo o más firme?"
+  - position: 6
+    sentence: "Una costumbre buena se {{blank}} nombrándola en voz alta; si te la callas, deja de pasar."
+    hint_general: "Lo bueno crece cuando se dice en voz alta."
+    explanation: "Refuerza: lo bueno crece al nombrarlo. «Reforma» sería cambiar la costumbre, y «corrige» daría por hecho que está mal, cuando la frase dice que es buena."
+    options:
+      - position: 1
+        text: "reforma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es cambiar algo para que sea distinto; la costumbre de la frase es buena y lo que se busca es que siga."
+        hint_specific: "Reformar cambia algo. ¿Cómo es la costumbre de la frase?"
+      - position: 2
+        text: "corrige"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corregir» da por hecho que algo está mal; la frase habla de una costumbre buena que conviene mantener."
+        hint_specific: "Corregir supone un fallo. ¿Hay algún fallo en esa costumbre?"
+      - position: 3
+        text: "refuerza"
+        is_correct: true
+  - position: 7
+    sentence: "La entrenadora {{blank}} la defensa con dos cambios y el partido cambió de cara en diez minutos."
+    hint_general: "Añade dos cambios para que la defensa aguante más."
+    explanation: "Reforzó: hizo la defensa más fuerte con dos cambios. «Esforzó» no encaja porque uno esfuerza su propio empeño, y «sustituyó» diría que quitó la defensa entera."
+    options:
+      - position: 1
+        text: "esforzó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esforzar» se usa con el propio empeño, como esforzarse en algo; una defensa no se esfuerza desde el banquillo."
+        hint_specific: "Esforzarse lo hace uno consigo mismo. ¿Quién actúa aquí sobre la defensa?"
+      - position: 2
+        text: "reforzó"
+        is_correct: true
+      - position: 3
+        text: "sustituyó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sustituir» la defensa sería cambiarla entera; con dos cambios la defensa sigue siendo la misma, solo que más firme."
+        hint_specific: "Sustituir cambia una cosa por otra. ¿Cuántos cambios hubo?"
+  - position: 8
+    sentence: "Un mensaje que se {{blank}} con ejemplos se recuerda mucho más que otro lleno de adjetivos."
+    hint_general: "Los ejemplos dan peso a un mensaje."
+    explanation: "Refuerza: los ejemplos le dan peso. «Reforma» sería cambiarlo por otro mensaje, y «robustece» es una palabra culta que suena a manual."
+    options:
+      - position: 1
+        text: "robustece"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Robustecer» es una palabra culta que casi nadie dice en voz alta; para hablar de un mensaje suena libresca."
+        hint_specific: "«Robustece» suena a libro antiguo. ¿La dirías en una reunión?"
+      - position: 2
+        text: "refuerza"
+        is_correct: true
+      - position: 3
+        text: "reforma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» un mensaje sería reescribirlo distinto; los ejemplos no lo cambian, lo hacen más firme."
+        hint_specific: "Reformar reescribe. ¿Los ejemplos cambian el mensaje o lo apoyan?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El resumen de los martes"
+    body: "Diego había empezado a mandar un resumen de dos líneas después de cada reunión. Nadie lo pidió. Su jefa lo nombró en voz alta: «Quiero reforzar esto: el resumen de Diego nos ahorra correos». Al mes, lo mandaban cuatro personas más."
+    before_phrase: "Está muy bien lo que hace Diego."
+    after_phrase: "Quiero reforzar esto: el resumen de Diego."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La llamada del domingo"
+    body: "Nadie decidió nunca que hubiera una llamada los domingos. Simplemente su madre siempre estaba al otro lado a la misma hora. «No hizo falta que nos lo pidiera», contaba Lorena años después. «Reforzó la costumbre estando, y eso pesó más que cualquier norma»."
+    before_phrase: "Ella lo mantuvo sin decir nada."
+    after_phrase: "Reforzó la costumbre estando siempre ahí."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos datos y una historia"
+    body: "El grupo del barrio quería pedir un paso de peatones y nadie los escuchaba. Ernesto cambió la carta: «Vamos a reforzar la petición con dos datos y la historia del susto de marzo». La respuesta llegó en tres semanas."
+    before_phrase: "Hay que decirlo con más fuerza."
+    after_phrase: "Vamos a reforzar la petición con datos."
+metrics:
+  zipf_overall: 4.641
+  dispersion_dp: 0.0932
+  pedantry_proxy: 0.5472
+  family_size: 102
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 125
+slug: "indagar"
+status: "draft"
+lemma: "indagar"
+part_of_speech: "verbo"
+syllables: ["in", "da", "gar"]
+stressed_syllable: 3
+ipa_latam: "[in.daˈɣar]"
+ipa_es: "[in.daˈɣar]"
+explanation: "Preguntar y buscar datos hasta entender algo que no estaba claro."
+example_sentence: "Antes de la entrevista conviene indagar cómo trabaja de verdad ese equipo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Suena curioso y serio a la vez: dice que preguntas por interés, no por desconfianza."
+when_not_to_use: "No la uses para meterte en la vida privada de alguien; aquí se buscan datos, no secretos."
+collocations:
+  - "indagar un poco"
+  - "indagar sobre algo"
+  - "indagar antes de decidir"
+replaces:
+  - before: "Voy a preguntar por ahí a ver qué me dicen"
+    after: "Voy a indagar un poco"
+  - before: "Quiero saber más antes de decidir"
+    after: "Quiero indagar antes de decidir"
+  - before: "Estuve mirando cómo es esa empresa"
+    after: "Estuve indagando cómo es esa empresa"
+family: ["indagación"]
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin: ["preguntar"]
+  funcion: ["averiguar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "indignar"
+    difference: "«Indignar» es provocar enfado por algo injusto; la otra palabra solo busca información."
+    memory_trick: "Indignar enfada; preguntar informa."
+  - confused_with: "interrogar"
+    difference: "«Interrogar» suena a sala cerrada y a sospecha; la otra palabra es buscar datos con normalidad."
+    memory_trick: "Interrogas a un sospechoso; preguntas a quien sabe."
+exercises:
+  - position: 1
+    sentence: "Antes de aceptar el puesto, Camila decidió {{blank}} cómo era el día a día del equipo."
+    hint_general: "Busca información real antes de tomar la decisión."
+    explanation: "Indagar: busca información antes de decidir. «Indignar» es provocar enfado, e «interrogar» suena a sala de comisaría."
+    options:
+      - position: 1
+        text: "indignar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignar» es provocar enfado por algo injusto, y ella solo quiere saber cómo se trabaja allí."
+        hint_specific: "«Indignar» enciende el enfado. ¿Qué busca Camila antes de aceptar?"
+      - position: 2
+        text: "indagar"
+        is_correct: true
+      - position: 3
+        text: "interrogar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Interrogar» suena a sala cerrada y a sospecha, y aquí se trata de preguntar a exempleados con normalidad."
+        hint_specific: "«Interrogar» huele a comisaría. ¿Encaja con preparar un cambio de trabajo?"
+  - position: 2
+    sentence: "El cliente cambió de opinión sin avisar y Gonzalo prefirió {{blank}} antes de rehacer el presupuesto."
+    hint_general: "Busca datos sobre el motivo antes de tocar nada."
+    explanation: "Indagar: busca datos sobre el motivo. «Indicar» sería señalar algo, e «improvisar» sería actuar sin información."
+    options:
+      - position: 1
+        text: "indicar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indicar» es señalar o mostrar algo a alguien, y él todavía no sabe qué señalar."
+        hint_specific: "«Indicar» muestra algo que ya sabes. ¿Gonzalo sabe qué pasó?"
+      - position: 2
+        text: "indagar"
+        is_correct: true
+      - position: 3
+        text: "improvisar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisar» es actuar sin preparación, y él hace justo lo contrario: busca información primero."
+        hint_specific: "«Improvisar» va a ciegas. ¿Qué hace él antes de rehacer nada?"
+  - position: 3
+    sentence: "Mi madre {{blank}} durante semanas hasta encontrar un taller honesto para el coche."
+    hint_general: "Preguntó y buscó datos hasta dar con lo que quería."
+    explanation: "Indagó: preguntó y buscó datos durante semanas. «Indignó» sería provocar enfado, y «fisgoneó» es coloquial y acusa de curiosear."
+    options:
+      - position: 1
+        text: "indagó"
+        is_correct: true
+      - position: 2
+        text: "indignó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignar» es provocar enfado por algo injusto, y ella solo estaba buscando un buen taller."
+        hint_specific: "«Indignó» provoca enfado. ¿Qué buscaba tu madre?"
+      - position: 3
+        text: "fisgoneó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fisgonear» es coloquial y acusa de curiosear en lo ajeno, y aquí se pide información sobre un servicio."
+        hint_specific: "«Fisgoneó» se mete donde no le llaman. ¿Preguntar por un taller es meterse en algo ajeno?"
+  - position: 4
+    sentence: "En la reunión nadie sabía por qué bajaron las ventas, así que Nuria se ofreció a {{blank}}."
+    hint_general: "Se ofrece a buscar los datos que explican la caída."
+    explanation: "Indagar: buscar los datos que explican la caída. «Indignar» sería provocar enfado, y «opinar» sería dar una idea sin datos."
+    options:
+      - position: 1
+        text: "indignar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignar» es provocar enfado por algo injusto, y a ella le interesa entender la caída."
+        hint_specific: "«Indignar» genera enfado. ¿Qué falta en esa reunión: enfado o datos?"
+      - position: 2
+        text: "opinar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Opinar» es dar tu idea sin más, y en la sala ya sobran ideas: falta información."
+        hint_specific: "«Opinar» no aporta datos nuevos. ¿Qué falta según la frase?"
+      - position: 3
+        text: "indagar"
+        is_correct: true
+  - position: 5
+    sentence: "Si {{blank}} un poco sobre la empresa antes de la cita, llegarás con preguntas mejores."
+    hint_general: "Buscar datos antes hace que tus preguntas mejoren."
+    explanation: "Indagas: buscas datos antes de la cita. «Indignas» sería provocar enfado, y «husmeas» es coloquial y suena a curiosear."
+    options:
+      - position: 1
+        text: "indagas"
+        is_correct: true
+      - position: 2
+        text: "indignas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignar» es provocar enfado en alguien, y el consejo trata de llegar bien preparado."
+        hint_specific: "«Indignas» enfada a otro. ¿Qué te ayuda a preguntar mejor?"
+      - position: 3
+        text: "husmeas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Husmear» es coloquial y sugiere olfatear en lo ajeno, y aquí se buscan datos públicos de una empresa."
+        hint_specific: "«Husmeas» suena a curiosear a escondidas. ¿Es secreto lo que se busca?"
+  - position: 6
+    sentence: "Antes de firmar el alquiler, Vicente {{blank}} sobre los vecinos y sobre el ruido de la calle."
+    hint_general: "Buscó información concreta antes de comprometerse."
+    explanation: "Indagó: buscó información antes de firmar. «Indicó» sería señalar algo, y «espió» acusa de vigilar a escondidas."
+    options:
+      - position: 1
+        text: "indicó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indicar» es señalar o mostrar algo, y él todavía no tenía nada que señalar."
+        hint_specific: "«Indicó» enseña algo conocido. ¿Qué sabía Vicente antes de preguntar?"
+      - position: 2
+        text: "indagó"
+        is_correct: true
+      - position: 3
+        text: "espió"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Espiar» acusa de vigilar a escondidas, y preguntar por el ruido de una calle se hace a plena luz."
+        hint_specific: "«Espió» actúa oculto. ¿Preguntar por el ruido se hace a escondidas?"
+  - position: 7
+    sentence: "Una buena entrevistadora no solo escucha: también {{blank}} con dos o tres preguntas de seguimiento."
+    hint_general: "Busca más información con preguntas que van más allá."
+    explanation: "Indaga: busca más información con preguntas. «Indigna» sería provocar enfado, e «interroga» suena a sospecha policial."
+    options:
+      - position: 1
+        text: "indaga"
+        is_correct: true
+      - position: 2
+        text: "indigna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignar» es provocar enfado por algo injusto, y una entrevistadora busca entender mejor."
+        hint_specific: "«Indigna» enfada. ¿Para qué sirven las preguntas de seguimiento?"
+      - position: 3
+        text: "interroga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Interrogar» suena a sospecha policial, y aquí se trata de entender mejor a quien tienes delante."
+        hint_specific: "«Interroga» presupone culpa. ¿Hay culpa en una entrevista de trabajo?"
+  - position: 8
+    sentence: "Después de tres correos sin respuesta, Leonor {{blank}} por su cuenta y descubrió que el proyecto estaba parado."
+    hint_general: "Buscó información por su cuenta y encontró el motivo."
+    explanation: "Indagó: buscó información por su cuenta. «Indignó» sería provocar enfado, y «insistió» sería repetir el mismo correo."
+    options:
+      - position: 1
+        text: "indignó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignar» es provocar enfado por algo injusto, y ella lo que consigue es enterarse de lo que pasaba."
+        hint_specific: "«Indignó» reparte enfado. ¿Qué consiguió Leonor al final?"
+      - position: 2
+        text: "insistió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistir» sería mandar el mismo correo otra vez, y ella buscó la respuesta por otro camino."
+        hint_specific: "«Insistió» repite lo mismo. ¿Repitió el correo o cambió de método?"
+      - position: 3
+        text: "indagó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Preguntas de verdad"
+    body: "Camila escribió a dos personas que habían trabajado en esa empresa y leyó las últimas noticias del sector. Llegó a la entrevista con tres preguntas propias. «Indagué un poco antes de venir», dijo, y a la responsable le gustó oírlo."
+    before_phrase: "Estuve mirando cosas sobre la empresa."
+    after_phrase: "Indagué un poco antes de venir."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Un taller honesto"
+    body: "Mi madre no lleva el coche al primer taller que ve. Pregunta en la panadería, llama a dos conocidos y compara precios por teléfono. «Hay que indagar», repite, y en veinte años nunca le han cobrado de más."
+    before_phrase: "Hay que preguntar bastante antes de decidir."
+    after_phrase: "Hay que indagar."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Por qué bajaron las ventas"
+    body: "En la reunión salieron cinco teorías y ningún dato. Nuria se ofreció a mirarlo con calma: «Déjenme indagar dos días y vuelvo con números». Volvió el jueves con una tabla y una causa clara: el cambio de horario de la tienda."
+    before_phrase: "Voy a preguntar por ahí a ver qué averiguo."
+    after_phrase: "Déjenme indagar dos días y vuelvo con números."
+metrics:
+  zipf_overall: 4.1040
+  dispersion_dp: 0.1526
+  pedantry_proxy: 0.5309
+  family_size: 15
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

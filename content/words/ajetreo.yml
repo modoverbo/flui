@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 323
+slug: "ajetreo"
+status: "draft"
+lemma: "ajetreo"
+part_of_speech: "sustantivo"
+syllables: ["a", "je", "tre", "o"]
+stressed_syllable: 3
+ipa_latam: "[a.xeˈtɾe.o]"
+ipa_es: "[a.xeˈtɾe.o]"
+explanation: "Movimiento continuo de un día lleno de cosas por hacer, sin un minuto libre."
+example_sentence: "Con el ajetreo de la mudanza, se me olvidó llamarte el jueves."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para dar contexto sin quejarte: «Con el ajetreo de la semana» explica y no acusa a nadie."
+when_not_to_use: "No la uses para un día tranquilo con dos cosas: esta palabra pide movimiento sin parada."
+collocations:
+  - "el ajetreo del día"
+  - "con tanto ajetreo"
+  - "el ajetreo de la semana"
+replaces:
+  - before: "Con tanto lío, se me pasó"
+    after: "Con tanto ajetreo, se me pasó"
+  - before: "Fue un día de locos"
+    after: "Fue un día de mucho ajetreo"
+  - before: "Había mucho movimiento en la casa"
+    after: "Había mucho ajetreo en la casa"
+family: ["ajetreado"]
+themes:
+  - slug: "conversacion-cotidiana"
+    relevance: 3
+  - slug: "decir-que-no"
+    relevance: 1
+tags:
+  comodin: ["lío", "mucho"]
+  funcion: ["describir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ajedrez"
+    difference: "«Ajedrez» es el juego del tablero y las piezas; la otra palabra es el movimiento continuo de un día muy lleno."
+    memory_trick: "El ajedrez se juega sentado; el ajetreo no te deja sentarte."
+  - confused_with: "desorden"
+    difference: "«Desorden» es que las cosas no estén en su sitio; aquí lo que ocurre es que nada para quieto."
+    memory_trick: "El desorden está quieto; el ajetreo se mueve."
+exercises:
+  - position: 1
+    sentence: "Con el {{blank}} de la mudanza, a Emilio se le olvidó avisar a su hermana del cambio de hora."
+    hint_general: "Hubo tanto movimiento sin parar que se le pasó un aviso."
+    explanation: "Ajetreo: tanto movimiento sin parar que se le pasó un aviso. «Ajedrez» es el juego del tablero, y «desorden» es que las cosas no estén en su sitio."
+    options:
+      - position: 1
+        text: "ajedrez"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajedrez» es el juego del tablero y las piezas, y en una mudanza no se juega a nada."
+        hint_specific: "«Ajedrez» necesita un tablero. ¿Dónde estaría el tablero en la mudanza?"
+      - position: 2
+        text: "ajetreo"
+        is_correct: true
+      - position: 3
+        text: "desorden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desorden» es que las cosas no estén en su sitio, y lo que le hace olvidar el aviso es no parar quieto."
+        hint_specific: "«Desorden» está quieto. ¿Lo que le distrae son las cajas o el movimiento?"
+  - position: 2
+    sentence: "El sábado hubo tanto {{blank}} en casa de Clara que nadie se sentó hasta las cinco."
+    hint_general: "Estuvieron todo el día de un lado a otro sin poder parar."
+    explanation: "Ajetreo: estuvieron todo el día de un lado a otro. «Aderezo» es lo que se añade a una comida para darle sabor, y «trajín» es coloquial y suena a faena doméstica."
+    options:
+      - position: 1
+        text: "aderezo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aderezo» es lo que se añade a una comida para darle sabor, y aquí lo que llena el día es el movimiento."
+        hint_specific: "«Aderezo» va en un plato. ¿Qué llena el sábado de Clara?"
+      - position: 2
+        text: "trajín"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Trajín» es coloquial y suena a faena doméstica concreta, no al ritmo de un día entero."
+        hint_specific: "«Trajín» suena a faena de casa. ¿Se describe un encargo suelto o el día completo?"
+      - position: 3
+        text: "ajetreo"
+        is_correct: true
+  - position: 3
+    sentence: "Después del {{blank}} de diciembre, enero le pareció a Nicolás un mes de vacaciones."
+    hint_general: "Diciembre fue tan movido que el mes siguiente pareció tranquilo."
+    explanation: "Ajetreo: diciembre fue un mes sin parar. «Ajuste» es un cambio pequeño para que algo encaje, y «cansancio» es cómo acabas, no el ritmo en sí."
+    options:
+      - position: 1
+        text: "ajetreo"
+        is_correct: true
+      - position: 2
+        text: "ajuste"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajuste» es un cambio pequeño para que algo encaje, y aquí se compara el ritmo de dos meses."
+        hint_specific: "«Ajuste» retoca algo para que encaje. ¿Qué se estaría retocando en diciembre?"
+      - position: 3
+        text: "cansancio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cansancio» es cómo acabas después, y lo que se compara aquí es cuánto movimiento tuvo cada mes."
+        hint_specific: "«Cansancio» llega al final. ¿Se compara cómo acabaron o cómo fueron los meses?"
+  - position: 4
+    sentence: "A Rosa le gusta el {{blank}} de los días de mercado y se levanta temprano para no perdérselo."
+    hint_general: "Disfruta del movimiento constante de esas mañanas y madruga por verlo."
+    explanation: "Ajetreo: disfruta del movimiento constante de esas mañanas. «Ajedrez» es el juego del tablero, y «silencio» sería justo lo contrario de un mercado."
+    options:
+      - position: 1
+        text: "ajedrez"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajedrez» es el juego del tablero y las piezas, y lo que hay en un mercado es gente moviéndose."
+        hint_specific: "«Ajedrez» se juega sentado y en silencio. ¿Eso es un día de mercado?"
+      - position: 2
+        text: "ajetreo"
+        is_correct: true
+      - position: 3
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencio» es ausencia de ruido, y un mercado lleno a primera hora es justo lo contrario."
+        hint_specific: "«Silencio» es calma total. ¿Cómo suena un mercado por la mañana?"
+  - position: 5
+    sentence: "No es el trabajo lo que agota a Julián, sino el {{blank}} de ir de un sitio a otro todo el día."
+    hint_general: "Lo que lo deja sin energía es moverse sin parar, no el trabajo en sí."
+    explanation: "Ajetreo: lo agota moverse sin parar. «Aderezo» es lo que se añade a una comida, y «bullicio» apunta al ruido de una multitud."
+    options:
+      - position: 1
+        text: "aderezo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aderezo» es lo que se añade a una comida para darle sabor, y aquí se habla de ir de un sitio a otro."
+        hint_specific: "«Aderezo» va en un plato. ¿Qué está haciendo Julián todo el día?"
+      - position: 2
+        text: "bullicio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bullicio» apunta al ruido de una multitud, y él se mueve solo: lo que lo agota son los desplazamientos."
+        hint_specific: "«Bullicio» necesita una multitud. ¿Cuánta gente hay alrededor de Julián?"
+      - position: 3
+        text: "ajetreo"
+        is_correct: true
+  - position: 6
+    sentence: "Un poco de {{blank}} no es malo; lo malo es que dure tres meses seguidos, dice Beatriz."
+    hint_general: "Un tiempo de mucho movimiento se aguanta; lo difícil es que no acabe."
+    explanation: "Ajetreo: un tiempo de mucho movimiento se aguanta. «Ajuste» es un cambio pequeño para que algo encaje, y «retraso» es llegar más tarde de lo previsto."
+    options:
+      - position: 1
+        text: "ajuste"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajuste» es un cambio pequeño para que algo encaje, y lo que aquí se alarga tres meses es el ritmo."
+        hint_specific: "«Ajuste» retoca algo. ¿Qué se retocaría durante tres meses?"
+      - position: 2
+        text: "ajetreo"
+        is_correct: true
+      - position: 3
+        text: "retraso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retraso» es llegar más tarde de lo previsto, y aquí nadie llega tarde: no se para nunca."
+        hint_specific: "«Retraso» mira el reloj de llegada. ¿Se habla de llegar tarde o de no parar?"
+  - position: 7
+    sentence: "En medio del {{blank}} de la mañana, Andrés consiguió sentarse dos minutos a mirar por la ventana."
+    hint_general: "En medio de un movimiento que no paraba, logró detenerse un momento."
+    explanation: "Ajetreo: un movimiento que no paraba. «Ajedrez» es el juego del tablero, y «ruido» es solo lo que se oye."
+    options:
+      - position: 1
+        text: "ajedrez"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajedrez» es el juego del tablero y las piezas, y aquí nadie juega: la mañana no para."
+        hint_specific: "«Ajedrez» necesita tablero y piezas. ¿Los hay en esa mañana?"
+      - position: 2
+        text: "ruido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ruido» es solo lo que se oye, y lo que no para en esa mañana es el movimiento de todos."
+        hint_specific: "«Ruido» entra por los oídos. ¿Lo que no para se oye o se mueve?"
+      - position: 3
+        text: "ajetreo"
+        is_correct: true
+  - position: 8
+    sentence: "El {{blank}} de la cocina se oía desde la calle, y a Teresa le pareció buena señal."
+    hint_general: "Desde fuera se notaba que dentro nadie paraba quieto."
+    explanation: "Ajetreo: desde fuera se notaba que nadie paraba quieto. «Aderezo» es lo que se añade a una comida, y «descanso» sería justo que no se moviera nadie."
+    options:
+      - position: 1
+        text: "aderezo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aderezo» es lo que se añade a una comida para darle sabor, y un aderezo no se oye desde la calle."
+        hint_specific: "«Aderezo» se prueba, no se escucha. ¿Qué se oía desde fuera?"
+      - position: 2
+        text: "ajetreo"
+        is_correct: true
+      - position: 3
+        text: "descanso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descanso» es parar, y lo que llega hasta la calle es justo que dentro no para nadie."
+        hint_specific: "«Descanso» no hace ruido. ¿Qué se oiría desde la calle?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La semana de las cajas"
+    body: "Isabel llevaba siete días entre cajas, llamadas y comidas rápidas. Su hermano le escribió para reñirle y ella contestó antes: «Con el ajetreo de la mudanza no te llamé; el domingo te cuento todo». La llamó el sábado."
+    before_phrase: "Con tanto lío no te llamé."
+    after_phrase: "Con el ajetreo de la mudanza no te llamé."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La fiesta del barrio"
+    body: "Óscar se ofreció a montar las mesas y acabó también con la música y el hielo. Al final del día se sentó en un escalón y se rio: «Qué ajetreo, y qué bien ha salido». Tres vecinos se sentaron con él."
+    before_phrase: "Qué día de locos, pero ha salido bien."
+    after_phrase: "Qué ajetreo, y qué bien ha salido."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes de la apertura"
+    body: "Media hora antes de abrir, Renata vio a todo el equipo cruzándose por el pasillo. En vez de acelerarlo más, dijo en voz alta: «Con este ajetreo nos vamos a chocar; hagamos una vuelta por turnos». Abrieron a la hora."
+    before_phrase: "Hay mucho movimiento aquí dentro."
+    after_phrase: "Con este ajetreo nos vamos a chocar."
+metrics:
+  zipf_overall: 3.1606
+  dispersion_dp: 0.3121
+  pedantry_proxy: 0.4046
+  family_size: 3
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

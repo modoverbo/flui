@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 321
+slug: "anecdota"
+status: "gated"
+lemma: "anécdota"
+part_of_speech: "sustantivo"
+syllables:
+  - "a"
+  - "néc"
+  - "do"
+  - "ta"
+stressed_syllable: 2
+ipa_latam: "[aˈnek.ðo.ta]"
+ipa_es: "[aˈnek.ðo.ta]"
+explanation: "Historia corta y real que alguien cuenta en una charla para explicar algo."
+example_sentence: "Contó una anécdota del verano pasado y la cena se animó de golpe."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Avisar ayuda a que te escuchen: «Te cuento una anécdota» promete algo corto y con final."
+when_not_to_use: "No la uses para algo largo y sin final: eso ya es una historia entera, no esto."
+collocations:
+  - "contar una anécdota"
+  - "una anécdota divertida"
+  - "la anécdota del viaje"
+replaces:
+  - before: "Te voy a contar una cosa que me pasó"
+    after: "Te cuento una anécdota"
+  - before: "Me acordé de algo del verano"
+    after: "Me acordé de una anécdota del verano"
+  - before: "Siempre cuenta las mismas cosas"
+    after: "Siempre cuenta las mismas anécdotas"
+family:
+  - "anecdótico"
+themes:
+  - slug: "conversacion-cotidiana"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "historia"
+  funcion:
+    - "contar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "antídoto"
+    difference: "«Antídoto» es lo que corta el efecto de algo malo; la otra palabra es una historia corta que de verdad ocurrió."
+    memory_trick: "El antídoto cura; la anécdota se cuenta."
+  - confused_with: "chiste"
+    difference: "«Chiste» es inventado y busca la risa; aquí la historia pasó de verdad, aunque además haga gracia."
+    memory_trick: "El chiste se inventa; la anécdota se vivió."
+exercises:
+  - position: 1
+    sentence: "En mitad de la cena, Carolina contó una {{blank}} del verano y todos se rieron a la vez."
+    hint_general: "Contó algo corto que le pasó de verdad y cambió el ambiente de la mesa."
+    explanation: "Anécdota: algo corto que le pasó de verdad. «Anotación» es lo que se apunta por escrito, y «broma» sería algo inventado para hacer reír."
+    options:
+      - position: 1
+        text: "anotación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anotación» es lo que alguien apunta por escrito, y aquí se cuenta algo en voz alta en una cena."
+        hint_specific: "«Anotación» se escribe en un papel. ¿Carolina escribe o habla?"
+      - position: 2
+        text: "anécdota"
+        is_correct: true
+      - position: 3
+        text: "broma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Broma» es algo inventado para hacer reír, y lo que cuenta ella le pasó de verdad el verano pasado."
+        hint_specific: "«Broma» se inventa. ¿Lo del verano ocurrió o se lo inventó?"
+  - position: 2
+    sentence: "Rodrigo siempre repite la misma {{blank}}, pero nadie en la mesa se cansa de oírla."
+    hint_general: "Repite la misma historia corta y verdadera una y otra vez."
+    explanation: "Anécdota: la misma historia corta y verdadera. «Antología» es una selección de textos, y «queja» sería protestar por algo que le molesta."
+    options:
+      - position: 1
+        text: "antología"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Antología» es una selección de textos reunidos en un libro, y aquí se repite algo que se cuenta hablando."
+        hint_specific: "«Antología» es un libro con textos escogidos. ¿Rodrigo lee o cuenta?"
+      - position: 2
+        text: "anécdota"
+        is_correct: true
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Queja» es protestar por algo que molesta, y la frase dice que a nadie le cansa escucharla."
+        hint_specific: "«Queja» protesta. ¿Se escucharía con gusto una protesta repetida?"
+  - position: 3
+    sentence: "La {{blank}} del tren perdido se ha convertido en el clásico de las comidas familiares de Blanca."
+    hint_general: "Esa historia breve y real se cuenta en todas las comidas."
+    explanation: "Anécdota: esa historia breve y real que se repite. «Anestesia» es lo que quita el dolor en una consulta, y «leyenda» es un relato antiguo que nadie sabe si ocurrió."
+    options:
+      - position: 1
+        text: "anestesia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anestesia» es lo que se usa para no sentir dolor en una consulta, y aquí se habla de algo que se cuenta en la mesa."
+        hint_specific: "«Anestesia» se pone en una consulta. ¿Dónde ocurre esta escena?"
+      - position: 2
+        text: "leyenda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Leyenda» es un relato antiguo del que nadie sabe si ocurrió, y lo del tren le pasó a alguien de la familia."
+        hint_specific: "«Leyenda» viene de muy lejos. ¿A quién le pasó lo del tren?"
+      - position: 3
+        text: "anécdota"
+        is_correct: true
+  - position: 4
+    sentence: "No hace falta un discurso: con una {{blank}} corta basta para romper el hielo, dice Hugo."
+    hint_general: "Basta con contar algo breve que te pasó para empezar a hablar con gente nueva."
+    explanation: "Anécdota: algo breve que te pasó y abre la conversación. «Anotación» es lo que se apunta por escrito, e «historieta» suena coloquial y a dibujos."
+    options:
+      - position: 1
+        text: "anécdota"
+        is_correct: true
+      - position: 2
+        text: "anotación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anotación» es lo que alguien apunta por escrito, y romper el hielo se hace hablando."
+        hint_specific: "«Anotación» vive en un cuaderno. ¿Qué rompe el hielo, leer o hablar?"
+      - position: 3
+        text: "historieta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Historieta» suena coloquial y remite a dibujos o a algo de poca importancia, no a lo que te pasó de verdad."
+        hint_specific: "«Historieta» suena a viñetas. ¿Se cuenta algo dibujado o algo vivido?"
+  - position: 5
+    sentence: "Lo que Natalia contó no era una queja: era una {{blank}} con final feliz y en dos minutos."
+    hint_general: "No protestaba: relataba algo corto que le pasó y acabó bien."
+    explanation: "Anécdota: algo corto que le pasó y acabó bien. «Antología» es una selección de textos, y «noticia» sería algo que acaba de ocurrir y se difunde."
+    options:
+      - position: 1
+        text: "antología"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Antología» es una selección de textos reunidos, y aquí hay un solo relato de dos minutos."
+        hint_specific: "«Antología» junta muchos textos. ¿Cuántas historias cuenta Natalia?"
+      - position: 2
+        text: "anécdota"
+        is_correct: true
+      - position: 3
+        text: "noticia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Noticia» es algo que acaba de ocurrir y se difunde porque interesa a muchos, y esto es algo personal."
+        hint_specific: "«Noticia» interesa a mucha gente. ¿A cuántas personas importa lo de Natalia?"
+  - position: 6
+    sentence: "Cada vez que aparece esa {{blank}}, Samuel se tapa la cara y se ríe igual que la primera vez."
+    hint_general: "Vuelve a salir la misma historia corta y verdadera de siempre."
+    explanation: "Anécdota: vuelve la misma historia corta y verdadera. «Anestesia» se usa para no sentir dolor, y «crónica» es un relato periodístico y ordenado."
+    options:
+      - position: 1
+        text: "anécdota"
+        is_correct: true
+      - position: 2
+        text: "anestesia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anestesia» es lo que se usa para no sentir dolor, y nadie se ríe tapándose la cara por eso."
+        hint_specific: "«Anestesia» pertenece a una consulta. ¿Dónde está Samuel?"
+      - position: 3
+        text: "crónica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Crónica» es un relato periodístico y ordenado, y aquí se repite algo que se cuenta entre amigos."
+        hint_specific: "«Crónica» suena a periódico. ¿Quién cuenta esto y a quién?"
+  - position: 7
+    sentence: "A Verónica le sale mejor una {{blank}} bien contada que media hora de explicaciones."
+    hint_general: "Convence más con algo corto que le pasó que con una explicación larga."
+    explanation: "Anécdota: convence más con algo corto que le pasó. «Anotación» es lo que se apunta por escrito, y «receta» es la lista de pasos para cocinar algo."
+    options:
+      - position: 1
+        text: "anotación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anotación» es lo que alguien apunta por escrito, y aquí se compara contar con explicar en voz alta."
+        hint_specific: "«Anotación» se escribe. ¿Qué compara la frase, dos formas de hablar o dos papeles?"
+      - position: 2
+        text: "anécdota"
+        is_correct: true
+      - position: 3
+        text: "receta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Receta» es la lista de pasos para cocinar algo, y lo que funciona aquí es contar algo que ocurrió."
+        hint_specific: "«Receta» ordena pasos. ¿Verónica cocina o cuenta?"
+  - position: 8
+    sentence: "Guillermo empezó con una {{blank}} de su primer trabajo y la sala entera se relajó."
+    hint_general: "Arrancó contando algo breve que vivió y eso bajó la tensión de la sala."
+    explanation: "Anécdota: arrancó contando algo breve que vivió. «Antología» es una selección de textos, y «excusa» sería una razón para justificarse."
+    options:
+      - position: 1
+        text: "antología"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Antología» es una selección de textos reunidos en un libro, y él empieza contando algo suyo en voz alta."
+        hint_specific: "«Antología» es un libro de textos escogidos. ¿Guillermo lee un libro?"
+      - position: 2
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Excusa» es una razón para justificarse, y él no se justifica de nada: está rompiendo el hielo."
+        hint_specific: "«Excusa» se da cuando fallas. ¿De qué se estaría justificando al empezar?"
+      - position: 3
+        text: "anécdota"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena de los nuevos"
+    body: "Nadie se conocía y la conversación no arrancaba. Pilar dejó la copa y dijo: «Voy a contar una anécdota del primer día que cociné para doce personas». A los cinco minutos hablaban todos a la vez."
+    before_phrase: "Voy a contar una cosa que me pasó."
+    after_phrase: "Voy a contar una anécdota."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El cuaderno del abuelo"
+    body: "Andrés encontró un cuaderno donde su abuelo apuntaba lo que le pasaba cada día. Leyó tres páginas en voz alta durante la comida. «Esta anécdota no la había oído nunca», dijo su madre, y pidió leer la siguiente."
+    before_phrase: "Esta historia no la había oído nunca."
+    after_phrase: "Esta anécdota no la había oído nunca."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos minutos antes de los datos"
+    body: "Claudia tenía que explicar por qué había que cambiar el proceso. Empezó contando el día que perdió cuatro horas por una carpeta mal nombrada. «Con esa anécdota lo entendió todo el mundo», le dijeron después."
+    before_phrase: "Empecé contando una cosa que me pasó."
+    after_phrase: "Empecé con una anécdota."
+metrics:
+  zipf_overall: 3.8538
+  dispersion_dp: 0.2121
+  pedantry_proxy: 0.502
+  family_size: 7
+provenance:
+  generator: "flui authoring agent"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

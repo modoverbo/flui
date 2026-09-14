@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 302
+slug: "tacto"
+status: "draft"
+lemma: "tacto"
+part_of_speech: "sustantivo"
+syllables: ["tac", "to"]
+stressed_syllable: 1
+ipa_latam: "[ˈtak.to]"
+ipa_es: "[ˈtak.to]"
+explanation: "Cuidado al elegir las palabras para que algo duro no haga daño."
+example_sentence: "Se lo dijo con tanto tacto que la conversación no se rompió en ningún momento."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para elogiar el cómo, no solo el qué: «Lo dijiste con mucho tacto» reconoce un cuidado real."
+when_not_to_use: "No la uses como sinónimo de callarse: hay tacto en decir la verdad, no en esconderla."
+collocations:
+  - "con tacto"
+  - "falta de tacto"
+  - "tener tacto"
+replaces:
+  - before: "Se lo dijo con mucho cuidado"
+    after: "Se lo dijo con mucho tacto"
+  - before: "No sabe decir las cosas sin herir"
+    after: "Le falta tacto al decir las cosas"
+  - before: "Hay que decírselo bien"
+    after: "Hay que decírselo con tacto"
+family: []
+themes:
+  - slug: "conversaciones-dificiles"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin: ["cuidado", "bueno"]
+  funcion: ["suavizar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "tino"
+    difference: "«Tino» es acertar al elegir o al calcular; la otra palabra habla del cuidado con que se dicen las cosas."
+    memory_trick: "El tino acierta; el tacto no hiere."
+  - confused_with: "contacto"
+    difference: "«Contacto» es el roce o la relación entre dos partes; aquí se habla de cómo se eligen las palabras."
+    memory_trick: "El contacto une; el tacto cuida."
+exercises:
+  - position: 1
+    sentence: "Cuando le tocó avisar del cambio de fecha, Valeria lo hizo con un {{blank}} que todo el equipo agradeció."
+    hint_general: "Dio una noticia molesta cuidando cómo la decía para no dejar a nadie mal."
+    explanation: "Tacto: cuidó la forma de dar una noticia molesta. «Tino» sería acertar al elegir, y «protocolo» suena a las formas oficiales de una empresa."
+    options:
+      - position: 1
+        text: "tino"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tino» es acertar al elegir o al calcular; aquí nadie elige entre opciones, se cuida la forma de decirlo."
+        hint_specific: "«Tino» va de acertar. ¿La frase premia el acierto o el cuidado al hablar?"
+      - position: 2
+        text: "tacto"
+        is_correct: true
+      - position: 3
+        text: "protocolo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Protocolo» son las formas oficiales de un acto o una empresa, y esto es una noticia dada de persona a persona."
+        hint_specific: "«Protocolo» suena a acto oficial. ¿Aquí se sigue un reglamento o se cuida a alguien?"
+  - position: 2
+    sentence: "Andrés contó el fallo del viaje delante de toda la mesa sin el menor {{blank}}, y su prima se levantó a por agua."
+    hint_general: "Le faltó por completo el cuidado necesario para no dejar mal a alguien en público."
+    explanation: "Tacto: le faltó el cuidado al decirlo en público. «Contacto» es el roce entre dos partes, y «silencio» sería no contarlo, cuando el problema fue cómo lo contó."
+    options:
+      - position: 1
+        text: "contacto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contacto» es el roce o la relación entre dos partes; aquí falla la forma de contar algo, no la relación."
+        hint_specific: "«Contacto» habla de roce o de relación. ¿Qué falló en la mesa: el vínculo o la manera?"
+      - position: 2
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencio» sería no contarlo, y lo que molesta no es que lo contara, sino cómo lo contó."
+        hint_specific: "«Silencio» es callar. ¿El problema fue contarlo o la manera de contarlo?"
+      - position: 3
+        text: "tacto"
+        is_correct: true
+  - position: 3
+    sentence: "El mensaje de Pilar era duro, pero tenía el {{blank}} suficiente para que nadie se sintiera señalado."
+    hint_general: "El mensaje decía algo duro, aunque cuidaba la forma para no dejar a nadie en evidencia."
+    explanation: "Tacto: el mensaje era duro y aun así cuidaba a quien lo leía. «Tono» es solo cómo suena, y «trato» describe la relación diaria entre dos partes."
+    options:
+      - position: 1
+        text: "tono"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tono» es cómo suena algo; se puede tener un tono amable y aun así dejar a alguien señalado."
+        hint_specific: "«Tono» habla de cómo suena. ¿Basta con sonar amable para que nadie quede mal?"
+      - position: 2
+        text: "tacto"
+        is_correct: true
+      - position: 3
+        text: "trato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trato» es la relación diaria entre dos partes, no el cuidado que lleva un mensaje concreto."
+        hint_specific: "«Trato» va de la relación de cada día. ¿La frase juzga la relación o un mensaje?"
+  - position: 4
+    sentence: "A Sergio le sobra información y le falta {{blank}}: dice la verdad, pero la deja caer como una piedra."
+    hint_general: "Sabe mucho, pero no cuida la forma en que suelta lo que sabe."
+    explanation: "Tacto: sabe mucho y no cuida la forma. «Tino» sería acertar al elegir, y «oficio» es la experiencia que da hacer algo muchas veces."
+    options:
+      - position: 1
+        text: "tacto"
+        is_correct: true
+      - position: 2
+        text: "tino"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tino» es acertar al elegir, y la frase dice que acierta con la verdad: lo que falla es cómo la suelta."
+        hint_specific: "«Tino» va de acertar. Relee: ¿se equivoca en el fondo o en la forma?"
+      - position: 3
+        text: "oficio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Oficio» es la experiencia que dan los años de práctica, y aquí no se juzga la experiencia sino el cuidado."
+        hint_specific: "«Oficio» habla de años de práctica. ¿La frase mide experiencia o delicadeza?"
+  - position: 5
+    sentence: "Con mucho {{blank}}, Olga le explicó a su madre por qué este verano no irían juntas a la playa."
+    hint_general: "Explica algo que decepciona a su madre cuidando cada palabra para no hacerle daño."
+    explanation: "Tacto: cuidó cada palabra al decepcionar a su madre. «Comedimiento» suena antiguo y solemne, y «contacto» habla de la relación, no de las palabras."
+    options:
+      - position: 1
+        text: "comedimiento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Comedimiento» suena antiguo y solemne; en una conversación entre madre e hija resulta almidonado."
+        hint_specific: "«Comedimiento» suena a libro viejo. ¿Pega en la cocina de casa?"
+      - position: 2
+        text: "tacto"
+        is_correct: true
+      - position: 3
+        text: "contacto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contacto» es la relación o el roce entre dos partes, y aquí lo cuidado son las palabras."
+        hint_specific: "«Contacto» va de relación. ¿Qué cuida Olga: el vínculo o cada palabra?"
+  - position: 6
+    sentence: "Rubén soltó el mismo aviso sin nada de {{blank}} y la comida terminó en un portazo."
+    hint_general: "Dijo lo mismo que otros, pero sin cuidar nada la forma, y todo acabó mal."
+    explanation: "Tacto: soltó el aviso sin cuidar la forma. «Temple» es aguantar la presión sin alterarse, y «trato» describe la relación de cada día."
+    options:
+      - position: 1
+        text: "temple"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Temple» es mantener la calma bajo presión; él no pierde la calma, descuida cómo lo dice."
+        hint_specific: "«Temple» va de aguantar la presión. ¿Rubén se puso nervioso o fue brusco?"
+      - position: 2
+        text: "trato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trato» es la relación diaria entre dos partes, y lo que falla aquí es una frase concreta."
+        hint_specific: "«Trato» va de la relación de cada día. ¿Falló la relación o esa frase?"
+      - position: 3
+        text: "tacto"
+        is_correct: true
+  - position: 7
+    sentence: "Lo que más valoro de Joaquín es su {{blank}}: sabe decir que algo no funciona sin que suene a reproche."
+    hint_general: "Consigue señalar un problema de una manera que no suena a acusación."
+    explanation: "Tacto: señala problemas sin que suenen a acusación. «Respeto» es reconocer el valor de alguien, y «contacto» habla de la relación entre dos partes."
+    options:
+      - position: 1
+        text: "respeto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Respeto» es reconocer el valor de alguien; se puede respetar mucho y aun así decirlo de una forma que duele."
+        hint_specific: "«Respeto» va de reconocer el valor de alguien. ¿Eso garantiza que la frase no duela?"
+      - position: 2
+        text: "contacto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contacto» es el roce o la relación entre dos partes, no la habilidad para decir algo difícil."
+        hint_specific: "«Contacto» va de roce y relación. ¿Se elogia el vínculo o la forma de hablar?"
+      - position: 3
+        text: "tacto"
+        is_correct: true
+  - position: 8
+    sentence: "Nadie esperaba tanto {{blank}} de alguien tan joven: Fernanda dio la noticia y hasta el más molesto asintió."
+    hint_general: "Sorprende por cuidar la forma al dar una noticia que podía caer mal."
+    explanation: "Tacto: cuidó la forma y hasta el más molesto asintió. «Trato» es la relación diaria, y «disimulo» sería esconder algo, no decirlo bien."
+    options:
+      - position: 1
+        text: "trato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trato» es la relación diaria entre dos partes, y aquí se juzga un momento concreto delante de todos."
+        hint_specific: "«Trato» va de relación de cada día. ¿La frase habla de meses o de un momento?"
+      - position: 2
+        text: "tacto"
+        is_correct: true
+      - position: 3
+        text: "disimulo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disimulo» es esconder algo para que no se note, y ella dio la noticia en voz alta."
+        hint_specific: "«Disimulo» esconde. ¿Fernanda ocultó la noticia o la dio delante de todos?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La llamada del domingo"
+    body: "Cristina tenía que decirle a su padre que este año no pasaría las fiestas en su casa. Lo dijo despacio, empezando por lo que sí podía hacer. Al colgar, su hermana le escribió: «Lo has dicho con un tacto que yo no tengo»."
+    before_phrase: "Se lo dije con mucho cuidado."
+    after_phrase: "Se lo dije con mucho tacto."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe que nadie quería firmar"
+    body: "Marcos tenía que señalar que los números no cuadraban. En vez de nombrar a nadie, escribió: «Hay dos cifras que no encajan; propongo revisarlas juntos el martes». La responsable respondió en cinco minutos: «Gracias por el tacto»."
+    before_phrase: "Intenté decirlo de buenas maneras."
+    after_phrase: "Intenté decirlo con tacto."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La foto del grupo"
+    body: "En la cena, alguien sacó una foto antigua y se rio del peinado de Elisa. Ella contestó sin subir la voz y cambió de tema. Al salir, una amiga le dijo: «Tienes más tacto que todos nosotros juntos»."
+    before_phrase: "Qué bien lleva estas cosas."
+    after_phrase: "Tiene mucho tacto para estas cosas."
+metrics:
+  zipf_overall: 3.8479
+  dispersion_dp: 0.1597
+  pedantry_proxy: 0.4070
+  family_size: 2
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2126
+slug: "conciliar"
+status: "draft"
+lemma: "conciliar"
+part_of_speech: "verbo"
+syllables: ["con", "ci", "liar"]
+stressed_syllable: 3
+ipa_latam: "[kon.siˈljaɾ]"
+ipa_es: "[kon.θiˈljaɾ]"
+explanation: "Acercar dos posturas contrarias hasta encontrar un punto donde caben las dos."
+example_sentence: "El acuerdo concilió el plazo del cliente y las horas del equipo, y nadie salió perdiendo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve cuando las dos partes tienen razón en algo: en vez de elegir bando, buscas dónde caben las dos."
+when_not_to_use: "No la uses cuando una parte solo quiere imponerse: entonces no hay dos posturas, hay una y un empujón."
+collocations:
+  - "conciliar posturas"
+  - "conciliar dos intereses"
+  - "conciliar horarios"
+replaces:
+  - before: "A ver si los ponemos de acuerdo"
+    after: "A ver si conciliamos las dos posturas"
+  - before: "Hay que buscar un punto medio entre los dos"
+    after: "Hay que conciliar los dos intereses"
+  - before: "Intenté que se entendieran"
+    after: "Intenté conciliar a las dos partes"
+family: ["conciliación"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin: ["juntar"]
+  funcion: ["acercar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reconciliar"
+    difference: "«Reconciliar» devuelve la buena relación entre dos personas que se habían enfadado; lo otro acerca posturas, aunque nadie se haya enfadado nunca."
+    memory_trick: "Reconciliar arregla personas; conciliar arregla posturas."
+  - confused_with: "convencer"
+    difference: "«Convencer» lleva al otro a tu terreno; acercar posturas busca un tercer punto donde caben las dos."
+    memory_trick: "Convencer gana; conciliar reparte."
+exercises:
+  - position: 1
+    sentence: "El encargado tardó dos horas en {{blank}} las posturas de cocina y de sala."
+    hint_general: "Tardó dos horas en acercar las dos posturas."
+    explanation: "Conciliar: acercó las dos posturas hasta un punto común. «Reconciliar» daría por hecho un enfado previo, y «convencer» sería llevarse a una parte a su terreno."
+    options:
+      - position: 1
+        text: "reconciliar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconciliar» supone que dos personas estaban enfadadas y vuelven a llevarse bien; aquí lo que chocan son dos maneras de trabajar."
+        hint_specific: "Reconciliar arregla un enfado. ¿La frase habla de enfado o de dos posturas?"
+      - position: 2
+        text: "conciliar"
+        is_correct: true
+      - position: 3
+        text: "convencer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencer» sería llevar a una de las dos al terreno de la otra; el encargado busca un punto donde quepan las dos."
+        hint_specific: "Convencer arrastra a un bando. ¿El encargado elige bando?"
+  - position: 2
+    sentence: "Nadie pedía ganar: pedían a alguien que {{blank}} los dos calendarios sin romper ninguno."
+    hint_general: "Piden juntar los dos calendarios sin romper ninguno."
+    explanation: "Conciliara: juntar los dos calendarios sin romperlos. «Concluyera» sería terminarlos, y «armonizara» dice algo parecido con voz de manual."
+    options:
+      - position: 1
+        text: "concluyera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concluir» es dar algo por terminado; los calendarios no se terminan, se hacen encajar el uno con el otro."
+        hint_specific: "Concluir termina algo. ¿Los calendarios se terminan o se encajan?"
+      - position: 2
+        text: "armonizara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Armonizar» suena a manual de gestión y a música; pidiéndole algo a un compañero resulta ampuloso."
+        hint_specific: "«Armonizar» suena a manual. ¿Se lo pedirías así a un compañero?"
+      - position: 3
+        text: "conciliara"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} bien los dos intereses, el acuerdo aguanta aunque cambie la gente que lo firmó."
+    hint_general: "Si juntas bien los dos intereses, el acuerdo dura."
+    explanation: "Concilias: juntas bien los dos intereses. «Consolidas» sería reforzar algo que ya existe, e «impones» significaría que solo manda una parte."
+    options:
+      - position: 1
+        text: "concilias"
+        is_correct: true
+      - position: 2
+        text: "consolidas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consolidar» es hacer más firme algo que ya está en pie; aquí los dos intereses todavía no se han juntado."
+        hint_specific: "Consolidar refuerza lo que ya existe. ¿Existe ya el punto común?"
+      - position: 3
+        text: "impones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» significa que solo manda una parte; un acuerdo impuesto se cae en cuanto cambia quien lo impuso."
+        hint_specific: "Imponer deja mandar a uno solo. ¿Eso aguanta un cambio de personas?"
+  - position: 4
+    sentence: "Mi abuela {{blank}} dos horarios imposibles y logró que la comida fuera siempre a la una y media."
+    hint_general: "Acercó dos horarios imposibles hasta una sola hora."
+    explanation: "Concilió: acercó dos horarios hasta una sola hora. «Reconcilió» supondría un enfado previo, y «eligió» diría que se quedó con uno y descartó el otro."
+    options:
+      - position: 1
+        text: "reconcilió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconciliar» supone que dos personas estaban enfadadas; aquí lo que chocaba eran dos horarios, no dos personas."
+        hint_specific: "Reconciliar arregla enfados. ¿Qué chocaba, personas u horarios?"
+      - position: 2
+        text: "concilió"
+        is_correct: true
+      - position: 3
+        text: "eligió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elegir» sería quedarse con uno de los dos horarios; la una y media no es ninguno de ellos, es el punto donde caben los dos."
+        hint_specific: "Elegir se queda con uno. ¿La una y media era el horario de alguien?"
+  - position: 5
+    sentence: "Antes de votar, Fernanda intentó {{blank}} las dos propuestas en una sola."
+    hint_general: "Quiere juntar las dos propuestas en una sola."
+    explanation: "Conciliar: juntar las dos propuestas en una. «Concluir» sería darlas por terminadas, y «avenir» se usa con personas y suena a juzgado."
+    options:
+      - position: 1
+        text: "concluir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concluir» es dar algo por terminado; las propuestas no se terminan, se funden en una sola antes de votar."
+        hint_specific: "Concluir termina algo. ¿Qué quiere hacer Fernanda con las dos propuestas?"
+      - position: 2
+        text: "conciliar"
+        is_correct: true
+      - position: 3
+        text: "avenir"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Avenir» se usa con personas y pertenece al lenguaje de los juzgados; una propuesta no se aviene con otra."
+        hint_specific: "«Avenir» suena a juzgado y se usa con gente. ¿Qué se junta aquí?"
+  - position: 6
+    sentence: "Un buen acuerdo no gana a nadie: {{blank}} lo que cada parte necesita de verdad."
+    hint_general: "Un buen acuerdo junta lo que cada parte necesita."
+    explanation: "Concilia: junta lo que cada parte necesita. «Consolida» sería reforzar algo que ya existe, y «reparte» sugeriría trocear algo en dos mitades."
+    options:
+      - position: 1
+        text: "consolida"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consolidar» es hacer más firme algo que ya está en pie; el acuerdo no refuerza necesidades, las hace caber juntas."
+        hint_specific: "Consolidar refuerza lo que ya hay. ¿Qué hace el acuerdo con las dos necesidades?"
+      - position: 2
+        text: "concilia"
+        is_correct: true
+      - position: 3
+        text: "reparte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repartir» es trocear algo en partes; un acuerdo así no parte nada por la mitad, busca dónde caben las dos necesidades."
+        hint_specific: "Repartir trocea. ¿El acuerdo trocea o encaja?"
+  - position: 7
+    sentence: "Cuando las dos partes tienen razón en algo, toca {{blank}} y no elegir bando."
+    hint_general: "Cuando los dos tienen razón, hay que acercarlos."
+    explanation: "Conciliar: acercar dos posturas con razón. «Reconciliar» daría por hecho un enfado, y «escuchar» sería solo el primer paso, sin juntar nada."
+    options:
+      - position: 1
+        text: "escuchar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escuchar» es el primer paso y no basta: se puede escuchar a los dos y seguir sin un punto donde quepan."
+        hint_specific: "Escuchar es el primer paso. ¿Basta con oír a las dos partes?"
+      - position: 2
+        text: "reconciliar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconciliar» supone un enfado previo entre personas; la frase habla de dos posturas que tienen razón a la vez."
+        hint_specific: "Reconciliar arregla enfados. ¿Alguien está enfadado en esta frase?"
+      - position: 3
+        text: "conciliar"
+        is_correct: true
+  - position: 8
+    sentence: "El acuerdo final {{blank}} el plazo del cliente y las horas del equipo, y nadie salió perdiendo."
+    hint_general: "El acuerdo junta el plazo del cliente y las horas del equipo."
+    explanation: "Concilió: juntó el plazo y las horas sin sacrificar ninguno. «Concluyó» sería darlos por terminados, y «armonizó» suena a manual de gestión."
+    options:
+      - position: 1
+        text: "concilió"
+        is_correct: true
+      - position: 2
+        text: "concluyó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concluir» es dar algo por terminado; el plazo y las horas no terminan, quedan encajados el uno con el otro."
+        hint_specific: "Concluir termina algo. ¿Qué les pasa al plazo y a las horas?"
+      - position: 3
+        text: "armonizó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Armonizar» suena a manual de gestión y a música; contando cómo se cerró un acuerdo resulta artificial."
+        hint_specific: "«Armonizar» suena a manual y a música. ¿Encaja al contar un acuerdo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La cocina y la sala"
+    body: "Cocina quería cerrar a las once y sala servir hasta las doce. Llevaban un mes tirándose la culpa. El encargado no eligió bando: «Vamos a conciliar las dos cosas: última comanda a las once y media». Funcionó desde el primer día."
+    before_phrase: "A ver si los ponemos de acuerdo."
+    after_phrase: "Vamos a conciliar las dos cosas."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La una y media"
+    body: "Unos comían a la una y otros a las dos, y cada domingo alguien llegaba con la comida fría. Su abuela lo resolvió sin discursos: «A la una y media. Ni la tuya ni la mía». Fue su manera de conciliar dos horarios que parecían imposibles."
+    before_phrase: "Busquemos un punto medio entre los dos."
+    after_phrase: "Fue su manera de conciliar dos horarios."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos propuestas, un viaje"
+    body: "La mitad del grupo quería playa y la otra mitad, montaña. Antes de votar y partirlo en dos, Renata propuso otra cosa: «¿Y si conciliamos las dos? Tres días de costa y dos de sierra». Nadie votó en contra, y nadie volvió enfadado."
+    before_phrase: "¿Y si buscamos algo entre las dos ideas?"
+    after_phrase: "¿Y si conciliamos las dos propuestas?"
+metrics:
+  zipf_overall: 4.1786
+  dispersion_dp: 0.1625
+  pedantry_proxy: 0.4893
+  family_size: 120
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

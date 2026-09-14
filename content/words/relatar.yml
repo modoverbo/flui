@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "relatar"
+status: "gated"
+lemma: "relatar"
+part_of_speech: "verbo"
+syllables:
+  - "re"
+  - "la"
+  - "tar"
+stressed_syllable: 3
+ipa_latam: "[re.laˈtaɾ]"
+ipa_es: "[re.laˈtaɾ]"
+explanation: "Contar algo con orden y detalle, tal como pasó, de principio a fin."
+example_sentence: "Voy a relatar lo ocurrido en orden: la llamada, el retraso y la queja del cliente."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Avisa de que vas a contar hechos y no opiniones: quien escucha baja las defensas y deja de discutir."
+when_not_to_use: "No la uses para una charla corta entre amigos: ahí «contar» es más natural y no suena a informe."
+collocations:
+  - "relatar lo ocurrido"
+  - "relatar una escena"
+  - "relatar con detalle"
+replaces:
+  - before: "Te cuento lo que pasó, más o menos"
+    after: "Te relato lo que pasó"
+  - before: "Dijo por encima cómo había ido todo"
+    after: "Relató cómo había ido todo"
+  - before: "Les conté la historia entera, paso a paso"
+    after: "Les relaté la historia entera"
+family:
+  - "relato"
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "contar"
+  funcion:
+    - "narrar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "delatar"
+    difference: "«Delatar» es señalar a alguien que ha hecho algo malo; la otra palabra solo cuenta los hechos en orden."
+    memory_trick: "Delatas a una persona; cuentas unos hechos."
+  - confused_with: "resumir"
+    difference: "«Resumir» deja lo esencial en pocas palabras; la otra palabra conserva el orden y los detalles que hacen ver la escena."
+    memory_trick: "Resumir encoge; contar en orden deja verlo todo."
+exercises:
+  - position: 1
+    sentence: "Ámbar {{blank}} lo ocurrido en orden: primero la llamada, luego el retraso y al final la queja."
+    hint_general: "Cuenta los hechos uno detrás de otro, tal como pasaron."
+    explanation: "Relató: contó los hechos en orden. «Delató» sería señalar a un culpable, y «opinó» habría añadido su juicio a unos hechos que se cuentan solos."
+    options:
+      - position: 1
+        text: "delató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Delatar» es señalar a quien ha hecho algo malo, y aquí solo se ponen tres hechos en orden."
+        hint_specific: "«Delatar» necesita a alguien señalado. ¿Aparece alguien acusado en la frase?"
+      - position: 2
+        text: "relató"
+        is_correct: true
+      - position: 3
+        text: "opinó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Opinar» añadiría un juicio, y la frase solo enumera qué pasó y en qué orden."
+        hint_specific: "«Opinar» pone tu valoración. ¿Hay alguna valoración en esos tres hechos?"
+  - position: 2
+    sentence: "Nadie entendía el problema hasta que Delia lo {{blank}} con nombres, horas y dos frases textuales."
+    hint_general: "Lo cuenta entero y con detalle, y entonces se entiende."
+    explanation: "Relató: lo contó entero y con detalle. «Dilató» es alargar o retrasar algo, y «resumió» habría quitado justo los nombres y las horas que hicieron entenderlo."
+    options:
+      - position: 1
+        text: "relató"
+        is_correct: true
+      - position: 2
+        text: "dilató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dilatar» es alargar o retrasar algo en el tiempo, y aquí el problema por fin se entiende."
+        hint_specific: "«Dilatar» estira los plazos. ¿Qué consiguió Delia al hablar?"
+      - position: 3
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» habría quitado los nombres y las horas, que son justo lo que hizo entender el problema."
+        hint_specific: "«Resumir» recorta detalles. ¿Qué detalles resolvieron la duda?"
+  - position: 3
+    sentence: "Si vas a contar un caso de éxito, {{blank}} la escena completa antes de dar el número final."
+    hint_general: "Cuenta la escena entera, en orden, y deja el dato para el final."
+    explanation: "Relata: cuenta la escena entera en orden. «Delata» sería señalar a un culpable, y «suelta» es coloquial y sugiere contarlo de cualquier manera."
+    options:
+      - position: 1
+        text: "delata"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Delatar» es señalar a quien hizo algo malo, y en un caso de éxito no hay a quién señalar."
+        hint_specific: "«Delatar» acusa a alguien. ¿De qué trata un caso de éxito?"
+      - position: 2
+        text: "relata"
+        is_correct: true
+      - position: 3
+        text: "suelta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y sugiere contarlo de cualquier manera, y el consejo pide orden antes del número."
+        hint_specific: "«Soltar» va sin cuidado. ¿Qué pide el consejo sobre la escena?"
+  - position: 4
+    sentence: "Gonzalo prefiere {{blank}} lo que vio con sus ojos a discutir sobre lo que cada uno cree."
+    hint_general: "Cuenta los hechos que presenció, sin entrar en opiniones."
+    explanation: "Relatar: cuenta los hechos que presenció. «Delatar» sería señalar a un culpable, y «juzgar» sería justo la discusión de creencias que él evita."
+    options:
+      - position: 1
+        text: "relatar"
+        is_correct: true
+      - position: 2
+        text: "delatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Delatar» es señalar a quien ha hecho algo malo, y Gonzalo se limita a contar lo que vio."
+        hint_specific: "«Delatar» acusa a alguien. ¿Qué prefiere hacer Gonzalo?"
+      - position: 3
+        text: "juzgar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Juzgar» es dar tu valoración, y la frase dice que él prefiere evitar la discusión de creencias."
+        hint_specific: "«Juzgar» valora. ¿Qué evita Gonzalo según la frase?"
+  - position: 5
+    sentence: "En la sobremesa, Ivo {{blank}} el viaje con tanto detalle que nadie miró el móvil en una hora."
+    hint_general: "Lo cuenta entero, paso a paso, y todos siguen ahí."
+    explanation: "Relató: contó el viaje paso a paso. «Relegó» es dejar algo en segundo lugar, y «mencionó» solo lo habría nombrado de pasada."
+    options:
+      - position: 1
+        text: "relegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relegar» es dejar algo en un lugar secundario, y aquí el viaje ocupa toda la sobremesa."
+        hint_specific: "«Relegar» aparta algo a un rincón. ¿Qué lugar ocupó el viaje?"
+      - position: 2
+        text: "relató"
+        is_correct: true
+      - position: 3
+        text: "mencionó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mencionar» solo lo nombraría de pasada, y la frase habla de una hora entera de detalles."
+        hint_specific: "«Mencionar» dura dos segundos. ¿Cuánto duró esa sobremesa?"
+  - position: 6
+    sentence: "Cuando el cliente pidió explicaciones, Amalia {{blank}} los hechos sin adornar ninguno."
+    hint_general: "Cuenta lo que pasó, en orden y sin añadidos."
+    explanation: "Relató: contó los hechos en orden y sin añadidos. «Delató» sería señalar a un culpable, y «largó» es coloquial y suena a soltarlo todo de golpe."
+    options:
+      - position: 1
+        text: "largó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Largar» es coloquial y suena a soltarlo todo de golpe, y la frase describe un relato ordenado."
+        hint_specific: "«Largar» suelta sin medida. ¿Cómo contó Amalia los hechos?"
+      - position: 2
+        text: "relató"
+        is_correct: true
+      - position: 3
+        text: "delató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Delatar» es señalar a quien hizo algo malo, y aquí se responde a una petición de explicaciones."
+        hint_specific: "«Delatar» acusa. ¿Qué le pidió el cliente a Amalia?"
+  - position: 7
+    sentence: "Un buen informe no opina: {{blank}} lo que pasó y guarda las conclusiones para el final."
+    hint_general: "Primero los hechos en orden; el juicio, después."
+    explanation: "Relata: primero los hechos en orden. «Dilata» es alargar o retrasar algo, e «inventa» pondría hechos que nunca ocurrieron."
+    options:
+      - position: 1
+        text: "dilata"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dilatar» es alargar o retrasar algo, y un informe que alarga los hechos no los cuenta mejor."
+        hint_specific: "«Dilatar» estira el tiempo. ¿Qué hace un informe con los hechos?"
+      - position: 2
+        text: "relata"
+        is_correct: true
+      - position: 3
+        text: "inventa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inventar» pondría hechos que nunca ocurrieron, y la frase habla de contar lo que pasó."
+        hint_specific: "«Inventar» crea lo que no existió. ¿Qué recoge un buen informe?"
+  - position: 8
+    sentence: "Nadie pedía un discurso: bastaba con {{blank}} lo que había ocurrido el martes por la mañana."
+    hint_general: "Contar los hechos de esa mañana, en su orden."
+    explanation: "Relatar: contar los hechos de esa mañana en su orden. «Delatar» sería señalar a un culpable, y «soltar» es coloquial y suena a contarlo de golpe y sin cuidado."
+    options:
+      - position: 1
+        text: "relatar"
+        is_correct: true
+      - position: 2
+        text: "delatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Delatar» es señalar a quien hizo algo malo, y lo que se pedía era saber qué pasó el martes."
+        hint_specific: "«Delatar» señala a una persona. ¿Qué se pedía en esta escena?"
+      - position: 3
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y suena a contarlo de golpe, y aquí hace falta el orden de la mañana."
+        hint_specific: "«Soltar» va sin orden. ¿Qué se necesita para entender esa mañana?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Hechos, luego opinión"
+    body: "La reunión empezó con acusaciones cruzadas. Otilia levantó la mano: «Voy a relatar lo que pasó y después opinamos. Lunes: aviso del proveedor. Martes: nadie lo leyó. Jueves: se paró la línea». Nadie discutió los hechos y la reunión duró veinte minutos."
+    before_phrase: "Yo creo que aquí alguien no hizo su trabajo."
+    after_phrase: "Voy a relatar lo que pasó y después opinamos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La sobremesa del viaje"
+    body: "Ivo volvió de un mes fuera y nadie esperaba gran cosa. Relató el viaje en orden: el autobús perdido, la casa sin luz, la cena con desconocidos. Una hora después seguían todos en la mesa y nadie había tocado el móvil."
+    before_phrase: "Fue increíble, ya te enseñaré las fotos."
+    after_phrase: "Te lo relato en orden, que tiene gracia."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El día del fallo"
+    body: "Le preguntaron por un proyecto que salió mal. Ámbar no se defendió: relató la semana entera, decisión por decisión, incluida la suya. «Es la primera vez que alguien cuenta un fallo sin culpar a nadie», le dijeron. La llamaron dos días después."
+    before_phrase: "Salió mal por cosas que no dependían de mí."
+    after_phrase: "Te relato la semana, decisión por decisión."
+metrics:
+  zipf_overall: 4.8255
+  dispersion_dp: 0.1863
+  pedantry_proxy: 0.5684
+  family_size: 51
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

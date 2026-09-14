@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2111
+slug: "delegar"
+status: "draft"
+lemma: "delegar"
+part_of_speech: "verbo"
+syllables: ["de", "le", "gar"]
+stressed_syllable: 3
+ipa_latam: "[de.leˈɣaɾ]"
+ipa_es: "[de.leˈɣaɾ]"
+explanation: "Pasar a otra persona una parte de tu trabajo junto con el poder de decidir sobre ella."
+example_sentence: "Delegué el trato con el proveedor en Lucas y le di también la firma para cerrar precios."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Se nota cuando es de verdad: si luego revisas cada paso, no pasaste el trabajo, solo lo prestaste."
+when_not_to_use: "No la uses para soltar lo que no quieres hacer y callar el resto: eso no reparte poder, reparte cansancio."
+collocations:
+  - "delegar una decisión"
+  - "delegar en alguien"
+  - "aprender a delegar"
+replaces:
+  - before: "Le pasé ese trabajo a Ana"
+    after: "Delegué ese trabajo en Ana"
+  - before: "Que lo decida ella, yo no me meto"
+    after: "Delegué esa decisión en ella"
+  - before: "Tengo que aprender a soltar cosas"
+    after: "Tengo que aprender a delegar"
+family: ["delegación"]
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin: ["pasar"]
+  funcion: ["repartir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "relegar"
+    difference: "«Relegar» es apartar a alguien o dejarlo en segundo plano; lo otro le da trabajo y también el poder de decidir."
+    memory_trick: "Relegas al fondo; delegas al frente."
+  - confused_with: "encargar"
+    difference: "«Encargar» es pedir que alguien haga algo concreto; aquí se cede además la decisión sobre cómo hacerlo."
+    memory_trick: "Encargas el qué; delegas también el cómo."
+exercises:
+  - position: 1
+    sentence: "Cuando Adriana {{blank}} el proyecto en Lucas, le dio también la firma para decidir el presupuesto."
+    hint_general: "Le pasó el proyecto y con él el poder de decidir."
+    explanation: "Delegó: le pasó el proyecto y el poder de decidir. «Relegó» sería apartarlo, y «encargó» se quedaría en pedirle el trabajo sin la firma."
+    options:
+      - position: 1
+        text: "relegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relegar» es apartar a alguien a un segundo plano; a Lucas le pasa lo contrario, recibe el proyecto y la firma."
+        hint_specific: "Relegar aparta a alguien. ¿Lucas queda apartado o al frente?"
+      - position: 2
+        text: "delegó"
+        is_correct: true
+      - position: 3
+        text: "encargó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encargar» es pedir un trabajo concreto; la frase añade la firma, es decir, el poder de decidir sobre el dinero."
+        hint_specific: "Encargar pide un trabajo. ¿Qué recibe Lucas además del proyecto?"
+  - position: 2
+    sentence: "El equipo iba lento porque su responsable no {{blank}} nada y revisaba cada correo antes de enviarlo."
+    hint_general: "No soltaba nada, y por eso todo se atascaba en su mesa."
+    explanation: "Delegaba: no soltaba nada de su trabajo. «Relegaba» sería apartar personas, y «explicaba» hablaría de contar cosas, no de repartir decisiones."
+    options:
+      - position: 1
+        text: "explicaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explicar» es contar cómo se hace algo; el problema no era la falta de explicaciones, era que todo pasaba por su mesa."
+        hint_specific: "Explicar cuenta cómo se hace. ¿Al equipo le faltaban explicaciones o decisiones propias?"
+      - position: 2
+        text: "delegaba"
+        is_correct: true
+      - position: 3
+        text: "relegaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relegar» es dejar a alguien en segundo plano; aquí nadie está apartado, es el responsable quien retiene todo."
+        hint_specific: "Relegar aparta a personas. ¿Qué retiene ese responsable?"
+  - position: 3
+    sentence: "Si {{blank}} una decisión, no vuelvas a revisarla a escondidas dos días después."
+    hint_general: "Si sueltas una decisión, suéltala del todo."
+    explanation: "Delegas: sueltas de verdad la decisión. «Alegas» significa dar razones, y «endosas» es coloquial y suena a colocarle a otro un marrón."
+    options:
+      - position: 1
+        text: "delegas"
+        is_correct: true
+      - position: 2
+        text: "alegas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alegar» es dar razones para defender algo; aquí no se discute nada, se pasa una decisión a otra persona."
+        hint_specific: "Alegar da razones. ¿La frase discute algo o lo entrega?"
+      - position: 3
+        text: "endosas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Endosar» es coloquial y sugiere colocarle a otro algo molesto; pasar una decisión con su poder es otra cosa."
+        hint_specific: "«Endosar» suena a colocarle a alguien un marrón. ¿Eso se parece a repartir poder?"
+  - position: 4
+    sentence: "Mi padre {{blank}} la compra semanal en mi hermano y no volvió a discutir ni una sola lista."
+    hint_general: "Dejó la compra en manos de otro y no volvió a opinar."
+    explanation: "Delegó: dejó la compra en manos de otro. «Relegó» sería apartar a su hijo, y «repartió» sugeriría que se quedó con una parte."
+    options:
+      - position: 1
+        text: "relegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relegar» es apartar a alguien; el hermano no queda apartado, se queda al mando de la compra."
+        hint_specific: "Relegar aparta. ¿El hermano queda fuera o al mando?"
+      - position: 2
+        text: "repartió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repartir» supondría que el padre se queda con un trozo; la frase dice que no volvió a discutir ninguna lista."
+        hint_specific: "Repartir deja una parte para cada uno. ¿El padre se queda con algo?"
+      - position: 3
+        text: "delegó"
+        is_correct: true
+  - position: 5
+    sentence: "En su primer mes al frente, Verónica {{blank}} tres bloques enteros y se quedó solo con el trato con clientes."
+    hint_general: "Suelta tres bloques enteros y se queda con una sola parte."
+    explanation: "Delegó: soltó tres bloques enteros. «Relegó» sería apartar a alguien, y «encomendó» dice algo parecido, pero con un tono casi solemne."
+    options:
+      - position: 1
+        text: "encomendó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Encomendar» tiene un tono solemne, casi de misión sagrada; para repartir bloques de trabajo suena grandilocuente."
+        hint_specific: "«Encomendar» suena solemne. ¿Encaja al repartir el trabajo de un mes?"
+      - position: 2
+        text: "delegó"
+        is_correct: true
+      - position: 3
+        text: "relegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relegar» deja a alguien en segundo plano; aquí los bloques pasan a personas que ahora deciden sobre ellos."
+        hint_specific: "Relegar deja a alguien atrás. ¿Quién queda atrás en esta frase?"
+  - position: 6
+    sentence: "Nadie aprende a decidir si nunca le {{blank}} una decisión de verdad."
+    hint_general: "Sin decisiones propias, nadie aprende a decidir."
+    explanation: "Delegan: nadie le pasa decisiones de verdad. «Relegan» hablaría de apartarlo, y «piden» diría que le reclaman algo, no que le den poder."
+    options:
+      - position: 1
+        text: "relegan"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relegar» es apartar a alguien; la frase habla de lo contrario, de no darle nunca una decisión propia."
+        hint_specific: "Relegar aparta. ¿La frase habla de apartar o de no dar?"
+      - position: 2
+        text: "piden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pedir» una decisión es reclamarle a alguien que elija; aquí falta justo lo anterior, que le entreguen el poder de hacerlo."
+        hint_specific: "Pedir reclama algo. ¿Qué falta antes de poder reclamar?"
+      - position: 3
+        text: "delegan"
+        is_correct: true
+  - position: 7
+    sentence: "Antes de las vacaciones, Gloria {{blank}} sus pendientes y escribió en un correo quién decidía qué."
+    hint_general: "Reparte lo pendiente y deja claro quién decide cada cosa."
+    explanation: "Delegó: repartió lo pendiente con su poder de decisión. «Alegó» significa dar razones, y «mandó» sugeriría órdenes sueltas sin repartir criterio."
+    options:
+      - position: 1
+        text: "delegó"
+        is_correct: true
+      - position: 2
+        text: "alegó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alegar» es dar razones para justificar algo; Gloria no se justifica, reparte su trabajo antes de irse."
+        hint_specific: "Alegar da razones. ¿Gloria se justifica o reparte?"
+      - position: 3
+        text: "mandó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mandar» son órdenes sueltas; el correo de Gloria hace algo más, dice quién decide sobre cada asunto."
+        hint_specific: "Mandar da órdenes. ¿Qué dejó escrito Gloria además del trabajo?"
+  - position: 8
+    sentence: "Hay responsables que {{blank}} el trabajo pero se guardan la firma, y así el equipo nunca avanza."
+    hint_general: "Sueltan el trabajo, aunque se quedan con la decisión."
+    explanation: "Delegan: sueltan el trabajo a medias, sin la firma. «Relegan» sería apartar a la gente, y «endosan» es coloquial y suena a soltarle a otro un marrón."
+    options:
+      - position: 1
+        text: "endosan"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Endosar» es coloquial y sugiere colocarle a otro algo pesado; la frase describe un reparto real, aunque incompleto."
+        hint_specific: "«Endosar» suena a marrón. ¿Es eso lo que describe la frase?"
+      - position: 2
+        text: "relegan"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relegar» es dejar a alguien en segundo plano; aquí el equipo sí recibe trabajo, lo que no recibe es la firma."
+        hint_specific: "Relegar aparta a la gente. ¿El equipo recibe trabajo o se queda sin nada?"
+      - position: 3
+        text: "delegan"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La firma también"
+    body: "Marcos llevaba tres meses ahogado. Su jefa lo llamó y le dijo algo sencillo: «Voy a delegar el trato con imprenta en ti. Incluye decidir el precio hasta dos mil euros». Marcos entendió que esta vez iba en serio, y dejó de preguntar por cada detalle."
+    before_phrase: "Te paso el trato con imprenta."
+    after_phrase: "Voy a delegar el trato con imprenta en ti."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La lista de la compra"
+    body: "Su madre corregía cada compra que hacía él. Un sábado, Vicente se sentó a su lado: «Si vas a delegar la compra, delégala entera. Si no, la hago contigo y ya está». Ella lo pensó una semana. Desde entonces no volvió a revisar el tique."
+    before_phrase: "O me lo dejas a mí, o lo hacemos juntos."
+    after_phrase: "Si vas a delegar la compra, delégala entera."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La fiesta de los cuarenta"
+    body: "Organizar la fiesta estaba acabando con Natalia. En el grupo escribió: «Delego la música en Samuel y la comida en Emma. Deciden ellos, yo no opino». Nadie discutió la lista de canciones, y ella llegó descansada a su propia fiesta."
+    before_phrase: "Que se encarguen ellos de la música y la comida."
+    after_phrase: "Delego la música en Samuel y la comida en Emma."
+metrics:
+  zipf_overall: 4.5767
+  dispersion_dp: 0.1849
+  pedantry_proxy: 0.5888
+  family_size: 35
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

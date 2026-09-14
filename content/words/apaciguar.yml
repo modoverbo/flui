@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 306
+slug: "apaciguar"
+status: "draft"
+lemma: "apaciguar"
+part_of_speech: "verbo"
+syllables: ["a", "pa", "ci", "guar"]
+stressed_syllable: 4
+ipa_latam: "[a.pa.siˈɣwar]"
+ipa_es: "[a.pa.θiˈɣwar]"
+explanation: "Bajar la tensión de alguien muy alterado, con calma y sin quitarle la razón."
+example_sentence: "Bastaron dos minutos de escucha para apaciguar una discusión que venía de lejos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona cuando primero reconoces lo que siente la otra parte y solo después propones algo."
+when_not_to_use: "No la uses para pedir silencio: no consiste en callar a alguien, sino en bajarle la tensión."
+collocations:
+  - "apaciguar los ánimos"
+  - "apaciguar una discusión"
+  - "apaciguar a alguien"
+replaces:
+  - before: "Intenté calmar la cosa"
+    after: "Intenté apaciguar la discusión"
+  - before: "Le bajó los humos a todo el mundo"
+    after: "Apaciguó a todo el grupo"
+  - before: "Puso paz en dos minutos"
+    after: "Apaciguó los ánimos en dos minutos"
+family: ["apaciguamiento"]
+themes:
+  - slug: "conversaciones-dificiles"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin: ["calmar"]
+  funcion: ["bajar la tensión"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "apagar"
+    difference: "«Apagar» es dejar sin luz o sin fuego algo material; la otra palabra baja la tensión de una persona alterada."
+    memory_trick: "Apagas lo que arde; apaciguas a quien se altera."
+  - confused_with: "aplacar"
+    difference: "«Aplacar» se usa con algo que crece por dentro, como el hambre o la furia; lo otro se dirige a alguien y a su enfado concreto."
+    memory_trick: "Aplacas un impulso; apaciguas a una persona."
+exercises:
+  - position: 1
+    sentence: "Dos mesas discutían por el ruido y Blanca consiguió {{blank}} la escena con una frase y dos sillas más."
+    hint_general: "Baja la tensión de una discusión con un gesto pequeño y una frase corta."
+    explanation: "Apaciguar: bajó la tensión con un gesto y una frase. «Apagar» se dice de una luz o un fuego, y «amansar» es coloquial y suena a domar animales."
+    options:
+      - position: 1
+        text: "apagar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apagar» es dejar algo sin luz o sin fuego, y lo que baja aquí es la tensión entre personas."
+        hint_specific: "«Apagar» va de luz y fuego. ¿Hay algo encendido en la escena?"
+      - position: 2
+        text: "apaciguar"
+        is_correct: true
+      - position: 3
+        text: "amansar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Amansar» es coloquial y se dice de los animales; aplicarlo a dos mesas de clientes suena a burla."
+        hint_specific: "«Amansar» se usa con caballos. ¿Suena bien dicho de personas adultas?"
+  - position: 2
+    sentence: "Cuando su padre levantó la voz, Ximena bajó la suya: quería {{blank}} la cena, no ganarla."
+    hint_general: "Busca que la tensión baje en la mesa en vez de imponerse en la discusión."
+    explanation: "Apaciguar: busca que la tensión baje, no imponerse. «Apartar» sería quitar algo de en medio, y «animar» sería darle más energía a la cena."
+    options:
+      - position: 1
+        text: "apaciguar"
+        is_correct: true
+      - position: 2
+        text: "apartar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apartar» es quitar algo de en medio, y ella sigue sentada a la mesa hablando con su padre."
+        hint_specific: "«Apartar» quita algo de en medio. ¿Ximena se retira o se queda?"
+      - position: 3
+        text: "animar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Animar» es darle más energía a algo, y aquí lo que sobra es justo energía."
+        hint_specific: "«Animar» sube la energía. ¿Hace falta más energía en esa cena?"
+  - position: 3
+    sentence: "Según Cristina, nada {{blank}} más rápido a un grupo enfadado que oír en voz alta lo que ha pasado."
+    hint_general: "Nombrar lo ocurrido baja la tensión de un grupo más deprisa que cualquier otra cosa."
+    explanation: "Apacigua: nombrar lo ocurrido baja la tensión del grupo. «Apaga» se dice de una luz o un fuego, y «convence» es cambiar lo que alguien piensa."
+    options:
+      - position: 1
+        text: "apaga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apagar» es dejar sin luz o sin fuego algo material, y un grupo enfadado no se apaga: se calma."
+        hint_specific: "«Apagar» va de luz y fuego. ¿Qué hay encendido aquí, una lámpara o un ánimo?"
+      - position: 2
+        text: "convence"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencer» es cambiar lo que alguien piensa, y aquí nadie cambia de opinión: solo baja la tensión."
+        hint_specific: "«Convencer» cambia ideas. ¿El grupo cambia de opinión o de ánimo?"
+      - position: 3
+        text: "apacigua"
+        is_correct: true
+  - position: 4
+    sentence: "Beatriz no intentó {{blank}} a nadie de entrada: dejó que cada uno terminara y luego propuso una pausa."
+    hint_general: "No corre a bajar la tensión: primero escucha hasta el final."
+    explanation: "Apaciguar: no corrió a bajar la tensión, primero escuchó. «Apartar» sería sacar a alguien de en medio, y «sosegar» tiene ese sentido, pero suena a libro antiguo."
+    options:
+      - position: 1
+        text: "apartar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apartar» es sacar a alguien de en medio, y ella deja que todos se queden y hablen."
+        hint_specific: "«Apartar» saca a alguien de en medio. ¿Beatriz saca a alguien de la sala?"
+      - position: 2
+        text: "apaciguar"
+        is_correct: true
+      - position: 3
+        text: "sosegar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sosegar» significa algo parecido, pero suena a libro antiguo y desentona al contar una reunión de hoy."
+        hint_specific: "«Sosegar» suena a novela del siglo pasado. ¿Encaja al contar una reunión de esta semana?"
+  - position: 5
+    sentence: "El mensaje de Fernando {{blank}} un chat de grupo que llevaba dos horas encendido."
+    hint_general: "Un solo mensaje baja la tensión de una conversación que llevaba horas subida."
+    explanation: "Apaciguó: un mensaje bajó la tensión del grupo. «Apagó» se dice de una luz o un fuego, y «alargó» sería estirar la discusión todavía más."
+    options:
+      - position: 1
+        text: "apaciguó"
+        is_correct: true
+      - position: 2
+        text: "apagó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apagar» es dejar algo sin luz o sin fuego; un chat de grupo no se apaga con un mensaje, se calma."
+        hint_specific: "«Apagar» va de luz y de fuego. ¿Se apagó el teléfono o bajó la tensión?"
+      - position: 3
+        text: "alargó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alargar» sería estirar la discusión todavía más, y la frase cuenta que se calmó."
+        hint_specific: "«Alargar» estira. ¿El chat siguió encendido después del mensaje?"
+  - position: 6
+    sentence: "Lo que {{blank}} a Julia no fue la explicación, sino que alguien reconociera que se había esperado demasiado."
+    hint_general: "Lo que le baja la tensión es que reconozcan la espera, no que le expliquen nada."
+    explanation: "Apaciguó: le bajó la tensión el reconocimiento, no la explicación. «Apartó» sería quitarla de en medio, y «distrajo» sería desviar su atención."
+    options:
+      - position: 1
+        text: "apartó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apartar» es quitar a alguien de en medio, y aquí Julia se queda y escucha lo que le dicen."
+        hint_specific: "«Apartar» aleja a alguien. ¿Julia se va o sigue en la conversación?"
+      - position: 2
+        text: "apaciguó"
+        is_correct: true
+      - position: 3
+        text: "distrajo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distraer» es desviar la atención hacia otra cosa, y lo que la calma es precisamente mirar de frente lo ocurrido."
+        hint_specific: "«Distraer» mira hacia otro lado. ¿Qué la calma: cambiar de tema o nombrarlo?"
+  - position: 7
+    sentence: "Si Salvador {{blank}} demasiado pronto, la otra persona siente que quiere cerrar el tema antes de entenderla."
+    hint_general: "Bajar la tensión antes de tiempo se lee como prisa por terminar la conversación."
+    explanation: "Apacigua: bajar la tensión antes de tiempo parece prisa. «Apaga» se dice de luces y fuegos, e «interrumpe» sería cortar a quien habla."
+    options:
+      - position: 1
+        text: "apaga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apagar» es dejar sin luz o sin fuego algo material, y aquí se trata del ánimo de una persona."
+        hint_specific: "«Apagar» va de luz y fuego. ¿Qué está encendido, una lámpara o un ánimo?"
+      - position: 2
+        text: "apacigua"
+        is_correct: true
+      - position: 3
+        text: "interrumpe"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interrumpir» es cortar a quien habla, y el problema aquí es el momento, no cortarle la frase."
+        hint_specific: "«Interrumpir» corta una frase. ¿Lo que falla es el corte o el momento?"
+  - position: 8
+    sentence: "Carolina tiene un don raro: {{blank}} a la gente sin darle la razón en todo."
+    hint_general: "Consigue bajar la tensión de alguien sin fingir que está de acuerdo con todo."
+    explanation: "Apacigua: baja la tensión sin fingir acuerdo. «Apaga» se dice de una luz o un fuego, y «serena» suena a texto formal y algo solemne."
+    options:
+      - position: 1
+        text: "apaga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apagar» es dejar algo sin luz o sin fuego, y a la gente no se la apaga: se le baja la tensión."
+        hint_specific: "«Apagar» va de luz y fuego. ¿Se puede apagar a una persona?"
+      - position: 2
+        text: "serena"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Serenar» tiene ese sentido, pero suena formal y algo solemne para describir un don cotidiano."
+        hint_specific: "«Serenar» suena a texto muy formal. ¿Pega al describir a una amiga?"
+      - position: 3
+        text: "apacigua"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La comida del sábado"
+    body: "La conversación sobre quién cuida el jardín subió de tono en dos minutos. Gloria dejó el tenedor y dijo: «Los dos tienen parte de razón y los dos están cansados». Hubo un silencio raro, y después una risa."
+    before_phrase: "Intenté calmar los ánimos."
+    after_phrase: "Intenté apaciguar los ánimos."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El chat de las siete"
+    body: "El grupo llevaba una hora discutiendo por un cambio de última hora. Ramón escribió: «Nadie decidió esto solo y mañana lo vemos con datos». La conversación se apaciguó sola y el jueves salió la mejor versión del plan."
+    before_phrase: "El chat se calmó un poco."
+    after_phrase: "La conversación se apaciguó sola."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La lista del viaje"
+    body: "Dos amigos discutían por el orden de las paradas del viaje. Virginia propuso: «Elegimos uno cada día y nadie repite». Los ánimos se apaciguaron antes de llegar al postre y salieron a andar."
+    before_phrase: "Bajaron los humos enseguida."
+    after_phrase: "Los ánimos se apaciguaron enseguida."
+metrics:
+  zipf_overall: 3.2478
+  dispersion_dp: 0.2802
+  pedantry_proxy: 0.5080
+  family_size: 18
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

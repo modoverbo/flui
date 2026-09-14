@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "hilar"
+status: "draft"
+lemma: "hilar"
+part_of_speech: "verbo"
+syllables: ["hi", "lar"]
+stressed_syllable: 2
+ipa_latam: "[iˈlaɾ]"
+ipa_es: "[iˈlaɾ]"
+explanation: "Unir hechos y datos en un relato que avanza y se entiende de principio a fin."
+example_sentence: "Tenía cinco datos sueltos y una hora para hilar algo que se entendiera a la primera."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra el trabajo invisible de una buena historia: no es tener material, es enlazarlo en un orden."
+when_not_to_use: "No la uses para una lista donde cada punto va por su lado: si no hay un camino, no hay nada enlazado."
+collocations:
+  - "hilar una historia"
+  - "hilar los datos"
+  - "hilar fino"
+replaces:
+  - before: "Junté las ideas como pude"
+    after: "Hilé las ideas"
+  - before: "Contaba cosas sueltas, sin conexión"
+    after: "No hilaba lo que contaba"
+  - before: "Hay que conectar todo eso de alguna forma"
+    after: "Hay que hilarlo de alguna forma"
+family: ["hilado"]
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin: ["juntar"]
+  funcion: ["narrar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "afilar"
+    difference: "«Afilar» es sacar punta a algo; la otra palabra une piezas sueltas en un relato que avanza."
+    memory_trick: "Afilas un cuchillo; unes los hechos en un camino."
+  - confused_with: "enumerar"
+    difference: "«Enumerar» pone los hechos uno detrás de otro; la otra palabra hace que cada uno lleve al siguiente."
+    memory_trick: "Enumerar apila; el otro verbo encadena."
+exercises:
+  - position: 1
+    sentence: "Ámbar tenía cinco datos sueltos y una hora para {{blank}} algo que se entendiera de principio a fin."
+    hint_general: "Los datos tienen que llevar de uno al siguiente, no quedarse en montón."
+    explanation: "Hilar: los datos llevan de uno al siguiente. «Afilar» es sacar punta a algo, y «empalmar» es coloquial y sugiere pegar trozos de cualquier manera."
+    options:
+      - position: 1
+        text: "afilar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afilar» es sacar punta a algo, como un cuchillo, y aquí hay cinco datos que ordenar."
+        hint_specific: "«Afilar» se hace con herramientas cortantes. ¿Qué tiene Ámbar sobre la mesa?"
+      - position: 2
+        text: "hilar"
+        is_correct: true
+      - position: 3
+        text: "empalmar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Empalmar» es coloquial y sugiere pegar trozos de cualquier manera, y la frase pide que se entienda entero."
+        hint_specific: "«Empalmar» junta sin cuidado. ¿Qué pide la frase que ocurra al leerlo?"
+  - position: 2
+    sentence: "El informe enumeraba hechos, pero nadie los {{blank}}: parecían cinco noticias sin relación entre sí."
+    hint_general: "Faltaba que unos llevaran a otros."
+    explanation: "Hilaba: faltaba que unos llevaran a otros. «Afilaba» es sacar punta a algo, y «apilaba» los pondría uno encima de otro, que es justo el problema."
+    options:
+      - position: 1
+        text: "hilaba"
+        is_correct: true
+      - position: 2
+        text: "afilaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afilar» es sacar punta a algo, y a un hecho no se le saca punta: se conecta con otro."
+        hint_specific: "«Afilar» va de cuchillos y lápices. ¿Qué les faltaba a esos hechos?"
+      - position: 3
+        text: "apilaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apilar» los pone uno encima de otro, y eso es exactamente lo que ya hacía el informe."
+        hint_specific: "«Apilar» hace montones. ¿Qué hacía ya el informe con los hechos?"
+  - position: 3
+    sentence: "Delia sabe {{blank}} una anécdota con un dato y terminar en una conclusión que nadie discute."
+    hint_general: "Enlaza la historia y el número en un solo camino."
+    explanation: "Hilar: enlaza la historia y el número en un camino. «Apilar» sería amontonarlos, y «enumerar» los pondría en fila sin llevar a ninguna conclusión."
+    options:
+      - position: 1
+        text: "apilar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apilar» es poner cosas una encima de otra, y aquí la anécdota y el dato llevan a una conclusión."
+        hint_specific: "«Apilar» amontona. ¿Adónde llega Delia al final?"
+      - position: 2
+        text: "hilar"
+        is_correct: true
+      - position: 3
+        text: "enumerar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enumerar» pone las cosas en fila, y una fila no termina sola en una conclusión."
+        hint_specific: "«Enumerar» hace listas. ¿Una lista lleva a alguna conclusión?"
+  - position: 4
+    sentence: "Si tus tres argumentos no se {{blank}}, quien escucha se queda con el último y olvida los otros dos."
+    hint_general: "Cada argumento debe llevar al siguiente."
+    explanation: "Hilan: cada argumento lleva al siguiente. «Afilan» es sacarles punta, y «enganchan» es coloquial y habla de atrapar la atención, no de ordenar las ideas."
+    options:
+      - position: 1
+        text: "afilan"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afilar» es sacar punta a algo, y un argumento afilado suelto se olvida igual que los demás."
+        hint_specific: "«Afilar» saca punta. ¿Qué falta entre los tres argumentos?"
+      - position: 2
+        text: "hilan"
+        is_correct: true
+      - position: 3
+        text: "enganchan"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enganchar» es coloquial y habla de atrapar la atención, y el problema aquí es el orden entre las ideas."
+        hint_specific: "«Enganchar» atrapa. ¿El problema es la atención o la conexión?"
+  - position: 5
+    sentence: "Gonzalo {{blank}} la queja del cliente con el retraso del proveedor y, de golpe, el problema tuvo cara."
+    hint_general: "Une dos hechos y aparece una sola historia."
+    explanation: "Hiló: unió dos hechos y apareció una sola historia. «Afiló» es sacar punta a algo, y «mezcló» los habría confundido en vez de enlazarlos."
+    options:
+      - position: 1
+        text: "hiló"
+        is_correct: true
+      - position: 2
+        text: "afiló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afilar» es sacar punta a algo, y aquí dos hechos separados pasan a formar una historia."
+        hint_specific: "«Afilar» saca punta. ¿Qué hizo Gonzalo con la queja y el retraso?"
+      - position: 3
+        text: "mezcló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mezclar» los confundiría en una masa, y lo que pasa es que se ve cómo uno lleva al otro."
+        hint_specific: "«Mezclar» funde las cosas. ¿El problema quedó confuso o claro?"
+  - position: 6
+    sentence: "Nadie recuerda una lista: recordamos lo que alguien supo {{blank}} en un relato con principio y final."
+    hint_general: "El relato conecta las partes; la lista solo las coloca."
+    explanation: "Hilar: el relato conecta las partes. «Apilar» solo las amontona, como la lista, y «recitar» las repetiría de memoria sin unirlas."
+    options:
+      - position: 1
+        text: "apilar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apilar» amontona las partes, que es justo lo que hace la lista que nadie recuerda."
+        hint_specific: "«Apilar» hace montones. ¿Qué hace la lista que la frase descarta?"
+      - position: 2
+        text: "recitar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recitar» repite algo aprendido, y aquí lo que se recuerda es un relato con principio y final."
+        hint_specific: "«Recitar» repite de memoria. ¿Qué construye la persona de la frase?"
+      - position: 3
+        text: "hilar"
+        is_correct: true
+  - position: 7
+    sentence: "Cuando su tía contaba los veranos del pueblo, {{blank}} treinta años en diez minutos sin perder a nadie."
+    hint_general: "Enlaza treinta años en un camino que se sigue sin esfuerzo."
+    explanation: "Hilaba: enlazaba treinta años en un camino seguible. «Afilaba» es sacar punta a algo, y «empalmaba» es coloquial y sugiere pegar trozos sin orden."
+    options:
+      - position: 1
+        text: "empalmaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Empalmar» es coloquial y sugiere pegar trozos sin orden, y la frase dice que no se perdía nadie."
+        hint_specific: "«Empalmar» junta a lo bruto. ¿Qué pasaba con quien escuchaba?"
+      - position: 2
+        text: "hilaba"
+        is_correct: true
+      - position: 3
+        text: "afilaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afilar» es sacar punta a algo, y lo que hacía su tía era enlazar treinta años de recuerdos."
+        hint_specific: "«Afilar» saca punta. ¿Qué hacía su tía con los veranos?"
+  - position: 8
+    sentence: "Un buen caso no acumula pruebas: las {{blank}} hasta que llevan solas a la conclusión."
+    hint_general: "Cada prueba empuja hacia la siguiente."
+    explanation: "Hila: cada prueba empuja hacia la siguiente. «Afila» es sacarles punta, y «amontona» es justo lo que la frase dice que un buen caso no hace."
+    options:
+      - position: 1
+        text: "hila"
+        is_correct: true
+      - position: 2
+        text: "afila"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afilar» es sacar punta a algo, y unas pruebas afiladas pero sueltas no llevan a ninguna conclusión."
+        hint_specific: "«Afilar» saca punta. ¿Qué tienen que hacer las pruebas entre sí?"
+      - position: 3
+        text: "amontona"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amontonar» es acumular, y la frase empieza diciendo que un buen caso no acumula."
+        hint_specific: "«Amontonar» apila. ¿Qué dice la frase que no hace un buen caso?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cinco datos, una historia"
+    body: "Otilia llevaba cinco cifras correctas y una sala aburrida. Las hiló: la queja de marzo llevaba al retraso del proveedor, y ese retraso a la subida de coste. Al terminar, nadie pidió el detalle: pidieron una decisión."
+    before_phrase: "Te cuento los datos y ya sacas tú las conclusiones."
+    after_phrase: "Los hilo y verás adónde llevan."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los veranos del pueblo"
+    body: "Su tía empezaba por el año que llegó la piscina y terminaba por la boda de la vecina, y nadie se perdía nunca. Casandra entendió tarde por qué: no contaba recuerdos sueltos, los hilaba. Cada verano explicaba el siguiente."
+    before_phrase: "Cuenta las cosas un poco a saltos, pero se entiende."
+    after_phrase: "No cuenta recuerdos sueltos: los hila."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Tres trabajos, un camino"
+    body: "El currículo de Ivo parecía un salto de un sector a otro. En la entrevista lo hiló: «Empecé atendiendo quejas, aprendí a medirlas y acabé diseñando el proceso que las evita». Ya no eran tres empleos: era una sola trayectoria."
+    before_phrase: "He hecho cosas muy distintas, es un poco lío."
+    after_phrase: "Te lo hilo: de las quejas al proceso que las evita."
+metrics:
+  zipf_overall: 4.3033
+  dispersion_dp: 0.1217
+  pedantry_proxy: 0.4450
+  family_size: 10
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "evocar"
+status: "gated"
+lemma: "evocar"
+part_of_speech: "verbo"
+syllables:
+  - "e"
+  - "vo"
+  - "car"
+stressed_syllable: 3
+ipa_latam: "[e.βoˈkaɾ]"
+ipa_es: "[e.βoˈkaɾ]"
+explanation: "Traer a la cabeza una imagen o un recuerdo con muy pocas palabras."
+example_sentence: "Con dos palabras, «olor a lluvia», consiguió evocar el patio de su infancia."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es el atajo del que cuenta historias: en vez de describir diez minutos, enciendes una imagen que ya existe."
+when_not_to_use: "No la uses para algo que tu público nunca ha vivido: si la imagen no está dentro, no hay nada que encender."
+collocations:
+  - "evocar un recuerdo"
+  - "evocar una imagen"
+  - "evocar un olor"
+replaces:
+  - before: "Eso me recuerda a cuando éramos pequeños"
+    after: "Eso evoca nuestra infancia"
+  - before: "Quiero que se imaginen el sitio"
+    after: "Quiero evocar el sitio"
+  - before: "Me trae a la cabeza los veranos de antes"
+    after: "Evoca los veranos de antes"
+family:
+  - "evocación"
+  - "evocador"
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "recordar"
+  funcion:
+    - "imaginar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "invocar"
+    difference: "«Invocar» es llamar a alguien o apoyarse en una norma para pedir algo; la otra palabra enciende una imagen en la cabeza."
+    memory_trick: "Invocas una norma para defenderte; enciendes una imagen para que te vean."
+  - confused_with: "recordar"
+    difference: "«Recordar» ocurre dentro de ti; la otra palabra hace que la imagen aparezca en la cabeza de quien te escucha."
+    memory_trick: "Recuerdas tú; el otro verbo enciende la imagen del que escucha."
+exercises:
+  - position: 1
+    sentence: "Con tres palabras, «olor a lluvia», Ámbar consiguió {{blank}} el patio de su infancia en la cabeza de todos."
+    hint_general: "Tres palabras encienden una imagen dentro de quien escucha."
+    explanation: "Evocar: tres palabras encienden una imagen ajena. «Invocar» es apoyarse en una norma o llamar a alguien, y «teletransportar» es coloquial y exagera el efecto."
+    options:
+      - position: 1
+        text: "invocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Invocar» es llamar a alguien o apoyarse en una norma para pedir algo, y aquí solo se enciende un recuerdo."
+        hint_specific: "«Invocar» aparece con normas y llamadas. ¿Qué provocan esas tres palabras?"
+      - position: 2
+        text: "evocar"
+        is_correct: true
+      - position: 3
+        text: "teletransportar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Teletransportar» es coloquial y exagera, y lo que ocurre es que aparece una imagen en la cabeza."
+        hint_specific: "«Teletransportar» mueve cuerpos. ¿Quién se mueve en esta frase?"
+  - position: 2
+    sentence: "Delia no describió la casa entera: prefirió {{blank}} la cocina con el ruido de la cafetera."
+    hint_general: "Con un sonido basta para que aparezca el lugar."
+    explanation: "Evocar: un sonido hace aparecer el lugar. «Provocar» sería causar una reacción, y «describir» es justo lo que la frase dice que no hizo."
+    options:
+      - position: 1
+        text: "evocar"
+        is_correct: true
+      - position: 2
+        text: "provocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Provocar» es causar una reacción, y aquí lo que aparece es una imagen de la cocina."
+        hint_specific: "«Provocar» empuja a una reacción. ¿Qué aparece con el ruido de la cafetera?"
+      - position: 3
+        text: "describir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Describir» es lo que la frase dice que Delia no hizo: no contó la casa entera."
+        hint_specific: "«Describir» detalla con palabras. ¿Qué descartó Delia al principio?"
+  - position: 3
+    sentence: "Una buena historia no explica el miedo a mudarse: lo {{blank}} con una caja vacía y un pasillo."
+    hint_general: "Enciende la sensación con un detalle, en vez de nombrarla."
+    explanation: "Evoca: enciende la sensación con un detalle. «Invoca» es apoyarse en una norma o llamar a alguien, y «resucita» es coloquial y sugiere devolver algo acabado."
+    options:
+      - position: 1
+        text: "invoca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Invocar» es llamar a alguien o apoyarse en una norma, y aquí una caja vacía enciende una sensación."
+        hint_specific: "«Invocar» pertenece a normas y llamadas. ¿Qué hace la caja vacía?"
+      - position: 2
+        text: "evoca"
+        is_correct: true
+      - position: 3
+        text: "resucita"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Resucitar» es coloquial cuando se usa así y sugiere devolver algo acabado, y aquí la sensación sigue viva."
+        hint_specific: "«Resucitar» necesita algo acabado. ¿El miedo a mudarse se había acabado?"
+  - position: 4
+    sentence: "Cuando Ivo dijo «el tren de las siete», {{blank}} en su hermano un invierno entero."
+    hint_general: "Una frase corta enciende un año completo en otra persona."
+    explanation: "Evocó: una frase corta encendió un año entero en otro. «Convocó» es llamar a una reunión, e «inventó» supondría que ese invierno no existió."
+    options:
+      - position: 1
+        text: "convocó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Convocar» es llamar a alguien a una reunión, y aquí lo que aparece es un recuerdo."
+        hint_specific: "«Convocar» junta gente en un sitio. ¿Qué apareció en su hermano?"
+      - position: 2
+        text: "evocó"
+        is_correct: true
+      - position: 3
+        text: "inventó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inventar» supondría que ese invierno no existió, y la frase da por hecho que los dos lo vivieron."
+        hint_specific: "«Inventar» crea algo nuevo. ¿Ese invierno es nuevo para su hermano?"
+  - position: 5
+    sentence: "Si tu charla arranca con una imagen que {{blank}} algo conocido, la sala te sigue sin esfuerzo."
+    hint_general: "La imagen enciende algo que el público ya tiene dentro."
+    explanation: "Evoca: la imagen enciende algo que el público ya tiene. «Provoca» sería causar una reacción, y «repite» daría por dicho algo que aún no se ha contado."
+    options:
+      - position: 1
+        text: "evoca"
+        is_correct: true
+      - position: 2
+        text: "provoca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Provocar» es causar una reacción, y aquí lo que ocurre es que aparece algo ya conocido."
+        hint_specific: "«Provocar» empuja a reaccionar. ¿Qué hace la imagen con lo conocido?"
+      - position: 3
+        text: "repite"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» exige haberlo dicho antes, y la charla acaba de arrancar."
+        hint_specific: "«Repetir» necesita algo ya dicho. ¿En qué momento va la charla?"
+  - position: 6
+    sentence: "Nadie recuerda la lista de países del informe: recordamos la frase que {{blank}} el olor de una cocina."
+    hint_general: "Esa frase encendió un olor en la cabeza de quien leía."
+    explanation: "Evocó: la frase encendió un olor en quien leía. «Invocó» es apoyarse en una norma o llamar a alguien, y «describió» habría contado el olor con detalle."
+    options:
+      - position: 1
+        text: "invocó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Invocar» es llamar a alguien o apoyarse en una norma, y aquí una frase enciende un olor."
+        hint_specific: "«Invocar» va de normas y llamadas. ¿Qué provocó esa frase?"
+      - position: 2
+        text: "describió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Describir» habría detallado el olor con muchas palabras, y lo que se recuerda es una sola frase."
+        hint_specific: "«Describir» necesita muchas palabras. ¿Cuánto ocupaba esa frase?"
+      - position: 3
+        text: "evocó"
+        is_correct: true
+  - position: 7
+    sentence: "Gonzalo eligió una canción vieja para {{blank}} los años en que el equipo cabía en una mesa."
+    hint_general: "La canción hace aparecer aquella época en la cabeza de todos."
+    explanation: "Evocar: la canción hace aparecer aquella época. «Convocar» es llamar a una reunión, y «teletransportar» es coloquial y exagera lo que ocurre."
+    options:
+      - position: 1
+        text: "teletransportar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Teletransportar» es coloquial y mueve cuerpos, y aquí solo aparece un recuerdo compartido."
+        hint_specific: "«Teletransportar» mueve gente de sitio. ¿Quién se mueve al sonar la canción?"
+      - position: 2
+        text: "evocar"
+        is_correct: true
+      - position: 3
+        text: "convocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Convocar» es llamar a alguien a una reunión, y la canción no cita a nadie: trae una época."
+        hint_specific: "«Convocar» reúne personas. ¿Qué trae la canción?"
+  - position: 8
+    sentence: "La palabra «lunes» {{blank}} una imagen distinta en cada persona, y por eso conviene concretar la fecha."
+    hint_general: "Enciende una imagen propia dentro de cada quien."
+    explanation: "Evoca: enciende una imagen propia en cada persona. «Invoca» es apoyarse en una norma o llamar a alguien, y «explica» daría una definición común para todos."
+    options:
+      - position: 1
+        text: "evoca"
+        is_correct: true
+      - position: 2
+        text: "invoca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Invocar» es llamar a alguien o apoyarse en una norma, y aquí cada persona se hace una imagen propia."
+        hint_specific: "«Invocar» va de normas y llamadas. ¿Qué pasa en la cabeza de cada persona?"
+      - position: 3
+        text: "explica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explicar» daría una definición igual para todos, y el problema es justo que cada uno entiende otra cosa."
+        hint_specific: "«Explicar» unifica el significado. ¿Todos entienden lo mismo con «lunes»?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Olor a cartón"
+    body: "Otilia tenía que explicar por qué el almacén nuevo cambiaba todo y la sala estaba dormida. Empezó así: «¿Recuerdas el olor a cartón mojado del sótano viejo?». Tres personas hicieron una mueca. Con eso evocó el problema mejor que con cualquier gráfico."
+    before_phrase: "El almacén antiguo tenía humedad, ya lo sabes."
+    after_phrase: "¿Recuerdas el olor a cartón mojado?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El tren de las siete"
+    body: "Ivo y su hermano no hablaban de aquel invierno desde hacía años. Bastó una frase en la cena: «El tren de las siete». Los dos se rieron a la vez. Evocó un año entero sin contar una sola escena."
+    before_phrase: "¿Te acuerdas de aquella época, cuando íbamos en tren y tal?"
+    after_phrase: "El tren de las siete: con eso lo evoco todo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La canción de la mesa pequeña"
+    body: "En la fiesta de los diez años, Gonzalo no dio un discurso. Puso una canción de aquellos primeros meses y dijo dos frases. La sala entera sonrió a la vez: la canción evocó el local diminuto donde habían empezado."
+    before_phrase: "Quería recordarte cómo empezamos, bla, bla."
+    after_phrase: "Esta canción evoca la mesa donde empezamos."
+metrics:
+  zipf_overall: 4.0996
+  dispersion_dp: 0.1252
+  pedantry_proxy: 0.4367
+  family_size: 22
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

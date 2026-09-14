@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 123
+slug: "idoneo"
+status: "draft"
+lemma: "idóneo"
+part_of_speech: "adjetivo"
+syllables: ["i", "dó", "ne", "o"]
+stressed_syllable: 2
+ipa_latam: "[iˈðo.ne.o]"
+ipa_es: "[iˈðo.ne.o]"
+explanation: "Que reúne justo lo que hace falta para un puesto o un momento."
+example_sentence: "Buscan un perfil idóneo para el puesto, no el currículo más largo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dicho sobre ti mismo, funciona si va con una prueba: por qué encajas, no cuánto vales."
+when_not_to_use: "No la uses como sinónimo de perfecto; aquí lo que cuenta es el encaje con una necesidad."
+collocations:
+  - "el candidato idóneo"
+  - "el momento idóneo"
+  - "el perfil idóneo"
+replaces:
+  - before: "Es la persona buena para el puesto"
+    after: "Es la persona idónea para el puesto"
+  - before: "No es el mejor momento para pedirlo"
+    after: "No es el momento idóneo para pedirlo"
+  - before: "Encaja perfecto con lo que buscan"
+    after: "Es el perfil idóneo para lo que buscan"
+family: ["idoneidad"]
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin: ["bueno"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "idílico"
+    difference: "«Idílico» describe un lugar o una escena preciosa y tranquila; la otra palabra dice que algo encaja con lo que se necesita."
+    memory_trick: "Idílico es una playa al atardecer; lo otro es la persona que buscabas."
+  - confused_with: "único"
+    difference: "«Único» dice que no hay otro; la otra palabra dice que encaja bien, aunque existan más opciones."
+    memory_trick: "Único no tiene rival; encajar no exige estar solo."
+exercises:
+  - position: 1
+    sentence: "De las once personas entrevistadas, Fernanda resultó la más {{blank}} para el puesto de compras."
+    hint_general: "Es la que mejor reúne lo que el puesto necesita."
+    explanation: "Idónea: la que mejor reúne lo que el puesto pide. «Idílica» describe un paisaje precioso, y «longeva» habla de vivir muchos años."
+    options:
+      - position: 1
+        text: "idílica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílica» describe una escena o un lugar precioso y tranquilo, y aquí se elige a una persona para un puesto."
+        hint_specific: "«Idílica» pide un paisaje. ¿Qué se está eligiendo en esta frase?"
+      - position: 2
+        text: "idónea"
+        is_correct: true
+      - position: 3
+        text: "longeva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Longeva» dice que alguien vive muchos años, y lo que se valora aquí es el encaje con el puesto."
+        hint_specific: "«Longeva» mide años de vida. ¿Qué mide una entrevista de trabajo?"
+  - position: 2
+    sentence: "Pedir un aumento el mismo día del cierre no es el momento {{blank}}."
+    hint_general: "Ese día no reúne las condiciones que el asunto necesita."
+    explanation: "Idóneo: el momento que reúne las condiciones. «Idílico» describe un paisaje precioso, y «óptimo» suena a informe técnico."
+    options:
+      - position: 1
+        text: "idóneo"
+        is_correct: true
+      - position: 2
+        text: "idílico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílico» describe una escena preciosa y tranquila, y aquí se habla de elegir bien el día."
+        hint_specific: "«Idílico» pinta una postal. ¿De qué habla la frase: de belleza o de oportunidad?"
+      - position: 3
+        text: "óptimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Óptimo» suena a informe técnico y a medición, y esto es un consejo de trato con tu jefa."
+        hint_specific: "«Óptimo» viene de una hoja de cálculo. ¿Encaja al hablar de pedir un aumento?"
+  - position: 3
+    sentence: "Mi hermana buscó durante meses el piso {{blank}}: cerca del colegio y con ascensor."
+    hint_general: "Buscaba el que reuniera justo esas dos condiciones."
+    explanation: "Idóneo: el que reúne justo esas condiciones. «Idílico» describe un paisaje precioso, y «lujoso» habla de dinero y no de encaje."
+    options:
+      - position: 1
+        text: "idílico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílico» describe un paisaje o una escena preciosa, y ella pone dos condiciones muy prácticas."
+        hint_specific: "«Idílico» busca belleza. ¿Qué dos cosas pedía tu hermana?"
+      - position: 2
+        text: "lujoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lujoso» habla de dinero y acabados caros, y la frase solo pide colegio cerca y ascensor."
+        hint_specific: "«Lujoso» mira el precio. ¿Alguna de sus dos condiciones habla de lujo?"
+      - position: 3
+        text: "idóneo"
+        is_correct: true
+  - position: 4
+    sentence: "Para ese equipo, un perfil técnico sin paciencia no sería {{blank}}, por muy bueno que fuera."
+    hint_general: "No reuniría lo que ese equipo necesita de verdad."
+    explanation: "Idóneo: no reuniría lo que el equipo necesita. «Idílico» describe un paisaje precioso, y «único» diría que no hay otro igual."
+    options:
+      - position: 1
+        text: "idóneo"
+        is_correct: true
+      - position: 2
+        text: "idílico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílico» describe un paisaje o una escena preciosa, y aquí se juzga si alguien encaja en un equipo."
+        hint_specific: "«Idílico» habla de belleza. ¿Qué se juzga de ese perfil técnico?"
+      - position: 3
+        text: "único"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Único» diría que no hay otro igual, y la frase habla de si encaja con lo que el equipo necesita."
+        hint_specific: "«Único» cuenta cuántos hay. ¿La frase cuenta candidatos o mide encaje?"
+  - position: 5
+    sentence: "Renata explicó en una frase por qué era la candidata {{blank}}: tres años en el mismo sector y un caso resuelto."
+    hint_general: "Reúne justo lo que el puesto estaba pidiendo."
+    explanation: "Idónea: reúne justo lo que el puesto pide. «Idílica» describe un paisaje precioso, e «inmejorable» suena a exageración publicitaria."
+    options:
+      - position: 1
+        text: "idílica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílica» describe una escena preciosa y tranquila, y ella está dando dos pruebas concretas."
+        hint_specific: "«Idílica» pinta un cuadro. ¿Qué está dando Renata: belleza o pruebas?"
+      - position: 2
+        text: "idónea"
+        is_correct: true
+      - position: 3
+        text: "inmejorable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inmejorable» suena a anuncio y promete que nadie puede superarla; ella solo muestra que encaja."
+        hint_specific: "«Inmejorable» es palabra de rebajas. ¿Renata se vende o se explica?"
+  - position: 6
+    sentence: "El salón del segundo piso resultó {{blank}} para el taller: buena luz y sillas movibles."
+    hint_general: "Reúne exactamente lo que el taller necesitaba."
+    explanation: "Idóneo: reúne lo que el taller necesitaba. «Idílico» describe un paisaje precioso, y «amplio» solo habla del tamaño."
+    options:
+      - position: 1
+        text: "idóneo"
+        is_correct: true
+      - position: 2
+        text: "idílico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílico» describe un paisaje o una escena preciosa, y aquí se valoran la luz y las sillas."
+        hint_specific: "«Idílico» habla de belleza. ¿Qué dos cosas se valoran del salón?"
+      - position: 3
+        text: "amplio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amplio» solo habla del tamaño, y la frase menciona la luz y las sillas, no los metros."
+        hint_specific: "«Amplio» mide metros. ¿La frase mide metros o condiciones?"
+  - position: 7
+    sentence: "No hay un currículo {{blank}} en abstracto: depende siempre de lo que la empresa necesite ese año."
+    hint_general: "Solo encaja bien en relación con una necesidad concreta."
+    explanation: "Idóneo: solo encaja en relación con una necesidad. «Idílico» describe un paisaje precioso, y «perfecto» promete que no tiene fallo."
+    options:
+      - position: 1
+        text: "idílico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílico» describe un paisaje o una escena preciosa, y aquí se habla de encajar con una necesidad."
+        hint_specific: "«Idílico» pinta un lugar. ¿De qué depende el encaje según la frase?"
+      - position: 2
+        text: "perfecto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Perfecto» promete que no tiene ni un fallo, y la frase habla de encajar con lo que se necesita."
+        hint_specific: "«Perfecto» no admite fallos. ¿La frase mide fallos o encaje?"
+      - position: 3
+        text: "idóneo"
+        is_correct: true
+  - position: 8
+    sentence: "Aquel fue el momento {{blank}} para cambiar de trabajo: contrato terminado y ahorro suficiente."
+    hint_general: "Ese momento reunía las dos condiciones necesarias."
+    explanation: "Idóneo: reunía las dos condiciones. «Idílico» describe un paisaje precioso, y «dulce» es coloquial aquí y suena a etapa feliz."
+    options:
+      - position: 1
+        text: "idóneo"
+        is_correct: true
+      - position: 2
+        text: "idílico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Idílico» describe una escena preciosa y tranquila, y la frase enumera dos condiciones prácticas."
+        hint_specific: "«Idílico» va de postales. ¿Qué dos cosas coincidieron?"
+      - position: 3
+        text: "dulce"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dulce» es coloquial en este uso y describe una etapa feliz, no un momento con las condiciones justas."
+        hint_specific: "«Dulce» habla del ánimo. ¿Qué hacía bueno ese momento según la frase?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Once candidatos"
+    body: "Entrevistaron a once personas para el puesto de compras. Fernanda no tenía el currículo más largo, pero sí tres años en el mismo sector y un caso resuelto que podía contar. «Es la candidata idónea», dijo la responsable, y explicó por qué en dos frases."
+    before_phrase: "Creo que es la mejor para el puesto."
+    after_phrase: "Es la candidata idónea."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El salón del segundo"
+    body: "El taller no cabía en la sala de siempre y alguien propuso el salón del segundo piso. Buena luz, sillas que se mueven y una pared libre. «Es el espacio idóneo», resumió Héctor, y lo reservaron para los tres jueves siguientes."
+    before_phrase: "Ese sitio nos viene mejor para el taller."
+    after_phrase: "Es el espacio idóneo."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El momento de cambiar"
+    body: "Llevaba dos años queriendo cambiar de trabajo y siempre faltaba algo. Este otoño coincidieron las dos cosas: el contrato terminaba y había ahorro para tres meses. Se lo dijo a su madre en la cocina: «Es el momento idóneo, y no va a repetirse pronto»."
+    before_phrase: "Creo que ahora es buen momento."
+    after_phrase: "Es el momento idóneo."
+metrics:
+  zipf_overall: 4.1449
+  dispersion_dp: 0.1793
+  pedantry_proxy: 0.3162
+  family_size: 6
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

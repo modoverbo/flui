@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2117
+slug: "arbitrario"
+status: "draft"
+lemma: "arbitrario"
+part_of_speech: "adjetivo"
+syllables: ["ar", "bi", "tra", "rio"]
+stressed_syllable: 3
+ipa_latam: "[aɾ.βiˈtɾa.ɾjo]"
+ipa_es: "[aɾ.βiˈtɾa.ɾjo]"
+explanation: "Decidido sin una razón clara y sin regla alguna, solo porque alguien lo quiere así."
+example_sentence: "El nuevo reparto de turnos parecía arbitrario: nadie supo explicar con qué regla se había hecho."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Critica la decisión sin atacar a la persona: hablas de la falta de criterio, no de su carácter."
+when_not_to_use: "No la uses para una decisión que no te gusta pero sí tiene criterio: entonces lo que discutes es el criterio."
+collocations:
+  - "una decisión arbitraria"
+  - "un criterio arbitrario"
+  - "de manera arbitraria"
+replaces:
+  - before: "Lo decidieron porque sí"
+    after: "Fue una decisión arbitraria"
+  - before: "Cambian las reglas cuando les conviene"
+    after: "Cambian las reglas de manera arbitraria"
+  - before: "Nadie sabe con qué criterio eligen"
+    after: "El criterio es arbitrario"
+family: ["arbitrariedad"]
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin: ["porque sí"]
+  funcion: ["criticar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "aleatorio"
+    difference: "«Aleatorio» es lo que sale al azar, sin que nadie elija; lo otro sí lo elige alguien, pero sin una regla detrás."
+    memory_trick: "Lo aleatorio lo decide el azar; lo arbitrario lo decide un capricho."
+  - confused_with: "autoritario"
+    difference: "«Autoritario» describe a quien manda sin escuchar; el otro adjetivo califica la decisión, que puede venir hasta de alguien muy amable."
+    memory_trick: "Autoritario es el modo; arbitrario es el motivo."
+exercises:
+  - position: 1
+    sentence: "Nadie entendió el nuevo reparto de turnos: parecía {{blank}}, sin ninguna regla detrás."
+    hint_general: "El reparto no seguía ninguna regla que se pudiera explicar."
+    explanation: "Arbitrario: el reparto no seguía regla alguna. «Autoritario» describiría a quien manda sin escuchar, e «injusto» diría que perjudica a alguien, que es otra cosa."
+    options:
+      - position: 1
+        text: "autoritario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Autoritario» describe a una persona que manda sin escuchar; aquí lo que se califica es un reparto, y lo que falta es la regla."
+        hint_specific: "Autoritario describe a quien manda. ¿Qué se está calificando aquí?"
+      - position: 2
+        text: "arbitrario"
+        is_correct: true
+      - position: 3
+        text: "injusto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Injusto» diría que perjudica a alguien; un reparto puede salir bien para todos y aun así no tener ninguna regla."
+        hint_specific: "Injusto habla de perjuicio. ¿Lo que molesta es el daño o la falta de regla?"
+  - position: 2
+    sentence: "La subida de precios fue {{blank}}: cada cliente pagó una cifra distinta por el mismo servicio."
+    hint_general: "Cada cliente pagó lo que a alguien le pareció en ese momento."
+    explanation: "Arbitraria: cada cifra salió sin criterio. «Aleatoria» diría que salió de un sorteo, y «cara» hablaría del precio, no de cómo se fijó."
+    options:
+      - position: 1
+        text: "aleatoria"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aleatoria» significa salida al azar, como de un sorteo; aquí las cifras las puso alguien, aunque sin criterio."
+        hint_specific: "Aleatoria sale de un sorteo. ¿Hubo sorteo o hubo alguien decidiendo?"
+      - position: 2
+        text: "cara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cara» mide cuánto cuesta; lo que señala la frase es que cada cliente pagó algo distinto por lo mismo."
+        hint_specific: "Cara mide el precio. ¿Qué señala la frase, el precio o la diferencia?"
+      - position: 3
+        text: "arbitraria"
+        is_correct: true
+  - position: 3
+    sentence: "Si el criterio es {{blank}}, la gente deja de esforzarse y empieza a mirar quién cae bien."
+    hint_general: "Sin reglas claras, gana quien cae bien."
+    explanation: "Arbitrario: sin reglas claras gana el favoritismo. «Autoritario» describiría un modo de mandar, y «discrecional» suena a norma administrativa."
+    options:
+      - position: 1
+        text: "arbitrario"
+        is_correct: true
+      - position: 2
+        text: "autoritario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Autoritario» describe una manera de mandar; un criterio no manda, solo indica con qué regla se decide."
+        hint_specific: "Autoritario describe un modo de mandar. ¿Un criterio manda?"
+      - position: 3
+        text: "discrecional"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Discrecional» pertenece al lenguaje administrativo y significa que alguien puede decidir libremente dentro de la norma."
+        hint_specific: "«Discrecional» suena a norma administrativa. ¿Encaja al hablar del ánimo de un equipo?"
+  - position: 4
+    sentence: "Mi abuela tenía una norma {{blank}} para repartir el postre, y aun así todos la aceptábamos."
+    hint_general: "Su norma no tenía lógica, aunque nadie la discutía."
+    explanation: "Arbitraria: su norma no tenía lógica. «Arbitral» se refiere a los jueces de un partido, y «caprichosa» es cariñoso y coloquial, más de carácter que de criterio."
+    options:
+      - position: 1
+        text: "arbitral"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Arbitral» se dice de lo que hacen los jueces de un partido; una norma casera para el postre no pertenece a ese mundo."
+        hint_specific: "Arbitral vive en los partidos. ¿Hay partido en esta cocina?"
+      - position: 2
+        text: "caprichosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Caprichosa» es coloquial y cariñoso, y describe el carácter de una persona más que la regla que aplica."
+        hint_specific: "«Caprichosa» describe carácter y suena cariñoso. ¿Qué se califica aquí, la abuela o la norma?"
+      - position: 3
+        text: "arbitraria"
+        is_correct: true
+  - position: 5
+    sentence: "El jefe explicó punto por punto su decisión para que nadie la viera {{blank}}."
+    hint_general: "Explica el porqué para que su decisión no parezca un capricho."
+    explanation: "Arbitraria: explica el porqué para que no parezca un capricho. «Autoritaria» hablaría de su manera de mandar, y «dura» hablaría del daño que causa."
+    options:
+      - position: 1
+        text: "dura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dura» habla de lo que duele una decisión; explicarla punto por punto no la hace más suave, la hace comprensible."
+        hint_specific: "Dura mide el daño. ¿Explicarla la hace menos dolorosa o más comprensible?"
+      - position: 2
+        text: "autoritaria"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Autoritaria» describe el modo de mandar de una persona; aquí se califica la decisión, y lo que la salva es el porqué."
+        hint_specific: "Autoritaria describe un modo de mandar. ¿Qué está calificando la frase?"
+      - position: 3
+        text: "arbitraria"
+        is_correct: true
+  - position: 6
+    sentence: "Cambiar las reglas a mitad del juego es {{blank}}, por buenas que sean las reglas nuevas."
+    hint_general: "Cambiar las reglas a mitad de partida no tiene justificación."
+    explanation: "Arbitrario: cambiarlas a mitad no tiene justificación. «Aleatorio» significa dejado al azar, y «confuso» diría que no se entiende, cuando el problema es otro."
+    options:
+      - position: 1
+        text: "aleatorio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aleatorio» es lo que sale al azar; cambiar las reglas a mitad del juego lo decide alguien, no una moneda al aire."
+        hint_specific: "Aleatorio depende del azar. ¿Quién cambia aquí las reglas?"
+      - position: 2
+        text: "arbitrario"
+        is_correct: true
+      - position: 3
+        text: "confuso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confuso» dice que algo no se entiende; las reglas nuevas pueden entenderse perfectamente y el cambio seguir sin justificación."
+        hint_specific: "Confuso significa que no se entiende. ¿El problema es entenderlas o el momento del cambio?"
+  - position: 7
+    sentence: "Lo que molestó al equipo no fue el recorte, sino lo {{blank}} del recorte: nadie supo por qué esos tres proyectos."
+    hint_general: "Molestó no saber por qué salieron esos tres proyectos."
+    explanation: "Arbitrario: nadie supo con qué regla se eligieron. «Aleatorio» diría que salieron por sorteo, y «rápido» hablaría del ritmo, no del criterio."
+    options:
+      - position: 1
+        text: "rápido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rápido» habla de la velocidad del recorte; lo que molesta, según la frase, es no saber por qué esos tres y no otros."
+        hint_specific: "Rápido mide velocidad. ¿Qué dice la frase que molestó?"
+      - position: 2
+        text: "aleatorio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aleatorio» supondría un sorteo limpio; aquí alguien eligió esos tres proyectos y no pudo explicar con qué regla."
+        hint_specific: "Aleatorio supone un sorteo. ¿Hubo sorteo o hubo elección?"
+      - position: 3
+        text: "arbitrario"
+        is_correct: true
+  - position: 8
+    sentence: "Álvaro defendió su valoración con datos, para que nadie la tomara por un juicio {{blank}}."
+    hint_general: "Da datos para que su juicio no parezca un capricho."
+    explanation: "Arbitrario: los datos evitan que parezca un capricho. «Autoritario» hablaría de imponerse sin escuchar, e «improvisado» diría que lo hizo deprisa."
+    options:
+      - position: 1
+        text: "improvisado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisado» dice que se hizo sin preparar; se puede preparar durante semanas y seguir sin una regla que lo explique."
+        hint_specific: "Improvisado habla de falta de preparación. ¿Qué añaden los datos, tiempo o criterio?"
+      - position: 2
+        text: "arbitrario"
+        is_correct: true
+      - position: 3
+        text: "autoritario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Autoritario» describe a quien se impone sin escuchar; Álvaro hace lo contrario, argumenta para que lo discutan."
+        hint_specific: "Autoritario se impone. ¿Álvaro se impone o argumenta?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los tres nombres"
+    body: "La lista de quién iba al congreso salió sin una sola explicación. Marta lo dijo en la reunión, sin levantar la voz: «No discuto los nombres; discuto que el criterio parezca arbitrario. ¿Podemos escribirlo para la próxima?». La próxima lista llegó con criterio."
+    before_phrase: "Parece que lo eligen porque sí."
+    after_phrase: "Discuto que el criterio parezca arbitrario."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La hora de volver"
+    body: "Un fin de semana era la una y el siguiente las once, sin motivo aparente. Su hijo se lo dijo en la cena: «No me quejo de la hora, me quejo de que es arbitraria». Su padre lo pensó, y el domingo apareció con una regla clara y fija."
+    before_phrase: "Es que cambias la hora cuando te da la gana."
+    after_phrase: "No me quejo de la hora, sino de que es arbitraria."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El sorteo del amigo invisible"
+    body: "Cada año alguien acababa con el nombre que menos quería. Enrique propuso un cambio: «Hagamos un sorteo de verdad; lo de ahora es arbitrario y siempre toca lo mismo». Sacaron los papeles de un gorro y esa Navidad no se quejó nadie."
+    before_phrase: "Lo de siempre es a dedo."
+    after_phrase: "Lo de ahora es arbitrario."
+metrics:
+  zipf_overall: 3.7006
+  dispersion_dp: 0.2187
+  pedantry_proxy: 0.5306
+  family_size: 29
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

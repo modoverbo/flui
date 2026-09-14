@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "priorizar"
+status: "draft"
+lemma: "priorizar"
+part_of_speech: "verbo"
+syllables: ["prio", "ri", "zar"]
+stressed_syllable: 3
+ipa_latam: "[pɾjo.ɾiˈsaɾ]"
+ipa_es: "[pɾjo.ɾiˈθaɾ]"
+explanation: "Poner en orden lo que va primero, para que lo importante no quede al final."
+example_sentence: "La lista tenía veinte puntos y una mañana, así que me senté a priorizar antes de empezar."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para decir que no sin decirlo: pones algo delante y lo demás queda detrás, con fecha."
+when_not_to_use: "No la uses si al final vas a hacerlo todo igual: entonces no has ordenado nada, solo has hecho una lista."
+collocations:
+  - "priorizar una lista"
+  - "priorizar el trabajo"
+  - "priorizar lo importante"
+replaces:
+  - before: "Pon primero lo más importante"
+    after: "Prioriza lo importante"
+  - before: "No sé por dónde empezar con todo esto"
+    after: "Todavía no he priorizado"
+  - before: "Habrá que ver qué va antes y qué después"
+    after: "Habrá que priorizar"
+family: ["prioridad", "prioritario"]
+themes:
+  - slug: "redaccion-ejecutiva"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin: ["ordenar"]
+  funcion: ["decidir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "privatizar"
+    difference: "«Privatizar» es pasar algo público a manos privadas; la otra palabra decide qué se hace antes y qué después."
+    memory_trick: "Privatizar cambia de dueño; ordenar por importancia cambia el turno."
+  - confused_with: "ordenar"
+    difference: "«Ordenar» coloca todo en una fila; la otra palabra además decide qué se queda fuera esta semana."
+    memory_trick: "Ordenar alinea; poner algo primero deja algo último."
+exercises:
+  - position: 1
+    sentence: "La lista tenía veinte puntos y solo quedaba una mañana, así que Ámbar tuvo que {{blank}} antes de empezar."
+    hint_general: "Decide qué va primero y qué se queda para otro día."
+    explanation: "Priorizar: decide qué va primero y qué espera. «Privatizar» es pasar algo público a manos privadas, y «despachar» es coloquial y sugiere quitarse la lista de encima sin elegir."
+    options:
+      - position: 1
+        text: "privatizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Privatizar» es pasar algo público a manos privadas, y aquí solo hay una lista de trabajo y una mañana."
+        hint_specific: "«Privatizar» cambia el dueño de algo. ¿Qué tiene delante Ámbar?"
+      - position: 2
+        text: "priorizar"
+        is_correct: true
+      - position: 3
+        text: "despachar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despachar» es coloquial y sugiere quitarse la lista de encima, y aquí hace falta elegir qué va primero."
+        hint_specific: "«Despachar» va de salir del paso. ¿Con veinte puntos y una mañana basta con correr?"
+  - position: 2
+    sentence: "El correo no pedía hacerlo todo: pedía {{blank}} tres cosas y dejar el resto para octubre."
+    hint_general: "Tres cosas delante; lo demás, con fecha más lejana."
+    explanation: "Priorizar: tres cosas delante y el resto con fecha. «Profundizar» sería ir más a fondo en algo, y «clasificar» ordenaría por tipos sin decidir qué se hace antes."
+    options:
+      - position: 1
+        text: "priorizar"
+        is_correct: true
+      - position: 2
+        text: "profundizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Profundizar» es ir más a fondo en un asunto, y el correo habla de cuántas cosas se hacen ahora."
+        hint_specific: "«Profundizar» baja hacia el fondo. ¿El correo pide más hondura o menos cosas?"
+      - position: 3
+        text: "clasificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Clasificar» agrupa por tipos, y el correo pide decidir qué tres cosas se hacen ya."
+        hint_specific: "«Clasificar» hace montones. ¿Un montón dice qué va primero?"
+  - position: 3
+    sentence: "Delia {{blank}} el informe por encima del resto y avisó a quien esperaba lo demás."
+    hint_general: "Lo pone delante y da la cara ante quien queda detrás."
+    explanation: "Priorizó: puso el informe delante y avisó a los demás. «Pulverizó» es reducir algo a polvo, y «ordenó» habría colocado todo en fila sin dejar a nadie esperando."
+    options:
+      - position: 1
+        text: "pulverizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pulverizar» es reducir algo a polvo, y aquí el informe sale adelante, no desaparece."
+        hint_specific: "«Pulverizar» destruye. ¿Qué le pasó al informe?"
+      - position: 2
+        text: "priorizó"
+        is_correct: true
+      - position: 3
+        text: "ordenó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ordenar» coloca todo en una fila, y la frase dice que alguien se quedó esperando, que es lo que se avisa."
+        hint_specific: "«Ordenar» no deja a nadie fuera. ¿Por qué tuvo que avisar Delia?"
+  - position: 4
+    sentence: "Si todo en tu lista lleva la misma marca de urgente, en realidad no has {{blank}} nada."
+    hint_general: "Cuando todo va primero, nada va primero."
+    explanation: "Priorizado: cuando todo va primero, nada va primero. «Privatizado» es pasar algo a manos privadas, y «clasificado» ordenaría por tipos sin decidir turnos."
+    options:
+      - position: 1
+        text: "clasificado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Clasificado» agrupa por tipos, y una lista donde todo lleva la misma marca sí está agrupada: lo que falta es el turno."
+        hint_specific: "«Clasificar» agrupa. ¿Qué falta cuando todo lleva la misma marca?"
+      - position: 2
+        text: "priorizado"
+        is_correct: true
+      - position: 3
+        text: "privatizado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Privatizar» es pasar algo público a manos privadas, y aquí se habla de las marcas de una lista."
+        hint_specific: "«Privatizar» cambia de dueño. ¿De qué habla la frase?"
+  - position: 5
+    sentence: "Cuando nació su hija, Gonzalo aprendió a {{blank}} el tiempo mejor que en cualquier curso."
+    hint_general: "Aprendió a decidir qué iba primero cada día."
+    explanation: "Priorizar: aprendió a decidir qué iba primero. «Profundizar» sería ir más a fondo en un asunto, y «estirar» es coloquial y promete un tiempo que no existe."
+    options:
+      - position: 1
+        text: "profundizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Profundizar» es ir más a fondo en algo, y lo que cambió con su hija fue cuánto tiempo tenía."
+        hint_specific: "«Profundizar» baja al fondo de un tema. ¿Qué se le hizo escaso a Gonzalo?"
+      - position: 2
+        text: "priorizar"
+        is_correct: true
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Estirar» el tiempo es coloquial y promete horas que no existen, y lo que se aprende es a elegir."
+        hint_specific: "«Estirar» supone que el día crece. ¿El día crece cuando llega una hija?"
+  - position: 6
+    sentence: "Nadie puede con todo a la vez: {{blank}} es decidir qué se queda fuera esta semana."
+    hint_general: "Elegir qué va delante significa aceptar qué se queda atrás."
+    explanation: "Priorizar: elegir qué va delante y qué se queda atrás. «Privatizar» es pasar algo a manos privadas, y «ordenar» colocaría todo sin dejar nada fuera."
+    options:
+      - position: 1
+        text: "priorizar"
+        is_correct: true
+      - position: 2
+        text: "privatizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Privatizar» es pasar algo público a manos privadas, y aquí se habla de la semana de una persona."
+        hint_specific: "«Privatizar» habla de propiedad. ¿De qué habla esta frase?"
+      - position: 3
+        text: "ordenar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ordenar» coloca todo en una fila y nada se queda fuera, que es justo lo contrario de lo que dice la frase."
+        hint_specific: "«Ordenar» conserva todo. ¿Qué pasa aquí con parte del trabajo?"
+  - position: 7
+    sentence: "El equipo pasó de discutir dos horas a {{blank}} en quince minutos con una regla muy sencilla."
+    hint_general: "En quince minutos deciden el orden de lo que se hace."
+    explanation: "Priorizar: en quince minutos deciden el orden. «Pulverizar» es reducir algo a polvo, y «repartir» dividiría el trabajo entre personas, no en el tiempo."
+    options:
+      - position: 1
+        text: "repartir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repartir» divide el trabajo entre personas, y lo que se decide en esos quince minutos es el orden."
+        hint_specific: "«Repartir» mira quién lo hace. ¿Qué se decidía en esas dos horas de discusión?"
+      - position: 2
+        text: "priorizar"
+        is_correct: true
+      - position: 3
+        text: "pulverizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pulverizar» es reducir algo a polvo, y el equipo sale de la sala con un plan, no con restos."
+        hint_specific: "«Pulverizar» deshace. ¿Con qué sale el equipo de la reunión?"
+  - position: 8
+    sentence: "Antes de abrir el correo del lunes, Ivo escribe tres líneas para {{blank}} su semana."
+    hint_general: "Decide él qué va primero, antes de que lo decidan los demás."
+    explanation: "Priorizar: decide él qué va primero. «Privatizar» es pasar algo a manos privadas, y «adivinar» dejaría la semana al azar en vez de decidirla."
+    options:
+      - position: 1
+        text: "adivinar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adivinar» deja la semana al azar, y esas tres líneas sirven para decidirla."
+        hint_specific: "«Adivinar» no decide nada. ¿Para qué escribe Ivo esas líneas?"
+      - position: 2
+        text: "privatizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Privatizar» es pasar algo público a manos privadas, y aquí se habla de organizar una semana de trabajo."
+        hint_specific: "«Privatizar» cambia el dueño de algo. ¿Qué organiza Ivo el lunes?"
+      - position: 3
+        text: "priorizar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres delante, el resto en octubre"
+    body: "La lista de Otilia tenía veinte peticiones y todas llegaban con la palabra urgente. Escribió un correo corto: «He priorizado: estas tres salen este mes, las demás en octubre. Si alguna no puede esperar, dímelo hoy». Solo una persona respondió, y tenía razón."
+    before_phrase: "Voy a intentar hacerlo todo, a ver si llego."
+    after_phrase: "He priorizado: estas tres salen este mes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los martes son suyos"
+    body: "Entre el trabajo y la casa, Gonzalo no encontraba una hora para su padre. Dejó de buscar huecos y priorizó: los martes a las siete, pasara lo que pasara. Llevan catorce meses y ya nadie pregunta si habrá martes."
+    before_phrase: "A ver si saco un rato esta semana."
+    after_phrase: "Lo he priorizado: los martes a las siete."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "¿Qué harías el primer mes?"
+    body: "Ámbar no prometió arreglarlo todo: «El primer mes priorizo dos cosas: entender por qué se van los clientes y arreglar el aviso de cobro. Lo demás lo miro en el segundo». Le dijeron que era la primera respuesta con orden del día."
+    before_phrase: "Pues me pondría con todo lo que haga falta."
+    after_phrase: "El primer mes priorizo dos cosas."
+metrics:
+  zipf_overall: 4.2124
+  dispersion_dp: 0.1835
+  pedantry_proxy: 0.6121
+  family_size: 34
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

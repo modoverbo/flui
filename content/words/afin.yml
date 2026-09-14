@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 127
+slug: "afin"
+status: "gated"
+lemma: "afín"
+part_of_speech: "adjetivo"
+syllables:
+  - "a"
+  - "fín"
+stressed_syllable: 2
+ipa_latam: "[aˈfin]"
+ipa_es: "[aˈfin]"
+explanation: "Que se parece a otra cosa o va en la misma dirección que ella."
+example_sentence: "Buscan un perfil afín al equipo, no una copia del mismo currículo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para decir que encajas sin decir que eres igual: coincides en el rumbo, no en la forma."
+when_not_to_use: "No la uses para decir que dos cosas son iguales; aquí hay parecido, no calco."
+collocations:
+  - "un perfil afín"
+  - "ideas afines"
+  - "gente afín"
+replaces:
+  - before: "Su forma de trabajar se parece a la nuestra"
+    after: "Su forma de trabajar es afín a la nuestra"
+  - before: "Busco gente parecida a mí"
+    after: "Busco gente afín"
+  - before: "Tenemos ideas bastante parecidas"
+    after: "Tenemos ideas afines"
+family:
+  - "afinidad"
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "parecido"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "afán"
+    difference: "«Afán» es el empeño grande por conseguir algo; la otra palabra dice que dos cosas van en la misma dirección."
+    memory_trick: "El afán empuja; el parecido acerca."
+  - confused_with: "idéntico"
+    difference: "«Idéntico» dice que dos cosas son exactamente iguales; la otra palabra admite diferencias mientras el rumbo coincida."
+    memory_trick: "Idéntico es una copia; parecido es un compañero de rumbo."
+exercises:
+  - position: 1
+    sentence: "Buscan un perfil {{blank}} al del equipo, no una copia exacta del mismo currículo."
+    hint_general: "Buscan a alguien que vaya en la misma dirección, sin ser igual."
+    explanation: "Afín: va en la misma dirección sin ser igual. «Afinado» se dice de un instrumento, e «idéntico» sería una copia exacta."
+    options:
+      - position: 1
+        text: "afín"
+        is_correct: true
+      - position: 2
+        text: "afinado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinado» se dice de un instrumento que suena en su tono justo, no de un perfil de trabajo."
+        hint_specific: "«Afinado» pide un piano o una guitarra. ¿Qué se busca aquí?"
+      - position: 3
+        text: "idéntico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Idéntico» quiere decir exactamente igual, y el final de la frase descarta justo la copia."
+        hint_specific: "«Idéntico» no admite diferencias. Relee el final: ¿quieren una copia?"
+  - position: 2
+    sentence: "Mi vecina y yo tenemos ideas bastante {{blank}} sobre cómo repartir los gastos del portal."
+    hint_general: "Las dos van en la misma línea, aunque no sean iguales."
+    explanation: "Afines: van en la misma línea. «Afiladas» se dice de un cuchillo, y «opuestas» significaría lo contrario."
+    options:
+      - position: 1
+        text: "afiladas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afiladas» se dice de un cuchillo o de un lápiz con buena punta, no de dos ideas que coinciden."
+        hint_specific: "«Afiladas» cortan. ¿Qué se describe: cuchillos o ideas?"
+      - position: 2
+        text: "afines"
+        is_correct: true
+      - position: 3
+        text: "opuestas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Opuestas» dice que van en contra, y la frase cuenta que las dos piensan de forma parecida."
+        hint_specific: "«Opuestas» chocan. ¿Estas dos vecinas coinciden o discuten?"
+  - position: 3
+    sentence: "El club busca socios con intereses {{blank}}: gente a la que le guste andar y leer."
+    hint_general: "Buscan gustos que vayan en la misma dirección."
+    explanation: "Afines: gustos que van en la misma dirección. «Afinados» se dice de instrumentos, y «consustanciales» es palabra culta y suena rara aquí."
+    options:
+      - position: 1
+        text: "afinados"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinados» se dice de instrumentos que suenan en su tono, no de los gustos de la gente."
+        hint_specific: "«Afinados» suenan bien en un concierto. ¿Qué pide el club?"
+      - position: 2
+        text: "consustanciales"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Consustancial» es una palabra muy culta que dice que algo es parte esencial de otra cosa; en un cartel de club suena rarísima."
+        hint_specific: "«Consustanciales» pertenece a la filosofía. ¿Encaja en un cartel de barrio?"
+      - position: 3
+        text: "afines"
+        is_correct: true
+  - position: 4
+    sentence: "Su forma de trabajar es muy {{blank}} a la nuestra: reuniones cortas y decisiones escritas."
+    hint_general: "Su manera de trabajar va en la misma dirección que la nuestra."
+    explanation: "Afín: va en la misma dirección que la nuestra. «Afinada» se dice de un instrumento, y «homóloga» es lenguaje de informe."
+    options:
+      - position: 1
+        text: "afinada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinada» se dice de un instrumento o de un motor bien ajustado, no de una manera de trabajar parecida."
+        hint_specific: "«Afinada» pide cuerdas o motores. ¿Qué se compara aquí?"
+      - position: 2
+        text: "afín"
+        is_correct: true
+      - position: 3
+        text: "homóloga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Homóloga» es lenguaje de informe y se usa para cargos que se corresponden entre dos organizaciones."
+        hint_specific: "«Homóloga» sale en las notas de prensa. ¿Encaja al hablar de reuniones cortas?"
+  - position: 5
+    sentence: "En la entrevista, Renata explicó por qué su perfil era {{blank}} al puesto y no solo parecido en el papel."
+    hint_general: "Va en la misma dirección que el puesto, no solo se le parece."
+    explanation: "Afín: va en la misma dirección del puesto. «Afiliado» significa pertenecer a una asociación, y «similar» solo dice que se parece."
+    options:
+      - position: 1
+        text: "afiliado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afiliado» dice que alguien pertenece a una asociación o a un club, no que encaje con un puesto."
+        hint_specific: "«Afiliado» pide un carné. ¿De qué habla Renata?"
+      - position: 2
+        text: "afín"
+        is_correct: true
+      - position: 3
+        text: "similar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Similar» solo dice que se parece por fuera, y ella subraya que además va en la misma dirección."
+        hint_specific: "«Similar» se queda en el papel. ¿Qué añade Renata a ese parecido?"
+  - position: 6
+    sentence: "Aquellos dos negocios eran {{blank}} y acabaron compartiendo local."
+    hint_general: "Los dos iban en la misma línea de actividad."
+    explanation: "Afines: iban en la misma línea de actividad. «Afiliados» sería pertenecer a una organización, y «rivales» competirían entre sí."
+    options:
+      - position: 1
+        text: "afines"
+        is_correct: true
+      - position: 2
+        text: "afiliados"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afiliados» dice que pertenecen a una organización, y aquí lo que comparten es el tipo de actividad."
+        hint_specific: "«Afiliados» necesita una organización detrás. ¿Qué comparten esos negocios?"
+      - position: 3
+        text: "rivales"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rivales» compiten entre sí, y estos dos acabaron compartiendo el mismo local."
+        hint_specific: "«Rivales» se disputan clientes. ¿Compartirías local con un rival?"
+  - position: 7
+    sentence: "Mi hermano y mi cuñada no son iguales, pero tienen gustos {{blank}} para el cine."
+    hint_general: "Sin ser iguales, coinciden en la misma dirección."
+    explanation: "Afines: coinciden en la misma dirección. «Afinados» se dice de instrumentos, e «idénticos» serían exactamente iguales."
+    options:
+      - position: 1
+        text: "afinados"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinados» se dice de instrumentos que suenan en su tono, no de los gustos de dos personas."
+        hint_specific: "«Afinados» va de música. ¿De qué van los gustos de esa pareja?"
+      - position: 2
+        text: "afines"
+        is_correct: true
+      - position: 3
+        text: "idénticos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Idénticos» quiere decir exactamente iguales, y la frase empieza diciendo que no lo son."
+        hint_specific: "«Idénticos» no deja diferencias. ¿Cómo empieza la frase?"
+  - position: 8
+    sentence: "Un equipo con valores {{blank}} discute menos y avanza más rápido."
+    hint_general: "Los valores del equipo van en la misma dirección."
+    explanation: "Afines: los valores van en la misma dirección. «Afilados» se dice de lo que corta, y «uniformes» serían todos iguales."
+    options:
+      - position: 1
+        text: "afines"
+        is_correct: true
+      - position: 2
+        text: "afilados"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afilados» se dice de lo que corta bien, como un cuchillo, y unos valores no cortan nada."
+        hint_specific: "«Afilados» tienen filo. ¿Los valores tienen filo?"
+      - position: 3
+        text: "uniformes"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Uniformes» dice que son todos iguales, y para avanzar basta con que apunten al mismo sitio."
+        hint_specific: "«Uniformes» borra las diferencias. ¿Hace falta que nadie se diferencie?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Parecido no basta"
+    body: "Renata no tenía el mismo recorrido que el resto del equipo y lo sabía. «Mi perfil no es idéntico, pero sí afín: trabajo con datos y con clientes a la vez, como ustedes», explicó. Le preguntaron por la parte de clientes durante diez minutos."
+    before_phrase: "Creo que mi perfil se parece bastante al del equipo."
+    after_phrase: "Mi perfil no es idéntico, pero sí afín."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El club de los jueves"
+    body: "El club de senderismo puso un cartel en la panadería: «Buscamos socios con intereses afines: andar despacio y leer en la cima». Se apuntaron nueve personas en dos semanas, y ninguna preguntó por el ritmo."
+    before_phrase: "Buscamos gente con gustos parecidos."
+    after_phrase: "Buscamos socios con intereses afines."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Cine en el salón"
+    body: "Mi hermano y mi cuñada discuten por casi todo, menos por las películas. Ella pone el género, él pone la hora y siempre acaban de acuerdo. «En eso somos afines», dice él, y ella no lo desmiente."
+    before_phrase: "En eso tenemos gustos parecidos."
+    after_phrase: "En eso somos afines."
+metrics:
+  zipf_overall: 3.8692
+  dispersion_dp: 0.3449
+  pedantry_proxy: 0.4138
+  family_size: 0
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

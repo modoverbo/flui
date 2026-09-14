@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "retomar"
-status: "draft"
+status: "gated"
 lemma: "retomar"
 part_of_speech: "verbo"
-syllables: ["re", "to", "mar"]
+syllables:
+  - "re"
+  - "to"
+  - "mar"
 stressed_syllable: 3
 ipa_latam: "[re.toˈmaɾ]"
 ipa_es: "[re.toˈmaɾ]"
@@ -31,8 +34,10 @@ themes:
   - slug: "persuasion-storytelling"
     relevance: 1
 tags:
-  comodin: ["volver"]
-  funcion: ["reanudar"]
+  comodin:
+    - "volver"
+  funcion:
+    - "reanudar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -226,7 +231,12 @@ readings:
     body: "El plan del viaje llevaba dormido desde enero en el grupo. Leandro escribió una línea: «Retomo el viaje: ¿mayo o junio?». En dos horas había fechas, presupuesto y dos personas buscando casa."
     before_phrase: "A ver si volvemos a hablar de lo del viaje."
     after_phrase: "Retomo el viaje: ¿mayo o junio?"
+metrics:
+  zipf_overall: 4.5464
+  dispersion_dp: 0.0971
+  pedantry_proxy: 0.6005
+  family_size: 16
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

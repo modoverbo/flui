@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2124
+slug: "reconsiderar"
+status: "draft"
+lemma: "reconsiderar"
+part_of_speech: "verbo"
+syllables: ["re", "con", "si", "de", "rar"]
+stressed_syllable: 5
+ipa_latam: "[re.kon.si.ðeˈɾaɾ]"
+ipa_es: "[re.kon.si.ðeˈɾaɾ]"
+explanation: "Volver a pensar algo que ya se había decidido, con la idea de cambiarlo si hace falta."
+example_sentence: "Con el informe nuevo encima de la mesa, el comité aceptó reconsiderar el plazo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Abre la puerta sin acusar a nadie: no dices que se equivocó, dices que hay algo nuevo sobre la mesa."
+when_not_to_use: "No la uses si no traes nada nuevo: repetir la misma petición con otra palabra cansa a cualquiera."
+collocations:
+  - "reconsiderar una decisión"
+  - "reconsiderar la postura"
+  - "reconsiderar un plazo"
+replaces:
+  - before: "¿Podrías pensártelo otra vez?"
+    after: "¿Podrías reconsiderarlo?"
+  - before: "A ver si cambias de idea con este dato"
+    after: "Con este dato, ¿lo reconsideras?"
+  - before: "Le pedí que se lo volviera a pensar"
+    after: "Le pedí que lo reconsiderara"
+family: ["reconsideración"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin: ["pensar"]
+  funcion: ["pedir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "considerar"
+    difference: "«Considerar» es pensar algo por primera vez; la otra palabra vuelve sobre una decisión que ya estaba tomada."
+    memory_trick: "Consideras antes; reconsideras después."
+  - confused_with: "recapacitar"
+    difference: "«Recapacitar» suena a reproche moral, como pedirle a alguien que entre en razón; lo otro solo pide mirar de nuevo una decisión."
+    memory_trick: "Recapacitar suena a sermón; reconsiderar, a dato nuevo."
+exercises:
+  - position: 1
+    sentence: "Con el informe nuevo encima de la mesa, el comité aceptó {{blank}} el plazo de entrega."
+    hint_general: "Aceptan mirar otra vez el plazo con el informe nuevo."
+    explanation: "Reconsiderar: aceptan mirar otra vez el plazo. «Reconstruir» sería volver a levantar algo derribado, y «aplazar» sería moverlo sin pensarlo de nuevo."
+    options:
+      - position: 1
+        text: "reconstruir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconstruir» es volver a levantar algo que se cayó; un plazo no se levanta, se piensa otra vez."
+        hint_specific: "Reconstruir levanta algo caído. ¿Se ha caído algo aquí?"
+      - position: 2
+        text: "reconsiderar"
+        is_correct: true
+      - position: 3
+        text: "aplazar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» es moverlo más tarde sin más; el comité acepta volver a pensarlo, y podría acabar dejándolo igual."
+        hint_specific: "Aplazar ya elige mover la fecha. ¿El comité decide algo o solo acepta mirarlo?"
+  - position: 2
+    sentence: "Marta no pidió un favor: pidió {{blank}} la decisión a la luz de dos datos que nadie tenía."
+    hint_general: "Pide volver sobre la decisión con dos datos nuevos."
+    explanation: "Reconsiderar: pide volver sobre la decisión con datos nuevos. «Reconocer» sería admitir algo, y «repetir» sería volver a anunciar lo mismo."
+    options:
+      - position: 1
+        text: "reconocer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconocer» es admitir algo en voz alta; Marta no pide que admitan nada, pide que miren otra vez."
+        hint_specific: "Reconocer admite algo. ¿Marta pide una admisión o una nueva mirada?"
+      - position: 2
+        text: "repetir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» sería anunciar lo mismo otra vez; con dos datos nuevos sobre la mesa, repetir no sirve de nada."
+        hint_specific: "Repetir dice lo mismo. ¿Para qué trae Marta los dos datos?"
+      - position: 3
+        text: "reconsiderar"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} cada decisión que tomas, el equipo nunca sabrá a qué atenerse contigo."
+    hint_general: "Volver sobre cada decisión deja al equipo sin suelo."
+    explanation: "Reconsideras: vuelves sobre todo lo decidido. «Reconoces» sería admitir algo, y «recapacitas» suena a sermón, como si hubiera que entrar en razón."
+    options:
+      - position: 1
+        text: "reconsideras"
+        is_correct: true
+      - position: 2
+        text: "reconoces"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconocer» es admitir algo en voz alta; admitir cosas no deja al equipo sin saber a qué atenerse, cambiar de decisión sí."
+        hint_specific: "Reconocer admite. ¿Qué desconcierta al equipo, admitir o cambiar?"
+      - position: 3
+        text: "recapacitas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recapacitar» suena a sermón y da por hecho que estabas actuando mal; aquí solo se habla de cambiar decisiones."
+        hint_specific: "«Recapacitar» suena a sermón. ¿La frase te riñe o describe una costumbre?"
+  - position: 4
+    sentence: "Mi madre {{blank}} la norma del móvil cuando le enseñamos para qué lo usábamos de verdad."
+    hint_general: "Volvió a pensar la norma al ver cómo lo usábamos."
+    explanation: "Reconsideró: volvió a pensar la norma con información nueva. «Reconstruyó» sería levantarla de cero, y «confirmó» diría que la dejó igual."
+    options:
+      - position: 1
+        text: "confirmó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confirmar» sería dejar la norma tal cual; la frase da a entender que la información nueva cambió algo."
+        hint_specific: "Confirmar deja todo igual. ¿Para qué le enseñaron el móvil?"
+      - position: 2
+        text: "reconstruyó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconstruir» es levantar de nuevo algo derribado; la norma no estaba derribada, estaba en pie y se pensó otra vez."
+        hint_specific: "Reconstruir levanta lo caído. ¿La norma estaba caída?"
+      - position: 3
+        text: "reconsideró"
+        is_correct: true
+  - position: 5
+    sentence: "Pedirle a alguien que {{blank}} no es pedirle que se rinda: es pedirle que mire otra vez."
+    hint_general: "Mirar otra vez una decisión no es rendirse."
+    explanation: "Reconsidere: mirar otra vez no es rendirse. «Reconozca» sería admitir un fallo, y «cavile» es una palabra literaria para pensar dando vueltas."
+    options:
+      - position: 1
+        text: "reconozca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconocer» es admitir un fallo, y eso sí se parece a rendirse; la frase busca justo distinguir las dos cosas."
+        hint_specific: "Reconocer admite un fallo. ¿Qué quiere distinguir la frase?"
+      - position: 2
+        text: "cavile"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cavilar» es una palabra literaria para pensar dando vueltas a solas; aquí se pide algo concreto a otra persona."
+        hint_specific: "«Cavilar» suena a novela. ¿Se lo pedirías así a un compañero?"
+      - position: 3
+        text: "reconsidere"
+        is_correct: true
+  - position: 6
+    sentence: "Después de escuchar al cliente, Ignacio {{blank}} el precio y volvió con otro número."
+    hint_general: "Vuelve sobre el precio y aparece otro número."
+    explanation: "Reconsideró: volvió sobre el precio y cambió. «Reconoció» sería admitir algo, y «discutió» sugeriría una pelea que la frase no cuenta."
+    options:
+      - position: 1
+        text: "reconoció"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconocer» es admitir algo en voz alta; lo que hace Ignacio es pensar otra vez el precio y traer otro."
+        hint_specific: "Reconocer admite algo. ¿Con qué vuelve Ignacio?"
+      - position: 2
+        text: "reconsideró"
+        is_correct: true
+      - position: 3
+        text: "discutió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» sugiere una pelea; la frase cuenta que escuchó y volvió con otra cifra, sin ningún enfrentamiento."
+        hint_specific: "Discutir sugiere pelea. ¿Qué hizo Ignacio antes de volver?"
+  - position: 7
+    sentence: "Nadie {{blank}} nada si le llegas con la misma frase de la semana pasada."
+    hint_general: "Sin argumentos nuevos, nadie vuelve sobre lo decidido."
+    explanation: "Reconsidera: sin argumentos nuevos nadie vuelve atrás. «Reconstruye» sería levantar algo derribado, y «acepta» daría por hecho un sí que nadie ha dado."
+    options:
+      - position: 1
+        text: "reconstruye"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconstruir» es levantar de nuevo algo caído; la frase habla de volver a pensar una decisión, no de levantar nada."
+        hint_specific: "Reconstruir levanta lo caído. ¿Qué se está pidiendo aquí?"
+      - position: 2
+        text: "reconsidera"
+        is_correct: true
+      - position: 3
+        text: "acepta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aceptar» daría por hecho un sí; el paso anterior, volver a pensarlo, es el que no ocurre sin datos nuevos."
+        hint_specific: "Aceptar ya es decir que sí. ¿Qué paso falta antes del sí?"
+  - position: 8
+    sentence: "La comisión, que ya había dicho que no, aceptó {{blank}} la solicitud porque apareció un documento que faltaba."
+    hint_general: "Vuelven sobre un caso cerrado porque aparece un papel."
+    explanation: "Reconsiderar: vuelven sobre un caso ya cerrado. «Reconvenir» es reñir a alguien, y «considerar» valdría para un caso nuevo, no para uno decidido."
+    options:
+      - position: 1
+        text: "reconvenir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reconvenir» es reñir a alguien por lo que ha hecho; aquí no se riñe a nadie, se revisa un caso cerrado."
+        hint_specific: "Reconvenir riñe a alguien. ¿Hay alguna reprimenda en esta frase?"
+      - position: 2
+        text: "considerar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Considerar» sirve para algo que se mira por primera vez; la frase dice que la comisión ya había dicho que no."
+        hint_specific: "Considerar mira algo por primera vez. ¿Qué había dicho ya la comisión?"
+      - position: 3
+        text: "reconsiderar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El documento que faltaba"
+    body: "La respuesta había sido un no rotundo. Tres días después apareció el informe de costes que nadie encontraba. Emilio escribió una sola línea: «Con esto sobre la mesa, ¿podemos reconsiderar el plazo?». La reunión se convocó esa tarde."
+    before_phrase: "¿Se puede volver a pensar esto?"
+    after_phrase: "Con esto sobre la mesa, ¿podemos reconsiderar el plazo?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La norma del móvil"
+    body: "La norma llevaba dos años en la nevera y nadie la discutía. Una tarde, sus hijos le enseñaron para qué lo usaban de verdad: apuntes, mapas y el grupo del equipo. «Voy a reconsiderarlo», dijo su madre. Al domingo siguiente había una norma nueva y más justa."
+    before_phrase: "A ver si te lo vuelves a pensar."
+    after_phrase: "Voy a reconsiderarlo con esto que me enseñas."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El destino del viaje"
+    body: "Ya habían votado la ciudad cuando alguien encontró vuelos a mitad de precio a otro sitio. Nadie quería reabrir la discusión. Julia lo planteó bien: «No propongo cambiar: propongo reconsiderar con este dato y volver a votar». Votaron y ganó lo barato."
+    before_phrase: "¿Y si nos lo volvemos a pensar?"
+    after_phrase: "Propongo reconsiderar con este dato."
+metrics:
+  zipf_overall: 3.5488
+  dispersion_dp: 0.209
+  pedantry_proxy: 0.5561
+  family_size: 297
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

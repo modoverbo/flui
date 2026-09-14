@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2127
+slug: "mesurado"
+status: "draft"
+lemma: "mesurado"
+part_of_speech: "adjetivo"
+syllables: ["me", "su", "ra", "do"]
+stressed_syllable: 3
+ipa_latam: "[me.suˈɾa.ðo]"
+ipa_es: "[me.suˈɾa.ðo]"
+explanation: "Que habla con calma y sin subir el tono, aunque por dentro esté muy molesto."
+example_sentence: "Le habían cambiado el plazo tres veces y su correo siguió siendo mesurado."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es un elogio poco común y muy potente: reconoce el esfuerzo de no subir el tono cuando había motivos de sobra."
+when_not_to_use: "No la uses para quien calla lo que piensa: hablar con calma incluye decirlo todo, solo que sin gritos."
+collocations:
+  - "un tono mesurado"
+  - "una respuesta mesurada"
+  - "mostrarse mesurado"
+replaces:
+  - before: "Contestó tranquilo, sin gritar"
+    after: "Contestó con un tono mesurado"
+  - before: "Dijo lo suyo sin pasarse"
+    after: "Fue mesurado al decir lo suyo"
+  - before: "No exageró ni una coma"
+    after: "Su versión fue muy mesurada"
+family: ["mesura"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin: ["tranquilo"]
+  funcion: ["elogiar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "medido"
+    difference: "«Medido» dice que algo está calculado al detalle, como una ración o un tiempo; el otro adjetivo habla del tono al hablar."
+    memory_trick: "Lo medido se calcula; lo mesurado se contiene."
+  - confused_with: "moderado"
+    difference: "«Moderado» habla de la postura, de no irse a los extremos; el otro habla de la manera de decirla."
+    memory_trick: "Moderado es la postura; mesurado es el tono."
+exercises:
+  - position: 1
+    sentence: "Aunque le acababan de cambiar el plazo por tercera vez, el correo de Joaquín fue {{blank}}."
+    hint_general: "Escribió con calma aunque tenía motivos para no tenerla."
+    explanation: "Mesurado: escribió con calma pese a los motivos. «Medido» diría que calculó cada palabra, y «frío» sugeriría distancia, no contención."
+    options:
+      - position: 1
+        text: "medido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Medido» dice que algo está calculado al detalle; el mérito aquí no es el cálculo, es no haber subido el tono."
+        hint_specific: "Medido habla de cálculo. ¿Qué tiene mérito en ese correo?"
+      - position: 2
+        text: "mesurado"
+        is_correct: true
+      - position: 3
+        text: "frío"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frío» sugiere distancia y falta de interés; se puede escribir con mucho interés y aun así no levantar la voz."
+        hint_specific: "Frío sugiere distancia. ¿Joaquín está lejos del asunto o muy metido?"
+  - position: 2
+    sentence: "Contó lo ocurrido con un tono tan {{blank}} que nadie pudo acusarlo de exagerar."
+    hint_general: "Contó los hechos sin subir el tono ni inflar nada."
+    explanation: "Mesurado: contó los hechos sin inflarlos. «Moderado» hablaría de su postura, y «flemático» es una palabra libresca para quien nunca se inmuta."
+    options:
+      - position: 1
+        text: "moderado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Moderado» describe una postura que no se va a los extremos; aquí lo que se juzga es cómo lo contó, no qué defiende."
+        hint_specific: "Moderado habla de la postura. ¿Qué se está juzgando en la frase?"
+      - position: 2
+        text: "flemático"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Flemático» es una palabra libresca para quien nunca se inmuta por nada; aquí solo se cuenta cómo habló una vez."
+        hint_specific: "«Flemático» suena a novela inglesa. ¿Describe un carácter o una intervención?"
+      - position: 3
+        text: "mesurado"
+        is_correct: true
+  - position: 3
+    sentence: "Si te mantienes {{blank}} cuando el otro grita, la conversación todavía puede volver."
+    hint_general: "Mantenerte sereno cuando el otro grita deja la puerta abierta."
+    explanation: "Mesurado: te mantienes sereno frente a los gritos. «Mensurable» significa que se puede medir, y «callado» sería no decir nada, que es otra cosa."
+    options:
+      - position: 1
+        text: "mesurado"
+        is_correct: true
+      - position: 2
+        text: "mensurable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mensurable» significa que algo se puede medir con números; una persona en una discusión no se describe así."
+        hint_specific: "Mensurable se dice de lo que se mide con números. ¿Aquí hay números?"
+      - position: 3
+        text: "callado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callado» es no decir nada; la frase habla de seguir hablando, solo que sin subir el tono."
+        hint_specific: "Callado no dice nada. ¿La frase pide silencio o calma?"
+  - position: 4
+    sentence: "Mi hermana fue {{blank}} en la reunión de vecinos, y por eso la escucharon hasta el final."
+    hint_general: "Habló con calma, y por eso la escucharon entera."
+    explanation: "Mesurada: habló con calma y la escucharon. «Medida» hablaría de cálculo, y «amable» describiría su trato, no la contención de su tono."
+    options:
+      - position: 1
+        text: "medida"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Medida» dice que algo está calculado al detalle; lo que hizo que la escucharan fue no levantar la voz."
+        hint_specific: "Medida habla de cálculo. ¿Por qué la escucharon hasta el final?"
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe el buen trato; en una reunión de vecinos se puede ser amabilísimo y aun así gritar."
+        hint_specific: "Amable describe el trato. ¿Se puede ser amable y levantar la voz?"
+      - position: 3
+        text: "mesurada"
+        is_correct: true
+  - position: 5
+    sentence: "El informe era duro y su redacción {{blank}}: ni un adjetivo de más en diez páginas."
+    hint_general: "El texto es duro, aunque no lleva ni un adjetivo de más."
+    explanation: "Mesurada: el texto no se pasa ni un adjetivo. «Moderada» hablaría de una postura suave, y «seca» sugeriría falta de cuidado con el lector."
+    options:
+      - position: 1
+        text: "moderada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Moderada» diría que la postura del informe es suave; la frase empieza diciendo justo lo contrario, que era duro."
+        hint_specific: "Moderada suaviza la postura. ¿Cómo era el informe?"
+      - position: 2
+        text: "mesurada"
+        is_correct: true
+      - position: 3
+        text: "seca"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seca» sugiere brusquedad con quien lee; no llevar adjetivos de más no es lo mismo que tratar mal al lector."
+        hint_specific: "Seca sugiere brusquedad. ¿Faltan adjetivos o sobra brusquedad?"
+  - position: 6
+    sentence: "Nadie llamaría {{blank}} a quien cuenta un retraso de diez minutos como si fuera una catástrofe."
+    hint_general: "Contar diez minutos como una catástrofe no es hablar con calma."
+    explanation: "Mesurado: contar así no lo es. «Medido» hablaría de cálculo, y «educado» describiría los modales, que pueden ser exquisitos aun exagerando."
+    options:
+      - position: 1
+        text: "educado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Educado» describe los modales; se puede exagerar con muy buenos modales y seguir exagerando."
+        hint_specific: "Educado describe modales. ¿Los buenos modales impiden exagerar?"
+      - position: 2
+        text: "medido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Medido» dice que algo está calculado al detalle; el problema de esa persona no es el cálculo, es el tamaño del drama."
+        hint_specific: "Medido habla de cálculo. ¿Qué se le reprocha a esa persona?"
+      - position: 3
+        text: "mesurado"
+        is_correct: true
+  - position: 7
+    sentence: "Cuando los ánimos suben, un comentario {{blank}} vale más que diez razones bien puestas."
+    hint_general: "Con los ánimos altos, la calma pesa más que los argumentos."
+    explanation: "Mesurado: la calma pesa más que los argumentos. «Moderado» hablaría de la postura, y «circunspecto» es una palabra libresca para quien se muestra muy serio."
+    options:
+      - position: 1
+        text: "moderado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Moderado» califica una postura que evita los extremos; la frase habla de cómo se dice algo cuando todos están alterados."
+        hint_specific: "Moderado califica posturas. ¿Qué califica la frase, la idea o el tono?"
+      - position: 2
+        text: "circunspecto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Circunspecto» es una palabra libresca para quien se muestra serio y reservado; en una discusión acalorada suena a novela del siglo pasado."
+        hint_specific: "«Circunspecto» suena a novela antigua. ¿Encaja en una discusión de hoy?"
+      - position: 3
+        text: "mesurado"
+        is_correct: true
+  - position: 8
+    sentence: "Tras el susto, la respuesta de la empresa fue {{blank}}: reconoció el fallo y dio una fecha."
+    hint_general: "La empresa contestó sin dramatismo y con una fecha."
+    explanation: "Mesurada: contestó sin dramatismo. «Mensurable» significa que se puede medir, y «lenta» hablaría del tiempo que tardó, no del tono."
+    options:
+      - position: 1
+        text: "mesurada"
+        is_correct: true
+      - position: 2
+        text: "mensurable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mensurable» significa que algo se puede medir con números; una respuesta se juzga por su tono, no por su tamaño."
+        hint_specific: "Mensurable se mide con números. ¿Se mide así una respuesta?"
+      - position: 3
+        text: "lenta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lenta» habla de cuánto tardó; la frase no dice nada del tiempo, describe cómo estaba escrita la respuesta."
+        hint_specific: "Lenta mide el tiempo. ¿La frase habla de tardanza o de tono?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El tercer cambio de plazo"
+    body: "Era la tercera vez que movían la fecha y el equipo estaba harto. El correo de Marcos no llevaba ni una queja: fechas, horas perdidas y una propuesta. Su compañera se lo dijo al día siguiente: «Fue muy mesurado, y por eso esta vez han contestado»."
+    before_phrase: "Lo dijo tranquilo, sin saltar."
+    after_phrase: "Fue muy mesurado, y por eso han contestado."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La reunión de vecinos"
+    body: "Casi todos llegaron a la junta con ganas de pelea. Su hermana habló la última, con datos y sin subir la voz. «Lo mesurado no es lo blando», explicó luego en casa. «Yo dije lo mismo que ellos, pero a mí me escucharon entero»."
+    before_phrase: "Lo dije tranquila, sin gritar."
+    after_phrase: "Lo mesurado no es lo blando."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo y la cuenta"
+    body: "El chat del grupo ardía por una cuenta mal repartida. Entonces escribió Patricia: doce líneas, cero reproches, una tabla. «Qué mesurada», puso alguien. La discusión se cerró en nueve minutos y la tabla se quedó fijada arriba."
+    before_phrase: "Lo escribió con calma y sin echar nada en cara."
+    after_phrase: "Qué mesurada, y qué rápido se cerró."
+metrics:
+  zipf_overall: 3.3767
+  dispersion_dp: 0.1677
+  pedantry_proxy: 0.4328
+  family_size: 7
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

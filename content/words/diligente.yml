@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2119
+slug: "diligente"
+status: "draft"
+lemma: "diligente"
+part_of_speech: "adjetivo"
+syllables: ["di", "li", "gen", "te"]
+stressed_syllable: 3
+ipa_latam: "[di.liˈxen.te]"
+ipa_es: "[di.liˈxen.te]"
+explanation: "Que hace lo suyo pronto y con cuidado, sin que haya que insistirle."
+example_sentence: "El proyecto salió regular, pero Camila fue diligente: entregó a tiempo y avisó de cada problema."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Elogia el cómo, no el resultado: sirve incluso cuando el proyecto sale mal y la persona hizo su parte."
+when_not_to_use: "No la uses para quien corre sin mirar: aquí van juntas la rapidez y el cuidado."
+collocations:
+  - "un trabajo diligente"
+  - "una respuesta diligente"
+  - "ser diligente con los plazos"
+replaces:
+  - before: "Responde rápido y bien"
+    after: "Es muy diligente"
+  - before: "Lo hizo enseguida y sin fallos"
+    after: "Fue diligente con el encargo"
+  - before: "Hay que estar detrás de él todo el rato"
+    after: "No es nada diligente"
+family: ["diligencia"]
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 2
+tags:
+  comodin: ["rápido"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "dirigente"
+    difference: "«Dirigente» es quien manda en un grupo o una organización; el otro adjetivo describe cómo trabaja alguien, no su cargo."
+    memory_trick: "El dirigente manda; el diligente cumple."
+  - confused_with: "eficiente"
+    difference: "«Eficiente» mide el resultado logrado con pocos recursos; el otro describe la actitud: pronto y con cuidado, salga como salga."
+    memory_trick: "Eficiente mide el resultado; diligente mide el modo."
+exercises:
+  - position: 1
+    sentence: "Aunque el proyecto salió regular, Camila fue {{blank}}: entregó a tiempo y avisó de cada problema."
+    hint_general: "Cumplió pronto y con cuidado aunque el resultado no fuera bueno."
+    explanation: "Diligente: cumplió pronto y con cuidado. «Inteligente» hablaría de su cabeza, y «rápida» se quedaría en la velocidad, sin el cuidado."
+    options:
+      - position: 1
+        text: "inteligente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inteligente» habla de la cabeza de alguien; lo que cuenta la frase es cómo cumplió, no lo lista que sea."
+        hint_specific: "Inteligente mide la cabeza. ¿Qué mide la frase, su cabeza o su manera de cumplir?"
+      - position: 2
+        text: "diligente"
+        is_correct: true
+      - position: 3
+        text: "rápida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rápida» solo mide la velocidad; avisar de cada problema añade un cuidado que la prisa no incluye."
+        hint_specific: "Rápida mide la velocidad. ¿Avisar de los problemas es cuestión de velocidad?"
+  - position: 2
+    sentence: "Contestó al cliente en dos horas y con todos los datos encima de la mesa: un servicio {{blank}}."
+    hint_general: "Contestó pronto y sin dejarse nada."
+    explanation: "Diligente: contestó pronto y completo. «Dirigente» se dice de quien manda en una organización, y «amable» hablaría del tono, no del cumplimiento."
+    options:
+      - position: 1
+        text: "dirigente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dirigente» es quien encabeza una organización; un servicio no dirige nada, cumple o no cumple."
+        hint_specific: "Dirigente encabeza organizaciones. ¿Un servicio encabeza algo?"
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» habla del tono con que te tratan; se puede contestar con mucha amabilidad y tardar tres semanas."
+        hint_specific: "Amable describe el tono. ¿Qué llama la atención aquí, el tono o las dos horas?"
+      - position: 3
+        text: "diligente"
+        is_correct: true
+  - position: 3
+    sentence: "Si el equipo es {{blank}}, nadie tiene que recordar lo mismo dos veces."
+    hint_general: "Cuando cada uno cumple a tiempo, no hace falta repetir instrucciones."
+    explanation: "Diligente: cada uno cumple sin que se lo recuerden. «Negligente» diría lo contrario, y «presto» es una palabra antigua que hoy suena a novela."
+    options:
+      - position: 1
+        text: "diligente"
+        is_correct: true
+      - position: 2
+        text: "negligente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Negligente» describe a quien descuida lo suyo; con un equipo así habría que repetirlo todo tres veces."
+        hint_specific: "Negligente descuida. ¿Eso evita repetir las cosas?"
+      - position: 3
+        text: "presto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Presto» es una palabra antigua que hoy suena a novela del siglo pasado; nadie describe así a su equipo."
+        hint_specific: "«Presto» suena a novela antigua. ¿Lo dirías de tu equipo?"
+  - position: 4
+    sentence: "Mi hermano es {{blank}} con los papeles de casa: los trae firmados antes de que nadie se lo pida."
+    hint_general: "Trae los papeles hechos antes de que se los pidan."
+    explanation: "Diligente: se adelanta y los trae hechos. «Inteligente» hablaría de su cabeza, y «organizado» diría que tiene orden, no que se adelante."
+    options:
+      - position: 1
+        text: "organizado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Organizado» dice que tiene sus cosas en orden; se puede tener todo ordenado y entregar los papeles el último día."
+        hint_specific: "Organizado habla de orden. ¿El orden hace que se adelante?"
+      - position: 2
+        text: "inteligente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inteligente» mide la cabeza de alguien; traer los papeles firmados a tiempo no depende de lo listo que seas."
+        hint_specific: "Inteligente mide la cabeza. ¿Hace falta ser listo para firmar a tiempo?"
+      - position: 3
+        text: "diligente"
+        is_correct: true
+  - position: 5
+    sentence: "Buscaban a alguien {{blank}}, no a alguien brillante que entregara tarde."
+    hint_general: "Prefieren a quien cumple a tiempo antes que a quien brilla tarde."
+    explanation: "Diligente: prefieren a quien cumple a tiempo. «Indulgente» describe a quien perdona con facilidad, y «eficiente» mira el resultado con pocos recursos."
+    options:
+      - position: 1
+        text: "indulgente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indulgente» es quien perdona con facilidad los fallos ajenos; la frase habla de cumplir los plazos propios."
+        hint_specific: "Indulgente perdona a otros. ¿La frase habla de perdonar o de cumplir?"
+      - position: 2
+        text: "diligente"
+        is_correct: true
+      - position: 3
+        text: "eficiente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Eficiente» mide el resultado logrado con pocos recursos; alguien brillante puede ser eficiente y entregar tarde igual."
+        hint_specific: "Eficiente mide el resultado. ¿Qué se descarta al final de la frase?"
+  - position: 6
+    sentence: "La respuesta del ayuntamiento fue poco {{blank}}: tres meses para escribir dos líneas."
+    hint_general: "Tres meses para dos líneas no es responder pronto."
+    explanation: "Diligente: tres meses no es responder pronto. «Dirigente» se dice de quien manda, y «solícita» es una palabra culta que suena a carta antigua."
+    options:
+      - position: 1
+        text: "dirigente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dirigente» es quien encabeza una organización; una respuesta escrita no encabeza nada."
+        hint_specific: "Dirigente encabeza grupos. ¿Una respuesta encabeza algo?"
+      - position: 2
+        text: "solícita"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Solícita» es una palabra culta y algo antigua, más propia de una carta formal que de una queja vecinal."
+        hint_specific: "«Solícita» suena a carta antigua. ¿Encaja al quejarte del ayuntamiento?"
+      - position: 3
+        text: "diligente"
+        is_correct: true
+  - position: 7
+    sentence: "Nadie elogia el trabajo {{blank}}: solo se nota el día en que falta."
+    hint_general: "El trabajo hecho a tiempo solo se nota cuando falla."
+    explanation: "Diligente: el trabajo hecho a tiempo pasa desapercibido. «Negligente» describe lo contrario, y «puntual» se queda en la hora, sin el cuidado."
+    options:
+      - position: 1
+        text: "negligente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Negligente» es el trabajo hecho con descuido; ese sí se nota, y por eso la frase no habla de él."
+        hint_specific: "Negligente descuida. ¿Ese trabajo pasa desapercibido?"
+      - position: 2
+        text: "diligente"
+        is_correct: true
+      - position: 3
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» solo mide la hora de entrega; se puede llegar a la hora con el trabajo hecho de cualquier manera."
+        hint_specific: "Puntual mide la hora. ¿Basta con llegar a la hora?"
+  - position: 8
+    sentence: "Ximena agradeció en público lo {{blank}} que había sido Pedro con las respuestas del informe."
+    hint_general: "Elogia que contestara pronto y con cuidado."
+    explanation: "Diligente: contestó pronto y con cuidado. «Inteligente» elogiaría su cabeza, y «listo» hablaría de astucia, no de cumplimiento."
+    options:
+      - position: 1
+        text: "diligente"
+        is_correct: true
+      - position: 2
+        text: "inteligente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inteligente» elogia la cabeza de alguien; lo que Ximena agradece es la rapidez y el cuidado de sus respuestas."
+        hint_specific: "Inteligente elogia la cabeza. ¿Qué agradece Ximena exactamente?"
+      - position: 3
+        text: "listo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Listo» sugiere astucia para salir airoso; responder pronto y bien no tiene nada que ver con la astucia."
+        hint_specific: "Listo sugiere astucia. ¿Pedro fue astuto o cumplidor?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El proyecto que salió regular"
+    body: "El resultado no fue bueno y todos lo sabían. Aun así, su responsable dijo algo en la reunión final: «El proyecto salió regular. Camila fue diligente: entregó a tiempo y avisó de cada problema». Camila entendió que el fallo no era suyo, y siguió avisando."
+    before_phrase: "Ella respondió rápido y bien, eso sí."
+    after_phrase: "Camila fue diligente de principio a fin."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los papeles del abuelo"
+    body: "La herencia llevaba dos años parada entre cuatro hermanos. Uno se ocupó sin decirlo: pedía turnos, traía firmas, recordaba fechas. Cuando por fin acabó, su hermana lo dijo en la comida: «Si no llega a ser por lo diligente que ha sido Álvaro, seguimos igual»."
+    before_phrase: "Menos mal que él lo hizo todo rápido."
+    after_phrase: "Si no llega a ser por lo diligente que ha sido…"
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta sobre el equipo"
+    body: "Le preguntaron a Blanca qué buscaba en un compañero. No dijo brillante ni creativo: «Busco gente diligente. Prefiero a quien avisa el martes de que algo no llega, antes que a quien me sorprende el viernes». La mesa asintió a la vez."
+    before_phrase: "Busco gente que responda rápido y bien."
+    after_phrase: "Busco gente diligente."
+metrics:
+  zipf_overall: 3.4942
+  dispersion_dp: 0.3168
+  pedantry_proxy: 0.4816
+  family_size: 19
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

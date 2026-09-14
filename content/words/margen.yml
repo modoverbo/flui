@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 318
+slug: "margen"
+status: "draft"
+lemma: "margen"
+part_of_speech: "sustantivo"
+syllables: ["mar", "gen"]
+stressed_syllable: 1
+ipa_latam: "[ˈmar.xen]"
+ipa_es: "[ˈmar.xen]"
+explanation: "Espacio o tiempo de sobra que te queda para moverte sin que todo falle."
+example_sentence: "Esta semana no tengo margen: cualquier cosa nueva se cae de la lista."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para decir que no con datos: «No tengo margen hasta el jueves» suena a hecho, no a excusa."
+when_not_to_use: "No la uses cuando sí te queda espacio y lo que falta son ganas: ahí conviene decir otra cosa."
+collocations:
+  - "tener margen"
+  - "dejar margen"
+  - "sin margen"
+replaces:
+  - before: "No tengo tiempo para nada más"
+    after: "No tengo margen para nada más"
+  - before: "Voy muy justo esta semana"
+    after: "Esta semana voy sin margen"
+  - before: "Déjame algo de aire"
+    after: "Déjame algo de margen"
+family: []
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["tiempo", "poder"]
+  funcion: ["poner límites"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "plazo"
+    difference: "«Plazo» es la fecha límite de algo; la otra palabra mide el espacio libre que te queda antes de esa fecha."
+    memory_trick: "El plazo marca el día; el margen mide lo que te queda."
+  - confused_with: "marco"
+    difference: "«Marco» es el borde que rodea algo o el conjunto de reglas de una situación; aquí se habla del espacio libre disponible."
+    memory_trick: "El marco encierra; el margen deja aire."
+exercises:
+  - position: 1
+    sentence: "Esta semana Carolina no tiene {{blank}}: cualquier cosa nueva tumba las tres que ya lleva encima."
+    hint_general: "No le queda nada de espacio libre para aceptar algo más."
+    explanation: "Margen: no le queda espacio libre. «Marco» es el borde o el conjunto de reglas, y «hueco» es coloquial y solo apunta a un rato suelto."
+    options:
+      - position: 1
+        text: "marco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Marco» es el borde que rodea algo o el conjunto de reglas de una situación, y aquí falta espacio, no un borde."
+        hint_specific: "«Marco» rodea o encuadra. ¿Qué estaría rodeando la semana de Carolina?"
+      - position: 2
+        text: "margen"
+        is_correct: true
+      - position: 3
+        text: "hueco"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Hueco» es coloquial y apunta a un rato suelto en la agenda, no a la capacidad que le queda esa semana."
+        hint_specific: "«Hueco» suena a rato libre entre dos citas. ¿El problema es un rato o la carga entera?"
+  - position: 2
+    sentence: "Antes de decir que sí, Óscar calculó el {{blank}} que le quedaba hasta el viernes."
+    hint_general: "Mide cuánto espacio libre le queda antes de aceptar."
+    explanation: "Margen: mide el espacio libre que le queda. «Mareo» es esa sensación de que todo da vueltas, y «plazo» sería la fecha límite, que ya aparece en la frase."
+    options:
+      - position: 1
+        text: "mareo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mareo» es la sensación de que todo da vueltas, y lo que calcula Óscar es cuánto le cabe todavía."
+        hint_specific: "«Mareo» es una sensación del cuerpo. ¿Óscar mide una sensación o un espacio?"
+      - position: 2
+        text: "margen"
+        is_correct: true
+      - position: 3
+        text: "plazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Plazo» es la fecha límite, y esa fecha ya está dicha en la frase: lo que calcula es lo que le cabe hasta entonces."
+        hint_specific: "«Plazo» es la fecha tope. ¿Cuál es aquí la fecha tope?"
+  - position: 3
+    sentence: "Vicente y su equipo pactaron la entrega con dos días de {{blank}} por si algo salía torcido."
+    hint_general: "Dejan dos días de sobra para poder reaccionar si algo falla."
+    explanation: "Margen: dejan dos días de sobra para reaccionar. «Marco» es el borde o el conjunto de reglas, y «descanso» sería tiempo para parar, no para arreglar."
+    options:
+      - position: 1
+        text: "margen"
+        is_correct: true
+      - position: 2
+        text: "marco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Marco» es el borde que rodea algo o el conjunto de reglas, y aquí lo que se guardan son dos días de sobra."
+        hint_specific: "«Marco» encuadra. ¿Qué se estaría encuadrando con dos días?"
+      - position: 3
+        text: "descanso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descanso» es tiempo para parar, y estos dos días se guardan para arreglar lo que salga mal."
+        hint_specific: "«Descanso» sirve para parar. ¿Para qué guardan esos dos días?"
+  - position: 4
+    sentence: "Un {{blank}} pequeño en la agenda vale más que una lista perfecta, repite Irene cada lunes."
+    hint_general: "Dejar un poco de espacio libre sirve más que planearlo todo al detalle."
+    explanation: "Margen: dejar espacio libre vale más que planearlo todo. «Mando» es la autoridad para dirigir, y «resquicio» suena a texto literario."
+    options:
+      - position: 1
+        text: "mando"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mando» es la autoridad para dirigir a otros, y aquí se habla del espacio libre de una agenda."
+        hint_specific: "«Mando» va de dirigir personas. ¿A quién dirigiría una agenda?"
+      - position: 2
+        text: "resquicio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Resquicio» suena a texto literario y apunta a una rendija muy estrecha, no al espacio con el que se trabaja."
+        hint_specific: "«Resquicio» suena a novela y a rendija. ¿Pega hablando de una agenda?"
+      - position: 3
+        text: "margen"
+        is_correct: true
+  - position: 5
+    sentence: "Sin {{blank}}, cualquier retraso pequeño se convierte en una noche sin dormir para Hugo."
+    hint_general: "Cuando no queda espacio libre, un retraso pequeño se vuelve enorme."
+    explanation: "Margen: sin espacio libre, un retraso pequeño se vuelve enorme. «Marco» es el borde o las reglas, y «límite» es justo el tope, no el espacio antes de él."
+    options:
+      - position: 1
+        text: "marco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Marco» es el borde que rodea algo o el conjunto de reglas, y sin reglas un retraso no se agranda solo."
+        hint_specific: "«Marco» encuadra. ¿Qué se encuadraría en la noche de Hugo?"
+      - position: 2
+        text: "límite"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Límite» es el tope al que llegas, y lo que falta aquí es justo el espacio que queda antes de ese tope."
+        hint_specific: "«Límite» es la línea final. ¿Falta la línea o falta el trecho anterior?"
+      - position: 3
+        text: "margen"
+        is_correct: true
+  - position: 6
+    sentence: "Fernanda le pidió a su responsable un poco más de {{blank}} antes de aceptar el encargo nuevo."
+    hint_general: "Pide algo más de espacio libre antes de decir que sí."
+    explanation: "Margen: pide más espacio libre antes de aceptar. «Mareo» es la sensación de que todo da vueltas, y «permiso» sería una autorización, no espacio."
+    options:
+      - position: 1
+        text: "margen"
+        is_correct: true
+      - position: 2
+        text: "mareo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mareo» es la sensación de que todo da vueltas, y nadie pide más de eso antes de aceptar un encargo."
+        hint_specific: "«Mareo» es una sensación del cuerpo. ¿Se pide más sensación o más espacio?"
+      - position: 3
+        text: "permiso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Permiso» es una autorización para hacer algo, y a ella el encargo ya se lo están ofreciendo."
+        hint_specific: "«Permiso» autoriza. ¿Le falta autorización o le falta sitio?"
+  - position: 7
+    sentence: "Según Ramón, nadie trabaja bien sin un {{blank}} para respirar entre una cosa y la siguiente."
+    hint_general: "Hace falta un espacio libre entre dos cosas para poder respirar."
+    explanation: "Margen: un espacio libre entre dos cosas. «Marco» es el borde o el conjunto de reglas, y «ritmo» es la velocidad a la que se avanza."
+    options:
+      - position: 1
+        text: "marco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Marco» es el borde que rodea algo o el conjunto de reglas, y aquí hace falta sitio entre dos asuntos seguidos."
+        hint_specific: "«Marco» encuadra. ¿Qué se encuadraría entre dos asuntos?"
+      - position: 2
+        text: "margen"
+        is_correct: true
+      - position: 3
+        text: "ritmo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ritmo» es la velocidad a la que se avanza, y se puede ir a buen ritmo y no tener un minuto entre dos cosas."
+        hint_specific: "«Ritmo» mide velocidad. ¿Ir rápido deja sitio para respirar?"
+  - position: 8
+    sentence: "Marta dijo que no al cuarto encargo porque ya no le quedaba {{blank}} para nada más."
+    hint_general: "Dice que no porque no le queda espacio libre para otra cosa."
+    explanation: "Margen: no le queda espacio libre. «Mando» es la autoridad para dirigir, y «turno» sería el puesto que te toca en una fila."
+    options:
+      - position: 1
+        text: "mando"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Mando» es la autoridad para dirigir a otros, y a Marta no le falta autoridad: le falta sitio."
+        hint_specific: "«Mando» va de dirigir. ¿Le falta autoridad o le falta espacio?"
+      - position: 2
+        text: "turno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Turno» es el puesto que te toca en una fila, y aquí nadie está esperando su vez."
+        hint_specific: "«Turno» necesita una fila. ¿Hay alguna cola en esta frase?"
+      - position: 3
+        text: "margen"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El encargo del miércoles"
+    body: "A Alicia le ofrecieron un encargo extra a media semana. Miró su lista y contestó: «Hasta el lunes no tengo margen; si puede esperar, lo cojo yo». Esperó al lunes y salió mejor que de costumbre."
+    before_phrase: "Uf, es que voy muy justa de tiempo."
+    after_phrase: "Hasta el lunes no tengo margen."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El sábado de la mudanza"
+    body: "Manuel había prometido ayudar en la mudanza y llevar a su hija al partido. Su hermano lo entendió cuando se lo explicó así: «No me da el margen del día». Fueron el domingo y cargaron todo en dos horas."
+    before_phrase: "No me da la vida ese día."
+    after_phrase: "No me da el margen del día."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La quedada de los jueves"
+    body: "Celia organizaba la cena, el regalo y la reserva. En enero pidió ayuda con una frase: «Me gusta hacerlo, pero necesito margen». Dos amigas cogieron la reserva y el regalo, y la cena siguió siendo suya."
+    before_phrase: "Me gusta hacerlo, pero necesito un respiro."
+    after_phrase: "Me gusta hacerlo, pero necesito margen."
+metrics:
+  zipf_overall: 4.7239
+  dispersion_dp: 0.0988
+  pedantry_proxy: 0.5528
+  family_size: 11
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2122
+slug: "rectificar"
+status: "draft"
+lemma: "rectificar"
+part_of_speech: "verbo"
+syllables: ["rec", "ti", "fi", "car"]
+stressed_syllable: 4
+ipa_latam: "[rek.ti.fiˈkaɾ]"
+ipa_es: "[rek.ti.fiˈkaɾ]"
+explanation: "Corregir en voz alta lo que acabas de decir, en cuanto notas que no era justo."
+example_sentence: "En cuanto vio el dato bueno, rectificó la cifra delante de todo el equipo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Corregirte a tiempo da más autoridad que llevar razón: la gente confía en quien revisa sus propias palabras."
+when_not_to_use: "No la uses para cambiar de postura cada vez que alguien te presiona: eso no es corregir, es ceder."
+collocations:
+  - "rectificar a tiempo"
+  - "rectificar en público"
+  - "rectificar una cifra"
+replaces:
+  - before: "Perdón, me equivoqué antes"
+    after: "Rectifico lo que dije antes"
+  - before: "Voy a dar marcha atrás con lo que propuse"
+    after: "Rectifico mi propuesta"
+  - before: "Vale, me has convencido, lo cambio"
+    after: "Me has convencido: rectifico"
+family: ["rectificación"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin: ["cambiar"]
+  funcion: ["corregir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ratificar"
+    difference: "«Ratificar» es confirmar lo que ya habías dicho; lo otro es justo lo contrario, cambiarlo porque no era exacto."
+    memory_trick: "Ratificas para confirmar; rectificas para corregir."
+  - confused_with: "retractarse"
+    difference: "«Retractarse» es retirar lo dicho por completo; corregirlo puede ser solo ajustar una parte y sostener el resto."
+    memory_trick: "Retractarse borra; rectificar ajusta."
+exercises:
+  - position: 1
+    sentence: "En cuanto vio el dato bueno, Lorena {{blank}} la cifra delante de todo el equipo."
+    hint_general: "Corrige su propia cifra en voz alta al ver el dato bueno."
+    explanation: "Rectificó: corrigió su propia cifra en voz alta. «Ratificó» sería confirmar la cifra anterior, y «repitió» diría que la dijo otra vez igual."
+    options:
+      - position: 1
+        text: "ratificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ratificar» es confirmar lo dicho; si Lorena ve un dato distinto, lo que hace es cambiar su número, no confirmarlo."
+        hint_specific: "Ratificar confirma lo anterior. ¿Qué le enseña a Lorena el dato bueno?"
+      - position: 2
+        text: "rectificó"
+        is_correct: true
+      - position: 3
+        text: "repitió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» es decir lo mismo otra vez; la frase cuenta que la cifra cambió al aparecer el dato bueno."
+        hint_specific: "Repetir dice lo mismo. ¿La cifra se queda igual o cambia?"
+  - position: 2
+    sentence: "Nadie pierde autoridad por {{blank}} a tiempo; se pierde por sostener lo insostenible."
+    hint_general: "Corregirte a tiempo no te quita autoridad, te la da."
+    explanation: "Rectificar: corregirte a tiempo no quita autoridad. «Ratificar» sería confirmarlo todo, y «recular» es coloquial y suena a echarse atrás por miedo."
+    options:
+      - position: 1
+        text: "ratificar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ratificar» es confirmar lo que ya dijiste; sostener lo insostenible es precisamente lo que la frase critica."
+        hint_specific: "Ratificar confirma. ¿Qué critica el final de la frase?"
+      - position: 2
+        text: "recular"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recular» es coloquial y sugiere echarse atrás por miedo; corregirse a tiempo no es un acto de miedo."
+        hint_specific: "«Recular» suena a echarse atrás por miedo. ¿De eso habla la frase?"
+      - position: 3
+        text: "rectificar"
+        is_correct: true
+  - position: 3
+    sentence: "Si te das cuenta de que te pasaste, {{blank}} el mismo día y no tres semanas después."
+    hint_general: "Corrige el mismo día lo que dijiste de más."
+    explanation: "Rectifica: corrige el mismo día lo que dijiste de más. «Certifica» es dar fe por escrito, e «insiste» sería repetirlo con más fuerza."
+    options:
+      - position: 1
+        text: "rectifica"
+        is_correct: true
+      - position: 2
+        text: "certifica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Certificar» es dar fe por escrito de que algo es cierto; aquí se trata de corregir lo que dijiste de más."
+        hint_specific: "Certificar da fe por escrito. ¿Hay algún papel en esta frase?"
+      - position: 3
+        text: "insiste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistir» es repetirlo con más fuerza; la frase habla de darte cuenta de que te pasaste, no de doblar la apuesta."
+        hint_specific: "Insistir repite con fuerza. ¿Qué te acabas de dar cuenta?"
+  - position: 4
+    sentence: "Mi padre {{blank}} lo que había dicho de mi amiga en cuanto la conoció un poco mejor."
+    hint_general: "Corrige lo que había dicho al conocerla mejor."
+    explanation: "Rectificó: corrigió lo que había dicho. «Ratificó» sería mantener su primera opinión, y «aclaró» diría que la explicó mejor sin cambiarla."
+    options:
+      - position: 1
+        text: "aclaró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» es explicar mejor lo mismo; la frase dice que su opinión cambió al conocerla, no que se entendiera mal."
+        hint_specific: "Aclarar explica lo mismo mejor. ¿La opinión se entiende mejor o cambia?"
+      - position: 2
+        text: "ratificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ratificar» es mantener y confirmar lo dicho; conocerla mejor le hizo cambiar de opinión, no reafirmarse."
+        hint_specific: "Ratificar mantiene la opinión. ¿Qué provocó conocerla mejor?"
+      - position: 3
+        text: "rectificó"
+        is_correct: true
+  - position: 5
+    sentence: "El jefe {{blank}} su primera respuesta en el correo siguiente, y el equipo lo agradeció en silencio."
+    hint_general: "Corrige su primera respuesta en el correo siguiente."
+    explanation: "Rectificó: corrigió su primera respuesta. «Notificó» sería solo comunicarla, y «confirmó» diría que la sostuvo tal cual estaba."
+    options:
+      - position: 1
+        text: "notificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notificar» es comunicar algo de manera oficial; el jefe no comunica su respuesta de nuevo, la cambia."
+        hint_specific: "Notificar comunica. ¿El jefe comunica lo mismo o lo cambia?"
+      - position: 2
+        text: "confirmó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confirmar» sería sostener la primera respuesta tal cual; entonces el equipo no habría tenido nada que agradecer."
+        hint_specific: "Confirmar sostiene lo dicho. ¿Por qué lo agradece el equipo?"
+      - position: 3
+        text: "rectificó"
+        is_correct: true
+  - position: 6
+    sentence: "Antes de subir el tono, Adriana prefirió {{blank}}: había leído mal el mensaje."
+    hint_general: "Prefiere corregirse a sí misma antes que levantar la voz."
+    explanation: "Rectificar: se corrige a sí misma antes de levantar la voz. «Ratificar» sería mantener lo dicho, y «desdecirse» suena a discurso público y a escándalo."
+    options:
+      - position: 1
+        text: "ratificar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ratificar» es mantener lo dicho; si había leído mal el mensaje, mantenerlo la dejaría peor."
+        hint_specific: "Ratificar mantiene lo dicho. ¿Qué descubrió Adriana sobre el mensaje?"
+      - position: 2
+        text: "desdecirse"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Desdecirse» suena a discurso público y a escándalo; corregir un malentendido en un chat es mucho más sencillo."
+        hint_specific: "«Desdecirse» suena a escándalo público. ¿Qué tamaño tiene este asunto?"
+      - position: 3
+        text: "rectificar"
+        is_correct: true
+  - position: 7
+    sentence: "Un acuerdo que nadie puede {{blank}} acaba siendo una trampa para las dos partes."
+    hint_general: "Un acuerdo que no se puede corregir atrapa a los dos lados."
+    explanation: "Rectificar: un acuerdo que no se puede corregir atrapa. «Certificar» es dar fe por escrito, y «discutir» hablaría de debatirlo, no de cambiarlo."
+    options:
+      - position: 1
+        text: "certificar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Certificar» es dar fe por escrito de algo; un acuerdo certificado sigue pudiendo corregirse, así que no es la trampa."
+        hint_specific: "Certificar da fe por escrito. ¿Qué le falta a ese acuerdo?"
+      - position: 2
+        text: "rectificar"
+        is_correct: true
+      - position: 3
+        text: "discutir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» es debatir el acuerdo; se puede debatir mucho y seguir sin poder cambiar ni una coma."
+        hint_specific: "Discutir debate. ¿Debatir basta para salir de la trampa?"
+  - position: 8
+    sentence: "Ximena {{blank}} en la misma reunión: reconoció el dato bueno y siguió adelante sin dramas."
+    hint_general: "Se corrige en la misma reunión, sin darle más vueltas."
+    explanation: "Rectificó: se corrigió en la misma reunión. «Ratificó» sería sostener lo anterior, y «calló» chocaría con el reconocimiento que cuenta la frase."
+    options:
+      - position: 1
+        text: "rectificó"
+        is_correct: true
+      - position: 2
+        text: "ratificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ratificar» es sostener lo dicho antes; reconocer el dato bueno es precisamente cambiarlo."
+        hint_specific: "Ratificar sostiene lo anterior. ¿Qué reconoce Ximena?"
+      - position: 3
+        text: "calló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callar» sería no decir nada; la frase cuenta que reconoció el dato en voz alta y siguió adelante."
+        hint_specific: "Callar no dice nada. ¿Ximena habla o se queda en silencio?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La cifra de la diapositiva"
+    body: "A mitad de la presentación alguien le enseñó el dato real. Julia paró: «Rectifico: la cifra que acabo de decir es del trimestre anterior. La buena es esta». Nadie recordó el fallo; todos recordaron que lo corrigió en el momento."
+    before_phrase: "Perdón, me equivoqué con ese número."
+    after_phrase: "Rectifico: el número bueno es este."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que dijo del novio"
+    body: "Había soltado una frase dura sobre el novio de su hija y se quedó dándole vueltas dos días. El domingo, en la cocina, lo dijo entero: «Rectifico lo que dije el jueves. Hablé sin conocerlo». Su hija no contestó, pero lo invitó a la cena siguiente."
+    before_phrase: "Me pasé el otro día, lo retiro."
+    after_phrase: "Rectifico lo que dije el jueves."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La discusión del grupo"
+    body: "En el chat, Andrés había acusado a alguien de no pagar su parte. Media hora después apareció el recibo. Escribió sin excusas: «Rectifico. El pago estaba hecho y me equivoqué de mes. Perdón, Sara». El grupo siguió como si nada, que es justo lo que hace un buen grupo."
+    before_phrase: "Perdón, me confundí, retiro lo dicho."
+    after_phrase: "Rectifico: el pago estaba hecho."
+metrics:
+  zipf_overall: 3.9157
+  dispersion_dp: 0.1299
+  pedantry_proxy: 0.4441
+  family_size: 39
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2109
+slug: "equitativo"
+status: "draft"
+lemma: "equitativo"
+part_of_speech: "adjetivo"
+syllables: ["e", "qui", "ta", "ti", "vo"]
+stressed_syllable: 4
+ipa_latam: "[e.ki.taˈti.βo]"
+ipa_es: "[e.ki.taˈti.βo]"
+explanation: "Que reparte según lo que aporta o necesita cada uno, aunque no reciban todos lo mismo."
+example_sentence: "El reparto de guardias salió equitativo: quien vive más lejos entra una hora más tarde."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve cuando alguien exige partes iguales y el caso no lo es: nombras el criterio y la discusión baja de tono."
+when_not_to_use: "No la uses como sinónimo de idéntico: un reparto con criterio puede dar cantidades distintas a cada uno."
+collocations:
+  - "un reparto equitativo"
+  - "un trato equitativo"
+  - "de forma equitativa"
+replaces:
+  - before: "Que sea justo para todos"
+    after: "Que el reparto sea equitativo"
+  - before: "No es parejo lo que cobra cada uno"
+    after: "El pago no es equitativo"
+  - before: "Repartamos bien las horas"
+    after: "Repartamos las horas de manera equitativa"
+family: ["equidad"]
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin: ["justo"]
+  funcion: ["calificar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "equivalente"
+    difference: "«Equivalente» dice que dos cosas valen lo mismo; lo otro califica un reparto hecho según lo que le corresponde a cada uno."
+    memory_trick: "Equivalente compara valores; equitativo reparte con criterio."
+  - confused_with: "igualitario"
+    difference: "«Igualitario» da partes idénticas a todos; el otro reparto mira lo que aporta o necesita cada uno, y puede dar cantidades distintas."
+    memory_trick: "Igualitario parte en dos; equitativo mide antes de partir."
+exercises:
+  - position: 1
+    sentence: "Después de dos horas de cuentas, salió un reparto {{blank}}: quien puso más dinero se llevó más metros."
+    hint_general: "El reparto siguió lo que cada uno había puesto."
+    explanation: "Equitativo: el reparto siguió lo que puso cada uno. «Equivalente» diría que las partes valen lo mismo, e «idéntico» diría que son exactamente iguales."
+    options:
+      - position: 1
+        text: "equivalente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equivalente» dice que dos cosas valen lo mismo; la frase dice lo contrario, que quien puso más se llevó más."
+        hint_specific: "Equivalente iguala valores. ¿Aquí todos se llevan lo mismo?"
+      - position: 2
+        text: "equitativo"
+        is_correct: true
+      - position: 3
+        text: "idéntico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Idéntico» significa exactamente igual; en la frase las partes son distintas a propósito, según lo aportado."
+        hint_specific: "Idéntico significa igual al milímetro. ¿Las partes salieron iguales?"
+  - position: 2
+    sentence: "Las horas extra se pagaron de manera {{blank}}, según lo que había trabajado cada turno."
+    hint_general: "Cada turno cobró según las horas que hizo."
+    explanation: "Equitativa: cada turno cobró según sus horas. «Equivalente» diría que todos los turnos valen igual, y «generosa» hablaría de pagar de más por bondad."
+    options:
+      - position: 1
+        text: "generosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generosa» sugiere pagar más de lo que toca por bondad; aquí se paga exactamente lo trabajado."
+        hint_specific: "Generosa da de más. ¿La empresa regala horas o paga las hechas?"
+      - position: 2
+        text: "equivalente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equivalente» diría que todos los turnos valen lo mismo; el final de la frase dice que se miró cuánto trabajó cada uno."
+        hint_specific: "Equivalente iguala valores. ¿Qué se miró antes de pagar?"
+      - position: 3
+        text: "equitativa"
+        is_correct: true
+  - position: 3
+    sentence: "Blanca propuso un criterio {{blank}} para las guardias: quien vive más lejos entra más tarde."
+    hint_general: "El criterio mira la situación de cada persona, no un reparto ciego."
+    explanation: "Equitativo: el criterio mira la situación de cada persona. «Equidistante» habla de distancias en un mapa, e «igual» daría a todos el mismo horario."
+    options:
+      - position: 1
+        text: "equitativo"
+        is_correct: true
+      - position: 2
+        text: "equidistante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equidistante» se dice de un punto que está a la misma distancia de otros dos; un criterio de guardias no se mide así."
+        hint_specific: "Equidistante mide distancias en un plano. ¿Blanca dibuja un plano?"
+      - position: 3
+        text: "igual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Igual» daría a todos el mismo horario; el criterio de Blanca hace justo lo contrario, cambia la hora según dónde vives."
+        hint_specific: "Igual da lo mismo a todos. ¿Todos entran a la misma hora?"
+  - position: 4
+    sentence: "Nadie llamaría {{blank}} a un reparto en el que tres personas ponen todo y seis no ponen nada."
+    hint_general: "Un reparto donde unos ponen todo y otros nada no merece ese nombre."
+    explanation: "Equitativo: el reparto descrito no lo es. «Equívoco» significa confuso o ambiguo, y «amable» hablaría del trato, no del criterio del reparto."
+    options:
+      - position: 1
+        text: "equívoco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equívoco» se dice de algo confuso o con doble sentido; aquí el reparto se entiende perfectamente, el problema es otro."
+        hint_specific: "Equívoco significa confuso. ¿Este reparto se entiende mal o está mal repartido?"
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» habla del trato entre personas; lo que falla en la frase es el criterio con el que se reparte el trabajo."
+        hint_specific: "Amable califica el trato. ¿Falla el trato o el criterio?"
+      - position: 3
+        text: "equitativo"
+        is_correct: true
+  - position: 5
+    sentence: "El acuerdo repartía los gastos de la casa de un modo {{blank}}, según lo que ganaba cada uno."
+    hint_general: "Cada uno paga según lo que gana, no la misma cifra."
+    explanation: "Equitativo: cada uno paga según lo que gana. «Equivalente» diría que pagan cantidades del mismo valor, y «barato» hablaría del precio total."
+    options:
+      - position: 1
+        text: "barato"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Barato» dice que algo cuesta poco; la frase no habla de cuánto cuesta la casa, sino de cómo se reparte el gasto."
+        hint_specific: "Barato mide el precio. ¿La frase mide el precio o el reparto?"
+      - position: 2
+        text: "equitativo"
+        is_correct: true
+      - position: 3
+        text: "equivalente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equivalente» diría que las dos partes pagan lo mismo; el final de la frase dice que pagan según lo que gana cada uno."
+        hint_specific: "Equivalente iguala cantidades. ¿Pagan lo mismo los dos?"
+  - position: 6
+    sentence: "El jurado buscaba un sistema de puntos {{blank}}, no uno que premiara a quien habla más alto."
+    hint_general: "Un sistema que mide lo que aporta cada candidato, no el volumen de su voz."
+    explanation: "Equitativo: mide lo que aporta cada candidato. «Salomónico» suena a cita antigua, y «equivalente» diría que todos los puntos valen lo mismo."
+    options:
+      - position: 1
+        text: "salomónico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Salomónico» es una palabra literaria que evoca una historia antigua; para un sistema de puntos suena a discurso solemne."
+        hint_specific: "«Salomónico» suena a relato antiguo. ¿Encaja al describir una hoja de puntos?"
+      - position: 2
+        text: "equivalente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equivalente» diría que todos los puntos valen lo mismo; lo que busca el jurado es que midan lo que de verdad aporta cada uno."
+        hint_specific: "Equivalente iguala valores. ¿El jurado quiere igualar o medir?"
+      - position: 3
+        text: "equitativo"
+        is_correct: true
+  - position: 7
+    sentence: "Los turnos de agosto quedaron {{blank}} por primera vez: cada hermano cubrió los días que podía."
+    hint_general: "Cada hermano cubrió los días que realmente podía."
+    explanation: "Equitativos: cada hermano cubrió lo que podía. «Equivalentes» diría que todos los turnos valen lo mismo, e «idénticos» que son exactamente iguales."
+    options:
+      - position: 1
+        text: "equitativos"
+        is_correct: true
+      - position: 2
+        text: "equivalentes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equivalentes» diría que los turnos valen lo mismo entre sí; la frase cuenta que cada hermano cubrió los días que podía."
+        hint_specific: "Equivalentes iguala el valor. ¿Cada hermano cubrió lo mismo?"
+      - position: 3
+        text: "idénticos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Idénticos» significa iguales al detalle; los turnos de agosto salieron distintos a propósito, según la disponibilidad."
+        hint_specific: "Idénticos significa iguales al detalle. ¿Salieron todos iguales?"
+  - position: 8
+    sentence: "Repartir el trabajo en partes iguales parecía lo más fácil, aunque no siempre resulta lo más {{blank}}."
+    hint_general: "Partes iguales no siempre significa un reparto con criterio."
+    explanation: "Equitativo: partes iguales no siempre reparten con criterio. «Equivalente» solo diría que valen lo mismo, y «ecuánime» describe a quien juzga sin favoritismos, no a un reparto."
+    options:
+      - position: 1
+        text: "equivalente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equivalente» dice que dos cosas valen lo mismo; partes iguales ya son equivalentes, y aun así la frase dice que algo falla."
+        hint_specific: "Equivalente iguala valores. ¿Partes iguales ya valen lo mismo?"
+      - position: 2
+        text: "ecuánime"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ecuánime» describe a una persona que juzga sin dejarse llevar; aquí se califica un reparto, no el carácter de nadie."
+        hint_specific: "«Ecuánime» describe a personas. ¿Aquí se califica a alguien o a un reparto?"
+      - position: 3
+        text: "equitativo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Las guardias de diciembre"
+    body: "El calendario de guardias siempre acababa igual: los mismos cubrían las peores fechas. Irene propuso otra cosa: «Hagamos un reparto equitativo: quien cubrió Navidad el año pasado elige primero este año». Nadie protestó, y diciembre dejó de ser un problema."
+    before_phrase: "Vamos a repartirlo de forma justa."
+    after_phrase: "Hagamos un reparto equitativo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los gastos del piso"
+    body: "Uno de los tres ganaba la mitad que los otros dos y callaba cada mes. Patricia lo dijo por él: «Partir en tres no es equitativo. Propongo repartir según lo que gana cada uno». Hubo un silencio incómodo y luego un alivio evidente."
+    before_phrase: "No es justo que paguemos lo mismo."
+    after_phrase: "Partir en tres no es equitativo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El alquiler de la furgoneta"
+    body: "Cuatro amigos, una furgoneta y kilómetros muy distintos. Simón sacó el móvil: «Lo equitativo es pagar por kilómetro, no por cabeza». Hicieron la cuenta en un minuto. Dos pagaron menos y nadie se sintió engañado."
+    before_phrase: "Repartámoslo de forma justa, no a partes iguales."
+    after_phrase: "Lo equitativo es pagar por kilómetro."
+metrics:
+  zipf_overall: 3.7839
+  dispersion_dp: 0.2428
+  pedantry_proxy: 0.5574
+  family_size: 20
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

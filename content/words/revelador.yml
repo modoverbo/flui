@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "revelador"
+status: "draft"
+lemma: "revelador"
+part_of_speech: "adjetivo"
+syllables: ["re", "ve", "la", "dor"]
+stressed_syllable: 4
+ipa_latam: "[re.βe.laˈðoɾ]"
+ipa_es: "[re.βe.laˈðoɾ]"
+explanation: "Que muestra algo que no se veía y cambia la idea que tenías antes."
+example_sentence: "El dato más revelador no fue la caída de ventas: fue la hora a la que la gente se iba."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para señalar el dato que de verdad importa dentro de una montaña de cifras correctas."
+when_not_to_use: "No la uses para algo que confirma lo que ya sabías: si no cambia nada, será útil, pero no descubre nada."
+collocations:
+  - "un dato revelador"
+  - "un detalle revelador"
+  - "un silencio revelador"
+replaces:
+  - before: "Ese dato dice mucho, ¿eh?"
+    after: "Ese dato es revelador"
+  - before: "Eso lo explica todo de golpe"
+    after: "Eso es revelador"
+  - before: "Fíjate en ese detalle, que es importante"
+    after: "Fíjate en ese detalle: es revelador"
+family: ["revelar", "revelación"]
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["importante"]
+  funcion: ["destacar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "relevante"
+    difference: "«Relevante» dice que algo importa; la otra palabra dice que además enseña algo que no se veía."
+    memory_trick: "Lo relevante pesa; lo otro abre una puerta."
+  - confused_with: "rebelde"
+    difference: "«Rebelde» describe a quien no obedece; la otra palabra describe un dato o un gesto que deja algo al descubierto."
+    memory_trick: "El rebelde se planta; el otro dato destapa."
+exercises:
+  - position: 1
+    sentence: "El dato más {{blank}} no fue la caída de ventas: fue la hora a la que la gente se iba, algo que nadie había mirado."
+    hint_general: "Ese dato enseñó algo que hasta entonces nadie veía."
+    explanation: "Revelador: enseñó algo que nadie había mirado. «Relevante» diría solo que importa, y «bestial» es coloquial y habla del tamaño de la sorpresa."
+    options:
+      - position: 1
+        text: "relevante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relevante» dice que el dato importa, y lo que destaca la frase es que nadie lo había mirado nunca."
+        hint_specific: "«Relevante» mide importancia. ¿Qué tenía de especial esa hora?"
+      - position: 2
+        text: "revelador"
+        is_correct: true
+      - position: 3
+        text: "bestial"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bestial» es coloquial y habla del tamaño de la sorpresa, no de que el dato mostrara algo escondido."
+        hint_specific: "«Bestial» exagera. ¿Qué hizo ese dato con lo que se sabía?"
+  - position: 2
+    sentence: "Ámbar no dijo nada cuando le preguntaron por el plazo, y su silencio fue más {{blank}} que cualquier respuesta."
+    hint_general: "El silencio dejó ver lo que las palabras habrían tapado."
+    explanation: "Revelador: el silencio dejó ver lo que las palabras habrían tapado. «Rebelde» describe a quien no obedece, y «tremendo» es coloquial y solo dice que fue muy grande."
+    options:
+      - position: 1
+        text: "revelador"
+        is_correct: true
+      - position: 2
+        text: "rebelde"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Rebelde» describe a quien se niega a obedecer, y aquí nadie desobedece: alguien calla y eso dice mucho."
+        hint_specific: "«Rebelde» va de desobedecer. ¿Qué hizo Ámbar cuando le preguntaron?"
+      - position: 3
+        text: "tremendo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tremendo» es coloquial y solo dice que algo fue enorme, sin explicar que ese silencio dejara ver nada."
+        hint_specific: "«Tremendo» mide tamaño. ¿Qué dejó a la vista ese silencio?"
+  - position: 3
+    sentence: "Un detalle {{blank}} cambió la reunión entera: el cliente llamaba siempre los viernes por la tarde."
+    hint_general: "Ese detalle enseñó algo que nadie había notado."
+    explanation: "Revelador: el detalle enseñó algo que nadie había notado. «Relevante» diría que importa, sin decir que descubre, y «curioso» solo llamaría la atención."
+    options:
+      - position: 1
+        text: "relevante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relevante» dice que el detalle importa, y lo que cambió la reunión fue descubrir un patrón que nadie veía."
+        hint_specific: "«Relevante» mide importancia. ¿Qué aportó ese detalle de los viernes?"
+      - position: 2
+        text: "curioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curioso» llama la atención, pero no explica que la reunión entera cambiara de rumbo."
+        hint_specific: "«Curioso» se queda en la anécdota. ¿Qué pasó con la reunión?"
+      - position: 3
+        text: "revelador"
+        is_correct: true
+  - position: 4
+    sentence: "Si un dato no cambia lo que pensabas, será interesante, pero no {{blank}}."
+    hint_general: "Solo merece ese nombre lo que te hace cambiar de idea."
+    explanation: "Revelador: solo lo que te hace cambiar de idea. «Reverente» describe a quien muestra respeto, e «importante» puede serlo un dato que ya esperabas."
+    options:
+      - position: 1
+        text: "reverente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reverente» describe a quien muestra mucho respeto, y aquí se habla de datos, no de actitudes."
+        hint_specific: "«Reverente» pertenece al trato respetuoso. ¿De qué habla la frase?"
+      - position: 2
+        text: "revelador"
+        is_correct: true
+      - position: 3
+        text: "importante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Importante» puede serlo un dato que ya esperabas, y la frase pide justo que cambie lo que pensabas."
+        hint_specific: "«Importante» no exige sorpresa. ¿Qué condición pone la frase?"
+  - position: 5
+    sentence: "Delia enseñó un gráfico {{blank}}: el problema no estaba en el precio, sino en el plazo de entrega."
+    hint_general: "El gráfico mostró dónde estaba de verdad el problema."
+    explanation: "Revelador: el gráfico mostró dónde estaba el problema. «Rebelde» describe a quien no obedece, y «bonito» valora el aspecto, no el descubrimiento."
+    options:
+      - position: 1
+        text: "rebelde"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Rebelde» describe a quien se niega a obedecer, y un gráfico no obedece ni desobedece: muestra."
+        hint_specific: "«Rebelde» va de desobedecer. ¿Qué hizo ese gráfico?"
+      - position: 2
+        text: "revelador"
+        is_correct: true
+      - position: 3
+        text: "bonito"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Bonito» valora el aspecto del gráfico, y lo que cuenta la frase es lo que dejó ver."
+        hint_specific: "«Bonito» habla del diseño. ¿Qué descubrió la sala al verlo?"
+  - position: 6
+    sentence: "Cuando su madre contó por qué se mudaron en 1998, Ivo escuchó el detalle más {{blank}} de su infancia."
+    hint_general: "Ese detalle cambió la idea que tenía de aquellos años."
+    explanation: "Revelador: cambió la idea que tenía de aquellos años. «Relevante» diría solo que importa, y «bestial» es coloquial y suena a exageración."
+    options:
+      - position: 1
+        text: "bestial"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bestial» es coloquial y suena a exageración, y aquí se describe un recuerdo familiar que cambia una idea."
+        hint_specific: "«Bestial» sube el tono. ¿Qué le pasó a Ivo con ese detalle?"
+      - position: 2
+        text: "revelador"
+        is_correct: true
+      - position: 3
+        text: "relevante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relevante» dice que el detalle importa, y lo que cuenta la frase es que le cambió la infancia entera."
+        hint_specific: "«Relevante» mide importancia. ¿Qué se movió dentro de Ivo?"
+  - position: 7
+    sentence: "El mejor caso de éxito tiene un momento {{blank}}, no una lista de logros ordenados por fecha."
+    hint_general: "Un momento en el que se ve algo que no se veía antes."
+    explanation: "Revelador: un momento en que se ve lo que no se veía. «Reverente» describe a quien muestra respeto, y «largo» solo hablaría de la duración del relato."
+    options:
+      - position: 1
+        text: "revelador"
+        is_correct: true
+      - position: 2
+        text: "reverente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reverente» describe a quien muestra respeto, y aquí se habla de cómo se construye un relato."
+        hint_specific: "«Reverente» va del trato respetuoso. ¿Qué debe tener el relato?"
+      - position: 3
+        text: "largo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largo» habla de la duración, y una lista de logros también puede ser larguísima."
+        hint_specific: "«Largo» mide duración. ¿Qué distingue al mejor caso de una lista?"
+  - position: 8
+    sentence: "Nadie recuerda tu resumen entero; recuerdan la frase {{blank}} que soltaste al final."
+    hint_general: "La frase que dejó ver algo nuevo es la que se queda."
+    explanation: "Reveladora: la frase dejó ver algo nuevo. «Rebelde» describe a quien no obedece, y «sonora» habla de cómo suena, no de lo que muestra."
+    options:
+      - position: 1
+        text: "rebelde"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Rebelde» describe a quien se niega a obedecer, y una frase que se recuerda no desobedece a nadie."
+        hint_specific: "«Rebelde» va de desobedecer. ¿Por qué se queda esa frase?"
+      - position: 2
+        text: "sonora"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sonora» habla de cómo suena la frase, y lo que la hace memorable es lo que deja ver."
+        hint_specific: "«Sonora» valora el sonido. ¿Qué hace que una frase se quede?"
+      - position: 3
+        text: "reveladora"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La hora de las siete"
+    body: "El panel tenía cuarenta cifras y todas parecían iguales. Otilia señaló una: «Este es el dato revelador: a las siete de la tarde se va el 60 % de la gente sin comprar». Al mes siguiente movieron el aviso de envío a esa hora."
+    before_phrase: "Aquí hay un dato que dice mucho, creo."
+    after_phrase: "Este es el dato revelador."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Por qué nos mudamos"
+    body: "Ivo creía saber la historia de aquella mudanza. Su madre añadió una frase: «Nos fuimos porque tu hermana necesitaba una escuela con apoyo». Fue revelador: veinte años de recuerdos se recolocaron en una tarde."
+    before_phrase: "Ah, pues eso lo explica todo."
+    after_phrase: "Fue revelador: cambió lo que yo recordaba."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pausa antes de responder"
+    body: "Ámbar preguntó cómo se tomaban las decisiones cuando había desacuerdo. Hubo una pausa larga y dos miradas cruzadas. «Esa pausa fue reveladora», contó luego: aceptó el puesto sabiendo exactamente qué tendría que arreglar."
+    before_phrase: "Se notó algo raro, no sé."
+    after_phrase: "Esa pausa fue reveladora."
+metrics:
+  zipf_overall: 3.4568
+  dispersion_dp: 0.2260
+  pedantry_proxy: 0.4939
+  family_size: 51
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

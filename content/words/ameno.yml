@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 117
+slug: "ameno"
+status: "draft"
+lemma: "ameno"
+part_of_speech: "adjetivo"
+syllables: ["a", "me", "no"]
+stressed_syllable: 2
+ipa_latam: "[aˈme.no]"
+ipa_es: "[aˈme.no]"
+explanation: "Que resulta agradable de escuchar o de leer y no cansa nada."
+example_sentence: "La charla fue tan amena que nadie miró el reloj."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es el elogio exacto para quien explica cosas serias sin que se hagan pesadas."
+when_not_to_use: "No la uses para algo que solo hace gracia; el chiste entretiene, pero no siempre enseña."
+collocations:
+  - "una charla amena"
+  - "un texto ameno"
+  - "hacerlo ameno"
+replaces:
+  - before: "El taller fue muy entretenido"
+    after: "El taller fue muy ameno"
+  - before: "Explica de un modo que no aburre"
+    after: "Explica de un modo ameno"
+  - before: "Es un libro que se lee muy bien"
+    after: "Es un libro muy ameno"
+family: ["amenidad"]
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 2
+  - slug: "persuasion-storytelling"
+    relevance: 1
+tags:
+  comodin: ["bueno"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "amable"
+    difference: "«Amable» describe a quien trata bien a los demás; la otra palabra describe algo que se escucha o se lee con gusto."
+    memory_trick: "Amable es el trato; lo otro es el rato."
+  - confused_with: "gracioso"
+    difference: "«Gracioso» busca la risa; algo que se sigue con gusto no necesita ni un chiste."
+    memory_trick: "Gracioso hace reír; lo otro hace que el tiempo vuele."
+exercises:
+  - position: 1
+    sentence: "La charla de Beatriz fue tan {{blank}} que nadie miró el reloj en cuarenta minutos."
+    hint_general: "Se escuchó con gusto y el tiempo pasó sin notarse."
+    explanation: "Amena: se escuchó con gusto y el tiempo pasó volando. «Amable» describe el trato, y «chistosa» promete risas."
+    options:
+      - position: 1
+        text: "amable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Amable» describe a quien trata bien a los demás, y aquí se juzga cómo se escuchó la charla."
+        hint_specific: "«Amable» habla del trato de una persona. ¿Qué se está juzgando aquí?"
+      - position: 2
+        text: "amena"
+        is_correct: true
+      - position: 3
+        text: "chistosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chistosa» es coloquial y promete risas, y una charla que se pasa volando no necesita chistes."
+        hint_specific: "«Chistosa» pide carcajadas. ¿La frase habla de risas o de tiempo?"
+  - position: 2
+    sentence: "Busco un libro {{blank}} para el viaje, no un manual de trescientas páginas."
+    hint_general: "Quiere algo que se lea con gusto y sin esfuerzo."
+    explanation: "Ameno: se lee con gusto y sin esfuerzo. «Ajeno» significa de otra persona, y «jocoso» suena culto y anuncia bromas."
+    options:
+      - position: 1
+        text: "ameno"
+        is_correct: true
+      - position: 2
+        text: "ajeno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajeno» quiere decir que algo es de otra persona, y aquí se busca un libro que se lea con gusto."
+        hint_specific: "«Ajeno» habla de a quién pertenece algo. ¿Eso importa para un viaje?"
+      - position: 3
+        text: "jocoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Jocoso» suena culto y anuncia bromas, y lo que se pide es un libro que no pese."
+        hint_specific: "«Jocoso» promete humor. ¿Se pide humor o ligereza?"
+  - position: 3
+    sentence: "Mi abuelo hace {{blank}} hasta la cola del banco: cuenta una historia y se pasa volando."
+    hint_general: "Con él, hasta esperar se vuelve agradable."
+    explanation: "Amena: hasta esperar se vuelve agradable. «Amable» describe el trato, y «llevadera» solo dice que se soporta mejor."
+    options:
+      - position: 1
+        text: "amable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Amable» habla del trato con la gente, y aquí lo que cambia es cómo se pasa el rato."
+        hint_specific: "«Amable» juzga a una persona. ¿Qué se juzga aquí: a él o la espera?"
+      - position: 2
+        text: "llevadera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Llevadera» dice que algo se soporta mejor, y con él la espera no se soporta: se disfruta."
+        hint_specific: "«Llevadera» solo aguanta. ¿La cola se aguanta o se disfruta?"
+      - position: 3
+        text: "amena"
+        is_correct: true
+  - position: 4
+    sentence: "El podcast tiene datos duros, aunque el tono es {{blank}} de principio a fin."
+    hint_general: "El tono hace que se escuche con gusto pese a los datos duros."
+    explanation: "Ameno: se escucha con gusto pese a los datos. «Amable» describe el trato, e «informal» habla del registro."
+    options:
+      - position: 1
+        text: "ameno"
+        is_correct: true
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Amable» describe a quien trata bien a los demás, y un tono se juzga por lo agradable que resulta oírlo."
+        hint_specific: "«Amable» necesita alguien a quien tratar. ¿A quién trata un tono?"
+      - position: 3
+        text: "informal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Informal» habla del registro, no de si engancha; un tono cuidado también se escucha con gusto."
+        hint_specific: "«Informal» mide la formalidad. ¿Qué mide la frase?"
+  - position: 5
+    sentence: "Renata convirtió una reunión larga en una hora {{blank}} con tres historias bien elegidas."
+    hint_general: "La hora se pasó bien gracias a las historias."
+    explanation: "Amena: la hora se pasó con gusto. «Ajena» significa de otra persona, y «graciosa» buscaría la risa."
+    options:
+      - position: 1
+        text: "ajena"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajena» significa que pertenece a otro, y esa hora era de todos los que estaban en la sala."
+        hint_specific: "«Ajena» habla de propiedad. ¿De quién era esa hora?"
+      - position: 2
+        text: "amena"
+        is_correct: true
+      - position: 3
+        text: "graciosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Graciosa» busca la risa, y las tres historias sirvieron para que el rato se pasara bien."
+        hint_specific: "«Graciosa» pide risas. ¿La frase promete risas o buen rato?"
+  - position: 6
+    sentence: "Los vídeos de formación eran pesados hasta que Ernesto los hizo más {{blank}} con ejemplos reales."
+    hint_general: "Los vídeos pasaron a verse con gusto gracias a los ejemplos."
+    explanation: "Amenos: pasaron a verse con gusto. «Amables» se dice de las personas, y «livianos» sugiere poca sustancia."
+    options:
+      - position: 1
+        text: "amables"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Amables» se dice de las personas que tratan bien, no de unos vídeos de trabajo."
+        hint_specific: "«Amables» describe a gente. ¿Qué cambió Ernesto?"
+      - position: 2
+        text: "amenos"
+        is_correct: true
+      - position: 3
+        text: "livianos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Livianos» sugiere poco peso o poca sustancia, y los vídeos ganaron ejemplos reales, no menos contenido."
+        hint_specific: "«Livianos» quita sustancia. ¿Los vídeos perdieron o ganaron contenido?"
+  - position: 7
+    sentence: "En la entrevista le dijeron a Hugo que su explicación había sido clara y {{blank}}."
+    hint_general: "Además de clara, se escuchó con gusto."
+    explanation: "Amena: además de clara, se escuchó con gusto. «Amable» juzga el trato, y «simpática» describe a quien cae bien."
+    options:
+      - position: 1
+        text: "amena"
+        is_correct: true
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Amable» juzga el trato de una persona, y el elogio va sobre cómo sonó la explicación."
+        hint_specific: "«Amable» mira el trato. ¿Qué elogian: a Hugo o su explicación?"
+      - position: 3
+        text: "simpática"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Simpática» describe a alguien que cae bien, y aquí el elogio es para la explicación en sí."
+        hint_specific: "«Simpática» habla de caer bien. ¿Se elogia a la persona o al contenido?"
+  - position: 8
+    sentence: "Una comida familiar {{blank}} no depende del menú, sino de quién lleve la conversación."
+    hint_general: "Lo que hace buena esa comida es el rato, no el menú."
+    explanation: "Amena: lo que la hace buena es el rato. «Ajena» significa de otros, y «abundante» habla de la cantidad."
+    options:
+      - position: 1
+        text: "ajena"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ajena» significa que es de otra familia, y la frase habla de la comida propia."
+        hint_specific: "«Ajena» habla de otros. ¿De quién es esta comida?"
+      - position: 2
+        text: "abundante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abundante» habla de la cantidad de comida, y la frase dice justo que el menú no es lo decisivo."
+        hint_specific: "«Abundante» cuenta platos. Relee el final: ¿de qué depende?"
+      - position: 3
+        text: "amena"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuarenta minutos sin reloj"
+    body: "Beatriz tenía que explicar un cambio de sistema y sabía que era un tema árido. Empezó con la historia de un pedido perdido en 2019. Al salir, alguien comentó: «Qué charla tan amena». Nadie había mirado el reloj."
+    before_phrase: "Ha estado muy entretenida, la verdad."
+    after_phrase: "Qué charla tan amena."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cola del banco"
+    body: "Mi abuelo convierte cualquier espera en algo que merece la pena. En la cola del banco cuenta cómo se conocieron sus padres, y la señora de delante se gira para escuchar. Hace amena hasta la espera más larga."
+    before_phrase: "Con él se hace corta hasta la cola."
+    after_phrase: "Hace amena hasta la espera más larga."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Clara y amena"
+    body: "Hugo explicó su último proyecto con un ejemplo de su barrio en vez de con un diagrama. Al final, la entrevistadora anotó dos palabras: «clara y amena». Le llamaron dos días después."
+    before_phrase: "Se entendió bien y además no se hizo largo."
+    after_phrase: "Clara y amena."
+metrics:
+  zipf_overall: 3.6504
+  dispersion_dp: 0.1715
+  pedantry_proxy: 0.2941
+  family_size: 3
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

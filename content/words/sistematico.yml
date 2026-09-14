@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2120
+slug: "sistematico"
+status: "draft"
+lemma: "sistemático"
+part_of_speech: "adjetivo"
+syllables: ["sis", "te", "má", "ti", "co"]
+stressed_syllable: 3
+ipa_latam: "[sis.teˈma.ti.ko]"
+ipa_es: "[sis.teˈma.ti.ko]"
+explanation: "Que pasa siempre igual y no por suerte, porque hay una causa detrás que lo produce."
+example_sentence: "No es mala suerte: el retraso de los viernes es sistemático desde hace medio año."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Cambia la conversación al describir un fallo: no acusas a nadie, señalas que hay una causa que se repite."
+when_not_to_use: "No la uses para algo que ocurrió dos o tres veces sin patrón claro: entonces todavía es pronto para hablar de causa."
+collocations:
+  - "un fallo sistemático"
+  - "un retraso sistemático"
+  - "de manera sistemática"
+replaces:
+  - before: "Es que siempre pasa lo mismo"
+    after: "Es un fallo sistemático"
+  - before: "No es mala suerte, pasa todos los meses"
+    after: "El retraso es sistemático"
+  - before: "Lo revisamos todo, uno por uno, sin saltarnos nada"
+    after: "Lo revisamos de manera sistemática"
+family: ["sistemáticamente"]
+themes:
+  - slug: "liderazgo-feedback"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin: ["siempre"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sistémico"
+    difference: "«Sistémico» dice que algo afecta a un conjunto entero; el otro dice que ocurre siempre del mismo modo."
+    memory_trick: "Sistémico habla del alcance; sistemático, de la repetición."
+  - confused_with: "esporádico"
+    difference: "«Esporádico» es lo que ocurre de vez en cuando y sin patrón; el otro adjetivo describe justo lo contrario."
+    memory_trick: "Lo esporádico sorprende; lo sistemático se puede predecir."
+exercises:
+  - position: 1
+    sentence: "No es mala suerte: el retraso de los viernes es {{blank}} desde hace medio año."
+    hint_general: "Pasa todos los viernes, y eso ya no es suerte."
+    explanation: "Sistemático: pasa todos los viernes con la misma causa. «Sintomático» diría que revela otra cosa, y «frecuente» solo cuenta cuántas veces pasa."
+    options:
+      - position: 1
+        text: "sintomático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintomático» dice que algo revela un problema mayor; la frase no interpreta el retraso, dice que se repite cada viernes."
+        hint_specific: "Sintomático revela otra cosa. ¿La frase interpreta el retraso o lo cuenta?"
+      - position: 2
+        text: "sistemático"
+        is_correct: true
+      - position: 3
+        text: "frecuente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frecuente» solo dice que pasa muchas veces; el día fijo de los viernes apunta a una causa, no a una cantidad."
+        hint_specific: "Frecuente cuenta repeticiones. ¿Qué añade el detalle de los viernes?"
+  - position: 2
+    sentence: "El fallo era {{blank}}: aparecía cada vez que dos personas editaban el mismo archivo."
+    hint_general: "Aparecía siempre en la misma situación, no al azar."
+    explanation: "Sistemático: aparecía siempre en la misma situación. «Esquemático» describe algo resumido en un esquema, y «grave» mide el daño, no la repetición."
+    options:
+      - position: 1
+        text: "esquemático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esquemático» describe algo reducido a un esquema, como un dibujo o un resumen; un fallo no se describe así."
+        hint_specific: "Esquemático habla de esquemas y resúmenes. ¿Es eso un fallo?"
+      - position: 2
+        text: "grave"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grave» mide el daño que causa; los dos puntos de la frase explican cuándo aparece, no cuánto duele."
+        hint_specific: "Grave mide el daño. ¿Qué explica la parte de después de los dos puntos?"
+      - position: 3
+        text: "sistemático"
+        is_correct: true
+  - position: 3
+    sentence: "Si el problema es {{blank}}, cambiar de persona no arregla nada."
+    hint_general: "Si la causa está en el método, cambiar de gente no sirve."
+    explanation: "Sistemático: la causa está en el método, no en quien lo hace. «Sistémico» hablaría del alcance, y «estructural» suena a informe de consultoría."
+    options:
+      - position: 1
+        text: "sistemático"
+        is_correct: true
+      - position: 2
+        text: "sistémico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sistémico» dice que algo afecta a un conjunto entero; la frase habla de que el problema se repite igual una y otra vez."
+        hint_specific: "Sistémico habla del alcance. ¿La frase mide alcance o repetición?"
+      - position: 3
+        text: "estructural"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Estructural» pertenece al lenguaje de los informes de consultoría y suena a diagnóstico caro para un problema de equipo."
+        hint_specific: "«Estructural» suena a informe de consultoría. ¿Encaja hablando con tu equipo?"
+  - position: 4
+    sentence: "Mi padre revisa las cuentas de la casa de manera {{blank}}: mismo día, misma hoja, mismo orden."
+    hint_general: "Repite siempre el mismo orden y el mismo día."
+    explanation: "Sistemática: repite siempre el mismo orden. «Sintomática» diría que revela otra cosa, y «rara» diría que resulta extraña, cuando es justo lo previsible."
+    options:
+      - position: 1
+        text: "sintomática"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintomática» dice que algo revela un problema de fondo; revisar las cuentas cada mes no revela nada, solo se repite."
+        hint_specific: "Sintomática revela un problema. ¿Qué revela revisar las cuentas?"
+      - position: 2
+        text: "sistemática"
+        is_correct: true
+      - position: 3
+        text: "rara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rara» diría que resulta extraña; lo que describen los tres detalles es justo lo contrario, algo totalmente previsible."
+        hint_specific: "Rara significa extraña. ¿Es extraño repetir siempre el mismo orden?"
+  - position: 5
+    sentence: "Antes de acusar a nadie, Cristina comprobó si el fallo era {{blank}} o cosa de un solo día."
+    hint_general: "Quiere saber si se repite con un patrón o fue un día suelto."
+    explanation: "Sistemático: comprueba si hay un patrón detrás. «Esquemático» describe un resumen, y «casual» diría que pasó por azar, que es la otra mitad de la pregunta."
+    options:
+      - position: 1
+        text: "casual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Casual» es lo que pasa por azar, y eso ya está en la segunda mitad de la frase: cosa de un solo día."
+        hint_specific: "Casual significa por azar. ¿Qué opción ya aparece al final de la frase?"
+      - position: 2
+        text: "esquemático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esquemático» describe algo reducido a un esquema; un fallo se repite o no se repite, no se esquematiza solo."
+        hint_specific: "Esquemático habla de esquemas. ¿Un fallo es un esquema?"
+      - position: 3
+        text: "sistemático"
+        is_correct: true
+  - position: 6
+    sentence: "Los olvidos dejaron de parecer despistes cuando alguien demostró que eran {{blank}}."
+    hint_general: "Alguien probó que los olvidos seguían un patrón."
+    explanation: "Sistemáticos: seguían un patrón, no eran despistes. «Sistémicos» hablaría de algo que afecta a un conjunto, y «constantes» diría que no paran nunca."
+    options:
+      - position: 1
+        text: "sistemáticos"
+        is_correct: true
+      - position: 2
+        text: "sistémicos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sistémicos» describe algo que alcanza a un conjunto entero; lo que se demostró es que los olvidos seguían un patrón."
+        hint_specific: "Sistémicos habla de alcance. ¿Qué demostró esa persona, alcance o patrón?"
+      - position: 3
+        text: "constantes"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constantes» significa que no paran nunca; un patrón puede repetirse solo en ciertos momentos y seguir siendo un patrón."
+        hint_specific: "Constantes no dejan huecos. ¿Un patrón tiene que ocurrir siempre?"
+  - position: 7
+    sentence: "El equipo empezó a anotar cada incidencia de modo {{blank}}, y en un mes vieron el patrón."
+    hint_general: "Anotan cada caso con el mismo método hasta ver el patrón."
+    explanation: "Sistemático: anotan todo con el mismo método. «Sintomático» diría que las notas revelan otra cosa, y «endémico» suena a informe de salud pública."
+    options:
+      - position: 1
+        text: "sintomático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sintomático» dice que algo revela un problema de fondo; aquí lo que se describe es cómo anotan, no qué revela."
+        hint_specific: "Sintomático revela un problema. ¿La frase describe el método o el hallazgo?"
+      - position: 2
+        text: "sistemático"
+        is_correct: true
+      - position: 3
+        text: "endémico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Endémico» pertenece a los informes de salud pública y se dice de lo que arraiga en un lugar, no de cómo se toman notas."
+        hint_specific: "«Endémico» suena a informe de salud pública. ¿Encaja al describir unas notas?"
+  - position: 8
+    sentence: "Lo que hundía las entregas no era un despiste suelto, sino un problema {{blank}} de reparto de trabajo."
+    hint_general: "La causa está en cómo se reparte el trabajo, no en un despiste."
+    explanation: "Sistemático: la causa está en el reparto y se repite. «Esquemático» describe un resumen, y «molesto» mide la incomodidad, no la repetición."
+    options:
+      - position: 1
+        text: "esquemático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esquemático» se dice de lo que está reducido a un esquema; el reparto de trabajo no falla por ser un esquema."
+        hint_specific: "Esquemático describe resúmenes. ¿Qué falla en el reparto?"
+      - position: 2
+        text: "molesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Molesto» mide lo incómodo que resulta algo; la frase señala de dónde viene el problema, no cuánto fastidia."
+        hint_specific: "Molesto mide la incomodidad. ¿La frase señala causa o fastidio?"
+      - position: 3
+        text: "sistemático"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los viernes otra vez"
+    body: "Llevaban medio año culpando a quien tocara. Gonzalo puso el calendario encima de la mesa: «El retraso es sistemático: siempre los viernes, siempre con el mismo paso. No busquemos culpables, busquemos el paso». Encontraron el paso en dos horas."
+    before_phrase: "Es que siempre pasa lo mismo."
+    after_phrase: "El retraso es sistemático: siempre los viernes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cuenta de agosto"
+    body: "Cada agosto la cuenta de casa se descuadraba y cada agosto había bronca. Marta lo dijo distinto este año: «No es que gastemos mal en verano. Es sistemático: pagamos el seguro y el colegio el mismo mes». Guardaron una parte cada enero y se acabó la bronca."
+    before_phrase: "Siempre nos pasa lo mismo en agosto."
+    after_phrase: "Es sistemático: dos pagos caen el mismo mes."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El club que perdía socios"
+    body: "Cada temporada se iban diez personas y nadie sabía por qué. Un socio se puso a anotar de manera sistemática quién se iba y cuándo. El patrón apareció solo: todos se marchaban tras el cambio de horario de octubre. Lo movieron una hora y dejaron de irse."
+    before_phrase: "Vamos a apuntarlo todo bien apuntado."
+    after_phrase: "Lo anotamos de manera sistemática."
+metrics:
+  zipf_overall: 3.9241
+  dispersion_dp: 0.2222
+  pedantry_proxy: 0.4644
+  family_size: 95
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

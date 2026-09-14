@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 314
+slug: "abarcar"
+status: "gated"
+lemma: "abarcar"
+part_of_speech: "verbo"
+syllables:
+  - "a"
+  - "bar"
+  - "car"
+stressed_syllable: 3
+ipa_latam: "[a.βarˈkar]"
+ipa_es: "[a.βarˈkar]"
+explanation: "Hacerse cargo de varias cosas a la vez, todas dentro del mismo tiempo."
+example_sentence: "Este mes no puedo abarcar un proyecto más sin dejar caer otro."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para decir que no sin hablar de ganas: «No puedo abarcar más» habla de capacidad, no de interés."
+when_not_to_use: "No la uses cuando el problema es que algo no te apetece: ahí no sobra cantidad, falta interés."
+collocations:
+  - "abarcar más"
+  - "abarcar demasiado"
+  - "no poder abarcarlo todo"
+replaces:
+  - before: "No puedo con todo"
+    after: "No puedo abarcarlo todo"
+  - before: "Me eché encima demasiadas cosas"
+    after: "He abarcado demasiado"
+  - before: "Con esto ya tengo bastante"
+    after: "Con esto ya abarco lo que puedo"
+family: []
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "hacer"
+    - "poder"
+  funcion:
+    - "poner límites"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acaparar"
+    difference: "«Acaparar» es quedarse con algo para uno solo, quitándoselo a los demás; la otra palabra mide cuánto puedes atender tú."
+    memory_trick: "Quien acapara no comparte; quien abarca alcanza."
+  - confused_with: "abarrotar"
+    difference: "«Abarrotar» es llenar un espacio hasta arriba, como una sala o un armario; aquí se habla de cuántas cosas caben en tu semana."
+    memory_trick: "Se abarrota una sala; se abarca una agenda."
+exercises:
+  - position: 1
+    sentence: "Julián dijo que no al cuarto encargo: no podía {{blank}} más sin dejar caer algo de lo que ya tenía."
+    hint_general: "Reconoce que no le caben más cosas a la vez sin soltar otras."
+    explanation: "Abarcar: no le caben más cosas a la vez. «Abarrotar» es llenar un espacio hasta arriba, y «acaparar» es quedarse con algo quitándoselo a otros."
+    options:
+      - position: 1
+        text: "abarrotar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abarrotar» es llenar un espacio hasta arriba, como una sala, y aquí lo que se llena es su semana de trabajo."
+        hint_specific: "«Abarrotar» llena salas y armarios. ¿Qué espacio físico hay en la frase?"
+      - position: 2
+        text: "abarcar"
+        is_correct: true
+      - position: 3
+        text: "acaparar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acaparar» es quedarse con algo quitándoselo a otros, y Julián está intentando quedarse con menos, no con más."
+        hint_specific: "«Acaparar» quita a los demás. ¿Julián pide más o rechaza más?"
+  - position: 2
+    sentence: "Quien intenta {{blank}} todo acaba entregando la mitad tarde, le repite su socia a Blanca cada lunes."
+    hint_general: "Aceptar todas las cosas a la vez acaba produciendo entregas fuera de plazo."
+    explanation: "Abarcar: aceptar todo a la vez acaba en retrasos. «Abaratar» es bajar el precio de algo, y «tragar» es coloquial y suena a aguantar en silencio."
+    options:
+      - position: 1
+        text: "abaratar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abaratar» es bajar el precio de algo, y aquí no se habla de dinero, sino de cuántas cosas se aceptan."
+        hint_specific: "«Abaratar» toca el precio. ¿Qué precio aparece en la frase?"
+      - position: 2
+        text: "tragar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tragar» es coloquial y sugiere aguantar algo en silencio, no calcular cuántas cosas te caben."
+        hint_specific: "«Tragar» suena a aguantar callado. ¿El problema es el silencio o la cantidad?"
+      - position: 3
+        text: "abarcar"
+        is_correct: true
+  - position: 3
+    sentence: "Pilar aprendió a medir lo que {{blank}} antes de decir que sí a cualquier cosa."
+    hint_general: "Antes de aceptar, calcula cuántas cosas puede atender de verdad."
+    explanation: "Abarca: calcula cuántas cosas puede atender. «Abarrota» es llenar un espacio hasta arriba, y «reparte» sería dar trabajo a otras personas."
+    options:
+      - position: 1
+        text: "abarca"
+        is_correct: true
+      - position: 2
+        text: "abarrota"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abarrotar» es llenar un espacio hasta arriba, como una sala, y lo que ella mide es su propia carga."
+        hint_specific: "«Abarrotar» llena espacios físicos. ¿Qué sala se llenaría aquí?"
+      - position: 3
+        text: "reparte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repartir» sería dar parte del trabajo a otras personas, y ella mide lo que puede llevar ella misma."
+        hint_specific: "«Repartir» pasa trabajo a otros. ¿Pilar mide lo suyo o lo de los demás?"
+  - position: 4
+    sentence: "El plan de Diego {{blank}} más semanas de las que tenía libres antes del verano."
+    hint_general: "El plan ocupaba más semanas de las que él tenía disponibles."
+    explanation: "Abarcaba: el plan ocupaba más semanas de las disponibles. «Abrasaba» es quemar, y «acaparaba» sería quitarle esas semanas a otra persona."
+    options:
+      - position: 1
+        text: "abrasaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abrasar» es quemar algo, y un plan de trabajo no quema las semanas del calendario."
+        hint_specific: "«Abrasar» quema. ¿Hay fuego en esta frase?"
+      - position: 2
+        text: "abarcaba"
+        is_correct: true
+      - position: 3
+        text: "acaparaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acaparar» es quedarse con algo quitándoselo a otros, y las semanas libres eran suyas desde el principio."
+        hint_specific: "«Acaparar» le quita algo a alguien. ¿A quién se lo quitaría Diego?"
+  - position: 5
+    sentence: "No es falta de ganas: Teresa ya no {{blank}} un compromiso más este trimestre."
+    hint_general: "No le sobran ganas, le falta sitio para una cosa más."
+    explanation: "Abarca: ya no le cabe un compromiso más. «Abarrota» es llenar un espacio hasta arriba, y «apechuga» es coloquial y significa aguantar algo desagradable."
+    options:
+      - position: 1
+        text: "abarrota"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abarrotar» es llenar un espacio hasta arriba, como una sala, y aquí lo que se llena es un trimestre."
+        hint_specific: "«Abarrotar» llena salas. ¿Qué sala aparece en la frase?"
+      - position: 2
+        text: "abarca"
+        is_correct: true
+      - position: 3
+        text: "apechuga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apechugar» es coloquial y significa aguantar algo desagradable, no calcular cuánto te cabe."
+        hint_specific: "«Apechugar» suena a aguantar a la fuerza. ¿Teresa aguanta o mide?"
+  - position: 6
+    sentence: "Antes de aceptar, Gonzalo se preguntó cuánto podía {{blank}} sin quitarle las tardes a su hija."
+    hint_general: "Calcula cuántas cosas puede llevar sin perder sus tardes en casa."
+    explanation: "Abarcar: calcula cuánto puede llevar sin perder sus tardes. «Acatar» es obedecer una orden, y «acaparar» es quedarse con algo quitándoselo a otros."
+    options:
+      - position: 1
+        text: "acatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer una orden o una norma, y aquí nadie le ordena nada: está decidiendo él."
+        hint_specific: "«Acatar» obedece órdenes. ¿Quién le estaría dando una orden a Gonzalo?"
+      - position: 2
+        text: "abarcar"
+        is_correct: true
+      - position: 3
+        text: "acaparar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acaparar» es quedarse con algo quitándoselo a otros, y él está midiendo su propio límite."
+        hint_specific: "«Acaparar» le quita algo a alguien. ¿A quién se lo quitaría aquí?"
+  - position: 7
+    sentence: "Marta decidió {{blank}} menos y terminar mejor, y por primera vez entregó todo dentro de plazo."
+    hint_general: "Se hace cargo de menos cosas a la vez y así las acaba bien."
+    explanation: "Abarcar: se hace cargo de menos cosas a la vez. «Abaratar» es bajar el precio, y «delegar» sería pasar trabajo a otras personas, no aceptar menos."
+    options:
+      - position: 1
+        text: "abaratar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abaratar» es bajar el precio de algo, y la frase no habla de dinero sino de cantidad de trabajo."
+        hint_specific: "«Abaratar» toca precios. ¿Dónde está el precio en esta frase?"
+      - position: 2
+        text: "abarcar"
+        is_correct: true
+      - position: 3
+        text: "delegar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Delegar» es pasar trabajo a otra persona, y Marta lo que hace es aceptar menos encargos desde el principio."
+        hint_specific: "«Delegar» reparte el trabajo. ¿Marta lo pasa a alguien o lo rechaza antes?"
+  - position: 8
+    sentence: "Si Andrés {{blank}} cinco encargos a la vez, ninguno sale como él quiere y todos llegan justos."
+    hint_general: "Aceptar cinco cosas al mismo tiempo hace que ninguna salga bien."
+    explanation: "Abarca: acepta cinco cosas al mismo tiempo. «Abrasa» es quemar, y «resume» sería contarlos en pocas palabras, no hacerse cargo de ellos."
+    options:
+      - position: 1
+        text: "abarca"
+        is_correct: true
+      - position: 2
+        text: "abrasa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abrasar» es quemar algo, y unos encargos no se queman: se aceptan o se rechazan."
+        hint_specific: "«Abrasar» quema. ¿Hay fuego en esta escena?"
+      - position: 3
+        text: "resume"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es contar algo en pocas palabras, y aquí el problema es cuántos encargos acepta, no cómo los cuenta."
+        hint_specific: "«Resumir» acorta un texto. ¿El lío es de palabras o de cantidad?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La cuarta petición"
+    body: "Mónica recibió un cuarto encargo un martes por la mañana. Respondió antes de comer: «No puedo abarcar esto ahora; si quitamos el informe del viernes, sí». Le contestaron a los diez minutos y quitaron el informe."
+    before_phrase: "Es que no puedo con todo."
+    after_phrase: "No puedo abarcar esto ahora."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El sábado de todos"
+    body: "Álvaro había prometido la mudanza de un amigo, la comida familiar y la excursión de su hijo, todo el mismo sábado. Su pareja lo miró y le dijo: «Eso no lo abarca nadie». Llamó a su amigo esa misma noche."
+    before_phrase: "Eso no lo hace nadie en un día."
+    after_phrase: "Eso no lo abarca nadie."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La liga del barrio"
+    body: "Fernanda organizaba el grupo de lectura, la liga de fútbol y las cenas de los jueves. En enero escribió al chat: «Voy a abarcar dos cosas, no tres; dejo el fútbol en buenas manos». Dos vecinos se ofrecieron enseguida."
+    before_phrase: "Voy a quitarme una de las tres cosas."
+    after_phrase: "Voy a abarcar dos cosas, no tres."
+metrics:
+  zipf_overall: 4.7115
+  dispersion_dp: 0.0955
+  pedantry_proxy: 0.4651
+  family_size: 21
+provenance:
+  generator: "flui authoring agent"
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

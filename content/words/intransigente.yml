@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2125
+slug: "intransigente"
+status: "draft"
+lemma: "intransigente"
+part_of_speech: "adjetivo"
+syllables: ["in", "tran", "si", "gen", "te"]
+stressed_syllable: 4
+ipa_latam: "[in.tɾan.siˈxen.te]"
+ipa_es: "[in.tɾan.siˈxen.te]"
+explanation: "Que no cede ni un poco, aunque le den razones buenas para hacerlo."
+example_sentence: "Se puso intransigente con el precio, y la reunión terminó sin ningún acuerdo."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Describe la postura, no a la persona: «se puso intransigente con el plazo» deja abierta la puerta de mañana."
+when_not_to_use: "No la uses para quien defiende algo importante con firmeza: sostener una postura no es lo mismo que no escuchar."
+collocations:
+  - "ponerse intransigente"
+  - "una postura intransigente"
+  - "ser intransigente con algo"
+replaces:
+  - before: "No cede ni un milímetro"
+    after: "Está intransigente"
+  - before: "Con él no se puede negociar nada"
+    after: "Es intransigente en todo"
+  - before: "No hubo manera de que se moviera del precio"
+    after: "Se puso intransigente con el precio"
+family: ["intransigencia"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin: ["cerrado"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "intransitable"
+    difference: "«Intransitable» se dice de un camino por el que no se puede pasar; el otro adjetivo describe a quien no se mueve de su postura."
+    memory_trick: "Intransitable es un camino; intransigente, una persona."
+  - confused_with: "exigente"
+    difference: "«Exigente» pide mucho y acepta que se lo den de varias maneras; el otro no admite más salida que la suya."
+    memory_trick: "El exigente pide mucho; el intransigente no admite nada."
+exercises:
+  - position: 1
+    sentence: "Durante toda la reunión se mostró {{blank}}: ni una coma del contrato se movió de sitio."
+    hint_general: "No cedió en nada durante toda la reunión."
+    explanation: "Intransigente: no cedió en nada. «Intransitable» se dice de un camino cortado, y «firme» describe a quien sostiene su postura pero puede escuchar."
+    options:
+      - position: 1
+        text: "intransitable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intransitable» se dice de un camino por el que no se puede pasar; una persona en una reunión no se describe así."
+        hint_specific: "Intransitable describe caminos. ¿Hay algún camino en esta reunión?"
+      - position: 2
+        text: "intransigente"
+        is_correct: true
+      - position: 3
+        text: "firme"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Firme» describe a quien sostiene su postura y aun así escucha; aquí no se movió ni una coma del contrato."
+        hint_specific: "Firme sostiene y escucha. ¿Cuánto se movió el contrato?"
+  - position: 2
+    sentence: "Mi tío es {{blank}} con la hora de comer, y con todo lo demás es el hombre más flexible del mundo."
+    hint_general: "Con la hora de comer no cede; con el resto sí."
+    explanation: "Intransigente: con esa hora no cede nada. «Intrascendente» significa sin importancia, y «cabezota» es coloquial y suena a reproche cariñoso."
+    options:
+      - position: 1
+        text: "intrascendente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intrascendente» significa que algo no tiene importancia; el tío de la frase sí la tiene, y mucha, con la hora de comer."
+        hint_specific: "Intrascendente significa sin importancia. ¿Le da poca importancia a la hora?"
+      - position: 2
+        text: "cabezota"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cabezota» es coloquial y suena a reproche cariñoso sobre el carácter; aquí se describe una postura concreta."
+        hint_specific: "«Cabezota» juzga el carácter en broma. ¿La frase describe carácter o una postura?"
+      - position: 3
+        text: "intransigente"
+        is_correct: true
+  - position: 3
+    sentence: "Si te pones {{blank}} desde la primera frase, la otra parte se levanta y ya no vuelve."
+    hint_general: "Si no cedes en nada desde el principio, el otro se va."
+    explanation: "Intransigente: no ceder desde el principio espanta al otro. «Intachable» significa sin ninguna falta, y «duro» describe el tono, no la falta de margen."
+    options:
+      - position: 1
+        text: "intransigente"
+        is_correct: true
+      - position: 2
+        text: "intachable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intachable» significa que no tiene ni una falta que reprochar; nadie se levanta de una mesa porque el otro sea intachable."
+        hint_specific: "Intachable es un elogio. ¿Por qué se levanta la otra parte?"
+      - position: 3
+        text: "duro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Duro» describe el tono con que hablas; se puede negociar con tono durísimo y aun así dejar margen."
+        hint_specific: "Duro describe el tono. ¿Lo que espanta es el tono o el cero margen?"
+  - position: 4
+    sentence: "El comité no fue {{blank}}: aceptó dos de las tres condiciones y explicó por qué no la tercera."
+    hint_general: "Cedió en dos puntos y explicó el tercero."
+    explanation: "Intransigente: no lo fue, porque cedió en dos puntos. «Intransitable» se dice de un camino cortado, y «exigente» solo diría que pide mucho."
+    options:
+      - position: 1
+        text: "exigente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigente» dice que pide mucho; el comité puede seguir pidiendo mucho y aun así haber cedido en dos condiciones."
+        hint_specific: "Exigente pide mucho. ¿Qué demuestran las dos condiciones aceptadas?"
+      - position: 2
+        text: "intransitable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intransitable» describe un camino por el que no se puede pasar; un comité no es un camino."
+        hint_specific: "Intransitable describe caminos. ¿Qué se está describiendo aquí?"
+      - position: 3
+        text: "intransigente"
+        is_correct: true
+  - position: 5
+    sentence: "Nadie llamaría {{blank}} a quien defiende un límite y además dice a cambio de qué lo movería."
+    hint_general: "Quien dice a cambio de qué se movería, sí cede."
+    explanation: "Intransigente: no lo es quien dice a cambio de qué se mueve. «Intachable» es un elogio sobre la conducta, e «irreductible» suena a personaje de novela."
+    options:
+      - position: 1
+        text: "intachable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intachable» significa que no tiene ni una falta; la frase no juzga la conducta de nadie, sino su margen para moverse."
+        hint_specific: "Intachable habla de conducta sin faltas. ¿Qué se mide en esta frase?"
+      - position: 2
+        text: "irreductible"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Irreductible» suena a personaje épico de novela o de cómic; para una mesa de trabajo resulta exagerado."
+        hint_specific: "«Irreductible» suena a héroe de cómic. ¿Encaja en una negociación normal?"
+      - position: 3
+        text: "intransigente"
+        is_correct: true
+  - position: 6
+    sentence: "Con los plazos era {{blank}}, aunque con el presupuesto siempre encontraba una salida."
+    hint_general: "Con los plazos no había manera; con el dinero sí."
+    explanation: "Intransigente: con los plazos no cedía nada. «Intransitable» describe un camino cortado, y «seguro» hablaría de su confianza, no de su margen."
+    options:
+      - position: 1
+        text: "intransitable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intransitable» se dice de un camino que no se puede recorrer; un plazo no es un camino con barro."
+        hint_specific: "Intransitable describe caminos. ¿Qué se describe aquí?"
+      - position: 2
+        text: "intransigente"
+        is_correct: true
+      - position: 3
+        text: "seguro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguro» habla de la confianza que tiene en sí mismo; la frase compara cuánto margen daba en cada asunto."
+        hint_specific: "Seguro habla de confianza. ¿Qué compara la frase entre plazos y presupuesto?"
+  - position: 7
+    sentence: "Dos personas {{blank}} en la misma mesa convierten cualquier acuerdo en una pared."
+    hint_general: "Dos personas que no ceden nunca bloquean la mesa."
+    explanation: "Intransigentes: ninguna de las dos cede. «Intrascendentes» significa sin importancia, y «serias» describiría su gesto, no su margen."
+    options:
+      - position: 1
+        text: "intransigentes"
+        is_correct: true
+      - position: 2
+        text: "intrascendentes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intrascendentes» significa sin importancia; dos personas sin importancia no convierten nada en una pared."
+        hint_specific: "Intrascendentes significa sin importancia. ¿Eso bloquea un acuerdo?"
+      - position: 3
+        text: "serias"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Serias» describe el gesto o el tono; dos personas muy serias pueden cerrar un acuerdo en diez minutos."
+        hint_specific: "Serias describe el gesto. ¿El gesto levanta una pared?"
+  - position: 8
+    sentence: "Cuando el otro lado se pone {{blank}}, lo único que queda es preguntar qué necesita para moverse."
+    hint_general: "Ante alguien que no cede, pregunta qué necesita."
+    explanation: "Intransigente: el otro lado no cede nada. «Intransitable» describe un camino cortado, y «callado» hablaría de su silencio, no de su postura."
+    options:
+      - position: 1
+        text: "callado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callado» describe a quien habla poco; alguien puede estar en silencio y ceder en todo lo que le pidas."
+        hint_specific: "Callado habla poco. ¿El problema es el silencio o la falta de margen?"
+      - position: 2
+        text: "intransigente"
+        is_correct: true
+      - position: 3
+        text: "intransitable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intransitable» se dice de un camino cortado por el barro o la nieve; una persona no se pone intransitable."
+        hint_specific: "Intransitable describe caminos. ¿Quién se pone así en la frase?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Ni una coma"
+    body: "Tres reuniones y el contrato seguía igual. Al salir, Sandra se lo dijo a su equipo sin dramatizar: «Están intransigentes con el plazo, no con el precio. Vamos a llevar el precio y dejar la fecha quieta». La cuarta reunión duró veinte minutos."
+    before_phrase: "No ceden ni un milímetro en nada."
+    after_phrase: "Están intransigentes con el plazo, no con el precio."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La hora de la comida"
+    body: "En casa de su tío se come a las dos, y a las dos significa a las dos. «Es intransigente con eso y con nada más», decía Gloria riéndose. «Llega tarde al resto del mundo, pero al arroz nunca». Nadie discutía la hora, y el arroz siempre salía bien."
+    before_phrase: "Con eso no hay quien lo mueva."
+    after_phrase: "Es intransigente con eso y con nada más."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La norma del grupo"
+    body: "El chat del grupo llevaba un mes atascado con las fechas del viaje. Víctor lo dijo claro: «Si vamos todos intransigentes, no salimos en junio ni en julio. Yo cedo la primera semana; ¿quién cede la segunda?». Cedieron tres, y hubo viaje."
+    before_phrase: "Si nadie cede, no vamos a ningún lado."
+    after_phrase: "Si vamos todos intransigentes, no salimos."
+metrics:
+  zipf_overall: 3.215
+  dispersion_dp: 0.2321
+  pedantry_proxy: 0.5296
+  family_size: 212
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

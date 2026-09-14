@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2121
+slug: "discrepar"
+status: "draft"
+lemma: "discrepar"
+part_of_speech: "verbo"
+syllables: ["dis", "cre", "par"]
+stressed_syllable: 3
+ipa_latam: "[dis.kɾeˈpaɾ]"
+ipa_es: "[dis.kɾeˈpaɾ]"
+explanation: "Decir que no estás de acuerdo con alguien, con calma y sin romper la conversación."
+example_sentence: "Escuché la propuesta entera y luego dije que discrepaba en dos puntos concretos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Suena mejor que «no estoy de acuerdo»: nombra la postura y deja a la persona fuera del golpe."
+when_not_to_use: "No la uses para una diferencia mínima: si el desacuerdo es de matiz, basta con precisar el punto."
+collocations:
+  - "discrepar de una idea"
+  - "discrepar en público"
+  - "discrepar con respeto"
+replaces:
+  - before: "No estoy de acuerdo contigo"
+    after: "Discrepo de lo que propones"
+  - before: "Yo lo veo de otra manera"
+    after: "Discrepo, y te digo por qué"
+  - before: "A mí no me parece bien eso"
+    after: "Discrepo de ese punto"
+family: ["discrepancia"]
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin: ["decir"]
+  funcion: ["disentir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "discriminar"
+    difference: "«Discriminar» es separar una cosa de otra por sus diferencias; aquí no se separa nada, se dice que no se comparte una idea."
+    memory_trick: "Discriminas separando; discrepas opinando."
+  - confused_with: "discutir"
+    difference: "«Discutir» es entrar en una pelea de argumentos; lo otro cabe en una sola frase y sin subir el tono."
+    memory_trick: "Discutir alarga; discrepar nombra."
+exercises:
+  - position: 1
+    sentence: "Marina escuchó la propuesta entera y luego dijo que {{blank}} en dos puntos concretos."
+    hint_general: "Dijo que no estaba de acuerdo en dos puntos."
+    explanation: "Discrepaba: dijo que no estaba de acuerdo en dos puntos. «Discriminaba» sería separar cosas por sus diferencias, y «dudaba» diría que no lo tenía claro."
+    options:
+      - position: 1
+        text: "discriminaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discriminar» es separar unas cosas de otras por sus diferencias; Marina no separa nada, marca dónde no coincide."
+        hint_specific: "Discriminar separa cosas. ¿Marina separa algo o marca su postura?"
+      - position: 2
+        text: "discrepaba"
+        is_correct: true
+      - position: 3
+        text: "dudaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dudar» es no tenerlo claro; Marina lo tiene clarísimo, y por eso señala dos puntos exactos."
+        hint_specific: "Dudar es no tenerlo claro. ¿Marina duda o sabe en qué no coincide?"
+  - position: 2
+    sentence: "Puedes {{blank}} en una reunión sin convertirla en una pelea: basta con decir de qué y por qué."
+    hint_general: "Se puede decir que no compartes algo sin pelear."
+    explanation: "Discrepar: decir que no compartes algo sin pelear. «Discernir» es distinguir entre dos cosas, y «disentir» dice lo mismo con tono de acta parlamentaria."
+    options:
+      - position: 1
+        text: "discernir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discernir» es distinguir una cosa de otra con criterio; en la frase no se distingue nada, se marca una postura."
+        hint_specific: "Discernir distingue entre cosas. ¿Qué se hace aquí en la reunión?"
+      - position: 2
+        text: "disentir"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Disentir» significa algo parecido, pero suena a acta parlamentaria; en una reunión normal resulta solemne."
+        hint_specific: "«Disentir» suena a acta oficial. ¿Encaja en una reunión de equipo?"
+      - position: 3
+        text: "discrepar"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} del plan, dilo hoy y no dentro de tres semanas en el pasillo."
+    hint_general: "Di hoy que no estás de acuerdo, no en el pasillo."
+    explanation: "Discrepas: dices hoy que no estás de acuerdo. «Discurres» significa pensar o pasear una idea, y «refunfuñas» describe quejarse por lo bajo."
+    options:
+      - position: 1
+        text: "discrepas"
+        is_correct: true
+      - position: 2
+        text: "discurres"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discurrir» es pensar o dejar correr una idea; la frase pide decir algo en voz alta, no pensarlo."
+        hint_specific: "Discurrir se hace por dentro. ¿Qué pide la frase, pensar o hablar?"
+      - position: 3
+        text: "refunfuñas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Refunfuñar» es coloquial y describe quejarse por lo bajo, justo lo que la frase quiere evitar."
+        hint_specific: "«Refunfuñar» es quejarse entre dientes. ¿Eso es lo que la frase pide?"
+  - position: 4
+    sentence: "Mi hermana {{blank}} de la idea del viaje, y aun así acabó viniendo y pasándolo bien."
+    hint_general: "No estaba de acuerdo con el viaje, y aun así fue."
+    explanation: "Discrepó: no compartía la idea del viaje. «Discriminó» sería separar cosas por sus diferencias, y «aceptó» diría que estaba conforme desde el principio."
+    options:
+      - position: 1
+        text: "discriminó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discriminar» es separar unas cosas de otras; ella no separa nada, simplemente no comparte la idea."
+        hint_specific: "Discriminar separa. ¿Qué hace tu hermana con la idea del viaje?"
+      - position: 2
+        text: "aceptó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aceptar» diría que estaba conforme; el «aun así» de la frase anuncia justo lo contrario."
+        hint_specific: "Aceptar supone conformidad. ¿Qué anuncia el «aun así»?"
+      - position: 3
+        text: "discrepó"
+        is_correct: true
+  - position: 5
+    sentence: "Nadie {{blank}} en voz alta, y el proyecto salió adelante con dudas de todos."
+    hint_general: "Nadie dijo en voz alta que no lo compartía."
+    explanation: "Discrepó: nadie dijo en voz alta que no lo compartía. «Discernió» sería distinguir entre opciones, y «calló» chocaría con el propio «en voz alta»."
+    options:
+      - position: 1
+        text: "discernió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discernir» es distinguir entre dos opciones con criterio; aquí el problema no es distinguir, es que nadie habló."
+        hint_specific: "Discernir distingue opciones. ¿Qué faltó en esa sala?"
+      - position: 2
+        text: "discrepó"
+        is_correct: true
+      - position: 3
+        text: "calló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callar» choca con el propio «en voz alta» de la frase: nadie calla en voz alta."
+        hint_specific: "Fíjate en «en voz alta». ¿Se puede callar en voz alta?"
+  - position: 6
+    sentence: "El comité aprobó el cambio con dos personas que {{blank}}, y sus razones quedaron por escrito."
+    hint_general: "Dos personas dijeron que no lo compartían, con sus razones."
+    explanation: "Discrepaban: dos personas no compartían el cambio. «Discriminaban» sería separar cosas por sus diferencias, y «preguntaban» diría que solo tenían dudas."
+    options:
+      - position: 1
+        text: "preguntaban"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preguntar» es pedir información; la frase dice que dejaron razones por escrito, no preguntas."
+        hint_specific: "Preguntar pide información. ¿Qué dejaron esas dos personas por escrito?"
+      - position: 2
+        text: "discriminaban"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discriminar» es separar unas cosas de otras; en un comité lo que se hace es votar y dar razones."
+        hint_specific: "Discriminar separa cosas. ¿Qué hacen dos personas en un comité?"
+      - position: 3
+        text: "discrepaban"
+        is_correct: true
+  - position: 7
+    sentence: "Antes de firmar, Ernesto quiso {{blank}} del cálculo de horas sin poner en duda el resto del acuerdo."
+    hint_general: "Quiere marcar su desacuerdo solo con el cálculo de horas."
+    explanation: "Discrepar: marca su desacuerdo solo en ese punto. «Discernir» sería distinguir entre opciones, y «criticar» sonaría a juicio sobre el trabajo ajeno."
+    options:
+      - position: 1
+        text: "discernir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discernir» es distinguir con criterio entre dos cosas; Ernesto no distingue, señala el punto que no comparte."
+        hint_specific: "Discernir distingue. ¿Ernesto distingue o señala?"
+      - position: 2
+        text: "discrepar"
+        is_correct: true
+      - position: 3
+        text: "criticar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» suena a juicio sobre el trabajo de otro; la frase subraya que respeta el resto del acuerdo."
+        hint_specific: "Criticar juzga el trabajo ajeno. ¿Qué respeta Ernesto del acuerdo?"
+  - position: 8
+    sentence: "Puedo {{blank}} de ti y seguir pensando que sabes de esto mucho más que yo."
+    hint_general: "Se puede no estar de acuerdo y respetar a la otra persona."
+    explanation: "Discrepar: no compartir una idea sin dejar de respetar a la persona. «Discriminar» sería separar por diferencias, y «desconfiar» pondría en duda su honestidad."
+    options:
+      - position: 1
+        text: "discriminar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discriminar» es separar unas cosas de otras por sus diferencias; la frase habla de compartir o no una idea."
+        hint_specific: "Discriminar separa cosas. ¿De qué habla la frase?"
+      - position: 2
+        text: "desconfiar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desconfiar» pondría en duda su honestidad; la segunda mitad de la frase dice justo lo contrario."
+        hint_specific: "Desconfiar duda de la persona. ¿Qué dice la segunda mitad de la frase?"
+      - position: 3
+        text: "discrepar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos puntos, no todo"
+    body: "La propuesta gustaba a casi todos y Valeria no quería ser la aguafiestas. Esperó al final: «Estoy de acuerdo con el enfoque. Discrepo en dos puntos: el plazo y quién revisa». Nadie se puso a la defensiva, y los dos puntos se cambiaron."
+    before_phrase: "No estoy de acuerdo con esto."
+    after_phrase: "Discrepo en dos puntos: el plazo y quién revisa."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena del sábado"
+    body: "Su hermano contó su plan de dejar el piso y todos callaron. Andrés fue el único que habló: «Discrepo, y te lo digo aquí para no decirlo por detrás». Discutieron media hora y acabaron con una lista de dudas útiles."
+    before_phrase: "A mí no me parece bien, la verdad."
+    after_phrase: "Discrepo, y te lo digo aquí."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del libro"
+    body: "El libro gustó a cinco de seis. Cecilia levantó la mano: «Discrepo, y creo que eso hace mejor la charla». Hablaron dos horas, y todos se llevaron algo que no habían visto antes."
+    before_phrase: "Pues a mí no me gustó nada."
+    after_phrase: "Discrepo, y eso hace mejor la charla."
+metrics:
+  zipf_overall: 3.5756
+  dispersion_dp: 0.3092
+  pedantry_proxy: 0.4927
+  family_size: 86
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

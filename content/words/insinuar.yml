@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 304
+slug: "insinuar"
+status: "draft"
+lemma: "insinuar"
+part_of_speech: "verbo"
+syllables: ["in", "si", "nuar"]
+stressed_syllable: 3
+ipa_latam: "[in.siˈnwar]"
+ipa_es: "[in.siˈnwar]"
+explanation: "Dar a entender algo sin decirlo claro, para que la otra parte lo note."
+example_sentence: "No insinúes que llegaré tarde: dímelo de frente y lo hablamos ahora."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar lo que está pasando: «¿Me estás insinuando algo?» pide claridad sin acusar a nadie."
+when_not_to_use: "No la uses para una propuesta abierta y honesta: eso es proponer, no dejar la idea a medias."
+collocations:
+  - "insinuar algo"
+  - "insinuar que"
+  - "dejarlo insinuado"
+replaces:
+  - before: "Lo dijo sin decirlo"
+    after: "Lo insinuó"
+  - before: "Me lo dio a entender con indirectas"
+    after: "Me lo insinuó"
+  - before: "Estás dando a entender que fue culpa mía"
+    after: "Estás insinuando que fue culpa mía"
+family: ["insinuación"]
+themes:
+  - slug: "conversaciones-dificiles"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["decir"]
+  funcion: ["sugerir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "insistir"
+    difference: "«Insistir» es repetir algo hasta que se oiga; la otra palabra es dejarlo caer una vez y esperar a que lo capten."
+    memory_trick: "Quien insiste repite; quien insinúa deja caer."
+  - confused_with: "intuir"
+    difference: "«Intuir» es darse cuenta de algo por dentro, sin pruebas; aquí alguien lanza la idea hacia fuera, a medias."
+    memory_trick: "Intuyes lo que recibes; insinúas lo que lanzas."
+exercises:
+  - position: 1
+    sentence: "Desde la puerta, Rocío {{blank}} que la reunión se había alargado demasiado, pero nadie se dio por aludido."
+    hint_general: "Deja caer una idea sin decirla del todo, y por eso nadie se siente señalado."
+    explanation: "Insinuó: dejó caer la idea sin decirla del todo. «Insistió» sería repetirla hasta que se oiga, y «confirmó» sería darla por cierta en voz alta."
+    options:
+      - position: 1
+        text: "insistió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» es repetir algo hasta que se oiga, y ella lo suelta una sola vez desde la puerta."
+        hint_specific: "«Insistir» repite. ¿Cuántas veces lo dice Rocío antes de irse?"
+      - position: 2
+        text: "insinuó"
+        is_correct: true
+      - position: 3
+        text: "confirmó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confirmar» es dar algo por cierto con todas las letras, y entonces alguien se habría dado por aludido."
+        hint_specific: "«Confirmar» lo deja claro. Relee el final: ¿alguien se dio por aludido?"
+  - position: 2
+    sentence: "«¿Me estás {{blank}} que llegué tarde?», preguntó Héctor, que prefería comprobarlo antes de enfadarse."
+    hint_general: "Pregunta si le están diciendo algo a medias en lugar de decírselo claro."
+    explanation: "Insinuando: sospecha que se lo dicen a medias. «Intuyendo» sería que la otra parte lo nota por dentro, y «afirmando» sería decirlo con todas las letras."
+    options:
+      - position: 1
+        text: "insinuando"
+        is_correct: true
+      - position: 2
+        text: "intuyendo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intuir» es darse cuenta de algo por dentro; aquí lo que se discute es lo que la otra parte está diciendo."
+        hint_specific: "«Intuir» ocurre dentro de alguien. ¿Héctor pregunta por lo que piensas o por lo que dices?"
+      - position: 3
+        text: "afirmando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Afirmar» es decirlo con todas las letras, y entonces Héctor no tendría nada que preguntar."
+        hint_specific: "«Afirmar» lo dice claro. ¿Para qué preguntaría si ya estuviera dicho?"
+  - position: 3
+    sentence: "En vez de pedirlo, Julián lo {{blank}} tres veces durante la cena y al final nadie entendió qué quería."
+    hint_general: "Lanza la idea a medias varias veces y no consigue que nadie la capte."
+    explanation: "Insinuó: lanzó la idea a medias y nadie la captó. «Instruyó» es enseñar o dar órdenes, y «proclamó» sería anunciarlo en voz alta y solemne."
+    options:
+      - position: 1
+        text: "instruyó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instruir» es enseñar a alguien o darle indicaciones claras, justo lo contrario de dejar algo a medias."
+        hint_specific: "«Instruir» da indicaciones claras. ¿Alguien entendió qué quería Julián?"
+      - position: 2
+        text: "proclamó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Proclamar» suena solemne, como un anuncio público; en una cena de casa y con una idea a medias no encaja."
+        hint_specific: "«Proclamar» suena a discurso desde un balcón. ¿Pega en una cena en casa?"
+      - position: 3
+        text: "insinuó"
+        is_correct: true
+  - position: 4
+    sentence: "Marta no acusó a nadie: {{blank}} con medias frases que el retraso venía de otro sitio."
+    hint_general: "Deja entender de dónde viene el retraso sin señalar a nadie con el dedo."
+    explanation: "Insinuó: dejó entender el origen del retraso sin señalar a nadie. «Insistió» sería repetirlo, y «aclaró» sería dejarlo del todo claro."
+    options:
+      - position: 1
+        text: "insinuó"
+        is_correct: true
+      - position: 2
+        text: "insistió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» es repetir algo hasta que cale, y la frase subraya las medias frases, no la repetición."
+        hint_specific: "«Insistir» repite. ¿Lo que destaca aquí es la repetición o lo incompleto?"
+      - position: 3
+        text: "aclaró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» es dejar algo sin dudas, y con medias frases el origen del retraso sigue en el aire."
+        hint_specific: "«Aclarar» quita las dudas. ¿Unas medias frases dejan algo sin dudas?"
+  - position: 5
+    sentence: "Cecilia lo pidió claro: «Prefiero que me lo digas de frente a que me lo {{blank}} en cada comida»."
+    hint_general: "Pide que se lo digan directamente en vez de recibirlo a medias, comida tras comida."
+    explanation: "Insinúes: pide que no se lo den a medias. «Insistas» sería repetírselo, y «anuncies» sería decirlo con solemnidad, cuando ella solo quiere claridad."
+    options:
+      - position: 1
+        text: "insistas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» es repetir algo, y lo que a Cecilia le pesa no es la repetición, sino no oírlo claro."
+        hint_specific: "«Insistir» repite lo mismo. ¿Qué pide ella: menos veces o más claridad?"
+      - position: 2
+        text: "anuncies"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anunciar» es comunicar algo abiertamente, y eso es justo lo que ella está pidiendo, no lo que rechaza."
+        hint_specific: "«Anunciar» lo dice abierto. ¿Eso es lo que le molesta o lo que quiere?"
+      - position: 3
+        text: "insinúes"
+        is_correct: true
+  - position: 6
+    sentence: "Lo que Ramiro {{blank}} en el pasillo tardó dos días en llegar, ya deformado, al resto del equipo."
+    hint_general: "Dijo algo a medias en un pasillo y esa idea incompleta viajó sola."
+    explanation: "Insinuó: dijo algo a medias y esa idea incompleta viajó sola. «Intuyó» se queda dentro de él, y «aseguró» sería decirlo con total claridad."
+    options:
+      - position: 1
+        text: "intuyó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intuir» ocurre dentro de alguien y no sale de ahí; lo que viaja por el pasillo es algo que sí se dijo."
+        hint_specific: "«Intuir» se queda dentro. ¿Algo que no sale puede llegar al equipo?"
+      - position: 2
+        text: "insinuó"
+        is_correct: true
+      - position: 3
+        text: "aseguró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asegurar» es decir algo con total claridad, y entonces no llegaría deformado dos días después."
+        hint_specific: "«Asegurar» no deja huecos. ¿Por qué llega deformado si estuviera claro?"
+  - position: 7
+    sentence: "Cuando Guillermo {{blank}} algo y después dice que no ha dicho nada, la conversación se vuelve imposible."
+    hint_general: "Lanza una idea a medias y luego se desdice, y así no hay manera de hablar."
+    explanation: "Insinúa: lanza la idea a medias y luego se desdice. «Insiste» sería repetirla, y «murmura» es coloquial y apunta a hablar bajito o a espaldas de alguien."
+    options:
+      - position: 1
+        text: "insiste"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» es repetir algo con fuerza, y quien repite algo difícilmente dice después que no ha dicho nada."
+        hint_specific: "«Insistir» repite con fuerza. ¿Encaja con desdecirse un segundo después?"
+      - position: 2
+        text: "murmura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Murmurar» es coloquial y apunta a hablar bajito o a espaldas de alguien, no a dejar una idea a medias."
+        hint_specific: "«Murmurar» va del volumen y de hablar por detrás. ¿El problema es el volumen?"
+      - position: 3
+        text: "insinúa"
+        is_correct: true
+  - position: 8
+    sentence: "Daniela {{blank}} que le vendría bien ayuda con la mudanza, aunque nunca llegó a pedirla en voz alta."
+    hint_general: "Dejó ver lo que necesitaba sin llegar a formularlo como una petición."
+    explanation: "Insinuó: dejó ver lo que necesitaba sin pedirlo. «Instruyó» sería dar indicaciones, y «exigió» sería reclamarlo con fuerza."
+    options:
+      - position: 1
+        text: "instruyó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instruir» es dar indicaciones claras a alguien, y la frase dice que nunca llegó a pedir nada."
+        hint_specific: "«Instruir» da indicaciones claras. ¿Daniela llegó a pedir algo?"
+      - position: 2
+        text: "exigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» es reclamar algo con fuerza, y aquí la petición nunca se dice en voz alta."
+        hint_specific: "«Exigir» reclama con fuerza. ¿Se oyó alguna petición en voz alta?"
+      - position: 3
+        text: "insinuó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La silla vacía"
+    body: "En la cena, Noelia dijo dos veces que la mesa se había quedado grande. Nadie recogió el guante. Al día siguiente escribió al grupo: «Ayer estuve insinuando que echaba de menos a Sara; hoy lo digo entero: llamémosla»."
+    before_phrase: "Lo estuve diciendo sin decirlo."
+    after_phrase: "Estuve insinuando lo que quería."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El cumpleaños del abuelo"
+    body: "Esteban notó que su madre miraba el calendario y suspiraba. «Mamá, ¿me estás insinuando que quieres que organice yo la comida?». Ella se rio: «Un poco». Lo organizaron entre los dos esa misma tarde."
+    before_phrase: "¿Me lo estás diciendo con indirectas?"
+    after_phrase: "¿Me estás insinuando algo?"
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos frases a medias"
+    body: "Adriana llevaba una semana oyendo comentarios sueltos sobre su parte del proyecto. En la reunión lo puso encima de la mesa: «Prefiero que me lo digan de frente a que se insinúe en los pasillos». Nadie volvió al pasillo."
+    before_phrase: "Prefiero que me lo digan claro."
+    after_phrase: "Prefiero que no se insinúe en los pasillos."
+metrics:
+  zipf_overall: 3.6378
+  dispersion_dp: 0.2503
+  pedantry_proxy: 0.5657
+  family_size: 14
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

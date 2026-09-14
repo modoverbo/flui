@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 322
+slug: "imprevisto"
+status: "draft"
+lemma: "imprevisto"
+part_of_speech: "sustantivo"
+syllables: ["im", "pre", "vis", "to"]
+stressed_syllable: 3
+ipa_latam: "[im.pɾeˈβis.to]"
+ipa_es: "[im.pɾeˈβis.to]"
+explanation: "Algo que aparece de golpe y te cambia el plan del día."
+example_sentence: "Me surgió un imprevisto y llegué una hora tarde a la comida."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Explica sin justificarte: «Me surgió un imprevisto» dice lo justo y no obliga a contarlo todo."
+when_not_to_use: "No la uses para algo que sabías desde hace semanas: eso no apareció de golpe."
+collocations:
+  - "surgir un imprevisto"
+  - "un imprevisto de última hora"
+  - "salvo imprevistos"
+replaces:
+  - before: "Me salió una cosa y no pude ir"
+    after: "Me surgió un imprevisto y no pude ir"
+  - before: "Pasó algo de última hora"
+    after: "Hubo un imprevisto de última hora"
+  - before: "Si no pasa nada raro, nos vemos el jueves"
+    after: "Salvo imprevistos, nos vemos el jueves"
+family: []
+themes:
+  - slug: "conversacion-cotidiana"
+    relevance: 3
+  - slug: "decir-que-no"
+    relevance: 1
+tags:
+  comodin: ["cosa"]
+  funcion: ["explicar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "improvisado"
+    difference: "«Improvisado» es lo que haces sobre la marcha, sin preparar; la otra palabra es lo que te ocurre sin haberlo llamado."
+    memory_trick: "Lo improvisado lo haces tú; el imprevisto te pasa a ti."
+  - confused_with: "contratiempo"
+    difference: "«Contratiempo» subraya el estorbo y el retraso; aquí solo se dice que no estaba en el plan, y a veces hasta es bueno."
+    memory_trick: "El contratiempo molesta; el imprevisto solo aparece."
+exercises:
+  - position: 1
+    sentence: "Le surgió un {{blank}} a media mañana y Lorena llegó tarde a la comida familiar."
+    hint_general: "Apareció algo que no estaba en su plan y le desmontó la mañana."
+    explanation: "Imprevisto: apareció algo que no estaba en su plan. «Impedimento» es lo que te prohíbe hacer algo, y «descuido» sería un fallo de atención suyo."
+    options:
+      - position: 1
+        text: "impedimento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impedimento» es lo que te prohíbe o te impide hacer algo, y a ella no la frenó nadie: le surgió algo de golpe."
+        hint_specific: "«Impedimento» pone una barrera. ¿Alguien le prohibió ir a comer?"
+      - position: 2
+        text: "imprevisto"
+        is_correct: true
+      - position: 3
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuido» es un fallo de atención propio, y aquí lo que ocurre le llega de fuera y sin avisar."
+        hint_specific: "«Descuido» es culpa tuya. ¿Lorena se despistó o le pasó algo?"
+  - position: 2
+    sentence: "Nadie planea un {{blank}}: por eso conviene dejar un poco de aire en la agenda, dice Ramón."
+    hint_general: "Lo que aparece de golpe no se puede planear, así que conviene dejar hueco."
+    explanation: "Imprevisto: lo que aparece de golpe no se planea. «Impuesto» es el dinero que se paga al Estado, y «lío» es coloquial y suena a enredo confuso."
+    options:
+      - position: 1
+        text: "impuesto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impuesto» es el dinero que se paga al Estado, y eso sí se puede planear con tiempo."
+        hint_specific: "«Impuesto» aparece en una declaración anual. ¿Eso llega por sorpresa?"
+      - position: 2
+        text: "lío"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Lío» es coloquial y suena a enredo confuso, no a algo puntual que aparece y cambia el día."
+        hint_specific: "«Lío» suena a enredo y a conversación entre amigos. ¿Pega en un consejo sobre la agenda?"
+      - position: 3
+        text: "imprevisto"
+        is_correct: true
+  - position: 3
+    sentence: "Por un {{blank}} de última hora, Valentina tuvo que cambiar el vuelo dos veces en un día."
+    hint_general: "Algo que no esperaba la obligó a mover los planes a última hora."
+    explanation: "Imprevisto: algo que no esperaba le movió los planes. «Impulso» es una reacción repentina de uno mismo, y «olvido» sería no acordarse de algo."
+    options:
+      - position: 1
+        text: "imprevisto"
+        is_correct: true
+      - position: 2
+        text: "impulso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impulso» es una reacción repentina de uno mismo, y aquí lo que cambia el plan viene de fuera."
+        hint_specific: "«Impulso» nace dentro de ti. ¿Valentina decidió cambiar o la obligaron los hechos?"
+      - position: 3
+        text: "olvido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Olvido» es no acordarse de algo, y ella cambia el vuelo por algo que apareció, no por despiste."
+        hint_specific: "«Olvido» es un despiste propio. ¿Se le olvidó algo o le surgió algo?"
+  - position: 4
+    sentence: "El {{blank}} resultó ser bueno: a Manuel le ofrecieron entrada para el concierto de esa misma noche."
+    hint_general: "Lo que no estaba en el plan acabó siendo una buena noticia."
+    explanation: "Imprevisto: lo que no estaba en el plan salió bien. «Impedimento» es lo que te impide hacer algo, e «infortunio» suena solemne y anuncia una desgracia."
+    options:
+      - position: 1
+        text: "impedimento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impedimento» es lo que te impide hacer algo, y a Manuel esto le abre una puerta en vez de cerrarla."
+        hint_specific: "«Impedimento» cierra el paso. ¿Aquí se cierra o se abre algo?"
+      - position: 2
+        text: "infortunio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Infortunio» suena solemne y anuncia una desgracia, y lo que aparece es una entrada para un concierto."
+        hint_specific: "«Infortunio» suena a tragedia antigua. ¿Qué le pasa a Manuel, algo bueno o malo?"
+      - position: 3
+        text: "imprevisto"
+        is_correct: true
+  - position: 5
+    sentence: "Salvo {{blank}}, Cecilia llega el jueves a las siete y se queda hasta el domingo."
+    hint_general: "Confirma el plan y deja fuera solo lo que pueda aparecer sin avisar."
+    explanation: "Imprevistos: deja fuera solo lo que aparezca sin avisar. «Impuestos» es el dinero que se paga al Estado, y «retrasos» habla solo de llegar tarde."
+    options:
+      - position: 1
+        text: "impuestos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impuestos» es el dinero que se paga al Estado, y eso no cambia la hora de llegada de nadie."
+        hint_specific: "«Impuestos» se pagan una vez al año. ¿Eso afecta a un viaje del jueves?"
+      - position: 2
+        text: "imprevistos"
+        is_correct: true
+      - position: 3
+        text: "retrasos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retrasos» habla solo de llegar tarde, y lo que puede aparecer de golpe también podría cancelar el viaje entero."
+        hint_specific: "«Retraso» solo mueve la hora. ¿Qué más podría pasar con ese plan?"
+  - position: 6
+    sentence: "Tres {{blank}} en una semana dejaron a Silvia sin un solo día como lo había pensado."
+    hint_general: "Aparecieron tres cosas sin avisar y le desmontaron toda la semana."
+    explanation: "Imprevistos: tres cosas aparecieron sin avisar. «Impulsos» son reacciones repentinas de uno mismo, y «problemas» no dice que llegaran por sorpresa."
+    options:
+      - position: 1
+        text: "impulsos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impulsos» son reacciones repentinas de uno mismo, y lo que desmonta la semana de Silvia le llega de fuera."
+        hint_specific: "«Impulso» nace dentro. ¿Silvia provocó esos tres días o le cayeron encima?"
+      - position: 2
+        text: "imprevistos"
+        is_correct: true
+      - position: 3
+        text: "problemas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Problemas» no dice que aparecieran por sorpresa, y lo que rompe un plan es justo que no estuvieran anunciados."
+        hint_specific: "«Problema» puede llevar meses ahí. ¿Qué rompe un plan, lo viejo o lo repentino?"
+  - position: 7
+    sentence: "Marcos avisó del {{blank}} en cuanto lo supo, y por eso nadie del grupo se enfadó."
+    hint_general: "Contó enseguida lo que había aparecido sin avisar."
+    explanation: "Imprevisto: contó enseguida lo que apareció sin avisar. «Impedimento» es lo que te impide hacer algo, y «capricho» sería un antojo suyo."
+    options:
+      - position: 1
+        text: "imprevisto"
+        is_correct: true
+      - position: 2
+        text: "impedimento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impedimento» es lo que te prohíbe o te impide hacer algo, y aquí nadie le pone una barrera a Marcos."
+        hint_specific: "«Impedimento» es una barrera. ¿Quién se la habría puesto?"
+      - position: 3
+        text: "capricho"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Capricho» es un antojo propio, y por un antojo el grupo sí se habría enfadado."
+        hint_specific: "«Capricho» es un gusto tuyo. ¿Por eso no se enfadaría nadie?"
+  - position: 8
+    sentence: "Un {{blank}} pequeño se cuenta en dos frases; uno grande merece una llamada, le explicó Teresa a su hijo."
+    hint_general: "Según el tamaño de lo que aparezca de golpe, se avisa por mensaje o por teléfono."
+    explanation: "Imprevisto: según su tamaño se avisa de una forma o de otra. «Impuesto» es el dinero que se paga al Estado, y «recado» es un encargo que alguien te pide."
+    options:
+      - position: 1
+        text: "impuesto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impuesto» es el dinero que se paga al Estado, y eso no se avisa por mensaje a nadie."
+        hint_specific: "«Impuesto» va a una declaración. ¿A quién avisarías de eso por teléfono?"
+      - position: 2
+        text: "recado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recado» es un encargo que alguien te pide, y aquí se habla de algo que aparece sin que nadie lo pida."
+        hint_specific: "«Recado» te lo encarga alguien. ¿Quién encargaría esto?"
+      - position: 3
+        text: "imprevisto"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La comida del domingo"
+    body: "Emma llegó una hora tarde y con la cara de quien ha corrido. Su padre le sirvió el plato sin preguntar. «Me surgió un imprevisto y preferí avisar tarde que no avisar», dijo ella. Nadie le pidió más explicaciones."
+    before_phrase: "Me salió una cosa, perdón."
+    after_phrase: "Me surgió un imprevisto."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Salvo imprevistos"
+    body: "Felipe aprendió a cerrar los correos con dos palabras: «Salvo imprevistos, lo tienes el jueves». Sus clientes dejaron de preguntar cada mañana y él dejó de prometer lo que no controlaba."
+    before_phrase: "Si no pasa nada raro, el jueves lo tienes."
+    after_phrase: "Salvo imprevistos, lo tienes el jueves."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El plan que cambió"
+    body: "El grupo tenía entradas para el sábado y Nuria se quedó sin quien cuidara a su perro. Escribió en el chat: «Tengo un imprevisto; si alguien sabe de alguien, aviso». En veinte minutos tenía dos ofertas y fue al final."
+    before_phrase: "Me ha surgido una cosa de última hora."
+    after_phrase: "Tengo un imprevisto."
+metrics:
+  zipf_overall: 3.6247
+  dispersion_dp: 0.1961
+  pedantry_proxy: 0.4679
+  family_size: 128
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

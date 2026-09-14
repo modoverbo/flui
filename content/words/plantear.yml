@@ -1,12 +1,8 @@
-# Imported from ../supabase/seed.sql by dart run content:import.
-# This file is now the source of truth; regenerate the seed with
-# dart run content:emit. Authored before the validator suite existed,
-# so dart run content:validate is expected to report gaps.
 schema_version: 1
 id: "a0000000-0000-4000-8000-000000000002"
 sort_order: 2
 slug: "plantear"
-status: "approved"
+status: "gated"
 lemma: "plantear"
 part_of_speech: "verbo"
 syllables:
@@ -269,5 +265,5 @@ readings:
     after_phrase: "Planteo dos opciones."
 provenance:
   generator: "content:import from supabase/seed.sql"
-  gate: null
-  checked_on: null
+  gate: "dual-blind reviewer-a1 + reviewer-b1 + reviewer-a2 + reviewer-b2 + reviewer-a3 + reviewer-b3"
+  checked_on: "2026-09-14"

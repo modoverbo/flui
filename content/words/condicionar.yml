@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 2106
+slug: "condicionar"
+status: "draft"
+lemma: "condicionar"
+part_of_speech: "verbo"
+syllables: ["con", "di", "cio", "nar"]
+stressed_syllable: 4
+ipa_latam: "[kon.di.sjoˈnaɾ]"
+ipa_es: "[kon.di.θjoˈnaɾ]"
+explanation: "Hacer que una cosa dependa de otra: solo pasa si antes ocurre lo que pides."
+example_sentence: "Acepté el encargo, aunque condicioné la entrega a que me pasaran las fotos el lunes."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para decir que sí a medias sin sonar duro: aceptas y dejas claro de qué depende tu parte."
+when_not_to_use: "No la uses como amenaza disfrazada: si lo que pides a cambio no es razonable, la palabra no lo arregla."
+collocations:
+  - "condicionar un sí"
+  - "condicionar la entrega"
+  - "quedar condicionado"
+replaces:
+  - before: "Te digo que sí, pero solo si me dan más tiempo"
+    after: "Condiciono mi sí a que me den más tiempo"
+  - before: "Lo hacemos si antes llega el material"
+    after: "Condicionamos el trabajo a que llegue el material"
+  - before: "Dependemos de que ellos aprueben"
+    after: "Nuestra parte queda condicionada a que ellos aprueben"
+family: ["condición"]
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "decir-que-no"
+    relevance: 2
+tags:
+  comodin: ["decir"]
+  funcion: ["exigir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acondicionar"
+    difference: "«Acondicionar» es preparar un espacio o una cosa para que sirva; lo otro es hacer que algo dependa de un requisito."
+    memory_trick: "Acondicionas una sala; condicionas un sí."
+  - confused_with: "obligar"
+    difference: "«Obligar» no deja salida al otro; poner un requisito sí la deja, porque la otra parte puede aceptarlo o marcharse."
+    memory_trick: "Quien obliga cierra la puerta; quien condiciona la deja entornada."
+exercises:
+  - position: 1
+    sentence: "Marta aceptó el encargo, pero {{blank}} la entrega a que le pasaran las fotos esa misma semana."
+    hint_general: "Acepta, aunque deja su entrega atada a que lleguen las fotos."
+    explanation: "Condicionó: dejó la entrega atada a las fotos. «Acondicionó» sería preparar un espacio, y «aplazó» significaría retrasarla sin pedir nada a cambio."
+    options:
+      - position: 1
+        text: "acondicionó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionar» es preparar un lugar o una cosa para que sirva; una entrega no se prepara así, se ata a un requisito."
+        hint_specific: "Acondicionar prepara un espacio. ¿Marta prepara algo o pide algo?"
+      - position: 2
+        text: "condicionó"
+        is_correct: true
+      - position: 3
+        text: "aplazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» es retrasar sin más; Marta no retrasa nada, dice de qué depende que llegue a tiempo."
+        hint_specific: "Aplazar retrasa sin pedir nada. ¿Marta retrasa o pide algo a cambio?"
+  - position: 2
+    sentence: "El banco {{blank}} el préstamo a que la empresa presentara las cuentas del año pasado."
+    hint_general: "El préstamo solo sale adelante si antes llegan esas cuentas."
+    explanation: "Condicionó: el préstamo depende de esas cuentas. «Acondicionó» sería adecuar un espacio, y «prometió» daría el dinero por hecho, cuando todavía no lo está."
+    options:
+      - position: 1
+        text: "prometió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prometer» daría el préstamo por hecho; la frase dice lo contrario, que primero hay que entregar las cuentas."
+        hint_specific: "Prometer da algo por seguro. ¿El dinero está seguro o depende de algo?"
+      - position: 2
+        text: "acondicionó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionar» es preparar un local o un equipo; un préstamo no se prepara así, se ata a un requisito."
+        hint_specific: "Acondicionar prepara locales. ¿Aquí se prepara un local?"
+      - position: 3
+        text: "condicionó"
+        is_correct: true
+  - position: 3
+    sentence: "Si {{blank}} tu ayuda a que te devuelvan el favor, deja de ser ayuda y pasa a ser un trato."
+    hint_general: "Pedir algo a cambio convierte la ayuda en un intercambio."
+    explanation: "Condicionas: pides algo a cambio de ayudar. «Acondicionas» sería preparar un lugar, y «atas» dice algo parecido, pero suena demasiado coloquial y algo brusco."
+    options:
+      - position: 1
+        text: "condicionas"
+        is_correct: true
+      - position: 2
+        text: "acondicionas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionar» es dejar un espacio listo para usarlo; la ayuda no es un espacio, y aquí se le pone un precio."
+        hint_specific: "Acondicionar deja un sitio listo. ¿Aquí hay algún sitio?"
+      - position: 3
+        text: "atas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Atar» es muy coloquial y suena a sujetar a alguien con una cuerda; para una idea así resulta brusco."
+        hint_specific: "«Atar» suena a cuerda y a brusquedad. ¿Encaja al hablar de un favor?"
+  - position: 4
+    sentence: "El equipo de Iván {{blank}} su parte del trabajo a que llegaran antes los permisos del ayuntamiento."
+    hint_general: "Su parte depende de que lleguen primero esos permisos."
+    explanation: "Condicionó: su parte depende de los permisos. «Acondicionó» sería preparar un espacio, y «limitó» diría que hizo menos trabajo, no que puso un requisito."
+    options:
+      - position: 1
+        text: "limitó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Limitar» diría que el equipo hizo menos trabajo del previsto; aquí el trabajo es el mismo, pero depende de un papel."
+        hint_specific: "Limitar reduce la cantidad. ¿El equipo hace menos o espera algo?"
+      - position: 2
+        text: "condicionó"
+        is_correct: true
+      - position: 3
+        text: "acondicionó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionar» es preparar un local para que funcione; el equipo no prepara ningún local, pone un requisito."
+        hint_specific: "Acondicionar prepara locales. ¿Qué pone el equipo, un local o un requisito?"
+  - position: 5
+    sentence: "Mi padre {{blank}} el préstamo del coche a que volviéramos antes de la una."
+    hint_general: "El coche solo sale si se cumple la hora de vuelta."
+    explanation: "Condicionó: el coche depende de la hora de vuelta. «Supeditó» dice lo mismo con tono de expediente, y «acondicionó» sería dejar el coche a punto."
+    options:
+      - position: 1
+        text: "supeditó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Supeditar» es correcto, pero suena a expediente y a norma escrita; un padre hablando del coche no usa esa palabra."
+        hint_specific: "«Supeditar» suena a expediente. ¿Habla así un padre en la cocina?"
+      - position: 2
+        text: "acondicionó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionar» el coche sería dejarlo a punto para el viaje; aquí lo que hace el padre es poner una hora."
+        hint_specific: "Acondicionar deja algo a punto. ¿El padre arregla el coche o pone una hora?"
+      - position: 3
+        text: "condicionó"
+        is_correct: true
+  - position: 6
+    sentence: "En la oferta, la subida de sueldo quedaba {{blank}} a los resultados del primer trimestre."
+    hint_general: "La subida depende de lo que pase en esos tres meses."
+    explanation: "Condicionada: la subida depende de esos tres meses. «Acondicionada» hablaría de un espacio preparado, y «asegurada» diría lo contrario, que ya está garantizada."
+    options:
+      - position: 1
+        text: "acondicionada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionar» se dice de una sala o de un local que se deja listo; una subida de sueldo no se deja lista así."
+        hint_specific: "Acondicionada se dice de un local. ¿La subida es un local?"
+      - position: 2
+        text: "condicionada"
+        is_correct: true
+      - position: 3
+        text: "asegurada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asegurada» diría que la subida está garantizada pase lo que pase; la frase dice justo lo contrario."
+        hint_specific: "Asegurada significa garantizada. ¿La subida está garantizada?"
+  - position: 7
+    sentence: "Nadie quiere trabajar con quien {{blank}} cada favor a recibir otro a cambio."
+    hint_general: "Hace que cada favor dependa de recibir otro de vuelta."
+    explanation: "Condiciona: hace que cada favor dependa de otro. «Acondiciona» sería preparar un espacio, y «exige» diría que reclama sin más, sin poner nada de su parte."
+    options:
+      - position: 1
+        text: "acondiciona"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionar» es preparar un sitio para que sirva; un favor no se prepara, se hace o se cobra."
+        hint_specific: "Acondicionar prepara sitios. ¿Un favor es un sitio?"
+      - position: 2
+        text: "exige"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» es reclamar algo sin dar nada; en la frase esta persona sí hace el favor, pero espera otro de vuelta."
+        hint_specific: "Exigir reclama sin dar. ¿Esta persona da algo o solo reclama?"
+      - position: 3
+        text: "condiciona"
+        is_correct: true
+  - position: 8
+    sentence: "La respuesta de Natalia fue un sí {{blank}}: aceptaba el puesto si el horario cambiaba."
+    hint_general: "Dice que sí, aunque su sí depende de una cosa concreta."
+    explanation: "Condicionado: su sí depende del horario. «Acondicionado» se dice de un local preparado, y «seguro» diría que acepta sin poner ningún requisito."
+    options:
+      - position: 1
+        text: "condicionado"
+        is_correct: true
+      - position: 2
+        text: "acondicionado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acondicionado» se dice de un local que ya está listo para usarse; una respuesta no se prepara de esa manera."
+        hint_specific: "Acondicionado se dice de un local. ¿Una respuesta es un local?"
+      - position: 3
+        text: "seguro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguro» diría que acepta sin pedir nada; los dos puntos de la frase anuncian justo el requisito que pone."
+        hint_specific: "Un sí seguro no pide nada. ¿Natalia pide algo después de los dos puntos?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El sí con letra pequeña"
+    body: "Le pedían la web para el día quince. Alicia no dijo que no: «Acepto, y condiciono la fecha a recibir los textos el lunes. Si llegan el miércoles, entrego el diecisiete». Llegaron el martes, y nadie discutió el diecisiete."
+    before_phrase: "Sí, pero es que depende de cuándo me pasen los textos."
+    after_phrase: "Acepto, y condiciono la fecha a recibir los textos el lunes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El coche del sábado"
+    body: "Su hijo pedía el coche otra vez. Esteban no quiso repetir la pelea de siempre: «Te lo dejo, y condiciono el préstamo a una cosa: me escribes al llegar». Su hijo puso los ojos en blanco, pero escribió."
+    before_phrase: "Te lo dejo, pero solo si me avisas al llegar."
+    after_phrase: "Te lo dejo, y condiciono el préstamo a una cosa."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Dos preguntas antes del sí"
+    body: "La oferta le gustaba, aunque el horario no. Cristina lo dijo sin rodeos: «Me encantaría aceptar. Condiciono mi respuesta a poder entrar a las diez dos días por semana». La empresa lo miró y volvió con un sí."
+    before_phrase: "Me interesa, aunque depende del horario."
+    after_phrase: "Condiciono mi respuesta al horario de entrada."
+metrics:
+  zipf_overall: 4.2812
+  dispersion_dp: 0.1049
+  pedantry_proxy: 0.4556
+  family_size: 98
+provenance:
+  generator: "hand-authored against content/AUTHORING.md"
+  gate: null
+  checked_on: "2026-09-13"

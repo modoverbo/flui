@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "verosimil"
+status: "draft"
+lemma: "verosímil"
+part_of_speech: "adjetivo"
+syllables: ["ve", "ro", "sí", "mil"]
+stressed_syllable: 3
+ipa_latam: "[be.ɾoˈsi.mil]"
+ipa_es: "[be.ɾoˈsi.mil]"
+explanation: "Que parece cierto porque todo cuadra, aunque no puedas comprobarlo del todo."
+example_sentence: "La explicación era verosímil: encajaban las horas, los nombres y hasta el detalle del tráfico."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Separa dos cosas que casi siempre se mezclan: que algo se sostenga y que además sea cierto."
+when_not_to_use: "No la uses cuando ya tienes la prueba: si puedes demostrarlo, no hace falta decir que parece cierto."
+collocations:
+  - "una historia verosímil"
+  - "un dato verosímil"
+  - "una explicación verosímil"
+replaces:
+  - before: "Suena creíble, la verdad"
+    after: "Suena verosímil"
+  - before: "Eso no se lo cree nadie"
+    after: "Eso no es verosímil"
+  - before: "Parece de verdad aunque no lo sepamos"
+    after: "Es verosímil aunque no esté probado"
+family: ["verosimilitud"]
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["creíble"]
+  funcion: ["convencer"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "veraz"
+    difference: "«Veraz» dice que algo es verdad; la otra palabra solo dice que se sostiene y encaja, sin garantizarlo."
+    memory_trick: "Lo veraz está probado; lo otro solo se sostiene de pie."
+  - confused_with: "verídico"
+    difference: "«Verídico» afirma que los hechos ocurrieron de verdad; la otra palabra habla de cómo suena, no de lo que pasó."
+    memory_trick: "Verídico mira los hechos; la otra palabra mira cómo encaja el relato."
+exercises:
+  - position: 1
+    sentence: "La excusa era imposible de comprobar, aunque tan {{blank}} que nadie preguntó dos veces."
+    hint_general: "Todo encajaba, y por eso nadie insistió."
+    explanation: "Verosímil: todo encajaba y nadie insistió. «Veraz» afirmaría que es verdad, y la frase dice que no se podía comprobar; «fantasiosa» sería justo lo contrario."
+    options:
+      - position: 1
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» afirma que algo es verdad, y la frase empieza diciendo que era imposible de comprobar."
+        hint_specific: "«Veraz» necesita saber que es cierto. ¿Se pudo comprobar esa excusa?"
+      - position: 2
+        text: "verosímil"
+        is_correct: true
+      - position: 3
+        text: "fantasiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fantasiosa» dice que la excusa suena inventada, y entonces sí habrían preguntado dos veces."
+        hint_specific: "«Fantasiosa» levanta sospechas. ¿Cuántas veces preguntaron?"
+  - position: 2
+    sentence: "Ámbar cambió dos detalles del caso, y la historia se volvió {{blank}} de golpe."
+    hint_general: "Con esos dos detalles todo empezó a encajar."
+    explanation: "Verosímil: con esos detalles todo encajó. «Versátil» describe a quien sirve para muchas cosas, y «peliculera» es coloquial y sugiere exageración de cine."
+    options:
+      - position: 1
+        text: "versátil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versátil» describe a quien se adapta a muchas cosas, y aquí se habla de si una historia se sostiene."
+        hint_specific: "«Versátil» habla de adaptarse. ¿Qué cambió en la historia?"
+      - position: 2
+        text: "verosímil"
+        is_correct: true
+      - position: 3
+        text: "peliculera"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Peliculera» es coloquial y sugiere exageración de cine, y el cambio hizo la historia más creíble, no más exagerada."
+        hint_specific: "«Peliculera» exagera. ¿La historia mejoró o se volvió más increíble?"
+  - position: 3
+    sentence: "Nadie pedía pruebas en la reunión: bastaba con que la cifra fuera {{blank}} y viniera con una fuente."
+    hint_general: "Basta con que encaje y se pueda sostener."
+    explanation: "Verosímil: basta con que encaje y se sostenga. «Veraz» exigiría saber que la cifra es verdad, y «redonda» solo hablaría de un número sin decimales."
+    options:
+      - position: 1
+        text: "verosímil"
+        is_correct: true
+      - position: 2
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» exigiría saber que la cifra es cierta, y la frase dice que nadie pedía pruebas."
+        hint_specific: "«Veraz» necesita una comprobación. ¿Qué pedían en esa reunión?"
+      - position: 3
+        text: "redonda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Redonda» describe un número sin decimales, y aquí lo que importa es que la cifra encaje."
+        hint_specific: "«Redonda» habla de la forma del número. ¿Eso da confianza?"
+  - position: 4
+    sentence: "Si tu ejemplo suena inventado, el argumento entero deja de ser {{blank}} por mucho que tengas razón."
+    hint_general: "Un ejemplo raro rompe la sensación de que todo encaja."
+    explanation: "Verosímil: un ejemplo raro rompe la sensación de que todo encaja. «Verídico» afirmaría que los hechos ocurrieron, y «novedoso» hablaría de originalidad."
+    options:
+      - position: 1
+        text: "verídico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Verídico» afirma que los hechos ocurrieron de verdad, y la frase admite que puedes tener razón igualmente."
+        hint_specific: "«Verídico» mira los hechos. ¿Qué se pierde aunque tengas razón?"
+      - position: 2
+        text: "verosímil"
+        is_correct: true
+      - position: 3
+        text: "novedoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Novedoso» habla de originalidad, y un argumento viejo puede sostenerse perfectamente."
+        hint_specific: "«Novedoso» valora lo nuevo. ¿Qué rompe un ejemplo inventado?"
+  - position: 5
+    sentence: "Delia contó una escena pequeña, con nombres y horas concretas, y por eso resultó {{blank}}."
+    hint_general: "Los detalles concretos hacen que todo cuadre."
+    explanation: "Verosímil: los detalles concretos hacen que todo cuadre. «Veraz» afirmaría que ocurrió, y «emotiva» hablaría de los sentimientos que despierta."
+    options:
+      - position: 1
+        text: "emotiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Emotiva» habla de los sentimientos que despierta, y lo que destaca la frase son los nombres y las horas."
+        hint_specific: "«Emotiva» toca el corazón. ¿Qué usó Delia, emoción o detalles?"
+      - position: 2
+        text: "verosímil"
+        is_correct: true
+      - position: 3
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» afirmaría que la escena ocurrió, y la frase solo cuenta por qué sonaba bien."
+        hint_specific: "«Veraz» confirma los hechos. ¿La frase confirma algo o explica por qué encajaba?"
+  - position: 6
+    sentence: "Cuando el protagonista ganó tres veces seguidas sin esfuerzo, la novela dejó de parecer {{blank}}."
+    hint_general: "Deja de encajar: nada de eso pasaría tres veces seguidas."
+    explanation: "Verosímil: deja de encajar porque nada de eso pasa tres veces. «Versátil» describe a quien sirve para muchas cosas, y «peliculera» es coloquial y nombra el exceso sin explicarlo."
+    options:
+      - position: 1
+        text: "peliculera"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Peliculera» es coloquial y nombra el exceso, pero la frase dice qué dejó de tener la novela, no qué se volvió."
+        hint_specific: "«Peliculera» es lo que la novela pasó a ser. ¿Qué dejó de ser?"
+      - position: 2
+        text: "verosímil"
+        is_correct: true
+      - position: 3
+        text: "versátil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Versátil» describe algo que sirve para muchas cosas, y aquí lo que falla es que la historia deja de encajar."
+        hint_specific: "«Versátil» habla de adaptarse. ¿Qué se rompió con las tres victorias?"
+  - position: 7
+    sentence: "Gonzalo prefiere un dato {{blank}} y explicado a una cifra enorme que nadie sabe de dónde sale."
+    hint_general: "Mejor algo que encaje y se entienda que algo grande y raro."
+    explanation: "Verosímil: mejor algo que encaje y se entienda. «Verídico» afirmaría que está comprobado, y «abundante» hablaría de cantidad."
+    options:
+      - position: 1
+        text: "verídico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Verídico» afirmaría que el dato está comprobado, y Gonzalo compara con una cifra enorme sin origen."
+        hint_specific: "«Verídico» exige comprobación. ¿Qué compara Gonzalo?"
+      - position: 2
+        text: "abundante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abundante» habla de cantidad, y la cifra enorme ya tiene cantidad de sobra."
+        hint_specific: "«Abundante» mide cantidad. ¿Qué le falta a la cifra enorme?"
+      - position: 3
+        text: "verosímil"
+        is_correct: true
+  - position: 8
+    sentence: "Una historia {{blank}} no necesita ser cierta: necesita que nada dentro de ella se contradiga."
+    hint_general: "Basta con que todas sus piezas encajen entre sí."
+    explanation: "Verosímil: basta con que sus piezas encajen. «Veraz» sería justo lo que la frase dice que no hace falta, y «larga» habla del tamaño del relato."
+    options:
+      - position: 1
+        text: "verosímil"
+        is_correct: true
+      - position: 2
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» significa que es verdad, y la frase dice justo que no hace falta que lo sea."
+        hint_specific: "«Veraz» exige que sea cierto. ¿Qué dice la frase sobre ser cierto?"
+      - position: 3
+        text: "larga"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Larga» habla del tamaño del relato, y una historia de dos frases puede encajar perfectamente."
+        hint_specific: "«Larga» mide el tamaño. ¿De qué depende que una historia se sostenga?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos detalles bastaron"
+    body: "La previsión de Otilia sonaba a deseo hasta que añadió dos datos: el mes en que empezó a subir y el nombre del cliente que lo pidió. «Ahora sí es verosímil», dijo su jefa. Con la misma cifra y dos detalles, la reunión cambió de tono."
+    before_phrase: "Yo creo que va a subir, sinceramente."
+    after_phrase: "Ahora sí es verosímil."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La historia del gato"
+    body: "En la cena, alguien contó cómo su gato había cruzado media ciudad para volver a casa. «Suena a película», dijo uno. «Es verosímil», contestó Nadia: «pasó en tres días y por calles que conocía». La sobremesa se alargó otra hora."
+    before_phrase: "Eso no se lo cree nadie."
+    after_phrase: "Es verosímil, y te digo por qué."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La cifra del currículo"
+    body: "«Duplicamos las ventas» sonaba enorme y vacío. Ivo lo contó con suelo: «Pasamos de once a veintitrés clientes en catorce meses, y dos de ellos vinieron de la misma feria». La entrevistadora asintió: era verosímil y, además, comprobable."
+    before_phrase: "Duplicamos las ventas, así, en general."
+    after_phrase: "Te lo cuento para que sea verosímil."
+metrics:
+  zipf_overall: 3.1976
+  dispersion_dp: 0.2883
+  pedantry_proxy: 0.4816
+  family_size: 2
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 308
+slug: "impecable"
+status: "draft"
+lemma: "impecable"
+part_of_speech: "adjetivo"
+syllables: ["im", "pe", "ca", "ble"]
+stressed_syllable: 3
+ipa_latam: "[im.peˈka.βle]"
+ipa_es: "[im.peˈka.βle]"
+explanation: "Tan bien hecho que no se le puede señalar nada."
+example_sentence: "El montaje quedó impecable y nadie tuvo que volver a tocarlo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Elogia un resultado concreto y no a la persona entera: «Tu parte quedó impecable» dice mucho más que «muy bien»."
+when_not_to_use: "No la uses para algo que todavía se puede mejorar: ahí suena a cumplido vacío."
+collocations:
+  - "un trabajo impecable"
+  - "quedar impecable"
+  - "una entrega impecable"
+replaces:
+  - before: "Te quedó muy bien"
+    after: "Te quedó impecable"
+  - before: "Lo hizo perfecto, de verdad"
+    after: "Lo hizo de forma impecable"
+  - before: "No le encontré ni un fallo"
+    after: "Me pareció impecable"
+family: ["impecablemente"]
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["muy bueno", "bien"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "implacable"
+    difference: "«Implacable» describe a quien no cede ni perdona, o a algo que no da tregua; la otra palabra dice que algo salió sin un solo fallo."
+    memory_trick: "Lo implacable no perdona; lo impecable no falla."
+  - confused_with: "intachable"
+    difference: "«Intachable» se dice de la conducta de alguien a lo largo de los años; lo otro cabe también para un resultado de esta misma mañana."
+    memory_trick: "Intachable es una vida; impecable puede ser una tarde."
+exercises:
+  - position: 1
+    sentence: "El informe de Gonzalo quedó tan {{blank}} que la revisora solo escribió «gracias» y lo firmó."
+    hint_general: "Quedó tan bien que no hubo ni una línea que corregir antes de firmarlo."
+    explanation: "Impecable: no hubo nada que corregir. «Implacable» describe a quien no perdona nada, y «aceptable» dice solo que pasa el mínimo."
+    options:
+      - position: 1
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» describe a quien no cede ni perdona, y un informe que se firma sin cambios no tiene nada de duro."
+        hint_specific: "«Implacable» habla de dureza. ¿El informe es duro o está bien hecho?"
+      - position: 2
+        text: "impecable"
+        is_correct: true
+      - position: 3
+        text: "aceptable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aceptable» dice que algo pasa el mínimo, y aquí la revisora no encontró absolutamente nada que cambiar."
+        hint_specific: "«Aceptable» es el aprobado justo. ¿Eso encaja con firmarlo sin tocar nada?"
+  - position: 2
+    sentence: "Después de tres horas, la sala que preparó Celia tenía un aspecto {{blank}}."
+    hint_general: "El resultado quedó de manera que no se le podía señalar nada."
+    explanation: "Impecable: al resultado no se le podía señalar nada. «Impagable» significa que algo no tiene precio, y «pulcro» tiene ese sentido, pero suena a texto formal."
+    options:
+      - position: 1
+        text: "impagable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impagable» dice que algo no tiene precio, como un favor enorme; aquí se habla de cómo quedó una sala."
+        hint_specific: "«Impagable» habla de precio. ¿La frase valora el coste o el acabado?"
+      - position: 2
+        text: "pulcro"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pulcro» apunta a lo mismo, pero suena a texto formal y antiguo al contar cómo quedó una sala."
+        hint_specific: "«Pulcro» suena a manual de estilo. ¿Pega contando una tarde de montaje?"
+      - position: 3
+        text: "impecable"
+        is_correct: true
+  - position: 3
+    sentence: "La respuesta de Hugo fue {{blank}}: contestó las tres dudas, en orden y sin dejar ninguna abierta."
+    hint_general: "Contestó todo y en orden, así que no quedó ningún punto flojo."
+    explanation: "Impecable: contestó todo sin dejar puntos flojos. «Implacable» describe dureza sin perdón, e «improvisada» sería una respuesta hecha sobre la marcha."
+    options:
+      - position: 1
+        text: "improvisada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisada» es una respuesta hecha sobre la marcha, y esta llega ordenada y completa."
+        hint_specific: "«Improvisada» sale sin preparar. ¿Encaja con contestar tres dudas en orden?"
+      - position: 2
+        text: "impecable"
+        is_correct: true
+      - position: 3
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» describe a quien no cede ni perdona, y Hugo no es duro: es completo."
+        hint_specific: "«Implacable» va de dureza. ¿Hugo responde con dureza o con orden?"
+  - position: 4
+    sentence: "Víctor revisó el plan cuatro veces hasta dejarlo {{blank}}: ni una cifra suelta, ni una frase de más."
+    hint_general: "Lo repasó hasta que no quedó nada suelto ni nada sobrando."
+    explanation: "Impecable: no quedó nada suelto ni sobrando. «Impasible» describe a quien no mueve un músculo, y «presentable» dice solo que ya se puede enseñar."
+    options:
+      - position: 1
+        text: "impasible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impasible» describe a quien no mueve un músculo ante algo, y aquí se habla de cómo quedó un documento."
+        hint_specific: "«Impasible» describe caras, no documentos. ¿Quién estaría sin inmutarse?"
+      - position: 2
+        text: "presentable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presentable» dice que ya se puede enseñar, y cuatro repasos buscan bastante más que eso."
+        hint_specific: "«Presentable» es el mínimo para enseñarlo. ¿Se repasa cuatro veces para llegar al mínimo?"
+      - position: 3
+        text: "impecable"
+        is_correct: true
+  - position: 5
+    sentence: "Marta preparó una entrega {{blank}} y aun así pidió que alguien más la revisara antes de mandarla."
+    hint_general: "La dejó sin un solo punto flojo y todavía así quiso otra mirada."
+    explanation: "Impecable: la dejó sin un punto flojo. «Implacable» describe dureza sin perdón, y «primorosa» suena a labor antigua hecha a mano."
+    options:
+      - position: 1
+        text: "impecable"
+        is_correct: true
+      - position: 2
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» describe a quien no perdona, y una entrega cuidada no tiene nada que ver con la dureza."
+        hint_specific: "«Implacable» va de no ceder. ¿Ante quién sería dura una entrega?"
+      - position: 3
+        text: "primorosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Primorosa» suena a labor antigua hecha a mano y desentona al hablar de una entrega de trabajo."
+        hint_specific: "«Primorosa» suena a bordado de otra época. ¿Pega con un archivo que se manda?"
+  - position: 6
+    sentence: "Rubén repasó la lista de Pedro y no encontró nada que corregir: un trabajo {{blank}}."
+    hint_general: "Alguien lo revisó entero y no halló ni un punto que cambiar."
+    explanation: "Impecable: no había ni un punto que cambiar. «Implacable» describe a quien no perdona, y «correcto» dice solo que no está mal."
+    options:
+      - position: 1
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» describe a quien no cede ni perdona, y aquí nadie está siendo duro con nadie."
+        hint_specific: "«Implacable» va de dureza. ¿Con quién sería duro ese trabajo?"
+      - position: 2
+        text: "correcto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Correcto» dice que algo no está mal, y la frase va más lejos: no había absolutamente nada que cambiar."
+        hint_specific: "«Correcto» es no estar mal. ¿Eso es lo mismo que no encontrar nada?"
+      - position: 3
+        text: "impecable"
+        is_correct: true
+  - position: 7
+    sentence: "«Tu parte quedó {{blank}}», le escribió Renata, «y lo digo en serio, no por quedar bien»."
+    hint_general: "Le dice que su parte salió sin un solo fallo, y que el elogio va en serio."
+    explanation: "Impecable: la parte salió sin un fallo. «Impagable» significa que algo no tiene precio, y «brutal» es muy coloquial para un mensaje que quiere sonar serio."
+    options:
+      - position: 1
+        text: "impagable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impagable» dice que algo no tiene precio, y ella habla de cómo salió el trabajo, no de cuánto vale."
+        hint_specific: "«Impagable» habla de valor y precio. ¿Renata mide el precio o el acabado?"
+      - position: 2
+        text: "brutal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Brutal» es muy coloquial y suena a exageración, justo lo que ella quiere evitar al decir que va en serio."
+        hint_specific: "«Brutal» suena a exageración de amigos. ¿Ayuda cuando quieres que te crean?"
+      - position: 3
+        text: "impecable"
+        is_correct: true
+  - position: 8
+    sentence: "Según Lorena, un cierre {{blank}} salva una charla floja, pero no la convierte en buena."
+    hint_general: "Un final sin un solo fallo levanta la charla, aunque no arregla el resto."
+    explanation: "Impecable: un final sin un solo fallo. «Implacable» describe dureza sin perdón, y «breve» solo habla de la duración."
+    options:
+      - position: 1
+        text: "impecable"
+        is_correct: true
+      - position: 2
+        text: "implacable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implacable» describe a quien no cede ni perdona, y un cierre así no es duro: está bien resuelto."
+        hint_specific: "«Implacable» va de no dar tregua. ¿El cierre es duro o está bien hecho?"
+      - position: 3
+        text: "breve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Breve» solo habla de duración, y un final corto puede salir mal igual que uno largo."
+        hint_specific: "«Breve» mide minutos. ¿Acortar algo garantiza que salga bien?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La revisión del martes"
+    body: "Silvia abrió el documento esperando dos horas de correcciones. A los diez minutos escribió al grupo: «Está impecable, no toco nada». Su compañero contestó con un emoticono y se fue a comer antes de tiempo."
+    before_phrase: "Está muy bien, de verdad."
+    after_phrase: "Está impecable, no toco nada."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La primera comida"
+    body: "Samuel cocinó para toda la familia por primera vez y no paraba de mirar a su tía. Ella dejó el tenedor y dijo: «El arroz está impecable, y lo digo yo, que soy difícil». Él respiró por fin."
+    before_phrase: "Te ha quedado muy bueno."
+    after_phrase: "El arroz está impecable."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Después de la charla"
+    body: "Al terminar, la entrevistadora cerró la carpeta y comentó: «Tu forma de explicar el proyecto fue impecable; se entendió a la primera». Joaquín salió a la calle y llamó a su hermana antes de llegar a la esquina."
+    before_phrase: "Lo explicaste muy bien."
+    after_phrase: "Tu forma de explicarlo fue impecable."
+metrics:
+  zipf_overall: 4.2572
+  dispersion_dp: 0.2630
+  pedantry_proxy: 0.4244
+  family_size: 7
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-13"

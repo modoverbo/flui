@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 121
+slug: "desempenar"
+status: "draft"
+lemma: "desempeñar"
+part_of_speech: "verbo"
+syllables: ["de", "sem", "pe", "ñar"]
+stressed_syllable: 4
+ipa_latam: "[de.sem.peˈɲar]"
+ipa_es: "[de.sem.peˈɲar]"
+explanation: "Ocupar un puesto o cumplir una función durante un tiempo."
+example_sentence: "Desempeñé el puesto de responsable de compras durante cuatro años."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "En una entrevista suena claro y medido: puesto, función y tiempo en una sola frase."
+when_not_to_use: "No la uses para una ayuda puntual de un día; aquí hay un puesto y un periodo."
+collocations:
+  - "desempeñar un puesto"
+  - "desempeñar una función"
+  - "desempeñar un papel"
+replaces:
+  - before: "Hice de jefa de equipo dos años"
+    after: "Desempeñé el puesto de jefa de equipo dos años"
+  - before: "Estuve encargada de las compras"
+    after: "Desempeñé la función de compras"
+  - before: "Ese puesto lo llevé yo un año"
+    after: "Ese puesto lo desempeñé yo un año"
+family: ["desempeño"]
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin: ["hacer"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "empeñar"
+    difference: "«Empeñar» es dejar algo como garantía para que te presten dinero, o insistir mucho en algo."
+    memory_trick: "Empeñas un reloj; ocupas un puesto."
+  - confused_with: "ejercer"
+    difference: "«Ejercer» se usa sobre todo con profesiones con título; la otra palabra vale para cualquier puesto o función."
+    memory_trick: "Ejerces una profesión; ocupas un cargo."
+exercises:
+  - position: 1
+    sentence: "Durante cuatro años, Mariana {{blank}} el puesto de responsable de compras en una fábrica pequeña."
+    hint_general: "Ocupó ese puesto durante cuatro años seguidos."
+    explanation: "Desempeñó: ocupó ese puesto cuatro años. «Empeñó» sería dejar algo en garantía, y «pilotó» es coloquial y suena a llevar algo a ojo."
+    options:
+      - position: 1
+        text: "empeñó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo como garantía para que te presten dinero, y un puesto no se deja en garantía."
+        hint_specific: "«Empeñar» pide un objeto de valor. ¿Qué se ocupa durante cuatro años?"
+      - position: 2
+        text: "desempeñó"
+        is_correct: true
+      - position: 3
+        text: "pilotó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pilotar» un puesto es coloquial y sugiere llevarlo a ojo; aquí se describe un cargo con nombre y periodo."
+        hint_specific: "«Pilotó» suena a llevar algo sobre la marcha. ¿Eso describe cuatro años de cargo?"
+  - position: 2
+    sentence: "En su primer trabajo, Samuel {{blank}} la función de atención al cliente los fines de semana."
+    hint_general: "Cumplió esa función durante un periodo concreto."
+    explanation: "Desempeñó: cumplió esa función un tiempo. «Empeñó» sería dejar algo en garantía, y «regentó» suena a dueño de un negocio."
+    options:
+      - position: 1
+        text: "desempeñó"
+        is_correct: true
+      - position: 2
+        text: "empeñó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo en garantía a cambio de dinero, y una función de trabajo no se empeña."
+        hint_specific: "«Empeñar» va de casas de préstamos. ¿Qué hacía Samuel los fines de semana?"
+      - position: 3
+        text: "regentó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Regentar» suena a estar al frente de un negocio propio, y él atendía a clientes en su primer empleo."
+        hint_specific: "«Regentó» apunta a quien manda en un local. ¿Ese era el puesto de Samuel?"
+  - position: 3
+    sentence: "Mi tía {{blank}} el cargo de tesorera de la asociación sin cobrar un euro."
+    hint_general: "Ocupó ese cargo durante un tiempo, sin cobrar."
+    explanation: "Desempeñó: ocupó ese cargo un tiempo. «Empeñó» sería dejar algo en garantía, y «desempolvó» es quitar el polvo a algo guardado."
+    options:
+      - position: 1
+        text: "empeñó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo en garantía a cambio de dinero, y la frase dice justo que no cobró nada."
+        hint_specific: "«Empeñar» mueve dinero. Relee el final: ¿cuánto cobró tu tía?"
+      - position: 2
+        text: "desempolvó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desempolvar» es quitar el polvo a algo guardado hace tiempo, y un cargo se ocupa, no se limpia."
+        hint_specific: "«Desempolvó» pide un trapo. ¿Qué se hace con un cargo?"
+      - position: 3
+        text: "desempeñó"
+        is_correct: true
+  - position: 4
+    sentence: "Antes de dirigir el área, Gonzalo {{blank}} funciones de apoyo en tres equipos distintos."
+    hint_general: "Cumplió esas funciones en tres equipos antes de dirigir."
+    explanation: "Desempeñó: cumplió esas funciones en tres equipos. «Empeñó» sería dejar algo en garantía, y «ejerció» apunta a profesiones con título."
+    options:
+      - position: 1
+        text: "desempeñó"
+        is_correct: true
+      - position: 2
+        text: "empeñó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo como garantía de un préstamo, y aquí se habla de funciones de trabajo."
+        hint_specific: "«Empeñar» entrega un objeto. ¿Qué cumplió Gonzalo en esos equipos?"
+      - position: 3
+        text: "ejerció"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ejercer» se usa sobre todo con profesiones con título, y estas eran funciones de apoyo sin título asociado."
+        hint_specific: "«Ejerció» pide una profesión con título. ¿Qué hacía él exactamente?"
+  - position: 5
+    sentence: "Cuando el director se fue, Fernanda {{blank}} el cargo de forma provisional durante seis meses."
+    hint_general: "Ocupó el cargo de forma temporal esos meses."
+    explanation: "Desempeñó: ocupó el cargo esos meses. «Empeñó» sería dejar algo en garantía, y «usurpó» acusa de quedarse con algo ajeno."
+    options:
+      - position: 1
+        text: "empeñó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo en garantía a cambio de dinero, y aquí se ocupa un cargo vacante."
+        hint_specific: "«Empeñar» necesita un objeto y un préstamo. ¿Qué quedó vacío al irse el director?"
+      - position: 2
+        text: "desempeñó"
+        is_correct: true
+      - position: 3
+        text: "usurpó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Usurpar» acusa de quedarse con algo ajeno, y la frase dice que fue de forma provisional y ordenada."
+        hint_specific: "«Usurpó» suena a robo de puesto. ¿Fue algo acordado o a la fuerza?"
+  - position: 6
+    sentence: "En la entrevista le preguntaron a Ximena qué funciones {{blank}} en su anterior empleo."
+    hint_general: "Le preguntan qué funciones cumplía en ese empleo."
+    explanation: "Desempeñaba: qué funciones cumplía allí. «Empeñaba» sería dejar cosas en garantía, y «cobraba» hablaría del dinero, no del trabajo."
+    options:
+      - position: 1
+        text: "desempeñaba"
+        is_correct: true
+      - position: 2
+        text: "empeñaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo en garantía para que te presten dinero, y no es eso lo que se pregunta."
+        hint_specific: "«Empeñaba» habla de objetos y préstamos. ¿Qué quieren saber de su empleo?"
+      - position: 3
+        text: "cobraba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cobrar» habla del dinero recibido, y la pregunta es sobre las funciones, no sobre el sueldo."
+        hint_specific: "«Cobraba» mira la nómina. ¿Qué palabra aparece en la pregunta?"
+  - position: 7
+    sentence: "Aunque suene raro, el portero del edificio {{blank}} también la función de conserje del colegio de al lado."
+    hint_general: "Cumplía dos funciones distintas a la vez."
+    explanation: "Desempeñaba: cumplía dos funciones a la vez. «Empeñaba» sería dejar cosas en garantía, y «apañaba» es coloquial y suena a salir del paso."
+    options:
+      - position: 1
+        text: "empeñaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo en garantía a cambio de dinero, y aquí se habla de dos trabajos a la vez."
+        hint_specific: "«Empeñaba» va de préstamos. ¿Qué hacía ese portero en dos sitios?"
+      - position: 2
+        text: "desempeñaba"
+        is_correct: true
+      - position: 3
+        text: "apañaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apañar» es coloquial y sugiere salir del paso como se pueda, y la frase describe una función formal."
+        hint_specific: "«Apañaba» suena a arreglo provisional. ¿Era un arreglo o un puesto?"
+  - position: 8
+    sentence: "Si {{blank}} bien una función pequeña, te acaban dando una más grande."
+    hint_general: "Cumplir bien una función lleva a recibir otra mayor."
+    explanation: "Desempeñas: cumples bien esa función. «Empeñas» sería dejar algo en garantía, y «exageras» sugiere agrandar lo que haces."
+    options:
+      - position: 1
+        text: "desempeñas"
+        is_correct: true
+      - position: 2
+        text: "empeñas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Empeñar» es dejar algo en garantía a cambio de dinero, y aquí se habla de cumplir bien un trabajo."
+        hint_specific: "«Empeñas» entrega un objeto. ¿Qué se cumple bien en esta frase?"
+      - position: 3
+        text: "exageras"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Exagerar» es coloquial y sugiere agrandar lo que haces, y la frase habla de hacerlo bien de verdad."
+        hint_specific: "«Exageras» infla el relato. ¿Aquí se infla algo o se cumple?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Puesto, función y tiempo"
+    body: "Ximena solía empezar por lo que sentía y perdía el hilo. Esta vez fue directa: «Desempeñé el puesto de responsable de compras durante cuatro años, con un equipo de tres personas». La entrevistadora asintió y pasó al ejemplo."
+    before_phrase: "Pues hacía un poco de todo en compras."
+    after_phrase: "Desempeñé el puesto de responsable de compras durante cuatro años."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Seis meses en medio"
+    body: "El director se fue en marzo y el puesto quedó vacío hasta septiembre. Fernanda lo llevó esos meses sin cambiar de tarjeta ni de sueldo. Cuando llegó el nuevo jefe, ella escribió una nota de dos páginas con todo lo que había desempeñado."
+    before_phrase: "Estuve haciendo de directora seis meses."
+    after_phrase: "Todo lo que había desempeñado."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La tesorera de la asociación"
+    body: "Mi tía llevó las cuentas de la asociación del barrio durante once años sin cobrar nada. En la cena de despedida, el presidente lo dijo así: «Desempeñó el cargo mejor que muchos profesionales». Ella se puso colorada y cambió de tema."
+    before_phrase: "Hizo de tesorera once años, y muy bien."
+    after_phrase: "Desempeñó el cargo mejor que muchos profesionales."
+metrics:
+  zipf_overall: 5.2236
+  dispersion_dp: 0.0982
+  pedantry_proxy: 0.5204
+  family_size: 125
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"
