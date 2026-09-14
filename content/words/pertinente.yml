@@ -38,7 +38,13 @@ replaces:
 family:
   - "pertinencia"
   - "pertinentemente"
-themes: []
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
 tags:
   comodin: []
   funcion: []
@@ -125,6 +131,121 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Impertinente» es lo que molesta o falta al respeto. Hablar del tráfico justo cuando se decide la hora ayuda."
         hint_specific: "Lo impertinente incomoda. ¿Hablar del tráfico en ese momento incomodaba o ayudaba?"
+  - position: 4
+    sentence: "Durante la llamada con el cliente, Álvaro guardó los chistes para el final y solo hizo preguntas {{blank}} sobre el plazo de entrega."
+    hint_general: "Sus preguntas tenían relación directa con lo que se estaba tratando."
+    explanation: "Pertinentes: las preguntas venían al caso del plazo. «Pertinaces» describe lo que no cesa, e «impertinentes» sería justo lo contrario: preguntas que incomodan."
+    options:
+      - position: 1
+        text: "pertinaces"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pertinaz» describe lo que no cesa, como una lluvia; unas preguntas sobre un plazo no insisten, encajan."
+        hint_specific: "«Pertinaz» se dice de algo que no para. ¿La frase habla de insistir o de venir al caso?"
+      - position: 2
+        text: "pertinentes"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "impertinentes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» es lo que incomoda o falta al respeto, y Álvaro justamente dejó los chistes para el final."
+        hint_specific: "Lo impertinente molesta. ¿Álvaro molesta al cliente o le facilita la llamada?"
+  - position: 5
+    sentence: "En la sobremesa, Lorena preguntó si era {{blank}} hablar del reparto de la herencia con los niños delante."
+    hint_general: "Se pregunta si el tema viene al caso justo en ese momento."
+    explanation: "Pertinente: la duda es si el tema viene al caso en ese momento. «Procedente» suena a escrito legal en plena sobremesa, e «impertinente» diría que el tema incomoda de por sí."
+    options:
+      - position: 1
+        text: "pertinente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "procedente"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Procedente» dice casi lo mismo, pero suena a escrito legal y en una sobremesa en familia resulta frío."
+        hint_specific: "«Procedente» es propio de documentos y trámites. ¿Suena natural en una sobremesa?"
+      - position: 3
+        text: "impertinente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» ya juzga el tema como molesto, y Lorena solo pregunta si es buen momento."
+        hint_specific: "Lo impertinente incomoda siempre. ¿Ella juzga el tema o duda del momento?"
+  - position: 6
+    sentence: "El informe de Guillermo tenía ochenta páginas, pero solo veinte con información {{blank}} para la decisión de mañana."
+    hint_general: "Solo esas veinte páginas tienen relación directa con lo que hay que decidir."
+    explanation: "Pertinente: solo esas veinte páginas tienen que ver con la decisión. «Pertinaz» describe lo que no cesa, y «abundante» habla de cantidad, que aquí sobra."
+    options:
+      - position: 1
+        text: "abundante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abundante» habla de cantidad, y el problema del informe es justo que le sobran páginas."
+        hint_specific: "«Abundante» mide cuánto hay. ¿Al informe le falta cantidad o le falta relación con el tema?"
+      - position: 2
+        text: "pertinaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pertinaz» es lo que no cesa o quien es terco, y una información no insiste: encaja o no encaja."
+        hint_specific: "«Pertinaz» se usa para algo que no para, como una tos. ¿Encaja con «información»?"
+      - position: 3
+        text: "pertinente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 7
+    sentence: "Nadie esperaba esa observación de Cecilia sobre el coste del envío, y resultó ser la más {{blank}} de la mañana."
+    hint_general: "La observación tocó justo el punto que faltaba por tratar."
+    explanation: "Pertinente: la observación tocaba justo el punto que faltaba. «Impertinente» diría que incomoda, y «vistosa» habla del aspecto, no del contenido."
+    options:
+      - position: 1
+        text: "impertinente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» es lo que incomoda o falta al respeto, y esta observación resultó ser la mejor de la mañana."
+        hint_specific: "Lo impertinente molesta. ¿La frase celebra la observación o la critica?"
+      - position: 2
+        text: "pertinente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "vistosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vistosa» habla de lo que llama la atención por su aspecto, y un comentario sobre costes no se juzga así."
+        hint_specific: "«Vistosa» va del aspecto. ¿Lo que sorprende es cómo se ve o adónde apunta?"
+  - position: 8
+    sentence: "Antes de enviar la propuesta, Simón borró todo lo que no fuera {{blank}} y la dejó en una sola página."
+    hint_general: "Se queda solo con lo que tiene relación directa con la propuesta."
+    explanation: "Pertinente: dejó solo lo que viene al caso. «Prescindible» diría lo contrario, que borró lo importante, e «impertinente» habla de lo que incomoda."
+    options:
+      - position: 1
+        text: "prescindible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prescindible» es lo que se puede quitar, así que la frase diría que Simón borró justo lo importante."
+        hint_specific: "Lee la frase con «prescindible» dentro: ¿qué se queda en esa página y qué se va?"
+      - position: 2
+        text: "impertinente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» es lo que incomoda, y en una propuesta lo que sobra no incomoda: simplemente no viene al caso."
+        hint_specific: "Lo impertinente molesta a alguien. ¿Lo que borra Simón molesta o solo sobra?"
+      - position: 3
+        text: "pertinente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
 readings:
   - position: 1
     scene: "trabajo"

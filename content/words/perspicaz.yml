@@ -37,7 +37,13 @@ replaces:
 family:
   - "perspicacia"
   - "perspicazmente"
-themes: []
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "matices-precision"
+    relevance: 1
 tags:
   comodin: []
   funcion: []
@@ -124,6 +130,121 @@ exercises:
         distractor_type: null
         why_not: null
         hint_specific: null
+  - position: 4
+    sentence: "En la entrevista, Renata hizo una pregunta tan {{blank}} que el jurado se miró entre sí antes de contestar."
+    hint_general: "La pregunta apuntó justo a un punto que nadie había mirado todavía."
+    explanation: "Perspicaz: la pregunta apuntó a lo que nadie había mirado. «Veraz» solo dice que algo se ajusta a la verdad, y «curiosa» habla de interés, no de agudeza."
+    options:
+      - position: 1
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» dice que algo se ajusta a la verdad; una pregunta no se juzga por eso."
+        hint_specific: "«Veraz» habla de decir la verdad. ¿Es eso lo que deja pensando al jurado?"
+      - position: 2
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "curiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosa» dice que alguien quiere saber; no dice que haya visto algo que los demás pasaron por alto."
+        hint_specific: "«Curiosa» habla de interés. ¿El jurado se calla por el interés o por lo certero?"
+  - position: 5
+    sentence: "Cuando su hijo empezó a contestar con monosílabos, Elisa fue {{blank}} y supo que algo le estaba pasando."
+    hint_general: "Entendió el problema por una señal mínima, sin que nadie se lo dijera."
+    explanation: "Perspicaz: leyó una señal mínima y acertó. «Metiche» es coloquial y suena a entrometido, y «locuaz» describe a quien habla mucho."
+    options:
+      - position: 1
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "metiche"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Metiche» es muy coloquial y acusa de entrometerse; aquí una madre lee a su hijo, no se entromete."
+        hint_specific: "«Metiche» suena a reproche coloquial. ¿La frase acusa a alguien o lo elogia?"
+      - position: 3
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» es quien habla mucho; en esta escena el que habla poco es el hijo."
+        hint_specific: "«Locuaz» va de hablar mucho. ¿Quién habla poco en esta escena?"
+  - position: 6
+    sentence: "Rafael leyó el correo dos veces y, {{blank}} como siempre, vio que faltaba la firma del responsable."
+    hint_general: "Se trata de darse cuenta de un detalle que pasa desapercibido."
+    explanation: "Perspicaz: vio un detalle que pasaba desapercibido. «Pertinaz» describe lo que no cesa, y «sagaz» subraya la astucia para sacar ventaja."
+    options:
+      - position: 1
+        text: "pertinaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pertinaz» describe lo que no cesa, como una lluvia; no dice nada sobre notar detalles."
+        hint_specific: "«Pertinaz» se dice de algo que no para. ¿La frase habla de insistir?"
+      - position: 2
+        text: "sagaz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sagaz» subraya la astucia para sacar ventaja; aquí solo se nota un fallo en un correo."
+        hint_specific: "«Sagaz» sugiere astucia con un fin. ¿Alguien busca ventaja en esta escena?"
+      - position: 3
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 7
+    sentence: "Durante la cena, Nuria prefirió callar, aunque su mirada {{blank}} ya había leído la tensión entre sus primos."
+    hint_general: "La mirada capta algo que nadie dice en voz alta."
+    explanation: "Perspicaz: la mirada leyó la tensión sin palabras. «Voraz» habla de un apetito enorme, y «chismosa» es coloquial y acusa de curiosear."
+    options:
+      - position: 1
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme o un consumo desmedido; una mirada que lee tensiones no es eso."
+        hint_specific: "«Voraz» va de comer o devorar. ¿Encaja con leer una tensión familiar?"
+      - position: 3
+        text: "chismosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismosa» es coloquial y acusa de contar lo ajeno; en la frase esa persona calla."
+        hint_specific: "«Chismosa» acusa de contar lo ajeno. ¿Quién guarda silencio durante la cena?"
+  - position: 8
+    sentence: "Marcos apenas habló en la reunión, pero su comentario final fue tan {{blank}} que cambió la decisión del grupo."
+    hint_general: "El comentario mostró algo que el grupo no había visto hasta entonces."
+    explanation: "Perspicaz: el comentario mostró lo que el grupo no había visto. «Falaz» califica de engañoso un argumento, e «insistente» solo dice que alguien repite."
+    options:
+      - position: 1
+        text: "falaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Falaz» dice que un argumento engaña; aquí el comentario convence porque es certero."
+        hint_specific: "«Falaz» acusa de engañar. ¿El grupo cambia de idea por un engaño?"
+      - position: 2
+        text: "perspicaz"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "insistente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistente» dice que alguien repite lo mismo, y en la frase esa persona apenas habla."
+        hint_specific: "«Insistente» va de repetir. ¿Cuánto habló esa persona en la reunión?"
 readings:
   - position: 1
     scene: "trabajo"

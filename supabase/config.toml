@@ -72,7 +72,7 @@ enabled = true
 # Supports glob patterns relative to supabase directory: "./seeds/*.sql"
 # seed.sql is generated from content/ by `dart run content:emit`; seed_themes.sql
 # is hand-written and must run after it, because it references seeded words.
-sql_paths = ["./seed.sql", "./seed_themes.sql"]
+sql_paths = ["./seed_themes.sql", "./seed.sql"]
 
 [db.network_restrictions]
 # Enable management of network restrictions.

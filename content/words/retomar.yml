@@ -1,0 +1,232 @@
+schema_version: 1
+slug: "retomar"
+status: "draft"
+lemma: "retomar"
+part_of_speech: "verbo"
+syllables: ["re", "to", "mar"]
+stressed_syllable: 3
+ipa_latam: "[re.toˈmaɾ]"
+ipa_es: "[re.toˈmaɾ]"
+explanation: "Volver a un tema o a un trabajo que quedó a medias, en el punto donde se dejó."
+example_sentence: "Te escribo para retomar la propuesta de marzo: seguimos interesados y solo cambió el calendario."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Abre un mensaje sin disculpas: dice que el asunto sigue vivo y que no empiezas de cero."
+when_not_to_use: "No la uses si vas a empezar algo nuevo o a rehacerlo entero: entonces no hay nada que continuar."
+collocations:
+  - "retomar el hilo"
+  - "retomar la conversación"
+  - "retomar el proyecto"
+replaces:
+  - before: "Volvemos a lo de la semana pasada"
+    after: "Retomamos lo de la semana pasada"
+  - before: "Te escribo otra vez por el tema aquel"
+    after: "Retomo el tema que dejamos abierto"
+  - before: "Seguimos por donde lo dejamos"
+    after: "Retomamos donde lo dejamos"
+family: []
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 1
+tags:
+  comodin: ["volver"]
+  funcion: ["reanudar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "retornar"
+    difference: "«Retornar» es volver a un lugar o devolver algo; la otra palabra continúa un asunto desde donde quedó."
+    memory_trick: "Retornas a un sitio; continúas un tema."
+  - confused_with: "repetir"
+    difference: "«Repetir» hace otra vez lo mismo desde el principio; la otra palabra sigue desde el punto exacto en que se paró."
+    memory_trick: "Repetir vuelve al inicio; continuar sigue en el punto donde te quedaste."
+exercises:
+  - position: 1
+    sentence: "Después de dos semanas de silencio, Ámbar escribió para {{blank}} el hilo de la conversación sin reprochar nada."
+    hint_general: "Sigue la charla en el punto en que se quedó, como si no hubiera pausa."
+    explanation: "Retomar: sigue la charla donde quedó. «Retornar» es volver a un lugar, y «resucitar» es coloquial y sugiere revivir algo que ya estaba dado por perdido."
+    options:
+      - position: 1
+        text: "retornar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retornar» es volver a un lugar o devolver una cosa, y aquí lo que sigue es una conversación."
+        hint_specific: "«Retornar» habla de volver a un sitio. ¿Ámbar vuelve a un lugar o a un asunto?"
+      - position: 2
+        text: "retomar"
+        is_correct: true
+      - position: 3
+        text: "resucitar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Resucitar» es coloquial cuando se aplica a un asunto y sugiere que estaba muerto; la frase dice que solo hubo silencio."
+        hint_specific: "«Resucitar» suena a devolver la vida a algo acabado. ¿La charla estaba acabada o pausada?"
+  - position: 2
+    sentence: "El proyecto llevaba meses parado y Gonzalo propuso {{blank}} el plan desde el punto exacto donde quedó."
+    hint_general: "No se empieza otra vez: se sigue desde donde se paró."
+    explanation: "Retomar: se sigue desde donde se paró. «Retocar» sería cambiar detalles del plan, y «reiniciar» lo llevaría de vuelta al principio."
+    options:
+      - position: 1
+        text: "retocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retocar» es cambiar pequeños detalles, y la frase habla de continuar el plan tal como estaba."
+        hint_specific: "«Retocar» cambia detalles. ¿El plan cambia o solo sigue adelante?"
+      - position: 2
+        text: "reiniciar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reiniciar» devuelve el plan al principio, y la frase insiste en el punto exacto donde quedó."
+        hint_specific: "«Reiniciar» empieza otra vez. ¿Desde dónde quiere seguir Gonzalo?"
+      - position: 3
+        text: "retomar"
+        is_correct: true
+  - position: 3
+    sentence: "Te escribo para {{blank}} la propuesta de marzo: nos sigue interesando y solo cambió el calendario."
+    hint_general: "La propuesta sigue viva; solo hay que continuar con ella."
+    explanation: "Retomar: la propuesta sigue viva y se continúa. «Retornar» es volver a un lugar, y «rehacer» la escribiría entera de nuevo, cuando solo cambió el calendario."
+    options:
+      - position: 1
+        text: "retomar"
+        is_correct: true
+      - position: 2
+        text: "retornar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retornar» es volver a un lugar o devolver algo, y aquí no se devuelve nada: se sigue con una propuesta."
+        hint_specific: "«Retornar» va de lugares y devoluciones. ¿Qué se continúa en este correo?"
+      - position: 3
+        text: "rehacer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rehacer» escribiría la propuesta entera de nuevo, y la frase dice que solo cambió el calendario."
+        hint_specific: "«Rehacer» empieza el documento otra vez. ¿Cuánto ha cambiado según la frase?"
+  - position: 4
+    sentence: "Cuando volvió de sus días libres, Delia {{blank}} las conversaciones abiertas una por una, sin dejar ninguna."
+    hint_general: "Siguió cada charla donde la había dejado antes de irse."
+    explanation: "Retomó: siguió cada charla donde la dejó. «Retornó» es volver a un lugar, y «desempolvó» es coloquial y sugiere que estaban olvidadas, no abiertas."
+    options:
+      - position: 1
+        text: "desempolvó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Desempolvar» es coloquial y sugiere sacar algo olvidado del fondo de un cajón, y la frase dice que seguían abiertas."
+        hint_specific: "«Desempolvar» supone olvido y polvo. ¿Cómo estaban esas conversaciones?"
+      - position: 2
+        text: "retomó"
+        is_correct: true
+      - position: 3
+        text: "retornó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retornar» es volver a un lugar, y lo que Delia continúa son charlas, no viajes."
+        hint_specific: "«Retornar» habla de volver a un sitio. ¿A qué vuelve Delia?"
+  - position: 5
+    sentence: "Nadie quería empezar de cero, así que el grupo decidió {{blank}} el borrador del año pasado y actualizarlo."
+    hint_general: "Se parte de lo que ya había, no de una hoja vacía."
+    explanation: "Retomar: se parte del borrador que ya había. «Remontar» es subir o superar una situación difícil, y «copiar» lo dejaría igual, sin la actualización que anuncia la frase."
+    options:
+      - position: 1
+        text: "remontar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Remontar» es subir o superar una mala situación, como remontar un marcador, y aquí solo se recupera un borrador."
+        hint_specific: "«Remontar» va de superar una desventaja. ¿Hay alguna desventaja en la frase?"
+      - position: 2
+        text: "retomar"
+        is_correct: true
+      - position: 3
+        text: "copiar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» dejaría el borrador igual, y la frase dice que después van a actualizarlo."
+        hint_specific: "«Copiar» reproduce sin cambios. ¿Qué harán con el borrador después?"
+  - position: 6
+    sentence: "Si una charla se corta por una llamada, {{blank}} la frase que quedó a medias en cuanto cuelgues."
+    hint_general: "Continúa justo donde se interrumpió, sin empezar otra vez."
+    explanation: "Retoma: continúa justo donde se interrumpió. «Retuerce» sería deformar la frase, y «repite» la diría entera otra vez desde el principio."
+    options:
+      - position: 1
+        text: "retuerce"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retorcer» es deformar algo, y aquí la frase quedó cortada, no deformada."
+        hint_specific: "«Retorcer» deforma. ¿Qué le pasó a la frase, se torció o se cortó?"
+      - position: 2
+        text: "repite"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» diría la frase entera desde el principio, y solo falta la parte que quedó a medias."
+        hint_specific: "«Repetir» empieza de nuevo. ¿Cuánto falta de esa frase?"
+      - position: 3
+        text: "retoma"
+        is_correct: true
+  - position: 7
+    sentence: "Amalia cerró el mensaje con una fecha para {{blank}} el asunto en septiembre, y así nadie lo dio por perdido."
+    hint_general: "Queda claro que en septiembre se sigue, no que se empieza."
+    explanation: "Retomar: en septiembre se sigue con el asunto. «Retornar» es volver a un lugar, y «cerrar» lo daría por terminado, justo lo que la fecha evita."
+    options:
+      - position: 1
+        text: "retomar"
+        is_correct: true
+      - position: 2
+        text: "cerrar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cerrar» daría el asunto por terminado, y la fecha de septiembre sirve para lo contrario."
+        hint_specific: "«Cerrar» termina el tema. ¿Para qué pone Amalia una fecha?"
+      - position: 3
+        text: "retornar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retornar» es volver a un lugar o devolver algo, y en septiembre no vuelve nadie a ningún sitio."
+        hint_specific: "«Retornar» habla de volver a un sitio. ¿Qué continúa en septiembre?"
+  - position: 8
+    sentence: "Tras la discusión, Ivo prefirió esperar al día siguiente para {{blank}} el tema con más calma."
+    hint_general: "Deja la charla en pausa y la continúa cuando bajen los ánimos."
+    explanation: "Retomar: continúa la charla cuando bajen los ánimos. «Retocar» sería cambiar detalles de algo escrito, y «sacar» es coloquial y sugiere plantearlo de cero otra vez."
+    options:
+      - position: 1
+        text: "retocar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retocar» cambia detalles de algo hecho, como una foto, y aquí lo que continúa es una conversación."
+        hint_specific: "«Retocar» se usa con detalles de algo ya terminado. ¿Qué quedó pendiente en la escena?"
+      - position: 2
+        text: "retomar"
+        is_correct: true
+      - position: 3
+        text: "sacar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sacar el tema» es coloquial y suena a plantearlo desde cero, cuando la charla ya estaba empezada."
+        hint_specific: "«Sacar un tema» suena a abrirlo por primera vez. ¿Este tema es nuevo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Sin disculpas de tres líneas"
+    body: "El presupuesto se había quedado a medias en abril. En vez de pedir perdón por la tardanza, Otilia escribió: «Retomo la propuesta que dejamos abierta; el alcance es el mismo y solo movemos fechas». La respuesta llegó el mismo día."
+    before_phrase: "Perdona que te escriba otra vez por el tema aquel."
+    after_phrase: "Retomo la propuesta que dejamos abierta."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Al día siguiente"
+    body: "La cena terminó con una frase de más y dos silencios. Al mediodía siguiente, Casandra llamó a su hermano: «¿Retomamos lo de anoche, pero con café?». Hablaron media hora y esta vez llegaron hasta el final."
+    before_phrase: "Oye, volvamos a lo de ayer, que quedó feo."
+    after_phrase: "¿Retomamos lo de anoche?"
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El viaje pendiente"
+    body: "El plan del viaje llevaba dormido desde enero en el grupo. Leandro escribió una línea: «Retomo el viaje: ¿mayo o junio?». En dos horas había fechas, presupuesto y dos personas buscando casa."
+    before_phrase: "A ver si volvemos a hablar de lo del viaje."
+    after_phrase: "Retomo el viaje: ¿mayo o junio?"
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

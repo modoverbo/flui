@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "reiterar"
+status: "draft"
+lemma: "reiterar"
+part_of_speech: "verbo"
+syllables: ["re", "i", "te", "rar"]
+stressed_syllable: 4
+ipa_latam: "[re.i.teˈɾaɾ]"
+ipa_es: "[re.i.teˈɾaɾ]"
+explanation: "Volver a decir con calma algo ya dicho, para dejar claro que todavía importa y espera respuesta."
+example_sentence: "Te escribo solo para reiterar la petición del lunes: seguimos esperando las cifras del cierre."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para recordar algo sin reprochar nada: repites una vez, con calma, y dejas la puerta abierta."
+when_not_to_use: "No la uses para presionar ni para repetir lo mismo cada día: eso cansa y deja de funcionar."
+collocations:
+  - "reiterar la petición"
+  - "reiterar la invitación"
+  - "reiterar el compromiso"
+replaces:
+  - before: "Te vuelvo a decir lo mismo de antes"
+    after: "Te reitero lo que te dije"
+  - before: "Perdona que insista otra vez"
+    after: "Reitero mi petición"
+  - before: "Como ya dije, lo repito"
+    after: "Reitero el compromiso"
+family: ["reiteración", "reiteradamente"]
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["decir"]
+  funcion: ["recordar"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reivindicar"
+    difference: "«Reivindicar» es reclamar algo como propio o defender un derecho; aquí solo se repite con calma lo que ya se dijo."
+    memory_trick: "Reivindicas lo que te toca; reiteras lo que ya dijiste."
+  - confused_with: "insistir"
+    difference: "«Insistir» empuja y suele repetirse muchas veces; lo otro dice la misma cosa una vez más y deja espacio."
+    memory_trick: "Insistir empuja; repetir con calma solo recuerda."
+exercises:
+  - position: 1
+    sentence: "Rosa escribió tres líneas para {{blank}} su petición sin que el proveedor se sintiera presionado."
+    hint_general: "Vuelve a decir lo que pidió, una vez y con calma."
+    explanation: "Reiterar: repite la petición con calma. «Reivindicar» es reclamar un derecho propio, y «machacar» es coloquial y sugiere justo la presión que Rosa evita."
+    options:
+      - position: 1
+        text: "reivindicar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reivindicar» es reclamar algo como propio o defender un derecho, y aquí solo se repite una petición ya hecha."
+        hint_specific: "«Reivindicar» va de reclamar lo que te corresponde. ¿Rosa reclama un derecho o repite un pedido?"
+      - position: 2
+        text: "reiterar"
+        is_correct: true
+      - position: 3
+        text: "machacar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Machacar» es coloquial y sugiere repetir hasta cansar, y la frase dice que el proveedor no se sintió presionado."
+        hint_specific: "«Machacar» suena a repetir hasta cansar. ¿La frase describe presión o calma?"
+  - position: 2
+    sentence: "Antes de colgar, Ignacio quiso {{blank}} la fecha de entrega que ya había dicho al empezar la llamada."
+    hint_general: "La fecha no cambia: se dice una vez más para que quede grabada."
+    explanation: "Reiterar: dice la misma fecha otra vez. «Reintegrar» es devolver un dinero, y «negociar» abriría de nuevo una fecha que ya estaba cerrada."
+    options:
+      - position: 1
+        text: "reintegrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reintegrar» es devolver un dinero o volver a incorporar a alguien; una fecha no se devuelve."
+        hint_specific: "«Reintegrar» aparece con devoluciones de dinero. ¿De qué habla esta llamada?"
+      - position: 2
+        text: "negociar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Negociar» abriría otra vez la fecha, y la frase dice que ya la había dado al empezar."
+        hint_specific: "«Negociar» reabre el asunto. ¿La fecha está en discusión o ya está dicha?"
+      - position: 3
+        text: "reiterar"
+        is_correct: true
+  - position: 3
+    sentence: "Cuando el cliente preguntó por tercera vez, Blanca prefirió {{blank}} las condiciones en un correo corto y amable."
+    hint_general: "Las condiciones son las mismas: solo vuelven a escribirse."
+    explanation: "Reiterar: escribe otra vez las mismas condiciones. «Reiniciar» sería empezar todo de cero, y «soltar» es coloquial y suena brusco justo donde la frase pide amabilidad."
+    options:
+      - position: 1
+        text: "reiterar"
+        is_correct: true
+      - position: 2
+        text: "reiniciar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reiniciar» es empezar algo desde cero, y aquí las condiciones siguen siendo las mismas de siempre."
+        hint_specific: "«Reiniciar» arranca de nuevo. ¿Cambian las condiciones o solo se vuelven a escribir?"
+      - position: 3
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y suena a decir algo de golpe, y el correo se describe como corto y amable."
+        hint_specific: "«Soltar» suena brusco. ¿Cómo describe la frase ese correo?"
+  - position: 4
+    sentence: "Te {{blank}} lo del jueves porque la última vez se nos pasó a los dos, no porque dude de ti."
+    hint_general: "Se dice de nuevo para que no vuelva a olvidarse, sin reproche."
+    explanation: "Reitero: lo digo otra vez para que no se olvide. «Reivindico» sería reclamar un derecho, y «reprocho» convierte el recordatorio en una queja que la frase descarta."
+    options:
+      - position: 1
+        text: "reivindico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reivindicar» es reclamar algo como propio o defender un derecho, y aquí nadie reclama nada: se recuerda una cita."
+        hint_specific: "«Reivindicar» va de derechos y reclamos. ¿Qué se está recordando en la frase?"
+      - position: 2
+        text: "reitero"
+        is_correct: true
+      - position: 3
+        text: "reprocho"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reprochar» es echar algo en cara, y la frase aclara que no hay desconfianza ni queja."
+        hint_specific: "«Reprochar» echa algo en cara. ¿La frase culpa a alguien o solo recuerda?"
+  - position: 5
+    sentence: "Julieta cerró el mensaje con una línea para {{blank}} el plazo, aunque todavía nadie le hubiera contestado."
+    hint_general: "El plazo sigue igual y ella lo escribe una vez más."
+    explanation: "Reiterar: el plazo sigue igual y se escribe otra vez. «Iterar» es repetir un paso de un proceso técnico, y «modificar» cambiaría el plazo que la frase mantiene."
+    options:
+      - position: 1
+        text: "iterar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Iterar» es repetir un paso dentro de un proceso técnico, no volver a decir algo en un mensaje."
+        hint_specific: "«Iterar» pertenece al trabajo con procesos y pruebas. ¿Eso es lo que hace Julieta?"
+      - position: 2
+        text: "modificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Modificar» cambiaría el plazo, y la frase deja claro que sigue siendo el mismo."
+        hint_specific: "«Modificar» cambia lo acordado. ¿El plazo cambia en esta frase?"
+      - position: 3
+        text: "reiterar"
+        is_correct: true
+  - position: 6
+    sentence: "Mariana no quería sonar dura, así que {{blank}} la misma frase del lunes y añadió una disculpa breve."
+    hint_general: "Usa otra vez la frase de antes, sin cambiar nada."
+    explanation: "Reiteró: usó otra vez la misma frase. «Reformuló» la habría cambiado, y la frase dice que era idéntica; «machacó» es coloquial y suena a la dureza que ella evitaba."
+    options:
+      - position: 1
+        text: "reiteró"
+        is_correct: true
+      - position: 2
+        text: "reformuló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reformular» es decirlo con otras palabras, y la frase precisa que era la misma del lunes."
+        hint_specific: "«Reformular» cambia las palabras. ¿La frase era nueva o la misma?"
+      - position: 3
+        text: "machacó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Machacar» es coloquial y suena a insistir hasta cansar, justo lo contrario de no sonar dura."
+        hint_specific: "«Machacar» suena a cansar al otro. ¿Qué quería evitar Mariana?"
+  - position: 7
+    sentence: "Si nadie responde a tu mensaje, {{blank}} tu pedido una sola vez y después llama: el silencio no siempre es un no."
+    hint_general: "Una vez más, y ya está: nada de empujar."
+    explanation: "Reitera: dilo una vez más y para ahí. «Reivindica» sería reclamar un derecho, y «presiona» va contra el consejo de escribir una sola vez."
+    options:
+      - position: 1
+        text: "presiona"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presionar» empuja al otro, y el consejo es escribir una sola vez y luego llamar."
+        hint_specific: "«Presionar» aprieta a la otra persona. ¿Cuántas veces recomienda escribir la frase?"
+      - position: 2
+        text: "reitera"
+        is_correct: true
+      - position: 3
+        text: "reivindica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reivindicar» es reclamar algo como propio o defender un derecho, y aquí solo esperas una respuesta."
+        hint_specific: "«Reivindicar» va de reclamar derechos. ¿Qué estás esperando en esta escena?"
+  - position: 8
+    sentence: "Cuando tu equipo ya conoce el objetivo, {{blank}} la idea una vez basta; repetirla cada día la desgasta."
+    hint_general: "Con decirla de nuevo una sola vez ya se sostiene la idea."
+    explanation: "Reiterar: decirla de nuevo una vez sostiene la idea. «Reiniciar» sería empezar de cero, e «imponer» la obligaría en vez de recordarla."
+    options:
+      - position: 1
+        text: "reiniciar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reiniciar» es empezar algo desde cero, y el equipo ya conoce el objetivo desde antes."
+        hint_specific: "«Reiniciar» arranca otra vez desde el principio. ¿El equipo parte de cero?"
+      - position: 2
+        text: "imponer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» obliga a aceptar algo, y la frase habla de sostener una idea que el equipo ya comparte."
+        hint_specific: "«Imponer» obliga. ¿El equipo necesita que lo obliguen o que se lo recuerden?"
+      - position: 3
+        text: "reiterar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La tercera línea"
+    body: "El presupuesto llevaba dos semanas sin respuesta. Otilia no escribió un correo largo ni se disculpó tres veces: «Reitero la petición del día 4. Si necesitas algo más de mi parte, dímelo hoy». Le contestaron esa misma tarde."
+    before_phrase: "Perdona que insista otra vez con esto."
+    after_phrase: "Reitero la petición del día 4."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La invitación de siempre"
+    body: "Su tío decía cada año que no molestaría. Casandra le escribió corto: «Reitero la invitación: la mesa está puesta para ti, vengas o no vengas». Ese diciembre apareció con un postre y sin excusas."
+    before_phrase: "Ya sabes que puedes venir, te lo digo siempre."
+    after_phrase: "Reitero la invitación."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del sábado"
+    body: "En el chat nadie confirmaba nada. Leandro escribió una sola vez: «Reitero el plan: sábado a las nueve, y quien no pueda que avise». Aparecieron cinco pulgares en dos minutos y la cena salió adelante."
+    before_phrase: "Bueno, lo vuelvo a decir por si acaso."
+    after_phrase: "Reitero el plan: sábado a las nueve."
+metrics:
+  zipf_overall: 4.8589
+  dispersion_dp: 0.1458
+  pedantry_proxy: 0.6234
+  family_size: 27
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

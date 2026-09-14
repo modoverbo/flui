@@ -38,7 +38,14 @@ replaces:
 family:
   - "contundencia"
   - "contundentemente"
-themes: []
+semantic_set_id: "fuerza-de-la-afirmacion"
+themes:
+  - slug: "persuasion-storytelling"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 2
 tags:
   comodin: []
   funcion: []
@@ -125,6 +132,121 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Redundante» es repetir lo que ya se dijo. Raúl no dio rodeos: fue al grano con cifras."
         hint_specific: "Lo redundante se repite. ¿Encaja con alguien que «no dio rodeos»?"
+  - position: 4
+    sentence: "El cierre de la charla de Adriana fue tan {{blank}} que el público se quedó en silencio unos segundos antes de aplaudir."
+    hint_general: "El final fue tan claro y firme que dejó a la sala sin nada que añadir."
+    explanation: "Contundente: el cierre no dejó lugar a dudas. «Brutal» es coloquial y suena a exageración entre amigos, y «contingente» describe lo que puede pasar o no."
+    options:
+      - position: 1
+        text: "brutal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Brutal» es un elogio coloquial y exagerado; en el cierre de una charla ante público suena fuera de lugar."
+        hint_specific: "«Brutal» es lenguaje de sobremesa entre amigos. ¿Encaja con una sala que escucha una charla?"
+      - position: 2
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "contingente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contingente» es lo que puede suceder o no, y ese cierre ya sucedió y dejó a la sala en silencio."
+        hint_specific: "«Contingente» habla de lo que quizá pase. ¿El cierre es una posibilidad o un hecho?"
+  - position: 5
+    sentence: "Antes de aceptar la rebaja, Fernando puso sobre la mesa un informe con tres años de pedidos: un dato {{blank}} que cerró la negociación."
+    hint_general: "El dato fue tan claro que nadie tuvo nada que responder."
+    explanation: "Contundente: el dato cerró la negociación sin réplica. «Contencioso» se usa para pleitos, y «convincente» se queda corto, porque persuade pero no cierra."
+    options:
+      - position: 1
+        text: "contencioso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contencioso» se usa para disputas y pleitos, y este dato hace lo contrario: termina la discusión."
+        hint_specific: "«Contencioso» suena a pleito. ¿El informe abre una disputa o la cierra?"
+      - position: 2
+        text: "convincente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convincente» dice que el dato persuade, y la frase va más lejos: cierra la negociación sin réplica."
+        hint_specific: "«Convincente» persuade poco a poco. ¿Aquí queda margen para seguir discutiendo?"
+      - position: 3
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 6
+    sentence: "Mi abuela respondió con una frase {{blank}} cuando le preguntaron por qué seguía viviendo sola: «Porque puedo»."
+    hint_general: "Una frase corta y firme que no deja nada por responder."
+    explanation: "Contundente: la frase corta y firme no deja réplica. «Condescendiente» sería mirar por encima del hombro, y «escueta» solo habla de lo breve."
+    options:
+      - position: 1
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "condescendiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Condescendiente» es tratar a alguien con aire de superioridad, y ella responde a una pregunta, no mira por encima del hombro."
+        hint_specific: "Lo condescendiente ofende a quien escucha. ¿La abuela ofende o zanja la duda?"
+      - position: 3
+        text: "escueta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escueta» solo dice que la frase es corta, y lo que impresiona es que no deje nada por responder."
+        hint_specific: "«Escueta» mide el largo. ¿Lo que sorprende es que sea corta o que cierre el tema?"
+  - position: 7
+    sentence: "La prueba con veinte clientes dio un resultado {{blank}}: dieciocho eligieron el envase nuevo sin dudar."
+    hint_general: "Dieciocho de veinte no deja lugar a dudas."
+    explanation: "Contundente: dieciocho de veinte no deja lugar a dudas. «Contingente» describe lo que puede pasar o no, y «discutible» diría justo lo contrario."
+    options:
+      - position: 1
+        text: "contingente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contingente» es lo que puede suceder o no, y este resultado ya está medido con veinte clientes."
+        hint_specific: "«Contingente» habla de lo que quizá ocurra. ¿La prueba ya se hizo o está por hacerse?"
+      - position: 2
+        text: "discutible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutible» diría que el resultado admite dudas, y dieciocho de veinte no las deja."
+        hint_specific: "«Discutible» abre debate. ¿Dieciocho de veinte deja mucho que debatir?"
+      - position: 3
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 8
+    sentence: "Nadie volvió a insistir después de la respuesta {{blank}} que dio Olga en la reunión de vecinos."
+    hint_general: "La respuesta fue tan firme que nadie quiso volver sobre el tema."
+    explanation: "Contundente: la respuesta fue tan firme que nadie insistió. «Condescendiente» sería tratar al grupo con superioridad, y «extensa» solo habla de longitud."
+    options:
+      - position: 1
+        text: "condescendiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Condescendiente» es tratar a los demás con aire de superioridad, y eso suele provocar más réplicas, no menos."
+        hint_specific: "Lo condescendiente molesta a quien escucha. ¿Los vecinos se molestaron o dejaron el tema?"
+      - position: 2
+        text: "contundente"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "extensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extensa» habla de longitud, y lo que acabó con la insistencia fue la firmeza, no el tamaño."
+        hint_specific: "«Extensa» mide cuánto dura. ¿Los vecinos callan por lo largo o por lo claro?"
 readings:
   - position: 1
     scene: "trabajo"

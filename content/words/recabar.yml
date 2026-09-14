@@ -1,0 +1,232 @@
+schema_version: 1
+slug: "recabar"
+status: "draft"
+lemma: "recabar"
+part_of_speech: "verbo"
+syllables: ["re", "ca", "bar"]
+stressed_syllable: 3
+ipa_latam: "[re.kaˈβaɾ]"
+ipa_es: "[re.kaˈβaɾ]"
+explanation: "Pedir y reunir datos, firmas u opiniones de varias personas antes de decidir o de escribir algo."
+example_sentence: "Antes de mandar la propuesta quiero recabar la opinión de las tres áreas que la van a ejecutar."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Deja claro que estás pidiendo a varias personas, no a una: por eso suena a trabajo previo y no a capricho."
+when_not_to_use: "No la uses cuando pides una sola cosa a una sola persona: ahí «pedir» es más corto y más humano."
+collocations:
+  - "recabar información"
+  - "recabar opiniones"
+  - "recabar firmas"
+replaces:
+  - before: "A ver si consigo los datos de todos"
+    after: "Voy a recabar los datos de todos"
+  - before: "Estoy juntando opiniones antes de decidir"
+    after: "Estoy recabando opiniones antes de decidir"
+  - before: "Hay que pedirle la información a cada área"
+    after: "Hay que recabar la información de cada área"
+family: ["recabado"]
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin: ["conseguir"]
+  funcion: ["pedir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "recaudar"
+    difference: "«Recaudar» es juntar dinero; lo otro junta datos, opiniones o firmas, y casi nunca monedas."
+    memory_trick: "Se recauda dinero; se piden y se reúnen opiniones."
+  - confused_with: "recopilar"
+    difference: "«Recopilar» ordena material que ya tienes; aquí primero hay que pedírselo a cada persona."
+    memory_trick: "Recopilas lo que ya está en tu mesa; lo otro empieza preguntando."
+exercises:
+  - position: 1
+    sentence: "Antes de escribir la propuesta, Ximena dedicó dos días a {{blank}} los datos que faltaban en cada área."
+    hint_general: "Tuvo que pedirlos a varias personas y juntarlos, uno por uno."
+    explanation: "Recabar: pidió los datos área por área. «Recaudar» es juntar dinero, y «pescar» es coloquial y sugiere conseguir algo de casualidad."
+    options:
+      - position: 1
+        text: "recaudar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recaudar» es juntar dinero, y lo que faltaba en cada área eran datos, no monedas."
+        hint_specific: "«Recaudar» se usa con dinero. ¿Qué le faltaba a Ximena para escribir?"
+      - position: 2
+        text: "recabar"
+        is_correct: true
+      - position: 3
+        text: "pescar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pescar» es coloquial y sugiere conseguir algo por casualidad, y ella trabajó dos días área por área."
+        hint_specific: "«Pescar» suena a suerte. ¿Fue casualidad o fueron dos días de trabajo?"
+  - position: 2
+    sentence: "El correo de Rodrigo llevaba una sola pregunta por persona: así logró {{blank}} todas las respuestas en un día."
+    hint_general: "Con una pregunta a cada uno reunió lo que necesitaba de todos."
+    explanation: "Recabar: reunió las respuestas de todos. «Recalcar» es insistir en algo que ya dijiste, y «ordenar» solo coloca respuestas que aún no tenía."
+    options:
+      - position: 1
+        text: "recalcar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recalcar» es subrayar algo que ya dijiste, y aquí Rodrigo todavía no tenía las respuestas."
+        hint_specific: "«Recalcar» insiste en algo propio. ¿Rodrigo insiste o pregunta?"
+      - position: 2
+        text: "ordenar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ordenar» coloca material que ya está en tus manos, y el correo servía justo para conseguirlo."
+        hint_specific: "«Ordenar» trabaja con lo que ya tienes. ¿Rodrigo ya tenía las respuestas?"
+      - position: 3
+        text: "recabar"
+        is_correct: true
+  - position: 3
+    sentence: "Para cerrar el informe, Noelia tuvo que {{blank}} la firma de tres responsables que nunca coincidían."
+    hint_general: "Le tocó pedir y reunir lo que cada responsable tenía que aportar."
+    explanation: "Recabar: fue a buscar la firma de cada responsable. «Recaudar» es juntar dinero, y «exigir» impone con dureza algo que aquí solo se pide."
+    options:
+      - position: 1
+        text: "recabar"
+        is_correct: true
+      - position: 2
+        text: "recaudar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recaudar» se usa con dinero; lo que Noelia necesitaba era una firma en un papel."
+        hint_specific: "«Recaudar» va de dinero. ¿Qué le faltaba al informe?"
+      - position: 3
+        text: "exigir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» impone con dureza, y la frase solo cuenta que los responsables nunca coincidían."
+        hint_specific: "«Exigir» presiona. ¿La frase describe presión o una agenda difícil?"
+  - position: 4
+    sentence: "Si vas a proponer un cambio grande, {{blank}} antes la opinión de quienes van a trabajar con él."
+    hint_general: "Pregunta a cada persona implicada y junta lo que te digan."
+    explanation: "Recaba: pregunta a cada persona implicada. «Recauda» es juntar dinero, y «husmea» es coloquial y sugiere enterarse a escondidas, no preguntar de frente."
+    options:
+      - position: 1
+        text: "husmea"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Husmear» es coloquial y sugiere enterarse a escondidas, y el consejo es preguntar de frente."
+        hint_specific: "«Husmear» suena a curiosear sin avisar. ¿El consejo es preguntar abiertamente?"
+      - position: 2
+        text: "recaba"
+        is_correct: true
+      - position: 3
+        text: "recauda"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recaudar» es juntar dinero, y aquí lo que se junta son opiniones sobre un cambio."
+        hint_specific: "«Recaudar» va de dinero. ¿Qué se pide antes de proponer el cambio?"
+  - position: 5
+    sentence: "Mientras el resto discutía por el chat, Amadeo se dedicó a {{blank}} los números de cada equipo."
+    hint_general: "Fue equipo por equipo pidiendo sus cifras."
+    explanation: "Recabar: fue equipo por equipo pidiendo cifras. «Recargar» es volver a llenar algo, y «repasar» supone que los números ya estaban sobre la mesa."
+    options:
+      - position: 1
+        text: "recargar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recargar» es volver a llenar algo, como una batería, y aquí se piden cifras a distintos equipos."
+        hint_specific: "«Recargar» se usa con baterías y saldos. ¿Encaja con pedir cifras?"
+      - position: 2
+        text: "repasar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repasar» mira otra vez unos números que ya tienes, y Amadeo aún tenía que conseguirlos."
+        hint_specific: "«Repasar» revisa lo que ya está. ¿Amadeo tenía las cifras o las buscaba?"
+      - position: 3
+        text: "recabar"
+        is_correct: true
+  - position: 6
+    sentence: "Nadie quería otra reunión, así que Silvia decidió {{blank}} las ideas por escrito antes de proponer nada."
+    hint_general: "Pidió a cada persona su idea por mensaje y las juntó."
+    explanation: "Recabar: pidió por escrito la idea de cada persona. «Recaudar» es juntar dinero, y «sonsacar» es coloquial y sugiere sacarle algo a alguien que no quiere darlo."
+    options:
+      - position: 1
+        text: "recabar"
+        is_correct: true
+      - position: 2
+        text: "sonsacar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sonsacar» es coloquial y sugiere sacarle algo a quien no quiere darlo, y aquí cada persona escribe su idea."
+        hint_specific: "«Sonsacar» suena a arrancarle algo a alguien. ¿Las ideas se dan o se arrancan?"
+      - position: 3
+        text: "recaudar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recaudar» se usa para juntar dinero, y lo que Silvia pedía eran ideas."
+        hint_specific: "«Recaudar» va de dinero. ¿Qué pidió Silvia por escrito?"
+  - position: 7
+    sentence: "Antes de cambiar el portal, la comunidad quiso {{blank}} la opinión de cada vecino, incluso de los que nunca van."
+    hint_general: "Fueron uno por uno a pedir lo que pensaba cada persona."
+    explanation: "Recabar: fueron uno por uno a preguntar. «Recaudar» es juntar dinero para la obra, y «suponer» es imaginar lo que piensan sin preguntarles."
+    options:
+      - position: 1
+        text: "recaudar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recaudar» sería juntar el dinero de la obra, y la frase habla de lo que piensa cada vecino."
+        hint_specific: "«Recaudar» va de dinero. ¿Qué se junta aquí, fondos u opiniones?"
+      - position: 2
+        text: "recabar"
+        is_correct: true
+      - position: 3
+        text: "suponer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Suponer» es imaginar lo que piensan, y el detalle de ir hasta los que nunca van dice que sí preguntaron."
+        hint_specific: "«Suponer» adivina. ¿La comunidad pregunta o imagina?"
+  - position: 8
+    sentence: "Para organizar el viaje, Pilar prefirió {{blank}} las fechas libres de todos antes de reservar los billetes."
+    hint_general: "Preguntó a cada uno por sus días y armó una lista."
+    explanation: "Recabar: preguntó a cada uno por sus días libres. «Recaudar» es juntar dinero, y «adivinar» sería inventar fechas sin preguntarle a nadie."
+    options:
+      - position: 1
+        text: "adivinar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adivinar» inventa las fechas, y Pilar quiere saberlas antes de gastar en billetes."
+        hint_specific: "«Adivinar» va sin datos. ¿Se puede reservar un viaje así?"
+      - position: 2
+        text: "recaudar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recaudar» sería juntar el dinero del viaje, y aquí lo que falta son las fechas libres."
+        hint_specific: "«Recaudar» va de dinero. ¿Qué le falta a Pilar para reservar?"
+      - position: 3
+        text: "recabar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Una pregunta por persona"
+    body: "El informe estaba parado porque faltaban cifras de cuatro áreas. En vez de convocar a todos, Ámbar mandó un correo con una sola pregunta a cada responsable: «Necesito recabar un dato tuyo antes del jueves». El jueves tenía los cuatro."
+    before_phrase: "A ver si consigo que cada uno me pase lo suyo."
+    after_phrase: "Necesito recabar un dato tuyo antes del jueves."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La comida de diciembre"
+    body: "Cada año alguien se quedaba fuera de la fecha. Este año Amalia escribió al grupo antes de reservar: «Voy a recabar los días libres de todos y luego elijo». Nadie discutió, porque nadie se sintió olvidado."
+    before_phrase: "A ver quién puede, ya me irán diciendo."
+    after_phrase: "Voy a recabar los días libres de todos."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Antes de la segunda ronda"
+    body: "A Ivo le propusieron un puesto nuevo y no quiso responder en caliente. Escribió a dos personas que ya trabajaban allí: «Quiero recabar opiniones antes de decidir». Con lo que le contaron, aceptó sabiendo dónde entraba."
+    before_phrase: "Voy a preguntar por ahí a ver qué me dicen."
+    after_phrase: "Quiero recabar opiniones antes de decidir."
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

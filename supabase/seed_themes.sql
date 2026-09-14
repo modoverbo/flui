@@ -1,20 +1,14 @@
--- flui local/dev theme seed. Applied by `supabase db reset` AFTER seed.sql
--- (see the `sql_paths` list in supabase/config.toml), because every row here
--- references a word that seed.sql inserts.
+-- flui local/dev theme catalogue. Applied by `supabase db reset` BEFORE seed.sql
+-- (see the `sql_paths` list in supabase/config.toml), because the generated
+-- seed links words to the themes this file inserts.
 --
--- WHY THIS IS A SEPARATE FILE
--- ---------------------------
--- `supabase/seed.sql` is generated from `content/` by `dart run content:emit`,
--- and `app/tool/seed_fixture_check.dart` proves that generated file round-trips
--- into the Flutter fake-backend fixture byte for byte. The emitter
--- (`content/lib/src/sql/seed_emitter.dart`) writes a fixed preamble plus the
--- word rows; it emits neither `themes`, nor `word_themes`, nor
--- `words.semantic_set_id`, and the `Word` model in `content/` has no
--- `semantic_set_id` field at all. Teaching it to do so means editing
--- `content/`, which the content agents own. So the theme rows live here
--- instead, hand-written and applied after the generated seed, until the
--- emitter grows theme support. When it does, move these rows into
--- `content/templates/seed_preamble.sql` and delete this file.
+-- WHAT LIVES HERE
+-- ---------------
+-- Only the 16 theme rows. `supabase/seed.sql` is generated from `content/` by
+-- `dart run content:emit`, and that generator owns `words.semantic_set_id` and
+-- every `word_themes` link, resolved by slug against the themes below. Keep the
+-- two files disjoint: a link or a semantic set added here would be overwritten
+-- on the next emit.
 --
 -- Copy (slug, family, name, tagline, jtbd, content_type, sort_order) is copied
 -- verbatim from content/themes.yml. Do not invent themes here.
@@ -106,69 +100,3 @@ on conflict (id) do update
       status = excluded.status,
       sort_order = excluded.sort_order,
       published = excluded.published;
-
--- ============================================================================
--- 2. Semantic sets of the starter words
--- ============================================================================
---
--- A semantic set is a synonym, antonym or category-mate group, which is what
--- Tinkham (1993, 1997) and Nation (2000) found to interfere when learned
--- together. Only one such group exists among the eight starter words:
--- «contundente» (reinforce an assertion) and «matizar» (soften it) sit at the
--- two ends of the same axis, so they are never introduced within 7 days of
--- each other. The other six are thematically related at most, which the same
--- research found harmless, so their `semantic_set_id` stays NULL.
-
-update public.words
-   set semantic_set_id = 'fuerza-de-la-afirmacion'
- where slug in ('contundente', 'matizar');
-
--- ============================================================================
--- 3. Which themes each starter word belongs to
--- ============================================================================
---
--- relevance 3 = the word is the point of the theme, 2 = clearly useful,
--- 1 = adjacent. `sort_order` mirrors the catalog order, so a theme introduces
--- its words in the same sequence the global pool would.
-
-insert into public.word_themes (word_id, theme_id, relevance, sort_order)
-select w.id, t.id, v.relevance, w.sort_order
-from (values
-  -- perspicaz: an adjective you use to praise someone else's read of a room.
-  ('perspicaz', 'elogio-reconocimiento', 3),
-  ('perspicaz', 'reuniones', 2),
-  ('perspicaz', 'matices-precision', 1),
-  -- plantear: putting a subject on the table, at work or at home.
-  ('plantear', 'reuniones', 3),
-  ('plantear', 'conversaciones-dificiles', 2),
-  ('plantear', 'correos-mensajes', 2),
-  -- matizar: the word for "that is true, but".
-  ('matizar', 'matices-precision', 3),
-  ('matizar', 'conflicto-desacuerdo', 2),
-  ('matizar', 'reuniones', 2),
-  -- sopesar: weighing an offer before answering it.
-  ('sopesar', 'negociacion', 3),
-  ('sopesar', 'entrevistas', 2),
-  ('sopesar', 'liderazgo-feedback', 1),
-  -- pertinente: whether a question belongs in this conversation.
-  ('pertinente', 'entrevistas', 3),
-  ('pertinente', 'reuniones', 2),
-  ('pertinente', 'redaccion-ejecutiva', 2),
-  -- concretar: turning "we should" into a date, a number and an owner.
-  ('concretar', 'reuniones', 3),
-  ('concretar', 'redaccion-ejecutiva', 2),
-  ('concretar', 'negociacion', 2),
-  -- contundente: an argument that leaves no room for doubt.
-  ('contundente', 'persuasion-storytelling', 3),
-  ('contundente', 'presentaciones-oratoria', 2),
-  ('contundente', 'negociacion', 2),
-  -- zanjar: ending a discussion for good.
-  ('zanjar', 'conflicto-desacuerdo', 3),
-  ('zanjar', 'negociacion', 2),
-  ('zanjar', 'reuniones', 1)
-) as v (word_slug, theme_slug, relevance)
-join public.words w on w.slug = v.word_slug
-join public.themes t on t.slug = v.theme_slug
-on conflict (word_id, theme_id) do update
-  set relevance = excluded.relevance,
-      sort_order = excluded.sort_order;

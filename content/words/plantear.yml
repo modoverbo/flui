@@ -37,7 +37,13 @@ replaces:
 family:
   - "planteamiento"
   - "replantear"
-themes: []
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "correos-mensajes"
+    relevance: 2
 tags:
   comodin: []
   funcion: []
@@ -124,6 +130,121 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Plantar» es sembrar o dejar a alguien esperando. Un punto del plan no se planta: se comenta."
         hint_specific: "«Plantar» va con semillas o con citas a las que no se llega. ¿Encaja con una duda sobre un plan?"
+  - position: 4
+    sentence: "Cristina llevaba días dándole vueltas al reparto de la limpieza en casa, hasta que decidió {{blank}} el tema durante la cena."
+    hint_general: "Busca el verbo para poner el asunto sobre la mesa y hablarlo en familia."
+    explanation: "Plantear: poner el tema sobre la mesa para hablarlo. «Plantar» es sembrar o dejar a alguien esperando, y «exigir» sería reclamar con firmeza, cuando ella solo quiere conversar."
+    options:
+      - position: 1
+        text: "plantar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Plantar» es sembrar o dejar a alguien esperando; un reparto de la limpieza no se siembra."
+        hint_specific: "«Plantar» se usa con semillas o con quien no llega a una cita. ¿Es eso lo que pasa en la cena?"
+      - position: 2
+        text: "plantear"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "exigir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» es reclamar algo con firmeza, y ella quiere abrir una conversación, no imponer un reparto."
+        hint_specific: "«Exigir» no deja espacio para responder. ¿Ella busca imponer o conversar?"
+  - position: 5
+    sentence: "Durante la comida familiar, Ignacio quiso {{blank}} un cambio en los turnos de los domingos, pero esperó al café para hacerlo con calma."
+    hint_general: "Busca el verbo para abrir un asunto y hablarlo con calma con los demás."
+    explanation: "Plantear: abrir el asunto con calma para hablarlo en familia. «Implantar» sería imponer el cambio, y «soltar» es coloquial y sugiere decirlo de golpe, justo lo que él evita."
+    options:
+      - position: 1
+        text: "plantear"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "implantar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implantar» es establecer algo sin consultarlo, y él espera al café para hablarlo con todos."
+        hint_specific: "«Implantar» impone desde arriba. ¿Quien espera al café busca imponer o conversar?"
+      - position: 3
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y sugiere decir algo de golpe; él hace lo contrario y espera el momento con calma."
+        hint_specific: "«Soltar» suena a decirlo de repente. ¿Encaja con esperar al café?"
+  - position: 6
+    sentence: "Sandra abrió el mensaje con una línea clara: quería {{blank}} dos fechas posibles para la mudanza y que su hermana eligiera una."
+    hint_general: "Pone dos opciones sobre la mesa para que la otra persona decida."
+    explanation: "Plantear: pone las dos fechas sobre la mesa para que su hermana elija. «Plantar» es sembrar o dejar a alguien esperando, e «imponer» sería decidir por ella."
+    options:
+      - position: 1
+        text: "imponer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» es decidir por la otra persona, y aquí su hermana es quien elige la fecha."
+        hint_specific: "Fíjate en el final: su hermana elige. ¿Eso es imponer?"
+      - position: 2
+        text: "plantar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Plantar» es sembrar o dejar a alguien esperando; dos fechas en un mensaje no se siembran."
+        hint_specific: "«Plantar» va con semillas o con citas a las que nadie llega. ¿Es eso lo que hace Sandra?"
+      - position: 3
+        text: "plantear"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 7
+    sentence: "El nuevo horario de la biblioteca {{blank}} un problema que nadie había previsto: los vecinos se quedaban sin sala los sábados."
+    hint_general: "El horario hace aparecer un asunto que habrá que hablar y resolver."
+    explanation: "Plantea: el horario hace aparecer un problema que habrá que hablar. «Implanta» sería establecer el horario, y «resuelve» diría lo contrario, porque aquí el problema empieza."
+    options:
+      - position: 1
+        text: "implanta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Implantar» es establecer algo, y lo que el horario establece no es el problema, sino el horario mismo."
+        hint_specific: "«Implantar» es establecer algo nuevo. ¿Qué se establece aquí, el horario o el problema?"
+      - position: 2
+        text: "plantea"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "resuelve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resolver» sería dejar el asunto terminado, y aquí los vecinos se quedan sin sala: el problema empieza."
+        hint_specific: "Relee el final: los vecinos se quedan sin sala. ¿Eso suena a problema resuelto?"
+  - position: 8
+    sentence: "Nosotros {{blank}} la idea del taller sin saber si habría presupuesto, y al final la dirección la aprobó."
+    hint_general: "Pusimos la idea sobre la mesa a la espera de una respuesta."
+    explanation: "Planteamos: pusimos la idea sobre la mesa a la espera de una respuesta. «Plantamos» es sembrar o dejar a alguien esperando, e «impusimos» diría que ya estaba decidido."
+    options:
+      - position: 1
+        text: "planteamos"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "plantamos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Plantar» es sembrar o dejar a alguien esperando; una idea para un taller no se siembra."
+        hint_specific: "«Plantar» va con semillas o con citas fallidas. ¿Es eso lo que se hace con una idea?"
+      - position: 3
+        text: "impusimos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» diría que la decisión ya estaba tomada, y aquí la dirección todavía tenía que aprobarla."
+        hint_specific: "Fíjate en el final: la dirección aprueba. ¿Se aprueba lo que ya se impuso?"
 readings:
   - position: 1
     scene: "trabajo"

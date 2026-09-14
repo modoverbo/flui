@@ -137,6 +137,111 @@ cross join (values
     ('perspicaz', true, null, null, null, 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'bd7f2986-3012-4193-9692-d2bf5c7dcb8d',
+    'a0000000-0000-4000-8000-000000000001',
+    'En la entrevista, Renata hizo una pregunta tan {{blank}} que el jurado se miró entre sí antes de contestar.',
+    'La pregunta apuntó justo a un punto que nadie había mirado todavía.',
+    'Perspicaz: la pregunta apuntó a lo que nadie había mirado. «Veraz» solo dice que algo se ajusta a la verdad, y «curiosa» habla de interés, no de agudeza.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('veraz', false, 'paronym', '«Veraz» dice que algo se ajusta a la verdad; una pregunta no se juzga por eso.', '«Veraz» habla de decir la verdad. ¿Es eso lo que deja pensando al jurado?', 1),
+    ('perspicaz', true, null, null, null, 2),
+    ('curiosa', false, 'near_synonym', '«Curiosa» dice que alguien quiere saber; no dice que haya visto algo que los demás pasaron por alto.', '«Curiosa» habla de interés. ¿El jurado se calla por el interés o por lo certero?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'f4a023c1-0781-49dd-ba54-652653beb55d',
+    'a0000000-0000-4000-8000-000000000001',
+    'Cuando su hijo empezó a contestar con monosílabos, Elisa fue {{blank}} y supo que algo le estaba pasando.',
+    'Entendió el problema por una señal mínima, sin que nadie se lo dijera.',
+    'Perspicaz: leyó una señal mínima y acertó. «Metiche» es coloquial y suena a entrometido, y «locuaz» describe a quien habla mucho.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('perspicaz', true, null, null, null, 1),
+    ('metiche', false, 'register', '«Metiche» es muy coloquial y acusa de entrometerse; aquí una madre lee a su hijo, no se entromete.', '«Metiche» suena a reproche coloquial. ¿La frase acusa a alguien o lo elogia?', 2),
+    ('locuaz', false, 'paronym', '«Locuaz» es quien habla mucho; en esta escena el que habla poco es el hijo.', '«Locuaz» va de hablar mucho. ¿Quién habla poco en esta escena?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'd00771f3-5981-4cc1-8c10-3a8ed57316ee',
+    'a0000000-0000-4000-8000-000000000001',
+    'Rafael leyó el correo dos veces y, {{blank}} como siempre, vio que faltaba la firma del responsable.',
+    'Se trata de darse cuenta de un detalle que pasa desapercibido.',
+    'Perspicaz: vio un detalle que pasaba desapercibido. «Pertinaz» describe lo que no cesa, y «sagaz» subraya la astucia para sacar ventaja.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('pertinaz', false, 'paronym', '«Pertinaz» describe lo que no cesa, como una lluvia; no dice nada sobre notar detalles.', '«Pertinaz» se dice de algo que no para. ¿La frase habla de insistir?', 1),
+    ('sagaz', false, 'near_synonym', '«Sagaz» subraya la astucia para sacar ventaja; aquí solo se nota un fallo en un correo.', '«Sagaz» sugiere astucia con un fin. ¿Alguien busca ventaja en esta escena?', 2),
+    ('perspicaz', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '6195dfc5-b723-4dde-adae-e8feabba9c83',
+    'a0000000-0000-4000-8000-000000000001',
+    'Durante la cena, Nuria prefirió callar, aunque su mirada {{blank}} ya había leído la tensión entre sus primos.',
+    'La mirada capta algo que nadie dice en voz alta.',
+    'Perspicaz: la mirada leyó la tensión sin palabras. «Voraz» habla de un apetito enorme, y «chismosa» es coloquial y acusa de curiosear.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('perspicaz', true, null, null, null, 1),
+    ('voraz', false, 'paronym', '«Voraz» describe un apetito enorme o un consumo desmedido; una mirada que lee tensiones no es eso.', '«Voraz» va de comer o devorar. ¿Encaja con leer una tensión familiar?', 2),
+    ('chismosa', false, 'register', '«Chismosa» es coloquial y acusa de contar lo ajeno; en la frase esa persona calla.', '«Chismosa» acusa de contar lo ajeno. ¿Quién guarda silencio durante la cena?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '2a21b221-854b-401b-91b7-a34b5869c929',
+    'a0000000-0000-4000-8000-000000000001',
+    'Marcos apenas habló en la reunión, pero su comentario final fue tan {{blank}} que cambió la decisión del grupo.',
+    'El comentario mostró algo que el grupo no había visto hasta entonces.',
+    'Perspicaz: el comentario mostró lo que el grupo no había visto. «Falaz» califica de engañoso un argumento, e «insistente» solo dice que alguien repite.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('falaz', false, 'paronym', '«Falaz» dice que un argumento engaña; aquí el comentario convence porque es certero.', '«Falaz» acusa de engañar. ¿El grupo cambia de idea por un engaño?', 1),
+    ('perspicaz', true, null, null, null, 2),
+    ('insistente', false, 'near_synonym', '«Insistente» dice que alguien repite lo mismo, y en la frase esa persona apenas habla.', '«Insistente» va de repetir. ¿Cuánto habló esa persona en la reunión?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
 values
   ('a0000000-0000-4000-8000-000000000001', 'trabajo', 'practica', 'La pregunta que nadie hizo',
@@ -248,6 +353,111 @@ cross join (values
     ('plantarlo', false, 'paronym', '«Plantar» es sembrar o dejar a alguien esperando. Un punto del plan no se planta: se comenta.', '«Plantar» va con semillas o con citas a las que no se llega. ¿Encaja con una duda sobre un plan?', 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'c7493b38-a568-4047-b3f7-20552ccc8a49',
+    'a0000000-0000-4000-8000-000000000002',
+    'Cristina llevaba días dándole vueltas al reparto de la limpieza en casa, hasta que decidió {{blank}} el tema durante la cena.',
+    'Busca el verbo para poner el asunto sobre la mesa y hablarlo en familia.',
+    'Plantear: poner el tema sobre la mesa para hablarlo. «Plantar» es sembrar o dejar a alguien esperando, y «exigir» sería reclamar con firmeza, cuando ella solo quiere conversar.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('plantar', false, 'paronym', '«Plantar» es sembrar o dejar a alguien esperando; un reparto de la limpieza no se siembra.', '«Plantar» se usa con semillas o con quien no llega a una cita. ¿Es eso lo que pasa en la cena?', 1),
+    ('plantear', true, null, null, null, 2),
+    ('exigir', false, 'near_synonym', '«Exigir» es reclamar algo con firmeza, y ella quiere abrir una conversación, no imponer un reparto.', '«Exigir» no deja espacio para responder. ¿Ella busca imponer o conversar?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'df4da2f6-044d-4ddb-8c7a-939b94c86320',
+    'a0000000-0000-4000-8000-000000000002',
+    'Durante la comida familiar, Ignacio quiso {{blank}} un cambio en los turnos de los domingos, pero esperó al café para hacerlo con calma.',
+    'Busca el verbo para abrir un asunto y hablarlo con calma con los demás.',
+    'Plantear: abrir el asunto con calma para hablarlo en familia. «Implantar» sería imponer el cambio, y «soltar» es coloquial y sugiere decirlo de golpe, justo lo que él evita.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('plantear', true, null, null, null, 1),
+    ('implantar', false, 'paronym', '«Implantar» es establecer algo sin consultarlo, y él espera al café para hablarlo con todos.', '«Implantar» impone desde arriba. ¿Quien espera al café busca imponer o conversar?', 2),
+    ('soltar', false, 'register', '«Soltar» es coloquial y sugiere decir algo de golpe; él hace lo contrario y espera el momento con calma.', '«Soltar» suena a decirlo de repente. ¿Encaja con esperar al café?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'ff066810-5a58-4d18-a6cc-906c20f5d837',
+    'a0000000-0000-4000-8000-000000000002',
+    'Sandra abrió el mensaje con una línea clara: quería {{blank}} dos fechas posibles para la mudanza y que su hermana eligiera una.',
+    'Pone dos opciones sobre la mesa para que la otra persona decida.',
+    'Plantear: pone las dos fechas sobre la mesa para que su hermana elija. «Plantar» es sembrar o dejar a alguien esperando, e «imponer» sería decidir por ella.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('imponer', false, 'near_synonym', '«Imponer» es decidir por la otra persona, y aquí su hermana es quien elige la fecha.', 'Fíjate en el final: su hermana elige. ¿Eso es imponer?', 1),
+    ('plantar', false, 'paronym', '«Plantar» es sembrar o dejar a alguien esperando; dos fechas en un mensaje no se siembran.', '«Plantar» va con semillas o con citas a las que nadie llega. ¿Es eso lo que hace Sandra?', 2),
+    ('plantear', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'cd3d93b1-e34e-41f7-8354-9102e52dc799',
+    'a0000000-0000-4000-8000-000000000002',
+    'El nuevo horario de la biblioteca {{blank}} un problema que nadie había previsto: los vecinos se quedaban sin sala los sábados.',
+    'El horario hace aparecer un asunto que habrá que hablar y resolver.',
+    'Plantea: el horario hace aparecer un problema que habrá que hablar. «Implanta» sería establecer el horario, y «resuelve» diría lo contrario, porque aquí el problema empieza.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('implanta', false, 'paronym', '«Implantar» es establecer algo, y lo que el horario establece no es el problema, sino el horario mismo.', '«Implantar» es establecer algo nuevo. ¿Qué se establece aquí, el horario o el problema?', 1),
+    ('plantea', true, null, null, null, 2),
+    ('resuelve', false, 'near_synonym', '«Resolver» sería dejar el asunto terminado, y aquí los vecinos se quedan sin sala: el problema empieza.', 'Relee el final: los vecinos se quedan sin sala. ¿Eso suena a problema resuelto?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '935e979d-bdeb-48a9-9cb7-7c4a08d32b33',
+    'a0000000-0000-4000-8000-000000000002',
+    'Nosotros {{blank}} la idea del taller sin saber si habría presupuesto, y al final la dirección la aprobó.',
+    'Pusimos la idea sobre la mesa a la espera de una respuesta.',
+    'Planteamos: pusimos la idea sobre la mesa a la espera de una respuesta. «Plantamos» es sembrar o dejar a alguien esperando, e «impusimos» diría que ya estaba decidido.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('planteamos', true, null, null, null, 1),
+    ('plantamos', false, 'paronym', '«Plantar» es sembrar o dejar a alguien esperando; una idea para un taller no se siembra.', '«Plantar» va con semillas o con citas fallidas. ¿Es eso lo que se hace con una idea?', 2),
+    ('impusimos', false, 'near_synonym', '«Imponer» diría que la decisión ya estaba tomada, y aquí la dirección todavía tenía que aprobarla.', 'Fíjate en el final: la dirección aprueba. ¿Se aprueba lo que ya se impuso?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
 values
   ('a0000000-0000-4000-8000-000000000002', 'trabajo', 'practica', 'Los viernes en casa',
@@ -277,7 +487,7 @@ values (
   3,
   '[ma.tiˈsar]',
   '[ma.tiˈθar]',
-  'Precisar o suavizar algo que se dijo, añadiendo detalles o excepciones para que sea más justo.',
+  'Precisar algo que se dijo, añadiendo detalles o excepciones para que sea más justo.',
   'Estoy de acuerdo con la propuesta, pero quiero matizar un punto sobre los plazos.',
   'neutral',
   1,
@@ -286,7 +496,7 @@ values (
   array['matizar una afirmación', 'matizar lo dicho', 'matizar una crítica', 'conviene matizar']::text[],
   '[{"before": "Sí, pero no es tan así", "after": "Sí, aunque conviene matizarlo"}, {"before": "Bueno, depende, o sea, no siempre", "after": "Lo matizo: no pasa siempre"}, {"before": "Aclarar un poquito lo que dije", "after": "Matizar lo que dije"}]'::jsonb,
   array['matiz', 'matización']::text[],
-  null,
+  'fuerza-de-la-afirmacion',
   3,
   true
 );
@@ -359,6 +569,111 @@ cross join (values
     ('retirara', false, 'near_synonym', '«Retirar» una crítica es no decirla más. Tu hermana acepta que la hagas, pero con un límite claro.', 'Fíjate: tu hermana acepta una parte de la crítica. ¿Te pide que la quites entera?', 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '9c815da0-a33b-4bdf-a9b8-e2559fbb09cf',
+    'a0000000-0000-4000-8000-000000000003',
+    'En la presentación, Fernanda {{blank}} el dato de ventas: cayeron en tienda, pero en internet crecieron un 20 %.',
+    'Corrige el dato con una precisión verdadera que cambia su sentido.',
+    'Matizó: precisó el dato y cambió su sentido. «Atizó» sería avivar una discusión, e «infló» es coloquial y sugiere exagerar la cifra.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('atizó', false, 'paronym', '«Atizar» es avivar un conflicto, y en la sala nadie discute: se completa una cifra.', '«Atizar» va de encender peleas. ¿Hay pelea en esa sala?', 1),
+    ('infló', false, 'register', '«Inflar» una cifra es coloquial y acusa de exagerarla, y la corrección aquí es honesta y comprobable.', '«Inflar» suena a exagerar a propósito. ¿Alguien exagera o alguien precisa?', 2),
+    ('matizó', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'f9967efa-63c5-4c98-a875-0d3f9736f922',
+    'a0000000-0000-4000-8000-000000000003',
+    'En el chat del equipo, Emilio quiso {{blank}} su comentario sobre el retraso antes de que alguien lo tomara a mal.',
+    'Quiere precisar lo dicho para que no se entienda como un reproche.',
+    'Matizar: precisar lo dicho para que no suene a reproche. «Endulzar» es coloquial y sugiere falsear el tono, y «atizar» sería echar leña al retraso.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('matizar', true, null, null, null, 1),
+    ('endulzar', false, 'register', '«Endulzar» es coloquial y sugiere falsear el tono para caer bien, y él solo quiere ser preciso.', '«Endulzar» suena a maquillar el tono. ¿Quiere gustar o quiere ser preciso?', 2),
+    ('atizar', false, 'paronym', '«Atizar» sería echar leña al retraso, justo lo que intenta evitar antes de que alguien se moleste.', '«Atizar» empeora las cosas. ¿Quiere calmar el chat o encenderlo?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '2b77bc04-a4c5-4db5-bef6-e3f6973fddcc',
+    'a0000000-0000-4000-8000-000000000003',
+    'Patricia aceptó la propuesta, aunque pidió {{blank}} un punto sobre los plazos antes de firmar.',
+    'Pide precisar un punto antes de comprometerse del todo.',
+    'Matizar: precisar un punto antes de comprometerse. «Pulir» habla de mejorar la forma, y «finiquitar» suena a trámite de oficina y cerraría el tema.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('pulir', false, 'near_synonym', '«Pulir» habla de mejorar la forma de algo, y lo que ella pide es precisar el contenido de un punto.', '«Pulir» va de acabado y de forma. ¿Pide otra forma o más precisión?', 1),
+    ('matizar', true, null, null, null, 2),
+    ('finiquitar', false, 'register', '«Finiquitar» suena a trámite de oficina y cerraría el punto, cuando ella todavía quiere hablarlo.', '«Finiquitar» es propio de contratos. ¿Quiere cerrar el punto o afinarlo?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'fefa03e4-83c5-4998-b874-501ee627b18a',
+    'a0000000-0000-4000-8000-000000000003',
+    'Clara escuchó la queja hasta el final y luego {{blank}} su respuesta con dos ejemplos exactos.',
+    'Precisa su respuesta con datos en lugar de hablar en general.',
+    'Matizó: precisó su respuesta con datos exactos. «Atizó» sería avivar la queja, y «adornó» es coloquial y sugiere embellecer lo dicho.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('matizó', true, null, null, null, 1),
+    ('atizó', false, 'paronym', '«Atizar» sería avivar la queja, y ella responde con ejemplos para bajar la tensión.', '«Atizar» aviva. ¿Su respuesta calienta la queja o la aterriza?', 2),
+    ('adornó', false, 'register', '«Adornar» una respuesta es coloquial y sugiere embellecerla, no aportar dos datos comprobables.', '«Adornar» suena a añadir floritura. ¿Aporta floritura o aporta datos?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '190f702d-1311-4e8d-b417-6cb1ecdf8294',
+    'a0000000-0000-4000-8000-000000000003',
+    'Hugo siempre {{blank}} antes que discutir: añade un detalle cierto en vez de llevar la contraria.',
+    'Busca el verbo para precisar sin convertir la charla en una pelea.',
+    'Matiza: precisa sin convertir la charla en pelea. «Rebate» sería contradecir del todo, y «atiza» sería avivar la discusión.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('rebate', false, 'near_synonym', '«Rebatir» es contradecir del todo, y la frase dice que él evita llevar la contraria.', '«Rebatir» contradice entero. ¿Eso encaja con quien evita la contraria?', 1),
+    ('matiza', true, null, null, null, 2),
+    ('atiza', false, 'paronym', '«Atizar» es avivar una discusión, y él hace justo lo contrario para evitarla.', '«Atizar» enciende. ¿Quien evita discutir enciende la charla?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
 values
   ('a0000000-0000-4000-8000-000000000003', 'trabajo', 'practica', 'El dato que faltaba',
@@ -388,7 +703,7 @@ values (
   3,
   '[so.peˈsar]',
   '[so.peˈsar]',
-  'Pensar con calma las ventajas y desventajas de algo antes de decidir.',
+  'Pensar con calma lo bueno y lo malo de algo antes de decidir.',
   'Antes de aceptar la oferta, quiero sopesar si el sueldo compensa las horas de viaje.',
   'neutral',
   1,
@@ -468,6 +783,111 @@ cross join (values
     ('saldar', false, 'near_synonym', '«Saldar» es pagar por completo una deuda o una cuenta. Diego todavía no paga nada: compara los gastos con sus ahorros.', '«Saldar» es terminar de pagar. ¿Diego ya está pagando o todavía está comparando?', 1),
     ('sobrepasar', false, 'paronym', '«Sobrepasar» es superar un límite. Diego justo quiere evitar pasarse: por eso compara.', '«Sobrepasar» es ir más allá de un límite. ¿La frase habla de pasarse o de comparar?', 2),
     ('sopesar', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'bc15c802-f342-482c-83bd-6d7c8dad7e71',
+    'a0000000-0000-4000-8000-000000000004',
+    'Cuando le ofrecieron coordinar el equipo, Mariana pidió dos días para {{blank}} lo que ganaba y lo que perdía con el cambio.',
+    'Busca el verbo para comparar con calma lo que se gana y lo que se pierde.',
+    'Sopesar: comparar con calma lo que gana y lo que pierde. «Sobrepasar» es superar un límite, y «rumiar» es coloquial y sugiere dar vueltas sin llegar a nada.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('sopesar', true, null, null, null, 1),
+    ('sobrepasar', false, 'paronym', '«Sobrepasar» es superar un límite, y Mariana no supera nada: compara lo que gana con lo que pierde.', '«Sobrepasar» es ir más allá de un límite. ¿Qué límite superaría Mariana aquí?', 2),
+    ('rumiar', false, 'register', '«Rumiar» es coloquial y sugiere dar vueltas a algo sin llegar a nada; ella pide dos días justamente para decidir.', '«Rumiar» suena a darle vueltas sin salida. ¿Ella se queda atascada o va a decidir?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '6a635cdf-0073-4e81-a84b-ff74a6eb1ba6',
+    'a0000000-0000-4000-8000-000000000004',
+    'Nosotros {{blank}} tres proveedores antes de firmar, y el más barato no era el que mejor cumplía los plazos.',
+    'Comparamos las tres opciones con cuidado antes de elegir una.',
+    'Sopesamos: comparamos los tres antes de decidir. «Sobrepasamos» es superar un límite, y «descartamos» diría que los quitamos de la lista sin compararlos.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('sobrepasamos', false, 'paronym', '«Sobrepasar» es superar un límite, y aquí nadie supera nada: se comparan tres ofertas.', '«Sobrepasar» es ir más allá de un límite. ¿Se supera algo o se compara?', 1),
+    ('sopesamos', true, null, null, null, 2),
+    ('descartamos', false, 'near_synonym', '«Descartar» es quitar una opción de la lista, y la frase cuenta que las tres se compararon una por una.', '«Descartar» deja fuera. ¿Los tres quedaron fuera o se compararon entre sí?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '300e780a-e870-45a3-9e4f-c80efc4dd76d',
+    'a0000000-0000-4000-8000-000000000004',
+    'En la entrevista, Rodrigo explicó que {{blank}} durante un mes el sueldo fijo frente a la libertad de trabajar por su cuenta.',
+    'Puso las dos opciones en la balanza durante un mes antes de elegir.',
+    'Sopesó: comparó las dos opciones con calma antes de elegir. «Sobrepasó» es superar un límite, y «pospuso» sería dejar la decisión para más adelante.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('pospuso', false, 'near_synonym', '«Posponer» es dejar la decisión para más adelante, y él la tomó después de compararlo todo durante un mes.', '«Posponer» aplaza. ¿Ese mes lo usó para aplazar o para comparar?', 1),
+    ('sopesó', true, null, null, null, 2),
+    ('sobrepasó', false, 'paronym', '«Sobrepasar» es superar un límite, y aquí se comparan un sueldo fijo y una libertad, no se supera ninguno.', '«Sobrepasar» es ir más allá de un límite. ¿Hay algún límite en esta frase?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'd17d08da-7499-4a9c-a5e5-d7abef5495d9',
+    'a0000000-0000-4000-8000-000000000004',
+    'Antes de darle una respuesta a su equipo, Teresa se tomó el fin de semana para {{blank}} lo que costaría trabajar los sábados.',
+    'Mide con calma el precio real de una decisión antes de responder.',
+    'Sopesar: medir con calma lo que costaría antes de responder. «Sobrepasar» es superar un límite, y «asumir» sería aceptarlo sin más, cuando aún no ha decidido.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('asumir', false, 'near_synonym', '«Asumir» sería aceptar ese coste sin discutirlo, y ella todavía no le ha dado una respuesta a su equipo.', '«Asumir» ya acepta. ¿Teresa ha aceptado algo o sigue pensándolo?', 1),
+    ('sobrepasar', false, 'paronym', '«Sobrepasar» es superar un límite, y lo que hace Teresa es calcular el coste de una opción.', '«Sobrepasar» es ir más allá de un límite. ¿Se supera algo durante ese fin de semana?', 2),
+    ('sopesar', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '3cd996e8-afae-4426-98ce-4876dc659adf',
+    'a0000000-0000-4000-8000-000000000004',
+    'Si dudas entre dos caminos, {{blank}} en voz alta con alguien de confianza ayuda más que decidir a las tres de la mañana.',
+    'Se trata de comparar las dos opciones con calma, y hacerlo acompañado.',
+    'Sopesarlo: pensarlo con calma junto a alguien. «Sobrepasarlo» es superar un límite, y «soltarlo» es coloquial y sugiere decirlo de golpe, sin pensar.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('sopesarlo', true, null, null, null, 1),
+    ('sobrepasarlo', false, 'paronym', '«Sobrepasar» es superar un límite, y aquí se comparan dos caminos con alguien de confianza.', '«Sobrepasar» es ir más allá de un límite. ¿Qué límite se superaría hablando con un amigo?', 2),
+    ('soltarlo', false, 'register', '«Soltar» es coloquial y sugiere decir algo de golpe; la frase propone lo contrario, pensarlo con otra persona.', '«Soltar» es decirlo de repente. ¿La frase invita a decidir rápido o a pensarlo?', 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
@@ -581,6 +1001,111 @@ cross join (values
     ('impertinente', false, 'paronym', '«Impertinente» es lo que molesta o falta al respeto. Hablar del tráfico justo cuando se decide la hora ayuda.', 'Lo impertinente incomoda. ¿Hablar del tráfico en ese momento incomodaba o ayudaba?', 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'dbcb96b2-6569-4743-ba0a-5314291ea34a',
+    'a0000000-0000-4000-8000-000000000005',
+    'Durante la llamada con el cliente, Álvaro guardó los chistes para el final y solo hizo preguntas {{blank}} sobre el plazo de entrega.',
+    'Sus preguntas tenían relación directa con lo que se estaba tratando.',
+    'Pertinentes: las preguntas venían al caso del plazo. «Pertinaces» describe lo que no cesa, e «impertinentes» sería justo lo contrario: preguntas que incomodan.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('pertinaces', false, 'paronym', '«Pertinaz» describe lo que no cesa, como una lluvia; unas preguntas sobre un plazo no insisten, encajan.', '«Pertinaz» se dice de algo que no para. ¿La frase habla de insistir o de venir al caso?', 1),
+    ('pertinentes', true, null, null, null, 2),
+    ('impertinentes', false, 'paronym', '«Impertinente» es lo que incomoda o falta al respeto, y Álvaro justamente dejó los chistes para el final.', 'Lo impertinente molesta. ¿Álvaro molesta al cliente o le facilita la llamada?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '634899e1-5d85-4db8-afa0-1b1afa356d26',
+    'a0000000-0000-4000-8000-000000000005',
+    'En la sobremesa, Lorena preguntó si era {{blank}} hablar del reparto de la herencia con los niños delante.',
+    'Se pregunta si el tema viene al caso justo en ese momento.',
+    'Pertinente: la duda es si el tema viene al caso en ese momento. «Procedente» suena a escrito legal en plena sobremesa, e «impertinente» diría que el tema incomoda de por sí.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('pertinente', true, null, null, null, 1),
+    ('procedente', false, 'register', '«Procedente» dice casi lo mismo, pero suena a escrito legal y en una sobremesa en familia resulta frío.', '«Procedente» es propio de documentos y trámites. ¿Suena natural en una sobremesa?', 2),
+    ('impertinente', false, 'paronym', '«Impertinente» ya juzga el tema como molesto, y Lorena solo pregunta si es buen momento.', 'Lo impertinente incomoda siempre. ¿Ella juzga el tema o duda del momento?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '0c87b620-271d-42ff-9581-29d4d1f5ac45',
+    'a0000000-0000-4000-8000-000000000005',
+    'El informe de Guillermo tenía ochenta páginas, pero solo veinte con información {{blank}} para la decisión de mañana.',
+    'Solo esas veinte páginas tienen relación directa con lo que hay que decidir.',
+    'Pertinente: solo esas veinte páginas tienen que ver con la decisión. «Pertinaz» describe lo que no cesa, y «abundante» habla de cantidad, que aquí sobra.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('abundante', false, 'near_synonym', '«Abundante» habla de cantidad, y el problema del informe es justo que le sobran páginas.', '«Abundante» mide cuánto hay. ¿Al informe le falta cantidad o le falta relación con el tema?', 1),
+    ('pertinaz', false, 'paronym', '«Pertinaz» es lo que no cesa o quien es terco, y una información no insiste: encaja o no encaja.', '«Pertinaz» se usa para algo que no para, como una tos. ¿Encaja con «información»?', 2),
+    ('pertinente', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '1f91734b-c42b-4acd-92ae-0cb2f2b9e890',
+    'a0000000-0000-4000-8000-000000000005',
+    'Nadie esperaba esa observación de Cecilia sobre el coste del envío, y resultó ser la más {{blank}} de la mañana.',
+    'La observación tocó justo el punto que faltaba por tratar.',
+    'Pertinente: la observación tocaba justo el punto que faltaba. «Impertinente» diría que incomoda, y «vistosa» habla del aspecto, no del contenido.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('impertinente', false, 'paronym', '«Impertinente» es lo que incomoda o falta al respeto, y esta observación resultó ser la mejor de la mañana.', 'Lo impertinente molesta. ¿La frase celebra la observación o la critica?', 1),
+    ('pertinente', true, null, null, null, 2),
+    ('vistosa', false, 'near_synonym', '«Vistosa» habla de lo que llama la atención por su aspecto, y un comentario sobre costes no se juzga así.', '«Vistosa» va del aspecto. ¿Lo que sorprende es cómo se ve o adónde apunta?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '71279947-f255-44a7-8877-3acbf4d4f8d5',
+    'a0000000-0000-4000-8000-000000000005',
+    'Antes de enviar la propuesta, Simón borró todo lo que no fuera {{blank}} y la dejó en una sola página.',
+    'Se queda solo con lo que tiene relación directa con la propuesta.',
+    'Pertinente: dejó solo lo que viene al caso. «Prescindible» diría lo contrario, que borró lo importante, e «impertinente» habla de lo que incomoda.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('prescindible', false, 'near_synonym', '«Prescindible» es lo que se puede quitar, así que la frase diría que Simón borró justo lo importante.', 'Lee la frase con «prescindible» dentro: ¿qué se queda en esa página y qué se va?', 1),
+    ('impertinente', false, 'paronym', '«Impertinente» es lo que incomoda, y en una propuesta lo que sobra no incomoda: simplemente no viene al caso.', 'Lo impertinente molesta a alguien. ¿Lo que borra Simón molesta o solo sobra?', 2),
+    ('pertinente', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
 values
   ('a0000000-0000-4000-8000-000000000005', 'trabajo', 'practica', 'El punto clave',
@@ -692,6 +1217,111 @@ cross join (values
     ('concrete', true, null, null, null, 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'c4a68a88-8e3c-498a-af61-7cab242056a5',
+    'a0000000-0000-4000-8000-000000000006',
+    'Después de media hora de ideas sueltas, Beatriz pidió {{blank}} tres acuerdos con nombre y fecha antes de cerrar la reunión.',
+    'Pide convertir las ideas sueltas en acuerdos con responsable y día.',
+    'Concretar: convertir las ideas en acuerdos con nombre y fecha. «Concertar» es ponerse de acuerdo con alguien, y «despachar» suena a salir del paso deprisa.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('concretar', true, null, null, null, 1),
+    ('concertar', false, 'paronym', '«Concertar» es acordar algo con otra parte, como una cita; aquí el grupo ya está de acuerdo y lo que falta son datos.', '«Concertar» es ponerse de acuerdo con alguien. ¿Falta acuerdo o faltan nombre y fecha?', 2),
+    ('despachar', false, 'register', '«Despachar» es coloquial y suena a resolver deprisa y de cualquier manera; Beatriz pide precisión, no velocidad.', '«Despachar» suena a quitarse algo de encima. ¿Ella quiere rapidez o quiere detalle?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'aa137fd4-e781-4d9c-a874-6dfd38faad9f',
+    'a0000000-0000-4000-8000-000000000006',
+    'Mi tío lleva un año diciendo que quiere montar un negocio, pero todavía no ha {{blank}} ni el producto ni el local.',
+    'Sigue hablando en general: no ha fijado ningún dato exacto.',
+    'Concretado: sigue sin fijar el producto ni el local. «Concertado» sería acordarlos con alguien, y «descartado» diría que ya los ha eliminado.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('concertado', false, 'paronym', '«Concertar» es acordar algo con otra persona, y aquí no hay nadie con quien acordar: falta decidir qué vender y dónde.', '«Concertar» necesita otra parte. ¿Con quién se pondría de acuerdo tu tío?', 1),
+    ('concretado', true, null, null, null, 2),
+    ('descartado', false, 'near_synonym', '«Descartar» es dejar algo fuera, y tu tío no ha eliminado nada: todavía no ha elegido.', '«Descartar» quita opciones. ¿Tu tío ha quitado alguna o aún no ha elegido?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'a223302d-f1be-428b-b29c-fe03ebf731b0',
+    'a0000000-0000-4000-8000-000000000006',
+    'En la negociación, Víctor aceptó el precio y pasó a {{blank}} la fecha de entrega, la cantidad exacta y quién asumía el transporte.',
+    'Pasa del acuerdo general a la fecha, la cantidad y el responsable.',
+    'Concretar: fijar la fecha, la cantidad y el responsable. «Concertar» es ponerse de acuerdo con alguien, cosa que ya hicieron, y «estimar» sería calcular algo aproximado.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('estimar', false, 'near_synonym', '«Estimar» es calcular una cifra aproximada, y aquí se cierran una fecha exacta y un responsable con nombre.', '«Estimar» deja margen. ¿La frase busca aproximarse o dejarlo cerrado?', 1),
+    ('concertar', false, 'paronym', '«Concertar» es llegar a un acuerdo, y eso ya pasó al aceptar el precio; además nadie «concierta» quién asume el transporte.', '«Concertar» es cerrar un acuerdo entre partes. Relee: ¿qué acordaron ya?', 2),
+    ('concretar', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '7f2f8609-5e91-4683-8678-b57c6891236e',
+    'a0000000-0000-4000-8000-000000000006',
+    'La convocatoria decía «nos vemos pronto», así que Ramiro escribió al grupo para {{blank}} la hora y el lugar exactos.',
+    'Pasa de un «pronto» vago a una hora y un lugar exactos.',
+    'Concretar: poner hora y lugar donde solo había un «pronto». «Concertar» es acordar algo con alguien, y «confirmar» supone una hora que todavía no existe.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('confirmar', false, 'near_synonym', '«Confirmar» es dar por segura una hora que ya existe, y la convocatoria solo decía «pronto».', 'Para confirmar algo tiene que haber algo antes. ¿Qué hora daba la convocatoria?', 1),
+    ('concretar', true, null, null, null, 2),
+    ('concertar', false, 'paronym', '«Concertar» es acordar algo con otra parte, y Ramiro no negocia con nadie: escribe los datos que faltaban.', '«Concertar» supone una negociación. ¿Ramiro negocia o rellena los huecos?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '2a9f44ce-536d-415d-a2cf-ae4969e8f388',
+    'a0000000-0000-4000-8000-000000000006',
+    'Entre los tres {{blank}} el plan en una hora: quién llama, quién escribe y qué día se revisa todo.',
+    'Convierten el plan en pasos con responsable y día.',
+    'Concretamos: repartimos el plan en pasos con responsable y día. «Concertamos» sería acordarlo con otra parte, y «ampliamos» sería añadir más, no precisar.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('ampliamos', false, 'near_synonym', '«Ampliar» es añadir más contenido, y aquí el plan no crece: se reparte en pasos exactos.', '«Ampliar» hace algo más grande. ¿El plan crece o se vuelve más preciso?', 1),
+    ('concretamos', true, null, null, null, 2),
+    ('concertamos', false, 'paronym', '«Concertar» es acordar algo con otra parte, y los tres ya están de acuerdo: lo que reparten son los pasos.', '«Concertar» necesita a alguien enfrente. ¿Con quién se acuerda algo en esta escena?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
 values
   ('a0000000-0000-4000-8000-000000000006', 'trabajo', 'practica', 'Del «ya veremos» al plan',
@@ -730,7 +1360,7 @@ values (
   array['argumento contundente', 'respuesta contundente', 'prueba contundente', 'resultados contundentes']::text[],
   '[{"before": "Un argumento muy bueno", "after": "Un argumento contundente"}, {"before": "Le respondió clarísimo, sin dar vueltas", "after": "Le dio una respuesta contundente"}, {"before": "Los resultados son súper claros", "after": "Los resultados son contundentes"}]'::jsonb,
   array['contundencia', 'contundentemente']::text[],
-  null,
+  'fuerza-de-la-afirmacion',
   7,
   true
 );
@@ -801,6 +1431,111 @@ cross join (values
     ('contundente', true, null, null, null, 1),
     ('condescendiente', false, 'paronym', '«Condescendiente» es tratar a otros con superioridad, y eso no convence a un comité. Raúl fue directo y aportó cifras.', 'Lo condescendiente molesta a quien escucha. ¿La frase dice que el comité se molestó?', 2),
     ('redundante', false, 'paronym', '«Redundante» es repetir lo que ya se dijo. Raúl no dio rodeos: fue al grano con cifras.', 'Lo redundante se repite. ¿Encaja con alguien que «no dio rodeos»?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'ae48c5e6-570a-4eb5-aabd-4a5b5e341916',
+    'a0000000-0000-4000-8000-000000000007',
+    'El cierre de la charla de Adriana fue tan {{blank}} que el público se quedó en silencio unos segundos antes de aplaudir.',
+    'El final fue tan claro y firme que dejó a la sala sin nada que añadir.',
+    'Contundente: el cierre no dejó lugar a dudas. «Brutal» es coloquial y suena a exageración entre amigos, y «contingente» describe lo que puede pasar o no.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('brutal', false, 'register', '«Brutal» es un elogio coloquial y exagerado; en el cierre de una charla ante público suena fuera de lugar.', '«Brutal» es lenguaje de sobremesa entre amigos. ¿Encaja con una sala que escucha una charla?', 1),
+    ('contundente', true, null, null, null, 2),
+    ('contingente', false, 'paronym', '«Contingente» es lo que puede suceder o no, y ese cierre ya sucedió y dejó a la sala en silencio.', '«Contingente» habla de lo que quizá pase. ¿El cierre es una posibilidad o un hecho?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'd5bc7c32-8edd-4f39-b784-cdb087b01bd1',
+    'a0000000-0000-4000-8000-000000000007',
+    'Antes de aceptar la rebaja, Fernando puso sobre la mesa un informe con tres años de pedidos: un dato {{blank}} que cerró la negociación.',
+    'El dato fue tan claro que nadie tuvo nada que responder.',
+    'Contundente: el dato cerró la negociación sin réplica. «Contencioso» se usa para pleitos, y «convincente» se queda corto, porque persuade pero no cierra.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('contencioso', false, 'paronym', '«Contencioso» se usa para disputas y pleitos, y este dato hace lo contrario: termina la discusión.', '«Contencioso» suena a pleito. ¿El informe abre una disputa o la cierra?', 1),
+    ('convincente', false, 'near_synonym', '«Convincente» dice que el dato persuade, y la frase va más lejos: cierra la negociación sin réplica.', '«Convincente» persuade poco a poco. ¿Aquí queda margen para seguir discutiendo?', 2),
+    ('contundente', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'c733f4cd-6f08-405b-ac21-8bbc7afaa6d2',
+    'a0000000-0000-4000-8000-000000000007',
+    'Mi abuela respondió con una frase {{blank}} cuando le preguntaron por qué seguía viviendo sola: «Porque puedo».',
+    'Una frase corta y firme que no deja nada por responder.',
+    'Contundente: la frase corta y firme no deja réplica. «Condescendiente» sería mirar por encima del hombro, y «escueta» solo habla de lo breve.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('contundente', true, null, null, null, 1),
+    ('condescendiente', false, 'paronym', '«Condescendiente» es tratar a alguien con aire de superioridad, y ella responde a una pregunta, no mira por encima del hombro.', 'Lo condescendiente ofende a quien escucha. ¿La abuela ofende o zanja la duda?', 2),
+    ('escueta', false, 'near_synonym', '«Escueta» solo dice que la frase es corta, y lo que impresiona es que no deje nada por responder.', '«Escueta» mide el largo. ¿Lo que sorprende es que sea corta o que cierre el tema?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '1cb0470d-6842-411e-a4bf-5cf362c1ff84',
+    'a0000000-0000-4000-8000-000000000007',
+    'La prueba con veinte clientes dio un resultado {{blank}}: dieciocho eligieron el envase nuevo sin dudar.',
+    'Dieciocho de veinte no deja lugar a dudas.',
+    'Contundente: dieciocho de veinte no deja lugar a dudas. «Contingente» describe lo que puede pasar o no, y «discutible» diría justo lo contrario.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('contingente', false, 'paronym', '«Contingente» es lo que puede suceder o no, y este resultado ya está medido con veinte clientes.', '«Contingente» habla de lo que quizá ocurra. ¿La prueba ya se hizo o está por hacerse?', 1),
+    ('discutible', false, 'near_synonym', '«Discutible» diría que el resultado admite dudas, y dieciocho de veinte no las deja.', '«Discutible» abre debate. ¿Dieciocho de veinte deja mucho que debatir?', 2),
+    ('contundente', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'c3632323-511b-47db-a1e0-0860005826e3',
+    'a0000000-0000-4000-8000-000000000007',
+    'Nadie volvió a insistir después de la respuesta {{blank}} que dio Olga en la reunión de vecinos.',
+    'La respuesta fue tan firme que nadie quiso volver sobre el tema.',
+    'Contundente: la respuesta fue tan firme que nadie insistió. «Condescendiente» sería tratar al grupo con superioridad, y «extensa» solo habla de longitud.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('condescendiente', false, 'paronym', '«Condescendiente» es tratar a los demás con aire de superioridad, y eso suele provocar más réplicas, no menos.', 'Lo condescendiente molesta a quien escucha. ¿Los vecinos se molestaron o dejaron el tema?', 1),
+    ('contundente', true, null, null, null, 2),
+    ('extensa', false, 'near_synonym', '«Extensa» habla de longitud, y lo que acabó con la insistencia fue la firmeza, no el tamaño.', '«Extensa» mide cuánto dura. ¿Los vecinos callan por lo largo o por lo claro?', 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
@@ -914,6 +1649,111 @@ cross join (values
     ('dirimió', false, 'register', '«Dirimir» se parece en significado, pero suena a juzgado o a arbitraje. En un grupo de amigos resulta demasiado solemne.', '«Dirimir» es propio de jueces y árbitros. ¿Suena natural en el chat de tus amigos?', 3)
 ) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
 
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '1302b585-9c26-4be8-99d0-ada4bceeecea',
+    'a0000000-0000-4000-8000-000000000008',
+    'Rosa escuchó a las dos partes y luego {{blank}} la discusión con una propuesta que las dos aceptaron.',
+    'Puso fin a la discusión con una salida que convenció a todos.',
+    'Zanjó: terminó la discusión con una propuesta aceptada. «Canjeó» es cambiar una cosa por otra, y «esquivó» sería evitar el tema en vez de resolverlo.',
+    4
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('canjeó', false, 'paronym', '«Canjear» es cambiar una cosa por otra, como un vale por un producto; una discusión no se cambia, se termina.', '«Canjear» se usa con vales y entradas. ¿Se cambia aquí una cosa por otra?', 1),
+    ('zanjó', true, null, null, null, 2),
+    ('esquivó', false, 'near_synonym', '«Esquivar» es evitar un asunto, y Rosa hace lo contrario: escucha a las dos partes y propone una salida.', 'Quien esquiva un tema no lo toca. ¿Rosa lo evita o lo resuelve?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'b98f1aa0-331a-4dcc-8746-eca5927ba4e4',
+    'a0000000-0000-4000-8000-000000000008',
+    'Tras dos correos y una llamada, Manuel decidió {{blank}} el asunto del alquiler con una sola reunión de quince minutos.',
+    'Quiere dejar el asunto terminado de una vez, sin más idas y venidas.',
+    'Zanjar: terminar el asunto de una vez en una reunión corta. «Canjear» es cambiar una cosa por otra, y «dilatar» sería alargarlo todavía más.',
+    5
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('zanjar', true, null, null, null, 1),
+    ('canjear', false, 'paronym', '«Canjear» es cambiar una cosa por otra, y aquí nadie intercambia nada: se cierra un asunto pendiente.', '«Canjear» se usa con vales y billetes. ¿Qué se cambiaría por qué en esta escena?', 2),
+    ('dilatar', false, 'near_synonym', '«Dilatar» es alargar algo en el tiempo, y Manuel quiere terminarlo en quince minutos.', '«Dilatar» estira los plazos. ¿Quince minutos suenan a estirar o a cerrar?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'b3f2d467-2533-463b-8dd9-35423ed28c3b',
+    'a0000000-0000-4000-8000-000000000008',
+    'En casa {{blank}} el tema del reparto de gastos con una hoja compartida, y desde entonces nadie discute a fin de mes.',
+    'Dejaron el tema terminado con una solución que sigue funcionando.',
+    'Zanjamos: cerramos el tema con un acuerdo que dura. «Canjeamos» es cambiar una cosa por otra, y «despachamos» suena a resolverlo deprisa y sin ganas.',
+    6
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('canjeamos', false, 'paronym', '«Canjear» es cambiar una cosa por otra, y una hoja compartida no se intercambia por nada: cierra una discusión.', '«Canjear» se usa con vales y entradas. ¿Qué se cambiaría aquí por qué?', 1),
+    ('zanjamos', true, null, null, null, 2),
+    ('despachamos', false, 'register', '«Despachar» es coloquial y suena a resolver algo deprisa y sin ganas; aquí el acuerdo aguanta mes tras mes.', '«Despachar» es quitarse algo de encima. ¿Encaja con una solución que dura?', 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    'bbf315cc-93c8-4975-bfaa-dab252854337',
+    'a0000000-0000-4000-8000-000000000008',
+    'Cuando la charla se repetía por tercera vez, Susana propuso {{blank}}: «Decidimos hoy y no lo volvemos a abrir».',
+    'Propone cerrar el asunto hoy y no volver sobre él.',
+    'Zanjarlo: decidir hoy y no volver a abrirlo. «Canjearlo» es cambiar una cosa por otra, y «aplazarlo» sería dejarlo para otro día.',
+    7
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('aplazarlo', false, 'near_synonym', '«Aplazar» es dejar algo para más tarde, y su propuesta dice justo lo contrario: decidir hoy.', 'Relee la propuesta: «Decidimos hoy». ¿Eso deja algo para otro día?', 1),
+    ('canjearlo', false, 'paronym', '«Canjear» es cambiar una cosa por otra, y un asunto que se repite no se cambia: se termina.', '«Canjear» se usa con vales y entradas. ¿Hay algo que cambiar en esta charla?', 2),
+    ('zanjarlo', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
+with exercise as (
+  insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
+  values (
+    '5e8e844c-76ef-4d72-8f72-a299bb2a566c',
+    'a0000000-0000-4000-8000-000000000008',
+    'El acuerdo firmado por las dos empresas {{blank}} una disputa que llevaba tres años abierta.',
+    'El acuerdo puso final a algo que llevaba años sin resolverse.',
+    'Zanjó: el acuerdo puso fin a la disputa. «Canjeó» es cambiar una cosa por otra, y «prolongó» diría que la alargó todavía más.',
+    8
+  )
+  returning id
+)
+insert into public.exercise_options (exercise_id, text, is_correct, distractor_type, why_not, hint_specific, position)
+select exercise.id, o.text, o.is_correct, o.distractor_type, o.why_not, o.hint_specific, o.position
+from exercise
+cross join (values
+    ('canjeó', false, 'paronym', '«Canjear» es cambiar una cosa por otra, y una disputa de tres años no se intercambia: se termina.', '«Canjear» se usa con vales y entradas. ¿Se cambia algo por otra cosa en esta frase?', 1),
+    ('prolongó', false, 'near_synonym', '«Prolongar» es alargar algo, y el acuerdo hace lo contrario: le pone final a tres años de disputa.', '«Prolongar» estira. ¿Un acuerdo firmado alarga la disputa o la acaba?', 2),
+    ('zanjó', true, null, null, null, 3)
+) as o (text, is_correct, distractor_type, why_not, hint_specific, position);
+
 insert into public.readings (word_id, scene, conversation_type, title, body, before_phrase, after_phrase, position)
 values
   ('a0000000-0000-4000-8000-000000000008', 'trabajo', 'practica', 'Reunión sin fin',
@@ -925,3 +1765,41 @@ values
   ('a0000000-0000-4000-8000-000000000008', 'social', 'social', 'Quién paga',
    'Cada vez que salían, el grupo discutía cómo repartir la cuenta. Tomás zanjó el tema con humor: «Propuesta: cada uno paga lo suyo y quien llegue tarde invita el postre». Desde entonces, nadie llega tarde.',
    'Bueno, ya, se acabó la discusión.', 'Tomás zanjó el tema con humor.', 3);
+
+-- ----------------------------------------------------------------------------
+-- Word themes (content/words/<slug>.yml)
+-- ----------------------------------------------------------------------------
+
+insert into public.word_themes (word_id, theme_id, relevance, sort_order)
+select w.id, t.id, v.relevance, w.sort_order
+from (values
+  ('perspicaz', 'elogio-reconocimiento', 3),
+  ('perspicaz', 'reuniones', 2),
+  ('perspicaz', 'matices-precision', 1),
+  ('plantear', 'reuniones', 3),
+  ('plantear', 'conversaciones-dificiles', 2),
+  ('plantear', 'correos-mensajes', 2),
+  ('matizar', 'matices-precision', 3),
+  ('matizar', 'conflicto-desacuerdo', 2),
+  ('matizar', 'reuniones', 2),
+  ('sopesar', 'negociacion', 3),
+  ('sopesar', 'entrevistas', 2),
+  ('sopesar', 'liderazgo-feedback', 1),
+  ('pertinente', 'entrevistas', 3),
+  ('pertinente', 'reuniones', 2),
+  ('pertinente', 'redaccion-ejecutiva', 2),
+  ('concretar', 'reuniones', 3),
+  ('concretar', 'redaccion-ejecutiva', 2),
+  ('concretar', 'negociacion', 2),
+  ('contundente', 'persuasion-storytelling', 3),
+  ('contundente', 'presentaciones-oratoria', 2),
+  ('contundente', 'negociacion', 2),
+  ('zanjar', 'conflicto-desacuerdo', 3),
+  ('zanjar', 'negociacion', 2),
+  ('zanjar', 'reuniones', 1)
+) as v (word_slug, theme_slug, relevance)
+join public.words w on w.slug = v.word_slug
+join public.themes t on t.slug = v.theme_slug
+on conflict (word_id, theme_id) do update
+  set relevance = excluded.relevance,
+      sort_order = excluded.sort_order;

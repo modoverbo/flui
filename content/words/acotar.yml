@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 103
+slug: "acotar"
+status: "draft"
+lemma: "acotar"
+part_of_speech: "verbo"
+syllables: ["a", "co", "tar"]
+stressed_syllable: 3
+ipa_latam: "[a.koˈtar]"
+ipa_es: "[a.koˈtar]"
+explanation: "Reducir un asunto a los límites justos para poder tratarlo bien."
+example_sentence: "Si no acotamos el encargo, esta reunión va a durar dos horas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona muy bien al abrir: «Antes de empezar, acotemos de qué vamos a hablar»."
+when_not_to_use: "No la uses para quitar calidad; se trata de fijar hasta dónde llega algo, no de hacerlo peor."
+collocations:
+  - "acotar el tema"
+  - "acotar el alcance"
+  - "acotar una discusión"
+replaces:
+  - before: "Vamos a hacerlo más pequeño para poder decidir"
+    after: "Vamos a acotarlo para poder decidir"
+  - before: "Habría que poner un límite a esto"
+    after: "Habría que acotar esto"
+  - before: "Dejemos claro hasta dónde llega el encargo"
+    after: "Acotemos hasta dónde llega el encargo"
+family: ["acotación"]
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin: ["hacer"]
+  funcion: ["delimitar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "agotar"
+    difference: "«Agotar» es gastar algo hasta que no queda nada; lo otro le pone un límite antes de empezar."
+    memory_trick: "Agotas hasta la última gota; pones el límite antes de la primera."
+  - confused_with: "acatar"
+    difference: "«Acatar» es obedecer una orden que viene de fuera; ponerle límites a un asunto es una decisión propia."
+    memory_trick: "Acatas lo que te mandan; el límite lo pones tú."
+exercises:
+  - position: 1
+    sentence: "La propuesta abarcaba media empresa, así que Julia pidió {{blank}} el encargo a una sola ciudad."
+    hint_general: "Pide reducir el encargo a unos límites que se puedan cumplir."
+    explanation: "Acotar: reduce el encargo a límites claros. «Agotar» es gastarlo todo, y «anotar» es tomar nota."
+    options:
+      - position: 1
+        text: "agotar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agotar» es gastar algo hasta que no queda nada, y aquí el encargo se recorta, no se consume."
+        hint_specific: "«Agotar» vacía. ¿Julia vacía el encargo o le pone un borde?"
+      - position: 2
+        text: "acotar"
+        is_correct: true
+      - position: 3
+        text: "anotar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anotar» es tomar nota de algo, y lo que pide Julia es dejar el encargo en una sola ciudad."
+        hint_specific: "«Anotar» va de papel y lápiz. ¿Se escribe el encargo o se reduce?"
+  - position: 2
+    sentence: "Antes de abrir el debate, Fernando quiso {{blank}} la pregunta: solo hablarían del primer trimestre."
+    hint_general: "Pone un límite a la pregunta antes de que el debate empiece."
+    explanation: "Acotar: pone un límite a la pregunta. «Acatar» es obedecer una orden, y «achicar» es coloquial y suena a ropa o a barcas."
+    options:
+      - position: 1
+        text: "acotar"
+        is_correct: true
+      - position: 2
+        text: "acatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer una orden ajena, y él no obedece nada: decide hasta dónde llega el debate."
+        hint_specific: "«Acatar» necesita una orden de alguien. ¿Quién le manda a Fernando?"
+      - position: 3
+        text: "achicar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Achicar» es coloquial y se usa con la ropa o con el agua de una barca; para una pregunta suena fuera de sitio."
+        hint_specific: "«Achicar» suena a taller de costura. ¿Encaja con una pregunta de trabajo?"
+  - position: 3
+    sentence: "El informe de Cristina era largo y confuso; su jefa le sugirió {{blank}} el asunto a dos preguntas concretas."
+    hint_general: "Le proponen dejar fuera casi todo y quedarse con dos preguntas."
+    explanation: "Acotar: deja fuera lo demás y se queda con dos preguntas. «Agotar» sería tratarlo hasta el fondo, y «resumir» sería contar lo mismo más corto."
+    options:
+      - position: 1
+        text: "agotar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agotar» un asunto es tratarlo hasta que no queda nada que decir, justo lo contrario de recortarlo."
+        hint_specific: "«Agotar» llega al fondo de todo. ¿El informe necesita más fondo o menos campo?"
+      - position: 2
+        text: "resumir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es contar lo mismo más corto, y aquí se decide dejar fuera una parte del asunto."
+        hint_specific: "«Resumir» conserva todo el contenido. ¿Se conserva todo o se deja algo fuera?"
+      - position: 3
+        text: "acotar"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando el cliente pidió «todo lo que se pueda», Álvaro insistió en {{blank}} el alcance por escrito."
+    hint_general: "Quiere dejar por escrito hasta dónde llega el encargo y hasta dónde no."
+    explanation: "Acotar: fija hasta dónde llega el encargo. «Acatar» sería obedecer sin discutir, y «ampliar» lo haría todavía más grande."
+    options:
+      - position: 1
+        text: "ampliar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ampliar» es hacerlo más grande, y un encargo sin bordes es justo el problema que él quiere evitar."
+        hint_specific: "«Ampliar» abre más. ¿El problema es que falta campo o que sobra?"
+      - position: 2
+        text: "acatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer sin discutir, y él hace lo contrario: pide un borde antes de aceptar."
+        hint_specific: "«Acatar» agacha la cabeza. ¿Álvaro obedece o negocia?"
+      - position: 3
+        text: "acotar"
+        is_correct: true
+  - position: 5
+    sentence: "Para que la charla no durara toda la tarde, Noelia {{blank}} la lista de asuntos a tres."
+    hint_general: "Deja la lista en tres puntos para que la charla no se alargue."
+    explanation: "Acotó: dejó la lista en tres puntos. «Anotó» sería apuntarlos, y «podó» se dice de las ramas de un árbol."
+    options:
+      - position: 1
+        text: "anotó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anotar» es apuntar algo en un papel, y ella deja puntos fuera, no los copia."
+        hint_specific: "«Anotó» solo escribe. ¿Escribir la lista hace más corta la tarde?"
+      - position: 2
+        text: "podó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Podar» se dice de las ramas de un árbol; usarlo para una lista de asuntos suena a broma de jardín."
+        hint_specific: "«Podó» pide tijeras y ramas. ¿Hay un jardín en esta escena?"
+      - position: 3
+        text: "acotó"
+        is_correct: true
+  - position: 6
+    sentence: "Mi hermano y yo tuvimos que {{blank}} la mudanza a un fin de semana: ni un día más."
+    hint_general: "Los dos deciden de antemano hasta dónde llega el esfuerzo."
+    explanation: "Acotar: fijan de antemano hasta dónde llega. «Recortar» sería quitar una parte de lo que ya existe, y «acatar» es obedecer una orden."
+    options:
+      - position: 1
+        text: "acotar"
+        is_correct: true
+      - position: 2
+        text: "recortar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recortar» es quitar una parte de algo que ya existe, y aquí el límite se fija antes de empezar."
+        hint_specific: "«Recortar» trabaja sobre algo hecho. ¿La mudanza ya empezó?"
+      - position: 3
+        text: "acatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acatar» es obedecer una orden de otro, y son ellos dos quienes deciden el límite."
+        hint_specific: "«Acatar» viene de arriba. ¿Alguien manda sobre esos dos hermanos?"
+  - position: 7
+    sentence: "Sergio abrió la entrevista con una frase útil: «Voy a {{blank}} mi respuesta a un ejemplo, si te parece»."
+    hint_general: "Ofrece quedarse dentro de un ejemplo en vez de contarlo todo."
+    explanation: "Acotar: se queda dentro de un ejemplo. «Anotar» es apuntar en un papel, y «estirar» sería alargar la respuesta."
+    options:
+      - position: 1
+        text: "anotar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anotar» es apuntar en un papel, y él está hablando en voz alta, no escribiendo."
+        hint_specific: "«Anotar» necesita papel. ¿Sergio escribe o habla?"
+      - position: 2
+        text: "acotar"
+        is_correct: true
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estirar» una respuesta es alargarla, y él ofrece justo lo contrario: quedarse en un ejemplo."
+        hint_specific: "«Estirar» alarga. ¿Un solo ejemplo alarga o recorta?"
+  - position: 8
+    sentence: "El taller salió redondo cuando Gloria {{blank}} cada ejercicio a diez minutos exactos."
+    hint_general: "Le pone un tope de tiempo a cada parte para que todo quepa."
+    explanation: "Acotó: puso un tope de tiempo. «Agotó» sería exprimir cada ejercicio, y «alargó» sería darle más tiempo."
+    options:
+      - position: 1
+        text: "agotó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agotar» cada ejercicio sería exprimirlo hasta el final, y ella les puso un tope por delante."
+        hint_specific: "«Agotó» llega hasta el último minuto posible. ¿Eso hace que quepa todo?"
+      - position: 2
+        text: "acotó"
+        is_correct: true
+      - position: 3
+        text: "alargó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alargar» es darle más tiempo, y diez minutos exactos marcan el límite contrario."
+        hint_specific: "«Alargó» da más minutos. ¿Diez exactos suena a más o a tope?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Media empresa en una hoja"
+    body: "El encargo del cliente cabía en una frase: «Mejorar la atención». Renata sonrió y sacó un papel: «Acotemos esto. ¿Atención por teléfono, en tienda o en el chat?». Salieron con un encargo de una línea y una fecha."
+    before_phrase: "Habría que hacerlo más pequeño para poder empezar."
+    after_phrase: "Acotemos esto."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena de los doce"
+    body: "Organizar la cena del grupo llevaba tres semanas de mensajes. Leonor propuso una regla: «Acotamos a dos opciones y votamos hoy». La reserva quedó hecha esa misma noche, y nadie se enfadó."
+    before_phrase: "A ver, hagamos la lista más corta."
+    after_phrase: "Acotamos a dos opciones y votamos hoy."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Un ejemplo, no tres"
+    body: "«Cuénteme un logro del último año», pidió el entrevistador. Joaquín respiró: «Voy a acotarlo a un proyecto, para que se entienda bien». Contó uno solo, con números, y le quedaron cuatro minutos para preguntar él."
+    before_phrase: "Bueno, te cuento un poco de todo."
+    after_phrase: "Voy a acotarlo a un proyecto."
+metrics:
+  zipf_overall: 4.4148
+  dispersion_dp: 0.2348
+  pedantry_proxy: 0.6171
+  family_size: 8
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

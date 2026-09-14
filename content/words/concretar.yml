@@ -38,7 +38,13 @@ family:
   - "concreto"
   - "concreción"
   - "concretamente"
-themes: []
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 2
 tags:
   comodin: []
   funcion: []
@@ -125,6 +131,121 @@ exercises:
         distractor_type: null
         why_not: null
         hint_specific: null
+  - position: 4
+    sentence: "Después de media hora de ideas sueltas, Beatriz pidió {{blank}} tres acuerdos con nombre y fecha antes de cerrar la reunión."
+    hint_general: "Pide convertir las ideas sueltas en acuerdos con responsable y día."
+    explanation: "Concretar: convertir las ideas en acuerdos con nombre y fecha. «Concertar» es ponerse de acuerdo con alguien, y «despachar» suena a salir del paso deprisa."
+    options:
+      - position: 1
+        text: "concretar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otra parte, como una cita; aquí el grupo ya está de acuerdo y lo que falta son datos."
+        hint_specific: "«Concertar» es ponerse de acuerdo con alguien. ¿Falta acuerdo o faltan nombre y fecha?"
+      - position: 3
+        text: "despachar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despachar» es coloquial y suena a resolver deprisa y de cualquier manera; Beatriz pide precisión, no velocidad."
+        hint_specific: "«Despachar» suena a quitarse algo de encima. ¿Ella quiere rapidez o quiere detalle?"
+  - position: 5
+    sentence: "Mi tío lleva un año diciendo que quiere montar un negocio, pero todavía no ha {{blank}} ni el producto ni el local."
+    hint_general: "Sigue hablando en general: no ha fijado ningún dato exacto."
+    explanation: "Concretado: sigue sin fijar el producto ni el local. «Concertado» sería acordarlos con alguien, y «descartado» diría que ya los ha eliminado."
+    options:
+      - position: 1
+        text: "concertado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otra persona, y aquí no hay nadie con quien acordar: falta decidir qué vender y dónde."
+        hint_specific: "«Concertar» necesita otra parte. ¿Con quién se pondría de acuerdo tu tío?"
+      - position: 2
+        text: "concretado"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "descartado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descartar» es dejar algo fuera, y tu tío no ha eliminado nada: todavía no ha elegido."
+        hint_specific: "«Descartar» quita opciones. ¿Tu tío ha quitado alguna o aún no ha elegido?"
+  - position: 6
+    sentence: "En la negociación, Víctor aceptó el precio y pasó a {{blank}} la fecha de entrega, la cantidad exacta y quién asumía el transporte."
+    hint_general: "Pasa del acuerdo general a la fecha, la cantidad y el responsable."
+    explanation: "Concretar: fijar la fecha, la cantidad y el responsable. «Concertar» es ponerse de acuerdo con alguien, cosa que ya hicieron, y «estimar» sería calcular algo aproximado."
+    options:
+      - position: 1
+        text: "estimar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estimar» es calcular una cifra aproximada, y aquí se cierran una fecha exacta y un responsable con nombre."
+        hint_specific: "«Estimar» deja margen. ¿La frase busca aproximarse o dejarlo cerrado?"
+      - position: 2
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es llegar a un acuerdo, y eso ya pasó al aceptar el precio; además nadie «concierta» quién asume el transporte."
+        hint_specific: "«Concertar» es cerrar un acuerdo entre partes. Relee: ¿qué acordaron ya?"
+      - position: 3
+        text: "concretar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 7
+    sentence: "La convocatoria decía «nos vemos pronto», así que Ramiro escribió al grupo para {{blank}} la hora y el lugar exactos."
+    hint_general: "Pasa de un «pronto» vago a una hora y un lugar exactos."
+    explanation: "Concretar: poner hora y lugar donde solo había un «pronto». «Concertar» es acordar algo con alguien, y «confirmar» supone una hora que todavía no existe."
+    options:
+      - position: 1
+        text: "confirmar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confirmar» es dar por segura una hora que ya existe, y la convocatoria solo decía «pronto»."
+        hint_specific: "Para confirmar algo tiene que haber algo antes. ¿Qué hora daba la convocatoria?"
+      - position: 2
+        text: "concretar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otra parte, y Ramiro no negocia con nadie: escribe los datos que faltaban."
+        hint_specific: "«Concertar» supone una negociación. ¿Ramiro negocia o rellena los huecos?"
+  - position: 8
+    sentence: "Entre los tres {{blank}} el plan en una hora: quién llama, quién escribe y qué día se revisa todo."
+    hint_general: "Convierten el plan en pasos con responsable y día."
+    explanation: "Concretamos: repartimos el plan en pasos con responsable y día. «Concertamos» sería acordarlo con otra parte, y «ampliamos» sería añadir más, no precisar."
+    options:
+      - position: 1
+        text: "ampliamos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ampliar» es añadir más contenido, y aquí el plan no crece: se reparte en pasos exactos."
+        hint_specific: "«Ampliar» hace algo más grande. ¿El plan crece o se vuelve más preciso?"
+      - position: 2
+        text: "concretamos"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "concertamos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otra parte, y los tres ya están de acuerdo: lo que reparten son los pasos."
+        hint_specific: "«Concertar» necesita a alguien enfrente. ¿Con quién se acuerda algo en esta escena?"
 readings:
   - position: 1
     scene: "trabajo"

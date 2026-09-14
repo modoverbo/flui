@@ -1,0 +1,232 @@
+schema_version: 1
+slug: "subsanar"
+status: "draft"
+lemma: "subsanar"
+part_of_speech: "verbo"
+syllables: ["sub", "sa", "nar"]
+stressed_syllable: 3
+ipa_latam: "[suβ.saˈnaɾ]"
+ipa_es: "[suβ.saˈnaɾ]"
+explanation: "Arreglar un fallo o una falta en algo ya entregado, para que quede bien."
+example_sentence: "Detecté una cifra vieja en el anexo y la voy a subsanar antes de que termine el día."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Dice que asumes el fallo y lo arreglas, todo en una palabra: ahorra tres líneas de disculpa."
+when_not_to_use: "No la uses para tapar algo que sigue mal ni para un cambio de opinión: solo sirve cuando el fallo queda resuelto."
+collocations:
+  - "subsanar un fallo"
+  - "subsanar el olvido"
+  - "subsanar la falta"
+replaces:
+  - before: "Hay que arreglar ese fallo del documento"
+    after: "Hay que subsanar ese fallo del documento"
+  - before: "Perdona, ahora mismo lo corrijo"
+    after: "Lo subsano ahora mismo"
+  - before: "Se nos pasó, ya lo estamos solucionando"
+    after: "Se nos pasó y ya lo estamos subsanando"
+family: ["subsanable", "subsanación"]
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["arreglar"]
+  funcion: ["corregir"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sanar"
+    difference: "«Sanar» es curar a alguien o cerrar una herida; lo otro arregla un fallo en un papel o en un envío."
+    memory_trick: "Sana una herida; se arregla un fallo del documento."
+  - confused_with: "solventar"
+    difference: "«Solventar» resuelve un problema que ya estaba ahí; lo otro repara una falta propia en algo ya entregado."
+    memory_trick: "Solventas un problema ajeno; reparas tu propio descuido."
+exercises:
+  - position: 1
+    sentence: "Cuando descubrió que el anexo iba sin firmar, Gonzalo escribió enseguida para {{blank}} el olvido."
+    hint_general: "Arregla su propio descuido en algo que ya había mandado."
+    explanation: "Subsanar: arregla su propio descuido en lo ya enviado. «Sanar» es curar a alguien, y «tapar» es coloquial y esconde el fallo en vez de resolverlo."
+    options:
+      - position: 1
+        text: "sanar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sanar» es curar a una persona o cerrar una herida, y aquí el problema es una firma que falta."
+        hint_specific: "«Sanar» se usa con heridas y personas. ¿Qué está roto en esta escena?"
+      - position: 2
+        text: "subsanar"
+        is_correct: true
+      - position: 3
+        text: "tapar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tapar» es coloquial y sugiere esconder el descuido, y Gonzalo escribe justo para resolverlo a la vista."
+        hint_specific: "«Tapar» esconde. ¿Gonzalo esconde el olvido o lo saca a la luz?"
+  - position: 2
+    sentence: "El presupuesto salió con una cifra vieja y Renata pidió veinticuatro horas para {{blank}} el fallo."
+    hint_general: "Va a dejar el presupuesto bien, con la cifra que toca."
+    explanation: "Subsanar: dejará el presupuesto con la cifra correcta. «Subrayar» solo llamaría la atención sobre la cifra vieja, y «justificar» explicaría el fallo sin arreglarlo."
+    options:
+      - position: 1
+        text: "subsanar"
+        is_correct: true
+      - position: 2
+        text: "subrayar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Subrayar» destaca algo para que se note, y la cifra vieja no hay que destacarla: hay que cambiarla."
+        hint_specific: "«Subrayar» hace que algo se vea más. ¿Eso resuelve la cifra vieja?"
+      - position: 3
+        text: "justificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» explica por qué pasó, y Renata pide horas para dejar el presupuesto bien, no para explicarse."
+        hint_specific: "«Justificar» da razones. ¿Con razones queda bien el presupuesto?"
+  - position: 3
+    sentence: "Basta con una línea honesta en el correo: «Vi un dato equivocado en la tabla y lo {{blank}} en esta versión»."
+    hint_general: "El dato malo ya está arreglado en lo que mandas ahora."
+    explanation: "Subsano: el dato queda arreglado en esta versión. «Sano» es curar a alguien, y «maquillo» es coloquial y sugiere disimular el fallo."
+    options:
+      - position: 1
+        text: "sano"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sanar» es curar a alguien; un dato de una tabla no se cura, se corrige."
+        hint_specific: "«Sanar» va de salud. ¿Qué hay que arreglar en la frase?"
+      - position: 2
+        text: "maquillo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maquillar» es coloquial y sugiere disimular el fallo, y la línea se describe como honesta."
+        hint_specific: "«Maquillar» disimula. ¿La línea es honesta o busca esconder algo?"
+      - position: 3
+        text: "subsano"
+        is_correct: true
+  - position: 4
+    sentence: "Nadie esperaba disculpas largas: esperaban que alguien {{blank}} la falta antes del cierre del mes."
+    hint_general: "Lo que se pedía era dejarlo arreglado, no explicarlo."
+    explanation: "Subsanara: lo que se pedía era dejarlo arreglado. «Suplantara» sería ocupar el lugar de otra persona, y «lamentara» se queda en la disculpa que nadie esperaba."
+    options:
+      - position: 1
+        text: "suplantara"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suplantar» es ocupar el lugar de otra persona haciéndose pasar por ella, algo que nada tiene que ver con una falta en el cierre."
+        hint_specific: "«Suplantar» habla de hacerse pasar por alguien. ¿Aparece alguien así en la frase?"
+      - position: 2
+        text: "lamentara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lamentar» es sentirlo, y la frase dice que las disculpas largas no eran lo que hacía falta."
+        hint_specific: "«Lamentar» se queda en la disculpa. ¿Qué dice la frase sobre las disculpas?"
+      - position: 3
+        text: "subsanara"
+        is_correct: true
+  - position: 5
+    sentence: "Si el contrato salió con el nombre de la empresa cambiado, {{blank}} el fallo hoy y avisa en dos líneas."
+    hint_general: "Deja el contrato bien primero, y después cuéntalo corto."
+    explanation: "Subsana: deja el contrato bien hoy mismo. «Sana» es curar a alguien, y «disimula» es coloquial y deja el nombre cambiado tal como está."
+    options:
+      - position: 1
+        text: "subsana"
+        is_correct: true
+      - position: 2
+        text: "disimula"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Disimular» es coloquial y deja el nombre cambiado tal cual, y el consejo pide arreglarlo hoy."
+        hint_specific: "«Disimular» deja el fallo donde estaba. ¿El consejo es dejarlo o arreglarlo?"
+      - position: 3
+        text: "sana"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sanar» es curar a una persona, y aquí lo que está mal es el nombre en un contrato."
+        hint_specific: "«Sanar» se usa con la salud. ¿Qué está mal en esta frase?"
+  - position: 6
+    sentence: "Bruno prefirió {{blank}} el descuido él mismo antes de que el cliente lo viera en la factura."
+    hint_general: "Arregla el descuido por su cuenta, antes de que llegue al cliente."
+    explanation: "Subsanar: arregla el descuido por su cuenta. «Subsidiar» es pagar parte de un gasto ajeno, y «ocultar» dejaría el descuido intacto en la factura."
+    options:
+      - position: 1
+        text: "subsidiar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Subsidiar» es pagar parte de un gasto de otro, y aquí nadie paga nada: hay un descuido que corregir."
+        hint_specific: "«Subsidiar» habla de pagar por alguien. ¿De eso trata la frase?"
+      - position: 2
+        text: "subsanar"
+        is_correct: true
+      - position: 3
+        text: "ocultar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ocultar» dejaría el descuido en la factura, y Bruno actúa para que la factura salga bien."
+        hint_specific: "«Ocultar» esconde el problema. ¿La factura quedaría bien así?"
+  - position: 7
+    sentence: "Antes de reenviar el documento, Casilda revisó la tabla dos veces para {{blank}} cualquier resto del fallo anterior."
+    hint_general: "Quiere que no quede nada mal de la versión de antes."
+    explanation: "Subsanar: quiere que no quede nada mal de la versión anterior. «Sanar» es curar a alguien, y «repetir» volvería a mandar la tabla igual que estaba."
+    options:
+      - position: 1
+        text: "repetir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» mandaría la tabla otra vez tal como estaba, y ella revisa justo para que salga distinta."
+        hint_specific: "«Repetir» deja todo igual. ¿Para qué revisa Casilda dos veces?"
+      - position: 2
+        text: "sanar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sanar» es curar a una persona, y lo que se revisa aquí es una tabla con restos de un fallo."
+        hint_specific: "«Sanar» pertenece a la salud. ¿Qué se revisa en esta escena?"
+      - position: 3
+        text: "subsanar"
+        is_correct: true
+  - position: 8
+    sentence: "En un correo de trabajo, {{blank}} el fallo vale más que explicar durante diez líneas por qué ocurrió."
+    hint_general: "Vale más dejarlo arreglado que contar la historia del problema."
+    explanation: "Subsanar: vale más dejarlo arreglado. «Subrayar» solo destacaría el fallo, y «parchear» es coloquial y sugiere un arreglo provisional que no resuelve."
+    options:
+      - position: 1
+        text: "subsanar"
+        is_correct: true
+      - position: 2
+        text: "subrayar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Subrayar» destaca el fallo para que se vea más, y lo que vale aquí es dejarlo resuelto."
+        hint_specific: "«Subrayar» llama la atención sobre algo. ¿Eso resuelve el fallo?"
+      - position: 3
+        text: "parchear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parchear» es coloquial y sugiere un arreglo provisional, y la frase habla de dejar el asunto resuelto."
+        hint_specific: "«Parchear» suena a apaño temporal. ¿El correo busca un apaño o una solución?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Una línea, no un párrafo"
+    body: "La propuesta salió con el descuento del año pasado. Ámbar no escribió media página de disculpas: «Vi el descuento antiguo en la página 3 y lo subsano en la versión adjunta». El cliente contestó con un «gracias» y siguieron adelante."
+    before_phrase: "Perdón, perdón, ahora mismo lo corrijo y te lo vuelvo a mandar."
+    after_phrase: "Lo subsano en la versión adjunta."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La lista del sorteo"
+    body: "En el club de lectura, Ivo se dio cuenta de que faltaban dos nombres en la lista del sorteo. Lo dijo en el grupo sin dramatizar: «Faltaban Nadia y Tadeo; ya está subsanado». Nadie tuvo que reclamar nada."
+    before_phrase: "Uy, me comí dos nombres, ya lo arreglo."
+    after_phrase: "Faltaban dos nombres; ya está subsanado."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El dato del currículo"
+    body: "A mitad de la conversación, Amalia notó que había escrito mal un año en su currículo. En vez de esperar, lo dijo: «Veo un dato desajustado en la fecha; lo subsano y te mando la versión buena esta tarde». La entrevistadora lo agradeció."
+    before_phrase: "Ay, creo que ahí puse mal la fecha, luego lo cambio."
+    after_phrase: "Lo subsano y te mando la versión buena."
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

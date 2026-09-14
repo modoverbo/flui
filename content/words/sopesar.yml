@@ -16,7 +16,7 @@ syllables:
 stressed_syllable: 3
 ipa_latam: "[so.peˈsar]"
 ipa_es: "[so.peˈsar]"
-explanation: "Pensar con calma las ventajas y desventajas de algo antes de decidir."
+explanation: "Pensar con calma lo bueno y lo malo de algo antes de decidir."
 example_sentence: "Antes de aceptar la oferta, quiero sopesar si el sueldo compensa las horas de viaje."
 register: "neutral"
 pedantry_risk: 1
@@ -37,7 +37,13 @@ replaces:
 family:
   - "peso"
   - "pesar"
-themes: []
+themes:
+  - slug: "negociacion"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
 tags:
   comodin: []
   funcion: []
@@ -124,6 +130,121 @@ exercises:
         distractor_type: null
         why_not: null
         hint_specific: null
+  - position: 4
+    sentence: "Cuando le ofrecieron coordinar el equipo, Mariana pidió dos días para {{blank}} lo que ganaba y lo que perdía con el cambio."
+    hint_general: "Busca el verbo para comparar con calma lo que se gana y lo que se pierde."
+    explanation: "Sopesar: comparar con calma lo que gana y lo que pierde. «Sobrepasar» es superar un límite, y «rumiar» es coloquial y sugiere dar vueltas sin llegar a nada."
+    options:
+      - position: 1
+        text: "sopesar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "sobrepasar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite, y Mariana no supera nada: compara lo que gana con lo que pierde."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿Qué límite superaría Mariana aquí?"
+      - position: 3
+        text: "rumiar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rumiar» es coloquial y sugiere dar vueltas a algo sin llegar a nada; ella pide dos días justamente para decidir."
+        hint_specific: "«Rumiar» suena a darle vueltas sin salida. ¿Ella se queda atascada o va a decidir?"
+  - position: 5
+    sentence: "Nosotros {{blank}} tres proveedores antes de firmar, y el más barato no era el que mejor cumplía los plazos."
+    hint_general: "Comparamos las tres opciones con cuidado antes de elegir una."
+    explanation: "Sopesamos: comparamos los tres antes de decidir. «Sobrepasamos» es superar un límite, y «descartamos» diría que los quitamos de la lista sin compararlos."
+    options:
+      - position: 1
+        text: "sobrepasamos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite, y aquí nadie supera nada: se comparan tres ofertas."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿Se supera algo o se compara?"
+      - position: 2
+        text: "sopesamos"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "descartamos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descartar» es quitar una opción de la lista, y la frase cuenta que las tres se compararon una por una."
+        hint_specific: "«Descartar» deja fuera. ¿Los tres quedaron fuera o se compararon entre sí?"
+  - position: 6
+    sentence: "En la entrevista, Rodrigo explicó que {{blank}} durante un mes el sueldo fijo frente a la libertad de trabajar por su cuenta."
+    hint_general: "Puso las dos opciones en la balanza durante un mes antes de elegir."
+    explanation: "Sopesó: comparó las dos opciones con calma antes de elegir. «Sobrepasó» es superar un límite, y «pospuso» sería dejar la decisión para más adelante."
+    options:
+      - position: 1
+        text: "pospuso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posponer» es dejar la decisión para más adelante, y él la tomó después de compararlo todo durante un mes."
+        hint_specific: "«Posponer» aplaza. ¿Ese mes lo usó para aplazar o para comparar?"
+      - position: 2
+        text: "sopesó"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "sobrepasó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite, y aquí se comparan un sueldo fijo y una libertad, no se supera ninguno."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿Hay algún límite en esta frase?"
+  - position: 7
+    sentence: "Antes de darle una respuesta a su equipo, Teresa se tomó el fin de semana para {{blank}} lo que costaría trabajar los sábados."
+    hint_general: "Mide con calma el precio real de una decisión antes de responder."
+    explanation: "Sopesar: medir con calma lo que costaría antes de responder. «Sobrepasar» es superar un límite, y «asumir» sería aceptarlo sin más, cuando aún no ha decidido."
+    options:
+      - position: 1
+        text: "asumir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asumir» sería aceptar ese coste sin discutirlo, y ella todavía no le ha dado una respuesta a su equipo."
+        hint_specific: "«Asumir» ya acepta. ¿Teresa ha aceptado algo o sigue pensándolo?"
+      - position: 2
+        text: "sobrepasar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite, y lo que hace Teresa es calcular el coste de una opción."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿Se supera algo durante ese fin de semana?"
+      - position: 3
+        text: "sopesar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 8
+    sentence: "Si dudas entre dos caminos, {{blank}} en voz alta con alguien de confianza ayuda más que decidir a las tres de la mañana."
+    hint_general: "Se trata de comparar las dos opciones con calma, y hacerlo acompañado."
+    explanation: "Sopesarlo: pensarlo con calma junto a alguien. «Sobrepasarlo» es superar un límite, y «soltarlo» es coloquial y sugiere decirlo de golpe, sin pensar."
+    options:
+      - position: 1
+        text: "sopesarlo"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "sobrepasarlo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sobrepasar» es superar un límite, y aquí se comparan dos caminos con alguien de confianza."
+        hint_specific: "«Sobrepasar» es ir más allá de un límite. ¿Qué límite se superaría hablando con un amigo?"
+      - position: 3
+        text: "soltarlo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» es coloquial y sugiere decir algo de golpe; la frase propone lo contrario, pensarlo con otra persona."
+        hint_specific: "«Soltar» es decirlo de repente. ¿La frase invita a decidir rápido o a pensarlo?"
 readings:
   - position: 1
     scene: "trabajo"

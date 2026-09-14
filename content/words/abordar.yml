@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 101
+slug: "abordar"
+status: "draft"
+lemma: "abordar"
+part_of_speech: "verbo"
+syllables: ["a", "bor", "dar"]
+stressed_syllable: 3
+ipa_latam: "[a.βorˈðar]"
+ipa_es: "[a.βorˈðar]"
+explanation: "Empezar a tratar un asunto difícil en lugar de dejarlo para otro momento."
+example_sentence: "En la reunión decidimos abordar primero el punto que nadie quería tocar."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para anunciar que entras en un asunto delicado: «Quiero abordar algo antes de cerrar»."
+when_not_to_use: "No la uses si solo vas a nombrar el asunto de pasada; quien lo hace se compromete a tratarlo."
+collocations:
+  - "abordar un tema"
+  - "abordar el problema"
+  - "abordar el asunto"
+replaces:
+  - before: "Hay que hablar de ese tema"
+    after: "Hay que abordar ese tema"
+  - before: "Vamos a meternos con lo del presupuesto"
+    after: "Vamos a abordar lo del presupuesto"
+  - before: "Nadie quiere tocar lo de los plazos"
+    after: "Nadie quiere abordar lo de los plazos"
+family: ["abordaje"]
+themes:
+  - slug: "reuniones"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin: ["tema"]
+  funcion: ["encarar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acordar"
+    difference: "«Acordar» es cerrar un pacto con alguien; lo otro es entrar en un asunto que todavía nadie ha resuelto."
+    memory_trick: "Acuerdas con alguien; entras en el tema tú solo."
+  - confused_with: "ahondar"
+    difference: "«Ahondar» es profundizar en algo que ya se está tratando, no empezar a tratarlo."
+    memory_trick: "Primero entras en el tema; después ahondas en él."
+exercises:
+  - position: 1
+    sentence: "Después de dos semanas dando vueltas, Tomás decidió {{blank}} el retraso del proveedor en la reunión del lunes."
+    hint_general: "Entra de lleno en un asunto que llevaba semanas sin tratarse."
+    explanation: "Abordar: entra de lleno en el asunto. «Acordar» sería cerrar un pacto, y «mencionar» sería nombrarlo de pasada."
+    options:
+      - position: 1
+        text: "acordar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acordar» es cerrar un pacto con alguien, y aquí todavía no hay pacto: apenas se entra en el retraso."
+        hint_specific: "«Acordar» necesita dos partes que pactan. ¿Alguien pacta algo en esa frase?"
+      - position: 2
+        text: "abordar"
+        is_correct: true
+      - position: 3
+        text: "mencionar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mencionar» es nombrar algo de pasada, y él lleva dos semanas esperando para tratarlo a fondo."
+        hint_specific: "«Mencionar» se queda en nombrar. ¿Después de dos semanas basta con nombrarlo?"
+  - position: 2
+    sentence: "Marta abrió la reunión con una frase corta: «Hoy vamos a {{blank}} lo de los turnos y nada más»."
+    hint_general: "Anuncia que van a entrar en ese asunto y a tratarlo de verdad."
+    explanation: "Abordar: van a entrar en el asunto y tratarlo. «Ventilar» es coloquial y suena a airearlo, y «rozar» sería tocarlo apenas."
+    options:
+      - position: 1
+        text: "ventilar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ventilar» algo es coloquial y sugiere airearlo delante de todos; ella solo anuncia el orden de la reunión."
+        hint_specific: "«Ventilar» suena a sacar los trapos fuera. ¿Eso es lo que anuncia Marta?"
+      - position: 2
+        text: "abordar"
+        is_correct: true
+      - position: 3
+        text: "rozar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rozar» un asunto es tocarlo apenas, y ella anuncia que le van a dedicar la reunión entera."
+        hint_specific: "«Rozar» apenas toca. ¿Encaja con dedicarle toda la reunión?"
+  - position: 3
+    sentence: "Cuando el cliente preguntó por el presupuesto, Ignacio prefirió {{blank}} el punto enseguida y no dejarlo para el final."
+    hint_general: "Prefiere entrar en el punto ahora mismo y no dejarlo para más tarde."
+    explanation: "Abordar: entra en el punto en ese momento. «Despachar» suena a quitárselo de encima, y «ahondar» sería profundizar en algo ya tratado."
+    options:
+      - position: 1
+        text: "despachar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despachar» un punto suena a quitárselo de encima deprisa, y él quiere tratarlo con calma delante del cliente."
+        hint_specific: "«Despachar» suena a salir del paso. ¿Ignacio quiere salir del paso o tratarlo bien?"
+      - position: 2
+        text: "abordar"
+        is_correct: true
+      - position: 3
+        text: "ahondar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ahondar» es profundizar en algo que ya se está tratando, y el punto acaba de salir con la pregunta."
+        hint_specific: "«Ahondar» supone que ya estás dentro del punto. ¿Ya estaban dentro?"
+  - position: 4
+    sentence: "Nadie se atrevía a sacar lo del reparto de guardias, hasta que Lucía lo {{blank}} en la última reunión del mes."
+    hint_general: "Fue la primera en entrar de verdad en un asunto que todos evitaban."
+    explanation: "Abordó: entró de verdad en el asunto. «Acordó» sería cerrar un pacto, y «comentó» sería opinar de pasada sin tratarlo."
+    options:
+      - position: 1
+        text: "acordó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acordar» es pactar algo con alguien, y la frase cuenta que por fin se entró en el asunto, no que se pactara."
+        hint_specific: "«Acordó» habla de un pacto cerrado. ¿La frase cuenta un pacto o un primer paso?"
+      - position: 2
+        text: "abordó"
+        is_correct: true
+      - position: 3
+        text: "comentó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comentar» es decir algo sobre el asunto sin entrar en él, y aquí el mérito está en atreverse a entrar."
+        hint_specific: "«Comentó» se queda fuera del asunto. ¿Qué era lo que nadie se atrevía a hacer?"
+  - position: 5
+    sentence: "Mi jefa me pidió que {{blank}} la queja del cliente antes de que llegara a su correo."
+    hint_general: "Le piden entrar en la queja cuanto antes, no dejarla pendiente."
+    explanation: "Abordara: entrar en la queja cuanto antes. «Acordara» sería pactar algo, y «aplazara» sería dejarla para más adelante."
+    options:
+      - position: 1
+        text: "abordara"
+        is_correct: true
+      - position: 2
+        text: "acordara"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acordar» es pactar algo con alguien, y lo que piden es entrar en la queja, no cerrar un trato."
+        hint_specific: "«Acordara» apunta a un pacto. ¿Con quién se pactaría una queja que aún no se trata?"
+      - position: 3
+        text: "aplazara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» es dejar algo para después, y la idea es tratarlo antes de que la queja suba de nivel."
+        hint_specific: "«Aplazara» empuja la queja hacia adelante. ¿Eso evita que llegue al correo?"
+  - position: 6
+    sentence: "Durante la cena, Raquel y su hermano decidieron {{blank}} de una vez la organización de las vacaciones."
+    hint_general: "Se sientan a tratar por fin un asunto que iban dejando."
+    explanation: "Abordar: se sientan a tratar el asunto. «Bordear» sería rodearlo sin entrar, y «discutir» sugiere enfrentamiento, no organización."
+    options:
+      - position: 1
+        text: "bordear"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Bordear» es rodear algo sin entrar en ello, justo lo contrario de lo que hacen los dos hermanos."
+        hint_specific: "«Bordear» da la vuelta por fuera. ¿Ellos rodean el asunto o entran en él?"
+      - position: 2
+        text: "abordar"
+        is_correct: true
+      - position: 3
+        text: "discutir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» sugiere enfrentamiento, y la escena es una cena tranquila para organizar las vacaciones."
+        hint_specific: "«Discutir» apunta a tensión. ¿La cena tiene pinta de pelea?"
+  - position: 7
+    sentence: "Antes de contestar, Gonzalo respiró hondo y {{blank}} la pregunta más incómoda de la entrevista sin dar rodeos."
+    hint_general: "Entra de lleno en la pregunta difícil en vez de darle vueltas."
+    explanation: "Abordó: entró de lleno en la pregunta. «Ahondó» sería profundizar en algo ya tratado, y «esquivó» sería apartarse de ella."
+    options:
+      - position: 1
+        text: "ahondó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ahondar» es profundizar en algo que ya estaba sobre la mesa, y esa pregunta acababa de llegarle."
+        hint_specific: "«Ahondó» supone un asunto ya empezado. ¿La pregunta venía de antes?"
+      - position: 2
+        text: "esquivó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esquivar» es apartarse de la pregunta, y el final de la frase dice que respondió sin dar rodeos."
+        hint_specific: "Relee el final: contesta sin dar rodeos. ¿Encaja alguien que se aparta?"
+      - position: 3
+        text: "abordó"
+        is_correct: true
+  - position: 8
+    sentence: "El equipo de Patricia dedicó la primera media hora a {{blank}} los riesgos del proyecto, uno por uno."
+    hint_general: "Se meten en cada riesgo, no solo en la lista de nombres."
+    explanation: "Abordar: se meten en cada riesgo. «Enumerar» sería solo nombrarlos en orden, y «acordar» sería cerrar un pacto sobre ellos."
+    options:
+      - position: 1
+        text: "enumerar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enumerar» es ir nombrándolos en orden, y media hora larga da para entrar en cada riesgo, no solo para listarlos."
+        hint_specific: "«Enumerar» solo hace una lista. ¿Media hora se va en una lista?"
+      - position: 2
+        text: "acordar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acordar» es cerrar un pacto, y el equipo todavía está entrando en los riesgos, no pactando nada."
+        hint_specific: "«Acordar» cierra algo. ¿El equipo cierra o empieza?"
+      - position: 3
+        text: "abordar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El punto que nadie tocaba"
+    body: "La reunión llevaba tres semanas terminando igual, sin hablar del reparto de guardias. Esta vez, Elisa empezó distinto: «Antes de nada, quiero abordar lo de las guardias». Hubo un silencio corto y, por primera vez, una decisión."
+    before_phrase: "Habría que hablar del tema de las guardias."
+    after_phrase: "Quiero abordar lo de las guardias."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La sobremesa larga"
+    body: "Los tres hermanos llevaban meses dando vueltas a la mudanza de su madre. Ruben sirvió el café y dijo: «¿Lo abordamos hoy?». Nadie se levantó de la mesa hasta que hubo un plan escrito en una servilleta."
+    before_phrase: "¿Y si hablamos de lo de mamá?"
+    after_phrase: "¿Lo abordamos hoy?"
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta difícil"
+    body: "A mitad de la entrevista, la responsable preguntó por el año que Adriana estuvo sin trabajar. Adriana no cambió de tema: «Prefiero abordarlo ahora. Cuidé de mi padre y volví con más claridad que nunca». La responsable asintió y tomó nota."
+    before_phrase: "Bueno, de eso prefiero no hablar mucho."
+    after_phrase: "Prefiero abordarlo ahora."
+metrics:
+  zipf_overall: 4.9496
+  dispersion_dp: 0.1111
+  pedantry_proxy: 0.5429
+  family_size: 26
+provenance:
+  generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
+  gate: null
+  checked_on: "2026-09-13"

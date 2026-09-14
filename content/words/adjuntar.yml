@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "adjuntar"
+status: "draft"
+lemma: "adjuntar"
+part_of_speech: "verbo"
+syllables: ["ad", "jun", "tar"]
+stressed_syllable: 3
+ipa_latam: "[að.xunˈtar]"
+ipa_es: "[að.xunˈtar]"
+explanation: "Enviar un archivo dentro del mismo correo: viaja junto al texto y no hay que buscarlo después."
+example_sentence: "Te resumo la propuesta en tres líneas y adjunto el informe completo por si quieres el detalle."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "En un correo corto, «te adjunto» ahorra una frase entera y dice dónde está el archivo."
+when_not_to_use: "No la uses para un enlace ni para algo pegado dentro del texto: solo para lo que viaja con el mensaje."
+collocations:
+  - "adjuntar un archivo"
+  - "adjuntar el informe"
+  - "adjuntar la factura"
+replaces:
+  - before: "Te paso el archivo"
+    after: "Te adjunto el archivo"
+  - before: "Ahí te mando la factura"
+    after: "Adjunto la factura"
+  - before: "Va también el contrato con el correo"
+    after: "Adjunto el contrato"
+family: ["adjunto"]
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["pasar"]
+  funcion: ["enviar"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "adjudicar"
+    difference: "«Adjudicar» es entregar algo a quien lo gana o lo merece, como un premio o un contrato; no tiene que ver con archivos."
+    memory_trick: "Se adjudica un premio; se adjunta un archivo."
+  - confused_with: "conjuntar"
+    difference: "«Conjuntar» es combinar piezas para que peguen entre sí; aquí solo se manda un archivo con el mensaje."
+    memory_trick: "Conjuntas colores; mandas archivos con el correo."
+exercises:
+  - position: 1
+    sentence: "Marcos resumió el correo en dos líneas y no olvidó {{blank}} la factura que el cliente llevaba días pidiendo."
+    hint_general: "El archivo tiene que viajar dentro del mismo correo, no quedarse en otro sitio."
+    explanation: "Adjuntar: la factura viaja dentro del correo. «Adjudicar» es entregar algo a quien lo gana, y «colgar» deja el archivo en otro sitio y obliga a buscarlo."
+    options:
+      - position: 1
+        text: "adjudicar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Adjudicar» es entregar algo a quien lo gana o lo merece; una factura pendiente no se gana en un concurso."
+        hint_specific: "«Adjudicar» se usa con premios y contratos que alguien gana. ¿El cliente ganó algo o espera un archivo?"
+      - position: 2
+        text: "adjuntar"
+        is_correct: true
+      - position: 3
+        text: "colgar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Colgar» es coloquial y deja el archivo en otro sitio; el cliente tendría que ir a buscarlo en vez de recibirlo."
+        hint_specific: "«Colgar» suena a dejar algo en una carpeta compartida. ¿El cliente lo recibe o lo busca?"
+  - position: 2
+    sentence: "Antes de dar por cerrado el informe, Ximena quiso {{blank}} las dos tablas para que nadie tuviera que pedírselas aparte."
+    hint_general: "Las tablas van con el envío, así nadie las reclama después."
+    explanation: "Adjuntar: las tablas van en el envío. «Conjuntar» es combinar piezas para que peguen, y «citar» solo las menciona, así que alguien seguiría pidiéndolas."
+    options:
+      - position: 1
+        text: "conjuntar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Conjuntar» es combinar piezas para que peguen entre sí, y aquí las tablas no se mezclan: se mandan."
+        hint_specific: "«Conjuntar» habla de combinar cosas entre sí. ¿Las tablas se mezclan o se mandan?"
+      - position: 2
+        text: "citar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Citar» es nombrar las tablas en el texto, y quien las nombra sigue teniendo que mandarlas cuando se las piden."
+        hint_specific: "«Citar» solo las nombra. ¿Con eso se evita que alguien las reclame?"
+      - position: 3
+        text: "adjuntar"
+        is_correct: true
+  - position: 3
+    sentence: "Te escribo con prisa: {{blank}} el resumen de ayer y el calendario nuevo como dos archivos aparte."
+    hint_general: "Los dos van con el mensaje, cada uno en su archivo."
+    explanation: "Adjunto: los dos archivos viajan con el mensaje. «Adjudico» es entregar algo a quien lo gana, y «pego» sería copiar el texto dentro del correo, no mandar archivos."
+    options:
+      - position: 1
+        text: "adjudico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Adjudicar» es entregar algo a quien lo gana o lo merece; un calendario no se reparte así."
+        hint_specific: "«Adjudicar» va de premios y contratos. ¿Alguien gana ese calendario?"
+      - position: 2
+        text: "pego"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pegar» es copiar el texto dentro del correo, y la frase dice que van como dos archivos aparte."
+        hint_specific: "«Pegar» mete el texto en el cuerpo del mensaje. ¿La frase habla de texto o de archivos?"
+      - position: 3
+        text: "adjunto"
+        is_correct: true
+  - position: 4
+    sentence: "Ana respondió al mensaje en un minuto y {{blank}} el contrato firmado en la misma respuesta, sin que nadie se lo recordara."
+    hint_general: "El contrato salió dentro de esa respuesta, no en otro envío."
+    explanation: "Adjuntó: el contrato salió dentro de esa respuesta. «Adjudicó» es entregar algo a quien lo gana, y «subió» lo deja en otro lugar, fuera del mensaje."
+    options:
+      - position: 1
+        text: "adjuntó"
+        is_correct: true
+      - position: 2
+        text: "adjudicó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Adjudicar» es entregar algo a quien lo gana, y aquí el contrato ya estaba firmado y solo había que mandarlo."
+        hint_specific: "«Adjudicar» se usa cuando alguien gana un concurso. ¿Eso pasa en esta frase?"
+      - position: 3
+        text: "subió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Subir» deja el contrato en una carpeta o una página, y la frase dice que iba en la misma respuesta."
+        hint_specific: "«Subir» lleva el archivo a otro lugar. ¿Dónde dice la frase que estaba el contrato?"
+  - position: 5
+    sentence: "Si mandas el presupuesto por chat, conviene {{blank}} también el archivo editable para que puedan cambiar las cifras."
+    hint_general: "Manda el archivo con el mensaje, no solo la foto de las cifras."
+    explanation: "Adjuntar: el archivo editable va con el mensaje. «Juntar» sería unir cosas entre sí, y «describir» solo cuenta cómo son las cifras."
+    options:
+      - position: 1
+        text: "juntar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Juntar» es unir varias cosas entre sí; aquí no se unen archivos, se manda uno con el mensaje."
+        hint_specific: "«Juntar» pone cosas una al lado de otra. ¿La frase une algo o lo envía?"
+      - position: 2
+        text: "adjuntar"
+        is_correct: true
+      - position: 3
+        text: "describir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Describir» cuenta cómo son las cifras, pero sin el archivo nadie puede cambiarlas."
+        hint_specific: "«Describir» cuenta cómo es algo. ¿Con una descripción se pueden editar las cifras?"
+  - position: 6
+    sentence: "Rocío pidió a sus compañeros que {{blank}} las capturas en el mismo mensaje y no en cuatro correos seguidos."
+    hint_general: "Todo en un envío: las imágenes salen con ese mensaje."
+    explanation: "Adjuntaran: las capturas salen en ese mensaje. «Adjudicaran» es entregar algo a quien lo gana, y «pegaran» sería copiarlas en el cuerpo del texto."
+    options:
+      - position: 1
+        text: "pegaran"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pegar» es copiar las capturas dentro del texto, y lo que Rocío quiere es que lleguen como archivos."
+        hint_specific: "«Pegar» mete la imagen en el cuerpo del correo. ¿Eso es lo que ella pide?"
+      - position: 2
+        text: "adjuntaran"
+        is_correct: true
+      - position: 3
+        text: "adjudicaran"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Adjudicar» es entregar algo a quien lo gana o lo merece; unas capturas no se reparten así."
+        hint_specific: "«Adjudicar» va de concursos y contratos. ¿Alguien gana esas capturas?"
+  - position: 7
+    sentence: "Nadie encontró el presupuesto porque Ismael escribió «va en el correo» y olvidó {{blank}} el archivo."
+    hint_general: "Faltó el paso de hacer que el archivo viajara con el mensaje."
+    explanation: "Adjuntar: faltó que el archivo viajara con el mensaje. «Adjudicar» es entregar algo a quien lo gana, y «guardar» lo deja en su propia carpeta."
+    options:
+      - position: 1
+        text: "guardar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Guardar» deja el archivo en la carpeta de Ismael, y el problema es que no salió hacia nadie."
+        hint_specific: "«Guardar» conserva el archivo donde estaba. ¿El fallo fue perderlo o no enviarlo?"
+      - position: 2
+        text: "adjudicar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Adjudicar» es entregar algo a quien lo gana o lo merece, y aquí nadie gana el presupuesto: lo esperan."
+        hint_specific: "«Adjudicar» aparece en concursos y contratos. ¿Alguien compite por ese presupuesto?"
+      - position: 3
+        text: "adjuntar"
+        is_correct: true
+  - position: 8
+    sentence: "Cuando pidas una firma por correo, {{blank}} el documento ya completo: nadie firma algo que todavía hay que buscar."
+    hint_general: "Que el papel llegue con tu mensaje, listo para firmar."
+    explanation: "Adjunta: el documento llega con tu mensaje. «Adjudica» es entregar algo a quien lo gana, y «cuelga» lo deja en otro sitio, que es justo lo que la frase evita."
+    options:
+      - position: 1
+        text: "adjunta"
+        is_correct: true
+      - position: 2
+        text: "cuelga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Colgar» es coloquial y deja el documento en otro sitio, y la frase dice que nadie firma lo que hay que ir a buscar."
+        hint_specific: "«Colgar» deja el papel en una carpeta compartida. ¿Eso ahorra la búsqueda?"
+      - position: 3
+        text: "adjudica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Adjudicar» es entregar algo a quien lo gana o lo merece; una firma no se gana en un concurso."
+        hint_specific: "«Adjudicar» va de premios y contratos. ¿Hay alguna competencia en esta frase?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos líneas y el archivo"
+    body: "El correo de Leonor cabía en la pantalla: «Aquí tienes el cierre del mes. Adjunto el detalle por si quieres revisarlo». Su jefa respondió en cinco minutos, algo que casi nunca pasaba. «Así da gusto», escribió."
+    before_phrase: "Ahí te paso el archivo."
+    after_phrase: "Adjunto el detalle."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las fotos del viaje"
+    body: "Su padre llevaba semanas preguntando por las fotos. Tadeo dejó de prometerlas y escribió: «Adjunto las diez mejores; el resto va el domingo». Media hora después su padre ya las había impreso y las tenía en la mesa."
+    before_phrase: "Un día de estos te las mando."
+    after_phrase: "Adjunto las diez mejores."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El correo después de la charla"
+    body: "Al salir de la entrevista, Nadia escribió tres líneas de agradecimiento y añadió: «Adjunto el caso del que hablamos, con las cifras del primer año». La entrevistadora lo abrió esa misma tarde y lo compartió con su equipo."
+    before_phrase: "Si quieres te mando luego el caso ese."
+    after_phrase: "Adjunto el caso del que hablamos."
+metrics:
+  zipf_overall: 4.6406
+  dispersion_dp: 0.1861
+  pedantry_proxy: 0.3995
+  family_size: 29
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

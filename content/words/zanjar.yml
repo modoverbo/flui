@@ -35,7 +35,13 @@ replaces:
     after: "Zanjarlo de una vez"
 family:
   - "zanja"
-themes: []
+themes:
+  - slug: "conflicto-desacuerdo"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "reuniones"
+    relevance: 1
 tags:
   comodin: []
   funcion: []
@@ -122,6 +128,121 @@ exercises:
         distractor_type: "register"
         why_not: "«Dirimir» se parece en significado, pero suena a juzgado o a arbitraje. En un grupo de amigos resulta demasiado solemne."
         hint_specific: "«Dirimir» es propio de jueces y árbitros. ¿Suena natural en el chat de tus amigos?"
+  - position: 4
+    sentence: "Rosa escuchó a las dos partes y luego {{blank}} la discusión con una propuesta que las dos aceptaron."
+    hint_general: "Puso fin a la discusión con una salida que convenció a todos."
+    explanation: "Zanjó: terminó la discusión con una propuesta aceptada. «Canjeó» es cambiar una cosa por otra, y «esquivó» sería evitar el tema en vez de resolverlo."
+    options:
+      - position: 1
+        text: "canjeó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Canjear» es cambiar una cosa por otra, como un vale por un producto; una discusión no se cambia, se termina."
+        hint_specific: "«Canjear» se usa con vales y entradas. ¿Se cambia aquí una cosa por otra?"
+      - position: 2
+        text: "zanjó"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "esquivó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esquivar» es evitar un asunto, y Rosa hace lo contrario: escucha a las dos partes y propone una salida."
+        hint_specific: "Quien esquiva un tema no lo toca. ¿Rosa lo evita o lo resuelve?"
+  - position: 5
+    sentence: "Tras dos correos y una llamada, Manuel decidió {{blank}} el asunto del alquiler con una sola reunión de quince minutos."
+    hint_general: "Quiere dejar el asunto terminado de una vez, sin más idas y venidas."
+    explanation: "Zanjar: terminar el asunto de una vez en una reunión corta. «Canjear» es cambiar una cosa por otra, y «dilatar» sería alargarlo todavía más."
+    options:
+      - position: 1
+        text: "zanjar"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 2
+        text: "canjear"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Canjear» es cambiar una cosa por otra, y aquí nadie intercambia nada: se cierra un asunto pendiente."
+        hint_specific: "«Canjear» se usa con vales y billetes. ¿Qué se cambiaría por qué en esta escena?"
+      - position: 3
+        text: "dilatar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dilatar» es alargar algo en el tiempo, y Manuel quiere terminarlo en quince minutos."
+        hint_specific: "«Dilatar» estira los plazos. ¿Quince minutos suenan a estirar o a cerrar?"
+  - position: 6
+    sentence: "En casa {{blank}} el tema del reparto de gastos con una hoja compartida, y desde entonces nadie discute a fin de mes."
+    hint_general: "Dejaron el tema terminado con una solución que sigue funcionando."
+    explanation: "Zanjamos: cerramos el tema con un acuerdo que dura. «Canjeamos» es cambiar una cosa por otra, y «despachamos» suena a resolverlo deprisa y sin ganas."
+    options:
+      - position: 1
+        text: "canjeamos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Canjear» es cambiar una cosa por otra, y una hoja compartida no se intercambia por nada: cierra una discusión."
+        hint_specific: "«Canjear» se usa con vales y entradas. ¿Qué se cambiaría aquí por qué?"
+      - position: 2
+        text: "zanjamos"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+      - position: 3
+        text: "despachamos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despachar» es coloquial y suena a resolver algo deprisa y sin ganas; aquí el acuerdo aguanta mes tras mes."
+        hint_specific: "«Despachar» es quitarse algo de encima. ¿Encaja con una solución que dura?"
+  - position: 7
+    sentence: "Cuando la charla se repetía por tercera vez, Susana propuso {{blank}}: «Decidimos hoy y no lo volvemos a abrir»."
+    hint_general: "Propone cerrar el asunto hoy y no volver sobre él."
+    explanation: "Zanjarlo: decidir hoy y no volver a abrirlo. «Canjearlo» es cambiar una cosa por otra, y «aplazarlo» sería dejarlo para otro día."
+    options:
+      - position: 1
+        text: "aplazarlo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» es dejar algo para más tarde, y su propuesta dice justo lo contrario: decidir hoy."
+        hint_specific: "Relee la propuesta: «Decidimos hoy». ¿Eso deja algo para otro día?"
+      - position: 2
+        text: "canjearlo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Canjear» es cambiar una cosa por otra, y un asunto que se repite no se cambia: se termina."
+        hint_specific: "«Canjear» se usa con vales y entradas. ¿Hay algo que cambiar en esta charla?"
+      - position: 3
+        text: "zanjarlo"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
+  - position: 8
+    sentence: "El acuerdo firmado por las dos empresas {{blank}} una disputa que llevaba tres años abierta."
+    hint_general: "El acuerdo puso final a algo que llevaba años sin resolverse."
+    explanation: "Zanjó: el acuerdo puso fin a la disputa. «Canjeó» es cambiar una cosa por otra, y «prolongó» diría que la alargó todavía más."
+    options:
+      - position: 1
+        text: "canjeó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Canjear» es cambiar una cosa por otra, y una disputa de tres años no se intercambia: se termina."
+        hint_specific: "«Canjear» se usa con vales y entradas. ¿Se cambia algo por otra cosa en esta frase?"
+      - position: 2
+        text: "prolongó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prolongar» es alargar algo, y el acuerdo hace lo contrario: le pone final a tres años de disputa."
+        hint_specific: "«Prolongar» estira. ¿Un acuerdo firmado alarga la disputa o la acaba?"
+      - position: 3
+        text: "zanjó"
+        is_correct: true
+        distractor_type: null
+        why_not: null
+        hint_specific: null
 readings:
   - position: 1
     scene: "trabajo"

@@ -1,0 +1,232 @@
+schema_version: 1
+slug: "apremiante"
+status: "draft"
+lemma: "apremiante"
+part_of_speech: "adjetivo"
+syllables: ["a", "pre", "mian", "te"]
+stressed_syllable: 3
+ipa_latam: "[a.pɾeˈmjan.te]"
+ipa_es: "[a.pɾeˈmjan.te]"
+explanation: "Que no puede esperar y obliga a responder pronto, aunque nadie levante la voz."
+example_sentence: "El plazo es apremiante: si el jueves no tenemos respuesta, perdemos el turno de entrega."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Dice que corre prisa sin gritar ni poner mayúsculas, así que el otro no se pone a la defensiva."
+when_not_to_use: "No la uses para todo lo que mandas: si cada correo lo es, deja de significar algo."
+collocations:
+  - "un plazo apremiante"
+  - "una necesidad apremiante"
+  - "un tono apremiante"
+replaces:
+  - before: "Esto es urgentísimo, de verdad"
+    after: "El plazo es apremiante"
+  - before: "Hay que hacerlo ya, ya, ya"
+    after: "La entrega es apremiante"
+  - before: "Corre mucha prisa con esto"
+    after: "La necesidad es apremiante"
+family: ["apremio", "apremiar"]
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin: ["urgente"]
+  funcion: ["priorizar"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "aprensivo"
+    difference: "«Aprensivo» describe a quien teme que algo le haga daño; la otra palabra describe algo que no admite espera."
+    memory_trick: "El aprensivo tiene miedo; lo que no espera tiene reloj."
+  - confused_with: "imprescindible"
+    difference: "«Imprescindible» dice que algo no puede faltar; la otra palabra dice que no puede tardar."
+    memory_trick: "Lo imprescindible no se puede quitar; lo que corre prisa no se puede dejar para mañana."
+exercises:
+  - position: 1
+    sentence: "El mensaje de Ámbar era corto y el plazo, tan {{blank}} que nadie discutió el orden de los pasos."
+    hint_general: "El tiempo aprieta tanto que ya no hay margen para debatir."
+    explanation: "Apremiante: el tiempo aprieta y no hay margen. «Aprensivo» describe a quien teme por su salud, y «urgentísimo» es coloquial y exagera justo lo que el mensaje dice con calma."
+    options:
+      - position: 1
+        text: "aprensivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aprensivo» describe a una persona que teme que algo le haga daño, y aquí lo que aprieta es el reloj."
+        hint_specific: "«Aprensivo» habla de miedos de una persona. ¿Quién tiene miedo en esta frase?"
+      - position: 2
+        text: "apremiante"
+        is_correct: true
+      - position: 3
+        text: "urgentísimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Urgentísimo» es coloquial y exagera el tono, y el mensaje se describe como corto y sin dramatismo."
+        hint_specific: "«Urgentísimo» sube el volumen. ¿Cómo era el mensaje de Ámbar?"
+  - position: 2
+    sentence: "Nadie levantó la voz en la sala, pero la necesidad de decidir era {{blank}} y todos lo notaron."
+    hint_general: "Se nota que no se puede aplazar, aunque nadie lo diga alto."
+    explanation: "Apremiante: no se puede aplazar, aunque nadie grite. «Aprensiva» describe a quien teme por su salud, y «constante» diría que dura siempre, no que corre prisa."
+    options:
+      - position: 1
+        text: "apremiante"
+        is_correct: true
+      - position: 2
+        text: "aprensiva"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aprensiva» describe a una persona temerosa, y aquí lo que se describe es una necesidad de decidir."
+        hint_specific: "«Aprensiva» se dice de personas con miedo. ¿De qué habla la frase?"
+      - position: 3
+        text: "constante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constante» dice que algo dura sin parar, y la frase habla de algo que no admite espera."
+        hint_specific: "«Constante» habla de duración. ¿La sala siente duración o prisa?"
+  - position: 3
+    sentence: "Con dos días para entregar, el encargo se volvió {{blank}} sin que nadie tuviera que repetirlo."
+    hint_general: "Quedan dos días: el asunto ya no admite espera."
+    explanation: "Apremiante: con dos días, el encargo no admite espera. «Aparente» diría que solo lo parece, y «brutal» es coloquial y exagera el tamaño del trabajo."
+    options:
+      - position: 1
+        text: "aparente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aparente» dice que algo solo lo parece, y aquí los dos días son reales."
+        hint_specific: "«Aparente» pone en duda lo que se ve. ¿Los dos días son ciertos o imaginados?"
+      - position: 2
+        text: "brutal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Brutal» es coloquial y habla del tamaño del encargo, no de que el tiempo se acabe."
+        hint_specific: "«Brutal» exagera el tamaño. ¿Lo que cambió es el tamaño o el tiempo?"
+      - position: 3
+        text: "apremiante"
+        is_correct: true
+  - position: 4
+    sentence: "La carta del banco no subía el tono, aunque dejaba un aviso {{blank}}: quedaban cinco días para responder."
+    hint_general: "El aviso no grita, pero deja claro que el reloj corre."
+    explanation: "Apremiante: el aviso no grita y el reloj corre. «Prominente» describe lo que sobresale a la vista, y «molesto» hablaría de fastidio, no de plazo."
+    options:
+      - position: 1
+        text: "prominente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prominente» describe lo que sobresale a la vista, como una figura destacada, y aquí lo que aprieta es el plazo."
+        hint_specific: "«Prominente» habla de sobresalir. ¿Qué destaca en el aviso, su tamaño o su fecha?"
+      - position: 2
+        text: "apremiante"
+        is_correct: true
+      - position: 3
+        text: "molesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Molesto» habla del fastidio que causa, y la frase se fija en los cinco días que quedan."
+        hint_specific: "«Molesto» va de fastidio. ¿Qué dato da la frase al final?"
+  - position: 5
+    sentence: "Cuando un correo llega un viernes a las siete de la tarde, casi nada es tan {{blank}} como parece."
+    hint_general: "Pocas cosas exigen de verdad una respuesta inmediata."
+    explanation: "Apremiante: pocas cosas exigen respuesta inmediata. «Aprensivo» describe a quien teme por su salud, y «tremendo» es coloquial y habla del tamaño del asunto."
+    options:
+      - position: 1
+        text: "tremendo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tremendo» es coloquial y habla del tamaño del asunto, no de si hay que contestar ya."
+        hint_specific: "«Tremendo» exagera el tamaño. ¿De qué duda la frase, del tamaño o de la prisa?"
+      - position: 2
+        text: "apremiante"
+        is_correct: true
+      - position: 3
+        text: "aprensivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aprensivo» describe a una persona con miedo a que algo le pase, y aquí se habla de correos del viernes."
+        hint_specific: "«Aprensivo» se dice de personas temerosas. ¿La frase describe a alguien o a un correo?"
+  - position: 6
+    sentence: "Delia no escribió nada en mayúsculas: bastó con decir que el pago era {{blank}} para que le contestaran el mismo día."
+    hint_general: "Con decir que el asunto no espera fue suficiente."
+    explanation: "Apremiante: dijo que el pago no espera y bastó. «Aprensivo» describe a quien teme por su salud, e «imprescindible» diría que el pago no puede faltar, no que corre prisa."
+    options:
+      - position: 1
+        text: "imprescindible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imprescindible» dice que el pago no puede faltar, y lo que hizo reaccionar fue la falta de tiempo."
+        hint_specific: "«Imprescindible» habla de lo que no puede faltar. ¿Qué apuró la respuesta, la falta o la fecha?"
+      - position: 2
+        text: "aprensivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aprensivo» describe a una persona temerosa, y aquí lo que se describe es un pago."
+        hint_specific: "«Aprensivo» se aplica a personas. ¿De qué habla Delia en su mensaje?"
+      - position: 3
+        text: "apremiante"
+        is_correct: true
+  - position: 7
+    sentence: "En casa, la mudanza dejó de ser un plan lejano y se volvió un asunto {{blank}}: las llaves se entregan el día 30."
+    hint_general: "Hay fecha fija y ya no se puede dejar para más adelante."
+    explanation: "Apremiante: hay fecha fija y no se puede aplazar. «Aparente» diría que solo lo parece, e «inminente» dice que va a ocurrir pronto, pero no que haya que actuar ya."
+    options:
+      - position: 1
+        text: "apremiante"
+        is_correct: true
+      - position: 2
+        text: "aparente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aparente» dice que algo solo lo parece, y la fecha de entrega de las llaves es real."
+        hint_specific: "«Aparente» pone en duda lo que se ve. ¿La fecha del día 30 es real?"
+      - position: 3
+        text: "inminente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inminente» dice que algo va a pasar enseguida, pero no que tú tengas que moverte ya."
+        hint_specific: "«Inminente» describe lo que va a ocurrir solo. ¿La mudanza ocurre sola?"
+  - position: 8
+    sentence: "Si todo lo que escribes suena {{blank}}, tu equipo deja de distinguir lo que de verdad no puede esperar."
+    hint_general: "Cuando todo parece no poder esperar, nada se nota de verdad."
+    explanation: "Apremiante: si todo lo parece, nada destaca. «Aprensivo» describe a quien teme por su salud, y «urgentísimo» es coloquial y suena a exageración escrita en mayúsculas."
+    options:
+      - position: 1
+        text: "urgentísimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Urgentísimo» es coloquial y suena a exageración; la frase habla de cómo escribes en el trabajo todos los días."
+        hint_specific: "«Urgentísimo» sube el tono. ¿Ese registro encaja con un aviso de trabajo medido?"
+      - position: 2
+        text: "aprensivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aprensivo» describe a una persona con miedo, y aquí lo que se describe es cómo suenan tus mensajes."
+        hint_specific: "«Aprensivo» se dice de personas. ¿De qué habla la frase, de personas o de mensajes?"
+      - position: 3
+        text: "apremiante"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Sin mayúsculas"
+    body: "Otilia necesitaba una firma antes del viernes y sabía que las mayúsculas ya no funcionaban con nadie. Escribió: «El plazo es apremiante: sin tu firma el lunes, la entrega se va dos semanas». Firmaron el jueves por la mañana."
+    before_phrase: "Es urgentísimo, por favor, contéstame ya."
+    after_phrase: "El plazo es apremiante."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El día 30"
+    body: "Durante meses la mudanza fue una charla de sobremesa. Cuando llegó la fecha de las llaves, Casandra lo dijo sin alarmar a nadie: «Ahora sí es apremiante; este fin de semana embalamos». Su hermano dejó el móvil y sacó las cajas."
+    before_phrase: "Hay que hacerlo ya, ya, ya."
+    after_phrase: "Ahora sí es apremiante."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La oferta con fecha"
+    body: "Le dieron una semana para responder y Ivo tenía otra conversación abierta. Escribió a la segunda empresa: «Tengo una decisión apremiante; ¿podrías decirme el viernes si seguimos adelante?». Le respondieron el jueves y pudo elegir con calma."
+    before_phrase: "Es que me corre mucha prisa, la verdad."
+    after_phrase: "Tengo una decisión apremiante."
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

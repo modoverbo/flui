@@ -1,0 +1,232 @@
+schema_version: 1
+slug: "cordial"
+status: "draft"
+lemma: "cordial"
+part_of_speech: "adjetivo"
+syllables: ["cor", "dial"]
+stressed_syllable: 2
+ipa_latam: "[koɾˈdjal]"
+ipa_es: "[koɾˈðjal]"
+explanation: "Amable y cercano en el trato, sin perder la distancia justa con el otro."
+example_sentence: "Su correo decía que no, y aun así el tono era tan cordial que dieron ganas de seguir hablando."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es el punto medio que casi nadie nombra: ni frío ni empalagoso, y funciona hasta con desconocidos."
+when_not_to_use: "No la uses para describir cariño de verdad entre personas cercanas: ahí se queda corta y suena a distancia."
+collocations:
+  - "un tono cordial"
+  - "un saludo cordial"
+  - "una respuesta cordial"
+replaces:
+  - before: "Intenta que no suene seco"
+    after: "Dale un tono cordial"
+  - before: "Fue muy amable conmigo, la verdad"
+    after: "Fue muy cordial conmigo"
+  - before: "Escríbele bonito para que no se moleste"
+    after: "Escríbele en tono cordial"
+family: ["cordialidad", "cordialmente"]
+themes:
+  - slug: "correos-mensajes"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["amable"]
+  funcion: ["cuidar el tono"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "cordura"
+    difference: "«Cordura» es el buen juicio de quien no pierde la cabeza; la otra palabra describe cómo tratas a alguien."
+    memory_trick: "La cordura está en la cabeza; el trato amable está en el tono."
+  - confused_with: "efusivo"
+    difference: "«Efusivo» se desborda en muestras de afecto; la otra palabra se queda en un punto medio que sirve con cualquiera."
+    memory_trick: "Lo efusivo abraza; el punto medio saluda y sonríe."
+exercises:
+  - position: 1
+    sentence: "Delia escribió tres líneas para decir que no, y aun así el mensaje quedó {{blank}}."
+    hint_general: "Dice que no y el trato sigue siendo amable y cercano."
+    explanation: "Cordial: dice que no sin enfriar el trato. «Cardinal» significa principal o fundamental, y «empalagoso» es coloquial y describe un exceso de dulzura que estas tres líneas no tienen."
+    options:
+      - position: 1
+        text: "cardinal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cardinal» significa principal o fundamental, como un punto cardinal, y aquí se habla del trato del mensaje."
+        hint_specific: "«Cardinal» señala lo principal. ¿La frase valora la importancia del mensaje o su trato?"
+      - position: 2
+        text: "cordial"
+        is_correct: true
+      - position: 3
+        text: "empalagoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Empalagoso» es coloquial y describe un exceso de dulzura, y un mensaje de tres líneas no llega a eso."
+        hint_specific: "«Empalagoso» habla de pasarse de dulce. ¿Tres líneas dan para pasarse?"
+  - position: 2
+    sentence: "Un «gracias por avisar» al principio hace que el resto del correo suene más {{blank}} sin alargarlo ni una línea."
+    hint_general: "Cuatro palabras bastan para que el trato se note cercano."
+    explanation: "Cordial: cuatro palabras acercan el trato. «Corporal» se refiere al cuerpo, y «efusivo» sería desbordarse en muestras de afecto, algo que no cabe en un correo breve."
+    options:
+      - position: 1
+        text: "corporal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Corporal» se refiere al cuerpo, como el lenguaje corporal, y aquí se habla del tono de un texto."
+        hint_specific: "«Corporal» habla del cuerpo. ¿Este correo tiene cuerpo o tiene tono?"
+      - position: 2
+        text: "cordial"
+        is_correct: true
+      - position: 3
+        text: "efusivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Efusivo» se desborda en muestras de afecto, y la frase dice que el correo no se alarga ni una línea."
+        hint_specific: "«Efusivo» se desborda. ¿Cuánto crece el correo según la frase?"
+  - position: 3
+    sentence: "Ivo contestó a la queja con un tono {{blank}}: ni frío ni exagerado, solo humano."
+    hint_general: "El punto medio entre la frialdad y el exceso."
+    explanation: "Cordial: el punto medio entre frialdad y exceso. «Cardinal» significa principal, y «meloso» es coloquial y cae del lado del exceso que la frase descarta."
+    options:
+      - position: 1
+        text: "cordial"
+        is_correct: true
+      - position: 2
+        text: "meloso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Meloso» es coloquial y suena a dulzura fingida, justo el exceso que la frase descarta."
+        hint_specific: "«Meloso» exagera la dulzura. ¿Qué dos extremos descarta la frase?"
+      - position: 3
+        text: "cardinal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cardinal» significa principal o fundamental, y lo que se describe aquí es la manera de contestar."
+        hint_specific: "«Cardinal» marca lo principal. ¿La frase mide importancia o trato?"
+  - position: 4
+    sentence: "La respuesta era {{blank}} y clara: agradecía el interés y explicaba por qué no era el momento."
+    hint_general: "Trata bien a quien recibe la negativa, sin dejar de ser directa."
+    explanation: "Cordial: trata bien a quien recibe la negativa. «Corporal» se refiere al cuerpo, y «formal» solo diría que cumple las normas, sin decir nada del trato."
+    options:
+      - position: 1
+        text: "corporal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Corporal» se refiere al cuerpo, y aquí se describe una respuesta escrita."
+        hint_specific: "«Corporal» pertenece al cuerpo. ¿De qué se habla en la frase?"
+      - position: 2
+        text: "formal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Formal» dice que cumple las normas, pero una respuesta puede cumplirlas y seguir siendo fría."
+        hint_specific: "«Formal» habla de normas. ¿La frase valora las normas o el trato?"
+      - position: 3
+        text: "cordial"
+        is_correct: true
+  - position: 5
+    sentence: "Tras la discusión, Amalia mandó unas palabras {{blank}} que devolvieron la calma al grupo."
+    hint_general: "Palabras que tratan bien a todos y bajan la tensión."
+    explanation: "Cordiales: palabras que tratan bien y bajan la tensión. «Cardinales» significa principales, y «empalagosas» es coloquial y sugiere una dulzura falsa que no habría calmado a nadie."
+    options:
+      - position: 1
+        text: "cordiales"
+        is_correct: true
+      - position: 2
+        text: "cardinales"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cardinales» significa principales o fundamentales, y lo que calmó al grupo fue el trato, no la importancia."
+        hint_specific: "«Cardinales» marca lo principal. ¿Qué devolvió la calma, la importancia o el trato?"
+      - position: 3
+        text: "empalagosas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Empalagosas» es coloquial y sugiere una dulzura falsa, que después de una discusión habría sonado a burla."
+        hint_specific: "«Empalagosas» suena a dulzura fingida. ¿Eso calma a un grupo enfadado?"
+  - position: 6
+    sentence: "Nadie espera un abrazo en un correo de trabajo: basta con un saludo {{blank}} y una idea clara."
+    hint_general: "Un trato amable y breve es suficiente en el trabajo."
+    explanation: "Cordial: un trato amable y breve basta. «Colegial» se refiere a la escuela, y «efusivo» sería justo el abrazo que la frase dice que nadie espera."
+    options:
+      - position: 1
+        text: "efusivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Efusivo» se desborda en afecto, que es exactamente lo que la frase dice que nadie espera."
+        hint_specific: "«Efusivo» se desborda. ¿Qué dice la frase que nadie espera?"
+      - position: 2
+        text: "cordial"
+        is_correct: true
+      - position: 3
+        text: "colegial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Colegial» se refiere a la escuela y a quien estudia en ella, y aquí se habla de un correo de trabajo."
+        hint_specific: "«Colegial» pertenece al mundo escolar. ¿Dónde ocurre esta escena?"
+  - position: 7
+    sentence: "Si tienes que dar una respuesta dura, haz que el principio sea {{blank}} y el final, muy concreto."
+    hint_general: "Empieza tratando bien al otro y termina diciendo algo preciso."
+    explanation: "Cordial: empiezas tratando bien al otro. «Cardinal» significa principal, y «amistoso» promete una amistad que no siempre existe entre quien escribe y quien lee."
+    options:
+      - position: 1
+        text: "cardinal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cardinal» significa principal o fundamental, y el consejo habla de cómo tratas a quien lee."
+        hint_specific: "«Cardinal» marca lo principal. ¿El consejo ordena por importancia o por trato?"
+      - position: 2
+        text: "amistoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amistoso» supone una amistad, y muchas respuestas duras se escriben a personas con las que no la tienes."
+        hint_specific: "«Amistoso» da por hecha una amistad. ¿La tienes siempre con quien te lee?"
+      - position: 3
+        text: "cordial"
+        is_correct: true
+  - position: 8
+    sentence: "Tadeo no era el más rápido del equipo, aunque sus mensajes eran tan {{blank}} que todos le contestaban primero."
+    hint_general: "Trata tan bien a la gente que da gusto responderle."
+    explanation: "Cordiales: trata tan bien que da gusto responderle. «Corporales» se refiere al cuerpo, y «simpaticones» es coloquial y suena a caer bien a la fuerza."
+    options:
+      - position: 1
+        text: "corporales"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Corporales» se refiere al cuerpo, y lo que se describe son mensajes escritos."
+        hint_specific: "«Corporales» pertenece al cuerpo. ¿Qué se describe en la frase?"
+      - position: 2
+        text: "simpaticones"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Simpaticones» es coloquial y suena a caer bien a la fuerza, mientras que aquí el trato es natural."
+        hint_specific: "«Simpaticones» suena a esfuerzo por agradar. ¿Tadeo se esfuerza o le sale así?"
+      - position: 3
+        text: "cordiales"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Un no que no enfría"
+    body: "Ámbar tenía que rechazar una colaboración y no quería sonar a puerta cerrada. Escribió: «Gracias por pensar en nosotros. Este trimestre no podemos, y me gustaría que lo habláramos en enero». Le respondieron: «Qué correo tan cordial; en enero te escribo»."
+    before_phrase: "Intenta que no suene seco, por favor."
+    after_phrase: "Qué correo tan cordial."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El vecino nuevo"
+    body: "Nadia se cruzó tres veces con el vecino del cuarto sin decirle nada. La cuarta le preguntó si ya había encontrado panadería. Él contó después que ese saludo cordial le quitó la sensación de estar en una ciudad ajena."
+    before_phrase: "Fue amable conmigo, la verdad."
+    after_phrase: "Ese saludo cordial me cambió el día."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Los cinco minutos del final"
+    body: "La entrevista fue exigente y a Ivo le quedaba una pregunta. La hizo sin miedo y agradeció el tiempo. «Nos quedamos con lo cordial que fuiste incluso cuando apretamos», le dijeron al llamarle dos días después."
+    before_phrase: "Estuve simpático, creo."
+    after_phrase: "Fuiste cordial incluso cuando apretamos."
+provenance:
+  generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
+  gate: null
+  checked_on: "2026-09-13"

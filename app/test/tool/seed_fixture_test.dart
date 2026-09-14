@@ -73,7 +73,14 @@ cross join (values
     test('keeps the content invariants of the seed', () {
       expect(seedWords, hasLength(8));
       for (final word in seedWords) {
-        expect(word.exercises, hasLength(3), reason: word.lemma);
+        // The authoring standard is 8 exercises per word (docs/learning-method
+        // requires a fresh sentence for every encounter); older words may still
+        // carry fewer while the library is being upgraded.
+        expect(
+          word.exercises.length,
+          greaterThanOrEqualTo(3),
+          reason: word.lemma,
+        );
         expect(word.readings, hasLength(3), reason: word.lemma);
         expect(word.confusions, isNotEmpty, reason: word.lemma);
         for (final exercise in word.exercises) {
