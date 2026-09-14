@@ -23,6 +23,7 @@ const wordKeyOrder = <String>[
   'collocations',
   'replaces',
   'family',
+  'semantic_set_id',
   'themes',
   'tags',
   'confusions',

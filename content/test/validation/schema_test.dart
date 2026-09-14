@@ -59,6 +59,36 @@ void main() {
     expect(validator.validateRaw('perspicaz', map), isNotEmpty);
   });
 
+  test('accepts a kebab-case semantic_set_id', () {
+    expect(
+      validator.validateRaw(
+        'perspicaz',
+        validWordMap()..['semantic_set_id'] = 'fuerza-de-la-afirmacion',
+      ),
+      isEmpty,
+    );
+  });
+
+  test('accepts a null semantic_set_id', () {
+    expect(
+      validator.validateRaw(
+        'perspicaz',
+        validWordMap()..['semantic_set_id'] = null,
+      ),
+      isEmpty,
+    );
+  });
+
+  test('rejects a semantic_set_id that is not kebab-case', () {
+    expect(
+      validator.validateRaw(
+        'perspicaz',
+        validWordMap()..['semantic_set_id'] = 'Fuerza De La Afirmación',
+      ),
+      isNotEmpty,
+    );
+  });
+
   test('rejects a slug that is not kebab-case', () {
     expect(
       validator.validateRaw(

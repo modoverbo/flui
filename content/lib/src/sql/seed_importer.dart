@@ -66,6 +66,7 @@ List<Map<String, Object?>> importSeedWords(String sql) {
           {'before': pair['before'], 'after': pair['after']},
       ],
       'family': (row['family']! as List<Object?>).cast<String>(),
+      'semantic_set_id': row['semantic_set_id'],
       'themes': <Map<String, Object?>>[],
       'tags': <String, Object?>{
         'comodin': <String>[],

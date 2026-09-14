@@ -33,6 +33,7 @@ final class SchemaConformanceValidator extends RawWordValidator {
   static const optionalKeys = <String>{
     'id',
     'sort_order',
+    'semantic_set_id',
     'ipa_latam',
     'ipa_es',
     'usage_tip',
@@ -184,6 +185,15 @@ final class SchemaConformanceValidator extends RawWordValidator {
     expectString('usage_tip', raw['usage_tip'], nullable: true);
     expectString('when_not_to_use', raw['when_not_to_use'], nullable: true);
     if (raw.containsKey('id')) expectString('id', raw['id'], nullable: true);
+    if (raw['semantic_set_id'] != null) {
+      final value = raw['semantic_set_id'];
+      if (value is! String || !_slugPattern.hasMatch(value)) {
+        fail(
+          'semantic_set_id',
+          'semantic_set_id must be kebab-case ([a-z0-9] and single hyphens)',
+        );
+      }
+    }
     if (raw['sort_order'] != null) {
       expectInt('sort_order', raw['sort_order'], min: 1);
     }

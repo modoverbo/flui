@@ -45,7 +45,7 @@ on conflict (id) do update
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000001',
   'perspicaz',
@@ -64,6 +64,7 @@ values (
   array['observación perspicaz', 'pregunta perspicaz', 'mirada perspicaz', 'ser perspicaz para los negocios']::text[],
   '[{"before": "Es muy listo, se da cuenta de todo", "after": "Es muy perspicaz"}, {"before": "¡Qué buena pregunta, qué lista!", "after": "Qué pregunta tan perspicaz"}, {"before": "Tiene buen ojo para los problemas", "after": "Es perspicaz para detectar problemas"}]'::jsonb,
   array['perspicacia', 'perspicazmente']::text[],
+  null,
   1,
   true
 );
@@ -155,7 +156,7 @@ values
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000002',
   'plantear',
@@ -174,6 +175,7 @@ values (
   array['plantear un tema', 'plantear una duda', 'plantear una propuesta', 'plantear un problema']::text[],
   '[{"before": "Quiero sacar un tema", "after": "Quiero plantear un tema"}, {"before": "Le dije lo de cambiar el horario", "after": "Le planteé cambiar el horario"}, {"before": "Esto trae un problema", "after": "Esto plantea un problema"}]'::jsonb,
   array['planteamiento', 'replantear']::text[],
+  null,
   2,
   true
 );
@@ -265,7 +267,7 @@ values
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000003',
   'matizar',
@@ -284,6 +286,7 @@ values (
   array['matizar una afirmación', 'matizar lo dicho', 'matizar una crítica', 'conviene matizar']::text[],
   '[{"before": "Sí, pero no es tan así", "after": "Sí, aunque conviene matizarlo"}, {"before": "Bueno, depende, o sea, no siempre", "after": "Lo matizo: no pasa siempre"}, {"before": "Aclarar un poquito lo que dije", "after": "Matizar lo que dije"}]'::jsonb,
   array['matiz', 'matización']::text[],
+  null,
   3,
   true
 );
@@ -375,7 +378,7 @@ values
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000004',
   'sopesar',
@@ -394,6 +397,7 @@ values (
   array['sopesar las opciones', 'sopesar los pros y los contras', 'sopesar una decisión', 'sopesar los riesgos']::text[],
   '[{"before": "Lo voy a pensar bien", "after": "Voy a sopesarlo"}, {"before": "Ver lo bueno y lo malo", "after": "Sopesar los pros y los contras"}, {"before": "Pensar qué me conviene más", "after": "Sopesar las opciones"}]'::jsonb,
   array['peso', 'pesar']::text[],
+  null,
   4,
   true
 );
@@ -485,7 +489,7 @@ values
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000005',
   'pertinente',
@@ -504,6 +508,7 @@ values (
   array['pregunta pertinente', 'comentario pertinente', 'datos pertinentes', 'en el momento pertinente']::text[],
   '[{"before": "Eso viene al caso", "after": "Eso es pertinente"}, {"before": "Esa pregunta tiene mucho que ver con esto", "after": "Es una pregunta pertinente"}, {"before": "No sé si es el momento de decirlo", "after": "No sé si es pertinente decirlo ahora"}]'::jsonb,
   array['pertinencia', 'pertinentemente']::text[],
+  null,
   5,
   true
 );
@@ -595,7 +600,7 @@ values
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000006',
   'concretar',
@@ -614,6 +619,7 @@ values (
   array['concretar una fecha', 'concretar un plan', 'concretar una propuesta', 'concretar los detalles']::text[],
   '[{"before": "Hay que aterrizar la idea", "after": "Hay que concretar la idea"}, {"before": "Quedamos en vernos un día de estos", "after": "Concretemos un día para vernos"}, {"before": "¿Qué quieres decir exactamente?", "after": "¿Puedes concretar?"}]'::jsonb,
   array['concreto', 'concreción', 'concretamente']::text[],
+  null,
   6,
   true
 );
@@ -705,7 +711,7 @@ values
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000007',
   'contundente',
@@ -724,6 +730,7 @@ values (
   array['argumento contundente', 'respuesta contundente', 'prueba contundente', 'resultados contundentes']::text[],
   '[{"before": "Un argumento muy bueno", "after": "Un argumento contundente"}, {"before": "Le respondió clarísimo, sin dar vueltas", "after": "Le dio una respuesta contundente"}, {"before": "Los resultados son súper claros", "after": "Los resultados son contundentes"}]'::jsonb,
   array['contundencia', 'contundentemente']::text[],
+  null,
   7,
   true
 );
@@ -815,7 +822,7 @@ values
 insert into public.words
   (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
    example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
-   sort_order, published)
+   semantic_set_id, sort_order, published)
 values (
   'a0000000-0000-4000-8000-000000000008',
   'zanjar',
@@ -834,6 +841,7 @@ values (
   array['zanjar un tema', 'zanjar una discusión', 'zanjar un conflicto', 'zanjar la cuestión']::text[],
   '[{"before": "Cerremos el tema", "after": "Zanjemos el tema"}, {"before": "Ya, se acabó la discusión", "after": "Con esto zanjamos la discusión"}, {"before": "Dejarlo resuelto de una vez", "after": "Zanjarlo de una vez"}]'::jsonb,
   array['zanja']::text[],
+  null,
   8,
   true
 );

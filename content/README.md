@@ -95,6 +95,37 @@ taxonomy. Residual noise survives at the edges — trade and medical nouns such
 as `albañil` still clear the abstract gate. The column is a ranked suggestion
 an author checks, never an authority.
 
+## Who owns the theme rows
+
+`content:emit` writes, into `supabase/seed.sql`:
+
+- the `words` rows, including **`semantic_set_id`**;
+- the **`word_themes`** links, resolved by slug (`join public.themes t on
+  t.slug = v.theme_slug`), so the emitter never repeats the theme uuids.
+
+It does **not** write the 16 `themes` rows. Those live in
+`supabase/seed_themes.sql`, which another change owns.
+
+**This split does not work under the current `sql_paths` order.**
+`supabase/config.toml` runs `./seed.sql` before `./seed_themes.sql`, so at the
+moment the emitted `word_themes` block runs, `public.themes` is still empty and
+its join matches nothing — the links are silently dropped. Two ways out, both
+needing an edit to files this package does not own:
+
+1. **Reorder** — `sql_paths = ["./seed_themes.sql", "./seed.sql"]`, and delete
+   sections 2 and 3 of `seed_themes.sql` (the `semantic_set_id` update and the
+   `word_themes` insert), which the emitter now owns. Smallest change.
+2. **Fold in** — pass the taxonomy to the emitter (`emitWords(words,
+   taxonomy: …)`, already implemented and tested) so `seed.sql` carries the
+   theme rows too, then delete `seed_themes.sql` and restore
+   `sql_paths = ["./seed.sql"]`. This is what that file's own header proposes.
+
+Until one of them happens, `seed_themes.sql` keeps supplying both the links and
+`semantic_set_id` for the eight starter words, and it runs **after** the
+generated seed — so its hard-coded relevances would overwrite anything an
+author changes in YAML. That is the reason to do it soon, not the reason to
+guess here.
+
 ## The seed round trip
 
 `content:emit` reproduces `supabase/seed.sql` **byte for byte** from the word

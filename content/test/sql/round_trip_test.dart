@@ -10,6 +10,7 @@ import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
 
 import '../support/fixtures.dart';
+import '../support/validation_harness.dart';
 
 final String seedPath = p.normalize(
   p.join(Directory.current.path, '..', 'supabase', 'seed.sql'),
@@ -125,6 +126,74 @@ void main() {
       expect(rows['exercise_options'], hasLength(24));
       expect(rows['readings'], hasLength(3));
       expect(rows['words']!.first['explanation'], word.explanation);
+    });
+
+    test('carries semantic_set_id as a words column', () {
+      final withSet = Word.fromMap(
+        validWordMap()..['semantic_set_id'] = 'fuerza-de-la-afirmacion',
+      );
+      final without = Word.fromMap(validWordMap());
+
+      expect(emitWords([withSet]), contains('semantic_set_id'));
+      expect(emitWords([withSet]), contains("'fuerza-de-la-afirmacion'"));
+      // The column is always present; a word in no set carries null.
+      expect(emitWords([without]), contains('semantic_set_id'));
+      final row = parseSeedRows(emitWords([without]))['words']!.single;
+      expect(row.containsKey('semantic_set_id'), isTrue);
+      expect(row['semantic_set_id'], isNull);
+    });
+
+    test('emits word_themes links resolved by slug', () {
+      final word = Word.fromMap(
+        validWordMap()
+          ..['themes'] = [
+            {'slug': 'reuniones', 'relevance': 3},
+            {'slug': 'entrevistas', 'relevance': 1},
+          ],
+      );
+      final sql = emitWords([word]);
+
+      expect(sql, contains('insert into public.word_themes'));
+      expect(sql, contains("('perspicaz', 'reuniones', 3)"));
+      expect(sql, contains("('perspicaz', 'entrevistas', 1)"));
+      // Resolved by slug, so the emitter never duplicates the theme uuids.
+      expect(sql, contains('join public.themes t on t.slug = v.theme_slug'));
+      expect(sql, isNot(contains('c0000000-')));
+    });
+
+    test('emits no word_themes block when no word carries a theme', () {
+      final sql = emitWords([Word.fromMap(validWordMap()..['themes'] = [])]);
+
+      expect(sql, isNot(contains('word_themes')));
+    });
+
+    test('the word_themes block never confuses the app seed parser', () {
+      final word = Word.fromMap(
+        validWordMap()
+          ..['themes'] = [
+            {'slug': 'reuniones', 'relevance': 3},
+          ],
+      );
+      final rows = parseSeedRows(emitWords([word]));
+
+      expect(rows['words'], hasLength(1));
+      expect(rows['exercises'], hasLength(8));
+      expect(rows['exercise_options'], hasLength(24));
+      expect(rows['readings'], hasLength(3));
+    });
+
+    test('emits the theme catalogue only when asked', () {
+      final word = Word.fromMap(validWordMap());
+
+      expect(emitWords([word]), isNot(contains('insert into public.themes')));
+      expect(
+        emitWords([word], taxonomy: testTaxonomy),
+        contains('insert into public.themes'),
+      );
+      expect(
+        emitWords([word], taxonomy: testTaxonomy),
+        contains("'reuniones'"),
+      );
     });
 
     test('escapes apostrophes in literals', () {

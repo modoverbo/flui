@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:content/src/model/theme.dart';
 import 'package:content/src/model/word.dart';
 import 'package:crypto/crypto.dart';
 
@@ -57,10 +58,17 @@ String _replacesJson(List<Replacement> replaces) {
 
 /// Renders the word section of `supabase/seed.sql`.
 ///
-/// Byte-for-byte compatible with the checked-in seed, so
-/// `app/tool/seed/seed_parser.dart` and the generated fixture never move.
-String emitWords(List<Word> words) {
+/// `app/tool/seed/seed_parser.dart` reads only `words`, `word_confusions`,
+/// `exercises`, `exercise_options` and `readings`, so the `word_themes` block
+/// is invisible to the generated fixture.
+///
+/// [taxonomy] is optional and off by default: the 16 theme rows are currently
+/// owned by `supabase/seed_themes.sql`, and emitting them here as well would
+/// insert the same rows twice. Pass it only once that file has been reduced to
+/// nothing (see README, "Who owns the theme rows").
+String emitWords(List<Word> words, {ThemeTaxonomy? taxonomy}) {
   final buffer = StringBuffer();
+  if (taxonomy != null) buffer.write(_emitThemes(taxonomy));
   for (var index = 0; index < words.length; index++) {
     final word = words[index];
     final wordId = word.id ?? deterministicWordId(word.slug);
@@ -78,7 +86,7 @@ String emitWords(List<Word> words) {
       ..writeln(
         '   example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,',
       )
-      ..writeln('   sort_order, published)')
+      ..writeln('   semantic_set_id, sort_order, published)')
       ..writeln('values (')
       ..writeln('  ${sqlLiteral(wordId)},')
       ..writeln('  ${sqlLiteral(word.slug)},')
@@ -97,6 +105,7 @@ String emitWords(List<Word> words) {
       ..writeln('  ${_sqlArray(word.collocations)},')
       ..writeln('  ${_replacesJson(word.replaces)},')
       ..writeln('  ${_sqlArray(word.family)},')
+      ..writeln('  ${sqlLiteral(word.semanticSetId)},')
       ..writeln('  $sortOrder,')
       ..writeln('  true')
       ..writeln(');')
@@ -183,12 +192,93 @@ String emitWords(List<Word> words) {
         );
     }
   }
+  buffer.write(_emitWordThemes(words));
+  return buffer.toString();
+}
+
+/// The taxonomy rows, when the emitter owns them.
+String _emitThemes(ThemeTaxonomy taxonomy) {
+  final themes = [...taxonomy.themes]
+    ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
+  final buffer = StringBuffer()
+    ..writeln(_rule)
+    ..writeln('-- Themes (content/themes.yml)')
+    ..writeln(_rule)
+    ..writeln()
+    ..writeln('insert into public.themes')
+    ..writeln(
+      '  (slug, family, name, tagline, jtbd, content_type, sort_order, published)',
+    )
+    ..writeln('values');
+  for (var i = 0; i < themes.length; i++) {
+    final theme = themes[i];
+    final end = i == themes.length - 1 ? '' : ',';
+    buffer
+      ..writeln(
+        '  (${sqlLiteral(theme.slug)}, ${sqlLiteral(theme.family)}, ${sqlLiteral(theme.name)},',
+      )
+      ..writeln('   ${sqlLiteral(theme.tagline)},')
+      ..writeln('   ${sqlLiteral(theme.jtbd)},')
+      ..writeln(
+        '   ${sqlLiteral(theme.contentType)}, ${theme.sortOrder}, true)$end',
+      );
+  }
+  buffer
+    ..writeln('on conflict (slug) do update')
+    ..writeln('  set family = excluded.family,')
+    ..writeln('      name = excluded.name,')
+    ..writeln('      tagline = excluded.tagline,')
+    ..writeln('      jtbd = excluded.jtbd,')
+    ..writeln('      content_type = excluded.content_type,')
+    ..writeln('      sort_order = excluded.sort_order,')
+    ..writeln('      published = excluded.published;')
+    ..writeln();
+  return buffer.toString();
+}
+
+/// The word -> theme links, resolved by slug so the emitter never repeats the
+/// theme uuids that `supabase/seed_themes.sql` assigns.
+String _emitWordThemes(List<Word> words) {
+  final links = <(String, String, int)>[
+    for (final word in words)
+      for (final theme in word.themes) (word.slug, theme.slug, theme.relevance),
+  ];
+  if (links.isEmpty) return '';
+
+  final buffer = StringBuffer()
+    ..writeln()
+    ..writeln(_rule)
+    ..writeln('-- Word themes (content/words/<slug>.yml)')
+    ..writeln(_rule)
+    ..writeln()
+    ..writeln(
+      'insert into public.word_themes (word_id, theme_id, relevance, sort_order)',
+    )
+    ..writeln('select w.id, t.id, v.relevance, w.sort_order')
+    ..writeln('from (values');
+  for (var i = 0; i < links.length; i++) {
+    final (slug, theme, relevance) = links[i];
+    final end = i == links.length - 1 ? '' : ',';
+    buffer.writeln(
+      '  (${sqlLiteral(slug)}, ${sqlLiteral(theme)}, $relevance)$end',
+    );
+  }
+  buffer
+    ..writeln(') as v (word_slug, theme_slug, relevance)')
+    ..writeln('join public.words w on w.slug = v.word_slug')
+    ..writeln('join public.themes t on t.slug = v.theme_slug')
+    ..writeln('on conflict (word_id, theme_id) do update')
+    ..writeln('  set relevance = excluded.relevance,')
+    ..writeln('      sort_order = excluded.sort_order;');
   return buffer.toString();
 }
 
 /// Full seed file: the preserved preamble plus the emitted word section.
-String emitSeed({required String preamble, required List<Word> words}) =>
-    '$preamble${emitWords(words)}';
+String emitSeed({
+  required String preamble,
+  required List<Word> words,
+  ThemeTaxonomy? taxonomy,
+}) => '$preamble${emitWords(words, taxonomy: taxonomy)}';
 
 /// Words that reach the database, in a stable order: `sort_order`, then slug.
 List<Word> approvedWordsInOrder(List<Word> words) {

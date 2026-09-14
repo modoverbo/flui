@@ -283,9 +283,20 @@ bool areConfusable(Word a, Word b) {
       b.confusions.any((c) => foldForComparison(c.confusedWith) == aLemma);
 }
 
-/// Two words belong to the same semantic set when they replace the same
-/// comodín or serve the same communicative function.
+/// Two words belong to the same semantic set when the author declared the
+/// same `semantic_set_id`, or — while neither declares one — when they replace
+/// the same comodín or serve the same communicative function.
+///
+/// The declared id is the authority: two words that carry *different* ids are
+/// deliberately not the same kind of word, whatever their tags say.
 bool shareSemanticSet(Word a, Word b) {
+  final aSet = a.semanticSetId;
+  final bSet = b.semanticSetId;
+  if (aSet != null && bSet != null) return aSet == bSet;
+  return _shareTagSet(a, b);
+}
+
+bool _shareTagSet(Word a, Word b) {
   final aSets = <String>{
     for (final tag in a.tags.comodin) 'comodin:${foldForComparison(tag)}',
     for (final tag in a.tags.funcion) 'funcion:${foldForComparison(tag)}',

@@ -83,13 +83,59 @@ Full machine-readable shape: `content/schema/word.schema.json`.
 | `collocations` | what it actually combines with |
 | `replaces` | **≥ 2** `{before, after}` pairs. `after` must use the word, `before` must not. This is the heart of the product |
 | `family` | derivations (`perspicacia`, `perspicazmente`) |
-| `themes` | 1–3 entries from `content/themes.yml`, each with `relevance` 1–3 |
+| `themes` | 1–3 entries from `content/themes.yml` — see §2b |
+| `semantic_set_id` | kebab-case, or omitted — see §2c |
 | `tags` | `comodin` (what it displaces) · `funcion` · `canal` (`hablado`/`escrito`/`ambos`) · `formalidad` · `variedad` |
 | `confusions` | ≥ 1 `{confused_with, difference, memory_trick}`; at least one needs the trick. Never point at the word itself |
 | `exercises` | **exactly 8** — see §3 |
 | `readings` | **exactly 3** — see §4 |
 | `metrics` | **never write this by hand.** `content:corpus` computes it |
 | `provenance` | `generator`, `gate`, `checked_on` |
+
+### 2b. `themes`
+
+One to three entries, each `{slug, relevance}`, taken from
+`content/themes.yml`. The slug must exist there; nothing else is accepted.
+
+| `relevance` | Means |
+|---|---|
+| **3** | The word **is** the theme. Someone who picked this theme came for exactly this word. At most one or two per word |
+| **2** | Clearly useful inside the theme, but not what the theme is about |
+| **1** | Adjacent. It would not be wrong to meet this word here, but nobody picked the theme for it |
+
+A theme decides which *new* word the planner may introduce; it never touches
+the review queue. So a word with three honest themes is reachable from three
+entry points, and a word with three optimistic 3s is noise in all of them.
+Rank them: put the 3 first.
+
+`dart run content:emit` turns these entries into the `word_themes` rows, so the
+YAML file is the only place they are written.
+
+### 2c. `semantic_set_id`
+
+Set it **only** for a genuine synonym, antonym or category-mate group — words
+that are the same kind of thing and would interfere if taught together.
+Tinkham (1993, 1997) and Nation (2000) found exactly that cluster slows
+learning down; two words sharing an id are never introduced within 7 days of
+each other.
+
+The eight starter words contain exactly one such group:
+
+```yaml
+semantic_set_id: "fuerza-de-la-afirmacion"   # contundente <-> matizar
+```
+
+`contundente` reinforces an assertion, `matizar` softens it: two ends of one
+axis, so they are the same kind of word.
+
+**Leave it out otherwise.** Sharing a theme is *not* a semantic set —
+a thematic cluster is the arrangement the same research found harmless, and
+`plantear`, `concretar` and `pertinente` all live in `reuniones` without
+interfering. Setting the id because two words feel related costs you a 7-day
+block between them for nothing.
+
+An id is kebab-case and names the axis, not the words:
+`fuerza-de-la-afirmacion`, not `contundente-matizar`.
 
 ---
 

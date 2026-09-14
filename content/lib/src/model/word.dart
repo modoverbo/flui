@@ -360,6 +360,7 @@ final class Word {
     required this.confusions,
     required this.exercises,
     required this.readings,
+    this.semanticSetId,
     this.ipaLatam,
     this.ipaEs,
     this.usageTip,
@@ -396,6 +397,7 @@ final class Word {
       for (final r in _mapList(map, 'replaces')) Replacement.fromMap(r),
     ],
     family: _stringList(map, 'family'),
+    semanticSetId: _stringOrNull(map, 'semantic_set_id'),
     themes: [for (final t in _mapList(map, 'themes')) ThemeRef.fromMap(t)],
     tags: Tags.fromMap((map['tags'] as Map<String, Object?>?) ?? const {}),
     confusions: [
@@ -433,6 +435,13 @@ final class Word {
   final List<String> collocations;
   final List<Replacement> replaces;
   final List<String> family;
+
+  /// Synonym / antonym / category-mate group, or null when the word is in
+  /// none. Two words that share one are never introduced within 7 days of
+  /// each other (learning-method §7): Tinkham (1993) and Nation (2000) found
+  /// that kind of cluster interferes, while a shared theme does not.
+  final String? semanticSetId;
+
   final List<ThemeRef> themes;
   final Tags tags;
   final List<Confusion> confusions;

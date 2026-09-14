@@ -66,6 +66,18 @@ void main() {
       expect(word.provenance, isNull);
     });
 
+    test('reads semantic_set_id when present', () {
+      final word = Word.fromMap(
+        validWordMap()..['semantic_set_id'] = 'fuerza-de-la-afirmacion',
+      );
+
+      expect(word.semanticSetId, 'fuerza-de-la-afirmacion');
+    });
+
+    test('leaves semantic_set_id null when the word is in no set', () {
+      expect(Word.fromMap(validWordMap()).semanticSetId, isNull);
+    });
+
     test('keeps persistence identity when present', () {
       final word = Word.fromMap(validWordMap());
 

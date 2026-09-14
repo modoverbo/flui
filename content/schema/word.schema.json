@@ -77,6 +77,11 @@
       }
     },
     "family": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "semantic_set_id": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Synonym / antonym / category-mate group. Two words sharing one are never introduced within 7 days of each other. Null unless the words are genuinely the same kind of thing; a shared theme is not a semantic set."
+    },
     "themes": {
       "type": "array",
       "minItems": 1,

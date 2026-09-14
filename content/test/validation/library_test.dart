@@ -247,6 +247,77 @@ void main() {
     });
   });
 
+  group('shareSemanticSet', () {
+    Word withSet(
+      String slug,
+      String? setId, {
+      List<String> comodin = const [],
+    }) {
+      final map = validWordMap()
+        ..['slug'] = slug
+        ..['lemma'] = slug
+        ..['syllables'] = [slug]
+        ..['stressed_syllable'] = 1
+        ..['semantic_set_id'] = setId;
+      final tags = Map<String, Object?>.from(
+        map['tags']! as Map<String, Object?>,
+      );
+      tags['comodin'] = comodin;
+      tags['funcion'] = <String>[];
+      map['tags'] = tags;
+      return Word.fromMap(map);
+    }
+
+    test('two words with the same explicit id share a set', () {
+      expect(
+        shareSemanticSet(
+          withSet('contundente', 'fuerza-de-la-afirmacion'),
+          withSet('matizar', 'fuerza-de-la-afirmacion'),
+        ),
+        isTrue,
+      );
+    });
+
+    test('the explicit id wins over the tag heuristic', () {
+      // Same comodín tag, different declared sets: the author has said these
+      // are not the same kind of word, and that is the authority.
+      expect(
+        shareSemanticSet(
+          withSet('uno', 'fuerza-de-la-afirmacion', comodin: ['bueno']),
+          withSet('dos', 'grado-de-certeza', comodin: ['bueno']),
+        ),
+        isFalse,
+      );
+    });
+
+    test('falls back to the tags when a word declares no set', () {
+      expect(
+        shareSemanticSet(
+          withSet('uno', null, comodin: ['bueno']),
+          withSet('dos', null, comodin: ['bueno']),
+        ),
+        isTrue,
+      );
+      expect(
+        shareSemanticSet(
+          withSet('uno', 'fuerza-de-la-afirmacion', comodin: ['bueno']),
+          withSet('dos', null, comodin: ['bueno']),
+        ),
+        isTrue,
+      );
+    });
+
+    test('unrelated words share nothing', () {
+      expect(
+        shareSemanticSet(
+          withSet('uno', 'fuerza-de-la-afirmacion', comodin: ['bueno']),
+          withSet('dos', null, comodin: ['listo']),
+        ),
+        isFalse,
+      );
+    });
+  });
+
   group('SchedulingSimulationValidator', () {
     const validator = SchedulingSimulationValidator();
 
