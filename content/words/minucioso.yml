@@ -68,7 +68,7 @@ exercises:
   - position: 2
     sentence: "Gloria es {{blank}} con los números y aun así entrega antes que nadie."
     hint_general: "Revisa cada número uno por uno y encima llega pronto."
-    explanation: "Minuciosa: revisa cada número uno por uno. «Maliciosa» describe a quien piensa mal de los demás, y «escrupulosa» suena a texto formal y algo severo."
+    explanation: "Minuciosa: revisa cada número uno por uno. «Maliciosa» describe a quien piensa mal de los demás, y «ambiciosa» a quien quiere llegar lejos."
     options:
       - position: 1
         text: "maliciosa"
@@ -77,11 +77,11 @@ exercises:
         why_not: "«Maliciosa» describe a quien piensa mal de los demás, y aquí se habla de cómo revisa unos números."
         hint_specific: "«Maliciosa» sospecha de la gente. ¿De quién sospecharía Gloria?"
       - position: 2
-        text: "escrupulosa"
+        text: "ambiciosa"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Escrupulosa» apunta a lo mismo, pero suena formal y algo severa para elogiar a una compañera."
-        hint_specific: "«Escrupulosa» suena a norma estricta. ¿Pega en un elogio de oficina?"
+        distractor_type: "paronym"
+        why_not: "«Ambiciosa» es quien quiere llegar lejos, y eso no explica el «aun así»: la ambición nunca ha retrasado una entrega."
+        hint_specific: "El «aun así» anuncia algo que suele restar velocidad. ¿La ambición resta velocidad?"
       - position: 3
         text: "minuciosa"
         is_correct: true
@@ -126,9 +126,9 @@ exercises:
         why_not: "«Maniática» es coloquial y acusa de obsesión; aquí se reconoce un trabajo que salvó la entrega."
         hint_specific: "«Maniática» suena a reproche. ¿La frase critica a Clara o la reconoce?"
   - position: 5
-    sentence: "A Bruno le llaman lento; en realidad es {{blank}} y por eso nunca hay que repetir su parte."
-    hint_general: "No va despacio por gusto: revisa todo y eso evita repeticiones."
-    explanation: "Minucioso: revisa todo y por eso no hay que repetir nada. «Malicioso» describe a quien piensa mal, y «ordenado» habla de colocar bien, no de revisar."
+    sentence: "A Bruno le llaman lento, pero es {{blank}}: comprueba cada dato dos veces y nunca hay que repetir su parte."
+    hint_general: "No va despacio por gusto: comprueba todo y eso evita repeticiones."
+    explanation: "Minucioso: comprueba cada dato dos veces. «Malicioso» describe a quien piensa mal, y «ordenado» a quien coloca bien, que no es lo mismo que comprobar."
     options:
       - position: 1
         text: "malicioso"
@@ -143,10 +143,10 @@ exercises:
         text: "ordenado"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Ordenado» es colocar cada cosa en su sitio, y se puede tener todo ordenado y aun así no revisarlo."
-        hint_specific: "«Ordenado» coloca. ¿Colocar bien es lo mismo que comprobar?"
+        why_not: "«Ordenado» es colocar cada cosa en su sitio, y lo que hace Bruno es comprobar cada dato dos veces."
+        hint_specific: "«Ordenado» coloca. ¿Colocar bien es lo mismo que comprobar dos veces?"
   - position: 6
-    sentence: "Nadie pidió un informe tan {{blank}}, pero Natalia lo entregó igual y se lo agradecieron en enero."
+    sentence: "Nadie pidió un informe tan {{blank}}, pero Natalia revisó cifra por cifra y en enero se lo agradecieron."
     hint_general: "Entregó algo más revisado de lo que le habían pedido."
     explanation: "Minucioso: más revisado de lo que le pedían. «Minúsculo» significa muy pequeño, y «amplio» habla de cuánto abarca, no de cuánto se revisa."
     options:
@@ -154,14 +154,14 @@ exercises:
         text: "minúsculo"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Minúsculo» significa muy pequeño de tamaño, y la frase cuenta que entregó más de lo pedido."
+        why_not: "«Minúsculo» significa muy pequeño de tamaño, y la frase cuenta que revisó más de lo pedido."
         hint_specific: "«Minúsculo» mide tamaño. ¿Entregó de más o de menos?"
       - position: 2
         text: "amplio"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Amplio» habla de cuánto terreno abarca algo, y aquí lo que sorprende es el cuidado con cada punto."
-        hint_specific: "«Amplio» mide extensión. ¿Sorprende lo ancho o lo cuidado?"
+        why_not: "«Amplio» habla de cuánto terreno abarca algo, y lo que hizo Natalia fue revisar cifra por cifra."
+        hint_specific: "«Amplio» mide extensión. ¿Se elogia aquí lo ancho o lo comprobado?"
       - position: 3
         text: "minucioso"
         is_correct: true

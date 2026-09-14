@@ -66,22 +66,22 @@ exercises:
         why_not: "«Disfrazar» es presentar algo como si fuera otra cosa, y aquí el tema ni siquiera llega a tratarse."
         hint_specific: "«Disfrazar» cambia la apariencia de algo. ¿El tema se trata de otra forma o no se trata?"
   - position: 2
-    sentence: "Durante la entrevista, Nicolás {{blank}} dos veces la pregunta sobre por qué dejó su puesto anterior."
+    sentence: "Durante la entrevista, Nicolás {{blank}} dos veces la pregunta sobre su puesto anterior: cambió de tema y nadie insistió."
     hint_general: "No contesta lo que le preguntan y sale por otro lado, dos veces seguidas."
-    explanation: "Eludió: no contestó y salió por otro lado. «Aludió» significa que la mencionó, y «soslayó» tiene ese sentido, pero suena a libro, no a una entrevista contada así."
+    explanation: "Eludió: no contestó y cambió de tema. «Aludió» significa que la mencionó, y «excluyó» sería dejarla fuera de una lista."
     options:
       - position: 1
         text: "aludió"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Aludir» a una pregunta es mencionarla, y aquí lo que hace es no responderla."
+        why_not: "«Aludir» a una pregunta es mencionarla, y quien la menciona no necesita cambiar de tema."
         hint_specific: "«Aludir» menciona. ¿Nicolás menciona la pregunta o se va por otro lado?"
       - position: 2
-        text: "soslayó"
+        text: "excluyó"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Soslayar» significa algo parecido, pero suena a texto escrito y formal; en una escena contada así resulta rígido."
-        hint_specific: "«Soslayar» suena a informe escrito. ¿Encaja al contar una entrevista en voz alta?"
+        distractor_type: "paronym"
+        why_not: "«Excluir» es dejar algo fuera de un grupo o de una lista; una pregunta que te hacen en voz alta ya está dentro."
+        hint_specific: "Excluir deja algo fuera de una lista. ¿Quién hizo aquí la pregunta?"
       - position: 3
         text: "eludió"
         is_correct: true
@@ -148,7 +148,7 @@ exercises:
   - position: 6
     sentence: "Si Samuel {{blank}} la parte incómoda, la reunión dura menos, pero el problema vuelve el lunes siguiente."
     hint_general: "Saltarse la parte difícil acorta el rato y devuelve el problema unos días después."
-    explanation: "Elude: se salta la parte difícil y el problema vuelve. «Alude» sería mencionarla, y «abrevia» sería tratarla, pero más rápido."
+    explanation: "Elude: se salta la parte difícil y el problema vuelve. «Alude» sería mencionarla, e «incluye» sería meterla dentro."
     options:
       - position: 1
         text: "alude"
@@ -157,11 +157,11 @@ exercises:
         why_not: "«Aludir» es mencionar algo, y mencionar la parte incómoda no haría que la reunión durase menos."
         hint_specific: "«Aludir» menciona. ¿La reunión se acorta por nombrar el punto o por saltárselo?"
       - position: 2
-        text: "abrevia"
+        text: "incluye"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Abreviar» es tratar algo más rápido, y entonces el punto sí se habría tratado."
-        hint_specific: "«Abreviar» trata el punto, solo que deprisa. ¿Aquí llega a tratarse?"
+        distractor_type: "paronym"
+        why_not: "«Incluir» es meter algo dentro, y meter la parte incómoda alargaría la reunión en vez de acortarla."
+        hint_specific: "Incluir mete algo dentro. ¿Qué hace que la reunión dure menos?"
       - position: 3
         text: "elude"
         is_correct: true

@@ -86,9 +86,9 @@ exercises:
         text: "arbitraria"
         is_correct: true
   - position: 3
-    sentence: "Si el criterio es {{blank}}, la gente deja de esforzarse y empieza a mirar quién cae bien."
-    hint_general: "Sin reglas claras, gana quien cae bien."
-    explanation: "Arbitrario: sin reglas claras gana el favoritismo. «Autoritario» describiría un modo de mandar, y «discrecional» suena a norma administrativa."
+    sentence: "Si el criterio es {{blank}} y cambia según el día, la gente deja de esforzarse y empieza a mirar quién cae bien."
+    hint_general: "Sin una regla estable, gana quien cae bien."
+    explanation: "Arbitrario: cambia según el día y no sigue regla. «Autoritario» describiría un modo de mandar, y «estricto» sería duro, pero siempre el mismo."
     options:
       - position: 1
         text: "arbitrario"
@@ -100,15 +100,15 @@ exercises:
         why_not: "«Autoritario» describe una manera de mandar; un criterio no manda, solo indica con qué regla se decide."
         hint_specific: "Autoritario describe un modo de mandar. ¿Un criterio manda?"
       - position: 3
-        text: "discrecional"
+        text: "estricto"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Discrecional» pertenece al lenguaje administrativo y significa que alguien puede decidir libremente dentro de la norma."
-        hint_specific: "«Discrecional» suena a norma administrativa. ¿Encaja al hablar del ánimo de un equipo?"
+        distractor_type: "near_synonym"
+        why_not: "«Estricto» es un criterio duro, pero igual para todos y siempre el mismo; aquí el problema es que cambia según el día."
+        hint_specific: "«Estricto» aprieta con la misma vara. Relee: ¿el criterio es duro o cambiante?"
   - position: 4
     sentence: "Mi abuela tenía una norma {{blank}} para repartir el postre, y aun así todos la aceptábamos."
-    hint_general: "Su norma no tenía lógica, aunque nadie la discutía."
-    explanation: "Arbitraria: su norma no tenía lógica. «Arbitral» se refiere a los jueces de un partido, y «caprichosa» es cariñoso y coloquial, más de carácter que de criterio."
+    hint_general: "Su norma no seguía ninguna lógica, y aun así nadie la discutía."
+    explanation: "Arbitraria: su norma no seguía ninguna lógica. «Arbitral» se dice de los jueces de un partido, y «discrecional» es lenguaje de reglamento, fuera de sitio en esa cocina."
     options:
       - position: 1
         text: "arbitral"
@@ -117,11 +117,11 @@ exercises:
         why_not: "«Arbitral» se dice de lo que hacen los jueces de un partido; una norma casera para el postre no pertenece a ese mundo."
         hint_specific: "Arbitral vive en los partidos. ¿Hay partido en esta cocina?"
       - position: 2
-        text: "caprichosa"
+        text: "discrecional"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Caprichosa» es coloquial y cariñoso, y describe el carácter de una persona más que la regla que aplica."
-        hint_specific: "«Caprichosa» describe carácter y suena cariñoso. ¿Qué se califica aquí, la abuela o la norma?"
+        why_not: "«Discrecional» es palabra de reglamento: dice que alguien puede decidir dentro de la norma, y desentona al hablar del postre en casa de la abuela."
+        hint_specific: "«Discrecional» suena a impreso oficial. ¿Pega en la cocina de una abuela?"
       - position: 3
         text: "arbitraria"
         is_correct: true
@@ -166,22 +166,22 @@ exercises:
         why_not: "«Confuso» dice que algo no se entiende; las reglas nuevas pueden entenderse perfectamente y el cambio seguir sin justificación."
         hint_specific: "Confuso significa que no se entiende. ¿El problema es entenderlas o el momento del cambio?"
   - position: 7
-    sentence: "Lo que molestó al equipo no fue el recorte, sino lo {{blank}} del recorte: nadie supo por qué esos tres proyectos."
-    hint_general: "Molestó no saber por qué salieron esos tres proyectos."
-    explanation: "Arbitrario: nadie supo con qué regla se eligieron. «Aleatorio» diría que salieron por sorteo, y «rápido» hablaría del ritmo, no del criterio."
+    sentence: "Lo que molestó al equipo no fue el recorte, sino lo {{blank}} del recorte: alguien eligió esos tres proyectos y nadie supo con qué regla."
+    hint_general: "Alguien decidió sin una regla que pudiera explicarse."
+    explanation: "Arbitrario: alguien eligió sin una regla explicable. «Aleatorio» supondría un sorteo, y «rápido» hablaría del ritmo, no del criterio."
     options:
       - position: 1
         text: "rápido"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Rápido» habla de la velocidad del recorte; lo que molesta, según la frase, es no saber por qué esos tres y no otros."
-        hint_specific: "Rápido mide velocidad. ¿Qué dice la frase que molestó?"
+        why_not: "«Rápido» habla de la velocidad del recorte, y lo que molesta es no saber con qué regla se eligieron esos tres."
+        hint_specific: "Rápido mide velocidad. ¿Qué dice la frase que molestó al equipo?"
       - position: 2
         text: "aleatorio"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Aleatorio» supondría un sorteo limpio; aquí alguien eligió esos tres proyectos y no pudo explicar con qué regla."
-        hint_specific: "Aleatorio supone un sorteo. ¿Hubo sorteo o hubo elección?"
+        why_not: "«Aleatorio» supondría un sorteo sin mano humana, y la frase dice que alguien eligió esos tres proyectos."
+        hint_specific: "Aleatorio necesita un sorteo. Relee: ¿salieron por azar o los eligió alguien?"
       - position: 3
         text: "arbitrario"
         is_correct: true

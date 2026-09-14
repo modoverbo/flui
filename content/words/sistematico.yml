@@ -46,9 +46,9 @@ confusions:
     memory_trick: "Lo esporádico sorprende; lo sistemático se puede predecir."
 exercises:
   - position: 1
-    sentence: "No es mala suerte: el retraso de los viernes es {{blank}} desde hace medio año."
+    sentence: "No es mala suerte: el retraso de los viernes es {{blank}} desde hace medio año, siempre por el mismo motivo."
     hint_general: "Pasa todos los viernes, y eso ya no es suerte."
-    explanation: "Sistemático: pasa todos los viernes con la misma causa. «Sintomático» diría que revela otra cosa, y «frecuente» solo cuenta cuántas veces pasa."
+    explanation: "Sistemático: cae siempre igual y por la misma causa. «Sintomático» diría que revela otra cosa, e «imprevisible» diría que nunca se sabe cuándo llega."
     options:
       - position: 1
         text: "sintomático"
@@ -60,11 +60,11 @@ exercises:
         text: "sistemático"
         is_correct: true
       - position: 3
-        text: "frecuente"
+        text: "imprevisible"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Frecuente» solo dice que pasa muchas veces; el día fijo de los viernes apunta a una causa, no a una cantidad."
-        hint_specific: "Frecuente cuenta repeticiones. ¿Qué añade el detalle de los viernes?"
+        why_not: "«Imprevisible» diría que nunca se sabe cuándo llega, y este retraso cae cada viernes por el mismo motivo."
+        hint_specific: "Imprevisible sorprende cada vez. ¿Sorprende algo que cae todos los viernes?"
   - position: 2
     sentence: "El fallo era {{blank}}: aparecía cada vez que dos personas editaban el mismo archivo."
     hint_general: "Aparecía siempre en la misma situación, no al azar."
@@ -86,9 +86,9 @@ exercises:
         text: "sistemático"
         is_correct: true
   - position: 3
-    sentence: "Si el problema es {{blank}}, cambiar de persona no arregla nada."
+    sentence: "Si el mismo paso sale mal con cada persona que lo hace, el problema es {{blank}} y cambiar de nombres no arregla nada."
     hint_general: "Si la causa está en el método, cambiar de gente no sirve."
-    explanation: "Sistemático: la causa está en el método, no en quien lo hace. «Sistémico» hablaría del alcance, y «estructural» suena a informe de consultoría."
+    explanation: "Sistemático: la causa está en el método, no en quien lo hace. «Sistémico» hablaría del alcance, y «puntual» diría que pasó una vez suelta."
     options:
       - position: 1
         text: "sistemático"
@@ -97,14 +97,14 @@ exercises:
         text: "sistémico"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Sistémico» dice que algo afecta a un conjunto entero; la frase habla de que el problema se repite igual una y otra vez."
-        hint_specific: "Sistémico habla del alcance. ¿La frase mide alcance o repetición?"
+        why_not: "«Sistémico» dice que algo afecta a un conjunto entero, y aquí falla un solo paso, siempre el mismo."
+        hint_specific: "Sistémico habla del alcance. ¿Cuánto abarca el fallo de la frase?"
       - position: 3
-        text: "estructural"
+        text: "puntual"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Estructural» pertenece al lenguaje de los informes de consultoría y suena a diagnóstico caro para un problema de equipo."
-        hint_specific: "«Estructural» suena a informe de consultoría. ¿Encaja hablando con tu equipo?"
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» sería un caso suelto, y la frase dice que ocurre con cada persona que hace ese paso."
+        hint_specific: "Puntual pasa una vez. ¿Con cuánta gente se repite el fallo?"
   - position: 4
     sentence: "Mi padre revisa las cuentas de la casa de manera {{blank}}: mismo día, misma hoja, mismo orden."
     hint_general: "Repite siempre el mismo orden y el mismo día."
@@ -146,7 +146,7 @@ exercises:
         text: "sistemático"
         is_correct: true
   - position: 6
-    sentence: "Los olvidos dejaron de parecer despistes cuando alguien demostró que eran {{blank}}."
+    sentence: "Los olvidos dejaron de parecer despistes cuando alguien demostró que caían siempre sobre los mismos correos: eran {{blank}}."
     hint_general: "Alguien probó que los olvidos seguían un patrón."
     explanation: "Sistemáticos: seguían un patrón, no eran despistes. «Sistémicos» hablaría de algo que afecta a un conjunto, y «constantes» diría que no paran nunca."
     options:
@@ -163,8 +163,8 @@ exercises:
         text: "constantes"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Constantes» significa que no paran nunca; un patrón puede repetirse solo en ciertos momentos y seguir siendo un patrón."
-        hint_specific: "Constantes no dejan huecos. ¿Un patrón tiene que ocurrir siempre?"
+        why_not: "«Constantes» significa que no paran nunca, y estos olvidos eligen: caen siempre sobre los mismos correos."
+        hint_specific: "Constantes no dejan huecos. ¿Sobre qué caían justamente esos olvidos?"
   - position: 7
     sentence: "El equipo empezó a anotar cada incidencia de modo {{blank}}, y en un mes vieron el patrón."
     hint_general: "Anotan cada caso con el mismo método hasta ver el patrón."

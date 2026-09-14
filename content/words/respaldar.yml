@@ -87,7 +87,7 @@ exercises:
   - position: 3
     sentence: "Si vas a pedir un cambio grande, {{blank}} la petición con un ejemplo concreto y una fecha."
     hint_general: "Pon algo sólido debajo de lo que pides."
-    explanation: "Respalda: pon algo sólido debajo de la petición. «Resalta» la haría más visible, y «justifica» explicaría tus motivos sin añadir ninguna prueba."
+    explanation: "Respalda: pon algo sólido debajo de la petición. «Resalta» la haría más visible, y «alarga» solo le sumaría texto."
     options:
       - position: 1
         text: "resalta"
@@ -99,11 +99,11 @@ exercises:
         text: "respalda"
         is_correct: true
       - position: 3
-        text: "justifica"
+        text: "alarga"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Justificar» explica tus motivos, y lo que pide el consejo es una prueba y una fecha."
-        hint_specific: "«Justificar» da razones. ¿Qué dos cosas concretas pide la frase?"
+        why_not: "«Alargar» solo suma texto, y un ejemplo y una fecha no hacen la petición más larga: la hacen más firme."
+        hint_specific: "«Alargar» suma páginas. ¿Qué aportan un ejemplo y una fecha?"
   - position: 4
     sentence: "Delia pidió ver un dato más antes de {{blank}} el informe con su firma."
     hint_general: "Firmar es poner su nombre detrás del informe."
@@ -147,14 +147,14 @@ exercises:
   - position: 6
     sentence: "Cuando su hermano montó el taller, la familia lo {{blank}} con horas y con manos, no solo con ánimos."
     hint_general: "Pusieron algo real detrás, no solo palabras."
-    explanation: "Respaldó: pusieron horas y manos detrás. «Resaltó» lo habría hecho más visible, y «arropó» es coloquial y se queda en el cariño que la frase descarta."
+    explanation: "Respaldó: pusieron horas y manos detrás. «Resaltó» lo habría hecho más visible, y «animó» se queda en los ánimos que la frase separa."
     options:
       - position: 1
-        text: "arropó"
+        text: "animó"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Arropar» es coloquial y se queda en el cariño, justo lo que la frase distingue de las horas y las manos."
-        hint_specific: "«Arropar» abriga. ¿Qué aportó la familia además de ánimos?"
+        distractor_type: "near_synonym"
+        why_not: "«Animar» se queda en dar ánimos, y la frase separa justamente los ánimos de las horas y las manos."
+        hint_specific: "«Animar» da ánimos. ¿Qué distingue la frase de los ánimos?"
       - position: 2
         text: "respaldó"
         is_correct: true

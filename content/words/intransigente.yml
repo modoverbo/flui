@@ -48,7 +48,7 @@ exercises:
   - position: 1
     sentence: "Durante toda la reunión se mostró {{blank}}: ni una coma del contrato se movió de sitio."
     hint_general: "No cedió en nada durante toda la reunión."
-    explanation: "Intransigente: no cedió en nada. «Intransitable» se dice de un camino cortado, y «firme» describe a quien sostiene su postura pero puede escuchar."
+    explanation: "Intransigente: no cedió en nada. «Intransitable» se dice de un camino cortado, e «intachable» de una conducta sin una sola falta."
     options:
       - position: 1
         text: "intransitable"
@@ -60,35 +60,35 @@ exercises:
         text: "intransigente"
         is_correct: true
       - position: 3
-        text: "firme"
+        text: "intachable"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Firme» describe a quien sostiene su postura y aun así escucha; aquí no se movió ni una coma del contrato."
-        hint_specific: "Firme sostiene y escucha. ¿Cuánto se movió el contrato?"
+        distractor_type: "paronym"
+        why_not: "«Intachable» elogia una conducta sin faltas, y que el contrato no se moviera no dice nada bueno ni malo de su conducta."
+        hint_specific: "Intachable es un elogio de conducta. ¿Qué cuenta la frase, cómo se portó o cuánto cedió?"
   - position: 2
-    sentence: "Mi tío es {{blank}} con la hora de comer, y con todo lo demás es el hombre más flexible del mundo."
+    sentence: "Con la hora de comer mi tío es {{blank}}, aunque te escuche con una sonrisa y ceda en todo lo demás."
     hint_general: "Con la hora de comer no cede; con el resto sí."
-    explanation: "Intransigente: con esa hora no cede nada. «Intrascendente» significa sin importancia, y «cabezota» es coloquial y suena a reproche cariñoso."
+    explanation: "Intransigente: con esa hora no cede nada. «Intrascendente» significa sin importancia, y «gruñón» describe a quien contesta de mal humor."
     options:
       - position: 1
         text: "intrascendente"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Intrascendente» significa que algo no tiene importancia; el tío de la frase sí la tiene, y mucha, con la hora de comer."
+        why_not: "«Intrascendente» significa que algo no tiene importancia; el tío de la frase sí se la da, y mucha, a la hora de comer."
         hint_specific: "Intrascendente significa sin importancia. ¿Le da poca importancia a la hora?"
       - position: 2
-        text: "cabezota"
+        text: "gruñón"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Cabezota» es coloquial y suena a reproche cariñoso sobre el carácter; aquí se describe una postura concreta."
-        hint_specific: "«Cabezota» juzga el carácter en broma. ¿La frase describe carácter o una postura?"
+        why_not: "«Gruñón» es coloquial y describe a quien contesta de mal humor, y la frase dice que te escucha con una sonrisa."
+        hint_specific: "«Gruñón» va de mal humor. ¿Con qué cara te escucha tu tío?"
       - position: 3
         text: "intransigente"
         is_correct: true
   - position: 3
-    sentence: "Si te pones {{blank}} desde la primera frase, la otra parte se levanta y ya no vuelve."
+    sentence: "Si te pones {{blank}} desde la primera frase, la otra parte se levanta: no es el tono, es que no dejas nada que negociar."
     hint_general: "Si no cedes en nada desde el principio, el otro se va."
-    explanation: "Intransigente: no ceder desde el principio espanta al otro. «Intachable» significa sin ninguna falta, y «duro» describe el tono, no la falta de margen."
+    explanation: "Intransigente: no ceder desde el principio espanta al otro. «Intachable» significa sin ninguna falta, y «duro» describe el tono, que la frase descarta."
     options:
       - position: 1
         text: "intransigente"
@@ -103,8 +103,8 @@ exercises:
         text: "duro"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Duro» describe el tono con que hablas; se puede negociar con tono durísimo y aun así dejar margen."
-        hint_specific: "Duro describe el tono. ¿Lo que espanta es el tono o el cero margen?"
+        why_not: "«Duro» describe el tono, y la frase dice con todas las letras que el tono no es el problema."
+        hint_specific: "Duro describe el tono. ¿Qué descarta la frase después de los dos puntos?"
   - position: 4
     sentence: "El comité no fue {{blank}}: aceptó dos de las tres condiciones y explicó por qué no la tercera."
     hint_general: "Cedió en dos puntos y explicó el tercero."
@@ -126,9 +126,9 @@ exercises:
         text: "intransigente"
         is_correct: true
   - position: 5
-    sentence: "Nadie llamaría {{blank}} a quien defiende un límite y además dice a cambio de qué lo movería."
+    sentence: "Quien defiende un límite y además dice a cambio de qué lo movería no es {{blank}}: está negociando."
     hint_general: "Quien dice a cambio de qué se movería, sí cede."
-    explanation: "Intransigente: no lo es quien dice a cambio de qué se mueve. «Intachable» es un elogio sobre la conducta, e «irreductible» suena a personaje de novela."
+    explanation: "Intransigente: no lo es quien dice a cambio de qué se mueve. «Intachable» habla de una conducta sin faltas, e «intransitable» de un camino cortado."
     options:
       - position: 1
         text: "intachable"
@@ -137,11 +137,11 @@ exercises:
         why_not: "«Intachable» significa que no tiene ni una falta; la frase no juzga la conducta de nadie, sino su margen para moverse."
         hint_specific: "Intachable habla de conducta sin faltas. ¿Qué se mide en esta frase?"
       - position: 2
-        text: "irreductible"
+        text: "intransitable"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Irreductible» suena a personaje épico de novela o de cómic; para una mesa de trabajo resulta exagerado."
-        hint_specific: "«Irreductible» suena a héroe de cómic. ¿Encaja en una negociación normal?"
+        distractor_type: "paronym"
+        why_not: "«Intransitable» se dice de un camino por el que no se pasa, y aquí se habla de una persona sentada a negociar."
+        hint_specific: "Intransitable describe caminos. ¿Quién está negociando en la frase?"
       - position: 3
         text: "intransigente"
         is_correct: true

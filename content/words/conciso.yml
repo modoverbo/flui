@@ -50,7 +50,7 @@ exercises:
   - position: 1
     sentence: "El informe de Nicolás era tan {{blank}} que cabía en media página y no faltaba nada."
     hint_general: "Dice todo lo necesario en muy poco espacio."
-    explanation: "Conciso: dice lo necesario en muy poco espacio. «Preciso» habla de exactitud, y «lacónico» suena culto y sugiere casi monosílabos."
+    explanation: "Conciso: dice lo necesario en muy poco espacio. «Preciso» habla de dar el dato exacto, y «genérico» sería no concretar nada, y no faltaba nada."
     options:
       - position: 1
         text: "preciso"
@@ -62,15 +62,15 @@ exercises:
         text: "conciso"
         is_correct: true
       - position: 3
-        text: "lacónico"
+        text: "genérico"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Lacónico» suena culto y sugiere responder casi con monosílabos; un informe completo en media página es otra cosa."
-        hint_specific: "«Lacónico» apenas suelta palabra. ¿El informe deja huecos o está completo?"
+        distractor_type: "near_synonym"
+        why_not: "«Genérico» es decir cosas que valen para todo y para nada, y del informe se dice justo que no faltaba nada."
+        hint_specific: "«Genérico» no concreta. Relee el final: ¿faltaba algo en ese informe?"
   - position: 2
     sentence: "Prefiero un mensaje {{blank}} a uno largo que hay que leer dos veces."
     hint_general: "Es corto y aun así se entiende a la primera."
-    explanation: "Conciso: corto y claro a la primera. «Incisivo» describe algo mordaz, y «escueto» subraya la falta de adorno y suena seco."
+    explanation: "Conciso: corto y claro a la primera. «Incisivo» describe algo mordaz, y «cortante» sería un mensaje brusco, que nadie prefiere."
     options:
       - position: 1
         text: "conciso"
@@ -82,11 +82,11 @@ exercises:
         why_not: "«Incisivo» describe algo cortante que va al hueso, y un mensaje breve no tiene por qué ser mordaz."
         hint_specific: "«Incisivo» hace daño al morder. ¿Qué se valora en ese mensaje?"
       - position: 3
-        text: "escueto"
+        text: "cortante"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Escueto» subraya que falta todo adorno y a veces suena seco, y aquí lo importante es entenderlo a la primera."
-        hint_specific: "«Escueto» puede dejarte con dudas. ¿Cuántas veces quieres leer el mensaje?"
+        why_not: "«Cortante» describe un mensaje brusco que corta la conversación, y nadie prefiere que le hablen así."
+        hint_specific: "«Cortante» suena áspero. ¿Lo que se agradece es la brusquedad o entenderlo a la primera?"
   - position: 3
     sentence: "La respuesta de Ximena fue {{blank}}: dos frases y una fecha."
     hint_general: "Cabe en dos frases y no le falta nada."
@@ -108,9 +108,9 @@ exercises:
         why_not: "«Seca» es coloquial y sugiere una respuesta sin calidez, y esta solo es corta y completa."
         hint_specific: "«Seca» suena a frialdad. ¿Hay frialdad o solo brevedad?"
   - position: 4
-    sentence: "Mi tío cuenta las historias con mil detalles; mi tía es mucho más {{blank}}."
-    hint_general: "Cuenta lo mismo con muchas menos palabras."
-    explanation: "Concisa: cuenta lo mismo con menos palabras. «Precisa» habla de acertar con los datos, y «parca» suena fría y culta."
+    sentence: "Mi tío cuenta las historias con mil detalles; mi tía cuenta lo mismo, sin dejarse nada, en tres frases: es mucho más {{blank}}."
+    hint_general: "Cuenta lo mismo, sin dejarse nada, con muchas menos palabras."
+    explanation: "Concisa: cuenta lo mismo, entero, con menos palabras. «Precisa» mediría la exactitud de los datos, y «parca» sería guardarse cosas por carácter."
     options:
       - position: 1
         text: "concisa"
@@ -119,14 +119,14 @@ exercises:
         text: "precisa"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Precisa» dice que acierta con los datos, y la frase compara cuánto se alarga cada uno al contar."
+        why_not: "«Precisa» dice que acierta con los datos, y lo que compara la frase es cuántas palabras necesita cada uno."
         hint_specific: "«Precisa» mide exactitud. ¿Qué compara la frase entre tu tío y tu tía?"
       - position: 3
         text: "parca"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Parca» suena culta y algo fría, como quien habla poco por carácter; aquí solo cuenta con menos palabras."
-        hint_specific: "«Parca» describe un carácter callado. ¿Tu tía calla o resume?"
+        why_not: "«Parca» describe a quien habla poco por carácter y se guarda cosas, y la frase dice que ella no se deja nada."
+        hint_specific: "«Parca» se guarda palabras. Relee: ¿tu tía deja algo fuera de la historia?"
   - position: 5
     sentence: "En la entrevista, una respuesta {{blank}} deja tiempo para que te pregunten más."
     hint_general: "Es corta, clara y deja espacio para más preguntas."

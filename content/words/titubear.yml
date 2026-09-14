@@ -70,7 +70,7 @@ exercises:
   - position: 2
     sentence: "El vídeo salió bien porque Fernando ensayó hasta dejar de {{blank}} en la primera frase."
     hint_general: "Ensayó hasta que la primera frase le salió sin quedarse a medias."
-    explanation: "Titubear: dejar de quedarse a medias al empezar. «Titular» es poner un título, y «trabarse» es coloquial y suena a lengua enredada."
+    explanation: "Titubear: dejar de quedarse a medias al empezar. «Titular» es poner un título, y «titilar» es el temblor de una luz."
     options:
       - position: 1
         text: "titubear"
@@ -82,11 +82,11 @@ exercises:
         why_not: "«Titular» es poner un título, y lo que ensaya Fernando es decir la frase de corrido."
         hint_specific: "«Titular» pone nombre a algo. ¿Qué practicó Fernando tantas veces?"
       - position: 3
-        text: "trabarse"
+        text: "titilar"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Trabarse» es coloquial y apunta a que la lengua se enreda; aquí el problema es no saber qué decir."
-        hint_specific: "«Trabarse» habla de la lengua. ¿El problema es la lengua o la duda?"
+        distractor_type: "paronym"
+        why_not: "«Titilar» es el temblor de una luz o de una estrella, y lo que ensaya Fernando es el arranque de una frase."
+        hint_specific: "«Titilar» describe una luz que tiembla. ¿Qué practicó Fernando tantas veces?"
   - position: 3
     sentence: "Cuando mi sobrino me preguntó por qué nos mudábamos, {{blank}} un poco antes de contarle la verdad."
     hint_general: "Se queda un momento a medias antes de decidir qué contar."
@@ -108,9 +108,9 @@ exercises:
         text: "titubeé"
         is_correct: true
   - position: 4
-    sentence: "La pregunta sobre el año sin trabajar hizo {{blank}} a Camila, aunque después respondió con calma."
-    hint_general: "Esa pregunta la dejó un momento sin saber cómo empezar."
-    explanation: "Titubear: la dejó sin saber cómo empezar. «Titular» es poner un título, y «atascarse» es coloquial y sugiere quedarse bloqueada del todo."
+    sentence: "La pregunta sobre el año sin trabajar hizo {{blank}} a Camila medio segundo; enseguida siguió, sin quedarse parada en ningún momento."
+    hint_general: "Esa pregunta la dejó un instante sin saber cómo empezar."
+    explanation: "Titubear: la dejó un instante sin saber cómo empezar. «Titular» es poner un título, y «atascarse» es coloquial y dejaría a Camila parada, que es lo que la frase niega."
     options:
       - position: 1
         text: "titubear"
@@ -125,12 +125,12 @@ exercises:
         text: "atascarse"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Atascarse» es coloquial y sugiere quedarse bloqueada del todo, y ella siguió respondiendo con calma."
-        hint_specific: "«Atascarse» no deja avanzar. ¿Camila llegó a contestar?"
+        why_not: "«Atascarse» es coloquial y deja a alguien parado, y la frase dice que Camila no se quedó parada en ningún momento."
+        hint_specific: "«Atascarse» no deja avanzar. ¿Cuánto tiempo estuvo parada Camila?"
   - position: 5
-    sentence: "Aprendí a no {{blank}} cuando me preguntan el precio: lo digo entero y me callo."
+    sentence: "Aprendí a no {{blank}} cuando me preguntan el precio: lo digo entero, de una vez y sin bajarlo."
     hint_general: "Aprendió a decir el precio sin quedarse a medias."
-    explanation: "Titubear: decir el precio sin quedarse a medias. «Titular» es poner un título, y «regatear» sería discutir la cifra."
+    explanation: "Titubear: decir el precio sin quedarse a medias. «Titular» es poner un título, y «regatear» sería bajar la cifra, y la frase dice que no la baja."
     options:
       - position: 1
         text: "titular"
@@ -145,8 +145,8 @@ exercises:
         text: "regatear"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Regatear» es discutir la cifra para bajarla, y aquí el precio se dice completo y sin discusión."
-        hint_specific: "«Regatear» negocia el número. ¿Se negocia algo o se dice y punto?"
+        why_not: "«Regatear» es discutir la cifra para bajarla, y la frase termina diciendo que el precio no se baja."
+        hint_specific: "«Regatear» baja el número. ¿Qué dice la frase sobre bajar el precio?"
   - position: 6
     sentence: "Durante el juicio del concurso, el jurado notó que Vicente {{blank}} solo en la parte de los números."
     hint_general: "Se quedaba a medias justo en esa parte de su explicación."
@@ -188,9 +188,9 @@ exercises:
         why_not: "«Balbucear» apunta a un habla entrecortada, y aquí la clave es que no hubo ni un momento de duda."
         hint_specific: "«Balbucear» describe el sonido. ¿Qué es lo que no ocurrió en esa respuesta?"
   - position: 8
-    sentence: "Si {{blank}} al empezar, respira y repite la primera frase: nadie se dará cuenta."
+    sentence: "Si {{blank}} al empezar, respira y repite la primera frase: no es la lengua, son los nervios de arrancar."
     hint_general: "El consejo sirve para cuando te quedas a medias al empezar."
-    explanation: "Titubeas: te quedas a medias al empezar. «Titulas» sería poner un título, y «tartamudeas» describe otra cosa distinta."
+    explanation: "Titubeas: te quedas a medias al empezar. «Titulas» sería poner un título, y «tartamudeas» apunta a la lengua, que la frase descarta."
     options:
       - position: 1
         text: "titulas"
@@ -205,8 +205,8 @@ exercises:
         text: "tartamudeas"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Tartamudear» describe una forma de hablar entrecortada, y el consejo va de la duda al elegir las palabras."
-        hint_specific: "«Tartamudeas» habla del sonido. ¿El consejo mira al sonido o a la duda?"
+        why_not: "«Tartamudear» apunta a la lengua, y el consejo aclara que la lengua no es el problema: son los nervios."
+        hint_specific: "«Tartamudeas» mira a la lengua. ¿Qué descarta el final del consejo?"
 readings:
   - position: 1
     scene: "trabajo"

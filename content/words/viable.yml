@@ -86,9 +86,9 @@ exercises:
         text: "viable"
         is_correct: true
   - position: 3
-    sentence: "Camilo presentó dos rutas {{blank}} y una tercera que necesitaba el doble de gente."
+    sentence: "Camilo presentó tres rutas: dos {{blank}} con el equipo de ahora y una que necesitaba el doble de gente."
     hint_general: "Dos de ellas se pueden hacer con el personal actual."
-    explanation: "Viables: dos rutas se pueden hacer con el personal actual. «Fiables» hablaría de confianza, y «factibles» diría casi lo mismo, pero con tono de informe técnico."
+    explanation: "Viables: dos rutas se pueden hacer con el equipo de ahora. «Fiables» hablaría de confianza, y «variables» describiría algo que cambia solo."
     options:
       - position: 1
         text: "viables"
@@ -100,11 +100,11 @@ exercises:
         why_not: "«Fiable» es lo que no te falla; aquí lo que separa a las rutas es cuánta gente hacen falta, no la confianza."
         hint_specific: "«Fiable» habla de confianza. ¿Qué separa a la tercera ruta de las otras dos?"
       - position: 3
-        text: "factibles"
+        text: "variables"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Factible» significa algo parecido, pero suena a informe técnico; presentando rutas a un equipo resulta frío."
-        hint_specific: "«Factible» suena a informe técnico. ¿Encaja al hablarle a tu equipo?"
+        distractor_type: "paronym"
+        why_not: "«Variable» describe algo que cambia de un día para otro, y estas dos rutas no cambian: se pueden hacer o no con la gente que hay."
+        hint_specific: "«Variable» habla de lo que cambia. ¿Qué separa a las dos rutas de la tercera?"
   - position: 4
     sentence: "Antes de prometer una fecha, Beatriz preguntó si el calendario era {{blank}} con las personas que hay."
     hint_general: "Quiere saber si ese calendario se puede cumplir con el personal actual."
@@ -126,22 +126,22 @@ exercises:
         text: "viable"
         is_correct: true
   - position: 5
-    sentence: "Abrir los sábados solo será {{blank}} si contratamos a dos personas más."
-    hint_general: "Sin esas dos personas, la idea no se puede sostener."
-    explanation: "Viable: sin esas dos personas la idea no se sostiene. «Variable» habla de algo que cambia, y «sostenible» mira si aguanta en el tiempo, no si arranca."
+    sentence: "Sin dos personas más no podríamos ni empezar: abrir los sábados solo es {{blank}} con ese refuerzo."
+    hint_general: "Sin esas dos personas, la idea no llega ni a arrancar."
+    explanation: "Viable: sin esas dos personas la idea no arranca. «Variable» habla de algo que cambia, y «sostenible» mira si aguanta en el tiempo, no si empieza."
     options:
       - position: 1
         text: "variable"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Variable» describe algo que cambia de un día para otro; abrir los sábados no cambia solo, hace falta gente."
+        why_not: "«Variable» describe algo que cambia de un día para otro, y aquí lo que decide todo son dos contrataciones."
         hint_specific: "«Variable» habla de algo que cambia. ¿La frase habla de cambios o de personal?"
       - position: 2
         text: "sostenible"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Sostenible» mira si algo aguanta a lo largo del tiempo; aquí ni siquiera se puede empezar sin esas dos personas."
-        hint_specific: "Sostenible mira el largo plazo. ¿El problema es aguantar o arrancar?"
+        why_not: "«Sostenible» mira si algo aguanta a lo largo del tiempo, y la frase dice que sin refuerzo no se podría ni empezar."
+        hint_specific: "Sostenible mira el largo plazo. ¿Qué dice la frase que no se podría hacer?"
       - position: 3
         text: "viable"
         is_correct: true
@@ -166,9 +166,9 @@ exercises:
         why_not: "«Visible» es lo que se ve; un horario que no le sirve a nadie no es un problema de vista."
         hint_specific: "«Visible» va de ver. ¿El problema de los martes es de vista o de horario?"
   - position: 7
-    sentence: "Martín quería mudarse en enero, pero con los plazos del banco eso no parecía {{blank}}."
+    sentence: "«Con los plazos del banco, mudarnos en enero no lo veo {{blank}}», le dijo Martín a su hermana mientras pintaban la cocina."
     hint_general: "Los plazos del banco no dejaban espacio para hacerlo en enero."
-    explanation: "Viable: los plazos del banco no dejaban hacerlo en enero. «Variable» hablaría de algo que cambia, y «realizable» suena a palabra de manual."
+    explanation: "Viable: los plazos del banco no dejaban hacerlo en enero. «Variable» hablaría de algo que cambia, y «realizable» suena a manual en una charla entre hermanos."
     options:
       - position: 1
         text: "variable"
@@ -180,8 +180,8 @@ exercises:
         text: "realizable"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Realizable» significa algo parecido, pero suena a palabra de manual; hablando de una mudanza resulta rara."
-        hint_specific: "«Realizable» suena a manual. ¿Se lo dirías así a un amigo que se muda?"
+        why_not: "«Realizable» significa algo parecido, pero suena a palabra de manual y nadie se la dice a su hermana pintando la cocina."
+        hint_specific: "«Realizable» suena a manual. ¿Se lo dirías así a tu hermana con el rodillo en la mano?"
       - position: 3
         text: "viable"
         is_correct: true

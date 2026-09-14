@@ -66,9 +66,9 @@ exercises:
         why_not: "«Longeva» dice que alguien vive muchos años, y lo que se valora aquí es el encaje con el puesto."
         hint_specific: "«Longeva» mide años de vida. ¿Qué mide una entrevista de trabajo?"
   - position: 2
-    sentence: "Pedir un aumento el mismo día del cierre no es el momento {{blank}}."
+    sentence: "Pedir un aumento el mismo día del cierre no es el momento {{blank}}: hace falta que tu jefa tenga tiempo y la cabeza libre."
     hint_general: "Ese día no reúne las condiciones que el asunto necesita."
-    explanation: "Idóneo: el momento que reúne las condiciones. «Idílico» describe un paisaje precioso, y «óptimo» suena a informe técnico."
+    explanation: "Idóneo: el momento que reúne las condiciones. «Idílico» describe un paisaje precioso, y «definitivo» hablaría del último momento, no del que reúne condiciones."
     options:
       - position: 1
         text: "idóneo"
@@ -80,11 +80,11 @@ exercises:
         why_not: "«Idílico» describe una escena preciosa y tranquila, y aquí se habla de elegir bien el día."
         hint_specific: "«Idílico» pinta una postal. ¿De qué habla la frase: de belleza o de oportunidad?"
       - position: 3
-        text: "óptimo"
+        text: "definitivo"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Óptimo» suena a informe técnico y a medición, y esto es un consejo de trato con tu jefa."
-        hint_specific: "«Óptimo» viene de una hoja de cálculo. ¿Encaja al hablar de pedir un aumento?"
+        distractor_type: "near_synonym"
+        why_not: "«Definitivo» sería el último momento, el que ya no se repite, y la frase habla de reunir condiciones."
+        hint_specific: "Definitivo cierra la serie. ¿La frase mide el final o las condiciones?"
   - position: 3
     sentence: "Mi hermana buscó durante meses el piso {{blank}}: cerca del colegio y con ascensor."
     hint_general: "Buscaba el que reuniera justo esas dos condiciones."
@@ -166,9 +166,9 @@ exercises:
         why_not: "«Amplio» solo habla del tamaño, y la frase menciona la luz y las sillas, no los metros."
         hint_specific: "«Amplio» mide metros. ¿La frase mide metros o condiciones?"
   - position: 7
-    sentence: "No hay un currículo {{blank}} en abstracto: depende siempre de lo que la empresa necesite ese año."
+    sentence: "El mismo currículo, sin un solo fallo, puede ser {{blank}} para una empresa y no servir para la siguiente."
     hint_general: "Solo encaja bien en relación con una necesidad concreta."
-    explanation: "Idóneo: solo encaja en relación con una necesidad. «Idílico» describe un paisaje precioso, y «perfecto» promete que no tiene fallo."
+    explanation: "Idóneo: solo encaja en relación con una necesidad. «Idílico» describe un paisaje precioso, y «perfecto» ya lo dice la frase al hablar de un currículo sin fallos."
     options:
       - position: 1
         text: "idílico"
@@ -180,8 +180,8 @@ exercises:
         text: "perfecto"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Perfecto» promete que no tiene ni un fallo, y la frase habla de encajar con lo que se necesita."
-        hint_specific: "«Perfecto» no admite fallos. ¿La frase mide fallos o encaje?"
+        why_not: "«Perfecto» ya está dicho con «sin un solo fallo», y aun así el currículo no sirve para la empresa siguiente."
+        hint_specific: "Perfecto mide fallos, y la frase ya dice que no hay ninguno. ¿Qué falta entonces?"
       - position: 3
         text: "idóneo"
         is_correct: true

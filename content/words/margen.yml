@@ -48,7 +48,7 @@ exercises:
   - position: 1
     sentence: "Esta semana Carolina no tiene {{blank}}: cualquier cosa nueva tumba las tres que ya lleva encima."
     hint_general: "No le queda nada de espacio libre para aceptar algo más."
-    explanation: "Margen: no le queda espacio libre. «Marco» es el borde o el conjunto de reglas, y «hueco» es coloquial y solo apunta a un rato suelto."
+    explanation: "Margen: no le queda espacio libre. «Marco» es el borde o el conjunto de reglas, y «mando» es la facultad de dar órdenes."
     options:
       - position: 1
         text: "marco"
@@ -60,15 +60,15 @@ exercises:
         text: "margen"
         is_correct: true
       - position: 3
-        text: "hueco"
+        text: "mando"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Hueco» es coloquial y apunta a un rato suelto en la agenda, no a la capacidad que le queda esa semana."
-        hint_specific: "«Hueco» suena a rato libre entre dos citas. ¿El problema es un rato o la carga entera?"
+        distractor_type: "paronym"
+        why_not: "«Mando» es la facultad de dar órdenes, y lo que se le agota a Carolina es la capacidad de asumir una cosa más."
+        hint_specific: "Mando va de dar órdenes. ¿Lo que le falta es autoridad o capacidad?"
   - position: 2
-    sentence: "Antes de decir que sí, Óscar calculó el {{blank}} que le quedaba hasta el viernes."
+    sentence: "Antes de decir que sí, Óscar calculó el {{blank}} que le quedaba: dos tardes libres y tres encargos ya aceptados."
     hint_general: "Mide cuánto espacio libre le queda antes de aceptar."
-    explanation: "Margen: mide el espacio libre que le queda. «Mareo» es esa sensación de que todo da vueltas, y «plazo» sería la fecha límite, que ya aparece en la frase."
+    explanation: "Margen: mide el espacio libre que le queda. «Mareo» es esa sensación de que todo da vueltas, y «plazo» sería una fecha, no dos tardes y tres encargos."
     options:
       - position: 1
         text: "mareo"
@@ -83,8 +83,8 @@ exercises:
         text: "plazo"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Plazo» es la fecha límite, y esa fecha ya está dicha en la frase: lo que calcula es lo que le cabe hasta entonces."
-        hint_specific: "«Plazo» es la fecha tope. ¿Cuál es aquí la fecha tope?"
+        why_not: "«Plazo» es una fecha límite, y lo que enumera la frase son tardes libres y encargos, no fechas."
+        hint_specific: "«Plazo» se cuenta en fechas. ¿Qué enumera Óscar después de los dos puntos?"
   - position: 3
     sentence: "Vicente y su equipo pactaron la entrega con dos días de {{blank}} por si algo salía torcido."
     hint_general: "Dejan dos días de sobra para poder reaccionar si algo falla."

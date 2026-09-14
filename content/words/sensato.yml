@@ -68,7 +68,7 @@ exercises:
   - position: 2
     sentence: "Julia prefirió esperar al lunes para contestar, y a todos les pareció lo más {{blank}}."
     hint_general: "Esperar fue la opción con más cabeza en ese momento."
-    explanation: "Sensato: esperar fue la opción con más cabeza. «Sensacional» dice que algo impresiona, y «juicioso» apunta a lo mismo, pero suena a informe escolar antiguo."
+    explanation: "Sensato: esperar fue la opción con más cabeza. «Sensacional» dice que algo impresiona, y «rápido» chocaría con esperar tres días."
     options:
       - position: 1
         text: "sensacional"
@@ -77,11 +77,11 @@ exercises:
         why_not: "«Sensacional» dice que algo impresiona mucho, y esperar al lunes no impresiona a nadie: acierta."
         hint_specific: "«Sensacional» deslumbra. ¿Esperar tres días deslumbra o acierta?"
       - position: 2
-        text: "juicioso"
+        text: "rápido"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Juicioso» apunta a lo mismo, pero suena a informe antiguo sobre la conducta de alguien."
-        hint_specific: "«Juicioso» suena a boletín de otra época. ¿Pega al comentar una decisión de hoy?"
+        distractor_type: "near_synonym"
+        why_not: "«Rápido» mide la prisa, y Julia hizo lo contrario: dejó pasar los días hasta el lunes."
+        hint_specific: "«Rápido» mide la prisa. ¿Cuánto esperó Julia antes de contestar?"
       - position: 3
         text: "sensato"
         is_correct: true
@@ -126,16 +126,16 @@ exercises:
         text: "sensata"
         is_correct: true
   - position: 5
-    sentence: "Nadie esperaba una respuesta tan {{blank}} de alguien que llevaba dos noches sin dormir, y Óscar la dio."
-    hint_general: "Contestó con buen juicio a pesar del cansancio."
-    explanation: "Sensata: contestó con buen juicio pese al cansancio. «Sensible» describe a quien se emociona fácil, y «ponderada» suena a lenguaje de informe."
+    sentence: "Después de dos noches sin dormir, Óscar dio una respuesta tan {{blank}} que su hermana la apuntó en una servilleta: «primero dormimos, mañana decidimos»."
+    hint_general: "Contestó con la cabeza fría a pesar del cansancio."
+    explanation: "Sensata: contestó con la cabeza fría pese al cansancio. «Sensible» describe a quien se emociona fácil, y «ponderada» suena a informe en una escena de servilletas."
     options:
       - position: 1
         text: "sensible"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Sensible» describe a quien se emociona con facilidad, y lo que sorprende aquí es la cabeza fría de la respuesta."
-        hint_specific: "«Sensible» va de emociones. ¿Qué sorprende de Óscar, su emoción o su criterio?"
+        why_not: "«Sensible» describe a quien se emociona con facilidad, y lo que apuntó su hermana fue una decisión con cabeza."
+        hint_specific: "«Sensible» va de emociones. ¿Qué dice exactamente la frase de la servilleta?"
       - position: 2
         text: "sensata"
         is_correct: true
@@ -143,8 +143,8 @@ exercises:
         text: "ponderada"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Ponderada» apunta a lo mismo, pero suena a lenguaje de informe y desentona al contar una escena de cansancio."
-        hint_specific: "«Ponderada» suena a documento formal. ¿Pega contando a alguien sin dormir?"
+        why_not: "«Ponderada» apunta a lo mismo, pero suena a lenguaje de informe y desentona en una cena con servilletas de papel."
+        hint_specific: "«Ponderada» suena a documento formal. ¿Pega al contar lo de la servilleta?"
   - position: 6
     sentence: "Lo más {{blank}} habría sido avisar antes, y Marcos lo reconoció en voz alta delante de todos."
     hint_general: "Avisar a tiempo era la opción con más cabeza, y él lo admite."
@@ -166,9 +166,9 @@ exercises:
         why_not: "«Cómodo» es lo que cuesta menos esfuerzo, y avisar antes de un problema nunca es lo más cómodo."
         hint_specific: "«Cómodo» evita el esfuerzo. ¿Dar una mala noticia pronto es lo fácil?"
   - position: 7
-    sentence: "Su plan era {{blank}} y hasta aburrido, y por eso llegó entero al final del año, cuenta Cecilia."
+    sentence: "El plan de Cecilia era {{blank}} y hasta aburrido: dejaba dos semanas de margen y ni una promesa que no pudiera cumplir."
     hint_general: "El plan no era llamativo, pero estaba pensado para aguantar doce meses."
-    explanation: "Sensato: el plan estaba pensado para aguantar. «Sensible» describe a quien se emociona fácil, y «lento» solo mide la velocidad."
+    explanation: "Sensato: el plan estaba pensado para aguantar. «Sensible» describe a quien se emociona fácil, y «optimista» daría por hecho que nada se tuerce."
     options:
       - position: 1
         text: "sensible"
@@ -177,11 +177,11 @@ exercises:
         why_not: "«Sensible» describe a quien se emociona con facilidad, y un plan anual no tiene emociones."
         hint_specific: "«Sensible» va de emociones. ¿Un plan se emociona?"
       - position: 2
-        text: "lento"
+        text: "optimista"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Lento» mide la velocidad, y un plan puede ir despacio y romperse igual a mitad de año."
-        hint_specific: "«Lento» mide velocidad. ¿Ir despacio garantiza llegar entero?"
+        why_not: "«Optimista» da por hecho que nada se tuerce, y este plan guarda dos semanas de margen por si pasa."
+        hint_specific: "«Optimista» cuenta con que todo salga bien. ¿Para qué sirven esas dos semanas?"
       - position: 3
         text: "sensato"
         is_correct: true

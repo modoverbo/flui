@@ -66,19 +66,19 @@ exercises:
         why_not: "«Aplazar» es dejarlo para más adelante, y eso es justo lo que llevaba dos meses haciendo."
         hint_specific: "«Aplazar» retrasa. Relee el inicio: ¿qué llevaba dos meses haciendo?"
   - position: 2
-    sentence: "Antes de la cena, Rodrigo pidió cinco minutos a su hermano para {{blank}} lo que había pasado en la mudanza."
-    hint_general: "Pide un rato aparte para meterse en un asunto incómodo, no para pasar de largo."
-    explanation: "Abordar: pide un rato para meterse en el asunto. «Ventilar» suena coloquial y a despacharlo rápido, y «esquivar» es apartarse de él."
+    sentence: "Antes de la cena, Rodrigo pidió cinco minutos a su hermano para {{blank}} lo de la mudanza: no venía a pactar nada, solo a hablarlo."
+    hint_general: "Entrar en un asunto incómodo y ponerlo sobre la mesa, sin cerrar tratos ni pasar de largo."
+    explanation: "Abordar: pone el asunto sobre la mesa. «Acordar» sería cerrar un trato, y la frase lo niega; «esquivar» es apartarse de él."
     options:
       - position: 1
         text: "abordar"
         is_correct: true
       - position: 2
-        text: "ventilar"
+        text: "acordar"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Ventilar» un asunto es coloquial y sugiere despacharlo deprisa; él pide cinco minutos para hablarlo con calma."
-        hint_specific: "«Ventilar» suena a quitárselo de encima rápido. ¿Eso encaja con pedir cinco minutos?"
+        distractor_type: "paronym"
+        why_not: "«Acordar» es cerrar un trato entre dos, y la frase dice expresamente que no viene a pactar nada."
+        hint_specific: "«Acordar» cierra un trato. Relee los dos puntos: ¿a qué dice Rodrigo que no viene?"
       - position: 3
         text: "esquivar"
         is_correct: false
@@ -126,9 +126,9 @@ exercises:
         why_not: "«Bordear» es rodear algo por fuera, y él entra en el desacuerdo el mismo día."
         hint_specific: "«Bordear» va por el borde. ¿Bruno rodea el desacuerdo o se mete en él?"
   - position: 5
-    sentence: "En la primera reunión con el equipo nuevo, Leonor {{blank}} el punto más incómodo antes de que alguien lo hiciera por ella."
-    hint_general: "Entra ella misma en el punto incómodo para no dejar que lo abra otra persona."
-    explanation: "Abordó: entró ella misma en el punto incómodo. «Mencionó» solo lo nombra de pasada y «rozó» sugiere tocarlo apenas."
+    sentence: "En la primera reunión con el equipo nuevo, Leonor {{blank}} el punto más incómodo y se quedó veinte minutos en él hasta dejarlo claro."
+    hint_general: "Entra de lleno en el punto difícil y se queda ahí hasta aclararlo; no lo nombra de pasada."
+    explanation: "Abordó: entró de lleno y se quedó en el punto. «Mencionó» solo lo nombra de pasada y «rozó» sugiere tocarlo apenas; ninguno aguanta veinte minutos."
     options:
       - position: 1
         text: "abordó"
@@ -137,14 +137,14 @@ exercises:
         text: "mencionó"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Mencionar» es nombrar algo de pasada, y la frase dice que se adelantó para tratarlo ella misma."
-        hint_specific: "«Mencionar» solo nombra. ¿Nombrarlo basta para que nadie más lo abra?"
+        why_not: "«Mencionar» es nombrar algo de pasada, y nadie se queda veinte minutos dentro de una simple mención."
+        hint_specific: "«Mencionar» solo nombra. Relee el final: ¿cuánto tiempo se queda Leonor en ese punto?"
       - position: 3
         text: "rozó"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Rozar» un punto es tocarlo apenas, justo lo contrario de adelantarse para tratarlo entero."
-        hint_specific: "«Rozar» apenas toca. ¿Eso evita que otra persona saque el punto?"
+        why_not: "«Rozar» un punto es tocarlo apenas, justo lo contrario de quedarse en él hasta dejarlo claro."
+        hint_specific: "«Rozar» apenas toca. ¿Se aclara algo tocándolo apenas durante veinte minutos?"
   - position: 6
     sentence: "«Quiero {{blank}} algo antes de firmar», dijo Emilio, y el silencio en la sala se volvió muy largo."
     hint_general: "Anuncia que va a entrar en un asunto pendiente justo antes de comprometerse."

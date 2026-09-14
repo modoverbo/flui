@@ -82,16 +82,16 @@ exercises:
         hint_specific: "Aplazar es dejar para más tarde. ¿Laura deja la decisión para otro día?"
   - id: "b0000000-0000-4000-8000-000000000082"
     position: 2
-    sentence: "Después de años sin hablarse por la herencia, los dos hermanos se reunieron a comer para {{blank}} el conflicto de una vez."
+    sentence: "Después de dos años sin hablarse por un préstamo, los dos hermanos se reunieron a comer para {{blank}} el asunto de una vez."
     hint_general: "Los hermanos quieren que el problema quede terminado para siempre."
-    explanation: "Zanjar: poner fin definitivo al conflicto. «Finiquitar» significa algo parecido, pero suena a trámite de oficina, y «sobrellevar» es aguantar el problema, no terminarlo."
+    explanation: "Zanjar: poner fin definitivo al asunto. «Canjear» es cambiar una cosa por otra, y «sobrellevar» es aguantar el problema, no terminarlo."
     options:
       - position: 1
-        text: "finiquitar"
+        text: "canjear"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Finiquitar» suena a trámite de oficina, como cerrar un contrato. Para una comida entre hermanos resulta demasiado frío."
-        hint_specific: "«Finiquitar» es propio de contratos y cuentas. ¿Suena natural en una comida familiar?"
+        distractor_type: "paronym"
+        why_not: "«Canjear» es cambiar una cosa por otra, como un vale por un regalo, y aquí no se intercambia nada: se cierra una pelea."
+        hint_specific: "«Canjear» se usa con vales y entradas. ¿Qué se intercambiaría en esa comida?"
       - position: 2
         text: "sobrellevar"
         is_correct: false
@@ -177,7 +177,7 @@ exercises:
   - position: 6
     sentence: "En casa {{blank}} el tema del reparto de gastos con una hoja compartida, y desde entonces nadie discute a fin de mes."
     hint_general: "Dejaron el tema terminado con una solución que sigue funcionando."
-    explanation: "Zanjamos: cerramos el tema con un acuerdo que dura. «Canjeamos» es cambiar una cosa por otra, y «despachamos» suena a resolverlo deprisa y sin ganas."
+    explanation: "Zanjamos: cerramos el tema con un acuerdo que dura. «Canjeamos» es cambiar una cosa por otra, y «arrastramos» sería llevarlo sin resolver mes tras mes."
     options:
       - position: 1
         text: "canjeamos"
@@ -192,11 +192,11 @@ exercises:
         why_not: null
         hint_specific: null
       - position: 3
-        text: "despachamos"
+        text: "arrastramos"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Despachar» es coloquial y suena a resolver algo deprisa y sin ganas; aquí el acuerdo aguanta mes tras mes."
-        hint_specific: "«Despachar» es quitarse algo de encima. ¿Encaja con una solución que dura?"
+        distractor_type: "near_synonym"
+        why_not: "«Arrastrar» un tema es llevarlo sin resolver mes tras mes, y la frase dice que desde entonces nadie discute."
+        hint_specific: "Arrastrar un tema lo deja abierto. ¿Qué pasa a fin de mes desde entonces?"
   - position: 7
     sentence: "Cuando la charla se repetía por tercera vez, Susana propuso {{blank}}: «Decidimos hoy y no lo volvemos a abrir»."
     hint_general: "Propone cerrar el asunto hoy y no volver sobre él."

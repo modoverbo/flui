@@ -165,9 +165,9 @@ exercises:
         text: "apremiante"
         is_correct: true
   - position: 7
-    sentence: "En casa, la mudanza dejó de ser un plan lejano y se volvió un asunto {{blank}}: las llaves se entregan el día 30."
-    hint_general: "Hay fecha fija y ya no se puede dejar para más adelante."
-    explanation: "Apremiante: hay fecha fija y no se puede aplazar. «Aparente» diría que solo lo parece, e «inminente» dice que va a ocurrir pronto, pero no que haya que actuar ya."
+    sentence: "En casa, la mudanza dejó de ser un plan lejano y se volvió un asunto {{blank}}: hay que embalar, avisar y pedir el camión esta misma semana."
+    hint_general: "Ya no admite espera: obliga a moverse ahora mismo."
+    explanation: "Apremiante: obliga a moverse ya. «Aparente» diría que solo lo parece, e «inminente» anuncia que algo llega pronto, sin exigirle nada a nadie."
     options:
       - position: 1
         text: "apremiante"
@@ -176,31 +176,31 @@ exercises:
         text: "aparente"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Aparente» dice que algo solo lo parece, y la fecha de entrega de las llaves es real."
-        hint_specific: "«Aparente» pone en duda lo que se ve. ¿La fecha del día 30 es real?"
+        why_not: "«Aparente» dice que algo solo lo parece, y la lista de cosas por hacer esta semana es bien real."
+        hint_specific: "«Aparente» pone en duda lo que se ve. ¿Embalar y pedir el camión son cosas reales?"
       - position: 3
         text: "inminente"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Inminente» dice que algo va a pasar enseguida, pero no que tú tengas que moverte ya."
-        hint_specific: "«Inminente» describe lo que va a ocurrir solo. ¿La mudanza ocurre sola?"
+        why_not: "«Inminente» dice que algo va a pasar enseguida por sí solo, pero no que tú tengas que embalar y llamar esta semana."
+        hint_specific: "«Inminente» describe lo que llega solo. Relee el final: ¿quién tiene que moverse?"
   - position: 8
-    sentence: "Si todo lo que escribes suena {{blank}}, tu equipo deja de distinguir lo que de verdad no puede esperar."
-    hint_general: "Cuando todo parece no poder esperar, nada se nota de verdad."
-    explanation: "Apremiante: si todo lo parece, nada destaca. «Aprensivo» describe a quien teme por su salud, y «urgentísimo» es coloquial y suena a exageración escrita en mayúsculas."
+    sentence: "Si en cada correo pides las cosas con el mismo tono {{blank}}, tu equipo deja de distinguir lo que de verdad no puede esperar."
+    hint_general: "Cuando todo se pide como si no pudiera esperar, nada destaca."
+    explanation: "Apremiante: si todo lo pides con prisa, nada destaca. «Aprensivo» describe a quien teme por su salud, y «tajante» habla de un tono cortante, no de prisa."
     options:
       - position: 1
-        text: "urgentísimo"
+        text: "tajante"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Urgentísimo» es coloquial y suena a exageración; la frase habla de cómo escribes en el trabajo todos los días."
-        hint_specific: "«Urgentísimo» sube el tono. ¿Ese registro encaja con un aviso de trabajo medido?"
+        distractor_type: "near_synonym"
+        why_not: "«Tajante» describe un tono cortante que no admite réplica, y lo que se pierde aquí es la diferencia entre lo que corre prisa y lo que no."
+        hint_specific: "«Tajante» corta la réplica. Relee el final: ¿qué deja de distinguir el equipo?"
       - position: 2
         text: "aprensivo"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Aprensivo» describe a una persona con miedo, y aquí lo que se describe es cómo suenan tus mensajes."
-        hint_specific: "«Aprensivo» se dice de personas. ¿De qué habla la frase, de personas o de mensajes?"
+        why_not: "«Aprensivo» describe a una persona con miedo, y aquí lo que se describe es el tono de tus correos."
+        hint_specific: "«Aprensivo» se dice de personas. ¿De qué habla la frase, de personas o de correos?"
       - position: 3
         text: "apremiante"
         is_correct: true

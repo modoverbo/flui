@@ -108,14 +108,14 @@ exercises:
   - position: 4
     sentence: "Mi hermano es {{blank}} con los papeles de casa: los trae firmados antes de que nadie se lo pida."
     hint_general: "Trae los papeles hechos antes de que se los pidan."
-    explanation: "Diligente: se adelanta y los trae hechos. «Inteligente» hablaría de su cabeza, y «organizado» diría que tiene orden, no que se adelante."
+    explanation: "Diligente: se adelanta y los trae hechos. «Inteligente» hablaría de su cabeza, y «exigente» de quien reclama a los demás."
     options:
       - position: 1
-        text: "organizado"
+        text: "exigente"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Organizado» dice que tiene sus cosas en orden; se puede tener todo ordenado y entregar los papeles el último día."
-        hint_specific: "Organizado habla de orden. ¿El orden hace que se adelante?"
+        distractor_type: "paronym"
+        why_not: "«Exigente» es quien reclama mucho a los demás; aquí nadie reclama nada, y él ya trae los papeles firmados."
+        hint_specific: "Exigente reclama a otros. ¿Tu hermano reclama o se adelanta?"
       - position: 2
         text: "inteligente"
         is_correct: false
@@ -128,7 +128,7 @@ exercises:
   - position: 5
     sentence: "Buscaban a alguien {{blank}}, no a alguien brillante que entregara tarde."
     hint_general: "Prefieren a quien cumple a tiempo antes que a quien brilla tarde."
-    explanation: "Diligente: prefieren a quien cumple a tiempo. «Indulgente» describe a quien perdona con facilidad, y «eficiente» mira el resultado con pocos recursos."
+    explanation: "Diligente: prefieren a quien cumple a tiempo. «Indulgente» describe a quien perdona con facilidad, y «elocuente» a quien habla muy bien."
     options:
       - position: 1
         text: "indulgente"
@@ -140,15 +140,15 @@ exercises:
         text: "diligente"
         is_correct: true
       - position: 3
-        text: "eficiente"
+        text: "elocuente"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Eficiente» mide el resultado logrado con pocos recursos; alguien brillante puede ser eficiente y entregar tarde igual."
-        hint_specific: "Eficiente mide el resultado. ¿Qué se descarta al final de la frase?"
+        distractor_type: "paronym"
+        why_not: "«Elocuente» es quien habla muy bien; lo que se compara aquí es entregar a tiempo o entregar tarde."
+        hint_specific: "Elocuente habla bien. ¿Se compara aquí cómo habla alguien?"
   - position: 6
     sentence: "La respuesta del ayuntamiento fue poco {{blank}}: tres meses para escribir dos líneas."
     hint_general: "Tres meses para dos líneas no es responder pronto."
-    explanation: "Diligente: tres meses no es responder pronto. «Dirigente» se dice de quien manda, y «solícita» es una palabra culta que suena a carta antigua."
+    explanation: "Diligente: tres meses no es responder pronto. «Dirigente» se dice de quien manda, e «indulgente» de quien perdona con facilidad."
     options:
       - position: 1
         text: "dirigente"
@@ -157,18 +157,18 @@ exercises:
         why_not: "«Dirigente» es quien encabeza una organización; una respuesta escrita no encabeza nada."
         hint_specific: "Dirigente encabeza grupos. ¿Una respuesta encabeza algo?"
       - position: 2
-        text: "solícita"
+        text: "indulgente"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Solícita» es una palabra culta y algo antigua, más propia de una carta formal que de una queja vecinal."
-        hint_specific: "«Solícita» suena a carta antigua. ¿Encaja al quejarte del ayuntamiento?"
+        distractor_type: "paronym"
+        why_not: "«Indulgente» es quien perdona los fallos ajenos; tardar tres meses en dos líneas no perdona nada a nadie."
+        hint_specific: "Indulgente perdona. ¿A quién perdonaría esa respuesta tan tardía?"
       - position: 3
         text: "diligente"
         is_correct: true
   - position: 7
     sentence: "Nadie elogia el trabajo {{blank}}: solo se nota el día en que falta."
     hint_general: "El trabajo hecho a tiempo solo se nota cuando falla."
-    explanation: "Diligente: el trabajo hecho a tiempo pasa desapercibido. «Negligente» describe lo contrario, y «puntual» se queda en la hora, sin el cuidado."
+    explanation: "Diligente: el trabajo hecho a tiempo pasa desapercibido. «Negligente» describe lo contrario, y «urgente» lo que corre prisa y reclama atención."
     options:
       - position: 1
         text: "negligente"
@@ -180,11 +180,11 @@ exercises:
         text: "diligente"
         is_correct: true
       - position: 3
-        text: "puntual"
+        text: "urgente"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Puntual» solo mide la hora de entrega; se puede llegar a la hora con el trabajo hecho de cualquier manera."
-        hint_specific: "Puntual mide la hora. ¿Basta con llegar a la hora?"
+        distractor_type: "paronym"
+        why_not: "«Urgente» es lo que corre prisa, y eso se nota mientras se hace, no el día en que falta."
+        hint_specific: "Lo urgente reclama atención ya. ¿Cuándo dice la frase que se nota?"
   - position: 8
     sentence: "Ximena agradeció en público lo {{blank}} que había sido Pedro con las respuestas del informe."
     hint_general: "Elogia que contestara pronto y con cuidado."

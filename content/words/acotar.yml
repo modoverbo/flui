@@ -66,7 +66,7 @@ exercises:
         is_correct: false
         distractor_type: "paronym"
         why_not: "«Anotar» es tomar nota de algo, y lo que pide Julia es dejar el encargo en una sola ciudad."
-        hint_specific: "«Anotar» va de papel y lápiz. ¿Se escribe el encargo o se reduce?"
+        hint_specific: "«Anotar» va de papel y lápiz. ¿Julia copia el encargo o lo reduce?"
   - position: 2
     sentence: "Antes de abrir el debate, Fernando quiso {{blank}} la pregunta: solo hablarían del primer trimestre."
     hint_general: "Pone un límite a la pregunta antes de que el debate empiece."
@@ -88,22 +88,22 @@ exercises:
         why_not: "«Achicar» es coloquial y se usa con la ropa o con el agua de una barca; para una pregunta suena fuera de sitio."
         hint_specific: "«Achicar» suena a taller de costura. ¿Encaja con una pregunta de trabajo?"
   - position: 3
-    sentence: "El informe de Cristina era largo y confuso; su jefa le sugirió {{blank}} el asunto a dos preguntas concretas."
-    hint_general: "Le proponen dejar fuera casi todo y quedarse con dos preguntas."
-    explanation: "Acotar: deja fuera lo demás y se queda con dos preguntas. «Agotar» sería tratarlo hasta el fondo, y «resumir» sería contar lo mismo más corto."
+    sentence: "El encargo de Cristina crecía cada semana, así que su jefa le pidió {{blank}} el trabajo a dos entregas y decir que no al resto."
+    hint_general: "Fijar de antemano hasta dónde llega el trabajo y rechazar lo que quede fuera."
+    explanation: "Acotar: fija dos entregas y deja fuera el resto. «Agotar» sería gastarlo hasta el final, y «resumir» conservaría todo, solo que más corto."
     options:
       - position: 1
         text: "agotar"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Agotar» un asunto es tratarlo hasta que no queda nada que decir, justo lo contrario de recortarlo."
-        hint_specific: "«Agotar» llega al fondo de todo. ¿El informe necesita más fondo o menos campo?"
+        why_not: "«Agotar» es gastar algo hasta que no queda nada, y aquí el trabajo se topa antes de hacerlo, no se consume."
+        hint_specific: "«Agotar» vacía hasta el fondo. ¿Cristina gasta el encargo o le pone un borde?"
       - position: 2
         text: "resumir"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Resumir» es contar lo mismo más corto, y aquí se decide dejar fuera una parte del asunto."
-        hint_specific: "«Resumir» conserva todo el contenido. ¿Se conserva todo o se deja algo fuera?"
+        why_not: "«Resumir» es contar lo mismo más corto; no permite dejar entregas fuera ni decir que no a nada."
+        hint_specific: "«Resumir» conserva todo el contenido. ¿Aquí se conserva todo o se rechaza una parte?"
       - position: 3
         text: "acotar"
         is_correct: true
@@ -128,45 +128,45 @@ exercises:
         text: "acotar"
         is_correct: true
   - position: 5
-    sentence: "Para que la charla no durara toda la tarde, Noelia {{blank}} la lista de asuntos a tres."
-    hint_general: "Deja la lista en tres puntos para que la charla no se alargue."
-    explanation: "Acotó: dejó la lista en tres puntos. «Anotó» sería apuntarlos, y «podó» se dice de las ramas de un árbol."
+    sentence: "Para que la charla no durara toda la tarde, Noelia {{blank}} el debate al presupuesto y dejó el calendario para otro día."
+    hint_general: "Encierra el debate en un solo punto y aparta el resto para otra ocasión."
+    explanation: "Acotó: encerró el debate en un punto y dejó fuera el resto. «Anotó» es tomar nota, y «acortó» quitaría minutos con el calendario aún dentro."
     options:
       - position: 1
         text: "anotó"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Anotar» es apuntar algo en un papel, y ella deja puntos fuera, no los copia."
-        hint_specific: "«Anotó» solo escribe. ¿Escribir la lista hace más corta la tarde?"
+        why_not: "«Anotar» es apuntar algo en un papel, y ella no toma nota: decide de qué se habla y de qué no."
+        hint_specific: "«Anotó» solo escribe. ¿Apuntar el debate impide que se hable del calendario?"
       - position: 2
-        text: "podó"
+        text: "acortó"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Podar» se dice de las ramas de un árbol; usarlo para una lista de asuntos suena a broma de jardín."
-        hint_specific: "«Podó» pide tijeras y ramas. ¿Hay un jardín en esta escena?"
+        distractor_type: "paronym"
+        why_not: "«Acortar» quita minutos, no temas: el calendario seguiría dentro del debate, solo que con menos tiempo."
+        hint_specific: "«Acortó» recorta la duración. ¿Qué pasa aquí con el calendario, se acorta o se aparta?"
       - position: 3
         text: "acotó"
         is_correct: true
   - position: 6
-    sentence: "Mi hermano y yo tuvimos que {{blank}} la mudanza a un fin de semana: ni un día más."
-    hint_general: "Los dos deciden de antemano hasta dónde llega el esfuerzo."
-    explanation: "Acotar: fijan de antemano hasta dónde llega. «Recortar» sería quitar una parte de lo que ya existe, y «acatar» es obedecer una orden."
+    sentence: "La mudanza no tenía todavía ni fecha ni plan, así que mi hermano y yo la {{blank}} a un fin de semana antes de mover nada."
+    hint_general: "Le ponen un límite de antemano, cuando aún no hay nada hecho."
+    explanation: "Acotamos: pusimos el límite antes de empezar. «Recortamos» exige algo ya hecho y no había ni fecha; «acatamos» supondría una orden de fuera."
     options:
       - position: 1
-        text: "acotar"
+        text: "acotamos"
         is_correct: true
       - position: 2
-        text: "recortar"
+        text: "recortamos"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Recortar» es quitar una parte de algo que ya existe, y aquí el límite se fija antes de empezar."
-        hint_specific: "«Recortar» trabaja sobre algo hecho. ¿La mudanza ya empezó?"
+        why_not: "«Recortar» quita una parte de algo que ya existe, y de la mudanza no había ni fecha ni plan que quitar."
+        hint_specific: "«Recortamos» necesita algo ya hecho. Relee el inicio: ¿qué había de la mudanza?"
       - position: 3
-        text: "acatar"
+        text: "acatamos"
         is_correct: false
         distractor_type: "paronym"
         why_not: "«Acatar» es obedecer una orden de otro, y son ellos dos quienes deciden el límite."
-        hint_specific: "«Acatar» viene de arriba. ¿Alguien manda sobre esos dos hermanos?"
+        hint_specific: "«Acatamos» viene de una orden. ¿Alguien manda sobre esos dos hermanos?"
   - position: 7
     sentence: "Sergio abrió la entrevista con una frase útil: «Voy a {{blank}} mi respuesta a un ejemplo, si te parece»."
     hint_general: "Ofrece quedarse dentro de un ejemplo en vez de contarlo todo."

@@ -66,21 +66,21 @@ exercises:
         why_not: "«Discutir» dice que hablaron del asunto; la frase cuenta que salieron con una tarifa y un límite cerrados."
         hint_specific: "Discutir se queda en la charla. ¿La frase se queda ahí o llega a un acuerdo?"
   - position: 2
-    sentence: "Antes de firmar, Ignacio quiso {{blank}} qué pasaba con los gastos extra si el proyecto se alargaba."
-    hint_general: "Quiere dejar cerrado de antemano un acuerdo sobre esos gastos."
-    explanation: "Pactar: quiere cerrar el acuerdo antes de firmar. «Estipular» suena a texto de notaría, y «aclarar» solo despejaría la duda, sin comprometer a nadie."
+    sentence: "Antes de firmar, Ignacio quiso {{blank}} con la constructora qué pasaba con los gastos extra: los dos se comprometieron por escrito."
+    hint_general: "Quiere dejar cerrado de antemano un compromiso sobre esos gastos."
+    explanation: "Pactar: cerrar un compromiso de las dos partes antes de firmar. «Captar» sería entenderlo él solo, y «aclarar» solo despejaría la duda, sin comprometer a nadie."
     options:
       - position: 1
-        text: "estipular"
+        text: "captar"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Estipular» pertenece al lenguaje de los contratos y las escrituras; en una charla previa entre dos personas suena rígido."
-        hint_specific: "«Estipular» vive en los contratos. ¿Suena natural en una conversación antes de firmar?"
+        distractor_type: "paronym"
+        why_not: "«Captar» es darte cuenta de algo por tu cuenta, y aquí hacen falta dos partes que se comprometan por escrito."
+        hint_specific: "«Captar» lo hace una sola persona. ¿Cuántas firman ese compromiso?"
       - position: 2
         text: "aclarar"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Aclarar» es entender algo que estaba borroso; aquí hace falta además un compromiso de las dos partes."
+        why_not: "«Aclarar» es entender algo que estaba borroso, y entender no obliga a nadie a nada por escrito."
         hint_specific: "Aclarar solo despeja una duda. ¿Basta con entenderlo o hay que comprometerse?"
       - position: 3
         text: "pactar"
@@ -106,36 +106,36 @@ exercises:
         why_not: "«Amarrar» es muy coloquial y sugiere sujetar algo para que no se escape; este reparto se decide hablando."
         hint_specific: "«Amarrar» suena a atar con fuerza. ¿El reparto se sujeta o se conversa?"
   - position: 4
-    sentence: "En el chat del equipo, Rodrigo y Pilar {{blank}} una fecha intermedia para no chocar con la entrega."
+    sentence: "En el chat del equipo, Rodrigo y Pilar {{blank}} una fecha intermedia y la pusieron esa tarde en el calendario compartido."
     hint_general: "Los dos cierran una fecha que les sirve a ambos."
-    explanation: "Pactaron: cerraron una fecha que servía a ambos. «Convinieron» diría lo mismo con aire de acta, y «propusieron» dejaría la fecha todavía en el aire."
+    explanation: "Pactaron: cerraron una fecha que servía a ambos. «Acataron» supondría que alguien la impuso, y «propusieron» dejaría la fecha todavía en el aire."
     options:
       - position: 1
-        text: "convinieron"
+        text: "acataron"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Convenir» es correcto, pero tiene aire de documento oficial; en un chat de equipo suena demasiado solemne."
-        hint_specific: "«Convenir» suena a acta firmada. ¿Encaja con el tono de un chat?"
+        distractor_type: "paronym"
+        why_not: "«Acatar» es cumplir lo que otro decide, y en el chat no hay nadie por encima: la fecha la eligen ellos dos."
+        hint_specific: "Acatar supone una orden de arriba. ¿Quién decide la fecha en ese chat?"
       - position: 2
         text: "propusieron"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Proponer» deja la fecha a la espera de un sí; la frase da por hecho que ya no chocan con la entrega."
-        hint_specific: "Proponer deja la decisión pendiente. ¿La fecha queda abierta o cerrada?"
+        why_not: "«Proponer» deja la fecha a la espera de un sí, y esa misma tarde ya estaba en el calendario."
+        hint_specific: "Proponer deja la decisión pendiente. ¿Dónde acabó la fecha esa tarde?"
       - position: 3
         text: "pactaron"
         is_correct: true
   - position: 5
-    sentence: "Mientras duró la obra, los vecinos del cuarto y los del quinto usaron el ascensor por turnos que {{blank}} en una reunión de escalera."
-    hint_general: "Se pusieron de acuerdo entre ellos para repartir el uso."
-    explanation: "Pactaron: se pusieron de acuerdo entre ellos. «Acataron» supondría que alguien decidió por ellos, y «sortearon» sería dejarlo al azar."
+    sentence: "Mientras duró la obra, los vecinos del cuarto y los del quinto usaron el ascensor por turnos que {{blank}} entre todos, cediendo cada uno alguna hora buena."
+    hint_general: "Se pusieron de acuerdo entre ellos y cada uno cedió algo."
+    explanation: "Pactaron: se pusieron de acuerdo cediendo cada uno algo. «Sortearon» sería dejarlo al azar, y «acataron» supondría que alguien decidió por ellos."
     options:
       - position: 1
         text: "sortearon"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Sortear» es dejarlo al azar; unos turnos hablados en una reunión no se echan a suertes."
-        hint_specific: "Sortear deja la decisión al azar. ¿Los vecinos hablan o echan suertes?"
+        why_not: "«Sortear» es dejarlo al azar, y en un sorteo nadie cede nada: te toca lo que te toca."
+        hint_specific: "Sortear reparte por suerte. ¿Qué hace cada vecino con su hora buena?"
       - position: 2
         text: "pactaron"
         is_correct: true
@@ -146,9 +146,9 @@ exercises:
         why_not: "«Acatar» es cumplir lo que otro decide; en la frase nadie impone los turnos, los arreglan entre ellos."
         hint_specific: "Acatar supone una orden de arriba. ¿Alguien manda aquí sobre el ascensor?"
   - position: 6
-    sentence: "Antes de aceptar el encargo, Valentina {{blank}} con su jefa cuántas horas semanales iba a dedicarle."
+    sentence: "Antes de aceptar el encargo, Valentina {{blank}} con su jefa veinte horas semanales, ni una más."
     hint_general: "Deja cerrado con su jefa un compromiso sobre las horas."
-    explanation: "Pactó: dejó cerrado un compromiso sobre las horas. «Captó» sería entenderlo por su cuenta, y «consultó» sería solo preguntar."
+    explanation: "Pactó: dejó cerrado un compromiso sobre las horas. «Captó» sería entenderlo por su cuenta, y «consultó» sería preguntar, sin fijar ningún número."
     options:
       - position: 1
         text: "captó"
@@ -160,8 +160,8 @@ exercises:
         text: "consultó"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Consultar» es preguntar y esperar respuesta; la frase dice que el número de horas queda fijado."
-        hint_specific: "Consultar solo busca una respuesta. ¿Aquí basta con eso o hace falta un compromiso?"
+        why_not: "«Consultar» es preguntar y esperar respuesta, y preguntar no deja veinte horas cerradas, ni una más."
+        hint_specific: "Consultar solo busca una respuesta. ¿Qué queda fijado al final de la frase?"
       - position: 3
         text: "pactó"
         is_correct: true
@@ -188,7 +188,7 @@ exercises:
   - position: 8
     sentence: "Tras dos meses de tira y afloja, ambas partes {{blank}} una salida que nadie celebró pero que todos firmaron."
     hint_general: "Cada lado cedió algo y el acuerdo salió adelante sin entusiasmo."
-    explanation: "Pactaron: cada lado cedió algo y el acuerdo salió adelante. «Impusieron» diría que un lado mandó sobre el otro, y «consensuaron» suena a jerga de oficina."
+    explanation: "Pactaron: cada lado cedió algo y el acuerdo salió adelante. «Impusieron» diría que un lado mandó sobre el otro, y «captaron» que solo la entendieron."
     options:
       - position: 1
         text: "pactaron"
@@ -197,14 +197,14 @@ exercises:
         text: "impusieron"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Imponer» significa que un lado obliga al otro; aquí las dos partes firman una salida que ninguna celebra."
+        why_not: "«Imponer» significa que un lado obliga al otro, y aquí las dos partes firman la misma salida."
         hint_specific: "Imponer supone un lado más fuerte. ¿La frase habla de un ganador?"
       - position: 3
-        text: "consensuaron"
+        text: "captaron"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Consensuar» es jerga de oficina y suena a informe interno; la escena es un cierre normal entre dos partes cansadas."
-        hint_specific: "«Consensuar» suena a jerga de reunión. ¿Encaja con dos partes cansadas de discutir?"
+        distractor_type: "paronym"
+        why_not: "«Captar» es entender algo por tu cuenta, y entender una salida no la deja firmada por nadie."
+        hint_specific: "«Captar» se queda en la cabeza. ¿Qué hicieron las dos partes al final?"
 readings:
   - position: 1
     scene: "trabajo"

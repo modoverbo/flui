@@ -47,7 +47,7 @@ exercises:
   - position: 1
     sentence: "Con un lápiz y dos minutos, Ámbar {{blank}} el plan en una servilleta y el equipo entendió por dónde iba."
     hint_general: "Con cuatro trazos basta para que se vea la idea."
-    explanation: "Esbozó: con cuatro trazos se vio la idea. «Esgrimió» sería sacar un argumento para defenderse, y «garabateó» es coloquial y sugiere un dibujo sin sentido."
+    explanation: "Esbozó: con cuatro trazos se vio la idea. «Esgrimió» sería sacar un argumento para defenderse, y «detalló» no cabe en dos minutos y una servilleta."
     options:
       - position: 1
         text: "esgrimió"
@@ -59,11 +59,11 @@ exercises:
         text: "esbozó"
         is_correct: true
       - position: 3
-        text: "garabateó"
+        text: "detalló"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Garabatear» es coloquial y sugiere trazos sin sentido, y la frase dice que el equipo entendió el plan."
-        hint_specific: "«Garabatear» no deja nada legible. ¿Qué pasó con el equipo al verlo?"
+        distractor_type: "near_synonym"
+        why_not: "«Detallar» pide tiempo y espacio para cada punto, y aquí hay dos minutos y una servilleta."
+        hint_specific: "Detallar entra punto por punto. ¿Cuánto tiempo y cuánto papel había?"
   - position: 2
     sentence: "Antes de escribir cuarenta páginas, conviene {{blank}} la idea en media carilla y enseñarla a alguien."
     hint_general: "Media carilla con lo grueso, antes de invertir semanas."
@@ -105,9 +105,9 @@ exercises:
         text: "esbozar"
         is_correct: true
   - position: 4
-    sentence: "Gonzalo {{blank}} una respuesta en el chat y avisó de que todavía faltaba pulirla con calma."
+    sentence: "Gonzalo {{blank}} una respuesta en el chat en tres líneas sueltas y avisó de que todavía faltaba escribirla bien."
     hint_general: "Deja la idea a la vista aunque no esté acabada."
-    explanation: "Esbozó: dejó la idea a la vista sin acabarla. «Esposó» es poner unas esposas, y «redactó» daría por escrita una respuesta que aún hay que pulir."
+    explanation: "Esbozó: dejó la idea a la vista sin acabarla. «Esposó» es poner unas esposas, y «redactó» daría por escrita una respuesta que él mismo deja a medias."
     options:
       - position: 1
         text: "esposó"
@@ -122,8 +122,8 @@ exercises:
         text: "redactó"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Redactar» da la respuesta por escrita y terminada, y él mismo avisa de que falta pulirla."
-        hint_specific: "«Redactar» deja el texto hecho. ¿Qué avisó Gonzalo después?"
+        why_not: "«Redactar» deja el texto ya escrito como toca, y él avisa de que eso está justo por hacer."
+        hint_specific: "«Redactar» deja el texto hecho. ¿De qué avisó Gonzalo después?"
   - position: 5
     sentence: "Cuando su socia le preguntó cómo lo veía, Delia {{blank}} la idea con tres frases y una flecha."
     hint_general: "Tres frases y una flecha alcanzan para mostrar el camino."
@@ -185,9 +185,9 @@ exercises:
         why_not: "«Esposar» es poner unas esposas en las muñecas, y aquí solo hay una mesa y una mano dibujando."
         hint_specific: "«Esposar» pertenece a otro contexto. ¿Qué hay sobre esa mesa?"
   - position: 8
-    sentence: "Un plan {{blank}} a tiempo vale más que un documento perfecto dos semanas tarde."
+    sentence: "Un plan {{blank}} a tiempo, con los huecos todavía a la vista, vale más que un documento perfecto dos semanas tarde."
     hint_general: "Vale más lo general y a tiempo que lo acabado y tarde."
-    explanation: "Esbozado: vale más lo general y a tiempo. «Esgrimido» sería usado como arma en una discusión, y «garabateado» es coloquial y sugiere que no se entiende nada."
+    explanation: "Esbozado: vale más lo general y a tiempo. «Esgrimido» sería usado como arma en una discusión, y «terminado» choca con los huecos a la vista."
     options:
       - position: 1
         text: "esgrimido"
@@ -196,11 +196,11 @@ exercises:
         why_not: "«Esgrimido» describe un argumento usado para defenderse, y aquí se compara con un documento acabado."
         hint_specific: "«Esgrimido» habla de argumentos en una pelea. ¿Con qué se compara el plan?"
       - position: 2
-        text: "garabateado"
+        text: "terminado"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Garabateado» es coloquial y sugiere que no se entiende nada, y un plan así no vale más que nada."
-        hint_specific: "«Garabateado» no deja nada legible. ¿Serviría un plan ilegible?"
+        distractor_type: "near_synonym"
+        why_not: "«Terminado» choca con los huecos que la propia frase deja a la vista."
+        hint_specific: "Fíjate en los huecos. ¿Un plan con huecos está acabado?"
       - position: 3
         text: "esbozado"
         is_correct: true

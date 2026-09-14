@@ -66,9 +66,9 @@ exercises:
         why_not: "«Adivinar» es acertar sin preguntar, y aquí la idea es justo acercarse y comprobar."
         hint_specific: "«Adivinar» no necesita acercarse. ¿Él se acerca o se queda suponiendo?"
   - position: 2
-    sentence: "Rosa {{blank}} el terreno con dos preguntas suaves y solo entonces pidió el viernes libre."
+    sentence: "Rosa {{blank}} a su jefa con dos preguntas suaves y solo entonces pidió el viernes libre."
     hint_general: "Lanza dos preguntas suaves para ver cómo está el ambiente antes de pedir nada."
-    explanation: "Tanteó: probó el ambiente con dos preguntas suaves. «Tensó» sería ponerlo todo más rígido, y «sondeó» suena a encuesta con muchas personas."
+    explanation: "Tanteó: probó el ánimo de su jefa con dos preguntas suaves. «Tensó» sería ponerlo todo más rígido, y «presionó» chocaría con lo suaves que eran."
     options:
       - position: 1
         text: "tanteó"
@@ -80,11 +80,11 @@ exercises:
         why_not: "«Tensar» es poner algo más rígido, y dos preguntas suaves buscan lo contrario."
         hint_specific: "«Tensar» aprieta. ¿Dos preguntas suaves aprietan o aflojan?"
       - position: 3
-        text: "sondeó"
+        text: "presionó"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Sondear» suena a encuesta con muchas personas y cifras; aquí hay dos preguntas a una sola persona."
-        hint_specific: "«Sondear» va de encuestas y grupos grandes. ¿Cuántas personas hay en la escena?"
+        distractor_type: "near_synonym"
+        why_not: "«Presionar» es apretar para conseguir algo, y la frase insiste en que las dos preguntas eran suaves."
+        hint_specific: "«Presionar» aprieta. ¿Cómo eran esas dos preguntas?"
   - position: 3
     sentence: "«No hace falta {{blank}} tanto, Manuel: pregúntaselo y sales de dudas en un minuto»."
     hint_general: "Le dicen que deje de dar vueltas midiendo el ambiente y pregunte de una vez."
@@ -188,7 +188,7 @@ exercises:
   - position: 8
     sentence: "Ignacio no {{blank}} nada: entró, dijo lo que pensaba y se sentó en la primera silla libre."
     hint_general: "Entra sin medir el ambiente y va directo a lo que quería decir."
-    explanation: "Tanteó: entró sin medir el ambiente. «Tensó» sería endurecerlo todo, y «midió» habla de calcular distancias o cantidades, no de explorar a alguien."
+    explanation: "Tanteó: entró sin probar el ambiente. «Tensó» sería endurecerlo todo, y «tasó» sería ponerle precio a algo."
     options:
       - position: 1
         text: "tensó"
@@ -197,11 +197,11 @@ exercises:
         why_not: "«Tensar» es endurecer la situación, y la frase solo dice que fue directo, no que la pusiera dura."
         hint_specific: "«Tensar» endurece. ¿Ir directo es lo mismo que poner a todos rígidos?"
       - position: 2
-        text: "midió"
+        text: "tasó"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Medir» se refiere a calcular distancias o cantidades, no a explorar cómo está alguien antes de hablar."
-        hint_specific: "«Medir» va de cantidades. ¿Qué cantidad habría que calcular al entrar en una sala?"
+        distractor_type: "paronym"
+        why_not: "«Tasar» es ponerle precio a algo, como un piso o un coche, y aquí no hay nada que valorar en dinero."
+        hint_specific: "«Tasar» pone precio. ¿Qué habría que valorar en dinero al entrar en la sala?"
       - position: 3
         text: "tanteó"
         is_correct: true

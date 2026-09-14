@@ -155,9 +155,9 @@ exercises:
         why_not: null
         hint_specific: null
   - position: 5
-    sentence: "En el chat del equipo, Emilio quiso {{blank}} su comentario sobre el retraso antes de que alguien lo tomara a mal."
-    hint_general: "Quiere precisar lo dicho para que no se entienda como un reproche."
-    explanation: "Matizar: precisar lo dicho para que no suene a reproche. «Endulzar» es coloquial y sugiere falsear el tono, y «atizar» sería echar leña al retraso."
+    sentence: "En el chat del equipo, Emilio quiso {{blank}} su comentario sobre el retraso: no pensaba retirarlo, solo decir en qué casos no valía."
+    hint_general: "Quiere precisar lo dicho y señalar en qué casos no vale."
+    explanation: "Matizar: precisar en qué casos no vale lo dicho. «Endulzar» es coloquial y solo cambia el tono, y «atizar» sería echar leña al retraso."
     options:
       - position: 1
         text: "matizar"
@@ -169,25 +169,25 @@ exercises:
         text: "endulzar"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Endulzar» es coloquial y sugiere falsear el tono para caer bien, y él solo quiere ser preciso."
-        hint_specific: "«Endulzar» suena a maquillar el tono. ¿Quiere gustar o quiere ser preciso?"
+        why_not: "«Endulzar» es coloquial y solo cambia el tono para caer bien; él no toca el tono, añade en qué casos no vale."
+        hint_specific: "«Endulzar» suaviza el tono. ¿Emilio cambia el tono o añade una excepción?"
       - position: 3
         text: "atizar"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Atizar» sería echar leña al retraso, justo lo que intenta evitar antes de que alguien se moleste."
+        why_not: "«Atizar» sería echar leña al retraso, y él lo que hace es acotar lo que ya había dicho."
         hint_specific: "«Atizar» empeora las cosas. ¿Quiere calmar el chat o encenderlo?"
   - position: 6
     sentence: "Patricia aceptó la propuesta, aunque pidió {{blank}} un punto sobre los plazos antes de firmar."
     hint_general: "Pide precisar un punto antes de comprometerse del todo."
-    explanation: "Matizar: precisar un punto antes de comprometerse. «Pulir» habla de mejorar la forma, y «finiquitar» suena a trámite de oficina y cerraría el tema."
+    explanation: "Matizar: precisar un punto antes de comprometerse. «Rebatir» sería llevar la contraria a lo que ya aceptó, y «atizar» sería echar leña al asunto."
     options:
       - position: 1
-        text: "pulir"
+        text: "rebatir"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Pulir» habla de mejorar la forma de algo, y lo que ella pide es precisar el contenido de un punto."
-        hint_specific: "«Pulir» va de acabado y de forma. ¿Pide otra forma o más precisión?"
+        why_not: "«Rebatir» es llevar la contraria con argumentos, y la frase empieza diciendo que Patricia aceptó la propuesta."
+        hint_specific: "Rebatir contradice. ¿Qué hizo Patricia con la propuesta en la primera mitad?"
       - position: 2
         text: "matizar"
         is_correct: true
@@ -195,11 +195,11 @@ exercises:
         why_not: null
         hint_specific: null
       - position: 3
-        text: "finiquitar"
+        text: "atizar"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Finiquitar» suena a trámite de oficina y cerraría el punto, cuando ella todavía quiere hablarlo."
-        hint_specific: "«Finiquitar» es propio de contratos. ¿Quiere cerrar el punto o afinarlo?"
+        distractor_type: "paronym"
+        why_not: "«Atizar» es echar leña y encender el asunto, lo contrario de pedir precisión antes de firmar."
+        hint_specific: "«Atizar» aviva el fuego. ¿Patricia quiere encender el tema o afinarlo?"
   - position: 7
     sentence: "Clara escuchó la queja hasta el final y luego {{blank}} su respuesta con dos ejemplos exactos."
     hint_general: "Precisa su respuesta con datos en lugar de hablar en general."

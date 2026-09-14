@@ -68,7 +68,7 @@ exercises:
   - position: 2
     sentence: "El equipo iba justo de manos, así que {{blank}} el turno de tarde con dos personas más."
     hint_general: "Suman dos personas para que el turno aguante."
-    explanation: "Reforzaron: sumaron dos personas al turno. «Reformaron» sería cambiar el turno entero, y «apuntalaron» suena a obra y a andamios."
+    explanation: "Reforzaron: sumaron dos personas al turno. «Reformaron» sería cambiar el turno entero, y «alargaron» habría añadido horas, no manos."
     options:
       - position: 1
         text: "reformaron"
@@ -77,11 +77,11 @@ exercises:
         why_not: "«Reformar» el turno sería cambiar su estructura; aquí el turno sigue igual, solo que con dos personas más."
         hint_specific: "Reformar cambia la estructura. ¿Cambia el turno o crece?"
       - position: 2
-        text: "apuntalaron"
+        text: "alargaron"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Apuntalar» pertenece al mundo de la obra y los andamios; hablando de personas en un turno suena a edificio en ruinas."
-        hint_specific: "«Apuntalar» suena a obra y andamios. ¿Encaja al hablar de un turno de tarde?"
+        distractor_type: "near_synonym"
+        why_not: "«Alargar» un turno es darle más horas, y aquí el turno dura lo mismo: lo que crece es el número de manos."
+        hint_specific: "Alargar añade horas. ¿Qué se añadió al turno de tarde?"
       - position: 3
         text: "reforzaron"
         is_correct: true
@@ -126,15 +126,15 @@ exercises:
         text: "reforzó"
         is_correct: true
   - position: 5
-    sentence: "Antes del acto, Ignacio {{blank}} el mensaje con tres datos y una historia corta."
-    hint_general: "Añade datos y una historia para que el mensaje pese más."
-    explanation: "Reforzó: añadió datos e historia para dar peso al mensaje. «Refrescó» sería recordarlo, y «amplió» sería alargarlo, que no es lo mismo que hacerlo más firme."
+    sentence: "Antes del acto, Ignacio {{blank}} el mensaje: cambió dos adjetivos por tres datos y no añadió ni una línea."
+    hint_general: "El mensaje pesa más sin ocupar más sitio."
+    explanation: "Reforzó: el mensaje pesa más sin ocupar más. «Refrescó» sería traerlo a la memoria, y «amplió» lo habría hecho más largo."
     options:
       - position: 1
         text: "refrescó"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Refrescar» un mensaje es traerlo de nuevo a la memoria; aquí el mensaje no se recuerda, se apoya con pruebas."
+        why_not: "«Refrescar» un mensaje es traerlo de nuevo a la memoria; aquí el mensaje no se recuerda, se apoya con datos."
         hint_specific: "Refrescar trae algo a la memoria. ¿Qué hacen los tres datos por el mensaje?"
       - position: 2
         text: "reforzó"
@@ -143,8 +143,8 @@ exercises:
         text: "amplió"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Ampliar» es hacerlo más largo; tres datos y una historia corta lo hacen más firme, no más extenso."
-        hint_specific: "Ampliar alarga. ¿El mensaje queda más largo o más firme?"
+        why_not: "«Ampliar» es hacerlo más largo, y la frase aclara que no añadió ni una línea."
+        hint_specific: "Ampliar alarga. ¿Cuánto creció el mensaje según la frase?"
   - position: 6
     sentence: "Una costumbre buena se {{blank}} nombrándola en voz alta; si te la callas, deja de pasar."
     hint_general: "Lo bueno crece cuando se dice en voz alta."
@@ -188,14 +188,14 @@ exercises:
   - position: 8
     sentence: "Un mensaje que se {{blank}} con ejemplos se recuerda mucho más que otro lleno de adjetivos."
     hint_general: "Los ejemplos dan peso a un mensaje."
-    explanation: "Refuerza: los ejemplos le dan peso. «Reforma» sería cambiarlo por otro mensaje, y «robustece» es una palabra culta que suena a manual."
+    explanation: "Refuerza: los ejemplos le dan peso. «Reforma» sería cambiarlo por otro mensaje, y «adorna» lo vestiría por fuera, como los adjetivos."
     options:
       - position: 1
-        text: "robustece"
+        text: "adorna"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Robustecer» es una palabra culta que casi nadie dice en voz alta; para hablar de un mensaje suena libresca."
-        hint_specific: "«Robustece» suena a libro antiguo. ¿La dirías en una reunión?"
+        distractor_type: "near_synonym"
+        why_not: "«Adornar» es vestir algo por fuera, y eso es justo lo que hacen los adjetivos que la frase deja peor parados."
+        hint_specific: "Adornar viste por fuera. ¿Qué hace la frase con el mensaje lleno de adjetivos?"
       - position: 2
         text: "refuerza"
         is_correct: true

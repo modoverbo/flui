@@ -45,16 +45,16 @@ confusions:
     memory_trick: "El rebelde se planta; el otro dato destapa."
 exercises:
   - position: 1
-    sentence: "El dato más {{blank}} no fue la caída de ventas: fue la hora a la que la gente se iba, algo que nadie había mirado."
+    sentence: "Nadie discutía que la caída de ventas fuera el dato más importante, pero el más {{blank}} fue otro: la hora a la que la gente se iba."
     hint_general: "Ese dato enseñó algo que hasta entonces nadie veía."
-    explanation: "Revelador: enseñó algo que nadie había mirado. «Relevante» diría solo que importa, y «bestial» es coloquial y habla del tamaño de la sorpresa."
+    explanation: "Revelador: enseñó algo que nadie había mirado. «Relevante» significa importante, y la frase ya dice cuál lo era, y «bestial» es coloquial y mide el tamaño del susto."
     options:
       - position: 1
         text: "relevante"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Relevante» dice que el dato importa, y lo que destaca la frase es que nadie lo había mirado nunca."
-        hint_specific: "«Relevante» mide importancia. ¿Qué tenía de especial esa hora?"
+        why_not: "«Relevante» significa importante, y la frase ya ha dicho qué dato se lleva esa etiqueta."
+        hint_specific: "«Relevante» mide importancia. ¿Qué dato tiene ya esa etiqueta en la frase?"
       - position: 2
         text: "revelador"
         is_correct: true
@@ -62,7 +62,7 @@ exercises:
         text: "bestial"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Bestial» es coloquial y habla del tamaño de la sorpresa, no de que el dato mostrara algo escondido."
+        why_not: "«Bestial» es coloquial y mide el tamaño del susto, no lo que un dato deja al descubierto."
         hint_specific: "«Bestial» exagera. ¿Qué hizo ese dato con lo que se sabía?"
   - position: 2
     sentence: "Ámbar no dijo nada cuando le preguntaron por el plazo, y su silencio fue más {{blank}} que cualquier respuesta."
@@ -85,29 +85,29 @@ exercises:
         why_not: "«Tremendo» es coloquial y solo dice que algo fue enorme, sin explicar que ese silencio dejara ver nada."
         hint_specific: "«Tremendo» mide tamaño. ¿Qué dejó a la vista ese silencio?"
   - position: 3
-    sentence: "Un detalle {{blank}} cambió la reunión entera: el cliente llamaba siempre los viernes por la tarde."
-    hint_general: "Ese detalle enseñó algo que nadie había notado."
-    explanation: "Revelador: el detalle enseñó algo que nadie había notado. «Relevante» diría que importa, sin decir que descubre, y «curioso» solo llamaría la atención."
+    sentence: "No era una anécdota simpática: aquel detalle resultó {{blank}}, porque explicaba por qué el cliente llamaba los viernes y nadie contestaba."
+    hint_general: "Ese detalle enseñó de golpe algo que nadie había notado."
+    explanation: "Revelador: el detalle enseñó de golpe lo que nadie notaba. «Reverente» describe a quien muestra respeto, y «curioso» se quedaría en la anécdota que la frase descarta."
     options:
       - position: 1
-        text: "relevante"
+        text: "reverente"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Relevante» dice que el detalle importa, y lo que cambió la reunión fue descubrir un patrón que nadie veía."
-        hint_specific: "«Relevante» mide importancia. ¿Qué aportó ese detalle de los viernes?"
+        why_not: "«Reverente» describe a quien muestra mucho respeto, y aquí se habla de un detalle que explica algo."
+        hint_specific: "«Reverente» pertenece al trato respetuoso. ¿De qué habla la frase?"
       - position: 2
         text: "curioso"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Curioso» llama la atención, pero no explica que la reunión entera cambiara de rumbo."
-        hint_specific: "«Curioso» se queda en la anécdota. ¿Qué pasó con la reunión?"
+        why_not: "«Curioso» se queda en la anécdota, y la frase empieza descartando justo eso."
+        hint_specific: "«Curioso» se queda en la anécdota. ¿Qué descarta el principio de la frase?"
       - position: 3
         text: "revelador"
         is_correct: true
   - position: 4
-    sentence: "Si un dato no cambia lo que pensabas, será interesante, pero no {{blank}}."
+    sentence: "Si un dato no cambia lo que pensabas, podrá ser importante, pero no {{blank}}."
     hint_general: "Solo merece ese nombre lo que te hace cambiar de idea."
-    explanation: "Revelador: solo lo que te hace cambiar de idea. «Reverente» describe a quien muestra respeto, e «importante» puede serlo un dato que ya esperabas."
+    explanation: "Revelador: solo lo que te hace cambiar de idea. «Reverente» describe a quien muestra respeto, e «importante» ya lo concede la propia frase."
     options:
       - position: 1
         text: "reverente"
@@ -122,8 +122,8 @@ exercises:
         text: "importante"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Importante» puede serlo un dato que ya esperabas, y la frase pide justo que cambie lo que pensabas."
-        hint_specific: "«Importante» no exige sorpresa. ¿Qué condición pone la frase?"
+        why_not: "«Importante» es lo que la frase ya concede a ese dato, y aun así lo deja fuera de lo que busca."
+        hint_specific: "«Importante» ya se lo concede la frase. ¿Qué le sigue faltando a ese dato?"
   - position: 5
     sentence: "Delia enseñó un gráfico {{blank}}: el problema no estaba en el precio, sino en el plazo de entrega."
     hint_general: "El gráfico mostró dónde estaba de verdad el problema."
@@ -145,15 +145,15 @@ exercises:
         why_not: "«Bonito» valora el aspecto del gráfico, y lo que cuenta la frase es lo que dejó ver."
         hint_specific: "«Bonito» habla del diseño. ¿Qué descubrió la sala al verlo?"
   - position: 6
-    sentence: "Cuando su madre contó por qué se mudaron en 1998, Ivo escuchó el detalle más {{blank}} de su infancia."
+    sentence: "Cuando su madre le contó por fin por qué se mudaron, Ivo pensó que aquello no era lo más importante de su infancia, pero sí lo más {{blank}}."
     hint_general: "Ese detalle cambió la idea que tenía de aquellos años."
-    explanation: "Revelador: cambió la idea que tenía de aquellos años. «Relevante» diría solo que importa, y «bestial» es coloquial y suena a exageración."
+    explanation: "Revelador: cambió la idea que tenía de aquellos años. «Relevante» significa importante, y la frase lo niega, y «bestial» es coloquial y suena a exageración."
     options:
       - position: 1
         text: "bestial"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Bestial» es coloquial y suena a exageración, y aquí se describe un recuerdo familiar que cambia una idea."
+        why_not: "«Bestial» es coloquial y suena a exageración, y aquí se cuenta un recuerdo familiar que cambia una idea."
         hint_specific: "«Bestial» sube el tono. ¿Qué le pasó a Ivo con ese detalle?"
       - position: 2
         text: "revelador"
@@ -162,8 +162,8 @@ exercises:
         text: "relevante"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Relevante» dice que el detalle importa, y lo que cuenta la frase es que le cambió la infancia entera."
-        hint_specific: "«Relevante» mide importancia. ¿Qué se movió dentro de Ivo?"
+        why_not: "«Relevante» significa importante, y la frase acaba de decir que aquello no era lo más importante."
+        hint_specific: "«Relevante» mide importancia. ¿Qué niega Ivo justo antes del hueco?"
   - position: 7
     sentence: "El mejor caso de éxito tiene un momento {{blank}}, no una lista de logros ordenados por fecha."
     hint_general: "Un momento en el que se ve algo que no se veía antes."

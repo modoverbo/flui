@@ -166,9 +166,9 @@ exercises:
         why_not: "«Discutir» sugiere una pelea; la frase cuenta que escuchó y volvió con otra cifra, sin ningún enfrentamiento."
         hint_specific: "Discutir sugiere pelea. ¿Qué hizo Ignacio antes de volver?"
   - position: 7
-    sentence: "Nadie {{blank}} nada si le llegas con la misma frase de la semana pasada."
+    sentence: "Nadie {{blank}} un no ya dado si le llegas con la misma frase de la semana pasada."
     hint_general: "Sin argumentos nuevos, nadie vuelve sobre lo decidido."
-    explanation: "Reconsidera: sin argumentos nuevos nadie vuelve atrás. «Reconstruye» sería levantar algo derribado, y «acepta» daría por hecho un sí que nadie ha dado."
+    explanation: "Reconsidera: sin argumentos nuevos nadie vuelve sobre su no. «Reconstruye» sería levantar algo derribado, y «acepta» sería quedarse con ese no, no moverlo."
     options:
       - position: 1
         text: "reconstruye"
@@ -183,12 +183,12 @@ exercises:
         text: "acepta"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Aceptar» daría por hecho un sí; el paso anterior, volver a pensarlo, es el que no ocurre sin datos nuevos."
-        hint_specific: "Aceptar ya es decir que sí. ¿Qué paso falta antes del sí?"
+        why_not: "«Aceptar» un no es resignarse a él, y la frase habla de lo que no consigues cuando repites el mismo argumento."
+        hint_specific: "Aceptar un no es quedarse con él. ¿Qué buscas tú al volver con una frase?"
   - position: 8
     sentence: "La comisión, que ya había dicho que no, aceptó {{blank}} la solicitud porque apareció un documento que faltaba."
     hint_general: "Vuelven sobre un caso cerrado porque aparece un papel."
-    explanation: "Reconsiderar: vuelven sobre un caso ya cerrado. «Reconvenir» es reñir a alguien, y «considerar» valdría para un caso nuevo, no para uno decidido."
+    explanation: "Reconsiderar: vuelven sobre un caso ya cerrado. «Reconvenir» es reñir a alguien, y «archivar» sería guardar la solicitud sin volver a mirarla."
     options:
       - position: 1
         text: "reconvenir"
@@ -197,11 +197,11 @@ exercises:
         why_not: "«Reconvenir» es reñir a alguien por lo que ha hecho; aquí no se riñe a nadie, se revisa un caso cerrado."
         hint_specific: "Reconvenir riñe a alguien. ¿Hay alguna reprimenda en esta frase?"
       - position: 2
-        text: "considerar"
+        text: "archivar"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Considerar» sirve para algo que se mira por primera vez; la frase dice que la comisión ya había dicho que no."
-        hint_specific: "Considerar mira algo por primera vez. ¿Qué había dicho ya la comisión?"
+        why_not: "«Archivar» es guardar el caso y no volver a abrirlo, y el documento que apareció es justo el motivo para abrirlo."
+        hint_specific: "Archivar cierra la carpeta. ¿Qué provoca el documento que faltaba?"
       - position: 3
         text: "reconsiderar"
         is_correct: true

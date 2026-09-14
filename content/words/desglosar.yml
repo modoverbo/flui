@@ -66,9 +66,9 @@ exercises:
         why_not: "«Resumir» deja menos información; el cliente pide justo lo contrario, que aparezca el detalle de cada persona."
         hint_specific: "Resumir deja menos. ¿Este cliente quiere menos detalle o más?"
   - position: 2
-    sentence: "Antes de aprobar el gasto, Silvia pidió que alguien {{blank}} el presupuesto en cuatro bloques."
-    hint_general: "Pide que el dinero aparezca separado en cuatro bloques."
-    explanation: "Desglosara: pide el dinero separado en bloques. «Desgastara» sería gastarlo por el uso, y «pormenorizara» diría lo mismo con voz de manual."
+    sentence: "Antes de aprobar el gasto, Silvia pidió que alguien {{blank}} el presupuesto: cuatro bloques, con su importe cada uno."
+    hint_general: "Pide el dinero separado en cuatro bloques, cada uno con su cifra."
+    explanation: "Desglosara: pide el dinero separado en bloques con su cifra. «Desgastara» sería estropearlo con el uso, y «justificara» sería dar razones, no partirlo."
     options:
       - position: 1
         text: "desgastara"
@@ -77,11 +77,11 @@ exercises:
         why_not: "«Desgastar» es estropear algo con el uso; un presupuesto no se desgasta al mirarlo, se separa en partes."
         hint_specific: "Desgastar estropea con el uso. ¿El presupuesto se estropea o se reparte?"
       - position: 2
-        text: "pormenorizara"
+        text: "justificara"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Pormenorizar» es correcto, pero suena a manual antiguo; pidiendo un presupuesto a un compañero resulta pomposo."
-        hint_specific: "«Pormenorizar» suena a manual antiguo. ¿Se lo pedirías así a un compañero?"
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» es dar razones para defender el gasto; Silvia no pide razones, pide cuatro bloques con su importe."
+        hint_specific: "Justificar da razones. ¿Silvia pide razones o partes con su importe?"
       - position: 3
         text: "desglosara"
         is_correct: true
@@ -146,9 +146,9 @@ exercises:
         text: "desglosó"
         is_correct: true
   - position: 6
-    sentence: "Nadie entendía la subida del alquiler hasta que el administrador la {{blank}} línea por línea."
-    hint_general: "La explicó línea por línea hasta que la subida tuvo sentido."
-    explanation: "Desglosó: la explicó línea por línea. «Desgastó» hablaría de estropear algo con el uso, y «tradujo» supondría pasarla a otro idioma."
+    sentence: "Nadie entendía la subida del alquiler hasta que el administrador la {{blank}} concepto por concepto y todos vieron de dónde salía cada cifra."
+    hint_general: "La separó concepto por concepto hasta que todos vieron de dónde salía cada cifra."
+    explanation: "Desglosó: la separó concepto por concepto. «Desgastó» hablaría de estropear algo con el uso, y «recitó» sería decirla de memoria sin explicar nada."
     options:
       - position: 1
         text: "desglosó"
@@ -160,11 +160,11 @@ exercises:
         why_not: "«Desgastar» es estropear algo poco a poco con el uso; una subida de alquiler no se desgasta, se reparte en conceptos."
         hint_specific: "Desgastar estropea con el uso. ¿Qué le hizo el administrador a esa subida?"
       - position: 3
-        text: "tradujo"
+        text: "recitó"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Traducir» es pasar algo a otro idioma; aquí el problema no era el idioma, era no ver de dónde salía el dinero."
-        hint_specific: "Traducir cambia de idioma. ¿El problema era el idioma?"
+        why_not: "«Recitar» es decir algo seguido y de carrerilla; repetirlo en voz alta no habría hecho que nadie viera de dónde salía la cifra."
+        hint_specific: "Recitar solo repite. ¿Repetir la subida bastaba para entenderla?"
   - position: 7
     sentence: "Mi hermano {{blank}} la cuenta de la cena para que cada uno pagara lo que había pedido."
     hint_general: "Separó la cuenta para que cada uno pagara lo suyo."

@@ -66,22 +66,22 @@ exercises:
         why_not: "«Repetir» es decir lo mismo otra vez; la frase cuenta que la cifra cambió al aparecer el dato bueno."
         hint_specific: "Repetir dice lo mismo. ¿La cifra se queda igual o cambia?"
   - position: 2
-    sentence: "Nadie pierde autoridad por {{blank}} a tiempo; se pierde por sostener lo insostenible."
-    hint_general: "Corregirte a tiempo no te quita autoridad, te la da."
-    explanation: "Rectificar: corregirte a tiempo no quita autoridad. «Ratificar» sería confirmarlo todo, y «recular» es coloquial y suena a echarse atrás por miedo."
+    sentence: "Nadie pierde autoridad por {{blank}} una cifra equivocada; la pierde quien la defiende hasta el final."
+    hint_general: "Cambiar a tiempo un número equivocado no te quita peso; sostenerlo sí."
+    explanation: "Rectificar: cambiar a tiempo la cifra no quita autoridad. «Ratificar» la confirmaría tal cual, y «repetir» la dejaría igual de equivocada."
     options:
       - position: 1
         text: "ratificar"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Ratificar» es confirmar lo que ya dijiste; sostener lo insostenible es precisamente lo que la frase critica."
-        hint_specific: "Ratificar confirma. ¿Qué critica el final de la frase?"
+        why_not: "«Ratificar» es confirmar la cifra tal como está, que es justo lo que hace quien la defiende hasta el final."
+        hint_specific: "Ratificar confirma lo dicho. ¿Qué hace quien defiende su cifra hasta el final?"
       - position: 2
-        text: "recular"
+        text: "repetir"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Recular» es coloquial y sugiere echarse atrás por miedo; corregirse a tiempo no es un acto de miedo."
-        hint_specific: "«Recular» suena a echarse atrás por miedo. ¿De eso habla la frase?"
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» es decirla otra vez igual, y así la cifra equivocada sigue donde estaba."
+        hint_specific: "Repetir deja el número como estaba. ¿Qué necesita una cifra equivocada?"
       - position: 3
         text: "rectificar"
         is_correct: true
@@ -106,22 +106,22 @@ exercises:
         why_not: "«Insistir» es repetirlo con más fuerza; la frase habla de darte cuenta de que te pasaste, no de doblar la apuesta."
         hint_specific: "Insistir repite con fuerza. ¿Qué te acabas de dar cuenta?"
   - position: 4
-    sentence: "Mi padre {{blank}} lo que había dicho de mi amiga en cuanto la conoció un poco mejor."
-    hint_general: "Corrige lo que había dicho al conocerla mejor."
-    explanation: "Rectificó: corrigió lo que había dicho. «Ratificó» sería mantener su primera opinión, y «aclaró» diría que la explicó mejor sin cambiarla."
+    sentence: "Mi padre {{blank}} en la mesa lo que había dicho de mi amiga: se había equivocado con ella."
+    hint_general: "Corrige delante de todos lo que había dicho, porque no era así."
+    explanation: "Rectificó: corrigió lo que había dicho porque no era así. «Ratificó» sería mantener su primera opinión, y «aclaró» explicaría lo mismo mejor, sin cambiarlo."
     options:
       - position: 1
         text: "aclaró"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Aclarar» es explicar mejor lo mismo; la frase dice que su opinión cambió al conocerla, no que se entendiera mal."
-        hint_specific: "Aclarar explica lo mismo mejor. ¿La opinión se entiende mejor o cambia?"
+        why_not: "«Aclarar» es explicar mejor lo mismo, y la frase dice que se había equivocado: no que se le entendiera mal."
+        hint_specific: "Aclarar explica lo mismo mejor. ¿El problema era entenderle o que no acertó?"
       - position: 2
         text: "ratificó"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Ratificar» es mantener y confirmar lo dicho; conocerla mejor le hizo cambiar de opinión, no reafirmarse."
-        hint_specific: "Ratificar mantiene la opinión. ¿Qué provocó conocerla mejor?"
+        why_not: "«Ratificar» es mantener y confirmar lo dicho, y él admite en la mesa que se había equivocado."
+        hint_specific: "Ratificar mantiene la opinión. ¿Qué admite ese padre sobre su amiga?"
       - position: 3
         text: "rectificó"
         is_correct: true
@@ -146,45 +146,45 @@ exercises:
         text: "rectificó"
         is_correct: true
   - position: 6
-    sentence: "Antes de subir el tono, Adriana prefirió {{blank}}: había leído mal el mensaje."
-    hint_general: "Prefiere corregirse a sí misma antes que levantar la voz."
-    explanation: "Rectificar: se corrige a sí misma antes de levantar la voz. «Ratificar» sería mantener lo dicho, y «desdecirse» suena a discurso público y a escándalo."
+    sentence: "Adriana no se echó atrás en todo: prefirió {{blank}} una sola frase, porque había leído mal el mensaje."
+    hint_general: "Cambia solo la parte que no era exacta y sostiene el resto."
+    explanation: "Rectificar: cambia solo la parte que no era exacta. «Ratificar» sería mantenerlo todo igual, y «desdecirse» retiraría el mensaje entero y suena a escándalo público."
     options:
       - position: 1
         text: "ratificar"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Ratificar» es mantener lo dicho; si había leído mal el mensaje, mantenerlo la dejaría peor."
+        why_not: "«Ratificar» es mantener lo dicho tal cual; si había leído mal el mensaje, esa frase no se sostiene."
         hint_specific: "Ratificar mantiene lo dicho. ¿Qué descubrió Adriana sobre el mensaje?"
       - position: 2
         text: "desdecirse"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Desdecirse» suena a discurso público y a escándalo; corregir un malentendido en un chat es mucho más sencillo."
-        hint_specific: "«Desdecirse» suena a escándalo público. ¿Qué tamaño tiene este asunto?"
+        why_not: "«Desdecirse» retira lo dicho entero y suena a escándalo público, y ella no se echó atrás en todo: solo en una frase."
+        hint_specific: "«Desdecirse» lo retira todo. ¿Cuánto cambia Adriana según la frase?"
       - position: 3
         text: "rectificar"
         is_correct: true
   - position: 7
-    sentence: "Un acuerdo que nadie puede {{blank}} acaba siendo una trampa para las dos partes."
-    hint_general: "Un acuerdo que no se puede corregir atrapa a los dos lados."
-    explanation: "Rectificar: un acuerdo que no se puede corregir atrapa. «Certificar» es dar fe por escrito, y «discutir» hablaría de debatirlo, no de cambiarlo."
+    sentence: "Un contrato que no deja {{blank}} ni una cifra desfasada acaba siendo una trampa para las dos partes."
+    hint_general: "Si una cifra vieja no se puede tocar, el papel atrapa a los dos lados."
+    explanation: "Rectificar: si no se puede cambiar una cifra vieja, el contrato atrapa. «Certificar» es dar fe por escrito, y «ratificar» sería confirmarla tal como está."
     options:
       - position: 1
         text: "certificar"
         is_correct: false
         distractor_type: "paronym"
-        why_not: "«Certificar» es dar fe por escrito de algo; un acuerdo certificado sigue pudiendo corregirse, así que no es la trampa."
-        hint_specific: "Certificar da fe por escrito. ¿Qué le falta a ese acuerdo?"
+        why_not: "«Certificar» es dar fe por escrito de lo que ya hay, y el problema del contrato es que la cifra vieja no se puede mover."
+        hint_specific: "Certificar da fe de lo que hay. ¿Qué no permite ese contrato?"
       - position: 2
         text: "rectificar"
         is_correct: true
       - position: 3
-        text: "discutir"
+        text: "ratificar"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Discutir» es debatir el acuerdo; se puede debatir mucho y seguir sin poder cambiar ni una coma."
-        hint_specific: "Discutir debate. ¿Debatir basta para salir de la trampa?"
+        distractor_type: "paronym"
+        why_not: "«Ratificar» es confirmar la cifra tal como está, y un contrato que solo permite eso es precisamente la trampa."
+        hint_specific: "Ratificar confirma lo que hay. ¿Eso arregla una cifra desfasada?"
   - position: 8
     sentence: "Ximena {{blank}} en la misma reunión: reconoció el dato bueno y siguió adelante sin dramas."
     hint_general: "Se corrige en la misma reunión, sin darle más vueltas."

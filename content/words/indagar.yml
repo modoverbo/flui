@@ -128,7 +128,7 @@ exercises:
   - position: 5
     sentence: "Si {{blank}} un poco sobre la empresa antes de la cita, llegarás con preguntas mejores."
     hint_general: "Buscar datos antes hace que tus preguntas mejoren."
-    explanation: "Indagas: buscas datos antes de la cita. «Indignas» sería provocar enfado, y «husmeas» es coloquial y suena a curiosear."
+    explanation: "Indagas: buscas datos antes de la cita. «Indignas» sería provocar enfado, e «indicas» sería señalar algo a otra persona."
     options:
       - position: 1
         text: "indagas"
@@ -140,11 +140,11 @@ exercises:
         why_not: "«Indignar» es provocar enfado en alguien, y el consejo trata de llegar bien preparado."
         hint_specific: "«Indignas» enfada a otro. ¿Qué te ayuda a preguntar mejor?"
       - position: 3
-        text: "husmeas"
+        text: "indicas"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Husmear» es coloquial y sugiere olfatear en lo ajeno, y aquí se buscan datos públicos de una empresa."
-        hint_specific: "«Husmeas» suena a curiosear a escondidas. ¿Es secreto lo que se busca?"
+        distractor_type: "paronym"
+        why_not: "«Indicar» es señalarle algo a alguien, y aquí todavía estás solo, antes de la cita."
+        hint_specific: "Indicar necesita a quien escuche. ¿Quién hay delante antes de la cita?"
   - position: 6
     sentence: "Antes de firmar el alquiler, Vicente {{blank}} sobre los vecinos y sobre el ruido de la calle."
     hint_general: "Buscó información concreta antes de comprometerse."
@@ -186,9 +186,9 @@ exercises:
         why_not: "«Interrogar» suena a sospecha policial, y aquí se trata de entender mejor a quien tienes delante."
         hint_specific: "«Interroga» presupone culpa. ¿Hay culpa en una entrevista de trabajo?"
   - position: 8
-    sentence: "Después de tres correos sin respuesta, Leonor {{blank}} por su cuenta y descubrió que el proyecto estaba parado."
+    sentence: "Después de tres correos sin respuesta, Leonor dejó de escribir, {{blank}} por su cuenta y descubrió que el proyecto estaba parado."
     hint_general: "Buscó información por su cuenta y encontró el motivo."
-    explanation: "Indagó: buscó información por su cuenta. «Indignó» sería provocar enfado, y «insistió» sería repetir el mismo correo."
+    explanation: "Indagó: buscó información por su cuenta. «Indignó» sería provocar enfado, e «insistió» sería mandar el mismo correo otra vez."
     options:
       - position: 1
         text: "indignó"
@@ -200,8 +200,8 @@ exercises:
         text: "insistió"
         is_correct: false
         distractor_type: "near_synonym"
-        why_not: "«Insistir» sería mandar el mismo correo otra vez, y ella buscó la respuesta por otro camino."
-        hint_specific: "«Insistió» repite lo mismo. ¿Repitió el correo o cambió de método?"
+        why_not: "«Insistir» sería seguir con lo mismo, y la frase dice justo que dejó de escribir."
+        hint_specific: "«Insistió» repite lo mismo. ¿Qué dejó de hacer antes de enterarse?"
       - position: 3
         text: "indagó"
         is_correct: true

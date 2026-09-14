@@ -50,7 +50,7 @@ exercises:
   - position: 1
     sentence: "Antes de aprobar la cifra, Beatriz pidió {{blank}} el presupuesto con el del año pasado."
     hint_general: "Pide poner las dos cifras juntas para ver la diferencia."
-    explanation: "Contrastar: poner las dos cifras juntas. «Constatar» sería comprobar un hecho, y «cotejar» suena a archivo y a notaría."
+    explanation: "Contrastar: poner las dos cifras juntas para ver la diferencia. «Constatar» sería comprobar un solo hecho, e «igualar» borraría justo esa diferencia."
     options:
       - position: 1
         text: "constatar"
@@ -62,11 +62,11 @@ exercises:
         text: "contrastar"
         is_correct: true
       - position: 3
-        text: "cotejar"
+        text: "igualar"
         is_correct: false
-        distractor_type: "register"
-        why_not: "«Cotejar» suena a archivo y a notaría, y esto es una reunión de equipo con dos presupuestos."
-        hint_specific: "«Cotejar» huele a papeles sellados. ¿Encaja entre compañeros?"
+        distractor_type: "near_synonym"
+        why_not: "«Igualar» sería dejar las dos cifras iguales, y lo que ella quiere es ver en qué se diferencian antes de aprobar."
+        hint_specific: "«Igualar» borra la diferencia. ¿Beatriz quiere que coincidan o quiere ver el cambio?"
   - position: 2
     sentence: "Los dos vecinos daban versiones distintas del ruido, así que la administradora quiso {{blank}}las."
     hint_general: "Quiere poner las dos versiones una junto a otra."
