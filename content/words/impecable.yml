@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 308
 slug: "impecable"
-status: "draft"
+status: "approved"
 lemma: "impecable"
 part_of_speech: "adjetivo"
-syllables: ["im", "pe", "ca", "ble"]
+syllables:
+  - "im"
+  - "pe"
+  - "ca"
+  - "ble"
 stressed_syllable: 3
 ipa_latam: "[im.peˈka.βle]"
 ipa_es: "[im.peˈka.βle]"
@@ -25,15 +29,19 @@ replaces:
     after: "Lo hizo de forma impecable"
   - before: "No le encontré ni un fallo"
     after: "Me pareció impecable"
-family: ["impecablemente"]
+family:
+  - "impecablemente"
 themes:
   - slug: "elogio-reconocimiento"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["muy bueno", "bien"]
-  funcion: ["elogiar"]
+  comodin:
+    - "muy bueno"
+    - "bien"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -229,10 +237,10 @@ readings:
     after_phrase: "Tu forma de explicarlo fue impecable."
 metrics:
   zipf_overall: 4.2572
-  dispersion_dp: 0.2630
+  dispersion_dp: 0.263
   pedantry_proxy: 0.4244
   family_size: 7
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

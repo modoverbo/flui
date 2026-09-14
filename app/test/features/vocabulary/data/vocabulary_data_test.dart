@@ -5,6 +5,7 @@ import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/vocabulary/data/dtos/word_dto.dart';
 import 'package:flui/features/vocabulary/data/dtos/word_progress_dto.dart';
+import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_word_progress_repository.dart';
 import 'package:flui/features/vocabulary/data/supabase_content_repository.dart';
@@ -204,8 +205,13 @@ void main() {
       final result = await FakeContentRepository().fetchCatalog();
 
       final words = result.valueOrNull!;
-      expect(words, hasLength(8));
+      // The catalog grows every authoring round; the order is the invariant.
+      expect(words, hasLength(seedWords.length));
       expect(words.first.lemma, 'perspicaz');
+      expect(
+        words.map((w) => w.sortOrder).toList(),
+        orderedEquals(words.map((w) => w.sortOrder).toList()..sort()),
+      );
     });
 
     test('returns a queued failure once', () async {

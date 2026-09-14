@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 322
 slug: "imprevisto"
-status: "draft"
+status: "approved"
 lemma: "imprevisto"
 part_of_speech: "sustantivo"
-syllables: ["im", "pre", "vis", "to"]
+syllables:
+  - "im"
+  - "pre"
+  - "vis"
+  - "to"
 stressed_syllable: 3
 ipa_latam: "[im.pɾeˈβis.to]"
 ipa_es: "[im.pɾeˈβis.to]"
@@ -32,8 +36,10 @@ themes:
   - slug: "decir-que-no"
     relevance: 1
 tags:
-  comodin: ["cosa"]
-  funcion: ["explicar"]
+  comodin:
+    - "cosa"
+  funcion:
+    - "explicar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 128
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

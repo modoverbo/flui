@@ -68,11 +68,12 @@ String _replacesJson(List<Replacement> replaces) {
 /// nothing (see README, "Who owns the theme rows").
 String emitWords(List<Word> words, {ThemeTaxonomy? taxonomy}) {
   final buffer = StringBuffer();
+  final sortOrders = sortOrdersFor(words);
   if (taxonomy != null) buffer.write(_emitThemes(taxonomy));
   for (var index = 0; index < words.length; index++) {
     final word = words[index];
     final wordId = word.id ?? deterministicWordId(word.slug);
-    final sortOrder = word.sortOrder ?? index + 1;
+    final sortOrder = sortOrders[index];
     if (index > 0) buffer.writeln();
     buffer
       ..writeln(_rule)
@@ -279,6 +280,24 @@ String emitSeed({
   required List<Word> words,
   ThemeTaxonomy? taxonomy,
 }) => '$preamble${emitWords(words, taxonomy: taxonomy)}';
+
+/// The `sort_order` to write for each of [words], already in emission order.
+///
+/// `sort_order` is the introduction order the session planner reads, so it has
+/// to rise with the order the words are emitted in. An authored value is kept
+/// — the catalog numbers its words in batches and that is information — and a
+/// word without one continues past the highest authored value instead of
+/// restarting at 1, which would file it ahead of every batch.
+List<int> sortOrdersFor(List<Word> words) {
+  var next = 0;
+  for (final word in words) {
+    if (word.sortOrder != null && word.sortOrder! > next) next = word.sortOrder!;
+  }
+  return [
+    for (final word in words)
+      if (word.sortOrder case final authored?) authored else ++next,
+  ];
+}
 
 /// Words that reach the database, in a stable order: `sort_order`, then slug.
 List<Word> approvedWordsInOrder(List<Word> words) {

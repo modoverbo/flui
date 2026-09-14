@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 311
 slug: "atinado"
-status: "draft"
+status: "approved"
 lemma: "atinado"
 part_of_speech: "adjetivo"
-syllables: ["a", "ti", "na", "do"]
+syllables:
+  - "a"
+  - "ti"
+  - "na"
+  - "do"
 stressed_syllable: 3
 ipa_latam: "[a.tiˈna.ðo]"
 ipa_es: "[a.tiˈna.ðo]"
@@ -25,15 +29,19 @@ replaces:
     after: "Fue una elección muy atinada"
   - before: "Dijo justo lo que había que decir"
     after: "Dijo algo muy atinado"
-family: ["atinar"]
+family:
+  - "atinar"
 themes:
   - slug: "elogio-reconocimiento"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["bueno", "bien"]
-  funcion: ["elogiar"]
+  comodin:
+    - "bueno"
+    - "bien"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +242,5 @@ metrics:
   family_size: 5
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

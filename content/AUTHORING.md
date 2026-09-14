@@ -87,7 +87,7 @@ Full machine-readable shape: `content/schema/word.schema.json`.
 | `semantic_set_id` | kebab-case, or omitted — see §2c |
 | `tags` | `comodin` (what it displaces) · `funcion` · `canal` (`hablado`/`escrito`/`ambos`) · `formalidad` · `variedad` |
 | `confusions` | ≥ 1 `{confused_with, difference, memory_trick}`; at least one needs the trick. Never point at the word itself |
-| `exercises` | **exactly 8** — see §3 |
+| `exercises` | **exactly 8 when you author it** — see §3 |
 | `readings` | **exactly 3** — see §4 |
 | `metrics` | **never write this by hand.** `content:corpus` computes it |
 | `provenance` | `generator`, `gate`, `checked_on` |
@@ -144,6 +144,13 @@ An id is kebab-case and names the axis, not the words:
 Eight cloze items, `position` 1…8, each a **new situation**. One `{{blank}}`
 per sentence, three options, exactly one correct.
 
+> **Author eight. Six is a floor, not a target.** The validator accepts 6–8
+> because `content:prune` removes the items the adversarial gate found
+> ambiguous (GATE.md §4), and a word with six verified exercises is worth more
+> than one with eight where two are broken. A word that *arrives* with seven
+> has simply been written short: the review queue is what earns a lower count,
+> never the first draft.
+
 ### Distractor budget across the eight
 
 - **≥ 1 `paronym`** — looks or sounds alike, means something else
@@ -154,6 +161,13 @@ per sentence, three options, exactly one correct.
 
 A good spread is roughly 4 paronym, 2–3 register, 5–6 near_synonym slots across
 the sixteen distractors.
+
+**Never leave `register` on a single exercise.** It is the type the gate flags
+most often — "right meaning, wrong register" is a judgement call, and a
+reviewer who disagrees is not wrong. When the only `register` distractor sits
+in the item the gate rejects, `content:prune` has to refuse and the word goes
+back to authoring. Two register slots in two different exercises is what makes
+a word survivable.
 
 ### Per option
 
@@ -193,7 +207,7 @@ the answer wins. The validator checks the three strings literally.
   in the sentence or in `hint_general`. For a verb the stem drops the
   infinitive ending, so `zanjar` also blocks `zanjemos`.
 - Never use a distractor that is one of your own `collocations` or `family`.
-- Vary the openings: at most **two** of the eight sentences may start with the
+- Vary the openings: at most **two** sentences of a word may start with the
   same three words.
 - Vary the people: use a different name in each sentence. No name may carry
   more than 15 % of the library's sentences.

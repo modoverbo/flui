@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 306
 slug: "apaciguar"
-status: "draft"
+status: "approved"
 lemma: "apaciguar"
 part_of_speech: "verbo"
-syllables: ["a", "pa", "ci", "guar"]
+syllables:
+  - "a"
+  - "pa"
+  - "ci"
+  - "guar"
 stressed_syllable: 4
 ipa_latam: "[a.pa.siˈɣwar]"
 ipa_es: "[a.pa.θiˈɣwar]"
@@ -25,15 +29,18 @@ replaces:
     after: "Apaciguó a todo el grupo"
   - before: "Puso paz en dos minutos"
     after: "Apaciguó los ánimos en dos minutos"
-family: ["apaciguamiento"]
+family:
+  - "apaciguamiento"
 themes:
   - slug: "conversaciones-dificiles"
     relevance: 3
   - slug: "conflicto-desacuerdo"
     relevance: 2
 tags:
-  comodin: ["calmar"]
-  funcion: ["bajar la tensión"]
+  comodin:
+    - "calmar"
+  funcion:
+    - "bajar la tensión"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -166,26 +173,6 @@ exercises:
         why_not: "«Distraer» es desviar la atención hacia otra cosa, y lo que la calma es precisamente mirar de frente lo ocurrido."
         hint_specific: "«Distraer» mira hacia otro lado. ¿Qué la calma: cambiar de tema o nombrarlo?"
   - position: 7
-    sentence: "Si Salvador {{blank}} demasiado pronto, la otra persona siente que quiere cerrar el tema antes de entenderla."
-    hint_general: "Bajar la tensión antes de tiempo se lee como prisa por terminar la conversación."
-    explanation: "Apacigua: bajar la tensión antes de tiempo parece prisa. «Apaga» se dice de luces y fuegos, e «interrumpe» sería cortar a quien habla."
-    options:
-      - position: 1
-        text: "apaga"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Apagar» es dejar sin luz o sin fuego algo material, y aquí se trata del ánimo de una persona."
-        hint_specific: "«Apagar» va de luz y fuego. ¿Qué está encendido, una lámpara o un ánimo?"
-      - position: 2
-        text: "apacigua"
-        is_correct: true
-      - position: 3
-        text: "interrumpe"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Interrumpir» es cortar a quien habla, y el problema aquí es el momento, no cortarle la frase."
-        hint_specific: "«Interrumpir» corta una frase. ¿Lo que falla es el corte o el momento?"
-  - position: 8
     sentence: "Carolina tiene un don raro: {{blank}} a la gente sin darle la razón en todo."
     hint_general: "Consigue bajar la tensión de alguien sin fingir que está de acuerdo con todo."
     explanation: "Apacigua: baja la tensión sin fingir acuerdo. «Apaga» se dice de una luz o un fuego, y «complace» sería darle gusto a todos, que es lo que la frase descarta."
@@ -230,9 +217,9 @@ readings:
 metrics:
   zipf_overall: 3.2478
   dispersion_dp: 0.2802
-  pedantry_proxy: 0.5080
+  pedantry_proxy: 0.508
   family_size: 18
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

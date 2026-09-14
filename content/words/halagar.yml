@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 307
 slug: "halagar"
-status: "draft"
+status: "approved"
 lemma: "halagar"
 part_of_speech: "verbo"
-syllables: ["ha", "la", "gar"]
+syllables:
+  - "ha"
+  - "la"
+  - "gar"
 stressed_syllable: 3
 ipa_latam: "[a.laˈɣar]"
 ipa_es: "[a.laˈɣar]"
@@ -25,15 +28,20 @@ replaces:
     after: "Me halaga que me lo pidas a mí"
   - before: "Se puso contento con el comentario"
     after: "Se sintió halagado por el comentario"
-family: ["halago", "halagador"]
+family:
+  - "halago"
+  - "halagador"
 themes:
   - slug: "elogio-reconocimiento"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["decir", "bueno"]
-  funcion: ["elogiar"]
+  comodin:
+    - "decir"
+    - "bueno"
+  funcion:
+    - "elogiar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +242,5 @@ metrics:
   family_size: 13
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

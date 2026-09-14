@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 2119
 slug: "diligente"
-status: "draft"
+status: "approved"
 lemma: "diligente"
 part_of_speech: "adjetivo"
-syllables: ["di", "li", "gen", "te"]
+syllables:
+  - "di"
+  - "li"
+  - "gen"
+  - "te"
 stressed_syllable: 3
 ipa_latam: "[di.liˈxen.te]"
 ipa_es: "[di.liˈxen.te]"
@@ -25,15 +29,18 @@ replaces:
     after: "Fue diligente con el encargo"
   - before: "Hay que estar detrás de él todo el rato"
     after: "No es nada diligente"
-family: ["diligencia"]
+family:
+  - "diligencia"
 themes:
   - slug: "liderazgo-feedback"
     relevance: 3
   - slug: "elogio-reconocimiento"
     relevance: 2
 tags:
-  comodin: ["rápido"]
-  funcion: ["elogiar"]
+  comodin:
+    - "rápido"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +241,5 @@ metrics:
   family_size: 19
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

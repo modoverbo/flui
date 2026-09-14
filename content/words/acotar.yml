@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 103
 slug: "acotar"
-status: "draft"
+status: "approved"
 lemma: "acotar"
 part_of_speech: "verbo"
-syllables: ["a", "co", "tar"]
+syllables:
+  - "a"
+  - "co"
+  - "tar"
 stressed_syllable: 3
 ipa_latam: "[a.koˈtar]"
 ipa_es: "[a.koˈtar]"
@@ -25,7 +28,8 @@ replaces:
     after: "Habría que acotar esto"
   - before: "Dejemos claro hasta dónde llega el encargo"
     after: "Acotemos hasta dónde llega el encargo"
-family: ["acotación"]
+family:
+  - "acotación"
 themes:
   - slug: "reuniones"
     relevance: 3
@@ -34,8 +38,10 @@ themes:
   - slug: "negociacion"
     relevance: 1
 tags:
-  comodin: ["hacer"]
-  funcion: ["delimitar"]
+  comodin:
+    - "hacer"
+  funcion:
+    - "delimitar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -236,5 +242,5 @@ metrics:
   family_size: 8
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

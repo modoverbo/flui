@@ -1,7 +1,3 @@
-# Imported from ../supabase/seed.sql by dart run content:import.
-# This file is now the source of truth; regenerate the seed with
-# dart run content:emit. Authored before the validator suite existed,
-# so dart run content:validate is expected to report gaps.
 schema_version: 1
 id: "a0000000-0000-4000-8000-000000000005"
 sort_order: 5
@@ -270,5 +266,5 @@ readings:
     after_phrase: "No creo que sea pertinente hablarlo aquí."
 provenance:
   generator: "content:import from supabase/seed.sql"
-  gate: null
-  checked_on: null
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

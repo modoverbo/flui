@@ -1,7 +1,3 @@
-# Imported from ../supabase/seed.sql by dart run content:import.
-# This file is now the source of truth; regenerate the seed with
-# dart run content:emit. Authored before the validator suite existed,
-# so dart run content:validate is expected to report gaps.
 schema_version: 1
 id: "a0000000-0000-4000-8000-000000000007"
 sort_order: 7
@@ -179,29 +175,6 @@ exercises:
         why_not: null
         hint_specific: null
   - position: 6
-    sentence: "Mi abuela respondió cuando le preguntaron por qué seguía viviendo sola: «Porque puedo». Fue una frase tan {{blank}} que nadie volvió a preguntar."
-    hint_general: "Una respuesta que no deja nada que replicar."
-    explanation: "Contundente: la frase no deja réplica y nadie volvió a preguntar. «Condescendiente» sería mirar por encima del hombro, y «escueta» solo mediría lo corta que es."
-    options:
-      - position: 1
-        text: "contundente"
-        is_correct: true
-        distractor_type: null
-        why_not: null
-        hint_specific: null
-      - position: 2
-        text: "condescendiente"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Condescendiente» es tratar a alguien con aire de superioridad, y ella solo responde a la pregunta, sin mirar a nadie por encima del hombro."
-        hint_specific: "Lo condescendiente ofende a quien escucha. ¿La abuela ofende o zanja la duda?"
-      - position: 3
-        text: "escueta"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Escueta» solo dice que la frase es corta, y muchas frases cortas dejan la conversación abierta; esta la cierra."
-        hint_specific: "«Escueta» mide el largo. ¿Lo que impresiona es que sea corta o que nadie replicara?"
-  - position: 7
     sentence: "La prueba con veinte clientes dio un resultado {{blank}}: dieciocho eligieron el envase nuevo sin dudar."
     hint_general: "Dieciocho de veinte no deja lugar a dudas."
     explanation: "Contundente: dieciocho de veinte no deja lugar a dudas. «Contingente» describe lo que puede pasar o no, y «discutible» diría justo lo contrario."
@@ -224,7 +197,7 @@ exercises:
         distractor_type: null
         why_not: null
         hint_specific: null
-  - position: 8
+  - position: 7
     sentence: "Nadie volvió a insistir después de la respuesta {{blank}} que dio Olga en la reunión de vecinos."
     hint_general: "La respuesta fue tan firme que nadie quiso volver sobre el tema."
     explanation: "Contundente: la respuesta fue tan firme que nadie insistió. «Condescendiente» sería tratar al grupo con superioridad, y «extensa» solo habla de longitud."
@@ -271,5 +244,5 @@ readings:
     after_phrase: "Un mensaje breve y contundente."
 provenance:
   generator: "content:import from supabase/seed.sql"
-  gate: null
-  checked_on: null
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 6, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

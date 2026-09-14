@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 129
 slug: "contrastar"
-status: "draft"
+status: "approved"
 lemma: "contrastar"
 part_of_speech: "verbo"
-syllables: ["con", "tras", "tar"]
+syllables:
+  - "con"
+  - "tras"
+  - "tar"
 stressed_syllable: 3
 ipa_latam: "[kon.tɾasˈtar]"
 ipa_es: "[kon.tɾasˈtar]"
@@ -25,7 +28,8 @@ replaces:
     after: "Habría que contrastarlo con otra fuente"
   - before: "Compara esto con lo del mes pasado"
     after: "Contrasta esto con lo del mes pasado"
-family: ["contraste"]
+family:
+  - "contraste"
 themes:
   - slug: "reuniones"
     relevance: 3
@@ -34,8 +38,10 @@ themes:
   - slug: "entrevistas"
     relevance: 1
 tags:
-  comodin: ["mirar"]
-  funcion: ["comparar"]
+  comodin:
+    - "mirar"
+  funcion:
+    - "comparar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -187,26 +193,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Fusionar» sería mezclar las dos recetas en una, y la idea es ver en qué se diferencian."
         hint_specific: "«Fusionar» las une. ¿Se quiere una receta o dos comparadas?"
-  - position: 8
-    sentence: "Nadie {{blank}} la cifra del informe, y por eso el fallo llegó hasta la reunión del jueves."
-    hint_general: "Faltó poner esa cifra junto a otra para revisarla."
-    explanation: "Contrastó: faltó poner la cifra junto a otra. «Constató» sería confirmarla, y «objetó» sería poner una pega en voz alta."
-    options:
-      - position: 1
-        text: "contrastó"
-        is_correct: true
-      - position: 2
-        text: "constató"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Constatar» es confirmar que un dato es cierto, y lo que faltó fue compararlo con otra fuente."
-        hint_specific: "«Constató» confirma sin comparar. ¿Qué habría descubierto el fallo?"
-      - position: 3
-        text: "objetó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Objetar» es poner una pega en voz alta, y aquí nadie llegó siquiera a mirar la cifra dos veces."
-        hint_specific: "«Objetó» habla en la sala. ¿Qué faltó antes de la reunión?"
 readings:
   - position: 1
     scene: "trabajo"
@@ -236,5 +222,5 @@ metrics:
   family_size: 795
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 8, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

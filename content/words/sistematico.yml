@@ -1,10 +1,15 @@
 schema_version: 1
 sort_order: 2120
 slug: "sistematico"
-status: "draft"
+status: "approved"
 lemma: "sistemático"
 part_of_speech: "adjetivo"
-syllables: ["sis", "te", "má", "ti", "co"]
+syllables:
+  - "sis"
+  - "te"
+  - "má"
+  - "ti"
+  - "co"
 stressed_syllable: 3
 ipa_latam: "[sis.teˈma.ti.ko]"
 ipa_es: "[sis.teˈma.ti.ko]"
@@ -25,15 +30,18 @@ replaces:
     after: "El retraso es sistemático"
   - before: "Lo revisamos todo, uno por uno, sin saltarnos nada"
     after: "Lo revisamos de manera sistemática"
-family: ["sistemáticamente"]
+family:
+  - "sistemáticamente"
 themes:
   - slug: "liderazgo-feedback"
     relevance: 3
   - slug: "conversaciones-dificiles"
     relevance: 1
 tags:
-  comodin: ["siempre"]
-  funcion: ["precisar"]
+  comodin:
+    - "siempre"
+  funcion:
+    - "precisar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -86,26 +94,6 @@ exercises:
         text: "sistemático"
         is_correct: true
   - position: 3
-    sentence: "Si el mismo paso sale mal con cada persona que lo hace, el problema es {{blank}} y cambiar de nombres no arregla nada."
-    hint_general: "Si la causa está en el método, cambiar de gente no sirve."
-    explanation: "Sistemático: la causa está en el método, no en quien lo hace. «Sistémico» hablaría del alcance, y «puntual» diría que pasó una vez suelta."
-    options:
-      - position: 1
-        text: "sistemático"
-        is_correct: true
-      - position: 2
-        text: "sistémico"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Sistémico» dice que algo afecta a un conjunto entero, y aquí falla un solo paso, siempre el mismo."
-        hint_specific: "Sistémico habla del alcance. ¿Cuánto abarca el fallo de la frase?"
-      - position: 3
-        text: "puntual"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Puntual» sería un caso suelto, y la frase dice que ocurre con cada persona que hace ese paso."
-        hint_specific: "Puntual pasa una vez. ¿Con cuánta gente se repite el fallo?"
-  - position: 4
     sentence: "Mi padre revisa las cuentas de la casa de manera {{blank}}: mismo día, misma hoja, mismo orden."
     hint_general: "Repite siempre el mismo orden y el mismo día."
     explanation: "Sistemática: repite siempre el mismo orden. «Sintomática» diría que revela otra cosa, y «rara» diría que resulta extraña, cuando es justo lo previsible."
@@ -125,7 +113,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Rara» diría que resulta extraña; lo que describen los tres detalles es justo lo contrario, algo totalmente previsible."
         hint_specific: "Rara significa extraña. ¿Es extraño repetir siempre el mismo orden?"
-  - position: 5
+  - position: 4
     sentence: "Antes de acusar a nadie, Cristina comprobó si el fallo era {{blank}} o cosa de un solo día."
     hint_general: "Quiere saber si se repite con un patrón o fue un día suelto."
     explanation: "Sistemático: comprueba si hay un patrón detrás. «Esquemático» describe un resumen, y «casual» diría que pasó por azar, que es la otra mitad de la pregunta."
@@ -145,7 +133,7 @@ exercises:
       - position: 3
         text: "sistemático"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Los olvidos dejaron de parecer despistes cuando alguien demostró que caían siempre sobre los mismos correos: eran {{blank}}."
     hint_general: "Alguien probó que los olvidos seguían un patrón."
     explanation: "Sistemáticos: seguían un patrón, no eran despistes. «Sistémicos» hablaría de algo que afecta a un conjunto, y «constantes» diría que no paran nunca."
@@ -165,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Constantes» significa que no paran nunca, y estos olvidos eligen: caen siempre sobre los mismos correos."
         hint_specific: "Constantes no dejan huecos. ¿Sobre qué caían justamente esos olvidos?"
-  - position: 7
+  - position: 6
     sentence: "El equipo empezó a anotar cada incidencia de modo {{blank}}, y en un mes vieron el patrón."
     hint_general: "Anotan cada caso con el mismo método hasta ver el patrón."
     explanation: "Sistemático: anotan todo con el mismo método. «Sintomático» diría que las notas revelan otra cosa, y «endémico» suena a informe de salud pública."
@@ -185,7 +173,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Endémico» pertenece a los informes de salud pública y se dice de lo que arraiga en un lugar, no de cómo se toman notas."
         hint_specific: "«Endémico» suena a informe de salud pública. ¿Encaja al describir unas notas?"
-  - position: 8
+  - position: 7
     sentence: "Lo que hundía las entregas no era un despiste suelto, sino un problema {{blank}} de reparto de trabajo."
     hint_general: "La causa está en cómo se reparte el trabajo, no en un despiste."
     explanation: "Sistemático: la causa está en el reparto y se repite. «Esquemático» describe un resumen, y «molesto» mide la incomodidad, no la repetición."
@@ -234,5 +222,5 @@ metrics:
   family_size: 95
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

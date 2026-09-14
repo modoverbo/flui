@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 2117
 slug: "arbitrario"
-status: "draft"
+status: "approved"
 lemma: "arbitrario"
 part_of_speech: "adjetivo"
-syllables: ["ar", "bi", "tra", "rio"]
+syllables:
+  - "ar"
+  - "bi"
+  - "tra"
+  - "rio"
 stressed_syllable: 3
 ipa_latam: "[aɾ.βiˈtɾa.ɾjo]"
 ipa_es: "[aɾ.βiˈtɾa.ɾjo]"
@@ -25,15 +29,18 @@ replaces:
     after: "Cambian las reglas de manera arbitraria"
   - before: "Nadie sabe con qué criterio eligen"
     after: "El criterio es arbitrario"
-family: ["arbitrariedad"]
+family:
+  - "arbitrariedad"
 themes:
   - slug: "liderazgo-feedback"
     relevance: 3
   - slug: "conflicto-desacuerdo"
     relevance: 2
 tags:
-  comodin: ["porque sí"]
-  funcion: ["criticar"]
+  comodin:
+    - "porque sí"
+  funcion:
+    - "criticar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -185,26 +192,6 @@ exercises:
       - position: 3
         text: "arbitrario"
         is_correct: true
-  - position: 8
-    sentence: "Álvaro defendió su valoración con datos, para que nadie la tomara por un juicio {{blank}}."
-    hint_general: "Da datos para que su juicio no parezca un capricho."
-    explanation: "Arbitrario: los datos evitan que parezca un capricho. «Autoritario» hablaría de imponerse sin escuchar, e «improvisado» diría que lo hizo deprisa."
-    options:
-      - position: 1
-        text: "improvisado"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Improvisado» dice que se hizo sin preparar; se puede preparar durante semanas y seguir sin una regla que lo explique."
-        hint_specific: "Improvisado habla de falta de preparación. ¿Qué añaden los datos, tiempo o criterio?"
-      - position: 2
-        text: "arbitrario"
-        is_correct: true
-      - position: 3
-        text: "autoritario"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Autoritario» describe a quien se impone sin escuchar; Álvaro hace lo contrario, argumenta para que lo discutan."
-        hint_specific: "Autoritario se impone. ¿Álvaro se impone o argumenta?"
 readings:
   - position: 1
     scene: "trabajo"
@@ -234,5 +221,5 @@ metrics:
   family_size: 29
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2; gated after content:prune removed exercise 8, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

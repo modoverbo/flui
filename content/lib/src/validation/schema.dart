@@ -1,4 +1,5 @@
 import 'package:content/src/validation/issue.dart';
+import 'package:content/src/validation/structural.dart';
 import 'package:content/src/validation/validator.dart';
 
 /// Structural conformance of a raw word file, run before the model is built.
@@ -283,7 +284,12 @@ final class SchemaConformanceValidator extends RawWordValidator {
       }
     }
     if (raw.containsKey('exercises')) {
-      final list = expectList('exercises', raw['exercises'], min: 8, max: 8);
+      final list = expectList(
+        'exercises',
+        raw['exercises'],
+        min: minExerciseCount,
+        max: authoredExerciseCount,
+      );
       if (list != null) {
         for (var i = 0; i < list.length; i++) {
           _validateExercise(

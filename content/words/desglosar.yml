@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2107
 slug: "desglosar"
-status: "draft"
+status: "approved"
 lemma: "desglosar"
 part_of_speech: "verbo"
-syllables: ["des", "glo", "sar"]
+syllables:
+  - "des"
+  - "glo"
+  - "sar"
 stressed_syllable: 3
 ipa_latam: "[des.ɣloˈsaɾ]"
 ipa_es: "[des.ɣloˈsaɾ]"
@@ -25,15 +28,18 @@ replaces:
     after: "Mándame el precio desglosado"
   - before: "Voy a explicar punto por punto lo que cobramos"
     after: "Voy a desglosar lo que cobramos"
-family: ["desglose"]
+family:
+  - "desglose"
 themes:
   - slug: "negociacion"
     relevance: 3
   - slug: "reuniones"
     relevance: 1
 tags:
-  comodin: ["explicar"]
-  funcion: ["detallar"]
+  comodin:
+    - "explicar"
+  funcion:
+    - "detallar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 15
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

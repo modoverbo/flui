@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 325
 slug: "entranable"
-status: "draft"
+status: "approved"
 lemma: "entrañable"
 part_of_speech: "adjetivo"
-syllables: ["en", "tra", "ña", "ble"]
+syllables:
+  - "en"
+  - "tra"
+  - "ña"
+  - "ble"
 stressed_syllable: 3
 ipa_latam: "[en.tɾaˈɲa.βle]"
 ipa_es: "[en.tɾaˈɲa.βle]"
@@ -32,8 +36,11 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 1
 tags:
-  comodin: ["bonito", "querido"]
-  funcion: ["describir"]
+  comodin:
+    - "bonito"
+    - "querido"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -229,10 +236,10 @@ readings:
     after_phrase: "Es lo más entrañable que me han dado."
 metrics:
   zipf_overall: 3.7169
-  dispersion_dp: 0.2250
-  pedantry_proxy: 0.4730
+  dispersion_dp: 0.225
+  pedantry_proxy: 0.473
   family_size: 89
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

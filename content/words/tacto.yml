@@ -1,10 +1,12 @@
 schema_version: 1
 sort_order: 302
 slug: "tacto"
-status: "draft"
+status: "approved"
 lemma: "tacto"
 part_of_speech: "sustantivo"
-syllables: ["tac", "to"]
+syllables:
+  - "tac"
+  - "to"
 stressed_syllable: 1
 ipa_latam: "[ˈtak.to]"
 ipa_es: "[ˈtak.to]"
@@ -32,8 +34,11 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 1
 tags:
-  comodin: ["cuidado", "bueno"]
-  funcion: ["suavizar"]
+  comodin:
+    - "cuidado"
+    - "bueno"
+  funcion:
+    - "suavizar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -106,26 +111,6 @@ exercises:
         why_not: "«Trato» es la relación diaria entre dos partes, no el cuidado que lleva un mensaje concreto."
         hint_specific: "«Trato» va de la relación de cada día. ¿La frase juzga la relación o un mensaje?"
   - position: 4
-    sentence: "A Sergio le sobran datos y años de oficio, pero le falta {{blank}}: dice la verdad y la deja caer como una piedra."
-    hint_general: "Sabe mucho, pero no cuida la forma en que suelta lo que sabe."
-    explanation: "Tacto: sabe mucho y no cuida la forma. «Tino» sería acertar al elegir, y «oficio» ya lo tiene, según la propia frase."
-    options:
-      - position: 1
-        text: "tacto"
-        is_correct: true
-      - position: 2
-        text: "tino"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Tino» es acertar al elegir, y la frase dice que acierta con la verdad: lo que falla es cómo la suelta."
-        hint_specific: "«Tino» va de acertar. Relee: ¿se equivoca en el fondo o en la forma?"
-      - position: 3
-        text: "oficio"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Oficio» es la experiencia que dan los años de práctica, y la frase dice que a Sergio le sobran esos años."
-        hint_specific: "«Oficio» habla de años de práctica. ¿Qué dice la frase que le sobra a Sergio?"
-  - position: 5
     sentence: "Con mucho {{blank}}, Olga le explicó a su madre por qué este verano no irían juntas a la playa."
     hint_general: "Explica algo que decepciona a su madre cuidando cada palabra para no hacerle daño."
     explanation: "Tacto: cuidó cada palabra al decepcionar a su madre. «Comedimiento» suena antiguo y solemne, y «contacto» habla de la relación, no de las palabras."
@@ -145,7 +130,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Contacto» es la relación o el roce entre dos partes, y aquí lo cuidado son las palabras."
         hint_specific: "«Contacto» va de relación. ¿Qué cuida Olga: el vínculo o cada palabra?"
-  - position: 6
+  - position: 5
     sentence: "Rubén soltó el mismo aviso sin nada de {{blank}} y la comida terminó en un portazo."
     hint_general: "Dijo lo mismo que otros, pero sin cuidar nada la forma, y todo acabó mal."
     explanation: "Tacto: soltó el aviso sin cuidar la forma. «Temple» es aguantar la presión sin alterarse, y «trato» describe la relación de cada día."
@@ -165,7 +150,7 @@ exercises:
       - position: 3
         text: "tacto"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Todos respetamos a Joaquín, pero lo que más valoro es su {{blank}}: sabe decir que algo no funciona sin que suene a reproche."
     hint_general: "Consigue señalar un problema de una manera que no suena a acusación."
     explanation: "Tacto: señala problemas sin que suenen a acusación. «Respeto» ya lo da la frase por hecho, y «contacto» habla de la relación entre dos partes."
@@ -185,7 +170,7 @@ exercises:
       - position: 3
         text: "tacto"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Nadie esperaba tanto {{blank}} de alguien tan joven: Fernanda dio la noticia y hasta el más molesto asintió."
     hint_general: "Sorprende por cuidar la forma al dar una noticia que podía caer mal."
     explanation: "Tacto: cuidó la forma y hasta el más molesto asintió. «Trato» es la relación diaria, y «disimulo» sería esconder algo, no decirlo bien."
@@ -230,9 +215,9 @@ readings:
 metrics:
   zipf_overall: 3.8479
   dispersion_dp: 0.1597
-  pedantry_proxy: 0.4070
+  pedantry_proxy: 0.407
   family_size: 2
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

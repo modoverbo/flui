@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 117
 slug: "ameno"
-status: "draft"
+status: "approved"
 lemma: "ameno"
 part_of_speech: "adjetivo"
-syllables: ["a", "me", "no"]
+syllables:
+  - "a"
+  - "me"
+  - "no"
 stressed_syllable: 2
 ipa_latam: "[aˈme.no]"
 ipa_es: "[aˈme.no]"
@@ -25,7 +28,8 @@ replaces:
     after: "Explica de un modo ameno"
   - before: "Es un libro que se lee muy bien"
     after: "Es un libro muy ameno"
-family: ["amenidad"]
+family:
+  - "amenidad"
 themes:
   - slug: "presentaciones-oratoria"
     relevance: 3
@@ -34,8 +38,10 @@ themes:
   - slug: "persuasion-storytelling"
     relevance: 1
 tags:
-  comodin: ["bueno"]
-  funcion: ["describir"]
+  comodin:
+    - "bueno"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -88,26 +94,6 @@ exercises:
         why_not: "«Jocoso» suena culto y anuncia bromas, y lo que se pide es un libro que no pese."
         hint_specific: "«Jocoso» promete humor. ¿Se pide humor o ligereza?"
   - position: 3
-    sentence: "Mi abuelo hace {{blank}} hasta la cola del banco: cuenta una historia y la gente se ríe y se queda con ganas de más."
-    hint_general: "Con él, esperar deja de ser aguante y se convierte en un rato que gusta."
-    explanation: "Amena: la espera se vuelve un rato que gusta. «Amable» describe el trato con la gente, y «llevadera» solo diría que se soporta mejor."
-    options:
-      - position: 1
-        text: "amable"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Amable» habla del trato con la gente, y aquí lo que cambia es cómo se pasa el rato."
-        hint_specific: "«Amable» juzga a una persona. ¿Qué se juzga aquí: a él o la espera?"
-      - position: 2
-        text: "llevadera"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Llevadera» dice que algo se soporta mejor, y aquí la gente se ríe y quiere más: no aguanta, disfruta."
-        hint_specific: "«Llevadera» solo aguanta. Relee el final: ¿la cola se soporta o se disfruta?"
-      - position: 3
-        text: "amena"
-        is_correct: true
-  - position: 4
     sentence: "El podcast tiene datos duros, aunque el tono es {{blank}} de principio a fin."
     hint_general: "El tono hace que se escuche con gusto pese a los datos duros."
     explanation: "Ameno: se escucha con gusto pese a los datos. «Amable» describe el trato, e «informal» habla del registro."
@@ -127,7 +113,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Informal» habla del registro, no de si engancha; un tono cuidado también se escucha con gusto."
         hint_specific: "«Informal» mide la formalidad. ¿Qué mide la frase?"
-  - position: 5
+  - position: 4
     sentence: "Renata convirtió una reunión larga en una hora {{blank}} con tres historias bien elegidas."
     hint_general: "La hora se pasó bien gracias a las historias."
     explanation: "Amena: la hora se pasó con gusto. «Ajena» significa de otra persona, y «graciosa» buscaría la risa."
@@ -147,7 +133,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Graciosa» busca la risa, y las tres historias sirvieron para que el rato se pasara bien."
         hint_specific: "«Graciosa» pide risas. ¿La frase promete risas o buen rato?"
-  - position: 6
+  - position: 5
     sentence: "Los vídeos eran pesados hasta que Ernesto los hizo más {{blank}}: el mismo contenido de siempre, pero con ejemplos reales que enganchan."
     hint_general: "El contenido no cambia de tamaño; lo que cambia es que ahora se ven con gusto."
     explanation: "Amenos: se ven con gusto sin perder contenido. «Amables» se dice de las personas que tratan bien, y «livianos» supondría quitarles sustancia."
@@ -167,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Livianos» quita peso o sustancia, y la frase dice que el contenido es el mismo: lo que cambia es el gusto con que se ven."
         hint_specific: "«Livianos» quita sustancia. Relee: ¿los vídeos perdieron contenido o ganaron interés?"
-  - position: 7
+  - position: 6
     sentence: "En la entrevista le dijeron a Hugo que su explicación había sido clara y {{blank}}."
     hint_general: "Además de clara, se escuchó con gusto."
     explanation: "Amena: además de clara, se escuchó con gusto. «Amable» juzga el trato, y «simpática» describe a quien cae bien."
@@ -187,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Simpática» describe a alguien que cae bien, y aquí el elogio es para la explicación en sí."
         hint_specific: "«Simpática» habla de caer bien. ¿Se elogia a la persona o al contenido?"
-  - position: 8
+  - position: 7
     sentence: "Una comida familiar {{blank}} no depende del menú, sino de quién lleve la conversación."
     hint_general: "Lo que hace buena esa comida es el rato, no el menú."
     explanation: "Amena: lo que la hace buena es el rato. «Ajena» significa de otros, y «abundante» habla de la cantidad."
@@ -236,5 +222,5 @@ metrics:
   family_size: 3
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "plasmar"
-status: "draft"
+status: "approved"
 lemma: "plasmar"
 part_of_speech: "verbo"
-syllables: ["plas", "mar"]
+syllables:
+  - "plas"
+  - "mar"
 stressed_syllable: 2
 ipa_latam: "[plazˈmaɾ]"
 ipa_es: "[plazˈmaɾ]"
@@ -24,15 +26,18 @@ replaces:
     after: "A ver si consigo plasmar lo que quiero decir"
   - before: "Hay que pasar la idea al papel de una vez"
     after: "Hay que plasmar la idea de una vez"
-family: ["plasmación"]
+family:
+  - "plasmación"
 themes:
   - slug: "redaccion-ejecutiva"
     relevance: 3
   - slug: "persuasion-storytelling"
     relevance: 2
 tags:
-  comodin: ["poner"]
-  funcion: ["escribir"]
+  comodin:
+    - "poner"
+  funcion:
+    - "escribir"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +238,5 @@ metrics:
   family_size: 35
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

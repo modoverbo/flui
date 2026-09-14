@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "verosimil"
-status: "draft"
+status: "approved"
 lemma: "verosímil"
 part_of_speech: "adjetivo"
-syllables: ["ve", "ro", "sí", "mil"]
+syllables:
+  - "ve"
+  - "ro"
+  - "sí"
+  - "mil"
 stressed_syllable: 3
 ipa_latam: "[be.ɾoˈsi.mil]"
 ipa_es: "[be.ɾoˈsi.mil]"
@@ -24,15 +28,18 @@ replaces:
     after: "Eso no es verosímil"
   - before: "Parece de verdad aunque no lo sepamos"
     after: "Es verosímil aunque no esté probado"
-family: ["verosimilitud"]
+family:
+  - "verosimilitud"
 themes:
   - slug: "persuasion-storytelling"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 1
 tags:
-  comodin: ["creíble"]
-  funcion: ["convencer"]
+  comodin:
+    - "creíble"
+  funcion:
+    - "convencer"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +240,5 @@ metrics:
   family_size: 2
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

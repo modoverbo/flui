@@ -20,14 +20,52 @@ void main() {
   final seedSql = File(seedPath).readAsStringSync();
 
   group('parseSeedRows', () {
-    test('reads the eight seed words with their children', () {
+    test('reads every seed word with its children', () {
+      // Counting rows against a fixed number would just record how big the
+      // catalog was on the day the test was written. What the parser owes is
+      // that the children add up: three options per exercise, three readings
+      // per word, at least one confusion each.
       final rows = parseSeedRows(seedSql);
+      final words = rows['words']!;
 
-      expect(rows['words'], hasLength(8));
-      expect(rows['word_confusions'], hasLength(16));
-      expect(rows['exercises'], hasLength(24));
-      expect(rows['exercise_options'], hasLength(72));
-      expect(rows['readings'], hasLength(24));
+      expect(words, isNotEmpty);
+      expect(rows['readings'], hasLength(words.length * 3));
+      expect(
+        rows['exercise_options'],
+        hasLength(rows['exercises']!.length * 3),
+      );
+      expect(
+        rows['word_confusions']!.length,
+        greaterThanOrEqualTo(words.length),
+      );
+      expect(
+        rows['exercises']!.length,
+        greaterThanOrEqualTo(words.length * 6),
+      );
+    });
+
+    test('reads the word_themes select-from-values block', () {
+      const sql = '''
+insert into public.word_themes (word_id, theme_id, relevance, sort_order)
+select w.id, t.id, v.relevance, w.sort_order
+from (values
+  ('perspicaz', 'reuniones', 2),
+  ('perspicaz', 'matices-precision', 1)
+) as v (word_slug, theme_slug, relevance)
+join public.words w on w.slug = v.word_slug
+join public.themes t on t.slug = v.theme_slug
+on conflict (word_id, theme_id) do update
+  set relevance = excluded.relevance;
+''';
+
+      expect(parseSeedRows(sql)['word_themes'], [
+        {'word_slug': 'perspicaz', 'theme_slug': 'reuniones', 'relevance': 2},
+        {
+          'word_slug': 'perspicaz',
+          'theme_slug': 'matices-precision',
+          'relevance': 1,
+        },
+      ]);
     });
 
     test('keeps typed values', () {
@@ -49,6 +87,36 @@ void main() {
       expect(parts.preamble, isNot(contains('insert into public.words')));
       expect(parts.words, startsWith('-- ----'));
       expect('${parts.preamble}${parts.words}', seedSql);
+    });
+  });
+
+  group('importSeedWords', () {
+    test('carries the themes the seed tags the word with', () {
+      final perspicaz = importSeedWords(
+        seedSql,
+      ).firstWhere((w) => w['slug'] == 'perspicaz');
+
+      expect(perspicaz['themes'], [
+        {'slug': 'elogio-reconocimiento', 'relevance': 3},
+        {'slug': 'reuniones', 'relevance': 2},
+        {'slug': 'matices-precision', 'relevance': 1},
+      ]);
+    });
+
+    test('gives a word the seed tags with nothing an empty theme list', () {
+      const sql = '''
+insert into public.words
+  (id, slug, lemma, part_of_speech, syllables, stressed_syllable, ipa_latam, ipa_es, explanation,
+   example_sentence, register, pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, family,
+   semantic_set_id, sort_order, published)
+values (
+  'w1', 'suelto', 'suelto', 'adjetivo', array['suel', 'to']::text[], 1, null, null, 'x',
+  'y', 'neutral', 1, null, null, array[]::text[], '[]'::jsonb, array[]::text[],
+  null, 1, true
+);
+''';
+
+      expect(importSeedWords(sql).single['themes'], isEmpty);
     });
   });
 
@@ -115,6 +183,43 @@ void main() {
       final approved = Word.fromMap(validWordMap());
 
       expect(approvedWordsInOrder([draft, approved]), [approved]);
+    });
+
+    test('the sort_order it writes rises with the emitted order', () {
+      // `sort_order` is the introduction order of the session planner, so a
+      // word emitted later must never carry a lower number than one emitted
+      // before it — otherwise the file says one thing and the database
+      // another. Words without an authored order come last and continue past
+      // the highest authored value instead of restarting at 1.
+      Word numbered(String slug, int? order) => Word.fromMap(
+        validWordMap()
+          ..['slug'] = slug
+          ..['lemma'] = slug
+          ..['syllables'] = [slug]
+          ..['stressed_syllable'] = 1
+          ..['sort_order'] = order,
+      );
+      final words = approvedWordsInOrder([
+        numbered('avoid', null),
+        numbered('beta', 103),
+        numbered('alfa', 8),
+      ]);
+
+      expect(words.map((w) => w.slug), ['alfa', 'beta', 'avoid']);
+      expect(sortOrdersFor(words), [8, 103, 104]);
+    });
+
+    test('numbers an unordered catalog from one', () {
+      Word plain(String slug) => Word.fromMap(
+        validWordMap()
+          ..['slug'] = slug
+          ..['lemma'] = slug
+          ..['syllables'] = [slug]
+          ..['stressed_syllable'] = 1
+          ..remove('sort_order'),
+      );
+
+      expect(sortOrdersFor([plain('alfa'), plain('beta')]), [1, 2]);
     });
 
     test('emitted SQL parses back into the same rows', () {

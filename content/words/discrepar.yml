@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2121
 slug: "discrepar"
-status: "draft"
+status: "approved"
 lemma: "discrepar"
 part_of_speech: "verbo"
-syllables: ["dis", "cre", "par"]
+syllables:
+  - "dis"
+  - "cre"
+  - "par"
 stressed_syllable: 3
 ipa_latam: "[dis.kɾeˈpaɾ]"
 ipa_es: "[dis.kɾeˈpaɾ]"
@@ -25,15 +28,18 @@ replaces:
     after: "Discrepo, y te digo por qué"
   - before: "A mí no me parece bien eso"
     after: "Discrepo de ese punto"
-family: ["discrepancia"]
+family:
+  - "discrepancia"
 themes:
   - slug: "conflicto-desacuerdo"
     relevance: 3
   - slug: "reuniones"
     relevance: 2
 tags:
-  comodin: ["decir"]
-  funcion: ["disentir"]
+  comodin:
+    - "decir"
+  funcion:
+    - "disentir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 86
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

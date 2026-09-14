@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 125
 slug: "indagar"
-status: "draft"
+status: "approved"
 lemma: "indagar"
 part_of_speech: "verbo"
-syllables: ["in", "da", "gar"]
+syllables:
+  - "in"
+  - "da"
+  - "gar"
 stressed_syllable: 3
 ipa_latam: "[in.daˈɣar]"
 ipa_es: "[in.daˈɣar]"
@@ -25,15 +28,18 @@ replaces:
     after: "Quiero indagar antes de decidir"
   - before: "Estuve mirando cómo es esa empresa"
     after: "Estuve indagando cómo es esa empresa"
-family: ["indagación"]
+family:
+  - "indagación"
 themes:
   - slug: "entrevistas"
     relevance: 3
   - slug: "reuniones"
     relevance: 1
 tags:
-  comodin: ["preguntar"]
-  funcion: ["averiguar"]
+  comodin:
+    - "preguntar"
+  funcion:
+    - "averiguar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -228,11 +234,11 @@ readings:
     before_phrase: "Voy a preguntar por ahí a ver qué averiguo."
     after_phrase: "Déjenme indagar dos días y vuelvo con números."
 metrics:
-  zipf_overall: 4.1040
+  zipf_overall: 4.104
   dispersion_dp: 0.1526
   pedantry_proxy: 0.5309
   family_size: 15
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 121
 slug: "desempenar"
-status: "draft"
+status: "approved"
 lemma: "desempeñar"
 part_of_speech: "verbo"
-syllables: ["de", "sem", "pe", "ñar"]
+syllables:
+  - "de"
+  - "sem"
+  - "pe"
+  - "ñar"
 stressed_syllable: 4
 ipa_latam: "[de.sem.peˈɲar]"
 ipa_es: "[de.sem.peˈɲar]"
@@ -25,15 +29,18 @@ replaces:
     after: "Desempeñé la función de compras"
   - before: "Ese puesto lo llevé yo un año"
     after: "Ese puesto lo desempeñé yo un año"
-family: ["desempeño"]
+family:
+  - "desempeño"
 themes:
   - slug: "entrevistas"
     relevance: 3
   - slug: "liderazgo-feedback"
     relevance: 1
 tags:
-  comodin: ["hacer"]
-  funcion: ["describir"]
+  comodin:
+    - "hacer"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -106,26 +113,6 @@ exercises:
         text: "desempeñó"
         is_correct: true
   - position: 4
-    sentence: "Antes de dirigir el área, Gonzalo {{blank}} un papel de apoyo en tres equipos distintos."
-    hint_general: "Cumplió ese papel en tres equipos antes de dirigir."
-    explanation: "Desempeñó: cumplió ese papel en tres equipos. «Empeñó» sería dejar algo en garantía, y «ejerció» pide una profesión o un cargo, no un papel."
-    options:
-      - position: 1
-        text: "desempeñó"
-        is_correct: true
-      - position: 2
-        text: "empeñó"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Empeñar» es dejar algo como garantía de un préstamo, y un papel dentro de un equipo no se lleva a una casa de empeños."
-        hint_specific: "«Empeñar» entrega un objeto a cambio de dinero. ¿Qué cumplió Gonzalo en esos equipos?"
-      - position: 3
-        text: "ejerció"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Ejercer» se usa con profesiones, cargos y derechos, no con el papel que alguien cumple dentro de un equipo."
-        hint_specific: "«Ejerció» pide una profesión o un cargo. ¿Qué tenía Gonzalo, un título o un papel?"
-  - position: 5
     sentence: "Cuando el director se fue, Fernanda {{blank}} el cargo de forma provisional durante seis meses."
     hint_general: "Ocupó el cargo de forma temporal esos meses."
     explanation: "Desempeñó: ocupó el cargo esos meses. «Empeñó» sería dejar algo en garantía, y «usurpó» acusa de quedarse con algo ajeno."
@@ -145,7 +132,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Usurpar» acusa de quedarse con algo ajeno, y la frase dice que fue de forma provisional y ordenada."
         hint_specific: "«Usurpó» suena a robo de puesto. ¿Fue algo acordado o a la fuerza?"
-  - position: 6
+  - position: 5
     sentence: "En la entrevista le preguntaron a Ximena qué funciones {{blank}} en su anterior empleo."
     hint_general: "Le preguntan qué funciones cumplía en ese empleo."
     explanation: "Desempeñaba: qué funciones cumplía allí. «Empeñaba» sería dejar cosas en garantía, y «cobraba» hablaría del dinero, no del trabajo."
@@ -165,7 +152,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Cobrar» habla del dinero recibido, y la pregunta es sobre las funciones, no sobre el sueldo."
         hint_specific: "«Cobraba» mira la nómina. ¿Qué palabra aparece en la pregunta?"
-  - position: 7
+  - position: 6
     sentence: "Aunque suene raro, el portero del edificio {{blank}} también la función de conserje del colegio de al lado."
     hint_general: "Cumplía dos funciones distintas a la vez."
     explanation: "Desempeñaba: cumplía dos funciones a la vez. «Empeñaba» sería dejar cosas en garantía, y «apañaba» es coloquial y suena a salir del paso."
@@ -185,7 +172,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Apañar» es coloquial y sugiere salir del paso como se pueda, y la frase describe una función formal."
         hint_specific: "«Apañaba» suena a arreglo provisional. ¿Era un arreglo o un puesto?"
-  - position: 8
+  - position: 7
     sentence: "Si {{blank}} bien una función pequeña, te acaban dando una más grande."
     hint_general: "Cumplir bien una función lleva a recibir otra mayor."
     explanation: "Desempeñas: cumples bien esa función. «Empeñas» sería dejar algo en garantía, y «exageras» sugiere agrandar lo que haces."
@@ -234,5 +221,5 @@ metrics:
   family_size: 125
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

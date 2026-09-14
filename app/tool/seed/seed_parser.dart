@@ -15,6 +15,21 @@ Map<String, List<Map<String, Object?>>> parseSeedRows(String sql) {
   return parser.parse();
 }
 
+/// Word slug to the theme slugs it is tagged with, in seed order.
+///
+/// `content:emit` owns these links (see content/README.md), so this is the
+/// only honest source for the fake backend's theme map.
+Map<String, List<String>> parseSeedWordThemeSlugs(String sql) {
+  final links = <String, List<String>>{};
+  for (final row
+      in parseSeedRows(sql)['word_themes'] ?? const <Map<String, Object?>>[]) {
+    links
+        .putIfAbsent(row['word_slug']! as String, () => [])
+        .add(row['theme_slug']! as String);
+  }
+  return links;
+}
+
 /// Published words of the seed with their confusions, exercises and readings,
 /// ordered by `sort_order`. Generated ids: `<exercise>:o<position>` for
 /// options, `<word>:r<position>` for readings, `<word>:c<n>` for confusions.
@@ -242,12 +257,54 @@ final class _Parser {
     final table = _peek.text.replaceFirst('public.', '');
     _i++;
     final columns = _parseColumns();
+    if (!_done && _peek.isWord('select')) {
+      _parseSelectFromValues(table);
+      return;
+    }
     if (!(!_done && _peek.isWord('values'))) return;
     _i++;
     for (final tuple in _parseTuples()) {
       final row = Map.fromIterables(columns, tuple);
       _rows.putIfAbsent(table, () => []).add(row);
       if (table == 'exercises') _lastExerciseId = row['id'] as String?;
+    }
+  }
+
+  /// `insert into t (…) select … from (values (…), (…)) as v (a, b) join …`
+  ///
+  /// The emitter writes `word_themes` this way so the seed never repeats a
+  /// theme uuid: the rows carry slugs and the joins resolve them. The row this
+  /// records is therefore the `values` tuple — `word_slug`, `theme_slug`,
+  /// `relevance` — not the columns the insert names.
+  void _parseSelectFromValues(String table) {
+    // Look ahead without consuming: `insert into exercise_options … select …
+    // cross join (values …)` is also a select, and that one belongs to
+    // _parseCrossJoinValues. Bailing out without moving _i leaves the main
+    // loop free to recognise it.
+    for (var j = _i; j + 3 < tokens.length; j++) {
+      if (tokens[j].isSymbol(';')) return;
+      if (tokens[j].isWord('cross') &&
+          tokens[j + 1].isWord('join') &&
+          tokens[j + 2].isSymbol('(') &&
+          tokens[j + 3].isWord('values')) {
+        return;
+      }
+      if (!tokens[j].isWord('from') ||
+          !tokens[j + 1].isSymbol('(') ||
+          !tokens[j + 2].isWord('values')) {
+        continue;
+      }
+      _i = j + 3;
+      final tuples = _parseTuples();
+      _expectSymbol(')');
+      if (!_done && _peek.isWord('as')) _i += 2;
+      final columns = _parseColumns();
+      for (final tuple in tuples) {
+        _rows
+            .putIfAbsent(table, () => [])
+            .add(Map.fromIterables(columns, tuple));
+      }
+      return;
     }
   }
 

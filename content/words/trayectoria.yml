@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 122
 slug: "trayectoria"
-status: "draft"
+status: "approved"
 lemma: "trayectoria"
 part_of_speech: "sustantivo"
-syllables: ["tra", "yec", "to", "ria"]
+syllables:
+  - "tra"
+  - "yec"
+  - "to"
+  - "ria"
 stressed_syllable: 3
 ipa_latam: "[tɾa.ʝekˈto.ɾja]"
 ipa_es: "[tɾa.ʝekˈto.ɾja]"
@@ -34,8 +38,10 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 1
 tags:
-  comodin: ["cosa"]
-  funcion: ["describir"]
+  comodin:
+    - "cosa"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -236,5 +242,5 @@ metrics:
   family_size: 9
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

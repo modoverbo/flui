@@ -3,9 +3,11 @@ import 'dart:io';
 import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/domain/form_recall_prompt.dart';
+import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../tool/seed/seed_parser.dart';
+import '../../tool/seed_to_fixture.dart' show renderSeedFixture;
 
 void main() {
   group('seed SQL parser', () {
@@ -58,6 +60,95 @@ cross join (values
         'position': 2,
       });
     });
+
+    test('reads the word_themes select-from-values statement', () {
+      const sql = '''
+insert into public.word_themes (word_id, theme_id, relevance, sort_order)
+select w.id, t.id, v.relevance, w.sort_order
+from (values
+  ('perspicaz', 'reuniones', 3),
+  ('perspicaz', 'entrevistas', 1)
+) as v (word_slug, theme_slug, relevance)
+join public.words w on w.slug = v.word_slug
+join public.themes t on t.slug = v.theme_slug;
+''';
+
+      expect(parseSeedRows(sql)['word_themes'], [
+        {'word_slug': 'perspicaz', 'theme_slug': 'reuniones', 'relevance': 3},
+        {'word_slug': 'perspicaz', 'theme_slug': 'entrevistas', 'relevance': 1},
+      ]);
+    });
+
+    test('groups the theme slugs of a word in seed order', () {
+      const sql = '''
+insert into public.word_themes (word_id, theme_id, relevance, sort_order)
+select w.id, t.id, v.relevance, w.sort_order
+from (values
+  ('perspicaz', 'reuniones', 3),
+  ('perspicaz', 'entrevistas', 1),
+  ('zanjar', 'negociacion', 3)
+) as v (word_slug, theme_slug, relevance)
+join public.words w on w.slug = v.word_slug
+join public.themes t on t.slug = v.theme_slug;
+''';
+
+      expect(parseSeedWordThemeSlugs(sql), {
+        'perspicaz': ['reuniones', 'entrevistas'],
+        'zanjar': ['negociacion'],
+      });
+    });
+  });
+
+  group('renderSeedFixture', () {
+    Word wordWith({
+      List<String> family = const [],
+      List<String> collocations = const [],
+    }) => Word(
+      id: 'w',
+      slug: 'perspicaz',
+      lemma: 'perspicaz',
+      partOfSpeech: PartOfSpeech.adjetivo,
+      syllables: const ['pers', 'pi', 'caz'],
+      stressedSyllable: 3,
+      explanation: 'x',
+      exampleSentence: 'y',
+      register: WordRegister.neutral,
+      pedantryRisk: 1,
+      sortOrder: 1,
+      family: family,
+      collocations: collocations,
+    );
+
+    test('omits a list argument that matches the constructor default', () {
+      // `dart analyze --fatal-infos` runs over the generated fixture, and
+      // `family: []` on a word with no derivations is a redundant argument.
+      final rendered = renderSeedFixture([wordWith()]);
+
+      expect(rendered, isNot(contains('family: []')));
+      expect(rendered, isNot(contains('collocations: []')));
+    });
+
+    test('still renders a list that carries something', () {
+      final rendered = renderSeedFixture([
+        wordWith(family: const ['perspicacia']),
+      ]);
+
+      expect(rendered, contains("family: ['perspicacia']"));
+    });
+
+    test('generates the word to theme-slug map from the seed', () {
+      // The links used to be a hand-written copy of the eight starter words,
+      // which silently left every later word unreachable by theme.
+      final rendered = renderSeedFixture(
+        [wordWith()],
+        themeSlugs: const {
+          'perspicaz': ['reuniones', 'entrevistas'],
+        },
+      );
+
+      expect(rendered, contains('const seedWordThemeSlugs'));
+      expect(rendered, contains("'perspicaz': ['reuniones', 'entrevistas'],"));
+    });
   });
 
   group('fake backend fixture', () {
@@ -71,14 +162,18 @@ cross join (values
     });
 
     test('keeps the content invariants of the seed', () {
-      expect(seedWords, hasLength(8));
+      // How many words the catalog holds is not an invariant — it grows every
+      // authoring round. That the fixture holds *the* approved words is, and
+      // the sync test above is what proves it.
+      expect(seedWords, isNotEmpty);
       for (final word in seedWords) {
-        // The authoring standard is 8 exercises per word (docs/learning-method
-        // requires a fresh sentence for every encounter); older words may still
-        // carry fewer while the library is being upgraded.
+        // A word is authored with 8 exercises (docs/learning-method requires a
+        // fresh sentence for every encounter). `content:prune` may drop the
+        // items the adversarial gate found ambiguous, down to a floor of 6 —
+        // content/lib/src/validation/structural.dart is where that is enforced.
         expect(
           word.exercises.length,
-          greaterThanOrEqualTo(3),
+          inInclusiveRange(6, 8),
           reason: word.lemma,
         );
         expect(word.readings, hasLength(3), reason: word.lemma);

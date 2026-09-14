@@ -1,10 +1,15 @@
 schema_version: 1
 sort_order: 317
 slug: "comprometerse"
-status: "draft"
+status: "approved"
 lemma: "comprometerse"
 part_of_speech: "verbo"
-syllables: ["com", "pro", "me", "ter", "se"]
+syllables:
+  - "com"
+  - "pro"
+  - "me"
+  - "ter"
+  - "se"
 stressed_syllable: 4
 ipa_latam: "[kom.pro.meˈteɾ.se]"
 ipa_es: "[kom.pro.meˈteɾ.se]"
@@ -25,15 +30,18 @@ replaces:
     after: "Prefiero no comprometerme todavía"
   - before: "Dio su palabra y la cumplió"
     after: "Se comprometió y cumplió"
-family: ["comprometido"]
+family:
+  - "comprometido"
 themes:
   - slug: "decir-que-no"
     relevance: 3
   - slug: "conversaciones-dificiles"
     relevance: 1
 tags:
-  comodin: ["decir que sí"]
-  funcion: ["poner límites"]
+  comodin:
+    - "decir que sí"
+  funcion:
+    - "poner límites"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +242,5 @@ metrics:
   family_size: 360
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

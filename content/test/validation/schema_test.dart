@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:content/src/validation/schema.dart';
+import 'package:content/src/validation/structural.dart';
 import 'package:test/test.dart';
 
 import '../support/fixtures.dart';
@@ -97,6 +98,40 @@ void main() {
       ),
       isNotEmpty,
     );
+  });
+
+  test('accepts a word pruned down to the six-exercise floor', () {
+    final map = validWordMap();
+    map['exercises'] = (map['exercises']! as List<Object?>).sublist(0, 6);
+    expect(validator.validateRaw('perspicaz', map), isEmpty);
+  });
+
+  test('rejects a word with five exercises', () {
+    final map = validWordMap();
+    map['exercises'] = (map['exercises']! as List<Object?>).sublist(0, 5);
+    expect(validator.validateRaw('perspicaz', map), isNotEmpty);
+  });
+
+  test('rejects a word with nine exercises', () {
+    final map = validWordMap();
+    final exercises = (map['exercises']! as List<Object?>).toList()
+      ..add((map['exercises']! as List<Object?>).first);
+    expect(
+      validator.validateRaw('perspicaz', map..['exercises'] = exercises),
+      isNotEmpty,
+    );
+  });
+
+  test('the shipped JSON schema declares the same exercise bounds', () {
+    final schema =
+        jsonDecode(File('schema/word.schema.json').readAsStringSync())
+            as Map<String, Object?>;
+    final exercises =
+        (schema['properties']! as Map<String, Object?>)['exercises']!
+            as Map<String, Object?>;
+
+    expect(exercises['minItems'], minExerciseCount);
+    expect(exercises['maxItems'], authoredExerciseCount);
   });
 
   test('the shipped JSON schema declares the same required keys', () {

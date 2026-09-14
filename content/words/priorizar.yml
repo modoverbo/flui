@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "priorizar"
-status: "draft"
+status: "approved"
 lemma: "priorizar"
 part_of_speech: "verbo"
-syllables: ["prio", "ri", "zar"]
+syllables:
+  - "prio"
+  - "ri"
+  - "zar"
 stressed_syllable: 3
 ipa_latam: "[pɾjo.ɾiˈsaɾ]"
 ipa_es: "[pɾjo.ɾiˈθaɾ]"
@@ -24,15 +27,19 @@ replaces:
     after: "Todavía no he priorizado"
   - before: "Habrá que ver qué va antes y qué después"
     after: "Habrá que priorizar"
-family: ["prioridad", "prioritario"]
+family:
+  - "prioridad"
+  - "prioritario"
 themes:
   - slug: "redaccion-ejecutiva"
     relevance: 3
   - slug: "correos-mensajes"
     relevance: 1
 tags:
-  comodin: ["ordenar"]
-  funcion: ["decidir"]
+  comodin:
+    - "ordenar"
+  funcion:
+    - "decidir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +240,5 @@ metrics:
   family_size: 34
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

@@ -28,10 +28,13 @@ Future<void> main(List<String> arguments) async {
     exit(2);
   }
 
-  final words = parseSeedWords(seed.readAsStringSync());
+  final sql = seed.readAsStringSync();
+  final words = parseSeedWords(sql);
   final scratch = await Directory.systemTemp.createTemp('flui-fixture-');
   final candidate = File('${scratch.path}/seed_content.dart')
-    ..writeAsStringSync(renderSeedFixture(words));
+    ..writeAsStringSync(
+      renderSeedFixture(words, themeSlugs: parseSeedWordThemeSlugs(sql)),
+    );
   final format = await Process.run('dart', ['format', candidate.path]);
   if (format.exitCode != 0) {
     stderr.writeln(format.stderr);

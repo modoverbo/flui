@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 316
 slug: "desbordar"
-status: "draft"
+status: "approved"
 lemma: "desbordar"
 part_of_speech: "verbo"
-syllables: ["des", "bor", "dar"]
+syllables:
+  - "des"
+  - "bor"
+  - "dar"
 stressed_syllable: 3
 ipa_latam: "[dez.βorˈðar]"
 ipa_es: "[dez.βorˈðar]"
@@ -32,8 +35,11 @@ themes:
   - slug: "conversaciones-dificiles"
     relevance: 1
 tags:
-  comodin: ["poder", "mucho"]
-  funcion: ["poner límites"]
+  comodin:
+    - "poder"
+    - "mucho"
+  funcion:
+    - "poner límites"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 26
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

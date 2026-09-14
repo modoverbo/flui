@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 123
 slug: "idoneo"
-status: "draft"
+status: "approved"
 lemma: "idóneo"
 part_of_speech: "adjetivo"
-syllables: ["i", "dó", "ne", "o"]
+syllables:
+  - "i"
+  - "dó"
+  - "ne"
+  - "o"
 stressed_syllable: 2
 ipa_latam: "[iˈðo.ne.o]"
 ipa_es: "[iˈðo.ne.o]"
@@ -25,15 +29,18 @@ replaces:
     after: "No es el momento idóneo para pedirlo"
   - before: "Encaja perfecto con lo que buscan"
     after: "Es el perfil idóneo para lo que buscan"
-family: ["idoneidad"]
+family:
+  - "idoneidad"
 themes:
   - slug: "entrevistas"
     relevance: 3
   - slug: "negociacion"
     relevance: 1
 tags:
-  comodin: ["bueno"]
-  funcion: ["describir"]
+  comodin:
+    - "bueno"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -166,26 +173,6 @@ exercises:
         why_not: "«Amplio» solo habla del tamaño, y la frase menciona la luz y las sillas, no los metros."
         hint_specific: "«Amplio» mide metros. ¿La frase mide metros o condiciones?"
   - position: 7
-    sentence: "El mismo currículo, sin un solo fallo, puede ser {{blank}} para una empresa y no servir para la siguiente."
-    hint_general: "Solo encaja bien en relación con una necesidad concreta."
-    explanation: "Idóneo: solo encaja en relación con una necesidad. «Idílico» describe un paisaje precioso, y «perfecto» ya lo dice la frase al hablar de un currículo sin fallos."
-    options:
-      - position: 1
-        text: "idílico"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Idílico» describe un paisaje o una escena preciosa, y aquí se habla de encajar con una necesidad."
-        hint_specific: "«Idílico» pinta un lugar. ¿De qué depende el encaje según la frase?"
-      - position: 2
-        text: "perfecto"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Perfecto» ya está dicho con «sin un solo fallo», y aun así el currículo no sirve para la empresa siguiente."
-        hint_specific: "Perfecto mide fallos, y la frase ya dice que no hay ninguno. ¿Qué falta entonces?"
-      - position: 3
-        text: "idóneo"
-        is_correct: true
-  - position: 8
     sentence: "Aquel fue el momento {{blank}} para cambiar de trabajo: contrato terminado y ahorro suficiente."
     hint_general: "Ese momento reunía las dos condiciones necesarias."
     explanation: "Idóneo: reunía las dos condiciones. «Idílico» describe un paisaje precioso, y «dulce» es coloquial aquí y suena a etapa feliz."
@@ -234,5 +221,5 @@ metrics:
   family_size: 6
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

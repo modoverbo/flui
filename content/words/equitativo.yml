@@ -1,10 +1,15 @@
 schema_version: 1
 sort_order: 2109
 slug: "equitativo"
-status: "draft"
+status: "approved"
 lemma: "equitativo"
 part_of_speech: "adjetivo"
-syllables: ["e", "qui", "ta", "ti", "vo"]
+syllables:
+  - "e"
+  - "qui"
+  - "ta"
+  - "ti"
+  - "vo"
 stressed_syllable: 4
 ipa_latam: "[e.ki.taˈti.βo]"
 ipa_es: "[e.ki.taˈti.βo]"
@@ -25,15 +30,18 @@ replaces:
     after: "El pago no es equitativo"
   - before: "Repartamos bien las horas"
     after: "Repartamos las horas de manera equitativa"
-family: ["equidad"]
+family:
+  - "equidad"
 themes:
   - slug: "negociacion"
     relevance: 3
   - slug: "liderazgo-feedback"
     relevance: 2
 tags:
-  comodin: ["justo"]
-  funcion: ["calificar"]
+  comodin:
+    - "justo"
+  funcion:
+    - "calificar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +242,5 @@ metrics:
   family_size: 20
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

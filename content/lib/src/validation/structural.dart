@@ -4,8 +4,16 @@ import 'package:content/src/validation/context.dart';
 import 'package:content/src/validation/issue.dart';
 import 'package:content/src/validation/validator.dart';
 
-/// Number of cloze exercises every word must carry.
-const requiredExerciseCount = 8;
+/// Cloze exercises a **new** word is authored with. See AUTHORING.md §3.
+const authoredExerciseCount = 8;
+
+/// Cloze exercises a word may not drop below.
+///
+/// A word only ever gets here by losing items to `content:prune`: the
+/// adversarial gate found them ambiguous, and a word with six verified
+/// exercises teaches better than one with eight where two are broken. Six is
+/// the floor after pruning, never a licence to author fewer.
+const minExerciseCount = 6;
 
 /// Number of options per cloze.
 const requiredOptionCount = 3;
@@ -106,7 +114,7 @@ final class SyllablesValidator extends WordValidator {
   }
 }
 
-/// Exactly eight exercises, each with exactly one `{{blank}}`.
+/// Six to eight exercises, each with exactly one `{{blank}}`.
 final class ExerciseCountValidator extends WordValidator {
   const ExerciseCountValidator();
 
@@ -115,7 +123,9 @@ final class ExerciseCountValidator extends WordValidator {
 
   @override
   String get description =>
-      'exactly $requiredExerciseCount exercises, one {{blank}} each, positions 1..$requiredExerciseCount';
+      '$minExerciseCount..$authoredExerciseCount exercises (new words are '
+      'authored with $authoredExerciseCount), one {{blank}} each, positions '
+      '1..n';
 
   @override
   Severity get severity => Severity.blocking;
@@ -123,13 +133,17 @@ final class ExerciseCountValidator extends WordValidator {
   @override
   List<Issue> validateWord(Word word, LibraryContext context) {
     final issues = <Issue>[];
-    if (word.exercises.length != requiredExerciseCount) {
+    final count = word.exercises.length;
+    final countIsLegal = count >= minExerciseCount &&
+        count <= authoredExerciseCount;
+    if (!countIsLegal) {
       issues.add(
         _issue(
           this,
           word.slug,
           'exercises',
-          'expected $requiredExerciseCount exercises, found ${word.exercises.length}',
+          'expected $minExerciseCount..$authoredExerciseCount exercises, '
+              'found $count',
         ),
       );
     }
@@ -158,15 +172,16 @@ final class ExerciseCountValidator extends WordValidator {
         );
       }
     }
-    final expected = {for (var i = 1; i <= word.exercises.length; i++) i};
-    if (word.exercises.length == requiredExerciseCount &&
-        !positions.containsAll(expected)) {
+    // `content:prune` renumbers what it leaves behind, so a gap here means the
+    // file was edited by hand and the app would show "ejercicio 8 de 7".
+    final expected = {for (var i = 1; i <= count; i++) i};
+    if (countIsLegal && !positions.containsAll(expected)) {
       issues.add(
         _issue(
           this,
           word.slug,
           'exercises',
-          'exercise positions must be 1..$requiredExerciseCount, found ${positions.toList()..sort()}',
+          'exercise positions must be 1..$count, found ${positions.toList()..sort()}',
         ),
       );
     }
@@ -304,8 +319,25 @@ final class DistractorFieldsValidator extends WordValidator {
   }
 }
 
-/// Across the eight exercises there must be at least one paronym distractor and
-/// at least one register distractor.
+/// Distractor types an exercise set must cover, whatever else it carries.
+const requiredDistractorTypes = <DistractorType>[
+  DistractorType.paronym,
+  DistractorType.register,
+];
+
+/// The required distractor types [present] does not cover, named the way the
+/// `distractor_type_coverage` rule names them.
+///
+/// `content:prune` asks the same question about the exercises a prune would
+/// leave behind, so the rule lives here once instead of twice.
+List<String> missingDistractorTypes(Set<DistractorType> present) => [
+  for (final type in requiredDistractorTypes)
+    if (!present.contains(type)) distractorTypeNames[type]!,
+];
+
+/// Across the exercise set there must be at least one paronym distractor and
+/// at least one register distractor. `content:prune` refuses to break this,
+/// so a pruned word still trains both traps.
 final class DistractorTypeCoverageValidator extends WordValidator {
   const DistractorTypeCoverageValidator();
 
@@ -326,10 +358,7 @@ final class DistractorTypeCoverageValidator extends WordValidator {
         for (final option in exercise.distractors)
           if (option.distractorType != null) option.distractorType!,
     };
-    final missing = <String>[
-      if (!types.contains(DistractorType.paronym)) 'paronym',
-      if (!types.contains(DistractorType.register)) 'register',
-    ];
+    final missing = missingDistractorTypes(types);
     if (missing.isEmpty) return const [];
     return [
       _issue(

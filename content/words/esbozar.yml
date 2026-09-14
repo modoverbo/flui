@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "esbozar"
-status: "draft"
+status: "approved"
 lemma: "esbozar"
 part_of_speech: "verbo"
-syllables: ["es", "bo", "zar"]
+syllables:
+  - "es"
+  - "bo"
+  - "zar"
 stressed_syllable: 3
 ipa_latam: "[es.boˈsaɾ]"
 ipa_es: "[es.boˈθaɾ]"
@@ -24,15 +27,18 @@ replaces:
     after: "Te lo esbozo"
   - before: "Todavía no está cerrado, es solo una idea"
     after: "Todavía está esbozado"
-family: ["esbozo"]
+family:
+  - "esbozo"
 themes:
   - slug: "redaccion-ejecutiva"
     relevance: 3
   - slug: "persuasion-storytelling"
     relevance: 1
 tags:
-  comodin: ["hacer"]
-  funcion: ["proponer"]
+  comodin:
+    - "hacer"
+  funcion:
+    - "proponer"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +239,5 @@ metrics:
   family_size: 11
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

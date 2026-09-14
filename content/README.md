@@ -7,6 +7,12 @@ Content is written by LLM agents and there is no human linguistic reviewer, so
 **the validators and the adversarial gate are the entire quality system**. They
 are strict on purpose.
 
+There is no human sign-off between `gated` and `approved` either: it is
+`dart run content:approve`, and what replaces the signature is production
+telemetry that unpublishes a broken exercise. **That telemetry is not built
+yet** — GATE.md, "There is no human sign-off", carries the thresholds and the
+TODO.
+
 ```
 content/
   words/<slug>.yml        the catalog — the source of truth
@@ -34,6 +40,8 @@ Run them from `content/`.
 | `dart run content:shortlist --theme <slug> [--limit <n>]` | Candidates for one theme, already clear of duplicate-lemma, paronym and semantic-set clashes with the current library. `--all-themes` prints the count per theme |
 | `dart run content:gate-prepare [--word <slug>]` | Two blind task packs per word, answers withheld |
 | `dart run content:gate-apply --results <file>` | Scores the reviewers and flips `status` to `gated`, or writes precise failure reasons |
+| `dart run content:prune --word <slug>` | Removes the exercises `gate/<slug>.failures.json` names and renumbers the rest. Refuses, non-zero, when the word would drop under 6 exercises or lose its paronym/register coverage |
+| `dart run content:approve [--word <slug>] [--all]` | Promotes `gated` words to `approved`. Nothing else moves |
 
 ## The validator suite
 

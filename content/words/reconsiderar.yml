@@ -1,10 +1,15 @@
 schema_version: 1
 sort_order: 2124
 slug: "reconsiderar"
-status: "draft"
+status: "approved"
 lemma: "reconsiderar"
 part_of_speech: "verbo"
-syllables: ["re", "con", "si", "de", "rar"]
+syllables:
+  - "re"
+  - "con"
+  - "si"
+  - "de"
+  - "rar"
 stressed_syllable: 5
 ipa_latam: "[re.kon.si.ðeˈɾaɾ]"
 ipa_es: "[re.kon.si.ðeˈɾaɾ]"
@@ -25,15 +30,18 @@ replaces:
     after: "Con este dato, ¿lo reconsideras?"
   - before: "Le pedí que se lo volviera a pensar"
     after: "Le pedí que lo reconsiderara"
-family: ["reconsideración"]
+family:
+  - "reconsideración"
 themes:
   - slug: "conflicto-desacuerdo"
     relevance: 3
   - slug: "negociacion"
     relevance: 2
 tags:
-  comodin: ["pensar"]
-  funcion: ["pedir"]
+  comodin:
+    - "pensar"
+  funcion:
+    - "pedir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -86,26 +94,6 @@ exercises:
         text: "reconsiderar"
         is_correct: true
   - position: 3
-    sentence: "Si {{blank}} cada decisión que tomas, el equipo nunca sabrá a qué atenerse contigo."
-    hint_general: "Volver sobre cada decisión deja al equipo sin suelo."
-    explanation: "Reconsideras: vuelves sobre todo lo decidido. «Reconoces» sería admitir algo, y «recapacitas» suena a sermón, como si hubiera que entrar en razón."
-    options:
-      - position: 1
-        text: "reconsideras"
-        is_correct: true
-      - position: 2
-        text: "reconoces"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Reconocer» es admitir algo en voz alta; admitir cosas no deja al equipo sin saber a qué atenerse, cambiar de decisión sí."
-        hint_specific: "Reconocer admite. ¿Qué desconcierta al equipo, admitir o cambiar?"
-      - position: 3
-        text: "recapacitas"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Recapacitar» suena a sermón y da por hecho que estabas actuando mal; aquí solo se habla de cambiar decisiones."
-        hint_specific: "«Recapacitar» suena a sermón. ¿La frase te riñe o describe una costumbre?"
-  - position: 4
     sentence: "Mi madre {{blank}} la norma del móvil cuando le enseñamos para qué lo usábamos de verdad."
     hint_general: "Volvió a pensar la norma al ver cómo lo usábamos."
     explanation: "Reconsideró: volvió a pensar la norma con información nueva. «Reconstruyó» sería levantarla de cero, y «confirmó» diría que la dejó igual."
@@ -125,7 +113,7 @@ exercises:
       - position: 3
         text: "reconsideró"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Pedirle a alguien que {{blank}} no es pedirle que se rinda: es pedirle que mire otra vez."
     hint_general: "Mirar otra vez una decisión no es rendirse."
     explanation: "Reconsidere: mirar otra vez no es rendirse. «Reconozca» sería admitir un fallo, y «cavile» es una palabra literaria para pensar dando vueltas."
@@ -145,7 +133,7 @@ exercises:
       - position: 3
         text: "reconsidere"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Después de escuchar al cliente, Ignacio {{blank}} el precio y volvió con otro número."
     hint_general: "Vuelve sobre el precio y aparece otro número."
     explanation: "Reconsideró: volvió sobre el precio y cambió. «Reconoció» sería admitir algo, y «discutió» sugeriría una pelea que la frase no cuenta."
@@ -165,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Discutir» sugiere una pelea; la frase cuenta que escuchó y volvió con otra cifra, sin ningún enfrentamiento."
         hint_specific: "Discutir sugiere pelea. ¿Qué hizo Ignacio antes de volver?"
-  - position: 7
+  - position: 6
     sentence: "Nadie {{blank}} un no ya dado si le llegas con la misma frase de la semana pasada."
     hint_general: "Sin argumentos nuevos, nadie vuelve sobre lo decidido."
     explanation: "Reconsidera: sin argumentos nuevos nadie vuelve sobre su no. «Reconstruye» sería levantar algo derribado, y «acepta» sería quedarse con ese no, no moverlo."
@@ -185,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Aceptar» un no es resignarse a él, y la frase habla de lo que no consigues cuando repites el mismo argumento."
         hint_specific: "Aceptar un no es quedarse con él. ¿Qué buscas tú al volver con una frase?"
-  - position: 8
+  - position: 7
     sentence: "La comisión, que ya había dicho que no, aceptó {{blank}} la solicitud porque apareció un documento que faltaba."
     hint_general: "Vuelven sobre un caso cerrado porque aparece un papel."
     explanation: "Reconsiderar: vuelven sobre un caso ya cerrado. «Reconvenir» es reñir a alguien, y «archivar» sería guardar la solicitud sin volver a mirarla."
@@ -234,5 +222,5 @@ metrics:
   family_size: 297
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a3-r2 + reviewer-b3-r2; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

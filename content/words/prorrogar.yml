@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2129
 slug: "prorrogar"
-status: "draft"
+status: "approved"
 lemma: "prorrogar"
 part_of_speech: "verbo"
-syllables: ["pro", "rro", "gar"]
+syllables:
+  - "pro"
+  - "rro"
+  - "gar"
 stressed_syllable: 3
 ipa_latam: "[pro.roˈɣaɾ]"
 ipa_es: "[pro.roˈɣaɾ]"
@@ -25,15 +28,18 @@ replaces:
     after: "Al final prorrogamos el contrato un año"
   - before: "Habría que estirar un poco la fecha"
     after: "Habría que prorrogar la fecha"
-family: ["prórroga"]
+family:
+  - "prórroga"
 themes:
   - slug: "negociacion"
     relevance: 3
   - slug: "correos-mensajes"
     relevance: 1
 tags:
-  comodin: ["dar"]
-  funcion: ["aplazar"]
+  comodin:
+    - "dar"
+  funcion:
+    - "aplazar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -66,46 +72,6 @@ exercises:
         why_not: "«Adelantar» movería la entrega hacia una fecha anterior; las dos semanas de la frase van en la otra dirección."
         hint_specific: "Adelantar acerca la fecha. ¿Las dos semanas acercan o alejan?"
   - position: 2
-    sentence: "Antes de pedir más días, Emilia preparó un plan para explicar qué haría si le {{blank}} el plazo."
-    hint_general: "Prepara un plan por si le dan más días."
-    explanation: "Prorrogaban: por si le daban más días. «Derogaban» se dice de las normas que se anulan, y «estiraban» es coloquial y suena a goma."
-    options:
-      - position: 1
-        text: "derogaban"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Derogar» se dice de una norma que se anula por completo; un plazo de entrega no se deroga, se mueve."
-        hint_specific: "Derogar anula normas. ¿Aquí hay una norma o una fecha?"
-      - position: 2
-        text: "estiraban"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Estirar» es coloquial y suena a goma o a chicle; para pedir días en un proyecto resulta poco serio."
-        hint_specific: "«Estirar» suena a goma. ¿Encaja al pedir días por escrito?"
-      - position: 3
-        text: "prorrogaban"
-        is_correct: true
-  - position: 3
-    sentence: "Si {{blank}} la fecha sin cambiar nada más, el problema aparece igual dos semanas después."
-    hint_general: "Mover la fecha sin cambiar nada no arregla el fondo."
-    explanation: "Prorrogas: mueves la fecha sin tocar el fondo. «Propagas» sería extender algo como un rumor, y «difieres» suena a lenguaje de informe."
-    options:
-      - position: 1
-        text: "prorrogas"
-        is_correct: true
-      - position: 2
-        text: "propagas"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Propagar» es extender algo por todas partes, como un rumor o un sonido; una fecha no se propaga."
-        hint_specific: "Propagar extiende algo por todas partes. ¿Eso le pasa a una fecha?"
-      - position: 3
-        text: "difieres"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Diferir» en ese sentido pertenece al lenguaje de los informes y los expedientes; hablando con tu equipo suena rígido."
-        hint_specific: "«Diferir» suena a expediente. ¿Encaja hablando con tu equipo?"
-  - position: 4
     sentence: "Mi casero {{blank}} el contrato un año más con las mismas condiciones de siempre."
     hint_general: "Dio un año más al contrato con las mismas condiciones."
     explanation: "Prorrogó: dio un año más al contrato. «Derogó» sería anular una norma, y «canceló» sería terminar el contrato, justo lo contrario."
@@ -125,7 +91,7 @@ exercises:
       - position: 3
         text: "prorrogó"
         is_correct: true
-  - position: 5
+  - position: 3
     sentence: "El comité decidió {{blank}} el plazo de entrega hasta el quince de marzo, y lo escribió en el acta."
     hint_general: "Amplían el plazo hasta una fecha nueva y concreta."
     explanation: "Prorrogar: amplían el plazo hasta una fecha concreta. «Prorratear» sería repartir una cantidad, y «acortar» movería la fecha hacia atrás."
@@ -145,7 +111,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Acortar» dejaría menos tiempo del previsto; el quince de marzo llega después, no antes."
         hint_specific: "Acortar deja menos tiempo. ¿El quince de marzo es antes o después?"
-  - position: 6
+  - position: 4
     sentence: "Nadie {{blank}} nada si llegas el último día con la misma excusa del mes pasado."
     hint_general: "Sin argumentos nuevos, nadie te da más tiempo."
     explanation: "Prorroga: nadie te da más tiempo sin motivos nuevos. «Propaga» sería extender algo, y «confirma» daría por buena la fecha vieja."
@@ -165,7 +131,7 @@ exercises:
       - position: 3
         text: "prorroga"
         is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Pedimos {{blank}} la ayuda un semestre y explicamos en dos líneas para qué serviría."
     hint_general: "Piden un semestre más y explican para qué."
     explanation: "Prorrogar: piden un semestre más. «Prorratear» sería repartir la cantidad entre varios, y «diferir» suena a lenguaje administrativo."
@@ -185,7 +151,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Prorratear» la ayuda sería repartirla entre varias personas; lo que se pide es que dure un semestre más."
         hint_specific: "Prorratear reparte entre varios. ¿Qué se pide aquí, reparto o tiempo?"
-  - position: 8
+  - position: 6
     sentence: "El acuerdo se {{blank}} solo si ninguna de las dos partes dice nada antes de junio."
     hint_general: "El acuerdo sigue otro periodo si nadie dice nada."
     explanation: "Prorroga: el acuerdo sigue otro periodo. «Deroga» se dice de las normas que se anulan, y «repite» sugeriría empezarlo de cero otra vez."
@@ -234,5 +200,5 @@ metrics:
   family_size: 36
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 2, 3, the items the gate found ambiguous"
+  checked_on: "2026-09-14"

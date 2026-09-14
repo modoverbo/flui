@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2115
 slug: "imparcial"
-status: "draft"
+status: "approved"
 lemma: "imparcial"
 part_of_speech: "adjetivo"
-syllables: ["im", "par", "cial"]
+syllables:
+  - "im"
+  - "par"
+  - "cial"
 stressed_syllable: 3
 ipa_latam: "[im.paɾˈsjal]"
 ipa_es: "[im.paɾˈθjal]"
@@ -25,15 +28,18 @@ replaces:
     after: "Necesitamos a alguien imparcial"
   - before: "Intento ser justo con los dos"
     after: "Intento ser imparcial con los dos"
-family: ["imparcialidad"]
+family:
+  - "imparcialidad"
 themes:
   - slug: "liderazgo-feedback"
     relevance: 3
   - slug: "conflicto-desacuerdo"
     relevance: 2
 tags:
-  comodin: ["neutral"]
-  funcion: ["juzgar"]
+  comodin:
+    - "neutral"
+  funcion:
+    - "juzgar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -66,26 +72,6 @@ exercises:
         why_not: "«Frío» habla del trato con las personas; se puede tratar con mucha calidez y aun así decidir sin favorecer a nadie."
         hint_specific: "Frío describe el trato. ¿Lo que se mide aquí es el trato o la decisión?"
   - position: 2
-    sentence: "Cuando el conflicto es entre dos amigos tuyos y los dos te piden que decidas, cuesta muchísimo ser {{blank}}."
-    hint_general: "Con dos amigos de por medio, cuesta juzgar sin inclinarse."
-    explanation: "Imparcial: cuesta juzgar sin inclinarse. «Implacable» describe a quien no perdona nada, y «neutral» sería no meterse, cuando aquí te piden que decidas."
-    options:
-      - position: 1
-        text: "implacable"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Implacable» se dice de quien no perdona ni una; con dos amigos lo difícil no es la dureza, es no inclinarse."
-        hint_specific: "Implacable no perdona. ¿Lo difícil aquí es perdonar o no tomar partido?"
-      - position: 2
-        text: "neutral"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Neutral» es quedarse fuera del conflicto, y la frase dice que los dos te piden que decidas."
-        hint_specific: "Neutral se queda fuera. ¿Te dejan quedarte fuera en esta escena?"
-      - position: 3
-        text: "imparcial"
-        is_correct: true
-  - position: 3
     sentence: "La comisión buscaba una mirada {{blank}} y por eso llamó a alguien de otro departamento."
     hint_general: "Buscan a quien juzgue sin deberle nada a ninguna parte."
     explanation: "Imparcial: alguien que no le debe nada a ninguna parte. «Impasible» hablaría de una cara sin gestos, y «aséptica» suena a quirófano."
@@ -105,7 +91,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Aséptica» pertenece al lenguaje de los hospitales y de la limpieza; para una mirada humana suena a quirófano."
         hint_specific: "«Aséptica» suena a quirófano. ¿Encaja al describir a una persona?"
-  - position: 4
+  - position: 3
     sentence: "Mi hermano fue {{blank}} en el reparto del piso: ni un metro de más para él, ni uno de menos."
     hint_general: "Repartió sin favorecerse a sí mismo."
     explanation: "Imparcial: repartió sin favorecerse. «Implacable» diría que fue durísimo, y «generoso» que dio de más, cuando no dio ni un metro de más."
@@ -125,7 +111,7 @@ exercises:
       - position: 3
         text: "imparcial"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Si vas a mediar entre los dos, di en voz alta cómo piensas ser {{blank}} y a qué te comprometes."
     hint_general: "Antes de mediar, deja claro que no vas a inclinarte por nadie."
     explanation: "Imparcial: dejas claro que no te inclinas por nadie. «Impasible» hablaría de tu cara, e «insobornable» suena a novela de intriga."
@@ -145,7 +131,7 @@ exercises:
       - position: 3
         text: "imparcial"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Los dos equipos aceptaron el resultado porque los jueces habían sido {{blank}} toda la temporada."
     hint_general: "Los jueces no favorecieron a ningún equipo en todo el año."
     explanation: "Imparciales: no favorecieron a ningún equipo. «Impasibles» hablaría de sus gestos, y «estrictos» diría que fueron duros, que no es lo mismo."
@@ -165,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Estrictos» dice que aplicaron las reglas con dureza; se puede ser durísimo y favorecer siempre al mismo equipo."
         hint_specific: "Estrictos habla de dureza. ¿La dureza evita el favoritismo?"
-  - position: 7
+  - position: 6
     sentence: "Nadie es del todo {{blank}} cuando juzga a alguien que le cae muy bien, y reconocerlo ya ayuda."
     hint_general: "Juzgar a un amigo siempre inclina un poco la balanza."
     explanation: "Imparcial: con un amigo la balanza se inclina sola. «Implacable» hablaría de dureza, y «sincero» describe decir la verdad, no repartir sin favorecer."
@@ -185,7 +171,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Sincero» es decir lo que piensas; se puede ser muy sincero y aun así inclinarse siempre hacia el mismo lado."
         hint_specific: "Sincero dice lo que piensa. ¿Decir la verdad evita inclinarse?"
-  - position: 8
+  - position: 7
     sentence: "El informe salió {{blank}}: señalaba los fallos del jefe y los del recién llegado con la misma vara."
     hint_general: "El texto mide a todos con la misma vara."
     explanation: "Imparcial: mide a todos con la misma vara. «Impasible» describiría una cara sin emoción, y «duro» hablaría del tono, no del reparto de la crítica."
@@ -234,5 +220,5 @@ metrics:
   family_size: 45
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2; gated after content:prune removed exercise 2, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

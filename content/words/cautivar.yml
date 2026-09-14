@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 118
 slug: "cautivar"
-status: "draft"
+status: "approved"
 lemma: "cautivar"
 part_of_speech: "verbo"
-syllables: ["cau", "ti", "var"]
+syllables:
+  - "cau"
+  - "ti"
+  - "var"
 stressed_syllable: 3
 ipa_latam: "[kaw.tiˈβar]"
 ipa_es: "[kaw.tiˈβar]"
@@ -25,7 +28,8 @@ replaces:
     after: "Los cautivó todo el rato"
   - before: "La historia enganchó a todos"
     after: "La historia cautivó a todos"
-family: ["cautivador"]
+family:
+  - "cautivador"
 themes:
   - slug: "presentaciones-oratoria"
     relevance: 3
@@ -34,8 +38,10 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 1
 tags:
-  comodin: ["gustar"]
-  funcion: ["describir"]
+  comodin:
+    - "gustar"
+  funcion:
+    - "describir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -236,5 +242,5 @@ metrics:
   family_size: 21
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

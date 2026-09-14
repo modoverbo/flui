@@ -1,10 +1,12 @@
 schema_version: 1
 sort_order: 318
 slug: "margen"
-status: "draft"
+status: "approved"
 lemma: "margen"
 part_of_speech: "sustantivo"
-syllables: ["mar", "gen"]
+syllables:
+  - "mar"
+  - "gen"
 stressed_syllable: 1
 ipa_latam: "[ˈmar.xen]"
 ipa_es: "[ˈmar.xen]"
@@ -32,8 +34,11 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["tiempo", "poder"]
-  funcion: ["poner límites"]
+  comodin:
+    - "tiempo"
+    - "poder"
+  funcion:
+    - "poner límites"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +239,5 @@ metrics:
   family_size: 11
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

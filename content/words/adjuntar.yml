@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "adjuntar"
-status: "draft"
+status: "approved"
 lemma: "adjuntar"
 part_of_speech: "verbo"
-syllables: ["ad", "jun", "tar"]
+syllables:
+  - "ad"
+  - "jun"
+  - "tar"
 stressed_syllable: 3
 ipa_latam: "[að.xunˈtar]"
 ipa_es: "[að.xunˈtar]"
@@ -24,15 +27,18 @@ replaces:
     after: "Adjunto la factura"
   - before: "Va también el contrato con el correo"
     after: "Adjunto el contrato"
-family: ["adjunto"]
+family:
+  - "adjunto"
 themes:
   - slug: "correos-mensajes"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 1
 tags:
-  comodin: ["pasar"]
-  funcion: ["enviar"]
+  comodin:
+    - "pasar"
+  funcion:
+    - "enviar"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +239,5 @@ metrics:
   family_size: 29
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

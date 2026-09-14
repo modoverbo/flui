@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 324
 slug: "coincidir"
-status: "draft"
+status: "approved"
 lemma: "coincidir"
 part_of_speech: "verbo"
-syllables: ["coin", "ci", "dir"]
+syllables:
+  - "coin"
+  - "ci"
+  - "dir"
 stressed_syllable: 3
 ipa_latam: "[koin.siˈðir]"
 ipa_es: "[koin.θiˈðir]"
@@ -25,15 +28,18 @@ replaces:
     after: "Coincidí con él en el ascensor"
   - before: "Estuvimos en la misma fiesta"
     after: "Coincidimos en la misma fiesta"
-family: ["coincidencia"]
+family:
+  - "coincidencia"
 themes:
   - slug: "conversacion-cotidiana"
     relevance: 3
   - slug: "conflicto-desacuerdo"
     relevance: 1
 tags:
-  comodin: ["encontrarse"]
-  funcion: ["contar"]
+  comodin:
+    - "encontrarse"
+  funcion:
+    - "contar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 33
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

@@ -1,10 +1,15 @@
 schema_version: 1
 sort_order: 2125
 slug: "intransigente"
-status: "draft"
+status: "approved"
 lemma: "intransigente"
 part_of_speech: "adjetivo"
-syllables: ["in", "tran", "si", "gen", "te"]
+syllables:
+  - "in"
+  - "tran"
+  - "si"
+  - "gen"
+  - "te"
 stressed_syllable: 4
 ipa_latam: "[in.tɾan.siˈxen.te]"
 ipa_es: "[in.tɾan.siˈxen.te]"
@@ -25,15 +30,18 @@ replaces:
     after: "Es intransigente en todo"
   - before: "No hubo manera de que se moviera del precio"
     after: "Se puso intransigente con el precio"
-family: ["intransigencia"]
+family:
+  - "intransigencia"
 themes:
   - slug: "conflicto-desacuerdo"
     relevance: 3
   - slug: "negociacion"
     relevance: 2
 tags:
-  comodin: ["cerrado"]
-  funcion: ["describir"]
+  comodin:
+    - "cerrado"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +242,5 @@ metrics:
   family_size: 212
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

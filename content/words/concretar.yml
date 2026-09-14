@@ -1,7 +1,3 @@
-# Imported from ../supabase/seed.sql by dart run content:import.
-# This file is now the source of truth; regenerate the seed with
-# dart run content:emit. Authored before the validator suite existed,
-# so dart run content:validate is expected to report gaps.
 schema_version: 1
 id: "a0000000-0000-4000-8000-000000000006"
 sort_order: 6
@@ -178,29 +174,6 @@ exercises:
         why_not: "«Descartar» es dejar algo fuera, y tu tío no ha eliminado nada: todavía no ha elegido."
         hint_specific: "«Descartar» quita opciones. ¿Tu tío ha quitado alguna o aún no ha elegido?"
   - position: 6
-    sentence: "En la negociación, Víctor aceptó el precio y pasó a {{blank}} la fecha de entrega, la cantidad exacta y quién asumía el transporte."
-    hint_general: "Pasa del acuerdo general a la fecha, la cantidad y el responsable."
-    explanation: "Concretar: fijar la fecha, la cantidad y el responsable. «Concertar» es ponerse de acuerdo con alguien, cosa que ya hicieron, y «estimar» sería calcular algo aproximado."
-    options:
-      - position: 1
-        text: "estimar"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Estimar» es calcular una cifra aproximada, y aquí se cierran una fecha exacta y un responsable con nombre."
-        hint_specific: "«Estimar» deja margen. ¿La frase busca aproximarse o dejarlo cerrado?"
-      - position: 2
-        text: "concertar"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Concertar» es llegar a un acuerdo, y eso ya pasó al aceptar el precio; además nadie «concierta» quién asume el transporte."
-        hint_specific: "«Concertar» es cerrar un acuerdo entre partes. Relee: ¿qué acordaron ya?"
-      - position: 3
-        text: "concretar"
-        is_correct: true
-        distractor_type: null
-        why_not: null
-        hint_specific: null
-  - position: 7
     sentence: "El cartel decía «nos vemos pronto», así que Ramiro lo reescribió él solo para {{blank}} la hora y el lugar exactos."
     hint_general: "Pasa de un «pronto» vago a una hora y un lugar exactos."
     explanation: "Concretar: poner hora y lugar donde solo había un «pronto». «Concertar» exigiría otra parte con quien acordar, y «confirmar» supone una hora que todavía no existe."
@@ -223,7 +196,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Concertar» es acordar algo con otra parte, y aquí Ramiro no habla con nadie: reescribe él solo un cartel."
         hint_specific: "«Concertar» supone dos partes que se ponen de acuerdo. ¿Con quién acuerda Ramiro?"
-  - position: 8
+  - position: 7
     sentence: "Entre los tres {{blank}} el plan en una hora: quién llama, quién escribe y qué día se revisa todo."
     hint_general: "Convierten el plan en pasos con responsable y día."
     explanation: "Concretamos: repartimos el plan en pasos con responsable y día. «Concertamos» sería acordarlo con otra parte, y «ampliamos» sería añadir más, no precisar."
@@ -270,5 +243,5 @@ readings:
     after_phrase: "Lo concreto: reduje a la mitad el tiempo de respuesta."
 provenance:
   generator: "content:import from supabase/seed.sql"
-  gate: null
-  checked_on: null
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2; gated after content:prune removed exercise 6, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

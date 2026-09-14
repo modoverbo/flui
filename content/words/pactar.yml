@@ -1,10 +1,12 @@
 schema_version: 1
 sort_order: 2101
 slug: "pactar"
-status: "draft"
+status: "approved"
 lemma: "pactar"
 part_of_speech: "verbo"
-syllables: ["pac", "tar"]
+syllables:
+  - "pac"
+  - "tar"
 stressed_syllable: 2
 ipa_latam: "[pakˈtar]"
 ipa_es: "[pakˈtar]"
@@ -25,15 +27,18 @@ replaces:
     after: "Pactamos que cada uno pone la mitad"
   - before: "Al final llegamos a un punto medio"
     after: "Al final pactamos un punto medio"
-family: ["pacto"]
+family:
+  - "pacto"
 themes:
   - slug: "negociacion"
     relevance: 3
   - slug: "conflicto-desacuerdo"
     relevance: 2
 tags:
-  comodin: ["hacer"]
-  funcion: ["acordar"]
+  comodin:
+    - "hacer"
+  funcion:
+    - "acordar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -66,26 +71,6 @@ exercises:
         why_not: "«Discutir» dice que hablaron del asunto; la frase cuenta que salieron con una tarifa y un límite cerrados."
         hint_specific: "Discutir se queda en la charla. ¿La frase se queda ahí o llega a un acuerdo?"
   - position: 2
-    sentence: "Antes de firmar, Ignacio quiso {{blank}} con la constructora qué pasaba con los gastos extra: los dos se comprometieron por escrito."
-    hint_general: "Quiere dejar cerrado de antemano un compromiso sobre esos gastos."
-    explanation: "Pactar: cerrar un compromiso de las dos partes antes de firmar. «Captar» sería entenderlo él solo, y «aclarar» solo despejaría la duda, sin comprometer a nadie."
-    options:
-      - position: 1
-        text: "captar"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Captar» es darte cuenta de algo por tu cuenta, y aquí hacen falta dos partes que se comprometan por escrito."
-        hint_specific: "«Captar» lo hace una sola persona. ¿Cuántas firman ese compromiso?"
-      - position: 2
-        text: "aclarar"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Aclarar» es entender algo que estaba borroso, y entender no obliga a nadie a nada por escrito."
-        hint_specific: "Aclarar solo despeja una duda. ¿Basta con entenderlo o hay que comprometerse?"
-      - position: 3
-        text: "pactar"
-        is_correct: true
-  - position: 3
     sentence: "Mi hermana y yo nos sentamos a {{blank}} el reparto de la mudanza, y lo dejamos por escrito esa misma noche."
     hint_general: "Buscan un acuerdo que las dos aceptan y que luego ponen en papel."
     explanation: "Pactar: buscan un acuerdo que las dos aceptan. «Captar» es entender o atraer algo, y «amarrar» es muy coloquial y suena a sujetar por la fuerza."
@@ -105,7 +90,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Amarrar» es muy coloquial y sugiere sujetar algo para que no se escape; este reparto se decide hablando."
         hint_specific: "«Amarrar» suena a atar con fuerza. ¿El reparto se sujeta o se conversa?"
-  - position: 4
+  - position: 3
     sentence: "En el chat del equipo, Rodrigo y Pilar {{blank}} una fecha intermedia y la pusieron esa tarde en el calendario compartido."
     hint_general: "Los dos cierran una fecha que les sirve a ambos."
     explanation: "Pactaron: cerraron una fecha que servía a ambos. «Acataron» supondría que alguien la impuso, y «propusieron» dejaría la fecha todavía en el aire."
@@ -125,7 +110,7 @@ exercises:
       - position: 3
         text: "pactaron"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Mientras duró la obra, los vecinos del cuarto y los del quinto usaron el ascensor por turnos que {{blank}} entre todos, cediendo cada uno alguna hora buena."
     hint_general: "Se pusieron de acuerdo entre ellos y cada uno cedió algo."
     explanation: "Pactaron: se pusieron de acuerdo cediendo cada uno algo. «Sortearon» sería dejarlo al azar, y «acataron» supondría que alguien decidió por ellos."
@@ -145,7 +130,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Acatar» es cumplir lo que otro decide; en la frase nadie impone los turnos, los arreglan entre ellos."
         hint_specific: "Acatar supone una orden de arriba. ¿Alguien manda aquí sobre el ascensor?"
-  - position: 6
+  - position: 5
     sentence: "Antes de aceptar el encargo, Valentina {{blank}} con su jefa veinte horas semanales, ni una más."
     hint_general: "Deja cerrado con su jefa un compromiso sobre las horas."
     explanation: "Pactó: dejó cerrado un compromiso sobre las horas. «Captó» sería entenderlo por su cuenta, y «consultó» sería preguntar, sin fijar ningún número."
@@ -165,7 +150,7 @@ exercises:
       - position: 3
         text: "pactó"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Si {{blank}} hoy las reglas del grupo, en diciembre nadie tendrá que improvisar."
     hint_general: "Cerrar hoy, entre todos, unas reglas que valgan para diciembre."
     explanation: "Pactamos: cerramos hoy unas reglas entre todos. «Acatamos» sería obedecer reglas que ya vienen dadas, y «proponemos» las dejaría sin aprobar."
@@ -185,7 +170,7 @@ exercises:
       - position: 3
         text: "pactamos"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Tras dos meses de tira y afloja, ambas partes {{blank}} una salida que nadie celebró pero que todos firmaron."
     hint_general: "Cada lado cedió algo y el acuerdo salió adelante sin entusiasmo."
     explanation: "Pactaron: cada lado cedió algo y el acuerdo salió adelante. «Impusieron» diría que un lado mandó sobre el otro, y «captaron» que solo la entendieron."
@@ -234,5 +219,5 @@ metrics:
   family_size: 7
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2; gated after content:prune removed exercise 2, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

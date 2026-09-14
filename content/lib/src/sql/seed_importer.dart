@@ -14,6 +14,14 @@ List<Map<String, Object?>> importSeedWords(String sql) {
   final exercises = rows['exercises'] ?? const <Map<String, Object?>>[];
   final options = rows['exercise_options'] ?? const <Map<String, Object?>>[];
   final readings = rows['readings'] ?? const <Map<String, Object?>>[];
+  final wordThemes = rows['word_themes'] ?? const <Map<String, Object?>>[];
+
+  final themesBySlug = <String, List<Map<String, Object?>>>{};
+  for (final link in wordThemes) {
+    themesBySlug
+        .putIfAbsent(link['word_slug']! as String, () => [])
+        .add({'slug': link['theme_slug'], 'relevance': link['relevance']});
+  }
 
   final optionsByExercise = <String, List<Map<String, Object?>>>{};
   for (final option in options) {
@@ -67,7 +75,7 @@ List<Map<String, Object?>> importSeedWords(String sql) {
       ],
       'family': (row['family']! as List<Object?>).cast<String>(),
       'semantic_set_id': row['semantic_set_id'],
-      'themes': <Map<String, Object?>>[],
+      'themes': themesBySlug[slug] ?? <Map<String, Object?>>[],
       'tags': <String, Object?>{
         'comodin': <String>[],
         'funcion': <String>[],

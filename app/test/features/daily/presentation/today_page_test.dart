@@ -247,8 +247,9 @@ void main() {
     });
 
     testWidgets('names the neighbour that lent the word', (tester) async {
-      // «perspicaz» is not tagged "Entrevistas", but it is tagged
-      // "Reuniones", which shares «pertinente» with it: a neighbour loan.
+      // «perspicaz» is not tagged "Entrevistas". ThemeOutcome names the first
+      // of the *word's* themes that is a neighbour of the day's theme, and
+      // «perspicaz» lists "Reconocer a otros" first.
       await plan(
         newWords: [perspicaz.id],
         themeId: seedTheme('entrevistas').id,
@@ -258,7 +259,7 @@ void main() {
       expect(
         find.text(
           'Hoy no me quedan palabras nuevas de Entrevistas. Te traigo una de '
-          'Reuniones: se usa igual.',
+          'Reconocer a otros: se usa igual.',
         ),
         findsOneWidget,
       );

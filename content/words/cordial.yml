@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "cordial"
-status: "draft"
+status: "approved"
 lemma: "cordial"
 part_of_speech: "adjetivo"
-syllables: ["cor", "dial"]
+syllables:
+  - "cor"
+  - "dial"
 stressed_syllable: 2
 ipa_latam: "[koɾˈdjal]"
 ipa_es: "[koɾˈðjal]"
@@ -24,15 +26,19 @@ replaces:
     after: "Fue muy cordial conmigo"
   - before: "Escríbele bonito para que no se moleste"
     after: "Escríbele en tono cordial"
-family: ["cordialidad", "cordialmente"]
+family:
+  - "cordialidad"
+  - "cordialmente"
 themes:
   - slug: "correos-mensajes"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 1
 tags:
-  comodin: ["amable"]
-  funcion: ["cuidar el tono"]
+  comodin:
+    - "amable"
+  funcion:
+    - "cuidar el tono"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -165,26 +171,6 @@ exercises:
         why_not: "«Colegial» se refiere a la escuela y a quien estudia en ella, y aquí se habla de un correo de trabajo."
         hint_specific: "«Colegial» pertenece al mundo escolar. ¿Dónde ocurre esta escena?"
   - position: 7
-    sentence: "Si tienes que dar una respuesta dura a alguien que apenas conoces, haz que el principio sea {{blank}} y el final, muy concreto."
-    hint_general: "Empieza tratando bien a alguien con quien no tienes confianza, y cierra con algo preciso."
-    explanation: "Cordial: tratas bien a alguien sin darle confianza de más. «Cardinal» significa principal, y «amistoso» supondría una amistad que la frase descarta."
-    options:
-      - position: 1
-        text: "cardinal"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Cardinal» significa principal o fundamental, y el consejo habla de cómo tratas a quien lee."
-        hint_specific: "«Cardinal» marca lo principal. ¿El consejo ordena por importancia o por trato?"
-      - position: 2
-        text: "amistoso"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Amistoso» supone una amistad, y la frase dice que apenas conoces a esa persona."
-        hint_specific: "«Amistoso» da por hecha una amistad. Relee el inicio: ¿cuánto conoces a quien te lee?"
-      - position: 3
-        text: "cordial"
-        is_correct: true
-  - position: 8
     sentence: "Tadeo no era el más rápido del equipo, aunque sus mensajes eran tan {{blank}} que todos le contestaban primero."
     hint_general: "Trata tan bien a la gente que da gusto responderle."
     explanation: "Cordiales: trata tan bien que da gusto responderle. «Corporales» se refiere al cuerpo, y «simpaticones» es coloquial y suena a caer bien a la fuerza."
@@ -233,5 +219,5 @@ metrics:
   family_size: 25
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a3-r2 + reviewer-b3-r2; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

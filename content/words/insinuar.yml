@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 304
 slug: "insinuar"
-status: "draft"
+status: "approved"
 lemma: "insinuar"
 part_of_speech: "verbo"
-syllables: ["in", "si", "nuar"]
+syllables:
+  - "in"
+  - "si"
+  - "nuar"
 stressed_syllable: 3
 ipa_latam: "[in.siˈnwar]"
 ipa_es: "[in.siˈnwar]"
@@ -25,15 +28,18 @@ replaces:
     after: "Me lo insinuó"
   - before: "Estás dando a entender que fue culpa mía"
     after: "Estás insinuando que fue culpa mía"
-family: ["insinuación"]
+family:
+  - "insinuación"
 themes:
   - slug: "conversaciones-dificiles"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["decir"]
-  funcion: ["sugerir"]
+  comodin:
+    - "decir"
+  funcion:
+    - "sugerir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 14
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

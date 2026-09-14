@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "revelador"
-status: "draft"
+status: "approved"
 lemma: "revelador"
 part_of_speech: "adjetivo"
-syllables: ["re", "ve", "la", "dor"]
+syllables:
+  - "re"
+  - "ve"
+  - "la"
+  - "dor"
 stressed_syllable: 4
 ipa_latam: "[re.βe.laˈðoɾ]"
 ipa_es: "[re.βe.laˈðoɾ]"
@@ -24,15 +28,19 @@ replaces:
     after: "Eso es revelador"
   - before: "Fíjate en ese detalle, que es importante"
     after: "Fíjate en ese detalle: es revelador"
-family: ["revelar", "revelación"]
+family:
+  - "revelar"
+  - "revelación"
 themes:
   - slug: "persuasion-storytelling"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 1
 tags:
-  comodin: ["importante"]
-  funcion: ["destacar"]
+  comodin:
+    - "importante"
+  funcion:
+    - "destacar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -228,10 +236,10 @@ readings:
     after_phrase: "Esa pausa fue reveladora."
 metrics:
   zipf_overall: 3.4568
-  dispersion_dp: 0.2260
+  dispersion_dp: 0.226
   pedantry_proxy: 0.4939
   family_size: 51
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

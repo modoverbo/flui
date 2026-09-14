@@ -115,12 +115,53 @@ final class _Parser {
     final table = _peek.text.replaceFirst('public.', '');
     _i++;
     final columns = _parseColumns();
+    if (!_done && _peek.isWord('select')) {
+      _parseSelectFromValues(table);
+      return;
+    }
     if (_done || !_peek.isWord('values')) return;
     _i++;
     for (final tuple in _parseTuples()) {
       final row = Map<String, Object?>.fromIterables(columns, tuple);
       _rows.putIfAbsent(table, () => []).add(row);
       if (table == 'exercises') _lastExerciseId = row['id'] as String?;
+    }
+  }
+
+  /// `insert into t (…) select … from (values (…), (…)) as v (a, b) join …`
+  ///
+  /// The `word_themes` block is written this way so the seed never repeats a
+  /// theme uuid: the tuples carry slugs and the joins resolve them. What is
+  /// recorded is therefore the `values` tuple — `word_slug`, `theme_slug`,
+  /// `relevance` — not the columns the insert names.
+  void _parseSelectFromValues(String table) {
+    // Look ahead without consuming: the `exercise_options` insert is a select
+    // too, and its tuples belong to _parseCrossJoinValues. Leaving _i where it
+    // is lets the main loop reach that branch.
+    for (var j = _i; j + 3 < tokens.length; j++) {
+      if (tokens[j].isSymbol(';')) return;
+      if (tokens[j].isWord('cross') &&
+          tokens[j + 1].isWord('join') &&
+          tokens[j + 2].isSymbol('(') &&
+          tokens[j + 3].isWord('values')) {
+        return;
+      }
+      if (!tokens[j].isWord('from') ||
+          !tokens[j + 1].isSymbol('(') ||
+          !tokens[j + 2].isWord('values')) {
+        continue;
+      }
+      _i = j + 3;
+      final tuples = _parseTuples();
+      _expectSymbol(')');
+      if (!_done && _peek.isWord('as')) _i += 2;
+      final columns = _parseColumns();
+      for (final tuple in tuples) {
+        _rows
+            .putIfAbsent(table, () => [])
+            .add(Map<String, Object?>.fromIterables(columns, tuple));
+      }
+      return;
     }
   }
 

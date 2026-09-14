@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2118
 slug: "reforzar"
-status: "draft"
+status: "approved"
 lemma: "reforzar"
 part_of_speech: "verbo"
-syllables: ["re", "for", "zar"]
+syllables:
+  - "re"
+  - "for"
+  - "zar"
 stressed_syllable: 3
 ipa_latam: "[re.forˈsaɾ]"
 ipa_es: "[re.forˈθaɾ]"
@@ -25,15 +28,18 @@ replaces:
     after: "Lo repetí para reforzar el mensaje"
   - before: "Le puse dos personas más al equipo"
     after: "Reforcé el equipo con dos personas"
-family: ["refuerzo"]
+family:
+  - "refuerzo"
 themes:
   - slug: "liderazgo-feedback"
     relevance: 3
   - slug: "presentaciones-oratoria"
     relevance: 1
 tags:
-  comodin: ["muy"]
-  funcion: ["fortalecer"]
+  comodin:
+    - "muy"
+  funcion:
+    - "fortalecer"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 102
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

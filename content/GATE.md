@@ -6,8 +6,8 @@ validators cannot be the only check. The validators prove a word file is
 answer** — the one thing a static rule cannot decide.
 
 The gate is a blind dual review. Two independent reviewing agents answer the
-same eight items with the options in different orders and the answer withheld.
-A word passes only if both of them answer all eight correctly.
+same items with the options in different orders and the answer withheld. A word
+passes only if both of them answer **every** item correctly.
 
 ## Why two passes with different orderings
 
@@ -118,7 +118,7 @@ writing.
 
 ## 4. What to do with a failure
 
-Rewrite the **exercise**, not the reviewer.
+Rewrite the **exercise**, not the reviewer — **once**.
 
 | Reason | Fix |
 |---|---|
@@ -132,13 +132,78 @@ Then re-run `content:validate --word <slug>` and prepare the gate again. The
 task packs are regenerated from the edited file, so the reviewers see the new
 sentence with a fresh ordering.
 
+### When the rewrite fails too: prune
+
+A second rewrite is where the Spanish stops sounding like Spanish. Round 2
+measured it: `titubear` lost five items to rewriting, `perspicaz` one in three,
+`secundar` four. An item that survives two reviewers only because it was
+reworded around them is not a good item.
+
+So after one failed rewrite, **delete the item instead**:
+
+```bash
+dart run content:prune --word <slug>     # then content:validate --word <slug>
+```
+
+It reads `gate/<slug>.failures.json`, removes exactly the exercises named
+there, and renumbers `position` 1..n. A word with six verified exercises beats
+a word with eight where two are ambiguous.
+
+It **refuses**, and exits non-zero, when the result would
+
+- fall below **6** exercises, or
+- lose its `paronym` or `register` distractor coverage.
+
+Those words need authoring, not pruning: either new exercises, or dropping the
+word. When the distractors *are* the word's dictionary definition — the RAE
+defines *mesurado* as "moderado, circunspecto" — no sentence can separate them
+and the honest move is to drop the word.
+
 ## Status lifecycle
 
 ```
 draft  ──content:validate passes──▶  validated
        ──content:gate-apply, both passes clean──▶  gated
-       ──human sign-off──▶  approved  ──content:emit──▶  supabase/seed.sql
+       ──content:approve──▶  approved  ──content:emit──▶  supabase/seed.sql
 ```
 
 `content:emit` only ever writes words with `status: approved`, so nothing
 reaches the database before it has been through both halves of the system.
+
+## There is no human sign-off
+
+`gated → approved` used to say "human sign-off". It does not any more, and the
+replacement is not "nobody checks".
+
+A founder reading a word that two blind reviewers already answered correctly
+adds a queue, not a check: they have the same information the gate had, minus
+the discipline of answering the items without the key. What they cannot have is
+the only evidence that is worth waiting for — **how the word behaves in front
+of learners**.
+
+So the promotion is mechanical:
+
+```bash
+dart run content:approve --word <slug>     # or --all
+```
+
+It promotes `gated` words and refuses anything else, which keeps the gate as
+the only door into the catalog.
+
+The check moved to the other side of publication. A word is **unpublished**
+when production telemetry says an item is broken:
+
+| Signal | Threshold | Reading |
+|---|---|---|
+| Per-exercise first-try error rate | **> 45 %** | The sentence does not force its answer for real learners, whatever two reviewers said |
+| Share of wrong answers landing on one distractor | **> 60 %** | That distractor is defensible: the item has two answers |
+
+Both are per **exercise**, not per word, so the response is the same as the
+gate's: drop the item with `content:prune` and re-emit, and only drop the word
+when pruning would take it under six.
+
+> **TODO — the telemetry does not exist yet.** Nothing collects per-exercise
+> first-try rates, nothing computes these two numbers, and nothing unpublishes
+> anything. Until that ships, `approved` means "passed the adversarial gate"
+> and nothing more, and the catalog carries a risk the gate cannot see. This
+> paragraph is the debt, written down where the decision was made.

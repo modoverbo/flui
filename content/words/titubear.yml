@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 115
 slug: "titubear"
-status: "draft"
+status: "approved"
 lemma: "titubear"
 part_of_speech: "verbo"
-syllables: ["ti", "tu", "be", "ar"]
+syllables:
+  - "ti"
+  - "tu"
+  - "be"
+  - "ar"
 stressed_syllable: 4
 ipa_latam: "[ti.tu.βeˈar]"
 ipa_es: "[ti.tu.βeˈar]"
@@ -25,7 +29,8 @@ replaces:
     after: "Contestó sin titubear"
   - before: "Se le notó que dudaba mucho"
     after: "Se le notó que titubeaba"
-family: ["titubeo"]
+family:
+  - "titubeo"
 themes:
   - slug: "presentaciones-oratoria"
     relevance: 3
@@ -34,8 +39,10 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["dudar"]
-  funcion: ["describir"]
+  comodin:
+    - "dudar"
+  funcion:
+    - "describir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -128,26 +135,6 @@ exercises:
         why_not: "«Atascarse» es coloquial y deja a alguien parado, y la frase dice que Camila no se quedó parada en ningún momento."
         hint_specific: "«Atascarse» no deja avanzar. ¿Cuánto tiempo estuvo parada Camila?"
   - position: 5
-    sentence: "Aprendí a no {{blank}} cuando me preguntan el precio: lo digo entero, de una vez y sin bajarlo."
-    hint_general: "Aprendió a decir el precio sin quedarse a medias."
-    explanation: "Titubear: decir el precio sin quedarse a medias. «Titular» es poner un título, y «regatear» sería bajar la cifra, y la frase dice que no la baja."
-    options:
-      - position: 1
-        text: "titular"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Titular» es poner un título a algo, y lo que se practica aquí es decir una cifra de corrido."
-        hint_specific: "«Titular» pone nombres. ¿Qué se dice entero en esta frase?"
-      - position: 2
-        text: "titubear"
-        is_correct: true
-      - position: 3
-        text: "regatear"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Regatear» es discutir la cifra para bajarla, y la frase termina diciendo que el precio no se baja."
-        hint_specific: "«Regatear» baja el número. ¿Qué dice la frase sobre bajar el precio?"
-  - position: 6
     sentence: "Durante el juicio del concurso, el jurado notó que Vicente {{blank}} solo en la parte de los números."
     hint_general: "Se quedaba a medias justo en esa parte de su explicación."
     explanation: "Titubeaba: se quedaba a medias en esa parte. «Titulaba» sería poner títulos, y «tanteaba» sería probar a propósito."
@@ -167,7 +154,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Tantear» es probar con cuidado a propósito, y aquí la duda le sale sin querer."
         hint_specific: "«Tantear» es una estrategia. ¿Vicente duda a propósito o sin querer?"
-  - position: 7
+  - position: 6
     sentence: "Renata contestó sin {{blank}}: «Sí, ese proyecto lo dirigí yo de principio a fin»."
     hint_general: "Contesta de corrido, sin un solo momento de duda."
     explanation: "Titubear: contesta de corrido, sin dudar. «Titular» sería poner un título, y «balbucear» apunta a un habla entrecortada."
@@ -187,26 +174,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Balbucear» apunta a un habla entrecortada, y aquí la clave es que no hubo ni un momento de duda."
         hint_specific: "«Balbucear» describe el sonido. ¿Qué es lo que no ocurrió en esa respuesta?"
-  - position: 8
-    sentence: "Si {{blank}} al empezar, respira y repite la primera frase: no es la lengua, son los nervios de arrancar."
-    hint_general: "El consejo sirve para cuando te quedas a medias al empezar."
-    explanation: "Titubeas: te quedas a medias al empezar. «Titulas» sería poner un título, y «tartamudeas» apunta a la lengua, que la frase descarta."
-    options:
-      - position: 1
-        text: "titulas"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Titular» es poner un título, y el consejo trata de qué hacer cuando dudas al arrancar."
-        hint_specific: "«Titulas» pone nombre a un texto. ¿De qué trata el consejo?"
-      - position: 2
-        text: "titubeas"
-        is_correct: true
-      - position: 3
-        text: "tartamudeas"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Tartamudear» apunta a la lengua, y el consejo aclara que la lengua no es el problema: son los nervios."
-        hint_specific: "«Tartamudeas» mira a la lengua. ¿Qué descarta el final del consejo?"
 readings:
   - position: 1
     scene: "trabajo"
@@ -236,5 +203,5 @@ metrics:
   family_size: 4
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 5, 8, the items the gate found ambiguous"
+  checked_on: "2026-09-14"

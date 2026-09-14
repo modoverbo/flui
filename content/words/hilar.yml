@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "hilar"
-status: "draft"
+status: "approved"
 lemma: "hilar"
 part_of_speech: "verbo"
-syllables: ["hi", "lar"]
+syllables:
+  - "hi"
+  - "lar"
 stressed_syllable: 2
 ipa_latam: "[iˈlaɾ]"
 ipa_es: "[iˈlaɾ]"
@@ -24,15 +26,18 @@ replaces:
     after: "No hilaba lo que contaba"
   - before: "Hay que conectar todo eso de alguna forma"
     after: "Hay que hilarlo de alguna forma"
-family: ["hilado"]
+family:
+  - "hilado"
 themes:
   - slug: "persuasion-storytelling"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 2
 tags:
-  comodin: ["juntar"]
-  funcion: ["narrar"]
+  comodin:
+    - "juntar"
+  funcion:
+    - "narrar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -229,9 +234,9 @@ readings:
 metrics:
   zipf_overall: 4.3033
   dispersion_dp: 0.1217
-  pedantry_proxy: 0.4450
+  pedantry_proxy: 0.445
   family_size: 10
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

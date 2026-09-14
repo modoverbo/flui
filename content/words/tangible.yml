@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "tangible"
-status: "draft"
+status: "approved"
 lemma: "tangible"
 part_of_speech: "adjetivo"
-syllables: ["tan", "gi", "ble"]
+syllables:
+  - "tan"
+  - "gi"
+  - "ble"
 stressed_syllable: 2
 ipa_latam: "[tanˈxi.βle]"
 ipa_es: "[tanˈxi.βle]"
@@ -24,15 +27,18 @@ replaces:
     after: "Algo tangible, no solo palabras"
   - before: "Yo quiero cosas concretas, no promesas"
     after: "Quiero resultados tangibles"
-family: ["intangible"]
+family:
+  - "intangible"
 themes:
   - slug: "persuasion-storytelling"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 2
 tags:
-  comodin: ["concreto"]
-  funcion: ["probar"]
+  comodin:
+    - "concreto"
+  funcion:
+    - "probar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +239,5 @@ metrics:
   family_size: 6
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

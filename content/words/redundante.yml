@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "redundante"
-status: "draft"
+status: "approved"
 lemma: "redundante"
 part_of_speech: "adjetivo"
-syllables: ["re", "dun", "dan", "te"]
+syllables:
+  - "re"
+  - "dun"
+  - "dan"
+  - "te"
 stressed_syllable: 3
 ipa_latam: "[re.ðunˈdan.te]"
 ipa_es: "[re.ðunˈdan.te]"
@@ -24,15 +28,19 @@ replaces:
     after: "Sobra, porque es redundante"
   - before: "Dices dos veces la misma idea"
     after: "La segunda frase es redundante"
-family: ["redundancia", "redundar"]
+family:
+  - "redundancia"
+  - "redundar"
 themes:
   - slug: "redaccion-ejecutiva"
     relevance: 3
   - slug: "correos-mensajes"
     relevance: 1
 tags:
-  comodin: ["repetido"]
-  funcion: ["podar"]
+  comodin:
+    - "repetido"
+  funcion:
+    - "podar"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -105,26 +113,6 @@ exercises:
         text: "redundante"
         is_correct: true
   - position: 4
-    sentence: "Aunque aparezca una sola vez, una frase {{blank}} cansa antes que una frase larga."
-    hint_general: "Lo que ya se dijo pesa más que lo extenso."
-    explanation: "Redundante: repite lo ya dicho y por eso cansa. «Abundante» hablaría de cantidad, y «repetitiva» necesita muchas repeticiones, y aquí basta una."
-    options:
-      - position: 1
-        text: "repetitiva"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Repetitiva» describe algo que insiste una y otra vez, y la frase dice que basta con que aparezca una sola vez."
-        hint_specific: "«Repetitiva» necesita muchas repeticiones. ¿Cuántas veces aparece la frase?"
-      - position: 2
-        text: "redundante"
-        is_correct: true
-      - position: 3
-        text: "abundante"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Abundante» habla de cantidad, y la frase compara con otra que ya es larga."
-        hint_specific: "«Abundante» mide cantidad. ¿Con qué se compara la frase?"
-  - position: 5
     sentence: "Delia quitó tres adjetivos {{blank}}: el texto quedó igual de claro y dos líneas más corto."
     hint_general: "Los tres decían lo que ya decía el sustantivo."
     explanation: "Redundantes: repetían lo que ya decía el resto. «Abundantes» hablaría de cantidad, y «cansinos» es coloquial y juzga el estilo en vez de señalar la repetición."
@@ -144,7 +132,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Cansinos» es coloquial y opina sobre el estilo, mientras que la frase explica que el texto quedó igual de claro."
         hint_specific: "«Cansinos» valora el estilo. ¿Qué prueba da la frase de que sobraban?"
-  - position: 6
+  - position: 5
     sentence: "Cuando el pie de foto repite lo que ya se ve en la imagen, se vuelve {{blank}}."
     hint_general: "La imagen lo dijo primero; el texto lo dice otra vez."
     explanation: "Redundante: la imagen lo dijo primero. «Resonante» describe algo que suena con fuerza, y «extenso» hablaría de longitud, no de repetición."
@@ -164,7 +152,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Extenso» habla de longitud, y un pie de foto puede ser cortísimo y seguir repitiendo la imagen."
         hint_specific: "«Extenso» mide el largo. ¿El problema es el largo o lo que cuenta?"
-  - position: 7
+  - position: 6
     sentence: "Gonzalo defendió la repetición: en un aviso de seguridad, ser {{blank}} salva a quien no escuchó la primera vez."
     hint_general: "Decir dos veces lo mismo aquí protege en lugar de sobrar."
     explanation: "Redundante: decir dos veces lo mismo aquí protege. «Abundante» hablaría de cantidad, y «pesado» es coloquial y convierte una decisión técnica en un reproche."
@@ -184,7 +172,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Abundante» habla de cantidad, y lo que defiende Gonzalo es repetir el mismo mensaje dos veces."
         hint_specific: "«Abundante» mide cuánto hay. ¿Qué defiende Gonzalo exactamente?"
-  - position: 8
+  - position: 7
     sentence: "Si tu correo explica dos veces la misma fecha, la segunda mención es {{blank}} y la puedes borrar."
     hint_general: "La fecha ya estaba escrita más arriba."
     explanation: "Redundante: la fecha ya estaba más arriba. «Redonda» describe una forma o una cifra exacta, y «excesiva» hablaría de un exceso de cantidad, no de una repetición."
@@ -233,5 +221,5 @@ metrics:
   family_size: 11
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

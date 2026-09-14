@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2112
 slug: "encauzar"
-status: "draft"
+status: "approved"
 lemma: "encauzar"
 part_of_speech: "verbo"
-syllables: ["en", "cau", "zar"]
+syllables:
+  - "en"
+  - "cau"
+  - "zar"
 stressed_syllable: 3
 ipa_latam: "[en.kawˈsaɾ]"
 ipa_es: "[en.kawˈθaɾ]"
@@ -32,8 +35,10 @@ themes:
   - slug: "reuniones"
     relevance: 2
 tags:
-  comodin: ["arreglar"]
-  funcion: ["reconducir"]
+  comodin:
+    - "arreglar"
+  funcion:
+    - "reconducir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -166,26 +171,6 @@ exercises:
         why_not: "«Acelerar» la haría ir más rápido, pero seguiría dando vueltas; lo que falta es una dirección."
         hint_specific: "Acelerar da velocidad. ¿Ir más rápido en círculos ayuda?"
   - position: 7
-    sentence: "Rafael {{blank}} la llegada de los nuevos: menos ruido, más acompañamiento y una persona de referencia."
-    hint_general: "Pone la llegada de los nuevos en un rumbo mejor."
-    explanation: "Encauzó: puso la llegada de los nuevos en mejor rumbo. «Encaró» sería enfrentarse a ella, y «aprobó» supondría que otro la había diseñado."
-    options:
-      - position: 1
-        text: "encaró"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Encarar» es plantarle cara a algo difícil; aquí no hay enfrentamiento, hay una llegada que se ordena mejor."
-        hint_specific: "Encarar planta cara a un problema. ¿Hay aquí un enfrentamiento?"
-      - position: 2
-        text: "encauzó"
-        is_correct: true
-      - position: 3
-        text: "aprobó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Aprobar» supondría que otra persona lo diseñó y él dijo que sí; los dos puntos muestran que el plan es suyo."
-        hint_specific: "Aprobar responde a un plan ajeno. ¿De quién es el plan de los dos puntos?"
-  - position: 8
     sentence: "Un buen jefe {{blank}} el trabajo cuando se desvía, en vez de esperar a que se estrelle."
     hint_general: "Corrige el rumbo del trabajo antes de que choque."
     explanation: "Encauza: corrige el rumbo antes del choque. «Encausa» sería llevar a alguien ante un juez, y «canaliza» suena a manual corporativo."
@@ -234,5 +219,5 @@ metrics:
   family_size: 23
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a3-r2 + reviewer-b3-r2; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

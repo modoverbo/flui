@@ -254,7 +254,7 @@ void main() {
 
   test('three forced reveals switch the session to reading mode', () async {
     final ids = [
-      for (final lemma in ['plantear', 'matizar', 'sopesar', 'zanjar'])
+      for (final lemma in ['plantear', 'matizar', 'sopesar', 'pertinente'])
         seedWord(lemma).id,
     ];
     for (final id in ids) {

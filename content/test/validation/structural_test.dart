@@ -62,13 +62,53 @@ void main() {
   group('ExerciseCountValidator', () {
     const validator = ExerciseCountValidator();
 
+    /// The canonical word cut down to [count] exercises, positions renumbered
+    /// the way `content:prune` leaves them.
+    Word pruned(int count) {
+      final map = validWordMap();
+      final exercises = (map['exercises']! as List<Object?>)
+          .sublist(0, count)
+          .cast<Map<String, Object?>>();
+      for (var i = 0; i < exercises.length; i++) {
+        exercises[i] = {...exercises[i], 'position': i + 1};
+      }
+      return Word.fromMap(map..['exercises'] = exercises);
+    }
+
     test('accepts exactly eight exercises with one blank each', () {
       expect(runWord(validator, validWord()), isEmpty);
     });
 
-    test('rejects seven exercises', () {
+    test('accepts seven exercises left by a gate prune', () {
+      expect(runWord(validator, pruned(7)), isEmpty);
+    });
+
+    test('accepts the six-exercise floor', () {
+      expect(runWord(validator, pruned(6)), isEmpty);
+    });
+
+    test('rejects five exercises, below the floor', () {
+      expect(runWord(validator, pruned(5)), hasLength(1));
+    });
+
+    test('rejects nine exercises, above the authored count', () {
       final map = validWordMap();
-      final exercises = (map['exercises']! as List<Object?>).sublist(0, 7);
+      final exercises = (map['exercises']! as List<Object?>)
+          .cast<Map<String, Object?>>()
+          .toList();
+      exercises.add({...exercises.first, 'position': 9});
+      expect(
+        runWord(validator, Word.fromMap(map..['exercises'] = exercises)),
+        isNotEmpty,
+      );
+    });
+
+    test('rejects a pruned set whose positions were not renumbered', () {
+      final map = validWordMap();
+      final exercises = (map['exercises']! as List<Object?>)
+          .cast<Map<String, Object?>>()
+          .toList()
+        ..removeAt(2);
       expect(
         runWord(validator, Word.fromMap(map..['exercises'] = exercises)),
         hasLength(1),

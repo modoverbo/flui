@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "nitido"
-status: "draft"
+status: "approved"
 lemma: "nítido"
 part_of_speech: "adjetivo"
-syllables: ["ní", "ti", "do"]
+syllables:
+  - "ní"
+  - "ti"
+  - "do"
 stressed_syllable: 1
 ipa_latam: "[ˈni.ti.ðo]"
 ipa_es: "[ˈni.ti.ðo]"
@@ -13,7 +16,6 @@ register: "neutral"
 pedantry_risk: 1
 usage_tip: "Funciona bien para elogiar un texto ajeno: dice que se entendió a la primera, que es el mejor cumplido."
 when_not_to_use: "No la uses para algo que solo es corto: un mensaje breve también puede dejar dudas."
-semantic_set_id: "claridad-del-mensaje"
 collocations:
   - "una idea nítida"
   - "un mensaje nítido"
@@ -25,15 +27,19 @@ replaces:
     after: "Que el límite quede nítido"
   - before: "Explícamelo bien clarito"
     after: "Explícamelo de forma nítida"
-family: ["nitidez"]
+family:
+  - "nitidez"
+semantic_set_id: "claridad-del-mensaje"
 themes:
   - slug: "redaccion-ejecutiva"
     relevance: 3
   - slug: "correos-mensajes"
     relevance: 2
 tags:
-  comodin: ["claro"]
-  funcion: ["elogiar"]
+  comodin:
+    - "claro"
+  funcion:
+    - "elogiar"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +240,5 @@ metrics:
   family_size: 9
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

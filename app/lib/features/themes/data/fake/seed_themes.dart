@@ -6,11 +6,13 @@ import 'package:flui/features/vocabulary/domain/word.dart';
 ///
 /// Hand-written, unlike `seed_content.dart`: `supabase/seed.sql` is generated
 /// from `content/` by `dart run content:emit` and proven byte-identical by
-/// `tool/seed_fixture_check.dart`, and that emitter writes neither themes nor
-/// `semantic_set_id`. So the theme rows live in a second seed file and their
-/// fixture lives here, layered on top of the generated words instead of
-/// edited into them. `test/features/themes/data/themes_data_test.dart` keeps
-/// the two in step.
+/// `tool/seed_fixture_check.dart`, and that emitter does not write the 16
+/// `themes` rows. So the taxonomy lives in a second seed file and its fixture
+/// lives here, layered on top of the generated words instead of edited into
+/// them. The *links* are not hand-written: `content:emit` owns `word_themes`,
+/// so `seedWordThemeSlugs` is generated into `seed_content.dart` and the map
+/// from slug to theme id is all this file adds.
+/// `test/features/themes/data/themes_data_test.dart` keeps the two in step.
 const seedThemes = <Theme>[
   Theme(
     id: 'c0000000-0000-4000-8000-000000000001',
@@ -219,23 +221,6 @@ const seedThemes = <Theme>[
     sortOrder: 16,
   ),
 ];
-
-/// Word slug to theme slugs, most relevant first. Mirrors the `word_themes`
-/// rows of `supabase/seed_themes.sql`.
-const seedWordThemeSlugs = <String, List<String>>{
-  'perspicaz': ['elogio-reconocimiento', 'reuniones', 'matices-precision'],
-  'plantear': ['reuniones', 'conversaciones-dificiles', 'correos-mensajes'],
-  'matizar': ['matices-precision', 'conflicto-desacuerdo', 'reuniones'],
-  'sopesar': ['negociacion', 'entrevistas', 'liderazgo-feedback'],
-  'pertinente': ['entrevistas', 'reuniones', 'redaccion-ejecutiva'],
-  'concretar': ['reuniones', 'redaccion-ejecutiva', 'negociacion'],
-  'contundente': [
-    'persuasion-storytelling',
-    'presentaciones-oratoria',
-    'negociacion',
-  ],
-  'zanjar': ['conflicto-desacuerdo', 'negociacion', 'reuniones'],
-};
 
 /// Word slug to `words.semantic_set_id`. «Contundente» reinforces an
 /// assertion and «matizar» softens it: two ends of one axis, so they are

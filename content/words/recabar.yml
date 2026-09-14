@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "recabar"
-status: "draft"
+status: "approved"
 lemma: "recabar"
 part_of_speech: "verbo"
-syllables: ["re", "ca", "bar"]
+syllables:
+  - "re"
+  - "ca"
+  - "bar"
 stressed_syllable: 3
 ipa_latam: "[re.kaˈβaɾ]"
 ipa_es: "[re.kaˈβaɾ]"
@@ -24,15 +27,18 @@ replaces:
     after: "Estoy recabando opiniones antes de decidir"
   - before: "Hay que pedirle la información a cada área"
     after: "Hay que recabar la información de cada área"
-family: ["recabado"]
+family:
+  - "recabado"
 themes:
   - slug: "correos-mensajes"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 2
 tags:
-  comodin: ["conseguir"]
-  funcion: ["pedir"]
+  comodin:
+    - "conseguir"
+  funcion:
+    - "pedir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +239,5 @@ metrics:
   family_size: 14
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

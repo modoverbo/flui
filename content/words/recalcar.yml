@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 114
 slug: "recalcar"
-status: "draft"
+status: "approved"
 lemma: "recalcar"
 part_of_speech: "verbo"
-syllables: ["re", "cal", "car"]
+syllables:
+  - "re"
+  - "cal"
+  - "car"
 stressed_syllable: 3
 ipa_latam: "[re.kalˈkar]"
 ipa_es: "[re.kalˈkar]"
@@ -34,8 +37,10 @@ themes:
   - slug: "liderazgo-feedback"
     relevance: 1
 tags:
-  comodin: ["decir"]
-  funcion: ["enfatizar"]
+  comodin:
+    - "decir"
+  funcion:
+    - "enfatizar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -236,5 +241,5 @@ metrics:
   family_size: 42
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

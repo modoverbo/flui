@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 2113
 slug: "receptivo"
-status: "draft"
+status: "approved"
 lemma: "receptivo"
 part_of_speech: "adjetivo"
-syllables: ["re", "cep", "ti", "vo"]
+syllables:
+  - "re"
+  - "cep"
+  - "ti"
+  - "vo"
 stressed_syllable: 3
 ipa_latam: "[re.sepˈti.βo]"
 ipa_es: "[re.θepˈti.βo]"
@@ -25,15 +29,18 @@ replaces:
     after: "Se mostró receptivo a las críticas"
   - before: "Hoy no está para que le digan nada"
     after: "Hoy no está receptivo"
-family: ["receptividad"]
+family:
+  - "receptividad"
 themes:
   - slug: "liderazgo-feedback"
     relevance: 3
   - slug: "conversaciones-dificiles"
     relevance: 1
 tags:
-  comodin: ["abierto"]
-  funcion: ["describir"]
+  comodin:
+    - "abierto"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +241,5 @@ metrics:
   family_size: 45
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

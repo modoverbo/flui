@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 106
 slug: "secundar"
-status: "draft"
+status: "approved"
 lemma: "secundar"
 part_of_speech: "verbo"
-syllables: ["se", "cun", "dar"]
+syllables:
+  - "se"
+  - "cun"
+  - "dar"
 stressed_syllable: 3
 ipa_latam: "[se.kunˈdar]"
 ipa_es: "[se.kunˈdar]"
@@ -34,8 +37,10 @@ themes:
   - slug: "liderazgo-feedback"
     relevance: 1
 tags:
-  comodin: ["apoyar"]
-  funcion: ["respaldar"]
+  comodin:
+    - "apoyar"
+  funcion:
+    - "respaldar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -108,26 +113,6 @@ exercises:
         text: "secundé"
         is_correct: true
   - position: 4
-    sentence: "Durante la asamblea del edificio, Héctor {{blank}} la propuesta del portero antes que nadie, y eso que allí no se firmaba nada."
-    hint_general: "Fue el primero en ponerse del lado de esa propuesta."
-    explanation: "Secundó: fue el primero en ponerse de ese lado. «Suscribió» pediría un papel que firmar, y «acató» sería obedecer una orden."
-    options:
-      - position: 1
-        text: "suscribió"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Suscribir» pide un documento que firmar, y la frase aclara que en esa asamblea no se firmaba nada."
-        hint_specific: "«Suscribió» necesita un papel. ¿Qué aclara el final de la frase?"
-      - position: 2
-        text: "secundó"
-        is_correct: true
-      - position: 3
-        text: "acató"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Acatar» es cumplir una orden, y la propuesta del portero todavía no obliga a nadie."
-        hint_specific: "«Acató» supone algo ya decidido. ¿En qué momento de la asamblea estamos?"
-  - position: 5
     sentence: "Elisa aprendió una regla sencilla: si una idea buena se queda en silencio, hay que {{blank}}la enseguida."
     hint_general: "La regla es dar apoyo en voz alta a una idea que nadie ha respaldado todavía."
     explanation: "Secundarla: darle apoyo en voz alta enseguida. «Acatarla» sería obedecerla, y «celebrarla» llega después, cuando ya funcionó."
@@ -147,7 +132,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Celebrar» llega cuando la idea ya funcionó, y aquí todavía no ha conseguido ni un apoyo."
         hint_specific: "«Celebrar» viene después del resultado. ¿Hay resultado todavía?"
-  - position: 6
+  - position: 5
     sentence: "El comité entero {{blank}} la propuesta de becas, y la votación duró menos de un minuto."
     hint_general: "Todo el comité se puso del lado de esa propuesta en voz alta."
     explanation: "Secundó: el comité se puso de ese lado. «Sucumbió» es rendirse ante algo, y «escenificó» sugiere un apoyo fingido para la foto."
@@ -167,7 +152,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Escenificar» suena a montaje para la foto, y la frase describe un apoyo real y rapidísimo."
         hint_specific: "«Escenificó» huele a teatro. ¿La escena sugiere sinceridad o postureo?"
-  - position: 7
+  - position: 6
     sentence: "En la entrevista le preguntaron a Gonzalo qué hace cuando alguien del equipo propone algo bueno: «Lo {{blank}} en el momento»."
     hint_general: "Contesta que apoya esa idea en voz alta y sin esperar."
     explanation: "Secundo: apoyo la idea en el momento. «Acato» sería obedecer una orden, y «fiscalizo» sería vigilarla con lupa."
@@ -187,7 +172,7 @@ exercises:
       - position: 3
         text: "secundo"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Aunque tenía dudas sobre el presupuesto, Virginia {{blank}} el plan de su compañera y lo dijo delante de todos."
     hint_general: "Se pone del lado del plan ajeno y lo deja claro delante del grupo."
     explanation: "Secundó: se puso del lado del plan ajeno. «Acató» sería obedecer una orden, y «capitaneó» sería ponerse al frente, no detrás."
@@ -236,5 +221,5 @@ metrics:
   family_size: 55
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

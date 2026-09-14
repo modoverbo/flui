@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 109
 slug: "atajar"
-status: "draft"
+status: "approved"
 lemma: "atajar"
 part_of_speech: "verbo"
-syllables: ["a", "ta", "jar"]
+syllables:
+  - "a"
+  - "ta"
+  - "jar"
 stressed_syllable: 3
 ipa_latam: "[a.taˈxar]"
 ipa_es: "[a.taˈxar]"
@@ -25,7 +28,8 @@ replaces:
     after: "Atajemos el rumor cuanto antes"
   - before: "Si no lo frenamos ahora, luego será peor"
     after: "Si no lo atajamos ahora, luego será peor"
-family: ["atajo"]
+family:
+  - "atajo"
 themes:
   - slug: "reuniones"
     relevance: 3
@@ -34,8 +38,10 @@ themes:
   - slug: "conversaciones-dificiles"
     relevance: 1
 tags:
-  comodin: ["parar"]
-  funcion: ["prevenir"]
+  comodin:
+    - "parar"
+  funcion:
+    - "prevenir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -236,5 +242,5 @@ metrics:
   family_size: 13
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

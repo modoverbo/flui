@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 301
 slug: "abordar"
-status: "draft"
+status: "approved"
 lemma: "abordar"
 part_of_speech: "verbo"
-syllables: ["a", "bor", "dar"]
+syllables:
+  - "a"
+  - "bor"
+  - "dar"
 stressed_syllable: 3
 ipa_latam: "[a.βorˈðar]"
 ipa_es: "[a.βorˈðar]"
@@ -25,15 +28,19 @@ replaces:
     after: "Hay que abordar el tema de los horarios"
   - before: "A ver cómo saco el tema"
     after: "A ver cómo lo abordo"
-family: ["abordaje"]
+family:
+  - "abordaje"
 themes:
   - slug: "conversaciones-dificiles"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["hablar", "tratar"]
-  funcion: ["abrir"]
+  comodin:
+    - "hablar"
+    - "tratar"
+  funcion:
+    - "abrir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +241,5 @@ metrics:
   family_size: 26
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

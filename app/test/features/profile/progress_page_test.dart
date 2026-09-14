@@ -125,10 +125,10 @@ void main() {
     expect(find.text('100 %'), findsOneWidget);
     expect(find.text('Primera palabra'), findsOneWidget);
     expect(find.text('Completado'), findsNWidgets(3));
-    // The catalog has 8 words, so the repertoire target is 8 and not a
-    // permanently unreachable 10.
-    expect(find.text('8 palabras en tu repertorio'), findsOneWidget);
-    expect(find.text('2 de 8'), findsOneWidget);
+    // The catalog now holds more words than the repertoire target, so the
+    // achievement asks for the full 10 instead of shrinking to the catalog.
+    expect(find.text('10 palabras en tu repertorio'), findsOneWidget);
+    expect(find.text('2 de 10'), findsOneWidget);
     expect(find.text('1 de 5'), findsOneWidget);
   });
 

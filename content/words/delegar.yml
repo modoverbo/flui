@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2111
 slug: "delegar"
-status: "draft"
+status: "approved"
 lemma: "delegar"
 part_of_speech: "verbo"
-syllables: ["de", "le", "gar"]
+syllables:
+  - "de"
+  - "le"
+  - "gar"
 stressed_syllable: 3
 ipa_latam: "[de.leˈɣaɾ]"
 ipa_es: "[de.leˈɣaɾ]"
@@ -25,15 +28,18 @@ replaces:
     after: "Delegué esa decisión en ella"
   - before: "Tengo que aprender a soltar cosas"
     after: "Tengo que aprender a delegar"
-family: ["delegación"]
+family:
+  - "delegación"
 themes:
   - slug: "liderazgo-feedback"
     relevance: 3
   - slug: "reuniones"
     relevance: 1
 tags:
-  comodin: ["pasar"]
-  funcion: ["repartir"]
+  comodin:
+    - "pasar"
+  funcion:
+    - "repartir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -126,26 +132,6 @@ exercises:
         text: "delegó"
         is_correct: true
   - position: 5
-    sentence: "En su primer mes al frente, Verónica {{blank}} tres bloques enteros y se quedó solo con el trato con clientes."
-    hint_general: "Suelta tres bloques enteros y se queda con una sola parte."
-    explanation: "Delegó: soltó tres bloques enteros. «Relegó» sería apartar a alguien, y «encomendó» dice algo parecido, pero con un tono casi solemne."
-    options:
-      - position: 1
-        text: "encomendó"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Encomendar» tiene un tono solemne, casi de misión sagrada; para repartir bloques de trabajo suena grandilocuente."
-        hint_specific: "«Encomendar» suena solemne. ¿Encaja al repartir el trabajo de un mes?"
-      - position: 2
-        text: "delegó"
-        is_correct: true
-      - position: 3
-        text: "relegó"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Relegar» deja a alguien en segundo plano; aquí los bloques pasan a personas que ahora deciden sobre ellos."
-        hint_specific: "Relegar deja a alguien atrás. ¿Quién queda atrás en esta frase?"
-  - position: 6
     sentence: "Nadie aprende a decidir si nunca le {{blank}} una decisión de verdad."
     hint_general: "Sin decisiones propias, nadie aprende a decidir."
     explanation: "Delegan: nadie le pasa decisiones de verdad. «Relegan» hablaría de apartarlo, y «piden» diría que le reclaman algo, no que le den poder."
@@ -165,7 +151,7 @@ exercises:
       - position: 3
         text: "delegan"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Antes de las vacaciones, Gloria {{blank}} sus pendientes y escribió en un correo quién decidía qué."
     hint_general: "Reparte lo pendiente y deja claro quién decide cada cosa."
     explanation: "Delegó: repartió lo pendiente con su poder de decisión. «Alegó» significa dar razones, y «mandó» sugeriría órdenes sueltas sin repartir criterio."
@@ -185,7 +171,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Mandar» son órdenes sueltas; el correo de Gloria hace algo más, dice quién decide sobre cada asunto."
         hint_specific: "Mandar da órdenes. ¿Qué dejó escrito Gloria además del trabajo?"
-  - position: 8
+  - position: 7
     sentence: "Hay responsables que {{blank}} el trabajo más interesante y aun así se guardan la firma, y así el equipo nunca avanza."
     hint_general: "Pasan el trabajo al equipo, aunque se quedan con la decisión final."
     explanation: "Delegan: pasan el trabajo, aunque se guardan la firma. «Relegan» sería apartar a la gente, y «endosan» supondría soltarle a otro algo que nadie quiere."
@@ -234,5 +220,5 @@ metrics:
   family_size: 35
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2; gated after content:prune removed exercise 5, the item the gate found ambiguous"
+  checked_on: "2026-09-14"

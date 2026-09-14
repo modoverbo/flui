@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "respaldar"
-status: "draft"
+status: "approved"
 lemma: "respaldar"
 part_of_speech: "verbo"
-syllables: ["res", "pal", "dar"]
+syllables:
+  - "res"
+  - "pal"
+  - "dar"
 stressed_syllable: 3
 ipa_latam: "[res.palˈdaɾ]"
 ipa_es: "[res.palˈdaɾ]"
@@ -24,15 +27,18 @@ replaces:
     after: "Está respaldado por los números"
   - before: "Necesito que alguien lo diga conmigo"
     after: "Necesito que alguien lo respalde"
-family: ["respaldo"]
+family:
+  - "respaldo"
 themes:
   - slug: "persuasion-storytelling"
     relevance: 3
   - slug: "redaccion-ejecutiva"
     relevance: 2
 tags:
-  comodin: ["apoyar"]
-  funcion: ["sostener"]
+  comodin:
+    - "apoyar"
+  funcion:
+    - "sostener"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +239,5 @@ metrics:
   family_size: 36
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 2122
 slug: "rectificar"
-status: "draft"
+status: "approved"
 lemma: "rectificar"
 part_of_speech: "verbo"
-syllables: ["rec", "ti", "fi", "car"]
+syllables:
+  - "rec"
+  - "ti"
+  - "fi"
+  - "car"
 stressed_syllable: 4
 ipa_latam: "[rek.ti.fiˈkaɾ]"
 ipa_es: "[rek.ti.fiˈkaɾ]"
@@ -25,15 +29,18 @@ replaces:
     after: "Rectifico mi propuesta"
   - before: "Vale, me has convencido, lo cambio"
     after: "Me has convencido: rectifico"
-family: ["rectificación"]
+family:
+  - "rectificación"
 themes:
   - slug: "conflicto-desacuerdo"
     relevance: 3
   - slug: "liderazgo-feedback"
     relevance: 2
 tags:
-  comodin: ["cambiar"]
-  funcion: ["corregir"]
+  comodin:
+    - "cambiar"
+  funcion:
+    - "corregir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +241,5 @@ metrics:
   family_size: 39
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

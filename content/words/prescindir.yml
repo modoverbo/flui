@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "prescindir"
-status: "draft"
+status: "approved"
 lemma: "prescindir"
 part_of_speech: "verbo"
-syllables: ["pres", "cin", "dir"]
+syllables:
+  - "pres"
+  - "cin"
+  - "dir"
 stressed_syllable: 3
 ipa_latam: "[pɾe.sinˈdiɾ]"
 ipa_es: "[pɾes.θinˈdiɾ]"
@@ -24,15 +27,18 @@ replaces:
     after: "Se puede prescindir de esa parte"
   - before: "No hace falta que pongas eso"
     after: "Puedes prescindir de eso"
-family: ["prescindible"]
+family:
+  - "prescindible"
 themes:
   - slug: "redaccion-ejecutiva"
     relevance: 3
   - slug: "correos-mensajes"
     relevance: 1
 tags:
-  comodin: ["quitar"]
-  funcion: ["elegir"]
+  comodin:
+    - "quitar"
+  funcion:
+    - "elegir"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -233,5 +239,5 @@ metrics:
   family_size: 60
 provenance:
   generator: "authored for correos-mensajes, redaccion-ejecutiva and persuasion-storytelling"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

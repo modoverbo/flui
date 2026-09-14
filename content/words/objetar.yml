@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 105
 slug: "objetar"
-status: "draft"
+status: "approved"
 lemma: "objetar"
 part_of_speech: "verbo"
-syllables: ["ob", "je", "tar"]
+syllables:
+  - "ob"
+  - "je"
+  - "tar"
 stressed_syllable: 3
 ipa_latam: "[oβ.xeˈtar]"
 ipa_es: "[oβ.xeˈtar]"
@@ -25,7 +28,8 @@ replaces:
     after: "Quiero objetar el punto dos"
   - before: "¿Alguien tiene algo en contra?"
     after: "¿Alguien quiere objetar algo?"
-family: ["objeción"]
+family:
+  - "objeción"
 themes:
   - slug: "reuniones"
     relevance: 3
@@ -34,8 +38,10 @@ themes:
   - slug: "negociacion"
     relevance: 1
 tags:
-  comodin: ["decir"]
-  funcion: ["discrepar"]
+  comodin:
+    - "decir"
+  funcion:
+    - "discrepar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -232,9 +238,9 @@ readings:
 metrics:
   zipf_overall: 5.1353
   dispersion_dp: 0.1548
-  pedantry_proxy: 0.4490
+  pedantry_proxy: 0.449
   family_size: 67
 provenance:
   generator: "flui authoring agent — themes reuniones, presentaciones-oratoria, entrevistas"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r2 + reviewer-b1-r2 + reviewer-a2-r2 + reviewer-b2-r2 + reviewer-a3-r2 + reviewer-b3-r2"
+  checked_on: "2026-09-14"

@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2104
 slug: "concesion"
-status: "draft"
+status: "approved"
 lemma: "concesión"
 part_of_speech: "sustantivo"
-syllables: ["con", "ce", "sión"]
+syllables:
+  - "con"
+  - "ce"
+  - "sión"
 stressed_syllable: 3
 ipa_latam: "[kon.seˈsjon]"
 ipa_es: "[kon.θeˈsjon]"
@@ -25,15 +28,18 @@ replaces:
     after: "Tú también tendrás que hacer alguna concesión"
   - before: "Les dimos una cosa para desbloquear el trato"
     after: "Les hicimos una concesión para desbloquear el trato"
-family: ["conceder"]
+family:
+  - "conceder"
 themes:
   - slug: "negociacion"
     relevance: 3
   - slug: "conflicto-desacuerdo"
     relevance: 2
 tags:
-  comodin: ["cosa"]
-  funcion: ["ceder"]
+  comodin:
+    - "cosa"
+  funcion:
+    - "ceder"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -106,26 +112,6 @@ exercises:
         why_not: "Una «disculpa» repara una ofensa; en la frase nadie ha ofendido a nadie, solo está todo atascado."
         hint_specific: "Una disculpa repara una ofensa. ¿Hay alguien ofendido en esta mesa?"
   - position: 4
-    sentence: "El acuerdo se firmó gracias a dos {{blank}}: cada parte soltó un punto a cambio de que la otra soltara el suyo."
-    hint_general: "Cada parte dejó de pedir una cosa a cambio de que la otra hiciera lo mismo."
-    explanation: "Concesiones: cada parte cedió un punto a cambio del otro. «Confesiones» serían secretos contados, y «renuncias» sería soltar algo sin recibir nada."
-    options:
-      - position: 1
-        text: "confesiones"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Unas «confesiones» son secretos que alguien cuenta, y lo que se intercambia aquí son puntos cedidos dentro del trato."
-        hint_specific: "Las confesiones cuentan secretos. ¿Qué cerró el acuerdo, secretos o puntos cedidos?"
-      - position: 2
-        text: "concesiones"
-        is_correct: true
-      - position: 3
-        text: "renuncias"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «renuncia» es soltar algo y punto, sin nada a cambio, y aquí cada punto cedido se cambia por el del otro lado."
-        hint_specific: "Renunciar es soltar sin más. Relee: ¿se soltó a cambio de nada o a cambio de algo?"
-  - position: 5
     sentence: "Aceptar la fecha de ellos no fue una derrota, fue una {{blank}} calculada."
     hint_general: "No es perder: es ceder un punto a propósito para ganar otro."
     explanation: "Concesión: cede un punto a propósito para ganar otro. «Sucesión» habla de cosas que van una detrás de otra, y «excusa» sería una razón para escaparse."
@@ -145,7 +131,7 @@ exercises:
       - position: 3
         text: "concesión"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "El jefe de compras pidió una {{blank}} más antes de firmar, y esta vez Nuria no cedió nada."
     hint_general: "Pide que le suelten un punto más, y esta vez no lo consigue."
     explanation: "Concesión: pide que le suelten un punto más. «Regalito» es coloquial y suena a broma, y «confesión» sería pedirle a Nuria que cuente un secreto."
@@ -165,7 +151,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «confesión» es contar algo que callabas; el jefe de compras no quiere secretos, quiere otro punto del trato."
         hint_specific: "Una confesión pide un secreto. ¿Qué está pidiendo el jefe de compras?"
-  - position: 7
+  - position: 6
     sentence: "Después de tres rondas, lo único que seguía sobre la mesa era una {{blank}}: el plazo de pago."
     hint_general: "Queda un solo punto que una parte puede soltar al otro lado."
     explanation: "Concesión: queda un solo punto por soltar. «Conversión» es cambiar una cosa en otra, y «rebaja» solo serviría para el precio, no para un plazo."
@@ -185,7 +171,7 @@ exercises:
       - position: 3
         text: "concesión"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Sara insistió en que el descuento no era una {{blank}}, sino el precio de siempre para clientes antiguos."
     hint_general: "Ella niega que el precio sea un punto cedido a propósito."
     explanation: "Concesión: niega que el precio sea un punto cedido. «Confesión» no encaja porque no hay ningún secreto, y «trampa» acusaría a Sara de querer engañar."
@@ -234,5 +220,5 @@ metrics:
   family_size: 282
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a2-r2 + reviewer-b2-r2; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-14"
