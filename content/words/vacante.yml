@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5024
 slug: "vacante"
-status: "draft"
+status: "approved"
 lemma: "vacante"
 part_of_speech: "sustantivo"
 syllables:
@@ -171,26 +171,6 @@ exercises:
         why_not: "Una «candidatura» es lo que presenta quien quiere el puesto, y lo que falta aquí es la persona que lo ocupe."
         hint_specific: "Una candidatura la entrega alguien de fuera. ¿Qué es lo que se quedó sin llenar?"
   - position: 7
-    sentence: "Diego se enteró de la {{blank}} por una vecina, no por ningún anuncio."
-    hint_general: "Supo del puesto libre por el boca a boca."
-    explanation: "Vacante: el puesto libre del que se enteró. «Vacuna» se pone para prevenir una enfermedad, y «oferta» abarca cualquier cosa que se ofrezca, también un descuento."
-    options:
-      - position: 1
-        text: "oferta"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «oferta» puede ser cualquier cosa que se ofrezca, hasta un descuento del súper, y aquí se trata de un puesto libre."
-        hint_specific: "Una oferta también está en un supermercado. ¿De qué se entera Diego?"
-      - position: 2
-        text: "vacuna"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Una «vacuna» se pone para prevenir una enfermedad, y de una vacuna no se entera uno para presentarse a un puesto."
-        hint_specific: "Una vacuna la anuncia un centro de salud. ¿Qué le cuenta la vecina?"
-      - position: 3
-        text: "vacante"
-        is_correct: true
-  - position: 8
     sentence: "Antes de publicar la {{blank}}, Nerea preguntó dentro de casa por si alguien la quería."
     hint_general: "Antes de anunciar el puesto libre lo ofreció dentro."
     explanation: "Vacante: el puesto libre antes de anunciarlo. «Vacuna» se pone para prevenir una enfermedad, y «plantilla» es la gente que ya trabaja allí."
@@ -239,5 +219,5 @@ metrics:
   family_size: 12
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

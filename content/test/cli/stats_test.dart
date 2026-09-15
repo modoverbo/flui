@@ -65,7 +65,7 @@ void main() {
       themed('uno', ['reuniones']),
     ], testTaxonomy);
 
-    expect(stats.gaps, hasLength(16));
+    expect(stats.gaps, hasLength(testTaxonomy.themes.length));
     final reuniones = stats.gaps.firstWhere((g) => g.slug == 'reuniones');
     expect(reuniones.approved, 1);
     expect(reuniones.missingForNinetyDays, 92);

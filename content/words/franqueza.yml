@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5013
 slug: "franqueza"
-status: "draft"
+status: "approved"
 lemma: "franqueza"
 part_of_speech: "sustantivo"
 syllables:
@@ -114,26 +114,6 @@ exercises:
         why_not: "Una «flaqueza» es un punto débil de alguien, y lo que se agradece aquí es un aviso claro."
         hint_specific: "Una flaqueza no se agradece, se perdona. ¿Qué se agradece en la frase?"
   - position: 4
-    sentence: "Eugenia contesta siempre con {{blank}}, aunque le tiemble la voz mientras lo dice."
-    hint_general: "Dice lo que piensa incluso cuando le cuesta."
-    explanation: "Franqueza: dice lo que piensa aunque le cueste. «Franquicia» es un permiso de marca, y «valentía» hablaría del miedo que vence, no de lo que dice."
-    options:
-      - position: 1
-        text: "franquicia"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Una «franquicia» es un permiso para usar la marca de otro, y aquí se describe cómo contesta una persona."
-        hint_specific: "Una franquicia aparece en un contrato. ¿Qué describe la frase sobre Eugenia?"
-      - position: 2
-        text: "valentía"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Valentía» habla del miedo que alguien vence, y la frase describe qué dice, no cuánto miedo pasa."
-        hint_specific: "La valentía se mide por el miedo. ¿Qué es lo que hace ella siempre al contestar?"
-      - position: 3
-        text: "franqueza"
-        is_correct: true
-  - position: 5
     sentence: "Lucrecia pidió que le hablaran con {{blank}} sobre su idea, y aceptó las tres pegas sin discutir."
     hint_general: "Pidió opiniones sin adornar y aceptó las pegas."
     explanation: "Franqueza: pidió opiniones sin adornar. «Flaqueza» sería un punto débil, y «educación» hablaría de buenas formas, que no garantizan la verdad."
@@ -153,7 +133,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Educación» habla de buenas formas, y se puede ser muy educado y no decir ni una de las tres pegas."
         hint_specific: "Con buenas formas se puede callar todo. ¿Qué recibió ella al final?"
-  - position: 6
+  - position: 5
     sentence: "Lo que más se agradece de Salvador es su {{blank}}: si algo no le convence, lo dice en la misma reunión."
     hint_general: "Cuando algo no le convence lo dice en el momento."
     explanation: "Franqueza: lo dice en el momento y sin rodeos. «Franquicia» es un permiso de marca, y «confianza» sería la relación entre dos, no su manera de hablar."
@@ -173,7 +153,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «franquicia» es el permiso para usar una marca ajena, y aquí se habla de lo que alguien dice en voz alta."
         hint_specific: "Una franquicia tiene dueño y contrato. ¿Qué se agradece de Salvador?"
-  - position: 7
+  - position: 6
     sentence: "Melania avisa antes de empezar: «Te hablo con {{blank}}», y así nadie se lleva un susto a mitad."
     hint_general: "Avisa de que va a decir las cosas tal cual."
     explanation: "Franqueza: avisa de que dirá las cosas tal cual. «Flaqueza» sería un punto débil suyo, y «descaro» es un reproche y sugiere faltar al respeto."
@@ -193,7 +173,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Descaro» es un reproche y sugiere faltar al respeto, y su aviso sirve para que nadie se lleve un susto."
         hint_specific: "El descaro nunca se anuncia como un favor. ¿Para qué avisa ella?"
-  - position: 8
+  - position: 7
     sentence: "Cuesta contestar con {{blank}} cuando quien pregunta está esperando otra respuesta."
     hint_general: "Es difícil decir la verdad a quien espera oír otra cosa."
     explanation: "Franqueza: decir la verdad aunque no sea la esperada. «Franquicia» es un permiso de marca, y «calma» hablaría del tono, no del contenido."
@@ -242,5 +222,5 @@ metrics:
   family_size: 35
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

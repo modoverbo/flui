@@ -32,11 +32,16 @@ final class WordForms {
 
   /// Verbs drop the infinitive ending; adjectives and nouns drop a final
   /// vowel or "z" (perspicaz → perspicaces).
+  ///
+  /// A pronominal infinitive carries the pronoun on the lemma but never on
+  /// the inflected form ("extenderse" is written "me extendí"), so the "se"
+  /// comes off before the ending does.
   String get stem {
-    final base = normalizeText(lemma);
+    var base = normalizeText(lemma);
     if (_isPhrase || base.length <= minStemLength) return base;
     if (isVerb) {
       const endings = ['ar', 'er', 'ir'];
+      if (base.endsWith('se')) base = base.substring(0, base.length - 2);
       return endings.any(base.endsWith)
           ? base.substring(0, base.length - 2)
           : base;

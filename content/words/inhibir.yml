@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "inhibir"
-status: "draft"
+status: "approved"
 lemma: "inhibir"
 part_of_speech: "verbo"
 syllables:
@@ -35,8 +35,10 @@ themes:
   - slug: "reuniones"
     relevance: 1
 tags:
-  comodin: ["cortar"]
-  funcion: ["precisar"]
+  comodin:
+    - "cortar"
+  funcion:
+    - "precisar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -89,26 +91,6 @@ exercises:
         why_not: "«Exhibir» sería enseñar esa reacción a todo el mundo, y Marta hizo lo contrario: se la guardó hasta el día siguiente."
         hint_specific: "Exhibir es mostrar. ¿Marta enseñó su reacción o la retuvo?"
   - position: 3
-    sentence: "El jefe se {{blank}} de la discusión y dejó que el equipo decidiera solo."
-    hint_general: "Se quedó al margen a propósito, sin irse de la sala."
-    explanation: "Inhibió: se quedó al margen a propósito. «Exhibió» sería mostrarse a la vista de todos, y «apartó» sugiere que se fue del sitio, cuando siguió allí."
-    options:
-      - position: 1
-        text: "inhibió"
-        is_correct: true
-      - position: 2
-        text: "exhibió"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Exhibirse» es mostrarse a la vista de todos, y este jefe hizo lo contrario: dejó de intervenir."
-        hint_specific: "Exhibirse busca ser visto. ¿Qué hizo el jefe durante la discusión?"
-      - position: 3
-        text: "apartó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Se apartó» sugiere que se fue del sitio, y él siguió en la sala escuchando sin decir nada."
-        hint_specific: "Apartarse implica moverse. ¿Salió de la sala o se quedó callado?"
-  - position: 4
     sentence: "Un comentario a destiempo puede {{blank}} las ganas de participar de medio equipo."
     hint_general: "Ese comentario frena algo que iba a ocurrir."
     explanation: "Inhibir: el comentario frena las ganas de participar. «Exhibir» sería mostrarlas, y «prohibir» supondría una orden expresa que nadie da."
@@ -128,7 +110,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Exhibir» sería mostrar esas ganas a la vista de todos, y lo que ocurre es que desaparecen."
         hint_specific: "Exhibir saca a escena. ¿Qué pasa con las ganas del equipo?"
-  - position: 5
+  - position: 4
     sentence: "La cámara encendida {{blank}} a casi todo el grupo durante la primera media hora."
     hint_general: "La presencia de la cámara frenó lo que iban a decir."
     explanation: "Inhibió: la cámara frenó lo que iban a decir. «Exhibió» sería mostrarlos a la vista de todos, y «eclipsó» diría que les quitó protagonismo."
@@ -148,7 +130,7 @@ exercises:
       - position: 3
         text: "inhibió"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Sara aprendió a {{blank}} el impulso de contestar al instante, y sus correos mejoraron."
     hint_general: "Retiene una reacción antes de que salga."
     explanation: "Inhibir: retiene la reacción antes de que salga. «Exhibir» sería mostrarla a todos, y «aplazar» movería la respuesta a más tarde sin frenar el impulso."
@@ -168,7 +150,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Aplazar» movería la respuesta a más tarde, y un impulso no se agenda: o se frena en el momento o sale."
         hint_specific: "Aplazar mueve fechas. ¿Se puede poner un impulso en el calendario?"
-  - position: 7
+  - position: 6
     sentence: "Nadie quiere {{blank}} a los nuevos: por eso las primeras reuniones son cortas."
     hint_general: "Se busca no frenar a quien todavía no se atreve a hablar."
     explanation: "Inhibir: se busca no frenar a quien aún no se atreve. «Prohibir» supondría una orden, y «escarmentar» es coloquial y sugiere hacerles pasar un mal trago a propósito."
@@ -188,7 +170,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Prohibir» exige una orden que niega el permiso, y a los nuevos nadie les prohíbe hablar: se teme que no se atrevan."
         hint_specific: "Prohibir viene con una norma. ¿Hay alguna norma que impida hablar a los nuevos?"
-  - position: 8
+  - position: 7
     sentence: "El acuerdo no {{blank}} a ninguna de las partes de pedir una revisión en enero."
     hint_general: "Firmar no deja a nadie fuera de ese derecho."
     explanation: "Inhibe: firmar no deja a nadie fuera de ese derecho. «Exhibe» sería mostrar algo a la vista, e «impide» sería un bloqueo total, más fuerte de lo que dice el texto."
@@ -231,11 +213,11 @@ readings:
     before_phrase: "Es que a los nuevos se les corta enseguida."
     after_phrase: "Para no inhibir a quien acaba de llegar."
 metrics:
-  zipf_overall: 3.7930
+  zipf_overall: 3.793
   dispersion_dp: 0.2496
   pedantry_proxy: 0.5083
   family_size: 26
 provenance:
   generator: "flui authoring agent — theme paronimos (inhibir / exhibir)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

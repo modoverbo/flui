@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5034
 slug: "cabal"
-status: "draft"
+status: "approved"
 lemma: "cabal"
 part_of_speech: "adjetivo"
 syllables:
@@ -91,26 +91,6 @@ exercises:
         why_not: "«Amable» dice que alguien trata bien, y la frase descarta expresamente que baste con caer bien."
         hint_specific: "Lo amable se agradece en el trato. ¿Qué descarta la segunda mitad de la frase?"
   - position: 3
-    sentence: "Modesto devolvió el cambio de más sin que nadie se hubiera dado cuenta: así de {{blank}} es."
-    hint_general: "Hizo lo correcto sin que nadie lo estuviera mirando."
-    explanation: "Cabal: hizo lo correcto sin testigos. «Banal» diría que carece de importancia, y «probo» es palabra muy culta que suena a expediente judicial."
-    options:
-      - position: 1
-        text: "probo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Probo» es palabra muy culta que suena a expediente judicial, y esto es una escena de mostrador entre dos personas."
-        hint_specific: "«Probo» aparece en informes antiguos. ¿Dónde ocurre esta escena?"
-      - position: 2
-        text: "cabal"
-        is_correct: true
-      - position: 3
-        text: "banal"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Banal» dice que algo carece de importancia o de fondo, y devolver dinero sin que nadie mire no es poca cosa."
-        hint_specific: "Lo banal se olvida enseguida. ¿Qué hizo Modesto en el mostrador?"
-  - position: 4
     sentence: "En el barrio dicen que Nicolasa es la persona más {{blank}} de la escalera, y nadie discute el título."
     hint_general: "La consideran la que más cumple de todo el edificio."
     explanation: "Cabal: la que más cumple del edificio. «Casual» sería lo que ocurre por azar, y «risueña» hablaría de su sonrisa, no de su palabra."
@@ -130,7 +110,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Risueña» habla de su sonrisa, y en el barrio la valoran por lo que hace, no por cómo sonríe."
         hint_specific: "Lo risueño se ve en la cara. ¿Por qué la valoran los vecinos?"
-  - position: 5
+  - position: 4
     sentence: "Aquel trato salió bien porque las dos partes eran gente {{blank}} y sobraron los papeles."
     hint_general: "Las dos partes cumplían, así que no hizo falta contrato largo."
     explanation: "Cabal: gente que cumple su palabra. «Banal» diría que carece de fondo, y «estricta» hablaría de exigir mucho, no de cumplir."
@@ -150,27 +130,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Estricta» habla de exigir mucho a los demás, y aquí lo que hubo fue confianza en que cada uno cumpliría."
         hint_specific: "Lo estricto aprieta al otro. ¿Qué hizo innecesarios los papeles?"
-  - position: 6
-    sentence: "Mi abuelo llamaba {{blank}} a quien devolvía las herramientas antes de que hiciesen falta."
-    hint_general: "Para él, cumplir en lo pequeño definía a una persona."
-    explanation: "Cabal: quien cumple hasta en lo pequeño. «Casual» sería lo que ocurre por azar, y «puntual» solo hablaría de llegar a la hora."
-    options:
-      - position: 1
-        text: "puntual"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Puntual» solo habla de llegar a la hora, y aquí se trata de devolver algo prestado antes de que se eche en falta."
-        hint_specific: "Lo puntual se mide con un reloj. ¿Qué se devuelve en la frase?"
-      - position: 2
-        text: "cabal"
-        is_correct: true
-      - position: 3
-        text: "casual"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Casual» es lo que ocurre por azar, y devolver siempre las herramientas a tiempo es una costumbre, no una casualidad."
-        hint_specific: "Lo casual pasa una vez y sin querer. ¿Cuántas veces lo hacía esa gente?"
-  - position: 7
+  - position: 5
     sentence: "Se puede ser muy simpático y nada {{blank}}, y en un trato eso se paga caro."
     hint_general: "Caer bien no garantiza que alguien cumpla."
     explanation: "Cabal: alguien que cumple. «Banal» diría que carece de fondo, y «callado» hablaría de hablar poco, que no tiene que ver con cumplir."
@@ -190,7 +150,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Callado» habla de hablar poco, y se puede hablar muchísimo y cumplir siempre lo prometido."
         hint_specific: "Lo callado se mide en palabras. ¿Qué se paga caro en un trato?"
-  - position: 8
+  - position: 6
     sentence: "Purita parecía distraída y resultó ser la más {{blank}} de todas: no se le olvidó ni un encargo."
     hint_general: "Pese a su aire despistado, no falló en nada."
     explanation: "Cabal: no falló en ningún encargo. «Casual» sería lo que ocurre por azar, y «fatal» diría que todo le salió mal, justo lo contrario."
@@ -239,5 +199,5 @@ metrics:
   family_size: 69
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 3, 6, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

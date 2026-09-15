@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "inicialmente"
-status: "draft"
+status: "approved"
 lemma: "inicialmente"
 part_of_speech: "adverbio"
 syllables:
@@ -155,26 +155,6 @@ exercises:
         text: "inicialmente"
         is_correct: true
   - position: 6
-    sentence: "La reforma {{blank}} iba a durar un mes y se alargó hasta bien entrado marzo."
-    hint_general: "Ese plazo era el del principio, antes de que todo se retrasara."
-    explanation: "Inicialmente: ese plazo era el del principio. «De primeras» es de conversación y habla de una primera impresión, y «por tanto» convertiría el mes en una consecuencia."
-    options:
-      - position: 1
-        text: "de primeras"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«De primeras» es de conversación y describe la primera impresión de alguien, no el plazo que figuraba en el proyecto."
-        hint_specific: "«De primeras» habla de la primera sensación. ¿Se cuenta una sensación o un plazo?"
-      - position: 2
-        text: "inicialmente"
-        is_correct: true
-      - position: 3
-        text: "por tanto"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Por tanto» presentaría el mes como consecuencia de algo, y ese plazo no se deduce de nada: era el punto de partida."
-        hint_specific: "«Por tanto» anuncia una consecuencia. ¿El mes se deduce de algo o es el arranque?"
-  - position: 7
     sentence: "El curso {{blank}} tenía veinte plazas y terminó con una lista de espera larguísima."
     hint_general: "Ese número era el del principio, antes de que se llenara."
     explanation: "Inicialmente: ese número era el del principio. «Oficialmente» hablaría de papeles sellados y «finalmente» pondría las veinte plazas al cierre."
@@ -194,26 +174,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Finalmente» pondría las veinte plazas al cierre de la historia, y la frase las coloca justo al empezar."
         hint_specific: "«Finalmente» cierra una serie. ¿Veinte plazas es el arranque o el desenlace?"
-  - position: 8
-    sentence: "Nos pidieron {{blank}} dos informes al mes y acabaron pidiendo cinco."
-    hint_general: "Esa cifra fue la del primer acuerdo, antes de que creciera."
-    explanation: "Inicialmente: esa cifra fue la del primer acuerdo. «Para empezar» ordena los puntos de un discurso y «posteriormente» pondría los dos informes después de los cinco."
-    options:
-      - position: 1
-        text: "posteriormente"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Posteriormente» pondría los dos informes después de los cinco, y la frase cuenta justo el camino contrario."
-        hint_specific: "«Posteriormente» mira hacia delante. ¿Los dos informes vienen antes o después de los cinco?"
-      - position: 2
-        text: "para empezar"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Para empezar» es de conversación y ordena los puntos de lo que alguien va a decir, no los momentos de un encargo."
-        hint_specific: "«Para empezar» ordena un discurso. ¿Se ordena lo que se dice o lo que pasó?"
-      - position: 3
-        text: "inicialmente"
-        is_correct: true
 readings:
   - position: 1
     scene: "trabajo"
@@ -237,11 +197,11 @@ readings:
     before_phrase: "Al principio abríamos solo los findes, o sea, poquito."
     after_phrase: "Inicialmente abríamos solo los fines de semana."
 metrics:
-  zipf_overall: 4.5700
+  zipf_overall: 4.57
   dispersion_dp: 0.1538
   pedantry_proxy: 0.6408
   family_size: 155
 provenance:
   generator: "authored for the conectores-estructura theme"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 6, 8, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

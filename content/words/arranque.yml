@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5002
 slug: "arranque"
-status: "draft"
+status: "approved"
 lemma: "arranque"
 part_of_speech: "sustantivo"
 syllables:
@@ -173,26 +173,6 @@ exercises:
         text: "arranque"
         is_correct: true
   - position: 7
-    sentence: "¿Y si pruebas otro {{blank}}: primero una cifra que sorprenda y después las presentaciones?"
-    hint_general: "Se propone cambiar el orden de lo que dices al principio."
-    explanation: "Arranque: el orden de lo que dices al principio. «Arrebato» es un impulso repentino, y un «guion» sería el texto completo, no solo las primeras frases."
-    options:
-      - position: 1
-        text: "guion"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un «guion» es el texto completo de lo que vas a decir, y la propuesta solo reordena las primeras frases."
-        hint_specific: "Un guion cubre la charla entera. ¿Cuánto se propone cambiar aquí?"
-      - position: 2
-        text: "arranque"
-        is_correct: true
-      - position: 3
-        text: "arrebato"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Un «arrebato» es un impulso repentino que no se planea, y aquí se planea con cuidado qué va primero."
-        hint_specific: "Un arrebato no se ensaya. ¿La propuesta se improvisa o se piensa antes?"
-  - position: 8
     sentence: "Gerardo grabó su ponencia y solo se salvó el {{blank}}: los diez minutos siguientes eran puro relleno."
     hint_general: "De toda la grabación solo funcionó la parte del comienzo."
     explanation: "Arranque: la parte del comienzo, la única que funcionó. «Arrastre» es tirar de algo por el suelo, y un «encabezado» es una línea escrita arriba de un documento."
@@ -241,5 +221,5 @@ metrics:
   family_size: 42
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

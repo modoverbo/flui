@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5006
 slug: "pausado"
-status: "draft"
+status: "approved"
 lemma: "pausado"
 part_of_speech: "adjetivo"
 syllables:
@@ -173,26 +173,6 @@ exercises:
         why_not: "«Pautada» seguiría un protocolo fijo, y aquí nadie sigue ningún papel: solo baja la velocidad."
         hint_specific: "Lo pautado se ajusta a un papel. ¿Damián sigue un papel o cambia el ritmo?"
   - position: 7
-    sentence: "Aquel audio de tres minutos era tan {{blank}} que lo escuché entero mientras cocinaba."
-    hint_general: "Iba tan despacio que se podía seguir haciendo otra cosa."
-    explanation: "Pausado: iba tan despacio que se seguía sin esfuerzo. «Pesado» acusaría de aburrir, y «parsimonioso» es culto y sugiere una lentitud molesta."
-    options:
-      - position: 1
-        text: "parsimonioso"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Parsimonioso» es palabra culta y sugiere una lentitud molesta, y este audio se escucha entero de buena gana."
-        hint_specific: "Lo parsimonioso desespera. ¿Se terminó el audio o se cortó a la mitad?"
-      - position: 2
-        text: "pausado"
-        is_correct: true
-      - position: 3
-        text: "pesado"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Pesado» acusa de aburrir, y quien escucha aguanta los tres minutos mientras hace otra cosa."
-        hint_specific: "Lo pesado se salta a los diez segundos. ¿Cuánto duró la escucha?"
-  - position: 8
     sentence: "Mi abuela cuenta las cosas de un modo {{blank}}, y aun así nunca se le va el hilo."
     hint_general: "Va despacio y sin embargo no pierde el orden de lo que cuenta."
     explanation: "Pausado: va despacio sin perder el orden. «Pesado» acusaría de cansar, y «dormido» diría que está medio dormida, no que va despacio."
@@ -241,5 +221,5 @@ metrics:
   family_size: 6
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

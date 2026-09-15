@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "dificilmente"
-status: "draft"
+status: "approved"
 lemma: "difícilmente"
 part_of_speech: "adverbio"
 syllables:
@@ -94,26 +94,6 @@ exercises:
         why_not: "«Probablemente» apostaría a favor de que sí pasa, y la frase avisa de lo contrario: sin papeles la cosa pinta mal."
         hint_specific: "«Probablemente» apuesta a favor. ¿El aviso anima o desanima?"
   - position: 3
-    sentence: "Un pan como ese {{blank}} se encuentra fuera de la panadería del mercado viejo."
-    hint_general: "Es muy poco probable hallarlo en otro sitio, aunque nadie lo descarta del todo."
-    explanation: "Difícilmente: es muy poco probable hallarlo en otro sitio. «Deficientemente» juzgaría la calidad del pan y «apenas» mediría la cantidad que queda."
-    options:
-      - position: 1
-        text: "deficientemente"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Deficientemente» juzga la calidad de algo hecho a medias, y aquí el pan es excelente: lo difícil es dar con él."
-        hint_specific: "«Deficientemente» valora la calidad. ¿El pan está mal hecho o cuesta encontrarlo?"
-      - position: 2
-        text: "difícilmente"
-        is_correct: true
-      - position: 3
-        text: "apenas"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Apenas» mediría la cantidad que queda, y la frase no cuenta panes: calcula las opciones de encontrarlo en otra tienda."
-        hint_specific: "«Apenas» mide cantidades pequeñas. ¿Se cuentan panes o se calculan opciones?"
-  - position: 4
     sentence: "Con dos horas de margen {{blank}} le da tiempo a pasar por casa antes de la boda."
     hint_general: "Las cuentas salen muy justas y lo más probable es que no le cuadre."
     explanation: "Difícilmente: las cuentas salen muy justas. «Ni de lejos» niega toda comparación en tono de conversación y «posiblemente» apostaría a favor del plan."
@@ -133,7 +113,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Posiblemente» apostaría a favor del plan, y la frase avisa de que las dos horas se quedan cortas."
         hint_specific: "«Posiblemente» apuesta a favor. ¿El aviso anima o desanima?"
-  - position: 5
+  - position: 4
     sentence: "Una tarde como aquella {{blank}} vuelve a darse en veinte años de amistad."
     hint_general: "Repetir algo así es muy poco probable, y por eso se recuerda."
     explanation: "Difícilmente: repetir algo así es muy poco probable. «Dificultosamente» hablaría del esfuerzo que costó y «afortunadamente» celebraría que no se repita."
@@ -153,7 +133,7 @@ exercises:
       - position: 3
         text: "difícilmente"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Sin ensayar ni una vez {{blank}} sale bien una obra de dos horas en el teatro del barrio."
     hint_general: "Con cero ensayos, el pronóstico es malo, aunque milagros haberlos haylos."
     explanation: "Difícilmente: con cero ensayos el pronóstico es malo. «Ni en broma» cierra la puerta en tono de conversación y «efectivamente» confirmaría que la obra sale bien."
@@ -173,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Efectivamente» confirmaría que la obra sale bien, y la frase avisa justo de lo contrario."
         hint_specific: "«Efectivamente» confirma lo esperado. ¿La obra sale bien o pinta mal?"
-  - position: 7
+  - position: 6
     sentence: "Con el presupuesto de este año {{blank}} cabe una segunda pista de tenis en el club."
     hint_general: "El dinero no da, aunque nadie ha cerrado la puerta del todo."
     explanation: "Difícilmente: el dinero no da para tanto. «Deficientemente» juzgaría cómo está hecha la pista y «seguramente» daría la obra por hecha."
@@ -193,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Seguramente» daría la obra por hecha, y el presupuesto apunta justo a lo contrario."
         hint_specific: "«Seguramente» apuesta a favor. ¿El presupuesto da para la pista o se queda corto?"
-  - position: 8
+  - position: 7
     sentence: "Después de aquella discusión {{blank}} volverán a compartir mesa este verano."
     hint_general: "El pronóstico es malo, aunque nadie ha dicho que sea imposible."
     explanation: "Difícilmente: el pronóstico es malo sin ser definitivo. «Ni de lejos» niega toda comparación en tono de conversación y «probablemente» apostaría por la reconciliación."
@@ -242,5 +222,5 @@ metrics:
   family_size: 56
 provenance:
   generator: "authored for the conectores-estructura theme"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

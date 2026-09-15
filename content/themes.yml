@@ -1,8 +1,13 @@
-# flui theme taxonomy — the 16 launch themes.
+# flui theme taxonomy — 28 themes: the 16 that launch with words of their own
+# and 12 that recombine the same catalog into another situation.
 #
 # family: trabajo | social | publico | precision | emocion
 # content_type: word_driven | expression_driven | mixed
 # Copy is Spanish, brand voice (warm, direct, "tú", never school words).
+#
+# The offer is not the taxonomy: `status` and `published` live in
+# supabase/seed_themes.sql, because they depend on how much content a theme
+# has today, not on what the theme is.
 schema_version: 1
 themes:
   - slug: reuniones
@@ -132,3 +137,104 @@ themes:
     jtbd: Quiero contar lo que me pasa sin repetir siempre cosa, tema y hacer.
     content_type: mixed
     sort_order: 16
+
+  # 17..28 — the situations that reuse the catalog. These mostly do not ask for
+  # new lemmas: they ask for exercises and readings that put the existing words
+  # in another room. supabase/seed_themes.sql keeps them `soon` and unpublished
+  # until they have content, so the picker never offers an empty theme.
+
+  - slug: ventas
+    family: trabajo
+    name: Ventas
+    tagline: Que el valor se vea, sin inflarlo.
+    jtbd: Quiero explicar lo que ofrezco con ejemplos concretos y que el precio deje de ser el único tema.
+    content_type: mixed
+    sort_order: 17
+
+  - slug: networking
+    family: trabajo
+    name: Hacer contactos
+    tagline: Que te recuerden después de treinta segundos.
+    jtbd: Quiero presentarme en un evento y que después recuerden a qué me dedico.
+    content_type: expression_driven
+    sort_order: 18
+
+  - slug: redes-sociales
+    family: publico
+    name: Redes sociales
+    tagline: Un gancho que no es un cebo.
+    jtbd: Quiero abrir una publicación con una frase que atrape y que el resto la sostenga.
+    content_type: expression_driven
+    sort_order: 19
+
+  - slug: docencia
+    family: publico
+    name: Enseñar
+    tagline: Lo difícil explicado como si fuera fácil.
+    jtbd: Quiero explicar un tema que domino a quien parte de cero y que se quede con la idea.
+    content_type: mixed
+    sort_order: 20
+
+  - slug: medios-entrevistas
+    family: publico
+    name: Hablar con medios
+    tagline: Responder lo que preguntan y decir lo tuyo.
+    jtbd: Quiero contestar una pregunta incómoda en público sin esquivarla ni regalar un titular.
+    content_type: expression_driven
+    sort_order: 21
+
+  - slug: humor
+    family: social
+    name: Humor
+    tagline: Hacer reír sin que nadie pague el chiste.
+    jtbd: Quiero contar algo con gracia y que la broma no caiga sobre alguien.
+    content_type: expression_driven
+    sort_order: 22
+
+  - slug: citas
+    family: social
+    name: Citas
+    tagline: Coquetear con palabras tuyas, no con frases hechas.
+    jtbd: Quiero decir lo que me atrae de alguien sin recurrir a una frase prestada.
+    content_type: expression_driven
+    sort_order: 23
+
+  - slug: amistad
+    family: social
+    name: Amistad
+    tagline: Decir lo que sientes sin taparlo con una broma.
+    jtbd: Quiero decirle a un amigo lo que significa para mí sin restarle importancia.
+    content_type: expression_driven
+    sort_order: 24
+
+  - slug: small-talk
+    family: social
+    name: Romper el hielo
+    tagline: Los primeros noventa segundos.
+    jtbd: Quiero empezar una conversación con alguien que acabo de conocer y que no se apague en dos frases.
+    content_type: expression_driven
+    sort_order: 25
+
+  - slug: familia-crianza
+    family: social
+    name: Familia y crianza
+    tagline: Explicar sin sermonear.
+    jtbd: Quiero explicar una decisión en casa sin que suene a sermón y sin ceder en el fondo.
+    content_type: expression_driven
+    sort_order: 26
+
+  - slug: empatia-escucha
+    family: emocion
+    name: Escuchar
+    tagline: Que se note que entendiste.
+    jtbd: Quiero responder a quien me cuenta algo difícil y que sienta que lo escuché de verdad.
+    content_type: expression_driven
+    sort_order: 27
+
+  - slug: pedir-disculparse
+    family: emocion
+    name: Pedir y disculparse
+    tagline: Pedir sin encogerte, disculparte sin excusas.
+    jtbd: Quiero pedir lo que necesito y reconocer un fallo sin justificarme de más.
+    content_type: mixed
+    sort_order: 28

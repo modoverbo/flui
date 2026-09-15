@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3211
 slug: "implicacion"
-status: "draft"
+status: "approved"
 lemma: "implicación"
 part_of_speech: "sustantivo"
 syllables:
@@ -114,26 +114,6 @@ exercises:
         why_not: "Una «causa» explicaría por qué se cambió el horario, y aquí se señala lo que pasa después del cambio."
         hint_specific: "«Causa» viene antes. ¿El turno sin relevo ocurre antes o después del cambio?"
   - position: 4
-    sentence: "El préstamo parece barato, pero la {{blank}} ya estaba en el contrato: el interés sube en el tercer año."
-    hint_general: "Lo que el contrato arrastra estaba escrito desde el principio."
-    explanation: "Implicación: lo que el contrato arrastra desde el primer día. Una «complicación» sería un problema que se enreda por el camino, y una «ventaja» sería algo bueno, cuando aquí el interés sube."
-    options:
-      - position: 1
-        text: "complicación"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Una «complicación» es un problema que se enreda por el camino, y esto estaba escrito en el contrato desde el primer día."
-        hint_specific: "«Complicación» aparece por sorpresa y enreda. ¿Dónde estaba esto desde el principio?"
-      - position: 2
-        text: "implicación"
-        is_correct: true
-      - position: 3
-        text: "ventaja"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «ventaja» es algo que te favorece, y aquí el interés sube a partir del tercer año."
-        hint_specific: "«Ventaja» juega a tu favor. ¿Qué le pasa al interés en el tercer año?"
-  - position: 5
     sentence: "Beltrán no discute la decisión: discute la {{blank}} que arrastra para el equipo más pequeño."
     hint_general: "Acepta la decisión y se fija en lo que esta arrastra para otros."
     explanation: "Implicación: lo que la decisión arrastra para otros. «Derivada» es jerga de matemáticas y suena fuera de sitio, y una «aplicación» es un programa del teléfono."
@@ -153,7 +133,7 @@ exercises:
       - position: 3
         text: "implicación"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Decir que sí hoy trae una {{blank}} para diciembre que conviene mirar antes de firmar."
     hint_general: "El sí de hoy arrastra algo que solo se notará en diciembre."
     explanation: "Implicación: lo que el sí de hoy arrastra hasta diciembre. Una «intención» sería lo que alguien quería, y una «explicación» contaría por qué se dice que sí."
@@ -173,7 +153,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «explicación» contaría por qué se dice que sí, y aquí se mira qué pasará en diciembre."
         hint_specific: "«Explicación» responde al porqué. ¿Qué hay que mirar antes de firmar?"
-  - position: 7
+  - position: 6
     sentence: "La reunión no buscaba culpables ni razones de lo ocurrido: buscaba cada {{blank}} de la decisión de ayer."
     hint_general: "No miran hacia atrás: miran lo que la decisión arrastra hacia delante."
     explanation: "Implicación: lo que la decisión arrastra hacia delante. Una «causa» sería una razón de lo ocurrido, que la frase descarta, y una «complicación» es un problema que se enreda por el camino."
@@ -193,7 +173,7 @@ exercises:
       - position: 3
         text: "implicación"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Si cerramos los sábados, la {{blank}} es clara: todo el reparto se concentra el viernes."
     hint_general: "Cerrar un día empuja el trabajo al día anterior."
     explanation: "Implicación: lo que cerrar el sábado empuja al viernes. Una «condición» sería un requisito para poder cerrar, y una «ventaja» sería algo bueno, cuando aquí el viernes se carga."
@@ -242,5 +222,5 @@ metrics:
   family_size: 32
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

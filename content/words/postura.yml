@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3208
 slug: "postura"
-status: "draft"
+status: "approved"
 lemma: "postura"
 part_of_speech: "sustantivo"
 syllables:
@@ -92,46 +92,6 @@ exercises:
         text: "postura"
         is_correct: true
   - position: 3
-    sentence: "No es una {{blank}} de cara a la galería: Emilio lleva dos años diciendo lo mismo, gane o pierda."
-    hint_general: "Lleva dos años defendiendo lo mismo, y no lo hace para quedar bien."
-    explanation: "Postura: lo que defiende desde hace dos años. «Pose» es coloquial y acusa de fingir, justo lo que la frase niega, y una «propuesta» sería un plan concreto que se pone a votación."
-    options:
-      - position: 1
-        text: "postura"
-        is_correct: true
-      - position: 2
-        text: "pose"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pose» es coloquial y acusa de fingir para quedar bien, y la frase dice que no es de cara a la galería."
-        hint_specific: "«Pose» acusa de fingir. Relee las cuatro primeras palabras de la frase."
-      - position: 3
-        text: "propuesta"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «propuesta» es un plan concreto que se pone a votación, y aquí Emilio repite lo que piensa, gane o pierda."
-        hint_specific: "«Propuesta» se vota y se aprueba o no. ¿Qué repite Emilio desde hace dos años?"
-  - position: 4
-    sentence: "Antes de votar, cada uno escribió en una línea lo que iba a defender, y esa {{blank}} ya no se cambiaba a mitad de la reunión."
-    hint_general: "Lo que cada uno se compromete a defender queda escrito y no se mueve."
-    explanation: "Postura: lo que queda escrito y se defiende hasta el final. Una «opinión» se puede cambiar cuando quieras, y una «captura» es la foto de una pantalla."
-    options:
-      - position: 1
-        text: "opinión"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «opinión» se cambia cuando quieras y sin explicar nada, y aquí lo escrito ya no se movía."
-        hint_specific: "«Opinión» se cambia libremente. ¿Qué pasaba con lo escrito a mitad de reunión?"
-      - position: 2
-        text: "postura"
-        is_correct: true
-      - position: 3
-        text: "captura"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Una «captura» es la foto de una pantalla, y aquí cada uno escribió a mano lo que iba a defender."
-        hint_specific: "«Captura» sale de una pantalla. ¿Cómo se guardó lo que iban a defender?"
-  - position: 5
     sentence: "Su {{blank}} no es cómoda, pero la sostiene con argumentos desde hace meses y sin levantar la voz."
     hint_general: "Defiende algo incómodo con razones y de forma tranquila."
     explanation: "Postura: lo incómodo que sostiene con razones. «Tesitura» suena a lenguaje solemne y nombra la situación en que uno se encuentra, no lo que defiende; la «cultura» es lo que un grupo comparte."
@@ -151,7 +111,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "La «cultura» es lo que un grupo entero comparte, y aquí una sola persona defiende algo incómodo."
         hint_specific: "«Cultura» es de todo un grupo. ¿Cuánta gente sostiene esto?"
-  - position: 6
+  - position: 4
     sentence: "Marina cambió de {{blank}} cuando vio los números nuevos: pasó de defender el plan A a defender el B."
     hint_general: "Pasa a defender lo contrario de lo que defendía antes."
     explanation: "Postura: lo que defiende, y ahora defiende otra cosa. Una «actitud» habla de cómo se comporta, no de qué plan defiende, y una «postal» es una tarjeta con una foto."
@@ -171,7 +131,7 @@ exercises:
       - position: 3
         text: "postura"
         is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Una cosa es lo que piensas por dentro y otra la {{blank}} que defiendes delante del equipo."
     hint_general: "La frase separa el pensamiento privado de lo que se defiende en público."
     explanation: "Postura: lo que se defiende en público. Una «propuesta» sería un plan concreto que se somete a votación, y la «cultura» es lo que comparte un grupo entero."
@@ -191,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «propuesta» es un plan concreto que se somete a votación, y aquí se habla de lo que sostienes ante el equipo."
         hint_specific: "«Propuesta» se vota. ¿La frase habla de votar o de defender?"
-  - position: 8
+  - position: 6
     sentence: "En la entrevista le pidieron una {{blank}} clara sobre el trabajo a distancia y que la defendiera, no solo lo que opinaba."
     hint_general: "Le piden algo que pueda defender, no solo lo que piensa."
     explanation: "Postura: algo que hay que poder defender. Una «opinión» es solo lo que se piensa, y la frase lo descarta; una «actitud» describiría su manera de comportarse."
@@ -240,5 +200,5 @@ metrics:
   family_size: 54
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 3, 4, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

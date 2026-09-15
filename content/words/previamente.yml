@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "previamente"
-status: "draft"
+status: "approved"
 lemma: "previamente"
 part_of_speech: "adverbio"
 syllables:
@@ -154,26 +154,6 @@ exercises:
         text: "previamente"
         is_correct: true
   - position: 6
-    sentence: "Los precios se cierran {{blank}}, para que nadie se lleve una sorpresa en la caja."
-    hint_general: "El precio queda fijado antes de que el cliente llegue a pagar."
-    explanation: "Previamente: el precio queda fijado antes de pagar. «De entrada» hablaría de la primera impresión y «posteriormente» dejaría el precio abierto hasta el final."
-    options:
-      - position: 1
-        text: "de entrada"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«De entrada» es de conversación y se refiere a la primera impresión, no al momento en que queda fijado un precio."
-        hint_specific: "«De entrada» apunta a la primera impresión. ¿Se cuenta una impresión o se fija un momento?"
-      - position: 2
-        text: "previamente"
-        is_correct: true
-      - position: 3
-        text: "posteriormente"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Posteriormente» dejaría el precio abierto hasta después de la compra, que es justo la sorpresa que se quiere evitar."
-        hint_specific: "«Posteriormente» mira hacia delante. ¿El precio se cierra antes o al cobrar?"
-  - position: 7
     sentence: "Habíamos hablado del tema {{blank}}, así que la reunión duró quince minutos."
     hint_general: "La conversación ocurrió antes de la reunión, y por eso todo fue rápido."
     explanation: "Previamente: la charla ocurrió antes de la reunión. «Previsiblemente» anunciaría algo esperado y «al final» colocaría la charla después de todo."
@@ -193,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Al final» colocaría la charla después de la reunión, y lo que explica los quince minutos es haber hablado antes."
         hint_specific: "«Al final» cierra la historia. ¿La charla abre la historia o la cierra?"
-  - position: 8
+  - position: 7
     sentence: "Conviene calentar el motor {{blank}} cuando el coche pasa la noche a la intemperie."
     hint_general: "El calentamiento va antes de arrancar del todo, nunca después."
     explanation: "Previamente: calentar va antes de arrancar del todo. «Antes de nada» marcaría una prioridad al hablar y «entretanto» hablaría del rato de una espera."
@@ -238,9 +218,9 @@ readings:
 metrics:
   zipf_overall: 4.7327
   dispersion_dp: 0.1214
-  pedantry_proxy: 0.4970
+  pedantry_proxy: 0.497
   family_size: 63
 provenance:
   generator: "authored for the conectores-estructura theme"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 6, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

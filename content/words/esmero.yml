@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 309
 slug: "esmero"
-status: "draft"
+status: "approved"
 lemma: "esmero"
 part_of_speech: "sustantivo"
-syllables: ["es", "me", "ro"]
+syllables:
+  - "es"
+  - "me"
+  - "ro"
 stressed_syllable: 2
 ipa_latam: "[esˈme.ɾo]"
 ipa_es: "[esˈme.ɾo]"
@@ -25,15 +28,19 @@ replaces:
     after: "Se nota el esmero que le puso"
   - before: "Preparó todo muy cuidado"
     after: "Preparó todo con esmero"
-family: ["esmerado"]
+family:
+  - "esmerado"
 themes:
   - slug: "elogio-reconocimiento"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["ganas", "cuidado"]
-  funcion: ["elogiar"]
+  comodin:
+    - "ganas"
+    - "cuidado"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -46,26 +53,6 @@ confusions:
     memory_trick: "El afán corre; el esmero se detiene."
 exercises:
   - position: 1
-    sentence: "Se nota el {{blank}} con que Daniela preparó la despedida de su compañera: nadie se lo había pedido, repasó cada detalle y aun así lo tuvo todo listo a tiempo."
-    hint_general: "Se ve el cuidado que puso en cada parte, y eso que nadie se lo había pedido."
-    explanation: "Esmero: el cuidado que puso en cada parte. «Esmalte» es la capa brillante que cubre algo, y «perfeccionismo» acusaría de no dar nunca nada por terminado."
-    options:
-      - position: 1
-        text: "esmalte"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Esmalte» es la capa brillante que cubre una superficie, y aquí se habla de cómo se preparó una despedida."
-        hint_specific: "«Esmalte» es una capa que cubre algo. ¿Qué se estaría cubriendo en esa frase?"
-      - position: 2
-        text: "esmero"
-        is_correct: true
-      - position: 3
-        text: "perfeccionismo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Perfeccionismo» acusa de no dar nada por terminado nunca, y Daniela lo tuvo todo listo a tiempo."
-        hint_specific: "«Perfeccionismo» nunca da algo por bueno. ¿Cómo acabó Daniela la despedida?"
-  - position: 2
     sentence: "Rafael responde todos los correos con el mismo {{blank}}, sea un cliente enorme o el vecino de al lado."
     hint_general: "Pone el mismo cuidado en todos los casos, sin mirar quién está al otro lado."
     explanation: "Esmero: pone el mismo cuidado con todos. «Estreno» es la primera vez que algo se muestra, y «orden» habla de colocar bien, no de cuidar el resultado."
@@ -85,7 +72,7 @@ exercises:
       - position: 3
         text: "esmero"
         is_correct: true
-  - position: 3
+  - position: 2
     sentence: "Lo que distingue a Mónica no es la rapidez, sino el {{blank}} que pone en cada revisión."
     hint_general: "No destaca por ir deprisa, sino por el cuidado que pone al revisar."
     explanation: "Esmero: destaca por el cuidado al revisar. «Esmalte» es una capa brillante, y «apuro» es la prisa que la frase acaba de descartar."
@@ -105,7 +92,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Apuro» es la prisa con que se hace algo, y la frase empieza descartando justo la rapidez."
         hint_specific: "«Apuro» va de prisa. ¿Qué descarta la frase en su primera mitad?"
-  - position: 4
+  - position: 3
     sentence: "Ana y su hermano prepararon la mudanza de su abuela con tanto {{blank}} que ella no tuvo que buscar nada."
     hint_general: "Lo prepararon con tanto cuidado que la abuela encontró cada cosa en su sitio."
     explanation: "Esmero: lo prepararon con un cuidado enorme. «Estreno» es una primera vez en público, y «descuido» diría que lo hicieron a lo loco."
@@ -125,7 +112,7 @@ exercises:
       - position: 3
         text: "esmero"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Un poco de {{blank}} en el primer mensaje ahorra tres correos después, dice Gabriel a quien quiera oírlo."
     hint_general: "Cuidar el primer mensaje evita tener que aclararlo tres veces más."
     explanation: "Esmero: cuidar el primer mensaje ahorra aclaraciones. «Esmalte» es una capa brillante, y «primor» habla de la belleza delicada de lo hecho a mano."
@@ -145,7 +132,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Primor» habla de la belleza delicada de lo hecho a mano, y lo que ahorra correos es la claridad, no el adorno."
         hint_specific: "«Primor» suena a bordado y a adorno. ¿Qué es lo que ahorra correos?"
-  - position: 6
+  - position: 5
     sentence: "A Enrique le sobra talento y le falta {{blank}}: entrega rapidísimo y luego hay que repasarlo todo."
     hint_general: "Es capaz, pero no dedica cuidado, y por eso su trabajo hay que revisarlo entero."
     explanation: "Esmero: le falta cuidado al entregar. «Esmalte» es una capa brillante, y «afán» son las ganas de conseguir algo, que a él no le faltan."
@@ -165,7 +152,7 @@ exercises:
       - position: 3
         text: "esmero"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Nadie le pidió tanto {{blank}}, pero Patricia repitió la portada hasta que quedó como la había imaginado."
     hint_general: "Puso más cuidado del que le pedían, por decisión propia."
     explanation: "Esmero: puso más cuidado del que le pedían. «Estreno» es una primera vez en público, e «interés» dice que algo le importa, no cuánto lo cuida."
@@ -185,26 +172,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Interés» dice que algo le importa, y la frase mide cuánto lo cuidó, no cuánto le importaba."
         hint_specific: "«Interés» mide lo que te llama. ¿Aquí se mide la atracción o el trabajo?"
-  - position: 8
-    sentence: "El {{blank}} de Antonio se nota en lo pequeño: el orden del guion y los nombres de todos bien escritos, y eso que no conoce a casi nadie."
-    hint_general: "Su cuidado aparece en las cosas mínimas que casi nadie mira."
-    explanation: "Esmero: su cuidado aparece en lo mínimo. «Esmalte» es una capa brillante, y «cariño» pediría un afecto que todavía no tiene con nadie."
-    options:
-      - position: 1
-        text: "esmalte"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Esmalte» es la capa brillante que cubre una superficie, y un guion no lleva ninguna capa encima."
-        hint_specific: "«Esmalte» cubre objetos. ¿Qué se cubriría en un guion?"
-      - position: 2
-        text: "esmero"
-        is_correct: true
-      - position: 3
-        text: "cariño"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cariño» va hacia personas concretas, y el final de la frase dice que no conoce a casi nadie del grupo."
-        hint_specific: "«Cariño» necesita a alguien querido. ¿A cuántos conoce Antonio?"
 readings:
   - position: 1
     scene: "familia"
@@ -234,5 +201,5 @@ metrics:
   family_size: 41
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 1, 8, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

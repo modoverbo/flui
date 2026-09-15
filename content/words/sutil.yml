@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3216
 slug: "sutil"
-status: "draft"
+status: "approved"
 lemma: "sutil"
 part_of_speech: "adjetivo"
 syllables:
@@ -93,26 +93,6 @@ exercises:
         why_not: "«Servil» describe a quien obedece sin rechistar, y aquí se comparan dos borradores."
         hint_specific: "«Servil» retrata a alguien que se somete. ¿Qué se compara en la frase?"
   - position: 3
-    sentence: "No fue un gesto flojo ni mal hecho: fue un gesto {{blank}}, de los que se agradecen sin comentarlos."
-    hint_general: "Apenas se nota y aun así se agradece."
-    explanation: "Sutil: apenas se nota y aun así se agradece. «Flojo» es coloquial y juzga la calidad, cosa que la frase niega, y «discreto» diría que alguien evitó llamar la atención a propósito."
-    options:
-      - position: 1
-        text: "flojo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Flojo» es coloquial y juzga que algo está mal hecho, y la frase empieza negando justo eso."
-        hint_specific: "«Flojo» suena a poca calidad. Relee las cinco primeras palabras."
-      - position: 2
-        text: "sutil"
-        is_correct: true
-      - position: 3
-        text: "discreto"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Discreto» dice que alguien se contuvo para no llamar la atención, y aquí lo que ocurre es que el gesto apenas se percibe."
-        hint_specific: "«Discreto» es contenerse a propósito. ¿La frase habla de intención o de lo poco que se nota?"
-  - position: 4
     sentence: "Cristina no reescribió el texto: metió una corrección {{blank}} en la tercera línea y el párrafo respiró."
     hint_general: "Un retoque mínimo cambia cómo se lee todo el párrafo."
     explanation: "Sutil: un retoque mínimo con efecto grande. «Invisible» sería que no se nota nada, y el párrafo cambia al leerlo; «textil» se dice de las telas y de la ropa."
@@ -132,7 +112,7 @@ exercises:
       - position: 3
         text: "sutil"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Ricardo dio un aviso {{blank}}, de esos que se entienden a la segunda lectura."
     hint_general: "El aviso está ahí, pero hay que leerlo dos veces para pillarlo."
     explanation: "Sutil: está ahí y hay que leerlo dos veces. «Tenue» suena a lenguaje poético y se dice de una luz o un sonido, no de un aviso; «lento» hablaría de la velocidad."
@@ -152,7 +132,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Lento» habla de velocidad, y aquí lo que cuesta es entender el aviso, no esperarlo."
         hint_specific: "«Lento» mide cuánto tarda algo. ¿Qué cuesta en esta frase, esperar o entender?"
-  - position: 6
+  - position: 5
     sentence: "La ironía era {{blank}}: nadie se dio por aludido y, aun así, todos la captaron."
     hint_general: "Apenas se percibe y llega igual a quien escucha."
     explanation: "Sutil: apenas se percibe y llega igual. «Discreta» diría que alguien se contuvo a propósito, y «útil» diría que algo sirve para resolver algo."
@@ -172,7 +152,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Útil» dice que algo sirve para resolver un problema, y aquí se describe cómo era una ironía."
         hint_specific: "«Útil» se mide por lo que resuelve. ¿Qué se describe en la frase?"
-  - position: 7
+  - position: 6
     sentence: "Ricardo señaló un fallo {{blank}}: estaba a la vista en las tres versiones y aun así costaba verlo."
     hint_general: "Está delante de todos y cuesta reparar en ello."
     explanation: "Sutil: está delante y cuesta verlo. «Invisible» sería que no está a la vista, y la frase dice que sí lo estaba; «servil» describe a quien obedece sin rechistar."
@@ -192,7 +172,7 @@ exercises:
       - position: 3
         text: "sutil"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Nadie la escondió: es una pista {{blank}}, y está ahí para quien sepa mirar."
     hint_general: "No está escondida, simplemente cuesta percibirla."
     explanation: "Sutil: no está escondida y aun así cuesta verla. «Discreta» supondría que alguien la ocultó a propósito, y la frase lo niega; «textil» se dice de las telas."
@@ -241,5 +221,5 @@ metrics:
   family_size: 7
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

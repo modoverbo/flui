@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3213
 slug: "vertiente"
-status: "draft"
+status: "approved"
 lemma: "vertiente"
 part_of_speech: "sustantivo"
 syllables:
@@ -52,26 +52,6 @@ confusions:
     memory_trick: "La variante sustituye; el lado acompaña."
 exercises:
   - position: 1
-    sentence: "El asunto tiene dos {{blank}}: la técnica y la del trato con el cliente."
-    hint_general: "El mismo asunto se puede mirar desde dos lados distintos."
-    explanation: "Vertientes: los dos lados desde los que se mira el asunto. Las «partes» serían trozos separados del conjunto, y las «corrientes» son el agua que baja por un río."
-    options:
-      - position: 1
-        text: "corrientes"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Las «corrientes» son el agua que baja por un río o el aire que entra por una ventana, y aquí se habla de un asunto de trabajo."
-        hint_specific: "«Corrientes» corren por un río. ¿De qué trata la frase?"
-      - position: 2
-        text: "vertientes"
-        is_correct: true
-      - position: 3
-        text: "partes"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Las «partes» son trozos que se separan del conjunto, y aquí el asunto sigue entero y se mira desde dos lados."
-        hint_specific: "«Partes» se reparten en trozos. ¿Aquí se corta algo o se mira desde dos sitios?"
-  - position: 2
     sentence: "Antes de decidir, Amaya pidió mirar la otra {{blank}}: cómo lo vive el equipo de tarde."
     hint_general: "Pide mirar el mismo asunto desde otro lado antes de decidir."
     explanation: "Vertiente: el otro lado del mismo asunto. Una «opinión» pertenece a una persona concreta, y una «variante» sería otra versión de la misma cosa."
@@ -91,7 +71,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «opinión» es de alguien en concreto, y lo que pide Amaya es mirar el asunto por otro lado."
         hint_specific: "«Opinión» tiene siempre dueño. ¿Qué pide Amaya que se mire?"
-  - position: 3
+  - position: 2
     sentence: "No es otro asunto ni una fase distinta: es la {{blank}} humana del mismo problema de siempre."
     hint_general: "Es el mismo problema, mirado por su lado humano."
     explanation: "Vertiente: el lado humano del mismo problema. Una «etapa» sería una fase distinta, que la frase niega, y una «pendiente» es la cuesta por la que algo baja."
@@ -111,7 +91,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «pendiente» es la cuesta por la que algo sube o baja, y aquí se habla de personas."
         hint_specific: "«Pendiente» se sube con esfuerzo. ¿De qué habla la frase?"
-  - position: 4
+  - position: 3
     sentence: "El plan está casi cerrado y nadie le ve problemas nuevos: solo falta una {{blank}} por revisar."
     hint_general: "Queda un lado del asunto sin repasar, sin que haya problemas a la vista."
     explanation: "Vertiente: el lado que falta por repasar. «Arista» suena a lenguaje de libro y señala un punto espinoso, que la frase descarta, y una «corriente» es el agua que baja por un río."
@@ -131,7 +111,7 @@ exercises:
       - position: 3
         text: "vertiente"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Cuenta la misma historia, no otra: lo que cambia es la {{blank}} desde la que la mira."
     hint_general: "La historia es idéntica; lo distinto es el lado desde el que se cuenta."
     explanation: "Vertiente: el lado desde el que se mira. Una «versión» sería otra historia distinta, y la frase dice que es la misma; una «pendiente» es la cuesta por la que algo baja."
@@ -151,7 +131,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «pendiente» es la cuesta por la que algo sube o baja, y aquí se cuenta una historia."
         hint_specific: "«Pendiente» tiene que ver con cuestas. ¿Qué se cuenta en la frase?"
-  - position: 6
+  - position: 5
     sentence: "Lo que sostiene el grupo no es cosa de una persona: es una {{blank}} del asunto que nadie había mirado."
     hint_general: "No sale de una cabeza sola: es un lado del asunto que estaba sin mirar."
     explanation: "Vertiente: el lado del asunto que faltaba mirar. Una «opinión» sería de una sola persona, que la frase descarta, y una «variante» sería otra versión de la misma cosa."
@@ -171,27 +151,7 @@ exercises:
       - position: 3
         text: "vertiente"
         is_correct: true
-  - position: 7
-    sentence: "El informe separa la {{blank}} económica de la legal y dedica un capítulo a cada una."
-    hint_general: "Un texto escrito divide el asunto en dos caras y trata cada una aparte."
-    explanation: "Vertiente: cada cara del asunto en un capítulo. «Pata» es coloquial y suena a mueble o a charla de bar, y una «parte» sería un trozo separado del conjunto."
-    options:
-      - position: 1
-        text: "vertiente"
-        is_correct: true
-      - position: 2
-        text: "pata"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pata» es coloquial y suena a mueble o a conversación de bar, y esto va escrito en un informe con capítulos."
-        hint_specific: "«Pata» se usa hablando y muy de andar por casa. ¿Dónde se escribe esto?"
-      - position: 3
-        text: "parte"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «parte» es un trozo separado del conjunto, y aquí el asunto entero se mira dos veces, desde dos lados."
-        hint_specific: "«Parte» se corta del total. ¿Se corta el asunto o se mira dos veces?"
-  - position: 8
+  - position: 6
     sentence: "Estamos en la misma fase de siempre; lo nuevo es la {{blank}} que abrió Amaya ayer."
     hint_general: "El momento no ha cambiado: lo nuevo es un lado del asunto recién abierto."
     explanation: "Vertiente: el lado del asunto recién abierto. Una «etapa» sería una fase nueva, y la frase dice que seguimos en la misma; una «corriente» es el agua que baja por un río."
@@ -240,5 +200,5 @@ metrics:
   family_size: 54
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 1, 7, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

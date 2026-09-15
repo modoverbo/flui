@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3209
 slug: "criterio"
-status: "draft"
+status: "approved"
 lemma: "criterio"
 part_of_speech: "sustantivo"
 syllables:
@@ -92,26 +92,6 @@ exercises:
         text: "criterio"
         is_correct: true
   - position: 3
-    sentence: "No fue un antojo de nadie: hubo un {{blank}} compartido y se aplicó igual en los cinco casos."
-    hint_general: "Hubo una medida común que se aplicó por igual en todos los casos."
-    explanation: "Criterio: la medida común aplicada en todos los casos. «Capricho» es coloquial y acusa de antojo, que la frase niega, y un «método» son los pasos que se siguen, no la medida con la que se compara."
-    options:
-      - position: 1
-        text: "criterio"
-        is_correct: true
-      - position: 2
-        text: "capricho"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Capricho» es coloquial y acusa de decidir por antojo, y la frase empieza negando justo eso."
-        hint_specific: "«Capricho» suena a antojo. Relee las cinco primeras palabras."
-      - position: 3
-        text: "método"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un «método» son los pasos que se siguen, y aquí lo compartido es la medida con la que se comparó."
-        hint_specific: "«Método» describe el camino paso a paso. ¿Qué se compartió en los cinco casos?"
-  - position: 4
     sentence: "Cuando alguien pregunta por qué se eligió esa foto, lo más útil es enseñar el {{blank}}, no el resultado."
     hint_general: "Conviene enseñar con qué se comparó, no lo que salió al final."
     explanation: "Criterio: con qué se comparó para elegir. El «resultado» está descartado en la propia frase, y un «misterio» es algo que nadie logra explicar."
@@ -131,7 +111,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "El «resultado» es lo que la frase descarta expresamente al final."
         hint_specific: "«Resultado» es lo que sale al terminar. Relee las últimas tres palabras."
-  - position: 5
+  - position: 4
     sentence: "Todos los proyectos se miden igual, sin favores: hay un {{blank}} publicado en la primera página."
     hint_general: "La medida está escrita y es la misma para todos."
     explanation: "Criterio: la medida publicada e igual para todos. «Rasero» suena a lenguaje de libro y se usa casi solo en una frase hecha, y un «crédito» es dinero prestado."
@@ -151,7 +131,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Un «crédito» es dinero prestado, y aquí se publica cómo se van a medir los proyectos."
         hint_specific: "«Crédito» se devuelve con intereses. ¿Qué se publica aquí?"
-  - position: 6
+  - position: 5
     sentence: "Marcela cambió de {{blank}} a mitad del proceso y lo avisó: ahora pesa más el plazo que el precio."
     hint_general: "Cambia lo que más pesa al comparar, y lo dice."
     explanation: "Criterio: lo que más pesa al comparar. Un «objetivo» sería adónde quiere llegar, y aquí lo que cambia es cómo compara; un «misterio» es algo que nadie logra explicar."
@@ -171,7 +151,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Un «misterio» es algo que nadie explica, y Marcela avisó del cambio en voz alta."
         hint_specific: "«Misterio» se queda sin contar. ¿Qué hizo Marcela con el cambio?"
-  - position: 7
+  - position: 6
     sentence: "El equipo llegó al mismo {{blank}} que el año pasado, aunque el resultado final fue distinto."
     hint_general: "La medida es la misma que el año anterior, aunque salga otra cosa."
     explanation: "Criterio: la medida repetida del año pasado. El «resultado» está separado en la propia frase, y un «crédito» es dinero prestado."
@@ -191,7 +171,7 @@ exercises:
       - position: 3
         text: "criterio"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "No discutimos el {{blank}}, discutimos cómo lo aplicamos paso a paso en cada tienda."
     hint_general: "Están de acuerdo en la medida y discuten los pasos para usarla."
     explanation: "Criterio: la medida en la que sí están de acuerdo. Un «método» son justo esos pasos que la frase pone aparte, y un «gusto» es una preferencia que nadie discute."
@@ -240,5 +220,5 @@ metrics:
   family_size: 13
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3221
 slug: "indole"
-status: "draft"
+status: "approved"
 lemma: "índole"
 part_of_speech: "sustantivo"
 syllables:
@@ -92,26 +92,6 @@ exercises:
         why_not: "Una «causa» explicaría por qué surge la duda, y aquí se dice de qué tipo es."
         hint_specific: "«Causa» responde al porqué. ¿Qué se dice de la duda de Adela?"
   - position: 3
-    sentence: "No juzgamos a nadie ni miramos con quién anda: solo separamos los avisos por {{blank}}."
-    hint_general: "Se ordenan los avisos por tipo, sin juzgar a las personas."
-    explanation: "Índole: el tipo de cada aviso. «Calaña» es coloquial y juzga mal a la gente, cosa que la frase niega, y una «categoría» sería un nivel dentro de una escala."
-    options:
-      - position: 1
-        text: "índole"
-        is_correct: true
-      - position: 2
-        text: "calaña"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Calaña» es coloquial y sirve para hablar mal de la gente, y la frase dice que aquí no se juzga a nadie."
-        hint_specific: "«Calaña» se usa para despreciar a alguien. Relee las cuatro primeras palabras."
-      - position: 3
-        text: "categoría"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «categoría» es un nivel dentro de una escala, de mayor a menor, y aquí solo se separa por tipos."
-        hint_specific: "«Categoría» ordena de mayor a menor. ¿Hay niveles en esta frase?"
-  - position: 4
     sentence: "El informe agrupa las quejas por {{blank}} y no por fecha ni por el aspecto que tienen."
     hint_general: "Las quejas se agrupan por el tipo de asunto que tratan."
     explanation: "Índole: el tipo de asunto de cada queja. La «forma» es el aspecto que tienen, descartado en la propia frase, y la «insolencia» es hablar con descaro."
@@ -131,7 +111,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "La «forma» es el aspecto que tienen las quejas, y la frase deja eso fuera igual que la fecha."
         hint_specific: "«Forma» va del aspecto. Relee el final de la frase."
-  - position: 5
+  - position: 4
     sentence: "No basta con mirar cómo se ve un caso por fuera: hay que saber de qué {{blank}} es."
     hint_general: "El aspecto exterior no dice a qué tipo pertenece el caso."
     explanation: "Índole: el tipo al que pertenece el caso. «Pinta» es coloquial y habla justo del aspecto exterior, que la frase descarta, y la «forma» también se queda en cómo se ve algo."
@@ -151,7 +131,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "La «forma» es también cómo se ve algo, y la frase pide ir más allá del aspecto."
         hint_specific: "«Forma» se queda en la superficie. ¿Qué pide la frase que se sepa?"
-  - position: 6
+  - position: 5
     sentence: "Los dos retrasos son iguales de largos y de igual importancia, pero de {{blank}} distinta: uno es del taller y el otro del transporte."
     hint_general: "Duran lo mismo e importan lo mismo; cambia el tipo de asunto."
     explanation: "Índole: el tipo de cada retraso. La «gravedad» es igual en los dos, según la frase, y la «indolencia» es la pereza de quien no se mueve."
@@ -171,7 +151,7 @@ exercises:
       - position: 3
         text: "índole"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Se parecen por fuera y aun así no son de la misma {{blank}}: uno es un asunto de números y el otro de confianza."
     hint_general: "El parecido es engañoso: pertenecen a dos tipos distintos."
     explanation: "Índole: el tipo al que pertenece cada asunto. Una «causa» explicaría de dónde sale cada uno, y una «indirecta» es una crítica dicha a medias."
@@ -191,26 +171,6 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «indirecta» es una crítica dicha a medias, y aquí se comparan dos asuntos, no dos maneras de hablar."
         hint_specific: "«Indirecta» apunta sin nombrar. ¿Qué se compara en la frase?"
-  - position: 8
-    sentence: "Nos pidieron ordenar los expedientes por {{blank}}, no por nivel ni por antigüedad."
-    hint_general: "Hay que ordenarlos por el tipo de asunto que tratan."
-    explanation: "Índole: el tipo de asunto de cada expediente. Una «categoría» sería un nivel, que la frase descarta, y la «insolencia» es hablar con descaro."
-    options:
-      - position: 1
-        text: "categoría"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «categoría» es un nivel dentro de una escala, y la frase dice que no hay que ordenar por nivel."
-        hint_specific: "«Categoría» ordena por niveles. Relee el final de la frase."
-      - position: 2
-        text: "insolencia"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "La «insolencia» es hablar con descaro, y aquí se trata de ordenar papeles en una estantería."
-        hint_specific: "«Insolencia» describe malos modos. ¿Qué hay que hacer con los expedientes?"
-      - position: 3
-        text: "índole"
-        is_correct: true
 readings:
   - position: 1
     scene: "trabajo"
@@ -240,5 +200,5 @@ metrics:
   family_size: 9
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 3, 8, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

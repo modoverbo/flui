@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5018
 slug: "abstenerse"
-status: "draft"
+status: "approved"
 lemma: "abstenerse"
 part_of_speech: "verbo"
 syllables:
@@ -135,26 +135,6 @@ exercises:
         why_not: "«Atenerse» es ajustarse a una norma acordada, y aquí no hay ninguna norma: hay un conflicto de lealtades."
         hint_specific: "Atenerse cita una regla. ¿Qué motivo da quien habla?"
   - position: 5
-    sentence: "Ulises lleva un mes {{blank}} de contestar mensajes después de las diez de la noche."
-    hint_general: "Ha dejado a propósito de contestar tan tarde."
-    explanation: "Absteniéndose: ha dejado a propósito de contestar tan tarde. «Deteniéndose» sería pararse a mitad, e «inhibiéndose» es palabra de juzgados."
-    options:
-      - position: 1
-        text: "deteniéndose"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Detenerse» es parar a mitad de algo que ya estaba en marcha, y él directamente no empieza a contestar."
-        hint_specific: "Detenerse pide un movimiento previo. ¿Qué es lo que ya no hace Ulises?"
-      - position: 2
-        text: "absteniéndose"
-        is_correct: true
-      - position: 3
-        text: "inhibiéndose"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Inhibirse» es palabra de juzgados y se dice de quien se aparta de un caso, no de quien deja el teléfono por la noche."
-        hint_specific: "«Inhibirse» pertenece a los tribunales. ¿De qué se aparta él cada noche?"
-  - position: 6
     sentence: "En la mesa de mi familia todos opinan de todo, así que {{blank}} es casi un deporte."
     hint_general: "No dar tu opinión es raro y cuesta esfuerzo allí."
     explanation: "Abstenerse: no dar la opinión propia. «Atenerse» sería ajustarse a una norma, y «esperar» solo diría que tu turno llega más tarde."
@@ -174,7 +154,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Esperar» diría que tu turno llega más tarde, y aquí la gracia está en no llegar a opinar nunca."
         hint_specific: "Quien espera acaba hablando. ¿Qué es lo difícil en esa mesa?"
-  - position: 7
+  - position: 6
     sentence: "Los socios que trabajan con el proveedor deben {{blank}} en esa parte de la votación."
     hint_general: "No pueden votar en el punto donde tienen interés."
     explanation: "Abstenerse: no votar donde tienen interés. «Detenerse» sería parar a mitad, y «dudar» describiría su cabeza, no su voto."
@@ -194,7 +174,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Detenerse» es parar algo empezado, y estos socios no deben ni empezar a votar ese punto."
         hint_specific: "Detenerse ocurre a mitad de camino. ¿Cuándo se apartan estos socios?"
-  - position: 8
+  - position: 7
     sentence: "Aitana {{blank}} de dar consejos hasta que se los piden, y por eso se los piden mucho."
     hint_general: "Guarda sus consejos hasta que alguien los pide."
     explanation: "Se abstiene: guarda sus consejos hasta que se los piden. «Se atiene» sería seguir una norma, y «se olvida» diría que no se acuerda de darlos."
@@ -243,5 +223,5 @@ metrics:
   family_size: 35
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 5, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

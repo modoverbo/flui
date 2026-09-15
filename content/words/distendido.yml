@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 326
 slug: "distendido"
-status: "draft"
+status: "approved"
 lemma: "distendido"
 part_of_speech: "adjetivo"
-syllables: ["dis", "ten", "di", "do"]
+syllables:
+  - "dis"
+  - "ten"
+  - "di"
+  - "do"
 stressed_syllable: 3
 ipa_latam: "[dis.tenˈdi.ðo]"
 ipa_es: "[dis.tenˈdi.ðo]"
@@ -25,15 +29,19 @@ replaces:
     after: "Se habló en un tono distendido"
   - before: "El ambiente estaba relajado"
     after: "El ambiente estaba distendido"
-family: ["distender"]
+family:
+  - "distender"
 themes:
   - slug: "conversacion-cotidiana"
     relevance: 3
   - slug: "conversaciones-dificiles"
     relevance: 1
 tags:
-  comodin: ["tranquilo", "relajado"]
-  funcion: ["describir"]
+  comodin:
+    - "tranquilo"
+    - "relajado"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -66,26 +74,6 @@ exercises:
         why_not: "«Aburrida» diría que no interesaba nada, y de ahí salieron planes para el fin de semana."
         hint_specific: "«Aburrida» no engancha a nadie. ¿Qué salió de esa sobremesa?"
   - position: 2
-    sentence: "Iván prefiere un tono {{blank}} para hablar de dinero con sus hermanos, aunque el asunto no le haga ninguna gracia."
-    hint_general: "Busca hablar sin tensión de un asunto que suele ponerla."
-    explanation: "Distendido: busca hablar sin tensión de un asunto serio. «Extendido» significa amplio o muy repartido, y «desenfadado» pediría tomarse a broma algo que no tiene gracia."
-    options:
-      - position: 1
-        text: "extendido"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Extendido» significa amplio o muy repartido, y aquí se elige cómo suena una conversación, no cuánto abarca."
-        hint_specific: "«Extendido» mide alcance. ¿Iván elige el alcance o el clima?"
-      - position: 2
-        text: "desenfadado"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Desenfadado» le quita hierro al asunto y pide broma, y a Iván el tema del dinero no le hace ninguna gracia."
-        hint_specific: "«Desenfadado» va de tomárselo a broma. ¿Qué le parece a Iván el asunto?"
-      - position: 3
-        text: "distendido"
-        is_correct: true
-  - position: 3
     sentence: "El ambiente era tan {{blank}} que Carmen se atrevió a contar lo del trabajo nuevo."
     hint_general: "Había tan poca tensión que se animó a contar algo que guardaba."
     explanation: "Distendido: había tan poca tensión que se animó a hablar. «Distraído» describe a quien tiene la cabeza en otro sitio, y «formal» apunta a normas y rigidez."
@@ -105,7 +93,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Formal» apunta a normas y rigidez, y en un ambiente así nadie suelta una noticia personal."
         hint_specific: "«Formal» pone reglas. ¿Ayudan las reglas a contar algo personal?"
-  - position: 4
+  - position: 3
     sentence: "Fue una charla {{blank}}: nadie levantó la voz y nadie miró el reloj en toda la tarde."
     hint_general: "Ni gritos ni prisas: el rato pasó sin ninguna tensión."
     explanation: "Distendida: ni gritos ni prisas. «Desatendida» significa que alguien la dejó abandonada, y «silenciosa» diría que casi no se habló."
@@ -125,7 +113,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Silenciosa» diría que casi no se habló, y lo que cuenta la frase es que se habló sin gritar."
         hint_specific: "«Silenciosa» casi no suena. ¿Hubo charla o hubo silencio?"
-  - position: 5
+  - position: 4
     sentence: "Después de media hora rígida, la conversación se volvió {{blank}} y todo fue más fácil para Nuria."
     hint_general: "La tensión del principio se soltó y hablar dejó de costar."
     explanation: "Distendida: la tensión del principio se soltó. «Distraída» describe a quien tiene la cabeza en otro sitio, y «distinguida» habla de elegancia."
@@ -145,7 +133,7 @@ exercises:
       - position: 3
         text: "distendida"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Rubén consiguió un clima {{blank}} con dos preguntas sobre el perro de su vecina."
     hint_general: "Con dos preguntas fáciles quitó la tensión del encuentro."
     explanation: "Distendido: quitó la tensión con dos preguntas fáciles. «Extendido» significa amplio o muy repartido, y «festivo» pediría una celebración que aquí no hay."
@@ -165,7 +153,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Festivo» pide fiesta y jaleo, y dos preguntas sobre un perro no montan ninguna celebración."
         hint_specific: "«Festivo» suena a celebración. ¿Hay fiesta en esa escena o solo calma?"
-  - position: 7
+  - position: 6
     sentence: "Lo que más recuerda Patricia de esa cena es lo {{blank}} que estuvo todo el mundo desde el principio."
     hint_general: "Lo que se le quedó grabado es que nadie estuvo tenso en ningún momento."
     explanation: "Distendido: nadie estuvo tenso en toda la cena. «Distraído» describe a quien tiene la cabeza en otro sitio, y «corto» hablaría de la duración."
@@ -185,7 +173,7 @@ exercises:
       - position: 3
         text: "distendido"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Un comienzo {{blank}} evita que la charla se convierta en un interrogatorio, dice Andrés."
     hint_general: "Arrancar sin tensión impide que la conversación parezca una lista de preguntas."
     explanation: "Distendido: arrancar sin tensión cambia toda la charla. «Desatendido» significa que algo queda abandonado, y «vacío» diría que no hay contenido."
@@ -234,5 +222,5 @@ metrics:
   family_size: 21
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 2, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

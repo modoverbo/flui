@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "efectivamente"
-status: "draft"
+status: "approved"
 lemma: "efectivamente"
 part_of_speech: "adverbio"
 syllables:
@@ -75,26 +75,6 @@ exercises:
         why_not: "«Supuestamente» dejaría la parada sin comprobar, y la frase cuenta que el tren se detiene de verdad cada mañana."
         hint_specific: "«Supuestamente» siembra dudas. ¿La parada está comprobada o solo se rumorea?"
   - position: 2
-    sentence: "Sospechábamos que el ruido venía del desagüe y {{blank}} era eso."
-    hint_general: "La sospecha se comprueba y resulta acertada, sin más vueltas."
-    explanation: "Efectivamente: la sospecha resultó acertada. «Pues sí» es de conversación y suena a resignación, y «aparentemente» dejaría la causa sin confirmar."
-    options:
-      - position: 1
-        text: "efectivamente"
-        is_correct: true
-      - position: 2
-        text: "pues sí"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pues sí» es de conversación y suena a resignación, cuando aquí lo que hay es una comprobación limpia."
-        hint_specific: "«Pues sí» suena a encogerse de hombros. ¿Se confirma un dato o se acepta de mala gana?"
-      - position: 3
-        text: "aparentemente"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Aparentemente» dejaría la causa sin confirmar, y la frase cierra la duda: era el desagüe."
-        hint_specific: "«Aparentemente» deja la puerta abierta. ¿La causa quedó clara o sigue en duda?"
-  - position: 3
     sentence: "Le avisé de que la puerta se atasca con la humedad y {{blank}} se atascó el domingo."
     hint_general: "El aviso se cumplió tal cual, sin sorpresas ni matices."
     explanation: "Efectivamente: el aviso se cumplió tal cual. «Efusivamente» describiría un gesto muy caluroso y «posiblemente» dejaría el atasco en una hipótesis."
@@ -114,7 +94,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Posiblemente» dejaría el atasco en una hipótesis, y la frase cuenta que ocurrió el domingo."
         hint_specific: "«Posiblemente» calcula probabilidades. ¿La puerta se atascó o podría atascarse?"
-  - position: 4
+  - position: 3
     sentence: "Calculamos que sobrarían dos sillas y {{blank}} sobraron dos, ni una más."
     hint_general: "El cálculo se cumplió al detalle y quedó comprobado."
     explanation: "Efectivamente: el cálculo se cumplió al detalle. «Ya te digo» es de conversación y presume del acierto, y «al parecer» dejaría el resultado de oídas."
@@ -134,7 +114,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Al parecer» atribuiría el dato a lo que dicen otros, y aquí las sillas se contaron una por una."
         hint_specific: "«Al parecer» pone el dato en boca de terceros. ¿Se contaron las sillas o se oyó decir?"
-  - position: 5
+  - position: 4
     sentence: "Nos prometieron respuesta antes del viernes y {{blank}} llegó el jueves por la tarde."
     hint_general: "La promesa se cumplió y la frase solo lo constata."
     explanation: "Efectivamente: la promesa se cumplió. «Afectivamente» hablaría de sentimientos y «en cambio» opondría dos hechos que encajan sin choque."
@@ -154,27 +134,7 @@ exercises:
       - position: 3
         text: "efectivamente"
         is_correct: true
-  - position: 6
-    sentence: "Pensaba que a la salsa le faltaba sal y {{blank}} le faltaba una pizca."
-    hint_general: "La corazonada de la cocina resultó cierta al probarla."
-    explanation: "Efectivamente: la corazonada resultó cierta. «Pues sí» es de conversación y suena a resignación, y «supuestamente» dejaría la falta de sal sin comprobar."
-    options:
-      - position: 1
-        text: "supuestamente"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Supuestamente» dejaría la falta de sal sin comprobar, y aquí alguien la ha probado y lo sabe."
-        hint_specific: "«Supuestamente» siembra dudas. ¿Alguien probó la salsa o solo lo imagina?"
-      - position: 2
-        text: "efectivamente"
-        is_correct: true
-      - position: 3
-        text: "pues sí"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pues sí» es de conversación y suena a rendirse ante lo evidente, cuando aquí hay una comprobación en la cocina."
-        hint_specific: "«Pues sí» suena a encogerse de hombros. ¿Se comprueba algo o se acepta sin más?"
-  - position: 7
+  - position: 5
     sentence: "Había avisado de que el paquete llegaría golpeado y {{blank}} venía con una esquina hundida."
     hint_general: "El aviso se confirma al abrir la caja, sin discusión posible."
     explanation: "Efectivamente: el aviso se confirma al abrir la caja. «Efusivamente» describiría un gesto caluroso y «aparentemente» dejaría el golpe en una impresión."
@@ -194,7 +154,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Aparentemente» dejaría el golpe en una impresión, y la esquina hundida se ve y se toca."
         hint_specific: "«Aparentemente» deja la puerta abierta. ¿El golpe se ve o solo se intuye?"
-  - position: 8
+  - position: 6
     sentence: "Todos dijeron que el sitio estaría lleno un sábado y {{blank}} no cabía un alma."
     hint_general: "La previsión de todos se cumplió al llegar allí."
     explanation: "Efectivamente: la previsión se cumplió. «Ya te digo» es de conversación y presume del acierto, y «por desgracia» añadiría un lamento que la frase no tiene."
@@ -243,5 +203,5 @@ metrics:
   family_size: 72
 provenance:
   generator: "authored for the conectores-estructura theme"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 2, 6, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

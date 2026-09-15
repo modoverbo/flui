@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 303
 slug: "eludir"
-status: "draft"
+status: "approved"
 lemma: "eludir"
 part_of_speech: "verbo"
-syllables: ["e", "lu", "dir"]
+syllables:
+  - "e"
+  - "lu"
+  - "dir"
 stressed_syllable: 3
 ipa_latam: "[e.luˈðir]"
 ipa_es: "[e.luˈðir]"
@@ -32,8 +35,10 @@ themes:
   - slug: "decir-que-no"
     relevance: 1
 tags:
-  comodin: ["evitar"]
-  funcion: ["esquivar"]
+  comodin:
+    - "evitar"
+  funcion:
+    - "esquivar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +239,5 @@ metrics:
   family_size: 13
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3 + reviewer-a2-r3 + reviewer-b2-r3 + reviewer-a3-r3 + reviewer-b3-r3"
+  checked_on: "2026-09-15"

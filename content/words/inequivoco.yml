@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3219
 slug: "inequivoco"
-status: "draft"
+status: "approved"
 lemma: "inequívoco"
 part_of_speech: "adjetivo"
 syllables:
@@ -155,26 +155,6 @@ exercises:
         text: "inequívoco"
         is_correct: true
   - position: 6
-    sentence: "Todo el mundo la vio a la primera y todo el mundo la entendió igual: fue una respuesta {{blank}}."
-    hint_general: "Todos la entendieron de la misma manera, sin versiones distintas."
-    explanation: "Inequívoca: todos la entendieron igual. «Obvia» ya está dicho, porque todo el mundo la vio a la primera, y «equívoca» significa lo contrario, que se presta a dos lecturas."
-    options:
-      - position: 1
-        text: "obvia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Obvia» dice que se ve a la primera, y la frase ya cuenta que todo el mundo la vio enseguida."
-        hint_specific: "«Obvia» salta a la vista. Relee las seis primeras palabras."
-      - position: 2
-        text: "equívoca"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Equívoca» significa que se presta a dos lecturas, y aquí todos la entendieron igual."
-        hint_specific: "«Equívoca» reparte lecturas distintas. ¿Cómo la entendió la gente?"
-      - position: 3
-        text: "inequívoca"
-        is_correct: true
-  - position: 7
     sentence: "Puso por escrito un plazo {{blank}}, aunque el acuerdo todavía se puede cambiar si las dos partes quieren."
     hint_general: "El plazo no se puede leer de dos formas, y aun así el acuerdo sigue abierto."
     explanation: "Inequívoco: el plazo no se puede leer de dos formas. «Irrevocable» significaría que no se puede cambiar, y la frase dice que sí; «rotundo» hablaría de la fuerza con que se dice."
@@ -194,26 +174,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Rotundo» habla de la fuerza con que se dice algo, y aquí lo que importa es que la fecha solo se lee de una manera."
         hint_specific: "«Rotundo» mide la fuerza. ¿Qué se mide de ese plazo escrito?"
-  - position: 8
-    sentence: "No hizo falta explicarlo dos veces ni subir la voz: la instrucción era {{blank}}."
-    hint_general: "Nadie necesitó una segunda explicación ni pudo leerla de otra forma."
-    explanation: "Inequívoca: no se podía leer de otra forma. «Clara» ya está dicho, porque no hizo falta explicarlo dos veces, y «directa» significa sin rodeos, que aquí no es lo que falta."
-    options:
-      - position: 1
-        text: "clara"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Clara» va de entenderse sin esfuerzo, y la frase ya dice que no hizo falta explicarlo dos veces."
-        hint_specific: "«Clara» va de entender. Relee las seis primeras palabras."
-      - position: 2
-        text: "inequívoca"
-        is_correct: true
-      - position: 3
-        text: "directa"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Directa» significa sin rodeos, y aquí lo que se subraya es que no había otra manera de leerla."
-        hint_specific: "«Directa» va al grano. ¿La frase habla de rodeos o de lecturas posibles?"
 readings:
   - position: 1
     scene: "trabajo"
@@ -243,5 +203,5 @@ metrics:
   family_size: 9
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 6, 8, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

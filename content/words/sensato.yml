@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 320
 slug: "sensato"
-status: "draft"
+status: "approved"
 lemma: "sensato"
 part_of_speech: "adjetivo"
-syllables: ["sen", "sa", "to"]
+syllables:
+  - "sen"
+  - "sa"
+  - "to"
 stressed_syllable: 2
 ipa_latam: "[senˈsa.to]"
 ipa_es: "[senˈsa.to]"
@@ -25,15 +28,19 @@ replaces:
     after: "Es una persona sensata"
   - before: "Eso es lo más lógico"
     after: "Eso es lo más sensato"
-family: ["sensatez"]
+family:
+  - "sensatez"
 themes:
   - slug: "elogio-reconocimiento"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["bueno", "lógico"]
-  funcion: ["elogiar"]
+  comodin:
+    - "bueno"
+    - "lógico"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +241,5 @@ metrics:
   family_size: 21
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3 + reviewer-a2-r3 + reviewer-b2-r3 + reviewer-a3-r3 + reviewer-b3-r3"
+  checked_on: "2026-09-15"

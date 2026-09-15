@@ -1,12 +1,8 @@
-# Imported from ../supabase/seed.sql by dart run content:import.
-# This file is now the source of truth; regenerate the seed with
-# dart run content:emit. Authored before the validator suite existed,
-# so dart run content:validate is expected to report gaps.
 schema_version: 1
 id: "a0000000-0000-4000-8000-000000000008"
 sort_order: 8
 slug: "zanjar"
-status: "draft"
+status: "approved"
 lemma: "zanjar"
 part_of_speech: "verbo"
 syllables:
@@ -129,29 +125,6 @@ exercises:
         why_not: "«Despachar» un asunto es quitárselo de encima deprisa, y Marta se queda a escuchar a quienes votaron otra cosa."
         hint_specific: "«Despachar» se quita algo de encima y sigue. ¿Qué hace Marta después de la encuesta?"
   - position: 4
-    sentence: "Rosa escuchó a las dos partes y luego {{blank}} la discusión con una propuesta que las dos aceptaron."
-    hint_general: "Puso fin a la discusión con una salida que convenció a todos."
-    explanation: "Zanjó: terminó la discusión con una propuesta aceptada. «Arbitró» sería decidir desde fuera e imponer el resultado, y «esquivó» sería evitar el tema en vez de resolverlo."
-    options:
-      - position: 1
-        text: "arbitró"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Arbitrar» es decidir desde fuera e imponer el resultado, y Rosa no impone nada: propone una salida que las dos partes aceptan."
-        hint_specific: "«Arbitrar» decide por los demás. ¿Quién acepta al final la salida que da Rosa?"
-      - position: 2
-        text: "zanjó"
-        is_correct: true
-        distractor_type: null
-        why_not: null
-        hint_specific: null
-      - position: 3
-        text: "esquivó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Esquivar» es evitar un asunto, y Rosa hace lo contrario: escucha a las dos partes y propone una salida."
-        hint_specific: "Quien esquiva un tema no lo toca. ¿Rosa lo evita o lo resuelve?"
-  - position: 5
     sentence: "Tras dos correos y una llamada, Manuel decidió {{blank}} el asunto del alquiler con una sola reunión de quince minutos."
     hint_general: "Quiere dejar el asunto terminado de una vez, sin más idas y venidas."
     explanation: "Zanjar: terminar el asunto de una vez en una reunión corta. «Canjear» es cambiar una cosa por otra, y «dilatar» sería alargarlo todavía más."
@@ -174,7 +147,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Dilatar» es alargar algo en el tiempo, y Manuel quiere terminarlo en quince minutos."
         hint_specific: "«Dilatar» estira los plazos. ¿Quince minutos suenan a estirar o a cerrar?"
-  - position: 6
+  - position: 5
     sentence: "En casa {{blank}} el tema del reparto de gastos con una hoja compartida, y desde entonces nadie discute a fin de mes."
     hint_general: "Dejaron el tema terminado con una solución que sigue funcionando."
     explanation: "Zanjamos: cerramos el tema con un acuerdo que dura. «Canjeamos» es cambiar una cosa por otra, y «arrastramos» sería llevarlo sin resolver mes tras mes."
@@ -197,7 +170,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Arrastrar» un tema es llevarlo sin resolver mes tras mes, y la frase dice que desde entonces nadie discute."
         hint_specific: "Arrastrar un tema lo deja abierto. ¿Qué pasa a fin de mes desde entonces?"
-  - position: 7
+  - position: 6
     sentence: "Cuando la charla se repetía por tercera vez, Susana propuso {{blank}}: «Decidimos hoy y no lo volvemos a abrir»."
     hint_general: "Propone cerrar el asunto hoy y no volver sobre él."
     explanation: "Zanjarlo: decidir hoy y no volver a abrirlo. «Canjearlo» es cambiar una cosa por otra, y «aplazarlo» sería dejarlo para otro día."
@@ -220,7 +193,7 @@ exercises:
         distractor_type: null
         why_not: null
         hint_specific: null
-  - position: 8
+  - position: 7
     sentence: "El acuerdo firmado por las dos empresas {{blank}} una disputa que llevaba tres años abierta."
     hint_general: "El acuerdo puso final a algo que llevaba años sin resolverse."
     explanation: "Zanjó: el acuerdo puso fin a la disputa. «Canjeó» es cambiar una cosa por otra, y «prolongó» diría que la alargó todavía más."
@@ -267,5 +240,5 @@ readings:
     after_phrase: "Tomás zanjó el tema con humor."
 provenance:
   generator: "content:import from supabase/seed.sql"
-  gate: null
-  checked_on: null
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

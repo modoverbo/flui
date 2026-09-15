@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "prever"
-status: "draft"
+status: "approved"
 lemma: "prever"
 part_of_speech: "verbo"
 syllables:
@@ -35,8 +35,10 @@ themes:
   - slug: "reuniones"
     relevance: 2
 tags:
-  comodin: ["imaginar"]
-  funcion: ["anticipar"]
+  comodin:
+    - "imaginar"
+  funcion:
+    - "anticipar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -237,5 +239,5 @@ metrics:
   family_size: 98
 provenance:
   generator: "flui authoring agent — theme paronimos (prever / proveer)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3 + reviewer-a2-r3 + reviewer-b2-r3 + reviewer-a3-r3 + reviewer-b3-r3"
+  checked_on: "2026-09-15"

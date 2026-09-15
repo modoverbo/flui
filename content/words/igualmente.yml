@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "igualmente"
-status: "draft"
+status: "approved"
 lemma: "igualmente"
 part_of_speech: "adverbio"
 syllables:
@@ -193,26 +193,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«En cambio» anunciaría un trato distinto para los nuevos, y la frase les aplica exactamente la misma cuota."
         hint_specific: "«En cambio» marca diferencia. ¿Los nuevos pagan lo mismo o pagan otra cosa?"
-  - position: 8
-    sentence: "Valoramos mucho la puntualidad y valoramos {{blank}} que se avise cuando algo falla."
-    hint_general: "Las dos conductas reciben el mismo aprecio, sin escalones entre ellas."
-    explanation: "Igualmente: las dos conductas valen lo mismo. «Igual» en conversación suele significar «quizá» y «al contrario» pondría una conducta frente a la otra."
-    options:
-      - position: 1
-        text: "igual"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Igual», en conversación, se entiende como «quizá», y aquí no hay duda ninguna: las dos conductas se valoran de verdad."
-        hint_specific: "«Igual» suena a duda en el habla diaria. ¿Se afirma con firmeza o se deja a medias?"
-      - position: 2
-        text: "al contrario"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Al contrario» pondría una conducta frente a la otra, y la frase las coloca a las dos en el mismo escalón."
-        hint_specific: "«Al contrario» opone dos cosas. ¿Las dos conductas compiten o valen lo mismo?"
-      - position: 3
-        text: "igualmente"
-        is_correct: true
 readings:
   - position: 1
     scene: "trabajo"
@@ -242,5 +222,5 @@ metrics:
   family_size: 44
 provenance:
   generator: "authored for the conectores-estructura theme"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 8, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

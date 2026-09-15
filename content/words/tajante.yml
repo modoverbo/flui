@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5016
 slug: "tajante"
-status: "draft"
+status: "approved"
 lemma: "tajante"
 part_of_speech: "adjetivo"
 syllables:
@@ -91,26 +91,6 @@ exercises:
         why_not: "«Serio» habla de su cara y su tono, y se puede decir algo muy serio y aun así abrir un debate de media hora."
         hint_specific: "La seriedad está en el gesto. ¿Qué pasó con la conversación después?"
   - position: 3
-    sentence: "El cartel de la puerta es {{blank}}: sin cita previa no se atiende a nadie."
-    hint_general: "El cartel no deja margen para pedir una excepción."
-    explanation: "Tajante: el cartel no deja margen. «Tangente» tiene que ver con escapar del tema, y «lapidario» es palabra culta que suena a frase de monumento."
-    options:
-      - position: 1
-        text: "lapidario"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Lapidario» es palabra culta que suena a frase grabada en un monumento, y esto es un cartel de horarios en una puerta."
-        hint_specific: "Lo lapidario se graba en piedra para la historia. ¿Qué anuncia este cartel?"
-      - position: 2
-        text: "tajante"
-        is_correct: true
-      - position: 3
-        text: "tangente"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "La «tangente» es la salida por un lado para no hablar del asunto, y este cartel dice el asunto sin rodeos."
-        hint_specific: "La tangente esquiva. ¿Este cartel esquiva algo o lo dice de frente?"
-  - position: 4
     sentence: "Prefiero un no {{blank}} a un quizá que me tenga esperando tres semanas."
     hint_general: "Mejor un no que cierra que un quizá que alarga."
     explanation: "Tajante: un no que cierra de una vez. «Tirante» describe una relación tensa, y «frío» hablaría de la falta de cariño, no de la claridad."
@@ -130,7 +110,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Frío» habla de la falta de cariño, y un no puede darse con mucho cariño y aun así no dejar dudas."
         hint_specific: "Lo frío se nota en el afecto. ¿Qué se agradece aquí: el afecto o la claridad?"
-  - position: 5
+  - position: 4
     sentence: "Cuando le preguntaron si volvería al pueblo, Jacinta estuvo {{blank}}: «Nunca más en agosto»."
     hint_general: "Contestó con una frase que no dejaba lugar a dudas."
     explanation: "Tajante: su frase no deja lugar a dudas. «Tangente» tiene que ver con escapar del tema, y «dura» sugeriría que quiso hacer daño a alguien."
@@ -150,7 +130,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Dura» sugiere que quiso hacer daño a alguien, y en la frase no hay nadie a quien herir: habla de un mes."
         hint_specific: "La dureza necesita una víctima. ¿A quién hiere esa respuesta?"
-  - position: 6
+  - position: 5
     sentence: "Rosendo suele dar mil vueltas, pero con las fechas de entrega se pone {{blank}}."
     hint_general: "Con las fechas deja de dar vueltas y corta en seco."
     explanation: "Tajante: con las fechas corta en seco. «Tirante» describe una relación tensa, y «claro» diría que se entiende, no que cierre el tema."
@@ -170,7 +150,7 @@ exercises:
       - position: 3
         text: "tajante"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "En la carta, el banco fue {{blank}}: o se firma antes del día diez o se cae la operación."
     hint_general: "No ofrecen ninguna otra salida además de esa fecha."
     explanation: "Tajante: no ofrecen ninguna otra salida. «Tangente» tiene que ver con escapar del asunto, y «grosero» acusaría de faltar al respeto."
@@ -190,7 +170,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "La «tangente» es la salida lateral para no hablar del asunto, y la carta va directa al plazo."
         hint_specific: "La tangente evita el tema. ¿Qué dice la carta sobre el día diez?"
-  - position: 8
+  - position: 7
     sentence: "Ser {{blank}} una vez al año pesa; serlo cada martes cansa a cualquiera."
     hint_general: "Cerrar en seco funciona si no se repite mucho."
     explanation: "Tajante: cerrar en seco de vez en cuando. «Tirante» describe una relación tensa, y «breve» solo habla de la longitud de lo que dices."
@@ -239,5 +219,5 @@ metrics:
   family_size: 2
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

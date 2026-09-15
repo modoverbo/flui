@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "vasto"
-status: "draft"
+status: "approved"
 lemma: "vasto"
 part_of_speech: "adjetivo"
 syllables:
@@ -34,8 +34,10 @@ themes:
   - slug: "matices-precision"
     relevance: 1
 tags:
-  comodin: ["grande"]
-  funcion: ["precisar"]
+  comodin:
+    - "grande"
+  funcion:
+    - "precisar"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -48,26 +50,6 @@ confusions:
     memory_trick: "Lo amplio cabe todo; lo otro no se termina de recorrer."
 exercises:
   - position: 1
-    sentence: "Su {{blank}} repertorio de anécdotas salvó la cena cuando se agotó el tema del trabajo."
-    hint_general: "Tiene tantas historias distintas que no se le acaban nunca."
-    explanation: "Vasto: su repertorio no se acaba. «Nefasto» diría que las anécdotas salieron mal, y «descomunal» es coloquial y exagera el tamaño hasta lo raro."
-    options:
-      - position: 1
-        text: "nefasto"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Nefasto» dice que algo salió muy mal, y aquí el repertorio salvó la cena en lugar de arruinarla."
-        hint_specific: "«Nefasto» condena lo que ocurrió. ¿Cómo terminó esa cena gracias a sus historias?"
-      - position: 2
-        text: "vasto"
-        is_correct: true
-      - position: 3
-        text: "descomunal"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Descomunal» es coloquial y exagera el tamaño hasta lo raro; aquí solo se dice que tiene muchas historias distintas."
-        hint_specific: "«Descomunal» suena a exageración de sobremesa. ¿Hace falta ese énfasis al elogiar a alguien?"
-  - position: 2
     sentence: "El museo ocupa un terreno tan {{blank}} que hace falta un mapa para no perderse."
     hint_general: "La extensión es tal que no se recorre de una vez."
     explanation: "Vasto: el terreno no se recorre de una vez. «Basto» diría que es tosco, e «ingente» suena a informe oficial y subraya la cantidad, no la extensión."
@@ -87,7 +69,7 @@ exercises:
       - position: 3
         text: "vasto"
         is_correct: true
-  - position: 3
+  - position: 2
     sentence: "Camila llegó con una {{blank}} experiencia en obras pequeñas y ninguna en torres."
     hint_general: "Ha hecho tantas de esas que ya no se cuentan."
     explanation: "Vasta: ha hecho tantas obras pequeñas que no se cuentan. «Nefasta» diría que le salieron mal, y «escasa» diría que apenas tiene experiencia."
@@ -107,7 +89,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Escasa» diría que apenas tiene experiencia, y el contraste de la frase está en las torres, no en las obras pequeñas."
         hint_specific: "Escasa significa poca. ¿Dónde dice la frase que Camila no tiene recorrido?"
-  - position: 4
+  - position: 3
     sentence: "Detrás de la casa se abría un campo tan {{blank}} que el perro tardaba diez minutos en cruzarlo."
     hint_general: "Cruzarlo lleva tiempo porque se extiende muchísimo."
     explanation: "Vasto: cruzarlo lleva diez minutos. «Basto» diría que el terreno es tosco, y «llano» solo diría que no tiene cuestas."
@@ -127,7 +109,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Llano» dice que no hay cuestas, y un campo llano se puede cruzar en treinta segundos si es pequeño."
         hint_specific: "Llano habla de la forma del suelo. ¿Por qué tarda tanto el perro?"
-  - position: 5
+  - position: 4
     sentence: "Nadie discute el {{blank}} conocimiento que Julián tiene del barrio y de su gente."
     hint_general: "Sabe tanto del lugar que siempre queda algo más por preguntarle."
     explanation: "Vasto: sabe del barrio más de lo que cabe en una charla. «Basto» diría que es tosco, y «somero» diría justo lo contrario: que se queda en la superficie."
@@ -147,7 +129,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Basto» se dice de lo tosco o poco fino, y aquí se elogia cuánto sabe Julián de su barrio."
         hint_specific: "Lo basto es tosco y sin pulir. ¿La frase elogia a Julián o lo critica?"
-  - position: 6
+  - position: 5
     sentence: "La empresa maneja un catálogo {{blank}}, y aun así encontró el repuesto en un minuto."
     hint_general: "El catálogo es tan extenso que sorprende que hallaran la pieza tan rápido."
     explanation: "Vasto: el catálogo es enorme y aun así apareció la pieza. «Basto» diría que está mal hecho, y «escueto» diría que es cortísimo."
@@ -167,27 +149,7 @@ exercises:
       - position: 3
         text: "vasto"
         is_correct: true
-  - position: 7
-    sentence: "Aquel plan era demasiado {{blank}} para un equipo de tres personas."
-    hint_general: "Abarcaba tanto que tres personas no llegaban a cubrirlo."
-    explanation: "Vasto: el plan abarcaba más de lo que tres personas cubren. «Basto» diría que está mal hecho, y «faraónico» es coloquial y suena a burla por el derroche."
-    options:
-      - position: 1
-        text: "vasto"
-        is_correct: true
-      - position: 2
-        text: "basto"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Basto» diría que el plan está tosco o mal acabado, y el problema es su tamaño frente a tres personas."
-        hint_specific: "Lo basto está sin pulir. ¿Falla el acabado del plan o su tamaño?"
-      - position: 3
-        text: "faraónico"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Faraónico» es coloquial y se burla del derroche, y la frase no juzga el gasto: compara el alcance con el equipo."
-        hint_specific: "«Faraónico» suena a burla por despilfarro. ¿Se critica aquí el dinero o el tamaño?"
-  - position: 8
+  - position: 6
     sentence: "Marta heredó una {{blank}} colección de discos que no cabía en su departamento."
     hint_general: "Son tantos que no caben donde vive."
     explanation: "Vasta: la colección no cabe en su casa. «Basta» diría que es tosca, y «modesta» diría que es pequeña, justo lo contrario."
@@ -236,5 +198,5 @@ metrics:
   family_size: 0
 provenance:
   generator: "flui authoring agent — theme paronimos (vasto / basto)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 1, 7, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

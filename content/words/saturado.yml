@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5015
 slug: "saturado"
-status: "draft"
+status: "approved"
 lemma: "saturado"
 part_of_speech: "adjetivo"
 syllables:
@@ -156,46 +156,6 @@ exercises:
         text: "saturado"
         is_correct: true
   - position: 6
-    sentence: "Ulises apuntó cuatro encargos en dos días y el lunes ya estaba {{blank}} hasta marzo."
-    hint_general: "Con cuatro encargos llenó su calendario hasta marzo."
-    explanation: "Saturado: llenó su calendario hasta marzo. «Saciado» se dice tras comer bastante, y «ocupado» dice que ahora mismo hace algo, no que no quepa más."
-    options:
-      - position: 1
-        text: "saciado"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Saciado» se dice de quien ya comió bastante, y aquí lo que se llena de encargos es su calendario."
-        hint_specific: "Saciarse ocurre en la mesa. ¿Con qué se llenó el lunes de Ulises?"
-      - position: 2
-        text: "saturado"
-        is_correct: true
-      - position: 3
-        text: "ocupado"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Ocupado» dice que ahora mismo está haciendo algo, y la frase habla de que no le cabe nada nuevo hasta marzo."
-        hint_specific: "Se puede estar ocupado esta tarde y libre mañana. ¿Hasta cuándo llega lo suyo?"
-  - position: 7
-    sentence: "Con el buzón {{blank}}, los mensajes nuevos rebotan y nadie se entera de nada."
-    hint_general: "Sin sitio libre, lo nuevo no entra."
-    explanation: "Saturado: sin sitio libre, lo nuevo rebota. «Saciado» se dice de quien ya comió bastante, y «colapsado» anunciaría que el sistema entero ha caído."
-    options:
-      - position: 1
-        text: "saturado"
-        is_correct: true
-      - position: 2
-        text: "colapsado"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Colapsado» suena a titular y anuncia que el sistema entero ha caído, y aquí el buzón sigue vivo: solo rebota lo nuevo."
-        hint_specific: "Lo colapsado ya no funciona en absoluto. ¿Ese buzón sigue funcionando?"
-      - position: 3
-        text: "saciado"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Saciado» se dice de quien ya ha comido bastante, y un buzón no come: se llena de mensajes."
-        hint_specific: "Saciarse es cosa de estómagos. ¿Qué se llena en esta frase?"
-  - position: 8
     sentence: "Marisol lleva la agenda en papel para ver de un vistazo cuándo está {{blank}} y cuándo no."
     hint_general: "Quiere ver de un golpe qué semanas ya no admiten nada."
     explanation: "Saturada: ver qué semanas ya no admiten nada. «Saciada» se dice tras comer bastante, y «dispersa» hablaría de su atención, no de su agenda."
@@ -244,5 +204,5 @@ metrics:
   family_size: 39
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 6, 7, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

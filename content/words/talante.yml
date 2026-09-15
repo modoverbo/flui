@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5033
 slug: "talante"
-status: "draft"
+status: "approved"
 lemma: "talante"
 part_of_speech: "sustantivo"
 syllables:
@@ -133,46 +133,6 @@ exercises:
         why_not: "El «talento» es facilidad para un trabajo concreto, y reconciliar vecinos no se resuelve con técnica, sino con un modo de tratar."
         hint_specific: "El talento se demuestra en un oficio. ¿Qué se demuestra en un portal?"
   - position: 5
-    sentence: "El {{blank}} de Lidia se nota más cuando algo sale mal que cuando todo va sobre ruedas."
-    hint_general: "Su modo de comportarse se ve mejor en lo malo."
-    explanation: "Talante: su modo de comportarse. «Semblante» sería la cara de un momento, y el «ánimo» sube y baja, mientras esto se mantiene."
-    options:
-      - position: 1
-        text: "talante"
-        is_correct: true
-      - position: 2
-        text: "semblante"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "El «semblante» es la cara de un momento concreto, y la frase compara dos épocas distintas de la vida de Lidia."
-        hint_specific: "El semblante dura lo que dura un gesto. ¿Qué se compara en la frase?"
-      - position: 3
-        text: "ánimo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "El «ánimo» sube y baja según el día, y lo que la frase destaca es algo que se mantiene también cuando todo va mal."
-        hint_specific: "El ánimo se cae con una mala noticia. ¿Qué resiste en Lidia?"
-  - position: 6
-    sentence: "Hay quien tiene mucho {{blank}} para escuchar y poca paciencia para esperar."
-    hint_general: "Alguien trata muy bien a la gente pero no sabe esperar."
-    explanation: "Talante: la manera de tratar a quien habla. «Talento» sería facilidad para un trabajo, y el «carácter» abarca todo el modo de ser, también lo que no trata con gente."
-    options:
-      - position: 1
-        text: "carácter"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "El «carácter» abarca todo el modo de ser de alguien, y la frase separa una parte concreta: cómo trata a quien habla."
-        hint_specific: "El carácter lo incluye todo. ¿Qué parte se separa aquí de la paciencia?"
-      - position: 2
-        text: "talento"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "El «talento» es la facilidad para un trabajo, y escuchar bien no es un trabajo con técnica, sino un trato."
-        hint_specific: "El talento produce resultados visibles. ¿Qué se contrapone aquí a la paciencia?"
-      - position: 3
-        text: "talante"
-        is_correct: true
-  - position: 7
     sentence: "Fermín llegó de mal humor y aun así mantuvo el {{blank}} de siempre con los clientes."
     hint_general: "Pese al mal día, trató a la gente igual que otras veces."
     explanation: "Talante: el trato de siempre con la gente. «Talento» sería facilidad para hacer algo bien, y el «semblante» es la cara, que sí le cambió ese día."
@@ -192,7 +152,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "El «talento» es la facilidad para hacer algo bien, y lo que Fermín mantiene es su forma de atender a la gente."
         hint_specific: "El talento no depende del humor. ¿Qué mantiene Fermín con esfuerzo?"
-  - position: 8
+  - position: 6
     sentence: "Un equipo se parece al {{blank}} de quien lo dirige, para bien y para mal."
     hint_general: "El equipo acaba tratándose como se trata quien manda."
     explanation: "Talante: la manera de tratar de quien dirige. «Talento» sería su facilidad para un trabajo, y la «flema» es palabra culta y sugiere frialdad."
@@ -241,5 +201,5 @@ metrics:
   family_size: 5
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 5, 6, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

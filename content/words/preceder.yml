@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "preceder"
-status: "draft"
+status: "approved"
 lemma: "preceder"
 part_of_speech: "verbo"
 syllables:
@@ -35,8 +35,10 @@ themes:
   - slug: "conectores-estructura"
     relevance: 2
 tags:
-  comodin: ["antes"]
-  funcion: ["ordenar"]
+  comodin:
+    - "antes"
+  funcion:
+    - "ordenar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -231,11 +233,11 @@ readings:
     before_phrase: "Creo que tú estás antes que yo, ¿no?"
     after_phrase: "Tu nombre precede al mío en la lista."
 metrics:
-  zipf_overall: 4.0540
+  zipf_overall: 4.054
   dispersion_dp: 0.1154
   pedantry_proxy: 0.4845
   family_size: 55
 provenance:
   generator: "flui authoring agent — theme paronimos (preceder / proceder)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3 + reviewer-a2-r3 + reviewer-b2-r3 + reviewer-a3-r3 + reviewer-b3-r3"
+  checked_on: "2026-09-15"

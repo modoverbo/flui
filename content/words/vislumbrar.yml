@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "vislumbrar"
-status: "draft"
+status: "approved"
 lemma: "vislumbrar"
 part_of_speech: "verbo"
 syllables:
@@ -35,8 +35,10 @@ themes:
   - slug: "persuasion-storytelling"
     relevance: 1
 tags:
-  comodin: ["ver"]
-  funcion: ["precisar"]
+  comodin:
+    - "ver"
+  funcion:
+    - "precisar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -231,11 +233,11 @@ readings:
     before_phrase: "Más o menos me imagino por dónde quiero ir."
     after_phrase: "Vislumbro un puesto donde decida sobre el producto."
 metrics:
-  zipf_overall: 3.8930
+  zipf_overall: 3.893
   dispersion_dp: 0.1067
-  pedantry_proxy: 0.5020
+  pedantry_proxy: 0.502
   family_size: 9
 provenance:
   generator: "flui authoring agent — theme paronimos (vislumbrar / deslumbrar)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3 + reviewer-a2-r3 + reviewer-b2-r3 + reviewer-a3-r3 + reviewer-b3-r3"
+  checked_on: "2026-09-15"

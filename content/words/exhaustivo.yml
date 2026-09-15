@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "exhaustivo"
-status: "draft"
+status: "approved"
 lemma: "exhaustivo"
 part_of_speech: "adjetivo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "redaccion-ejecutiva"
     relevance: 1
 tags:
-  comodin: ["completo"]
-  funcion: ["precisar"]
+  comodin:
+    - "completo"
+  funcion:
+    - "precisar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -70,26 +72,6 @@ exercises:
         why_not: "«Rápido» apunta a mirar por encima, y cuarenta páginas revisadas antes de firmar piden justo lo contrario."
         hint_specific: "Rápido sugiere pasar de largo. ¿Qué se juega Lorena al firmar ese anexo?"
   - position: 2
-    sentence: "El taller entregó un informe {{blank}}: cada pieza, cada hora y cada costo."
-    hint_general: "El informe cubre todos los puntos, uno por uno."
-    explanation: "Exhaustivo: el informe cubre todos los puntos. «Exhausto» describiría a alguien agotado, y «pormenorizado» suena a escrito administrativo."
-    options:
-      - position: 1
-        text: "pormenorizado"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pormenorizado» pertenece al lenguaje administrativo y suena rígido para hablar del informe de un taller de barrio."
-        hint_specific: "«Pormenorizado» aparece en expedientes oficiales. ¿Encaja con el taller de la esquina?"
-      - position: 2
-        text: "exhaustivo"
-        is_correct: true
-      - position: 3
-        text: "exhausto"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Exhausto» describe a una persona sin fuerzas, y un informe no se cansa: cubre más o menos puntos."
-        hint_specific: "Exhausto se dice de quien no puede más. ¿Puede cansarse un informe?"
-  - position: 3
     sentence: "No hace falta un control tan {{blank}} para una compra tan pequeña."
     hint_general: "Revisarlo absolutamente todo resulta desproporcionado aquí."
     explanation: "Exhaustivo: revisarlo todo sobra para algo pequeño. «Extensivo» diría que el control alcanza a más casos, y «costoso» hablaría del precio, no del detalle."
@@ -109,7 +91,7 @@ exercises:
       - position: 3
         text: "exhaustivo"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "La lista de invitados es {{blank}}: están hasta los vecinos del quinto."
     hint_general: "No falta nadie en esa lista."
     explanation: "Exhaustiva: no falta nadie en la lista. «Exhausta» describiría a alguien sin fuerzas, y «generosa» hablaría de la intención, no de si están todos."
@@ -129,27 +111,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Generosa» elogiaría la intención de quien invita, y lo que subraya la frase es que no falta nadie."
         hint_specific: "Generosa juzga el gesto. ¿Qué demuestra que estén los vecinos del quinto?"
-  - position: 5
-    sentence: "Marcos dedicó el sábado a un repaso {{blank}} del archivo y encontró tres facturas repetidas."
-    hint_general: "Miró documento por documento hasta el final."
-    explanation: "Exhaustivo: miró documento por documento. «Exhausto» describiría a Marcos sin fuerzas, y «prolijo» suena rebuscado y en algunos países significa ordenado."
-    options:
-      - position: 1
-        text: "exhausto"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Exhausto» describiría a Marcos sin fuerzas al terminar, y la frase habla de cómo revisó el archivo."
-        hint_specific: "Exhausto se aplica a la persona. ¿Qué califica la frase, a Marcos o a su repaso?"
-      - position: 2
-        text: "prolijo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Prolijo» suena rebuscado y en varios países significa simplemente ordenado o limpio, así que no dice que se revisara todo."
-        hint_specific: "«Prolijo» cambia de sentido según el país. ¿Qué hace falta dejar claro aquí?"
-      - position: 3
-        text: "exhaustivo"
-        is_correct: true
-  - position: 6
+  - position: 4
     sentence: "Pidieron un estudio {{blank}} del ruido, no una impresión de una sola tarde."
     hint_general: "Quieren que se mida todo, en todos los momentos."
     explanation: "Exhaustivo: quieren que se mida todo. «Exhausto» describiría a alguien sin fuerzas, y «apresurado» sería justo la impresión de una tarde que rechazan."
@@ -169,7 +131,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Exhausto» se dice de quien acaba sin fuerzas, y un estudio no se agota: abarca más o menos horas."
         hint_specific: "Exhausto describe a personas. ¿Puede quedarse sin fuerzas un estudio?"
-  - position: 7
+  - position: 5
     sentence: "El manual es {{blank}} y por eso nadie lo lee entero, pero siempre resuelve la duda."
     hint_general: "Cubre absolutamente todos los casos posibles."
     explanation: "Exhaustivo: cubre todos los casos posibles. «Extensivo» diría que se aplica a más productos, y «farragoso» acusaría al manual de estar mal escrito."
@@ -189,7 +151,7 @@ exercises:
       - position: 3
         text: "exhaustivo"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Con una revisión {{blank}}, Sara detectó el fallo que llevaba meses escondido."
     hint_general: "Miró hasta el último rincón y por eso apareció."
     explanation: "Exhaustiva: miró hasta el último rincón. «Exhausta» describiría a Sara sin fuerzas, y «superficial» explicaría justo por qué el fallo seguía escondido."
@@ -234,9 +196,9 @@ readings:
 metrics:
   zipf_overall: 3.6597
   dispersion_dp: 0.1814
-  pedantry_proxy: 0.3970
+  pedantry_proxy: 0.397
   family_size: 7
 provenance:
   generator: "flui authoring agent — theme paronimos (exhaustivo / exhausto)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 2, 5, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

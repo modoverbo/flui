@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 315
 slug: "postergar"
-status: "draft"
+status: "approved"
 lemma: "postergar"
 part_of_speech: "verbo"
-syllables: ["pos", "ter", "gar"]
+syllables:
+  - "pos"
+  - "ter"
+  - "gar"
 stressed_syllable: 3
 ipa_latam: "[pos.terˈɣar]"
 ipa_es: "[pos.terˈɣar]"
@@ -32,8 +35,10 @@ themes:
   - slug: "conversaciones-dificiles"
     relevance: 1
 tags:
-  comodin: ["dejar"]
-  funcion: ["aplazar"]
+  comodin:
+    - "dejar"
+  funcion:
+    - "aplazar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -166,26 +171,6 @@ exercises:
         text: "postergó"
         is_correct: true
   - position: 7
-    sentence: "Andrés le pidió a su equipo {{blank}} la entrega una semana y nadie protestó."
-    hint_general: "Pide mover la entrega siete días, no quitarla del calendario."
-    explanation: "Postergar: mover la entrega siete días. «Posar» es colocar algo o quedarse quieto para una foto, y «dilatar» estiraría el plazo sin decir hasta cuándo."
-    options:
-      - position: 1
-        text: "postergar"
-        is_correct: true
-      - position: 2
-        text: "posar"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Posar» es colocar algo con cuidado o quedarse quieto para una foto, y una entrega no se posa."
-        hint_specific: "«Posar» pide una cámara o una mesa. ¿Cuál hay en esta escena?"
-      - position: 3
-        text: "dilatar"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Dilatar» estira un plazo sin decir hasta cuándo, y Andrés pide exactamente una semana."
-        hint_specific: "«Dilatar» estira sin poner final. ¿Cuánto tiempo pide Andrés?"
-  - position: 8
     sentence: "Carmen dejó de {{blank}} la llamada al banco y por fin la hizo un martes por la mañana."
     hint_general: "Deja de moverla de día en día y la hace de una vez."
     explanation: "Postergar: deja de moverla de día en día. «Postrar» es dejar sin fuerzas, y «repetir» sería llamar otra vez, cuando no había llamado ninguna."
@@ -234,5 +219,5 @@ metrics:
   family_size: 84
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

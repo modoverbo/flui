@@ -239,8 +239,17 @@ select is(
 );
 
 -- Seed taxonomy ----------------------------------------------------------------------------------
+select is((select count(*)::int from public.themes where slug not like 'test-tema-%'), 28,
+  'the catalogue carries the whole 28-theme taxonomy');
+
 select is((select count(*)::int from public.themes where published and slug not like 'test-tema-%'), 16,
-  'the seed publishes the 16 launch themes');
+  'the seed publishes the 16 launch themes and none of the 12 without content');
+
+select is_empty(
+  $$ select slug from public.themes
+     where not published and status <> 'soon' and slug not like 'test-tema-%' $$,
+  'a theme kept out of the catalogue is never anything but soon'
+);
 
 select is_empty(
   $$ select t.slug from public.themes t

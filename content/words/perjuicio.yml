@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "perjuicio"
-status: "draft"
+status: "approved"
 lemma: "perjuicio"
 part_of_speech: "sustantivo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "negociacion"
     relevance: 2
 tags:
-  comodin: ["daño"]
-  funcion: ["precisar"]
+  comodin:
+    - "daño"
+  funcion:
+    - "precisar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -130,26 +132,6 @@ exercises:
         text: "perjuicio"
         is_correct: true
   - position: 5
-    sentence: "Ana calculó el {{blank}} económico del corte de luz antes de llamar al seguro."
-    hint_general: "Pone cifra a la pérdida que le causó algo ajeno a su voluntad."
-    explanation: "Perjuicio: la pérdida que Ana pone en cifras. «Prejuicio» es una idea previa sobre alguien, y «menoscabo» suena a escrito jurídico en una llamada corriente."
-    options:
-      - position: 1
-        text: "prejuicio"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Un «prejuicio» es una idea previa sobre una persona y no se calcula en dinero; Ana suma lo que perdió."
-        hint_specific: "El prejuicio no tiene cifra. ¿Qué está sumando Ana antes de llamar?"
-      - position: 2
-        text: "menoscabo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Menoscabo» pertenece al lenguaje jurídico y subraya la pérdida de valor o de prestigio; en una llamada al seguro suena impostado."
-        hint_specific: "«Menoscabo» vive en los escritos de abogados. ¿Ana redacta una demanda o llama por teléfono?"
-      - position: 3
-        text: "perjuicio"
-        is_correct: true
-  - position: 6
     sentence: "Nadie quiso reconocer el {{blank}} que el cambio de horario causó a los turnos de noche."
     hint_general: "Se trata del daño que una medida deja sobre un grupo concreto."
     explanation: "Perjuicio: el daño que la medida dejó sobre esos turnos. «Prejuicio» es una idea previa sobre alguien, y «trastorno» apunta al desorden, no a la pérdida."
@@ -169,7 +151,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Un «prejuicio» sería una idea formada de antemano sobre esos trabajadores, y aquí lo que se discute es cuánto pierden."
         hint_specific: "El prejuicio juzga a la gente por adelantado. ¿Se está juzgando a alguien o contando pérdidas?"
-  - position: 7
+  - position: 6
     sentence: "Al revisar la factura, Julián dejó por escrito el {{blank}} que le había causado el cobro doble."
     hint_general: "Pone nombre a la pérdida que le ocasionó un fallo ajeno."
     explanation: "Perjuicio: la pérdida que le causó el cobro doble. «Prejuicio» es una idea previa sobre alguien, y «agravio» apunta a la ofensa, no al dinero."
@@ -189,7 +171,7 @@ exercises:
       - position: 3
         text: "perjuicio"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "La mediadora explicó que aplazar la entrega una semana no causaba ningún {{blank}} a la otra parte."
     hint_general: "Se trata de comprobar si alguien pierde algo real con ese aplazamiento."
     explanation: "Perjuicio: nadie pierde nada con el aplazamiento. «Perjurio» es mentir bajo juramento, y «descalabro» es coloquial y exagera hasta el desastre."
@@ -238,5 +220,5 @@ metrics:
   family_size: 31
 provenance:
   generator: "flui authoring agent — theme paronimos (perjuicio / prejuicio)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 5, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

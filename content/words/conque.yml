@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "conque"
-status: "draft"
+status: "approved"
 lemma: "conque"
 part_of_speech: "conector"
 syllables:
@@ -69,26 +69,6 @@ exercises:
         why_not: "«Aunque» avisa de un obstáculo, y la aprobación del cliente no estorba el lanzamiento: lo permite."
         hint_specific: "«Aunque» prepara una pega. ¿El visto bueno frena la publicación o la abre?"
   - position: 2
-    sentence: "Nadie confirmó la cena hasta anoche, {{blank}} reservé mesa para seis y avisé al grupo."
-    hint_general: "Cierra el silencio de todos con la decisión práctica que tomó ella sola."
-    explanation: "Conque: el silencio de todos desemboca en su decisión. «Ergo» sonaría a demostración lógica y «salvo que» abriría una excepción que nadie plantea."
-    options:
-      - position: 1
-        text: "conque"
-        is_correct: true
-      - position: 2
-        text: "ergo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Ergo» suena a razonamiento de manual y presenta la reserva como una deducción, no como lo que alguien resolvió en un chat."
-        hint_specific: "«Ergo» pertenece a un razonamiento formal. ¿Esto es una demostración o una decisión entre amigos?"
-      - position: 3
-        text: "salvo que"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Salvo que» abre una excepción, y aquí no se deja fuera ningún caso: se cuenta lo que ella hizo después."
-        hint_specific: "«Salvo que» deja un caso fuera. ¿Se excluye algo o se sigue adelante?"
-  - position: 3
     sentence: "Llevo tres años coordinando proveedores, {{blank}} los plazos apretados ya no me asustan."
     hint_general: "Une la experiencia que acaba de contar con lo que esa experiencia le permite afirmar."
     explanation: "Conque: los tres años llevan a esa calma con los plazos. «Mientras» pondría los dos hechos en paralelo y «con qué» convertiría la frase en una pregunta."
@@ -108,27 +88,7 @@ exercises:
       - position: 3
         text: "conque"
         is_correct: true
-  - position: 4
-    sentence: "El horno se estropeó el jueves, {{blank}} este año la comida la preparamos en casa de Nuria."
-    hint_general: "El aparato roto obliga a cambiar de sitio: enlaza el problema con la salida que encontraron."
-    explanation: "Conque: el horno roto lleva al cambio de casa. «Total que» resumiría una anécdota con desgana y «en cambio» opondría dos ideas que aquí no chocan."
-    options:
-      - position: 1
-        text: "total que"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Total que» es muy coloquial y cierra una historia larga quitándole importancia, en vez de presentar lo que se decide."
-        hint_specific: "«Total que» remata una anécdota con desgana. ¿Se resta importancia o se anuncia el plan?"
-      - position: 2
-        text: "en cambio"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«En cambio» opone dos cosas, y la segunda parte no contradice a la primera: sale de ella."
-        hint_specific: "«En cambio» marca contraste. ¿Las dos partes chocan o una lleva a la otra?"
-      - position: 3
-        text: "conque"
-        is_correct: true
-  - position: 5
+  - position: 3
     sentence: "La furgoneta solo cabe una vez en el garaje, {{blank}} bajamos primero lo pesado y después las cajas."
     hint_general: "La limitación manda: enlázala con el orden que el grupo decide seguir."
     explanation: "Conque: el límite del garaje obliga a ese orden. «Con que» pediría una condición y «por si acaso» hablaría de prevenir algo todavía incierto."
@@ -148,7 +108,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Por si acaso» previene algo que quizá ocurra, y el tamaño del garaje es un hecho ya conocido."
         hint_specific: "«Por si acaso» cubre una posibilidad. ¿Esto es una precaución o una consecuencia?"
-  - position: 6
+  - position: 4
     sentence: "Ariadna respondió que el presupuesto ya está aprobado, {{blank}} podemos pedir las licencias hoy mismo."
     hint_general: "El dinero ya está disponible: une ese hecho con el paso que se puede dar ahora."
     explanation: "Conque: la aprobación permite pedir las licencias ya. «Aun así» supondría un obstáculo inexistente y «mientras tanto» inventaría una espera."
@@ -168,7 +128,7 @@ exercises:
       - position: 3
         text: "conque"
         is_correct: true
-  - position: 7
+  - position: 5
     sentence: "El taller de guitarra de julio se canceló, {{blank}} dediqué el mes a repasar lo que ya sabía."
     hint_general: "La cancelación empuja al plan alternativo: enlaza lo que falló con lo que hizo en su lugar."
     explanation: "Conque: la cancelación lleva a repasar en casa. «Con qué» haría una pregunta y «encima» añadiría otra queja, cuando el repaso es la salida."
@@ -188,7 +148,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Encima» suma una queja más al problema, y repasar lo aprendido no es otra desgracia: es la salida."
         hint_specific: "«Encima» acumula motivos de enfado. ¿El repaso empeora el mes o lo salva?"
-  - position: 8
+  - position: 6
     sentence: "Tres vecinos ya firmaron el acuerdo del ascensor, {{blank}} solo falta convocar la junta de mayo."
     hint_general: "Las firmas conseguidas llevan al único paso que queda: une una cosa con la otra."
     explanation: "Conque: las firmas llevan a convocar la junta. «O sea» repetiría la misma idea con otras palabras y «visto lo visto» sonaría a resignación."
@@ -237,5 +197,5 @@ metrics:
   family_size: 282
 provenance:
   generator: "authored for the conectores-estructura theme"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 2, 4, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

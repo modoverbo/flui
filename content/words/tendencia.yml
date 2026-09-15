@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3210
 slug: "tendencia"
-status: "draft"
+status: "approved"
 lemma: "tendencia"
 part_of_speech: "sustantivo"
 syllables:
@@ -113,26 +113,6 @@ exercises:
         why_not: "Una «costumbre» la repite alguien porque quiere, y aquí lo que se repite lo marcan los datos de cuatro tiendas."
         hint_specific: "«Costumbre» la mantiene una persona. ¿Quién repite esto, la gente o los números?"
   - position: 4
-    sentence: "Los patinetes llevan cuatro años subiendo sin parar, y esa {{blank}} ya no depende de la estación del año."
-    hint_general: "Cuatro años subiendo dejan de ser cosa de una temporada."
-    explanation: "Tendencia: cuatro años subiendo sin depender de la temporada. Una «moda» dura una temporada, que la frase descarta, y una «insistencia» es alguien repitiendo lo mismo."
-    options:
-      - position: 1
-        text: "moda"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «moda» dura una temporada, y la frase dice que esto ya no depende de la estación del año."
-        hint_specific: "«Moda» vive una temporada. ¿Cuánto llevan subiendo los patinetes?"
-      - position: 2
-        text: "insistencia"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Una «insistencia» es alguien repitiendo lo mismo una y otra vez, y aquí lo que sube son las ventas."
-        hint_specific: "«Insistencia» la pone una persona pesada. ¿Quién insiste aquí?"
-      - position: 3
-        text: "tendencia"
-        is_correct: true
-  - position: 5
     sentence: "Sofía no sigue lo que está de moda: mira la {{blank}} de tres años antes de comprar nada para la tienda."
     hint_general: "Mira hacia dónde se mueve todo en tres años, no lo que se lleva ahora."
     explanation: "Tendencia: hacia dónde se mueve todo en tres años. «Propensión» suena a lenguaje de libro y habla de la inclinación interior de una persona, y una «dependencia» es necesitar algo para funcionar."
@@ -152,7 +132,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «dependencia» es necesitar algo o a alguien, y aquí Sofía solo observa tres años de datos."
         hint_specific: "«Dependencia» va de no poder sin algo. ¿Qué observa Sofía?"
-  - position: 6
+  - position: 5
     sentence: "No fue suerte ni mala suerte: en cinco trimestres seguidos la {{blank}} apunta al mismo lado."
     hint_general: "Cinco trimestres seguidos señalando lo mismo no son cosa del azar."
     explanation: "Tendencia: cinco trimestres apuntando al mismo lado. Una «racha» sería suerte, y la frase la descarta; una «advertencia» es un aviso que da alguien."
@@ -172,7 +152,7 @@ exercises:
       - position: 3
         text: "tendencia"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "En casa hay una {{blank}} clara: cada año se cocina menos y se pide más comida de fuera."
     hint_general: "Año tras año, la cosa se mueve siempre en la misma dirección."
     explanation: "Tendencia: el movimiento que se repite cada año. Una «costumbre» se repite igual y aquí cambia año a año, y una «insistencia» es alguien repitiendo lo mismo."
@@ -192,7 +172,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «insistencia» es alguien repitiendo lo mismo para convencer, y aquí nadie convence a nadie."
         hint_specific: "«Insistencia» la pone alguien pesado. ¿Quién insiste en esa casa?"
-  - position: 8
+  - position: 7
     sentence: "El informe no da ningún número nuevo; solo dibuja la {{blank}} con los datos que ya teníamos."
     hint_general: "Con los datos de siempre se dibuja hacia dónde va la cosa."
     explanation: "Tendencia: hacia dónde va la cosa según los datos viejos. Una «cifra» nueva es lo que el informe no aporta, y una «moda» duraría solo una temporada."
@@ -237,9 +217,9 @@ readings:
 metrics:
   zipf_overall: 5.1595
   dispersion_dp: 0.1073
-  pedantry_proxy: 0.4940
+  pedantry_proxy: 0.494
   family_size: 38
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

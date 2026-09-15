@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "entretanto"
-status: "draft"
+status: "approved"
 lemma: "entretanto"
 part_of_speech: "adverbio"
 syllables:
@@ -93,26 +93,6 @@ exercises:
         why_not: "«Por tanto» presenta lo segundo como resultado lógico, y bajar los buzones no se deduce de la obra: solo ocurre a la vez."
         hint_specific: "«Por tanto» anuncia una deducción. ¿El cambio de buzones se deduce o se decide?"
   - position: 3
-    sentence: "Aún no hay respuesta del banco. {{blank}}, Olga sigue pagando el alquiler viejo."
-    hint_general: "Cuenta lo que ella hace mientras la respuesta no llega."
-    explanation: "Entretanto: el alquiler sigue durante la espera. «A todo esto» abriría una anécdota al margen y «en cambio» opondría dos ideas que no se oponen."
-    options:
-      - position: 1
-        text: "a todo esto"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«A todo esto» es de conversación y abre un inciso curioso, cuando aquí se informa de un gasto que sigue corriendo."
-        hint_specific: "«A todo esto» introduce una curiosidad al margen. ¿Pagar el alquiler es un detalle curioso?"
-      - position: 2
-        text: "entretanto"
-        is_correct: true
-      - position: 3
-        text: "en cambio"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«En cambio» enfrenta dos ideas, y pagar el alquiler no contradice la falta de respuesta: convive con ella."
-        hint_specific: "«En cambio» necesita dos ideas que choquen. ¿Estas dos chocan o suceden a la vez?"
-  - position: 4
     sentence: "El vuelo se retrasó cuatro horas y, {{blank}}, Ismael repasó la presentación dos veces."
     hint_general: "Cuenta cómo aprovechó esas cuatro horas muertas en la sala de embarque."
     explanation: "Entretanto: las cuatro horas se llenan con el repaso. «Entretenido» describiría su ánimo y «al final» situaría el repaso después del vuelo."
@@ -132,7 +112,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Al final» coloca el repaso después de todo, y él repasó justo durante esas horas, no cuando terminaron."
         hint_specific: "«Al final» cierra una serie. ¿Repasó cuando acabó la espera o durante ella?"
-  - position: 5
+  - position: 4
     sentence: "La cocina tarda media hora en calentar; {{blank}}, ponemos la mesa y abrimos el vino."
     hint_general: "Di qué hace la casa durante esa media hora de horno frío."
     explanation: "Entretanto: la media hora se aprovecha. «Entre tantos» hablaría de cosas amontonadas y «encima» añadiría una queja que no hay."
@@ -152,7 +132,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Encima» suma un motivo de queja, y poner la mesa no es una molestia añadida: es lo que se hace mientras se espera."
         hint_specific: "«Encima» acumula motivos de enfado. ¿Alguien se queja en esta cocina?"
-  - position: 6
+  - position: 5
     sentence: "Nos dieron cita para octubre. {{blank}}, Yolanda busca una opción más cerca de casa."
     hint_general: "Cuenta qué hace ella durante los meses que faltan para esa cita."
     explanation: "Entretanto: los meses de espera se llenan con la búsqueda. «Y en esas» sonaría a relato de barra y «así pues» haría de la búsqueda una consecuencia."
@@ -172,7 +152,7 @@ exercises:
       - position: 3
         text: "entretanto"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Cambiamos de proveedor el mes que viene; {{blank}}, pedimos lo justo para no acumular existencias."
     hint_general: "Explica cómo se compra durante las semanas que faltan para el cambio."
     explanation: "Entretanto: las semanas previas se gestionan así. «Entretenidos» describiría el ánimo del equipo y «en resumen» anunciaría un cierre que no llega."
@@ -192,7 +172,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«En resumen» condensa lo ya dicho, y comprar lo justo no resume el cambio de proveedor: pasa mientras llega."
         hint_specific: "«En resumen» cierra y condensa. ¿Esta parte resume la anterior o la acompaña?"
-  - position: 8
+  - position: 7
     sentence: "El fontanero vuelve el lunes con la pieza; {{blank}}, cerramos la llave de paso cada noche."
     hint_general: "Di qué hace la casa durante los días que faltan para la reparación."
     explanation: "Entretanto: los días de espera piden esa precaución. «De ahí que» la convertiría en consecuencia y «entre tantos» hablaría de cosas amontonadas."
@@ -241,5 +221,5 @@ metrics:
   family_size: 390
 provenance:
   generator: "authored for the conectores-estructura theme"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

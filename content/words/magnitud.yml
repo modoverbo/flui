@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3215
 slug: "magnitud"
-status: "draft"
+status: "approved"
 lemma: "magnitud"
 part_of_speech: "sustantivo"
 syllables:
@@ -191,26 +191,6 @@ exercises:
       - position: 3
         text: "magnitud"
         is_correct: true
-  - position: 8
-    sentence: "Para explicarlo al comité, Olga dejó una cifra y una {{blank}} clara, sin adornos ni palabras grandes."
-    hint_general: "Explica el tamaño con un número y sin florituras."
-    explanation: "Magnitud: el tamaño explicado con un número. «Envergadura» suena a palabra grande, justo lo que ella evita, y la «causa» explicaría por qué pasa, no cuánto ocupa."
-    options:
-      - position: 1
-        text: "envergadura"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Envergadura» es una de esas palabras grandes que la frase dice que Olga evitó."
-        hint_specific: "«Envergadura» suena a discurso solemne. Relee el final de la frase."
-      - position: 2
-        text: "magnitud"
-        is_correct: true
-      - position: 3
-        text: "causa"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "La «causa» explicaría por qué ocurre, y aquí Olga solo da un número y su tamaño."
-        hint_specific: "«Causa» responde al porqué. ¿Qué dejó Olga junto a la cifra?"
 readings:
   - position: 1
     scene: "trabajo"
@@ -240,5 +220,5 @@ metrics:
   family_size: 36
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 8, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

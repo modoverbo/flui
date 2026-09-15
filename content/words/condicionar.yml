@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 2106
 slug: "condicionar"
-status: "draft"
+status: "approved"
 lemma: "condicionar"
 part_of_speech: "verbo"
-syllables: ["con", "di", "cio", "nar"]
+syllables:
+  - "con"
+  - "di"
+  - "cio"
+  - "nar"
 stressed_syllable: 4
 ipa_latam: "[kon.di.sjoˈnaɾ]"
 ipa_es: "[kon.di.θjoˈnaɾ]"
@@ -25,15 +29,18 @@ replaces:
     after: "Condicionamos el trabajo a que llegue el material"
   - before: "Dependemos de que ellos aprueben"
     after: "Nuestra parte queda condicionada a que ellos aprueben"
-family: ["condición"]
+family:
+  - "condición"
 themes:
   - slug: "negociacion"
     relevance: 3
   - slug: "decir-que-no"
     relevance: 2
 tags:
-  comodin: ["decir"]
-  funcion: ["exigir"]
+  comodin:
+    - "decir"
+  funcion:
+    - "exigir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -86,26 +93,6 @@ exercises:
         text: "condicionó"
         is_correct: true
   - position: 3
-    sentence: "Si {{blank}} tu ayuda a que te devuelvan el favor, deja de ser ayuda y pasa a ser un trato, y el otro queda libre de aceptarlo o de decir que no."
-    hint_general: "Pedir algo a cambio convierte la ayuda en un intercambio."
-    explanation: "Condicionas: pides algo a cambio y el otro decide. «Acondicionas» sería preparar un lugar, y «atas» sonaría a sujetar al otro sin dejarle salida."
-    options:
-      - position: 1
-        text: "condicionas"
-        is_correct: true
-      - position: 2
-        text: "acondicionas"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Acondicionar» es dejar un espacio listo para usarlo; la ayuda no es un espacio, y aquí se le pone un precio."
-        hint_specific: "Acondicionar deja un sitio listo. ¿Aquí hay algún sitio?"
-      - position: 3
-        text: "atas"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Atar» sujeta al otro y no le deja escapatoria, y el final de la frase dice que puede decir que no."
-        hint_specific: "«Atar» no deja escapatoria. ¿Qué puede hacer el otro con ese trato?"
-  - position: 4
     sentence: "El equipo de Iván {{blank}} su parte del trabajo a que llegaran antes los permisos del ayuntamiento."
     hint_general: "Su parte depende de que lleguen primero esos permisos."
     explanation: "Condicionó: su parte depende de los permisos. «Acondicionó» sería preparar un espacio, y «limitó» diría que hizo menos trabajo, no que puso un requisito."
@@ -125,7 +112,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Acondicionar» es preparar un local para que funcione; el equipo no prepara ningún local, pone un requisito."
         hint_specific: "Acondicionar prepara locales. ¿Qué pone el equipo, un local o un requisito?"
-  - position: 5
+  - position: 4
     sentence: "Mi padre {{blank}} el préstamo del coche a que volviéramos antes de la una."
     hint_general: "El coche solo sale si se cumple la hora de vuelta."
     explanation: "Condicionó: el coche depende de la hora de vuelta. «Condonó» sería perdonar una deuda, y «acondicionó» sería dejar el coche a punto."
@@ -145,7 +132,7 @@ exercises:
       - position: 3
         text: "condicionó"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "En la oferta, la subida de sueldo quedaba {{blank}} a los resultados del primer trimestre."
     hint_general: "La subida depende de lo que pase en esos tres meses."
     explanation: "Condicionada: la subida depende de esos tres meses. «Acondicionada» hablaría de un espacio preparado, y «asegurada» diría lo contrario, que ya está garantizada."
@@ -165,7 +152,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Asegurada» diría que la subida está garantizada pase lo que pase; la frase dice justo lo contrario."
         hint_specific: "Asegurada significa garantizada. ¿La subida está garantizada?"
-  - position: 7
+  - position: 6
     sentence: "Nadie quiere trabajar con quien {{blank}} cada favor a recibir otro a cambio."
     hint_general: "Hace que cada favor dependa de recibir otro de vuelta."
     explanation: "Condiciona: hace que cada favor dependa de otro. «Acondiciona» sería preparar un espacio, y «exige» diría que reclama sin más, sin poner nada de su parte."
@@ -185,7 +172,7 @@ exercises:
       - position: 3
         text: "condiciona"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "La respuesta de Natalia fue un sí {{blank}}: le encantaba el puesto y lo aceptaba en cuanto le cambiaran el horario."
     hint_general: "Dice que sí, aunque su sí depende de una cosa concreta."
     explanation: "Condicionado: su sí depende del horario. «Acondicionado» se dice de un local preparado, y «tibio» diría que el puesto no le entusiasmaba."
@@ -234,5 +221,5 @@ metrics:
   family_size: 98
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 3, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

@@ -64,6 +64,11 @@ void main() {
       expect(const WordForms(lemma: 'zanjar', isVerb: true).stem, 'zanj');
     });
 
+    test('stems pronominal verbs by removing "se" and the ending', () {
+      expect(const WordForms(lemma: 'extenderse', isVerb: true).stem, 'extend');
+      expect(const WordForms(lemma: 'abstenerse', isVerb: true).stem, 'absten');
+    });
+
     test('stems adjectives by removing a final vowel or z', () {
       expect(perspicaz.stem, 'perspica');
       expect(
@@ -72,7 +77,16 @@ void main() {
       );
     });
 
+    const extenderse = WordForms(
+      lemma: 'extenderse',
+      isVerb: true,
+      extraForms: ['extensión', 'extenso'],
+    );
+
     final matches = <(WordForms, String, bool)>[
+      (extenderse, 'extendí', true),
+      (extenderse, 'extendieron', true),
+      (extenderse, 'entender', false),
       (perspicaz, 'perspicaz', true),
       (perspicaz, 'Perspicaces', true),
       (perspicaz, 'perspicacia', true),

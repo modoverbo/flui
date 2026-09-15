@@ -214,6 +214,48 @@ the answer wins. The validator checks the three strings literally.
 - Agreement: substitute the answer into the blank and read it. "una pregunta
   tan perspicuo" fails; "Nosotros planteó" fails.
 
+### Distractors that look fine and are not
+
+The rule underneath every item: **an exercise must be answerable only by
+knowing what the word means.** Four ways an item passes the validators, and
+sometimes even the gate, while breaking that rule. Round 3 dropped thirteen
+words to them.
+
+**(a) Orthographic noise.** The distractor differs from the answer by a letter
+and means something unrelated, so the reader solves the item by reading
+carefully, not by knowing the word. All eight items of `gesto` pitted it
+against `gasto`; `dominio` ran on `domicilio` / `domingo`, `oficio` on
+`orificio` / `edificio`. A paronym earns its slot when the two words are
+*plausible in the same sentence* (perspicaz / suspicaz) — not when only one of
+them makes any sense at all.
+
+**(b) Syntactic giveaway.** The grammar picks the answer before the meaning
+does. Every `contrariamente` stem ended "___ a lo que…", and of the three
+options only the target takes that *a* — the reader matches the preposition and
+never reads the clause. `renunciar` failed the same way: "___ a" decided all of
+it. Check it by blanking the meaning out: if you can still answer from the
+function words around the gap, the item is broken.
+
+**(c) A "wrong spelling" that is not wrong.** `asimismo` set its items against
+`así mismo`, but the RAE accepts "así mismo" in two words for that same
+meaning. The contrast the item asks the reader to make does not exist, so the
+"correct" answer is only correct by our say-so. Before you build an item on a
+spelling contrast, confirm the variant is actually rejected — not merely less
+common.
+
+**(d) The word is already everyday vocabulary.** Above roughly **Zipf 5.0** the
+reader says the word daily, so every item is trivial no matter how the
+distractors are built: `sino` (5.75), `asimismo` (5.40), `finalmente` (5.26),
+`tampoco` (5.20), `salvo` (5.09), `apenas` (5.05). This is criterion 3 of §1
+("recognizes it but rarely says it") failing late, at the exercise, where it is
+expensive. Run `content:metrics --lemma <word>` before you write eight items,
+not after.
+
+None of the four is caught by a validator, and the gate only catches them by
+accident — reviewers answer these items correctly, because they *are*
+answerable. They are answerable for the wrong reason, which is the thing you
+have to check yourself.
+
 ---
 
 ## 4. The three readings

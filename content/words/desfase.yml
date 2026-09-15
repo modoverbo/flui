@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3205
 slug: "desfase"
-status: "draft"
+status: "approved"
 lemma: "desfase"
 part_of_speech: "sustantivo"
 syllables:
@@ -133,26 +133,6 @@ exercises:
         why_not: "Un «cambio» dice que algo se volvió distinto, y estos dos calendarios nunca llegaron a coincidir."
         hint_specific: "«Cambio» supone un antes y un después. ¿Coincidieron alguna vez esos calendarios?"
   - position: 5
-    sentence: "El acta y el correo cuentan lo mismo con dos fechas distintas; ese {{blank}} conviene arreglarlo hoy."
-    hint_general: "Dos documentos que deberían decir la misma fecha y no la dicen."
-    explanation: "Desfase: dos documentos que no dan la misma fecha. «Despiste» es coloquial y culpa a la distracción de alguien, y un «desgaste» es lo que se estropea con el uso."
-    options:
-      - position: 1
-        text: "despiste"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Despiste» es coloquial y culpa a la distracción de una persona, y aquí solo consta que dos papeles no cuadran."
-        hint_specific: "«Despiste» señala a alguien distraído. ¿La frase señala a alguien?"
-      - position: 2
-        text: "desgaste"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Un «desgaste» es lo que se estropea con el uso, y un acta reciente no se ha gastado."
-        hint_specific: "«Desgaste» necesita uso y años. ¿Cuánto llevan esos dos papeles escritos?"
-      - position: 3
-        text: "desfase"
-        is_correct: true
-  - position: 6
     sentence: "Ninguno va tarde, pero uno cierra los números el día uno y el otro el día quince: el {{blank}} se arrastra cada mes."
     hint_general: "Dos cierres a fechas distintas que se repiten mes tras mes."
     explanation: "Desfase: dos cierres a fechas distintas. Un «retraso» diría que alguien llega tarde, y la frase lo niega; un «desfile» es gente caminando en fila."
@@ -172,7 +152,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Un «desfile» es gente caminando en fila para que la vean, y esto ocurre en una hoja de cálculo."
         hint_specific: "«Desfile» se celebra en la calle. ¿Dónde pasa lo que cuenta la frase?"
-  - position: 7
+  - position: 6
     sentence: "Entre lo que se decidió en marzo y lo que se hace hoy hay un {{blank}} constante que nadie ha explicado."
     hint_general: "Lo decidido y lo que se hace avanzan separados todo el tiempo."
     explanation: "Desfase: una separación constante entre lo decidido y lo que se hace. Un «salto» sería un cambio de golpe, y un «desgaste» es lo que se estropea con el uso."
@@ -192,7 +172,7 @@ exercises:
       - position: 3
         text: "desfase"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Con el turno de mañana y el de tarde contando las cajas a horas distintas, el {{blank}} aparece en cada inventario."
     hint_general: "Dos turnos cuentan a horas distintas y los números no coinciden."
     explanation: "Desfase: dos conteos que no coinciden en el tiempo. Un «hueco» es un espacio vacío, y un «cambio» diría que algo se volvió distinto, cuando aquí la diferencia es siempre la misma."
@@ -236,10 +216,10 @@ readings:
     after_phrase: "Hay un desfase constante con lo que decidimos."
 metrics:
   zipf_overall: 3.4987
-  dispersion_dp: 0.1830
+  dispersion_dp: 0.183
   pedantry_proxy: 0.4811
   family_size: 33
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 5, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

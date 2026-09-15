@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "intimar"
-status: "draft"
+status: "approved"
 lemma: "intimar"
 part_of_speech: "verbo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["amigos"]
-  funcion: ["precisar"]
+  comodin:
+    - "amigos"
+  funcion:
+    - "precisar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -130,26 +132,6 @@ exercises:
         text: "intimar"
         is_correct: true
   - position: 5
-    sentence: "Gabriel {{blank}} enseguida con el resto del grupo y ya tiene su silla fija en la mesa."
-    hint_general: "En poco tiempo pasó a ser uno más, con trato de amigo."
-    explanation: "Intimó: en poco tiempo pasó a ser amigo del grupo. «Intimidó» sería asustarlos, y «encajó» diría que no molesta, no que haya confianza."
-    options:
-      - position: 1
-        text: "intimó"
-        is_correct: true
-      - position: 2
-        text: "intimidó"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Intimidar» es asustar a los demás, y en la frase el grupo le guarda sitio en la mesa."
-        hint_specific: "Intimidar hace que los otros se aparten. ¿Qué hace el grupo con su silla?"
-      - position: 3
-        text: "encajó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Encajó» diría que no desentona en el grupo, y tener silla fija habla de confianza, no solo de buen ajuste."
-        hint_specific: "Encajar es no desentonar. ¿Qué significa tener silla fija en esa mesa?"
-  - position: 6
     sentence: "En el curso de cocina nadie {{blank}}: cada uno vino a lo suyo y se fue a su casa."
     hint_general: "Nadie pasó del trato educado a la amistad."
     explanation: "Intimó: nadie pasó del trato educado a la amistad. «Estimó» hablaría de aprecio o de calcular, y «charló» solo diría que hubo conversación."
@@ -169,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Charló» solo diría que hubo conversación, y se puede charlar dos horas y marcharse sin conocer a nadie."
         hint_specific: "Charlar es hablar un rato. ¿Basta hablar para hacerse amigo de alguien?"
-  - position: 7
+  - position: 6
     sentence: "Sofía prefiere {{blank}} despacio: primero un café, luego una cena, nunca de golpe."
     hint_general: "Construye la amistad cercana por pasos, sin prisa."
     explanation: "Intimar: construye la amistad por pasos. «Intimidar» sería asustar al otro, y «fraternizar» suena a lenguaje de asamblea o de tropa."
@@ -189,26 +171,6 @@ exercises:
         distractor_type: "register"
         why_not: "«Fraternizar» suena a lenguaje de asamblea o de tropa y describe un gesto colectivo, no la amistad lenta entre dos personas."
         hint_specific: "«Fraternizar» suena a discurso de grupo. ¿Encaja con un café entre dos?"
-  - position: 8
-    sentence: "Aunque compartían escritorio, Álvaro y Marcos nunca llegaron a {{blank}}."
-    hint_general: "La cercanía física no se convirtió en amistad."
-    explanation: "Intimar: nunca llegaron a ser amigos cercanos. «Intimidar» sería asustarse el uno al otro, y «conocerse» diría menos: compartir escritorio ya obliga a conocerse."
-    options:
-      - position: 1
-        text: "conocerse"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Conocerse» diría muy poco, porque compartir escritorio dos años ya obliga a conocerse; lo que faltó fue confianza."
-        hint_specific: "Conocerse pasa por fuerza al compartir mesa. ¿Qué es lo que no llegó a pasar?"
-      - position: 2
-        text: "intimidar"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Intimidar» sería asustarse el uno al otro, y la frase no habla de miedo: habla de distancia."
-        hint_specific: "Intimidar implica miedo. ¿Dice la frase que se temieran?"
-      - position: 3
-        text: "intimar"
-        is_correct: true
 readings:
   - position: 1
     scene: "trabajo"
@@ -238,5 +200,5 @@ metrics:
   family_size: 50
 provenance:
   generator: "flui authoring agent — theme paronimos (intimar / intimidar)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 5, 8, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

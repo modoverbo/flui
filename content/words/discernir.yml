@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "discernir"
-status: "draft"
+status: "approved"
 lemma: "discernir"
 part_of_speech: "verbo"
 syllables:
@@ -35,8 +35,10 @@ themes:
   - slug: "matices-precision"
     relevance: 2
 tags:
-  comodin: ["distinguir"]
-  funcion: ["precisar"]
+  comodin:
+    - "distinguir"
+  funcion:
+    - "precisar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -49,26 +51,6 @@ confusions:
     memory_trick: "Discurrir da vueltas; lo otro separa y termina."
 exercises:
   - position: 1
-    sentence: "Con tres presupuestos casi iguales, cuesta {{blank}} cuál conviene de verdad."
-    hint_general: "Cuesta separar opciones que se parecen mucho entre sí."
-    explanation: "Discernir: cuesta separar opciones parecidas. «Disentir» sería no estar de acuerdo con alguien, y «elegir» viene después, cuando ya sabes cuál es cuál."
-    options:
-      - position: 1
-        text: "disentir"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Disentir» es no estar de acuerdo con alguien, y aquí no hay nadie con quien discrepar: hay tres papeles parecidos."
-        hint_specific: "Disentir necesita a alguien enfrente. ¿Con quién estarías en desacuerdo ante tres presupuestos?"
-      - position: 2
-        text: "discernir"
-        is_correct: true
-      - position: 3
-        text: "elegir"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Elegir» viene después, cuando ya sabes cuál es cuál, y lo difícil aquí es justo llegar a distinguirlos."
-        hint_specific: "Elegir es el paso final. ¿Qué falta antes de poder elegir?"
-  - position: 2
     sentence: "Julia sabe {{blank}} entre una queja concreta y el mal día de alguien."
     hint_general: "Separa dos cosas que suenan parecidas cuando alguien habla enfadado."
     explanation: "Discernir: separa dos cosas que suenan parecidas. «Disentir» sería no estar de acuerdo, y «discurrir» sería darle vueltas sin llegar a distinguir nada."
@@ -88,27 +70,7 @@ exercises:
       - position: 3
         text: "discernir"
         is_correct: true
-  - position: 3
-    sentence: "Al principio nadie lograba {{blank}} qué parte del ruido venía del motor y cuál del techo."
-    hint_general: "No conseguían separar dos sonidos mezclados."
-    explanation: "Discernir: no lograban separar dos sonidos mezclados. «Disentir» sería no estar de acuerdo, y «dilucidar» suena a informe técnico y apunta a aclarar un misterio entero."
-    options:
-      - position: 1
-        text: "dilucidar"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Dilucidar» pertenece al lenguaje de los informes y apunta a aclarar un asunto entero, y aquí solo hay que separar dos ruidos."
-        hint_specific: "«Dilucidar» suena a investigación con expediente. ¿Encaja con dos ruidos en un auto?"
-      - position: 2
-        text: "discernir"
-        is_correct: true
-      - position: 3
-        text: "disentir"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Disentir» es no estar de acuerdo con alguien, y un ruido no opina: hay que separarlo de otro."
-        hint_specific: "Disentir pide una opinión ajena. ¿Con quién se estaría discutiendo aquí?"
-  - position: 4
+  - position: 2
     sentence: "Un buen informe ayuda a {{blank}} lo urgente de lo que solo parece urgente."
     hint_general: "Ayuda a ver la diferencia entre dos cosas que se confunden."
     explanation: "Discernir: ayuda a ver esa diferencia. «Disentir» sería no estar de acuerdo con alguien, y «ordenar» colocaría los temas por prioridad, algo que solo se puede hacer después."
@@ -128,7 +90,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Ordenar» colocaría los temas por prioridad, y para eso hace falta antes saber cuáles son de verdad urgentes."
         hint_specific: "Ordenar es el paso siguiente. ¿Qué hay que saber antes de poner una lista en orden?"
-  - position: 5
+  - position: 3
     sentence: "Después de veinte catas, Manuel {{blank}} dos aromas que al resto le sonaban iguales."
     hint_general: "Notó la diferencia entre dos cosas casi idénticas."
     explanation: "Discernió: notó la diferencia entre dos aromas casi iguales. «Disintió» sería no estar de acuerdo, y «cazó» es coloquial y suena a pillar a alguien en falta."
@@ -148,7 +110,7 @@ exercises:
       - position: 3
         text: "discernió"
         is_correct: true
-  - position: 6
+  - position: 4
     sentence: "Le costó {{blank}} si aquello era una broma o una crítica en serio."
     hint_general: "Le costó decidir cuál de las dos cosas tenía delante."
     explanation: "Discernir: le costó saber cuál de las dos tenía delante. «Disentir» sería no estar de acuerdo, y «dudar» describe cómo se sintió, no lo que necesitaba hacer."
@@ -168,7 +130,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Disentir» es no estar de acuerdo con alguien, y aquí ni siquiera sabe todavía qué le han dicho."
         hint_specific: "Disentir llega después de entender. ¿Ha entendido ya el mensaje?"
-  - position: 7
+  - position: 5
     sentence: "Con tanta información repetida, nadie sabía {{blank}} lo nuevo de lo ya sabido."
     hint_general: "Nadie conseguía separar lo que aportaba algo de lo que se repetía."
     explanation: "Discernir: nadie separaba lo nuevo de lo repetido. «Discurrir» sería pensar sin llegar a una conclusión, y «resumir» sería acortarlo todo sin decidir qué aporta."
@@ -188,7 +150,7 @@ exercises:
       - position: 3
         text: "discernir"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Antes de responder, conviene {{blank}} qué te molestó exactamente de esa frase."
     hint_general: "Conviene separar el punto concreto del enfado general."
     explanation: "Discernir: separar el punto concreto del enfado general. «Disentir» sería no estar de acuerdo, y «rumiar» es coloquial y sugiere darle vueltas sin salida."
@@ -237,5 +199,5 @@ metrics:
   family_size: 16
 provenance:
   generator: "flui authoring agent — theme paronimos (discernir / disentir)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 1, 3, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

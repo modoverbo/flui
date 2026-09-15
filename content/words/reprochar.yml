@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 2128
 slug: "reprochar"
-status: "draft"
+status: "approved"
 lemma: "reprochar"
 part_of_speech: "verbo"
-syllables: ["re", "pro", "char"]
+syllables:
+  - "re"
+  - "pro"
+  - "char"
 stressed_syllable: 3
 ipa_latam: "[re.pɾoˈt͡ʃaɾ]"
 ipa_es: "[re.pɾoˈt͡ʃaɾ]"
@@ -25,15 +28,18 @@ replaces:
     after: "No te lo reprocho, te lo cuento"
   - before: "Me lo sacó en medio de la discusión"
     after: "Me lo reprochó en medio de la discusión"
-family: ["reproche"]
+family:
+  - "reproche"
 themes:
   - slug: "conflicto-desacuerdo"
     relevance: 3
   - slug: "conversaciones-dificiles"
     relevance: 2
 tags:
-  comodin: ["decir"]
-  funcion: ["criticar"]
+  comodin:
+    - "decir"
+  funcion:
+    - "criticar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -106,26 +112,6 @@ exercises:
         why_not: "«Reprender» lo hace quien tiene autoridad sobre el otro, y la frase dice que no te pones por encima de nadie."
         hint_specific: "«Reprender» viene de quien manda. ¿Qué dice la frase sobre ponerse por encima?"
   - position: 4
-    sentence: "Mi madre nunca {{blank}} nada en público: esperaba a que no hubiera nadie delante."
-    hint_general: "Nunca echaba nada en cara delante de la gente."
-    explanation: "Reprochaba: nunca echaba nada en cara delante de nadie. «Reprobaba» sería condenar desde fuera, y «pedía» miraría al futuro, no al pasado."
-    options:
-      - position: 1
-        text: "reprobaba"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Reprobar» es rechazar algo desde una posición de juez; una madre que espera a estar a solas no está dictando sentencias."
-        hint_specific: "Reprobar juzga desde arriba. ¿Qué hace ella cuando no hay nadie delante?"
-      - position: 2
-        text: "pedía"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Pedir» mira hacia delante y no necesita esperar a estar a solas; lo que se guarda para la intimidad es lo que duele."
-        hint_specific: "Pedir mira al futuro. ¿Por qué esperaba a que no hubiera nadie?"
-      - position: 3
-        text: "reprochaba"
-        is_correct: true
-  - position: 5
     sentence: "La reunión se torció cuando alguien le {{blank}} a Marta un correo de marzo que ya nadie recordaba."
     hint_general: "Alguien le echó en cara un correo viejo."
     explanation: "Reprochó: le echó en cara un correo viejo. «Reprodujo» no encaja con la construcción de la frase, y «reclamó» pediría algo, no removería el pasado."
@@ -145,7 +131,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Reclamar» es pedir algo que te corresponde; un correo de marzo que nadie recordaba no se pide, se saca para doler."
         hint_specific: "Reclamar pide algo. ¿Se puede pedir un correo de hace meses?"
-  - position: 6
+  - position: 5
     sentence: "Antes de {{blank}} nada, Nicolás preguntó qué había pasado de verdad aquel viernes."
     hint_general: "Antes de echar nada en cara, pregunta qué pasó."
     explanation: "Reprochar: antes de echar nada en cara, pregunta. «Reprimir» sería guardarse algo dentro, y «avisar» sería anunciar algo que todavía no ha ocurrido."
@@ -165,7 +151,7 @@ exercises:
       - position: 3
         text: "reprochar"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Cuando el tono sube, resulta fácil {{blank}} cosas que no vienen al caso, aunque no haya nadie más escuchando."
     hint_general: "Con el tono alto es fácil sacar cosas que no vienen al caso."
     explanation: "Reprochar: sacar viejas cuentas que no vienen al caso. «Reproducir» sería copiar algo, y «ventilar» supondría airearlo para que lo oigan los demás."
@@ -185,7 +171,7 @@ exercises:
       - position: 3
         text: "reprochar"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Julia dejó de {{blank}} y empezó a pedir, y la convivencia cambió en dos semanas."
     hint_general: "Cambió echar cosas en cara por pedir lo que necesita."
     explanation: "Reprochar: cambió echar en cara por pedir. «Reprobar» sería juzgar desde fuera, y «agradecer» no se opone a pedir, así que no encaja en el cambio."
@@ -234,5 +220,5 @@ metrics:
   family_size: 117
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a3-r3 + reviewer-b3-r3; gated after content:prune removed exercise 4, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

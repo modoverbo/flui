@@ -1,10 +1,12 @@
 schema_version: 1
 sort_order: 2103
 slug: "viable"
-status: "draft"
+status: "approved"
 lemma: "viable"
 part_of_speech: "adjetivo"
-syllables: ["via", "ble"]
+syllables:
+  - "via"
+  - "ble"
 stressed_syllable: 1
 ipa_latam: "[ˈbja.βle]"
 ipa_es: "[ˈbja.βle]"
@@ -25,15 +27,18 @@ replaces:
     after: "Suena bien, pero no sé si es viable"
   - before: "Con ese presupuesto, ni de broma"
     after: "Con ese presupuesto no es viable"
-family: ["viabilidad"]
+family:
+  - "viabilidad"
 themes:
   - slug: "negociacion"
     relevance: 3
   - slug: "decir-que-no"
     relevance: 2
 tags:
-  comodin: ["poder"]
-  funcion: ["valorar"]
+  comodin:
+    - "poder"
+  funcion:
+    - "valorar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -234,5 +239,5 @@ metrics:
   family_size: 0
 provenance:
   generator: "hand-authored against content/AUTHORING.md"
-  gate: null
-  checked_on: "2026-09-13"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3 + reviewer-a2-r3 + reviewer-b2-r3 + reviewer-a3-r3 + reviewer-b3-r3"
+  checked_on: "2026-09-15"

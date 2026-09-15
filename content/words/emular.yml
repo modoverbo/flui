@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "emular"
-status: "draft"
+status: "approved"
 lemma: "emular"
 part_of_speech: "verbo"
 syllables:
@@ -35,8 +35,10 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 1
 tags:
-  comodin: ["copiar"]
-  funcion: ["elogiar"]
+  comodin:
+    - "copiar"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -149,46 +151,6 @@ exercises:
         why_not: "«Disimular» es esconder algo para que no se note, y aquí nadie quiere ocultar el resultado: quieren repetirlo."
         hint_specific: "Disimular tapa lo que existe. ¿Hay algo que esconder en esa cifra?"
   - position: 6
-    sentence: "Los más jóvenes {{blank}} a Teresa sin decírselo, y se les nota en cómo preparan la reunión."
-    hint_general: "La tienen como referencia y trabajan a su manera."
-    explanation: "Emulan: la tienen como referencia y trabajan así. «Simulan» sería fingir un trabajo que no hacen, y «veneran» la colocaría casi en un altar."
-    options:
-      - position: 1
-        text: "simulan"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Simulan» sería fingir que preparan la reunión, y la frase dice que el resultado se nota en cómo la preparan."
-        hint_specific: "Simular deja el trabajo sin hacer. ¿Dónde se nota lo que hacen estos jóvenes?"
-      - position: 2
-        text: "emulan"
-        is_correct: true
-      - position: 3
-        text: "veneran"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Venerar» es solemne y coloca a Teresa casi en un altar, y aquí solo se copia su forma de preparar una reunión."
-        hint_specific: "«Venerar» suena a devoción. ¿La admiran en silencio o aprenden su método?"
-  - position: 7
-    sentence: "Su hermano {{blank}} el negocio del vecino y acabó abriendo uno mejor montado."
-    hint_general: "Partió de un ejemplo y llegó incluso más lejos."
-    explanation: "Emuló: partió de ese ejemplo y llegó más lejos. «Simuló» sería fingir el negocio, e «imitó» diría que lo copió tal cual."
-    options:
-      - position: 1
-        text: "imitó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Imitó» diría que lo copió tal cual, y la frase termina diciendo que su negocio quedó mejor montado."
-        hint_specific: "Imitar se queda en la copia. ¿Cómo acabó el negocio de su hermano?"
-      - position: 2
-        text: "emuló"
-        is_correct: true
-      - position: 3
-        text: "simuló"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Simuló» sería fingir que tenía un negocio, y aquí abrió uno de verdad y le fue bien."
-        hint_specific: "Simular es aparentar. ¿Ese negocio existe o solo lo parece?"
-  - position: 8
     sentence: "En lugar de quedarse mirando, decidieron {{blank}} al equipo que mejores resultados daba."
     hint_general: "Dejaron de observar y se pusieron a trabajar igual que ellos."
     explanation: "Emular: pasaron de mirar a trabajar igual. «Estimular» sería animar a ese equipo, y «admirar» se quedaría en mirarlo con respeto."
@@ -237,5 +199,5 @@ metrics:
   family_size: 14
 provenance:
   generator: "flui authoring agent — theme paronimos (emular / simular)"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 6, 7, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 5028
 slug: "cuantificar"
-status: "draft"
+status: "approved"
 lemma: "cuantificar"
 part_of_speech: "verbo"
 syllables:
@@ -75,26 +75,6 @@ exercises:
         why_not: "«Contabilizar» suena a departamento de contabilidad y a apuntar movimientos en un libro, y aquí se trata de explicar un logro propio."
         hint_specific: "Contabilizar pertenece a los libros de cuentas. ¿Dónde está Casiano?"
   - position: 2
-    sentence: "El ahorro se pudo {{blank}} en ocho mil euros al año, y la propuesta se aprobó esa misma tarde."
-    hint_general: "Se le puso una cifra exacta al ahorro y eso decidió."
-    explanation: "Cuantificar: ponerle una cifra exacta al ahorro. «Clarificar» sería explicarlo mejor, y «tasar» es palabra de peritos y se usa para poner precio a un bien."
-    options:
-      - position: 1
-        text: "cuantificar"
-        is_correct: true
-      - position: 2
-        text: "clarificar"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Clarificar» sería explicarlo mejor con palabras, y lo que convence en la frase es una cifra concreta."
-        hint_specific: "Clarificar limpia una explicación. ¿Qué aparece aquí que no es una explicación?"
-      - position: 3
-        text: "tasar"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Tasar» es palabra de peritos y se usa para ponerle precio a un piso o a una joya, no a un ahorro de un proceso."
-        hint_specific: "Se tasa una vivienda antes de venderla. ¿Qué se mide en esta frase?"
-  - position: 3
     sentence: "Hay cosas difíciles de {{blank}}, como el ambiente de un equipo, y conviene reconocerlo."
     hint_general: "Algunas cosas no se pueden reducir a números."
     explanation: "Cuantificar: reducir algo a números. «Codificar» sería pasarlo a un código o un lenguaje, y «explicar» sí se puede hacer con el ambiente de un equipo."
@@ -114,7 +94,7 @@ exercises:
       - position: 3
         text: "cuantificar"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Amaranta pidió {{blank}} el retraso antes de discutir de quién era la culpa."
     hint_general: "Quiso números del retraso antes de repartir culpas."
     explanation: "Cuantificar: poner números al retraso. «Certificar» sería dar fe por escrito con un sello, y «comparar» exigiría otro caso enfrente."
@@ -134,28 +114,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Comparar» exigiría otro caso enfrente, y en la frase solo hay un retraso al que hay que ponerle medida."
         hint_specific: "Comparar necesita dos cosas. ¿Cuántos retrasos aparecen aquí?"
-
-  - position: 5
-    sentence: "Benigno {{blank}} su trabajo del año en una línea: ciento veinte reparaciones y once días de baja."
-    hint_general: "Resumió su año con dos números."
-    explanation: "Cuantificó: resumió su año con dos números. «Codificó» sería pasarlo a un código, y «resumió» podría hacerse igual sin ninguna cifra."
-    options:
-      - position: 1
-        text: "codificó"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Codificar» es pasar algo a un código o a un lenguaje, y él lo que da son dos cifras claras en una línea."
-        hint_specific: "Codificar convierte un mensaje en señales. ¿Qué escribe Benigno en esa línea?"
-      - position: 2
-        text: "cuantificó"
-        is_correct: true
-      - position: 3
-        text: "resumió"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Resumir» se puede hacer igual sin ninguna cifra, y lo llamativo aquí es que todo el año cabe en dos números."
-        hint_specific: "Un resumen puede no llevar números. ¿Qué hay en esa línea de Benigno?"
-  - position: 6
+  - position: 4
     sentence: "Antes de prometer una mejora, Teo prefiere {{blank}} el punto de partida."
     hint_general: "Primero mide dónde está hoy, y luego promete."
     explanation: "Cuantificar: medir hoy el punto de partida. «Clarificar» sería explicarlo mejor, y «estimar» daría un número a ojo, sin comprobar nada."
@@ -175,7 +134,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Estimar» daría un número a ojo, y Teo busca justo una base firme antes de prometer nada."
         hint_specific: "Una estimación se hace a ojo. ¿Qué le sirve a Teo como base?"
-  - position: 7
+  - position: 5
     sentence: "Si logras {{blank}} tu aportación, la otra persona puede repetirla en voz alta cuando tú no estés."
     hint_general: "Un número se recuerda y se repite; una frase vaga no."
     explanation: "Cuantificar: poner número a tu aportación. «Certificar» sería dar fe por escrito con un sello, y «contabilizar» suena a apuntar movimientos en un libro de cuentas."
@@ -195,7 +154,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Contabilizar» suena a apuntar movimientos en un libro de cuentas, y esto es contar bien lo que aportas."
         hint_specific: "Contabilizar vive en un libro de cuentas. ¿Dónde acaba lo de esta frase?"
-  - position: 8
+  - position: 6
     sentence: "No hace falta {{blank}} todo: a veces una escena bien contada convence más que una tabla."
     hint_general: "No todo necesita números; a veces basta una escena."
     explanation: "Cuantificar: ponerle números a todo. «Codificar» sería pasarlo a un código, y «apuntar» solo sería tomar nota, sin medir nada."
@@ -244,5 +203,5 @@ metrics:
   family_size: 47
 provenance:
   generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r3 + reviewer-b1-r3; gated after content:prune removed exercise 2, 5, the items the gate found ambiguous"
+  checked_on: "2026-09-15"

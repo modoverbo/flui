@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3218
 slug: "leve"
-status: "draft"
+status: "approved"
 lemma: "leve"
 part_of_speech: "adjetivo"
 syllables:
@@ -172,26 +172,6 @@ exercises:
         why_not: "«Breve» dice cuánto dura algo, y la frase no cuenta el tiempo: cuenta lo poco que se nota."
         hint_specific: "«Breve» mide el tiempo. ¿Qué mide la frase del olor?"
   - position: 7
-    sentence: "El enfado de Nacho fue {{blank}}: levantó una ceja, dijo dos palabras y siguió comiendo."
-    hint_general: "Apenas se le notó y siguió como si nada."
-    explanation: "Leve: apenas se le notó. «Pequeño» mide el tamaño de las cosas que ocupan sitio, y un enfado no ocupa sitio; «lento» habla de velocidad."
-    options:
-      - position: 1
-        text: "pequeño"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Pequeño» mide el tamaño de las cosas que ocupan sitio, y un enfado se mide por la fuerza con que se nota."
-        hint_specific: "«Pequeño» cabe en una mano. ¿Se puede medir así un enfado?"
-      - position: 2
-        text: "lento"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Lento» habla de velocidad, y aquí Nacho reacciona y sigue comiendo enseguida."
-        hint_specific: "«Lento» va despacio. ¿Cuánto tardó Nacho en volver a comer?"
-      - position: 3
-        text: "leve"
-        is_correct: true
-  - position: 8
     sentence: "La diferencia entre las dos versiones es {{blank}} y se mantiene de principio a fin: el mismo texto con otra puntuación."
     hint_general: "Apenas se aprecia y está presente en todo el texto."
     explanation: "Leve: apenas se aprecia. «Corta» hablaría de duración, y esta diferencia recorre el texto entero; «rara» diría que resulta extraña."
@@ -240,5 +220,5 @@ metrics:
   family_size: 4
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a2-r3 + reviewer-b2-r3; gated after content:prune removed exercise 7, the item the gate found ambiguous"
+  checked_on: "2026-09-15"

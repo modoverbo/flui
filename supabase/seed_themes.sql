@@ -4,7 +4,7 @@
 --
 -- WHAT LIVES HERE
 -- ---------------
--- Only the 16 theme rows. `supabase/seed.sql` is generated from `content/` by
+-- Only the 28 theme rows. `supabase/seed.sql` is generated from `content/` by
 -- `dart run content:emit`, and that generator owns `words.semantic_set_id` and
 -- every `word_themes` link, resolved by slug against the themes below. Keep the
 -- two files disjoint: a link or a semantic set added here would be overwritten
@@ -22,6 +22,12 @@
 -- `status` is the offer, not the taxonomy: a theme is 'live' once the seed has
 -- at least one word tagged with it, and 'soon' while it has none. Shipping an
 -- empty theme in the picker would be a promise the catalog cannot keep.
+--
+-- Section 2 adds the twelve themes that recombine those same words. They carry
+-- `published = false`, one step stricter than the 'soon' rows above: a 'soon'
+-- launch theme is a taxonomy the client may already show, while a theme with
+-- no content of its own has nothing to show yet. Publish it in the same commit
+-- that gives it its first exercises.
 
 insert into public.themes
   (id, slug, family, name, tagline, jtbd, content_type, status, sort_order, published)
@@ -89,7 +95,64 @@ values
   ('c0000000-0000-4000-8000-000000000016', 'conversacion-cotidiana', 'social', 'Conversación diaria',
    'Hablar del día a día con palabras que encajan.',
    'Quiero contar lo que me pasa sin repetir siempre cosa, tema y hacer.',
-   'mixed', 'soon', 16, true)
+   'mixed', 'soon', 16, true),
+
+-- ============================================================================
+-- 2. The expression-driven expansion (content/themes.yml, sort_order 17..28)
+-- ============================================================================
+--
+-- These twelve reuse the words the first sixteen introduce and add exercises
+-- and readings of their own instead of new lemmas. Every one of them is
+-- 'soon' and unpublished until it has that content.
+
+  ('c0000000-0000-4000-8000-000000000017', 'ventas', 'trabajo', 'Ventas',
+   'Que el valor se vea, sin inflarlo.',
+   'Quiero explicar lo que ofrezco con ejemplos concretos y que el precio deje de ser el único tema.',
+   'mixed', 'soon', 17, false),
+  ('c0000000-0000-4000-8000-000000000018', 'networking', 'trabajo', 'Hacer contactos',
+   'Que te recuerden después de treinta segundos.',
+   'Quiero presentarme en un evento y que después recuerden a qué me dedico.',
+   'expression_driven', 'soon', 18, false),
+  ('c0000000-0000-4000-8000-000000000019', 'redes-sociales', 'publico', 'Redes sociales',
+   'Un gancho que no es un cebo.',
+   'Quiero abrir una publicación con una frase que atrape y que el resto la sostenga.',
+   'expression_driven', 'soon', 19, false),
+  ('c0000000-0000-4000-8000-000000000020', 'docencia', 'publico', 'Enseñar',
+   'Lo difícil explicado como si fuera fácil.',
+   'Quiero explicar un tema que domino a quien parte de cero y que se quede con la idea.',
+   'mixed', 'soon', 20, false),
+  ('c0000000-0000-4000-8000-000000000021', 'medios-entrevistas', 'publico', 'Hablar con medios',
+   'Responder lo que preguntan y decir lo tuyo.',
+   'Quiero contestar una pregunta incómoda en público sin esquivarla ni regalar un titular.',
+   'expression_driven', 'soon', 21, false),
+  ('c0000000-0000-4000-8000-000000000022', 'humor', 'social', 'Humor',
+   'Hacer reír sin que nadie pague el chiste.',
+   'Quiero contar algo con gracia y que la broma no caiga sobre alguien.',
+   'expression_driven', 'soon', 22, false),
+  ('c0000000-0000-4000-8000-000000000023', 'citas', 'social', 'Citas',
+   'Coquetear con palabras tuyas, no con frases hechas.',
+   'Quiero decir lo que me atrae de alguien sin recurrir a una frase prestada.',
+   'expression_driven', 'soon', 23, false),
+  ('c0000000-0000-4000-8000-000000000024', 'amistad', 'social', 'Amistad',
+   'Decir lo que sientes sin taparlo con una broma.',
+   'Quiero decirle a un amigo lo que significa para mí sin restarle importancia.',
+   'expression_driven', 'soon', 24, false),
+  ('c0000000-0000-4000-8000-000000000025', 'small-talk', 'social', 'Romper el hielo',
+   'Los primeros noventa segundos.',
+   'Quiero empezar una conversación con alguien que acabo de conocer y que no se apague en dos frases.',
+   'expression_driven', 'soon', 25, false),
+  ('c0000000-0000-4000-8000-000000000026', 'familia-crianza', 'social', 'Familia y crianza',
+   'Explicar sin sermonear.',
+   'Quiero explicar una decisión en casa sin que suene a sermón y sin ceder en el fondo.',
+   'expression_driven', 'soon', 26, false),
+  ('c0000000-0000-4000-8000-000000000027', 'empatia-escucha', 'emocion', 'Escuchar',
+   'Que se note que entendiste.',
+   'Quiero responder a quien me cuenta algo difícil y que sienta que lo escuché de verdad.',
+   'expression_driven', 'soon', 27, false),
+  ('c0000000-0000-4000-8000-000000000028', 'pedir-disculparse', 'emocion', 'Pedir y disculparse',
+   'Pedir sin encogerte, disculparte sin excusas.',
+   'Quiero pedir lo que necesito y reconocer un fallo sin justificarme de más.',
+   'mixed', 'soon', 28, false)
 on conflict (id) do update
   set slug = excluded.slug,
       family = excluded.family,
