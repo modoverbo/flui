@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3212
+slug: "reparo"
+status: "draft"
+lemma: "reparo"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "pa"
+  - "ro"
+stressed_syllable: 2
+ipa_latam: "[reˈpa.ɾo]"
+ipa_es: "[reˈpa.ɾo]"
+explanation: "Punto concreto que alguien no ve claro y dice antes de aceptar algo."
+example_sentence: "Tengo un reparo con el plazo; el resto me parece bien."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Te deja frenar una parte sin tumbar la idea entera: dices qué no ves claro y sigues."
+when_not_to_use: "No la uses para un rechazo completo; esto señala un punto suelto, no la idea entera."
+collocations:
+  - "poner reparos"
+  - "sin reparos"
+  - "un reparo menor"
+replaces:
+  - before: "Hay una cosa que no me convence"
+    after: "Tengo un reparo"
+  - before: "Lo acepté sin ningún problema"
+    after: "Lo acepté sin reparos"
+  - before: "Le sacó pegas a todo"
+    after: "Le puso reparos a todo"
+family: []
+semantic_set_id: "reserva-ante-un-acuerdo"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin:
+    - "cosa"
+    - "pega"
+  funcion:
+    - "objetar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "rechazo"
+    difference: "Un rechazo tumba la idea entera; la otra palabra frena solo un punto y deja el resto en pie."
+    memory_trick: "El rechazo cierra la puerta; lo otro la deja entornada."
+  - confused_with: "reparto"
+    difference: "«Reparto» es cómo se divide algo entre varios; la otra palabra es un punto que alguien no ve claro."
+    memory_trick: "El reparto divide; lo otro frena."
+exercises:
+  - position: 1
+    sentence: "Lucas aprobó el plan entero y solo dejó un {{blank}}: el plazo de agosto le parece corto."
+    hint_general: "Acepta todo el plan y frena un punto concreto."
+    explanation: "Reparo: el punto concreto que frena. Un «rechazo» tumbaría el plan entero, y él lo aprobó; un «reparto» es cómo se divide algo entre varios."
+    options:
+      - position: 1
+        text: "reparto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reparto» es cómo se divide algo entre varias personas, y aquí se habla de un plazo demasiado corto."
+        hint_specific: "«Reparto» divide algo entre varios. ¿Qué le parece corto a Lucas?"
+      - position: 2
+        text: "reparo"
+        is_correct: true
+      - position: 3
+        text: "rechazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «rechazo» tumbaría la idea entera, y la frase dice que Lucas aprobó el plan completo."
+        hint_specific: "«Rechazo» tira abajo todo. ¿Qué hizo Lucas con el plan?"
+  - position: 2
+    sentence: "Nadie está en contra: hay un {{blank}} suelto sobre el color de la portada y nada más."
+    hint_general: "Solo queda un punto suelto por resolver, sin oposición de nadie."
+    explanation: "Reparo: el único punto suelto que queda. Un «enfado» supondría molestia, y aquí nadie está en contra; un «aparato» es una máquina o un cacharro."
+    options:
+      - position: 1
+        text: "aparato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «aparato» es una máquina o un cacharro, y aquí se discute el color de una portada."
+        hint_specific: "«Aparato» se enchufa o se manipula. ¿De qué se discute en la frase?"
+      - position: 2
+        text: "reparo"
+        is_correct: true
+      - position: 3
+        text: "enfado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «enfado» es una molestia con alguien, y la frase empieza diciendo que nadie está en contra."
+        hint_specific: "«Enfado» trae malestar. Relee las tres primeras palabras."
+  - position: 3
+    sentence: "No vengo a decirte cómo hacerlo mejor; solo traigo un {{blank}} sobre la fecha de entrega."
+    hint_general: "No trae ideas para mejorar nada: trae un punto que no ve claro."
+    explanation: "Reparo: el punto que no ve claro. Un «consejo» diría cómo mejorar algo, y la frase lo descarta; un «reparto» es cómo se divide algo entre varios."
+    options:
+      - position: 1
+        text: "reparo"
+        is_correct: true
+      - position: 2
+        text: "consejo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «consejo» dice cómo hacer algo mejor, y la frase empieza descartando justo eso."
+        hint_specific: "«Consejo» sugiere una mejora. Relee la primera mitad de la frase."
+      - position: 3
+        text: "reparto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reparto» es cómo se divide algo entre varios, y aquí se habla de una fecha de entrega."
+        hint_specific: "«Reparto» divide algo entre gente. ¿De qué habla esa persona?"
+  - position: 4
+    sentence: "Isabel firmó sin un solo {{blank}}, y eso que había leído el contrato dos veces."
+    hint_general: "No puso ni un punto en contra, aunque lo revisó a fondo."
+    explanation: "Reparo: el punto en contra que no llegó a poner. Un «argumento» sirve para convencer a otro, y aquí no se convence a nadie; un «aparato» es una máquina o un cacharro."
+    options:
+      - position: 1
+        text: "aparato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «aparato» es una máquina o un cacharro, y aquí Isabel firma un contrato."
+        hint_specific: "«Aparato» se enchufa. ¿Qué firmó Isabel?"
+      - position: 2
+        text: "argumento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «argumento» sirve para convencer a otra persona, y aquí lo que no hubo fue nada en contra."
+        hint_specific: "«Argumento» busca convencer. ¿A quién intentaría convencer Isabel al firmar?"
+      - position: 3
+        text: "reparo"
+        is_correct: true
+  - position: 5
+    sentence: "El informe no pide cambios ni da ideas nuevas: apunta un {{blank}} en la página tres y se acabó."
+    hint_general: "El informe no propone nada: solo marca un punto que no ve claro."
+    explanation: "Reparo: el punto que el informe marca. Un «consejo» daría una idea para mejorar, y la frase lo niega; un «reparto» es cómo se divide algo entre varios."
+    options:
+      - position: 1
+        text: "consejo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «consejo» propone una mejora, y el informe no pide cambios ni da ideas nuevas."
+        hint_specific: "«Consejo» sugiere qué hacer. ¿Qué dice la frase que el informe no hace?"
+      - position: 2
+        text: "reparo"
+        is_correct: true
+      - position: 3
+        text: "reparto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reparto» es cómo se divide algo entre varios, y aquí se señala una línea de la página tres."
+        hint_specific: "«Reparto» divide algo. ¿Qué apunta el informe en la página tres?"
+  - position: 6
+    sentence: "Puso un {{blank}} tras otro a cada punto del acta, aunque al final votó a favor de todo."
+    hint_general: "Frena un punto detrás de otro y, aun así, acaba apoyando."
+    explanation: "Reparo: cada punto que va frenando. Un «enfado» supondría molestia, y al final vota a favor; un «aparato» es una máquina o un cacharro."
+    options:
+      - position: 1
+        text: "enfado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «enfado» sería molestia con alguien, y esa persona termina votando a favor de todo."
+        hint_specific: "«Enfado» deja mal ambiente. ¿Cómo acaba votando esa persona?"
+      - position: 2
+        text: "reparo"
+        is_correct: true
+      - position: 3
+        text: "aparato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «aparato» es una máquina o un cacharro, y aquí se van marcando puntos de un acta."
+        hint_specific: "«Aparato» se enciende y se apaga. ¿Qué se va poniendo a cada punto del acta?"
+  - position: 7
+    sentence: "En el acta quedó escrito un {{blank}} formal sobre el orden de los turnos, con su número y su línea."
+    hint_general: "Queda anotado por escrito y con número un punto que alguien no da por bueno."
+    explanation: "Reparo: el punto anotado por escrito. «Pero» es una coletilla coloquial y vaga, y esto va numerado en un acta; un «argumento» serviría para convencer a alguien."
+    options:
+      - position: 1
+        text: "pero"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pero» es una coletilla coloquial y vaga que se suelta hablando, y aquí hay un texto numerado en un acta."
+        hint_specific: "«Pero» se suelta de pasada en una charla. ¿Dónde queda escrito esto?"
+      - position: 2
+        text: "reparo"
+        is_correct: true
+      - position: 3
+        text: "argumento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «argumento» sirve para convencer, y aquí solo se deja constancia de lo que no se da por bueno."
+        hint_specific: "«Argumento» quiere convencer. ¿Qué se busca al anotarlo en el acta?"
+  - position: 8
+    sentence: "Marcos apoya la idea y la defiende fuera, pero dentro mantiene un {{blank}} sobre el precio."
+    hint_general: "Defiende la idea en público y guarda un punto pendiente en privado."
+    explanation: "Reparo: el punto pendiente que guarda. Un «rechazo» sería tumbar la idea, y él la defiende; «amparo» suena a lenguaje de juzgado y significa protección."
+    options:
+      - position: 1
+        text: "amparo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Amparo» suena a lenguaje de juzgado y significa protección, no un punto que alguien no ve claro."
+        hint_specific: "«Amparo» se pide para que te protejan. ¿Qué mantiene Marcos sobre el precio?"
+      - position: 2
+        text: "rechazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «rechazo» tumbaría la idea entera, y la frase dice que Marcos la apoya y la defiende fuera."
+        hint_specific: "«Rechazo» tira abajo la idea. ¿Qué hace Marcos con la idea en público?"
+      - position: 3
+        text: "reparo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Todo bien, salvo agosto"
+    body: "El plan se votaba esa mañana y Lucas era el único que no había hablado. «Lo apruebo entero», dijo, «tengo un reparo con el plazo de agosto y ya está». Lo movieron dos semanas. El resto quedó exactamente igual."
+    before_phrase: "Hay una cosa que no me convence del todo."
+    after_phrase: "Lo apruebo entero, tengo un reparo con el plazo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El contrato del piso"
+    body: "Mi hermana leyó el contrato del piso dos veces, con un lápiz en la mano. Al final lo dejó sobre la mesa. «Lo firmo sin reparos», dijo, y firmó. Nunca la había visto tan tranquila con un papel."
+    before_phrase: "No le veo ningún problema, creo."
+    after_phrase: "Lo firmo sin reparos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La página tres"
+    body: "El informe del local llegó sin propuestas y sin quejas: solo una línea en la página tres. «Es un reparo, no un no», explicó Isabel en la asamblea. Lo resolvieron en diez minutos y el resto se aprobó sin tocar nada."
+    before_phrase: "Le veo una pega, pero tampoco es para tanto."
+    after_phrase: "Es un reparo, no un no."
+metrics:
+  zipf_overall: 4.5628
+  dispersion_dp: 0.1224
+  pedantry_proxy: 0.5028
+  family_size: 107
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

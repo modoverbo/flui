@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "conque"
+status: "draft"
+lemma: "conque"
+part_of_speech: "conector"
+syllables:
+  - "con"
+  - "que"
+stressed_syllable: 2
+ipa_latam: "[konˈke]"
+ipa_es: "[konˈke]"
+explanation: "Une lo que acabas de saber con la decisión que sacas de ello."
+example_sentence: "Ya están las tres firmas, conque cerramos el acuerdo esta misma semana."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona en voz alta: anuncia la decisión sin que suene a orden ni a discurso."
+when_not_to_use: "No la uses para dar el motivo de algo; ahí toca «porque», que mira hacia atrás."
+collocations:
+  - "conque adelante"
+  - "conque decidido"
+  - "conque nada de excusas"
+replaces:
+  - before: "O sea que ya podemos empezar"
+    after: "Conque ya podemos empezar"
+  - before: "Entonces vamos a firmarlo"
+    after: "Conque vamos a firmarlo"
+  - before: "Y eso, que al final salió bien"
+    after: "Conque al final salió bien"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "o sea"
+  funcion:
+    - "cerrar con una decisión"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "con que"
+    difference: "«Con que», en dos palabras, presenta una condición o un medio: «me basta con que avises». La otra anuncia lo que decides."
+    memory_trick: "Si cabe «con tal de que», son dos palabras; si cabe «así que», es una sola."
+  - confused_with: "con qué"
+    difference: "«Con qué» pregunta por el instrumento: «¿Con qué lo pego?». La otra no pregunta nada: cierra y resuelve."
+    memory_trick: "Una pregunta; la otra resuelve."
+exercises:
+  - position: 1
+    sentence: "Ya tenemos el visto bueno del cliente, {{blank}} el lunes publicamos la página y cerramos el asunto."
+    hint_general: "Enlaza la buena noticia con lo que el equipo decide hacer a partir de ella."
+    explanation: "Conque: la aprobación lleva directo a la decisión de publicar. «Con que» pediría una condición y «aunque» anunciaría un obstáculo que aquí no existe."
+    options:
+      - position: 1
+        text: "con que"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Con que» anuncia una condición o un medio, y aquí no hay condición: hay una decisión tomada tras la aprobación."
+        hint_specific: "Busca si alguien pone un requisito. ¿Falta algo por cumplir o ya está todo aprobado?"
+      - position: 2
+        text: "conque"
+        is_correct: true
+      - position: 3
+        text: "aunque"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aunque» avisa de un obstáculo, y la aprobación del cliente no estorba el lanzamiento: lo permite."
+        hint_specific: "«Aunque» prepara una pega. ¿El visto bueno frena la publicación o la abre?"
+  - position: 2
+    sentence: "Nadie confirmó la cena hasta anoche, {{blank}} reservé mesa para seis y avisé al grupo."
+    hint_general: "Cierra el silencio de todos con la decisión práctica que tomó ella sola."
+    explanation: "Conque: el silencio de todos desemboca en su decisión. «Ergo» sonaría a demostración lógica y «salvo que» abriría una excepción que nadie plantea."
+    options:
+      - position: 1
+        text: "conque"
+        is_correct: true
+      - position: 2
+        text: "ergo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ergo» suena a razonamiento de manual y presenta la reserva como una deducción, no como lo que alguien resolvió en un chat."
+        hint_specific: "«Ergo» pertenece a un razonamiento formal. ¿Esto es una demostración o una decisión entre amigos?"
+      - position: 3
+        text: "salvo que"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Salvo que» abre una excepción, y aquí no se deja fuera ningún caso: se cuenta lo que ella hizo después."
+        hint_specific: "«Salvo que» deja un caso fuera. ¿Se excluye algo o se sigue adelante?"
+  - position: 3
+    sentence: "Llevo tres años coordinando proveedores, {{blank}} los plazos apretados ya no me asustan."
+    hint_general: "Une la experiencia que acaba de contar con lo que esa experiencia le permite afirmar."
+    explanation: "Conque: los tres años llevan a esa calma con los plazos. «Mientras» pondría los dos hechos en paralelo y «con qué» convertiría la frase en una pregunta."
+    options:
+      - position: 1
+        text: "mientras"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mientras» sitúa dos cosas a la vez, y aquí una nace de la otra: la experiencia explica la calma."
+        hint_specific: "«Mientras» pone dos hechos en paralelo. ¿Van a la vez o uno sale del otro?"
+      - position: 2
+        text: "con qué"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Con qué» pregunta por el medio, y esta frase no pregunta nada: afirma algo con tranquilidad."
+        hint_specific: "«Con qué» abre una pregunta sobre el medio. ¿Hay alguna pregunta en esta respuesta?"
+      - position: 3
+        text: "conque"
+        is_correct: true
+  - position: 4
+    sentence: "El horno se estropeó el jueves, {{blank}} este año la comida la preparamos en casa de Nuria."
+    hint_general: "El aparato roto obliga a cambiar de sitio: enlaza el problema con la salida que encontraron."
+    explanation: "Conque: el horno roto lleva al cambio de casa. «Total que» resumiría una anécdota con desgana y «en cambio» opondría dos ideas que aquí no chocan."
+    options:
+      - position: 1
+        text: "total que"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Total que» es muy coloquial y cierra una historia larga quitándole importancia, en vez de presentar lo que se decide."
+        hint_specific: "«Total que» remata una anécdota con desgana. ¿Se resta importancia o se anuncia el plan?"
+      - position: 2
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» opone dos cosas, y la segunda parte no contradice a la primera: sale de ella."
+        hint_specific: "«En cambio» marca contraste. ¿Las dos partes chocan o una lleva a la otra?"
+      - position: 3
+        text: "conque"
+        is_correct: true
+  - position: 5
+    sentence: "La furgoneta solo cabe una vez en el garaje, {{blank}} bajamos primero lo pesado y después las cajas."
+    hint_general: "La limitación manda: enlázala con el orden que el grupo decide seguir."
+    explanation: "Conque: el límite del garaje obliga a ese orden. «Con que» pediría una condición y «por si acaso» hablaría de prevenir algo todavía incierto."
+    options:
+      - position: 1
+        text: "conque"
+        is_correct: true
+      - position: 2
+        text: "con que"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Con que» introduce una condición o un medio, y la frase no pone condiciones: reparte el trabajo en dos viajes."
+        hint_specific: "«Con que» pediría un requisito. ¿Alguien exige algo o simplemente se organizan?"
+      - position: 3
+        text: "por si acaso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por si acaso» previene algo que quizá ocurra, y el tamaño del garaje es un hecho ya conocido."
+        hint_specific: "«Por si acaso» cubre una posibilidad. ¿Esto es una precaución o una consecuencia?"
+  - position: 6
+    sentence: "Ariadna respondió que el presupuesto ya está aprobado, {{blank}} podemos pedir las licencias hoy mismo."
+    hint_general: "El dinero ya está disponible: une ese hecho con el paso que se puede dar ahora."
+    explanation: "Conque: la aprobación permite pedir las licencias ya. «Aun así» supondría un obstáculo inexistente y «mientras tanto» inventaría una espera."
+    options:
+      - position: 1
+        text: "aun así"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aun así» avisa de que algo sigue pese a una traba, y aquí no hay traba: el presupuesto está listo."
+        hint_specific: "«Aun así» supone una dificultad previa. ¿Queda algo que impida pedir las licencias?"
+      - position: 2
+        text: "mientras tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mientras tanto» llena una espera, y aquí no se espera nada: la aprobación abre la puerta de inmediato."
+        hint_specific: "«Mientras tanto» ocupa un tiempo muerto. ¿Hay algo pendiente que obligue a esperar?"
+      - position: 3
+        text: "conque"
+        is_correct: true
+  - position: 7
+    sentence: "El taller de guitarra de julio se canceló, {{blank}} dediqué el mes a repasar lo que ya sabía."
+    hint_general: "La cancelación empuja al plan alternativo: enlaza lo que falló con lo que hizo en su lugar."
+    explanation: "Conque: la cancelación lleva a repasar en casa. «Con qué» haría una pregunta y «encima» añadiría otra queja, cuando el repaso es la salida."
+    options:
+      - position: 1
+        text: "con qué"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Con qué» pregunta por el instrumento, y la frase cuenta una decisión ya tomada, no una duda."
+        hint_specific: "«Con qué» abriría una pregunta sobre el medio. ¿Alguien pregunta algo en esta frase?"
+      - position: 2
+        text: "conque"
+        is_correct: true
+      - position: 3
+        text: "encima"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encima» suma una queja más al problema, y repasar lo aprendido no es otra desgracia: es la salida."
+        hint_specific: "«Encima» acumula motivos de enfado. ¿El repaso empeora el mes o lo salva?"
+  - position: 8
+    sentence: "Tres vecinos ya firmaron el acuerdo del ascensor, {{blank}} solo falta convocar la junta de mayo."
+    hint_general: "Las firmas conseguidas llevan al único paso que queda: une una cosa con la otra."
+    explanation: "Conque: las firmas llevan a convocar la junta. «O sea» repetiría la misma idea con otras palabras y «visto lo visto» sonaría a resignación."
+    options:
+      - position: 1
+        text: "o sea"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«O sea» reformula lo ya dicho con otras palabras, y la junta no repite las firmas: viene después de ellas."
+        hint_specific: "«O sea» dice lo mismo de otro modo. ¿La junta es la misma idea repetida?"
+      - position: 2
+        text: "visto lo visto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Visto lo visto» es muy coloquial y suena a resignación tras algo que salió mal, y aquí el asunto avanza bien."
+        hint_specific: "«Visto lo visto» se dice cuando algo decepciona. ¿Las firmas decepcionan a alguien?"
+      - position: 3
+        text: "conque"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo de las nueve"
+    body: "Rosa abrió el correo del cliente y leyó dos líneas: todo aprobado. Se giró hacia el equipo y lo dijo entero: «Ya está el visto bueno, conque el lunes publicamos». Nadie preguntó nada más. Esa frase ordenó la mañana entera."
+    before_phrase: "O sea que ya podemos, ¿no?"
+    after_phrase: "Ya está el visto bueno, conque el lunes publicamos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena de los jueves"
+    body: "Hacía meses que nadie coincidía en casa. Iván lo soltó sin rodeos durante la llamada: «Los jueves estamos todos libres, conque los jueves cenamos juntos». Su hermana se rio y apuntó la fecha en la nevera. Desde entonces no ha faltado nadie."
+    before_phrase: "Entonces nos vemos los jueves, digo yo."
+    after_phrase: "Los jueves estamos todos libres, conque cenamos juntos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Mesa para seis"
+    body: "El grupo llevaba una semana sin decidir sitio. Noelia escribió en el chat: «Nadie propone nada, conque he reservado yo en la plaza». Llegaron cinco corazones y un «gracias» de Gonzalo. La cena salió mejor que las tres anteriores."
+    before_phrase: "Bueno, pues nada, al final reservé yo."
+    after_phrase: "Nadie propone nada, conque he reservado yo."
+metrics:
+  zipf_overall: 3.2064
+  dispersion_dp: 0.2946
+  pedantry_proxy: 0.3154
+  family_size: 282
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

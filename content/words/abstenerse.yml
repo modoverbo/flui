@@ -1,0 +1,247 @@
+schema_version: 1
+sort_order: 5018
+slug: "abstenerse"
+status: "draft"
+lemma: "abstenerse"
+part_of_speech: "verbo"
+syllables:
+  - "abs"
+  - "te"
+  - "ner"
+  - "se"
+stressed_syllable: 3
+ipa_latam: "[aβs.teˈneɾ.se]"
+ipa_es: "[aβs.teˈneɾ.se]"
+explanation: "Dejar a propósito de hacer o decir algo que podrías hacer."
+example_sentence: "Prefiero abstenerme en esta votación y explico por qué."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es el «no» que no rompe nada: te apartas de una decisión sin ponerte enfrente de nadie."
+when_not_to_use: "No la uses cuando lo que haces es negarte de plano; aquí te apartas, no te opones."
+collocations:
+  - "abstenerse de opinar"
+  - "abstenerse en una votación"
+  - "prefiero abstenerme"
+replaces:
+  - before: "Prefiero no meterme en esto"
+    after: "Prefiero abstenerme en esto"
+  - before: "Yo no voto ni a favor ni en contra"
+    after: "Yo me abstengo"
+  - before: "Mejor me callo y no digo nada"
+    after: "Mejor me abstengo de opinar"
+family:
+  - "abstención"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "conflicto-desacuerdo"
+    relevance: 1
+tags:
+  comodin:
+    - "no meterse"
+  funcion:
+    - "apartarse"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "atenerse"
+    difference: "«Atenerse» es ajustarse a una norma o a un acuerdo; la otra palabra es apartarse de algo que podrías hacer."
+    memory_trick: "Te atienes a lo pactado; de lo otro te apartas."
+  - confused_with: "detenerse"
+    difference: "«Detenerse» es parar a mitad de camino; la otra palabra es no empezar siquiera, por decisión propia."
+    memory_trick: "Te detienes cuando ya ibas; lo otro es no salir."
+exercises:
+  - position: 1
+    sentence: "En la votación de la comunidad, Amadeo prefirió {{blank}} y explicó su motivo en dos frases."
+    hint_general: "No votó ni a favor ni en contra, y dijo por qué."
+    explanation: "Abstenerse: no votar ni a favor ni en contra. «Atenerse» sería ajustarse a una norma, e «inhibirse» es palabra de juzgados y suena a trámite."
+    options:
+      - position: 1
+        text: "atenerse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atenerse» es ajustarse a una norma ya acordada, y aquí lo que hace él es no tomar partido en una votación."
+        hint_specific: "Atenerse supone seguir una regla existente. ¿Qué hace Amadeo con su voto?"
+      - position: 2
+        text: "abstenerse"
+        is_correct: true
+      - position: 3
+        text: "inhibirse"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inhibirse» es palabra de juzgados y significa apartarse de un caso por trámite, y esto es una reunión de vecinos."
+        hint_specific: "«Inhibirse» sale en un auto judicial. ¿Dónde está Amadeo?"
+  - position: 2
+    sentence: "Cuando la conversación llegó a la herencia, Zoraida {{blank}} de opinar y sirvió más café."
+    hint_general: "Decidió no dar su opinión en ese tema."
+    explanation: "Se abstuvo: decidió no opinar. «Se atuvo» sería ajustarse a una norma, y «se calló» diría que no dijo nada en toda la comida."
+    options:
+      - position: 1
+        text: "se abstuvo"
+        is_correct: true
+      - position: 2
+        text: "se atuvo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atenerse» es ajustarse a una norma acordada, y en esa comida no hay ninguna norma que seguir."
+        hint_specific: "Atenerse necesita una regla previa. ¿Qué regla habría en esa comida?"
+      - position: 3
+        text: "se calló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callarse» sería no decir nada en toda la comida, y ella sigue en la mesa y hasta sirve café."
+        hint_specific: "Quien se calla deja de hablar del todo. ¿De qué deja de hablar Zoraida?"
+  - position: 3
+    sentence: "El tribunal pidió a los familiares {{blank}} de hacer comentarios durante la lectura."
+    hint_general: "Les pidieron no hacer comentarios mientras leían."
+    explanation: "Abstenerse: no hacer comentarios durante la lectura. «Detenerse» sería pararse a mitad de camino, y «abdicar» es palabra de reyes y suena solemne."
+    options:
+      - position: 1
+        text: "detenerse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Detenerse» es parar algo que ya está en marcha, y lo que se pide aquí es no empezar a comentar."
+        hint_specific: "Detenerse supone que ya ibas andando. ¿Qué se pide que no ocurra?"
+      - position: 2
+        text: "abstenerse"
+        is_correct: true
+      - position: 3
+        text: "abdicar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Abdicar» es palabra solemne de reyes que dejan el trono, y aquí solo se pide silencio durante una lectura."
+        hint_specific: "Abdicar sale en los libros de historia. ¿Qué se está leyendo en esa sala?"
+  - position: 4
+    sentence: "Prefiero {{blank}} en esta decisión porque trabajo con las dos partes y no sería justo."
+    hint_general: "Se aparta de la decisión por estar en medio de dos partes."
+    explanation: "Abstenerme: apartarme de la decisión por estar en medio. «Atenerme» sería ajustarme a una norma, y «negarme» sería oponerme, cuando aquí no se toma partido."
+    options:
+      - position: 1
+        text: "abstenerme"
+        is_correct: true
+      - position: 2
+        text: "negarme"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Negarse» es oponerse de frente, y quien habla no se opone a nada: se aparta para no favorecer a ninguna parte."
+        hint_specific: "Negarse pone a alguien enfrente. ¿A quién se opone quien habla?"
+      - position: 3
+        text: "atenerme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atenerse» es ajustarse a una norma acordada, y aquí no hay ninguna norma: hay un conflicto de lealtades."
+        hint_specific: "Atenerse cita una regla. ¿Qué motivo da quien habla?"
+  - position: 5
+    sentence: "Ulises lleva un mes {{blank}} de contestar mensajes después de las diez de la noche."
+    hint_general: "Ha dejado a propósito de contestar tan tarde."
+    explanation: "Absteniéndose: ha dejado a propósito de contestar tan tarde. «Deteniéndose» sería pararse a mitad, e «inhibiéndose» es palabra de juzgados."
+    options:
+      - position: 1
+        text: "deteniéndose"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Detenerse» es parar a mitad de algo que ya estaba en marcha, y él directamente no empieza a contestar."
+        hint_specific: "Detenerse pide un movimiento previo. ¿Qué es lo que ya no hace Ulises?"
+      - position: 2
+        text: "absteniéndose"
+        is_correct: true
+      - position: 3
+        text: "inhibiéndose"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inhibirse» es palabra de juzgados y se dice de quien se aparta de un caso, no de quien deja el teléfono por la noche."
+        hint_specific: "«Inhibirse» pertenece a los tribunales. ¿De qué se aparta él cada noche?"
+  - position: 6
+    sentence: "En la mesa de mi familia todos opinan de todo, así que {{blank}} es casi un deporte."
+    hint_general: "No dar tu opinión es raro y cuesta esfuerzo allí."
+    explanation: "Abstenerse: no dar la opinión propia. «Atenerse» sería ajustarse a una norma, y «esperar» solo diría que tu turno llega más tarde."
+    options:
+      - position: 1
+        text: "abstenerse"
+        is_correct: true
+      - position: 2
+        text: "atenerse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atenerse» es ajustarse a una norma acordada, y en esa mesa la costumbre es justo la contraria: opinar de todo."
+        hint_specific: "Atenerse necesita una regla escrita. ¿Qué norma hay en esa mesa?"
+      - position: 3
+        text: "esperar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esperar» diría que tu turno llega más tarde, y aquí la gracia está en no llegar a opinar nunca."
+        hint_specific: "Quien espera acaba hablando. ¿Qué es lo difícil en esa mesa?"
+  - position: 7
+    sentence: "Los socios que trabajan con el proveedor deben {{blank}} en esa parte de la votación."
+    hint_general: "No pueden votar en el punto donde tienen interés."
+    explanation: "Abstenerse: no votar donde tienen interés. «Detenerse» sería parar a mitad, y «dudar» describiría su cabeza, no su voto."
+    options:
+      - position: 1
+        text: "dudar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dudar» describe lo que pasa en la cabeza de alguien, y la norma habla de lo que hacen con el voto."
+        hint_specific: "La duda no se ve en un acta. ¿Qué se registra en una votación?"
+      - position: 2
+        text: "abstenerse"
+        is_correct: true
+      - position: 3
+        text: "detenerse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Detenerse» es parar algo empezado, y estos socios no deben ni empezar a votar ese punto."
+        hint_specific: "Detenerse ocurre a mitad de camino. ¿Cuándo se apartan estos socios?"
+  - position: 8
+    sentence: "Aitana {{blank}} de dar consejos hasta que se los piden, y por eso se los piden mucho."
+    hint_general: "Guarda sus consejos hasta que alguien los pide."
+    explanation: "Se abstiene: guarda sus consejos hasta que se los piden. «Se atiene» sería seguir una norma, y «se olvida» diría que no se acuerda de darlos."
+    options:
+      - position: 1
+        text: "se atiene"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atenerse» es ajustarse a una norma acordada con otros, y esto es una decisión suya sobre cuándo hablar."
+        hint_specific: "Atenerse remite a un acuerdo previo. ¿Quién decide lo de Aitana?"
+      - position: 2
+        text: "se abstiene"
+        is_correct: true
+      - position: 3
+        text: "se olvida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Olvidarse» sería no acordarse, y ella sí se acuerda: espera a propósito a que se lo pidan."
+        hint_specific: "Quien se olvida no lo hace aposta. ¿Lo de Aitana es despiste o decisión?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La votación del portal"
+    body: "En la reunión del portal se votaba cambiar el ascensor. Amadeo vive en el bajo y no lo usa nunca. «Me abstengo», dijo, «porque a mí no me afecta y a los demás sí». Nadie se lo tomó a mal y la obra salió adelante con diez votos."
+    before_phrase: "Yo paso, que a mí me da igual."
+    after_phrase: "Me abstengo, porque a mí no me afecta."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El tema de la casa"
+    body: "Cada vez que sale el tema de la casa del pueblo, Zoraida se levanta a por más café. No es que no tenga opinión: ha decidido abstenerse de darla mientras sus hermanos no se pongan de acuerdo. «Cuando se pongan de acuerdo, yo firmo lo que sea», dice."
+    before_phrase: "Yo de eso mejor no digo nada."
+    after_phrase: "Prefiero abstenerme mientras no haya acuerdo."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Trabajo con las dos partes"
+    body: "A Aitana la invitaron a decidir entre dos proveedores con los que trabaja a diario. Contestó antes de la reunión: «Prefiero abstenerme en esta decisión; paso los datos de los dos y que decidan ellos». Le agradecieron los datos y la dejaron fuera de la votación."
+    before_phrase: "Es que yo aquí no debería opinar, ¿no?"
+    after_phrase: "Prefiero abstenerme en esta decisión."
+metrics:
+  zipf_overall: 3.8358
+  dispersion_dp: 0.2706
+  pedantry_proxy: 0.4276
+  family_size: 35
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

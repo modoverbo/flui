@@ -1,0 +1,246 @@
+schema_version: 1
+slug: "dificilmente"
+status: "draft"
+lemma: "difícilmente"
+part_of_speech: "adverbio"
+syllables:
+  - "di"
+  - "fí"
+  - "cil"
+  - "men"
+  - "te"
+stressed_syllable: 2
+ipa_latam: "[di.fi.silˈmen.te]"
+ipa_es: "[di.fi.θilˈmen.te]"
+explanation: "Dice que algo es muy poco probable, sin llegar a jurar que no pasará."
+example_sentence: "Sin la firma del propietario difícilmente saldrá adelante la obra."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Avisa de un mal pronóstico sin cerrar la puerta: nadie puede acusarte de exagerar."
+when_not_to_use: "No la uses si algo es del todo imposible; para lo imposible esta palabra se queda tibia."
+collocations:
+  - "difícilmente encontrarás"
+  - "difícilmente repetible"
+replaces:
+  - before: "No creo que lleguemos a tiempo"
+    after: "Difícilmente llegaremos a tiempo"
+  - before: "Ni de broma te dejan pasar sin papeles"
+    after: "Sin papeles difícilmente te dejan pasar"
+  - before: "Eso no se repite ni harto de suerte"
+    after: "Eso difícilmente se repite"
+family:
+  - "difícil"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "no creo que"
+  funcion:
+    - "anunciar lo poco probable"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "dificultosamente"
+    difference: "«Dificultosamente» describe cómo se hace algo, con esfuerzo y trabas: «subió dificultosamente». La otra habla de probabilidad."
+    memory_trick: "Una cuenta el esfuerzo; la otra calcula las opciones."
+  - confused_with: "deficientemente"
+    difference: "«Deficientemente» dice que algo se hizo mal o a medias: «quedó deficientemente sellado». La otra no juzga la calidad: mide lo improbable."
+    memory_trick: "Una suspende el resultado; la otra ni siquiera lo espera."
+exercises:
+  - position: 1
+    sentence: "Con este tráfico {{blank}} llegaremos antes de las ocho a la cita del notario."
+    hint_general: "El pronóstico es malo, aunque nadie jura que sea imposible."
+    explanation: "Difícilmente: el pronóstico es malo sin cerrar la puerta. «Dificultosamente» hablaría del esfuerzo del viaje y «seguramente» daría por hecho que sí llegan."
+    options:
+      - position: 1
+        text: "dificultosamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dificultosamente» describe cómo se hace algo, con esfuerzo, y aquí no se cuenta cómo se conduce: se calcula si da tiempo."
+        hint_specific: "«Dificultosamente» describe el esfuerzo de una acción. ¿Se cuenta el esfuerzo o se calcula el reloj?"
+      - position: 2
+        text: "difícilmente"
+        is_correct: true
+      - position: 3
+        text: "seguramente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguramente» daría por hecho que llegan, y el tráfico apunta justo al escenario contrario."
+        hint_specific: "«Seguramente» apuesta a favor. ¿El tráfico ayuda o estorba?"
+  - position: 2
+    sentence: "Sin los papeles del coche {{blank}} te dejarán pasar la revisión del taller."
+    hint_general: "Lo más probable es que no, aunque no es una ley escrita."
+    explanation: "Difícilmente: lo más probable es que no pase. «Ni en broma» cierra la puerta en tono de conversación y «probablemente» apostaría a favor."
+    options:
+      - position: 1
+        text: "difícilmente"
+        is_correct: true
+      - position: 2
+        text: "ni en broma"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni en broma» es de conversación y cierra la puerta del todo, cuando aquí solo se avisa de que es muy poco probable."
+        hint_specific: "«Ni en broma» descarta por completo. ¿Queda alguna opción o ninguna?"
+      - position: 3
+        text: "probablemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Probablemente» apostaría a favor de que sí pasa, y la frase avisa de lo contrario: sin papeles la cosa pinta mal."
+        hint_specific: "«Probablemente» apuesta a favor. ¿El aviso anima o desanima?"
+  - position: 3
+    sentence: "Un pan como ese {{blank}} se encuentra fuera de la panadería del mercado viejo."
+    hint_general: "Es muy poco probable hallarlo en otro sitio, aunque nadie lo descarta del todo."
+    explanation: "Difícilmente: es muy poco probable hallarlo en otro sitio. «Deficientemente» juzgaría la calidad del pan y «apenas» mediría la cantidad que queda."
+    options:
+      - position: 1
+        text: "deficientemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deficientemente» juzga la calidad de algo hecho a medias, y aquí el pan es excelente: lo difícil es dar con él."
+        hint_specific: "«Deficientemente» valora la calidad. ¿El pan está mal hecho o cuesta encontrarlo?"
+      - position: 2
+        text: "difícilmente"
+        is_correct: true
+      - position: 3
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» mediría la cantidad que queda, y la frase no cuenta panes: calcula las opciones de encontrarlo en otra tienda."
+        hint_specific: "«Apenas» mide cantidades pequeñas. ¿Se cuentan panes o se calculan opciones?"
+  - position: 4
+    sentence: "Con dos horas de margen {{blank}} le da tiempo a pasar por casa antes de la boda."
+    hint_general: "Las cuentas salen muy justas y lo más probable es que no le cuadre."
+    explanation: "Difícilmente: las cuentas salen muy justas. «Ni de lejos» niega toda comparación en tono de conversación y «posiblemente» apostaría a favor del plan."
+    options:
+      - position: 1
+        text: "difícilmente"
+        is_correct: true
+      - position: 2
+        text: "ni de lejos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni de lejos» es de conversación y niega cualquier parecido con lo posible, cuando aquí el margen existe aunque sea escaso."
+        hint_specific: "«Ni de lejos» descarta del todo. ¿El margen es escaso o inexistente?"
+      - position: 3
+        text: "posiblemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posiblemente» apostaría a favor del plan, y la frase avisa de que las dos horas se quedan cortas."
+        hint_specific: "«Posiblemente» apuesta a favor. ¿El aviso anima o desanima?"
+  - position: 5
+    sentence: "Una tarde como aquella {{blank}} vuelve a darse en veinte años de amistad."
+    hint_general: "Repetir algo así es muy poco probable, y por eso se recuerda."
+    explanation: "Difícilmente: repetir algo así es muy poco probable. «Dificultosamente» hablaría del esfuerzo que costó y «afortunadamente» celebraría que no se repita."
+    options:
+      - position: 1
+        text: "dificultosamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dificultosamente» describe el esfuerzo con que se hace algo, y aquella tarde no costó trabajo: fue irrepetible."
+        hint_specific: "«Dificultosamente» habla del esfuerzo de hacer algo. ¿Costó esfuerzo o es rara de repetir?"
+      - position: 2
+        text: "afortunadamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Afortunadamente» celebraría que no se repita, y la frase la recuerda como algo bueno que no volverá."
+        hint_specific: "«Afortunadamente» celebra el resultado. ¿Que no se repita es bueno o es una pena?"
+      - position: 3
+        text: "difícilmente"
+        is_correct: true
+  - position: 6
+    sentence: "Sin ensayar ni una vez {{blank}} sale bien una obra de dos horas en el teatro del barrio."
+    hint_general: "Con cero ensayos, el pronóstico es malo, aunque milagros haberlos haylos."
+    explanation: "Difícilmente: con cero ensayos el pronóstico es malo. «Ni en broma» cierra la puerta en tono de conversación y «efectivamente» confirmaría que la obra sale bien."
+    options:
+      - position: 1
+        text: "difícilmente"
+        is_correct: true
+      - position: 2
+        text: "ni en broma"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni en broma» es de conversación y cierra la puerta del todo, cuando la frase deja abierta una rendija muy pequeña."
+        hint_specific: "«Ni en broma» descarta por completo. ¿Queda una rendija abierta o ninguna?"
+      - position: 3
+        text: "efectivamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Efectivamente» confirmaría que la obra sale bien, y la frase avisa justo de lo contrario."
+        hint_specific: "«Efectivamente» confirma lo esperado. ¿La obra sale bien o pinta mal?"
+  - position: 7
+    sentence: "Con el presupuesto de este año {{blank}} cabe una segunda pista de tenis en el club."
+    hint_general: "El dinero no da, aunque nadie ha cerrado la puerta del todo."
+    explanation: "Difícilmente: el dinero no da para tanto. «Deficientemente» juzgaría cómo está hecha la pista y «seguramente» daría la obra por hecha."
+    options:
+      - position: 1
+        text: "deficientemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deficientemente» juzga cómo está hecha una cosa, y aquí la pista todavía no existe: se discute si hay dinero."
+        hint_specific: "«Deficientemente» valora la calidad de lo hecho. ¿Hay una pista mal hecha o no hay dinero?"
+      - position: 2
+        text: "difícilmente"
+        is_correct: true
+      - position: 3
+        text: "seguramente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguramente» daría la obra por hecha, y el presupuesto apunta justo a lo contrario."
+        hint_specific: "«Seguramente» apuesta a favor. ¿El presupuesto da para la pista o se queda corto?"
+  - position: 8
+    sentence: "Después de aquella discusión {{blank}} volverán a compartir mesa este verano."
+    hint_general: "El pronóstico es malo, aunque nadie ha dicho que sea imposible."
+    explanation: "Difícilmente: el pronóstico es malo sin ser definitivo. «Ni de lejos» niega toda comparación en tono de conversación y «probablemente» apostaría por la reconciliación."
+    options:
+      - position: 1
+        text: "probablemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Probablemente» apostaría por la reconciliación, y la frase avisa de que no pinta bien tras la discusión."
+        hint_specific: "«Probablemente» apuesta a favor. ¿El aviso anima o desanima?"
+      - position: 2
+        text: "ni de lejos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni de lejos» es de conversación y niega cualquier posibilidad, cuando la frase deja abierta una puerta pequeña."
+        hint_specific: "«Ni de lejos» cierra del todo. ¿Queda una puerta abierta o ninguna?"
+      - position: 3
+        text: "difícilmente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La cita del notario"
+    body: "El equipo llevaba media hora atascado en la ronda y nadie quería decirlo. Genaro llamó y avisó sin dramatizar: «Con este tráfico difícilmente llegamos a las ocho». El notario movió la cita veinte minutos y la firma salió igual."
+    before_phrase: "No creo que lleguemos, con este tráfico, no sé."
+    after_phrase: "Con este tráfico difícilmente llegamos a las ocho."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El pan del mercado viejo"
+    body: "Le preguntaron por qué cruzaba media ciudad para comprar pan. Rosenda lo dijo sin presumir: «Un pan así difícilmente se encuentra en otro sitio». Tres personas de la mesa apuntaron la dirección en el teléfono."
+    before_phrase: "Es que un pan así no lo encuentras en ningún lado, o sea."
+    after_phrase: "Un pan así difícilmente se encuentra en otro sitio."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La mesa de agosto"
+    body: "Nadie se atrevía a preguntar si habría comida familiar después de la bronca de mayo. Su tía lo dijo con calma y sin cerrar la puerta: «Difícilmente compartirán mesa este verano». Justo por decirlo así, en septiembre alguien se atrevió a llamar."
+    before_phrase: "Ni de broma se sientan juntos, tú verás."
+    after_phrase: "Difícilmente compartirán mesa este verano."
+metrics:
+  zipf_overall: 4.0312
+  dispersion_dp: 0.1457
+  pedantry_proxy: 0.5023
+  family_size: 56
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "ciertamente"
+status: "draft"
+lemma: "ciertamente"
+part_of_speech: "adverbio"
+syllables:
+  - "cier"
+  - "ta"
+  - "men"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[sjeɾ.taˈmen.te]"
+ipa_es: "[θjeɾ.taˈmen.te]"
+explanation: "Reconoce que la otra parte lleva razón antes de añadir tu propio punto."
+example_sentence: "El precio ciertamente asusta, pero el aparato dura el doble."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Da la razón primero y la otra persona escucha lo que viene después con la guardia baja."
+when_not_to_use: "No la uses si no piensas conceder nada; reconocer de boquilla se nota en la frase siguiente."
+collocations:
+  - "ciertamente difícil"
+  - "ciertamente conviene"
+replaces:
+  - before: "Sí, vale, es caro, pero ahorra tiempo"
+    after: "Resulta ciertamente caro, pero ahorra tiempo"
+  - before: "Hombre, largo es, aunque se lee rápido"
+    after: "Es ciertamente largo, aunque se lee rápido"
+  - before: "La verdad que está lejos, pero cuesta la mitad"
+    after: "Está ciertamente lejos, pero cuesta la mitad"
+family:
+  - "cierto"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin:
+    - "la verdad"
+  funcion:
+    - "conceder antes de objetar"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "certeramente"
+    difference: "«Certeramente» dice que algo dio en el blanco: «respondió certeramente». La otra no valora la puntería: concede razón."
+    memory_trick: "Una acierta el tiro; la otra baja la guardia."
+  - confused_with: "ciegamente"
+    difference: "«Ciegamente» describe a quien se fía sin mirar: «obedeció ciegamente». La otra mira muy bien y aun así concede."
+    memory_trick: "Una no mira; la otra mira y admite."
+exercises:
+  - position: 1
+    sentence: "El plazo fue {{blank}} corto, aunque el resultado se sostiene sin un solo parche."
+    hint_general: "Admite la pega antes de defender lo que salió bien."
+    explanation: "Ciertamente: admite la pega antes de defender el trabajo. «Certeramente» hablaría de dar en el blanco y «apenas» diría que el plazo fue mínimo."
+    options:
+      - position: 1
+        text: "certeramente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Certeramente» dice que algo dio en el blanco, y aquí no se acierta nada: se admite que el plazo apretaba."
+        hint_specific: "«Certeramente» habla de puntería. ¿Se acierta algo o se admite una pega?"
+      - position: 2
+        text: "ciertamente"
+        is_correct: true
+      - position: 3
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» mediría el plazo como casi inexistente, y la frase solo reconoce que fue corto antes de defender el resultado."
+        hint_specific: "«Apenas» mide lo poco que hubo. ¿Se mide el plazo o se concede la pega?"
+  - position: 2
+    sentence: "La propuesta resulta {{blank}} cara, pero ahorra dos meses de trabajo al equipo."
+    hint_general: "Concede el punto débil y a continuación pone la ventaja encima."
+    explanation: "Ciertamente: concede el punto débil antes de la ventaja. «La mar de» exagera en tono de conversación y «en cambio» opondría dos ideas donde la segunda ya viene con «pero»."
+    options:
+      - position: 1
+        text: "ciertamente"
+        is_correct: true
+      - position: 2
+        text: "la mar de"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«La mar de» es de conversación y exagera el precio, cuando aquí se concede un punto con calma para poder seguir negociando."
+        hint_specific: "«La mar de» exagera y suena a charla. ¿Se exagera el precio o se concede el punto?"
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» marcaría el contraste que ya trae el «pero» de la segunda parte, y dejaría la frase sin la concesión inicial."
+        hint_specific: "«En cambio» opone dos ideas. ¿Falta un contraste o falta admitir la pega?"
+  - position: 3
+    sentence: "El camino del puerto es {{blank}} más largo, y aun así llegamos antes que nadie."
+    hint_general: "Admite la desventaja evidente antes de contar la sorpresa."
+    explanation: "Ciertamente: admite la desventaja antes de la sorpresa. «Ciegamente» describiría a quien se fía sin mirar y «al contrario» negaría que el camino sea largo."
+    options:
+      - position: 1
+        text: "ciegamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ciegamente» describe a quien hace algo sin mirar, y aquí se mira el mapa y se admite que ese camino es más largo."
+        hint_specific: "«Ciegamente» habla de fiarse sin mirar. ¿Alguien se fía a ojos cerrados o admite un dato?"
+      - position: 2
+        text: "al contrario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al contrario» negaría que el camino sea más largo, y la frase empieza justo admitiéndolo."
+        hint_specific: "«Al contrario» da la vuelta a lo dicho. ¿Se niega que sea largo o se admite?"
+      - position: 3
+        text: "ciertamente"
+        is_correct: true
+  - position: 4
+    sentence: "Su idea suena {{blank}} arriesgada, aunque el equipo entero la apoya sin fisuras."
+    hint_general: "Reconoce el riesgo antes de contar quién la respalda."
+    explanation: "Ciertamente: reconoce el riesgo antes del respaldo. «De lo más» exagera en tono de conversación y «supuestamente» pondría en duda que el riesgo exista."
+    options:
+      - position: 1
+        text: "ciertamente"
+        is_correct: true
+      - position: 2
+        text: "de lo más"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De lo más» es de conversación y exagera el riesgo, cuando aquí se admite con calma para que el apoyo pese más."
+        hint_specific: "«De lo más» sube el tono y exagera. ¿Se exagera el riesgo o se concede?"
+      - position: 3
+        text: "supuestamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Supuestamente» pondría en duda que la idea sea arriesgada, y quien habla lo admite abiertamente."
+        hint_specific: "«Supuestamente» siembra dudas. ¿El riesgo se admite o se pone en duda?"
+  - position: 5
+    sentence: "La casa está {{blank}} lejos del centro, pero el alquiler cuesta la mitad."
+    hint_general: "Admite la distancia y después enseña la compensación."
+    explanation: "Ciertamente: admite la distancia antes de la compensación. «Certeramente» hablaría de dar en el blanco y «por tanto» convertiría la distancia en la causa del precio."
+    options:
+      - position: 1
+        text: "certeramente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Certeramente» dice que algo dio en el blanco, y aquí no se acierta nada: se admite que la casa queda lejos."
+        hint_specific: "«Certeramente» habla de puntería. ¿Se acierta algo o se admite una distancia?"
+      - position: 2
+        text: "ciertamente"
+        is_correct: true
+      - position: 3
+        text: "por tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por tanto» presentaría la distancia como la causa del precio, y la frase la admite como pega, no como explicación."
+        hint_specific: "«Por tanto» encadena causa y efecto. ¿Se explica el precio o se concede la pega?"
+  - position: 6
+    sentence: "El texto es {{blank}} largo, y sin embargo se lee de una sentada sin esfuerzo."
+    hint_general: "Concede la longitud y luego enseña por qué no importa."
+    explanation: "Ciertamente: concede la longitud antes de quitarle peso. «La mar de» exagera en tono de conversación y «apenas» diría que el texto es cortísimo."
+    options:
+      - position: 1
+        text: "la mar de"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«La mar de» es de conversación y exagera la longitud, cuando aquí se admite con calma antes de defender el texto."
+        hint_specific: "«La mar de» exagera y suena a charla. ¿Se exagera o se concede el punto?"
+      - position: 2
+        text: "ciertamente"
+        is_correct: true
+      - position: 3
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» diría que el texto es cortísimo, y la frase admite justo lo contrario antes de defenderlo."
+        hint_specific: "«Apenas» mide lo poco que hay. ¿El texto es corto o se admite que es largo?"
+  - position: 7
+    sentence: "Tu hermano llegó tarde, {{blank}}, pero trajo el postre que faltaba en la mesa."
+    hint_general: "Da la razón sobre el retraso y a continuación equilibra la balanza."
+    explanation: "Ciertamente: da la razón sobre el retraso antes de equilibrar. «Ciegamente» describiría a quien se fía sin mirar y «sin embargo» duplicaría el contraste que ya trae el «pero»."
+    options:
+      - position: 1
+        text: "ciegamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ciegamente» describe a quien actúa sin mirar, y aquí se reconoce un hecho comprobado: llegó tarde."
+        hint_specific: "«Ciegamente» habla de fiarse sin mirar. ¿Alguien se fía a ciegas o se admite un retraso?"
+      - position: 2
+        text: "ciertamente"
+        is_correct: true
+      - position: 3
+        text: "sin embargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sin embargo» repetiría el contraste que ya trae el «pero» de la segunda parte y dejaría la frase sin la concesión."
+        hint_specific: "«Sin embargo» anuncia un contraste. ¿Falta un contraste o falta admitir el retraso?"
+  - position: 8
+    sentence: "El trabajo fue {{blank}} duro, aunque ninguno de los dos se arrepiente de haberlo hecho."
+    hint_general: "Admite lo que costó antes de decir que valió la pena."
+    explanation: "Ciertamente: admite lo que costó antes de defenderlo. «De lo más» exagera en tono de conversación y «al contrario» negaría que el trabajo fuera duro."
+    options:
+      - position: 1
+        text: "al contrario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al contrario» negaría que el trabajo fuera duro, y la frase empieza reconociéndolo para que la segunda parte pese más."
+        hint_specific: "«Al contrario» da la vuelta a lo dicho. ¿Se niega la dureza o se admite?"
+      - position: 2
+        text: "de lo más"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De lo más» es de conversación y exagera la dureza, cuando aquí se concede con calma antes de decir que valió la pena."
+        hint_specific: "«De lo más» sube el tono y exagera. ¿Se exagera la dureza o se concede?"
+      - position: 3
+        text: "ciertamente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El precio de la propuesta"
+    body: "La reunión se estaba convirtiendo en una pelea por el precio. Custodio dio la razón antes de defenderse: «Resulta ciertamente cara, pero ahorra dos meses». El cliente bajó la voz y empezó a preguntar por el calendario."
+    before_phrase: "Sí, vale, es cara, pero es que ahorra tiempo."
+    after_phrase: "Resulta ciertamente cara, pero ahorra dos meses."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El postre del domingo"
+    body: "Su hermano llegó con cuarenta minutos de retraso y la mesa entera lo miró. Antes de que nadie hablara, Nicasia puso las dos cosas en la misma frase: «Llegó tarde, ciertamente, pero trajo el postre que faltaba». La comida siguió sin reproches."
+    before_phrase: "Hombre, tarde ha llegado, pero bueno, trae postre."
+    after_phrase: "Llegó tarde, ciertamente, pero trajo el postre."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La casa de las afueras"
+    body: "Todo el grupo insistía en que se había ido a vivir demasiado lejos. Anacleto no se puso a la defensiva: «Está ciertamente lejos, y pago la mitad». Nadie discutió el dato y dos amigos le pidieron el teléfono de la inmobiliaria."
+    before_phrase: "La verdad que está lejos, pero es que pago la mitad."
+    after_phrase: "Está ciertamente lejos, y pago la mitad."
+metrics:
+  zipf_overall: 4.3905
+  dispersion_dp: 0.1511
+  pedantry_proxy: 0.4334
+  family_size: 6
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

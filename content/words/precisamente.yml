@@ -1,0 +1,246 @@
+schema_version: 1
+slug: "precisamente"
+status: "draft"
+lemma: "precisamente"
+part_of_speech: "adverbio"
+syllables:
+  - "pre"
+  - "ci"
+  - "sa"
+  - "men"
+  - "te"
+stressed_syllable: 4
+ipa_latam: "[pɾe.si.saˈmen.te]"
+ipa_es: "[pɾe.θi.saˈmen.te]"
+explanation: "Señala que se trata de ese punto justo y no de otro parecido."
+example_sentence: "El fallo estaba precisamente en la línea que nadie había revisado."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Clava el dedo en el punto justo y evita que la otra persona busque por otro lado."
+when_not_to_use: "No la uses si el dato es aproximado; señalar con esta palabra algo vago suena a farol."
+collocations:
+  - "precisamente hoy"
+  - "precisamente ahí"
+replaces:
+  - before: "Justo de eso queríamos hablar"
+    after: "Precisamente de eso queríamos hablar"
+  - before: "Fue el día más frío, o sea, ese mismo"
+    after: "Fue precisamente el día más frío del invierno"
+  - before: "Ese cuadro es el que más le gusta, ese y no otro"
+    after: "Ese cuadro es precisamente el que más le gusta"
+family:
+  - "preciso"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "justo"
+  funcion:
+    - "señalar el punto exacto"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "preciosamente"
+    difference: "«Preciosamente» habla de belleza: «la mesa quedó preciosamente puesta». La otra no valora nada: señala el punto exacto."
+    memory_trick: "Una admira; la otra apunta."
+  - confused_with: "precipitadamente"
+    difference: "«Precipitadamente» dice que algo se hizo con prisa y sin pensar. La otra no habla de velocidad: habla de puntería."
+    memory_trick: "Una corre; la otra acierta."
+exercises:
+  - position: 1
+    sentence: "Llamó para preguntar por el plazo y {{blank}} de eso queríamos hablar con él."
+    hint_general: "El tema que trae es justo el que tú tenías preparado, ni uno parecido."
+    explanation: "Precisamente: el tema coincide punto por punto. «Preciosamente» hablaría de belleza y «por casualidad» presentaría la coincidencia como un azar sin importancia."
+    options:
+      - position: 1
+        text: "preciosamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Preciosamente» habla de belleza, y aquí no se admira nada: se señala que el tema coincide con el que esperabas."
+        hint_specific: "«Preciosamente» valora lo bonito. ¿Se admira algo o se señala una coincidencia?"
+      - position: 2
+        text: "precisamente"
+        is_correct: true
+      - position: 3
+        text: "por casualidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por casualidad» presentaría la coincidencia como un azar sin peso, y la frase la usa para subrayar que el tema encaja."
+        hint_specific: "«Por casualidad» quita importancia al encuentro. ¿La coincidencia se subraya o se minimiza?"
+  - position: 2
+    sentence: "El día que se estropeó la caldera fue {{blank}} el más frío de todo el invierno."
+    hint_general: "De todos los días posibles, tocó ese y ninguno parecido."
+    explanation: "Precisamente: tocó ese día y no otro. «Ni más ni menos» presume del dato en tono de conversación y «aproximadamente» dejaría la fecha en un cálculo."
+    options:
+      - position: 1
+        text: "precisamente"
+        is_correct: true
+      - position: 2
+        text: "ni más ni menos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni más ni menos» es de conversación y presume del dato como si fuera un récord, cuando aquí se señala una mala coincidencia."
+        hint_specific: "«Ni más ni menos» presume del dato. ¿Se presume de algo o se lamenta una coincidencia?"
+      - position: 3
+        text: "aproximadamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aproximadamente» dejaría la fecha en un cálculo, y la frase apunta a un día concreto y comprobable."
+        hint_specific: "«Aproximadamente» deja margen. ¿El día es exacto o es una estimación?"
+  - position: 3
+    sentence: "No se me olvidó la fecha: {{blank}} la tenía apuntada en dos sitios distintos."
+    hint_general: "La razón exacta desmonta la acusación, y es esa y no otra."
+    explanation: "Precisamente: esa es la razón exacta. «Precipitadamente» hablaría de hacer algo con prisa y «en cambio» opondría dos ideas que van del mismo lado."
+    options:
+      - position: 1
+        text: "precipitadamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precipitadamente» dice que algo se hizo con prisa y sin pensar, y apuntar la fecha dos veces es lo contrario de ir deprisa."
+        hint_specific: "«Precipitadamente» habla de prisas. ¿Hubo prisa o hubo cuidado?"
+      - position: 2
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» enfrenta dos ideas, y aquí la segunda apoya a la primera en vez de contradecirla."
+        hint_specific: "«En cambio» marca contraste. ¿Las dos partes chocan o van en la misma dirección?"
+      - position: 3
+        text: "precisamente"
+        is_correct: true
+  - position: 4
+    sentence: "Le dieron el turno de noche {{blank}} la semana en que su hija cumplía años."
+    hint_general: "De todas las semanas del año, le tocó esa y no otra."
+    explanation: "Precisamente: le tocó esa semana y no otra. «Para más señas» añade un detalle identificativo con aire de crónica y «prácticamente» dejaría la fecha en un casi."
+    options:
+      - position: 1
+        text: "precisamente"
+        is_correct: true
+      - position: 2
+        text: "para más señas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Para más señas» tiene aire de crónica y añade un dato para identificar algo, cuando aquí lo que duele es la coincidencia."
+        hint_specific: "«Para más señas» añade datos de identificación. ¿Se identifica una semana o se lamenta el choque?"
+      - position: 3
+        text: "prácticamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prácticamente» dejaría la coincidencia en un casi, y el turno cayó justo en esa semana, sin margen."
+        hint_specific: "«Prácticamente» deja las cosas a un paso. ¿Coincidió del todo o casi?"
+  - position: 5
+    sentence: "Ese cuadro pequeño del pasillo es {{blank}} el que más le gusta a mi madre."
+    hint_general: "De toda la casa, señala ese cuadro y ningún otro parecido."
+    explanation: "Precisamente: señala ese cuadro y ningún otro. «Preciosamente» hablaría de belleza y «en general» difuminaría el gusto por toda la casa."
+    options:
+      - position: 1
+        text: "preciosamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Preciosamente» habla de belleza, y aquí no se describe el cuadro: se señala cuál es el favorito."
+        hint_specific: "«Preciosamente» valora lo bonito. ¿Se describe el cuadro o se señala cuál es?"
+      - position: 2
+        text: "precisamente"
+        is_correct: true
+      - position: 3
+        text: "en general"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En general» difuminaría el gusto por toda la casa, y la frase apunta a un cuadro concreto del pasillo."
+        hint_specific: "«En general» abre el foco. ¿Se habla de toda la casa o de un cuadro?"
+  - position: 6
+    sentence: "Nos quedamos sin luz {{blank}} cuando el partido iba por el minuto ochenta."
+    hint_general: "De todo el rato posible, el apagón cayó en ese minuto exacto."
+    explanation: "Precisamente: el apagón cayó en ese minuto exacto. «Ni más ni menos» presume del dato en tono de conversación y «aproximadamente» dejaría el minuto en un cálculo."
+    options:
+      - position: 1
+        text: "aproximadamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aproximadamente» dejaría el minuto en un cálculo, y la gracia de la frase es que fue ese minuto y no otro."
+        hint_specific: "«Aproximadamente» deja margen. ¿El minuto es exacto o es una estimación?"
+      - position: 2
+        text: "ni más ni menos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni más ni menos» es de conversación y presume del dato, cuando aquí se cuenta una mala suerte, no un mérito."
+        hint_specific: "«Ni más ni menos» presume del dato. ¿Hay mérito o hay mala suerte?"
+      - position: 3
+        text: "precisamente"
+        is_correct: true
+  - position: 7
+    sentence: "Vino a verme el jueves, que era {{blank}} el día que yo libraba esa semana."
+    hint_general: "De los siete días, acertó con el único que encajaba."
+    explanation: "Precisamente: acertó con el único día que encajaba. «Precipitadamente» hablaría de hacer algo con prisa y «al contrario» invertiría el sentido de la frase."
+    options:
+      - position: 1
+        text: "precipitadamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precipitadamente» dice que algo se hizo con prisa y sin pensar, y la visita cayó en el día bueno, no en un arrebato."
+        hint_specific: "«Precipitadamente» habla de prisas. ¿Hubo atropello o hubo puntería?"
+      - position: 2
+        text: "precisamente"
+        is_correct: true
+      - position: 3
+        text: "al contrario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al contrario» invertiría el sentido de la frase, y aquí la coincidencia es buena: era el día libre."
+        hint_specific: "«Al contrario» da la vuelta a lo dicho. ¿El jueves encajaba o estorbaba?"
+  - position: 8
+    sentence: "Compró el mismo modelo que yo y {{blank}} en la tienda de al lado de mi casa."
+    hint_general: "No fue una tienda cualquiera: fue esa y ninguna otra."
+    explanation: "Precisamente: fue esa tienda y ninguna otra. «Para más señas» añade un dato identificativo con aire de crónica y «prácticamente» dejaría el sitio en un casi."
+    options:
+      - position: 1
+        text: "precisamente"
+        is_correct: true
+      - position: 2
+        text: "para más señas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Para más señas» tiene aire de crónica y sirve para identificar algo con más datos, cuando aquí lo llamativo es la coincidencia."
+        hint_specific: "«Para más señas» añade datos de identificación. ¿Se identifica la tienda o sorprende que sea esa?"
+      - position: 3
+        text: "prácticamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prácticamente» dejaría el sitio en un casi, y la tienda es justo la de al lado, sin aproximaciones."
+        hint_specific: "«Prácticamente» deja las cosas a un paso. ¿Es esa tienda o una parecida?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La línea que nadie miró"
+    body: "El equipo llevaba dos días buscando el origen del problema en todas partes. Crisanta lo encontró y lo dijo sin acusar a nadie: «Estaba precisamente en la línea que no revisamos». Cambiaron el reparto de revisiones esa misma semana."
+    before_phrase: "Estaba justo ahí, en la línea esa que nadie miró."
+    after_phrase: "Estaba precisamente en la línea que no revisamos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La semana de los ocho años"
+    body: "Le cambiaron el turno sin avisar y le tocó la noche de un martes cualquiera. Lo malo llegó al mirar el calendario. «Me han puesto de noche precisamente la semana del cumpleaños», dijo en casa. Al día siguiente pidió el cambio y se lo dieron."
+    before_phrase: "Y encima justo esa semana, mira tú qué suerte."
+    after_phrase: "Me han puesto de noche precisamente la semana del cumpleaños."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El cuadro del pasillo"
+    body: "Los invitados alababan el salón entero y ella sonreía sin decir nada. Cuando alguien señaló un marco pequeño del pasillo, Filomena contestó de golpe: «Ese es precisamente el que más me gusta». La conversación se fue hacia el cuadro y duró toda la sobremesa."
+    before_phrase: "Justo ese, ese es el que más me gusta a mí."
+    after_phrase: "Ese es precisamente el que más me gusta."
+metrics:
+  zipf_overall: 4.9410
+  dispersion_dp: 0.1134
+  pedantry_proxy: 0.4871
+  family_size: 150
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

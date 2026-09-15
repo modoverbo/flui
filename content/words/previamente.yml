@@ -1,0 +1,246 @@
+schema_version: 1
+slug: "previamente"
+status: "draft"
+lemma: "previamente"
+part_of_speech: "adverbio"
+syllables:
+  - "pre"
+  - "via"
+  - "men"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[pɾe.βjaˈmen.te]"
+ipa_es: "[pɾe.βjaˈmen.te]"
+explanation: "Sitúa algo antes de otra cosa que ya ocurrió o que ya se contó."
+example_sentence: "Conviene leer el contrato previamente y anotar las dudas en una hoja."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Ordena la historia sin volver atrás: dices lo que pasó primero sin romper la frase."
+when_not_to_use: "No la uses si las dos cosas ocurren a la vez; entonces la frase pide marcar simultaneidad."
+collocations:
+  - "avisar previamente"
+  - "previamente acordado"
+replaces:
+  - before: "Hay que apuntarse antes, en la web"
+    after: "Hay que apuntarse previamente en la web"
+  - before: "Lo habíamos hablado antes, y eso"
+    after: "Lo habíamos hablado previamente"
+  - before: "La masa tiene que reposar, primero, una hora"
+    after: "La masa tiene que reposar previamente una hora"
+family:
+  - "previo"
+semantic_set_id: "orden-en-el-tiempo"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "antes"
+  funcion:
+    - "situar lo anterior"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "privadamente"
+    difference: "«Privadamente» indica que algo se hace en privado, sin público. La otra no habla de intimidad: habla del momento."
+    memory_trick: "Una cierra la puerta; la otra mira el reloj."
+  - confused_with: "previsiblemente"
+    difference: "«Previsiblemente» anuncia lo que se espera que ocurra: «previsiblemente lloverá». La otra sitúa algo que ya pasó antes."
+    memory_trick: "Una apuesta por el futuro; la otra ordena el pasado."
+exercises:
+  - position: 1
+    sentence: "Para entrar al taller de cerámica hay que apuntarse {{blank}} en la web del centro cívico."
+    hint_general: "El apunte va antes que la entrada, y sin ese paso no hay plaza."
+    explanation: "Previamente: el apunte va antes que la entrada. «Privadamente» hablaría de hacerlo en privado y «posteriormente» lo colocaría después de entrar."
+    options:
+      - position: 1
+        text: "privadamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Privadamente» dice que algo se hace sin público, y apuntarse en una web abierta no tiene nada de privado."
+        hint_specific: "«Privadamente» habla de intimidad. ¿Importa aquí quién lo ve o cuándo se hace?"
+      - position: 2
+        text: "previamente"
+        is_correct: true
+      - position: 3
+        text: "posteriormente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posteriormente» colocaría el apunte después de entrar, y sin apuntarse antes nadie consigue plaza."
+        hint_specific: "«Posteriormente» mira hacia delante. ¿El apunte va antes o después de la entrada?"
+  - position: 2
+    sentence: "El acuerdo solo vale si las dos partes lo han leído {{blank}} y sin prisas."
+    hint_general: "La lectura tiene que ocurrir antes de la firma, no durante ni después."
+    explanation: "Previamente: la lectura va antes de la firma. «De entrada» hablaría de la primera impresión y «finalmente» colocaría la lectura al cierre de todo."
+    options:
+      - position: 1
+        text: "previamente"
+        is_correct: true
+      - position: 2
+        text: "de entrada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De entrada» es de conversación y habla de la primera impresión que algo causa, no del momento en que se hace la lectura."
+        hint_specific: "«De entrada» apunta a una primera impresión. ¿Se cuenta una impresión o se ordena el calendario?"
+      - position: 3
+        text: "finalmente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Finalmente» colocaría la lectura al cierre de todo, y el acuerdo exige leerlo antes de comprometerse."
+        hint_specific: "«Finalmente» cierra una serie. ¿La lectura abre el proceso o lo cierra?"
+  - position: 3
+    sentence: "Nadie puede usar la sala sin haberla reservado {{blank}} en el cuadrante de la entrada."
+    hint_general: "La reserva tiene que existir antes de que alguien abra la puerta."
+    explanation: "Previamente: la reserva existe antes del uso. «Previsiblemente» anunciaría algo esperado y «entretanto» hablaría del rato de una espera."
+    options:
+      - position: 1
+        text: "previsiblemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Previsiblemente» anuncia lo que se espera que ocurra, y aquí no se espera nada: se exige un paso cumplido."
+        hint_specific: "«Previsiblemente» apuesta por lo que vendrá. ¿Se predice algo o se exige un paso?"
+      - position: 2
+        text: "previamente"
+        is_correct: true
+      - position: 3
+        text: "entretanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entretanto» llena el rato de una espera, y aquí no se espera nada: se pone un requisito anterior al uso."
+        hint_specific: "«Entretanto» rellena una espera. ¿Hay una espera o un requisito previo?"
+  - position: 4
+    sentence: "Ismael había estudiado la empresa {{blank}}, y eso se notó en todas sus respuestas."
+    hint_general: "El estudio ocurrió antes de la cita, y por eso llegó preparado."
+    explanation: "Previamente: el estudio ocurrió antes de la cita. «Antes de nada» marcaría una prioridad y «a la vez» pondría el estudio dentro de la conversación."
+    options:
+      - position: 1
+        text: "previamente"
+        is_correct: true
+      - position: 2
+        text: "antes de nada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Antes de nada» es de conversación y marca lo primero de una lista de prioridades, no el momento anterior a una cita."
+        hint_specific: "«Antes de nada» ordena prioridades al hablar. ¿Se ordena una lista o se sitúa un momento?"
+      - position: 3
+        text: "a la vez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«A la vez» colocaría el estudio dentro de la conversación, y él llegó con el trabajo ya hecho de casa."
+        hint_specific: "«A la vez» junta dos cosas en el mismo rato. ¿Estudió durante la cita o antes?"
+  - position: 5
+    sentence: "La receta sale bien si la masa ha reposado {{blank}} una hora en la nevera."
+    hint_general: "El reposo va antes del horno, y sin él la masa no sirve."
+    explanation: "Previamente: el reposo va antes del horno. «Privadamente» hablaría de hacerlo sin público y «seguidamente» pondría el reposo justo después."
+    options:
+      - position: 1
+        text: "seguidamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguidamente» pone el reposo detrás de otro paso, y la receta exige que ocurra antes de llevar la masa al horno."
+        hint_specific: "«Seguidamente» encadena hacia delante. ¿El reposo viene antes o después?"
+      - position: 2
+        text: "privadamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Privadamente» dice que algo se hace sin público, y una masa en la nevera no tiene público ni deja de tenerlo."
+        hint_specific: "«Privadamente» habla de intimidad. ¿Importa quién mira la nevera o cuándo reposa la masa?"
+      - position: 3
+        text: "previamente"
+        is_correct: true
+  - position: 6
+    sentence: "Los precios se cierran {{blank}}, para que nadie se lleve una sorpresa en la caja."
+    hint_general: "El precio queda fijado antes de que el cliente llegue a pagar."
+    explanation: "Previamente: el precio queda fijado antes de pagar. «De entrada» hablaría de la primera impresión y «posteriormente» dejaría el precio abierto hasta el final."
+    options:
+      - position: 1
+        text: "de entrada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De entrada» es de conversación y se refiere a la primera impresión, no al momento en que queda fijado un precio."
+        hint_specific: "«De entrada» apunta a la primera impresión. ¿Se cuenta una impresión o se fija un momento?"
+      - position: 2
+        text: "previamente"
+        is_correct: true
+      - position: 3
+        text: "posteriormente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posteriormente» dejaría el precio abierto hasta después de la compra, que es justo la sorpresa que se quiere evitar."
+        hint_specific: "«Posteriormente» mira hacia delante. ¿El precio se cierra antes o al cobrar?"
+  - position: 7
+    sentence: "Habíamos hablado del tema {{blank}}, así que la reunión duró quince minutos."
+    hint_general: "La conversación ocurrió antes de la reunión, y por eso todo fue rápido."
+    explanation: "Previamente: la charla ocurrió antes de la reunión. «Previsiblemente» anunciaría algo esperado y «al final» colocaría la charla después de todo."
+    options:
+      - position: 1
+        text: "previamente"
+        is_correct: true
+      - position: 2
+        text: "previsiblemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Previsiblemente» anuncia lo que se espera que pase, y aquí la charla ya ocurrió: por eso la reunión fue corta."
+        hint_specific: "«Previsiblemente» apuesta por el futuro. ¿La charla ya pasó o está por llegar?"
+      - position: 3
+        text: "al final"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al final» colocaría la charla después de la reunión, y lo que explica los quince minutos es haber hablado antes."
+        hint_specific: "«Al final» cierra la historia. ¿La charla abre la historia o la cierra?"
+  - position: 8
+    sentence: "Conviene calentar el motor {{blank}} cuando el coche pasa la noche a la intemperie."
+    hint_general: "El calentamiento va antes de arrancar del todo, nunca después."
+    explanation: "Previamente: calentar va antes de arrancar del todo. «Antes de nada» marcaría una prioridad al hablar y «entretanto» hablaría del rato de una espera."
+    options:
+      - position: 1
+        text: "entretanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entretanto» llena el rato de una espera, y aquí no se espera a nada: se ordena un paso antes de otro."
+        hint_specific: "«Entretanto» rellena una espera. ¿Hay una espera o un paso que va primero?"
+      - position: 2
+        text: "antes de nada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Antes de nada» es de conversación y ordena prioridades al hablar, no pasos mecánicos de un coche."
+        hint_specific: "«Antes de nada» ordena lo que se dice. ¿Se ordena una charla o un arranque?"
+      - position: 3
+        text: "previamente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Quince minutos"
+    body: "La reunión estaba prevista para una hora y terminó en quince minutos. Petronila lo explicó al equipo sin presumir: «Lo habíamos hablado previamente, así que solo quedaba decidir». Desde entonces la costumbre es llamar antes y reunirse después."
+    before_phrase: "Es que lo habíamos hablado antes, o sea, ya lo sabíamos."
+    after_phrase: "Lo habíamos hablado previamente."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La plaza del taller"
+    body: "Dos amigas se plantaron en el taller de cerámica y se quedaron fuera. La tercera lo había leído bien: «Hay que apuntarse previamente en la web». A la semana siguiente fueron las tres, con plaza y con delantal."
+    before_phrase: "Hay que apuntarse antes, creo, en la web esa."
+    after_phrase: "Hay que apuntarse previamente en la web."
+  - position: 3
+    scene: "familia"
+    conversation_type: "practica"
+    title: "La masa de los domingos"
+    body: "El pan le salía denso cada domingo y no entendía por qué. Su tía le dio la clave por teléfono en una frase: «La masa tiene que reposar previamente una hora en frío». El domingo siguiente el pan subió, y él llamó para contarlo."
+    before_phrase: "Antes hay que dejarla reposar, primero eso."
+    after_phrase: "La masa tiene que reposar previamente una hora en frío."
+metrics:
+  zipf_overall: 4.7327
+  dispersion_dp: 0.1214
+  pedantry_proxy: 0.4970
+  family_size: 63
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

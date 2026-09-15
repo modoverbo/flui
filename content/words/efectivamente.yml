@@ -1,0 +1,247 @@
+schema_version: 1
+slug: "efectivamente"
+status: "draft"
+lemma: "efectivamente"
+part_of_speech: "adverbio"
+syllables:
+  - "e"
+  - "fec"
+  - "ti"
+  - "va"
+  - "men"
+  - "te"
+stressed_syllable: 5
+ipa_latam: "[e.fek.ti.βaˈmen.te]"
+ipa_es: "[e.fek.ti.βaˈmen.te]"
+explanation: "Confirma que lo que alguien suponía era cierto, sin añadir nada más."
+example_sentence: "Dudábamos del horario y efectivamente el autobús salía media hora antes."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Confirma sin celebrar ni reprochar: la sospecha queda comprobada y la charla sigue."
+when_not_to_use: "No la uses si todavía no lo has comprobado; confirmar de oídas deja muy mal cuerpo después."
+collocations:
+  - "efectivamente ocurrió"
+  - "confirmar efectivamente"
+replaces:
+  - before: "Pues sí, era eso"
+    after: "Efectivamente, era eso"
+  - before: "Y anda, que sí, sobraron dos sillas"
+    after: "Efectivamente sobraron dos sillas"
+  - before: "Ya te digo, llegó roto"
+    after: "Efectivamente llegó roto"
+family:
+  - "efectivo"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "pues sí"
+  funcion:
+    - "confirmar lo previsto"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "afectivamente"
+    difference: "«Afectivamente» habla del cariño y de los sentimientos: «lo vivió afectivamente». La otra solo confirma un dato."
+    memory_trick: "Una toca el corazón; la otra marca la casilla."
+  - confused_with: "efusivamente"
+    difference: "«Efusivamente» describe un gesto muy caluroso: «lo saludó efusivamente». La otra no describe gestos: confirma."
+    memory_trick: "Una abraza fuerte; la otra dice «así fue»."
+exercises:
+  - position: 1
+    sentence: "Dijeron que el tren paraba en el pueblo y {{blank}} se detiene tres minutos cada mañana."
+    hint_general: "Lo que se anunciaba resultó ser verdad, comprobado sobre el terreno."
+    explanation: "Efectivamente: lo anunciado resultó cierto. «Afectivamente» hablaría de sentimientos y «supuestamente» dejaría la parada sin comprobar."
+    options:
+      - position: 1
+        text: "afectivamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afectivamente» habla del cariño y los sentimientos, y un tren que para tres minutos no siente nada por nadie."
+        hint_specific: "«Afectivamente» tiene que ver con emociones. ¿Se cuenta un sentimiento o un horario?"
+      - position: 2
+        text: "efectivamente"
+        is_correct: true
+      - position: 3
+        text: "supuestamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Supuestamente» dejaría la parada sin comprobar, y la frase cuenta que el tren se detiene de verdad cada mañana."
+        hint_specific: "«Supuestamente» siembra dudas. ¿La parada está comprobada o solo se rumorea?"
+  - position: 2
+    sentence: "Sospechábamos que el ruido venía del desagüe y {{blank}} era eso."
+    hint_general: "La sospecha se comprueba y resulta acertada, sin más vueltas."
+    explanation: "Efectivamente: la sospecha resultó acertada. «Pues sí» es de conversación y suena a resignación, y «aparentemente» dejaría la causa sin confirmar."
+    options:
+      - position: 1
+        text: "efectivamente"
+        is_correct: true
+      - position: 2
+        text: "pues sí"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pues sí» es de conversación y suena a resignación, cuando aquí lo que hay es una comprobación limpia."
+        hint_specific: "«Pues sí» suena a encogerse de hombros. ¿Se confirma un dato o se acepta de mala gana?"
+      - position: 3
+        text: "aparentemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aparentemente» dejaría la causa sin confirmar, y la frase cierra la duda: era el desagüe."
+        hint_specific: "«Aparentemente» deja la puerta abierta. ¿La causa quedó clara o sigue en duda?"
+  - position: 3
+    sentence: "Le avisé de que la puerta se atasca con la humedad y {{blank}} se atascó el domingo."
+    hint_general: "El aviso se cumplió tal cual, sin sorpresas ni matices."
+    explanation: "Efectivamente: el aviso se cumplió tal cual. «Efusivamente» describiría un gesto muy caluroso y «posiblemente» dejaría el atasco en una hipótesis."
+    options:
+      - position: 1
+        text: "efusivamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Efusivamente» describe un gesto caluroso entre personas, y una puerta atascada no saluda a nadie."
+        hint_specific: "«Efusivamente» describe un saludo caluroso. ¿Hay un gesto entre personas o una puerta dura?"
+      - position: 2
+        text: "efectivamente"
+        is_correct: true
+      - position: 3
+        text: "posiblemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posiblemente» dejaría el atasco en una hipótesis, y la frase cuenta que ocurrió el domingo."
+        hint_specific: "«Posiblemente» calcula probabilidades. ¿La puerta se atascó o podría atascarse?"
+  - position: 4
+    sentence: "Calculamos que sobrarían dos sillas y {{blank}} sobraron dos, ni una más."
+    hint_general: "El cálculo se cumplió al detalle y quedó comprobado."
+    explanation: "Efectivamente: el cálculo se cumplió al detalle. «Ya te digo» es de conversación y presume del acierto, y «al parecer» dejaría el resultado de oídas."
+    options:
+      - position: 1
+        text: "efectivamente"
+        is_correct: true
+      - position: 2
+        text: "ya te digo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ya te digo» es de conversación y presume del acierto, cuando aquí solo se comprueba una cuenta que salió redonda."
+        hint_specific: "«Ya te digo» presume y celebra. ¿Se presume del cálculo o se comprueba?"
+      - position: 3
+        text: "al parecer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al parecer» atribuiría el dato a lo que dicen otros, y aquí las sillas se contaron una por una."
+        hint_specific: "«Al parecer» pone el dato en boca de terceros. ¿Se contaron las sillas o se oyó decir?"
+  - position: 5
+    sentence: "Nos prometieron respuesta antes del viernes y {{blank}} llegó el jueves por la tarde."
+    hint_general: "La promesa se cumplió y la frase solo lo constata."
+    explanation: "Efectivamente: la promesa se cumplió. «Afectivamente» hablaría de sentimientos y «en cambio» opondría dos hechos que encajan sin choque."
+    options:
+      - position: 1
+        text: "afectivamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afectivamente» habla del cariño y los sentimientos, y una respuesta que llega a tiempo no expresa afecto ninguno."
+        hint_specific: "«Afectivamente» tiene que ver con emociones. ¿Se cuenta un sentimiento o un plazo cumplido?"
+      - position: 2
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» opondría la respuesta a la promesa, y las dos encajan: llegó incluso un día antes."
+        hint_specific: "«En cambio» marca contraste. ¿La respuesta contradice la promesa o la cumple?"
+      - position: 3
+        text: "efectivamente"
+        is_correct: true
+  - position: 6
+    sentence: "Pensaba que a la salsa le faltaba sal y {{blank}} le faltaba una pizca."
+    hint_general: "La corazonada de la cocina resultó cierta al probarla."
+    explanation: "Efectivamente: la corazonada resultó cierta. «Pues sí» es de conversación y suena a resignación, y «supuestamente» dejaría la falta de sal sin comprobar."
+    options:
+      - position: 1
+        text: "supuestamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Supuestamente» dejaría la falta de sal sin comprobar, y aquí alguien la ha probado y lo sabe."
+        hint_specific: "«Supuestamente» siembra dudas. ¿Alguien probó la salsa o solo lo imagina?"
+      - position: 2
+        text: "efectivamente"
+        is_correct: true
+      - position: 3
+        text: "pues sí"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pues sí» es de conversación y suena a rendirse ante lo evidente, cuando aquí hay una comprobación en la cocina."
+        hint_specific: "«Pues sí» suena a encogerse de hombros. ¿Se comprueba algo o se acepta sin más?"
+  - position: 7
+    sentence: "Había avisado de que el paquete llegaría golpeado y {{blank}} venía con una esquina hundida."
+    hint_general: "El aviso se confirma al abrir la caja, sin discusión posible."
+    explanation: "Efectivamente: el aviso se confirma al abrir la caja. «Efusivamente» describiría un gesto caluroso y «aparentemente» dejaría el golpe en una impresión."
+    options:
+      - position: 1
+        text: "efectivamente"
+        is_correct: true
+      - position: 2
+        text: "efusivamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Efusivamente» describe un gesto muy caluroso entre personas, y una caja con la esquina hundida no saluda a nadie."
+        hint_specific: "«Efusivamente» describe un saludo caluroso. ¿Hay un gesto entre personas o un paquete roto?"
+      - position: 3
+        text: "aparentemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aparentemente» dejaría el golpe en una impresión, y la esquina hundida se ve y se toca."
+        hint_specific: "«Aparentemente» deja la puerta abierta. ¿El golpe se ve o solo se intuye?"
+  - position: 8
+    sentence: "Todos dijeron que el sitio estaría lleno un sábado y {{blank}} no cabía un alma."
+    hint_general: "La previsión de todos se cumplió al llegar allí."
+    explanation: "Efectivamente: la previsión se cumplió. «Ya te digo» es de conversación y presume del acierto, y «por desgracia» añadiría un lamento que la frase no tiene."
+    options:
+      - position: 1
+        text: "por desgracia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por desgracia» añadiría un lamento, y la frase solo constata que la previsión de todos se cumplió."
+        hint_specific: "«Por desgracia» lamenta el resultado. ¿Se lamenta algo o se confirma una previsión?"
+      - position: 2
+        text: "ya te digo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ya te digo» es de conversación y presume del acierto ajeno, cuando aquí solo se comprueba lo que se esperaba."
+        hint_specific: "«Ya te digo» celebra el acierto. ¿Se presume o se comprueba?"
+      - position: 3
+        text: "efectivamente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El ruido del desagüe"
+    body: "Llevaban semanas discutiendo de dónde venía aquel golpeteo. Tiburcio llamó al fontanero, abrió el registro y comprobó la sospecha del equipo. «Efectivamente, era el desagüe», escribió en el grupo. Nadie tuvo que defender su teoría ni retirarla con vergüenza."
+    before_phrase: "Pues sí, era eso, ya lo decía yo."
+    after_phrase: "Efectivamente, era el desagüe."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Sábado sin mesa"
+    body: "Todo el grupo avisó de que ese bar se llenaba los sábados y él fue igualmente. Al volver, Genaro lo contó sin defenderse: «Efectivamente, no cabía un alma». Se rieron con él, no de él, y reservaron para el jueves siguiente."
+    before_phrase: "Pues nada, que ya te digo que estaba hasta arriba."
+    after_phrase: "Efectivamente, no cabía un alma."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La puerta de la humedad"
+    body: "Se lo había advertido dos veces y el domingo la puerta no abrió. Su hermano esperaba un «te lo dije» y recibió otra cosa. «Efectivamente se atascó; te ayudo con el cepillo». Arreglaron la puerta en media hora y comieron sin discutir."
+    before_phrase: "¿Ves? Te lo dije, que se atascaba."
+    after_phrase: "Efectivamente se atascó; te ayudo con el cepillo."
+metrics:
+  zipf_overall: 4.5165
+  dispersion_dp: 0.1334
+  pedantry_proxy: 0.4662
+  family_size: 72
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

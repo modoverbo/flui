@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "inerte"
+status: "draft"
+lemma: "inerte"
+part_of_speech: "adjetivo"
+syllables:
+  - "i"
+  - "ner"
+  - "te"
+stressed_syllable: 2
+ipa_latam: "[iˈneɾ.te]"
+ipa_es: "[iˈneɾ.te]"
+explanation: "Que no se mueve ni responde, como si no le quedara ninguna fuerza dentro."
+example_sentence: "El motor quedó inerte en mitad de la cuesta y tuvimos que empujar."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para máquinas, materiales y también para una reunión que no arranca."
+when_not_to_use: "No la uses para quien se ha quedado sin defensa ante algo; esa palabra es «inerme»."
+collocations:
+  - "materia inerte"
+  - "quedar inerte"
+  - "un gas inerte"
+replaces:
+  - before: "El motor se quedó inerme"
+    after: "El motor se quedó inerte"
+  - before: "La reunión no arrancaba de ninguna manera"
+    after: "La reunión seguía inerte"
+  - before: "La impresora no daba ni señal"
+    after: "La impresora estaba inerte"
+family:
+  - "inercia"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 1
+tags:
+  comodin: ["parado"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "inerme"
+    difference: "«Inerme» se dice de quien se queda sin armas ni defensa ante algo; la otra palabra dice que algo no se mueve ni reacciona."
+    memory_trick: "Quien está inerme puede moverse, pero no defenderse."
+  - confused_with: "inepto"
+    difference: "«Inepto» acusa a alguien de no saber hacer su trabajo; la otra palabra no juzga a nadie, solo describe que algo no reacciona."
+    memory_trick: "Inepto es un reproche; lo otro es una descripción."
+exercises:
+  - position: 1
+    sentence: "El motor quedó {{blank}} en mitad de la cuesta y tuvieron que empujar el auto."
+    hint_general: "Dejó de moverse y de responder por completo."
+    explanation: "Inerte: el motor dejó de responder. «Inerme» se dice de quien queda sin defensa, y «mudo» solo diría que dejó de sonar."
+    options:
+      - position: 1
+        text: "inerme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inerme» describe a quien queda sin defensa frente a algo, y un motor no se defiende de nada: se para."
+        hint_specific: "«Inerme» habla de quedarse sin defensa. ¿De qué tendría que defenderse un motor?"
+      - position: 2
+        text: "inerte"
+        is_correct: true
+      - position: 3
+        text: "mudo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mudo» solo diría que dejó de sonar, y un motor puede sonar bajito y seguir tirando; aquí no tira nada."
+        hint_specific: "Mudo habla del ruido. ¿El problema es que no suena o que no avanza?"
+  - position: 2
+    sentence: "Después de dos horas de charla, la reunión seguía {{blank}} y nadie proponía nada."
+    hint_general: "Nada se movía: ninguna idea, ninguna decisión."
+    explanation: "Inerte: la reunión no se movía. «Inerme» se dice de quien queda sin defensa, y «sosa» es coloquial y solo dice que resultó aburrida."
+    options:
+      - position: 1
+        text: "sosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sosa» es coloquial y dice que la reunión aburrió, y el problema aquí es que no avanzaba, no que fuera poco divertida."
+        hint_specific: "«Sosa» juzga la gracia del rato. ¿Falta entretenimiento o faltan decisiones?"
+      - position: 2
+        text: "inerte"
+        is_correct: true
+      - position: 3
+        text: "inerme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inerme» describe a quien se queda sin defensa ante un ataque, y en esa sala nadie ataca a nadie: no avanza nada."
+        hint_specific: "«Inerme» supone alguien atacado y sin defensa. ¿Hay ataque en esa reunión?"
+  - position: 3
+    sentence: "Esa piedra parece {{blank}}, pero guarda dentro el calor de todo el día."
+    hint_general: "Por fuera no da ninguna señal de actividad."
+    explanation: "Inerte: por fuera no da señal alguna. «Inherente» se dice de lo que va unido a algo por naturaleza, y «hueca» diría que está vacía por dentro."
+    options:
+      - position: 1
+        text: "inherente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inherente» se dice de lo que va unido a algo por naturaleza, como un riesgo inherente al oficio; no describe a una piedra quieta."
+        hint_specific: "«Inherente» siempre va unido a otra cosa. ¿A qué iría unida esa piedra?"
+      - position: 2
+        text: "hueca"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Hueca» diría que la piedra está vacía por dentro, y la frase dice justo lo contrario: guarda el calor del día."
+        hint_specific: "Hueca es vacía por dentro. ¿Qué guarda esa piedra dentro?"
+      - position: 3
+        text: "inerte"
+        is_correct: true
+  - position: 4
+    sentence: "Rodrigo encontró la impresora {{blank}}: ni una luz, ni un ruido, ni un botón que respondiera."
+    hint_general: "No daba ninguna señal de estar viva."
+    explanation: "Inerte: la impresora no daba ninguna señal. «Inepta» acusaría a alguien de no saber su trabajo, y «vacía» diría que le falta papel o tinta."
+    options:
+      - position: 1
+        text: "inerte"
+        is_correct: true
+      - position: 2
+        text: "inepta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inepta» acusa a una persona de no saber hacer su trabajo, y una máquina apagada no comete torpezas."
+        hint_specific: "«Inepta» es un reproche a alguien. ¿A quién se estaría reprochando algo aquí?"
+      - position: 3
+        text: "vacía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vacía» diría que le falta papel o tinta, y una impresora sin papel todavía enciende una luz y avisa."
+        hint_specific: "Vacía apunta a que falta material. ¿Qué dice la frase sobre las luces?"
+  - position: 5
+    sentence: "El gas que usan en la fábrica es {{blank}} y por eso no prende con una chispa."
+    hint_general: "No reacciona con lo que tiene alrededor."
+    explanation: "Inerte: no reacciona con nada alrededor. «Inerme» se dice de quien queda sin defensa, e «inocuo» solo diría que no hace daño."
+    options:
+      - position: 1
+        text: "inerme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inerme» describe a quien queda sin defensa ante algo, y un gas no se defiende: reacciona o no reacciona."
+        hint_specific: "«Inerme» se dice de quien no puede defenderse. ¿Un gas se defiende de alguien?"
+      - position: 2
+        text: "inocuo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inocuo» pertenece a las etiquetas técnicas y solo dice que no hace daño; un gas puede no hacer daño y aun así arder."
+        hint_specific: "«Inocuo» aparece en fichas técnicas y habla de daño. ¿Qué explica que no prenda?"
+      - position: 3
+        text: "inerte"
+        is_correct: true
+  - position: 6
+    sentence: "Aquella tarde el pueblo estaba {{blank}}: ni coches, ni voces, ni una persiana abierta."
+    hint_general: "Nada se movía en ninguna parte."
+    explanation: "Inerte: nada se movía en el pueblo. «Inerme» se dice de quien queda sin defensa, y «apagado» hablaría del ánimo, no de la quietud total."
+    options:
+      - position: 1
+        text: "apagado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apagado» habla del ánimo bajo de un lugar con gente dentro, y aquí no hay ni coches ni voces."
+        hint_specific: "Apagado describe un ambiente sin chispa. ¿Queda alguien en la calle en esa escena?"
+      - position: 2
+        text: "inerte"
+        is_correct: true
+      - position: 3
+        text: "inerme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inerme» describe a quien está sin defensa ante una amenaza, y en la frase no hay amenaza: hay silencio."
+        hint_specific: "«Inerme» necesita algo de lo que defenderse. ¿Qué amenaza al pueblo esa tarde?"
+  - position: 7
+    sentence: "Sin presupuesto, el proyecto lleva un año {{blank}} en un cajón."
+    hint_general: "Un año entero sin que nada se moviera."
+    explanation: "Inerte: un año sin moverse. «Inerme» se dice de quien queda sin defensa, y «dormido» sugiere que despertará solo, cuando aquí falta dinero."
+    options:
+      - position: 1
+        text: "inerme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inerme» describe a quien se queda sin defensa ante algo, y un proyecto guardado no se defiende de nadie."
+        hint_specific: "«Inerme» habla de quedarse sin defensa. ¿Quién ataca a ese proyecto en el cajón?"
+      - position: 2
+        text: "dormido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dormido» sugiere que despertará solo en cualquier momento, y este proyecto no se mueve porque no hay dinero."
+        hint_specific: "Lo dormido despierta solo. ¿Qué haría falta para que este proyecto arrancara?"
+      - position: 3
+        text: "inerte"
+        is_correct: true
+  - position: 8
+    sentence: "La masa quedó {{blank}} porque a Blanca se le olvidó la levadura."
+    hint_general: "No subió ni reaccionó de ninguna forma."
+    explanation: "Inerte: la masa no reaccionó. «Inerme» se dice de quien queda sin defensa, y «floja» es coloquial y sugiere que le falta consistencia."
+    options:
+      - position: 1
+        text: "inerme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inerme» describe a quien queda sin defensa ante algo, y una masa en un bol no tiene de qué defenderse."
+        hint_specific: "«Inerme» supone alguien expuesto y sin defensa. ¿Quién amenaza a esa masa?"
+      - position: 2
+        text: "floja"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Floja» es coloquial y sugiere que a la masa le falta consistencia; el fallo aquí es que no reaccionó ni subió."
+        hint_specific: "«Floja» juzga la textura. ¿Qué le faltó exactamente a esa masa?"
+      - position: 3
+        text: "inerte"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La sala que no arrancaba"
+    body: "Llevaban una hora con la misma diapositiva. Mónica cerró el portátil y lo dijo sin rodeos: «Esta reunión está inerte. Propongo cortar aquí y volver el jueves con dos opciones escritas». Volvieron el jueves y decidieron en veinte minutos."
+    before_phrase: "Esto no avanza de ninguna manera."
+    after_phrase: "Esta reunión está inerte."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El pan del domingo"
+    body: "La masa llevaba tres horas en el bol, igual de plana que al principio. Blanca se rio: «Está inerte, se me olvidó la levadura». Su hijo propuso hacer pizza fina con ella y salvaron la comida."
+    before_phrase: "No ha subido nada, está muerta."
+    after_phrase: "Está inerte, se me olvidó la levadura."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Tarde de agosto"
+    body: "Llegaron al pueblo a las tres y no había nadie en la calle. «Está inerte», dijo Ivan, medio en broma. Tomaron un café, esperaron a las seis y encontraron la plaza llena de gente."
+    before_phrase: "Aquí no se mueve ni una mosca."
+    after_phrase: "Está inerte."
+metrics:
+  zipf_overall: 3.4852
+  dispersion_dp: 0.2262
+  pedantry_proxy: 0.4212
+  family_size: 2
+provenance:
+  generator: "flui authoring agent — theme paronimos (inerte / inerme)"
+  gate: null
+  checked_on: "2026-09-14"

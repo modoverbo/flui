@@ -1,0 +1,248 @@
+schema_version: 1
+slug: "paralelamente"
+status: "draft"
+lemma: "paralelamente"
+part_of_speech: "adverbio"
+syllables:
+  - "pa"
+  - "ra"
+  - "le"
+  - "la"
+  - "men"
+  - "te"
+stressed_syllable: 5
+ipa_latam: "[pa.ɾa.le.laˈmen.te]"
+ipa_es: "[pa.ɾa.le.laˈmen.te]"
+explanation: "Dice que dos cosas avanzan a la vez, cada una por su lado y sin chocar."
+example_sentence: "Cada mañana escribe una hora y, paralelamente, avanza con el curso de francés."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para contar dos frentes abiertos sin dar a entender que uno estorba al otro."
+when_not_to_use: "No la uses si una cosa depende de la otra; entonces hay que marcar el orden, no la simultaneidad."
+collocations:
+  - "paralelamente avanza"
+  - "trabajar paralelamente"
+replaces:
+  - before: "Y a la vez estamos negociando el precio"
+    after: "Paralelamente estamos negociando el precio"
+  - before: "Mientras, pues también avanzan los trámites"
+    after: "Paralelamente avanzan los trámites"
+  - before: "Y eso, que además estudia por las tardes"
+    after: "Paralelamente estudia por las tardes"
+family:
+  - "paralelo"
+semantic_set_id: "orden-en-el-tiempo"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "a la vez"
+  funcion:
+    - "señalar dos frentes abiertos"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "parcialmente"
+    difference: "«Parcialmente» dice que algo se hizo solo en parte: «el pedido llegó parcialmente». La otra habla de dos cosas a la vez."
+    memory_trick: "Una mide cuánto se hizo; la otra, cuántas cosas a la vez."
+  - confused_with: "paulatinamente"
+    difference: "«Paulatinamente» describe algo que avanza poco a poco. La otra no habla de ritmo: habla de dos caminos abiertos al tiempo."
+    memory_trick: "Una mira la velocidad; la otra cuenta los carriles."
+exercises:
+  - position: 1
+    sentence: "El equipo prepara el informe y, {{blank}}, negocia el precio con el proveedor."
+    hint_general: "Dos frentes abiertos al mismo tiempo, y ninguno espera al otro."
+    explanation: "Paralelamente: los dos frentes avanzan a la vez. «Parcialmente» diría que algo se hizo a medias y «posteriormente» pondría la negociación después del informe."
+    options:
+      - position: 1
+        text: "parcialmente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parcialmente» dice que algo se hizo solo en parte, y aquí no se mide cuánto se hace: se cuentan dos trabajos al tiempo."
+        hint_specific: "«Parcialmente» mide lo que se hizo a medias. ¿Se mide algo o se cuentan dos frentes?"
+      - position: 2
+        text: "paralelamente"
+        is_correct: true
+      - position: 3
+        text: "posteriormente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posteriormente» pondría la negociación después del informe, y la frase dice que las dos cosas van al mismo tiempo."
+        hint_specific: "«Posteriormente» encadena hacia delante. ¿Van a la vez o una detrás de otra?"
+  - position: 2
+    sentence: "La obra del tejado sigue su ritmo y, {{blank}}, avanzan los trámites del permiso."
+    hint_general: "Dos procesos corren juntos y ninguno depende del otro."
+    explanation: "Paralelamente: los dos procesos corren juntos. «De paso» sugeriría aprovechar el viaje y «por tanto» haría de los trámites una consecuencia de la obra."
+    options:
+      - position: 1
+        text: "paralelamente"
+        is_correct: true
+      - position: 2
+        text: "de paso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De paso» es de conversación y sugiere aprovechar un viaje para otra cosa, cuando aquí los trámites tienen su propio camino."
+        hint_specific: "«De paso» suena a aprovechar el momento. ¿Los trámites se cuelan o van por su cuenta?"
+      - position: 3
+        text: "por tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por tanto» haría de los trámites una consecuencia de la obra, y los dos asuntos van por su lado sin depender uno del otro."
+        hint_specific: "«Por tanto» anuncia una consecuencia. ¿Los trámites nacen de la obra o corren aparte?"
+  - position: 3
+    sentence: "Estudia por las tardes y, {{blank}}, lleva la contabilidad del bar de su padre."
+    hint_general: "Dos ocupaciones que ocupan los mismos meses sin estorbarse."
+    explanation: "Paralelamente: las dos ocupaciones llenan los mismos meses. «Paulatinamente» hablaría de un ritmo lento y «finalmente» dejaría la contabilidad para el final de todo."
+    options:
+      - position: 1
+        text: "paulatinamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Paulatinamente» describe algo que avanza poco a poco, y aquí no importa el ritmo: importa que hace dos cosas al tiempo."
+        hint_specific: "«Paulatinamente» habla de velocidad. ¿Se cuenta el ritmo o se cuentan dos ocupaciones?"
+      - position: 2
+        text: "paralelamente"
+        is_correct: true
+      - position: 3
+        text: "finalmente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Finalmente» dejaría la contabilidad para el cierre de una serie, y la frase dice que la lleva durante los mismos meses."
+        hint_specific: "«Finalmente» cierra una lista. ¿La contabilidad cierra algo o convive con los estudios?"
+  - position: 4
+    sentence: "La campaña de invierno arranca en noviembre y, {{blank}}, se renueva la web de la tienda."
+    hint_general: "Los dos trabajos comparten calendario sin depender el uno del otro."
+    explanation: "Paralelamente: los dos trabajos comparten calendario. «A todo esto» abriría un inciso de conversación y «previamente» pondría la web antes de noviembre."
+    options:
+      - position: 1
+        text: "a todo esto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«A todo esto» es de conversación y abre un inciso curioso, cuando la web forma parte del mismo plan de invierno."
+        hint_specific: "«A todo esto» introduce una curiosidad al margen. ¿La web es un inciso o parte del plan?"
+      - position: 2
+        text: "paralelamente"
+        is_correct: true
+      - position: 3
+        text: "previamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Previamente» colocaría la renovación antes de noviembre, y la frase dice que las dos cosas ocurren en el mismo mes."
+        hint_specific: "«Previamente» mira hacia atrás. ¿La web se renueva antes o durante la campaña?"
+  - position: 5
+    sentence: "El pan sube en el horno y, {{blank}}, la salsa se reduce en el fuego pequeño."
+    hint_general: "Las dos cosas se cocinan en el mismo rato, cada una en su sitio."
+    explanation: "Paralelamente: las dos cosas se cocinan a la vez. «Parcialmente» diría que algo se hizo a medias y «en cambio» opondría dos faenas que conviven bien."
+    options:
+      - position: 1
+        text: "parcialmente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parcialmente» dice que algo se hizo solo en parte, y aquí no se mide nada: dos cosas se cocinan al tiempo."
+        hint_specific: "«Parcialmente» mide lo hecho a medias. ¿Se mide algo o se cuentan dos fuegos?"
+      - position: 2
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» enfrentaría las dos faenas, y en esa cocina se llevan bien: cada una ocupa su fuego."
+        hint_specific: "«En cambio» marca contraste. ¿Las dos faenas chocan o conviven?"
+      - position: 3
+        text: "paralelamente"
+        is_correct: true
+  - position: 6
+    sentence: "El club organiza el torneo de mayo y, {{blank}}, busca patrocinio para el de otoño."
+    hint_general: "Dos encargos abiertos a la vez, uno para ahora y otro para después."
+    explanation: "Paralelamente: los dos encargos están abiertos a la vez. «De paso» sugeriría aprovechar el viaje y «en consecuencia» haría del patrocinio un resultado del torneo."
+    options:
+      - position: 1
+        text: "paralelamente"
+        is_correct: true
+      - position: 2
+        text: "de paso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De paso» es de conversación y da a entender que lo segundo se cuela sin esfuerzo, cuando buscar patrocinio lleva su propio trabajo."
+        hint_specific: "«De paso» suena a algo que se aprovecha. ¿El patrocinio se cuela o cuesta lo suyo?"
+      - position: 3
+        text: "en consecuencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En consecuencia» haría del patrocinio un resultado del torneo, y son dos encargos distintos que corren a la vez."
+        hint_specific: "«En consecuencia» anuncia un resultado. ¿El patrocinio nace del torneo o va aparte?"
+  - position: 7
+    sentence: "Aprendió a nadar de mayor y, {{blank}}, empezó a correr tres días por semana."
+    hint_general: "Las dos costumbres nuevas arrancaron en la misma temporada."
+    explanation: "Paralelamente: las dos costumbres arrancaron juntas. «Paulatinamente» hablaría de un ritmo lento y «posteriormente» pondría la carrera después de la piscina."
+    options:
+      - position: 1
+        text: "paulatinamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Paulatinamente» describe algo que avanza poco a poco, y aquí lo que cuenta es que las dos costumbres empezaron juntas."
+        hint_specific: "«Paulatinamente» habla de velocidad. ¿Importa el ritmo o que sean dos a la vez?"
+      - position: 2
+        text: "paralelamente"
+        is_correct: true
+      - position: 3
+        text: "posteriormente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posteriormente» pondría la carrera después de la piscina, y la frase dice que las dos arrancaron en la misma temporada."
+        hint_specific: "«Posteriormente» encadena hacia delante. ¿Una siguió a la otra o fueron juntas?"
+  - position: 8
+    sentence: "La mudanza ocupó todo octubre y, {{blank}}, el trabajo siguió sin bajar el ritmo."
+    hint_general: "Las dos cargas cayeron en el mismo mes y ninguna se aplazó."
+    explanation: "Paralelamente: las dos cargas cayeron en el mismo mes. «A todo esto» abriría un inciso de conversación y «finalmente» dejaría el trabajo para el cierre de la historia."
+    options:
+      - position: 1
+        text: "finalmente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Finalmente» dejaría el trabajo para el cierre de una serie, y la frase cuenta que siguió durante todo el mes de la mudanza."
+        hint_specific: "«Finalmente» cierra una lista. ¿El trabajo cierra la historia o convive con las cajas?"
+      - position: 2
+        text: "a todo esto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«A todo esto» es de conversación y abre un inciso al margen, cuando el trabajo es la mitad de la carga de ese mes."
+        hint_specific: "«A todo esto» introduce una curiosidad. ¿El trabajo es un detalle al margen o media carga?"
+      - position: 3
+        text: "paralelamente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos frentes en octubre"
+    body: "El jefe creía que el equipo había parado el informe para negociar el precio. Restituto lo aclaró en dos líneas: «Preparamos el informe y, paralelamente, negociamos con el proveedor». Nadie tuvo que justificar retrasos que no existían."
+    before_phrase: "Estamos con el informe y a la vez con el precio, o sea, las dos."
+    after_phrase: "Preparamos el informe y, paralelamente, negociamos con el proveedor."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Las tardes de Gumersinda"
+    body: "Le preguntaron cómo había sacado el título trabajando. Gumersinda no lo contó como un sacrificio: «Estudiaba por las tardes y, paralelamente, llevaba la contabilidad del bar». La frase explicaba dos años enteros sin una sola queja."
+    before_phrase: "Estudiaba y a la vez llevaba el bar, no sé cómo."
+    after_phrase: "Estudiaba por las tardes y, paralelamente, llevaba la contabilidad."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El mes de las cajas"
+    body: "En casa cundía la sensación de que nadie había hecho nada en octubre. Eustaquio puso los dos frentes encima de la mesa: «La mudanza ocupó el mes y, paralelamente, el trabajo siguió igual». Dejaron de reprocharse cosas y se repartieron noviembre."
+    before_phrase: "Es que con la mudanza y el trabajo a la vez, pues eso."
+    after_phrase: "La mudanza ocupó el mes y, paralelamente, el trabajo siguió igual."
+metrics:
+  zipf_overall: 4.0756
+  dispersion_dp: 0.2381
+  pedantry_proxy: 0.5278
+  family_size: 79
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

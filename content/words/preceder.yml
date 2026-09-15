@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "preceder"
+status: "draft"
+lemma: "preceder"
+part_of_speech: "verbo"
+syllables:
+  - "pre"
+  - "ce"
+  - "der"
+stressed_syllable: 3
+ipa_latam: "[pɾe.seˈðeɾ]"
+ipa_es: "[pɾe.θeˈðeɾ]"
+explanation: "Estar o suceder justo delante de otra cosa en el tiempo o en el orden."
+example_sentence: "Una reunión corta debe preceder a cualquier envío de propuesta al cliente."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para ordenar pasos sin sonar mandón: dice qué va antes, no quién manda."
+when_not_to_use: "No la uses para actuar o para venir de un sitio; eso es «proceder»."
+collocations:
+  - "preceder a una decisión"
+  - "la calma que precede"
+  - "preceder en el orden"
+replaces:
+  - before: "Una llamada debe proceder al correo difícil"
+    after: "Una llamada debe preceder al correo difícil"
+  - before: "Eso va antes que lo otro en la lista"
+    after: "Eso precede a lo otro en la lista"
+  - before: "Primero hubo tres semanas de pruebas"
+    after: "Tres semanas de pruebas precedieron al lanzamiento"
+family:
+  - "precedente"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "conectores-estructura"
+    relevance: 2
+tags:
+  comodin: ["antes"]
+  funcion: ["ordenar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "proceder"
+    difference: "«Proceder» es actuar de cierta manera o venir de algún sitio; la otra palabra solo sitúa algo delante en el orden."
+    memory_trick: "Proceder dice de dónde viene; la otra dice qué va antes."
+  - confused_with: "presidir"
+    difference: "«Presidir» es ocupar el puesto de quien dirige; la otra palabra no manda en nada, solo va delante."
+    memory_trick: "Quien preside dirige; lo que va delante solo abre paso."
+exercises:
+  - position: 1
+    sentence: "Una reunión corta debe {{blank}} a cualquier envío de propuesta al cliente."
+    hint_general: "Algo tiene que ocurrir antes que otra cosa."
+    explanation: "Preceder: la reunión va antes del envío. «Proceder» sería actuar de cierta manera, y «presidir» sería dirigir ese envío desde la cabecera."
+    options:
+      - position: 1
+        text: "proceder"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proceder» es actuar de cierta manera o venir de algún sitio, y aquí solo se dice qué va antes de qué."
+        hint_specific: "Proceder habla de actuar o de origen. ¿La frase ordena pasos o describe una conducta?"
+      - position: 2
+        text: "preceder"
+        is_correct: true
+      - position: 3
+        text: "presidir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Presidir» es ocupar el puesto de quien dirige, y una reunión no dirige a un correo: simplemente va antes."
+        hint_specific: "Presidir supone mandar sobre algo. ¿Hay jerarquía entre la reunión y el envío?"
+  - position: 2
+    sentence: "El silencio que {{blank}} a los aplausos duró casi tres segundos."
+    hint_general: "Ese momento llegó justo antes que el otro."
+    explanation: "Precede: el silencio llega antes que los aplausos. «Procede» hablaría de origen o de conducta, y «sigue» lo pondría justo después."
+    options:
+      - position: 1
+        text: "sigue"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sigue» pondría el silencio después de los aplausos, y la frase describe la pausa anterior al primer aplauso."
+        hint_specific: "Seguir viene detrás. ¿El silencio llega antes o después del ruido?"
+      - position: 2
+        text: "precede"
+        is_correct: true
+      - position: 3
+        text: "procede"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Procede» diría de dónde viene el silencio o cómo se comporta, y la frase solo lo coloca en el tiempo."
+        hint_specific: "Proceder señala origen o conducta. ¿Aquí se pregunta de dónde viene el silencio?"
+  - position: 3
+    sentence: "En el índice, el capítulo de costos {{blank}} al de plazos por una razón sencilla."
+    hint_general: "Va colocado antes que el otro en la lista."
+    explanation: "Precede: el capítulo de costos va antes en el índice. «Procede» hablaría de origen, y «encabeza» diría que está el primero de todos."
+    options:
+      - position: 1
+        text: "precede"
+        is_correct: true
+      - position: 2
+        text: "encabeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encabeza» diría que ese capítulo abre el índice entero, y la frase solo lo compara con el de plazos."
+        hint_specific: "Encabezar es ir el primero de todos. ¿Se compara con todo el índice o con un capítulo?"
+      - position: 3
+        text: "procede"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Procede» señalaría de dónde sale ese capítulo, y aquí solo importa el lugar que ocupa en la lista."
+        hint_specific: "Proceder apunta a un origen. ¿Se pregunta de dónde viene el capítulo o dónde está?"
+  - position: 4
+    sentence: "Nadie sabía qué aviso debía {{blank}} al corte de agua del martes."
+    hint_general: "Faltaba decidir qué se comunica antes del hecho."
+    explanation: "Preceder: el aviso va antes del corte. «Proceder» hablaría de actuar, e «inaugurar» suena a acto solemne con cinta y discurso."
+    options:
+      - position: 1
+        text: "inaugurar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inaugurar» suena a acto solemne con cinta y discurso, y nadie celebra un corte de agua en un edificio."
+        hint_specific: "Inaugurar pide ceremonia. ¿Se celebra aquí algo o solo se avisa?"
+      - position: 2
+        text: "preceder"
+        is_correct: true
+      - position: 3
+        text: "proceder"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proceder» es actuar de cierta manera o venir de un sitio, y aquí se busca qué comunicar antes del corte."
+        hint_specific: "Proceder habla de cómo se actúa. ¿Se discute una conducta o un orden en el tiempo?"
+  - position: 5
+    sentence: "Tres semanas de pruebas {{blank}} al lanzamiento, y aun así salió un fallo."
+    hint_general: "Ese periodo ocurrió antes del momento importante."
+    explanation: "Precedieron: las pruebas ocurrieron antes del lanzamiento. «Procedieron» hablaría de actuar o de origen, y «siguieron» las pondría después."
+    options:
+      - position: 1
+        text: "procedieron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Procedieron» diría cómo actuaron las pruebas o de dónde salían, y la frase solo las coloca antes del lanzamiento."
+        hint_specific: "Proceder habla de conducta o de origen. ¿Qué información da la frase sobre esas semanas?"
+      - position: 2
+        text: "siguieron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Siguieron» pondría las pruebas después del lanzamiento, y entonces el fallo no tendría nada de sorprendente."
+        hint_specific: "Seguir va detrás. ¿Qué hace llamativo que apareciera un fallo?"
+      - position: 3
+        text: "precedieron"
+        is_correct: true
+  - position: 6
+    sentence: "A Nicolás le gusta que una llamada {{blank}} a cada correo difícil."
+    hint_general: "Prefiere hablar antes de escribir en los asuntos delicados."
+    explanation: "Preceda: la llamada va antes del correo. «Presida» sería dirigir el correo desde arriba, y «preludie» suena a música y a lenguaje literario."
+    options:
+      - position: 1
+        text: "presida"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Presidir» es ocupar el lugar de quien dirige, y una llamada no dirige al correo: se hace antes que él."
+        hint_specific: "Presidir implica mandar. ¿La llamada manda sobre el correo o va delante?"
+      - position: 2
+        text: "preceda"
+        is_correct: true
+      - position: 3
+        text: "preludie"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Preludiar» pertenece al lenguaje literario y musical, y resulta rebuscado para hablar de llamadas y correos de trabajo."
+        hint_specific: "«Preludiar» suena a sala de conciertos. ¿Encaja con un correo difícil del martes?"
+  - position: 7
+    sentence: "La calma que {{blank}} a una mudanza engaña: al día siguiente no cabe nada en el auto."
+    hint_general: "Esa tranquilidad aparece justo antes del momento duro."
+    explanation: "Precede: la calma llega antes de la mudanza. «Procede» hablaría de origen o conducta, y «corona» la pondría al final, como remate."
+    options:
+      - position: 1
+        text: "procede"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Procede» diría de dónde viene esa calma, y la frase solo cuenta cuándo aparece: antes del día duro."
+        hint_specific: "Proceder señala origen. ¿Importa aquí de dónde sale la calma o cuándo llega?"
+      - position: 2
+        text: "corona"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Coronar» es solemne y pone algo como remate final, y esta calma aparece antes, no al terminar la mudanza."
+        hint_specific: "Coronar cierra por todo lo alto. ¿La calma llega al principio o al final?"
+      - position: 3
+        text: "precede"
+        is_correct: true
+  - position: 8
+    sentence: "En la lista de turnos, tu nombre {{blank}} al mío por orden de llegada."
+    hint_general: "Uno va colocado delante del otro en esa lista."
+    explanation: "Precede: tu nombre va delante del mío. «Procede» hablaría de origen, y «preside» diría que tu nombre manda sobre la lista."
+    options:
+      - position: 1
+        text: "procede"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Procede» señalaría de dónde viene tu nombre, y la lista solo indica quién llegó antes."
+        hint_specific: "Proceder apunta a un origen. ¿Se pregunta de dónde sale tu nombre o dónde está?"
+      - position: 2
+        text: "precede"
+        is_correct: true
+      - position: 3
+        text: "preside"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Preside» diría que tu nombre dirige la lista, y una lista por orden de llegada no tiene a nadie al mando."
+        hint_specific: "Presidir es dirigir desde la cabecera. ¿Manda alguien en una lista por orden de llegada?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes del envío"
+    body: "La propuesta se había enviado sin avisar y el cliente se molestó. Julia lo dejó por escrito para la próxima: «Una llamada de diez minutos debe preceder al envío». Desde entonces no ha vuelto a haber sorpresas."
+    before_phrase: "Habría que llamar antes de mandarlo, digo yo."
+    after_phrase: "Una llamada de diez minutos debe preceder al envío."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La noche antes"
+    body: "La casa estaba ordenada y silenciosa. Patricia miró a su hermano y sonrió: «Esta calma precede al caos, ya lo sabes». A las siete de la mañana llegó el camión y no cupo ni la mitad de las cajas."
+    before_phrase: "Disfruta ahora, que mañana es una locura."
+    after_phrase: "Esta calma precede al caos."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Orden de llegada"
+    body: "Dos personas esperaban en el pasillo sin saber quién entraba primero. Lucas rompió el silencio: «Tu nombre precede al mío en la lista, pasa tú». Ella entró tranquila y él aprovechó para repasar sus notas."
+    before_phrase: "Creo que tú estás antes que yo, ¿no?"
+    after_phrase: "Tu nombre precede al mío en la lista."
+metrics:
+  zipf_overall: 4.0540
+  dispersion_dp: 0.1154
+  pedantry_proxy: 0.4845
+  family_size: 55
+provenance:
+  generator: "flui authoring agent — theme paronimos (preceder / proceder)"
+  gate: null
+  checked_on: "2026-09-14"

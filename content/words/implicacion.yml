@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 3211
+slug: "implicacion"
+status: "draft"
+lemma: "implicación"
+part_of_speech: "sustantivo"
+syllables:
+  - "im"
+  - "pli"
+  - "ca"
+  - "ción"
+stressed_syllable: 4
+ipa_latam: "[im.pli.kaˈsjon]"
+ipa_es: "[im.pli.kaˈθjon]"
+explanation: "Consecuencia que trae una decisión y que casi nadie dice en voz alta."
+example_sentence: "Aprobar ese plazo tiene una implicación: alguien trabaja el sábado."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para sacar a la luz lo que una decisión arrastra y todavía nadie ha nombrado."
+when_not_to_use: "No la uses para el hecho en sí; nombra lo que ese hecho obliga a asumir después."
+collocations:
+  - "una implicación clara"
+  - "medir las implicaciones"
+  - "las implicaciones del cambio"
+replaces:
+  - before: "Eso luego trae cola"
+    after: "Eso tiene implicaciones"
+  - before: "¿Y esto en qué nos afecta?"
+    after: "¿Cuáles son las implicaciones?"
+  - before: "Si decimos que sí, luego pasa otra cosa"
+    after: "Ese sí tiene una implicación"
+family:
+  - "implicar"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin:
+    - "cosa"
+    - "afectar"
+  funcion:
+    - "prever"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "causa"
+    difference: "Una causa está antes y explica por qué pasó algo; la otra palabra está después y dice qué arrastra esa decisión."
+    memory_trick: "La causa empuja desde atrás; lo otro aparece delante."
+  - confused_with: "intención"
+    difference: "La intención es lo que alguien quería conseguir; la otra palabra llega igual, aunque nadie la quisiera."
+    memory_trick: "La intención se elige; lo otro viene en el paquete."
+exercises:
+  - position: 1
+    sentence: "Aprobar ese plazo tiene una {{blank}} que nadie ha dicho en la reunión: alguien trabaja el sábado."
+    hint_general: "Es lo que la decisión arrastra y nadie ha nombrado todavía."
+    explanation: "Implicación: lo que la decisión arrastra sin que nadie lo nombre. Una «causa» estaría antes y explicaría el porqué, y una «aplicación» es un programa del teléfono."
+    options:
+      - position: 1
+        text: "causa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «causa» está antes y explica por qué se decidió algo, y aquí el sábado de trabajo viene después de aprobar."
+        hint_specific: "«Causa» empuja desde atrás. ¿El sábado está antes o después de la decisión?"
+      - position: 2
+        text: "implicación"
+        is_correct: true
+      - position: 3
+        text: "aplicación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «aplicación» es un programa que se instala en el teléfono, y aquí se habla de un plazo aprobado."
+        hint_specific: "«Aplicación» se descarga y se abre. ¿Qué se aprobó en la reunión?"
+  - position: 2
+    sentence: "Antes de votar, Ainara pidió una lista de lo que el cambio arrastra y anotó cada {{blank}} en la pizarra."
+    hint_general: "Anota una por una las cosas que el cambio arrastra detrás."
+    explanation: "Implicación: cada cosa que el cambio arrastra detrás. Una «explicación» diría por qué se hace el cambio, y una «intención» sería lo que alguien pretendía conseguir."
+    options:
+      - position: 1
+        text: "explicación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «explicación» cuenta por qué se hace algo, y la lista de Ainara recoge lo que el cambio arrastra después."
+        hint_specific: "«Explicación» responde al porqué. ¿Qué pidió Ainara que se anotara?"
+      - position: 2
+        text: "intención"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «intención» es lo que alguien quería conseguir, y esto llega igual aunque nadie lo quisiera."
+        hint_specific: "«Intención» está en la cabeza de quien decide. ¿Esto se quiso o viene solo?"
+      - position: 3
+        text: "implicación"
+        is_correct: true
+  - position: 3
+    sentence: "No es una queja: el equipo solo señala una {{blank}} del nuevo horario, que el turno de tarde se queda sin relevo."
+    hint_general: "Señalan lo que el horario nuevo arrastra, sin protestar por nada."
+    explanation: "Implicación: lo que el horario nuevo arrastra. «Pega» es coloquial y suena a protesta, que la frase niega, y una «causa» estaría antes, explicando por qué se cambió el horario."
+    options:
+      - position: 1
+        text: "implicación"
+        is_correct: true
+      - position: 2
+        text: "pega"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pega» es coloquial y suena a protesta, y la frase empieza aclarando que no es una queja."
+        hint_specific: "«Pega» suena a protesta. Relee las tres primeras palabras."
+      - position: 3
+        text: "causa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «causa» explicaría por qué se cambió el horario, y aquí se señala lo que pasa después del cambio."
+        hint_specific: "«Causa» viene antes. ¿El turno sin relevo ocurre antes o después del cambio?"
+  - position: 4
+    sentence: "El préstamo parece barato, pero la {{blank}} ya estaba en el contrato: el interés sube en el tercer año."
+    hint_general: "Lo que el contrato arrastra estaba escrito desde el principio."
+    explanation: "Implicación: lo que el contrato arrastra desde el primer día. Una «complicación» sería un problema que se enreda por el camino, y una «ventaja» sería algo bueno, cuando aquí el interés sube."
+    options:
+      - position: 1
+        text: "complicación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «complicación» es un problema que se enreda por el camino, y esto estaba escrito en el contrato desde el primer día."
+        hint_specific: "«Complicación» aparece por sorpresa y enreda. ¿Dónde estaba esto desde el principio?"
+      - position: 2
+        text: "implicación"
+        is_correct: true
+      - position: 3
+        text: "ventaja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «ventaja» es algo que te favorece, y aquí el interés sube a partir del tercer año."
+        hint_specific: "«Ventaja» juega a tu favor. ¿Qué le pasa al interés en el tercer año?"
+  - position: 5
+    sentence: "Beltrán no discute la decisión: discute la {{blank}} que arrastra para el equipo más pequeño."
+    hint_general: "Acepta la decisión y se fija en lo que esta arrastra para otros."
+    explanation: "Implicación: lo que la decisión arrastra para otros. «Derivada» es jerga de matemáticas y suena fuera de sitio, y una «aplicación» es un programa del teléfono."
+    options:
+      - position: 1
+        text: "derivada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Derivada» es jerga de matemáticas y suena fuera de sitio en una conversación sobre equipos."
+        hint_specific: "«Derivada» se calcula en clase de matemáticas. ¿De qué habla Beltrán?"
+      - position: 2
+        text: "aplicación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «aplicación» es un programa del teléfono, y aquí se discute lo que la decisión arrastra."
+        hint_specific: "«Aplicación» se instala. ¿Qué arrastra la decisión según Beltrán?"
+      - position: 3
+        text: "implicación"
+        is_correct: true
+  - position: 6
+    sentence: "Decir que sí hoy trae una {{blank}} para diciembre que conviene mirar antes de firmar."
+    hint_general: "El sí de hoy arrastra algo que solo se notará en diciembre."
+    explanation: "Implicación: lo que el sí de hoy arrastra hasta diciembre. Una «intención» sería lo que alguien quería, y una «explicación» contaría por qué se dice que sí."
+    options:
+      - position: 1
+        text: "intención"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «intención» es lo que alguien quería conseguir, y esto llega en diciembre lo quiera alguien o no."
+        hint_specific: "«Intención» depende de quien decide. ¿Esto se puede evitar queriendo?"
+      - position: 2
+        text: "implicación"
+        is_correct: true
+      - position: 3
+        text: "explicación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «explicación» contaría por qué se dice que sí, y aquí se mira qué pasará en diciembre."
+        hint_specific: "«Explicación» responde al porqué. ¿Qué hay que mirar antes de firmar?"
+  - position: 7
+    sentence: "La reunión no buscaba culpables ni razones de lo ocurrido: buscaba cada {{blank}} de la decisión de ayer."
+    hint_general: "No miran hacia atrás: miran lo que la decisión arrastra hacia delante."
+    explanation: "Implicación: lo que la decisión arrastra hacia delante. Una «causa» sería una razón de lo ocurrido, que la frase descarta, y una «complicación» es un problema que se enreda por el camino."
+    options:
+      - position: 1
+        text: "causa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «causa» es una razón de lo ocurrido, y la frase dice que la reunión no buscaba razones."
+        hint_specific: "«Causa» mira hacia atrás. Relee qué dice la frase que no se buscaba."
+      - position: 2
+        text: "complicación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «complicación» es un problema que se enreda solo, y aquí se repasa lo que trae una decisión concreta."
+        hint_specific: "«Complicación» aparece sin que nadie la decida. ¿De qué sale lo que buscan?"
+      - position: 3
+        text: "implicación"
+        is_correct: true
+  - position: 8
+    sentence: "Si cerramos los sábados, la {{blank}} es clara: todo el reparto se concentra el viernes."
+    hint_general: "Cerrar un día empuja el trabajo al día anterior."
+    explanation: "Implicación: lo que cerrar el sábado empuja al viernes. Una «condición» sería un requisito para poder cerrar, y una «ventaja» sería algo bueno, cuando aquí el viernes se carga."
+    options:
+      - position: 1
+        text: "condición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «condición» sería un requisito para poder cerrar, y esto es lo que ocurre justo después de cerrar."
+        hint_specific: "«Condición» hay que cumplirla antes. ¿El viernes cargado viene antes o después?"
+      - position: 2
+        text: "ventaja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «ventaja» juega a favor, y concentrar todo el reparto en un día no ayuda a nadie."
+        hint_specific: "«Ventaja» es algo bueno. ¿Cómo le queda el viernes al equipo?"
+      - position: 3
+        text: "implicación"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El plazo del jueves"
+    body: "El plazo se iba a aprobar por unanimidad cuando Ainara pidió un minuto. «Tiene una implicación que no hemos dicho: alguien trabaja el sábado». Se hizo el silencio. Aprobaron el plazo, pero con dos personas más y sin sábado."
+    before_phrase: "Eso luego trae cola, ya se verá."
+    after_phrase: "Tiene una implicación que no hemos dicho."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El interés del tercer año"
+    body: "Mi cuñado traía el préstamo casi firmado y muy contento con la cuota. Leímos el contrato en la cocina, con café. «La implicación está aquí», le señalé, «el interés sube en el tercer año». Volvió al banco y pidió otra cosa."
+    before_phrase: "Parece barato, ¿no?"
+    after_phrase: "La implicación está aquí: sube en el tercer año."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Cerrar los sábados"
+    body: "La asociación votaba cerrar el local los sábados. Beltrán no se opuso; solo puso una frase encima de la mesa: «La implicación es clara: todo se concentra el viernes». Decidieron cerrar igual, y contratar una mano más los viernes."
+    before_phrase: "Algo pasará el viernes, digo yo."
+    after_phrase: "La implicación es clara: todo se concentra el viernes."
+metrics:
+  zipf_overall: 3.7061
+  dispersion_dp: 0.1831
+  pedantry_proxy: 0.5396
+  family_size: 32
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

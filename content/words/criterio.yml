@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3209
+slug: "criterio"
+status: "draft"
+lemma: "criterio"
+part_of_speech: "sustantivo"
+syllables:
+  - "cri"
+  - "te"
+  - "rio"
+stressed_syllable: 2
+ipa_latam: "[kɾiˈte.ɾjo]"
+ipa_es: "[kɾiˈte.ɾjo]"
+explanation: "Lo que alguien usa para decidir cuando hay dos caminos posibles."
+example_sentence: "Explica tu criterio antes de elegir y nadie tendrá que adivinarlo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para contar por qué elegiste eso y no lo otro, sin tener que defenderte."
+when_not_to_use: "No la uses para el resultado de la decisión; nombra la medida con la que decidiste."
+collocations:
+  - "con buen criterio"
+  - "un criterio claro"
+  - "cambiar de criterio"
+replaces:
+  - before: "Lo elegí porque sí"
+    after: "Lo elegí con este criterio"
+  - before: "Cada uno lo hace a su manera"
+    after: "Cada uno aplica su criterio"
+  - before: "No sé por qué decidieron eso"
+    after: "No conozco su criterio"
+family: []
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "porque sí"
+  funcion:
+    - "decidir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "gusto"
+    difference: "Un gusto es una preferencia personal que nadie tiene que justificar; la otra palabra es una medida que cualquiera puede aplicar."
+    memory_trick: "El gusto es tuyo; la medida se presta."
+  - confused_with: "método"
+    difference: "Un método son los pasos que sigues; la otra palabra es la medida con la que comparas al final."
+    memory_trick: "El método camina; la medida compara."
+exercises:
+  - position: 1
+    sentence: "Antes de elegir proveedor, Gonzalo explicó su {{blank}}: precio primero, plazo después."
+    hint_general: "Cuenta con qué medida va a comparar antes de decidir."
+    explanation: "Criterio: la medida con la que va a comparar. Un «gusto» es una preferencia que nadie tiene que explicar, y un «misterio» es algo que no se entiende ni se cuenta."
+    options:
+      - position: 1
+        text: "misterio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «misterio» es algo que nadie consigue explicar, y aquí Gonzalo lo explica en dos palabras."
+        hint_specific: "«Misterio» se queda sin explicación. ¿Qué hizo Gonzalo antes de elegir?"
+      - position: 2
+        text: "criterio"
+        is_correct: true
+      - position: 3
+        text: "gusto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «gusto» es una preferencia personal que nadie tiene que justificar, y esto se explica para que otros puedan aplicarlo."
+        hint_specific: "«Gusto» no se razona. ¿Para qué lo explica Gonzalo en voz alta?"
+  - position: 2
+    sentence: "Los dos equipos eligieron distinto porque cada uno aplicó un {{blank}} diferente, y ambos lo dejaron por escrito."
+    hint_general: "Cada equipo comparó con una medida distinta y la dejó anotada."
+    explanation: "Criterio: la medida con la que comparó cada equipo. Un «crédito» es dinero prestado, y un «objetivo» es adónde se quiere llegar, no cómo se compara."
+    options:
+      - position: 1
+        text: "crédito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «crédito» es dinero prestado que hay que devolver, y aquí se compara cómo eligió cada equipo."
+        hint_specific: "«Crédito» se pide en un banco. ¿Qué aplicó cada equipo al elegir?"
+      - position: 2
+        text: "objetivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «objetivo» es adónde se quiere llegar, y aquí lo distinto es la medida con la que compararon."
+        hint_specific: "«Objetivo» marca adónde se quiere llegar. ¿Qué hicieron distinto los dos equipos?"
+      - position: 3
+        text: "criterio"
+        is_correct: true
+  - position: 3
+    sentence: "No fue un antojo de nadie: hubo un {{blank}} compartido y se aplicó igual en los cinco casos."
+    hint_general: "Hubo una medida común que se aplicó por igual en todos los casos."
+    explanation: "Criterio: la medida común aplicada en todos los casos. «Capricho» es coloquial y acusa de antojo, que la frase niega, y un «método» son los pasos que se siguen, no la medida con la que se compara."
+    options:
+      - position: 1
+        text: "criterio"
+        is_correct: true
+      - position: 2
+        text: "capricho"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Capricho» es coloquial y acusa de decidir por antojo, y la frase empieza negando justo eso."
+        hint_specific: "«Capricho» suena a antojo. Relee las cinco primeras palabras."
+      - position: 3
+        text: "método"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «método» son los pasos que se siguen, y aquí lo compartido es la medida con la que se comparó."
+        hint_specific: "«Método» describe el camino paso a paso. ¿Qué se compartió en los cinco casos?"
+  - position: 4
+    sentence: "Cuando alguien pregunta por qué se eligió esa foto, lo más útil es enseñar el {{blank}}, no el resultado."
+    hint_general: "Conviene enseñar con qué se comparó, no lo que salió al final."
+    explanation: "Criterio: con qué se comparó para elegir. El «resultado» está descartado en la propia frase, y un «misterio» es algo que nadie logra explicar."
+    options:
+      - position: 1
+        text: "misterio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «misterio» es algo que nadie consigue explicar, y aquí justo se pide enseñar algo para que se entienda."
+        hint_specific: "«Misterio» no se enseña, se queda oscuro. ¿Qué pide la frase que se enseñe?"
+      - position: 2
+        text: "criterio"
+        is_correct: true
+      - position: 3
+        text: "resultado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «resultado» es lo que la frase descarta expresamente al final."
+        hint_specific: "«Resultado» es lo que sale al terminar. Relee las últimas tres palabras."
+  - position: 5
+    sentence: "Todos los proyectos se miden igual, sin favores: hay un {{blank}} publicado en la primera página."
+    hint_general: "La medida está escrita y es la misma para todos."
+    explanation: "Criterio: la medida publicada e igual para todos. «Rasero» suena a lenguaje de libro y se usa casi solo en una frase hecha, y un «crédito» es dinero prestado."
+    options:
+      - position: 1
+        text: "rasero"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rasero» suena a lenguaje de libro y casi solo aparece dentro de una frase hecha, no como algo que se publica en una página."
+        hint_specific: "«Rasero» vive dentro de una expresión fija. ¿Qué se publica en la primera página?"
+      - position: 2
+        text: "criterio"
+        is_correct: true
+      - position: 3
+        text: "crédito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «crédito» es dinero prestado, y aquí se publica cómo se van a medir los proyectos."
+        hint_specific: "«Crédito» se devuelve con intereses. ¿Qué se publica aquí?"
+  - position: 6
+    sentence: "Marcela cambió de {{blank}} a mitad del proceso y lo avisó: ahora pesa más el plazo que el precio."
+    hint_general: "Cambia lo que más pesa al comparar, y lo dice."
+    explanation: "Criterio: lo que más pesa al comparar. Un «objetivo» sería adónde quiere llegar, y aquí lo que cambia es cómo compara; un «misterio» es algo que nadie logra explicar."
+    options:
+      - position: 1
+        text: "objetivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «objetivo» es adónde se quiere llegar, y la frase aclara que lo que cambió es qué pesa más al comparar."
+        hint_specific: "«Objetivo» dice adónde se va. ¿Qué dice la frase que ahora pesa más?"
+      - position: 2
+        text: "criterio"
+        is_correct: true
+      - position: 3
+        text: "misterio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «misterio» es algo que nadie explica, y Marcela avisó del cambio en voz alta."
+        hint_specific: "«Misterio» se queda sin contar. ¿Qué hizo Marcela con el cambio?"
+  - position: 7
+    sentence: "El equipo llegó al mismo {{blank}} que el año pasado, aunque el resultado final fue distinto."
+    hint_general: "La medida es la misma que el año anterior, aunque salga otra cosa."
+    explanation: "Criterio: la medida repetida del año pasado. El «resultado» está separado en la propia frase, y un «crédito» es dinero prestado."
+    options:
+      - position: 1
+        text: "resultado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «resultado» aparece aparte en la misma frase y se dice que fue distinto."
+        hint_specific: "«Resultado» es lo que sale al final. Relee el final de la frase."
+      - position: 2
+        text: "crédito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «crédito» es dinero prestado, y aquí se compara cómo decidió el equipo dos años seguidos."
+        hint_specific: "«Crédito» se pide prestado. ¿Qué repitió el equipo este año?"
+      - position: 3
+        text: "criterio"
+        is_correct: true
+  - position: 8
+    sentence: "No discutimos el {{blank}}, discutimos cómo lo aplicamos paso a paso en cada tienda."
+    hint_general: "Están de acuerdo en la medida y discuten los pasos para usarla."
+    explanation: "Criterio: la medida en la que sí están de acuerdo. Un «método» son justo esos pasos que la frase pone aparte, y un «gusto» es una preferencia que nadie discute."
+    options:
+      - position: 1
+        text: "criterio"
+        is_correct: true
+      - position: 2
+        text: "método"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «método» son los pasos, y la frase dice justo que lo que se discute son los pasos, no esto."
+        hint_specific: "«Método» son los pasos. ¿Qué parte dice la frase que sí se discute?"
+      - position: 3
+        text: "gusto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «gusto» es una preferencia personal que no se aplica en cada tienda ni se discute en equipo."
+        hint_specific: "«Gusto» es cosa de cada uno. ¿Esto se aplica en una tienda o en todas?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Precio primero, plazo después"
+    body: "Había tres presupuestos sobre la mesa y cada uno defendía el suyo. Gonzalo paró la discusión: «Antes de elegir, digamos el criterio: precio primero, plazo después». Lo escribieron arriba del todo. La elección salió en cinco minutos y nadie se quedó con la duda."
+    before_phrase: "Yo elegiría este, no sé, me convence más."
+    after_phrase: "Antes de elegir, digamos el criterio."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La foto del salón"
+    body: "Discutíamos qué foto colgar en el salón y llevábamos tres domingos igual. Mi hermana lo resolvió con una pregunta: «¿Cuál es el criterio, que salgamos todos o que se vea bien la casa?». Elegimos la primera. La foto lleva dos años ahí."
+    before_phrase: "Es que a mí esa no me gusta."
+    after_phrase: "¿Cuál es el criterio, que salgamos todos o que se vea la casa?"
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Cómo eliges"
+    body: "«Cuénteme una decisión difícil», pidió la entrevistadora. Marcela contó una y añadió lo que casi nadie añade: «El criterio era el plazo, no el precio, y lo dije antes de decidir». La entrevistadora dejó de tomar notas y preguntó por qué."
+    before_phrase: "Decidí lo que me pareció mejor en ese momento."
+    after_phrase: "El criterio era el plazo, y lo dije antes de decidir."
+metrics:
+  zipf_overall: 4.8368
+  dispersion_dp: 0.1689
+  pedantry_proxy: 0.4436
+  family_size: 13
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

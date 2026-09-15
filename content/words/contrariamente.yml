@@ -1,0 +1,246 @@
+schema_version: 1
+slug: "contrariamente"
+status: "draft"
+lemma: "contrariamente"
+part_of_speech: "adverbio"
+syllables:
+  - "con"
+  - "tra"
+  - "ria"
+  - "men"
+  - "te"
+stressed_syllable: 4
+ipa_latam: "[kon.tɾa.ɾjaˈmen.te]"
+ipa_es: "[kon.tɾa.ɾjaˈmen.te]"
+explanation: "Avisa de que lo que viene rompe lo que todos esperaban."
+example_sentence: "Contrariamente a lo previsto, el local se llenó un martes de febrero."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Va siempre con «a» y con la expectativa que se rompe: la sorpresa queda explicada de una vez."
+when_not_to_use: "No la uses si nadie esperaba nada; sin expectativa previa la frase se queda sin sentido."
+collocations:
+  - "contrariamente a lo previsto"
+  - "contrariamente a lo esperado"
+replaces:
+  - before: "Pues al final no llovió, mira tú"
+    after: "Contrariamente al parte, no llovió"
+  - before: "Y eso que decían que se llenaría"
+    after: "Contrariamente a las previsiones, se llenó"
+  - before: "Salió más barata, quién lo diría"
+    after: "Contrariamente al primer cálculo, salió más barata"
+family:
+  - "contrario"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "mira tú"
+  funcion:
+    - "romper una expectativa"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "contradictoriamente"
+    difference: "«Contradictoriamente» dice que algo se contradice consigo mismo: «actuó contradictoriamente». La otra rompe lo que otros esperaban."
+    memory_trick: "Una se pelea consigo misma; la otra con la previsión."
+  - confused_with: "contrariado"
+    difference: "«Contrariado» describe a quien se queda molesto o disgustado: «se fue contrariado». La otra no describe a nadie: rompe una expectativa."
+    memory_trick: "Uno pone mala cara; la otra desmiente el pronóstico."
+exercises:
+  - position: 1
+    sentence: "El sábado, {{blank}} a lo que decía el parte, no cayó ni una gota en todo el día."
+    hint_general: "El día desmintió lo que se había anunciado para esa fecha."
+    explanation: "Contrariamente: el día desmiente el anuncio. «Contradictoriamente» diría que el parte se contradice solo y «previsiblemente» daría el resultado por esperado."
+    options:
+      - position: 1
+        text: "contradictoriamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contradictoriamente» diría que el parte se desdice a sí mismo, y aquí el parte fue claro: lo que falló fue el cielo."
+        hint_specific: "«Contradictoriamente» señala algo que choca consigo mismo. ¿El parte se desdice o falla?"
+      - position: 2
+        text: "contrariamente"
+        is_correct: true
+      - position: 3
+        text: "previsiblemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Previsiblemente» daría el día seco por esperado, y la frase cuenta justo que nadie lo esperaba."
+        hint_specific: "«Previsiblemente» confirma lo anunciado. ¿El día seco se esperaba o sorprendió?"
+  - position: 2
+    sentence: "La sala se llenó un martes, {{blank}} a todas las previsiones del dueño."
+    hint_general: "El lleno rompe lo que el dueño tenía calculado para ese día."
+    explanation: "Contrariamente: el lleno rompe el cálculo del dueño. «Mira tú por dónde» celebra la sorpresa en tono de conversación y «lógicamente» daría el lleno por normal."
+    options:
+      - position: 1
+        text: "contrariamente"
+        is_correct: true
+      - position: 2
+        text: "mira tú por dónde"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mira tú por dónde» es de conversación y celebra la sorpresa con guiño, cuando aquí solo se informa de un dato que rompe el cálculo."
+        hint_specific: "«Mira tú por dónde» hace un guiño al oyente. ¿Se guiña o se informa?"
+      - position: 3
+        text: "lógicamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lógicamente» daría el lleno por normal, y la frase lo presenta como algo que nadie había calculado."
+        hint_specific: "«Lógicamente» da el resultado por esperado. ¿El lleno era previsible o sorprendió?"
+  - position: 3
+    sentence: "El pan de molde duró tres días, {{blank}} a lo que dice la etiqueta de la bolsa."
+    hint_general: "Lo que pasó no coincide con lo que prometía el envase."
+    explanation: "Contrariamente: lo ocurrido no coincide con la etiqueta. «Contrariado» describiría a alguien molesto y «efectivamente» confirmaría lo que promete el envase."
+    options:
+      - position: 1
+        text: "contrariado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contrariado» describe a una persona disgustada, y aquí quien falla es una bolsa de pan, que no se disgusta."
+        hint_specific: "«Contrariado» describe el ánimo de alguien. ¿Hay una persona molesta o una etiqueta que falla?"
+      - position: 2
+        text: "contrariamente"
+        is_correct: true
+      - position: 3
+        text: "efectivamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Efectivamente» confirmaría lo que promete la etiqueta, y la frase cuenta que el pan no aguantó lo prometido."
+        hint_specific: "«Efectivamente» confirma lo anunciado. ¿La etiqueta acertó o falló?"
+  - position: 4
+    sentence: "Hilaria sacó la plaza a la primera, {{blank}} a sus propios cálculos de enero."
+    hint_general: "El resultado desmiente lo que ella misma había calculado."
+    explanation: "Contrariamente: el resultado desmiente su cálculo. «Contra todo pronóstico» tiene aire de crónica deportiva y «por suerte» lo atribuiría al azar."
+    options:
+      - position: 1
+        text: "contrariamente"
+        is_correct: true
+      - position: 2
+        text: "contra todo pronóstico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Contra todo pronóstico» tiene aire de crónica deportiva y convierte el resultado en una gesta, cuando aquí solo falla un cálculo suyo."
+        hint_specific: "«Contra todo pronóstico» suena a hazaña narrada. ¿Es una gesta o un cálculo fallido?"
+      - position: 3
+        text: "por suerte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por suerte» atribuiría la plaza al azar, y la frase la enfrenta a lo que ella misma preveía, no a la fortuna."
+        hint_specific: "«Por suerte» reparte el mérito al azar. ¿Fue azar o fue un cálculo equivocado?"
+  - position: 5
+    sentence: "El equipo pequeño ganó la liga, {{blank}} a lo que decían todos los periódicos."
+    hint_general: "La victoria desmiente lo que se había publicado durante meses."
+    explanation: "Contrariamente: la victoria desmiente lo publicado. «Contradictoriamente» diría que los periódicos se desdicen solos y «desgraciadamente» convertiría el triunfo en una pena."
+    options:
+      - position: 1
+        text: "contradictoriamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contradictoriamente» diría que los periódicos se desdicen entre sí, y aquí todos decían lo mismo: que perderían."
+        hint_specific: "«Contradictoriamente» señala un choque interno. ¿Los periódicos se contradicen o se equivocan?"
+      - position: 2
+        text: "desgraciadamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desgraciadamente» convertiría el título en una desgracia, y ganar la liga es la buena noticia de la frase."
+        hint_specific: "«Desgraciadamente» lamenta el resultado. ¿Ganar la liga es una pena o un logro?"
+      - position: 3
+        text: "contrariamente"
+        is_correct: true
+  - position: 6
+    sentence: "El niño repitió plato de verdura, {{blank}} a los temores de su padre."
+    hint_general: "Lo que hizo el niño desmiente lo que su padre temía."
+    explanation: "Contrariamente: lo ocurrido desmiente el temor del padre. «Mira tú por dónde» celebra la sorpresa en tono de conversación y «obviamente» daría el segundo plato por descontado."
+    options:
+      - position: 1
+        text: "contrariamente"
+        is_correct: true
+      - position: 2
+        text: "mira tú por dónde"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mira tú por dónde» es de conversación y hace un guiño burlón, cuando la frase solo enfrenta un hecho a un temor."
+        hint_specific: "«Mira tú por dónde» hace un guiño al oyente. ¿Se guiña o se enfrenta un hecho a un temor?"
+      - position: 3
+        text: "obviamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obviamente» daría el segundo plato por descontado, y la frase lo cuenta como lo que nadie esperaba."
+        hint_specific: "«Obviamente» da el resultado por evidente. ¿Era evidente o sorprendió al padre?"
+  - position: 7
+    sentence: "La reforma salió más barata, {{blank}} al primer cálculo del arquitecto."
+    hint_general: "La factura final desmiente el número del principio."
+    explanation: "Contrariamente: la factura desmiente el primer número. «Contrariado» describiría a alguien molesto y «previsiblemente» daría el ahorro por esperado."
+    options:
+      - position: 1
+        text: "contrariado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Contrariado» describe a una persona disgustada, y aquí lo que falla es un cálculo, no el humor de nadie."
+        hint_specific: "«Contrariado» describe el ánimo de alguien. ¿Hay alguien enfadado o un número que falla?"
+      - position: 2
+        text: "contrariamente"
+        is_correct: true
+      - position: 3
+        text: "previsiblemente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Previsiblemente» daría el ahorro por esperado, y la frase lo enfrenta al número que se había calculado."
+        hint_specific: "«Previsiblemente» confirma el cálculo. ¿El ahorro estaba previsto o rompió la cuenta?"
+  - position: 8
+    sentence: "Aquel invierno fue suave, {{blank}} a lo que anunciaban en octubre."
+    hint_general: "El invierno desmintió lo que se había anunciado meses antes."
+    explanation: "Contrariamente: el invierno desmiente el anuncio. «Contra todo pronóstico» tiene aire de crónica deportiva y «efectivamente» confirmaría lo anunciado en octubre."
+    options:
+      - position: 1
+        text: "efectivamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Efectivamente» confirmaría lo que se anunció en octubre, y el invierno hizo justo lo contrario de lo previsto."
+        hint_specific: "«Efectivamente» confirma lo anunciado. ¿El anuncio acertó o falló?"
+      - position: 2
+        text: "contra todo pronóstico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Contra todo pronóstico» tiene aire de crónica deportiva y convierte el invierno en una hazaña, cuando aquí solo falló una previsión."
+        hint_specific: "«Contra todo pronóstico» suena a hazaña narrada. ¿Hay gesta o hay previsión fallida?"
+      - position: 3
+        text: "contrariamente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El martes del lleno"
+    body: "El dueño había calculado media sala y se quedaron sin sillas. Al escribir el informe del mes, Casimira lo contó sin adornos: «Contrariamente a las previsiones, el martes se llenó». El dato cambió el calendario de los meses siguientes."
+    before_phrase: "Y eso que decíamos que no vendría nadie, mira tú."
+    after_phrase: "Contrariamente a las previsiones, el martes se llenó."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El segundo plato"
+    body: "Su padre llevaba semanas convencido de que el niño no probaría la verdura. Aquel domingo repitió plato sin que nadie insistiera. «Contrariamente a lo que temías, repitió», le dijo su madre por teléfono. Él se quedó callado y luego se rio de sí mismo."
+    before_phrase: "Pues mira tú por dónde, repitió y todo."
+    after_phrase: "Contrariamente a lo que temías, repitió."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La plaza de enero"
+    body: "Le preguntaron si esperaba sacar la plaza a la primera. Hilaria contestó con una honestidad que sorprendió a la mesa: «Contrariamente a mis propios cálculos, salió a la primera». Después explicó qué había cambiado en su forma de preparar la prueba."
+    before_phrase: "Pues no me lo esperaba, la verdad, salió y ya está."
+    after_phrase: "Contrariamente a mis propios cálculos, salió a la primera."
+metrics:
+  zipf_overall: 3.4942
+  dispersion_dp: 0.2577
+  pedantry_proxy: 0.5083
+  family_size: 795
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

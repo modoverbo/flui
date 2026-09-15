@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "inminente"
+status: "draft"
+lemma: "inminente"
+part_of_speech: "adjetivo"
+syllables:
+  - "in"
+  - "mi"
+  - "nen"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[in.miˈnen.te]"
+ipa_es: "[in.miˈnen.te]"
+explanation: "Que está a punto de ocurrir, con tan poco tiempo por delante que ya no se puede evitar."
+example_sentence: "El cambio de jefe parecía inminente y nadie lo decía en voz alta."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Habla de cuándo va a pasar algo, no de si es bueno o malo: sirve igual para una buena noticia."
+when_not_to_use: "No la uses para alabar a alguien destacado en su campo; esa palabra es «eminente»."
+collocations:
+  - "un cambio inminente"
+  - "una salida inminente"
+  - "un anuncio inminente"
+replaces:
+  - before: "El cierre parecía eminente"
+    after: "El cierre parecía inminente"
+  - before: "Eso va a pasar en cualquier momento"
+    after: "Eso es inminente"
+  - before: "Ya casi está encima la mudanza"
+    after: "La mudanza es inminente"
+family:
+  - "inminencia"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin: ["pronto"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "eminente"
+    difference: "«Eminente» elogia a alguien que destaca mucho en lo suyo; la otra palabra solo dice que algo va a pasar enseguida."
+    memory_trick: "Una mide el prestigio; la otra mide el reloj."
+  - confused_with: "urgente"
+    difference: "«Urgente» dice que hay que atenderlo ya; la otra palabra dice que va a ocurrir ya, lo atiendas o no."
+    memory_trick: "Lo urgente te pide acción; lo otro llega sin pedir permiso."
+exercises:
+  - position: 1
+    sentence: "Todos notaban que el cambio de jefe era {{blank}}, aunque nadie lo había anunciado."
+    hint_general: "Algo va a ocurrir enseguida, aunque todavía no se haya dicho en voz alta."
+    explanation: "Inminente: va a ocurrir enseguida. «Eminente» elogiaría a alguien destacado, y «cantado» es coloquial y sugiere que el resultado ya se sabía de sobra."
+    options:
+      - position: 1
+        text: "eminente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eminente» elogia a una persona que destaca en lo suyo, y aquí se habla de cuándo va a pasar algo."
+        hint_specific: "«Eminente» es un elogio a alguien. ¿Se elogia a una persona o se habla de tiempo?"
+      - position: 2
+        text: "inminente"
+        is_correct: true
+      - position: 3
+        text: "cantado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cantado» es coloquial y dice que el desenlace se sabía de sobra, y la frase señala que llegará pronto, no que fuera obvio."
+        hint_specific: "«Cantado» suena a apuesta ganada de antemano. ¿La frase habla de certeza o de tiempo?"
+  - position: 2
+    sentence: "Cecilia guardó las cajas la noche anterior porque la mudanza ya era {{blank}}."
+    hint_general: "Faltaban horas para que ocurriera."
+    explanation: "Inminente: faltaban horas para la mudanza. «Eminente» elogiaría a alguien destacado, y «urgente» diría que hay que atenderla ya, no cuándo llega."
+    options:
+      - position: 1
+        text: "urgente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Urgente» dice que algo reclama atención inmediata, y una mudanza con fecha fijada llega sola: no hay nada que apurar."
+        hint_specific: "Lo urgente te obliga a correr. ¿Cecilia corre o simplemente se adelanta a una fecha?"
+      - position: 2
+        text: "eminente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eminente» se dice de una persona que destaca en su campo, y una mudanza no destaca en nada."
+        hint_specific: "«Eminente» se aplica a personas admiradas. ¿Se puede admirar a una mudanza?"
+      - position: 3
+        text: "inminente"
+        is_correct: true
+  - position: 3
+    sentence: "El tono del correo dejaba claro que una decisión {{blank}} llegaría antes del viernes."
+    hint_general: "La decisión estaba a punto de caer, con muy poco margen."
+    explanation: "Inminente: la decisión estaba a punto de caer. «Eminente» elogiaría a una persona destacada, y «emergente» describe algo que empieza a surgir."
+    options:
+      - position: 1
+        text: "emergente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Emergente» describe algo que empieza a surgir y a crecer, y aquí lo que importa es que falta muy poco para que llegue."
+        hint_specific: "Lo emergente está naciendo. ¿La decisión está naciendo o está a punto de caer?"
+      - position: 2
+        text: "inminente"
+        is_correct: true
+      - position: 3
+        text: "eminente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eminente» elogia a alguien que sobresale en su profesión, y una decisión no sobresale: llega o no llega."
+        hint_specific: "«Eminente» habla del prestigio de alguien. ¿Aquí se mide prestigio o se mide tiempo?"
+  - position: 4
+    sentence: "Con la sala llena y el micrófono abierto, su turno era {{blank}} y le temblaban las manos."
+    hint_general: "Quedaban segundos para que le tocara."
+    explanation: "Inminente: quedaban segundos para su turno. «Eminente» elogiaría a alguien destacado, y «aciago» anuncia una desgracia que la frase no dice."
+    options:
+      - position: 1
+        text: "inminente"
+        is_correct: true
+      - position: 2
+        text: "aciago"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Aciago» es solemne y anuncia una desgracia, y la frase solo dice que le tocaba enseguida y estaba nervioso."
+        hint_specific: "«Aciago» anuncia desgracias. ¿La frase juzga el resultado o cuenta el reloj?"
+      - position: 3
+        text: "eminente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eminente» se dice de una persona admirada en su campo, y aquí lo que se acerca es el momento de hablar."
+        hint_specific: "«Eminente» es un elogio personal. ¿Se elogia a alguien o se cuenta el tiempo que falta?"
+  - position: 5
+    sentence: "Nadie se movió del pasillo: el anuncio de los nombres parecía {{blank}}."
+    hint_general: "Iba a ocurrir de un momento a otro."
+    explanation: "Inminente: iba a ocurrir de un momento a otro. «Eminente» elogiaría a alguien destacado, y «remoto» diría justo lo contrario: que faltaba mucho."
+    options:
+      - position: 1
+        text: "eminente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eminente» elogia a una persona que destaca, y un anuncio no destaca: solo llega antes o después."
+        hint_specific: "«Eminente» se dice de la gente admirada. ¿Aquí se admira a alguien?"
+      - position: 2
+        text: "remoto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Remoto» sitúa algo muy lejos en el tiempo, y por eso nadie se movería del pasillo esperándolo."
+        hint_specific: "Lo remoto queda lejísimos. ¿Esperarías de pie en el pasillo por algo lejano?"
+      - position: 3
+        text: "inminente"
+        is_correct: true
+  - position: 6
+    sentence: "La lluvia era tan {{blank}} que Gonzalo recogió las sillas antes del café."
+    hint_general: "Estaba a punto de caer, y por eso se adelantó."
+    explanation: "Inminente: la lluvia estaba a punto de caer. «Eminente» elogiaría a alguien destacado, y «segura» diría que llegará, pero no que llegue ya."
+    options:
+      - position: 1
+        text: "segura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Segura» dice que la lluvia llegará, pero no cuándo; recoger las sillas antes del café solo se explica si cae en minutos."
+        hint_specific: "Segura habla de certeza, no de reloj. ¿Por qué corre Gonzalo antes del café?"
+      - position: 2
+        text: "inminente"
+        is_correct: true
+      - position: 3
+        text: "eminente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eminente» se aplica a personas que destacan en lo suyo, y la lluvia no destaca en nada."
+        hint_specific: "«Eminente» es un elogio a alguien. ¿Se puede elogiar así a la lluvia?"
+  - position: 7
+    sentence: "Después del aviso, el cierre del local pasó de posible a {{blank}} en dos días."
+    hint_general: "Pasó de ser una opción lejana a estar encima."
+    explanation: "Inminente: pasó a estar encima. «Emergente» describe algo que empieza a surgir, y «eventual» lo dejaría en una simple posibilidad."
+    options:
+      - position: 1
+        text: "eventual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Eventual» deja el cierre en una posibilidad, y la frase dice que en dos días dejó de ser una posibilidad."
+        hint_specific: "Lo eventual puede pasar o no. ¿Qué cambió en esos dos días?"
+      - position: 2
+        text: "emergente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Emergente» describe algo que empieza a surgir y a crecer, y un cierre no crece: cae de golpe."
+        hint_specific: "Lo emergente empieza a asomar. ¿Un cierre asoma o se echa encima?"
+      - position: 3
+        text: "inminente"
+        is_correct: true
+  - position: 8
+    sentence: "Su renuncia era {{blank}}: ya había vaciado el cajón y devuelto las llaves."
+    hint_general: "Todas las señales decían que iba a ocurrir en horas."
+    explanation: "Inminente: iba a ocurrir en horas. «Eminente» elogiaría a alguien destacado, y «funesta» juzgaría la renuncia como una desgracia."
+    options:
+      - position: 1
+        text: "funesta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Funesta» es solemne y juzga el hecho como una desgracia, y la frase solo cuenta señales de que faltaba poco."
+        hint_specific: "«Funesta» carga con un juicio muy sombrío. ¿La frase valora la renuncia o mide el tiempo?"
+      - position: 2
+        text: "eminente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eminente» elogia a una persona que destaca en su campo, y aquí lo que se acerca es el día de irse."
+        hint_specific: "«Eminente» es un elogio personal. ¿Se elogia a alguien o se anuncia una fecha?"
+      - position: 3
+        text: "inminente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes del correo"
+    body: "Circulaban rumores sobre la reorganización. En vez de alimentarlos, Álvaro habló claro en la reunión: «El anuncio es inminente. Cuando llegue, lo leemos juntos y decidimos qué cambia para nosotros». La sala se calmó en un minuto."
+    before_phrase: "Dicen que va a salir en cualquier momento."
+    after_phrase: "El anuncio es inminente."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La caja de la abuela"
+    body: "La mudanza de su madre era al día siguiente y Beatriz seguía sin abrir la caja de fotos. Su hermano se sentó al lado: «El camión es inminente, pero esta caja la abrimos hoy, con calma». Tardaron dos horas y valió la pena."
+    before_phrase: "Ya casi está encima lo del camión."
+    after_phrase: "El camión es inminente."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Sillas fuera"
+    body: "En la terraza nadie miraba el cielo. Renata se levantó y empezó a apilar sillas: «La tormenta es inminente, os lo digo yo». Cinco minutos después llovía y el grupo seguía cenando, seco, dentro de la casa."
+    before_phrase: "Va a caer de un momento a otro."
+    after_phrase: "La tormenta es inminente."
+metrics:
+  zipf_overall: 4.0872
+  dispersion_dp: 0.1185
+  pedantry_proxy: 0.5864
+  family_size: 2
+provenance:
+  generator: "flui authoring agent — theme paronimos (inminente / eminente)"
+  gate: null
+  checked_on: "2026-09-14"

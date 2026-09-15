@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "tampoco"
+status: "draft"
+lemma: "tampoco"
+part_of_speech: "adverbio"
+syllables:
+  - "tam"
+  - "po"
+  - "co"
+stressed_syllable: 2
+ipa_latam: "[tamˈpo.ko]"
+ipa_es: "[tamˈpo.ko]"
+explanation: "Suma un «no» al «no» anterior y evita repetir la frase entera."
+example_sentence: "Llegó tarde a la cita y tampoco avisó de que venía de camino."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Enlaza dos faltas con una sola palabra y evita repetir el «no» entero dos veces."
+when_not_to_use: "No la uses si la segunda parte es positiva; entonces la frase pide una palabra que sume, no que reste."
+collocations:
+  - "tampoco hace falta"
+  - "yo tampoco"
+replaces:
+  - before: "No me avisaron y encima no me preguntaron"
+    after: "No me avisaron y tampoco me preguntaron"
+  - before: "El horno no calienta y la nevera igual, no enfría"
+    after: "El horno no calienta y la nevera tampoco enfría"
+  - before: "No fui, y llamarla pues no, la verdad"
+    after: "No fui y tampoco la llamé"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "y eso no"
+  funcion:
+    - "encadenar dos faltas"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "tan poco"
+    difference: "«Tan poco», en dos palabras, mide una cantidad diminuta: «dormí tan poco que me dolía la cabeza». La otra encadena dos negaciones."
+    memory_trick: "Una mide cantidad; la otra suma un «no» al anterior."
+  - confused_with: "tan pocos"
+    difference: "«Tan pocos» cuenta elementos escasos: «vinieron tan pocos que sobró comida». La otra no cuenta nada: niega por segunda vez."
+    memory_trick: "Unos se cuentan con los dedos; la otra solo repite el «no»."
+exercises:
+  - position: 1
+    sentence: "No me avisaron del cambio de fecha y {{blank}} me pidieron opinión sobre el sitio."
+    hint_general: "Dos faltas seguidas del mismo grupo: la segunda se engancha a la primera."
+    explanation: "Tampoco: la segunda falta se suma a la primera. «Tan poco» mediría una cantidad diminuta y «también» convertiría la frase en algo que sí ocurrió."
+    options:
+      - position: 1
+        text: "tan poco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tan poco», separado, mide una cantidad muy pequeña, y aquí no se mide nada: se cuenta algo que no pasó."
+        hint_specific: "«Tan poco» habla de cantidad. ¿Se mide algo o se encadena una falta con otra?"
+      - position: 2
+        text: "tampoco"
+        is_correct: true
+      - position: 3
+        text: "también"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«También» sumaría algo que sí ocurrió, y la frase encadena dos cosas que no ocurrieron: ni aviso ni consulta."
+        hint_specific: "«También» suma lo que sí pasa. ¿Le pidieron opinión o no se la pidieron?"
+  - position: 2
+    sentence: "Nadie del equipo sabía lo del cambio de horario, y quien lo firmó {{blank}} lo explicó."
+    hint_general: "Al desconocimiento general se le suma un segundo silencio."
+    explanation: "Tampoco: al silencio general se suma el de quien firmó. «Ni hablar» sonaría a negativa tajante y «además» presentaría una explicación que sí llegó."
+    options:
+      - position: 1
+        text: "tampoco"
+        is_correct: true
+      - position: 2
+        text: "ni hablar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni hablar» es de conversación y expresa negarse a algo, cuando aquí nadie se niega: sencillamente no hubo explicación."
+        hint_specific: "«Ni hablar» suena a rechazo firme. ¿Alguien se negó a explicarlo o nadie lo explicó?"
+      - position: 3
+        text: "además"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Además» anunciaría una explicación añadida, y la frase dice que esa explicación nunca llegó."
+        hint_specific: "«Además» suma algo que sí ocurre. ¿Hubo explicación o hubo silencio?"
+  - position: 3
+    sentence: "No pude ir a la boda de Manuela y {{blank}} llegué a llamarla esa semana."
+    hint_general: "A la ausencia se le suma otra cosa que quedó sin hacer."
+    explanation: "Tampoco: la llamada se suma a lo que no ocurrió. «Tan poco» mediría una cantidad diminuta y «encima» convertiría la llamada en un agravio más."
+    options:
+      - position: 1
+        text: "tan poco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tan poco», separado, mide una cantidad muy pequeña, y aquí no hay cantidad: hay una llamada que no se hizo."
+        hint_specific: "«Tan poco» habla de cuánto. ¿Se mide algo o se suma una falta a otra?"
+      - position: 2
+        text: "tampoco"
+        is_correct: true
+      - position: 3
+        text: "encima"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encima» acumula agravios contra alguien, y quien habla se está señalando a sí misma sin cargar las tintas."
+        hint_specific: "«Encima» suma motivos de queja contra otro. ¿Se queja de alguien o reconoce lo suyo?"
+  - position: 4
+    sentence: "El horno no calienta bien y la nevera {{blank}} enfría como antes."
+    hint_general: "Dos aparatos que fallan seguidos: el segundo se engancha al primero."
+    explanation: "Tampoco: el segundo fallo se suma al primero. «Tan pocos» contaría elementos escasos y «todavía» diría que la nevera sigue funcionando."
+    options:
+      - position: 1
+        text: "tampoco"
+        is_correct: true
+      - position: 2
+        text: "tan pocos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tan pocos» cuenta elementos escasos, y aquí no se cuenta nada: se encadenan dos aparatos que fallan."
+        hint_specific: "«Tan pocos» necesita cosas que contar. ¿Se cuentan cosas o se suman fallos?"
+      - position: 3
+        text: "todavía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Todavía» diría que la nevera sigue enfriando como siempre, y la frase la pone en la lista de lo que falla."
+        hint_specific: "«Todavía» mantiene algo vivo. ¿La nevera funciona o ha dejado de funcionar?"
+  - position: 5
+    sentence: "No conozco a nadie en esa ciudad y {{blank}} hablo el idioma que usan allí."
+    hint_general: "A la falta de contactos se le engancha una segunda carencia."
+    explanation: "Tampoco: la segunda carencia se suma a la primera. «Ni por asomo» sonaría a imposible para siempre y «también» hablaría de algo que sí domina."
+    options:
+      - position: 1
+        text: "ni por asomo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni por asomo» es de conversación y declara algo imposible para siempre, cuando aquí solo se constata que no sabe el idioma."
+        hint_specific: "«Ni por asomo» cierra la puerta del todo. ¿Es imposible aprenderlo o es que aún no lo sabe?"
+      - position: 2
+        text: "tampoco"
+        is_correct: true
+      - position: 3
+        text: "también"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«También» diría que sí habla ese idioma, y la frase describe dos cosas que le faltan en esa ciudad."
+        hint_specific: "«También» suma lo que sí tiene. ¿Habla el idioma o no lo habla?"
+  - position: 6
+    sentence: "El primer presupuesto no convenció a mis padres, y el segundo {{blank}} les gustó."
+    hint_general: "Dos rechazos seguidos: el segundo se apoya en el primero."
+    explanation: "Tampoco: el segundo rechazo se suma al primero. «Tan poco» mediría una cantidad diminuta y «siquiera» marcaría algo que ni llegó a ocurrir."
+    options:
+      - position: 1
+        text: "tampoco"
+        is_correct: true
+      - position: 2
+        text: "tan poco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tan poco», separado, mide cantidad, y aquí no se mide nada: se suma un rechazo a otro rechazo."
+        hint_specific: "«Tan poco» habla de cuánto. ¿Se mide una cantidad o se encadenan dos noes?"
+      - position: 3
+        text: "siquiera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Siquiera» marca lo que ni siquiera llegó a pasar, y aquí el segundo presupuesto sí se vio: lo que falló fue el gusto."
+        hint_specific: "«Siquiera» señala lo que no llegó a ocurrir. ¿Llegaron a ver el segundo presupuesto?"
+  - position: 7
+    sentence: "No me llamó el viernes y el sábado {{blank}} dio señales de vida."
+    hint_general: "Dos días de silencio seguidos: el segundo se engancha al primero."
+    explanation: "Tampoco: el silencio del sábado se suma al del viernes. «Ni hablar» sonaría a negativa tajante y «también» hablaría de una llamada que sí llegó."
+    options:
+      - position: 1
+        text: "ni hablar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni hablar» es de conversación y expresa negarse a algo, y aquí nadie se niega: alguien simplemente no llama."
+        hint_specific: "«Ni hablar» suena a rechazo firme. ¿Se negó a llamar o solo no llamó?"
+      - position: 2
+        text: "también"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«También» diría que el sábado sí llamó, y la frase encadena dos días sin noticias suyas."
+        hint_specific: "«También» suma lo que sí ocurre. ¿El sábado hubo llamada o hubo silencio?"
+      - position: 3
+        text: "tampoco"
+        is_correct: true
+  - position: 8
+    sentence: "Rosendo no cocina en casa, y por lo visto fregar {{blank}} entra en sus planes."
+    hint_general: "A una falta se le suma otra del mismo estilo, y con ironía suave."
+    explanation: "Tampoco: la segunda falta se suma a la primera. «Tan pocos» contaría elementos escasos y «además» presentaría fregar como algo que sí hace."
+    options:
+      - position: 1
+        text: "tan pocos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tan pocos» cuenta elementos escasos, y aquí no se cuenta nada: se enlazan dos cosas que él no hace."
+        hint_specific: "«Tan pocos» necesita cosas que contar. ¿Se cuentan cosas o se suman faltas?"
+      - position: 2
+        text: "tampoco"
+        is_correct: true
+      - position: 3
+        text: "además"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Además» sumaría fregar a lo que sí hace, y la frase lo coloca en la lista de lo que no hace."
+        hint_specific: "«Además» alarga lo que sí ocurre. ¿Friega en casa o no friega?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El cambio que nadie contó"
+    body: "El horario cambió un lunes y el equipo se enteró por el cuadrante de la pared. Perpetua lo dijo en la reunión sin levantar la voz: «No nos avisaron y tampoco nos preguntaron». Dos frases bastaron para que el jefe de turno propusiera un aviso previo por escrito."
+    before_phrase: "No nos dijeron nada y encima no nos preguntaron."
+    after_phrase: "No nos avisaron y tampoco nos preguntaron."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La semana que no llamé"
+    body: "Se había perdido la boda de su prima y llevaba días dándole vueltas. Leandro se lo dijo de frente, sin adornos: «No pude ir y tampoco te llamé. Lo siento». Su prima se quedó callada un segundo y luego propuso un café el jueves."
+    before_phrase: "No fui, y llamarte pues no, la verdad, perdona."
+    after_phrase: "No pude ir y tampoco te llamé."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Una ciudad nueva"
+    body: "Le preguntaron si se atrevía con el traslado y él contestó sin dramatizar. «No conozco a nadie allí y tampoco hablo el idioma». Lo dijo como quien lee una lista, y el grupo entendió que buscaba ayuda, no compasión. Salieron tres contactos en la misma sobremesa."
+    before_phrase: "No conozco a nadie y el idioma pues igual, nada."
+    after_phrase: "No conozco a nadie allí y tampoco hablo el idioma."
+metrics:
+  zipf_overall: 5.2012
+  dispersion_dp: 0.0897
+  pedantry_proxy: 0.4857
+  family_size: 11
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

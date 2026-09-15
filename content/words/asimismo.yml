@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "asimismo"
+status: "draft"
+lemma: "asimismo"
+part_of_speech: "adverbio"
+syllables:
+  - "a"
+  - "si"
+  - "mis"
+  - "mo"
+stressed_syllable: 3
+ipa_latam: "[a.siˈmis.mo]"
+ipa_es: "[a.siˈmis.mo]"
+explanation: "Suma otra idea del mismo peso a lo que acabas de decir, sin repetir lo anterior."
+example_sentence: "El acuerdo fija los plazos; asimismo, reparte los costes entre las dos partes."
+register: "culto"
+pedantry_risk: 2
+usage_tip: "Brilla por escrito: encadena dos puntos del mismo rango sin que el segundo parezca menor."
+when_not_to_use: "No la uses para añadir una queja ni una sorpresa; solo suma, nunca dramatiza."
+collocations:
+  - "asimismo conviene"
+  - "asimismo quedó pendiente"
+replaces:
+  - before: "Y también hay que avisar al cliente"
+    after: "Asimismo hay que avisar al cliente"
+  - before: "Y eso, que falta el informe"
+    after: "Asimismo falta el informe"
+  - before: "Otra cosa: cambiamos la fecha"
+    after: "Asimismo cambiamos la fecha"
+family: []
+semantic_set_id: "sumar-en-el-mismo-plano"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "y también"
+  funcion:
+    - "sumar otra idea"
+  canal: "escrito"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "así mismo"
+    difference: "«Así mismo», en dos palabras, quiere decir «de esa misma manera»: «hazlo así mismo». La otra suma una idea nueva."
+    memory_trick: "Si cabe «de ese modo», son dos palabras; si cabe «además», es una."
+  - confused_with: "a sí mismo"
+    difference: "«A sí mismo» habla de quien actúa sobre su propia persona: «se lo repitió a sí mismo». La otra enlaza dos ideas."
+    memory_trick: "Una apunta a la persona; la otra enlaza frases."
+exercises:
+  - position: 1
+    sentence: "El contrato queda firmado esta semana; {{blank}}, el equipo legal revisará los anexos antes del viernes."
+    hint_general: "Añade un segundo compromiso del mismo rango, sin oponerlo al primero."
+    explanation: "Asimismo: suma un segundo compromiso al mismo nivel. «Así mismo» significaría «de esa manera» y «en cambio» opondría dos cosas que aquí se suman."
+    options:
+      - position: 1
+        text: "así mismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Así mismo», separado, señala el modo de hacer algo, y la frase no describe ningún modo: encadena dos compromisos."
+        hint_specific: "«Así mismo» responde a cómo se hace algo. ¿Alguien explica aquí de qué manera se firma?"
+      - position: 2
+        text: "asimismo"
+        is_correct: true
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» enfrenta dos ideas, y revisar los anexos no se opone a firmar: viene detrás y en la misma línea."
+        hint_specific: "«En cambio» necesita dos ideas que choquen. ¿Estas dos chocan o van juntas?"
+  - position: 2
+    sentence: "El acta recoge los acuerdos de mayo; {{blank}}, deja por escrito los dos votos en contra."
+    hint_general: "El documento guarda dos cosas al mismo nivel: enlaza la segunda con la primera."
+    explanation: "Asimismo: el acta guarda las dos cosas con igual peso. «Y de paso» las convertiría en un añadido menor y «por tanto» haría de la segunda una consecuencia."
+    options:
+      - position: 1
+        text: "asimismo"
+        is_correct: true
+      - position: 2
+        text: "y de paso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Y de paso» es de conversación y rebaja lo segundo a un añadido aprovechado, cuando el acta lo recoge con el mismo peso."
+        hint_specific: "«Y de paso» suena a algo que se cuela sin esfuerzo. ¿Los votos en contra valen menos que los acuerdos?"
+      - position: 3
+        text: "por tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por tanto» presenta lo segundo como resultado de lo primero, y los votos en contra no salen de los acuerdos: constan aparte."
+        hint_specific: "«Por tanto» anuncia una consecuencia. ¿Los votos en contra nacen de los acuerdos?"
+  - position: 3
+    sentence: "Coordino el equipo de atención desde enero y, {{blank}}, formo a quien entra nuevo."
+    hint_general: "Cuenta dos responsabilidades que van juntas y pesan lo mismo en su trabajo."
+    explanation: "Asimismo: las dos responsabilidades pesan igual. «A sí mismo» hablaría de alguien que se forma solo y «sin embargo» las enfrentaría sin motivo."
+    options:
+      - position: 1
+        text: "a sí mismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«A sí mismo» señala a quien recibe su propia acción, y aquí forma a otras personas, no a su propia persona."
+        hint_specific: "«A sí mismo» devuelve la acción a quien la hace. ¿Se forma ella sola o forma a los que llegan?"
+      - position: 2
+        text: "asimismo"
+        is_correct: true
+      - position: 3
+        text: "sin embargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sin embargo» avisa de que lo segundo contradice lo primero, y coordinar y formar conviven sin ningún choque."
+        hint_specific: "«Sin embargo» anuncia una contradicción. ¿Las dos funciones se estorban entre ellas?"
+  - position: 4
+    sentence: "La reunión del edificio se traslada al día 12; {{blank}}, cambia el sitio: será en el portal."
+    hint_general: "Un aviso trae dos novedades del mismo tipo. Enlaza la segunda con la primera."
+    explanation: "Asimismo: dos cambios del mismo aviso, con igual peso. «Y otra cosa» sonaría a ocurrencia de última hora y «por el contrario» los enfrentaría."
+    options:
+      - position: 1
+        text: "por el contrario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por el contrario» exige que lo segundo niegue lo primero, y cambiar el sitio no niega el cambio de fecha."
+        hint_specific: "«Por el contrario» corrige lo dicho antes. ¿El sitio nuevo desmiente la fecha nueva?"
+      - position: 2
+        text: "y otra cosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Y otra cosa» es de conversación de portal y presenta el cambio como una ocurrencia suelta, no como parte del mismo aviso."
+        hint_specific: "«Y otra cosa» suena a añadido de última hora. ¿El cambio de sitio es un descuido o parte del aviso?"
+      - position: 3
+        text: "asimismo"
+        is_correct: true
+  - position: 5
+    sentence: "Mi madre pidió que llevemos el postre; {{blank}}, recordó que este año cenamos a las nueve."
+    hint_general: "Dos encargos de la misma llamada, ninguno más importante que el otro."
+    explanation: "Asimismo: dos encargos con el mismo peso. «Así mismo» hablaría del modo de llevar el postre y «es decir» repetiría la primera idea con otras palabras."
+    options:
+      - position: 1
+        text: "asimismo"
+        is_correct: true
+      - position: 2
+        text: "así mismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Así mismo», separado, indica de qué manera se hace algo, y el horario no es una manera de llevar el postre."
+        hint_specific: "«Así mismo» contesta a cómo. ¿La hora de la cena explica de qué modo se lleva el postre?"
+      - position: 3
+        text: "es decir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Es decir» reformula lo ya dicho, y la hora de la cena no repite el encargo del postre: es un dato nuevo."
+        hint_specific: "«Es decir» dice lo mismo con otras palabras. ¿La hora repite el encargo del postre?"
+  - position: 6
+    sentence: "El informe mide el consumo de agua de la planta y {{blank}} compara los datos con el año pasado."
+    hint_general: "El documento hace dos cosas seguidas, ninguna consecuencia de la otra."
+    explanation: "Asimismo: medir y comparar caben en el mismo documento con igual rango. «Aun así» supondría un obstáculo y «en resumen» anunciaría un cierre que no llega."
+    options:
+      - position: 1
+        text: "aun así"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aun así» supone que algo estorba, y medir el consumo no dificulta comparar los datos: los prepara."
+        hint_specific: "«Aun así» necesita una traba antes. ¿Medir el agua impide comparar los años?"
+      - position: 2
+        text: "asimismo"
+        is_correct: true
+      - position: 3
+        text: "en resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En resumen» anuncia el cierre de todo lo dicho, y la comparación es una parte nueva del informe, no su conclusión."
+        hint_specific: "«En resumen» cierra y condensa. ¿La comparación resume el informe o lo amplía?"
+  - position: 7
+    sentence: "El curso de escritura abre plazas el lunes; {{blank}}, amplía el horario de tarde."
+    hint_general: "Dos novedades del mismo anuncio, las dos igual de buenas para quien se apunta."
+    explanation: "Asimismo: las dos novedades valen igual. «A sí mismo» apuntaría a alguien que actúa sobre su persona y «de lo contrario» anunciaría un castigo que no hay."
+    options:
+      - position: 1
+        text: "de lo contrario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«De lo contrario» avisa de lo que pasaría si algo falla, y aquí nadie falla nada: se anuncian dos mejoras."
+        hint_specific: "«De lo contrario» plantea una amenaza si algo no ocurre. ¿Hay alguna condición en este anuncio?"
+      - position: 2
+        text: "a sí mismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«A sí mismo» devuelve la acción a quien la hace, y un curso no se amplía el horario a su propia persona."
+        hint_specific: "«A sí mismo» necesita una persona que actúe sobre ella misma. ¿Hay alguien así en la frase?"
+      - position: 3
+        text: "asimismo"
+        is_correct: true
+  - position: 8
+    sentence: "La piscina cierra dos semanas por obras. {{blank}}, el gimnasio recorta su horario en agosto."
+    hint_general: "Dos avisos del mismo centro, comunicados con la misma calma y el mismo rango."
+    explanation: "Asimismo: dos avisos del centro con el mismo tono. «Encima» sonaría a queja acumulada y «mientras tanto» inventaría una espera entre ambos."
+    options:
+      - position: 1
+        text: "encima"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Encima» es de conversación y carga el segundo aviso de enfado, cuando el centro solo informa de dos cambios."
+        hint_specific: "«Encima» acumula motivos de queja. ¿El centro se queja o comunica dos cosas con calma?"
+      - position: 2
+        text: "mientras tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mientras tanto» llena el tiempo de una espera, y el horario del gimnasio no ocupa el hueco del cierre: es otro aviso."
+        hint_specific: "«Mientras tanto» necesita una espera que rellenar. ¿El gimnasio sustituye a la piscina?"
+      - position: 3
+        text: "asimismo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos líneas y un correo"
+    body: "Ruth escribía siempre correos larguísimos. Un día probó a cortar: «El contrato queda firmado el viernes; asimismo, legal revisa los anexos». Su jefa respondió en diez minutos por primera vez en meses. Desde entonces escribe así todos los lunes."
+    before_phrase: "Y también hay que revisar los anexos, o sea."
+    after_phrase: "Asimismo, legal revisa los anexos."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Lo que hago cada día"
+    body: "Le preguntaron a Vicente por su trabajo actual. Respondió con dos frases limpias: «Coordino el equipo de atención; asimismo, formo a quien entra nuevo». La persona que entrevistaba tomó nota sin pedirle que repitiera. Al salir se dio cuenta de que no le había temblado la voz."
+    before_phrase: "Coordino el equipo y también, pues eso, formo gente."
+    after_phrase: "Coordino el equipo; asimismo, formo a quien entra nuevo."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "El grupo del edificio"
+    body: "El mensaje del grupo tenía siete líneas y nadie entendía nada. Amaya lo reescribió en dos: «La reunión pasa al día 12; asimismo, cambia el sitio». Contestaron once vecinos en un rato. Su hermano le escribió aparte: «¿Me enseñas a escribir así?»."
+    before_phrase: "Y otra cosa, que también cambia el sitio."
+    after_phrase: "La reunión pasa al día 12; asimismo, cambia el sitio."
+metrics:
+  zipf_overall: 5.3965
+  dispersion_dp: 0.1460
+  pedantry_proxy: 0.5403
+  family_size: 27
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 5008
+slug: "improvisar"
+status: "draft"
+lemma: "improvisar"
+part_of_speech: "verbo"
+syllables:
+  - "im"
+  - "pro"
+  - "vi"
+  - "sar"
+stressed_syllable: 4
+ipa_latam: "[im.pɾo.βiˈsar]"
+ipa_es: "[im.pɾo.βiˈsar]"
+explanation: "Hacer algo en el momento, sin haberlo preparado antes."
+example_sentence: "Se cayó la conexión y tuve que improvisar los últimos cinco minutos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dicho en voz alta baja la tensión: avisar de que vas sin red hace que la gente perdone los tropiezos."
+when_not_to_use: "No la uses para algo hecho deprisa y mal; aquí falta preparación, no cuidado."
+collocations:
+  - "improvisar una respuesta"
+  - "tener que improvisar"
+  - "improvisar sobre la marcha"
+replaces:
+  - before: "Me lo inventé sobre la marcha"
+    after: "Lo improvisé sobre la marcha"
+  - before: "No llevaba nada preparado y salí del paso"
+    after: "No llevaba nada preparado y tuve que improvisar"
+  - before: "Se me ocurrió ahí mismo"
+    after: "Lo improvisé ahí mismo"
+family:
+  - "improvisación"
+  - "improvisado"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "inventar"
+  funcion:
+    - "describir"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "revisar"
+    difference: "«Revisar» es mirar otra vez algo que ya existe para corregirlo; la otra palabra es crearlo en el momento, sin que existiera antes."
+    memory_trick: "Revisas lo que ya está; lo otro nace ahí mismo."
+  - confused_with: "supervisar"
+    difference: "«Supervisar» es vigilar el trabajo que hace otra persona; la otra palabra la haces tú, y sin preparación."
+    memory_trick: "Supervisas a alguien; lo otro te toca a ti y sin red."
+exercises:
+  - position: 1
+    sentence: "Se cayó la conexión a mitad de la sesión y Trinidad tuvo que {{blank}} los últimos cinco minutos."
+    hint_general: "Siguió sin nada preparado, resolviendo en el momento."
+    explanation: "Improvisar: siguió sin nada preparado. «Revisar» sería mirar de nuevo algo ya hecho, y «pergeñar» es palabra culta y sugiere un apaño de mala calidad."
+    options:
+      - position: 1
+        text: "revisar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Revisar» es mirar otra vez algo que ya existe, y aquí lo que había preparado se quedó sin conexión."
+        hint_specific: "Revisar necesita algo hecho delante. ¿Con qué se queda ella cuando se corta todo?"
+      - position: 2
+        text: "improvisar"
+        is_correct: true
+      - position: 3
+        text: "pergeñar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pergeñar» es palabra culta de escritorio y sugiere un apaño mal hecho, y ella resuelve bien delante de la gente."
+        hint_specific: "«Pergeñar» huele a papeles y a chapuza. ¿Le salió mal o le salió bien?"
+  - position: 2
+    sentence: "Lo mejor de aquella charla fue el final, y Rubén lo {{blank}} porque se le acabaron las diapositivas."
+    hint_general: "Lo mejor salió en el momento, sin nada escrito detrás."
+    explanation: "Improvisó: lo mejor salió en el momento. «Supervisó» sería vigilar el trabajo de otro, y «maquinó» sugiere un plan preparado a escondidas."
+    options:
+      - position: 1
+        text: "improvisó"
+        is_correct: true
+      - position: 2
+        text: "supervisó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Supervisar» es vigilar lo que hace otra persona, y aquí el final lo dice él mismo delante del público."
+        hint_specific: "Supervisar necesita a alguien a quien mirar. ¿Quién habla en esa charla?"
+      - position: 3
+        text: "maquinó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maquinar» suena a plan hecho a escondidas y con mala intención, y aquí lo que ocurre es que se le acaba el material."
+        hint_specific: "Maquinar lleva semanas y secreto. ¿Cuánto tiempo tuvo él?"
+  - position: 3
+    sentence: "En la entrevista le preguntaron algo que no esperaba y tuvo que {{blank}} una respuesta entera."
+    hint_general: "Construyó la respuesta ahí mismo, sin tenerla pensada."
+    explanation: "Improvisar: construyó la respuesta ahí mismo. «Revisar» sería corregir algo ya escrito, y «adivinar» sería acertar por suerte, no construir."
+    options:
+      - position: 1
+        text: "adivinar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adivinar» es acertar por suerte lo que no se sabe, y aquí construye una respuesta con lo que sí sabe."
+        hint_specific: "Quien adivina no razona, prueba. ¿Qué hace esta persona con la pregunta?"
+      - position: 2
+        text: "improvisar"
+        is_correct: true
+      - position: 3
+        text: "revisar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Revisar» es repasar algo que ya existe, y esa respuesta no existía hasta que la dijo."
+        hint_specific: "Revisar pide un texto previo. ¿Había respuesta antes de la pregunta?"
+  - position: 4
+    sentence: "Ariadna prepara tanto sus clases de cocina que casi nunca necesita {{blank}} delante de nadie."
+    hint_general: "Lleva todo tan preparado que rara vez resuelve en el momento."
+    explanation: "Improvisar: resolver en el momento, algo que ella casi nunca necesita. «Supervisar» sería vigilar a otros, y «ensayar» es justo lo que sí hace antes."
+    options:
+      - position: 1
+        text: "supervisar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Supervisar» es vigilar el trabajo de otras personas, y la frase habla de lo que ella hace con su propia clase."
+        hint_specific: "Supervisar mira el trabajo ajeno. ¿De quién es el trabajo del que habla la frase?"
+      - position: 2
+        text: "improvisar"
+        is_correct: true
+      - position: 3
+        text: "ensayar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ensayar» es lo que ella sí hace antes, y la frase dice lo que casi nunca le hace falta delante de la gente."
+        hint_specific: "Ensayar ocurre antes y a solas. ¿Qué es lo que ella no necesita hacer en público?"
+  - position: 5
+    sentence: "Cuando se cortó la luz en casa, Baltasar {{blank}} una cena de velas con lo que quedaba en la nevera."
+    hint_general: "Montó la cena en el momento, con lo que había."
+    explanation: "Improvisó: montó la cena en el momento con lo que había. «Aprovisionó» sería llenar la despensa antes, y «copió» sería repetir la idea de otro."
+    options:
+      - position: 1
+        text: "aprovisionó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aprovisionar» es llenar la despensa con tiempo, y aquí él usa lo poco que quedaba cuando ya se había cortado la luz."
+        hint_specific: "Aprovisionar se hace antes y con lista. ¿Cuándo empieza a moverse Baltasar?"
+      - position: 2
+        text: "copió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copió» sería repetir una idea que ya vio en otro sitio, y la frase no menciona ningún modelo previo."
+        hint_specific: "Copiar necesita un original. ¿De dónde saca él la cena?"
+      - position: 3
+        text: "improvisó"
+        is_correct: true
+  - position: 6
+    sentence: "Avisar de que vas a {{blank}} relaja a todo el mundo: la gente perdona los tropiezos si sabe que vas sin red."
+    hint_general: "Decir que vas sin nada preparado baja la exigencia de quien escucha."
+    explanation: "Improvisar: avisar de que vas sin nada preparado. «Revisar» sería repasar algo ya hecho, y «repetir» sería decir otra vez lo mismo."
+    options:
+      - position: 1
+        text: "improvisar"
+        is_correct: true
+      - position: 2
+        text: "revisar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Revisar» es repasar algo que ya está hecho, y avisar de un repaso no relaja a nadie ni habla de ir sin red."
+        hint_specific: "Revisar supone tener material. ¿De qué avisa esta persona?"
+      - position: 3
+        text: "repetir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» es decir otra vez algo ya dicho, y la frase habla de ir sin nada preparado de antes."
+        hint_specific: "Repetir necesita una primera vez. ¿Qué es ir sin red?"
+  - position: 7
+    sentence: "La cocinera dejó la receta a medias y {{blank}} el postre con dos ingredientes que le sobraban."
+    hint_general: "Sacó el postre en el momento, con lo que tenía a mano."
+    explanation: "Improvisó: sacó el postre en el momento. «Revisó» sería comprobar lo ya hecho, y «pergeñó» es culto y sugiere un resultado descuidado."
+    options:
+      - position: 1
+        text: "revisó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Revisar» es comprobar algo que ya está hecho, y el postre no existía hasta que ella lo sacó adelante."
+        hint_specific: "Revisar mira hacia atrás. ¿Existía ese postre antes?"
+      - position: 2
+        text: "improvisó"
+        is_correct: true
+      - position: 3
+        text: "pergeñó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pergeñar» es palabra culta y sugiere algo hecho de cualquier manera, y este postre se sirve y funciona."
+        hint_specific: "«Pergeñar» sugiere un resultado pobre. ¿Le salió bien el postre?"
+  - position: 8
+    sentence: "Dionisio lleva veinte años enseñando y dice que lo mejor de su oficio aparece cuando le toca {{blank}}."
+    hint_general: "Lo mejor le sale cuando resuelve sin nada preparado."
+    explanation: "Improvisar: resolver sin nada preparado. «Supervisar» sería vigilar a otros, y «preparar» es justo lo contrario de lo que describe la frase."
+    options:
+      - position: 1
+        text: "improvisar"
+        is_correct: true
+      - position: 2
+        text: "preparar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preparar» ocurre antes y con tiempo, y la frase habla de lo que aparece justo cuando no hay nada listo."
+        hint_specific: "Preparar pide horas por delante. ¿Cuándo aparece lo mejor de su oficio?"
+      - position: 3
+        text: "supervisar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Supervisar» es vigilar el trabajo de otro, y aquí el que resuelve delante de la gente es él."
+        hint_specific: "Supervisar necesita a alguien a quien mirar. ¿Quién resuelve en esa escena?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cinco minutos sin conexión"
+    body: "A Trinidad se le cayó la conexión cuando quedaban cinco minutos. Cerró el portátil y dijo en voz alta: «Se me ha ido todo, así que voy a improvisar el final». Contó el caso de un cliente y terminó a tiempo. Tres personas le escribieron después para pedirle ese caso."
+    before_phrase: "Se me ha caído todo, perdonad el desastre."
+    after_phrase: "Voy a improvisar el final."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Cena de velas"
+    body: "Se fue la luz justo cuando llegaban los suegros de Baltasar. En vez de pedir comida a domicilio, sacó velas, pan y lo que quedaba en la nevera. «Cena improvisada», anunció. Su suegra dice que fue la mejor de los últimos años, y él aún no sabe si es un elogio."
+    before_phrase: "Hice lo que pude con lo que había."
+    after_phrase: "Improvisé la cena con lo que había."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta que no esperaba"
+    body: "Ariadna llevaba veinte respuestas preparadas y le hicieron la número veintiuno. Respiró y avisó: «Esta no la traía pensada, la voy a improvisar». Habló noventa segundos sobre un fallo suyo. La entrevistadora anotó algo y le dijo que esa era la mejor respuesta del día."
+    before_phrase: "Uf, esta no me la sé, a ver qué digo."
+    after_phrase: "Esta no la traía pensada; la voy a improvisar."
+metrics:
+  zipf_overall: 3.9787
+  dispersion_dp: 0.1476
+  pedantry_proxy: 0.5176
+  family_size: 68
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

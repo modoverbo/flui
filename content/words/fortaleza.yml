@@ -1,0 +1,247 @@
+schema_version: 1
+sort_order: 5022
+slug: "fortaleza"
+status: "draft"
+lemma: "fortaleza"
+part_of_speech: "sustantivo"
+syllables:
+  - "for"
+  - "ta"
+  - "le"
+  - "za"
+stressed_syllable: 3
+ipa_latam: "[foɾ.taˈle.sa]"
+ipa_es: "[foɾ.taˈle.θa]"
+explanation: "Aquello en lo que eres bueno y que te sostiene cuando algo se pone difícil."
+example_sentence: "Mi mayor fortaleza es ordenar un lío que ya empezó."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Acompáñala siempre de un ejemplo de dos frases: sin escena concreta suena a frase hecha de entrevista."
+when_not_to_use: "No la uses para una afición ni para un título; esto es algo que se te da bien y se nota en cómo trabajas."
+collocations:
+  - "mi mayor fortaleza"
+  - "una fortaleza clara"
+  - "apoyarse en sus fortalezas"
+replaces:
+  - before: "Se me da bien eso"
+    after: "Esa es una de mis fortalezas"
+  - before: "Lo que mejor hago es ordenar líos"
+    after: "Mi mayor fortaleza es ordenar líos"
+  - before: "Cada uno tiene lo suyo"
+    after: "Cada uno tiene sus fortalezas"
+family:
+  - "fortalecer"
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin:
+    - "lo que se me da bien"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "fortuna"
+    difference: "La «fortuna» es la suerte o el dinero que te toca; la otra palabra es algo tuyo que has construido y se te da bien."
+    memory_trick: "La fortuna llega sola; lo otro se entrena."
+  - confused_with: "formalidad"
+    difference: "La «formalidad» es cumplir horarios y trámites; la otra palabra puede ser cualquier cosa que hagas mejor que la media."
+    memory_trick: "La formalidad se cumple; lo otro se demuestra."
+exercises:
+  - position: 1
+    sentence: "Sonia dijo que su mayor {{blank}} es ordenar un lío que ya empezó, y contó un ejemplo de dos frases."
+    hint_general: "Explicó lo que mejor se le da y lo demostró con un caso."
+    explanation: "Fortaleza: lo que mejor se le da, con un ejemplo. «Fortuna» sería suerte o dinero, y «baluarte» es palabra culta de murallas y defensas."
+    options:
+      - position: 1
+        text: "fortuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «fortuna» es la suerte o el dinero que a uno le toca, y ordenar líos es algo que ella sabe hacer, no algo que le tocó."
+        hint_specific: "La fortuna no se entrena. ¿Lo que cuenta Sonia lo ha aprendido o le ha caído?"
+      - position: 2
+        text: "fortaleza"
+        is_correct: true
+      - position: 3
+        text: "baluarte"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Baluarte» es palabra culta que evoca murallas y defensas antiguas, y esto es una entrevista de trabajo."
+        hint_specific: "Un baluarte pertenece a un castillo. ¿Dónde habla Sonia?"
+  - position: 2
+    sentence: "Cada uno del equipo tiene sus {{blank}}, y por eso el reparto del trabajo cambia en cada proyecto."
+    hint_general: "Cada persona tiene lo suyo, y el reparto se adapta a eso."
+    explanation: "Fortalezas: aquello en lo que cada uno es bueno. «Fortunas» hablaría de suerte o dinero, y «manías» serían costumbres raras, no capacidades."
+    options:
+      - position: 1
+        text: "fortalezas"
+        is_correct: true
+      - position: 2
+        text: "fortunas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Las «fortunas» son el dinero o la suerte de cada uno, y aquí se reparte el trabajo según lo que cada persona hace mejor."
+        hint_specific: "La fortuna está en el banco o en el azar. ¿Según qué se reparte el trabajo?"
+      - position: 3
+        text: "manías"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Las «manías» son costumbres raras que se toleran, y la frase explica un reparto que aprovecha lo que cada uno hace bien."
+        hint_specific: "Una manía se aguanta, no se aprovecha. ¿Para qué sirve aquí lo de cada uno?"
+  - position: 3
+    sentence: "Le preguntaron por una {{blank}} y por un punto flojo, y Elisa respondió a los dos con ejemplos."
+    hint_general: "Le pidieron algo que hace bien y algo que le cuesta."
+    explanation: "Fortaleza: algo que hace bien. «Fortuna» sería suerte o dinero, y «afición» sería algo que hace en su tiempo libre por gusto."
+    options:
+      - position: 1
+        text: "afición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «afición» es algo que se hace por gusto en el tiempo libre, y aquí se pregunta por su manera de trabajar."
+        hint_specific: "Una afición vive los domingos. ¿Con qué se empareja la pregunta?"
+      - position: 2
+        text: "fortaleza"
+        is_correct: true
+      - position: 3
+        text: "fortuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «fortuna» es suerte o dinero, y nadie tiene un punto flojo de suerte que se pueda explicar con un ejemplo."
+        hint_specific: "La fortuna no se demuestra con casos. ¿Qué acompaña a la respuesta de Elisa?"
+  - position: 4
+    sentence: "La mayor {{blank}} de aquel grupo era que nadie se callaba un problema por miedo."
+    hint_general: "Lo que mejor tenía el grupo era hablar de los problemas sin miedo."
+    explanation: "Fortaleza: lo mejor que tenía el grupo. «Formalidad» sería cumplir horarios y trámites, y «costumbre» diría que se hacía por repetición, no porque fuera su punto fuerte."
+    options:
+      - position: 1
+        text: "fortaleza"
+        is_correct: true
+      - position: 2
+        text: "formalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «formalidad» es cumplir horarios y trámites, y aquí lo que destaca es que nadie se guardaba un problema."
+        hint_specific: "La formalidad se mide en puntualidad y papeles. ¿Qué destaca de ese grupo?"
+      - position: 3
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» es algo que se repite sin más, y la frase presenta esto como lo mejor que tenía el grupo."
+        hint_specific: "Una costumbre puede ser buena o mala. ¿Cómo se valora aquí eso de hablar?"
+  - position: 5
+    sentence: "Antes de la entrevista, Lola escribió dos {{blank}} suyas y un ejemplo real para cada una."
+    hint_general: "Preparó dos cosas que hace bien con un caso cada una."
+    explanation: "Fortalezas: dos cosas que hace bien. «Fortunas» hablaría de dinero o suerte, y «títulos» serían papeles de estudios, no maneras de trabajar."
+    options:
+      - position: 1
+        text: "fortunas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Las «fortunas» son dinero o golpes de suerte, y nadie prepara un ejemplo real de la suerte que ha tenido."
+        hint_specific: "La fortuna no se prepara. ¿Qué escribió Lola con un ejemplo detrás?"
+      - position: 2
+        text: "fortalezas"
+        is_correct: true
+      - position: 3
+        text: "títulos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Los «títulos» son papeles de estudios y ya vienen en el currículo, y lo que ella prepara son maneras suyas de trabajar."
+        hint_specific: "Un título se fotocopia. ¿Qué pide un ejemplo real para entenderse?"
+  - position: 6
+    sentence: "Reconocer una {{blank}} ajena en voz alta cuesta menos de lo que parece y cambia un equipo."
+    hint_general: "Decir en voz alta lo que otro hace bien cambia el ambiente."
+    explanation: "Fortaleza: lo que otra persona hace bien. «Fortuna» sería suerte o dinero, y «don» suena a regalo del cielo y quita el mérito del trabajo."
+    options:
+      - position: 1
+        text: "fortuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «fortuna» es suerte o dinero, y reconocer la suerte ajena no cambia cómo trabaja un equipo."
+        hint_specific: "La fortuna no depende de nadie. ¿Qué se reconoce aquí de la otra persona?"
+      - position: 2
+        text: "don"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Don» suena a regalo caído del cielo y quita el mérito del trabajo, y aquí se reconoce algo que alguien ha construido."
+        hint_specific: "Un don se recibe sin hacer nada. ¿Se ha ganado esa persona lo que hace bien?"
+      - position: 3
+        text: "fortaleza"
+        is_correct: true
+  - position: 7
+    sentence: "Cuando el proyecto se torció, la paciencia de Iris resultó ser la {{blank}} más útil del equipo."
+    hint_general: "Su paciencia fue lo que más sostuvo al equipo en lo difícil."
+    explanation: "Fortaleza: lo que más sostuvo al equipo. «Fortuna» sería suerte o dinero, y «experiencia» diría cuántos años lleva, no en qué es buena."
+    options:
+      - position: 1
+        text: "fortaleza"
+        is_correct: true
+      - position: 2
+        text: "experiencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Experiencia» dice cuántos años lleva alguien, y la frase señala una cualidad concreta suya: la paciencia."
+        hint_specific: "La experiencia se cuenta en años. ¿Qué cualidad se nombra en la frase?"
+      - position: 3
+        text: "fortuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «fortuna» es suerte o dinero, y la paciencia no le cayó del cielo cuando el proyecto se torció."
+        hint_specific: "La fortuna aparece sin avisar. ¿De dónde sale la paciencia de Iris?"
+  - position: 8
+    sentence: "Decir que tu {{blank}} es «trabajar bien en equipo» no convence a nadie sin una escena concreta."
+    hint_general: "Nombrar lo que haces bien sin un caso real no convence."
+    explanation: "Fortaleza: lo que dices que haces bien. «Fortuna» sería suerte o dinero, y «formalidad» sería solo cumplir horarios y trámites."
+    options:
+      - position: 1
+        text: "formalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «formalidad» es cumplir horarios y trámites, y «trabajar bien en equipo» no es una cuestión de puntualidad."
+        hint_specific: "La formalidad se demuestra fichando. ¿Qué frase se pone en duda aquí?"
+      - position: 2
+        text: "fortuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «fortuna» es suerte o dinero, y nadie dice en una entrevista que su suerte sea trabajar en equipo."
+        hint_specific: "La fortuna no se declara en una entrevista. ¿Qué se está declarando aquí?"
+      - position: 3
+        text: "fortaleza"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos frases y un lío"
+    body: "A Sonia le preguntaron por su mayor fortaleza y no dijo «trabajar en equipo». Dijo: «Ordenar un lío que ya empezó», y contó el mes en que se cayó un proveedor a tres semanas de la entrega. La entrevistadora dejó de mirar el papel y le preguntó cómo lo hizo."
+    before_phrase: "Pues se me dan bien bastantes cosas, la verdad."
+    after_phrase: "Mi mayor fortaleza es ordenar un lío que ya empezó."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El reparto de octubre"
+    body: "En octubre el equipo repartió el trabajo de otra manera: cada uno apuntó dos fortalezas suyas en la pizarra y eligieron por ahí. Nadie acabó con lo mismo que el año anterior. Iris se quedó con la parte que exigía paciencia, y fue la única que no se quejó."
+    before_phrase: "Que cada uno coja lo que se le dé bien."
+    after_phrase: "Repartimos según las fortalezas de cada uno."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que dijo su hija"
+    body: "Lola se quejaba en la cena de que no tenía nada que contar en una entrevista. Su hija, de quince años, lo dijo sin levantar la vista del plato: «Tu fortaleza es que la gente te cuenta cosas». Lola lo apuntó en el móvil y lo usó dos días después."
+    before_phrase: "Yo es que no destaco en nada, hija."
+    after_phrase: "Tu fortaleza es que la gente te cuenta cosas."
+metrics:
+  zipf_overall: 4.6448
+  dispersion_dp: 0.1286
+  pedantry_proxy: 0.5323
+  family_size: 58
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

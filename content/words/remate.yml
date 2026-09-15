@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 5001
+slug: "remate"
+status: "draft"
+lemma: "remate"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "ma"
+  - "te"
+stressed_syllable: 2
+ipa_latam: "[reˈma.te]"
+ipa_es: "[reˈma.te]"
+explanation: "Frase con la que cierras una idea al final para que quede en la memoria."
+example_sentence: "Preparé el remate antes que el resto de la charla."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Escríbelo palabra por palabra: es la única frase de una charla que conviene llevar cerrada."
+when_not_to_use: "No la uses para el resumen de lo dicho; aquí hace falta una frase que golpee, no que repita."
+collocations:
+  - "un buen remate"
+  - "el remate de la charla"
+  - "guardar algo para el remate"
+replaces:
+  - before: "Y ya, eso sería todo"
+    after: "Y ese es el remate"
+  - before: "La última parte del discurso"
+    after: "El remate del discurso"
+  - before: "Terminé con una frase que gustó"
+    after: "Cerré con un buen remate"
+family:
+  - "rematar"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "final"
+  funcion:
+    - "cerrar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "remache"
+    difference: "«Remache» es la pieza de metal que sujeta dos chapas; la otra palabra es la frase con la que cierras una idea."
+    memory_trick: "El remache sujeta chapas; la frase final sujeta la idea."
+  - confused_with: "resumen"
+    difference: "Un resumen repite en pocas palabras lo que ya dijiste; la otra palabra añade el golpe final que nadie había oído."
+    memory_trick: "El resumen repite; el golpe final remueve."
+exercises:
+  - position: 1
+    sentence: "El público ya recogía los abrigos cuando Noemí soltó su {{blank}} y la sala volvió a quedarse quieta."
+    hint_general: "Es la frase final que consigue que una sala entera se detenga."
+    explanation: "Remate: la frase final que detiene a la sala. «Remache» es una pieza de metal, y «colofón» es culto y nombra la nota impresa que cierra un libro."
+    options:
+      - position: 1
+        text: "remache"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Remache» es la pieza de metal que une dos chapas, y aquí lo que suelta Noemí es una frase."
+        hint_specific: "«Remache» pertenece a un taller de metal. ¿Qué suelta ella delante del público?"
+      - position: 2
+        text: "remate"
+        is_correct: true
+      - position: 3
+        text: "colofón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Colofón» suena a libro impreso y nombra la nota del final de un volumen, no una frase dicha en voz alta."
+        hint_specific: "«Colofón» vive en la última página de un libro. ¿Esto se lee o se dice?"
+  - position: 2
+    sentence: "Braulio repitió doce veces el {{blank}} de su charla hasta que dejó de sonar a papel leído."
+    hint_general: "Ensayó la frase final hasta que le salió natural."
+    explanation: "Remate: la frase final que ensayó. «Remache» es una pieza de metal, y «resumen» repite lo ya dicho en lugar de cerrar con fuerza."
+    options:
+      - position: 1
+        text: "remate"
+        is_correct: true
+      - position: 2
+        text: "remache"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Remache» es una pieza de metal que sujeta chapas, y nadie sujeta chapas repitiendo doce veces una charla."
+        hint_specific: "«Remache» se golpea con un martillo. ¿Qué repite Braulio doce veces?"
+      - position: 3
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resumen» repite lo que ya contaste, y la frase habla de algo que se ensaya para que suene natural al cerrar."
+        hint_specific: "Un resumen recoge lo dicho. ¿Braulio quiere repetir o quiere impactar?"
+  - position: 3
+    sentence: "Lo que más recuerda Ismael de aquella boda no es el discurso entero, sino su {{blank}}: seis palabras y un brindis."
+    hint_general: "De todo el discurso solo quedó en la memoria la frase del final."
+    explanation: "Remate: de todo el discurso quedó la frase final. «Apoteosis» suena grandilocuente y promete un estallido, y «moraleja» sería la enseñanza del cuento."
+    options:
+      - position: 1
+        text: "apoteosis"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apoteosis» es palabra grandilocuente y anuncia un estallido enorme, y aquí solo hubo seis palabras y un brindis."
+        hint_specific: "«Apoteosis» promete fuegos artificiales. ¿Cuántas palabras dice la frase que fueron?"
+      - position: 2
+        text: "moraleja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «moraleja» es la enseñanza que deja un cuento, y en la escena nadie saca ninguna enseñanza de vida."
+        hint_specific: "Una moraleja enseña algo. ¿Ismael recuerda una enseñanza o una frase corta?"
+      - position: 3
+        text: "remate"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando preparas una charla corta, escribe primero el {{blank}} y después todo lo demás."
+    hint_general: "El consejo es empezar por la frase con la que vas a cerrar."
+    explanation: "Remate: la frase de cierre, escrita primero. «Remache» es una pieza de metal, y «prólogo» es justo lo que va al principio."
+    options:
+      - position: 1
+        text: "prólogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «prólogo» abre un texto, y el consejo pide escribir primero aquello con lo que vas a terminar."
+        hint_specific: "Un prólogo va delante. ¿El consejo habla de abrir o de cerrar?"
+      - position: 2
+        text: "remate"
+        is_correct: true
+      - position: 3
+        text: "remache"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Remache» es una pieza de metal, y en una charla no se escribe ninguna pieza de metal."
+        hint_specific: "«Remache» se compra en una ferretería. ¿Qué se escribe antes que nada?"
+  - position: 5
+    sentence: "Aurora cerró la reunión con su {{blank}} de siempre: «Lo hacemos el lunes o no lo hacemos»."
+    hint_general: "Cierra con una frase corta y firme que ya es marca de la casa."
+    explanation: "Remate: su frase corta y firme de cierre. «Arremetida» sería un ataque contra alguien, y «epílogo» es un texto largo que se añade al final de un libro."
+    options:
+      - position: 1
+        text: "arremetida"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «arremetida» es un ataque contra alguien, y Aurora no ataca a nadie: propone una fecha."
+        hint_specific: "Una arremetida va contra una persona. ¿Contra quién va esa frase?"
+      - position: 2
+        text: "remate"
+        is_correct: true
+      - position: 3
+        text: "epílogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «epílogo» es un texto que se añade al final de un libro, y esto son once palabras dichas en una sala."
+        hint_specific: "Un epílogo se escribe y se imprime. ¿Dónde ocurre esta escena?"
+  - position: 6
+    sentence: "Sin un buen {{blank}}, hasta la historia mejor contada se apaga en la última curva."
+    hint_general: "Sin una frase fuerte al final, la historia pierde su efecto."
+    explanation: "Remate: la frase fuerte del final. «Remanso» es un lugar tranquilo del río, y «conclusión» solo anuncia lo que se deduce de lo anterior."
+    options:
+      - position: 1
+        text: "remanso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «remanso» es el tramo quieto de un río, y aquí lo que falta es fuerza, no calma."
+        hint_specific: "Un remanso es agua quieta. ¿Qué le falta a esa historia para no apagarse?"
+      - position: 2
+        text: "conclusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «conclusión» anuncia lo que se deduce de lo anterior, y la frase pide algo que impida que la historia se apague."
+        hint_specific: "Una conclusión deduce. ¿Se pide deducir algo o levantar el final?"
+      - position: 3
+        text: "remate"
+        is_correct: true
+  - position: 7
+    sentence: "Vera guardó el dato más fuerte para el {{blank}}, y funcionó: el jurado levantó la cabeza."
+    hint_general: "Reservó su mejor dato para la frase del final."
+    explanation: "Remate: la frase final donde reservó su mejor dato. «Rescate» es sacar a alguien de un apuro, y «veredicto» sería la decisión del jurado, no lo que ella dice."
+    options:
+      - position: 1
+        text: "remate"
+        is_correct: true
+      - position: 2
+        text: "rescate"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «rescate» saca a alguien de un apuro, y aquí nadie está en apuros: Vera ordena sus datos."
+        hint_specific: "Un rescate necesita a alguien atrapado. ¿Quién lo está en esta escena?"
+      - position: 3
+        text: "veredicto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «veredicto» es la decisión que toma el jurado, y la frase habla de lo que reservó ella para el final."
+        hint_specific: "El veredicto lo dicta el jurado. ¿De quién es lo que se guarda aquí?"
+  - position: 8
+    sentence: "A mitad del vídeo, Teodoro ya había adivinado el {{blank}}, y aun así se quedó hasta la última línea."
+    hint_general: "Adivinó cómo iba a cerrar el vídeo antes de llegar al final."
+    explanation: "Remate: la frase con la que cierra el vídeo. «Remache» es una pieza de metal, y «titular» es la frase que va arriba del todo para atraer."
+    options:
+      - position: 1
+        text: "titular"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «titular» va arriba del todo y sirve para atraer, y Teodoro adivina lo que llega al final."
+        hint_specific: "Un titular abre y llama la atención. ¿Qué adivinó él antes de tiempo?"
+      - position: 2
+        text: "remache"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Remache» es una pieza de metal para unir chapas, y en un vídeo no se adivina ninguna pieza de metal."
+        hint_specific: "«Remache» es de taller. ¿Qué se adivina viendo un vídeo?"
+      - position: 3
+        text: "remate"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La frase que se escribe primero"
+    body: "Noemí tenía diez minutos para presentar el plan y doce ideas que no cabían. Su compañera le dio un consejo raro: «Escribe el remate y recorta hacia atrás». Cerró con una sola línea, «esto nos devuelve dos semanas al año», y fue lo único que el comité repitió después."
+    before_phrase: "Y bueno, eso sería todo por mi parte."
+    after_phrase: "Cerré con un remate que se entiende sin las diapositivas."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Seis palabras en la boda"
+    body: "Ismael temía el brindis desde marzo. Escribió tres folios y los tiró todos menos la última línea. «Me quedo con el remate», le dijo a su hermana la noche antes. Levantó la copa, dijo seis palabras y su tía se echó a llorar de risa."
+    before_phrase: "No sé cómo terminar sin quedar raro."
+    after_phrase: "Me quedo solo con el remate."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La última curva"
+    body: "En el club de lectura discutían por qué una novela buenísima les había dejado fríos. Aurora lo dijo sin rodeos: «Le falta remate; la historia se apaga en la última curva». Nadie la contradijo y la conversación siguió por ahí otra hora."
+    before_phrase: "El final no me convenció, no sé por qué."
+    after_phrase: "Le falta remate."
+metrics:
+  zipf_overall: 4.55
+  dispersion_dp: 0.2129
+  pedantry_proxy: 0.6319
+  family_size: 23
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

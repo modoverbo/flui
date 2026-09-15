@@ -1,0 +1,247 @@
+schema_version: 1
+sort_order: 5029
+slug: "merito"
+status: "draft"
+lemma: "mérito"
+part_of_speech: "sustantivo"
+syllables:
+  - "mé"
+  - "ri"
+  - "to"
+stressed_syllable: 1
+ipa_latam: "[ˈme.ɾi.to]"
+ipa_es: "[ˈme.ɾi.to]"
+explanation: "Lo que alguien ha hecho bien y por lo que se le debe reconocimiento."
+example_sentence: "El mérito fue suyo: yo solo puse la sala."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es el elogio que más se agradece en grupo: nombra a quién pertenece algo cuando el aplauso se reparte mal."
+when_not_to_use: "No la uses para algo que salió por suerte; aquí hay trabajo detrás de alguien."
+collocations:
+  - "tener mucho mérito"
+  - "reconocer el mérito"
+  - "el mérito fue suyo"
+replaces:
+  - before: "Lo hizo él, que conste"
+    after: "El mérito fue suyo"
+  - before: "No es tan fácil como parece, ¿eh?"
+    after: "Tiene más mérito de lo que parece"
+  - before: "Hay que reconocerle lo que hizo"
+    after: "Hay que reconocerle el mérito"
+family:
+  - "merecer"
+  - "meritorio"
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "lo que hizo"
+  funcion:
+    - "elogiar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "rédito"
+    difference: "El «rédito» es el beneficio que da un dinero prestado o invertido; la otra palabra es el reconocimiento que gana una persona."
+    memory_trick: "El rédito lo paga el banco; lo otro lo reconoce la gente."
+  - confused_with: "método"
+    difference: "El «método» es la manera ordenada de hacer algo; la otra palabra es el valor de haberlo hecho."
+    memory_trick: "El método explica el cómo; lo otro señala a quién."
+exercises:
+  - position: 1
+    sentence: "Encarna cortó el aplauso y dijo que el {{blank}} era de la becaria, que fue quien encontró el fallo."
+    hint_general: "Señaló a quién pertenecía de verdad el reconocimiento."
+    explanation: "Mérito: el reconocimiento que corresponde a quien lo hizo. «Método» es la manera ordenada de hacer algo, y «medalla» es coloquial y suena a colgarse un premio."
+    options:
+      - position: 1
+        text: "método"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «método» es la manera ordenada de hacer algo, y aquí no se discute cómo se hizo, sino de quién es el reconocimiento."
+        hint_specific: "Un método se explica paso a paso. ¿Qué reparte Encarna delante de todos?"
+      - position: 2
+        text: "mérito"
+        is_correct: true
+      - position: 3
+        text: "medalla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Medalla» es coloquial en esta escena y evoca colgarse un premio, y lo que hace ella es devolver algo a quien le pertenece."
+        hint_specific: "Una medalla se cuelga del cuello. ¿Qué devuelve Encarna a la becaria?"
+  - position: 2
+    sentence: "Sacar adelante aquel taller con dos personas tiene más {{blank}} del que parece desde fuera."
+    hint_general: "Cuesta mucho más de lo que se ve desde fuera."
+    explanation: "Mérito: el valor de haberlo hecho en condiciones duras. «Rédito» es el beneficio de un dinero invertido, y «suerte» diría que salió por azar."
+    options:
+      - position: 1
+        text: "mérito"
+        is_correct: true
+      - position: 2
+        text: "rédito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «rédito» es el beneficio que da un dinero invertido, y aquí lo que se valora es el trabajo de dos personas."
+        hint_specific: "Un rédito lo paga un banco. ¿Qué se valora de ese taller?"
+      - position: 3
+        text: "suerte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Suerte» diría que salió por azar, y la frase subraya justo lo contrario: que cuesta más de lo que parece."
+        hint_specific: "La suerte no depende de nadie. ¿De qué depende lo de ese taller?"
+  - position: 3
+    sentence: "Prudencio reparte el {{blank}} en las reuniones y por eso su equipo cuenta las cosas sin miedo."
+    hint_general: "Reconoce en voz alta lo que ha hecho cada uno."
+    explanation: "Mérito: el reconocimiento de lo que hizo cada uno. «Método» es la manera ordenada de hacer algo, y un «premio» es algo material que se entrega."
+    options:
+      - position: 1
+        text: "premio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «premio» es algo material que se entrega, y en una reunión lo que se reparte son palabras que nombran a quien hizo qué."
+        hint_specific: "Un premio se recoge en un escenario. ¿Qué reparte Prudencio en una reunión?"
+      - position: 2
+        text: "mérito"
+        is_correct: true
+      - position: 3
+        text: "método"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «método» es la manera ordenada de trabajar, y la frase dice que su equipo habla sin miedo, no que siga unos pasos."
+        hint_specific: "Un método se sigue. ¿Qué es lo que hace hablar sin miedo al equipo?"
+  - position: 4
+    sentence: "Terminar aquella carrera a los sesenta años tiene un {{blank}} que ningún cronómetro mide."
+    hint_general: "Vale mucho más de lo que dice el tiempo de llegada."
+    explanation: "Mérito: el valor que no aparece en el tiempo. «Rédito» es el beneficio de un dinero invertido, y «talento» sería una facilidad natural, no un esfuerzo sostenido."
+    options:
+      - position: 1
+        text: "rédito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «rédito» es el beneficio que da un dinero invertido, y aquí nadie ha invertido dinero: alguien ha corrido."
+        hint_specific: "Un rédito aparece en un extracto bancario. ¿Qué no mide el cronómetro?"
+      - position: 2
+        text: "mérito"
+        is_correct: true
+      - position: 3
+        text: "talento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «talento» sería una facilidad natural, y lo que se valora aquí es haber llegado pese a la edad y al esfuerzo."
+        hint_specific: "El talento viene de serie. ¿Qué se admira de esa carrera?"
+  - position: 5
+    sentence: "Manuela no acepta el {{blank}} de la mudanza: dice que lo hicieron entre seis y que ella solo abrió la puerta."
+    hint_general: "Se niega a quedarse el reconocimiento de un trabajo de seis."
+    explanation: "Mérito: el reconocimiento que ella devuelve al grupo. «Método» es la manera ordenada de hacer algo, y un «galardón» es un premio formal que entrega una institución."
+    options:
+      - position: 1
+        text: "mérito"
+        is_correct: true
+      - position: 2
+        text: "método"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «método» es la manera ordenada de hacer algo, y ella no discute cómo se hizo la mudanza, sino de quién es el reconocimiento."
+        hint_specific: "Un método se puede copiar. ¿Qué es lo que Manuela no quiere quedarse?"
+      - position: 3
+        text: "galardón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Galardón» es palabra de acto oficial y nombra un premio que entrega una institución, y esto es una mudanza entre amigos."
+        hint_specific: "Un galardón se entrega en una gala. ¿Dónde ocurre esta escena?"
+  - position: 6
+    sentence: "Cuando algo sale bien, decir de quién es el {{blank}} cuesta diez segundos y cambia el ambiente."
+    hint_general: "Nombrar a quien lo hizo bien cuesta poco y cambia mucho."
+    explanation: "Mérito: el reconocimiento de quien lo hizo. «Rédito» es el beneficio de un dinero invertido, y un «detalle» sería un gesto amable menor, no el peso de lo logrado."
+    options:
+      - position: 1
+        text: "rédito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «rédito» es el beneficio que da un dinero invertido, y lo que se nombra en diez segundos es quién ha hecho bien su trabajo."
+        hint_specific: "Un rédito se cobra. ¿Qué se dice en voz alta en esos diez segundos?"
+      - position: 2
+        text: "mérito"
+        is_correct: true
+      - position: 3
+        text: "detalle"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «detalle» es un gesto amable menor, y aquí se habla de reconocer el peso de lo que alguien ha conseguido."
+        hint_specific: "Un detalle es pequeño por definición. ¿Qué se reconoce cuando algo sale bien?"
+  - position: 7
+    sentence: "Aurelio lleva veinte años sosteniendo el coro del pueblo, y eso tiene su {{blank}}."
+    hint_general: "Veinte años sosteniendo algo valen por sí mismos."
+    explanation: "Mérito: el valor de veinte años sosteniendo algo. «Método» es la manera ordenada de hacer las cosas, y el «esfuerzo» es lo que pone, no el reconocimiento que gana."
+    options:
+      - position: 1
+        text: "mérito"
+        is_correct: true
+      - position: 2
+        text: "método"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «método» es la manera ordenada de hacer las cosas, y la frase no explica cómo dirige el coro, sino lo que vale que siga."
+        hint_specific: "Un método se describe en una lista de pasos. ¿Qué se reconoce de esos veinte años?"
+      - position: 3
+        text: "esfuerzo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «esfuerzo» es lo que él pone cada semana, y la frase señala el reconocimiento que eso merece, que es otra cosa."
+        hint_specific: "El esfuerzo lo pones tú; esto lo dan los demás. ¿Qué tiene Aurelio según la frase?"
+  - position: 8
+    sentence: "Quitarle el {{blank}} a quien lo ha ganado se nota más que quedárselo en silencio."
+    hint_general: "Negar lo que otro consiguió se ve desde lejos."
+    explanation: "Mérito: lo que alguien ha ganado con su trabajo. «Rédito» es el beneficio de un dinero invertido, y una «medalla» es coloquial y evoca colgarse un premio."
+    options:
+      - position: 1
+        text: "medalla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Medalla» es coloquial en esta escena y evoca colgarse un premio, y aquí se habla de negar el trabajo de otra persona."
+        hint_specific: "Una medalla se cuelga en el pecho. ¿Qué se le quita a quien lo ganó?"
+      - position: 2
+        text: "rédito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «rédito» es el beneficio que da un dinero invertido, y lo que se quita aquí es el reconocimiento de alguien."
+        hint_specific: "Un rédito lo genera un capital. ¿Qué gana la persona de la frase?"
+      - position: 3
+        text: "mérito"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez segundos"
+    body: "El cliente felicitó al equipo por haber encontrado el fallo. Encarna esperó a que terminara el aplauso y dijo una frase: «El mérito es de Sandra, que revisó los ficheros antiguos un sábado». Sandra se puso roja, y desde entonces cuenta lo que hace sin que nadie se lo pida."
+    before_phrase: "Bueno, lo hicimos entre todos."
+    after_phrase: "El mérito es de Sandra, que revisó los ficheros."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "A los sesenta"
+    body: "Aurelio corrió su primera carrera larga a los sesenta y dos años y llegó el penúltimo. Su nieto le enseñó el tiempo en el móvil, con cara de disculpa. Aurelio se rio: «El mérito no lo mide ese reloj». La foto de la llegada está en el pasillo de casa."
+    before_phrase: "Bueno, llegar ya es algo, ¿no?"
+    after_phrase: "El mérito no lo mide ese reloj."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Entre seis"
+    body: "En el portal dicen que la mudanza de Manuela la organizó ella sola. Manuela lo corrige cada vez que sale el tema: «El mérito fue de los seis que subieron cajas; yo abrí la puerta y puse café». La versión corregida ya la cuenta hasta el portero."
+    before_phrase: "Qué va, yo no hice casi nada."
+    after_phrase: "El mérito fue de los seis que subieron cajas."
+metrics:
+  zipf_overall: 4.3877
+  dispersion_dp: 0.1633
+  pedantry_proxy: 0.5048
+  family_size: 26
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

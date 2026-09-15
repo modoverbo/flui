@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "entretanto"
+status: "draft"
+lemma: "entretanto"
+part_of_speech: "adverbio"
+syllables:
+  - "en"
+  - "tre"
+  - "tan"
+  - "to"
+stressed_syllable: 3
+ipa_latam: "[en.tɾeˈtan.to]"
+ipa_es: "[en.tɾeˈtan.to]"
+explanation: "Nombra lo que ocurre durante la espera, mientras se resuelve otra cosa."
+example_sentence: "El técnico llega el jueves; entretanto, seguimos con el equipo de repuesto."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Ordena una espera: primero lo que falta, después lo que sí puedes hacer ya."
+when_not_to_use: "No la uses para una sucesión de pasos; solo vale cuando las dos cosas ocupan el mismo rato."
+collocations:
+  - "entretanto conviene"
+  - "entretanto seguimos"
+replaces:
+  - before: "Y mientras, pues seguimos igual"
+    after: "Entretanto seguimos igual"
+  - before: "Y eso, que toca esperar"
+    after: "Entretanto toca esperar"
+  - before: "Mientras tanto no hacemos nada"
+    after: "Entretanto no hacemos nada"
+family: []
+semantic_set_id: "orden-en-el-tiempo"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "y mientras"
+  funcion:
+    - "llenar la espera"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "entre tantos"
+    difference: "«Entre tantos» habla de una cosa perdida dentro de un montón: «entre tantos papeles». La otra habla del rato de una espera."
+    memory_trick: "Una cuenta cosas; la otra cuenta minutos."
+  - confused_with: "entretenido"
+    difference: "«Entretenido» describe a alguien distraído o algo que divierte: «una película entretenida». La otra no describe: sitúa en el tiempo."
+    memory_trick: "Uno hace pasar el rato; la otra dice qué haces en ese rato."
+exercises:
+  - position: 1
+    sentence: "El técnico llega el jueves; {{blank}}, trabajamos con el equipo de repuesto."
+    hint_general: "Di qué se hace durante la espera, sin dejar la oficina parada."
+    explanation: "Entretanto: llena el hueco hasta el jueves. «Acto seguido» pondría las dos cosas en fila y «de mientras» es una forma descuidada de decirlo."
+    options:
+      - position: 1
+        text: "acto seguido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acto seguido» pone una cosa detrás de otra, y aquí las dos ocupan el mismo rato: se trabaja mientras se espera."
+        hint_specific: "«Acto seguido» encadena pasos en fila. ¿Van uno detrás de otro o a la vez?"
+      - position: 2
+        text: "entretanto"
+        is_correct: true
+      - position: 3
+        text: "de mientras"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De mientras» es una forma descuidada de hablar y suena a prisa, cuando el aviso al equipo pide una frase limpia."
+        hint_specific: "«De mientras» suena a conversación rápida. ¿Este aviso al equipo busca ese tono?"
+  - position: 2
+    sentence: "La obra del portal dura dos meses; {{blank}}, los buzones quedan en el bajo."
+    hint_general: "Explica dónde está el correo durante esos dos meses de ruido y andamios."
+    explanation: "Entretanto: mientras dura la obra, los buzones bajan. «Entre tantos» hablaría de cosas amontonadas y «por tanto» convertiría el cambio en una consecuencia."
+    options:
+      - position: 1
+        text: "entretanto"
+        is_correct: true
+      - position: 2
+        text: "entre tantos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entre tantos» sitúa algo dentro de un montón de cosas, y aquí no hay montón: hay dos meses de obra."
+        hint_specific: "«Entre tantos» necesita un montón donde perderse. ¿Se habla de cantidad o de tiempo?"
+      - position: 3
+        text: "por tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por tanto» presenta lo segundo como resultado lógico, y bajar los buzones no se deduce de la obra: solo ocurre a la vez."
+        hint_specific: "«Por tanto» anuncia una deducción. ¿El cambio de buzones se deduce o se decide?"
+  - position: 3
+    sentence: "Aún no hay respuesta del banco. {{blank}}, Olga sigue pagando el alquiler viejo."
+    hint_general: "Cuenta lo que ella hace mientras la respuesta no llega."
+    explanation: "Entretanto: el alquiler sigue durante la espera. «A todo esto» abriría una anécdota al margen y «en cambio» opondría dos ideas que no se oponen."
+    options:
+      - position: 1
+        text: "a todo esto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«A todo esto» es de conversación y abre un inciso curioso, cuando aquí se informa de un gasto que sigue corriendo."
+        hint_specific: "«A todo esto» introduce una curiosidad al margen. ¿Pagar el alquiler es un detalle curioso?"
+      - position: 2
+        text: "entretanto"
+        is_correct: true
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» enfrenta dos ideas, y pagar el alquiler no contradice la falta de respuesta: convive con ella."
+        hint_specific: "«En cambio» necesita dos ideas que choquen. ¿Estas dos chocan o suceden a la vez?"
+  - position: 4
+    sentence: "El vuelo se retrasó cuatro horas y, {{blank}}, Ismael repasó la presentación dos veces."
+    hint_general: "Cuenta cómo aprovechó esas cuatro horas muertas en la sala de embarque."
+    explanation: "Entretanto: las cuatro horas se llenan con el repaso. «Entretenido» describiría su ánimo y «al final» situaría el repaso después del vuelo."
+    options:
+      - position: 1
+        text: "entretanto"
+        is_correct: true
+      - position: 2
+        text: "entretenido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entretenido» describe a quien se distrae con algo, y la frase no habla de su ánimo: habla del rato de espera."
+        hint_specific: "«Entretenido» dice cómo está alguien. ¿Se describe su ánimo o se sitúa el tiempo?"
+      - position: 3
+        text: "al final"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al final» coloca el repaso después de todo, y él repasó justo durante esas horas, no cuando terminaron."
+        hint_specific: "«Al final» cierra una serie. ¿Repasó cuando acabó la espera o durante ella?"
+  - position: 5
+    sentence: "La cocina tarda media hora en calentar; {{blank}}, ponemos la mesa y abrimos el vino."
+    hint_general: "Di qué hace la casa durante esa media hora de horno frío."
+    explanation: "Entretanto: la media hora se aprovecha. «Entre tantos» hablaría de cosas amontonadas y «encima» añadiría una queja que no hay."
+    options:
+      - position: 1
+        text: "entre tantos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entre tantos» coloca algo dentro de un grupo grande, y aquí no hay grupo: hay media hora de horno frío."
+        hint_specific: "«Entre tantos» pide un montón de cosas. ¿Se cuentan cosas o se cuenta tiempo?"
+      - position: 2
+        text: "entretanto"
+        is_correct: true
+      - position: 3
+        text: "encima"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encima» suma un motivo de queja, y poner la mesa no es una molestia añadida: es lo que se hace mientras se espera."
+        hint_specific: "«Encima» acumula motivos de enfado. ¿Alguien se queja en esta cocina?"
+  - position: 6
+    sentence: "Nos dieron cita para octubre. {{blank}}, Yolanda busca una opción más cerca de casa."
+    hint_general: "Cuenta qué hace ella durante los meses que faltan para esa cita."
+    explanation: "Entretanto: los meses de espera se llenan con la búsqueda. «Y en esas» sonaría a relato de barra y «así pues» haría de la búsqueda una consecuencia."
+    options:
+      - position: 1
+        text: "y en esas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Y en esas» es de conversación y narra un giro inesperado, cuando ella hace algo previsto y con calma."
+        hint_specific: "«Y en esas» anuncia un giro de historia. ¿Pasa algo inesperado o sigue un plan?"
+      - position: 2
+        text: "así pues"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Así pues» presenta lo segundo como consecuencia, y buscar otra opción no se deduce de la cita: ocurre a la vez."
+        hint_specific: "«Así pues» saca una conclusión. ¿Buscar otra opción se deduce de la cita o solo la acompaña?"
+      - position: 3
+        text: "entretanto"
+        is_correct: true
+  - position: 7
+    sentence: "Cambiamos de proveedor el mes que viene; {{blank}}, pedimos lo justo para no acumular existencias."
+    hint_general: "Explica cómo se compra durante las semanas que faltan para el cambio."
+    explanation: "Entretanto: las semanas previas se gestionan así. «Entretenidos» describiría el ánimo del equipo y «en resumen» anunciaría un cierre que no llega."
+    options:
+      - position: 1
+        text: "entretanto"
+        is_correct: true
+      - position: 2
+        text: "entretenidos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entretenidos» describe a personas distraídas con algo, y la frase no habla del ánimo de nadie: habla de un plazo."
+        hint_specific: "«Entretenidos» cuenta cómo está la gente. ¿Se describe el ánimo o se sitúa un plazo?"
+      - position: 3
+        text: "en resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En resumen» condensa lo ya dicho, y comprar lo justo no resume el cambio de proveedor: pasa mientras llega."
+        hint_specific: "«En resumen» cierra y condensa. ¿Esta parte resume la anterior o la acompaña?"
+  - position: 8
+    sentence: "El fontanero vuelve el lunes con la pieza; {{blank}}, cerramos la llave de paso cada noche."
+    hint_general: "Di qué hace la casa durante los días que faltan para la reparación."
+    explanation: "Entretanto: los días de espera piden esa precaución. «De ahí que» la convertiría en consecuencia y «entre tantos» hablaría de cosas amontonadas."
+    options:
+      - position: 1
+        text: "de ahí que"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«De ahí que» presenta lo segundo como efecto de lo primero, y cerrar la llave no sale de la visita del lunes: la precede."
+        hint_specific: "«De ahí que» encadena causa y efecto. ¿La precaución nace de la visita o la espera?"
+      - position: 2
+        text: "entretanto"
+        is_correct: true
+      - position: 3
+        text: "entre tantos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entre tantos» coloca algo dentro de un montón, y aquí no hay montón alguno: hay unos días de espera."
+        hint_specific: "«Entre tantos» necesita muchas cosas alrededor. ¿Se cuentan cosas o se cuentan días?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuatro días sin servidor"
+    body: "La avería no se arreglaba hasta el jueves y el equipo estaba parado mirando la pantalla. Zaida escribió tres líneas al grupo: «El técnico llega el jueves; entretanto, trabajamos con el equipo de repuesto». Nadie volvió a preguntar qué hacer."
+    before_phrase: "Pues nada, hasta el jueves y mientras ya veremos."
+    after_phrase: "El técnico llega el jueves; entretanto, usamos el de repuesto."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cita de octubre"
+    body: "La espera se le hacía larga y su madre lo notaba en cada llamada. Olalla lo dijo sin queja: «Me dieron cita para octubre; entretanto, busco algo más cerca de casa». Su madre respiró: por fin había un plan, no solo una fecha lejana."
+    before_phrase: "Hasta octubre nada, y mientras pues nada."
+    after_phrase: "Me dieron cita para octubre; entretanto, busco algo más cerca."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Media hora de horno"
+    body: "Llegaron los seis a la vez y el horno estaba frío. Baltasar repartió la espera en una frase: «Tarda media hora; entretanto, ponemos la mesa y abrimos el vino». La cocina se llenó de gente con algo que hacer y la noche empezó antes que la cena."
+    before_phrase: "Tarda media hora, así que mientras, pues eso."
+    after_phrase: "Tarda media hora; entretanto, ponemos la mesa."
+metrics:
+  zipf_overall: 3.6835
+  dispersion_dp: 0.2905
+  pedantry_proxy: 0.4872
+  family_size: 390
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

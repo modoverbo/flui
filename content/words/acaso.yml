@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "acaso"
+status: "draft"
+lemma: "acaso"
+part_of_speech: "adverbio"
+syllables:
+  - "a"
+  - "ca"
+  - "so"
+stressed_syllable: 2
+ipa_latam: "[aˈka.so]"
+ipa_es: "[aˈka.so]"
+explanation: "Abre una pregunta que ya lleva dentro la respuesta y evita señalar a nadie."
+example_sentence: "¿No avisamos acaso con dos semanas de margen a todo el equipo?"
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "La pregunta hace el trabajo por ti: recuerda un hecho sin acusar a nadie de frente."
+when_not_to_use: "No la uses si esperas una respuesta de verdad; para preguntar en serio, pregunta directo."
+collocations:
+  - "acaso alguien"
+  - "acaso todavía"
+replaces:
+  - before: "¿O qué, no lo dijimos ya?"
+    after: "¿No lo dijimos acaso ya?"
+  - before: "Llévate el abrigo, tú por si las moscas"
+    after: "Llévate el abrigo por si acaso"
+  - before: "Es que nadie lee nada, la verdad"
+    after: "¿Ha leído acaso alguien el informe?"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "o qué"
+  funcion:
+    - "preguntar sin esperar respuesta"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ocaso"
+    difference: "«Ocaso» es la caída del sol o el final de una etapa: «el ocaso del verano». La otra abre una pregunta con respuesta sabida."
+    memory_trick: "Uno apaga la luz del día; la otra enciende una pregunta."
+  - confused_with: "al caso"
+    difference: "«Al caso» aparece en «venir al caso», es decir, tener que ver con el asunto. La otra no habla del asunto: pregunta."
+    memory_trick: "Una cosa viene al caso; la otra pregunta sin esperar nada."
+exercises:
+  - position: 1
+    sentence: "Marcos preguntó sin esperar respuesta: «¿No avisamos {{blank}} con dos semanas de margen?»."
+    hint_general: "Pregunta algo que los dos ya saben, solo para que quede en el aire."
+    explanation: "Acaso: la pregunta ya lleva la respuesta dentro. «Ocaso» habla del final del día y «por casualidad» convertiría la frase en una duda sincera."
+    options:
+      - position: 1
+        text: "ocaso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ocaso» nombra el final del día o de una etapa, y esta frase no habla de finales: recuerda un aviso que sí se dio."
+        hint_specific: "«Ocaso» tiene que ver con lo que se apaga. ¿Se habla aquí del final de algo?"
+      - position: 2
+        text: "acaso"
+        is_correct: true
+      - position: 3
+        text: "por casualidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por casualidad» suaviza la frase y pide información de verdad, y él pregunta justamente porque ya sabe la respuesta."
+        hint_specific: "«Por casualidad» busca un dato que falta. ¿Le falta información o le sobra?"
+  - position: 2
+    sentence: "Herminia cerró la carpeta y soltó: «¿Ha leído {{blank}} alguien el informe entero?»."
+    hint_general: "Por su tono, ya sospecha la respuesta: la pregunta es un aviso, no una consulta."
+    explanation: "Acaso: pregunta para dejar claro lo que sospecha. «Al caso» hablaría de si algo viene a cuento y «de verdad» pediría un dato que ella ya intuye."
+    options:
+      - position: 1
+        text: "acaso"
+        is_correct: true
+      - position: 2
+        text: "al caso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Al caso» solo funciona en «venir al caso», donde se discute si algo tiene que ver con el asunto, y aquí no se discute eso."
+        hint_specific: "«Al caso» valora si algo viene a cuento. ¿Se discute si el informe viene a cuento?"
+      - position: 3
+        text: "de verdad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«De verdad» pide confirmación sincera, y ella no busca confirmación: da por hecho que nadie lo ha leído."
+        hint_specific: "«De verdad» espera una respuesta honesta. ¿Herminia espera respuesta o ya la tiene?"
+  - position: 3
+    sentence: "Llévate el paraguas {{blank}}, que el cielo viene muy cargado."
+    hint_general: "Prepara el plan para algo que quizá ocurra, sin darlo por seguro."
+    explanation: "Por si acaso: cubre una posibilidad sin dramatizar. «Por si las moscas» es muy coloquial y bromea, y «por si fuera poco» añadiría una desgracia más."
+    options:
+      - position: 1
+        text: "por si las moscas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Por si las moscas» es una broma de conversación y le quita seriedad al aviso, cuando el cielo cargado es un motivo real."
+        hint_specific: "«Por si las moscas» hace reír. ¿El consejo suena a broma o va en serio?"
+      - position: 2
+        text: "por si acaso"
+        is_correct: true
+      - position: 3
+        text: "por si fuera poco"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por si fuera poco» suma una desgracia a otra ya contada, y aquí todavía no ha pasado nada malo."
+        hint_specific: "«Por si fuera poco» acumula problemas. ¿Ha ocurrido ya alguna desgracia?"
+  - position: 4
+    sentence: "En plena discusión, Ramiro preguntó: «¿Te he pedido yo {{blank}} que mientas por mí?»."
+    hint_general: "Se defiende con una pregunta cuya respuesta es un no evidente para los dos."
+    explanation: "Acaso: la pregunta defiende con una respuesta sabida. «Ocaso» nombra el final del día y «encima» añadiría una queja más a la lista."
+    options:
+      - position: 1
+        text: "acaso"
+        is_correct: true
+      - position: 2
+        text: "ocaso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ocaso» nombra el final del día o de una etapa, y en esta discusión nadie habla de nada que se acabe."
+        hint_specific: "«Ocaso» tiene que ver con lo que se apaga. ¿Se habla del final de algo aquí?"
+      - position: 3
+        text: "encima"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encima» suma un agravio a otros anteriores, y él no añade quejas: rechaza una acusación con una sola pregunta."
+        hint_specific: "«Encima» acumula agravios. ¿Ramiro se queja de algo más o se defiende?"
+  - position: 5
+    sentence: "La vecina subió el tono en el descansillo: «¿He tocado yo {{blank}} tu bicicleta?»."
+    hint_general: "Se defiende preguntando algo que las dos saben que no ha ocurrido nunca."
+    explanation: "Acaso: pregunta algo cuya respuesta ya conocen las dos. «Al caso» hablaría de si algo viene a cuento y «apenas» admitiría que sí la tocó un poco."
+    options:
+      - position: 1
+        text: "al caso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Al caso» vive en «venir al caso» y valora si algo tiene que ver con el asunto, y ella no valora nada: se defiende."
+        hint_specific: "«Al caso» mide si algo viene a cuento. ¿Discuten si la bicicleta viene a cuento?"
+      - position: 2
+        text: "acaso"
+        is_correct: true
+      - position: 3
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» admitiría que sí la tocó, aunque poco, y ella niega haberla tocado en ningún momento."
+        hint_specific: "«Apenas» reconoce una pizca de algo. ¿Ella admite algo o lo niega entero?"
+  - position: 6
+    sentence: "Rodrigo levantó la vista del informe y preguntó si {{blank}} alguien pensaba firmarlo algún día."
+    hint_general: "Su pregunta no busca dato: señala que el papel lleva semanas sin firma."
+    explanation: "Acaso: la pregunta señala el retraso sin acusar. «De una vez» exigiría acción en tono de conversación y «entretanto» hablaría de un tiempo de espera."
+    options:
+      - position: 1
+        text: "acaso"
+        is_correct: true
+      - position: 2
+        text: "de una vez"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De una vez» es de conversación y suena a orden impaciente, cuando él solo deja la pregunta puesta encima de la mesa."
+        hint_specific: "«De una vez» exige que algo pase ya. ¿Rodrigo da una orden o lanza una pregunta?"
+      - position: 3
+        text: "entretanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entretanto» sitúa algo dentro de una espera, y su pregunta no habla de tiempos: habla de una firma que no llega."
+        hint_specific: "«Entretanto» rellena una espera. ¿Se mide aquí un tiempo o se señala una falta?"
+  - position: 7
+    sentence: "Guardé una copia del contrato {{blank}}, aunque me aseguraron que no haría falta."
+    hint_general: "Se prepara para algo que puede que nunca pase, y por eso lo guarda."
+    explanation: "Por si acaso: cubre una posibilidad remota. «Por si al caso» mezcla dos expresiones y «por lo visto» contaría algo que otros dicen, no una precaución."
+    options:
+      - position: 1
+        text: "por si al caso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Por si al caso» junta dos expresiones distintas y no significa nada: «venir al caso» habla del asunto, no de precauciones."
+        hint_specific: "Esa mezcla no existe en español. ¿Se está hablando del asunto o de cubrirse las espaldas?"
+      - position: 2
+        text: "por lo visto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por lo visto» repite lo que otros cuentan, y aquí nadie cuenta nada: alguien toma una precaución por su cuenta."
+        hint_specific: "«Por lo visto» atribuye la información a terceros. ¿Quién decide guardar la copia?"
+      - position: 3
+        text: "por si acaso"
+        is_correct: true
+  - position: 8
+    sentence: "Delia dejó el teléfono boca abajo y preguntó si {{blank}} hacía falta repetirlo cada domingo."
+    hint_general: "Pregunta con retintín algo que lleva meses diciendo en esa misma mesa."
+    explanation: "Acaso: pregunta con la respuesta sabida y sin gritar. «Para variar» sonaría a ironía de conversación y «ocaso» nombra el final del día."
+    options:
+      - position: 1
+        text: "para variar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Para variar» es ironía de conversación y se burla de la costumbre, cuando ella señala un cansancio real sin reírse de nadie."
+        hint_specific: "«Para variar» suena a burla. ¿Delia se ríe de la situación o está cansada de verdad?"
+      - position: 2
+        text: "acaso"
+        is_correct: true
+      - position: 3
+        text: "ocaso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ocaso» nombra el final del día o de una etapa, y lo que se repite cada domingo no es ningún final."
+        hint_specific: "«Ocaso» habla de algo que se apaga. ¿Termina algo en esa mesa?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe sin firmar"
+    body: "El contrato llevaba tres semanas en la bandeja. Marisol no repartió culpas: preguntó en voz alta, mirando al papel. «¿Piensa firmarlo acaso alguien esta semana?». Dos personas se miraron y el contrato salió firmado esa misma tarde."
+    before_phrase: "¿Nadie lo firma o qué?"
+    after_phrase: "¿Piensa firmarlo acaso alguien esta semana?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Domingo otra vez"
+    body: "Ulises llevaba meses recordando lo mismo cada semana. En vez de levantar la voz, dejó el teléfono boca abajo y preguntó: «¿Hace falta acaso repetirlo cada domingo?». Su hijo se quedó callado, y esta vez sacó la basura sin que nadie insistiera."
+    before_phrase: "Otra vez lo mismo, ¿te lo tengo que decir mil veces?"
+    after_phrase: "¿Hace falta acaso repetirlo cada domingo?"
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El paraguas de Nagore"
+    body: "Salieron a pasear con el cielo cargado. Nagore volvió a entrar a por el paraguas y lo dijo sin dramas: «Me lo llevo por si acaso». Media hora después, cuatro personas caminaban debajo de él y nadie se atrevió a reírse."
+    before_phrase: "Me lo llevo, tú por si las moscas."
+    after_phrase: "Me lo llevo por si acaso."
+metrics:
+  zipf_overall: 4.3690
+  dispersion_dp: 0.1820
+  pedantry_proxy: 0.3306
+  family_size: 0
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

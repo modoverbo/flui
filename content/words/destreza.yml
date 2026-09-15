@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 5032
+slug: "destreza"
+status: "draft"
+lemma: "destreza"
+part_of_speech: "sustantivo"
+syllables:
+  - "des"
+  - "tre"
+  - "za"
+stressed_syllable: 2
+ipa_latam: "[desˈtɾe.sa]"
+ipa_es: "[desˈtɾe.θa]"
+explanation: "Habilidad para hacer algo bien y rápido con las manos o con la cabeza."
+example_sentence: "Monta el andamio con una destreza que da gusto mirar."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para elogiar algo concreto que has visto hacer: funciona mejor señalando el gesto exacto que admiras."
+when_not_to_use: "No la uses para el trato con la gente ni para el carácter; esto se ve haciendo algo."
+collocations:
+  - "una destreza asombrosa"
+  - "la destreza de sus manos"
+  - "ganar destreza"
+replaces:
+  - before: "Qué bien se le da eso"
+    after: "Qué destreza tiene para eso"
+  - before: "Lo hace rapidísimo y sin fallar"
+    after: "Lo hace con mucha destreza"
+  - before: "Cada vez le sale mejor"
+    after: "Cada vez gana más destreza"
+family:
+  - "diestro"
+semantic_set_id: "habilidad-ganada-con-los-anos"
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+tags:
+  comodin:
+    - "habilidad"
+  funcion:
+    - "elogiar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "tristeza"
+    difference: "La «tristeza» es la pena que se siente por dentro; la otra palabra es lo bien que se hace algo con las manos o la cabeza."
+    memory_trick: "La tristeza se lleva dentro; lo otro se ve fuera."
+  - confused_with: "dureza"
+    difference: "La «dureza» es la falta de blandura, en un material o en el trato; la otra palabra no habla de dureza ninguna."
+    memory_trick: "La dureza resiste; lo otro resuelve."
+exercises:
+  - position: 1
+    sentence: "Susana monta el andamio con una {{blank}} que da gusto mirar desde la acera."
+    hint_general: "Lo hace tan bien y tan rápido que se queda uno mirando."
+    explanation: "Destreza: lo bien y rápido que lo monta. «Tristeza» es la pena que se siente por dentro, y «maña» es coloquial y sugiere un apaño casero."
+    options:
+      - position: 1
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «tristeza» es la pena que se siente por dentro, y aquí lo que se admira es cómo mueve las manos."
+        hint_specific: "La tristeza se lleva en la cara. ¿Qué mira la gente desde la acera?"
+      - position: 2
+        text: "destreza"
+        is_correct: true
+      - position: 3
+        text: "maña"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maña» es coloquial y sugiere un apaño casero hecho con ingenio, y montar un andamio es un trabajo aprendido."
+        hint_specific: "La maña se usa para un arreglo de andar por casa. ¿Qué monta Susana?"
+  - position: 2
+    sentence: "Con la {{blank}} que tiene Natalia para los números, revisó las cuentas del año en una tarde."
+    hint_general: "Se le dan tan bien los números que lo hizo en una tarde."
+    explanation: "Destreza: lo bien que se le dan los números. «Dureza» es la falta de blandura en algo o en el trato, y la «paciencia» sería aguantar, no ir rápido."
+    options:
+      - position: 1
+        text: "destreza"
+        is_correct: true
+      - position: 2
+        text: "dureza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «dureza» es la falta de blandura en un material o en el trato, y aquí se elogia la rapidez con las cuentas."
+        hint_specific: "La dureza se mide en un material o en un jefe. ¿Qué revisó Natalia en una tarde?"
+      - position: 3
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «paciencia» sería aguantar sin perder los nervios, y la frase destaca que lo hizo en una sola tarde."
+        hint_specific: "La paciencia se nota cuando algo se alarga. ¿Cuánto tardó ella?"
+  - position: 3
+    sentence: "Al principio le temblaba el pulso, pero en seis meses ganó la {{blank}} que le faltaba."
+    hint_general: "Con los meses aprendió a hacerlo con soltura."
+    explanation: "Destreza: la habilidad que le faltaba y ganó. «Tristeza» es la pena que se siente por dentro, y la «fuerza» no arregla un pulso que tiembla."
+    options:
+      - position: 1
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «tristeza» es la pena que se siente por dentro, y nadie gana pena practicando durante seis meses."
+        hint_specific: "La tristeza no se entrena. ¿Qué se gana practicando?"
+      - position: 2
+        text: "fuerza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «fuerza» no arregla un pulso que tiembla, y lo que se gana aquí es precisión en el gesto."
+        hint_specific: "La fuerza levanta peso. ¿Qué le fallaba a esta persona?"
+      - position: 3
+        text: "destreza"
+        is_correct: true
+  - position: 4
+    sentence: "La {{blank}} del panadero está en el pliegue, y eso no se ve en ninguna receta escrita."
+    hint_general: "Lo que hace bien está en un gesto que no se escribe."
+    explanation: "Destreza: el gesto exacto que hace bien. «Dureza» es la falta de blandura en algo, y la «pericia» es palabra formal de peritos y seguros."
+    options:
+      - position: 1
+        text: "destreza"
+        is_correct: true
+      - position: 2
+        text: "dureza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «dureza» es la falta de blandura, y en una masa de pan la dureza sería justamente un defecto."
+        hint_specific: "La dureza se nota al morder. ¿Qué está en el pliegue según la frase?"
+      - position: 3
+        text: "pericia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pericia» es palabra formal de peritos e informes de seguros, y esto ocurre en un obrador a las cinco de la mañana."
+        hint_specific: "La pericia aparece en un informe técnico. ¿Dónde trabaja el panadero?"
+  - position: 5
+    sentence: "Me quedé mirando la {{blank}} con que el camarero llevaba nueve platos sin mirar."
+    hint_general: "Admiró lo bien que llevaba tantos platos a la vez."
+    explanation: "Destreza: lo bien que lleva nueve platos. «Proeza» sería una hazaña excepcional, y «maña» es coloquial y sugiere un truco de andar por casa."
+    options:
+      - position: 1
+        text: "proeza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «proeza» es una hazaña excepcional que se hace una vez, y este camarero lo hace en cada servicio."
+        hint_specific: "Una proeza se cuenta durante años. ¿Con qué frecuencia hace esto el camarero?"
+      - position: 2
+        text: "destreza"
+        is_correct: true
+      - position: 3
+        text: "maña"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maña» es coloquial y sugiere un truco de andar por casa, y llevar nueve platos es parte de su trabajo diario."
+        hint_specific: "La maña sirve para un apaño puntual. ¿Esto es un apaño o su trabajo?"
+  - position: 6
+    sentence: "Teresa perdió {{blank}} con la mano derecha y aprendió a hacerlo todo con la izquierda."
+    hint_general: "Perdió habilidad en una mano y la ganó en la otra."
+    explanation: "Destreza: la habilidad que perdió en una mano. «Tristeza» es la pena que se siente por dentro, y la «costumbre» sería el hábito, no la precisión del gesto."
+    options:
+      - position: 1
+        text: "destreza"
+        is_correct: true
+      - position: 2
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «tristeza» es la pena que se siente por dentro, y no se pierde en una mano concreta."
+        hint_specific: "La tristeza no distingue izquierda de derecha. ¿Qué perdió Teresa en una mano?"
+      - position: 3
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «costumbre» es el hábito de hacer algo de una manera, y lo que se pierde aquí es la precisión del gesto."
+        hint_specific: "Una costumbre se cambia decidiéndolo. ¿Qué se pierde sin querer?"
+  - position: 7
+    sentence: "En la prueba práctica valoraban la {{blank}} y no la rapidez, y varios se confundieron."
+    hint_general: "Miraban lo bien hecho, no lo deprisa."
+    explanation: "Destreza: hacerlo bien con las manos. «Dureza» es la falta de blandura en algo o en el trato, y la «suerte» no se valora en ninguna prueba."
+    options:
+      - position: 1
+        text: "dureza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «dureza» es la falta de blandura en un material o en el trato, y en una prueba práctica no se valora eso."
+        hint_specific: "La dureza describe un material. ¿Qué se valoraba en esa prueba?"
+      - position: 2
+        text: "destreza"
+        is_correct: true
+      - position: 3
+        text: "suerte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «suerte» no se valora en ninguna prueba, y la frase contrapone dos cosas que sí se pueden medir."
+        hint_specific: "La suerte no se puntúa. ¿Qué dos cosas se contraponen aquí?"
+  - position: 8
+    sentence: "Ramiro tiene una {{blank}} rara para desmontar cosas, y otra peor para volver a montarlas."
+    hint_general: "Se le da muy bien desmontar y muy mal lo contrario."
+    explanation: "Destreza: lo bien que desmonta cosas. «Tristeza» es la pena que se siente por dentro, y la «pericia» es palabra formal de peritos e informes."
+    options:
+      - position: 1
+        text: "pericia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pericia» es palabra formal de peritos e informes, y esta frase es una broma sobre alguien que desmonta cosas en casa."
+        hint_specific: "La pericia aparece en un peritaje. ¿Qué tono tiene esta frase?"
+      - position: 2
+        text: "destreza"
+        is_correct: true
+      - position: 3
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «tristeza» es la pena que se siente por dentro, y aquí se habla de lo que hacen sus manos con los tornillos."
+        hint_specific: "La tristeza no desmonta nada. ¿Qué hace Ramiro con las cosas?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Nueve platos"
+    body: "En la terraza de siempre, el camarero salió con nueve platos y no miró ninguno. Natalia se quedó parada a media frase. «Qué destreza», dijo, y él se encogió de hombros: quince años, dos terrazas y un brazo más largo que el otro, según cuenta él."
+    before_phrase: "Qué bien se le da esto, madre mía."
+    after_phrase: "Qué destreza lleva ese hombre."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La mano izquierda"
+    body: "Teresa se rompió la muñeca derecha en marzo y pasó cuatro meses con la izquierda. Al principio se le caía todo. En julio cortaba verdura casi igual de fino. «He ganado destreza a la fuerza», dice, y ahora usa las dos manos para todo."
+    before_phrase: "Me he acostumbrado a hacerlo con la otra mano."
+    after_phrase: "He ganado destreza con la izquierda."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El pliegue"
+    body: "Rosalba miró al panadero doblar la masa cuarenta veces antes de entender dónde estaba el asunto. No era la receta: era el pliegue, y ese gesto no aparece escrito. «La destreza está ahí», le dijo él, «y tarda un año»."
+    before_phrase: "Es que a él le sale y a mí no."
+    after_phrase: "La destreza está en el pliegue, y tarda un año."
+metrics:
+  zipf_overall: 3.884
+  dispersion_dp: 0.1434
+  pedantry_proxy: 0.4757
+  family_size: 108
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

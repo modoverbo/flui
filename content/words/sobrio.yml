@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 5005
+slug: "sobrio"
+status: "draft"
+lemma: "sobrio"
+part_of_speech: "adjetivo"
+syllables:
+  - "so"
+  - "brio"
+stressed_syllable: 1
+ipa_latam: "[ˈso.βɾjo]"
+ipa_es: "[ˈso.βɾjo]"
+explanation: "Sin nada de más: solo lo necesario, ni una palabra ni un color que sobre."
+example_sentence: "Hizo una presentación sobria y por eso se entendió a la primera."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para elogiar lo que funciona sin llamar la atención: una charla, un correo o una mesa puesta."
+when_not_to_use: "No la uses para algo triste o apagado; aquí no falta alegría, sobra adorno."
+collocations:
+  - "un estilo sobrio"
+  - "una presentación sobria"
+  - "un tono sobrio"
+replaces:
+  - before: "Muy sencillo, sin tanto adorno"
+    after: "Muy sobrio"
+  - before: "Lo presentó sin florituras"
+    after: "Hizo una presentación sobria"
+  - before: "Habló sin exagerar nada"
+    after: "Habló en un tono sobrio"
+family:
+  - "sobriedad"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin:
+    - "sencillo"
+  funcion:
+    - "elogiar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sombrío"
+    difference: "«Sombrío» describe algo oscuro o triste; la otra palabra describe algo sin adornos, que puede ser luminoso y alegre."
+    memory_trick: "Lo sombrío da pena; lo demás solo quita adornos."
+  - confused_with: "soberbio"
+    difference: "«Soberbio» acusa de orgullo, o exagera hasta lo enorme; la otra palabra elogia justo la falta de exageración."
+    memory_trick: "El soberbio se hincha; lo contrario se recorta."
+exercises:
+  - position: 1
+    sentence: "El folleto del taller es {{blank}}: dos colores, una foto y nada más, y funciona mejor que el del año pasado."
+    hint_general: "Tiene lo justo y por eso funciona mejor que antes."
+    explanation: "Sobrio: tiene lo justo y funciona. «Sombrío» diría que es oscuro y triste, y «soso» es coloquial y acusa de aburrido, cuando aquí se elogia."
+    options:
+      - position: 1
+        text: "sombrío"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sombrío» habla de algo oscuro y triste, y la frase dice que el folleto funciona mejor que el anterior."
+        hint_specific: "«Sombrío» tiñe las cosas de gris. ¿La frase se queja del folleto o lo aprueba?"
+      - position: 2
+        text: "sobrio"
+        is_correct: true
+      - position: 3
+        text: "soso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soso» es coloquial y acusa de aburrido, y aquí el folleto gusta más que el del año pasado."
+        hint_specific: "«Soso» es un reproche de mesa y de charla. ¿Este folleto gusta o cansa?"
+  - position: 2
+    sentence: "Beatriz dio una charla {{blank}}: sin bromas de relleno y sin una diapositiva de más."
+    hint_general: "Habló sin nada que sobrara, ni chistes ni imágenes."
+    explanation: "Sobria: habló sin nada que sobrara. «Sombría» diría que fue oscura y triste, y «tímida» hablaría de su miedo, no de lo que quitó."
+    options:
+      - position: 1
+        text: "sobria"
+        is_correct: true
+      - position: 2
+        text: "sombría"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sombría» describe algo oscuro y triste, y quitar bromas de relleno no entristece una charla."
+        hint_specific: "«Sombría» pinta la escena de gris. ¿Lo que hizo Beatriz da pena o da gusto?"
+      - position: 3
+        text: "tímida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tímida» habla del miedo de quien habla, y la frase describe lo que ella decidió quitar, no lo que sintió."
+        hint_specific: "La timidez se nota en el cuerpo. ¿Aquí se describe un miedo o una decisión?"
+  - position: 3
+    sentence: "El restaurante es {{blank}}: manteles blancos, luz cálida y ni un cuadro en las paredes."
+    hint_general: "Está puesto con lo justo, y aun así resulta acogedor."
+    explanation: "Sobrio: está puesto con lo justo y resulta acogedor. «Espartano» exagera hasta la incomodidad, y «sombrío» diría que está oscuro y triste."
+    options:
+      - position: 1
+        text: "espartano"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Espartano» es palabra culta que evoca dureza e incomodidad, y este sitio tiene luz cálida y manteles."
+        hint_specific: "«Espartano» suena a cama dura y frío. ¿Cómo es la luz de este restaurante?"
+      - position: 2
+        text: "sobrio"
+        is_correct: true
+      - position: 3
+        text: "sombrío"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sombrío» describe un sitio oscuro y triste, y la frase menciona manteles blancos y luz cálida."
+        hint_specific: "«Sombrío» quita luz. ¿Qué dice la frase sobre la luz del local?"
+  - position: 4
+    sentence: "Cuesta creer que Feliciano dirija la empresa: llega con un saludo {{blank}} y se sienta al final de la mesa."
+    hint_general: "Saluda sin aparato, como cualquiera que entra en una sala."
+    explanation: "Sobrio: saluda sin aparato ninguno. «Soberbio» diría que llega con aires de superioridad, y «tibio» acusaría de falta de ganas."
+    options:
+      - position: 1
+        text: "sobrio"
+        is_correct: true
+      - position: 2
+        text: "soberbio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Soberbio» acusa de llegar con aires de superioridad, y este hombre se sienta al final de la mesa."
+        hint_specific: "El soberbio ocupa la cabecera. ¿Dónde se sienta Feliciano?"
+      - position: 3
+        text: "tibio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tibio» acusa de saludar con poca gana, y la frase no habla de desgana, sino de ausencia de aparato."
+        hint_specific: "Lo tibio deja frío a quien lo recibe. ¿La frase critica sus ganas?"
+  - position: 5
+    sentence: "La carta que escribió Olalla es {{blank}}: cuatro líneas, sin dramas, con la fecha clara."
+    hint_general: "Escribió lo justo y lo dejó todo claro."
+    explanation: "Sobria: escribió lo justo y quedó claro. «Sombría» diría que es triste y oscura, y «apagada» sugeriría que le falta energía."
+    options:
+      - position: 1
+        text: "apagada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apagada» sugiere falta de energía, y una carta de cuatro líneas con la fecha clara está bien despierta."
+        hint_specific: "Lo apagado se arrastra. ¿Esta carta cumple su función o se queda a medias?"
+      - position: 2
+        text: "sobria"
+        is_correct: true
+      - position: 3
+        text: "sombría"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sombría» describe algo triste y oscuro, y la frase dice justamente que no hay dramas dentro."
+        hint_specific: "Lo sombrío trae malas noticias. ¿Qué dice la frase sobre los dramas?"
+  - position: 6
+    sentence: "Prefiero un mensaje {{blank}} a uno lleno de signos de admiración y mayúsculas."
+    hint_general: "Prefiere el que va sin adornos al que grita con símbolos."
+    explanation: "Sobrio: el mensaje sin adornos. «Soberbio» sería el que mira a los demás por encima del hombro, y «rígido» acusaría de no admitir matices."
+    options:
+      - position: 1
+        text: "rígido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rígido» acusa de no admitir matices ni cambios, y la frase solo compara adornos: símbolos y mayúsculas."
+        hint_specific: "Lo rígido no se dobla. ¿Lo que se compara aquí es la dureza o el adorno?"
+      - position: 2
+        text: "soberbio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Soberbio» describe a quien mira por encima del hombro, y un mensaje sin adornos no mira a nadie por encima."
+        hint_specific: "La soberbia se nota en el trato. ¿Qué se compara en la frase?"
+      - position: 3
+        text: "sobrio"
+        is_correct: true
+  - position: 7
+    sentence: "Su manera de contar aquel viaje fue tan {{blank}} que el silencio del final pesó más que cualquier aplauso."
+    hint_general: "Contó sin exagerar nada, y por eso el final pesó tanto."
+    explanation: "Sobria: contó sin exagerar nada. «Sombría» diría que fue triste y oscura, y «callada» sería no contar nada, cuando sí contó."
+    options:
+      - position: 1
+        text: "sombría"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sombría» describe algo oscuro y triste, y la frase valora la manera de contar, no el ánimo del relato."
+        hint_specific: "Lo sombrío entristece. ¿Qué se valora aquí: el ánimo o la contención?"
+      - position: 2
+        text: "sobria"
+        is_correct: true
+      - position: 3
+        text: "callada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callada» sería no contar nada, y en la frase sí cuenta el viaje entero: lo que hace es no exagerarlo."
+        hint_specific: "Quien está callado no habla. ¿Esa persona contó el viaje o no?"
+  - position: 8
+    sentence: "El traje que eligió Anselmo para la boda era {{blank}}, y por eso nadie se acordó del traje."
+    hint_general: "Iba sin nada que llamara la atención, y así pasó desapercibido."
+    explanation: "Sobrio: iba sin nada que llamara la atención. «Soberbio» significaría espléndido y llamativo, y «anticuado» diría que estaba pasado de moda."
+    options:
+      - position: 1
+        text: "anticuado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anticuado» dice que algo está pasado de moda, y un traje así sí llama la atención en una boda."
+        hint_specific: "Lo anticuado se nota enseguida. ¿El traje de Anselmo se notó?"
+      - position: 2
+        text: "sobrio"
+        is_correct: true
+      - position: 3
+        text: "soberbio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Soberbio» significa aquí espléndido y llamativo, justo lo contrario de un traje del que nadie se acuerda."
+        hint_specific: "Lo soberbio se comenta durante semanas. ¿Alguien comentó ese traje?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos colores y una foto"
+    body: "El equipo llevaba una semana discutiendo el folleto del taller. Beatriz llegó con una versión de dos colores, una foto y seis líneas. «Es demasiado sobrio», dijo alguien. Se imprimieron las dos y la gente cogió la suya: la otra se quedó en la caja."
+    before_phrase: "Este está muy simple, ¿no?"
+    after_phrase: "Este es sobrio, y por eso se lee."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El traje de la boda"
+    body: "Anselmo se probó siete trajes y volvió al primero. Su hermana le insistía con uno más llamativo. «Prefiero ir sobrio y que la gente mire a los novios», contestó. En las fotos de aquel día nadie se acordó de su traje, y él lo cuenta como una victoria."
+    before_phrase: "Yo voy sencillito, sin nada raro."
+    after_phrase: "Prefiero ir sobrio."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La mesa de Olalla"
+    body: "Olalla puso mantel blanco, una vela y nada más. Su vecina esperaba flores, servilletas dobladas y tres copas por persona. A media cena lo dijo en voz alta: «Qué bien se está aquí; es todo muy sobrio y se habla mejor». La conversación duró hasta la una."
+    before_phrase: "No he puesto nada del otro mundo."
+    after_phrase: "Lo he puesto todo muy sobrio."
+metrics:
+  zipf_overall: 3.583
+  dispersion_dp: 0.2167
+  pedantry_proxy: 0.4607
+  family_size: 14
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

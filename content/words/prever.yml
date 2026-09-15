@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "prever"
+status: "draft"
+lemma: "prever"
+part_of_speech: "verbo"
+syllables:
+  - "pre"
+  - "ver"
+stressed_syllable: 2
+ipa_latam: "[pɾeˈβeɾ]"
+ipa_es: "[pɾeˈβeɾ]"
+explanation: "Saber con tiempo lo que puede pasar y contar con ello antes de que ocurra."
+example_sentence: "Antes de firmar conviene prever qué haremos si el envío llega tarde."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Queda muy bien al planificar: deja claro que pensaste en lo que podía salir mal."
+when_not_to_use: "No la uses para entregar o suministrar algo; para eso está «proveer»."
+collocations:
+  - "prever un retraso"
+  - "prever consecuencias"
+  - "prever un escenario"
+replaces:
+  - before: "Hay que proveer los retrasos del invierno"
+    after: "Hay que prever los retrasos del invierno"
+  - before: "Nadie proveyó este gasto"
+    after: "Nadie previó este gasto"
+  - before: "No me imaginé que pasaría esto"
+    after: "No lo preví"
+family:
+  - "previsión"
+  - "previsible"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin: ["imaginar"]
+  funcion: ["anticipar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "proveer"
+    difference: "«Proveer» es entregar o suministrar lo que hace falta; la otra palabra no entrega nada, calcula con tiempo lo que puede pasar."
+    memory_trick: "Quien provee reparte cosas; quien lo calcula reparte tiempo."
+  - confused_with: "prevenir"
+    difference: "«Prevenir» busca impedir un daño o avisar de él; calcular de antemano solo consiste en contar con la posibilidad."
+    memory_trick: "Prevenir evita; calcular de antemano cuenta con ello."
+exercises:
+  - position: 1
+    sentence: "Antes de aceptar el plazo, Andrés quiso {{blank}} qué pasaría si el envío llegaba tarde."
+    hint_general: "Se trata de pensar con tiempo en lo que puede pasar y contar con ello."
+    explanation: "Prever: calcula con tiempo un riesgo del envío. «Proveer» es suministrar algo, y «vaticinar» suena a anuncio solemne sobre el futuro."
+    options:
+      - position: 1
+        text: "proveer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proveer» es suministrar lo que hace falta, y aquí nadie entrega nada: se calcula un riesgo del envío."
+        hint_specific: "«Proveer» va de suministrar material. ¿Andrés entrega algo o calcula un riesgo?"
+      - position: 2
+        text: "prever"
+        is_correct: true
+      - position: 3
+        text: "vaticinar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vaticinar» suena a anuncio solemne sobre el futuro y aquí solo se calcula un riesgo antes de firmar."
+        hint_specific: "«Vaticinar» tiene aire de profecía. ¿Se anuncia el futuro o se calcula un riesgo?"
+  - position: 2
+    sentence: "Sofía no {{blank}} que la sala estaría ocupada y la reunión acabó en el pasillo."
+    hint_general: "Le faltó pensar con antelación en algo que podía ocurrir."
+    explanation: "Previó: le faltó calcular con tiempo lo de la sala. «Proveyó» es suministrar algo, y «adivinó» sugiere acertar por azar, no por cálculo."
+    options:
+      - position: 1
+        text: "proveyó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proveer» es suministrar lo que hace falta, y nadie reparte nada aquí: falló el cálculo sobre la sala."
+        hint_specific: "«Proveer» reparte material. ¿Qué material habría repartido Sofía en esa reunión?"
+      - position: 2
+        text: "previó"
+        is_correct: true
+      - position: 3
+        text: "adivinó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adivinar» sugiere acertar por azar, y reservar una sala es algo que se comprueba, no que se acierta de casualidad."
+        hint_specific: "Adivinar depende de la suerte. ¿La sala ocupada era cuestión de suerte o de comprobarlo?"
+  - position: 3
+    sentence: "Nadie en el equipo supo {{blank}} el pico de pedidos de diciembre, y el almacén se quedó corto."
+    hint_general: "Habla de darse cuenta con tiempo de algo que todavía no ha ocurrido."
+    explanation: "Prever: faltó ver venir el pico de pedidos. «Prevenir» sería impedir un daño, y «sortear» es esquivar un problema que ya está delante."
+    options:
+      - position: 1
+        text: "sortear"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sortear» es esquivar una dificultad que ya está delante, y aquí lo que faltó fue verla venir."
+        hint_specific: "Sortear es esquivar algo presente. ¿El pico de pedidos ya estaba ahí o venía de camino?"
+      - position: 2
+        text: "prevenir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prevenir» es impedir un daño o avisar de él, y un pico de pedidos no se impide: se calcula antes."
+        hint_specific: "«Prevenir» intenta evitar el daño. ¿Se quería evitar el pico o contar con él?"
+      - position: 3
+        text: "prever"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando montó su negocio, Marcos aprendió a {{blank}} los meses flojos y a guardar dinero para ellos."
+    hint_general: "Se trata de contar de antemano con una época difícil, no de aguantarla cuando llega."
+    explanation: "Prever: calcula de antemano los meses flojos. «Prevenir» sería impedir un daño, y «capear» es coloquial y suena a aguantar el mal rato cuando ya llegó."
+    options:
+      - position: 1
+        text: "capear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Capear» es coloquial y significa aguantar el mal momento mientras pasa, no calcularlo con meses de antelación."
+        hint_specific: "«Capear» suena a aguantar el temporal. ¿Marcos aguanta o se adelanta guardando dinero?"
+      - position: 2
+        text: "prever"
+        is_correct: true
+      - position: 3
+        text: "prevenir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Prevenir» es impedir un daño, y los meses flojos de un negocio no se impiden: se cuenta con ellos."
+        hint_specific: "«Prevenir» busca impedir algo. ¿Puede Marcos impedir que llegue un mes flojo?"
+  - position: 5
+    sentence: "El contrato obliga a {{blank}} qué ocurre si una de las partes quiere salir antes de tiempo."
+    hint_general: "Habla de dejar escrito por adelantado un final posible."
+    explanation: "Prever: dejar escrito por adelantado un final posible. «Proveer» es suministrar algo, y «resolver» actúa sobre un problema que ya existe."
+    options:
+      - position: 1
+        text: "resolver"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resolver» actúa sobre un problema que ya existe, y aquí todavía no hay conflicto: solo se deja escrito qué pasaría."
+        hint_specific: "Resolver llega después del problema. ¿Ya hay conflicto entre las partes?"
+      - position: 2
+        text: "proveer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proveer» es suministrar bienes o servicios, y un contrato no suministra nada al describir una salida."
+        hint_specific: "«Proveer» entrega bienes. ¿Qué entregaría el contrato en esa cláusula?"
+      - position: 3
+        text: "prever"
+        is_correct: true
+  - position: 6
+    sentence: "Mi madre siempre {{blank}} el tráfico de los domingos y salimos con media hora de sobra."
+    hint_general: "Cuenta de antemano con algo que se repite cada semana."
+    explanation: "Prevé: cuenta de antemano con el tráfico de cada domingo. «Provee» es suministrar algo, e «intuye» sería sentirlo sin datos, no calcularlo."
+    options:
+      - position: 1
+        text: "prevé"
+        is_correct: true
+      - position: 2
+        text: "provee"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proveer» es suministrar lo que hace falta, y nadie suministra tráfico: se cuenta con él para salir antes."
+        hint_specific: "«Proveer» reparte lo que falta. ¿Alguien reparte el tráfico del domingo?"
+      - position: 3
+        text: "intuye"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Intuir» es sentir algo sin datos, y ella se apoya en lo que ocurre todos los domingos."
+        hint_specific: "Intuir va sin datos. ¿Tu madre se apoya en una corazonada o en la costumbre?"
+  - position: 7
+    sentence: "Después de dos mudanzas, Lucía ya sabe {{blank}} cuántas cajas va a necesitar."
+    hint_general: "Por experiencia sabe de antemano cuánto hará falta."
+    explanation: "Prever: sabe de antemano cuántas cajas hacen falta. «Proveer» es suministrar algo, y «avizorar» suena a vigía que otea el horizonte."
+    options:
+      - position: 1
+        text: "avizorar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Avizorar» suena a vigía que otea el horizonte y resulta demasiado solemne para contar cajas de una mudanza."
+        hint_specific: "«Avizorar» evoca a alguien mirando a lo lejos. ¿Encaja al contar cajas en casa?"
+      - position: 2
+        text: "prever"
+        is_correct: true
+      - position: 3
+        text: "proveer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proveer» sería entregarle las cajas, y la frase dice que ella sabe de antemano cuántas hacen falta."
+        hint_specific: "«Proveer» entrega el material. ¿Lucía entrega cajas o calcula cuántas necesita?"
+  - position: 8
+    sentence: "Renata pidió {{blank}} dos semanas de margen por si el invierno viene duro."
+    hint_general: "Se trata de reservar margen porque algo podría complicarse."
+    explanation: "Prever: reservar margen contando con un invierno duro. «Proveer» es suministrar lo que hace falta, y «descartar» quitaría esa posibilidad de la lista."
+    options:
+      - position: 1
+        text: "proveer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proveer» es suministrar materiales o servicios, y aquí se reserva tiempo, no se entrega nada."
+        hint_specific: "«Proveer» suministra cosas. ¿Se entrega algo o se guarda margen en el calendario?"
+      - position: 2
+        text: "descartar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descartar» es quitar una posibilidad de la lista, y Renata hace lo contrario: cuenta con que el invierno se complique."
+        hint_specific: "Descartar elimina la opción. ¿Renata borra el mal invierno o se prepara para él?"
+      - position: 3
+        text: "prever"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos semanas de aire"
+    body: "El calendario del proyecto estaba clavado al día. Ximena levantó la mano: «Propongo prever dos semanas de margen para el permiso del local». Nadie discutió. En marzo, el permiso tardó doce días y el equipo entregó a tiempo igual."
+    before_phrase: "Por si acaso, dejemos un poquito de aire."
+    after_phrase: "Propongo prever dos semanas de margen."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena del sábado"
+    body: "Gonzalo llamó a su hermana antes de la cena familiar. «Sé que el tema de la casa va a salir. Quiero preverlo y hablarlo contigo antes, no delante de todos». Ella se quedó callada un momento y luego dijo: «Gracias por avisarme»."
+    before_phrase: "Seguro que sale el tema y acabamos discutiendo."
+    after_phrase: "Quiero preverlo y hablarlo antes."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta del final"
+    body: "Le preguntaron a Noelia por su peor semana en el puesto anterior. Contó el fallo del servidor y añadió: «Desde entonces preveo siempre un plan alterno para los días de cierre». La entrevistadora anotó la frase entera."
+    before_phrase: "Ahora intento pensar en lo que podría fallar."
+    after_phrase: "Desde entonces preveo un plan alterno."
+metrics:
+  zipf_overall: 4.7841
+  dispersion_dp: 0.1349
+  pedantry_proxy: 0.5821
+  family_size: 98
+provenance:
+  generator: "flui authoring agent — theme paronimos (prever / proveer)"
+  gate: null
+  checked_on: "2026-09-14"

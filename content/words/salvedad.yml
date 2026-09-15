@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3202
+slug: "salvedad"
+status: "draft"
+lemma: "salvedad"
+part_of_speech: "sustantivo"
+syllables:
+  - "sal"
+  - "ve"
+  - "dad"
+stressed_syllable: 3
+ipa_latam: "[sal.βeˈðad]"
+ipa_es: "[sal.βeˈðad]"
+explanation: "Excepción que añades al aceptar algo, para dejar claro qué parte queda fuera."
+example_sentence: "Estoy de acuerdo, con una salvedad: el plazo no se mueve."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Te deja aceptar sin firmar en blanco: dices que sí y marcas en la misma frase lo que no entra."
+when_not_to_use: "No la uses para una queja general; nombra algo concreto que quede fuera de lo que aceptas."
+collocations:
+  - "con una salvedad"
+  - "hacer una salvedad"
+  - "una salvedad importante"
+replaces:
+  - before: "Vale, pero con una cosa"
+    after: "Vale, con una salvedad"
+  - before: "Estoy de acuerdo, aunque hay un tema"
+    after: "Estoy de acuerdo, con una salvedad"
+  - before: "Sí, menos por una parte"
+    after: "Sí, con una salvedad"
+family: []
+semantic_set_id: "reserva-ante-un-acuerdo"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "cosa"
+    - "pero"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "condición"
+    difference: "Una condición hay que cumplirla para que aceptes; la otra palabra marca lo que dejas fuera de algo que ya aceptaste."
+    memory_trick: "La condición pone precio; la otra recorta un trozo."
+  - confused_with: "novedad"
+    difference: "«Novedad» es algo que aparece por primera vez; la otra palabra es un límite que añades al decir que sí."
+    memory_trick: "La novedad sorprende; el límite acota."
+exercises:
+  - position: 1
+    sentence: "Rocío dijo que sí al plan entero y añadió una {{blank}}: el presupuesto de viajes se queda como estaba."
+    hint_general: "Acepta todo y marca la única parte que deja fuera."
+    explanation: "Salvedad: la parte que queda fuera de un sí. Una «novedad» sería algo que aparece por primera vez, y una «excusa» serviría para escaparse, no para aceptar."
+    options:
+      - position: 1
+        text: "novedad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «novedad» es algo que aparece por primera vez, y ese presupuesto se queda exactamente igual que antes."
+        hint_specific: "«Novedad» trae algo nuevo. ¿Qué pasa con el presupuesto de viajes?"
+      - position: 2
+        text: "salvedad"
+        is_correct: true
+      - position: 3
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «excusa» sirve para librarse de algo, y Rocío está diciendo que sí al plan entero."
+        hint_specific: "«Excusa» busca salir de un compromiso. ¿Rocío entra o sale?"
+  - position: 2
+    sentence: "Firmamos el acuerdo con una {{blank}} por escrito: la garantía cubre el material, no el transporte."
+    hint_general: "Se deja anotado qué trozo no entra en lo que se acaba de firmar."
+    explanation: "Salvedad: el trozo que no entra en lo firmado. La «gravedad» mide lo serio que es algo, y una «queja» protesta por algo ya ocurrido, cuando aquí no ha pasado nada."
+    options:
+      - position: 1
+        text: "salvedad"
+        is_correct: true
+      - position: 2
+        text: "gravedad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «gravedad» mide lo serio que resulta un asunto, y aquí se delimita qué cubre la garantía."
+        hint_specific: "«Gravedad» habla de cuánto pesa un problema. ¿Hay algún problema en esta frase?"
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» protesta por algo que ya salió mal, y aquí el acuerdo se acaba de firmar sin incidentes."
+        hint_specific: "«Queja» llega después del fallo. ¿Ha fallado ya algo aquí?"
+  - position: 3
+    sentence: "Nadie protestó en la reunión; Iván se limitó a dejar una {{blank}} clara antes de votar a favor."
+    hint_general: "Vota a favor y deja dicho en voz alta qué parte no respalda."
+    explanation: "Salvedad: lo que deja dicho antes de votar a favor. «Pega» es coloquial y suena a poner trabas, y una «reserva» se guarda para uno mismo, mientras que él lo dijo delante de todos."
+    options:
+      - position: 1
+        text: "pega"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pega» es coloquial y suena a poner trabas por costumbre, y la frase dice que nadie protestó."
+        hint_specific: "«Pega» suena a poner trabas. ¿Alguien protestó en esa reunión?"
+      - position: 2
+        text: "reserva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «reserva» es la duda que uno se guarda dentro, e Iván dejó la suya dicha delante de todos."
+        hint_specific: "«Reserva» se queda callada. ¿Iván calló o habló antes de votar?"
+      - position: 3
+        text: "salvedad"
+        is_correct: true
+  - position: 4
+    sentence: "Acepto el cambio de horario con una sola {{blank}}: los viernes salgo a las tres, como siempre."
+    hint_general: "Se acepta el cambio y se marca el único día que no cambia."
+    explanation: "Salvedad: el único día que queda fuera del cambio. Una «novedad» sería algo nuevo, y los viernes siguen igual; una «advertencia» avisaría de un riesgo, y aquí no hay ninguno."
+    options:
+      - position: 1
+        text: "salvedad"
+        is_correct: true
+      - position: 2
+        text: "novedad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «novedad» es algo que antes no estaba, y los viernes siguen exactamente igual que siempre."
+        hint_specific: "«Novedad» es algo que cambia. ¿Qué pasa con los viernes?"
+      - position: 3
+        text: "advertencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «advertencia» avisa de un riesgo por venir, y aquí solo se aparta un día del nuevo horario."
+        hint_specific: "«Advertencia» anuncia un peligro. ¿Qué peligro aparece en la frase?"
+  - position: 5
+    sentence: "Lucía leyó el contrato entero y encontró la {{blank}} anotada al final: el precio sube si el pedido baja."
+    hint_general: "Encuentra la línea que deja fuera una parte de lo pactado."
+    explanation: "Salvedad: la línea que deja fuera una parte de lo pactado. «Trampa» acusaría a alguien de engañar, y la cláusula está escrita a la vista; la «soledad» habla de estar sin compañía."
+    options:
+      - position: 1
+        text: "trampa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Trampa» acusa a la otra parte de engañar, y aquí la línea está escrita en el contrato, a la vista de quien lo lea."
+        hint_specific: "«Trampa» acusa de engaño. ¿Estaba escondida esa línea o anotada en el contrato?"
+      - position: 2
+        text: "soledad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «soledad» es estar sin compañía, y lo que Lucía encuentra es una línea sobre precios."
+        hint_specific: "«Soledad» va de estar sin nadie. ¿De qué habla la línea del contrato?"
+      - position: 3
+        text: "salvedad"
+        is_correct: true
+  - position: 6
+    sentence: "Pablo aprobó el informe sin dudar, aunque dejó una {{blank}} en el correo: los datos de marzo todavía no están cerrados."
+    hint_general: "Aprueba sin pensarlo y señala la única parte que aún no da por buena."
+    explanation: "Salvedad: la parte que aún no da por buena. Una «duda» no encaja porque aprobó sin dudar, y la «gravedad» mide lo serio que es un asunto."
+    options:
+      - position: 1
+        text: "duda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «duda» es indecisión, y la frase dice que Pablo aprobó el informe sin dudar."
+        hint_specific: "«Duda» significa no estar seguro. Relee cómo aprobó Pablo el informe."
+      - position: 2
+        text: "salvedad"
+        is_correct: true
+      - position: 3
+        text: "gravedad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «gravedad» mide lo serio que resulta algo, y aquí solo se apartan los datos de un mes."
+        hint_specific: "«Gravedad» habla de cuánto pesa un asunto. ¿Qué apartó Pablo en el correo?"
+  - position: 7
+    sentence: "Te digo que sí de verdad, no busco escaparme: solo quiero dejar una {{blank}} antes de que empecemos."
+    hint_general: "Quien habla acepta de lleno y solo quiere apartar una parte antes de arrancar."
+    explanation: "Salvedad: la parte que se aparta antes de arrancar. Una «excusa» buscaría escaparse, y la frase lo niega; una «novedad» sería algo que aparece por primera vez."
+    options:
+      - position: 1
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «excusa» sirve para escaparse, y quien habla dice justo lo contrario en la misma frase."
+        hint_specific: "«Excusa» busca la puerta de salida. ¿Qué dice esa persona sobre escaparse?"
+      - position: 2
+        text: "novedad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «novedad» es algo que aparece por primera vez, y aquí no se anuncia nada nuevo: se acota lo que ya hay."
+        hint_specific: "«Novedad» estrena algo. ¿Se estrena algo antes de empezar?"
+      - position: 3
+        text: "salvedad"
+        is_correct: true
+  - position: 8
+    sentence: "Marisa no puso condiciones ni pidió nada a cambio: solo dejó una {{blank}} en el acta, que el nombre del equipo no cambie."
+    hint_general: "Sin pedir nada, apunta la única cosa que quiere dejar intacta."
+    explanation: "Salvedad: lo único que quiere dejar intacto. Una «condición» se pide a cambio, y la frase dice que no pidió ninguna; una «queja» protestaría por algo ya ocurrido."
+    options:
+      - position: 1
+        text: "salvedad"
+        is_correct: true
+      - position: 2
+        text: "condición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «condición» se exige a cambio de aceptar, y la frase empieza diciendo que Marisa no puso ninguna."
+        hint_specific: "«Condición» se pide a cambio. Relee qué dice la frase que Marisa no hizo."
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» protesta por algo que ya salió mal, y aquí se está cerrando un acuerdo sin incidentes."
+        hint_specific: "«Queja» mira a un fallo pasado. ¿Qué fallo aparece en esta escena?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Todo sí, menos los viernes"
+    body: "El cambio de horario se votó en diez minutos. Rocío levantó la mano al final: «Voto a favor, con una salvedad: los viernes sigo saliendo a las tres». Nadie discutió. Quedó anotado en el acta y no volvió a hablarse del asunto."
+    before_phrase: "Estoy de acuerdo, pero hay una cosa."
+    after_phrase: "Voto a favor, con una salvedad."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena de los domingos"
+    body: "Mi padre aceptó que la cena se moviera al sábado. «Me parece bien», dijo, «con una salvedad: en diciembre volvemos al domingo». Lo dijo sin enfado y sin insistir. Desde entonces, cada diciembre alguien repite la frase y todos se ríen."
+    before_phrase: "Vale, aunque hay un tema."
+    after_phrase: "Me parece bien, con una salvedad."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El contrato del local"
+    body: "Lucía leyó el contrato del local entero, línea por línea. «Está todo claro», comentó al grupo, «con una salvedad anotada al final: el precio sube si el pedido baja». Pidieron cambiar esa línea antes de firmar y se la cambiaron."
+    before_phrase: "Está bien, salvo por una cosita del final."
+    after_phrase: "Está todo claro, con una salvedad anotada al final."
+metrics:
+  zipf_overall: 3.4105
+  dispersion_dp: 0.1934
+  pedantry_proxy: 0.5116
+  family_size: 12
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

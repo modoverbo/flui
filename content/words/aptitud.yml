@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "aptitud"
+status: "draft"
+lemma: "aptitud"
+part_of_speech: "sustantivo"
+syllables:
+  - "ap"
+  - "ti"
+  - "tud"
+stressed_syllable: 3
+ipa_latam: "[ap.tiˈtuð]"
+ipa_es: "[ap.tiˈtuð]"
+explanation: "Capacidad de una persona para hacer bien algo concreto, venga de serie o con práctica."
+example_sentence: "Tiene una aptitud clara para explicar cosas difíciles con palabras sencillas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Combina muy bien con «para» y un verbo: dice qué sabe hacer alguien, sin adornos."
+when_not_to_use: "No la uses para describir cómo se comporta alguien o cómo se toma las cosas; eso es la «actitud»."
+collocations:
+  - "aptitud para el cálculo"
+  - "una aptitud natural"
+  - "demostrar aptitud"
+replaces:
+  - before: "Tiene muy buena actitud para los números"
+    after: "Tiene una aptitud clara para los números"
+  - before: "Se le da bien tratar con clientes"
+    after: "Tiene aptitud para tratar con clientes"
+  - before: "Es bueno en eso, se le nota"
+    after: "Su aptitud para eso se nota enseguida"
+family:
+  - "apto"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+tags:
+  comodin: ["bueno"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "actitud"
+    difference: "La «actitud» es cómo alguien se comporta y se toma las cosas; lo otro es lo que esa persona sabe hacer bien."
+    memory_trick: "La actitud se ve en el ánimo; lo otro se ve en el resultado."
+  - confused_with: "altitud"
+    difference: "La «altitud» mide la altura sobre el nivel del mar; no dice nada de lo que alguien sabe hacer."
+    memory_trick: "La altitud se mide en metros; lo otro, en resultados."
+exercises:
+  - position: 1
+    sentence: "En la entrevista quedó clara la {{blank}} de Ximena para resolver líos entre compañeros."
+    hint_general: "Se trata de lo que esa persona sabe hacer bien, no de cómo se comporta."
+    explanation: "Aptitud: lo que Ximena sabe hacer bien. «Actitud» sería su forma de comportarse, y «maña» es coloquial y sugiere un truco aprendido a la carrera."
+    options:
+      - position: 1
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «actitud» es la forma de comportarse ante algo, y lo que quedó claro es que sabe resolver esos líos."
+        hint_specific: "La actitud habla del ánimo con que alguien llega. ¿Qué demostró Ximena, ganas o capacidad?"
+      - position: 2
+        text: "aptitud"
+        is_correct: true
+      - position: 3
+        text: "maña"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Maña» es coloquial y sugiere un truco aprendido a la carrera; en una entrevista resta seriedad a lo que ella sabe hacer."
+        hint_specific: "«Maña» suena a apaño casero. ¿Encaja con lo que se valora en una entrevista?"
+  - position: 2
+    sentence: "Su hijo mostró desde pequeño una {{blank}} enorme para la música, y en casa nadie toca nada."
+    hint_general: "Habla de una capacidad que apareció sola, sin que nadie la enseñara."
+    explanation: "Aptitud: una capacidad que apareció sola. «Actitud» sería su forma de comportarse, y «vocación» es el deseo de dedicarse a algo, no el don para hacerlo."
+    options:
+      - position: 1
+        text: "vocación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vocación» es el deseo de dedicarse a algo, y la frase habla de lo que al niño le sale bien sin haberlo aprendido."
+        hint_specific: "La vocación es querer dedicarse. ¿El niño quiere algo o le sale solo?"
+      - position: 2
+        text: "aptitud"
+        is_correct: true
+      - position: 3
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «actitud» describe cómo se comporta alguien, y lo llamativo aquí es que toca bien sin que nadie le enseñara."
+        hint_specific: "La actitud va del comportamiento. ¿Lo raro es cómo se porta o lo que consigue?"
+  - position: 3
+    sentence: "Roberto pone muchas ganas, pero le falta {{blank}} para el trabajo con cifras."
+    hint_general: "La frase separa las ganas que alguien pone de lo que de verdad sabe hacer."
+    explanation: "Aptitud: le falta capacidad para las cifras, no ganas. «Actitud» sería su forma de comportarse, que la frase ya elogia, y «garra» es coloquial y también habla de empuje."
+    options:
+      - position: 1
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «actitud» es la forma de comportarse, y la frase ya dice que Roberto pone muchas ganas."
+        hint_specific: "Relee el inicio: pone muchas ganas. ¿Le falta entonces disposición o capacidad?"
+      - position: 2
+        text: "garra"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Garra» es coloquial y habla de empuje, y a Roberto empuje le sobra: lo que no domina son las cifras."
+        hint_specific: "«Garra» suena a arrojo de vestuario deportivo. ¿A Roberto le falta empuje?"
+      - position: 3
+        text: "aptitud"
+        is_correct: true
+  - position: 4
+    sentence: "El proceso de selección mide la {{blank}} para el cálculo mental, no lo que ya has estudiado."
+    hint_general: "Se mide lo que alguien es capaz de hacer, no lo que ya sabe de antes."
+    explanation: "Aptitud: mide de qué eres capaz. «Actitud» sería tu forma de comportarte, y «pericia» suena a oficio ya dominado tras años de práctica."
+    options:
+      - position: 1
+        text: "pericia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pericia» suena a oficio dominado tras años de práctica, y aquí se mide de qué es capaz alguien antes de entrenarlo."
+        hint_specific: "La pericia se le supone a un veterano. ¿Se mide experiencia o capacidad de partida?"
+      - position: 2
+        text: "aptitud"
+        is_correct: true
+      - position: 3
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «actitud» es cómo te tomas la prueba, y aquí se mide si eres capaz de calcular, no cómo te sientas a hacerlo."
+        hint_specific: "La actitud va del ánimo. ¿Se puntúa aquí el ánimo o la capacidad de calcular?"
+  - position: 5
+    sentence: "Nadie duda de la {{blank}} de Valentina para negociar; lo que cansa al equipo es su trato seco."
+    hint_general: "La frase separa lo que alguien sabe hacer de cómo trata a la gente."
+    explanation: "Aptitud: Valentina sabe negociar. «Actitud» sería su trato, que la frase ya critica, y «destreza» apunta a la mano y a la técnica, no al criterio."
+    options:
+      - position: 1
+        text: "aptitud"
+        is_correct: true
+      - position: 2
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «actitud» es el trato, y la frase ya lo menciona aparte: lo que nadie discute es que sabe negociar."
+        hint_specific: "El trato seco aparece al final de la frase. ¿De eso nadie duda o de otra cosa?"
+      - position: 3
+        text: "destreza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Destreza» apunta a la habilidad de las manos o a la técnica fina, y negociar exige criterio y lectura de la otra parte."
+        hint_specific: "La destreza se luce en un oficio manual. ¿Negociar se hace con las manos?"
+  - position: 6
+    sentence: "Con dos años de práctica, Rodrigo ganó una {{blank}} que antes no tenía para hablar en público."
+    hint_general: "Una capacidad que no venía de fábrica y se construyó con el tiempo."
+    explanation: "Aptitud: una capacidad construida con la práctica. «Altitud» mide la altura sobre el mar, y «costumbre» es algo que se repite, no algo que se domina."
+    options:
+      - position: 1
+        text: "altitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «altitud» mide la altura sobre el nivel del mar, y aquí se habla de alguien que aprendió a hablar delante de gente."
+        hint_specific: "La altitud se mide en metros sobre el mar. ¿Qué ganó Rodrigo en dos años?"
+      - position: 2
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Costumbre» es algo que se repite por rutina, y la frase dice que ahora lo hace bien, no solo que lo hace a menudo."
+        hint_specific: "Una costumbre se repite sin más. ¿Rodrigo repite algo o lo hace mejor?"
+      - position: 3
+        text: "aptitud"
+        is_correct: true
+  - position: 7
+    sentence: "La beca premia la {{blank}} y no el apellido de quien la pide."
+    hint_general: "Se premia lo que alguien es capaz de hacer, sin mirar de dónde viene."
+    explanation: "Aptitud: se premia de qué es capaz cada persona. «Actitud» sería su forma de comportarse, y «disposición» habla de las ganas, no de la capacidad."
+    options:
+      - position: 1
+        text: "disposición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disposición» habla de las ganas de colaborar, y una beca se concede por lo que la persona es capaz de hacer."
+        hint_specific: "La disposición es estar dispuesto. ¿Una beca se gana con ganas o con capacidad?"
+      - position: 2
+        text: "aptitud"
+        is_correct: true
+      - position: 3
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «actitud» describe cómo se comporta quien pide la beca, y lo que se compara aquí es su capacidad frente a su apellido."
+        hint_specific: "La actitud va del comportamiento. ¿Qué se opone en la frase al apellido?"
+  - position: 8
+    sentence: "Tras dos semanas de prueba, la empresa confirmó su {{blank}} para el puesto."
+    hint_general: "Quedó demostrado que esa persona es capaz de hacer el trabajo."
+    explanation: "Aptitud: quedó demostrado que es capaz de hacer el trabajo. «Actitud» sería su forma de comportarse, y «empeño» solo dice cuánto se esforzó."
+    options:
+      - position: 1
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «actitud» es cómo se comportó durante esas semanas, y lo que la empresa confirma es que sabe hacer el trabajo."
+        hint_specific: "La actitud se nota en el ánimo diario. ¿Qué confirma una prueba de dos semanas?"
+      - position: 2
+        text: "empeño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Empeño» dice cuánto se esforzó alguien, y esforzarse mucho no demuestra todavía que el trabajo salga bien."
+        hint_specific: "El empeño mide el esfuerzo. ¿Esforzarse mucho basta para confirmar a alguien?"
+      - position: 3
+        text: "aptitud"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos columnas"
+    body: "Le pidieron a Blanca que se describiera en dos líneas. Ella respondió: «Mi aptitud más fuerte es ordenar datos desordenados. Lo que más me cuesta es hablar delante de mucha gente». La entrevistadora agradeció la claridad y siguió por ahí."
+    before_phrase: "Se me da bien lo de los datos."
+    after_phrase: "Mi aptitud más fuerte es ordenar datos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El chico que dibuja"
+    body: "Ernesto llevaba meses preocupado por las notas de su hijo. Su hermana le enseñó una carpeta de dibujos: «Mira esto. Tiene una aptitud que nadie está mirando». Esa tarde, padre e hijo hablaron por primera vez del mismo tema sin discutir."
+    before_phrase: "Dibuja muy bien, pero eso no cuenta."
+    after_phrase: "Tiene una aptitud que nadie está mirando."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "Repartir el proyecto"
+    body: "El equipo tenía que dividirse el trabajo y nadie quería la parte de los números. Olga lo resolvió en voz alta: «Samuel tiene aptitud para eso y a mí se me da mejor el cliente». Terminaron media hora antes de lo previsto."
+    before_phrase: "A Samuel se le dan mejor esas cosas."
+    after_phrase: "Samuel tiene aptitud para eso."
+metrics:
+  zipf_overall: 3.9607
+  dispersion_dp: 0.2143
+  pedantry_proxy: 0.4170
+  family_size: 6
+provenance:
+  generator: "flui authoring agent — theme paronimos (aptitud / actitud)"
+  gate: null
+  checked_on: "2026-09-14"

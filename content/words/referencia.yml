@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 5027
+slug: "referencia"
+status: "draft"
+lemma: "referencia"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "fe"
+  - "ren"
+  - "cia"
+stressed_syllable: 3
+ipa_latam: "[re.feˈɾen.sja]"
+ipa_es: "[re.feˈɾen.θja]"
+explanation: "Persona que puede hablar bien de tu trabajo porque lo ha visto."
+example_sentence: "Dejé dos referencias y las dos cogieron el teléfono el mismo día."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Avisa antes a quien vas a poner: una persona preparada cuenta un caso concreto en vez de decir que eres majo."
+when_not_to_use: "No la uses para un conocido que nunca te ha visto trabajar; aquí hace falta alguien que pueda contar algo tuyo."
+collocations:
+  - "pedir referencias"
+  - "dejar dos referencias"
+  - "una buena referencia"
+replaces:
+  - before: "Alguien que responda por mí"
+    after: "Una referencia"
+  - before: "Puedes preguntarle a mi antigua jefa"
+    after: "Te dejo a mi antigua jefa como referencia"
+  - before: "Me pidieron gente que me conociera del trabajo"
+    after: "Me pidieron referencias"
+family:
+  - "referir"
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+tags:
+  comodin:
+    - "contacto"
+  funcion:
+    - "avalar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reverencia"
+    difference: "Una «reverencia» es la inclinación del cuerpo para saludar con respeto; la otra palabra es la persona que responde por tu trabajo."
+    memory_trick: "La reverencia se hace con la espalda; lo otro se hace por teléfono."
+  - confused_with: "preferencia"
+    difference: "Una «preferencia» es lo que eliges antes que otra cosa; la otra palabra no es una elección tuya, es alguien que te avala."
+    memory_trick: "La preferencia la eliges tú; lo otro habla de ti."
+exercises:
+  - position: 1
+    sentence: "Leire dejó dos {{blank}} en el formulario y las dos cogieron el teléfono el mismo día."
+    hint_general: "Puso dos personas que podían responder por su trabajo."
+    explanation: "Referencias: personas que responden por su trabajo. «Reverencias» son inclinaciones del cuerpo al saludar, y «padrinos» es coloquial y sugiere enchufe."
+    options:
+      - position: 1
+        text: "reverencias"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Las «reverencias» son inclinaciones del cuerpo para saludar con respeto, y en un formulario no caben inclinaciones."
+        hint_specific: "Una reverencia se hace con la espalda. ¿Qué escribió Leire en el papel?"
+      - position: 2
+        text: "referencias"
+        is_correct: true
+      - position: 3
+        text: "padrinos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Padrinos» es coloquial y sugiere que alguien te coloca por favores, y estas dos personas solo cuentan lo que le han visto hacer."
+        hint_specific: "Un padrino mueve hilos. ¿Qué hacen esas dos personas al coger el teléfono?"
+  - position: 2
+    sentence: "Antes de poner a alguien como {{blank}}, avísale: así prepara un caso concreto en vez de improvisar."
+    hint_general: "Avisa a quien vaya a responder por ti para que lo prepare."
+    explanation: "Referencia: quien responde por ti. «Reverencia» es la inclinación del cuerpo al saludar, y un «contacto» es cualquiera que tengas en la agenda."
+    options:
+      - position: 1
+        text: "referencia"
+        is_correct: true
+      - position: 2
+        text: "reverencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «reverencia» es la inclinación del cuerpo para saludar, y aquí se habla de una persona a la que hay que avisar."
+        hint_specific: "Una reverencia se hace ante un rey o en un teatro. ¿A quién hay que avisar aquí?"
+      - position: 3
+        text: "contacto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «contacto» es cualquiera que tengas en la agenda, y aquí hace falta alguien que haya visto cómo trabajas."
+        hint_specific: "Un contacto puede no saber nada de ti. ¿Qué tiene que preparar esta persona?"
+  - position: 3
+    sentence: "Le pidieron una {{blank}} y solo se le ocurrió un primo que nunca la había visto trabajar."
+    hint_general: "Le pidieron alguien que respondiera por su trabajo y no tenía a nadie."
+    explanation: "Referencia: alguien que responda por su trabajo. «Preferencia» sería lo que ella elige antes que otra cosa, y una «amistad» no garantiza haberla visto trabajar."
+    options:
+      - position: 1
+        text: "preferencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «preferencia» es lo que eliges antes que otra cosa, y aquí lo que se pide es una persona que responda por ella."
+        hint_specific: "Una preferencia se elige entre opciones. ¿Qué le pidieron que aportara?"
+      - position: 2
+        text: "referencia"
+        is_correct: true
+      - position: 3
+        text: "amistad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «amistad» no garantiza haber visto trabajar a nadie, y ese es justo el problema del primo."
+        hint_specific: "Un amigo te quiere, pero puede no saber qué haces. ¿Qué le falta al primo?"
+  - position: 4
+    sentence: "La mejor {{blank}} de Orlando es una clienta a la que dejó de facturar cuando vio que no le hacía falta."
+    hint_general: "Quien mejor habla de él es una clienta con un motivo concreto."
+    explanation: "Referencia: quien mejor habla de su trabajo. «Diferencia» es aquello en lo que dos cosas no coinciden, y un «testimonio» es palabra de juzgado y suena a declaración formal."
+    options:
+      - position: 1
+        text: "diferencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «diferencia» es aquello en lo que dos cosas no coinciden, y aquí se habla de una persona que lo recomienda."
+        hint_specific: "Una diferencia se mide entre dos cosas. ¿Quién habla bien de Orlando?"
+      - position: 2
+        text: "testimonio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Testimonio» es palabra de juzgado y suena a declaración formal ante una autoridad, y esto es una llamada sobre un trabajo."
+        hint_specific: "Un testimonio se presta bajo juramento. ¿Dónde ocurre esta recomendación?"
+      - position: 3
+        text: "referencia"
+        is_correct: true
+  - position: 5
+    sentence: "Delfina guarda el teléfono de cada jefe con quien acabó bien, por si algún día necesita una {{blank}}."
+    hint_general: "Guarda contactos por si alguna vez necesita que respondan por ella."
+    explanation: "Referencia: alguien que responda por ella. «Reverencia» es la inclinación del cuerpo al saludar, y una «opinión» la da cualquiera, la haya visto trabajar o no."
+    options:
+      - position: 1
+        text: "referencia"
+        is_correct: true
+      - position: 2
+        text: "reverencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «reverencia» es una inclinación del cuerpo para saludar, y para eso no hace falta guardar ningún teléfono."
+        hint_specific: "Una reverencia se hace en persona. ¿Para qué guarda Delfina esos números?"
+      - position: 3
+        text: "opinión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «opinión» la puede dar cualquiera sin haberte visto trabajar, y ella guarda justo a los jefes con quienes trabajó."
+        hint_specific: "Una opinión no necesita pruebas. ¿A quién guarda ella en la agenda?"
+  - position: 6
+    sentence: "Poner como {{blank}} a alguien con quien discutiste el último mes es un riesgo innecesario."
+    hint_general: "Es arriesgado elegir a quien acabó enfadado contigo."
+    explanation: "Referencia: quien va a hablar de tu trabajo. «Preferencia» sería lo que eliges antes que otra cosa, y un «cliente» puede no haber tratado contigo directamente."
+    options:
+      - position: 1
+        text: "preferencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «preferencia» es lo que eliges antes que otra cosa, y aquí lo que se elige es a quién van a llamar para preguntar por ti."
+        hint_specific: "Una preferencia ordena opciones. ¿Qué papel tiene esa persona en la frase?"
+      - position: 2
+        text: "referencia"
+        is_correct: true
+      - position: 3
+        text: "cliente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cliente» puede no haber tratado nunca contigo directamente, y aquí se habla de alguien que va a contar cómo trabajas."
+        hint_specific: "Un cliente compra, y a veces ni te ve. ¿Qué va a hacer esta persona?"
+  - position: 7
+    sentence: "Marina consiguió el puesto por una {{blank}} de dos minutos: su antigua jefa contó una sola historia."
+    hint_general: "Bastaron dos minutos de alguien que respondió por ella."
+    explanation: "Referencia: alguien que respondió por ella. «Reverencia» es la inclinación del cuerpo al saludar, y una «transferencia» es un envío de dinero de una cuenta a otra."
+    options:
+      - position: 1
+        text: "transferencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «transferencia» es un envío de dinero de una cuenta a otra, y aquí lo que se envía es una historia contada por teléfono."
+        hint_specific: "Una transferencia aparece en el banco. ¿Qué duró dos minutos?"
+      - position: 2
+        text: "referencia"
+        is_correct: true
+      - position: 3
+        text: "reverencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «reverencia» es una inclinación del cuerpo al saludar, y su antigua jefa lo que hizo fue contar una historia."
+        hint_specific: "Una reverencia no lleva palabras. ¿Qué contó la antigua jefa?"
+  - position: 8
+    sentence: "Una buena {{blank}} cuenta un caso; una mala se limita a decir que eres buena persona."
+    hint_general: "Quien responde bien por ti cuenta un caso concreto."
+    explanation: "Referencia: quien responde por ti. «Diferencia» es aquello en lo que dos cosas no coinciden, y un «currículo» es el papel que escribes tú, no lo que dice otra persona."
+    options:
+      - position: 1
+        text: "referencia"
+        is_correct: true
+      - position: 2
+        text: "diferencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «diferencia» es aquello en lo que dos cosas no coinciden, y aquí se comparan dos maneras de hablar de alguien."
+        hint_specific: "Una diferencia no habla por teléfono. ¿Quién cuenta el caso en la frase?"
+      - position: 3
+        text: "currículo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «currículo» lo escribes tú, y la frase compara lo que dice de ti otra persona."
+        hint_specific: "Un currículo lo redacta el candidato. ¿Quién habla en esta comparación?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos minutos que decidieron"
+    body: "A Marina la llamaron el martes y el miércoles llamaron a su antigua jefa. Fueron dos minutos: contó cómo Marina resolvió una entrega en agosto con media plantilla de vacaciones. El jueves tenía el puesto. «Esa referencia valió más que mi currículo», dice."
+    before_phrase: "Pueden preguntar a quien quieran de mi trabajo anterior."
+    after_phrase: "Le dejo una referencia que estuvo allí en agosto."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Avisar antes"
+    body: "Leire puso a dos personas y las avisó por mensaje el mismo día: «Te pueden llamar; si lo hacen, cuenta lo del traslado del almacén». Las dos cogieron el teléfono y las dos contaron esa historia. Quien preguntaba colgó con una idea clara, no con un elogio general."
+    before_phrase: "He puesto tu nombre, espero que no te importe."
+    after_phrase: "Te he puesto como referencia; te aviso por si llaman."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La clienta de Orlando"
+    body: "Orlando dejó de facturar a una clienta el mes en que vio que no le hacía falta el servicio. Ella no lo olvidó. Desde entonces es su mejor referencia en el barrio y él no ha tenido que anunciarse nunca más."
+    before_phrase: "Es que ella siempre habla muy bien de mí."
+    after_phrase: "Es mi mejor referencia en el barrio."
+metrics:
+  zipf_overall: 5.1284
+  dispersion_dp: 0.0873
+  pedantry_proxy: 0.4948
+  family_size: 87
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

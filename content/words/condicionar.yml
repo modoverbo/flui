@@ -86,9 +86,9 @@ exercises:
         text: "condicionó"
         is_correct: true
   - position: 3
-    sentence: "Si {{blank}} tu ayuda a que te devuelvan el favor, deja de ser ayuda y pasa a ser un trato."
+    sentence: "Si {{blank}} tu ayuda a que te devuelvan el favor, deja de ser ayuda y pasa a ser un trato, y el otro queda libre de aceptarlo o de decir que no."
     hint_general: "Pedir algo a cambio convierte la ayuda en un intercambio."
-    explanation: "Condicionas: pides algo a cambio de ayudar. «Acondicionas» sería preparar un lugar, y «atas» dice algo parecido, pero suena demasiado coloquial y algo brusco."
+    explanation: "Condicionas: pides algo a cambio y el otro decide. «Acondicionas» sería preparar un lugar, y «atas» sonaría a sujetar al otro sin dejarle salida."
     options:
       - position: 1
         text: "condicionas"
@@ -103,8 +103,8 @@ exercises:
         text: "atas"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Atar» es muy coloquial y suena a sujetar a alguien con una cuerda; para una idea así resulta brusco."
-        hint_specific: "«Atar» suena a cuerda y a brusquedad. ¿Encaja al hablar de un favor?"
+        why_not: "«Atar» sujeta al otro y no le deja escapatoria, y el final de la frase dice que puede decir que no."
+        hint_specific: "«Atar» no deja escapatoria. ¿Qué puede hacer el otro con ese trato?"
   - position: 4
     sentence: "El equipo de Iván {{blank}} su parte del trabajo a que llegaran antes los permisos del ayuntamiento."
     hint_general: "Su parte depende de que lleguen primero esos permisos."
@@ -186,9 +186,9 @@ exercises:
         text: "condiciona"
         is_correct: true
   - position: 8
-    sentence: "La respuesta de Natalia fue un sí {{blank}}: aceptaba el puesto si el horario cambiaba."
+    sentence: "La respuesta de Natalia fue un sí {{blank}}: le encantaba el puesto y lo aceptaba en cuanto le cambiaran el horario."
     hint_general: "Dice que sí, aunque su sí depende de una cosa concreta."
-    explanation: "Condicionado: su sí depende del horario. «Acondicionado» se dice de un local preparado, y «seguro» diría que acepta sin poner ningún requisito."
+    explanation: "Condicionado: su sí depende del horario. «Acondicionado» se dice de un local preparado, y «tibio» diría que el puesto no le entusiasmaba."
     options:
       - position: 1
         text: "condicionado"
@@ -200,11 +200,11 @@ exercises:
         why_not: "«Acondicionado» se dice de un local que ya está listo para usarse; una respuesta no se prepara de esa manera."
         hint_specific: "Acondicionado se dice de un local. ¿Una respuesta es un local?"
       - position: 3
-        text: "seguro"
+        text: "tibio"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Seguro» diría que acepta sin pedir nada; los dos puntos de la frase anuncian justo el requisito que pone."
-        hint_specific: "Un sí seguro no pide nada. ¿Natalia pide algo después de los dos puntos?"
+        distractor_type: "register"
+        why_not: "«Tibio» diría que el puesto le daba un poco igual, y la frase cuenta que le encantaba."
+        hint_specific: "«Tibio» va de poco entusiasmo. ¿Qué le parecía a Natalia ese puesto?"
 readings:
   - position: 1
     scene: "trabajo"

@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 5014
+slug: "respiro"
+status: "draft"
+lemma: "respiro"
+part_of_speech: "sustantivo"
+syllables:
+  - "res"
+  - "pi"
+  - "ro"
+stressed_syllable: 2
+ipa_latam: "[resˈpi.ɾo]"
+ipa_es: "[resˈpi.ɾo]"
+explanation: "Rato corto de descanso en medio de algo que cansa mucho."
+example_sentence: "Pedí un respiro de dos semanas y volví con la cabeza clara."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para pedir sin sonar a abandono: pides un rato, no la salida."
+when_not_to_use: "No la uses para unas vacaciones largas ni para dejar algo del todo; esto dura poco y se vuelve."
+collocations:
+  - "pedir un respiro"
+  - "darse un respiro"
+  - "un respiro de dos semanas"
+replaces:
+  - before: "Necesito parar un poco"
+    after: "Necesito un respiro"
+  - before: "Dame un par de semanas de tregua"
+    after: "Dame un respiro de dos semanas"
+  - before: "Este mes por fin hemos podido levantar la cabeza"
+    after: "Este mes por fin hemos tenido un respiro"
+family:
+  - "respirar"
+  - "respiración"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 2
+tags:
+  comodin:
+    - "parar"
+  funcion:
+    - "pedir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "suspiro"
+    difference: "Un «suspiro» es el soplo que sueltas cuando algo te alivia o te pesa; la otra palabra es un rato entero de calma."
+    memory_trick: "El suspiro dura un segundo; lo otro dura una tarde."
+  - confused_with: "retiro"
+    difference: "Un «retiro» es apartarse del mundo durante un tiempo largo; la otra palabra es una pausa corta sin irse a ninguna parte."
+    memory_trick: "En el retiro te vas; en lo otro solo paras."
+exercises:
+  - position: 1
+    sentence: "Perla pidió un {{blank}} de dos semanas y volvió con la cabeza mucho más clara."
+    hint_general: "Paró un rato corto y regresó mejor."
+    explanation: "Respiro: paró un rato corto y volvió. «Suspiro» es el soplo de un segundo, y «asueto» es palabra de oficina antigua y suena a papeleo."
+    options:
+      - position: 1
+        text: "suspiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «suspiro» dura un segundo y sale del pecho, y aquí se habla de dos semanas enteras."
+        hint_specific: "Un suspiro cabe en una exhalación. ¿Cuánto duró lo que pidió Perla?"
+      - position: 2
+        text: "respiro"
+        is_correct: true
+      - position: 3
+        text: "asueto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asueto» es palabra de oficina antigua y suena a permiso con papeleo, y esto es una petición hecha de palabra."
+        hint_specific: "«Asueto» aparece en circulares viejas. ¿Cómo pidió ella esas dos semanas?"
+  - position: 2
+    sentence: "Entre el traslado y las obras, este mes por fin hemos tenido un {{blank}}."
+    hint_general: "Tras semanas duras, por fin ha habido calma un rato."
+    explanation: "Respiro: por fin un rato de calma. «Retiro» sería apartarse del mundo, y «alivio» nombra lo que sientes, no el rato de calma."
+    options:
+      - position: 1
+        text: "respiro"
+        is_correct: true
+      - position: 2
+        text: "retiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «retiro» es apartarse del mundo una temporada, y aquí nadie se va: siguen con el traslado y las obras."
+        hint_specific: "En un retiro te marchas lejos. ¿Alguien se ha ido en esta frase?"
+      - position: 3
+        text: "alivio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «alivio» es lo que sientes cuando algo mejora, y la frase nombra el trozo de mes en que hubo calma."
+        hint_specific: "El alivio se siente por dentro. ¿La frase mide un sentimiento o un tiempo?"
+  - position: 3
+    sentence: "Gaspar dijo que no a la mudanza de su primo porque necesitaba un {{blank}} después de tres fines de semana seguidos."
+    hint_general: "Rechazó la ayuda porque necesitaba parar un rato."
+    explanation: "Respiro: necesitaba parar un rato. «Suspiro» dura un segundo, y «siesta» es coloquial y solo habla de dormir un rato después de comer."
+    options:
+      - position: 1
+        text: "siesta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Siesta» es coloquial y habla de dormir un rato después de comer, y lo que él necesita son días sin compromisos."
+        hint_specific: "Una siesta cabe en una hora y en un sofá. ¿Cuántos fines de semana lleva Gaspar?"
+      - position: 2
+        text: "respiro"
+        is_correct: true
+      - position: 3
+        text: "suspiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «suspiro» es un soplo que sale del pecho, y nadie rechaza una mudanza para poder soltar un soplo."
+        hint_specific: "Un suspiro no necesita agenda. ¿Qué es lo que Gaspar no tiene desde hace tres semanas?"
+  - position: 4
+    sentence: "Cuando el proyecto se alargó otro mes, el equipo dejó de tener un solo {{blank}} entre entrega y entrega."
+    hint_general: "Ya no quedaba ni un rato de calma entre una entrega y otra."
+    explanation: "Respiro: el rato de calma entre entregas. «Retiro» sería irse una temporada, y «hueco» es solo un espacio libre en la agenda, no calma."
+    options:
+      - position: 1
+        text: "retiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «retiro» es irse del mundo una temporada, y este equipo sigue entregando trabajo sin parar."
+        hint_specific: "En un retiro nadie entrega nada. ¿Qué sigue haciendo el equipo?"
+      - position: 2
+        text: "hueco"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «hueco» es un espacio libre en la agenda, y se puede tener un hueco y pasarlo corriendo de un sitio a otro."
+        hint_specific: "Un hueco lo llenas con otra cosa. ¿Qué es lo que le falta a este equipo?"
+      - position: 3
+        text: "respiro"
+        is_correct: true
+  - position: 5
+    sentence: "Dale un {{blank}} a tu hermana: lleva seis meses con la mudanza y el trabajo a la vez."
+    hint_general: "Pide que la dejen parar un rato después de meses duros."
+    explanation: "Respiro: dejarla parar un rato. «Suspiro» dura un segundo, y «permiso» sería una autorización formal, no un descanso."
+    options:
+      - position: 1
+        text: "respiro"
+        is_correct: true
+      - position: 2
+        text: "suspiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «suspiro» es un soplo de un segundo, y lo que se pide aquí es aflojar durante una temporada."
+        hint_specific: "Un suspiro se suelta y ya está. ¿Cuánto lleva la hermana así?"
+      - position: 3
+        text: "permiso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «permiso» es una autorización formal, y aquí no hay nadie que autorice nada: se pide aflojar la presión."
+        hint_specific: "Un permiso lo firma alguien con cargo. ¿Quién autoriza en esta escena?"
+  - position: 6
+    sentence: "Aquella lluvia de octubre dio un {{blank}} a los campos después de un verano sin una gota."
+    hint_general: "Tras un verano seco, la lluvia trajo un descanso."
+    explanation: "Respiro: un descanso para los campos secos. «Retiro» sería apartarse del mundo, y «silencio» habla de ruido, no de agua."
+    options:
+      - position: 1
+        text: "retiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «retiro» es apartarse del mundo una temporada, y unos campos no se apartan a ninguna parte."
+        hint_specific: "Un retiro lo hace una persona. ¿Quién recibe la lluvia aquí?"
+      - position: 2
+        text: "respiro"
+        is_correct: true
+      - position: 3
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «silencio» es ausencia de ruido, y lo que faltaba en esos campos era agua, no calma sonora."
+        hint_specific: "El silencio se mide en ruido. ¿Qué faltaba durante el verano?"
+  - position: 7
+    sentence: "Ofelia se dio un {{blank}} a mitad de la prueba de conducir y el instructor se lo agradeció."
+    hint_general: "Paró un momento a mitad de la prueba y le vino bien."
+    explanation: "Respiro: paró un momento a mitad. «Suspiro» sería solo un soplo, y «asueto» es palabra de oficina antigua y habla de días libres."
+    options:
+      - position: 1
+        text: "asueto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asueto» es palabra de oficina antigua y habla de días libres de trabajo, y esto ocurre dentro de un coche en marcha."
+        hint_specific: "«Asueto» sale en un calendario laboral. ¿Dónde está Ofelia cuando para?"
+      - position: 2
+        text: "suspiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «suspiro» es un soplo que sale del pecho, y el instructor no agradece un soplo, sino una parada."
+        hint_specific: "Un suspiro no detiene un coche. ¿Qué hizo ella a mitad de la prueba?"
+      - position: 3
+        text: "respiro"
+        is_correct: true
+  - position: 8
+    sentence: "Pedir un {{blank}} no es dejarlo: es parar dos semanas y volver con la cabeza en su sitio."
+    hint_general: "Parar un rato y volver no es lo mismo que abandonar."
+    explanation: "Respiro: parar un rato y volver. «Retiro» sería irse del todo una temporada, y unas «vacaciones» se piden por calendario, no por cansancio."
+    options:
+      - position: 1
+        text: "respiro"
+        is_correct: true
+      - position: 2
+        text: "retiro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «retiro» es irse del mundo una temporada, y la frase insiste en que se vuelve a las dos semanas."
+        hint_specific: "En un retiro te marchas de verdad. ¿Qué dice la frase que pasa después?"
+      - position: 3
+        text: "vacaciones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Unas «vacaciones» se piden por calendario y con fechas cerradas, y esto se pide porque ya no se puede más."
+        hint_specific: "Las vacaciones se planean en enero. ¿Por qué se pide lo de la frase?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Tres fines de semana"
+    body: "A Gaspar le pidieron ayuda para la tercera mudanza seguida. Estuvo a punto de decir que sí y luego se oyó a sí mismo suspirar. «Este no puedo; necesito un respiro». Su primo contestó con un audio de cuatro segundos: «Claro, hombre». Nadie se enfadó y el domingo durmió hasta las diez."
+    before_phrase: "Es que estoy reventado, pero bueno, voy."
+    after_phrase: "Este no puedo: necesito un respiro."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La lluvia de octubre"
+    body: "En el pueblo llevaban todo el verano hablando del agua. Cuando por fin llovió tres días seguidos, el vecino del huerto lo resumió en la puerta del bar: «Esto es un respiro, no la solución». Nadie discutió, pero esa tarde se quedaron todos mirando el cielo con mejor cara."
+    before_phrase: "Menos mal que por fin ha caído algo."
+    after_phrase: "Esto es un respiro, no la solución."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos semanas y vuelvo"
+    body: "Perla llevaba once meses sin una semana entera libre y empezaba a equivocarse en cosas tontas. Lo dijo así: «Pido un respiro de dos semanas y vuelvo». Su jefa movió una entrega y aceptó. Volvió el quince, con la cabeza clara y una lista de tres cosas que había que cambiar."
+    before_phrase: "No sé si aguanto mucho más así."
+    after_phrase: "Pido un respiro de dos semanas y vuelvo."
+metrics:
+  zipf_overall: 4.4276
+  dispersion_dp: 0.1179
+  pedantry_proxy: 0.4523
+  family_size: 47
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

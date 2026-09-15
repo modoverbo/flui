@@ -1,0 +1,240 @@
+schema_version: 1
+slug: "cesion"
+status: "draft"
+lemma: "cesión"
+part_of_speech: "sustantivo"
+syllables:
+  - "ce"
+  - "sión"
+stressed_syllable: 2
+ipa_latam: "[seˈsjon]"
+ipa_es: "[θeˈsjon]"
+explanation: "Acto de pasar a otra persona un derecho, un bien o un turno propio."
+example_sentence: "La cesión del local a la asociación se firmó en diez minutos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Deja claro que algo pasa a otras manos con permiso y por escrito, sin regalar nada para siempre."
+when_not_to_use: "No la uses para el rato en que un grupo se reúne a trabajar; eso es una «sesión»."
+collocations:
+  - "la cesión de un derecho"
+  - "una cesión temporal"
+  - "firmar la cesión"
+replaces:
+  - before: "Firmamos la sesión del local"
+    after: "Firmamos la cesión del local"
+  - before: "Le pasamos el turno de guardia por escrito"
+    after: "Hicimos una cesión del turno de guardia"
+  - before: "Les dejamos usar la marca un año"
+    after: "Acordamos una cesión de la marca por un año"
+family:
+  - "ceder"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin: ["paso"]
+  funcion: ["precisar"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sesión"
+    difference: "Una «sesión» es el rato en que un grupo se reúne a trabajar; la otra palabra es el traspaso de algo que era tuyo."
+    memory_trick: "La sesión ocupa una hora; la otra cambia de dueño."
+  - confused_with: "concesión"
+    difference: "Una «concesión» es un permiso que da quien manda, o algo que aceptas para cerrar un trato; la otra palabra traspasa algo concreto."
+    memory_trick: "La concesión la otorga quien manda; la otra la firman dos iguales."
+exercises:
+  - position: 1
+    sentence: "La {{blank}} del local a la asociación se firmó en diez minutos y sin abogados."
+    hint_general: "Algo que era de uno pasa a manos de otro, con papeles de por medio."
+    explanation: "Cesión: el local pasa a otras manos por escrito. «Sesión» sería el rato de una reunión, y «donación» regalaría el local para siempre."
+    options:
+      - position: 1
+        text: "sesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «sesión» es el rato en que un grupo se reúne, y aquí lo que se firma es el paso del local a otras manos."
+        hint_specific: "Una sesión dura un rato y termina. ¿Qué cambia de dueño en esta escena?"
+      - position: 2
+        text: "cesión"
+        is_correct: true
+      - position: 3
+        text: "donación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «donación» regala el local para siempre y sin vuelta, y el texto no dice que el dueño renuncie a recuperarlo."
+        hint_specific: "Donar es desprenderse del todo. ¿Dice la frase que el dueño lo pierde para siempre?"
+  - position: 2
+    sentence: "Roberto aceptó una {{blank}} temporal de la plaza de garaje mientras durara la obra."
+    hint_general: "Alguien le deja usar algo suyo durante un tiempo, con acuerdo de por medio."
+    explanation: "Cesión: la plaza pasa a su uso mientras dura la obra. «Sesión» sería el rato de una reunión, y «concesión» sería un permiso otorgado por quien manda."
+    options:
+      - position: 1
+        text: "concesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «concesión» la otorga quien tiene autoridad sobre algo público, y aquí hay dos vecinos que se ponen de acuerdo."
+        hint_specific: "La concesión la da quien manda. ¿Hay alguna autoridad en este trato entre vecinos?"
+      - position: 2
+        text: "cesión"
+        is_correct: true
+      - position: 3
+        text: "sesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «sesión» es un rato de trabajo en común, y una plaza de garaje no se reúne con nadie."
+        hint_specific: "Una sesión se celebra y se acaba. ¿Qué se usa aquí durante meses?"
+  - position: 3
+    sentence: "En el contrato aparece la {{blank}} de los derechos de la foto, y nadie la había leído."
+    hint_general: "El contrato traspasa a otro lo que antes era del autor."
+    explanation: "Cesión: los derechos pasan a otro. «Sesión» sería el rato de una reunión, y «renuncia» dejaría esos derechos sin dueño, no en otras manos."
+    options:
+      - position: 1
+        text: "cesión"
+        is_correct: true
+      - position: 2
+        text: "renuncia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «renuncia» deja los derechos sin dueño, y el contrato dice a quién pasan: no los suelta al aire."
+        hint_specific: "Renunciar es soltar sin más. ¿Los derechos quedan sueltos o llegan a alguien?"
+      - position: 3
+        text: "sesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «sesión» es un rato de reunión, y un contrato no recoge ratos: recoge lo que cambia de manos."
+        hint_specific: "Una sesión se convoca y se cierra. ¿Qué cambia de dueño en ese contrato?"
+  - position: 4
+    sentence: "Tras la {{blank}} del turno de guardia, Claudia llegó al cumpleaños de su hija."
+    hint_general: "Alguien le pasó a otra persona algo que le tocaba a él."
+    explanation: "Cesión: el turno pasó a otra persona. «Concesión» sería un permiso otorgado por quien manda, y «permuta» implica que los dos cambian algo, no que uno lo entregue."
+    options:
+      - position: 1
+        text: "permuta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Permuta» pertenece al lenguaje administrativo y exige que los dos intercambien turnos, y aquí solo uno entrega el suyo."
+        hint_specific: "«Permuta» suena a ventanilla y a formulario. ¿Los dos cambian algo o solo uno entrega?"
+      - position: 2
+        text: "cesión"
+        is_correct: true
+      - position: 3
+        text: "concesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «concesión» la otorga quien tiene autoridad, y un turno de guardia lo pasa un compañero a otro."
+        hint_specific: "La concesión viene de arriba. ¿Quién le pasa el turno a Claudia?"
+  - position: 5
+    sentence: "La empresa pidió la {{blank}} del nombre comercial durante un año entero."
+    hint_general: "Quieren usar algo ajeno con permiso y por un plazo fijo."
+    explanation: "Cesión: el nombre pasa a su uso por un año. «Sesión» sería el rato de una reunión, y «reserva» guardaría el nombre para el propio dueño."
+    options:
+      - position: 1
+        text: "sesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «sesión» es un rato de reunión, y un nombre comercial no se reúne: se usa o no se usa."
+        hint_specific: "Una sesión ocupa una tarde. ¿Qué se pide aquí durante un año?"
+      - position: 2
+        text: "reserva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «reserva» guarda el nombre para su propio dueño, y aquí lo que se pide es que lo use otra empresa."
+        hint_specific: "Reservar es guardarlo para ti. ¿Quién quiere usar el nombre en esta frase?"
+      - position: 3
+        text: "cesión"
+        is_correct: true
+  - position: 6
+    sentence: "Nadie esperaba una {{blank}} tan generosa por parte del dueño del terreno."
+    hint_general: "Entregó a otros el uso de algo suyo, y a nadie se le había ocurrido pedirlo."
+    explanation: "Cesión: entregó el uso de su terreno. «Sesión» sería el rato de una reunión, y «propina» es el dinero suelto que se deja por un servicio."
+    options:
+      - position: 1
+        text: "cesión"
+        is_correct: true
+      - position: 2
+        text: "sesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «sesión» es un rato de reunión, y lo que sorprende aquí es que el dueño entregue el uso del terreno."
+        hint_specific: "Una sesión se celebra un día. ¿Qué entregó el dueño del terreno?"
+      - position: 3
+        text: "propina"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Propina» es coloquial y nombra el dinero suelto que se deja por un servicio, no el traspaso del uso de un terreno."
+        hint_specific: "La propina se deja sobre una mesa. ¿Cabe un terreno en ese gesto?"
+  - position: 7
+    sentence: "Firmamos la {{blank}} del equipo de sonido al centro de barrio hasta diciembre."
+    hint_general: "Se entrega el uso de algo propio con una fecha de vuelta."
+    explanation: "Cesión: el equipo pasa a otro uso hasta diciembre. «Sesión» sería el rato de una reunión, y «entrega» sería darlo en mano sin decir que vuelve."
+    options:
+      - position: 1
+        text: "sesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «sesión» es un rato de trabajo en común, y lo que se firma aquí es el uso del equipo hasta diciembre."
+        hint_specific: "Una sesión empieza y acaba el mismo día. ¿Hasta cuándo dura lo firmado?"
+      - position: 2
+        text: "cesión"
+        is_correct: true
+      - position: 3
+        text: "entrega"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «entrega» es dar algo en mano y punto, y no dice que el equipo siga siendo tuyo ni que vuelva en diciembre."
+        hint_specific: "Entregar no fija una vuelta. ¿Qué dice la frase que pasa en diciembre?"
+  - position: 8
+    sentence: "Lo que parecía un favor entre vecinos acabó siendo una {{blank}} con firma y fecha."
+    hint_general: "El trato informal terminó convertido en un traspaso formal de algo."
+    explanation: "Cesión: el favor acabó en un traspaso con firma. «Concesión» sería un permiso otorgado por quien manda, y «dádiva» suena antigua y describe un regalo generoso."
+    options:
+      - position: 1
+        text: "dádiva"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dádiva» suena antigua y solemne, y nombra un regalo generoso, no un documento con firma y fecha entre vecinos."
+        hint_specific: "«Dádiva» suena a texto de otro siglo. ¿El final es un regalo o un documento?"
+      - position: 2
+        text: "concesión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «concesión» la otorga quien tiene autoridad sobre algo, y aquí solo hay dos vecinos firmando un papel."
+        hint_specific: "La concesión baja desde una autoridad. ¿Quién firma en esta escena?"
+      - position: 3
+        text: "cesión"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El local vacío"
+    body: "La planta baja llevaba dos años cerrada. Lorena propuso en la junta: «Hagamos una cesión por dos años al taller de costura del barrio, con revisión anual». Nadie se opuso y el local abrió en mayo."
+    before_phrase: "Podríamos dejárselo un tiempo y ya veremos."
+    after_phrase: "Hagamos una cesión por dos años."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El equipo de sonido"
+    body: "El grupo de música ensayaba sin altavoces desde enero. Vicente escribió al grupo: «Propongo una cesión del equipo hasta diciembre, firmada, para que nadie se enfade luego». Firmaron en una servilleta y lo cumplieron."
+    before_phrase: "Se lo presto y ya veremos hasta cuándo."
+    after_phrase: "Propongo una cesión hasta diciembre."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La casa del pueblo"
+    body: "Los tres hermanos discutían quién usaba la casa en agosto. Natalia sacó una hoja: «Propongo una cesión por turnos, escrita, para no repetir esta conversación cada año». Lo firmaron esa misma tarde y la comida terminó tranquila."
+    before_phrase: "Este año te toca a ti y el que viene ya veremos."
+    after_phrase: "Propongo una cesión por turnos, escrita."
+metrics:
+  zipf_overall: 3.9054
+  dispersion_dp: 0.2895
+  pedantry_proxy: 0.4807
+  family_size: 3
+provenance:
+  generator: "flui authoring agent — theme paronimos (cesión / sesión)"
+  gate: null
+  checked_on: "2026-09-14"

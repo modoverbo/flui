@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 5012
+slug: "firmeza"
+status: "draft"
+lemma: "firmeza"
+part_of_speech: "sustantivo"
+syllables:
+  - "fir"
+  - "me"
+  - "za"
+stressed_syllable: 2
+ipa_latam: "[fiɾˈme.sa]"
+ipa_es: "[fiɾˈme.θa]"
+explanation: "Fuerza tranquila con la que sostienes lo que has dicho, sin gritar ni ceder."
+example_sentence: "Repitió su respuesta con firmeza y nadie volvió a insistir."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es la palabra que separa el «no» del enfado: se puede sostener algo sin subir el tono ni una vez."
+when_not_to_use: "No la uses para quien no escucha nada; aquí se sostiene una postura, no se cierra la puerta a pensar."
+collocations:
+  - "responder con firmeza"
+  - "mantener la firmeza"
+  - "una firmeza tranquila"
+replaces:
+  - before: "Se mantuvo en sus trece"
+    after: "Se mantuvo con firmeza"
+  - before: "Lo dijo en serio y no se echó atrás"
+    after: "Lo dijo con firmeza"
+  - before: "Hay que decirlo claro y sin temblar"
+    after: "Hay que decirlo con firmeza"
+family:
+  - "firme"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "seguridad"
+  funcion:
+    - "sostener"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "fineza"
+    difference: "«Fineza» es un detalle delicado que se tiene con alguien; la otra palabra es la fuerza con que sostienes una postura."
+    memory_trick: "La fineza se regala; lo otro se sostiene."
+  - confused_with: "fiereza"
+    difference: "«Fiereza» es la furia de quien ataca; la otra palabra no ataca a nadie: solo se queda donde estaba."
+    memory_trick: "La fiereza salta encima; lo otro no se mueve."
+exercises:
+  - position: 1
+    sentence: "Domingo repitió su respuesta con una {{blank}} tranquila y nadie en la mesa volvió a insistir."
+    hint_general: "Sostuvo su respuesta sin alterarse y se acabó la insistencia."
+    explanation: "Firmeza: sostuvo su respuesta sin alterarse. «Fiereza» sería furia de ataque, y «gallardía» es palabra culta que suena a caballero antiguo."
+    options:
+      - position: 1
+        text: "fiereza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fiereza» es la furia de quien ataca, y la frase dice que respondió tranquilo y sin levantar la voz."
+        hint_specific: "La fiereza enseña los dientes. ¿Cómo estaba Domingo al repetir su respuesta?"
+      - position: 2
+        text: "firmeza"
+        is_correct: true
+      - position: 3
+        text: "gallardía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gallardía» es palabra culta que evoca a un caballero antiguo, y esto pasa en una mesa entre conocidos."
+        hint_specific: "«Gallardía» pide capa y caballo. ¿Dónde ocurre la escena?"
+  - position: 2
+    sentence: "Cristóbal pidió el plazo de nuevo, esta vez con más {{blank}}, y se lo dieron sin discusión."
+    hint_general: "Volvió a pedirlo sosteniéndolo mejor y funcionó."
+    explanation: "Firmeza: sostuvo mejor su petición. «Fineza» sería un detalle delicado hacia alguien, y «terquedad» acusaría de no atender razones."
+    options:
+      - position: 1
+        text: "firmeza"
+        is_correct: true
+      - position: 2
+        text: "fineza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fineza» es un detalle delicado que tienes con alguien, y aquí lo que cambia es cómo sostiene lo que pide."
+        hint_specific: "Una fineza se agradece como un regalo. ¿Qué cambió Cristóbal en su petición?"
+      - position: 3
+        text: "terquedad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Terquedad» es un reproche y acusa de no atender razones, y aquí le dan el plazo sin ninguna discusión."
+        hint_specific: "La terquedad se usa para criticar. ¿Cómo reaccionó la otra parte?"
+  - position: 3
+    sentence: "A los niños les hace falta una {{blank}} tranquila, no un grito cada vez que se pasan de la raya."
+    hint_general: "Necesitan que sostengas la norma sin levantar la voz."
+    explanation: "Firmeza: sostener la norma sin gritar. «Fiereza» sería furia de ataque, y «dureza» sugiere castigo, no una norma sostenida."
+    options:
+      - position: 1
+        text: "dureza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dureza» sugiere castigo y mano pesada, y la frase pide justo lo contrario del grito y del golpe de autoridad."
+        hint_specific: "La dureza añade castigo. ¿Qué descarta la frase de manera explícita?"
+      - position: 2
+        text: "fiereza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fiereza» es furia de ataque, y lo que se pide aquí es calma mientras se sostiene la norma."
+        hint_specific: "La fiereza asusta. ¿Qué adjetivo acompaña a lo que hace falta?"
+      - position: 3
+        text: "firmeza"
+        is_correct: true
+  - position: 4
+    sentence: "Amparo dijo que no al viaje con una {{blank}} que no dejó lugar a la insistencia de nadie."
+    hint_general: "Su no se sostuvo tan bien que nadie intentó darle la vuelta."
+    explanation: "Firmeza: su no se sostuvo sin fisuras. «Fineza» sería un detalle delicado, y «rigidez» sugeriría que no escucha nada de nada."
+    options:
+      - position: 1
+        text: "fineza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fineza» es un detalle delicado hacia otra persona, y aquí lo que se describe es cómo sostiene su negativa."
+        hint_specific: "Una fineza es un gesto bonito. ¿Qué describe la frase sobre el no de Amparo?"
+      - position: 2
+        text: "firmeza"
+        is_correct: true
+      - position: 3
+        text: "rigidez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rigidez» sugiere que alguien no escucha nada, y la frase solo dice que su respuesta se mantuvo en pie."
+        hint_specific: "Lo rígido no admite ni una palabra ajena. ¿La frase habla de escuchar o de mantener?"
+  - position: 5
+    sentence: "Cuando le pidieron rebajar el precio por cuarta vez, Efraín contestó con {{blank}} y sin enfadarse."
+    hint_general: "A la cuarta insistencia sostuvo su postura sin perder la calma."
+    explanation: "Firmeza: sostuvo su postura sin perder la calma. «Fiereza» sería furia de ataque, y «terquedad» acusaría de no razonar."
+    options:
+      - position: 1
+        text: "firmeza"
+        is_correct: true
+      - position: 2
+        text: "terquedad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Terquedad» es un reproche y acusa de no razonar, y la frase presenta su respuesta como algo sereno y razonable."
+        hint_specific: "La terquedad se dice de quien no atiende a nada. ¿Cómo se describe aquí su respuesta?"
+      - position: 3
+        text: "fiereza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fiereza» es furia de ataque, y la frase termina diciendo que contestó sin enfadarse."
+        hint_specific: "La fiereza viene con enfado. ¿Qué dice el final de la frase sobre su ánimo?"
+  - position: 6
+    sentence: "La {{blank}} de Milagros al explicar las normas del local hizo que nadie discutiera el horario."
+    hint_general: "Explicó las normas de un modo que nadie las puso en duda."
+    explanation: "Firmeza: explicó las normas de forma que nadie dudó. «Fineza» sería un detalle delicado, y «gallardía» es culta y suena a gesta antigua."
+    options:
+      - position: 1
+        text: "gallardía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gallardía» es palabra culta que evoca gestas antiguas, y esto es alguien explicando el horario de un local."
+        hint_specific: "«Gallardía» suena a novela de caballerías. ¿De qué habla Milagros?"
+      - position: 2
+        text: "fineza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fineza» es un detalle delicado hacia alguien, y aquí lo que se describe es cómo sostiene unas normas."
+        hint_specific: "Una fineza es un regalo pequeño. ¿Qué está explicando ella?"
+      - position: 3
+        text: "firmeza"
+        is_correct: true
+  - position: 7
+    sentence: "Hace falta {{blank}} para mantener un plazo cuando quien lo pide es alguien a quien aprecias."
+    hint_general: "Cuesta más sostener un límite con la gente que quieres."
+    explanation: "Firmeza: sostener el plazo con quien aprecias. «Fiereza» sería atacar a esa persona, y «frialdad» sugeriría dejar de quererla."
+    options:
+      - position: 1
+        text: "fiereza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fiereza» sería atacar a esa persona, y la frase habla de mantener un plazo con alguien a quien aprecias."
+        hint_specific: "La fiereza va contra alguien. ¿Qué relación tienes con quien te lo pide?"
+      - position: 2
+        text: "firmeza"
+        is_correct: true
+      - position: 3
+        text: "frialdad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frialdad» sugiere dejar de querer a esa persona, y la frase da por hecho que el aprecio sigue ahí."
+        hint_specific: "La frialdad enfría el cariño. ¿Qué dice la frase sobre lo que sientes por esa persona?"
+  - position: 8
+    sentence: "Al tercer intento, Sebastián sostuvo su precio con la {{blank}} justa y cerraron el trato igual."
+    hint_general: "Mantuvo su precio lo bastante como para cerrar el trato."
+    explanation: "Firmeza: mantuvo su precio lo justo. «Fineza» sería un detalle delicado, y «rigidez» habría roto el trato en vez de cerrarlo."
+    options:
+      - position: 1
+        text: "firmeza"
+        is_correct: true
+      - position: 2
+        text: "rigidez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rigidez» no admite ningún movimiento y suele romper los tratos, y aquí el trato se cierra."
+        hint_specific: "Lo rígido acaba partiéndose. ¿Cómo terminó esta conversación?"
+      - position: 3
+        text: "fineza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Fineza» es un detalle delicado que se tiene con alguien, y lo que se sostiene aquí es una cifra."
+        hint_specific: "Una fineza se agradece. ¿Qué es lo que Sebastián mantiene?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El domingo de Amparo"
+    body: "Le pidieron por cuarta vez que se apuntara al viaje de agosto. Amparo contestó lo mismo que la primera: «No voy, y no es por el dinero». Lo dijo con firmeza y sin enfadarse. Su cuñado insistió una vez más y luego cambió de tema, y la comida siguió tranquila."
+    before_phrase: "Ya te he dicho que no, pesado."
+    after_phrase: "Lo repito con firmeza: no voy."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El horario del local"
+    body: "En la asociación del barrio nadie quería explicar que el local cierra a las once. Milagros lo hizo en dos frases, con una firmeza tranquila y sin pedir perdón por la norma. Nadie discutió el horario, y a las once menos cinco ya estaban recogiendo."
+    before_phrase: "Es que a las once hay que cerrar, lo siento mucho."
+    after_phrase: "Lo dije con firmeza: a las once cerramos."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El tercer intento"
+    body: "Sebastián llevaba dos años bajando su precio en cuanto alguien torcía el gesto. Esta vez sostuvo la cifra con la firmeza justa y explicó qué incluía. El cliente pidió un día para pensarlo y al siguiente firmó. Fue el mismo precio que se había quitado él solo otras veces."
+    before_phrase: "Bueno, si quieres lo dejamos en menos."
+    after_phrase: "Mantuve el precio con firmeza y expliqué qué incluye."
+metrics:
+  zipf_overall: 4.0884
+  dispersion_dp: 0.1399
+  pedantry_proxy: 0.4808
+  family_size: 10
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

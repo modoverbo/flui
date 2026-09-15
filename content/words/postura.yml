@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3208
+slug: "postura"
+status: "draft"
+lemma: "postura"
+part_of_speech: "sustantivo"
+syllables:
+  - "pos"
+  - "tu"
+  - "ra"
+stressed_syllable: 2
+ipa_latam: "[posˈtu.ɾa]"
+ipa_es: "[posˈtu.ɾa]"
+explanation: "Lo que alguien decide defender en un asunto delante de otras personas."
+example_sentence: "Mi postura es clara: no firmamos sin ver el presupuesto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para separar lo que piensas por dentro de lo que estás dispuesto a defender en voz alta."
+when_not_to_use: "No la uses para una idea suelta que aún no has decidido defender; eso todavía es una opinión."
+collocations:
+  - "fijar una postura"
+  - "mantener la postura"
+  - "una postura firme"
+replaces:
+  - before: "Yo lo veo así y no lo voy a cambiar"
+    after: "Esa es mi postura"
+  - before: "Cada uno opina una cosa distinta"
+    after: "Cada uno defiende una postura distinta"
+  - before: "Dinos de qué lado estás"
+    after: "Dinos cuál es tu postura"
+family: []
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin:
+    - "cosa"
+    - "opinar"
+  funcion:
+    - "sostener"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "opinión"
+    difference: "Una opinión es lo que piensas y puedes cambiar sin más; la otra palabra es lo que decides defender delante de los demás."
+    memory_trick: "La opinión se tiene; lo otro se sostiene."
+  - confused_with: "actitud"
+    difference: "«Actitud» describe cómo te comportas; la otra palabra dice qué defiendes, aunque lo digas con buenos modos."
+    memory_trick: "La actitud se ve; lo otro se argumenta."
+exercises:
+  - position: 1
+    sentence: "Después de escuchar a los dos lados, Ximena fijó su {{blank}} y se comprometió a defenderla en la reunión grande."
+    hint_general: "Decide qué va a defender delante de los demás y se compromete a ello."
+    explanation: "Postura: lo que decide defender delante de los demás. Una «opinión» se tiene y se cambia sin comprometerse, y una «captura» es una foto de lo que aparece en una pantalla."
+    options:
+      - position: 1
+        text: "captura"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «captura» es la foto de lo que se ve en una pantalla, y aquí Ximena decide qué defender."
+        hint_specific: "«Captura» se guarda en el teléfono. ¿Qué fijó Ximena después de escuchar?"
+      - position: 2
+        text: "postura"
+        is_correct: true
+      - position: 3
+        text: "opinión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «opinión» se tiene sin comprometerse con nada, y aquí Ximena se compromete a defenderla."
+        hint_specific: "«Opinión» no obliga a nada. ¿A qué se compromete Ximena?"
+  - position: 2
+    sentence: "En el grupo cada uno sostiene una {{blank}} distinta y todos la han explicado con argumentos."
+    hint_general: "Cada persona defiende algo distinto y lo ha razonado en voz alta."
+    explanation: "Postura: lo que cada uno defiende con argumentos. Una «actitud» describiría cómo se comportan, no qué defienden, y una «postal» es una tarjeta con una foto."
+    options:
+      - position: 1
+        text: "actitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «actitud» describe cómo se comporta alguien, y aquí lo que se explica con argumentos es qué defiende."
+        hint_specific: "«Actitud» se ve en los gestos. ¿Qué explican con argumentos en el grupo?"
+      - position: 2
+        text: "postal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «postal» es una tarjeta con una foto que se envía por correo, y aquí se discute un asunto."
+        hint_specific: "«Postal» se manda por correo con un sello. ¿Qué sostiene cada uno en el grupo?"
+      - position: 3
+        text: "postura"
+        is_correct: true
+  - position: 3
+    sentence: "No es una {{blank}} de cara a la galería: Emilio lleva dos años diciendo lo mismo, gane o pierda."
+    hint_general: "Lleva dos años defendiendo lo mismo, y no lo hace para quedar bien."
+    explanation: "Postura: lo que defiende desde hace dos años. «Pose» es coloquial y acusa de fingir, justo lo que la frase niega, y una «propuesta» sería un plan concreto que se pone a votación."
+    options:
+      - position: 1
+        text: "postura"
+        is_correct: true
+      - position: 2
+        text: "pose"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pose» es coloquial y acusa de fingir para quedar bien, y la frase dice que no es de cara a la galería."
+        hint_specific: "«Pose» acusa de fingir. Relee las cuatro primeras palabras de la frase."
+      - position: 3
+        text: "propuesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «propuesta» es un plan concreto que se pone a votación, y aquí Emilio repite lo que piensa, gane o pierda."
+        hint_specific: "«Propuesta» se vota y se aprueba o no. ¿Qué repite Emilio desde hace dos años?"
+  - position: 4
+    sentence: "Antes de votar, cada uno escribió en una línea lo que iba a defender, y esa {{blank}} ya no se cambiaba a mitad de la reunión."
+    hint_general: "Lo que cada uno se compromete a defender queda escrito y no se mueve."
+    explanation: "Postura: lo que queda escrito y se defiende hasta el final. Una «opinión» se puede cambiar cuando quieras, y una «captura» es la foto de una pantalla."
+    options:
+      - position: 1
+        text: "opinión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «opinión» se cambia cuando quieras y sin explicar nada, y aquí lo escrito ya no se movía."
+        hint_specific: "«Opinión» se cambia libremente. ¿Qué pasaba con lo escrito a mitad de reunión?"
+      - position: 2
+        text: "postura"
+        is_correct: true
+      - position: 3
+        text: "captura"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «captura» es la foto de una pantalla, y aquí cada uno escribió a mano lo que iba a defender."
+        hint_specific: "«Captura» sale de una pantalla. ¿Cómo se guardó lo que iban a defender?"
+  - position: 5
+    sentence: "Su {{blank}} no es cómoda, pero la sostiene con argumentos desde hace meses y sin levantar la voz."
+    hint_general: "Defiende algo incómodo con razones y de forma tranquila."
+    explanation: "Postura: lo incómodo que sostiene con razones. «Tesitura» suena a lenguaje solemne y nombra la situación en que uno se encuentra, no lo que defiende; la «cultura» es lo que un grupo comparte."
+    options:
+      - position: 1
+        text: "tesitura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tesitura» suena solemne y nombra la situación en la que alguien se encuentra, no algo que se sostenga con argumentos."
+        hint_specific: "«Tesitura» es la situación que te toca vivir. ¿Aquí algo se vive o algo se defiende?"
+      - position: 2
+        text: "postura"
+        is_correct: true
+      - position: 3
+        text: "cultura"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «cultura» es lo que un grupo entero comparte, y aquí una sola persona defiende algo incómodo."
+        hint_specific: "«Cultura» es de todo un grupo. ¿Cuánta gente sostiene esto?"
+  - position: 6
+    sentence: "Marina cambió de {{blank}} cuando vio los números nuevos: pasó de defender el plan A a defender el B."
+    hint_general: "Pasa a defender lo contrario de lo que defendía antes."
+    explanation: "Postura: lo que defiende, y ahora defiende otra cosa. Una «actitud» habla de cómo se comporta, no de qué plan defiende, y una «postal» es una tarjeta con una foto."
+    options:
+      - position: 1
+        text: "actitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «actitud» es cómo se comporta alguien, y la frase aclara que lo que cambió fue el plan que defiende."
+        hint_specific: "«Actitud» va de modos y gestos. ¿Qué dice la frase que cambió Marina?"
+      - position: 2
+        text: "postal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «postal» es una tarjeta con una foto, y aquí se pasa de un plan a otro."
+        hint_specific: "«Postal» lleva sello y se manda. ¿Entre qué dos cosas cambió Marina?"
+      - position: 3
+        text: "postura"
+        is_correct: true
+  - position: 7
+    sentence: "Una cosa es lo que piensas por dentro y otra la {{blank}} que defiendes delante del equipo."
+    hint_general: "La frase separa el pensamiento privado de lo que se defiende en público."
+    explanation: "Postura: lo que se defiende en público. Una «propuesta» sería un plan concreto que se somete a votación, y la «cultura» es lo que comparte un grupo entero."
+    options:
+      - position: 1
+        text: "cultura"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «cultura» es lo que comparte un grupo entero, y aquí se separa lo que piensa una persona de lo que defiende."
+        hint_specific: "«Cultura» pertenece a todo un grupo. ¿De cuántas personas habla la frase?"
+      - position: 2
+        text: "postura"
+        is_correct: true
+      - position: 3
+        text: "propuesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «propuesta» es un plan concreto que se somete a votación, y aquí se habla de lo que sostienes ante el equipo."
+        hint_specific: "«Propuesta» se vota. ¿La frase habla de votar o de defender?"
+  - position: 8
+    sentence: "En la entrevista le pidieron una {{blank}} clara sobre el trabajo a distancia y que la defendiera, no solo lo que opinaba."
+    hint_general: "Le piden algo que pueda defender, no solo lo que piensa."
+    explanation: "Postura: algo que hay que poder defender. Una «opinión» es solo lo que se piensa, y la frase lo descarta; una «actitud» describiría su manera de comportarse."
+    options:
+      - position: 1
+        text: "opinión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «opinión» es solo lo que se piensa, y la frase pide expresamente algo más que eso."
+        hint_specific: "«Opinión» se queda en pensar. Relee el final de la frase."
+      - position: 2
+        text: "actitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «actitud» es la manera de comportarse, y lo que piden es algo que se pueda defender con razones."
+        hint_specific: "«Actitud» se ve en el trato. ¿Qué le piden que haga con eso?"
+      - position: 3
+        text: "postura"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Una línea antes de votar"
+    body: "La reunión se alargaba y las ideas cambiaban cada diez minutos. Ximena propuso algo raro: escribir en una línea lo que cada uno iba a defender, antes de empezar. «Así tenemos una postura, no un humor». Se votó en veinte minutos."
+    before_phrase: "Yo lo veo así, más o menos."
+    after_phrase: "Así tenemos una postura, no un humor."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El trabajo a distancia"
+    body: "«¿Y qué opina usted del trabajo a distancia?», preguntó el entrevistador. Emilio no dio rodeos: «Le doy una postura, no una opinión: dos días en casa y los martes todos juntos». Le pidieron que la defendiera y la defendió."
+    before_phrase: "Pues hay cosas buenas y cosas malas."
+    after_phrase: "Le doy una postura, no una opinión."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El plan A y el plan B"
+    body: "Marina había defendido el plan A durante semanas. Cuando vio los números nuevos, lo dijo en la misma cena: «Cambio de postura, y os cuento por qué». Nadie se lo echó en cara. Esa noche el plan B salió adelante con todos los votos."
+    before_phrase: "Pues ahora ya no lo veo tan claro."
+    after_phrase: "Cambio de postura, y cuento por qué."
+metrics:
+  zipf_overall: 4.6441
+  dispersion_dp: 0.1507
+  pedantry_proxy: 0.4987
+  family_size: 54
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "emular"
+status: "draft"
+lemma: "emular"
+part_of_speech: "verbo"
+syllables:
+  - "e"
+  - "mu"
+  - "lar"
+stressed_syllable: 3
+ipa_latam: "[e.muˈlaɾ]"
+ipa_es: "[e.muˈlaɾ]"
+explanation: "Tomar a alguien como ejemplo y tratar de hacerlo igual de bien o mejor."
+example_sentence: "Diego quiere emular la calma de su primer jefe, no su forma de vestir."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es un elogio hacia quien te sirve de ejemplo: reconoce el mérito ajeno sin rebajar el tuyo."
+when_not_to_use: "No la uses para fingir algo que no es real; eso es «simular»."
+collocations:
+  - "emular a alguien"
+  - "emular un método"
+  - "difícil de emular"
+replaces:
+  - before: "Quiere simular la calma de su jefe"
+    after: "Quiere emular la calma de su jefe"
+  - before: "Intenta hacerlo como ella, y a ser posible mejor"
+    after: "Intenta emularla"
+  - before: "Ese resultado no lo iguala nadie"
+    after: "Ese resultado es difícil de emular"
+family:
+  - "emulación"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin: ["copiar"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "simular"
+    difference: "«Simular» es fingir algo que no ocurre de verdad; la otra palabra toma a alguien como ejemplo para llegar a su altura."
+    memory_trick: "Quien simula aparenta; quien toma ejemplo se esfuerza."
+  - confused_with: "estimular"
+    difference: "«Estimular» es animar a otro a que haga algo; la otra palabra describe a quien se pone él mismo a la altura de un ejemplo."
+    memory_trick: "Estimulas a otro; el ejemplo te mueve a ti."
+exercises:
+  - position: 1
+    sentence: "Diego quiere {{blank}} la calma de su primer jefe, no su forma de vestir."
+    hint_general: "Toma a alguien como ejemplo y quiere llegar a su altura."
+    explanation: "Emular: toma esa calma como ejemplo. «Simular» sería fingir una calma que no siente, e «idolatrar» lo pondría en un altar en vez de aprender de él."
+    options:
+      - position: 1
+        text: "simular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simular» sería fingir una calma que no siente, y Diego quiere tenerla de verdad, no aparentarla."
+        hint_specific: "Simular deja el gesto vacío por dentro. ¿Diego quiere aparentar o conseguirlo?"
+      - position: 2
+        text: "emular"
+        is_correct: true
+      - position: 3
+        text: "idolatrar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Idolatrar» es exagerado y pone al jefe en un altar, y la frase dice que Diego elige qué copiar y qué no."
+        hint_specific: "«Idolatrar» suena a devoción ciega. ¿Diego admira todo o escoge una cosa?"
+  - position: 2
+    sentence: "El equipo intentó {{blank}} el método del otro taller y mejoró los tiempos en un mes."
+    hint_general: "Tomaron como referencia lo que otros hacían bien."
+    explanation: "Emular: tomaron como referencia el método ajeno. «Simular» sería fingir que lo usaban, y «estimular» sería animar a otros a hacerlo."
+    options:
+      - position: 1
+        text: "estimular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estimular» es animar a otro a que haga algo, y aquí es el propio equipo el que se pone a trabajar de otra manera."
+        hint_specific: "Estimular empuja a un tercero. ¿A quién animaría este equipo con ese método?"
+      - position: 2
+        text: "emular"
+        is_correct: true
+      - position: 3
+        text: "simular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simular» sería fingir que aplican el método, y los tiempos no mejoran fingiendo: mejoran trabajando así."
+        hint_specific: "Simular deja todo en apariencia. ¿Qué prueba que el cambio fue real?"
+  - position: 3
+    sentence: "Nadie en el barrio logró {{blank}} el pan de aquella panadería que cerró en marzo."
+    hint_general: "Nadie consiguió ponerse a esa altura tomándolo como ejemplo."
+    explanation: "Emular: nadie llegó a esa altura. «Simular» sería fingir que el pan es igual, y «superar» exigiría quedar por encima, no llegar al mismo nivel."
+    options:
+      - position: 1
+        text: "simular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simular» sería fingir que el pan es el mismo, y aquí el intento es hacerlo de verdad tan bueno como aquel."
+        hint_specific: "Simular se queda en la apariencia. ¿Qué se intenta conseguir con ese pan?"
+      - position: 2
+        text: "emular"
+        is_correct: true
+      - position: 3
+        text: "superar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Superar» exigiría quedar por encima de aquel pan, y la frase dice que ni siquiera se llegó al mismo nivel."
+        hint_specific: "Superar es quedar por encima. ¿Alguien llegó siquiera a igualarlo?"
+  - position: 4
+    sentence: "Antes de opinar, Sara prefiere {{blank}} a quien escucha bien y responde despacio."
+    hint_general: "Elige un ejemplo y trata de hacer lo mismo."
+    explanation: "Emular: elige un ejemplo y hace lo mismo. «Simular» sería fingir que escucha, y «remedar» suena antiguo y sugiere imitar con burla."
+    options:
+      - position: 1
+        text: "remedar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Remedar» suena antiguo y sugiere imitar los gestos de alguien con burla, y Sara busca aprender de esa persona."
+        hint_specific: "«Remedar» arrastra un tono de burla. ¿Sara se ríe de alguien o lo toma de ejemplo?"
+      - position: 2
+        text: "emular"
+        is_correct: true
+      - position: 3
+        text: "simular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simular» sería fingir que escucha mientras piensa en otra cosa, y la frase describe a alguien que quiere escuchar de verdad."
+        hint_specific: "Simular finge por fuera. ¿Sara quiere parecer atenta o serlo?"
+  - position: 5
+    sentence: "Ese resultado es difícil de {{blank}} con la mitad de presupuesto."
+    hint_general: "Cuesta mucho llegar a esa altura con menos recursos."
+    explanation: "Emular: cuesta llegar a esa altura. «Simular» sería fingir el resultado, y «disimular» sería esconderlo para que no se note."
+    options:
+      - position: 1
+        text: "emular"
+        is_correct: true
+      - position: 2
+        text: "simular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simular» sería fingir ese resultado en un papel, y la frase habla de conseguirlo de verdad con menos dinero."
+        hint_specific: "Simular fabrica una apariencia. ¿Se busca aparentar el resultado o lograrlo?"
+      - position: 3
+        text: "disimular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disimular» es esconder algo para que no se note, y aquí nadie quiere ocultar el resultado: quieren repetirlo."
+        hint_specific: "Disimular tapa lo que existe. ¿Hay algo que esconder en esa cifra?"
+  - position: 6
+    sentence: "Los más jóvenes {{blank}} a Teresa sin decírselo, y se les nota en cómo preparan la reunión."
+    hint_general: "La tienen como referencia y trabajan a su manera."
+    explanation: "Emulan: la tienen como referencia y trabajan así. «Simulan» sería fingir un trabajo que no hacen, y «veneran» la colocaría casi en un altar."
+    options:
+      - position: 1
+        text: "simulan"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simulan» sería fingir que preparan la reunión, y la frase dice que el resultado se nota en cómo la preparan."
+        hint_specific: "Simular deja el trabajo sin hacer. ¿Dónde se nota lo que hacen estos jóvenes?"
+      - position: 2
+        text: "emulan"
+        is_correct: true
+      - position: 3
+        text: "veneran"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Venerar» es solemne y coloca a Teresa casi en un altar, y aquí solo se copia su forma de preparar una reunión."
+        hint_specific: "«Venerar» suena a devoción. ¿La admiran en silencio o aprenden su método?"
+  - position: 7
+    sentence: "Su hermano {{blank}} el negocio del vecino y acabó abriendo uno mejor montado."
+    hint_general: "Partió de un ejemplo y llegó incluso más lejos."
+    explanation: "Emuló: partió de ese ejemplo y llegó más lejos. «Simuló» sería fingir el negocio, e «imitó» diría que lo copió tal cual."
+    options:
+      - position: 1
+        text: "imitó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imitó» diría que lo copió tal cual, y la frase termina diciendo que su negocio quedó mejor montado."
+        hint_specific: "Imitar se queda en la copia. ¿Cómo acabó el negocio de su hermano?"
+      - position: 2
+        text: "emuló"
+        is_correct: true
+      - position: 3
+        text: "simuló"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simuló» sería fingir que tenía un negocio, y aquí abrió uno de verdad y le fue bien."
+        hint_specific: "Simular es aparentar. ¿Ese negocio existe o solo lo parece?"
+  - position: 8
+    sentence: "En lugar de quedarse mirando, decidieron {{blank}} al equipo que mejores resultados daba."
+    hint_general: "Dejaron de observar y se pusieron a trabajar igual que ellos."
+    explanation: "Emular: pasaron de mirar a trabajar igual. «Estimular» sería animar a ese equipo, y «admirar» se quedaría en mirarlo con respeto."
+    options:
+      - position: 1
+        text: "admirar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Admirar» se queda en mirar con respeto, y la frase dice justo que dejaron de quedarse mirando."
+        hint_specific: "Admirar no cambia lo que haces. ¿Qué dejaron de hacer al principio de la frase?"
+      - position: 2
+        text: "estimular"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estimular» sería animar a ese otro equipo, y quien cambia de conducta aquí es el equipo que estaba mirando."
+        hint_specific: "Estimular empuja al de enfrente. ¿Quién cambia su forma de trabajar?"
+      - position: 3
+        text: "emular"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El taller de al lado"
+    body: "Los tiempos de entrega no bajaban por más turnos que añadieran. Ignacio propuso otra cosa: «Vamos a emular el método del taller de la avenida, tal cual, un mes». En cuatro semanas recortaron dos días."
+    before_phrase: "Hagámoslo como ellos, a ver si funciona."
+    after_phrase: "Vamos a emular su método un mes."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "A quién te pareces"
+    body: "Le preguntaron a Sara por su forma de dirigir. Contestó sin rodeos: «Trato de emular a mi primera jefa: escuchaba entera la frase antes de responder». Le pidieron un ejemplo concreto y lo tenía preparado."
+    before_phrase: "Intento hacerlo como lo hacía mi primera jefa."
+    after_phrase: "Trato de emular a mi primera jefa."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El pan de los domingos"
+    body: "La panadería de la esquina cerró y en casa nadie se resignaba. Cecilia se puso con la receta cada domingo durante un año. «No pretendo emularlo del todo», decía, «pero cada vez se parece más»."
+    before_phrase: "A ver si me sale igual que el suyo."
+    after_phrase: "No pretendo emularlo del todo."
+metrics:
+  zipf_overall: 3.6504
+  dispersion_dp: 0.2081
+  pedantry_proxy: 0.4998
+  family_size: 14
+provenance:
+  generator: "flui authoring agent — theme paronimos (emular / simular)"
+  gate: null
+  checked_on: "2026-09-14"

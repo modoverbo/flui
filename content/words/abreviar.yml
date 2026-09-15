@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 5010
+slug: "abreviar"
+status: "draft"
+lemma: "abreviar"
+part_of_speech: "verbo"
+syllables:
+  - "a"
+  - "bre"
+  - "viar"
+stressed_syllable: 3
+ipa_latam: "[a.βɾeˈβjaɾ]"
+ipa_es: "[a.βɾeˈβjaɾ]"
+explanation: "Contar algo en menos tiempo o con menos palabras de las que ibas a usar."
+example_sentence: "Vi la cara del grupo y decidí abreviar el último bloque."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Anunciarlo en voz alta funciona: «voy a abreviar» devuelve la atención de una sala cansada."
+when_not_to_use: "No la uses para quitar información importante; aquí se recorta el tiempo, no el contenido."
+collocations:
+  - "abreviar la charla"
+  - "voy a abreviar"
+  - "abreviar el trámite"
+replaces:
+  - before: "Voy a ir acabando, que se hace tarde"
+    after: "Voy a abreviar, que se hace tarde"
+  - before: "Te lo cuento rápido para no cansarte"
+    after: "Te lo abrevio para no cansarte"
+  - before: "Recortamos la parte del final"
+    after: "Abreviamos la parte del final"
+family:
+  - "abreviatura"
+  - "abreviado"
+semantic_set_id: "duracion-de-lo-que-dices"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "acortar"
+  funcion:
+    - "ajustar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "abrevar"
+    difference: "«Abrevar» es dar de beber al ganado en un río o en un pilón; la otra palabra no tiene nada que ver con animales ni con agua."
+    memory_trick: "Se abreva a las vacas; lo otro se le hace al reloj."
+  - confused_with: "resumir"
+    difference: "«Resumir» es quedarse con lo esencial de algo ya dicho; la otra palabra solo recorta el tiempo, aunque cuentes lo mismo."
+    memory_trick: "El resumen elige; lo otro corre."
+exercises:
+  - position: 1
+    sentence: "Vio que la sala llevaba dos horas sentada y decidió {{blank}} el último bloque."
+    hint_general: "Recortó el tiempo del final al ver a la gente cansada."
+    explanation: "Abreviar: recortar el tiempo del final. «Abrevar» es dar de beber al ganado, y «compendiar» es palabra culta de manuales antiguos."
+    options:
+      - position: 1
+        text: "abrevar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abrevar» es dar de beber al ganado en un pilón, y en una sala con gente sentada no hay ganado ninguno."
+        hint_specific: "Abrevar pide un río y animales. ¿Dónde ocurre esta escena?"
+      - position: 2
+        text: "abreviar"
+        is_correct: true
+      - position: 3
+        text: "compendiar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Compendiar» es palabra culta de manuales antiguos y significa reunir una materia entera en un tomo, no ganar minutos."
+        hint_specific: "«Compendiar» huele a tomo grueso de biblioteca. ¿Qué gana quien habla aquí?"
+  - position: 2
+    sentence: "Cuando Rita cuenta un viaje siempre {{blank}}, porque dice que los detalles se los queda ella."
+    hint_general: "Cuenta la versión corta y se guarda lo demás."
+    explanation: "Abrevia: cuenta la versión corta a propósito. «Alivia» sería quitar dolor o peso, y «resume» sería quedarse con lo esencial, cuando ella se guarda cosas."
+    options:
+      - position: 1
+        text: "abrevia"
+        is_correct: true
+      - position: 2
+        text: "alivia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aliviar» es quitar dolor o peso a alguien, y aquí lo único que se reduce es la longitud del relato."
+        hint_specific: "Aliviar necesita a alguien que lo pase mal. ¿Quién sufre en esta escena?"
+      - position: 3
+        text: "resume"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es quedarse con lo esencial, y ella no elige lo esencial: se guarda los detalles para sí misma."
+        hint_specific: "Quien resume entrega lo importante. ¿Qué hace Rita con los detalles?"
+  - position: 3
+    sentence: "El notario tenía otras dos citas y pidió {{blank}} la lectura sin saltarse ninguna cláusula."
+    hint_general: "Pidió ganar tiempo sin dejarse nada fuera."
+    explanation: "Abreviar: ganar tiempo sin dejarse nada. «Abrevar» es dar de beber al ganado, y «despachar» es coloquial y sugiere quitarse el asunto de encima."
+    options:
+      - position: 1
+        text: "despachar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despachar» es coloquial aquí y sugiere quitarse el asunto de encima de cualquier manera, y él exige que no falte ni una cláusula."
+        hint_specific: "Despachar algo es soltarlo con prisa y sin cuidado. ¿Qué exige el notario que se respete?"
+      - position: 2
+        text: "abreviar"
+        is_correct: true
+      - position: 3
+        text: "abrevar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abrevar» es dar de beber al ganado, y lo que se lee aquí es un documento con cláusulas."
+        hint_specific: "Abrevar es cosa de campo y animales. ¿Qué hay encima de esa mesa?"
+  - position: 4
+    sentence: "Si te quedan tres minutos y seis puntos, {{blank}} y quédate con los dos que importan."
+    hint_general: "Con poco tiempo, corta y ve a lo que cuenta."
+    explanation: "Abrevia: corta el tiempo y ve a lo que cuenta. «Agravia» sería ofender a alguien, y «calla» sería no decir nada, cuando aquí sí se habla."
+    options:
+      - position: 1
+        text: "abrevia"
+        is_correct: true
+      - position: 2
+        text: "agravia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agraviar» es ofender a alguien, y el consejo no te pide ofender a nadie: te pide ganar minutos."
+        hint_specific: "Agraviar deja a alguien dolido. ¿A quién ofendería este consejo?"
+      - position: 3
+        text: "calla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callar» sería no decir nada, y el consejo pide seguir hablando de los dos puntos que importan."
+        hint_specific: "Quien calla no dice nada. ¿El consejo te manda hablar o guardar silencio?"
+  - position: 5
+    sentence: "Herminia {{blank}} las presentaciones de su equipo y por fin la reunión terminó a la hora."
+    hint_general: "Recortó el tiempo de cada turno y la reunión cuadró."
+    explanation: "Abrevió: recortó el tiempo de cada turno. «Abrevó» es dar de beber al ganado, y «aceleró» sería correr al hablar, no dar menos minutos."
+    options:
+      - position: 1
+        text: "abrevó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abrevar» es dar de beber al ganado, y aquí lo que se reparte son turnos de palabra."
+        hint_specific: "Abrevar es cosa de establo. ¿Qué reparte Herminia entre su equipo?"
+      - position: 2
+        text: "abrevió"
+        is_correct: true
+      - position: 3
+        text: "aceleró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acelerar» sería hablar más deprisa en el mismo tiempo, y lo que ella hace es dar menos minutos a cada turno."
+        hint_specific: "Acelerar cambia la velocidad, no el reparto. ¿Qué cambió en esa reunión?"
+  - position: 6
+    sentence: "Al ver que el tren salía en diez minutos, Lucio {{blank}} la despedida y echó a correr."
+    hint_general: "Cortó el momento del adiós porque no llegaba."
+    explanation: "Abrevió: cortó el adiós por falta de tiempo. «Alivió» sería quitar un dolor, y «resumió» sería contar lo esencial de algo ya dicho."
+    options:
+      - position: 1
+        text: "abrevió"
+        is_correct: true
+      - position: 2
+        text: "alivió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aliviar» es quitar un dolor o un peso, y en la escena lo único que falta es tiempo."
+        hint_specific: "Aliviar quita una carga. ¿Qué le falta a Lucio en el andén?"
+      - position: 3
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es contar lo esencial de algo ya dicho, y una despedida no se resume: se acorta o no se acorta."
+        hint_specific: "Un resumen recoge contenido. ¿Qué es lo que se recorta en el andén?"
+  - position: 7
+    sentence: "Prefiero que me cuenten el plan entero a que {{blank}} y me dejen a medias."
+    hint_general: "Prefiere la versión larga a una versión corta que deje huecos."
+    explanation: "Abrevien: den la versión corta. «Abreven» es dar de beber al ganado, y «se salten» sería quitar partes, y aquí ya se dice que quedan huecos."
+    options:
+      - position: 1
+        text: "abreven"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abrevar» es dar de beber al ganado, y lo que se cuenta o se deja de contar aquí es un plan."
+        hint_specific: "Abrevar pide animales sedientos. ¿Qué es lo que se cuenta en la frase?"
+      - position: 2
+        text: "abrevien"
+        is_correct: true
+      - position: 3
+        text: "se salten"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Saltarse» partes es quitar contenido, y la frase ya menciona aparte el efecto de quedarse a medias."
+        hint_specific: "Saltarse algo deja un agujero concreto. ¿Qué se compara aquí con el plan entero?"
+  - position: 8
+    sentence: "Nos quedaban veinte minutos de trayecto, así que Ezequiel {{blank}} el cuento y lo dejó en la mejor parte."
+    hint_general: "Contó una versión más corta y paró en lo bueno."
+    explanation: "Abrevió: contó una versión más corta. «Agravió» sería ofender a alguien, y «cortó» sería interrumpir a quien hablaba, y aquí el que habla es él."
+    options:
+      - position: 1
+        text: "agravió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Agraviar» es ofender a alguien, y en el coche nadie queda ofendido: se cuenta un cuento más corto."
+        hint_specific: "Agraviar deja a alguien dolido. ¿Quién se ofende en ese trayecto?"
+      - position: 2
+        text: "cortó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cortar» sería interrumpir a quien está hablando, y aquí el que habla es Ezequiel."
+        hint_specific: "Cortar necesita a otra persona hablando. ¿Quién cuenta el cuento?"
+      - position: 3
+        text: "abrevió"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El último bloque"
+    body: "Herminia miró la sala a las dos horas: dos personas con el móvil y una mirando la puerta. «Voy a abreviar el último bloque», dijo. Contó tres cosas en cuatro minutos y terminó antes de la hora. Nadie se quejó de lo que faltó."
+    before_phrase: "Ya voy acabando, que se nos ha hecho tarde."
+    after_phrase: "Voy a abreviar el último bloque."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Veinte minutos de trayecto"
+    body: "Ezequiel lleva a sus sobrinas al pueblo y el cuento del lobo dura cuarenta minutos. Cuando el viaje es corto, lo abrevia y lo deja justo en la mejor parte. Ellas protestan, pero después preguntan por él durante toda la semana."
+    before_phrase: "Te lo cuento rapidito, que ya llegamos."
+    after_phrase: "Te lo abrevio y lo dejamos en lo bueno."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El andén"
+    body: "Lucio estuvo media hora despidiéndose de su amiga en la puerta del bar, hasta que ella miró el panel: diez minutos para el tren. «Abreviamos», dijo él, y le dio un abrazo corto. Siguieron la conversación por audios hasta la parada siguiente."
+    before_phrase: "Venga, que lo dejamos aquí, que no llegas."
+    after_phrase: "Abreviamos, que no llegas."
+metrics:
+  zipf_overall: 3.6777
+  dispersion_dp: 0.2659
+  pedantry_proxy: 0.7123
+  family_size: 14
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

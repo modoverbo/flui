@@ -1,0 +1,247 @@
+schema_version: 1
+sort_order: 3219
+slug: "inequivoco"
+status: "draft"
+lemma: "inequívoco"
+part_of_speech: "adjetivo"
+syllables:
+  - "i"
+  - "ne"
+  - "quí"
+  - "vo"
+  - "co"
+stressed_syllable: 3
+ipa_latam: "[i.neˈki.βo.ko]"
+ipa_es: "[i.neˈki.βo.ko]"
+explanation: "Que solo se puede entender de una manera, sin ninguna otra lectura posible."
+example_sentence: "El mensaje fue inequívoco: la entrega es el martes, no el miércoles."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsala cuando quieras decir que algo no se puede malinterpretar, no solo que se entiende bien."
+when_not_to_use: "No la uses para algo que solo está bien explicado; esto además cierra cualquier otra lectura."
+collocations:
+  - "una señal inequívoca"
+  - "un gesto inequívoco"
+  - "de forma inequívoca"
+replaces:
+  - before: "Se entiende clarísimo"
+    after: "Es inequívoco"
+  - before: "No hay forma de entenderlo de otra manera"
+    after: "Es inequívoco"
+  - before: "Lo dejó clarísimo, sin vueltas"
+    after: "Lo dejó de forma inequívoca"
+family:
+  - "inequívocamente"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "claro"
+    - "mucho"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "claro"
+    difference: "Algo claro se entiende sin esfuerzo; la otra palabra añade que no cabe entenderlo de ninguna otra manera."
+    memory_trick: "Lo claro se lee bien; lo otro se lee de una sola forma."
+  - confused_with: "equívoco"
+    difference: "«Equívoco» es justo lo contrario: algo que se presta a dos lecturas y confunde."
+    memory_trick: "Lo equívoco abre dos puertas; lo otro deja una."
+exercises:
+  - position: 1
+    sentence: "El mensaje se entendía bien, pero además era {{blank}}: la entrega es el martes y no cabe otra fecha."
+    hint_general: "Además de entenderse, no admite ninguna otra manera de leerlo."
+    explanation: "Inequívoco: no admite otra manera de leerlo. «Claro» ya está dicho, porque el mensaje se entendía bien, y «equívoco» significa justo lo contrario, que se presta a dos lecturas."
+    options:
+      - position: 1
+        text: "equívoco"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equívoco» significa que algo se presta a dos lecturas, y la frase dice que no cabe otra fecha."
+        hint_specific: "«Equívoco» abre dos caminos. ¿Cuántas fechas caben en este mensaje?"
+      - position: 2
+        text: "inequívoco"
+        is_correct: true
+      - position: 3
+        text: "claro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Claro» solo dice que se entiende, y la frase ya cuenta que el mensaje se entendía bien."
+        hint_specific: "«Claro» va de entenderse. Relee las cinco primeras palabras."
+  - position: 2
+    sentence: "Hizo una señal {{blank}} con la mano: nadie en la sala pudo leerla de dos maneras."
+    hint_general: "El gesto solo se podía leer de una forma."
+    explanation: "Inequívoca: solo se podía leer de una forma. «Obvia» diría que salta a la vista, no que tenga una sola lectura, e «inocua» significa que no hace daño."
+    options:
+      - position: 1
+        text: "inocua"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inocua» significa que algo no hace ningún daño, y aquí se describe cómo se leyó un gesto."
+        hint_specific: "«Inocua» va de no causar daño. ¿Qué se describe del gesto?"
+      - position: 2
+        text: "obvia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obvia» dice que algo salta a la vista, y aquí lo que importa es que solo admitía una lectura."
+        hint_specific: "«Obvia» se ve enseguida. ¿La frase habla de verla o de interpretarla?"
+      - position: 3
+        text: "inequívoca"
+        is_correct: true
+  - position: 3
+    sentence: "El aviso no dio rodeos y encima fue {{blank}}: nadie pudo alegar después que lo había leído al revés."
+    hint_general: "Nadie pudo decir luego que lo había interpretado de otro modo."
+    explanation: "Inequívoco: nadie pudo interpretarlo de otro modo. «Directo» ya está dicho, porque no dio rodeos, y «cristalino» suena a lenguaje de anuncio."
+    options:
+      - position: 1
+        text: "inequívoco"
+        is_correct: true
+      - position: 2
+        text: "cristalino"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cristalino» suena a lenguaje de anuncio y habla de transparencia, no de cuántas lecturas admite un aviso."
+        hint_specific: "«Cristalino» se dice del agua y de los eslóganes. ¿Qué se mide del aviso?"
+      - position: 3
+        text: "directo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Directo» significa sin rodeos, y la frase ya dice que el aviso no dio ninguno."
+        hint_specific: "«Directo» va al grano. Relee las cinco primeras palabras."
+  - position: 4
+    sentence: "La respuesta fue {{blank}} y suave a la vez: nadie salió de la sala con dudas ni con dos interpretaciones."
+    hint_general: "Cierra toda otra lectura sin necesidad de sonar dura."
+    explanation: "Inequívoca: cierra toda otra lectura. «Rotunda» hablaría de la fuerza con que se dice, y la frase la llama suave; «equívoca» sería justo lo contrario, prestarse a dos lecturas."
+    options:
+      - position: 1
+        text: "rotunda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rotunda» habla de la fuerza con que se dice algo, y la frase describe la respuesta como suave."
+        hint_specific: "«Rotunda» suena fuerte. ¿Cómo describe la frase esa respuesta?"
+      - position: 2
+        text: "inequívoca"
+        is_correct: true
+      - position: 3
+        text: "equívoca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equívoca» significa que se presta a dos lecturas, y la frase dice que nadie salió con dos interpretaciones."
+        hint_specific: "«Equívoca» deja dos caminos. Relee el final de la frase."
+  - position: 5
+    sentence: "En un manual de lingüística dirían que el término tiene un solo sentido; en la tienda basta con decir que el cartel es {{blank}}."
+    hint_general: "Hay una palabra de manual y otra de todos los días para lo mismo."
+    explanation: "Inequívoco: la palabra de todos los días. «Unívoco» es la de manual, que la frase deja al otro lado, e «inocuo» significa que no hace daño."
+    options:
+      - position: 1
+        text: "unívoco"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Unívoco» es la palabra de manual de lingüística, y la frase la pone justo al otro lado, frente a la tienda."
+        hint_specific: "«Unívoco» vive en los manuales. ¿Dónde ocurre la segunda parte de la frase?"
+      - position: 2
+        text: "inocuo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inocuo» significa que algo no hace daño, y aquí se habla de cómo se lee un cartel."
+        hint_specific: "«Inocuo» va de no hacer daño. ¿Qué se dice del cartel?"
+      - position: 3
+        text: "inequívoco"
+        is_correct: true
+  - position: 6
+    sentence: "Todo el mundo la vio a la primera y todo el mundo la entendió igual: fue una respuesta {{blank}}."
+    hint_general: "Todos la entendieron de la misma manera, sin versiones distintas."
+    explanation: "Inequívoca: todos la entendieron igual. «Obvia» ya está dicho, porque todo el mundo la vio a la primera, y «equívoca» significa lo contrario, que se presta a dos lecturas."
+    options:
+      - position: 1
+        text: "obvia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obvia» dice que se ve a la primera, y la frase ya cuenta que todo el mundo la vio enseguida."
+        hint_specific: "«Obvia» salta a la vista. Relee las seis primeras palabras."
+      - position: 2
+        text: "equívoca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Equívoca» significa que se presta a dos lecturas, y aquí todos la entendieron igual."
+        hint_specific: "«Equívoca» reparte lecturas distintas. ¿Cómo la entendió la gente?"
+      - position: 3
+        text: "inequívoca"
+        is_correct: true
+  - position: 7
+    sentence: "Puso por escrito un plazo {{blank}}, aunque el acuerdo todavía se puede cambiar si las dos partes quieren."
+    hint_general: "El plazo no se puede leer de dos formas, y aun así el acuerdo sigue abierto."
+    explanation: "Inequívoco: el plazo no se puede leer de dos formas. «Irrevocable» significaría que no se puede cambiar, y la frase dice que sí; «rotundo» hablaría de la fuerza con que se dice."
+    options:
+      - position: 1
+        text: "irrevocable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Irrevocable» significa que no se puede cambiar, y la frase dice que el acuerdo todavía se puede cambiar."
+        hint_specific: "«Irrevocable» no admite marcha atrás. Relee el final de la frase."
+      - position: 2
+        text: "inequívoco"
+        is_correct: true
+      - position: 3
+        text: "rotundo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rotundo» habla de la fuerza con que se dice algo, y aquí lo que importa es que la fecha solo se lee de una manera."
+        hint_specific: "«Rotundo» mide la fuerza. ¿Qué se mide de ese plazo escrito?"
+  - position: 8
+    sentence: "No hizo falta explicarlo dos veces ni subir la voz: la instrucción era {{blank}}."
+    hint_general: "Nadie necesitó una segunda explicación ni pudo leerla de otra forma."
+    explanation: "Inequívoca: no se podía leer de otra forma. «Clara» ya está dicho, porque no hizo falta explicarlo dos veces, y «directa» significa sin rodeos, que aquí no es lo que falta."
+    options:
+      - position: 1
+        text: "clara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Clara» va de entenderse sin esfuerzo, y la frase ya dice que no hizo falta explicarlo dos veces."
+        hint_specific: "«Clara» va de entender. Relee las seis primeras palabras."
+      - position: 2
+        text: "inequívoca"
+        is_correct: true
+      - position: 3
+        text: "directa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Directa» significa sin rodeos, y aquí lo que se subraya es que no había otra manera de leerla."
+        hint_specific: "«Directa» va al grano. ¿La frase habla de rodeos o de lecturas posibles?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El martes, no el miércoles"
+    body: "Las entregas se habían movido tres veces y ya nadie se fiaba del calendario. Esta vez el correo traía una sola línea arriba: «Entrega el martes 14, no el miércoles». Fue inequívoco. No llamó nadie a preguntar."
+    before_phrase: "A ver si lo dejo claro esta vez."
+    after_phrase: "Esta vez el aviso fue inequívoco."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Un no suave"
+    body: "Le pedí a mi hermana que se quedara otro fin de semana. Dijo que no con una frase corta y una sonrisa. Fue suave e inequívoca a la vez: no había manera de entenderla como un quizá. Se fue el domingo y quedamos para el mes siguiente."
+    before_phrase: "Me dijo que no, creo, no sé."
+    after_phrase: "Fue suave e inequívoca a la vez."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El cartel de la puerta"
+    body: "El cartel del local decía «Cerrado los lunes de agosto». Ni una palabra más. «Es inequívoco», comentó alguien en el grupo del barrio, y se acabaron las preguntas del verano. En septiembre lo cambiaron por otro igual de corto."
+    before_phrase: "Pone algo de los lunes, no sé si todos."
+    after_phrase: "Es inequívoco: los lunes de agosto, cerrado."
+metrics:
+  zipf_overall: 3.0637
+  dispersion_dp: 0.3335
+  pedantry_proxy: 0.3379
+  family_size: 9
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

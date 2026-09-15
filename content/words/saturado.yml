@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 5015
+slug: "saturado"
+status: "draft"
+lemma: "saturado"
+part_of_speech: "adjetivo"
+syllables:
+  - "sa"
+  - "tu"
+  - "ra"
+  - "do"
+stressed_syllable: 3
+ipa_latam: "[sa.tuˈɾa.ðo]"
+ipa_es: "[sa.tuˈɾa.ðo]"
+explanation: "Tan lleno que ya no cabe nada más, ni trabajo ni gente."
+example_sentence: "Este mes lo tengo saturado; te lo miro en enero."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Describe el calendario, no tu carácter: por eso se puede decir sin que suene a queja ni a excusa."
+when_not_to_use: "No la uses para el cansancio del cuerpo; aquí lo que está lleno es la agenda, no tú."
+collocations:
+  - "tener el mes saturado"
+  - "un calendario saturado"
+  - "estar saturado de trabajo"
+replaces:
+  - before: "Estoy hasta arriba"
+    after: "Estoy saturado"
+  - before: "No me cabe ni una cosa más este mes"
+    after: "Tengo el mes saturado"
+  - before: "El restaurante estaba a reventar"
+    after: "El restaurante estaba saturado"
+family:
+  - "saturar"
+  - "saturación"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 2
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "hasta arriba"
+  funcion:
+    - "justificar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "saciado"
+    difference: "«Saciado» es quien ya ha comido bastante y no quiere más; la otra palabra habla de un espacio o un calendario sin sitio libre."
+    memory_trick: "Te sacias con la comida; lo otro se llena de citas."
+  - confused_with: "sazonado"
+    difference: "«Sazonado» es lo que lleva la sal y las especias justas; la otra palabra no dice nada del sabor."
+    memory_trick: "Lo sazonado sabe bien; lo otro no cabe."
+exercises:
+  - position: 1
+    sentence: "Renato contestó en dos líneas: tiene el mes {{blank}} y lo mira en enero."
+    hint_general: "Su mes no admite ni una cosa más."
+    explanation: "Saturado: su mes no admite nada más. «Saciado» se dice de quien ya ha comido bastante, y «reventado» es coloquial y habla de agotamiento físico."
+    options:
+      - position: 1
+        text: "saciado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Saciado» se dice de quien ya ha comido bastante, y aquí lo que está lleno es un calendario."
+        hint_specific: "Uno se sacia en la mesa. ¿Qué es lo que no admite nada más en la frase?"
+      - position: 2
+        text: "saturado"
+        is_correct: true
+      - position: 3
+        text: "reventado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Reventado» es coloquial y habla del agotamiento del cuerpo, y la frase describe un mes, no a una persona."
+        hint_specific: "Uno acaba reventado tras una carrera. ¿Qué es lo que describe Renato?"
+  - position: 2
+    sentence: "El comedor estaba tan {{blank}} a las dos que había cola en la acera."
+    hint_general: "Estaba tan lleno que la gente esperaba fuera."
+    explanation: "Saturado: tan lleno que sobraba gente. «Sazonado» habla de sal y especias, y «cansado» describe a una persona, no a un local."
+    options:
+      - position: 1
+        text: "sazonado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sazonado» dice que algo lleva la sal y las especias justas, y aquí lo que sobra son personas, no sabor."
+        hint_specific: "Lo sazonado se prueba con la lengua. ¿Qué había en la acera?"
+      - position: 2
+        text: "saturado"
+        is_correct: true
+      - position: 3
+        text: "cansado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cansado» describe a una persona sin fuerzas, y en la frase el sujeto es un comedor con cola en la puerta."
+        hint_specific: "Lo cansado tiene piernas. ¿Quién o qué está lleno aquí?"
+  - position: 3
+    sentence: "Zoraida dijo que no a la comisión porque tiene el primer trimestre {{blank}} de viajes."
+    hint_general: "Sus tres primeros meses ya están llenos de viajes."
+    explanation: "Saturado: sus tres meses ya están llenos. «Saciado» se dice de quien ya comió bastante, y «colapsado» suena a noticia de carreteras y hospitales."
+    options:
+      - position: 1
+        text: "colapsado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Colapsado» suena a noticia de carreteras y anuncia que algo ha dejado de funcionar, y su trimestre funciona: está lleno."
+        hint_specific: "Lo colapsado deja de moverse del todo. ¿El trimestre de Zoraida sigue en marcha?"
+      - position: 2
+        text: "saturado"
+        is_correct: true
+      - position: 3
+        text: "saciado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Saciado» se dice de quien ya ha comido bastante, y lo que aquí está lleno es una agenda de tres meses."
+        hint_specific: "Saciarse pasa después de comer. ¿De qué está lleno el trimestre?"
+  - position: 4
+    sentence: "Decir «lo tengo {{blank}}» funciona mejor que inventarse una excusa que nadie se cree."
+    hint_general: "Explicar que no hay sitio libre convence más que una excusa."
+    explanation: "Saturado: reconocer que no queda sitio. «Saciado» se dice de quien ya comió bastante, y «harto» es coloquial y suena a queja contra alguien."
+    options:
+      - position: 1
+        text: "saturado"
+        is_correct: true
+      - position: 2
+        text: "saciado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Saciado» se dice de quien ya ha comido bastante, y nadie rechaza un encargo diciendo que ya ha comido."
+        hint_specific: "Saciado tiene que ver con el estómago. ¿Qué se explica al decir que no?"
+      - position: 3
+        text: "harto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Harto» es coloquial y suena a queja contra alguien, y la frase busca justo lo contrario: una razón que no ofenda."
+        hint_specific: "Decir que estás harto señala a un culpable. ¿Qué busca esta frase evitar?"
+  - position: 5
+    sentence: "En junio el taller se queda {{blank}} y ya no aceptan coches hasta septiembre."
+    hint_general: "Se les llena el trabajo y dejan de aceptar más."
+    explanation: "Saturado: se les llena el trabajo y cierran la entrada. «Sazonado» habla de sal y especias, y «parado» diría que no tienen trabajo ninguno."
+    options:
+      - position: 1
+        text: "sazonado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sazonado» se dice de una comida con la sal justa, y aquí se habla de un taller con demasiados coches."
+        hint_specific: "Lo sazonado se sirve en un plato. ¿Qué entra y sale de este taller?"
+      - position: 2
+        text: "parado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Parado» diría que no tienen trabajo, y la frase cuenta lo contrario: tienen tanto que rechazan coches."
+        hint_specific: "Lo parado no tiene faena. ¿Por qué no aceptan más coches?"
+      - position: 3
+        text: "saturado"
+        is_correct: true
+  - position: 6
+    sentence: "Ulises apuntó cuatro encargos en dos días y el lunes ya estaba {{blank}} hasta marzo."
+    hint_general: "Con cuatro encargos llenó su calendario hasta marzo."
+    explanation: "Saturado: llenó su calendario hasta marzo. «Saciado» se dice tras comer bastante, y «ocupado» dice que ahora mismo hace algo, no que no quepa más."
+    options:
+      - position: 1
+        text: "saciado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Saciado» se dice de quien ya comió bastante, y aquí lo que se llena de encargos es su calendario."
+        hint_specific: "Saciarse ocurre en la mesa. ¿Con qué se llenó el lunes de Ulises?"
+      - position: 2
+        text: "saturado"
+        is_correct: true
+      - position: 3
+        text: "ocupado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ocupado» dice que ahora mismo está haciendo algo, y la frase habla de que no le cabe nada nuevo hasta marzo."
+        hint_specific: "Se puede estar ocupado esta tarde y libre mañana. ¿Hasta cuándo llega lo suyo?"
+  - position: 7
+    sentence: "Con el buzón {{blank}}, los mensajes nuevos rebotan y nadie se entera de nada."
+    hint_general: "Sin sitio libre, lo nuevo no entra."
+    explanation: "Saturado: sin sitio libre, lo nuevo rebota. «Saciado» se dice de quien ya comió bastante, y «colapsado» anunciaría que el sistema entero ha caído."
+    options:
+      - position: 1
+        text: "saturado"
+        is_correct: true
+      - position: 2
+        text: "colapsado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Colapsado» suena a titular y anuncia que el sistema entero ha caído, y aquí el buzón sigue vivo: solo rebota lo nuevo."
+        hint_specific: "Lo colapsado ya no funciona en absoluto. ¿Ese buzón sigue funcionando?"
+      - position: 3
+        text: "saciado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Saciado» se dice de quien ya ha comido bastante, y un buzón no come: se llena de mensajes."
+        hint_specific: "Saciarse es cosa de estómagos. ¿Qué se llena en esta frase?"
+  - position: 8
+    sentence: "Marisol lleva la agenda en papel para ver de un vistazo cuándo está {{blank}} y cuándo no."
+    hint_general: "Quiere ver de un golpe qué semanas ya no admiten nada."
+    explanation: "Saturada: ver qué semanas ya no admiten nada. «Saciada» se dice tras comer bastante, y «dispersa» hablaría de su atención, no de su agenda."
+    options:
+      - position: 1
+        text: "dispersa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dispersa» habla de una atención que salta de una cosa a otra, y aquí lo que se mira es cuánto cabe en cada semana."
+        hint_specific: "Lo disperso se va por las ramas. ¿Qué mide Marisol en su agenda?"
+      - position: 2
+        text: "saciada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Saciada» se dice de quien ya ha comido bastante, y lo que se llena aquí son semanas de trabajo."
+        hint_specific: "Saciarse pasa después de comer. ¿Qué se llena en su cuaderno?"
+      - position: 3
+        text: "saturada"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos líneas y una fecha"
+    body: "A Renato le llegó un encargo bueno en el peor momento. En vez de dar largas contestó en dos líneas: «Tengo el mes saturado; te lo miro el siete de enero». El cliente puso una nota en su calendario y volvió a escribir el siete. Empezaron en febrero."
+    before_phrase: "Uf, estoy hasta arriba, ya te diré algo."
+    after_phrase: "Tengo el mes saturado; te lo miro en enero."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La agenda de papel"
+    body: "Marisol apunta todo en un cuaderno grande porque en la pantalla no lo ve venir. Su hijo le pidió ayuda con la mudanza y ella abrió el cuaderno: «Esa semana la tengo saturada; la siguiente entera es tuya». Se mudaron siete días después, sin prisas."
+    before_phrase: "Es que esa semana la tengo fatal, hijo."
+    after_phrase: "Esa semana la tengo saturada; la siguiente es tuya."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Cola en la acera"
+    body: "El comedor del barrio abrió con seis mesas y a las dos ya estaba saturado, con gente esperando fuera. Los dueños tardaron un mes en decidirse y pusieron dos turnos. Ahora nadie espera de pie y el cocinero sale a saludar entre uno y otro."
+    before_phrase: "Aquí a las dos no cabe ni un alfiler."
+    after_phrase: "A las dos esto está saturado."
+metrics:
+  zipf_overall: 3.7115
+  dispersion_dp: 0.1933
+  pedantry_proxy: 0.3822
+  family_size: 39
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

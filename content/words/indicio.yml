@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3201
+slug: "indicio"
+status: "draft"
+lemma: "indicio"
+part_of_speech: "sustantivo"
+syllables:
+  - "in"
+  - "di"
+  - "cio"
+stressed_syllable: 2
+ipa_latam: "[inˈdi.sjo]"
+ipa_es: "[inˈdi.θjo]"
+explanation: "Señal pequeña que hace pensar que algo ocurre, aunque todavía no exista una prueba."
+example_sentence: "No tengo pruebas, solo un indicio: cambió de tema tres veces seguidas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Te deja señalar algo sin afirmarlo: dices lo que ves y dejas abierta la comprobación."
+when_not_to_use: "No la uses cuando ya tienes la prueba; entonces hablas de algo confirmado, no de una señal suelta."
+collocations:
+  - "un indicio claro"
+  - "los primeros indicios"
+  - "un indicio de cansancio"
+replaces:
+  - before: "Me da la sensación de que algo pasa"
+    after: "Tengo un indicio de que algo pasa"
+  - before: "Hay cosas que apuntan a eso"
+    after: "Hay indicios que apuntan a eso"
+  - before: "Algo me huele raro en esa propuesta"
+    after: "Hay un indicio raro en esa propuesta"
+family: []
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "señal"
+  funcion:
+    - "sugerir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "inicio"
+    difference: "«Inicio» es el momento en que algo empieza; la otra palabra es una señal de que algo puede estar pasando."
+    memory_trick: "El inicio abre la puerta; la señal solo te avisa de que hay alguien detrás."
+  - confused_with: "prueba"
+    difference: "Una prueba cierra la duda; la otra palabra la abre y te pide comprobar."
+    memory_trick: "La prueba demuestra; la señal sugiere."
+exercises:
+  - position: 1
+    sentence: "Todavía no hay nada firme contra esa hipótesis, pero sí un {{blank}} que apunta hacia ella: el mismo fallo apareció en dos equipos distintos."
+    hint_general: "Es una señal observada que apunta hacia algo, aunque nadie lo haya comprobado aún."
+    explanation: "Indicio: una señal que apunta hacia algo sin demostrarlo. «Inicio» es el momento en que algo empieza, y un «motivo» explica por qué alguien actúa."
+    options:
+      - position: 1
+        text: "inicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inicio» es el momento en que algo empieza, y aquí nada empieza: un fallo se repite en dos equipos."
+        hint_specific: "«Inicio» marca un comienzo. ¿Algo empieza en esta frase o algo se repite?"
+      - position: 2
+        text: "indicio"
+        is_correct: true
+      - position: 3
+        text: "motivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «motivo» explica por qué alguien hace algo, y aquí nadie actúa: una máquina falla dos veces."
+        hint_specific: "«Motivo» responde a por qué actúa una persona. ¿Quién actúa aquí?"
+  - position: 2
+    sentence: "Marcela buscaba por qué bajaban las ventas y dio con un {{blank}} que aún tiene que comprobar: los clientes nuevos dejan de escribir tras la primera semana."
+    hint_general: "Habla de una señal que apunta a una causa posible y que todavía nadie ha comprobado."
+    explanation: "Indicio: una señal por comprobar que apunta a una causa. Un «índice» es una cifra ya medida, y un «resultado» es lo que queda al final, no lo que te pone sobre la pista."
+    options:
+      - position: 1
+        text: "índice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «índice» es una cifra que ya está medida, y lo que encuentra Marcela es una conducta que aún tiene que comprobar."
+        hint_specific: "«Índice» es un número. ¿Lo que descubre Marcela es una cifra o un comportamiento?"
+      - position: 2
+        text: "resultado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resultado» es lo que queda cuando algo termina, y ella está justo al principio de la búsqueda."
+        hint_specific: "«Resultado» llega al final. ¿En qué momento de la búsqueda está Marcela?"
+      - position: 3
+        text: "indicio"
+        is_correct: true
+  - position: 3
+    sentence: "Antes de señalar a nadie, Ernesto prefirió llamar a lo que había visto un {{blank}} y pedir que alguien más lo revisara."
+    hint_general: "Se trata de algo que alguien ha visto y conviene revisar, no de algo que se cuenta por ahí."
+    explanation: "Indicio: algo observado que conviene revisar. Un «rumor» circula de boca en boca sin que nadie lo haya visto, y «chisme» suena a comentario suelto sobre la vida ajena."
+    options:
+      - position: 1
+        text: "indicio"
+        is_correct: true
+      - position: 2
+        text: "rumor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «rumor» es lo que va circulando sin fuente, y aquí Ernesto habla de algo que vio él mismo."
+        hint_specific: "«Rumor» pasa de boca en boca. ¿Quién vio lo que Ernesto quiere revisar?"
+      - position: 3
+        text: "chisme"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chisme» es coloquial y convierte el asunto en un comentario sobre la vida ajena, justo lo que él evita."
+        hint_specific: "«Chisme» suena a comentario ligero sobre otros. ¿Ernesto quiere eso o quiere revisar algo?"
+  - position: 4
+    sentence: "El técnico revisó la máquina sin dar con la avería, aunque se llevó un {{blank}}: el ruido solo aparecía en frío."
+    hint_general: "Es una señal que se lleva para seguir buscando, no una opinión ya formada."
+    explanation: "Indicio: una señal para seguir buscando. Un «juicio» sería una opinión ya cerrada, y un «antecedente» es algo que ocurrió antes, no lo que suena ahora."
+    options:
+      - position: 1
+        text: "juicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «juicio» es una opinión ya formada, y el técnico sale sin conclusión: se lleva algo para seguir mirando."
+        hint_specific: "«Juicio» cierra una opinión. ¿El técnico cierra algo o se queda a medias?"
+      - position: 2
+        text: "indicio"
+        is_correct: true
+      - position: 3
+        text: "antecedente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «antecedente» es un hecho anterior que se consulta, y aquí el ruido está sonando durante la revisión."
+        hint_specific: "«Antecedente» mira al pasado. ¿Cuándo suena el ruido de la máquina?"
+  - position: 5
+    sentence: "Nadie ha confirmado nada todavía, pero ese silencio en el grupo, que nadie buscó, es un {{blank}} de que algo está pasando."
+    hint_general: "Algo que no se manda ni se anuncia, pero deja ver que hay un problema."
+    explanation: "Indicio: una señal que nadie envía a propósito. Un «aviso» lo da alguien queriendo, y un «inicio» sería el momento en que algo empieza."
+    options:
+      - position: 1
+        text: "aviso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «aviso» lo da alguien a propósito, y la frase subraya que ese silencio no lo buscó nadie."
+        hint_specific: "«Aviso» tiene siempre un emisor. ¿Quién mandó ese silencio?"
+      - position: 2
+        text: "inicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inicio» es el momento en que algo empieza, y aquí el problema ya lleva rato en marcha."
+        hint_specific: "«Inicio» señala un comienzo. ¿El silencio abre algo o delata algo que ya dura?"
+      - position: 3
+        text: "indicio"
+        is_correct: true
+  - position: 6
+    sentence: "Beatriz no se guía por lo que siente: prefiere un {{blank}} de lo que está pasando ahora mismo y poder enseñarlo."
+    hint_general: "Busca una señal visible de algo que ocurre en este momento, no una sensación interna."
+    explanation: "Indicio: una señal visible de lo que ocurre ahora. Un «presentimiento» es justo la sensación que ella evita, y «vestigio» suena a restos de algo muy antiguo."
+    options:
+      - position: 1
+        text: "presentimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «presentimiento» es una sensación interna, y la frase dice que Beatriz no se guía por lo que siente."
+        hint_specific: "«Presentimiento» nace dentro de ti. Relee el inicio: ¿de qué se fía Beatriz?"
+      - position: 2
+        text: "vestigio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vestigio» suena a ruinas y a siglos pasados, y aquí se habla de algo que ocurre ahora mismo en una oficina."
+        hint_specific: "«Vestigio» pide siglos y excavaciones. ¿Cuándo pasa lo que Beatriz quiere enseñar?"
+      - position: 3
+        text: "indicio"
+        is_correct: true
+  - position: 7
+    sentence: "Rodrigo no aseguró nada en la entrevista, pero dejó un {{blank}} de su experiencia con equipos: habló del suyo antes que de sí mismo."
+    hint_general: "Sin afirmarlo, dejó ver algo; busca la señal que la otra persona deduce por su cuenta."
+    explanation: "Indicio: una señal que la otra persona deduce sola. Un «testimonio» sería una declaración expresa, y él no aseguró nada; «inicio» es el momento en que algo empieza."
+    options:
+      - position: 1
+        text: "indicio"
+        is_correct: true
+      - position: 2
+        text: "testimonio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «testimonio» es una declaración expresa, y la frase empieza diciendo que Rodrigo no aseguró nada."
+        hint_specific: "«Testimonio» se declara en voz alta. ¿Qué dice la frase que Rodrigo no hizo?"
+      - position: 3
+        text: "inicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inicio» es el momento en que algo empieza, y aquí se habla de años trabajando con equipos."
+        hint_specific: "«Inicio» marca un comienzo. ¿La frase cuenta cuándo empezó o qué dejó ver?"
+  - position: 8
+    sentence: "Con dos correos sin respuesta y una reunión movida, Guillermo ya tenía un {{blank}} de que el proyecto se estaba enfriando."
+    hint_general: "Dos hechos sueltos le bastan para sospechar algo, sin que nadie se lo haya escrito."
+    explanation: "Indicio: dos hechos sueltos que apuntan a algo. Un «informe» lo escribe alguien, y un «índice» es una cifra que se mide, no una señal suelta."
+    options:
+      - position: 1
+        text: "informe"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «informe» lo redacta alguien y se entrega, y Guillermo solo tiene dos hechos que ha visto él."
+        hint_specific: "«Informe» es un documento que alguien firma. ¿Quién le entregó algo a Guillermo?"
+      - position: 2
+        text: "índice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «índice» es una cifra medida, y aquí no hay ningún número: hay correos y una reunión."
+        hint_specific: "«Índice» se expresa en números. ¿Qué tiene Guillermo entre manos?"
+      - position: 3
+        text: "indicio"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El ruido en frío"
+    body: "El técnico no encontró la avería, pero apuntó una línea en la hoja: «El ruido solo aparece en frío». Su jefa la leyó y asintió. «Con un indicio así ya sabemos por dónde seguir», dijo. Volvieron el lunes a primera hora, con la máquina todavía fría."
+    before_phrase: "Hay algo raro ahí, no sé qué es."
+    after_phrase: "Tenemos un indicio: el ruido solo aparece en frío."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Tres domingos"
+    body: "Mi hermana llevaba tres domingos cambiando de tema cuando alguien preguntaba por la mudanza. No dije nada, pero tomé nota. «No tengo pruebas», le comenté a mi madre, «solo un indicio». El domingo siguiente lo contó ella sola, antes del postre."
+    before_phrase: "Me da la sensación de que algo le pasa."
+    after_phrase: "No tengo pruebas, solo un indicio."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Habló del suyo primero"
+    body: "Rodrigo no dijo en ningún momento que hubiera llevado un equipo. Habló del suyo antes que de sí mismo, tres veces seguidas. La entrevistadora lo anotó al margen: «Un indicio de que sabe repartir el trabajo». En la segunda ronda se lo preguntó de frente."
+    before_phrase: "Algo me dice que ha llevado gente."
+    after_phrase: "Hay un indicio de que ha llevado gente."
+metrics:
+  zipf_overall: 3.7169
+  dispersion_dp: 0.2137
+  pedantry_proxy: 0.5161
+  family_size: 101
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

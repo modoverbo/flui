@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3215
+slug: "magnitud"
+status: "draft"
+lemma: "magnitud"
+part_of_speech: "sustantivo"
+syllables:
+  - "mag"
+  - "ni"
+  - "tud"
+stressed_syllable: 3
+ipa_latam: "[maɣ.niˈtud]"
+ipa_es: "[maɣ.niˈtud]"
+explanation: "Cuánto de grande es algo de verdad, medido con números y no con palabras."
+example_sentence: "Nadie discutía el problema, solo su magnitud: eran cuatro casos, no cuarenta."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Te deja discutir el tamaño de algo con cifras, en lugar de pelear con «mucho» y «poco»."
+when_not_to_use: "No la uses para lo serio que es algo; esta palabra mide el tamaño, no la gravedad."
+collocations:
+  - "la magnitud del problema"
+  - "medir la magnitud"
+  - "una magnitud parecida"
+replaces:
+  - before: "No sabemos si es grave o una tontería"
+    after: "No conocemos la magnitud"
+  - before: "Esto es un problemón"
+    after: "Esto es un problema de otra magnitud"
+  - before: "Se te está yendo de las manos"
+    after: "No estás midiendo bien la magnitud"
+family: []
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "mucho"
+    - "grande"
+  funcion:
+    - "medir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "gravedad"
+    difference: "La gravedad dice lo serio que es algo; la otra palabra dice solo cuánto de grande es, en cifras."
+    memory_trick: "La gravedad juzga; el tamaño se cuenta."
+  - confused_with: "multitud"
+    difference: "«Multitud» es mucha gente junta; la otra palabra es el tamaño que tiene un asunto."
+    memory_trick: "La multitud se ve en la plaza; el tamaño, en la tabla."
+exercises:
+  - position: 1
+    sentence: "Nadie discutía si el problema existe, solo su {{blank}}: eran cuatro casos, no cuarenta."
+    hint_general: "Se discute cuánto de grande es, no si es serio ni si existe."
+    explanation: "Magnitud: cuánto de grande es, en cifras. La «gravedad» diría lo serio que resulta, y aquí se discuten números; una «multitud» es mucha gente junta."
+    options:
+      - position: 1
+        text: "multitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «multitud» es mucha gente junta en un sitio, y aquí se cuentan casos en una hoja."
+        hint_specific: "«Multitud» llena una plaza. ¿Qué se está contando en la frase?"
+      - position: 2
+        text: "magnitud"
+        is_correct: true
+      - position: 3
+        text: "gravedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «gravedad» dice lo serio que resulta algo, y lo que aquí se discute es si son cuatro o cuarenta."
+        hint_specific: "«Gravedad» juzga cuánto preocupa. ¿Qué dos cifras aparecen al final?"
+  - position: 2
+    sentence: "Antes de pedir ayuda, Olga midió la {{blank}} del retraso: nueve días, no tres semanas."
+    hint_general: "Pone una cifra al retraso antes de decidir nada."
+    explanation: "Magnitud: la cifra que mide el retraso. La «urgencia» diría en cuánto tiempo hay que resolverlo, y una «actitud» es la manera de comportarse."
+    options:
+      - position: 1
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «actitud» es la manera de comportarse de alguien, y aquí lo que se mide son días de retraso."
+        hint_specific: "«Actitud» describe cómo se comporta una persona. ¿Qué midió Olga?"
+      - position: 2
+        text: "urgencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «urgencia» dice en cuánto tiempo hay que resolver algo, y aquí se cuenta lo grande que es el retraso."
+        hint_specific: "«Urgencia» habla de cuándo, no de cuánto. ¿Qué cifra dio Olga?"
+      - position: 3
+        text: "magnitud"
+        is_correct: true
+  - position: 3
+    sentence: "No hace falta exagerar ni quitarle hierro: pon la {{blank}} en una cifra y ya está."
+    hint_general: "Basta con poner un número, sin inflar ni rebajar nada."
+    explanation: "Magnitud: el número que evita exagerar. «Barbaridad» es coloquial y exagera, justo lo que la frase pide evitar, y la «frecuencia» diría cada cuánto pasa algo."
+    options:
+      - position: 1
+        text: "magnitud"
+        is_correct: true
+      - position: 2
+        text: "barbaridad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Barbaridad» es coloquial y sirve justo para exagerar, y la frase pide no exagerar ni rebajar."
+        hint_specific: "«Barbaridad» infla las cosas al hablar. Relee las cinco primeras palabras."
+      - position: 3
+        text: "frecuencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «frecuencia» dice cada cuánto ocurre algo, y aquí se pide una cifra de cuánto de grande es."
+        hint_specific: "«Frecuencia» cuenta repeticiones. ¿Qué cifra pide la frase?"
+  - position: 4
+    sentence: "El fallo es el mismo de siempre, pero esta vez tiene otra {{blank}}: afecta a ochenta pedidos."
+    hint_general: "El fallo no cambia; lo que cambia es a cuánto llega esta vez."
+    explanation: "Magnitud: a cuánto llega el fallo esta vez. La «causa» explicaría por qué pasa, y la frase dice que el fallo es el mismo; la «latitud» es una medida del mapa."
+    options:
+      - position: 1
+        text: "latitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «latitud» es una medida que sitúa un punto en el mapa, y aquí se cuentan pedidos afectados."
+        hint_specific: "«Latitud» aparece en los mapas. ¿Qué se cuenta al final de la frase?"
+      - position: 2
+        text: "magnitud"
+        is_correct: true
+      - position: 3
+        text: "causa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «causa» explicaría por qué ocurre, y la frase dice que el fallo es el mismo de siempre."
+        hint_specific: "«Causa» responde al porqué. ¿Qué dice la frase que no ha cambiado?"
+  - position: 5
+    sentence: "El informe no dice si esto es serio: solo da la {{blank}}, en horas y en dinero."
+    hint_general: "El informe solo pone cifras y no juzga nada."
+    explanation: "Magnitud: las cifras que da el informe. La «gravedad» sería juzgar si es serio, y la frase dice que el informe no lo hace; una «multitud» es mucha gente junta."
+    options:
+      - position: 1
+        text: "gravedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «gravedad» juzga lo serio que es algo, y la frase empieza diciendo que el informe no dice si esto es serio."
+        hint_specific: "«Gravedad» es un juicio. Relee las seis primeras palabras."
+      - position: 2
+        text: "magnitud"
+        is_correct: true
+      - position: 3
+        text: "multitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «multitud» es mucha gente junta, y el informe da horas y dinero, no personas en una plaza."
+        hint_specific: "«Multitud» llena un sitio de gente. ¿En qué se mide lo del informe?"
+  - position: 6
+    sentence: "Da igual cuántas veces pase; lo que hay que escribir en la primera línea es la {{blank}}."
+    hint_general: "Lo primero que se escribe es cuánto de grande es, no cada cuánto ocurre."
+    explanation: "Magnitud: cuánto de grande es. La «frecuencia» sería cuántas veces pasa, y la frase dice que eso da igual; una «actitud» es la manera de comportarse."
+    options:
+      - position: 1
+        text: "frecuencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «frecuencia» es cuántas veces ocurre algo, y la frase empieza diciendo que eso da igual."
+        hint_specific: "«Frecuencia» cuenta repeticiones. Relee las cuatro primeras palabras."
+      - position: 2
+        text: "actitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «actitud» es la manera de comportarse de alguien, y aquí se escribe una cifra en la primera línea."
+        hint_specific: "«Actitud» retrata a una persona. ¿Qué se escribe en esa primera línea?"
+      - position: 3
+        text: "magnitud"
+        is_correct: true
+  - position: 7
+    sentence: "Los dos problemas llegan mañana, pero no tienen la misma {{blank}}: uno son dos clientes y el otro son cien."
+    hint_general: "Llegan a la vez, pero uno es mucho más grande que el otro."
+    explanation: "Magnitud: lo grande que es cada problema. La «urgencia» es la misma porque los dos llegan mañana, y la «latitud» es una medida del mapa."
+    options:
+      - position: 1
+        text: "urgencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «urgencia» es igual en los dos casos, porque la frase dice que ambos llegan mañana."
+        hint_specific: "«Urgencia» depende de cuándo. ¿Cuándo llegan los dos problemas?"
+      - position: 2
+        text: "latitud"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «latitud» sitúa un punto en el mapa, y aquí se comparan dos y cien clientes."
+        hint_specific: "«Latitud» se lee en un mapa. ¿Qué se compara en la frase?"
+      - position: 3
+        text: "magnitud"
+        is_correct: true
+  - position: 8
+    sentence: "Para explicarlo al comité, Olga dejó una cifra y una {{blank}} clara, sin adornos ni palabras grandes."
+    hint_general: "Explica el tamaño con un número y sin florituras."
+    explanation: "Magnitud: el tamaño explicado con un número. «Envergadura» suena a palabra grande, justo lo que ella evita, y la «causa» explicaría por qué pasa, no cuánto ocupa."
+    options:
+      - position: 1
+        text: "envergadura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Envergadura» es una de esas palabras grandes que la frase dice que Olga evitó."
+        hint_specific: "«Envergadura» suena a discurso solemne. Relee el final de la frase."
+      - position: 2
+        text: "magnitud"
+        is_correct: true
+      - position: 3
+        text: "causa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «causa» explicaría por qué ocurre, y aquí Olga solo da un número y su tamaño."
+        hint_specific: "«Causa» responde al porqué. ¿Qué dejó Olga junto a la cifra?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuatro, no cuarenta"
+    body: "La reunión llevaba veinte minutos de «esto es gravísimo» y «esto no es nada». Olga abrió la hoja. «Nadie discute el problema; discutimos la magnitud. Son cuatro casos, no cuarenta». A partir de ahí hablaron de qué hacer con cuatro."
+    before_phrase: "Es que esto es un problemón, o no, no sé."
+    after_phrase: "Discutimos la magnitud: son cuatro casos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Nueve días"
+    body: "Mi hermano llevaba una semana diciendo que la obra iba fatal. Le pedí un número. «Nueve días de retraso», dijo por fin. «Entonces conocemos la magnitud», le contesté, «y con nueve días se puede hacer algo». Durmió mejor esa noche."
+    before_phrase: "Esto va fatal, se nos va de las manos."
+    after_phrase: "Ya conocemos la magnitud: nueve días."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos clientes y cien"
+    body: "En la asamblea del mercado se juntaron dos avisos para el mismo lunes. Alguien propuso atender el primero por orden de llegada. Olga lo frenó: «Llegan a la vez, pero no tienen la misma magnitud: dos puestos y cien». Empezaron por los cien."
+    before_phrase: "Los dos son urgentes, vamos por orden."
+    after_phrase: "No tienen la misma magnitud: dos y cien."
+metrics:
+  zipf_overall: 4.5609
+  dispersion_dp: 0.1502
+  pedantry_proxy: 0.5492
+  family_size: 36
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

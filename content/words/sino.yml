@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "sino"
+status: "draft"
+lemma: "sino"
+part_of_speech: "conector"
+syllables:
+  - "si"
+  - "no"
+stressed_syllable: 2
+ipa_latam: "[siˈno]"
+ipa_es: "[siˈno]"
+explanation: "Cambia lo que acabas de negar por lo que sí es verdad."
+example_sentence: "El retraso no vino del taller, sino del envío que salió tarde."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Primero niegas, después colocas lo verdadero: la frase queda cerrada y nadie se queda a medias."
+when_not_to_use: "No la uses si antes no has negado nada; sin ese «no» previo la frase se queda coja."
+collocations:
+  - "sino que"
+  - "sino todo lo contrario"
+replaces:
+  - before: "No es por dinero, es por ganas de cambiar"
+    after: "No es por dinero, sino por ganas de cambiar"
+  - before: "No pidió ayuda, pidió una lista, o sea"
+    after: "No pidió ayuda, sino una lista"
+  - before: "El ruido no venía del patio, venía de las máquinas"
+    after: "El ruido no venía del patio, sino de las máquinas"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+  - slug: "conflicto-desacuerdo"
+    relevance: 1
+tags:
+  comodin:
+    - "no, es que"
+  funcion:
+    - "corregir lo negado"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "si no"
+    difference: "«Si no», en dos palabras, abre una condición: «si no llueve, salimos». La otra corrige lo que se acaba de negar."
+    memory_trick: "Separado plantea un supuesto; junto pone la verdad en su sitio."
+  - confused_with: "sin"
+    difference: "«Sin» indica falta de algo: «café sin azúcar». La otra no habla de faltas: sustituye lo negado por lo cierto."
+    memory_trick: "Uno quita algo; la otra pone algo en su lugar."
+exercises:
+  - position: 1
+    sentence: "No me fui de la empresa por el dinero, {{blank}} por las ganas de cambiar de aire."
+    hint_general: "Después de negar un motivo, coloca el verdadero en su lugar."
+    explanation: "Sino: sustituye el motivo negado por el real. «Si no» abriría una condición y «porque» daría una causa sin corregir lo anterior."
+    options:
+      - position: 1
+        text: "si no"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Si no», separado, abre una condición sobre algo que podría pasar, y aquí ya está todo decidido: la marcha ocurrió."
+        hint_specific: "«Si no» plantea un supuesto. ¿Queda algo por cumplirse o ya se marchó?"
+      - position: 2
+        text: "sino"
+        is_correct: true
+      - position: 3
+        text: "porque"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Porque» introduce una causa y deja la negación anterior sin corregir, y la frase necesita poner el motivo verdadero en su sitio."
+        hint_specific: "«Porque» explica una causa. ¿La frase explica algo o cambia un motivo por otro?"
+  - position: 2
+    sentence: "El problema no está en el diseño, {{blank}} en el tiempo que tardamos en decidir."
+    hint_general: "Niega un culpable y pone el verdadero justo detrás."
+    explanation: "Sino: sustituye el culpable negado por el real. «O sea» repetiría la idea con otras palabras y «aunque» anunciaría un obstáculo en vez de una corrección."
+    options:
+      - position: 1
+        text: "sino"
+        is_correct: true
+      - position: 2
+        text: "o sea"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«O sea» es de conversación y repite la misma idea con otras palabras, cuando aquí hay que cambiar el culpable por otro distinto."
+        hint_specific: "«O sea» dice lo mismo de otro modo. ¿Se repite la idea o se corrige?"
+      - position: 3
+        text: "aunque"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aunque» anuncia un obstáculo, y la frase no pone pegas: cambia un culpable por otro."
+        hint_specific: "«Aunque» prepara una pega. ¿Hay una pega o hay una corrección?"
+  - position: 3
+    sentence: "Amalia no pidió ayuda, {{blank}} una lista clara de lo que faltaba por hacer."
+    hint_general: "Niega una petición y coloca a continuación la que sí hizo."
+    explanation: "Sino: cambia la petición negada por la verdadera. «Si no» abriría una condición y «además» sumaría la lista a una ayuda que ella no pidió."
+    options:
+      - position: 1
+        text: "si no"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Si no», separado, abriría una condición, y aquí nadie pone condiciones: se aclara qué pidió exactamente."
+        hint_specific: "«Si no» plantea un supuesto. ¿Falta alguna condición o se corrige lo dicho?"
+      - position: 2
+        text: "además"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Además» sumaría la lista a una ayuda que ella nunca pidió, y la frase empieza negando justamente esa ayuda."
+        hint_specific: "«Además» alarga lo pedido. ¿Pidió las dos cosas o solo una?"
+      - position: 3
+        text: "sino"
+        is_correct: true
+  - position: 4
+    sentence: "La cena no salió mal por la comida, {{blank}} por la música tan alta del local."
+    hint_general: "Niega una causa y pon la verdadera justo después."
+    explanation: "Sino: sustituye la causa negada por la real. «Vamos» es una muletilla de conversación y «pero» opondría dos ideas en vez de corregir una."
+    options:
+      - position: 1
+        text: "vamos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vamos» es una muletilla de conversación que suaviza lo dicho, y aquí hace falta señalar la causa verdadera sin rodeos."
+        hint_specific: "«Vamos» suena a hablar sobre la marcha. ¿La frase duda o corrige con seguridad?"
+      - position: 2
+        text: "sino"
+        is_correct: true
+      - position: 3
+        text: "pero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pero» enfrenta dos ideas que conviven, y aquí la segunda sustituye a la primera: la comida queda descartada."
+        hint_specific: "«Pero» deja las dos ideas en pie. ¿Conviven las dos causas o una anula a la otra?"
+  - position: 5
+    sentence: "Lo que pidió Bruno no era un permiso, {{blank}} una respuesta rápida por escrito."
+    hint_general: "Niega una cosa y pon en su lugar la que de verdad quería."
+    explanation: "Sino: sustituye lo negado por lo cierto. «Sin» hablaría de una falta y «mejor dicho» anunciaría que quien habla se corrige a sí mismo."
+    options:
+      - position: 1
+        text: "sin"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sin» señala la falta de algo, y aquí no falta nada: se cambia una petición por otra distinta."
+        hint_specific: "«Sin» habla de lo que no se tiene. ¿Falta algo o se corrige lo dicho?"
+      - position: 2
+        text: "mejor dicho"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mejor dicho» avisa de que quien habla rectifica su propia frase, y aquí la frase corrige lo que Bruno pidió, no un desliz de quien cuenta."
+        hint_specific: "«Mejor dicho» arregla un desliz de quien habla. ¿Se equivocó el narrador o se aclara lo que pidió Bruno?"
+      - position: 3
+        text: "sino"
+        is_correct: true
+  - position: 6
+    sentence: "No quiero que cambies de plan, {{blank}} que me lo cuentes antes de decidirlo."
+    hint_general: "Niega una petición grande y coloca la pequeña que sí importa."
+    explanation: "Sino: cambia lo negado por lo que sí se pide. «Si no» abriría una condición y «salvo» apartaría un caso en lugar de sustituirlo."
+    options:
+      - position: 1
+        text: "sino"
+        is_correct: true
+      - position: 2
+        text: "si no"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Si no», separado, abre una condición, y esta frase no condiciona nada: aclara qué se pide de verdad."
+        hint_specific: "«Si no» plantea un supuesto. ¿Se pone una condición o se corrige la petición?"
+      - position: 3
+        text: "salvo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Salvo» aparta un caso de una lista, y aquí no hay lista: hay una petición que sustituye a otra."
+        hint_specific: "«Salvo» deja un caso fuera. ¿Se aparta algo de una lista o se cambia una petición?"
+  - position: 7
+    sentence: "El ruido de las noches no venía del patio, {{blank}} del cuarto de las máquinas."
+    hint_general: "Niega un origen y señala el verdadero justo detrás."
+    explanation: "Sino: sustituye el origen negado por el real. «O sea» repetiría la idea con otras palabras y «es más» añadiría un dato en lugar de corregir."
+    options:
+      - position: 1
+        text: "o sea"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«O sea» es de conversación y repite la misma idea, cuando aquí hace falta cambiar un sitio por otro distinto."
+        hint_specific: "«O sea» reformula lo dicho. ¿Se repite el origen o se cambia?"
+      - position: 2
+        text: "es más"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Es más» refuerza lo ya dicho con un dato extra, y aquí lo anterior se descarta: el patio queda fuera."
+        hint_specific: "«Es más» sube la apuesta de lo dicho. ¿El patio sigue en pie o queda descartado?"
+      - position: 3
+        text: "sino"
+        is_correct: true
+  - position: 8
+    sentence: "Marcelo no se enfadó por el retraso, {{blank}} por enterarse de todo a través de terceros."
+    hint_general: "Niega un motivo de enfado y coloca el que de verdad le dolió."
+    explanation: "Sino: sustituye el motivo negado por el verdadero. «Sin» hablaría de una falta y «vamos» es una muletilla de conversación."
+    options:
+      - position: 1
+        text: "sin"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sin» señala la falta de algo, y aquí no falta nada: se cambia un motivo de enfado por otro."
+        hint_specific: "«Sin» habla de lo que no se tiene. ¿Falta algo o se corrige el motivo?"
+      - position: 2
+        text: "sino"
+        is_correct: true
+      - position: 3
+        text: "vamos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vamos» es una muletilla de conversación y suaviza la frase, cuando aquí se señala con precisión qué le dolió."
+        hint_specific: "«Vamos» suena a pensar en voz alta. ¿La frase duda o precisa el motivo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "De dónde venía el retraso"
+    body: "El taller llevaba dos semanas cargando con la culpa. Herminia revisó las fechas y lo dijo en la reunión del lunes: «El retraso no vino del taller, sino del envío». Nadie se puso a la defensiva y el equipo cambió al proveedor en quince días."
+    before_phrase: "No fue el taller, fue el envío, o sea, eso."
+    after_phrase: "El retraso no vino del taller, sino del envío."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que de verdad dolía"
+    body: "Llevaban tres días sin hablarse por un plan cambiado a última hora. Casimiro dio con la frase exacta: «No me molestó el cambio, sino enterarme por tu hermana». Su pareja entendió el punto al instante. La conversación duró diez minutos y terminó bien."
+    before_phrase: "No es por el plan, es que me enteré por tu hermana."
+    after_phrase: "No me molestó el cambio, sino enterarme por tu hermana."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta del cambio"
+    body: "Le preguntaron por qué dejaba un puesto tan estable. Ofelia no dio rodeos: «No me voy por el sueldo, sino por las ganas de aprender otra cosa». La respuesta cabía en una línea y sonó honesta. Le preguntaron qué quería aprender, que era justo lo que ella quería contar."
+    before_phrase: "Bueno, no es por el sueldo, es por ganas de cambiar, no sé."
+    after_phrase: "No me voy por el sueldo, sino por las ganas de aprender."
+metrics:
+  zipf_overall: 5.7506
+  dispersion_dp: 0.0593
+  pedantry_proxy: 0.4843
+  family_size: 7
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

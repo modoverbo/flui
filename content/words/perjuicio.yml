@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "perjuicio"
+status: "draft"
+lemma: "perjuicio"
+part_of_speech: "sustantivo"
+syllables:
+  - "per"
+  - "jui"
+  - "cio"
+stressed_syllable: 2
+ipa_latam: "[peɾˈxwi.sjo]"
+ipa_es: "[peɾˈxwi.θjo]"
+explanation: "Daño que sufre alguien por una decisión ajena, casi siempre en dinero o en tiempo."
+example_sentence: "Cambiar la fecha ahora causaría un perjuicio enorme a quienes ya reservaron."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra el daño concreto sin acusar a nadie: describe la consecuencia, no la intención."
+when_not_to_use: "No la uses para una idea formada de antemano sobre alguien; eso es un «prejuicio»."
+collocations:
+  - "causar un perjuicio"
+  - "un perjuicio económico"
+  - "sin perjuicio de"
+replaces:
+  - before: "Ese cambio nos hace un prejuicio grande"
+    after: "Ese cambio nos causa un perjuicio grande"
+  - before: "Ese retraso me hizo mucho daño"
+    after: "Ese retraso me causó un perjuicio serio"
+  - before: "Nos salió carísimo el corte de luz"
+    after: "El corte de luz nos dejó un perjuicio de mil euros"
+family:
+  - "perjudicar"
+  - "perjudicial"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin: ["daño"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "prejuicio"
+    difference: "Un «prejuicio» es una idea formada de antemano sobre alguien; lo otro es el daño real que sufre una persona."
+    memory_trick: "El prejuicio está en tu cabeza; el daño está en la cuenta."
+  - confused_with: "perjurio"
+    difference: "«Perjurio» es mentir después de jurar decir la verdad; nada tiene que ver con la pérdida que alguien sufre."
+    memory_trick: "El perjurio rompe un juramento; el daño rompe una cuenta."
+exercises:
+  - position: 1
+    sentence: "El retraso de la obra causó un {{blank}} serio a los comercios de la calle."
+    hint_general: "Nombra el daño concreto que sufre alguien por una decisión ajena."
+    explanation: "Perjuicio: el daño real que sufren los comercios. «Prejuicio» es una idea formada de antemano, y «contratiempo» es solo un estorbo pasajero."
+    options:
+      - position: 1
+        text: "prejuicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prejuicio» es una idea formada de antemano sobre alguien, y aquí lo que hay es una pérdida medible de ventas."
+        hint_specific: "Un prejuicio vive en la cabeza de quien juzga. ¿Qué pierden de verdad esos comercios?"
+      - position: 2
+        text: "perjuicio"
+        is_correct: true
+      - position: 3
+        text: "contratiempo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Contratiempo» es un estorbo pasajero que se resuelve, y la frase habla de un daño serio que ya está hecho."
+        hint_specific: "Un contratiempo se soluciona y se olvida. ¿Eso encaja con la palabra «serio»?"
+  - position: 2
+    sentence: "Cambiar la fecha a última hora supone un {{blank}} para quien ya compró los billetes."
+    hint_general: "Se trata de la pérdida que cae sobre otra persona por una decisión tuya."
+    explanation: "Perjuicio: la pérdida que cae sobre quien ya pagó. «Prejuicio» es una idea previa sobre alguien, y «estropicio» es coloquial y señala destrozos visibles."
+    options:
+      - position: 1
+        text: "estropicio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Estropicio» es coloquial y señala el desorden o los destrozos que se ven, no el dinero que alguien deja de recuperar."
+        hint_specific: "Un estropicio se ve y se barre. ¿Qué queda roto aquí, el suelo o el bolsillo?"
+      - position: 2
+        text: "prejuicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prejuicio» es una idea formada antes de conocer a alguien, y nadie está juzgando a los viajeros: se les encarece el viaje."
+        hint_specific: "El prejuicio juzga a una persona. ¿Aquí se juzga a alguien o se le hace perder dinero?"
+      - position: 3
+        text: "perjuicio"
+        is_correct: true
+  - position: 3
+    sentence: "Marcos firmó el acuerdo sin {{blank}} de reclamar más adelante las horas extra."
+    hint_general: "La fórmula deja claro que firmar ahora no le quita nada a lo que puede pedir después."
+    explanation: "Perjuicio: firmar no le quita el derecho a reclamar después. «Prejuicio» es una idea previa sobre alguien, y «perjurio» es mentir bajo juramento."
+    options:
+      - position: 1
+        text: "perjuicio"
+        is_correct: true
+      - position: 2
+        text: "prejuicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prejuicio» es una idea formada de antemano sobre una persona, y aquí se habla de lo que Marcos podrá reclamar."
+        hint_specific: "El prejuicio juzga a alguien antes de conocerlo. ¿A quién estaría juzgando Marcos al firmar?"
+      - position: 3
+        text: "perjurio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perjurio» es mentir después de jurar decir la verdad, y nadie jura nada al firmar un acuerdo de horas extra."
+        hint_specific: "El perjurio aparece donde alguien ha jurado. ¿Hay algún juramento en esta escena?"
+  - position: 4
+    sentence: "La mudanza al otro edificio trajo un {{blank}} claro: los clientes dejaron de encontrarnos."
+    hint_general: "Habla de la pérdida concreta que dejó una decisión."
+    explanation: "Perjuicio: la pérdida concreta de clientes. «Perjurio» es mentir bajo juramento, y «revés» apunta a un golpe de mala suerte, no a un daño causado."
+    options:
+      - position: 1
+        text: "perjurio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perjurio» es faltar a la verdad después de jurarla, y en una mudanza nadie ha jurado nada."
+        hint_specific: "El perjurio necesita un juramento previo. ¿Alguien juró algo antes de mudarse?"
+      - position: 2
+        text: "revés"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Revés» suena a golpe de mala suerte, y aquí la pérdida viene de una decisión propia: cambiar de edificio."
+        hint_specific: "Un revés llega sin que nadie lo provoque. ¿Quién decidió aquí el cambio de edificio?"
+      - position: 3
+        text: "perjuicio"
+        is_correct: true
+  - position: 5
+    sentence: "Ana calculó el {{blank}} económico del corte de luz antes de llamar al seguro."
+    hint_general: "Pone cifra a la pérdida que le causó algo ajeno a su voluntad."
+    explanation: "Perjuicio: la pérdida que Ana pone en cifras. «Prejuicio» es una idea previa sobre alguien, y «menoscabo» suena a escrito jurídico en una llamada corriente."
+    options:
+      - position: 1
+        text: "prejuicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prejuicio» es una idea previa sobre una persona y no se calcula en dinero; Ana suma lo que perdió."
+        hint_specific: "El prejuicio no tiene cifra. ¿Qué está sumando Ana antes de llamar?"
+      - position: 2
+        text: "menoscabo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Menoscabo» pertenece al lenguaje jurídico y subraya la pérdida de valor o de prestigio; en una llamada al seguro suena impostado."
+        hint_specific: "«Menoscabo» vive en los escritos de abogados. ¿Ana redacta una demanda o llama por teléfono?"
+      - position: 3
+        text: "perjuicio"
+        is_correct: true
+  - position: 6
+    sentence: "Nadie quiso reconocer el {{blank}} que el cambio de horario causó a los turnos de noche."
+    hint_general: "Se trata del daño que una medida deja sobre un grupo concreto."
+    explanation: "Perjuicio: el daño que la medida dejó sobre esos turnos. «Prejuicio» es una idea previa sobre alguien, y «trastorno» apunta al desorden, no a la pérdida."
+    options:
+      - position: 1
+        text: "trastorno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Trastorno» describe el desorden que provoca un cambio, y la frase apunta a lo que ese grupo pierde, no a su desconcierto."
+        hint_specific: "Un trastorno revuelve la rutina. ¿Lo que se niega es el lío o la pérdida?"
+      - position: 2
+        text: "perjuicio"
+        is_correct: true
+      - position: 3
+        text: "prejuicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prejuicio» sería una idea formada de antemano sobre esos trabajadores, y aquí lo que se discute es cuánto pierden."
+        hint_specific: "El prejuicio juzga a la gente por adelantado. ¿Se está juzgando a alguien o contando pérdidas?"
+  - position: 7
+    sentence: "Al revisar la factura, Julián dejó por escrito el {{blank}} que le había causado el cobro doble."
+    hint_general: "Pone nombre a la pérdida que le ocasionó un fallo ajeno."
+    explanation: "Perjuicio: la pérdida que le causó el cobro doble. «Prejuicio» es una idea previa sobre alguien, y «agravio» apunta a la ofensa, no al dinero."
+    options:
+      - position: 1
+        text: "agravio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agravio» subraya la ofensa al honor de alguien, y Julián reclama dinero cobrado de más, no una disculpa."
+        hint_specific: "Un agravio duele en el orgullo. ¿Julián reclama respeto o reclama dinero?"
+      - position: 2
+        text: "prejuicio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prejuicio» es una idea formada de antemano sobre alguien, y una factura mal cobrada no juzga a nadie."
+        hint_specific: "El prejuicio vive en la cabeza de quien juzga. ¿Qué aparece aquí por duplicado?"
+      - position: 3
+        text: "perjuicio"
+        is_correct: true
+  - position: 8
+    sentence: "La mediadora explicó que aplazar la entrega una semana no causaba ningún {{blank}} a la otra parte."
+    hint_general: "Se trata de comprobar si alguien pierde algo real con ese aplazamiento."
+    explanation: "Perjuicio: nadie pierde nada con el aplazamiento. «Perjurio» es mentir bajo juramento, y «descalabro» es coloquial y exagera hasta el desastre."
+    options:
+      - position: 1
+        text: "descalabro"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Descalabro» es coloquial y anuncia un desastre rotundo, y aquí se mide una semana de espera entre dos partes."
+        hint_specific: "Un descalabro suena a catástrofe. ¿Una semana de espera es una catástrofe?"
+      - position: 2
+        text: "perjurio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perjurio» es mentir después de jurar decir la verdad, y aquí nadie ha jurado nada: se aplaza una entrega."
+        hint_specific: "El perjurio exige un juramento roto. ¿Quién juró algo en esta mediación?"
+      - position: 3
+        text: "perjuicio"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Una semana más"
+    body: "El proveedor pidió aplazar la entrega. Silvia revisó el calendario y respondió: «Podemos esperar una semana, siempre que el retraso no nos cause un perjuicio con el cliente final». La otra parte lo puso por escrito ese mismo día."
+    before_phrase: "Mientras no nos haga daño, vale."
+    after_phrase: "Siempre que no nos cause un perjuicio."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena que se movió"
+    body: "El grupo cambió la reserva al jueves. Emilio escribió en el chat: «A mí me viene bien, pero el cambio le causa un perjuicio a Teresa, que ya pagó el tren del viernes». Terminaron repartiendo entre todos el billete perdido."
+    before_phrase: "A Teresa le fastidia bastante el cambio."
+    after_phrase: "El cambio le causa un perjuicio a Teresa."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La factura del inquilino"
+    body: "Cecilia le enseñó a su padre el recibo del agua duplicado. «No quiero discutir con nadie», dijo él. Ella insistió con calma: «No vamos a discutir. Solo vamos a explicarles el perjuicio y a pedir que lo corrijan». Lo corrigieron en dos días."
+    before_phrase: "Nos han cobrado de más y nos fastidia mucho."
+    after_phrase: "Vamos a explicarles el perjuicio."
+metrics:
+  zipf_overall: 4.6697
+  dispersion_dp: 0.2637
+  pedantry_proxy: 0.3993
+  family_size: 31
+provenance:
+  generator: "flui authoring agent — theme paronimos (perjuicio / prejuicio)"
+  gate: null
+  checked_on: "2026-09-14"

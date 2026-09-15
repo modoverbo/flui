@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3221
+slug: "indole"
+status: "draft"
+lemma: "índole"
+part_of_speech: "sustantivo"
+syllables:
+  - "ín"
+  - "do"
+  - "le"
+stressed_syllable: 1
+ipa_latam: "[ˈin.do.le]"
+ipa_es: "[ˈin.do.le]"
+explanation: "Tipo o clase de algo, según cómo es de verdad y no como parece."
+example_sentence: "Son dos problemas de distinta índole: uno es de dinero y el otro de trato."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para separar dos cosas que se parecen por fuera y no son del mismo tipo."
+when_not_to_use: "No la uses para el tamaño ni para lo serio que es algo; esta palabra dice de qué clase es."
+collocations:
+  - "de otra índole"
+  - "de distinta índole"
+  - "asuntos de índole personal"
+replaces:
+  - before: "Son problemas muy distintos"
+    after: "Son problemas de distinta índole"
+  - before: "Eso ya es otro tema"
+    after: "Eso es un asunto de otra índole"
+  - before: "Son cosas personales"
+    after: "Son asuntos de índole personal"
+family: []
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "tema"
+  funcion:
+    - "clasificar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "gravedad"
+    difference: "La gravedad dice lo serio que es algo; la otra palabra dice de qué clase es, aunque dos cosas sean igual de serias."
+    memory_trick: "La gravedad mide; la clase separa."
+  - confused_with: "indolencia"
+    difference: "«Indolencia» es la pereza de quien no se mueve por nada; la otra palabra dice a qué tipo pertenece un asunto."
+    memory_trick: "La indolencia se sienta; la clase ordena."
+exercises:
+  - position: 1
+    sentence: "Son dos problemas igual de serios, pero de distinta {{blank}}: uno es de dinero y el otro de trato."
+    hint_general: "Pesan lo mismo y aun así pertenecen a dos tipos diferentes."
+    explanation: "Índole: el tipo al que pertenece cada problema. La «gravedad» es la misma en los dos, según la propia frase, y la «indolencia» es la pereza de quien no se mueve."
+    options:
+      - position: 1
+        text: "indolencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «indolencia» es la pereza de quien no se mueve por nada, y aquí se comparan dos problemas, no dos personas."
+        hint_specific: "«Indolencia» retrata a alguien que no se mueve. ¿Qué se compara en la frase?"
+      - position: 2
+        text: "índole"
+        is_correct: true
+      - position: 3
+        text: "gravedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «gravedad» dice lo serio que es algo, y la frase ya cuenta que los dos problemas son igual de serios."
+        hint_specific: "«Gravedad» mide cuánto preocupa. Relee las cinco primeras palabras."
+  - position: 2
+    sentence: "Lo que plantea Adela no es una crítica velada: es una duda de otra {{blank}}, técnica y sin dobleces."
+    hint_general: "Su duda pertenece a otro tipo de asunto, y no esconde nada."
+    explanation: "Índole: el tipo al que pertenece la duda. Una «indirecta» sería una crítica velada, que la frase niega, y una «causa» explicaría por qué surge la duda."
+    options:
+      - position: 1
+        text: "indirecta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «indirecta» es justo una crítica velada, y la frase empieza diciendo que no lo es."
+        hint_specific: "«Indirecta» dice una cosa para señalar otra. Relee las siete primeras palabras."
+      - position: 2
+        text: "índole"
+        is_correct: true
+      - position: 3
+        text: "causa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «causa» explicaría por qué surge la duda, y aquí se dice de qué tipo es."
+        hint_specific: "«Causa» responde al porqué. ¿Qué se dice de la duda de Adela?"
+  - position: 3
+    sentence: "No juzgamos a nadie ni miramos con quién anda: solo separamos los avisos por {{blank}}."
+    hint_general: "Se ordenan los avisos por tipo, sin juzgar a las personas."
+    explanation: "Índole: el tipo de cada aviso. «Calaña» es coloquial y juzga mal a la gente, cosa que la frase niega, y una «categoría» sería un nivel dentro de una escala."
+    options:
+      - position: 1
+        text: "índole"
+        is_correct: true
+      - position: 2
+        text: "calaña"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Calaña» es coloquial y sirve para hablar mal de la gente, y la frase dice que aquí no se juzga a nadie."
+        hint_specific: "«Calaña» se usa para despreciar a alguien. Relee las cuatro primeras palabras."
+      - position: 3
+        text: "categoría"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «categoría» es un nivel dentro de una escala, de mayor a menor, y aquí solo se separa por tipos."
+        hint_specific: "«Categoría» ordena de mayor a menor. ¿Hay niveles en esta frase?"
+  - position: 4
+    sentence: "El informe agrupa las quejas por {{blank}} y no por fecha ni por el aspecto que tienen."
+    hint_general: "Las quejas se agrupan por el tipo de asunto que tratan."
+    explanation: "Índole: el tipo de asunto de cada queja. La «forma» es el aspecto que tienen, descartado en la propia frase, y la «insolencia» es hablar con descaro."
+    options:
+      - position: 1
+        text: "insolencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «insolencia» es hablar con descaro a alguien, y aquí se ordenan quejas dentro de un informe."
+        hint_specific: "«Insolencia» describe malos modos. ¿Qué hace el informe con las quejas?"
+      - position: 2
+        text: "índole"
+        is_correct: true
+      - position: 3
+        text: "forma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «forma» es el aspecto que tienen las quejas, y la frase deja eso fuera igual que la fecha."
+        hint_specific: "«Forma» va del aspecto. Relee el final de la frase."
+  - position: 5
+    sentence: "No basta con mirar cómo se ve un caso por fuera: hay que saber de qué {{blank}} es."
+    hint_general: "El aspecto exterior no dice a qué tipo pertenece el caso."
+    explanation: "Índole: el tipo al que pertenece el caso. «Pinta» es coloquial y habla justo del aspecto exterior, que la frase descarta, y la «forma» también se queda en cómo se ve algo."
+    options:
+      - position: 1
+        text: "pinta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pinta» es coloquial y se refiere al aspecto exterior, y la frase dice que con eso no basta."
+        hint_specific: "«Pinta» va de cómo se ve algo por fuera. Relee las nueve primeras palabras."
+      - position: 2
+        text: "índole"
+        is_correct: true
+      - position: 3
+        text: "forma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «forma» es también cómo se ve algo, y la frase pide ir más allá del aspecto."
+        hint_specific: "«Forma» se queda en la superficie. ¿Qué pide la frase que se sepa?"
+  - position: 6
+    sentence: "Los dos retrasos son iguales de largos y de igual importancia, pero de {{blank}} distinta: uno es del taller y el otro del transporte."
+    hint_general: "Duran lo mismo e importan lo mismo; cambia el tipo de asunto."
+    explanation: "Índole: el tipo de cada retraso. La «gravedad» es igual en los dos, según la frase, y la «indolencia» es la pereza de quien no se mueve."
+    options:
+      - position: 1
+        text: "gravedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «gravedad» es la misma en los dos casos, porque la frase dice que tienen igual importancia."
+        hint_specific: "«Gravedad» mide la importancia. Relee lo que la frase dice de los dos retrasos."
+      - position: 2
+        text: "indolencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «indolencia» es la pereza de quien no se mueve, y aquí se comparan un taller y un transporte."
+        hint_specific: "«Indolencia» habla de personas paradas. ¿Qué se compara aquí?"
+      - position: 3
+        text: "índole"
+        is_correct: true
+  - position: 7
+    sentence: "Se parecen por fuera y aun así no son de la misma {{blank}}: uno es un asunto de números y el otro de confianza."
+    hint_general: "El parecido es engañoso: pertenecen a dos tipos distintos."
+    explanation: "Índole: el tipo al que pertenece cada asunto. Una «causa» explicaría de dónde sale cada uno, y una «indirecta» es una crítica dicha a medias."
+    options:
+      - position: 1
+        text: "causa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «causa» explicaría de dónde sale cada asunto, y aquí se dice a qué tipo pertenece cada uno."
+        hint_specific: "«Causa» responde al porqué. ¿Qué separa a estos dos asuntos?"
+      - position: 2
+        text: "índole"
+        is_correct: true
+      - position: 3
+        text: "indirecta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «indirecta» es una crítica dicha a medias, y aquí se comparan dos asuntos, no dos maneras de hablar."
+        hint_specific: "«Indirecta» apunta sin nombrar. ¿Qué se compara en la frase?"
+  - position: 8
+    sentence: "Nos pidieron ordenar los expedientes por {{blank}}, no por nivel ni por antigüedad."
+    hint_general: "Hay que ordenarlos por el tipo de asunto que tratan."
+    explanation: "Índole: el tipo de asunto de cada expediente. Una «categoría» sería un nivel, que la frase descarta, y la «insolencia» es hablar con descaro."
+    options:
+      - position: 1
+        text: "categoría"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «categoría» es un nivel dentro de una escala, y la frase dice que no hay que ordenar por nivel."
+        hint_specific: "«Categoría» ordena por niveles. Relee el final de la frase."
+      - position: 2
+        text: "insolencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «insolencia» es hablar con descaro, y aquí se trata de ordenar papeles en una estantería."
+        hint_specific: "«Insolencia» describe malos modos. ¿Qué hay que hacer con los expedientes?"
+      - position: 3
+        text: "índole"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dinero y trato"
+    body: "En la lista de problemas iban todos juntos y la reunión saltaba de uno a otro. Adela los partió en dos columnas. «Son igual de serios, pero de distinta índole: estos son de dinero y estos de trato». Cada columna tuvo su reunión."
+    before_phrase: "Es que aquí hay problemas muy distintos."
+    after_phrase: "Son de distinta índole: dinero y trato."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Otro tema"
+    body: "Mi padre mezclaba la reforma del baño con lo del coche y acabábamos discutiendo por todo. Un día se lo dije con calma: «Lo del coche es un asunto de otra índole; hablémoslo mañana». Lo aceptó, y esa noche cerramos el baño."
+    before_phrase: "Eso ya es otro tema, papá."
+    after_phrase: "Lo del coche es un asunto de otra índole."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Preguntas del final"
+    body: "Al final de la entrevista, Adela sacó dos preguntas de una libreta. «Una es de índole práctica, sobre horarios; la otra es sobre cómo se decide aquí». Las hizo por separado y recibió dos respuestas largas, no una corta."
+    before_phrase: "Tengo un par de dudas de cosas distintas."
+    after_phrase: "Una es de índole práctica; la otra, no."
+metrics:
+  zipf_overall: 4.2184
+  dispersion_dp: 0.1112
+  pedantry_proxy: 0.4218
+  family_size: 9
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

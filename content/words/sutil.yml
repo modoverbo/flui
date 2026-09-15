@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3216
+slug: "sutil"
+status: "draft"
+lemma: "sutil"
+part_of_speech: "adjetivo"
+syllables:
+  - "su"
+  - "til"
+stressed_syllable: 2
+ipa_latam: "[suˈtil]"
+ipa_es: "[suˈtil]"
+explanation: "Que se nota apenas y hay que fijarse mucho para verlo."
+example_sentence: "Hubo un cambio sutil en su tono y toda la sala lo notó."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para señalar algo pequeño sin restarle importancia: que cueste verlo no lo hace menor."
+when_not_to_use: "No la uses para algo que no se percibe en absoluto; esto se nota, aunque cueste."
+collocations:
+  - "un cambio sutil"
+  - "una diferencia sutil"
+  - "un gesto sutil"
+replaces:
+  - before: "Cambió algo, no sé qué"
+    after: "Hubo un cambio sutil"
+  - before: "Se nota poquito"
+    after: "Es una diferencia sutil"
+  - before: "Lo dijo sin decirlo"
+    after: "Lo dijo de forma sutil"
+family:
+  - "sutileza"
+  - "sutilmente"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin:
+    - "poco"
+    - "raro"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "invisible"
+    difference: "Lo invisible no se percibe de ninguna manera; la otra palabra sí se nota, aunque haya que fijarse."
+    memory_trick: "Lo invisible no está; lo otro está y casi no se ve."
+  - confused_with: "discreto"
+    difference: "«Discreto» dice que alguien evita llamar la atención a propósito; la otra palabra dice que cuesta percibirlo, lo quiera alguien o no."
+    memory_trick: "Lo discreto se esconde; lo otro se esconde solo."
+exercises:
+  - position: 1
+    sentence: "Hubo un cambio {{blank}} en su tono: nadie sabría decir qué fue, pero la sala entera se dio cuenta."
+    hint_general: "Se percibe de verdad, aunque cueste señalar qué ha cambiado."
+    explanation: "Sutil: se percibe aunque nadie sepa señalarlo. «Invisible» sería que no se nota nada, y la sala se dio cuenta; «útil» diría que algo sirve para resolver algo."
+    options:
+      - position: 1
+        text: "útil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Útil» dice que algo sirve para resolver un problema, y aquí se describe cómo cambió una voz."
+        hint_specific: "«Útil» sirve para resolver algo. ¿Qué resolvería un tono de voz?"
+      - position: 2
+        text: "sutil"
+        is_correct: true
+      - position: 3
+        text: "invisible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Invisible» sería que nadie lo percibe, y la frase dice que la sala entera se dio cuenta."
+        hint_specific: "«Invisible» no se percibe de ninguna forma. ¿Qué hizo la sala?"
+  - position: 2
+    sentence: "La diferencia entre los dos borradores es {{blank}}: tres palabras cambiadas y el mensaje ya no es el mismo."
+    hint_general: "Cuesta verla y, aun así, cambia el sentido entero."
+    explanation: "Sutil: cuesta verla y cambia el sentido. «Lenta» hablaría de velocidad, y una diferencia no va deprisa ni despacio; «servil» describe a quien obedece sin rechistar."
+    options:
+      - position: 1
+        text: "lenta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lenta» habla de velocidad, y una diferencia entre dos textos no va deprisa ni despacio."
+        hint_specific: "«Lenta» mide el tiempo que tarda algo. ¿Se mueve algo en esta frase?"
+      - position: 2
+        text: "sutil"
+        is_correct: true
+      - position: 3
+        text: "servil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Servil» describe a quien obedece sin rechistar, y aquí se comparan dos borradores."
+        hint_specific: "«Servil» retrata a alguien que se somete. ¿Qué se compara en la frase?"
+  - position: 3
+    sentence: "No fue un gesto flojo ni mal hecho: fue un gesto {{blank}}, de los que se agradecen sin comentarlos."
+    hint_general: "Apenas se nota y aun así se agradece."
+    explanation: "Sutil: apenas se nota y aun así se agradece. «Flojo» es coloquial y juzga la calidad, cosa que la frase niega, y «discreto» diría que alguien evitó llamar la atención a propósito."
+    options:
+      - position: 1
+        text: "flojo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Flojo» es coloquial y juzga que algo está mal hecho, y la frase empieza negando justo eso."
+        hint_specific: "«Flojo» suena a poca calidad. Relee las cinco primeras palabras."
+      - position: 2
+        text: "sutil"
+        is_correct: true
+      - position: 3
+        text: "discreto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discreto» dice que alguien se contuvo para no llamar la atención, y aquí lo que ocurre es que el gesto apenas se percibe."
+        hint_specific: "«Discreto» es contenerse a propósito. ¿La frase habla de intención o de lo poco que se nota?"
+  - position: 4
+    sentence: "Cristina no reescribió el texto: metió una corrección {{blank}} en la tercera línea y el párrafo respiró."
+    hint_general: "Un retoque mínimo cambia cómo se lee todo el párrafo."
+    explanation: "Sutil: un retoque mínimo con efecto grande. «Invisible» sería que no se nota nada, y el párrafo cambia al leerlo; «textil» se dice de las telas y de la ropa."
+    options:
+      - position: 1
+        text: "textil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Textil» se dice de las telas y de la ropa, y aquí se corrige una línea de un texto."
+        hint_specific: "«Textil» va de telas. ¿Qué corrigió Cristina?"
+      - position: 2
+        text: "invisible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Invisible» sería que no se aprecia nada, y la frase dice que el párrafo cambió al leerlo."
+        hint_specific: "«Invisible» no deja rastro. ¿Qué le pasó al párrafo?"
+      - position: 3
+        text: "sutil"
+        is_correct: true
+  - position: 5
+    sentence: "Ricardo dio un aviso {{blank}}, de esos que se entienden a la segunda lectura."
+    hint_general: "El aviso está ahí, pero hay que leerlo dos veces para pillarlo."
+    explanation: "Sutil: está ahí y hay que leerlo dos veces. «Tenue» suena a lenguaje poético y se dice de una luz o un sonido, no de un aviso; «lento» hablaría de la velocidad."
+    options:
+      - position: 1
+        text: "sutil"
+        is_correct: true
+      - position: 2
+        text: "tenue"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tenue» suena a lenguaje poético y se dice de una luz o de un sonido, no de un aviso escrito."
+        hint_specific: "«Tenue» acompaña a luces y sonidos en textos literarios. ¿Qué dio Ricardo?"
+      - position: 3
+        text: "lento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lento» habla de velocidad, y aquí lo que cuesta es entender el aviso, no esperarlo."
+        hint_specific: "«Lento» mide cuánto tarda algo. ¿Qué cuesta en esta frase, esperar o entender?"
+  - position: 6
+    sentence: "La ironía era {{blank}}: nadie se dio por aludido y, aun así, todos la captaron."
+    hint_general: "Apenas se percibe y llega igual a quien escucha."
+    explanation: "Sutil: apenas se percibe y llega igual. «Discreta» diría que alguien se contuvo a propósito, y «útil» diría que algo sirve para resolver algo."
+    options:
+      - position: 1
+        text: "discreta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discreta» dice que alguien se contiene a propósito para no molestar, y aquí la ironía llegó a todo el mundo."
+        hint_specific: "«Discreta» pasa desapercibida a propósito. ¿Cuánta gente la captó?"
+      - position: 2
+        text: "sutil"
+        is_correct: true
+      - position: 3
+        text: "útil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Útil» dice que algo sirve para resolver un problema, y aquí se describe cómo era una ironía."
+        hint_specific: "«Útil» se mide por lo que resuelve. ¿Qué se describe en la frase?"
+  - position: 7
+    sentence: "Ricardo señaló un fallo {{blank}}: estaba a la vista en las tres versiones y aun así costaba verlo."
+    hint_general: "Está delante de todos y cuesta reparar en ello."
+    explanation: "Sutil: está delante y cuesta verlo. «Invisible» sería que no está a la vista, y la frase dice que sí lo estaba; «servil» describe a quien obedece sin rechistar."
+    options:
+      - position: 1
+        text: "invisible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Invisible» sería que no se puede ver, y la frase dice que estaba a la vista en las tres versiones."
+        hint_specific: "«Invisible» no está al alcance de la vista. Relee la segunda mitad de la frase."
+      - position: 2
+        text: "servil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Servil» describe a quien obedece sin rechistar, y aquí se habla de un fallo en un documento."
+        hint_specific: "«Servil» retrata a una persona sumisa. ¿Qué señaló Ricardo?"
+      - position: 3
+        text: "sutil"
+        is_correct: true
+  - position: 8
+    sentence: "Nadie la escondió: es una pista {{blank}}, y está ahí para quien sepa mirar."
+    hint_general: "No está escondida, simplemente cuesta percibirla."
+    explanation: "Sutil: no está escondida y aun así cuesta verla. «Discreta» supondría que alguien la ocultó a propósito, y la frase lo niega; «textil» se dice de las telas."
+    options:
+      - position: 1
+        text: "discreta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discreta» supone que alguien quiso que no se notara, y la frase empieza diciendo que nadie la escondió."
+        hint_specific: "«Discreta» implica intención de ocultar. Relee las tres primeras palabras."
+      - position: 2
+        text: "textil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Textil» se dice de las telas y de la ropa, y aquí se habla de una pista que hay que mirar."
+        hint_specific: "«Textil» va de telas. ¿De qué habla la frase?"
+      - position: 3
+        text: "sutil"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres palabras"
+    body: "Cristina devolvió el texto casi igual: tres palabras cambiadas en la tercera línea. El autor lo leyó y levantó la vista. «¿Qué has hecho?». «Un cambio sutil», dijo ella. Lo mandaron así y el cliente contestó en una hora."
+    before_phrase: "Le he tocado dos cosillas, nada."
+    after_phrase: "Es un cambio sutil, pero cambia el mensaje."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El tono del domingo"
+    body: "Mi madre dijo «no pasa nada» igual que siempre, y sin embargo no sonó igual. Fue algo sutil, un medio tono más bajo. Me senté a su lado y esperé. Acabó contándome lo del coche, que llevaba una semana callándose."
+    before_phrase: "Le noté algo raro, no sé qué."
+    after_phrase: "Fue algo sutil, un medio tono más bajo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "A la segunda lectura"
+    body: "En la oferta de trabajo había una línea rara sobre los horarios. Ricardo la leyó dos veces. «Es un aviso sutil», comentó, «pero es un aviso». Preguntó por ella en la entrevista y la respuesta le sirvió para decidir."
+    before_phrase: "Aquí pone algo raro, o eso me parece."
+    after_phrase: "Es un aviso sutil, pero es un aviso."
+metrics:
+  zipf_overall: 4.0872
+  dispersion_dp: 0.1163
+  pedantry_proxy: 0.4586
+  family_size: 7
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

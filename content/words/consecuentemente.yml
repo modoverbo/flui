@@ -1,0 +1,247 @@
+schema_version: 1
+slug: "consecuentemente"
+status: "draft"
+lemma: "consecuentemente"
+part_of_speech: "adverbio"
+syllables:
+  - "con"
+  - "se"
+  - "cuen"
+  - "te"
+  - "men"
+  - "te"
+stressed_syllable: 5
+ipa_latam: "[kon.se.kwen.teˈmen.te]"
+ipa_es: "[kon.se.kwen.teˈmen.te]"
+explanation: "Presenta lo que viene como resultado directo de lo que acabas de contar."
+example_sentence: "Cerró la fábrica del valle y, consecuentemente, el pueblo perdió su autobús."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Marca la cadena entre dos hechos para que nadie te pregunte por qué pasó lo segundo."
+when_not_to_use: "No la uses si las dos cosas solo coinciden en el tiempo; sin causa detrás suena a excusa."
+collocations:
+  - "consecuentemente bajó"
+  - "obrar consecuentemente"
+replaces:
+  - before: "Y por eso se recortó el turno"
+    after: "Consecuentemente se recortó el turno"
+  - before: "Así que el autobús cambió de ruta"
+    after: "Consecuentemente el autobús cambió de ruta"
+  - before: "Y claro, la tienda se mudó"
+    after: "Consecuentemente la tienda se mudó"
+family:
+  - "consecuente"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "y por eso"
+  funcion:
+    - "encadenar causa y efecto"
+  canal: "escrito"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "consecutivamente"
+    difference: "«Consecutivamente» dice que unas cosas van una detrás de otra: «ganó tres años consecutivamente». La otra habla de causa, no de fila."
+    memory_trick: "Una cuenta la fila; la otra explica el porqué."
+  - confused_with: "consistentemente"
+    difference: "«Consistentemente» describe algo que se mantiene igual con el tiempo. La otra no habla de constancia: habla de efecto."
+    memory_trick: "Una no cambia; la otra provoca el cambio."
+exercises:
+  - position: 1
+    sentence: "Bajó la demanda de menús del día y, {{blank}}, se recortó el turno de tarde."
+    hint_general: "El recorte no cae del cielo: sale directamente de la caída anterior."
+    explanation: "Consecuentemente: el recorte sale de la caída. «Consecutivamente» hablaría de cosas en fila y «entretanto» pondría el recorte dentro de una espera."
+    options:
+      - position: 1
+        text: "consecutivamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consecutivamente» coloca unas cosas detrás de otras sin explicar nada, y aquí lo segundo ocurre por culpa de lo primero."
+        hint_specific: "«Consecutivamente» solo ordena una fila. ¿Se ordena una fila o se explica una causa?"
+      - position: 2
+        text: "consecuentemente"
+        is_correct: true
+      - position: 3
+        text: "entretanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entretanto» metería el recorte en el rato de una espera, y aquí el recorte es el efecto de la caída de la demanda."
+        hint_specific: "«Entretanto» rellena una espera. ¿Hay una espera o hay un efecto?"
+  - position: 2
+    sentence: "El puente se cerró por obras y, {{blank}}, el autobús cambió de recorrido."
+    hint_general: "El cambio de ruta se explica solo con lo que se acaba de contar."
+    explanation: "Consecuentemente: el cambio de ruta sale del cierre. «Visto lo visto» suena a resignación de conversación y «en cambio» opondría dos hechos que van encadenados."
+    options:
+      - position: 1
+        text: "consecuentemente"
+        is_correct: true
+      - position: 2
+        text: "visto lo visto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Visto lo visto» es de conversación y suena a resignarse ante un desastre, cuando aquí hay una causa clara y una decisión técnica."
+        hint_specific: "«Visto lo visto» suena a rendirse ante lo ocurrido. ¿Hay resignación o hay una causa?"
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» opondría el desvío al cierre del puente, y el desvío existe justamente por ese cierre."
+        hint_specific: "«En cambio» marca contraste. ¿Los dos hechos chocan o uno provoca el otro?"
+  - position: 3
+    sentence: "Subió el precio del alquiler y, {{blank}}, la tienda se mudó dos calles más allá."
+    hint_general: "La mudanza es el efecto directo de la subida anterior."
+    explanation: "Consecuentemente: la mudanza es efecto de la subida. «Consistentemente» hablaría de algo que no cambia y «previamente» pondría la mudanza antes de la subida."
+    options:
+      - position: 1
+        text: "consistentemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consistentemente» describe algo que se mantiene igual con el tiempo, y aquí todo cambia: el precio sube y la tienda se va."
+        hint_specific: "«Consistentemente» habla de mantenerse igual. ¿Algo se mantiene o algo provoca un cambio?"
+      - position: 2
+        text: "consecuentemente"
+        is_correct: true
+      - position: 3
+        text: "previamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Previamente» pondría la mudanza antes de la subida, y la tienda se movió porque el alquiler subió."
+        hint_specific: "«Previamente» mira hacia atrás. ¿La mudanza va antes o viene después?"
+  - position: 4
+    sentence: "El club perdió dos patrocinios en enero y, {{blank}}, redujo el número de viajes."
+    hint_general: "Menos dinero explica por sí solo el recorte de desplazamientos."
+    explanation: "Consecuentemente: el recorte sale de la pérdida. «Total, que» resume con desgana en tono de conversación y «paralelamente» pondría las dos cosas sin relación entre ellas."
+    options:
+      - position: 1
+        text: "consecuentemente"
+        is_correct: true
+      - position: 2
+        text: "total, que"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Total, que» es de conversación y resume la historia quitándole importancia, cuando aquí se explica una decisión con su motivo."
+        hint_specific: "«Total, que» remata una anécdota con desgana. ¿Se resta importancia o se explica una causa?"
+      - position: 3
+        text: "paralelamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paralelamente» pondría los dos hechos a la vez y sin relación, y aquí el recorte existe por la falta de patrocinio."
+        hint_specific: "«Paralelamente» junta dos cosas sin unirlas. ¿Van sueltas o una provoca la otra?"
+  - position: 5
+    sentence: "Llovió tres semanas seguidas en abril y, {{blank}}, la cosecha se retrasó un mes."
+    hint_general: "El retraso del campo sale directamente de esas semanas de agua."
+    explanation: "Consecuentemente: el retraso sale de la lluvia. «Consecutivamente» hablaría de cosas en fila y «sin embargo» opondría dos hechos que están encadenados."
+    options:
+      - position: 1
+        text: "consecutivamente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consecutivamente» coloca unas cosas detrás de otras sin explicar nada, y aquí la cosecha se retrasa por culpa del agua."
+        hint_specific: "«Consecutivamente» solo ordena una fila. ¿Se ordena una fila o se explica un motivo?"
+      - position: 2
+        text: "sin embargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sin embargo» opondría el retraso a la lluvia, y el retraso es justamente lo que la lluvia provocó."
+        hint_specific: "«Sin embargo» anuncia una contradicción. ¿Los dos hechos chocan o encajan?"
+      - position: 3
+        text: "consecuentemente"
+        is_correct: true
+  - position: 6
+    sentence: "La empresa dejó de fabricar ese modelo y, {{blank}}, el repuesto dejó de venderse."
+    hint_general: "Que no haya repuesto se explica con la decisión anterior."
+    explanation: "Consecuentemente: la falta de repuesto sale de la decisión. «Visto lo visto» suena a resignación de conversación e «igualmente» pondría las dos cosas al mismo nivel sin unirlas."
+    options:
+      - position: 1
+        text: "visto lo visto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Visto lo visto» es de conversación y suena a resignarse, cuando aquí se explica por qué desapareció el repuesto."
+        hint_specific: "«Visto lo visto» suena a rendirse ante lo ocurrido. ¿Hay resignación o hay explicación?"
+      - position: 2
+        text: "consecuentemente"
+        is_correct: true
+      - position: 3
+        text: "igualmente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Igualmente» pondría las dos cosas al mismo nivel sin unirlas, y el repuesto desaparece justamente por la decisión anterior."
+        hint_specific: "«Igualmente» reparte el mismo trato. ¿Son dos hechos sueltos o uno causa el otro?"
+  - position: 7
+    sentence: "El horario del tren se adelantó media hora y, {{blank}}, salimos de casa antes que nunca."
+    hint_general: "Salir antes es la respuesta obligada al cambio de horario."
+    explanation: "Consecuentemente: salir antes responde al cambio de horario. «Consistentemente» hablaría de algo que no varía y «entretanto» pondría la salida dentro de una espera."
+    options:
+      - position: 1
+        text: "consecuentemente"
+        is_correct: true
+      - position: 2
+        text: "consistentemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consistentemente» describe algo que se mantiene igual con el tiempo, y aquí todo cambia: el tren se adelanta y la casa madruga."
+        hint_specific: "«Consistentemente» habla de mantenerse igual. ¿Algo sigue igual o algo cambia por otra cosa?"
+      - position: 3
+        text: "entretanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entretanto» metería la salida en el rato de una espera, y salir antes es el efecto del nuevo horario."
+        hint_specific: "«Entretanto» rellena una espera. ¿Hay espera o hay efecto?"
+  - position: 8
+    sentence: "Aumentó el número de socios del club y, {{blank}}, hubo que abrir una segunda pista."
+    hint_general: "La pista nueva se explica sola con el crecimiento anterior."
+    explanation: "Consecuentemente: la pista nueva sale del crecimiento. «Total, que» resume con desgana en tono de conversación y «previamente» pondría la obra antes de que llegaran los socios."
+    options:
+      - position: 1
+        text: "previamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Previamente» pondría la obra antes de que llegaran los socios, y la pista se abrió porque el club ya estaba lleno."
+        hint_specific: "«Previamente» mira hacia atrás. ¿La pista va antes de los socios o después?"
+      - position: 2
+        text: "total, que"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Total, que» es de conversación y resume quitando importancia, cuando aquí se explica una inversión con su motivo."
+        hint_specific: "«Total, que» remata con desgana. ¿Se resta importancia o se explica una causa?"
+      - position: 3
+        text: "consecuentemente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El turno de tarde"
+    body: "El equipo creía que el recorte había sido un capricho de dirección. Ataúlfo lo explicó en el informe con una sola palabra que unía los dos hechos: «Bajó la demanda y, consecuentemente, se recortó el turno». La sala dejó de buscar culpables y empezó a proponer ideas."
+    before_phrase: "Bajó la demanda y por eso, pues eso, quitaron el turno."
+    after_phrase: "Bajó la demanda y, consecuentemente, se recortó el turno."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La segunda pista"
+    body: "En la asamblea preguntaron de dónde salía el dinero de la obra nueva. Práxedes contestó uniendo las dos cifras: «Subieron los socios y, consecuentemente, hizo falta otra pista». Nadie volvió a hablar de despilfarro en toda la tarde."
+    before_phrase: "Es que hay más socios y claro, pues hacía falta otra."
+    after_phrase: "Subieron los socios y, consecuentemente, hizo falta otra pista."
+  - position: 3
+    scene: "familia"
+    conversation_type: "practica"
+    title: "Media hora antes"
+    body: "En casa había bronca cada mañana desde que cambió el horario del tren. Balbina lo puso por escrito en la nevera para zanjar la discusión: «El tren se adelantó y, consecuentemente, salimos media hora antes». Desde ese día nadie discutió el despertador."
+    before_phrase: "Es que el tren cambió y por eso hay que salir antes."
+    after_phrase: "El tren se adelantó y, consecuentemente, salimos media hora antes."
+metrics:
+  zipf_overall: 3.9105
+  dispersion_dp: 0.2075
+  pedantry_proxy: 0.4316
+  family_size: 251
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

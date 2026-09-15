@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3203
+slug: "sesgo"
+status: "draft"
+lemma: "sesgo"
+part_of_speech: "sustantivo"
+syllables:
+  - "ses"
+  - "go"
+stressed_syllable: 1
+ipa_latam: "[ˈses.ɣo]"
+ipa_es: "[ˈses.ɣo]"
+explanation: "Manera de juzgar que empuja siempre hacia el mismo lado, casi nunca a propósito."
+example_sentence: "El estudio tiene un sesgo claro: solo preguntaron a quienes siguen comprando."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Te deja señalar que un juicio viene torcido sin acusar a nadie de mentir."
+when_not_to_use: "No la uses para un fallo suelto de cálculo; nombra una desviación que se repite siempre hacia el mismo lado."
+collocations:
+  - "un sesgo claro"
+  - "corregir el sesgo"
+  - "sin ningún sesgo"
+replaces:
+  - before: "El estudio está un poco torcido"
+    after: "El estudio tiene un sesgo"
+  - before: "Siempre mira las cosas desde el mismo lado"
+    after: "Mira las cosas siempre con el mismo sesgo"
+  - before: "Esos datos no son neutrales"
+    after: "Esos datos llegan con un sesgo"
+family:
+  - "sesgar"
+  - "sesgado"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "raro"
+  funcion:
+    - "criticar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "riesgo"
+    difference: "Un riesgo es un daño que todavía puede pasar; la otra palabra nombra una desviación que ya está dentro del resultado."
+    memory_trick: "El riesgo está por llegar; la desviación ya llegó."
+  - confused_with: "ángulo"
+    difference: "Un ángulo lo eliges y lo puedes declarar; la otra palabra actúa sin que quien juzga lo note."
+    memory_trick: "El ángulo se anuncia; lo otro se descubre después."
+exercises:
+  - position: 1
+    sentence: "El estudio parece neutral, pero arrastra un {{blank}} que se repite en las tres ediciones: solo preguntaron a quienes siguen comprando."
+    hint_general: "Nombra una desviación al juzgar que vuelve siempre hacia el mismo lado."
+    explanation: "Sesgo: una desviación que vuelve siempre al mismo lado. Un «riesgo» es un daño que aún puede ocurrir, y el «tono» es cómo suena un texto, no hacia dónde se inclina."
+    options:
+      - position: 1
+        text: "riesgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «riesgo» es un daño que todavía puede ocurrir, y aquí la desviación ya está dentro de las tres ediciones."
+        hint_specific: "«Riesgo» mira a lo que podría pasar. ¿Esto puede pasar o ya pasó tres veces?"
+      - position: 2
+        text: "sesgo"
+        is_correct: true
+      - position: 3
+        text: "tono"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «tono» es cómo suena un texto, y el problema del estudio es a quién preguntó, no cómo lo cuenta."
+        hint_specific: "«Tono» va de cómo suena algo. ¿Qué falla aquí: la voz o la muestra?"
+  - position: 2
+    sentence: "Cada vez que Nadia juzga una propuesta la mira desde el mismo lado sin darse cuenta, y ese {{blank}} le hace descartar buenas ideas."
+    hint_general: "Es una desviación al valorar que quien la tiene no percibe."
+    explanation: "Sesgo: una desviación al valorar que quien la tiene no percibe. Un «rasgo» es un detalle del carácter que se ve desde fuera, y un «ángulo» se elige a propósito, mientras ella ni lo nota."
+    options:
+      - position: 1
+        text: "rasgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «rasgo» es un detalle del carácter o de la cara que otros ven; aquí se describe cómo valora ella, no cómo es."
+        hint_specific: "«Rasgo» describe cómo es alguien. ¿La frase habla de cómo es Nadia o de cómo valora?"
+      - position: 2
+        text: "ángulo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «ángulo» se escoge a propósito y se puede anunciar, y la frase dice que Nadia no se da cuenta."
+        hint_specific: "«Ángulo» se elige queriendo. ¿Nadia elige mirar así o le sale solo?"
+      - position: 3
+        text: "sesgo"
+        is_correct: true
+  - position: 3
+    sentence: "No fue un despiste de un día: el equipo lleva un año midiendo con el mismo {{blank}} y nadie lo había revisado."
+    hint_general: "Llevan un año midiendo torcido siempre hacia el mismo lado."
+    explanation: "Sesgo: la desviación con la que llevan un año midiendo. «Vicio» es coloquial y suena a mala costumbre personal, y un «riesgo» es un daño posible, no un modo de medir."
+    options:
+      - position: 1
+        text: "vicio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vicio» es coloquial y suena a mala costumbre de alguien, y aquí se habla de cómo mide un equipo entero."
+        hint_specific: "«Vicio» suena a mala costumbre personal. ¿Quién mide en esta frase, una persona o un equipo?"
+      - position: 2
+        text: "sesgo"
+        is_correct: true
+      - position: 3
+        text: "riesgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «riesgo» es un daño que puede llegar, y no se mide nada con un daño posible."
+        hint_specific: "«Riesgo» nombra un daño futuro. ¿Se puede medir con eso durante un año?"
+  - position: 4
+    sentence: "Alberto escogió a propósito mirar la propuesta desde el lado del cliente y lo dijo en voz alta; eso es un enfoque declarado, no un {{blank}} escondido."
+    hint_general: "La frase opone lo que se elige y se anuncia a lo que se cuela sin avisar."
+    explanation: "Sesgo: la desviación que se cuela sin avisar. Un «descuido» es una falta de atención puntual, y «sosiego» significa calma, que no viene a cuento."
+    options:
+      - position: 1
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descuido» es una falta de atención puntual, y aquí se contrapone una elección declarada a una desviación constante."
+        hint_specific: "«Descuido» pasa una vez y por distracción. ¿De qué se habla aquí, de un despiste o de un modo de mirar?"
+      - position: 2
+        text: "sosiego"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sosiego» significa calma y tranquilidad, y la frase compara dos maneras de mirar una propuesta."
+        hint_specific: "«Sosiego» va de estar tranquilo. ¿Qué se compara en esta frase?"
+      - position: 3
+        text: "sesgo"
+        is_correct: true
+  - position: 5
+    sentence: "La presentación no miente, pero elige siempre los mismos ejemplos: ahí hay un {{blank}} difícil de negar."
+    hint_general: "Elegir siempre los mismos ejemplos tuerce lo que se muestra."
+    explanation: "Sesgo: lo que tuerce la selección de ejemplos. «Rollo» es muy coloquial y suena a algo aburrido, y un «gusto» es una preferencia que nadie tiene que justificar."
+    options:
+      - position: 1
+        text: "sesgo"
+        is_correct: true
+      - position: 2
+        text: "rollo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rollo» es muy coloquial y sugiere que algo resulta pesado, y aquí el problema es qué ejemplos se enseñan."
+        hint_specific: "«Rollo» suena a algo aburrido y muy de andar por casa. ¿Se critica el aburrimiento o la selección?"
+      - position: 3
+        text: "gusto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «gusto» es una preferencia personal que nadie tiene que justificar, y aquí lo que falla es que la muestra sale torcida."
+        hint_specific: "«Gusto» es preferir algo y ya está. ¿Aquí se juzga una preferencia o un resultado torcido?"
+  - position: 6
+    sentence: "Valentina revisó sus notas y encontró un {{blank}} suyo que se repetía en todas las entrevistas: puntuaba más alto a quien hablaba rápido."
+    hint_general: "Descubre en sus propias notas una desviación que se repite al puntuar."
+    explanation: "Sesgo: la desviación que se repite al puntuar. Un «descuido» ocurre una vez por distracción, y «sosiego» significa calma, que aquí no viene a cuento."
+    options:
+      - position: 1
+        text: "sosiego"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sosiego» significa calma, y lo que Valentina encuentra es un patrón en sus puntuaciones."
+        hint_specific: "«Sosiego» va de tranquilidad. ¿Qué encontró Valentina en sus notas?"
+      - position: 2
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descuido» ocurre una vez por distracción, y esto aparece en todas las entrevistas, no en una."
+        hint_specific: "«Descuido» pasa una vez. ¿En cuántas entrevistas aparece este patrón?"
+      - position: 3
+        text: "sesgo"
+        is_correct: true
+  - position: 7
+    sentence: "Si todos los ejemplos vienen del mismo país, el resultado ya viene torcido: carga con un {{blank}} de origen."
+    hint_general: "La desviación viene metida en el resultado desde el principio."
+    explanation: "Sesgo: la desviación que viene metida desde el principio. Un «riesgo» es un daño que aún podría llegar, y el «tono» es cómo suena algo, no hacia dónde se inclina."
+    options:
+      - position: 1
+        text: "tono"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «tono» es cómo suena algo al leerlo, y el problema aquí es de dónde salen todos los ejemplos."
+        hint_specific: "«Tono» va de cómo suena un texto. ¿Qué comparten todos los ejemplos?"
+      - position: 2
+        text: "riesgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «riesgo» es un daño que todavía podría llegar, y la frase dice que el resultado ya viene torcido."
+        hint_specific: "«Riesgo» habla de lo que podría pasar. ¿Esto está por pasar o ya pasó?"
+      - position: 3
+        text: "sesgo"
+        is_correct: true
+  - position: 8
+    sentence: "Nos repartimos las lecturas para que el resumen final no valorara todo con el {{blank}} de una sola persona."
+    hint_general: "Reparten el trabajo para que la valoración no se incline siempre hacia un mismo lado."
+    explanation: "Sesgo: la inclinación al valorar que se quiere evitar. El «estilo» es la manera de escribir, no de valorar, y un «rasgo» describe cómo es alguien."
+    options:
+      - position: 1
+        text: "estilo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «estilo» es la manera de escribir, y lo que se reparte aquí es quién valora cada lectura."
+        hint_specific: "«Estilo» va de cómo se escribe. ¿Qué se quiere repartir, la escritura o la valoración?"
+      - position: 2
+        text: "rasgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «rasgo» describe cómo es alguien, y aquí se habla de cómo se valoran unas lecturas."
+        hint_specific: "«Rasgo» retrata a una persona. ¿Qué se está repartiendo en esta frase?"
+      - position: 3
+        text: "sesgo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Solo los que siguen"
+    body: "El estudio decía que la satisfacción subía cada año. Nadia leyó la letra del método y levantó la vista: «Solo preguntamos a quienes siguen comprando. Eso es un sesgo, y lleva tres ediciones». Nadie se puso a la defensiva. Añadieron una segunda muestra."
+    before_phrase: "Estos datos están un poco torcidos, ¿no?"
+    after_phrase: "Eso es un sesgo, y lleva tres ediciones."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Quien habla rápido"
+    body: "Valentina revisó sus notas de doce entrevistas antes de decidir. Siempre puntuaba más alto a quien hablaba rápido. «Tengo un sesgo propio», reconoció, «y se me repite». Desde entonces puntúa dos días después, con las notas delante y la voz olvidada."
+    before_phrase: "Creo que me dejo llevar por cómo hablan."
+    after_phrase: "Tengo un sesgo propio y se me repite."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Repartir las lecturas"
+    body: "Para elegir el libro del mes, el grupo se repartió las lecturas en lugar de dejárselas a quien proponía. «Así el resumen no sale con el sesgo de una sola persona», dijo Alberto. Ese mes ganó un libro que nadie esperaba."
+    before_phrase: "Así no lo elige siempre el mismo."
+    after_phrase: "Así el resumen no sale con el sesgo de una sola persona."
+metrics:
+  zipf_overall: 3.7327
+  dispersion_dp: 0.2316
+  pedantry_proxy: 0.6093
+  family_size: 3
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

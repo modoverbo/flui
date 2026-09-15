@@ -66,9 +66,9 @@ exercises:
         why_not: "«Cancelar» sería no responder nunca, y ella solo espera a la mañana siguiente."
         hint_specific: "«Cancelar» borra algo del todo. ¿Elena piensa contestar mañana o nunca?"
   - position: 2
-    sentence: "«La charla la {{blank}} dos semanas, pero ya la apunté en el calendario», escribió Ricardo en el grupo de la familia."
+    sentence: "«La charla la {{blank}} dos semanas, pero ya la apunté en el calendario con día y hora», escribió Ricardo en el grupo de la familia."
     hint_general: "La mueve dos semanas y la deja apuntada para volver a ella."
-    explanation: "Postergué: la moví dos semanas y la dejé apuntada. «Posé» es colocar algo o quedarse quieto para una foto, y «diferí» suena a acta de oficina en un chat familiar."
+    explanation: "Postergué: la moví dos semanas y la dejé apuntada. «Posé» es colocar algo o quedarse quieto para una foto, y «congelé» dejaría la charla parada y sin fecha."
     options:
       - position: 1
         text: "posé"
@@ -80,11 +80,11 @@ exercises:
         text: "postergué"
         is_correct: true
       - position: 3
-        text: "diferí"
+        text: "congelé"
         is_correct: false
         distractor_type: "register"
-        why_not: "«Diferir» dice algo parecido, pero suena a acta de oficina y desentona en un mensaje al grupo de la familia."
-        hint_specific: "«Diferir» suena a acta de reunión. ¿Pega en el chat de tu familia?"
+        why_not: "«Congelar» deja el asunto parado y sin fecha, y Ricardo ya tiene la charla apuntada con día y hora."
+        hint_specific: "«Congelar» deja algo parado sin fecha. ¿Qué dice Ricardo que ya hizo con la charla?"
   - position: 3
     sentence: "«No es lo mismo {{blank}} algo que quitarlo: en un caso vuelve y en el otro no», le dijo Gloria a su hijo."
     hint_general: "Mover algo a otro día no es lo mismo que borrarlo de la lista."
@@ -168,7 +168,7 @@ exercises:
   - position: 7
     sentence: "Andrés le pidió a su equipo {{blank}} la entrega una semana y nadie protestó."
     hint_general: "Pide mover la entrega siete días, no quitarla del calendario."
-    explanation: "Postergar: mover la entrega siete días. «Posar» es colocar algo o quedarse quieto para una foto, y «acelerar» sería pedir lo contrario."
+    explanation: "Postergar: mover la entrega siete días. «Posar» es colocar algo o quedarse quieto para una foto, y «dilatar» estiraría el plazo sin decir hasta cuándo."
     options:
       - position: 1
         text: "postergar"
@@ -180,11 +180,11 @@ exercises:
         why_not: "«Posar» es colocar algo con cuidado o quedarse quieto para una foto, y una entrega no se posa."
         hint_specific: "«Posar» pide una cámara o una mesa. ¿Cuál hay en esta escena?"
       - position: 3
-        text: "acelerar"
+        text: "dilatar"
         is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Acelerar» sería entregar antes, y él pide justo una semana más de plazo."
-        hint_specific: "«Acelerar» corre. ¿Andrés pide más tiempo o menos?"
+        distractor_type: "register"
+        why_not: "«Dilatar» estira un plazo sin decir hasta cuándo, y Andrés pide exactamente una semana."
+        hint_specific: "«Dilatar» estira sin poner final. ¿Cuánto tiempo pide Andrés?"
   - position: 8
     sentence: "Carmen dejó de {{blank}} la llamada al banco y por fin la hizo un martes por la mañana."
     hint_general: "Deja de moverla de día en día y la hace de una vez."

@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3214
+slug: "alcance"
+status: "draft"
+lemma: "alcance"
+part_of_speech: "sustantivo"
+syllables:
+  - "al"
+  - "can"
+  - "ce"
+stressed_syllable: 2
+ipa_latam: "[alˈkan.se]"
+ipa_es: "[alˈkan.θe]"
+explanation: "Hasta dónde llega algo y a cuánta gente o a cuántas cosas toca."
+example_sentence: "Antes de aprobarlo, digamos el alcance: qué entra y qué no."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para acotar un encargo antes de empezar y evitar que crezca solo por el camino."
+when_not_to_use: "No la uses para el tamaño físico de algo; esta palabra dice hasta dónde llegan sus efectos."
+collocations:
+  - "el alcance del proyecto"
+  - "acotar el alcance"
+  - "de gran alcance"
+replaces:
+  - before: "No sé hasta dónde llega esto"
+    after: "No conozco el alcance de esto"
+  - before: "Al final acabamos haciendo el doble"
+    after: "El alcance creció sin avisar"
+  - before: "Es un cambio bastante gordo"
+    after: "Es un cambio de mucho alcance"
+family:
+  - "alcanzar"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "mucho"
+  funcion:
+    - "delimitar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "tamaño"
+    difference: "El tamaño dice cuánto ocupa algo; la otra palabra dice hasta dónde llegan sus efectos y a quién tocan."
+    memory_trick: "El tamaño se mide con cinta; lo otro se mide en gente."
+  - confused_with: "avance"
+    difference: "«Avance» dice cuánto se ha adelantado; la otra palabra dice qué entra en el encargo y qué queda fuera."
+    memory_trick: "El avance mide el camino hecho; lo otro dibuja el mapa."
+exercises:
+  - position: 1
+    sentence: "Antes de aprobarlo, Nicolás pidió escribir el {{blank}}: qué entra en el encargo y qué queda fuera."
+    hint_general: "Se deja por escrito hasta dónde llega el encargo y qué se queda fuera."
+    explanation: "Alcance: hasta dónde llega el encargo. Un «avance» diría cuánto se ha adelantado ya, y el «tamaño» habla de cuánto ocupa una cosa."
+    options:
+      - position: 1
+        text: "avance"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «avance» dice cuánto se ha adelantado, y aquí no se ha empezado: se está aprobando el encargo."
+        hint_specific: "«Avance» mide camino ya hecho. ¿En qué momento están Nicolás y su equipo?"
+      - position: 2
+        text: "alcance"
+        is_correct: true
+      - position: 3
+        text: "tamaño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «tamaño» dice cuánto ocupa una cosa, y aquí se decide qué trabajo entra y qué trabajo no."
+        hint_specific: "«Tamaño» se mide con una cinta. ¿Qué se está decidiendo aquí?"
+  - position: 2
+    sentence: "El proyecto no ha crecido de precio ni de días: ha crecido de {{blank}}, y ahora incluye dos tiendas más."
+    hint_general: "Lo que ha crecido es cuánto abarca, no lo que cuesta ni lo que dura."
+    explanation: "Alcance: cuánto abarca el proyecto. El «coste» está descartado en la propia frase, y un «balance» es el resumen de lo bueno y lo malo al final."
+    options:
+      - position: 1
+        text: "balance"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «balance» es el resumen de lo bueno y lo malo al terminar, y aquí el proyecto sigue en marcha y se amplía."
+        hint_specific: "«Balance» se hace al final. ¿El proyecto ha terminado?"
+      - position: 2
+        text: "coste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «coste» es lo que cuesta, y la frase empieza diciendo que de precio no ha crecido."
+        hint_specific: "«Coste» se paga en dinero. Relee las siete primeras palabras."
+      - position: 3
+        text: "alcance"
+        is_correct: true
+  - position: 3
+    sentence: "Aquí no se mide el golpe que esto causa: queremos saber hasta dónde llega, cuál es su {{blank}}."
+    hint_general: "No interesa la fuerza del efecto, sino hasta dónde se extiende."
+    explanation: "Alcance: hasta dónde se extiende. «Impacto» es palabra de jerga y mide la fuerza del golpe, que la frase descarta, y un «arranque» es el momento en que algo se pone en marcha."
+    options:
+      - position: 1
+        text: "impacto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Impacto» es palabra de jerga y mide la fuerza del golpe, y la frase empieza diciendo que eso no se mide aquí."
+        hint_specific: "«Impacto» habla de la fuerza del golpe. Relee las siete primeras palabras."
+      - position: 2
+        text: "alcance"
+        is_correct: true
+      - position: 3
+        text: "arranque"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «arranque» es el momento en que algo se pone en marcha, y aquí se pregunta hasta dónde llega."
+        hint_specific: "«Arranque» es el principio. ¿La frase pregunta por el principio o por el final?"
+  - position: 4
+    sentence: "El cambio parece pequeño, pero su {{blank}} toca a las cuatro delegaciones."
+    hint_general: "Algo pequeño puede llegar a mucha gente."
+    explanation: "Alcance: a cuánta gente llega el cambio. El «tamaño» diría cuánto ocupa, y ya se dice que parece pequeño; un «balance» es el resumen que se hace al final."
+    options:
+      - position: 1
+        text: "tamaño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «tamaño» dice cuánto ocupa algo, y la frase ya ha dicho que el cambio parece pequeño."
+        hint_specific: "«Tamaño» va de ocupar más o menos. ¿Qué dice la frase del cambio al principio?"
+      - position: 2
+        text: "balance"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «balance» es el resumen que se hace al terminar, y aquí el cambio acaba de empezar a moverse."
+        hint_specific: "«Balance» se hace al cerrar. ¿El cambio ya ha terminado?"
+      - position: 3
+        text: "alcance"
+        is_correct: true
+  - position: 5
+    sentence: "No es un enredo ni un problema: es un encargo con un {{blank}} mayor del que pensábamos."
+    hint_general: "No hay desorden: el encargo llega más lejos de lo previsto."
+    explanation: "Alcance: hasta dónde llega el encargo. «Lío» es coloquial y llama desorden a lo que no lo es, y un «avance» diría cuánto se ha adelantado ya."
+    options:
+      - position: 1
+        text: "lío"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Lío» es coloquial y sugiere desorden, y la frase empieza diciendo que no hay ningún enredo."
+        hint_specific: "«Lío» suena a desorden. Relee las cinco primeras palabras."
+      - position: 2
+        text: "avance"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «avance» mide cuánto se ha adelantado, y aquí lo que sorprende es hasta dónde llega el encargo."
+        hint_specific: "«Avance» mide lo ya hecho. ¿Qué es mayor de lo que pensaban?"
+      - position: 3
+        text: "alcance"
+        is_correct: true
+  - position: 6
+    sentence: "Acordamos el {{blank}} en la primera reunión y nadie lo movió después, ni siquiera cuando cambió el plazo."
+    hint_general: "Lo que se fija al principio es qué entra y qué no, y no se toca."
+    explanation: "Alcance: qué entra y qué no en el encargo. El «plazo» aparece aparte al final de la frase, y un «arranque» es el momento en que algo se pone en marcha."
+    options:
+      - position: 1
+        text: "plazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «plazo» es el tiempo disponible y aparece aparte al final de la frase, donde se dice que ese sí cambió."
+        hint_specific: "«Plazo» se mide en fechas. Relee las últimas cuatro palabras."
+      - position: 2
+        text: "arranque"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «arranque» es el momento de poner algo en marcha, y aquí se acuerda qué trabajo entra en el encargo."
+        hint_specific: "«Arranque» es el instante de empezar. ¿Qué se acordó en la primera reunión?"
+      - position: 3
+        text: "alcance"
+        is_correct: true
+  - position: 7
+    sentence: "Lo que discuten no es adónde quieren llegar, sino el {{blank}} que tendrá el primer paso."
+    hint_general: "Están de acuerdo en el destino y discuten cuánto abarca el primer paso."
+    explanation: "Alcance: cuánto abarca el primer paso. El «objetivo» es adónde quieren llegar, y en eso ya están de acuerdo; el «coste» sería lo que hay que pagar."
+    options:
+      - position: 1
+        text: "objetivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «objetivo» es adónde quieren llegar, y la frase dice que eso no es lo que discuten."
+        hint_specific: "«Objetivo» marca el destino. Relee la primera mitad de la frase."
+      - position: 2
+        text: "coste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «coste» es lo que hay que pagar, y aquí se discute cuánto abarca el primer paso."
+        hint_specific: "«Coste» se paga en dinero. ¿Qué se discute del primer paso?"
+      - position: 3
+        text: "alcance"
+        is_correct: true
+  - position: 8
+    sentence: "El plazo sigue igual y el destino final tampoco cambia; lo que crece es el {{blank}} de cada entrega."
+    hint_general: "Ni las fechas ni el destino cambian: cada entrega abarca más."
+    explanation: "Alcance: cuánto abarca cada entrega. El «plazo» sigue igual según la frase, y el «objetivo» es el destino final, que tampoco cambia."
+    options:
+      - position: 1
+        text: "alcance"
+        is_correct: true
+      - position: 2
+        text: "plazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «plazo» aparece al principio de la frase y se dice que sigue igual."
+        hint_specific: "«Plazo» va de fechas. Relee las cuatro primeras palabras."
+      - position: 3
+        text: "objetivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «objetivo» es el destino final, y la frase dice que tampoco cambia."
+        hint_specific: "«Objetivo» es adónde se quiere llegar. ¿Qué dice la frase del destino final?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Qué entra y qué no"
+    body: "El encargo se había aprobado en dos minutos y en dos meses valía el doble de trabajo. La vez siguiente, Nicolás pidió otra cosa: «Escribamos el alcance antes de aprobar: qué entra y qué queda fuera». Media hora de más, tres semanas de menos."
+    before_phrase: "Ya iremos viendo hasta dónde llega."
+    after_phrase: "Escribamos el alcance antes de aprobar."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Pintar una habitación"
+    body: "Mi padre dijo que pintaría una habitación y acabó con la casa entera a medias. Este año lo dijimos claro desde el principio: «El alcance es el pasillo, nada más». Lo terminó un sábado y se sentó a leer, contento."
+    before_phrase: "Ya que estoy, sigo con lo demás."
+    after_phrase: "El alcance es el pasillo, nada más."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Cuatro delegaciones"
+    body: "El cambio parecía una tontería: mover una firma de sitio en un formulario. Isabel lo miró dos veces. «Parece pequeño, pero su alcance toca a las cuatro delegaciones». Avisaron a todas antes de tocar nada y no hubo ni una llamada de vuelta."
+    before_phrase: "Es un cambio de nada, ¿no?"
+    after_phrase: "Parece pequeño, pero su alcance toca a las cuatro."
+metrics:
+  zipf_overall: 4.9821
+  dispersion_dp: 0.0826
+  pedantry_proxy: 0.4902
+  family_size: 79
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

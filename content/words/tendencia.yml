@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3210
+slug: "tendencia"
+status: "draft"
+lemma: "tendencia"
+part_of_speech: "sustantivo"
+syllables:
+  - "ten"
+  - "den"
+  - "cia"
+stressed_syllable: 2
+ipa_latam: "[tenˈden.sja]"
+ipa_es: "[tenˈden.θja]"
+explanation: "Dirección hacia la que algo se mueve poco a poco durante mucho tiempo."
+example_sentence: "No es un mes malo: hay una tendencia a la baja desde marzo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Te deja hablar de varios meses a la vez, en lugar de discutir un dato suelto."
+when_not_to_use: "No la uses para un dato de un solo mes; hace falta una serie que apunte siempre al mismo lado."
+collocations:
+  - "una tendencia clara"
+  - "la tendencia a la baja"
+  - "romper la tendencia"
+replaces:
+  - before: "Últimamente pasa cada vez más"
+    after: "Hay una tendencia clara"
+  - before: "Van bajando poco a poco"
+    after: "La tendencia es a la baja"
+  - before: "Siempre acaba haciendo lo mismo"
+    after: "Tiene tendencia a hacer lo mismo"
+family:
+  - "tendencioso"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "mucho"
+    - "siempre"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "moda"
+    difference: "Una moda dura una temporada y se apaga; la otra palabra describe un movimiento sostenido durante años."
+    memory_trick: "La moda pasa de temporada; la dirección se mantiene."
+  - confused_with: "racha"
+    difference: "Una racha va y viene por suerte; la otra palabra apunta siempre al mismo lado y se ve en la serie completa."
+    memory_trick: "La racha se acaba sola; la dirección se corrige."
+exercises:
+  - position: 1
+    sentence: "No es un mes malo: los pedidos bajan desde marzo y la {{blank}} se ve en el gráfico."
+    hint_general: "Varios meses seguidos apuntan al mismo lado y se nota en el dibujo de la serie."
+    explanation: "Tendencia: varios meses apuntando al mismo lado. Una «racha» va y viene por suerte, y una «dependencia» es necesitar algo o a alguien para funcionar."
+    options:
+      - position: 1
+        text: "dependencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «dependencia» es necesitar algo o a alguien para funcionar, y aquí solo se describe hacia dónde van los pedidos."
+        hint_specific: "«Dependencia» habla de necesitar a otro. ¿De qué habla el gráfico?"
+      - position: 2
+        text: "racha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «racha» va y viene por suerte, y aquí los pedidos bajan mes tras mes desde marzo."
+        hint_specific: "«Racha» depende del azar. ¿Cuántos meses seguidos bajan los pedidos?"
+      - position: 3
+        text: "tendencia"
+        is_correct: true
+  - position: 2
+    sentence: "Lo que preocupa no es la cifra de este mes, sino la {{blank}} de los últimos dos años."
+    hint_general: "Preocupa el movimiento de dos años, no el número de un mes."
+    explanation: "Tendencia: el movimiento de dos años. La «cifra» del mes queda descartada en la propia frase, y una «advertencia» es un aviso que alguien da."
+    options:
+      - position: 1
+        text: "cifra"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «cifra» de este mes es justo lo que la frase deja a un lado."
+        hint_specific: "«Cifra» es un número suelto. Relee qué descarta la frase."
+      - position: 2
+        text: "tendencia"
+        is_correct: true
+      - position: 3
+        text: "advertencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «advertencia» es un aviso que da alguien, y aquí nadie avisa: se leen dos años de datos."
+        hint_specific: "«Advertencia» necesita a alguien que avise. ¿Quién avisa en esta frase?"
+  - position: 3
+    sentence: "Nadie tiene aquí una rareza personal: los datos marcan una {{blank}} que se repite en las cuatro tiendas."
+    hint_general: "Los números apuntan al mismo lado en las cuatro tiendas."
+    explanation: "Tendencia: lo que marcan los datos en las cuatro tiendas. «Manía» es coloquial y acusa de rareza personal, que la frase niega, y una «costumbre» la repite alguien a propósito."
+    options:
+      - position: 1
+        text: "tendencia"
+        is_correct: true
+      - position: 2
+        text: "manía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manía» es coloquial y acusa a alguien de una rareza suya, y la frase empieza negando justo eso."
+        hint_specific: "«Manía» señala a una persona rara. Relee las cuatro primeras palabras."
+      - position: 3
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» la repite alguien porque quiere, y aquí lo que se repite lo marcan los datos de cuatro tiendas."
+        hint_specific: "«Costumbre» la mantiene una persona. ¿Quién repite esto, la gente o los números?"
+  - position: 4
+    sentence: "Los patinetes llevan cuatro años subiendo sin parar, y esa {{blank}} ya no depende de la estación del año."
+    hint_general: "Cuatro años subiendo dejan de ser cosa de una temporada."
+    explanation: "Tendencia: cuatro años subiendo sin depender de la temporada. Una «moda» dura una temporada, que la frase descarta, y una «insistencia» es alguien repitiendo lo mismo."
+    options:
+      - position: 1
+        text: "moda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «moda» dura una temporada, y la frase dice que esto ya no depende de la estación del año."
+        hint_specific: "«Moda» vive una temporada. ¿Cuánto llevan subiendo los patinetes?"
+      - position: 2
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «insistencia» es alguien repitiendo lo mismo una y otra vez, y aquí lo que sube son las ventas."
+        hint_specific: "«Insistencia» la pone una persona pesada. ¿Quién insiste aquí?"
+      - position: 3
+        text: "tendencia"
+        is_correct: true
+  - position: 5
+    sentence: "Sofía no sigue lo que está de moda: mira la {{blank}} de tres años antes de comprar nada para la tienda."
+    hint_general: "Mira hacia dónde se mueve todo en tres años, no lo que se lleva ahora."
+    explanation: "Tendencia: hacia dónde se mueve todo en tres años. «Propensión» suena a lenguaje de libro y habla de la inclinación interior de una persona, y una «dependencia» es necesitar algo para funcionar."
+    options:
+      - position: 1
+        text: "propensión"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Propensión» suena a lenguaje de libro y describe la inclinación interior de una persona, no el movimiento de un mercado."
+        hint_specific: "«Propensión» habla de cómo es alguien por dentro. ¿Qué mira Sofía antes de comprar?"
+      - position: 2
+        text: "tendencia"
+        is_correct: true
+      - position: 3
+        text: "dependencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «dependencia» es necesitar algo o a alguien, y aquí Sofía solo observa tres años de datos."
+        hint_specific: "«Dependencia» va de no poder sin algo. ¿Qué observa Sofía?"
+  - position: 6
+    sentence: "No fue suerte ni mala suerte: en cinco trimestres seguidos la {{blank}} apunta al mismo lado."
+    hint_general: "Cinco trimestres seguidos señalando lo mismo no son cosa del azar."
+    explanation: "Tendencia: cinco trimestres apuntando al mismo lado. Una «racha» sería suerte, y la frase la descarta; una «advertencia» es un aviso que da alguien."
+    options:
+      - position: 1
+        text: "racha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «racha» es cosa de suerte, y la frase empieza descartando la suerte buena y la mala."
+        hint_specific: "«Racha» depende del azar. Relee las cinco primeras palabras."
+      - position: 2
+        text: "advertencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «advertencia» la da alguien para avisar, y aquí solo hablan cinco trimestres de datos."
+        hint_specific: "«Advertencia» tiene autor. ¿Quién avisa en esta frase?"
+      - position: 3
+        text: "tendencia"
+        is_correct: true
+  - position: 7
+    sentence: "En casa hay una {{blank}} clara: cada año se cocina menos y se pide más comida de fuera."
+    hint_general: "Año tras año, la cosa se mueve siempre en la misma dirección."
+    explanation: "Tendencia: el movimiento que se repite cada año. Una «costumbre» se repite igual y aquí cambia año a año, y una «insistencia» es alguien repitiendo lo mismo."
+    options:
+      - position: 1
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» se repite siempre igual, y aquí cada año se cocina menos que el anterior."
+        hint_specific: "«Costumbre» no cambia de un año a otro. ¿Qué pasa cada año en esa casa?"
+      - position: 2
+        text: "tendencia"
+        is_correct: true
+      - position: 3
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «insistencia» es alguien repitiendo lo mismo para convencer, y aquí nadie convence a nadie."
+        hint_specific: "«Insistencia» la pone alguien pesado. ¿Quién insiste en esa casa?"
+  - position: 8
+    sentence: "El informe no da ningún número nuevo; solo dibuja la {{blank}} con los datos que ya teníamos."
+    hint_general: "Con los datos de siempre se dibuja hacia dónde va la cosa."
+    explanation: "Tendencia: hacia dónde va la cosa según los datos viejos. Una «cifra» nueva es lo que el informe no aporta, y una «moda» duraría solo una temporada."
+    options:
+      - position: 1
+        text: "cifra"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «cifra» nueva es justo lo que la frase dice que el informe no aporta."
+        hint_specific: "«Cifra» es un número. Relee qué dice la frase que el informe no da."
+      - position: 2
+        text: "moda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «moda» dura una temporada, y aquí se dibuja el movimiento de toda la serie de datos."
+        hint_specific: "«Moda» vive un verano. ¿Cuántos datos entran en ese dibujo?"
+      - position: 3
+        text: "tendencia"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Desde marzo"
+    body: "La reunión empezó discutiendo el mes de agosto. Sofía pidió el gráfico completo y lo puso encima: «No es agosto. Hay una tendencia a la baja desde marzo». Nadie volvió a hablar de agosto. Esa tarde salieron con tres cosas que probar."
+    before_phrase: "Este mes ha ido flojo, ya remontará."
+    after_phrase: "Hay una tendencia a la baja desde marzo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Se cocina menos"
+    body: "Mi madre dice que en casa ya nadie cocina. No es verdad del todo, pero tampoco falso. «Hay una tendencia», le dije, «cada año un poco menos». Lo aceptó mejor así que como reproche. Ahora cocinamos los domingos, las dos juntas."
+    before_phrase: "Ya nadie cocina en esta casa."
+    after_phrase: "Hay una tendencia: cada año un poco menos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Cuatro años subiendo"
+    body: "En la tienda del barrio discutían si los patinetes eran cosa de un verano. Sofía sacó las ventas de cuatro años. «Esto ya no es una moda», resumió, «es una tendencia, y no depende de la estación». Pidieron el doble para la temporada siguiente."
+    before_phrase: "Esto se lleva ahora, luego ya veremos."
+    after_phrase: "Ya no es una moda, es una tendencia."
+metrics:
+  zipf_overall: 5.1595
+  dispersion_dp: 0.1073
+  pedantry_proxy: 0.4940
+  family_size: 38
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

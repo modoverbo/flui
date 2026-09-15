@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "discernir"
+status: "draft"
+lemma: "discernir"
+part_of_speech: "verbo"
+syllables:
+  - "dis"
+  - "cer"
+  - "nir"
+stressed_syllable: 3
+ipa_latam: "[dis.seɾˈniɾ]"
+ipa_es: "[dis.θeɾˈniɾ]"
+explanation: "Distinguir con claridad dos cosas que se parecen y saber cuál es cuál."
+example_sentence: "Con tres presupuestos casi iguales, cuesta discernir cuál conviene de verdad."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Se usa antes de decidir: nombra el trabajo de separar lo que se confunde."
+when_not_to_use: "No la uses para expresar desacuerdo con alguien; eso es «disentir»."
+collocations:
+  - "discernir entre dos opciones"
+  - "discernir lo importante"
+  - "cuesta discernir"
+replaces:
+  - before: "No sé cuál de los dos es cuál"
+    after: "No logro discernir cuál es cuál"
+  - before: "Hay que separar lo urgente de lo que solo lo parece"
+    after: "Hay que discernir lo urgente de lo que solo lo parece"
+  - before: "Le costó saber si era broma o crítica"
+    after: "Le costó discernir si era broma o crítica"
+family:
+  - "discernimiento"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+tags:
+  comodin: ["distinguir"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "disentir"
+    difference: "«Disentir» es no estar de acuerdo con alguien; la otra palabra no opina: separa dos cosas parecidas para ver cuál es cuál."
+    memory_trick: "Disientes de una persona; lo otro lo haces con dos cosas."
+  - confused_with: "discurrir"
+    difference: "«Discurrir» es pensar sobre algo o dejar pasar el tiempo; la otra palabra llega hasta el final y marca la diferencia."
+    memory_trick: "Discurrir da vueltas; lo otro separa y termina."
+exercises:
+  - position: 1
+    sentence: "Con tres presupuestos casi iguales, cuesta {{blank}} cuál conviene de verdad."
+    hint_general: "Cuesta separar opciones que se parecen mucho entre sí."
+    explanation: "Discernir: cuesta separar opciones parecidas. «Disentir» sería no estar de acuerdo con alguien, y «elegir» viene después, cuando ya sabes cuál es cuál."
+    options:
+      - position: 1
+        text: "disentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disentir» es no estar de acuerdo con alguien, y aquí no hay nadie con quien discrepar: hay tres papeles parecidos."
+        hint_specific: "Disentir necesita a alguien enfrente. ¿Con quién estarías en desacuerdo ante tres presupuestos?"
+      - position: 2
+        text: "discernir"
+        is_correct: true
+      - position: 3
+        text: "elegir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elegir» viene después, cuando ya sabes cuál es cuál, y lo difícil aquí es justo llegar a distinguirlos."
+        hint_specific: "Elegir es el paso final. ¿Qué falta antes de poder elegir?"
+  - position: 2
+    sentence: "Julia sabe {{blank}} entre una queja concreta y el mal día de alguien."
+    hint_general: "Separa dos cosas que suenan parecidas cuando alguien habla enfadado."
+    explanation: "Discernir: separa dos cosas que suenan parecidas. «Disentir» sería no estar de acuerdo, y «discurrir» sería darle vueltas sin llegar a distinguir nada."
+    options:
+      - position: 1
+        text: "disentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disentir» es no estar de acuerdo con alguien, y Julia no discute: entiende qué tiene delante."
+        hint_specific: "Disentir es llevar la contraria. ¿Julia contradice a alguien o lo entiende mejor?"
+      - position: 2
+        text: "discurrir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discurrir» es darle vueltas a algo sin llegar necesariamente a ninguna parte, y Julia sí llega: sabe cuál es cuál."
+        hint_specific: "Discurrir se queda pensando. ¿Julia piensa mucho o acierta a distinguir?"
+      - position: 3
+        text: "discernir"
+        is_correct: true
+  - position: 3
+    sentence: "Al principio nadie lograba {{blank}} qué parte del ruido venía del motor y cuál del techo."
+    hint_general: "No conseguían separar dos sonidos mezclados."
+    explanation: "Discernir: no lograban separar dos sonidos mezclados. «Disentir» sería no estar de acuerdo, y «dilucidar» suena a informe técnico y apunta a aclarar un misterio entero."
+    options:
+      - position: 1
+        text: "dilucidar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dilucidar» pertenece al lenguaje de los informes y apunta a aclarar un asunto entero, y aquí solo hay que separar dos ruidos."
+        hint_specific: "«Dilucidar» suena a investigación con expediente. ¿Encaja con dos ruidos en un auto?"
+      - position: 2
+        text: "discernir"
+        is_correct: true
+      - position: 3
+        text: "disentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disentir» es no estar de acuerdo con alguien, y un ruido no opina: hay que separarlo de otro."
+        hint_specific: "Disentir pide una opinión ajena. ¿Con quién se estaría discutiendo aquí?"
+  - position: 4
+    sentence: "Un buen informe ayuda a {{blank}} lo urgente de lo que solo parece urgente."
+    hint_general: "Ayuda a ver la diferencia entre dos cosas que se confunden."
+    explanation: "Discernir: ayuda a ver esa diferencia. «Disentir» sería no estar de acuerdo con alguien, y «ordenar» colocaría los temas por prioridad, algo que solo se puede hacer después."
+    options:
+      - position: 1
+        text: "discernir"
+        is_correct: true
+      - position: 2
+        text: "disentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disentir» es no estar de acuerdo con alguien, y un informe no discute con nadie: aclara qué es qué."
+        hint_specific: "Disentir necesita una persona enfrente. ¿Con quién discreparía un informe?"
+      - position: 3
+        text: "ordenar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ordenar» colocaría los temas por prioridad, y para eso hace falta antes saber cuáles son de verdad urgentes."
+        hint_specific: "Ordenar es el paso siguiente. ¿Qué hay que saber antes de poner una lista en orden?"
+  - position: 5
+    sentence: "Después de veinte catas, Manuel {{blank}} dos aromas que al resto le sonaban iguales."
+    hint_general: "Notó la diferencia entre dos cosas casi idénticas."
+    explanation: "Discernió: notó la diferencia entre dos aromas casi iguales. «Disintió» sería no estar de acuerdo, y «cazó» es coloquial y suena a pillar a alguien en falta."
+    options:
+      - position: 1
+        text: "disintió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disintió» diría que no estuvo de acuerdo con alguien, y lo que hizo Manuel fue notar una diferencia real entre dos aromas."
+        hint_specific: "Disentir es llevar la contraria. ¿Manuel discutió con alguien o notó algo?"
+      - position: 2
+        text: "cazó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cazó» es coloquial y suena a pillar a alguien en falta, y aquí no hay nadie haciendo trampa: hay dos aromas parecidos."
+        hint_specific: "«Cazar» algo suena a sorprender a alguien. ¿Hay trampa en esa cata?"
+      - position: 3
+        text: "discernió"
+        is_correct: true
+  - position: 6
+    sentence: "Le costó {{blank}} si aquello era una broma o una crítica en serio."
+    hint_general: "Le costó decidir cuál de las dos cosas tenía delante."
+    explanation: "Discernir: le costó saber cuál de las dos tenía delante. «Disentir» sería no estar de acuerdo, y «dudar» describe cómo se sintió, no lo que necesitaba hacer."
+    options:
+      - position: 1
+        text: "dudar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dudar» describe cómo se sintió, y la frase señala el trabajo que le costó: separar la broma de la crítica."
+        hint_specific: "Dudar es quedarse en la duda. ¿Qué tenía que conseguir esta persona?"
+      - position: 2
+        text: "discernir"
+        is_correct: true
+      - position: 3
+        text: "disentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disentir» es no estar de acuerdo con alguien, y aquí ni siquiera sabe todavía qué le han dicho."
+        hint_specific: "Disentir llega después de entender. ¿Ha entendido ya el mensaje?"
+  - position: 7
+    sentence: "Con tanta información repetida, nadie sabía {{blank}} lo nuevo de lo ya sabido."
+    hint_general: "Nadie conseguía separar lo que aportaba algo de lo que se repetía."
+    explanation: "Discernir: nadie separaba lo nuevo de lo repetido. «Discurrir» sería pensar sin llegar a una conclusión, y «resumir» sería acortarlo todo sin decidir qué aporta."
+    options:
+      - position: 1
+        text: "discurrir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Discurrir» es pensar sobre algo sin llegar necesariamente a una conclusión, y aquí hace falta llegar: saber qué es nuevo."
+        hint_specific: "Discurrir se queda dando vueltas. ¿Basta con pensar o hay que separar?"
+      - position: 2
+        text: "resumir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» acortaría todo el material por igual, y el problema es saber qué parte aporta algo y qué parte sobra."
+        hint_specific: "Resumir acorta sin juzgar. ¿Qué hay que decidir antes de acortar?"
+      - position: 3
+        text: "discernir"
+        is_correct: true
+  - position: 8
+    sentence: "Antes de responder, conviene {{blank}} qué te molestó exactamente de esa frase."
+    hint_general: "Conviene separar el punto concreto del enfado general."
+    explanation: "Discernir: separar el punto concreto del enfado general. «Disentir» sería no estar de acuerdo, y «rumiar» es coloquial y sugiere darle vueltas sin salida."
+    options:
+      - position: 1
+        text: "disentir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disentir» es no estar de acuerdo con alguien, y este paso es anterior: saber qué parte te molestó."
+        hint_specific: "Disentir llega cuando ya sabes qué piensas. ¿Ya lo sabes en este punto?"
+      - position: 2
+        text: "rumiar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rumiar» es coloquial y sugiere darle vueltas sin salida, y aquí se busca lo contrario: aclararlo antes de contestar."
+        hint_specific: "«Rumiar» suena a vuelta y vuelta sin final. ¿Se busca claridad o más vueltas?"
+      - position: 3
+        text: "discernir"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres presupuestos"
+    body: "Los tres papeles daban casi la misma cifra y la reunión no avanzaba. Ignacio propuso una tabla con cuatro columnas: «Primero hay que discernir qué incluye cada uno». En veinte minutos vieron que dos no cubrían la instalación."
+    before_phrase: "Es que no se sabe cuál es mejor."
+    after_phrase: "Primero hay que discernir qué incluye cada uno."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "¿Broma o no?"
+    body: "El comentario de su cuñado se quedó flotando en la mesa. Antes de contestar, Carolina salió a la cocina y respiró: «Déjame discernir si era una broma o algo más». Volvió, preguntó en voz baja y era una broma torpe."
+    before_phrase: "No sé si me lo tomo a mal o no."
+    after_phrase: "Déjame discernir si era una broma."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Lo urgente y lo que lo parece"
+    body: "Le preguntaron a Manuel cómo priorizaba con veinte correos por día. Contestó con un ejemplo: «Dedico diez minutos a discernir lo urgente de lo que solo lo parece, y luego no vuelvo a abrir la bandeja». Le pidieron que lo explicara dos veces."
+    before_phrase: "Intento ver qué es urgente de verdad."
+    after_phrase: "Dedico diez minutos a discernir lo urgente."
+metrics:
+  zipf_overall: 3.6536
+  dispersion_dp: 0.2705
+  pedantry_proxy: 0.5643
+  family_size: 16
+provenance:
+  generator: "flui authoring agent — theme paronimos (discernir / disentir)"
+  gate: null
+  checked_on: "2026-09-14"

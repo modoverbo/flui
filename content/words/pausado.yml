@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 5006
+slug: "pausado"
+status: "draft"
+lemma: "pausado"
+part_of_speech: "adjetivo"
+syllables:
+  - "pau"
+  - "sa"
+  - "do"
+stressed_syllable: 2
+ipa_latam: "[pawˈsa.ðo]"
+ipa_es: "[pawˈsa.ðo]"
+explanation: "Que va poco a poco y con calma, sin correr y sin comerse las palabras."
+example_sentence: "Habló con un tono pausado y la sala entera bajó el ritmo con él."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Cuando los nervios aceleran, describir así el ritmo que buscas ayuda más que decirte «cálmate»."
+when_not_to_use: "No la uses para quien no avanza ni decide; aquí se va despacio, pero se llega."
+collocations:
+  - "un tono pausado"
+  - "un ritmo pausado"
+  - "hablar de forma pausada"
+replaces:
+  - before: "Habla muy despacito, da gusto"
+    after: "Habla de forma pausada"
+  - before: "Baja el ritmo cuando explicas algo"
+    after: "Explica con un ritmo pausado"
+  - before: "Fue contando las cosas con calma"
+    after: "Fue contando las cosas de forma pausada"
+family:
+  - "pausa"
+  - "pausadamente"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+tags:
+  comodin:
+    - "despacio"
+  funcion:
+    - "describir"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "pesado"
+    difference: "«Pesado» acusa a alguien de cansar o insistir demasiado; la otra palabra elogia a quien va despacio y deja respirar."
+    memory_trick: "El pesado agota; el que va despacio descansa."
+  - confused_with: "pautado"
+    difference: "«Pautado» es lo que sigue unas normas fijadas de antemano; la otra palabra solo habla de la velocidad, no de las reglas."
+    memory_trick: "Lo pautado obedece; lo lento respira."
+exercises:
+  - position: 1
+    sentence: "Genaro contó la noticia con un tono tan {{blank}} que nadie se alarmó antes de tiempo."
+    hint_general: "Habló despacio y con calma, y así evitó el susto."
+    explanation: "Pausado: habló despacio y con calma. «Pesado» acusaría de cansar a quien escucha, y «parsimonioso» es palabra culta que sugiere una lentitud que irrita."
+    options:
+      - position: 1
+        text: "pesado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pesado» acusa de cansar a quien escucha, y aquí el tono consigue justo lo contrario: que nadie se altere."
+        hint_specific: "Lo pesado agota al que escucha. ¿Qué efecto tuvo el tono de Genaro?"
+      - position: 2
+        text: "pausado"
+        is_correct: true
+      - position: 3
+        text: "parsimonioso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parsimonioso» es palabra culta y sugiere una lentitud que irrita, y en la escena esa calma tranquiliza a todos."
+        hint_specific: "«Parsimonioso» hace mirar el reloj. ¿La gente se impacientó o se calmó?"
+  - position: 2
+    sentence: "Al principio Fabiola iba muy deprisa, pero en el segundo ensayo su ritmo ya era {{blank}}."
+    hint_general: "Corrigió la velocidad y pasó a ir despacio."
+    explanation: "Pausado: el ritmo pasó a ir despacio. «Pautado» sería un ritmo marcado por normas fijas, y «monótono» acusaría de sonar siempre igual."
+    options:
+      - position: 1
+        text: "pausado"
+        is_correct: true
+      - position: 2
+        text: "pautado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pautado» describe lo que sigue normas fijadas antes, y aquí lo único que cambió fue la velocidad."
+        hint_specific: "Lo pautado obedece a una regla escrita. ¿Qué corrigió Fabiola entre un ensayo y otro?"
+      - position: 3
+        text: "monótono"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Monótono» acusa de sonar siempre igual, y la frase celebra un cambio: dejó de ir deprisa."
+        hint_specific: "Lo monótono no cambia nunca. ¿La frase cuenta un cambio o una falta de cambio?"
+  - position: 3
+    sentence: "En la sala de espera, la voz {{blank}} del enfermero hizo que la gente dejara de mirar el reloj."
+    hint_general: "Una voz que va despacio hace que la espera pese menos."
+    explanation: "Pausada: la voz que va despacio. «Pesada» acusaría de cansar, y «morosa» pertenece al lenguaje de bancos y deudas."
+    options:
+      - position: 1
+        text: "pesada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pesada» acusa de cansar a quien escucha, y esta voz consigue que la espera se haga más corta."
+        hint_specific: "Una voz pesada alarga la espera. ¿Qué pasó con el reloj en esa sala?"
+      - position: 2
+        text: "pausada"
+        is_correct: true
+      - position: 3
+        text: "morosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Morosa» pertenece al lenguaje de bancos y deudas y señala a quien no paga, no a quien habla despacio."
+        hint_specific: "Lo moroso aparece en cartas de impago. ¿De qué habla esta frase?"
+  - position: 4
+    sentence: "Cuando los nervios aprietan, Rosalía baja la voz y se obliga a ir más {{blank}}."
+    hint_general: "Contra los nervios, se obliga a ir más despacio."
+    explanation: "Pausada: se obliga a ir más despacio. «Pesada» acusaría de cansar a los demás, y «callada» sería dejar de hablar, no hablar más lento."
+    options:
+      - position: 1
+        text: "callada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callada» sería dejar de hablar, y ella sigue hablando: lo único que cambia es la velocidad."
+        hint_specific: "Quien se calla no dice nada. ¿Rosalía deja de hablar o cambia el ritmo?"
+      - position: 2
+        text: "pausada"
+        is_correct: true
+      - position: 3
+        text: "pesada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pesada» acusa de cansar a los demás, y aquí ella cambia el ritmo para calmarse, no para insistir."
+        hint_specific: "Lo pesado cansa a quien lo aguanta. ¿A quién quiere calmar Rosalía?"
+  - position: 5
+    sentence: "Un relato {{blank}} deja sitio para que el otro pregunte sin sentir que interrumpe."
+    hint_general: "Ir despacio abre huecos para que el otro entre."
+    explanation: "Pausado: el relato que va despacio y abre huecos. «Pautado» seguiría normas fijas, y «pesado» acusaría de cansar a quien escucha."
+    options:
+      - position: 1
+        text: "pausado"
+        is_correct: true
+      - position: 2
+        text: "pautado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pautado» sigue normas fijadas de antemano, y lo que abre huecos aquí es la velocidad, no ninguna norma."
+        hint_specific: "Lo pautado viene con instrucciones. ¿Qué es lo que deja sitio al otro?"
+      - position: 3
+        text: "pesado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pesado» acusa de cansar a quien escucha, y este relato hace que el otro se anime a preguntar."
+        hint_specific: "Lo pesado hace que el otro se calle. ¿Aquí el otro se calla o pregunta?"
+  - position: 6
+    sentence: "Damián respondió de forma {{blank}}, palabra por palabra, y la discusión se enfrió sola."
+    hint_general: "Respondió despacio y la tensión bajó sin más."
+    explanation: "Pausada: respondió despacio y bajó la tensión. «Pesada» acusaría de cansar con insistencia, y «pautada» seguiría un protocolo fijo."
+    options:
+      - position: 1
+        text: "pesada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pesada» acusa de cansar con insistencia, y su respuesta enfría la discusión en vez de alargarla."
+        hint_specific: "Lo pesado alarga las peleas. ¿Qué le pasó a esta discusión?"
+      - position: 2
+        text: "pausada"
+        is_correct: true
+      - position: 3
+        text: "pautada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pautada» seguiría un protocolo fijo, y aquí nadie sigue ningún papel: solo baja la velocidad."
+        hint_specific: "Lo pautado se ajusta a un papel. ¿Damián sigue un papel o cambia el ritmo?"
+  - position: 7
+    sentence: "Aquel audio de tres minutos era tan {{blank}} que lo escuché entero mientras cocinaba."
+    hint_general: "Iba tan despacio que se podía seguir haciendo otra cosa."
+    explanation: "Pausado: iba tan despacio que se seguía sin esfuerzo. «Pesado» acusaría de aburrir, y «parsimonioso» es culto y sugiere una lentitud molesta."
+    options:
+      - position: 1
+        text: "parsimonioso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parsimonioso» es palabra culta y sugiere una lentitud molesta, y este audio se escucha entero de buena gana."
+        hint_specific: "Lo parsimonioso desespera. ¿Se terminó el audio o se cortó a la mitad?"
+      - position: 2
+        text: "pausado"
+        is_correct: true
+      - position: 3
+        text: "pesado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pesado» acusa de aburrir, y quien escucha aguanta los tres minutos mientras hace otra cosa."
+        hint_specific: "Lo pesado se salta a los diez segundos. ¿Cuánto duró la escucha?"
+  - position: 8
+    sentence: "Mi abuela cuenta las cosas de un modo {{blank}}, y aun así nunca se le va el hilo."
+    hint_general: "Va despacio y sin embargo no pierde el orden de lo que cuenta."
+    explanation: "Pausado: va despacio sin perder el orden. «Pesado» acusaría de cansar, y «dormido» diría que está medio dormida, no que va despacio."
+    options:
+      - position: 1
+        text: "pausado"
+        is_correct: true
+      - position: 2
+        text: "dormido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dormido» diría que está medio dormida, y la frase subraya que sigue el hilo de todo lo que cuenta."
+        hint_specific: "Quien está medio dormido se pierde. ¿Se pierde ella en el relato?"
+      - position: 3
+        text: "pesado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pesado» acusa de cansar a quien escucha, y aquí se elogia que no se le escape ni un detalle."
+        hint_specific: "Lo pesado hace mirar la puerta. ¿La frase la critica o la admira?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El segundo ensayo"
+    body: "Fabiola ensayó su intervención dos veces. La primera duró cuatro minutos y no se entendió nada. En la segunda cambió una sola cosa: un ritmo pausado, con aire entre frase y frase. Duró seis minutos y el equipo hizo tres preguntas."
+    before_phrase: "Tengo que hablar más despacio, que se me atropella todo."
+    after_phrase: "Voy a ir más pausada, con aire entre frases."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El audio de tres minutos"
+    body: "Mi abuela manda audios largos y nadie se los salta. Cuenta con un ritmo pausado, como si tuviera toda la tarde, y aun así no se le va el hilo. Mi hermano dice que los escucha mientras cocina y que le bajan las pulsaciones."
+    before_phrase: "Habla despacito, pero se entiende todo."
+    after_phrase: "Cuenta de un modo pausado y no se le va el hilo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La discusión que se enfrió"
+    body: "En la comida de la escalera, dos vecinos empezaron a levantar la voz por el ruido del patio. Damián contestó de forma pausada, palabra por palabra, sin subir el tono ni una vez. A los dos minutos hablaban de horarios y no de culpas."
+    before_phrase: "Contesté tranquilo y despacio, sin gritar."
+    after_phrase: "Contesté de forma pausada."
+metrics:
+  zipf_overall: 4.116
+  dispersion_dp: 0.1143
+  pedantry_proxy: 0.5138
+  family_size: 6
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

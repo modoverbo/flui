@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 5013
+slug: "franqueza"
+status: "draft"
+lemma: "franqueza"
+part_of_speech: "sustantivo"
+syllables:
+  - "fran"
+  - "que"
+  - "za"
+stressed_syllable: 2
+ipa_latam: "[fɾaŋˈke.sa]"
+ipa_es: "[fɾaŋˈke.θa]"
+explanation: "Manera de hablar en la que dices lo que piensas tal cual, sin esconder nada."
+example_sentence: "Te lo digo con franqueza: ese plazo no lo puedo cumplir."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Anunciarla antes prepara al otro: «te lo digo con franqueza» avisa de que viene algo directo, no de que viene un golpe."
+when_not_to_use: "No la uses para soltar lo primero que se te ocurre; aquí se dice la verdad, no se descarga el enfado."
+collocations:
+  - "hablar con franqueza"
+  - "agradecer la franqueza"
+  - "una franqueza que se agradece"
+replaces:
+  - before: "Te voy a ser sincero"
+    after: "Te lo digo con franqueza"
+  - before: "Me lo dijo a la cara, sin rodeos"
+    after: "Me lo dijo con franqueza"
+  - before: "Gracias por decírmelo tal cual"
+    after: "Gracias por tu franqueza"
+family:
+  - "franco"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin:
+    - "sinceridad"
+  funcion:
+    - "avisar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "flaqueza"
+    difference: "Una «flaqueza» es un punto débil que tienes; la otra palabra es la costumbre de decir las cosas tal cual son."
+    memory_trick: "La flaqueza se esconde; lo otro sale a la luz."
+  - confused_with: "franquicia"
+    difference: "Una «franquicia» es el permiso para abrir un negocio con la marca de otro; la otra palabra no tiene nada que ver con negocios."
+    memory_trick: "La franquicia se compra; lo otro se practica."
+exercises:
+  - position: 1
+    sentence: "Ruth le dijo con {{blank}} que el plazo no salía, y su cliente se lo agradeció al día siguiente."
+    hint_general: "Le dijo la verdad tal cual y salió bien."
+    explanation: "Franqueza: le dijo la verdad tal cual. «Flaqueza» sería un punto débil suyo, y «descaro» es un reproche y sugiere falta de respeto."
+    options:
+      - position: 1
+        text: "flaqueza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «flaqueza» es un punto débil de alguien, y aquí lo que se describe es cómo cuenta un problema de plazos."
+        hint_specific: "Una flaqueza es algo que te falla por dentro. ¿Qué hace Ruth con la noticia del plazo?"
+      - position: 2
+        text: "franqueza"
+        is_correct: true
+      - position: 3
+        text: "descaro"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Descaro» es un reproche y sugiere falta de respeto, y el cliente termina dándole las gracias."
+        hint_specific: "El descaro molesta a quien lo recibe. ¿Cómo reaccionó el cliente?"
+  - position: 2
+    sentence: "En la cena, Paulino habló con la {{blank}} de siempre y su cuñado tardó un día en darle la razón."
+    hint_general: "Dijo lo que pensaba sin adornar y acabaron dándole la razón."
+    explanation: "Franqueza: dijo lo que pensaba sin adornar. «Franquicia» es el permiso para abrir un negocio con la marca de otro, y «dureza» sugeriría que quiso hacer daño."
+    options:
+      - position: 1
+        text: "franqueza"
+        is_correct: true
+      - position: 2
+        text: "franquicia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «franquicia» es el permiso para abrir un negocio con la marca de otro, y en esa cena no se abre ningún negocio."
+        hint_specific: "Una franquicia se firma con una marca. ¿Dónde ocurre esta escena?"
+      - position: 3
+        text: "dureza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dureza» sugiere que quiso hacer daño, y la frase acaba con su cuñado dándole la razón."
+        hint_specific: "La dureza deja heridas. ¿Cómo acabó el cuñado un día después?"
+  - position: 3
+    sentence: "Agradezco tu {{blank}}: prefiero enterarme ahora y no cuando ya no haya arreglo."
+    hint_general: "Agradece que le hayan dicho la verdad a tiempo."
+    explanation: "Franqueza: le han dicho la verdad a tiempo. «Flaqueza» sería un punto débil, y «candidez» es palabra culta y sugiere ingenuidad, no verdad."
+    options:
+      - position: 1
+        text: "candidez"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Candidez» es palabra culta y sugiere ingenuidad de quien no ve el peligro, y aquí alguien avisa justo a tiempo."
+        hint_specific: "La candidez no se ve venir nada. ¿Quien habla aquí se entera antes o después?"
+      - position: 2
+        text: "franqueza"
+        is_correct: true
+      - position: 3
+        text: "flaqueza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «flaqueza» es un punto débil de alguien, y lo que se agradece aquí es un aviso claro."
+        hint_specific: "Una flaqueza no se agradece, se perdona. ¿Qué se agradece en la frase?"
+  - position: 4
+    sentence: "Eugenia contesta siempre con {{blank}}, aunque le tiemble la voz mientras lo dice."
+    hint_general: "Dice lo que piensa incluso cuando le cuesta."
+    explanation: "Franqueza: dice lo que piensa aunque le cueste. «Franquicia» es un permiso de marca, y «valentía» hablaría del miedo que vence, no de lo que dice."
+    options:
+      - position: 1
+        text: "franquicia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «franquicia» es un permiso para usar la marca de otro, y aquí se describe cómo contesta una persona."
+        hint_specific: "Una franquicia aparece en un contrato. ¿Qué describe la frase sobre Eugenia?"
+      - position: 2
+        text: "valentía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Valentía» habla del miedo que alguien vence, y la frase describe qué dice, no cuánto miedo pasa."
+        hint_specific: "La valentía se mide por el miedo. ¿Qué es lo que hace ella siempre al contestar?"
+      - position: 3
+        text: "franqueza"
+        is_correct: true
+  - position: 5
+    sentence: "Lucrecia pidió que le hablaran con {{blank}} sobre su idea, y aceptó las tres pegas sin discutir."
+    hint_general: "Pidió opiniones sin adornar y aceptó las pegas."
+    explanation: "Franqueza: pidió opiniones sin adornar. «Flaqueza» sería un punto débil, y «educación» hablaría de buenas formas, que no garantizan la verdad."
+    options:
+      - position: 1
+        text: "franqueza"
+        is_correct: true
+      - position: 2
+        text: "flaqueza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «flaqueza» es un punto débil de una persona, y lo que ella pide es una manera de contarle las cosas."
+        hint_specific: "Una flaqueza se tiene, no se pide. ¿Qué pide Lucrecia sobre su idea?"
+      - position: 3
+        text: "educación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Educación» habla de buenas formas, y se puede ser muy educado y no decir ni una de las tres pegas."
+        hint_specific: "Con buenas formas se puede callar todo. ¿Qué recibió ella al final?"
+  - position: 6
+    sentence: "Lo que más se agradece de Salvador es su {{blank}}: si algo no le convence, lo dice en la misma reunión."
+    hint_general: "Cuando algo no le convence lo dice en el momento."
+    explanation: "Franqueza: lo dice en el momento y sin rodeos. «Franquicia» es un permiso de marca, y «confianza» sería la relación entre dos, no su manera de hablar."
+    options:
+      - position: 1
+        text: "confianza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confianza» describe la relación que hay entre dos personas, y la frase describe lo que él hace en la reunión."
+        hint_specific: "La confianza se construye entre dos. ¿Qué hace él cuando algo no le gusta?"
+      - position: 2
+        text: "franqueza"
+        is_correct: true
+      - position: 3
+        text: "franquicia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «franquicia» es el permiso para usar una marca ajena, y aquí se habla de lo que alguien dice en voz alta."
+        hint_specific: "Una franquicia tiene dueño y contrato. ¿Qué se agradece de Salvador?"
+  - position: 7
+    sentence: "Melania avisa antes de empezar: «Te hablo con {{blank}}», y así nadie se lleva un susto a mitad."
+    hint_general: "Avisa de que va a decir las cosas tal cual."
+    explanation: "Franqueza: avisa de que dirá las cosas tal cual. «Flaqueza» sería un punto débil suyo, y «descaro» es un reproche y sugiere faltar al respeto."
+    options:
+      - position: 1
+        text: "flaqueza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «flaqueza» es un punto débil, y nadie avisa de que va a hablar con sus puntos débiles."
+        hint_specific: "Una flaqueza se sufre. ¿De qué avisa Melania antes de empezar?"
+      - position: 2
+        text: "franqueza"
+        is_correct: true
+      - position: 3
+        text: "descaro"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Descaro» es un reproche y sugiere faltar al respeto, y su aviso sirve para que nadie se lleve un susto."
+        hint_specific: "El descaro nunca se anuncia como un favor. ¿Para qué avisa ella?"
+  - position: 8
+    sentence: "Cuesta contestar con {{blank}} cuando quien pregunta está esperando otra respuesta."
+    hint_general: "Es difícil decir la verdad a quien espera oír otra cosa."
+    explanation: "Franqueza: decir la verdad aunque no sea la esperada. «Franquicia» es un permiso de marca, y «calma» hablaría del tono, no del contenido."
+    options:
+      - position: 1
+        text: "franqueza"
+        is_correct: true
+      - position: 2
+        text: "calma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Calma» habla del tono, y se puede contestar muy tranquilo y aun así decir lo que el otro quiere oír."
+        hint_specific: "La calma se nota en la voz. ¿Qué es lo difícil aquí: el tono o el contenido?"
+      - position: 3
+        text: "franquicia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «franquicia» es un permiso para usar una marca, y esta frase habla de responder a una pregunta incómoda."
+        hint_specific: "Una franquicia se negocia con una empresa. ¿Qué cuesta en esta frase?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Las tres pegas"
+    body: "Lucrecia enseñó su idea de negocio a cuatro amigos y les pidió una cosa antes de empezar: franqueza, no ánimos, porque gente que le diga que sí ya tiene de sobra. Salieron tres pegas. Las apuntó, dio las gracias y cambió dos cosas esa misma semana."
+    before_phrase: "Dime la verdad, aunque duela."
+    after_phrase: "Lo que quiero es franqueza, no ánimos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La voz que tiembla"
+    body: "A Eugenia le tiembla la voz cuando dice algo incómodo, y aun así lo dice. Aquella noche contó que no iba a poder cuidar de la casa todos los veranos. Su hermano se quedó callado un minuto y luego dijo: «Gracias por la franqueza; lo repartimos»."
+    before_phrase: "No sé cómo decirte esto, de verdad."
+    after_phrase: "Te lo digo con franqueza, aunque me tiemble la voz."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El plazo que no salía"
+    body: "Ruth vio el calendario y supo que no llegaba. En vez de esperar al viernes, llamó el lunes: «Con franqueza, ese plazo no sale; te propongo dos fechas». El cliente eligió una y al día siguiente le escribió para agradecerle el aviso temprano."
+    before_phrase: "Voy a intentarlo y ya veremos qué pasa."
+    after_phrase: "Con franqueza: ese plazo no sale."
+metrics:
+  zipf_overall: 3.3648
+  dispersion_dp: 0.2315
+  pedantry_proxy: 0.8092
+  family_size: 35
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

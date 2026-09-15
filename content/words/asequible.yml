@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "asequible"
+status: "draft"
+lemma: "asequible"
+part_of_speech: "adjetivo"
+syllables:
+  - "a"
+  - "se"
+  - "qui"
+  - "ble"
+stressed_syllable: 3
+ipa_latam: "[a.seˈki.βle]"
+ipa_es: "[a.seˈki.βle]"
+explanation: "Que se puede conseguir o pagar sin un esfuerzo enorme."
+example_sentence: "Encontraron un local con un alquiler asequible a diez minutos del centro."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Vale para un precio y también para un objetivo: dice que está dentro de tus posibilidades."
+when_not_to_use: "No la uses para algo fácil de alcanzar físicamente ni para una persona de trato abierto; eso es «accesible»."
+collocations:
+  - "un precio asequible"
+  - "un objetivo asequible"
+  - "un plazo asequible"
+replaces:
+  - before: "Buscamos un alquiler accesible"
+    after: "Buscamos un alquiler asequible"
+  - before: "Es un objetivo que sí se puede cumplir"
+    after: "Es un objetivo asequible"
+  - before: "No está tan caro para lo que ofrece"
+    after: "El precio es asequible para lo que ofrece"
+family: []
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin: ["barato"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "accesible"
+    difference: "«Accesible» es lo fácil de alcanzar o de entender, y también la persona de trato abierto; la otra palabra habla de lo que está a tu alcance conseguir o pagar."
+    memory_trick: "A lo accesible llegas; lo otro te lo puedes permitir."
+  - confused_with: "apetecible"
+    difference: "«Apetecible» dice que algo da ganas; la otra palabra no juzga las ganas, solo si está a tu alcance."
+    memory_trick: "Lo apetecible te atrae; lo otro te cabe en el bolsillo."
+exercises:
+  - position: 1
+    sentence: "Encontraron un local con un alquiler {{blank}} a diez minutos del centro."
+    hint_general: "El precio entra dentro de lo que pueden pagar."
+    explanation: "Asequible: el alquiler entra en lo que pueden pagar. «Accesible» hablaría de lo fácil que es llegar hasta allí, y «barato» es coloquial y sugiere poca calidad."
+    options:
+      - position: 1
+        text: "accesible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Accesible» diría que se llega fácil hasta el local, y eso ya lo cuenta el final de la frase: está a diez minutos."
+        hint_specific: "Accesible mide la distancia o la facilidad de llegar. ¿Qué dato falta todavía en la frase?"
+      - position: 2
+        text: "asequible"
+        is_correct: true
+      - position: 3
+        text: "barato"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Barato» es coloquial y arrastra sospecha de poca calidad; aquí solo se dice que el precio está dentro de lo posible."
+        hint_specific: "«Barato» suena a rebaja y a poca calidad. ¿Es eso lo que celebran del local?"
+  - position: 2
+    sentence: "Camila propuso un objetivo {{blank}}: dos clientes nuevos al mes, no veinte."
+    hint_general: "Lo que se propone está dentro de lo que el equipo puede lograr."
+    explanation: "Asequible: el objetivo está dentro de lo posible. «Apetecible» diría que da ganas, y «modesto» sugeriría falta de ambición, no realismo."
+    options:
+      - position: 1
+        text: "apetecible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apetecible» diría que el objetivo da ganas, y lo que Camila subraya con el contraste es que se puede cumplir."
+        hint_specific: "Apetecible habla de ganas. ¿Qué compara Camila entre dos clientes y veinte?"
+      - position: 2
+        text: "asequible"
+        is_correct: true
+      - position: 3
+        text: "modesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Modesto» sugeriría que el objetivo se queda corto por falta de ambición, y la frase lo presenta como bien calculado."
+        hint_specific: "Modesto suena a poca ambición. ¿Camila se conforma o calcula?"
+  - position: 3
+    sentence: "El menú del mediodía es {{blank}} y por eso el sitio se llena a la una en punto."
+    hint_general: "El precio está al alcance de quien come allí cada día."
+    explanation: "Asequible: el precio está al alcance de todos los días. «Accesible» hablaría de lo fácil que resulta llegar o entender algo, y «módico» suena a cartel antiguo."
+    options:
+      - position: 1
+        text: "módico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Módico» suena a cartel antiguo y a lenguaje de tarifa oficial, y aquí se habla de un menú del que la gente habla a diario."
+        hint_specific: "«Módico» aparece en tarifas y carteles de otra época. ¿Lo dirías al recomendar un sitio?"
+      - position: 2
+        text: "accesible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Accesible» diría que es fácil llegar al sitio o entender la carta, y lo que llena el local es lo que cuesta comer allí."
+        hint_specific: "Accesible mide la facilidad de llegar. ¿Por qué se llena el local a la una?"
+      - position: 3
+        text: "asequible"
+        is_correct: true
+  - position: 4
+    sentence: "Con ese plazo, terminar el informe sigue siendo {{blank}} sin quedarse hasta la noche."
+    hint_general: "El trabajo entra dentro de lo que se puede hacer con el tiempo que hay."
+    explanation: "Asequible: entra dentro del tiempo disponible. «Accesible» hablaría de facilidad para llegar o entender, y «posible» solo diría que no es imposible."
+    options:
+      - position: 1
+        text: "asequible"
+        is_correct: true
+      - position: 2
+        text: "accesible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Accesible» se dice de un lugar al que se llega fácil o de un texto que se entiende bien, no del esfuerzo que cabe en un plazo."
+        hint_specific: "Accesible va de llegar o de entender. ¿Qué se está midiendo aquí, distancia o esfuerzo?"
+      - position: 3
+        text: "posible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posible» solo diría que no es imposible, y quedarse hasta la noche también es posible: la frase descarta justo eso."
+        hint_specific: "Posible incluye lo agotador. ¿Qué descarta el final de la frase?"
+  - position: 5
+    sentence: "La escuela de música bajó los precios para que el curso fuera {{blank}} con un sueldo normal."
+    hint_general: "Ahora cabe dentro del presupuesto de la gente corriente."
+    explanation: "Asequible: cabe en un sueldo normal. «Accesible» hablaría de facilidad para llegar o entender, y «alcanzable» sugiere un objetivo por lograr, no un precio."
+    options:
+      - position: 1
+        text: "accesible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Accesible» diría que se llega fácil a la escuela o que el curso se entiende bien, y lo que bajó fue el precio."
+        hint_specific: "Accesible habla de llegar o de entender. ¿Qué cambió exactamente en esa escuela?"
+      - position: 2
+        text: "alcanzable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alcanzable» se dice de un objetivo que se puede lograr con esfuerzo, y un curso no se logra: se paga."
+        hint_specific: "Alcanzable se aplica a objetivos. ¿El curso se consigue con esfuerzo o con dinero?"
+      - position: 3
+        text: "asequible"
+        is_correct: true
+  - position: 6
+    sentence: "Nadie diría que ese objetivo es {{blank}} con el equipo que tenemos hoy."
+    hint_general: "Con estas fuerzas, lograrlo queda fuera de alcance."
+    explanation: "Asequible: con este equipo queda fuera de alcance. «Apetecible» diría que da ganas, y «rentable» hablaría del dinero que dejaría, no de si se puede."
+    options:
+      - position: 1
+        text: "apetecible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apetecible» diría que el objetivo da ganas, y un objetivo puede dar muchísimas ganas y seguir quedando lejos."
+        hint_specific: "Apetecible mide el deseo. ¿Lo que falta aquí son ganas o son fuerzas?"
+      - position: 2
+        text: "asequible"
+        is_correct: true
+      - position: 3
+        text: "rentable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rentable» hablaría del dinero que dejaría el objetivo, y la duda de la frase es si el equipo da para lograrlo."
+        hint_specific: "Rentable mira las ganancias. ¿Se discute aquí el beneficio o la capacidad?"
+  - position: 7
+    sentence: "Buscaba un auto usado y {{blank}}, no uno bonito."
+    hint_general: "Quería algo que pudiera pagar sin apuros."
+    explanation: "Asequible: que pudiera pagarlo sin apuros. «Accesible» hablaría de facilidad para llegar o entender, y «regalado» es coloquial y exagera hasta lo increíble."
+    options:
+      - position: 1
+        text: "accesible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Accesible» se dice de un sitio al que se llega fácil o de una persona de trato abierto, no de lo que cuesta un auto."
+        hint_specific: "Accesible va de llegar o de tratar con alguien. ¿Qué se compara aquí con lo bonito?"
+      - position: 2
+        text: "regalado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Regalado» es coloquial y exagera hasta lo increíble, y quien busca un usado solo quiere pagar lo que puede."
+        hint_specific: "«Regalado» suena a chollo imposible. ¿Busca una ganga o algo que pueda pagar?"
+      - position: 3
+        text: "asequible"
+        is_correct: true
+  - position: 8
+    sentence: "El taller de los martes es corto, claro y {{blank}} para cualquier bolsillo."
+    hint_general: "Cualquiera puede pagarlo sin hacer cuentas raras."
+    explanation: "Asequible: cualquiera puede pagarlo. «Accesible» hablaría de facilidad para llegar o entender, algo que la frase ya dice con «claro», y «gratuito» diría que no cuesta nada."
+    options:
+      - position: 1
+        text: "gratuito"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gratuito» diría que no cuesta nada, y entonces no tendría sentido hablar de bolsillos."
+        hint_specific: "Gratuito es sin pagar. ¿Por qué menciona la frase los bolsillos?"
+      - position: 2
+        text: "accesible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Accesible» diría que se entiende con facilidad, y eso ya lo cubre la palabra «claro» que aparece antes."
+        hint_specific: "Accesible se solapa con algo que ya dice la frase. ¿Qué adjetivo la precede?"
+      - position: 3
+        text: "asequible"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos clientes al mes"
+    body: "La cifra del trimestre parecía imposible y el equipo ya se había rendido. Camila lo replanteó en la pizarra: «Pongamos un objetivo asequible: dos clientes al mes». Cerraron siete en el trimestre, dos más de los previstos."
+    before_phrase: "Pongamos algo que se pueda cumplir de verdad."
+    after_phrase: "Pongamos un objetivo asequible."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El curso de guitarra"
+    body: "Su hija llevaba meses pidiendo clases y el precio no salía. Cuando la escuela bajó las tarifas, Sandra volvió a casa con la hoja en la mano: «Ahora sí es asequible». Empezó en octubre y sigue tocando."
+    before_phrase: "Ahora sí lo podemos pagar."
+    after_phrase: "Ahora sí es asequible."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El menú de la esquina"
+    body: "Alguien preguntó en el grupo dónde comer cerca de la estación. Joaquín contestó en un minuto: «El de la esquina: comida honesta y asequible, y a la una ya no hay mesa». Fueron seis y volvieron al día siguiente."
+    before_phrase: "Está bien de precio, se come por poco."
+    after_phrase: "Comida honesta y asequible."
+metrics:
+  zipf_overall: 3.9499
+  dispersion_dp: 0.2032
+  pedantry_proxy: 0.5209
+  family_size: 4
+provenance:
+  generator: "flui authoring agent — theme paronimos (asequible / accesible)"
+  gate: null
+  checked_on: "2026-09-14"

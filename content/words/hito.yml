@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 5021
+slug: "hito"
+status: "draft"
+lemma: "hito"
+part_of_speech: "sustantivo"
+syllables:
+  - "hi"
+  - "to"
+stressed_syllable: 1
+ipa_latam: "[ˈi.to]"
+ipa_es: "[ˈi.to]"
+explanation: "Momento importante que marca un antes y un después en algo."
+example_sentence: "Aquel encargo fue un hito: desde entonces trabajo solo por recomendación."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "En una entrevista ordena tu historia: tres de estos explican diez años mejor que una lista de puestos."
+when_not_to_use: "No la uses para un buen día suelto; esto separa un antes de un después."
+collocations:
+  - "marcar un hito"
+  - "un hito importante"
+  - "los hitos de un proyecto"
+replaces:
+  - before: "Una cosa gorda que conseguí"
+    after: "Un hito de mi carrera"
+  - before: "Ese día cambió todo para nosotros"
+    after: "Ese día fue un hito"
+  - before: "Lo más importante que pasó ese año"
+    after: "El hito de aquel año"
+family: []
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "momento"
+  funcion:
+    - "ordenar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "mito"
+    difference: "Un «mito» es una historia que se cuenta y puede no ser cierta; la otra palabra señala algo que ocurrió de verdad y cambió el rumbo."
+    memory_trick: "El mito se cuenta; lo otro se fecha."
+  - confused_with: "rito"
+    difference: "Un «rito» es algo que se repite igual cada vez; la otra palabra pasa una sola vez y parte el camino en dos."
+    memory_trick: "El rito vuelve cada año; lo otro ocurre una vez."
+exercises:
+  - position: 1
+    sentence: "Aquel encargo fue un {{blank}} para Olga: desde entonces trabaja solo por recomendación."
+    hint_general: "Ese trabajo partió su carrera en un antes y un después."
+    explanation: "Hito: partió su carrera en dos. «Mito» sería una historia que quizá no pasó, y «efeméride» es palabra de periódico y nombra una fecha que se conmemora."
+    options:
+      - position: 1
+        text: "mito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mito» es una historia que se cuenta y puede no ser cierta, y este encargo ocurrió y cambió su manera de trabajar."
+        hint_specific: "Un mito puede no haber pasado nunca. ¿Este encargo pasó o se cuenta?"
+      - position: 2
+        text: "hito"
+        is_correct: true
+      - position: 3
+        text: "efeméride"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Efeméride» es palabra de periódico y nombra una fecha que se conmemora cada año, y aquí se cuenta una carrera, no un calendario."
+        hint_specific: "Una efeméride se celebra cada aniversario. ¿Esto se celebra o se cuenta?"
+  - position: 2
+    sentence: "El plan tiene cuatro {{blank}} y el primero es tener el prototipo antes de junio."
+    hint_general: "El plan se divide en cuatro momentos que marcan el avance."
+    explanation: "Hitos: los cuatro momentos que marcan el avance. «Ritos» serían gestos que se repiten igual, y «detalles» quitaría importancia a lo que en realidad ordena el plan."
+    options:
+      - position: 1
+        text: "hitos"
+        is_correct: true
+      - position: 2
+        text: "ritos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Los «ritos» son gestos que se repiten igual cada vez, y estos cuatro pasos ocurren una sola vez y en orden."
+        hint_specific: "Un rito se repite cada semana. ¿Cuántas veces ocurre tener el prototipo?"
+      - position: 3
+        text: "detalles"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detalles» quita importancia a algo pequeño, y estos cuatro puntos son los que sostienen el plan entero."
+        hint_specific: "Un detalle es accesorio. ¿Qué peso tienen estos cuatro puntos?"
+  - position: 3
+    sentence: "En la entrevista, Mario contó tres {{blank}} en vez de leer el currículo entero."
+    hint_general: "Eligió tres momentos que cambiaron su camino."
+    explanation: "Hitos: tres momentos que cambiaron su camino. «Mitos» serían historias quizá inventadas, y «recuerdos» incluiría cualquier cosa que le venga a la cabeza."
+    options:
+      - position: 1
+        text: "recuerdos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recuerdos» incluye cualquier cosa que le venga a la cabeza, y en una entrevista hacen falta momentos que expliquen su camino."
+        hint_specific: "Un recuerdo puede ser una comida de hace años. ¿Qué busca contar Mario?"
+      - position: 2
+        text: "hitos"
+        is_correct: true
+      - position: 3
+        text: "mitos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Los «mitos» son historias que se cuentan y pueden no ser ciertas, y él habla de cosas que hizo de verdad."
+        hint_specific: "Un mito no necesita haber pasado. ¿Lo que cuenta Mario ocurrió?"
+  - position: 4
+    sentence: "Para Inés, aprender a conducir a los cuarenta fue un {{blank}} mayor que cualquier ascenso."
+    hint_general: "Ese aprendizaje marcó su vida más que nada del trabajo."
+    explanation: "Hito: marcó su vida más que ningún ascenso. «Rito» sería algo que se repite igual, y «notición» es coloquial y suena a noticia de última hora."
+    options:
+      - position: 1
+        text: "hito"
+        is_correct: true
+      - position: 2
+        text: "rito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «rito» es algo que se repite igual cada vez, y sacarse el carné ocurre una sola vez en la vida."
+        hint_specific: "Un rito vuelve cada domingo. ¿Cuántas veces se aprende a conducir?"
+      - position: 3
+        text: "notición"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Notición» es coloquial y suena a noticia de última hora que se cuenta en caliente, y esto es algo que ella logró y le duró."
+        hint_specific: "Un notición se comenta el mismo día y se olvida. ¿Cuánto le duró a Inés?"
+  - position: 5
+    sentence: "La apertura de la segunda tienda quedó como el {{blank}} que dividió la historia del negocio."
+    hint_general: "Ese día separa la historia del negocio en dos mitades."
+    explanation: "Hito: separa la historia en dos mitades. «Mito» sería una historia quizá inventada, y «comienzo» diría que ahí empezó todo, cuando ya había una tienda."
+    options:
+      - position: 1
+        text: "mito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mito» es una historia que puede no ser cierta, y esa apertura está en los papeles del negocio."
+        hint_specific: "Un mito se transmite de boca en boca. ¿Esta apertura consta en algún sitio?"
+      - position: 2
+        text: "comienzo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comienzo» diría que ahí empezó todo, y la frase da por hecho que antes ya existía la primera tienda."
+        hint_specific: "Un comienzo no tiene nada detrás. ¿Cuántas tiendas había antes?"
+      - position: 3
+        text: "hito"
+        is_correct: true
+  - position: 6
+    sentence: "Óscar no sabe contar su carrera porque mezcla los {{blank}} con las anécdotas del café."
+    hint_general: "No distingue lo que cambió su camino de lo que solo hace gracia."
+    explanation: "Hitos: lo que cambió su camino. «Ritos» serían costumbres repetidas, y «ejemplos» sería cualquier caso que sirva para ilustrar algo."
+    options:
+      - position: 1
+        text: "hitos"
+        is_correct: true
+      - position: 2
+        text: "ritos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Los «ritos» son costumbres que se repiten igual, y lo que se mezcla aquí son momentos únicos con chascarrillos."
+        hint_specific: "Un rito se repite cada mañana. ¿Con qué confunde Óscar lo importante?"
+      - position: 3
+        text: "ejemplos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ejemplos» es cualquier caso que sirva para ilustrar algo, y aquí falta justo distinguir lo que cambió su camino."
+        hint_specific: "Un ejemplo puede ser pequeño. ¿Qué es lo que Óscar no logra separar?"
+  - position: 7
+    sentence: "Aquella beca fue el {{blank}} que le abrió las puertas a Alba, aunque ella lo cuente de pasada."
+    hint_general: "Esa beca fue el momento que le abrió el camino."
+    explanation: "Hito: el momento que le abrió el camino. «Mito» sería una historia dudosa, y «efeméride» es palabra de periódico para fechas que se conmemoran."
+    options:
+      - position: 1
+        text: "efeméride"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Efeméride» es palabra de periódico para fechas que se conmemoran cada año, y esta beca no se celebra: se cuenta de pasada."
+        hint_specific: "Una efeméride aparece en la sección de aniversarios. ¿Cómo lo cuenta Alba?"
+      - position: 2
+        text: "hito"
+        is_correct: true
+      - position: 3
+        text: "mito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mito» es una historia que puede no ser cierta, y la beca existió y tuvo consecuencias claras."
+        hint_specific: "Un mito no deja papeles. ¿Esta beca dejó algo detrás?"
+  - position: 8
+    sentence: "Un buen día no es un {{blank}}: para serlo tiene que cambiar lo que viene después."
+    hint_general: "Solo cuenta como tal si cambia lo que viene detrás."
+    explanation: "Hito: solo lo es si cambia lo que viene después. «Rito» sería algo repetido, y «cambio» a secas no dice que haya un antes y un después señalados."
+    options:
+      - position: 1
+        text: "rito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «rito» es algo que se repite igual cada vez, y aquí se habla de algo que ocurre una vez y parte el camino."
+        hint_specific: "Un rito se repite. ¿Cuántas veces ocurre lo que describe la frase?"
+      - position: 2
+        text: "hito"
+        is_correct: true
+      - position: 3
+        text: "cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cambio» puede ser lento y sin fecha, y la frase exige un punto concreto que separe el antes del después."
+        hint_specific: "Un cambio puede durar años. ¿Qué exige la frase para contar como tal?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Tres, no diecisiete"
+    body: "Mario llegaba a las entrevistas con diecisiete puestos que contar y salía con la sensación de no haber dicho nada. Cambió el método: eligió tres hitos y explicó qué cambió después de cada uno. La conversación pasó de veinte minutos a cincuenta, y esa vez le llamaron."
+    before_phrase: "Te cuento todo lo que he ido haciendo."
+    after_phrase: "Te cuento tres hitos y qué cambió después de cada uno."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El carné a los cuarenta"
+    body: "Inés se sacó el carné a los cuarenta y dos, después de tres intentos. En casa lo cuentan como el hito de aquella década, por encima de cualquier cosa del trabajo. Desde entonces, los domingos conduce ella y elige la música sin discusión."
+    before_phrase: "Fue muy importante para mí, de verdad."
+    after_phrase: "Fue el hito de aquella década."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuatro puntos en el plan"
+    body: "El equipo discutía el calendario y no había manera de cerrarlo. Olga propuso dejar cuatro hitos escritos y olvidarse del resto de fechas. El primero era el prototipo antes de junio. Con cuatro líneas en la pared dejaron de discutir y empezaron a trabajar."
+    before_phrase: "Vamos a poner las fechas importantes."
+    after_phrase: "Vamos a dejar cuatro hitos escritos."
+metrics:
+  zipf_overall: 4.1683
+  dispersion_dp: 0.1435
+  pedantry_proxy: 0.5966
+  family_size: 0
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

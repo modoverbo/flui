@@ -1,0 +1,247 @@
+schema_version: 1
+slug: "inicialmente"
+status: "draft"
+lemma: "inicialmente"
+part_of_speech: "adverbio"
+syllables:
+  - "i"
+  - "ni"
+  - "cial"
+  - "men"
+  - "te"
+stressed_syllable: 4
+ipa_latam: "[i.ni.sjalˈmen.te]"
+ipa_es: "[i.ni.θjalˈmen.te]"
+explanation: "Sitúa algo en el principio de una historia que después cambió."
+example_sentence: "El plan inicialmente cabía en un folio y ahora ocupa cuarenta páginas."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Avisa de que lo que viene ya no es así: prepara el cambio antes de contarlo."
+when_not_to_use: "No la uses si nada cambió después; si todo sigue igual, marcar el principio despista."
+collocations:
+  - "inicialmente previsto"
+  - "inicialmente pensado"
+replaces:
+  - before: "Al principio éramos tres"
+    after: "Inicialmente éramos tres"
+  - before: "De entrada iba a durar un mes"
+    after: "Inicialmente iba a durar un mes"
+  - before: "Nos pidieron dos, y eso, al empezar"
+    after: "Inicialmente nos pidieron dos"
+family:
+  - "inicial"
+semantic_set_id: "orden-en-el-tiempo"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "al principio"
+  funcion:
+    - "marcar el punto de partida"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "esencialmente"
+    difference: "«Esencialmente» habla de lo que algo es en el fondo: «es esencialmente un problema de dinero». La otra habla del punto de partida."
+    memory_trick: "Una mira el fondo; la otra mira el primer día."
+  - confused_with: "oficialmente"
+    difference: "«Oficialmente» dice que algo consta por la vía formal: «oficialmente cerró en mayo». La otra no habla de papeles: habla del comienzo."
+    memory_trick: "Una necesita un sello; la otra solo un calendario."
+exercises:
+  - position: 1
+    sentence: "El equipo {{blank}} era de tres personas y hoy trabajan nueve en la misma sala."
+    hint_general: "Cuenta cómo empezó aquello, sabiendo que ahora es muy distinto."
+    explanation: "Inicialmente: así empezó el equipo antes de crecer. «Esencialmente» hablaría del fondo del asunto y «finalmente» pondría los tres al cierre de la historia."
+    options:
+      - position: 1
+        text: "esencialmente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esencialmente» habla de lo que algo es en el fondo, y aquí no se define el equipo: se cuenta cuándo era pequeño."
+        hint_specific: "«Esencialmente» define lo que algo es por dentro. ¿Se define el equipo o se sitúa en el tiempo?"
+      - position: 2
+        text: "inicialmente"
+        is_correct: true
+      - position: 3
+        text: "finalmente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Finalmente» pondría a esas tres personas al cierre de la historia, y la frase dice que ahora son nueve."
+        hint_specific: "«Finalmente» cierra una serie. ¿Tres personas es el principio o el final?"
+  - position: 2
+    sentence: "El presupuesto {{blank}} aprobado se quedó corto en cuanto subió el material."
+    hint_general: "Ese número valía al empezar y dejó de valer enseguida."
+    explanation: "Inicialmente: el número valía al empezar. «De primeras» es de conversación y habla de una primera impresión, y «posteriormente» pondría la aprobación después de la subida."
+    options:
+      - position: 1
+        text: "inicialmente"
+        is_correct: true
+      - position: 2
+        text: "de primeras"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De primeras» es de conversación y describe una primera impresión, no la fecha en que se aprobó un presupuesto."
+        hint_specific: "«De primeras» habla de la primera sensación. ¿Se cuenta una sensación o una aprobación?"
+      - position: 3
+        text: "posteriormente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posteriormente» pondría la aprobación después de la subida, y el presupuesto se aprobó antes de que el material encareciera."
+        hint_specific: "«Posteriormente» mira hacia delante. ¿Se aprobó antes o después de la subida?"
+  - position: 3
+    sentence: "La ruta {{blank}} pasaba por la costa, pero la cambiaron por el camino del interior."
+    hint_general: "Ese trazado era el del principio, antes del cambio."
+    explanation: "Inicialmente: el trazado era el del principio. «Oficialmente» hablaría de papeles sellados y «paralelamente» pondría las dos rutas a la vez."
+    options:
+      - position: 1
+        text: "oficialmente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Oficialmente» dice que algo consta por la vía formal, y aquí no hay papeles: hay un trazado que cambió."
+        hint_specific: "«Oficialmente» tiene que ver con registros. ¿Hay papeleo o hay un cambio de ruta?"
+      - position: 2
+        text: "inicialmente"
+        is_correct: true
+      - position: 3
+        text: "paralelamente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paralelamente» pondría las dos rutas abiertas a la vez, y la frase dice que una sustituyó a la otra."
+        hint_specific: "«Paralelamente» junta dos cosas en el mismo rato. ¿Hubo dos rutas o una cambió?"
+  - position: 4
+    sentence: "Rosalinda {{blank}} no quería mudarse de barrio y ahora no se iría de este por nada."
+    hint_general: "Esa era su postura al empezar, antes de cambiar de idea."
+    explanation: "Inicialmente: esa era su postura al empezar. «Para empezar» ordena los puntos de un discurso y «en resumen» anunciaría un cierre que no llega."
+    options:
+      - position: 1
+        text: "inicialmente"
+        is_correct: true
+      - position: 2
+        text: "para empezar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Para empezar» es de conversación y ordena los puntos de lo que alguien va a decir, no los momentos de una mudanza."
+        hint_specific: "«Para empezar» ordena un discurso. ¿Se ordena lo que se dice o lo que pasó?"
+      - position: 3
+        text: "en resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En resumen» condensa lo dicho antes, y aquí no hay nada dicho antes: se abre la historia de un cambio de idea."
+        hint_specific: "«En resumen» cierra y condensa. ¿Esto cierra algo o lo abre?"
+  - position: 5
+    sentence: "El local {{blank}} abría solo los fines de semana y acabó abriendo todos los días."
+    hint_general: "Ese horario fue el del arranque, antes de crecer."
+    explanation: "Inicialmente: ese horario fue el del arranque. «Esencialmente» hablaría del fondo del negocio y «entretanto» metería el horario en una espera."
+    options:
+      - position: 1
+        text: "esencialmente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esencialmente» habla de lo que algo es en el fondo, y aquí se cuenta un horario que fue cambiando."
+        hint_specific: "«Esencialmente» define lo que algo es por dentro. ¿Se define el local o se sitúa un horario?"
+      - position: 2
+        text: "entretanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entretanto» llena el rato de una espera, y aquí no se espera a nada: se cuenta cómo empezó el negocio."
+        hint_specific: "«Entretanto» rellena una espera. ¿Hay una espera o un punto de partida?"
+      - position: 3
+        text: "inicialmente"
+        is_correct: true
+  - position: 6
+    sentence: "La reforma {{blank}} iba a durar un mes y se alargó hasta bien entrado marzo."
+    hint_general: "Ese plazo era el del principio, antes de que todo se retrasara."
+    explanation: "Inicialmente: ese plazo era el del principio. «De primeras» es de conversación y habla de una primera impresión, y «por tanto» convertiría el mes en una consecuencia."
+    options:
+      - position: 1
+        text: "de primeras"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De primeras» es de conversación y describe la primera impresión de alguien, no el plazo que figuraba en el proyecto."
+        hint_specific: "«De primeras» habla de la primera sensación. ¿Se cuenta una sensación o un plazo?"
+      - position: 2
+        text: "inicialmente"
+        is_correct: true
+      - position: 3
+        text: "por tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por tanto» presentaría el mes como consecuencia de algo, y ese plazo no se deduce de nada: era el punto de partida."
+        hint_specific: "«Por tanto» anuncia una consecuencia. ¿El mes se deduce de algo o es el arranque?"
+  - position: 7
+    sentence: "El curso {{blank}} tenía veinte plazas y terminó con una lista de espera larguísima."
+    hint_general: "Ese número era el del principio, antes de que se llenara."
+    explanation: "Inicialmente: ese número era el del principio. «Oficialmente» hablaría de papeles sellados y «finalmente» pondría las veinte plazas al cierre."
+    options:
+      - position: 1
+        text: "inicialmente"
+        is_correct: true
+      - position: 2
+        text: "oficialmente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Oficialmente» dice que algo consta por la vía formal, y aquí no se discute ningún registro: se cuenta cómo empezó el curso."
+        hint_specific: "«Oficialmente» tiene que ver con registros. ¿Hay papeleo o hay un cupo que se quedó corto?"
+      - position: 3
+        text: "finalmente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Finalmente» pondría las veinte plazas al cierre de la historia, y la frase las coloca justo al empezar."
+        hint_specific: "«Finalmente» cierra una serie. ¿Veinte plazas es el arranque o el desenlace?"
+  - position: 8
+    sentence: "Nos pidieron {{blank}} dos informes al mes y acabaron pidiendo cinco."
+    hint_general: "Esa cifra fue la del primer acuerdo, antes de que creciera."
+    explanation: "Inicialmente: esa cifra fue la del primer acuerdo. «Para empezar» ordena los puntos de un discurso y «posteriormente» pondría los dos informes después de los cinco."
+    options:
+      - position: 1
+        text: "posteriormente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Posteriormente» pondría los dos informes después de los cinco, y la frase cuenta justo el camino contrario."
+        hint_specific: "«Posteriormente» mira hacia delante. ¿Los dos informes vienen antes o después de los cinco?"
+      - position: 2
+        text: "para empezar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Para empezar» es de conversación y ordena los puntos de lo que alguien va a decir, no los momentos de un encargo."
+        hint_specific: "«Para empezar» ordena un discurso. ¿Se ordena lo que se dice o lo que pasó?"
+      - position: 3
+        text: "inicialmente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "De tres a nueve"
+    body: "En la reunión con el cliente nadie entendía por qué el equipo pedía más espacio. Baudilio lo contó en una frase: «Inicialmente éramos tres; hoy somos nueve». El cliente miró los planos de la sala y aprobó la mudanza de planta esa misma tarde."
+    before_phrase: "Es que al principio éramos tres, y claro, ahora pues nueve."
+    after_phrase: "Inicialmente éramos tres; hoy somos nueve."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El barrio nuevo"
+    body: "Se había resistido un año entero a dejar la casa de siempre. Cuando su hijo le preguntó si estaba a gusto, Encarnación lo reconoció sin drama: «Inicialmente no quería mudarme, y ahora no me iría de aquí». Su hijo guardó la frase para la próxima discusión."
+    before_phrase: "Al principio no quería, ya sabes, pero bueno."
+    after_phrase: "Inicialmente no quería mudarme, y ahora no me iría de aquí."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El local de los sábados"
+    body: "Le pidieron que explicara cómo había crecido su negocio sin hacerlo largo. Aniceto respondió con dos datos y una palabra que ordenaba los dos: «Inicialmente abríamos solo los fines de semana». Después contó el resto en menos de un minuto."
+    before_phrase: "Al principio abríamos solo los findes, o sea, poquito."
+    after_phrase: "Inicialmente abríamos solo los fines de semana."
+metrics:
+  zipf_overall: 4.5700
+  dispersion_dp: 0.1538
+  pedantry_proxy: 0.6408
+  family_size: 155
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

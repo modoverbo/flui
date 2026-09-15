@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 5023
+slug: "bagaje"
+status: "draft"
+lemma: "bagaje"
+part_of_speech: "sustantivo"
+syllables:
+  - "ba"
+  - "ga"
+  - "je"
+stressed_syllable: 2
+ipa_latam: "[baˈɣa.xe]"
+ipa_es: "[baˈɣa.xe]"
+explanation: "Todo lo que has aprendido y llevas contigo de un trabajo a otro."
+example_sentence: "Vengo de otro sector, y ese bagaje es lo que aporto aquí."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve justo cuando cambias de sector: nombra lo que traes cuando el puesto anterior no se parece al nuevo."
+when_not_to_use: "No la uses para el recorrido de puestos por orden; esto es lo aprendido, no la lista de empleos."
+collocations:
+  - "un buen bagaje"
+  - "el bagaje que traes"
+  - "bagaje profesional"
+replaces:
+  - before: "Traigo un montón de cosas aprendidas"
+    after: "Traigo un bagaje amplio"
+  - before: "Todo lo que he ido cogiendo por el camino"
+    after: "El bagaje que he ido reuniendo"
+  - before: "Vengo de otro mundo, pero algo sé"
+    after: "Vengo de otro sector, con un bagaje distinto"
+family: []
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "experiencia"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "equipaje"
+    difference: "El «equipaje» son las maletas que llevas de viaje; la otra palabra es lo aprendido que llevas dentro."
+    memory_trick: "El equipaje se factura; lo otro no pesa."
+  - confused_with: "trayecto"
+    difference: "Un «trayecto» es el camino que recorres de un punto a otro; la otra palabra es lo que te queda después de recorrerlo."
+    memory_trick: "El trayecto se anda; lo otro se acumula."
+exercises:
+  - position: 1
+    sentence: "Diego viene de la hostelería y dice que ese {{blank}} es justo lo que le falta al equipo."
+    hint_general: "Lo aprendido en su sector anterior es lo que aporta ahora."
+    explanation: "Bagaje: lo aprendido en su sector anterior. «Equipaje» son las maletas de un viaje, y «currículo» es el papel donde se escribe la lista de empleos."
+    options:
+      - position: 1
+        text: "equipaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «equipaje» son las maletas que llevas de viaje, y lo que aporta Diego al equipo no cabe en una maleta."
+        hint_specific: "El equipaje se factura en un mostrador. ¿Qué trae Diego de la hostelería?"
+      - position: 2
+        text: "bagaje"
+        is_correct: true
+      - position: 3
+        text: "currículo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «currículo» es el papel con la lista de empleos, y aquí se habla de lo que sabe hacer, no de lo que tiene escrito."
+        hint_specific: "Un currículo se imprime. ¿Lo que falta al equipo se imprime o se sabe?"
+  - position: 2
+    sentence: "Con el {{blank}} que tiene Raquel, cambiar de sector le costó tres meses y no tres años."
+    hint_general: "Lo que ya había aprendido le acortó el cambio."
+    explanation: "Bagaje: lo que ya había aprendido antes. «Equipaje» son las maletas de un viaje, y «título» sería un papel de estudios, no lo aprendido trabajando."
+    options:
+      - position: 1
+        text: "bagaje"
+        is_correct: true
+      - position: 2
+        text: "equipaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «equipaje» son las maletas de un viaje, y aquí lo que acorta el cambio es lo que ella sabe hacer."
+        hint_specific: "El equipaje pesa y se arrastra. ¿Qué le ahorró tiempo a Raquel?"
+      - position: 3
+        text: "título"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «título» es un papel de estudios, y la frase habla de lo que aprendió trabajando en otro sector."
+        hint_specific: "Un título se cuelga en la pared. ¿De dónde viene lo que le sirvió a ella?"
+  - position: 3
+    sentence: "Aquel taller de cinco años dejó en Julio un {{blank}} que todavía usa cada semana."
+    hint_general: "De aquellos cinco años le quedó algo que sigue usando."
+    explanation: "Bagaje: lo que le quedó de aquellos años. «Peaje» es lo que se paga en una carretera, y «recuerdo» sería solo la memoria de aquello, no algo que use."
+    options:
+      - position: 1
+        text: "peaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «peaje» es lo que se paga por pasar por una carretera, y aquí lo que quedó fue aprendizaje, no un recibo."
+        hint_specific: "Un peaje se abona en una cabina. ¿Qué le dejó a Julio aquel taller?"
+      - position: 2
+        text: "bagaje"
+        is_correct: true
+      - position: 3
+        text: "recuerdo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «recuerdo» es la memoria de algo que pasó, y la frase dice que lo usa cada semana, no que lo recuerde."
+        hint_specific: "Un recuerdo se guarda en la cabeza. ¿Qué hace Julio con eso cada semana?"
+  - position: 4
+    sentence: "Alba se presentó sin experiencia en el sector, pero con un {{blank}} de diez años en atención al público."
+    hint_general: "Traía lo aprendido en diez años de trato con gente."
+    explanation: "Bagaje: lo aprendido en diez años de trato con gente. «Equipaje» son las maletas de un viaje, y «vendaje» es lo que se pone en una herida."
+    options:
+      - position: 1
+        text: "vendaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vendaje» es lo que se pone sobre una herida, y aquí nadie está herido: alguien se presenta a un puesto."
+        hint_specific: "Un vendaje aparece en un botiquín. ¿Qué presenta Alba junto a su solicitud?"
+      - position: 2
+        text: "bagaje"
+        is_correct: true
+      - position: 3
+        text: "equipaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «equipaje» son las maletas de un viaje, y diez años de trato con gente no se meten en una maleta."
+        hint_specific: "El equipaje viaja en la bodega. ¿Dónde lleva Alba esos diez años?"
+  - position: 5
+    sentence: "Cuando cambias de oficio, lo único que viaja contigo es el {{blank}} y la manera de mirar."
+    hint_general: "Al cambiar de oficio solo te acompaña lo aprendido."
+    explanation: "Bagaje: lo aprendido, que viaja contigo. «Paisaje» es lo que se ve alrededor, y «puesto» se queda atrás, porque justo es lo que cambias."
+    options:
+      - position: 1
+        text: "paisaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «paisaje» es lo que se ve alrededor, y el paisaje es justo lo que cambia cuando cambias de oficio."
+        hint_specific: "El paisaje se mira por la ventana. ¿Qué es lo que va contigo?"
+      - position: 2
+        text: "puesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «puesto» es justo lo que dejas atrás al cambiar de oficio, y la frase habla de lo único que viaja contigo."
+        hint_specific: "Un puesto se abandona al marcharse. ¿Qué te acompaña en el cambio?"
+      - position: 3
+        text: "bagaje"
+        is_correct: true
+  - position: 6
+    sentence: "El tribunal valoró más el {{blank}} de Noa que los dos cursos que había hecho el año pasado."
+    hint_general: "Pesó más lo aprendido en el oficio que los cursos recientes."
+    explanation: "Bagaje: lo aprendido en el oficio. «Equipaje» son las maletas de un viaje, y «acopio» es palabra culta que se usa para juntar provisiones."
+    options:
+      - position: 1
+        text: "bagaje"
+        is_correct: true
+      - position: 2
+        text: "acopio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Acopio» es palabra culta que se usa para juntar provisiones o materiales, y aquí se valora lo que alguien sabe hacer."
+        hint_specific: "Se hace acopio de leña o de agua. ¿Qué valora el tribunal en Noa?"
+      - position: 3
+        text: "equipaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «equipaje» son las maletas de un viaje, y nadie se presenta a una plaza con maletas para que se las valoren."
+        hint_specific: "El equipaje pesa en una báscula. ¿Qué se pesa en esa valoración?"
+  - position: 7
+    sentence: "Presumir del propio {{blank}} en la primera frase suele salir mal; contarlo con un caso, no."
+    hint_general: "Mejor demostrar lo aprendido con un caso que anunciarlo."
+    explanation: "Bagaje: lo aprendido, mejor contado con un caso. «Equipaje» son las maletas de un viaje, y «linaje» es palabra antigua sobre la familia de la que vienes."
+    options:
+      - position: 1
+        text: "linaje"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Linaje» es palabra antigua y habla de la familia de la que vienes, no de lo que has aprendido trabajando."
+        hint_specific: "El linaje sale en los escudos de familia. ¿De qué se presume en una entrevista?"
+      - position: 2
+        text: "bagaje"
+        is_correct: true
+      - position: 3
+        text: "equipaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «equipaje» son las maletas de un viaje, y nadie presume de sus maletas en una primera frase."
+        hint_specific: "El equipaje se deja en la puerta. ¿De qué se presume aquí?"
+  - position: 8
+    sentence: "Lo mejor de aquel grupo era el {{blank}} mezclado: una cocinera, un electricista y dos maestras."
+    hint_general: "Cada uno traía lo aprendido en un oficio distinto."
+    explanation: "Bagaje: lo aprendido por cada uno en su oficio. «Peaje» es lo que se paga en una carretera, y «carácter» hablaría del modo de ser, no de lo aprendido."
+    options:
+      - position: 1
+        text: "peaje"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «peaje» es lo que se paga por pasar por una carretera, y aquí lo que se mezcla son oficios distintos."
+        hint_specific: "Un peaje se paga con tarjeta. ¿Qué mezcla ese grupo?"
+      - position: 2
+        text: "carácter"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «carácter» es el modo de ser de cada uno, y la frase enumera oficios, no maneras de ser."
+        hint_specific: "El carácter no se aprende en un oficio. ¿Qué enumera la frase?"
+      - position: 3
+        text: "bagaje"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Vengo de la hostelería"
+    body: "A Diego le preguntaron por qué debía contratarle una empresa de logística si venía de una cocina. Contestó sin disculparse: «Traigo un bagaje raro aquí: doce años sirviendo cien comidas en dos horas». Le preguntaron cómo se organizaba un servicio y estuvieron media hora en ese punto."
+    before_phrase: "Ya sé que no tengo experiencia en esto."
+    after_phrase: "Traigo un bagaje distinto y aquí hace falta."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres meses, no tres años"
+    body: "Raquel cambió de sector a los cuarenta y todos le avisaron de que tardaría años en ponerse al día. Tardó tres meses. «No empecé de cero», explicó luego, «empecé con el bagaje de lo anterior, que era casi todo lo importante»."
+    before_phrase: "Es que yo empiezo de cero otra vez."
+    after_phrase: "No empiezo de cero: empiezo con mi bagaje."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Una cocinera y un electricista"
+    body: "El grupo que organiza las fiestas del barrio lo forman una cocinera, un electricista y dos maestras. Ese bagaje mezclado es la razón de que todo salga: una calcula raciones, otro monta el escenario y las otras dos ordenan a doscientos niños en diez minutos."
+    before_phrase: "Cada uno sabe de una cosa y eso ayuda."
+    after_phrase: "El bagaje mezclado es lo que hace que salga."
+metrics:
+  zipf_overall: 3.3587
+  dispersion_dp: 0.2343
+  pedantry_proxy: 0.3158
+  family_size: 0
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

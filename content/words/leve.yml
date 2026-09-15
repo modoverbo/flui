@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3218
+slug: "leve"
+status: "draft"
+lemma: "leve"
+part_of_speech: "adjetivo"
+syllables:
+  - "le"
+  - "ve"
+stressed_syllable: 1
+ipa_latam: "[ˈle.βe]"
+ipa_es: "[ˈle.βe]"
+explanation: "De poca fuerza: se nota un poco y no llega a molestar."
+example_sentence: "Hubo un ruido leve de fondo y nadie dejó de trabajar."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Te deja rebajar algo sin quitarle nombre: sigue estando ahí, solo que con poca fuerza."
+when_not_to_use: "No la uses para algo que sí molesta o cambia planes; entonces ya no es cosa de poca fuerza."
+collocations:
+  - "un ruido leve"
+  - "una molestia leve"
+  - "un cambio leve"
+replaces:
+  - before: "Se nota un poquito nada más"
+    after: "Es algo leve"
+  - before: "Me molestó un poco, tampoco tanto"
+    after: "Fue una molestia leve"
+  - before: "Bajó un pelín"
+    after: "Bajó de forma leve"
+family:
+  - "levedad"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "poco"
+    - "un poco"
+  funcion:
+    - "matizar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "breve"
+    difference: "«Breve» dice que algo dura poco; la otra palabra dice que se nota poco, dure lo que dure."
+    memory_trick: "Lo breve se acaba pronto; lo otro casi no se siente."
+  - confused_with: "pequeño"
+    difference: "«Pequeño» mide el tamaño de una cosa; la otra palabra mide con cuánta fuerza se nota algo."
+    memory_trick: "Lo pequeño cabe en la mano; lo otro se mide en cuánto se siente."
+exercises:
+  - position: 1
+    sentence: "Había un ruido {{blank}} de fondo durante toda la mañana y nadie dejó de trabajar por él."
+    hint_general: "Se nota con poca fuerza y aun así está ahí durante horas."
+    explanation: "Leve: se nota con poca fuerza. «Breve» diría que dura poco, y este ruido dura toda la mañana; «escaso» habla de cuánta cantidad hay de algo."
+    options:
+      - position: 1
+        text: "breve"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Breve» dice que algo dura poco tiempo, y este ruido estuvo ahí toda la mañana."
+        hint_specific: "«Breve» se acaba pronto. ¿Cuánto duró ese ruido?"
+      - position: 2
+        text: "leve"
+        is_correct: true
+      - position: 3
+        text: "escaso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escaso» dice que hay poca cantidad de algo que se cuenta, y un ruido no se cuenta por unidades."
+        hint_specific: "«Escaso» se usa cuando falta cantidad. ¿Se puede contar un ruido de fondo?"
+  - position: 2
+    sentence: "La molestia era {{blank}}: seguía ahí toda la tarde, pero no impedía hacer nada."
+    hint_general: "Dura horas y aun así apenas se siente."
+    explanation: "Leve: apenas se siente aunque dure. «Breve» diría que dura poco, y duró toda la tarde; «rara» diría que resulta extraña, no que se note poco."
+    options:
+      - position: 1
+        text: "rara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rara» dice que algo resulta extraño, y aquí lo que se cuenta es con cuánta fuerza se notaba."
+        hint_specific: "«Rara» va de extrañeza. ¿La frase dice que era extraña o que apenas se notaba?"
+      - position: 2
+        text: "breve"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Breve» dice que algo dura poco, y la frase cuenta que siguió ahí toda la tarde."
+        hint_specific: "«Breve» dura poco. ¿Cuánto duró la molestia?"
+      - position: 3
+        text: "leve"
+        is_correct: true
+  - position: 3
+    sentence: "No es una tontería ni algo de lo que reírse: es una señal {{blank}} que conviene mirar."
+    hint_general: "Se nota poco y aun así merece atención."
+    explanation: "Leve: se nota poco y merece atención. «Ridícula» se burla, y la frase dice que no hay de qué reírse; «corta» hablaría de duración."
+    options:
+      - position: 1
+        text: "leve"
+        is_correct: true
+      - position: 2
+        text: "ridícula"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ridícula» es una palabra de burla, y la frase empieza diciendo que no hay de qué reírse."
+        hint_specific: "«Ridícula» se ríe de algo. Relee las ocho primeras palabras."
+      - position: 3
+        text: "corta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corta» habla de duración, y aquí lo que importa es la poca fuerza con la que se nota la señal."
+        hint_specific: "«Corta» mide tiempo. ¿La frase mide cuánto dura o cuánto se nota?"
+  - position: 4
+    sentence: "El cambio fue {{blank}} pero rapidísimo: en dos días bajó una décima y ahí se quedó."
+    hint_general: "Ocurrió deprisa y apenas se nota en la cifra."
+    explanation: "Leve: apenas se nota en la cifra. «Lento» está descartado porque fue rapidísimo, y «corto» hablaría de duración, cuando el cambio se quedó."
+    options:
+      - position: 1
+        text: "lento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Lento» dice que algo va despacio, y la frase cuenta que ocurrió en dos días y fue rapidísimo."
+        hint_specific: "«Lento» va despacio. Relee la palabra que sigue al hueco."
+      - position: 2
+        text: "leve"
+        is_correct: true
+      - position: 3
+        text: "corto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corto» habla de duración, y este cambio no se deshizo: bajó una décima y ahí se quedó."
+        hint_specific: "«Corto» dura poco y se deshace. ¿Qué pasó con la décima que bajó?"
+  - position: 5
+    sentence: "En un informe dirían que no tiene ninguna importancia; entre nosotros fue una discusión {{blank}} y se acabó en dos minutos."
+    hint_general: "Entre amigos se dice con una palabra normal que tuvo poca fuerza."
+    explanation: "Leve: tuvo poca fuerza y aun así ocurrió. «Insignificante» es palabra de informe y diría que no cuenta nada, y «lenta» hablaría de la velocidad."
+    options:
+      - position: 1
+        text: "insignificante"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Insignificante» es palabra de informe y diría que aquello no cuenta nada, y la frase la deja al otro lado."
+        hint_specific: "«Insignificante» vive en los informes. ¿Dónde ocurre la segunda parte de la frase?"
+      - position: 2
+        text: "lenta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Lenta» habla de velocidad, y esta discusión se acabó en dos minutos."
+        hint_specific: "«Lenta» mide la velocidad. ¿Cuánto duró la discusión?"
+      - position: 3
+        text: "leve"
+        is_correct: true
+  - position: 6
+    sentence: "Notó un olor {{blank}} a pintura fresca, tan poca cosa que ni abrió la ventana."
+    hint_general: "Se percibe con muy poca fuerza y no obliga a hacer nada."
+    explanation: "Leve: se percibe con muy poca fuerza. «Escaso» habla de faltar cantidad, y aquí el olor está ahí; «breve» diría que dura poco, y eso no se cuenta."
+    options:
+      - position: 1
+        text: "escaso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escaso» se usa cuando falta cantidad de algo que se reparte, y aquí el olor está ahí de principio a fin."
+        hint_specific: "«Escaso» se dice de lo que falta. ¿Falta olor o lo hay poco intenso?"
+      - position: 2
+        text: "leve"
+        is_correct: true
+      - position: 3
+        text: "breve"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Breve» dice cuánto dura algo, y la frase no cuenta el tiempo: cuenta lo poco que se nota."
+        hint_specific: "«Breve» mide el tiempo. ¿Qué mide la frase del olor?"
+  - position: 7
+    sentence: "El enfado de Nacho fue {{blank}}: levantó una ceja, dijo dos palabras y siguió comiendo."
+    hint_general: "Apenas se le notó y siguió como si nada."
+    explanation: "Leve: apenas se le notó. «Pequeño» mide el tamaño de las cosas que ocupan sitio, y un enfado no ocupa sitio; «lento» habla de velocidad."
+    options:
+      - position: 1
+        text: "pequeño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pequeño» mide el tamaño de las cosas que ocupan sitio, y un enfado se mide por la fuerza con que se nota."
+        hint_specific: "«Pequeño» cabe en una mano. ¿Se puede medir así un enfado?"
+      - position: 2
+        text: "lento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Lento» habla de velocidad, y aquí Nacho reacciona y sigue comiendo enseguida."
+        hint_specific: "«Lento» va despacio. ¿Cuánto tardó Nacho en volver a comer?"
+      - position: 3
+        text: "leve"
+        is_correct: true
+  - position: 8
+    sentence: "La diferencia entre las dos versiones es {{blank}} y se mantiene de principio a fin: el mismo texto con otra puntuación."
+    hint_general: "Apenas se aprecia y está presente en todo el texto."
+    explanation: "Leve: apenas se aprecia. «Corta» hablaría de duración, y esta diferencia recorre el texto entero; «rara» diría que resulta extraña."
+    options:
+      - position: 1
+        text: "corta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corta» habla de duración o de extensión, y esta diferencia recorre el texto de principio a fin."
+        hint_specific: "«Corta» se acaba pronto. ¿Hasta dónde llega la diferencia?"
+      - position: 2
+        text: "rara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rara» diría que la diferencia resulta extraña, y aquí lo que se cuenta es lo poco que se aprecia."
+        hint_specific: "«Rara» va de extrañeza. ¿Qué se cuenta de la diferencia?"
+      - position: 3
+        text: "leve"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El ruido de la máquina"
+    body: "La máquina nueva zumbaba desde el lunes. Nadie se quejaba, pero todos lo habían notado. «Es un zumbido leve», dijo Nacho en la reunión, «no molesta, pero antes no estaba». Vino el técnico el jueves y era una pieza suelta."
+    before_phrase: "Se oye algo raro, un poquito nada más."
+    after_phrase: "Es un zumbido leve, pero antes no estaba."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Dos palabras y a comer"
+    body: "Mi hermano se enfadó en la comida del domingo y casi no se le notó: una ceja, dos palabras y siguió comiendo. «Ha sido leve», comentó mi madre después, medio en broma. Al día siguiente lo hablaron y ya está."
+    before_phrase: "Se ha molestado un poco, tampoco tanto."
+    after_phrase: "Ha sido leve, pero se ha molestado."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Otra puntuación"
+    body: "Dos versiones del cartel del barrio parecían idénticas. Una editora del grupo señaló la diferencia: el mismo texto con otra puntuación. «Es leve», reconoció, «y aun así una se lee y la otra no». Imprimieron la suya."
+    before_phrase: "Yo las veo iguales, cambia un poquito."
+    after_phrase: "Es leve, y aun así una se lee y la otra no."
+metrics:
+  zipf_overall: 4.2478
+  dispersion_dp: 0.1617
+  pedantry_proxy: 0.5188
+  family_size: 4
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

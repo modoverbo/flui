@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3205
+slug: "desfase"
+status: "draft"
+lemma: "desfase"
+part_of_speech: "sustantivo"
+syllables:
+  - "des"
+  - "fa"
+  - "se"
+stressed_syllable: 2
+ipa_latam: "[desˈfa.se]"
+ipa_es: "[desˈfa.se]"
+explanation: "Diferencia de tiempo o de ritmo entre dos cosas que deberían coincidir."
+example_sentence: "Hay un desfase entre lo que promete la web y lo que entrega el almacén."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Te deja nombrar el hueco entre dos lados sin culpar a ninguno de los dos."
+when_not_to_use: "No la uses para una diferencia buscada; nombra el hueco entre dos cosas que tendrían que coincidir."
+collocations:
+  - "un desfase de meses"
+  - "corregir el desfase"
+  - "un desfase entre ambos"
+replaces:
+  - before: "Van cada uno a su ritmo"
+    after: "Hay un desfase entre los dos"
+  - before: "Lo que dice y lo que hace no coinciden"
+    after: "Hay un desfase entre lo que dice y lo que hace"
+  - before: "Llegó tarde respecto al resto"
+    after: "Llegó con desfase respecto al resto"
+family:
+  - "desfasado"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "raro"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "retraso"
+    difference: "Un retraso dice que algo llega tarde respecto a su fecha; la otra palabra solo dice que dos cosas no van al mismo compás."
+    memory_trick: "El retraso tiene culpable; el hueco entre dos, no."
+  - confused_with: "desfile"
+    difference: "«Desfile» es gente caminando en fila para que la vean; la otra palabra nombra un hueco entre dos ritmos."
+    memory_trick: "El desfile se mira; el hueco se mide."
+exercises:
+  - position: 1
+    sentence: "Los dos equipos empezaron el mismo día, pero hoy llevan un {{blank}} de tres semanas entre ellos y ninguno va tarde."
+    hint_general: "Nombra el hueco de tiempo entre dos lados que salieron a la vez."
+    explanation: "Desfase: el hueco de tiempo entre dos lados. Un «retraso» diría que alguien llega tarde, y la frase lo niega; un «desfile» es gente caminando en fila."
+    options:
+      - position: 1
+        text: "retraso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «retraso» significa llegar tarde respecto a una fecha, y la frase dice que ninguno de los dos va tarde."
+        hint_specific: "«Retraso» necesita una fecha incumplida. ¿Alguien incumple algo aquí?"
+      - position: 2
+        text: "desfase"
+        is_correct: true
+      - position: 3
+        text: "desfile"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «desfile» es gente caminando en fila para que la vean, y aquí se miden semanas entre dos equipos."
+        hint_specific: "«Desfile» se ve pasar por la calle. ¿Qué se mide en esta frase?"
+  - position: 2
+    sentence: "La web promete entrega en dos días y el almacén trabaja con cinco: ese {{blank}} se nota en cada pedido."
+    hint_general: "Dos partes de la misma empresa trabajan con ritmos que no coinciden."
+    explanation: "Desfase: dos ritmos que no coinciden. Un «desgaste» es lo que se estropea con el uso, y un «hueco» es un espacio vacío, no una diferencia entre dos plazos."
+    options:
+      - position: 1
+        text: "desgaste"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «desgaste» es lo que se va estropeando con el uso, y aquí nada se estropea: dos plazos no cuadran."
+        hint_specific: "«Desgaste» aparece con el roce y los años. ¿Qué no cuadra entre la web y el almacén?"
+      - position: 2
+        text: "hueco"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «hueco» es un espacio vacío que se puede rellenar, y aquí hay dos plazos llenos que no coinciden."
+        hint_specific: "«Hueco» es un espacio libre. ¿Falta algo o sobran días en un lado?"
+      - position: 3
+        text: "desfase"
+        is_correct: true
+  - position: 3
+    sentence: "No hay culpa de nadie: es un {{blank}} entre lo que pide el cliente y lo que puede montar el taller."
+    hint_general: "Las dos partes funcionan bien por separado y aun así no encajan."
+    explanation: "Desfase: dos partes que no encajan sin que nadie falle. «Lío» es coloquial y suena a desorden culpable, y un «salto» sería pasar de golpe a otro punto."
+    options:
+      - position: 1
+        text: "desfase"
+        is_correct: true
+      - position: 2
+        text: "lío"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Lío» es coloquial y sugiere desorden y culpa, y la frase empieza diciendo que nadie tiene la culpa."
+        hint_specific: "«Lío» suena a desorden y a alguien que lo montó. Relee la primera parte de la frase."
+      - position: 3
+        text: "salto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «salto» es pasar de golpe de un punto a otro, y aquí las dos partes avanzan a la vez sin encajar."
+        hint_specific: "«Salto» va de un punto a otro de una vez. ¿Aquí algo salta o dos cosas no cuadran?"
+  - position: 4
+    sentence: "Rebeca notó un {{blank}} entre el calendario del cliente y el suyo, y lo dijo antes de firmar nada."
+    hint_general: "Dos calendarios distintos que tendrían que ir a la par."
+    explanation: "Desfase: dos calendarios que no van a la par. Un «desfile» es gente caminando en fila, y un «cambio» diría que algo se volvió distinto, cuando nunca coincidieron."
+    options:
+      - position: 1
+        text: "desfile"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «desfile» es gente caminando en fila, y aquí Rebeca compara dos calendarios."
+        hint_specific: "«Desfile» ocurre en la calle y con público. ¿Qué compara Rebeca?"
+      - position: 2
+        text: "desfase"
+        is_correct: true
+      - position: 3
+        text: "cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cambio» dice que algo se volvió distinto, y estos dos calendarios nunca llegaron a coincidir."
+        hint_specific: "«Cambio» supone un antes y un después. ¿Coincidieron alguna vez esos calendarios?"
+  - position: 5
+    sentence: "El acta y el correo cuentan lo mismo con dos fechas distintas; ese {{blank}} conviene arreglarlo hoy."
+    hint_general: "Dos documentos que deberían decir la misma fecha y no la dicen."
+    explanation: "Desfase: dos documentos que no dan la misma fecha. «Despiste» es coloquial y culpa a la distracción de alguien, y un «desgaste» es lo que se estropea con el uso."
+    options:
+      - position: 1
+        text: "despiste"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Despiste» es coloquial y culpa a la distracción de una persona, y aquí solo consta que dos papeles no cuadran."
+        hint_specific: "«Despiste» señala a alguien distraído. ¿La frase señala a alguien?"
+      - position: 2
+        text: "desgaste"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «desgaste» es lo que se estropea con el uso, y un acta reciente no se ha gastado."
+        hint_specific: "«Desgaste» necesita uso y años. ¿Cuánto llevan esos dos papeles escritos?"
+      - position: 3
+        text: "desfase"
+        is_correct: true
+  - position: 6
+    sentence: "Ninguno va tarde, pero uno cierra los números el día uno y el otro el día quince: el {{blank}} se arrastra cada mes."
+    hint_general: "Dos cierres a fechas distintas que se repiten mes tras mes."
+    explanation: "Desfase: dos cierres a fechas distintas. Un «retraso» diría que alguien llega tarde, y la frase lo niega; un «desfile» es gente caminando en fila."
+    options:
+      - position: 1
+        text: "desfase"
+        is_correct: true
+      - position: 2
+        text: "retraso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «retraso» es llegar tarde respecto a una fecha, y la frase empieza diciendo que ninguno va tarde."
+        hint_specific: "«Retraso» significa llegar fuera de plazo. ¿Quién llega fuera de plazo aquí?"
+      - position: 3
+        text: "desfile"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «desfile» es gente caminando en fila para que la vean, y esto ocurre en una hoja de cálculo."
+        hint_specific: "«Desfile» se celebra en la calle. ¿Dónde pasa lo que cuenta la frase?"
+  - position: 7
+    sentence: "Entre lo que se decidió en marzo y lo que se hace hoy hay un {{blank}} constante que nadie ha explicado."
+    hint_general: "Lo decidido y lo que se hace avanzan separados todo el tiempo."
+    explanation: "Desfase: una separación constante entre lo decidido y lo que se hace. Un «salto» sería un cambio de golpe, y un «desgaste» es lo que se estropea con el uso."
+    options:
+      - position: 1
+        text: "salto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «salto» ocurre de una vez y en un punto, y la frase dice que esta separación es constante."
+        hint_specific: "«Salto» pasa en un instante. ¿Cuánto dura lo que describe la frase?"
+      - position: 2
+        text: "desgaste"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «desgaste» es lo que se estropea con el uso, y aquí nada se estropea: lo hecho no sigue a lo decidido."
+        hint_specific: "«Desgaste» habla de cosas que se gastan. ¿Qué se compara en la frase?"
+      - position: 3
+        text: "desfase"
+        is_correct: true
+  - position: 8
+    sentence: "Con el turno de mañana y el de tarde contando las cajas a horas distintas, el {{blank}} aparece en cada inventario."
+    hint_general: "Dos turnos cuentan a horas distintas y los números no coinciden."
+    explanation: "Desfase: dos conteos que no coinciden en el tiempo. Un «hueco» es un espacio vacío, y un «cambio» diría que algo se volvió distinto, cuando aquí la diferencia es siempre la misma."
+    options:
+      - position: 1
+        text: "hueco"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «hueco» es un espacio vacío que se rellena, y aquí hay dos conteos completos hechos a horas distintas."
+        hint_specific: "«Hueco» es un sitio libre. ¿Falta algo en el inventario o sobran horas entre conteos?"
+      - position: 2
+        text: "cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cambio» supone un antes y un después, y esta diferencia sale igual en cada inventario."
+        hint_specific: "«Cambio» marca un antes y un después. ¿Esto cambia o se repite?"
+      - position: 3
+        text: "desfase"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos días y cinco"
+    body: "La web prometía entrega en dos días; el almacén trabajaba con cinco. Rebeca lo puso en una sola frase: «No es culpa de nadie, es un desfase de tres días y sale en cada pedido». Cambiaron el texto de la web esa misma tarde."
+    before_phrase: "Cada uno va a su ritmo y así salen las cosas."
+    after_phrase: "Es un desfase de tres días, y sale en cada pedido."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El día uno y el día quince"
+    body: "Mi madre cierra las cuentas de casa el día uno y mi padre el quince. Durante años discutieron por números que no cuadraban. «Aquí nadie se equivoca», les dije un domingo, «hay un desfase de dos semanas entre las dos cuentas». Ahora cierran los dos el mismo día."
+    before_phrase: "Es que a ti siempre te sale otra cosa."
+    after_phrase: "Hay un desfase de dos semanas entre las dos cuentas."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Lo que se decidió en marzo"
+    body: "En la asociación del barrio, lo acordado en marzo y lo que se hacía en octubre ya no se parecían. Nadie lo había dicho en voz alta. «Hay un desfase constante», comentó Rebeca en la asamblea, «y no lo ha explicado nadie». Se revisó el acta punto por punto."
+    before_phrase: "Al final hacemos otra cosa distinta."
+    after_phrase: "Hay un desfase constante con lo que decidimos."
+metrics:
+  zipf_overall: 3.4987
+  dispersion_dp: 0.1830
+  pedantry_proxy: 0.4811
+  family_size: 33
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

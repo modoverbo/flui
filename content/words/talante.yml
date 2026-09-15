@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 5033
+slug: "talante"
+status: "draft"
+lemma: "talante"
+part_of_speech: "sustantivo"
+syllables:
+  - "ta"
+  - "lan"
+  - "te"
+stressed_syllable: 2
+ipa_latam: "[taˈlan.te]"
+ipa_es: "[taˈlan.te]"
+explanation: "Manera de tratar a los demás y de tomarse las cosas."
+example_sentence: "Aceptó el cambio con un talante que desarmó a todo el mundo."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Elogia cómo se comporta alguien cuando las cosas van mal, que es cuando de verdad se ve."
+when_not_to_use: "No la uses para lo que alguien sabe hacer; esto describe cómo trata a la gente, no su habilidad."
+collocations:
+  - "buen talante"
+  - "con talante abierto"
+  - "el talante de siempre"
+replaces:
+  - before: "Se lo tomó muy bien, la verdad"
+    after: "Se lo tomó con muy buen talante"
+  - before: "Tiene un carácter estupendo para estas cosas"
+    after: "Tiene un talante estupendo para estas cosas"
+  - before: "Vino con ganas de entenderse"
+    after: "Vino con talante abierto"
+family: []
+themes:
+  - slug: "elogio-reconocimiento"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin:
+    - "carácter"
+  funcion:
+    - "elogiar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "talento"
+    difference: "El «talento» es la facilidad para hacer algo bien; la otra palabra es la manera de tratar a la gente."
+    memory_trick: "El talento se ve trabajando; lo otro, discutiendo."
+  - confused_with: "semblante"
+    difference: "El «semblante» es la cara que pones en un momento dado; la otra palabra es el modo de comportarse, no una expresión suelta."
+    memory_trick: "El semblante cambia en un segundo; lo otro dura años."
+exercises:
+  - position: 1
+    sentence: "Alfonso aceptó el cambio de planes con un {{blank}} que desarmó a todo el mundo."
+    hint_general: "Se lo tomó tan bien que nadie supo qué decir."
+    explanation: "Talante: la manera en que se lo tomó. «Talento» sería facilidad para hacer algo bien, y «genio» es coloquial y suele acompañar a la palabra mal."
+    options:
+      - position: 1
+        text: "talento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «talento» es la facilidad para hacer algo bien, y aquí Alfonso no hace nada: recibe una mala noticia."
+        hint_specific: "El talento se demuestra haciendo algo. ¿Qué hace Alfonso en la frase?"
+      - position: 2
+        text: "talante"
+        is_correct: true
+      - position: 3
+        text: "genio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Genio» es coloquial y suele usarse para el mal humor de alguien, y aquí se elogia cómo encajó el cambio."
+        hint_specific: "Del genio se suele decir que es malo. ¿La frase critica a Alfonso o lo admira?"
+  - position: 2
+    sentence: "Vino a la reunión con {{blank}} abierto y salió con la mitad de lo que pedía, contenta igual."
+    hint_general: "Llegó dispuesta a entenderse y no se frustró."
+    explanation: "Talante: la disposición con que llegó. «Talento» sería facilidad para hacer algo bien, y el «semblante» sería solo la cara que puso al entrar."
+    options:
+      - position: 1
+        text: "talante"
+        is_correct: true
+      - position: 2
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la cara que se pone en un momento, y aquí lo que se describe es cómo negoció durante toda la reunión."
+        hint_specific: "El semblante se ve en una foto. ¿Cuánto dura lo que trae ella a la reunión?"
+      - position: 3
+        text: "talento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «talento» es la facilidad para hacer algo bien, y la frase habla de cómo se toma un acuerdo a medias."
+        hint_specific: "El talento se mide por resultados. ¿Qué se valora de cómo salió ella?"
+  - position: 3
+    sentence: "Lo mejor de Amelia no es lo que sabe, es el {{blank}} con el que recibe una mala noticia."
+    hint_general: "Se valora cómo encaja lo malo, no lo que sabe."
+    explanation: "Talante: cómo encaja una mala noticia. «Talento» es justo lo que la frase descarta, y la «flema» es palabra culta y sugiere frialdad británica."
+    options:
+      - position: 1
+        text: "talento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «talento» es la facilidad para hacer algo bien, y la frase dice expresamente que no se trata de lo que ella sabe."
+        hint_specific: "El talento va de saber hacer. ¿Qué descarta la frase en su primera mitad?"
+      - position: 2
+        text: "talante"
+        is_correct: true
+      - position: 3
+        text: "flema"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Flema» es palabra culta y sugiere una frialdad casi británica, y aquí se elogia una manera cálida de recibir una noticia."
+        hint_specific: "La flema suena a no inmutarse por nada. ¿Cómo recibe Amelia las noticias?"
+  - position: 4
+    sentence: "Con ese {{blank}}, Gustavo consigue que dos vecinos enfadados acaben tomando café juntos."
+    hint_general: "Su manera de tratar a la gente calma las peleas."
+    explanation: "Talante: su manera de tratar a la gente. «Talento» sería facilidad para un trabajo concreto, y el «humor» sería el ánimo de ese día, no su modo de tratar."
+    options:
+      - position: 1
+        text: "humor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «humor» es el ánimo de un día concreto, y la frase describe algo estable en él: cómo trata siempre a la gente."
+        hint_specific: "El humor cambia de un día para otro. ¿Con qué frecuencia consigue esto Gustavo?"
+      - position: 2
+        text: "talante"
+        is_correct: true
+      - position: 3
+        text: "talento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «talento» es facilidad para un trabajo concreto, y reconciliar vecinos no se resuelve con técnica, sino con un modo de tratar."
+        hint_specific: "El talento se demuestra en un oficio. ¿Qué se demuestra en un portal?"
+  - position: 5
+    sentence: "El {{blank}} de Lidia se nota más cuando algo sale mal que cuando todo va sobre ruedas."
+    hint_general: "Su modo de comportarse se ve mejor en lo malo."
+    explanation: "Talante: su modo de comportarse. «Semblante» sería la cara de un momento, y el «ánimo» sube y baja, mientras esto se mantiene."
+    options:
+      - position: 1
+        text: "talante"
+        is_correct: true
+      - position: 2
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la cara de un momento concreto, y la frase compara dos épocas distintas de la vida de Lidia."
+        hint_specific: "El semblante dura lo que dura un gesto. ¿Qué se compara en la frase?"
+      - position: 3
+        text: "ánimo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «ánimo» sube y baja según el día, y lo que la frase destaca es algo que se mantiene también cuando todo va mal."
+        hint_specific: "El ánimo se cae con una mala noticia. ¿Qué resiste en Lidia?"
+  - position: 6
+    sentence: "Hay quien tiene mucho {{blank}} para escuchar y poca paciencia para esperar."
+    hint_general: "Alguien trata muy bien a la gente pero no sabe esperar."
+    explanation: "Talante: la manera de tratar a quien habla. «Talento» sería facilidad para un trabajo, y el «carácter» abarca todo el modo de ser, también lo que no trata con gente."
+    options:
+      - position: 1
+        text: "carácter"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «carácter» abarca todo el modo de ser de alguien, y la frase separa una parte concreta: cómo trata a quien habla."
+        hint_specific: "El carácter lo incluye todo. ¿Qué parte se separa aquí de la paciencia?"
+      - position: 2
+        text: "talento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «talento» es la facilidad para un trabajo, y escuchar bien no es un trabajo con técnica, sino un trato."
+        hint_specific: "El talento produce resultados visibles. ¿Qué se contrapone aquí a la paciencia?"
+      - position: 3
+        text: "talante"
+        is_correct: true
+  - position: 7
+    sentence: "Fermín llegó de mal humor y aun así mantuvo el {{blank}} de siempre con los clientes."
+    hint_general: "Pese al mal día, trató a la gente igual que otras veces."
+    explanation: "Talante: el trato de siempre con la gente. «Talento» sería facilidad para hacer algo bien, y el «semblante» es la cara, que sí le cambió ese día."
+    options:
+      - position: 1
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la cara que se pone, y esa sí le cambió: la frase dice que llegó de mal humor."
+        hint_specific: "El semblante delata el humor. ¿Qué se le notó y qué no?"
+      - position: 2
+        text: "talante"
+        is_correct: true
+      - position: 3
+        text: "talento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «talento» es la facilidad para hacer algo bien, y lo que Fermín mantiene es su forma de atender a la gente."
+        hint_specific: "El talento no depende del humor. ¿Qué mantiene Fermín con esfuerzo?"
+  - position: 8
+    sentence: "Un equipo se parece al {{blank}} de quien lo dirige, para bien y para mal."
+    hint_general: "El equipo acaba tratándose como se trata quien manda."
+    explanation: "Talante: la manera de tratar de quien dirige. «Talento» sería su facilidad para un trabajo, y la «flema» es palabra culta y sugiere frialdad."
+    options:
+      - position: 1
+        text: "talante"
+        is_correct: true
+      - position: 2
+        text: "flema"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Flema» es palabra culta y sugiere una frialdad muy concreta, y la frase habla de cualquier manera de tratar, buena o mala."
+        hint_specific: "La flema describe a quien nunca se altera. ¿La frase describe solo una manera o todas?"
+      - position: 3
+        text: "talento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «talento» es la facilidad de alguien para un trabajo, y un equipo no hereda la habilidad de su jefe, sino su trato."
+        hint_specific: "El talento no se contagia. ¿Qué es lo que sí se contagia en un equipo?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos vecinos y un café"
+    body: "Llevaban cuatro meses sin hablarse por una gotera. Gustavo los sentó a los dos en la terraza sin pedir que nadie se disculpara. A la media hora discutían por el fútbol, que es otra cosa. En el portal dicen que es su talante, y que no se aprende en ningún sitio."
+    before_phrase: "Tiene un carácter que arregla cualquier cosa."
+    after_phrase: "Tiene un talante que arregla cualquier cosa."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Cuando sale mal"
+    body: "A Lidia le han salido mal bastantes cosas este año. Su hermano se lo dijo en Nochebuena, delante de todos: «Se te nota más el talante ahora que cuando todo iba bien». Ella contestó que eso era lo único que podía elegir, y pidió el postre."
+    before_phrase: "Qué bien lo llevas todo, de verdad."
+    after_phrase: "Se te nota más el talante cuando algo sale mal."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El cambio de planes"
+    body: "Cambiaron la fecha de entrega dos semanas antes y la peor parte le tocaba a Alfonso. En vez de discutir, preguntó qué se podía mover. La sala se quedó callada. Su responsable lo dijo al final: «Con ese talante se trabaja distinto», y movieron dos cosas más para aligerarle el mes."
+    before_phrase: "Vaya, pues nada, se hace y ya está."
+    after_phrase: "Con ese talante se trabaja distinto."
+metrics:
+  zipf_overall: 3.1509
+  dispersion_dp: 0.254
+  pedantry_proxy: 0.2962
+  family_size: 5
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

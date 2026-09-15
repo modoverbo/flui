@@ -1,0 +1,246 @@
+schema_version: 1
+slug: "igualmente"
+status: "draft"
+lemma: "igualmente"
+part_of_speech: "adverbio"
+syllables:
+  - "i"
+  - "gual"
+  - "men"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[i.ɣwalˈmen.te]"
+ipa_es: "[i.ɣwalˈmen.te]"
+explanation: "Aplica a lo segundo exactamente lo mismo que acabas de decir de lo primero."
+example_sentence: "El pedido de papel llegó puntual y el de tinta se sirvió igualmente a tiempo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Evita repetir la frase entera: enlaza dos casos que reciben el mismo trato."
+when_not_to_use: "No la uses si el segundo caso recibe un trato distinto; entonces la frase pide marcar la diferencia."
+collocations:
+  - "igualmente válido"
+  - "responder igualmente"
+replaces:
+  - before: "Y el segundo también, lo mismo"
+    after: "Y el segundo, igualmente"
+  - before: "A los nuevos les cobramos lo mismo, o sea, sin rebaja"
+    after: "A los nuevos les cobramos igualmente"
+  - before: "Vale el de papel y el de la web también vale"
+    after: "Vale el de papel y el de la web igualmente"
+family:
+  - "igualdad"
+semantic_set_id: "sumar-en-el-mismo-plano"
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin:
+    - "lo mismo"
+  funcion:
+    - "aplicar el mismo trato"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "igualado"
+    difference: "«Igualado» describe algo que ha quedado a la par: «el marcador quedó igualado». La otra no describe: extiende lo dicho a un segundo caso."
+    memory_trick: "Uno cuenta cómo quedó algo; la otra reparte el mismo trato."
+  - confused_with: "igual"
+    difference: "«Igual», en conversación, suele significar «quizá»: «igual me paso luego». La otra nunca duda: afirma el mismo trato."
+    memory_trick: "Una deja la puerta abierta; la otra cierra con la misma regla."
+exercises:
+  - position: 1
+    sentence: "El primer pedido llegó a tiempo y el segundo se entregó {{blank}}, sin un día de retraso."
+    hint_general: "Al segundo caso le pasa lo mismo que al primero, punto por punto."
+    explanation: "Igualmente: el segundo recibe el mismo trato que el primero. «Igualado» describiría algo que queda a la par y «en cambio» opondría dos entregas que salieron igual de bien."
+    options:
+      - position: 1
+        text: "igualado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Igualado» describe algo que ha quedado a la par en una competición, y aquí nadie compite: se cuentan dos entregas puntuales."
+        hint_specific: "«Igualado» describe un resultado empatado. ¿Hay competición o hay dos entregas?"
+      - position: 2
+        text: "igualmente"
+        is_correct: true
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» enfrenta dos casos distintos, y estos dos salieron exactamente igual de bien."
+        hint_specific: "«En cambio» marca diferencia. ¿Las dos entregas se parecen o se contradicen?"
+  - position: 2
+    sentence: "Agradecemos tu paciencia y te pedimos {{blank}} que avises si cambias de fecha."
+    hint_general: "La segunda petición pesa exactamente lo mismo que la primera frase."
+    explanation: "Igualmente: la segunda petición pesa lo mismo. «Igual» en conversación suele significar «quizá» y «por tanto» convertiría el aviso en una consecuencia."
+    options:
+      - position: 1
+        text: "igualmente"
+        is_correct: true
+      - position: 2
+        text: "igual"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Igual», en conversación, se entiende como «quizá», y un correo no puede pedir algo a medias: la petición es firme."
+        hint_specific: "«Igual» suena a duda en el habla diaria. ¿Se pide algo con firmeza o se deja en el aire?"
+      - position: 3
+        text: "por tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por tanto» presentaría el aviso como resultado de la paciencia, y son dos cosas distintas puestas al mismo nivel."
+        hint_specific: "«Por tanto» anuncia una consecuencia. ¿El aviso sale del agradecimiento o va aparte?"
+  - position: 3
+    sentence: "La sala grande se reservó para el lunes; la pequeña quedó {{blank}} apartada para el martes."
+    hint_general: "Con la segunda sala se hizo lo mismo que con la primera."
+    explanation: "Igualmente: la segunda sala recibe el mismo trato. «Igualada» describiría algo que queda a la par y «sin embargo» anunciaría una diferencia que no existe."
+    options:
+      - position: 1
+        text: "igualada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Igualada» describe algo que queda a la par en una competición, y aquí solo se reservan dos salas para dos días."
+        hint_specific: "«Igualada» habla de empates. ¿Compiten las salas o se reservan las dos?"
+      - position: 2
+        text: "igualmente"
+        is_correct: true
+      - position: 3
+        text: "sin embargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sin embargo» anuncia que lo segundo contradice lo primero, y las dos salas se reservaron exactamente igual."
+        hint_specific: "«Sin embargo» prepara un contraste. ¿Las dos reservas coinciden o chocan?"
+  - position: 4
+    sentence: "Le dije que me alegraba mucho por su ascenso y ella me deseó {{blank}} un buen año."
+    hint_general: "Ella devuelve el mismo gesto que acaba de recibir."
+    explanation: "Igualmente: ella devuelve el mismo gesto. «Lo mismo» en conversación suele significar «quizá» y «al revés» daría a entender que le deseó lo contrario."
+    options:
+      - position: 1
+        text: "igualmente"
+        is_correct: true
+      - position: 2
+        text: "lo mismo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Lo mismo», en conversación, se entiende muchas veces como «quizá», y ella no duda: devuelve el deseo con seguridad."
+        hint_specific: "«Lo mismo» suena a duda en el habla diaria. ¿Ella duda o corresponde al gesto?"
+      - position: 3
+        text: "al revés"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al revés» daría a entender que le deseó lo contrario, y la escena cuenta un intercambio amable entre las dos."
+        hint_specific: "«Al revés» invierte lo dicho. ¿Le devuelve el buen deseo o lo contrario?"
+  - position: 5
+    sentence: "El contrato firmado en papel vale, y el firmado en la web vale {{blank}}."
+    hint_general: "Las dos versiones reciben exactamente el mismo valor."
+    explanation: "Igualmente: las dos versiones valen lo mismo. «Igualado» describiría un empate y «por el contrario» anunciaría una diferencia entre ambas."
+    options:
+      - position: 1
+        text: "igualado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Igualado» describe algo que ha quedado a la par en una competición, y aquí no compite nada: dos contratos valen lo mismo."
+        hint_specific: "«Igualado» habla de empates. ¿Hay competición o hay dos contratos válidos?"
+      - position: 2
+        text: "por el contrario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por el contrario» anunciaría que el segundo contrato no vale, y la frase dice que los dos tienen el mismo valor."
+        hint_specific: "«Por el contrario» invierte lo dicho. ¿El contrato de la web vale o no vale?"
+      - position: 3
+        text: "igualmente"
+        is_correct: true
+  - position: 6
+    sentence: "Nos avisaron del corte de agua y {{blank}} del de la luz, con una semana de margen."
+    hint_general: "Los dos avisos llegaron con el mismo cuidado y la misma antelación."
+    explanation: "Igualmente: los dos avisos llegaron igual. «Ídem» suena a lista de papeles y «es decir» repetiría el primer aviso con otras palabras."
+    options:
+      - position: 1
+        text: "ídem"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ídem» pertenece a listas y facturas, donde ahorra repetir una línea, y esta frase cuenta dos avisos a personas."
+        hint_specific: "«Ídem» vive en documentos y facturas. ¿Esto es una lista o un aviso a los vecinos?"
+      - position: 2
+        text: "igualmente"
+        is_correct: true
+      - position: 3
+        text: "es decir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Es decir» repetiría el primer aviso con otras palabras, y el corte de luz es un segundo aviso distinto."
+        hint_specific: "«Es decir» dice lo mismo de otro modo. ¿El corte de luz repite el del agua o es otro?"
+  - position: 7
+    sentence: "A los socios veteranos se les cobra la cuota entera; a los nuevos, {{blank}}."
+    hint_general: "Al segundo grupo se le aplica la misma regla que al primero."
+    explanation: "Igualmente: la misma regla para los dos grupos. «Igualada» describiría un empate y «en cambio» anunciaría un trato distinto para los nuevos."
+    options:
+      - position: 1
+        text: "igualmente"
+        is_correct: true
+      - position: 2
+        text: "igualada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Igualada» describe algo que ha quedado a la par en una competición, y aquí solo se aplica una cuota a dos grupos."
+        hint_specific: "«Igualada» habla de empates. ¿Hay competición o hay una cuota?"
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» anunciaría un trato distinto para los nuevos, y la frase les aplica exactamente la misma cuota."
+        hint_specific: "«En cambio» marca diferencia. ¿Los nuevos pagan lo mismo o pagan otra cosa?"
+  - position: 8
+    sentence: "Valoramos mucho la puntualidad y valoramos {{blank}} que se avise cuando algo falla."
+    hint_general: "Las dos conductas reciben el mismo aprecio, sin escalones entre ellas."
+    explanation: "Igualmente: las dos conductas valen lo mismo. «Igual» en conversación suele significar «quizá» y «al contrario» pondría una conducta frente a la otra."
+    options:
+      - position: 1
+        text: "igual"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Igual», en conversación, se entiende como «quizá», y aquí no hay duda ninguna: las dos conductas se valoran de verdad."
+        hint_specific: "«Igual» suena a duda en el habla diaria. ¿Se afirma con firmeza o se deja a medias?"
+      - position: 2
+        text: "al contrario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al contrario» pondría una conducta frente a la otra, y la frase las coloca a las dos en el mismo escalón."
+        hint_specific: "«Al contrario» opone dos cosas. ¿Las dos conductas compiten o valen lo mismo?"
+      - position: 3
+        text: "igualmente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos pedidos, una regla"
+    body: "El cliente preguntaba cada mes si el pedido pequeño tenía las mismas condiciones. Hortensia lo dejó escrito de una vez: «El pedido grande entra en el plazo de 48 horas, y el pequeño igualmente». Nadie volvió a preguntarlo en todo el año."
+    before_phrase: "El pequeño también, lo mismo, ya sabes."
+    after_phrase: "El pedido grande entra en 48 horas, y el pequeño igualmente."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cuota de los nuevos"
+    body: "En la asamblea del club preguntaron si los que acababan de entrar pagarían menos. Nicanor contestó sin rodeos y sin sonar antipático: «A los veteranos se les cobra la cuota entera; a los nuevos, igualmente». Se aprobó en dos minutos."
+    before_phrase: "A los nuevos igual, o sea, lo mismo que a los demás."
+    after_phrase: "A los veteranos la cuota entera; a los nuevos, igualmente."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El buen año"
+    body: "Se cruzaron en el portal el 2 de enero, después de un año raro para los dos. Él le deseó un buen año con la mano en el bolsillo. Ella contestó despacio: «Igualmente, y de verdad». No hizo falta añadir nada más."
+    before_phrase: "Ah, pues lo mismo digo, ¿eh?"
+    after_phrase: "Igualmente, y de verdad."
+metrics:
+  zipf_overall: 5.0016
+  dispersion_dp: 0.2907
+  pedantry_proxy: 0.4716
+  family_size: 44
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

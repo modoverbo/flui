@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 5007
+slug: "elocuente"
+status: "draft"
+lemma: "elocuente"
+part_of_speech: "adjetivo"
+syllables:
+  - "e"
+  - "lo"
+  - "cuen"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[e.loˈkwen.te]"
+ipa_es: "[e.loˈkwen.te]"
+explanation: "Que habla con fuerza y claridad, y consigue que los demás se queden escuchando."
+example_sentence: "Habló dos minutos y estuvo tan elocuente que nadie pidió más datos."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es un elogio fuerte: dilo de otra persona, no de ti, y acompáñalo del ejemplo que lo demuestra."
+when_not_to_use: "No la uses para quien habla mucho; aquí lo que cuenta es el efecto, no la cantidad."
+collocations:
+  - "un discurso elocuente"
+  - "una defensa elocuente"
+  - "estar muy elocuente"
+replaces:
+  - before: "Se explicó de maravilla"
+    after: "Estuvo muy elocuente"
+  - before: "Lo contó de una forma que convenció a todos"
+    after: "Hizo una defensa elocuente"
+  - before: "Qué bien habla esa mujer"
+    after: "Qué elocuente es esa mujer"
+family:
+  - "elocuencia"
+  - "elocuentemente"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "elogio-reconocimiento"
+    relevance: 1
+tags:
+  comodin:
+    - "bueno hablando"
+  funcion:
+    - "elogiar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "locuaz"
+    difference: "«Locuaz» dice que alguien habla mucho y con facilidad; la otra palabra dice que lo que habla mueve a quien escucha."
+    memory_trick: "El locuaz llena el tiempo; el otro llena la sala."
+  - confused_with: "vehemente"
+    difference: "«Vehemente» describe a quien habla con mucha pasión y calor; la otra palabra no promete calor, promete efecto."
+    memory_trick: "El vehemente sube el tono; el otro cambia la decisión."
+exercises:
+  - position: 1
+    sentence: "Eulalia habló dos minutos y estuvo tan {{blank}} que el comité aprobó la idea sin pedir más datos."
+    hint_general: "Con muy poco tiempo consiguió que le dijeran que sí."
+    explanation: "Elocuente: consiguió el sí en dos minutos. «Locuaz» diría que habla mucho, justo lo contrario, y «charlatana» es coloquial y acusa de vender humo."
+    options:
+      - position: 1
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» dice que alguien habla mucho, y lo llamativo aquí es que le bastaron dos minutos."
+        hint_specific: "El locuaz no para de hablar. ¿Cuánto tiempo usó Eulalia?"
+      - position: 2
+        text: "elocuente"
+        is_correct: true
+      - position: 3
+        text: "charlatana"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Charlatana» es coloquial y acusa de vender humo, y aquí un comité aprueba la idea después de escucharla."
+        hint_specific: "A un charlatán se le ve el truco. ¿El comité se sintió engañado?"
+  - position: 2
+    sentence: "Bernardo no levantó la voz ni una vez y aun así resultó {{blank}}: la sala votó con él."
+    hint_general: "Sin gritar, consiguió que la sala lo siguiera."
+    explanation: "Elocuente: sin gritar, la sala lo siguió. «Vehemente» describe a quien habla con calor y pasión, y «correcto» solo dice que no cometió fallos."
+    options:
+      - position: 1
+        text: "elocuente"
+        is_correct: true
+      - position: 2
+        text: "vehemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vehemente» describe a quien habla con mucho calor, y la frase dice que no levantó la voz ni una vez."
+        hint_specific: "Lo vehemente sube de tono. ¿Cuántas veces levantó la voz Bernardo?"
+      - position: 3
+        text: "correcto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Correcto» solo dice que no cometió fallos, y aquí lo que ocurre es que la sala cambia su voto."
+        hint_specific: "Lo correcto no mueve a nadie. ¿Qué hizo la sala al final?"
+  - position: 3
+    sentence: "Aquella carta de dos párrafos resultó más {{blank}} que el discurso de una hora del día anterior."
+    hint_general: "Dos párrafos movieron más que sesenta minutos de palabras."
+    explanation: "Elocuente: dos párrafos movieron más que una hora. «Locuaz» habla de cantidad, y «pomposa» acusa de adornar para impresionar."
+    options:
+      - position: 1
+        text: "pomposa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pomposa» acusa de adornar para impresionar, y esta carta convence justo por lo corta que es."
+        hint_specific: "Lo pomposo se hincha de palabras. ¿Cuántos párrafos tiene la carta?"
+      - position: 2
+        text: "elocuente"
+        is_correct: true
+      - position: 3
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» se dice de quien habla mucho, y lo que gana aquí es el texto más breve de los dos."
+        hint_specific: "Lo locuaz se mide en cantidad. ¿Cuál de los dos textos es más corto?"
+  - position: 4
+    sentence: "Cuando explica por qué hace lo que hace, Iker se vuelve {{blank}} y hasta los más escépticos escuchan."
+    hint_general: "Al hablar de sus motivos convence incluso a quien dudaba."
+    explanation: "Elocuente: convence incluso a quien dudaba. «Vehemente» describe a quien se acalora, y «expresivo» habla de gestos y caras, no de convencer."
+    options:
+      - position: 1
+        text: "vehemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vehemente» describe a quien se acalora al hablar, y aquí lo que se cuenta es a quién termina convenciendo."
+        hint_specific: "Lo vehemente se mide en temperatura. ¿Qué mide la frase: el calor o el efecto?"
+      - position: 2
+        text: "expresivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Expresivo» habla de gestos y caras, y la frase cuenta que los escépticos se quedan escuchando lo que dice."
+        hint_specific: "Lo expresivo se ve en la cara. ¿Qué cambia en quienes lo escuchan?"
+      - position: 3
+        text: "elocuente"
+        is_correct: true
+  - position: 5
+    sentence: "Nazaret casi nunca habla en grupo, pero el día del homenaje estuvo {{blank}} y la sala se puso de pie."
+    hint_general: "Ese día sus palabras levantaron a toda la sala."
+    explanation: "Elocuente: sus palabras levantaron a la sala. «Locuaz» diría que habla mucho, y ella casi nunca habla, y «sincera» solo diría que dijo la verdad."
+    options:
+      - position: 1
+        text: "elocuente"
+        is_correct: true
+      - position: 2
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» se dice de quien habla mucho, y la frase empieza diciendo que Nazaret casi nunca habla."
+        hint_specific: "Lo locuaz supone hablar sin parar. ¿Qué dice la frase sobre cuánto habla ella?"
+      - position: 3
+        text: "sincera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincera» solo dice que contó la verdad, y lo que cuenta la frase es el efecto: una sala entera en pie."
+        hint_specific: "Se puede ser sincero y no mover a nadie. ¿Qué hizo la sala?"
+  - position: 6
+    sentence: "Amaya escribe mejor de lo que habla: en el papel es {{blank}} y delante de la gente se traba."
+    hint_general: "Por escrito convence, en voz alta se le atasca todo."
+    explanation: "Elocuente: por escrito convence. «Vehemente» describe a quien se acalora, y «extrovertida» habla de soltura con la gente, no de convencer."
+    options:
+      - position: 1
+        text: "extrovertida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extrovertida» habla de lo fácil que le resulta el trato con la gente, y la frase compara lo escrito con lo hablado."
+        hint_specific: "Lo extrovertido se ve en una fiesta. ¿Qué dos cosas compara la frase?"
+      - position: 2
+        text: "elocuente"
+        is_correct: true
+      - position: 3
+        text: "vehemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vehemente» describe a quien habla con mucho calor, y aquí Amaya ni siquiera llega a hablar con soltura."
+        hint_specific: "Lo vehemente sube el volumen. ¿Dónde funciona ella según la frase?"
+  - position: 7
+    sentence: "La respuesta de Celia fue breve y {{blank}}: en tres frases dejó claro por qué el plan no se sostenía."
+    hint_general: "Tres frases bastaron para tumbar el plan."
+    explanation: "Elocuente: tres frases bastaron para tumbar el plan. «Locuaz» habla de quien se alarga, e «insistente» dice que repite, no que convenza."
+    options:
+      - position: 1
+        text: "locuaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Locuaz» se dice de quien se alarga al hablar, y la frase empieza llamando breve a esa respuesta."
+        hint_specific: "Lo locuaz ocupa tiempo. ¿Cómo describe la frase la respuesta de Celia?"
+      - position: 2
+        text: "insistente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistente» dice que alguien repite lo mismo, y aquí bastaron tres frases dichas una sola vez."
+        hint_specific: "Lo insistente vuelve una y otra vez. ¿Cuántas veces habló Celia?"
+      - position: 3
+        text: "elocuente"
+        is_correct: true
+  - position: 8
+    sentence: "Un cierre {{blank}} vale más que veinte minutos de datos sueltos y sin orden."
+    hint_general: "Un final que mueve gana a veinte minutos de cifras."
+    explanation: "Elocuente: un final que mueve a quien escucha. «Vehemente» solo promete calor, y «seguro» dice que quien habla no duda, no que convenza."
+    options:
+      - position: 1
+        text: "elocuente"
+        is_correct: true
+      - position: 2
+        text: "vehemente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vehemente» promete calor y pasión, y la frase compara efecto con cantidad de datos, no temperatura."
+        hint_specific: "Lo vehemente se nota en el tono. ¿Qué compara la frase con los veinte minutos?"
+      - position: 3
+        text: "seguro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguro» dice que quien habla no duda, y se puede cerrar sin dudar y aun así no mover a nadie."
+        hint_specific: "Se puede estar muy seguro y aburrir. ¿Qué se compara aquí con los datos sueltos?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos minutos"
+    body: "Eulalia tenía el último turno y quince diapositivas preparadas. Vio la hora, cerró el portátil y habló dos minutos: qué problema había, qué costaba y qué proponía. «Estuviste elocuente», le dijo después su jefa. «Y eso que no enseñaste ni una imagen»."
+    before_phrase: "Creo que me expliqué bastante bien, ¿no?"
+    after_phrase: "Estuve elocuente sin enseñar una sola imagen."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El día del homenaje"
+    body: "Nazaret nunca habla en las comidas de familia; se sienta al lado de la cocina y escucha. En el homenaje a su madre pidió un minuto y contó una escena de un verano. Cuando terminó, la sala estaba de pie. «Qué elocuente, tía», le dijo su sobrino."
+    before_phrase: "Qué bien lo has contado, de verdad."
+    after_phrase: "Has estado elocuente."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La carta de dos párrafos"
+    body: "La comunidad llevaba meses discutiendo lo del patio. Celia escribió dos párrafos en el grupo: lo que costaba, lo que ganaban y una fecha. «Más elocuente que la reunión de hora y media», contestó un vecino. Se votó al día siguiente."
+    before_phrase: "Lo ha explicado en dos líneas y se entiende todo."
+    after_phrase: "Dos párrafos más elocuentes que una reunión entera."
+metrics:
+  zipf_overall: 3.6043
+  dispersion_dp: 0.2373
+  pedantry_proxy: 0.4555
+  family_size: 7
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

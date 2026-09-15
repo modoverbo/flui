@@ -1,0 +1,249 @@
+schema_version: 1
+sort_order: 5009
+slug: "extenderse"
+status: "draft"
+lemma: "extenderse"
+part_of_speech: "verbo"
+syllables:
+  - "ex"
+  - "ten"
+  - "der"
+  - "se"
+stressed_syllable: 3
+ipa_latam: "[eks.tenˈdeɾ.se]"
+ipa_es: "[eks.tenˈdeɾ.se]"
+explanation: "Hablar o escribir mucho más de lo necesario y hacer largo un tema."
+example_sentence: "Tenía diez minutos y me extendí hasta los veinte."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para reconocer el propio exceso sin dramatizarlo: «me extendí» pesa menos que «hablé demasiado»."
+when_not_to_use: "No la uses para quien da muchos detalles útiles; aquí lo que sobra es tiempo, no cuidado."
+collocations:
+  - "extenderse demasiado"
+  - "extenderse en los detalles"
+  - "no me extiendo más"
+replaces:
+  - before: "Me enrollé un montón"
+    after: "Me extendí demasiado"
+  - before: "Habló media hora de más"
+    after: "Se extendió media hora de más"
+  - before: "No te doy más la lata"
+    after: "No voy a extenderme más"
+family:
+  - "extensión"
+  - "extenso"
+semantic_set_id: "duracion-de-lo-que-dices"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "enrollarse"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "entenderse"
+    difference: "«Entenderse» es llegar a comprenderse con alguien; la otra palabra dice que ocupaste más tiempo o más espacio del previsto."
+    memory_trick: "Te entiendes con alguien; lo otro lo haces tú solo y de más."
+  - confused_with: "extenuarse"
+    difference: "«Extenuarse» es quedarse sin fuerzas por el esfuerzo; la otra palabra no habla de cansancio, sino de duración."
+    memory_trick: "Te extenúas cuando no puedes más; lo otro es cuando no paras."
+exercises:
+  - position: 1
+    sentence: "Rebeca tenía diez minutos y {{blank}} hasta los veintidós, así que el resto del panel se quedó sin turno."
+    hint_general: "Ocupó el doble de tiempo del que le tocaba."
+    explanation: "Se extendió: ocupó el doble de su tiempo. «Se entendió» hablaría de comprenderse con alguien, y «peroró» es palabra culta que suena a discurso solemne."
+    options:
+      - position: 1
+        text: "se entendió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entenderse» es comprenderse con otra persona, y aquí el problema es el reloj: veintidós minutos en vez de diez."
+        hint_specific: "Entenderse necesita a dos. ¿Qué es lo que se pasó de la raya en esta escena?"
+      - position: 2
+        text: "se extendió"
+        is_correct: true
+      - position: 3
+        text: "peroró"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Perorar» es palabra culta y suena a discurso solemne y hueco, y aquí se cuenta un exceso de minutos, no un tono grandilocuente."
+        hint_specific: "«Perorar» pinta a alguien subido a una tarima antigua. ¿Qué mide esta frase?"
+  - position: 2
+    sentence: "Cada vez que le preguntan por su trabajo, Timoteo {{blank}} y pierde a media mesa."
+    hint_general: "Se alarga tanto que la gente deja de seguirlo."
+    explanation: "Se extiende: se alarga hasta perder a la mesa. «Se extenúa» sería quedarse sin fuerzas, y «se repite» diría que vuelve al mismo punto."
+    options:
+      - position: 1
+        text: "se extiende"
+        is_correct: true
+      - position: 2
+        text: "se extenúa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Extenuarse» es quedarse sin fuerzas, y quien se queda sin energía aquí es la mesa, no él."
+        hint_specific: "Extenuarse deja a alguien agotado. ¿Quién se cansa en esta escena?"
+      - position: 3
+        text: "se repite"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetirse» es volver al mismo punto una y otra vez, y la frase no dice que insista: dice que no termina."
+        hint_specific: "Repetirse es dar vueltas al mismo dato. ¿La frase habla de volver atrás o de no parar?"
+  - position: 3
+    sentence: "El correo tenía que ser de cinco líneas, pero Yolanda {{blank}} hasta la segunda página."
+    hint_general: "Escribió mucho más de lo que se había marcado."
+    explanation: "Se extendió: escribió mucho más de lo previsto. «Se entendió» hablaría de comprenderse con alguien, y «se explayó» sugiere hablar a gusto y con libertad."
+    options:
+      - position: 1
+        text: "se explayó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Explayarse» sugiere soltarse a gusto y con libertad, y aquí lo que hay es un límite de cinco líneas que se incumple."
+        hint_specific: "Explayarse suena a placer de contar. ¿La frase celebra algo o señala un exceso?"
+      - position: 2
+        text: "se extendió"
+        is_correct: true
+      - position: 3
+        text: "se entendió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entenderse» es llegar a comprenderse con otra persona, y en la frase no aparece nadie más: solo un correo largo."
+        hint_specific: "Entenderse pide dos personas. ¿Con quién se entiende Yolanda aquí?"
+  - position: 4
+    sentence: "Conviene no {{blank}} en la primera respuesta: deja que te pregunten y responde a eso."
+    hint_general: "El consejo es no alargar la primera respuesta."
+    explanation: "Extenderse: alargar de más la primera respuesta. «Tenderse» es tumbarse en algún sitio, e «insistir» sería repetir la petición."
+    options:
+      - position: 1
+        text: "tenderse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tenderse» es tumbarse en un sitio, y en una conversación nadie se tumba al contestar."
+        hint_specific: "Tenderse pide una cama o una hierba. ¿Dónde ocurre este consejo?"
+      - position: 2
+        text: "extenderse"
+        is_correct: true
+      - position: 3
+        text: "insistir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistir» es repetir una petición, y el consejo habla del tamaño de la respuesta, no de pedir dos veces."
+        hint_specific: "Insistir es volver a pedir. ¿El consejo trata de pedir o de contestar?"
+  - position: 5
+    sentence: "Alonso prometió ser breve y aun así {{blank}} veinte minutos sobre el mismo punto."
+    hint_general: "Prometió poco tiempo y gastó mucho en un solo asunto."
+    explanation: "Se extendió: gastó veinte minutos pese a su promesa. «Se entendió» hablaría de comprenderse con alguien, y «se adelantó» sería contar algo antes de tiempo."
+    options:
+      - position: 1
+        text: "se extendió"
+        is_correct: true
+      - position: 2
+        text: "se adelantó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adelantarse» es contar algo antes de que toque, y aquí el problema es la duración, no el orden."
+        hint_specific: "Adelantarse rompe el orden. ¿Qué rompe Alonso: el orden o el reloj?"
+      - position: 3
+        text: "se entendió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entenderse» es comprenderse con otra persona, y la frase mide minutos sobre un mismo punto."
+        hint_specific: "Entenderse es cosa de dos. ¿Qué se mide en esta frase?"
+  - position: 6
+    sentence: "Si {{blank}} demasiado al contar el problema, la reunión se queda sin tiempo para la solución."
+    hint_general: "Alargar la parte del problema deja sin tiempo lo demás."
+    explanation: "Te extiendes: alargas de más la parte del problema. «Te extenúas» sería quedarte sin fuerzas, y «te enredas» sería liarte y perder el hilo."
+    options:
+      - position: 1
+        text: "te extenúas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Extenuarse» es quedarse sin fuerzas, y lo que se agota en la frase es el tiempo de la reunión, no tu energía."
+        hint_specific: "Extenuarse agota el cuerpo. ¿Qué se agota aquí?"
+      - position: 2
+        text: "te enredas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enredarse» es liarte y perder el hilo, y se puede contar el problema con orden y aun así ocupar demasiado."
+        hint_specific: "Enredarse es perder el hilo. ¿La frase habla de orden o de duración?"
+      - position: 3
+        text: "te extiendes"
+        is_correct: true
+  - position: 7
+    sentence: "Consuelo escribe muy bien, aunque en las conclusiones siempre {{blank}} más de la cuenta."
+    hint_general: "Al final de sus textos siempre se le va la longitud."
+    explanation: "Se extiende: al final se le va la longitud. «Se entiende» hablaría de comprenderse con alguien, y «se repite» diría que vuelve a lo ya dicho."
+    options:
+      - position: 1
+        text: "se repite"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetirse» es volver sobre lo ya dicho, y la frase no la acusa de repetir: dice que ocupa más de la cuenta."
+        hint_specific: "Repetirse es decir dos veces lo mismo. ¿Qué le sobra a sus conclusiones?"
+      - position: 2
+        text: "se extiende"
+        is_correct: true
+      - position: 3
+        text: "se entiende"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entenderse» es comprenderse con otra persona, y aquí se habla de la longitud de un texto escrito a solas."
+        hint_specific: "Entenderse pide a alguien enfrente. ¿Quién hay enfrente de un texto?"
+  - position: 8
+    sentence: "En la despedida del equipo, Emiliano prefirió no {{blank}}: dos frases, un abrazo y a la mesa."
+    hint_general: "Eligió no alargar el momento y dejarlo en dos frases."
+    explanation: "Extenderse: alargar el momento, que es lo que él evita. «Tenderse» es tumbarse en algún sitio, y «cortar» sería interrumpir a otra persona."
+    options:
+      - position: 1
+        text: "extenderse"
+        is_correct: true
+      - position: 2
+        text: "tenderse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tenderse» es tumbarse en un sitio, y en una despedida de equipo nadie se tumba."
+        hint_specific: "Tenderse pide un sofá. ¿Qué hace Emiliano en esa despedida?"
+      - position: 3
+        text: "cortar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cortar» sería interrumpir a otra persona, y aquí el único que habla es él, y decide acabar pronto."
+        hint_specific: "Cortar necesita a alguien hablando. ¿Quién habla en la despedida?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez minutos, veintidós"
+    body: "Rebeca abrió el panel con diez minutos asignados y terminó a los veintidós. Las dos personas que iban después se quedaron con tres minutos cada una. Al salir lo dijo ella misma: «Me extendí, y ese tiempo lo pagó el resto». La siguiente vez llevó un reloj delante."
+    before_phrase: "Me enrollé muchísimo, perdón."
+    after_phrase: "Me extendí, y el tiempo lo pagó el resto."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las conclusiones de Consuelo"
+    body: "Consuelo escribe cartas largas a su hija, que vive lejos. «Las tuyas empiezan muy bien y al final te extiendes», le contestó un día. Ahora se pone un tope: una hoja. Dice que caben las mismas cosas y que su hija las responde antes."
+    before_phrase: "Ya sé que te escribo unos ladrillos."
+    after_phrase: "Ya sé que al final me extiendo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos frases y un abrazo"
+    body: "En la despedida de Emiliano todos esperaban el discurso. Se levantó, dijo dos frases sobre la gente que se quedaba y se sentó. «Prefiero no extenderme, que se enfría la comida». Fue la despedida que más gente recuerda de esa oficina."
+    before_phrase: "No me voy a poner a hablar media hora."
+    after_phrase: "Prefiero no extenderme."
+metrics:
+  zipf_overall: 3.7249
+  dispersion_dp: 0.2026
+  pedantry_proxy: 0.5138
+  family_size: 92
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

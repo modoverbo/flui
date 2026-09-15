@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "incluso"
+status: "draft"
+lemma: "incluso"
+part_of_speech: "adverbio"
+syllables:
+  - "in"
+  - "clu"
+  - "so"
+stressed_syllable: 2
+ipa_latam: "[inˈklu.so]"
+ipa_es: "[inˈklu.so]"
+explanation: "Añade el caso más difícil de creer para apoyar lo que acabas de decir."
+example_sentence: "Aguantó la reunión entera de pie e incluso tomó notas al final."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Guarda el ejemplo más raro para el final: es el que convence de que la frase va en serio."
+when_not_to_use: "No la uses si el caso añadido es el más normal de todos; entonces no sorprende a nadie."
+collocations:
+  - "incluso hoy"
+  - "incluso ellos"
+replaces:
+  - before: "Vinieron todos, hasta los vecinos del cuarto"
+    after: "Vinieron todos, incluso los vecinos del cuarto"
+  - before: "Leyó el contrato entero y las notas pequeñas y todo"
+    after: "Leyó el contrato entero, incluso las notas pequeñas"
+  - before: "Abre siempre, y eso, los domingos también"
+    after: "Abre siempre, incluso los domingos"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "hasta"
+  funcion:
+    - "subir un escalón"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "inclusive"
+    difference: "«Inclusive» cierra un tramo contando el último elemento: «del uno al diez, inclusive». La otra añade el caso más llamativo."
+    memory_trick: "Una cierra una lista; la otra la corona."
+  - confused_with: "incluido"
+    difference: "«Incluido» concuerda con lo que acompaña: «propina incluida». La otra no concuerda con nada: es invariable."
+    memory_trick: "Uno cambia de forma según el objeto; la otra nunca cambia."
+exercises:
+  - position: 1
+    sentence: "Vinieron todos a ayudar con la mudanza, {{blank}} los vecinos del cuarto, que casi no nos saludan."
+    hint_general: "El último ejemplo es el que menos esperabas, y por eso convence."
+    explanation: "Incluso: añade el caso más difícil de creer. «Inclusive» cerraría un tramo numerado y «excepto» dejaría a esos vecinos fuera de la ayuda."
+    options:
+      - position: 1
+        text: "inclusive"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inclusive» cierra un tramo contando su último elemento («del uno al diez, inclusive»), y aquí no hay tramo que cerrar."
+        hint_specific: "«Inclusive» necesita un tramo con principio y final. ¿Hay una serie numerada en esta frase?"
+      - position: 2
+        text: "incluso"
+        is_correct: true
+      - position: 3
+        text: "excepto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Excepto» dejaría a esos vecinos fuera, y la frase los presenta como la prueba de que vino todo el edificio."
+        hint_specific: "«Excepto» resta de la lista. ¿Esos vecinos ayudaron o se quedaron en casa?"
+  - position: 2
+    sentence: "El taller abre todos los días del año, {{blank}} el domingo por la mañana."
+    hint_general: "El día más raro para abrir es justo el que remata la idea."
+    explanation: "Incluso: el domingo es el caso más llamativo. «Hasta» es de conversación y podría leerse como un límite de tiempo, y «salvo» cerraría el taller ese día."
+    options:
+      - position: 1
+        text: "incluso"
+        is_correct: true
+      - position: 2
+        text: "hasta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Hasta» es de conversación y aquí se leería como un límite de tiempo, como si el taller cerrara al llegar el domingo."
+        hint_specific: "«Hasta» también marca un final en el calendario. ¿El domingo abre o es el tope?"
+      - position: 3
+        text: "salvo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Salvo» apartaría el domingo del horario, y la frase lo presenta como el día que demuestra que abren siempre."
+        hint_specific: "«Salvo» deja un día fuera. ¿El domingo abre o queda descartado?"
+  - position: 3
+    sentence: "Leyó el contrato entero antes de firmar, {{blank}} las notas pequeñas del final."
+    hint_general: "Lo que casi nadie lee es justo lo que demuestra el cuidado que puso."
+    explanation: "Incluso: las notas pequeñas son el caso extremo. «Incluido» tendría que concordar con lo que acompaña y «apenas» diría que leyó muy poco."
+    options:
+      - position: 1
+        text: "incluido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incluido» concuerda con lo que acompaña y aquí chocaría con «las notas», que es femenino y plural."
+        hint_specific: "«Incluido» tiene que encajar en género y número. ¿Encaja con lo que viene detrás?"
+      - position: 2
+        text: "incluso"
+        is_correct: true
+      - position: 3
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» diría que leyó muy poco, y la frase cuenta que se lo leyó todo hasta el último renglón."
+        hint_specific: "«Apenas» mide lo poco que hubo. ¿Leyó mucho o leyó poquísimo?"
+  - position: 4
+    sentence: "Aguantaron la charla de pie durante dos horas, {{blank}} quienes tenían tren a las seis."
+    hint_general: "El grupo con más motivos para irse es el que remata la idea."
+    explanation: "Incluso: quienes tenían tren son el caso extremo. «Nada menos que» presumiría de su categoría y «tampoco» los sacaría de la sala."
+    options:
+      - position: 1
+        text: "nada menos que"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Nada menos que» es de conversación y presume de la categoría de alguien, cuando aquí lo llamativo es que tuvieran prisa."
+        hint_specific: "«Nada menos que» destaca la importancia de alguien. ¿Lo raro es quiénes son o que se quedaran?"
+      - position: 2
+        text: "incluso"
+        is_correct: true
+      - position: 3
+        text: "tampoco"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tampoco» encadena dos cosas que no ocurrieron, y aquí sí ocurrió: se quedaron las dos horas enteras."
+        hint_specific: "«Tampoco» suma una falta a otra. ¿Se quedaron o se marcharon?"
+  - position: 5
+    sentence: "El baño quedó impecable después de la reforma, {{blank}} los azulejos de detrás del lavabo."
+    hint_general: "El rincón que nadie mira es la prueba de que el trabajo fue completo."
+    explanation: "Incluso: ese rincón es el caso extremo. «Inclusive» cerraría un tramo numerado y «sobre todo» convertiría los azulejos en lo principal de la obra."
+    options:
+      - position: 1
+        text: "inclusive"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inclusive» cierra un tramo contando su último elemento, y aquí no hay ninguna serie con principio y final."
+        hint_specific: "«Inclusive» pide un tramo numerado. ¿Hay una serie que cerrar en este baño?"
+      - position: 2
+        text: "sobre todo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sobre todo» convertiría esos azulejos en lo principal de la reforma, y la frase los usa como remate, no como lo central."
+        hint_specific: "«Sobre todo» señala lo más importante. ¿Los azulejos son el centro de la obra o el detalle final?"
+      - position: 3
+        text: "incluso"
+        is_correct: true
+  - position: 6
+    sentence: "El niño se aprendió los nombres de todo el edificio, {{blank}} el del portero nuevo."
+    hint_general: "El nombre más reciente es el que menos esperabas que supiera."
+    explanation: "Incluso: el portero nuevo es el caso extremo. «Hasta» es de conversación y podría leerse como un límite, y «excepto» dejaría ese nombre fuera."
+    options:
+      - position: 1
+        text: "hasta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Hasta» es de conversación y puede leerse como un tope, como si la lista de nombres se detuviera en el portero."
+        hint_specific: "«Hasta» también marca un límite. ¿El portero es el tope o el ejemplo más difícil?"
+      - position: 2
+        text: "incluso"
+        is_correct: true
+      - position: 3
+        text: "excepto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Excepto» dejaría ese nombre fuera de la lista, y la frase lo pone dentro como la prueba de su memoria."
+        hint_specific: "«Excepto» resta de la lista. ¿Sabe el nombre del portero o es el único que falla?"
+  - position: 7
+    sentence: "Aceptaron todas las condiciones de la venta, {{blank}} la de pagar por adelantado."
+    hint_general: "La condición más dura es la que demuestra hasta dónde llegaron."
+    explanation: "Incluso: la condición más dura remata la lista. «Incluido» tendría que concordar con lo que acompaña y «al menos» reduciría el acuerdo a un mínimo."
+    options:
+      - position: 1
+        text: "incluso"
+        is_correct: true
+      - position: 2
+        text: "incluido"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incluido» concuerda con lo que acompaña y chocaría con «la de pagar», que es femenino."
+        hint_specific: "«Incluido» tiene que encajar en género y número. ¿Encaja con lo que viene después?"
+      - position: 3
+        text: "al menos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al menos» rebajaría el acuerdo a un mínimo salvado, y la frase cuenta que aceptaron absolutamente todo."
+        hint_specific: "«Al menos» se conforma con un mínimo. ¿Aceptaron todo o solo lo básico?"
+  - position: 8
+    sentence: "Recordaba cada detalle de aquel verano, {{blank}} el color del toldo de la terraza."
+    hint_general: "El detalle más pequeño es el que prueba la memoria que tiene."
+    explanation: "Incluso: el detalle diminuto remata la idea. «Inclusive» cerraría un tramo numerado y «apenas» diría que recordaba muy poco."
+    options:
+      - position: 1
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» diría que recordaba muy poco, y la frase presume justo de lo contrario: lo recordaba todo."
+        hint_specific: "«Apenas» mide lo poco que quedó. ¿Recuerda mucho o casi nada?"
+      - position: 2
+        text: "inclusive"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inclusive» cierra un tramo contando su último elemento, y un color no cierra ninguna serie numerada."
+        hint_specific: "«Inclusive» pide una serie con final. ¿Hay un tramo que cerrar en ese recuerdo?"
+      - position: 3
+        text: "incluso"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La mudanza del segundo"
+    body: "Subieron cajas doce personas en una mañana de agosto. Melchor lo contó luego en el bar, y el dato que dejó a todos callados fue el último: «Vinieron todos, incluso los del cuarto». Nadie preguntó nada más: esa sola palabra explicaba el barrio entero."
+    before_phrase: "Vino todo el mundo, hasta los del cuarto, fíjate."
+    after_phrase: "Vinieron todos, incluso los del cuarto."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Las notas pequeñas"
+    body: "Le preguntaron cómo trabajaba con los contratos. Genoveva no dijo que era cuidadosa: lo demostró con un ejemplo. «Los leo enteros, incluso las notas pequeñas del final». Quien la entrevistaba sonrió y pasó a la siguiente pregunta sin insistir."
+    before_phrase: "Soy muy detallista, la verdad, muy meticulosa."
+    after_phrase: "Los leo enteros, incluso las notas pequeñas."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El toldo verde"
+    body: "Su abuelo contaba aquel verano cada agosto y siempre repetía los mismos nombres. Un día añadió un detalle diminuto: «Lo recuerdo todo, incluso el color del toldo». Los nietos se quedaron quietos. El detalle pequeño hizo más por la historia que veinte minutos de relato."
+    before_phrase: "Me acuerdo de todo, del toldo y todo, fíjate."
+    after_phrase: "Lo recuerdo todo, incluso el color del toldo."
+metrics:
+  zipf_overall: 5.4834
+  dispersion_dp: 0.0427
+  pedantry_proxy: 0.5190
+  family_size: 116
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

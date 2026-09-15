@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3204
+slug: "premisa"
+status: "draft"
+lemma: "premisa"
+part_of_speech: "sustantivo"
+syllables:
+  - "pre"
+  - "mi"
+  - "sa"
+stressed_syllable: 2
+ipa_latam: "[pɾeˈmi.sa]"
+ipa_es: "[pɾeˈmi.sa]"
+explanation: "Idea que das por buena antes de discutir, y sobre la que apoyas todo lo demás."
+example_sentence: "Antes de discutir el plan, aclaremos la premisa: nadie cambia de equipo."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para parar una discusión y poner encima de la mesa lo que cada uno daba por hecho."
+when_not_to_use: "No la uses para una conclusión ni para un dato ya comprobado; nombra lo que se supone antes de empezar."
+collocations:
+  - "partir de una premisa"
+  - "una premisa falsa"
+  - "la premisa de partida"
+replaces:
+  - before: "Estamos dando por hecho una cosa"
+    after: "Estamos partiendo de una premisa"
+  - before: "Lo damos por supuesto y no lo hemos hablado"
+    after: "Esa premisa no la hemos hablado"
+  - before: "Si eso no es verdad, todo lo demás se cae"
+    after: "Si esa premisa falla, todo lo demás se cae"
+family: []
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin:
+    - "cosa"
+    - "tema"
+  funcion:
+    - "razonar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "conclusión"
+    difference: "Una conclusión llega al final de un razonamiento; la otra palabra está al principio y lo sostiene todo."
+    memory_trick: "La conclusión cierra la puerta; la otra la abre."
+  - confused_with: "promesa"
+    difference: "Una promesa es algo que alguien se compromete a cumplir; la otra palabra es algo que se da por cierto sin comprobarlo."
+    memory_trick: "La promesa se cumple; lo otro se supone."
+exercises:
+  - position: 1
+    sentence: "Antes de discutir las cifras, Ariadna pidió aclarar la {{blank}}: todos suponían que el equipo seguiría igual de grande."
+    hint_general: "Se aclara lo que todos daban por cierto antes de empezar a discutir."
+    explanation: "Premisa: lo que todos daban por cierto antes de empezar. Una «promesa» la asume alguien y se puede cumplir, y una «conclusión» llegaría al final, no antes de discutir."
+    options:
+      - position: 1
+        text: "promesa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «promesa» es un compromiso que alguien asume, y aquí nadie se ha comprometido: todos suponían algo."
+        hint_specific: "«Promesa» necesita a alguien que se comprometa. ¿Quién se comprometió en esta frase?"
+      - position: 2
+        text: "premisa"
+        is_correct: true
+      - position: 3
+        text: "conclusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «conclusión» llega al final de un razonamiento, y aquí todavía no han empezado a discutir las cifras."
+        hint_specific: "«Conclusión» cierra un razonamiento. ¿En qué momento está la reunión?"
+  - position: 2
+    sentence: "Toda la propuesta se apoya en una {{blank}} que nadie ha dicho en voz alta: que los clientes van a repetir."
+    hint_general: "Es lo que se da por cierto en silencio y sostiene todo lo demás."
+    explanation: "Premisa: lo que se da por cierto en silencio y sostiene lo demás. Una «primicia» es una noticia que se cuenta la primera, y una «norma» es una regla que hay que cumplir, no algo que se supone."
+    options:
+      - position: 1
+        text: "primicia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «primicia» es una noticia que alguien cuenta el primero, y aquí justo nadie ha dicho nada en voz alta."
+        hint_specific: "«Primicia» se cuenta antes que nadie. ¿Se ha contado algo en esta frase?"
+      - position: 2
+        text: "norma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «norma» es una regla que hay que cumplir, y esto no se cumple: se supone que pasará."
+        hint_specific: "«Norma» manda lo que hay que hacer. ¿Alguien tiene que cumplir que los clientes repitan?"
+      - position: 3
+        text: "premisa"
+        is_correct: true
+  - position: 3
+    sentence: "Nerea no se fía de lo que siente: quiere que la {{blank}} de la que parten quede escrita antes de mirar ningún dato."
+    hint_general: "Quiere dejar escrito el punto de partida antes de mirar nada."
+    explanation: "Premisa: el punto de partida que se deja escrito. Una «corazonada» es la sensación de la que ella desconfía, y una «prueba» sería algo ya comprobado, cuando aún no han mirado los datos."
+    options:
+      - position: 1
+        text: "premisa"
+        is_correct: true
+      - position: 2
+        text: "corazonada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Corazonada» es coloquial y nombra una sensación interna, justo aquello de lo que Nerea no se fía."
+        hint_specific: "«Corazonada» nace de lo que sientes. Relee de qué desconfía Nerea."
+      - position: 3
+        text: "prueba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «prueba» es algo ya comprobado, y la frase dice que todavía no han mirado ningún dato."
+        hint_specific: "«Prueba» llega después de comprobar. ¿Han mirado ya los datos?"
+  - position: 4
+    sentence: "Si esa {{blank}} falla, todo el plan se cae: dimos por hecho que el local estaría libre en marzo."
+    hint_general: "Todo se sostiene sobre algo que se dio por hecho y nadie comprobó."
+    explanation: "Premisa: lo que se dio por hecho y sostiene el plan. Una «promesa» necesita a alguien que se comprometa, y una «excusa» serviría para librarse de algo, cuando aquí nadie se libra de nada."
+    options:
+      - position: 1
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «excusa» sirve para librarse de algo, y aquí nadie se libra: se cuenta de qué partió el plan."
+        hint_specific: "«Excusa» busca una salida. ¿Alguien intenta salirse del plan en esta frase?"
+      - position: 2
+        text: "premisa"
+        is_correct: true
+      - position: 3
+        text: "promesa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «promesa» la hace alguien, y la frase dice que lo dieron por hecho ellos solos."
+        hint_specific: "«Promesa» tiene siempre autor. ¿Quién prometió que el local estaría libre?"
+  - position: 5
+    sentence: "El informe empieza con una {{blank}} discutible y por eso todo lo que viene después cojea."
+    hint_general: "El fallo está en lo que se acepta al principio, no en lo que se calcula luego."
+    explanation: "Premisa: lo que se acepta al principio. «Pesquisa» suena a investigación formal y no encaja al abrir un informe, y una «primicia» sería una noticia contada la primera."
+    options:
+      - position: 1
+        text: "pesquisa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pesquisa» suena a investigación oficial y a lenguaje de juzgado; un informe de trabajo no abre con eso."
+        hint_specific: "«Pesquisa» pide una investigación en marcha. ¿Con qué abre un informe corriente?"
+      - position: 2
+        text: "primicia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «primicia» es una noticia que se cuenta antes que nadie, y aquí se discute un punto de partida."
+        hint_specific: "«Primicia» es noticia fresca. ¿Qué se discute del informe?"
+      - position: 3
+        text: "premisa"
+        is_correct: true
+  - position: 6
+    sentence: "Marcos aceptó los números, pero no la {{blank}} de la que salen: nadie ha comprobado que el público sea el mismo de hace dos años."
+    hint_general: "Acepta el cálculo y rechaza aquello de lo que parte el cálculo."
+    explanation: "Premisa: aquello de lo que parte el cálculo. Una «conclusión» estaría al final, y él acepta los números; una «promesa» necesitaría a alguien que se comprometiera."
+    options:
+      - position: 1
+        text: "conclusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «conclusión» está al final del cálculo, y Marcos discute justo de dónde salen los números."
+        hint_specific: "«Conclusión» cierra el cálculo. ¿Marcos discute el final o el origen?"
+      - position: 2
+        text: "premisa"
+        is_correct: true
+      - position: 3
+        text: "promesa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «promesa» la asume una persona, y aquí nadie ha prometido nada sobre el público."
+        hint_specific: "«Promesa» implica un compromiso. ¿Quién se comprometió con el público?"
+  - position: 7
+    sentence: "En el taller repetían una {{blank}} sin revisarla nunca: que la gente joven no lee correos."
+    hint_general: "Repiten algo dado por cierto que nadie se ha parado a comprobar."
+    explanation: "Premisa: algo dado por cierto que nadie comprueba. Una «norma» obliga a hacer algo, y aquí no hay nada que cumplir; una «primicia» sería una noticia contada la primera."
+    options:
+      - position: 1
+        text: "norma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «norma» obliga a hacer algo, y aquí nadie tiene que cumplir nada: solo repiten una creencia."
+        hint_specific: "«Norma» manda. ¿Qué tendría que cumplir la gente joven?"
+      - position: 2
+        text: "premisa"
+        is_correct: true
+      - position: 3
+        text: "primicia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «primicia» es algo que se cuenta por primera vez, y esto llevan años repitiéndolo."
+        hint_specific: "«Primicia» se estrena. ¿Cuántas veces han repetido esa idea en el taller?"
+  - position: 8
+    sentence: "Bajamos el precio partiendo de una {{blank}} equivocada: creíamos que la gente comparaba solo por el coste."
+    hint_general: "Se actuó a partir de una creencia que resultó falsa."
+    explanation: "Premisa: la creencia de partida que resultó falsa. Una «propuesta» sería algo que se sugiere hacer, y una «prueba» estaría comprobada, cuando aquí solo lo creían."
+    options:
+      - position: 1
+        text: "propuesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «propuesta» es algo que alguien sugiere hacer, y esto no se sugirió: se creyó sin más."
+        hint_specific: "«Propuesta» se pone sobre la mesa para decidir. ¿Se decidió eso o se creyó?"
+      - position: 2
+        text: "prueba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «prueba» está comprobada, y la frase dice que solo lo creían y resultó falso."
+        hint_specific: "«Prueba» ya pasó por una comprobación. ¿Se comprobó lo del coste?"
+      - position: 3
+        text: "premisa"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes de las cifras"
+    body: "La reunión llevaba veinte minutos discutiendo números cuando Ariadna levantó la mano. «Un momento: estamos partiendo de una premisa que nadie ha dicho, que el equipo seguirá igual de grande». Se hizo un silencio corto. Volvieron a empezar con esa línea escrita arriba del todo."
+    before_phrase: "Estamos dando por hecho una cosa, ¿no?"
+    after_phrase: "Partimos de una premisa que nadie ha dicho."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El local de marzo"
+    body: "Mi hermano tenía el plan entero en una hoja: fechas, gente, comida. «¿Y el local?», le pregunté. Se quedó callado. «Toda la fiesta se apoya en una premisa: que estará libre en marzo». Llamó esa misma tarde y no lo estaba."
+    before_phrase: "Todo esto se cae si eso no es verdad."
+    after_phrase: "Todo se apoya en una premisa: que estará libre."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La gente joven y los correos"
+    body: "En el taller del barrio repetían que la gente joven no lee correos. Nerea lo escuchó tres veces y preguntó de dónde salía. Nadie supo decirlo. «Entonces es una premisa, no un dato», resumió, y esa semana probaron a escribir."
+    before_phrase: "Eso lo damos por hecho y ya está."
+    after_phrase: "Entonces es una premisa, no un dato."
+metrics:
+  zipf_overall: 4.2209
+  dispersion_dp: 0.1372
+  pedantry_proxy: 0.4434
+  family_size: 81
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

@@ -1,0 +1,242 @@
+schema_version: 1
+sort_order: 5004
+slug: "guion"
+status: "draft"
+lemma: "guion"
+part_of_speech: "sustantivo"
+syllables:
+  - "guion"
+stressed_syllable: 1
+ipa_latam: "[ɡjon]"
+ipa_es: "[ɡjon]"
+explanation: "Texto escrito con todo lo que vas a decir, frase por frase."
+example_sentence: "Llevo un guion, aunque en la sala casi nunca lo miro."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Escríbelo entero y luego no lo leas: haberlo escrito ya te deja las frases en la cabeza."
+when_not_to_use: "No la uses para cuatro puntos sueltos en una tarjeta; esto es el texto completo, palabra por palabra."
+collocations:
+  - "seguir el guion"
+  - "salirse del guion"
+  - "un guion cerrado"
+replaces:
+  - before: "El papel donde apunto lo que voy a decir"
+    after: "El guion de lo que voy a decir"
+  - before: "Me salí de lo que llevaba preparado"
+    after: "Me salí del guion"
+  - before: "Lo tengo todo escrito palabra por palabra"
+    after: "Llevo un guion cerrado"
+family:
+  - "guionista"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "papel"
+  funcion:
+    - "preparar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "guiño"
+    difference: "Un «guiño» es cerrar un ojo para decir algo sin palabras; la otra palabra es el texto entero que llevas preparado."
+    memory_trick: "El guiño se hace con el ojo; el texto se escribe con la mano."
+  - confused_with: "guía"
+    difference: "Una «guía» explica cómo hacer algo paso a paso, o es la persona que te acompaña; la otra palabra recoge tus frases tal cual las vas a decir."
+    memory_trick: "La guía enseña el camino; el texto dicta las palabras."
+exercises:
+  - position: 1
+    sentence: "Casandra escribió el {{blank}} entero, lo repitió dos noches y luego lo dejó en el bolso."
+    hint_general: "Escribió sus frases completas y después habló sin mirarlas."
+    explanation: "Guion: el texto con sus frases completas. «Guiño» es cerrar un ojo, y «libreto» pertenece al teatro y nombra el texto de una obra con personajes."
+    options:
+      - position: 1
+        text: "guiño"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «guiño» es cerrar un ojo un instante, y eso no se escribe entero ni se repite dos noches."
+        hint_specific: "Un guiño se hace con la cara. ¿Qué escribió Casandra durante dos noches?"
+      - position: 2
+        text: "guion"
+        is_correct: true
+      - position: 3
+        text: "libreto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Libreto» pertenece al teatro y nombra el texto de una obra con personajes, y aquí una sola persona prepara su intervención."
+        hint_specific: "Un libreto reparte papeles entre actores. ¿Cuántas personas hablan aquí?"
+  - position: 2
+    sentence: "A mitad de la charla, Ovidio se salió del {{blank}} y contó algo que no llevaba escrito."
+    hint_general: "Abandonó el texto preparado y habló de otra cosa."
+    explanation: "Guion: el texto preparado del que se salió. «Guiño» es cerrar un ojo, y «esquema» sería el orden de las partes, no las frases escritas."
+    options:
+      - position: 1
+        text: "esquema"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «esquema» ordena las partes en pocas líneas, y la frase dice que lo que no llevaba era algo escrito palabra por palabra."
+        hint_specific: "Un esquema son cuatro puntos sueltos. ¿Qué dice la frase que estaba escrito?"
+      - position: 2
+        text: "guion"
+        is_correct: true
+      - position: 3
+        text: "guiño"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «guiño» es un gesto con el ojo, y de un gesto no se sale nadie a mitad de una charla."
+        hint_specific: "Un guiño dura un segundo y no lleva palabras. ¿De qué se salió Ovidio?"
+  - position: 3
+    sentence: "En la radio, Leandro lee su {{blank}} sin que se note, y eso cuesta más que improvisar."
+    hint_general: "Lee sus frases escritas y consigue que suenen dichas."
+    explanation: "Guion: las frases escritas que él lee. «Guía» sería la persona que acompaña a un grupo, y un «borrador» es una versión sin terminar."
+    options:
+      - position: 1
+        text: "guion"
+        is_correct: true
+      - position: 2
+        text: "guía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «guía» acompaña a un grupo y explica lo que ve, y en la radio Leandro está solo ante un texto."
+        hint_specific: "Una guía camina delante de un grupo. ¿Con quién está Leandro?"
+      - position: 3
+        text: "borrador"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «borrador» es una versión sin terminar, y lo que él lee en directo está cerrado y listo."
+        hint_specific: "Un borrador todavía se corrige. ¿Se emite en directo algo sin terminar?"
+  - position: 4
+    sentence: "Los dos primeros minutos van escritos en el {{blank}}; el resto lo llevo en cuatro puntos."
+    hint_general: "Solo el principio está escrito frase por frase."
+    explanation: "Guion: la parte escrita frase por frase. «Guiño» es un gesto con el ojo, y un «índice» solo enumera los apartados."
+    options:
+      - position: 1
+        text: "índice"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «índice» enumera apartados, y la frase distingue lo que va escrito entero de lo que va en cuatro puntos."
+        hint_specific: "Un índice es una lista de partes. ¿Qué está escrito palabra por palabra aquí?"
+      - position: 2
+        text: "guiño"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «guiño» es un gesto rápido con el ojo, y en él no caben dos minutos de frases."
+        hint_specific: "Un guiño no contiene palabras. ¿Dónde caben dos minutos escritos?"
+      - position: 3
+        text: "guion"
+        is_correct: true
+  - position: 5
+    sentence: "El vídeo del museo se nota hecho con {{blank}}: ninguna frase sobra y ninguna se repite."
+    hint_general: "Se nota que alguien escribió antes cada frase."
+    explanation: "Guion: el texto escrito antes de grabar. «Guía» sería la persona que acompaña a los visitantes, y un «protocolo» es la lista de pasos obligatorios de un trámite."
+    options:
+      - position: 1
+        text: "guía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «guía» es la persona que acompaña a los visitantes y habla sobre la marcha, y aquí lo que hay es un vídeo grabado."
+        hint_specific: "Una guía responde preguntas en directo. ¿Un vídeo responde preguntas?"
+      - position: 2
+        text: "guion"
+        is_correct: true
+      - position: 3
+        text: "protocolo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Protocolo» suena a oficina y nombra la lista de pasos obligatorios de un trámite, no las frases de un vídeo."
+        hint_specific: "Un protocolo se cumple y se firma. ¿Esto se cumple o se escucha?"
+  - position: 6
+    sentence: "Nunca sabes qué va a pasar en una reunión, así que el {{blank}} solo aguanta hasta la primera pregunta."
+    hint_general: "Lo que llevas escrito deja de servir en cuanto alguien pregunta."
+    explanation: "Guion: lo que llevabas escrito y deja de servir. «Guiño» es un gesto con el ojo, y un «resumen» recoge lo dicho después, no antes."
+    options:
+      - position: 1
+        text: "guion"
+        is_correct: true
+      - position: 2
+        text: "guiño"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «guiño» es un gesto con el ojo y nadie lo prepara por escrito para una reunión."
+        hint_specific: "Un guiño no se prepara. ¿Qué es lo que sí llevabas listo?"
+      - position: 3
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resumen» recoge lo que ya se dijo, y aquí se habla de algo preparado antes de que empiece la reunión."
+        hint_specific: "Un resumen se hace al final. ¿Cuándo se escribe lo que aguanta poco?"
+  - position: 7
+    sentence: "Ágata prepara su {{blank}} y después lo corta a la mitad: dice que la primera versión siempre sobra."
+    hint_general: "Escribe todas sus frases y luego quita la mitad."
+    explanation: "Guion: sus frases escritas, luego recortadas. «Guía» sería la persona que acompaña a un grupo, y un «apunte» es una nota suelta, no el texto completo."
+    options:
+      - position: 1
+        text: "apunte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «apunte» es una nota suelta de dos palabras, y la frase habla de un texto tan largo que se puede cortar a la mitad."
+        hint_specific: "Un apunte cabe en el margen. ¿Qué se corta aquí por la mitad?"
+      - position: 2
+        text: "guía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «guía» es quien acompaña a un grupo y explica lo que ve, y a una persona no se la corta a la mitad."
+        hint_specific: "Una guía es alguien o un manual de pasos. ¿Qué prepara y recorta Ágata?"
+      - position: 3
+        text: "guion"
+        is_correct: true
+  - position: 8
+    sentence: "Cuando los nervios aprietan, tener el {{blank}} en el bolsillo tranquiliza aunque no lo saques."
+    hint_general: "Basta con llevar encima las frases escritas para estar más tranquilo."
+    explanation: "Guion: las frases escritas que llevas encima. «Guiño» es un gesto con el ojo, y un «esquema» sería el orden de las partes en cuatro líneas."
+    options:
+      - position: 1
+        text: "guiño"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «guiño» es un gesto con el ojo y no se guarda en ningún bolsillo."
+        hint_specific: "Un guiño no ocupa sitio. ¿Qué se lleva en el bolsillo?"
+      - position: 2
+        text: "guion"
+        is_correct: true
+      - position: 3
+        text: "esquema"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «esquema» ordena las partes en cuatro líneas, y lo que calma los nervios aquí es llevar dicho ya todo por escrito."
+        hint_specific: "Un esquema es un mapa de partes. ¿Qué llevas escrito entero?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "En el bolso, sin abrir"
+    body: "Casandra escribió las frases de su presentación una a una y las repitió dos noches seguidas. El día señalado dejó los folios en el bolso y no los sacó. «Escribir el guion es lo que me lo deja en la cabeza», le contó después a su equipo. «Llevarlo encima ya es de más»."
+    before_phrase: "Llevaba todo apuntado por si acaso."
+    after_phrase: "Escribí el guion y luego no lo necesité."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Los dos primeros minutos"
+    body: "Ovidio llegaba a las entrevistas con todo aprendido palabra por palabra y salía con la boca seca. Cambió el método: guion cerrado para los dos primeros minutos y cuatro puntos para el resto. «Así arranco firme y después ya converso», explicó. En la tercera le dijeron que sí."
+    before_phrase: "Me lo aprendo entero y ojalá no se me olvide."
+    after_phrase: "Llevo guion solo para los dos primeros minutos."
+  - position: 3
+    scene: "social"
+    conversation_type: "emocional"
+    title: "La llamada difícil"
+    body: "Ágata tenía que decirle a su casero que se mudaba y llevaba tres días posponiéndolo. Se escribió un guion de seis líneas y lo dejó al lado del teléfono. No lo leyó, pero llamó. Colgó a los cuatro minutos, aliviada."
+    before_phrase: "No sé ni cómo empezar esa llamada."
+    after_phrase: "Me escribí un guion de seis líneas y llamé."
+metrics:
+  zipf_overall: 4.4062
+  dispersion_dp: 0.16
+  pedantry_proxy: 0.5898
+  family_size: 10
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

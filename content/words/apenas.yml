@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "apenas"
+status: "draft"
+lemma: "apenas"
+part_of_speech: "adverbio"
+syllables:
+  - "a"
+  - "pe"
+  - "nas"
+stressed_syllable: 2
+ipa_latam: "[aˈpe.nas]"
+ipa_es: "[aˈpe.nas]"
+explanation: "Dice que algo ocurrió en cantidad mínima, casi nada, sin llegar a negarlo del todo."
+example_sentence: "Me di cuenta de que apenas había hablado en toda la comida."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Mide en vez de exagerar: reconoce que hubo algo, aunque fuera muy poco."
+when_not_to_use: "No la uses cuando no hubo nada en absoluto; para el cero entero hay palabras más exactas."
+collocations:
+  - "apenas queda tiempo"
+  - "apenas hubo público"
+replaces:
+  - before: "Casi no quedaban sillas"
+    after: "Apenas quedaban sillas"
+  - before: "Durmió poquísimo, dos horas o así"
+    after: "Apenas durmió dos horas"
+  - before: "No hubo casi preguntas, la verdad"
+    after: "Apenas hubo preguntas"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "casi no"
+  funcion:
+    - "medir lo mínimo que hubo"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "apenado"
+    difference: "«Apenado» describe a quien está triste: «se fue apenado». La otra no habla de ánimo: mide una cantidad muy pequeña."
+    memory_trick: "Uno se refiere al corazón; la otra, a la báscula."
+  - confused_with: "apena"
+    difference: "«Apena» viene de apenar y significa dar tristeza: «me apena la noticia». La otra solo mide lo poco que hubo."
+    memory_trick: "Una entristece; la otra cuenta."
+exercises:
+  - position: 1
+    sentence: "Quedaban {{blank}} tres sillas libres cuando llegamos al salón de actos."
+    hint_general: "Tres es un número muy pequeño para una sala entera: mide esa escasez."
+    explanation: "Apenas: tres sillas son muy pocas para esa sala. «Apenado» describiría tristeza e «incluso» presentaría esas sillas como un extra inesperado."
+    options:
+      - position: 1
+        text: "apenado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apenado» describe a alguien triste, y aquí no se habla del ánimo de nadie: se cuentan sillas libres."
+        hint_specific: "«Apenado» tiene que ver con la tristeza. ¿Se describe un estado de ánimo o una cantidad?"
+      - position: 2
+        text: "apenas"
+        is_correct: true
+      - position: 3
+        text: "incluso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Incluso» presentaría esas tres sillas como un extra sorprendente, y la frase las señala como muy pocas."
+        hint_specific: "«Incluso» suma algo inesperado. ¿Tres sillas son mucho o muy poco para esa sala?"
+  - position: 2
+    sentence: "Rosalía durmió {{blank}} cuatro horas y aun así llegó puntual a la primera cita."
+    hint_general: "Cuatro horas es muy poco para una noche: mide esa falta sin exagerar."
+    explanation: "Apenas: cuatro horas se quedan cortas para una noche. «Ni de lejos» es de conversación y niega toda comparación, y «al menos» convertiría esas horas en un mínimo aceptable."
+    options:
+      - position: 1
+        text: "apenas"
+        is_correct: true
+      - position: 2
+        text: "ni de lejos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni de lejos» es de conversación y niega una comparación entera, cuando la frase sí reconoce que durmió esas cuatro horas."
+        hint_specific: "«Ni de lejos» descarta cualquier parecido. ¿Durmió algo esa noche o nada en absoluto?"
+      - position: 3
+        text: "al menos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al menos» presentaría cuatro horas como un mínimo que salvó la noche, y la frase las cuenta como muy pocas."
+        hint_specific: "«Al menos» consuela con un mínimo. ¿Cuatro horas la salvan o la dejan corta?"
+  - position: 3
+    sentence: "El río llevaba {{blank}} agua después de tres meses sin lluvia."
+    hint_general: "Quedaba un hilo de corriente, no el cauce lleno: mide esa falta."
+    explanation: "Apenas: queda un hilo de corriente, no el cauce lleno. «Apena» viene de dar tristeza y «bastante» diría que el río iba sobrado."
+    options:
+      - position: 1
+        text: "apena"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apena» viene de apenar y significa dar tristeza, y la frase no habla de sentimientos: mide el caudal del río."
+        hint_specific: "«Apena» tiene que ver con la tristeza. ¿Se cuenta un sentimiento o una cantidad de agua?"
+      - position: 2
+        text: "apenas"
+        is_correct: true
+      - position: 3
+        text: "bastante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Bastante» diría que el río iba sobrado, y tres meses sin lluvia apuntan justo a lo contrario."
+        hint_specific: "«Bastante» sugiere que sobra. ¿Tres meses sin lluvia dejan el río lleno?"
+  - position: 4
+    sentence: "La sala estaba llena, pero {{blank}} llegaba la voz de quien presentaba hasta las últimas filas."
+    hint_general: "El sonido llegaba muy justo al fondo: mide esa poca fuerza."
+    explanation: "Apenas: la voz llegaba muy justa al fondo. «Apenado» describiría tristeza y «hasta» convertiría el fondo en el sitio donde mejor se oía."
+    options:
+      - position: 1
+        text: "apenas"
+        is_correct: true
+      - position: 2
+        text: "apenado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apenado» describe a alguien triste, y la frase no habla del ánimo de quien presenta: habla de cuánto se le oía."
+        hint_specific: "«Apenado» describe tristeza. ¿Se cuenta cómo se sentía o cuánto se oía?"
+      - position: 3
+        text: "hasta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Hasta» presentaría el fondo de la sala como el sitio donde la voz llegaba de sobra, y la frase dice que costaba oírla."
+        hint_specific: "«Hasta» amplía el alcance al caso extremo. ¿Se oía bien al fondo o muy justo?"
+  - position: 5
+    sentence: "Con la mudanza encima, a Gerardo le quedaba {{blank}} tiempo para despedirse del barrio."
+    hint_general: "Le quedaban unos días contados, no semanas: mide ese margen tan corto."
+    explanation: "Apenas: el margen se quedó en días contados. «Poquito» suena a cariño de conversación y «todavía» diría que aún le sobraba margen."
+    options:
+      - position: 1
+        text: "poquito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Poquito» es de conversación cariñosa y suaviza el apuro, cuando la frase señala un margen que se quedó muy corto."
+        hint_specific: "«Poquito» endulza la falta. ¿La escena suena tierna o suena a agobio?"
+      - position: 2
+        text: "apenas"
+        is_correct: true
+      - position: 3
+        text: "todavía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Todavía» diría que aún le sobraba margen, y la mudanza encima indica lo contrario: el tiempo se le echó encima."
+        hint_specific: "«Todavía» sugiere que queda margen. ¿Le sobra tiempo o se le acaba?"
+  - position: 6
+    sentence: "Aurelio {{blank}} probó el postre y ya estaba pidiendo la receta a la dueña."
+    hint_general: "Bastó un bocado para que lo pidiera: marca lo poco que pasó antes."
+    explanation: "Apenas: un bocado bastó para que lo pidiera. «Apena» viene de dar tristeza y «siquiera» no cabe en una frase que cuenta algo que sí ocurrió."
+    options:
+      - position: 1
+        text: "apena"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apena» viene de apenar y da tristeza, y aquí nadie se entristece: alguien prueba un postre y le encanta."
+        hint_specific: "«Apena» tiene que ver con la tristeza. ¿Alguien sufre o alguien disfruta?"
+      - position: 2
+        text: "siquiera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Siquiera» marca lo que no llegó a ocurrir, y él sí probó el postre: por eso pide la receta."
+        hint_specific: "«Siquiera» señala lo que no pasó. ¿Probó el postre o se quedó sin probarlo?"
+      - position: 3
+        text: "apenas"
+        is_correct: true
+  - position: 7
+    sentence: "En la charla del jueves {{blank}} hubo preguntas: dos manos levantadas en una hora entera."
+    hint_general: "Dos manos en sesenta minutos es muy poco: mide esa escasez."
+    explanation: "Apenas: dos manos en una hora son muy pocas. «Apenado» describiría tristeza y «ni de lejos» negaría que hubiera pregunta alguna."
+    options:
+      - position: 1
+        text: "apenado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apenado» describe a alguien triste, y la frase no habla del ánimo de nadie: cuenta cuántas manos se levantaron."
+        hint_specific: "«Apenado» describe tristeza. ¿Se cuenta un sentimiento o un número de manos?"
+      - position: 2
+        text: "ni de lejos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni de lejos» es de conversación y niega cualquier comparación, cuando la frase reconoce que sí hubo dos preguntas."
+        hint_specific: "«Ni de lejos» descarta el parecido con otra cosa. ¿Hubo alguna pregunta o ninguna?"
+      - position: 3
+        text: "apenas"
+        is_correct: true
+  - position: 8
+    sentence: "El pueblo tenía {{blank}} doscientos vecinos y una panadería que abría los sábados."
+    hint_general: "Doscientas personas es una cifra muy corta para un pueblo entero."
+    explanation: "Apenas: doscientos vecinos son muy pocos para un pueblo. «Apena» viene de dar tristeza y «más de» subiría la cifra en vez de recortarla."
+    options:
+      - position: 1
+        text: "apenas"
+        is_correct: true
+      - position: 2
+        text: "apena"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apena» viene de apenar y significa dar tristeza, y aquí nadie se entristece: se cuenta cuánta gente vive allí."
+        hint_specific: "«Apena» tiene que ver con la tristeza. ¿Se habla de sentimientos o de habitantes?"
+      - position: 3
+        text: "más de"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Más de» empuja la cifra hacia arriba, y la frase pinta un pueblo pequeño con una sola panadería."
+        hint_specific: "«Más de» sube el número. ¿El pueblo se describe grande o diminuto?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos manos en una hora"
+    body: "La charla terminó y todo el mundo decía que había salido bien. Casimira prefirió medirlo: «Apenas hubo preguntas: dos manos en una hora». Nadie se ofendió, porque no había reproche, solo un dato. La siguiente charla duró la mitad y llenó el turno de dudas."
+    before_phrase: "No preguntó casi nadie, la verdad."
+    after_phrase: "Apenas hubo preguntas: dos manos en una hora."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La semana de la mudanza"
+    body: "Su hermana le pedía que pasara por casa antes de irse. Gervasio no se escondió detrás de un «es que voy liado»: «Me queda apenas una semana y tengo la casa por empaquetar». Quedaron el jueves a desayunar y les cundió más que tres llamadas."
+    before_phrase: "Es que casi no tengo tiempo, ya te contaré."
+    after_phrase: "Me queda apenas una semana."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El pueblo de la panadería"
+    body: "Le preguntaron de dónde era y él sonrió antes de contestar. «Un pueblo de apenas doscientos vecinos, con una panadería que abre los sábados». La mesa entera quiso saber más. Contar el tamaño exacto resultó más interesante que decir que era pequeño."
+    before_phrase: "Es un pueblo muy pequeño, no sé, poquita gente."
+    after_phrase: "Un pueblo de apenas doscientos vecinos."
+metrics:
+  zipf_overall: 5.0493
+  dispersion_dp: 0.1295
+  pedantry_proxy: 0.5600
+  family_size: 3
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

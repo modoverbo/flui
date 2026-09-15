@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "perpetuar"
+status: "draft"
+lemma: "perpetuar"
+part_of_speech: "verbo"
+syllables:
+  - "per"
+  - "pe"
+  - "tuar"
+stressed_syllable: 3
+ipa_latam: "[peɾ.peˈtwaɾ]"
+ipa_es: "[peɾ.peˈtwaɾ]"
+explanation: "Hacer que algo siga existiendo mucho tiempo, incluso cuando ya no sirve."
+example_sentence: "Repetir la misma reunión cada lunes solo sirve para perpetuar un problema que nadie nombra."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para señalar que la costumbre, y no una persona, es la que sostiene el problema."
+when_not_to_use: "No la uses para llevar a cabo algo muy criticable en un momento concreto; eso es «perpetrar»."
+collocations:
+  - "perpetuar una costumbre"
+  - "perpetuar un problema"
+  - "perpetuar un reparto injusto"
+replaces:
+  - before: "Así lo único que hacemos es que el problema siga ahí para siempre"
+    after: "Así solo perpetuamos el problema"
+  - before: "Esa costumbre se mantiene sola año tras año"
+    after: "Esa costumbre se perpetúa sola"
+  - before: "La placa sirve para que no se olvide su nombre"
+    after: "La placa perpetúa su nombre"
+family:
+  - "perpetuo"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin: ["mantener"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "perpetrar"
+    difference: "«Perpetrar» es llevar a cabo algo muy criticable en un momento concreto; la otra palabra hace que algo dure y se repita durante años."
+    memory_trick: "Una ocurre una vez; la otra no termina nunca."
+  - confused_with: "perturbar"
+    difference: "«Perturbar» es alterar la calma de algo o de alguien; la otra palabra no altera nada: mantiene las cosas como están."
+    memory_trick: "Perturbar mueve; lo otro congela."
+exercises:
+  - position: 1
+    sentence: "Repetir la misma reunión cada lunes solo sirve para {{blank}} un problema que nadie quiere nombrar."
+    hint_general: "La costumbre hace que aquello siga ahí año tras año."
+    explanation: "Perpetuar: la costumbre mantiene el problema año tras año. «Perpetrar» sería hacer algo criticable una vez, y «eternizar» es coloquial y exagera hasta lo infinito."
+    options:
+      - position: 1
+        text: "perpetrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perpetrar» describe un acto criticable hecho en un momento concreto, y aquí lo que pesa es la repetición semana tras semana."
+        hint_specific: "Perpetrar ocurre una vez y se acaba. ¿Qué pasa aquí todos los lunes?"
+      - position: 2
+        text: "perpetuar"
+        is_correct: true
+      - position: 3
+        text: "eternizar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Eternizar» es coloquial y exagera hasta lo infinito, y la frase habla de una costumbre concreta que se puede cambiar el lunes que viene."
+        hint_specific: "«Eternizar» suena a queja exagerada. ¿Es un problema sin salida o una costumbre que se puede cortar?"
+  - position: 2
+    sentence: "Nadie en casa quería {{blank}} la costumbre de cenar con la televisión encendida."
+    hint_general: "No querían que aquello siguiera haciéndose siempre igual."
+    explanation: "Perpetuar: no querían que la costumbre siguiera para siempre. «Perpetrar» sería cometer algo criticable una vez, y «repetir» solo hablaría de una noche más."
+    options:
+      - position: 1
+        text: "perpetrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perpetrar» señala un acto criticable hecho en un momento, y cenar con la televisión no es un acto: es una costumbre que dura años."
+        hint_specific: "Perpetrar apunta a un momento concreto. ¿Cuánto lleva pasando esto en esa casa?"
+      - position: 2
+        text: "perpetuar"
+        is_correct: true
+      - position: 3
+        text: "repetir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» hablaría de una noche más, y lo que preocupa en casa es que la costumbre se quede instalada para siempre."
+        hint_specific: "Repetir mira a la próxima vez. ¿De cuántas cenas se está hablando aquí?"
+  - position: 3
+    sentence: "Ese descuento acabó por {{blank}} la idea de que el precio real era otro."
+    hint_general: "La idea se quedó instalada y siguió ahí mucho después."
+    explanation: "Perpetuar: la idea se quedó instalada. «Perturbar» sería alterar la calma de alguien, y «desmentir» diría que el descuento acabó con esa idea."
+    options:
+      - position: 1
+        text: "perturbar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perturbar» sería alterar la calma de alguien, y aquí una idea no se inquieta: se queda instalada en la cabeza de los clientes."
+        hint_specific: "Perturbar necesita una calma que romper. ¿Qué le pasa a esa idea, se rompe o se queda?"
+      - position: 2
+        text: "desmentir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desmentir» diría que el descuento acabó con esa idea, y la frase cuenta justo lo contrario: la dejó viva."
+        hint_specific: "Desmentir tumba una creencia. ¿La idea desapareció o siguió ahí?"
+      - position: 3
+        text: "perpetuar"
+        is_correct: true
+  - position: 4
+    sentence: "Cambiar el formulario evitó {{blank}} un fallo que llevaba años copiándose de hoja en hoja."
+    hint_general: "Cortaron algo que se venía repitiendo desde hacía mucho."
+    explanation: "Perpetuar: cortaron algo que venía repitiéndose. «Perpetrar» sería cometer algo criticable una vez, e «inmortalizar» suena solemne y se usa para homenajear."
+    options:
+      - position: 1
+        text: "inmortalizar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inmortalizar» es solemne y se usa para homenajear a alguien o algo valioso, y aquí se corta un fallo de un formulario."
+        hint_specific: "«Inmortalizar» suena a monumento. ¿Se homenajea ese fallo o se corta?"
+      - position: 2
+        text: "perpetuar"
+        is_correct: true
+      - position: 3
+        text: "perpetrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perpetrar» describe un acto criticable cometido en un momento, y este fallo se venía copiando durante años sin que nadie lo decidiera."
+        hint_specific: "Perpetrar pide una decisión concreta. ¿Alguien decidió ese fallo o se fue arrastrando?"
+  - position: 5
+    sentence: "La placa del portal {{blank}} el nombre de quien fundó la asociación hace cuarenta años."
+    hint_general: "Hace que ese nombre siga presente con el paso del tiempo."
+    explanation: "Perpetúa: mantiene ese nombre presente con los años. «Perpetró» sería cometer algo criticable, y «conserva» diría que lo guarda, no que lo mantenga a la vista de todos."
+    options:
+      - position: 1
+        text: "perpetúa"
+        is_correct: true
+      - position: 2
+        text: "perpetró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perpetró» señalaría un acto criticable cometido en un momento, y una placa no comete nada: mantiene vivo un nombre."
+        hint_specific: "Perpetrar siempre suena a reproche. ¿Se critica aquí a alguien o se le recuerda?"
+      - position: 3
+        text: "conserva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conserva» diría que la placa guarda el nombre, y lo que hace es mantenerlo a la vista de todo el que entra."
+        hint_specific: "Conservar puede ser guardar en un cajón. ¿Dónde está esa placa?"
+  - position: 6
+    sentence: "Callar en esa reunión habría ayudado a {{blank}} un reparto injusto de los turnos."
+    hint_general: "El silencio habría dejado que aquello siguiera igual mucho tiempo."
+    explanation: "Perpetuar: el silencio habría dejado el reparto igual. «Perpetrar» sería cometer algo criticable una vez, y «prolongar» solo añadiría un tiempo más, con final a la vista."
+    options:
+      - position: 1
+        text: "prolongar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prolongar» añadiría un tiempo más con final a la vista, y lo que se temía era que ese reparto se quedara sin fecha de caducidad."
+        hint_specific: "Prolongar supone un final conocido. ¿Tenía fecha de fin ese reparto?"
+      - position: 2
+        text: "perpetuar"
+        is_correct: true
+      - position: 3
+        text: "perpetrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perpetrar» describe un acto criticable cometido en un momento, y callar no comete nada: deja que lo de siempre siga."
+        hint_specific: "Perpetrar necesita un acto concreto. ¿Qué hace el silencio, actuar o dejar correr?"
+  - position: 7
+    sentence: "El manual viejo {{blank}} instrucciones que ya nadie sigue desde hace cinco años."
+    hint_general: "Mantiene vivo algo que perdió sentido hace mucho."
+    explanation: "Perpetúa: mantiene vivo lo que ya no sirve. «Perturba» sería alterar la calma de alguien, y «recoge» solo diría que esas instrucciones aparecen escritas."
+    options:
+      - position: 1
+        text: "perturba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perturba» sería alterar la calma de alguien, y un manual en un cajón no inquieta a nadie: solo mantiene lo de siempre."
+        hint_specific: "Perturbar rompe una calma. ¿A quién estaría inquietando ese manual?"
+      - position: 2
+        text: "recoge"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recoge» solo diría que esas instrucciones aparecen escritas, y el problema es que siguen teniendo fuerza cinco años después."
+        hint_specific: "Recoger es solo contener un texto. ¿Qué molesta de esas instrucciones?"
+      - position: 3
+        text: "perpetúa"
+        is_correct: true
+  - position: 8
+    sentence: "Lucas no quiere {{blank}} el estilo de mando que le tocó sufrir de joven."
+    hint_general: "No quiere que esa forma de mandar siga viva en él."
+    explanation: "Perpetuar: no quiere que ese estilo siga vivo. «Perpetrar» sería cometer algo criticable una vez, y «encarnar» suena literario y habla de representarlo, no de mantenerlo."
+    options:
+      - position: 1
+        text: "perpetrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Perpetrar» describe un acto criticable cometido en un momento, y aquí se habla de una forma de mandar que se hereda y se repite."
+        hint_specific: "Perpetrar ocurre y termina. ¿Ese estilo de mando dura un día o años?"
+      - position: 2
+        text: "encarnar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Encarnar» suena literario y dice que alguien representa una idea, no que la mantenga viva para los que vienen detrás."
+        hint_specific: "«Encarnar» suena a personaje de novela. ¿Lucas actúa un papel o teme repetir algo?"
+      - position: 3
+        text: "perpetuar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La reunión de los lunes"
+    body: "Llevaban dos años con la misma reunión y el mismo punto sin resolver. Gloria lo dijo con calma: «Esta reunión no arregla nada, perpetúa el problema». La cambiaron por una nota escrita y un café mensual."
+    before_phrase: "Esto no sirve, el problema sigue ahí siempre."
+    after_phrase: "Esta reunión perpetúa el problema."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La placa del portal"
+    body: "Al reformar la entrada, alguien propuso quitar la placa antigua. Su nieta pidió la palabra en la junta: «Esa placa perpetúa el nombre de quien empezó todo esto». La dejaron, limpia y en el mismo sitio."
+    before_phrase: "Esa placa está ahí para que no se olvide."
+    after_phrase: "Esa placa perpetúa el nombre de quien empezó todo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Qué no vas a repetir"
+    body: "Le preguntaron a Lucas qué clase de jefe quería ser. Respondió corto: «No quiero perpetuar el estilo de mando que me tocó de joven. Prefiero preguntar antes de decidir». Le pidieron un ejemplo y lo dio."
+    before_phrase: "No quiero acabar mandando como mandaban conmigo."
+    after_phrase: "No quiero perpetuar ese estilo de mando."
+metrics:
+  zipf_overall: 4.1138
+  dispersion_dp: 0.1476
+  pedantry_proxy: 0.5904
+  family_size: 42
+provenance:
+  generator: "flui authoring agent — theme paronimos (perpetuar / perpetrar)"
+  gate: null
+  checked_on: "2026-09-14"

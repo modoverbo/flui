@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 5002
+slug: "arranque"
+status: "draft"
+lemma: "arranque"
+part_of_speech: "sustantivo"
+syllables:
+  - "a"
+  - "rran"
+  - "que"
+stressed_syllable: 2
+ipa_latam: "[aˈraŋ.ke]"
+ipa_es: "[aˈraŋ.ke]"
+explanation: "Modo de empezar algo: las primeras frases de una charla o un texto."
+example_sentence: "El arranque decidió la charla entera: en veinte segundos tenía a la sala."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Prepara las tres primeras frases con más cuidado que el centro: ahí se decide si te escuchan."
+when_not_to_use: "No la uses para un impulso de furia repentino, que también se llama así; aquí hablamos del comienzo."
+collocations:
+  - "un buen arranque"
+  - "el arranque de la charla"
+  - "fallar en el arranque"
+replaces:
+  - before: "El principio me quedó flojo"
+    after: "El arranque me quedó flojo"
+  - before: "No sé cómo empezar sin sonar raro"
+    after: "No sé cómo cuidar el arranque"
+  - before: "Los primeros minutos fueron un desastre"
+    after: "El arranque fue un desastre"
+family:
+  - "arrancar"
+semantic_set_id: "apertura-y-cierre"
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "principio"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "arrebato"
+    difference: "Un «arrebato» es un impulso repentino que te hace actuar sin pensar; la otra palabra nombra el comienzo de algo."
+    memory_trick: "El arrebato llega de golpe y a mitad; el comienzo va siempre delante."
+  - confused_with: "portada"
+    difference: "La «portada» es la primera página que alguien ve; la otra palabra es cómo suenan tus primeras frases."
+    memory_trick: "La portada se mira; el comienzo se escucha."
+exercises:
+  - position: 1
+    sentence: "Elsa tardó tres minutos en llegar a su idea, y ese {{blank}} tan lento le costó media sala."
+    hint_general: "El modo de empezar fue tan lento que la gente se le fue."
+    explanation: "Arranque: el modo de empezar, aquí demasiado lento. «Arrebato» es un impulso repentino, y un «saludo» dura dos segundos, no tres minutos."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «arrebato» es un impulso repentino y rápido, y la frase describe justo lo contrario: tres minutos lentos."
+        hint_specific: "Un arrebato ocurre de golpe. ¿Lo de Elsa fue rápido o fue lento?"
+      - position: 2
+        text: "arranque"
+        is_correct: true
+      - position: 3
+        text: "saludo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «saludo» dura dos segundos y no explica nada, y aquí se habla de tres minutos hasta llegar a la idea."
+        hint_specific: "Un saludo se resuelve en dos palabras. ¿Cuánto duró lo que perdió a la sala?"
+  - position: 2
+    sentence: "El {{blank}} del documental engancha tanto que ya no puedes levantarte del sofá."
+    hint_general: "Lo que ocurre al principio te sujeta delante de la pantalla."
+    explanation: "Arranque: el principio que te sujeta. «Arrebato» es un impulso repentino, y «pistoletazo» viene de una carrera y suena a salida deportiva."
+    options:
+      - position: 1
+        text: "arranque"
+        is_correct: true
+      - position: 2
+        text: "arrebato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «arrebato» es un impulso que le da a una persona, y aquí quien engancha es una película, no un impulso."
+        hint_specific: "Un arrebato le pasa a alguien por dentro. ¿Quién engancha en esta escena?"
+      - position: 3
+        text: "pistoletazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pistoletazo» viene del disparo que abre una carrera y suena a crónica deportiva; un documental no dispara nada."
+        hint_specific: "«Pistoletazo» pide una pista de atletismo. ¿Dónde ocurre esto?"
+  - position: 3
+    sentence: "Después de dos ensayos, Casimiro cambió el {{blank}} entero y dejó el resto tal cual estaba."
+    hint_general: "Rehízo la parte del principio y no tocó nada más."
+    explanation: "Arranque: la parte del principio que rehízo. «Arraigo» es el vínculo con un lugar donde llevas años, y un «índice» es la lista de apartados."
+    options:
+      - position: 1
+        text: "arraigo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arraigo» es el vínculo con un lugar donde llevas años viviendo, y aquí solo se reescribe una charla."
+        hint_specific: "El arraigo habla de raíces en un sitio. ¿Qué reescribió Casimiro?"
+      - position: 2
+        text: "índice"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «índice» es la lista de apartados, y él cambió cómo empieza, no la lista de lo que viene."
+        hint_specific: "Un índice enumera partes. ¿Cambió una lista o cambió el comienzo?"
+      - position: 3
+        text: "arranque"
+        is_correct: true
+  - position: 4
+    sentence: "Un {{blank}} con una pregunta directa despierta a la gente mejor que dos minutos de agradecimientos."
+    hint_general: "Empezar con una pregunta despierta más que empezar dando las gracias."
+    explanation: "Arranque: el modo de empezar con una pregunta. «Arrastre» es tirar de algo por el suelo, y un «título» es el nombre que le pones, no la primera frase."
+    options:
+      - position: 1
+        text: "arrastre"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrastre» es tirar de algo por el suelo, y aquí nadie tira de nada: alguien hace una pregunta."
+        hint_specific: "El arrastre mueve cosas pesadas. ¿Qué despierta a la gente en la frase?"
+      - position: 2
+        text: "arranque"
+        is_correct: true
+      - position: 3
+        text: "título"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «título» es el nombre que le pones a la charla, y la frase compara dos maneras de decir las primeras palabras."
+        hint_specific: "Un título se lee antes de que hables. ¿Qué se compara aquí: nombres o primeras palabras?"
+  - position: 5
+    sentence: "Lo que peor lleva Marcela de hablar en público no es el centro de la charla, sino el {{blank}}."
+    hint_general: "Lo que más le cuesta es la parte de empezar."
+    explanation: "Arranque: la parte de empezar, que es la que peor lleva. «Arrebato» es un impulso repentino, y «proemio» es palabra culta de libro antiguo."
+    options:
+      - position: 1
+        text: "arranque"
+        is_correct: true
+      - position: 2
+        text: "arrebato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «arrebato» es un impulso repentino, y a Marcela no le cuesta un impulso: le cuesta una parte de la charla."
+        hint_specific: "Un arrebato no se prepara, se sufre. ¿Qué parte de la charla es la difícil?"
+      - position: 3
+        text: "proemio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Proemio» es palabra culta que nombra el prólogo de un libro antiguo, y aquí alguien habla en voz alta ante gente."
+        hint_specific: "«Proemio» pertenece a los libros solemnes. ¿Marcela escribe un libro o habla en público?"
+  - position: 6
+    sentence: "El taller empezaba con quince minutos de trámites, y ese {{blank}} apagaba a la gente antes de tiempo."
+    hint_general: "La manera de empezar dejaba a la gente sin ganas."
+    explanation: "Arranque: la manera de empezar que apagaba a la gente. «Arraigo» es el vínculo con un lugar, y un «temario» es la lista de lo que se verá."
+    options:
+      - position: 1
+        text: "arraigo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arraigo» es el vínculo con un lugar donde llevas mucho tiempo, y quince minutos de trámites no crean ningún vínculo."
+        hint_specific: "El arraigo se construye en años. ¿Cuánto duraba lo que apagaba a la gente?"
+      - position: 2
+        text: "temario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «temario» es la lista de lo que se verá, y lo que apagaba a la gente eran los trámites del principio."
+        hint_specific: "Un temario enumera contenidos. ¿Lo que cansaba era una lista o los primeros minutos?"
+      - position: 3
+        text: "arranque"
+        is_correct: true
+  - position: 7
+    sentence: "¿Y si pruebas otro {{blank}}: primero una cifra que sorprenda y después las presentaciones?"
+    hint_general: "Se propone cambiar el orden de lo que dices al principio."
+    explanation: "Arranque: el orden de lo que dices al principio. «Arrebato» es un impulso repentino, y un «guion» sería el texto completo, no solo las primeras frases."
+    options:
+      - position: 1
+        text: "guion"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «guion» es el texto completo de lo que vas a decir, y la propuesta solo reordena las primeras frases."
+        hint_specific: "Un guion cubre la charla entera. ¿Cuánto se propone cambiar aquí?"
+      - position: 2
+        text: "arranque"
+        is_correct: true
+      - position: 3
+        text: "arrebato"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «arrebato» es un impulso repentino que no se planea, y aquí se planea con cuidado qué va primero."
+        hint_specific: "Un arrebato no se ensaya. ¿La propuesta se improvisa o se piensa antes?"
+  - position: 8
+    sentence: "Gerardo grabó su ponencia y solo se salvó el {{blank}}: los diez minutos siguientes eran puro relleno."
+    hint_general: "De toda la grabación solo funcionó la parte del comienzo."
+    explanation: "Arranque: la parte del comienzo, la única que funcionó. «Arrastre» es tirar de algo por el suelo, y un «encabezado» es una línea escrita arriba de un documento."
+    options:
+      - position: 1
+        text: "arranque"
+        is_correct: true
+      - position: 2
+        text: "arrastre"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrastre» es tirar de algo pesado por el suelo, y lo que Gerardo graba son sus propias palabras."
+        hint_specific: "El arrastre deja marcas en el suelo. ¿Qué grabó Gerardo?"
+      - position: 3
+        text: "encabezado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «encabezado» es la línea escrita arriba de un documento, y esto es una grabación de alguien hablando."
+        hint_specific: "Un encabezado se imprime arriba de una hoja. ¿Esto se lee o se escucha?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los tres minutos perdidos"
+    body: "Elsa presentaba el proyecto por tercera vez y siempre pasaba igual: a los tres minutos la sala ya miraba el teléfono. Su compañero se lo dijo claro: «El contenido está bien; lo que falla es el arranque». Empezó por la cifra final y aquella vez nadie miró el teléfono."
+    before_phrase: "No sé por qué la gente se despista al principio."
+    after_phrase: "Lo que falla es el arranque."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Veinte segundos"
+    body: "Casimiro se preparaba la respuesta larga y descuidaba la primera frase. En la sexta entrevista cambió de método: escribió un arranque de veinte segundos y lo repitió en voz alta hasta que le salió solo. «Vengo de compras y quiero llevarlo a proveedores»."
+    before_phrase: "Pues bueno, no sé muy bien por dónde empezar."
+    after_phrase: "Llevo el arranque preparado."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El documental del sofá"
+    body: "Marcela puso un documental sin muchas ganas y acabó viéndolo entero. «Es el arranque», le explicó luego a su vecina. «Los primeros dos minutos no te dejan levantarte». Su vecina lo puso esa misma noche y le pasó lo mismo."
+    before_phrase: "El principio está muy bien hecho."
+    after_phrase: "Es el arranque: no te deja levantarte."
+metrics:
+  zipf_overall: 4.7685
+  dispersion_dp: 0.1542
+  pedantry_proxy: 0.554
+  family_size: 42
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

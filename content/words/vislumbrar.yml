@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "vislumbrar"
+status: "draft"
+lemma: "vislumbrar"
+part_of_speech: "verbo"
+syllables:
+  - "vis"
+  - "lum"
+  - "brar"
+stressed_syllable: 3
+ipa_latam: "[biz.lumˈbɾaɾ]"
+ipa_es: "[biz.lumˈbɾaɾ]"
+explanation: "Llegar a ver algo apenas, sin claridad, o notar cómo puede acabar."
+example_sentence: "Tras dos meses difíciles, el equipo por fin vislumbra una salida."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Dice que algo empieza a verse sin prometer nada: sirve para dar esperanza sin exagerar."
+when_not_to_use: "No la uses para dejar a alguien impresionado o cegado por una luz; eso es «deslumbrar»."
+collocations:
+  - "vislumbrar una salida"
+  - "vislumbrar un cambio"
+  - "empezar a vislumbrar"
+replaces:
+  - before: "Ya se empieza a ver por dónde va la cosa"
+    after: "Ya se empieza a vislumbrar por dónde va"
+  - before: "Se ve algo de luz al final de todo esto"
+    after: "Se vislumbra una salida"
+  - before: "Con la niebla casi no se veía el puente"
+    after: "Con la niebla apenas se vislumbraba el puente"
+family:
+  - "vislumbre"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 1
+tags:
+  comodin: ["ver"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "deslumbrar"
+    difference: "«Deslumbrar» es cegar con una luz fuerte o dejar a alguien impresionado; la otra palabra es ver apenas, con esfuerzo."
+    memory_trick: "Deslumbrar sobra de luz; lo otro falta."
+  - confused_with: "alumbrar"
+    difference: "«Alumbrar» es dar luz a un sitio para que se vea; la otra palabra la usa quien mira, no quien ilumina."
+    memory_trick: "La lámpara alumbra; tú apenas ves."
+exercises:
+  - position: 1
+    sentence: "Tras dos meses de números en rojo, el equipo por fin {{blank}} una salida."
+    hint_general: "Empiezan a ver una posibilidad que antes no aparecía."
+    explanation: "Vislumbró: empiezan a ver una posibilidad. «Deslumbró» sería dejar a alguien impresionado, y «alumbró» sería dar luz a un sitio."
+    options:
+      - position: 1
+        text: "deslumbró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslumbrar» es cegar con una luz fuerte o dejar impresionado a alguien, y aquí el equipo apenas empieza a ver por dónde salir."
+        hint_specific: "Deslumbrar es exceso de luz. ¿Sobra claridad o falta en esta escena?"
+      - position: 2
+        text: "vislumbró"
+        is_correct: true
+      - position: 3
+        text: "alumbró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alumbrar» es dar luz a un sitio para que otros vean, y el equipo no ilumina nada: mira y empieza a distinguir algo."
+        hint_specific: "Alumbrar lo hace la lámpara. ¿El equipo da luz o mira?"
+  - position: 2
+    sentence: "Desde la última fila apenas se {{blank}} el título de la primera diapositiva."
+    hint_general: "Se veía muy poco y con esfuerzo."
+    explanation: "Vislumbraba: se veía muy poco y con esfuerzo. «Deslumbraba» sería cegar con luz, y «oteaba» suena a vigía mirando el horizonte."
+    options:
+      - position: 1
+        text: "oteaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Otear» suena a vigía que mira el horizonte desde lo alto, y aquí alguien intenta leer una letra pequeña en una sala."
+        hint_specific: "«Otear» evoca un mirador y un horizonte. ¿Encaja con una sala de reuniones?"
+      - position: 2
+        text: "vislumbraba"
+        is_correct: true
+      - position: 3
+        text: "deslumbraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslumbraba» diría que la pantalla cegaba por exceso de luz, y el problema es justo que no se veía nada."
+        hint_specific: "Deslumbrar molesta por demasiada luz. ¿Sobra luz o falta en la última fila?"
+  - position: 3
+    sentence: "Camila empieza a {{blank}} cómo será su trabajo dentro de tres años."
+    hint_general: "Se hace una idea todavía borrosa de lo que viene."
+    explanation: "Vislumbrar: se hace una idea borrosa de lo que viene. «Alumbrar» sería dar luz a un lugar, y «confirmar» supondría que ya está segura."
+    options:
+      - position: 1
+        text: "alumbrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alumbrar» es dar luz a un sitio para que se vea, y Camila no ilumina nada: intenta ver su propio futuro."
+        hint_specific: "Alumbrar lo hace una lámpara. ¿Camila da luz o mira hacia delante?"
+      - position: 2
+        text: "vislumbrar"
+        is_correct: true
+      - position: 3
+        text: "confirmar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confirmar» supondría que ya lo tiene claro, y la frase dice que apenas empieza a hacerse una idea."
+        hint_specific: "Confirmar cierra la duda. ¿En qué punto está Camila según la frase?"
+  - position: 4
+    sentence: "Con la niebla del amanecer solo se {{blank}} la silueta del puente."
+    hint_general: "Se distinguía apenas el contorno, nada más."
+    explanation: "Vislumbraba: se distinguía apenas el contorno. «Deslumbraba» sería cegar con luz fuerte, y «alumbraba» diría que el puente daba luz."
+    options:
+      - position: 1
+        text: "vislumbraba"
+        is_correct: true
+      - position: 2
+        text: "deslumbraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslumbraba» diría que algo cegaba por exceso de luz, y con niebla al amanecer pasa lo contrario."
+        hint_specific: "Deslumbrar necesita mucha luz. ¿Cómo está el aire en esa escena?"
+      - position: 3
+        text: "alumbraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alumbraba» diría que el puente daba luz, y un puente en la niebla no ilumina: apenas se adivina su forma."
+        hint_specific: "Alumbrar es dar luz. ¿El puente ilumina o se deja ver a duras penas?"
+  - position: 5
+    sentence: "En esa conversación Hugo {{blank}} un acuerdo posible, aunque nadie lo dijo en voz alta."
+    hint_general: "Intuyó una salida que todavía no estaba sobre la mesa."
+    explanation: "Vislumbró: intuyó una salida que aún no estaba dicha. «Deslumbró» sería impresionar a los demás, y «auguró» suena solemne y anuncia lo que va a pasar."
+    options:
+      - position: 1
+        text: "deslumbró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslumbró» diría que Hugo impresionó a los demás, y la frase cuenta lo que él percibió por dentro, sin decir nada."
+        hint_specific: "Deslumbrar se nota en los otros. ¿Qué hizo Hugo, brillar o darse cuenta?"
+      - position: 2
+        text: "auguró"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Augurar» suena solemne y anuncia con seguridad lo que va a pasar, y Hugo solo empieza a intuir una posibilidad."
+        hint_specific: "«Augurar» tiene aire de profecía. ¿Hugo anuncia el futuro o lo intuye?"
+      - position: 3
+        text: "vislumbró"
+        is_correct: true
+  - position: 6
+    sentence: "Nadie {{blank}} todavía el final de la obra, pero el capataz dice que queda poco."
+    hint_general: "Aún no se distingue el final, ni siquiera de lejos."
+    explanation: "Vislumbra: aún no se distingue el final. «Alumbra» sería dar luz al lugar, y «adivina» sugiere acertar por azar, sin señales."
+    options:
+      - position: 1
+        text: "alumbra"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Alumbra» sería dar luz a la obra para trabajar de noche, y aquí se habla de si se distingue o no el final."
+        hint_specific: "Alumbrar es encender luz. ¿Falta luz en la obra o falta ver el final?"
+      - position: 2
+        text: "vislumbra"
+        is_correct: true
+      - position: 3
+        text: "adivina"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adivina» sugiere acertar por azar, y esta palabra pide señales reales, aunque sean borrosas."
+        hint_specific: "Adivinar va sin pistas. ¿La frase habla de suerte o de ver algo de lejos?"
+  - position: 7
+    sentence: "Entre tanta lista de precios, Ernesto {{blank}} un patrón que nadie había mirado."
+    hint_general: "Empezó a distinguir algo que estaba escondido entre los datos."
+    explanation: "Vislumbró: empezó a distinguir algo escondido. «Deslumbró» sería impresionar a los demás, y «barruntó» es coloquial y suena a corazonada de pueblo."
+    options:
+      - position: 1
+        text: "deslumbró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslumbró» diría que Ernesto impresionó a los demás, y la frase cuenta lo que él llegó a ver en las listas."
+        hint_specific: "Deslumbrar causa efecto en otros. ¿Qué pasó dentro de la cabeza de Ernesto?"
+      - position: 2
+        text: "barruntó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Barruntar» es coloquial y suena a corazonada sin datos, y aquí el patrón estaba escrito en las listas de precios."
+        hint_specific: "«Barruntar» suena a presentimiento sin pruebas. ¿Dónde estaba ese patrón?"
+      - position: 3
+        text: "vislumbró"
+        is_correct: true
+  - position: 8
+    sentence: "Desde la ventana del tren se {{blank}} el mar durante apenas dos segundos."
+    hint_general: "Se alcanzó a ver un instante y ya no más."
+    explanation: "Vislumbró: se alcanzó a ver un instante. «Deslumbró» sería cegar con luz fuerte, y «asomó» diría que el mar apareció solo, sin nadie mirando."
+    options:
+      - position: 1
+        text: "deslumbró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslumbró» diría que el reflejo cegaba, y la frase cuenta lo poco que duró la vista, no cuánto brillaba."
+        hint_specific: "Deslumbrar habla de exceso de luz. ¿Qué mide la frase, el brillo o el tiempo?"
+      - position: 2
+        text: "asomó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asomó» diría que el mar apareció por sí solo, y la frase cuenta lo que alcanzó a ver quien iba en el tren."
+        hint_specific: "Asomar lo hace el paisaje. ¿Quién es el protagonista de esa mirada?"
+      - position: 3
+        text: "vislumbró"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos meses en rojo"
+    body: "Llevaban ocho semanas sin buenas noticias y el ánimo estaba por el suelo. Blanca puso dos cifras en la pizarra: «Con esto ya se vislumbra una salida, aunque falte confirmarla». Nadie celebró nada, pero todos se sentaron a trabajar."
+    before_phrase: "Creo que ya se empieza a ver algo de luz."
+    after_phrase: "Ya se vislumbra una salida."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La niebla del puente"
+    body: "Salieron a caminar al amanecer y el valle estaba cerrado por la niebla. Su padre señaló hacia el río: «Apenas se vislumbra el puente, pero está ahí». Media hora después el sol lo dejó entero a la vista."
+    before_phrase: "Casi no se ve nada, pero algo se adivina."
+    after_phrase: "Apenas se vislumbra el puente, pero está ahí."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dentro de tres años"
+    body: "Le preguntaron a Camila dónde se veía a medio plazo. Respondió sin inventar una carrera entera: «Vislumbro un puesto donde decida sobre el producto, aunque todavía no sé en qué área». La respuesta gustó por honesta."
+    before_phrase: "Más o menos me imagino por dónde quiero ir."
+    after_phrase: "Vislumbro un puesto donde decida sobre el producto."
+metrics:
+  zipf_overall: 3.8930
+  dispersion_dp: 0.1067
+  pedantry_proxy: 0.5020
+  family_size: 9
+provenance:
+  generator: "flui authoring agent — theme paronimos (vislumbrar / deslumbrar)"
+  gate: null
+  checked_on: "2026-09-14"

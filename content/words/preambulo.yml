@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 5003
+slug: "preambulo"
+status: "draft"
+lemma: "preámbulo"
+part_of_speech: "sustantivo"
+syllables:
+  - "pre"
+  - "ám"
+  - "bu"
+  - "lo"
+stressed_syllable: 2
+ipa_latam: "[pɾeˈam.bu.lo]"
+ipa_es: "[pɾeˈam.bu.lo]"
+explanation: "Lo que dices antes de entrar en el asunto y que casi siempre sobra."
+example_sentence: "Te lo cuento sin preámbulo: necesito dos días más."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "«Sin preámbulos» es la fórmula más útil: anuncia que vas al grano y la gente afloja los hombros."
+when_not_to_use: "No la uses para el saludo normal de un correo; aquí se nombra el rodeo que retrasa lo importante."
+collocations:
+  - "sin preámbulos"
+  - "un preámbulo largo"
+  - "ahorrarse el preámbulo"
+replaces:
+  - before: "Antes de nada te pongo un poco en contexto"
+    after: "Te lo digo sin preámbulos"
+  - before: "Estuvo un buen rato hasta llegar al tema"
+    after: "Su preámbulo duró más que el tema"
+  - before: "Voy al grano, perdona"
+    after: "Voy al grano, sin preámbulo"
+family: []
+themes:
+  - slug: "presentaciones-oratoria"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "rodeo"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "pretexto"
+    difference: "Un «pretexto» es la excusa falsa que das para librarte de algo; la otra palabra es el rodeo que haces antes de ir al asunto."
+    memory_trick: "El pretexto tapa; el rodeo solo retrasa."
+  - confused_with: "preludio"
+    difference: "Un «preludio» es la pieza breve que abre una obra musical; la otra palabra es lo que dices de más antes del asunto."
+    memory_trick: "El preludio se toca; el rodeo se sufre."
+exercises:
+  - position: 1
+    sentence: "Tadeo entró en la sala, dejó la carpeta y fue al asunto sin {{blank}}."
+    hint_general: "Empezó por lo importante, sin ningún rodeo previo."
+    explanation: "Preámbulo: el rodeo previo que él se ahorró. «Pretexto» sería una excusa falsa, y «cháchara» es coloquial y nombra la charla ociosa entre varias personas."
+    options:
+      - position: 1
+        text: "pretexto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «pretexto» es una excusa falsa para librarse de algo, y Tadeo no se libra de nada: va directo al asunto."
+        hint_specific: "Un pretexto sirve para escaquearse. ¿Tadeo esquiva el tema o entra en él?"
+      - position: 2
+        text: "cháchara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cháchara» es coloquial y nombra la charla ociosa entre varias personas, y aquí habla una sola, de trabajo y en serio."
+        hint_specific: "La cháchara es charla suelta entre amigos. ¿Qué tono tiene esta escena?"
+      - position: 3
+        text: "preámbulo"
+        is_correct: true
+  - position: 2
+    sentence: "El {{blank}} de Nieves duró más que la propuesta: siete minutos de contexto y dos de idea."
+    hint_general: "El rodeo previo ocupó más tiempo que lo que venía a proponer."
+    explanation: "Preámbulo: el rodeo previo de siete minutos. «Preludio» es una pieza musical breve, y un «trámite» es un papeleo obligatorio, no palabras."
+    options:
+      - position: 1
+        text: "preámbulo"
+        is_correct: true
+      - position: 2
+        text: "preludio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «preludio» es una pieza musical que abre una obra, y en esa reunión nadie toca nada: se habla."
+        hint_specific: "Un preludio necesita instrumentos. ¿Qué hace Nieves durante siete minutos?"
+      - position: 3
+        text: "trámite"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «trámite» es un papeleo obligatorio, y lo que se alarga aquí son las palabras previas a la idea."
+        hint_specific: "Un trámite se firma o se sella. ¿Qué es lo que dura siete minutos?"
+  - position: 3
+    sentence: "Cuando escribes a alguien muy ocupado, quita el {{blank}} y empieza por lo que necesitas."
+    hint_general: "El consejo es borrar el rodeo inicial y pedir de entrada."
+    explanation: "Preámbulo: el rodeo inicial que conviene borrar. «Pretexto» sería una excusa falsa, y un «resumen» recoge lo dicho al final, no antes."
+    options:
+      - position: 1
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resumen» recoge en pocas líneas lo que ya contaste, y aquí se borra lo que va antes de pedir nada."
+        hint_specific: "Un resumen llega cuando ya hay algo que resumir. ¿Qué se quita de ese mensaje?"
+      - position: 2
+        text: "preámbulo"
+        is_correct: true
+      - position: 3
+        text: "pretexto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «pretexto» es una excusa falsa, y quien escribe no busca excusarse: busca pedir algo cuanto antes."
+        hint_specific: "Un pretexto justifica una salida. ¿Aquí alguien se justifica o alguien pide?"
+  - position: 4
+    sentence: "Aquel mensaje tenía un {{blank}} de tres párrafos y una pregunta escondida al final."
+    hint_general: "Tres párrafos de rodeo tapaban lo único que se pedía."
+    explanation: "Preámbulo: los tres párrafos de rodeo. «Pregón» es el anuncio que alguien grita en una plaza, y un «aviso» advierte de algo concreto en una línea."
+    options:
+      - position: 1
+        text: "pregón"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «pregón» es el anuncio que alguien lee en voz alta en una plaza, y esto es un mensaje escrito y privado."
+        hint_specific: "Un pregón se grita en una fiesta del pueblo. ¿Dónde ocurre esto?"
+      - position: 2
+        text: "preámbulo"
+        is_correct: true
+      - position: 3
+        text: "aviso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «aviso» advierte de algo concreto en una línea, y aquí lo que hay son tres párrafos que no advierten de nada."
+        hint_specific: "Un aviso cabe en una línea y avisa. ¿Esos tres párrafos avisan de algo?"
+  - position: 5
+    sentence: "Bruno pidió el cambio de turno sin {{blank}}: dijo lo que quería en la primera frase."
+    hint_general: "Pidió lo suyo de entrada, sin rodeo previo."
+    explanation: "Preámbulo: el rodeo previo que Bruno se saltó. «Pretexto» sería una excusa falsa, y «exordio» es palabra culta de oratoria antigua."
+    options:
+      - position: 1
+        text: "preámbulo"
+        is_correct: true
+      - position: 2
+        text: "pretexto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «pretexto» es una excusa falsa, y Bruno no inventa nada: dice lo que quiere en la primera frase."
+        hint_specific: "Un pretexto disfraza la intención. ¿Bruno esconde lo que quiere o lo suelta?"
+      - position: 3
+        text: "exordio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Exordio» es palabra culta de la oratoria antigua y suena a discurso solemne, y esto es una petición de turno entre compañeros."
+        hint_specific: "«Exordio» pertenece a los discursos solemnes. ¿Qué pide Bruno, y a quién?"
+  - position: 6
+    sentence: "Un {{blank}} muy largo avisa de que quien habla todavía no sabe qué quiere pedir."
+    hint_general: "Alargar el rodeo delata que aún no tienes clara tu petición."
+    explanation: "Preámbulo: el rodeo largo que delata la duda. «Preludio» es una pieza musical breve, y un «anuncio» vende algo a quien lo escucha."
+    options:
+      - position: 1
+        text: "preludio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «preludio» es una pieza musical que abre una obra, y aquí quien se alarga es alguien que habla, no una orquesta."
+        hint_specific: "Un preludio se escucha en una sala de conciertos. ¿Qué se alarga en la frase?"
+      - position: 2
+        text: "anuncio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «anuncio» vende algo a quien lo escucha, y esta persona no vende nada: todavía no sabe qué pedir."
+        hint_specific: "Un anuncio quiere venderte algo. ¿Esta persona vende o duda?"
+      - position: 3
+        text: "preámbulo"
+        is_correct: true
+  - position: 7
+    sentence: "Mi tía empieza siempre con un {{blank}} sobre el tiempo antes de contar lo que de verdad pasa."
+    hint_general: "Habla del clima como rodeo para llegar a lo importante."
+    explanation: "Preámbulo: el rodeo sobre el clima. «Pretexto» sería una excusa falsa, y un «prólogo» es un texto impreso que abre un libro."
+    options:
+      - position: 1
+        text: "pretexto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «pretexto» es una excusa falsa para no hacer algo, y ella sí cuenta lo importante: solo tarda en llegar."
+        hint_specific: "Un pretexto evita el tema para siempre. ¿Tu tía llega al tema o no llega?"
+      - position: 2
+        text: "prólogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «prólogo» es un texto impreso que abre un libro, y esto son unas frases dichas por teléfono sobre el clima."
+        hint_specific: "Un prólogo se imprime en la página dos. ¿Esto se lee o se habla?"
+      - position: 3
+        text: "preámbulo"
+        is_correct: true
+  - position: 8
+    sentence: "El vídeo dura dos minutos y el {{blank}} se come el primero entero."
+    hint_general: "La mitad del tiempo se va en el rodeo de antes."
+    explanation: "Preámbulo: el rodeo que ocupa medio vídeo. «Pregón» es un anuncio gritado en una plaza, y un «aviso» advierte de algo en una sola línea."
+    options:
+      - position: 1
+        text: "preámbulo"
+        is_correct: true
+      - position: 2
+        text: "pregón"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «pregón» se lee en voz alta ante una plaza llena, y esto es un vídeo corto que alguien ve en su teléfono."
+        hint_specific: "Un pregón necesita una plaza y una fiesta. ¿Dónde se ve este vídeo?"
+      - position: 3
+        text: "aviso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «aviso» advierte de algo en una sola línea, y lo que ocupa aquí un minuto entero no advierte de nada."
+        hint_specific: "Un aviso es breve por definición. ¿Cuánto dura lo que sobra en el vídeo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Siete minutos de contexto"
+    body: "Nieves tenía diez minutos y usó siete en contar de dónde venía la idea. Cuando llegó la propuesta, el comité ya miraba el reloj. Su jefa se lo dijo bien: «La idea es buena; el preámbulo se la comió». A la semana siguiente empezó por la propuesta."
+    before_phrase: "Antes de nada, te pongo un poco en contexto."
+    after_phrase: "Voy sin preámbulo: esta es la propuesta."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Primero el tiempo"
+    body: "Mi tía llama y habla del calor, del vecino y de la feria. A los diez minutos aparece lo de verdad: le duele que nadie la visite. Ahora se lo digo cariñosamente: «Tía, sáltate el preámbulo, que te escucho igual». Se ríe y va directa."
+    before_phrase: "Cuéntame, pero ve al grano, anda."
+    after_phrase: "Sáltate el preámbulo, que te escucho igual."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El favor de Tadeo"
+    body: "Tadeo necesitaba que alguien le guardara las llaves el fin de semana. Entró, dejó la carpeta y lo soltó: «Sin preámbulos: ¿me guardas unas llaves hasta el lunes?». Su amiga dijo que sí antes de quitarse el abrigo."
+    before_phrase: "Perdona, es que no sé cómo decirte esto."
+    after_phrase: "Sin preámbulos: ¿me haces un favor?"
+metrics:
+  zipf_overall: 3.5409
+  dispersion_dp: 0.2132
+  pedantry_proxy: 0.5808
+  family_size: 2
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

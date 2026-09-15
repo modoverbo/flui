@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "siquiera"
+status: "draft"
+lemma: "siquiera"
+part_of_speech: "adverbio"
+syllables:
+  - "si"
+  - "quie"
+  - "ra"
+stressed_syllable: 2
+ipa_latam: "[siˈkje.ɾa]"
+ipa_es: "[siˈkje.ɾa]"
+explanation: "Señala el mínimo que no llegó a ocurrir, siendo lo más fácil de todo."
+example_sentence: "Se fue de la reunión sin siquiera saludar a los que iban llegando."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Con «ni» delante marca lo poquísimo que faltó: «ni siquiera lo intentó» duele más que «no lo hizo»."
+when_not_to_use: "No la uses para negar algo entero; solo marca el escalón más bajo, no el rechazo total."
+collocations:
+  - "siquiera una vez"
+  - "sin siquiera mirar"
+replaces:
+  - before: "No me llamó, y eso que era lo mínimo"
+    after: "No me llamó siquiera"
+  - before: "Ni de broma me avisó"
+    after: "No me avisó siquiera"
+  - before: "No probó nada de nada"
+    after: "No probó siquiera el primer plato"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "nada de nada"
+  funcion:
+    - "marcar el mínimo que faltó"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "siguiera"
+    difference: "«Siguiera» viene de seguir: «le pedí que me siguiera». La otra marca el mínimo que no se cumplió."
+    memory_trick: "Una va detrás de alguien; la otra mide lo poquísimo que faltó."
+  - confused_with: "si quiera"
+    difference: "«Si quiera», en dos palabras, plantea una condición sobre lo que alguien desea: «si quiera venir, que venga»."
+    memory_trick: "Una pone una condición; la otra señala el escalón más bajo."
+exercises:
+  - position: 1
+    sentence: "Alicia no devolvió la llamada ni {{blank}} contestó el mensaje que le dejé el martes."
+    hint_general: "Lo más fácil era responder por escrito, y ni eso ocurrió."
+    explanation: "Siquiera: ni el gesto más pequeño llegó. «Siguiera» vendría de seguir a alguien e «incluso» no encaja detrás de esa negación encadenada."
+    options:
+      - position: 1
+        text: "siguiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Siguiera» pertenece al verbo seguir y hablaría de ir detrás de alguien, no de un mensaje sin respuesta."
+        hint_specific: "«Siguiera» habla de ir detrás de alguien. ¿Alguien persigue a alguien en esta escena?"
+      - position: 2
+        text: "siquiera"
+        is_correct: true
+      - position: 3
+        text: "incluso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Incluso» sube un escalón dentro de lo que sí pasa, y aquí no pasó nada: la cadena de negaciones lo rechaza."
+        hint_specific: "«Incluso» añade un caso extremo que sí ocurre. ¿Ocurrió algo o no ocurrió nada?"
+  - position: 2
+    sentence: "Terminó la mudanza y se marchó sin {{blank}} tomarse el café que le habían preparado."
+    hint_general: "Quedarse dos minutos era lo mínimo, y ni eso hizo."
+    explanation: "Siquiera: ni el gesto más pequeño se cumplió. «Si quiera» pondría una condición sobre su deseo y «acaso» no cabe detrás de esa preposición."
+    options:
+      - position: 1
+        text: "si quiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Si quiera», separado, abriría una condición sobre lo que esa persona desea, y la frase cuenta lo que ya pasó."
+        hint_specific: "«Si quiera» plantea una condición sobre un deseo. ¿Queda algo por decidir o ya se marchó?"
+      - position: 2
+        text: "acaso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acaso» lanza una duda o una pregunta sin respuesta, y aquí no hay duda: el café se quedó frío."
+        hint_specific: "«Acaso» deja una pregunta en el aire. ¿Hay alguna duda sobre lo que hizo?"
+      - position: 3
+        text: "siquiera"
+        is_correct: true
+  - position: 3
+    sentence: "Pidió dos semanas de plazo y no entregó {{blank}} la mitad del guion."
+    hint_general: "Con tanto tiempo pedido, lo mínimo era medio trabajo, y ni eso llegó."
+    explanation: "Siquiera: ni la parte más pequeña llegó. «Ni de broma» es de conversación y suena a negarse, y «casi» diría que faltó poco para entregarla."
+    options:
+      - position: 1
+        text: "siquiera"
+        is_correct: true
+      - position: 2
+        text: "ni de broma"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni de broma» es muy coloquial y expresa negarse a algo, cuando aquí nadie se negó: sencillamente no llegó a tiempo."
+        hint_specific: "«Ni de broma» suena a rechazo tajante. ¿Alguien se negó a entregar o no le dio tiempo?"
+      - position: 3
+        text: "casi"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Casi» diría que faltó muy poco para entregar la mitad, y la frase señala lo contrario: se quedó lejos."
+        hint_specific: "«Casi» deja el resultado a un paso. ¿Estuvo a punto de entregar la mitad?"
+  - position: 4
+    sentence: "El local cerró a las seis y no avisó {{blank}} con un cartel en la puerta."
+    hint_general: "Un papel pegado era el aviso más barato posible, y ni eso hubo."
+    explanation: "Siquiera: ni el aviso más barato apareció. «Si quiera» abriría una condición y «apenas» diría que hubo un aviso pequeño, cuando no hubo ninguno."
+    options:
+      - position: 1
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» reconoce que algo sí ocurrió, aunque en muy poca cantidad, y aquí el cartel nunca llegó a existir."
+        hint_specific: "«Apenas» admite una pizca de algo. ¿Hubo un aviso pequeño o no hubo ninguno?"
+      - position: 2
+        text: "si quiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Si quiera», en dos palabras, condicionaría la frase al deseo de alguien, y el cierre ya ocurrió sin condiciones."
+        hint_specific: "«Si quiera» depende de que alguien quiera algo. ¿Queda alguna condición pendiente aquí?"
+      - position: 3
+        text: "siquiera"
+        is_correct: true
+  - position: 5
+    sentence: "Mi tío llegó tardísimo a la comida y no probó {{blank}} el primer plato."
+    hint_general: "Tomar la sopa era lo más sencillo del día, y ni eso ocurrió."
+    explanation: "Siquiera: ni el bocado más pequeño llegó. «Siguiera» vendría de seguir y «ni por casualidad» sonaría a rechazo rotundo, no a un hombre que llega tarde."
+    options:
+      - position: 1
+        text: "siguiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Siguiera» viene del verbo seguir y hablaría de ir detrás de alguien, no de un plato que se quedó entero."
+        hint_specific: "«Siguiera» tiene que ver con ir detrás. ¿Alguien va detrás de alguien en esta comida?"
+      - position: 2
+        text: "ni por casualidad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni por casualidad» es de conversación y afirma que algo jamás pasaría, cuando aquí solo pasó que llegó tarde."
+        hint_specific: "«Ni por casualidad» niega para siempre. ¿Nunca comería o solo se le hizo tarde?"
+      - position: 3
+        text: "siquiera"
+        is_correct: true
+  - position: 6
+    sentence: "Le ofrecieron el puesto por teléfono y no negoció {{blank}} la hora de entrada."
+    hint_general: "Pedir media hora más era lo más pequeño que podía pedir, y ni eso pidió."
+    explanation: "Siquiera: ni el detalle más pequeño se negoció. «Si quiera» abriría una condición y «para nada» sonaría a negativa rotunda, cuando aceptó sin más."
+    options:
+      - position: 1
+        text: "para nada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Para nada» es de conversación y niega con énfasis, cuando la frase no expresa rechazo: solo dice que no pidió nada."
+        hint_specific: "«Para nada» carga la frase de rechazo. ¿Rechazó algo o aceptó sin discutir?"
+      - position: 2
+        text: "siquiera"
+        is_correct: true
+      - position: 3
+        text: "si quiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Si quiera», separado, dejaría la frase pendiente de lo que esa persona desee, y la oferta ya quedó aceptada."
+        hint_specific: "«Si quiera» condiciona todo a un deseo. ¿Queda algo sin decidir después de la llamada?"
+  - position: 7
+    sentence: "Estuvimos tres horas en la terraza y Bernardo no levantó la vista {{blank}} para pedir el café."
+    hint_general: "Alzar la cabeza un segundo era lo más pequeño posible, y ni eso hizo."
+    explanation: "Siquiera: ni el gesto más breve apareció. «Siguiera» hablaría de ir detrás de alguien y «acaso» dejaría una duda que la escena no tiene."
+    options:
+      - position: 1
+        text: "siquiera"
+        is_correct: true
+      - position: 2
+        text: "siguiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Siguiera» viene de seguir y hablaría de acompañar a alguien, no de una cabeza que no se levanta."
+        hint_specific: "«Siguiera» va de ir detrás de alguien. ¿Alguien acompaña a alguien en esa terraza?"
+      - position: 3
+        text: "acaso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acaso» abre una duda o una pregunta, y la escena no duda de nada: cuenta tres horas de cabeza baja."
+        hint_specific: "«Acaso» sirve para dudar en voz alta. ¿Hay alguna duda en lo que se cuenta?"
+  - position: 8
+    sentence: "Presenté el plan en diez minutos y nadie hizo {{blank}} una pregunta al terminar."
+    hint_general: "Una sola duda en voz alta era lo mínimo esperable, y ni eso llegó."
+    explanation: "Siquiera: ni la reacción más pequeña llegó. «Incluso» necesitaría algo que sí ocurre y «ni de broma» sonaría a negarse, cuando la sala solo calló."
+    options:
+      - position: 1
+        text: "incluso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Incluso» sube un escalón dentro de lo que sí sucede, y en esa sala no sucedió nada después del plan."
+        hint_specific: "«Incluso» añade un caso extremo que ocurre de verdad. ¿Preguntó alguien algo?"
+      - position: 2
+        text: "ni de broma"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ni de broma» es muy coloquial y expresa un rechazo firme, y la sala no rechazó nada: se quedó callada."
+        hint_specific: "«Ni de broma» suena a negativa rotunda. ¿La sala se negó a algo o guardó silencio?"
+      - position: 3
+        text: "siquiera"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez minutos de silencio"
+    body: "Aurora presentó el plan y esperó. Nadie dijo nada. Al contarlo después, en vez de exagerar, midió el hecho: «Nadie hizo siquiera una pregunta». Su compañero entendió al instante el tamaño del problema y se ofreció a repasarlo con ella."
+    before_phrase: "No dijeron nada de nada, en serio."
+    after_phrase: "Nadie hizo siquiera una pregunta."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La comida del domingo"
+    body: "Dionisio llegó cuando ya estaban recogiendo. Su hermana no le gritó: solo puso el dato encima de la mesa. «No probaste siquiera el primer plato», dijo, y siguió fregando. Él se quedó de pie, pensando en la hora que había salido de casa."
+    before_phrase: "No comiste nada de nada, como siempre."
+    after_phrase: "No probaste siquiera el primer plato."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La terraza de los jueves"
+    body: "Quedaron cinco y hablaron cuatro. Tamara lo comentó al día siguiente, sin dramatizar: «Estuvo tres horas y no levantó la vista siquiera para pedir el café». No hizo falta añadir nada más; el grupo decidió hablar con él de frente."
+    before_phrase: "Es que no soltó el móvil ni un segundo, tela."
+    after_phrase: "No levantó la vista siquiera para pedir el café."
+metrics:
+  zipf_overall: 4.8473
+  dispersion_dp: 0.1233
+  pedantry_proxy: 0.4806
+  family_size: 21
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"

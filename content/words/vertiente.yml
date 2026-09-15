@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 3213
+slug: "vertiente"
+status: "draft"
+lemma: "vertiente"
+part_of_speech: "sustantivo"
+syllables:
+  - "ver"
+  - "tien"
+  - "te"
+stressed_syllable: 2
+ipa_latam: "[beɾˈtjen.te]"
+ipa_es: "[beɾˈtjen.te]"
+explanation: "Cada uno de los lados desde los que se puede mirar un asunto."
+example_sentence: "El problema tiene dos vertientes: la técnica y la del trato con el cliente."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para partir un asunto en dos caras y discutir cada una por separado."
+when_not_to_use: "No la uses para dos bandos enfrentados; esto nombra dos caras del mismo asunto, no dos grupos."
+collocations:
+  - "las dos vertientes"
+  - "la vertiente práctica"
+  - "otra vertiente del asunto"
+replaces:
+  - before: "Esto tiene varias cosas dentro"
+    after: "Esto tiene varias vertientes"
+  - before: "Por otro lado está el tema del dinero"
+    after: "La otra vertiente es la del dinero"
+  - before: "Hay que mirarlo también por lo humano"
+    after: "Está también la vertiente humana"
+family: []
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "cosa"
+    - "tema"
+  funcion:
+    - "desglosar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "parte"
+    difference: "Una parte es un trozo que se separa del conjunto; la otra palabra es el mismo asunto entero mirado desde otro lado."
+    memory_trick: "La parte se corta; el lado se rodea."
+  - confused_with: "variante"
+    difference: "«Variante» es otra versión de la misma cosa; la otra palabra es una cara del mismo asunto, no otra cosa."
+    memory_trick: "La variante sustituye; el lado acompaña."
+exercises:
+  - position: 1
+    sentence: "El asunto tiene dos {{blank}}: la técnica y la del trato con el cliente."
+    hint_general: "El mismo asunto se puede mirar desde dos lados distintos."
+    explanation: "Vertientes: los dos lados desde los que se mira el asunto. Las «partes» serían trozos separados del conjunto, y las «corrientes» son el agua que baja por un río."
+    options:
+      - position: 1
+        text: "corrientes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Las «corrientes» son el agua que baja por un río o el aire que entra por una ventana, y aquí se habla de un asunto de trabajo."
+        hint_specific: "«Corrientes» corren por un río. ¿De qué trata la frase?"
+      - position: 2
+        text: "vertientes"
+        is_correct: true
+      - position: 3
+        text: "partes"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Las «partes» son trozos que se separan del conjunto, y aquí el asunto sigue entero y se mira desde dos lados."
+        hint_specific: "«Partes» se reparten en trozos. ¿Aquí se corta algo o se mira desde dos sitios?"
+  - position: 2
+    sentence: "Antes de decidir, Amaya pidió mirar la otra {{blank}}: cómo lo vive el equipo de tarde."
+    hint_general: "Pide mirar el mismo asunto desde otro lado antes de decidir."
+    explanation: "Vertiente: el otro lado del mismo asunto. Una «opinión» pertenece a una persona concreta, y una «variante» sería otra versión de la misma cosa."
+    options:
+      - position: 1
+        text: "variante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «variante» es otra versión que sustituye a la primera, y aquí el asunto es el mismo visto desde otro sitio."
+        hint_specific: "«Variante» reemplaza a la opción original. ¿Aquí se cambia el asunto o se mira distinto?"
+      - position: 2
+        text: "vertiente"
+        is_correct: true
+      - position: 3
+        text: "opinión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «opinión» es de alguien en concreto, y lo que pide Amaya es mirar el asunto por otro lado."
+        hint_specific: "«Opinión» tiene siempre dueño. ¿Qué pide Amaya que se mire?"
+  - position: 3
+    sentence: "No es otro asunto ni una fase distinta: es la {{blank}} humana del mismo problema de siempre."
+    hint_general: "Es el mismo problema, mirado por su lado humano."
+    explanation: "Vertiente: el lado humano del mismo problema. Una «etapa» sería una fase distinta, que la frase niega, y una «pendiente» es la cuesta por la que algo baja."
+    options:
+      - position: 1
+        text: "etapa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «etapa» es una fase distinta en el tiempo, y la frase empieza negando justo eso."
+        hint_specific: "«Etapa» ocupa un tramo del calendario. Relee las seis primeras palabras."
+      - position: 2
+        text: "vertiente"
+        is_correct: true
+      - position: 3
+        text: "pendiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «pendiente» es la cuesta por la que algo sube o baja, y aquí se habla de personas."
+        hint_specific: "«Pendiente» se sube con esfuerzo. ¿De qué habla la frase?"
+  - position: 4
+    sentence: "El plan está casi cerrado y nadie le ve problemas nuevos: solo falta una {{blank}} por revisar."
+    hint_general: "Queda un lado del asunto sin repasar, sin que haya problemas a la vista."
+    explanation: "Vertiente: el lado que falta por repasar. «Arista» suena a lenguaje de libro y señala un punto espinoso, que la frase descarta, y una «corriente» es el agua que baja por un río."
+    options:
+      - position: 1
+        text: "arista"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arista» suena a lenguaje de libro y señala un punto espinoso, y la frase dice que nadie ve problemas nuevos."
+        hint_specific: "«Arista» apunta a un punto espinoso. ¿Qué dice la frase sobre los problemas?"
+      - position: 2
+        text: "corriente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «corriente» es el agua que baja por un río o el aire que entra por una ventana, y aquí se revisa un plan."
+        hint_specific: "«Corriente» se nota en el agua o en el aire. ¿Qué queda por revisar?"
+      - position: 3
+        text: "vertiente"
+        is_correct: true
+  - position: 5
+    sentence: "Cuenta la misma historia, no otra: lo que cambia es la {{blank}} desde la que la mira."
+    hint_general: "La historia es idéntica; lo distinto es el lado desde el que se cuenta."
+    explanation: "Vertiente: el lado desde el que se mira. Una «versión» sería otra historia distinta, y la frase dice que es la misma; una «pendiente» es la cuesta por la que algo baja."
+    options:
+      - position: 1
+        text: "versión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «versión» sería otra manera de contar los hechos, y la frase aclara que la historia es la misma."
+        hint_specific: "«Versión» cambia el relato. Relee las cinco primeras palabras."
+      - position: 2
+        text: "vertiente"
+        is_correct: true
+      - position: 3
+        text: "pendiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «pendiente» es la cuesta por la que algo sube o baja, y aquí se cuenta una historia."
+        hint_specific: "«Pendiente» tiene que ver con cuestas. ¿Qué se cuenta en la frase?"
+  - position: 6
+    sentence: "Lo que sostiene el grupo no es cosa de una persona: es una {{blank}} del asunto que nadie había mirado."
+    hint_general: "No sale de una cabeza sola: es un lado del asunto que estaba sin mirar."
+    explanation: "Vertiente: el lado del asunto que faltaba mirar. Una «opinión» sería de una sola persona, que la frase descarta, y una «variante» sería otra versión de la misma cosa."
+    options:
+      - position: 1
+        text: "opinión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «opinión» es de una persona concreta, y la frase dice que esto no es cosa de una sola."
+        hint_specific: "«Opinión» sale de una cabeza. Relee la primera mitad de la frase."
+      - position: 2
+        text: "variante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «variante» sustituye a la opción original, y aquí el asunto sigue siendo el mismo."
+        hint_specific: "«Variante» reemplaza algo. ¿El asunto cambia en esta frase?"
+      - position: 3
+        text: "vertiente"
+        is_correct: true
+  - position: 7
+    sentence: "El informe separa la {{blank}} económica de la legal y dedica un capítulo a cada una."
+    hint_general: "Un texto escrito divide el asunto en dos caras y trata cada una aparte."
+    explanation: "Vertiente: cada cara del asunto en un capítulo. «Pata» es coloquial y suena a mueble o a charla de bar, y una «parte» sería un trozo separado del conjunto."
+    options:
+      - position: 1
+        text: "vertiente"
+        is_correct: true
+      - position: 2
+        text: "pata"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pata» es coloquial y suena a mueble o a conversación de bar, y esto va escrito en un informe con capítulos."
+        hint_specific: "«Pata» se usa hablando y muy de andar por casa. ¿Dónde se escribe esto?"
+      - position: 3
+        text: "parte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «parte» es un trozo separado del conjunto, y aquí el asunto entero se mira dos veces, desde dos lados."
+        hint_specific: "«Parte» se corta del total. ¿Se corta el asunto o se mira dos veces?"
+  - position: 8
+    sentence: "Estamos en la misma fase de siempre; lo nuevo es la {{blank}} que abrió Amaya ayer."
+    hint_general: "El momento no ha cambiado: lo nuevo es un lado del asunto recién abierto."
+    explanation: "Vertiente: el lado del asunto recién abierto. Una «etapa» sería una fase nueva, y la frase dice que seguimos en la misma; una «corriente» es el agua que baja por un río."
+    options:
+      - position: 1
+        text: "etapa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «etapa» es una fase nueva, y la frase dice que seguimos en la misma de siempre."
+        hint_specific: "«Etapa» marca un tramo nuevo. Relee las cinco primeras palabras."
+      - position: 2
+        text: "corriente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «corriente» es el agua de un río o el aire de una ventana, y aquí se abre un lado de un asunto."
+        hint_specific: "«Corriente» va de agua o de aire. ¿Qué abrió Amaya ayer?"
+      - position: 3
+        text: "vertiente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La técnica y la otra"
+    body: "Llevaban una hora discutiendo el mismo fallo sin avanzar. Amaya lo partió en dos: «Hay una vertiente técnica y otra de trato con el cliente. Empecemos por la segunda». La reunión duró quince minutos más y salieron con dos responsables, uno por cara."
+    before_phrase: "Es que aquí hay varias cosas mezcladas."
+    after_phrase: "Hay una vertiente técnica y otra de trato."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El dinero y lo otro"
+    body: "La mudanza de mi abuela se discutía siempre en números. Mi tía puso la otra cara sobre la mesa: «Está la vertiente del dinero y está la de dejar su calle». Esa noche hablamos por fin de lo segundo."
+    before_phrase: "También hay que mirarlo por lo humano."
+    after_phrase: "Está la vertiente del dinero y está la otra."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Un capítulo por cara"
+    body: "Le pidieron a Amaya un ejemplo de informe suyo. Llevaba uno impreso. «Separé la vertiente económica de la legal y dediqué un capítulo a cada una», explicó. «Así nadie discute las dos a la vez». Se lo quedaron para enseñarlo dentro."
+    before_phrase: "Lo dividí un poco por temas."
+    after_phrase: "Separé la vertiente económica de la legal."
+metrics:
+  zipf_overall: 4.0071
+  dispersion_dp: 0.2703
+  pedantry_proxy: 0.4451
+  family_size: 54
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 5011
+slug: "negativa"
+status: "draft"
+lemma: "negativa"
+part_of_speech: "sustantivo"
+syllables:
+  - "ne"
+  - "ga"
+  - "ti"
+  - "va"
+stressed_syllable: 3
+ipa_latam: "[ne.ɣaˈti.βa]"
+ipa_es: "[ne.ɣaˈti.βa]"
+explanation: "Respuesta que dice que no a lo que alguien te ha pedido."
+example_sentence: "Recibió una negativa amable y siguieron trabajando juntos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombrar el «no» como una cosa concreta lo vuelve manejable: se puede dar clara, amable o a tiempo."
+when_not_to_use: "No la uses para una queja ni para una duda; esto es la respuesta a una petición, y es que no."
+collocations:
+  - "una negativa clara"
+  - "recibir una negativa"
+  - "una negativa amable"
+replaces:
+  - before: "Le dije que no y punto"
+    after: "Le di una negativa clara"
+  - before: "Me dijeron que no otra vez"
+    after: "Recibí otra negativa"
+  - before: "Fue un no de los suyos"
+    after: "Fue una negativa muy suya"
+family:
+  - "negar"
+  - "negativo"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+tags:
+  comodin:
+    - "un no"
+  funcion:
+    - "rechazar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "negligencia"
+    difference: "«Negligencia» es el descuido de quien no hace lo que debía; la otra palabra es una respuesta clara a una petición."
+    memory_trick: "La negligencia se olvida; la respuesta se dice en voz alta."
+  - confused_with: "negociación"
+    difference: "Una «negociación» busca un punto intermedio entre dos partes; la otra palabra cierra la puerta sin punto intermedio."
+    memory_trick: "En la negociación se cede algo; en lo otro no se cede nada."
+exercises:
+  - position: 1
+    sentence: "Hortensia pidió el sábado libre y recibió una {{blank}} tan amable que se quedó de buen humor."
+    hint_general: "Le dijeron que no, y aun así salió contenta."
+    explanation: "Negativa: le dijeron que no de buenas maneras. «Negligencia» sería un descuido de quien debía actuar, y «portazo» es coloquial y suena a corte brusco."
+    options:
+      - position: 1
+        text: "negligencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Negligencia» es el descuido de quien no hace lo que debía, y aquí sí le contestaron, y con cuidado."
+        hint_specific: "La negligencia se nota en lo que nadie hizo. ¿Alguien dejó de contestar a Hortensia?"
+      - position: 2
+        text: "negativa"
+        is_correct: true
+      - position: 3
+        text: "portazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Portazo» es coloquial y suena a corte brusco y sin explicación, y la frase dice que ella se quedó de buen humor."
+        hint_specific: "Un portazo deja mal cuerpo. ¿Cómo salió ella de esa conversación?"
+  - position: 2
+    sentence: "Después de tres correos sin respuesta, Bernabé prefería una {{blank}} clara antes que otro silencio."
+    hint_general: "Prefiere un no rotundo a seguir sin saber nada."
+    explanation: "Negativa: el no claro que prefiere. «Negociación» buscaría un punto intermedio, y «duda» sería justo lo que ya tiene de sobra."
+    options:
+      - position: 1
+        text: "negativa"
+        is_correct: true
+      - position: 2
+        text: "negociación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «negociación» busca un punto intermedio, y él no quiere negociar: quiere saber a qué atenerse."
+        hint_specific: "Negociar abre una conversación larga. ¿Qué pide él después de tres correos?"
+      - position: 3
+        text: "duda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «duda» es lo que ya tiene de sobra tras tres silencios, y lo que pide es algo que la cierre."
+        hint_specific: "La duda es lo que ya sufre. ¿Qué quiere recibir para acabar con ella?"
+  - position: 3
+    sentence: "En la comunidad votaron la obra del patio y hubo dos {{blank}} y once síes."
+    hint_general: "Dos votos dijeron que no y once dijeron que sí."
+    explanation: "Negativas: los dos votos que dijeron que no. «Negligencias» serían descuidos de alguien, y «vetos» es palabra de reglamento y bloquea aunque la mayoría apruebe."
+    options:
+      - position: 1
+        text: "negligencias"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Las «negligencias» son descuidos de quien debía actuar, y aquí lo que se cuenta son votos emitidos."
+        hint_specific: "Una negligencia es algo que no se hizo. ¿Qué se está contando en esa votación?"
+      - position: 2
+        text: "vetos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vetos» es palabra de reglamento y significa bloquear aunque la mayoría apruebe, y aquí los once síes ganan sin problema."
+        hint_specific: "Un veto tumba la decisión él solo. ¿Salió adelante la obra del patio?"
+      - position: 3
+        text: "negativas"
+        is_correct: true
+  - position: 4
+    sentence: "Una {{blank}} dicha el martes molesta menos que un sí dudoso arrastrado hasta el viernes."
+    hint_general: "Es mejor decir que no pronto que alargar un sí poco firme."
+    explanation: "Negativa: el no dicho a tiempo. «Negligencia» sería el descuido de quien no hace lo suyo, y «excusa» sería una justificación, no una respuesta."
+    options:
+      - position: 1
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «excusa» justifica por qué no puedes, y la frase compara respuestas por la fecha en que se dan, no por su motivo."
+        hint_specific: "Una excusa explica un porqué. ¿Qué compara la frase: motivos o fechas?"
+      - position: 2
+        text: "negativa"
+        is_correct: true
+      - position: 3
+        text: "negligencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «negligencia» es un descuido, y aquí alguien contesta a tiempo, que es lo contrario de descuidarse."
+        hint_specific: "La negligencia deja las cosas sin hacer. ¿Qué se hace el martes en esta frase?"
+  - position: 5
+    sentence: "Nerea guarda la {{blank}} del primer editor como recuerdo: le dio la idea de buscar a los otros doce."
+    hint_general: "Guarda aquel no porque la empujó a seguir buscando."
+    explanation: "Negativa: el no del primer editor. «Negociación» habría sido un acuerdo a medias, y una «queja» sería un reproche suyo, no una respuesta ajena."
+    options:
+      - position: 1
+        text: "negativa"
+        is_correct: true
+      - position: 2
+        text: "negociación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «negociación» habría terminado en un acuerdo a medias, y aquí no hubo acuerdo: hubo que buscar a otros doce."
+        hint_specific: "De una negociación sale un trato. ¿Qué tuvo que hacer Nerea después?"
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» sería un reproche suyo, y lo que guarda es lo que le contestó otra persona."
+        hint_specific: "La queja la pone quien está descontento. ¿Quién escribió lo que ella guarda?"
+  - position: 6
+    sentence: "Mi hermano convierte cada {{blank}} en un drama de tres días, y por eso ya nadie le pide nada."
+    hint_general: "Cuando le dicen que no, monta un drama largo."
+    explanation: "Negativa: cada no que recibe. «Negligencia» sería un descuido ajeno, y «advertencia» sería un aviso antes de que pase algo."
+    options:
+      - position: 1
+        text: "negligencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «negligencia» es un descuido de otra persona, y lo que a él le duele es que le contesten que no."
+        hint_specific: "La negligencia es algo que se deja sin hacer. ¿Qué es lo que desata su drama?"
+      - position: 2
+        text: "negativa"
+        is_correct: true
+      - position: 3
+        text: "advertencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «advertencia» avisa antes de que algo pase, y esto llega después de que él haya pedido algo."
+        hint_specific: "Una advertencia va por delante. ¿Cuándo llega lo que le sienta mal?"
+  - position: 7
+    sentence: "Clemente dio su {{blank}} por escrito, con dos líneas de motivo, y el proveedor se lo agradeció."
+    hint_general: "Puso su no por escrito y explicó brevemente el motivo."
+    explanation: "Negativa: su no por escrito. «Negociación» habría abierto un regateo, y «respuesta» a secas no dice si acepta o rechaza."
+    options:
+      - position: 1
+        text: "respuesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «respuesta» a secas no dice si acepta o rechaza, y el agradecimiento del proveedor viene justo de saber a qué atenerse."
+        hint_specific: "Una respuesta puede ser un sí. ¿Qué le agradece el proveedor a Clemente?"
+      - position: 2
+        text: "negativa"
+        is_correct: true
+      - position: 3
+        text: "negociación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «negociación» abriría un regateo de precios y plazos, y aquí el asunto se cierra en dos líneas."
+        hint_specific: "Negociar alarga el trato. ¿Cuánto ocupa lo que escribe Clemente?"
+  - position: 8
+    sentence: "Berta ensayó su {{blank}} delante del espejo hasta que le salió sin disculparse tres veces."
+    hint_general: "Practicó su no hasta decirlo sin pedir perdón tanto."
+    explanation: "Negativa: su no ensayado. «Negligencia» sería un descuido suyo, y «condición» sería un sí con requisitos, no un rechazo."
+    options:
+      - position: 1
+        text: "condición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «condición» es un sí con requisitos, y Berta ensaya justo lo contrario: cerrar la puerta sin pedir perdón."
+        hint_specific: "Una condición abre la puerta con llave. ¿Qué practica ella delante del espejo?"
+      - position: 2
+        text: "negligencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «negligencia» es un descuido, y ensayar algo delante del espejo es lo contrario de descuidarlo."
+        hint_specific: "La negligencia no se prepara. ¿Cuántas veces ensaya Berta?"
+      - position: 3
+        text: "negativa"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El espejo de Berta"
+    body: "Berta decía que sí a todas las comidas de los domingos y luego pasaba la semana enfadada. Una tarde ensayó delante del espejo: «Este domingo no puedo». Sin disculparse tres veces, sin inventar médicos. Su madre contestó «vale, la próxima» y ahí se acabó el asunto."
+    before_phrase: "Es que no sé decir que no sin quedar mal."
+    after_phrase: "Ensayé mi negativa hasta que me salió corta."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos noes y once síes"
+    body: "En la reunión de la comunidad se votó arreglar el patio. Hubo dos negativas y once síes, y las dos personas que dijeron que no lo explicaron en un minuto. Nadie se levantó de la silla enfadado, y la obra empezó en octubre."
+    before_phrase: "Dos dijeron que no y ya está."
+    after_phrase: "Hubo dos negativas, explicadas en un minuto."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La carpeta de los noes"
+    body: "Nerea guarda en una carpeta todas las respuestas que le dijeron que no. La primera es de hace nueve años. «Esa negativa me dio la lista de los otros doce sitios», cuenta. Al décimo tercero le dijeron que sí, y ese correo lo tiene enmarcado."
+    before_phrase: "Me dijeron que no y casi lo dejo."
+    after_phrase: "Aquella negativa me dio la lista de los siguientes."
+metrics:
+  zipf_overall: 4.6742
+  dispersion_dp: 0.0596
+  pedantry_proxy: 0.5289
+  family_size: 20
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

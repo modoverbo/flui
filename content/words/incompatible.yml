@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 5017
+slug: "incompatible"
+status: "draft"
+lemma: "incompatible"
+part_of_speech: "adjetivo"
+syllables:
+  - "in"
+  - "com"
+  - "pa"
+  - "ti"
+  - "ble"
+stressed_syllable: 4
+ipa_latam: "[in.kom.paˈti.βle]"
+ipa_es: "[in.kom.paˈti.βle]"
+explanation: "Que no puede estar junto con otra cosa porque las dos chocan."
+example_sentence: "Ese horario es incompatible con la guardería, así que no puedo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Convierte un «no puedo» en un hecho comprobable: no hablas de ganas, hablas de dos cosas que no caben a la vez."
+when_not_to_use: "No la uses para algo que simplemente no te apetece; aquí hay un choque real entre dos cosas."
+collocations:
+  - "horarios incompatibles"
+  - "incompatible con el trabajo"
+  - "una fecha incompatible"
+replaces:
+  - before: "Es que no me cuadra con lo otro"
+    after: "Es incompatible con lo otro"
+  - before: "No puedo estar en dos sitios a la vez"
+    after: "Las dos citas son incompatibles"
+  - before: "Ese turno me pisa la tarde de los niños"
+    after: "Ese turno es incompatible con la tarde de los niños"
+family:
+  - "incompatibilidad"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin:
+    - "no cuadra"
+  funcion:
+    - "justificar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "incomparable"
+    difference: "«Incomparable» es un elogio: significa que nada se le parece; la otra palabra dice que dos cosas no caben juntas."
+    memory_trick: "Lo incomparable gana; lo otro choca."
+  - confused_with: "incontable"
+    difference: "«Incontable» es lo que no se puede contar por lo mucho que hay; la otra palabra no habla de cantidad."
+    memory_trick: "Lo incontable se desborda; lo otro no encaja."
+exercises:
+  - position: 1
+    sentence: "Valentín rechazó el turno de tarde porque es {{blank}} con la hora de recoger a su hija."
+    hint_general: "Las dos cosas caen a la vez y no puede hacer las dos."
+    explanation: "Incompatible: las dos cosas caen a la vez. «Incomparable» sería un elogio, y «reñido» es una expresión coloquial que suena a competición."
+    options:
+      - position: 1
+        text: "incomparable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomparable» es un elogio y significa que nada se le parece, y aquí no se elogia el turno: se rechaza."
+        hint_specific: "Lo incomparable se dice de lo que admiras. ¿Valentín admira ese turno?"
+      - position: 2
+        text: "incompatible"
+        is_correct: true
+      - position: 3
+        text: "reñido"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Reñido» es una expresión coloquial que evoca una competición ajustada, y aquí lo que hay es un choque de horas."
+        hint_specific: "Lo reñido suena a partido o a votación. ¿Qué choca en la frase?"
+  - position: 2
+    sentence: "Las dos citas del jueves son {{blank}}: empiezan a la misma hora en barrios distintos."
+    hint_general: "Coinciden en hora y están lejos, así que no caben las dos."
+    explanation: "Incompatibles: coinciden en hora y en dos sitios. «Incomparables» sería un elogio, e «incontables» hablaría de que son muchísimas."
+    options:
+      - position: 1
+        text: "incompatibles"
+        is_correct: true
+      - position: 2
+        text: "incontables"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incontables» significa que son tantas que no se pueden contar, y la frase dice que son exactamente dos."
+        hint_specific: "Lo incontable no cabe en una lista. ¿Cuántas citas hay el jueves?"
+      - position: 3
+        text: "incomparables"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomparables» es un elogio y dice que nada se les parece, y aquí solo se explica por qué no caben las dos."
+        hint_specific: "Lo incomparable se admira. ¿La frase admira esas citas o las descarta?"
+  - position: 3
+    sentence: "Decir que un plan es {{blank}} con tu agenda convence más que decir que no te viene bien."
+    hint_general: "Explicar el choque real convence más que hablar de ganas."
+    explanation: "Incompatible: hay un choque real con la agenda. «Incomparable» sería un elogio, y «difícil» dejaría abierta la puerta a intentarlo igual."
+    options:
+      - position: 1
+        text: "difícil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Difícil» deja la puerta abierta a intentarlo igual, y la frase busca justo una razón que cierre el asunto."
+        hint_specific: "Lo difícil todavía se puede intentar. ¿Qué busca la frase: dudar o zanjar?"
+      - position: 2
+        text: "incompatible"
+        is_correct: true
+      - position: 3
+        text: "incomparable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomparable» es un elogio y significa que nada se le parece, y aquí se está explicando un rechazo."
+        hint_specific: "Lo incomparable es lo mejor que has visto. ¿Qué se explica en esta frase?"
+  - position: 4
+    sentence: "Aquel programa antiguo resultó {{blank}} con los equipos nuevos y hubo que cambiarlo entero."
+    hint_general: "El programa y las máquinas nuevas no funcionan juntos."
+    explanation: "Incompatible: el programa y las máquinas no funcionan juntos. «Incomprensible» diría que no se entiende, y «antagónico» es palabra culta de debate y teoría."
+    options:
+      - position: 1
+        text: "incomprensible"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomprensible» diría que nadie entiende ese programa, y el problema es que no funciona con las máquinas nuevas."
+        hint_specific: "Lo incomprensible no se entiende. ¿El problema es de entender o de funcionar?"
+      - position: 2
+        text: "antagónico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Antagónico» es palabra culta de debate y teoría y se usa para posturas enfrentadas, no para un programa y una máquina."
+        hint_specific: "Lo antagónico aparece en un ensayo. ¿Qué dos cosas chocan aquí?"
+      - position: 3
+        text: "incompatible"
+        is_correct: true
+  - position: 5
+    sentence: "Estudiar por las noches y madrugar cada día acabaron siendo cosas {{blank}} para Ofelia."
+    hint_general: "Las dos costumbres no se sostienen a la vez."
+    explanation: "Incompatibles: las dos costumbres no se sostienen juntas. «Incomparables» sería un elogio, y «contrarias» diría que se oponen en sentido, no que choquen en la práctica."
+    options:
+      - position: 1
+        text: "incompatibles"
+        is_correct: true
+      - position: 2
+        text: "incomparables"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomparables» es un elogio y dice que nada se les parece, y aquí las dos costumbres se estorban."
+        hint_specific: "Lo incomparable se admira. ¿Qué pasa entre esas dos costumbres?"
+      - position: 3
+        text: "contrarias"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Contrarias» dice que dos ideas se oponen en su sentido, y aquí el choque es de horas de sueño, no de ideas."
+        hint_specific: "Lo contrario se opone en el significado. ¿Qué choca en el día de Ofelia?"
+  - position: 6
+    sentence: "Federico avisó de que el viaje de mayo le sale {{blank}} con la mudanza, y buscaron otra fecha."
+    hint_general: "El viaje y la mudanza caen encima y no puede con las dos."
+    explanation: "Incompatible: el viaje y la mudanza caen encima. «Incontable» hablaría de cantidad, e «imposible» diría que no se puede de ningún modo, ni cambiando la fecha."
+    options:
+      - position: 1
+        text: "incontable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incontable» habla de una cantidad que no se puede contar, y aquí hay dos cosas muy contables: un viaje y una mudanza."
+        hint_specific: "Lo incontable no cabe en una lista. ¿Cuántas cosas choca Federico?"
+      - position: 2
+        text: "incompatible"
+        is_correct: true
+      - position: 3
+        text: "imposible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imposible» diría que el viaje no puede hacerse nunca, y en la frase basta con cambiar la fecha."
+        hint_specific: "Lo imposible no se arregla moviendo el calendario. ¿Qué hicieron al final?"
+  - position: 7
+    sentence: "Aquella beca era {{blank}} con cualquier trabajo pagado, y por eso Leonel la dejó pasar."
+    hint_general: "La beca y un sueldo no se podían tener al mismo tiempo."
+    explanation: "Incompatible: la beca y un sueldo no se podían tener a la vez. «Incomparable» sería un elogio, y «lejana» hablaría de distancia."
+    options:
+      - position: 1
+        text: "incompatible"
+        is_correct: true
+      - position: 2
+        text: "lejana"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lejana» habla de distancia en el mapa o en el tiempo, y aquí el problema es la regla que prohíbe cobrar a la vez."
+        hint_specific: "Lo lejano se mide en kilómetros. ¿Qué le impidió aceptar la beca?"
+      - position: 3
+        text: "incomparable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomparable» es un elogio y dice que nada se le parece, y esa beca acaba rechazada, no admirada."
+        hint_specific: "Lo incomparable se presume. ¿Qué hizo Leonel con la beca?"
+  - position: 8
+    sentence: "El médico le explicó que las dos pastillas son {{blank}} y que hay que dejar seis horas entre una y otra."
+    hint_general: "No deben tomarse a la vez y hay que separarlas."
+    explanation: "Incompatibles: no deben tomarse a la vez. «Incomprensibles» diría que no se entienden, y «antagónicas» es palabra culta de debate y teoría."
+    options:
+      - position: 1
+        text: "incomprensibles"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomprensibles» diría que nadie las entiende, y lo que explica el médico es cuándo tomarlas."
+        hint_specific: "Lo incomprensible no se entiende. ¿Qué es lo que explica el médico?"
+      - position: 2
+        text: "incompatibles"
+        is_correct: true
+      - position: 3
+        text: "antagónicas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Antagónicas» es palabra culta de debate y se usa para posturas enfrentadas, no para dos pastillas y un horario."
+        hint_specific: "Lo antagónico suena a discusión de ideas. ¿Qué se está separando seis horas?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La tarde de los jueves"
+    body: "A Valentín le ofrecieron el turno de tarde con mejor horario de entrada. Hizo las cuentas y dijo que no: «Es incompatible con recoger a la niña los jueves». Su jefa le propuso los martes y aceptó. Nadie tuvo que hablar de ganas ni de esfuerzo."
+    before_phrase: "Es que no me cuadra con lo de la niña."
+    after_phrase: "Es incompatible con recogerla los jueves."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos citas el jueves"
+    body: "Ofelia había dicho que sí a dos cosas el mismo jueves a las siete. Al darse cuenta escribió a las dos personas la misma frase: «Son incompatibles, y prefiero avisar hoy». Movió una al viernes y llegó descansada a las dos."
+    before_phrase: "Uf, me he liado con las horas, qué desastre."
+    after_phrase: "Las dos son incompatibles; muevo una."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Mayo no puede ser"
+    body: "Federico vio el calendario del viaje y el de la mudanza y coincidían de lleno. Lo dijo el primer día, no la víspera: «Mayo me sale incompatible; junio entero lo tengo libre». El equipo movió el viaje a junio y nadie perdió un billete."
+    before_phrase: "A ver si puedo, aunque lo tengo complicado."
+    after_phrase: "Mayo me sale incompatible; junio lo tengo libre."
+metrics:
+  zipf_overall: 3.8459
+  dispersion_dp: 0.2287
+  pedantry_proxy: 0.4419
+  family_size: 61
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

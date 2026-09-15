@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 5024
+slug: "vacante"
+status: "draft"
+lemma: "vacante"
+part_of_speech: "sustantivo"
+syllables:
+  - "va"
+  - "can"
+  - "te"
+stressed_syllable: 2
+ipa_latam: "[baˈkan.te]"
+ipa_es: "[baˈkan.te]"
+explanation: "Puesto de trabajo libre que alguien tiene que ocupar."
+example_sentence: "Escribí preguntando si la vacante del turno de mañana seguía abierta."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Preguntar por ella por su nombre te coloca dentro de la conversación: ya no pides trabajo, respondes a un hueco concreto."
+when_not_to_use: "No la uses para un puesto que ya está ocupado; aquí lo que define la palabra es que está libre."
+collocations:
+  - "cubrir una vacante"
+  - "una vacante abierta"
+  - "la vacante del turno de mañana"
+replaces:
+  - before: "Un puesto que tienen libre"
+    after: "Una vacante"
+  - before: "¿Sigue disponible lo que ofrecíais?"
+    after: "¿Sigue abierta la vacante?"
+  - before: "Han tapado el hueco que dejó Ramona"
+    after: "Han cubierto la vacante que dejó Ramona"
+family: []
+themes:
+  - slug: "entrevistas"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+tags:
+  comodin:
+    - "hueco"
+  funcion:
+    - "nombrar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "vacuna"
+    difference: "Una «vacuna» es lo que se pone para prevenir una enfermedad; la otra palabra es un puesto de trabajo sin ocupar."
+    memory_trick: "La vacuna se pone en el brazo; lo otro se cubre en la oficina."
+  - confused_with: "plantilla"
+    difference: "La «plantilla» es el conjunto de personas que ya trabajan allí; la otra palabra es el sitio vacío que falta por llenar."
+    memory_trick: "La plantilla está dentro; lo otro está por llenar."
+exercises:
+  - position: 1
+    sentence: "Olga escribió preguntando si la {{blank}} del turno de mañana seguía abierta."
+    hint_general: "Preguntó por el puesto libre de ese turno."
+    explanation: "Vacante: el puesto libre del turno. «Vacuna» es lo que se pone para prevenir una enfermedad, y «plantilla» es la gente que ya trabaja allí."
+    options:
+      - position: 1
+        text: "vacuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «vacuna» se pone en el brazo para prevenir una enfermedad, y aquí se pregunta por un puesto de trabajo."
+        hint_specific: "Una vacuna se administra en un centro de salud. ¿Por qué pregunta Olga?"
+      - position: 2
+        text: "vacante"
+        is_correct: true
+      - position: 3
+        text: "plantilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «plantilla» es la gente que ya trabaja allí, y ella pregunta por el sitio que todavía está libre."
+        hint_specific: "La plantilla ya está dentro trabajando. ¿Qué es lo que puede seguir abierto?"
+  - position: 2
+    sentence: "Cubrieron la {{blank}} en dos semanas con alguien de otro departamento."
+    hint_general: "Llenaron el puesto libre con gente de casa."
+    explanation: "Vacante: el puesto libre que se llenó. «Vacuna» se pone para prevenir una enfermedad, y «nómina» es la lista de lo que cobra cada persona."
+    options:
+      - position: 1
+        text: "vacante"
+        is_correct: true
+      - position: 2
+        text: "vacuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «vacuna» se pone para prevenir una enfermedad, y lo que se cubre aquí es un sitio de trabajo."
+        hint_specific: "Una vacuna se pincha. ¿Qué se llena en dos semanas?"
+      - position: 3
+        text: "nómina"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «nómina» es la lista de lo que cobra cada persona, y lo que se cubre aquí es un puesto sin ocupar."
+        hint_specific: "Una nómina se paga a fin de mes. ¿Qué se cubre con alguien de otro departamento?"
+  - position: 3
+    sentence: "Desde que se jubiló Ramona hay una {{blank}} en el turno de tarde que nadie quiere."
+    hint_general: "Quedó un puesto libre y nadie lo pide."
+    explanation: "Vacante: el puesto libre que dejó la jubilación. «Vagancia» es la falta de ganas de trabajar, y «hueco» es coloquial y sirve igual para un sitio en un armario."
+    options:
+      - position: 1
+        text: "vagancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «vagancia» es la falta de ganas de trabajar, y aquí lo que hay es un sitio libre después de una jubilación."
+        hint_specific: "La vagancia describe a una persona. ¿Qué dejó Ramona al jubilarse?"
+      - position: 2
+        text: "vacante"
+        is_correct: true
+      - position: 3
+        text: "hueco"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Hueco» es coloquial y sirve igual para un sitio en un armario o en la agenda, y esto es un puesto de trabajo con turno y sueldo."
+        hint_specific: "Un hueco puede estar en una estantería. ¿Qué tiene turno de tarde?"
+  - position: 4
+    sentence: "En el anuncio ponía que la {{blank}} era para seis meses, con posibilidad de seguir."
+    hint_general: "El puesto libre duraba medio año, quizá más."
+    explanation: "Vacante: el puesto libre que se ofrece. «Vacuna» se pone para prevenir una enfermedad, y «solicitud» es el papel que rellena quien se presenta."
+    options:
+      - position: 1
+        text: "solicitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «solicitud» es el papel que rellena quien se presenta, y lo que dura seis meses es el puesto, no el papel."
+        hint_specific: "Una solicitud la escribe el candidato. ¿Qué es lo que dura seis meses?"
+      - position: 2
+        text: "vacante"
+        is_correct: true
+      - position: 3
+        text: "vacuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «vacuna» se pone para prevenir una enfermedad, y aquí se describe un puesto con duración y posibilidad de continuar."
+        hint_specific: "Una vacuna se pone en dos minutos. ¿Qué dura seis meses en el anuncio?"
+  - position: 5
+    sentence: "Preguntar por una {{blank}} concreta funciona mejor que enviar el currículo a ciegas."
+    hint_general: "Va mejor preguntar por un puesto libre concreto."
+    explanation: "Vacante: el puesto libre concreto por el que preguntas. «Vacuna» se pone para prevenir enfermedades, y «prebenda» es palabra culta y sugiere un puesto conseguido por favores."
+    options:
+      - position: 1
+        text: "vacante"
+        is_correct: true
+      - position: 2
+        text: "prebenda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prebenda» es palabra culta y sugiere un puesto cómodo conseguido por favores, y aquí se pregunta por un puesto anunciado."
+        hint_specific: "Una prebenda se consigue por enchufe. ¿Por qué se pregunta en este consejo?"
+      - position: 3
+        text: "vacuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «vacuna» se pone en el brazo, y por una vacuna no se pregunta enviando un currículo."
+        hint_specific: "Una vacuna se pide en el centro de salud. ¿Dónde se envía un currículo?"
+  - position: 6
+    sentence: "El equipo aguantó cuatro meses con una {{blank}} sin cubrir y se notó en los plazos."
+    hint_general: "Faltó una persona durante cuatro meses y el trabajo se resintió."
+    explanation: "Vacante: el puesto que quedó sin cubrir. «Vagancia» acusaría al equipo de no tener ganas, y una «candidatura» la presenta quien quiere el puesto."
+    options:
+      - position: 1
+        text: "vagancia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «vagancia» acusaría al equipo de no tener ganas, y la frase dice que faltaba una persona, no voluntad."
+        hint_specific: "La vagancia es un reproche. ¿Qué le faltó al equipo durante cuatro meses?"
+      - position: 2
+        text: "vacante"
+        is_correct: true
+      - position: 3
+        text: "candidatura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «candidatura» es lo que presenta quien quiere el puesto, y lo que falta aquí es la persona que lo ocupe."
+        hint_specific: "Una candidatura la entrega alguien de fuera. ¿Qué es lo que se quedó sin llenar?"
+  - position: 7
+    sentence: "Diego se enteró de la {{blank}} por una vecina, no por ningún anuncio."
+    hint_general: "Supo del puesto libre por el boca a boca."
+    explanation: "Vacante: el puesto libre del que se enteró. «Vacuna» se pone para prevenir una enfermedad, y «oferta» abarca cualquier cosa que se ofrezca, también un descuento."
+    options:
+      - position: 1
+        text: "oferta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «oferta» puede ser cualquier cosa que se ofrezca, hasta un descuento del súper, y aquí se trata de un puesto libre."
+        hint_specific: "Una oferta también está en un supermercado. ¿De qué se entera Diego?"
+      - position: 2
+        text: "vacuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «vacuna» se pone para prevenir una enfermedad, y de una vacuna no se entera uno para presentarse a un puesto."
+        hint_specific: "Una vacuna la anuncia un centro de salud. ¿Qué le cuenta la vecina?"
+      - position: 3
+        text: "vacante"
+        is_correct: true
+  - position: 8
+    sentence: "Antes de publicar la {{blank}}, Nerea preguntó dentro de casa por si alguien la quería."
+    hint_general: "Antes de anunciar el puesto libre lo ofreció dentro."
+    explanation: "Vacante: el puesto libre antes de anunciarlo. «Vacuna» se pone para prevenir una enfermedad, y «plantilla» es la gente que ya trabaja allí."
+    options:
+      - position: 1
+        text: "vacante"
+        is_correct: true
+      - position: 2
+        text: "plantilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «plantilla» es la gente que ya trabaja allí, y en la frase es justo a esa gente a quien se le pregunta."
+        hint_specific: "La plantilla está dentro. ¿A quién pregunta Nerea, y por qué cosa?"
+      - position: 3
+        text: "vacuna"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «vacuna» se pone para prevenir una enfermedad, y aquí lo que se publica es un puesto de trabajo."
+        hint_specific: "Una vacuna no se publica en un tablón de empleo. ¿Qué se iba a publicar?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El turno de mañana"
+    body: "Olga llevaba un mes enviando el currículo a ciegas sin respuesta. Cambió el correo: «Escribo por la vacante del turno de mañana; trabajé cinco años en un turno igual». Le contestaron ese mismo día y la citaron el jueves."
+    before_phrase: "Le mando mi currículo por si hubiera algo."
+    after_phrase: "Escribo por la vacante del turno de mañana."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Preguntar dentro primero"
+    body: "Nerea tenía el anuncio escrito y el dinero aprobado, pero antes de publicarlo preguntó dentro de casa. Dos personas levantaron la mano y una encajaba mejor que cualquier currículo de fuera. La vacante se cubrió en una semana y el anuncio nunca llegó a salir."
+    before_phrase: "Voy a sacar el anuncio a ver quién aparece."
+    after_phrase: "Antes de publicar la vacante, pregunto dentro."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La vecina del cuarto"
+    body: "Diego se enteró por la vecina del cuarto de que en su empresa había una vacante en el almacén. No había anuncio en ninguna parte. Escribió esa noche nombrando el puesto y el turno, y entró en marzo. Ahora es él quien avisa a los del portal."
+    before_phrase: "Dicen que en tu empresa buscan a alguien."
+    after_phrase: "Me dijeron que había una vacante en el almacén."
+metrics:
+  zipf_overall: 4.0286
+  dispersion_dp: 0.271
+  pedantry_proxy: 0.5132
+  family_size: 12
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 5019
+slug: "desistir"
+status: "draft"
+lemma: "desistir"
+part_of_speech: "verbo"
+syllables:
+  - "de"
+  - "sis"
+  - "tir"
+stressed_syllable: 3
+ipa_latam: "[de.sisˈtiɾ]"
+ipa_es: "[de.sisˈtiɾ]"
+explanation: "Dejar de intentar algo que llevabas tiempo buscando."
+example_sentence: "Después de cinco intentos decidí desistir y buscar otra vía."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra la decisión, no la derrota: dejas de intentarlo porque lo decides, no porque te vencen."
+when_not_to_use: "No la uses para rechazar lo que te ofrecen; aquí se abandona algo que tú buscabas."
+collocations:
+  - "desistir del intento"
+  - "acabar desistiendo"
+  - "no desistir tan pronto"
+replaces:
+  - before: "Al final lo dejé por imposible"
+    after: "Al final desistí"
+  - before: "Tiré la toalla con ese trámite"
+    after: "Desistí de ese trámite"
+  - before: "No te rindas todavía"
+    after: "No desistas todavía"
+family:
+  - "desistimiento"
+themes:
+  - slug: "decir-que-no"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin:
+    - "rendirse"
+  funcion:
+    - "abandonar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "insistir"
+    difference: "«Insistir» es repetir el intento una vez más; la otra palabra es dejar de intentarlo."
+    memory_trick: "Insistes cuando sigues; lo otro es cuando paras."
+  - confused_with: "resistir"
+    difference: "«Resistir» es aguantar la presión sin moverte; la otra palabra es soltar aquello que perseguías."
+    memory_trick: "Resistes de pie; lo otro es dar media vuelta."
+exercises:
+  - position: 1
+    sentence: "Después de cinco llamadas sin respuesta, Adela decidió {{blank}} y buscar otro proveedor."
+    hint_general: "Dejó de intentarlo y cambió de camino."
+    explanation: "Desistir: dejó de intentarlo y cambió de camino. «Insistir» sería llamar una sexta vez, y «dimitir» es palabra de oficina y significa dejar un cargo."
+    options:
+      - position: 1
+        text: "insistir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» sería hacer la sexta llamada, y la frase cuenta que dejó el teléfono y buscó a otro."
+        hint_specific: "Insistir es probar otra vez más. ¿Qué hizo Adela después de la quinta llamada?"
+      - position: 2
+        text: "desistir"
+        is_correct: true
+      - position: 3
+        text: "dimitir"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dimitir» es palabra de oficina y significa dejar un cargo que ocupabas, y aquí nadie tiene ningún cargo."
+        hint_specific: "Se dimite de un puesto con carta. ¿Qué abandona ella?"
+  - position: 2
+    sentence: "Higinio llevaba dos años detrás de aquella plaza y no {{blank}} ni cuando se la dieron a otro."
+    hint_general: "Ni con esa noticia dejó de intentarlo."
+    explanation: "Desistió: no dejó de intentarlo. «Resistió» sería aguantar una presión, y «dudó» diría que se lo pensó, no que lo dejara."
+    options:
+      - position: 1
+        text: "desistió"
+        is_correct: true
+      - position: 2
+        text: "resistió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resistir» es aguantar una presión desde fuera, y aquí él es quien empuja: va detrás de una plaza."
+        hint_specific: "Quien resiste aguanta un empuje ajeno. ¿Quién empuja en esta escena?"
+      - position: 3
+        text: "dudó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dudó» diría que se lo pensó un rato, y la frase habla de seguir o dejar de intentarlo, no de pensárselo."
+        hint_specific: "La duda pasa por dentro y no se ve. ¿Qué hizo él con sus intentos?"
+  - position: 3
+    sentence: "Conviene {{blank}} cuando llevas un año en lo mismo y cada puerta da al mismo pasillo."
+    hint_general: "Hay un momento en que dejar de intentarlo es lo sensato."
+    explanation: "Desistir: dejar de intentarlo a tiempo. «Insistir» sería probar otra puerta más, y «claudicar» es palabra culta que suena a rendirse ante un rival."
+    options:
+      - position: 1
+        text: "claudicar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Claudicar» es palabra culta que suena a rendirse ante un rival, y aquí no hay rival: hay un pasillo sin salida."
+        hint_specific: "Claudicar pide un rival y un vencedor. ¿Quién vence en esta escena?"
+      - position: 2
+        text: "desistir"
+        is_correct: true
+      - position: 3
+        text: "insistir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» sería probar una puerta más, y el consejo dice justo lo contrario tras un año de intentos."
+        hint_specific: "Insistir alarga el intento. ¿Qué aconseja la frase después de un año?"
+  - position: 4
+    sentence: "Mireya pidió la subvención tres veranos seguidos y al cuarto {{blank}} sin ningún drama."
+    hint_general: "Al cuarto año dejó de pedirla, y tan tranquila."
+    explanation: "Desistió: dejó de pedirla al cuarto año. «Asistió» sería acudir a un sitio, e «insistió» sería pedirla una cuarta vez."
+    options:
+      - position: 1
+        text: "asistió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Asistir» es acudir a un sitio o ayudar a alguien, y la frase habla de una solicitud que se deja de presentar."
+        hint_specific: "Asistir supone presentarse en un lugar. ¿Qué deja de hacer Mireya?"
+      - position: 2
+        text: "insistió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» sería presentarla una cuarta vez, y la frase dice que al cuarto verano lo dejó."
+        hint_specific: "Insistir suma un intento más. ¿Cuántos veranos la pidió?"
+      - position: 3
+        text: "desistió"
+        is_correct: true
+  - position: 5
+    sentence: "No {{blank}} en el primer no: la mitad de las cosas buenas llegan en el tercer intento."
+    hint_general: "Es un consejo para no abandonar tras el primer rechazo."
+    explanation: "Desistas: no abandones al primer rechazo. «Resistas» sería aguantar una presión, y «olvides» sería no acordarte, no dejar de intentarlo."
+    options:
+      - position: 1
+        text: "desistas"
+        is_correct: true
+      - position: 2
+        text: "resistas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resistir» es aguantar una presión que viene de fuera, y aquí eres tú quien decide seguir pidiendo o no."
+        hint_specific: "Resistir es soportar un empuje. ¿Quién decide si hay tercer intento?"
+      - position: 3
+        text: "olvides"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Olvidar» es dejar de acordarte, y se puede recordar perfectamente algo y aun así dejar de intentarlo."
+        hint_specific: "El olvido borra la memoria. ¿De qué habla el consejo: de recordar o de seguir?"
+  - position: 6
+    sentence: "El comprador {{blank}} de la casa cuando vio el informe de la instalación eléctrica."
+    hint_general: "Dejó de perseguir esa casa al ver el informe."
+    explanation: "Desistió: dejó de perseguir la casa. «Insistió» sería seguir con la compra, y «abdicó» es palabra solemne de reyes que dejan el trono."
+    options:
+      - position: 1
+        text: "insistió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» sería seguir adelante con la compra, y el informe hace justo lo contrario: le quita las ganas."
+        hint_specific: "Insistir empuja hacia delante. ¿Qué efecto tuvo el informe?"
+      - position: 2
+        text: "desistió"
+        is_correct: true
+      - position: 3
+        text: "abdicó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Abdicar» es palabra solemne de reyes que dejan el trono, y aquí alguien renuncia a comprar una vivienda."
+        hint_specific: "Abdicar sale en los libros de historia. ¿Qué estaba comprando esta persona?"
+  - position: 7
+    sentence: "Cayetano no {{blank}} del huerto ni el año de la sequía, y en septiembre sacó tomates."
+    hint_general: "Ni con la sequía dejó de intentarlo, y le salió bien."
+    explanation: "Desistió: no dejó de intentarlo pese a la sequía. «Asistió» sería acudir a un sitio, y «falló» diría que no acertó, cuando sí sacó tomates."
+    options:
+      - position: 1
+        text: "desistió"
+        is_correct: true
+      - position: 2
+        text: "asistió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Asistir» es acudir a un sitio o ayudar a alguien, y la frase habla de mantener un esfuerzo propio."
+        hint_specific: "Asistir supone presentarse donde alguien te espera. ¿Qué mantiene Cayetano?"
+      - position: 3
+        text: "falló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Falló» diría que no le salió, y el final de la frase cuenta que en septiembre hubo tomates."
+        hint_specific: "Fallar es no conseguirlo. ¿Qué pasó en septiembre?"
+  - position: 8
+    sentence: "Hay una diferencia clara entre {{blank}} a tiempo y rendirse el primer día por miedo."
+    hint_general: "Dejarlo tras muchos intentos no es lo mismo que huir al principio."
+    explanation: "Desistir: dejarlo después de intentarlo de verdad. «Insistir» sería seguir probando, y «dimitir» es palabra de oficina y significa dejar un cargo."
+    options:
+      - position: 1
+        text: "dimitir"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dimitir» es palabra de oficina y significa dejar un cargo, y la frase no habla de ningún puesto."
+        hint_specific: "Se dimite con una carta al jefe. ¿De qué habla esta comparación?"
+      - position: 2
+        text: "desistir"
+        is_correct: true
+      - position: 3
+        text: "insistir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Insistir» sería seguir probando, y la frase compara dos maneras distintas de dejarlo."
+        hint_specific: "Insistir es no parar. ¿Qué dos cosas se comparan aquí?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El cuarto verano"
+    body: "Mireya pidió la misma ayuda tres veranos seguidos y tres veces se la negaron por un papel distinto. Al cuarto lo dijo en la comida, sin drama: «Este año desisto y me busco la vida de otra manera». Su hija le preguntó si estaba triste y ella dijo que no, que estaba libre."
+    before_phrase: "Nada, que lo dejo, ya me he cansado."
+    after_phrase: "Este año desisto y busco otra vía."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cinco llamadas"
+    body: "Adela llamó cinco veces al mismo proveedor y nadie cogió el teléfono. En vez de mandar un correo enfadado, escribió tres líneas al equipo: «Desisto con este; empiezo con los otros dos presupuestos». En diez días tenían material en el almacén."
+    before_phrase: "Nada, que estos pasan de mí."
+    after_phrase: "Desisto con este y sigo con los otros dos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El año de la sequía"
+    body: "En el huerto del barrio casi todos dejaron las parcelas el verano sin lluvia. Cayetano no desistió: acarreó agua en garrafas y sombreó los tomates con cañas. En septiembre repartió dos cajas por el portal y nadie le dejó pagar el café ese mes."
+    before_phrase: "Yo seguí a lo mío y ya está."
+    after_phrase: "No desistí, aunque casi todos lo dejaron."
+metrics:
+  zipf_overall: 3.7722
+  dispersion_dp: 0.2395
+  pedantry_proxy: 0.6267
+  family_size: 27
+provenance:
+  generator: "flui authoring agent — themes presentaciones-oratoria, decir-que-no, entrevistas, elogio-reconocimiento"
+  gate: null
+  checked_on: "2026-09-14"

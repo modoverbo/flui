@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 3206
+slug: "pauta"
+status: "draft"
+lemma: "pauta"
+part_of_speech: "sustantivo"
+syllables:
+  - "pau"
+  - "ta"
+stressed_syllable: 1
+ipa_latam: "[ˈpau̯.ta]"
+ipa_es: "[ˈpau̯.ta]"
+explanation: "Línea que marca cómo hacer algo y sirve de guía, sin obligar a nadie."
+example_sentence: "Dejamos una pauta escrita para contestar a los clientes enfadados."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para orientar sin imponer: marcas el camino y dejas sitio para el caso raro."
+when_not_to_use: "No la uses para algo de cumplimiento obligatorio; eso es una regla, y esta palabra solo guía."
+collocations:
+  - "seguir una pauta"
+  - "marcar la pauta"
+  - "una pauta clara"
+replaces:
+  - before: "Nos guiamos un poco por lo de siempre"
+    after: "Seguimos una pauta"
+  - before: "Hazlo más o menos así"
+    after: "Sigue esta pauta"
+  - before: "Él decide el ritmo del grupo"
+    after: "Él marca la pauta del grupo"
+family:
+  - "pautar"
+  - "pautado"
+themes:
+  - slug: "matices-precision"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin:
+    - "cosa"
+    - "hacer"
+  funcion:
+    - "orientar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "norma"
+    difference: "Una norma obliga y tiene consecuencias si no la cumples; la otra palabra orienta y admite excepciones."
+    memory_trick: "La norma manda; la guía acompaña."
+  - confused_with: "pausa"
+    difference: "«Pausa» es un rato en que algo se detiene; la otra palabra dice cómo seguir haciendo algo."
+    memory_trick: "La pausa para; la guía sigue."
+exercises:
+  - position: 1
+    sentence: "El manual no obliga a nada, solo deja una {{blank}} para contestar cuando el cliente escribe enfadado."
+    hint_general: "Orienta cómo actuar sin obligar a nadie a hacerlo así."
+    explanation: "Pauta: una guía que orienta sin obligar. Una «norma» obligaría, y la frase dice que el manual no obliga; una «pausa» sería un rato de descanso."
+    options:
+      - position: 1
+        text: "norma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «norma» obliga a cumplirla, y la frase empieza diciendo que el manual no obliga a nada."
+        hint_specific: "«Norma» trae obligación. Relee qué dice la frase sobre el manual."
+      - position: 2
+        text: "pauta"
+        is_correct: true
+      - position: 3
+        text: "pausa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «pausa» es un rato en que algo se detiene, y aquí se explica cómo contestar un correo."
+        hint_specific: "«Pausa» detiene la acción. ¿La frase manda parar o explica cómo seguir?"
+  - position: 2
+    sentence: "Cada vez que el grupo se atasca, Nuria propone la misma {{blank}}: primero los datos, luego las opiniones."
+    hint_general: "Propone un orden de trabajo que sirve de guía cuando el grupo se traba."
+    explanation: "Pauta: el orden de trabajo que propone como guía. Una «costumbre» se instala sola sin que nadie la proponga, y una «flauta» es un instrumento de música."
+    options:
+      - position: 1
+        text: "pauta"
+        is_correct: true
+      - position: 2
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» se instala sola de tanto repetirla, y aquí Nuria la propone a propósito cada vez."
+        hint_specific: "«Costumbre» aparece sin que nadie la decida. ¿Quién decide este orden?"
+      - position: 3
+        text: "flauta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «flauta» es un instrumento de música, y aquí se ordena una discusión de trabajo."
+        hint_specific: "«Flauta» se toca. ¿Qué propone Nuria cuando el grupo se atasca?"
+  - position: 3
+    sentence: "Nadie dio una orden; la jefa se limitó a marcar una {{blank}} y dejó que cada uno la adaptara a su cliente."
+    hint_general: "Marca el camino y deja que cada persona lo ajuste a su caso."
+    explanation: "Pauta: un camino marcado que cada uno adapta. «Pinta» es coloquial y habla del aspecto de algo, y una «orden» obliga, cuando la frase dice que nadie dio ninguna."
+    options:
+      - position: 1
+        text: "pinta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pinta» es coloquial y se refiere al aspecto que tiene algo, no a cómo conviene trabajar."
+        hint_specific: "«Pinta» habla de cómo se ve algo por fuera. ¿Qué marcó la jefa, un aspecto o un camino?"
+      - position: 2
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «orden» obliga a obedecer, y la frase empieza diciendo que nadie dio ninguna."
+        hint_specific: "«Orden» hay que obedecerla. Relee las tres primeras palabras."
+      - position: 3
+        text: "pauta"
+        is_correct: true
+  - position: 4
+    sentence: "No hace falta rellenar ningún formulario: sigue la {{blank}} y escribe el mensaje con tus palabras."
+    hint_general: "Hay una guía para escribir, pero el texto lo pones tú."
+    explanation: "Pauta: la guía que orienta mientras el texto lo pones tú. Una «plantilla» ya viene escrita y solo se rellena, y una «pausa» sería un rato de descanso."
+    options:
+      - position: 1
+        text: "plantilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «plantilla» viene ya escrita y solo se rellena, y aquí la frase pide escribir con tus palabras."
+        hint_specific: "«Plantilla» se rellena en los huecos. ¿Qué te pide la frase que hagas con el texto?"
+      - position: 2
+        text: "pauta"
+        is_correct: true
+      - position: 3
+        text: "pausa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «pausa» es un rato en que algo se detiene, y aquí se explica cómo escribir un mensaje."
+        hint_specific: "«Pausa» es parar un rato. ¿La frase manda parar o manda escribir?"
+  - position: 5
+    sentence: "Lo que hace Ignacio no es un capricho suyo: es una {{blank}} acordada por todo el equipo."
+    hint_general: "No es una rareza personal, sino una guía que el equipo decidió junto."
+    explanation: "Pauta: una guía acordada por el equipo. «Manía» es coloquial y suena a rareza personal, que la frase niega, y una «costumbre» se instala sola, sin acuerdo."
+    options:
+      - position: 1
+        text: "manía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manía» es coloquial y acusa de rareza personal, y la frase dice que no es un capricho suyo."
+        hint_specific: "«Manía» suena a rareza de una persona. ¿Quién decidió esto según la frase?"
+      - position: 2
+        text: "pauta"
+        is_correct: true
+      - position: 3
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» se instala de tanto repetirla, sin que nadie la acuerde, y esta se acordó entre todos."
+        hint_specific: "«Costumbre» nadie la firma. ¿Cómo llegó esto al equipo?"
+  - position: 6
+    sentence: "Antes de cada visita repasamos la {{blank}} de tres puntos, aunque nadie te pide cuentas si cambias el orden."
+    hint_general: "Hay tres puntos que orientan la visita y no pasa nada si los mueves."
+    explanation: "Pauta: los tres puntos que orientan sin obligar. Una «norma» traería consecuencias, y la frase dice que nadie te pide cuentas; una «pausa» sería un descanso."
+    options:
+      - position: 1
+        text: "norma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «norma» trae consecuencias si no se cumple, y aquí nadie te pide cuentas por cambiar el orden."
+        hint_specific: "«Norma» tiene consecuencias. ¿Qué pasa si mueves el orden de los tres puntos?"
+      - position: 2
+        text: "pausa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «pausa» es un rato de descanso, y lo que se repasa aquí son tres puntos de trabajo."
+        hint_specific: "«Pausa» es dejar de hacer algo. ¿Qué se repasa antes de la visita?"
+      - position: 3
+        text: "pauta"
+        is_correct: true
+  - position: 7
+    sentence: "El correo salió bien porque Emilio siguió la {{blank}} que el equipo propone; nadie se lo mandó y no copió ningún texto."
+    hint_general: "Se guio por lo que el equipo sugiere, sin recibir órdenes ni copiar nada."
+    explanation: "Pauta: la guía que el equipo sugiere. Una «orden» se la habría mandado alguien, y una «plantilla» sería un texto ya hecho que él habría copiado."
+    options:
+      - position: 1
+        text: "pauta"
+        is_correct: true
+      - position: 2
+        text: "plantilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «plantilla» es un texto ya hecho que se copia, y la frase dice que Emilio no copió ninguno."
+        hint_specific: "«Plantilla» se copia tal cual. ¿Qué dice la frase sobre copiar?"
+      - position: 3
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «orden» se la habría dado alguien, y la frase aclara que nadie se lo mandó."
+        hint_specific: "«Orden» viene de alguien con mando. ¿Quién se lo mandó a Emilio?"
+  - position: 8
+    sentence: "En casa seguimos una {{blank}} para las cenas largas, no una obligación: si alguien se cansa, se levanta y ya está."
+    hint_general: "Se sigue una guía de casa que nadie está obligado a cumplir."
+    explanation: "Pauta: una guía de casa que nadie obliga a cumplir. Una «norma» obligaría, y la frase lo niega; una «pausa» sería un rato de descanso, no una manera de hacer las cosas."
+    options:
+      - position: 1
+        text: "norma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «norma» obliga, y la frase dice justo que esto no es una obligación."
+        hint_specific: "«Norma» obliga. Relee lo que la frase dice que esto no es."
+      - position: 2
+        text: "pausa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «pausa» es un rato en que se para, y aquí se cuenta cómo se llevan las cenas de casa."
+        hint_specific: "«Pausa» detiene algo un rato. ¿Qué se explica de las cenas largas?"
+      - position: 3
+        text: "pauta"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuando el cliente escribe enfadado"
+    body: "El equipo discutía cómo contestar los correos difíciles. Nuria lo cerró en dos líneas: «No vamos a obligar a nadie; dejamos una pauta y cada uno la adapta a su cliente». La colgaron en la pared y dejaron de discutirlo."
+    before_phrase: "Hazlo más o menos como lo hacemos siempre."
+    after_phrase: "Dejamos una pauta y cada uno la adapta."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las cenas largas"
+    body: "En casa las cenas se alargan y alguien siempre acaba cansado. Mi tía propuso algo sencillo: quien se canse, se levanta. «No es una regla», aclaró, «es una pauta». Desde entonces nadie se queda en la mesa por compromiso."
+    before_phrase: "Aquí se hace así y punto."
+    after_phrase: "No es una regla, es una pauta."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Primero los datos"
+    body: "Le preguntaron a Emilio cómo ordenaba una reunión tensa. «Sigo una pauta: primero los datos, luego las opiniones», contestó. «No obliga a nadie, pero evita que la conversación empiece por el final». La entrevistadora lo apuntó entero."
+    before_phrase: "Pues intento llevarlo un poco ordenado."
+    after_phrase: "Sigo una pauta: primero los datos, luego las opiniones."
+metrics:
+  zipf_overall: 4.2124
+  dispersion_dp: 0.3259
+  pedantry_proxy: 0.4294
+  family_size: 11
+provenance:
+  generator: "flui authoring agent — theme matices-precision"
+  gate: null
+  checked_on: "2026-09-14"

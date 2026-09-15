@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "absorber"
+status: "draft"
+lemma: "absorber"
+part_of_speech: "verbo"
+syllables:
+  - "ab"
+  - "sor"
+  - "ber"
+stressed_syllable: 3
+ipa_latam: "[aβ.sorˈβeɾ]"
+ipa_es: "[aβ.sorˈβeɾ]"
+explanation: "Meter algo dentro de uno mismo poco a poco: agua, un gasto o un equipo entero."
+example_sentence: "El hotel decidió absorber la subida del gas y no tocar el precio de las noches."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Vale igual para un líquido y para un coste: siempre significa que algo entra y se queda dentro."
+when_not_to_use: "No la uses para perdonar una falta o declarar libre a alguien; eso es «absolver»."
+collocations:
+  - "absorber un gasto"
+  - "absorber el golpe"
+  - "absorber una empresa"
+replaces:
+  - before: "El hotel absolvió la subida del gas"
+    after: "El hotel absorbió la subida del gas"
+  - before: "La empresa grande se quedó con el taller"
+    after: "La empresa grande absorbió el taller"
+  - before: "Ese proyecto me comió todo el tiempo"
+    after: "Ese proyecto absorbió todo mi tiempo"
+family:
+  - "absorción"
+  - "absorbente"
+themes:
+  - slug: "paronimos"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["chupar"]
+  funcion: ["precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "absolver"
+    difference: "«Absolver» es perdonar una falta o declarar libre a alguien; la otra palabra hace que algo entre y se quede dentro."
+    memory_trick: "Una libera a una persona; la otra retiene una cosa."
+  - confused_with: "disolver"
+    difference: "«Disolver» deshace algo dentro de un líquido hasta que desaparece; la otra palabra lo retiene entero."
+    memory_trick: "Disolver deshace; retener guarda."
+exercises:
+  - position: 1
+    sentence: "La esponja nueva {{blank}} el vaso entero antes de que Julia trajera el trapo."
+    hint_general: "El líquido entra en algo y se queda dentro."
+    explanation: "Absorbió: el agua entró en la esponja y se quedó dentro. «Absolvió» sería perdonar una falta, y «chupó» es coloquial y suena a boca, no a esponja."
+    options:
+      - position: 1
+        text: "absolvió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Absolver» es perdonar una falta o declarar libre a alguien, y una esponja no perdona nada: recoge agua."
+        hint_specific: "«Absolver» solo cae sobre personas. ¿A quién perdonaría una esponja?"
+      - position: 2
+        text: "absorbió"
+        is_correct: true
+      - position: 3
+        text: "chupó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chupar» es coloquial y evoca una boca; para una esponja que retiene agua suena poco cuidado."
+        hint_specific: "«Chupar» se hace con la boca. ¿Encaja ese verbo con un objeto de cocina?"
+  - position: 2
+    sentence: "La empresa grande {{blank}} al taller del barrio y mantuvo a todo su equipo."
+    hint_general: "El negocio pequeño pasó a formar parte del grande."
+    explanation: "Absorbió: el taller pasó a formar parte del grupo grande. «Absolvió» sería perdonar una falta, y «disolvió» habría hecho desaparecer el taller."
+    options:
+      - position: 1
+        text: "disolvió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disolver» haría desaparecer el taller, y la frase dice que todo su equipo siguió trabajando."
+        hint_specific: "Disolver hace desaparecer. ¿Qué pasó con el equipo del taller?"
+      - position: 2
+        text: "absorbió"
+        is_correct: true
+      - position: 3
+        text: "absolvió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Absolver» es declarar libre de culpa a una persona, y aquí un negocio pasa a formar parte de otro."
+        hint_specific: "«Absolver» perdona a alguien. ¿Había alguna falta que perdonar en este trato?"
+  - position: 3
+    sentence: "Para no subir el precio, el hotel decidió {{blank}} el aumento del gas durante seis meses."
+    hint_general: "El coste se queda dentro de la casa en vez de pasarlo al cliente."
+    explanation: "Absorber: el coste se queda en el hotel. «Resolver» sería darle una solución al aumento, y «aplazar» solo lo dejaría para más adelante."
+    options:
+      - position: 1
+        text: "resolver"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Resolver» sería encontrarle una salida al aumento, y el hotel no lo soluciona: lo paga él y sigue adelante."
+        hint_specific: "Resolver busca una salida. ¿El hotel arregla la subida del gas o carga con ella?"
+      - position: 2
+        text: "absorber"
+        is_correct: true
+      - position: 3
+        text: "aplazar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplazar» dejaría la subida para más adelante, y aquí el hotel la asume ya durante seis meses."
+        hint_specific: "Aplazar mueve la fecha. ¿Se retrasa el gasto o lo paga el hotel desde hoy?"
+  - position: 4
+    sentence: "Las suelas nuevas {{blank}} mejor el golpe y a Ramiro dejaron de dolerle las rodillas."
+    hint_general: "El material recoge la fuerza del impacto y no la deja pasar."
+    explanation: "Absorbían: las suelas recogían la fuerza del impacto. «Absolvían» sería perdonar una falta, y «encajaban» diría que aguantan el golpe, no que lo retienen."
+    options:
+      - position: 1
+        text: "absorbían"
+        is_correct: true
+      - position: 2
+        text: "absolvían"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Absolver» es perdonar una falta a alguien, y unas suelas no juzgan a nadie: recogen la fuerza del golpe."
+        hint_specific: "«Absolver» perdona a personas. ¿A quién perdonarían unas suelas?"
+      - position: 3
+        text: "encajaban"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encajar» un golpe es aguantarlo sin caerse, y las rodillas mejoraron porque el material se quedó con la fuerza."
+        hint_specific: "Encajar es aguantar de pie. ¿Por qué dejaron de dolerle las rodillas?"
+  - position: 5
+    sentence: "Ese proyecto {{blank}} todo mi tiempo libre y ni me di cuenta."
+    hint_general: "Algo se llevó dentro las horas de alguien hasta no dejar ninguna."
+    explanation: "Absorbió: el proyecto se quedó con todas mis horas. «Absolvió» sería perdonar una falta, y «engulló» es coloquial y suena a tragar con voracidad."
+    options:
+      - position: 1
+        text: "engulló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Engullir» es coloquial y sugiere tragar con voracidad, y la frase describe algo lento que ni se notó."
+        hint_specific: "«Engullir» suena a bocado rápido. ¿Cómo se fue el tiempo, de golpe o sin notarlo?"
+      - position: 2
+        text: "absorbió"
+        is_correct: true
+      - position: 3
+        text: "absolvió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Absolver» es perdonar una falta a una persona, y aquí lo que desaparece son las horas libres."
+        hint_specific: "«Absolver» perdona a alguien. ¿Qué se perdió en esta frase, una culpa o unas horas?"
+  - position: 6
+    sentence: "El presupuesto del área no puede {{blank}} otro viaje más este trimestre."
+    hint_general: "El gasto no cabe dentro de lo que hay."
+    explanation: "Absorber: el gasto ya no cabe dentro. «Absolver» sería perdonar una falta, y «sufragar» pertenece al lenguaje administrativo y suena impostado aquí."
+    options:
+      - position: 1
+        text: "absolver"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Absolver» es perdonar una falta o declarar libre a alguien, y un presupuesto no juzga: solo tiene un límite."
+        hint_specific: "«Absolver» perdona a personas. ¿A quién juzgaría un presupuesto?"
+      - position: 2
+        text: "sufragar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sufragar» pertenece al lenguaje administrativo y suena impostado en una charla de equipo sobre viajes."
+        hint_specific: "«Sufragar» aparece en escritos oficiales. ¿Lo dirías así en tu reunión del lunes?"
+      - position: 3
+        text: "absorber"
+        is_correct: true
+  - position: 7
+    sentence: "Un buen forro {{blank}} la humedad y la caja de cartón llega seca."
+    hint_general: "El material se queda con el agua del aire en vez de dejarla llegar."
+    explanation: "Absorbe: el forro se queda con la humedad. «Disuelve» deshace algo dentro de un líquido, y «repele» la echaría hacia fuera en lugar de retenerla."
+    options:
+      - position: 1
+        text: "disuelve"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Disolver» deshace una sustancia dentro de un líquido, y aquí el forro no deshace nada: se queda con el agua del aire."
+        hint_specific: "Disolver necesita algo sólido que deshacer. ¿Qué se deshace dentro de ese forro?"
+      - position: 2
+        text: "repele"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repeler» echa la humedad hacia fuera, y la frase dice que el forro la retiene para que no llegue al cartón."
+        hint_specific: "Repeler empuja hacia fuera. ¿El forro devuelve el agua o se queda con ella?"
+      - position: 3
+        text: "absorbe"
+        is_correct: true
+  - position: 8
+    sentence: "Cuando el grupo creció, la sección pequeña quedó {{blank}} por la grande sin perder su nombre."
+    hint_general: "La parte pequeña pasó a estar dentro de la grande y siguió existiendo."
+    explanation: "Absorbida: la sección pasó a estar dentro de la grande. «Absuelta» sería perdonada de una falta, y «diluida» diría que perdió su forma, cuando conservó el nombre."
+    options:
+      - position: 1
+        text: "absuelta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Absolver» es perdonar una falta, y una sección de trabajo no comete faltas: cambia de sitio en el organigrama."
+        hint_specific: "«Absolver» perdona a quien es juzgado. ¿Hay algún juicio en esta reorganización?"
+      - position: 2
+        text: "diluida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Diluida» diría que la sección perdió su forma y se repartió, y la frase precisa que conservó su nombre."
+        hint_specific: "Diluirse es perder la forma propia. ¿Qué conservó la sección pequeña?"
+      - position: 3
+        text: "absorbida"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La subida del gas"
+    body: "La factura llegó un 30 % más alta. En la reunión de precios, Fernanda propuso: «Este trimestre lo absorbemos nosotros y revisamos en enero, con datos». El equipo lo anotó y ningún cliente se enteró de nada."
+    before_phrase: "Nos lo comemos nosotros y ya veremos."
+    after_phrase: "Este trimestre lo absorbemos nosotros."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Horas que no vuelven"
+    body: "Simón llevaba tres meses sin cenar en casa. Su pareja lo dijo sin reproche: «Ese proyecto está absorbiendo todo tu tiempo, y lo echo de menos». Él miró el calendario y bloqueó dos noches a la semana."
+    before_phrase: "Ese trabajo te está comiendo entero."
+    after_phrase: "Ese proyecto está absorbiendo todo tu tiempo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El taller de la esquina"
+    body: "En el bar se hablaba del taller que había cambiado de dueño. Marcos lo aclaró: «No lo cerraron. Una empresa más grande lo absorbió y siguen los mismos mecánicos». La conversación cambió de tono enseguida."
+    before_phrase: "Dicen que se lo quedó una empresa grande."
+    after_phrase: "Una empresa más grande lo absorbió."
+metrics:
+  zipf_overall: 4.3488
+  dispersion_dp: 0.1026
+  pedantry_proxy: 0.5067
+  family_size: 41
+provenance:
+  generator: "flui authoring agent — theme paronimos (absorber / absolver)"
+  gate: null
+  checked_on: "2026-09-14"

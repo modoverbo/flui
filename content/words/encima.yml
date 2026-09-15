@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "encima"
+status: "draft"
+lemma: "encima"
+part_of_speech: "adverbio"
+syllables:
+  - "en"
+  - "ci"
+  - "ma"
+stressed_syllable: 2
+ipa_latam: "[enˈsi.ma]"
+ipa_es: "[enˈθi.ma]"
+explanation: "Añade un motivo más de queja a algo que ya venía saliendo mal."
+example_sentence: "Se estropeó el coche y, encima, tuvimos que pagar la grúa."
+register: "coloquial"
+pedantry_risk: 1
+usage_tip: "Es la palabra exacta para el segundo golpe: una sola sílaba y se entiende el hartazgo."
+when_not_to_use: "No la uses si lo segundo es una buena noticia; entonces pide una palabra que sume sin quejarse."
+collocations:
+  - "encima ahora"
+  - "encima sin avisar"
+replaces:
+  - before: "Y para colmo subieron el precio"
+    after: "Y encima subieron el precio"
+  - before: "Llegamos tarde y eso, nos cambiaron el sitio"
+    after: "Llegamos tarde y encima nos cambiaron el sitio"
+  - before: "Se alargó la obra, y además cerraron el portal"
+    after: "Se alargó la obra y encima cerraron el portal"
+family: []
+themes:
+  - slug: "conectores-estructura"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "y para colmo"
+  funcion:
+    - "agravar lo ya dicho"
+  canal: "hablado"
+  formalidad: "informal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "en cima"
+    difference: "«En cima», en dos palabras, no se usa en español corriente: la cima es la parte alta de un monte. La otra suma una queja."
+    memory_trick: "La cima se sube andando; la queja se suma hablando."
+  - confused_with: "encimera"
+    difference: "«Encimera» es la superficie de la cocina donde se corta y se apoya. La otra no nombra ningún mueble: añade un agravio."
+    memory_trick: "Una se limpia con un trapo; la otra se dice con un suspiro."
+exercises:
+  - position: 1
+    sentence: "El tren salió con una hora de retraso y, {{blank}}, nos cambiaron el vagón sin decir nada."
+    hint_general: "Al primer fastidio se le suma un segundo, peor todavía."
+    explanation: "Encima: el segundo fastidio se suma al primero. «En cima» hablaría de la parte alta de un monte y «en cambio» opondría dos ideas que van en la misma dirección."
+    options:
+      - position: 1
+        text: "en cima"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«En cima», separado, remite a la parte alta de un monte, y en esta escena nadie sube a ninguna parte: se acumulan problemas."
+        hint_specific: "«En cima» apunta a lo alto de un monte. ¿Alguien sube algo en esta escena?"
+      - position: 2
+        text: "encima"
+        is_correct: true
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» enfrenta dos ideas, y aquí las dos van en la misma dirección: las dos empeoran el viaje."
+        hint_specific: "«En cambio» marca contraste. ¿La segunda mejora el viaje o lo empeora más?"
+  - position: 2
+    sentence: "La obra se alargó dos meses y {{blank}} subieron el precio del material a mitad de camino."
+    hint_general: "Al retraso se le añade un segundo golpe, este en la cartera."
+    explanation: "Encima: el golpe económico se suma al retraso. «Asimismo» suena a documento y no se queja de nada, y «por tanto» presentaría la subida como una consecuencia."
+    options:
+      - position: 1
+        text: "encima"
+        is_correct: true
+      - position: 2
+        text: "asimismo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asimismo» pertenece a los escritos formales y suma sin quejarse, cuando aquí quien habla está harto de la obra."
+        hint_specific: "«Asimismo» suena a documento y no se queja. ¿La frase informa con calma o protesta?"
+      - position: 3
+        text: "por tanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Por tanto» presentaría la subida como resultado del retraso, y son dos golpes distintos que no se deducen uno del otro."
+        hint_specific: "«Por tanto» anuncia una consecuencia. ¿La subida sale del retraso o llega aparte?"
+  - position: 3
+    sentence: "Perdí el autobús, llegué empapado y {{blank}} me había dejado el paraguas en el trabajo."
+    hint_general: "Tres desgracias en fila, y la última es la que remata el día."
+    explanation: "Encima: la tercera desgracia remata el día. «Encimera» nombra la superficie de la cocina y «apenas» mediría una cantidad muy pequeña."
+    options:
+      - position: 1
+        text: "encimera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encimera» es la superficie de la cocina donde se corta, y esta frase no habla de muebles: habla de un día horrible."
+        hint_specific: "«Encimera» es parte de una cocina. ¿Se habla de muebles o de una racha mala?"
+      - position: 2
+        text: "encima"
+        is_correct: true
+      - position: 3
+        text: "apenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apenas» mide una cantidad muy pequeña, y aquí no se mide nada: se suma otro contratiempo a la lista."
+        hint_specific: "«Apenas» sirve para medir lo poco que hubo. ¿Se mide algo o se suma otra desgracia?"
+  - position: 4
+    sentence: "Nos cancelaron la reserva del sábado y, {{blank}}, nos enteramos al llegar a la puerta."
+    hint_general: "A la cancelación se le suma la forma en que la contaron, que fue peor."
+    explanation: "Encima: la forma de avisar empeora la cancelación. «Por añadidura» suena a discurso antiguo y «entretanto» hablaría del rato de una espera."
+    options:
+      - position: 1
+        text: "por añadidura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Por añadidura» pertenece a un discurso antiguo y presenta lo segundo como un extra, cuando aquí es el golpe que más molesta."
+        hint_specific: "«Por añadidura» suena a discurso de otra época. ¿Esta escena es solemne o es un enfado del sábado?"
+      - position: 2
+        text: "encima"
+        is_correct: true
+      - position: 3
+        text: "entretanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entretanto» llena el rato de una espera, y aquí no se espera nada: se cuenta cómo se agravó el problema."
+        hint_specific: "«Entretanto» rellena una espera. ¿Hay una espera que llenar o un enfado que crece?"
+  - position: 5
+    sentence: "El portátil se apagó solo a media mañana y {{blank}} perdí el trabajo de tres horas."
+    hint_general: "El apagón fue malo, pero lo que vino detrás lo empeoró todo."
+    explanation: "Encima: la pérdida del trabajo empeora el apagón. «En cima» remite a lo alto de un monte y «al final» situaría el desastre al término de la historia."
+    options:
+      - position: 1
+        text: "en cima"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«En cima», separado, remite a la parte alta de un monte, y aquí nadie sube nada: se estropea una mañana de trabajo."
+        hint_specific: "«En cima» apunta a lo alto de un monte. ¿Hay alguna subida en esta mañana?"
+      - position: 2
+        text: "al final"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Al final» cerraría la historia tras varios episodios, y aquí solo hay dos hechos pegados: el apagón y la pérdida."
+        hint_specific: "«Al final» cierra una serie larga. ¿Se cierra una historia o se suma un golpe?"
+      - position: 3
+        text: "encima"
+        is_correct: true
+  - position: 6
+    sentence: "Nos subieron el alquiler, quitaron la plaza de garaje y {{blank}} cerraron el portal a las diez."
+    hint_general: "Tres malas noticias seguidas, y la última es la gota que colma el vaso."
+    explanation: "Encima: la tercera noticia colma el vaso. «Asimismo» suena a documento y no se queja, e «incluso» presentaría el cierre como un caso extremo pero neutro."
+    options:
+      - position: 1
+        text: "asimismo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asimismo» pertenece a los escritos formales y suma sin protestar, cuando la frase está cargada de hartazgo."
+        hint_specific: "«Asimismo» suena a carta oficial. ¿Quien habla informa con calma o está harto?"
+      - position: 2
+        text: "encima"
+        is_correct: true
+      - position: 3
+        text: "incluso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Incluso» presenta un caso extremo sin cargarlo de queja, y aquí el cierre del portal es justo lo que más molesta."
+        hint_specific: "«Incluso» sube un escalón sin protestar. ¿La frase es neutra o va cargada?"
+  - position: 7
+    sentence: "Llegó sin los papeles, con una hora de retraso y {{blank}} se molestó porque le preguntamos."
+    hint_general: "Dos fallos suyos y, al final, una reacción que empeora la escena."
+    explanation: "Encima: su reacción remata la lista de fallos. «Encimera» nombra la superficie de la cocina y «salvo» apartaría un caso de una lista."
+    options:
+      - position: 1
+        text: "encimera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encimera» es la superficie de la cocina donde se corta, y esta escena ocurre en una oficina, no entre muebles."
+        hint_specific: "«Encimera» es parte de una cocina. ¿Se habla de muebles o de una visita que sale mal?"
+      - position: 2
+        text: "salvo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Salvo» aparta un caso de una lista, y aquí la reacción no se aparta de nada: se suma a los fallos anteriores."
+        hint_specific: "«Salvo» deja un caso fuera. ¿Se deja algo fuera o se suma un fallo más?"
+      - position: 3
+        text: "encima"
+        is_correct: true
+  - position: 8
+    sentence: "El horno dejó de funcionar y, {{blank}}, la garantía había caducado el mes pasado."
+    hint_general: "La avería ya era mala; el detalle del papel la vuelve peor."
+    explanation: "Encima: el papel caducado empeora la avería. «Por añadidura» suena a discurso antiguo y «en cambio» opondría dos ideas que van en la misma dirección."
+    options:
+      - position: 1
+        text: "encima"
+        is_correct: true
+      - position: 2
+        text: "por añadidura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Por añadidura» suena a discurso antiguo y presenta lo segundo como un extra, cuando aquí es el detalle que más duele."
+        hint_specific: "«Por añadidura» pertenece a otra época. ¿La escena es solemne o es un enfado de cocina?"
+      - position: 3
+        text: "en cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«En cambio» enfrenta dos ideas, y aquí las dos empujan hacia el mismo lado: las dos empeoran la situación."
+        hint_specific: "«En cambio» marca contraste. ¿La segunda parte mejora algo o lo empeora?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La noche del sábado"
+    body: "Llegaron al restaurante y la mesa no existía. Fulgencio lo contó al día siguiente sin exagerar: «Nos cancelaron la reserva y encima nos enteramos en la puerta». Todo el grupo entendió en una frase por qué acabaron cenando pizza en el salón."
+    before_phrase: "Nos cancelaron y para colmo nos enteramos allí."
+    after_phrase: "Nos cancelaron la reserva y encima nos enteramos en la puerta."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La obra de los dos meses"
+    body: "El plazo se alargó y el precio del material subió a mitad de camino. Remedios lo resumió en la reunión sin rodeos: «Se alargó dos meses y encima subió el material». Su jefe pidió el desglose esa misma tarde y renegociaron el contrato."
+    before_phrase: "Se alargó y además subió el material, o sea, un desastre."
+    after_phrase: "Se alargó dos meses y encima subió el material."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El horno de enero"
+    body: "El horno se apagó para siempre un domingo de comida familiar y la garantía había vencido en diciembre. Eleuterio soltó la frase mientras miraba el papel: «Se rompe y encima la garantía caducó el mes pasado». Su hija se rio, y a él se le pasó el enfado antes del postre."
+    before_phrase: "Se rompe y para colmo la garantía ya no vale."
+    after_phrase: "Se rompe y encima la garantía caducó el mes pasado."
+metrics:
+  zipf_overall: 4.9790
+  dispersion_dp: 0.1263
+  pedantry_proxy: 0.5259
+  family_size: 10
+provenance:
+  generator: "authored for the conectores-estructura theme"
+  gate: null
+  checked_on: "2026-09-14"
