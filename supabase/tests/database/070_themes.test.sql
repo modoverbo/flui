@@ -2,7 +2,7 @@
 -- follow the visibility of their word, clients never write either, and the
 -- per-kind option invariant keeps cloze at 3 options while contraste takes 2.
 begin;
-select plan(38);
+select plan(40);
 
 -- Structure -----------------------------------------------------------------------
 select has_table('public', 'themes', 'themes table exists');
