@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "deslizar"
+status: "draft"
+lemma: "deslizar"
+part_of_speech: "verbo"
+syllables:
+  - "des"
+  - "li"
+  - "zar"
+stressed_syllable: 3
+ipa_latam: "[des.liˈsaɾ]"
+ipa_es: "[des.liˈθaɾ]"
+explanation: "Meter una idea dentro de la charla en voz baja, para que pase casi sin ruido."
+example_sentence: "En la respuesta larga deslizó el dato que quería que saliera publicado."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es lo que haces cuando no te dan turno: no interrumpes, colocas tu frase dentro de otra respuesta."
+when_not_to_use: "No la uses para algo dicho de frente ni a gritos; esta palabra supone que pasa casi sin que se note."
+collocations:
+  - "deslizar una idea"
+  - "deslizar un comentario"
+  - "deslizar una duda"
+replaces:
+  - before: "Lo dije de pasada, sin darle importancia"
+    after: "Lo deslicé sin darle importancia"
+  - before: "Metió ahí su comentario sin que se notara"
+    after: "Deslizó ahí su comentario"
+  - before: "Dejó caer una duda"
+    after: "Deslizó una duda"
+family:
+  - "deslizamiento"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin:
+    - "dejar caer"
+    - "decir de pasada"
+  funcion:
+    - "precisar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "deslindar"
+    difference: "«Deslindar» es separar con claridad lo que es de cada uno; lo otro mete algo dentro de otra cosa sin ruido."
+    memory_trick: "Deslindas para separar; deslizas para colar."
+  - confused_with: "insinuar"
+    difference: "«Insinuar» sugiere algo sin decirlo del todo; aquí se dice entero, solo que en voz baja y de pasada."
+    memory_trick: "Insinúas a medias; deslizas entero."
+exercises:
+  - position: 1
+    sentence: "En medio de una respuesta larga sobre el calendario, Nerea {{blank}} el dato que quería que saliera en el periódico."
+    hint_general: "Colocó su dato dentro de otra respuesta, sin subrayarlo."
+    explanation: "Deslizó: colocó su dato dentro de otra respuesta. «Deslindó» sería separar con claridad lo de cada uno, y «gritó» diría justo lo contrario del tono."
+    options:
+      - position: 1
+        text: "deslindó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslindó» es separar con claridad lo que le toca a cada uno, y aquí un dato se mete dentro de otra cosa."
+        hint_specific: "«Deslindó» separa y marca límites. ¿Se separa algo o se cuela algo?"
+      - position: 2
+        text: "deslizó"
+        is_correct: true
+      - position: 3
+        text: "gritó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gritó» supone levantar la voz, y lo que describe la frase es un dato que pasa casi desapercibido."
+        hint_specific: "«Gritó» hace ruido. ¿Ese dato se oyó fuerte o pasó de largo?"
+  - position: 2
+    sentence: "Al final del informe, Uriel {{blank}} una frase sobre el coste real que nadie leyó hasta tres meses después."
+    hint_general: "Puso una frase donde pasaría sin llamar la atención."
+    explanation: "Deslizó: puso la frase donde pasaría sin llamar la atención. «Coló» es de charla informal y acusa de hacer trampa, y «anunció» diría que lo puso por delante."
+    options:
+      - position: 1
+        text: "coló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Coló» es de conversación muy suelta y acusa de meter algo con trampa, y la frase del coste era cierta y estaba escrita."
+        hint_specific: "«Coló» insinúa trampa, en tono de calle. ¿Hay engaño o hay una frase escrita al final?"
+      - position: 2
+        text: "deslizó"
+        is_correct: true
+      - position: 3
+        text: "anunció"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anunció» supone ponerlo por delante para que se vea, y aquí nadie lo leyó hasta tres meses después."
+        hint_specific: "«Anunció» busca que se vea. ¿Cuánto tardaron en leerlo?"
+  - position: 3
+    sentence: "Sin subir la voz, mi tía {{blank}} en la sobremesa que ella también había ayudado con el traslado."
+    hint_general: "Dijo lo suyo dentro de la charla, sin pedir atención."
+    explanation: "Deslizó: dijo lo suyo sin pedir atención. «Deslindó» separaría con claridad lo de cada uno, e «insinuó» dejaría la idea a medias."
+    options:
+      - position: 1
+        text: "deslizó"
+        is_correct: true
+      - position: 2
+        text: "deslindó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslindó» es marcar con claridad qué hizo cada uno, y ella lo dijo de pasada, sin marcar nada."
+        hint_specific: "«Deslindó» traza una raya entre las partes. ¿Tu tía traza una raya o suelta una frase?"
+      - position: 3
+        text: "insinuó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insinuó» dejaría la idea a medias, y ella dijo entera su parte: que también había ayudado."
+        hint_specific: "«Insinuó» deja la idea incompleta. ¿Lo dijo entero o a medias?"
+  - position: 4
+    sentence: "El portavoz {{blank}} una fecha nueva entre dos párrafos de agradecimientos, y los periodistas tardaron en verla."
+    hint_general: "Metió la fecha donde llamaba menos la atención."
+    explanation: "Deslizó: metió la fecha donde llamaba menos la atención. «Soltó» es de charla informal y suena a decirlo de golpe, y «repitió» supondría que ya se sabía."
+    options:
+      - position: 1
+        text: "soltó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltó» es de conversación suelta y sugiere decir algo de golpe, y aquí la fecha pasó escondida entre agradecimientos."
+        hint_specific: "«Soltó» es decirlo de golpe, en tono informal. ¿La fecha se oyó de golpe o pasó desapercibida?"
+      - position: 2
+        text: "deslizó"
+        is_correct: true
+      - position: 3
+        text: "repitió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repitió» supone que ya se había dicho antes, y la frase cuenta que la fecha era nueva."
+        hint_specific: "«Repitió» necesita una vez anterior. ¿Se conocía esa fecha?"
+  - position: 5
+    sentence: "Durante la visita, Julieta {{blank}} una duda sobre el plazo y se quedó callada a ver quién la recogía."
+    hint_general: "Dejó la duda puesta con suavidad y esperó."
+    explanation: "Deslizó: dejó la duda puesta con suavidad. «Deslindó» separaría responsabilidades, y «exigió» supondría reclamar en voz alta."
+    options:
+      - position: 1
+        text: "exigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigió» es reclamar en voz alta y esperar respuesta, y ella se quedó callada a ver qué pasaba."
+        hint_specific: "«Exigió» reclama de frente. ¿Qué hizo Julieta después de hablar?"
+      - position: 2
+        text: "deslizó"
+        is_correct: true
+      - position: 3
+        text: "deslindó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslindó» es separar con claridad lo que corresponde a cada parte, y aquí solo se planta una duda."
+        hint_specific: "«Deslindó» reparte responsabilidades. ¿Reparte algo o siembra una duda?"
+  - position: 6
+    sentence: "En su publicación, Tobías {{blank}} el nombre del taller sin convertirlo en anuncio, y funcionó mejor que el cartel."
+    hint_general: "Mencionó el nombre sin que pareciera publicidad."
+    explanation: "Deslizó: mencionó el nombre sin que pareciera anuncio. «Coló» acusaría de meterlo con trampa, y «publicó» diría que lo puso como reclamo."
+    options:
+      - position: 1
+        text: "deslizó"
+        is_correct: true
+      - position: 2
+        text: "coló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Coló» es informal y acusa de meter algo a escondidas, y el nombre estaba a la vista de todos."
+        hint_specific: "«Coló» sugiere trampa, en registro de calle. ¿Se escondió el nombre?"
+      - position: 3
+        text: "publicó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Publicó» diría que lo puso como anuncio, justo lo que la frase dice que no hizo."
+        hint_specific: "«Publicó» convierte algo en anuncio. Relee: ¿parecía un anuncio?"
+  - position: 7
+    sentence: "Entre bromas, Gaspar {{blank}} que se iba de la empresa, y nadie se dio cuenta hasta la semana siguiente."
+    hint_general: "Dio la noticia sin que se notara que era una noticia."
+    explanation: "Deslizó: dio la noticia sin que pareciera una noticia. «Soltó» sugiere decirlo de golpe y en tono informal, e «insinuó» dejaría la idea a medias."
+    options:
+      - position: 1
+        text: "insinuó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insinuó» dejaría la marcha a medias decir, y él dijo claramente que se iba: solo que entre bromas."
+        hint_specific: "«Insinuó» no llega a decirlo. ¿Gaspar lo dijo o lo sugirió?"
+      - position: 2
+        text: "deslizó"
+        is_correct: true
+      - position: 3
+        text: "soltó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltó» es informal y sugiere decirlo de golpe llamando la atención, y aquí nadie se dio cuenta en una semana."
+        hint_specific: "«Soltó» llama la atención, en tono suelto. ¿Cuánto tardaron en enterarse?"
+  - position: 8
+    sentence: "Cuando no le dieron turno, Vera {{blank}} su idea dentro de la respuesta de otro y así entró en el acta."
+    hint_general: "Metió su idea dentro de la intervención ajena, sin interrumpir."
+    explanation: "Deslizó: metió su idea sin interrumpir. «Deslindó» separaría lo de cada uno, y «exigió» supondría reclamar el turno en voz alta."
+    options:
+      - position: 1
+        text: "deslindó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslindó» es separar con claridad lo que es de cada uno, y ella hizo lo contrario: mezcló lo suyo con lo ajeno."
+        hint_specific: "«Deslindó» separa. ¿Vera separa su idea o la mete dentro de otra?"
+      - position: 2
+        text: "exigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigió» sería reclamar el turno en voz alta, y la frase cuenta que no se lo dieron y buscó otra forma."
+        hint_specific: "«Exigió» reclama de frente. ¿Vera reclamó o buscó un hueco?"
+      - position: 3
+        text: "deslizó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Sin turno"
+    body: "A Vera no le daban turno en aquella reunión larga. Cuando el jefe de obra respondió sobre el calendario, ella deslizó su idea dentro de esa respuesta, en una frase. Al día siguiente la idea estaba en el acta con su nombre."
+    before_phrase: "Lo dije de pasada, aprovechando."
+    after_phrase: "Deslicé la idea dentro de su respuesta."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El dato que quería"
+    body: "Le preguntaron a Nerea por el calendario y ella contestó al calendario. Dentro de esa respuesta deslizó el dato que le importaba de verdad. Al día siguiente, el titular era ese dato y nadie pudo decir que se hubiera ido por las ramas."
+    before_phrase: "Lo metí ahí a ver si lo cogían."
+    after_phrase: "Deslicé el dato dentro de la respuesta."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La sobremesa"
+    body: "Durante años nadie mencionó que mi tía también había ayudado con el traslado. Un domingo lo deslizó ella misma, sin levantar la voz, entre el café y el postre. Mi madre levantó la vista y dijo: «Es verdad». Ya no hizo falta más."
+    before_phrase: "Lo dije bajito, sin darle importancia."
+    after_phrase: "Lo deslicé entre el café y el postre."
+metrics:
+  zipf_overall: 4.0002
+  dispersion_dp: 0.2646
+  pedantry_proxy: 0.5042
+  family_size: 51
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-15"

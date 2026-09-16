@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 7003
+slug: "nocion"
+status: "draft"
+lemma: "noción"
+part_of_speech: "sustantivo"
+syllables:
+  - "no"
+  - "ción"
+stressed_syllable: 2
+ipa_latam: "[noˈsjon]"
+ipa_es: "[noˈθjon]"
+explanation: "Idea básica de algo, la que te queda cuando no conoces los detalles."
+example_sentence: "No hace falta que lo domines: con una noción de cómo funciona el cobro, basta."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para medir lo que alguien sabe sin exigirle que lo sepa todo, y para admitir lo poco que sabes tú."
+when_not_to_use: "No la uses para un presentimiento sin razones detrás; esto es conocimiento, aunque sea mínimo."
+collocations:
+  - "nociones básicas"
+  - "una noción vaga"
+  - "la menor noción"
+replaces:
+  - before: "Sé un poco de esto, muy por encima"
+    after: "Tengo una noción básica de esto"
+  - before: "No tengo ni idea de cómo funciona"
+    after: "No tengo la menor noción de cómo funciona"
+  - before: "Algo me suena, pero poco"
+    after: "Me queda una noción vaga"
+family: []
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "idea"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "noticia"
+    difference: "Una «noticia» es el aviso de algo que ha pasado y llega de fuera; la otra palabra es lo poco que ya sabes de un tema."
+    memory_trick: "La noticia te llega; lo otro ya lo llevas."
+  - confused_with: "intuición"
+    difference: "La «intuición» es un presentimiento sin razones detrás; la otra palabra nombra un saber pequeño pero real."
+    memory_trick: "La intuición adivina; lo otro ya se aprendió."
+exercises:
+  - position: 1
+    sentence: "Antes de la primera clase, Vera preguntó quién traía ya una {{blank}} de contabilidad, para no empezar por donde no debía."
+    hint_general: "Pregunta por el saber mínimo que alguien trae de un tema, aunque sea poco y con agujeros."
+    explanation: "Noción: el saber mínimo que alguien ya trae del tema. Una «noticia» es el aviso de algo ocurrido, y la «intuición» es un presentimiento sin razones."
+    options:
+      - position: 1
+        text: "noticia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «noticia» es el aviso de algo que acaba de pasar, y Vera pregunta por lo que ya saben del tema."
+        hint_specific: "Una «noticia» cuenta un hecho reciente. ¿Vera pregunta por hechos o por lo que ya manejan?"
+      - position: 2
+        text: "noción"
+        is_correct: true
+      - position: 3
+        text: "intuición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «intuición» es un presentimiento sin razones detrás, y aquí se pregunta por conocimientos, aunque sean mínimos."
+        hint_specific: "La «intuición» no se estudia. ¿Vera pregunta por corazonadas o por lo que ya han visto?"
+  - position: 2
+    sentence: "Iván llevaba dos años en el puesto y todavía no tenía la menor {{blank}} de cómo se decidía el presupuesto."
+    hint_general: "Le falta hasta el saber más elemental del asunto, no la seguridad ni el relato de otro."
+    explanation: "Noción: le falta el saber más elemental del asunto. Una «certeza» sería estar del todo seguro, y una «pincelada» es el resumen que otro te da."
+    options:
+      - position: 1
+        text: "certeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «certeza» es estar completamente seguro de algo, y a Iván no le falta seguridad: le falta lo más básico."
+        hint_specific: "Una «certeza» supone saber ya el asunto. ¿A Iván le falta seguridad o le falta base?"
+      - position: 2
+        text: "noción"
+        is_correct: true
+      - position: 3
+        text: "pincelada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «pincelada» es el resumen breve que alguien te da; aquí no falta quien lo cuente, falta lo que él sabe."
+        hint_specific: "Una «pincelada» la da otra persona. ¿La frase habla de lo que le cuentan o de lo que lleva dentro?"
+  - position: 3
+    sentence: "Amaia supo que la humedad venía del sótano y no del techo porque tiene una {{blank}} de cómo respira una casa vieja."
+    hint_general: "Acertó apoyada en un saber pequeño sobre casas antiguas, no en una corazonada."
+    explanation: "Noción: acertó apoyada en un saber pequeño sobre casas viejas. Una «impresión» sería lo que le pareció a primera vista, y una «noticia» sería que alguien se lo contara."
+    options:
+      - position: 1
+        text: "impresión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «impresión» es lo que algo te parece a primera vista, y ella no se guía por lo que le parece: sabe cómo funcionan esas casas."
+        hint_specific: "Una «impresión» se forma mirando. ¿Amaia acierta por lo que ve o por lo que sabe de casas viejas?"
+      - position: 2
+        text: "noción"
+        is_correct: true
+      - position: 3
+        text: "noticia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «noticia» sería que alguien le hubiera contado lo del sótano, y nadie se lo contó: lo dedujo ella."
+        hint_specific: "Una «noticia» llega contada por alguien. ¿Alguien le avisó del sótano?"
+  - position: 4
+    sentence: "Dalia explica contratos a gente que nunca firmó uno y empieza siempre por la misma {{blank}}: quién promete qué y en qué plazo."
+    hint_general: "Abre siempre con el saber mínimo que hace falta antes de mirar cualquier otra cosa."
+    explanation: "Noción: el saber mínimo con el que hay que empezar. «Sabiduría» suena a lo que deja una vida entera, y la «intuición» es un presentimiento sin base."
+    options:
+      - position: 1
+        text: "sabiduría"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sabiduría» suena solemne y apunta a lo que deja una vida entera, y aquí se trata del primer dato de todos."
+        hint_specific: "«Sabiduría» pesa mucho para un primer paso. ¿Dalia abre con lo hondo o con lo elemental?"
+      - position: 2
+        text: "intuición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «intuición» funciona sin datos ni razones, y lo que Dalia da son dos datos concretos del contrato."
+        hint_specific: "La «intuición» no viene de ningún dato. ¿Lo que abre la clase son datos o corazonadas?"
+      - position: 3
+        text: "noción"
+        is_correct: true
+  - position: 5
+    sentence: "Su padre no usa el banco por internet, pero tiene una {{blank}} clarísima de cuánto entra y cuánto sale cada mes."
+    hint_general: "Maneja un saber propio y suficiente de sus cuentas, aunque no toque una pantalla."
+    explanation: "Noción: maneja un saber propio y suficiente de sus cuentas. Una «certeza» sería seguridad absoluta, y una «pincelada» es el resumen que te hace otro."
+    options:
+      - position: 1
+        text: "noción"
+        is_correct: true
+      - position: 2
+        text: "certeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «certeza» es seguridad absoluta sobre un hecho, y la frase habla de lo que él sabe de sus cuentas, no de lo seguro que está."
+        hint_specific: "Una «certeza» responde «¿estás seguro?». ¿La frase mide su seguridad o lo que conoce?"
+      - position: 3
+        text: "pincelada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «pincelada» es el resumen ligero que alguien te ofrece, y aquí nadie le resume nada: lleva él la cuenta."
+        hint_specific: "Una «pincelada» viene de fuera. ¿Alguien le cuenta sus cuentas o las lleva él?"
+  - position: 6
+    sentence: "En la entrevista le pidieron una {{blank}} general del proyecto y Rigoberto se perdió en detalles que nadie le había pedido."
+    hint_general: "Le pedían el saber mínimo del asunto, lo justo para situarse, y él fue mucho más lejos."
+    explanation: "Noción: le pedían lo justo para situarse. Una «impresión» sería su opinión personal del proyecto, y una «noticia» sería contar algo que acaba de pasar."
+    options:
+      - position: 1
+        text: "impresión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «impresión» es lo que a él le parece el proyecto, y en la sala querían saber de qué va, no qué opina."
+        hint_specific: "Una «impresión» es personal. ¿Le piden su opinión o que sitúe el proyecto?"
+      - position: 2
+        text: "noción"
+        is_correct: true
+      - position: 3
+        text: "noticia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «noticia» sería contar algo que acaba de ocurrir en el proyecto, y le piden el cuadro general de siempre."
+        hint_specific: "Una «noticia» es novedad. ¿Le piden novedades o el cuadro general?"
+  - position: 7
+    sentence: "Nadie espera que domines el sistema el primer día: basta con una {{blank}} de por dónde entra cada pedido."
+    hint_general: "Basta el saber mínimo para moverte, no el dominio completo ni un presentimiento."
+    explanation: "Noción: basta el saber mínimo para moverte el primer día. La «intuición» no se apoya en nada aprendido, y «sabiduría» exagera lo que se pide."
+    options:
+      - position: 1
+        text: "intuición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «intuición» no se apoya en nada aprendido, y el primer día lo que se pide es haber mirado por dónde entran los pedidos."
+        hint_specific: "La «intuición» no se aprende en un día ni en diez. ¿Aquí se pide adivinar o haber mirado?"
+      - position: 2
+        text: "sabiduría"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sabiduría» es una palabra solemne para lo que deja una vida, y aquí se pide lo mínimo de la primera jornada."
+        hint_specific: "«Sabiduría» suena a toda una vida. ¿Cuánto tiempo lleva esa persona en el puesto?"
+      - position: 3
+        text: "noción"
+        is_correct: true
+  - position: 8
+    sentence: "Aitana leyó el resumen en el tren y llegó a la cita con una {{blank}} suficiente para seguir la conversación."
+    hint_general: "Llegó con el saber justo del tema, el que se consigue con un resumen leído a tiempo."
+    explanation: "Noción: llegó con el saber justo para seguir el tema. Una «certeza» sería seguridad total sobre algo, y una «noticia» sería el aviso de un hecho nuevo."
+    options:
+      - position: 1
+        text: "noción"
+        is_correct: true
+      - position: 2
+        text: "certeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «certeza» es seguridad total sobre un hecho, y un resumen leído en el tren no da seguridad: da base para seguir."
+        hint_specific: "Una «certeza» no admite dudas. ¿Un resumen rápido quita todas las dudas?"
+      - position: 3
+        text: "noticia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «noticia» sería un hecho nuevo que alguien cuenta, y lo que ella lleva es el tema entendido por encima."
+        hint_specific: "Una «noticia» es un hecho concreto y nuevo. ¿Aitana lleva un hecho o el tema entero por encima?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los primeros veinte minutos"
+    body: "El equipo nuevo entraba el lunes. Ivonne cambió el plan: «Antes de repartir nada, doy una noción de cómo viaja un pedido de punta a punta». Veinte minutos. Después, las preguntas dejaron de ser sobre botones y empezaron a ser sobre el cliente."
+    before_phrase: "Les cuento un poco de todo por encima."
+    after_phrase: "Les doy una noción del recorrido entero."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "La caldera"
+    body: "El técnico habló diez minutos y Tobías no entendió nada. Al día siguiente llamó a su hermana, que arregla calderas. «No necesito la carrera, necesito una noción de qué se rompió». Ella se lo contó en cuatro frases y él pudo discutir la factura."
+    before_phrase: "Explícamelo un poco, aunque sea por encima."
+    after_phrase: "Dame una noción de qué se rompió."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Hasta dónde llego"
+    body: "Le preguntaron por una herramienta que apenas había tocado. Greta no se inventó nada: «Tengo una noción de para qué sirve y la he visto funcionar, pero no la he usado en un proyecto». La siguiente pregunta fue sobre lo que sí manejaba."
+    before_phrase: "Bueno, algo he visto, más o menos…"
+    after_phrase: "Tengo una noción, pero no la he usado."
+metrics:
+  zipf_overall: 4.2358
+  dispersion_dp: 0.1785
+  pedantry_proxy: 0.4444
+  family_size: 2
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 8110
+slug: "anhelo"
+status: "draft"
+lemma: "anhelo"
+part_of_speech: "sustantivo"
+syllables:
+  - "an"
+  - "he"
+  - "lo"
+stressed_syllable: 2
+ipa_latam: "[anˈe.lo]"
+ipa_es: "[anˈe.lo]"
+explanation: "Querer mucho algo o a alguien durante mucho tiempo, con calma."
+example_sentence: "Sentía un anhelo tranquilo de volver a verla, sin ninguna urgencia extraña."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para contar unas ganas que duran, no un impulso de un momento."
+when_not_to_use: "No la uses para un antojo pasajero ni para algo urgente y repentino: aquí las ganas se sostienen en el tiempo."
+collocations:
+  - "sentir anhelo"
+  - "con anhelo"
+  - "un anhelo tranquilo"
+replaces:
+  - before: "Tengo muchas ganas de volver a verla, desde hace días"
+    after: "Siento un anhelo de volver a verla, desde hace días"
+  - before: "Llevo tiempo queriendo que me escriba"
+    after: "Llevo tiempo con el anhelo de que me escriba"
+  - before: "Quiero que llegue el fin de semana para verlo, hace días que lo pienso"
+    after: "Siento anhelo de que llegue el fin de semana para verlo"
+family:
+  - "anhelar"
+themes:
+  - slug: "citas"
+    relevance: 3
+  - slug: "empatia-escucha"
+    relevance: 2
+tags:
+  comodin: ["ganas"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "antojo"
+    difference: "«Antojo» es un capricho que pasa rápido; el anhelo es unas ganas que se sostienen en el tiempo, no un impulso pasajero."
+    memory_trick: "El antojo se pasa pronto; el anhelo se queda."
+  - confused_with: "ansia"
+    difference: "«Ansia» suena urgente y casi desesperado; el anhelo es más tranquilo, aunque sea profundo."
+exercises:
+  - position: 1
+    sentence: "Ezequiel llevaba días sintiendo un {{blank}} tranquilo de volver a verla, sin ninguna prisa por escribirle esa misma noche."
+    hint_general: "Piensa en ganas tranquilas que se sostienen en el tiempo, no en un engaño ni en algo pasajero."
+    explanation: "Anhelo: unas ganas tranquilas que se sostienen en el tiempo. «Anzuelo» es un gancho para pescar o para atrapar a alguien con engaño, y no tiene que ver con un sentimiento; «antojo» es un capricho que pasa rápido, y aquí Ezequiel lleva días sintiéndolo."
+    options:
+      - position: 1
+        text: "anzuelo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anzuelo» es un gancho para pescar o para atrapar a alguien con un engaño, y no tiene relación con un sentimiento tranquilo como este."
+        hint_specific: "Un anzuelo atrapa con un engaño. ¿Hay algún engaño en lo que siente Ezequiel?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "antojo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Antojo» es un capricho que suele pasar rápido, y la frase dice que Ezequiel lleva días sintiendo esto, no es algo pasajero."
+        hint_specific: "El antojo pasa rápido. ¿Cuánto tiempo lleva Ezequiel sintiendo esto?"
+  - position: 2
+    sentence: "Malena sentía {{blank}} por volver a ver a su cita, aunque sin ninguna desesperación: sabía que se verían pronto de todas formas."
+    hint_general: "Es un sentimiento profundo pero tranquilo, sin desesperación ni un capricho trivial."
+    explanation: "Anhelo: unas ganas profundas, pero tranquilas. «Ansia» suena urgente y casi desesperado, y la frase aclara que no hay ninguna desesperación; «capricho» es un antojo trivial, y aquí lo que siente Malena es más profundo."
+    options:
+      - position: 1
+        text: "ansia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ansia» suena urgente y casi desesperado, y la frase aclara que Malena no siente ninguna desesperación."
+        hint_specific: "El ansia suena urgente y desesperada. ¿La frase describe desesperación?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "capricho"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Capricho» es un antojo trivial, y lo que siente Malena por volver a ver a su cita es más profundo que eso."
+        hint_specific: "El capricho es trivial. ¿Lo que siente Malena es trivial o profundo?"
+  - position: 3
+    sentence: "«¿Estás obsesionada con él o qué?», le preguntaron a Aitana. «Para nada, es solo {{blank}}: ganas tranquilas de volver a verlo, sin volverme loca», respondió ella."
+    hint_general: "Piensa en ganas tranquilas de volver a ver a alguien, ya descartada la idea de obsesión."
+    explanation: "Anhelo: unas ganas tranquilas, ya aclarado que no es obsesión. Aitana misma descarta la obsesión con «para nada»; «esperanza» implicaría duda sobre si volverán a verse, y aquí lo que describe es solo el sentimiento de espera, tranquilo."
+    options:
+      - position: 1
+        text: "obsesión"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Aitana misma descarta esta opción con «para nada» al inicio de su respuesta."
+        hint_specific: "Aitana ya dijo que no es así. ¿Qué palabra usó la pregunta de su amiga?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "esperanza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esperanza» implicaría duda sobre si van a volver a verse, y aquí lo que describe Aitana es solo el sentimiento tranquilo de espera."
+        hint_specific: "La esperanza espera algo incierto. ¿Aitana duda de si lo va a ver de nuevo?"
+  - position: 4
+    sentence: "Norma, que estaba bien sola y no le faltaba nada, sentía {{blank}} de compartir su rutina diaria con alguien, más que unas ganas de una cita en particular esta semana."
+    hint_general: "Es algo amplio y duradero, sin que falte nada en tu vida actual, no algo inmediato."
+    explanation: "Anhelo: unas ganas amplias y duraderas, no una carencia ni algo inmediato. «Necesidad» implicaría que algo le falta, y la frase aclara que estaba bien sola y no le faltaba nada; «deseo» es más general y puede sonar a algo inmediato, como una cita concreta esta semana, y aquí no se habla de eso."
+    options:
+      - position: 1
+        text: "necesidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Necesidad» implicaría que algo le falta, y la frase aclara que Norma estaba bien sola y no le faltaba nada."
+        hint_specific: "La necesidad implica que algo falta. ¿Qué dice la frase sobre cómo estaba Norma?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "deseo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Deseo» es más general y puede sonar a algo más inmediato, como una cita concreta esta semana, y aquí Norma no habla de eso."
+        hint_specific: "El deseo puede ser algo inmediato. ¿La frase menciona una cita concreta esta semana?"
+  - position: 5
+    sentence: "Bruno pensó al principio que se le pasaría en un par de días, como sus antojos de siempre, pero no era un capricho egoísta: reconoció que lo que sentía desde su última relación no era otra cosa que {{blank}}, algo que llevaba meses sin desaparecer."
+    hint_general: "Piensa en unas ganas que duran meses, distintas de un antojo que se pasa rápido o un capricho egoísta."
+    explanation: "Anhelo: unas ganas profundas que no se parecen a un antojo ni a un capricho. «Antojo» se pasa rápido, y la frase contrasta esto con sus antojos de siempre, que sí se le pasan; «capricho» es egoísta y trivial, y la frase aclara que no lo era."
+    options:
+      - position: 1
+        text: "antojo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Antojo» se pasa rápido, como los de siempre de Bruno, y la frase aclara que esto llevaba meses sin desaparecer."
+        hint_specific: "El antojo pasa rápido. ¿Cuánto tiempo llevaba sintiendo esto Bruno?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "capricho"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Capricho» es egoísta y trivial, y la frase aclara que no lo era."
+        hint_specific: "El capricho es egoísta y trivial. ¿Qué aclara la frase sobre si era un capricho?"
+  - position: 6
+    sentence: "Renata sabía que él iba a escribir tarde o temprano, así que revisaba el chat con {{blank}}, sin urgencia, disfrutando de antemano el momento en que llegara el mensaje, aunque fuera al día siguiente."
+    hint_general: "Piensa en disfrutar de antemano algo que ya sabes que va a llegar, sin dudar del resultado ni con prisa."
+    explanation: "Anhelo: disfrutar de antemano algo que ya sabes que va a llegar, sin prisa. «Esperanza» implicaría duda sobre si él va a escribir, y la frase aclara que ella sabía que tarde o temprano lo haría; «deseo» es más genérico y suena a algo más inmediato, y aquí ella acepta esperar incluso hasta el día siguiente."
+    options:
+      - position: 1
+        text: "esperanza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esperanza» implicaría duda sobre si él va a escribir, y la frase dice que Renata sabía que lo haría tarde o temprano."
+        hint_specific: "La esperanza duda del resultado. ¿Qué sabía Renata sobre si él iba a escribir?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "deseo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Deseo» es más genérico y suena a algo más inmediato, y aquí Renata acepta esperar incluso hasta el día siguiente."
+        hint_specific: "El deseo suena más inmediato. ¿Cuánto está dispuesta a esperar Renata?"
+  - position: 7
+    sentence: "Paola tenía la costumbre de que sus antojos se le pasaran en cuestión de días, pero llevaba más de un año guardando un {{blank}} silencioso de volver a esa ciudad donde se habían conocido, aunque su vida allí donde estaba iba bien y no le faltaba nada."
+    hint_general: "Piensa en unas ganas que duran mucho tiempo, sin que falte nada en tu vida actual."
+    explanation: "Anhelo: unas ganas que duran mucho tiempo, sin que falte nada en tu vida actual. «Antojo» se pasa en días, y la frase contrasta esto con sus antojos de siempre; «necesidad» implicaría que algo le falta, y la frase aclara que su vida iba bien y no le faltaba nada."
+    options:
+      - position: 1
+        text: "necesidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Necesidad» implicaría que algo le falta, y la frase aclara que su vida allí donde estaba iba bien y no le faltaba nada."
+        hint_specific: "La necesidad implica que algo falta. ¿Qué dice la frase sobre la vida de Paola?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "antojo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Antojo» se pasa en cuestión de días, como los de siempre de Paola, y la frase aclara que esto llevaba más de un año."
+        hint_specific: "El antojo se pasa rápido. ¿Cuánto tiempo llevaba Paola sintiendo esto?"
+  - position: 8
+    sentence: "Ismael volvió a casa sabiendo que tarde o temprano la distancia iba a terminar, lleno de {{blank}}, pensando en el día en que por fin pudieran verse, algo que llevaba meses sin dejar de pensar."
+    hint_general: "Es sentir algo profundo durante meses, sin dudar de que ese momento va a llegar."
+    explanation: "Anhelo: unas ganas profundas mientras esperas con calma algo que sabes que va a llegar. «Capricho» es trivial, y la frase aclara que llevaba meses pensándolo, no es un antojo pasajero; «esperanza» implicaría duda sobre el resultado, y la frase aclara que él sabía que la distancia iba a terminar tarde o temprano."
+    options:
+      - position: 1
+        text: "capricho"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Capricho» es algo trivial y pasajero, y la frase aclara que Ismael llevaba meses sin dejar de pensarlo."
+        hint_specific: "El capricho es trivial y pasajero. ¿Cuánto tiempo llevaba Ismael pensando en esto?"
+      - position: 2
+        text: "anhelo"
+        is_correct: true
+      - position: 3
+        text: "esperanza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esperanza» implicaría duda sobre el resultado, y la frase aclara que Ismael sabía que la distancia iba a terminar tarde o temprano."
+        hint_specific: "La esperanza duda del resultado. ¿Qué sabía Ismael sobre la distancia?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El mensaje que no llega"
+    body: "Después de la primera cita, Ezequiel no dejaba de mirar el teléfono, aunque sin ansiedad. «Tengo un anhelo tranquilo de que me escriba», le contó a un amigo, «sé que lo va a hacer, solo estoy esperando con ganas»."
+    before_phrase: "Tengo muchas ganas de que me escriba, aunque sin desesperarme."
+    after_phrase: "Tengo un anhelo tranquilo de que me escriba."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La conversación con mi madre"
+    body: "Malena le contó a su madre que, desde que había conocido a alguien especial, sentía unas ganas constantes de compartir su día a día con esa persona. «Eso es un anhelo bonito», le dijo su madre, «disfrútalo, no hace falta que corras»."
+    before_phrase: "Tengo ganas de compartir mi vida con esa persona, sin prisa."
+    after_phrase: "Eso es un anhelo bonito, dice mi madre."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El comentario en el almuerzo"
+    body: "En el almuerzo, Aitana le contó a una compañera que llevaba semanas con ganas de volver a ver a alguien que había conocido en un viaje, sin ninguna prisa por que pasara pronto. «Eso es puro anhelo», comentó su compañera, sonriendo, «qué bonito sentirlo así de tranquilo»."
+    before_phrase: "Tengo ganas de volver a verlo, sin ninguna prisa."
+    after_phrase: "Eso es puro anhelo, tan tranquilo."
+metrics:
+  zipf_overall: 4.2819
+  dispersion_dp: 0.1573
+  pedantry_proxy: 0.4417
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

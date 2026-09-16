@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7040
+slug: "reparto"
+status: "draft"
+lemma: "reparto"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "par"
+  - "to"
+stressed_syllable: 2
+ipa_latam: "[reˈpaɾ.to]"
+ipa_es: "[reˈpaɾ.to]"
+explanation: "Modo en que se divide el trabajo o el dinero entre varios."
+example_sentence: "El problema no era el trabajo de casa: era el reparto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Permite hablar del desequilibrio sin acusar a nadie: se discute cómo se divide, no quién es mejor persona."
+when_not_to_use: "No la uses para el orden en que se hacen las cosas, ni para la objeción que alguien pone a un plan."
+collocations:
+  - "el reparto del trabajo"
+  - "un reparto justo"
+  - "revisar el reparto"
+replaces:
+  - before: "Aquí siempre lo hace todo la misma persona"
+    after: "Aquí el reparto no funciona"
+  - before: "Hay que dividir mejor lo que hace cada uno"
+    after: "Hay que revisar el reparto"
+  - before: "Cada uno sabía qué le tocaba hacer"
+    after: "El reparto estaba claro"
+family:
+  - "repartir"
+themes:
+  - slug: "familia-crianza"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin:
+    - "división"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reparo"
+    difference: "Un «reparo» es la objeción o el apuro que alguien pone ante algo; la otra palabra es cómo se divide el trabajo."
+    memory_trick: "El reparo frena; el otro divide."
+  - confused_with: "orden"
+    difference: "El «orden» dice en qué secuencia se hacen las cosas; la otra palabra dice quién hace cada una."
+    memory_trick: "El orden pone el cuándo; el otro, el quién."
+exercises:
+  - position: 1
+    sentence: "En esa casa el {{blank}} de la cocina cambia cada semana y está escrito en la puerta de la nevera."
+    hint_general: "Está escrito quién se encarga de cada cosa esa semana."
+    explanation: "Reparto: está escrito quién se encarga de cada cosa. Un «reparo» sería una objeción que alguien pone, y un «turno» sería solo el rato que le toca a cada uno."
+    options:
+      - position: 1
+        text: "reparo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reparo» es una objeción o un apuro que alguien pone ante algo, y en la nevera está escrito quién hace qué."
+        hint_specific: "Un «reparo» lo pone una persona que duda. ¿Qué información hay en esa nevera?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "turno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «turno» dice a quién le toca y cuándo, y en la nevera aparece además qué hace cada uno de ellos."
+        hint_specific: "Un «turno» solo dice cuándo. ¿Qué más hace falta saber en una cocina?"
+  - position: 2
+    sentence: "Lo que más discutieron no fue el dinero: fue el {{blank}} de las noches con el bebé."
+    hint_general: "Discutieron cómo se dividían esas noches entre los dos."
+    explanation: "Reparto: cómo se dividían esas noches. Un «reparo» sería una objeción puntual, y un «acuerdo» sería el resultado final, no el asunto que discuten."
+    options:
+      - position: 1
+        text: "reparo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reparo» es una pega que alguien pone, y lo que discuten no es una pega: es cómo dividirse las noches."
+        hint_specific: "Un «reparo» se pone a una propuesta. ¿Qué propuesta habría aquí?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "acuerdo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «acuerdo» sería el final de la discusión, y aquí se nombra el asunto sobre el que discuten."
+        hint_specific: "Un «acuerdo» llega al terminar. ¿Está terminada esta discusión?"
+  - position: 3
+    sentence: "El {{blank}} de las horas lo decidió una hoja de cálculo y, curiosamente, nadie protestó."
+    hint_general: "Una hoja decidió cuántas horas hacía cada uno."
+    explanation: "Reparto: cuántas horas hace cada uno. «Prorrateo» es una palabra de contabilidad, y un «orden» diría en qué secuencia se hacen las cosas, no quién las hace."
+    options:
+      - position: 1
+        text: "prorrateo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prorrateo» es una palabra de contabilidad para dividir una cantidad de forma proporcional, y aquí se dividen horas entre compañeros."
+        hint_specific: "«Prorrateo» aparece en una factura. ¿Qué se está dividiendo aquí?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «orden» diría en qué secuencia se hacen las cosas, y la hoja decide cuántas horas le tocan a cada persona."
+        hint_specific: "Un «orden» organiza el antes y el después. ¿Qué organiza la hoja de cálculo?"
+  - position: 4
+    sentence: "Con un {{blank}} claro desde el principio, aquella mudanza duró cuatro horas en vez de dos días."
+    hint_general: "Cada uno sabía desde el principio de qué se encargaba."
+    explanation: "Reparto: cada uno sabía de qué se encargaba. Un «reparo» sería una objeción que retrasa, y un «orden» solo diría qué se hace primero."
+    options:
+      - position: 1
+        text: "reparo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reparo» es una pega que alguien pone, y tener pegas claras no acorta ninguna mudanza."
+        hint_specific: "Un «reparo» frena las cosas. ¿Qué efecto tuvo esto en la mudanza?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «orden» diría qué caja se baja primero, y lo que ahorró tiempo fue saber quién bajaba cada una."
+        hint_specific: "Un «orden» resuelve la secuencia. ¿Qué duda quedaba si solo se sabe la secuencia?"
+  - position: 5
+    sentence: "Nadie se quejó del {{blank}}: cada uno sabía qué llevaba a la cena y a qué hora aparecía."
+    hint_general: "Todos sabían de qué se encargaba cada cual."
+    explanation: "Reparto: todos sabían de qué se encargaba cada cual. «Asignación» es una palabra de organigrama, y un «turno» solo diría cuándo le toca a cada uno."
+    options:
+      - position: 1
+        text: "asignación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asignación» es una palabra de organigrama y de formulario, y esto es una cena entre amigos con tortilla y postre."
+        hint_specific: "«Asignación» suena a departamento de personal. ¿Qué clase de reunión es esta?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "turno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «turno» diría cuándo le toca a cada uno, y aquí además se sabe qué lleva cada persona."
+        hint_specific: "Un «turno» ordena el tiempo. ¿Qué otra información aparece en la frase?"
+  - position: 6
+    sentence: "Aquel {{blank}} de las vacaciones dejó contentos a todos menos al que se quedó con agosto."
+    hint_general: "Así se dividieron los meses entre todos."
+    explanation: "Reparto: así se dividieron los meses. Un «reparo» sería la pega que puso alguien, y un «acuerdo» sería el pacto final, no la división en sí."
+    options:
+      - position: 1
+        text: "reparo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reparo» sería la pega que pone quien se queda con agosto, y la frase nombra cómo se dividieron los meses."
+        hint_specific: "Un «reparo» lo pone una sola persona. ¿A cuántos afecta lo que nombra la frase?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "acuerdo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «acuerdo» sería el pacto al que llegaron, y lo que deja contento o no a cada uno es cómo quedaron divididos los meses."
+        hint_specific: "Un «acuerdo» es el sí de todos. ¿Está todo el mundo contento aquí?"
+  - position: 7
+    sentence: "En el equipo el {{blank}} se revisa cada tres meses y por eso nadie acumula siempre lo peor."
+    hint_general: "Se revisa cada tres meses quién se ocupa de qué."
+    explanation: "Reparto: se revisa quién se ocupa de qué. «Asignación» pertenece al lenguaje de los formularios, y un «orden» hablaría de la secuencia de los pasos."
+    options:
+      - position: 1
+        text: "asignación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asignación» pertenece al lenguaje de los formularios y los organigramas, y aquí se habla de cómo se organiza un equipo por dentro."
+        hint_specific: "«Asignación» suena a impreso. ¿Quién decide esto cada tres meses?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «orden» hablaría de la secuencia de los pasos, y lo que se revisa es a quién le toca la parte más ingrata."
+        hint_specific: "Un «orden» no dice quién. ¿Qué es lo que se revisa aquí?"
+  - position: 8
+    sentence: "El {{blank}} del trabajo en casa no es un detalle menor: es lo que decide si alguien acaba agotado."
+    hint_general: "Cómo se divide ese trabajo decide quién termina agotado."
+    explanation: "Reparto: cómo se divide el trabajo decide quién acaba agotado. «Prorrateo» es una palabra de contabilidad, y un «turno» solo diría a quién le toca y cuándo."
+    options:
+      - position: 1
+        text: "prorrateo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prorrateo» es una palabra de contabilidad para dividir cantidades proporcionalmente, y aquí se habla de cocinar y de limpiar."
+        hint_specific: "«Prorrateo» divide cifras. ¿Qué se divide en una casa?"
+      - position: 2
+        text: "reparto"
+        is_correct: true
+      - position: 3
+        text: "turno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «turno» diría a quién le toca y cuándo, y el agotamiento viene de cuánto le toca a cada uno en total."
+        hint_specific: "Un «turno» mide el cuándo. ¿Qué es lo que agota, el horario o la cantidad?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La nevera"
+    body: "En casa se discutía cada domingo y siempre por lo mismo. Escribieron en la nevera quién se ocupaba de qué y lo firmaron los cuatro. «El problema no era la casa: era el reparto», dijo el pequeño. Llevan seis meses sin discutir un domingo."
+    before_phrase: "Aquí lo hago todo yo y nadie mueve un dedo."
+    after_phrase: "El problema no era la casa: era el reparto."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cada tres meses"
+    body: "Siempre había una parte del trabajo que nadie quería y que hacía la misma persona. El equipo decidió revisar quién se ocupaba de qué cada tres meses. «Con un reparto que rota, nadie se quema», resumió la responsable. Nadie ha pedido el cambio desde entonces."
+    before_phrase: "Es que siempre le toca lo malo al mismo."
+    after_phrase: "Con un reparto que rota, nadie se quema."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena de los doce"
+    body: "Doce personas y una cocina pequeña podían salir mal. Mandaron un mensaje con nombres, platos y horas de llegada. «El reparto lo resolvió todo», contó el anfitrión. Nadie trajo tres tortillas y a nadie se le olvidó el pan."
+    before_phrase: "A ver cómo nos organizamos para la cena."
+    after_phrase: "El reparto lo resolvió todo."
+metrics:
+  zipf_overall: 4.5952
+  dispersion_dp: 0.1048
+  pedantry_proxy: 0.5325
+  family_size: 107
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-16"

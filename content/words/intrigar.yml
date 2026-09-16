@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "intrigar"
+status: "draft"
+lemma: "intrigar"
+part_of_speech: "verbo"
+syllables:
+  - "in"
+  - "tri"
+  - "gar"
+stressed_syllable: 3
+ipa_latam: "[in.tɾiˈɣaɾ]"
+ipa_es: "[in.tɾiˈɣaɾ]"
+explanation: "Dejar a alguien con ganas de saber más, sin contarlo todo de golpe."
+example_sentence: "La primera frase me intrigó lo justo para seguir leyendo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es el gancho honesto: abre una pregunta que el propio texto contesta después, no un anzuelo que no lleva a nada."
+when_not_to_use: "No la uses si prometes algo que luego no está; esto abre las ganas, no engaña al que entra."
+collocations:
+  - "intrigar al lector"
+  - "me intriga saber"
+  - "intrigar sin engañar"
+replaces:
+  - before: "Me dejó con la duda y seguí leyendo"
+    after: "Me intrigó y seguí leyendo"
+  - before: "Contó lo justo para que quisiéramos más"
+    after: "Nos intrigó a propósito"
+  - before: "Tengo curiosidad por eso"
+    after: "Eso me intriga"
+family: []
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "dar curiosidad"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "instigar"
+    difference: "«Instigar» es empujar a alguien a hacer algo, casi siempre malo; lo otro solo despierta las ganas de saber."
+    memory_trick: "Instigas a actuar; intrigas a preguntar."
+  - confused_with: "confundir"
+    difference: "«Confundir» deja al otro sin entender; aquí se entiende todo y falta una parte a propósito."
+    memory_trick: "El confundido se pierde; el intrigado sigue."
+exercises:
+  - position: 1
+    sentence: "La primera frase de la publicación de Zoe {{blank}} a medio barrio, y el resto del texto contestaba la pregunta."
+    hint_general: "Abrió las ganas de saber y luego dio la respuesta."
+    explanation: "Intrigó: abrió las ganas de saber y luego respondió. «Instigó» sería empujar a hacer algo, y «confundió» dejaría a la gente sin entender."
+    options:
+      - position: 1
+        text: "instigó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instigó» es empujar a alguien a actuar, casi siempre para algo turbio, y aquí solo se despierta la curiosidad."
+        hint_specific: "«Instigó» empuja a hacer algo. ¿Qué hace el barrio, actuar o seguir leyendo?"
+      - position: 2
+        text: "intrigó"
+        is_correct: true
+      - position: 3
+        text: "confundió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confundió» dejaría a la gente sin entender, y el texto contestaba después lo que había abierto."
+        hint_specific: "«Confundió» deja perdido al lector. ¿El texto aclara o enreda?"
+  - position: 2
+    sentence: "A Tobías le {{blank}} que el taller cerrara los martes, y acabó preguntándoselo al dueño."
+    hint_general: "Le dieron ganas de saber por qué pasaba eso."
+    explanation: "Intrigaba: le daban ganas de saber el motivo. «Enganchaba» es de charla informal y sugiere quedarse atrapado, y «molestaba» diría que le fastidiaba."
+    options:
+      - position: 1
+        text: "enganchaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enganchaba» es de conversación muy suelta y sugiere quedarse pegado a algo, y aquí solo hay ganas de entender un horario."
+        hint_specific: "«Enganchaba» suena a quedarse atrapado, en tono de calle. ¿Tobías está atrapado o curioso?"
+      - position: 2
+        text: "intrigaba"
+        is_correct: true
+      - position: 3
+        text: "molestaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Molestaba» diría que le fastidiaba, y lo que hace es preguntar con interés, no quejarse."
+        hint_specific: "«Molestaba» fastidia. ¿Va a quejarse o a preguntar?"
+  - position: 3
+    sentence: "El cartel del bar {{blank}} sin prometer nada: solo decía «hoy, a las ocho, algo que no vas a ver mañana»."
+    hint_general: "Despierta las ganas sin ofrecer nada que no se pueda cumplir."
+    explanation: "Intriga: despierta las ganas sin prometer de más. «Instiga» sería empujar a actuar, y «engaña» supondría que promete algo falso."
+    options:
+      - position: 1
+        text: "intriga"
+        is_correct: true
+      - position: 2
+        text: "instiga"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instiga» es empujar a alguien a hacer algo, y un cartel que solo anuncia una hora no empuja a nadie a nada."
+        hint_specific: "«Instiga» empuja a actuar. ¿El cartel manda hacer algo?"
+      - position: 3
+        text: "engaña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Engaña» supone prometer algo que no existe, y la frase subraya que el cartel no promete nada."
+        hint_specific: "«Engaña» promete lo que no hay. Relee: ¿qué promete ese cartel?"
+  - position: 4
+    sentence: "A mi abuela le {{blank}} la vecina nueva del cuarto, así que subió con un plato de comida a averiguar."
+    hint_general: "Le dieron ganas de saber cómo era esa persona."
+    explanation: "Intrigaba: le daban ganas de conocerla. «Seducía» apunta a atracción romántica con tono elevado, y «asustaba» diría que le daba miedo."
+    options:
+      - position: 1
+        text: "seducía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Seducía» es palabra de tono elevado y apunta a atracción romántica, y aquí hay una vecina y un plato de comida."
+        hint_specific: "«Seducía» apunta a atracción amorosa, con tono elevado. ¿Qué lleva tu abuela al cuarto?"
+      - position: 2
+        text: "intrigaba"
+        is_correct: true
+      - position: 3
+        text: "asustaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asustaba» diría que le daba miedo, y quien sube a llamar a la puerta no está asustado."
+        hint_specific: "«Asustaba» da miedo. ¿Qué hace tu abuela, evitarla o buscarla?"
+  - position: 5
+    sentence: "El título del artículo {{blank}} lo suficiente para entrar, y el primer párrafo ya daba el dato prometido."
+    hint_general: "Abrió las ganas y cumplió enseguida."
+    explanation: "Intrigaba: abrió las ganas y cumplió. «Instigaba» sería empujar a actuar, y «aburría» diría lo contrario del efecto."
+    options:
+      - position: 1
+        text: "aburría"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburría» diría que nadie quería entrar, y la frase cuenta que el título hizo entrar a la gente."
+        hint_specific: "«Aburría» espanta. ¿La gente entró o se fue?"
+      - position: 2
+        text: "intrigaba"
+        is_correct: true
+      - position: 3
+        text: "instigaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instigaba» es empujar a alguien a hacer algo concreto, y un título solo despierta las ganas de leer."
+        hint_specific: "«Instigaba» empuja a una acción. ¿A qué te empuja un título?"
+  - position: 6
+    sentence: "En la charla, Vera {{blank}} con una pregunta del principio y la contestó en el minuto final."
+    hint_general: "Dejó una pregunta viva durante toda la charla."
+    explanation: "Intrigó: dejó la pregunta viva y la cerró. «Enganchó» es coloquial y sugiere atrapar a la fuerza, y «explicó» no dejaría ninguna pregunta abierta."
+    options:
+      - position: 1
+        text: "enganchó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enganchó» es de charla informal y sugiere atrapar al público como a un pez, y ella abre una pregunta y la cumple."
+        hint_specific: "«Enganchó» suena a atrapar, en registro suelto. ¿Vera atrapa o abre una pregunta?"
+      - position: 2
+        text: "intrigó"
+        is_correct: true
+      - position: 3
+        text: "explicó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explicó» daría la respuesta de entrada, y aquí la respuesta llega al final a propósito."
+        hint_specific: "«Explicó» resuelve enseguida. ¿Cuándo llegó la respuesta?"
+  - position: 7
+    sentence: "Lo que más {{blank}} del mensaje de Gaspar no era lo que contaba, sino lo que dejaba para el final."
+    hint_general: "Lo que más ganas daba de seguir era lo que aún no había dicho."
+    explanation: "Intrigaba: las ganas venían de lo que faltaba. «Seducía» apunta a atracción romántica en tono elevado, y «sorprendía» hablaría del asombro por lo ya dicho."
+    options:
+      - position: 1
+        text: "sorprendía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sorprendía» habla del asombro por lo que ya se dijo, y aquí el efecto viene de lo que todavía falta."
+        hint_specific: "«Sorprendía» mira lo ya contado. ¿De dónde viene el efecto en esta frase?"
+      - position: 2
+        text: "intrigaba"
+        is_correct: true
+      - position: 3
+        text: "seducía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Seducía» es de tono elevado y apunta a una atracción amorosa, y aquí se habla de cómo está escrito un mensaje."
+        hint_specific: "«Seducía» apunta a lo romántico, con tono elevado. ¿De qué trata este mensaje?"
+  - position: 8
+    sentence: "Nos {{blank}} tanto el nombre del local que reservamos sin mirar la carta."
+    hint_general: "El nombre nos dio ganas de saber cómo era aquello."
+    explanation: "Intrigó: el nombre dio ganas de saber. «Instigó» sería empujarnos a hacer algo malo, y «convenció» supondría que ya sabíamos qué había."
+    options:
+      - position: 1
+        text: "intrigó"
+        is_correct: true
+      - position: 2
+        text: "instigó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instigó» es empujar a alguien a una acción, casi siempre turbia, y aquí un nombre despierta curiosidad."
+        hint_specific: "«Instigó» empuja a algo turbio. ¿Hay algo turbio en reservar mesa?"
+      - position: 3
+        text: "convenció"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convenció» supondría que ya sabíamos qué servían, y reservamos sin mirar la carta."
+        hint_specific: "«Convenció» necesita razones. ¿Qué sabíamos del sitio antes de reservar?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El primer párrafo"
+    body: "Zoe escribe titulares que no prometen milagros. «Quiero intrigar, no engañar», explicó en la reunión. Su regla es sencilla: la pregunta que abre el título se contesta en el primer párrafo. Es la que menos clics pierde a mitad de texto."
+    before_phrase: "Quiero que entren, pero sin engañar."
+    after_phrase: "Quiero intrigar, no engañar."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El plato de comida"
+    body: "A mi abuela le intrigaba la vecina nueva del cuarto, así que subió con un plato y llamó a la puerta. Volvió dos horas después con la historia entera y una receta apuntada. Su método no ha fallado en cuarenta años."
+    before_phrase: "Me daba curiosidad esa vecina."
+    after_phrase: "Me intrigaba esa vecina."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta del principio"
+    body: "Vera abrió la charla con una pregunta y no la contestó hasta el último minuto. «Si intrigo al principio, me escuchan al final», dijo luego. Nadie se levantó antes de tiempo, y eso en una sala de cien personas es una proeza."
+    before_phrase: "Les dejo con la duda para que aguanten."
+    after_phrase: "Si intrigo al principio, me escuchan al final."
+metrics:
+  zipf_overall: 3.7061
+  dispersion_dp: 0.2113
+  pedantry_proxy: 0.4945
+  family_size: 24
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-15"

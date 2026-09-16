@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7013
+slug: "sosiego"
+status: "draft"
+lemma: "sosiego"
+part_of_speech: "sustantivo"
+syllables:
+  - "so"
+  - "sie"
+  - "go"
+stressed_syllable: 2
+ipa_latam: "[soˈsje.ɣo]"
+ipa_es: "[soˈsje.ɣo]"
+explanation: "Calma por dentro, la que te deja pensar sin ruido."
+example_sentence: "Contestó al correo dos días después, cuando ya tenía sosiego."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para pedir tiempo sin dar explicaciones: no dices que estás mal, dices que aún no estás en calma."
+when_not_to_use: "No la uses para un rato libre ni para el simple silencio de una casa vacía."
+collocations:
+  - "un rato de sosiego"
+  - "con sosiego"
+  - "recuperar el sosiego"
+replaces:
+  - before: "Necesito un rato de tranquilidad para pensar"
+    after: "Necesito un rato de sosiego para pensar"
+  - before: "Contestó cuando ya estaba tranquila"
+    after: "Contestó con sosiego"
+  - before: "Se me pasaron los nervios a los dos días"
+    after: "Recuperé el sosiego a los dos días"
+family:
+  - "sosegar"
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "tranquilidad"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "asueto"
+    difference: "El «asueto» es tiempo libre en el reloj; la otra palabra es calma por dentro, que puede faltar en pleno domingo."
+    memory_trick: "El asueto lo da el calendario; lo otro, la cabeza."
+  - confused_with: "silencio"
+    difference: "El «silencio» es la ausencia de ruido fuera; la otra palabra mira lo que pasa dentro de ti."
+    memory_trick: "El silencio se mide con el oído; lo otro, con el pulso."
+exercises:
+  - position: 1
+    sentence: "Tuvo la casa entera para ella toda la semana y aun así no encontró ni un minuto de {{blank}}."
+    hint_general: "Tener la casa vacía no le dio la calma interior que buscaba."
+    explanation: "Sosiego: la calma interior que no llegó pese a la casa vacía. El «silencio» sí lo tuvo, y «asueto» sería tiempo libre, que también le sobraba."
+    options:
+      - position: 1
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «silencio» es la falta de ruido fuera, y eso lo tenía de sobra con la casa vacía toda la semana."
+        hint_specific: "El «silencio» se mide con el oído. ¿Le faltaba ruido o le faltaba calma?"
+      - position: 2
+        text: "sosiego"
+        is_correct: true
+      - position: 3
+        text: "asueto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «asueto» es tiempo libre, y tiempo libre tuvo una semana entera; lo que no encontró fue calma."
+        hint_specific: "El «asueto» lo marca el calendario. ¿Le faltaban días o le faltaba paz?"
+  - position: 2
+    sentence: "Milena esperó dos días antes de contestar aquel mensaje, porque quería responder con {{blank}} y no con rabia."
+    hint_general: "Esperó a estar en calma por dentro antes de escribir."
+    explanation: "Sosiego: esperó a estar en calma por dentro. El «descanso» sería reponer el cuerpo, y «relax» es coloquial y suena a plan de fin de semana."
+    options:
+      - position: 1
+        text: "descanso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «descanso» repone el cuerpo después de un esfuerzo, y lo que ella necesitaba era bajar la rabia, no dormir."
+        hint_specific: "El «descanso» arregla el cansancio. ¿Milena estaba cansada o enfadada?"
+      - position: 2
+        text: "sosiego"
+        is_correct: true
+      - position: 3
+        text: "relax"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Relax» es coloquial y suena a plan de fin de semana, y responder un mensaje difícil no es un plan agradable."
+        hint_specific: "«Relax» va con toalla y música suave. ¿Encaja ese tono con un mensaje que da rabia?"
+  - position: 3
+    sentence: "Su hermano llegó a casa alterado y solo pedía una cosa: media hora de {{blank}} antes de hablar de nada."
+    hint_general: "Pide calma interior antes de ponerse a hablar del asunto."
+    explanation: "Sosiego: pide calma interior antes de hablar. La «paciencia» sería aguantar a otro, y «recogimiento» suena a retirarse solemnemente del mundo."
+    options:
+      - position: 1
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «paciencia» es aguantar a otra persona o una espera, y él no aguanta a nadie: quiere bajar sus propias pulsaciones."
+        hint_specific: "La «paciencia» se tiene con alguien. ¿Con quién la tendría él en una casa vacía?"
+      - position: 2
+        text: "sosiego"
+        is_correct: true
+      - position: 3
+        text: "recogimiento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recogimiento» es solemne y sugiere retirarse del mundo para meditar, y él solo quiere media hora en el sofá."
+        hint_specific: "«Recogimiento» suena grave y ceremonioso. ¿Esta escena es ceremoniosa o doméstica?"
+  - position: 4
+    sentence: "Cuando por fin recuperó el {{blank}}, Ainhoa pudo leer la carta entera sin saltarse una línea."
+    hint_general: "Recuperó la calma de dentro y entonces pudo leer con atención."
+    explanation: "Sosiego: recuperó la calma de dentro. El «descanso» sería reponer fuerzas, y el «sigilo» es moverse sin hacer ruido para no ser notado."
+    options:
+      - position: 1
+        text: "sosiego"
+        is_correct: true
+      - position: 2
+        text: "descanso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «descanso» repone fuerzas físicas, y lo que le impedía leer no era el cansancio, sino el nervio."
+        hint_specific: "El «descanso» quita el cansancio. ¿Qué le impedía leer, el sueño o los nervios?"
+      - position: 3
+        text: "sigilo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «sigilo» es moverse sin hacer ruido para que nadie se entere, y ella está sola leyendo una carta."
+        hint_specific: "El «sigilo» existe cuando hay alguien de quien esconderse. ¿Hay alguien más en la escena?"
+  - position: 5
+    sentence: "En el taller todo iba deprisa aquella tarde, pero Genaro hablaba con un {{blank}} que bajaba las pulsaciones de quien lo escuchaba."
+    hint_general: "Hablaba desde una calma interior que se contagiaba a los demás."
+    explanation: "Sosiego: una calma interior que se nota al hablar. El «silencio» sería no hablar, y él habla, y «relax» es coloquial y suena a ocio."
+    options:
+      - position: 1
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «silencio» sería no decir nada, y Genaro habla: lo que calma es cómo suena su voz."
+        hint_specific: "El «silencio» no se puede tener hablando. ¿Genaro calla o habla?"
+      - position: 2
+        text: "relax"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Relax» es coloquial y remite al ocio y a la desconexión, y él está trabajando en mitad de una urgencia."
+        hint_specific: "«Relax» suena a tiempo libre. ¿Genaro está de vacaciones?"
+      - position: 3
+        text: "sosiego"
+        is_correct: true
+  - position: 6
+    sentence: "Tomás firmó el contrato sin {{blank}}, con el coche en doble fila y el teléfono sonando."
+    hint_general: "Firmó sin calma por dentro, con todo encima a la vez."
+    explanation: "Sosiego: firmó sin calma por dentro. El «asueto» sería tiempo libre, y la «paciencia» es aguantar a alguien, y nadie lo está haciendo esperar."
+    options:
+      - position: 1
+        text: "asueto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «asueto» es tiempo libre en el calendario, y aquí el problema no son los días, sino el estado en el que firma."
+        hint_specific: "El «asueto» se pide en el trabajo. ¿Lo que falta son días o es calma?"
+      - position: 2
+        text: "sosiego"
+        is_correct: true
+      - position: 3
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «paciencia» se tiene con quien te hace esperar, y aquí nadie lo hace esperar: es él quien va con prisa."
+        hint_specific: "La «paciencia» necesita a alguien que tarde. ¿Quién lo hace esperar a Tomás?"
+  - position: 7
+    sentence: "La mudanza terminó en marzo y hasta junio no volvió a esa casa el {{blank}} de antes."
+    hint_general: "Tardaron meses en volver a sentir la calma interior de siempre."
+    explanation: "Sosiego: tardaron meses en volver a sentirse en calma. El «descanso» llegó antes, con las cajas vacías, y «recogimiento» suena a retiro solemne."
+    options:
+      - position: 1
+        text: "descanso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «descanso» llegó en cuanto se vaciaron las cajas, y lo que tardó tres meses fue sentirse en paz allí dentro."
+        hint_specific: "El «descanso» se recupera durmiendo. ¿Lo que faltaba se arreglaba durmiendo?"
+      - position: 2
+        text: "recogimiento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recogimiento» es una palabra solemne para retirarse a meditar, y aquí se habla del ambiente normal de una casa."
+        hint_specific: "«Recogimiento» suena a retiro y a ceremonia. ¿Qué se describe, una casa o un retiro?"
+      - position: 3
+        text: "sosiego"
+        is_correct: true
+  - position: 8
+    sentence: "Casandra pidió el turno de palabra al final, cuando el ruido bajó y todos tenían {{blank}} para escucharla."
+    hint_general: "Esperó a que los demás estuvieran en calma por dentro para hablar."
+    explanation: "Sosiego: esperó a que los demás estuvieran en calma. El «silencio» llegó antes, cuando bajó el ruido, y el «sigilo» es moverse sin ser notado."
+    options:
+      - position: 1
+        text: "sosiego"
+        is_correct: true
+      - position: 2
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «silencio» ya estaba: la frase dice que el ruido había bajado. Lo que ella espera es que se les pase el nervio."
+        hint_specific: "El «silencio» aparece antes en la frase. ¿Qué falta todavía cuando ya no hay ruido?"
+      - position: 3
+        text: "sigilo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «sigilo» es moverse sin que te oigan, y aquí nadie se esconde: están sentados escuchando."
+        hint_specific: "El «sigilo» sirve para pasar inadvertido. ¿Alguien se esconde en esa sala?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Contesto el jueves"
+    body: "El correo llegó a las siete de la tarde y era injusto. Milena empezó tres respuestas y borró las tres. Al final escribió otra cosa: «Te contesto el jueves con sosiego». El jueves su respuesta cabía en seis líneas y nadie salió herido."
+    before_phrase: "Ahora mismo estoy demasiado caliente para contestar."
+    after_phrase: "Te contesto el jueves con sosiego."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Media hora"
+    body: "Su hermano llegó de la reunión con los puños cerrados. Antes de que nadie preguntara, dijo: «Necesito media hora de sosiego y lo cuento todo». Nadie insistió. A los treinta minutos salió a la cocina y lo contó entero, sin levantar la voz."
+    before_phrase: "Necesito un rato a solas, que ahora no puedo."
+    after_phrase: "Media hora de sosiego y lo cuento todo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El turno de palabra"
+    body: "En la asamblea todos hablaban a la vez. Casandra levantó la mano y esperó. Cuando el ruido bajó, dijo: «Ahora que hay sosiego, lo digo en dos frases». Las dijo, y fue lo único que quedó anotado en el acta."
+    before_phrase: "A ver si nos calmamos todos un poco."
+    after_phrase: "Ahora que hay sosiego, lo digo en dos frases."
+metrics:
+  zipf_overall: 3.2478
+  dispersion_dp: 0.2288
+  pedantry_proxy: 0.3279
+  family_size: 3
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

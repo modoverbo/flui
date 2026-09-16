@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 7023
+slug: "ruego"
+status: "draft"
+lemma: "ruego"
+part_of_speech: "sustantivo"
+syllables:
+  - "rue"
+  - "go"
+stressed_syllable: 1
+ipa_latam: "[ˈrwe.ɣo]"
+ipa_es: "[ˈrwe.ɣo]"
+explanation: "Petición hecha con mucha educación a quien puede decir que no."
+example_sentence: "No era una orden ni una queja: era un ruego escrito con cuidado."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve cuando pides algo a quien no te debe nada: reconoce su libertad de negarse sin que tú te encojas."
+when_not_to_use: "No la uses para lo que puedes reclamar por derecho, ni para un mensaje que mandas a alguien para que lo cumpla."
+collocations:
+  - "atender un ruego"
+  - "un ruego sencillo"
+  - "más un ruego que una orden"
+replaces:
+  - before: "Se lo pedí con toda la educación del mundo"
+    after: "Le hice un ruego, sin más"
+  - before: "No te lo exijo, te lo pido por favor"
+    after: "No es una orden: es un ruego"
+  - before: "Le dejé una nota pidiéndole una cosa"
+    after: "Le dejé un ruego por escrito"
+family:
+  - "rogar"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "favor"
+  funcion:
+    - "pedir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "requerimiento"
+    difference: "Un «requerimiento» lo manda quien tiene autoridad y hay que cumplirlo; la otra palabra la usa quien no puede obligar a nada."
+    memory_trick: "El requerimiento se acata; el otro se atiende si se quiere."
+  - confused_with: "reclamo"
+    difference: "Un «reclamo» exige que se repare algo que salió mal; la otra palabra no reclama nada y acepta un no."
+    memory_trick: "El reclamo protesta; el otro pide."
+exercises:
+  - position: 1
+    sentence: "Lo que mandó no era una orden ni una protesta: era un {{blank}} escrito con mucho cuidado."
+    hint_general: "Es una petición muy educada dirigida a quien puede negarse sin más."
+    explanation: "Ruego: una petición muy educada que admite un no. Un «reclamo» exigiría reparar algo que salió mal, y un «favor» se pide a gente de confianza."
+    options:
+      - position: 1
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reclamo» exige que se repare algo que salió mal, y aquí no se protesta por nada: la frase lo descarta expresamente."
+        hint_specific: "Un «reclamo» viene después de un fallo. ¿Qué descarta el principio de la frase?"
+      - position: 2
+        text: "ruego"
+        is_correct: true
+      - position: 3
+        text: "favor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «favor» se pide a alguien de confianza que te lo debe o te lo quiere hacer, y esto va escrito con cuidado a alguien que puede negarse."
+        hint_specific: "Un «favor» se pide de tú a tú y sin formalidad. ¿Por qué estaría escrito con tanto cuidado?"
+  - position: 2
+    sentence: "En la última página del contrato, entre cláusulas, había un {{blank}} escrito a mano por quien firmaba abajo."
+    hint_general: "Quien no puede obligar a nada pide algo con toda la educación posible."
+    explanation: "Ruego: quien no puede obligar pide con educación. Un «requerimiento» lo manda quien tiene autoridad, y un «encargo» sería un trabajo asignado."
+    options:
+      - position: 1
+        text: "requerimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «requerimiento» lo manda quien tiene autoridad y hay que cumplirlo, y esto lo escribe a mano quien firma al final del contrato."
+        hint_specific: "Un «requerimiento» viene con poder detrás. ¿Qué poder tiene quien firma abajo?"
+      - position: 2
+        text: "ruego"
+        is_correct: true
+      - position: 3
+        text: "encargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «encargo» es un trabajo que se asigna a alguien y que esa persona debe hacer, y aquí no se asigna nada: se pide."
+        hint_specific: "Un «encargo» se cumple porque toca. ¿Puede negarse quien lee esa nota?"
+  - position: 3
+    sentence: "Yago no exigió nada: dejó un {{blank}} en el buzón del vecino y esperó una semana entera sin llamar."
+    hint_general: "Dejó una petición educada y respetó que el otro pudiera no contestar."
+    explanation: "Ruego: una petición educada que respeta el no. Un «reclamo» exigiría reparación, y una «súplica» suena dramática, casi de rodillas."
+    options:
+      - position: 1
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reclamo» exige que se arregle algo, y la frase dice expresamente que Yago no exigió nada."
+        hint_specific: "Un «reclamo» reclama un derecho. Relee el principio: ¿exige Yago algo?"
+      - position: 2
+        text: "súplica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Súplica» es dramática y suena a arrodillarse delante de alguien, y aquí hay una nota tranquila esperando en un buzón."
+        hint_specific: "Una «súplica» implica desesperación. ¿Cómo espera Yago esa semana?"
+      - position: 3
+        text: "ruego"
+        is_correct: true
+  - position: 4
+    sentence: "Al final de la reunión llegó el {{blank}} de siempre: que alguien llegue puntual aunque sea una vez al mes."
+    hint_general: "Se pide con educación algo que nadie está obligado a cumplir."
+    explanation: "Ruego: se pide con educación algo que nadie está obligado a cumplir. Un «encargo» sería un trabajo asignado, y «recado» es coloquial y se manda hacer."
+    options:
+      - position: 1
+        text: "encargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «encargo» es un trabajo que se asigna y que hay que hacer, y aquí se pide algo que nadie puede imponer."
+        hint_specific: "Un «encargo» se reparte y se cumple. ¿Puede alguien obligar a la puntualidad aquí?"
+      - position: 2
+        text: "ruego"
+        is_correct: true
+      - position: 3
+        text: "recado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recado» es coloquial y se usa para un mensaje o una gestión pequeña que se manda hacer, y esto se pide con toda la educación."
+        hint_specific: "Un «recado» se manda. ¿Aquí se manda algo o se pide con cuidado?"
+  - position: 5
+    sentence: "Su carta terminaba con un {{blank}} que no pedía nada material: solo que lo tuvieran en cuenta si volvía la plaza."
+    hint_general: "Pide con educación algo que depende por completo de la voluntad del otro."
+    explanation: "Ruego: pide algo que depende de la voluntad del otro. Un «requerimiento» obligaría a responder, y un «permiso» lo concede quien manda con una fórmula fija."
+    options:
+      - position: 1
+        text: "requerimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «requerimiento» obliga a responder porque lo manda quien tiene autoridad, y él ya no está en esa empresa."
+        hint_specific: "Un «requerimiento» exige respuesta. ¿Qué autoridad tiene quien escribe esa carta?"
+      - position: 2
+        text: "ruego"
+        is_correct: true
+      - position: 3
+        text: "permiso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «permiso» autoriza a hacer algo concreto, y él no pide hacer nada: pide que se acuerden de su nombre."
+        hint_specific: "Un «permiso» habilita una acción. ¿Qué acción quiere hacer él?"
+  - position: 6
+    sentence: "Nadie atendió el {{blank}} de la portera sobre el portal hasta que el problema fue de todos los vecinos."
+    hint_general: "Pidió algo con educación, sin poder obligar a nadie, y no le hicieron caso."
+    explanation: "Ruego: pidió con educación sin poder obligar. Un «reclamo» habría exigido reparar algo ya estropeado, y un «favor» se pide a alguien de confianza."
+    options:
+      - position: 1
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «reclamo» exige reparar algo que ya falló, y ella avisa antes de que el problema exista para todos."
+        hint_specific: "Un «reclamo» llega tarde, cuando el daño está hecho. ¿Cuándo habla la portera?"
+      - position: 2
+        text: "favor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «favor» se pide a alguien cercano que te lo quiere hacer, y ella se dirige a un edificio entero de desconocidos."
+        hint_specific: "Un «favor» se pide de tú a tú. ¿A cuántas personas se dirige ella?"
+      - position: 3
+        text: "ruego"
+        is_correct: true
+  - position: 7
+    sentence: "Se lo pidió con tanta educación que aquello parecía un {{blank}} de otra época, con usted y todo."
+    hint_general: "Pidió de forma tan cuidada que sonaba a una fórmula antigua y muy cortés."
+    explanation: "Ruego: una petición cuidada y muy cortés. Una «súplica» sonaría desesperada, y un «encargo» sería un trabajo que se asigna para cumplir."
+    options:
+      - position: 1
+        text: "ruego"
+        is_correct: true
+      - position: 2
+        text: "súplica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «súplica» suena desesperada y casi de rodillas, y lo que llama la atención aquí es la cortesía, no la angustia."
+        hint_specific: "Una «súplica» pide con desesperación. ¿Qué es lo que destaca de cómo lo pidió?"
+      - position: 3
+        text: "encargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «encargo» es un trabajo que se asigna para que alguien lo cumpla, y aquí no se asigna nada: se pide con cortesía."
+        hint_specific: "Un «encargo» no necesita cortesía. ¿Por qué tanto cuidado entonces?"
+  - position: 8
+    sentence: "Entre tanto correo automático, aquel {{blank}} escrito a mano llamó la atención de todo el departamento."
+    hint_general: "Una petición educada y personal destacó entre mensajes fríos."
+    explanation: "Ruego: una petición educada y personal. «Recado» es coloquial y se manda hacer, y un «permiso» sería una autorización que alguien concede."
+    options:
+      - position: 1
+        text: "recado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recado» es coloquial y se usa para una gestión pequeña que se manda hacer, y esto está escrito a mano para pedir algo con respeto."
+        hint_specific: "Un «recado» se encomienda a alguien. ¿Aquí se manda una gestión o se pide con respeto?"
+      - position: 2
+        text: "permiso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «permiso» lo concede quien tiene autoridad, y esto lo escribe alguien que pide y espera, sin poder conceder nada."
+        hint_specific: "Un «permiso» viene de arriba. ¿Desde dónde se escribe esa nota?"
+      - position: 3
+        text: "ruego"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La nota a mano"
+    body: "El departamento recibía veinte correos automáticos al día. Aquella mañana llegó un sobre con una nota escrita a mano. «Es un ruego, no una reclamación», empezaba. Tres personas la leyeron en voz alta y la petición se atendió esa semana."
+    before_phrase: "Pido por favor, si es posible, que…"
+    after_phrase: "Es un ruego, no una reclamación."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Un ruego, no una orden"
+    body: "Su hijo mayor ya no vive en casa y viene cuando puede. Su madre dejó de insistir y cambió la forma: «Esto es un ruego, no una orden: avísame si no vienes». Él empezó a avisar, y las comidas dejaron de enfriarse."
+    before_phrase: "Podrías avisar, ¿no te parece?"
+    after_phrase: "Esto es un ruego, no una orden."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El buzón del vecino"
+    body: "El coche del segundo bloqueaba la salida cada mañana. Yago no llamó al timbre ni escribió al grupo del edificio. Dejó una nota corta en el buzón, firmada. «Era un ruego y funcionó», contó luego. El coche apareció aparcado al otro lado."
+    before_phrase: "Le puse una nota pidiéndole el favor."
+    after_phrase: "Era un ruego, y funcionó."
+metrics:
+  zipf_overall: 3.5830
+  dispersion_dp: 0.2169
+  pedantry_proxy: 0.3157
+  family_size: 2
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

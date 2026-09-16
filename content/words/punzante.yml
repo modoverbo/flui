@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "punzante"
+status: "draft"
+lemma: "punzante"
+part_of_speech: "adjetivo"
+syllables:
+  - "pun"
+  - "zan"
+  - "te"
+stressed_syllable: 2
+ipa_latam: "[punˈsan.te]"
+ipa_es: "[punˈθan.te]"
+explanation: "Que molesta en un punto concreto: una frase así toca justo el lugar peor."
+example_sentence: "Soltó una frase punzante y la conversación cambió de tono."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Describe el efecto de una frase sin juzgar la intención: dice dónde dio, no por qué."
+when_not_to_use: "No la uses para una crítica larga o general; esta palabra supone un punto muy concreto."
+collocations:
+  - "un comentario punzante"
+  - "una frase punzante"
+  - "una crítica punzante"
+replaces:
+  - before: "Dijo algo que dolió, y bien dirigido"
+    after: "Dijo algo punzante"
+  - before: "Fue un comentario que se te clava"
+    after: "Fue un comentario punzante"
+  - before: "Le soltó una pulla"
+    after: "Le soltó una frase punzante"
+family:
+  - "punzada"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin:
+    - "que duele"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "pujante"
+    difference: "«Pujante» describe lo que crece con fuerza, como un negocio; lo otro describe lo que molesta en un punto exacto."
+    memory_trick: "Lo pujante empuja hacia arriba; lo punzante entra hacia dentro."
+  - confused_with: "duro"
+    difference: "«Duro» habla del tono en general; esta palabra dice que el golpe fue pequeño y bien colocado."
+    memory_trick: "Lo duro pesa; lo punzante pincha."
+exercises:
+  - position: 1
+    sentence: "Entre tantos elogios, aquel comentario {{blank}} sobre las cuentas fue lo único que Tadeo recordó al salir."
+    hint_general: "Tocó un punto concreto y se le quedó clavado."
+    explanation: "Punzante: tocó un punto concreto y se quedó clavado. «Pujante» describiría algo que crece con fuerza, y «largo» solo mediría la extensión."
+    options:
+      - position: 1
+        text: "pujante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pujante» se dice de lo que crece con fuerza, como un sector o un negocio, y aquí se habla de una frase que molesta."
+        hint_specific: "«Pujante» va de crecer con fuerza. ¿Ese comentario crece o pincha?"
+      - position: 2
+        text: "punzante"
+        is_correct: true
+      - position: 3
+        text: "largo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largo» mide cuánto duró el comentario, y lo que se le quedó a Tadeo fue dónde le dio."
+        hint_specific: "«Largo» mide extensión. ¿Lo que recuerda es la duración o el punto?"
+  - position: 2
+    sentence: "La crítica del programa fue corta y {{blank}}: dos líneas sobre el final de la obra y nada más."
+    hint_general: "En dos líneas dio justo en el punto débil."
+    explanation: "Punzante: en dos líneas dio en el punto débil. «Cáustica» es palabra literaria que añade corrosión y burla, y «extensa» diría lo contrario de dos líneas."
+    options:
+      - position: 1
+        text: "cáustica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cáustica» es palabra de crítica literaria y añade burla corrosiva, y aquí solo se señala un punto en dos líneas."
+        hint_specific: "«Cáustica» suena a reseña literaria y a burla que corroe. ¿Hay burla en esas dos líneas?"
+      - position: 2
+        text: "punzante"
+        is_correct: true
+      - position: 3
+        text: "extensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extensa» diría que ocupa mucho, y la frase subraya que fueron dos líneas."
+        hint_specific: "«Extensa» ocupa espacio. ¿Cuánto ocupaba esa crítica?"
+  - position: 3
+    sentence: "Mi prima tiene un humor {{blank}}: se ríe contigo y en la misma frase te deja pensando media tarde."
+    hint_general: "Su humor toca un punto concreto y se queda dentro."
+    explanation: "Punzante: el humor toca un punto y se queda. «Pujante» hablaría de algo que crece con fuerza, y «amargo» diría que le falta alegría, cuando ella se ríe."
+    options:
+      - position: 1
+        text: "punzante"
+        is_correct: true
+      - position: 2
+        text: "pujante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pujante» describe lo que crece con fuerza, y un sentido del humor no crece: da en un sitio."
+        hint_specific: "«Pujante» va de empuje y crecimiento. ¿Ese humor crece o pincha?"
+      - position: 3
+        text: "amargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amargo» diría que el humor viene sin alegría, y la frase cuenta que se ríe contigo."
+        hint_specific: "«Amargo» quita la risa. ¿Hay risa en esa escena?"
+  - position: 4
+    sentence: "En el debate, Vera respondió con una pregunta {{blank}} y el otro tardó cinco segundos en contestar."
+    hint_general: "La pregunta dio en un punto exacto y lo dejó sin respuesta rápida."
+    explanation: "Punzante: dio en un punto exacto. «Picante» es coloquial y sugiere una insinuación atrevida, y «educada» hablaría de las formas."
+    options:
+      - position: 1
+        text: "picante"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Picante» es de conversación informal y sugiere una insinuación atrevida, y aquí lo que hay es un punto incómodo del debate."
+        hint_specific: "«Picante» insinúa picardía, en registro suelto. ¿De qué trata esa pregunta?"
+      - position: 2
+        text: "punzante"
+        is_correct: true
+      - position: 3
+        text: "educada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Educada» habla de las buenas formas, y se puede preguntar con muy buenas formas sin dejar a nadie callado."
+        hint_specific: "«Educada» mide las formas. ¿Qué dejó al otro sin respuesta, la forma o el punto?"
+  - position: 5
+    sentence: "Berta escribió una reseña {{blank}} del taller y aun así el dueño la imprimió y la colgó en la pared."
+    hint_general: "Señaló un punto incómodo y aun así resultó útil."
+    explanation: "Punzante: señaló un punto incómodo. «Pujante» hablaría de un negocio que crece, y «falsa» acusaría de mentir, que es otra cosa."
+    options:
+      - position: 1
+        text: "falsa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Falsa» acusaría de mentir, y nadie cuelga en la pared una reseña que considera mentira."
+        hint_specific: "«Falsa» supone mentira. ¿Colgarías en tu pared algo que te parece mentira?"
+      - position: 2
+        text: "punzante"
+        is_correct: true
+      - position: 3
+        text: "pujante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pujante» se dice de lo que crece con fuerza, como un negocio, y aquí se califica un texto."
+        hint_specific: "«Pujante» describe crecimiento. ¿Qué se está calificando, el taller o la reseña?"
+  - position: 6
+    sentence: "Lo que dijo el entrenador no fue largo ni fue gritado: fue {{blank}}, y el equipo salió distinto al campo."
+    hint_general: "Fue breve, sin gritos, y dio justo donde hacía falta."
+    explanation: "Punzante: breve y en el punto exacto. «Cáustico» añadiría burla corrosiva de tono literario, y «duro» hablaría del tono general."
+    options:
+      - position: 1
+        text: "duro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Duro» describe un tono severo en general, y la frase aclara que no fue largo ni gritado."
+        hint_specific: "«Duro» pesa sobre todo el discurso. ¿Fue un discurso o una frase?"
+      - position: 2
+        text: "punzante"
+        is_correct: true
+      - position: 3
+        text: "cáustico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cáustico» es palabra de crítica literaria y trae burla que corroe, y un entrenador no se burla de su equipo antes de salir."
+        hint_specific: "«Cáustico» añade burla, con tono de reseña. ¿Se burla el entrenador de su equipo?"
+  - position: 7
+    sentence: "En la cena, alguien dejó caer una observación {{blank}} sobre la casa nueva y mi hermano cambió de tema enseguida."
+    hint_general: "La observación tocó un punto sensible muy concreto."
+    explanation: "Punzante: tocó un punto sensible concreto. «Picante» sugeriría una insinuación atrevida en tono informal, y «amable» diría lo contrario del efecto."
+    options:
+      - position: 1
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» diría que la observación agradó, y por una observación agradable nadie cambia de tema enseguida."
+        hint_specific: "«Amable» no incomoda. ¿Por qué cambió de tema tu hermano?"
+      - position: 2
+        text: "punzante"
+        is_correct: true
+      - position: 3
+        text: "picante"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Picante» es informal y apunta a una insinuación atrevida, y aquí lo que incomoda es un asunto de dinero y de casa."
+        hint_specific: "«Picante» insinúa picardía, en tono de calle. ¿De qué hablaba esa observación?"
+  - position: 8
+    sentence: "El titular era {{blank}} y el texto, medido: por eso la discusión se quedó en la portada."
+    hint_general: "El titular daba en un punto duro que el texto no sostenía igual."
+    explanation: "Punzante: el titular daba en un punto duro. «Pujante» hablaría de algo que crece con fuerza, y «confuso» diría que no se entendía."
+    options:
+      - position: 1
+        text: "confuso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confuso» diría que no se entendía, y la discusión se quedó en la portada precisamente porque se entendía muy bien."
+        hint_specific: "«Confuso» no se entiende. ¿Costó entender ese titular?"
+      - position: 2
+        text: "pujante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pujante» describe algo que crece con fuerza, y un titular no crece: señala."
+        hint_specific: "«Pujante» habla de crecimiento. ¿Qué hace un titular, crecer o señalar?"
+      - position: 3
+        text: "punzante"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Cinco segundos"
+    body: "En el debate todo iba suave hasta que Vera hizo una sola pregunta sobre el reparto del presupuesto. El otro tardó cinco segundos en contestar. «Fue punzante y fue limpia», dijo el moderador al cierre, y las dos cosas eran verdad."
+    before_phrase: "Preguntó algo que dolió."
+    after_phrase: "Fue una pregunta punzante y limpia."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La reseña de la pared"
+    body: "Berta escribió dos líneas incómodas sobre el taller y las mandó sin adornos. El dueño las imprimió y las colgó junto a la caja. «Era punzante y tenía razón», explicaba a quien preguntaba. Al año siguiente la llamó para pedirle otra."
+    before_phrase: "Le dije algo que le tuvo que doler."
+    after_phrase: "Era punzante y tenía razón."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La casa nueva"
+    body: "En la cena alguien dejó caer una observación sobre lo que había costado la casa. Mi hermano cambió de tema en dos segundos. Luego, en la cocina, lo dijimos con la palabra justa: había sido punzante, y por eso escoció tanto."
+    before_phrase: "Eso que dijo le dolió."
+    after_phrase: "Fue punzante, por eso escoció."
+metrics:
+  zipf_overall: 3.2234
+  dispersion_dp: 0.3168
+  pedantry_proxy: 0.4998
+  family_size: 5
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-15"

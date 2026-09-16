@@ -1,0 +1,247 @@
+schema_version: 1
+sort_order: 7036
+slug: "advertencia"
+status: "draft"
+lemma: "advertencia"
+part_of_speech: "sustantivo"
+syllables:
+  - "ad"
+  - "ver"
+  - "ten"
+  - "cia"
+stressed_syllable: 3
+ipa_latam: "[að.beɾˈten.sja]"
+ipa_es: "[að.beɾˈten.θja]"
+explanation: "Aviso de lo que va a pasar si algo no cambia."
+example_sentence: "No fue un castigo: fue una advertencia, y quedaba tiempo de sobra para arreglarlo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para avisar sin asustar: explicas la consecuencia y dejas margen, y así nadie se siente amenazado."
+when_not_to_use: "No la uses para anunciar un daño y meter miedo, ni para una desgracia que ya ha caído encima."
+collocations:
+  - "una advertencia clara"
+  - "hacer una advertencia"
+  - "la advertencia de siempre"
+replaces:
+  - before: "Te lo digo para que luego no te pille de sorpresa"
+    after: "Te lo digo como advertencia"
+  - before: "Le avisó de lo que iba a pasar si seguía igual"
+    after: "Le hizo una advertencia clara"
+  - before: "No era una amenaza, solo quería avisarte"
+    after: "No era una amenaza: era una advertencia"
+family:
+  - "advertir"
+themes:
+  - slug: "familia-crianza"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "aviso"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "amenaza"
+    difference: "Una «amenaza» anuncia un daño para asustar; la otra palabra anuncia una consecuencia que ya estaba acordada."
+    memory_trick: "La amenaza asusta; la otra informa."
+  - confused_with: "adversidad"
+    difference: "Una «adversidad» es una desgracia que ya te ha caído encima; la otra llega antes, cuando todavía se puede evitar."
+    memory_trick: "La adversidad ya pasó; la otra habla del futuro."
+exercises:
+  - position: 1
+    sentence: "No fue un castigo ni un grito: fue una {{blank}} clara sobre lo que pasaría a la tercera vez."
+    hint_general: "Un aviso tranquilo de la consecuencia que viene si algo se repite."
+    explanation: "Advertencia: un aviso tranquilo de la consecuencia. Una «amenaza» anunciaría un daño para asustar, y «bronca» es coloquial y significa reprimenda a gritos."
+    options:
+      - position: 1
+        text: "amenaza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «amenaza» anuncia un daño para asustar, y aquí se explica una consecuencia que ya estaba acordada de antemano."
+        hint_specific: "Una «amenaza» busca miedo. ¿Qué tono describe la frase?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "bronca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bronca» es coloquial y significa reprimenda a gritos, y la frase descarta el grito en sus primeras palabras."
+        hint_specific: "Una «bronca» sube el volumen. Relee cómo empieza la frase."
+  - position: 2
+    sentence: "La {{blank}} del técnico fue sencilla: si no se cambia el filtro en marzo, en junio no habrá agua caliente."
+    hint_general: "Avisó de lo que ocurrirá si no se hace algo a tiempo."
+    explanation: "Advertencia: avisa de lo que ocurrirá si no se hace algo. Una «adversidad» sería una desgracia ya caída, y una «recomendación» solo sugiere lo que conviene."
+    options:
+      - position: 1
+        text: "adversidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «adversidad» es una desgracia que ya te ha caído encima, y aquí no ha pasado nada todavía: estamos en marzo."
+        hint_specific: "Una «adversidad» ya ocurrió. ¿En qué momento habla el técnico?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "recomendación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «recomendación» sugiere lo que conviene y se puede dejar pasar, y esto anuncia exactamente qué ocurrirá si no se hace."
+        hint_specific: "Una «recomendación» se puede ignorar sin consecuencias. ¿Qué pasa aquí en junio?"
+  - position: 3
+    sentence: "Aquella carta no era una {{blank}}: solo contaba lo mal que estaban, sin decir qué pasaría después."
+    hint_general: "Le faltaba lo esencial: anunciar la consecuencia de que nada cambiara."
+    explanation: "Advertencia: faltaba anunciar la consecuencia. Una «adversidad» es una desgracia ya ocurrida, y una «amenaza» anunciaría un daño con intención de asustar."
+    options:
+      - position: 1
+        text: "adversidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «adversidad» es una desgracia que cae encima, y una carta no es una desgracia: es un texto que alguien escribe."
+        hint_specific: "Una «adversidad» le pasa a alguien. ¿Qué es lo que hay aquí, un suceso o un papel?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "amenaza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «amenaza» anunciaría un daño para asustar, y la carta ni siquiera dice qué pasará después."
+        hint_specific: "Una «amenaza» anuncia algo malo. ¿Anuncia esa carta algo?"
+  - position: 4
+    sentence: "Su madre se lo dijo una sola vez, en voz baja, y aquella {{blank}} le duró toda la adolescencia."
+    hint_general: "Un aviso dicho una vez, sin gritos, que se quedó grabado."
+    explanation: "Advertencia: un aviso dicho una vez y sin gritos. «Bronca» es coloquial y supone una reprimenda a voces, y una «recomendación» sería un consejo que se puede dejar pasar."
+    options:
+      - position: 1
+        text: "bronca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bronca» es coloquial y supone una reprimenda a voces, y la frase subraya que lo dijo en voz baja."
+        hint_specific: "Una «bronca» se oye desde el pasillo. ¿Cómo lo dijo su madre?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "recomendación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «recomendación» es un consejo que se puede dejar pasar sin consecuencias, y esto se le quedó grabado durante años."
+        hint_specific: "Una «recomendación» pesa poco. ¿Cuánto pesó esto?"
+  - position: 5
+    sentence: "El aviso del banco llegó como {{blank}} y no como castigo: quedaban dos meses para arreglarlo."
+    hint_general: "Llega antes del problema y deja margen para reaccionar."
+    explanation: "Advertencia: llega antes y deja margen. «Apercibimiento» es una palabra de expediente laboral o judicial, y una «amenaza» buscaría meter miedo."
+    options:
+      - position: 1
+        text: "apercibimiento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apercibimiento» es una palabra de expediente laboral o judicial, y esto es una carta que da dos meses de margen."
+        hint_specific: "«Apercibimiento» se archiva en un expediente. ¿Qué tono tiene este aviso?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "amenaza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «amenaza» busca meter miedo, y aquí se explica lo que pasará y se dan dos meses para evitarlo."
+        hint_specific: "Una «amenaza» no da margen. ¿Cuánto margen hay aquí?"
+  - position: 6
+    sentence: "Nadie la tomó en serio hasta que la {{blank}} se cumplió palabra por palabra en septiembre."
+    hint_general: "Lo anunciado antes ocurrió tal y como se había dicho."
+    explanation: "Advertencia: lo anunciado ocurre tal y como se dijo. Una «adversidad» sería la desgracia misma, no el aviso previo, y una «queja» expresaría malestar por algo ya pasado."
+    options:
+      - position: 1
+        text: "adversidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «adversidad» sería la desgracia misma, y lo que se cumple aquí es el aviso que alguien dio antes."
+        hint_specific: "Una «adversidad» no se cumple: ocurre. ¿Qué es lo que se cumple aquí?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» expresa malestar por algo ya ocurrido, y esto miraba hacia delante: por eso pudo cumplirse."
+        hint_specific: "Una «queja» mira atrás. ¿Hacia dónde miraba lo que se dijo?"
+  - position: 7
+    sentence: "Lo suyo no son los discursos largos: suelta una {{blank}} corta, se calla y espera."
+    hint_general: "Avisa en pocas palabras de lo que va a ocurrir y deja al otro decidir."
+    explanation: "Advertencia: avisa en pocas palabras y deja decidir. «Apercibimiento» suena a documento con sello, y una «recomendación» sugeriría sin anunciar consecuencia."
+    options:
+      - position: 1
+        text: "apercibimiento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apercibimiento» suena a documento con sello y registro de entrada, y esto se dice en voz alta y en dos frases."
+        hint_specific: "«Apercibimiento» necesita papel y firma. ¿Cómo se transmite esto?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "recomendación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «recomendación» sugiere qué hacer sin anunciar ninguna consecuencia, y aquí lo que se dice es qué pasará."
+        hint_specific: "Una «recomendación» aconseja. ¿Aconseja esta persona o avisa?"
+  - position: 8
+    sentence: "Una {{blank}} a tiempo evita una discusión de tres horas la semana que viene."
+    hint_general: "Avisar antes de que algo pase ahorra el conflicto posterior."
+    explanation: "Advertencia: avisar antes ahorra el conflicto. Una «amenaza» crearía el conflicto en vez de evitarlo, y una «queja» llegaría cuando el problema ya está montado."
+    options:
+      - position: 1
+        text: "amenaza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «amenaza» crearía la discusión en vez de evitarla, porque el otro se pondría a la defensiva de inmediato."
+        hint_specific: "Una «amenaza» enciende. ¿Qué efecto busca la frase?"
+      - position: 2
+        text: "advertencia"
+        is_correct: true
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» llega cuando el problema ya está montado, y aquí se habla de hablar antes de que ocurra."
+        hint_specific: "Una «queja» llega tarde. ¿Cuándo se dice esto?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "En voz baja"
+    body: "Su madre no gritó ni castigó: se sentó en la cama y dijo dos frases sobre lo que pasaría si el asunto se repetía. «Esto es una advertencia, no un castigo». No hizo falta una segunda vez, y años después él seguía recordándolo."
+    before_phrase: "Como vuelvas a hacerlo, te vas a enterar."
+    after_phrase: "Esto es una advertencia, no un castigo."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos meses de margen"
+    body: "El aviso llegó en enero y decía exactamente qué pasaría en marzo. Nadie se asustó y todo el mundo se puso a trabajar. «Es una advertencia con calendario», resumió la responsable en la reunión. En marzo no pasó nada de lo anunciado."
+    before_phrase: "Nos han mandado un aviso bastante serio."
+    after_phrase: "Es una advertencia con calendario."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El filtro de marzo"
+    body: "El técnico lo dijo mientras recogía las herramientas: sin cambiar el filtro en marzo, en junio no habría agua caliente. Nadie lo apuntó. En junio, cuando pasó, alguien lo recordó: «Aquello fue una advertencia y la dejamos pasar»."
+    before_phrase: "Ya nos lo había dicho, mira tú."
+    after_phrase: "Aquello fue una advertencia y la dejamos pasar."
+metrics:
+  zipf_overall: 4.3302
+  dispersion_dp: 0.1297
+  pedantry_proxy: 0.5985
+  family_size: 55
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-16"

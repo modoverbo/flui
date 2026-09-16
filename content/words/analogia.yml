@@ -1,0 +1,249 @@
+schema_version: 1
+sort_order: 7002
+slug: "analogia"
+status: "draft"
+lemma: "analogía"
+part_of_speech: "sustantivo"
+syllables:
+  - "a"
+  - "na"
+  - "lo"
+  - "gí"
+  - "a"
+stressed_syllable: 4
+ipa_latam: "[a.na.loˈxi.a]"
+ipa_es: "[a.na.loˈxi.a]"
+explanation: "Comparación con algo que ya conoces, puesta al lado de una idea nueva para que se vea."
+example_sentence: "Explicó el ahorro con una analogía: una bañera que se llena con el tapón puesto."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Funciona cuando la comparación viene del día a día de quien te escucha, no del tuyo."
+when_not_to_use: "No la uses para dos cosas que se parecen por casualidad; aquí la comparación se elige a propósito para explicar."
+collocations:
+  - "una analogía sencilla"
+  - "recurrir a una analogía"
+  - "la analogía se rompe"
+replaces:
+  - before: "Te lo comparo con algo que ya conoces"
+    after: "Te lo explico con una analogía que ya conoces"
+  - before: "Pongo un ejemplo parecido para que se vea"
+    after: "Recurro a una analogía para que se vea"
+  - before: "Eso es como cuando se te llena el buzón"
+    after: "La analogía es tu buzón lleno"
+semantic_set_id: "figuras-para-explicar"
+family:
+  - "análogo"
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "ejemplo"
+  funcion:
+    - "explicar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "alegoría"
+    difference: "Una «alegoría» representa una idea entera con imágenes, como la justicia con los ojos vendados; la otra compara con algo corriente para explicarlo."
+    memory_trick: "La alegoría representa; la otra acerca."
+  - confused_with: "anomalía"
+    difference: "Una «anomalía» es algo que se sale de lo normal, y no tiene nada que ver con comparar dos cosas."
+    memory_trick: "La anomalía sorprende; la otra aclara."
+exercises:
+  - position: 1
+    sentence: "Marisol explicó el sistema de riego con una {{blank}}: un barrio entero bebiendo del mismo grifo, cada casa con su turno."
+    hint_general: "Es la comparación con algo corriente que elige quien explica para que la idea entre sola."
+    explanation: "Analogía: compara el riego con algo corriente para que entre sola. Una «alegoría» representa ideas con imágenes, y una «definición» diría qué es el riego, no a qué se parece."
+    options:
+      - position: 1
+        text: "alegoría"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «alegoría» representa una idea abstracta con imágenes, como la justicia con los ojos vendados; aquí se compara con un barrio de verdad."
+        hint_specific: "Una «alegoría» convierte una idea en figura. ¿El barrio del grifo es una figura o algo que cualquiera ha visto?"
+      - position: 2
+        text: "analogía"
+        is_correct: true
+      - position: 3
+        text: "definición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «definición» dice qué es una cosa con palabras propias, y aquí no se dice qué es el riego: se dice a qué se parece."
+        hint_specific: "Una «definición» responde «qué es». ¿La frase responde qué es o a qué se parece?"
+  - position: 2
+    sentence: "Cuando su hija preguntó qué era un préstamo, Gaspar buscó una {{blank}} con el chocolate que le prestaba a su hermano."
+    hint_general: "Buscó a propósito algo conocido por la niña para que la idea nueva encajara sola."
+    explanation: "Analogía: eligió algo que la niña ya conoce para explicar el préstamo. «Ocurrencia» llamaría improvisado lo que fue buscado, y una «moraleja» cierra un cuento, y aquí no hay cuento."
+    options:
+      - position: 1
+        text: "ocurrencia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ocurrencia» es coloquial y da por improvisado lo que se dice; él busca a propósito una comparación que su hija ya maneja."
+        hint_specific: "«Ocurrencia» suena a salida espontánea. ¿Gaspar improvisa o busca algo que ella ya conoce?"
+      - position: 2
+        text: "moraleja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «moraleja» es la enseñanza que deja un cuento al final, y aquí nadie cuenta un cuento con final."
+        hint_specific: "Una «moraleja» llega al cerrar una historia. ¿Gaspar cuenta una historia o compara dos cosas?"
+      - position: 3
+        text: "analogía"
+        is_correct: true
+  - position: 3
+    sentence: "El equipo entendió el reparto del trabajo con el ejemplo del restaurante, aunque esa {{blank}} no cubría los turnos de noche."
+    hint_general: "Hablamos de la comparación elegida para explicar, que sirve hasta donde el parecido aguanta."
+    explanation: "Analogía: la comparación del restaurante aclara hasta donde aguanta. Una «alegoría» representaría ideas con imágenes, y una «coincidencia» sería parecerse por casualidad."
+    options:
+      - position: 1
+        text: "analogía"
+        is_correct: true
+      - position: 2
+        text: "alegoría"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «alegoría» convierte una idea abstracta en imágenes; el restaurante no representa nada, sirve para comparar dos repartos."
+        hint_specific: "Una «alegoría» trabaja con símbolos. ¿El restaurante es un símbolo o un caso que el equipo conoce?"
+      - position: 3
+        text: "coincidencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «coincidencia» es que dos cosas se parezcan por casualidad, y el ejemplo del restaurante se eligió a propósito."
+        hint_specific: "Una «coincidencia» no la elige nadie. ¿El restaurante salió por azar o lo puso alguien?"
+  - position: 4
+    sentence: "Rebeca odia las charlas llenas de teoría, así que abre siempre con una {{blank}} tomada de la cocina de su casa."
+    hint_general: "Abre comparando el tema con algo doméstico que su público ya conoce."
+    explanation: "Analogía: abre comparando con algo doméstico y conocido. «Historieta» rebajaría eso a un cuentecillo, y una «definición» sería decir qué es el tema, no a qué se parece."
+    options:
+      - position: 1
+        text: "historieta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Historieta» es coloquial y rebaja lo dicho a un cuentecillo sin importancia, y esa comparación sostiene toda la charla."
+        hint_specific: "«Historieta» resta importancia. ¿Lo que abre la charla es un adorno o su columna vertebral?"
+      - position: 2
+        text: "analogía"
+        is_correct: true
+      - position: 3
+        text: "definición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «definición» explica qué es algo por sí mismo, y ella no define nada: trae la cocina de su casa al tema."
+        hint_specific: "Una «definición» no necesita traer nada de fuera. ¿Ella se apoya en algo ajeno al tema?"
+  - position: 5
+    sentence: "Néstor habló del ahorro como de una bañera con el tapón puesto, y esa {{blank}} se le quedó grabada a todo el mundo."
+    hint_general: "La bañera no es el tema: es lo conocido que se pone al lado para que el tema se vea."
+    explanation: "Analogía: la bañera se pone al lado del ahorro para que se vea. Una «moraleja» sería la enseñanza final de un cuento, y una «alegoría» representaría una idea con símbolos."
+    options:
+      - position: 1
+        text: "moraleja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «moraleja» es lo que un cuento deja al terminar, y aquí la bañera no cierra nada: abre el tema del ahorro."
+        hint_specific: "Una «moraleja» llega al final. ¿La bañera aparece para cerrar o para empezar a entender?"
+      - position: 2
+        text: "alegoría"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «alegoría» representa una idea con símbolos; la bañera es un objeto corriente puesto al lado del ahorro para compararlos."
+        hint_specific: "Una «alegoría» simboliza. ¿La bañera simboliza el ahorro o se parece a cómo funciona?"
+      - position: 3
+        text: "analogía"
+        is_correct: true
+  - position: 6
+    sentence: "Ainhoa prepara cada clase con una {{blank}} distinta, porque un caso del día a día abre puertas que una explicación cerrada no abre."
+    hint_general: "Prepara cada vez una comparación nueva con algo que su público vive fuera de la clase."
+    explanation: "Analogía: prepara cada vez una comparación con algo vivido fuera. «Ocurrencia» daría por improvisado un trabajo preparado, y una «coincidencia» es un parecido casual."
+    options:
+      - position: 1
+        text: "ocurrencia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ocurrencia» es coloquial y sugiere que algo sale en el momento, y ella lo prepara clase por clase."
+        hint_specific: "«Ocurrencia» aparece de golpe. ¿Ainhoa improvisa o llega con eso preparado?"
+      - position: 2
+        text: "coincidencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «coincidencia» es un parecido casual entre dos cosas, y ella elige el caso del día a día con toda la intención."
+        hint_specific: "Una «coincidencia» no se busca. ¿El caso del día a día lo busca alguien?"
+      - position: 3
+        text: "analogía"
+        is_correct: true
+  - position: 7
+    sentence: "El mecánico le dijo que el embrague se gasta como la suela de un zapato, y Ulises entendió el presupuesto gracias a esa {{blank}}."
+    hint_general: "Entendió porque le pusieron al lado algo cotidiano que funciona igual."
+    explanation: "Analogía: la suela funciona igual que el embrague y por eso se entiende. Una «definición» diría qué es el embrague, y una «alegoría» lo convertiría en símbolo de otra cosa."
+    options:
+      - position: 1
+        text: "definición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «definición» diría qué es un embrague y para qué sirve, y el mecánico no dice eso: dice a qué se parece."
+        hint_specific: "Una «definición» describe la pieza. ¿Le describen la pieza o le traen un zapato?"
+      - position: 2
+        text: "alegoría"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «alegoría» convierte algo en símbolo de una idea mayor, y aquí la suela solo muestra cómo se desgasta una pieza."
+        hint_specific: "Una «alegoría» apunta a una idea grande. ¿La suela apunta a una idea o a un desgaste?"
+      - position: 3
+        text: "analogía"
+        is_correct: true
+  - position: 8
+    sentence: "Cada vez que Casandra explica el interés de un préstamo recurre a la misma {{blank}}: una bola de nieve que baja rodando."
+    hint_general: "Recurre siempre al mismo objeto conocido para que la idea difícil se vea sola."
+    explanation: "Analogía: la bola de nieve es lo conocido que hace ver el interés. Una «moraleja» cerraría un cuento con una enseñanza, y una «coincidencia» sería un parecido de azar."
+    options:
+      - position: 1
+        text: "analogía"
+        is_correct: true
+      - position: 2
+        text: "moraleja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «moraleja» deja una enseñanza al final de un cuento, y la bola de nieve no cierra nada: abre la explicación."
+        hint_specific: "Una «moraleja» cierra. ¿La bola de nieve llega al final o al principio de la explicación?"
+      - position: 3
+        text: "coincidencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «coincidencia» sería que dos cosas se parecieran por azar, y Casandra elige la bola de nieve a propósito, siempre la misma."
+        hint_specific: "Una «coincidencia» pasa sola. ¿Casandra encuentra ese parecido por azar o lo lleva preparado?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El grifo del barrio"
+    body: "El equipo llevaba media hora perdido en porcentajes. Milena se levantó: «Va una analogía: la red es un grifo y cada casa tiene su turno; si uno abre el suyo entero, los demás se quedan secos». Tres personas dijeron «ah» a la vez y la reunión avanzó."
+    before_phrase: "A ver, es como si… no sé cómo explicarlo."
+    after_phrase: "Va una analogía y lo vemos claro."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "El chocolate prestado"
+    body: "Su hija quería saber por qué el banco cobra por prestar dinero. Gaspar pensó un momento. «Esta analogía te va a servir: tú le prestas chocolate a tu hermano y él te devuelve un poco más porque lo tuvo una semana». Ella asintió y preguntó cuánto más."
+    before_phrase: "Es complicado, ya lo entenderás de mayor."
+    after_phrase: "Esta analogía te va a servir."
+  - position: 3
+    scene: "social"
+    conversation_type: "emocional"
+    title: "La bañera"
+    body: "Jimena contaba que ahorraba y ahorraba sin que la cuenta subiera. Su amigo la escuchó hasta el final. «La analogía que a mí me sirvió: es una bañera con el tapón quitado; no llenas más, tapas mejor». Jimena se quedó callada un rato, y luego sacó el móvil para mirar sus cobros."
+    before_phrase: "No sé, es como que se me escapa el dinero."
+    after_phrase: "La analogía que a mí me sirvió es una bañera."
+metrics:
+  zipf_overall: 3.6978
+  dispersion_dp: 0.2475
+  pedantry_proxy: 0.5033
+  family_size: 17
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

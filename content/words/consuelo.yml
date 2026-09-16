@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7011
+slug: "consuelo"
+status: "draft"
+lemma: "consuelo"
+part_of_speech: "sustantivo"
+syllables:
+  - "con"
+  - "sue"
+  - "lo"
+stressed_syllable: 2
+ipa_latam: "[konˈswe.lo]"
+ipa_es: "[konˈswe.lo]"
+explanation: "Alivio que le das a alguien que lo pasa mal, aunque el problema siga."
+example_sentence: "No le arreglé nada, pero me quedé con ella: a veces basta el consuelo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para pedir compañía en vez de soluciones, y para ofrecerla sin prometer que arreglarás nada."
+when_not_to_use: "No la uses para decirle a alguien qué debe hacer, ni para algo que quita de verdad la causa del problema."
+collocations:
+  - "buscar consuelo"
+  - "servir de consuelo"
+  - "un consuelo pequeño"
+replaces:
+  - before: "Le dije cuatro cosas para que se sintiera mejor"
+    after: "Le di algo de consuelo"
+  - before: "Saber eso me quita un peso de encima"
+    after: "Saber eso ya es un consuelo"
+  - before: "No quiero que me arreglen nada, solo que me escuchen"
+    after: "No busco soluciones, busco consuelo"
+family:
+  - "consolar"
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "amistad"
+    relevance: 1
+tags:
+  comodin:
+    - "apoyo"
+  funcion:
+    - "acompañar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "consejo"
+    difference: "Un «consejo» dice qué hacer; la otra palabra no pide nada a cambio y solo acompaña el mal rato."
+    memory_trick: "El consejo manda hacer; lo otro se queda al lado."
+  - confused_with: "ánimo"
+    difference: "El «ánimo» empuja hacia adelante y pide movimiento; la otra palabra acompaña aunque nadie se mueva."
+    memory_trick: "El ánimo te levanta; lo otro se sienta contigo."
+exercises:
+  - position: 1
+    sentence: "Su amiga no intentó arreglarle el día: se sentó al lado y le ofreció el {{blank}} de estar ahí sin decir nada."
+    hint_general: "Acompaña el mal rato sin cambiar lo que pasó ni decirle a nadie qué hacer."
+    explanation: "Consuelo: acompaña el mal rato sin cambiar nada. Un «consejo» diría qué hacer, y ella calla, y un «remedio» quitaría la causa del problema."
+    options:
+      - position: 1
+        text: "consejo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «consejo» dice qué hacer, y en la escena su amiga no dice nada: se sienta al lado."
+        hint_specific: "Un «consejo» se da con palabras y con instrucciones. ¿Cuántas palabras dice su amiga?"
+      - position: 2
+        text: "consuelo"
+        is_correct: true
+      - position: 3
+        text: "remedio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «remedio» quita la causa del problema, y estar sentada al lado no cambia nada de lo que pasó."
+        hint_specific: "Un «remedio» arregla el origen. ¿Se arregla algo en esa escena?"
+  - position: 2
+    sentence: "Perder el tren le fastidió la tarde, pero le quedó el {{blank}} de haber estado una hora más con su hermana."
+    hint_general: "Algo bueno que acompaña el disgusto sin borrarlo del todo."
+    explanation: "Consuelo: algo bueno que acompaña el disgusto sin borrarlo. El «ánimo» empujaría hacia adelante, y «bálsamo» es una palabra poética para lo que calma del todo."
+    options:
+      - position: 1
+        text: "ánimo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «ánimo» empuja a hacer algo, y aquí no hay nada que hacer: el tren ya se fue."
+        hint_specific: "El «ánimo» sirve para lo que viene. ¿Queda algo por delante en esta escena?"
+      - position: 2
+        text: "consuelo"
+        is_correct: true
+      - position: 3
+        text: "bálsamo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bálsamo» es una palabra poética para lo que calma por completo, y una hora con su hermana no borra el disgusto."
+        hint_specific: "«Bálsamo» promete calma total y suena a verso. ¿Queda algo de fastidio en la tarde?"
+  - position: 3
+    sentence: "Leandro no quería soluciones aquella noche: quería {{blank}}, y su cuñado tardó media hora en entenderlo."
+    hint_general: "Quería compañía en el mal rato, no indicaciones sobre qué hacer."
+    explanation: "Consuelo: quería compañía en el mal rato. Un «consejo» sería justo la solución que no pedía, y «paliativo» es una palabra de informe, no de cocina."
+    options:
+      - position: 1
+        text: "consejo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «consejo» es exactamente lo que dice no querer: alguien diciéndole qué debería hacer."
+        hint_specific: "Un «consejo» propone un plan. Relee: ¿pedía planes esa noche?"
+      - position: 2
+        text: "paliativo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Paliativo» es una palabra de informe para lo que alivia sin curar, y entre dos personas en una cocina suena a ficha."
+        hint_specific: "«Paliativo» se lee en papeles técnicos. ¿Encaja ese tono en una conversación de madrugada?"
+      - position: 3
+        text: "consuelo"
+        is_correct: true
+  - position: 4
+    sentence: "Su vecina le dio un {{blank}} de una sola frase: «A mí también me pasó, y también se me pasó»."
+    hint_general: "Una frase que acompaña la pena sin pedirle nada a quien la escucha."
+    explanation: "Consuelo: una frase que acompaña la pena. El «ánimo» pediría moverse, y un «consejo» diría qué hacer, y esa frase no hace ninguna de las dos cosas."
+    options:
+      - position: 1
+        text: "ánimo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «ánimo» pide moverse y hacer algo, y esa frase no pide nada: solo dice que no está sola."
+        hint_specific: "El «ánimo» empuja. ¿Esa frase empuja a algo o acompaña?"
+      - position: 2
+        text: "consuelo"
+        is_correct: true
+      - position: 3
+        text: "consejo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «consejo» diría qué hacer a partir de ahora, y la vecina solo cuenta lo que le pasó a ella."
+        hint_specific: "Un «consejo» trae siempre una instrucción. ¿Hay alguna instrucción en esa frase?"
+  - position: 5
+    sentence: "Después de la discusión, Amparo llamó a su hermana a buscar {{blank}} y no colgaron hasta la madrugada."
+    hint_general: "Llamó buscando compañía para la pena, no una forma de arreglar la discusión."
+    explanation: "Consuelo: llamó buscando compañía para la pena. Un «remedio» arreglaría la discusión, y «bálsamo» es una palabra poética que promete calma completa."
+    options:
+      - position: 1
+        text: "remedio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «remedio» arreglaría la discusión, y su hermana no está en ella: solo escucha hasta la madrugada."
+        hint_specific: "Un «remedio» toca el problema. ¿Puede su hermana tocar esa discusión?"
+      - position: 2
+        text: "bálsamo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bálsamo» es poética y promete calma total, y tras una discusión así nadie cuelga en paz del todo."
+        hint_specific: "«Bálsamo» suena a poema y a calma completa. ¿Cómo queda Amparo al colgar?"
+      - position: 3
+        text: "consuelo"
+        is_correct: true
+  - position: 6
+    sentence: "A Berta le sirvió de {{blank}} saber que el fallo no había sido solo suyo, aunque el pedido siguiera perdido."
+    hint_general: "Le alivió la pena aunque el problema de fondo siguiera exactamente igual."
+    explanation: "Consuelo: le alivia la pena aunque el problema siga. Un «remedio» habría recuperado el pedido, y «paliativo» es una palabra fría de informe."
+    options:
+      - position: 1
+        text: "consuelo"
+        is_correct: true
+      - position: 2
+        text: "remedio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «remedio» habría recuperado el pedido, y el pedido sigue perdido al final de la frase."
+        hint_specific: "Un «remedio» cambia el resultado. ¿Cambió algo del pedido?"
+      - position: 3
+        text: "paliativo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Paliativo» es una palabra fría de informe técnico, y aquí se habla de cómo se siente una compañera."
+        hint_specific: "«Paliativo» pertenece a un documento. ¿De qué habla esta frase, de un papel o de una persona?"
+  - position: 7
+    sentence: "La gente le cuenta cosas a Damián porque reparte {{blank}} con facilidad y consejos con cuentagotas."
+    hint_general: "Acompaña mucho y ordena poco, y por eso los demás se abren con él."
+    explanation: "Consuelo: acompaña mucho y ordena poco. El «ánimo» empujaría a actuar, y un «remedio» prometería arreglar el problema de cada uno."
+    options:
+      - position: 1
+        text: "ánimo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «ánimo» empuja a actuar, y lo que hace Damián es quedarse escuchando mientras el otro habla."
+        hint_specific: "El «ánimo» mete prisa hacia adelante. ¿Damián empuja a la gente o la acompaña?"
+      - position: 2
+        text: "consuelo"
+        is_correct: true
+      - position: 3
+        text: "remedio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «remedio» prometería arreglar cada problema, y él ni siquiera reparte indicaciones: las da con cuentagotas."
+        hint_specific: "Un «remedio» resuelve. ¿Damián resuelve los problemas de los demás?"
+  - position: 8
+    sentence: "El mensaje llegó del lado más raro y le dio el {{blank}} que ya no esperaba de nadie."
+    hint_general: "Un mensaje inesperado que acompaña la pena sin cambiar la situación."
+    explanation: "Consuelo: un mensaje que acompaña la pena sin cambiar nada. El «ánimo» empujaría a hacer algo, y un «consejo» traería una instrucción."
+    options:
+      - position: 1
+        text: "consejo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «consejo» traería una instrucción sobre qué hacer, y lo que llega es un mensaje que simplemente acompaña."
+        hint_specific: "Un «consejo» dice qué paso dar. ¿Este mensaje pide algún paso?"
+      - position: 2
+        text: "consuelo"
+        is_correct: true
+      - position: 3
+        text: "ánimo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «ánimo» empuja hacia una acción, y aquí no se le pide que haga nada: se le hace compañía."
+        hint_specific: "El «ánimo» mira hacia delante. ¿Este mensaje mira hacia delante o se queda con ella?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Sin arreglarlo"
+    body: "Su hija llegó de la prueba de acceso con la cara larga. Ivo empezó a proponer planes y ella se cerró. Cambió de estrategia: «¿Quieres consuelo o quieres opciones?». «Consuelo», dijo ella. Estuvieron en el sofá media hora y nadie propuso nada."
+    before_phrase: "A ver, lo que puedes hacer es presentarte otra vez…"
+    after_phrase: "¿Quieres consuelo o quieres opciones?"
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "La llamada larga"
+    body: "Amparo llamó a su hermana después de la discusión con su pareja. No hubo análisis ni consejos. «Solo necesito consuelo hoy», dijo al descolgar. Hablaron de cualquier cosa hasta la madrugada, y el lunes ya pudo pensar."
+    before_phrase: "No me digas nada, solo escúchame un rato."
+    after_phrase: "Solo necesito consuelo hoy."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El pedido perdido"
+    body: "El pedido se perdió y Berta se pasó la mañana repasando cada paso. Su compañera se acercó con dos cafés: «El fallo no fue solo tuyo; si te sirve de consuelo, yo firmé el mismo papel». Berta respiró. Después revisaron el proceso juntas."
+    before_phrase: "No te machaques, que no fue culpa tuya sola."
+    after_phrase: "Si te sirve de consuelo, yo firmé lo mismo."
+metrics:
+  zipf_overall: 4.0515
+  dispersion_dp: 0.1373
+  pedantry_proxy: 0.4887
+  family_size: 276
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

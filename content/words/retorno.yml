@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "retorno"
+status: "draft"
+lemma: "retorno"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "tor"
+  - "no"
+stressed_syllable: 2
+ipa_latam: "[reˈtoɾ.no]"
+ipa_es: "[reˈtoɾ.no]"
+explanation: "Lo que vuelve después de un esfuerzo o un pago: dinero, tiempo o clientes."
+example_sentence: "La formación costó tres días y el retorno se vio en el primer mes."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es la palabra para justificar un gasto sin prometer milagros: dice qué vuelve y cuándo."
+when_not_to_use: "No la uses para la vuelta física de alguien a un sitio; aquí lo que vuelve es el fruto de un gasto."
+collocations:
+  - "el retorno de la inversión"
+  - "un retorno lento"
+  - "medir el retorno"
+replaces:
+  - before: "Eso al final nos devuelve mucho"
+    after: "Eso tiene un retorno alto"
+  - before: "No sé si compensa el gasto"
+    after: "No sé cuál es el retorno del gasto"
+  - before: "Tardamos en verle el fruto"
+    after: "El retorno llegó tarde"
+family:
+  - "retornar"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin:
+    - "lo que devuelve"
+    - "fruto"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "entorno"
+    difference: "El entorno es lo que hay alrededor; esta palabra nombra lo que un gasto devuelve."
+    memory_trick: "El entorno te rodea; el retorno te vuelve."
+  - confused_with: "ganancia"
+    difference: "La ganancia es dinero limpio; lo que vuelve de un gasto puede ser tiempo, clientes o calma."
+    memory_trick: "La ganancia se cuenta en dinero; el retorno, en lo que sea que vuelva."
+exercises:
+  - position: 1
+    sentence: "Los tres días de formación parecían caros hasta que Mireia midió el {{blank}}: dos horas menos de trabajo cada semana."
+    hint_general: "Mide lo que devolvió el gasto, y aquí volvió en horas."
+    explanation: "Retorno: lo que devolvió la formación, medido en horas. «Entorno» sería lo que hay alrededor, y «ganancia» pediría dinero, no horas."
+    options:
+      - position: 1
+        text: "entorno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entorno» nombra lo que rodea a algo, y aquí se mide lo que la formación devolvió."
+        hint_specific: "«Entorno» es lo de alrededor. ¿Mireia mide el ambiente o lo que volvió?"
+      - position: 2
+        text: "retorno"
+        is_correct: true
+      - position: 3
+        text: "ganancia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ganancia» se cuenta en dinero, y lo que volvió aquí fueron dos horas por semana."
+        hint_specific: "«Ganancia» pide una cifra de dinero. ¿En qué se midió el resultado?"
+  - position: 2
+    sentence: "El huerto del colegio da poco fruto el primer año: el {{blank}} llega en el tercero, cuando los árboles agarran."
+    hint_general: "Lo que devuelve el esfuerzo tarda tres años en llegar."
+    explanation: "Retorno: lo que devuelve el esfuerzo, con tres años de espera. «Rédito» es palabra de informe financiero, y «regreso» hablaría de volver a un sitio."
+    options:
+      - position: 1
+        text: "rédito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rédito» pertenece al lenguaje financiero de los informes, y aquí se habla de un huerto escolar."
+        hint_specific: "«Rédito» suena a informe de banco. ¿Encaja contando el huerto de un colegio?"
+      - position: 2
+        text: "regreso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Regreso» es volver a un lugar, y en la frase lo que llega son frutos, no personas."
+        hint_specific: "«Regreso» es volver a un sitio. ¿Vuelve alguien o viene una cosecha?"
+      - position: 3
+        text: "retorno"
+        is_correct: true
+  - position: 3
+    sentence: "Antes de aprobar la campaña, Efraín preguntó por el {{blank}} de la del año pasado y pidió los números al lado."
+    hint_general: "Pregunta qué devolvió el dinero puesto el año anterior."
+    explanation: "Retorno: qué devolvió el dinero del año pasado. «Entorno» sería lo que rodea a la campaña, y «resultado» diría cómo salió, sin compararlo con lo que costó."
+    options:
+      - position: 1
+        text: "retorno"
+        is_correct: true
+      - position: 2
+        text: "entorno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entorno» describe el contexto en el que algo ocurre, y Efraín pregunta qué devolvió el dinero."
+        hint_specific: "«Entorno» habla del contexto. ¿Se pregunta por el contexto o por lo que volvió?"
+      - position: 3
+        text: "resultado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resultado» dice cómo salió la campaña, y aquí se compara lo que volvió con lo que costó."
+        hint_specific: "«Resultado» no compara con el gasto. ¿Qué pide Efraín al lado de la cifra?"
+  - position: 4
+    sentence: "Poner a alguien a acompañar a los nuevos cuesta horas, y el {{blank}} se ve en los meses que dejan de irse."
+    hint_general: "El esfuerzo vuelve en forma de gente que se queda."
+    explanation: "Retorno: el esfuerzo vuelve en gente que se queda. «Tajada» es de charla informal y suena a quedarse con una parte, y «beneficio» pediría una cifra de dinero."
+    options:
+      - position: 1
+        text: "tajada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tajada» es de conversación muy suelta y sugiere quedarse con un trozo del pastel, no un fruto compartido."
+        hint_specific: "«Tajada» suena a repartirse un botín en charla informal. ¿Alguien se queda con una parte?"
+      - position: 2
+        text: "retorno"
+        is_correct: true
+      - position: 3
+        text: "beneficio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Beneficio» apunta a dinero limpio, y lo que se mide aquí es gente que decide quedarse."
+        hint_specific: "«Beneficio» se cuenta en dinero. ¿Qué se cuenta en esta frase?"
+  - position: 5
+    sentence: "Mi tía dice que cuidar la amistad con los vecinos tiene un {{blank}} raro: un día te quedas sin llaves y aparece alguien."
+    hint_general: "Lo que devuelve el cuidado no se ve hasta que hace falta."
+    explanation: "Retorno: lo que devuelve el cuidado, cuando hace falta. «Entorno» sería el vecindario en sí, y «premio» supondría que alguien lo entrega a propósito."
+    options:
+      - position: 1
+        text: "premio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premio» supone que alguien lo entrega por méritos, y aquí lo que vuelve llega sin que nadie lo decida."
+        hint_specific: "«Premio» lo da alguien. ¿Quién entregaría ese premio en la escena?"
+      - position: 2
+        text: "retorno"
+        is_correct: true
+      - position: 3
+        text: "entorno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entorno» sería el vecindario en sí, y lo que describe la frase es lo que ese cuidado devuelve."
+        hint_specific: "«Entorno» nombra el lugar y la gente de alrededor. ¿Eso es lo que vuelve?"
+  - position: 6
+    sentence: "La cooperativa cambió las bombillas de todo el edificio y el {{blank}} apareció en la factura de invierno."
+    hint_general: "El gasto se nota devuelto en la factura de unos meses después."
+    explanation: "Retorno: el gasto vuelve en la factura de invierno. «Rédito» es lenguaje de informe financiero, y «regreso» hablaría de volver a un lugar."
+    options:
+      - position: 1
+        text: "regreso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Regreso» es volver a un sitio, y en una factura no vuelve nadie: vuelve el dinero gastado."
+        hint_specific: "«Regreso» mueve personas. ¿Quién volvería en una factura?"
+      - position: 2
+        text: "rédito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rédito» es vocabulario de informes financieros y suena raro hablando de las bombillas de un portal."
+        hint_specific: "«Rédito» pertenece a los informes de banco. ¿Va con la factura de un edificio?"
+      - position: 3
+        text: "retorno"
+        is_correct: true
+  - position: 7
+    sentence: "Bruno defendió el gasto en fotos nuevas mostrando el {{blank}}: las visitas al catálogo se doblaron en dos semanas."
+    hint_general: "Enseña qué devolvió el gasto y en cuánto tiempo."
+    explanation: "Retorno: lo que devolvió el gasto, con su plazo. «Entorno» sería el contexto del catálogo, y «resultado» no compararía con lo que costó."
+    options:
+      - position: 1
+        text: "resultado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resultado» cuenta qué pasó, y Bruno está enseñando qué devolvió el dinero que puso."
+        hint_specific: "«Resultado» no habla del gasto. ¿Qué está defendiendo Bruno?"
+      - position: 2
+        text: "retorno"
+        is_correct: true
+      - position: 3
+        text: "entorno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entorno» nombra lo que rodea al catálogo, y lo que él enseña es lo que volvió del gasto."
+        hint_specific: "«Entorno» es el contexto. ¿Bruno enseña el contexto o la vuelta del gasto?"
+  - position: 8
+    sentence: "Estudiar de noche durante dos años tuvo un {{blank}} tardío: el cambio de puesto llegó recién ahora."
+    hint_general: "El esfuerzo devolvió algo, aunque tardara dos años."
+    explanation: "Retorno: el esfuerzo devolvió el cambio de puesto. «Tajada» es informal y sugiere quedarse con un trozo, y «beneficio» pediría dinero contado."
+    options:
+      - position: 1
+        text: "retorno"
+        is_correct: true
+      - position: 2
+        text: "beneficio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Beneficio» apunta a dinero, y lo que llegó fue un puesto distinto después de dos años."
+        hint_specific: "«Beneficio» se cuenta en dinero. ¿Qué llegó al final de esos dos años?"
+      - position: 3
+        text: "tajada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tajada» es de charla muy suelta y pinta a alguien repartiéndose un trozo, no a alguien recogiendo su esfuerzo."
+        hint_specific: "«Tajada» suena a repartirse algo entre varios. ¿Hay reparto o hay esfuerzo propio?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres días de formación"
+    body: "El gasto en formación estaba a punto de caer del presupuesto. Mireia llevó una cifra sencilla: dos horas menos de trabajo por persona y semana. «Ese es el retorno», dijo. Nadie volvió a proponer quitarlo."
+    before_phrase: "Al final eso nos devuelve mucho."
+    after_phrase: "Ese es el retorno: dos horas por semana."
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "Las llaves"
+    body: "Mi tía riega las plantas de medio edificio y nunca pide nada. Un domingo se quedó fuera de casa y en diez minutos tenía tres tazas de café y un teléfono. «El retorno de esto llega raro», me dijo, «pero llega»."
+    before_phrase: "Al final todo vuelve, supongo."
+    after_phrase: "El retorno de esto llega raro, pero llega."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Defender un gasto"
+    body: "Le preguntaron a Bruno cómo defendía un gasto ante alguien que decía que no. «Con el retorno y con su fecha», contestó. «Si no sé cuándo vuelve, todavía no está listo para pedirlo». Le pidieron un ejemplo y tenía dos."
+    before_phrase: "Explico que al final compensa."
+    after_phrase: "Enseño el retorno y su fecha."
+metrics:
+  zipf_overall: 4.6972
+  dispersion_dp: 0.1722
+  pedantry_proxy: 0.5226
+  family_size: 44
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

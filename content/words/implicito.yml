@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "implicito"
+status: "draft"
+lemma: "implícito"
+part_of_speech: "adjetivo"
+syllables:
+  - "im"
+  - "plí"
+  - "ci"
+  - "to"
+stressed_syllable: 2
+ipa_latam: "[imˈpli.si.to]"
+ipa_es: "[imˈpli.θi.to]"
+explanation: "Que está ahí sin decirse: todos lo dan por hecho y nadie lo nombra."
+example_sentence: "En ese acuerdo hay un compromiso implícito que nadie ha escrito."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para sacar a la luz lo que se da por supuesto sin acusar a nadie de esconderlo."
+when_not_to_use: "No la uses para algo escondido a propósito; esto no se oculta, simplemente no se dice."
+collocations:
+  - "un acuerdo implícito"
+  - "una norma implícita"
+  - "queda implícito"
+replaces:
+  - before: "Eso se da por hecho, aunque no esté escrito"
+    after: "Eso está implícito"
+  - before: "Nadie lo dijo, pero todos lo sabíamos"
+    after: "Era un acuerdo implícito"
+  - before: "Ahí hay una condición que nadie nombró"
+    after: "Ahí hay una condición implícita"
+family:
+  - "implícitamente"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+tags:
+  comodin:
+    - "se da por hecho"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ilícito"
+    difference: "«Ilícito» dice que algo va contra la norma; lo otro dice que no hizo falta escribirlo."
+    memory_trick: "Lo ilícito rompe la regla; lo implícito no necesita regla."
+  - confused_with: "explícito"
+    difference: "«Explícito» está dicho con todas las letras; esta palabra nombra lo contrario."
+    memory_trick: "Lo explícito se lee; lo implícito se supone."
+exercises:
+  - position: 1
+    sentence: "En el reparto de la limpieza del portal hay un pacto {{blank}}: quien barre no saca la basura."
+    hint_general: "Nadie lo escribió y todos lo cumplen igual."
+    explanation: "Implícito: nadie lo escribió y todos lo cumplen. «Ilícito» diría que va contra la norma, y «explícito» supondría que está escrito."
+    options:
+      - position: 1
+        text: "ilícito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ilícito» dice que algo va contra la norma, y repartirse el barrido y la basura no rompe ninguna regla."
+        hint_specific: "«Ilícito» acusa de romper una norma. ¿Qué norma rompe ese reparto?"
+      - position: 2
+        text: "implícito"
+        is_correct: true
+      - position: 3
+        text: "explícito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Explícito» supone que está dicho con todas las letras, y la frase cuenta que nadie lo escribió."
+        hint_specific: "«Explícito» está escrito. ¿Aparece ese pacto en algún papel?"
+  - position: 2
+    sentence: "Al aceptar el puesto, Nerea preguntó qué había {{blank}} en la oferta, porque el sueldo estaba claro y el horario no."
+    hint_general: "Pregunta por lo que se da por hecho sin ponerlo por escrito."
+    explanation: "Implícito: lo que se da por hecho sin escribirlo. «Tácito» dice lo mismo en registro de despacho, y «oculto» acusaría de esconderlo a propósito."
+    options:
+      - position: 1
+        text: "tácito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tácito» dice algo muy parecido, pero es palabra de despacho y de contrato, y ella está preguntando en una charla normal."
+        hint_specific: "«Tácito» pertenece al lenguaje de los contratos. ¿En qué tono está preguntando Nerea?"
+      - position: 2
+        text: "implícito"
+        is_correct: true
+      - position: 3
+        text: "oculto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Oculto» acusa de esconder algo a propósito, y aquí solo hay condiciones que nadie pensó en escribir."
+        hint_specific: "«Oculto» supone que alguien lo esconde. ¿Hay mala intención o simple costumbre?"
+  - position: 3
+    sentence: "En la respuesta del portavoz había un reconocimiento {{blank}} del retraso, aunque la palabra «retraso» no apareciera."
+    hint_general: "Reconoció el problema sin llegar a nombrarlo."
+    explanation: "Implícito: reconoció el problema sin nombrarlo. «Explícito» exigiría que la palabra apareciera, e «ilícito» hablaría de romper una norma."
+    options:
+      - position: 1
+        text: "implícito"
+        is_correct: true
+      - position: 2
+        text: "explícito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Explícito» exigiría que lo dijera con todas las letras, y la frase aclara que esa palabra no apareció."
+        hint_specific: "«Explícito» lo dice todo. ¿Apareció la palabra que faltaba?"
+      - position: 3
+        text: "ilícito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ilícito» acusa de romper una norma, y un retraso reconocido a medias no rompe ninguna."
+        hint_specific: "«Ilícito» habla de normas rotas. ¿Alguien rompió una norma aquí?"
+  - position: 4
+    sentence: "Mi madre nunca dijo que había que llamar los domingos, pero era una regla {{blank}} que todos cumplíamos."
+    hint_general: "La regla existía sin que nadie la dijera nunca."
+    explanation: "Implícita: la regla existía sin decirse. «Subliminal» es palabra técnica sobre mensajes que entran sin darte cuenta, y «secreta» supondría que alguien la escondía."
+    options:
+      - position: 1
+        text: "subliminal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Subliminal» es vocabulario técnico sobre mensajes que entran sin que te enteres, y aquí todos sabían perfectamente lo que tocaba."
+        hint_specific: "«Subliminal» suena a estudio de publicidad y a mensajes que no percibes. ¿La familia se daba cuenta o no?"
+      - position: 2
+        text: "implícita"
+        is_correct: true
+      - position: 3
+        text: "secreta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Secreta» supone que alguien la guardaba escondida, y esta la conocían todos en casa."
+        hint_specific: "«Secreta» la conocen pocos. ¿Cuánta gente cumplía esa regla?"
+  - position: 5
+    sentence: "El contrato fijaba el precio y dejaba {{blank}} quién asumía el transporte, y por ahí llegó el problema."
+    hint_general: "Ese punto se daba por sabido y no se escribió."
+    explanation: "Implícito: se daba por sabido y no se escribió. «Explícito» diría que sí estaba escrito, y «tácito» lo diría en registro de despacho, cuando aquí se cuenta el lío en lenguaje corriente."
+    options:
+      - position: 1
+        text: "explícito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Explícito» supondría que el transporte estaba escrito en el contrato, y entonces no habría habido problema."
+        hint_specific: "«Explícito» está por escrito. ¿De dónde salió el problema?"
+      - position: 2
+        text: "implícito"
+        is_correct: true
+      - position: 3
+        text: "tácito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tácito» significa algo parecido pero pertenece al lenguaje de despacho, y aquí se cuenta el lío en palabras corrientes."
+        hint_specific: "«Tácito» es de contrato y de bufete. ¿Con qué tono se cuenta esta historia?"
+  - position: 6
+    sentence: "Cuando dijo que seguía disponible «para lo que haga falta», el ofrecimiento quedó {{blank}} y nadie lo llamó."
+    hint_general: "El ofrecimiento estaba ahí sin decirse del todo, y eso no bastó."
+    explanation: "Implícito: estaba ahí sin decirse del todo. «Ilícito» hablaría de romper una norma, y «claro» diría lo contrario de lo que pasó."
+    options:
+      - position: 1
+        text: "ilícito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ilícito» acusa de ir contra la norma, y ofrecerse a ayudar no rompe ninguna regla."
+        hint_specific: "«Ilícito» habla de normas. ¿Se rompió alguna aquí?"
+      - position: 2
+        text: "implícito"
+        is_correct: true
+      - position: 3
+        text: "claro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Claro» diría que se entendió sin dudas, y la frase cuenta que nadie lo llamó."
+        hint_specific: "«Claro» no deja dudas. ¿Qué pasó después de ese ofrecimiento?"
+  - position: 7
+    sentence: "En el equipo de Gaspar hay un acuerdo {{blank}} sobre los correos de la noche: se escriben y se contestan al día siguiente."
+    hint_general: "Un acuerdo que nadie escribió y todos respetan."
+    explanation: "Implícito: nadie lo escribió y todos lo respetan. «Subliminal» es palabra técnica sobre mensajes imperceptibles, y «obvio» diría que se entiende solo, sin ser un acuerdo."
+    options:
+      - position: 1
+        text: "obvio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obvio» dice que algo se entiende sin explicación, y esto no es evidente: es una costumbre que ese equipo pactó sin hablar."
+        hint_specific: "«Obvio» lo entendería cualquiera de fuera. ¿Un equipo nuevo sabría esto?"
+      - position: 2
+        text: "implícito"
+        is_correct: true
+      - position: 3
+        text: "subliminal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Subliminal» es lenguaje técnico y describe mensajes que entran sin que uno se dé cuenta, y aquí todos conocen la costumbre."
+        hint_specific: "«Subliminal» supone que nadie lo percibe, y suena a informe técnico. ¿El equipo lo sabe o no?"
+  - position: 8
+    sentence: "Ximena pidió poner por escrito lo que estaba {{blank}}, y la reunión duró veinte minutos más y tres meses menos."
+    hint_general: "Pide escribir lo que hasta entonces se daba por sabido."
+    explanation: "Implícito: lo que se daba por sabido. «Explícito» sería el resultado de escribirlo, no el punto de partida, y «secreto» acusaría de esconderlo."
+    options:
+      - position: 1
+        text: "secreto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Secreto» supone que alguien lo guardaba a escondidas, y esto lo sabían todos los que estaban en la sala."
+        hint_specific: "«Secreto» lo conocen unos pocos. ¿Quién conocía esos puntos?"
+      - position: 2
+        text: "explícito"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Explícito» es lo que queda después de escribirlo, y ella pide escribir justo lo que todavía no lo estaba."
+        hint_specific: "«Explícito» ya está escrito. ¿Qué pide Ximena que se escriba?"
+      - position: 3
+        text: "implícito"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Veinte minutos más"
+    body: "La reunión iba a terminar y Ximena pidió cinco minutos. «Escribamos lo que está implícito», dijo, y leyó tres puntos que todos daban por sabidos. La reunión duró veinte minutos más. El proyecto duró tres meses menos."
+    before_phrase: "Eso se da por hecho, ¿no?"
+    after_phrase: "Escribamos lo que está implícito."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los domingos"
+    body: "Mi madre nunca dijo que había que llamar los domingos. Nadie lo puso en ningún sitio y todos llamábamos. Cuando dejé de hacerlo una temporada, entendí el tamaño de aquella regla implícita: pesaba más que muchas dichas en voz alta."
+    before_phrase: "Nadie lo decía, pero todos lo sabíamos."
+    after_phrase: "Era una regla implícita."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Lo que no dijo"
+    body: "El portavoz no usó la palabra «retraso» ni una vez. Aun así, al terminar, una periodista lo resumió sin exagerar: «Hubo un reconocimiento implícito del retraso». Nadie pudo desmentirla, porque no había puesto ninguna palabra en boca de nadie."
+    before_phrase: "No lo dijo, pero lo dio a entender."
+    after_phrase: "Hubo un reconocimiento implícito."
+metrics:
+  zipf_overall: 3.5681
+  dispersion_dp: 0.2856
+  pedantry_proxy: 0.5810
+  family_size: 32
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-15"

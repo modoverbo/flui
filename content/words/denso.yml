@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 7006
+slug: "denso"
+status: "draft"
+lemma: "denso"
+part_of_speech: "adjetivo"
+syllables:
+  - "den"
+  - "so"
+stressed_syllable: 1
+ipa_latam: "[ˈden.so]"
+ipa_es: "[ˈden.so]"
+explanation: "Con tanta materia junta en poco espacio que cuesta seguirlo."
+example_sentence: "El informe es corto, pero tan denso que hay que leerlo dos veces."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Avisa de que algo trae mucho contenido junto sin decir que esté mal escrito ni que aburra."
+when_not_to_use: "No la uses para lo que es largo pero ligero, ni para lo que no se entiende por estar mal ordenado."
+collocations:
+  - "un texto denso"
+  - "una charla densa"
+  - "demasiado denso"
+replaces:
+  - before: "Ese informe es muy pesado de leer"
+    after: "Ese informe es muy denso"
+  - before: "Metió muchísima información en muy poco rato"
+    after: "El encuentro fue denso"
+  - before: "Hay demasiada cosa junta en este párrafo"
+    after: "Este párrafo es demasiado denso"
+family:
+  - "densidad"
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+  - slug: "presentaciones-oratoria"
+    relevance: 1
+tags:
+  comodin:
+    - "pesado"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "espeso"
+    difference: "«Espeso» se dice de un líquido que cuesta remover, como una salsa; la otra palabra se dice de un texto o una charla con mucho contenido."
+    memory_trick: "Lo espeso se toca; lo otro se lee."
+  - confused_with: "tenso"
+    difference: "«Tenso» describe un ambiente a punto de romperse; la otra palabra describe un contenido muy apretado."
+    memory_trick: "Lo tenso se nota en el cuerpo; lo otro, en la cabeza."
+exercises:
+  - position: 1
+    sentence: "El capítulo tiene ocho páginas, pero es tan {{blank}} que Cayetano tardó una tarde entera y salió con cinco ideas nuevas."
+    hint_general: "En muy pocas páginas hay tanto contenido junto que hay que ir despacio."
+    explanation: "Denso: ocho páginas con muchísimo contenido dentro. «Extenso» hablaría de longitud, que aquí es mínima, y «pesado» acusa de aburrir, cuando salió con ideas nuevas."
+    options:
+      - position: 1
+        text: "extenso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Extenso» habla de longitud, y el capítulo tiene ocho páginas: lo que cuesta es cuánto trae dentro."
+        hint_specific: "«Extenso» se mide en páginas. ¿Cuántas páginas tiene el capítulo?"
+      - position: 2
+        text: "denso"
+        is_correct: true
+      - position: 3
+        text: "pesado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pesado» es coloquial y acusa de aburrir, y él terminó la tarde con cinco ideas nuevas en la mano."
+        hint_specific: "«Pesado» es un reproche por aburrir. ¿Cómo terminó Cayetano la lectura?"
+  - position: 2
+    sentence: "La sesión fue {{blank}}: dos horas, cuatro asuntos y ni un minuto de respiro entre uno y otro."
+    hint_general: "Se juntó muchísimo contenido en muy poco tiempo, sin pausas para colocarlo."
+    explanation: "Densa: muchísimo contenido en muy poco tiempo. «Tensa» describiría un ambiente a punto de romperse, y «confusa» diría que no se entendía nada."
+    options:
+      - position: 1
+        text: "tensa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tensa» describe un ambiente a punto de romperse, y aquí nadie discute: simplemente hay demasiado contenido seguido."
+        hint_specific: "«Tensa» supone conflicto entre personas. ¿Hay pelea en esa sala o hay exceso de asuntos?"
+      - position: 2
+        text: "densa"
+        is_correct: true
+      - position: 3
+        text: "confusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confusa» diría que no se entendía, y el problema no era la claridad: era la cantidad junta."
+        hint_specific: "«Confusa» apunta a que algo está mal explicado. ¿Falló la claridad o la cantidad?"
+  - position: 3
+    sentence: "Amparo escribe párrafos {{blank}} y luego los parte en tres, porque sabe que nadie aguanta tanta idea seguida."
+    hint_general: "Los párrafos traen demasiadas ideas apretadas, y por eso los divide."
+    explanation: "Densos: traen demasiadas ideas apretadas. «Largos» hablaría de extensión, no de cuánto contienen, y «farragosos» acusaría de escribir enredado."
+    options:
+      - position: 1
+        text: "largos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largos» habla de extensión, y ella los parte porque traen demasiadas ideas juntas, no por su tamaño."
+        hint_specific: "«Largos» se arregla acortando. ¿Ella acorta o reparte las ideas?"
+      - position: 2
+        text: "densos"
+        is_correct: true
+      - position: 3
+        text: "farragosos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Farragosos» es una palabra dura que acusa de escribir de forma enredada, y los párrafos de Amparo se entienden bien."
+        hint_specific: "«Farragosos» supone mala escritura. ¿La frase critica cómo escribe o cuánto mete?"
+  - position: 4
+    sentence: "Ulises resumió doscientas páginas en una frase {{blank}} que había que leer dos veces para desarmarla."
+    hint_general: "En una sola frase cabe tanto que hay que volver sobre ella."
+    explanation: "Densa: en una frase cabe muchísimo. «Extensa» diría que la frase es larga, y no lo es, y «confusa» diría que está mal hecha."
+    options:
+      - position: 1
+        text: "confusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confusa» diría que la frase está mal hecha, y se lee dos veces porque trae mucho, no porque esté enredada."
+        hint_specific: "«Confusa» es un defecto. ¿La frase está mal construida o muy llena?"
+      - position: 2
+        text: "extensa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Extensa» habla de longitud, y se trata de una sola frase: lo que sorprende es cuánto cabe en ella."
+        hint_specific: "«Extensa» ocupa mucho sitio. ¿Cuánto ocupa una frase?"
+      - position: 3
+        text: "densa"
+        is_correct: true
+  - position: 5
+    sentence: "La clase de Fabián fue {{blank}}, pero todo el mundo salió con el esquema entero dibujado en la cabeza."
+    hint_general: "Cayó mucho contenido junto y aun así quedó ordenado al final."
+    explanation: "Densa: cayó mucho contenido junto y quedó ordenado. «Pesada» acusaría de aburrir, y salieron con el esquema entero, y «confusa» diría que no se entendió."
+    options:
+      - position: 1
+        text: "pesada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pesada» es coloquial y acusa de aburrir, y salieron con el esquema entero en la cabeza."
+        hint_specific: "«Pesada» deja a la gente harta. ¿Cómo salió la gente de esa clase?"
+      - position: 2
+        text: "densa"
+        is_correct: true
+      - position: 3
+        text: "confusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confusa» significaría que nadie entendió nada, y salieron con el esquema completo."
+        hint_specific: "«Confusa» deja a la gente perdida. ¿Se fueron perdidos o con el mapa hecho?"
+  - position: 6
+    sentence: "Prefiero un texto {{blank}} y corto antes que uno vacío y larguísimo, dice Fidel cada vez que reparte lecturas."
+    hint_general: "Prefiere lo que trae mucho en poco espacio a lo que ocupa mucho y aporta poco."
+    explanation: "Denso: mucho contenido en poco espacio. «Largo» contradice el «corto» de la frase, y «farragoso» acusa de enredo, y nadie prefiere lo enredado."
+    options:
+      - position: 1
+        text: "largo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largo» choca con el «corto» que viene justo después: no se puede preferir un texto largo y corto a la vez."
+        hint_specific: "«Largo» y «corto» se contradicen. ¿Qué virtud puede tener un texto que además es corto?"
+      - position: 2
+        text: "denso"
+        is_correct: true
+      - position: 3
+        text: "farragoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Farragoso» acusa de estar enredado y mal hilado, y nadie prefiere eso: es un defecto, no una virtud."
+        hint_specific: "«Farragoso» nunca es un elogio. ¿La frase elogia ese texto o lo critica?"
+  - position: 7
+    sentence: "Cuando la reunión se puso {{blank}}, Nerea pidió cinco minutos y la gente aprovechó para anotar lo que llevaba."
+    hint_general: "Se acumularon tantos asuntos que hizo falta parar para ordenarlos."
+    explanation: "Densa: se acumularon tantos asuntos que hubo que parar. «Tensa» hablaría de un clima a punto de romperse, y «profunda» elogiaría que se llegara al fondo."
+    options:
+      - position: 1
+        text: "tensa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Tensa» describe un clima a punto de romperse, y la gente usa la pausa para anotar, no para calmarse."
+        hint_specific: "«Tensa» se arregla bajando el tono. ¿Para qué usaron los cinco minutos?"
+      - position: 2
+        text: "profunda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Profunda» elogia llegar al fondo de un asunto, y aquí el problema es que se juntaron demasiados asuntos."
+        hint_specific: "«Profunda» va de hondura en un tema. ¿Fue un tema a fondo o muchos temas encima?"
+      - position: 3
+        text: "densa"
+        is_correct: true
+  - position: 8
+    sentence: "El resumen dura tres minutos y es {{blank}}: cada segundo trae un dato que después hace falta."
+    hint_general: "En tres minutos entra todo lo necesario, sin nada de relleno."
+    explanation: "Denso: en tres minutos entra todo lo necesario. «Extenso» hablaría de duración, y dura tres minutos, y «profundo» hablaría de hondura, no de cantidad."
+    options:
+      - position: 1
+        text: "denso"
+        is_correct: true
+      - position: 2
+        text: "extenso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Extenso» habla de cuánto ocupa algo, y el resumen dura tres minutos: lo llamativo es cuánto cabe ahí."
+        hint_specific: "«Extenso» se mide con el reloj. ¿Cuánto dura el resumen?"
+      - position: 3
+        text: "profundo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Profundo» diría que llega al fondo de una cuestión, y lo que se destaca es la cantidad de datos por segundo."
+        hint_specific: "«Profundo» va de hondura. ¿Lo que impresiona es la hondura o la cantidad?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos páginas, tres lecturas"
+    body: "El equipo recibió un documento de dos páginas y nadie opinaba. Al día siguiente, Berta lo dijo en voz alta: «Es denso, no es largo; necesito hasta el jueves». Nadie se ofendió y el jueves hubo debate de verdad."
+    before_phrase: "Es que se hace muy pesado de leer."
+    after_phrase: "Es denso, no es largo."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Una respuesta muy llena"
+    body: "Le preguntaron por su último proyecto y Aitor contestó tres minutos seguidos. La entrevistadora levantó la mano: «Muy denso; vamos por partes». Él respiró y empezó otra vez, esta vez por el principio."
+    before_phrase: "Perdón, me he liado y he metido de todo."
+    after_phrase: "Me ha salido muy denso; voy por partes."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La conversación del domingo"
+    body: "Hablaron de la mudanza, del dinero y de la abuela en una hora. Al colgar, Lorena le escribió a su hermano: «Ha sido una llamada densa, ¿lo seguimos mañana?». Él contestó con un sí y las dos partes durmieron mejor."
+    before_phrase: "Uf, ha sido una llamada muy fuerte."
+    after_phrase: "Ha sido una llamada densa, lo seguimos mañana."
+metrics:
+  zipf_overall: 3.6747
+  dispersion_dp: 0.2081
+  pedantry_proxy: 0.4610
+  family_size: 1
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

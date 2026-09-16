@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 8003
+slug: "ironia"
+status: "draft"
+lemma: "ironía"
+part_of_speech: "sustantivo"
+syllables:
+  - "i"
+  - "ro"
+  - "ní"
+  - "a"
+stressed_syllable: 3
+ipa_latam: "[i.roˈni.a]"
+ipa_es: "[i.roˈni.a]"
+explanation: "Forma de hablar en la que dices lo contrario de lo que quieres decir, con gracia."
+example_sentence: "Dijo «qué buen día» bajo la lluvia, y todos entendimos la ironía."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona cuando la otra persona ve lo mismo que tú: si no comparte la escena, se entiende al revés."
+when_not_to_use: "No la uses por escrito con alguien que no te conoce, ni cuando quieras que el otro se sienta pequeño."
+collocations:
+  - "decirlo con ironía"
+  - "una ironía suave"
+  - "la ironía de la frase"
+replaces:
+  - before: "Lo dije al revés, medio en broma"
+    after: "Lo dije con ironía"
+  - before: "No lo decía en serio, decía justo lo contrario"
+    after: "Era ironía, no lo decía en serio"
+  - before: "Se lo solté medio en burla"
+    after: "Se lo solté con ironía"
+family:
+  - "irónico"
+  - "irónicamente"
+themes:
+  - slug: "humor"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+tags:
+  comodin: ["broma"]
+  funcion: ["bromear", "suavizar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sarcasmo"
+    difference: "El «sarcasmo» dice lo contrario para herir a alguien; la ironía dice lo contrario para hacer gracia sin dejar a nadie mal."
+    memory_trick: "El sarcasmo pincha; la ironía guiña."
+  - confused_with: "armonía"
+    difference: "«Armonía» es entenderse sin roces; la ironía es una manera de decir las cosas, no un buen ambiente."
+    memory_trick: "La armonía se siente; la ironía se dice."
+exercises:
+  - position: 1
+    sentence: "En el «qué puntual eres» que Marina soltó a las nueve y media hubo más {{blank}} que reproche, y el que llegó tarde fue el primero en reírse."
+    hint_general: "Decir lo contrario de lo que se piensa, con gracia y sin intención de hacer daño."
+    explanation: "Ironía: dice lo contrario de lo que piensa y hace gracia. «Armonía» sería entenderse sin roces, y «sarcasmo» buscaría herir, y el que llegó tarde se rio primero."
+    options:
+      - position: 1
+        text: "armonía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Armonía» es la calma de un grupo que se entiende sin roces, y aquí lo que hay es una frase que dice lo contrario de lo que se piensa."
+        hint_specific: "«Armonía» describe el ambiente, no una manera de decir. ¿Qué se está señalando aquí?"
+      - position: 2
+        text: "ironía"
+        is_correct: true
+      - position: 3
+        text: "sarcasmo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sarcasmo» añade la intención de herir a quien lo recibe, y la frase dice que el aludido fue el primero en reírse."
+        hint_specific: "«Sarcasmo» deja escocido a alguien. ¿Cómo reaccionó el que llegó tarde?"
+  - position: 2
+    sentence: "Mi padre mira el cielo gris y dice «vaya día de playa»: es su {{blank}} de siempre, y en casa nadie se ofende."
+    hint_general: "Es su manera habitual de decir lo contrario de lo que ve, sin molestar a nadie."
+    explanation: "Ironía: dice lo contrario de lo que ve y nadie se ofende. «Mofa» ridiculizaría a alguien, y «sinceridad» sería decir exactamente lo que tiene delante."
+    options:
+      - position: 1
+        text: "mofa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mofa» es una burla dura que deja a alguien en ridículo, y la frase dice que en casa nadie se ofende."
+        hint_specific: "«Mofa» necesita alguien humillado. ¿Quién sale mal parado mirando el cielo?"
+      - position: 2
+        text: "ironía"
+        is_correct: true
+      - position: 3
+        text: "sinceridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sinceridad» sería decir el tiempo tal como es, y él afirma justo lo contrario de lo que está viendo."
+        hint_specific: "«Sinceridad» describe la realidad. ¿Qué tiempo hace y qué dice tu padre?"
+  - position: 3
+    sentence: "Leandro contesta con {{blank}} cuando algo le incomoda: dice lo contrario de lo que siente, todos lo entienden a la primera y nadie se molesta."
+    hint_general: "Una manera de decir las cosas al revés que el grupo capta enseguida."
+    explanation: "Ironía: dice las cosas al revés y el grupo lo capta. «Sarcasmo» dejaría a alguien dolido, y una «indirecta» deja el mensaje a medias para que lo adivinen."
+    options:
+      - position: 1
+        text: "sarcasmo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sarcasmo» lleva la intención de dejar dolido a alguien, y la frase aclara que nadie se molesta."
+        hint_specific: "«Sarcasmo» hace daño a propósito. ¿Alguien sale herido en esa escena?"
+      - position: 2
+        text: "indirecta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indirecta» deja el mensaje a medias para que el otro lo adivine, y aquí todos lo entienden a la primera."
+        hint_specific: "Una «indirecta» se queda a medio camino. ¿Cuánto tardan los demás en entenderlo?"
+      - position: 3
+        text: "ironía"
+        is_correct: true
+  - position: 4
+    sentence: "Su respuesta tenía más {{blank}} que enfado, y por eso la discusión acabó en risas y no en un portazo."
+    hint_general: "Respondió diciendo lo contrario de lo que sentía, y eso bajó la tensión."
+    explanation: "Ironía: respondió al revés y bajó la tensión. «Armonía» describiría un ambiente sin roces, y una «exageración» agrandaría el problema en vez de darle la vuelta."
+    options:
+      - position: 1
+        text: "exageración"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «exageración» agranda el problema, y aquí no se agranda nada: se dice lo contrario de lo que se siente."
+        hint_specific: "Una «exageración» infla lo que pasa. ¿Se infla algo o se le da la vuelta?"
+      - position: 2
+        text: "ironía"
+        is_correct: true
+      - position: 3
+        text: "armonía"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Armonía» nombra el buen ambiente entre personas, no una forma de responder; aquí se describe cómo contestó."
+        hint_specific: "«Armonía» habla del clima entre dos. ¿La frase describe el clima o la respuesta?"
+  - position: 5
+    sentence: "Perla dijo «me encanta madrugar» a las seis de la mañana con tanta {{blank}} que el grupo entero se rio, y nadie se dio por aludido."
+    hint_general: "Afirmó lo contrario de lo que sentía, y el grupo lo pilló al vuelo."
+    explanation: "Ironía: afirmó lo contrario de lo que sentía. «Chanza» suena antigua y nombra una broma ligera, y una «indirecta» apunta a alguien concreto, y nadie se dio por aludido."
+    options:
+      - position: 1
+        text: "chanza"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chanza» suena antigua y nombra una broma ligera, no el hecho de afirmar lo contrario de lo que sientes."
+        hint_specific: "«Chanza» es una broma cualquiera, de otra época. ¿Qué hace especial la frase de Perla?"
+      - position: 2
+        text: "indirecta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indirecta» va dirigida a alguien concreto, y la frase dice que nadie se dio por aludido."
+        hint_specific: "Una «indirecta» siempre tiene destinatario. ¿Quién se sintió señalado?"
+      - position: 3
+        text: "ironía"
+        is_correct: true
+  - position: 6
+    sentence: "Norma tira de {{blank}} para reírse de sus propios planes fallidos: ni una gota de amargura, y sus amigos lo agradecen."
+    hint_general: "Cuenta al revés lo que le ha salido mal, y lo hace sin rencor."
+    explanation: "Ironía: cuenta al revés lo que le salió mal, sin rencor. «Mofa» ridiculizaría a alguien, y «sarcasmo» traería una punta de amargura, y la frase dice que no hay ninguna."
+    options:
+      - position: 1
+        text: "ironía"
+        is_correct: true
+      - position: 2
+        text: "mofa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mofa» ridiculiza a alguien delante de los demás, y ella habla de sus propios planes con cariño."
+        hint_specific: "«Mofa» busca poner en ridículo. ¿A quién ridiculiza Norma?"
+      - position: 3
+        text: "sarcasmo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sarcasmo» trae siempre una punta de amargura, y la frase dice que aquí no hay ni una gota."
+        hint_specific: "«Sarcasmo» deja un poso amargo. ¿Qué dice la frase sobre la amargura?"
+  - position: 7
+    sentence: "Cuando mi hermana dice «qué ordenada está la habitación» y hay ropa por el suelo, todos sabemos que habla con {{blank}} y que no pasa nada."
+    hint_general: "Dice lo contrario de lo que tiene delante, y en casa se entiende al vuelo."
+    explanation: "Ironía: dice lo contrario de lo que tiene delante. «Sinceridad» sería describir el cuarto tal cual, y una «crítica» señalaría el fallo de frente y sin darle la vuelta."
+    options:
+      - position: 1
+        text: "sinceridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sinceridad» sería describir el cuarto tal como está, y ella afirma lo contrario de lo que ve."
+        hint_specific: "«Sinceridad» cuenta lo que hay. ¿Coincide lo que dice con la ropa del suelo?"
+      - position: 2
+        text: "ironía"
+        is_correct: true
+      - position: 3
+        text: "crítica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «crítica» señala el fallo de frente, y aquí la frase lo dice al revés y sin regañar a nadie."
+        hint_specific: "Una «crítica» va de cara. ¿Tu hermana señala el desorden o lo dice al revés?"
+  - position: 8
+    sentence: "Tobías cuenta sus desastres de cocina con una {{blank}} que desarma: parece que se queja y en realidad se está riendo de sí mismo."
+    hint_general: "Cuenta lo real al revés, y por eso suena a queja aunque no lo sea."
+    explanation: "Ironía: cuenta lo real al revés y suena a queja sin serlo. Una «exageración» agrandaría el desastre, y una «broma» se prepara aparte de lo que ha pasado."
+    options:
+      - position: 1
+        text: "exageración"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «exageración» agranda el desastre, y él no agranda nada: dice lo contrario de lo que siente."
+        hint_specific: "Una «exageración» hincha los hechos. ¿Tobías hincha el desastre o le da la vuelta?"
+      - position: 2
+        text: "broma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «broma» se prepara aparte de lo que ha pasado, y aquí el juego está en contar lo real al revés."
+        hint_specific: "Una «broma» se trae hecha. ¿De dónde sale lo que cuenta Tobías?"
+      - position: 3
+        text: "ironía"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Diez minutos de lluvia"
+    body: "Se cortó la luz en plena cena y quedaron seis personas con dos velas. Marina levantó el vaso y dijo: «Qué acierto haber elegido el restaurante más moderno de la ciudad». Todos se rieron, incluida la dueña. La ironía sirvió de puente: en diez minutos ya nadie hablaba de la luz."
+    before_phrase: "Lo dije al revés, medio en broma."
+    after_phrase: "Lo dije con ironía."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El cuarto de Tobías"
+    body: "Su madre abrió la puerta, vio la ropa por el suelo y dijo: «Impecable, como siempre». Tobías se rio y empezó a recoger sin discutir. Después le contó que en el trabajo llevaba dos semanas sin dormir bien. La ironía le había ahorrado la regañina y le había abierto la conversación."
+    before_phrase: "Podría haberle gritado por el desorden."
+    after_phrase: "Una ironía suave y se abrió solo."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo que no se envía"
+    body: "Norma escribió «gracias por avisar con tanto tiempo» y se quedó mirando la frase. Recordó que su compañera no conocía su tono y que, por escrito, la ironía viaja mal. Borró la línea y escribió: «Avísame antes la próxima vez, por favor». La respuesta llegó en dos minutos y con una disculpa."
+    before_phrase: "Lo escribí al revés y quedó raro."
+    after_phrase: "La ironía funciona hablando, no por escrito."
+metrics:
+  zipf_overall: 3.8538
+  dispersion_dp: 0.2296
+  pedantry_proxy: 0.4953
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

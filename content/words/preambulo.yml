@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7007
+slug: "preambulo"
+status: "draft"
+lemma: "preámbulo"
+part_of_speech: "sustantivo"
+syllables:
+  - "pre"
+  - "ám"
+  - "bu"
+  - "lo"
+stressed_syllable: 2
+ipa_latam: "[pɾeˈam.bu.lo]"
+ipa_es: "[pɾeˈam.bu.lo]"
+explanation: "Lo que dices antes de entrar de verdad en el tema."
+example_sentence: "Se saltó el preámbulo y contó la cifra en la primera frase."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para anunciar que vas al grano, o para reconocer que te estás enrollando antes de decir lo tuyo."
+when_not_to_use: "No la uses para el texto que abre un libro y firma otra persona, ni para una señal de que algo va a pasar."
+collocations:
+  - "sin más preámbulos"
+  - "un preámbulo breve"
+  - "el preámbulo de siempre"
+replaces:
+  - before: "Voy al grano, sin dar más vueltas"
+    after: "Voy al grano, sin más preámbulos"
+  - before: "Antes de empezar dijo cuatro cosas para situarnos"
+    after: "Abrió con un preámbulo breve"
+  - before: "Se pasó diez minutos antes de contar lo suyo"
+    after: "Su preámbulo duró diez minutos"
+family: []
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "rodeos"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "preludio"
+    difference: "Un «preludio» es la señal de algo que va a pasar, como unas nubes antes de la tormenta; la otra palabra son las frases con las que alguien abre."
+    memory_trick: "El preludio avisa de lo que viene; lo otro lo dice quien habla."
+  - confused_with: "prólogo"
+    difference: "Un «prólogo» es el texto escrito que abre un libro, muchas veces firmado por otra persona; la otra palabra cabe en dos frases habladas."
+    memory_trick: "El prólogo se imprime; lo otro se dice en voz alta."
+exercises:
+  - position: 1
+    sentence: "Ernesto llegó, dejó la carpeta en la mesa y contó la cifra mala sin ningún {{blank}} que la preparara."
+    hint_general: "Entró directo, sin decir nada antes para amortiguar la noticia."
+    explanation: "Preámbulo: no dijo nada antes de la cifra. Un «preludio» sería una señal de lo que venía, y «rollo» acusa de soltar algo largo y aburrido."
+    options:
+      - position: 1
+        text: "preludio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «preludio» es una señal de algo que va a pasar, como el ruido antes de una avería; aquí se habla de lo que alguien dice al abrir."
+        hint_specific: "Un «preludio» ocurre por su cuenta y avisa. ¿Aquí avisa el mundo o habla una persona?"
+      - position: 2
+        text: "preámbulo"
+        is_correct: true
+      - position: 3
+        text: "rollo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rollo» es muy coloquial y acusa de soltar algo largo y aburrido, y aquí no se juzga lo que dijo: se dice que no dijo nada."
+        hint_specific: "«Rollo» es un reproche por aburrir. ¿La frase reprocha algo o describe que fue directo?"
+  - position: 2
+    sentence: "Quince minutos de rodeos y luego dos frases con lo importante: el {{blank}} de Mireia duró más que la noticia."
+    hint_general: "Lo que dijo antes del asunto ocupó más tiempo que el asunto mismo."
+    explanation: "Preámbulo: lo dicho antes del asunto ocupó más que el asunto. Un «resumen» condensa lo esencial, y «calentamiento» es preparar el cuerpo antes de un esfuerzo."
+    options:
+      - position: 1
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resumen» condensa lo esencial, y lo que duró quince minutos fue justo lo que no era esencial."
+        hint_specific: "Un «resumen» es más corto que el contenido. ¿Qué duró más aquí, la parte previa o la noticia?"
+      - position: 2
+        text: "preámbulo"
+        is_correct: true
+      - position: 3
+        text: "calentamiento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Calentamiento» es coloquial y se dice de preparar el cuerpo antes de un esfuerzo físico, y aquí solo se habla."
+        hint_specific: "«Calentamiento» es cosa de músculos. ¿Mireia mueve el cuerpo o habla?"
+  - position: 3
+    sentence: "Aitor abrió la reunión con un {{blank}} de dos frases y pasó directo al punto que dolía."
+    hint_general: "Dos frases antes de entrar en el asunto difícil, y ya está."
+    explanation: "Preámbulo: dos frases antes del asunto difícil. Un «prólogo» es un texto que abre un libro, y un «preludio» es la señal de algo que viene."
+    options:
+      - position: 1
+        text: "prólogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «prólogo» es el texto impreso que abre un libro, y aquí hay dos frases dichas en voz alta al empezar una reunión."
+        hint_specific: "Un «prólogo» se lee en papel. ¿Aitor escribe o habla?"
+      - position: 2
+        text: "preámbulo"
+        is_correct: true
+      - position: 3
+        text: "preludio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «preludio» es una señal de lo que va a ocurrir, y estas dos frases no anuncian nada: solo abren el turno de palabra."
+        hint_specific: "Un «preludio» hace de aviso. ¿Esas dos frases avisan de algo o simplemente abren?"
+  - position: 4
+    sentence: "Casandra entró en el asunto del alquiler después del {{blank}} de rigor sobre el tiempo y el tráfico."
+    hint_general: "Habló primero de cosas neutras y solo después llegó al asunto de verdad."
+    explanation: "Preámbulo: habló de cosas neutras antes del asunto. Un «aviso» advierte de algo que puede pasar, y «rollo» acusa de aburrir a propósito."
+    options:
+      - position: 1
+        text: "aviso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «aviso» advierte de algo que puede pasar, y hablar del tiempo y del tráfico no advierte de nada."
+        hint_specific: "Un «aviso» pone sobre alerta. ¿El tráfico y el tiempo alertan de algo?"
+      - position: 2
+        text: "rollo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rollo» es coloquial y acusa de aburrir, y la frase no juzga esas cosas neutras: solo dice que van delante."
+        hint_specific: "«Rollo» es un reproche. ¿La frase reprocha o cuenta el orden de la charla?"
+      - position: 3
+        text: "preámbulo"
+        is_correct: true
+  - position: 5
+    sentence: "A su padre le gusta el {{blank}}: antes de pedir un favor cuenta siempre de dónde le vino la idea."
+    hint_general: "Le gusta decir varias cosas antes de llegar a lo que quiere pedir."
+    explanation: "Preámbulo: dice cosas antes de llegar a la petición. Un «resumen» iría al final y en corto, y un «preludio» sería una señal de lo que va a pasar."
+    options:
+      - position: 1
+        text: "preámbulo"
+        is_correct: true
+      - position: 2
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resumen» recoge en corto lo ya dicho, y él añade cosas antes de decir nada de lo suyo."
+        hint_specific: "Un «resumen» acorta lo que ya se contó. ¿Su padre acorta o alarga la entrada?"
+      - position: 3
+        text: "preludio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «preludio» es la señal de algo que se acerca, y aquí es él quien elige contar de dónde le vino la idea."
+        hint_specific: "Un «preludio» no lo elige nadie. ¿Esto le sale solo o lo hace a propósito?"
+  - position: 6
+    sentence: "El libro tarda cien páginas en arrancar, y ese {{blank}} deja fuera a media docena de lectores por cada uno que resiste."
+    hint_general: "Cien páginas antes del asunto de verdad cansan a quien empieza."
+    explanation: "Preámbulo: cien páginas antes del asunto de verdad. Un «prólogo» lo firma otra persona al principio del libro, y «calentamiento» es cosa del cuerpo."
+    options:
+      - position: 1
+        text: "prólogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «prólogo» es el texto aparte que abre un libro, muchas veces firmado por otro; estas cien páginas son ya la obra."
+        hint_specific: "Un «prólogo» va antes del primer capítulo. ¿Estas cien páginas están dentro de la historia o fuera?"
+      - position: 2
+        text: "preámbulo"
+        is_correct: true
+      - position: 3
+        text: "calentamiento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Calentamiento» es coloquial y sirve para el cuerpo antes de un esfuerzo, no para las páginas que preceden a una historia."
+        hint_specific: "«Calentamiento» pertenece al gimnasio. ¿Estamos en un gimnasio o en un libro?"
+  - position: 7
+    sentence: "Yolanda dijo que dejaba el puesto sin {{blank}} ninguno y después explicó, con calma, todas sus razones."
+    hint_general: "Soltó la decisión de entrada, sin nada dicho antes para suavizarla."
+    explanation: "Preámbulo: soltó la decisión sin decir nada antes. Un «aviso» habría anunciado que algo venía, y un «resumen» recogería en corto lo ya contado."
+    options:
+      - position: 1
+        text: "aviso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «aviso» anuncia que algo va a pasar, y ella no anuncia: comunica la decisión ya tomada."
+        hint_specific: "Un «aviso» llega antes del hecho. ¿La decisión estaba tomada o en camino?"
+      - position: 2
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resumen» recoge en corto algo ya contado, y aquí todavía no se había contado nada."
+        hint_specific: "Un «resumen» necesita material previo. ¿Qué había dicho antes Yolanda?"
+      - position: 3
+        text: "preámbulo"
+        is_correct: true
+  - position: 8
+    sentence: "La carta arranca con un {{blank}} largo y cálido antes de la única línea que pide dinero prestado."
+    hint_general: "Todo lo cálido va delante y sirve para llegar a la petición del final."
+    explanation: "Preámbulo: lo cálido va delante de la petición. Un «aviso» pondría sobre alerta, y un «prólogo» sería el texto que abre un libro entero."
+    options:
+      - position: 1
+        text: "preámbulo"
+        is_correct: true
+      - position: 2
+        text: "aviso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «aviso» pone sobre alerta de algo que puede ocurrir, y esas líneas cálidas no alertan: acompañan."
+        hint_specific: "Un «aviso» pone en guardia. ¿Esas líneas ponen en guardia o abrigan?"
+      - position: 3
+        text: "prólogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «prólogo» abre un libro entero y suele ir firmado aparte, y esto es una carta con una sola petición."
+        hint_specific: "Un «prólogo» pertenece a un libro. ¿Esto es un libro o una carta?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La cifra primero"
+    body: "El comité esperaba el informe trimestral. Fidel se levantó y dijo: «Sin preámbulo: hemos perdido dos clientes y sé por qué». La sala se enderezó. Diez minutos después había un plan, y nadie echó de menos la introducción."
+    before_phrase: "Bueno, antes de nada, unas palabras para situarnos…"
+    after_phrase: "Sin preámbulo: hemos perdido dos clientes."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que quería pedir"
+    body: "Su hermano llevaba diez minutos hablando del trabajo y del coche. Mara sonrió y le cortó con cariño: «Suelta el preámbulo y dime qué necesitas». Él se rio y lo dijo en una frase. Se lo resolvieron esa misma tarde."
+    before_phrase: "Va, deja de darle vueltas y dime qué quieres."
+    after_phrase: "Suelta el preámbulo y dime qué necesitas."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Turno de palabra"
+    body: "En la asamblea del edificio cada intervención empezaba con tres minutos de historia. Cuando le tocó, Hernán fue otro: «Mi preámbulo es este: dos frases y ya está. Propongo arreglar el portal antes que el jardín». Le aplaudieron por lo breve."
+    before_phrase: "Primero cuento un poco de dónde vengo con esto."
+    after_phrase: "Mi preámbulo es este: dos frases y ya está."
+metrics:
+  zipf_overall: 3.5409
+  dispersion_dp: 0.2132
+  pedantry_proxy: 0.5808
+  family_size: 2
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 7009
+slug: "metafora"
+status: "draft"
+lemma: "metáfora"
+part_of_speech: "sustantivo"
+syllables:
+  - "me"
+  - "tá"
+  - "fo"
+  - "ra"
+stressed_syllable: 2
+ipa_latam: "[meˈta.fo.ɾa]"
+ipa_es: "[meˈta.fo.ɾa]"
+explanation: "Imagen que pone una cosa en lugar de otra para decirla mejor."
+example_sentence: "Dijo que la empresa era un barco sin timón y la metáfora se quedó."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Funciona cuando la imagen viene del mundo de quien escucha y se sostiene hasta el final."
+when_not_to_use: "No la uses para una comparación con «como» ni para un adorno que se puede quitar sin perder nada."
+collocations:
+  - "una metáfora gastada"
+  - "recurrir a una metáfora"
+  - "la metáfora del viaje"
+replaces:
+  - before: "Lo dijo con una imagen que se entiende sola"
+    after: "Lo dijo con una metáfora que se entiende sola"
+  - before: "Siempre saca lo de la montaña para explicarlo"
+    after: "Siempre recurre a la metáfora de la montaña"
+  - before: "Esa forma de decirlo ya está muy vista"
+    after: "Esa metáfora ya está gastada"
+semantic_set_id: "figuras-para-explicar"
+family:
+  - "metafórico"
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+  - slug: "presentaciones-oratoria"
+    relevance: 1
+tags:
+  comodin:
+    - "imagen"
+  funcion:
+    - "explicar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "comparación"
+    difference: "Una «comparación» pone un «como» y deja las dos cosas separadas; la otra dice directamente que una es la otra."
+    memory_trick: "La comparación acerca dos cosas; la otra las funde."
+  - confused_with: "anáfora"
+    difference: "Una «anáfora» repite la misma palabra al principio de varias frases; la otra cambia una cosa por otra."
+    memory_trick: "La anáfora repite; la otra sustituye."
+exercises:
+  - position: 1
+    sentence: "Cuando dijo que el equipo era una orquesta sin director, Elsa soltó la {{blank}} que faltaba para ver el problema entero."
+    hint_general: "Puso una cosa en lugar de otra: el equipo pasó a ser directamente esa orquesta."
+    explanation: "Metáfora: el equipo pasa a ser la orquesta, sin más. Una «comparación» pondría un «como» entre ambos, y una «anáfora» sería repetir una palabra al inicio de varias frases."
+    options:
+      - position: 1
+        text: "anáfora"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «anáfora» es repetir la misma palabra al empezar varias frases, y aquí no se repite nada: se sustituye una cosa por otra."
+        hint_specific: "Una «anáfora» se nota por la repetición. ¿Qué palabra se repite en esa frase?"
+      - position: 2
+        text: "metáfora"
+        is_correct: true
+      - position: 3
+        text: "comparación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «comparación» pondría un «como» y dejaría las dos cosas separadas, y aquí el equipo es la orquesta directamente."
+        hint_specific: "Una «comparación» necesita un «como». ¿Aparece ese «como» en la frase de Elsa?"
+  - position: 2
+    sentence: "Damián habló de la deuda como de una mochila que se llena sola, y esa {{blank}} acabó en el acta de la reunión."
+    hint_general: "La deuda se convirtió en otra cosa para que se entendiera de golpe."
+    explanation: "Metáfora: la deuda se convierte en mochila para entenderse. Una «exageración» agranda los hechos, y «floritura» acusa de adornar por gusto."
+    options:
+      - position: 1
+        text: "exageración"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «exageración» agranda los hechos para impresionar, y la mochila no agranda la deuda: le da forma."
+        hint_specific: "Una «exageración» infla las cifras. ¿Se infla algo aquí o se le pone cara?"
+      - position: 2
+        text: "metáfora"
+        is_correct: true
+      - position: 3
+        text: "floritura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Floritura» es coloquial y acusa de adornar por gusto, y esa imagen es lo único que hizo entender la deuda."
+        hint_specific: "Una «floritura» se puede quitar sin perder nada. ¿Qué queda si quitas la mochila?"
+  - position: 3
+    sentence: "La carta de Rebeca no tiene una sola {{blank}}: llama a cada cosa por su nombre y se entiende a la primera."
+    hint_general: "No hay ni una cosa dicha con el nombre de otra: todo aparece tal cual es."
+    explanation: "Metáfora: no hay nada dicho con el nombre de otra cosa. Una «anáfora» sería repetir palabras al inicio, y la «ironía» sería decir lo contrario de lo que piensa."
+    options:
+      - position: 1
+        text: "anáfora"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «anáfora» es repetir la misma palabra al abrir varias frases, y de la carta se elogia que nombra las cosas, no cómo las repite."
+        hint_specific: "Una «anáfora» es cuestión de repetir. ¿Lo que se elogia es no repetir o no disfrazar?"
+      - position: 2
+        text: "metáfora"
+        is_correct: true
+      - position: 3
+        text: "ironía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «ironía» es decir lo contrario de lo que se piensa para que se note, y aquí nadie dice lo contrario de nada."
+        hint_specific: "La «ironía» invierte el sentido. ¿La carta invierte algo o llama a las cosas por su nombre?"
+  - position: 4
+    sentence: "A fuerza de repetirla, la {{blank}} del barco sin timón ya no le dice nada a nadie, aunque el problema que nombraba sigue ahí."
+    hint_general: "La imagen que sustituía al problema se gastó de tanto usarla."
+    explanation: "Metáfora: la imagen que sustituía al problema se gastó. Una «comparación» mantendría separadas las dos cosas, y «adorno» daría a entender que se puede quitar sin pérdida."
+    options:
+      - position: 1
+        text: "comparación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «comparación» diría que la empresa se parece a un barco; aquí el barco ocupa el lugar de la empresa y habla por ella."
+        hint_specific: "Una «comparación» deja las dos cosas a la vista. ¿Aquí se ve la empresa o solo el barco?"
+      - position: 2
+        text: "metáfora"
+        is_correct: true
+      - position: 3
+        text: "adorno"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adorno» es coloquial y sugiere algo puesto por gusto que se puede quitar, y esa imagen era el nombre entero del problema."
+        hint_specific: "Un «adorno» sobra siempre. ¿Qué nombre le queda al problema si lo quitas?"
+  - position: 5
+    sentence: "Su abuela habla con {{blank}} sin proponérselo: dice que la memoria se le llena de polvo y todo el mundo la entiende."
+    hint_general: "Nombra una cosa con el nombre de otra y así se hace entender sin esfuerzo."
+    explanation: "Metáfora: nombra la memoria con el polvo y todos entienden. Una «exageración» agrandaría el problema, y una «anáfora» sería repetir palabras al empezar."
+    options:
+      - position: 1
+        text: "exageración"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «exageración» agrandaría lo que le pasa para impresionar, y ella no agranda nada: lo dice de otra manera."
+        hint_specific: "Una «exageración» hincha los hechos. ¿La abuela hincha algo o cambia una palabra por otra?"
+      - position: 2
+        text: "metáfora"
+        is_correct: true
+      - position: 3
+        text: "anáfora"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «anáfora» consiste en repetir la misma palabra al principio de varias frases, y ella dice una sola frase con una imagen dentro."
+        hint_specific: "Una «anáfora» necesita varias frases iguales al empezar. ¿Cuántas frases dice la abuela?"
+  - position: 6
+    sentence: "El texto se apoya en una sola {{blank}}, la del jardín, y la sostiene hasta la última línea sin soltarla."
+    hint_general: "Todo el texto llama al asunto con el nombre de otra cosa, de principio a fin."
+    explanation: "Metáfora: todo el texto llama al asunto con el nombre del jardín. «Floritura» rebajaría eso a un adorno, y una «comparación» dejaría las dos cosas separadas."
+    options:
+      - position: 1
+        text: "floritura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Floritura» es coloquial y sugiere un adorno prescindible, y aquí el jardín sostiene el texto entero de principio a fin."
+        hint_specific: "Una «floritura» adorna un rato. ¿Cuánto dura el jardín en ese texto?"
+      - position: 2
+        text: "comparación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «comparación» diría que el asunto se parece a un jardín; en el texto el asunto es el jardín, sin distancia entre ambos."
+        hint_specific: "Una «comparación» conserva la distancia. ¿El texto mantiene el asunto aparte del jardín?"
+      - position: 3
+        text: "metáfora"
+        is_correct: true
+  - position: 7
+    sentence: "Nicolás dijo que le habían quitado la silla y tuvo que aclarar que era una {{blank}}, no una queja sobre el mobiliario."
+    hint_general: "Con la silla nombraba otra cosa, y hubo que aclararlo para que nadie lo entendiera en sentido literal."
+    explanation: "Metáfora: con la silla nombraba otra cosa. La «ironía» diría lo contrario de lo que piensa, y «adorno» rebajaría la silla a un detalle prescindible."
+    options:
+      - position: 1
+        text: "metáfora"
+        is_correct: true
+      - position: 2
+        text: "ironía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «ironía» dice lo contrario de lo que se piensa, y Nicolás no dice lo contrario: dice una cosa por otra."
+        hint_specific: "La «ironía» se entiende al revés. ¿Hay que darle la vuelta a la silla o cambiarla por otra cosa?"
+      - position: 3
+        text: "adorno"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adorno» es coloquial y sugiere un detalle que sobra, y la silla es justamente lo que él quería decir."
+        hint_specific: "Un «adorno» se quita y no pasa nada. ¿Qué le queda a Nicolás sin la silla?"
+  - position: 8
+    sentence: "En dos frases, Amaia cambió la {{blank}} de la carrera por la del huerto y la conversación entera se calmó."
+    hint_general: "Cambió la imagen con la que se nombraba el asunto y todo sonó distinto."
+    explanation: "Metáfora: cambió la imagen con la que se nombraba el asunto. Una «comparación» habría dejado los términos separados, y una «exageración» habría agrandado los hechos."
+    options:
+      - position: 1
+        text: "comparación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «comparación» diría que el trabajo se parece a un huerto y dejaría los dos a la vista; aquí el trabajo pasa a ser el huerto."
+        hint_specific: "Una «comparación» conserva las dos piezas. ¿Amaia deja las dos o sustituye una?"
+      - position: 2
+        text: "exageración"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «exageración» agrandaría los hechos, y ella no agranda nada: cambia el nombre con el que se habla del asunto."
+        hint_specific: "Una «exageración» sube el volumen. ¿La conversación se calienta o se calma?"
+      - position: 3
+        text: "metáfora"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El barco y el huerto"
+    body: "Llevaban un mes diciendo que el área era un barco sin timón y el ánimo estaba por el suelo. Amaia probó otra cosa: «Cambiemos de metáfora: esto es un huerto y falta regar en julio». Sonó raro dos minutos. Luego alguien preguntó qué había que regar primero."
+    before_phrase: "Hay que dejar de decir que esto es un desastre."
+    after_phrase: "Cambiemos de metáfora: esto es un huerto."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El polvo de la memoria"
+    body: "Su abuela dijo que la memoria se le llenaba de polvo y todos se quedaron callados. Su nieta lo anotó esa noche. «Ninguna explicación me habría servido tanto como esa metáfora», le contó luego a su madre."
+    before_phrase: "Lo dijo de una forma que se entendía todo."
+    after_phrase: "Ninguna explicación vale lo que esa metáfora."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La silla"
+    body: "En la cena, Nicolás dijo que le habían quitado la silla y su amigo miró debajo de la mesa. Se rieron. «Era una metáfora: me quitaron el proyecto». La conversación cambió de tono y duró dos horas más."
+    before_phrase: "Lo decía en sentido figurado, no literal."
+    after_phrase: "Era una metáfora: me quitaron el proyecto."
+metrics:
+  zipf_overall: 3.9157
+  dispersion_dp: 0.2630
+  pedantry_proxy: 0.4966
+  family_size: 21
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

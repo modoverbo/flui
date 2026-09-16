@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "recargo"
+status: "draft"
+lemma: "recargo"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "car"
+  - "go"
+stressed_syllable: 2
+ipa_latam: "[reˈkaɾ.ɣo]"
+ipa_es: "[reˈkaɾ.ɣo]"
+explanation: "Dinero de más que se suma a un precio por pagar tarde o pedir algo especial."
+example_sentence: "El envío del sábado tiene un recargo de doce pesos; el del lunes, no."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nómbralo tú antes que el cliente: decir el recargo por adelantado es lo que evita la discusión del final."
+when_not_to_use: "No la uses para el precio normal de algo, ni para un castigo; esto se suma por una condición avisada."
+collocations:
+  - "un recargo del diez por ciento"
+  - "sin recargo"
+  - "aplicar un recargo"
+replaces:
+  - before: "Si pagas tarde te cobran más"
+    after: "Si pagas tarde hay un recargo"
+  - before: "Lo de urgencia sale un poco más"
+    after: "La urgencia lleva un recargo"
+  - before: "Ese día te lo cobran aparte"
+    after: "Ese día tiene un recargo aparte"
+family:
+  - "recargar"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "cobrar más"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "encargo"
+    difference: "El encargo es lo que pides que te hagan; esto es el dinero extra que se suma al precio."
+    memory_trick: "El encargo se pide; el recargo se paga."
+  - confused_with: "descuento"
+    difference: "El descuento resta del precio; esto se suma. Van en direcciones contrarias."
+    memory_trick: "El descuento baja; el recargo sube."
+exercises:
+  - position: 1
+    sentence: "Si la factura se paga pasado el día diez, la empresa suma un {{blank}} del cinco por ciento."
+    hint_general: "Es el dinero de más que se suma por pagar fuera de fecha."
+    explanation: "Recargo: dinero que se suma por pagar tarde. «Encargo» sería lo que alguien pide que le hagan, y «descuento» restaría del precio."
+    options:
+      - position: 1
+        text: "encargo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encargo» es el trabajo o el pedido que alguien te confía, y aquí lo que se suma es dinero por llegar tarde."
+        hint_specific: "«Encargo» es algo que pides que te hagan. ¿La empresa pide un trabajo o cobra de más?"
+      - position: 2
+        text: "recargo"
+        is_correct: true
+      - position: 3
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuento» resta del precio, y pagar después del día diez hace que la cifra suba."
+        hint_specific: "«Descuento» baja el total. ¿Pagar tarde sube o baja la cifra?"
+  - position: 2
+    sentence: "Casilda avisó de que el traslado en fin de semana lleva {{blank}}, y el cliente prefirió el martes."
+    hint_general: "Lo de fin de semana se cobra con un añadido sobre el precio normal."
+    explanation: "Recargo: el fin de semana se cobra con un añadido. «Gravamen» es palabra de despacho de impuestos, y «cargo» nombraría el puesto de alguien o el apunte entero."
+    options:
+      - position: 1
+        text: "gravamen"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gravamen» es vocabulario de impuestos y escrituras, y aquí se avisa de una tarifa de fin de semana."
+        hint_specific: "«Gravamen» suena a oficina de impuestos. ¿Encaja avisando de una tarifa de sábado?"
+      - position: 2
+        text: "recargo"
+        is_correct: true
+      - position: 3
+        text: "cargo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cargo» nombra el puesto de una persona o el apunte completo de una cuenta, no el añadido al precio."
+        hint_specific: "«Cargo» es un puesto o el apunte entero. ¿Se habla de un puesto o de dinero añadido?"
+  - position: 3
+    sentence: "La tarifa del curso es la misma para todos, sin {{blank}} por pagar en tres veces."
+    hint_general: "Pagar en partes no añade dinero al precio."
+    explanation: "Recargo: pagar en tres veces no añade nada. «Encargo» sería un pedido, y «descuento» diría que el precio baja, no que se mantiene."
+    options:
+      - position: 1
+        text: "recargo"
+        is_correct: true
+      - position: 2
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuento» diría que el precio baja al pagar a plazos, y la frase dice que es el mismo para todos."
+        hint_specific: "«Descuento» hace bajar el total. ¿La tarifa baja o se queda igual?"
+      - position: 3
+        text: "encargo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encargo» es lo que alguien pide que le preparen, y aquí se habla de cómo se paga un curso."
+        hint_specific: "«Encargo» es un pedido. ¿Se pide algo o se paga algo?"
+  - position: 4
+    sentence: "En el recibo del gimnasio apareció un {{blank}} que nadie había anunciado, y Julieta fue a preguntar."
+    hint_general: "Le sumaron dinero al recibo sin avisar antes."
+    explanation: "Recargo: dinero sumado al recibo. «Extra» es de charla informal y suena a algo que recibes de más, y «cargo» nombraría el apunte completo."
+    options:
+      - position: 1
+        text: "extra"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Extra» es de conversación informal y suele nombrar algo que recibes de más, no un cobro añadido."
+        hint_specific: "«Extra» suena a regalo añadido en charla suelta. ¿Julieta recibió algo o le cobraron?"
+      - position: 2
+        text: "recargo"
+        is_correct: true
+      - position: 3
+        text: "cargo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cargo» sería el apunte entero del recibo, y lo que apareció fue una cantidad añadida al precio."
+        hint_specific: "«Cargo» es todo el apunte. ¿Apareció la cuota entera o un añadido?"
+  - position: 5
+    sentence: "Para la mudanza de mis padres, el precio subió por un {{blank}} de piso alto sin ascensor."
+    hint_general: "El precio sube por una condición del trabajo, avisada de antemano."
+    explanation: "Recargo: el precio sube por una condición del trabajo. «Encargo» sería el propio pedido de mudanza, y «descuento» haría bajar el total."
+    options:
+      - position: 1
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuento» haría bajar el total, y la frase dice justo que el precio subió."
+        hint_specific: "«Descuento» baja la cifra. ¿El precio de esa mudanza subió o bajó?"
+      - position: 2
+        text: "recargo"
+        is_correct: true
+      - position: 3
+        text: "encargo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encargo» es el trabajo que se pide, y aquí lo que se nombra es el motivo de que cueste más."
+        hint_specific: "«Encargo» es el trabajo pedido. ¿Se nombra el trabajo o el motivo del precio?"
+  - position: 6
+    sentence: "La tienda del barrio no aplica {{blank}} por pagar con tarjeta, y por eso mucha gente cruza la avenida."
+    hint_general: "No suma dinero al precio por la forma de pagar."
+    explanation: "Recargo: no suma dinero por la forma de pagar. «Gravamen» es lenguaje de impuestos, y «extra» es informal y suena a algo que recibes de más."
+    options:
+      - position: 1
+        text: "recargo"
+        is_correct: true
+      - position: 2
+        text: "gravamen"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gravamen» pertenece al lenguaje de impuestos y escrituras, y esto es una tienda de barrio con tarjeta."
+        hint_specific: "«Gravamen» es palabra de despacho fiscal. ¿Va con el mostrador de una tienda?"
+      - position: 3
+        text: "extra"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Extra» es informal y nombra algo añadido que se recibe, no una cantidad que se cobra de más."
+        hint_specific: "«Extra» suena a añadido que te dan. ¿Aquí te dan algo o te cobran algo?"
+  - position: 7
+    sentence: "Antes de firmar, Tobías buscó en la letra pequeña si había algún {{blank}} escondido por cancelar antes de tiempo."
+    hint_general: "Busca si cancelar antes le va a costar dinero añadido."
+    explanation: "Recargo: dinero añadido por cancelar antes. «Encargo» sería un pedido que se hace, y «descuento» restaría en vez de sumar."
+    options:
+      - position: 1
+        text: "encargo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Encargo» es un pedido que alguien hace, y Tobías busca un cobro escondido en el contrato."
+        hint_specific: "«Encargo» es pedir un trabajo. ¿Tobías busca un pedido o un cobro?"
+      - position: 2
+        text: "recargo"
+        is_correct: true
+      - position: 3
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuento» sería una buena noticia escondida, y nadie revisa la letra pequeña temiendo pagar menos."
+        hint_specific: "«Descuento» te ahorra dinero. ¿Lo que se esconde en un contrato suele ser bueno o caro?"
+  - position: 8
+    sentence: "Con el billete comprado en enero no hubo {{blank}} por cambiar la fecha, y mi hermana pudo adelantar el viaje."
+    hint_general: "Cambiar la fecha no costó dinero añadido."
+    explanation: "Recargo: cambiar la fecha no costó dinero añadido. «Cargo» nombraría el apunte entero del billete, y «descuento» diría que le devolvieron algo."
+    options:
+      - position: 1
+        text: "cargo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cargo» es el apunte completo de la compra, y aquí lo que no apareció fue una cantidad añadida."
+        hint_specific: "«Cargo» es el apunte entero. ¿No hubo apunte o no hubo añadido?"
+      - position: 2
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuento» diría que le rebajaron el billete, y la frase solo cuenta que el cambio salió gratis."
+        hint_specific: "«Descuento» devuelve dinero. ¿Le rebajaron el billete o solo no le cobraron nada?"
+      - position: 3
+        text: "recargo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El sábado cuesta"
+    body: "El cliente quería el traslado en sábado. Casilda no esperó a la factura: «El sábado lleva un recargo de doce por ciento; el martes, ninguno». Eligió el martes y nadie discutió nada al cobrar."
+    before_phrase: "El sábado te va a salir un poco más."
+    after_phrase: "El sábado lleva un recargo del doce por ciento."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Cruzar la avenida"
+    body: "En el grupo del barrio alguien preguntó por qué todos compraban en la tienda de enfrente. Julieta lo resumió: «Porque no cobran recargo por la tarjeta». Dos días después, el otro comercio había quitado el cartel."
+    before_phrase: "Es que aquí te cobran más si pagas con tarjeta."
+    after_phrase: "Allí no hay recargo por la tarjeta."
+  - position: 3
+    scene: "familia"
+    conversation_type: "practica"
+    title: "La letra pequeña"
+    body: "Mi hermano iba a firmar el contrato del móvil sin leerlo. Le pedí cinco minutos y encontramos la línea: cancelar antes del año traía un recargo. Llamó, lo negoció y firmó otro papel. Cinco minutos bien gastados."
+    before_phrase: "A ver si luego te cobran por salirte."
+    after_phrase: "Salirte antes del año lleva recargo."
+metrics:
+  zipf_overall: 4.3197
+  dispersion_dp: 0.1718
+  pedantry_proxy: 0.4297
+  family_size: 31
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

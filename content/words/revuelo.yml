@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "revuelo"
+status: "draft"
+lemma: "revuelo"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "vue"
+  - "lo"
+stressed_syllable: 2
+ipa_latam: "[reˈβwe.lo]"
+ipa_es: "[reˈβwe.lo]"
+explanation: "Ruido y comentarios que salen de golpe cuando algo sale a la luz."
+example_sentence: "El cambio de horario armó un revuelo que duró dos días."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra el alboroto sin decir que sea grave: sirve para bajar el tono de algo que parecía enorme."
+when_not_to_use: "No la uses para un efecto que dura semanas; esta palabra habla del golpe de los primeros días."
+collocations:
+  - "armar revuelo"
+  - "causar revuelo"
+  - "el revuelo de los primeros días"
+replaces:
+  - before: "Se lio muchísimo con eso"
+    after: "Aquello armó un revuelo"
+  - before: "Todo el mundo se puso a hablar de golpe"
+    after: "Se montó un revuelo"
+  - before: "Pasó sin que nadie se alterara"
+    after: "Pasó sin ningún revuelo"
+family: []
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "lío"
+    - "alboroto"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "recelo"
+    difference: "El recelo es la desconfianza callada de una persona; lo otro es el alboroto ruidoso de mucha gente."
+    memory_trick: "El recelo se guarda; el revuelo se oye."
+  - confused_with: "escándalo"
+    difference: "El escándalo da por hecho que hubo algo grave; esta palabra solo dice que se habló mucho y de golpe."
+    memory_trick: "El escándalo acusa; el revuelo solo suena."
+exercises:
+  - position: 1
+    sentence: "El cambio de horario del centro armó un {{blank}} de dos días y a la tercera mañana ya nadie lo mencionaba."
+    hint_general: "Mucho ruido de golpe que se apagó enseguida."
+    explanation: "Revuelo: mucho ruido de golpe que se apaga. «Recelo» sería una desconfianza callada, y «escándalo» daría por hecho que hubo algo grave."
+    options:
+      - position: 1
+        text: "recelo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recelo» es la desconfianza callada de quien sospecha, y aquí lo que hubo fue mucha gente hablando a la vez."
+        hint_specific: "«Recelo» es silencioso y va por dentro. ¿Esto fue callado o ruidoso?"
+      - position: 2
+        text: "revuelo"
+        is_correct: true
+      - position: 3
+        text: "escándalo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escándalo» da por hecho que ocurrió algo grave, y cambiar un horario no lo es."
+        hint_specific: "«Escándalo» acusa de algo grave. ¿Qué pasó exactamente en el centro?"
+  - position: 2
+    sentence: "La foto del salón sin muebles causó un {{blank}} en el grupo familiar antes de que nadie preguntara nada."
+    hint_general: "Todos empezaron a hablar de golpe, sin preguntar primero."
+    explanation: "Revuelo: todos hablando de golpe. «Conmoción» es palabra solemne que supone un golpe muy grave, y «silencio» diría lo contrario."
+    options:
+      - position: 1
+        text: "conmoción"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Conmoción» es palabra solemne y se reserva para golpes muy graves, y esto es una foto en un grupo de familia."
+        hint_specific: "«Conmoción» suena a tragedia y a tono grave. ¿Qué pasó en ese grupo?"
+      - position: 2
+        text: "revuelo"
+        is_correct: true
+      - position: 3
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencio» diría que nadie dijo nada, y la frase cuenta que se pusieron a hablar todos."
+        hint_specific: "«Silencio» calla. ¿Qué hizo la familia al ver la foto?"
+  - position: 3
+    sentence: "Zoe publicó la cifra sin adornos y el {{blank}} duró lo que tardó otro en publicar algo más gordo."
+    hint_general: "El alboroto se apagó en cuanto llegó otra cosa."
+    explanation: "Revuelo: el alboroto que se apaga pronto. «Recelo» sería desconfianza callada, y «cambio» diría que algo se transformó."
+    options:
+      - position: 1
+        text: "revuelo"
+        is_correct: true
+      - position: 2
+        text: "recelo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recelo» es la desconfianza que alguien se guarda, y lo que se apagó aquí fue el ruido de mucha gente."
+        hint_specific: "«Recelo» va por dentro y sin ruido. ¿Qué se apagó al llegar otra noticia?"
+      - position: 3
+        text: "cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cambio» diría que algo se transformó, y la frase cuenta que solo hubo ruido durante un rato."
+        hint_specific: "«Cambio» transforma algo. ¿Cambió algo con esa cifra?"
+  - position: 4
+    sentence: "En el mercado se montó un {{blank}} cuando corrió la voz de que el puesto de pescado cerraba en marzo."
+    hint_general: "La noticia hizo que todos hablaran a la vez, ahí mismo."
+    explanation: "Revuelo: todos hablando a la vez. «Algarabía» es palabra literaria que suena a alegría ruidosa, y «rumor» sería la voz que corre, no el alboroto."
+    options:
+      - position: 1
+        text: "algarabía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Algarabía» es palabra literaria y suena a ruido alegre de fiesta, y aquí la gente habla porque un puesto cierra."
+        hint_specific: "«Algarabía» suena a fiesta, con tono literario. ¿Es una buena noticia para el mercado?"
+      - position: 2
+        text: "revuelo"
+        is_correct: true
+      - position: 3
+        text: "rumor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rumor» es la voz que corre, y aquí ya corrió: lo que se monta después es el alboroto."
+        hint_specific: "«Rumor» es la voz que corre. ¿Qué pasa después de que corra?"
+  - position: 5
+    sentence: "Casilda cambió de proveedor sin ningún {{blank}}: lo contó en dos líneas y siguió trabajando."
+    hint_general: "No hubo alboroto ni comentarios de golpe."
+    explanation: "Revuelo: no hubo alboroto. «Relevo» sería que alguien sustituyera a otro en su puesto, y «aviso» sería el mensaje que ella escribió."
+    options:
+      - position: 1
+        text: "relevo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relevo» es que alguien sustituya a otro en un puesto o en un turno, y aquí lo que cambia es una empresa que suministra."
+        hint_specific: "«Relevo» cambia a una persona de puesto. ¿Se sustituyó a alguien?"
+      - position: 2
+        text: "revuelo"
+        is_correct: true
+      - position: 3
+        text: "aviso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aviso» es el mensaje que ella escribió, y la frase dice que no hubo nada más alrededor."
+        hint_specific: "«Aviso» es lo que ella mandó. ¿Qué es lo que no hubo?"
+  - position: 6
+    sentence: "Hubo {{blank}} durante el fin de semana y el lunes la junta actuó como si no hubiera pasado nada."
+    hint_general: "Dos días de ruido y luego ninguna consecuencia."
+    explanation: "Revuelo: dos días de ruido sin consecuencias. «Conmoción» sería un golpe grave y solemne, y «acuerdo» supondría que se decidió algo."
+    options:
+      - position: 1
+        text: "acuerdo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acuerdo» supondría que se decidió algo, y la frase cuenta que el lunes nadie movió nada."
+        hint_specific: "«Acuerdo» decide algo. ¿Se decidió algo ese lunes?"
+      - position: 2
+        text: "revuelo"
+        is_correct: true
+      - position: 3
+        text: "conmoción"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Conmoción» es palabra solemne para un golpe muy grave, y esto se desinfló solo en dos días."
+        hint_specific: "«Conmoción» es de tono grave y de tragedia. ¿Cuánto duró esto?"
+  - position: 7
+    sentence: "Mi cuñado disfruta del {{blank}} que arma cada vez que anuncia una mudanza que luego no hace."
+    hint_general: "Disfruta del ruido que provoca de golpe."
+    explanation: "Revuelo: el ruido que provoca de golpe. «Recelo» sería la desconfianza callada de los demás, y «cariño» hablaría de otra cosa distinta."
+    options:
+      - position: 1
+        text: "recelo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recelo» es la desconfianza callada que los demás se guardan, y de lo que él disfruta es del ruido que se monta."
+        hint_specific: "«Recelo» es silencioso. ¿De qué disfruta tu cuñado, del silencio o del ruido?"
+      - position: 2
+        text: "revuelo"
+        is_correct: true
+      - position: 3
+        text: "cariño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cariño» es el afecto de la familia, y lo que la frase describe es el alboroto que provoca el anuncio."
+        hint_specific: "«Cariño» es afecto. ¿Qué provoca el anuncio de la mudanza?"
+  - position: 8
+    sentence: "El titular buscaba {{blank}} y el texto no lo sostenía, así que a la semana nadie recordaba el caso."
+    hint_general: "Buscaba ruido inmediato y no tenía nada detrás."
+    explanation: "Revuelo: ruido inmediato sin nada detrás. «Algarabía» es palabra literaria de ruido alegre, y «relevo» hablaría de sustituir a alguien."
+    options:
+      - position: 1
+        text: "algarabía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Algarabía» es palabra literaria y describe un ruido alegre de fiesta, y un titular no busca alegrar a nadie."
+        hint_specific: "«Algarabía» suena a fiesta, con tono literario. ¿Qué busca un titular así?"
+      - position: 2
+        text: "relevo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Relevo» es sustituir a alguien en un puesto o en un turno, y aquí nadie sustituye a nadie."
+        hint_specific: "«Relevo» cambia a una persona por otra. ¿Hay algún cambio de puesto?"
+      - position: 3
+        text: "revuelo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos días"
+    body: "El cambio de horario armó un revuelo enorme el jueves y el viernes. El lunes ya nadie lo mencionaba. Zoe lo apuntó para la próxima vez: «Un revuelo no es una consecuencia; hay que esperar a ver si queda algo»."
+    before_phrase: "Se lio muchísimo con lo del horario."
+    after_phrase: "Armó un revuelo de dos días."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La foto del salón"
+    body: "Mi hermana publicó una foto del salón vacío sin explicar nada y el grupo familiar se llenó de mensajes en diez minutos. Cuando por fin llamó, lo primero que dijo fue: «No quería armar este revuelo». Se mudaba de piso, nada más."
+    before_phrase: "Se armó un lío tremendo en el grupo."
+    after_phrase: "No quería armar este revuelo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Sin ruido"
+    body: "Le preguntaron a Casilda cómo había cambiado de proveedor sin que se enterara medio sector. «Lo conté en dos líneas y seguí trabajando», contestó. «No todo cambio necesita revuelo». Fue la frase que citaron en el resumen."
+    before_phrase: "Lo hicimos sin montar ningún lío."
+    after_phrase: "No todo cambio necesita revuelo."
+metrics:
+  zipf_overall: 3.5327
+  dispersion_dp: 0.2878
+  pedantry_proxy: 0.6459
+  family_size: 15
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-15"

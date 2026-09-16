@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 8001
+slug: "ingenioso"
+status: "draft"
+lemma: "ingenioso"
+part_of_speech: "adjetivo"
+syllables:
+  - "in"
+  - "ge"
+  - "nio"
+  - "so"
+stressed_syllable: 3
+ipa_latam: "[in.xeˈnjo.so]"
+ipa_es: "[in.xeˈnjo.so]"
+explanation: "Que responde o resuelve con una idea rápida y original, a menudo con gracia."
+example_sentence: "Su brindis fue tan ingenioso que la mesa entera se rio y nadie quedó mal."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es un elogio preciso para una idea o una salida rápida; dicho de ti mismo suena a presumir."
+when_not_to_use: "No la uses para quien repite chistes ajenos, ni para quien maniobra con astucia para sacar ventaja."
+collocations:
+  - "una salida ingeniosa"
+  - "un comentario ingenioso"
+  - "una forma ingeniosa de resolverlo"
+replaces:
+  - before: "Qué bueno lo que dijiste"
+    after: "Qué ingenioso lo que dijiste"
+  - before: "Tiene ideas muy buenas y divertidas"
+    after: "Tiene ideas muy ingeniosas"
+  - before: "Lo arregló de una manera rara y buenísima"
+    after: "Lo arregló de una forma muy ingeniosa"
+family:
+  - "ingenio"
+  - "ingeniosamente"
+themes:
+  - slug: "humor"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 2
+tags:
+  comodin: ["bueno", "listo"]
+  funcion: ["elogiar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ingenuo"
+    difference: "«Ingenuo» describe a quien se cree todo sin ver la doble intención; «ingenioso» describe a quien encuentra una idea rápida y original."
+    memory_trick: "El ingenuo se lo cree; el ingenioso lo inventa."
+  - confused_with: "astuto"
+    difference: "«Astuto» maniobra para sacar ventaja; «ingenioso» solo dice que la idea llegó rápido y era original."
+    memory_trick: "El astuto busca ventaja; el ingenioso busca la salida."
+exercises:
+  - position: 1
+    sentence: "Cuando el proyector se apagó a mitad de la charla, Leonor improvisó una salida tan {{blank}} que nadie se movió de la sala; no hubo risas, hubo alivio."
+    hint_general: "Describe una idea rápida y original que saca a alguien de un apuro."
+    explanation: "Ingeniosa: una idea rápida que resolvió el apuro. «Ingenua» describe a quien se cree todo, y «chistosa» apunta a la risa, y la frase aclara que no hubo risas."
+    options:
+      - position: 1
+        text: "ingenua"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ingenua» se dice de quien se cree cualquier cosa sin malicia; aquí la salida funcionó y salvó la charla."
+        hint_specific: "«Ingenua» habla de creerse todo. ¿La salida falló por confiada o resolvió el apuro?"
+      - position: 2
+        text: "ingeniosa"
+        is_correct: true
+      - position: 3
+        text: "chistosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chistosa» es coloquial y dice que algo busca risa; la frase aclara que en la sala no hubo risas, sino alivio."
+        hint_specific: "Relee el final: no hubo risas. ¿Encaja algo pensado solo para hacer reír?"
+  - position: 2
+    sentence: "En la sobremesa, Tadeo volvió a contar el desastre del pastel con un giro tan {{blank}} que su abuela lloró de risa aunque se sabía la historia, y ningún primo quedó señalado."
+    hint_general: "Busca la palabra para un giro nuevo y bien pensado que además cae bien."
+    explanation: "Ingenioso: encontró un giro nuevo a una historia sabida. «Burlón» dejaría a alguien de blanco, y nadie queda señalado, e «ingenuo» diría que lo contó sin darse cuenta."
+    options:
+      - position: 1
+        text: "ingenioso"
+        is_correct: true
+      - position: 2
+        text: "burlón"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Burlón» convierte a alguien en el blanco de la broma, y la frase dice que ningún primo quedó señalado."
+        hint_specific: "«Burlón» necesita una víctima. ¿Quién sale mal parado en esa sobremesa?"
+      - position: 3
+        text: "ingenuo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ingenuo» es quien no ve la doble intención; aquí el giro está buscado a propósito sobre una historia repetida."
+        hint_specific: "«Ingenuo» va de inocencia, no de invención. ¿El giro salió sin querer?"
+  - position: 3
+    sentence: "Aunque Renzo no buscaba quedar por encima de nadie, su comentario sobre el nombre del bar fue tan {{blank}} que Mirta lo guardó para contarlo al día siguiente."
+    hint_general: "Se trata de una idea original y rápida, no de una jugada para ganar terreno."
+    explanation: "Ingenioso: una idea original que ella quiso repetir. «Astuto» maniobra para sacar ventaja, y él no la busca, y «previsible» diría que se veía venir."
+    options:
+      - position: 1
+        text: "astuto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Astuto» sugiere maniobrar para sacar ventaja, y la frase dice que no buscaba quedar por encima de nadie."
+        hint_specific: "«Astuto» siempre persigue un beneficio. ¿Renzo gana algo con ese comentario?"
+      - position: 2
+        text: "ingenioso"
+        is_correct: true
+      - position: 3
+        text: "previsible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Previsible» dice que algo se veía venir, y ella lo guardó justamente porque no lo esperaba."
+        hint_specific: "«Previsible» es lo que ya sabías que iba a pasar. ¿Por qué lo guardó Mirta?"
+  - position: 4
+    sentence: "Ismael hace reír sin apuntar a nadie: en la despedida soltó un brindis {{blank}}, pensado con cuidado, que dejó a todos de buen humor."
+    hint_general: "La palabra elogia una ocurrencia trabajada que no deja a nadie mal."
+    explanation: "Ingenioso: una idea buena y preparada que no hiere. «Mordaz» hiere al criticar, y él no apunta a nadie, e «ingenuo» diría que lo soltó sin pensarlo."
+    options:
+      - position: 1
+        text: "mordaz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mordaz» critica con dureza y deja huella en alguien, y la frase dice que no apunta a nadie."
+        hint_specific: "«Mordaz» muerde a alguien. ¿A quién muerde ese brindis?"
+      - position: 2
+        text: "ingenuo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ingenuo» describe lo dicho sin malicia ni cálculo, y ese brindis estaba pensado con cuidado."
+        hint_specific: "«Ingenuo» sale sin pensar. ¿Qué dice la frase sobre cuánto lo preparó?"
+      - position: 3
+        text: "ingenioso"
+        is_correct: true
+  - position: 5
+    sentence: "Rubén nunca presume de lo que sabe, pero es tan {{blank}} que desatascó la discusión del grupo con una sola frase."
+    hint_general: "Piensa en quien encuentra la idea que desbloquea algo, sin exhibir nada."
+    explanation: "Ingenioso: encontró la idea que desbloqueó la charla. «Sabelotodo» es coloquial y acusa de exhibir, y él no presume, y «hábil» hablaría de destreza practicada."
+    options:
+      - position: 1
+        text: "ingenioso"
+        is_correct: true
+      - position: 2
+        text: "sabelotodo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sabelotodo» es coloquial y reprocha exhibir lo que uno sabe, y la frase dice que él nunca presume."
+        hint_specific: "«Sabelotodo» es un reproche por lucirse. ¿La frase lo critica o lo elogia?"
+      - position: 3
+        text: "hábil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Hábil» habla de destreza ganada con práctica, y aquí lo que desbloquea todo es una idea nueva."
+        hint_specific: "«Hábil» va de práctica y oficio. ¿Qué desatascó la charla: la práctica o la idea?"
+  - position: 6
+    sentence: "Ámbar no busca sacar ventaja de nadie, pero contestó a la invitación con una frase tan {{blank}} que Dante no supo qué responder y se quedó sonriendo."
+    hint_general: "La frase fue rápida y original, y lo dejó sin respuesta por lo buena que era."
+    explanation: "Ingeniosa: una frase rápida que lo dejó sin respuesta. «Pilla» es coloquial y acusa de picardía interesada, y «ingenua» diría que ella no calculó nada."
+    options:
+      - position: 1
+        text: "pilla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pilla» es coloquial y sugiere picardía para ganar algo, y la frase dice que ella no busca ventaja."
+        hint_specific: "«Pilla» insinúa que alguien juega con segundas. ¿Ámbar quiere sacar algo?"
+      - position: 2
+        text: "ingenua"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Ingenua» describe a quien contesta sin doble fondo, y esta respuesta deja a Dante sin palabras."
+        hint_specific: "«Ingenua» no sorprende a nadie. ¿Por qué se queda Dante sin saber qué decir?"
+      - position: 3
+        text: "ingeniosa"
+        is_correct: true
+  - position: 7
+    sentence: "Gaspar contestó en dos segundos con una salida tan {{blank}} que el grupo la repitió durante toda la semana."
+    hint_general: "Llegó al instante y era original: por eso todos la repitieron."
+    explanation: "Ingeniosa: llegó al instante y era original. «Trabajada» supone horas de preparación, y él contestó en dos segundos, y «disparatada» diría que no tiene sentido."
+    options:
+      - position: 1
+        text: "trabajada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Trabajada» supone horas de preparación, y la frase dice que contestó en dos segundos."
+        hint_specific: "«Trabajada» pide tiempo. ¿Cuánto tardó Gaspar en responder?"
+      - position: 2
+        text: "ingeniosa"
+        is_correct: true
+      - position: 3
+        text: "disparatada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disparatada» dice que algo no tiene ningún sentido, y esta salida gustó tanto que la repitieron toda la semana."
+        hint_specific: "«Disparatada» es lo que no se sostiene. ¿Se repite algo que no tiene sentido?"
+  - position: 8
+    sentence: "En el amigo invisible, Otilia regaló un marco vacío con una dedicatoria {{blank}}: nadie se rio a carcajadas, pero todos reconocieron lo bien pensada que estaba."
+    hint_general: "Lo que se elogia aquí es la idea bien pensada, no la risa que provoca."
+    explanation: "Ingeniosa: se elogia la idea bien pensada. «Graciosa» apunta solo a la risa, y nadie se rio a carcajadas, y «chistosa» es coloquial y remite al chiste fácil."
+    options:
+      - position: 1
+        text: "graciosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Graciosa» mide solo la risa que provoca algo, y la frase dice que nadie se rio a carcajadas."
+        hint_specific: "«Graciosa» se mide en risas. ¿Qué reconocieron los demás en esa dedicatoria?"
+      - position: 2
+        text: "chistosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chistosa» es coloquial y remite al chiste fácil, y aquí lo que se celebra es una idea bien pensada."
+        hint_specific: "«Chistosa» suena a chiste rápido. ¿El regalo buscaba un chiste o una idea?"
+      - position: 3
+        text: "ingeniosa"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El brindis corto"
+    body: "Nadie quería hablar en la despedida de Aitana. Al final se levantó Ismael, alzó la copa y dijo: «Brindo por la única persona capaz de perder las llaves y volver con dos amigos nuevos». Todos se rieron con ella, no de ella. «Qué brindis tan ingenioso», le dijo alguien al salir."
+    before_phrase: "Qué bueno lo que dijiste."
+    after_phrase: "Qué brindis tan ingenioso."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La nota de la nevera"
+    body: "Vera llevaba una semana sin hablarse con su hermano. El martes encontró un papel pegado en la nevera: «Tregua: yo pongo la cena, tú eliges la película, y el que saque el tema friega». Se rio sola en la cocina y escribió debajo: «Aceptada». Su madre, al enterarse, dijo que había sido una salida muy ingeniosa."
+    before_phrase: "Qué manera tan buena de arreglarlo."
+    after_phrase: "Qué salida tan ingeniosa."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos minutos al final"
+    body: "A Gaspar le quedaban dos minutos y ninguna pregunta preparada. Miró la pizarra llena de flechas y dijo: «¿Qué es lo más raro que ha resuelto este equipo un lunes por la mañana?». La entrevistadora se rio y estuvo diez minutos contándolo. Al salir, ella comentó con su colega: «Qué pregunta tan ingeniosa»."
+    before_phrase: "Se me ocurrió algo bueno para preguntar."
+    after_phrase: "Se me ocurrió una pregunta ingeniosa."
+metrics:
+  zipf_overall: 3.4712
+  dispersion_dp: 0.1882
+  pedantry_proxy: 0.5643
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

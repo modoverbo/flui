@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "rentable"
+status: "draft"
+lemma: "rentable"
+part_of_speech: "adjetivo"
+syllables:
+  - "ren"
+  - "ta"
+  - "ble"
+stressed_syllable: 2
+ipa_latam: "[renˈta.βle]"
+ipa_es: "[renˈta.βle]"
+explanation: "Que deja más dinero del que cuesta, así que vale la pena sostenerlo en el tiempo."
+example_sentence: "El taller de los sábados es pequeño, pero es el más rentable de los tres."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala cuando quieras separar lo que gusta de lo que paga las cuentas: son dos preguntas distintas."
+when_not_to_use: "No la uses para decir que algo salió barato; esto compara lo que entra con lo que cuesta."
+collocations:
+  - "negocio rentable"
+  - "poco rentable"
+  - "dejar de ser rentable"
+replaces:
+  - before: "Ese servicio nos deja plata"
+    after: "Ese servicio es el más rentable"
+  - before: "No compensa hacerlo"
+    after: "No es rentable hacerlo"
+  - before: "Sale a cuenta"
+    after: "Es rentable"
+family:
+  - "rentabilidad"
+  - "rentabilizar"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "compensa"
+    - "sale a cuenta"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "notable"
+    difference: "«Notable» dice que algo destaca y se nota; esta palabra dice que deja más de lo que cuesta."
+    memory_trick: "Lo notable llama la atención; lo rentable llena la caja."
+  - confused_with: "económico"
+    difference: "«Económico» dice que cuesta poco; algo puede costar mucho y aun así dejar mucho más."
+    memory_trick: "Económico mira el precio; rentable mira la diferencia."
+exercises:
+  - position: 1
+    sentence: "De los tres servicios, el de mantenimiento es el más {{blank}}: cuesta poco sostenerlo y factura todos los meses."
+    hint_general: "Compara lo que entra con lo que cuesta y sale ganando."
+    explanation: "Rentable: entra más de lo que cuesta sostenerlo. «Notable» solo diría que destaca, y «económico» hablaría del precio, no de la diferencia."
+    options:
+      - position: 1
+        text: "notable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notable» dice que algo llama la atención, y aquí lo que se compara es el dinero que entra y el que sale."
+        hint_specific: "«Notable» va de destacar. ¿La frase compara fama o compara cuentas?"
+      - position: 2
+        text: "rentable"
+        is_correct: true
+      - position: 3
+        text: "económico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Económico» solo dice que cuesta poco, y la frase también cuenta lo que ese servicio factura."
+        hint_specific: "«Económico» mira el precio. ¿Aquí solo importa lo que cuesta?"
+  - position: 2
+    sentence: "Tras dos años de pérdidas, Ulises cerró la tienda de la avenida y se quedó con la única {{blank}}."
+    hint_general: "Se queda con la que deja más de lo que cuesta mantener."
+    explanation: "Rentable: es la que deja más de lo que cuesta. «Redonda» es de charla informal y significa perfecta, y «productiva» hablaría de cuánto se hace, no de cuánto queda."
+    options:
+      - position: 1
+        text: "redonda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Redonda» es de conversación muy suelta y significa que algo salió perfecto, no que las cuentas cuadren."
+        hint_specific: "«Redonda» suena a charla de café y habla de algo perfecto. ¿Eso es lo que se mide aquí?"
+      - position: 2
+        text: "rentable"
+        is_correct: true
+      - position: 3
+        text: "productiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Productiva» dice cuánto se produce, y una tienda puede vender mucho y aun así perder dinero."
+        hint_specific: "«Productiva» cuenta lo que sale de la tienda. ¿Eso garantiza que quede dinero?"
+  - position: 3
+    sentence: "El estudio salió {{blank}} desde el primer trimestre, aunque la obra del local había costado más de lo previsto."
+    hint_general: "A pesar del gasto inicial, lo que entra supera lo que se puso."
+    explanation: "Rentable: lo que entra supera lo que se puso. «Notable» hablaría de destacar, y «viable» solo diría que se puede sostener sin quebrar."
+    options:
+      - position: 1
+        text: "rentable"
+        is_correct: true
+      - position: 2
+        text: "notable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notable» dice que algo destaca entre los demás, y la frase compara la obra con lo que ya entró."
+        hint_specific: "«Notable» es sobresalir. ¿El estudio destaca o devuelve lo invertido?"
+      - position: 3
+        text: "viable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Viable» dice que algo se puede sostener, y sostenerse no es lo mismo que devolver más de lo que costó."
+        hint_specific: "«Viable» es que algo aguanta en pie. ¿Aguantar es lo mismo que ganar?"
+  - position: 4
+    sentence: "Antes de ampliar el catálogo, Melina quiso saber qué línea era {{blank}} y cuál se sostenía solo por costumbre."
+    hint_general: "Busca cuál devuelve más de lo que cuesta y cuál no."
+    explanation: "Rentable: devuelve más de lo que cuesta. «Jugosa» es coloquial y sugiere una ganancia golosa, y «económica» hablaría de precios bajos."
+    options:
+      - position: 1
+        text: "jugosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Jugosa» es de conversación informal y sugiere una ganancia golosa; aquí se compara línea por línea con frialdad."
+        hint_specific: "«Jugosa» suena a botín apetitoso. ¿Encaja en una revisión fría del catálogo?"
+      - position: 2
+        text: "rentable"
+        is_correct: true
+      - position: 3
+        text: "económica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Económica» diría que esa línea es barata, y Melina pregunta qué deja, no qué cuesta."
+        hint_specific: "«Económica» mira el precio. ¿Melina pregunta por el precio o por lo que queda?"
+  - position: 5
+    sentence: "Damián disfruta dando clases los sábados, pero admite que ese taller nunca fue {{blank}} y lo hace por gusto."
+    hint_general: "Reconoce que el taller no devuelve lo que cuesta, aunque lo disfrute."
+    explanation: "Rentable: no devuelve lo que cuesta. «Notable» hablaría de destacar, y «sostenible» diría que aguanta, cuando la frase admite que no se paga solo."
+    options:
+      - position: 1
+        text: "sostenible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sostenible» dice que algo se mantiene en el tiempo, y él lo mantiene con su gusto, no con sus cuentas."
+        hint_specific: "«Sostenible» es aguantar en el tiempo. ¿Qué lo sostiene, el dinero o las ganas?"
+      - position: 2
+        text: "notable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notable» diría que el taller destaca, y la frase habla de lo que cuesta y lo que deja."
+        hint_specific: "«Notable» va de sobresalir. ¿Damián habla de prestigio o de cuentas?"
+      - position: 3
+        text: "rentable"
+        is_correct: true
+  - position: 6
+    sentence: "En la reunión con el banco, Amaya mostró dos años de números para probar que el proyecto era {{blank}}."
+    hint_general: "Quiere probar con números que entra más de lo que sale."
+    explanation: "Rentable: entra más de lo que sale. «Redondo» es de charla informal y significa perfecto, y «viable» solo diría que el proyecto puede sostenerse."
+    options:
+      - position: 1
+        text: "rentable"
+        is_correct: true
+      - position: 2
+        text: "redondo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Redondo» es coloquial y afirma que todo salió perfecto; delante del banco se prueba otra cosa, con cifras."
+        hint_specific: "«Redondo» es lenguaje de sobremesa y promete perfección. ¿Va bien con dos años de números?"
+      - position: 3
+        text: "viable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Viable» dice que el proyecto puede llevarse a cabo, y el banco quiere saber qué devuelve, no si se puede."
+        hint_specific: "«Viable» es que se puede hacer. ¿Eso responde a lo que pregunta un banco?"
+  - position: 7
+    sentence: "El puesto del mercado vendía muchísimo, aunque Gaspar calculó que apenas era {{blank}} después de pagar el alquiler."
+    hint_general: "Vender mucho no basta: hay que mirar lo que queda tras pagar."
+    explanation: "Rentable: apenas queda algo tras pagar el alquiler. «Jugoso» es coloquial y promete una ganancia golosa, y «productivo» solo mediría cuánto se vende."
+    options:
+      - position: 1
+        text: "productivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Productivo» mide cuánto se vende, y la frase dice que vendía muchísimo y aun así casi no quedaba nada."
+        hint_specific: "«Productivo» cuenta lo que sale del puesto. ¿La frase duda de las ventas o de lo que sobra?"
+      - position: 2
+        text: "jugoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Jugoso» es informal y anuncia una ganancia golosa, justo lo contrario de lo que salió en la cuenta."
+        hint_specific: "«Jugoso» promete una ganancia grande. ¿Cuánto quedó tras pagar el alquiler?"
+      - position: 3
+        text: "rentable"
+        is_correct: true
+  - position: 8
+    sentence: "Mi tío repite que el huerto no es {{blank}}, y aun así cada domingo vuelve con las manos llenas de tierra."
+    hint_general: "Dice que no devuelve dinero, aunque le devuelva otras cosas."
+    explanation: "Rentable: no devuelve dinero, aunque él siga yendo. «Notable» hablaría de destacar, y «barato» solo diría que el huerto cuesta poco."
+    options:
+      - position: 1
+        text: "barato"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Barato» diría que el huerto cuesta poco, y lo que él admite es que no le devuelve dinero."
+        hint_specific: "«Barato» mira lo que cuesta. ¿Tu tío se queja del precio o de lo que recibe?"
+      - position: 2
+        text: "rentable"
+        is_correct: true
+      - position: 3
+        text: "notable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notable» diría que el huerto destaca, y la frase compara el esfuerzo con el dinero que deja."
+        hint_specific: "«Notable» es llamar la atención. ¿El huerto presume o no paga sus costes?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Las tres líneas"
+    body: "Pusimos las tres líneas del catálogo en una hoja. La que más orgullo daba era la que más dinero se comía. «Solo una es rentable», dijo Bruno, «las otras dos las pagamos nosotros». Nadie se ofendió: por fin era una conversación con números."
+    before_phrase: "Esa línea creo que sale a cuenta."
+    after_phrase: "Solo una de las tres es rentable."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El taller de los sábados"
+    body: "Mi hermana da clases de cerámica los sábados y siempre acaba invitando el café. Le pregunté si le compensaba. «No es rentable y lo sé», contestó. «Lo hago porque el lunes trabajo mejor». Dejé de insistir."
+    before_phrase: "Eso no te compensa, ¿no?"
+    after_phrase: "No es rentable, y aun así lo elijo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta incómoda"
+    body: "En la entrevista le preguntaron a Nadia por un proyecto que había cerrado. No lo maquilló. «Lo cerré porque dejó de ser rentable y tardé seis meses en aceptarlo», dijo. El entrevistador anotó, sonrió y siguió por ahí."
+    before_phrase: "Lo cerramos porque ya no salía a cuenta."
+    after_phrase: "Lo cerré porque dejó de ser rentable."
+metrics:
+  zipf_overall: 4.3399
+  dispersion_dp: 0.1835
+  pedantry_proxy: 0.4052
+  family_size: 50
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

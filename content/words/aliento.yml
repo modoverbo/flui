@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7012
+slug: "aliento"
+status: "draft"
+lemma: "aliento"
+part_of_speech: "sustantivo"
+syllables:
+  - "a"
+  - "lien"
+  - "to"
+stressed_syllable: 2
+ipa_latam: "[aˈljen.to]"
+ipa_es: "[aˈljen.to]"
+explanation: "Palabras que dan fuerza a quien está a punto de rendirse."
+example_sentence: "Dos frases suyas fueron todo el aliento que necesité aquella semana."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra lo que das con la voz cuando no puedes dar nada más, y sirve también para pedirlo."
+when_not_to_use: "No la uses para algo que atrae o compensa, como una prima, ni para el peso que se quita de encima."
+collocations:
+  - "palabras de aliento"
+  - "dar aliento"
+  - "un aliento a tiempo"
+replaces:
+  - before: "Le dije cuatro cosas para que no tirara la toalla"
+    after: "Le di aliento para que no tirara la toalla"
+  - before: "Un mensaje suyo y volví a ponerme"
+    after: "Su mensaje me dio el aliento que me faltaba"
+  - before: "Necesito que alguien me diga que voy bien"
+    after: "Necesito un poco de aliento"
+family:
+  - "alentar"
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+  - slug: "amistad"
+    relevance: 1
+tags:
+  comodin:
+    - "apoyo"
+  funcion:
+    - "acompañar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "aliciente"
+    difference: "Un «aliciente» es algo que atrae y compensa, como una prima o un viaje; la otra palabra se da solo con la voz."
+    memory_trick: "El aliciente se cobra; lo otro se dice."
+  - confused_with: "alivio"
+    difference: "El «alivio» quita un peso que ya estaba encima; la otra palabra añade fuerzas para lo que todavía falta."
+    memory_trick: "El alivio resta peso; lo otro suma fuerza."
+exercises:
+  - position: 1
+    sentence: "Nadie le preguntó por los números: su jefa le dio el {{blank}} que necesitaba para volver a llamar al cliente."
+    hint_general: "Le dieron fuerzas con palabras para hacer algo que le costaba."
+    explanation: "Aliento: le dan fuerzas con palabras para lo que viene. Un «aliciente» sería una recompensa que atrae, y un «elogio» alabaría algo ya hecho."
+    options:
+      - position: 1
+        text: "aliciente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «aliciente» es algo que atrae y compensa, como una prima o un viaje, y aquí no le ofrecen nada: le dan fuerzas."
+        hint_specific: "Un «aliciente» tiene precio. ¿Qué recibe ella, algo material o palabras?"
+      - position: 2
+        text: "aliento"
+        is_correct: true
+      - position: 3
+        text: "elogio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «elogio» alaba algo que ya salió bien, y aquí se mira hacia delante: hacia la llamada que falta."
+        hint_specific: "Un «elogio» mira atrás. ¿La escena mira a lo hecho o a lo que viene?"
+  - position: 2
+    sentence: "Cuando Lidia quiso dejar la carrera a mitad, dos frases de su padre le dieron {{blank}} para terminarla."
+    hint_general: "Dos frases le dieron fuerzas justo cuando iba a abandonar."
+    explanation: "Aliento: dos frases le dan fuerzas para seguir. El «alivio» quitaría un peso ya puesto, y «empujón» es coloquial y suena a favor para colarse."
+    options:
+      - position: 1
+        text: "alivio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «alivio» quita un peso que ya estaba encima, y a ella no se le quita nada: se le añaden fuerzas para seguir."
+        hint_specific: "El «alivio» descarga. ¿Le quitan algo a Lidia o le añaden algo?"
+      - position: 2
+        text: "empujón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Empujón» es coloquial y suele significar un favor para entrar en algún sitio, y aquí solo hay dos frases de su padre."
+        hint_specific: "Un «empujón» abre puertas por enchufe. ¿Su padre mueve hilos o habla?"
+      - position: 3
+        text: "aliento"
+        is_correct: true
+  - position: 3
+    sentence: "El equipo llevaba tres semanas sin una sola palabra de {{blank}} y se notaba en cómo entraban por la mañana."
+    hint_general: "Faltaban palabras que dieran fuerzas, y el ánimo del grupo se vino abajo."
+    explanation: "Aliento: faltan palabras que den fuerzas. El «apoyo» puede ser gente o dinero, no solo voz, y «arenga» es grandilocuente para una oficina."
+    options:
+      - position: 1
+        text: "apoyo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «apoyo» puede ser gente, dinero o manos, y lo que falta aquí cabe en una frase dicha en voz alta."
+        hint_specific: "El «apoyo» se da también con recursos. ¿Qué es lo que falta, medios o palabras?"
+      - position: 2
+        text: "aliento"
+        is_correct: true
+      - position: 3
+        text: "arenga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arenga» es una palabra grandilocuente para el discurso que enciende a un grupo antes de una gran gesta, y esto es una oficina cualquiera."
+        hint_specific: "Una «arenga» pide tarima y multitud. ¿Dónde ocurre la escena?"
+  - position: 4
+    sentence: "Su hermana le mandó un audio de treinta segundos y fue el único {{blank}} que recibió en todo el mes."
+    hint_general: "Treinta segundos de voz fueron la única fuerza que le llegó de fuera."
+    explanation: "Aliento: treinta segundos de voz que dan fuerzas. Un «aliciente» sería algo que atrae y compensa, y el «apoyo» incluye ayudas materiales."
+    options:
+      - position: 1
+        text: "aliciente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «aliciente» es una recompensa que atrae, y un audio de su hermana no promete ningún premio."
+        hint_specific: "Un «aliciente» ofrece algo a cambio. ¿Qué le ofrece ese audio?"
+      - position: 2
+        text: "apoyo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «apoyo» abarca también dinero, tiempo o manos, y lo que recibió fueron treinta segundos de voz."
+        hint_specific: "El «apoyo» puede llegar en forma de ayuda práctica. ¿Recibió ayuda o recibió voz?"
+      - position: 3
+        text: "aliento"
+        is_correct: true
+  - position: 5
+    sentence: "Hernán reparte {{blank}} a quien está empezando, y por eso la gente vuelve una y otra vez a su taller."
+    hint_general: "Da fuerzas con la voz a quien todavía no se atreve del todo."
+    explanation: "Aliento: da fuerzas con la voz a quien empieza. Un «elogio» alabaría un trabajo ya terminado, y «empujón» es coloquial y suena a enchufe."
+    options:
+      - position: 1
+        text: "elogio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «elogio» alaba un trabajo ya terminado, y quien empieza todavía no tiene nada terminado que alabar."
+        hint_specific: "Un «elogio» necesita obra hecha. ¿En qué momento están los que llegan al taller?"
+      - position: 2
+        text: "aliento"
+        is_correct: true
+      - position: 3
+        text: "empujón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Empujón» es coloquial y sugiere un favor que abre puertas, y Hernán no coloca a nadie: les habla."
+        hint_specific: "Un «empujón» mueve contactos. ¿Hernán mueve contactos o da palabras?"
+  - position: 6
+    sentence: "No le hace falta un premio ni un puesto mejor: le hace falta {{blank}} de alguien que la vea trabajar."
+    hint_general: "Necesita palabras con fuerza, no recompensas ni ascensos."
+    explanation: "Aliento: necesita palabras con fuerza, no recompensas. Un «aliciente» sería justo el premio que la frase descarta, y el «apoyo» apunta a medios y ayudas."
+    options:
+      - position: 1
+        text: "aliento"
+        is_correct: true
+      - position: 2
+        text: "aliciente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «aliciente» es un premio o una ventaja, y la frase empieza descartando justamente el premio y el puesto."
+        hint_specific: "Un «aliciente» es una recompensa. Relee el principio: ¿qué se acaba de descartar?"
+      - position: 3
+        text: "apoyo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «apoyo» incluye medios, tiempo y manos, y lo que pide es que alguien la mire y le hable."
+        hint_specific: "El «apoyo» puede ser material. ¿Pide recursos o pide voz?"
+  - position: 7
+    sentence: "La carta de su antiguo compañero llegó como {{blank}} en mitad de un año muy difícil."
+    hint_general: "La carta le dio fuerzas para seguir en un año cuesta arriba."
+    explanation: "Aliento: la carta le da fuerzas para seguir. El «alivio» quitaría un peso ya puesto, y «arenga» es una palabra solemne para un discurso ante una multitud."
+    options:
+      - position: 1
+        text: "alivio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «alivio» quita un peso de encima, y la carta no le quita el año difícil: le da fuerzas para atravesarlo."
+        hint_specific: "El «alivio» hace desaparecer una carga. ¿Desaparece algo del año de ella?"
+      - position: 2
+        text: "aliento"
+        is_correct: true
+      - position: 3
+        text: "arenga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arenga» es solemne y se dice de un discurso para encender a una multitud, y esto es una carta de una persona a otra."
+        hint_specific: "Una «arenga» necesita público. ¿Cuánta gente lee esa carta?"
+  - position: 8
+    sentence: "A Marcial no le sobran las palabras, pero el {{blank}} que da cuando alguien falla vale por diez reuniones."
+    hint_general: "Lo que dice tras un fallo devuelve las fuerzas para volver a intentarlo."
+    explanation: "Aliento: lo que dice tras un fallo devuelve fuerzas. Un «elogio» alabaría un acierto, y aquí hubo un fallo, y el «apoyo» apunta también a medios."
+    options:
+      - position: 1
+        text: "elogio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «elogio» alaba un acierto, y en la frase acaba de producirse justo lo contrario: alguien ha fallado."
+        hint_specific: "Un «elogio» celebra algo bien hecho. ¿Qué acaba de pasar en esta escena?"
+      - position: 2
+        text: "aliento"
+        is_correct: true
+      - position: 3
+        text: "apoyo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «apoyo» puede llegar en forma de recursos o de manos, y lo de Marcial es breve y se dice en voz alta."
+        hint_specific: "El «apoyo» a veces no habla. ¿Lo de Marcial se hace o se dice?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes de la llamada"
+    body: "El cliente había colgado de malas maneras y Vera no se atrevía a marcar otra vez. Su jefa pasó por detrás: «Te vi con el anterior y lo hiciste bien; llama». No fue un premio ni una orden: fue aliento, y Vera marcó."
+    before_phrase: "Necesitaba que alguien me diera un empujoncito."
+    after_phrase: "Necesitaba aliento, y lo tuve."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "A mitad del camino"
+    body: "Lidia llamó a su padre para decirle que lo dejaba. Él no discutió: «Llevas tres años y eres la misma que empezó. Tú decides, pero yo te veo». Colgó con dos frases de aliento y se presentó a la última convocatoria."
+    before_phrase: "Me dijo cuatro cosas y me vine arriba."
+    after_phrase: "Me dio el aliento justo para terminar."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El taller de los martes"
+    body: "En el taller de Hernán hay gente que nunca tocó una herramienta. Él no corrige delante de todos: se acerca y dice algo en voz baja. «Aquí se reparte aliento y luego lija», bromea alguien. El grupo lleva dos años sin perder a nadie."
+    before_phrase: "Aquí se anima mucho a la gente."
+    after_phrase: "Aquí se reparte aliento."
+metrics:
+  zipf_overall: 4.1409
+  dispersion_dp: 0.1406
+  pedantry_proxy: 0.4987
+  family_size: 29
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

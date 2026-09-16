@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 7022
+slug: "exigencia"
+status: "draft"
+lemma: "exigencia"
+part_of_speech: "sustantivo"
+syllables:
+  - "e"
+  - "xi"
+  - "gen"
+  - "cia"
+stressed_syllable: 3
+ipa_latam: "[ek.siˈxen.sja]"
+ipa_es: "[ek.siˈxen.θja]"
+explanation: "Lo que alguien pide de un modo que no admite un no."
+example_sentence: "Lo dijo con «por favor», pero era una exigencia y todos lo notamos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar el tono de lo que te piden sin discutir todavía el fondo del asunto."
+when_not_to_use: "No la uses para lo que se repite muchas veces, ni para lo que deja abierta la posibilidad de negarse."
+collocations:
+  - "una exigencia razonable"
+  - "sonar a exigencia"
+  - "las exigencias del puesto"
+replaces:
+  - before: "Me lo pidió de una forma que no dejaba opción"
+    after: "Me lo planteó como una exigencia"
+  - before: "Eso ya no es pedir, eso es obligar"
+    after: "Eso ya no es pedir: es una exigencia"
+  - before: "El trabajo pide mucho y a todas horas"
+    after: "El puesto tiene demasiadas exigencias"
+semantic_set_id: "fuerza-de-la-peticion"
+family:
+  - "exigir"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin:
+    - "petición"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "insistencia"
+    difference: "La «insistencia» repite lo mismo muchas veces; la otra palabra basta con decirla una vez, porque no deja salida."
+    memory_trick: "La insistencia se repite; la otra no hace falta repetirla."
+  - confused_with: "petición"
+    difference: "Una «petición» deja abierta la puerta al no; la otra la cierra antes de que contestes."
+    memory_trick: "La petición pregunta; la otra da por hecho."
+exercises:
+  - position: 1
+    sentence: "Pidió el informe para el lunes con una {{blank}} que nadie esperaba de alguien recién llegado al equipo."
+    hint_general: "Lo pidió de un modo que no dejaba lugar a decir que no."
+    explanation: "Exigencia: pidió sin dejar lugar al no. La «insistencia» sería repetirlo muchas veces, y una «petición» dejaría la puerta abierta a negarse."
+    options:
+      - position: 1
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «insistencia» es repetir la misma petición muchas veces, y aquí bastó con pedirlo una sola vez."
+        hint_specific: "La «insistencia» necesita repetir. ¿Cuántas veces lo pidió?"
+      - position: 2
+        text: "exigencia"
+        is_correct: true
+      - position: 3
+        text: "petición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «petición» deja abierta la puerta al no, y lo que sorprende aquí es justo que esa puerta no existía."
+        hint_specific: "Una «petición» admite un no. ¿Alguien podía decir que no a eso?"
+  - position: 2
+    sentence: "En esta casa no hay {{blank}}: hay acuerdos que se revisan cada mes y que cualquiera puede abrir otra vez."
+    hint_general: "Aquí nada se pide de forma que no admita respuesta."
+    explanation: "Exigencias: nada se pide sin admitir respuesta. «Manías» acusaría de fijaciones raras, y las «condiciones» son lo que hay que cumplir a cambio de algo."
+    options:
+      - position: 1
+        text: "manías"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manías» es coloquial y acusa de tener fijaciones raras, y aquí se habla de cómo se piden las cosas, no de rarezas."
+        hint_specific: "«Manías» juzga los gustos de alguien. ¿La frase juzga gustos o modos de pedir?"
+      - position: 2
+        text: "exigencias"
+        is_correct: true
+      - position: 3
+        text: "condiciones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Las «condiciones» son lo que hay que cumplir a cambio de algo, y en la frase no hay ningún trato: hay acuerdos revisables."
+        hint_specific: "Una «condición» abre algo si la cumples. ¿Qué se obtiene a cambio en esa casa?"
+  - position: 3
+    sentence: "Lo que a Vera le pesaba del puesto era la {{blank}} de estar disponible a cualquier hora, incluidos los domingos."
+    hint_general: "Le pesaba algo que le reclamaban sin posibilidad de negarse."
+    explanation: "Exigencia: le reclaman algo sin posibilidad de negarse. La «insistencia» sería repetírselo, y una «queja» la pondría quien está descontento, no quien manda."
+    options:
+      - position: 1
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «insistencia» sería que se lo repitieran una y otra vez, y lo que pesa es que se da por supuesto desde el primer día."
+        hint_specific: "La «insistencia» se nota por repetición. ¿Se lo repiten o se da por hecho?"
+      - position: 2
+        text: "exigencia"
+        is_correct: true
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» la pone quien está descontento, y esto viene de arriba: es lo que le reclaman a ella."
+        hint_specific: "Una «queja» sube; esto baja. ¿Quién pone lo que le pesa a Vera?"
+  - position: 4
+    sentence: "Pedir ayuda no es lo mismo que soltar una {{blank}}: lo primero deja al otro decir que no."
+    hint_general: "Lo segundo se dice de forma que no admite negativa."
+    explanation: "Exigencia: se dice sin admitir negativa. «Pretensión» acusaría de aspirar a algo sin derecho, y una «condición» sería algo que se cumple a cambio."
+    options:
+      - position: 1
+        text: "pretensión"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pretensión» es culta y acusa de aspirar a algo sin derecho, y la frase no juzga si hay derecho: compara dos maneras de pedir."
+        hint_specific: "«Pretensión» discute si te corresponde. ¿La frase discute derechos o modos?"
+      - position: 2
+        text: "exigencia"
+        is_correct: true
+      - position: 3
+        text: "condición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «condición» es lo que hay que cumplir para obtener algo, y aquí no se ofrece nada a cambio de la ayuda."
+        hint_specific: "Una «condición» va unida a un trato. ¿Hay trato cuando pides ayuda?"
+  - position: 5
+    sentence: "Tomás bajó el tono y convirtió la {{blank}} en una pregunta, y el vecino accedió sin discutir."
+    hint_general: "Cambió algo que no dejaba salida por algo que sí la deja."
+    explanation: "Exigencia: cambió lo que no dejaba salida por una pregunta. La «insistencia» se arreglaría dejando de repetir, y una «queja» vendría de quien está molesto."
+    options:
+      - position: 1
+        text: "exigencia"
+        is_correct: true
+      - position: 2
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «insistencia» se corrige dejando de repetir, y lo que Tomás cambia es el tono de lo que pide, no el número de veces."
+        hint_specific: "La «insistencia» se arregla callando. ¿Qué cambió Tomás, la cantidad o el tono?"
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» expresa malestar por algo ya ocurrido, y Tomás está pidiendo algo que todavía no ha pasado."
+        hint_specific: "Una «queja» mira atrás. ¿Tomás mira atrás o pide algo para después?"
+  - position: 6
+    sentence: "La {{blank}} de su suegra era siempre la misma: llegar antes de las dos, pasara lo que pasara."
+    hint_general: "Siempre reclamaba lo mismo de un modo que no admitía respuesta."
+    explanation: "Exigencia: reclama lo mismo sin admitir respuesta. «Manía» acusaría de una fijación rara, y una «petición» dejaría margen para llegar más tarde."
+    options:
+      - position: 1
+        text: "manía"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manía» es coloquial y acusa de tener una fijación rara, y aquí lo que importa es que no se podía contestar, no que fuera raro."
+        hint_specific: "«Manía» se ríe un poco de quien la tiene. ¿La frase se burla o describe un modo de pedir?"
+      - position: 2
+        text: "exigencia"
+        is_correct: true
+      - position: 3
+        text: "petición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «petición» dejaría margen para llegar más tarde, y la frase cierra la puerta con «pasara lo que pasara»."
+        hint_specific: "Una «petición» admite excepciones. ¿Qué dice el final de la frase sobre las excepciones?"
+  - position: 7
+    sentence: "A nadie le molesta que se cuide la calidad: molesta que llegue como {{blank}} y nunca como propuesta."
+    hint_general: "Molesta el modo: llega sin margen para responder."
+    explanation: "Exigencia: llega sin margen para responder. La «insistencia» sería repetirlo mucho, y una «petición» es justo lo contrario, porque deja responder."
+    options:
+      - position: 1
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «insistencia» molesta por repetirse, y aquí lo que molesta es que no haya margen para contestar."
+        hint_specific: "La «insistencia» cansa por repetición. ¿Lo que molesta es la cantidad o la falta de salida?"
+      - position: 2
+        text: "exigencia"
+        is_correct: true
+      - position: 3
+        text: "petición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «petición» deja responder y por eso no molesta, y la frase la opone justamente a lo que sí molesta."
+        hint_specific: "La frase contrapone dos modos. ¿Cuál de los dos es el que no molesta?"
+  - position: 8
+    sentence: "Su tono no dejaba lugar a dudas: aquello era una {{blank}}, aunque terminara la frase con un «por favor»."
+    hint_general: "Pese a la fórmula amable, no había forma de decir que no."
+    explanation: "Exigencia: no había forma de decir que no. «Pretensión» acusaría de aspirar a algo sin derecho, y una «petición» admitiría una negativa."
+    options:
+      - position: 1
+        text: "pretensión"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pretensión» es culta y acusa de aspirar a algo que no te corresponde, y aquí no se discute el derecho: se describe el tono."
+        hint_specific: "«Pretensión» juzga si te corresponde. ¿Qué se está juzgando en esta frase?"
+      - position: 2
+        text: "exigencia"
+        is_correct: true
+      - position: 3
+        text: "petición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «petición» admitiría una negativa, y la frase dice que el tono no dejaba lugar a dudas."
+        hint_specific: "Una «petición» se puede rechazar. ¿Se podía rechazar aquello?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Con «por favor»"
+    body: "El correo terminaba con un «por favor» y aun así nadie se atrevió a contestar. Vera lo nombró en la reunión: «Esto es una exigencia disfrazada; si de verdad es negociable, que se diga». Reescribieron el correo y dos personas propusieron otra fecha."
+    before_phrase: "Nos lo pidieron de muy malas maneras."
+    after_phrase: "Esto es una exigencia, aunque lleve «por favor»."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Antes de las dos"
+    body: "La comida de los domingos empezaba siempre con la misma frase de su suegra. Un día, Tomás lo dijo con calma: «Para nosotros es una exigencia, y nos gustaría que fuera una petición». Comieron a las dos y cuarto y no pasó nada."
+    before_phrase: "Es que siempre nos obliga a llegar pronto."
+    after_phrase: "Para nosotros es una exigencia, no una petición."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Las del puesto"
+    body: "Le preguntaron si podía estar disponible los fines de semana. Vera no dijo que sí sin más: «¿Es una exigencia del puesto o algo excepcional? Según la respuesta, mi respuesta cambia». Se lo aclararon, y firmó sabiendo dónde entraba."
+    before_phrase: "¿Eso es obligatorio o cómo va?"
+    after_phrase: "¿Es una exigencia del puesto o algo excepcional?"
+metrics:
+  zipf_overall: 4.3109
+  dispersion_dp: 0.1066
+  pedantry_proxy: 0.4339
+  family_size: 13
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

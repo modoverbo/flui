@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 7021
+slug: "imposicion"
+status: "draft"
+lemma: "imposición"
+part_of_speech: "sustantivo"
+syllables:
+  - "im"
+  - "po"
+  - "si"
+  - "ción"
+stressed_syllable: 4
+ipa_latam: "[im.po.siˈsjon]"
+ipa_es: "[im.po.siˈθjon]"
+explanation: "Decisión que alguien te hace cumplir sin preguntarte antes."
+example_sentence: "No me molesta el horario nuevo: me molesta que llegara como una imposición."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para señalar el modo y no el fondo: puedes aceptar la decisión y aun así nombrar cómo llegó."
+when_not_to_use: "No la uses para una regla que todos conocen y aceptan, ni para lo que te piden a cambio de algo."
+collocations:
+  - "sentirlo como una imposición"
+  - "una imposición de arriba"
+  - "sin imposiciones"
+replaces:
+  - before: "Lo decidieron ellos y a nosotros nos lo dijeron"
+    after: "Fue una imposición, no un acuerdo"
+  - before: "No lo hablamos, nos vino dado y ya"
+    after: "Nos llegó como imposición"
+  - before: "Aquí cada uno opina y luego se decide"
+    after: "Aquí no hay imposiciones"
+semantic_set_id: "fuerza-de-la-peticion"
+family:
+  - "imponer"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "familia-crianza"
+    relevance: 1
+tags:
+  comodin:
+    - "orden"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "oposición"
+    difference: "La «oposición» es ponerse en contra de algo; la otra palabra nombra la decisión que llega sin consultar."
+    memory_trick: "La oposición responde; la otra llega antes de que respondas."
+  - confused_with: "obligación"
+    difference: "Una «obligación» es lo que hay que cumplir, venga de donde venga; la otra palabra señala además que nadie preguntó antes."
+    memory_trick: "La obligación dice qué; la otra dice cómo llegó."
+exercises:
+  - position: 1
+    sentence: "Aitana no lo discutió, pero sintió la nueva hora de entrada como una {{blank}} y no como un acuerdo."
+    hint_general: "La decisión le llegó cerrada, sin que nadie le preguntara antes."
+    explanation: "Imposición: la decisión llegó cerrada y sin consulta. La «oposición» sería ponerse en contra, y ella no se opone, y una «condición» ofrecería algo a cambio."
+    options:
+      - position: 1
+        text: "oposición"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «oposición» es estar en contra de algo, y la frase dice que ella no lo discutió: describe cómo le llegó la decisión."
+        hint_specific: "La «oposición» la pone quien recibe la noticia. ¿Aitana discutió algo?"
+      - position: 2
+        text: "imposición"
+        is_correct: true
+      - position: 3
+        text: "condición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «condición» es lo que hay que cumplir para conseguir algo a cambio, y aquí no hay nada a cambio: solo una hora nueva."
+        hint_specific: "Una «condición» viene con premio. ¿Qué gana Aitana entrando antes?"
+  - position: 2
+    sentence: "En casa de Gaspar el menú del domingo no es una {{blank}}: cada uno propone un plato y se vota a mano alzada."
+    hint_general: "Nadie decide por los demás y luego lo comunica: se pregunta antes."
+    explanation: "Imposición: nadie decide por los demás sin preguntar. Una «norma» sería una regla conocida y aceptada, y «encerrona» acusa de tender una trampa."
+    options:
+      - position: 1
+        text: "norma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «norma» es una regla que todos conocen y aceptan, y lo que se descarta aquí es que alguien decida a solas."
+        hint_specific: "Una «norma» la puede haber votado todo el mundo. ¿Qué es lo que se descarta en esa casa?"
+      - position: 2
+        text: "imposición"
+        is_correct: true
+      - position: 3
+        text: "encerrona"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Encerrona» es coloquial y acusa de tender una trampa a alguien, y en esa casa nadie engaña a nadie: se vota."
+        hint_specific: "Una «encerrona» supone mala fe. ¿Hay engaño en ese menú?"
+  - position: 3
+    sentence: "Lo que empezó como una sugerencia acabó siendo una {{blank}} en cuanto la firmó el comité y se colgó en el tablón."
+    hint_general: "Dejó de poder discutirse: pasó a ser algo que hay que cumplir sin más."
+    explanation: "Imposición: dejó de poder discutirse. La «oposición» sería estar en contra, y una «condición» se cumpliría para obtener algo a cambio."
+    options:
+      - position: 1
+        text: "condición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «condición» se cumple para obtener algo a cambio, y aquí no hay trato: hay un papel en el tablón."
+        hint_specific: "Una «condición» abre una puerta si la cumples. ¿Qué puerta se abre aquí?"
+      - position: 2
+        text: "oposición"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «oposición» la pone quien está en contra, y lo que cambió fue el papel de la decisión, no la postura de nadie."
+        hint_specific: "La «oposición» viene de abajo. ¿De dónde viene lo que cambió aquí?"
+      - position: 3
+        text: "imposición"
+        is_correct: true
+  - position: 4
+    sentence: "El horario de las visitas es una {{blank}} del edificio, no una decisión del portero, aunque todos se quejen con él."
+    hint_general: "Viene de arriba y llega cerrada: el portero solo la comunica."
+    explanation: "Imposición: viene de arriba y llega cerrada. «Arbitrariedad» acusaría de decidir sin razón, y una «orden» la da una persona concreta a otra."
+    options:
+      - position: 1
+        text: "arbitrariedad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arbitrariedad» es una palabra dura que acusa de decidir sin ninguna razón, y aquí no se discute el motivo del horario."
+        hint_specific: "«Arbitrariedad» juzga el motivo. ¿La frase juzga el motivo o señala de dónde viene?"
+      - position: 2
+        text: "imposición"
+        is_correct: true
+      - position: 3
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «orden» la da una persona concreta a otra persona concreta, y este horario no lo da nadie en particular: viene del edificio."
+        hint_specific: "Una «orden» tiene un autor con nombre. ¿Quién firma este horario?"
+  - position: 5
+    sentence: "Su padre lo llamó consejo, pero Casandra lo vivió como una {{blank}} y dejó de contarle sus planes."
+    hint_general: "Ella lo recibió como algo que había que cumplir, no como una opinión."
+    explanation: "Imposición: lo recibió como algo que había que cumplir. La «oposición» sería estar en contra, y una «norma» sería una regla conocida por todos."
+    options:
+      - position: 1
+        text: "oposición"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «oposición» sería que él estuviera en contra de sus planes, y lo que se describe es cómo llegó lo que dijo."
+        hint_specific: "La «oposición» está en contra de algo concreto. ¿La frase habla de estar en contra o de cómo suena un consejo?"
+      - position: 2
+        text: "norma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «norma» es una regla conocida y aceptada por todos, y esto es lo que un padre le dijo a su hija una tarde."
+        hint_specific: "Una «norma» existe antes de la conversación. ¿Esto existía antes o nació ahí?"
+      - position: 3
+        text: "imposición"
+        is_correct: true
+  - position: 6
+    sentence: "La empresa presentó el traslado como una oportunidad; en la reunión, alguien lo llamó {{blank}} y la sala se quedó callada."
+    hint_general: "Alguien nombró en voz alta que la decisión llegaba cerrada y sin consulta."
+    explanation: "Imposición: alguien nombra que la decisión llegó cerrada. «Encerrona» acusaría de una trampa preparada, y una «condición» supondría algo a cambio."
+    options:
+      - position: 1
+        text: "encerrona"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Encerrona» es coloquial y acusa de preparar una trampa, y lo que se señala es que nadie preguntó, no que nadie engañara."
+        hint_specific: "«Encerrona» supone una trampa montada. ¿Se acusa de engaño o de no consultar?"
+      - position: 2
+        text: "condición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «condición» supondría algo a cambio del traslado, y en la frase no se ofrece nada: se comunica."
+        hint_specific: "Una «condición» viene con contrapartida. ¿Qué reciben a cambio del traslado?"
+      - position: 3
+        text: "imposición"
+        is_correct: true
+  - position: 7
+    sentence: "Una regla que se explica antes y se acepta deja de ser {{blank}} y pasa a ser un acuerdo de la casa."
+    hint_general: "Explicarla y pactarla antes es lo que le quita el carácter de decisión no consultada."
+    explanation: "Imposición: explicar y pactar antes le quita ese carácter. «Arbitrariedad» acusaría de falta de razón, y una «orden» seguiría teniendo un autor que manda."
+    options:
+      - position: 1
+        text: "imposición"
+        is_correct: true
+      - position: 2
+        text: "arbitrariedad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Arbitrariedad» acusa de decidir sin razón alguna, y lo que cambia aquí no es la razón: es que se pregunta antes."
+        hint_specific: "«Arbitrariedad» desaparece cuando hay motivos. ¿Qué es lo que desaparece según la frase?"
+      - position: 3
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «orden» sigue teniendo a alguien que manda aunque se explique, y aquí la regla pasa a ser de todos."
+        hint_specific: "Una «orden» conserva su jefe. ¿De quién es la regla al final de la frase?"
+  - position: 8
+    sentence: "A nadie le molesta que haya horarios: molesta que llegaran como {{blank}}, sin una sola reunión antes."
+    hint_general: "Molesta el modo: llegaron cerrados y sin consultar a nadie."
+    explanation: "Imposición: molesta el modo, cerrado y sin consulta. La «oposición» sería estar en contra de los horarios, y una «orden» tendría un autor concreto detrás."
+    options:
+      - position: 1
+        text: "oposición"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «oposición» sería estar en contra de los horarios, y la frase empieza diciendo que los horarios no molestan a nadie."
+        hint_specific: "La «oposición» rechaza el fondo. Relee el principio: ¿se rechaza el fondo aquí?"
+      - position: 2
+        text: "imposición"
+        is_correct: true
+      - position: 3
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «orden» tendría a alguien concreto que la da, y lo que se reprocha es que no hubiera reunión con nadie."
+        hint_specific: "Una «orden» se dirige a alguien y la firma alguien. ¿Qué es lo que falta aquí?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El modo, no el fondo"
+    body: "Los turnos nuevos aparecieron un lunes en el tablón. En la reunión, Vera lo dijo sin levantar la voz: «El horario me parece bien; lo que no me parece bien es la imposición». Al mes siguiente hubo una reunión antes de colgar nada."
+    before_phrase: "Es que aquí nunca nos preguntan nada."
+    after_phrase: "El horario está bien; la imposición, no."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo llamó consejo"
+    body: "Su padre le explicó qué debía estudiar y en qué ciudad. Casandra no discutió esa tarde, pero tardó dos meses en volver a contarle nada. Al final se lo dijo: «Tú lo llamaste consejo y a mí me llegó como imposición»."
+    before_phrase: "Me dijiste lo que tenía que hacer y ya."
+    after_phrase: "Lo llamaste consejo; me llegó como imposición."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El menú del domingo"
+    body: "En casa de Gaspar cada uno propone un plato y se vota. Un invitado preguntó si no era mucho lío. «Prefiero el lío a la imposición», contestó él. Aquel domingo hubo dos primeros platos y nadie se levantó de la mesa."
+    before_phrase: "Aquí no manda nadie con la comida."
+    after_phrase: "Prefiero el lío a la imposición."
+metrics:
+  zipf_overall: 4.2201
+  dispersion_dp: 0.2001
+  pedantry_proxy: 0.5346
+  family_size: 40
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

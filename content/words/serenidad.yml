@@ -1,0 +1,246 @@
+schema_version: 1
+slug: "serenidad"
+status: "draft"
+lemma: "serenidad"
+part_of_speech: "sustantivo"
+syllables:
+  - "se"
+  - "re"
+  - "ni"
+  - "dad"
+stressed_syllable: 4
+ipa_latam: "[se.ɾe.niˈðad]"
+ipa_es: "[se.ɾe.niˈðad]"
+explanation: "Calma que se mantiene justo cuando alrededor todo se pone difícil."
+example_sentence: "Contestó con una serenidad que desarmó la pregunta."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Elogia una conducta, no un carácter: se puede tener en una sala y perderla en otra."
+when_not_to_use: "No la uses para quien es tranquilo siempre; esta palabra pide que alrededor hubiera tensión."
+collocations:
+  - "contestar con serenidad"
+  - "perder la serenidad"
+  - "una serenidad rara"
+replaces:
+  - before: "Se mantuvo tranquilo aunque todo ardía"
+    after: "Mantuvo la serenidad"
+  - before: "No se puso nervioso en ningún momento"
+    after: "Respondió con serenidad"
+  - before: "Se le fue la calma enseguida"
+    after: "Perdió la serenidad enseguida"
+family:
+  - "sereno"
+  - "serenar"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+tags:
+  comodin:
+    - "calma"
+    - "tranquilidad"
+  funcion:
+    - "elogiar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "severidad"
+    difference: "La severidad es dureza al juzgar o al exigir; lo otro es mantener la calma cuando hay tensión."
+    memory_trick: "La severidad aprieta; la serenidad sostiene."
+  - confused_with: "frialdad"
+    difference: "La frialdad es no sentir nada o no mostrarlo; aquí se siente y aun así no se pierde el hilo."
+    memory_trick: "La frialdad se aparta; la serenidad se queda."
+exercises:
+  - position: 1
+    sentence: "Le lanzaron la pregunta más incómoda del día y Casilda contestó con una {{blank}} que desarmó la sala."
+    hint_general: "Mantuvo la calma justo cuando el ambiente se puso tenso."
+    explanation: "Serenidad: mantuvo la calma en plena tensión. «Severidad» sería dureza al juzgar, y «frialdad» supondría no sentir nada."
+    options:
+      - position: 1
+        text: "severidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Severidad» es dureza al juzgar o al exigir, y ella no juzga a nadie: contesta sin alterarse."
+        hint_specific: "«Severidad» juzga con dureza. ¿Casilda juzga a alguien o se sostiene?"
+      - position: 2
+        text: "serenidad"
+        is_correct: true
+      - position: 3
+        text: "frialdad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frialdad» supone no sentir nada o no mostrarlo, y lo que desarma a la sala es que sí le importa y aun así se sostiene."
+        hint_specific: "«Frialdad» se desentiende. ¿Ella se desentiende de la pregunta o la responde?"
+  - position: 2
+    sentence: "Cuando el fuego de la cocina se descontroló, la {{blank}} del jefe de sala evitó que treinta personas corrieran a la vez."
+    hint_general: "Su calma en el peor momento ordenó a toda la gente."
+    explanation: "Serenidad: su calma ordenó a la gente. «Temple» es palabra de crónica antigua sobre el temple de un héroe, y «lentitud» diría que fue despacio, no que estuviera tranquilo."
+    options:
+      - position: 1
+        text: "temple"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Temple» es palabra de crónica solemne y habla del valor de alguien ante el peligro, y aquí lo que importa es que nadie perdiera la cabeza."
+        hint_specific: "«Temple» suena a crónica heroica. ¿Se cuenta una hazaña o se cuenta una evacuación ordenada?"
+      - position: 2
+        text: "serenidad"
+        is_correct: true
+      - position: 3
+        text: "lentitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lentitud» dice que se hizo despacio, y en una cocina ardiendo lo valioso no fue la velocidad sino la cabeza fría."
+        hint_specific: "«Lentitud» mide velocidad. ¿Lo que salvó la escena fue ir despacio?"
+  - position: 3
+    sentence: "Mi madre perdió la {{blank}} una sola vez en veinte años, y fue el día del accidente del coche."
+    hint_general: "Solo una vez dejó de sostener la calma."
+    explanation: "Serenidad: solo una vez dejó de sostener la calma. «Sinceridad» sería decir la verdad, y «paciencia» hablaría de aguantar la espera."
+    options:
+      - position: 1
+        text: "sinceridad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sinceridad» es decir la verdad, y nadie deja de decir la verdad por un susto en la carretera."
+        hint_specific: "«Sinceridad» va de decir la verdad. ¿Qué se pierde en un susto?"
+      - position: 2
+        text: "serenidad"
+        is_correct: true
+      - position: 3
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciencia» es aguantar una espera larga, y un accidente no es una espera: es un golpe de tensión."
+        hint_specific: "«Paciencia» aguanta el tiempo. ¿Qué había ese día, espera o susto?"
+  - position: 4
+    sentence: "Lo que más se valoró al repasar aquel turno fue la {{blank}} con la que Uriel atendió las quejas."
+    hint_general: "Atendió las quejas sin alterarse ni contagiarse del enfado."
+    explanation: "Serenidad: atendió sin alterarse. «Flema» es palabra literaria que sugiere apatía elegante, y «amabilidad» hablaría del trato, no de aguantar la tensión."
+    options:
+      - position: 1
+        text: "flema"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Flema» es palabra literaria y sugiere una indiferencia elegante, casi de desgana, y él atendió una a una las quejas."
+        hint_specific: "«Flema» insinúa desgana elegante, con tono literario. ¿Uriel se desentiende o atiende?"
+      - position: 2
+        text: "serenidad"
+        is_correct: true
+      - position: 3
+        text: "amabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amabilidad» describe el buen trato, y se puede tratar muy bien a alguien y perder los nervios a la tercera queja."
+        hint_specific: "«Amabilidad» mide el trato. ¿Qué se pone a prueba cuando llegan quejas seguidas?"
+  - position: 5
+    sentence: "El abogado le pidió a Zoe que respondiera con {{blank}}, aunque la otra parte levantara la voz."
+    hint_general: "Le pide sostener la calma aunque el otro grite."
+    explanation: "Serenidad: sostener la calma aunque el otro grite. «Severidad» sería responder con dureza, y «silencio» supondría no contestar."
+    options:
+      - position: 1
+        text: "serenidad"
+        is_correct: true
+      - position: 2
+        text: "severidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Severidad» sería contestar con dureza, y lo que se le pide es justamente no entrar en ese terreno."
+        hint_specific: "«Severidad» endurece la respuesta. ¿Le piden dureza o calma?"
+      - position: 3
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencio» sería no responder, y la frase dice que tiene que responder igualmente."
+        hint_specific: "«Silencio» es callar. ¿Zoe tiene que callar o contestar?"
+  - position: 6
+    sentence: "En medio del grupo de mensajes enfadados, la {{blank}} de Julieta bajó el tono de toda la conversación."
+    hint_general: "Su calma escrita cambió el tono de los demás."
+    explanation: "Serenidad: su calma bajó el tono general. «Sinceridad» hablaría de decir la verdad, e «indiferencia» supondría que le daba igual."
+    options:
+      - position: 1
+        text: "indiferencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferencia» diría que le daba igual, y quien no participa no cambia el tono de un grupo."
+        hint_specific: "«Indiferencia» se desentiende. ¿Julieta se desentendió o escribió?"
+      - position: 2
+        text: "serenidad"
+        is_correct: true
+      - position: 3
+        text: "sinceridad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sinceridad» es decir lo que se piensa sin adornos, y un mensaje muy sincero puede subir el tono en vez de bajarlo."
+        hint_specific: "«Sinceridad» va de verdad dicha. ¿Qué bajó el tono, la verdad o la calma?"
+  - position: 7
+    sentence: "A Tobías le sobra {{blank}} para las urgencias y le falta para las esperas largas."
+    hint_general: "Sostiene la calma en la tensión y la pierde en la espera."
+    explanation: "Serenidad: la sostiene en la tensión. «Flema» sugeriría desgana elegante de tono literario, y «paciencia» es justo lo que la frase dice que le falta."
+    options:
+      - position: 1
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciencia» es lo que se necesita en las esperas largas, y la frase dice que en eso justamente falla."
+        hint_specific: "«Paciencia» es para esperar. Relee: ¿en qué falla Tobías?"
+      - position: 2
+        text: "serenidad"
+        is_correct: true
+      - position: 3
+        text: "flema"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Flema» es palabra literaria y pinta una calma con desgana, y en una urgencia él actúa, no se desentiende."
+        hint_specific: "«Flema» suena a desgana elegante de novela. ¿Tobías actúa en las urgencias o se aparta?"
+  - position: 8
+    sentence: "Delante de la cámara, lo que se nota primero no es el guion: es la {{blank}} de quien responde."
+    hint_general: "Lo primero que se ve es si quien responde sostiene la calma."
+    explanation: "Serenidad: si quien responde sostiene la calma. «Severidad» sería dureza al juzgar, y «frialdad» supondría que no le importa nada."
+    options:
+      - position: 1
+        text: "frialdad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frialdad» supone que a quien responde no le importa, y delante de una cámara eso se nota y se castiga."
+        hint_specific: "«Frialdad» se desentiende. ¿Eso ayuda o estorba delante de una cámara?"
+      - position: 2
+        text: "severidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Severidad» es dureza al juzgar, y lo primero que busca quien mira no es dureza: es si la persona se sostiene."
+        hint_specific: "«Severidad» juzga duro. ¿Eso es lo primero que se ve en una respuesta?"
+      - position: 3
+        text: "serenidad"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta del día"
+    body: "Le guardaron la pregunta más incómoda para el final. Casilda no subió la voz ni miró al techo: contestó despacio y con un dato. «Lo que desarmó la sala fue su serenidad», escribió alguien esa noche. Ella lo había preparado, y aun así era verdad."
+    before_phrase: "No me puse nerviosa, creo."
+    after_phrase: "Contesté con serenidad."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El turno de las quejas"
+    body: "Aquel sábado llegaron once quejas seguidas. Uriel las atendió una a una, sin acelerar y sin contagiarse. Cuando terminó el turno, la encargada lo dijo delante de todos: «Lo que salvó la tarde fue tu serenidad»."
+    before_phrase: "Mantuve la calma como pude."
+    after_phrase: "Lo que salvó la tarde fue la serenidad."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Una sola vez"
+    body: "Mi madre perdió la serenidad una sola vez en veinte años, y fue con el susto del coche. Recuerdo esa tarde por lo rara que resultó. El resto del tiempo, cuando todo se torcía, ella bajaba el tono y ordenaba la casa."
+    before_phrase: "Nunca se ponía nerviosa, casi nunca."
+    after_phrase: "Perdió la serenidad una sola vez."
+metrics:
+  zipf_overall: 3.8213
+  dispersion_dp: 0.2320
+  pedantry_proxy: 0.3913
+  family_size: 19
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-15"

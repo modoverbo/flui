@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 8304
+slug: "trivial"
+status: "draft"
+lemma: "trivial"
+part_of_speech: "adjetivo"
+syllables:
+  - "tri"
+  - "vial"
+stressed_syllable: 2
+ipa_latam: "[tɾiˈβjal]"
+ipa_es: "[tɾiˈβjal]"
+explanation: "Que tiene poca importancia y no cambia lo esencial de un tema o una situación."
+example_sentence: "El comentario sobre el clima era trivial, pero abrió una charla que duró media hora."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Un tema trivial es un buen punto de partida, no un defecto: sirve para abrir charla sin comprometerte a nada."
+when_not_to_use: "No la uses para menospreciar a una persona ni sus ideas; describe temas o detalles, no gente."
+collocations:
+  - "un tema trivial"
+  - "un detalle trivial"
+  - "una charla trivial"
+replaces:
+  - before: "Es una tontería, no importa"
+    after: "Es un tema trivial, no pasa nada"
+  - before: "Hablamos de cosas sin importancia"
+    after: "Hablamos de temas triviales"
+  - before: "Fue un detalle sin peso"
+    after: "Fue un detalle trivial"
+family:
+  - "trivialidad"
+  - "trivializar"
+themes:
+  - slug: "small-talk"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 2
+tags:
+  comodin: ["tonteria", "cosa"]
+  funcion: ["describir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "banal"
+    difference: "«Banal» casi siempre juzga algo como vacío o sin ningún valor; «trivial» solo dice que un tema pesa poco en ese momento, sin ser un defecto."
+    memory_trick: "Banal condena; trivial solo resta peso."
+  - confused_with: "superficial"
+    difference: "«Superficial» juzga a la persona por no profundizar en nada; «trivial» describe el tema, no a quien lo trae."
+exercises:
+  - position: 1
+    sentence: "En la fiesta de la oficina, Tadeo sacó un tema {{blank}} sobre las recetas de su abuela, solo para romper el silencio antes de hablar de otra cosa."
+    hint_general: "Habla de un tema con poco peso, que sirve para empezar a hablar sin comprometer nada."
+    explanation: "Trivial: un tema con poco peso, bueno para romper el silencio. «Vial» habla de calles y carreteras, y las recetas de una abuela no tienen nada que ver con eso, y «banal» juzga un tema como vacío, cuando este cumplió su función."
+    options:
+      - position: 1
+        text: "vial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vial» describe lo relacionado con calles y carreteras, y las recetas de la abuela de Tadeo no tienen nada que ver con el tráfico ni con carreteras."
+        hint_specific: "«Vial» habla de calles y carreteras. ¿Qué tienen que ver las recetas de una abuela con eso?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "banal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Banal» juzga un tema como vacío o sin ningún valor, y aquí el tema cumplió su función: rompió el silencio antes de pasar a otra cosa."
+        hint_specific: "«Banal» condena un tema como vacío. ¿El tema de Tadeo fracasó o cumplió su función?"
+  - position: 2
+    sentence: "En la fila del supermercado, el comentario de Otilia sobre el clima fue {{blank}}, y aun así terminaron riendo de sus vacaciones diez minutos después."
+    hint_general: "Se refiere a un comentario de poco peso que sirve para arrancar una charla."
+    explanation: "Trivial: un comentario de poco peso que arrancó la charla. «Tonto» es coloquial y dice que algo es torpe o sin sentido, y aquí funcionó bien, y «superficial» juzga a la persona por no profundizar, cuando la charla sí llegó a algo más."
+    options:
+      - position: 1
+        text: "tonto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tonto» es coloquial y dice que algo es torpe o sin sentido; el comentario de Otilia funcionó bien y llevó a una charla agradable."
+        hint_specific: "«Tonto» acusa de torpeza. ¿El comentario de Otilia fracasó o llevó a algo bueno?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "superficial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Superficial» juzga a la persona por no profundizar en nada, y aquí la charla sí llegó a algo más, hablando de sus vacaciones."
+        hint_specific: "«Superficial» juzga a la persona, no el tema. ¿La charla de Otilia se quedó corta o llegó a algo más?"
+  - position: 3
+    sentence: "Lo que dijo Abel antes de que empezara la clase no tenía ningún peso: fue {{blank}}, solo para no quedarse callado con los demás sobre el color de las sillas nuevas."
+    hint_general: "Apunta a un comentario de poco peso, dicho solo para no quedarse en silencio."
+    explanation: "Trivial: un comentario de poco peso, dicho para no quedarse callado. «Baladí» es una palabra culta y desdeñosa, y aquí Abel solo evitaba el silencio, y «sencillo» habla de complejidad, no de cuánto pesa algo."
+    options:
+      - position: 1
+        text: "baladí"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Baladí» es una palabra culta y suena desdeñosa, como si el comentario no mereciera ni atención; aquí Abel solo buscaba no quedarse callado, algo normal entre desconocidos."
+        hint_specific: "«Baladí» suena desdeñoso. ¿La frase desprecia el comentario de Abel o solo explica para qué lo dijo?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "sencillo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sencillo» habla de la complejidad de algo, no de su importancia; un comentario puede ser sencillo y aun así importante, o complicado y sin ningún peso."
+        hint_specific: "«Sencillo» habla de complejidad, no de peso. ¿La frase mide qué tan complicado es algo o cuánto pesa?"
+  - position: 4
+    sentence: "Fabiola metió un comentario {{blank}} sobre la música que sonaba en la fiesta de un amigo de un amigo, donde nadie decía nada, y gracias a eso los tres se pasaron media hora hablando de sus grupos favoritos."
+    hint_general: "Habla de un comentario de poco peso que sí tuvo un efecto real en la charla."
+    explanation: "Trivial: un comentario de poco peso que sí tuvo efecto. «Irrelevante» dice que algo no tiene ninguna conexión con lo que pasa, y este llevó a media hora de charla, y «secundario» compara con otro tema más importante que aquí no existía, porque nadie decía nada antes."
+    options:
+      - position: 1
+        text: "irrelevante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Irrelevante» dice que algo no tiene ninguna conexión con lo que pasa alrededor ni ningún efecto, y gracias a ese comentario los tres se pasaron media hora hablando de sus grupos favoritos."
+        hint_specific: "«Irrelevante» dice que algo no tiene ningún efecto. ¿Qué pasó gracias al comentario de Fabiola?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "secundario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Secundario» compara algo con otro tema más importante que ya estaba en marcha, y la frase dice que nadie decía nada antes: no había ningún otro tema con el que comparar."
+        hint_specific: "«Secundario» compara con algo más importante que ya existía. ¿Había otro tema antes del comentario de Fabiola?"
+  - position: 5
+    sentence: "El primer día, lo único que Renzo le preguntó a su compañero nuevo fue por un detalle {{blank}} de la cafetera, y aun así terminaron hablando media hora de sus ciudades de origen."
+    hint_general: "Se refiere a un detalle de poco peso, el único tema, que terminó abriendo una charla más grande."
+    explanation: "Trivial: el único detalle preguntado, y aun así abrió una charla más grande. «Menor» compara algo con otras cosas más importantes, y este fue lo único que preguntó, sin nada con qué compararlo, y «insignificante» dice que algo no cambia nada, cuando llevó a media hora de charla."
+    options:
+      - position: 1
+        text: "menor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Menor» compara algo con otras cosas más importantes que estarían alrededor, y la frase dice que ese detalle fue lo único que preguntó, sin nada más con qué compararlo."
+        hint_specific: "«Menor» necesita una comparación. ¿Qué más preguntó Renzo, además de ese detalle?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "insignificante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insignificante» dice que algo no cambia nada en absoluto, y aquí ese detalle llevó a media hora hablando de sus ciudades de origen: sí tuvo efecto."
+        hint_specific: "«Insignificante» dice que algo no sirve para nada. ¿Cuánto duró la charla que empezó ese detalle?"
+  - position: 6
+    sentence: "Nadie se animaba a hablar en el descanso del curso hasta que Bárbara mencionó un tema {{blank}} sobre el clima de esa semana, y hacía falta justo eso para que dos personas más se unieran a la charla."
+    hint_general: "Apunta a un tema de poco peso que hacía falta justo en ese momento de silencio."
+    explanation: "Trivial: un tema de poco peso que hacía falta justo ahí. «Superfluo» dice que algo sobra y no hace falta, y la frase dice justo lo contrario: hacía falta ese tema, y «común» habla de frecuencia, no de cuánto pesa."
+    options:
+      - position: 1
+        text: "superfluo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Superfluo» dice que algo sobra y no hace falta, y la frase dice justo lo contrario: hacía falta ese tema del clima para que dos personas más se unieran a la charla."
+        hint_specific: "«Superfluo» dice que algo no hace falta. ¿Qué dice la frase sobre si hacía falta ese tema?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "común"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Común» dice que algo pasa con frecuencia o lo comparte mucha gente, y la frase no habla de qué tan frecuente es el tema, sino de que pesa poco."
+        hint_specific: "«Común» habla de frecuencia, no de peso. ¿La frase mide qué tan frecuente es el tema o cuánto pesa?"
+  - position: 7
+    sentence: "Cuando la sobremesa se puso tensa, Jonás sacó el tema de las vacaciones del verano pasado; podría haber sido cualquier otra cosa sin importancia, porque lo único que hacía falta era un tema {{blank}} que bajara la tensión."
+    hint_general: "Habla de un tema de poco peso, cualquiera habría servido igual, para bajar una tensión."
+    explanation: "Trivial: cualquier tema sin peso habría servido igual. «Ligero» describe el tono con que se dice algo, no si el tema era intercambiable, y «simple» mide si algo es fácil de entender, no si cualquier tema sin peso habría funcionado igual."
+    options:
+      - position: 1
+        text: "ligero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ligero» describe el tono con el que se dice algo, y la frase no habla del tono de Jonás, sino de que cualquier tema sin importancia habría servido igual."
+        hint_specific: "«Ligero» describe un tono, no si el tema era intercambiable. ¿Qué dice la frase sobre si pudo ser cualquier otro tema?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "simple"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Simple» habla de que algo es fácil de entender, y la frase no mide qué tan fácil era el tema de las vacaciones, sino que cualquier tema sin peso habría funcionado igual."
+        hint_specific: "«Simple» mide si algo es fácil de entender. ¿La frase mide eso o si el tema era intercambiable?"
+  - position: 8
+    sentence: "Mientras esperaban el autobús, Dante y la desconocida a su lado hablaron de algo {{blank}}, como el color de las hojas en esa esquina, y ninguno de los dos se sintió obligado a más."
+    hint_general: "Se refiere a algo de poco peso que no obliga a nadie a comprometerse más."
+    explanation: "Trivial: algo de poco peso, sin comprometer a nadie. «Pasajero» mide cuánto dura algo, no cuánto pesa, y «puntual» señala un caso aislado o una hora exacta, no cuánto importa."
+    options:
+      - position: 1
+        text: "pasajero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pasajero» habla de cuánto dura algo, no de si pesa o importa; la frase no dice cuánto duró la charla, solo que nadie se sintió obligado a nada más."
+        hint_specific: "«Pasajero» mide duración, no importancia. ¿La frase dice cuánto duró la charla del autobús?"
+      - position: 2
+        text: "trivial"
+        is_correct: true
+      - position: 3
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» señala un caso aislado o una hora exacta, y la frase no habla de si el tema fue un caso único, sino de que tenía poco peso para los dos."
+        hint_specific: "«Puntual» habla de un caso aislado. ¿La frase mide si es un caso único o cuánto pesa el tema?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El tema del clima"
+    body: "En la boda de una prima lejana, nadie se animaba a hablar en la mesa de los solteros. Alguien comentó lo fuerte que sonaba la música, un tema completamente trivial, y bastó para que todos empezaran a compartir sus canciones favoritas del momento."
+    before_phrase: "Dije una tontería para romper el hielo."
+    after_phrase: "Fue un tema trivial, y bastó para romper el hielo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La sobremesa sin planes"
+    body: "En casa insistían en hablar siempre de trabajo en la sobremesa. Un domingo, la nieta mencionó que había encontrado una app para identificar pájaros, un tema del todo trivial, y toda la mesa terminó mirando fotos de aves durante una hora."
+    before_phrase: "Hablamos de algo sin importancia y fue lo mejor de la tarde."
+    after_phrase: "Fue un tema trivial, y fue lo mejor de la tarde."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El comentario del ascensor"
+    body: "El primer día en la empresa, nadie hablaba con el chico nuevo del piso de arriba. En el ascensor, alguien comentó lo lento que iba ese día, un comentario totalmente trivial, y terminaron hablando de eso hasta llegar a su piso. Al día siguiente ya se saludaban por su nombre."
+    before_phrase: "Dije algo sin importancia, solo para romper el silencio."
+    after_phrase: "Fue un comentario trivial, y funcionó para romper el silencio."
+metrics:
+  zipf_overall: 3.3399
+  dispersion_dp: 0.1905
+  pedantry_proxy: 0.4810
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

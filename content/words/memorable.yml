@@ -1,0 +1,243 @@
+schema_version: 1
+slug: "memorable"
+status: "draft"
+lemma: "memorable"
+part_of_speech: "adjetivo"
+syllables:
+  - "me"
+  - "mo"
+  - "ra"
+  - "ble"
+stressed_syllable: 3
+ipa_latam: "[me.moˈɾa.βle]"
+ipa_es: "[me.moˈɾa.βle]"
+explanation: "Que la gente recuerda y vuelve a contar meses más tarde, sin ningún esfuerzo."
+example_sentence: "No hizo falta un discurso largo: bastó una frase memorable."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es el objetivo honesto de una presentación breve: no gustar a todos, sino quedarse en una cabeza."
+when_not_to_use: "No la uses para algo que solo llamó la atención un rato; aquí hace falta que dure en el tiempo."
+collocations:
+  - "una frase memorable"
+  - "una noche memorable"
+  - "hacerlo memorable"
+replaces:
+  - before: "Fue una noche que no se olvida"
+    after: "Fue una noche memorable"
+  - before: "Dijo algo que se me quedó grabado"
+    after: "Dijo algo memorable"
+  - before: "Quiero que se acuerden de mí"
+    after: "Quiero que mi parte sea memorable"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "que no se olvida"
+  funcion:
+    - "elogiar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "memorioso"
+    difference: "«Memorioso» es quien retiene todo lo que oye; lo otro califica aquello que los demás retienen."
+    memory_trick: "El memorioso guarda; lo memorable se queda."
+  - confused_with: "notable"
+    difference: "«Notable» dice que algo destaca ahora; esta palabra pide que siga contándose después."
+    memory_trick: "Lo notable destaca hoy; lo memorable dura."
+exercises:
+  - position: 1
+    sentence: "De aquella feria, Efraín no se llevó contactos: se llevó una frase {{blank}} que sigue repitiendo en cada reunión."
+    hint_general: "La frase se le quedó dentro y la sigue contando."
+    explanation: "Memorable: la frase se le quedó y la sigue contando. «Memoriosa» describiría a quien retiene datos, y «notable» solo diría que destacó ese día."
+    options:
+      - position: 1
+        text: "memoriosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Memoriosa» se dice de la persona que retiene todo lo que oye, y aquí se califica una frase."
+        hint_specific: "«Memoriosa» describe a quien retiene. ¿Se habla de una persona o de una frase?"
+      - position: 2
+        text: "memorable"
+        is_correct: true
+      - position: 3
+        text: "notable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Notable» diría que destacó aquel día, y lo que cuenta la frase es que sigue viva meses después."
+        hint_specific: "«Notable» se agota en el momento. ¿Cuándo sigue usándose esa frase?"
+  - position: 2
+    sentence: "La cena de despedida de Julieta fue {{blank}}: dos años después seguimos contando lo del pastel."
+    hint_general: "Se sigue contando mucho tiempo después."
+    explanation: "Memorable: se sigue contando dos años después. «Épica» es de charla informal y exagera como si fuera una hazaña, y «divertida» solo diría que se pasó bien."
+    options:
+      - position: 1
+        text: "épica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Épica» es de conversación muy suelta y agranda la escena como una hazaña, y esto fue una cena con un pastel."
+        hint_specific: "«Épica» exagera en tono de calle. ¿Hubo una hazaña o hubo una cena?"
+      - position: 2
+        text: "memorable"
+        is_correct: true
+      - position: 3
+        text: "divertida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Divertida» dice que se pasó bien esa noche, y lo llamativo es que se siga contando dos años después."
+        hint_specific: "«Divertida» se agota esa noche. ¿Qué pasó dos años después?"
+  - position: 3
+    sentence: "En treinta segundos, Gael dijo a qué se dedica con un ejemplo {{blank}} y le escribieron cuatro personas al día siguiente."
+    hint_general: "El ejemplo se quedó en quien lo oyó y volvió en forma de mensajes."
+    explanation: "Memorable: el ejemplo se quedó y volvió al día siguiente. «Memorioso» describiría a quien retiene datos, y «meritorio» diría que merece elogio, sin decir que se recuerde."
+    options:
+      - position: 1
+        text: "memorable"
+        is_correct: true
+      - position: 2
+        text: "memorioso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Memorioso» califica a una persona que retiene todo, y aquí lo que se califica es un ejemplo."
+        hint_specific: "«Memorioso» va con personas que retienen. ¿Qué se está calificando en la frase?"
+      - position: 3
+        text: "meritorio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Meritorio» dice que algo merece reconocimiento, y algo puede merecerlo y olvidarse esa misma tarde."
+        hint_specific: "«Meritorio» habla de mérito. ¿Merecer elogio garantiza que te escriban al día siguiente?"
+  - position: 4
+    sentence: "Mi abuelo contaba siempre la misma historia del tren, y por eso es la única {{blank}} de toda la familia."
+    hint_general: "Es la que todos siguen contando, generación tras generación."
+    explanation: "Memorable: es la que todos siguen contando. «Imperecedera» es palabra solemne de monumento, y «curiosa» solo diría que llama la atención."
+    options:
+      - position: 1
+        text: "imperecedera"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Imperecedera» es palabra solemne, de lápida o monumento, y esto es una historia de sobremesa."
+        hint_specific: "«Imperecedera» suena a inscripción de monumento. ¿Va con una historia de sobremesa?"
+      - position: 2
+        text: "memorable"
+        is_correct: true
+      - position: 3
+        text: "curiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosa» dice que llama la atención un momento, y esta historia lleva décadas repitiéndose."
+        hint_specific: "«Curiosa» dura lo que dura el asombro. ¿Cuánto lleva contándose esta?"
+  - position: 5
+    sentence: "Nadie recuerda el título de la charla de Matilde, pero el final fue {{blank}} y todavía circula por ahí."
+    hint_general: "El final se quedó y sigue pasando de boca en boca."
+    explanation: "Memorable: el final sigue circulando. «Memorioso» calificaría a una persona con buena retentiva, y «original» diría que era nuevo, no que durara."
+    options:
+      - position: 1
+        text: "original"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Original» dice que nadie lo había hecho antes, y algo original puede olvidarse en una semana."
+        hint_specific: "«Original» habla de novedad. ¿Ser nuevo garantiza que siga circulando?"
+      - position: 2
+        text: "memorable"
+        is_correct: true
+      - position: 3
+        text: "memorioso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Memorioso» se dice de quien retiene lo que oye, y aquí se califica el final de una charla."
+        hint_specific: "«Memorioso» describe personas. ¿La frase califica a Matilde o a su final?"
+  - position: 6
+    sentence: "Para que la inauguración fuera {{blank}}, Zoe cambió los discursos por una mesa larga con comida de cada barrio."
+    hint_general: "Busca que la gente lo siga contando después."
+    explanation: "Memorable: que la gente lo siga contando. «Épica» es informal y exagera la escena, y «notable» se quedaría en destacar ese día."
+    options:
+      - position: 1
+        text: "memorable"
+        is_correct: true
+      - position: 2
+        text: "épica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Épica» es de charla suelta y convierte la escena en una hazaña, y aquí lo que hay es una mesa con comida."
+        hint_specific: "«Épica» agranda las cosas en tono informal. ¿Hay hazaña en esa inauguración?"
+      - position: 3
+        text: "notable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Notable» dice que destaca hoy, y ella busca algo que se siga contando dentro de un año."
+        hint_specific: "«Notable» mira el mismo día. ¿Qué busca Zoe, destacar hoy o durar?"
+  - position: 7
+    sentence: "Aquella tarde en la playa con mis primos fue {{blank}}, y ninguno de nosotros había planeado nada."
+    hint_general: "Se quedó guardada aunque nadie preparara nada."
+    explanation: "Memorable: se quedó guardada sin plan previo. «Imperecedera» es palabra solemne de monumento, y «meritoria» hablaría de mérito, que aquí no hubo."
+    options:
+      - position: 1
+        text: "meritoria"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Meritoria» supone un esfuerzo que merece reconocimiento, y la frase dice que nadie planeó nada."
+        hint_specific: "«Meritoria» pide esfuerzo reconocible. ¿Alguien se esforzó esa tarde?"
+      - position: 2
+        text: "memorable"
+        is_correct: true
+      - position: 3
+        text: "imperecedera"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Imperecedera» es solemne y promete eternidad, y esto fue una tarde de playa entre primos."
+        hint_specific: "«Imperecedera» promete para siempre, con tono grave. ¿Va con una tarde en la playa?"
+  - position: 8
+    sentence: "Ramiro presenta su trabajo con una sola imagen porque quiere que sea {{blank}}, no completo."
+    hint_general: "Prefiere que algo se quede antes que contarlo todo."
+    explanation: "Memorable: prefiere que se quede antes que contarlo todo. «Memorioso» describiría a una persona con buena retentiva, y «curioso» se agotaría en el asombro del momento."
+    options:
+      - position: 1
+        text: "memorioso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Memorioso» se dice de quien retiene todo lo que oye, y aquí se habla de cómo queda su presentación."
+        hint_specific: "«Memorioso» califica a la persona. ¿Qué quiere Ramiro que sea así, él o su trabajo?"
+      - position: 2
+        text: "curioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curioso» llama la atención un momento y se va, y él busca justo lo contrario del olvido."
+        hint_specific: "«Curioso» dura poco. ¿Ramiro quiere sorprender o quedarse?"
+      - position: 3
+        text: "memorable"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Treinta segundos"
+    body: "En la feria todos decían su cargo y su empresa. Gael dijo un ejemplo de dos frases y se calló. Al día siguiente le habían escrito cuatro personas. «No busco caer bien», nos explicó, «busco ser memorable una sola vez»."
+    before_phrase: "A ver si se acuerdan de mí."
+    after_phrase: "Busco ser memorable una sola vez."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La historia del tren"
+    body: "Mi abuelo contaba siempre la misma historia del tren y nadie lo interrumpía. Ahora la cuenta mi madre, con las mismas pausas. Es la única historia memorable de la familia, y no porque fuera la mejor: porque él la contó cien veces."
+    before_phrase: "Esa historia no se nos olvida."
+    after_phrase: "Es la única historia memorable de la familia."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Una sola imagen"
+    body: "Ramiro llevó una imagen a una reunión donde todos llevaban veinte. Alguien le dijo que faltaba información. «Falta a propósito», contestó. «Prefiero que sea memorable a que sea completo». Al mes, dos personas seguían hablando de esa imagen."
+    before_phrase: "Quiero que se les quede algo."
+    after_phrase: "Prefiero que sea memorable a que sea completo."
+metrics:
+  zipf_overall: 3.9698
+  dispersion_dp: 0.2140
+  pedantry_proxy: 0.5439
+  family_size: 69
+provenance:
+  generator: "flui authoring agent — theme networking"
+  gate: null
+  checked_on: "2026-09-15"

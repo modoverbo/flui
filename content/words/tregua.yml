@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 7026
+slug: "tregua"
+status: "draft"
+lemma: "tregua"
+part_of_speech: "sustantivo"
+syllables:
+  - "tre"
+  - "gua"
+stressed_syllable: 1
+ipa_latam: "[ˈtɾe.ɣwa]"
+ipa_es: "[ˈtɾe.ɣwa]"
+explanation: "Acuerdo de dejar de pelear un rato, sin arreglar el fondo."
+example_sentence: "No arreglamos nada, pero acordamos una tregua hasta el lunes."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para parar una discusión sin pedir que nadie ceda: separa el momento del asunto."
+when_not_to_use: "No la uses para el final de un conflicto, ni para un descanso que se toma alguien por su cuenta."
+collocations:
+  - "pedir una tregua"
+  - "una tregua corta"
+  - "romper la tregua"
+replaces:
+  - before: "Vamos a dejar de discutir un rato, ¿vale?"
+    after: "Pidamos una tregua hasta mañana"
+  - before: "Hoy no hablamos del tema y en paz"
+    after: "Hoy hay tregua con ese tema"
+  - before: "Estuvimos tranquilos hasta que él lo sacó otra vez"
+    after: "La tregua duró hasta que él lo sacó otra vez"
+family: []
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+  - slug: "familia-crianza"
+    relevance: 1
+tags:
+  comodin:
+    - "pausa"
+  funcion:
+    - "pedir"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "treta"
+    difference: "Una «treta» es un truco para sacar ventaja del otro; la otra palabra se pacta a la vista y obliga a los dos por igual."
+    memory_trick: "La treta engaña a uno; la otra descansa a los dos."
+  - confused_with: "paz"
+    difference: "La «paz» supone que el conflicto terminó; la otra palabra solo lo aparca durante un rato."
+    memory_trick: "La paz cierra; la otra aplaza."
+exercises:
+  - position: 1
+    sentence: "Después de tres semanas sin hablarse, los hermanos pactaron una {{blank}} para el cumpleaños de su madre."
+    hint_general: "Acuerdan parar la pelea durante un rato, sin resolver nada de fondo."
+    explanation: "Tregua: acuerdan parar la pelea un rato. Una «treta» sería un truco para sacar ventaja, y la «paz» supondría que el conflicto ya terminó."
+    options:
+      - position: 1
+        text: "treta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «treta» es un truco para sacar ventaja del otro, y aquí los dos se comprometen a lo mismo y delante de todos."
+        hint_specific: "Una «treta» beneficia a uno solo. ¿Cuántos se comprometen en esta escena?"
+      - position: 2
+        text: "tregua"
+        is_correct: true
+      - position: 3
+        text: "paz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «paz» supondría que el conflicto se acabó, y estos dos solo dejan de discutir durante una comida."
+        hint_specific: "La «paz» cierra el asunto. ¿Está cerrado lo de estos hermanos?"
+  - position: 2
+    sentence: "No te pido la paz: te pido una {{blank}} hasta el lunes, y el lunes seguimos discutiendo si hace falta."
+    hint_general: "Pide parar la discusión unos días, no terminarla."
+    explanation: "Tregua: pide parar unos días, no terminar. «Prórroga» es una palabra de papeleo para alargar plazos, y la «rendición» sería que uno se diera por vencido."
+    options:
+      - position: 1
+        text: "prórroga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prórroga» es una palabra de papeleo para alargar un plazo, y aquí no se alarga nada: se para una discusión."
+        hint_specific: "Una «prórroga» estira un plazo que corría. ¿Qué plazo corre en esta pelea?"
+      - position: 2
+        text: "tregua"
+        is_correct: true
+      - position: 3
+        text: "rendición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «rendición» sería que uno de los dos se diera por vencido, y la frase dice que el lunes se puede seguir discutiendo."
+        hint_specific: "La «rendición» la hace uno solo y para siempre. ¿Alguien cede aquí?"
+  - position: 3
+    sentence: "En la mesa de negociación acordaron una {{blank}} de dos semanas para que todos leyeran los números con calma."
+    hint_general: "Las dos partes acuerdan parar el pulso un tiempo concreto."
+    explanation: "Tregua: las dos partes acuerdan parar el pulso. Una «treta» sería una maniobra para engañar, y una «pausa» la puede tomar cualquiera por su cuenta."
+    options:
+      - position: 1
+        text: "treta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «treta» es una maniobra para engañar al otro, y esto lo firman las dos partes con fecha de vuelta."
+        hint_specific: "Una «treta» se oculta. ¿Esto está oculto o está acordado?"
+      - position: 2
+        text: "pausa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «pausa» la puede tomar cualquiera por su cuenta, y esto lo acuerdan las dos partes que están enfrentadas."
+        hint_specific: "Una «pausa» no necesita permiso de nadie. ¿Quién decide esta parada?"
+      - position: 3
+        text: "tregua"
+        is_correct: true
+  - position: 4
+    sentence: "Su madre impuso una {{blank}} en mitad de la discusión y puso el café encima de la mesa."
+    hint_general: "Para la pelea un rato delante de los dos, sin dar la razón a nadie."
+    explanation: "Tregua: para la pelea un rato sin dar la razón a nadie. Una «trampa» buscaría que alguien cayera, y la «rendición» exigiría que uno cediera."
+    options:
+      - position: 1
+        text: "trampa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «trampa» busca que el otro caiga sin darse cuenta, y la madre para la discusión a la vista de los dos, con el café en la mano."
+        hint_specific: "Una «trampa» se tiende en secreto. ¿Se esconde algo en esa cocina?"
+      - position: 2
+        text: "tregua"
+        is_correct: true
+      - position: 3
+        text: "rendición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «rendición» exigiría que uno de los dos cediera, y aquí nadie cede: simplemente se deja de discutir."
+        hint_specific: "La «rendición» tiene ganador. ¿Quién gana en esa cocina?"
+  - position: 5
+    sentence: "La {{blank}} duró hasta que alguien mencionó el préstamo y todo volvió a empezar desde el principio."
+    hint_general: "La parada acordada se rompió en cuanto volvió el tema de siempre."
+    explanation: "Tregua: la parada acordada se rompió. «Moratoria» es una palabra legal para aplazar una obligación, y la «paz» habría cerrado el asunto para siempre."
+    options:
+      - position: 1
+        text: "moratoria"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Moratoria» es una palabra legal y financiera para aplazar una obligación, y aquí se aplaza una discusión de familia."
+        hint_specific: "Una «moratoria» aplaza pagos y plazos. ¿Qué se aplazó en esta escena?"
+      - position: 2
+        text: "tregua"
+        is_correct: true
+      - position: 3
+        text: "paz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «paz» habría cerrado el asunto para siempre, y esto se rompe con una sola palabra sobre el préstamo."
+        hint_specific: "La «paz» no se rompe con una frase. ¿Cuánto aguantó esto?"
+  - position: 6
+    sentence: "Damián propuso una {{blank}} con una regla sencilla: nadie menciona el tema hasta que los dos hayan dormido."
+    hint_general: "Propone parar la discusión con una condición clara y temporal."
+    explanation: "Tregua: parar la discusión con una condición temporal. Una «treta» buscaría ventaja a escondidas, y una «prórroga» alargaría un plazo administrativo."
+    options:
+      - position: 1
+        text: "treta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «treta» busca ventaja a escondidas, y él pone la regla encima de la mesa y se aplica a los dos."
+        hint_specific: "Una «treta» tiene truco. ¿Dónde está el truco de esa regla?"
+      - position: 2
+        text: "prórroga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prórroga» es una palabra de expediente para alargar un plazo, y aquí lo que se para es una conversación entre dos personas."
+        hint_specific: "Una «prórroga» pertenece a contratos y trámites. ¿Dónde ocurre esto?"
+      - position: 3
+        text: "tregua"
+        is_correct: true
+  - position: 7
+    sentence: "No hubo acuerdo sobre el fondo, pero sí una {{blank}} que les permitió trabajar juntos tres meses más."
+    hint_general: "Sin resolver el desacuerdo, pararon el enfrentamiento un tiempo."
+    explanation: "Tregua: pararon el enfrentamiento sin resolverlo. La «paz» supondría acuerdo cerrado, y la «rendición» que uno abandonara su postura."
+    options:
+      - position: 1
+        text: "paz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «paz» supondría acuerdo cerrado, y la frase empieza diciendo que sobre el fondo no hubo acuerdo ninguno."
+        hint_specific: "La «paz» necesita acuerdo. Relee el principio de la frase."
+      - position: 2
+        text: "tregua"
+        is_correct: true
+      - position: 3
+        text: "rendición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «rendición» sería que uno abandonara su postura, y los dos siguen pensando lo mismo tres meses después."
+        hint_specific: "La «rendición» cambia a uno de los dos. ¿Cambió alguien de postura?"
+  - position: 8
+    sentence: "La {{blank}} del mediodía se rompió con un comentario sobre el coche y volvieron los portazos."
+    hint_general: "El pacto de no pelear duró hasta un comentario cualquiera."
+    explanation: "Tregua: el pacto de no pelear se rompe. «Moratoria» es una palabra de expediente para aplazar obligaciones, y una «pausa» no la pacta nadie con nadie."
+    options:
+      - position: 1
+        text: "moratoria"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Moratoria» es una palabra de expediente para aplazar obligaciones de pago, y aquí se aplazaban gritos, no plazos."
+        hint_specific: "Una «moratoria» se firma en un banco o en un juzgado. ¿Dónde pasa esto?"
+      - position: 2
+        text: "pausa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «pausa» no la pacta nadie con nadie: la toma quien quiere, y esto lo habían acordado los dos."
+        hint_specific: "Una «pausa» no se rompe, se acaba. ¿Por qué se habla aquí de romper algo?"
+      - position: 3
+        text: "tregua"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Hasta el lunes"
+    body: "Llevaban tres días discutiendo por el préstamo y la casa estaba insoportable. Damián propuso algo concreto: «Tregua hasta el lunes: nadie menciona el tema y el lunes lo hablamos con papeles». Cenaron tranquilos y el lunes tardaron veinte minutos."
+    before_phrase: "¿Podemos dejarlo, por favor? No puedo más."
+    after_phrase: "Tregua hasta el lunes y luego lo hablamos."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos semanas para leer"
+    body: "Las dos áreas defendían números distintos y cada reunión terminaba peor. La jefa de proyecto cortó por lo sano: «Tregua de dos semanas; cada uno lee los datos del otro y volvemos». Al volver, la mitad de las diferencias habían desaparecido."
+    before_phrase: "Vamos a parar esto antes de que sea peor."
+    after_phrase: "Tregua de dos semanas y volvemos con datos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La comida del sábado"
+    body: "Dos amigos del grupo llevaban meses sin dirigirse la palabra. Antes de la comida, alguien lo dijo en voz alta: «Hoy hay tregua; el sábado que viene, lo que haga falta». Se sentaron lejos, pero se sentaron. Un mes después hablaron."
+    before_phrase: "Por favor, hoy que no salte nadie."
+    after_phrase: "Hoy hay tregua; mañana ya veremos."
+metrics:
+  zipf_overall: 4.0440
+  dispersion_dp: 0.2967
+  pedantry_proxy: 0.6324
+  family_size: 0
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"
