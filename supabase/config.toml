@@ -71,7 +71,8 @@ enabled = true
 # Specifies an ordered list of seed files to load during db reset.
 # Supports glob patterns relative to supabase directory: "./seeds/*.sql"
 # seed.sql is generated from content/ by `dart run content:emit`; seed_themes.sql
-# is hand-written and must run after it, because it references seeded words.
+# is hand-written and must run before it, because seed.sql links every word to
+# the theme rows that file inserts.
 sql_paths = ["./seed_themes.sql", "./seed.sql"]
 
 [db.network_restrictions]

@@ -176,6 +176,104 @@ void main() {
     });
   });
 
+  group('ConfusionSymmetryValidator', () {
+    const validator = ConfusionSymmetryValidator();
+
+    test('accepts a pair both files declare', () {
+      final talante = clone('talante', confusedWith: ['tajante']);
+      final tajante = clone('tajante', confusedWith: ['talante']);
+
+      expect(runLibrary(validator, [talante, tajante]), isEmpty);
+    });
+
+    test('rejects a pair declared in one direction only', () {
+      final aludir = clone('aludir', confusedWith: ['insinuar']);
+      final insinuar = clone('insinuar', confusedWith: ['insistir']);
+
+      final issues = runLibrary(validator, [aludir, insinuar]);
+
+      expect(issues, hasLength(1));
+      expect(issues.single.code, 'confusion_symmetry');
+      expect(issues.single.isBlocking, isTrue);
+      // The issue belongs to the file that has to add the declaration.
+      expect(issues.single.slug, 'insinuar');
+      expect(issues.single.message, contains('aludir'));
+    });
+
+    test('says nothing about a confusable word outside the catalogue', () {
+      final talante = clone('talante', confusedWith: ['semblante']);
+
+      expect(runLibrary(validator, [talante]), isEmpty);
+    });
+
+    test('sees a pair the other side names through a family member', () {
+      final conciso = clone('conciso', confusedWith: ['preciso']);
+      final precisamente = clone(
+        'precisamente',
+        family: ['preciso'],
+        confusedWith: ['preciosamente'],
+      );
+
+      final issues = runLibrary(validator, [conciso, precisamente]);
+
+      expect(issues, hasLength(1));
+      expect(issues.single.slug, 'precisamente');
+    });
+
+    test('accepts a pair the two sides name by different family members', () {
+      final pauta = clone(
+        'pauta',
+        family: ['pausa'],
+        confusedWith: ['pausado'],
+      );
+      final pausado = clone(
+        'pausado',
+        family: ['pautado'],
+        confusedWith: ['pausa'],
+      );
+
+      expect(runLibrary(validator, [pauta, pausado]), isEmpty);
+    });
+
+    test('ignores case and accents on both sides', () {
+      final cesion = clone('cesión', confusedWith: ['Concesion']);
+      final concesion = clone('concesión', confusedWith: ['CESIÓN']);
+
+      expect(runLibrary(validator, [cesion, concesion]), isEmpty);
+    });
+
+    test('only the catalogue counts: a draft is not a missing direction', () {
+      final borrador = clone(
+        'borrador',
+        confusedWith: ['aprobada'],
+        status: 'draft',
+      );
+      final aprobada = clone('aprobada', confusedWith: ['otra']);
+
+      expect(runLibrary(validator, [borrador, aprobada]), isEmpty);
+    });
+
+    test('reports one issue per missing direction, never a duplicate', () {
+      final improvisar = clone('improvisar', confusedWith: ['revisar']);
+      final ensayar = clone('ensayar', confusedWith: ['improvisar']);
+      final imprevisto = clone('imprevisto', confusedWith: ['improvisar']);
+      final revisar = clone('revisar', confusedWith: ['improvisar']);
+
+      final issues = runLibrary(validator, [
+        improvisar,
+        ensayar,
+        imprevisto,
+        revisar,
+      ]);
+
+      expect(issues.map((i) => i.slug), ['improvisar', 'improvisar']);
+      expect(
+        issues.map((i) => i.message),
+        containsAll(<Matcher>[contains('ensayar'), contains('imprevisto')]),
+      );
+    });
+  });
+
   group('ThemeTaxonomyValidator', () {
     const validator = ThemeTaxonomyValidator();
 

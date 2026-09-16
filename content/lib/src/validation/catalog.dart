@@ -1,3 +1,4 @@
+import 'package:content/src/model/catalogue.dart';
 import 'package:content/src/model/word.dart';
 import 'package:content/src/text/spanish_text.dart';
 import 'package:content/src/validation/context.dart';
@@ -146,6 +147,71 @@ final class ThemeTaxonomyValidator extends WordValidator {
             word.slug,
             'themes',
             'relevance ${theme.relevance} for "${theme.slug}" is outside 1..3',
+          ),
+        );
+      }
+    }
+    return issues;
+  }
+}
+
+/// A confusion between two catalog words is declared by both of them.
+///
+/// The interference rule of learning-method §7 is declaration-driven, not
+/// heuristic: two words are confusable because a file says so. [areConfusable]
+/// and the app's rule both accept either direction, which is exactly what makes
+/// a one-sided declaration invisible — the pair works until the one file that
+/// carries it is edited, and then the protection disappears with no test
+/// failing. So the rule has to see both sides: if `talante` names `tajante`,
+/// `tajante.yml` says so too, in its own words.
+///
+/// Only the catalog counts. A confusable word nobody has written yet is a
+/// perfectly good confusion — it is what most of them are — and a draft is not
+/// yet a word the planner can introduce.
+final class ConfusionSymmetryValidator extends LibraryValidator {
+  const ConfusionSymmetryValidator();
+
+  @override
+  String get code => 'confusion_symmetry';
+
+  @override
+  String get description =>
+      'a confusion that names another catalog word is declared by both files';
+
+  @override
+  Severity get severity => Severity.blocking;
+
+  @override
+  List<Issue> validateLibrary(LibraryContext context) {
+    final catalogue = [
+      for (final word in context.words)
+        if (word.status == WordStatus.approved) word,
+    ];
+    final index = Catalogue.of(catalogue);
+
+    // slug -> the catalog words it declares, each with the name the file uses.
+    final declared = <String, Map<String, String>>{
+      for (final word in catalogue)
+        word.slug: {
+          for (final confusion in word.confusions)
+            if (index.confusableOf(word, confusion) case final other?)
+              other.slug: confusion.confusedWith,
+        },
+    };
+
+    final issues = <Issue>[];
+    for (final word in catalogue) {
+      for (final entry in declared[word.slug]!.entries) {
+        if (declared[entry.key]!.containsKey(word.slug)) continue;
+        issues.add(
+          _issue(
+            this,
+            entry.key,
+            'confusions',
+            '${word.slug}.yml declares "${word.lemma}" confusable with '
+                '"${entry.value}", but ${entry.key}.yml does not declare '
+                '"${word.lemma}" back; the interference rule only protects a '
+                'pair both files carry',
           ),
         );
       }

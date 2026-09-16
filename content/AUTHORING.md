@@ -86,7 +86,7 @@ Full machine-readable shape: `content/schema/word.schema.json`.
 | `themes` | 1–3 entries from `content/themes.yml` — see §2b |
 | `semantic_set_id` | kebab-case, or omitted — see §2c |
 | `tags` | `comodin` (what it displaces) · `funcion` · `canal` (`hablado`/`escrito`/`ambos`) · `formalidad` · `variedad` |
-| `confusions` | ≥ 1 `{confused_with, difference, memory_trick}`; at least one needs the trick. Never point at the word itself |
+| `confusions` | ≥ 1 `{confused_with, difference, memory_trick}`; at least one needs the trick. Never point at the word itself — see §2d |
 | `exercises` | **exactly 8 when you author it** — see §3 |
 | `readings` | **exactly 3** — see §4 |
 | `metrics` | **never write this by hand.** `content:corpus` computes it |
@@ -136,6 +136,37 @@ block between them for nothing.
 
 An id is kebab-case and names the axis, not the words:
 `fuerza-de-la-afirmacion`, not `contundente-matizar`.
+
+### 2d. `confusions`
+
+At least one `{confused_with, difference, memory_trick}`; one of them must
+carry the trick. `confused_with` is the word as a reader would write it,
+accents included. Most of them are words flui never teaches, and that is
+normal: a paronym is usually outside the catalog.
+
+**When the confusable word *is* in the catalog, both files declare the pair.**
+If `talante.yml` names `tajante`, then `tajante.yml` names `talante`, in its
+own words — same pair, different explanation, written from that word's side.
+This is not bookkeeping:
+
+- The interference rule of learning-method §7 is declaration-driven. Two words
+  are confusable because a file says so, and the planner keeps them 6 days
+  apart for it. A pair only one file declares still works — until that one file
+  is edited, and then the protection disappears with nothing failing.
+- `dart run content:emit` resolves `confused_with` against the catalog — by
+  lemma or by a `family` member, ignoring case and accents — and writes
+  `word_confusions.confused_word_id`. That column is what the app matches on
+  first, so a link survives a renamed lemma or a re-slugged word.
+
+`confusion_symmetry` is blocking and runs over the whole library
+(`dart run content:validate --all`), so a one-sided pair cannot ship. It says
+nothing when you self-check one file with `--word <slug>`: the other side is
+not loaded. `dart run content:stats` prints how many confusions reach a catalog
+word and how many pairs are still one-directional.
+
+When you add a confusion that names a word already in `content/words/`, open
+that file and add the mirror entry. Never point at the word itself, not even
+through one of its own `family` members.
 
 ---
 

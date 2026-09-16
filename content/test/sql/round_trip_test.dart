@@ -6,6 +6,7 @@ import 'package:content/src/model/yaml_map.dart';
 import 'package:content/src/sql/seed_emitter.dart';
 import 'package:content/src/sql/seed_importer.dart';
 import 'package:content/src/sql/seed_sql_parser.dart';
+import 'package:content/src/text/spanish_text.dart';
 import 'package:path/path.dart' as p;
 import 'package:test/test.dart';
 
@@ -15,6 +16,36 @@ import '../support/validation_harness.dart';
 final String seedPath = p.normalize(
   p.join(Directory.current.path, '..', 'supabase', 'seed.sql'),
 );
+
+/// A catalogue word with a new identity, its family and its confusions.
+///
+/// Every word carries at least one confusion, the way the validator suite
+/// demands, so the emitted fragment is always parseable SQL.
+Word catalogued(
+  String lemma, {
+  List<String> family = const [],
+  List<String> confusedWith = const ['una palabra de fuera'],
+}) => Word.fromMap(
+  validWordMap()
+    ..remove('id')
+    ..['slug'] = slugify(lemma)
+    ..['lemma'] = lemma
+    ..['syllables'] = [lemma]
+    ..['stressed_syllable'] = 1
+    ..['family'] = family
+    ..['confusions'] = [
+      for (final other in confusedWith)
+        {
+          'confused_with': other,
+          'difference': 'Una diferencia clara entre las dos palabras.',
+          'memory_trick': 'Un truco corto para recordarla.',
+        },
+    ],
+);
+
+/// The `word_confusions` rows of an emitted fragment, in emission order.
+List<Map<String, Object?>> confusionRows(String sql) =>
+    parseSeedRows(sql)['word_confusions'] ?? const [];
 
 void main() {
   final seedSql = File(seedPath).readAsStringSync();
@@ -304,6 +335,106 @@ values (
     test('escapes apostrophes in literals', () {
       expect(sqlLiteral("l'ami"), "'l''ami'");
       expect(sqlLiteral(null), 'null');
+    });
+  });
+
+  group('confused_word_id', () {
+    test('links a confusion to the catalogue word it names', () {
+      // The app interference rule reads `confused_word_id` first; leaving it
+      // null makes the pair depend on the lemma string surviving a rename.
+      final sql = emitWords([
+        catalogued('talante', confusedWith: ['tajante']),
+        catalogued('tajante', confusedWith: ['talante']),
+      ]);
+      final rows = confusionRows(sql);
+
+      expect(rows, hasLength(2));
+      expect(rows.first['confused_with'], 'tajante');
+      expect(rows.first['confused_word_id'], deterministicWordId('tajante'));
+      expect(rows.last['confused_word_id'], deterministicWordId('talante'));
+    });
+
+    test('keeps null when the confusable word is not in the catalogue', () {
+      final rows = confusionRows(
+        emitWords([
+          catalogued('talante', confusedWith: ['semblante']),
+        ]),
+      );
+
+      expect(rows.single['confused_with'], 'semblante');
+      expect(rows.single.containsKey('confused_word_id'), isTrue);
+      expect(rows.single['confused_word_id'], isNull);
+    });
+
+    test('matches the lemma without case or accents', () {
+      final rows = confusionRows(
+        emitWords([
+          catalogued('cesión', confusedWith: ['Concesion']),
+          catalogued('concesión'),
+        ]),
+      );
+
+      expect(rows.first['confused_word_id'], deterministicWordId('concesion'));
+    });
+
+    test('matches a family member of a catalogue word', () {
+      final rows = confusionRows(
+        emitWords([
+          catalogued('conciso', confusedWith: ['preciso']),
+          catalogued('precisamente', family: ['preciso']),
+        ]),
+      );
+
+      expect(
+        rows.first['confused_word_id'],
+        deterministicWordId('precisamente'),
+      );
+    });
+
+    test('never links a confusion to the word that declares it', () {
+      final rows = confusionRows(
+        emitWords([
+          catalogued('ensayar', family: ['ensayo'], confusedWith: ['ensayo']),
+        ]),
+      );
+
+      expect(rows.single['confused_word_id'], isNull);
+    });
+
+    test('uses the id the word row carries, authored or derived', () {
+      final tajante = Word.fromMap(
+        validWordMap()
+          ..['id'] = 'a0000000-0000-4000-8000-000000000001'
+          ..['slug'] = 'tajante'
+          ..['lemma'] = 'tajante'
+          ..['syllables'] = ['tajante']
+          ..['stressed_syllable'] = 1,
+      );
+      final rows = confusionRows(
+        emitWords([catalogued('talante', confusedWith: ['tajante']), tajante]),
+      );
+
+      expect(
+        rows.first['confused_word_id'],
+        'a0000000-0000-4000-8000-000000000001',
+      );
+    });
+
+    test('the committed seed links every pair the catalogue declares', () {
+      // The defect this replaces shipped 352 rows with a null link, nine of
+      // them naming a published lemma.
+      final rows = confusionRows(seedSql);
+      final ids = {
+        for (final word in parseSeedRows(seedSql)['words']!)
+          word['id']! as String,
+      };
+      final linked = rows.where((r) => r['confused_word_id'] != null);
+
+      expect(linked, isNotEmpty);
+      for (final row in linked) {
+        expect(ids, contains(row['confused_word_id']));
+        expect(row['confused_word_id'], isNot(row['word_id']));
+      }
     });
   });
 }

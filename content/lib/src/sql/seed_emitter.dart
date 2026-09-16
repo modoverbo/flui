@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:content/src/model/catalogue.dart';
 import 'package:content/src/model/theme.dart';
 import 'package:content/src/model/word.dart';
 import 'package:crypto/crypto.dart';
@@ -69,6 +70,7 @@ String _replacesJson(List<Replacement> replaces) {
 String emitWords(List<Word> words, {ThemeTaxonomy? taxonomy}) {
   final buffer = StringBuffer();
   final sortOrders = sortOrdersFor(words);
+  final catalogue = Catalogue.of(words);
   if (taxonomy != null) buffer.write(_emitThemes(taxonomy));
   for (var index = 0; index < words.length; index++) {
     final word = words[index];
@@ -112,14 +114,21 @@ String emitWords(List<Word> words, {ThemeTaxonomy? taxonomy}) {
       ..writeln(');')
       ..writeln()
       ..writeln(
-        'insert into public.word_confusions (word_id, confused_with, difference, memory_trick)',
+        'insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)',
       )
       ..writeln('values');
     for (var i = 0; i < word.confusions.length; i++) {
       final confusion = word.confusions[i];
       final end = i == word.confusions.length - 1 ? ';' : ',';
+      // The link is the declaration the app's interference rule trusts first;
+      // it stays null only when the confusable word is not in the catalog.
+      final other = catalogue.confusableOf(word, confusion);
+      final confusedWordId = other == null
+          ? null
+          : other.id ?? deterministicWordId(other.slug);
       buffer.writeln(
         '  (${sqlLiteral(wordId)}, ${sqlLiteral(confusion.confusedWith)}, '
+        '${sqlLiteral(confusedWordId)}, '
         '${sqlLiteral(confusion.difference)}, ${sqlLiteral(confusion.memoryTrick)})$end',
       );
     }
