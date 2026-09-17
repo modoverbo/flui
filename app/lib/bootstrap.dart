@@ -27,6 +27,9 @@ import 'package:flui/features/onboarding/presentation/providers/onboarding_provi
 import 'package:flui/features/profile/data/fake_streak_repair_repository.dart';
 import 'package:flui/features/profile/data/supabase_streak_repair_repository.dart';
 import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
+import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
+import 'package:flui/features/speaking/data/supabase_speech_analysis_repository.dart';
+import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/subscription/data/fake_checkout_launcher.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
 import 'package:flui/features/subscription/data/supabase_subscription_repository.dart';
@@ -131,6 +134,9 @@ List<Override> fakeBackendOverrides({
     streakRepairRepositoryProvider.overrideWithValue(
       FakeStreakRepairRepository(currentUserId: currentUserId),
     ),
+    speechAnalysisRepositoryProvider.overrideWithValue(
+      FakeSpeechAnalysisRepository(latency: latency),
+    ),
     checkoutLauncherProvider.overrideWith(
       (ref) => FakeCheckoutLauncher(
         subscriptions: subscriptions,
@@ -176,6 +182,9 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     ),
     streakRepairRepositoryProvider.overrideWithValue(
       SupabaseStreakRepairRepository(client, currentUserId: currentUserId),
+    ),
+    speechAnalysisRepositoryProvider.overrideWithValue(
+      SupabaseSpeechAnalysisRepository(client),
     ),
   ];
 }

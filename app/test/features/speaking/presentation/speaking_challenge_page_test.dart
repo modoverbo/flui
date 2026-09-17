@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_recorder.dart';
 import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:material_ui/material_ui.dart';
 
 final class FakeSpeechRecorder implements SpeechRecorder {
   @override
@@ -24,7 +25,14 @@ final class FakeSpeechRecorder implements SpeechRecorder {
 void main() {
   testWidgets('shows a clear 45 second oral challenge', (tester) async {
     await tester.pumpWidget(
-      MaterialApp(home: SpeakingChallengePage(recorder: FakeSpeechRecorder())),
+      MaterialApp(
+        home: SpeakingChallengePage(
+          recorder: FakeSpeechRecorder(),
+          analysisRepository: FakeSpeechAnalysisRepository(
+            latency: Duration.zero,
+          ),
+        ),
+      ),
     );
 
     expect(find.text('PAUSA DE PODER'), findsOneWidget);
@@ -38,7 +46,14 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(
-      MaterialApp(home: SpeakingChallengePage(recorder: FakeSpeechRecorder())),
+      MaterialApp(
+        home: SpeakingChallengePage(
+          recorder: FakeSpeechRecorder(),
+          analysisRepository: FakeSpeechAnalysisRepository(
+            latency: Duration.zero,
+          ),
+        ),
+      ),
     );
 
     await tester.tap(find.text('Empezar a hablar'));
@@ -54,6 +69,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 700));
     await tester.pump();
     expect(find.text('Inténtalo otra vez'), findsOneWidget);
+    expect(find.textContaining('3 detectadas'), findsOneWidget);
 
     await tester.tap(find.text('Inténtalo otra vez'));
     await tester.runAsync(
@@ -68,5 +84,6 @@ void main() {
     await tester.pump(const Duration(milliseconds: 700));
     await tester.pump();
     expect(find.text('Antes vs. ahora'), findsOneWidget);
+    expect(find.text('3 → 0'), findsOneWidget);
   });
 }

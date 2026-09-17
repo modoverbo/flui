@@ -1,34 +1,50 @@
 import 'dart:async';
+import 'dart:math' as math;
 
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/speaking/data/record_speech_recorder.dart';
+import 'package:flui/features/speaking/domain/speaking_feedback.dart';
+import 'package:flui/features/speaking/domain/speaking_metrics.dart';
+import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
+import 'package:flui/features/speaking/domain/speech_analyzer.dart';
 import 'package:flui/features/speaking/domain/speech_recorder.dart';
+import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 
 enum _Phase { ready, recording, analyzing, feedback, comparison, denied, error }
 
-class SpeakingChallengePage extends StatefulWidget {
-  const new({this._recorder, super.key});
+class SpeakingChallengePage extends ConsumerStatefulWidget {
+  const new({this.recorder, this.analysisRepository, super.key});
 
-  final SpeechRecorder? _recorder;
+  final SpeechRecorder? recorder;
+  final SpeechAnalysisRepository? analysisRepository;
 
   @override
-  State<SpeakingChallengePage> createState() => _SpeakingChallengePageState();
+  ConsumerState<SpeakingChallengePage> createState() =>
+      _SpeakingChallengePageState();
 }
 
-class _SpeakingChallengePageState extends State<SpeakingChallengePage> {
+class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   late final SpeechRecorder _recorder =
-      widget._recorder ?? RecordSpeechRecorder();
+      widget.recorder ?? RecordSpeechRecorder();
+  late final SpeechAnalysisRepository _analysisRepository =
+      widget.analysisRepository ?? ref.read(speechAnalysisRepositoryProvider);
+  static const _analyzer = SpeechAnalyzer();
   _Phase _phase = _Phase.ready;
   Timer? _timer;
   StreamSubscription<double>? _amplitudeSubscription;
   int _secondsLeft = 45;
   int _attempt = 1;
   double _amplitude = -60;
+  DateTime? _startedAt;
+  late SpeakingMetrics _firstMetrics;
+  late SpeakingMetrics _currentMetrics;
+  late SpeakingFeedback _feedback;
 
   @override
   void dispose() {
@@ -46,6 +62,7 @@ class _SpeakingChallengePageState extends State<SpeakingChallengePage> {
         return;
       }
       await _recorder.start();
+      _startedAt = DateTime.now();
       _secondsLeft = 45;
       _amplitudeSubscription = _recorder.amplitude.listen((value) {
         if (mounted) setState(() => _amplitude = value);
@@ -73,6 +90,23 @@ class _SpeakingChallengePageState extends State<SpeakingChallengePage> {
     try {
       final bytes = await _recorder.stop();
       if (bytes.isEmpty) throw StateError('empty recording');
+      final elapsed = DateTime.now().difference(_startedAt ?? DateTime.now());
+      final duration = Duration(
+        milliseconds: math.max(500, elapsed.inMilliseconds),
+      );
+      final result = await _analysisRepository.analyze(
+        bytes,
+        mimeType: 'audio/wav',
+        duration: duration,
+      );
+      final transcript = result.valueOrNull;
+      if (transcript == null || transcript.text.trim().isEmpty) {
+        throw StateError('speech analysis failed');
+      }
+      final metrics = _analyzer.analyze(transcript);
+      _currentMetrics = metrics;
+      _feedback = _analyzer.feedback(metrics);
+      if (_attempt == 1) _firstMetrics = metrics;
       if (!mounted) return;
       setState(() {
         _phase = _attempt == 1 ? _Phase.feedback : _Phase.comparison;
@@ -113,8 +147,14 @@ class _SpeakingChallengePageState extends State<SpeakingChallengePage> {
                     onFinish: _finish,
                   ),
                   _Phase.analyzing => const _AnalyzingView(),
-                  _Phase.feedback => _FeedbackView(onRetry: _retry),
-                  _Phase.comparison => const _ComparisonView(),
+                  _Phase.feedback => _FeedbackView(
+                    feedback: _feedback,
+                    onRetry: _retry,
+                  ),
+                  _Phase.comparison => _ComparisonView(
+                    before: _firstMetrics,
+                    after: _currentMetrics,
+                  ),
                   _Phase.denied => _RecoveryView(
                     icon: LucideIcons.mic_off,
                     title: 'Necesitamos acceso al micrófono',
@@ -256,7 +296,8 @@ class _AnalyzingView extends StatelessWidget {
 }
 
 class _FeedbackView extends StatelessWidget {
-  const new({required this.onRetry});
+  const new({required this.feedback, required this.onRetry});
+  final SpeakingFeedback feedback;
   final VoidCallback onRetry;
   @override
   Widget build(BuildContext context) => Column(
@@ -270,23 +311,19 @@ class _FeedbackView extends StatelessWidget {
         style: Theme.of(context).textTheme.headlineMedium,
       ),
       const SizedBox(height: 24),
-      const _Signal(
-        icon: LucideIcons.gauge,
-        title: 'Ritmo',
-        detail: '182 palabras/min · un poco rápido',
-      ),
-      const _Signal(
-        icon: LucideIcons.message_circle_more,
-        title: 'Muletillas',
-        detail: '4 detectadas · estimación',
-      ),
-      const _Signal(
-        icon: LucideIcons.pause,
-        title: 'Pausa final',
-        detail: 'Faltó aire antes de cerrar',
-      ),
+      for (final signal in feedback.signals)
+        _Signal(
+          icon: switch (signal.title) {
+            'Ritmo' => LucideIcons.gauge,
+            'Muletillas' => LucideIcons.message_circle_more,
+            'Pausas largas' => LucideIcons.pause,
+            _ => LucideIcons.sparkles,
+          },
+          title: signal.title,
+          detail: signal.detail,
+        ),
       const SizedBox(height: 24),
-      const _CoachCue(),
+      _CoachCue(cue: feedback.retryCue),
       const SizedBox(height: 24),
       FluiButton.primary(label: 'Inténtalo otra vez', onPressed: onRetry),
     ],
@@ -294,73 +331,91 @@ class _FeedbackView extends StatelessWidget {
 }
 
 class _ComparisonView extends StatelessWidget {
-  const new();
+  const new({required this.before, required this.after});
+  final SpeakingMetrics before;
+  final SpeakingMetrics after;
+
   @override
-  Widget build(BuildContext context) => Column(
-    key: const ValueKey('comparison'),
-    crossAxisAlignment: CrossAxisAlignment.stretch,
-    children: [
-      const FluiLabel('ENTRENAMIENTO COMPLETADO'),
-      const SizedBox(height: 8),
-      Text(
-        'Antes vs. ahora',
-        style: Theme.of(context).textTheme.headlineMedium,
-      ),
-      const SizedBox(height: 24),
-      const _CompareRow(
-        label: 'Muletillas',
-        before: '4',
-        after: '1',
-        improvement: '−75%',
-      ),
-      const _CompareRow(
-        label: 'Ritmo',
-        before: '182',
-        after: '154',
-        improvement: 'Más control',
-      ),
-      const _CompareRow(
-        label: 'Pausa final',
-        before: 'No',
-        after: 'Sí',
-        improvement: 'Logrado',
-      ),
-      const SizedBox(height: 28),
-      Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: FluiColors.greenSecondary,
-          borderRadius: BorderRadius.circular(24),
+  Widget build(BuildContext context) {
+    final fillerDelta = before.totalFillers - after.totalFillers;
+    final improved = fillerDelta > 0;
+    return Column(
+      key: const ValueKey('comparison'),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const FluiLabel('ENTRENAMIENTO COMPLETADO'),
+        const SizedBox(height: 8),
+        Text(
+          'Antes vs. ahora',
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'LO QUE CAMBIÓ',
-              style: TextStyle(
-                color: Colors.white70,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 8),
-            Text(
-              'Hiciste espacio para tu conclusión y sonaste más directo.',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ],
+        const SizedBox(height: 24),
+        _CompareRow(
+          label: 'Muletillas',
+          before: '${before.totalFillers}',
+          after: '${after.totalFillers}',
+          improvement: improved ? '−$fillerDelta' : 'Sigue entrenando',
         ),
-      ),
-      const SizedBox(height: 24),
-      FluiButton.primary(
-        label: 'Volver a Hoy',
-        onPressed: () => Navigator.of(context).pop(),
-      ),
-    ],
-  );
+        _CompareRow(
+          label: 'Ritmo',
+          before: before.wordsPerMinute?.toString() ?? '—',
+          after: after.wordsPerMinute?.toString() ?? '—',
+          improvement: _paceLabel(before.wordsPerMinute, after.wordsPerMinute),
+        ),
+        _CompareRow(
+          label: 'Pausas largas',
+          before: '${before.longPauses}',
+          after: '${after.longPauses}',
+          improvement: after.longPauses < before.longPauses
+              ? 'Más control'
+              : 'Observa el ritmo',
+        ),
+        const SizedBox(height: 28),
+        Container(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: FluiColors.greenSecondary,
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'LO QUE CAMBIÓ',
+                style: TextStyle(
+                  color: Colors.white70,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                improved
+                    ? 'Reduciste tus muletillas en el segundo intento.'
+                    : 'Ya tienes una referencia real para tu próximo intento.',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(height: 24),
+        FluiButton.primary(
+          label: 'Volver a Hoy',
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+      ],
+    );
+  }
+
+  String _paceLabel(int? before, int? after) {
+    if (before == null || after == null) return 'Sin datos suficientes';
+    return (after - 150).abs() < (before - 150).abs()
+        ? 'Más control'
+        : 'Observa el ritmo';
+  }
 }
 
 class _MicButton extends StatelessWidget {
@@ -442,7 +497,8 @@ class _Signal extends StatelessWidget {
 }
 
 class _CoachCue extends StatelessWidget {
-  const new();
+  const new({required this.cue});
+  final String cue;
   @override
   Widget build(BuildContext context) => Container(
     padding: const EdgeInsets.all(18),
@@ -450,9 +506,9 @@ class _CoachCue extends StatelessWidget {
       color: FluiColors.yellowTint,
       borderRadius: BorderRadius.circular(18),
     ),
-    child: const Text(
-      'Tu reto: repite haciendo una pausa silenciosa antes de tu conclusión.',
-      style: TextStyle(fontWeight: FontWeight.w700),
+    child: Text(
+      'Tu reto: $cue',
+      style: const TextStyle(fontWeight: FontWeight.w700),
     ),
   );
 }
@@ -484,12 +540,10 @@ class _CompareRow extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.w700),
           ),
         ),
-        Text(before, style: const TextStyle(color: FluiColors.gray)),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Icon(LucideIcons.arrow_right, size: 16),
+        Text(
+          '$before → $after',
+          style: const TextStyle(fontWeight: FontWeight.w800),
         ),
-        Text(after, style: const TextStyle(fontWeight: FontWeight.w800)),
         const SizedBox(width: 10),
         Text(
           improvement,

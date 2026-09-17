@@ -167,9 +167,13 @@ void main() {
     });
 
     test('every weight the scale uses is bundled in pubspec.yaml', () {
-      final pubspec = File('pubspec.yaml').readAsStringSync();
+      final pubspec = File('pubspec.yaml')
+          .readAsStringSync()
+          .replaceAll(RegExp(r'\r?\n'), '\n');
       bool bundled(String family, int weight) => RegExp(
-        'family: $family\\n(?:(?!\\s*- family:).*\\n)*?.*weight: $weight\\n',
+        'family: $family\n'
+        r'(?:(?!\s*- family:).*\n)*?'
+        '.*weight: $weight\n',
       ).hasMatch(pubspec);
 
       for (final scale in [FluiTypeScale.compact, FluiTypeScale.wide]) {

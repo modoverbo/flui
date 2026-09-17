@@ -9,6 +9,9 @@ export type ErrorCode =
   | "invalid_signature"
   | "unknown_plan"
   | "already_subscribed"
+  | "invalid_audio"
+  | "payload_too_large"
+  | "rate_limited"
   | "upstream_error"
   | "internal_error";
 
