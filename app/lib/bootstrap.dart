@@ -6,14 +6,17 @@ import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/config/app_config.dart';
 import 'package:flui/core/config/app_config_provider.dart';
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/supabase/supabase_client_provider.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/data/supabase_auth_repository.dart';
+import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/daily/data/fake_daily_session_repository.dart';
 import 'package:flui/features/daily/data/supabase_daily_session_repository.dart';
+import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/exercises/data/fake_exercise_attempt_repository.dart';
 import 'package:flui/features/exercises/data/supabase_exercise_attempt_repository.dart';
@@ -28,6 +31,7 @@ import 'package:flui/features/subscription/data/fake_checkout_launcher.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
 import 'package:flui/features/subscription/data/supabase_subscription_repository.dart';
 import 'package:flui/features/subscription/data/url_checkout_launcher.dart';
+import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/features/themes/data/fake_theme_repository.dart';
 import 'package:flui/features/themes/data/supabase_theme_repository.dart';
@@ -56,7 +60,7 @@ Future<void> bootstrap(Result<AppConfig> configResult) async {
       runApp(ProviderScope(child: ConfigErrorApp(failure: failure)));
     case Ok(value: final config):
       final overrides = switch (config.backend) {
-        Backend.fake => fakeBackendOverrides(),
+        Backend.fake => fakeBackendOverrides(config: config),
         Backend.supabase => await supabaseBackendOverrides(config),
       };
       runApp(
@@ -76,15 +80,34 @@ Future<void> bootstrap(Result<AppConfig> configResult) async {
 /// In-memory backend (`BACKEND=fake`): every flow with the seed words, no
 /// network.
 List<Override> fakeBackendOverrides({
+  AppConfig config = const AppConfig(backend: Backend.fake),
   Duration latency = const Duration(milliseconds: 350),
 }) {
-  final auth = FakeAuthRepository(latency: latency);
+  const devUser = AppUser(
+    id: 'local-developer',
+    email: 'dev@flui.local',
+    displayName: 'Modo desarrollo',
+  );
+  final auth = FakeAuthRepository(
+    initialUser: config.devBypassAuth ? devUser : null,
+    latency: latency,
+  );
   String? currentUserId() => auth.currentUser?.id;
   final subscriptions = FakeSubscriptionRepository(
     clock: const SystemClock(),
     currentUserId: currentUserId,
     latency: latency,
   );
+  final sessions = FakeDailySessionRepository(currentUserId: currentUserId);
+  if (config.devBypassAuth) {
+    subscriptions.grantAccess(const AccessStatus(hasAccess: true));
+    sessions.seedSession(
+      DailySession(
+        localDate: LocalDate.fromDateTime(DateTime.now()),
+        minutes: 5,
+      ),
+    );
+  }
   return [
     authRepositoryProvider.overrideWithValue(auth),
     onboardingStoreProvider.overrideWithValue(InMemoryOnboardingStore()),
@@ -104,9 +127,7 @@ List<Override> fakeBackendOverrides({
         now: ref.read(clockProvider).now,
       ),
     ),
-    dailySessionRepositoryProvider.overrideWithValue(
-      FakeDailySessionRepository(currentUserId: currentUserId),
-    ),
+    dailySessionRepositoryProvider.overrideWithValue(sessions),
     streakRepairRepositoryProvider.overrideWithValue(
       FakeStreakRepairRepository(currentUserId: currentUserId),
     ),

@@ -16,6 +16,7 @@ import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
+import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
 import 'package:flui/features/subscription/presentation/pages/checkout_return_page.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
 import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
@@ -102,6 +103,14 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
     // A different place, not the next step: the session scales in.
     pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
       SessionPage(mode: _modeOf(state.uri)),
+      key: state.pageKey,
+    ),
+  ),
+  GoRoute(
+    path: AppRoutes.speakingChallenge,
+    parentNavigatorKey: rootKey,
+    pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
+      const SpeakingChallengePage(),
       key: state.pageKey,
     ),
   ),

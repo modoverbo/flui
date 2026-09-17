@@ -28,7 +28,11 @@ void main() {
       tester,
       location: AppRoutes.today,
       page: const TodayPage(),
-      otherRoutes: const [AppRoutes.session, AppRoutes.timeBudget],
+      otherRoutes: const [
+        AppRoutes.session,
+        AppRoutes.timeBudget,
+        AppRoutes.speakingChallenge,
+      ],
       overrides: fakes.overrides,
       surfaceSize: const Size(400, 900),
     );
@@ -74,6 +78,21 @@ void main() {
     await tester.tap(find.text('Empezar'));
     await tester.pumpAndSettle();
     expect(find.text('route:${AppRoutes.session}'), findsOneWidget);
+  });
+
+  testWidgets('Hoy opens the oral workout without replacing vocabulary', (
+    tester,
+  ) async {
+    await plan(newWords: [perspicaz.id]);
+    await pumpPage(tester);
+
+    expect(find.text('Entrena tu voz'), findsOneWidget);
+    expect(find.text('Pausa de poder · 45 s'), findsOneWidget);
+    expect(find.text('TU PALABRA DE HOY'), findsOneWidget);
+
+    await tester.tap(find.text('Entrena tu voz'));
+    await tester.pumpAndSettle();
+    expect(find.text('route:${AppRoutes.speakingChallenge}'), findsOneWidget);
   });
 
   testWidgets('a started session offers to continue', (tester) async {

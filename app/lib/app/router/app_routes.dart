@@ -22,6 +22,7 @@ abstract final class AppRoutes {
   static const timeBudget = '/today/time';
   static const words = '/words';
   static const progress = '/progress';
+  static const speakingChallenge = '/speaking/challenge';
 
   /// Was a tab of its own. "Repaso extra" now lives on Hoy, and the scenes
   /// live in the word detail, so both redirect instead of 404-ing old links.

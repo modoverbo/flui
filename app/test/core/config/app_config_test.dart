@@ -12,6 +12,44 @@ void main() {
       expect(config.backend, Backend.fake);
       expect(config.supabaseUrl, isNull);
       expect(config.supabaseAnonKey, isNull);
+      expect(config.devBypassAuth, isFalse);
+    });
+
+    test('fake backend accepts an explicit local developer bypass', () {
+      final result = AppConfig.parse(const {
+        'BACKEND': 'fake',
+        'DEV_BYPASS_AUTH': 'true',
+      });
+
+      expect(result.valueOrNull?.devBypassAuth, isTrue);
+    });
+
+    test('developer bypass cannot be enabled with Supabase', () {
+      final result = AppConfig.parse(const {
+        'BACKEND': 'supabase',
+        'SUPABASE_URL': 'https://abc.supabase.co',
+        'SUPABASE_ANON_KEY': 'anon-key',
+        'DEV_BYPASS_AUTH': 'true',
+      });
+
+      expect(result, isA<Err<AppConfig>>());
+      expect(
+        (result.failureOrNull! as ConfigFailure).message,
+        contains('DEV_BYPASS_AUTH'),
+      );
+    });
+
+    test('developer bypass only accepts true or false', () {
+      final result = AppConfig.parse(const {
+        'BACKEND': 'fake',
+        'DEV_BYPASS_AUTH': 'yes',
+      });
+
+      expect(result, isA<Err<AppConfig>>());
+      expect(
+        (result.failureOrNull! as ConfigFailure).message,
+        contains('DEV_BYPASS_AUTH'),
+      );
     });
 
     test('BACKEND=supabase reads url, anon key and app url', () {

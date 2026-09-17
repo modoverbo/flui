@@ -13,6 +13,7 @@ final class AppConfig {
     this.supabaseUrl,
     this.supabaseAnonKey,
     this.appUrl,
+    this.devBypassAuth = false,
   });
 
   /// Reads the dart-defines baked into this build.
@@ -21,6 +22,7 @@ final class AppConfig {
     'SUPABASE_URL': String.fromEnvironment('SUPABASE_URL'),
     'SUPABASE_ANON_KEY': String.fromEnvironment('SUPABASE_ANON_KEY'),
     'APP_URL': String.fromEnvironment('APP_URL'),
+    'DEV_BYPASS_AUTH': String.fromEnvironment('DEV_BYPASS_AUTH'),
   });
 
   /// Parses and validates raw values. Empty values count as missing.
@@ -42,6 +44,19 @@ final class AppConfig {
       );
     }
 
+    final rawDevBypass = read('DEV_BYPASS_AUTH')?.toLowerCase() ?? 'false';
+    if (rawDevBypass != 'true' && rawDevBypass != 'false') {
+      return const Result.err(
+        ConfigFailure('DEV_BYPASS_AUTH must be "true" or "false".'),
+      );
+    }
+    final devBypassAuth = rawDevBypass == 'true';
+    if (devBypassAuth && backend != Backend.fake) {
+      return const Result.err(
+        ConfigFailure('DEV_BYPASS_AUTH is only allowed with BACKEND=fake.'),
+      );
+    }
+
     final rawAppUrl = read('APP_URL');
     final appUrl = rawAppUrl == null ? null : _httpUrl(rawAppUrl);
     if (rawAppUrl != null && appUrl == null) {
@@ -51,7 +66,13 @@ final class AppConfig {
     }
 
     if (backend == Backend.fake) {
-      return Result.ok(AppConfig(backend: backend, appUrl: appUrl));
+      return Result.ok(
+        AppConfig(
+          backend: backend,
+          appUrl: appUrl,
+          devBypassAuth: devBypassAuth,
+        ),
+      );
     }
 
     final rawUrl = read('SUPABASE_URL');
@@ -75,6 +96,7 @@ final class AppConfig {
         supabaseUrl: supabaseUrl,
         supabaseAnonKey: anonKey,
         appUrl: appUrl,
+        devBypassAuth: devBypassAuth,
       ),
     );
   }
@@ -83,6 +105,7 @@ final class AppConfig {
   final Uri? supabaseUrl;
   final String? supabaseAnonKey;
   final Uri? appUrl;
+  final bool devBypassAuth;
 
   static Uri? _httpUrl(String raw) {
     final uri = Uri.tryParse(raw);

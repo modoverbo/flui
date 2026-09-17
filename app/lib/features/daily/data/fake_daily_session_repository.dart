@@ -17,6 +17,13 @@ final class FakeDailySessionRepository
 
   final _rows = <String, Map<LocalDate, DailySession>>{};
 
+  /// Synchronous fixture hook used only while composing the fake backend.
+  void seedSession(DailySession session) {
+    final userId = currentUserId();
+    if (userId == null) return;
+    _rows.putIfAbsent(userId, () => {})[session.localDate] = session;
+  }
+
   @override
   Future<Result<List<DailySession>>> fetchSessions() async {
     if (await simulateCall() case final failure?) return Result.err(failure);

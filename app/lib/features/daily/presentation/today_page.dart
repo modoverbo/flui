@@ -153,6 +153,8 @@ class _TodayScaffold extends StatelessWidget {
                     : l10n.progressGreeting(name),
                 subtitle: _subtitleFor(l10n, overview),
               ),
+              const SizedBox(height: FluiSpacing.lg),
+              const _SpeakingWorkoutCard(),
               if (overview.theme case final theme?) ...[
                 const SizedBox(height: FluiSpacing.md),
                 _TodayTheme(theme: theme, overview: overview),
@@ -211,6 +213,66 @@ class _TodayScaffold extends StatelessWidget {
     }
     if (overview.afianzar) return l10n.todayAfianzar;
     return l10n.todaySubtitle;
+  }
+}
+
+class _SpeakingWorkoutCard extends StatelessWidget {
+  const new();
+
+  @override
+  Widget build(BuildContext context) {
+    final type = context.type;
+    return Semantics(
+      button: true,
+      label: 'Entrena tu voz, desafío de 45 segundos',
+      child: InkWell(
+        onTap: () => context.push(AppRoutes.speakingChallenge),
+        borderRadius: BorderRadius.circular(24),
+        child: Ink(
+          padding: const EdgeInsets.all(20),
+          decoration: BoxDecoration(
+            color: FluiColors.yellowTint,
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: Row(
+            children: [
+              Container(
+                width: 54,
+                height: 54,
+                decoration: const BoxDecoration(
+                  color: FluiColors.greenSecondary,
+                  shape: BoxShape.circle,
+                ),
+                child: const Icon(
+                  Icons.mic_rounded,
+                  color: Colors.white,
+                  size: 28,
+                ),
+              ),
+              const SizedBox(width: FluiSpacing.md),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const FluiLabel('TU GIMNASIO DE HOY'),
+                    const SizedBox(height: 3),
+                    Text(
+                      'Entrena tu voz',
+                      style: type.titleM.copyWith(color: FluiColors.charcoal),
+                    ),
+                    Text(
+                      'Pausa de poder · 45 s',
+                      style: type.body.copyWith(color: FluiColors.gray),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.arrow_forward_rounded),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 
