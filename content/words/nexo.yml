@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "nexo"
+status: "draft"
+lemma: "nexo"
+part_of_speech: "sustantivo"
+syllables:
+  - "ne"
+  - "xo"
+stressed_syllable: 1
+ipa_latam: "[ˈnek.so]"
+ipa_es: "[ˈnek.so]"
+explanation: "El punto que une dos personas o dos ideas y explica por qué van juntas."
+example_sentence: "El nexo entre los dos equipos es el mismo cliente, no la misma oficina."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Al presentar a dos personas, dilo en voz alta: nombrar el punto que las une evita el silencio incómodo."
+when_not_to_use: "No la uses para una coincidencia sin más; esta palabra supone que ese punto explica algo."
+collocations:
+  - "el nexo entre los dos"
+  - "servir de nexo"
+  - "el nexo común"
+replaces:
+  - before: "Algo tienen que ver, digo yo"
+    after: "Hay un nexo claro entre los dos"
+  - before: "Los presento porque los dos hacen cosas parecidas"
+    after: "El nexo entre ellos es el mismo problema"
+  - before: "Yo soy el puente entre las dos partes"
+    after: "Yo sirvo de nexo entre las dos partes"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "conectores-estructura"
+    relevance: 1
+tags:
+  comodin:
+    - "lo que tienen que ver"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "anexo"
+    difference: "Un anexo es lo que se añade al final de un documento; el otro es lo que une dos cosas."
+    memory_trick: "El anexo se añade; el nexo enlaza."
+  - confused_with: "coincidencia"
+    difference: "Una coincidencia es casual y no explica nada; esto une dos cosas por un motivo."
+    memory_trick: "La coincidencia sorprende; el nexo explica."
+exercises:
+  - position: 1
+    sentence: "Al presentarlos, Zulema dijo el {{blank}} en voz alta: los dos habían montado una cooperativa de barrio."
+    hint_general: "Dijo en voz alta lo que unía a esas dos personas."
+    explanation: "Nexo: lo que une a esas dos personas. «Anexo» sería un añadido al final de un documento, y «coincidencia» daría a entender que fue casual."
+    options:
+      - position: 1
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» es lo que se añade al final de un escrito, y aquí se presentan dos personas."
+        hint_specific: "«Anexo» vive al final de un documento. ¿Hay documentos en esta presentación?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "coincidencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Coincidencia» dice que fue casual, y Zulema los presenta justamente porque hay un motivo."
+        hint_specific: "«Coincidencia» es casualidad. ¿Zulema los junta por azar o por un motivo?"
+  - position: 2
+    sentence: "Entre el retraso de la obra y las quejas de los vecinos hay un {{blank}} que nadie quiso nombrar en la reunión."
+    hint_general: "Hay algo que explica por qué esas dos cosas van juntas."
+    explanation: "Nexo: lo que explica por qué van juntas. «Vinculación» es palabra de formulario administrativo, y «contacto» nombraría a una persona, no una explicación."
+    options:
+      - position: 1
+        text: "vinculación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vinculación» es palabra de formulario administrativo y habla de una relación formal, no de una causa que explique algo."
+        hint_specific: "«Vinculación» suena a impreso oficial. ¿Aquí se busca un trámite o una explicación?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "contacto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Contacto» nombra a una persona con la que hablar, y aquí lo que falta es la razón que une dos hechos."
+        hint_specific: "«Contacto» es alguien a quien llamar. ¿Falta una persona o falta una razón?"
+  - position: 3
+    sentence: "Para el pueblo, Leandro fue durante años el {{blank}} entre los pescadores y el mercado de la capital."
+    hint_general: "Fue quien unía dos mundos que no se hablaban."
+    explanation: "Nexo: quien unía dos mundos que no se hablaban. «Anexo» sería un añadido documental, y «puente» describe el paso, no el punto que los une."
+    options:
+      - position: 1
+        text: "nexo"
+        is_correct: true
+      - position: 2
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» es un añadido al final de un documento, y aquí se habla de una persona entre dos grupos."
+        hint_specific: "«Anexo» es papel añadido. ¿Leandro es un papel o una persona?"
+      - position: 3
+        text: "puente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puente» describe por dónde se pasa, y la frase señala el punto que ata a los dos grupos."
+        hint_specific: "«Puente» es el camino. ¿Se nombra el camino o lo que los ata?"
+  - position: 4
+    sentence: "Lo que unía a los tres proyectos no era el dinero: el {{blank}} era la misma pregunta sin responder."
+    hint_general: "El punto que los ata es una pregunta compartida."
+    explanation: "Nexo: la pregunta compartida que los ata. «Pegamento» es una imagen de charla suelta, y «origen» diría de dónde salieron, no qué los une."
+    options:
+      - position: 1
+        text: "pegamento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pegamento» es una imagen de conversación suelta y sugiere que algo se pega por fuera, no que comparta un fondo."
+        hint_specific: "«Pegamento» suena a metáfora de charla informal. ¿Los proyectos se pegan o comparten algo?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "origen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Origen» dice de dónde salieron los proyectos, y la frase señala qué tienen en común ahora."
+        hint_specific: "«Origen» mira al principio. ¿La pregunta está al principio o en el centro de los tres?"
+  - position: 5
+    sentence: "Mi prima y mi jefe se conocieron en una boda y descubrieron un {{blank}} inesperado: el mismo taller de guitarra."
+    hint_general: "Encontraron algo concreto que los une a los dos."
+    explanation: "Nexo: el punto concreto que los une. «Anexo» sería un añadido a un escrito, y «contacto» nombraría a una tercera persona con la que hablar."
+    options:
+      - position: 1
+        text: "contacto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Contacto» nombra a alguien a quien recurrir, y aquí lo que aparece es lo que ambos comparten."
+        hint_specific: "«Contacto» es alguien útil. ¿Descubren a alguien útil o algo compartido?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» es lo que se adjunta al final de un documento, y esto ocurre charlando en una boda."
+        hint_specific: "«Anexo» se adjunta a un papel. ¿Dónde están estas dos personas?"
+  - position: 6
+    sentence: "El informe juntaba dos capítulos sin explicar el {{blank}}, y los lectores se perdían justo en la mitad."
+    hint_general: "Faltaba decir qué ata un capítulo con el siguiente."
+    explanation: "Nexo: lo que ata un capítulo con el siguiente. «Vinculación» suena a trámite administrativo, y «puente» describiría el paso, no el motivo."
+    options:
+      - position: 1
+        text: "puente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puente» nombra por dónde se pasa de uno a otro, y lo que falta es el motivo por el que van juntos."
+        hint_specific: "«Puente» es el paso. ¿Falta el paso o falta la razón de que estén juntos?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "vinculación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vinculación» es lenguaje de impreso oficial y nombra una relación formal, no la idea que une dos capítulos."
+        hint_specific: "«Vinculación» suena a papeleo. ¿Un informe necesita un trámite o una idea que enlace?"
+  - position: 7
+    sentence: "Al preparar la charla, Uriel buscó el {{blank}} entre su historia y la del público, y lo puso en la primera frase."
+    hint_general: "Busca el punto que ata su historia con la de quien escucha."
+    explanation: "Nexo: el punto que ata las dos historias. «Pegamento» es una imagen informal, y «coincidencia» sugeriría que fue casual."
+    options:
+      - position: 1
+        text: "nexo"
+        is_correct: true
+      - position: 2
+        text: "pegamento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pegamento» es una imagen de charla suelta y habla de pegar algo por fuera, no de un punto que comparten."
+        hint_specific: "«Pegamento» pega dos cosas separadas, en tono informal. ¿Uriel pega o descubre algo común?"
+      - position: 3
+        text: "coincidencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Coincidencia» sería casual, y él lo busca a propósito para abrir la charla con eso."
+        hint_specific: "«Coincidencia» aparece sola. ¿Uriel lo encuentra por azar o lo busca?"
+  - position: 8
+    sentence: "En la asociación, Flor sirve de {{blank}} entre las familias nuevas y las que llevan diez años, y por eso nadie se queda fuera."
+    hint_general: "Es quien une a dos grupos que no se conocían."
+    explanation: "Nexo: une a dos grupos que no se conocían. «Anexo» sería un añadido a un documento, y «origen» diría de dónde viene cada grupo."
+    options:
+      - position: 1
+        text: "origen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Origen» dice de dónde viene cada grupo, y Flor hace algo distinto: los pone en contacto."
+        hint_specific: "«Origen» mira de dónde vienen. ¿Flor cuenta procedencias o une gente?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» es un añadido al final de un escrito, y aquí hay una persona entre dos grupos de vecinos."
+        hint_specific: "«Anexo» es papel adjunto. ¿Flor es un documento o una persona?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Presentar bien"
+    body: "Zulema no presenta a nadie diciendo el cargo. Dice el nexo: «Los dos montaron una cooperativa de barrio; hablen entre ustedes». Cuando se aleja, la conversación ya ha empezado sola."
+    before_phrase: "Mira, te presento a alguien que hace cosas parecidas."
+    after_phrase: "El nexo es que los dos montaron una cooperativa."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La mitad del informe"
+    body: "Los lectores del informe se perdían siempre en la misma página. Uriel lo revisó y encontró el problema: los dos capítulos estaban pegados sin explicar el nexo. Añadió tres líneas y nadie volvió a preguntar."
+    before_phrase: "Aquí falta algo que los una."
+    after_phrase: "Aquí falta el nexo entre los dos capítulos."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La primera frase"
+    body: "Le preguntaron a Flor cómo empezaba sus charlas. «Busco el nexo entre mi historia y la de quien escucha, y lo digo en la primera frase», respondió. «Si no lo encuentro, cambio la charla». La contrataron para dar tres."
+    before_phrase: "Intento que se sientan identificados."
+    after_phrase: "Busco el nexo y lo digo en la primera frase."
+metrics:
+  zipf_overall: 4.0016
+  dispersion_dp: 0.2376
+  pedantry_proxy: 0.4868
+  family_size: 0
+provenance:
+  generator: "flui authoring agent — theme networking"
+  gate: null
+  checked_on: "2026-09-15"

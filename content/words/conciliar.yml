@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 7034
+slug: "conciliar"
+status: "draft"
+lemma: "conciliar"
+part_of_speech: "verbo"
+syllables:
+  - "con"
+  - "ci"
+  - "liar"
+stressed_syllable: 3
+ipa_latam: "[kon.siˈljaɾ]"
+ipa_es: "[kon.θiˈljaɾ]"
+explanation: "Poner de acuerdo dos cosas que parecían no caber juntas."
+example_sentence: "Tardó tres años en conciliar el turno de noche con las mañanas de su hija."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para pedir una solución sin plantearla como un o esto o lo otro: las dos cosas caben si se piensan juntas."
+when_not_to_use: "No la uses para acordar una cita o un precio con alguien, ni para renunciar a una de las dos partes."
+collocations:
+  - "conciliar dos horarios"
+  - "difícil de conciliar"
+  - "conciliar posturas"
+replaces:
+  - before: "No sé cómo hacer que me cuadren las dos cosas"
+    after: "No sé cómo conciliar las dos cosas"
+  - before: "Hay que juntar lo que pide cada parte"
+    after: "Hay que conciliar lo que pide cada parte"
+  - before: "Al final tuvo que dejar una de las dos"
+    after: "Al final no pudo conciliarlas"
+family: []
+themes:
+  - slug: "familia-crianza"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "conflicto-desacuerdo"
+    relevance: 1
+tags:
+  comodin:
+    - "encajar"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "concertar"
+    difference: "«Concertar» es acordar algo con otra persona, como una cita o un precio; la otra palabra hace encajar dos cosas que ya tienes."
+    memory_trick: "Conciertas con alguien; lo otro lo haces con dos piezas tuyas."
+  - confused_with: "alternar"
+    difference: "«Alternar» es ir pasando de una cosa a otra por turnos; la otra palabra busca que las dos funcionen a la vez."
+    memory_trick: "Alternas una y otra; con lo otro caben las dos."
+exercises:
+  - position: 1
+    sentence: "Amaia lleva tres años intentando {{blank}} el turno de noche con las mañanas del colegio de su hija."
+    hint_general: "Intenta que dos cosas que chocan quepan a la vez en su vida."
+    explanation: "Conciliar: que dos cosas que chocan quepan a la vez. «Concertar» sería acordar algo con otra persona, y «alternar» sería cambiar de una a otra por turnos."
+    options:
+      - position: 1
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otra persona, como una cita o un precio, y aquí se trata de encajar dos horarios suyos."
+        hint_specific: "«Concertar» necesita otra persona al otro lado. ¿Con quién acordaría Amaia esto?"
+      - position: 2
+        text: "conciliar"
+        is_correct: true
+      - position: 3
+        text: "alternar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alternar» es ir cambiando de una cosa a otra por turnos, y ella necesita que las dos funcionen a la vez, no una semana cada una."
+        hint_specific: "«Alternar» acepta que una espere. ¿Puede esperar el colegio a la semana siguiente?"
+  - position: 2
+    sentence: "El acuerdo {{blank}} lo que pedían los vecinos con lo que podía pagar el ayuntamiento."
+    hint_general: "Hizo que dos exigencias enfrentadas cupieran en un mismo texto."
+    explanation: "Concilió: dos exigencias enfrentadas caben en un texto. «Concertó» sería cerrar una cita o un precio, y «armonizó» suena a documento oficial."
+    options:
+      - position: 1
+        text: "concertó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es cerrar una cita o un precio con alguien, y aquí el acuerdo hace encajar dos exigencias distintas."
+        hint_specific: "«Concertar» produce una cita o un trato. ¿Qué produce este acuerdo?"
+      - position: 2
+        text: "concilió"
+        is_correct: true
+      - position: 3
+        text: "armonizó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Armonizar» suena a documento oficial y a política de empresa, y aquí hay una calle, unos vecinos y un presupuesto."
+        hint_specific: "«Armonizar» aparece en normativas europeas. ¿De qué tamaño es este asunto?"
+  - position: 3
+    sentence: "Nadie le pidió elegir: le pidieron {{blank}} el club de sus hijos y el proyecto que llevaba diez años montando."
+    hint_general: "Le piden que las dos cosas quepan, no que deje una."
+    explanation: "Conciliar: que las dos cosas quepan. «Sacrificar» sería dejar una por la otra, justo lo que nadie le pidió, y «cuadrar» es coloquial y suena a números en una tabla."
+    options:
+      - position: 1
+        text: "sacrificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sacrificar» sería dejar una de las dos cosas por la otra, y la frase empieza diciendo que nadie le pidió elegir."
+        hint_specific: "«Sacrificar» siempre pierde algo. Relee el principio: ¿había que perder algo?"
+      - position: 2
+        text: "conciliar"
+        is_correct: true
+      - position: 3
+        text: "cuadrar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cuadrar» es coloquial y se dice de encajar números u horas en una tabla, y aquí se habla de dos partes de una vida."
+        hint_specific: "«Cuadrar» pide una hoja de cálculo. ¿Qué hay que encajar aquí?"
+  - position: 4
+    sentence: "La norma nueva intenta {{blank}} el descanso del barrio con los horarios de los bares de la plaza."
+    hint_general: "Busca que dos intereses opuestos funcionen a la vez."
+    explanation: "Conciliar: dos intereses opuestos funcionan a la vez. «Concertar» sería cerrar un acuerdo con alguien, y «armonizar» suena a lenguaje de reglamento."
+    options:
+      - position: 1
+        text: "armonizar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Armonizar» pertenece al lenguaje de los reglamentos y las directivas, y la frase habla de una plaza con bares y vecinos."
+        hint_specific: "«Armonizar» suena a boletín oficial. ¿Quién sufre este problema cada noche?"
+      - position: 2
+        text: "conciliar"
+        is_correct: true
+      - position: 3
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otra parte, y aquí no se acuerda nada con nadie: se intenta que dos cosas convivan."
+        hint_specific: "«Concertar» da como fruto un trato firmado. ¿Qué produce esta norma?"
+  - position: 5
+    sentence: "Después de mucho probar, Fabián consiguió {{blank}} las dos cosas: cerró la tienda los lunes."
+    hint_general: "Encontró la manera de que las dos cosas cupieran juntas."
+    explanation: "Conciliar: encontró cómo hacer que las dos quepan. «Alternar» habría sido cambiar de una a otra por turnos, y «sacrificar» habría supuesto dejar una."
+    options:
+      - position: 1
+        text: "alternar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alternar» habría sido hacer una cosa una semana y la otra la siguiente, y él quiere las dos todas las semanas."
+        hint_specific: "«Alternar» reparte el tiempo entre las dos. ¿Qué hizo Fabián con los lunes?"
+      - position: 2
+        text: "conciliar"
+        is_correct: true
+      - position: 3
+        text: "sacrificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sacrificar» supondría dejar una de las dos, y la frase dice justamente que consiguió las dos cosas."
+        hint_specific: "«Sacrificar» pierde una. ¿Cuántas cosas conserva Fabián?"
+  - position: 6
+    sentence: "Lo difícil no fue elegir estudios: fue {{blank}} lo que quería hacer con lo que su familia podía pagar."
+    hint_general: "Lo difícil fue hacer encajar el deseo y el dinero disponible."
+    explanation: "Conciliar: hacer encajar el deseo y el dinero. «Concertar» sería acordar algo con otro, y «cuadrar» es coloquial y remite a números en una tabla."
+    options:
+      - position: 1
+        text: "concertar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concertar» es acordar algo con otra persona, y aquí las dos partes que chocan son suyas: lo que quiere y lo que hay."
+        hint_specific: "«Concertar» busca a alguien con quien pactar. ¿Con quién pactaría aquí?"
+      - position: 2
+        text: "conciliar"
+        is_correct: true
+      - position: 3
+        text: "cuadrar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cuadrar» es coloquial y apunta a que salgan las cuentas, y aquí también está en juego lo que esa persona quiere hacer."
+        hint_specific: "«Cuadrar» solo mira los números. ¿Qué más hay en juego además del dinero?"
+  - position: 7
+    sentence: "El horario nuevo {{blank}} las comidas de todos sin dejar a nadie fuera de la mesa."
+    hint_general: "Hace que necesidades distintas quepan en un mismo horario."
+    explanation: "Concilia: necesidades distintas caben en un horario. «Alterna» sería turnarse, y «elige» supondría quedarse con unas y descartar otras."
+    options:
+      - position: 1
+        text: "concilia"
+        is_correct: true
+      - position: 2
+        text: "alterna"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alternar» sería que un día coma un grupo y otro día el otro, y la frase dice que nadie se queda fuera."
+        hint_specific: "«Alternar» deja a alguien esperando su turno. ¿Espera alguien aquí?"
+      - position: 3
+        text: "elige"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elegir» supondría quedarse con unas comidas y descartar otras, y el horario incluye a todos."
+        hint_specific: "«Elegir» descarta. ¿Se descarta a alguien en esa mesa?"
+  - position: 8
+    sentence: "No se trata de renunciar a nada: se trata de {{blank}} lo que ya tienes entre manos."
+    hint_general: "Se trata de que lo que tienes quepa junto, sin soltar nada."
+    explanation: "Conciliar: que lo que tienes quepa junto. «Sacrificar» y «elegir» suponen soltar algo, y la frase empieza descartando cualquier renuncia."
+    options:
+      - position: 1
+        text: "sacrificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sacrificar» supone soltar una parte, y la frase empieza diciendo que no se trata de renunciar a nada."
+        hint_specific: "«Sacrificar» pide una pérdida. Relee las primeras palabras de la frase."
+      - position: 2
+        text: "elegir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elegir» obliga a quedarse con una parte y dejar la otra, y aquí no se deja nada por el camino."
+        hint_specific: "«Elegir» descarta una opción. ¿Se descarta algo en esta frase?"
+      - position: 3
+        text: "conciliar"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "practica"
+    title: "El turno de noche"
+    body: "Amaia pidió cambiar el turno tres veces y le dijeron que no otras tres. A la cuarta lo planteó distinto: «No pido un favor: pido conciliar el turno con el colegio, y tengo una propuesta». Llevaba un cuadro hecho. Se lo aprobaron en dos semanas."
+    before_phrase: "Necesito que me cambien el turno, por favor."
+    after_phrase: "Pido conciliar el turno con el colegio."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los lunes cerrados"
+    body: "Fabián probó horarios durante un año: abrir antes, cerrar después, contratar los sábados. Al final cerró los lunes y todo encajó. «No he renunciado a nada: lo he conciliado», contó en la reunión de comerciantes. Dos tiendas de la calle copiaron la idea."
+    before_phrase: "Al final he tenido que dejar algo de lado."
+    after_phrase: "No he renunciado a nada: lo he conciliado."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La plaza a las once"
+    body: "Los vecinos querían dormir y los bares querían abrir. La reunión empezó a gritos y terminó con una hoja: terrazas hasta las once y refuerzo de limpieza. «Se puede conciliar», dijo alguien al salir, y nadie se rio del verbo."
+    before_phrase: "O ellos o nosotros, aquí no cabemos todos."
+    after_phrase: "Se puede conciliar; hay que sentarse."
+metrics:
+  zipf_overall: 4.1786
+  dispersion_dp: 0.1625
+  pedantry_proxy: 0.4893
+  family_size: 120
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-16"

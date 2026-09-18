@@ -82,6 +82,79 @@ void main() {
     expect(gap.missingForNinetyDays, 93);
   });
 
+  group('confusion links', () {
+    Word confusable(
+      String slug,
+      List<String> confusedWith, {
+      String status = 'approved',
+      List<String> family = const [],
+    }) => Word.fromMap(
+      validWordMap()
+        ..['slug'] = slug
+        ..['lemma'] = slug
+        ..['syllables'] = [slug]
+        ..['stressed_syllable'] = 1
+        ..['status'] = status
+        ..['family'] = family
+        ..['confusions'] = [
+          for (final other in confusedWith)
+            {
+              'confused_with': other,
+              'difference': 'Una diferencia clara entre las dos palabras.',
+              'memory_trick': 'Un truco corto para recordarla.',
+            },
+        ],
+    );
+
+    test('counts how many confusions reach a catalogue word', () {
+      final stats = catalogStats([
+        confusable('talante', ['tajante', 'semblante']),
+        confusable('tajante', ['talante']),
+      ], testTaxonomy);
+
+      expect(stats.confusions, 3);
+      expect(stats.confusionsResolved, 2);
+      expect(stats.confusionsUnresolved, 1);
+    });
+
+    test('a draft is not part of the catalogue', () {
+      final stats = catalogStats([
+        confusable('talante', ['tajante']),
+        confusable('tajante', ['talante'], status: 'draft'),
+      ], testTaxonomy);
+
+      expect(stats.confusions, 1);
+      expect(stats.confusionsResolved, 0);
+      expect(stats.confusionsUnresolved, 1);
+    });
+
+    test('counts the pairs only one side declares', () {
+      final stats = catalogStats([
+        confusable('aludir', ['insinuar']),
+        confusable('insinuar', ['insistir']),
+        confusable('cesion', ['concesion']),
+        confusable('concesion', ['cesion']),
+      ], testTaxonomy);
+
+      expect(stats.confusionsResolved, 3);
+      expect(stats.oneDirectionalPairs, 1);
+    });
+
+    test('reports the counts in text and in JSON', () {
+      final stats = catalogStats([
+        confusable('talante', ['tajante']),
+        confusable('tajante', ['semblante']),
+      ], testTaxonomy);
+
+      expect(stats.format(), contains('confusions'));
+      expect(stats.format(), contains('unresolved'));
+      expect(stats.toJson()['confusions'], 2);
+      expect(stats.toJson()['confusionsResolved'], 1);
+      expect(stats.toJson()['confusionsUnresolved'], 1);
+      expect(stats.toJson()['oneDirectionalPairs'], 1);
+    });
+  });
+
   test('renders a text report', () {
     final report = catalogStats(
       [

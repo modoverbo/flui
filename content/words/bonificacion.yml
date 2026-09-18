@@ -1,0 +1,246 @@
+schema_version: 1
+slug: "bonificacion"
+status: "draft"
+lemma: "bonificación"
+part_of_speech: "sustantivo"
+syllables:
+  - "bo"
+  - "ni"
+  - "fi"
+  - "ca"
+  - "ción"
+stressed_syllable: 5
+ipa_latam: "[bo.ni.fi.kaˈsjon]"
+ipa_es: "[bo.ni.fi.kaˈθjon]"
+explanation: "Dinero que te bajan o te vuelven por cumplir una condición, como pagar antes o comprar mucho."
+example_sentence: "Si renuevas antes de marzo hay una bonificación del diez por ciento."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Di siempre la condición en la misma frase: sin condición suena a regalo y nadie se fía de un regalo."
+when_not_to_use: "No la uses para un obsequio ni para una rebaja general; esta palabra depende de que alguien cumpla algo."
+collocations:
+  - "una bonificación por volumen"
+  - "aplicar una bonificación"
+  - "perder la bonificación"
+replaces:
+  - before: "Si pagas ya te hacen precio"
+    after: "Si pagas ya hay una bonificación"
+  - before: "Te devuelven algo si llevas dos años"
+    after: "A los dos años hay una bonificación"
+  - before: "Les hicimos un precio por comprar mucho"
+    after: "Les aplicamos una bonificación por volumen"
+family:
+  - "bonificar"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "hacer precio"
+    - "devolver algo"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "gratificación"
+    difference: "La gratificación se da como premio por un trabajo bien hecho; la otra depende de una condición pactada."
+    memory_trick: "La gratificación agradece; la bonificación cumple un trato."
+  - confused_with: "notificación"
+    difference: "Una notificación es un aviso escrito; aquí lo que llega es dinero de menos en la factura."
+    memory_trick: "La notificación te informa; la bonificación te rebaja."
+exercises:
+  - position: 1
+    sentence: "El contrato del seguro incluye una {{blank}} para quien pase tres años sin ningún parte."
+    hint_general: "Es lo que le bajan a quien cumple una condición pactada."
+    explanation: "Bonificación: se la bajan a quien cumple la condición. «Gratificación» sería un premio por un trabajo bien hecho, y «notificación» sería solo un aviso escrito."
+    options:
+      - position: 1
+        text: "gratificación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Gratificación» premia un trabajo bien hecho, y aquí solo hay que cumplir una condición escrita en el contrato."
+        hint_specific: "«Gratificación» premia el mérito de alguien. ¿Hay mérito o hay una condición cumplida?"
+      - position: 2
+        text: "bonificación"
+        is_correct: true
+      - position: 3
+        text: "notificación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notificación» es un aviso escrito, y lo que el contrato incluye es una rebaja en el precio."
+        hint_specific: "«Notificación» es papel informativo. ¿Al cliente le llega un aviso o le baja el precio?"
+  - position: 2
+    sentence: "Íñigo cerró la venta grande porque ofreció una {{blank}} clara: a partir de cien cajas, un doce por ciento menos."
+    hint_general: "Ofrece una rebaja atada a una cantidad concreta."
+    explanation: "Bonificación: la rebaja está atada a cien cajas. «Propina» es de mostrador y se da por un servicio, y «descuento» no diría que depende de una condición."
+    options:
+      - position: 1
+        text: "propina"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Propina» es de conversación de mostrador y se entrega por un servicio recibido, no por comprar cien cajas."
+        hint_specific: "«Propina» se deja por un servicio, en tono informal. ¿Aquí hay servicio o hay volumen?"
+      - position: 2
+        text: "bonificación"
+        is_correct: true
+      - position: 3
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuento» puede ser una rebaja general, y lo que convence aquí es que dependa de las cien cajas."
+        hint_specific: "«Descuento» no promete condición. ¿Qué es lo que cierra la venta, la rebaja o la condición?"
+  - position: 3
+    sentence: "Al renovar antes de fecha, a mi madre le aplicaron una {{blank}} que no aparecía en el primer presupuesto."
+    hint_general: "Le rebajaron el precio por renovar dentro de plazo."
+    explanation: "Bonificación: le rebajaron por renovar en plazo. «Notificación» sería un aviso, y «comisión» iría al intermediario, no al cliente."
+    options:
+      - position: 1
+        text: "bonificación"
+        is_correct: true
+      - position: 2
+        text: "notificación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notificación» es un papel que informa, y lo que recibió fue una cifra más baja."
+        hint_specific: "«Notificación» solo informa. ¿Tu madre recibió un papel o pagó menos?"
+      - position: 3
+        text: "comisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comisión» es lo que cobra quien vende, y aquí el dinero se queda del lado del cliente."
+        hint_specific: "«Comisión» la cobra quien vende. ¿Quién sale ganando en esta escena?"
+  - position: 4
+    sentence: "La cooperativa reparte una {{blank}} entre los socios que compran toda la temporada, y la paga en diciembre."
+    hint_general: "Reparten dinero entre quienes cumplieron el compromiso de compra."
+    explanation: "Bonificación: reparten por cumplir el compromiso de compra. «Dádiva» suena a regalo solemne de un superior, y «premio» supondría una competición."
+    options:
+      - position: 1
+        text: "dádiva"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dádiva» es palabra solemne y pinta un regalo que alguien concede por generosidad, no un trato cumplido."
+        hint_specific: "«Dádiva» suena a regalo concedido desde arriba. ¿Aquí hay generosidad o hay trato?"
+      - position: 2
+        text: "premio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premio» supone que alguien compitió y ganó, y aquí cobran todos los que compraron la temporada entera."
+        hint_specific: "«Premio» pide que haya competición. ¿Cuántos socios cobran en diciembre?"
+      - position: 3
+        text: "bonificación"
+        is_correct: true
+  - position: 5
+    sentence: "Perdimos la {{blank}} por pagar dos días tarde, y el proveedor nos cobró la cifra entera."
+    hint_general: "Se perdió la rebaja porque no se cumplió el plazo."
+    explanation: "Bonificación: se pierde cuando no se cumple el plazo. «Gratificación» premiaría un trabajo bien hecho, y «ayuda» supondría que alguien la da por necesidad."
+    options:
+      - position: 1
+        text: "gratificación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Gratificación» se entrega por un trabajo bien hecho, y aquí lo único que contaba era pagar dentro de fecha."
+        hint_specific: "«Gratificación» reconoce un mérito. ¿Se premió un trabajo o se cumplió un plazo?"
+      - position: 2
+        text: "bonificación"
+        is_correct: true
+      - position: 3
+        text: "ayuda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ayuda» supone que alguien da dinero porque hace falta, y esto se perdió por un retraso de dos días."
+        hint_specific: "«Ayuda» se concede por necesidad. ¿Aquí importaba la necesidad o la fecha?"
+  - position: 6
+    sentence: "Karla explicó la tarifa en dos líneas: precio base, y una {{blank}} si el pago llega el mismo día."
+    hint_general: "La rebaja aparece solo si se cumple lo del mismo día."
+    explanation: "Bonificación: la rebaja depende de pagar el mismo día. «Propina» se deja por un servicio, en tono de mostrador, y «comisión» la cobraría quien vende."
+    options:
+      - position: 1
+        text: "comisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comisión» es lo que se lleva quien cierra la venta, y aquí quien se beneficia es quien paga."
+        hint_specific: "«Comisión» va para el vendedor. ¿Quién gana si el pago llega el mismo día?"
+      - position: 2
+        text: "bonificación"
+        is_correct: true
+      - position: 3
+        text: "propina"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Propina» es informal y se deja de forma voluntaria por un servicio, no se escribe en una tarifa."
+        hint_specific: "«Propina» es voluntaria y de mostrador. ¿Esto se escribe en una tarifa?"
+  - position: 7
+    sentence: "En el recibo de la luz aparece una {{blank}} para las casas que bajaron el consumo respecto al año pasado."
+    hint_general: "Les bajan el recibo a quienes cumplieron una condición medible."
+    explanation: "Bonificación: les baja el recibo por una condición medible. «Notificación» sería un aviso escrito, y «premio» daría a entender que hubo competición."
+    options:
+      - position: 1
+        text: "bonificación"
+        is_correct: true
+      - position: 2
+        text: "notificación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Notificación» es un aviso que informa de algo, y en el recibo lo que aparece es una rebaja."
+        hint_specific: "«Notificación» informa, no rebaja. ¿Qué cambia en el recibo de esas casas?"
+      - position: 3
+        text: "premio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premio» sugiere una competición con ganadores, y aquí cobran todas las casas que bajaron el consumo."
+        hint_specific: "«Premio» supone ganadores y perdedores. ¿Cuántas casas se benefician?"
+  - position: 8
+    sentence: "Mi tío negoció una {{blank}} por llevarse las dos furgonetas juntas y guardó el papel por si acaso."
+    hint_general: "Consiguió una rebaja atada a llevarse las dos a la vez."
+    explanation: "Bonificación: la rebaja depende de llevarse las dos juntas. «Dádiva» sonaría a regalo concedido desde arriba, y «descuento» no dejaría clara la condición."
+    options:
+      - position: 1
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuento» puede ser una rebaja suelta, y lo que él guarda por escrito es la condición de las dos furgonetas."
+        hint_specific: "«Descuento» no ata ninguna condición. ¿Por qué guarda el papel tu tío?"
+      - position: 2
+        text: "dádiva"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dádiva» es solemne y pinta un regalo concedido por generosidad, y esto se negoció entre dos partes."
+        hint_specific: "«Dádiva» se concede por bondad, con tono solemne. ¿Aquí hay bondad o hay negociación?"
+      - position: 3
+        text: "bonificación"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cien cajas"
+    body: "El cliente decía que el precio estaba alto y no se movía. Íñigo dejó de defender el precio y puso la condición encima de la mesa: «A partir de cien cajas hay una bonificación del doce por ciento». El cliente sacó la calculadora y la conversación cambió de tema."
+    before_phrase: "Si te llevas más te hago precio."
+    after_phrase: "A partir de cien cajas hay una bonificación del doce por ciento."
+  - position: 2
+    scene: "familia"
+    conversation_type: "practica"
+    title: "El recibo de la luz"
+    body: "Mi madre llamó preocupada por una línea rara del recibo. La leímos juntos: era una bonificación por haber bajado el consumo. «Entonces es a favor», dijo, aliviada. Colgamos riéndonos del susto."
+    before_phrase: "Aquí pone algo de que te devuelven no sé qué."
+    after_phrase: "Es una bonificación por bajar el consumo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Cómo cierra una venta"
+    body: "Le pidieron a Karla que explicara cómo cerraba ventas sin bajar el precio. «No bajo el precio», contestó. «Pongo una bonificación con una condición clara, y el cliente elige si la cumple». Tomaron nota de la frase entera."
+    before_phrase: "Le hago precio si compra más."
+    after_phrase: "Pongo una bonificación con una condición clara."
+metrics:
+  zipf_overall: 3.9339
+  dispersion_dp: 0.2192
+  pedantry_proxy: 0.4808
+  family_size: 23
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

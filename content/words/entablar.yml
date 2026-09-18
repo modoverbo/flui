@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 8310
+slug: "entablar"
+status: "draft"
+lemma: "entablar"
+part_of_speech: "verbo"
+syllables:
+  - "en"
+  - "ta"
+  - "blar"
+stressed_syllable: 3
+ipa_latam: "[en.taˈβlar]"
+ipa_es: "[en.taˈβlar]"
+explanation: "Empezar una conversación o una relación con quien no conocías."
+example_sentence: "Entabló conversación con la persona de al lado y terminaron intercambiando número."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar el primer paso con alguien nuevo: entablas charla, entablas amistad, entablas contacto."
+when_not_to_use: "No la uses para retomar algo que ya existía; entablar es siempre un comienzo, no una continuación."
+collocations:
+  - "entablar conversación"
+  - "entablar amistad"
+  - "entablar contacto"
+replaces:
+  - before: "Empecé a hablar con alguien en la fiesta"
+    after: "Entablé conversación con alguien en la fiesta"
+  - before: "Hicimos amistad rapidísimo en el curso"
+    after: "Entablamos amistad rapidísimo en el curso"
+  - before: "Trató de hacer contacto con el cliente nuevo"
+    after: "Trató de entablar contacto con el cliente nuevo"
+family:
+  - "entablado"
+themes:
+  - slug: "small-talk"
+    relevance: 3
+  - slug: "networking"
+    relevance: 2
+tags:
+  comodin: ["empezar a hablar con"]
+  funcion: ["iniciar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "entregar"
+    difference: "«Entregar» es dar algo a alguien; «entablar» es empezar una conversación o una relación con alguien, no dar nada."
+    memory_trick: "Entregas un objeto; entablas una charla."
+  - confused_with: "forzar"
+    difference: "«Forzar» una conversación es imponerla contra la voluntad del otro; «entablar» solo describe empezarla, sin decir si costó trabajo."
+exercises:
+  - position: 1
+    sentence: "Wanda {{blank}} conversación con el chico de la fila del café, y media hora después ya tenían plan para el fin de semana."
+    hint_general: "Habla de empezar un vínculo con alguien que acabas de conocer."
+    explanation: "Entabló: empezó a hablar con él directamente, sin ningún plan de por medio. «Entregó» es dar un objeto, y una conversación no se entrega, y «organizó» supone una agenda pensada de antemano, algo que no hubo en la fila del café."
+    options:
+      - position: 1
+        text: "entregó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entregar» es dar un objeto a alguien, y una conversación no es algo que se entrega; aquí Wanda empezó a hablar con él, no le dio nada."
+        hint_specific: "«Entregar» es dar un objeto. ¿Qué le dio Wanda al chico de la fila?"
+      - position: 2
+        text: "entabló"
+        is_correct: true
+      - position: 3
+        text: "organizó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Organizar» supone planear algo con agenda, como una reunión, y aquí Wanda solo se puso a hablar con el chico de la fila sin ningún plan previo."
+        hint_specific: "«Organizar» supone un plan previo. ¿Wanda planeó hablar con ese chico de antemano?"
+  - position: 2
+    sentence: "Tobías decidió {{blank}} amistad con su compañero de curso el primer día, sin imaginar que después serían socios."
+    hint_general: "Se refiere a empezar una amistad con alguien nuevo, de la forma natural en que se dice en español."
+    explanation: "Entablar: empezar un vínculo el primer día, sin que existiera antes. «Enganchar» sugiere volver a alguien dependiente de algo, y «reanudar» supone que la amistad ya existía, cuando era justo el primer día que se conocían."
+    options:
+      - position: 1
+        text: "enganchar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enganchar» es coloquial y sugiere volver a alguien dependiente de algo, casi enviciarlo, y aquí solo se cuenta el inicio normal de una amistad."
+        hint_specific: "«Enganchar» sugiere volver a alguien dependiente. ¿La frase habla de eso o de un inicio de amistad?"
+      - position: 2
+        text: "entablar"
+        is_correct: true
+      - position: 3
+        text: "reanudar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reanudar» supone que la amistad ya existía y se retoma, y la frase dice que fue justo el primer día que se conocieron, sin ninguna amistad antes."
+        hint_specific: "«Reanudar» supone un vínculo previo. ¿Se conocían de antes Tobías y su compañero?"
+  - position: 3
+    sentence: "Perla {{blank}} conversación con cualquiera en cinco segundos; en la boda, terminó hablando con el primo del novio toda la noche, solo de trabajo."
+    hint_general: "Apunta a empezar a hablar con alguien, sin que haya ningún interés romántico de por medio."
+    explanation: "Entabla: la conversación nace en cinco segundos con cualquiera. «Liga» apunta a un interés romántico, y la frase aclara que solo hablaron de trabajo, y «mantiene» supone que la conversación ya existía, cuando nace en cinco segundos con cualquiera."
+    options:
+      - position: 1
+        text: "liga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ligar» es coloquial y apunta a un interés romántico, y la frase aclara que solo hablaron de trabajo, nada más."
+        hint_specific: "«Ligar» apunta a interés romántico. ¿De qué hablaron Perla y el primo del novio, según la frase?"
+      - position: 2
+        text: "entabla"
+        is_correct: true
+      - position: 3
+        text: "mantiene"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mantener» supone que la conversación ya existe y solo se sostiene, y la frase dice que nace en cinco segundos con cualquiera, no que ya estaba en marcha."
+        hint_specific: "«Mantener» supone algo que ya existe. ¿La conversación nace o ya existía, según la frase?"
+  - position: 4
+    sentence: "El organizador le pidió a Malena que {{blank}} una charla con los nuevos socios antes de la cena."
+    hint_general: "Habla de empezar una charla real con alguien, más allá de solo saludarlo."
+    explanation: "Entablara: empezar una charla con socios nuevos, sin ninguna previa. «Propusiera» dejaría la decisión a los socios, cuando el organizador quería que ella hablara directamente, y «continuara» supone una charla que ya existía, cuando los socios eran nuevos."
+    options:
+      - position: 1
+        text: "propusiera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Proponer una charla» es sugerirla para que el otro decida si quiere, y lo que el organizador pedía era que Malena hablara directamente con los socios, no que les preguntara si querían."
+        hint_specific: "«Proponer» dejaría la decisión a los socios. ¿Qué le pidió el organizador a Malena: sugerir o hablar directamente?"
+      - position: 2
+        text: "entablara"
+        is_correct: true
+      - position: 3
+        text: "continuara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Continuar» supone que la charla ya estaba en marcha, y la frase dice que son socios nuevos, sin ninguna charla previa que continuar."
+        hint_specific: "«Continuar» supone algo que ya empezó. ¿Había alguna charla previa con los socios nuevos?"
+  - position: 5
+    sentence: "Bautista {{blank}} conversación con el chico nuevo del gimnasio, y ahora entrenan juntos todos los martes."
+    hint_general: "Se refiere a lograr que una charla con alguien nuevo se vuelva algo que sigue en el tiempo."
+    explanation: "Entabló: la charla se volvió algo que sigue en el tiempo. «Lanzó» suena a un comentario suelto de un solo lado, y «buscó» solo cuenta el intento, sin asegurar que funcionara."
+    options:
+      - position: 1
+        text: "lanzó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lanzar conversación» suena a un comentario suelto y de un solo lado, y aquí lo que se cuenta es algo que llevó a entrenar juntos cada semana, no solo un comentario aislado."
+        hint_specific: "«Lanzar» suena a un comentario suelto. ¿Qué resultó de esa charla, según la frase?"
+      - position: 2
+        text: "entabló"
+        is_correct: true
+      - position: 3
+        text: "buscó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Buscar conversación» solo dice que lo intentó, sin asegurar que funcionara, y la frase ya cuenta que ahora entrenan juntos: sí funcionó."
+        hint_specific: "«Buscar» solo cuenta el intento, no si funcionó. ¿La frase dice si esta vez funcionó?"
+  - position: 6
+    sentence: "Estela sigue {{blank}} conversaciones con desconocidos cada vez que puede, y así consiguió ser voluntaria del evento."
+    hint_general: "Apunta a empezar charlas con gente nueva cada vez, no a mantener charlas que ya existían."
+    explanation: "Entablando: charlas nuevas con desconocidos cada vez. «Sosteniendo» mantiene algo que ya existe, y la frase habla de desconocidos nuevos, y «generando» suena a causarlo de forma indirecta, no de hablar directamente."
+    options:
+      - position: 1
+        text: "sosteniendo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sostener conversaciones» es mantenerlas en marcha, y la frase habla de desconocidos nuevos cada vez, no de charlas que ya venían de antes."
+        hint_specific: "«Sostener» mantiene algo que ya existe. ¿La frase habla de desconocidos nuevos o de charlas antiguas?"
+      - position: 2
+        text: "entablando"
+        is_correct: true
+      - position: 3
+        text: "generando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generar conversaciones» suena a causarlas de forma indirecta, y la frase describe que ella misma habla directamente con los desconocidos."
+        hint_specific: "«Generar» suena indirecto. ¿Estela habla directamente con los desconocidos?"
+  - position: 7
+    sentence: "Vidal {{blank}} relación con los proveedores nuevos desde la primera reunión, y hoy lo llaman a él antes que a nadie."
+    hint_general: "Habla de empezar un buen trato con alguien, sin sonar a algo demasiado formal."
+    explanation: "Entabló: empezó un buen trato desde la primera reunión, sin relación previa. «Mejoró» supone que ya había una relación con esos proveedores, cuando fue desde la primera reunión, y «comentó» necesita un tema, no una relación entera."
+    options:
+      - position: 1
+        text: "mejoró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mejorar» supone que ya había una relación y se hizo mejor, y la frase dice que fue desde la primera reunión con proveedores nuevos, sin relación previa que mejorar."
+        hint_specific: "«Mejorar» supone una relación previa. ¿Había alguna relación antes de la primera reunión con esos proveedores?"
+      - position: 2
+        text: "entabló"
+        is_correct: true
+      - position: 3
+        text: "comentó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comentar» necesita un tema del que hablar, no una relación entera; no se puede «comentar una relación» de esa forma."
+        hint_specific: "«Comentar» pide un tema, no una relación entera. ¿Tiene sentido «comentar una relación»?"
+  - position: 8
+    sentence: "Cada vez que {{blank}} contacto con un cliente nuevo, tratamos de que se sienta como en casa."
+    hint_general: "Se refiere a empezar un vínculo con alguien de forma profesional, no a improvisarlo ni solo mencionarlo."
+    explanation: "Entablamos: empezamos el vínculo de forma profesional. «Armamos» es coloquial y suena a improvisar, y «mencionamos» no tiene sentido como acción de crear un vínculo."
+    options:
+      - position: 1
+        text: "armamos"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Armar contacto» es coloquial y suena a improvisar con lo que hay a mano, un tono que no encaja con hablar de clientes nuevos de forma profesional."
+        hint_specific: "«Armar» es coloquial y suena a improvisar. ¿Encaja ese tono con hablar de clientes nuevos?"
+      - position: 2
+        text: "entablamos"
+        is_correct: true
+      - position: 3
+        text: "mencionamos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mencionar contacto» no tiene sentido como acción: mencionar es traer un tema a la charla, no crear un vínculo con un cliente nuevo."
+        hint_specific: "«Mencionar» trae un tema, no crea un vínculo. ¿Tiene sentido «mencionar contacto» con un cliente?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El primo del novio"
+    body: "En la boda, Renzo no conocía a nadie en su mesa. Entabló conversación con el primo del novio hablando del pastel, y para el final de la noche ya tenían plan para ver un partido juntos."
+    before_phrase: "Empecé a hablar con alguien que no conocía de nada."
+    after_phrase: "Entablé conversación con él, y salió un plan para el fin de semana."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena con la familia nueva"
+    body: "A Fabiola le temblaban las manos antes de conocer a la familia de su pareja. Entabló amistad con la hermana menor hablando de series, y ahora se escriben todas las semanas, aunque viven en ciudades distintas."
+    before_phrase: "Hice amistad con alguien de la familia sin proponérmelo."
+    after_phrase: "Entablé amistad con ella, y ahora nos escribimos cada semana."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El café de la conferencia"
+    body: "En la fila del café de la conferencia, Cayetano entabló contacto con una persona de otra empresa hablando del retraso del tren. Meses después, esa persona lo llamó para ofrecerle un proyecto."
+    before_phrase: "Hice contacto con alguien nuevo mientras esperábamos el café."
+    after_phrase: "Entablé contacto con esa persona, y meses después me ofreció un proyecto."
+metrics:
+  zipf_overall: 3.9546
+  dispersion_dp: 0.1350
+  pedantry_proxy: 0.5309
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

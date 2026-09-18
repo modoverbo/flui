@@ -69,10 +69,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000001', 'suspicaz', '«Suspicaz» describe a quien tiende a desconfiar y sospechar de los demás. «Perspicaz» describe a quien capta lo que no es evidente.', 'El suspicaz sospecha; el perspicaz descubre.'),
-  ('a0000000-0000-4000-8000-000000000001', 'perspicuo', '«Perspicuo» se dice de lo que se entiende con claridad, como un texto o una explicación. Comparte raíz con «perspicaz», pero no describe a quien observa.', 'El perspicaz ve; lo perspicuo se ve.');
+  ('a0000000-0000-4000-8000-000000000001', 'suspicaz', null, '«Suspicaz» describe a quien tiende a desconfiar y sospechar de los demás. «Perspicaz» describe a quien capta lo que no es evidente.', 'El suspicaz sospecha; el perspicaz descubre.'),
+  ('a0000000-0000-4000-8000-000000000001', 'perspicuo', null, '«Perspicuo» se dice de lo que se entiende con claridad, como un texto o una explicación. Comparte raíz con «perspicaz», pero no describe a quien observa.', 'El perspicaz ve; lo perspicuo se ve.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -285,10 +285,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000002', 'plantar', '«Plantar» es poner algo en la tierra o, en lenguaje coloquial, dejar a alguien esperando. «Plantear» es proponer un tema para hablarlo.', 'Plantas una semilla; planteas una idea.'),
-  ('a0000000-0000-4000-8000-000000000002', 'implantar', '«Implantar» es establecer algo, a menudo sin consultarlo. «Plantear» abre la conversación antes de decidir.', 'Plantear pregunta; implantar impone.');
+  ('a0000000-0000-4000-8000-000000000002', 'plantar', null, '«Plantar» es poner algo en la tierra o, en lenguaje coloquial, dejar a alguien esperando. «Plantear» es proponer un tema para hablarlo.', 'Plantas una semilla; planteas una idea.'),
+  ('a0000000-0000-4000-8000-000000000002', 'implantar', null, '«Implantar» es establecer algo, a menudo sin consultarlo. «Plantear» abre la conversación antes de decidir.', 'Plantear pregunta; implantar impone.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -501,10 +501,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000003', 'atizar', '«Atizar» es avivar el fuego o, en sentido figurado, empeorar un conflicto. «Matizar» busca precisión y suele calmar la conversación.', 'Matizas para precisar; atizas para encender.'),
-  ('a0000000-0000-4000-8000-000000000003', 'maquillar', '«Maquillar» es disimular algo para que parezca mejor. «Matizar» añade detalles verdaderos que hacen la idea más justa.', 'Matizar aclara; maquillar tapa.');
+  ('a0000000-0000-4000-8000-000000000003', 'atizar', null, '«Atizar» es avivar el fuego o, en sentido figurado, empeorar un conflicto. «Matizar» busca precisión y suele calmar la conversación.', 'Matizas para precisar; atizas para encender.'),
+  ('a0000000-0000-4000-8000-000000000003', 'maquillar', null, '«Maquillar» es disimular algo para que parezca mejor. «Matizar» añade detalles verdaderos que hacen la idea más justa.', 'Matizar aclara; maquillar tapa.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -717,10 +717,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000004', 'sobrepasar', '«Sobrepasar» es superar un límite o una cantidad. «Sopesar» es valorar con cuidado antes de decidir.', 'Sopesas antes de decidir; sobrepasas un límite.'),
-  ('a0000000-0000-4000-8000-000000000004', 'posponer', '«Posponer» es dejar una decisión para más tarde. «Sopesar» es pensarla ahora, con cuidado.', 'Quien sopesa decide mejor; quien pospone decide después.');
+  ('a0000000-0000-4000-8000-000000000004', 'sobrepasar', null, '«Sobrepasar» es superar un límite o una cantidad. «Sopesar» es valorar con cuidado antes de decidir.', 'Sopesas antes de decidir; sobrepasas un límite.'),
+  ('a0000000-0000-4000-8000-000000000004', 'posponer', null, '«Posponer» es dejar una decisión para más tarde. «Sopesar» es pensarla ahora, con cuidado.', 'Quien sopesa decide mejor; quien pospone decide después.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -933,10 +933,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000005', 'pertinaz', '«Pertinaz» describe algo que persiste o a alguien terco: una tos pertinaz, una lluvia pertinaz. «Pertinente» es lo que viene al caso.', 'Lo pertinente viene al caso; lo pertinaz no se va.'),
-  ('a0000000-0000-4000-8000-000000000005', 'impertinente', '«Impertinente» se usa sobre todo para lo insolente o molesto. No funciona como simple contrario de «pertinente».', 'Una pregunta pertinente ayuda; una impertinente incomoda.');
+  ('a0000000-0000-4000-8000-000000000005', 'pertinaz', null, '«Pertinaz» describe algo que persiste o a alguien terco: una tos pertinaz, una lluvia pertinaz. «Pertinente» es lo que viene al caso.', 'Lo pertinente viene al caso; lo pertinaz no se va.'),
+  ('a0000000-0000-4000-8000-000000000005', 'impertinente', null, '«Impertinente» se usa sobre todo para lo insolente o molesto. No funciona como simple contrario de «pertinente».', 'Una pregunta pertinente ayuda; una impertinente incomoda.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -1149,10 +1149,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000006', 'concertar', '«Concertar» es acordar algo entre varias personas, como una cita o un precio. «Concretar» es precisar los detalles de algo.', 'Concertar une a las personas; concretar precisa los detalles.'),
-  ('a0000000-0000-4000-8000-000000000006', 'completar', '«Completar» es terminar o añadir lo que falta. «Concretar» es convertir algo vago en algo preciso.', 'Completas lo que falta; concretas lo que era vago.');
+  ('a0000000-0000-4000-8000-000000000006', 'concertar', null, '«Concertar» es acordar algo entre varias personas, como una cita o un precio. «Concretar» es precisar los detalles de algo.', 'Concertar une a las personas; concretar precisa los detalles.'),
+  ('a0000000-0000-4000-8000-000000000006', 'completar', null, '«Completar» es terminar o añadir lo que falta. «Concretar» es convertir algo vago en algo preciso.', 'Completas lo que falta; concretas lo que era vago.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -1344,10 +1344,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000007', 'condescendiente', '«Condescendiente» describe a quien trata a los demás con aire de superioridad. «Contundente» describe algo claro y firme.', 'Lo contundente convence; lo condescendiente ofende.'),
-  ('a0000000-0000-4000-8000-000000000007', 'convincente', '«Convincente» es lo que logra convencer. «Contundente» añade firmeza: además de convencer, no deja lugar a dudas.', 'Lo convincente te persuade; lo contundente te deja sin réplica.');
+  ('a0000000-0000-4000-8000-000000000007', 'condescendiente', null, '«Condescendiente» describe a quien trata a los demás con aire de superioridad. «Contundente» describe algo claro y firme.', 'Lo contundente convence; lo condescendiente ofende.'),
+  ('a0000000-0000-4000-8000-000000000007', 'convincente', null, '«Convincente» es lo que logra convencer. «Contundente» añade firmeza: además de convencer, no deja lugar a dudas.', 'Lo convincente te persuade; lo contundente te deja sin réplica.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -1539,10 +1539,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a0000000-0000-4000-8000-000000000008', 'saldar', '«Saldar» se usa sobre todo con deudas y cuentas: es pagarlas por completo. «Zanjar» es poner fin a una discusión o a un asunto.', 'Saldas lo que debes; zanjas lo que discutes.'),
-  ('a0000000-0000-4000-8000-000000000008', 'zafarse', '«Zafarse» es librarse de algo que molesta o de una obligación. «Zanjar» no es escapar del problema, sino resolverlo.', 'Quien se zafa huye; quien zanja resuelve.');
+  ('a0000000-0000-4000-8000-000000000008', 'saldar', null, '«Saldar» se usa sobre todo con deudas y cuentas: es pagarlas por completo. «Zanjar» es poner fin a una discusión o a un asunto.', 'Saldas lo que debes; zanjas lo que discutes.'),
+  ('a0000000-0000-4000-8000-000000000008', 'zafarse', null, '«Zafarse» es librarse de algo que molesta o de una obligación. «Zanjar» no es escapar del problema, sino resolverlo.', 'Quien se zafa huye; quien zanja resuelve.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -1734,10 +1734,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('26edfc58-4e6e-48dd-ad3a-b6ecfa003588', 'agotar', '«Agotar» es gastar algo hasta que no queda nada; lo otro le pone un límite antes de empezar.', 'Agotas hasta la última gota; pones el límite antes de la primera.'),
-  ('26edfc58-4e6e-48dd-ad3a-b6ecfa003588', 'acatar', '«Acatar» es obedecer una orden que viene de fuera; ponerle límites a un asunto es una decisión propia.', 'Acatas lo que te mandan; el límite lo pones tú.');
+  ('26edfc58-4e6e-48dd-ad3a-b6ecfa003588', 'agotar', null, '«Agotar» es gastar algo hasta que no queda nada; lo otro le pone un límite antes de empezar.', 'Agotas hasta la última gota; pones el límite antes de la primera.'),
+  ('26edfc58-4e6e-48dd-ad3a-b6ecfa003588', 'acatar', null, '«Acatar» es obedecer una orden que viene de fuera; ponerle límites a un asunto es una decisión propia.', 'Acatas lo que te mandan; el límite lo pones tú.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -1950,10 +1950,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('10f0334d-7b6e-4dbd-9023-56c4171f33f7', 'consentir', '«Consentir» es permitir lo que otro propone; la otra palabra construye la decisión entre varios desde el principio.', 'Consientes lo que ya trae otro; la decisión compartida se fabrica entre todos.'),
-  ('10f0334d-7b6e-4dbd-9023-56c4171f33f7', 'consultar', '«Consultar» es pedir opinión y decidir tú; la otra palabra exige que el resultado tenga el sí de todos.', 'Consultas y decides tú; el acuerdo lo firman todos.');
+  ('10f0334d-7b6e-4dbd-9023-56c4171f33f7', 'consentir', null, '«Consentir» es permitir lo que otro propone; la otra palabra construye la decisión entre varios desde el principio.', 'Consientes lo que ya trae otro; la decisión compartida se fabrica entre todos.'),
+  ('10f0334d-7b6e-4dbd-9023-56c4171f33f7', 'consultar', null, '«Consultar» es pedir opinión y decidir tú; la otra palabra exige que el resultado tenga el sí de todos.', 'Consultas y decides tú; el acuerdo lo firman todos.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -2166,10 +2166,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('838d88e8-4c42-4834-a585-9e74fb528690', 'obviar', '«Obviar» es pasar algo por alto y dejarlo fuera; la otra palabra lo pone sobre la mesa con razones.', 'Obviar salta el punto; la pega lo pone justo en el centro.'),
-  ('838d88e8-4c42-4834-a585-9e74fb528690', 'protestar', '«Protestar» es quejarse en voz alta, a veces sin razones; la otra palabra señala un punto concreto y explica el porqué.', 'Protestas por el ruido; señalas la cifra.');
+  ('838d88e8-4c42-4834-a585-9e74fb528690', 'obviar', null, '«Obviar» es pasar algo por alto y dejarlo fuera; la otra palabra lo pone sobre la mesa con razones.', 'Obviar salta el punto; la pega lo pone justo en el centro.'),
+  ('838d88e8-4c42-4834-a585-9e74fb528690', 'protestar', null, '«Protestar» es quejarse en voz alta, a veces sin razones; la otra palabra señala un punto concreto y explica el porqué.', 'Protestas por el ruido; señalas la cifra.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -2382,10 +2382,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('e076f077-fbb9-4ad8-a544-d71a520ac030', 'acatar', '«Acatar» es obedecer una orden sin opinar; la otra palabra es sumarse a una idea porque te parece buena.', 'Acatas porque te mandan; te sumas porque te convence.'),
-  ('e076f077-fbb9-4ad8-a544-d71a520ac030', 'suscribir', '«Suscribir» se usa sobre todo para firmar documentos o pagar un servicio; el apoyo en una reunión es de viva voz.', 'Suscribes con la firma; apoyas con la voz.');
+  ('e076f077-fbb9-4ad8-a544-d71a520ac030', 'acatar', null, '«Acatar» es obedecer una orden sin opinar; la otra palabra es sumarse a una idea porque te parece buena.', 'Acatas porque te mandan; te sumas porque te convence.'),
+  ('e076f077-fbb9-4ad8-a544-d71a520ac030', 'suscribir', null, '«Suscribir» se usa sobre todo para firmar documentos o pagar un servicio; el apoyo en una reunión es de viva voz.', 'Suscribes con la firma; apoyas con la voz.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -2577,10 +2577,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f05a47ba-7c90-4181-9b74-35d499d48b62', 'agitar', '«Agitar» es mover algo con fuerza o poner nervioso a alguien; la otra palabra quita pasos para que avance antes.', 'Agitas un frasco; le quitas trabas a un trámite.'),
-  ('f05a47ba-7c90-4181-9b74-35d499d48b62', 'aligerar', '«Aligerar» es quitar peso o cantidad; la otra palabra quita esperas y papeles, no kilos.', 'Aligeras la mochila; quitas pasos al proceso.');
+  ('f05a47ba-7c90-4181-9b74-35d499d48b62', 'agitar', null, '«Agitar» es mover algo con fuerza o poner nervioso a alguien; la otra palabra quita pasos para que avance antes.', 'Agitas un frasco; le quitas trabas a un trámite.'),
+  ('f05a47ba-7c90-4181-9b74-35d499d48b62', 'aligerar', null, '«Aligerar» es quitar peso o cantidad; la otra palabra quita esperas y papeles, no kilos.', 'Aligeras la mochila; quitas pasos al proceso.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -2772,10 +2772,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('45758e8b-a6cf-4ce5-abb2-aa7b932e170a', 'atacar', '«Atacar» va contra alguien o contra algo; la otra palabra frena un problema a tiempo, sin culpar a nadie.', 'Atacas a una persona; frenas un problema.'),
-  ('45758e8b-a6cf-4ce5-abb2-aa7b932e170a', 'acallar', '«Acallar» es hacer que alguien deje de hablar; frenar un problema a tiempo quita la causa, no la voz.', 'Acallar tapa la boca; frenar a tiempo quita el motivo.');
+  ('45758e8b-a6cf-4ce5-abb2-aa7b932e170a', 'atacar', null, '«Atacar» va contra alguien o contra algo; la otra palabra frena un problema a tiempo, sin culpar a nadie.', 'Atacas a una persona; frenas un problema.'),
+  ('45758e8b-a6cf-4ce5-abb2-aa7b932e170a', 'acallar', null, '«Acallar» es hacer que alguien deje de hablar; frenar un problema a tiempo quita la causa, no la voz.', 'Acallar tapa la boca; frenar a tiempo quita el motivo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -2988,10 +2988,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ff5901fe-fddd-491d-b611-e946d28ec70f', 'eludir', '«Eludir» es esquivar un asunto para no tratarlo; la otra palabra lo nombra de forma indirecta, pero lo nombra.', 'Eludir escapa del asunto; nombrarlo de lado lo pone en la mesa.'),
-  ('ff5901fe-fddd-491d-b611-e946d28ec70f', 'insinuar', '«Insinuar» deja caer una sospecha sin pruebas; la otra palabra solo evita el nombre de algo que todos conocen.', 'Insinuar siembra dudas; mencionar de lado ahorra nombres.');
+  ('ff5901fe-fddd-491d-b611-e946d28ec70f', 'eludir', 'c4f65ac4-652c-45eb-a0f9-e20f4b46429d', '«Eludir» es esquivar un asunto para no tratarlo; la otra palabra lo nombra de forma indirecta, pero lo nombra.', 'Eludir escapa del asunto; nombrarlo de lado lo pone en la mesa.'),
+  ('ff5901fe-fddd-491d-b611-e946d28ec70f', 'insinuar', 'cb6fd307-0b19-44d1-81e8-82ee8847ba2d', '«Insinuar» deja caer una sospecha sin pruebas; la otra palabra solo evita el nombre de algo que todos conocen.', 'Insinuar siembra dudas; mencionar de lado ahorra nombres.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -3204,10 +3204,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f3c37631-1d43-45c6-b825-59501ece3bff', 'sofocar', '«Sofocar» es apagar algo o quedarse sin aire; la otra palabra elige a qué parte mirar.', 'Sofocas un fuego; eliges dónde mirar.'),
-  ('f3c37631-1d43-45c6-b825-59501ece3bff', 'encarar', '«Encarar» es ponerse delante de una dificultad entera; la otra palabra elige una parte y aparta el resto.', 'Encaras el problema completo; eliges qué trozo mirar.');
+  ('f3c37631-1d43-45c6-b825-59501ece3bff', 'sofocar', null, '«Sofocar» es apagar algo o quedarse sin aire; la otra palabra elige a qué parte mirar.', 'Sofocas un fuego; eliges dónde mirar.'),
+  ('f3c37631-1d43-45c6-b825-59501ece3bff', 'encarar', null, '«Encarar» es ponerse delante de una dificultad entera; la otra palabra elige una parte y aparta el resto.', 'Encaras el problema completo; eliges qué trozo mirar.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -3420,10 +3420,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('0fd35c4c-c528-4b84-a01e-dae2e077e16c', 'lustrar', '«Lustrar» es sacar brillo a una superficie, como unos zapatos; la otra palabra explica una idea con un ejemplo.', 'Lustras zapatos; explicas con ejemplos.'),
-  ('0fd35c4c-c528-4b84-a01e-dae2e077e16c', 'ilusionar', '«Ilusionar» es despertar ganas y esperanza; la otra palabra busca que algo se entienda, no que emocione.', 'Ilusionas el ánimo; aclaras la cabeza.');
+  ('0fd35c4c-c528-4b84-a01e-dae2e077e16c', 'lustrar', null, '«Lustrar» es sacar brillo a una superficie, como unos zapatos; la otra palabra explica una idea con un ejemplo.', 'Lustras zapatos; explicas con ejemplos.'),
+  ('0fd35c4c-c528-4b84-a01e-dae2e077e16c', 'ilusionar', null, '«Ilusionar» es despertar ganas y esperanza; la otra palabra busca que algo se entienda, no que emocione.', 'Ilusionas el ánimo; aclaras la cabeza.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -3636,10 +3636,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4526094d-785a-45d4-9cab-7bc8401c714e', 'recargar', '«Recargar» es volver a llenar algo o ponerle demasiado encima; la otra palabra le da relieve a una idea, no peso.', 'Recargas una batería; destacas una idea.'),
-  ('4526094d-785a-45d4-9cab-7bc8401c714e', 'reprochar', '«Reprochar» echa algo en cara a una persona; la otra palabra solo insiste en una idea.', 'El reproche mira a la persona; la insistencia mira a la idea.');
+  ('4526094d-785a-45d4-9cab-7bc8401c714e', 'recargar', null, '«Recargar» es volver a llenar algo o ponerle demasiado encima; la otra palabra le da relieve a una idea, no peso.', 'Recargas una batería; destacas una idea.'),
+  ('4526094d-785a-45d4-9cab-7bc8401c714e', 'reprochar', '67651582-60ff-4771-8ea8-a1d257fd968d', '«Reprochar» echa algo en cara a una persona; la otra palabra solo insiste en una idea.', 'El reproche mira a la persona; la insistencia mira a la idea.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -3852,10 +3852,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('81a39f4e-96f9-4a5c-9e7e-46a1429e6b0e', 'titular', '«Titular» es poner un título o ser quien ocupa un puesto fijo; no tiene nada que ver con dudar al hablar.', 'Titulas un texto; dudas delante del micrófono.'),
-  ('81a39f4e-96f9-4a5c-9e7e-46a1429e6b0e', 'tutear', '«Tutear» es hablarle a alguien de tú; la otra palabra describe a quien se queda a medias por la duda.', 'Tutear elige el trato; dudar corta la frase.');
+  ('81a39f4e-96f9-4a5c-9e7e-46a1429e6b0e', 'titular', null, '«Titular» es poner un título o ser quien ocupa un puesto fijo; no tiene nada que ver con dudar al hablar.', 'Titulas un texto; dudas delante del micrófono.'),
+  ('81a39f4e-96f9-4a5c-9e7e-46a1429e6b0e', 'tutear', null, '«Tutear» es hablarle a alguien de tú; la otra palabra describe a quien se queda a medias por la duda.', 'Tutear elige el trato; dudar corta la frase.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -4026,10 +4026,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('3cb7f5b1-8ec4-4bc7-8d50-254f961d67d6', 'preciso', '«Preciso» dice que algo da en el dato exacto; la otra palabra dice que cabe todo lo necesario en poco espacio.', 'Preciso apunta al centro; lo breve y completo cabe en dos líneas.'),
-  ('3cb7f5b1-8ec4-4bc7-8d50-254f961d67d6', 'escueto', '«Escueto» subraya que no hay adorno y a veces suena seco; la otra palabra elogia que además se entienda a la primera.', 'Lo escueto te deja con hambre; lo breve y completo, no.');
+  ('3cb7f5b1-8ec4-4bc7-8d50-254f961d67d6', 'preciso', '09751c85-479a-4edb-9f70-da2d240434eb', '«Preciso» dice que algo da en el dato exacto; la otra palabra dice que cabe todo lo necesario en poco espacio.', 'Preciso apunta al centro; lo breve y completo cabe en dos líneas.'),
+  ('3cb7f5b1-8ec4-4bc7-8d50-254f961d67d6', 'escueto', null, '«Escueto» subraya que no hay adorno y a veces suena seco; la otra palabra elogia que además se entienda a la primera.', 'Lo escueto te deja con hambre; lo breve y completo, no.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -4221,10 +4221,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('e8faef12-ed7b-4836-9f09-96ca09206cf0', 'amable', '«Amable» describe a quien trata bien a los demás; la otra palabra describe algo que se escucha o se lee con gusto.', 'Amable es el trato; lo otro es el rato.'),
-  ('e8faef12-ed7b-4836-9f09-96ca09206cf0', 'gracioso', '«Gracioso» busca la risa; algo que se sigue con gusto no necesita ni un chiste.', 'Gracioso hace reír; lo otro hace que el tiempo vuele.');
+  ('e8faef12-ed7b-4836-9f09-96ca09206cf0', 'amable', null, '«Amable» describe a quien trata bien a los demás; la otra palabra describe algo que se escucha o se lee con gusto.', 'Amable es el trato; lo otro es el rato.'),
+  ('e8faef12-ed7b-4836-9f09-96ca09206cf0', 'gracioso', null, '«Gracioso» busca la risa; algo que se sigue con gusto no necesita ni un chiste.', 'Gracioso hace reír; lo otro hace que el tiempo vuele.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -4416,10 +4416,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4cbb0c48-602e-4c31-8b6c-11660597005f', 'captar', '«Captar» es recoger o entender algo; la otra palabra habla de sostener la atención de quien escucha.', 'Captas una señal; retienes a la sala.'),
-  ('4cbb0c48-602e-4c31-8b6c-11660597005f', 'impresionar', '«Impresionar» deja huella de golpe, muchas veces por el tamaño o el lujo; la otra palabra mantiene la atención todo el rato.', 'Impresionas un segundo; retienes media hora.');
+  ('4cbb0c48-602e-4c31-8b6c-11660597005f', 'captar', null, '«Captar» es recoger o entender algo; la otra palabra habla de sostener la atención de quien escucha.', 'Captas una señal; retienes a la sala.'),
+  ('4cbb0c48-602e-4c31-8b6c-11660597005f', 'impresionar', null, '«Impresionar» deja huella de golpe, muchas veces por el tamaño o el lujo; la otra palabra mantiene la atención todo el rato.', 'Impresionas un segundo; retienes media hora.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -4632,10 +4632,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('64c4200e-1216-4422-a8b6-97184719daa0', 'soltería', '«Soltería» es el estado de quien no se ha casado; la otra palabra habla de hacer algo con facilidad.', 'La soltería mira tu estado civil; la facilidad mira tus manos.'),
-  ('64c4200e-1216-4422-a8b6-97184719daa0', 'desparpajo', '«Desparpajo» añade un punto de atrevimiento y hasta de descaro; la otra palabra solo dice que sale fácil.', 'El desparpajo se atreve; la facilidad fluye.');
+  ('64c4200e-1216-4422-a8b6-97184719daa0', 'soltería', null, '«Soltería» es el estado de quien no se ha casado; la otra palabra habla de hacer algo con facilidad.', 'La soltería mira tu estado civil; la facilidad mira tus manos.'),
+  ('64c4200e-1216-4422-a8b6-97184719daa0', 'desparpajo', null, '«Desparpajo» añade un punto de atrevimiento y hasta de descaro; la otra palabra solo dice que sale fácil.', 'El desparpajo se atreve; la facilidad fluye.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -4848,10 +4848,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('71acdb5b-83f9-48ca-8f59-d93aa063204a', 'imponer', '«Imponer» es obligar a aceptar algo; la otra palabra solo presenta la idea para que los demás la juzguen.', 'Imponer obliga; presentar invita.'),
-  ('71acdb5b-83f9-48ca-8f59-d93aa063204a', 'posponer', '«Posponer» es dejar algo para más adelante; la otra palabra lo pone delante de la sala hoy.', 'Posponer retrasa; presentar enseña.');
+  ('71acdb5b-83f9-48ca-8f59-d93aa063204a', 'imponer', null, '«Imponer» es obligar a aceptar algo; la otra palabra solo presenta la idea para que los demás la juzguen.', 'Imponer obliga; presentar invita.'),
+  ('71acdb5b-83f9-48ca-8f59-d93aa063204a', 'posponer', null, '«Posponer» es dejar algo para más adelante; la otra palabra lo pone delante de la sala hoy.', 'Posponer retrasa; presentar enseña.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -5064,10 +5064,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('2883d2e9-f386-4998-8f6f-f912b95faffd', 'empeñar', '«Empeñar» es dejar algo como garantía para que te presten dinero, o insistir mucho en algo.', 'Empeñas un reloj; ocupas un puesto.'),
-  ('2883d2e9-f386-4998-8f6f-f912b95faffd', 'ejercer', '«Ejercer» se usa sobre todo con profesiones con título; la otra palabra vale para cualquier puesto o función.', 'Ejerces una profesión; ocupas un cargo.');
+  ('2883d2e9-f386-4998-8f6f-f912b95faffd', 'empeñar', null, '«Empeñar» es dejar algo como garantía para que te presten dinero, o insistir mucho en algo.', 'Empeñas un reloj; ocupas un puesto.'),
+  ('2883d2e9-f386-4998-8f6f-f912b95faffd', 'ejercer', null, '«Ejercer» se usa sobre todo con profesiones con título; la otra palabra vale para cualquier puesto o función.', 'Ejerces una profesión; ocupas un cargo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -5259,10 +5259,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f5d9ffd4-3596-4582-a437-179ee980d799', 'trayecto', '«Trayecto» es el camino entre dos puntos, como el del autobús; la otra palabra habla de años de trabajo.', 'El trayecto dura una hora; el recorrido profesional dura años.'),
-  ('f5d9ffd4-3596-4582-a437-179ee980d799', 'currículo', '«Currículo» es el papel donde se escribe todo; la otra palabra es el recorrido en sí, lo hayas escrito o no.', 'El currículo se imprime; el recorrido se vive.');
+  ('f5d9ffd4-3596-4582-a437-179ee980d799', 'trayecto', null, '«Trayecto» es el camino entre dos puntos, como el del autobús; la otra palabra habla de años de trabajo.', 'El trayecto dura una hora; el recorrido profesional dura años.'),
+  ('f5d9ffd4-3596-4582-a437-179ee980d799', 'currículo', null, '«Currículo» es el papel donde se escribe todo; la otra palabra es el recorrido en sí, lo hayas escrito o no.', 'El currículo se imprime; el recorrido se vive.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -5475,10 +5475,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('0350b6a1-30da-46dc-aaa7-93875ce8ef0c', 'idílico', '«Idílico» describe un lugar o una escena preciosa y tranquila; la otra palabra dice que algo encaja con lo que se necesita.', 'Idílico es una playa al atardecer; lo otro es la persona que buscabas.'),
-  ('0350b6a1-30da-46dc-aaa7-93875ce8ef0c', 'único', '«Único» dice que no hay otro; la otra palabra dice que encaja bien, aunque existan más opciones.', 'Único no tiene rival; encajar no exige estar solo.');
+  ('0350b6a1-30da-46dc-aaa7-93875ce8ef0c', 'idílico', null, '«Idílico» describe un lugar o una escena preciosa y tranquila; la otra palabra dice que algo encaja con lo que se necesita.', 'Idílico es una playa al atardecer; lo otro es la persona que buscabas.'),
+  ('0350b6a1-30da-46dc-aaa7-93875ce8ef0c', 'único', null, '«Único» dice que no hay otro; la otra palabra dice que encaja bien, aunque existan más opciones.', 'Único no tiene rival; encajar no exige estar solo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -5670,10 +5670,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a899b1bd-3664-4a79-ba82-e384306d5c15', 'voluble', '«Voluble» describe a quien cambia de ánimo o de idea sin motivo; la otra palabra elogia a quien vale para funciones distintas.', 'Voluble cambia de humor; lo otro cambia de función.'),
-  ('a899b1bd-3664-4a79-ba82-e384306d5c15', 'versado', '«Versado» dice que alguien sabe mucho de un tema concreto; la otra palabra dice que vale para varios.', 'Versado domina uno; lo otro sirve para varios.');
+  ('a899b1bd-3664-4a79-ba82-e384306d5c15', 'voluble', null, '«Voluble» describe a quien cambia de ánimo o de idea sin motivo; la otra palabra elogia a quien vale para funciones distintas.', 'Voluble cambia de humor; lo otro cambia de función.'),
+  ('a899b1bd-3664-4a79-ba82-e384306d5c15', 'versado', null, '«Versado» dice que alguien sabe mucho de un tema concreto; la otra palabra dice que vale para varios.', 'Versado domina uno; lo otro sirve para varios.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -5886,10 +5886,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('6d68a8eb-ca3d-4726-91f8-a1f5939a3134', 'indignar', '«Indignar» es provocar enfado por algo injusto; la otra palabra solo busca información.', 'Indignar enfada; preguntar informa.'),
-  ('6d68a8eb-ca3d-4726-91f8-a1f5939a3134', 'interrogar', '«Interrogar» suena a sala cerrada y a sospecha; la otra palabra es buscar datos con normalidad.', 'Interrogas a un sospechoso; preguntas a quien sabe.');
+  ('6d68a8eb-ca3d-4726-91f8-a1f5939a3134', 'indignar', null, '«Indignar» es provocar enfado por algo injusto; la otra palabra solo busca información.', 'Indignar enfada; preguntar informa.'),
+  ('6d68a8eb-ca3d-4726-91f8-a1f5939a3134', 'interrogar', null, '«Interrogar» suena a sala cerrada y a sospecha; la otra palabra es buscar datos con normalidad.', 'Interrogas a un sospechoso; preguntas a quien sabe.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -6102,10 +6102,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('594ee2ad-4c55-47f1-9935-74ad9597ce3d', 'alabar', '«Alabar» es decir cosas buenas de alguien; la otra palabra aporta pruebas o pone tu nombre como garantía.', 'Alabas con palabras; garantizas con pruebas.'),
-  ('594ee2ad-4c55-47f1-9935-74ad9597ce3d', 'evaluar', '«Evaluar» es juzgar desde fuera cuánto vale algo; la otra palabra es ponerse detrás para sostenerlo.', 'Evalúas desde fuera; sostienes desde detrás.');
+  ('594ee2ad-4c55-47f1-9935-74ad9597ce3d', 'alabar', null, '«Alabar» es decir cosas buenas de alguien; la otra palabra aporta pruebas o pone tu nombre como garantía.', 'Alabas con palabras; garantizas con pruebas.'),
+  ('594ee2ad-4c55-47f1-9935-74ad9597ce3d', 'evaluar', null, '«Evaluar» es juzgar desde fuera cuánto vale algo; la otra palabra es ponerse detrás para sostenerlo.', 'Evalúas desde fuera; sostienes desde detrás.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -6318,10 +6318,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f65ae938-f92d-4d92-802e-d3e1e48cc606', 'afán', '«Afán» es el empeño grande por conseguir algo; la otra palabra dice que dos cosas van en la misma dirección.', 'El afán empuja; el parecido acerca.'),
-  ('f65ae938-f92d-4d92-802e-d3e1e48cc606', 'idéntico', '«Idéntico» dice que dos cosas son exactamente iguales; la otra palabra admite diferencias mientras el rumbo coincida.', 'Idéntico es una copia; parecido es un compañero de rumbo.');
+  ('f65ae938-f92d-4d92-802e-d3e1e48cc606', 'afán', null, '«Afán» es el empeño grande por conseguir algo; la otra palabra dice que dos cosas van en la misma dirección.', 'El afán empuja; el parecido acerca.'),
+  ('f65ae938-f92d-4d92-802e-d3e1e48cc606', 'idéntico', null, '«Idéntico» dice que dos cosas son exactamente iguales; la otra palabra admite diferencias mientras el rumbo coincida.', 'Idéntico es una copia; parecido es un compañero de rumbo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -6534,10 +6534,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('8f3b95ea-edd1-4b20-a409-b01ce63741c7', 'enseñar', '«Enseñar» es mostrar algo o explicárselo a otra persona; la otra palabra es practicar tú antes del momento real.', 'Enseñas a otro; practicas para ti.'),
-  ('8f3b95ea-edd1-4b20-a409-b01ce63741c7', 'improvisar', '«Improvisar» es hacerlo sin ninguna preparación; la otra palabra es justo la preparación previa.', 'Improvisar llega sin plan; practicar llega con plan.');
+  ('8f3b95ea-edd1-4b20-a409-b01ce63741c7', 'enseñar', null, '«Enseñar» es mostrar algo o explicárselo a otra persona; la otra palabra es practicar tú antes del momento real.', 'Enseñas a otro; practicas para ti.'),
+  ('8f3b95ea-edd1-4b20-a409-b01ce63741c7', 'improvisar', '5a454cb7-38d6-4010-84bd-3dcc69d22c4c', '«Improvisar» es hacerlo sin ninguna preparación; la otra palabra es justo la preparación previa.', 'Improvisar llega sin plan; practicar llega con plan.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -6750,10 +6750,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('6ad1c465-f124-49a6-b481-f2f113ae91b8', 'constatar', '«Constatar» es comprobar que algo es cierto; la otra palabra pone dos cosas una al lado de la otra para ver la diferencia.', 'Constatas un hecho; comparas dos.'),
-  ('6ad1c465-f124-49a6-b481-f2f113ae91b8', 'contrarrestar', '«Contrarrestar» es compensar un efecto con otro; la otra palabra solo compara, no compensa nada.', 'Contrarrestar equilibra; comparar mide.');
+  ('6ad1c465-f124-49a6-b481-f2f113ae91b8', 'constatar', '1756a4b4-a6e8-44fc-a0af-66ed80db4fcc', '«Constatar» es comprobar que algo es cierto; la otra palabra pone dos cosas una al lado de la otra para ver la diferencia.', 'Constatas un hecho; comparas dos.'),
+  ('6ad1c465-f124-49a6-b481-f2f113ae91b8', 'contrarrestar', null, '«Contrarrestar» es compensar un efecto con otro; la otra palabra solo compara, no compensa nada.', 'Contrarrestar equilibra; comparar mide.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -6945,10 +6945,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('1e4df0fb-a348-4d9c-8e08-559605ef150b', 'aumentar', '«Aumentar» es hacer algo más grande o más numeroso; la otra palabra da razones para sostener una idea.', 'Aumentas una cifra; sostienes una idea con razones.'),
-  ('1e4df0fb-a348-4d9c-8e08-559605ef150b', 'discutir', '«Discutir» puede acabar en pelea; dar razones ordenadas busca convencer sin levantar la voz.', 'Discutir sube el tono; razonar baja el ruido.');
+  ('1e4df0fb-a348-4d9c-8e08-559605ef150b', 'aumentar', null, '«Aumentar» es hacer algo más grande o más numeroso; la otra palabra da razones para sostener una idea.', 'Aumentas una cifra; sostienes una idea con razones.'),
+  ('1e4df0fb-a348-4d9c-8e08-559605ef150b', 'discutir', null, '«Discutir» puede acabar en pelea; dar razones ordenadas busca convencer sin levantar la voz.', 'Discutir sube el tono; razonar baja el ruido.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -7161,10 +7161,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('2182eceb-a3c2-45db-a288-c42de93ea44a', 'bordear', '«Bordear» es pasar por el borde de algo sin entrar; la otra palabra significa entrar de lleno en el asunto.', 'Quien bordea da la vuelta; quien aborda entra.'),
-  ('2182eceb-a3c2-45db-a288-c42de93ea44a', 'aportar', '«Aportar» es dar algo útil a un grupo, como una idea o un dato; no tiene que ver con abrir una conversación.', 'Aportas lo que traes; abordas lo que abres.');
+  ('2182eceb-a3c2-45db-a288-c42de93ea44a', 'bordear', null, '«Bordear» es pasar por el borde de algo sin entrar; la otra palabra significa entrar de lleno en el asunto.', 'Quien bordea da la vuelta; quien aborda entra.'),
+  ('2182eceb-a3c2-45db-a288-c42de93ea44a', 'aportar', null, '«Aportar» es dar algo útil a un grupo, como una idea o un dato; no tiene que ver con abrir una conversación.', 'Aportas lo que traes; abordas lo que abres.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -7377,10 +7377,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ed58e345-b874-4dfc-a928-bdfb4f8b5d9c', 'tino', '«Tino» es acertar al elegir o al calcular; la otra palabra habla del cuidado con que se dicen las cosas.', 'El tino acierta; el tacto no hiere.'),
-  ('ed58e345-b874-4dfc-a928-bdfb4f8b5d9c', 'contacto', '«Contacto» es el roce o la relación entre dos partes; aquí se habla de cómo se eligen las palabras.', 'El contacto une; el tacto cuida.');
+  ('ed58e345-b874-4dfc-a928-bdfb4f8b5d9c', 'tino', null, '«Tino» es acertar al elegir o al calcular; la otra palabra habla del cuidado con que se dicen las cosas.', 'El tino acierta; el tacto no hiere.'),
+  ('ed58e345-b874-4dfc-a928-bdfb4f8b5d9c', 'contacto', null, '«Contacto» es el roce o la relación entre dos partes; aquí se habla de cómo se eligen las palabras.', 'El contacto une; el tacto cuida.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -7572,10 +7572,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('c4f65ac4-652c-45eb-a0f9-e20f4b46429d', 'aludir', '«Aludir» es mencionar algo de pasada, aunque sea sin nombrarlo; la otra palabra significa escapar de ello.', 'Quien alude lo nombra; quien elude lo esquiva.'),
-  ('c4f65ac4-652c-45eb-a0f9-e20f4b46429d', 'excluir', '«Excluir» es dejar algo o a alguien fuera de un grupo; aquí nadie queda fuera, solo se escapa de un asunto.', 'Excluyes a quien dejas fuera; eludes lo que no quieres tocar.');
+  ('c4f65ac4-652c-45eb-a0f9-e20f4b46429d', 'aludir', 'ff5901fe-fddd-491d-b611-e946d28ec70f', '«Aludir» es mencionar algo de pasada, aunque sea sin nombrarlo; la otra palabra significa escapar de ello.', 'Quien alude lo nombra; quien elude lo esquiva.'),
+  ('c4f65ac4-652c-45eb-a0f9-e20f4b46429d', 'excluir', null, '«Excluir» es dejar algo o a alguien fuera de un grupo; aquí nadie queda fuera, solo se escapa de un asunto.', 'Excluyes a quien dejas fuera; eludes lo que no quieres tocar.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -7788,10 +7788,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('cb6fd307-0b19-44d1-81e8-82ee8847ba2d', 'insistir', '«Insistir» es repetir algo hasta que se oiga; la otra palabra es dejarlo caer una vez y esperar a que lo capten.', 'Quien insiste repite; quien insinúa deja caer.'),
-  ('cb6fd307-0b19-44d1-81e8-82ee8847ba2d', 'intuir', '«Intuir» es darse cuenta de algo por dentro, sin pruebas; aquí alguien lanza la idea hacia fuera, a medias.', 'Intuyes lo que recibes; insinúas lo que lanzas.');
+  ('cb6fd307-0b19-44d1-81e8-82ee8847ba2d', 'insistir', null, '«Insistir» es repetir algo hasta que se oiga; la otra palabra es dejarlo caer una vez y esperar a que lo capten.', 'Quien insiste repite; quien insinúa deja caer.'),
+  ('cb6fd307-0b19-44d1-81e8-82ee8847ba2d', 'intuir', null, '«Intuir» es darse cuenta de algo por dentro, sin pruebas; aquí alguien lanza la idea hacia fuera, a medias.', 'Intuyes lo que recibes; insinúas lo que lanzas.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -8004,10 +8004,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('28b9d9e9-3526-4520-9ff7-3281e8f8bdc0', 'tentar', '«Tentar» es despertar en alguien las ganas de algo; la otra palabra es explorar con cuidado cómo va a reaccionar.', 'Te tienta lo que deseas; tanteas lo que exploras.'),
-  ('28b9d9e9-3526-4520-9ff7-3281e8f8bdc0', 'sondear', '«Sondear» se usa sobre todo con grupos, encuestas y cifras; lo otro cabe en una charla con una sola persona.', 'Sondeas a cien; tanteas a uno.');
+  ('28b9d9e9-3526-4520-9ff7-3281e8f8bdc0', 'tentar', null, '«Tentar» es despertar en alguien las ganas de algo; la otra palabra es explorar con cuidado cómo va a reaccionar.', 'Te tienta lo que deseas; tanteas lo que exploras.'),
+  ('28b9d9e9-3526-4520-9ff7-3281e8f8bdc0', 'sondear', null, '«Sondear» se usa sobre todo con grupos, encuestas y cifras; lo otro cabe en una charla con una sola persona.', 'Sondeas a cien; tanteas a uno.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -8220,10 +8220,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('06d4f606-d6f1-4101-9ec2-05bbdff50008', 'apagar', '«Apagar» es dejar sin luz o sin fuego algo material; la otra palabra baja la tensión de una persona alterada.', 'Apagas lo que arde; apaciguas a quien se altera.'),
-  ('06d4f606-d6f1-4101-9ec2-05bbdff50008', 'aplacar', '«Aplacar» se usa con algo que crece por dentro, como el hambre o la furia; lo otro se dirige a alguien y a su enfado concreto.', 'Aplacas un impulso; apaciguas a una persona.');
+  ('06d4f606-d6f1-4101-9ec2-05bbdff50008', 'apagar', null, '«Apagar» es dejar sin luz o sin fuego algo material; la otra palabra baja la tensión de una persona alterada.', 'Apagas lo que arde; apaciguas a quien se altera.'),
+  ('06d4f606-d6f1-4101-9ec2-05bbdff50008', 'aplacar', null, '«Aplacar» se usa con algo que crece por dentro, como el hambre o la furia; lo otro se dirige a alguien y a su enfado concreto.', 'Aplacas un impulso; apaciguas a una persona.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -8415,10 +8415,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('98bb8617-46d5-4eff-9d2a-a01c9c248798', 'alegar', '«Alegar» es dar una razón para defenderse o justificarse; la otra palabra es decirle a alguien algo bueno que le gusta oír.', 'Alegas para defenderte; halagas para reconocer.'),
-  ('98bb8617-46d5-4eff-9d2a-a01c9c248798', 'adular', '«Adular» es elogiar de más para conseguir algo a cambio; lo otro es reconocer de verdad y sin segunda intención.', 'Quien adula busca algo; quien halaga reconoce.');
+  ('98bb8617-46d5-4eff-9d2a-a01c9c248798', 'alegar', null, '«Alegar» es dar una razón para defenderse o justificarse; la otra palabra es decirle a alguien algo bueno que le gusta oír.', 'Alegas para defenderte; halagas para reconocer.'),
+  ('98bb8617-46d5-4eff-9d2a-a01c9c248798', 'adular', null, '«Adular» es elogiar de más para conseguir algo a cambio; lo otro es reconocer de verdad y sin segunda intención.', 'Quien adula busca algo; quien halaga reconoce.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -8631,10 +8631,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('1202119c-d25d-4512-8871-037133f26bca', 'implacable', '«Implacable» describe a quien no cede ni perdona, o a algo que no da tregua; la otra palabra dice que algo salió sin un solo fallo.', 'Lo implacable no perdona; lo impecable no falla.'),
-  ('1202119c-d25d-4512-8871-037133f26bca', 'intachable', '«Intachable» se dice de la conducta de alguien a lo largo de los años; lo otro cabe también para un resultado de esta misma mañana.', 'Intachable es una vida; impecable puede ser una tarde.');
+  ('1202119c-d25d-4512-8871-037133f26bca', 'implacable', null, '«Implacable» describe a quien no cede ni perdona, o a algo que no da tregua; la otra palabra dice que algo salió sin un solo fallo.', 'Lo implacable no perdona; lo impecable no falla.'),
+  ('1202119c-d25d-4512-8871-037133f26bca', 'intachable', null, '«Intachable» se dice de la conducta de alguien a lo largo de los años; lo otro cabe también para un resultado de esta misma mañana.', 'Intachable es una vida; impecable puede ser una tarde.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -8847,10 +8847,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('50018e17-50d8-4db1-90ad-12e3f63c99e1', 'empeño', '«Empeño» es la fuerza con que alguien persigue algo; la otra palabra es el cuidado con que lo hace mientras lo hace.', 'El empeño empuja; el esmero pule.'),
-  ('50018e17-50d8-4db1-90ad-12e3f63c99e1', 'afán', '«Afán» habla de las ganas y de la prisa por conseguir algo; aquí se mide el cuidado, no la urgencia.', 'El afán corre; el esmero se detiene.');
+  ('50018e17-50d8-4db1-90ad-12e3f63c99e1', 'empeño', null, '«Empeño» es la fuerza con que alguien persigue algo; la otra palabra es el cuidado con que lo hace mientras lo hace.', 'El empeño empuja; el esmero pule.'),
+  ('50018e17-50d8-4db1-90ad-12e3f63c99e1', 'afán', null, '«Afán» habla de las ganas y de la prisa por conseguir algo; aquí se mide el cuidado, no la urgencia.', 'El afán corre; el esmero se detiene.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -9021,10 +9021,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('bbe9898a-f790-48d6-87e6-361822b51333', 'insistencia', '«Insistencia» es repetir lo mismo hasta cansar a alguien; la otra palabra es mantener un hábito propio sin molestar a nadie.', 'La insistencia repite; la constancia sostiene.'),
-  ('bbe9898a-f790-48d6-87e6-361822b51333', 'terquedad', '«Terquedad» es no cambiar de idea aunque quede claro que no funciona; aquí se valora seguir con algo que sí avanza.', 'El terco no se mueve; el que tiene constancia avanza poco a poco.');
+  ('bbe9898a-f790-48d6-87e6-361822b51333', 'insistencia', null, '«Insistencia» es repetir lo mismo hasta cansar a alguien; la otra palabra es mantener un hábito propio sin molestar a nadie.', 'La insistencia repite; la constancia sostiene.'),
+  ('bbe9898a-f790-48d6-87e6-361822b51333', 'terquedad', null, '«Terquedad» es no cambiar de idea aunque quede claro que no funciona; aquí se valora seguir con algo que sí avanza.', 'El terco no se mueve; el que tiene constancia avanza poco a poco.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -9237,10 +9237,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('215c78db-650a-4c5c-af3c-7918ffc491fc', 'afinado', '«Afinado» es ajustado en el tono, como un instrumento o una voz; la otra palabra dice que algo da justo en el punto.', 'Lo afinado suena bien; lo atinado da en el punto.'),
-  ('215c78db-650a-4c5c-af3c-7918ffc491fc', 'obstinado', '«Obstinado» describe a quien no cambia de idea aunque no funcione; aquí se elogia haber acertado, no haber insistido.', 'El obstinado repite; lo atinado acierta.');
+  ('215c78db-650a-4c5c-af3c-7918ffc491fc', 'afinado', null, '«Afinado» es ajustado en el tono, como un instrumento o una voz; la otra palabra dice que algo da justo en el punto.', 'Lo afinado suena bien; lo atinado da en el punto.'),
+  ('215c78db-650a-4c5c-af3c-7918ffc491fc', 'obstinado', null, '«Obstinado» describe a quien no cambia de idea aunque no funcione; aquí se elogia haber acertado, no haber insistido.', 'El obstinado repite; lo atinado acierta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -9453,10 +9453,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('963da377-c4db-44d6-afb9-19824efb3b51', 'declarar', '«Declarar» es decir algo en voz alta y dejarlo claro ante otros; la otra palabra es no aceptar algo que te ofrecen.', 'Declaras lo que afirmas; declinas lo que no aceptas.'),
-  ('963da377-c4db-44d6-afb9-19824efb3b51', 'desistir', '«Desistir» es dejar algo que ya habías empezado; aquí se dice que no antes de empezar nada.', 'Desistes de lo tuyo; declinas lo que te ofrecen.');
+  ('963da377-c4db-44d6-afb9-19824efb3b51', 'declarar', null, '«Declarar» es decir algo en voz alta y dejarlo claro ante otros; la otra palabra es no aceptar algo que te ofrecen.', 'Declaras lo que afirmas; declinas lo que no aceptas.'),
+  ('963da377-c4db-44d6-afb9-19824efb3b51', 'desistir', '7df846cc-348d-468a-832a-4ba96a410f86', '«Desistir» es dejar algo que ya habías empezado; aquí se dice que no antes de empezar nada.', 'Desistes de lo tuyo; declinas lo que te ofrecen.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -9669,10 +9669,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('d84b97a4-8449-4fc4-b6ef-3970874ba68a', 'acaparar', '«Acaparar» es quedarse con algo para uno solo, quitándoselo a los demás; la otra palabra mide cuánto puedes atender tú.', 'Quien acapara no comparte; quien abarca alcanza.'),
-  ('d84b97a4-8449-4fc4-b6ef-3970874ba68a', 'abarrotar', '«Abarrotar» es llenar un espacio hasta arriba, como una sala o un armario; aquí se habla de cuántas cosas caben en tu semana.', 'Se abarrota una sala; se abarca una agenda.');
+  ('d84b97a4-8449-4fc4-b6ef-3970874ba68a', 'acaparar', null, '«Acaparar» es quedarse con algo para uno solo, quitándoselo a los demás; la otra palabra mide cuánto puedes atender tú.', 'Quien acapara no comparte; quien abarca alcanza.'),
+  ('d84b97a4-8449-4fc4-b6ef-3970874ba68a', 'abarrotar', null, '«Abarrotar» es llenar un espacio hasta arriba, como una sala o un armario; aquí se habla de cuántas cosas caben en tu semana.', 'Se abarrota una sala; se abarca una agenda.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -9885,10 +9885,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('1f4e2320-5ad9-493b-8321-22e01afc4856', 'postrar', '«Postrar» es dejar a alguien sin fuerzas o de rodillas; la otra palabra solo mueve algo a otro día.', 'Te postras de rodillas; postergas una fecha.'),
-  ('1f4e2320-5ad9-493b-8321-22e01afc4856', 'cancelar', '«Cancelar» quita algo del calendario para siempre; aquí la cita sigue existiendo, solo cambia de día.', 'Lo cancelado desaparece; lo postergado vuelve.');
+  ('1f4e2320-5ad9-493b-8321-22e01afc4856', 'postrar', null, '«Postrar» es dejar a alguien sin fuerzas o de rodillas; la otra palabra solo mueve algo a otro día.', 'Te postras de rodillas; postergas una fecha.'),
+  ('1f4e2320-5ad9-493b-8321-22e01afc4856', 'cancelar', null, '«Cancelar» quita algo del calendario para siempre; aquí la cita sigue existiendo, solo cambia de día.', 'Lo cancelado desaparece; lo postergado vuelve.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -10080,10 +10080,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f0a69bb0-9b0b-4677-844d-7cb36a179d88', 'bordar', '«Bordar» algo es hacerlo perfecto, sin un fallo; la otra palabra dice que alguien ya no puede con la carga.', 'Quien lo borda lo clava; a quien lo desborda ya no le cabe.'),
-  ('f0a69bb0-9b0b-4677-844d-7cb36a179d88', 'desbaratar', '«Desbaratar» es echar a perder un plan; aquí nadie rompe nada, simplemente ya no cabe una cosa más.', 'Se desbarata un plan; se desborda una persona.');
+  ('f0a69bb0-9b0b-4677-844d-7cb36a179d88', 'bordar', null, '«Bordar» algo es hacerlo perfecto, sin un fallo; la otra palabra dice que alguien ya no puede con la carga.', 'Quien lo borda lo clava; a quien lo desborda ya no le cabe.'),
+  ('f0a69bb0-9b0b-4677-844d-7cb36a179d88', 'desbaratar', null, '«Desbaratar» es echar a perder un plan; aquí nadie rompe nada, simplemente ya no cabe una cosa más.', 'Se desbarata un plan; se desborda una persona.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -10296,10 +10296,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b2a408ac-367e-4e92-a3e2-4fddd4c7a6ca', 'someterse', '«Someterse» es aceptar la voluntad de otro y obedecerla; la otra palabra es dar tu palabra por decisión propia.', 'Quien se somete obedece; quien se compromete elige.'),
-  ('b2a408ac-367e-4e92-a3e2-4fddd4c7a6ca', 'implicarse', '«Implicarse» es poner interés y esfuerzo en algo; aquí además se da una fecha o una palabra que alguien puede reclamar.', 'Te implicas con ganas; te comprometes con fecha.');
+  ('b2a408ac-367e-4e92-a3e2-4fddd4c7a6ca', 'someterse', null, '«Someterse» es aceptar la voluntad de otro y obedecerla; la otra palabra es dar tu palabra por decisión propia.', 'Quien se somete obedece; quien se compromete elige.'),
+  ('b2a408ac-367e-4e92-a3e2-4fddd4c7a6ca', 'implicarse', null, '«Implicarse» es poner interés y esfuerzo en algo; aquí además se da una fecha o una palabra que alguien puede reclamar.', 'Te implicas con ganas; te comprometes con fecha.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -10512,10 +10512,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b68aa838-e8f5-44e6-8fc9-401a82b5f145', 'plazo', '«Plazo» es la fecha límite de algo; la otra palabra mide el espacio libre que te queda antes de esa fecha.', 'El plazo marca el día; el margen mide lo que te queda.'),
-  ('b68aa838-e8f5-44e6-8fc9-401a82b5f145', 'marco', '«Marco» es el borde que rodea algo o el conjunto de reglas de una situación; aquí se habla del espacio libre disponible.', 'El marco encierra; el margen deja aire.');
+  ('b68aa838-e8f5-44e6-8fc9-401a82b5f145', 'plazo', null, '«Plazo» es la fecha límite de algo; la otra palabra mide el espacio libre que te queda antes de esa fecha.', 'El plazo marca el día; el margen mide lo que te queda.'),
+  ('b68aa838-e8f5-44e6-8fc9-401a82b5f145', 'marco', null, '«Marco» es el borde que rodea algo o el conjunto de reglas de una situación; aquí se habla del espacio libre disponible.', 'El marco encierra; el margen deja aire.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -10728,10 +10728,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('51fd57f1-e241-4564-accb-3774e87320ee', 'quisquilloso', '«Quisquilloso» es quien se enfada por cualquier detalle pequeño; la otra palabra elogia a quien revisa cada detalle.', 'El quisquilloso protesta; el minucioso revisa.'),
-  ('51fd57f1-e241-4564-accb-3774e87320ee', 'lento', '«Lento» habla solo del tiempo que se tarda; aquí se describe cuánto se revisa, no cuánto se tarda.', 'Lento mira el reloj; minucioso mira la lista.');
+  ('51fd57f1-e241-4564-accb-3774e87320ee', 'quisquilloso', null, '«Quisquilloso» es quien se enfada por cualquier detalle pequeño; la otra palabra elogia a quien revisa cada detalle.', 'El quisquilloso protesta; el minucioso revisa.'),
+  ('51fd57f1-e241-4564-accb-3774e87320ee', 'lento', null, '«Lento» habla solo del tiempo que se tarda; aquí se describe cuánto se revisa, no cuánto se tarda.', 'Lento mira el reloj; minucioso mira la lista.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -10944,10 +10944,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('5e442d2e-f013-4e64-b2ff-d6850c0951a8', 'sensible', '«Sensible» describe a quien se emociona con facilidad o nota lo que otros no notan; la otra palabra habla del buen juicio al decidir.', 'El sensible siente; el sensato piensa.'),
-  ('5e442d2e-f013-4e64-b2ff-d6850c0951a8', 'sensacional', '«Sensacional» dice que algo impresiona mucho; aquí se valora el buen juicio, no el golpe de efecto.', 'Lo sensacional deslumbra; lo sensato aguanta.');
+  ('5e442d2e-f013-4e64-b2ff-d6850c0951a8', 'sensible', null, '«Sensible» describe a quien se emociona con facilidad o nota lo que otros no notan; la otra palabra habla del buen juicio al decidir.', 'El sensible siente; el sensato piensa.'),
+  ('5e442d2e-f013-4e64-b2ff-d6850c0951a8', 'sensacional', null, '«Sensacional» dice que algo impresiona mucho; aquí se valora el buen juicio, no el golpe de efecto.', 'Lo sensacional deslumbra; lo sensato aguanta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -11160,10 +11160,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('c14b58a0-eeda-462c-96cb-8baf64b1b362', 'antídoto', '«Antídoto» es lo que corta el efecto de algo malo; la otra palabra es una historia corta que de verdad ocurrió.', 'El antídoto cura; la anécdota se cuenta.'),
-  ('c14b58a0-eeda-462c-96cb-8baf64b1b362', 'chiste', '«Chiste» es inventado y busca la risa; aquí la historia pasó de verdad, aunque además haga gracia.', 'El chiste se inventa; la anécdota se vivió.');
+  ('c14b58a0-eeda-462c-96cb-8baf64b1b362', 'antídoto', null, '«Antídoto» es lo que corta el efecto de algo malo; la otra palabra es una historia corta que de verdad ocurrió.', 'El antídoto cura; la anécdota se cuenta.'),
+  ('c14b58a0-eeda-462c-96cb-8baf64b1b362', 'chiste', null, '«Chiste» es inventado y busca la risa; aquí la historia pasó de verdad, aunque además haga gracia.', 'El chiste se inventa; la anécdota se vivió.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -11376,10 +11376,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f394b592-c8ed-4df1-a506-5459caabe843', 'improvisado', '«Improvisado» es lo que haces sobre la marcha, sin preparar; la otra palabra es lo que te ocurre sin haberlo llamado.', 'Lo improvisado lo haces tú; el imprevisto te pasa a ti.'),
-  ('f394b592-c8ed-4df1-a506-5459caabe843', 'contratiempo', '«Contratiempo» subraya el estorbo y el retraso; aquí solo se dice que no estaba en el plan, y a veces hasta es bueno.', 'El contratiempo molesta; el imprevisto solo aparece.');
+  ('f394b592-c8ed-4df1-a506-5459caabe843', 'improvisado', '5a454cb7-38d6-4010-84bd-3dcc69d22c4c', '«Improvisado» es lo que haces sobre la marcha, sin preparar; la otra palabra es lo que te ocurre sin haberlo llamado.', 'Lo improvisado lo haces tú; el imprevisto te pasa a ti.'),
+  ('f394b592-c8ed-4df1-a506-5459caabe843', 'contratiempo', null, '«Contratiempo» subraya el estorbo y el retraso; aquí solo se dice que no estaba en el plan, y a veces hasta es bueno.', 'El contratiempo molesta; el imprevisto solo aparece.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -11592,10 +11592,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4aada36c-979d-4baf-8755-134dffff0d05', 'ajedrez', '«Ajedrez» es el juego del tablero y las piezas; la otra palabra es el movimiento continuo de un día muy lleno.', 'El ajedrez se juega sentado; el ajetreo no te deja sentarte.'),
-  ('4aada36c-979d-4baf-8755-134dffff0d05', 'desorden', '«Desorden» es que las cosas no estén en su sitio; aquí lo que ocurre es que nada para quieto.', 'El desorden está quieto; el ajetreo se mueve.');
+  ('4aada36c-979d-4baf-8755-134dffff0d05', 'ajedrez', null, '«Ajedrez» es el juego del tablero y las piezas; la otra palabra es el movimiento continuo de un día muy lleno.', 'El ajedrez se juega sentado; el ajetreo no te deja sentarte.'),
+  ('4aada36c-979d-4baf-8755-134dffff0d05', 'desorden', null, '«Desorden» es que las cosas no estén en su sitio; aquí lo que ocurre es que nada para quieto.', 'El desorden está quieto; el ajetreo se mueve.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -11808,10 +11808,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('8edc702d-9522-45e1-bc69-0b0ad241cb7c', 'incidir', '«Incidir» es influir en algo o insistir en un punto; la otra palabra es estar en el mismo sitio que alguien sin haberlo buscado.', 'Incides cuando influyes; coincides cuando te cruzas.'),
-  ('8edc702d-9522-45e1-bc69-0b0ad241cb7c', 'quedar', '«Quedar» con alguien es acordar antes la hora y el sitio; aquí el encuentro ocurre sin que nadie lo haya preparado.', 'Quedas porque lo decides; coincides porque pasa.');
+  ('8edc702d-9522-45e1-bc69-0b0ad241cb7c', 'incidir', null, '«Incidir» es influir en algo o insistir en un punto; la otra palabra es estar en el mismo sitio que alguien sin haberlo buscado.', 'Incides cuando influyes; coincides cuando te cruzas.'),
+  ('8edc702d-9522-45e1-bc69-0b0ad241cb7c', 'quedar', null, '«Quedar» con alguien es acordar antes la hora y el sitio; aquí el encuentro ocurre sin que nadie lo haya preparado.', 'Quedas porque lo decides; coincides porque pasa.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -12024,10 +12024,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ec7fcdc0-4ebe-48ed-97ef-c344b9759e3a', 'intratable', '«Intratable» describe a quien está de tan mal humor que no hay quien se le acerque; la otra palabra dice justo lo contrario.', 'Al intratable no te acercas; al entrañable no lo sueltas.'),
-  ('ec7fcdc0-4ebe-48ed-97ef-c344b9759e3a', 'agradable', '«Agradable» dice que algo se pasa bien en el momento; aquí además hay cariño y tiempo compartido detrás.', 'Lo agradable gusta hoy; lo entrañable se recuerda años.');
+  ('ec7fcdc0-4ebe-48ed-97ef-c344b9759e3a', 'intratable', null, '«Intratable» describe a quien está de tan mal humor que no hay quien se le acerque; la otra palabra dice justo lo contrario.', 'Al intratable no te acercas; al entrañable no lo sueltas.'),
+  ('ec7fcdc0-4ebe-48ed-97ef-c344b9759e3a', 'agradable', null, '«Agradable» dice que algo se pasa bien en el momento; aquí además hay cariño y tiempo compartido detrás.', 'Lo agradable gusta hoy; lo entrañable se recuerda años.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -12240,10 +12240,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4e053df6-0ed7-4a88-979f-ea7877615be8', 'distraído', '«Distraído» describe a quien tiene la cabeza en otro sitio; la otra palabra describe un ambiente sin tensión.', 'El distraído no se entera; lo distendido no aprieta.'),
-  ('4e053df6-0ed7-4a88-979f-ea7877615be8', 'aburrido', '«Aburrido» dice que no pasa nada que interese; aquí hay calma, y aun así la conversación funciona.', 'Lo aburrido no engancha; lo distendido no tensa.');
+  ('4e053df6-0ed7-4a88-979f-ea7877615be8', 'distraído', null, '«Distraído» describe a quien tiene la cabeza en otro sitio; la otra palabra describe un ambiente sin tensión.', 'El distraído no se entera; lo distendido no aprieta.'),
+  ('4e053df6-0ed7-4a88-979f-ea7877615be8', 'aburrido', null, '«Aburrido» dice que no pasa nada que interese; aquí hay calma, y aun así la conversación funciona.', 'Lo aburrido no engancha; lo distendido no tensa.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -12435,10 +12435,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('9a3b91bf-2109-45bb-91f1-a79f0c700a0f', 'acatar', '«Acatar» es cumplir una decisión que viene de otro; aquí las dos partes deciden juntas y las dos ceden algo.', 'Quien acata obedece; quien pacta negocia.'),
-  ('9a3b91bf-2109-45bb-91f1-a79f0c700a0f', 'captar', '«Captar» es entender una idea o atraer a alguien; no tiene nada que ver con cerrar un acuerdo.', 'Captas una idea; pactas una condición.');
+  ('9a3b91bf-2109-45bb-91f1-a79f0c700a0f', 'acatar', null, '«Acatar» es cumplir una decisión que viene de otro; aquí las dos partes deciden juntas y las dos ceden algo.', 'Quien acata obedece; quien pacta negocia.'),
+  ('9a3b91bf-2109-45bb-91f1-a79f0c700a0f', 'captar', null, '«Captar» es entender una idea o atraer a alguien; no tiene nada que ver con cerrar un acuerdo.', 'Captas una idea; pactas una condición.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -12630,10 +12630,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('508ee577-098c-48c2-bb1d-20e46f736c6b', 'visible', '«Visible» es lo que se ve a simple vista; esto mide si algo se puede hacer con los recursos que hay.', 'Lo visible se ve; lo viable se hace.'),
-  ('508ee577-098c-48c2-bb1d-20e46f736c6b', 'fiable', '«Fiable» es aquello en lo que confías porque no falla; aquí se mide si la cosa se puede llevar a cabo.', 'En lo fiable confías; lo viable lo sacas adelante.');
+  ('508ee577-098c-48c2-bb1d-20e46f736c6b', 'visible', null, '«Visible» es lo que se ve a simple vista; esto mide si algo se puede hacer con los recursos que hay.', 'Lo visible se ve; lo viable se hace.'),
+  ('508ee577-098c-48c2-bb1d-20e46f736c6b', 'fiable', null, '«Fiable» es aquello en lo que confías porque no falla; aquí se mide si la cosa se puede llevar a cabo.', 'En lo fiable confías; lo viable lo sacas adelante.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -12846,10 +12846,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ffb00d27-f805-4949-aa53-cea166da0dbf', 'confesión', 'Una «confesión» es contar algo que callabas; lo otro es ceder un punto dentro de un trato, y no tiene nada de secreto.', 'La confesión se cuenta; la concesión se entrega.'),
-  ('ffb00d27-f805-4949-aa53-cea166da0dbf', 'consenso', 'El «consenso» es el acuerdo al que llegan todos; una concesión es lo que cada parte pone para poder llegar ahí.', 'El consenso es el destino; la concesión, el peaje.');
+  ('ffb00d27-f805-4949-aa53-cea166da0dbf', 'confesión', null, 'Una «confesión» es contar algo que callabas; lo otro es ceder un punto dentro de un trato, y no tiene nada de secreto.', 'La confesión se cuenta; la concesión se entrega.'),
+  ('ffb00d27-f805-4949-aa53-cea166da0dbf', 'consenso', '10f0334d-7b6e-4dbd-9023-56c4171f33f7', 'El «consenso» es el acuerdo al que llegan todos; una concesión es lo que cada parte pone para poder llegar ahí.', 'El consenso es el destino; la concesión, el peaje.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -13041,10 +13041,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('3a84e86d-d99d-4de0-9433-68f6d7779aef', 'completar', '«Completar» es acabar de llenar algo que estaba a medias; lo otro es dejar un caso previsto desde el principio.', 'Completas lo que falta; contemplas lo que puede pasar.'),
-  ('3a84e86d-d99d-4de0-9433-68f6d7779aef', 'contentar', '«Contentar» es dejar satisfecha a una persona; aquí no hay nadie a quien agradar, hay un caso que prever.', 'Contentas a alguien; contemplas un caso.');
+  ('3a84e86d-d99d-4de0-9433-68f6d7779aef', 'completar', null, '«Completar» es acabar de llenar algo que estaba a medias; lo otro es dejar un caso previsto desde el principio.', 'Completas lo que falta; contemplas lo que puede pasar.'),
+  ('3a84e86d-d99d-4de0-9433-68f6d7779aef', 'contentar', null, '«Contentar» es dejar satisfecha a una persona; aquí no hay nadie a quien agradar, hay un caso que prever.', 'Contentas a alguien; contemplas un caso.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -13257,10 +13257,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('af2b7303-1cf9-416a-9e74-6c5fd2e67130', 'acondicionar', '«Acondicionar» es preparar un espacio o una cosa para que sirva; lo otro es hacer que algo dependa de un requisito.', 'Acondicionas una sala; condicionas un sí.'),
-  ('af2b7303-1cf9-416a-9e74-6c5fd2e67130', 'obligar', '«Obligar» no deja salida al otro; poner un requisito sí la deja, porque la otra parte puede aceptarlo o marcharse.', 'Quien obliga cierra la puerta; quien condiciona la deja entornada.');
+  ('af2b7303-1cf9-416a-9e74-6c5fd2e67130', 'acondicionar', null, '«Acondicionar» es preparar un espacio o una cosa para que sirva; lo otro es hacer que algo dependa de un requisito.', 'Acondicionas una sala; condicionas un sí.'),
+  ('af2b7303-1cf9-416a-9e74-6c5fd2e67130', 'obligar', null, '«Obligar» no deja salida al otro; poner un requisito sí la deja, porque la otra parte puede aceptarlo o marcharse.', 'Quien obliga cierra la puerta; quien condiciona la deja entornada.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -13452,10 +13452,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('6027c45c-0605-42b8-bdac-b5c2eb95f8ed', 'desgajar', '«Desgajar» es arrancar una parte de algo, como un gajo de una naranja; aquí nada se rompe, solo se muestra por partes.', 'Desgajas arrancando; desglosas ordenando.'),
-  ('6027c45c-0605-42b8-bdac-b5c2eb95f8ed', 'resumir', '«Resumir» deja menos información de la que había; separar un total en partes deja la misma, pero ordenada y a la vista.', 'Resumir encoge; desglosar despliega.');
+  ('6027c45c-0605-42b8-bdac-b5c2eb95f8ed', 'desgajar', null, '«Desgajar» es arrancar una parte de algo, como un gajo de una naranja; aquí nada se rompe, solo se muestra por partes.', 'Desgajas arrancando; desglosas ordenando.'),
+  ('6027c45c-0605-42b8-bdac-b5c2eb95f8ed', 'resumir', null, '«Resumir» deja menos información de la que había; separar un total en partes deja la misma, pero ordenada y a la vista.', 'Resumir encoge; desglosar despliega.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -13668,10 +13668,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('79655073-9b60-4e3e-aa11-dd80f5bb25b1', 'formular', '«Formular» es enunciar una pregunta o una propuesta; lo otro es darle carácter oficial a algo que ya se habló.', 'Formulas una pregunta; formalizas un acuerdo.'),
-  ('79655073-9b60-4e3e-aa11-dd80f5bb25b1', 'firmar', '«Firmar» es solo poner tu nombre; darle carácter oficial a un trato incluye fechas, condiciones y a veces varias firmas.', 'Firmar es un gesto; formalizar es el proceso entero.');
+  ('79655073-9b60-4e3e-aa11-dd80f5bb25b1', 'formular', null, '«Formular» es enunciar una pregunta o una propuesta; lo otro es darle carácter oficial a algo que ya se habló.', 'Formulas una pregunta; formalizas un acuerdo.'),
+  ('79655073-9b60-4e3e-aa11-dd80f5bb25b1', 'firmar', null, '«Firmar» es solo poner tu nombre; darle carácter oficial a un trato incluye fechas, condiciones y a veces varias firmas.', 'Firmar es un gesto; formalizar es el proceso entero.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -13884,10 +13884,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('0bddeaba-af5a-403d-93d1-696fd580d4f0', 'equivalente', '«Equivalente» dice que dos cosas valen lo mismo; lo otro califica un reparto hecho según lo que le corresponde a cada uno.', 'Equivalente compara valores; equitativo reparte con criterio.'),
-  ('0bddeaba-af5a-403d-93d1-696fd580d4f0', 'igualitario', '«Igualitario» da partes idénticas a todos; el otro reparto mira lo que aporta o necesita cada uno, y puede dar cantidades distintas.', 'Igualitario parte en dos; equitativo mide antes de partir.');
+  ('0bddeaba-af5a-403d-93d1-696fd580d4f0', 'equivalente', null, '«Equivalente» dice que dos cosas valen lo mismo; lo otro califica un reparto hecho según lo que le corresponde a cada uno.', 'Equivalente compara valores; equitativo reparte con criterio.'),
+  ('0bddeaba-af5a-403d-93d1-696fd580d4f0', 'igualitario', null, '«Igualitario» da partes idénticas a todos; el otro reparto mira lo que aporta o necesita cada uno, y puede dar cantidades distintas.', 'Igualitario parte en dos; equitativo mide antes de partir.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -14100,10 +14100,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('e7c95923-9539-4709-ad5d-40a0292bee02', 'relegar', '«Relegar» es apartar a alguien o dejarlo en segundo plano; lo otro le da trabajo y también el poder de decidir.', 'Relegas al fondo; delegas al frente.'),
-  ('e7c95923-9539-4709-ad5d-40a0292bee02', 'encargar', '«Encargar» es pedir que alguien haga algo concreto; aquí se cede además la decisión sobre cómo hacerlo.', 'Encargas el qué; delegas también el cómo.');
+  ('e7c95923-9539-4709-ad5d-40a0292bee02', 'relegar', null, '«Relegar» es apartar a alguien o dejarlo en segundo plano; lo otro le da trabajo y también el poder de decidir.', 'Relegas al fondo; delegas al frente.'),
+  ('e7c95923-9539-4709-ad5d-40a0292bee02', 'encargar', null, '«Encargar» es pedir que alguien haga algo concreto; aquí se cede además la decisión sobre cómo hacerlo.', 'Encargas el qué; delegas también el cómo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -14295,10 +14295,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('27db5a58-c559-47f7-9b76-74982e90e1d0', 'encausar', '«Encausar» es abrir un proceso judicial contra alguien; lo otro lleva una charla o un trabajo de vuelta a su camino.', 'Encausas a un acusado; encauzas un proyecto.'),
-  ('27db5a58-c559-47f7-9b76-74982e90e1d0', 'encajar', '«Encajar» es que dos piezas ajusten bien entre sí; aquí algo se estaba desviando y alguien lo devuelve a su sitio.', 'Encaja lo que ajusta; encauza lo que se desvía.');
+  ('27db5a58-c559-47f7-9b76-74982e90e1d0', 'encausar', null, '«Encausar» es abrir un proceso judicial contra alguien; lo otro lleva una charla o un trabajo de vuelta a su camino.', 'Encausas a un acusado; encauzas un proyecto.'),
+  ('27db5a58-c559-47f7-9b76-74982e90e1d0', 'encajar', null, '«Encajar» es que dos piezas ajusten bien entre sí; aquí algo se estaba desviando y alguien lo devuelve a su sitio.', 'Encaja lo que ajusta; encauza lo que se desvía.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -14490,10 +14490,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('8b3b0fcd-16fb-4819-9694-15141652ea88', 'receloso', '«Receloso» describe a quien desconfía y se pone en guardia; aquí alguien baja la guardia y escucha lo que le dicen.', 'El receloso se cierra; el receptivo se abre.'),
-  ('8b3b0fcd-16fb-4819-9694-15141652ea88', 'recesivo', '«Recesivo» es una palabra de biología para un rasgo que no se manifiesta; no dice nada sobre escuchar a nadie.', 'Recesivo se esconde; receptivo se abre.');
+  ('8b3b0fcd-16fb-4819-9694-15141652ea88', 'receloso', null, '«Receloso» describe a quien desconfía y se pone en guardia; aquí alguien baja la guardia y escucha lo que le dicen.', 'El receloso se cierra; el receptivo se abre.'),
+  ('8b3b0fcd-16fb-4819-9694-15141652ea88', 'recesivo', null, '«Recesivo» es una palabra de biología para un rasgo que no se manifiesta; no dice nada sobre escuchar a nadie.', 'Recesivo se esconde; receptivo se abre.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -14706,10 +14706,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4519fc4e-fd95-4304-9101-10b0e6272b40', 'indiferente', '«Indiferente» es a quien el asunto le da igual; aquí el asunto importa mucho, lo que no se hace es tomar partido.', 'Al indiferente le da igual; el imparcial se implica sin inclinarse.'),
-  ('4519fc4e-fd95-4304-9101-10b0e6272b40', 'impasible', '«Impasible» describe a quien no mueve un músculo ni muestra emoción; el otro adjetivo habla de cómo decide, no de su cara.', 'Impasible no se inmuta; imparcial no se inclina.');
+  ('4519fc4e-fd95-4304-9101-10b0e6272b40', 'indiferente', null, '«Indiferente» es a quien el asunto le da igual; aquí el asunto importa mucho, lo que no se hace es tomar partido.', 'Al indiferente le da igual; el imparcial se implica sin inclinarse.'),
+  ('4519fc4e-fd95-4304-9101-10b0e6272b40', 'impasible', null, '«Impasible» describe a quien no mueve un músculo ni muestra emoción; el otro adjetivo habla de cómo decide, no de su cara.', 'Impasible no se inmuta; imparcial no se inclina.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -14901,10 +14901,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('eff7b6de-d057-4fb9-9837-e60d386c392a', 'aleatorio', '«Aleatorio» es lo que sale al azar, sin que nadie elija; lo otro sí lo elige alguien, pero sin una regla detrás.', 'Lo aleatorio lo decide el azar; lo arbitrario lo decide un capricho.'),
-  ('eff7b6de-d057-4fb9-9837-e60d386c392a', 'autoritario', '«Autoritario» describe a quien manda sin escuchar; el otro adjetivo califica la decisión, que puede venir hasta de alguien muy amable.', 'Autoritario es el modo; arbitrario es el motivo.');
+  ('eff7b6de-d057-4fb9-9837-e60d386c392a', 'aleatorio', null, '«Aleatorio» es lo que sale al azar, sin que nadie elija; lo otro sí lo elige alguien, pero sin una regla detrás.', 'Lo aleatorio lo decide el azar; lo arbitrario lo decide un capricho.'),
+  ('eff7b6de-d057-4fb9-9837-e60d386c392a', 'autoritario', null, '«Autoritario» describe a quien manda sin escuchar; el otro adjetivo califica la decisión, que puede venir hasta de alguien muy amable.', 'Autoritario es el modo; arbitrario es el motivo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -15096,10 +15096,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ee10f865-558e-435e-a3c3-76bbead4668c', 'reformar', '«Reformar» es cambiar algo para que sea distinto; lo otro deja igual lo que hay y le da más fuerza.', 'Reformas cambiando; refuerzas sumando.'),
-  ('ee10f865-558e-435e-a3c3-76bbead4668c', 'repetir', '«Repetir» es decir lo mismo otra vez; dar fuerza a una idea puede pedir repetición, y también ejemplos, gente o dinero.', 'Repetir suena igual; reforzar suena más firme.');
+  ('ee10f865-558e-435e-a3c3-76bbead4668c', 'reformar', null, '«Reformar» es cambiar algo para que sea distinto; lo otro deja igual lo que hay y le da más fuerza.', 'Reformas cambiando; refuerzas sumando.'),
+  ('ee10f865-558e-435e-a3c3-76bbead4668c', 'repetir', null, '«Repetir» es decir lo mismo otra vez; dar fuerza a una idea puede pedir repetición, y también ejemplos, gente o dinero.', 'Repetir suena igual; reforzar suena más firme.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -15312,10 +15312,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7733024d-0f8f-4876-92eb-12d4dee68193', 'dirigente', '«Dirigente» es quien manda en un grupo o una organización; el otro adjetivo describe cómo trabaja alguien, no su cargo.', 'El dirigente manda; el diligente cumple.'),
-  ('7733024d-0f8f-4876-92eb-12d4dee68193', 'eficiente', '«Eficiente» mide el resultado logrado con pocos recursos; el otro describe la actitud: pronto y con cuidado, salga como salga.', 'Eficiente mide el resultado; diligente mide el modo.');
+  ('7733024d-0f8f-4876-92eb-12d4dee68193', 'dirigente', null, '«Dirigente» es quien manda en un grupo o una organización; el otro adjetivo describe cómo trabaja alguien, no su cargo.', 'El dirigente manda; el diligente cumple.'),
+  ('7733024d-0f8f-4876-92eb-12d4dee68193', 'eficiente', null, '«Eficiente» mide el resultado logrado con pocos recursos; el otro describe la actitud: pronto y con cuidado, salga como salga.', 'Eficiente mide el resultado; diligente mide el modo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -15528,10 +15528,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('5cedf1b8-9c98-4a81-aa84-909a399d013f', 'sistémico', '«Sistémico» dice que algo afecta a un conjunto entero; el otro dice que ocurre siempre del mismo modo.', 'Sistémico habla del alcance; sistemático, de la repetición.'),
-  ('5cedf1b8-9c98-4a81-aa84-909a399d013f', 'esporádico', '«Esporádico» es lo que ocurre de vez en cuando y sin patrón; el otro adjetivo describe justo lo contrario.', 'Lo esporádico sorprende; lo sistemático se puede predecir.');
+  ('5cedf1b8-9c98-4a81-aa84-909a399d013f', 'sistémico', null, '«Sistémico» dice que algo afecta a un conjunto entero; el otro dice que ocurre siempre del mismo modo.', 'Sistémico habla del alcance; sistemático, de la repetición.'),
+  ('5cedf1b8-9c98-4a81-aa84-909a399d013f', 'esporádico', null, '«Esporádico» es lo que ocurre de vez en cuando y sin patrón; el otro adjetivo describe justo lo contrario.', 'Lo esporádico sorprende; lo sistemático se puede predecir.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -15723,10 +15723,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f498021b-f40f-4b76-a20f-125dc1792a4e', 'discriminar', '«Discriminar» es separar una cosa de otra por sus diferencias; aquí no se separa nada, se dice que no se comparte una idea.', 'Discriminas separando; discrepas opinando.'),
-  ('f498021b-f40f-4b76-a20f-125dc1792a4e', 'discutir', '«Discutir» es entrar en una pelea de argumentos; lo otro cabe en una sola frase y sin subir el tono.', 'Discutir alarga; discrepar nombra.');
+  ('f498021b-f40f-4b76-a20f-125dc1792a4e', 'discriminar', null, '«Discriminar» es separar una cosa de otra por sus diferencias; aquí no se separa nada, se dice que no se comparte una idea.', 'Discriminas separando; discrepas opinando.'),
+  ('f498021b-f40f-4b76-a20f-125dc1792a4e', 'discutir', null, '«Discutir» es entrar en una pelea de argumentos; lo otro cabe en una sola frase y sin subir el tono.', 'Discutir alarga; discrepar nombra.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -15939,10 +15939,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('5a59213d-4fcc-4cb4-8390-f2c44b9a391c', 'ratificar', '«Ratificar» es confirmar lo que ya habías dicho; lo otro es justo lo contrario, cambiarlo porque no era exacto.', 'Ratificas para confirmar; rectificas para corregir.'),
-  ('5a59213d-4fcc-4cb4-8390-f2c44b9a391c', 'retractarse', '«Retractarse» es retirar lo dicho por completo; corregirlo puede ser solo ajustar una parte y sostener el resto.', 'Retractarse borra; rectificar ajusta.');
+  ('5a59213d-4fcc-4cb4-8390-f2c44b9a391c', 'ratificar', null, '«Ratificar» es confirmar lo que ya habías dicho; lo otro es justo lo contrario, cambiarlo porque no era exacto.', 'Ratificas para confirmar; rectificas para corregir.'),
+  ('5a59213d-4fcc-4cb4-8390-f2c44b9a391c', 'retractarse', null, '«Retractarse» es retirar lo dicho por completo; corregirlo puede ser solo ajustar una parte y sostener el resto.', 'Retractarse borra; rectificar ajusta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -16155,10 +16155,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7e1364c2-9636-41d8-a9a0-1c35c4f694d6', 'suspicaz', '«Suspicaz» describe a quien desconfía de las intenciones de los demás; el otro adjetivo describe a quien se ofende, que no es lo mismo.', 'El suspicaz sospecha; el susceptible se ofende.'),
-  ('7e1364c2-9636-41d8-a9a0-1c35c4f694d6', 'sensible', '«Sensible» es quien nota y siente mucho, también lo bueno; el otro adjetivo se centra en lo fácil que es herirlo.', 'El sensible siente; el susceptible se pica.');
+  ('7e1364c2-9636-41d8-a9a0-1c35c4f694d6', 'suspicaz', null, '«Suspicaz» describe a quien desconfía de las intenciones de los demás; el otro adjetivo describe a quien se ofende, que no es lo mismo.', 'El suspicaz sospecha; el susceptible se ofende.'),
+  ('7e1364c2-9636-41d8-a9a0-1c35c4f694d6', 'sensible', null, '«Sensible» es quien nota y siente mucho, también lo bueno; el otro adjetivo se centra en lo fácil que es herirlo.', 'El sensible siente; el susceptible se pica.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -16371,10 +16371,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('c949bd3e-955a-460b-bc5e-6fcf9ca6985c', 'considerar', '«Considerar» es pensar algo por primera vez; la otra palabra vuelve sobre una decisión que ya estaba tomada.', 'Consideras antes; reconsideras después.'),
-  ('c949bd3e-955a-460b-bc5e-6fcf9ca6985c', 'recapacitar', '«Recapacitar» suena a reproche moral, como pedirle a alguien que entre en razón; lo otro solo pide mirar de nuevo una decisión.', 'Recapacitar suena a sermón; reconsiderar, a dato nuevo.');
+  ('c949bd3e-955a-460b-bc5e-6fcf9ca6985c', 'considerar', null, '«Considerar» es pensar algo por primera vez; la otra palabra vuelve sobre una decisión que ya estaba tomada.', 'Consideras antes; reconsideras después.'),
+  ('c949bd3e-955a-460b-bc5e-6fcf9ca6985c', 'recapacitar', null, '«Recapacitar» suena a reproche moral, como pedirle a alguien que entre en razón; lo otro solo pide mirar de nuevo una decisión.', 'Recapacitar suena a sermón; reconsiderar, a dato nuevo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -16566,10 +16566,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b437e19a-51f5-4f20-a32a-458c8c4e3958', 'intransitable', '«Intransitable» se dice de un camino por el que no se puede pasar; el otro adjetivo describe a quien no se mueve de su postura.', 'Intransitable es un camino; intransigente, una persona.'),
-  ('b437e19a-51f5-4f20-a32a-458c8c4e3958', 'exigente', '«Exigente» pide mucho y acepta que se lo den de varias maneras; el otro no admite más salida que la suya.', 'El exigente pide mucho; el intransigente no admite nada.');
+  ('b437e19a-51f5-4f20-a32a-458c8c4e3958', 'intransitable', null, '«Intransitable» se dice de un camino por el que no se puede pasar; el otro adjetivo describe a quien no se mueve de su postura.', 'Intransitable es un camino; intransigente, una persona.'),
+  ('b437e19a-51f5-4f20-a32a-458c8c4e3958', 'exigente', null, '«Exigente» pide mucho y acepta que se lo den de varias maneras; el otro no admite más salida que la suya.', 'El exigente pide mucho; el intransigente no admite nada.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -16782,10 +16782,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('67651582-60ff-4771-8ea8-a1d257fd968d', 'reprobar', '«Reprobar» es rechazar algo por considerarlo malo, casi desde arriba; lo otro se hace de cerca y siempre duele.', 'Reprobar juzga; reprochar duele.'),
-  ('67651582-60ff-4771-8ea8-a1d257fd968d', 'reclamar', '«Reclamar» pide algo que te corresponde y mira al futuro; echar algo en cara mira al pasado y no pide nada concreto.', 'Reclamas para conseguir; reprochas para doler.');
+  ('67651582-60ff-4771-8ea8-a1d257fd968d', 'reprobar', null, '«Reprobar» es rechazar algo por considerarlo malo, casi desde arriba; lo otro se hace de cerca y siempre duele.', 'Reprobar juzga; reprochar duele.'),
+  ('67651582-60ff-4771-8ea8-a1d257fd968d', 'reclamar', null, '«Reclamar» pide algo que te corresponde y mira al futuro; echar algo en cara mira al pasado y no pide nada concreto.', 'Reclamas para conseguir; reprochas para doler.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -16977,10 +16977,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b02915cf-1fbf-4135-aa4d-a7a6fc746575', 'prorratear', '«Prorratear» es repartir una cantidad entre varios según lo que le toca a cada uno; lo otro solo mueve una fecha.', 'Prorrateas dinero; prorrogas una fecha.'),
-  ('b02915cf-1fbf-4135-aa4d-a7a6fc746575', 'posponer', '«Posponer» aparta algo para más adelante sin decir hasta cuándo; lo otro fija cuánto tiempo más se da.', 'Posponer aparta; prorrogar pone otra fecha.');
+  ('b02915cf-1fbf-4135-aa4d-a7a6fc746575', 'prorratear', null, '«Prorratear» es repartir una cantidad entre varios según lo que le toca a cada uno; lo otro solo mueve una fecha.', 'Prorrateas dinero; prorrogas una fecha.'),
+  ('b02915cf-1fbf-4135-aa4d-a7a6fc746575', 'posponer', null, '«Posponer» aparta algo para más adelante sin decir hasta cuándo; lo otro fija cuánto tiempo más se da.', 'Posponer aparta; prorrogar pone otra fecha.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -17151,10 +17151,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('3a3d89c1-fd69-4311-b1f4-9abc7d855184', 'inicio', '«Inicio» es el momento en que algo empieza; la otra palabra es una señal de que algo puede estar pasando.', 'El inicio abre la puerta; la señal solo te avisa de que hay alguien detrás.'),
-  ('3a3d89c1-fd69-4311-b1f4-9abc7d855184', 'prueba', 'Una prueba cierra la duda; la otra palabra la abre y te pide comprobar.', 'La prueba demuestra; la señal sugiere.');
+  ('3a3d89c1-fd69-4311-b1f4-9abc7d855184', 'inicio', null, '«Inicio» es el momento en que algo empieza; la otra palabra es una señal de que algo puede estar pasando.', 'El inicio abre la puerta; la señal solo te avisa de que hay alguien detrás.'),
+  ('3a3d89c1-fd69-4311-b1f4-9abc7d855184', 'prueba', null, 'Una prueba cierra la duda; la otra palabra la abre y te pide comprobar.', 'La prueba demuestra; la señal sugiere.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -17367,10 +17367,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('2fea8144-a4ec-4260-a555-699bcf730269', 'riesgo', 'Un riesgo es un daño que todavía puede pasar; la otra palabra nombra una desviación que ya está dentro del resultado.', 'El riesgo está por llegar; la desviación ya llegó.'),
-  ('2fea8144-a4ec-4260-a555-699bcf730269', 'ángulo', 'Un ángulo lo eliges y lo puedes declarar; la otra palabra actúa sin que quien juzga lo note.', 'El ángulo se anuncia; lo otro se descubre después.');
+  ('2fea8144-a4ec-4260-a555-699bcf730269', 'riesgo', null, 'Un riesgo es un daño que todavía puede pasar; la otra palabra nombra una desviación que ya está dentro del resultado.', 'El riesgo está por llegar; la desviación ya llegó.'),
+  ('2fea8144-a4ec-4260-a555-699bcf730269', 'ángulo', null, 'Un ángulo lo eliges y lo puedes declarar; la otra palabra actúa sin que quien juzga lo note.', 'El ángulo se anuncia; lo otro se descubre después.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -17583,10 +17583,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('cb5014f3-c402-4b41-9776-30a7ff7086c4', 'conclusión', 'Una conclusión llega al final de un razonamiento; la otra palabra está al principio y lo sostiene todo.', 'La conclusión cierra la puerta; la otra la abre.'),
-  ('cb5014f3-c402-4b41-9776-30a7ff7086c4', 'promesa', 'Una promesa es algo que alguien se compromete a cumplir; la otra palabra es algo que se da por cierto sin comprobarlo.', 'La promesa se cumple; lo otro se supone.');
+  ('cb5014f3-c402-4b41-9776-30a7ff7086c4', 'conclusión', null, 'Una conclusión llega al final de un razonamiento; la otra palabra está al principio y lo sostiene todo.', 'La conclusión cierra la puerta; la otra la abre.'),
+  ('cb5014f3-c402-4b41-9776-30a7ff7086c4', 'promesa', null, 'Una promesa es algo que alguien se compromete a cumplir; la otra palabra es algo que se da por cierto sin comprobarlo.', 'La promesa se cumple; lo otro se supone.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -17799,10 +17799,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('34efa5fc-b5dd-44b7-98a5-ad6cc04fa9e3', 'retraso', 'Un retraso dice que algo llega tarde respecto a su fecha; la otra palabra solo dice que dos cosas no van al mismo compás.', 'El retraso tiene culpable; el hueco entre dos, no.'),
-  ('34efa5fc-b5dd-44b7-98a5-ad6cc04fa9e3', 'desfile', '«Desfile» es gente caminando en fila para que la vean; la otra palabra nombra un hueco entre dos ritmos.', 'El desfile se mira; el hueco se mide.');
+  ('34efa5fc-b5dd-44b7-98a5-ad6cc04fa9e3', 'retraso', null, 'Un retraso dice que algo llega tarde respecto a su fecha; la otra palabra solo dice que dos cosas no van al mismo compás.', 'El retraso tiene culpable; el hueco entre dos, no.'),
+  ('34efa5fc-b5dd-44b7-98a5-ad6cc04fa9e3', 'desfile', null, '«Desfile» es gente caminando en fila para que la vean; la otra palabra nombra un hueco entre dos ritmos.', 'El desfile se mira; el hueco se mide.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -17994,10 +17994,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f6ff4a76-1339-4c97-aa6c-d59856bf3d7b', 'norma', 'Una norma obliga y tiene consecuencias si no la cumples; la otra palabra orienta y admite excepciones.', 'La norma manda; la guía acompaña.'),
-  ('f6ff4a76-1339-4c97-aa6c-d59856bf3d7b', 'pausa', '«Pausa» es un rato en que algo se detiene; la otra palabra dice cómo seguir haciendo algo.', 'La pausa para; la guía sigue.');
+  ('f6ff4a76-1339-4c97-aa6c-d59856bf3d7b', 'norma', null, 'Una norma obliga y tiene consecuencias si no la cumples; la otra palabra orienta y admite excepciones.', 'La norma manda; la guía acompaña.'),
+  ('f6ff4a76-1339-4c97-aa6c-d59856bf3d7b', 'pausa', 'eee5f76b-0c08-4172-adc8-b5b0a5d1b02a', '«Pausa» es un rato en que algo se detiene; la otra palabra dice cómo seguir haciendo algo.', 'La pausa para; la guía sigue.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -18210,10 +18210,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('9dc71ca4-6819-4260-a0fe-70a71a38c846', 'opinión', 'Una opinión es lo que piensas y puedes cambiar sin más; la otra palabra es lo que decides defender delante de los demás.', 'La opinión se tiene; lo otro se sostiene.'),
-  ('9dc71ca4-6819-4260-a0fe-70a71a38c846', 'actitud', '«Actitud» describe cómo te comportas; la otra palabra dice qué defiendes, aunque lo digas con buenos modos.', 'La actitud se ve; lo otro se argumenta.');
+  ('9dc71ca4-6819-4260-a0fe-70a71a38c846', 'opinión', null, 'Una opinión es lo que piensas y puedes cambiar sin más; la otra palabra es lo que decides defender delante de los demás.', 'La opinión se tiene; lo otro se sostiene.'),
+  ('9dc71ca4-6819-4260-a0fe-70a71a38c846', 'actitud', null, '«Actitud» describe cómo te comportas; la otra palabra dice qué defiendes, aunque lo digas con buenos modos.', 'La actitud se ve; lo otro se argumenta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -18384,10 +18384,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('0747eb95-64c6-4f22-9f65-f56aa975c32e', 'gusto', 'Un gusto es una preferencia personal que nadie tiene que justificar; la otra palabra es una medida que cualquiera puede aplicar.', 'El gusto es tuyo; la medida se presta.'),
-  ('0747eb95-64c6-4f22-9f65-f56aa975c32e', 'método', 'Un método son los pasos que sigues; la otra palabra es la medida con la que comparas al final.', 'El método camina; la medida compara.');
+  ('0747eb95-64c6-4f22-9f65-f56aa975c32e', 'gusto', null, 'Un gusto es una preferencia personal que nadie tiene que justificar; la otra palabra es una medida que cualquiera puede aplicar.', 'El gusto es tuyo; la medida se presta.'),
+  ('0747eb95-64c6-4f22-9f65-f56aa975c32e', 'método', null, 'Un método son los pasos que sigues; la otra palabra es la medida con la que comparas al final.', 'El método camina; la medida compara.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -18579,10 +18579,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('847e0019-3d73-4c69-b403-ba06521dd66b', 'moda', 'Una moda dura una temporada y se apaga; la otra palabra describe un movimiento sostenido durante años.', 'La moda pasa de temporada; la dirección se mantiene.'),
-  ('847e0019-3d73-4c69-b403-ba06521dd66b', 'racha', 'Una racha va y viene por suerte; la otra palabra apunta siempre al mismo lado y se ve en la serie completa.', 'La racha se acaba sola; la dirección se corrige.');
+  ('847e0019-3d73-4c69-b403-ba06521dd66b', 'moda', null, 'Una moda dura una temporada y se apaga; la otra palabra describe un movimiento sostenido durante años.', 'La moda pasa de temporada; la dirección se mantiene.'),
+  ('847e0019-3d73-4c69-b403-ba06521dd66b', 'racha', null, 'Una racha va y viene por suerte; la otra palabra apunta siempre al mismo lado y se ve en la serie completa.', 'La racha se acaba sola; la dirección se corrige.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -18774,10 +18774,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4ebaf077-8da9-48d5-b4aa-933870a01616', 'causa', 'Una causa está antes y explica por qué pasó algo; la otra palabra está después y dice qué arrastra esa decisión.', 'La causa empuja desde atrás; lo otro aparece delante.'),
-  ('4ebaf077-8da9-48d5-b4aa-933870a01616', 'intención', 'La intención es lo que alguien quería conseguir; la otra palabra llega igual, aunque nadie la quisiera.', 'La intención se elige; lo otro viene en el paquete.');
+  ('4ebaf077-8da9-48d5-b4aa-933870a01616', 'causa', null, 'Una causa está antes y explica por qué pasó algo; la otra palabra está después y dice qué arrastra esa decisión.', 'La causa empuja desde atrás; lo otro aparece delante.'),
+  ('4ebaf077-8da9-48d5-b4aa-933870a01616', 'intención', null, 'La intención es lo que alguien quería conseguir; la otra palabra llega igual, aunque nadie la quisiera.', 'La intención se elige; lo otro viene en el paquete.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -18969,10 +18969,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('9253caa5-fb25-4113-b3c2-a206402c809f', 'rechazo', 'Un rechazo tumba la idea entera; la otra palabra frena solo un punto y deja el resto en pie.', 'El rechazo cierra la puerta; lo otro la deja entornada.'),
-  ('9253caa5-fb25-4113-b3c2-a206402c809f', 'reparto', '«Reparto» es cómo se divide algo entre varios; la otra palabra es un punto que alguien no ve claro.', 'El reparto divide; lo otro frena.');
+  ('9253caa5-fb25-4113-b3c2-a206402c809f', 'rechazo', null, 'Un rechazo tumba la idea entera; la otra palabra frena solo un punto y deja el resto en pie.', 'El rechazo cierra la puerta; lo otro la deja entornada.'),
+  ('9253caa5-fb25-4113-b3c2-a206402c809f', 'reparto', null, '«Reparto» es cómo se divide algo entre varios; la otra palabra es un punto que alguien no ve claro.', 'El reparto divide; lo otro frena.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -19185,10 +19185,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('fb6cbbcd-78d8-4bc1-9b63-1cb0f40cd4cc', 'parte', 'Una parte es un trozo que se separa del conjunto; la otra palabra es el mismo asunto entero mirado desde otro lado.', 'La parte se corta; el lado se rodea.'),
-  ('fb6cbbcd-78d8-4bc1-9b63-1cb0f40cd4cc', 'variante', '«Variante» es otra versión de la misma cosa; la otra palabra es una cara del mismo asunto, no otra cosa.', 'La variante sustituye; el lado acompaña.');
+  ('fb6cbbcd-78d8-4bc1-9b63-1cb0f40cd4cc', 'parte', null, 'Una parte es un trozo que se separa del conjunto; la otra palabra es el mismo asunto entero mirado desde otro lado.', 'La parte se corta; el lado se rodea.'),
+  ('fb6cbbcd-78d8-4bc1-9b63-1cb0f40cd4cc', 'variante', null, '«Variante» es otra versión de la misma cosa; la otra palabra es una cara del mismo asunto, no otra cosa.', 'La variante sustituye; el lado acompaña.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -19359,10 +19359,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('8c7a05cc-3b15-49a3-96eb-c3cad9f481ee', 'tamaño', 'El tamaño dice cuánto ocupa algo; la otra palabra dice hasta dónde llegan sus efectos y a quién tocan.', 'El tamaño se mide con cinta; lo otro se mide en gente.'),
-  ('8c7a05cc-3b15-49a3-96eb-c3cad9f481ee', 'avance', '«Avance» dice cuánto se ha adelantado; la otra palabra dice qué entra en el encargo y qué queda fuera.', 'El avance mide el camino hecho; lo otro dibuja el mapa.');
+  ('8c7a05cc-3b15-49a3-96eb-c3cad9f481ee', 'tamaño', null, 'El tamaño dice cuánto ocupa algo; la otra palabra dice hasta dónde llegan sus efectos y a quién tocan.', 'El tamaño se mide con cinta; lo otro se mide en gente.'),
+  ('8c7a05cc-3b15-49a3-96eb-c3cad9f481ee', 'avance', null, '«Avance» dice cuánto se ha adelantado; la otra palabra dice qué entra en el encargo y qué queda fuera.', 'El avance mide el camino hecho; lo otro dibuja el mapa.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -19575,10 +19575,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('e73568e8-759a-49d5-a703-89bbbf7a1bb9', 'gravedad', 'La gravedad dice lo serio que es algo; la otra palabra dice solo cuánto de grande es, en cifras.', 'La gravedad juzga; el tamaño se cuenta.'),
-  ('e73568e8-759a-49d5-a703-89bbbf7a1bb9', 'multitud', '«Multitud» es mucha gente junta; la otra palabra es el tamaño que tiene un asunto.', 'La multitud se ve en la plaza; el tamaño, en la tabla.');
+  ('e73568e8-759a-49d5-a703-89bbbf7a1bb9', 'gravedad', null, 'La gravedad dice lo serio que es algo; la otra palabra dice solo cuánto de grande es, en cifras.', 'La gravedad juzga; el tamaño se cuenta.'),
+  ('e73568e8-759a-49d5-a703-89bbbf7a1bb9', 'multitud', null, '«Multitud» es mucha gente junta; la otra palabra es el tamaño que tiene un asunto.', 'La multitud se ve en la plaza; el tamaño, en la tabla.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -19770,10 +19770,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b91125c3-5dd3-4000-9e8f-65ecc8245d4d', 'invisible', 'Lo invisible no se percibe de ninguna manera; la otra palabra sí se nota, aunque haya que fijarse.', 'Lo invisible no está; lo otro está y casi no se ve.'),
-  ('b91125c3-5dd3-4000-9e8f-65ecc8245d4d', 'discreto', '«Discreto» dice que alguien evita llamar la atención a propósito; la otra palabra dice que cuesta percibirlo, lo quiera alguien o no.', 'Lo discreto se esconde; lo otro se esconde solo.');
+  ('b91125c3-5dd3-4000-9e8f-65ecc8245d4d', 'invisible', null, 'Lo invisible no se percibe de ninguna manera; la otra palabra sí se nota, aunque haya que fijarse.', 'Lo invisible no está; lo otro está y casi no se ve.'),
+  ('b91125c3-5dd3-4000-9e8f-65ecc8245d4d', 'discreto', null, '«Discreto» dice que alguien evita llamar la atención a propósito; la otra palabra dice que cuesta percibirlo, lo quiera alguien o no.', 'Lo discreto se esconde; lo otro se esconde solo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -19965,10 +19965,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7c54e895-68e9-434f-9dc7-9492a3891f07', 'breve', '«Breve» dice que algo dura poco; la otra palabra dice que se nota poco, dure lo que dure.', 'Lo breve se acaba pronto; lo otro casi no se siente.'),
-  ('7c54e895-68e9-434f-9dc7-9492a3891f07', 'pequeño', '«Pequeño» mide el tamaño de una cosa; la otra palabra mide con cuánta fuerza se nota algo.', 'Lo pequeño cabe en la mano; lo otro se mide en cuánto se siente.');
+  ('7c54e895-68e9-434f-9dc7-9492a3891f07', 'breve', null, '«Breve» dice que algo dura poco; la otra palabra dice que se nota poco, dure lo que dure.', 'Lo breve se acaba pronto; lo otro casi no se siente.'),
+  ('7c54e895-68e9-434f-9dc7-9492a3891f07', 'pequeño', null, '«Pequeño» mide el tamaño de una cosa; la otra palabra mide con cuánta fuerza se nota algo.', 'Lo pequeño cabe en la mano; lo otro se mide en cuánto se siente.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -20160,10 +20160,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('d3646890-6034-4616-a483-3d422419827b', 'claro', 'Algo claro se entiende sin esfuerzo; la otra palabra añade que no cabe entenderlo de ninguna otra manera.', 'Lo claro se lee bien; lo otro se lee de una sola forma.'),
-  ('d3646890-6034-4616-a483-3d422419827b', 'equívoco', '«Equívoco» es justo lo contrario: algo que se presta a dos lecturas y confunde.', 'Lo equívoco abre dos puertas; lo otro deja una.');
+  ('d3646890-6034-4616-a483-3d422419827b', 'claro', null, 'Algo claro se entiende sin esfuerzo; la otra palabra añade que no cabe entenderlo de ninguna otra manera.', 'Lo claro se lee bien; lo otro se lee de una sola forma.'),
+  ('d3646890-6034-4616-a483-3d422419827b', 'equívoco', null, '«Equívoco» es justo lo contrario: algo que se presta a dos lecturas y confunde.', 'Lo equívoco abre dos puertas; lo otro deja una.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -20334,10 +20334,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('784b8706-1642-42fb-824c-d73da3427b7b', 'gravedad', 'La gravedad dice lo serio que es algo; la otra palabra dice de qué clase es, aunque dos cosas sean igual de serias.', 'La gravedad mide; la clase separa.'),
-  ('784b8706-1642-42fb-824c-d73da3427b7b', 'indolencia', '«Indolencia» es la pereza de quien no se mueve por nada; la otra palabra dice a qué tipo pertenece un asunto.', 'La indolencia se sienta; la clase ordena.');
+  ('784b8706-1642-42fb-824c-d73da3427b7b', 'gravedad', null, 'La gravedad dice lo serio que es algo; la otra palabra dice de qué clase es, aunque dos cosas sean igual de serias.', 'La gravedad mide; la clase separa.'),
+  ('784b8706-1642-42fb-824c-d73da3427b7b', 'indolencia', null, '«Indolencia» es la pereza de quien no se mueve por nada; la otra palabra dice a qué tipo pertenece un asunto.', 'La indolencia se sienta; la clase ordena.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -20508,10 +20508,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('fef9b7ba-de33-4fc0-a55c-b55f94284749', 'remache', '«Remache» es la pieza de metal que sujeta dos chapas; la otra palabra es la frase con la que cierras una idea.', 'El remache sujeta chapas; la frase final sujeta la idea.'),
-  ('fef9b7ba-de33-4fc0-a55c-b55f94284749', 'resumen', 'Un resumen repite en pocas palabras lo que ya dijiste; la otra palabra añade el golpe final que nadie había oído.', 'El resumen repite; el golpe final remueve.');
+  ('fef9b7ba-de33-4fc0-a55c-b55f94284749', 'remache', null, '«Remache» es la pieza de metal que sujeta dos chapas; la otra palabra es la frase con la que cierras una idea.', 'El remache sujeta chapas; la frase final sujeta la idea.'),
+  ('fef9b7ba-de33-4fc0-a55c-b55f94284749', 'resumen', null, 'Un resumen repite en pocas palabras lo que ya dijiste; la otra palabra añade el golpe final que nadie había oído.', 'El resumen repite; el golpe final remueve.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -20724,10 +20724,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('cde4f7d7-480d-4c97-9896-69492197bc28', 'arrebato', 'Un «arrebato» es un impulso repentino que te hace actuar sin pensar; la otra palabra nombra el comienzo de algo.', 'El arrebato llega de golpe y a mitad; el comienzo va siempre delante.'),
-  ('cde4f7d7-480d-4c97-9896-69492197bc28', 'portada', 'La «portada» es la primera página que alguien ve; la otra palabra es cómo suenan tus primeras frases.', 'La portada se mira; el comienzo se escucha.');
+  ('cde4f7d7-480d-4c97-9896-69492197bc28', 'arrebato', null, 'Un «arrebato» es un impulso repentino que te hace actuar sin pensar; la otra palabra nombra el comienzo de algo.', 'El arrebato llega de golpe y a mitad; el comienzo va siempre delante.'),
+  ('cde4f7d7-480d-4c97-9896-69492197bc28', 'portada', null, 'La «portada» es la primera página que alguien ve; la otra palabra es cómo suenan tus primeras frases.', 'La portada se mira; el comienzo se escucha.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -20919,10 +20919,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('3375eae0-a1d8-4a7f-9fee-9b291bf95720', 'guiño', 'Un «guiño» es cerrar un ojo para decir algo sin palabras; la otra palabra es el texto entero que llevas preparado.', 'El guiño se hace con el ojo; el texto se escribe con la mano.'),
-  ('3375eae0-a1d8-4a7f-9fee-9b291bf95720', 'guía', 'Una «guía» explica cómo hacer algo paso a paso, o es la persona que te acompaña; la otra palabra recoge tus frases tal cual las vas a decir.', 'La guía enseña el camino; el texto dicta las palabras.');
+  ('3375eae0-a1d8-4a7f-9fee-9b291bf95720', 'guiño', null, 'Un «guiño» es cerrar un ojo para decir algo sin palabras; la otra palabra es el texto entero que llevas preparado.', 'El guiño se hace con el ojo; el texto se escribe con la mano.'),
+  ('3375eae0-a1d8-4a7f-9fee-9b291bf95720', 'guía', null, 'Una «guía» explica cómo hacer algo paso a paso, o es la persona que te acompaña; la otra palabra recoge tus frases tal cual las vas a decir.', 'La guía enseña el camino; el texto dicta las palabras.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -21135,10 +21135,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('32fbcc57-cc65-4175-aa8c-1a17c951850b', 'sombrío', '«Sombrío» describe algo oscuro o triste; la otra palabra describe algo sin adornos, que puede ser luminoso y alegre.', 'Lo sombrío da pena; lo demás solo quita adornos.'),
-  ('32fbcc57-cc65-4175-aa8c-1a17c951850b', 'soberbio', '«Soberbio» acusa de orgullo, o exagera hasta lo enorme; la otra palabra elogia justo la falta de exageración.', 'El soberbio se hincha; lo contrario se recorta.');
+  ('32fbcc57-cc65-4175-aa8c-1a17c951850b', 'sombrío', null, '«Sombrío» describe algo oscuro o triste; la otra palabra describe algo sin adornos, que puede ser luminoso y alegre.', 'Lo sombrío da pena; lo demás solo quita adornos.'),
+  ('32fbcc57-cc65-4175-aa8c-1a17c951850b', 'soberbio', null, '«Soberbio» acusa de orgullo, o exagera hasta lo enorme; la otra palabra elogia justo la falta de exageración.', 'El soberbio se hincha; lo contrario se recorta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -21351,10 +21351,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('eee5f76b-0c08-4172-adc8-b5b0a5d1b02a', 'pesado', '«Pesado» acusa a alguien de cansar o insistir demasiado; la otra palabra elogia a quien va despacio y deja respirar.', 'El pesado agota; el que va despacio descansa.'),
-  ('eee5f76b-0c08-4172-adc8-b5b0a5d1b02a', 'pautado', '«Pautado» es lo que sigue unas normas fijadas de antemano; la otra palabra solo habla de la velocidad, no de las reglas.', 'Lo pautado obedece; lo lento respira.');
+  ('eee5f76b-0c08-4172-adc8-b5b0a5d1b02a', 'pesado', null, '«Pesado» acusa a alguien de cansar o insistir demasiado; la otra palabra elogia a quien va despacio y deja respirar.', 'El pesado agota; el que va despacio descansa.'),
+  ('eee5f76b-0c08-4172-adc8-b5b0a5d1b02a', 'pautado', 'f6ff4a76-1339-4c97-aa6c-d59856bf3d7b', '«Pautado» es lo que sigue unas normas fijadas de antemano; la otra palabra solo habla de la velocidad, no de las reglas.', 'Lo pautado obedece; lo lento respira.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -21546,10 +21546,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('98d0bb3d-fc96-43ce-8328-d9da4eddc972', 'locuaz', '«Locuaz» dice que alguien habla mucho y con facilidad; la otra palabra dice que lo que habla mueve a quien escucha.', 'El locuaz llena el tiempo; el otro llena la sala.'),
-  ('98d0bb3d-fc96-43ce-8328-d9da4eddc972', 'vehemente', '«Vehemente» describe a quien habla con mucha pasión y calor; la otra palabra no promete calor, promete efecto.', 'El vehemente sube el tono; el otro cambia la decisión.');
+  ('98d0bb3d-fc96-43ce-8328-d9da4eddc972', 'locuaz', null, '«Locuaz» dice que alguien habla mucho y con facilidad; la otra palabra dice que lo que habla mueve a quien escucha.', 'El locuaz llena el tiempo; el otro llena la sala.'),
+  ('98d0bb3d-fc96-43ce-8328-d9da4eddc972', 'vehemente', null, '«Vehemente» describe a quien habla con mucha pasión y calor; la otra palabra no promete calor, promete efecto.', 'El vehemente sube el tono; el otro cambia la decisión.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -21762,10 +21762,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('5a454cb7-38d6-4010-84bd-3dcc69d22c4c', 'revisar', '«Revisar» es mirar otra vez algo que ya existe para corregirlo; la otra palabra es crearlo en el momento, sin que existiera antes.', 'Revisas lo que ya está; lo otro nace ahí mismo.'),
-  ('5a454cb7-38d6-4010-84bd-3dcc69d22c4c', 'supervisar', '«Supervisar» es vigilar el trabajo que hace otra persona; la otra palabra la haces tú, y sin preparación.', 'Supervisas a alguien; lo otro te toca a ti y sin red.');
+  ('5a454cb7-38d6-4010-84bd-3dcc69d22c4c', 'revisar', null, '«Revisar» es mirar otra vez algo que ya existe para corregirlo; la otra palabra es crearlo en el momento, sin que existiera antes.', 'Revisas lo que ya está; lo otro nace ahí mismo.'),
+  ('5a454cb7-38d6-4010-84bd-3dcc69d22c4c', 'supervisar', null, '«Supervisar» es vigilar el trabajo que hace otra persona; la otra palabra la haces tú, y sin preparación.', 'Supervisas a alguien; lo otro te toca a ti y sin red.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -21978,10 +21978,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('3b70d2c5-52ae-4579-8f44-0905556c30a0', 'entenderse', '«Entenderse» es llegar a comprenderse con alguien; la otra palabra dice que ocupaste más tiempo o más espacio del previsto.', 'Te entiendes con alguien; lo otro lo haces tú solo y de más.'),
-  ('3b70d2c5-52ae-4579-8f44-0905556c30a0', 'extenuarse', '«Extenuarse» es quedarse sin fuerzas por el esfuerzo; la otra palabra no habla de cansancio, sino de duración.', 'Te extenúas cuando no puedes más; lo otro es cuando no paras.');
+  ('3b70d2c5-52ae-4579-8f44-0905556c30a0', 'entenderse', null, '«Entenderse» es llegar a comprenderse con alguien; la otra palabra dice que ocupaste más tiempo o más espacio del previsto.', 'Te entiendes con alguien; lo otro lo haces tú solo y de más.'),
+  ('3b70d2c5-52ae-4579-8f44-0905556c30a0', 'extenuarse', null, '«Extenuarse» es quedarse sin fuerzas por el esfuerzo; la otra palabra no habla de cansancio, sino de duración.', 'Te extenúas cuando no puedes más; lo otro es cuando no paras.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -22152,10 +22152,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('6912a9f6-cdea-453c-9754-5639f6cc12da', 'negligencia', '«Negligencia» es el descuido de quien no hace lo que debía; la otra palabra es una respuesta clara a una petición.', 'La negligencia se olvida; la respuesta se dice en voz alta.'),
-  ('6912a9f6-cdea-453c-9754-5639f6cc12da', 'negociación', 'Una «negociación» busca un punto intermedio entre dos partes; la otra palabra cierra la puerta sin punto intermedio.', 'En la negociación se cede algo; en lo otro no se cede nada.');
+  ('6912a9f6-cdea-453c-9754-5639f6cc12da', 'negligencia', null, '«Negligencia» es el descuido de quien no hace lo que debía; la otra palabra es una respuesta clara a una petición.', 'La negligencia se olvida; la respuesta se dice en voz alta.'),
+  ('6912a9f6-cdea-453c-9754-5639f6cc12da', 'negociación', null, 'Una «negociación» busca un punto intermedio entre dos partes; la otra palabra cierra la puerta sin punto intermedio.', 'En la negociación se cede algo; en lo otro no se cede nada.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -22368,10 +22368,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('cdca5aee-abc9-4a71-bf13-9ab7ed852c76', 'fineza', '«Fineza» es un detalle delicado que se tiene con alguien; la otra palabra es la fuerza con que sostienes una postura.', 'La fineza se regala; lo otro se sostiene.'),
-  ('cdca5aee-abc9-4a71-bf13-9ab7ed852c76', 'fiereza', '«Fiereza» es la furia de quien ataca; la otra palabra no ataca a nadie: solo se queda donde estaba.', 'La fiereza salta encima; lo otro no se mueve.');
+  ('cdca5aee-abc9-4a71-bf13-9ab7ed852c76', 'fineza', null, '«Fineza» es un detalle delicado que se tiene con alguien; la otra palabra es la fuerza con que sostienes una postura.', 'La fineza se regala; lo otro se sostiene.'),
+  ('cdca5aee-abc9-4a71-bf13-9ab7ed852c76', 'fiereza', null, '«Fiereza» es la furia de quien ataca; la otra palabra no ataca a nadie: solo se queda donde estaba.', 'La fiereza salta encima; lo otro no se mueve.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -22584,10 +22584,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('41aa5f75-a9eb-4d45-b38d-662cc465dbc3', 'flaqueza', 'Una «flaqueza» es un punto débil que tienes; la otra palabra es la costumbre de decir las cosas tal cual son.', 'La flaqueza se esconde; lo otro sale a la luz.'),
-  ('41aa5f75-a9eb-4d45-b38d-662cc465dbc3', 'franquicia', 'Una «franquicia» es el permiso para abrir un negocio con la marca de otro; la otra palabra no tiene nada que ver con negocios.', 'La franquicia se compra; lo otro se practica.');
+  ('41aa5f75-a9eb-4d45-b38d-662cc465dbc3', 'flaqueza', null, 'Una «flaqueza» es un punto débil que tienes; la otra palabra es la costumbre de decir las cosas tal cual son.', 'La flaqueza se esconde; lo otro sale a la luz.'),
+  ('41aa5f75-a9eb-4d45-b38d-662cc465dbc3', 'franquicia', null, 'Una «franquicia» es el permiso para abrir un negocio con la marca de otro; la otra palabra no tiene nada que ver con negocios.', 'La franquicia se compra; lo otro se practica.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -22779,10 +22779,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('09867897-0593-4520-86d8-4a8b7ca824a5', 'suspiro', 'Un «suspiro» es el soplo que sueltas cuando algo te alivia o te pesa; la otra palabra es un rato entero de calma.', 'El suspiro dura un segundo; lo otro dura una tarde.'),
-  ('09867897-0593-4520-86d8-4a8b7ca824a5', 'retiro', 'Un «retiro» es apartarse del mundo durante un tiempo largo; la otra palabra es una pausa corta sin irse a ninguna parte.', 'En el retiro te vas; en lo otro solo paras.');
+  ('09867897-0593-4520-86d8-4a8b7ca824a5', 'suspiro', null, 'Un «suspiro» es el soplo que sueltas cuando algo te alivia o te pesa; la otra palabra es un rato entero de calma.', 'El suspiro dura un segundo; lo otro dura una tarde.'),
+  ('09867897-0593-4520-86d8-4a8b7ca824a5', 'retiro', null, 'Un «retiro» es apartarse del mundo durante un tiempo largo; la otra palabra es una pausa corta sin irse a ninguna parte.', 'En el retiro te vas; en lo otro solo paras.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -22953,10 +22953,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('d7eda560-2a58-461f-b1ef-2d622ff7ded0', 'saciado', '«Saciado» es quien ya ha comido bastante y no quiere más; la otra palabra habla de un espacio o un calendario sin sitio libre.', 'Te sacias con la comida; lo otro se llena de citas.'),
-  ('d7eda560-2a58-461f-b1ef-2d622ff7ded0', 'sazonado', '«Sazonado» es lo que lleva la sal y las especias justas; la otra palabra no dice nada del sabor.', 'Lo sazonado sabe bien; lo otro no cabe.');
+  ('d7eda560-2a58-461f-b1ef-2d622ff7ded0', 'saciado', null, '«Saciado» es quien ya ha comido bastante y no quiere más; la otra palabra habla de un espacio o un calendario sin sitio libre.', 'Te sacias con la comida; lo otro se llena de citas.'),
+  ('d7eda560-2a58-461f-b1ef-2d622ff7ded0', 'sazonado', null, '«Sazonado» es lo que lleva la sal y las especias justas; la otra palabra no dice nada del sabor.', 'Lo sazonado sabe bien; lo otro no cabe.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -23127,10 +23127,11 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('63ab3efd-be99-41a4-a29c-b8c62e852ff8', 'tangente', 'Irse por la «tangente» es escapar del tema por un lado; la otra palabra hace lo contrario: va al tema y lo cierra.', 'La tangente escapa; lo otro corta.'),
-  ('63ab3efd-be99-41a4-a29c-b8c62e852ff8', 'tirante', '«Tirante» describe una relación tensa entre dos personas; la otra palabra describe una frase que no admite discusión.', 'Lo tirante dura semanas; lo otro dura una frase.');
+  ('63ab3efd-be99-41a4-a29c-b8c62e852ff8', 'tangente', null, 'Irse por la «tangente» es escapar del tema por un lado; la otra palabra hace lo contrario: va al tema y lo cierra.', 'La tangente escapa; lo otro corta.'),
+  ('63ab3efd-be99-41a4-a29c-b8c62e852ff8', 'tirante', null, '«Tirante» describe una relación tensa entre dos personas; la otra palabra describe una frase que no admite discusión.', 'Lo tirante dura semanas; lo otro dura una frase.'),
+  ('63ab3efd-be99-41a4-a29c-b8c62e852ff8', 'talante', '56dd2756-62e5-4103-aa76-f8fde026ed73', 'El «talante» es el humor con el que alguien trata a la gente; la otra palabra es el modo de decir algo que cierra el tema.', 'El talante se ve en meses de trato; lo otro, en una sola respuesta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -23322,10 +23323,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('76d1f97e-bc0b-4f96-bec8-53afa80ec27f', 'incomparable', '«Incomparable» es un elogio: significa que nada se le parece; la otra palabra dice que dos cosas no caben juntas.', 'Lo incomparable gana; lo otro choca.'),
-  ('76d1f97e-bc0b-4f96-bec8-53afa80ec27f', 'incontable', '«Incontable» es lo que no se puede contar por lo mucho que hay; la otra palabra no habla de cantidad.', 'Lo incontable se desborda; lo otro no encaja.');
+  ('76d1f97e-bc0b-4f96-bec8-53afa80ec27f', 'incomparable', null, '«Incomparable» es un elogio: significa que nada se le parece; la otra palabra dice que dos cosas no caben juntas.', 'Lo incomparable gana; lo otro choca.'),
+  ('76d1f97e-bc0b-4f96-bec8-53afa80ec27f', 'incontable', null, '«Incontable» es lo que no se puede contar por lo mucho que hay; la otra palabra no habla de cantidad.', 'Lo incontable se desborda; lo otro no encaja.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -23538,10 +23539,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('42edbe89-8bd9-4bc7-8c95-580b4a5d08a2', 'atenerse', '«Atenerse» es ajustarse a una norma o a un acuerdo; la otra palabra es apartarse de algo que podrías hacer.', 'Te atienes a lo pactado; de lo otro te apartas.'),
-  ('42edbe89-8bd9-4bc7-8c95-580b4a5d08a2', 'detenerse', '«Detenerse» es parar a mitad de camino; la otra palabra es no empezar siquiera, por decisión propia.', 'Te detienes cuando ya ibas; lo otro es no salir.');
+  ('42edbe89-8bd9-4bc7-8c95-580b4a5d08a2', 'atenerse', null, '«Atenerse» es ajustarse a una norma o a un acuerdo; la otra palabra es apartarse de algo que podrías hacer.', 'Te atienes a lo pactado; de lo otro te apartas.'),
+  ('42edbe89-8bd9-4bc7-8c95-580b4a5d08a2', 'detenerse', null, '«Detenerse» es parar a mitad de camino; la otra palabra es no empezar siquiera, por decisión propia.', 'Te detienes cuando ya ibas; lo otro es no salir.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -23733,10 +23734,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7df846cc-348d-468a-832a-4ba96a410f86', 'insistir', '«Insistir» es repetir el intento una vez más; la otra palabra es dejar de intentarlo.', 'Insistes cuando sigues; lo otro es cuando paras.'),
-  ('7df846cc-348d-468a-832a-4ba96a410f86', 'resistir', '«Resistir» es aguantar la presión sin moverte; la otra palabra es soltar aquello que perseguías.', 'Resistes de pie; lo otro es dar media vuelta.');
+  ('7df846cc-348d-468a-832a-4ba96a410f86', 'insistir', null, '«Insistir» es repetir el intento una vez más; la otra palabra es dejar de intentarlo.', 'Insistes cuando sigues; lo otro es cuando paras.'),
+  ('7df846cc-348d-468a-832a-4ba96a410f86', 'resistir', null, '«Resistir» es aguantar la presión sin moverte; la otra palabra es soltar aquello que perseguías.', 'Resistes de pie; lo otro es dar media vuelta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -23928,10 +23929,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('848a4ace-7bc5-4d8b-ad5c-55285940102e', 'mito', 'Un «mito» es una historia que se cuenta y puede no ser cierta; la otra palabra señala algo que ocurrió de verdad y cambió el rumbo.', 'El mito se cuenta; lo otro se fecha.'),
-  ('848a4ace-7bc5-4d8b-ad5c-55285940102e', 'rito', 'Un «rito» es algo que se repite igual cada vez; la otra palabra pasa una sola vez y parte el camino en dos.', 'El rito vuelve cada año; lo otro ocurre una vez.');
+  ('848a4ace-7bc5-4d8b-ad5c-55285940102e', 'mito', null, 'Un «mito» es una historia que se cuenta y puede no ser cierta; la otra palabra señala algo que ocurrió de verdad y cambió el rumbo.', 'El mito se cuenta; lo otro se fecha.'),
+  ('848a4ace-7bc5-4d8b-ad5c-55285940102e', 'rito', null, 'Un «rito» es algo que se repite igual cada vez; la otra palabra pasa una sola vez y parte el camino en dos.', 'El rito vuelve cada año; lo otro ocurre una vez.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -24144,10 +24145,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('2d908774-5d20-49a8-b7bd-02ec52cbc8a5', 'fortuna', 'La «fortuna» es la suerte o el dinero que te toca; la otra palabra es algo tuyo que has construido y se te da bien.', 'La fortuna llega sola; lo otro se entrena.'),
-  ('2d908774-5d20-49a8-b7bd-02ec52cbc8a5', 'formalidad', 'La «formalidad» es cumplir horarios y trámites; la otra palabra puede ser cualquier cosa que hagas mejor que la media.', 'La formalidad se cumple; lo otro se demuestra.');
+  ('2d908774-5d20-49a8-b7bd-02ec52cbc8a5', 'fortuna', null, 'La «fortuna» es la suerte o el dinero que te toca; la otra palabra es algo tuyo que has construido y se te da bien.', 'La fortuna llega sola; lo otro se entrena.'),
+  ('2d908774-5d20-49a8-b7bd-02ec52cbc8a5', 'formalidad', null, 'La «formalidad» es cumplir horarios y trámites; la otra palabra puede ser cualquier cosa que hagas mejor que la media.', 'La formalidad se cumple; lo otro se demuestra.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -24360,10 +24361,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('457624f4-a133-429c-9924-e43f9a2928b4', 'equipaje', 'El «equipaje» son las maletas que llevas de viaje; la otra palabra es lo aprendido que llevas dentro.', 'El equipaje se factura; lo otro no pesa.'),
-  ('457624f4-a133-429c-9924-e43f9a2928b4', 'trayecto', 'Un «trayecto» es el camino que recorres de un punto a otro; la otra palabra es lo que te queda después de recorrerlo.', 'El trayecto se anda; lo otro se acumula.');
+  ('457624f4-a133-429c-9924-e43f9a2928b4', 'equipaje', null, 'El «equipaje» son las maletas que llevas de viaje; la otra palabra es lo aprendido que llevas dentro.', 'El equipaje se factura; lo otro no pesa.'),
+  ('457624f4-a133-429c-9924-e43f9a2928b4', 'trayecto', null, 'Un «trayecto» es el camino que recorres de un punto a otro; la otra palabra es lo que te queda después de recorrerlo.', 'El trayecto se anda; lo otro se acumula.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -24576,10 +24577,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4ded96b3-ccd6-4e04-9acd-4ff731bddabb', 'vacuna', 'Una «vacuna» es lo que se pone para prevenir una enfermedad; la otra palabra es un puesto de trabajo sin ocupar.', 'La vacuna se pone en el brazo; lo otro se cubre en la oficina.'),
-  ('4ded96b3-ccd6-4e04-9acd-4ff731bddabb', 'plantilla', 'La «plantilla» es el conjunto de personas que ya trabajan allí; la otra palabra es el sitio vacío que falta por llenar.', 'La plantilla está dentro; lo otro está por llenar.');
+  ('4ded96b3-ccd6-4e04-9acd-4ff731bddabb', 'vacuna', null, 'Una «vacuna» es lo que se pone para prevenir una enfermedad; la otra palabra es un puesto de trabajo sin ocupar.', 'La vacuna se pone en el brazo; lo otro se cubre en la oficina.'),
+  ('4ded96b3-ccd6-4e04-9acd-4ff731bddabb', 'plantilla', null, 'La «plantilla» es el conjunto de personas que ya trabajan allí; la otra palabra es el sitio vacío que falta por llenar.', 'La plantilla está dentro; lo otro está por llenar.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -24771,10 +24772,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b96a4635-92ca-4f2d-ae21-822286bd6502', 'reverencia', 'Una «reverencia» es la inclinación del cuerpo para saludar con respeto; la otra palabra es la persona que responde por tu trabajo.', 'La reverencia se hace con la espalda; lo otro se hace por teléfono.'),
-  ('b96a4635-92ca-4f2d-ae21-822286bd6502', 'preferencia', 'Una «preferencia» es lo que eliges antes que otra cosa; la otra palabra no es una elección tuya, es alguien que te avala.', 'La preferencia la eliges tú; lo otro habla de ti.');
+  ('b96a4635-92ca-4f2d-ae21-822286bd6502', 'reverencia', null, 'Una «reverencia» es la inclinación del cuerpo para saludar con respeto; la otra palabra es la persona que responde por tu trabajo.', 'La reverencia se hace con la espalda; lo otro se hace por teléfono.'),
+  ('b96a4635-92ca-4f2d-ae21-822286bd6502', 'preferencia', null, 'Una «preferencia» es lo que eliges antes que otra cosa; la otra palabra no es una elección tuya, es alguien que te avala.', 'La preferencia la eliges tú; lo otro habla de ti.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -24987,10 +24988,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('c229d83e-5b3a-48b4-afdd-a4ac3d8f6c32', 'certificar', '«Certificar» es dar fe por escrito de que algo es cierto; la otra palabra solo pone números, sin sellar nada.', 'Certificar necesita un sello; lo otro, una cifra.'),
-  ('c229d83e-5b3a-48b4-afdd-a4ac3d8f6c32', 'estimar', '«Estimar» es dar un número aproximado a ojo; la otra palabra parte de datos que se pueden comprobar.', 'Se estima a ojo; lo otro se cuenta.');
+  ('c229d83e-5b3a-48b4-afdd-a4ac3d8f6c32', 'certificar', null, '«Certificar» es dar fe por escrito de que algo es cierto; la otra palabra solo pone números, sin sellar nada.', 'Certificar necesita un sello; lo otro, una cifra.'),
+  ('c229d83e-5b3a-48b4-afdd-a4ac3d8f6c32', 'estimar', null, '«Estimar» es dar un número aproximado a ojo; la otra palabra parte de datos que se pueden comprobar.', 'Se estima a ojo; lo otro se cuenta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -25161,10 +25162,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b1d843ce-064f-4701-8e0c-0307a2e969b7', 'rédito', 'El «rédito» es el beneficio que da un dinero prestado o invertido; la otra palabra es el reconocimiento que gana una persona.', 'El rédito lo paga el banco; lo otro lo reconoce la gente.'),
-  ('b1d843ce-064f-4701-8e0c-0307a2e969b7', 'método', 'El «método» es la manera ordenada de hacer algo; la otra palabra es el valor de haberlo hecho.', 'El método explica el cómo; lo otro señala a quién.');
+  ('b1d843ce-064f-4701-8e0c-0307a2e969b7', 'rédito', null, 'El «rédito» es el beneficio que da un dinero prestado o invertido; la otra palabra es el reconocimiento que gana una persona.', 'El rédito lo paga el banco; lo otro lo reconoce la gente.'),
+  ('b1d843ce-064f-4701-8e0c-0307a2e969b7', 'método', null, 'El «método» es la manera ordenada de hacer algo; la otra palabra es el valor de haberlo hecho.', 'El método explica el cómo; lo otro señala a quién.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -25377,10 +25378,11 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('56dd2756-62e5-4103-aa76-f8fde026ed73', 'talento', 'El «talento» es la facilidad para hacer algo bien; la otra palabra es la manera de tratar a la gente.', 'El talento se ve trabajando; lo otro, discutiendo.'),
-  ('56dd2756-62e5-4103-aa76-f8fde026ed73', 'semblante', 'El «semblante» es la cara que pones en un momento dado; la otra palabra es el modo de comportarse, no una expresión suelta.', 'El semblante cambia en un segundo; lo otro dura años.');
+  ('56dd2756-62e5-4103-aa76-f8fde026ed73', 'talento', null, 'El «talento» es la facilidad para hacer algo bien; la otra palabra es la manera de tratar a la gente.', 'El talento se ve trabajando; lo otro, discutiendo.'),
+  ('56dd2756-62e5-4103-aa76-f8fde026ed73', 'semblante', null, 'El «semblante» es la cara que pones en un momento dado; la otra palabra es el modo de comportarse, no una expresión suelta.', 'El semblante cambia en un segundo; lo otro dura años.'),
+  ('56dd2756-62e5-4103-aa76-f8fde026ed73', 'tajante', '63ab3efd-be99-41a4-a29c-b8c62e852ff8', '«Tajante» es una forma de decir algo que no deja sitio para responder; la otra palabra es el humor con el que alguien trata a la gente.', 'Lo tajante se oye en una frase; lo otro se nota en todo el trato.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -25551,10 +25553,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('c1f534e7-c673-4ed5-9d16-7445572666a6', 'banal', '«Banal» dice que algo carece de importancia o de fondo; la otra palabra elogia a quien cumple y no falla.', 'Lo banal no pesa; lo otro sostiene.'),
-  ('c1f534e7-c673-4ed5-9d16-7445572666a6', 'casual', '«Casual» es lo que ocurre por azar, sin que nadie lo busque; la otra palabra describe justo lo contrario: a quien cumple siempre.', 'Lo casual pasa una vez; lo otro pasa siempre.');
+  ('c1f534e7-c673-4ed5-9d16-7445572666a6', 'banal', null, '«Banal» dice que algo carece de importancia o de fondo; la otra palabra elogia a quien cumple y no falla.', 'Lo banal no pesa; lo otro sostiene.'),
+  ('c1f534e7-c673-4ed5-9d16-7445572666a6', 'casual', null, '«Casual» es lo que ocurre por azar, sin que nadie lo busque; la otra palabra describe justo lo contrario: a quien cumple siempre.', 'Lo casual pasa una vez; lo otro pasa siempre.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -25725,10 +25727,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7b0013dc-ddcf-4521-9783-b4ddd1516951', 'ocaso', '«Ocaso» es la caída del sol o el final de una etapa: «el ocaso del verano». La otra abre una pregunta con respuesta sabida.', 'Uno apaga la luz del día; la otra enciende una pregunta.'),
-  ('7b0013dc-ddcf-4521-9783-b4ddd1516951', 'al caso', '«Al caso» aparece en «venir al caso», es decir, tener que ver con el asunto. La otra no habla del asunto: pregunta.', 'Una cosa viene al caso; la otra pregunta sin esperar nada.');
+  ('7b0013dc-ddcf-4521-9783-b4ddd1516951', 'ocaso', null, '«Ocaso» es la caída del sol o el final de una etapa: «el ocaso del verano». La otra abre una pregunta con respuesta sabida.', 'Uno apaga la luz del día; la otra enciende una pregunta.'),
+  ('7b0013dc-ddcf-4521-9783-b4ddd1516951', 'al caso', null, '«Al caso» aparece en «venir al caso», es decir, tener que ver con el asunto. La otra no habla del asunto: pregunta.', 'Una cosa viene al caso; la otra pregunta sin esperar nada.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -25899,10 +25901,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('22f9f96d-9e05-4baf-a294-9404ed3b97a1', 'adjudicar', '«Adjudicar» es entregar algo a quien lo gana o lo merece, como un premio o un contrato; no tiene que ver con archivos.', 'Se adjudica un premio; se adjunta un archivo.'),
-  ('22f9f96d-9e05-4baf-a294-9404ed3b97a1', 'conjuntar', '«Conjuntar» es combinar piezas para que peguen entre sí; aquí solo se manda un archivo con el mensaje.', 'Conjuntas colores; mandas archivos con el correo.');
+  ('22f9f96d-9e05-4baf-a294-9404ed3b97a1', 'adjudicar', null, '«Adjudicar» es entregar algo a quien lo gana o lo merece, como un premio o un contrato; no tiene que ver con archivos.', 'Se adjudica un premio; se adjunta un archivo.'),
+  ('22f9f96d-9e05-4baf-a294-9404ed3b97a1', 'conjuntar', null, '«Conjuntar» es combinar piezas para que peguen entre sí; aquí solo se manda un archivo con el mensaje.', 'Conjuntas colores; mandas archivos con el correo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -26115,10 +26117,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('36f3c8ac-89e2-48e8-83e1-819e41d8207d', 'ambivalente', '«Ambivalente» describe a quien siente dos cosas a la vez; la otra palabra describe un texto que admite dos lecturas.', 'Lo ambivalente pasa dentro de una persona; las dos lecturas pasan dentro de la frase.'),
-  ('36f3c8ac-89e2-48e8-83e1-819e41d8207d', 'impreciso', '«Impreciso» es que falta detalle; la otra palabra es que hay dos caminos igual de válidos.', 'Lo impreciso se queda corto; lo otro se abre en dos.');
+  ('36f3c8ac-89e2-48e8-83e1-819e41d8207d', 'ambivalente', null, '«Ambivalente» describe a quien siente dos cosas a la vez; la otra palabra describe un texto que admite dos lecturas.', 'Lo ambivalente pasa dentro de una persona; las dos lecturas pasan dentro de la frase.'),
+  ('36f3c8ac-89e2-48e8-83e1-819e41d8207d', 'impreciso', null, '«Impreciso» es que falta detalle; la otra palabra es que hay dos caminos igual de válidos.', 'Lo impreciso se queda corto; lo otro se abre en dos.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -26331,10 +26333,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f5e7de35-f617-4464-8bf6-948d4ce41643', 'aprensivo', '«Aprensivo» describe a quien teme que algo le haga daño; la otra palabra describe algo que no admite espera.', 'El aprensivo tiene miedo; lo que no espera tiene reloj.'),
-  ('f5e7de35-f617-4464-8bf6-948d4ce41643', 'imprescindible', '«Imprescindible» dice que algo no puede faltar; la otra palabra dice que no puede tardar.', 'Lo imprescindible no se puede quitar; lo que corre prisa no se puede dejar para mañana.');
+  ('f5e7de35-f617-4464-8bf6-948d4ce41643', 'aprensivo', null, '«Aprensivo» describe a quien teme que algo le haga daño; la otra palabra describe algo que no admite espera.', 'El aprensivo tiene miedo; lo que no espera tiene reloj.'),
+  ('f5e7de35-f617-4464-8bf6-948d4ce41643', 'imprescindible', null, '«Imprescindible» dice que algo no puede faltar; la otra palabra dice que no puede tardar.', 'Lo imprescindible no se puede quitar; lo que corre prisa no se puede dejar para mañana.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -26547,10 +26549,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7afcdc1c-2204-48a7-b605-aa77dc7c888a', 'actitud', 'La «actitud» es cómo alguien se comporta y se toma las cosas; lo otro es lo que esa persona sabe hacer bien.', 'La actitud se ve en el ánimo; lo otro se ve en el resultado.'),
-  ('7afcdc1c-2204-48a7-b605-aa77dc7c888a', 'altitud', 'La «altitud» mide la altura sobre el nivel del mar; no dice nada de lo que alguien sabe hacer.', 'La altitud se mide en metros; lo otro, en resultados.');
+  ('7afcdc1c-2204-48a7-b605-aa77dc7c888a', 'actitud', null, 'La «actitud» es cómo alguien se comporta y se toma las cosas; lo otro es lo que esa persona sabe hacer bien.', 'La actitud se ve en el ánimo; lo otro se ve en el resultado.'),
+  ('7afcdc1c-2204-48a7-b605-aa77dc7c888a', 'altitud', null, 'La «altitud» mide la altura sobre el nivel del mar; no dice nada de lo que alguien sabe hacer.', 'La altitud se mide en metros; lo otro, en resultados.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -26721,10 +26723,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a4019d66-ba86-4933-b4b0-93bdc24c5472', 'callar', '«Callar» es no decir nada; la otra palabra describe una idea que entra en alguien y se queda.', 'Quien calla no dice; lo que entra hondo no se va.'),
-  ('a4019d66-ba86-4933-b4b0-93bdc24c5472', 'gustar', '«Gustar» se nota en el momento; la otra palabra se comprueba días después, cuando la idea sigue ahí.', 'Gustar se mide al salir; lo otro, al cabo de una semana.');
+  ('a4019d66-ba86-4933-b4b0-93bdc24c5472', 'callar', null, '«Callar» es no decir nada; la otra palabra describe una idea que entra en alguien y se queda.', 'Quien calla no dice; lo que entra hondo no se va.'),
+  ('a4019d66-ba86-4933-b4b0-93bdc24c5472', 'gustar', null, '«Gustar» se nota en el momento; la otra palabra se comprueba días después, cuando la idea sigue ahí.', 'Gustar se mide al salir; lo otro, al cabo de una semana.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -26937,10 +26939,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('164a58b0-6f46-42fc-9b3a-9117332b7ad4', 'sesión', 'Una «sesión» es el rato en que un grupo se reúne a trabajar; la otra palabra es el traspaso de algo que era tuyo.', 'La sesión ocupa una hora; la otra cambia de dueño.'),
-  ('164a58b0-6f46-42fc-9b3a-9117332b7ad4', 'concesión', 'Una «concesión» es un permiso que da quien manda, o algo que aceptas para cerrar un trato; la otra palabra traspasa algo concreto.', 'La concesión la otorga quien manda; la otra la firman dos iguales.');
+  ('164a58b0-6f46-42fc-9b3a-9117332b7ad4', 'sesión', null, 'Una «sesión» es el rato en que un grupo se reúne a trabajar; la otra palabra es el traspaso de algo que era tuyo.', 'La sesión ocupa una hora; la otra cambia de dueño.'),
+  ('164a58b0-6f46-42fc-9b3a-9117332b7ad4', 'concesión', 'ffb00d27-f805-4949-aa53-cea166da0dbf', 'Una «concesión» es un permiso que da quien manda, o algo que aceptas para cerrar un trato; la otra palabra traspasa algo concreto.', 'La concesión la otorga quien manda; la otra la firman dos iguales.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -27111,10 +27113,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('8ba5623d-9036-44b1-a86c-079a54f7b439', 'con que', '«Con que», en dos palabras, presenta una condición o un medio: «me basta con que avises». La otra anuncia lo que decides.', 'Si cabe «con tal de que», son dos palabras; si cabe «así que», es una sola.'),
-  ('8ba5623d-9036-44b1-a86c-079a54f7b439', 'con qué', '«Con qué» pregunta por el instrumento: «¿Con qué lo pego?». La otra no pregunta nada: cierra y resuelve.', 'Una pregunta; la otra resuelve.');
+  ('8ba5623d-9036-44b1-a86c-079a54f7b439', 'con que', null, '«Con que», en dos palabras, presenta una condición o un medio: «me basta con que avises». La otra anuncia lo que decides.', 'Si cabe «con tal de que», son dos palabras; si cabe «así que», es una sola.'),
+  ('8ba5623d-9036-44b1-a86c-079a54f7b439', 'con qué', null, '«Con qué» pregunta por el instrumento: «¿Con qué lo pego?». La otra no pregunta nada: cierra y resuelve.', 'Una pregunta; la otra resuelve.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -27285,10 +27287,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b2ea584b-cbd9-4c38-9cd8-0da627235239', 'consecutivamente', '«Consecutivamente» dice que unas cosas van una detrás de otra: «ganó tres años consecutivamente». La otra habla de causa, no de fila.', 'Una cuenta la fila; la otra explica el porqué.'),
-  ('b2ea584b-cbd9-4c38-9cd8-0da627235239', 'consistentemente', '«Consistentemente» describe algo que se mantiene igual con el tiempo. La otra no habla de constancia: habla de efecto.', 'Una no cambia; la otra provoca el cambio.');
+  ('b2ea584b-cbd9-4c38-9cd8-0da627235239', 'consecutivamente', null, '«Consecutivamente» dice que unas cosas van una detrás de otra: «ganó tres años consecutivamente». La otra habla de causa, no de fila.', 'Una cuenta la fila; la otra explica el porqué.'),
+  ('b2ea584b-cbd9-4c38-9cd8-0da627235239', 'consistentemente', null, '«Consistentemente» describe algo que se mantiene igual con el tiempo. La otra no habla de constancia: habla de efecto.', 'Una no cambia; la otra provoca el cambio.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -27501,10 +27503,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('1756a4b4-a6e8-44fc-a0af-66ed80db4fcc', 'contrastar', '«Contrastar» compara dos versiones para ver en qué se diferencian; la otra palabra solo confirma que algo ocurrió.', 'Contrastas dos datos entre sí; confirmas uno con tus ojos.'),
-  ('1756a4b4-a6e8-44fc-a0af-66ed80db4fcc', 'opinar', '«Opinar» añade tu juicio; la otra palabra se queda en lo que cualquiera podría comprobar igual que tú.', 'La opinión es tuya; el hecho lo puede repetir cualquiera.');
+  ('1756a4b4-a6e8-44fc-a0af-66ed80db4fcc', 'contrastar', '6ad1c465-f124-49a6-b481-f2f113ae91b8', '«Contrastar» compara dos versiones para ver en qué se diferencian; la otra palabra solo confirma que algo ocurrió.', 'Contrastas dos datos entre sí; confirmas uno con tus ojos.'),
+  ('1756a4b4-a6e8-44fc-a0af-66ed80db4fcc', 'opinar', null, '«Opinar» añade tu juicio; la otra palabra se queda en lo que cualquiera podría comprobar igual que tú.', 'La opinión es tuya; el hecho lo puede repetir cualquiera.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -27717,10 +27719,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('9a0c40f4-8406-4a10-85b7-48fc045a1b5e', 'cordura', '«Cordura» es el buen juicio de quien no pierde la cabeza; la otra palabra describe cómo tratas a alguien.', 'La cordura está en la cabeza; el trato amable está en el tono.'),
-  ('9a0c40f4-8406-4a10-85b7-48fc045a1b5e', 'efusivo', '«Efusivo» se desborda en muestras de afecto; la otra palabra se queda en un punto medio que sirve con cualquiera.', 'Lo efusivo abraza; el punto medio saluda y sonríe.');
+  ('9a0c40f4-8406-4a10-85b7-48fc045a1b5e', 'cordura', null, '«Cordura» es el buen juicio de quien no pierde la cabeza; la otra palabra describe cómo tratas a alguien.', 'La cordura está en la cabeza; el trato amable está en el tono.'),
+  ('9a0c40f4-8406-4a10-85b7-48fc045a1b5e', 'efusivo', null, '«Efusivo» se desborda en muestras de afecto; la otra palabra se queda en un punto medio que sirve con cualquiera.', 'Lo efusivo abraza; el punto medio saluda y sonríe.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -27912,10 +27914,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ef08a1c5-2b13-40da-a6c6-3eb332b7adde', 'enlace', '«Enlace» es lo que une dos cosas, como una dirección web o una boda; la otra palabra es cómo acaba una historia.', 'El enlace une dos puntos; el otro cierra el camino.'),
-  ('ef08a1c5-2b13-40da-a6c6-3eb332b7adde', 'moraleja', '«Moraleja» es lo que aprendes de una historia; la otra palabra es lo que ocurre al final, aunque no aporte nada.', 'La moraleja explica; el final solo ocurre.');
+  ('ef08a1c5-2b13-40da-a6c6-3eb332b7adde', 'enlace', null, '«Enlace» es lo que une dos cosas, como una dirección web o una boda; la otra palabra es cómo acaba una historia.', 'El enlace une dos puntos; el otro cierra el camino.'),
+  ('ef08a1c5-2b13-40da-a6c6-3eb332b7adde', 'moraleja', null, '«Moraleja» es lo que aprendes de una historia; la otra palabra es lo que ocurre al final, aunque no aporte nada.', 'La moraleja explica; el final solo ocurre.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -28128,10 +28130,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b225b7d7-06e3-4b77-8f85-dbbd115bed9f', 'dificultosamente', '«Dificultosamente» describe cómo se hace algo, con esfuerzo y trabas: «subió dificultosamente». La otra habla de probabilidad.', 'Una cuenta el esfuerzo; la otra calcula las opciones.'),
-  ('b225b7d7-06e3-4b77-8f85-dbbd115bed9f', 'deficientemente', '«Deficientemente» dice que algo se hizo mal o a medias: «quedó deficientemente sellado». La otra no juzga la calidad: mide lo improbable.', 'Una suspende el resultado; la otra ni siquiera lo espera.');
+  ('b225b7d7-06e3-4b77-8f85-dbbd115bed9f', 'dificultosamente', null, '«Dificultosamente» describe cómo se hace algo, con esfuerzo y trabas: «subió dificultosamente». La otra habla de probabilidad.', 'Una cuenta el esfuerzo; la otra calcula las opciones.'),
+  ('b225b7d7-06e3-4b77-8f85-dbbd115bed9f', 'deficientemente', null, '«Deficientemente» dice que algo se hizo mal o a medias: «quedó deficientemente sellado». La otra no juzga la calidad: mide lo improbable.', 'Una suspende el resultado; la otra ni siquiera lo espera.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -28323,10 +28325,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('44d791ec-e2f4-4694-a891-1334d3910eeb', 'disentir', '«Disentir» es no estar de acuerdo con alguien; la otra palabra no opina: separa dos cosas parecidas para ver cuál es cuál.', 'Disientes de una persona; lo otro lo haces con dos cosas.'),
-  ('44d791ec-e2f4-4694-a891-1334d3910eeb', 'discurrir', '«Discurrir» es pensar sobre algo o dejar pasar el tiempo; la otra palabra llega hasta el final y marca la diferencia.', 'Discurrir da vueltas; lo otro separa y termina.');
+  ('44d791ec-e2f4-4694-a891-1334d3910eeb', 'disentir', null, '«Disentir» es no estar de acuerdo con alguien; la otra palabra no opina: separa dos cosas parecidas para ver cuál es cuál.', 'Disientes de una persona; lo otro lo haces con dos cosas.'),
+  ('44d791ec-e2f4-4694-a891-1334d3910eeb', 'discurrir', null, '«Discurrir» es pensar sobre algo o dejar pasar el tiempo; la otra palabra llega hasta el final y marca la diferencia.', 'Discurrir da vueltas; lo otro separa y termina.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -28497,10 +28499,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('12c1c1ef-8c61-487f-87f4-e96e6353e6a1', 'afectivamente', '«Afectivamente» habla del cariño y de los sentimientos: «lo vivió afectivamente». La otra solo confirma un dato.', 'Una toca el corazón; la otra marca la casilla.'),
-  ('12c1c1ef-8c61-487f-87f4-e96e6353e6a1', 'efusivamente', '«Efusivamente» describe un gesto muy caluroso: «lo saludó efusivamente». La otra no describe gestos: confirma.', 'Una abraza fuerte; la otra dice «así fue».');
+  ('12c1c1ef-8c61-487f-87f4-e96e6353e6a1', 'afectivamente', null, '«Afectivamente» habla del cariño y de los sentimientos: «lo vivió afectivamente». La otra solo confirma un dato.', 'Una toca el corazón; la otra marca la casilla.'),
+  ('12c1c1ef-8c61-487f-87f4-e96e6353e6a1', 'efusivamente', null, '«Efusivamente» describe un gesto muy caluroso: «lo saludó efusivamente». La otra no describe gestos: confirma.', 'Una abraza fuerte; la otra dice «así fue».');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -28671,10 +28673,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('77f7d914-45d6-46ca-b21a-f578c621706e', 'simular', '«Simular» es fingir algo que no ocurre de verdad; la otra palabra toma a alguien como ejemplo para llegar a su altura.', 'Quien simula aparenta; quien toma ejemplo se esfuerza.'),
-  ('77f7d914-45d6-46ca-b21a-f578c621706e', 'estimular', '«Estimular» es animar a otro a que haga algo; la otra palabra describe a quien se pone él mismo a la altura de un ejemplo.', 'Estimulas a otro; el ejemplo te mueve a ti.');
+  ('77f7d914-45d6-46ca-b21a-f578c621706e', 'simular', null, '«Simular» es fingir algo que no ocurre de verdad; la otra palabra toma a alguien como ejemplo para llegar a su altura.', 'Quien simula aparenta; quien toma ejemplo se esfuerza.'),
+  ('77f7d914-45d6-46ca-b21a-f578c621706e', 'estimular', null, '«Estimular» es animar a otro a que haga algo; la otra palabra describe a quien se pone él mismo a la altura de un ejemplo.', 'Estimulas a otro; el ejemplo te mueve a ti.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -28845,10 +28847,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('df50b5ea-409a-4584-b7c2-93ff9e8353a7', 'entre tantos', '«Entre tantos» habla de una cosa perdida dentro de un montón: «entre tantos papeles». La otra habla del rato de una espera.', 'Una cuenta cosas; la otra cuenta minutos.'),
-  ('df50b5ea-409a-4584-b7c2-93ff9e8353a7', 'entretenido', '«Entretenido» describe a alguien distraído o algo que divierte: «una película entretenida». La otra no describe: sitúa en el tiempo.', 'Uno hace pasar el rato; la otra dice qué haces en ese rato.');
+  ('df50b5ea-409a-4584-b7c2-93ff9e8353a7', 'entre tantos', null, '«Entre tantos» habla de una cosa perdida dentro de un montón: «entre tantos papeles». La otra habla del rato de una espera.', 'Una cuenta cosas; la otra cuenta minutos.'),
+  ('df50b5ea-409a-4584-b7c2-93ff9e8353a7', 'entretenido', null, '«Entretenido» describe a alguien distraído o algo que divierte: «una película entretenida». La otra no describe: sitúa en el tiempo.', 'Uno hace pasar el rato; la otra dice qué haces en ese rato.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -29040,10 +29042,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('24074fa6-1075-4242-b68c-a76fc17f252d', 'esgrimir', '«Esgrimir» es sacar un argumento para defenderte; la otra palabra solo enseña una idea a medio hacer.', 'Se esgrime un argumento para ganar; se enseña un borrador para mejorarlo.'),
-  ('24074fa6-1075-4242-b68c-a76fc17f252d', 'detallar', '«Detallar» baja hasta la última cifra; la otra palabra se queda arriba, en los trazos gruesos.', 'Detallar mira con lupa; la otra palabra mira desde lejos.');
+  ('24074fa6-1075-4242-b68c-a76fc17f252d', 'esgrimir', null, '«Esgrimir» es sacar un argumento para defenderte; la otra palabra solo enseña una idea a medio hacer.', 'Se esgrime un argumento para ganar; se enseña un borrador para mejorarlo.'),
+  ('24074fa6-1075-4242-b68c-a76fc17f252d', 'detallar', null, '«Detallar» baja hasta la última cifra; la otra palabra se queda arriba, en los trazos gruesos.', 'Detallar mira con lupa; la otra palabra mira desde lejos.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -29256,10 +29258,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('6438b4fc-474f-4ed5-9870-73951c16fd07', 'invocar', '«Invocar» es llamar a alguien o apoyarse en una norma para pedir algo; la otra palabra enciende una imagen en la cabeza.', 'Invocas una norma para defenderte; enciendes una imagen para que te vean.'),
-  ('6438b4fc-474f-4ed5-9870-73951c16fd07', 'recordar', '«Recordar» ocurre dentro de ti; la otra palabra hace que la imagen aparezca en la cabeza de quien te escucha.', 'Recuerdas tú; el otro verbo enciende la imagen del que escucha.');
+  ('6438b4fc-474f-4ed5-9870-73951c16fd07', 'invocar', null, '«Invocar» es llamar a alguien o apoyarse en una norma para pedir algo; la otra palabra enciende una imagen en la cabeza.', 'Invocas una norma para defenderte; enciendes una imagen para que te vean.'),
+  ('6438b4fc-474f-4ed5-9870-73951c16fd07', 'recordar', null, '«Recordar» ocurre dentro de ti; la otra palabra hace que la imagen aparezca en la cabeza de quien te escucha.', 'Recuerdas tú; el otro verbo enciende la imagen del que escucha.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -29472,10 +29474,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4a5115d1-c491-44aa-bfdd-55d1a3c520fa', 'exhausto', '«Exhausto» describe a quien se quedó sin fuerzas; la otra palabra describe un trabajo que no deja nada fuera.', 'Exhausto queda la persona; lo otro queda el repaso.'),
-  ('4a5115d1-c491-44aa-bfdd-55d1a3c520fa', 'extensivo', '«Extensivo» dice que algo se aplica a más casos de los previstos; la otra palabra dice que se revisó todo a fondo.', 'Extensivo alcanza a más gente; lo otro llega al último detalle.');
+  ('4a5115d1-c491-44aa-bfdd-55d1a3c520fa', 'exhausto', null, '«Exhausto» describe a quien se quedó sin fuerzas; la otra palabra describe un trabajo que no deja nada fuera.', 'Exhausto queda la persona; lo otro queda el repaso.'),
+  ('4a5115d1-c491-44aa-bfdd-55d1a3c520fa', 'extensivo', null, '«Extensivo» dice que algo se aplica a más casos de los previstos; la otra palabra dice que se revisó todo a fondo.', 'Extensivo alcanza a más gente; lo otro llega al último detalle.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -29646,10 +29648,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('32fc8c70-b544-46f1-91bd-efecfb703814', 'afilar', '«Afilar» es sacar punta a algo; la otra palabra une piezas sueltas en un relato que avanza.', 'Afilas un cuchillo; unes los hechos en un camino.'),
-  ('32fc8c70-b544-46f1-91bd-efecfb703814', 'enumerar', '«Enumerar» pone los hechos uno detrás de otro; la otra palabra hace que cada uno lleve al siguiente.', 'Enumerar apila; el otro verbo encadena.');
+  ('32fc8c70-b544-46f1-91bd-efecfb703814', 'afilar', null, '«Afilar» es sacar punta a algo; la otra palabra une piezas sueltas en un relato que avanza.', 'Afilas un cuchillo; unes los hechos en un camino.'),
+  ('32fc8c70-b544-46f1-91bd-efecfb703814', 'enumerar', null, '«Enumerar» pone los hechos uno detrás de otro; la otra palabra hace que cada uno lleve al siguiente.', 'Enumerar apila; el otro verbo encadena.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -29862,10 +29864,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('70974a34-f097-4021-8a62-08c4e2870adb', 'igualado', '«Igualado» describe algo que ha quedado a la par: «el marcador quedó igualado». La otra no describe: extiende lo dicho a un segundo caso.', 'Uno cuenta cómo quedó algo; la otra reparte el mismo trato.'),
-  ('70974a34-f097-4021-8a62-08c4e2870adb', 'igual', '«Igual», en conversación, suele significar «quizá»: «igual me paso luego». La otra nunca duda: afirma el mismo trato.', 'Una deja la puerta abierta; la otra cierra con la misma regla.');
+  ('70974a34-f097-4021-8a62-08c4e2870adb', 'igualado', null, '«Igualado» describe algo que ha quedado a la par: «el marcador quedó igualado». La otra no describe: extiende lo dicho a un segundo caso.', 'Uno cuenta cómo quedó algo; la otra reparte el mismo trato.'),
+  ('70974a34-f097-4021-8a62-08c4e2870adb', 'igual', null, '«Igual», en conversación, suele significar «quizá»: «igual me paso luego». La otra nunca duda: afirma el mismo trato.', 'Una deja la puerta abierta; la otra cierra con la misma regla.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -30057,10 +30059,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ee2f911f-a2dd-43f2-a50f-3ec09dbcd348', 'inerme', '«Inerme» se dice de quien se queda sin armas ni defensa ante algo; la otra palabra dice que algo no se mueve ni reacciona.', 'Quien está inerme puede moverse, pero no defenderse.'),
-  ('ee2f911f-a2dd-43f2-a50f-3ec09dbcd348', 'inepto', '«Inepto» acusa a alguien de no saber hacer su trabajo; la otra palabra no juzga a nadie, solo describe que algo no reacciona.', 'Inepto es un reproche; lo otro es una descripción.');
+  ('ee2f911f-a2dd-43f2-a50f-3ec09dbcd348', 'inerme', null, '«Inerme» se dice de quien se queda sin armas ni defensa ante algo; la otra palabra dice que algo no se mueve ni reacciona.', 'Quien está inerme puede moverse, pero no defenderse.'),
+  ('ee2f911f-a2dd-43f2-a50f-3ec09dbcd348', 'inepto', null, '«Inepto» acusa a alguien de no saber hacer su trabajo; la otra palabra no juzga a nadie, solo describe que algo no reacciona.', 'Inepto es un reproche; lo otro es una descripción.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -30231,10 +30233,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7b9b0eda-5c12-4329-bb94-b7b954491b53', 'exhibir', '«Exhibir» es mostrar algo a la vista de todos; la otra palabra hace lo contrario: lo retiene antes de que salga.', 'Exhibir saca; lo otro guarda.'),
-  ('7b9b0eda-5c12-4329-bb94-b7b954491b53', 'prohibir', '«Prohibir» es negar el permiso con una orden; la otra palabra no ordena nada: frena por el ambiente o por decisión propia.', 'Prohibir manda; lo otro frena sin orden.');
+  ('7b9b0eda-5c12-4329-bb94-b7b954491b53', 'exhibir', null, '«Exhibir» es mostrar algo a la vista de todos; la otra palabra hace lo contrario: lo retiene antes de que salga.', 'Exhibir saca; lo otro guarda.'),
+  ('7b9b0eda-5c12-4329-bb94-b7b954491b53', 'prohibir', null, '«Prohibir» es negar el permiso con una orden; la otra palabra no ordena nada: frena por el ambiente o por decisión propia.', 'Prohibir manda; lo otro frena sin orden.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -30426,10 +30428,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a8387a0a-a5b8-4ab2-94f0-64cbef9eb8e2', 'esencialmente', '«Esencialmente» habla de lo que algo es en el fondo: «es esencialmente un problema de dinero». La otra habla del punto de partida.', 'Una mira el fondo; la otra mira el primer día.'),
-  ('a8387a0a-a5b8-4ab2-94f0-64cbef9eb8e2', 'oficialmente', '«Oficialmente» dice que algo consta por la vía formal: «oficialmente cerró en mayo». La otra no habla de papeles: habla del comienzo.', 'Una necesita un sello; la otra solo un calendario.');
+  ('a8387a0a-a5b8-4ab2-94f0-64cbef9eb8e2', 'esencialmente', null, '«Esencialmente» habla de lo que algo es en el fondo: «es esencialmente un problema de dinero». La otra habla del punto de partida.', 'Una mira el fondo; la otra mira el primer día.'),
+  ('a8387a0a-a5b8-4ab2-94f0-64cbef9eb8e2', 'oficialmente', null, '«Oficialmente» dice que algo consta por la vía formal: «oficialmente cerró en mayo». La otra no habla de papeles: habla del comienzo.', 'Una necesita un sello; la otra solo un calendario.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -30600,10 +30602,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('f0218b15-734d-44be-bca8-88d510374d7d', 'eminente', '«Eminente» elogia a alguien que destaca mucho en lo suyo; la otra palabra solo dice que algo va a pasar enseguida.', 'Una mide el prestigio; la otra mide el reloj.'),
-  ('f0218b15-734d-44be-bca8-88d510374d7d', 'urgente', '«Urgente» dice que hay que atenderlo ya; la otra palabra dice que va a ocurrir ya, lo atiendas o no.', 'Lo urgente te pide acción; lo otro llega sin pedir permiso.');
+  ('f0218b15-734d-44be-bca8-88d510374d7d', 'eminente', null, '«Eminente» elogia a alguien que destaca mucho en lo suyo; la otra palabra solo dice que algo va a pasar enseguida.', 'Una mide el prestigio; la otra mide el reloj.'),
+  ('f0218b15-734d-44be-bca8-88d510374d7d', 'urgente', null, '«Urgente» dice que hay que atenderlo ya; la otra palabra dice que va a ocurrir ya, lo atiendas o no.', 'Lo urgente te pide acción; lo otro llega sin pedir permiso.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -30816,10 +30818,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b7588b55-0c1a-4712-8014-89d1d37600f4', 'intimidar', '«Intimidar» es hacer que alguien se sienta pequeño o asustado; la otra palabra acerca a dos personas y crea confianza.', 'Una aleja por miedo; la otra acerca por confianza.'),
-  ('b7588b55-0c1a-4712-8014-89d1d37600f4', 'estimar', '«Estimar» es apreciar a alguien o calcular una cifra; la otra palabra describe una amistad que se vuelve cercana.', 'Puedes estimar a quien apenas tratas; la otra exige trato.');
+  ('b7588b55-0c1a-4712-8014-89d1d37600f4', 'intimidar', null, '«Intimidar» es hacer que alguien se sienta pequeño o asustado; la otra palabra acerca a dos personas y crea confianza.', 'Una aleja por miedo; la otra acerca por confianza.'),
+  ('b7588b55-0c1a-4712-8014-89d1d37600f4', 'estimar', null, '«Estimar» es apreciar a alguien o calcular una cifra; la otra palabra describe una amistad que se vuelve cercana.', 'Puedes estimar a quien apenas tratas; la otra exige trato.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -30990,10 +30992,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('240a13a3-5565-46d7-9a5c-ea51a357735f', 'nimio', '«Nimio» dice que algo es tan pequeño que no importa; la otra palabra dice que se entiende a la primera.', 'Lo nimio no vale la pena; lo otro se ve de un vistazo.'),
-  ('240a13a3-5565-46d7-9a5c-ea51a357735f', 'evidente', '«Evidente» dice que cualquiera lo daría por sabido; la otra palabra dice que está bien contado, aunque sea nuevo.', 'Lo evidente ya lo sabías; lo otro te lo acaban de explicar bien.');
+  ('240a13a3-5565-46d7-9a5c-ea51a357735f', 'nimio', null, '«Nimio» dice que algo es tan pequeño que no importa; la otra palabra dice que se entiende a la primera.', 'Lo nimio no vale la pena; lo otro se ve de un vistazo.'),
+  ('240a13a3-5565-46d7-9a5c-ea51a357735f', 'evidente', null, '«Evidente» dice que cualquiera lo daría por sabido; la otra palabra dice que está bien contado, aunque sea nuevo.', 'Lo evidente ya lo sabías; lo otro te lo acaban de explicar bien.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -31206,10 +31208,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('1a05c18e-0c86-4b76-9da7-85505a52fec4', 'parcialmente', '«Parcialmente» dice que algo se hizo solo en parte: «el pedido llegó parcialmente». La otra habla de dos cosas a la vez.', 'Una mide cuánto se hizo; la otra, cuántas cosas a la vez.'),
-  ('1a05c18e-0c86-4b76-9da7-85505a52fec4', 'paulatinamente', '«Paulatinamente» describe algo que avanza poco a poco. La otra no habla de ritmo: habla de dos caminos abiertos al tiempo.', 'Una mira la velocidad; la otra cuenta los carriles.');
+  ('1a05c18e-0c86-4b76-9da7-85505a52fec4', 'parcialmente', null, '«Parcialmente» dice que algo se hizo solo en parte: «el pedido llegó parcialmente». La otra habla de dos cosas a la vez.', 'Una mide cuánto se hizo; la otra, cuántas cosas a la vez.'),
+  ('1a05c18e-0c86-4b76-9da7-85505a52fec4', 'paulatinamente', null, '«Paulatinamente» describe algo que avanza poco a poco. La otra no habla de ritmo: habla de dos caminos abiertos al tiempo.', 'Una mira la velocidad; la otra cuenta los carriles.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -31422,10 +31424,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7e72d24f-6a97-4d83-9e1a-37938453e1f3', 'prejuicio', 'Un «prejuicio» es una idea formada de antemano sobre alguien; lo otro es el daño real que sufre una persona.', 'El prejuicio está en tu cabeza; el daño está en la cuenta.'),
-  ('7e72d24f-6a97-4d83-9e1a-37938453e1f3', 'perjurio', '«Perjurio» es mentir después de jurar decir la verdad; nada tiene que ver con la pérdida que alguien sufre.', 'El perjurio rompe un juramento; el daño rompe una cuenta.');
+  ('7e72d24f-6a97-4d83-9e1a-37938453e1f3', 'prejuicio', null, 'Un «prejuicio» es una idea formada de antemano sobre alguien; lo otro es el daño real que sufre una persona.', 'El prejuicio está en tu cabeza; el daño está en la cuenta.'),
+  ('7e72d24f-6a97-4d83-9e1a-37938453e1f3', 'perjurio', null, '«Perjurio» es mentir después de jurar decir la verdad; nada tiene que ver con la pérdida que alguien sufre.', 'El perjurio rompe un juramento; el daño rompe una cuenta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -31617,10 +31619,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('926e03b0-64df-4905-9ae3-3cd62a5c56f8', 'pasmar', '«Pasmar» es dejar a alguien con la boca abierta por la sorpresa; la otra palabra saca una idea al papel.', 'Pasmas a quien te escucha; sacas al papel lo que piensas.'),
-  ('926e03b0-64df-4905-9ae3-3cd62a5c56f8', 'reflejar', '«Reflejar» muestra algo que ya existe fuera, como un espejo; la otra palabra saca al papel algo que solo estaba en tu cabeza.', 'El espejo copia lo de fuera; la hoja recoge lo de dentro.');
+  ('926e03b0-64df-4905-9ae3-3cd62a5c56f8', 'pasmar', null, '«Pasmar» es dejar a alguien con la boca abierta por la sorpresa; la otra palabra saca una idea al papel.', 'Pasmas a quien te escucha; sacas al papel lo que piensas.'),
+  ('926e03b0-64df-4905-9ae3-3cd62a5c56f8', 'reflejar', null, '«Reflejar» muestra algo que ya existe fuera, como un espejo; la otra palabra saca al papel algo que solo estaba en tu cabeza.', 'El espejo copia lo de fuera; la hoja recoge lo de dentro.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -31833,10 +31835,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('b8a63563-1fe8-452c-a49a-691a930cd9d0', 'proceder', '«Proceder» es actuar de cierta manera o venir de algún sitio; la otra palabra solo sitúa algo delante en el orden.', 'Proceder dice de dónde viene; la otra dice qué va antes.'),
-  ('b8a63563-1fe8-452c-a49a-691a930cd9d0', 'presidir', '«Presidir» es ocupar el puesto de quien dirige; la otra palabra no manda en nada, solo va delante.', 'Quien preside dirige; lo que va delante solo abre paso.');
+  ('b8a63563-1fe8-452c-a49a-691a930cd9d0', 'proceder', null, '«Proceder» es actuar de cierta manera o venir de algún sitio; la otra palabra solo sitúa algo delante en el orden.', 'Proceder dice de dónde viene; la otra dice qué va antes.'),
+  ('b8a63563-1fe8-452c-a49a-691a930cd9d0', 'presidir', null, '«Presidir» es ocupar el puesto de quien dirige; la otra palabra no manda en nada, solo va delante.', 'Quien preside dirige; lo que va delante solo abre paso.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -32049,10 +32051,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('09751c85-479a-4edb-9f70-da2d240434eb', 'preciosamente', '«Preciosamente» habla de belleza: «la mesa quedó preciosamente puesta». La otra no valora nada: señala el punto exacto.', 'Una admira; la otra apunta.'),
-  ('09751c85-479a-4edb-9f70-da2d240434eb', 'precipitadamente', '«Precipitadamente» dice que algo se hizo con prisa y sin pensar. La otra no habla de velocidad: habla de puntería.', 'Una corre; la otra acierta.');
+  ('09751c85-479a-4edb-9f70-da2d240434eb', 'preciosamente', null, '«Preciosamente» habla de belleza: «la mesa quedó preciosamente puesta». La otra no valora nada: señala el punto exacto.', 'Una admira; la otra apunta.'),
+  ('09751c85-479a-4edb-9f70-da2d240434eb', 'precipitadamente', null, '«Precipitadamente» dice que algo se hizo con prisa y sin pensar. La otra no habla de velocidad: habla de puntería.', 'Una corre; la otra acierta.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -32223,10 +32225,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('36fa09c3-97e1-4424-9ffd-663725c66020', 'prescribir', '«Prescribir» es recetar algo o marcar una norma; la otra palabra deja algo fuera porque no hace falta.', 'Se prescribe lo que hay que tomar; se deja fuera lo que no hace falta.'),
-  ('36fa09c3-97e1-4424-9ffd-663725c66020', 'descartar', '«Descartar» elige entre varias opciones y tira una; la otra palabra sigue adelante sin algo que sí podría estar.', 'Descartas una carta entre varias; sigues sin la pieza que sobraba.');
+  ('36fa09c3-97e1-4424-9ffd-663725c66020', 'prescribir', null, '«Prescribir» es recetar algo o marcar una norma; la otra palabra deja algo fuera porque no hace falta.', 'Se prescribe lo que hay que tomar; se deja fuera lo que no hace falta.'),
+  ('36fa09c3-97e1-4424-9ffd-663725c66020', 'descartar', null, '«Descartar» elige entre varias opciones y tira una; la otra palabra sigue adelante sin algo que sí podría estar.', 'Descartas una carta entre varias; sigues sin la pieza que sobraba.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -32439,10 +32441,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('5f42ec5f-b89e-4b60-834e-8ef25b636ab7', 'proveer', '«Proveer» es entregar o suministrar lo que hace falta; la otra palabra no entrega nada, calcula con tiempo lo que puede pasar.', 'Quien provee reparte cosas; quien lo calcula reparte tiempo.'),
-  ('5f42ec5f-b89e-4b60-834e-8ef25b636ab7', 'prevenir', '«Prevenir» busca impedir un daño o avisar de él; calcular de antemano solo consiste en contar con la posibilidad.', 'Prevenir evita; calcular de antemano cuenta con ello.');
+  ('5f42ec5f-b89e-4b60-834e-8ef25b636ab7', 'proveer', null, '«Proveer» es entregar o suministrar lo que hace falta; la otra palabra no entrega nada, calcula con tiempo lo que puede pasar.', 'Quien provee reparte cosas; quien lo calcula reparte tiempo.'),
+  ('5f42ec5f-b89e-4b60-834e-8ef25b636ab7', 'prevenir', null, '«Prevenir» busca impedir un daño o avisar de él; calcular de antemano solo consiste en contar con la posibilidad.', 'Prevenir evita; calcular de antemano cuenta con ello.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -32655,10 +32657,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('8144520d-2902-4a51-ad55-0905d437dbf3', 'privadamente', '«Privadamente» indica que algo se hace en privado, sin público. La otra no habla de intimidad: habla del momento.', 'Una cierra la puerta; la otra mira el reloj.'),
-  ('8144520d-2902-4a51-ad55-0905d437dbf3', 'previsiblemente', '«Previsiblemente» anuncia lo que se espera que ocurra: «previsiblemente lloverá». La otra sitúa algo que ya pasó antes.', 'Una apuesta por el futuro; la otra ordena el pasado.');
+  ('8144520d-2902-4a51-ad55-0905d437dbf3', 'privadamente', null, '«Privadamente» indica que algo se hace en privado, sin público. La otra no habla de intimidad: habla del momento.', 'Una cierra la puerta; la otra mira el reloj.'),
+  ('8144520d-2902-4a51-ad55-0905d437dbf3', 'previsiblemente', null, '«Previsiblemente» anuncia lo que se espera que ocurra: «previsiblemente lloverá». La otra sitúa algo que ya pasó antes.', 'Una apuesta por el futuro; la otra ordena el pasado.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -32850,10 +32852,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('6064f214-1ddb-49fa-b87e-0ef6dbe15fd2', 'privatizar', '«Privatizar» es pasar algo público a manos privadas; la otra palabra decide qué se hace antes y qué después.', 'Privatizar cambia de dueño; ordenar por importancia cambia el turno.'),
-  ('6064f214-1ddb-49fa-b87e-0ef6dbe15fd2', 'ordenar', '«Ordenar» coloca todo en una fila; la otra palabra además decide qué se queda fuera esta semana.', 'Ordenar alinea; poner algo primero deja algo último.');
+  ('6064f214-1ddb-49fa-b87e-0ef6dbe15fd2', 'privatizar', null, '«Privatizar» es pasar algo público a manos privadas; la otra palabra decide qué se hace antes y qué después.', 'Privatizar cambia de dueño; ordenar por importancia cambia el turno.'),
+  ('6064f214-1ddb-49fa-b87e-0ef6dbe15fd2', 'ordenar', null, '«Ordenar» coloca todo en una fila; la otra palabra además decide qué se queda fuera esta semana.', 'Ordenar alinea; poner algo primero deja algo último.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -33066,10 +33068,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('05b3f214-bb96-4fc6-bea3-5f9128094d16', 'recaudar', '«Recaudar» es juntar dinero; lo otro junta datos, opiniones o firmas, y casi nunca monedas.', 'Se recauda dinero; se piden y se reúnen opiniones.'),
-  ('05b3f214-bb96-4fc6-bea3-5f9128094d16', 'recopilar', '«Recopilar» ordena material que ya tienes; aquí primero hay que pedírselo a cada persona.', 'Recopilas lo que ya está en tu mesa; lo otro empieza preguntando.');
+  ('05b3f214-bb96-4fc6-bea3-5f9128094d16', 'recaudar', null, '«Recaudar» es juntar dinero; lo otro junta datos, opiniones o firmas, y casi nunca monedas.', 'Se recauda dinero; se piden y se reúnen opiniones.'),
+  ('05b3f214-bb96-4fc6-bea3-5f9128094d16', 'recopilar', null, '«Recopilar» ordena material que ya tienes; aquí primero hay que pedírselo a cada persona.', 'Recopilas lo que ya está en tu mesa; lo otro empieza preguntando.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -33282,10 +33284,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('9c1d9152-dfea-4528-8fbe-a2a92e462fe6', 'abundante', '«Abundante» dice que hay mucha cantidad; la otra palabra dice que una parte repite lo que ya estaba.', 'Lo abundante es mucho; lo que repite ya estaba.'),
-  ('9c1d9152-dfea-4528-8fbe-a2a92e462fe6', 'repetitivo', '«Repetitivo» describe algo que se repite una y otra vez; la otra palabra señala una sola parte que sobra por ya estar dicha.', 'Lo repetitivo cansa por insistir; lo que ya estaba dicho solo ocupa sitio.');
+  ('9c1d9152-dfea-4528-8fbe-a2a92e462fe6', 'abundante', null, '«Abundante» dice que hay mucha cantidad; la otra palabra dice que una parte repite lo que ya estaba.', 'Lo abundante es mucho; lo que repite ya estaba.'),
+  ('9c1d9152-dfea-4528-8fbe-a2a92e462fe6', 'repetitivo', null, '«Repetitivo» describe algo que se repite una y otra vez; la otra palabra señala una sola parte que sobra por ya estar dicha.', 'Lo repetitivo cansa por insistir; lo que ya estaba dicho solo ocupa sitio.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -33477,10 +33479,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('2f604be2-a6ad-4dcf-845e-bb4c201e68cf', 'reivindicar', '«Reivindicar» es reclamar algo como propio o defender un derecho; aquí solo se repite con calma lo que ya se dijo.', 'Reivindicas lo que te toca; reiteras lo que ya dijiste.'),
-  ('2f604be2-a6ad-4dcf-845e-bb4c201e68cf', 'insistir', '«Insistir» empuja y suele repetirse muchas veces; lo otro dice la misma cosa una vez más y deja espacio.', 'Insistir empuja; repetir con calma solo recuerda.');
+  ('2f604be2-a6ad-4dcf-845e-bb4c201e68cf', 'reivindicar', null, '«Reivindicar» es reclamar algo como propio o defender un derecho; aquí solo se repite con calma lo que ya se dijo.', 'Reivindicas lo que te toca; reiteras lo que ya dijiste.'),
+  ('2f604be2-a6ad-4dcf-845e-bb4c201e68cf', 'insistir', null, '«Insistir» empuja y suele repetirse muchas veces; lo otro dice la misma cosa una vez más y deja espacio.', 'Insistir empuja; repetir con calma solo recuerda.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -33693,10 +33695,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('1c9d5b17-c402-4b18-8436-97a35105a5a4', 'delatar', '«Delatar» es señalar a alguien que ha hecho algo malo; la otra palabra solo cuenta los hechos en orden.', 'Delatas a una persona; cuentas unos hechos.'),
-  ('1c9d5b17-c402-4b18-8436-97a35105a5a4', 'resumir', '«Resumir» deja lo esencial en pocas palabras; la otra palabra conserva el orden y los detalles que hacen ver la escena.', 'Resumir encoge; contar en orden deja verlo todo.');
+  ('1c9d5b17-c402-4b18-8436-97a35105a5a4', 'delatar', null, '«Delatar» es señalar a alguien que ha hecho algo malo; la otra palabra solo cuenta los hechos en orden.', 'Delatas a una persona; cuentas unos hechos.'),
+  ('1c9d5b17-c402-4b18-8436-97a35105a5a4', 'resumir', null, '«Resumir» deja lo esencial en pocas palabras; la otra palabra conserva el orden y los detalles que hacen ver la escena.', 'Resumir encoge; contar en orden deja verlo todo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -33909,10 +33911,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('39074563-57cf-4111-bde9-badf5083e9f1', 'resaltar', '«Resaltar» hace que algo se vea más; la otra palabra pone algo detrás para que se sostenga.', 'Resaltas con un rotulador; sostienes con datos.'),
-  ('39074563-57cf-4111-bde9-badf5083e9f1', 'justificar', '«Justificar» explica por qué hiciste algo; la otra palabra añade pruebas o personas que sostienen la idea.', 'Justificar mira hacia atrás; sostener pone un suelo debajo.');
+  ('39074563-57cf-4111-bde9-badf5083e9f1', 'resaltar', null, '«Resaltar» hace que algo se vea más; la otra palabra pone algo detrás para que se sostenga.', 'Resaltas con un rotulador; sostienes con datos.'),
+  ('39074563-57cf-4111-bde9-badf5083e9f1', 'justificar', null, '«Justificar» explica por qué hiciste algo; la otra palabra añade pruebas o personas que sostienen la idea.', 'Justificar mira hacia atrás; sostener pone un suelo debajo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -34125,10 +34127,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('4bb6308b-6d14-41a9-9441-a902af830306', 'retornar', '«Retornar» es volver a un lugar o devolver algo; la otra palabra continúa un asunto desde donde quedó.', 'Retornas a un sitio; continúas un tema.'),
-  ('4bb6308b-6d14-41a9-9441-a902af830306', 'repetir', '«Repetir» hace otra vez lo mismo desde el principio; la otra palabra sigue desde el punto exacto en que se paró.', 'Repetir vuelve al inicio; continuar sigue en el punto donde te quedaste.');
+  ('4bb6308b-6d14-41a9-9441-a902af830306', 'retornar', null, '«Retornar» es volver a un lugar o devolver algo; la otra palabra continúa un asunto desde donde quedó.', 'Retornas a un sitio; continúas un tema.'),
+  ('4bb6308b-6d14-41a9-9441-a902af830306', 'repetir', null, '«Repetir» hace otra vez lo mismo desde el principio; la otra palabra sigue desde el punto exacto en que se paró.', 'Repetir vuelve al inicio; continuar sigue en el punto donde te quedaste.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -34341,10 +34343,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('a4f41038-a626-441c-901c-04fcae98149f', 'relevante', '«Relevante» dice que algo importa; la otra palabra dice que además enseña algo que no se veía.', 'Lo relevante pesa; lo otro abre una puerta.'),
-  ('a4f41038-a626-441c-901c-04fcae98149f', 'rebelde', '«Rebelde» describe a quien no obedece; la otra palabra describe un dato o un gesto que deja algo al descubierto.', 'El rebelde se planta; el otro dato destapa.');
+  ('a4f41038-a626-441c-901c-04fcae98149f', 'relevante', null, '«Relevante» dice que algo importa; la otra palabra dice que además enseña algo que no se veía.', 'Lo relevante pesa; lo otro abre una puerta.'),
+  ('a4f41038-a626-441c-901c-04fcae98149f', 'rebelde', null, '«Rebelde» describe a quien no obedece; la otra palabra describe un dato o un gesto que deja algo al descubierto.', 'El rebelde se planta; el otro dato destapa.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -34557,10 +34559,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('5ba52e4c-c435-4086-bfbf-c514e910b40e', 'sintonizar', '«Sintonizar» es ajustar una emisora o entenderse bien con alguien; la otra palabra reduce un texto a lo esencial.', 'Sintonizas con una persona; reduces un texto a lo que sostiene la idea.'),
-  ('5ba52e4c-c435-4086-bfbf-c514e910b40e', 'recortar', '«Recortar» quita trozos hasta que quepa; la otra palabra elige lo que sostiene la idea y deja fuera el resto.', 'Recortar mira el espacio; elegir lo esencial mira la idea.');
+  ('5ba52e4c-c435-4086-bfbf-c514e910b40e', 'sintonizar', null, '«Sintonizar» es ajustar una emisora o entenderse bien con alguien; la otra palabra reduce un texto a lo esencial.', 'Sintonizas con una persona; reduces un texto a lo que sostiene la idea.'),
+  ('5ba52e4c-c435-4086-bfbf-c514e910b40e', 'recortar', null, '«Recortar» quita trozos hasta que quepa; la otra palabra elige lo que sostiene la idea y deja fuera el resto.', 'Recortar mira el espacio; elegir lo esencial mira la idea.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -34773,10 +34775,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('8830b5c5-73b4-42f7-865a-db2da23f5827', 'siguiera', '«Siguiera» viene de seguir: «le pedí que me siguiera». La otra marca el mínimo que no se cumplió.', 'Una va detrás de alguien; la otra mide lo poquísimo que faltó.'),
-  ('8830b5c5-73b4-42f7-865a-db2da23f5827', 'si quiera', '«Si quiera», en dos palabras, plantea una condición sobre lo que alguien desea: «si quiera venir, que venga».', 'Una pone una condición; la otra señala el escalón más bajo.');
+  ('8830b5c5-73b4-42f7-865a-db2da23f5827', 'siguiera', null, '«Siguiera» viene de seguir: «le pedí que me siguiera». La otra marca el mínimo que no se cumplió.', 'Una va detrás de alguien; la otra mide lo poquísimo que faltó.'),
+  ('8830b5c5-73b4-42f7-865a-db2da23f5827', 'si quiera', null, '«Si quiera», en dos palabras, plantea una condición sobre lo que alguien desea: «si quiera venir, que venga».', 'Una pone una condición; la otra señala el escalón más bajo.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -34989,10 +34991,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('e7a837d3-5479-4e2c-9e17-d37c94a9e729', 'sanar', '«Sanar» es curar a alguien o cerrar una herida; lo otro arregla un fallo en un papel o en un envío.', 'Sana una herida; se arregla un fallo del documento.'),
-  ('e7a837d3-5479-4e2c-9e17-d37c94a9e729', 'solventar', '«Solventar» resuelve un problema que ya estaba ahí; lo otro repara una falta propia en algo ya entregado.', 'Solventas un problema ajeno; reparas tu propio descuido.');
+  ('e7a837d3-5479-4e2c-9e17-d37c94a9e729', 'sanar', null, '«Sanar» es curar a alguien o cerrar una herida; lo otro arregla un fallo en un papel o en un envío.', 'Sana una herida; se arregla un fallo del documento.'),
+  ('e7a837d3-5479-4e2c-9e17-d37c94a9e729', 'solventar', null, '«Solventar» resuelve un problema que ya estaba ahí; lo otro repara una falta propia en algo ya entregado.', 'Solventas un problema ajeno; reparas tu propio descuido.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -35205,10 +35207,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('7f463a54-e948-402d-9001-1e7a0de03bc9', 'tangente', '«Tangente» es la línea que roza una curva, o irse por las ramas; la otra palabra describe algo que se puede medir.', 'Irse por la tangente es escapar; lo que se mide se queda sobre la mesa.'),
-  ('7f463a54-e948-402d-9001-1e7a0de03bc9', 'visible', '«Visible» es que se ve; la otra palabra añade que se puede contar o medir, y eso es lo que zanja una discusión.', 'Lo visible se mira; lo otro se cuenta con números.');
+  ('7f463a54-e948-402d-9001-1e7a0de03bc9', 'tangente', null, '«Tangente» es la línea que roza una curva, o irse por las ramas; la otra palabra describe algo que se puede medir.', 'Irse por la tangente es escapar; lo que se mide se queda sobre la mesa.'),
+  ('7f463a54-e948-402d-9001-1e7a0de03bc9', 'visible', null, '«Visible» es que se ve; la otra palabra añade que se puede contar o medir, y eso es lo que zanja una discusión.', 'Lo visible se mira; lo otro se cuenta con números.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -35421,10 +35423,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('c07066fb-ed37-406b-b79e-162443318345', 'basto', '«Basto» se dice de lo tosco, lo poco fino o lo mal acabado; la otra palabra habla de una extensión enorme.', 'Lo basto se toca y raspa; lo otro se recorre y no se acaba.'),
-  ('c07066fb-ed37-406b-b79e-162443318345', 'amplio', '«Amplio» dice que algo tiene sitio de sobra; la otra palabra añade que la extensión es tan grande que cuesta abarcarla.', 'Lo amplio cabe todo; lo otro no se termina de recorrer.');
+  ('c07066fb-ed37-406b-b79e-162443318345', 'basto', null, '«Basto» se dice de lo tosco, lo poco fino o lo mal acabado; la otra palabra habla de una extensión enorme.', 'Lo basto se toca y raspa; lo otro se recorre y no se acaba.'),
+  ('c07066fb-ed37-406b-b79e-162443318345', 'amplio', null, '«Amplio» dice que algo tiene sitio de sobra; la otra palabra añade que la extensión es tan grande que cuesta abarcarla.', 'Lo amplio cabe todo; lo otro no se termina de recorrer.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -35595,10 +35597,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('ff916ae6-8e48-4cbf-b807-afecdf92becb', 'veraz', '«Veraz» dice que algo es verdad; la otra palabra solo dice que se sostiene y encaja, sin garantizarlo.', 'Lo veraz está probado; lo otro solo se sostiene de pie.'),
-  ('ff916ae6-8e48-4cbf-b807-afecdf92becb', 'verídico', '«Verídico» afirma que los hechos ocurrieron de verdad; la otra palabra habla de cómo suena, no de lo que pasó.', 'Verídico mira los hechos; la otra palabra mira cómo encaja el relato.');
+  ('ff916ae6-8e48-4cbf-b807-afecdf92becb', 'veraz', null, '«Veraz» dice que algo es verdad; la otra palabra solo dice que se sostiene y encaja, sin garantizarlo.', 'Lo veraz está probado; lo otro solo se sostiene de pie.'),
+  ('ff916ae6-8e48-4cbf-b807-afecdf92becb', 'verídico', null, '«Verídico» afirma que los hechos ocurrieron de verdad; la otra palabra habla de cómo suena, no de lo que pasó.', 'Verídico mira los hechos; la otra palabra mira cómo encaja el relato.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)
@@ -35811,10 +35813,10 @@ values (
   true
 );
 
-insert into public.word_confusions (word_id, confused_with, difference, memory_trick)
+insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)
 values
-  ('75e09631-1a3b-4b8b-82a2-4a6a60e22d7a', 'deslumbrar', '«Deslumbrar» es cegar con una luz fuerte o dejar a alguien impresionado; la otra palabra es ver apenas, con esfuerzo.', 'Deslumbrar sobra de luz; lo otro falta.'),
-  ('75e09631-1a3b-4b8b-82a2-4a6a60e22d7a', 'alumbrar', '«Alumbrar» es dar luz a un sitio para que se vea; la otra palabra la usa quien mira, no quien ilumina.', 'La lámpara alumbra; tú apenas ves.');
+  ('75e09631-1a3b-4b8b-82a2-4a6a60e22d7a', 'deslumbrar', null, '«Deslumbrar» es cegar con una luz fuerte o dejar a alguien impresionado; la otra palabra es ver apenas, con esfuerzo.', 'Deslumbrar sobra de luz; lo otro falta.'),
+  ('75e09631-1a3b-4b8b-82a2-4a6a60e22d7a', 'alumbrar', null, '«Alumbrar» es dar luz a un sitio para que se vea; la otra palabra la usa quien mira, no quien ilumina.', 'La lámpara alumbra; tú apenas ves.');
 
 with exercise as (
   insert into public.exercises (id, word_id, sentence, hint_general, explanation, position)

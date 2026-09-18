@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7027
+slug: "agravio"
+status: "draft"
+lemma: "agravio"
+part_of_speech: "sustantivo"
+syllables:
+  - "a"
+  - "gra"
+  - "vio"
+stressed_syllable: 2
+ipa_latam: "[aˈɣɾa.βjo]"
+ipa_es: "[aˈɣɾa.βjo]"
+explanation: "Daño que alguien te hace con lo que dice y no se olvida."
+example_sentence: "Para él no fue un olvido de la lista: fue un agravio, y lleva años ahí."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para nombrar una herida antigua sin gritar: dice que dolió y que sigue doliendo."
+when_not_to_use: "No la uses para un feo pasajero que se olvida en una semana, ni para una confusión sin mala intención."
+collocations:
+  - "sentir un agravio"
+  - "reparar un agravio"
+  - "un agravio antiguo"
+replaces:
+  - before: "Eso que me hizo me sentó fatal y no se me olvida"
+    after: "Aquello fue un agravio y sigue ahí"
+  - before: "Lleva años dolido por una cosa de la boda"
+    after: "Arrastra un agravio desde la boda"
+  - before: "No fue solo un feo: me hizo daño de verdad"
+    after: "No fue un feo: fue un agravio"
+family:
+  - "agraviar"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+  - slug: "familia-crianza"
+    relevance: 1
+tags:
+  comodin:
+    - "ofensa"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "agasajo"
+    difference: "Un «agasajo» es una atención especial para honrar a alguien; la otra palabra nombra justo lo contrario, un daño que se recuerda."
+    memory_trick: "El agasajo se agradece; el otro se arrastra."
+  - confused_with: "desaire"
+    difference: "Un «desaire» es un feo puntual que se olvida pronto; la otra palabra deja una herida que dura años."
+    memory_trick: "El desaire escuece un rato; el otro no se cierra."
+exercises:
+  - position: 1
+    sentence: "No lo invitaron a la boda de su primo y aquello quedó como un {{blank}} que todavía dura."
+    hint_general: "Un daño que le hicieron y que sigue doliendo años después."
+    explanation: "Agravio: un daño que sigue doliendo años después. Un «agasajo» sería una atención para honrarlo, y un «desaire» se olvidaría en una semana."
+    options:
+      - position: 1
+        text: "agasajo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «agasajo» es una atención especial para honrar a alguien, justo lo contrario de dejarlo fuera de una lista."
+        hint_specific: "Un «agasajo» alegra a quien lo recibe. ¿Cómo se quedó él con lo de la boda?"
+      - position: 2
+        text: "agravio"
+        is_correct: true
+      - position: 3
+        text: "desaire"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «desaire» es un feo puntual que se olvida en poco tiempo, y la frase dice que aquello todavía dura."
+        hint_specific: "Un «desaire» se pasa pronto. ¿Cuánto lleva durando esto?"
+  - position: 2
+    sentence: "Aquel comentario sobre su familia fue un {{blank}} que ninguna disculpa posterior consiguió arreglar."
+    hint_general: "Lo que dijo hizo un daño hondo que las disculpas no borraron."
+    explanation: "Agravio: un daño hondo que las disculpas no borran. Un «malentendido» habría ocurrido sin querer, y «ultraje» es una palabra solemne, de juicio o de novela."
+    options:
+      - position: 1
+        text: "malentendido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «malentendido» ocurre sin que nadie quiera y se arregla explicándose, y aquí las disculpas no arreglaron nada."
+        hint_specific: "Un «malentendido» se deshace hablando. ¿Funcionaron las disculpas?"
+      - position: 2
+        text: "agravio"
+        is_correct: true
+      - position: 3
+        text: "ultraje"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ultraje» es una palabra solemne y enorme, propia de un juicio o de una novela antigua, y aquí hay un comentario en una sobremesa."
+        hint_specific: "«Ultraje» pide un escenario grandioso. ¿Dónde se dijo ese comentario?"
+  - position: 3
+    sentence: "Lo llamaron a la reunión el último y, para él, aquello fue un {{blank}} y no un descuido de agenda."
+    hint_general: "Él lo entendió como un daño intencionado, no como un despiste."
+    explanation: "Agravio: lo entendió como daño intencionado. Un «agasajo» sería una atención para honrarlo, y un «malentendido» sería exactamente el despiste que él descarta."
+    options:
+      - position: 1
+        text: "agasajo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «agasajo» es una atención especial que honra a alguien, y a él lo dejaron para el final de la lista."
+        hint_specific: "Un «agasajo» pone a alguien por delante. ¿En qué lugar quedó él?"
+      - position: 2
+        text: "malentendido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «malentendido» es justo el despiste que la frase descarta al final: él no cree que fuera un error de agenda."
+        hint_specific: "La frase opone dos lecturas. ¿Cuál de las dos descarta él?"
+      - position: 3
+        text: "agravio"
+        is_correct: true
+  - position: 4
+    sentence: "Su tío lleva veinte años recordando un {{blank}} que el resto de la familia ni siquiera recuerda."
+    hint_general: "Arrastra un daño antiguo que a él no se le pasa."
+    explanation: "Agravio: arrastra un daño antiguo que no se le pasa. «Feo» es coloquial y nombra un desprecio pequeño, y un «insulto» sería una palabra ofensiva a la cara."
+    options:
+      - position: 1
+        text: "feo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Feo» es coloquial y nombra un desprecio pequeño del día a día, y esto lleva veinte años pesándole a alguien."
+        hint_specific: "Un «feo» se cuenta de pasada y se olvida. ¿Cuánto dura esto?"
+      - position: 2
+        text: "agravio"
+        is_correct: true
+      - position: 3
+        text: "insulto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «insulto» es una palabra ofensiva dicha a la cara, y aquí puede que no se dijera ni una sola palabra fuerte."
+        hint_specific: "Un «insulto» se oye y se repite. ¿La frase cuenta qué palabras se dijeron?"
+  - position: 5
+    sentence: "Lo que Ainhoa nombró en la carta no era un {{blank}}: era una tristeza vieja mal explicada."
+    hint_general: "Ella aclara que nadie le hizo un daño con intención."
+    explanation: "Agravio: aclara que nadie le hizo daño con intención. «Ultraje» sería una palabra enorme y solemne, y un «insulto» supondría palabras ofensivas concretas."
+    options:
+      - position: 1
+        text: "ultraje"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ultraje» es solemne y desproporcionada para una carta entre dos personas que se quieren."
+        hint_specific: "«Ultraje» suena a tragedia. ¿Qué tono tiene esa carta?"
+      - position: 2
+        text: "agravio"
+        is_correct: true
+      - position: 3
+        text: "insulto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «insulto» serían palabras ofensivas concretas, y ella habla de una tristeza vieja, no de lo que le dijeron."
+        hint_specific: "Un «insulto» se puede citar entre comillas. ¿Hay palabras que citar aquí?"
+  - position: 6
+    sentence: "Pedir perdón sirve para muchas cosas, pero un {{blank}} de veinte años no se arregla con una frase."
+    hint_general: "Un daño antiguo y hondo necesita más que una disculpa rápida."
+    explanation: "Agravio: un daño antiguo y hondo. Un «agasajo» sería una atención que honra, y un «desaire» sí se arreglaría con una frase, porque es pasajero."
+    options:
+      - position: 1
+        text: "agravio"
+        is_correct: true
+      - position: 2
+        text: "agasajo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «agasajo» es una atención que honra a alguien, y nadie necesita pedir perdón por haber honrado a nadie."
+        hint_specific: "Un «agasajo» no exige disculpa. ¿De qué habla la frase, de disculpar o de agradecer?"
+      - position: 3
+        text: "desaire"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «desaire» sí se arregla con una frase, porque es pasajero, y la frase dice justamente que esto no se arregla así."
+        hint_specific: "Un «desaire» se cierra con una disculpa. ¿Se cierra esto con una frase?"
+  - position: 7
+    sentence: "Damián se disculpó por el {{blank}}, no por el resultado: sabía exactamente dónde había hecho daño."
+    hint_general: "Se disculpa por el daño que causó, no por cómo salió el asunto."
+    explanation: "Agravio: se disculpa por el daño causado. «Feo» rebajaría aquello a un desprecio pequeño, y un «malentendido» le quitaría toda la intención."
+    options:
+      - position: 1
+        text: "feo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Feo» es coloquial y rebaja aquello a un desprecio pequeño, y él reconoce haber hecho daño de verdad."
+        hint_specific: "Un «feo» no necesita disculpa tan seria. ¿Cómo se disculpa Damián?"
+      - position: 2
+        text: "agravio"
+        is_correct: true
+      - position: 3
+        text: "malentendido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «malentendido» le quitaría toda la intención, y él dice saber exactamente dónde hizo daño."
+        hint_specific: "Un «malentendido» no tiene culpable. ¿Damián se considera culpable?"
+  - position: 8
+    sentence: "Entre dos socios, un {{blank}} que nadie nombra acaba costando más que cualquier pérdida de dinero."
+    hint_general: "Un daño callado entre dos personas pesa más que las cuentas."
+    explanation: "Agravio: un daño callado que pesa más que las cuentas. Un «desaire» se olvidaría solo, y un «insulto» sería una palabra concreta que sí se habría oído."
+    options:
+      - position: 1
+        text: "desaire"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «desaire» se olvida solo con el tiempo, y aquí lo que se describe es algo que crece mientras nadie lo nombra."
+        hint_specific: "Un «desaire» se diluye. ¿Qué hace esto con el tiempo?"
+      - position: 2
+        text: "agravio"
+        is_correct: true
+      - position: 3
+        text: "insulto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «insulto» sería una palabra concreta que todos habrían oído, y la frase dice que nadie lo nombra."
+        hint_specific: "Un «insulto» ya se dijo en voz alta. ¿Se ha dicho algo aquí?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo de la boda"
+    body: "Veinte años después, su tío seguía sin ir a las comidas grandes. Una sobrina se lo preguntó de frente y él lo dijo por fin: «No es orgullo; es un agravio que nadie reparó». Le pidieron perdón despacio y volvió en Nochevieja."
+    before_phrase: "Es que estoy dolido desde entonces."
+    after_phrase: "Es un agravio que nadie reparó."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dónde hice daño"
+    body: "El proyecto salió bien y aun así Damián pidió una reunión. «Me disculpo por el agravio, no por el resultado: te dejé fuera delante de todos». Su compañera agradeció que nombrara la parte exacta. Volvieron a trabajar juntos al mes siguiente."
+    before_phrase: "Perdona si te sentó mal lo del otro día."
+    after_phrase: "Me disculpo por el agravio, no por el resultado."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La carta de Ainhoa"
+    body: "Ainhoa escribió tres folios y los dejó reposar una semana. Luego tachó media carta. «Esto no era un agravio; era una tristeza vieja mal explicada», le dijo a su amiga al entregársela. La conversación empezó por ahí y fue mucho mejor."
+    before_phrase: "Tenía un montón de cosas que echarte en cara."
+    after_phrase: "No era un agravio: era tristeza mal explicada."
+metrics:
+  zipf_overall: 3.8085
+  dispersion_dp: 0.3452
+  pedantry_proxy: 0.5643
+  family_size: 28
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

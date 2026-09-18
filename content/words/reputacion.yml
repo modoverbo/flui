@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "reputacion"
+status: "draft"
+lemma: "reputación"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "pu"
+  - "ta"
+  - "ción"
+stressed_syllable: 4
+ipa_latam: "[re.pu.taˈsjon]"
+ipa_es: "[re.pu.taˈθjon]"
+explanation: "Lo que los demás cuentan de una persona cuando no está delante."
+example_sentence: "En este gremio la reputación llega antes que el currículum."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para hablar de lo que se cuida sin presumir: se nombra el cuidado, no el elogio."
+when_not_to_use: "No la uses para ser conocido sin más; esta palabra habla de qué se dice de ti, no de cuánta gente te conoce."
+collocations:
+  - "cuidar la reputación"
+  - "una reputación sólida"
+  - "jugarse la reputación"
+replaces:
+  - before: "Tiene muy buena fama en el sector"
+    after: "Tiene una reputación sólida en el sector"
+  - before: "Si hago esto me quemo para siempre"
+    after: "Si hago esto me juego la reputación"
+  - before: "Le precede lo que dicen de él"
+    after: "Le precede su reputación"
+family:
+  - "reputado"
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+tags:
+  comodin:
+    - "fama"
+    - "lo que dicen de ti"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "refutación"
+    difference: "Una refutación es la respuesta con la que se derriba un argumento; lo otro es lo que la gente dice de ti."
+    memory_trick: "La refutación contesta; la reputación precede."
+  - confused_with: "fama"
+    difference: "La fama es que mucha gente te conozca; esta palabra dice qué opinan quienes te han tratado."
+    memory_trick: "La fama cuenta cabezas; la reputación cuenta opiniones."
+exercises:
+  - position: 1
+    sentence: "En el gremio del vidrio, la {{blank}} de Ximena llegaba antes que su presupuesto a cualquier obra."
+    hint_general: "Lo que dicen de ella quienes la han tratado llega antes que ella."
+    explanation: "Reputación: lo que dicen de ella quienes la trataron. «Refutación» sería derribar un argumento, y «fama» contaría cuánta gente la conoce, no qué opinan."
+    options:
+      - position: 1
+        text: "refutación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Refutación» es la respuesta con la que se derriba un argumento, y aquí nadie está discutiendo nada."
+        hint_specific: "«Refutación» pertenece a una discusión. ¿Hay discusión en esa obra?"
+      - position: 2
+        text: "reputación"
+        is_correct: true
+      - position: 3
+        text: "fama"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fama» dice que mucha gente la conoce, y lo que llega antes que su presupuesto es la opinión de quienes ya trabajaron con ella."
+        hint_specific: "«Fama» cuenta cuánta gente te conoce. ¿Lo que le abre puertas es el número o la opinión?"
+  - position: 2
+    sentence: "Uriel rechazó el encargo rápido porque no quería jugarse la {{blank}} por un trabajo de tres semanas."
+    hint_general: "No arriesga lo que otros dicen de él por algo corto."
+    explanation: "Reputación: lo que otros dicen de él y no quiere arriesgar. «Renombre» es palabra solemne de homenaje, y «confianza» sería lo que él siente, no lo que opinan fuera."
+    options:
+      - position: 1
+        text: "renombre"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Renombre» es palabra solemne, de placa y homenaje, y aquí alguien está decidiendo si acepta un encargo pequeño."
+        hint_specific: "«Renombre» suena a homenaje con placa. ¿Encaja con rechazar un encargo de tres semanas?"
+      - position: 2
+        text: "reputación"
+        is_correct: true
+      - position: 3
+        text: "confianza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confianza» es lo que uno siente hacia alguien, y lo que Uriel protege es lo que se dice de él fuera."
+        hint_specific: "«Confianza» vive dentro de quien la tiene. ¿Uriel protege algo suyo o algo que está en boca de otros?"
+  - position: 3
+    sentence: "La cooperativa tardó ocho años en construir una {{blank}} y la puso en riesgo con un solo pedido mal servido."
+    hint_general: "Ocho años de opiniones ajenas se tambalean con un fallo."
+    explanation: "Reputación: opiniones acumuladas en ocho años. «Repercusión» sería el efecto que algo provoca, y «imagen» hablaría de cómo se presentan, no de lo que se dice de ellos."
+    options:
+      - position: 1
+        text: "repercusión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Repercusión» es el efecto que algo provoca al salir a la luz, y aquí lo que se construyó durante ocho años es una opinión compartida."
+        hint_specific: "«Repercusión» mide el efecto de un hecho. ¿Se construye un efecto durante ocho años?"
+      - position: 2
+        text: "reputación"
+        is_correct: true
+      - position: 3
+        text: "imagen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imagen» es cómo deciden mostrarse ellos, y esto lo forman los clientes hablando entre sí."
+        hint_specific: "«Imagen» la controla quien la muestra. ¿Quién forma lo que se perdió en un pedido?"
+  - position: 4
+    sentence: "Mi tía dice que en un pueblo la {{blank}} se hereda: la de su padre le abrió puertas que ella no había tocado."
+    hint_general: "Lo que se dice de una familia pasa a la siguiente generación."
+    explanation: "Reputación: lo que se dice de una familia y pasa a la siguiente. «Notoriedad» sería que hablen de ti, sin decir si bien o mal, y «herencia» apuntaría a bienes, no a opiniones."
+    options:
+      - position: 1
+        text: "notoriedad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Notoriedad» es palabra de crónica y solo dice que se habla de alguien, sin decir si bien o mal; aquí se abren puertas."
+        hint_specific: "«Notoriedad» no dice si hablan bien o mal, y suena a crónica. ¿Qué le pasa a tu tía en el pueblo?"
+      - position: 2
+        text: "reputación"
+        is_correct: true
+      - position: 3
+        text: "herencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Herencia» apunta a bienes o a rasgos recibidos, y lo que abre puertas aquí es lo que la gente opina."
+        hint_specific: "«Herencia» se firma ante notario. ¿Lo que abrió puertas está escrito o está en boca de la gente?"
+  - position: 5
+    sentence: "Antes de contratarlo, el comité preguntó por su {{blank}} a tres personas que habían trabajado con él."
+    hint_general: "Preguntan qué opinan de él quienes ya lo trataron."
+    explanation: "Reputación: lo que opinan quienes lo trataron. «Refutación» sería derribar un argumento, y «currículum» sería el papel que él mismo escribe."
+    options:
+      - position: 1
+        text: "reputación"
+        is_correct: true
+      - position: 2
+        text: "refutación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Refutación» es la respuesta que derriba un argumento, y el comité está pidiendo opiniones, no contraargumentos."
+        hint_specific: "«Refutación» derriba una idea. ¿El comité quiere derribar algo o saber qué opinan?"
+      - position: 3
+        text: "currículum"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Currículum» lo escribe el propio candidato, y aquí se llama a terceros justamente para oír otra versión."
+        hint_specific: "«Currículum» lo redacta uno mismo. ¿A quién llama el comité?"
+  - position: 6
+    sentence: "En treinta segundos no cabe tu historia entera, pero sí una frase que cuadre con tu {{blank}}."
+    hint_general: "Lo que dices tiene que encajar con lo que otros ya cuentan de ti."
+    explanation: "Reputación: lo que otros ya cuentan de ti. «Renombre» es solemne y suena a homenaje, y «personalidad» hablaría de cómo eres, no de lo que se dice."
+    options:
+      - position: 1
+        text: "personalidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Personalidad» describe cómo eres por dentro, y aquí lo que hay que respetar es lo que ya circula sobre ti."
+        hint_specific: "«Personalidad» está dentro de ti. ¿La frase pide coherencia con tu carácter o con lo que dicen?"
+      - position: 2
+        text: "reputación"
+        is_correct: true
+      - position: 3
+        text: "renombre"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Renombre» es palabra solemne de placa conmemorativa y da por hecho una gloria que aquí nadie tiene."
+        hint_specific: "«Renombre» suena a homenaje oficial. ¿Va con presentarse en una feria?"
+  - position: 7
+    sentence: "Al taller de Casilda le sobra {{blank}} y le falta gente: lleva seis meses buscando quien cosa como ella."
+    hint_general: "Le sobra lo que la gente dice de su trabajo y le faltan manos."
+    explanation: "Reputación: lo que la gente dice de su trabajo. «Repercusión» sería el efecto de un hecho concreto, y «prestigio» apuntaría al respeto de los expertos, no al boca a boca."
+    options:
+      - position: 1
+        text: "repercusión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Repercusión» es el efecto que causa un hecho concreto, y lo que le sobra al taller es lo que se dice de él desde hace años."
+        hint_specific: "«Repercusión» nace de un hecho puntual. ¿Qué hecho habría causado esto?"
+      - position: 2
+        text: "reputación"
+        is_correct: true
+      - position: 3
+        text: "prestigio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prestigio» es el respeto de quienes entienden del oficio, y aquí quien recomienda el taller es la clientela del barrio."
+        hint_specific: "«Prestigio» lo conceden los entendidos. ¿Quién habla bien de ese taller?"
+  - position: 8
+    sentence: "Cambiar de ciudad fue duro porque Tadeo llegó sin {{blank}}: nadie podía decir de él ni bien ni mal."
+    hint_general: "Llegó a un sitio donde nadie tenía una opinión previa sobre él."
+    explanation: "Reputación: nadie tenía una opinión previa sobre él. «Notoriedad» solo mediría si se habla de alguien, y «fama» contaría cuánta gente lo conoce."
+    options:
+      - position: 1
+        text: "notoriedad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Notoriedad» es palabra de crónica y mide si se habla de alguien, y la frase aclara que faltaban opiniones, buenas o malas."
+        hint_specific: "«Notoriedad» solo dice que se habla de ti, en tono de crónica. ¿Qué es lo que faltaba exactamente?"
+      - position: 2
+        text: "reputación"
+        is_correct: true
+      - position: 3
+        text: "fama"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fama» cuenta cuánta gente te conoce, y el problema de Tadeo era que nadie podía opinar sobre su trabajo."
+        hint_specific: "«Fama» cuenta cabezas. ¿Lo que le faltaba era gente que lo conociera o gente que opinara?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes del presupuesto"
+    body: "Ximena llegó a la obra y el jefe ya la trataba de otra manera. «Me han hablado de usted», dijo él. Ella lo contó luego sin darse importancia: «En este gremio la reputación llega antes que el presupuesto». Por eso cuida cada entrega pequeña."
+    before_phrase: "Tengo buena fama por aquí, creo."
+    after_phrase: "En este gremio la reputación llega antes que el presupuesto."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Llegar sin nada"
+    body: "Tadeo se mudó a una ciudad donde no conocía a nadie. Lo que más le costó no fue el idioma del barrio: fue llegar sin reputación. «Nadie puede decir de mí ni bien ni mal», me escribió. Tardó dos años en que alguien lo recomendara."
+    before_phrase: "Aquí nadie sabe todavía cómo trabajo."
+    after_phrase: "Llegué sin reputación, y eso se construye."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Tres llamadas"
+    body: "Le avisaron a Casilda de que llamarían a tres personas antes de decidir. No se puso nerviosa. «Mi reputación la llevo construyendo quince años», dijo. «Prefiero que pregunten a que me crean a mí». La llamaron el viernes."
+    before_phrase: "Espero que les hablen bien de mí."
+    after_phrase: "Mi reputación la llevo construyendo quince años."
+metrics:
+  zipf_overall: 4.2783
+  dispersion_dp: 0.1883
+  pedantry_proxy: 0.5831
+  family_size: 17
+provenance:
+  generator: "flui authoring agent — theme networking"
+  gate: null
+  checked_on: "2026-09-15"

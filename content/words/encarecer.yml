@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "encarecer"
+status: "draft"
+lemma: "encarecer"
+part_of_speech: "verbo"
+syllables:
+  - "en"
+  - "ca"
+  - "re"
+  - "cer"
+stressed_syllable: 4
+ipa_latam: "[eŋ.ka.ɾeˈseɾ]"
+ipa_es: "[eŋ.ka.ɾeˈθeɾ]"
+explanation: "Subir el precio de algo por un cambio que nadie pidió."
+example_sentence: "Cambiar el material a última hora encarece la obra y retrasa la entrega."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra la causa y el efecto en una sola palabra: dice qué subió el coste sin señalar a nadie."
+when_not_to_use: "No la uses para un precio que alguien decide subir a propósito; esto describe lo que un cambio provoca."
+collocations:
+  - "encarecer la obra"
+  - "encarecer el proyecto"
+  - "encarecer el transporte"
+replaces:
+  - before: "Eso hace que todo salga más caro"
+    after: "Eso encarece el proyecto"
+  - before: "Con el cambio subió el precio de todo"
+    after: "El cambio encareció todo"
+  - before: "Pedir el envío urgente sale más caro"
+    after: "El envío urgente encarece el pedido"
+family:
+  - "encarecimiento"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "salir más caro"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "enrarecer"
+    difference: "«Enrarecer» es volver tenso o extraño un ambiente; la otra palabra sube lo que cuesta algo."
+    memory_trick: "Se enrarece el ambiente; se encarece la cuenta."
+  - confused_with: "esclarecer"
+    difference: "«Esclarecer» es aclarar un asunto confuso; nada tiene que ver con lo que se paga."
+    memory_trick: "Esclareces una duda; encareces un presupuesto."
+exercises:
+  - position: 1
+    sentence: "La subida del combustible {{blank}} el transporte y tuvimos que rehacer el presupuesto de la mudanza."
+    hint_general: "Dice que una causa externa hizo subir lo que cuesta algo."
+    explanation: "Encareció: la subida del combustible hizo costar más el transporte. «Enrareció» hablaría de un ambiente tenso, y «aumentó» diría que hay más transporte, no que cueste más."
+    options:
+      - position: 1
+        text: "enrareció"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enrareció» describe un ambiente que se vuelve tenso o extraño, y aquí lo que cambia es una cifra."
+        hint_specific: "«Enrareció» habla de un ambiente incómodo. ¿La frase cuenta tensión o cuentas?"
+      - position: 2
+        text: "encareció"
+        is_correct: true
+      - position: 3
+        text: "aumentó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aumentó el transporte» diría que hay más viajes, y lo que pasó es que cada viaje cuesta más."
+        hint_specific: "«Aumentó» habla de cantidad. ¿Hubo más viajes o viajes más caros?"
+  - position: 2
+    sentence: "Cambiar el suelo a mitad de obra {{blank}} la reforma casi un tercio, y el plazo se fue con ella."
+    hint_general: "Un cambio a destiempo hizo que la reforma costara mucho más."
+    explanation: "Encareció: el cambio hizo costar más la reforma. «Disparó» es de charla informal y suena a explosión repentina, y «complicó» diría que se volvió difícil, no cara."
+    options:
+      - position: 1
+        text: "disparó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Disparó» es de conversación suelta y sugiere un salto brusco y descontrolado; aquí hay una causa clara y medida."
+        hint_specific: "«Disparó» suena a estallido repentino en charla informal. ¿La subida fue un descontrol o una consecuencia medida?"
+      - position: 2
+        text: "encareció"
+        is_correct: true
+      - position: 3
+        text: "complicó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Complicó» diría que la reforma se volvió difícil, y la frase habla de lo que cuesta."
+        hint_specific: "«Complicó» va de dificultad. ¿La reforma se volvió difícil o cara?"
+  - position: 3
+    sentence: "Cada semana de retraso {{blank}} el proyecto, aunque en las reuniones nadie pusiera la cifra encima de la mesa."
+    hint_general: "El retraso va sumando coste semana a semana."
+    explanation: "Encarece: cada semana suma coste. «Esclarece» sería aclarar un asunto confuso, y «alarga» diría que dura más, no que cuesta más."
+    options:
+      - position: 1
+        text: "encarece"
+        is_correct: true
+      - position: 2
+        text: "esclarece"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esclarece» es aclarar algo confuso, y un retraso no aclara nada: suma gasto."
+        hint_specific: "«Esclarece» va de aclarar dudas. ¿El retraso aclara algo o suma dinero?"
+      - position: 3
+        text: "alarga"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alarga» dice que el proyecto dura más, y la frase apunta a la cifra que nadie menciona."
+        hint_specific: "«Alarga» mide duración. ¿Lo que nadie dice en voz alta es el plazo o el dinero?"
+  - position: 4
+    sentence: "Pedir el envío para el día siguiente {{blank}} cualquier pedido pequeño, así que Aitana juntó los tres en uno."
+    hint_general: "La prisa hace que un pedido pequeño cueste más de lo que vale."
+    explanation: "Encarece: la urgencia sube lo que cuesta el pedido. «Infla» es coloquial y acusa de exagerar una cifra a propósito, y «agrava» hablaría de empeorar un problema."
+    options:
+      - position: 1
+        text: "infla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Infla» es de conversación informal y acusa de hinchar una cifra a propósito; aquí el coste sube por la prisa."
+        hint_specific: "«Infla» insinúa que alguien exagera la cifra. ¿Hay trampa o hay urgencia?"
+      - position: 2
+        text: "agrava"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agrava» se usa para un problema que empeora, y un pedido pequeño no es un problema: es una compra."
+        hint_specific: "«Agrava» empeora un problema. ¿Qué problema hay en pedir tres cosas juntas?"
+      - position: 3
+        text: "encarece"
+        is_correct: true
+  - position: 5
+    sentence: "Mudarse en agosto {{blank}} el alquiler del camión, y por eso mi hermano esperó a septiembre."
+    hint_general: "En ese mes la misma cosa cuesta más dinero."
+    explanation: "Encarece: en agosto lo mismo cuesta más. «Enrarece» hablaría de un ambiente extraño, y «eleva» encajaría con el precio, no con el camión entero."
+    options:
+      - position: 1
+        text: "enrarece"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Enrarece» describe un clima que se vuelve tenso o irrespirable, y aquí lo que cambia es una tarifa."
+        hint_specific: "«Enrarece» habla del ambiente entre personas. ¿Quién está tenso en esta frase?"
+      - position: 2
+        text: "eleva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Eleva» pide una cifra detrás: se eleva un precio, no se eleva el alquiler de un camión."
+        hint_specific: "«Eleva» necesita una cifra como objeto. ¿Qué hay después del hueco, una cifra o una cosa?"
+      - position: 3
+        text: "encarece"
+        is_correct: true
+  - position: 6
+    sentence: "El cambio de proveedor {{blank}} la producción durante dos meses, hasta que el equipo aprendió a usar la máquina nueva."
+    hint_general: "Durante el aprendizaje, producir lo mismo salió más caro."
+    explanation: "Encareció: producir lo mismo costó más durante el aprendizaje. «Disparó» es coloquial y sugiere un salto descontrolado, y «aumentó» diría que se produjo más."
+    options:
+      - position: 1
+        text: "encareció"
+        is_correct: true
+      - position: 2
+        text: "disparó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Disparó» pertenece a la charla informal y pinta un salto brusco; aquí la subida dura dos meses y se explica sola."
+        hint_specific: "«Disparó» es lenguaje de conversación y sugiere descontrol. ¿Fue un estallido o una etapa explicada?"
+      - position: 3
+        text: "aumentó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aumentó la producción» diría que se fabricó más, justo lo contrario de lo que cuenta la frase."
+        hint_specific: "«Aumentó» habla de cantidad producida. ¿El equipo produjo más o le costó más?"
+  - position: 7
+    sentence: "Añadir una segunda revisión legal {{blank}} el contrato, y aun así Gaspar la pidió para dormir tranquilo."
+    hint_general: "Esa revisión extra sube el coste, y aun así compensa."
+    explanation: "Encarece: la revisión extra sube el coste. «Esclarece» sería aclarar el contrato, que es otra cosa, y «complica» diría que lo vuelve difícil."
+    options:
+      - position: 1
+        text: "complica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Complica» diría que el contrato se vuelve enredado, y una revisión legal suele dejarlo más claro."
+        hint_specific: "«Complica» es enredar algo. ¿Una segunda revisión enreda el contrato o lo aclara?"
+      - position: 2
+        text: "encarece"
+        is_correct: true
+      - position: 3
+        text: "esclarece"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esclarece» es aclarar un punto oscuro, y la frase dice que Gaspar acepta pagar de más por dormir tranquilo."
+        hint_specific: "«Esclarece» va de aclarar. Relee el final: ¿qué acepta Gaspar a cambio de dormir tranquilo?"
+  - position: 8
+    sentence: "La escuela avisó de que los viajes de fin de curso se {{blank}} cada año y propuso empezar a juntar el dinero en octubre."
+    hint_general: "Año tras año, el mismo viaje cuesta más dinero."
+    explanation: "Encarecen: el mismo viaje cuesta más cada año. «Inflan» es coloquial y acusa de hinchar la cifra, y «agravan» hablaría de un problema que empeora."
+    options:
+      - position: 1
+        text: "encarecen"
+        is_correct: true
+      - position: 2
+        text: "inflan"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inflan» es de conversación informal y acusa a alguien de hinchar la cifra a propósito, y aquí solo se avisa de una tendencia."
+        hint_specific: "«Inflan» insinúa que alguien exagera a propósito. ¿La escuela acusa a alguien o avisa?"
+      - position: 3
+        text: "agravan"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agravan» se dice de un problema que empeora, y un viaje de fin de curso no es un problema."
+        hint_specific: "«Agravan» empeora un problema. ¿El viaje es un problema o una ilusión?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El suelo nuevo"
+    body: "El cliente quiso cambiar el suelo con la obra empezada. Yolanda no dijo que no. Dijo: «Se puede, y encarece la reforma casi un tercio; te paso las dos cifras». Eligió con los números delante, no con una sorpresa al final."
+    before_phrase: "Eso va a salir bastante más caro."
+    after_phrase: "Ese cambio encarece la reforma un tercio."
+  - position: 2
+    scene: "familia"
+    conversation_type: "practica"
+    title: "Mudarse en agosto"
+    body: "Mi hermano quería mudarse en agosto porque tenía vacaciones. Miramos juntos el precio del camión. «Agosto encarece todo», le dije. Esperó tres semanas y se ahorró una cena para ocho."
+    before_phrase: "En agosto todo sale más caro."
+    after_phrase: "Agosto lo encarece todo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta del retraso"
+    body: "Le preguntaron a Ismael qué había aprendido del proyecto que se le fue de plazo. «Que cada semana de retraso encarece el proyecto aunque nadie lo escriba», contestó. «Ahora esa cifra va en la primera página»."
+    before_phrase: "Los retrasos acaban costando dinero."
+    after_phrase: "Cada semana de retraso encarece el proyecto."
+metrics:
+  zipf_overall: 3.4419
+  dispersion_dp: 0.2549
+  pedantry_proxy: 0.6114
+  family_size: 159
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

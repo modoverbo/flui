@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "escatimar"
+status: "draft"
+lemma: "escatimar"
+part_of_speech: "verbo"
+syllables:
+  - "es"
+  - "ca"
+  - "ti"
+  - "mar"
+stressed_syllable: 4
+ipa_latam: "[es.ka.tiˈmaɾ]"
+ipa_es: "[es.ka.tiˈmaɾ]"
+explanation: "Dar menos de lo que hace falta para gastar poco, aunque el resultado quede peor."
+example_sentence: "No quiero escatimar en el papel: el catálogo se toca antes de leerse."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dicha en negativo es una promesa concreta: nombra dónde no vas a recortar y el otro te cree."
+when_not_to_use: "No la uses para un ahorro bien pensado; esta palabra supone que el recorte deja el resultado cojo."
+collocations:
+  - "no escatimar esfuerzos"
+  - "escatimar en detalles"
+  - "escatimar recursos"
+replaces:
+  - before: "No ahorramos en nada para esto"
+    after: "No escatimamos en nada para esto"
+  - before: "Le pusieron poquito de todo"
+    after: "Escatimaron en todo"
+  - before: "Dimos todo lo que hacía falta"
+    after: "No escatimamos lo que hacía falta"
+family: []
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "ahorrar"
+    - "poner poco"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "estimar"
+    difference: "«Estimar» es calcular un valor por aproximación, o apreciar a alguien; lo otro es dar de menos para gastar poco."
+    memory_trick: "Estimas cuánto vale; escatimas cuánto das."
+  - confused_with: "ahorrar"
+    difference: "«Ahorrar» puede ser una buena decisión; esta palabra supone que el recorte estropea el resultado."
+    memory_trick: "Ahorrar es guardar; escatimar es quitar de donde hacía falta."
+exercises:
+  - position: 1
+    sentence: "El hotel prometía desayuno completo y luego {{blank}} hasta en el café: una taza por persona y nada más."
+    hint_general: "Dio menos de lo prometido para gastar poco, y el resultado quedó pobre."
+    explanation: "Escatimó: dio de menos justo donde había prometido. «Estimó» sería calcular un valor, y «repartió» solo diría cómo distribuyó el café."
+    options:
+      - position: 1
+        text: "estimó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estimó» es calcular cuánto vale o cuánto hace falta, y aquí el hotel no calculó: dio de menos."
+        hint_specific: "«Estimó» va de calcular un valor. ¿El hotel hizo cuentas o recortó el desayuno?"
+      - position: 2
+        text: "escatimó"
+        is_correct: true
+      - position: 3
+        text: "repartió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repartió» solo dice cómo se distribuye algo, sin decir que quedara corto de lo prometido."
+        hint_specific: "«Repartió» habla de cómo se divide. ¿La frase critica el reparto o la cantidad?"
+  - position: 2
+    sentence: "Para la exposición de fin de curso, los padres no quisieron {{blank}} en marcos y pagaron los buenos."
+    hint_general: "Decidieron no quedarse cortos justo en esa parte."
+    explanation: "Escatimar: decidieron no quedarse cortos ahí. «Escamotear» acusa de hacer desaparecer algo a escondidas, y «ahorrar» podría ser una decisión sensata."
+    options:
+      - position: 1
+        text: "escamotear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Escamotear» es palabra de denuncia y acusa de hacer desaparecer algo a escondidas; aquí nadie esconde nada."
+        hint_specific: "«Escamotear» acusa de un truco para ocultar. ¿Alguien oculta algo en esta escena?"
+      - position: 2
+        text: "escatimar"
+        is_correct: true
+      - position: 3
+        text: "ahorrar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ahorrar» puede ser una decisión buena y ordenada, y la frase habla de no dejar los marcos cojos."
+        hint_specific: "«Ahorrar» no tiene por qué ser malo. ¿Aquí el recorte dejaría algo cojo?"
+  - position: 3
+    sentence: "Marcela contrató a un técnico caro para el arreglo: prefería no {{blank}} y dormir tranquila diez años."
+    hint_general: "Prefiere no quedarse corta hoy para no pagarlo mañana."
+    explanation: "Escatimar: prefiere no quedarse corta hoy. «Estimar» sería calcular el valor del arreglo, y «medir» hablaría de tomar una medida."
+    options:
+      - position: 1
+        text: "escatimar"
+        is_correct: true
+      - position: 2
+        text: "estimar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estimar» es poner una cifra aproximada a algo, y Marcela no calcula: decide cuánto poner."
+        hint_specific: "«Estimar» es hacer un cálculo aproximado. ¿Ella calcula o decide gastar?"
+      - position: 3
+        text: "medir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Medir» es tomar una medida, y aquí no hay nada que medir: hay una decisión de cuánto poner."
+        hint_specific: "«Medir» es usar una regla. ¿Qué se mediría en ese arreglo?"
+  - position: 4
+    sentence: "El equipo de cocina {{blank}} en los ingredientes del postre y los clientes lo notaron en la primera cucharada."
+    hint_general: "Puso de menos en algo importante y se notó al probarlo."
+    explanation: "Escatimó: puso de menos y se notó. «Apretó» es de charla informal y suena a presionar, y «limitó» solo diría que fijó un tope."
+    options:
+      - position: 1
+        text: "apretó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apretó» es de conversación suelta y sugiere presionar a alguien, no poner menos ingredientes."
+        hint_specific: "«Apretó» suena a exigir o a presionar. ¿Se presiona a alguien o falta ingrediente?"
+      - position: 2
+        text: "escatimó"
+        is_correct: true
+      - position: 3
+        text: "limitó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Limitó» dice que se puso un tope, y la frase cuenta que el postre salió pobre, no que hubiera una regla."
+        hint_specific: "«Limitó» es poner un tope. ¿Había una regla o faltaba producto?"
+  - position: 5
+    sentence: "Cuando por fin le dieron el proyecto, Ismael no {{blank}} horas: se quedó tres sábados seguidos."
+    hint_general: "No se guardó nada de lo que hacía falta poner."
+    explanation: "Escatimó: no se guardó nada de lo que hacía falta. «Estimó» sería calcular cuántas horas eran, y «guardó» hablaría de reservar algo para después."
+    options:
+      - position: 1
+        text: "guardó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Guardó» es reservar algo para después, y la frase cuenta que puso todo lo que tenía."
+        hint_specific: "«Guardó» es reservar para otro momento. ¿Ismael reservó horas o las gastó todas?"
+      - position: 2
+        text: "estimó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estimó» es calcular cuántas horas harían falta, y aquí lo que hizo fue ponerlas."
+        hint_specific: "«Estimó» es hacer un cálculo. ¿Calculó las horas o las trabajó?"
+      - position: 3
+        text: "escatimó"
+        is_correct: true
+  - position: 6
+    sentence: "La empresa {{blank}} en la formación del equipo nuevo y luego se sorprendió con los errores de la primera semana."
+    hint_general: "Puso de menos en una parte clave y pagó las consecuencias después."
+    explanation: "Escatimó: puso de menos en una parte clave. «Escamoteó» acusaría de esconder la formación, y «redujo» solo diría que la hizo más corta."
+    options:
+      - position: 1
+        text: "escatimó"
+        is_correct: true
+      - position: 2
+        text: "escamoteó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Escamoteó» es lenguaje de denuncia y acusa de hacer desaparecer algo con disimulo, no de dar poco."
+        hint_specific: "«Escamoteó» acusa de un truco para que algo desaparezca. ¿La formación se ocultó o fue escasa?"
+      - position: 3
+        text: "redujo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Redujo» dice que la formación fue más corta, sin dar a entender que quedara corta para lo que hacía falta."
+        hint_specific: "«Redujo» solo habla de acortar. ¿Se acortó bien o se quedó corta?"
+  - position: 7
+    sentence: "En la carta a los socios, Bruno prometió que no iban a {{blank}} en el mantenimiento del edificio este año."
+    hint_general: "Promete no quedarse corto justo donde la gente lo sufriría."
+    explanation: "Escatimar: promete no quedarse corto en el mantenimiento. «Estimar» sería calcular el coste, y «ahorrar» podría ser una promesa razonable, no un compromiso de gastar."
+    options:
+      - position: 1
+        text: "estimar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estimar» es calcular una cifra aproximada, y lo que Bruno promete es cuánto piensan poner."
+        hint_specific: "«Estimar» es calcular. ¿Bruno promete un cálculo o promete no recortar?"
+      - position: 2
+        text: "escatimar"
+        is_correct: true
+      - position: 3
+        text: "ahorrar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ahorrar» en mantenimiento puede ser prudente, y él promete no dejar el edificio cojo."
+        hint_specific: "«Ahorrar» puede estar bien visto. ¿Qué promete Bruno, prudencia o no dejar nada corto?"
+  - position: 8
+    sentence: "Mi abuela cocinaba para diez aunque fuéramos cuatro: jamás {{blank}} cuando venía alguien a casa."
+    hint_general: "Nunca ponía de menos cuando llegaba visita."
+    explanation: "Escatimaba: nunca ponía de menos con visita. «Apretaba» es coloquial y suena a presionar, y «limitaba» diría que fijaba un tope."
+    options:
+      - position: 1
+        text: "limitaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Limitaba» habla de poner un tope, y la frase cuenta que cocinaba de más sin ninguna regla."
+        hint_specific: "«Limitaba» es fijar un tope. ¿Tu abuela ponía topes o cocinaba de sobra?"
+      - position: 2
+        text: "escatimaba"
+        is_correct: true
+      - position: 3
+        text: "apretaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apretaba» es de charla informal y sugiere presionar a alguien, algo que no ocurre en esta cocina."
+        hint_specific: "«Apretaba» suena a presionar a una persona. ¿A quién presionaría tu abuela aquí?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El papel del catálogo"
+    body: "El presupuesto venía justo y alguien propuso bajar la calidad del papel. Lucía levantó el catálogo y lo dejó caer sobre la mesa. «Aquí no escatimamos: esto se toca antes de leerse». Recortaron en otra parte."
+    before_phrase: "En el papel podemos ahorrar un poco."
+    after_phrase: "En el papel no escatimamos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La casa de mi abuela"
+    body: "Mi abuela cocinaba para diez aunque fuéramos cuatro. Un día le dije que sobraba comida. Me miró y contestó: «Con la visita nunca escatimé, y mira cuánta gente vino». Ese día entendí por qué su cocina siempre estaba llena."
+    before_phrase: "Nunca pusiste poco de nada."
+    after_phrase: "Con la visita nunca escatimé."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Dónde sí y dónde no"
+    body: "Le preguntaron a Tobías cómo había sacado adelante el proyecto con poco dinero. «Recorté en casi todo», dijo, «y no escatimé en las pruebas con usuarios». El panel le pidió que explicara esa segunda parte."
+    before_phrase: "Ahorré en todo menos en eso."
+    after_phrase: "No escatimé en las pruebas."
+metrics:
+  zipf_overall: 3.4759
+  dispersion_dp: 0.3076
+  pedantry_proxy: 0.4998
+  family_size: 15
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

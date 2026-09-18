@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 7024
+slug: "pretexto"
+status: "draft"
+lemma: "pretexto"
+part_of_speech: "sustantivo"
+syllables:
+  - "pre"
+  - "tex"
+  - "to"
+stressed_syllable: 2
+ipa_latam: "[pɾeˈtek.sto]"
+ipa_es: "[pɾeˈtek.sto]"
+explanation: "Razón falsa que alguien pone para no hacer lo que debía."
+example_sentence: "El tráfico fue el pretexto; la verdad es que no quería ir."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra el hueco entre lo que alguien dice y lo que de verdad le pasa, sin llamarlo mentira."
+when_not_to_use: "No la uses para una razón verdadera que impide algo, ni para una confusión que nadie buscó."
+collocations:
+  - "poner un pretexto"
+  - "servir de pretexto"
+  - "sin más pretexto"
+replaces:
+  - before: "Dijo que no podía, pero era mentira"
+    after: "Lo del trabajo era un pretexto"
+  - before: "Siempre encuentra una excusa para escaquearse"
+    after: "Siempre encuentra un pretexto"
+  - before: "Se agarró a lo de la lluvia para no salir"
+    after: "La lluvia fue su pretexto"
+family: []
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "decir-que-no"
+    relevance: 2
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "excusa"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "contexto"
+    difference: "El «contexto» es lo que rodea a un hecho y ayuda a entenderlo; la otra palabra tapa la razón verdadera."
+    memory_trick: "El contexto aclara; el otro esconde."
+  - confused_with: "impedimento"
+    difference: "Un «impedimento» te impide de verdad hacer algo; la otra palabra solo lo parece."
+    memory_trick: "El impedimento existe; el otro se busca."
+exercises:
+  - position: 1
+    sentence: "Dijo que no podía venir por el tráfico, pero todos en la mesa sabíamos que era un {{blank}}."
+    hint_general: "La razón que dio no era la razón de verdad."
+    explanation: "Pretexto: la razón que dio no era la verdadera. El «contexto» es lo que rodea un hecho y lo aclara, y un «motivo» sería la razón auténtica."
+    options:
+      - position: 1
+        text: "contexto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «contexto» es lo que rodea a un hecho y ayuda a entenderlo, y aquí no se aclara nada: se esquiva una cena."
+        hint_specific: "El «contexto» sirve para entender mejor. ¿Esa frase ayuda a entender o a escapar?"
+      - position: 2
+        text: "pretexto"
+        is_correct: true
+      - position: 3
+        text: "motivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «motivo» es la razón verdadera de algo, y la frase dice que todos sabían que esa no era la verdadera."
+        hint_specific: "Un «motivo» es auténtico. ¿Qué sabían los de la mesa?"
+  - position: 2
+    sentence: "Cada vez que sale el tema del dinero, Nahuel encuentra un {{blank}} nuevo para cambiar de conversación."
+    hint_general: "Busca razones que no son la razón para no hablar de lo que importa."
+    explanation: "Pretexto: busca razones que no son la razón. «Cuento» acusaría directamente de inventar una historia, y un «impedimento» sería algo real que se lo impide."
+    options:
+      - position: 1
+        text: "cuento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cuento» es coloquial y acusa de inventarse una historia entera, y lo que dice Nahuel puede ser cierto: solo no es la razón."
+        hint_specific: "«Cuento» supone mentira completa. ¿Y si lo que dice fuera verdad y aun así no fuera el motivo?"
+      - position: 2
+        text: "pretexto"
+        is_correct: true
+      - position: 3
+        text: "impedimento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «impedimento» es algo real que te impide hacer algo, y a él nada le impide hablar: prefiere no hacerlo."
+        hint_specific: "Un «impedimento» es un obstáculo de verdad. ¿Qué se lo impide realmente?"
+  - position: 3
+    sentence: "La lluvia fue el {{blank}} perfecto para no salir, aunque Otilia llevaba toda la semana queriendo quedarse en casa."
+    hint_general: "La lluvia tapó la razón verdadera, que era otra."
+    explanation: "Pretexto: la lluvia tapa la razón verdadera. El «contexto» es lo que rodea un hecho y lo explica, y un «motivo» sería la razón auténtica, que aquí era otra."
+    options:
+      - position: 1
+        text: "motivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «motivo» es la razón auténtica, y la frase dice cuál era la suya: llevaba toda la semana queriendo quedarse."
+        hint_specific: "Un «motivo» es el de verdad. ¿Cuál era el suyo según la frase?"
+      - position: 2
+        text: "contexto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «contexto» explica una situación para entenderla mejor, y aquí la lluvia no explica nada: tapa lo que ella quería."
+        hint_specific: "El «contexto» añade comprensión. ¿La lluvia aclara o encubre?"
+      - position: 3
+        text: "pretexto"
+        is_correct: true
+  - position: 4
+    sentence: "No busques un {{blank}}: si no quieres venir a la boda, dilo y no pasa nada."
+    hint_general: "Le piden que no invente una razón falsa y diga la verdadera."
+    explanation: "Pretexto: le piden que no invente una razón falsa. «Subterfugio» suena a maniobra de abogado, y un «malentendido» sería entender mal algo sin querer."
+    options:
+      - position: 1
+        text: "subterfugio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Subterfugio» suena a lenguaje de abogado y sugiere una maniobra elaborada, y aquí solo se pide una frase sincera."
+        hint_specific: "«Subterfugio» pide un plan complicado. ¿De qué tamaño es lo que se discute?"
+      - position: 2
+        text: "pretexto"
+        is_correct: true
+      - position: 3
+        text: "malentendido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «malentendido» es entender mal algo sin querer, y aquí se estaría inventando una razón a propósito."
+        hint_specific: "Un «malentendido» no lo busca nadie. ¿Se busca esto o pasa solo?"
+  - position: 5
+    sentence: "El informe pendiente le sirvió de {{blank}} para no ir a la cena de su cuñado."
+    hint_general: "Usó algo cierto como tapadera de la razón real."
+    explanation: "Pretexto: usó algo cierto como tapadera. Un «impedimento» le habría impedido ir de verdad, y «cuento» acusaría de inventarse el informe entero."
+    options:
+      - position: 1
+        text: "impedimento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «impedimento» le habría impedido ir de verdad, y el informe podía esperar: lo usó para no ir."
+        hint_specific: "Un «impedimento» no deja opción. ¿Podía ir si quería?"
+      - position: 2
+        text: "cuento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cuento» es coloquial y acusaría de inventarse el informe, y el informe existe: lo que no es verdad es que le impidiera ir."
+        hint_specific: "«Cuento» supone que nada de eso existe. ¿Existe el informe?"
+      - position: 3
+        text: "pretexto"
+        is_correct: true
+  - position: 6
+    sentence: "Aquel viaje no fue un {{blank}}: de verdad tenía que estar en la otra ciudad esa misma semana."
+    hint_general: "No fue una razón falsa: era la razón real y comprobable."
+    explanation: "Pretexto: se descarta que fuera una razón falsa. El «contexto» sería lo que rodea al hecho, y «subterfugio» suena a maniobra de abogado."
+    options:
+      - position: 1
+        text: "pretexto"
+        is_correct: true
+      - position: 2
+        text: "contexto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «contexto» es lo que rodea a un hecho, y aquí no se discute qué rodeaba al viaje: se discute si era verdad."
+        hint_specific: "El «contexto» no se niega ni se afirma. ¿Qué se está afirmando en la frase?"
+      - position: 3
+        text: "subterfugio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Subterfugio» es una palabra de tono legal para una maniobra estudiada, y aquí se habla de un viaje de trabajo cualquiera."
+        hint_specific: "«Subterfugio» suena a juzgado. ¿De qué tono es esta conversación?"
+  - position: 7
+    sentence: "A Fabián le molestó menos la negativa que el {{blank}} que se inventaron para adornarla."
+    hint_general: "Le molestó la razón falsa con la que taparon el no."
+    explanation: "Pretexto: le molesta la razón falsa que tapó el no. Un «motivo» sería la razón verdadera, y un «malentendido» ocurriría sin intención."
+    options:
+      - position: 1
+        text: "motivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «motivo» es la razón verdadera, y lo que le molesta es justo que se la inventaran para adornar el no."
+        hint_specific: "Un «motivo» no se inventa. ¿Qué dice la frase sobre esa razón?"
+      - position: 2
+        text: "pretexto"
+        is_correct: true
+      - position: 3
+        text: "malentendido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «malentendido» ocurre sin que nadie lo busque, y aquí alguien se inventó algo a propósito."
+        hint_specific: "Un «malentendido» no tiene autor. ¿Quién fabricó esto?"
+  - position: 8
+    sentence: "Aplazaron la reunión hasta septiembre y ni siquiera buscaron un {{blank}} creíble para el aplazamiento."
+    hint_general: "Ni se molestaron en dar una razón falsa que sonara verosímil."
+    explanation: "Pretexto: ni buscaron una razón falsa creíble. Un «motivo» habría sido la razón verdadera, y un «impedimento» sería un obstáculo real."
+    options:
+      - position: 1
+        text: "motivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «motivo» es la razón verdadera, y nadie busca una razón verdadera: la razón verdadera se tiene o no se tiene."
+        hint_specific: "Un «motivo» no se fabrica a medida. ¿Qué verbo acompaña al hueco?"
+      - position: 2
+        text: "impedimento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «impedimento» es un obstáculo real, y tampoco se busca: aparece o no aparece."
+        hint_specific: "Un «impedimento» existe por su cuenta. ¿Se puede buscar uno a la carta?"
+      - position: 3
+        text: "pretexto"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Sin adornos"
+    body: "Le invitaron a una boda y estuvo dos días buscando qué decir. Al final escribió lo que pensaba: «No voy a poner un pretexto: prefiero no ir y te lo digo de frente». Le contestaron con un corazón y quedaron a cenar en octubre."
+    before_phrase: "Te iba a decir que tengo trabajo, pero…"
+    after_phrase: "No voy a poner un pretexto: prefiero no ir."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe que esperaba"
+    body: "La cena de equipo era el jueves y el informe podía esperar al lunes. En la sobremesa del viernes alguien lo comentó sin maldad: «El informe fue el pretexto, ¿no?». Él se rio y dijo que sí. Nadie se lo tuvo en cuenta."
+    before_phrase: "Es que tenía muchísimo lío, de verdad."
+    after_phrase: "El informe fue el pretexto, lo reconozco."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El tema del dinero"
+    body: "Cada vez que salía el préstamo, Nahuel miraba el reloj o recordaba una llamada. Su hermana se lo dijo con calma: «Llevamos tres meses de pretextos; ponme día y hora y lo hablamos». Lo hablaron el sábado siguiente en veinte minutos."
+    before_phrase: "Siempre sales por otro lado cuando saco el tema."
+    after_phrase: "Llevamos tres meses de pretextos."
+metrics:
+  zipf_overall: 3.9546
+  dispersion_dp: 0.2058
+  pedantry_proxy: 0.4856
+  family_size: 79
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

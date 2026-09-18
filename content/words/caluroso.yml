@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "caluroso"
+status: "draft"
+lemma: "caluroso"
+part_of_speech: "adjetivo"
+syllables:
+  - "ca"
+  - "lu"
+  - "ro"
+  - "so"
+stressed_syllable: 3
+ipa_latam: "[ka.luˈɾo.so]"
+ipa_es: "[ka.luˈɾo.so]"
+explanation: "Que se hace con muchas ganas y con alegría: una bienvenida así se nota."
+example_sentence: "Nos dieron un recibimiento caluroso: bajaron a buscarnos al portal."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Describe el gesto, no el sentimiento: sirve para contar lo que hicieron los demás sin adivinar lo que sentían."
+when_not_to_use: "No la uses para un cariño callado; esta palabra pide que el afecto se haya visto o se haya oído."
+collocations:
+  - "un recibimiento caluroso"
+  - "un aplauso caluroso"
+  - "un saludo caluroso"
+replaces:
+  - before: "Nos recibieron superbién"
+    after: "Nos dieron un recibimiento caluroso"
+  - before: "Aplaudieron un montón"
+    after: "El aplauso fue caluroso"
+  - before: "Me saludó con mucho cariño"
+    after: "Me dio un saludo caluroso"
+family:
+  - "calurosamente"
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "elogio-reconocimiento"
+    relevance: 2
+tags:
+  comodin:
+    - "superbién"
+    - "con mucho cariño"
+  funcion:
+    - "elogiar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "clamoroso"
+    difference: "«Clamoroso» mide el ruido o el escándalo de algo; esta palabra mide el afecto con que se hace."
+    memory_trick: "Lo clamoroso suena fuerte; lo caluroso abraza."
+  - confused_with: "cariñoso"
+    difference: "«Cariñoso» describe a quien quiere a alguien de cerca; lo otro describe un gesto de bienvenida, aunque sea entre desconocidos."
+    memory_trick: "Cariñoso es el trato de siempre; caluroso, el gesto de ese día."
+exercises:
+  - position: 1
+    sentence: "Cuando llegamos al pueblo, la familia de Uriel nos dio un recibimiento {{blank}}: bajaron los cuatro a buscarnos al portal."
+    hint_general: "Describe una bienvenida hecha con mucho ánimo y a la vista."
+    explanation: "Caluroso: la bienvenida se vio y se hizo con ánimo. «Clamoroso» mediría el ruido o el escándalo, y «cariñoso» supondría un trato de años."
+    options:
+      - position: 1
+        text: "clamoroso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Clamoroso» mide el ruido o el escándalo que provoca algo, y bajar al portal no es ruidoso: es atento."
+        hint_specific: "«Clamoroso» va de ruido y revuelo. ¿Cuánto ruido hay en ese portal?"
+      - position: 2
+        text: "caluroso"
+        is_correct: true
+      - position: 3
+        text: "cariñoso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cariñoso» describe a quien ya quiere a alguien, y aquí la familia recibe a gente que llega por primera vez."
+        hint_specific: "«Cariñoso» supone cariño previo. ¿Se conocían ya de antes?"
+  - position: 2
+    sentence: "Tras la última frase, el aplauso fue tan {{blank}} que Nerea tardó un minuto en poder despedirse."
+    hint_general: "El aplauso salió con ganas y duró más de la cuenta."
+    explanation: "Caluroso: el aplauso salió con ganas y duró. «Efusivo» suena a exceso estudiado, y «largo» solo mediría el tiempo, no el ánimo."
+    options:
+      - position: 1
+        text: "efusivo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Efusivo» es palabra de crónica formal y sugiere una demostración algo excesiva, y aquí el público responde sin más."
+        hint_specific: "«Efusivo» insinúa demostración exagerada, en tono de crónica. ¿El público exagera o responde?"
+      - position: 2
+        text: "caluroso"
+        is_correct: true
+      - position: 3
+        text: "largo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largo» solo dice cuánto duró, y un aplauso puede durar mucho por compromiso y sin ningún ánimo."
+        hint_specific: "«Largo» mide el reloj. ¿Lo que sorprende es la duración o las ganas?"
+  - position: 3
+    sentence: "En el correo de bienvenida, Zulema escribió un saludo {{blank}} y añadió el teléfono de su casa."
+    hint_general: "El saludo se escribió con ánimo y con la puerta abierta."
+    explanation: "Caluroso: el saludo se escribió con ánimo y apertura. «Clamoroso» hablaría de ruido o escándalo, y «amable» se quedaría en la buena educación."
+    options:
+      - position: 1
+        text: "caluroso"
+        is_correct: true
+      - position: 2
+        text: "clamoroso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Clamoroso» mide el ruido o el revuelo, y un correo de bienvenida no hace ruido."
+        hint_specific: "«Clamoroso» necesita ruido o escándalo. ¿Cuánto ruido hace un correo?"
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» es buena educación y podría quedarse en dos líneas correctas, y ella dejó hasta su teléfono."
+        hint_specific: "«Amable» cumple la forma. ¿Qué añade Zulema que va más allá de la forma?"
+  - position: 4
+    sentence: "Mi tío despide a todo el mundo en la puerta con un abrazo {{blank}}, incluso a quien acaba de conocer."
+    hint_general: "El gesto sale con ánimo aunque no haya trato previo."
+    explanation: "Caluroso: el gesto sale con ánimo sin trato previo. «Fraternal» suena a discurso solemne de hermandad, y «cariñoso» pediría un vínculo de antes."
+    options:
+      - position: 1
+        text: "fraternal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fraternal» es palabra solemne de discurso y afirma un vínculo de hermanos, y aquí despide a desconocidos."
+        hint_specific: "«Fraternal» suena a discurso y promete hermandad. ¿A quién despide tu tío en la puerta?"
+      - position: 2
+        text: "caluroso"
+        is_correct: true
+      - position: 3
+        text: "cariñoso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cariñoso» supone cariño acumulado, y la frase dice que abraza incluso a quien acaba de conocer."
+        hint_specific: "«Cariñoso» necesita historia previa. ¿La hay con quien acaba de conocer?"
+  - position: 5
+    sentence: "El grupo del taller le dio a Flor un adiós {{blank}} y le llenaron la mochila de tuppers para el viaje."
+    hint_general: "La despedida se hizo con ánimo y con gestos concretos."
+    explanation: "Caluroso: la despedida se hizo con ánimo y gestos. «Clamoroso» mediría el ruido, y «sincero» hablaría de la verdad del sentimiento, no de cómo se vio."
+    options:
+      - position: 1
+        text: "sincero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincero» dice que el sentimiento era verdadero, y una despedida sincera puede ser callada y sin tuppers."
+        hint_specific: "«Sincero» mira por dentro. ¿La frase cuenta lo que sentían o lo que hicieron?"
+      - position: 2
+        text: "caluroso"
+        is_correct: true
+      - position: 3
+        text: "clamoroso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Clamoroso» mide el ruido o el escándalo, y aquí lo que hubo fue una mochila llena de comida."
+        hint_specific: "«Clamoroso» pide ruido. ¿Qué hicieron exactamente en esa despedida?"
+  - position: 6
+    sentence: "La respuesta del gremio fue {{blank}}: en dos días se apuntaron cuarenta personas y ofrecieron local."
+    hint_general: "Respondieron con ánimo y con ofertas concretas."
+    explanation: "Caluroso: respondieron con ánimo y ofertas. «Efusivo» sugiere demostración algo excesiva, y «rápido» solo mediría el tiempo."
+    options:
+      - position: 1
+        text: "efusivo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Efusivo» es de crónica formal y apunta a una demostración exagerada, y aquí lo que hubo fueron inscripciones y un local."
+        hint_specific: "«Efusivo» sugiere exceso de demostración. ¿Hubo aspavientos o hubo ofertas?"
+      - position: 2
+        text: "rápido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rápido» solo mide el tiempo, y cuarenta inscripciones con local ofrecido dicen algo más que velocidad."
+        hint_specific: "«Rápido» mide el reloj. ¿Lo llamativo es la velocidad o las ganas?"
+      - position: 3
+        text: "caluroso"
+        is_correct: true
+  - position: 7
+    sentence: "Entre tanto correo frío, el mensaje de Tobías llegó {{blank}} y a mi madre se le quitó el susto."
+    hint_general: "El mensaje llegó con ánimo, al lado de otros secos."
+    explanation: "Caluroso: llegó con ánimo entre mensajes secos. «Fraternal» sonaría a discurso de hermandad, y «agradable» solo diría que no molestó."
+    options:
+      - position: 1
+        text: "agradable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agradable» dice que no molesta, y lo que cuenta la frase es que le quitó el susto a alguien."
+        hint_specific: "«Agradable» es no molestar. ¿Eso le quita el susto a alguien?"
+      - position: 2
+        text: "caluroso"
+        is_correct: true
+      - position: 3
+        text: "fraternal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fraternal» es solemne y afirma un vínculo de hermanos, y Tobías solo escribió un mensaje con ánimo."
+        hint_specific: "«Fraternal» promete hermandad, con tono grave. ¿Qué relación hay aquí?"
+  - position: 8
+    sentence: "Al presentar a la nueva socia, el aplauso {{blank}} de la sala le ahorró media hora de explicaciones."
+    hint_general: "El aplauso salió con ganas y dijo más que cualquier discurso."
+    explanation: "Caluroso: el aplauso salió con ganas. «Clamoroso» mediría el ruido y el revuelo, y «sincero» hablaría de lo que sentían por dentro."
+    options:
+      - position: 1
+        text: "clamoroso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Clamoroso» mide el ruido o el revuelo, y lo que ahorró explicaciones fue el ánimo, no el volumen."
+        hint_specific: "«Clamoroso» pone el foco en el ruido. ¿Lo que convence es el volumen o el ánimo?"
+      - position: 2
+        text: "caluroso"
+        is_correct: true
+      - position: 3
+        text: "sincero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincero» juzga lo que sentía la sala por dentro, y la frase cuenta lo que se vio y se oyó."
+        hint_specific: "«Sincero» mira intenciones. ¿La frase mira dentro o mira el gesto?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Bajaron al portal"
+    body: "Llegamos al pueblo de noche y sin avisar bien la hora. La familia de Uriel bajó entera al portal. Al volver, mi hermana lo resumió: «Fue un recibimiento caluroso, y eso no se olvida». Volvimos en marzo."
+    before_phrase: "Nos recibieron superbién."
+    after_phrase: "Fue un recibimiento caluroso."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuarenta en dos días"
+    body: "Nadie esperaba gran cosa del anuncio del gremio. En dos días había cuarenta inscripciones y tres locales ofrecidos. «La respuesta fue calurosa», escribió Zulema en el acta, y por una vez el acta decía la verdad."
+    before_phrase: "La gente respondió muy bien."
+    after_phrase: "La respuesta fue calurosa."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El aplauso del final"
+    body: "Le preguntaron a Nerea cómo sabía si una charla había funcionado. «Por el aplauso», contestó. «No por lo largo: por lo caluroso. Se nota si aplauden o si te acompañan». Nadie en la sala discutió la diferencia."
+    before_phrase: "Se nota si aplauden con ganas."
+    after_phrase: "Se nota si el aplauso es caluroso."
+metrics:
+  zipf_overall: 3.8729
+  dispersion_dp: 0.2765
+  pedantry_proxy: 0.6008
+  family_size: 3
+provenance:
+  generator: "flui authoring agent — theme networking"
+  gate: null
+  checked_on: "2026-09-15"

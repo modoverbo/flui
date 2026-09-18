@@ -1,0 +1,242 @@
+schema_version: 1
+sort_order: 8303
+slug: "oportuno"
+status: "draft"
+lemma: "oportuno"
+part_of_speech: "adjetivo"
+syllables:
+  - "o"
+  - "por"
+  - "tu"
+  - "no"
+stressed_syllable: 3
+ipa_latam: "[o.poɾˈtu.no]"
+ipa_es: "[o.poɾˈtu.no]"
+explanation: "Que llega o se dice justo cuando la situación lo pide, sin quedarse corto ni pasarse."
+example_sentence: "Su pregunta fue tan oportuna que salvó la reunión justo cuando se estaba enfriando."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para elogiar algo dicho justo cuando hacía falta; no lo confundas con sacar ventaja de la situación."
+when_not_to_use: "No la uses para quien aprovecha una situación para sacar ventaja propia; eso es aprovechado, no oportuno."
+collocations:
+  - "un comentario oportuno"
+  - "una pregunta oportuna"
+  - "llegar en el momento oportuno"
+replaces:
+  - before: "Lo dijiste justo a tiempo"
+    after: "Fue un comentario oportuno"
+  - before: "Preguntaste justo lo que hacía falta"
+    after: "Hiciste una pregunta oportuna"
+  - before: "Llegaste en el momento justo"
+    after: "Llegaste en el momento oportuno"
+family:
+  - "oportunidad"
+  - "oportunamente"
+themes:
+  - slug: "small-talk"
+    relevance: 3
+  - slug: "networking"
+    relevance: 2
+tags:
+  comodin: ["justo"]
+  funcion: ["describir", "elogiar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "oportunista"
+    difference: "«Oportunista» aprovecha una situación para sacar ventaja propia; «oportuno» solo llega en el momento justo, sin buscar beneficio."
+    memory_trick: "El oportunista saca provecho; lo oportuno solo llega a tiempo."
+  - confused_with: "puntual"
+    difference: "«Puntual» dice que algo llega a la hora acordada; «oportuno» dice que encaja con lo que la situación pedía, tenga hora fija o no."
+exercises:
+  - position: 1
+    sentence: "En el evento de networking, Wanda hizo un comentario tan {{blank}} sobre el ponente anterior que el grupo entero retomó la charla justo donde se había quedado."
+    hint_general: "Habla de algo dicho justo en el momento en que la conversación lo necesitaba."
+    explanation: "Oportuno: llegó justo cuando la charla lo necesitaba. «Importuno» describe algo que llega en mal momento, y aquí el grupo retomó la charla con gusto, y «oportunista» supondría que Wanda buscaba beneficio propio, cuando solo ayudó a que la charla siguiera."
+    options:
+      - position: 1
+        text: "importuno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Importuno» describe algo que llega en mal momento y molesta; aquí el grupo retomó la charla justo donde se había quedado, sin ninguna molestia."
+        hint_specific: "«Importuno» avisa de mal momento. ¿Cómo reaccionó el grupo al comentario de Wanda?"
+      - position: 2
+        text: "oportuno"
+        is_correct: true
+      - position: 3
+        text: "oportunista"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Oportunista» supone que alguien aprovecha la situación para sacar ventaja propia; el comentario de Wanda solo ayudó a que la charla del grupo siguiera."
+        hint_specific: "«Oportunista» busca beneficio propio. ¿Qué gana Wanda con ese comentario, además de que la charla siga?"
+  - position: 2
+    sentence: "La broma de Bautista sobre los nervios de todos no estaba planeada: fue {{blank}}, justo antes de entrar a la sala, y bajó la tensión del grupo."
+    hint_general: "Se refiere a algo dicho justo antes de un momento importante, que alivia el ambiente."
+    explanation: "Oportuna: bajó la tensión justo antes de entrar. «Opuesta» significa justo lo contrario de algo, y la broma no contradice nada, y «puntual» dice que algo pasa a la hora exacta, cuando aquí lo que importa es que encajó con el nervio del grupo."
+    options:
+      - position: 1
+        text: "opuesta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Opuesta» significa justo lo contrario de algo, y la broma de Bautista no contradice nada: solo bajó la tensión del grupo."
+        hint_specific: "«Opuesta» habla de ir en contra de algo. ¿La broma de Bautista contradice algo o alivia algo?"
+      - position: 2
+        text: "oportuna"
+        is_correct: true
+      - position: 3
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» dice que algo pasa a la hora exacta, y aquí lo que importa no es la hora, sino que la broma encajó con el nervio del grupo."
+        hint_specific: "«Puntual» mide la hora exacta. ¿La frase mide la hora o si la broma encajó con el ambiente?"
+  - position: 3
+    sentence: "El comentario {{blank}} de Gaspar sobre el logo de la empresa hizo que el director se detuviera a preguntarle en qué trabajaba."
+    hint_general: "Apunta al efecto de decir algo justo en el instante en que alguien podía notarlo."
+    explanation: "Oportuno: llegó justo cuando el director pasaba por ahí. «Clavado» es coloquial y dice que algo acertó en el contenido exacto, no en el momento, y «adecuado» dice que algo cumple lo esperado en general, no que encajara con ese instante preciso."
+    options:
+      - position: 1
+        text: "clavado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clavado» es coloquial y dice que algo acertó en el contenido exacto; aquí lo que llamó la atención fue el momento, justo cuando el director pasaba por ahí."
+        hint_specific: "«Clavado» habla de acertar en el contenido. ¿Qué hizo que el director se detuviera: el contenido exacto o el momento en que lo dijo?"
+      - position: 2
+        text: "oportuno"
+        is_correct: true
+      - position: 3
+        text: "adecuado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adecuado» dice que algo cumple lo que se espera en general, y la frase no habla de cumplir una norma, sino de que llegó en el momento justo para que el director se detuviera."
+        hint_specific: "«Adecuado» habla de cumplir lo esperado. ¿La frase habla de cumplir una norma o de un momento preciso?"
+  - position: 4
+    sentence: "Cuando la mesa se quedó en silencio, la pregunta de Aitana sobre el viaje de la pareja fue {{blank}}: todos volvieron a hablar sin notar el bache."
+    hint_general: "Habla de algo que llega justo para rescatar una conversación que se apagaba."
+    explanation: "Oportuna: rescató la charla justo cuando se apagaba. «Providencial» sugiere que algo pasó por pura suerte o destino, y aquí se reconoce el criterio de Aitana, y «acertada» dice que fue una buena elección de tema, pero no destaca el momento exacto en que lo dijo."
+    options:
+      - position: 1
+        text: "providencial"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Providencial» sugiere que algo pasó por pura suerte o destino, y la frase reconoce el criterio de Aitana, no la casualidad."
+        hint_specific: "«Providencial» apunta a la suerte, no al criterio de alguien. ¿La frase premia la suerte o la habilidad de Aitana?"
+      - position: 2
+        text: "oportuna"
+        is_correct: true
+      - position: 3
+        text: "acertada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acertada» dice que algo fue una buena elección de tema, y la frase destaca sobre todo el momento exacto en que rescató la conversación, no solo el tema elegido."
+        hint_specific: "«Acertada» habla de elegir bien el tema. ¿La frase premia el tema o el momento exacto en que lo dijo?"
+  - position: 5
+    sentence: "Justo cuando el silencio entre las dos empezaba a ponerse incómodo, la pregunta de Leonor a su compañera nueva sobre su acento fue {{blank}}: terminaron hablando de sus países media hora."
+    hint_general: "Se refiere a una pregunta que aparece justo en el instante en que la charla lo necesita."
+    explanation: "Oportuna: llegó justo cuando el silencio se ponía incómodo. «Conveniente» juzga si algo te beneficia, no el instante en que llega, y «apropiada» juzga el contenido, no si llegó justo antes de que el silencio se volviera incómodo."
+    options:
+      - position: 1
+        text: "conveniente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conveniente» juzga si algo te beneficia, no si llegó en el momento justo; aquí lo que importa es que rompió el silencio justo cuando se ponía incómodo."
+        hint_specific: "«Conveniente» juzga beneficio, no momento. ¿Qué destaca la frase: un beneficio o un instante preciso?"
+      - position: 2
+        text: "oportuna"
+        is_correct: true
+      - position: 3
+        text: "apropiada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apropiada» juzga si el contenido de la pregunta está bien elegido, no si llegó en el instante justo antes de que el silencio se volviera incómodo."
+        hint_specific: "«Apropiada» juzga el contenido, no el instante. ¿Qué marca la frase: el contenido o el momento exacto?"
+  - position: 6
+    sentence: "«Llegó justo cuando ya no sabía qué más decirle», contó el compañero nuevo de Jimena sobre el comentario {{blank}} que ella soltó del café de la oficina, y los dos siguieron hablando toda la pausa."
+    hint_general: "Apunta a un comentario que encaja justo con el instante en que alguien ya no sabía qué decir."
+    explanation: "Oportuno: llegó justo cuando él ya no sabía qué más decir. «Indicado» juzga contenido general, no el instante exacto, y «justo» como elogio habla de equidad, no de si llegó en ese instante preciso."
+    options:
+      - position: 1
+        text: "indicado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indicado» juzga si algo es lo recomendable en general, no si llegó en el instante justo en que él ya no sabía qué decir."
+        hint_specific: "«Indicado» juzga contenido general, no instante. ¿Qué dice la frase sobre el momento exacto?"
+      - position: 2
+        text: "oportuno"
+        is_correct: true
+      - position: 3
+        text: "justo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justo» como elogio habla de equidad, y la frase no juzga si el comentario fue equitativo, sino que llegó en el instante exacto en que él se había quedado sin palabras."
+        hint_specific: "«Justo» habla de equidad. ¿La frase juzga equidad o un instante preciso?"
+  - position: 7
+    sentence: "Un segundo antes de que alguien preguntara más detalles sobre la entrevista fallida de su amigo, Norma soltó un comentario tan {{blank}} sobre la música que sonaba que todos olvidaron el tema incómodo."
+    hint_general: "Habla de algo dicho justo un instante antes de que la charla siguiera por un lado incómodo."
+    explanation: "Oportuno: llegó justo un segundo antes de que la charla siguiera por ahí. «Certero» juzga un dato, no un instante, y «preciso» juzga el detalle, no si llegó justo un segundo antes de que preguntaran más."
+    options:
+      - position: 1
+        text: "certero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Certero» juzga si un dato es correcto, no si llegó justo un segundo antes de que la conversación siguiera por un lado incómodo."
+        hint_specific: "«Certero» juzga un dato, no un instante. ¿Qué marca la frase: un dato correcto o un segundo exacto?"
+      - position: 2
+        text: "oportuno"
+        is_correct: true
+      - position: 3
+        text: "preciso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preciso» juzga la exactitud de los detalles, no si llegó justo un segundo antes de que alguien preguntara más sobre la entrevista."
+        hint_specific: "«Preciso» juzga el detalle, no el instante. ¿Qué marca la frase: el detalle o el segundo exacto?"
+  - position: 8
+    sentence: "El comentario de Ulises sobre el postre en la sobremesa no fue casualidad: llegó {{blank}}, un segundo antes de que alguien retomara el tema del vecino ruidoso."
+    hint_general: "Se refiere a un comentario que llega justo un instante antes de que la charla vuelva a un tema incómodo."
+    explanation: "Oportuno: llegó un segundo antes de que retomaran el tema incómodo. «Acorde» compara con una norma general, no con un instante preciso, y «afortunado» dice que algo salió bien por pura suerte, cuando Ulises supo leer el momento."
+    options:
+      - position: 1
+        text: "acorde"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acorde» compara algo con un contexto o una norma general, y la frase no compara con ninguna norma, sino que llegó un segundo antes de que alguien retomara el tema incómodo."
+        hint_specific: "«Acorde» compara con una norma general. ¿La frase compara con una norma o marca un instante preciso?"
+      - position: 2
+        text: "oportuno"
+        is_correct: true
+      - position: 3
+        text: "afortunado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Afortunado» dice que algo salió bien por pura suerte, y la frase no habla de suerte, sino de que Ulises supo leer el momento."
+        hint_specific: "«Afortunado» apunta a la suerte. ¿La frase premia la suerte o la lectura del momento que hizo Ulises?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El gol del final"
+    body: "En la fiesta de Fabiola, nadie hablaba con el nuevo. Cuando alguien mencionó el partido de la noche anterior, Ismael soltó: «¿Vieron el gol al final? Casi tiro la copa». Fue un comentario tan oportuno que el grupo entero se giró a contarle la jugada completa."
+    before_phrase: "Dije algo justo a tiempo y funcionó."
+    after_phrase: "Fue un comentario oportuno, y funcionó."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La fila del café"
+    body: "En la conferencia, nadie se animaba a hablarle al ponente. Vidal se acercó en la fila del café y preguntó por un detalle de la charla que nadie más había notado. La pregunta fue tan oportuna que terminaron intercambiando contactos antes de volver a la sala."
+    before_phrase: "Pregunté justo lo que hacía falta y funcionó."
+    after_phrase: "Fue una pregunta oportuna, y funcionó."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La sala de espera"
+    body: "Dos candidatas esperaban su turno en silencio. Mirta comentó que el aire acondicionado de esa oficina siempre estaba altísimo, y la otra soltó una carcajada de alivio. Fue un comentario oportuno: bajó los nervios de las dos justo antes de entrar."
+    before_phrase: "Dije algo justo a tiempo para bajar la tensión."
+    after_phrase: "Fue un comentario oportuno, y bajó la tensión."
+metrics:
+  zipf_overall: 4.3581
+  dispersion_dp: 0.1453
+  pedantry_proxy: 0.4405
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

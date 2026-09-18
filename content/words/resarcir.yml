@@ -1,0 +1,245 @@
+schema_version: 1
+sort_order: 7028
+slug: "resarcir"
+status: "draft"
+lemma: "resarcir"
+part_of_speech: "verbo"
+syllables:
+  - "re"
+  - "sar"
+  - "cir"
+stressed_syllable: 3
+ipa_latam: "[re.saɾˈsiɾ]"
+ipa_es: "[re.saɾˈθiɾ]"
+explanation: "Dar algo a alguien para pagar un daño anterior."
+example_sentence: "La disculpa llegó rápido; resarcir el mal rato le costó tres meses."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para prometer algo concreto después de una disculpa, sin sonar a trámite ni a contrato."
+when_not_to_use: "No la uses para sacar a alguien de un apuro, ni para reconocer un mérito con un premio."
+collocations:
+  - "resarcir a alguien"
+  - "intentar resarcir"
+  - "resarcir el daño"
+replaces:
+  - before: "Le voy a compensar de alguna manera lo del sábado"
+    after: "Quiero resarcirla por lo del sábado"
+  - before: "Les devolvieron el dinero y encima les dieron algo más"
+    after: "Los resarcieron por la espera"
+  - before: "Con perdón no basta, hay que hacer algo"
+    after: "Con perdón no basta: hay que resarcir"
+family: []
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "amistad"
+    relevance: 1
+tags:
+  comodin:
+    - "compensar"
+  funcion:
+    - "pedir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "rescatar"
+    difference: "«Rescatar» es sacar a alguien de un peligro o de un apuro; la otra palabra llega después y paga un daño ya hecho."
+    memory_trick: "Rescatas durante; lo otro, después."
+  - confused_with: "premiar"
+    difference: "«Premiar» reconoce algo que alguien hizo bien; la otra palabra compensa algo que alguien sufrió."
+    memory_trick: "El premio celebra; lo otro repara."
+exercises:
+  - position: 1
+    sentence: "El taller les cambió la pieza y además los {{blank}} con dos revisiones gratis por las tres semanas sin coche."
+    hint_general: "Les dieron algo más para pagar la molestia que les habían causado."
+    explanation: "Resarció: les dan algo para pagar la molestia causada. «Rescató» sería sacarlos de un peligro, y «premió» celebraría algo que ellos hubieran hecho bien."
+    options:
+      - position: 1
+        text: "rescató"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Rescatar» es sacar a alguien de un peligro o de un apuro, y aquí no había peligro: había una espera larga."
+        hint_specific: "«Rescatar» actúa mientras el problema ocurre. ¿Cuándo llegan las dos revisiones?"
+      - position: 2
+        text: "resarció"
+        is_correct: true
+      - position: 3
+        text: "premió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premiar» reconoce algo que alguien hizo bien, y estos clientes no hicieron nada: sufrieron una avería."
+        hint_specific: "Un premio celebra un mérito. ¿Qué mérito tienen los del coche?"
+  - position: 2
+    sentence: "Damián sabía que una disculpa no bastaba y buscó la manera de {{blank}} a quien había dejado colgado."
+    hint_general: "Busca darle algo concreto a esa persona para pagar el daño."
+    explanation: "Resarcir: darle algo concreto para pagar el daño. «Rescatar» sería sacarla de un apuro, y «reparar» se dice de arreglar una cosa o un daño en abstracto."
+    options:
+      - position: 1
+        text: "rescatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Rescatar» sería sacarla de un apuro en ese momento, y el apuro ya pasó: quedó el daño."
+        hint_specific: "«Rescatar» llega a tiempo. ¿Llega Damián a tiempo de algo?"
+      - position: 2
+        text: "resarcir"
+        is_correct: true
+      - position: 3
+        text: "reparar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reparar» se dice de arreglar una cosa rota o un daño en abstracto, y aquí lo que se compensa es a una persona concreta."
+        hint_specific: "«Reparar» tiene por objeto una cosa o un daño. ¿Qué hay al otro lado aquí?"
+  - position: 3
+    sentence: "La empresa {{blank}} a los vecinos con una plaza de aparcamiento durante todo el año de obras."
+    hint_general: "Les dio algo a cambio de la molestia que iban a soportar."
+    explanation: "Resarció: les da algo a cambio de la molestia. «Indemnizó» es una palabra técnica para un pago fijado por contrato o por un juez, y «pagó» sería entregar dinero."
+    options:
+      - position: 1
+        text: "indemnizó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Indemnizar» es una palabra técnica para un pago fijado en un contrato o por un juez, y aquí no hay ni contrato ni juicio."
+        hint_specific: "«Indemnizar» viene con expediente. ¿Hay algún papel oficial en esta escena?"
+      - position: 2
+        text: "resarció"
+        is_correct: true
+      - position: 3
+        text: "pagó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pagar» es entregar dinero por algo, y lo que dan es un sitio para el coche, no una cantidad."
+        hint_specific: "«Pagar» se hace con dinero. ¿Qué reciben los vecinos?"
+  - position: 4
+    sentence: "No quiero que me {{blank}} con regalos: quiero que pidas perdón y lo digas delante de los demás."
+    hint_general: "Rechaza que le compensen con cosas en lugar de reconocer el daño."
+    explanation: "Resarzas: rechaza que la compensen con cosas. «Premies» celebraría un mérito suyo, y «desagravies» es una palabra solemne, casi de ceremonia."
+    options:
+      - position: 1
+        text: "premies"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premiar» celebra un mérito de quien recibe, y aquí no se celebra nada: se está hablando de un daño."
+        hint_specific: "Un premio llega por algo bien hecho. ¿Qué hizo bien quien habla?"
+      - position: 2
+        text: "resarzas"
+        is_correct: true
+      - position: 3
+        text: "desagravies"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Desagraviar» es una palabra solemne, casi de ceremonia pública, y aquí se pide algo tan corriente como una disculpa en voz alta."
+        hint_specific: "«Desagraviar» suena a acto formal. ¿Qué se pide exactamente en esta frase?"
+  - position: 5
+    sentence: "Tardó un año, pero encontró la manera de {{blank}} a su hermana por aquella firma que nunca debió poner."
+    hint_general: "Encontró cómo darle algo a su hermana para pagar aquel daño."
+    explanation: "Resarcir: darle algo a su hermana para pagar el daño. «Rescatar» sería sacarla de un apuro, y «reparar» se aplica a cosas y a daños, no a personas."
+    options:
+      - position: 1
+        text: "resarcir"
+        is_correct: true
+      - position: 2
+        text: "rescatar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Rescatar» sería sacarla de un apuro mientras dura, y aquel apuro terminó hace un año."
+        hint_specific: "«Rescatar» actúa en caliente. ¿Cuánto tiempo ha pasado aquí?"
+      - position: 3
+        text: "reparar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reparar» se aplica a una cosa rota o a un daño en general, y lo que hay que compensar aquí es a su hermana."
+        hint_specific: "«Reparar» apunta a lo estropeado. ¿Qué está al otro lado de esta acción?"
+  - position: 6
+    sentence: "Le devolvieron el importe y encima la {{blank}} con una noche de hotel, aunque ella solo quería una explicación."
+    hint_general: "Le dieron algo más para pagar el mal rato, aunque no era eso lo que pedía."
+    explanation: "Resarcieron: le dan algo más para pagar el mal rato. «Indemnizaron» suena a pago fijado en un contrato, y «premiaron» celebraría un mérito de ella."
+    options:
+      - position: 1
+        text: "indemnizaron"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Indemnizar» es un pago fijado por contrato o por un juez, y una noche de hotel no la fija ningún papel."
+        hint_specific: "«Indemnizar» tiene cantidad y norma detrás. ¿Qué le dieron exactamente?"
+      - position: 2
+        text: "resarcieron"
+        is_correct: true
+      - position: 3
+        text: "premiaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premiar» celebraría un mérito de ella, y ella no ganó nada: perdió una tarde y el dinero."
+        hint_specific: "Un premio reconoce algo logrado. ¿Qué logró ella?"
+  - position: 7
+    sentence: "Nadie te pide que {{blank}} a nadie: basta con que reconozcas lo que pasó y no se repita."
+    hint_general: "No hace falta dar nada a cambio: basta con reconocer el daño."
+    explanation: "Resarzas: no hace falta dar nada a cambio. «Pagues» supondría dinero de por medio, y «desagravies» suena a acto solemne y público."
+    options:
+      - position: 1
+        text: "pagues"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pagar» supondría dinero de por medio, y aquí no se habla de dinero en ningún momento."
+        hint_specific: "«Pagar» mueve dinero. ¿Se menciona dinero en esta frase?"
+      - position: 2
+        text: "resarzas"
+        is_correct: true
+      - position: 3
+        text: "desagravies"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Desagraviar» suena a acto solemne y público de reparación, y lo que se pide aquí cabe en dos frases."
+        hint_specific: "«Desagraviar» pide ceremonia. ¿Qué tamaño tiene lo que se pide?"
+  - position: 8
+    sentence: "Con aquella tarde de mudanza consiguió {{blank}} a su amigo por el plantón del mes anterior."
+    hint_general: "Con su trabajo le pagó a su amigo el mal rato de aquel día."
+    explanation: "Resarcir: le paga con trabajo el mal rato causado. «Pagar» supondría dinero, y «reparar» se dice de arreglar cosas o daños, no de compensar a alguien."
+    options:
+      - position: 1
+        text: "pagar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pagar» supondría dinero, y lo que pone él son horas cargando cajas."
+        hint_specific: "«Pagar» se hace con billetes. ¿Qué pone él sobre la mesa?"
+      - position: 2
+        text: "reparar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reparar» se dice de arreglar una cosa estropeada o un daño en abstracto, y aquí se compensa a un amigo concreto."
+        hint_specific: "«Reparar» necesita algo roto. ¿Qué está roto aquí?"
+      - position: 3
+        text: "resarcir"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres semanas sin coche"
+    body: "El taller tardó tres semanas en una reparación de dos días. Cuando la clienta fue a recogerlo, el encargado no se escondió: «Nos hemos pasado y queremos resarcirla: dos revisiones a nuestra cuenta». Ella volvió al año siguiente."
+    before_phrase: "Le vamos a compensar de alguna manera, no se preocupe."
+    after_phrase: "Nos hemos pasado y queremos resarcirla."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La firma"
+    body: "Damián firmó un papel que comprometía a su hermana y tardó un año en poder arreglarlo. No le mandó regalos ni flores: le devolvió cada euro y se lo dijo de frente. «No busco que me perdones hoy; busco resarcirte». Ella tardó otro año, pero volvió."
+    before_phrase: "Voy a compensarte como sea, te lo prometo."
+    after_phrase: "No busco perdón hoy; busco resarcirte."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El plantón del mes pasado"
+    body: "Yago dejó tirado a su amigo en el aeropuerto y se pasó semanas disculpándose por mensaje. En la mudanza del mes siguiente apareció a las ocho de la mañana con la furgoneta. «Esto es para resarcirte», dijo. Cargaron cajas hasta las seis y quedó saldado."
+    before_phrase: "Te debo una bien gorda por lo del otro día."
+    after_phrase: "Esto es para resarcirte por lo del aeropuerto."
+metrics:
+  zipf_overall: 3.1606
+  dispersion_dp: 0.2517
+  pedantry_proxy: 0.4847
+  family_size: 20
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

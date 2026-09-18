@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 7025
+slug: "desliz"
+status: "draft"
+lemma: "desliz"
+part_of_speech: "sustantivo"
+syllables:
+  - "des"
+  - "liz"
+stressed_syllable: 2
+ipa_latam: "[desˈlis]"
+ipa_es: "[desˈliθ]"
+explanation: "Fallo pequeño que se le escapa a cualquiera sin querer."
+example_sentence: "Fue un desliz de dos segundos y aun así pidió perdón de inmediato."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para reconocer un fallo sin hundirte ni agrandarlo: lo nombras, pides perdón y sigues."
+when_not_to_use: "No la uses para un fallo grande o repetido, ni para una precisión que mejora lo dicho."
+collocations:
+  - "un desliz sin importancia"
+  - "reconocer un desliz"
+  - "el desliz de ayer"
+replaces:
+  - before: "Se me escapó y metí la pata"
+    after: "Fue un desliz y lo siento"
+  - before: "Dijo algo que no tocaba, sin querer"
+    after: "Tuvo un desliz"
+  - before: "No fue nada grave, se equivocó un segundo"
+    after: "Fue un desliz sin importancia"
+family: []
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin:
+    - "metida de pata"
+  funcion:
+    - "precisar"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "traspié"
+    difference: "Un «traspié» es un tropiezo al andar o un mal paso con consecuencias; la otra palabra es un fallo pequeño al hablar o al escribir."
+    memory_trick: "El traspié se da con los pies; el otro, con la lengua."
+  - confused_with: "descuido"
+    difference: "Un «descuido» es dejar de vigilar algo que había que vigilar; la otra palabra se escapa en un segundo sin que nadie estuviera vigilando nada."
+    memory_trick: "El descuido baja la guardia; el otro se cuela."
+exercises:
+  - position: 1
+    sentence: "Dijo el nombre equivocado delante de todos: un {{blank}} de dos segundos que tardó media hora en arreglar."
+    hint_general: "Un fallo mínimo que se le escapó sin ninguna intención."
+    explanation: "Desliz: un fallo mínimo que se le escapó. Un «matiz» sería una precisión que mejora lo dicho, y un «descuido» supondría dejar de vigilar algo."
+    options:
+      - position: 1
+        text: "matiz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «matiz» es una precisión que hace más justa una idea, y aquí nadie precisa nada: se equivoca de nombre."
+        hint_specific: "Un «matiz» mejora lo que se dice. ¿Mejoró algo ese nombre?"
+      - position: 2
+        text: "desliz"
+        is_correct: true
+      - position: 3
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descuido» es dejar de vigilar algo que había que vigilar, y aquí no había nada que vigilar: se le escapó una palabra."
+        hint_specific: "Un «descuido» supone bajar la guardia en algo concreto. ¿Qué estaba vigilando esa persona?"
+  - position: 2
+    sentence: "Fue solo un {{blank}} y Milena pidió perdón antes de que nadie en la sala dijera nada."
+    hint_general: "Algo pequeño que se le escapó, tan pequeño que basta una disculpa."
+    explanation: "Desliz: algo pequeño que se escapa y basta disculparse. «Patinazo» agranda el asunto hasta la burla, y un «fallo» puede ser grande y venir de un sistema."
+    options:
+      - position: 1
+        text: "patinazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Patinazo» es coloquial y agranda el asunto hasta la burla, y aquí se describe algo mínimo, resuelto con una disculpa."
+        hint_specific: "Un «patinazo» se cuenta para reírse de alguien. ¿El tono de la frase es de burla?"
+      - position: 2
+        text: "desliz"
+        is_correct: true
+      - position: 3
+        text: "fallo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «fallo» puede ser grande y venir de un procedimiento entero, y esto es algo diminuto que se le escapa a una persona."
+        hint_specific: "Un «fallo» abarca desde lo pequeño hasta lo enorme. ¿Qué tamaño tiene esto?"
+  - position: 3
+    sentence: "Aquel {{blank}} en el correo le costó una conversación incómoda con su responsable el lunes siguiente."
+    hint_general: "Un error pequeño que se le coló al escribir y trajo cola."
+    explanation: "Desliz: un error pequeño que se coló al escribir. Un «matiz» sería una precisión útil, y un «olvido» sería dejarse algo fuera, no colar algo de más."
+    options:
+      - position: 1
+        text: "matiz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «matiz» es una precisión que afina lo escrito, y nadie tiene una conversación incómoda por haber afinado un correo."
+        hint_specific: "Un «matiz» suma calidad. ¿Este correo salió mejor o peor por eso?"
+      - position: 2
+        text: "olvido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «olvido» es dejarse algo fuera, y aquí el problema no es lo que faltaba: es lo que sobraba en ese correo."
+        hint_specific: "Un «olvido» resta contenido. ¿Aquí faltó algo o se coló algo?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 4
+    sentence: "Nadie recuerda sus diez años de trabajo, pero todos recuerdan aquel {{blank}} del brindis."
+    hint_general: "Una frase desafortunada que se le escapó en un momento tonto."
+    explanation: "Desliz: una frase desafortunada que se le escapó. «Yerro» es solemne y suena a falta moral, y un «fallo» puede ser cualquier error, también técnico."
+    options:
+      - position: 1
+        text: "yerro"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Yerro» es una palabra solemne y antigua que suena a falta moral grave, y esto fue una frase suelta en una fiesta."
+        hint_specific: "«Yerro» pesa como una culpa de novela. ¿De qué tamaño es lo del brindis?"
+      - position: 2
+        text: "desliz"
+        is_correct: true
+      - position: 3
+        text: "fallo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «fallo» puede ser técnico, de cálculo o de proceso, y aquí se trata de algo que se le escapó al hablar."
+        hint_specific: "Un «fallo» sirve para una máquina también. ¿Qué falló aquí, un sistema o una lengua?"
+  - position: 5
+    sentence: "Te lo digo para que no se repita, no para hacerte sentir mal: fue un {{blank}} y ya está."
+    hint_general: "Se nombra un fallo pequeño y sin intención para cerrarlo ahí mismo."
+    explanation: "Desliz: un fallo pequeño y sin intención que se cierra ahí. Un «descuido» supondría dejar de vigilar algo, y «patinazo» sonaría a burla."
+    options:
+      - position: 1
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descuido» implica que alguien tenía algo que vigilar y no lo vigiló, y aquí no se le encargó vigilar nada."
+        hint_specific: "Un «descuido» reparte responsabilidad por no atender. ¿Qué tenía que atender esta persona?"
+      - position: 2
+        text: "desliz"
+        is_correct: true
+      - position: 3
+        text: "patinazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Patinazo» es coloquial y se dice medio en broma para agrandar el asunto, y quien habla intenta justo quitarle peso."
+        hint_specific: "Un «patinazo» hace más grande el asunto. ¿Qué intenta hacer quien habla?"
+  - position: 6
+    sentence: "Entre tantas horas de reunión, un {{blank}} lo tiene cualquiera y no cambia nada de lo importante."
+    hint_general: "Cualquiera puede tener un fallo pequeño y sin querer si habla muchas horas."
+    explanation: "Desliz: cualquiera tiene un fallo pequeño hablando tanto. Un «matiz» sería una precisión que suma, y un «olvido» sería dejarse algo por decir."
+    options:
+      - position: 1
+        text: "desliz"
+        is_correct: true
+      - position: 2
+        text: "matiz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «matiz» es una precisión que suma a lo dicho, y la frase se refiere a algo que conviene disculpar, no a algo que aporta."
+        hint_specific: "Un «matiz» no hay que perdonarlo. ¿La frase disculpa algo o lo celebra?"
+      - position: 3
+        text: "olvido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «olvido» es dejarse algo por decir, y lo que se disculpa aquí es algo que sí se dijo y no convenía."
+        hint_specific: "Un «olvido» se nota por lo que falta. ¿Aquí falta o sobra?"
+  - position: 7
+    sentence: "Lo grave no fue el {{blank}}, sino cómo lo contó después para que pareciera intencionado."
+    hint_general: "Lo pequeño e involuntario no era el problema: el problema vino después."
+    explanation: "Desliz: lo pequeño e involuntario no era el problema. «Yerro» sonaría a falta moral solemne, y un «descuido» implicaría haber dejado de vigilar algo."
+    options:
+      - position: 1
+        text: "yerro"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Yerro» es solemne y carga con un juicio moral, y la frase dice justo que esa parte no era lo grave."
+        hint_specific: "«Yerro» ya suena a falta grave. ¿Qué dice la frase sobre la gravedad de esa parte?"
+      - position: 2
+        text: "desliz"
+        is_correct: true
+      - position: 3
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descuido» supone que había algo bajo su vigilancia, y aquí se habla de algo que se le escapó al hablar."
+        hint_specific: "Un «descuido» necesita algo puesto bajo su cuidado. ¿Qué vigilaba esta persona?"
+  - position: 8
+    sentence: "Su carta reconocía el {{blank}} sin adornos: «Dije algo que no debía y lo siento»."
+    hint_general: "Reconoce en dos líneas el fallo pequeño que se le escapó."
+    explanation: "Desliz: reconoce el fallo pequeño que se le escapó. Un «fallo» abarcaría cosas mucho mayores, y un «olvido» sería no haber dicho algo."
+    options:
+      - position: 1
+        text: "fallo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «fallo» abarca desde un error de cálculo hasta un desastre, y lo que reconoce cabe en una frase dicha de más."
+        hint_specific: "Un «fallo» no dice el tamaño. ¿Qué tamaño tiene lo que reconoce la carta?"
+      - position: 2
+        text: "olvido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «olvido» sería no haber dicho algo, y la carta reconoce justo lo contrario: haber dicho algo que no debía."
+        hint_specific: "Un «olvido» es una ausencia. ¿La carta reconoce una ausencia o una presencia?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos segundos"
+    body: "Milena dijo la cifra antigua delante del cliente y se dio cuenta al instante. No esperó a que nadie lo señalara: «Ha sido un desliz mío, la buena es esta». El cliente apuntó la buena y la reunión siguió."
+    before_phrase: "Perdón, perdón, la he liado, qué desastre."
+    after_phrase: "Ha sido un desliz mío; la buena es esta."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El brindis"
+    body: "En la cena de aniversario, su cuñado soltó una broma que no tocaba y se hizo el silencio. Al día siguiente escribió al grupo: «Fue un desliz, no una opinión. Lo siento». Nadie volvió a sacarlo y la siguiente cena fue normal."
+    before_phrase: "No sé ni por qué dije eso, qué vergüenza."
+    after_phrase: "Fue un desliz, no una opinión."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El nombre cambiado"
+    body: "Yago presentó a la pareja de su amiga con el nombre de otra persona. Se puso rojo y ella se rio. «Un desliz lo tiene cualquiera», dijo, y siguió la conversación. A los diez minutos ya era la anécdota de la noche."
+    before_phrase: "Qué mal, se me ha escapado, qué corte."
+    after_phrase: "Un desliz lo tiene cualquiera."
+metrics:
+  zipf_overall: 3.1307
+  dispersion_dp: 0.2441
+  pedantry_proxy: 0.5153
+  family_size: 51
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

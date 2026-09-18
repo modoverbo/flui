@@ -1,3 +1,4 @@
+import 'package:content/src/model/catalogue.dart';
 import 'package:content/src/model/theme.dart';
 import 'package:content/src/model/word.dart';
 
@@ -25,6 +26,9 @@ final class CatalogStats {
     required this.totalReadings,
     required this.estimatedDays,
     required this.gaps,
+    required this.confusions,
+    required this.confusionsResolved,
+    required this.oneDirectionalPairs,
   });
 
   final int totalWords;
@@ -33,6 +37,23 @@ final class CatalogStats {
   final Map<PartOfSpeech, int> byPartOfSpeech;
   final int totalExercises;
   final int totalReadings;
+
+  /// Confusions declared by the approved words — the ones the seed emits.
+  final int confusions;
+
+  /// How many of them name another approved word, so `content:emit` can write
+  /// `word_confusions.confused_word_id` and the app can match on the row
+  /// instead of on a lemma string.
+  final int confusionsResolved;
+
+  /// Pairs of approved words where only one of the two files declares the
+  /// other. `confusion_symmetry` blocks these; this is the same count without
+  /// running the validator.
+  final int oneDirectionalPairs;
+
+  /// Confusions whose word is not in the catalog. Most of them are: a paronym
+  /// is usually a word flui never teaches.
+  int get confusionsUnresolved => confusions - confusionsResolved;
 
   /// Approved words, one introduced per day.
   final int estimatedDays;
@@ -51,6 +72,10 @@ final class CatalogStats {
     'totalExercises': totalExercises,
     'totalReadings': totalReadings,
     'exercisesPerWord': exercisesPerWord,
+    'confusions': confusions,
+    'confusionsResolved': confusionsResolved,
+    'confusionsUnresolved': confusionsUnresolved,
+    'oneDirectionalPairs': oneDirectionalPairs,
     'estimatedDays': estimatedDays,
     'gaps': [
       for (final gap in gaps)
@@ -71,6 +96,15 @@ final class CatalogStats {
         '(${exercisesPerWord.toStringAsFixed(1)} per word)',
       )
       ..writeln('  readings              $totalReadings')
+      ..writeln(
+        '  confusions            $confusions '
+        '($confusionsResolved linked to a catalog word, '
+        '$confusionsUnresolved unresolved)',
+      )
+      ..writeln(
+        '  one-directional       $oneDirectionalPairs '
+        '(pairs only one file declares)',
+      )
       ..writeln('  days of content       $estimatedDays (1 new word per day)')
       ..writeln()
       ..writeln('by status');
@@ -144,6 +178,8 @@ CatalogStats catalogStats(List<Word> words, ThemeTaxonomy taxonomy) {
     );
   }
 
+  final links = confusionLinks(words);
+
   return CatalogStats(
     totalWords: words.length,
     byStatus: byStatus,
@@ -153,5 +189,50 @@ CatalogStats catalogStats(List<Word> words, ThemeTaxonomy taxonomy) {
     totalReadings: readings,
     estimatedDays: byStatus[WordStatus.approved] ?? 0,
     gaps: gaps,
+    confusions: links.declared,
+    confusionsResolved: links.resolved,
+    oneDirectionalPairs: links.oneDirectional,
+  );
+}
+
+/// How the confusions of the approved words relate to the catalog itself.
+///
+/// `resolved` is the number `content:emit` turns into a `confused_word_id`;
+/// `oneDirectional` is what `confusion_symmetry` blocks on.
+({int declared, int resolved, int oneDirectional}) confusionLinks(
+  List<Word> words,
+) {
+  final approved = [
+    for (final word in words)
+      if (word.status == WordStatus.approved) word,
+  ];
+  final catalogue = Catalogue.of(approved);
+
+  var declared = 0;
+  var resolved = 0;
+  final pairs = <String, Set<String>>{
+    for (final word in approved) word.slug: <String>{},
+  };
+  for (final word in approved) {
+    for (final confusion in word.confusions) {
+      declared++;
+      final other = catalogue.confusableOf(word, confusion);
+      if (other == null) continue;
+      resolved++;
+      pairs[word.slug]!.add(other.slug);
+    }
+  }
+
+  var oneDirectional = 0;
+  for (final entry in pairs.entries) {
+    for (final other in entry.value) {
+      if (!pairs[other]!.contains(entry.key)) oneDirectional++;
+    }
+  }
+
+  return (
+    declared: declared,
+    resolved: resolved,
+    oneDirectional: oneDirectional,
   );
 }

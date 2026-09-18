@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "sustancial"
+status: "draft"
+lemma: "sustancial"
+part_of_speech: "adjetivo"
+syllables:
+  - "sus"
+  - "tan"
+  - "cial"
+stressed_syllable: 3
+ipa_latam: "[sus.tanˈsjal]"
+ipa_es: "[sus.tanˈθjal]"
+explanation: "Que toca el fondo del asunto y no un detalle: el cambio se nota de verdad."
+example_sentence: "La diferencia entre las dos ofertas es sustancial: veinte días de plazo."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para decir que algo pesa de verdad sin recurrir a «muy»: mide el fondo, no el tamaño."
+when_not_to_use: "No la uses para un detalle vistoso ni para algo enorme; esta palabra habla del fondo del asunto."
+collocations:
+  - "una mejora sustancial"
+  - "una diferencia sustancial"
+  - "un cambio sustancial"
+replaces:
+  - before: "Cambió un montón"
+    after: "El cambio fue sustancial"
+  - before: "Se nota mucho la diferencia"
+    after: "La diferencia es sustancial"
+  - before: "Mejoró bastante"
+    after: "Hubo una mejora sustancial"
+family:
+  - "sustancia"
+  - "sustancialmente"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin:
+    - "mucho"
+    - "un montón"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sustancioso"
+    difference: "«Sustancioso» se dice de lo que alimenta o de un texto con mucho contenido; el otro mide cuánto pesa un cambio."
+    memory_trick: "Sustancioso llena el plato; sustancial cambia el fondo."
+  - confused_with: "circunstancial"
+    difference: "«Circunstancial» dice que algo depende del momento y puede desaparecer; lo sustancial afecta al fondo y se queda."
+    memory_trick: "Lo circunstancial pasa; lo sustancial queda."
+exercises:
+  - position: 1
+    sentence: "Entre la primera versión y la de ahora hay una diferencia {{blank}}: el pedido llega en tres días y no en quince."
+    hint_general: "La diferencia toca el fondo del asunto, no un adorno."
+    explanation: "Sustancial: doce días menos cambian el fondo del servicio. «Sustanciosa» se dice de lo que alimenta o de un texto denso, y «notoria» solo diría que se ve."
+    options:
+      - position: 1
+        text: "sustanciosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sustanciosa» se usa para una comida que alimenta o para un texto lleno de contenido, no para medir un plazo."
+        hint_specific: "«Sustanciosa» habla de lo que alimenta o llena. ¿Eso encaja con contar días de entrega?"
+      - position: 2
+        text: "sustancial"
+        is_correct: true
+      - position: 3
+        text: "notoria"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Notoria» dice que la diferencia se ve a simple vista, y aquí lo que importa es que cambia el servicio entero."
+        hint_specific: "«Notoria» es que algo se nota. ¿Basta con notarlo o cambia el fondo del servicio?"
+  - position: 2
+    sentence: "El comité aprobó el plan porque la mejora en seguridad era {{blank}} y no dependía de la suerte del mes."
+    hint_general: "La mejora toca el fondo y no depende de un buen mes."
+    explanation: "Sustancial: toca el fondo y no depende del mes. «Brutal» es de charla informal y exagera, y «puntual» diría que ocurre una sola vez."
+    options:
+      - position: 1
+        text: "brutal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Brutal» es de conversación muy informal y exagera; un comité que aprueba un plan no escribe así."
+        hint_specific: "«Brutal» suena a charla entre amigos y a exageración. ¿Va con el acta de un comité?"
+      - position: 2
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» diría que la mejora ocurre una sola vez, y la frase subraya que no depende del mes."
+        hint_specific: "«Puntual» es que pasa una vez y ya. Relee el final: ¿es pasajera o se sostiene?"
+      - position: 3
+        text: "sustancial"
+        is_correct: true
+  - position: 3
+    sentence: "Al comparar los dos presupuestos, Yago vio que el ahorro era {{blank}} y no un truco de la letra pequeña."
+    hint_general: "El ahorro está en el fondo del presupuesto, no en un detalle escondido."
+    explanation: "Sustancial: el ahorro está en el fondo y no en la letra pequeña. «Circunstancial» diría que depende del momento, y «visible» solo diría que se ve."
+    options:
+      - position: 1
+        text: "sustancial"
+        is_correct: true
+      - position: 2
+        text: "circunstancial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Circunstancial» diría que el ahorro depende del momento y puede desaparecer, y la frase afirma lo contrario."
+        hint_specific: "«Circunstancial» es depender del momento. ¿El ahorro de Yago se mantiene o se evapora?"
+      - position: 3
+        text: "visible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Visible» dice que el ahorro se ve, y un truco de la letra pequeña también puede verse."
+        hint_specific: "«Visible» es que se ve. ¿Ver algo garantiza que sea de fondo?"
+  - position: 4
+    sentence: "La revisión del contrato trajo un solo cambio {{blank}}: quién paga el transporte si hay un retraso."
+    hint_general: "Un único punto que cambia el fondo del acuerdo."
+    explanation: "Sustancial: un punto que cambia el fondo del acuerdo. «Descomunal» exagera el tamaño con un tono grandilocuente, y «notorio» solo diría que se ve."
+    options:
+      - position: 1
+        text: "descomunal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Descomunal» es una palabra grandilocuente sobre el tamaño, y aquí se describe un punto preciso de un contrato."
+        hint_specific: "«Descomunal» agranda el tamaño con mucho énfasis. ¿Un punto de contrato se mide por tamaño?"
+      - position: 2
+        text: "sustancial"
+        is_correct: true
+      - position: 3
+        text: "notorio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Notorio» dice que el cambio salta a la vista, y lo que importa es que decide quién paga."
+        hint_specific: "«Notorio» es saltar a la vista. ¿El cambio se ve o decide algo?"
+  - position: 5
+    sentence: "Rosalía pidió que el informe distinguiera la parte {{blank}} del texto de los comentarios de estilo."
+    hint_general: "Separa lo que afecta al fondo de lo que solo afecta a la forma."
+    explanation: "Sustancial: la parte que afecta al fondo, frente al estilo. «Sustanciosa» hablaría de un texto denso, y «parcial» diría que cubre solo un trozo."
+    options:
+      - position: 1
+        text: "sustanciosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sustanciosa» diría que el texto viene cargado de contenido, y aquí se separa el fondo de la forma."
+        hint_specific: "«Sustanciosa» habla de cuánto llena un texto. ¿Rosalía mide densidad o separa fondo y forma?"
+      - position: 2
+        text: "sustancial"
+        is_correct: true
+      - position: 3
+        text: "parcial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Parcial» dice que algo cubre solo un trozo, y lo que ella separa es lo que toca el fondo."
+        hint_specific: "«Parcial» es cubrir una parte. ¿Se habla de cuánto abarca o de qué afecta?"
+  - position: 6
+    sentence: "Tras el cambio de proveedor, la caída de quejas fue {{blank}} y se mantuvo durante todo el año."
+    hint_general: "La caída afectó al fondo del servicio y se sostuvo en el tiempo."
+    explanation: "Sustancial: la caída afectó al fondo y se sostuvo. «Brutal» es coloquial y exagera, y «circunstancial» diría que dependía de un momento suelto."
+    options:
+      - position: 1
+        text: "sustancial"
+        is_correct: true
+      - position: 2
+        text: "brutal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Brutal» es lenguaje de charla suelta y exagera el efecto, y aquí se informa de un año entero de datos."
+        hint_specific: "«Brutal» es puro énfasis de conversación. ¿Encaja al informar de un año de datos?"
+      - position: 3
+        text: "circunstancial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Circunstancial» diría que la caída dependió de un momento suelto, y se mantuvo doce meses."
+        hint_specific: "«Circunstancial» depende del momento. ¿Cuánto duró esa caída de quejas?"
+  - position: 7
+    sentence: "Para mi hermano, mudarse de barrio supuso un cambio {{blank}} en cómo organiza sus semanas."
+    hint_general: "El cambio tocó el fondo de su rutina, no un detalle suelto."
+    explanation: "Sustancial: tocó el fondo de su rutina. «Descomunal» exagera el tamaño con tono grandilocuente, y «visible» solo diría que se nota desde fuera."
+    options:
+      - position: 1
+        text: "visible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Visible» dice que el cambio se nota desde fuera, y lo que cuenta la frase es cómo reorganizó su semana."
+        hint_specific: "«Visible» es que se ve desde fuera. ¿Lo importante es que se vea o que cambie su rutina?"
+      - position: 2
+        text: "descomunal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Descomunal» es una palabra de mucho énfasis sobre el tamaño, y aquí se habla de una rutina, no de una magnitud."
+        hint_specific: "«Descomunal» agranda el tamaño con énfasis. ¿La frase mide tamaño o mide rutina?"
+      - position: 3
+        text: "sustancial"
+        is_correct: true
+  - position: 8
+    sentence: "Karla aceptó la oferta nueva porque el salto {{blank}} estaba en las tardes libres, no en el sueldo."
+    hint_general: "Lo que cambia el fondo de su vida no es el dinero."
+    explanation: "Sustancial: el fondo del cambio son las tardes libres. «Circunstancial» diría que el salto depende del momento, y «puntual» que ocurre una vez."
+    options:
+      - position: 1
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» diría que el salto pasa una sola vez, y tener las tardes libres le cambia todas las semanas."
+        hint_specific: "«Puntual» es algo que pasa una vez. ¿Cuántas tardes libres tendrá Karla?"
+      - position: 2
+        text: "sustancial"
+        is_correct: true
+      - position: 3
+        text: "circunstancial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Circunstancial» diría que el salto depende del momento, y ella acepta por algo que se repite cada semana."
+        hint_specific: "«Circunstancial» dura lo que dura el momento. ¿Las tardes libres son de un día o de siempre?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Doce días"
+    body: "Las dos ofertas parecían iguales hasta que Ramiro puso los plazos uno debajo del otro. «Aquí hay una diferencia sustancial: doce días», dijo. La sala dejó de discutir el precio y empezó a discutir el calendario."
+    before_phrase: "Cambia bastante, la verdad."
+    after_phrase: "Aquí hay una diferencia sustancial: doce días."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El barrio nuevo"
+    body: "Le pregunté a Olivia si estaba contenta con la mudanza. «El piso es parecido», contestó, «pero el cambio sustancial es que ahora bajo andando al trabajo». Tardó dos frases en explicar algo que llevaba meses sin poder nombrar."
+    before_phrase: "Cambió un montón, no sé cómo decirlo."
+    after_phrase: "El cambio sustancial es otro."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El único punto"
+    body: "En la revisión del contrato, Efraín marcó un solo párrafo. «Lo demás es estilo; esto es sustancial: decide quién paga el transporte», explicó. Corrigieron ese párrafo y firmaron el resto sin tocarlo."
+    before_phrase: "Este punto me parece importante."
+    after_phrase: "Este punto es sustancial."
+metrics:
+  zipf_overall: 4.2671
+  dispersion_dp: 0.1930
+  pedantry_proxy: 0.5229
+  family_size: 39
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

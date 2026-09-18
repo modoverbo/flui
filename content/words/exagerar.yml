@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 8009
+slug: "exagerar"
+status: "draft"
+lemma: "exagerar"
+part_of_speech: "verbo"
+syllables:
+  - "e"
+  - "xa"
+  - "ge"
+  - "rar"
+stressed_syllable: 4
+ipa_latam: "[ek.sa.xeˈɾaɾ]"
+ipa_es: "[ek.sa.xeˈɾaɾ]"
+explanation: "Contar algo más grande de lo que fue, para llamar la atención o hacer gracia."
+example_sentence: "Cuando cuenta el viaje siempre exagera un poco, y todos se lo perdonamos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dicho de uno mismo suena honesto: «estoy exagerando un poco» avisa de que la historia crece y nadie se siente engañado."
+when_not_to_use: "No la uses cuando alguien miente de verdad: aquí el hecho existe, solo se cuenta más grande."
+collocations:
+  - "exagerar una historia"
+  - "sin exagerar"
+  - "exagerar un poco"
+replaces:
+  - before: "Lo cuenta todo más grande de lo que fue"
+    after: "Exagera al contarlo"
+  - before: "No te lo infles, que estabas ahí"
+    after: "No exageres, que estabas ahí"
+  - before: "Se le va la mano contando"
+    after: "Exagera al contar"
+family:
+  - "exageración"
+  - "exagerado"
+themes:
+  - slug: "humor"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin: ["inflar"]
+  funcion: ["contar", "bromear"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "mentir"
+    difference: "Quien miente inventa algo que no pasó; aquí el hecho existió y solo se cuenta más grande de lo que fue."
+    memory_trick: "El que miente inventa; el otro estira."
+  - confused_with: "exasperar"
+    difference: "«Exasperar» es sacar de quicio a alguien; no tiene nada que ver con agrandar una historia."
+    memory_trick: "Exasperas a una persona; agrandas un relato."
+exercises:
+  - position: 1
+    sentence: "Mirta avisó antes de empezar: «Voy a {{blank}} un poco, pero el susto fue de verdad»."
+    hint_general: "Va a contar la historia más grande de lo que fue, aunque el hecho sea cierto."
+    explanation: "Exagerar: contará la historia más grande de lo que fue. «Exasperar» sería sacar de quicio a alguien, y «mentir» supondría que el susto no ocurrió, y ella dice que fue de verdad."
+    options:
+      - position: 1
+        text: "exasperar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Exasperar» es sacar de quicio a alguien, y ella no avisa de que vaya a molestar a nadie, sino de cómo va a contarlo."
+        hint_specific: "«Exasperar» le pasa a una persona. ¿De qué está avisando Mirta?"
+      - position: 2
+        text: "exagerar"
+        is_correct: true
+      - position: 3
+        text: "mentir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mentir» sería inventarse el susto, y la frase aclara que el susto fue de verdad."
+        hint_specific: "«Mentir» parte de algo que no pasó. ¿El susto pasó o no?"
+  - position: 2
+    sentence: "Cada vez que Tobías cuenta lo del perro, el animal crece: él {{blank}} el tamaño y toda la mesa lo sabe y se ríe."
+    hint_general: "Hace el hecho más grande de lo que fue, y nadie se siente engañado."
+    explanation: "Exagera: hace el hecho más grande de lo que fue. «Infla» es coloquial y acusa de falsear una cifra, y «adorna» añadiría detalles bonitos en vez de agrandar el mismo dato."
+    options:
+      - position: 1
+        text: "infla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inflar» es coloquial y acusa de falsear una cifra a escondidas, y aquí toda la mesa sabe lo que hace y se ríe."
+        hint_specific: "«Inflar» supone que alguien queda engañado. ¿Se engaña a alguien en esa mesa?"
+      - position: 2
+        text: "exagera"
+        is_correct: true
+      - position: 3
+        text: "adorna"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adornar» añade detalles bonitos alrededor, y lo que crece aquí es el tamaño del propio perro."
+        hint_specific: "«Adornar» pone detalles nuevos. ¿Qué es lo que cambia cada vez: los detalles o el tamaño?"
+  - position: 3
+    sentence: "Bautista contó la caída tal cual, sin añadir nada: prefirió no {{blank}} para que su hermana pudiera reírse sin sentirse ridícula."
+    hint_general: "Decidió no hacer la historia más grande de lo que fue."
+    explanation: "Exagerar: hacer la historia más grande de lo que fue, y él decidió no hacerlo. «Mentir» sería inventarla entera, y «exaltar» sería encender los ánimos de alguien."
+    options:
+      - position: 1
+        text: "mentir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mentir» sería inventarse la caída, y la frase dice que la contó tal cual, sin añadir nada."
+        hint_specific: "«Mentir» requiere que el hecho no exista. ¿Se cayó la hermana o no?"
+      - position: 2
+        text: "exaltar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Exaltar» es encender los ánimos de alguien, y aquí lo que está en juego es el tamaño de la historia."
+        hint_specific: "«Exaltar» calienta a la gente. ¿Qué estaba cuidando Bautista al contarlo?"
+      - position: 3
+        text: "exagerar"
+        is_correct: true
+  - position: 4
+    sentence: "En el chat familiar, Estela pidió que nadie {{blank}} lo del retraso del tren: bastaba con contar la hora real y la cara del revisor."
+    hint_general: "Pide que nadie agrande el hecho al contarlo."
+    explanation: "Exagerara: pide que nadie agrande el hecho. «Magnificara» suena a informe técnico en una conversación de familia, y «presumiera» hablaría de lucirse, no de agrandar un retraso."
+    options:
+      - position: 1
+        text: "magnificara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Magnificar» suena a informe técnico y desentona en un chat familiar sobre un tren que llegó tarde."
+        hint_specific: "«Magnificar» pertenece a otro registro. ¿Dónde está ocurriendo esta conversación?"
+      - position: 2
+        text: "exagerara"
+        is_correct: true
+      - position: 3
+        text: "presumiera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presumir» es lucirse delante de otros, y aquí nadie se luce: se discute cómo de grande se cuenta un retraso."
+        hint_specific: "«Presumir» busca admiración. ¿Quién quedaría bien contando un retraso?"
+  - position: 5
+    sentence: "Cuando Ulises describe su primera casa, {{blank}} las goteras hasta convertirlas en cascadas, y su madre le sigue el juego."
+    hint_general: "Agranda un detalle real hasta que resulta divertido."
+    explanation: "Exagera: agranda un detalle real hasta hacerlo divertido. «Exaspera» sería sacar de quicio a alguien, y «alardea» sería presumir de algo bueno, y unas goteras no lucen."
+    options:
+      - position: 1
+        text: "exagera"
+        is_correct: true
+      - position: 2
+        text: "exaspera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Exasperar» es sacar de quicio a alguien, y su madre le sigue el juego en vez de perder la paciencia."
+        hint_specific: "«Exasperar» agota la paciencia de otro. ¿Cómo reacciona su madre?"
+      - position: 3
+        text: "alardea"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alardear» es presumir de algo bueno, y unas goteras no son ningún motivo de orgullo."
+        hint_specific: "«Alardear» necesita algo de lo que presumir. ¿Se presume de goteras?"
+  - position: 6
+    sentence: "Nerea prometió a su equipo que no iba a {{blank}} los números de la temporada, y llevó la hoja con los datos exactos."
+    hint_general: "No va a contar las cifras más grandes de lo que son."
+    explanation: "Exagerar: contar las cifras más grandes de lo que son. «Inflar» es coloquial y acusa de trampa, y «adornar» sería añadir detalles alrededor, no cambiar el tamaño."
+    options:
+      - position: 1
+        text: "inflar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inflar» es coloquial y acusa de hacer trampa con las cifras, y ella promete lo contrario delante de todos."
+        hint_specific: "«Inflar» suena a trampa escondida. ¿Qué lleva Nerea a la reunión?"
+      - position: 2
+        text: "exagerar"
+        is_correct: true
+      - position: 3
+        text: "adornar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adornar» añade detalles alrededor de un dato, y lo que promete es no tocar el tamaño de los números."
+        hint_specific: "«Adornar» deja el dato igual. ¿Qué es lo que podría cambiar de tamaño?"
+  - position: 7
+    sentence: "Mi abuelo {{blank}} siempre la distancia que recorría al colegio, y cada nieto le añade un kilómetro cuando repite la historia."
+    hint_general: "Agranda un dato real cada vez que lo cuenta."
+    explanation: "Exagera: agranda un dato real al contarlo. «Presume» hablaría de lucirse ante alguien, y «miente» supondría que nunca hizo ese camino."
+    options:
+      - position: 1
+        text: "presume"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presumir» es lucirse delante de alguien, y aquí lo que cambia es la cifra de la distancia, no el papel del abuelo."
+        hint_specific: "«Presumir» busca quedar por encima. ¿Qué crece en esa historia?"
+      - position: 2
+        text: "exagera"
+        is_correct: true
+      - position: 3
+        text: "miente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mentir» supondría que nunca hizo ese camino, y el camino existió: lo que crece es la distancia."
+        hint_specific: "«Mentir» borra el hecho. ¿El abuelo iba al colegio andando o no?"
+  - position: 8
+    sentence: "Vidal cuenta la anécdota del ascensor y {{blank}} un poco al final, aunque avisa con la mano para que nadie se lo tome al pie de la letra."
+    hint_general: "Agranda el final de la historia, y avisa de que lo está haciendo."
+    explanation: "Exagera: agranda el final y avisa de ello. «Exalta» sería encender los ánimos, y «alardea» sería presumir, y en la anécdota él queda en ridículo."
+    options:
+      - position: 1
+        text: "exalta"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Exaltar» es encender los ánimos de la gente, y él hace justo lo contrario: avisa para que nadie se altere."
+        hint_specific: "«Exaltar» sube la temperatura del grupo. ¿Para qué avisa Vidal con la mano?"
+      - position: 2
+        text: "alardea"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alardear» es presumir de algo bueno, y en esa anécdota es él quien queda en ridículo."
+        hint_specific: "«Alardear» deja bien a quien habla. ¿Cómo queda Vidal en su propia historia?"
+      - position: 3
+        text: "exagera"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El camino del abuelo"
+    body: "Cada año el colegio del abuelo queda un poco más lejos. Empezó siendo un paseo y ya va por seis kilómetros cuesta arriba. Su nieta se lo dijo riendo: «Abuelo, exageras». Él levantó las cejas y contestó: «Claro que exagero, ¿y qué? El frío sí era de verdad»."
+    before_phrase: "Lo cuentas más grande de lo que fue."
+    after_phrase: "Abuelo, exageras."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El aviso de la mano"
+    body: "Vidal tiene una costumbre: cuando va a estirar una historia, levanta la mano como quien pide permiso. Esa noche contó lo del ascensor con la mano en alto y la mesa entera se rio. «Estoy exagerando el final», admitió. Nadie se sintió engañado y la historia se quedó para siempre."
+    before_phrase: "Se me va la mano contando."
+    after_phrase: "Estoy exagerando el final."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La hoja con los datos"
+    body: "Nerea llegó a la reunión con una hoja de dos columnas. «No voy a exagerar los números», dijo antes de empezar. Enseñó lo bueno y lo malo con la misma letra. Al terminar, alguien comentó que era la primera vez que se creía un resumen de temporada entero."
+    before_phrase: "Voy a contarlo sin inflarlo."
+    after_phrase: "No voy a exagerar los números."
+metrics:
+  zipf_overall: 4.0503
+  dispersion_dp: 0.1630
+  pedantry_proxy: 0.4504
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

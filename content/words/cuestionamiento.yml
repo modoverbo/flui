@@ -1,0 +1,247 @@
+schema_version: 1
+slug: "cuestionamiento"
+status: "draft"
+lemma: "cuestionamiento"
+part_of_speech: "sustantivo"
+syllables:
+  - "cues"
+  - "tio"
+  - "na"
+  - "mien"
+  - "to"
+stressed_syllable: 4
+ipa_latam: "[kwes.tjo.naˈmjen.to]"
+ipa_es: "[kwes.tjo.naˈmjen.to]"
+explanation: "Duda que alguien plantea en voz alta sobre algo que se daba por bueno."
+example_sentence: "El cuestionamiento del método llegó de dentro del propio equipo."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Separa la duda de la persona: nombrar así una crítica baja el tono y deja la discusión en el asunto."
+when_not_to_use: "No la uses para una queja personal ni para un enfado; esto pone en duda una idea, no a alguien."
+collocations:
+  - "un cuestionamiento serio"
+  - "el cuestionamiento del método"
+  - "abrirse a un cuestionamiento"
+replaces:
+  - before: "Le están poniendo pegas a todo el método"
+    after: "Hay un cuestionamiento del método"
+  - before: "Duda de que eso funcione, y lo dice"
+    after: "Plantea un cuestionamiento serio"
+  - before: "Nadie discute eso nunca"
+    after: "Eso no recibe ningún cuestionamiento"
+family:
+  - "cuestionar"
+  - "cuestión"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin:
+    - "poner pegas"
+    - "dudar"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "cuestionario"
+    difference: "Un cuestionario es una lista de preguntas para rellenar; lo otro es poner en duda algo que se daba por bueno."
+    memory_trick: "El cuestionario se rellena; el cuestionamiento se plantea."
+  - confused_with: "queja"
+    difference: "La queja habla de una molestia propia; esta palabra pone en duda si algo funciona."
+    memory_trick: "La queja dice «me molesta»; el cuestionamiento dice «no me convence»."
+exercises:
+  - position: 1
+    sentence: "El {{blank}} del método llegó de dentro del equipo, y por eso nadie pudo decir que fuera envidia."
+    hint_general: "Alguien puso en duda en voz alta algo que se daba por bueno."
+    explanation: "Cuestionamiento: alguien puso en duda el método. «Cuestionario» sería una lista de preguntas para rellenar, y «rechazo» supondría tirar el método entero."
+    options:
+      - position: 1
+        text: "cuestionario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cuestionario» es una lista de preguntas que alguien rellena, y aquí lo que llega es una duda sobre cómo se trabaja."
+        hint_specific: "«Cuestionario» es un papel con preguntas. ¿Llegó un papel o llegó una duda?"
+      - position: 2
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 3
+        text: "rechazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rechazo» sería tirar el método entero, y poner algo en duda todavía deja sitio para mejorarlo."
+        hint_specific: "«Rechazo» cierra la puerta. ¿Se tira el método o se discute?"
+  - position: 2
+    sentence: "Ximena agradeció el {{blank}} de la vecina y cambió dos puntos del proyecto del patio."
+    hint_general: "Agradece que alguien dudara en voz alta de su idea."
+    explanation: "Cuestionamiento: la duda planteada en voz alta. «Impugnación» es palabra de juzgado y de recurso legal, y «halago» diría lo contrario."
+    options:
+      - position: 1
+        text: "impugnación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Impugnación» es vocabulario de juzgado y de recurso formal, y esto pasa en una reunión de vecinos sobre un patio."
+        hint_specific: "«Impugnación» suena a recurso ante un juez. ¿Dónde ocurre esta escena?"
+      - position: 2
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 3
+        text: "halago"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Halago» sería un elogio, y por un elogio nadie cambia dos puntos de su proyecto."
+        hint_specific: "«Halago» alaba. ¿Por qué cambió Ximena dos puntos?"
+  - position: 3
+    sentence: "El equipo pasó de aceptarlo todo a permitir un {{blank}} por reunión, y las decisiones empezaron a durar más."
+    hint_general: "Ahora se permite poner en duda una cosa cada vez."
+    explanation: "Cuestionamiento: poner en duda algo por reunión. «Cuestionario» sería una lista de preguntas escritas, y «descanso» no tiene que ver con dudar de nada."
+    options:
+      - position: 1
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 2
+        text: "cuestionario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cuestionario» es una lista de preguntas que se reparte y se rellena, y lo que se permite aquí es dudar en voz alta."
+        hint_specific: "«Cuestionario» se reparte en papel. ¿Se reparte algo o se plantea algo?"
+      - position: 3
+        text: "descanso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descanso» sería una pausa en la reunión, y lo que alarga las decisiones es que ahora se discute."
+        hint_specific: "«Descanso» es una pausa. ¿Qué alarga las decisiones, las pausas o las dudas?"
+  - position: 4
+    sentence: "En el programa, el director del festival trató cualquier {{blank}} como un ataque personal y la entrevista se torció."
+    hint_general: "Confundió que dudaran de su plan con que lo atacaran a él."
+    explanation: "Cuestionamiento: dudar de su plan en voz alta. «Pataleta» es de charla informal y ridiculiza a quien protesta, y «elogio» diría lo contrario."
+    options:
+      - position: 1
+        text: "pataleta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pataleta» es de conversación informal y ridiculiza a quien protesta como si fuera un niño, y aquí se plantean dudas serias."
+        hint_specific: "«Pataleta» se burla de quien protesta, en tono de calle. ¿Quién plantea las dudas en un programa?"
+      - position: 2
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 3
+        text: "elogio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elogio» sería una alabanza, y nadie toma una alabanza como un ataque personal."
+        hint_specific: "«Elogio» alaba. ¿Se tuerce una entrevista por alabanzas?"
+  - position: 5
+    sentence: "Mi padre nunca admitió un {{blank}} de sus recetas, aunque en el fondo apuntaba cada sugerencia en una libreta."
+    hint_general: "No aceptaba en público que dudaran de cómo cocinaba."
+    explanation: "Cuestionamiento: que dudaran en voz alta de sus recetas. «Cuestionario» sería una hoja de preguntas, e «insulto» supondría una ofensa personal."
+    options:
+      - position: 1
+        text: "insulto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insulto» sería una ofensa contra él, y lo que no admitía eran dudas sobre cómo cocinaba."
+        hint_specific: "«Insulto» ofende a la persona. ¿Se hablaba de él o de sus recetas?"
+      - position: 2
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 3
+        text: "cuestionario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cuestionario» es una hoja con preguntas para rellenar, y en esa cocina nadie rellenaba nada."
+        hint_specific: "«Cuestionario» se rellena con un bolígrafo. ¿Había papeles en esa cocina?"
+  - position: 6
+    sentence: "El artículo no traía un ataque: traía un {{blank}} ordenado, con datos y tres preguntas al final."
+    hint_general: "Pone en duda con orden y con datos, sin atacar."
+    explanation: "Cuestionamiento: pone en duda con orden y datos. «Impugnación» es palabra de recurso legal, e «insulto» sería una ofensa personal."
+    options:
+      - position: 1
+        text: "impugnación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Impugnación» es lenguaje de juzgado y de recurso formal contra una decisión, y esto es un artículo con datos."
+        hint_specific: "«Impugnación» suena a papel presentado ante un juez. ¿Dónde se publica esto?"
+      - position: 2
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 3
+        text: "insulto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insulto» ofende a una persona, y la frase dice justo que no había ataque, sino datos."
+        hint_specific: "«Insulto» ataca a alguien. Relee el inicio: ¿qué dice que no era?"
+  - position: 7
+    sentence: "Lo raro del primer día de Berta no fue que preguntara: fue el {{blank}} tranquilo con el que lo hizo."
+    hint_general: "Puso en duda lo establecido sin alterarse."
+    explanation: "Cuestionamiento: puso en duda lo establecido sin alterarse. «Cuestionario» sería una lista de preguntas por escrito, y «saludo» no pone nada en duda."
+    options:
+      - position: 1
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 2
+        text: "cuestionario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cuestionario» es una lista de preguntas escritas, y ella preguntó en voz alta en su primer día."
+        hint_specific: "«Cuestionario» va en papel. ¿Berta repartió papeles o habló?"
+      - position: 3
+        text: "saludo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Saludo» es una fórmula de cortesía, y lo llamativo aquí es que se dudara de lo establecido."
+        hint_specific: "«Saludo» no discute nada. ¿Qué resultó raro del primer día?"
+  - position: 8
+    sentence: "Tras años sin ningún {{blank}}, la norma del portal cayó la tarde en que alguien pidió leerla entera."
+    hint_general: "Durante años nadie puso esa norma en duda."
+    explanation: "Cuestionamiento: durante años nadie puso la norma en duda. «Pataleta» ridiculizaría a quien protesta, y «cambio» diría que se modificó, no que se dudara."
+    options:
+      - position: 1
+        text: "cambio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cambio» diría que la norma se modificó, y la frase cuenta que estuvo intacta hasta esa tarde."
+        hint_specific: "«Cambio» modifica. ¿La norma cambió antes o se mantuvo igual?"
+      - position: 2
+        text: "cuestionamiento"
+        is_correct: true
+      - position: 3
+        text: "pataleta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pataleta» es de charla informal y trata a quien protesta como a un niño, y aquí alguien pide simplemente leer la norma."
+        hint_specific: "«Pataleta» ridiculiza al que protesta, en tono suelto. ¿Pedir leer una norma es un berrinche?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "De dentro"
+    body: "La duda sobre el método no llegó de la competencia: llegó de una persona del propio equipo, en la reunión del martes. «Este cuestionamiento es el bueno», dijo la directora, «porque nadie puede llamarlo envidia». Cambiaron dos pasos del proceso."
+    before_phrase: "Nos están poniendo pegas al método."
+    after_phrase: "Este cuestionamiento es el bueno."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "No era contra él"
+    body: "El invitado tomó cada pregunta como un golpe personal y la entrevista se torció en diez minutos. Al salir, su asesora se lo dijo con calma: «Era un cuestionamiento del plan, no tuyo». La segunda entrevista fue muy distinta."
+    before_phrase: "Me estaban atacando todo el rato."
+    after_phrase: "Era un cuestionamiento del plan, no mío."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "Las recetas de mi padre"
+    body: "Mi padre no aceptaba un cuestionamiento de sus recetas delante de nadie. Años después encontré su libreta: cada sugerencia de la mesa estaba anotada con fecha. Discutía en voz alta y cedía en privado, que también es una forma de escuchar."
+    before_phrase: "No aceptaba que nadie le discutiera nada."
+    after_phrase: "No aceptaba un cuestionamiento en público."
+metrics:
+  zipf_overall: 3.7061
+  dispersion_dp: 0.2066
+  pedantry_proxy: 0.5304
+  family_size: 63
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-15"

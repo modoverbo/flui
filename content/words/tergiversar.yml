@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "tergiversar"
+status: "draft"
+lemma: "tergiversar"
+part_of_speech: "verbo"
+syllables:
+  - "ter"
+  - "gi"
+  - "ver"
+  - "sar"
+stressed_syllable: 4
+ipa_latam: "[teɾ.xi.βeɾˈsaɾ]"
+ipa_es: "[teɾ.xi.βeɾˈsaɾ]"
+explanation: "Repetir las palabras de otro con un cambio que les da otro sentido."
+example_sentence: "No dije eso: estás cambiando el orden para tergiversar lo que expliqué."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es la palabra exacta para defenderte sin acusar de mentir: señala el cambio, no la mala fe."
+when_not_to_use: "No la uses cuando el otro simplemente entendió mal; esto supone que el cambio se hizo a propósito."
+collocations:
+  - "tergiversar mis palabras"
+  - "tergiversar una frase"
+  - "sin tergiversar nada"
+replaces:
+  - before: "Estás diciendo lo que no dije"
+    after: "Estás tergiversando lo que dije"
+  - before: "Lo contó todo al revés"
+    after: "Tergiversó lo que pasó"
+  - before: "Me sacaron de contexto"
+    after: "Tergiversaron mi respuesta"
+family:
+  - "tergiversación"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin:
+    - "sacar de contexto"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "trastocar"
+    difference: "«Trastocar» es alterar el orden de las cosas o los planes; lo otro cambia el sentido de lo que alguien dijo."
+    memory_trick: "Trastocas los planes; tergiversas las palabras."
+  - confused_with: "exagerar"
+    difference: "«Exagerar» agranda lo que hay; esta palabra cambia el sentido, aunque el tamaño se quede igual."
+    memory_trick: "El que exagera infla; el que tergiversa gira."
+exercises:
+  - position: 1
+    sentence: "En el programa cortaron la frase por la mitad y {{blank}} lo que Nerea había explicado durante diez minutos."
+    hint_general: "Al cortar la frase le cambiaron el sentido a lo dicho."
+    explanation: "Tergiversaron: el corte cambió el sentido de lo dicho. «Trastocaron» sería alterar un orden o unos planes, y «resumieron» diría que lo acortaron respetando la idea."
+    options:
+      - position: 1
+        text: "trastocaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trastocaron» es alterar el orden de las cosas o los planes, y aquí lo que cambió fue el significado de una frase."
+        hint_specific: "«Trastocaron» mueve el orden de las cosas. ¿Qué cambió, el orden o el significado?"
+      - position: 2
+        text: "tergiversaron"
+        is_correct: true
+      - position: 3
+        text: "resumieron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumieron» supone respetar la idea en menos palabras, y aquí la idea acabó siendo otra."
+        hint_specific: "«Resumieron» acorta y respeta. ¿Se respetó lo que ella explicó?"
+  - position: 2
+    sentence: "Cuando le llegó el acta, Ismael vio que alguien había {{blank}} su propuesta para que sonara a una queja."
+    hint_general: "Su propuesta llegó al papel con un sentido distinto del que tenía."
+    explanation: "Tergiversado: la propuesta llegó con otro sentido. «Adulterado» es palabra de laboratorio o de aduana, y «copiado» diría que la reprodujeron tal cual."
+    options:
+      - position: 1
+        text: "adulterado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adulterado» es vocabulario de análisis y aduanas, se usa para sustancias y documentos falsificados, no para el sentido de una propuesta."
+        hint_specific: "«Adulterado» suena a laboratorio o a documento falso. ¿Qué se cambió aquí, la sustancia o el sentido?"
+      - position: 2
+        text: "tergiversado"
+        is_correct: true
+      - position: 3
+        text: "copiado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiado» diría que lo reprodujeron igual, y el problema es justamente que ya no dice lo mismo."
+        hint_specific: "«Copiado» mantiene el original. ¿El acta dice lo mismo que dijo Ismael?"
+  - position: 3
+    sentence: "Delante de los micrófonos, Casilda pidió que no {{blank}} su respuesta y repitió la frase entera, despacio."
+    hint_general: "Pide que nadie le cambie el sentido a lo que acaba de decir."
+    explanation: "Tergiversaran: pide que no le cambien el sentido. «Trastocaran» hablaría de alterar un orden, y «citaran» solo diría que la mencionan."
+    options:
+      - position: 1
+        text: "tergiversaran"
+        is_correct: true
+      - position: 2
+        text: "trastocaran"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trastocaran» es alterar un orden o unos planes, y lo que ella protege es el sentido de su respuesta."
+        hint_specific: "«Trastocaran» mueve el orden. ¿Casilda teme un cambio de orden o de significado?"
+      - position: 3
+        text: "citaran"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Citaran» solo dice que la mencionan, y ella repite la frase entera precisamente para que se conserve el sentido."
+        hint_specific: "«Citaran» es mencionar. ¿Le molesta que la mencionen o cómo la mencionan?"
+  - position: 4
+    sentence: "Mi cuñado {{blank}} cada conversación familiar: cuenta que dije que no iría, y lo que dije fue que llegaría tarde."
+    hint_general: "Cambia el sentido de lo dicho al contarlo de nuevo."
+    explanation: "Tergiversa: cambia el sentido al volver a contarlo. «Enreda» es de charla informal y sugiere liar las cosas sin intención clara, y «exagera» agrandaría lo dicho sin cambiarlo."
+    options:
+      - position: 1
+        text: "enreda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enreda» es de conversación suelta y sugiere liar las cosas por torpeza, y aquí el cambio es preciso y siempre en la misma dirección."
+        hint_specific: "«Enreda» suena a lío informal y sin plan. ¿Este cambio es torpe o exacto?"
+      - position: 2
+        text: "tergiversa"
+        is_correct: true
+      - position: 3
+        text: "exagera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exagera» agranda lo que hay, y aquí «llego tarde» se convierte en «no voy»: no es más grande, es distinto."
+        hint_specific: "«Exagera» agranda. ¿«No iría» es una versión más grande de «llegaría tarde» o es otra cosa?"
+  - position: 5
+    sentence: "El titular {{blank}} el informe entero: donde el texto hablaba de una prueba, el titular hablaba de una decisión."
+    hint_general: "El titular convirtió una cosa en otra distinta."
+    explanation: "Tergiversó: convirtió una prueba en una decisión. «Trastocó» sería alterar un orden, y «repitió» diría que decía lo mismo."
+    options:
+      - position: 1
+        text: "repitió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repitió» supone decir lo mismo otra vez, y el titular dice algo distinto de lo que decía el informe."
+        hint_specific: "«Repitió» mantiene el contenido. ¿El titular dice lo mismo que el informe?"
+      - position: 2
+        text: "tergiversó"
+        is_correct: true
+      - position: 3
+        text: "trastocó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trastocó» es cambiar el orden de las cosas, y aquí no se movió nada de sitio: cambió el significado."
+        hint_specific: "«Trastocó» reordena. ¿Se movió algo de sitio o cambió lo que significaba?"
+  - position: 6
+    sentence: "Antes de contestar, Ximena avisó: «Si {{blank}} esto, pediré que pongan la grabación completa»."
+    hint_general: "Advierte de lo que hará si le cambian el sentido a su respuesta."
+    explanation: "Tergiversan: si le cambian el sentido a su respuesta. «Adulteran» es palabra de laboratorio y de aduana, e «interrumpen» hablaría de cortarla al hablar."
+    options:
+      - position: 1
+        text: "adulteran"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adulteran» se usa para sustancias y documentos falsificados, con tono técnico, y aquí se habla de lo que ella dice en voz alta."
+        hint_specific: "«Adulteran» pertenece al análisis de sustancias y papeles. ¿Qué teme Ximena que le cambien?"
+      - position: 2
+        text: "interrumpen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interrumpen» sería cortarla mientras habla, y ella teme lo que pase con sus palabras después."
+        hint_specific: "«Interrumpen» ocurre mientras hablas. ¿Cuándo teme Ximena el problema?"
+      - position: 3
+        text: "tergiversan"
+        is_correct: true
+  - position: 7
+    sentence: "El vecino {{blank}} el acuerdo del portal y ahora la mitad del edificio cree que pagamos nosotros la obra."
+    hint_general: "Contó el acuerdo con un giro que cambió quién paga."
+    explanation: "Tergiversó: el giro cambió quién paga. «Trastocó» alteraría un orden o un plan, e «inventó» diría que se lo sacó de la nada."
+    options:
+      - position: 1
+        text: "tergiversó"
+        is_correct: true
+      - position: 2
+        text: "trastocó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trastocó» es alterar el orden o los planes, y aquí el acuerdo sigue igual: lo que cambió fue cómo se contó."
+        hint_specific: "«Trastocó» mueve planes. ¿Cambió el acuerdo o cambió el relato del acuerdo?"
+      - position: 3
+        text: "inventó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inventó» supone que no había acuerdo, y sí lo había: lo que cambió fue el sentido de lo pactado."
+        hint_specific: "«Inventó» parte de cero. ¿Existía ese acuerdo del portal?"
+  - position: 8
+    sentence: "Lo que más molestó a Gaspar no fue la crítica, sino que {{blank}} la parte en la que reconocía su fallo."
+    hint_general: "Le cambiaron el sentido justo a lo que había admitido."
+    explanation: "Tergiversaran: le cambiaron el sentido a lo que admitía. «Enredaran» sugeriría un lío informal sin dirección, y «criticaran» sería lo que él ya aceptaba."
+    options:
+      - position: 1
+        text: "criticaran"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticaran» es justo lo que él dice que no le molesta, según el arranque de la frase."
+        hint_specific: "Relee el inicio: ¿qué dice Gaspar que no le molestó?"
+      - position: 2
+        text: "tergiversaran"
+        is_correct: true
+      - position: 3
+        text: "enredaran"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enredaran» es de charla informal y apunta a liar algo por torpeza, y aquí el cambio afecta a un punto muy concreto."
+        hint_specific: "«Enredaran» suena a lío sin querer, en tono suelto. ¿Fue torpeza o fue puntería?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La frase cortada"
+    body: "En el programa cortaron la frase de Nerea por la mitad. Ella no gritó ni pidió disculpas ajenas. Escribió dos líneas: «Han tergiversado la respuesta; aquí está el minuto completo». Adjuntó el enlace y no volvió a hablar del tema."
+    before_phrase: "Me han sacado de contexto."
+    after_phrase: "Han tergiversado la respuesta: aquí está el minuto completo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Llegaré tarde"
+    body: "Dije que llegaría tarde y a mi madre le llegó que no pensaba ir. Cuando lo aclaramos, mi hermana se rio: «Ya sabes cómo lo cuenta». Lo dije en voz alta y sin enfadarme: «No lo cuenta mal, lo tergiversa». La siguiente vez escribí en el grupo."
+    before_phrase: "Lo cuenta todo al revés."
+    after_phrase: "No lo cuenta mal: lo tergiversa."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La grabación completa"
+    body: "Antes de responder a la pregunta difícil, Ximena miró al periodista. «Contesto entero», dijo, «y si tergiversan esto, pediré la grabación completa». Contestó sin rodeos y el titular del día siguiente decía lo mismo que ella."
+    before_phrase: "Espero que no me saquen de contexto."
+    after_phrase: "Si tergiversan esto, pediré la grabación completa."
+metrics:
+  zipf_overall: 3.4368
+  dispersion_dp: 0.2310
+  pedantry_proxy: 0.7160
+  family_size: 11
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-15"

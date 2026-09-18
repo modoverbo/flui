@@ -49,6 +49,7 @@ abstract final class ValidatorRegistry {
     TemplateDiversityValidator(),
     NameDiversityValidator(),
     DuplicateLemmaValidator(),
+    ConfusionSymmetryValidator(),
     SchedulingSimulationValidator(),
   ];
 

@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7029
+slug: "atenuar"
+status: "draft"
+lemma: "atenuar"
+part_of_speech: "verbo"
+syllables:
+  - "a"
+  - "te"
+  - "nuar"
+stressed_syllable: 3
+ipa_latam: "[a.teˈnwaɾ]"
+ipa_es: "[a.teˈnwaɾ]"
+explanation: "Bajar la fuerza de algo para que golpee menos."
+example_sentence: "Contó el fallo entero y no intentó atenuar la parte que le tocaba."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Vale para lo bueno y para lo malo: avisa de cuándo bajar el golpe ayuda y cuándo tapa el fondo."
+when_not_to_use: "No la uses para dar razones que hagan parecer correcto un fallo, ni para ocultar lo que pasó."
+collocations:
+  - "atenuar el golpe"
+  - "atenuar una crítica"
+  - "sin atenuar nada"
+replaces:
+  - before: "Lo dijo de forma que no doliera tanto"
+    after: "Lo dijo atenuando el golpe"
+  - before: "No quiso quitarle hierro a lo que hizo"
+    after: "No quiso atenuar lo que hizo"
+  - before: "Esa luz hace que las sombras se noten menos"
+    after: "Esa luz atenúa las sombras"
+family:
+  - "atenuante"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "matices-precision"
+    relevance: 1
+tags:
+  comodin:
+    - "suavizar"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acentuar"
+    difference: "«Acentuar» aumenta la fuerza de algo; la otra palabra la baja, y son movimientos contrarios."
+    memory_trick: "Acentuar sube el volumen; lo otro lo baja."
+  - confused_with: "justificar"
+    difference: "«Justificar» da razones para que algo parezca correcto; la otra palabra solo rebaja la fuerza sin discutir si está bien."
+    memory_trick: "Justificar defiende; lo otro amortigua."
+exercises:
+  - position: 1
+    sentence: "Contó lo que hizo sin {{blank}} la parte más fea, aunque podía haberla suavizado con dos datos ciertos."
+    hint_general: "No rebajó la fuerza de lo peor: lo dejó con todo su peso."
+    explanation: "Atenuar: no rebajó la fuerza de lo peor. «Acentuar» sería aumentarla, y «esconder» sería no contar esa parte, y él la cuenta entera."
+    options:
+      - position: 1
+        text: "acentuar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acentuar» es aumentar la fuerza de algo, y la frase dice que podía haberlo suavizado: el movimiento va en sentido contrario."
+        hint_specific: "«Acentuar» sube el volumen. ¿Hacia dónde apunta la palabra «suavizado»?"
+      - position: 2
+        text: "atenuar"
+        is_correct: true
+      - position: 3
+        text: "esconder"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esconder» sería no contar esa parte, y él la cuenta: lo que no hace es quitarle fuerza."
+        hint_specific: "«Esconder» hace desaparecer algo del relato. ¿Aparece la parte fea en su relato?"
+  - position: 2
+    sentence: "La luz cálida {{blank}} las sombras del salón y la habitación entera pareció otra."
+    hint_general: "La luz hizo que las sombras se notaran menos."
+    explanation: "Atenuó: las sombras se notan menos. «Acentuó» significaría marcarlas más, y «escondió» supondría hacerlas desaparecer del todo."
+    options:
+      - position: 1
+        text: "acentuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acentuar» las sombras sería marcarlas más, y entonces la habitación no habría parecido más amable, sino más dura."
+        hint_specific: "«Acentuar» marca más. ¿Cómo quedó la habitación después?"
+      - position: 2
+        text: "atenuó"
+        is_correct: true
+      - position: 3
+        text: "escondió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esconder» las sombras supondría hacerlas desaparecer, y siguen ahí: solo se notan menos."
+        hint_specific: "«Esconder» las quita de la vista. ¿Desaparecieron las sombras?"
+  - position: 3
+    sentence: "Su tono tranquilo {{blank}} el golpe de la noticia, aunque la noticia seguía siendo exactamente la misma."
+    hint_general: "El tono bajó la fuerza del golpe sin cambiar el contenido."
+    explanation: "Atenuó: bajó la fuerza del golpe sin cambiar nada. «Acentuó» lo habría hecho más duro, y «redujo» haría más pequeña una cantidad, no un impacto."
+    options:
+      - position: 1
+        text: "acentuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acentuar» el golpe sería hacerlo más duro, y un tono tranquilo hace justo lo contrario."
+        hint_specific: "«Acentuar» endurece. ¿Qué efecto tiene un tono tranquilo?"
+      - position: 2
+        text: "atenuó"
+        is_correct: true
+      - position: 3
+        text: "redujo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reducir» hace más pequeña una cantidad, y la noticia no se hace más pequeña: llega con menos fuerza."
+        hint_specific: "«Reducir» se aplica a cifras y tamaños. ¿Cambió el tamaño de la noticia?"
+  - position: 4
+    sentence: "No intentes {{blank}} lo que pasó con un chiste: cuenta el fallo y luego, si quieres, explica el contexto."
+    hint_general: "Le piden que no baje la fuerza del asunto con una broma."
+    explanation: "Atenuar: le piden que no baje la fuerza del asunto. «Aguar» sugiere rebajar con trampa, como quien añade agua al vino, y «justificar» sería dar razones, cosa que la frase deja para después."
+    options:
+      - position: 1
+        text: "aguar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Aguar» es coloquial y sugiere rebajar algo con trampa, como quien añade agua al vino, y un chiste no engaña a nadie."
+        hint_specific: "«Aguar» implica hacer trampa con la mezcla. ¿Hay engaño en contar un chiste?"
+      - position: 2
+        text: "atenuar"
+        is_correct: true
+      - position: 3
+        text: "justificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» es dar razones para que el fallo parezca aceptable, y la frase deja ese momento para después, con el contexto."
+        hint_specific: "«Justificar» pide razones. ¿Dónde coloca la frase las razones?"
+  - position: 5
+    sentence: "El acuerdo {{blank}} la subida durante dos años y luego la deja tal y como estaba prevista."
+    hint_general: "El acuerdo baja la fuerza de la subida durante un tiempo."
+    explanation: "Atenúa: baja la fuerza de la subida un tiempo. «Mitiga» es una palabra de informe técnico para riesgos, y «reduce» haría la cifra más pequeña de forma definitiva."
+    options:
+      - position: 1
+        text: "mitiga"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mitigar» es una palabra de informe técnico que se usa con riesgos y daños, y aquí se habla de un acuerdo corriente sobre precios."
+        hint_specific: "«Mitigar» aparece en informes de riesgos. ¿Qué tipo de documento es este?"
+      - position: 2
+        text: "atenúa"
+        is_correct: true
+      - position: 3
+        text: "reduce"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reducir» haría la cifra más pequeña, y la frase dice que después queda tal y como estaba prevista."
+        hint_specific: "«Reducir» cambia el número. ¿Cambia el número al final de los dos años?"
+  - position: 6
+    sentence: "Su hermano {{blank}} siempre las malas noticias antes de darlas, y la familia ya no se fía de sus «no es nada»."
+    hint_general: "Les quita fuerza a las noticias antes de contarlas."
+    explanation: "Atenúa: les quita fuerza antes de contarlas. «Acentúa» sería lo contrario, exagerar el golpe, y «esconde» significaría no contarlas, y sí las cuenta."
+    options:
+      - position: 1
+        text: "acentúa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acentuar» sería exagerar el golpe, y entonces la familia se asustaría de más, no dejaría de fiarse de sus «no es nada»."
+        hint_specific: "«Acentuar» agranda. ¿Qué frase suya repite la familia con desconfianza?"
+      - position: 2
+        text: "atenúa"
+        is_correct: true
+      - position: 3
+        text: "esconde"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esconder» significaría no contarlas, y él sí las cuenta: lo que hace es rebajarlas al darlas."
+        hint_specific: "«Esconder» calla del todo. ¿Su hermano calla o habla?"
+  - position: 7
+    sentence: "Dos frases suyas bastaron para {{blank}} la tensión de la sala sin quitarle ni un gramo de importancia al asunto."
+    hint_general: "Bajó la fuerza de la tensión sin tocar el fondo del asunto."
+    explanation: "Atenuar: baja la tensión sin tocar el fondo. «Mitigar» es propia de informes técnicos, y «reducir» se aplica a cantidades que se pueden contar."
+    options:
+      - position: 1
+        text: "mitigar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mitigar» pertenece al lenguaje de los informes de riesgos, y aquí se describe lo que hacen dos frases en una sala."
+        hint_specific: "«Mitigar» suena a documento técnico. ¿Qué tono tiene esta escena?"
+      - position: 2
+        text: "atenuar"
+        is_correct: true
+      - position: 3
+        text: "reducir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reducir» se aplica a cantidades que se pueden contar, y la tensión de una sala no se mide en unidades."
+        hint_specific: "«Reducir» necesita una cifra. ¿En qué se mide la tensión de una sala?"
+  - position: 8
+    sentence: "No {{blank}} lo que dijiste: si te pasaste, dilo entero y pide perdón sin envolverlo."
+    hint_general: "Le piden que no rebaje la fuerza de sus propias palabras."
+    explanation: "Atenúes: que no rebaje la fuerza de sus palabras. «Agües» sugiere rebajar con trampa, y «justifiques» sería dar razones para que parezca aceptable."
+    options:
+      - position: 1
+        text: "agües"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Aguar» es coloquial y sugiere rebajar algo con trampa, y aquí se habla de contar lo dicho con todas sus letras."
+        hint_specific: "«Aguar» implica mezcla tramposa. ¿De qué va esta petición, de trampas o de peso?"
+      - position: 2
+        text: "atenúes"
+        is_correct: true
+      - position: 3
+        text: "justifiques"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» sería dar razones para que lo dicho parezca aceptable, y aquí se pide reconocerlo, no explicarlo."
+        hint_specific: "«Justificar» busca razones. ¿Qué se pide en la frase, razones o reconocimiento?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Sin envolverlo"
+    body: "El pedido salió con la mitad de las unidades y el cliente esperaba una explicación larga. Ainhoa fue por otro lado: «No voy a atenuar nada: faltó la mitad y fue culpa nuestra». Después vino el plan. El cliente renovó el contrato."
+    before_phrase: "Bueno, es que hubo varios factores que…"
+    after_phrase: "No voy a atenuar nada: fue culpa nuestra."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los «no es nada»"
+    body: "Su hermano siempre daba las malas noticias a media potencia y la familia acabó desconfiando. Un día lo hablaron: «Cuando atenúas, nos preocupamos el doble». Desde entonces dice las cosas como son y la casa está más tranquila."
+    before_phrase: "Nos lo dices siempre como si no fuera nada."
+    after_phrase: "Cuando atenúas, nos preocupamos el doble."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos frases"
+    body: "La asamblea del edificio iba a terminar a gritos. Un vecino pidió la palabra y dijo dos frases sobre lo que sí estaba resuelto. La tensión bajó sin que el problema desapareciera. «Lo atenuó, no lo tapó», comentó alguien al salir."
+    before_phrase: "Consiguió calmar los ánimos un poco."
+    after_phrase: "Lo atenuó, no lo tapó."
+metrics:
+  zipf_overall: 3.6949
+  dispersion_dp: 0.2213
+  pedantry_proxy: 0.4168
+  family_size: 13
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

@@ -1,0 +1,246 @@
+schema_version: 1
+sort_order: 7010
+slug: "abstracto"
+status: "draft"
+lemma: "abstracto"
+part_of_speech: "adjetivo"
+syllables:
+  - "abs"
+  - "trac"
+  - "to"
+stressed_syllable: 2
+ipa_latam: "[aβsˈtɾak.to]"
+ipa_es: "[aβsˈtɾak.to]"
+explanation: "Que solo existe en la cabeza, sin nada que puedas tocar ni ver."
+example_sentence: "Su propuesta es demasiado abstracta: nadie sabe qué hacer el lunes con ella."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para pedir un ejemplo sin descalificar a nadie: lo dicho es válido, pero todavía no aterriza."
+when_not_to_use: "No la uses para quien está ensimismado, ni para lo que está mal definido pudiendo ser concreto."
+collocations:
+  - "una idea abstracta"
+  - "demasiado abstracto"
+  - "en términos abstractos"
+replaces:
+  - before: "Lo que dijo no se agarra por ningún lado"
+    after: "Lo que dijo es demasiado abstracto"
+  - before: "Habló de valores y cosas así, sin un solo ejemplo"
+    after: "Habló en términos abstractos"
+  - before: "Suena bonito, pero no sé qué hago con eso"
+    after: "Suena bonito, pero es muy abstracto"
+family:
+  - "abstracción"
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+  - slug: "matices-precision"
+    relevance: 1
+tags:
+  comodin:
+    - "vago"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "abstraído"
+    difference: "«Abstraído» describe a quien está ensimismado y no se entera de lo que pasa alrededor; la otra palabra describe una idea sin nada que tocar."
+    memory_trick: "El abstraído se fue de la sala; lo otro nunca llegó al suelo."
+  - confused_with: "vago"
+    difference: "«Vago» dice que algo está mal definido y podría precisarse; la otra dice que no hay nada material que señalar."
+    memory_trick: "Lo vago se afila; lo otro necesita un ejemplo."
+exercises:
+  - position: 1
+    sentence: "Después de veinte minutos, Horacio seguía hablando de compromiso y excelencia, todo tan {{blank}} que nadie sabía qué hacer el lunes."
+    hint_general: "Habla de cosas que no se pueden señalar ni tocar, sin un solo caso real."
+    explanation: "Abstracto: habla de cosas que no se pueden señalar. «Abstraído» describiría a quien está ensimismado, y «vago» diría que las palabras están poco definidas."
+    options:
+      - position: 1
+        text: "abstraído"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abstraído» describe a quien está ensimismado y no se entera, y Horacio está muy atento: lleva veinte minutos hablando."
+        hint_specific: "«Abstraído» habla del estado de una persona. ¿Lo que flota es Horacio o lo que dice?"
+      - position: 2
+        text: "abstracto"
+        is_correct: true
+      - position: 3
+        text: "vago"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vago» diría que sus palabras están poco definidas, y compromiso y excelencia están muy definidas: lo que falta es algo que tocar."
+        hint_specific: "«Vago» se arregla afinando la palabra. ¿Le falta precisión o le falta un caso real?"
+  - position: 2
+    sentence: "Zoe pidió tres ejemplos porque el informe era demasiado {{blank}} para decidir nada con él."
+    hint_general: "El informe se queda en ideas sin cuerpo y por eso no sirve para decidir."
+    explanation: "Abstracto: se queda en ideas sin cuerpo. «Teórico» diría que viene de la teoría, que puede traer casos, y «filosófico» suena a ponerse solemne sobre la vida."
+    options:
+      - position: 1
+        text: "teórico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Teórico» dice de dónde viene una idea, y una teoría puede traer números y casos; lo que falta aquí es cualquier cosa que señalar."
+        hint_specific: "«Teórico» indica origen, no falta de suelo. ¿El problema es de dónde viene el informe?"
+      - position: 2
+        text: "abstracto"
+        is_correct: true
+      - position: 3
+        text: "filosófico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Filosófico» se usa coloquialmente para quien se pone solemne sobre la vida, y el informe habla de trabajo, no de la existencia."
+        hint_specific: "«Filosófico» suena a grandes preguntas sobre la vida. ¿De qué trata el informe?"
+  - position: 3
+    sentence: "Su hijo le preguntó qué es la justicia y Aurelio notó que la respuesta se le iba por lo {{blank}}."
+    hint_general: "La respuesta se aleja de todo lo que se puede tocar y el niño se queda sin nada firme."
+    explanation: "Abstracto: la respuesta se aleja de lo que se puede tocar. «Etéreo» es una palabra poética para lo hecho de aire, y «general» diría que vale para muchos casos."
+    options:
+      - position: 1
+        text: "etéreo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Etéreo» es una palabra poética para lo que parece hecho de aire, y suena raro aplicada a la respuesta de un padre a su hijo."
+        hint_specific: "«Etéreo» pertenece a un poema. ¿Encaja ese tono en una cocina con un niño?"
+      - position: 2
+        text: "abstracto"
+        is_correct: true
+      - position: 3
+        text: "general"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«General» dice que algo vale para muchos casos, y una respuesta general puede traer ejemplos; a esta le falta suelo entero."
+        hint_specific: "Algo «general» todavía puede aterrizar en casos. ¿Esta respuesta llega a algún caso?"
+  - position: 4
+    sentence: "Su propuesta suena bien, pero es tan {{blank}} que no se sabe quién hace qué ni en qué semana."
+    hint_general: "Nada de lo que propone se puede señalar con el dedo: ni personas ni fechas."
+    explanation: "Abstracta: nada se puede señalar con el dedo. «Vaga» diría que está poco definida, y «filosófica» suena a ponerse solemne sobre la vida."
+    options:
+      - position: 1
+        text: "abstracta"
+        is_correct: true
+      - position: 2
+        text: "vaga"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vaga» diría que la propuesta está borrosa y se puede afinar, y aquí no hay nada que afinar: no hay personas ni fechas."
+        hint_specific: "Lo «vago» se aclara pidiendo precisión. ¿Bastaría con afinar o hay que bajar al suelo?"
+      - position: 3
+        text: "filosófica"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Filosófica» se usa coloquialmente para quien se pone solemne sobre la vida, y esto es un plan de trabajo."
+        hint_specific: "«Filosófica» va de grandes preguntas. ¿La propuesta habla de la vida o del reparto del trabajo?"
+  - position: 5
+    sentence: "Rigoberto se puso {{blank}} en mitad de la reunión y hubo que pedirle nombres y fechas para entender su idea."
+    hint_general: "Su idea se despegó de todo lo que se puede señalar, y tuvieron que bajarla al suelo."
+    explanation: "Abstracto: su idea se despegó de lo que se puede señalar. «Abstraído» diría que se distrajo, y «etéreo» es una palabra poética fuera de lugar en una reunión."
+    options:
+      - position: 1
+        text: "abstraído"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Abstraído» significa distraído y ausente, y a él no le pidieron atención: le pidieron nombres y fechas de su idea."
+        hint_specific: "«Abstraído» se arregla llamando la atención de alguien. ¿Qué le pidieron a Rigoberto?"
+      - position: 2
+        text: "etéreo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Etéreo» es poético y se dice de lo que parece hecho de aire, y en una reunión de trabajo suena a otra conversación."
+        hint_specific: "«Etéreo» pide un contexto de poema. ¿Dónde ocurre la escena?"
+      - position: 3
+        text: "abstracto"
+        is_correct: true
+  - position: 6
+    sentence: "Prefiero un ejemplo mediocre a un principio {{blank}}, dice Nadia cada vez que alguien abre con grandes palabras."
+    hint_general: "Prefiere algo que se pueda tocar antes que una idea que no señala nada."
+    explanation: "Abstracto: un principio que no señala nada. «Absoluto» diría que no admite excepciones, y «general» diría que sirve para muchos casos."
+    options:
+      - position: 1
+        text: "absoluto"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Absoluto» dice que algo no admite excepciones, y aquí no se discute si el principio tiene excepciones: se discute si se puede usar."
+        hint_specific: "«Absoluto» habla de excepciones. ¿Nadia discute excepciones o utilidad?"
+      - position: 2
+        text: "abstracto"
+        is_correct: true
+      - position: 3
+        text: "general"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«General» dice que un principio cubre muchos casos, y eso no es un defecto: el problema es que no baja a ninguno."
+        hint_specific: "Lo «general» puede ilustrarse con casos. ¿Este principio llega a algún caso?"
+  - position: 7
+    sentence: "Cuando Efraín habla de sinergias y ecosistemas, todo suena tan {{blank}} que su equipo le pide un caso con nombres."
+    hint_general: "Usa palabras precisas que, aun así, no señalan nada que se pueda ver ni tocar."
+    explanation: "Abstracto: sus palabras no señalan nada que se pueda ver. «Vago» diría que están poco definidas, y «teórico» diría solo de dónde vienen."
+    options:
+      - position: 1
+        text: "vago"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vago» diría que sus palabras están borrosas, y sinergia y ecosistema tienen definición exacta: lo que no tienen es algo que señalar."
+        hint_specific: "Lo «vago» se afila con una definición. ¿Le falta definición o le falta un caso?"
+      - position: 2
+        text: "abstracto"
+        is_correct: true
+      - position: 3
+        text: "teórico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Teórico» dice de dónde sale una idea, y al equipo no le importa el origen: quiere nombres propios."
+        hint_specific: "«Teórico» responde «¿de dónde viene?». ¿Es esa la pregunta del equipo?"
+  - position: 8
+    sentence: "Lo que faltaba en la charla no era rigor: faltaba salir de lo {{blank}} y poner un caso con fechas y cifras."
+    hint_general: "Faltaba dejar el terreno de lo que no se toca y bajar a un caso con datos."
+    explanation: "Abstracto: faltaba dejar el terreno de lo que no se toca. «Etéreo» es poético y desentona aquí, y «general» diría que algo abarca muchos casos."
+    options:
+      - position: 1
+        text: "abstracto"
+        is_correct: true
+      - position: 2
+        text: "etéreo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Etéreo» es una palabra poética para lo que parece de aire, y en una charla con cifras suena de otro mundo."
+        hint_specific: "«Etéreo» encaja en un verso. ¿Qué tono tiene esta charla?"
+      - position: 3
+        text: "general"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«General» dice que algo abarca muchos casos, y lo que se pedía era bajar a uno solo con fechas y cifras."
+        hint_specific: "Lo «general» puede tener casos debajo. ¿Había alguno debajo de esta charla?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Nombres y fechas"
+    body: "La reunión llevaba media hora de valores y principios. Zoe levantó la mano sin mala cara: «Estamos muy abstractos; ¿alguien me da un caso con nombres y fechas?». Alguien contó uno. En diez minutos había tres acuerdos escritos."
+    before_phrase: "No sé, esto está siendo un poco de nubes."
+    after_phrase: "Estamos muy abstractos; necesito un caso."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Qué es la justicia"
+    body: "Su hijo preguntó qué es la justicia y Aurelio empezó con una respuesta larga. A mitad se paró. «Me estoy poniendo abstracto. Te lo cuento con lo del columpio del parque». El niño escuchó hasta el final y contestó con otro ejemplo."
+    before_phrase: "Me estoy liando y no te llega nada."
+    after_phrase: "Me estoy poniendo abstracto; te lo cuento con un caso."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dame un ejemplo"
+    body: "Le preguntaron por su forma de trabajar y Efraín contestó con tres palabras grandes. La entrevistadora sonrió: «Eso es muy abstracto para mí». Él respiró y contó el día que perdió un pedido y cómo cambió el proceso al día siguiente."
+    before_phrase: "Perdón, me ha quedado muy en el aire."
+    after_phrase: "Eso es muy abstracto: te cuento un caso."
+metrics:
+  zipf_overall: 3.8538
+  dispersion_dp: 0.2229
+  pedantry_proxy: 0.3967
+  family_size: 16
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

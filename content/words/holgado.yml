@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "holgado"
+status: "draft"
+lemma: "holgado"
+part_of_speech: "adjetivo"
+syllables:
+  - "hol"
+  - "ga"
+  - "do"
+stressed_syllable: 2
+ipa_latam: "[olˈɣa.ðo]"
+ipa_es: "[olˈɣa.ðo]"
+explanation: "Que deja sitio de más: queda tiempo, dinero o distancia por encima de lo que hacía falta."
+example_sentence: "Entregamos el martes con un plazo holgado: el cliente lo esperaba el viernes."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para dar una cifra buena sin exagerarla: dice que alcanza y que aún queda un poco."
+when_not_to_use: "No la uses para algo enorme; solo dice que hay un poco por encima, no que sea gigante."
+collocations:
+  - "margen holgado"
+  - "plazo holgado"
+  - "ganar por un margen holgado"
+replaces:
+  - before: "Vamos con tiempo de sobra"
+    after: "Vamos con un plazo holgado"
+  - before: "Nos queda bastante presupuesto"
+    after: "El presupuesto va holgado"
+  - before: "Ganamos por mucho"
+    after: "Ganamos por un margen holgado"
+family:
+  - "holgura"
+  - "holgadamente"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "de sobra"
+    - "bastante"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "halagado"
+    difference: "«Halagado» es quien acaba de recibir un elogio; la otra palabra mide una cantidad que sobra."
+    memory_trick: "Te halagan con palabras; vas holgado con números."
+  - confused_with: "apretado"
+    difference: "«Apretado» dice que no cabe nada más; «holgado» dice justo lo contrario, que todavía cabe."
+    memory_trick: "Apretado es ir al filo; holgado es ir con aire."
+exercises:
+  - position: 1
+    sentence: "Sebastián entregó el informe el martes y la fecha límite era el viernes, así que cerró con un margen {{blank}}."
+    hint_general: "Mide una cantidad que quedó por encima de lo que hacía falta."
+    explanation: "Holgado: entre el martes y el viernes quedaron días por encima de lo necesario. «Halagado» describe a quien recibe un elogio, y «apretado» diría que llegó al filo."
+    options:
+      - position: 1
+        text: "halagado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Halagado» describe a alguien a quien acaban de elogiar, y aquí se mide una distancia entre dos fechas."
+        hint_specific: "«Halagado» habla de recibir un elogio. ¿Alguien elogia a Sebastián o se comparan dos fechas?"
+      - position: 2
+        text: "holgado"
+        is_correct: true
+      - position: 3
+        text: "apretado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apretado» diría que llegó al filo, y la frase cuenta que entregó tres días antes."
+        hint_specific: "«Apretado» es llegar sin un minuto de sobra. ¿Entregó antes o justo a tiempo?"
+  - position: 2
+    sentence: "Con la mudanza ya pagada, a Noelia le quedó un presupuesto {{blank}} para los muebles que faltaban."
+    hint_general: "Describe una cantidad que alcanza y todavía deja un poco libre."
+    explanation: "Holgado: el dinero alcanza y aún queda algo. «Sobrado» dice lo mismo en tono de calle y suena a presumir, y «flexible» diría que el presupuesto se puede cambiar."
+    options:
+      - position: 1
+        text: "sobrado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sobrado» es de conversación muy suelta y además se usa para quien va de listo, no para una cifra escrita."
+        hint_specific: "«Sobrado» suena a jactancia de calle. ¿Encaja en una cuenta de la mudanza?"
+      - position: 2
+        text: "flexible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Flexible» diría que la cifra se puede mover, y aquí lo que ocurre es que alcanza con algo de más."
+        hint_specific: "«Flexible» va de poder cambiar algo. ¿El presupuesto cambia o simplemente alcanza?"
+      - position: 3
+        text: "holgado"
+        is_correct: true
+  - position: 3
+    sentence: "El equipo de Damián ganó el concurso por una diferencia {{blank}}: sacó doce puntos al segundo."
+    hint_general: "Dice que la distancia fue clara y quedó espacio de más entre los dos."
+    explanation: "Holgada: doce puntos dejan mucha distancia por encima. «Abundante» cuenta cosas, no mide una diferencia, y «estirada» sugiere que algo se forzó."
+    options:
+      - position: 1
+        text: "abundante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abundante» sirve para decir que hay muchas cosas, no para medir la distancia entre dos resultados."
+        hint_specific: "«Abundante» cuenta cantidad de cosas. ¿Aquí se cuentan cosas o se mide una distancia?"
+      - position: 2
+        text: "estirada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Estirada» es coloquial y sugiere que algo se forzó para que diera de sí, o que alguien es distante."
+        hint_specific: "«Estirada» insinúa que algo se forzó. ¿Los doce puntos son reales o inflados?"
+      - position: 3
+        text: "holgada"
+        is_correct: true
+  - position: 4
+    sentence: "Aitana calculó las raciones de la cena familiar y salió un número {{blank}}, por si aparecían dos invitados más."
+    hint_general: "Habla de calcular por encima de lo justo para que no falte."
+    explanation: "Holgado: calculó por encima de lo justo. «Prolongado» habla de duración, y «escaso» diría que no alcanza para nadie más."
+    options:
+      - position: 1
+        text: "holgado"
+        is_correct: true
+      - position: 2
+        text: "prolongado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prolongado» dice que algo dura mucho tiempo, y aquí se cuentan raciones, no minutos."
+        hint_specific: "«Prolongado» mide duración. ¿La cena dura mucho o alcanza para más gente?"
+      - position: 3
+        text: "escaso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Escaso» diría que no alcanza, y la frase cuenta que preparó de más por si llega gente."
+        hint_specific: "«Escaso» es quedarse corto. Relee: ¿preparó de menos o de más?"
+  - position: 5
+    sentence: "Mientras los demás corrían, Lorenzo terminó su parte {{blank}} y se ofreció a revisar la de otro."
+    hint_general: "Dice que a alguien le quedó tiempo libre porque acabó antes de lo previsto."
+    explanation: "Holgado: le quedó tiempo libre y lo ofreció. «Holgazán» acusa de no trabajar, y «flexible» hablaría de adaptarse, no de ir sobrado de tiempo."
+    options:
+      - position: 1
+        text: "holgazán"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Holgazán» acusa a alguien de esquivar el trabajo, y en la frase esa persona termina y además ayuda."
+        hint_specific: "«Holgazán» es un reproche por no trabajar. ¿La frase reprocha algo o cuenta que acabó antes?"
+      - position: 2
+        text: "holgado"
+        is_correct: true
+      - position: 3
+        text: "flexible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Flexible» describe a quien se adapta a los cambios, y aquí lo que cuenta es que le sobró tiempo."
+        hint_specific: "«Flexible» va de adaptarse. ¿Esa persona se adaptó a algo o terminó antes?"
+  - position: 6
+    sentence: "La sala que reservó Mireia era {{blank}} para catorce personas, aunque al final fuimos nueve."
+    hint_general: "Describe un espacio con sitio de más para la gente que entra."
+    explanation: "Holgada: el sitio daba para más gente de la que fue. «Halagada» hablaría de un elogio recibido, y «apretada» diría que no cabía nadie más."
+    options:
+      - position: 1
+        text: "apretada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apretada» diría que la gente no cabía, y la frase cuenta que fueron menos de los que entraban."
+        hint_specific: "«Apretada» es no caber. ¿Faltó sitio en esa sala o sobró?"
+      - position: 2
+        text: "halagada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Halagada» se dice de una persona a la que elogian; una sala no recibe elogios."
+        hint_specific: "«Halagada» describe a quien recibe un elogio. ¿Se habla de una persona o de un espacio?"
+      - position: 3
+        text: "holgada"
+        is_correct: true
+  - position: 7
+    sentence: "Al revisar la propuesta, Gaspar pidió un calendario más {{blank}}: dos semanas extra por si el proveedor tardaba."
+    hint_general: "Pide una medida con sitio de más para absorber un retraso."
+    explanation: "Holgado: pide dos semanas por encima para absorber un retraso. «Sobrado» es de conversación muy suelta y suena a fanfarronear, y «abundante» contaría cosas, no semanas de margen."
+    options:
+      - position: 1
+        text: "holgado"
+        is_correct: true
+      - position: 2
+        text: "sobrado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sobrado» pertenece a la charla informal y además se usa para quien presume; no encaja en una propuesta escrita."
+        hint_specific: "«Sobrado» suena a jactancia y a charla de pasillo. ¿Va bien en un documento para un cliente?"
+      - position: 3
+        text: "abundante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abundante» dice que hay muchas cosas, y aquí se pide un margen de tiempo, no una cantidad de objetos."
+        hint_specific: "«Abundante» cuenta cosas. ¿Gaspar pide más objetos o más días?"
+  - position: 8
+    sentence: "Berta cobró el primer trabajo y, por primera vez en meses, llegó al día treinta con una cuenta {{blank}}."
+    hint_general: "Dice que a alguien le alcanzó el dinero y todavía le quedó algo."
+    explanation: "Holgada: le alcanzó el dinero y le quedó algo. «Holgazana» acusa de no trabajar, y «prolongada» mediría duración, no dinero."
+    options:
+      - position: 1
+        text: "prolongada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prolongada» mide cuánto dura algo, y la frase habla del dinero que le quedó al final del mes."
+        hint_specific: "«Prolongada» va de duración. ¿La frase mide días o dinero?"
+      - position: 2
+        text: "holgazana"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Holgazana» acusa de no querer trabajar, y aquí esa persona acaba de cobrar un trabajo."
+        hint_specific: "«Holgazana» reprocha no trabajar. ¿Berta trabajó ese mes o no?"
+      - position: 3
+        text: "holgada"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres días de aire"
+    body: "El cliente preguntó si llegábamos. Tadeo abrió el calendario y contestó sin adornos: «Entregamos el martes y usted lo espera el viernes; vamos con un plazo holgado». Nadie prometió milagros y nadie se quedó con la duda."
+    before_phrase: "Vamos bien de tiempo, creo."
+    after_phrase: "Vamos con un plazo holgado."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cuenta del mes"
+    body: "Mi hermana llevaba meses haciendo números en una servilleta. Ese domingo la dejó doblada y dijo: «Este mes cerramos holgados». No era una fortuna, eran doscientos pesos que sobraban. Brindamos igual."
+    before_phrase: "Este mes no nos fue tan mal."
+    after_phrase: "Este mes cerramos holgados."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta del margen"
+    body: "Le preguntaron a Jimena cómo había cumplido tantas entregas. «No corrí más: pedí siempre un margen holgado y lo defendí», respondió. La entrevistadora anotó la frase entera."
+    before_phrase: "Pedía tiempo de sobra, más o menos."
+    after_phrase: "Pedía siempre un margen holgado."
+metrics:
+  zipf_overall: 3.0637
+  dispersion_dp: 0.2712
+  pedantry_proxy: 0.6555
+  family_size: 10
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

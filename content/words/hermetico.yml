@@ -1,0 +1,247 @@
+schema_version: 1
+sort_order: 7017
+slug: "hermetico"
+status: "draft"
+lemma: "hermético"
+part_of_speech: "adjetivo"
+syllables:
+  - "her"
+  - "mé"
+  - "ti"
+  - "co"
+stressed_syllable: 2
+ipa_latam: "[eɾˈme.ti.ko]"
+ipa_es: "[eɾˈme.ti.ko]"
+explanation: "Que no deja ver lo que piensa ni lo que siente."
+example_sentence: "Con sus cosas es hermético: lleva veinte años aquí y nadie sabe nada de él."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Describe sin juzgar: no dice que alguien sea frío ni maleducado, solo que no deja ver nada."
+when_not_to_use: "No la uses para quien habla poco pero se le nota todo, ni para quien pone distancia con los demás."
+collocations:
+  - "un silencio hermético"
+  - "volverse hermético"
+  - "hermético con sus cosas"
+replaces:
+  - before: "No hay manera de saber qué le pasa"
+    after: "Es completamente hermético"
+  - before: "Se cerró y no soltó una palabra"
+    after: "Se puso hermético"
+  - before: "De sus cosas no cuenta nada a nadie"
+    after: "Con sus cosas es hermético"
+family:
+  - "hermetismo"
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "conflicto-desacuerdo"
+    relevance: 1
+tags:
+  comodin:
+    - "cerrado"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reservado"
+    difference: "Quien es «reservado» habla poco por discreción, pero se le nota cómo está; la otra palabra dice que no se le nota nada."
+    memory_trick: "Al reservado se le adivina; al otro, no."
+  - confused_with: "distante"
+    difference: "Quien es «distante» pone espacio con los demás; la otra palabra puede estar muy al lado y aun así no dejar ver nada."
+    memory_trick: "El distante se aleja; el otro se queda y se cierra."
+exercises:
+  - position: 1
+    sentence: "Damián le cuenta su vida entera a quien pregunte; su hermano, en cambio, es {{blank}} hasta con su madre."
+    hint_general: "Con nadie, ni con su madre, deja ver lo que piensa o lo que siente."
+    explanation: "Hermético: no deja ver nada ni con su madre. «Esotérico» se dice de lo que solo entienden unos iniciados, y «reservado» aún deja adivinar el ánimo."
+    options:
+      - position: 1
+        text: "esotérico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esotérico» se dice de lo que solo entienden unos pocos iniciados, como un texto oscuro, y aquí se habla de una persona que no se abre."
+        hint_specific: "«Esotérico» supone un saber secreto para unos pocos. ¿Hay algún grupo que sí lo entienda a él?"
+      - position: 2
+        text: "hermético"
+        is_correct: true
+      - position: 3
+        text: "reservado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Quien es «reservado» habla poco por discreción y aun así se le nota cómo está, y de este hermano no se nota absolutamente nada."
+        hint_specific: "Al «reservado» se le adivina el ánimo. ¿Se le adivina algo a este hermano?"
+  - position: 2
+    sentence: "La cara de Iker se volvió {{blank}} en cuanto salió el tema del dinero, y nadie supo qué estaba pensando."
+    hint_general: "Su cara dejó de mostrar cualquier cosa de lo que le pasaba por dentro."
+    explanation: "Hermética: su cara deja de mostrar nada. «Seca» acusaría de contestar con brusquedad, y «distante» pondría espacio, y él sigue sentado ahí."
+    options:
+      - position: 1
+        text: "seca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Seca» es coloquial y acusa de contestar con brusquedad, y él ni siquiera contesta mal: simplemente no deja ver nada."
+        hint_specific: "«Seca» supone una respuesta cortante. ¿Iker responde mal o no responde nada?"
+      - position: 2
+        text: "hermética"
+        is_correct: true
+      - position: 3
+        text: "distante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distante» pone espacio con los demás, y él sigue en la mesa con todos: lo que desaparece es lo que se le leía en la cara."
+        hint_specific: "El «distante» se aparta. ¿Iker se aparta o se queda?"
+  - position: 3
+    sentence: "Aurelio es cariñoso y está siempre, pero con lo suyo es {{blank}}: nadie ha sabido nunca si duerme por las noches."
+    hint_general: "Está presente y es afectuoso, y aun así no deja ver nada de lo suyo."
+    explanation: "Hermético: está presente y no deja ver nada suyo. «Distante» pondría espacio, y él está siempre, y «esotérico» se dice de un saber para iniciados."
+    options:
+      - position: 1
+        text: "distante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distante» pondría espacio con la gente, y la frase dice justo lo contrario: es cariñoso y está siempre."
+        hint_specific: "El «distante» se mantiene lejos. Relee el principio: ¿está lejos Aurelio?"
+      - position: 2
+        text: "hermético"
+        is_correct: true
+      - position: 3
+        text: "esotérico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esotérico» se dice de un saber reservado a iniciados, y aquí no hay ningún saber: hay una persona que no cuenta cómo está."
+        hint_specific: "«Esotérico» habla de doctrinas y textos. ¿De qué habla esta frase, de un texto o de alguien?"
+  - position: 4
+    sentence: "La empresa se puso {{blank}} con el traslado y la plantilla acabó enterándose por un correo de tres líneas."
+    hint_general: "La empresa no dejó ver nada de lo que estaba decidiendo."
+    explanation: "Hermética: no deja ver nada de lo que decide. «Impenetrable» es una palabra grande, de fortaleza o de selva, y «callada» diría que no habló, y sí hubo correo."
+    options:
+      - position: 1
+        text: "impenetrable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Impenetrable» es una palabra grande, propia de una fortaleza o de una selva, y aquí se habla de una empresa que no cuenta un traslado."
+        hint_specific: "«Impenetrable» suena a muralla. ¿Encaja ese tamaño con un correo de tres líneas?"
+      - position: 2
+        text: "hermética"
+        is_correct: true
+      - position: 3
+        text: "callada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callada» diría que no dijo nada, y la empresa sí habló: mandó un correo que no dejaba ver nada de lo importante."
+        hint_specific: "«Callada» es no decir ni una palabra. ¿Hubo comunicación o silencio total?"
+  - position: 5
+    sentence: "Su padre fue {{blank}} toda la vida, y solo a los ochenta empezó a contar cosas de cuando era niño."
+    hint_general: "Durante décadas no dejó ver nada de lo suyo, hasta muy mayor."
+    explanation: "Hermético: durante décadas no dejó ver nada. «Seco» acusaría de trato brusco, y «reservado» deja ver el ánimo aunque hable poco."
+    options:
+      - position: 1
+        text: "hermético"
+        is_correct: true
+      - position: 2
+        text: "seco"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Seco» es coloquial y acusa de un trato brusco, y de este padre no se dice que tratara mal a nadie: se dice que no contaba nada."
+        hint_specific: "«Seco» describe malos modos. ¿La frase habla de modos o de lo que no se sabía de él?"
+      - position: 3
+        text: "reservado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Quien es «reservado» habla poco y aun así se le nota cómo está, y de él no se supo nada durante ochenta años."
+        hint_specific: "Del «reservado» se intuye el estado de ánimo. ¿Se intuía algo de este padre?"
+  - position: 6
+    sentence: "Rebeca tiene cara de piedra: en la negociación se puso {{blank}} y la otra parte acabó hablando de más."
+    hint_general: "No dejó leer nada en su cara y el otro llenó el vacío hablando."
+    explanation: "Hermética: no deja leer nada y el otro habla de más. «Callada» diría que no habló, y sí habló, e «impenetrable» es una palabra de fortaleza."
+    options:
+      - position: 1
+        text: "callada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callada» diría que no abrió la boca, y ella negocia y habla: lo que no enseña es qué piensa de cada oferta."
+        hint_specific: "«Callada» es no hablar nada. ¿Rebeca está muda en esa mesa?"
+      - position: 2
+        text: "impenetrable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Impenetrable» es una palabra de muralla y de selva cerrada, y aquí se describe a alguien sentado en una mesa de reuniones."
+        hint_specific: "«Impenetrable» pide un tamaño enorme. ¿De qué tamaño es lo que se describe?"
+      - position: 3
+        text: "hermética"
+        is_correct: true
+  - position: 7
+    sentence: "El grupo entero se abrió aquella tarde menos Elías, que siguió tan {{blank}} como el primer día."
+    hint_general: "Todos dejaron ver algo suyo; él siguió sin mostrar nada."
+    explanation: "Hermético: sigue sin mostrar nada mientras el resto se abre. «Reservado» aún dejaría adivinar algo, y «distante» significaría apartarse del grupo."
+    options:
+      - position: 1
+        text: "reservado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Quien es «reservado» deja adivinar algo aunque hable poco, y de Elías no se adivinó nada en toda la tarde."
+        hint_specific: "Del «reservado» se saca algo. ¿Qué se sacó de Elías esa tarde?"
+      - position: 2
+        text: "hermético"
+        is_correct: true
+      - position: 3
+        text: "distante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distante» significaría apartarse del grupo, y él se quedó toda la tarde: lo que no hizo fue enseñar nada suyo."
+        hint_specific: "El «distante» se va o se aleja. ¿Elías se fue del grupo?"
+  - position: 8
+    sentence: "No es antipático: es {{blank}}, y eso da mucho más trabajo de entender que un mal carácter."
+    hint_general: "No trata mal a nadie; simplemente no deja ver lo que le pasa."
+    explanation: "Hermético: no trata mal, no deja ver nada. «Esotérico» se dice de un saber para iniciados, y «callado» sería solo hablar poco."
+    options:
+      - position: 1
+        text: "esotérico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esotérico» se dice de lo que solo entienden unos iniciados, como una doctrina cerrada, y aquí se habla del carácter de alguien."
+        hint_specific: "«Esotérico» pertenece a textos y doctrinas. ¿De qué trata esta frase?"
+      - position: 2
+        text: "hermético"
+        is_correct: true
+      - position: 3
+        text: "callado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callado» solo dice que habla poco, y hay gente muy callada a la que se le nota todo en la cara."
+        hint_specific: "Se puede hablar poco y transparentarlo todo. ¿Qué es lo difícil de esta persona?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "A los ochenta"
+    body: "Su padre nunca contó nada de cuando era niño. A los ochenta empezó, de pronto, una tarde cualquiera. «Toda la vida fue hermético y ahora no para», le dijo Vera a su hermana. Escucharon tres horas y apuntaron nombres para no perderlos."
+    before_phrase: "Papá nunca ha contado nada de nada."
+    after_phrase: "Toda la vida fue hermético, y ahora habla."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo de tres líneas"
+    body: "El traslado se anunció un viernes en tres líneas. En el café, alguien lo dijo en voz alta: «No es que nos oculten algo malo; es que la empresa se ha vuelto hermética». El lunes pidieron una reunión y la tuvieron."
+    before_phrase: "Aquí nunca se entera nadie de nada."
+    after_phrase: "La empresa se ha vuelto hermética."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La tarde del grupo"
+    body: "Aquella tarde todos contaron algo difícil, menos Elías. Nadie lo forzó. Al despedirse, una amiga le dijo bajito: «Eres hermético y aquí nadie te va a obligar; cuando quieras, estamos». Él asintió y volvió el mes siguiente."
+    before_phrase: "Tú nunca cuentas nada, ¿eh?"
+    after_phrase: "Eres hermético, y aquí nadie te obliga."
+metrics:
+  zipf_overall: 3.3708
+  dispersion_dp: 0.2877
+  pedantry_proxy: 0.5198
+  family_size: 27
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

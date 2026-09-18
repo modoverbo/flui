@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "inmediatez"
+status: "draft"
+lemma: "inmediatez"
+part_of_speech: "sustantivo"
+syllables:
+  - "in"
+  - "me"
+  - "dia"
+  - "tez"
+stressed_syllable: 4
+ipa_latam: "[in.me.djaˈtes]"
+ipa_es: "[in.me.djaˈteθ]"
+explanation: "Que todo ocurra al momento, sin nada de espera entre una cosa y otra."
+example_sentence: "La inmediatez de las redes no deja tiempo para pensar la respuesta."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para nombrar la presión del «ahora mismo» sin quejarte de nadie en concreto."
+when_not_to_use: "No la uses para decir que alguien va rápido; esto habla de que no hay espera de por medio."
+collocations:
+  - "la inmediatez de las redes"
+  - "exigir inmediatez"
+  - "escapar de la inmediatez"
+replaces:
+  - before: "Todo tiene que ser ya mismo"
+    after: "Todo se mide por la inmediatez"
+  - before: "No te dan ni un minuto para pensar"
+    after: "La inmediatez no deja pensar"
+  - before: "Contesto cuando puedo, no al segundo"
+    after: "No trabajo con esa inmediatez"
+family:
+  - "inmediato"
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+  - slug: "correos-mensajes"
+    relevance: 2
+tags:
+  comodin:
+    - "ya mismo"
+    - "al momento"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "inmadurez"
+    difference: "La inmadurez es no estar preparado todavía; lo otro es que no haya ninguna espera entre las cosas."
+    memory_trick: "La inmadurez es falta de años; la inmediatez, falta de espera."
+  - confused_with: "rapidez"
+    difference: "La rapidez mide la velocidad de quien hace algo; esta palabra dice que no cabe ni un minuto entre medias."
+    memory_trick: "La rapidez corre; la inmediatez no deja salir."
+exercises:
+  - position: 1
+    sentence: "Lo que más agota a Zoe de su trabajo no es la carga: es la {{blank}} con la que se espera cada respuesta."
+    hint_general: "No hay ni un minuto entre la pregunta y la respuesta que esperan."
+    explanation: "Inmediatez: no hay ni un minuto entre pregunta y respuesta. «Inmadurez» hablaría de no estar preparado, y «rapidez» mediría lo deprisa que trabaja ella."
+    options:
+      - position: 1
+        text: "inmadurez"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inmadurez» es no estar preparado todavía para algo, y aquí lo agotador es que no le den ni un minuto."
+        hint_specific: "«Inmadurez» habla de no estar listo. ¿Zoe no está lista o no le dan tiempo?"
+      - position: 2
+        text: "inmediatez"
+        is_correct: true
+      - position: 3
+        text: "rapidez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rapidez» mide lo deprisa que ella hace las cosas, y el problema es el hueco que no existe entre la pregunta y la respuesta."
+        hint_specific: "«Rapidez» mide su velocidad. ¿Falla su velocidad o el tiempo que le dan?"
+  - position: 2
+    sentence: "El taller de Efraín funciona al revés que las redes: cambia la {{blank}} por dos días de espera y una pieza mejor."
+    hint_general: "Renuncia a que todo salga al momento a cambio de calidad."
+    explanation: "Inmediatez: que todo salga al momento. «Premura» es palabra de escrito formal sobre la prisa con que se pide algo, y «calidad» sería justo lo que gana, no lo que cambia."
+    options:
+      - position: 1
+        text: "premura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Premura» es palabra de escrito formal y habla de la prisa con que se pide algo, y aquí se describe cómo funciona un taller."
+        hint_specific: "«Premura» suena a carta oficial. ¿Con qué tono se cuenta lo del taller?"
+      - position: 2
+        text: "inmediatez"
+        is_correct: true
+      - position: 3
+        text: "calidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Calidad» es lo que el taller gana con el cambio, no lo que entrega a cambio."
+        hint_specific: "Relee el final: ¿qué gana el taller con esos dos días?"
+  - position: 3
+    sentence: "Mi madre no entiende la {{blank}} de los mensajes: escribe por la mañana y espera respuesta por la noche, tan tranquila."
+    hint_general: "No comparte esa costumbre de contestar al segundo."
+    explanation: "Inmediatez: contestar al segundo. «Inmadurez» diría que alguien no está preparado, e «insistencia» hablaría de repetir el mensaje."
+    options:
+      - position: 1
+        text: "inmediatez"
+        is_correct: true
+      - position: 2
+        text: "inmadurez"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inmadurez» acusaría de no estar preparado, y lo que tu madre no comparte es la costumbre de contestar al instante."
+        hint_specific: "«Inmadurez» acusa de falta de madurez. ¿A quién acusaría aquí?"
+      - position: 3
+        text: "insistencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistencia» sería repetir el mensaje hasta obtener respuesta, y ella escribe una vez y espera."
+        hint_specific: "«Insistencia» repite. ¿Cuántas veces escribe tu madre?"
+  - position: 4
+    sentence: "La {{blank}} de la retransmisión hizo que dos canales dieran la noticia mal antes de comprobarla."
+    hint_general: "Contar al instante dejó fuera el tiempo de comprobar."
+    explanation: "Inmediatez: contar al instante sin hueco para comprobar. «Prontitud» es palabra de escrito formal y suena a elogio, e «inmensidad» hablaría del tamaño."
+    options:
+      - position: 1
+        text: "prontitud"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prontitud» es palabra de escrito formal y suele usarse como elogio de quien responde pronto, y aquí se describe un problema."
+        hint_specific: "«Prontitud» suena a elogio de carta formal. ¿Esto se cuenta como virtud o como problema?"
+      - position: 2
+        text: "inmediatez"
+        is_correct: true
+      - position: 3
+        text: "inmensidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inmensidad» habla del tamaño enorme de algo, y lo que provocó el fallo fue no tener tiempo para comprobar."
+        hint_specific: "«Inmensidad» mide tamaño. ¿Faltó tamaño o faltó tiempo?"
+  - position: 5
+    sentence: "Casilda escribe los sábados y publica los martes: esos tres días son su defensa contra la {{blank}}."
+    hint_general: "Se protege de la exigencia de publicar al instante."
+    explanation: "Inmediatez: la exigencia de publicar al instante. «Inmadurez» hablaría de no estar preparada, y «rutina» sería la costumbre, no la presión."
+    options:
+      - position: 1
+        text: "rutina"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rutina» es la costumbre de repetir algo, y lo que ella esquiva con tres días es la presión de publicar ya."
+        hint_specific: "«Rutina» es costumbre. ¿De qué se defiende con esos tres días?"
+      - position: 2
+        text: "inmediatez"
+        is_correct: true
+      - position: 3
+        text: "inmadurez"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inmadurez» diría que le falta preparación, y la frase describe un método muy pensado."
+        hint_specific: "«Inmadurez» acusa de no estar lista. ¿Parece improvisado su método?"
+  - position: 6
+    sentence: "En urgencias, la {{blank}} salva vidas; en una discusión de familia, casi siempre las complica."
+    hint_general: "Actuar sin ningún hueco de espera sirve en un sitio y estorba en otro."
+    explanation: "Inmediatez: actuar sin hueco de espera. «Premura» es palabra de escrito formal sobre la prisa con que se pide algo, y «paciencia» diría lo contrario."
+    options:
+      - position: 1
+        text: "inmediatez"
+        is_correct: true
+      - position: 2
+        text: "premura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Premura» es de escrito formal y habla de la prisa con que se solicita algo, y esta frase compara dos situaciones de la vida."
+        hint_specific: "«Premura» suena a instancia oficial. ¿Con qué tono está escrita esta frase?"
+      - position: 3
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciencia» es esperar, y la frase habla de lo que pasa cuando no se espera nada."
+        hint_specific: "«Paciencia» espera. ¿Qué es lo que salva vidas en urgencias?"
+  - position: 7
+    sentence: "Al cliente le vendieron {{blank}} y lo que necesitaba era que alguien le explicara bien el presupuesto."
+    hint_general: "Le prometieron respuesta al instante y le faltaba otra cosa."
+    explanation: "Inmediatez: respuesta al instante. «Prontitud» es palabra de carta formal usada como elogio, e «inmensidad» hablaría de un tamaño enorme."
+    options:
+      - position: 1
+        text: "inmensidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inmensidad» habla de un tamaño enorme, y lo que le vendieron fue rapidez sin espera."
+        hint_specific: "«Inmensidad» mide tamaño. ¿Qué le prometieron, tamaño o velocidad?"
+      - position: 2
+        text: "inmediatez"
+        is_correct: true
+      - position: 3
+        text: "prontitud"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prontitud» es palabra de escrito formal y suena a elogio de quien atiende pronto, y aquí se critica lo que le vendieron."
+        hint_specific: "«Prontitud» elogia, con tono de carta formal. ¿La frase elogia o critica?"
+  - position: 8
+    sentence: "La {{blank}} del grupo de mensajes hizo que un malentendido de dos líneas creciera antes de que nadie llamara."
+    hint_general: "Al no haber ninguna pausa, el lío creció solo."
+    explanation: "Inmediatez: no hubo ninguna pausa. «Inmadurez» acusaría a la gente de no estar preparada, y «cantidad» hablaría de cuántos mensajes hubo."
+    options:
+      - position: 1
+        text: "cantidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cantidad» mide cuántos mensajes hubo, y lo que hizo crecer el lío fue que no hubo ningún hueco para pensar."
+        hint_specific: "«Cantidad» cuenta mensajes. ¿El problema fue cuántos o cuándo?"
+      - position: 2
+        text: "inmadurez"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Inmadurez» acusaría a las personas del grupo, y la frase señala cómo funciona el propio grupo."
+        hint_specific: "«Inmadurez» señala a las personas. ¿La frase culpa a alguien o describe el medio?"
+      - position: 3
+        text: "inmediatez"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres días"
+    body: "Casilda escribe los sábados y publica los martes. Cuando le preguntan por qué no publica en caliente, contesta sin adornos: «Esos tres días son mi defensa contra la inmediatez». Nunca ha tenido que borrar una publicación."
+    before_phrase: "No quiero publicar todo en caliente."
+    after_phrase: "Esos tres días son mi defensa contra la inmediatez."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Contesta por la noche"
+    body: "Mi madre escribe un mensaje por la mañana y espera la respuesta por la noche, tan tranquila. Al principio me desesperaba. Ahora entiendo que ella nunca aceptó la inmediatez como una obligación, y por eso discute menos que nosotros."
+    before_phrase: "Es que no contesta al momento."
+    after_phrase: "Nunca aceptó la inmediatez como obligación."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dos días y una pieza mejor"
+    body: "Le preguntaron a Efraín cómo competía con talleres que entregan el mismo día. «No compito en eso», dijo. «Cambio la inmediatez por dos días y una pieza mejor». Le pidieron que lo pusiera en la web con esas palabras."
+    before_phrase: "Nosotros tardamos más, pero lo hacemos mejor."
+    after_phrase: "Cambio la inmediatez por dos días y una pieza mejor."
+metrics:
+  zipf_overall: 3.5488
+  dispersion_dp: 0.3002
+  pedantry_proxy: 0.4194
+  family_size: 35
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-15"

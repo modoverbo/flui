@@ -1,0 +1,247 @@
+schema_version: 1
+slug: "verificable"
+status: "draft"
+lemma: "verificable"
+part_of_speech: "adjetivo"
+syllables:
+  - "ve"
+  - "ri"
+  - "fi"
+  - "ca"
+  - "ble"
+stressed_syllable: 4
+ipa_latam: "[be.ɾi.fiˈka.βle]"
+ipa_es: "[be.ɾi.fiˈka.βle]"
+explanation: "Que cualquiera puede comprobar por su cuenta, porque hay un dato o una prueba detrás."
+example_sentence: "Prefiero una promesa verificable: dime el plazo y dónde puedo mirarlo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Es la palabra que convierte una promesa en algo que el otro puede revisar sin fiarse de tu palabra."
+when_not_to_use: "No la uses para algo que solo suena creíble; aquí hace falta que exista dónde mirarlo."
+collocations:
+  - "dato verificable"
+  - "promesa verificable"
+  - "resultado verificable"
+replaces:
+  - before: "Te lo juro, funciona"
+    after: "Es un resultado verificable: mira el informe"
+  - before: "Son datos de fiar"
+    after: "Son datos verificables"
+  - before: "Se nota que mejoró"
+    after: "La mejora es verificable mes a mes"
+family:
+  - "verificar"
+  - "verificación"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 2
+tags:
+  comodin:
+    - "de fiar"
+    - "seguro"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "verosímil"
+    difference: "«Verosímil» dice que algo parece cierto; la otra palabra dice que existe dónde ir a mirarlo."
+    memory_trick: "Lo verosímil convence; lo verificable se comprueba."
+  - confused_with: "veraz"
+    difference: "«Veraz» califica a quien dice la verdad; esta palabra califica un dato que otro puede revisar."
+    memory_trick: "Veraz es la persona; verificable es el dato."
+exercises:
+  - position: 1
+    sentence: "Cuando el proveedor prometió entregas en dos días, Marisol pidió algo {{blank}}: el registro de los últimos tres meses."
+    hint_general: "Pide algo que ella misma pueda revisar, no solo una promesa."
+    explanation: "Verificable: pide un registro que puede revisar. «Verosímil» solo diría que la promesa suena creíble, y «honesto» hablaría de la intención de quien promete."
+    options:
+      - position: 1
+        text: "verosímil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Verosímil» dice que algo suena creíble, y ella pide justo lo contrario: dónde mirarlo."
+        hint_specific: "«Verosímil» se queda en que parece cierto. ¿Marisol quiere que suene bien o poder revisarlo?"
+      - position: 2
+        text: "verificable"
+        is_correct: true
+      - position: 3
+        text: "honesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Honesto» juzga la intención de quien promete, y lo que ella pide es un registro que pueda abrir."
+        hint_specific: "«Honesto» habla de la intención. ¿Se juzga a la persona o se pide un documento?"
+  - position: 2
+    sentence: "En la propuesta, Efraín cambió «mejoramos mucho» por un número {{blank}} y dejó el enlace al informe."
+    hint_general: "Cambió una frase vaga por un dato que el lector puede ir a mirar."
+    explanation: "Verificable: el lector puede abrir el informe y mirarlo. «Fehaciente» es lenguaje de juzgado y suena raro en una propuesta, y «detallado» solo diría que tiene muchas partes."
+    options:
+      - position: 1
+        text: "fehaciente"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fehaciente» pertenece al lenguaje de los juzgados y además afirma que el dato ya quedó probado del todo."
+        hint_specific: "«Fehaciente» suena a documento de juzgado. ¿Encaja en una propuesta breve para un cliente?"
+      - position: 2
+        text: "detallado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallado» dice que el número viene con muchas partes, no que alguien pueda salir a comprobarlo."
+        hint_specific: "«Detallado» habla de cuántas partes trae. ¿Eso permite ir a mirarlo por fuera?"
+      - position: 3
+        text: "verificable"
+        is_correct: true
+  - position: 3
+    sentence: "La escuela publicó cuánto costó la reforma con las facturas al lado: quiso que cada gasto fuera {{blank}}."
+    hint_general: "Publicó las facturas para que cualquiera pueda revisar cada cifra."
+    explanation: "Verificable: cualquiera abre las facturas y revisa. «Veraz» califica a quien habla, no a una cifra, y «transparente» habla de mostrar, no de poder comprobarlo por fuera."
+    options:
+      - position: 1
+        text: "verificable"
+        is_correct: true
+      - position: 2
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» se dice de quien cuenta la verdad, y aquí lo que se describe es un gasto, no una persona."
+        hint_specific: "«Veraz» califica a quien habla. ¿La frase habla de una persona o de una cifra?"
+      - position: 3
+        text: "transparente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Transparente» dice que algo se muestra, y aquí además se ofrece la prueba para revisarlo por fuera."
+        hint_specific: "«Transparente» es enseñar algo. ¿Solo lo enseñan o dan con qué contrastarlo?"
+  - position: 4
+    sentence: "Antes de firmar, Rosalía preguntó si el ahorro prometido era {{blank}} con la factura del año pasado."
+    hint_general: "Quiere contrastar la promesa contra un papel que ya existe."
+    explanation: "Verificable: quiere contrastarlo con una factura real. «Irrefutable» exige que ya nadie pueda discutirlo, y «concreto» solo diría que la cifra es precisa."
+    options:
+      - position: 1
+        text: "irrefutable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Irrefutable» es palabra de debate solemne y afirma que nadie puede rebatirlo; ella todavía quiere mirarlo."
+        hint_specific: "«Irrefutable» cierra la discusión de antemano. ¿Rosalía ya lo dio por cerrado?"
+      - position: 2
+        text: "concreto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Concreto» dice que la cifra es precisa, aunque nadie pueda contrastarla con un papel."
+        hint_specific: "«Concreto» es dar una cifra exacta. ¿Basta con eso para contrastarla con la factura?"
+      - position: 3
+        text: "verificable"
+        is_correct: true
+  - position: 5
+    sentence: "Al presentar el caso, Nicolás separó lo que era {{blank}} de lo que era una suposición suya."
+    hint_general: "Separa lo que se puede comprobar de lo que solo imagina."
+    explanation: "Verificable: lo que se puede comprobar. «Verosímil» describiría lo que parece cierto, que es justo el otro montón, e «irrefutable» exigiría que nadie pueda discutirlo."
+    options:
+      - position: 1
+        text: "verosímil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Verosímil» describe lo que parece cierto, y eso es justo lo que él dejó en el otro montón."
+        hint_specific: "«Verosímil» es lo que suena creíble. ¿En qué montón puso Nicolás las suposiciones?"
+      - position: 2
+        text: "irrefutable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Irrefutable» es lenguaje de discusión solemne y da la cuestión por cerrada, cuando él solo está ordenando."
+        hint_specific: "«Irrefutable» declara que ya no hay nada que discutir. ¿Nicolás cierra el tema o lo ordena?"
+      - position: 3
+        text: "verificable"
+        is_correct: true
+  - position: 6
+    sentence: "El grupo aceptó la propuesta de Yolanda porque cada promesa venía con una fuente {{blank}} al lado."
+    hint_general: "Cada promesa trae al lado de dónde salió, para poder revisarlo."
+    explanation: "Verificable: cada promesa dice de dónde salió. «Veraz» calificaría a quien la escribió, y «detallada» solo diría que trae muchas partes."
+    options:
+      - position: 1
+        text: "detallada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallada» habla de cuántas partes trae la fuente, no de que alguien pueda ir a revisarla."
+        hint_specific: "«Detallada» va de cuántos datos incluye. ¿Eso permite contrastarla por fuera?"
+      - position: 2
+        text: "veraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Veraz» se dice de quien habla con verdad, y aquí se califica la fuente que acompaña cada promesa."
+        hint_specific: "«Veraz» describe a una persona sincera. ¿Se juzga a Yolanda o a lo que adjuntó?"
+      - position: 3
+        text: "verificable"
+        is_correct: true
+  - position: 7
+    sentence: "Para el informe anual, Casilda solo dejó las cifras {{blank}} y movió el resto a un anexo de estimaciones."
+    hint_general: "Guarda solo los números que alguien puede contrastar con una fuente."
+    explanation: "Verificables: se pueden contrastar con una fuente. «Fehacientes» es lenguaje de juzgado, y «concretas» solo diría que están bien afinadas."
+    options:
+      - position: 1
+        text: "verificables"
+        is_correct: true
+      - position: 2
+        text: "fehacientes"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fehacientes» es vocabulario de juzgado y declara la prueba ya cerrada, cuando aquí solo se ordenan cifras."
+        hint_specific: "«Fehacientes» suena a papel sellado. ¿Va con el tono de un informe anual de trabajo?"
+      - position: 3
+        text: "concretas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Concretas» dice que las cifras son precisas, y una estimación también puede serlo sin poder contrastarse."
+        hint_specific: "«Concretas» es ser preciso. ¿Una estimación precisa se puede contrastar con algo?"
+  - position: 8
+    sentence: "Me gustó su manera de vender: cada afirmación era {{blank}} y ninguna pedía que yo confiara a ciegas."
+    hint_general: "Ninguna afirmación pide fe: todas se pueden mirar por fuera."
+    explanation: "Verificable: cada afirmación se puede mirar por fuera. «Verosímil» pediría creerla igual, y «transparente» hablaría de mostrar, no de contrastar."
+    options:
+      - position: 1
+        text: "transparente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Transparente» dice que no se esconde nada, y aquí lo que se subraya es que hay con qué contrastarlo."
+        hint_specific: "«Transparente» es no esconder. ¿Basta con no esconder para poder contrastar una cifra?"
+      - position: 2
+        text: "verificable"
+        is_correct: true
+      - position: 3
+        text: "verosímil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Verosímil» dice que la afirmación suena creíble, y la frase celebra justo que no haya que creerla a ciegas."
+        hint_specific: "«Verosímil» te pide creer. Relee el final: ¿te piden fe o te dan con qué mirar?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos columnas"
+    body: "Íñigo llevó la propuesta partida en dos columnas: a la izquierda, lo que se puede comprobar; a la derecha, lo que esperamos. «Solo defiendo la izquierda: es verificable», dijo. El cliente firmó esa misma tarde."
+    before_phrase: "Confía en mí, los números salen."
+    after_phrase: "Esta parte es verificable: mírala."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El logro con fecha"
+    body: "Le pidieron a Nerea un logro concreto. En vez de adjetivos, dio un mes, un número y dónde estaba anotado. «Es un resultado verificable», añadió. El panel dejó de tomar apuntes y empezó a preguntar por el método."
+    before_phrase: "Mejoré bastante los resultados, la verdad."
+    after_phrase: "Es un resultado verificable: está en el informe de marzo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del barrio"
+    body: "En el grupo del edificio alguien aseguró que la obra costaría el doble. Delia no discutió: pidió el presupuesto. «Si la cifra es verificable, la hablamos; si no, es un rumor». Al día siguiente apareció el papel."
+    before_phrase: "¿Y eso quién lo dice?"
+    after_phrase: "Si la cifra es verificable, la hablamos."
+metrics:
+  zipf_overall: 3.1976
+  dispersion_dp: 0.3137
+  pedantry_proxy: 0.3147
+  family_size: 42
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

@@ -1,0 +1,244 @@
+schema_version: 1
+sort_order: 7001
+slug: "jerga"
+status: "draft"
+lemma: "jerga"
+part_of_speech: "sustantivo"
+syllables:
+  - "jer"
+  - "ga"
+stressed_syllable: 1
+ipa_latam: "[ˈxeɾ.ɣa]"
+ipa_es: "[ˈxeɾ.ɣa]"
+explanation: "Palabras propias de un grupo o de un trabajo que quien viene de fuera no entiende."
+example_sentence: "Explicó el proyecto entero sin una sola palabra de jerga y todos lo siguieron."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar el muro sin culpar a nadie: es una costumbre del gremio, no un defecto de quien habla."
+when_not_to_use: "No la uses para el habla enredada que no dice nada, ni para un único término técnico suelto."
+collocations:
+  - "jerga técnica"
+  - "jerga del gremio"
+  - "hablar en jerga"
+replaces:
+  - before: "Habla con palabras raras del trabajo"
+    after: "Habla en jerga del gremio"
+  - before: "Usó términos que nadie de fuera entiende"
+    after: "Usó la jerga de su sector"
+  - before: "Eso suena a idioma de expertos"
+    after: "Eso suena a jerga de expertos"
+family: []
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin:
+    - "palabras raras"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "argot"
+    difference: "El «argot» lo trae un grupo social, como la gente de un barrio; la otra palabra nombra el habla de un trabajo."
+    memory_trick: "El argot lo aprendes en la calle; lo otro, en la oficina."
+  - confused_with: "tecnicismo"
+    difference: "Un «tecnicismo» es una sola palabra precisa; la otra nombra el modo entero de hablar de un gremio."
+    memory_trick: "El tecnicismo cabe en una palabra; lo otro llena la conversación."
+exercises:
+  - position: 1
+    sentence: "Elías enseña contabilidad a gente que empieza de cero, así que traduce cada término del gremio: sabe que la {{blank}} deja fuera a quien acaba de llegar."
+    hint_general: "Son las palabras de un trabajo: precisas para quien está dentro, opacas para quien llega."
+    explanation: "Jerga: las palabras del gremio dejan fuera a quien llega. «Jerigonza» es un habla confusa que no significa nada, y «cháchara» acusa de hablar de tonterías."
+    options:
+      - position: 1
+        text: "jerigonza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Jerigonza» es un habla enredada que no significa nada, y esos términos son exactos para quien los conoce."
+        hint_specific: "«Jerigonza» no dice nada ni a los de dentro. ¿Esos términos significan algo para el gremio?"
+      - position: 2
+        text: "jerga"
+        is_correct: true
+      - position: 3
+        text: "cháchara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cháchara» es coloquial y acusa de hablar de tonterías; aquí las palabras dicen mucho, solo que a los de dentro."
+        hint_specific: "«Cháchara» reprocha hablar de nada. ¿El problema es que no dicen nada o que no se entienden?"
+  - position: 2
+    sentence: "Ante los clientes, Nerea cambió cada término técnico por un ejemplo del día a día, y la {{blank}} desapareció de sus diapositivas."
+    hint_general: "Lo que quitó fue el vocabulario cerrado de su sector, no su manera de hablar."
+    explanation: "Jerga: quitó el vocabulario cerrado de su sector. «Palabrería» acusa de llenar el aire para impresionar, y una «muletilla» es una palabra que se repite por costumbre."
+    options:
+      - position: 1
+        text: "palabrería"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Palabrería» acusa de llenar el aire con palabras vacías para impresionar, y los términos que quitó decían algo exacto."
+        hint_specific: "«Palabrería» habla de palabras huecas. ¿Los términos técnicos que quitó estaban vacíos?"
+      - position: 2
+        text: "muletilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «muletilla» es una palabra que alguien repite por costumbre al hablar, y lo que cambió fueron términos de su sector."
+        hint_specific: "Una «muletilla» se repite una y otra vez. ¿Cambió repeticiones o cambió vocabulario del sector?"
+      - position: 3
+        text: "jerga"
+        is_correct: true
+  - position: 3
+    sentence: "Cuando su sobrina le preguntó a qué se dedicaba, Aurelio respondió con la {{blank}} del taller y la niña se quedó igual que antes."
+    hint_general: "Contestó con el vocabulario cerrado de su trabajo, que fuera de allí no llega a nadie."
+    explanation: "Jerga: contestó con el vocabulario cerrado del taller. «Jerigonza» sería un habla sin sentido, y «retórica» es el arte de convencer, que aquí nadie usa."
+    options:
+      - position: 1
+        text: "jerga"
+        is_correct: true
+      - position: 2
+        text: "jerigonza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Jerigonza» es un habla sin sentido para todos; esas palabras del taller son exactas entre compañeros."
+        hint_specific: "«Jerigonza» no la entiende nadie, ni los de dentro. ¿Los compañeros del taller se entienden?"
+      - position: 3
+        text: "retórica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retórica» es el arte de convencer con la forma del discurso, y aquí nadie intenta convencer: solo nombra herramientas."
+        hint_specific: "«Retórica» busca convencer. ¿Su respuesta intenta convencer a la niña de algo?"
+  - position: 4
+    sentence: "Damián volvió del congreso repitiendo la {{blank}} de los ponentes, aunque en casa nadie entendía de qué hablaba."
+    hint_general: "Trajo el vocabulario cerrado de un gremio ajeno, que fuera de ese congreso no significa nada."
+    explanation: "Jerga: trajo el vocabulario cerrado de un gremio. «Verborrea» reprocha hablar demasiado, y «pedantería» acusa de presumir de lo que se sabe."
+    options:
+      - position: 1
+        text: "verborrea"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Verborrea» reprocha hablar demasiado, y en casa el problema no es cuánto habla, sino qué palabras trae."
+        hint_specific: "«Verborrea» va de cantidad de palabras. ¿Molesta cuánto habla o que nadie lo entienda?"
+      - position: 2
+        text: "jerga"
+        is_correct: true
+      - position: 3
+        text: "pedantería"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pedantería» acusa de presumir de lo que se sabe, y él repite esas palabras porque se le pegaron, no para lucirse."
+        hint_specific: "«Pedantería» supone intención de presumir. ¿Quiere lucirse o se le quedaron pegadas?"
+  - position: 5
+    sentence: "Blanca dedicó la primera media hora a explicar diez palabras: sin esa base, dijo, la {{blank}} del sector convierte cualquier charla en un muro."
+    hint_general: "El vocabulario cerrado de un sector levanta un muro para quien no trabaja en él."
+    explanation: "Jerga: el vocabulario cerrado del sector levanta un muro. «Cháchara» acusa de hablar de tonterías, y una «muletilla» es una palabra repetida por costumbre."
+    options:
+      - position: 1
+        text: "cháchara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cháchara» es coloquial y acusa de hablar de tonterías, y esas diez palabras son las que sostienen el tema."
+        hint_specific: "«Cháchara» suena a charla ligera. ¿Esas diez palabras eran ligeras o eran el centro del tema?"
+      - position: 2
+        text: "muletilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «muletilla» es una palabra que alguien repite sin querer; aquí el muro lo levanta el vocabulario del sector."
+        hint_specific: "Una «muletilla» es cosa de una persona. ¿El muro lo levanta una persona o todo un sector?"
+      - position: 3
+        text: "jerga"
+        is_correct: true
+  - position: 6
+    sentence: "Frente al tribunal, Iker describió su trabajo con palabras corrientes y dejó a un lado la {{blank}} que usa con sus compañeros."
+    hint_general: "Guardó el vocabulario cerrado que comparte con su equipo y que fuera de él no se entiende."
+    explanation: "Jerga: guardó el vocabulario que solo comparte con su equipo. «Palabrería» acusa de hablar para impresionar, y «jerigonza» sería un habla sin sentido para nadie."
+    options:
+      - position: 1
+        text: "palabrería"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Palabrería» acusa de hablar mucho para impresionar, y con sus compañeros esas palabras sirven para trabajar."
+        hint_specific: "«Palabrería» no aporta nada a nadie. ¿Esas palabras le sirven a su equipo para algo?"
+      - position: 2
+        text: "jerigonza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Jerigonza» es un habla que nadie descifra, y entre compañeros esas palabras funcionan perfectamente."
+        hint_specific: "«Jerigonza» deja fuera a todo el mundo. ¿Sus compañeros se entienden con ese vocabulario?"
+      - position: 3
+        text: "jerga"
+        is_correct: true
+  - position: 7
+    sentence: "Yago llevaba veinte minutos hablando de motores con dos desconocidos y no notó que la {{blank}} los había dejado fuera de la charla."
+    hint_general: "El vocabulario cerrado de una afición deja fuera a quien no la comparte."
+    explanation: "Jerga: el vocabulario de los motores dejó fuera a los demás. Una «muletilla» es una palabra repetida por costumbre, y «retórica» es el arte de convencer."
+    options:
+      - position: 1
+        text: "muletilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «muletilla» es una palabra que alguien repite por costumbre, y lo que aparta a los otros es el vocabulario de los motores."
+        hint_specific: "Una «muletilla» molesta, pero se entiende. ¿Aquí los otros no entienden o están cansados de una repetición?"
+      - position: 2
+        text: "retórica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retórica» es el arte de convencer con la forma del discurso, y él no intenta convencer a nadie de nada."
+        hint_specific: "«Retórica» apunta a convencer. ¿Yago busca convencerlos o solo habla de lo suyo?"
+      - position: 3
+        text: "jerga"
+        is_correct: true
+  - position: 8
+    sentence: "Marina reescribió el manual entero y cambió cada término interno por uno que cualquiera entiende, de modo que la {{blank}} se quedó fuera del texto."
+    hint_general: "Sacó del texto el vocabulario cerrado de la empresa, el que solo manejan los de dentro."
+    explanation: "Jerga: sacó del texto el vocabulario que solo manejan los de dentro. «Jerigonza» sería un texto sin sentido, y «verborrea» reprocha escribir de más."
+    options:
+      - position: 1
+        text: "jerigonza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Jerigonza» sería un texto sin sentido para nadie, y el manual funcionaba bien entre los de la empresa."
+        hint_specific: "«Jerigonza» no la descifra nadie. ¿El manual servía a alguien antes de la reescritura?"
+      - position: 2
+        text: "verborrea"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Verborrea» reprocha escribir de más, y Marina no acortó el manual: cambió unas palabras por otras."
+        hint_specific: "«Verborrea» va de exceso de palabras. ¿Marina quitó palabras o las sustituyó?"
+      - position: 3
+        text: "jerga"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez minutos antes"
+    body: "Antes de la reunión con el cliente, Olivia repasó la presentación y tachó seis palabras. «Si abrimos con jerga, en dos minutos dejan de escuchar». Su compañero las cambió por ejemplos. El cliente preguntó tres veces, y las tres preguntas eran buenas."
+    before_phrase: "Usamos demasiadas palabras raras del sector."
+    after_phrase: "Estamos abriendo con jerga."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "La cena del sábado"
+    body: "Su cuñado llevaba media hora hablando de su trabajo y nadie decía nada. Nadia sonrió: «Perdona, se nos escapa la jerga. ¿Me lo cuentas como si yo tuviera diez años?». Él se rio, empezó otra vez y la mesa entera se enganchó."
+    before_phrase: "No entiendo ni una palabra de lo que dices."
+    after_phrase: "Se nos escapa la jerga, cuéntamelo más sencillo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Cuéntamelo sin siglas"
+    body: "El tribunal le pidió a Fabián que describiera su último proyecto. Empezó con tres siglas y se detuvo. «Voy a dejar la jerga a un lado: montamos un sistema para que dos equipos vieran el mismo dato el mismo día». Alguien tomó nota."
+    before_phrase: "Perdón, me salen las palabras del trabajo."
+    after_phrase: "Voy a dejar la jerga a un lado."
+metrics:
+  zipf_overall: 3.2783
+  dispersion_dp: 0.2135
+  pedantry_proxy: 0.4018
+  family_size: 0
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

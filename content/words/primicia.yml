@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "primicia"
+status: "draft"
+lemma: "primicia"
+part_of_speech: "sustantivo"
+syllables:
+  - "pri"
+  - "mi"
+  - "cia"
+stressed_syllable: 2
+ipa_latam: "[pɾiˈmi.sja]"
+ipa_es: "[pɾiˈmi.θja]"
+explanation: "Noticia que se cuenta por primera vez, antes que en ningún otro sitio."
+example_sentence: "No es una primicia: eso lo publicaron hace dos semanas."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsala con cuidado: cuando alguien la anuncia y no lo es, pierde más de lo que gana."
+when_not_to_use: "No la uses para algo que solo es nuevo para ti; esto supone que nadie lo había contado antes."
+collocations:
+  - "dar una primicia"
+  - "no es ninguna primicia"
+  - "la primicia del año"
+replaces:
+  - before: "Esto os lo cuento yo primero"
+    after: "Esto es una primicia"
+  - before: "Eso ya lo sabía todo el mundo"
+    after: "Eso no era ninguna primicia"
+  - before: "Me llegó antes que a nadie"
+    after: "Tuve la primicia"
+family: []
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+  - slug: "medios-entrevistas"
+    relevance: 2
+tags:
+  comodin:
+    - "novedad"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "premisa"
+    difference: "Una premisa es el punto de partida de un razonamiento; lo otro es una noticia que nadie ha contado aún."
+    memory_trick: "La premisa abre el argumento; la primicia abre el periódico."
+  - confused_with: "novedad"
+    difference: "Una novedad es cualquier cosa nueva; esta palabra exige además ser el primero en contarla."
+    memory_trick: "La novedad es nueva; la primicia es primera."
+exercises:
+  - position: 1
+    sentence: "Zoe anunció una {{blank}} en su publicación y resultó que el dato llevaba dos semanas en la web del ayuntamiento."
+    hint_general: "Prometió ser la primera en contarlo y no lo era."
+    explanation: "Primicia: prometió contarlo antes que nadie. «Premisa» sería el punto de partida de un razonamiento, y «novedad» solo exigiría que fuera reciente."
+    options:
+      - position: 1
+        text: "premisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Premisa» es el punto de partida de un razonamiento, y aquí lo que se anuncia es un dato que se publica."
+        hint_specific: "«Premisa» pertenece a un razonamiento. ¿Zoe razona algo o publica algo?"
+      - position: 2
+        text: "primicia"
+        is_correct: true
+      - position: 3
+        text: "novedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Novedad» solo pide que sea reciente, y un dato de hace dos semanas puede seguir siendo nuevo para mucha gente."
+        hint_specific: "«Novedad» no exige ser el primero. ¿Qué es lo que falló en el anuncio de Zoe?"
+  - position: 2
+    sentence: "El periódico local dio la {{blank}} del cierre del puente y los grandes la copiaron al día siguiente."
+    hint_general: "Lo contaron antes que nadie y los demás llegaron después."
+    explanation: "Primicia: lo contaron antes que nadie. «Bombazo» es de charla informal y promete escándalo, y «resumen» recogería algo ya publicado."
+    options:
+      - position: 1
+        text: "bombazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bombazo» es de conversación muy suelta y promete escándalo, y el cierre de un puente es una noticia de servicio."
+        hint_specific: "«Bombazo» promete escándalo, en tono de calle. ¿Hay escándalo en el cierre de un puente?"
+      - position: 2
+        text: "primicia"
+        is_correct: true
+      - position: 3
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumen» recoge en corto algo ya publicado, y aquí fueron los primeros en contarlo."
+        hint_specific: "«Resumen» llega después. ¿Quién llegó primero?"
+  - position: 3
+    sentence: "Mi tía nos contó como {{blank}} que el bar de la esquina cambiaba de dueño, y llevaba el cartel puesto desde el lunes."
+    hint_general: "Lo contó como si fuera la primera y estaba a la vista."
+    explanation: "Primicia: como si fuera la primera en contarlo. «Premisa» sería el arranque de un razonamiento, y «broma» supondría que no hablaba en serio."
+    options:
+      - position: 1
+        text: "primicia"
+        is_correct: true
+      - position: 2
+        text: "premisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Premisa» es el punto de partida de un razonamiento, y tu tía no razona: da una noticia del barrio."
+        hint_specific: "«Premisa» abre un razonamiento. ¿Tu tía razona o cuenta?"
+      - position: 3
+        text: "broma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Broma» supondría que no hablaba en serio, y ella lo contaba convencida de ser la primera."
+        hint_specific: "«Broma» no va en serio. ¿Tu tía bromeaba?"
+  - position: 4
+    sentence: "En el grupo del equipo, Efraín pidió no soltar la {{blank}} hasta que el contrato estuviera firmado."
+    hint_general: "Pide no ser los primeros en contarlo todavía."
+    explanation: "Primicia: ser los primeros en contarlo. «Notición» es de charla informal y exagera el tamaño, y «promesa» sería un compromiso, no una noticia."
+    options:
+      - position: 1
+        text: "notición"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Notición» es de conversación suelta y exagera el tamaño de la noticia, y aquí lo que importa es el momento de contarla."
+        hint_specific: "«Notición» agranda la noticia, en tono informal. ¿Lo que importa aquí es el tamaño o el momento?"
+      - position: 2
+        text: "primicia"
+        is_correct: true
+      - position: 3
+        text: "promesa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Promesa» es un compromiso que se asume, y lo que hay que guardar aquí es una noticia."
+        hint_specific: "«Promesa» compromete a alguien. ¿Qué hay que guardar hasta la firma?"
+  - position: 5
+    sentence: "La cuenta de Vera creció cuando dejó de perseguir la {{blank}} y empezó a explicar lo que ya se sabía."
+    hint_general: "Dejó de correr por ser la primera en contarlo."
+    explanation: "Primicia: correr por ser la primera. «Premisa» sería el arranque de un razonamiento, y «verdad» cambiaría el asunto por completo."
+    options:
+      - position: 1
+        text: "verdad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Verdad» diría que dejó de buscar lo cierto, y la frase cuenta que empezó a explicar mejor lo cierto."
+        hint_specific: "«Verdad» es otra cosa. ¿Vera renunció a la verdad o a la velocidad?"
+      - position: 2
+        text: "primicia"
+        is_correct: true
+      - position: 3
+        text: "premisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Premisa» es el punto de partida de un razonamiento, y ella corría por llegar antes que nadie, no por argumentar."
+        hint_specific: "«Premisa» abre un argumento. ¿Qué perseguía Vera en redes?"
+  - position: 6
+    sentence: "Lo que parecía una {{blank}} resultó ser una nota de prensa que habían recibido veinte medios a la vez."
+    hint_general: "Parecía exclusivo y lo tenía todo el mundo."
+    explanation: "Primicia: parecía contarse por primera vez. «Bombazo» prometería escándalo en tono informal, y «mentira» diría que el dato era falso."
+    options:
+      - position: 1
+        text: "bombazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bombazo» es informal y anuncia escándalo, y aquí el problema no es el contenido sino que lo tenían veinte medios."
+        hint_specific: "«Bombazo» promete escándalo, en registro suelto. ¿Qué falló, el contenido o la exclusividad?"
+      - position: 2
+        text: "primicia"
+        is_correct: true
+      - position: 3
+        text: "mentira"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mentira» diría que el dato era falso, y lo que pasó es que no era exclusivo."
+        hint_specific: "«Mentira» acusa al dato de falso. ¿El dato era falso o compartido?"
+  - position: 7
+    sentence: "Casilda tenía la {{blank}} y prefirió esperar dos días para contarla con los dos nombres confirmados."
+    hint_general: "Podía contarlo antes que nadie y decidió esperar."
+    explanation: "Primicia: podía contarlo antes que nadie. «Premisa» sería el arranque de un razonamiento, y «prueba» apuntaría al documento que lo demuestra."
+    options:
+      - position: 1
+        text: "prueba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prueba» es el documento que demuestra algo, y lo que ella tenía era la posibilidad de contarlo primero."
+        hint_specific: "«Prueba» demuestra. ¿Le faltaban pruebas o le faltaban nombres confirmados?"
+      - position: 2
+        text: "primicia"
+        is_correct: true
+      - position: 3
+        text: "premisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Premisa» es el punto de partida de un razonamiento, y aquí lo que se guarda dos días es una noticia."
+        hint_specific: "«Premisa» abre un argumento. ¿Qué guarda Casilda dos días?"
+  - position: 8
+    sentence: "En el barrio, la {{blank}} sobre la obra corrió por el mercado antes de llegar al tablón del portal."
+    hint_general: "La noticia se contó por primera vez en el mercado."
+    explanation: "Primicia: la noticia se contó primero en el mercado. «Notición» exagera el tamaño en tono informal, y «orden» sería una instrucción, no una noticia."
+    options:
+      - position: 1
+        text: "orden"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Orden» sería una instrucción que alguien manda cumplir, y aquí lo que corre es una noticia."
+        hint_specific: "«Orden» se obedece. ¿Se obedece algo en ese mercado?"
+      - position: 2
+        text: "notición"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Notición» es de charla informal y agranda la noticia, y la frase mide dónde se contó primero, no su tamaño."
+        hint_specific: "«Notición» agranda, en tono de calle. ¿La frase mide tamaño o mide quién fue primero?"
+      - position: 3
+        text: "primicia"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos días de espera"
+    body: "Casilda podía publicar el jueves y esperó al sábado, con los dos nombres confirmados. «Tenía la primicia y no tenía la mitad de los datos», explicó. Publicó dos días tarde y fue la única versión que nadie tuvo que corregir."
+    before_phrase: "Lo tengo antes que nadie, lo saco ya."
+    after_phrase: "Tenía la primicia y me faltaban datos."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El cartel del lunes"
+    body: "Mi tía nos reunió en la cocina para contarnos que el bar de la esquina cambiaba de dueño. Lo contó como una primicia. El cartel llevaba puesto desde el lunes y lo habíamos visto todos. Nadie se lo dijo: la escuchamos hasta el final."
+    before_phrase: "Les cuento algo que nadie sabe."
+    after_phrase: "Nos lo contó como una primicia."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dejar de correr"
+    body: "Le preguntaron a Vera por qué su cuenta había crecido justo cuando publicaba menos. «Dejé de perseguir la primicia», contestó. «Ahora explico lo que ya se sabe y la gente se queda». Se lo pidieron por escrito para el boletín."
+    before_phrase: "Antes quería contarlo todo el primero."
+    after_phrase: "Dejé de perseguir la primicia."
+metrics:
+  zipf_overall: 3.4519
+  dispersion_dp: 0.2219
+  pedantry_proxy: 0.5428
+  family_size: 30
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-15"

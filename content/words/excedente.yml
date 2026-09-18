@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "excedente"
+status: "draft"
+lemma: "excedente"
+part_of_speech: "sustantivo"
+syllables:
+  - "ex"
+  - "ce"
+  - "den"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[ek.seˈðen.te]"
+ipa_es: "[eks.θeˈðen.te]"
+explanation: "Lo que queda cuando ya se cubrió todo lo que hacía falta."
+example_sentence: "Con el excedente de sillas montamos la sala pequeña."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Convierte un «nos sobró» en un recurso con nombre: lo que tiene nombre se puede repartir o vender."
+when_not_to_use: "No la uses para restos que ya no sirven; esto es material bueno que quedó libre."
+collocations:
+  - "el excedente de producción"
+  - "vender el excedente"
+  - "repartir el excedente"
+replaces:
+  - before: "Nos sobró bastante material"
+    after: "Tenemos un excedente de material"
+  - before: "Lo que quedó lo repartimos"
+    after: "Repartimos el excedente"
+  - before: "Este año hicimos de más"
+    after: "Este año hubo excedente"
+family:
+  - "exceder"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin:
+    - "lo que sobró"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "precedente"
+    difference: "Un precedente es un caso anterior que sirve de referencia; esto es material que quedó libre."
+    memory_trick: "El precedente viene de antes; el excedente queda después."
+  - confused_with: "desperdicio"
+    difference: "El desperdicio ya no sirve; lo otro está en buen estado y se puede usar o vender."
+    memory_trick: "El desperdicio se tira; el excedente se reparte."
+exercises:
+  - position: 1
+    sentence: "La panadería hornea de más los viernes y reparte el {{blank}} en el comedor del barrio."
+    hint_general: "Lo que quedó está en buen estado y se puede aprovechar."
+    explanation: "Excedente: pan bueno que quedó libre. «Precedente» sería un caso anterior que marca la pauta, y «desperdicio» daría a entender que ya no sirve."
+    options:
+      - position: 1
+        text: "precedente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precedente» es un caso anterior que sirve de referencia, y aquí lo que se reparte es pan."
+        hint_specific: "«Precedente» habla de un caso previo. ¿Se reparte un caso o se reparte comida?"
+      - position: 2
+        text: "excedente"
+        is_correct: true
+      - position: 3
+        text: "desperdicio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desperdicio» supone que el pan ya no sirve, y lo llevan a un comedor para que se coma."
+        hint_specific: "«Desperdicio» va a la basura. ¿Dónde acaba ese pan?"
+
+  - position: 2
+    sentence: "Tras montar el escenario quedó un {{blank}} de tablones, y Salvador lo guardó para la feria de mayo."
+    hint_general: "Sobró material bueno y se guarda para otra ocasión."
+    explanation: "Excedente: tablones buenos que quedaron libres. «Superávit» es palabra de informe económico, y «resto» no dice que el material siga sirviendo."
+    options:
+      - position: 1
+        text: "superávit"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Superávit» es vocabulario de informes de cuentas y habla de dinero, no de tablones en un almacén."
+        hint_specific: "«Superávit» suena a informe contable. ¿Encaja contando tablones guardados?"
+      - position: 2
+        text: "excedente"
+        is_correct: true
+      - position: 3
+        text: "resto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resto» solo dice que quedó algo, sin aclarar que estuviera en buen estado para volver a usarse."
+        hint_specific: "«Resto» no promete calidad. ¿Por qué guarda Salvador esos tablones?"
+  - position: 3
+    sentence: "El huerto dio tanto tomate este año que el {{blank}} se vendió en el mercado del domingo."
+    hint_general: "Lo que sobró de la cosecha se pudo vender tal cual."
+    explanation: "Excedente: cosecha buena que sobró y se vendió. «Precedente» sería un caso anterior, y «desperdicio» no se vendería en un mercado."
+    options:
+      - position: 1
+        text: "desperdicio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desperdicio» es lo que ya no sirve, y estos tomates se vendieron en el mercado."
+        hint_specific: "«Desperdicio» no se vende. ¿Qué pasó con esos tomates el domingo?"
+      - position: 2
+        text: "excedente"
+        is_correct: true
+      - position: 3
+        text: "precedente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precedente» nombra un caso anterior que sirve de guía, y aquí lo que hay son tomates de más."
+        hint_specific: "«Precedente» es un caso del pasado. ¿Se vendió un caso o una cosecha?"
+  - position: 4
+    sentence: "Con el {{blank}} de sillas de la boda montamos la sala pequeña y todavía quedaron seis."
+    hint_general: "Las sillas que quedaron libres sirvieron para otra sala."
+    explanation: "Excedente: sillas libres que sirvieron para otra sala. «Sobras» es de cocina y de charla informal, y «reserva» diría que se guardaron a propósito de antemano."
+    options:
+      - position: 1
+        text: "excedente"
+        is_correct: true
+      - position: 2
+        text: "sobras"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sobras» es de cocina y conversación informal, y además rebaja lo que nombra: estas sillas están perfectas."
+        hint_specific: "«Sobras» suena a lo que queda en el plato. ¿Encaja con sillas en buen estado?"
+      - position: 3
+        text: "reserva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reserva» es algo guardado a propósito desde el principio, y estas sillas quedaron libres al final."
+        hint_specific: "«Reserva» se aparta antes. ¿Estas sillas se apartaron antes o sobraron después?"
+  - position: 5
+    sentence: "La fábrica colocó su {{blank}} en dos ciudades vecinas en lugar de bajar el ritmo de producción."
+    hint_general: "Vendió fuera lo que había producido de más."
+    explanation: "Excedente: lo producido de más, colocado fuera. «Superávit» es lenguaje de informes de cuentas, y «resto» no diría que el producto siga en buen estado."
+    options:
+      - position: 1
+        text: "resto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resto» solo dice que quedó algo, y aquí lo que se vende es producto entero y nuevo."
+        hint_specific: "«Resto» no dice en qué estado está. ¿Se vendería a otra ciudad algo dudoso?"
+      - position: 2
+        text: "excedente"
+        is_correct: true
+      - position: 3
+        text: "superávit"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Superávit» pertenece a los informes de cuentas y se refiere a dinero, no a cajas que se transportan."
+        hint_specific: "«Superávit» habla de cuentas y no de mercancía. ¿Qué viaja a las ciudades vecinas?"
+  - position: 6
+    sentence: "Mi abuelo embotellaba el {{blank}} de la conserva y lo repartía entre los nietos en Navidad."
+    hint_general: "Lo que quedó de más se embotella y se regala."
+    explanation: "Excedente: conserva buena que quedó de más. «Precedente» sería un caso anterior, y «sobras» rebajaría algo que se regala con orgullo."
+    options:
+      - position: 1
+        text: "sobras"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sobras» es de charla de cocina y rebaja lo que nombra; nadie regala sobras a sus nietos por Navidad."
+        hint_specific: "«Sobras» suena a lo que queda en la fuente. ¿Se regalaría eso en Navidad?"
+      - position: 2
+        text: "excedente"
+        is_correct: true
+      - position: 3
+        text: "precedente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precedente» es un caso anterior que marca la pauta, y lo que se embotella es conserva."
+        hint_specific: "«Precedente» pertenece al pasado y no se embotella. ¿Qué entra en esas botellas?"
+  - position: 7
+    sentence: "Al cerrar la caja del festival hubo un {{blank}} y el grupo decidió usarlo para el año siguiente."
+    hint_general: "Después de pagarlo todo quedó dinero disponible."
+    explanation: "Excedente: quedó dinero después de pagarlo todo. «Desperdicio» supondría que se perdió, y «reserva» diría que se apartó antes de empezar."
+    options:
+      - position: 1
+        text: "reserva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reserva» se aparta antes de empezar, y este dinero apareció al cerrar las cuentas."
+        hint_specific: "«Reserva» se decide al principio. ¿Cuándo apareció este dinero?"
+      - position: 2
+        text: "excedente"
+        is_correct: true
+      - position: 3
+        text: "desperdicio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desperdicio» sería dinero perdido, y aquí el grupo lo guarda para el festival siguiente."
+        hint_specific: "«Desperdicio» se pierde. ¿Este dinero se perdió o se guardó?"
+  - position: 8
+    sentence: "La cooperativa vende su {{blank}} de leche a una quesería y con eso paga el camión."
+    hint_general: "Lo que no consumen se vende y sostiene otro gasto."
+    explanation: "Excedente: la leche que no consumen y venden. «Superávit» es lenguaje contable sobre dinero, y «precedente» nombraría un caso anterior."
+    options:
+      - position: 1
+        text: "excedente"
+        is_correct: true
+      - position: 2
+        text: "precedente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Precedente» es un caso anterior que sirve de referencia, y a una quesería se le vende leche."
+        hint_specific: "«Precedente» es un caso del pasado. ¿Qué compra la quesería?"
+      - position: 3
+        text: "superávit"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Superávit» es palabra de informes de cuentas y habla de dinero, y lo que sale de la cooperativa es leche."
+        hint_specific: "«Superávit» pertenece a la contabilidad. ¿Qué se carga en ese camión?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Las sillas de la boda"
+    body: "Terminada la boda quedaron cuarenta sillas apiladas y nadie sabía qué hacer con ellas. Vera lo resolvió en una frase: «Con el excedente montamos la sala pequeña». Al día siguiente la sala estaba lista y aún sobraban seis."
+    before_phrase: "Nos sobraron un montón de sillas."
+    after_phrase: "Con el excedente montamos la sala pequeña."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las botellas de mi abuelo"
+    body: "Mi abuelo hacía conserva para un batallón. Cuando le preguntábamos por qué tanta, contestaba: «El excedente es lo que se llevan los nietos en Navidad». Ahora entiendo que cocinaba de más a propósito."
+    before_phrase: "Siempre le sobraba muchísimo."
+    after_phrase: "El excedente es lo que se llevan los nietos."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "No bajar el ritmo"
+    body: "Le preguntaron a Salvador qué hizo cuando la fábrica produjo de más. «No bajamos el ritmo», dijo. «Colocamos el excedente en dos ciudades vecinas y nadie perdió turnos». Le pidieron los números y los llevaba encima."
+    before_phrase: "Nos sobraba producto y lo colocamos por ahí."
+    after_phrase: "Colocamos el excedente en dos ciudades vecinas."
+metrics:
+  zipf_overall: 3.6280
+  dispersion_dp: 0.1883
+  pedantry_proxy: 0.5301
+  family_size: 27
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

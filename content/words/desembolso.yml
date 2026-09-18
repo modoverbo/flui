@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "desembolso"
+status: "draft"
+lemma: "desembolso"
+part_of_speech: "sustantivo"
+syllables:
+  - "de"
+  - "sem"
+  - "bol"
+  - "so"
+stressed_syllable: 3
+ipa_latam: "[de.semˈbol.so]"
+ipa_es: "[de.semˈbol.so]"
+explanation: "El dinero que sale de tu cuenta en un pago, no lo que pagas poco a poco."
+example_sentence: "El curso son mil pesos, pero en tres partes: no hay un desembolso grande de golpe."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para separar el precio total del susto del primer pago: casi siempre lo que asusta es el segundo."
+when_not_to_use: "No la uses para el precio total ni para el gasto de cada mes; esta palabra mira el momento de pagar."
+collocations:
+  - "un desembolso inicial"
+  - "un desembolso fuerte"
+  - "repartir el desembolso"
+replaces:
+  - before: "Hay que soltar mucho dinero de golpe"
+    after: "Hay un desembolso fuerte al principio"
+  - before: "Lo que pagas al entrar es mucho"
+    after: "El desembolso inicial es alto"
+  - before: "Se puede pagar en partes"
+    after: "El desembolso se reparte en tres pagos"
+family:
+  - "desembolsar"
+themes:
+  - slug: "ventas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "pagar de golpe"
+    - "gasto"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reembolso"
+    difference: "El reembolso entra: es dinero que te devuelven. El otro sale: es dinero que pagas."
+    memory_trick: "El reembolso vuelve a ti; el desembolso se va."
+  - confused_with: "coste"
+    difference: "El coste es cuánto vale algo en total; esta palabra mira el momento en que se paga."
+    memory_trick: "El coste está en la etiqueta; el desembolso, en el día del pago."
+exercises:
+  - position: 1
+    sentence: "El equipo nuevo vale lo mismo que el viejo, pero el {{blank}} inicial asusta: hay que pagar la mitad al firmar."
+    hint_general: "Habla del dinero que hay que poner de una vez al principio."
+    explanation: "Desembolso: el dinero que hay que poner al firmar. «Reembolso» sería dinero que te devuelven, y «coste» hablaría del total, no del momento de pagar."
+    options:
+      - position: 1
+        text: "reembolso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reembolso» es dinero que vuelve a tu cuenta, y aquí hay que sacarlo para firmar."
+        hint_specific: "«Reembolso» va en la dirección contraria: entra. ¿Aquí el dinero entra o sale?"
+      - position: 2
+        text: "desembolso"
+        is_correct: true
+      - position: 3
+        text: "coste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Coste» dice cuánto vale el equipo en total, y la frase aclara que los dos valen lo mismo."
+        hint_specific: "«Coste» es el total. Relee el inicio: ¿los dos equipos valen igual?"
+  - position: 2
+    sentence: "Yolanda propuso dividir la reforma en tres fases para repartir el {{blank}} a lo largo del año."
+    hint_general: "Quiere que el dinero no salga todo el mismo día."
+    explanation: "Desembolso: el dinero sale en tres momentos y no en uno. «Dispendio» es palabra formal que además acusa de derrochar, y «presupuesto» sería el plan, no el pago."
+    options:
+      - position: 1
+        text: "dispendio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dispendio» es palabra muy formal y da a entender que el dinero se malgasta; aquí solo se reparte en fases."
+        hint_specific: "«Dispendio» suena solemne y acusa de derroche. ¿Yolanda derrocha o reparte?"
+      - position: 2
+        text: "desembolso"
+        is_correct: true
+      - position: 3
+        text: "presupuesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presupuesto» es el plan de lo que se piensa gastar, y lo que se reparte aquí son los pagos reales."
+        hint_specific: "«Presupuesto» es un plan escrito. ¿Se reparte un plan o se reparten pagos?"
+  - position: 3
+    sentence: "Antes de apuntarse al posgrado, Ismael calculó si aguantaba el {{blank}} de la matrícula sin tocar sus ahorros."
+    hint_general: "Mira si puede pagar de una vez lo que piden al entrar."
+    explanation: "Desembolso: lo que hay que pagar de una vez al entrar. «Desempeño» hablaría de cómo rinde alguien, e «importe» sería la cifra en el papel, no el esfuerzo de pagarla."
+    options:
+      - position: 1
+        text: "desembolso"
+        is_correct: true
+      - position: 2
+        text: "desempeño"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desempeño» describe cómo rinde una persona en su trabajo, y aquí se habla de pagar una matrícula."
+        hint_specific: "«Desempeño» va de cómo rinde alguien. ¿Ismael calcula su rendimiento o su cuenta?"
+      - position: 3
+        text: "importe"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Importe» es la cifra escrita en el recibo, y lo que él calcula es si puede soltarla de golpe."
+        hint_specific: "«Importe» es el número del recibo. ¿Duda de la cifra o de poder pagarla ya?"
+  - position: 4
+    sentence: "La cooperativa pidió que cada socio hiciera un {{blank}} pequeño en enero, en lugar de una cuota mensual."
+    hint_general: "Cada socio pone dinero una sola vez, no cada mes."
+    explanation: "Desembolso: cada socio paga una vez en enero. «Dineral» es de charla informal y significa una cantidad enorme, y «ahorro» sería dinero guardado, no entregado."
+    options:
+      - position: 1
+        text: "dineral"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dineral» es de conversación muy suelta y afirma que la cantidad es enorme, y la frase dice que es pequeña."
+        hint_specific: "«Dineral» exagera el tamaño y suena a charla de calle. ¿Cómo describe la frase esa cantidad?"
+      - position: 2
+        text: "ahorro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ahorro» es dinero que se guarda, y aquí cada socio lo entrega a la cooperativa."
+        hint_specific: "«Ahorro» se queda contigo. ¿El dinero se guarda o se entrega?"
+      - position: 3
+        text: "desembolso"
+        is_correct: true
+  - position: 5
+    sentence: "Al comparar las dos ofertas, Karla vio que el precio final era igual y el {{blank}} del primer mes, muy distinto."
+    hint_general: "Con el mismo total, lo que se paga el primer mes cambia mucho."
+    explanation: "Desembolso: lo que se paga el primer mes. «Reembolso» sería dinero devuelto, y «coste» ya está descartado porque el precio final es igual."
+    options:
+      - position: 1
+        text: "coste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Coste» es el total, y la frase dice que el precio final de las dos ofertas es el mismo."
+        hint_specific: "«Coste» mira el total. ¿Qué dice la frase sobre el precio final de las dos?"
+      - position: 2
+        text: "desembolso"
+        is_correct: true
+      - position: 3
+        text: "reembolso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reembolso» es dinero que te devuelven, y en la comparación nadie devuelve nada: se paga."
+        hint_specific: "«Reembolso» vuelve hacia ti. ¿Karla compara lo que entra o lo que sale?"
+  - position: 6
+    sentence: "Mi cuñado se animó a la furgoneta cuando el concesionario partió el {{blank}} en doce meses sin intereses."
+    hint_general: "El dinero deja de salir de golpe y se reparte en meses."
+    explanation: "Desembolso: deja de salir de golpe y se reparte. «Dispendio» sería palabra formal que acusa de derroche, y «deuda» hablaría de lo que se debe, no de lo que se paga."
+    options:
+      - position: 1
+        text: "deuda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Deuda» es lo que queda pendiente, y aquí lo que se parte en doce es el dinero que sale cada mes."
+        hint_specific: "«Deuda» es lo que aún debes. ¿Se parte lo pendiente o se parte el pago?"
+      - position: 2
+        text: "desembolso"
+        is_correct: true
+      - position: 3
+        text: "dispendio"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dispendio» es formal y da por hecho que hay derroche, y comprar una furgoneta a plazos no lo es."
+        hint_specific: "«Dispendio» acusa de malgastar con tono solemne. ¿Hay derroche en pagar a plazos?"
+  - position: 7
+    sentence: "El informe recomendó alquilar el local en vez de comprarlo para evitar un {{blank}} tan alto el primer año."
+    hint_general: "Alquilar evita poner mucho dinero de una vez al empezar."
+    explanation: "Desembolso: evita poner mucho dinero de una vez. «Desempeño» hablaría del rendimiento del local, e «importe» sería una cifra escrita, no el esfuerzo del primer año."
+    options:
+      - position: 1
+        text: "desembolso"
+        is_correct: true
+      - position: 2
+        text: "desempeño"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desempeño» mide cómo funciona alguien o algo, y un local que se alquila no rinde: se paga."
+        hint_specific: "«Desempeño» mide rendimiento. ¿El informe compara rendimientos o pagos?"
+      - position: 3
+        text: "importe"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Importe» nombra la cifra del recibo, y lo que se evita alquilando es tener que soltarla entera."
+        hint_specific: "«Importe» es el número escrito. ¿Lo que se evita es un número o un pago de golpe?"
+  - position: 8
+    sentence: "Para la boda de mi prima, los hermanos acordamos un {{blank}} igual por cabeza y lo pusimos en marzo."
+    hint_general: "Cada uno puso la misma cantidad en la misma fecha."
+    explanation: "Desembolso: cada hermano puso lo mismo en marzo. «Dineral» exagera el tamaño con tono de calle, y «ahorro» sería dinero guardado, no puesto."
+    options:
+      - position: 1
+        text: "ahorro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ahorro» es lo que se guarda para después, y aquí el dinero se entregó en marzo."
+        hint_specific: "«Ahorro» se queda en tu cuenta. ¿El dinero se guardó o se entregó?"
+      - position: 2
+        text: "dineral"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dineral» es informal y afirma que la cantidad es enorme, y la frase solo dice que fue igual para todos."
+        hint_specific: "«Dineral» es de charla suelta y agranda la cifra. ¿La frase dice cuánto fue o solo que fue igual?"
+      - position: 3
+        text: "desembolso"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La mitad al firmar"
+    body: "El cliente dijo que el precio le parecía justo y aun así no firmaba. Delia lo miró y preguntó por el calendario de pagos. «El problema no es el precio: es el desembolso inicial», reconoció él. Lo partieron en tres y firmaron esa tarde."
+    before_phrase: "Es que hay que soltar mucho de golpe."
+    after_phrase: "El problema no es el precio: es el desembolso inicial."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La boda de mi prima"
+    body: "Los hermanos discutíamos cuánto poner para la boda y nadie decía una cifra. Mi hermana la dijo: «Un desembolso igual por cabeza, en marzo, y no se habla más». Nadie se sintió juzgado y el tema se cerró en cinco minutos."
+    before_phrase: "A ver cómo lo hacemos con el dinero."
+    after_phrase: "Un desembolso igual por cabeza, en marzo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Alquilar o comprar"
+    body: "Le pidieron a Ismael una decisión difícil de su último trabajo. «Recomendé alquilar el local», dijo, «porque el desembolso del primer año nos habría dejado sin equipo». Le preguntaron cómo lo defendió dentro y ahí empezó la entrevista de verdad."
+    before_phrase: "Comprar nos dejaba sin dinero al principio."
+    after_phrase: "El desembolso del primer año nos dejaba sin equipo."
+metrics:
+  zipf_overall: 4.0756
+  dispersion_dp: 0.2233
+  pedantry_proxy: 0.5332
+  family_size: 125
+provenance:
+  generator: "flui authoring agent — theme ventas"
+  gate: null
+  checked_on: "2026-09-15"

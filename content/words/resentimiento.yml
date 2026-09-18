@@ -1,0 +1,243 @@
+schema_version: 1
+sort_order: 8206
+slug: "resentimiento"
+status: "draft"
+lemma: "resentimiento"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "sen"
+  - "ti"
+  - "mien"
+  - "to"
+stressed_syllable: 4
+ipa_latam: "[re.sen.tiˈmjen.to]"
+ipa_es: "[re.sen.tiˈmjen.to]"
+explanation: "Sentimiento negativo que puede quedar dentro cuando algo te hizo mal y no se dijo."
+example_sentence: "Sigue sintiendo un resentimiento silencioso hacia su amigo por aquella broma que nunca se disculpó."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar algo que se guarda por dentro, aunque digas que ya está todo bien."
+when_not_to_use: "No la uses para un enojo que se dice y se resuelve en el momento, ni para una simple molestia pasajera."
+collocations:
+  - "guardar resentimiento"
+  - "sentir resentimiento hacia alguien"
+  - "un resentimiento silencioso"
+replaces:
+  - before: "Todavía me molesta un poco lo que pasó, aunque no lo diga"
+    after: "Todavía le tengo un poco de resentimiento por lo que pasó"
+  - before: "Digo que ya lo superé pero por dentro sigue ahí"
+    after: "Digo que lo superé, pero el resentimiento sigue ahí"
+  - before: "Me duele que no me invitaran y no lo he soltado"
+    after: "Tengo resentimiento por no haberme invitado, y no lo he soltado"
+family:
+  - "resentido"
+  - "resentirse"
+themes:
+  - slug: "amistad"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+tags:
+  comodin: ["rabia"]
+  funcion: ["describir", "expresar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "rencor"
+    difference: "«Rencor» es un sentimiento mucho más fuerte y duradero, casi de enemistad; el resentimiento puede ser más pequeño y silencioso."
+    memory_trick: "El rencor se declara; el resentimiento se calla."
+  - confused_with: "decepción"
+    difference: "«Decepción» es la tristeza de esperar algo y no obtenerlo; el resentimiento es lo que queda guardado después, hacia la persona."
+exercises:
+  - position: 1
+    sentence: "Leandro nunca dijo nada, pero cada vez que su amigo cuenta esa broma vieja delante de otros, siente un {{blank}} que no sabe cómo soltar."
+    hint_general: "Es un sentimiento negativo que se queda dentro cuando algo dolió y nunca se habló del tema."
+    explanation: "Resentimiento: un sentimiento negativo que se queda dentro porque nunca se habló del tema. «Arrepentimiento» es sentir pesar por algo que uno mismo hizo, y aquí Leandro no hizo nada malo; «rencor» es más intenso y suele durar años enteros, mientras que aquí basta con que cuenten la broma para que aparezca."
+    options:
+      - position: 1
+        text: "arrepentimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Arrepentimiento» es sentir pesar por algo que uno mismo hizo, y aquí Leandro no hizo nada: es su amigo quien cuenta la broma."
+        hint_specific: "«Arrepentimiento» es por algo que hiciste tú. ¿Quién cuenta la broma, Leandro o su amigo?"
+      - position: 2
+        text: "resentimiento"
+        is_correct: true
+      - position: 3
+        text: "rencor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rencor» es más intenso y duradero, y aquí el sentimiento aparece solo cuando cuentan la broma, no todo el tiempo."
+        hint_specific: "«Rencor» es un sentimiento más largo y profundo. ¿El sentimiento de Leandro aparece siempre o solo en ese momento?"
+  - position: 2
+    sentence: "Vera dijo que ya lo había superado, pero un {{blank}} viejo seguía ahí cada vez que su amiga cancelaba planes a último momento."
+    hint_general: "Es algo negativo que sigue ahí después de decir que ya no importa."
+    explanation: "Resentimiento: algo negativo que sigue presente aunque digas que ya no importa. «Enfado» es más simple y se pasa rápido, y aquí sigue apareciendo con cada cancelación; «mosqueo» es coloquial y describe una molestia pequeña y pasajera, no algo que persiste con el tiempo."
+    options:
+      - position: 1
+        text: "enfado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enfado» es más simple y suele pasar rápido, y aquí el sentimiento de Vera sigue apareciendo con cada cancelación."
+        hint_specific: "«Enfado» se pasa pronto. ¿El sentimiento de Vera se fue o sigue apareciendo?"
+      - position: 2
+        text: "mosqueo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mosqueo» es coloquial y describe una molestia pequeña y pasajera, y aquí Vera dice que «ya lo había superado» y aun así sigue ahí."
+        hint_specific: "«Mosqueo» es algo pasajero. ¿Lo que siente Vera es pasajero o sigue después de tiempo?"
+      - position: 3
+        text: "resentimiento"
+        is_correct: true
+  - position: 3
+    sentence: "Renzo sonríe cuando ve a su amigo, pero por dentro guarda un {{blank}} por la vez que no lo invitó al viaje del año pasado."
+    hint_general: "Es un sentimiento negativo que se guarda por dentro sin decir nada, mientras por fuera todo parece normal."
+    explanation: "Resentimiento: un sentimiento negativo que se guarda por dentro mientras por fuera todo parece normal. «Decepción» sería solo la tristeza de esperar algo y no obtenerlo, sin la parte de guardarlo en silencio; «resignación» es aceptar algo sin pelear, y aquí Renzo no lo ha aceptado del todo: sigue guardándolo."
+    options:
+      - position: 1
+        text: "decepción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decepción» es la tristeza de esperar algo y no obtenerlo, y aquí lo importante es que Renzo lo guarda por dentro sin decirlo."
+        hint_specific: "«Decepción» no incluye guardar algo en silencio. ¿Qué hace Renzo con lo que siente: lo dice o lo guarda?"
+      - position: 2
+        text: "resignación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resignación» es aceptar algo sin pelear ni sentir nada más, y aquí Renzo todavía guarda ese sentimiento sin haberlo superado."
+        hint_specific: "«Resignación» significa aceptarlo del todo. ¿Renzo ya lo superó o todavía lo guarda?"
+      - position: 3
+        text: "resentimiento"
+        is_correct: true
+  - position: 4
+    sentence: "Jimena dice que ya no le importa, pero cada foto del cumpleaños que se olvidaron de invitarla le trae un {{blank}} que no logra explicar."
+    hint_general: "Es un sentimiento negativo hacia otra persona que sigue ahí después de un olvido."
+    explanation: "Resentimiento: un sentimiento negativo hacia otra persona que sigue presente después de un olvido. «Arrepentimiento» sería sentir pesar por algo que Jimena misma hizo, y aquí el olvido fue de los demás; «bronca» es coloquial y suena a un enojo más explosivo y de corto plazo, no a este sentimiento que vuelve con cada foto."
+    options:
+      - position: 1
+        text: "arrepentimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Arrepentimiento» es sentir pesar por algo que uno mismo hizo, y aquí quienes se olvidaron de invitarla fueron los demás."
+        hint_specific: "«Arrepentimiento» es por algo que hiciste tú. ¿Quién se olvidó de invitar a Jimena?"
+      - position: 2
+        text: "bronca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bronca» es coloquial y suena a un enojo explosivo y breve, y aquí el sentimiento de Jimena vuelve cada vez que ve una foto."
+        hint_specific: "«Bronca» es un enojo breve y fuerte. ¿El sentimiento de Jimena es breve o vuelve una y otra vez?"
+      - position: 3
+        text: "resentimiento"
+        is_correct: true
+  - position: 5
+    sentence: "Otilia todavía siente un {{blank}} pequeño hacia su amigo, aunque hicieron las paces hace meses por la fiesta que él canceló a última hora."
+    hint_general: "Es un sentimiento negativo que queda, incluso después de arreglar las cosas con alguien."
+    explanation: "Resentimiento: un sentimiento negativo que queda, incluso después de arreglar las cosas. «Rencor» sería un sentimiento mucho más fuerte y duradero, y aquí Otilia lo describe como pequeño; «decepción» solo hablaría de la tristeza del momento de la fiesta cancelada, no de algo que sigue después de hacer las paces."
+    options:
+      - position: 1
+        text: "rencor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rencor» es un sentimiento mucho más fuerte y duradero, y aquí Otilia lo describe como algo pequeño."
+        hint_specific: "«Rencor» es un sentimiento muy fuerte. ¿Cómo describe la frase el sentimiento de Otilia: pequeño o muy fuerte?"
+      - position: 2
+        text: "resentimiento"
+        is_correct: true
+      - position: 3
+        text: "decepción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decepción» sería la tristeza del momento en que canceló la fiesta, y aquí el sentimiento sigue después de haber hecho las paces."
+        hint_specific: "«Decepción» es del momento. ¿El sentimiento de Otilia es de ese momento o sigue después?"
+  - position: 6
+    sentence: "Dante ya no discute con su amigo por el dinero que nunca le devolvió, pero un {{blank}} silencioso aparece cada vez que hablan de préstamos."
+    hint_general: "Es un sentimiento negativo que aparece de forma silenciosa en ciertos temas, sin que haya una pelea."
+    explanation: "Resentimiento: un sentimiento negativo que aparece de forma silenciosa en ciertos temas. «Enfado» sería una reacción de un momento, y aquí no hay pelea, solo algo que aparece calladamente; «resignación» sería aceptarlo sin sentir nada más, y aquí todavía aparece un sentimiento cuando tocan el tema."
+    options:
+      - position: 1
+        text: "enfado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enfado» es una reacción de un momento concreto, como una pelea, y aquí Dante ya no discute: el sentimiento aparece en silencio."
+        hint_specific: "«Enfado» necesita una reacción visible. ¿Dante discute con su amigo o el sentimiento aparece en silencio?"
+      - position: 2
+        text: "resignación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resignación» sería aceptarlo sin sentir nada más, y aquí todavía aparece un sentimiento cada vez que hablan de préstamos."
+        hint_specific: "«Resignación» significa no sentir nada más. ¿Dante siente algo cuando hablan de préstamos?"
+      - position: 3
+        text: "resentimiento"
+        is_correct: true
+  - position: 7
+    sentence: "Mirta asegura que está todo bien entre ellas, pero un {{blank}} de fondo se nota cada vez que su amiga habla de su nuevo trabajo."
+    hint_general: "Es un sentimiento negativo de fondo que se nota, aunque alguien diga que todo está bien."
+    explanation: "Resentimiento: un sentimiento negativo de fondo, aunque alguien diga que todo está bien. «Rencor» sería un sentimiento mucho más fuerte, casi como un enemigo declarado, y aquí Mirta insiste en que están bien; «mosqueo» es coloquial y describe algo pequeño y pasajero, no algo que se nota de fondo."
+    options:
+      - position: 1
+        text: "rencor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rencor» sería un sentimiento mucho más fuerte, casi de enemistad, y aquí Mirta insiste en que está todo bien entre ellas."
+        hint_specific: "«Rencor» es muy intenso. ¿Mirta describe una enemistad fuerte o algo de fondo?"
+      - position: 2
+        text: "mosqueo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mosqueo» es coloquial y describe algo pequeño y pasajero, y aquí se trata de algo de fondo que se nota siempre que hablan del tema."
+        hint_specific: "«Mosqueo» es algo pasajero. ¿Lo que siente Mirta aparece una vez o de fondo siempre?"
+      - position: 3
+        text: "resentimiento"
+        is_correct: true
+  - position: 8
+    sentence: "Gaspar felicitó a su amigo por el ascenso, pero después colgó el teléfono con un {{blank}} raro, porque él llevaba años pidiendo lo mismo sin conseguirlo."
+    hint_general: "Es un sentimiento negativo que aparece frente al éxito de otra persona, sin que puedas evitarlo."
+    explanation: "Resentimiento: un sentimiento negativo que aparece frente al éxito de otra persona. «Arrepentimiento» sería sentir pesar por algo que Gaspar mismo hizo, y aquí no hizo nada malo; «decepción» sería solo la tristeza de no conseguir el ascenso él mismo, sin la parte incómoda de sentirlo justo frente al éxito de su amigo."
+    options:
+      - position: 1
+        text: "arrepentimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Arrepentimiento» es sentir pesar por algo que uno mismo hizo, y aquí Gaspar no hizo nada: solo escuchó una buena noticia."
+        hint_specific: "«Arrepentimiento» es por algo que hiciste tú. ¿Gaspar hizo algo malo aquí?"
+      - position: 2
+        text: "decepción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decepción» sería solo la tristeza de no lograr el ascenso él mismo, y la frase describe algo más incómodo, justo frente al éxito de su amigo."
+        hint_specific: "«Decepción» es solo tristeza por algo propio. ¿Qué hace que el sentimiento de Gaspar sea más incómodo aquí?"
+      - position: 3
+        text: "resentimiento"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La broma que no fue graciosa"
+    body: "En cada asado, alguien repetía la misma broma sobre el año en que Estela lloró en la boda de su prima. Ella siempre se reía también, pero un día explotó: «Llevo años con resentimiento por esa broma, y nunca dije nada»."
+    before_phrase: "Me sigue molestando esa broma, aunque nunca lo dije."
+    after_phrase: "Llevo años con resentimiento por esa broma."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El regalo que nunca llegó"
+    body: "Perla nunca mencionó que su hermano se olvidó de su cumpleaños hace tres años, pero cada vez que él hablaba de fechas importantes, ella cambiaba de tema. Un día se lo dijo: «Tengo un resentimiento guardado desde ese cumpleaños, y ya no quiero cargarlo»."
+    before_phrase: "Todavía me duele que te hayas olvidado, aunque nunca lo dije."
+    after_phrase: "Tengo un resentimiento guardado desde ese cumpleaños."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El proyecto que firmó otro"
+    body: "Cuando su compañero recibió todo el crédito por un proyecto que armaron juntos, Cayetano no dijo nada en la reunión. Semanas después, se lo confesó en un café: «Tengo un resentimiento con esto que no se me pasa, y prefiero decírtelo antes de que crezca»."
+    before_phrase: "Me sigue molestando que te llevaras el crédito, aunque no dije nada."
+    after_phrase: "Tengo un resentimiento con esto que prefiero decirte antes de que crezca."
+metrics:
+  zipf_overall: 3.6146
+  dispersion_dp: 0.1716
+  pedantry_proxy: 0.4810
+provenance:
+  generator: "authored for the humor, citas, amistad and small-talk themes"
+  gate: null
+  checked_on: "2026-09-15"

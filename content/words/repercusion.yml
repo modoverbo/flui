@@ -1,0 +1,244 @@
+schema_version: 1
+slug: "repercusion"
+status: "draft"
+lemma: "repercusión"
+part_of_speech: "sustantivo"
+syllables:
+  - "re"
+  - "per"
+  - "cu"
+  - "sión"
+stressed_syllable: 4
+ipa_latam: "[re.peɾ.kuˈsjon]"
+ipa_es: "[re.peɾ.kuˈsjon]"
+explanation: "El efecto que algo deja fuera, más allá del sitio donde pasó."
+example_sentence: "Aquel vídeo pequeño tuvo una repercusión que nadie había calculado."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Mide lo que llega lejos, no lo que se ve de cerca: por eso se sabe días después y no el mismo día."
+when_not_to_use: "No la uses para el ruido del primer día; esta palabra mira lo que queda cuando el ruido se apaga."
+collocations:
+  - "tener repercusión"
+  - "la repercusión del caso"
+  - "sin ninguna repercusión"
+replaces:
+  - before: "Se enteró mucha más gente de lo que pensábamos"
+    after: "Tuvo mucha repercusión"
+  - before: "Eso al final no afectó a nadie"
+    after: "Eso no tuvo ninguna repercusión"
+  - before: "Se notó incluso en otros sitios"
+    after: "La repercusión llegó a otros sitios"
+family:
+  - "repercutir"
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+  - slug: "medios-entrevistas"
+    relevance: 2
+tags:
+  comodin:
+    - "lo que afecta"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "percusión"
+    difference: "La percusión son los instrumentos que se golpean; lo otro es el efecto que algo deja a distancia."
+    memory_trick: "La percusión suena en la banda; la repercusión, en otros barrios."
+  - confused_with: "ruido"
+    difference: "El ruido dura lo que dura el día; esta palabra mide lo que sigue teniendo efecto después."
+    memory_trick: "El ruido se apaga; la repercusión se queda."
+exercises:
+  - position: 1
+    sentence: "Aquel vídeo de un minuto tuvo una {{blank}} que nadie había calculado: el ayuntamiento cambió el horario del centro."
+    hint_general: "El efecto llegó mucho más lejos de donde empezó."
+    explanation: "Repercusión: el efecto llegó lejos. «Percusión» son los instrumentos que se golpean, y «duración» mediría cuánto duró el vídeo."
+    options:
+      - position: 1
+        text: "percusión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Percusión» nombra los instrumentos que se golpean en una banda, y aquí lo que cambia es el horario de un centro."
+        hint_specific: "«Percusión» pertenece a la música. ¿Hay instrumentos en esta escena?"
+      - position: 2
+        text: "repercusión"
+        is_correct: true
+      - position: 3
+        text: "duración"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Duración» mediría cuánto dura el vídeo, y lo llamativo es hasta dónde llegó su efecto."
+        hint_specific: "«Duración» mide el reloj. ¿Lo llamativo es el minuto o el horario cambiado?"
+  - position: 2
+    sentence: "La carta de Efraín al periódico no tuvo ninguna {{blank}}: nadie contestó y nada cambió."
+    hint_general: "No dejó ningún efecto fuera de donde se publicó."
+    explanation: "Repercusión: no dejó efecto fuera. «Resonancia» dice algo parecido con tono de ensayo, y «respuesta» sería solo que alguien contestara."
+    options:
+      - position: 1
+        text: "resonancia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Resonancia» apunta a algo parecido pero es palabra de ensayo y de crítica, y aquí se cuenta el resultado de una carta al periódico."
+        hint_specific: "«Resonancia» suena a ensayo o a crítica cultural. ¿Con qué tono se cuenta esto?"
+      - position: 2
+        text: "repercusión"
+        is_correct: true
+      - position: 3
+        text: "respuesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Respuesta» sería solo que alguien contestara, y la frase añade que tampoco cambió nada."
+        hint_specific: "«Respuesta» es contestar. ¿Solo faltó que contestaran?"
+  - position: 3
+    sentence: "Al cambiar el horario del mercado, la {{blank}} se notó en las tres calles de alrededor."
+    hint_general: "El efecto llegó a sitios que no habían decidido nada."
+    explanation: "Repercusión: el efecto llegó a las calles vecinas. «Percusión» son instrumentos de golpe, y «decisión» nombraría lo que se decidió, no su efecto."
+    options:
+      - position: 1
+        text: "repercusión"
+        is_correct: true
+      - position: 2
+        text: "percusión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Percusión» nombra los instrumentos que se golpean, y lo que se nota en las calles es el efecto de un horario."
+        hint_specific: "«Percusión» es de la banda de música. ¿Qué se nota en esas calles?"
+      - position: 3
+        text: "decisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decisión» nombra lo que se decidió, y lo que se nota en las calles vecinas es lo que esa decisión provocó."
+        hint_specific: "«Decisión» es lo que se acuerda. ¿Qué llega hasta las calles de alrededor?"
+  - position: 4
+    sentence: "Casilda mide la {{blank}} a los quince días, cuando el ruido del primer día ya se ha ido."
+    hint_general: "Mide lo que queda cuando el revuelo se apaga."
+    explanation: "Repercusión: lo que queda cuando el ruido se apaga. «Eco» es una imagen literaria del sonido que vuelve, y «audiencia» contaría cuánta gente miró."
+    options:
+      - position: 1
+        text: "eco"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Eco» es una imagen literaria del sonido que vuelve, y aquí se mide un efecto con datos a quince días."
+        hint_specific: "«Eco» es una imagen de sonido, con tono literario. ¿Casilda mide una imagen o un dato?"
+      - position: 2
+        text: "repercusión"
+        is_correct: true
+      - position: 3
+        text: "audiencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Audiencia» cuenta cuánta gente miró, y lo que ella busca es qué cambió después."
+        hint_specific: "«Audiencia» cuenta espectadores. ¿Qué busca ella a los quince días?"
+  - position: 5
+    sentence: "Mi hermano publicó una foto del puente roto y la {{blank}} llegó hasta el pueblo de al lado."
+    hint_general: "El efecto salió de su pueblo y llegó a otro."
+    explanation: "Repercusión: el efecto salió del pueblo. «Repetición» sería volver a publicar lo mismo, y «percusión» nombraría instrumentos de golpe."
+    options:
+      - position: 1
+        text: "repetición"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Repetición» sería publicar lo mismo otra vez, y lo que viajó al pueblo vecino fue el efecto de esa foto."
+        hint_specific: "«Repetición» vuelve a hacer lo mismo. ¿Se repitió la foto o viajó su efecto?"
+      - position: 2
+        text: "repercusión"
+        is_correct: true
+      - position: 3
+        text: "percusión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Percusión» nombra los instrumentos que se golpean en una banda, y aquí hay una foto y un puente."
+        hint_specific: "«Percusión» es música. ¿Qué hay en esta escena, tambores o una foto?"
+  - position: 6
+    sentence: "Una entrevista corta puede tener más {{blank}} que un reportaje de veinte páginas que nadie termina."
+    hint_general: "Lo que importa es el efecto que deja, no el tamaño."
+    explanation: "Repercusión: el efecto que deja. «Resonancia» dice algo parecido con tono de ensayo, y «extensión» mediría el tamaño del texto."
+    options:
+      - position: 1
+        text: "extensión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extensión» mide el tamaño del texto, y la frase compara justo lo contrario: lo que deja cada uno."
+        hint_specific: "«Extensión» mide páginas. ¿La frase compara tamaños o efectos?"
+      - position: 2
+        text: "repercusión"
+        is_correct: true
+      - position: 3
+        text: "resonancia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Resonancia» significa algo parecido, pero es palabra de crítica cultural y desentona al comparar dos formatos de trabajo."
+        hint_specific: "«Resonancia» suena a crítica cultural. ¿Con qué tono se habla aquí?"
+  - position: 7
+    sentence: "El cierre del taller tuvo una {{blank}} pequeña en la prensa y enorme en las tres familias que vivían de él."
+    hint_general: "El efecto fue distinto según dónde se midiera."
+    explanation: "Repercusión: el efecto según dónde se mida. «Percusión» nombra instrumentos de golpe, y «tristeza» hablaría de un sentimiento, no de un efecto."
+    options:
+      - position: 1
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tristeza» nombra un sentimiento, y la frase compara efectos en dos sitios distintos: la prensa y tres familias."
+        hint_specific: "«Tristeza» es un sentimiento. ¿Qué se compara entre la prensa y las familias?"
+      - position: 2
+        text: "repercusión"
+        is_correct: true
+      - position: 3
+        text: "percusión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Percusión» son los instrumentos que se golpean, y aquí se habla de lo que provoca el cierre de un taller."
+        hint_specific: "«Percusión» pertenece a la música. ¿Qué cerró en esta frase?"
+  - position: 8
+    sentence: "Antes de publicar el nombre, Vera pensó en la {{blank}} que tendría sobre la familia y decidió esperar."
+    hint_general: "Pensó en el efecto que caería sobre gente que no había elegido nada."
+    explanation: "Repercusión: el efecto que caería sobre la familia. «Eco» es una imagen literaria de sonido, y «reacción» sería lo que hiciera la gente al leerlo."
+    options:
+      - position: 1
+        text: "reacción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reacción» es lo que haría la gente al leerlo, y ella piensa en lo que caería encima de esa familia después."
+        hint_specific: "«Reacción» ocurre al leer. ¿En qué piensa Vera, en la lectura o en lo que viene luego?"
+      - position: 2
+        text: "eco"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Eco» es una imagen literaria del sonido que vuelve, y aquí se piensa en consecuencias muy concretas."
+        hint_specific: "«Eco» es imagen sonora de tono literario. ¿Vera piensa en un sonido o en consecuencias?"
+      - position: 3
+        text: "repercusión"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "A los quince días"
+    body: "En la reunión todos miraban las cifras del primer día. Casilda pidió esperar. «La repercusión se mide a los quince días, cuando el ruido se va», dijo. A los quince días, el vídeo pequeño había movido más que la campaña grande."
+    before_phrase: "Ha tenido muchísimo alcance hoy."
+    after_phrase: "La repercusión se mide a los quince días."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El puente roto"
+    body: "Mi hermano publicó una foto del puente roto sin esperar nada. En dos días la repercusión había llegado al pueblo de al lado y a una oficina con presupuesto. El puente se arregló en mayo. La foto seguía teniendo catorce comentarios."
+    before_phrase: "Se enteró muchísima gente."
+    after_phrase: "La repercusión llegó hasta el pueblo de al lado."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El nombre que no publicó"
+    body: "Vera tenía el nombre y decidió no publicarlo esa semana. «Pensé en la repercusión sobre la familia», explicó cuando se lo preguntaron. «La noticia aguantaba siete días; ellos, no». Publicó el lunes siguiente, con una llamada hecha antes."
+    before_phrase: "Pensé en cómo les iba a afectar."
+    after_phrase: "Pensé en la repercusión sobre la familia."
+metrics:
+  zipf_overall: 4.2218
+  dispersion_dp: 0.1486
+  pedantry_proxy: 0.5398
+  family_size: 26
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-15"

@@ -1,0 +1,248 @@
+schema_version: 1
+sort_order: 7008
+slug: "divulgacion"
+status: "draft"
+lemma: "divulgación"
+part_of_speech: "sustantivo"
+syllables:
+  - "di"
+  - "vul"
+  - "ga"
+  - "ción"
+stressed_syllable: 4
+ipa_latam: "[di.βul.ɣaˈsjon]"
+ipa_es: "[di.βul.ɣaˈθjon]"
+explanation: "Contar lo que sabes a mucha gente que no es del ramo, en palabras claras."
+example_sentence: "Dejó el laboratorio por la divulgación y ahora lo escuchan miles de personas."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Nombra un trabajo de verdad: traducir lo difícil sin quitarle nada, para quien no está dentro."
+when_not_to_use: "No la uses para hacer que algo llegue lejos sin tocar cómo está contado, ni para vender un producto."
+collocations:
+  - "divulgación científica"
+  - "trabajo de divulgación"
+  - "hacer divulgación"
+replaces:
+  - before: "Explico mi campo a gente que no es del gremio"
+    after: "Me dedico a la divulgación"
+  - before: "Cuenta cosas complicadas de forma sencilla en la radio"
+    after: "Hace divulgación en la radio"
+  - before: "Hay que sacar esto del círculo de expertos"
+    after: "Esto necesita divulgación"
+family:
+  - "divulgar"
+  - "divulgativo"
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+  - slug: "redes-sociales"
+    relevance: 1
+tags:
+  comodin:
+    - "explicar"
+  funcion:
+    - "explicar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "divagación"
+    difference: "Una «divagación» es irse por las ramas y perder el hilo; la otra palabra nombra el trabajo de ordenar lo difícil para que llegue."
+    memory_trick: "Quien divaga se pierde; el otro te guía."
+  - confused_with: "difusión"
+    difference: "La «difusión» es hacer que algo llegue a mucha gente tal como está; la otra cambia cómo se cuenta para que se entienda."
+    memory_trick: "La difusión reparte; la otra traduce."
+exercises:
+  - position: 1
+    sentence: "Omar dejó el laboratorio para dedicarse a la {{blank}}, y hoy cuenta en la radio lo que antes leían diez personas."
+    hint_general: "Cambió de trabajo: ahora traduce lo difícil para quien no está dentro del campo."
+    explanation: "Divulgación: traduce lo difícil para quien está fuera. Una «divagación» sería irse por las ramas, y la «difusión» solo reparte lo mismo sin cambiar el modo."
+    options:
+      - position: 1
+        text: "divagación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «divagación» es perder el hilo e irse por las ramas, y Omar hace justo lo contrario: ordena lo difícil para que llegue."
+        hint_specific: "Quien divaga se pierde por el camino. ¿Omar se pierde o guía a quien escucha?"
+      - position: 2
+        text: "divulgación"
+        is_correct: true
+      - position: 3
+        text: "difusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «difusión» hace que algo llegue lejos sin tocar cómo está contado, y aquí lo que cambia es justamente el modo de contarlo."
+        hint_specific: "La «difusión» reparte lo mismo. ¿Omar reparte lo de antes o lo cuenta de otra manera?"
+  - position: 2
+    sentence: "El museo abrió una sala de {{blank}} donde un niño de ocho años entiende de qué está hecha una nube."
+    hint_general: "Es una sala pensada para explicar lo difícil a quien llega sin base ninguna."
+    explanation: "Divulgación: explica lo difícil a quien llega sin base. La «publicidad» busca vender algo, y una «divagación» sería hablar sin rumbo."
+    options:
+      - position: 1
+        text: "publicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «publicidad» busca que alguien compre, y en esa sala nadie vende nada: se explica de qué está hecha una nube."
+        hint_specific: "La «publicidad» quiere una compra. ¿Qué se lleva el niño de esa sala?"
+      - position: 2
+        text: "divulgación"
+        is_correct: true
+      - position: 3
+        text: "divagación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «divagación» es hablar sin rumbo, y una sala así está pensada al detalle para que un niño llegue a una idea concreta."
+        hint_specific: "Divagar es ir sin destino. ¿La sala tiene destino o va a la deriva?"
+  - position: 3
+    sentence: "Las decisiones sobre el agua las tomarían cuatro personas si no hubiera {{blank}} de por medio, y el resto ni se enteraría."
+    hint_general: "Sin alguien que lo explique en claro, el asunto se queda dentro de un círculo pequeño."
+    explanation: "Divulgación: sin ella el asunto se queda en un círculo pequeño. «Propaganda» acusa de empujar un interés, y la «difusión» solo hace que algo llegue lejos."
+    options:
+      - position: 1
+        text: "propaganda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Propaganda» acusa de empujar el interés de alguien, y lo que falta aquí es que la gente entienda de qué se habla."
+        hint_specific: "«Propaganda» tiene dueño e intención. ¿Se busca convencer o que se entienda?"
+      - position: 2
+        text: "divulgación"
+        is_correct: true
+      - position: 3
+        text: "difusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «difusión» reparte el mensaje tal cual, y repartir un informe técnico no haría que nadie de fuera lo entendiera."
+        hint_specific: "La «difusión» no cambia el texto. ¿Bastaría con repartir el informe?"
+  - position: 4
+    sentence: "En tres minutos, Greta hace {{blank}} y responde cada pregunta como si fuera la primera vez que se la hacen."
+    hint_general: "Explica lo suyo a quien no sabe nada, sin perder la paciencia ni el contenido."
+    explanation: "Divulgación: explica lo suyo a quien no sabe nada. «Vulgarización» suena a rebajar el contenido, y una «primicia» sería contar algo antes que nadie."
+    options:
+      - position: 1
+        text: "vulgarización"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vulgarización» suena a rebajar el contenido hasta dejarlo pobre, y ella no rebaja nada: lo pone al alcance."
+        hint_specific: "«Vulgarización» implica pérdida de calidad. ¿Greta quita contenido o quita distancia?"
+      - position: 2
+        text: "divulgación"
+        is_correct: true
+      - position: 3
+        text: "primicia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «primicia» es contar algo antes que nadie, y ella repite con gusto lo que ya se sabe para quien todavía no lo sabe."
+        hint_specific: "Una «primicia» es novedad. ¿Greta trae noticias nuevas o explica lo de siempre?"
+  - position: 5
+    sentence: "La revista mezcla investigación y {{blank}}: la mitad de las páginas las entiende cualquiera que sepa leer."
+    hint_general: "La mitad de la revista está escrita para quien no pertenece al campo."
+    explanation: "Divulgación: media revista está escrita para quien viene de fuera. La «difusión» solo haría llegar el texto, y una «divagación» sería perder el hilo."
+    options:
+      - position: 1
+        text: "difusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «difusión» sería hacer llegar la revista a más manos, y aquí se habla de cómo están escritas la mitad de sus páginas."
+        hint_specific: "La «difusión» mira cuántos la reciben. ¿La frase mide alcance o manera de escribir?"
+      - position: 2
+        text: "divagación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «divagación» sería escribir sin hilo, y esas páginas se entienden precisamente porque el hilo está muy cuidado."
+        hint_specific: "Divagar es perder el rumbo. ¿Esas páginas se entienden o se pierden?"
+      - position: 3
+        text: "divulgación"
+        is_correct: true
+  - position: 6
+    sentence: "A Tobías le pidieron {{blank}} y entregó un texto lleno de fórmulas que solo firmarían tres colegas suyos."
+    hint_general: "Le pidieron un texto para quien está fuera del campo y entregó uno para los de dentro."
+    explanation: "Divulgación: le pedían un texto para los de fuera. «Vulgarización» sugiere rebajar el contenido, y la «publicidad» buscaría vender algo."
+    options:
+      - position: 1
+        text: "vulgarización"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vulgarización» da a entender que hay que empobrecer el contenido, y lo que se le pedía era traducirlo entero."
+        hint_specific: "«Vulgarización» implica perder calidad por el camino. ¿Le pidieron perder algo?"
+      - position: 2
+        text: "publicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «publicidad» vende un producto, y a Tobías no le pidieron vender nada: le pidieron explicar lo suyo."
+        hint_specific: "La «publicidad» busca clientes. ¿Hay algo a la venta en esta escena?"
+      - position: 3
+        text: "divulgación"
+        is_correct: true
+  - position: 7
+    sentence: "La asociación gastó el presupuesto entero en {{blank}} y el barrio acabó sabiendo qué hacer con cada tipo de residuo."
+    hint_general: "Gastaron el dinero en explicar algo técnico hasta que el barrio lo entendió."
+    explanation: "Divulgación: gastaron en explicar hasta que el barrio entendió. «Propaganda» acusa de empujar un interés, y una «primicia» sería una noticia nueva."
+    options:
+      - position: 1
+        text: "divulgación"
+        is_correct: true
+      - position: 2
+        text: "propaganda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Propaganda» acusa de empujar el interés de quien paga, y aquí el resultado es que la gente sabe usar su propio cubo."
+        hint_specific: "«Propaganda» busca adhesión. ¿Qué se llevó el barrio, una opinión o una destreza?"
+      - position: 3
+        text: "primicia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «primicia» es una noticia que nadie ha dado todavía, y cómo separar residuos no es ninguna novedad."
+        hint_specific: "Una «primicia» se cuenta una vez. ¿Esto era nuevo o era sabido y mal explicado?"
+  - position: 8
+    sentence: "Hay un trabajo silencioso de {{blank}} detrás de cada persona que hoy sabe leer la etiqueta de un alimento."
+    hint_general: "Alguien tradujo antes esa información técnica para que la entendiera cualquiera."
+    explanation: "Divulgación: alguien tradujo antes esa información técnica. La «difusión» solo la habría repartido, y una «divagación» sería hablar sin rumbo."
+    options:
+      - position: 1
+        text: "difusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «difusión» habría repartido la etiqueta tal cual, y repartirla no enseña a nadie a leerla."
+        hint_specific: "La «difusión» multiplica copias. ¿Basta con tener la etiqueta delante?"
+      - position: 2
+        text: "divulgación"
+        is_correct: true
+      - position: 3
+        text: "divagación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «divagación» es hablar sin llegar a ningún sitio, y aquí se llega a un resultado muy concreto: la gente lee la etiqueta."
+        hint_specific: "Divagar no lleva a ninguna parte. ¿Este trabajo llegó a algún sitio?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La página que nadie leía"
+    body: "El área técnica publicaba una nota mensual y no la abría nadie. Ivonne propuso otra cosa: «No es un problema de reparto, es que falta divulgación». Reescribieron la nota con ejemplos del almacén. En dos meses la leían también los de ventas."
+    before_phrase: "Hay que difundirlo más, que no llega."
+    after_phrase: "No falta reparto, falta divulgación."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "La sobremesa del domingo"
+    body: "Su sobrino estudia biología y contesta con palabras que nadie sigue. Aquel domingo probó otra cosa: explicó su trabajo con una caja de fruta. «Esto es divulgación, tía». Su tía le dijo que ahora sí sabía a qué se dedicaba."
+    before_phrase: "Te lo cuento fácil para que te enteres."
+    after_phrase: "Esto es divulgación: lo mismo, contado para ti."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Qué sabes hacer"
+    body: "Le preguntaron qué aportaba, además de la parte técnica. Greta no dudó: «Hago divulgación: lo mío lo entiende quien entra hoy por esa puerta». Le pidieron un ejemplo y lo dio en dos minutos, sin una sola fórmula."
+    before_phrase: "Se me da bien explicar cosas difíciles."
+    after_phrase: "Hago divulgación: lo entiende quien entra hoy."
+metrics:
+  zipf_overall: 4.3713
+  dispersion_dp: 0.2263
+  pedantry_proxy: 0.4019
+  family_size: 26
+provenance:
+  generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
+  gate: null
+  checked_on: "2026-09-15"

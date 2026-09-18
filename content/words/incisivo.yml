@@ -1,0 +1,245 @@
+schema_version: 1
+slug: "incisivo"
+status: "draft"
+lemma: "incisivo"
+part_of_speech: "adjetivo"
+syllables:
+  - "in"
+  - "ci"
+  - "si"
+  - "vo"
+stressed_syllable: 3
+ipa_latam: "[in.siˈsi.βo]"
+ipa_es: "[in.θiˈsi.βo]"
+explanation: "Que va directo al punto difícil, ese que los demás evitan tocar."
+example_sentence: "Hizo una pregunta incisiva y la sala se quedó callada tres segundos."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Elogia a quien pregunta bien sin llamarlo agresivo: apunta a la puntería, no a la dureza."
+when_not_to_use: "No la uses para quien ataca a una persona; esto describe ir al punto del asunto, no al del otro."
+collocations:
+  - "una pregunta incisiva"
+  - "un análisis incisivo"
+  - "poco incisivo"
+replaces:
+  - before: "Preguntó justo lo que nadie quería preguntar"
+    after: "Hizo una pregunta incisiva"
+  - before: "Su informe va al grano de verdad"
+    after: "Su informe es incisivo"
+  - before: "Fue muy blandito en la entrevista"
+    after: "Estuvo poco incisivo en la entrevista"
+family:
+  - "incisión"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin:
+    - "ir al grano"
+    - "duro"
+  funcion:
+    - "elogiar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "indeciso"
+    difference: "«Indeciso» es quien no se decide por nada; lo otro describe a quien apunta justo al punto difícil."
+    memory_trick: "El indeciso rodea; el incisivo entra."
+  - confused_with: "impulsivo"
+    difference: "«Impulsivo» actúa sin pensar; esta palabra supone puntería, no prisa."
+    memory_trick: "El impulsivo dispara; el incisivo apunta."
+exercises:
+  - position: 1
+    sentence: "Tras media hora de elogios, la periodista hizo una pregunta {{blank}}: quién había firmado el contrato del sábado."
+    hint_general: "La pregunta fue derecha al punto que nadie había tocado."
+    explanation: "Incisiva: fue derecha al punto que nadie tocaba. «Indecisa» describiría a quien no se decide, e «impulsiva» diría que la soltó sin pensar."
+    options:
+      - position: 1
+        text: "indecisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indecisa» se dice de quien no acaba de decidirse, y esta pregunta llega con un nombre y una fecha."
+        hint_specific: "«Indecisa» duda entre opciones. ¿Esta pregunta duda o apunta?"
+      - position: 2
+        text: "incisiva"
+        is_correct: true
+      - position: 3
+        text: "impulsiva"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impulsiva» diría que salió sin pensar, y la frase cuenta que esperó media hora al momento justo."
+        hint_specific: "«Impulsiva» actúa sin pensar. ¿Cuánto esperó la periodista?"
+  - position: 2
+    sentence: "El informe de Ismael es breve y {{blank}}: en dos páginas señala los tres puntos que nadie quería mirar."
+    hint_general: "El informe va derecho a lo difícil en muy poco espacio."
+    explanation: "Incisivo: va derecho a lo difícil. «Mordaz» es palabra literaria y añade burla, y «extenso» diría lo contrario de dos páginas."
+    options:
+      - position: 1
+        text: "mordaz"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mordaz» es palabra literaria y añade burla al comentario, y un informe de trabajo señala problemas sin reírse de nadie."
+        hint_specific: "«Mordaz» suena a literatura y trae burla. ¿Hay burla en un informe de tres puntos?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "extenso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extenso» diría que ocupa mucho, y la frase subraya que son dos páginas."
+        hint_specific: "«Extenso» ocupa mucho. ¿Cuántas páginas tiene ese informe?"
+  - position: 3
+    sentence: "En el debate del colegio profesional, Ximena estuvo poco {{blank}}: dejó pasar el punto del presupuesto sin preguntar."
+    hint_general: "No fue derecha al punto difícil cuando podía."
+    explanation: "Incisiva: no fue al punto difícil. «Indecisa» describiría a quien no se decide, y «amable» hablaría del trato, no de la puntería."
+    options:
+      - position: 1
+        text: "incisiva"
+        is_correct: true
+      - position: 2
+        text: "indecisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indecisa» es no saber por cuál decidirse, y aquí ella sabía perfectamente qué punto estaba dejando pasar."
+        hint_specific: "«Indecisa» no elige. ¿Ximena no sabía qué preguntar o eligió no hacerlo?"
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» habla del trato con los demás, y lo que faltó fue apuntar al punto del presupuesto."
+        hint_specific: "«Amable» mide el trato. ¿Faltó buen trato o faltó puntería?"
+  - position: 4
+    sentence: "Mi hermana tiene un ojo {{blank}} para los contratos: en diez minutos encontró la cláusula que nos habría costado el verano."
+    hint_general: "Su mirada va derecha al punto que importa."
+    explanation: "Incisivo: su mirada va al punto que importa. «Impulsivo» diría que actúa sin pensar, y «rápido» solo mediría el tiempo."
+    options:
+      - position: 1
+        text: "impulsivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impulsivo» describe a quien actúa sin pensar, y ella encuentra justo la cláusula que había que encontrar."
+        hint_specific: "«Impulsivo» va sin pensar. ¿Lo suyo es prisa o puntería?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "rápido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rápido» solo mide el tiempo, y se puede leer muy rápido sin encontrar nunca esa cláusula."
+        hint_specific: "«Rápido» mide el reloj. ¿Lo llamativo son los diez minutos o lo que encontró?"
+  - position: 5
+    sentence: "Delante de los micrófonos, Tadeo prefirió un tono {{blank}} y sin adornos: tres preguntas cortas, una detrás de otra."
+    hint_general: "Eligió ir directo a lo difícil, sin rodeos."
+    explanation: "Incisivo: ir directo a lo difícil. «Afilado» es una imagen de charla suelta que sugiere hacer daño, y «cortés» hablaría de las formas."
+    options:
+      - position: 1
+        text: "afilado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Afilado» es una imagen de conversación informal y sugiere que se busca herir, y aquí solo hay tres preguntas cortas."
+        hint_specific: "«Afilado» sugiere filo y daño, en registro suelto. ¿Tadeo busca herir o preguntar?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "cortés"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cortés» describe las buenas formas, y se puede ser muy cortés y no tocar nunca el punto difícil."
+        hint_specific: "«Cortés» mide las formas. ¿Eso garantiza que se toque lo importante?"
+  - position: 6
+    sentence: "Lo que hizo valioso el comentario de Berta fue lo {{blank}} que resultó: nombró el problema que el equipo llevaba dos meses rodeando."
+    hint_general: "Nombró el punto que todos evitaban."
+    explanation: "Incisivo: nombró el punto que todos evitaban. «Indeciso» describiría a quien no se decide, y «extenso» hablaría de la longitud."
+    options:
+      - position: 1
+        text: "extenso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extenso» mide cuánto ocupa el comentario, y su valor está en el punto exacto que nombró."
+        hint_specific: "«Extenso» mide longitud. ¿Qué hizo valioso ese comentario?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "indeciso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indeciso» es quedarse sin elegir, y Berta eligió exactamente qué nombrar."
+        hint_specific: "«Indeciso» no se decide. ¿Berta se quedó a medias?"
+  - position: 7
+    sentence: "En la cena, mi cuñado soltó un comentario {{blank}} sobre el negocio de mi padre y la mesa se quedó en silencio."
+    hint_general: "El comentario tocó justo el punto que nadie nombraba."
+    explanation: "Incisivo: tocó el punto que nadie nombraba. «Mordaz» añadiría burla literaria, e «impulsivo» diría que lo dijo sin pensar."
+    options:
+      - position: 1
+        text: "incisivo"
+        is_correct: true
+      - position: 2
+        text: "mordaz"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mordaz» es palabra literaria y supone burla ingeniosa, y aquí lo que cae sobre la mesa es un punto incómodo, no un chiste."
+        hint_specific: "«Mordaz» trae burla, con tono literario. ¿La mesa calla por una burla o por un punto incómodo?"
+      - position: 3
+        text: "impulsivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impulsivo» describe a quien habla sin pensar, y aquí lo que llama la atención es lo bien que apuntó."
+        hint_specific: "«Impulsivo» habla sin medir. ¿Falló la medida o fue demasiado exacta?"
+  - position: 8
+    sentence: "La entrevistadora fue {{blank}} con los números y suave con la persona, y por eso nadie se levantó de la silla."
+    hint_general: "Apuntó al punto duro sin atacar a quien tenía delante."
+    explanation: "Incisiva: apuntó al punto duro sin atacar a nadie. «Afilada» es imagen informal que sugiere herir, e «indecisa» diría que no se atrevió a elegir."
+    options:
+      - position: 1
+        text: "indecisa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indecisa» es no decidirse, y ella decidió muy bien dónde apretar y dónde no."
+        hint_specific: "«Indecisa» no elige. ¿Esta entrevistadora eligió o dudó?"
+      - position: 2
+        text: "afilada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Afilada» es una imagen de charla suelta que sugiere buscar sangre, y la frase dice que fue suave con la persona."
+        hint_specific: "«Afilada» insinúa querer herir, en tono informal. ¿Cómo trató a la persona?"
+      - position: 3
+        text: "incisiva"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Media hora de elogios"
+    body: "La entrevista iba blanda hasta el minuto treinta. Entonces llegó la pregunta: quién había firmado el contrato del sábado. Nadie gritó y nadie se levantó. «Fue incisiva y no fue hostil», comentó luego el invitado. Aprendió la diferencia esa tarde."
+    before_phrase: "Preguntó justo lo que nadie preguntaba."
+    after_phrase: "Fue una pregunta incisiva, no hostil."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos páginas"
+    body: "Todos los informes llegaban con cuarenta páginas y un resumen amable. El de Ismael tenía dos y señalaba tres puntos. «Prefiero que sea incisivo a que sea completo», explicó. Fue el único que se leyó entero el comité."
+    before_phrase: "Este informe va al grano."
+    after_phrase: "Prefiero que sea incisivo a que sea completo."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena del sábado"
+    body: "Mi cuñado dijo en voz alta lo que llevábamos dos años rodeando: que el negocio de mi padre no se sostenía. La mesa se quedó en silencio. Fue incisivo y fue incómodo, y también fue el principio de la conversación que hacía falta."
+    before_phrase: "Dijo justo lo que nadie decía."
+    after_phrase: "Fue incisivo, y falta hacía."
+metrics:
+  zipf_overall: 3.2928
+  dispersion_dp: 0.2965
+  pedantry_proxy: 0.4652
+  family_size: 10
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-15"
