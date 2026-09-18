@@ -8,13 +8,22 @@ import 'package:material_ui/material_ui.dart';
 void main() {
   group('FluiColors', () {
     test('brand palette matches docs/brand.md', () {
-      expect(FluiColors.cream, const Color(0xFFF8F8F6));
+      expect(FluiColors.cream, const Color(0xFFFFF9F2));
       expect(FluiColors.greenDeep, const Color(0xFF0B3D34));
       expect(FluiColors.greenSecondary, const Color(0xFF165A4B));
-      expect(FluiColors.charcoal, const Color(0xFF0F0F0F));
+      expect(FluiColors.charcoal, const Color(0xFF151426));
       expect(FluiColors.yellowElectric, const Color(0xFFFFD60A));
       expect(FluiColors.gray, const Color(0xFF687280));
       expect(FluiColors.creamMuted, const Color(0xFFB9C4BF));
+    });
+
+    test('expressive palette assigns a distinct color to every skill', () {
+      expect(FluiColors.ink, const Color(0xFF151426));
+      expect(FluiColors.paper, const Color(0xFFFFF9F2));
+      expect(FluiColors.skill(SkillColor.voice), FluiColors.electricBlue);
+      expect(FluiColors.skill(SkillColor.fluency), FluiColors.aqua);
+      expect(FluiColors.skill(SkillColor.vocabulary), FluiColors.softPink);
+      expect(FluiColors.skill(SkillColor.progress), FluiColors.acidLime);
     });
   });
 
@@ -34,10 +43,10 @@ void main() {
     test('maps brand colors into the color scheme', () {
       final scheme = theme.colorScheme;
       expect(scheme.brightness, Brightness.light);
-      expect(scheme.primary, FluiColors.greenDeep);
+      expect(scheme.primary, FluiColors.electricBlue);
       expect(scheme.onPrimary, FluiColors.cream);
-      expect(scheme.secondary, FluiColors.greenSecondary);
-      expect(scheme.tertiary, FluiColors.yellowElectric);
+      expect(scheme.secondary, FluiColors.aqua);
+      expect(scheme.tertiary, FluiColors.acidLime);
       expect(scheme.onTertiary, FluiColors.charcoal);
       expect(scheme.surface, FluiColors.cream);
       expect(scheme.onSurface, FluiColors.charcoal);

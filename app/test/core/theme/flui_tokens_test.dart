@@ -252,11 +252,11 @@ void main() {
       );
       expect(
         contrastRatio(FluiColors.cream, FluiColors.greenDeep),
-        closeTo(11.41, 0.01),
+        closeTo(11.60, 0.01),
       );
       expect(
         contrastRatio(FluiColors.charcoal, FluiColors.yellowElectric),
-        closeTo(13.58, 0.01),
+        closeTo(12.82, 0.01),
       );
       expect(
         contrastRatio(FluiColors.gray, FluiColors.greenDeep),
@@ -264,7 +264,7 @@ void main() {
       );
       expect(
         contrastRatio(FluiColors.yellowElectric, FluiColors.cream),
-        closeTo(1.33, 0.01),
+        closeTo(1.35, 0.01),
       );
     });
 

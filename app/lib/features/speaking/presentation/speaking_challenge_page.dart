@@ -9,7 +9,10 @@ import 'package:flui/features/speaking/domain/speaking_metrics.dart';
 import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_analyzer.dart';
 import 'package:flui/features/speaking/domain/speech_recorder.dart';
+import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
+import 'package:flui/features/speaking/presentation/widgets/speaker_cue_cards.dart';
+import 'package:flui/features/speaking/presentation/widgets/voice_orb.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
@@ -45,6 +48,7 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   late SpeakingMetrics _firstMetrics;
   late SpeakingMetrics _currentMetrics;
   late SpeakingFeedback _feedback;
+  late SpeechTranscript _currentTranscript;
 
   @override
   void dispose() {
@@ -104,8 +108,15 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
         throw StateError('speech analysis failed');
       }
       final metrics = _analyzer.analyze(transcript);
+      _currentTranscript = transcript;
       _currentMetrics = metrics;
-      _feedback = _analyzer.feedback(metrics);
+      final measuredFeedback = _analyzer.feedback(metrics);
+      _feedback = transcript.coaching == null
+          ? measuredFeedback
+          : SpeakingFeedback(
+              signals: measuredFeedback.signals,
+              retryCue: transcript.coaching!.retryCue,
+            );
       if (_attempt == 1) _firstMetrics = metrics;
       if (!mounted) return;
       setState(() {
@@ -149,6 +160,7 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
                   _Phase.analyzing => const _AnalyzingView(),
                   _Phase.feedback => _FeedbackView(
                     feedback: _feedback,
+                    transcript: _currentTranscript,
                     onRetry: _retry,
                   ),
                   _Phase.comparison => _ComparisonView(
@@ -252,27 +264,14 @@ class _RecordingView extends StatelessWidget {
         Text('$secondsLeft', style: Theme.of(context).textTheme.displayLarge),
         const Text('segundos restantes'),
         const SizedBox(height: 42),
-        SizedBox(
-          height: 92,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: List.generate(13, (index) {
-              final wave = .25 + ((index % 5) / 5) * level;
-              return AnimatedContainer(
-                duration: const Duration(milliseconds: 100),
-                width: 8,
-                height: 76 * wave,
-                margin: const EdgeInsets.symmetric(horizontal: 4),
-                decoration: BoxDecoration(
-                  color: FluiColors.greenSecondary,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              );
-            }),
-          ),
+        VoiceOrb(
+          state: VoiceOrbState.recording,
+          amplitude: level,
+          semanticLabel: 'Flui está escuchando tu voz',
         ),
-        const SizedBox(height: 42),
+        const SizedBox(height: 24),
+        const SpeakerCueCards(),
+        const SizedBox(height: 28),
         FluiButton.primary(label: 'Terminar intento', onPressed: onFinish),
       ],
     );
@@ -296,8 +295,13 @@ class _AnalyzingView extends StatelessWidget {
 }
 
 class _FeedbackView extends StatelessWidget {
-  const new({required this.feedback, required this.onRetry});
+  const new({
+    required this.feedback,
+    required this.transcript,
+    required this.onRetry,
+  });
   final SpeakingFeedback feedback;
+  final SpeechTranscript transcript;
   final VoidCallback onRetry;
   @override
   Widget build(BuildContext context) => Column(
@@ -311,6 +315,29 @@ class _FeedbackView extends StatelessWidget {
         style: Theme.of(context).textTheme.headlineMedium,
       ),
       const SizedBox(height: 24),
+      if (transcript.coaching case final coaching?) ...[
+        const FluiLabel('LO QUE ENTENDÍ'),
+        const SizedBox(height: 8),
+        Text(coaching.summary),
+        const SizedBox(height: 14),
+        _InsightCard(
+          label: 'ESTRUCTURA · ESTIMACIÓN',
+          detail: coaching.structure,
+        ),
+        _InsightCard(
+          label: 'VOCABULARIO · ESTIMACIÓN',
+          detail: coaching.vocabulary,
+        ),
+        _InsightCard(label: 'FORTALEZA', detail: coaching.strength),
+        const SizedBox(height: 14),
+        const FluiLabel('TRANSCRIPCIÓN'),
+        const SizedBox(height: 8),
+        Text(
+          '“${transcript.text}”',
+          style: const TextStyle(color: FluiColors.gray, height: 1.45),
+        ),
+        const SizedBox(height: 24),
+      ],
       for (final signal in feedback.signals)
         _Signal(
           icon: switch (signal.title) {
@@ -327,6 +354,38 @@ class _FeedbackView extends StatelessWidget {
       const SizedBox(height: 24),
       FluiButton.primary(label: 'Inténtalo otra vez', onPressed: onRetry),
     ],
+  );
+}
+
+class _InsightCard extends StatelessWidget {
+  const new({required this.label, required this.detail});
+
+  final String label;
+  final String detail;
+
+  @override
+  Widget build(BuildContext context) => Container(
+    margin: const EdgeInsets.only(top: 10),
+    padding: const EdgeInsets.all(16),
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(18),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+            color: FluiColors.greenSecondary,
+            fontSize: 12,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text(detail),
+      ],
+    ),
   );
 }
 
@@ -422,29 +481,28 @@ class _MicButton extends StatelessWidget {
   const new({required this.onTap});
   final VoidCallback onTap;
   @override
-  Widget build(BuildContext context) => InkWell(
+  Widget build(BuildContext context) => GestureDetector(
     onTap: onTap,
-    borderRadius: BorderRadius.circular(72),
-    child: Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        children: [
-          Ink(
-            width: 116,
-            height: 116,
-            decoration: const BoxDecoration(
-              color: FluiColors.greenSecondary,
-              shape: BoxShape.circle,
-            ),
-            child: const Icon(LucideIcons.mic, color: Colors.white, size: 42),
-          ),
-          const SizedBox(height: 14),
-          const Text(
-            'Empezar a hablar',
-            style: TextStyle(fontWeight: FontWeight.w700),
-          ),
-        ],
-      ),
+    behavior: HitTestBehavior.opaque,
+    child: Column(
+      children: [
+        VoiceOrb(
+          state: VoiceOrbState.listening,
+          amplitude: .2,
+          semanticLabel: 'Empezar grabación',
+          onTap: onTap,
+        ),
+        const SizedBox(height: 8),
+        const Text(
+          'Empezar a hablar',
+          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+        ),
+        const SizedBox(height: 4),
+        const Text(
+          'Toca la esfera cuando estés listo',
+          style: TextStyle(color: FluiColors.gray),
+        ),
+      ],
     ),
   );
 }

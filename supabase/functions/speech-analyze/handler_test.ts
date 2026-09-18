@@ -20,6 +20,14 @@ function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
         ],
       });
     },
+    evaluate: () =>
+      Promise.resolve({
+        summary: "Explica una decisión y su resultado.",
+        structure: "Idea clara; falta un cierre.",
+        vocabulary: "Vocabulario concreto pero poco variado.",
+        strength: "Conecta la acción con su beneficio.",
+        retryCue: "Cierra con una frase que resuma el aprendizaje.",
+      }),
     ...overrides,
   };
   return { handler: createSpeechAnalyzeHandler(deps), calls };
@@ -61,7 +69,7 @@ Deno.test("rejects unsupported audio and invalid duration", async () => {
   assertEquals(calls.length, 0);
 });
 
-Deno.test("returns provider-neutral timestamped transcript", async () => {
+Deno.test("returns transcript and semantic coaching grounded in it", async () => {
   const { handler, calls } = setup();
   const response = await handler(post(validBody()));
   assertEquals(response.status, 200);
@@ -73,6 +81,13 @@ Deno.test("returns provider-neutral timestamped transcript", async () => {
       { text: "idea", start: 0.3, end: 0.6 },
       { text: "clara", start: 0.7, end: 1 },
     ],
+    analysis: {
+      summary: "Explica una decisión y su resultado.",
+      structure: "Idea clara; falta un cierre.",
+      vocabulary: "Vocabulario concreto pero poco variado.",
+      strength: "Conecta la acción con su beneficio.",
+      retryCue: "Cierra con una frase que resuma el aprendizaje.",
+    },
   });
   assertEquals([...calls[0].bytes], [1, 2, 3]);
   assertEquals(calls[0].mimeType, "audio/wav");

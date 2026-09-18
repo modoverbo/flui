@@ -190,6 +190,19 @@ class _SwapProof extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(22),
+              child: SizedBox(
+                height: 168,
+                width: double.infinity,
+                child: Image.asset(
+                  'assets/textures/flui-voice-world.png',
+                  fit: BoxFit.cover,
+                  alignment: const Alignment(0, .45),
+                ),
+              ),
+            ),
+            const SizedBox(height: FluiSpacing.md),
             Row(
               children: [
                 const FluiGlyphIcon(

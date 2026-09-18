@@ -6,8 +6,19 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../helpers/pump_router.dart';
+import '../../helpers/pump_app.dart';
 
 void main() {
+  testWidgets('shows original voice-world artwork', (tester) async {
+    await tester.pumpFlui(
+      WelcomeView(onStart: () {}, onSignIn: () {}),
+      surfaceSize: const Size(390, 844),
+    );
+    expect(
+      find.image(const AssetImage('assets/textures/flui-voice-world.png')),
+      findsOneWidget,
+    );
+  });
   Future<void> pumpWelcome(WidgetTester tester) => pumpRoutedPage(
     tester,
     location: AppRoutes.welcome,

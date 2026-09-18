@@ -24,6 +24,31 @@ void main() {
       expect(result.valueOrNull?.devBypassAuth, isTrue);
     });
 
+    test('fake backend accepts a separate local speech analysis url', () {
+      final result = AppConfig.parse(const {
+        'BACKEND': 'fake',
+        'DEV_BYPASS_AUTH': 'true',
+        'SPEECH_ANALYSIS_URL': 'http://127.0.0.1:8787/analyze',
+      });
+
+      expect(
+        result.valueOrNull?.speechAnalysisUrl,
+        Uri.parse('http://127.0.0.1:8787/analyze'),
+      );
+    });
+
+    test('speech analysis url must be an absolute http url', () {
+      final result = AppConfig.parse(const {
+        'BACKEND': 'fake',
+        'SPEECH_ANALYSIS_URL': 'localhost:8787/analyze',
+      });
+
+      expect(
+        (result.failureOrNull! as ConfigFailure).message,
+        contains('SPEECH_ANALYSIS_URL'),
+      );
+    });
+
     test('developer bypass cannot be enabled with Supabase', () {
       final result = AppConfig.parse(const {
         'BACKEND': 'supabase',

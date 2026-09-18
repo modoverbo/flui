@@ -1,16 +1,36 @@
 import 'package:material_ui/material_ui.dart';
 
+enum SkillColor { voice, fluency, vocabulary, progress, story, coaching }
+
 /// Brand palette from docs/brand.md plus derived tints.
 ///
 /// Rules live in `flui_color_rules.dart` and are enforced by a test: yellow
 /// has exactly four roles, yellow buttons carry charcoal, gray never touches
 /// deep green and yellow is never text or a bare fill on cream.
 abstract final class FluiColors {
+  static const ink = Color(0xFF151426);
+  static const paper = Color(0xFFFFF9F2);
+  static const electricBlue = Color(0xFF536DFF);
+  static const aqua = Color(0xFF46D9D0);
+  static const coral = Color(0xFFFF6B61);
+  static const acidLime = Color(0xFFD9FF57);
+  static const softPink = Color(0xFFFFD6EA);
+  static const lavender = Color(0xFFB8A7FF);
+
+  static Color skill(SkillColor skill) => switch (skill) {
+    SkillColor.voice => electricBlue,
+    SkillColor.fluency => aqua,
+    SkillColor.vocabulary => softPink,
+    SkillColor.progress => acidLime,
+    SkillColor.story => coral,
+    SkillColor.coaching => lavender,
+  };
+
   // Brand colors.
-  static const cream = Color(0xFFF8F8F6);
+  static const cream = paper;
   static const greenDeep = Color(0xFF0B3D34);
   static const greenSecondary = Color(0xFF165A4B);
-  static const charcoal = Color(0xFF0F0F0F);
+  static const charcoal = ink;
   static const yellowElectric = Color(0xFFFFD60A);
   static const gray = Color(0xFF687280);
 

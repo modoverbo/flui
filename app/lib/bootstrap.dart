@@ -28,6 +28,7 @@ import 'package:flui/features/profile/data/fake_streak_repair_repository.dart';
 import 'package:flui/features/profile/data/supabase_streak_repair_repository.dart';
 import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
+import 'package:flui/features/speaking/data/http_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/data/supabase_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/subscription/data/fake_checkout_launcher.dart';
@@ -135,7 +136,9 @@ List<Override> fakeBackendOverrides({
       FakeStreakRepairRepository(currentUserId: currentUserId),
     ),
     speechAnalysisRepositoryProvider.overrideWithValue(
-      FakeSpeechAnalysisRepository(latency: latency),
+      config.speechAnalysisUrl == null
+          ? FakeSpeechAnalysisRepository(latency: latency)
+          : HttpSpeechAnalysisRepository(endpoint: config.speechAnalysisUrl!),
     ),
     checkoutLauncherProvider.overrideWith(
       (ref) => FakeCheckoutLauncher(

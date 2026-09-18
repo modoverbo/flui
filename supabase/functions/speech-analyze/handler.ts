@@ -13,10 +13,19 @@ export interface ProviderTranscript {
   words: TranscriptWord[];
 }
 
+export interface SpeechCoaching {
+  summary: string;
+  structure: string;
+  vocabulary: string;
+  strength: string;
+  retryCue: string;
+}
+
 export interface SpeechAnalyzeDeps {
   allowedOrigins: string[];
   getUserId(token: string): Promise<string | null>;
   transcribe(bytes: Uint8Array, mimeType: string): Promise<ProviderTranscript>;
+  evaluate(text: string): Promise<SpeechCoaching>;
   log?: (message: string, details?: Record<string, unknown>) => void;
 }
 
@@ -81,10 +90,23 @@ export function createSpeechAnalyzeHandler(
         }
         throw new HttpError(502, "upstream_error", "Speech analysis is temporarily unavailable.");
       }
+      if (!transcript.text.trim()) {
+        throw new HttpError(422, "no_speech", "No speech was detected.");
+      }
+      let analysis: SpeechCoaching;
+      try {
+        analysis = await deps.evaluate(transcript.text.trim());
+      } catch (error) {
+        if (error instanceof Response && error.status === 429) {
+          throw new HttpError(429, "rate_limited", "Speech analysis is busy. Try again shortly.");
+        }
+        throw new HttpError(502, "upstream_error", "Speech analysis is temporarily unavailable.");
+      }
       return jsonResponse(200, {
         text: transcript.text.trim(),
         durationMs: Math.round(transcript.durationSeconds * 1000),
         words: transcript.words,
+        analysis,
       }, cors);
     } catch (error) {
       if (error instanceof HttpError) {

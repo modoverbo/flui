@@ -41,6 +41,10 @@ final class SupabaseSpeechAnalysisRepository
       if (json['text'] is! String || rawWords is! List) {
         return const Result.err(UnexpectedFailure('invalid_speech_response'));
       }
+      final rawAnalysis = json['analysis'];
+      final analysis = rawAnalysis is Map
+          ? Map<String, dynamic>.from(rawAnalysis)
+          : null;
       return Result.ok(
         SpeechTranscript(
           text: json['text'] as String,
@@ -58,6 +62,15 @@ final class SupabaseSpeechAnalysisRepository
                   endSeconds: (raw['end'] as num).toDouble(),
                 ),
           ],
+          coaching: analysis == null
+              ? null
+              : SpeechCoaching(
+                  summary: analysis['summary'] as String,
+                  structure: analysis['structure'] as String,
+                  vocabulary: analysis['vocabulary'] as String,
+                  strength: analysis['strength'] as String,
+                  retryCue: analysis['retryCue'] as String,
+                ),
         ),
       );
     } on Object catch (error) {

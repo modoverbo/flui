@@ -59,28 +59,37 @@ class AppShellScaffold extends StatelessWidget {
         if (width < FluiBreakpoints.rail) {
           return Scaffold(
             body: child,
-            bottomNavigationBar: DecoratedBox(
-              decoration: const BoxDecoration(
-                border: Border(
-                  top: BorderSide(color: FluiColors.hairlineOnCream),
-                ),
-              ),
-              child: NavigationBar(
-                selectedIndex: selectedIndex,
-                onDestinationSelected: onDestinationSelected,
-                destinations: [
-                  for (final (index, (glyph, label)) in items.indexed)
-                    NavigationDestination(
-                      icon: FluiGlyphIcon(
-                        glyph,
-                        size: FluiIconSize.tab,
-                        color: index == selectedIndex
-                            ? FluiColors.greenDeep
-                            : FluiColors.gray,
-                      ),
-                      label: label,
+            bottomNavigationBar: SafeArea(
+              minimum: const EdgeInsets.fromLTRB(14, 0, 14, 12),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(28),
+                child: NavigationBar(
+                  backgroundColor: FluiColors.ink,
+                  indicatorColor: FluiColors.acidLime,
+                  labelTextStyle: WidgetStateProperty.resolveWith(
+                    (states) => TextStyle(
+                      color: states.contains(WidgetState.selected)
+                          ? FluiColors.acidLime
+                          : FluiColors.creamMuted,
+                      fontWeight: FontWeight.w700,
                     ),
-                ],
+                  ),
+                  selectedIndex: selectedIndex,
+                  onDestinationSelected: onDestinationSelected,
+                  destinations: [
+                    for (final (index, (glyph, label)) in items.indexed)
+                      NavigationDestination(
+                        icon: FluiGlyphIcon(
+                          glyph,
+                          size: FluiIconSize.tab,
+                          color: index == selectedIndex
+                              ? FluiColors.ink
+                              : FluiColors.creamMuted,
+                        ),
+                        label: label,
+                      ),
+                  ],
+                ),
               ),
             ),
           );

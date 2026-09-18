@@ -13,6 +13,7 @@ final class AppConfig {
     this.supabaseUrl,
     this.supabaseAnonKey,
     this.appUrl,
+    this.speechAnalysisUrl,
     this.devBypassAuth = false,
   });
 
@@ -23,6 +24,7 @@ final class AppConfig {
     'SUPABASE_ANON_KEY': String.fromEnvironment('SUPABASE_ANON_KEY'),
     'APP_URL': String.fromEnvironment('APP_URL'),
     'DEV_BYPASS_AUTH': String.fromEnvironment('DEV_BYPASS_AUTH'),
+    'SPEECH_ANALYSIS_URL': String.fromEnvironment('SPEECH_ANALYSIS_URL'),
   });
 
   /// Parses and validates raw values. Empty values count as missing.
@@ -65,11 +67,22 @@ final class AppConfig {
       );
     }
 
+    final rawSpeechAnalysisUrl = read('SPEECH_ANALYSIS_URL');
+    final speechAnalysisUrl = rawSpeechAnalysisUrl == null
+        ? null
+        : _httpUrl(rawSpeechAnalysisUrl);
+    if (rawSpeechAnalysisUrl != null && speechAnalysisUrl == null) {
+      return const Result.err(
+        ConfigFailure('SPEECH_ANALYSIS_URL must be an absolute http(s) URL.'),
+      );
+    }
+
     if (backend == Backend.fake) {
       return Result.ok(
         AppConfig(
           backend: backend,
           appUrl: appUrl,
+          speechAnalysisUrl: speechAnalysisUrl,
           devBypassAuth: devBypassAuth,
         ),
       );
@@ -96,6 +109,7 @@ final class AppConfig {
         supabaseUrl: supabaseUrl,
         supabaseAnonKey: anonKey,
         appUrl: appUrl,
+        speechAnalysisUrl: speechAnalysisUrl,
         devBypassAuth: devBypassAuth,
       ),
     );
@@ -105,6 +119,7 @@ final class AppConfig {
   final Uri? supabaseUrl;
   final String? supabaseAnonKey;
   final Uri? appUrl;
+  final Uri? speechAnalysisUrl;
   final bool devBypassAuth;
 
   static Uri? _httpUrl(String raw) {

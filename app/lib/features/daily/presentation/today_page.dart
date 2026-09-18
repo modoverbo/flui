@@ -229,10 +229,15 @@ class _SpeakingWorkoutCard extends StatelessWidget {
         onTap: () => context.push(AppRoutes.speakingChallenge),
         borderRadius: BorderRadius.circular(24),
         child: Ink(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(22),
           decoration: BoxDecoration(
-            color: FluiColors.yellowTint,
-            borderRadius: BorderRadius.circular(24),
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [FluiColors.electricBlue, FluiColors.lavender],
+            ),
+            borderRadius: BorderRadius.circular(30),
+            border: Border.all(color: FluiColors.ink, width: 2),
           ),
           child: Row(
             children: [
@@ -240,12 +245,12 @@ class _SpeakingWorkoutCard extends StatelessWidget {
                 width: 54,
                 height: 54,
                 decoration: const BoxDecoration(
-                  color: FluiColors.greenSecondary,
+                  color: FluiColors.acidLime,
                   shape: BoxShape.circle,
                 ),
                 child: const Icon(
                   Icons.mic_rounded,
-                  color: Colors.white,
+                  color: FluiColors.ink,
                   size: 28,
                 ),
               ),
@@ -254,20 +259,23 @@ class _SpeakingWorkoutCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const FluiLabel('TU GIMNASIO DE HOY'),
+                    const FluiLabel(
+                      'TU GIMNASIO DE HOY',
+                      color: FluiColors.ink,
+                    ),
                     const SizedBox(height: 3),
                     Text(
                       'Entrena tu voz',
-                      style: type.titleM.copyWith(color: FluiColors.charcoal),
+                      style: type.titleM.copyWith(color: FluiColors.ink),
                     ),
                     Text(
                       'Pausa de poder · 45 s',
-                      style: type.body.copyWith(color: FluiColors.gray),
+                      style: type.body.copyWith(color: FluiColors.ink),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.arrow_forward_rounded),
+              const Icon(Icons.arrow_forward_rounded, color: FluiColors.ink),
             ],
           ),
         ),

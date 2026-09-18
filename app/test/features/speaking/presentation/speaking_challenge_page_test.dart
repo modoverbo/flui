@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_recorder.dart';
 import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
+import 'package:flui/features/speaking/presentation/widgets/voice_orb.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -39,6 +40,7 @@ void main() {
     expect(find.textContaining('decisión pequeña'), findsOneWidget);
     expect(find.text('45 s'), findsOneWidget);
     expect(find.text('Empezar a hablar'), findsOneWidget);
+    expect(find.byType(VoiceOrb), findsOneWidget);
     expect(find.textContaining('no guardamos tu audio'), findsOneWidget);
   });
 
@@ -61,6 +63,10 @@ void main() {
       () => Future<void>.delayed(const Duration(milliseconds: 10)),
     );
     await tester.pump();
+    expect(find.byType(VoiceOrb), findsOneWidget);
+    expect(find.text('Tarjetas guía'), findsOneWidget);
+    expect(find.text('ABRIR'), findsOneWidget);
+    await tester.ensureVisible(find.text('Terminar intento'));
     await tester.tap(find.text('Terminar intento'));
     await tester.runAsync(
       () => Future<void>.delayed(const Duration(milliseconds: 10)),
@@ -70,12 +76,18 @@ void main() {
     await tester.pump();
     expect(find.text('Inténtalo otra vez'), findsOneWidget);
     expect(find.textContaining('3 detectadas'), findsOneWidget);
+    expect(find.text('LO QUE ENTENDÍ'), findsOneWidget);
+    expect(find.textContaining('Eh pues tomé una decisión'), findsOneWidget);
+    expect(find.text('VOCABULARIO · ESTIMACIÓN'), findsOneWidget);
+    expect(find.textContaining('“organizar”'), findsOneWidget);
 
+    await tester.ensureVisible(find.text('Inténtalo otra vez'));
     await tester.tap(find.text('Inténtalo otra vez'));
     await tester.runAsync(
       () => Future<void>.delayed(const Duration(milliseconds: 10)),
     );
     await tester.pump();
+    await tester.ensureVisible(find.text('Terminar intento'));
     await tester.tap(find.text('Terminar intento'));
     await tester.runAsync(
       () => Future<void>.delayed(const Duration(milliseconds: 10)),

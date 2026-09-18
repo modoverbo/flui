@@ -37,6 +37,19 @@ final class FakeSpeechAnalysisRepository implements SpeechAnalysisRepository {
       SpeechTranscript(
         text: text,
         duration: duration,
+        coaching: SpeechCoaching(
+          summary: _attempt.isOdd
+              ? 'Explicaste que organizar tu mañana mejoró tu claridad.'
+              : 'Explicaste el efecto de organizar tu mañana.',
+          structure: _attempt.isOdd
+              ? 'Presentas la decisión y el beneficio; falta un cierre.'
+              : 'La secuencia acción, resultado y cierre es clara.',
+          vocabulary: _attempt.isOdd
+              ? 'Usaste “organizar” y “claridad”; “decisión” se repite.'
+              : 'Usaste verbos concretos y evitaste repeticiones dominantes.',
+          strength: 'Relacionas una acción concreta con su resultado.',
+          retryCue: 'Cierra con una frase de máximo 10 palabras.',
+        ),
         words: [
           for (var index = 0; index < tokens.length; index++)
             SpeechWord(

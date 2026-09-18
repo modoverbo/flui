@@ -1,6 +1,10 @@
 import { createClient } from "npm:@supabase/supabase-js@2.116.0";
 import { parseAllowedOrigins } from "../_shared/cors.ts";
-import { createSpeechAnalyzeHandler, type ProviderTranscript } from "./handler.ts";
+import {
+  createSpeechAnalyzeHandler,
+  type ProviderTranscript,
+  type SpeechCoaching,
+} from "./handler.ts";
 
 function required(name: string): string {
   const value = Deno.env.get(name)?.trim();
@@ -61,6 +65,46 @@ const handler = createSpeechAnalyzeHandler({
           : []
       ),
     };
+  },
+  async evaluate(text): Promise<SpeechCoaching> {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${groqApiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        temperature: 0.2,
+        response_format: { type: "json_object" },
+        messages: [
+          {
+            role: "system",
+            content:
+              "Eres un entrenador de comunicación oral en español. Evalúa únicamente la evidencia del texto; no inventes tono, pronunciación ni emociones. Responde JSON con exactamente: summary, structure, vocabulary, strength, retryCue. Cada valor debe ser una frase breve, concreta, respetuosa y en español. vocabulary debe mencionar evidencia léxica específica. retryCue debe pedir una acción medible para repetir el intento.",
+          },
+          {
+            role: "user",
+            content:
+              `Consigna: Cuéntame una decisión pequeña que mejoró tu día.\nTranscripción:\n${text}`,
+          },
+        ],
+      }),
+      signal: AbortSignal.timeout(15_000),
+    });
+    if (!response.ok) throw response;
+    const payload = await response.json() as {
+      choices?: Array<{ message?: { content?: string } }>;
+    };
+    const content = payload.choices?.[0]?.message?.content;
+    if (typeof content !== "string") throw new Error("Missing coaching response.");
+    const coaching = JSON.parse(content) as Partial<SpeechCoaching>;
+    for (const key of ["summary", "structure", "vocabulary", "strength", "retryCue"] as const) {
+      if (typeof coaching[key] !== "string" || !coaching[key]?.trim()) {
+        throw new Error(`Invalid coaching field: ${key}`);
+      }
+    }
+    return coaching as SpeechCoaching;
   },
 });
 

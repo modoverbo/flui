@@ -10,6 +10,7 @@ export type ErrorCode =
   | "unknown_plan"
   | "already_subscribed"
   | "invalid_audio"
+  | "no_speech"
   | "payload_too_large"
   | "rate_limited"
   | "upstream_error"
