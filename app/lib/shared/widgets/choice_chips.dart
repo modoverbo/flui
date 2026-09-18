@@ -33,17 +33,15 @@ class ChoiceChips<T> extends StatelessWidget {
             showCheckmark: false,
             labelStyle: FluiTypeScale.compact.body.copyWith(
               fontWeight: FontWeight.w600,
-              color: value == selected ? FluiColors.cream : FluiColors.charcoal,
+              color: FluiColors.ink,
             ),
             labelPadding: const EdgeInsets.symmetric(
               horizontal: FluiSpacing.xs,
             ),
-            selectedColor: FluiColors.greenDeep,
-            backgroundColor: FluiColors.surface,
+            selectedColor: FluiColors.acidLime,
+            backgroundColor: FluiColors.softPink,
             side: BorderSide(
-              color: value == selected
-                  ? FluiColors.greenDeep
-                  : FluiColors.outline,
+              color: value == selected ? FluiColors.ink : FluiColors.ink,
             ),
             shape: const RoundedRectangleBorder(
               borderRadius: FluiRadii.chipAll,

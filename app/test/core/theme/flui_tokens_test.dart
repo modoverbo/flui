@@ -240,7 +240,7 @@ void main() {
       test('${pair.name} is unreadable and therefore banned', () {
         expect(
           contrastRatio(pair.foreground, pair.background),
-          lessThan(FluiColorRules.aaLargeText),
+          lessThan(FluiColorRules.aaText),
         );
       });
     }

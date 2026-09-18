@@ -133,7 +133,7 @@ class _ProgressContent extends ConsumerWidget {
           tiles: [
             BentoTile(
               span: BentoSpan.large,
-              tone: BentoTone.green,
+              tone: BentoTone.ink,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -169,12 +169,14 @@ class _ProgressContent extends ConsumerWidget {
               value: '${stats.tuya}',
               label: l10n.statOwnedWords,
               glyph: FluiGlyph.achievement,
+              tone: BentoTone.lime,
             ),
             _tile(
               context,
               value: '${stats.practica}',
               label: l10n.statPracticeWords,
               glyph: FluiGlyph.review,
+              tone: BentoTone.aqua,
             ),
             _tile(
               context,
@@ -183,12 +185,14 @@ class _ProgressContent extends ConsumerWidget {
                   : l10n.statPrecisionValue(precision),
               label: l10n.statPrecisionLabel,
               glyph: FluiGlyph.goal,
+              tone: BentoTone.coral,
             ),
             _tile(
               context,
               value: '${stats.activeDays}',
               label: l10n.statActiveDays,
               glyph: FluiGlyph.onda,
+              tone: BentoTone.lavender,
             ),
           ],
         ),
@@ -245,16 +249,17 @@ class _ProgressContent extends ConsumerWidget {
     required String value,
     required String label,
     required FluiGlyph glyph,
+    required BentoTone tone,
   }) {
     final type = context.type;
     return BentoTile(
       span: BentoSpan.small,
-      tone: BentoTone.green,
+      tone: tone,
       semanticLabel: '$value $label',
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          FluiGlyphIcon(glyph, color: FluiColors.creamMuted),
+          FluiGlyphIcon(glyph, color: FluiColors.ink),
           const Spacer(),
           FittedBox(
             fit: BoxFit.scaleDown,
@@ -262,10 +267,10 @@ class _ProgressContent extends ConsumerWidget {
             child: Text(
               value,
               maxLines: 1,
-              style: type.titleL.copyWith(color: FluiColors.cream),
+              style: type.titleL.copyWith(color: FluiColors.ink),
             ),
           ),
-          FluiLabel(label, onDark: true),
+          FluiLabel(label, color: FluiColors.ink),
         ],
       ),
     );

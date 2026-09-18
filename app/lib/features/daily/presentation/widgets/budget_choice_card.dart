@@ -32,6 +32,12 @@ class BudgetChoiceCard extends StatelessWidget {
       label: l10n.timeBudgetChoiceSemantics(minutes, line),
       excludeSemantics: true,
       child: FluiCard(
+        color: switch (minutes) {
+          5 => FluiColors.softPink,
+          10 => FluiColors.aqua,
+          20 => FluiColors.acidLime,
+          _ => FluiColors.lavender,
+        },
         selected: selected,
         onTap: onTap,
         padding: const EdgeInsets.symmetric(

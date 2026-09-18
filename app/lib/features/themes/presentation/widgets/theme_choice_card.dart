@@ -37,6 +37,13 @@ class ThemeChoiceCard extends StatelessWidget {
       label: l10n.themeChoiceSemantics(theme.name, theme.tagline),
       excludeSemantics: true,
       child: FluiCard(
+        color: const [
+          FluiColors.softPink,
+          FluiColors.aqua,
+          FluiColors.acidLime,
+          FluiColors.coral,
+          FluiColors.lavender,
+        ][theme.sortOrder % 5],
         selected: selected,
         onTap: onTap,
         padding: const EdgeInsets.symmetric(

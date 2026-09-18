@@ -375,7 +375,7 @@ class _TodayBento extends StatelessWidget {
         // The 2x2 anchor: the week, in the one dark tile of the screen.
         BentoTile(
           span: BentoSpan.large,
-          tone: BentoTone.green,
+          tone: BentoTone.ink,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -411,7 +411,7 @@ class _TodayBento extends StatelessWidget {
         if (word != null && !overview.completed)
           BentoTile(
             span: BentoSpan.wide,
-            tone: BentoTone.yellow,
+            tone: BentoTone.lime,
             onTap: () => context.go(AppRoutes.wordDetail(word.id)),
             semanticLabel: '${l10n.todayWordTitle}: ${word.lemma}',
             child: Row(
@@ -500,6 +500,7 @@ class _TodayBento extends StatelessWidget {
                 : '${overview.practiceWords}',
             label: owned ? l10n.statOwnedWords : l10n.statPracticeWords,
             glyph: owned ? FluiGlyph.achievement : FluiGlyph.review,
+            tone: BentoTone.aqua,
           ),
         if (precision != null)
           _numberTile(
@@ -507,6 +508,7 @@ class _TodayBento extends StatelessWidget {
             value: l10n.statPrecisionValue(precision),
             label: l10n.statPrecisionLabel,
             glyph: FluiGlyph.goal,
+            tone: BentoTone.coral,
           ),
         if (!owned)
           // A sentence needs width: this one is never squeezed into a cell.
@@ -541,10 +543,12 @@ class _TodayBento extends StatelessWidget {
     required String value,
     required String label,
     required FluiGlyph glyph,
+    required BentoTone tone,
   }) {
     final type = context.type;
     return BentoTile(
       span: BentoSpan.small,
+      tone: tone,
       semanticLabel: '$value $label',
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

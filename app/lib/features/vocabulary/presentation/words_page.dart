@@ -6,7 +6,6 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_surfaces.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
@@ -179,10 +178,10 @@ class _WordList extends StatelessWidget {
             spacing: FluiSpacing.sm,
             runSpacing: FluiSpacing.sm,
             children: [
-              for (final entry in visible)
+              for (final (index, entry) in visible.indexed)
                 LayoutBuilder(
                   builder: (context, _) =>
-                      _WordRow(entry: entry, columns: columns),
+                      _WordRow(entry: entry, columns: columns, index: index),
                 ),
             ],
           ),
@@ -192,10 +191,11 @@ class _WordList extends StatelessWidget {
 }
 
 class _WordRow extends StatelessWidget {
-  const new({required this.entry, required this.columns});
+  const new({required this.entry, required this.columns, required this.index});
 
   final WordEntry entry;
   final int columns;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -212,10 +212,10 @@ class _WordRow extends StatelessWidget {
       child: SizedBox(
         width: columns == 1 ? double.infinity : width,
         child: Material(
-          color: FluiColors.surface,
-          shape: const RoundedRectangleBorder(
+          color: wordCardColor(index),
+          shape: RoundedRectangleBorder(
             borderRadius: FluiRadii.cardAll,
-            side: FluiSurfaces.hairlineOnCream,
+            side: const BorderSide(color: FluiColors.ink, width: 1.5),
           ),
           clipBehavior: Clip.antiAlias,
           child: InkWell(
@@ -256,3 +256,11 @@ class _WordRow extends StatelessWidget {
     );
   }
 }
+
+Color wordCardColor(int index) => const [
+  FluiColors.softPink,
+  FluiColors.aqua,
+  FluiColors.acidLime,
+  FluiColors.coral,
+  FluiColors.lavender,
+][index % 5];

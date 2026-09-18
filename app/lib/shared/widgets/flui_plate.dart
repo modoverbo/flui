@@ -43,17 +43,25 @@ class FluiPlate extends StatelessWidget {
     return ClipRRect(
       borderRadius: borderRadius,
       child: DecoratedBox(
-        decoration: const BoxDecoration(color: FluiColors.plateEdge),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [FluiColors.plateEdge, FluiColors.plateCenter],
+          ),
+        ),
         child: Stack(
           fit: StackFit.passthrough,
           children: [
             Positioned.fill(
-              child: Image.asset(
-                asset,
-                fit: BoxFit.cover,
-                excludeFromSemantics: true,
-                // A missing or still-decoding plate leaves the flat green.
-                errorBuilder: (_, _, _) => const SizedBox.shrink(),
+              child: Opacity(
+                opacity: 0.12,
+                child: Image.asset(
+                  asset,
+                  fit: BoxFit.cover,
+                  excludeFromSemantics: true,
+                  errorBuilder: (_, _, _) => const SizedBox.shrink(),
+                ),
               ),
             ),
             if (waveField)

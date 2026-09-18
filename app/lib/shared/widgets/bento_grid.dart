@@ -27,7 +27,31 @@ final class BentoTile {
 
 /// The surface of a tile. The dark tile is the anchor of the grid; there is
 /// at most one per bento.
-enum BentoTone { cream, green, yellow }
+enum BentoTone {
+  cream,
+  green,
+  yellow,
+  ink,
+  blue,
+  lime,
+  coral,
+  aqua,
+  pink,
+  lavender,
+}
+
+Color bentoToneColor(BentoTone tone) => switch (tone) {
+  BentoTone.cream => FluiColors.surface,
+  BentoTone.green => FluiColors.greenDeep,
+  BentoTone.yellow => FluiColors.yellowElectric,
+  BentoTone.ink => FluiColors.ink,
+  BentoTone.blue => FluiColors.electricBlue,
+  BentoTone.lime => FluiColors.acidLime,
+  BentoTone.coral => FluiColors.coral,
+  BentoTone.aqua => FluiColors.aqua,
+  BentoTone.pink => FluiColors.softPink,
+  BentoTone.lavender => FluiColors.lavender,
+};
 
 /// An asymmetric bento: a 2-column grid with one dark anchor, singles and a
 /// full-width tile, replacing the row of identical KPI boxes.
@@ -112,6 +136,20 @@ class _Tile extends StatelessWidget {
         decoration: const BoxDecoration(
           color: FluiColors.yellowElectric,
           borderRadius: FluiRadii.cardAll,
+        ),
+        child: content,
+      ),
+      BentoTone.ink ||
+      BentoTone.blue ||
+      BentoTone.lime ||
+      BentoTone.coral ||
+      BentoTone.aqua ||
+      BentoTone.pink ||
+      BentoTone.lavender => DecoratedBox(
+        decoration: BoxDecoration(
+          color: bentoToneColor(tile.tone),
+          borderRadius: FluiRadii.cardAll,
+          border: Border.all(color: FluiColors.ink, width: 1.5),
         ),
         child: content,
       ),

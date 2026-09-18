@@ -1,12 +1,12 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/shared/widgets/bento_grid.dart';
-import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -334,9 +334,15 @@ void main() {
 
     // Exactly one dark plate on the screen, and it is the 2x2 anchor: full
     // grid width and taller than one cell.
-    expect(find.byType(FluiPlate), findsOneWidget);
+    final inkTile = find.byWidgetPredicate(
+      (widget) =>
+          widget is DecoratedBox &&
+          widget.decoration is BoxDecoration &&
+          (widget.decoration as BoxDecoration).color == FluiColors.ink,
+    );
+    expect(inkTile, findsOneWidget);
     final grid = tester.getSize(find.byType(BentoGrid));
-    final anchor = tester.getSize(find.byType(FluiPlate));
+    final anchor = tester.getSize(inkTile);
     expect(anchor.width, closeTo(grid.width, 1));
     // Two cells tall, so it anchors the composition instead of sitting in a
     // row of identical boxes.

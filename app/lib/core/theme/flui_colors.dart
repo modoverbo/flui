@@ -62,13 +62,13 @@ abstract final class FluiColors {
   static const amber = Color(0xFFB26A00);
 
   /// Dark surface for the progress area ("Tu progreso").
-  static const progressSurface = Color(0xFF08302A);
+  static const progressSurface = ink;
 
   /// Center of the green plate gradient (see [plateEdge]).
-  static const Color plateCenter = greenSecondary;
+  static const Color plateCenter = electricBlue;
 
   /// Edge of the green plate gradient.
-  static const Color plateEdge = greenDeep;
+  static const Color plateEdge = ink;
 
   /// Hairline on cream: `rgba(11, 61, 52, .08)`.
   static const Color hairlineOnCream = Color(0x140B3D34);

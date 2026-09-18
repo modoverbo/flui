@@ -1,8 +1,13 @@
 import 'package:flui/core/theme/flui_colors.dart';
-import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_surfaces.dart';
 import 'package:material_ui/material_ui.dart';
+
+const expressiveCardRadius = BorderRadius.only(
+  topLeft: Radius.circular(28),
+  topRight: Radius.circular(28),
+  bottomRight: Radius.circular(28),
+  bottomLeft: Radius.circular(12),
+);
 
 /// A flat surface for grouped content: hairline border, no shadow.
 /// [selected] draws the border in deep green instead of tinting the card.
@@ -31,9 +36,12 @@ class FluiCard extends StatelessWidget {
             color: onDark ? FluiColors.yellowElectric : FluiColors.greenDeep,
             width: 2,
           )
-        : FluiSurfaces.hairline(onDark: onDark);
+        : BorderSide(
+            color: onDark ? FluiColors.creamMuted : FluiColors.ink,
+            width: 1.5,
+          );
     final shape = RoundedRectangleBorder(
-      borderRadius: FluiRadii.cardAll,
+      borderRadius: expressiveCardRadius,
       side: border,
     );
     return Material(

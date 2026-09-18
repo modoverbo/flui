@@ -8,10 +8,8 @@ import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:http/http.dart' as http;
 
 final class HttpSpeechAnalysisRepository implements SpeechAnalysisRepository {
-  HttpSpeechAnalysisRepository({
-    required this.endpoint,
-    http.Client? client,
-  }) : _client = client ?? http.Client();
+  HttpSpeechAnalysisRepository({required this.endpoint, http.Client? client})
+    : _client = client ?? http.Client();
 
   final Uri endpoint;
   final http.Client _client;
