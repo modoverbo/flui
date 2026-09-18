@@ -131,7 +131,13 @@ void main() {
     });
 
     test('every tag points at a theme of the taxonomy', () {
-      final slugs = {for (final theme in seedThemes) theme.slug};
+      // The full 28-theme taxonomy, not just the 16 offered today: content
+      // authors tag words with the twelve unpublished recombination themes
+      // ahead of their own launch (GATE.md, content/themes.yml).
+      final slugs = {
+        for (final theme in [...seedThemes, ...unpublishedSeedThemes])
+          theme.slug,
+      };
 
       for (final entry in seedWordThemeSlugs.entries) {
         expect(slugs, containsAll(entry.value), reason: entry.key);

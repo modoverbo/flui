@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7004
 slug: "asimilar"
-status: "draft"
+status: "approved"
 lemma: "asimilar"
 part_of_speech: "verbo"
 syllables:
@@ -95,26 +95,6 @@ exercises:
         why_not: "«Disimular» sería fingir delante de otros, y aquí no hay nadie a quien ocultarle nada: sale de casa sin pensarlo."
         hint_specific: "«Disimular» necesita público. ¿Delante de quién estaría fingiendo Ismael?"
   - position: 3
-    sentence: "Nadia se sabía el manual entero, pero no {{blank}} el procedimiento hasta que lo usó con un cliente de verdad."
-    hint_general: "Sabérselo de memoria no bastó: hizo falta usarlo para que fuera suyo."
-    explanation: "Asimiló: hizo suyo el procedimiento al usarlo. «Retuvo» no encaja porque ya se lo sabía entero, y «digirió» acusa de tomárselo a mal."
-    options:
-      - position: 1
-        text: "retuvo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Retener» es guardarlo en la memoria, y eso ya lo tenía: se sabía el manual entero antes de atender a nadie."
-        hint_specific: "«Retener» es cosa de memoria. Relee: ¿le fallaba la memoria a Nadia?"
-      - position: 2
-        text: "asimiló"
-        is_correct: true
-      - position: 3
-        text: "digirió"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Digerir» es coloquial y se usa para lo que sienta mal, y aquí no hay nada doloroso: hay un procedimiento de trabajo."
-        hint_specific: "«Digerir» suena a encajar un golpe. ¿Le pasó algo doloroso o aprendió un procedimiento?"
-  - position: 4
     sentence: "Tras el primer mes, Leandro {{blank}} la forma de trabajar del equipo y empezó a proponer mejoras propias."
     hint_general: "La forma de trabajar ya es suya, tanto que la mueve y la mejora."
     explanation: "Asimiló: la forma de trabajar ya es suya y la mejora. «Copió» sería repetirla igual, y «disimuló» sería esconder algo delante del equipo."
@@ -134,7 +114,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Disimular» sería ocultarle algo al equipo, y aquí no oculta nada: propone cambios en voz alta."
         hint_specific: "«Disimular» es tapar. ¿Leandro tapa algo o pone ideas sobre la mesa?"
-  - position: 5
+  - position: 4
     sentence: "Mi hermana tardó un año en {{blank}} que la casa del pueblo ya no es nuestra, y ahora habla de ella sin que le pese."
     hint_general: "Un año le costó hacer suya esa idea hasta poder hablar de ella con calma."
     explanation: "Asimilar: hizo suya la idea hasta hablar de ella con calma. «Repetir» sería decirlo una y otra vez, y «disimular» sería fingir que no ha pasado."
@@ -154,27 +134,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Disimular» sería fingir que la casa sigue siendo nuestra, y ella habla del tema abiertamente."
         hint_specific: "«Disimular» es aparentar. ¿Ella aparenta algo o habla del tema sin rodeos?"
-  - position: 6
-    sentence: "Los primeros días Ximena copiaba los pasos uno a uno; al mes los {{blank}} y ya improvisaba con ellos."
-    hint_general: "Los pasos dejaron de ser ajenos: pasaron a ser suyos y pudo moverlos."
-    explanation: "Asimiló: los pasos pasaron a ser suyos y ya los mueve. «Digirió» acusa de tomárselos a mal, y «retuvo» habla de memoria, que ya tenía al copiarlos."
-    options:
-      - position: 1
-        text: "digirió"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Digerir» es coloquial y se dice de lo que cuesta encajar, y unos pasos de trabajo no le sentaron mal a nadie."
-        hint_specific: "«Digerir» suena a mal trago. ¿Hubo aquí un mal trago o un aprendizaje?"
-      - position: 2
-        text: "retuvo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Retener» es recordar los pasos, y eso ya lo hacía desde el principio: los copiaba uno a uno."
-        hint_specific: "«Retener» es acordarse. ¿Qué le faltaba a Ximena, memoria o soltura?"
-      - position: 3
-        text: "asimiló"
-        is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Las críticas Hugo las apunta y las repite en voz alta, pero no {{blank}} ninguna: sigue trabajando exactamente igual."
     hint_general: "Las tiene anotadas y las dice, pero ninguna ha pasado a formar parte de su manera de trabajar."
     explanation: "Asimila: ninguna crítica ha pasado a su manera de trabajar. «Traga» acusa de aguantarlas a disgusto, y «retiene» falla porque las tiene anotadas."
@@ -194,7 +154,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Retener» es guardarlas en la memoria, y las tiene anotadas y las repite: recordarlas no es su problema."
         hint_specific: "«Retener» es acordarse. Relee: ¿se le olvidan las críticas a Hugo?"
-  - position: 8
+  - position: 6
     sentence: "Cuando por fin {{blank}} el motivo del cambio, Berta pudo explicárselo a su equipo mejor que nadie."
     hint_general: "Lo hizo tan suyo que pudo contarlo con sus propias palabras a otras personas."
     explanation: "Asimiló: lo hizo tan suyo que puede explicarlo mejor que nadie. «Tragó» sería aceptarlo a regañadientes, y «repitió» sería soltarlo tal cual se lo dijeron."
@@ -243,5 +203,5 @@ metrics:
   family_size: 27
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

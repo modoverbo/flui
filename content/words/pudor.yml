@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8106
 slug: "pudor"
-status: "draft"
+status: "approved"
 lemma: "pudor"
 part_of_speech: "sustantivo"
 syllables:
@@ -35,8 +35,10 @@ themes:
   - slug: "empatia-escucha"
     relevance: 2
 tags:
-  comodin: ["vergüenza"]
-  funcion: ["describir"]
+  comodin:
+    - "vergüenza"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -149,7 +151,7 @@ exercises:
         hint_specific: "La timidez es un rasgo general. ¿Cómo es Wanda normalmente, según la frase?"
   - position: 6
     sentence: "«¿Te da vergüenza que te vean bailar?», le preguntó su amiga a Renzo. «No es eso, me da {{blank}} bailar frente a alguien que me gusta de verdad», respondió, un poco colorado."
-    hint_general: "Piensa en una incomodidad íntima frente a alguien que te importa, no en una vergüenza grande y pública."
+    hint_general: "Piensa en una incomodidad íntima frente a alguien que te importa, no en algo grande y expuesto ante todos."
     explanation: "Pudor: la incomodidad íntima frente a alguien que te importa, no una vergüenza grande. Renzo mismo aclara que no es vergüenza; «bochorno» sería una vergüenza intensa y pública, y aquí solo hay una persona delante, alguien que le gusta."
     options:
       - position: 1
@@ -166,28 +168,8 @@ exercises:
         is_correct: false
         distractor_type: "near_synonym"
         why_not: "«Bochorno» sería una vergüenza intensa y casi pública, y aquí solo hay una persona delante, alguien que le gusta de verdad."
-        hint_specific: "El bochorno es una vergüenza fuerte y pública. ¿Cuánta gente hay delante de Renzo?"
+        hint_specific: "El bochorno es una reacción fuerte y pública. ¿Cuánta gente hay delante de Renzo?"
   - position: 7
-    sentence: "Estela, que normalmente no tiene problema en hablar de cualquier cosa, habló de lo que sentía sin {{blank}}, algo que nunca antes había logrado con nadie."
-    hint_general: "Piensa en superar una incomodidad puntual con un tema íntimo, no un rasgo general de ser callado."
-    explanation: "Pudor: superar la incomodidad de hablar de un tema íntimo, no un rasgo general. «Recato» describe una forma de ser modesta siempre, y la frase aclara que ella normalmente no tiene problema en hablar de cualquier cosa; «timidez» es no hablar con la gente en general, y aquí el problema era solo este tema en concreto."
-    options:
-      - position: 1
-        text: "recato"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Recato» describe una forma de ser modesta siempre, y la frase aclara que Estela normalmente no tiene problema en hablar de cualquier cosa."
-        hint_specific: "El recato es una forma de ser general. ¿Cómo es Estela normalmente, según la frase?"
-      - position: 2
-        text: "pudor"
-        is_correct: true
-      - position: 3
-        text: "timidez"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Timidez» es no hablar con la gente en general, y la frase aclara que Estela normalmente no tiene ese problema."
-        hint_specific: "La timidez es un rasgo general. ¿Cómo es Estela normalmente, según la frase?"
-  - position: 8
     sentence: "Nadie se había enterado ni la había descubierto, pero Perla sintió tanto {{blank}} al confesarle a su mejor amiga que llevaba un diario donde escribía sobre su cita, que tardó semanas en decírselo, sin que hubiera ningún problema que resolver."
     hint_general: "Piensa en la lentitud de revelar algo íntimo, sin que nadie lo haya descubierto ni haya un problema que resolver."
     explanation: "Pudor: la lentitud en revelar algo íntimo, sin escándalo ni problema que resolver. «Bochorno» necesita una situación más grande, a menudo pública, y aquí nadie se había enterado ni la vio; «apuro» es un aprieto que hay que resolver, y la frase aclara que no había ningún problema que resolver."
@@ -235,5 +217,5 @@ metrics:
   pedantry_proxy: 0.4415
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

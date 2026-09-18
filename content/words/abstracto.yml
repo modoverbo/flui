@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7010
 slug: "abstracto"
-status: "draft"
+status: "approved"
 lemma: "abstracto"
 part_of_speech: "adjetivo"
 syllables:
@@ -74,26 +74,6 @@ exercises:
         why_not: "«Vago» diría que sus palabras están poco definidas, y compromiso y excelencia están muy definidas: lo que falta es algo que tocar."
         hint_specific: "«Vago» se arregla afinando la palabra. ¿Le falta precisión o le falta un caso real?"
   - position: 2
-    sentence: "Zoe pidió tres ejemplos porque el informe era demasiado {{blank}} para decidir nada con él."
-    hint_general: "El informe se queda en ideas sin cuerpo y por eso no sirve para decidir."
-    explanation: "Abstracto: se queda en ideas sin cuerpo. «Teórico» diría que viene de la teoría, que puede traer casos, y «filosófico» suena a ponerse solemne sobre la vida."
-    options:
-      - position: 1
-        text: "teórico"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Teórico» dice de dónde viene una idea, y una teoría puede traer números y casos; lo que falta aquí es cualquier cosa que señalar."
-        hint_specific: "«Teórico» indica origen, no falta de suelo. ¿El problema es de dónde viene el informe?"
-      - position: 2
-        text: "abstracto"
-        is_correct: true
-      - position: 3
-        text: "filosófico"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Filosófico» se usa coloquialmente para quien se pone solemne sobre la vida, y el informe habla de trabajo, no de la existencia."
-        hint_specific: "«Filosófico» suena a grandes preguntas sobre la vida. ¿De qué trata el informe?"
-  - position: 3
     sentence: "Su hijo le preguntó qué es la justicia y Aurelio notó que la respuesta se le iba por lo {{blank}}."
     hint_general: "La respuesta se aleja de todo lo que se puede tocar y el niño se queda sin nada firme."
     explanation: "Abstracto: la respuesta se aleja de lo que se puede tocar. «Etéreo» es una palabra poética para lo hecho de aire, y «general» diría que vale para muchos casos."
@@ -113,7 +93,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«General» dice que algo vale para muchos casos, y una respuesta general puede traer ejemplos; a esta le falta suelo entero."
         hint_specific: "Algo «general» todavía puede aterrizar en casos. ¿Esta respuesta llega a algún caso?"
-  - position: 4
+  - position: 3
     sentence: "Su propuesta suena bien, pero es tan {{blank}} que no se sabe quién hace qué ni en qué semana."
     hint_general: "Nada de lo que propone se puede señalar con el dedo: ni personas ni fechas."
     explanation: "Abstracta: nada se puede señalar con el dedo. «Vaga» diría que está poco definida, y «filosófica» suena a ponerse solemne sobre la vida."
@@ -133,7 +113,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Filosófica» se usa coloquialmente para quien se pone solemne sobre la vida, y esto es un plan de trabajo."
         hint_specific: "«Filosófica» va de grandes preguntas. ¿La propuesta habla de la vida o del reparto del trabajo?"
-  - position: 5
+  - position: 4
     sentence: "Rigoberto se puso {{blank}} en mitad de la reunión y hubo que pedirle nombres y fechas para entender su idea."
     hint_general: "Su idea se despegó de todo lo que se puede señalar, y tuvieron que bajarla al suelo."
     explanation: "Abstracto: su idea se despegó de lo que se puede señalar. «Abstraído» diría que se distrajo, y «etéreo» es una palabra poética fuera de lugar en una reunión."
@@ -153,7 +133,7 @@ exercises:
       - position: 3
         text: "abstracto"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Prefiero un ejemplo mediocre a un principio {{blank}}, dice Nadia cada vez que alguien abre con grandes palabras."
     hint_general: "Prefiere algo que se pueda tocar antes que una idea que no señala nada."
     explanation: "Abstracto: un principio que no señala nada. «Absoluto» diría que no admite excepciones, y «general» diría que sirve para muchos casos."
@@ -173,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«General» dice que un principio cubre muchos casos, y eso no es un defecto: el problema es que no baja a ninguno."
         hint_specific: "Lo «general» puede ilustrarse con casos. ¿Este principio llega a algún caso?"
-  - position: 7
+  - position: 6
     sentence: "Cuando Efraín habla de sinergias y ecosistemas, todo suena tan {{blank}} que su equipo le pide un caso con nombres."
     hint_general: "Usa palabras precisas que, aun así, no señalan nada que se pueda ver ni tocar."
     explanation: "Abstracto: sus palabras no señalan nada que se pueda ver. «Vago» diría que están poco definidas, y «teórico» diría solo de dónde vienen."
@@ -193,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Teórico» dice de dónde sale una idea, y al equipo no le importa el origen: quiere nombres propios."
         hint_specific: "«Teórico» responde «¿de dónde viene?». ¿Es esa la pregunta del equipo?"
-  - position: 8
+  - position: 7
     sentence: "Lo que faltaba en la charla no era rigor: faltaba salir de lo {{blank}} y poner un caso con fechas y cifras."
     hint_general: "Faltaba dejar el terreno de lo que no se toca y bajar a un caso con datos."
     explanation: "Abstracto: faltaba dejar el terreno de lo que no se toca. «Etéreo» es poético y desentona aquí, y «general» diría que algo abarca muchos casos."
@@ -242,5 +222,5 @@ metrics:
   family_size: 16
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

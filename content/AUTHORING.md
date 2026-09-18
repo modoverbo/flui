@@ -248,9 +248,10 @@ the answer wins. The validator checks the three strings literally.
 ### Distractors that look fine and are not
 
 The rule underneath every item: **an exercise must be answerable only by
-knowing what the word means.** Four ways an item passes the validators, and
+knowing what the word means.** Six ways an item passes the validators, and
 sometimes even the gate, while breaking that rule. Round 3 dropped thirteen
-words to them.
+words to (a)-(d); round 5 added (e) and (f) after losing words to the same
+kind of mistake — a distractor with no sentence able to rule it out.
 
 **(a) Orthographic noise.** The distractor differs from the answer by a letter
 and means something unrelated, so the reader solves the item by reading
@@ -282,7 +283,23 @@ distractors are built: `sino` (5.75), `asimismo` (5.40), `finalmente` (5.26),
 expensive. Run `content:metrics --lemma <word>` before you write eight items,
 not after.
 
-None of the four is caught by a validator, and the gate only catches them by
+**(e) Dictionary-circular distractor.** The distractor is a word a dictionary
+defines *using* the target — so no sentence can separate them, because the two
+words mean the same thing by definition, not just in this context. `eco` and
+`resonancia` are both defined via `repercusión`; `subterfugio` is defined via
+`pretexto`; `revoltoso` is defined via `travieso`. Check the distractor against
+a dictionary entry for the target *before* you write the sentence: if the
+definition of one names the other, no amount of context will make the item
+answerable, and rewriting it a second time only teaches you that.
+
+**(f) A hint that contains a distractor.** `desvelo`'s `hint_general` used the
+word "cuidado" as a generic gloss for the meaning, while "cuidado" was also one
+of the options in that exercise — the hint told the reader the answer wasn't
+worth picking. Three reviewers flagged the same three items for it. Unlike
+(a)-(e), this one a validator now catches: `hint_option_leakage` blocks any
+`hint_general` or `hint_specific` that names an option it should not (§6).
+
+None of (a)-(e) is caught by a validator, and the gate only catches them by
 accident — reviewers answer these items correctly, because they *are*
 answerable. They are answerable for the wrong reason, which is the thing you
 have to check yourself.

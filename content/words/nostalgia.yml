@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8204
 slug: "nostalgia"
-status: "draft"
+status: "approved"
 lemma: "nostalgia"
 part_of_speech: "sustantivo"
 syllables:
@@ -36,8 +36,11 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 2
 tags:
-  comodin: ["recuerdos"]
-  funcion: ["describir", "expresar"]
+  comodin:
+    - "recuerdos"
+  funcion:
+    - "describir"
+    - "expresar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -69,46 +72,6 @@ exercises:
         why_not: "«Tristeza» es solo estar triste, y la frase dice que Selene sonríe al recordar esas noches, no solo se pone triste."
         hint_specific: "«Tristeza» no incluye sonreír. ¿Qué hace Selene además de emocionarse?"
   - position: 2
-    sentence: "Cada vez que Abel ve fotos del viaje que hizo con sus amigos hace diez años, le da {{blank}} de esa época, aunque no cambiaría su vida actual por volver a ella."
-    hint_general: "Es el sentimiento dulce y triste que aparece al recordar algo bueno, sin querer recuperarlo de verdad."
-    explanation: "Nostalgia: sentir algo dulce y triste al recordar una época pasada, sin necesitar recuperarla. «Bajón» es coloquial y suena a un simple mal momento, sin el lado dulce del recuerdo, y «añoranza» implica querer recuperar algo que falta, y aquí Abel aclara que no cambiaría su vida actual por volver."
-    options:
-      - position: 1
-        text: "bajón"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Bajón» es coloquial y describe un simple mal momento, sin el lado dulce que tiene mirar esas fotos."
-        hint_specific: "«Bajón» es solo un mal momento. ¿Mirar esas fotos es solo malo, o también dulce?"
-      - position: 2
-        text: "añoranza"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Añoranza» implica querer recuperar algo que falta ahora, y aquí Abel aclara que no cambiaría su vida actual por volver a esa época."
-        hint_specific: "«Añoranza» es querer recuperar algo. ¿Abel querría volver a esa época y dejar su vida actual?"
-      - position: 3
-        text: "nostalgia"
-        is_correct: true
-  - position: 3
-    sentence: "Al pasar por la esquina donde quedaba el bar de sus años de universidad, a Fabiola le entró una {{blank}} enorme, aunque también sonrió al recordarlo."
-    hint_general: "Es un sentimiento con algo de tristeza y algo de dulzura al recordar un buen momento."
-    explanation: "Nostalgia: un sentimiento con tristeza y dulzura a la vez al recordar algo bueno. «Melancolía» es solo tristeza, sin la parte de sonreír al recordar, y «pena» describe una tristeza simple, sin ese lado dulce que también sintió Fabiola."
-    options:
-      - position: 1
-        text: "melancolía"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Melancolía» es una tristeza sin más, y aquí Fabiola también sonríe al recordar ese bar."
-        hint_specific: "«Melancolía» es solo tristeza. ¿Fabiola solo se pone triste o también sonríe?"
-      - position: 2
-        text: "nostalgia"
-        is_correct: true
-      - position: 3
-        text: "pena"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Pena» describe una tristeza simple, y aquí el recuerdo también le hace sonreír a Fabiola."
-        hint_specific: "«Pena» no incluye sonreír. ¿Qué hace Fabiola además de sentir algo de tristeza?"
-  - position: 4
     sentence: "Renzo guarda un video viejo del grupo cantando desafinado en un cumpleaños, y cada vez que lo ve siente una {{blank}} que le dura toda la tarde, mezclada con ganas de reírse otra vez del video."
     hint_general: "Es un sentimiento largo y suave que deja un buen recuerdo del pasado, no un plan para lograr algo."
     explanation: "Nostalgia: un sentimiento suave que deja un buen recuerdo, mezclado con ganas de reír de nuevo. «Estrategia» es un plan para conseguir algo, no un sentimiento; «bajón» es coloquial y suena a un mal momento pasajero, sin esas ganas de reír al recordarlo."
@@ -128,7 +91,7 @@ exercises:
       - position: 3
         text: "nostalgia"
         is_correct: true
-  - position: 5
+  - position: 3
     sentence: "Jimena revisó el chat viejo del grupo de la secundaria y sintió {{blank}}: una mezcla de alegría por haberlas vivido y tristeza porque esas tardes no van a volver."
     hint_general: "Es una mezcla de alegría por algo que viviste y tristeza porque ya no vuelve."
     explanation: "Nostalgia: una mezcla de alegría por haber vivido algo y tristeza porque no va a volver. «Recuerdo» es solo pensar en algo del pasado, sin ese lado de alegría y tristeza mezcladas; «pena» es solo tristeza, sin la parte de alegría por haberlo vivido."
@@ -148,9 +111,9 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Pena» es solo tristeza, y la frase dice que también hay alegría por haber vivido esas tardes."
         hint_specific: "«Pena» es solo tristeza. ¿La frase también menciona alegría?"
-  - position: 6
+  - position: 4
     sentence: "Norma encontró su vieja mochila del colegio en el ático y sintió {{blank}}: una alegría rara por haber tenido esa época, mezclada con un poco de tristeza porque ya pasó."
-    hint_general: "Es una alegría rara por algo que viviste, mezclada con un poco de tristeza porque ya pasó."
+    hint_general: "Es una alegría rara por algo que viviste, con un dejo agridulce porque ya pasó."
     explanation: "Nostalgia: una alegría rara por haber vivido algo, mezclada con un poco de tristeza porque ya pasó. «Recuerdo» es solo pensar en algo del pasado, sin esa mezcla de alegría y tristeza; «tristeza» es solo estar triste, sin la parte de alegría por haber vivido esa época."
     options:
       - position: 1
@@ -168,7 +131,7 @@ exercises:
       - position: 3
         text: "nostalgia"
         is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Cuando el grupo de amigos de la universidad se separó por trabajo, a Ismael cada aniversario del grupo le da una {{blank}} agridulce."
     hint_general: "Es un sentimiento agridulce que mezcla algo de tristeza con un buen recuerdo."
     explanation: "Nostalgia: un sentimiento agridulce que mezcla tristeza con un buen recuerdo. «Pena» sería solo tristeza, sin la parte dulce del recuerdo, y «bajón» es coloquial y suena a un simple mal momento, no a algo agridulce."
@@ -188,7 +151,7 @@ exercises:
       - position: 3
         text: "nostalgia"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Bárbara volvió al parque donde jugaba de niña con sus amigas y sintió {{blank}}: una alegría suave por haber crecido ahí, junto con la tristeza de saber que esos años no vuelven."
     hint_general: "Es una alegría suave por algo que viviste, junto con la tristeza de saber que no vuelve."
     explanation: "Nostalgia: una alegría suave por haber vivido algo, junto con la tristeza de que no vuelve. «Estrategia» es un plan para conseguir algo, no un sentimiento; «cariño» es solo un afecto positivo, sin esa parte de tristeza porque esos años no vuelven."
@@ -236,5 +199,5 @@ metrics:
   pedantry_proxy: 0.4602
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

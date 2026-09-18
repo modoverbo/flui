@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8007
 slug: "carcajada"
-status: "draft"
+status: "approved"
 lemma: "carcajada"
 part_of_speech: "sustantivo"
 syllables:
@@ -37,8 +37,11 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 2
 tags:
-  comodin: ["risa"]
-  funcion: ["describir", "contar"]
+  comodin:
+    - "risa"
+  funcion:
+    - "describir"
+    - "contar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -71,26 +74,6 @@ exercises:
         why_not: "Una «sonrisa» no hace ruido, y aquí el actor tiene que parar porque el sonido no le deja seguir."
         hint_specific: "Una «sonrisa» es silenciosa. ¿Por qué se detiene la función?"
   - position: 2
-    sentence: "Al ver el disfraz de su padre, Nerea soltó una {{blank}} limpia, sin rastro de burla, y él se puso a posar como un modelo."
-    hint_general: "Una risa grande y sincera, que no va contra nadie."
-    explanation: "Carcajada: una risa grande y sincera. «Risotada» suena a risa ruidosa y algo grosera, y una «risita» sería pequeña y contenida, y aquí se ríe con todo."
-    options:
-      - position: 1
-        text: "risotada"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Risotada» suena a risa ruidosa y algo grosera, con burla dentro, y la frase dice que no hay ningún rastro de burla."
-        hint_specific: "«Risotada» deja mal sabor. ¿Qué dice la frase sobre la burla?"
-      - position: 2
-        text: "carcajada"
-        is_correct: true
-      - position: 3
-        text: "risita"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «risita» es pequeña y contenida, y aquí la risa sale entera y en voz alta."
-        hint_specific: "Una «risita» se aguanta a medias. ¿Nerea se contuvo al ver el disfraz?"
-  - position: 3
     sentence: "En la biblioteca todo el mundo callaba, así que la {{blank}} de Tadeo hizo que treinta cabezas se levantaran a la vez."
     hint_general: "Un ruido de risa imposible de disimular en un sitio en silencio."
     explanation: "Carcajada: un ruido de risa imposible de disimular. Una «sonrisa» no habría levantado ninguna cabeza, y un «suspiro» no es risa ni se oye a esa distancia."
@@ -110,7 +93,7 @@ exercises:
       - position: 3
         text: "carcajada"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Cuando el camarero tropezó y salvó la bandeja en el aire, de la mesa del fondo salió una {{blank}} de alivio que contagió a las mesas de al lado."
     hint_general: "La risa grande que sale de golpe cuando pasa el susto."
     explanation: "Carcajada: la risa grande que sale de golpe tras el susto. Una «payasada» sería un número hecho a propósito, y una «carraspera» es el ruido de la garganta."
@@ -130,7 +113,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «carraspera» es el ruido de aclararse la garganta, y lo que hay aquí es risa después del susto."
         hint_specific: "Una «carraspera» no tiene nada de alegre. ¿Cómo reacciona la mesa?"
-  - position: 5
+  - position: 4
     sentence: "Vidal contó el final de la historia y la cocina entera estalló en una {{blank}} que duró medio minuto."
     hint_general: "La reacción ruidosa de un grupo al que algo le hace muchísima gracia."
     explanation: "Carcajada: la reacción ruidosa de un grupo al que algo le hace gracia. Una «risita» sería breve y pequeña, y un «aplauso» mostraría aprobación, no risa."
@@ -150,27 +133,7 @@ exercises:
       - position: 3
         text: "carcajada"
         is_correct: true
-  - position: 6
-    sentence: "Mi madre tiene una {{blank}} que se reconoce a dos calles; cuando la oigo sé que la sobremesa va a ser larga."
-    hint_general: "Una risa tan fuerte que se identifica a distancia."
-    explanation: "Carcajada: una risa tan fuerte que se reconoce a distancia. «Risotada» añadiría un tono grosero, y una «sonrisa» no se podría oír desde la calle."
-    options:
-      - position: 1
-        text: "carcajada"
-        is_correct: true
-      - position: 2
-        text: "risotada"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Risotada» añade un tono grosero y algo despectivo, y aquí se habla de la madre con cariño."
-        hint_specific: "«Risotada» suena a burla ruidosa. ¿Con qué tono se habla de esa madre?"
-      - position: 3
-        text: "sonrisa"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «sonrisa» no se oye, y la frase dice que se reconoce a dos calles de distancia."
-        hint_specific: "Una «sonrisa» hay que verla. ¿Desde dónde se nota esta?"
-  - position: 7
+  - position: 5
     sentence: "El vecino de arriba tosió, arrastró una silla y después soltó una {{blank}} enorme; entendimos que estaba viendo algo divertido."
     hint_general: "Entre los ruidos de la casa, el que delata que alguien se está riendo mucho."
     explanation: "Carcajada: el ruido que delata que alguien se ríe mucho. Una «carraspera» sería solo garganta, y un «grito» no indica que nada resulte divertido."
@@ -190,7 +153,7 @@ exercises:
       - position: 3
         text: "carcajada"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Fabiola intentó aguantarse, apretó los labios, miró al techo y al final se le escapó una {{blank}} que llenó el ascensor."
     hint_general: "Lo que se escapa cuando ya no se puede contener la risa."
     explanation: "Carcajada: lo que se escapa cuando ya no se puede contener. Una «sonrisa» sí se habría podido disimular, y una «risita» habría cabido dentro del intento."
@@ -238,5 +201,5 @@ metrics:
   pedantry_proxy: 0.5414
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

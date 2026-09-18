@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "replicar"
-status: "draft"
+status: "approved"
 lemma: "replicar"
 part_of_speech: "verbo"
 syllables:
@@ -11,7 +11,7 @@ stressed_syllable: 3
 ipa_latam: "[re.pliˈkaɾ]"
 ipa_es: "[re.pliˈkaɾ]"
 explanation: "Contestar a lo que otro acaba de decir, con tu versión y en el momento."
-example_sentence: "Le dejé terminar y luego repliqué con el dato que faltaba."
+example_sentence: "Le dejó terminar y luego replicó con el dato que faltaba."
 register: "neutral"
 pedantry_risk: 2
 usage_tip: "Sirve para contestar de frente sin sonar a pelea: nombra la respuesta, no al contrario."
@@ -91,26 +91,6 @@ exercises:
         why_not: "«Asentir» sería darle la razón con la cabeza, y callar no es lo mismo que estar de acuerdo."
         hint_specific: "«Asentir» da la razón. ¿Callarse es lo mismo que darla?"
   - position: 3
-    sentence: "En la mesa redonda, Ximena dejó terminar al ponente y luego {{blank}} con dos datos y una pregunta."
-    hint_general: "Esperó su turno y devolvió el argumento con datos."
-    explanation: "Replicó: devolvió el argumento con datos. «Explicó» presentaría su idea sin contestar a nadie, y «objetó» pondría una pega sin dar su versión."
-    options:
-      - position: 1
-        text: "replicó"
-        is_correct: true
-      - position: 2
-        text: "explicó"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Explicó» presenta una idea para que se entienda, y ella está contestando a lo que acaba de oír."
-        hint_specific: "«Explicó» no necesita a nadie enfrente. ¿A qué responde Ximena?"
-      - position: 3
-        text: "objetó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Objetó» pone una pega a lo dicho, y ella además trae su versión con dos datos."
-        hint_specific: "«Objetó» solo pone la pega. ¿Ximena solo objeta o aporta lo suyo?"
-  - position: 4
     sentence: "Mi hermano {{blank}} a todo lo que dice mi padre en la mesa, incluso cuando está de acuerdo."
     hint_general: "Contesta siempre a lo que el otro afirma, pase lo que pase."
     explanation: "Replica: contesta siempre a lo afirmado. «Salta» es de charla informal y pinta a alguien interrumpiendo, y «aclara» supondría deshacer un malentendido."
@@ -130,7 +110,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Aclara» supone deshacer un malentendido, y él contesta incluso cuando está de acuerdo."
         hint_specific: "«Aclara» resuelve confusiones. ¿Hay confusión cuando está de acuerdo?"
-  - position: 5
+  - position: 4
     sentence: "Le acusaron de llegar tarde al proyecto y Tadeo {{blank}} enseñando el acta de la primera reunión."
     hint_general: "Devolvió la acusación con una prueba, en el acto."
     explanation: "Replicó: devolvió la acusación con una prueba. «Aplacó» calmaría los ánimos sin contestar, y «explicó» desarrollaría una idea sin responder a la acusación."
@@ -150,7 +130,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Explicó» desarrolla una idea para que se entienda, y aquí hay una acusación concreta que se contesta con un papel."
         hint_specific: "«Explicó» expone algo propio. ¿Hay exposición o hay respuesta a una acusación?"
-  - position: 6
+  - position: 5
     sentence: "La ley del programa era clara: quien recibía una crítica podía {{blank}} durante un minuto, sin interrupciones."
     hint_general: "Quien recibía la crítica tenía un turno para contestar."
     explanation: "Replicar: tener un turno para contestar. «Espetar» sugiere soltar una frase dura de golpe, e «insistir» sería repetir lo que ya se dijo."
@@ -170,7 +150,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Espetar» es palabra de novela y describe soltar algo con brusquedad, y aquí se regula un turno tranquilo."
         hint_specific: "«Espetar» suena literario y brusco. ¿El turno está pensado para brusquedad?"
-  - position: 7
+  - position: 6
     sentence: "Berta prefirió no {{blank}} en el grupo y llamó por teléfono esa misma tarde."
     hint_general: "Decidió no contestar ahí y buscó otra vía."
     explanation: "Replicar: no contestar ahí mismo. «Saltar» sería interrumpir en tono muy informal, y «callar» no diría que eligió otra vía."
@@ -189,8 +169,8 @@ exercises:
         is_correct: false
         distractor_type: "register"
         why_not: "«Saltar» es de charla informal y significa interrumpir de golpe, y aquí nadie estaba hablando en voz alta."
-        hint_specific: "«Saltar» es irrumpir, en registro de calle. ¿Dónde ocurre esto, en una sala o en un chat?"
-  - position: 8
+        hint_specific: "«Saltar» es irrumpir, en tono muy informal. ¿Dónde ocurre esto, en una sala o en un chat?"
+  - position: 7
     sentence: "El entrenador {{blank}} a la crítica del periodista con una frase corta y siguió con la rueda de prensa."
     hint_general: "Contestó a la crítica en dos palabras y continuó."
     explanation: "Replicó: contestó a la crítica y siguió. «Objetó» pondría una pega sin traer su versión, y «aclaró» supondría un malentendido que deshacer."
@@ -233,11 +213,11 @@ readings:
     before_phrase: "Siempre tienes que contestar a todo."
     after_phrase: "No discrepas: replicas siempre."
 metrics:
-  zipf_overall: 4.3250
+  zipf_overall: 4.325
   dispersion_dp: 0.1106
   pedantry_proxy: 0.6152
   family_size: 41
 provenance:
   generator: "flui authoring agent — theme medios-entrevistas"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

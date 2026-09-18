@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8109
 slug: "coquetear"
-status: "draft"
+status: "approved"
 lemma: "coquetear"
 part_of_speech: "verbo"
 syllables:
@@ -37,8 +37,10 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 2
 tags:
-  comodin: ["ligar"]
-  funcion: ["actuar"]
+  comodin:
+    - "ligar"
+  funcion:
+    - "actuar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -237,5 +239,5 @@ metrics:
   pedantry_proxy: 0.7436
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

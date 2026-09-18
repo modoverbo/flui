@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8004
 slug: "picardia"
-status: "draft"
+status: "approved"
 lemma: "picardía"
 part_of_speech: "sustantivo"
 syllables:
@@ -38,8 +38,11 @@ themes:
   - slug: "citas"
     relevance: 2
 tags:
-  comodin: ["gracia"]
-  funcion: ["bromear", "coquetear"]
+  comodin:
+    - "gracia"
+  funcion:
+    - "bromear"
+    - "coquetear"
   canal: "hablado"
   formalidad: "informal"
   variedad: "panhispanico"
@@ -72,26 +75,6 @@ exercises:
         why_not: "Una «travesura» es algo que alguien hace, casi siempre un niño; aquí lo que hay es una manera de decir las cosas."
         hint_specific: "Una «travesura» se hace con las manos. ¿Rita hizo algo o dijo algo?"
   - position: 2
-    sentence: "Bautista cuenta la historia del taxi con tanta {{blank}} que todos sonríen, y eso que nadie sale mal parado ni hace falta una palabra fuerte."
-    hint_general: "Cuenta con doble sentido, sin engañar a nadie y sin dejar mal a nadie."
-    explanation: "Picardía: cuenta con doble sentido y nadie sale mal parado. «Pillería» es coloquial y sugiere trampa, y «malicia» supondría intención de hacer daño."
-    options:
-      - position: 1
-        text: "pillería"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pillería» es coloquial y sugiere una trampa para sacar algo, y él no engaña a nadie al contarlo."
-        hint_specific: "«Pillería» implica que alguien sale engañado. ¿Quién pierde algo en esa historia?"
-      - position: 2
-        text: "malicia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Malicia» supone la intención de hacer daño, y la frase dice que nadie sale mal parado."
-        hint_specific: "«Malicia» busca perjudicar. ¿Quién queda peor después de la historia?"
-      - position: 3
-        text: "picardía"
-        is_correct: true
-  - position: 3
     sentence: "Lo que salvó la cena de Estela no fue el postre, sino la {{blank}} con la que dejó a medias la respuesta a una pregunta incómoda."
     hint_general: "Dejó la respuesta a medias y con gracia, y así desactivó el momento tenso."
     explanation: "Picardía: dejó la respuesta a medias y con gracia. «Descaro» habría contestado de frente y sin filtro, y «gallardía» sería plantar cara con valor y buen porte."
@@ -111,7 +94,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Gallardía» sería plantar cara con valor y de frente, y ella esquivó la pregunta dejándola a medias."
         hint_specific: "«Gallardía» afronta el asunto entero. ¿Estela lo afrontó o lo esquivó con gracia?"
-  - position: 4
+  - position: 3
     sentence: "Cayetano no busca ganar nada cuando bromea: su {{blank}} es un juego compartido, no una maniobra."
     hint_general: "Es un juego con doble sentido, y no un cálculo para llevarse algo."
     explanation: "Picardía: un juego con doble sentido sin cálculo. «Astucia» maniobra para sacar ventaja, y él no busca ganar nada, y «desfachatez» acusa de no tener vergüenza."
@@ -131,7 +114,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Desfachatez» es una palabra dura que acusa de no tener vergüenza, y aquí se describe un juego amable."
         hint_specific: "«Desfachatez» es un reproche serio. ¿La frase reprocha algo o lo celebra?"
-  - position: 5
+  - position: 4
     sentence: "Mi abuela guarda una {{blank}} intacta: a los ochenta sigue respondiendo de forma que todos captan lo que no llega a decir."
     hint_general: "Sigue jugando con lo que deja fuera de la frase, y todos la entienden."
     explanation: "Picardía: juega con lo que deja fuera de la frase. Una «travesura» sería una acción y no una manera de hablar, y «cobardía» sería callarse por miedo."
@@ -151,27 +134,7 @@ exercises:
       - position: 3
         text: "picardía"
         is_correct: true
-  - position: 6
-    sentence: "En la despedida, Fabiola repartió los regalos con una {{blank}} que hizo reír hasta al más serio, y cada uno se llevó justo lo que quería."
-    hint_general: "Repartió jugando con los dobles sentidos, y nadie salió perdiendo."
-    explanation: "Picardía: repartió jugando con los dobles sentidos y nadie perdió. «Pillería» sugiere que alguien acaba engañado, y «astucia» calcularía para ganar algo."
-    options:
-      - position: 1
-        text: "picardía"
-        is_correct: true
-      - position: 2
-        text: "pillería"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pillería» es coloquial y sugiere que alguien acaba engañado, y aquí cada uno se llevó lo que quería."
-        hint_specific: "«Pillería» deja a alguien con menos. ¿Qué se llevó cada invitado?"
-      - position: 3
-        text: "astucia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Astucia» sería calcular para ganar algo, y lo que se celebra es la gracia con la que repartió."
-        hint_specific: "«Astucia» mira el beneficio. ¿Qué gana Fabiola repartiendo regalos?"
-  - position: 7
+  - position: 5
     sentence: "Jimena escribe mensajes con {{blank}}: insinúa, no promete, y nunca deja a nadie en evidencia."
     hint_general: "Insinúa en vez de decirlo todo, y lo hace sin dejar mal a nadie."
     explanation: "Picardía: insinúa en vez de decirlo todo. «Malicia» buscaría que alguien quedara mal, y «descaro» diría las cosas de frente y sin filtro."
@@ -191,7 +154,7 @@ exercises:
       - position: 3
         text: "picardía"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Nadie olvida la {{blank}} con la que Vidal brindó por la pareja: dijo tres frases y cada una tenía dos lecturas."
     hint_general: "Cada frase suya tenía dos lecturas, y las dos hacían sonreír."
     explanation: "Picardía: cada frase tenía dos lecturas. «Gallardía» habla de valor y buen porte, y una «travesura» sería una acción que rompe una norma."
@@ -235,9 +198,9 @@ readings:
     after_phrase: "Contesté con picardía y seguimos cenando."
 metrics:
   zipf_overall: 3.2709
-  dispersion_dp: 0.1690
+  dispersion_dp: 0.169
   pedantry_proxy: 0.4555
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

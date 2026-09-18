@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7023
 slug: "ruego"
-status: "draft"
+status: "approved"
 lemma: "ruego"
 part_of_speech: "sustantivo"
 syllables:
@@ -173,26 +173,6 @@ exercises:
         text: "ruego"
         is_correct: true
   - position: 7
-    sentence: "Se lo pidió con tanta educación que aquello parecía un {{blank}} de otra época, con usted y todo."
-    hint_general: "Pidió de forma tan cuidada que sonaba a una fórmula antigua y muy cortés."
-    explanation: "Ruego: una petición cuidada y muy cortés. Una «súplica» sonaría desesperada, y un «encargo» sería un trabajo que se asigna para cumplir."
-    options:
-      - position: 1
-        text: "ruego"
-        is_correct: true
-      - position: 2
-        text: "súplica"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "Una «súplica» suena desesperada y casi de rodillas, y lo que llama la atención aquí es la cortesía, no la angustia."
-        hint_specific: "Una «súplica» pide con desesperación. ¿Qué es lo que destaca de cómo lo pidió?"
-      - position: 3
-        text: "encargo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un «encargo» es un trabajo que se asigna para que alguien lo cumpla, y aquí no se asigna nada: se pide con cortesía."
-        hint_specific: "Un «encargo» no necesita cortesía. ¿Por qué tanto cuidado entonces?"
-  - position: 8
     sentence: "Entre tanto correo automático, aquel {{blank}} escrito a mano llamó la atención de todo el departamento."
     hint_general: "Una petición educada y personal destacó entre mensajes fríos."
     explanation: "Ruego: una petición educada y personal. «Recado» es coloquial y se manda hacer, y un «permiso» sería una autorización que alguien concede."
@@ -235,11 +215,11 @@ readings:
     before_phrase: "Le puse una nota pidiéndole el favor."
     after_phrase: "Era un ruego, y funcionó."
 metrics:
-  zipf_overall: 3.5830
+  zipf_overall: 3.583
   dispersion_dp: 0.2169
   pedantry_proxy: 0.3157
   family_size: 2
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

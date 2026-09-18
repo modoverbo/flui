@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 3202
 slug: "salvedad"
-status: "draft"
+status: "approved"
 lemma: "salvedad"
 part_of_speech: "sustantivo"
 syllables:
@@ -93,26 +93,6 @@ exercises:
         why_not: "Una «queja» protesta por algo que ya salió mal, y aquí el acuerdo se acaba de firmar sin incidentes."
         hint_specific: "«Queja» llega después del fallo. ¿Ha fallado ya algo aquí?"
   - position: 3
-    sentence: "Nadie protestó en la reunión; Iván se limitó a dejar una {{blank}} clara antes de votar a favor."
-    hint_general: "Vota a favor y deja dicho en voz alta qué parte no respalda."
-    explanation: "Salvedad: lo que deja dicho antes de votar a favor. «Pega» es coloquial y suena a poner trabas, y una «reserva» se guarda para uno mismo, mientras que él lo dijo delante de todos."
-    options:
-      - position: 1
-        text: "pega"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Pega» es coloquial y suena a poner trabas por costumbre, y la frase dice que nadie protestó."
-        hint_specific: "«Pega» suena a poner trabas. ¿Alguien protestó en esa reunión?"
-      - position: 2
-        text: "reserva"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «reserva» es la duda que uno se guarda dentro, e Iván dejó la suya dicha delante de todos."
-        hint_specific: "«Reserva» se queda callada. ¿Iván calló o habló antes de votar?"
-      - position: 3
-        text: "salvedad"
-        is_correct: true
-  - position: 4
     sentence: "Acepto el cambio de horario con una sola {{blank}}: los viernes salgo a las tres, como siempre."
     hint_general: "Se acepta el cambio y se marca el único día que no cambia."
     explanation: "Salvedad: el único día que queda fuera del cambio. Una «novedad» sería algo nuevo, y los viernes siguen igual; una «advertencia» avisaría de un riesgo, y aquí no hay ninguno."
@@ -132,7 +112,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «advertencia» avisa de un riesgo por venir, y aquí solo se aparta un día del nuevo horario."
         hint_specific: "«Advertencia» anuncia un peligro. ¿Qué peligro aparece en la frase?"
-  - position: 5
+  - position: 4
     sentence: "Lucía leyó el contrato entero y encontró la {{blank}} anotada al final: el precio sube si el pedido baja."
     hint_general: "Encuentra la línea que deja fuera una parte de lo pactado."
     explanation: "Salvedad: la línea que deja fuera una parte de lo pactado. «Trampa» acusaría a alguien de engañar, y la cláusula está escrita a la vista; la «soledad» habla de estar sin compañía."
@@ -152,7 +132,7 @@ exercises:
       - position: 3
         text: "salvedad"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Pablo aprobó el informe sin dudar, aunque dejó una {{blank}} en el correo: los datos de marzo todavía no están cerrados."
     hint_general: "Aprueba sin pensarlo y señala la única parte que aún no da por buena."
     explanation: "Salvedad: la parte que aún no da por buena. Una «duda» no encaja porque aprobó sin dudar, y la «gravedad» mide lo serio que es un asunto."
@@ -172,7 +152,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "La «gravedad» mide lo serio que resulta algo, y aquí solo se apartan los datos de un mes."
         hint_specific: "«Gravedad» habla de cuánto pesa un asunto. ¿Qué apartó Pablo en el correo?"
-  - position: 7
+  - position: 6
     sentence: "Te digo que sí de verdad, no busco escaparme: solo quiero dejar una {{blank}} antes de que empecemos."
     hint_general: "Quien habla acepta de lleno y solo quiere apartar una parte antes de arrancar."
     explanation: "Salvedad: la parte que se aparta antes de arrancar. Una «excusa» buscaría escaparse, y la frase lo niega; una «novedad» sería algo que aparece por primera vez."
@@ -192,7 +172,7 @@ exercises:
       - position: 3
         text: "salvedad"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Marisa no puso condiciones ni pidió nada a cambio: solo dejó una {{blank}} en el acta, que el nombre del equipo no cambie."
     hint_general: "Sin pedir nada, apunta la única cosa que quiere dejar intacta."
     explanation: "Salvedad: lo único que quiere dejar intacto. Una «condición» se pide a cambio, y la frase dice que no pidió ninguna; una «queja» protestaría por algo ya ocurrido."
@@ -241,5 +221,5 @@ metrics:
   family_size: 12
 provenance:
   generator: "flui authoring agent — theme matices-precision"
-  gate: null
-  checked_on: "2026-09-14"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

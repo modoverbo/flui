@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "interlocutor"
-status: "draft"
+status: "approved"
 lemma: "interlocutor"
 part_of_speech: "sustantivo"
 syllables:
@@ -72,26 +72,6 @@ exercises:
         why_not: "«Oyente» solo escucha, y el problema de Amaya es justamente que nadie le da una respuesta firme."
         hint_specific: "«Oyente» no responde. ¿Qué le falta a Amaya, alguien que escuche o alguien que decida?"
   - position: 2
-    sentence: "El acuerdo se encalló porque el otro lado cambiaba de {{blank}} cada dos semanas y nadie recordaba lo hablado."
-    hint_general: "Cambiaban a la persona que hablaba y decidía en cada ronda."
-    explanation: "Interlocutor: la persona que habla y decide en cada ronda. «Contraparte» es palabra de pleito y pinta un adversario, y «testigo» solo estaría mirando."
-    options:
-      - position: 1
-        text: "contraparte"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Contraparte» es vocabulario de pleitos y convierte al otro lado en adversario, y aquí solo cambia quien atiende."
-        hint_specific: "«Contraparte» suena a juicio y a bando contrario. ¿Hay pleito o hay una silla que cambia de dueño?"
-      - position: 2
-        text: "interlocutor"
-        is_correct: true
-      - position: 3
-        text: "testigo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Testigo» es quien mira lo que pasa sin tomar parte, y aquí se habla de quien negocia y contesta."
-        hint_specific: "«Testigo» observa. ¿Quién cambiaba cada dos semanas, el que mira o el que negocia?"
-  - position: 3
     sentence: "En la mesa de la asociación, mi vecina fue la única {{blank}} que se leyó el reglamento entero antes de opinar."
     hint_general: "Fue la única de las que hablaban que llegó preparada."
     explanation: "Interlocutora: la única de las que hablaban que llegó preparada. «Intercesora» hablaría por otros ante alguien con poder, y «acompañante» iría de acompañamiento."
@@ -111,7 +91,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Acompañante» va con alguien sin tomar parte, y ella se leyó el reglamento para opinar."
         hint_specific: "«Acompañante» no participa. ¿Quién se leyó el reglamento para hablar?"
-  - position: 4
+  - position: 3
     sentence: "Antes de la feria, Gael escribió a una sola persona de cada empresa: prefería pocos {{blank}} y bien elegidos."
     hint_general: "Prefiere hablar con pocas personas que puedan contestarle."
     explanation: "Interlocutores: pocas personas que contesten y decidan. «Compinches» es de charla informal y sugiere complicidad, y «portavoces» hablarían en nombre de un grupo sin decidir."
@@ -131,7 +111,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Portavoces» repiten lo que su grupo ya decidió, y él busca a alguien que pueda contestarle por sí mismo."
         hint_specific: "«Portavoces» transmiten lo decidido. ¿Gael quiere un mensaje repetido o una respuesta?"
-  - position: 5
+  - position: 4
     sentence: "Cuando mi padre entró en la residencia, la familia nombró un {{blank}} para tratar con el centro y dejamos de repetirnos."
     hint_general: "Eligieron a una persona para hablar y decidir con el centro."
     explanation: "Interlocutor: una persona para hablar y decidir con el centro. «Interventor» revisaría cuentas, y «testigo» solo presenciaría las reuniones."
@@ -151,7 +131,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Interventor» revisa cuentas y vigila el cumplimiento, y aquí hace falta alguien que hable con el centro."
         hint_specific: "«Interventor» fiscaliza. ¿Se nombró a alguien para vigilar o para hablar?"
-  - position: 6
+  - position: 5
     sentence: "El taller salió bien porque Zulema tuvo un {{blank}} claro en el ayuntamiento: una persona que contestaba el mismo día."
     hint_general: "Tenía a alguien concreto que respondía siempre."
     explanation: "Interlocutor: alguien concreto que respondía. «Contraparte» convierte al otro en adversario de pleito, y «oyente» no contestaría nada."
@@ -171,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Oyente» escucha y calla, y lo que hizo posible el taller fue recibir respuesta el mismo día."
         hint_specific: "«Oyente» no contesta. ¿Qué hizo esa persona del ayuntamiento?"
-  - position: 7
+  - position: 6
     sentence: "Presentarse en treinta segundos sirve de poco si delante no hay un {{blank}} que pueda hacer algo con lo que oye."
     hint_general: "Hablar bien no basta: delante tiene que haber alguien que pueda responder."
     explanation: "Interlocutor: alguien que puede responder y actuar. «Intercesor» pediría un favor por ti a un tercero, y «acompañante» solo estaría al lado."
@@ -191,7 +171,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Intercesor» pide algo por ti ante un tercero, y aquí se habla de quien te escucha y puede actuar."
         hint_specific: "«Intercesor» habla por ti ante otro. ¿Se busca un mensajero o alguien que decida?"
-  - position: 8
+  - position: 7
     sentence: "Marisa lleva años en el gremio y sabe quién es el {{blank}} de verdad en cada empresa, aunque no sea quien firma."
     hint_general: "Conoce a quien de verdad contesta y mueve las cosas."
     explanation: "Interlocutor: quien de verdad contesta y mueve las cosas. «Compinche» sugiere complicidad informal, y «portavoz» repetiría lo ya decidido."
@@ -240,5 +220,5 @@ metrics:
   family_size: 2055
 provenance:
   generator: "flui authoring agent — theme networking"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

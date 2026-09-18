@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8208
 slug: "reencuentro"
-status: "draft"
+status: "approved"
 lemma: "reencuentro"
 part_of_speech: "sustantivo"
 syllables:
@@ -37,8 +37,11 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 2
 tags:
-  comodin: ["juntarse de nuevo"]
-  funcion: ["describir", "contar"]
+  comodin:
+    - "juntarse de nuevo"
+  funcion:
+    - "describir"
+    - "contar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -50,26 +53,6 @@ confusions:
     difference: "«Encuentro» no dice nada sobre el tiempo separados y podría ser la primera vez que se ven; el reencuentro siempre implica que ya se conocían de antes."
 exercises:
   - position: 1
-    sentence: "Después de doce años sin verse, Estela y su amiga de la infancia se abrazaron en el aeropuerto: fue un {{blank}} que ninguna de las dos olvidará."
-    hint_general: "Es volver a ver a alguien después de mucho tiempo sin contacto."
-    explanation: "Reencuentro: volver a ver a alguien después de mucho tiempo sin contacto. «Desencuentro» es justo lo contrario: dos personas que no logran coincidir o que terminan mal, y aquí se abrazan felices; «encuentro» no dice nada sobre los doce años sin verse, podría ser la primera vez que se ven."
-    options:
-      - position: 1
-        text: "desencuentro"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Desencuentro» es cuando dos personas no logran coincidir o terminan mal, y aquí Estela y su amiga se abrazan felices después de doce años."
-        hint_specific: "«Desencuentro» es cuando algo sale mal entre dos personas. ¿Cómo terminó este momento en el aeropuerto?"
-      - position: 2
-        text: "reencuentro"
-        is_correct: true
-      - position: 3
-        text: "encuentro"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Encuentro» no dice nada sobre el tiempo sin verse, y aquí lo importante es que pasaron doce años desde la última vez."
-        hint_specific: "«Encuentro» podría ser la primera vez que se ven. ¿Cuánto tiempo llevaban sin verse Estela y su amiga?"
-  - position: 2
     sentence: "Norma se quedó mirando fijo a la mujer de la fila del supermercado hasta que la reconoció: era su compañera de banco de la primaria, y el {{blank}} la dejó sin palabras."
     hint_general: "Es volver a ver en persona a alguien de hace muchos años, sin haberlo planeado."
     explanation: "Reencuentro: volver a ver en persona a alguien de hace muchos años. «Recuerdo» es solo pensar en algo del pasado, sin que la persona esté ahí de verdad, y aquí su compañera está en la misma fila; «convocatoria» es un llamado formal a un evento, y aquí nadie organizó nada, fue pura casualidad."
@@ -89,7 +72,7 @@ exercises:
       - position: 3
         text: "reencuentro"
         is_correct: true
-  - position: 3
+  - position: 2
     sentence: "Ismael organizó un viaje de fin de semana solo para que los seis amigos de la universidad tuvieran su primer {{blank}} en quince años."
     hint_general: "Es el momento de volver a estar juntos después de mucho tiempo separados."
     explanation: "Reencuentro: volver a estar juntos después de mucho tiempo separados. «Visita» no dice nada sobre los quince años sin verse, podría ser cualquier visita común; «reunión» es más neutro y podría ser algo que hacen seguido, y aquí lo importante es que llevaban quince años sin juntarse."
@@ -109,7 +92,7 @@ exercises:
       - position: 3
         text: "reencuentro"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Cuando por fin coincidieron en la misma ciudad después de años de mensajes cruzados sin coincidir nunca, Bárbara y su amiga celebraron el {{blank}} con una cena de cuatro horas."
     hint_general: "Es el momento en que dos personas por fin logran verse después de mucho intentarlo."
     explanation: "Reencuentro: el momento en que dos personas por fin logran verse. «Desencuentro» sería justo lo contrario: seguir sin poder coincidir, y aquí por fin lo logran; «cumbre» es una reunión formal entre líderes o autoridades, no una cena entre dos amigas."
@@ -129,27 +112,7 @@ exercises:
       - position: 3
         text: "reencuentro"
         is_correct: true
-  - position: 5
-    sentence: "Cayetano casi no reconoció a su mejor amigo de la infancia en la boda; el {{blank}} después de veinte años los dejó abrazados un buen rato."
-    hint_general: "Es volver a ver a alguien después de mucho tiempo sin contacto."
-    explanation: "Reencuentro: volver a ver a alguien después de mucho tiempo sin contacto. «Cita» suena a un plan romántico o de trabajo ya acordado, y esto pasó sin planearlo en una boda; «encuentro» no dice nada sobre los veinte años sin verse."
-    options:
-      - position: 1
-        text: "cita"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cita» suena a un plan romántico o de trabajo ya acordado, y esto pasó sin planearlo, en medio de una boda."
-        hint_specific: "«Cita» suena a un plan romántico o de negocios. ¿Cayetano y su amigo planearon este momento?"
-      - position: 2
-        text: "encuentro"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Encuentro» no dice nada sobre el tiempo sin verse, y aquí lo importante es que pasaron veinte años desde la última vez."
-        hint_specific: "«Encuentro» podría ser la primera vez que se ven. ¿Cuánto tiempo llevaban sin verse?"
-      - position: 3
-        text: "reencuentro"
-        is_correct: true
-  - position: 6
+  - position: 4
     sentence: "Vidal guardaba el número de su amigo de la secundaria desde hacía años sin animarse a llamar, hasta que por fin organizaron el {{blank}} en un café."
     hint_general: "Es el momento de volver a verse después de mucho tiempo sin hablar."
     explanation: "Reencuentro: el momento de volver a verse después de mucho tiempo sin hablar. «Recuerdo» es solo pensar en algo del pasado, y aquí los dos se ven en persona en un café; «reunión» es más neutro y no dice nada sobre el tiempo sin hablar."
@@ -169,7 +132,7 @@ exercises:
       - position: 3
         text: "reencuentro"
         is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Malena viajó seis horas en autobús solo para el {{blank}} con las amigas con las que creció, después de tres años sin pisar su ciudad natal."
     hint_general: "Es el momento de volver a estar con personas importantes después de mucho tiempo lejos."
     explanation: "Reencuentro: volver a estar con personas importantes después de mucho tiempo lejos. «Visita» no dice nada sobre los tres años sin verse, podría ser cualquier visita corriente; «cumbre» es una reunión formal entre autoridades, no un plan entre amigas de toda la vida."
@@ -189,7 +152,7 @@ exercises:
       - position: 3
         text: "reencuentro"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Jonás y su amigo de la universidad intentaron verse en tres viajes distintos sin lograrlo, hasta que por fin, en el cuarto intento, tuvieron su {{blank}}."
     hint_general: "Es el momento en que dos personas por fin logran verse después de mucho intentarlo."
     explanation: "Reencuentro: el momento en que dos personas por fin logran verse. «Desencuentro» sería justo lo contrario: los tres intentos fallidos anteriores; «cita» suena a un plan romántico o de trabajo, y aquí se trata de dos amigos que llevaban años sin coincidir."
@@ -237,5 +200,5 @@ metrics:
   pedantry_proxy: 0.5821
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

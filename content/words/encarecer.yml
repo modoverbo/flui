@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "encarecer"
-status: "draft"
+status: "approved"
 lemma: "encarecer"
 part_of_speech: "verbo"
 syllables:
@@ -132,26 +132,6 @@ exercises:
         text: "encarece"
         is_correct: true
   - position: 5
-    sentence: "Mudarse en agosto {{blank}} el alquiler del camión, y por eso mi hermano esperó a septiembre."
-    hint_general: "En ese mes la misma cosa cuesta más dinero."
-    explanation: "Encarece: en agosto lo mismo cuesta más. «Enrarece» hablaría de un ambiente extraño, y «eleva» encajaría con el precio, no con el camión entero."
-    options:
-      - position: 1
-        text: "enrarece"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Enrarece» describe un clima que se vuelve tenso o irrespirable, y aquí lo que cambia es una tarifa."
-        hint_specific: "«Enrarece» habla del ambiente entre personas. ¿Quién está tenso en esta frase?"
-      - position: 2
-        text: "eleva"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Eleva» pide una cifra detrás: se eleva un precio, no se eleva el alquiler de un camión."
-        hint_specific: "«Eleva» necesita una cifra como objeto. ¿Qué hay después del hueco, una cifra o una cosa?"
-      - position: 3
-        text: "encarece"
-        is_correct: true
-  - position: 6
     sentence: "El cambio de proveedor {{blank}} la producción durante dos meses, hasta que el equipo aprendió a usar la máquina nueva."
     hint_general: "Durante el aprendizaje, producir lo mismo salió más caro."
     explanation: "Encareció: producir lo mismo costó más durante el aprendizaje. «Disparó» es coloquial y sugiere un salto descontrolado, y «aumentó» diría que se produjo más."
@@ -171,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Aumentó la producción» diría que se fabricó más, justo lo contrario de lo que cuenta la frase."
         hint_specific: "«Aumentó» habla de cantidad producida. ¿El equipo produjo más o le costó más?"
-  - position: 7
+  - position: 6
     sentence: "Añadir una segunda revisión legal {{blank}} el contrato, y aun así Gaspar la pidió para dormir tranquilo."
     hint_general: "Esa revisión extra sube el coste, y aun así compensa."
     explanation: "Encarece: la revisión extra sube el coste. «Esclarece» sería aclarar el contrato, que es otra cosa, y «complica» diría que lo vuelve difícil."
@@ -191,26 +171,6 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Esclarece» es aclarar un punto oscuro, y la frase dice que Gaspar acepta pagar de más por dormir tranquilo."
         hint_specific: "«Esclarece» va de aclarar. Relee el final: ¿qué acepta Gaspar a cambio de dormir tranquilo?"
-  - position: 8
-    sentence: "La escuela avisó de que los viajes de fin de curso se {{blank}} cada año y propuso empezar a juntar el dinero en octubre."
-    hint_general: "Año tras año, el mismo viaje cuesta más dinero."
-    explanation: "Encarecen: el mismo viaje cuesta más cada año. «Inflan» es coloquial y acusa de hinchar la cifra, y «agravan» hablaría de un problema que empeora."
-    options:
-      - position: 1
-        text: "encarecen"
-        is_correct: true
-      - position: 2
-        text: "inflan"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Inflan» es de conversación informal y acusa a alguien de hinchar la cifra a propósito, y aquí solo se avisa de una tendencia."
-        hint_specific: "«Inflan» insinúa que alguien exagera a propósito. ¿La escuela acusa a alguien o avisa?"
-      - position: 3
-        text: "agravan"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Agravan» se dice de un problema que empeora, y un viaje de fin de curso no es un problema."
-        hint_specific: "«Agravan» empeora un problema. ¿El viaje es un problema o una ilusión?"
 readings:
   - position: 1
     scene: "trabajo"
@@ -240,5 +200,5 @@ metrics:
   family_size: 159
 provenance:
   generator: "flui authoring agent — theme ventas"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

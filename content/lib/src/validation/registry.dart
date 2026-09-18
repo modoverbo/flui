@@ -29,6 +29,7 @@ abstract final class ValidatorRegistry {
     DistractorOverlapValidator(),
     AnswerLeakageValidator(),
     HintCueValidator(),
+    HintOptionLeakageValidator(),
     LengthCapsValidator(),
     ExerciseExplanationCoverageValidator(),
     ExplanationCircularityValidator(),

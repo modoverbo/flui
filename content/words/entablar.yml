@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8310
 slug: "entablar"
-status: "draft"
+status: "approved"
 lemma: "entablar"
 part_of_speech: "verbo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "networking"
     relevance: 2
 tags:
-  comodin: ["empezar a hablar con"]
-  funcion: ["iniciar"]
+  comodin:
+    - "empezar a hablar con"
+  funcion:
+    - "iniciar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -190,7 +192,7 @@ exercises:
         hint_specific: "«Comentar» pide un tema, no una relación entera. ¿Tiene sentido «comentar una relación»?"
   - position: 8
     sentence: "Cada vez que {{blank}} contacto con un cliente nuevo, tratamos de que se sienta como en casa."
-    hint_general: "Se refiere a empezar un vínculo con alguien de forma profesional, no a improvisarlo ni solo mencionarlo."
+    hint_general: "Se refiere a empezar un vínculo con alguien de forma profesional, no a improvisarlo ni solo nombrarlo de pasada."
     explanation: "Entablamos: empezamos el vínculo de forma profesional. «Armamos» es coloquial y suena a improvisar, y «mencionamos» no tiene sentido como acción de crear un vínculo."
     options:
       - position: 1
@@ -232,9 +234,9 @@ readings:
     after_phrase: "Entablé contacto con esa persona, y meses después me ofreció un proyecto."
 metrics:
   zipf_overall: 3.9546
-  dispersion_dp: 0.1350
+  dispersion_dp: 0.135
   pedantry_proxy: 0.5309
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

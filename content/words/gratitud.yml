@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8205
 slug: "gratitud"
-status: "draft"
+status: "approved"
 lemma: "gratitud"
 part_of_speech: "sustantivo"
 syllables:
@@ -37,8 +37,11 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 2
 tags:
-  comodin: ["gracias"]
-  funcion: ["expresar", "valorar"]
+  comodin:
+    - "gracias"
+  funcion:
+    - "expresar"
+    - "valorar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -70,26 +73,6 @@ exercises:
         why_not: "«Deuda» sugiere que tiene que devolver algo, y aquí Aitana solo quiere expresar lo que sintió, sin hablar de devolver nada."
         hint_specific: "«Deuda» implica devolver algo. ¿Aitana promete devolver algo o solo expresa lo que siente?"
   - position: 2
-    sentence: "Tobías no se limitó a decir «gracias» de pasada: le escribió una carta entera a su amigo para mostrarle su {{blank}} por los años de apoyo."
-    hint_general: "Es un sentimiento profundo de valorar a alguien, no solo un gesto educado."
-    explanation: "Gratitud: un sentimiento profundo de valorar a alguien. «Cortesía» es un gesto educado que se hace con cualquiera, y aquí Tobías escribe una carta entera, algo más profundo; «reconocimiento» suena a un premio formal, no a una carta personal a un amigo."
-    options:
-      - position: 1
-        text: "cortesía"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cortesía» es un gesto educado que se hace con cualquiera, y aquí Tobías escribe una carta entera, algo mucho más personal."
-        hint_specific: "«Cortesía» es solo buena educación. ¿La carta de Tobías es un gesto rápido o algo más profundo?"
-      - position: 2
-        text: "reconocimiento"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Reconocimiento» suena a un premio o un homenaje formal, y aquí se trata de una carta personal a un amigo."
-        hint_specific: "«Reconocimiento» suena a un premio. ¿Tobías le da un premio a su amigo o le escribe una carta personal?"
-      - position: 3
-        text: "gratitud"
-        is_correct: true
-  - position: 3
     sentence: "Cayetano organizó una cena solo para decirle a su amigo, con hechos, lo mucho que valoraba que lo ayudara a mudarse tres veces sin cobrarle nada: quería mostrarle su {{blank}}."
     hint_general: "Es mostrar con hechos lo que sientes por alguien, más allá de decir gracias."
     explanation: "Gratitud: mostrar con hechos lo mucho que valoras algo que alguien hizo por ti. «Deuda» sugiere que tiene que devolver el favor, y aquí Cayetano organiza la cena porque quiere, no porque deba algo; «recompensa» sugiere un pago por un servicio, no un sentimiento personal."
@@ -109,7 +92,7 @@ exercises:
       - position: 3
         text: "gratitud"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Wanda le llevó el desayuno a su amiga toda una semana complicada en el trabajo, sin que se lo pidiera nadie: eso era {{blank}}, no un simple detalle bonito."
     hint_general: "Es demostrar con acciones lo que sientes por alguien, no solo decir una palabra amable."
     explanation: "Gratitud: mostrar con acciones lo que sientes por alguien. «Gratuidad» dice que algo no cuesta dinero, y aquí no se habla de dinero; «cumplido» es un elogio de cortesía, y lo que hizo Wanda fue mucho más que un elogio."
@@ -129,7 +112,7 @@ exercises:
       - position: 3
         text: "gratitud"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Estela no esperaba nada a cambio cuando le prestó dinero a su amigo, pero cuando él se lo devolvió con una nota escrita a mano, sintió una {{blank}} que no esperaba."
     hint_general: "Es sentir algo profundo cuando alguien hace algo importante por ti sin que lo pidas."
     explanation: "Gratitud: sentir algo profundo cuando alguien hace algo por ti sin pedirlo. «Cortesía» sería solo la buena educación de escribir una nota, y aquí lo que sintió Estela fue mucho más profundo; «recompensa» sugiere un pago por algo, y ella no esperaba nada a cambio del préstamo."
@@ -149,27 +132,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Recompensa» sugiere un pago por hacer algo, y aquí Estela no esperaba nada a cambio del préstamo."
         hint_specific: "«Recompensa» es un pago por algo. ¿Estela esperaba un pago por prestar el dinero?"
-  - position: 6
-    sentence: "Norma sabe que nunca podrá devolverle a su amiga todo lo que hizo por ella durante el año que se quedó sin trabajo, pero igual le repite lo mucho que siente {{blank}} cada vez que hablan."
-    hint_general: "Es sentir que algo no se puede pagar, solo expresar con palabras."
-    explanation: "Gratitud: sentir que algo importante no se puede pagar, solo expresar. «Deuda» sugiere que sí podría devolverlo con algo concreto, y la frase dice justo lo contrario; «reconocimiento» suena a un premio formal, no a algo que se repite en una charla entre amigas."
-    options:
-      - position: 1
-        text: "deuda"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Deuda» sugiere que podría devolver el favor con algo concreto, y la frase dice justo lo contrario: que nunca podrá devolverlo."
-        hint_specific: "«Deuda» implica poder devolver algo. ¿La frase dice que Norma puede devolver el favor?"
-      - position: 2
-        text: "reconocimiento"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Reconocimiento» suena a un premio o un homenaje formal, y aquí Norma solo repite lo que siente en una charla entre amigas."
-        hint_specific: "«Reconocimiento» suena a un premio formal. ¿Norma le da un premio a su amiga o simplemente se lo dice?"
-      - position: 3
-        text: "gratitud"
-        is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Ismael le regaló a su amigo una playlist con todas las canciones que lo ayudaron a superar un año difícil, como forma de mostrarle {{blank}}."
     hint_general: "Es mostrar con un gesto pensado lo que sientes por alguien importante."
     explanation: "Gratitud: mostrar con un gesto pensado lo que sientes por alguien. «Recompensa» sugiere pagar por un servicio recibido, y aquí Ismael no le debe nada a su amigo, solo quiere expresar algo; «cumplido» es un elogio rápido, y la playlist es un gesto mucho más pensado."
@@ -189,7 +152,7 @@ exercises:
       - position: 3
         text: "gratitud"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Bárbara brindó en su cumpleaños solo para nombrar a la amiga que la acompañó todos estos años, como muestra pública de {{blank}}."
     hint_general: "Es mostrar en público lo que sientes por alguien importante en tu vida."
     explanation: "Gratitud: mostrar en público lo que sientes por alguien importante. «Gratuidad» dice que algo no cuesta dinero, y aquí no se habla de dinero, sino de un sentimiento; «cortesía» sería solo un gesto educado, y nombrar a alguien en un brindis es más profundo que la simple buena educación."
@@ -237,5 +200,5 @@ metrics:
   pedantry_proxy: 0.4602
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

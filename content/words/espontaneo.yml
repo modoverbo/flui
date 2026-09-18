@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8301
 slug: "espontaneo"
-status: "draft"
+status: "approved"
 lemma: "espontáneo"
 part_of_speech: "adjetivo"
 syllables:
@@ -39,8 +39,11 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 2
 tags:
-  comodin: ["natural"]
-  funcion: ["describir", "reaccionar"]
+  comodin:
+    - "natural"
+  funcion:
+    - "describir"
+    - "reaccionar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -72,26 +75,6 @@ exercises:
         why_not: "«Impulsivo» implica actuar sin medir las consecuencias; el comentario de Nerea solo hizo que la charla siguiera, sin ningún riesgo de por medio."
         hint_specific: "«Impulsivo» avisa de un riesgo que no se controla. ¿Qué se arriesga con ese comentario sobre las corbatas?"
   - position: 2
-    sentence: "Antes de que empezara el curso de fotografía, todos guardaban silencio en la fila; Tobías soltó una pregunta tan {{blank}} sobre el horario del curso que la fila entera se rio y siguió hablando."
-    hint_general: "Apunta a algo que nace ahí mismo, sin plan, dentro de una charla informal."
-    explanation: "Espontánea: la pregunta nació ahí mismo y sin plan. «Instantánea» solo dice que algo pasa muy rápido, no que sea natural o sin preparar, y «improvisada» sugiere que hizo falta cubrir un vacío, cuando aquí solo fue una ocurrencia genuina."
-    options:
-      - position: 1
-        text: "instantánea"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Instantánea» describe la velocidad con la que pasa algo, no si nació sin planearlo; la pregunta de Tobías no se mide en rapidez, sino en naturalidad."
-        hint_specific: "«Instantánea» habla de rapidez, no de si algo estaba planeado. ¿La frase mide velocidad o naturalidad?"
-      - position: 2
-        text: "espontánea"
-        is_correct: true
-      - position: 3
-        text: "improvisada"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Improvisada» sugiere que faltaba algo y hubo que rellenar el hueco; aquí Tobías no cubre ninguna falta, solo dice lo primero que se le ocurre con gracia."
-        hint_specific: "«Improvisada» tapa un vacío. ¿Qué vacío cubre la pregunta de Tobías?"
-  - position: 3
     sentence: "En el ascensor, lo que Norma le dijo a su vecina nueva sobre el paraguas mojado no venía preparado: fue {{blank}}, y las dos llegaron riendo al tercer piso."
     hint_general: "Señala un comentario que sale de improviso, ligero y sin ensayar, dentro de una charla breve."
     explanation: "Espontáneo: el comentario salió de improviso y fue ligero. «Alocado» es coloquial y sugiere un comentario disparatado o fuera de lugar, cuando aquí solo hizo reír sin incomodar, y «sincero» habla de decir la verdad, algo que la frase no pone en duda."
@@ -111,7 +94,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Sincero» dice que algo es honesto y verdadero; aquí nadie pone en duda si Norma dice la verdad, solo se nota que no lo tenía pensado."
         hint_specific: "«Sincero» habla de decir la verdad. ¿La frase pone en duda si Norma miente?"
-  - position: 4
+  - position: 3
     sentence: "Ni ella sabía que iba a decir esas palabras hasta que las dijo: así de {{blank}} fue el brindis de Perla en la mesa de la boda."
     hint_general: "Se refiere a algo que aparece en el momento, sin que la persona lo tuviera pensado de antes."
     explanation: "Espontáneo: el brindis nació en el momento, sin que Perla lo tuviera pensado. «Extemporáneo» diría que llegó en mal momento, y aquí encajó perfecto, y «directo» habla de un estilo sin rodeos al hablar, no de si estaba planeado."
@@ -131,7 +114,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Directo» describe un estilo de hablar sin rodeos; la frase no dice cómo hablaba Perla, solo que no tenía las palabras pensadas."
         hint_specific: "«Directo» habla de ir sin rodeos al grano. ¿La frase compara franqueza o planificación?"
-  - position: 5
+  - position: 4
     sentence: "La pregunta que Malena le lanzó al señor de al lado sobre su perro, sentada en la sala de espera, fue {{blank}}: los dos siguieron hablando media hora."
     hint_general: "Habla de una pregunta que nace en el momento, sin que la persona la tuviera preparada de antes."
     explanation: "Espontánea: la pregunta nació ahí mismo, sin que Malena la llevara preparada. «Suelta» es coloquial y suena a algo dicho sin ningún interés real, cuando aquí terminaron hablando media hora, y «relajada» describe el tono con calma, no si la pregunta estaba pensada de antes."
@@ -151,7 +134,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Relajada» describe un tono tranquilo al hablar, y la frase no dice si Malena estaba calmada, sino que la pregunta no estaba pensada de antes."
         hint_specific: "«Relajada» habla del tono de voz, no de si algo estaba pensado. ¿Qué dice la frase sobre si Malena lo llevaba preparado?"
-  - position: 6
+  - position: 5
     sentence: "Jonás no llevaba el chiste preparado: le salió {{blank}} al acercarse a un grupo que no conocía en la fiesta de cumpleaños, y todos lo invitaron a quedarse a charlar."
     hint_general: "Se refiere a algo que sale sin pensarlo, en el momento justo de conocer a alguien."
     explanation: "Espontáneo: el chiste salió sin pensarlo, en el momento de conocer al grupo. «Atrevido» sugiere un riesgo de incomodar, y aquí lo invitaron a quedarse, y «abierto» describe a alguien sociable en general, no si ese chiste concreto estaba pensado."
@@ -171,7 +154,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Abierto» describe a una persona sociable en general, y la frase no habla del carácter de Jonás, sino de si ese chiste concreto estaba pensado."
         hint_specific: "«Abierto» describe cómo es alguien siempre, no un chiste concreto. ¿La frase habla del carácter de Jonás o de ese chiste?"
-  - position: 7
+  - position: 6
     sentence: "El comentario de Leandro sobre la lluvia, mientras esperaban el autobús, no estaba pensado: fue {{blank}}, y bastó para que la desconocida a su lado se riera y siguieran hablando hasta que llegó el bus."
     hint_general: "Apunta a un comentario que aparece sin ningún plan, justo en medio de la espera."
     explanation: "Espontáneo: el comentario apareció sin plan, en plena espera del autobús. «Auténtico» habla de ser fiel a uno mismo en general, no de si ese comentario estaba pensado, y «cercano» describe cercanía como rasgo de trato, no el hecho de que surgiera de repente."
@@ -191,7 +174,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Cercano» describe calidez en el trato como rasgo estable, y la frase solo dice que el comentario salió sin que Leandro lo planeara."
         hint_specific: "«Cercano» describe cómo trata alguien siempre. ¿La frase habla de un trato constante o de un comentario puntual?"
-  - position: 8
+  - position: 7
     sentence: "El primer día, Bárbara le hizo una pregunta tan {{blank}} a su nuevo compañero de mesa que en dos minutos ya sabían de dónde eran los dos."
     hint_general: "Habla de una pregunta que surge sin que la persona la tuviera pensada de antes."
     explanation: "Espontánea: la pregunta surgió sin que Bárbara la llevara pensada. «Confiada» describe seguridad en una misma como rasgo, no si algo estaba planeado, y «curiosa» describe interés por saber cosas, no la falta de preparación."
@@ -239,5 +222,5 @@ metrics:
   pedantry_proxy: 0.4354
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

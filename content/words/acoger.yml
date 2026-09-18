@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7031
 slug: "acoger"
-status: "draft"
+status: "approved"
 lemma: "acoger"
 part_of_speech: "verbo"
 syllables:
@@ -134,26 +134,6 @@ exercises:
         why_not: "«Aplaudir» sugiere una celebración ruidosa de un día concreto, y esto describe una convivencia larga con el barrio."
         hint_specific: "Un aplauso dura un rato. ¿Cuánto dura lo que cuenta la frase?"
   - position: 5
-    sentence: "Le contaron el cambio de planes por teléfono y lo {{blank}} mejor de lo que nadie esperaba."
-    hint_general: "Recibió el cambio de buena gana, sin poner problemas."
-    explanation: "Acogió: recibe el cambio de buena gana. «Recogió» sería tomarlo con las manos, y «aceptó» solo diría que no lo rechazó."
-    options:
-      - position: 1
-        text: "recogió"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Recoger» es tomar algo físico, y un cambio de planes contado por teléfono no se puede tomar con las manos."
-        hint_specific: "«Recoger» necesita algo que agarrar. ¿Qué llega por teléfono?"
-      - position: 2
-        text: "acogió"
-        is_correct: true
-      - position: 3
-        text: "aceptó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Aceptar» solo diría que no lo rechazó, y la frase destaca que reaccionó mejor de lo que nadie esperaba."
-        hint_specific: "«Aceptar» es el mínimo. ¿Qué dice la frase sobre su reacción?"
-  - position: 6
     sentence: "Nadie {{blank}} a los del turno nuevo el primer día, y tardaron un mes en sentirse parte de algo."
     hint_general: "Nadie los recibió bien ni los hizo sentir bienvenidos."
     explanation: "Acogió: nadie los recibió bien. «Escogió» sería elegirlos entre otros candidatos, y «escuchó» hablaría solo de prestar atención a lo que dijeran."
@@ -173,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Escuchar» sería atender a lo que dijeran, y lo que faltó fue que alguien los hiciera sentir parte del sitio."
         hint_specific: "«Escuchar» necesita que el otro hable. ¿Qué les faltó el primer día?"
-  - position: 7
+  - position: 6
     sentence: "La sala {{blank}} su idea con un silencio atento que decía más que cualquier comentario."
     hint_general: "La recibieron bien, aunque nadie dijera nada en voz alta."
     explanation: "Acogió: la reciben bien sin decir nada. «Toleró» sería aguantarla a disgusto, y «escuchó» describiría solo que prestaron atención."
@@ -193,7 +173,7 @@ exercises:
       - position: 3
         text: "acogió"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Su casa {{blank}} a todo el que llegaba con una historia que contar y un plato vacío."
     hint_general: "En esa casa se recibía bien a cualquiera que apareciera."
     explanation: "Acogía: en esa casa se recibía bien a cualquiera. «Aplaudía» sugeriría celebrar con ruido, y «escuchaba» hablaría solo de atender a lo que contaban."
@@ -242,5 +222,5 @@ metrics:
   family_size: 25
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

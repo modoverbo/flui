@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7007
 slug: "preambulo"
-status: "draft"
+status: "approved"
 lemma: "preámbulo"
 part_of_speech: "sustantivo"
 syllables:
@@ -154,26 +154,6 @@ exercises:
         why_not: "Un «preludio» es la señal de algo que se acerca, y aquí es él quien elige contar de dónde le vino la idea."
         hint_specific: "Un «preludio» no lo elige nadie. ¿Esto le sale solo o lo hace a propósito?"
   - position: 6
-    sentence: "El libro tarda cien páginas en arrancar, y ese {{blank}} deja fuera a media docena de lectores por cada uno que resiste."
-    hint_general: "Cien páginas antes del asunto de verdad cansan a quien empieza."
-    explanation: "Preámbulo: cien páginas antes del asunto de verdad. Un «prólogo» lo firma otra persona al principio del libro, y «calentamiento» es cosa del cuerpo."
-    options:
-      - position: 1
-        text: "prólogo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un «prólogo» es el texto aparte que abre un libro, muchas veces firmado por otro; estas cien páginas son ya la obra."
-        hint_specific: "Un «prólogo» va antes del primer capítulo. ¿Estas cien páginas están dentro de la historia o fuera?"
-      - position: 2
-        text: "preámbulo"
-        is_correct: true
-      - position: 3
-        text: "calentamiento"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Calentamiento» es coloquial y sirve para el cuerpo antes de un esfuerzo, no para las páginas que preceden a una historia."
-        hint_specific: "«Calentamiento» pertenece al gimnasio. ¿Estamos en un gimnasio o en un libro?"
-  - position: 7
     sentence: "Yolanda dijo que dejaba el puesto sin {{blank}} ninguno y después explicó, con calma, todas sus razones."
     hint_general: "Soltó la decisión de entrada, sin nada dicho antes para suavizarla."
     explanation: "Preámbulo: soltó la decisión sin decir nada antes. Un «aviso» habría anunciado que algo venía, y un «resumen» recogería en corto lo ya contado."
@@ -193,7 +173,7 @@ exercises:
       - position: 3
         text: "preámbulo"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "La carta arranca con un {{blank}} largo y cálido antes de la única línea que pide dinero prestado."
     hint_general: "Todo lo cálido va delante y sirve para llegar a la petición del final."
     explanation: "Preámbulo: lo cálido va delante de la petición. Un «aviso» pondría sobre alerta, y un «prólogo» sería el texto que abre un libro entero."
@@ -242,5 +222,5 @@ metrics:
   family_size: 2
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

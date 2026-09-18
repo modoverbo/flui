@@ -107,7 +107,7 @@ void main() {
     }
   });
 
-  test('the registry ships 32 validators', () {
-    expect(ValidatorRegistry.all(const OfflineFetcher()), hasLength(32));
+  test('the registry ships 33 validators', () {
+    expect(ValidatorRegistry.all(const OfflineFetcher()), hasLength(33));
   });
 }

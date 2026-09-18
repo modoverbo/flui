@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8308
 slug: "cortesia"
-status: "draft"
+status: "approved"
 lemma: "cortesía"
 part_of_speech: "sustantivo"
 syllables:
@@ -37,8 +37,11 @@ themes:
   - slug: "networking"
     relevance: 2
 tags:
-  comodin: ["buena educacion"]
-  funcion: ["describir", "agradecer"]
+  comodin:
+    - "buena educacion"
+  funcion:
+    - "describir"
+    - "agradecer"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -130,46 +133,6 @@ exercises:
         why_not: "«Educación» describe la crianza y los modales de alguien en general, y la frase señala un gesto puntual: el saludo sencillo en el ascensor."
         hint_specific: "«Educación» describe un rasgo general de crianza. ¿La frase habla de su crianza o de un saludo puntual?"
   - position: 5
-    sentence: "Renzo acompañó a la nueva del curso hasta la puerta correcta cuando se equivocó de salón; fue pura {{blank}}, y ella se lo agradeció todo el día."
-    hint_general: "Se refiere a un gesto amable simple, sin que nadie pasara vergüenza ni diera lástima."
-    explanation: "Cortesía: un gesto amable simple. «Delicadeza» pone el foco en suavizar un momento incómodo, y la frase no dice que ella pasara vergüenza, y «compasión» es sentir pena, cuando Renzo solo la acompañó."
-    options:
-      - position: 1
-        text: "delicadeza"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Delicadeza» pone el foco en suavizar un momento incómodo o vergonzoso, y la frase solo cuenta que se equivocó de salón, sin decir que pasara vergüenza."
-        hint_specific: "«Delicadeza» suaviza algo incómodo. ¿La frase dice que ella pasó vergüenza?"
-      - position: 2
-        text: "cortesía"
-        is_correct: true
-      - position: 3
-        text: "compasión"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Compasión» es sentir pena por alguien, y la frase no dice que Renzo sintiera pena, solo que la acompañó hasta la puerta correcta."
-        hint_specific: "«Compasión» es sentir pena. ¿La frase dice que Renzo sintió pena por ella?"
-  - position: 6
-    sentence: "Cuando notó que el invitado nuevo no sabía qué responder, Bárbara cambió de tema con una {{blank}} que nadie más notó."
-    hint_general: "Apunta a un gesto amable que resuelve un momento incómodo sin que nadie más lo note."
-    explanation: "Cortesía: un gesto amable que resolvió un momento incómodo. «Consideración» necesita decir hacia quién se tiene, algo que la frase no aclara, y «diplomacia» supone manejar un conflicto, cuando aquí no había ninguno."
-    options:
-      - position: 1
-        text: "consideración"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Consideración» necesita decir hacia quién o hacia qué se tiene, y la frase no lo dice: solo describe el gesto en sí de cambiar de tema."
-        hint_specific: "«Consideración» pide un hacia quién explícito. ¿La frase lo dice?"
-      - position: 2
-        text: "cortesía"
-        is_correct: true
-      - position: 3
-        text: "diplomacia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Diplomacia» supone manejar un conflicto o una tensión entre partes, y aquí no había ningún conflicto, solo un tema incómodo que Bárbara cambió con suavidad."
-        hint_specific: "«Diplomacia» maneja conflictos. ¿Había algún conflicto en esa fiesta?"
-  - position: 7
     sentence: "Que Jonás le cediera el paso a la señora de la fila fue una {{blank}} que la hizo sonreír todo el trayecto."
     hint_general: "Habla de un gesto amable hacia alguien, sin que tenga que ver con su edad o su cargo."
     explanation: "Cortesía: un gesto amable hacia alguien, sin más. «Deferencia» supone ceder por respeto a la jerarquía de alguien, y Jonás no sabía nada de esa señora, y «elegancia» describe estilo, no el gesto amable en sí."
@@ -189,7 +152,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Elegancia» describe la gracia con la que se hace algo, y la frase no habla de estilo, sino del gesto amable en sí de cederle el paso."
         hint_specific: "«Elegancia» habla de estilo. ¿La frase describe estilo o un gesto amable?"
-  - position: 8
+  - position: 6
     sentence: "Sin ser el dueño de la casa, Dante recibió al invitado despistado con una {{blank}} que hizo que se sintiera bienvenido enseguida."
     hint_general: "Se refiere a un gesto amable pequeño, sin que la persona sea quien recibe en su propia casa."
     explanation: "Cortesía: un gesto amable pequeño de cualquiera, no solo del dueño de casa. «Hospitalidad» la ofrece quien recibe en su propia casa, y Dante no era el dueño, y «generosidad» implica dar algo grande, cuando aquí solo hubo un gesto pequeño."
@@ -237,5 +200,5 @@ metrics:
   pedantry_proxy: 0.4044
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

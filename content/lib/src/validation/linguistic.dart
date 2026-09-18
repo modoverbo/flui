@@ -308,6 +308,109 @@ final class HintCueValidator extends WordValidator {
   }
 }
 
+/// A hint must not name an option it is not entitled to name.
+///
+/// `hint_general` is shared by the whole exercise, so it must not contain any
+/// option's text — round 5 lost three items this way: `desvelo`'s
+/// `hint_general` used "cuidado" as a generic gloss while "cuidado" was a
+/// distractor in the same exercise, and three reviewers flagged all three.
+///
+/// `hint_specific` is the one exception: by design (AUTHORING.md §3) it
+/// quotes *its own* distractor to contrast it with the sentence, so only the
+/// *other* options in the exercise count as a leak there.
+final class HintOptionLeakageValidator extends WordValidator {
+  const HintOptionLeakageValidator();
+
+  @override
+  String get code => 'hint_option_leakage';
+
+  @override
+  String get description =>
+      'hint_general names no option of its exercise, and hint_specific '
+      'names no option other than the one it belongs to — whole words and '
+      'common inflections, accent/case-insensitive';
+
+  @override
+  Severity get severity => Severity.blocking;
+
+  @override
+  List<Issue> validateWord(Word word, LibraryContext context) {
+    final issues = <Issue>[];
+    for (final exercise in word.exercises) {
+      final optionTokens = <int, List<String>>{
+        for (final option in exercise.options)
+          option.position: foldedTokens(option.text),
+      };
+
+      Issue? findLeak(String location, String text, {int? ownPosition}) {
+        final hintTokens = foldedTokens(text);
+        for (final entry in optionTokens.entries) {
+          if (entry.key == ownPosition) continue;
+          if (_containsOption(hintTokens, entry.value)) {
+            final option = exercise.options.firstWhere(
+              (o) => o.position == entry.key,
+            );
+            return _issue(
+              this,
+              word.slug,
+              location,
+              'names option "${option.text}" (position ${entry.key})',
+            );
+          }
+        }
+        return null;
+      }
+
+      final generalLeak = findLeak(
+        'exercises[${exercise.position}].hint_general',
+        exercise.hintGeneral,
+      );
+      if (generalLeak != null) issues.add(generalLeak);
+
+      for (final option in exercise.distractors) {
+        final specific = option.hintSpecific;
+        if (specific == null) continue;
+        final specificLeak = findLeak(
+          'exercises[${exercise.position}].options[${option.position}].hint_specific',
+          specific,
+          ownPosition: option.position,
+        );
+        if (specificLeak != null) issues.add(specificLeak);
+      }
+    }
+    return issues;
+  }
+
+  /// Whether [optionTokens] appears in [hintTokens]: as a contiguous, exact
+  /// token sequence for a multi-word option ("por si acaso"), or as a single
+  /// token matched up to a common inflection (plural, gender) for a one-word
+  /// option, via the same mechanical reductions [lemmaCandidates] uses to fold
+  /// a surface form back onto a plausible lemma.
+  bool _containsOption(List<String> hintTokens, List<String> optionTokens) {
+    if (optionTokens.isEmpty) return false;
+    if (optionTokens.length == 1) {
+      final target = _forms(optionTokens.single);
+      if (target.isEmpty) return false;
+      return hintTokens.any(
+        (token) => _forms(token).intersection(target).isNotEmpty,
+      );
+    }
+    for (var i = 0; i + optionTokens.length <= hintTokens.length; i++) {
+      if (optionTokens.indexed.every(
+        (entry) => hintTokens[i + entry.$1] == entry.$2,
+      )) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /// Candidate surface forms of [token], short ones dropped so a two- or
+  /// three-letter reduction can never cause a false match.
+  Set<String> _forms(String token) =>
+      lemmaCandidates(token).where((form) => form.length >= 4).toSet();
+}
+
 /// Word-count caps on the explanation and on both hint kinds.
 final class LengthCapsValidator extends WordValidator {
   const LengthCapsValidator();

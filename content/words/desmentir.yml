@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "desmentir"
-status: "draft"
+status: "approved"
 lemma: "desmentir"
 part_of_speech: "verbo"
 syllables:
@@ -111,26 +111,6 @@ exercises:
         why_not: "«Matizó» aceptaría la cifra y le añadiría precisiones, y él dice que esa cifra no es suya."
         hint_specific: "«Matizó» acepta el fondo. ¿Ismael acepta esa cifra?"
   - position: 4
-    sentence: "Mi abuela {{blank}} cada historia que se contaba de ella en el pueblo, y siempre con la misma frase corta."
-    hint_general: "Decía que lo que contaban de ella no había pasado."
-    explanation: "Desmentía: decía que lo contado no había pasado. «Desautorizaba» suena a orden administrativa que retira permisos, y «negaba» no dice que fuera en público ni sobre un relato ajeno."
-    options:
-      - position: 1
-        text: "desautorizaba"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Desautorizaba» es lenguaje administrativo sobre quitarle el permiso o el respaldo a alguien, y ella solo decía que aquello no pasó."
-        hint_specific: "«Desautorizaba» suena a retirar permisos, en tono oficial. ¿Tu abuela retiraba permisos?"
-      - position: 2
-        text: "desmentía"
-        is_correct: true
-      - position: 3
-        text: "negaba"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Negaba» puede hacerse en privado y sobre cualquier cosa, y aquí se responde en el pueblo a un relato que ya circulaba."
-        hint_specific: "«Negaba» puede ser a solas. ¿Dónde ocurría esto y frente a qué?"
-  - position: 5
     sentence: "La asociación pidió al periódico que {{blank}} el dato del número de socios, que estaba multiplicado por diez."
     hint_general: "Piden que se diga públicamente que ese número no es cierto."
     explanation: "Desmienta: que se diga en público que el número no es cierto. «Desmonte» hablaría de un argumento con piezas, y «publique» solo pediría que saliera impreso algo, sin decir qué."
@@ -150,7 +130,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Publique» solo pide que salga algo impreso, y lo que se pide es que se diga que ese dato no es cierto."
         hint_specific: "«Publique» no dice qué sale. ¿Qué contenido exige la asociación?"
-  - position: 6
+  - position: 5
     sentence: "Tuvo que salir a {{blank}} lo del traslado antes de que medio equipo empezara a buscar trabajo."
     hint_general: "Tenía que decir a tiempo que ese traslado no iba a pasar."
     explanation: "Desmentir: decir a tiempo que el traslado no iba a pasar. «Refutar» pertenece al debate con argumentos, y «confirmar» diría justo lo contrario."
@@ -170,27 +150,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Refutar» es palabra de debate y se usa contra argumentos, y aquí corre un rumor sobre un hecho."
         hint_specific: "«Refutar» va contra argumentos, en tono académico. ¿Qué corría por la oficina?"
-  - position: 7
-    sentence: "Berta {{blank}} el rumor sobre su renuncia con una sola línea en el tablón del portal."
-    hint_general: "Con una línea dijo que lo que se contaba no era cierto."
-    explanation: "Desmintió: con una línea dijo que no era cierto. «Desmontó» pediría un razonamiento al que enseñar las costuras, y «rectificó» corregiría sus propias palabras."
-    options:
-      - position: 1
-        text: "rectificó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Rectificó» es corregir lo que uno mismo dijo antes, y Berta no había dicho nada sobre renunciar."
-        hint_specific: "«Rectificó» se aplica a lo propio. ¿Había dicho Berta algo de renunciar?"
-      - position: 2
-        text: "desmintió"
-        is_correct: true
-      - position: 3
-        text: "desmontó"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Desmontó» se usa con argumentos que se abren por dentro, y un rumor de portal no trae argumentos."
-        hint_specific: "«Desmontó» abre razonamientos. ¿Qué había en ese tablón, un razonamiento o un rumor?"
-  - position: 8
+  - position: 6
     sentence: "Al preguntarle por la foto, el portavoz no {{blank}} nada: se limitó a decir que no iba a hablar del tema."
     hint_general: "No llegó a decir que lo que se contaba fuera falso."
     explanation: "Desmintió: no llegó a decir que fuera falso. «Desautorizó» sería retirarle el respaldo a alguien, y «aclaró» supondría que explicó algo."
@@ -233,11 +193,11 @@ readings:
     before_phrase: "Eso que cuentan de mí no pasó."
     after_phrase: "Eso lo desmiento y seguimos."
 metrics:
-  zipf_overall: 3.6180
-  dispersion_dp: 0.2470
+  zipf_overall: 3.618
+  dispersion_dp: 0.247
   pedantry_proxy: 0.6929
   family_size: 67
 provenance:
   generator: "flui authoring agent — theme medios-entrevistas"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

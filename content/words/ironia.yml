@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8003
 slug: "ironia"
-status: "draft"
+status: "approved"
 lemma: "ironía"
 part_of_speech: "sustantivo"
 syllables:
@@ -38,8 +38,11 @@ themes:
   - slug: "matices-precision"
     relevance: 2
 tags:
-  comodin: ["broma"]
-  funcion: ["bromear", "suavizar"]
+  comodin:
+    - "broma"
+  funcion:
+    - "bromear"
+    - "suavizar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -239,5 +242,5 @@ metrics:
   pedantry_proxy: 0.4953
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r4 + reviewer-b1-r4 + reviewer-a2-r4 + reviewer-b2-r4 + reviewer-a3-r4 + reviewer-a4-r4 + reviewer-b3-r4"
+  checked_on: "2026-09-18"

@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "deslumbrar"
-status: "draft"
+status: "approved"
 lemma: "deslumbrar"
 part_of_speech: "verbo"
 syllables:
@@ -111,26 +111,6 @@ exercises:
         why_not: "«Aburrir» es justo lo que nadie busca, y la frase contrapone dos maneras de hacerlo bien, no una mala."
         hint_specific: "«Aburrir» no compite con entender. ¿Qué dos cosas se comparan aquí?"
   - position: 4
-    sentence: "El puesto de la feria {{blank}} con luces y pantallas, y el de al lado vendió el triple con una mesa de madera."
-    hint_general: "Impresionaba mucho y aun así no funcionó."
-    explanation: "Deslumbraba: impresionaba mucho sin vender. «Encandilaba» es coloquial y apunta a un embeleso casi amoroso, y «informaba» diría que explicaba el producto."
-    options:
-      - position: 1
-        text: "encandilaba"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Encandilaba» es de charla informal y apunta a un embeleso casi amoroso, y aquí se habla de luces y de ventas."
-        hint_specific: "«Encandilaba» suena a enamoramiento, en tono suelto. ¿De qué va esta escena?"
-      - position: 2
-        text: "deslumbraba"
-        is_correct: true
-      - position: 3
-        text: "informaba"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Informaba» diría que explicaba bien el producto, y el que explicó bien fue el puesto de al lado."
-        hint_specific: "«Informaba» explica. ¿Qué puesto explicaba y cuál brillaba?"
-  - position: 5
     sentence: "Con tres cifras enormes en la pantalla, Uriel {{blank}} al comité y se saltó las dos preguntas difíciles."
     hint_general: "Impresionó tanto que las preguntas incómodas no llegaron."
     explanation: "Deslumbró: impresionó y evitó las preguntas. «Vislumbró» sería intuir algo lejano, y «explicó» supondría que respondió a todo."
@@ -150,7 +130,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Vislumbró» es empezar a distinguir algo lejano, y aquí las cifras estaban en una pantalla, bien visibles."
         hint_specific: "«Vislumbró» ve poco y de lejos. ¿El comité veía poco?"
-  - position: 6
+  - position: 5
     sentence: "En redes es fácil {{blank}} un día y desaparecer al siguiente, y por eso Casilda publica poco y constante."
     hint_general: "Impresionar de golpe no sostiene nada a la larga."
     explanation: "Deslumbrar: impresionar de golpe. «Apabullar» es coloquial y sugiere avasallar a alguien, y «ayudar» describiría otra intención distinta."
@@ -170,27 +150,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Ayudar» describe otra intención, y la frase habla del brillo de un día que no se sostiene."
         hint_specific: "«Ayudar» apunta a ser útil. ¿La frase habla de utilidad o de brillo?"
-  - position: 7
-    sentence: "A mi prima la {{blank}} el discurso del director del campamento, y tardó un verano en ver cómo trataba al equipo."
-    hint_general: "Quedó tan impresionada que no vio lo demás hasta después."
-    explanation: "Deslumbró: quedó impresionada y no vio el resto. «Encandiló» es coloquial y apunta a un embeleso romántico, y «convenció» dejaría razones, no asombro."
-    options:
-      - position: 1
-        text: "convenció"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Convenció» dejaría razones que se sostienen, y a ella se le cayó la impresión en un verano."
-        hint_specific: "«Convenció» aguanta con razones. ¿Cuánto duró esa impresión?"
-      - position: 2
-        text: "encandiló"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Encandiló» es de charla informal y apunta a un enamoramiento, y aquí se habla del discurso de un responsable."
-        hint_specific: "«Encandiló» suena a enamoramiento, en tono suelto. ¿De qué la impresionó, del discurso o de la persona?"
-      - position: 3
-        text: "deslumbró"
-        is_correct: true
-  - position: 8
+  - position: 6
     sentence: "El truco del vídeo era {{blank}} en los primeros tres segundos; a partir del cuarto, el contenido tenía que sostenerlo."
     hint_general: "Al principio se busca impresionar; después hace falta otra cosa."
     explanation: "Deslumbrar: impresionar al principio. «Vislumbrar» sería intuir algo lejano, e «informar» describiría lo que toca después, no los tres primeros segundos."
@@ -233,11 +193,11 @@ readings:
     before_phrase: "Al principio hay que impactar."
     after_phrase: "Los tres primeros segundos tienen que deslumbrar."
 metrics:
-  zipf_overall: 3.6280
-  dispersion_dp: 0.2360
+  zipf_overall: 3.628
+  dispersion_dp: 0.236
   pedantry_proxy: 0.4998
   family_size: 25
 provenance:
   generator: "flui authoring agent — theme redes-sociales"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

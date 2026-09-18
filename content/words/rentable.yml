@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "rentable"
-status: "draft"
+status: "approved"
 lemma: "rentable"
 part_of_speech: "adjetivo"
 syllables:
@@ -113,26 +113,6 @@ exercises:
         why_not: "«Viable» dice que algo se puede sostener, y sostenerse no es lo mismo que devolver más de lo que costó."
         hint_specific: "«Viable» es que algo aguanta en pie. ¿Aguantar es lo mismo que ganar?"
   - position: 4
-    sentence: "Antes de ampliar el catálogo, Melina quiso saber qué línea era {{blank}} y cuál se sostenía solo por costumbre."
-    hint_general: "Busca cuál devuelve más de lo que cuesta y cuál no."
-    explanation: "Rentable: devuelve más de lo que cuesta. «Jugosa» es coloquial y sugiere una ganancia golosa, y «económica» hablaría de precios bajos."
-    options:
-      - position: 1
-        text: "jugosa"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Jugosa» es de conversación informal y sugiere una ganancia golosa; aquí se compara línea por línea con frialdad."
-        hint_specific: "«Jugosa» suena a botín apetitoso. ¿Encaja en una revisión fría del catálogo?"
-      - position: 2
-        text: "rentable"
-        is_correct: true
-      - position: 3
-        text: "económica"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Económica» diría que esa línea es barata, y Melina pregunta qué deja, no qué cuesta."
-        hint_specific: "«Económica» mira el precio. ¿Melina pregunta por el precio o por lo que queda?"
-  - position: 5
     sentence: "Damián disfruta dando clases los sábados, pero admite que ese taller nunca fue {{blank}} y lo hace por gusto."
     hint_general: "Reconoce que el taller no devuelve lo que cuesta, aunque lo disfrute."
     explanation: "Rentable: no devuelve lo que cuesta. «Notable» hablaría de destacar, y «sostenible» diría que aguanta, cuando la frase admite que no se paga solo."
@@ -152,7 +132,7 @@ exercises:
       - position: 3
         text: "rentable"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "En la reunión con el banco, Amaya mostró dos años de números para probar que el proyecto era {{blank}}."
     hint_general: "Quiere probar con números que entra más de lo que sale."
     explanation: "Rentable: entra más de lo que sale. «Redondo» es de charla informal y significa perfecto, y «viable» solo diría que el proyecto puede sostenerse."
@@ -172,7 +152,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Viable» dice que el proyecto puede llevarse a cabo, y el banco quiere saber qué devuelve, no si se puede."
         hint_specific: "«Viable» es que se puede hacer. ¿Eso responde a lo que pregunta un banco?"
-  - position: 7
+  - position: 6
     sentence: "El puesto del mercado vendía muchísimo, aunque Gaspar calculó que apenas era {{blank}} después de pagar el alquiler."
     hint_general: "Vender mucho no basta: hay que mirar lo que queda tras pagar."
     explanation: "Rentable: apenas queda algo tras pagar el alquiler. «Jugoso» es coloquial y promete una ganancia golosa, y «productivo» solo mediría cuánto se vende."
@@ -192,7 +172,7 @@ exercises:
       - position: 3
         text: "rentable"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Mi tío repite que el huerto no es {{blank}}, y aun así cada domingo vuelve con las manos llenas de tierra."
     hint_general: "Dice que no devuelve dinero, aunque le devuelva otras cosas."
     explanation: "Rentable: no devuelve dinero, aunque él siga yendo. «Notable» hablaría de destacar, y «barato» solo diría que el huerto cuesta poco."
@@ -241,5 +221,5 @@ metrics:
   family_size: 50
 provenance:
   generator: "flui authoring agent — theme ventas"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

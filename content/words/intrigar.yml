@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "intrigar"
-status: "draft"
+status: "approved"
 lemma: "intrigar"
 part_of_speech: "verbo"
 syllables:
@@ -150,26 +150,6 @@ exercises:
         why_not: "«Instigaba» es empujar a alguien a hacer algo concreto, y un título solo despierta las ganas de leer."
         hint_specific: "«Instigaba» empuja a una acción. ¿A qué te empuja un título?"
   - position: 6
-    sentence: "En la charla, Vera {{blank}} con una pregunta del principio y la contestó en el minuto final."
-    hint_general: "Dejó una pregunta viva durante toda la charla."
-    explanation: "Intrigó: dejó la pregunta viva y la cerró. «Enganchó» es coloquial y sugiere atrapar a la fuerza, y «explicó» no dejaría ninguna pregunta abierta."
-    options:
-      - position: 1
-        text: "enganchó"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Enganchó» es de charla informal y sugiere atrapar al público como a un pez, y ella abre una pregunta y la cumple."
-        hint_specific: "«Enganchó» suena a atrapar, en registro suelto. ¿Vera atrapa o abre una pregunta?"
-      - position: 2
-        text: "intrigó"
-        is_correct: true
-      - position: 3
-        text: "explicó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Explicó» daría la respuesta de entrada, y aquí la respuesta llega al final a propósito."
-        hint_specific: "«Explicó» resuelve enseguida. ¿Cuándo llegó la respuesta?"
-  - position: 7
     sentence: "Lo que más {{blank}} del mensaje de Gaspar no era lo que contaba, sino lo que dejaba para el final."
     hint_general: "Lo que más ganas daba de seguir era lo que aún no había dicho."
     explanation: "Intrigaba: las ganas venían de lo que faltaba. «Seducía» apunta a atracción romántica en tono elevado, y «sorprendía» hablaría del asombro por lo ya dicho."
@@ -189,7 +169,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Seducía» es de tono elevado y apunta a una atracción amorosa, y aquí se habla de cómo está escrito un mensaje."
         hint_specific: "«Seducía» apunta a lo romántico, con tono elevado. ¿De qué trata este mensaje?"
-  - position: 8
+  - position: 7
     sentence: "Nos {{blank}} tanto el nombre del local que reservamos sin mirar la carta."
     hint_general: "El nombre nos dio ganas de saber cómo era aquello."
     explanation: "Intrigó: el nombre dio ganas de saber. «Instigó» sería empujarnos a hacer algo malo, y «convenció» supondría que ya sabíamos qué había."
@@ -238,5 +218,5 @@ metrics:
   family_size: 24
 provenance:
   generator: "flui authoring agent — theme redes-sociales"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7002
 slug: "analogia"
-status: "draft"
+status: "approved"
 lemma: "analogía"
 part_of_speech: "sustantivo"
 syllables:
@@ -30,9 +30,9 @@ replaces:
     after: "Recurro a una analogía para que se vea"
   - before: "Eso es como cuando se te llena el buzón"
     after: "La analogía es tu buzón lleno"
-semantic_set_id: "figuras-para-explicar"
 family:
   - "análogo"
+semantic_set_id: "figuras-para-explicar"
 themes:
   - slug: "docencia"
     relevance: 3
@@ -245,5 +245,5 @@ metrics:
   family_size: 17
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r4 + reviewer-b1-r4 + reviewer-a2-r4 + reviewer-b2-r4 + reviewer-a3-r4 + reviewer-a4-r4 + reviewer-b3-r4"
+  checked_on: "2026-09-18"

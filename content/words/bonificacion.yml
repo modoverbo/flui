@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "bonificacion"
-status: "draft"
+status: "approved"
 lemma: "bonificación"
 part_of_speech: "sustantivo"
 syllables:
@@ -74,26 +74,6 @@ exercises:
         why_not: "«Notificación» es un aviso escrito, y lo que el contrato incluye es una rebaja en el precio."
         hint_specific: "«Notificación» es papel informativo. ¿Al cliente le llega un aviso o le baja el precio?"
   - position: 2
-    sentence: "Íñigo cerró la venta grande porque ofreció una {{blank}} clara: a partir de cien cajas, un doce por ciento menos."
-    hint_general: "Ofrece una rebaja atada a una cantidad concreta."
-    explanation: "Bonificación: la rebaja está atada a cien cajas. «Propina» es de mostrador y se da por un servicio, y «descuento» no diría que depende de una condición."
-    options:
-      - position: 1
-        text: "propina"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Propina» es de conversación de mostrador y se entrega por un servicio recibido, no por comprar cien cajas."
-        hint_specific: "«Propina» se deja por un servicio, en tono informal. ¿Aquí hay servicio o hay volumen?"
-      - position: 2
-        text: "bonificación"
-        is_correct: true
-      - position: 3
-        text: "descuento"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Descuento» puede ser una rebaja general, y lo que convence aquí es que dependa de las cien cajas."
-        hint_specific: "«Descuento» no promete condición. ¿Qué es lo que cierra la venta, la rebaja o la condición?"
-  - position: 3
     sentence: "Al renovar antes de fecha, a mi madre le aplicaron una {{blank}} que no aparecía en el primer presupuesto."
     hint_general: "Le rebajaron el precio por renovar dentro de plazo."
     explanation: "Bonificación: le rebajaron por renovar en plazo. «Notificación» sería un aviso, y «comisión» iría al intermediario, no al cliente."
@@ -113,7 +93,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Comisión» es lo que cobra quien vende, y aquí el dinero se queda del lado del cliente."
         hint_specific: "«Comisión» la cobra quien vende. ¿Quién sale ganando en esta escena?"
-  - position: 4
+  - position: 3
     sentence: "La cooperativa reparte una {{blank}} entre los socios que compran toda la temporada, y la paga en diciembre."
     hint_general: "Reparten dinero entre quienes cumplieron el compromiso de compra."
     explanation: "Bonificación: reparten por cumplir el compromiso de compra. «Dádiva» suena a regalo solemne de un superior, y «premio» supondría una competición."
@@ -133,7 +113,7 @@ exercises:
       - position: 3
         text: "bonificación"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Perdimos la {{blank}} por pagar dos días tarde, y el proveedor nos cobró la cifra entera."
     hint_general: "Se perdió la rebaja porque no se cumplió el plazo."
     explanation: "Bonificación: se pierde cuando no se cumple el plazo. «Gratificación» premiaría un trabajo bien hecho, y «ayuda» supondría que alguien la da por necesidad."
@@ -153,7 +133,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Ayuda» supone que alguien da dinero porque hace falta, y esto se perdió por un retraso de dos días."
         hint_specific: "«Ayuda» se concede por necesidad. ¿Aquí importaba la necesidad o la fecha?"
-  - position: 6
+  - position: 5
     sentence: "Karla explicó la tarifa en dos líneas: precio base, y una {{blank}} si el pago llega el mismo día."
     hint_general: "La rebaja aparece solo si se cumple lo del mismo día."
     explanation: "Bonificación: la rebaja depende de pagar el mismo día. «Propina» se deja por un servicio, en tono de mostrador, y «comisión» la cobraría quien vende."
@@ -173,7 +153,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Propina» es informal y se deja de forma voluntaria por un servicio, no se escribe en una tarifa."
         hint_specific: "«Propina» es voluntaria y de mostrador. ¿Esto se escribe en una tarifa?"
-  - position: 7
+  - position: 6
     sentence: "En el recibo de la luz aparece una {{blank}} para las casas que bajaron el consumo respecto al año pasado."
     hint_general: "Les bajan el recibo a quienes cumplieron una condición medible."
     explanation: "Bonificación: les baja el recibo por una condición medible. «Notificación» sería un aviso escrito, y «premio» daría a entender que hubo competición."
@@ -193,26 +173,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Premio» sugiere una competición con ganadores, y aquí cobran todas las casas que bajaron el consumo."
         hint_specific: "«Premio» supone ganadores y perdedores. ¿Cuántas casas se benefician?"
-  - position: 8
-    sentence: "Mi tío negoció una {{blank}} por llevarse las dos furgonetas juntas y guardó el papel por si acaso."
-    hint_general: "Consiguió una rebaja atada a llevarse las dos a la vez."
-    explanation: "Bonificación: la rebaja depende de llevarse las dos juntas. «Dádiva» sonaría a regalo concedido desde arriba, y «descuento» no dejaría clara la condición."
-    options:
-      - position: 1
-        text: "descuento"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Descuento» puede ser una rebaja suelta, y lo que él guarda por escrito es la condición de las dos furgonetas."
-        hint_specific: "«Descuento» no ata ninguna condición. ¿Por qué guarda el papel tu tío?"
-      - position: 2
-        text: "dádiva"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Dádiva» es solemne y pinta un regalo concedido por generosidad, y esto se negoció entre dos partes."
-        hint_specific: "«Dádiva» se concede por bondad, con tono solemne. ¿Aquí hay bondad o hay negociación?"
-      - position: 3
-        text: "bonificación"
-        is_correct: true
 readings:
   - position: 1
     scene: "trabajo"
@@ -242,5 +202,5 @@ metrics:
   family_size: 23
 provenance:
   generator: "flui authoring agent — theme ventas"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

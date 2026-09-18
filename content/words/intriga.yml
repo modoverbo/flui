@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8105
 slug: "intriga"
-status: "draft"
+status: "approved"
 lemma: "intriga"
 part_of_speech: "sustantivo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "small-talk"
     relevance: 2
 tags:
-  comodin: ["curiosidad"]
-  funcion: ["describir"]
+  comodin:
+    - "curiosidad"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -69,26 +71,6 @@ exercises:
         why_not: "«Misterio» describe lo desconocido del mensaje en sí, y la frase cuenta lo que sintió Tadeo por dentro, no cómo era el mensaje."
         hint_specific: "El misterio describe la situación. ¿La frase habla de la situación o de lo que sintió Tadeo?"
   - position: 2
-    sentence: "A Dante le dio {{blank}} el chico nuevo del gimnasio, tan callado que nadie sabía nada de él."
-    hint_general: "Es lo que provoca alguien callado del que no sabes nada, no una historia que le cuentas a otros."
-    explanation: "Intriga: lo que provoca alguien callado del que no sabes nada. «Chisme» es contar la vida de otros a terceros, y aquí Dante no le ha contado nada a nadie; «curiosidad» es más genérica y sirve para cualquier cosa, no solo para alguien que te llama la atención así."
-    options:
-      - position: 1
-        text: "chisme"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Chisme» es contar la vida de otra persona a terceros, y aquí Dante no le ha contado nada a nadie, solo se pregunta por él."
-        hint_specific: "El chisme se cuenta a otros. ¿Dante le ha contado esto a alguien?"
-      - position: 2
-        text: "intriga"
-        is_correct: true
-      - position: 3
-        text: "curiosidad"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Curiosidad» es más genérica y sirve para cualquier cosa, y aquí lo que pasa es más concreto: alguien callado le llama la atención."
-        hint_specific: "La curiosidad puede ser sobre cualquier cosa. ¿Qué tiene de especial este chico nuevo?"
-  - position: 3
     sentence: "«¿Por qué sigues mirando su perfil si ya lo bloqueaste?», le preguntó su amiga a Aitana. «No sé, me da {{blank}}: dice que vive aquí pero nunca lo he visto», respondió, sin dejar de mirar la pantalla."
     hint_general: "Piensa en las ganas de entender algo que no cuadra, con interés real, no en desconfiar."
     explanation: "Intriga: las ganas de entender algo que no cuadra, con interés real. «Cuchicheo» es un cotilleo en voz baja entre personas, y aquí Aitana solo habla de lo que siente ella; «desconfianza» es solo desconfiar, y aquí ella sigue mirando con curiosidad, no evitándolo."
@@ -108,7 +90,7 @@ exercises:
       - position: 3
         text: "intriga"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Bárbara sintió tanta {{blank}} por el chico que solo hablaba de su trabajo y nunca de su vida fuera de la oficina, que empezó a hacerle preguntas cada vez más específicas."
     hint_general: "Piensa en las ganas de descubrir más sobre alguien que no se abre del todo."
     explanation: "Intriga: las ganas de descubrir más sobre alguien que no se abre del todo. «Duda» es no saber algo concreto, no un interés por alguien; «sospecha» supondría que cree que oculta algo malo, y aquí lo que hay es curiosidad, no una acusación."
@@ -128,7 +110,7 @@ exercises:
       - position: 3
         text: "intriga"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Fabiola no podía dejar de pensar en su cita, llena de {{blank}} por lo distinto que era en persona comparado con sus mensajes."
     hint_general: "Es la sensación personal de querer entender algo, no lo desconocido de la situación en sí."
     explanation: "Intriga: la sensación personal de querer entender algo que no cuadra. «Enigma» nombra lo desconocido en sí, no algo de lo que uno esté lleno; «misterio» describiría a la persona o la situación, no lo que sintió Fabiola por dentro."
@@ -148,27 +130,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Misterio» describiría a la persona o la situación como misteriosa, y la frase cuenta lo que sintió Fabiola por dentro, no cómo era él."
         hint_specific: "El misterio describe algo o a alguien. ¿La frase habla de él o de lo que sintió ella?"
-  - position: 6
-    sentence: "Malena sintió tanta {{blank}} por el vecino nuevo, que solo saluda y nunca se queda a hablar, que empezó a inventar excusas para cruzárselo en el pasillo."
-    hint_general: "Piensa en las ganas de acercarte a alguien que no se abre del todo, no en evitarlo."
-    explanation: "Intriga: las ganas de acercarte a alguien que no se abre del todo. «Curiosidad» es más genérica y no explica que invente excusas para verlo; «desconfianza» haría que lo evitara, y aquí ella busca cruzárselo."
-    options:
-      - position: 1
-        text: "curiosidad"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Curiosidad» es más genérica, y aquí lo que hace Malena, inventar excusas para verlo, muestra algo más concreto."
-        hint_specific: "La curiosidad puede ser sobre cualquier cosa. ¿Qué hace Malena para verlo, según la frase?"
-      - position: 2
-        text: "intriga"
-        is_correct: true
-      - position: 3
-        text: "desconfianza"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Desconfianza» haría que Malena evitara a esa persona, y la frase dice que ella busca cruzárselo en el pasillo."
-        hint_specific: "La desconfianza aleja a la gente. ¿Malena evita al vecino o busca verlo?"
-  - position: 7
+  - position: 5
     sentence: "Nerea leyó el mensaje de su cita tres veces, con {{blank}}: decía que tenía una sorpresa preparada, pero no daba ninguna pista."
     hint_general: "Piensa en leer algo con ganas de adivinar qué esconde, sin desconfiar de nada."
     explanation: "Intriga: leer algo tres veces con ganas de adivinar qué esconde. «Duda» sería no saber qué decisión tomar, y aquí no hay ninguna decisión pendiente; «sospecha» supondría desconfiar de sus intenciones, y aquí la sorpresa suena a algo bueno."
@@ -188,7 +150,7 @@ exercises:
       - position: 3
         text: "intriga"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Ulises se quedó pensando en el comentario de su cita, con {{blank}} por saber qué había querido decir en realidad."
     hint_general: "Es la sensación personal de querer descifrar algo, no cómo habló la otra persona."
     explanation: "Intriga: las ganas personales de descifrar lo que quiso decir. «Enigma» nombra lo desconocido en sí, no una sensación personal; «misterio» describiría cómo habló ella, no lo que sintió él después."
@@ -236,5 +198,5 @@ metrics:
   pedantry_proxy: 0.4945
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

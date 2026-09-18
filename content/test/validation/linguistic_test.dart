@@ -237,6 +237,72 @@ void main() {
     });
   });
 
+  group('HintOptionLeakageValidator', () {
+    const validator = HintOptionLeakageValidator();
+
+    test('accepts the canonical word', () {
+      expect(runWord(validator, validWord()), isEmpty);
+    });
+
+    test('rejects hint_general naming a distractor of the same exercise', () {
+      final word = wordWithExercise(0, {
+        'hint_general': 'Se nota que es alguien suspicaz por naturaleza.',
+      });
+      expect(runWord(validator, word).map((i) => i.code), [
+        'hint_option_leakage',
+      ]);
+    });
+
+    test('is accent- and case-insensitive', () {
+      final word = wordWithExercise(0, {
+        'hint_general': 'SUSPICÁZ describe justo lo contrario de esto.',
+      });
+      expect(runWord(validator, word), isNotEmpty);
+    });
+
+    test(
+      'rejects a common inflection of an option, not only the exact form',
+      () {
+        final word = exerciseWith(
+          sentence: 'Todos notaron el {{blank}} con que trató a los suyos.',
+          hintGeneral: 'Detrás hay unos cuidados constantes que le quitaron horas de sueño.',
+          explanation: 'Desvelo. No encaja cuidado ni esfuerzo.',
+          correct: 'desvelo',
+          partOfSpeech: 'sustantivo',
+          distractors: ['cuidado', 'esfuerzo'],
+        );
+        expect(runWord(validator, word).map((i) => i.code), [
+          'hint_option_leakage',
+        ]);
+      },
+    );
+
+    test('rejects hint_specific naming a sibling option, not its own', () {
+      final word = wordWithOption(0, 0, {
+        'hint_specific': 'Piensa si encaja mejor perspicuo aquí.',
+      });
+      expect(runWord(validator, word).map((i) => i.code), [
+        'hint_option_leakage',
+      ]);
+    });
+
+    test('rejects hint_specific naming the correct answer', () {
+      final word = wordWithOption(0, 0, {
+        'hint_specific': 'La respuesta correcta es perspicaz, no esta.',
+      });
+      expect(runWord(validator, word).map((i) => i.code), [
+        'hint_option_leakage',
+      ]);
+    });
+
+    test('allows hint_specific to quote its own option, by design', () {
+      final word = wordWithOption(0, 0, {
+        'hint_specific': '«Suspicaz» es quien sospecha de los demás, y la frase dice lo contrario.',
+      });
+      expect(runWord(validator, word), isEmpty);
+    });
+  });
+
   group('LengthCapsValidator', () {
     const validator = LengthCapsValidator();
 

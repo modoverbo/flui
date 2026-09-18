@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8206
 slug: "resentimiento"
-status: "draft"
+status: "approved"
 lemma: "resentimiento"
 part_of_speech: "sustantivo"
 syllables:
@@ -39,8 +39,11 @@ themes:
   - slug: "conversaciones-dificiles"
     relevance: 2
 tags:
-  comodin: ["rabia"]
-  funcion: ["describir", "expresar"]
+  comodin:
+    - "rabia"
+  funcion:
+    - "describir"
+    - "expresar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -52,26 +55,6 @@ confusions:
     difference: "«Decepción» es la tristeza de esperar algo y no obtenerlo; el resentimiento es lo que queda guardado después, hacia la persona."
 exercises:
   - position: 1
-    sentence: "Leandro nunca dijo nada, pero cada vez que su amigo cuenta esa broma vieja delante de otros, siente un {{blank}} que no sabe cómo soltar."
-    hint_general: "Es un sentimiento negativo que se queda dentro cuando algo dolió y nunca se habló del tema."
-    explanation: "Resentimiento: un sentimiento negativo que se queda dentro porque nunca se habló del tema. «Arrepentimiento» es sentir pesar por algo que uno mismo hizo, y aquí Leandro no hizo nada malo; «rencor» es más intenso y suele durar años enteros, mientras que aquí basta con que cuenten la broma para que aparezca."
-    options:
-      - position: 1
-        text: "arrepentimiento"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Arrepentimiento» es sentir pesar por algo que uno mismo hizo, y aquí Leandro no hizo nada: es su amigo quien cuenta la broma."
-        hint_specific: "«Arrepentimiento» es por algo que hiciste tú. ¿Quién cuenta la broma, Leandro o su amigo?"
-      - position: 2
-        text: "resentimiento"
-        is_correct: true
-      - position: 3
-        text: "rencor"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Rencor» es más intenso y duradero, y aquí el sentimiento aparece solo cuando cuentan la broma, no todo el tiempo."
-        hint_specific: "«Rencor» es un sentimiento más largo y profundo. ¿El sentimiento de Leandro aparece siempre o solo en ese momento?"
-  - position: 2
     sentence: "Vera dijo que ya lo había superado, pero un {{blank}} viejo seguía ahí cada vez que su amiga cancelaba planes a último momento."
     hint_general: "Es algo negativo que sigue ahí después de decir que ya no importa."
     explanation: "Resentimiento: algo negativo que sigue presente aunque digas que ya no importa. «Enfado» es más simple y se pasa rápido, y aquí sigue apareciendo con cada cancelación; «mosqueo» es coloquial y describe una molestia pequeña y pasajera, no algo que persiste con el tiempo."
@@ -91,7 +74,7 @@ exercises:
       - position: 3
         text: "resentimiento"
         is_correct: true
-  - position: 3
+  - position: 2
     sentence: "Renzo sonríe cuando ve a su amigo, pero por dentro guarda un {{blank}} por la vez que no lo invitó al viaje del año pasado."
     hint_general: "Es un sentimiento negativo que se guarda por dentro sin decir nada, mientras por fuera todo parece normal."
     explanation: "Resentimiento: un sentimiento negativo que se guarda por dentro mientras por fuera todo parece normal. «Decepción» sería solo la tristeza de esperar algo y no obtenerlo, sin la parte de guardarlo en silencio; «resignación» es aceptar algo sin pelear, y aquí Renzo no lo ha aceptado del todo: sigue guardándolo."
@@ -111,7 +94,7 @@ exercises:
       - position: 3
         text: "resentimiento"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Jimena dice que ya no le importa, pero cada foto del cumpleaños que se olvidaron de invitarla le trae un {{blank}} que no logra explicar."
     hint_general: "Es un sentimiento negativo hacia otra persona que sigue ahí después de un olvido."
     explanation: "Resentimiento: un sentimiento negativo hacia otra persona que sigue presente después de un olvido. «Arrepentimiento» sería sentir pesar por algo que Jimena misma hizo, y aquí el olvido fue de los demás; «bronca» es coloquial y suena a un enojo más explosivo y de corto plazo, no a este sentimiento que vuelve con cada foto."
@@ -131,7 +114,7 @@ exercises:
       - position: 3
         text: "resentimiento"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Otilia todavía siente un {{blank}} pequeño hacia su amigo, aunque hicieron las paces hace meses por la fiesta que él canceló a última hora."
     hint_general: "Es un sentimiento negativo que queda, incluso después de arreglar las cosas con alguien."
     explanation: "Resentimiento: un sentimiento negativo que queda, incluso después de arreglar las cosas. «Rencor» sería un sentimiento mucho más fuerte y duradero, y aquí Otilia lo describe como pequeño; «decepción» solo hablaría de la tristeza del momento de la fiesta cancelada, no de algo que sigue después de hacer las paces."
@@ -151,7 +134,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Decepción» sería la tristeza del momento en que canceló la fiesta, y aquí el sentimiento sigue después de haber hecho las paces."
         hint_specific: "«Decepción» es del momento. ¿El sentimiento de Otilia es de ese momento o sigue después?"
-  - position: 6
+  - position: 5
     sentence: "Dante ya no discute con su amigo por el dinero que nunca le devolvió, pero un {{blank}} silencioso aparece cada vez que hablan de préstamos."
     hint_general: "Es un sentimiento negativo que aparece de forma silenciosa en ciertos temas, sin que haya una pelea."
     explanation: "Resentimiento: un sentimiento negativo que aparece de forma silenciosa en ciertos temas. «Enfado» sería una reacción de un momento, y aquí no hay pelea, solo algo que aparece calladamente; «resignación» sería aceptarlo sin sentir nada más, y aquí todavía aparece un sentimiento cuando tocan el tema."
@@ -171,27 +154,7 @@ exercises:
       - position: 3
         text: "resentimiento"
         is_correct: true
-  - position: 7
-    sentence: "Mirta asegura que está todo bien entre ellas, pero un {{blank}} de fondo se nota cada vez que su amiga habla de su nuevo trabajo."
-    hint_general: "Es un sentimiento negativo de fondo que se nota, aunque alguien diga que todo está bien."
-    explanation: "Resentimiento: un sentimiento negativo de fondo, aunque alguien diga que todo está bien. «Rencor» sería un sentimiento mucho más fuerte, casi como un enemigo declarado, y aquí Mirta insiste en que están bien; «mosqueo» es coloquial y describe algo pequeño y pasajero, no algo que se nota de fondo."
-    options:
-      - position: 1
-        text: "rencor"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Rencor» sería un sentimiento mucho más fuerte, casi de enemistad, y aquí Mirta insiste en que está todo bien entre ellas."
-        hint_specific: "«Rencor» es muy intenso. ¿Mirta describe una enemistad fuerte o algo de fondo?"
-      - position: 2
-        text: "mosqueo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Mosqueo» es coloquial y describe algo pequeño y pasajero, y aquí se trata de algo de fondo que se nota siempre que hablan del tema."
-        hint_specific: "«Mosqueo» es algo pasajero. ¿Lo que siente Mirta aparece una vez o de fondo siempre?"
-      - position: 3
-        text: "resentimiento"
-        is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Gaspar felicitó a su amigo por el ascenso, pero después colgó el teléfono con un {{blank}} raro, porque él llevaba años pidiendo lo mismo sin conseguirlo."
     hint_general: "Es un sentimiento negativo que aparece frente al éxito de otra persona, sin que puedas evitarlo."
     explanation: "Resentimiento: un sentimiento negativo que aparece frente al éxito de otra persona. «Arrepentimiento» sería sentir pesar por algo que Gaspar mismo hizo, y aquí no hizo nada malo; «decepción» sería solo la tristeza de no conseguir el ascenso él mismo, sin la parte incómoda de sentirlo justo frente al éxito de su amigo."
@@ -236,8 +199,8 @@ readings:
 metrics:
   zipf_overall: 3.6146
   dispersion_dp: 0.1716
-  pedantry_proxy: 0.4810
+  pedantry_proxy: 0.481
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

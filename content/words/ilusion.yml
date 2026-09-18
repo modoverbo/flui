@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8104
 slug: "ilusion"
-status: "draft"
+status: "approved"
 lemma: "ilusión"
 part_of_speech: "sustantivo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "small-talk"
     relevance: 2
 tags:
-  comodin: ["ganas"]
-  funcion: ["expresar"]
+  comodin:
+    - "ganas"
+  funcion:
+    - "expresar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -232,9 +234,9 @@ readings:
     after_phrase: "Se me nota la ilusión, ¿verdad?"
 metrics:
   zipf_overall: 4.5031
-  dispersion_dp: 0.1070
-  pedantry_proxy: 0.4480
+  dispersion_dp: 0.107
+  pedantry_proxy: 0.448
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r4 + reviewer-b1-r4 + reviewer-a2-r4 + reviewer-b2-r4 + reviewer-a3-r4 + reviewer-a4-r4 + reviewer-b3-r4"
+  checked_on: "2026-09-18"

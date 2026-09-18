@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7022
 slug: "exigencia"
-status: "draft"
+status: "approved"
 lemma: "exigencia"
 part_of_speech: "sustantivo"
 syllables:
@@ -29,9 +29,9 @@ replaces:
     after: "Eso ya no es pedir: es una exigencia"
   - before: "El trabajo pide mucho y a todas horas"
     after: "El puesto tiene demasiadas exigencias"
-semantic_set_id: "fuerza-de-la-peticion"
 family:
   - "exigir"
+semantic_set_id: "fuerza-de-la-peticion"
 themes:
   - slug: "pedir-disculparse"
     relevance: 3
@@ -244,5 +244,5 @@ metrics:
   family_size: 13
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r4 + reviewer-b1-r4 + reviewer-a2-r4 + reviewer-b2-r4 + reviewer-a3-r4 + reviewer-a4-r4 + reviewer-b3-r4"
+  checked_on: "2026-09-18"

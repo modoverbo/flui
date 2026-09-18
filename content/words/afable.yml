@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8302
 slug: "afable"
-status: "draft"
+status: "approved"
 lemma: "afable"
 part_of_speech: "adjetivo"
 syllables:
@@ -37,8 +37,11 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 2
 tags:
-  comodin: ["amable"]
-  funcion: ["elogiar", "describir"]
+  comodin:
+    - "amable"
+  funcion:
+    - "elogiar"
+    - "describir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -70,26 +73,6 @@ exercises:
         why_not: "«Amable» describe cortesía básica con cualquiera; aquí el compañero más callado del equipo se abre por completo, algo que pide más que simple cortesía."
         hint_specific: "«Amable» es solo cortesía. ¿Qué hace el compañero callado, además de recibir cortesía?"
   - position: 2
-    sentence: "En la boda, Estela es {{blank}}, sin proponérselo: la mesa entera, aunque no se conocían de nada, terminó hablando con ella hasta el postre."
-    hint_general: "Se refiere a alguien que hace sentir cómoda a la gente enseguida, aunque acaben de conocerse."
-    explanation: "Afable: crea confianza incluso con quien acaba de conocer. «Afamada» dice que alguien es famosa o conocida por muchos, y aquí nadie habla de fama, y «cercana» sugiere una relación construida con el tiempo, cuando en la boda no se conocían de nada."
-    options:
-      - position: 1
-        text: "afamada"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Afamada» dice que alguien es famosa o conocida por muchos; en la boda nadie habla de su fama, sino de lo fácil que resulta hablar con ella."
-        hint_specific: "«Afamada» habla de fama. ¿De qué habla la mesa: de su fama o de lo fácil que es hablarle?"
-      - position: 2
-        text: "afable"
-        is_correct: true
-      - position: 3
-        text: "cercana"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cercana» sugiere una relación construida con el tiempo, y la frase aclara que no se conocían de nada antes de esa boda."
-        hint_specific: "«Cercana» pide tiempo compartido. ¿Se conocían de antes en esa boda?"
-  - position: 3
     sentence: "En el curso de cerámica, Ismael no es distante con los nuevos, sino {{blank}}: hasta ellos preguntan cualquier duda sin miedo."
     hint_general: "Apunta a un trato genuino que pone cómodos a quienes recién llegan."
     explanation: "Afable: un trato genuino que hace sentir cómodos a los nuevos. «Meloso» es coloquial y describe un cariño empalagoso, cuando aquí la gente solo se siente cómoda, y «afectado» describe una actitud forzada para impresionar, lo contrario de lo genuino."
@@ -109,7 +92,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Afectado» describe a quien actúa de forma forzada para impresionar; la frase dice que la gente se siente cómoda, lo contrario de lo que provoca una actitud forzada."
         hint_specific: "«Afectado» suena forzado. ¿El trato de Ismael parece forzado o natural?"
-  - position: 4
+  - position: 3
     sentence: "¿Será por lo {{blank}} que es Rita que la señora a la que conoció en la sala de espera todavía le escribe cada semana?"
     hint_general: "Habla de alguien fácil de tratar, con quien una charla puede convertirse en algo duradero."
     explanation: "Afable: un trato fácil que dejó una amistad que siguió por semanas. «Buenaza» es coloquial y sugiere que la pueden aprovechar por buena, algo que no pasa aquí, y «simpática» solo dice que cae bien en el momento, no que la charla siguiera después."
@@ -129,27 +112,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Simpática» dice que alguien cae bien en el momento; la frase cuenta algo más grande: una charla que se mantuvo semanas después."
         hint_specific: "«Simpática» dura el momento. ¿Cuánto duró lo que pasó entre Rita y la señora?"
-  - position: 5
-    sentence: "Cayetano es el vecino {{blank}} del edificio nuevo: cualquiera se detiene a charlar con él en el ascensor."
-    hint_general: "Se refiere a un trato que invita a cualquiera a detenerse y charlar."
-    explanation: "Afable: hace que cualquiera se detenga a charlar con él. «Apacible» describe un carácter tranquilo y sin conflictos, no si invita a la charla, y «sociable» habla de disfrutar estar rodeado de gente en general, no de este encuentro puntual en el ascensor."
-    options:
-      - position: 1
-        text: "apacible"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Apacible» describe un carácter tranquilo y sin conflictos, y la frase no habla de cómo reacciona ante el conflicto, sino de que los vecinos se detienen a hablarle."
-        hint_specific: "«Apacible» habla de calma, no de conversación. ¿Qué hacen los vecinos con Cayetano en el ascensor?"
-      - position: 2
-        text: "afable"
-        is_correct: true
-      - position: 3
-        text: "sociable"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Sociable» dice que a alguien le gusta estar rodeado de gente en general, y la frase describe algo más puntual: que cualquiera se detiene a charlar con él en el ascensor."
-        hint_specific: "«Sociable» habla de gustos generales. ¿La frase describe un gusto general o un encuentro puntual?"
-  - position: 6
+  - position: 4
     sentence: "Vidal no es alguien que se guarde las cosas: es {{blank}}, y por eso en la excursión del domingo cualquiera termina sintiéndose escuchado desde el primer minuto."
     hint_general: "Apunta al efecto de hacer que los demás se sientan escuchados con solo hablar un momento."
     explanation: "Afable: logra que la gente se sienta escuchada desde el primer minuto. «Servicial» describe ayudar con encargos o favores, no con escuchar, y «alegre» describe un ánimo contento que no siempre logra que los demás se sientan escuchados."
@@ -169,7 +132,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Alegre» describe un ánimo contento y positivo; alguien puede estar alegre y aun así no lograr que los demás se sientan escuchados."
         hint_specific: "«Alegre» habla de buen ánimo. ¿La frase habla de ánimo o de sentirse escuchado?"
-  - position: 7
+  - position: 5
     sentence: "Todos los que trabajan con Selene coinciden en que es tan {{blank}} que hasta los proveedores más serios terminan riendo con ella en la sala de espera."
     hint_general: "Habla de un trato que relaja incluso a quienes suelen mostrarse serios."
     explanation: "Afable: relaja incluso a quienes suelen ser serios. «Educada» describe buenos modales y protocolo, no lo que provoca risa en los proveedores, y «extrovertida» describe a quien se energiza con la gente, no el efecto que causa en los demás."
@@ -189,7 +152,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Extrovertida» describe a quien se energiza estando con gente, y la frase no cuenta cómo es Selene por dentro, sino el efecto que causa en los demás."
         hint_specific: "«Extrovertida» habla de energía propia. ¿La frase habla de Selene o del efecto en los proveedores?"
-  - position: 8
+  - position: 6
     sentence: "El nuevo novio de mi prima no tardó nada en encajar en la cena familiar: {{blank}} como es, en media hora ya sabía el apodo de cada primo."
     hint_general: "Se refiere a un trato fácil que abre confianza desde el primer encuentro."
     explanation: "Afable: en media hora ya conocía el apodo de cada primo. «Locuaz» describe a quien habla mucho, no cómo trata a la gente, y «cariñoso» supone una cercanía afectiva que no existe la primera noche que llega a la familia."
@@ -232,10 +195,10 @@ readings:
     before_phrase: "Le caí bien y se relajó un poco."
     after_phrase: "Fui afable con él y se relajó."
 metrics:
-  zipf_overall: 3.2150
+  zipf_overall: 3.215
   dispersion_dp: 0.3387
   pedantry_proxy: 0.5808
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

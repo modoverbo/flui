@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7008
 slug: "divulgacion"
-status: "draft"
+status: "approved"
 lemma: "divulgación"
 part_of_speech: "sustantivo"
 syllables:
@@ -96,26 +96,6 @@ exercises:
         why_not: "Una «divagación» es hablar sin rumbo, y una sala así está pensada al detalle para que un niño llegue a una idea concreta."
         hint_specific: "Divagar es ir sin destino. ¿La sala tiene destino o va a la deriva?"
   - position: 3
-    sentence: "Las decisiones sobre el agua las tomarían cuatro personas si no hubiera {{blank}} de por medio, y el resto ni se enteraría."
-    hint_general: "Sin alguien que lo explique en claro, el asunto se queda dentro de un círculo pequeño."
-    explanation: "Divulgación: sin ella el asunto se queda en un círculo pequeño. «Propaganda» acusa de empujar un interés, y la «difusión» solo hace que algo llegue lejos."
-    options:
-      - position: 1
-        text: "propaganda"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Propaganda» acusa de empujar el interés de alguien, y lo que falta aquí es que la gente entienda de qué se habla."
-        hint_specific: "«Propaganda» tiene dueño e intención. ¿Se busca convencer o que se entienda?"
-      - position: 2
-        text: "divulgación"
-        is_correct: true
-      - position: 3
-        text: "difusión"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "La «difusión» reparte el mensaje tal cual, y repartir un informe técnico no haría que nadie de fuera lo entendiera."
-        hint_specific: "La «difusión» no cambia el texto. ¿Bastaría con repartir el informe?"
-  - position: 4
     sentence: "En tres minutos, Greta hace {{blank}} y responde cada pregunta como si fuera la primera vez que se la hacen."
     hint_general: "Explica lo suyo a quien no sabe nada, sin perder la paciencia ni el contenido."
     explanation: "Divulgación: explica lo suyo a quien no sabe nada. «Vulgarización» suena a rebajar el contenido, y una «primicia» sería contar algo antes que nadie."
@@ -135,7 +115,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «primicia» es contar algo antes que nadie, y ella repite con gusto lo que ya se sabe para quien todavía no lo sabe."
         hint_specific: "Una «primicia» es novedad. ¿Greta trae noticias nuevas o explica lo de siempre?"
-  - position: 5
+  - position: 4
     sentence: "La revista mezcla investigación y {{blank}}: la mitad de las páginas las entiende cualquiera que sepa leer."
     hint_general: "La mitad de la revista está escrita para quien no pertenece al campo."
     explanation: "Divulgación: media revista está escrita para quien viene de fuera. La «difusión» solo haría llegar el texto, y una «divagación» sería perder el hilo."
@@ -155,7 +135,7 @@ exercises:
       - position: 3
         text: "divulgación"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "A Tobías le pidieron {{blank}} y entregó un texto lleno de fórmulas que solo firmarían tres colegas suyos."
     hint_general: "Le pidieron un texto para quien está fuera del campo y entregó uno para los de dentro."
     explanation: "Divulgación: le pedían un texto para los de fuera. «Vulgarización» sugiere rebajar el contenido, y la «publicidad» buscaría vender algo."
@@ -175,7 +155,7 @@ exercises:
       - position: 3
         text: "divulgación"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "La asociación gastó el presupuesto entero en {{blank}} y el barrio acabó sabiendo qué hacer con cada tipo de residuo."
     hint_general: "Gastaron el dinero en explicar algo técnico hasta que el barrio lo entendió."
     explanation: "Divulgación: gastaron en explicar hasta que el barrio entendió. «Propaganda» acusa de empujar un interés, y una «primicia» sería una noticia nueva."
@@ -195,7 +175,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «primicia» es una noticia que nadie ha dado todavía, y cómo separar residuos no es ninguna novedad."
         hint_specific: "Una «primicia» se cuenta una vez. ¿Esto era nuevo o era sabido y mal explicado?"
-  - position: 8
+  - position: 7
     sentence: "Hay un trabajo silencioso de {{blank}} detrás de cada persona que hoy sabe leer la etiqueta de un alimento."
     hint_general: "Alguien tradujo antes esa información técnica para que la entendiera cualquiera."
     explanation: "Divulgación: alguien tradujo antes esa información técnica. La «difusión» solo la habría repartido, y una «divagación» sería hablar sin rumbo."
@@ -244,5 +224,5 @@ metrics:
   family_size: 26
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7039
 slug: "relevo"
-status: "draft"
+status: "approved"
 lemma: "relevo"
 part_of_speech: "sustantivo"
 syllables:
@@ -74,26 +74,6 @@ exercises:
         why_not: "Un «descanso» lo toma cualquiera parando, y aquí no se puede parar: hay alguien a quien cuidar, así que tiene que venir otra persona."
         hint_specific: "Un «descanso» se toma solo. ¿Puede parar quien cuida de su padre?"
   - position: 2
-    sentence: "A las seis de la mañana llegó el {{blank}} y ella pudo irse a dormir por fin."
-    hint_general: "Llegó la persona que la sustituía para que pudiera descansar."
-    explanation: "Relevo: llegó quien la sustituía. Un «turno» es el rato que le toca a cada uno, y «reemplazo» es una palabra técnica de piezas y plantillas."
-    options:
-      - position: 1
-        text: "turno"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un «turno» es el rato que le toca a cada uno, y lo que llega a las seis es la persona concreta que ocupa su sitio."
-        hint_specific: "Un «turno» no llega: se cumple. ¿Qué es lo que entra por la puerta a las seis?"
-      - position: 2
-        text: "relevo"
-        is_correct: true
-      - position: 3
-        text: "reemplazo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Reemplazo» es una palabra técnica de piezas y de plantillas, y aquí llega una persona a dar un respiro a otra."
-        hint_specific: "Un «reemplazo» sustituye para siempre. ¿Vuelve ella mañana?"
-  - position: 3
     sentence: "En esa casa organizaron un {{blank}} para que nadie pasara dos noches seguidas en vela."
     hint_general: "Organizaron quién sustituía a quién y cuándo."
     explanation: "Relevo: organizaron quién sustituía a quién. «Parche» sugiere un apaño que no arregla nada, y un «turno» sería solo el rato de cada uno, sin el cambio de manos."
@@ -113,7 +93,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Un «turno» nombra el rato que le toca a cada uno, y lo que organizan es el momento en que uno se va y entra otro."
         hint_specific: "Un «turno» describe un tramo. ¿Qué momento es el delicado aquí?"
-  - position: 4
+  - position: 3
     sentence: "Cuando por fin pidió el {{blank}}, nadie del grupo se hizo el sordo."
     hint_general: "Pidió que alguien ocupara su sitio y le diera un respiro."
     explanation: "Relevo: pidió que alguien ocupara su sitio. El «relieve» sería importancia, y un «recambio» es la pieza que sustituye a otra de forma definitiva."
@@ -133,9 +113,9 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Un «recambio» es la pieza que sustituye a otra y se queda, y aquí quien llega solo le da un respiro."
         hint_specific: "Un «recambio» no devuelve el sitio. ¿Vuelve ella después?"
-  - position: 5
+  - position: 4
     sentence: "Su hermano le ofreció {{blank}} los fines de semana, y ella aceptó a la tercera vez que se lo propuso."
-    hint_general: "Le ofreció ocupar su sitio para que descansara los sábados."
+    hint_general: "Le ofreció ocupar su sitio los fines de semana, para que ella tuviera esos días libres."
     explanation: "Relevo: le ofrece ocupar su sitio los fines de semana. Un «descanso» lo tomaría ella sola, y «reemplazo» suena a sustitución definitiva de una plantilla."
     options:
       - position: 1
@@ -153,7 +133,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Reemplazo» suena a sustituir a alguien en una plantilla y de forma definitiva, y esto son dos días a la semana."
         hint_specific: "Un «reemplazo» ocupa el puesto entero. ¿Cuánto tiempo ocupa el hermano?"
-  - position: 6
+  - position: 5
     sentence: "El {{blank}} funcionó bien hasta que dos personas se fueron de viaje la misma semana."
     hint_general: "El sistema de sustituciones aguantó hasta que faltaron dos."
     explanation: "Relevo: el sistema de sustituciones aguantó. Un «turno» sería el rato de cada uno, y «parche» sugeriría un arreglo provisional destinado a fallar."
@@ -173,7 +153,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Parche» sugiere un arreglo provisional condenado a fallar, y la frase dice que funcionó bien durante un tiempo."
         hint_specific: "Un «parche» se nota desde el primer día. ¿Cómo funcionó esto al principio?"
-  - position: 7
+  - position: 6
     sentence: "Pedir {{blank}} no es rendirse: es reconocer que nadie aguanta tres meses seguidos en pie."
     hint_general: "Pedir que otro ocupe tu sitio un rato no es abandonar."
     explanation: "Relevo: pedir que otro ocupe tu sitio. Un «descanso» se toma sin implicar a nadie, y un «recambio» sustituiría para siempre a quien pide ayuda."
@@ -193,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Un «recambio» sustituiría para siempre a quien pide ayuda, y aquí solo se pide un rato para respirar."
         hint_specific: "Un «recambio» es definitivo. ¿Qué duración tiene lo que se pide?"
-  - position: 8
+  - position: 7
     sentence: "Organizaron el {{blank}} en una hoja de la nevera y todo el mundo supo cuándo le tocaba entrar."
     hint_general: "Escribieron quién sustituía a quién y en qué momento."
     explanation: "Relevo: escribieron quién sustituye a quién. Un «turno» sería solo el tramo de cada uno, y un «recambio» implicaría cambiar a alguien de forma definitiva."
@@ -242,5 +222,5 @@ metrics:
   family_size: 30
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-16"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8307
 slug: "sobremesa"
-status: "draft"
+status: "approved"
 lemma: "sobremesa"
 part_of_speech: "sustantivo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 2
 tags:
-  comodin: ["charla despues de comer"]
-  funcion: ["describir"]
+  comodin:
+    - "charla despues de comer"
+  funcion:
+    - "describir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -90,7 +92,7 @@ exercises:
         hint_specific: "«Merienda» es una comida en sí. ¿Se sirvió algo nuevo o solo se quedaron hablando?"
   - position: 3
     sentence: "Perla solo iba a saludar a los padres de su novio, pero la {{blank}} después de la comida del domingo terminó con ella y el padre discutiendo quién era el mejor equipo de fútbol."
-    hint_general: "Apunta al rato después de comer en que la charla en la mesa se estira sola."
+    hint_general: "Apunta al rato después de comer en que la conversación en la mesa se estira sola."
     explanation: "Sobremesa: el rato después de comer en que la charla se estira sola. «Tertulia» se organiza de antemano, y esta charla surgió sola, y «charla» no dice en qué momento pasa."
     options:
       - position: 1
@@ -98,7 +100,7 @@ exercises:
         is_correct: false
         distractor_type: "register"
         why_not: "«Tertulia» es una reunión organizada para hablar de un tema, casi siempre programada, y esta charla surgió sola, sin que nadie la organizara."
-        hint_specific: "«Tertulia» se organiza de antemano. ¿Alguien organizó esa charla del domingo?"
+        hint_specific: "«Tertulia» se organiza de antemano. ¿Alguien organizó esa conversación del domingo?"
       - position: 2
         text: "sobremesa"
         is_correct: true
@@ -110,7 +112,7 @@ exercises:
         hint_specific: "«Charla» no dice cuándo pasa. ¿En qué momento exacto ocurre esta escena?"
   - position: 4
     sentence: "Nadie se levantó de la mesa después de comer: la {{blank}} duró más que la comida misma, y Malena terminó con nuevos números de teléfono."
-    hint_general: "Habla de un rato que arranca justo al final de la comida, sin que nadie lo convoque."
+    hint_general: "Habla de un rato que arranca justo al terminar de comer, sin que nadie lo convoque."
     explanation: "Sobremesa: un rato que arranca al final de la comida, sin que nadie lo convoque. «Reunión» supone que alguien la convocó, y «comida» es el momento de comer en sí, no lo que vino después."
     options:
       - position: 1
@@ -190,7 +192,7 @@ exercises:
         hint_specific: "«Compañía» habla de quién está, no de cuándo. ¿Qué momento se alargó, según la frase?"
   - position: 8
     sentence: "Nadie quería que se acabara la {{blank}} después de la cena: hasta el tío más callado contó una historia que la familia recuerda hasta hoy."
-    hint_general: "Se refiere al rato después de cenar en que sale algo que de verdad importa."
+    hint_general: "Se refiere al rato de charla que sigue a la última comida del día, cuando sale algo que de verdad importa."
     explanation: "Sobremesa: el rato después de cenar en que salió algo que la familia recuerda hasta hoy. «Cháchara» sugiere una charla sin sustancia que se olvida enseguida, y aquí pasó lo contrario, y «cena» es la comida en sí, no lo que vino después."
     options:
       - position: 1
@@ -236,5 +238,5 @@ metrics:
   pedantry_proxy: 0.4056
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r4 + reviewer-b1-r4 + reviewer-a2-r4 + reviewer-b2-r4 + reviewer-a3-r4 + reviewer-a4-r4 + reviewer-b3-r4"
+  checked_on: "2026-09-18"

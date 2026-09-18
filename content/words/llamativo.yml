@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "llamativo"
-status: "draft"
+status: "approved"
 lemma: "llamativo"
 part_of_speech: "adjetivo"
 syllables:
@@ -72,26 +72,6 @@ exercises:
         why_not: "«Chillón» es de charla informal y reprocha demasiado color o demasiado ruido, y la frase dice que no se pasaba."
         hint_specific: "«Chillón» es un reproche por exceso, en tono de calle. Relee: ¿se pasaba o no?"
   - position: 2
-    sentence: "Al revisar las cuentas, a Nerea le pareció {{blank}} que el mismo proveedor apareciera en once facturas seguidas."
-    hint_general: "Ese detalle salta a la vista y pide una explicación."
-    explanation: "Llamativo: el detalle salta a la vista. «Significativo» afirmaría que ya se sabe lo que quiere decir, e «ilegal» acusaría de romper una norma."
-    options:
-      - position: 1
-        text: "llamativo"
-        is_correct: true
-      - position: 2
-        text: "significativo"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Significativo» afirmaría que ya sabemos qué quiere decir ese dato, y ella todavía está revisando."
-        hint_specific: "«Significativo» ya saca una conclusión. ¿Nerea concluye algo o solo lo nota?"
-      - position: 3
-        text: "ilegal"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Ilegal» acusaría de romper una norma, y repetir proveedor puede tener una explicación perfecta."
-        hint_specific: "«Ilegal» acusa. ¿Repetir proveedor rompe alguna norma?"
-  - position: 3
     sentence: "Para la fiesta del barrio, Efraín eligió unos globos poco {{blank}} y la gente pasaba de largo sin verlos."
     hint_general: "No destacaban, así que nadie se paró."
     explanation: "Llamativos: no destacaban y nadie se paró. «Informativos» hablarían de datos, y «chillones» serían un reproche por exceso de color."
@@ -111,7 +91,7 @@ exercises:
       - position: 3
         text: "llamativos"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Lo más {{blank}} del informe no eran las cifras, sino la página en blanco entre el capítulo dos y el tres."
     hint_general: "Eso es lo que hace que alguien se pare a mirar."
     explanation: "Llamativo: lo que hace parar la vista. «Espectacular» exagera y suena a titular, y «útil» hablaría de para qué sirve."
@@ -131,27 +111,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Útil» dice para qué sirve algo, y una página en blanco no sirve: solo destaca."
         hint_specific: "«Útil» mide para qué sirve. ¿Para qué sirve esa página?"
-  - position: 5
-    sentence: "Mi tío se compró una camisa {{blank}} para la boda y salió en todas las fotos, para bien y para mal."
-    hint_general: "Se veía desde lejos y por eso salió en todas partes."
-    explanation: "Llamativa: se veía desde lejos. «Chillona» sería un reproche directo por el exceso de color, y «cómoda» hablaría de cómo se lleva puesta."
-    options:
-      - position: 1
-        text: "cómoda"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cómoda» habla de cómo se lleva la camisa, y lo que explica las fotos es que se veía a distancia."
-        hint_specific: "«Cómoda» mide la comodidad. ¿Por qué sale en todas las fotos?"
-      - position: 2
-        text: "llamativa"
-        is_correct: true
-      - position: 3
-        text: "chillona"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Chillona» es un reproche informal por el exceso de color, y la frase deja abierto si gustó o no."
-        hint_specific: "«Chillona» ya juzga y suena a reproche de calle. ¿La frase juzga la camisa o cuenta el efecto?"
-  - position: 6
+  - position: 4
     sentence: "En su publicación, Zoe puso una primera línea {{blank}} y dejó el dato serio para el segundo párrafo."
     hint_general: "La primera línea está pensada para que alguien se pare."
     explanation: "Llamativa: pensada para que alguien se pare. «Informativa» sería el segundo párrafo, y «significativa» afirmaría que ya dice algo importante."
@@ -171,7 +131,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Significativa» afirmaría que esa línea ya dice algo de peso, y su función es solo detener la mirada."
         hint_specific: "«Significativa» aporta sentido. ¿Qué papel tiene esa primera línea?"
-  - position: 7
+  - position: 5
     sentence: "Resulta {{blank}} que en tres meses nadie del equipo haya pedido un solo día libre."
     hint_general: "Ese hecho salta a la vista y pide preguntar."
     explanation: "Llamativo: el hecho salta a la vista. «Espectacular» exageraría con tono de titular, y «grave» daría por hecho que hay un problema serio."
@@ -191,7 +151,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Espectacular» es una exageración de titular que promete asombro, y esto es un detalle que hace levantar una ceja."
         hint_specific: "«Espectacular» exagera, con tono de titular. ¿Esto asombra o extraña?"
-  - position: 8
+  - position: 6
     sentence: "El escaparate de la librería es poco {{blank}} y aun así siempre hay alguien parado delante leyendo los títulos."
     hint_general: "No destaca a la vista, y sin embargo la gente se para."
     explanation: "Llamativo: no destaca a la vista. «Chillón» reprocharía un exceso de color, e «informativo» diría que ofrece datos."
@@ -240,5 +200,5 @@ metrics:
   family_size: 90
 provenance:
   generator: "flui authoring agent — theme redes-sociales"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

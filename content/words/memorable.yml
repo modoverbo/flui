@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "memorable"
-status: "draft"
+status: "approved"
 lemma: "memorable"
 part_of_speech: "adjetivo"
 syllables:
@@ -111,26 +111,6 @@ exercises:
         why_not: "«Meritorio» dice que algo merece reconocimiento, y algo puede merecerlo y olvidarse esa misma tarde."
         hint_specific: "«Meritorio» habla de mérito. ¿Merecer elogio garantiza que te escriban al día siguiente?"
   - position: 4
-    sentence: "Mi abuelo contaba siempre la misma historia del tren, y por eso es la única {{blank}} de toda la familia."
-    hint_general: "Es la que todos siguen contando, generación tras generación."
-    explanation: "Memorable: es la que todos siguen contando. «Imperecedera» es palabra solemne de monumento, y «curiosa» solo diría que llama la atención."
-    options:
-      - position: 1
-        text: "imperecedera"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Imperecedera» es palabra solemne, de lápida o monumento, y esto es una historia de sobremesa."
-        hint_specific: "«Imperecedera» suena a inscripción de monumento. ¿Va con una historia de sobremesa?"
-      - position: 2
-        text: "memorable"
-        is_correct: true
-      - position: 3
-        text: "curiosa"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Curiosa» dice que llama la atención un momento, y esta historia lleva décadas repitiéndose."
-        hint_specific: "«Curiosa» dura lo que dura el asombro. ¿Cuánto lleva contándose esta?"
-  - position: 5
     sentence: "Nadie recuerda el título de la charla de Matilde, pero el final fue {{blank}} y todavía circula por ahí."
     hint_general: "El final se quedó y sigue pasando de boca en boca."
     explanation: "Memorable: el final sigue circulando. «Memorioso» calificaría a una persona con buena retentiva, y «original» diría que era nuevo, no que durara."
@@ -150,7 +130,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Memorioso» se dice de quien retiene lo que oye, y aquí se califica el final de una charla."
         hint_specific: "«Memorioso» describe personas. ¿La frase califica a Matilde o a su final?"
-  - position: 6
+  - position: 5
     sentence: "Para que la inauguración fuera {{blank}}, Zoe cambió los discursos por una mesa larga con comida de cada barrio."
     hint_general: "Busca que la gente lo siga contando después."
     explanation: "Memorable: que la gente lo siga contando. «Épica» es informal y exagera la escena, y «notable» se quedaría en destacar ese día."
@@ -170,27 +150,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Notable» dice que destaca hoy, y ella busca algo que se siga contando dentro de un año."
         hint_specific: "«Notable» mira el mismo día. ¿Qué busca Zoe, destacar hoy o durar?"
-  - position: 7
-    sentence: "Aquella tarde en la playa con mis primos fue {{blank}}, y ninguno de nosotros había planeado nada."
-    hint_general: "Se quedó guardada aunque nadie preparara nada."
-    explanation: "Memorable: se quedó guardada sin plan previo. «Imperecedera» es palabra solemne de monumento, y «meritoria» hablaría de mérito, que aquí no hubo."
-    options:
-      - position: 1
-        text: "meritoria"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Meritoria» supone un esfuerzo que merece reconocimiento, y la frase dice que nadie planeó nada."
-        hint_specific: "«Meritoria» pide esfuerzo reconocible. ¿Alguien se esforzó esa tarde?"
-      - position: 2
-        text: "memorable"
-        is_correct: true
-      - position: 3
-        text: "imperecedera"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Imperecedera» es solemne y promete eternidad, y esto fue una tarde de playa entre primos."
-        hint_specific: "«Imperecedera» promete para siempre, con tono grave. ¿Va con una tarde en la playa?"
-  - position: 8
+  - position: 6
     sentence: "Ramiro presenta su trabajo con una sola imagen porque quiere que sea {{blank}}, no completo."
     hint_general: "Prefiere que algo se quede antes que contarlo todo."
     explanation: "Memorable: prefiere que se quede antes que contarlo todo. «Memorioso» describiría a una persona con buena retentiva, y «curioso» se agotaría en el asombro del momento."
@@ -234,10 +194,10 @@ readings:
     after_phrase: "Prefiero que sea memorable a que sea completo."
 metrics:
   zipf_overall: 3.9698
-  dispersion_dp: 0.2140
+  dispersion_dp: 0.214
   pedantry_proxy: 0.5439
   family_size: 69
 provenance:
   generator: "flui authoring agent — theme networking"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

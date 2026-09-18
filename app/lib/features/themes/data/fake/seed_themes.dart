@@ -222,6 +222,172 @@ const seedThemes = <Theme>[
   ),
 ];
 
+/// The twelve recombination themes of `supabase/seed_themes.sql` section 2
+/// (sort_order 17..28): `published = false` there, so `FakeThemeRepository`
+/// (mirroring the real `.eq('published', true)` query) never serves them and
+/// they stay out of [seedThemes]. Content authors tag words with them ahead
+/// of launch — "reuse the words the first sixteen introduce" — so a word's
+/// `themeIds` can resolve one of these ids long before the theme is offered.
+/// This list exists only so [_themeIdOf] has somewhere to look them up.
+const unpublishedSeedThemes = <Theme>[
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000017',
+    slug: 'ventas',
+    family: ThemeFamily.trabajo,
+    name: 'Ventas',
+    tagline: 'Que el valor se vea, sin inflarlo.',
+    jtbd:
+        'Quiero explicar lo que ofrezco con ejemplos concretos y que el '
+        'precio deje de ser el único tema.',
+    contentType: ThemeContentType.mixed,
+    status: ThemeStatus.soon,
+    sortOrder: 17,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000018',
+    slug: 'networking',
+    family: ThemeFamily.trabajo,
+    name: 'Hacer contactos',
+    tagline: 'Que te recuerden después de treinta segundos.',
+    jtbd:
+        'Quiero presentarme en un evento y que después recuerden a qué me '
+        'dedico.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 18,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000019',
+    slug: 'redes-sociales',
+    family: ThemeFamily.publico,
+    name: 'Redes sociales',
+    tagline: 'Un gancho que no es un cebo.',
+    jtbd:
+        'Quiero abrir una publicación con una frase que atrape y que el '
+        'resto la sostenga.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 19,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000020',
+    slug: 'docencia',
+    family: ThemeFamily.publico,
+    name: 'Enseñar',
+    tagline: 'Lo difícil explicado como si fuera fácil.',
+    jtbd:
+        'Quiero explicar un tema que domino a quien parte de cero y que se '
+        'quede con la idea.',
+    contentType: ThemeContentType.mixed,
+    status: ThemeStatus.soon,
+    sortOrder: 20,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000021',
+    slug: 'medios-entrevistas',
+    family: ThemeFamily.publico,
+    name: 'Hablar con medios',
+    tagline: 'Responder lo que preguntan y decir lo tuyo.',
+    jtbd:
+        'Quiero contestar una pregunta incómoda en público sin esquivarla '
+        'ni regalar un titular.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 21,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000022',
+    slug: 'humor',
+    family: ThemeFamily.social,
+    name: 'Humor',
+    tagline: 'Hacer reír sin que nadie pague el chiste.',
+    jtbd:
+        'Quiero contar algo con gracia y que la broma no caiga sobre '
+        'alguien.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 22,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000023',
+    slug: 'citas',
+    family: ThemeFamily.social,
+    name: 'Citas',
+    tagline: 'Coquetear con palabras tuyas, no con frases hechas.',
+    jtbd:
+        'Quiero decir lo que me atrae de alguien sin recurrir a una frase '
+        'prestada.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 23,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000024',
+    slug: 'amistad',
+    family: ThemeFamily.social,
+    name: 'Amistad',
+    tagline: 'Decir lo que sientes sin taparlo con una broma.',
+    jtbd:
+        'Quiero decirle a un amigo lo que significa para mí sin restarle '
+        'importancia.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 24,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000025',
+    slug: 'small-talk',
+    family: ThemeFamily.social,
+    name: 'Romper el hielo',
+    tagline: 'Los primeros noventa segundos.',
+    jtbd:
+        'Quiero empezar una conversación con alguien que acabo de conocer '
+        'y que no se apague en dos frases.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 25,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000026',
+    slug: 'familia-crianza',
+    family: ThemeFamily.social,
+    name: 'Familia y crianza',
+    tagline: 'Explicar sin sermonear.',
+    jtbd:
+        'Quiero explicar una decisión en casa sin que suene a sermón y sin '
+        'ceder en el fondo.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 26,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000027',
+    slug: 'empatia-escucha',
+    family: ThemeFamily.emocion,
+    name: 'Escuchar',
+    tagline: 'Que se note que entendiste.',
+    jtbd:
+        'Quiero responder a quien me cuenta algo difícil y que sienta que '
+        'lo escuché de verdad.',
+    contentType: ThemeContentType.expressionDriven,
+    status: ThemeStatus.soon,
+    sortOrder: 27,
+  ),
+  Theme(
+    id: 'c0000000-0000-4000-8000-000000000028',
+    slug: 'pedir-disculparse',
+    family: ThemeFamily.emocion,
+    name: 'Pedir y disculparse',
+    tagline: 'Pedir sin encogerte, disculparte sin excusas.',
+    jtbd:
+        'Quiero pedir lo que necesito y reconocer un fallo sin justificarme '
+        'de más.',
+    contentType: ThemeContentType.mixed,
+    status: ThemeStatus.soon,
+    sortOrder: 28,
+  ),
+];
+
 /// Word slug to `words.semantic_set_id`. «Contundente» reinforces an
 /// assertion and «matizar» softens it: two ends of one axis, so they are
 /// never introduced within 7 days of each other (Tinkham 1993; Nation 2000).
@@ -243,7 +409,8 @@ final seedWordsWithThemes = <Word>[
 ];
 
 final Map<String, String> _themeIdBySlug = {
-  for (final theme in seedThemes) theme.slug: theme.id,
+  for (final theme in [...seedThemes, ...unpublishedSeedThemes])
+    theme.slug: theme.id,
 };
 
 String _themeIdOf(String slug) =>

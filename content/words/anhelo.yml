@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8110
 slug: "anhelo"
-status: "draft"
+status: "approved"
 lemma: "anhelo"
 part_of_speech: "sustantivo"
 syllables:
@@ -36,8 +36,10 @@ themes:
   - slug: "empatia-escucha"
     relevance: 2
 tags:
-  comodin: ["ganas"]
-  funcion: ["describir"]
+  comodin:
+    - "ganas"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -70,7 +72,7 @@ exercises:
         hint_specific: "El antojo pasa rápido. ¿Cuánto tiempo lleva Ezequiel sintiendo esto?"
   - position: 2
     sentence: "Malena sentía {{blank}} por volver a ver a su cita, aunque sin ninguna desesperación: sabía que se verían pronto de todas formas."
-    hint_general: "Es un sentimiento profundo pero tranquilo, sin desesperación ni un capricho trivial."
+    hint_general: "Es un sentimiento profundo pero tranquilo, sin desesperación ni un antojo pasajero."
     explanation: "Anhelo: unas ganas profundas, pero tranquilas. «Ansia» suena urgente y casi desesperado, y la frase aclara que no hay ninguna desesperación; «capricho» es un antojo trivial, y aquí lo que siente Malena es más profundo."
     options:
       - position: 1
@@ -90,7 +92,7 @@ exercises:
         hint_specific: "El capricho es trivial. ¿Lo que siente Malena es trivial o profundo?"
   - position: 3
     sentence: "«¿Estás obsesionada con él o qué?», le preguntaron a Aitana. «Para nada, es solo {{blank}}: ganas tranquilas de volver a verlo, sin volverme loca», respondió ella."
-    hint_general: "Piensa en ganas tranquilas de volver a ver a alguien, ya descartada la idea de obsesión."
+    hint_general: "Piensa en ganas tranquilas de volver a ver a alguien, ya descartada esa idea más intensa."
     explanation: "Anhelo: unas ganas tranquilas, ya aclarado que no es obsesión. Aitana misma descarta la obsesión con «para nada»; «esperanza» implicaría duda sobre si volverán a verse, y aquí lo que describe es solo el sentimiento de espera, tranquilo."
     options:
       - position: 1
@@ -130,7 +132,7 @@ exercises:
         hint_specific: "El deseo puede ser algo inmediato. ¿La frase menciona una cita concreta esta semana?"
   - position: 5
     sentence: "Bruno pensó al principio que se le pasaría en un par de días, como sus antojos de siempre, pero no era un capricho egoísta: reconoció que lo que sentía desde su última relación no era otra cosa que {{blank}}, algo que llevaba meses sin desaparecer."
-    hint_general: "Piensa en unas ganas que duran meses, distintas de un antojo que se pasa rápido o un capricho egoísta."
+    hint_general: "Piensa en unas ganas que duran meses, distintas de algo pasajero o de un impulso egoísta."
     explanation: "Anhelo: unas ganas profundas que no se parecen a un antojo ni a un capricho. «Antojo» se pasa rápido, y la frase contrasta esto con sus antojos de siempre, que sí se le pasan; «capricho» es egoísta y trivial, y la frase aclara que no lo era."
     options:
       - position: 1
@@ -236,5 +238,5 @@ metrics:
   pedantry_proxy: 0.4417
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

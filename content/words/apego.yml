@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8203
 slug: "apego"
-status: "draft"
+status: "approved"
 lemma: "apego"
 part_of_speech: "sustantivo"
 syllables:
@@ -36,8 +36,11 @@ themes:
   - slug: "familia-crianza"
     relevance: 2
 tags:
-  comodin: ["cariño"]
-  funcion: ["describir", "expresar"]
+  comodin:
+    - "cariño"
+  funcion:
+    - "describir"
+    - "expresar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -169,26 +172,6 @@ exercises:
         text: "apego"
         is_correct: true
   - position: 7
-    sentence: "Malena puede pasar meses sin ver a su amiga de la universidad, pero en cuanto se juntan siente el mismo {{blank}} de siempre."
-    hint_general: "Es un sentimiento fuerte hacia alguien que no desaparece aunque pase tiempo sin verla."
-    explanation: "Apego: un sentimiento fuerte que no desaparece con el tiempo. «Dependencia» sugeriría que Malena necesita verla seguido, y aquí pasa meses sin problema; «cariño» es más suave y no explica por qué siente exactamente lo mismo después de tanto tiempo."
-    options:
-      - position: 1
-        text: "dependencia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Dependencia» sugeriría que Malena necesita ver a su amiga seguido, y la frase dice que puede pasar meses sin verla."
-        hint_specific: "«Dependencia» implica necesitar algo seguido. ¿Malena necesita ver a su amiga cada semana?"
-      - position: 2
-        text: "apego"
-        is_correct: true
-      - position: 3
-        text: "cariño"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cariño» es más suave y no explica por qué el sentimiento sigue igual de fuerte después de meses sin verla."
-        hint_specific: "«Cariño» no explica la intensidad. ¿Cómo describe la frase ese sentimiento después de meses?"
-  - position: 8
     sentence: "Jonás todavía tiene el peluche que le regaló su mejor amigo de la infancia, y admite que le tiene un {{blank}} que no piensa explicar a nadie."
     hint_general: "Es un sentimiento fuerte hacia un objeto que te recuerda a una persona importante."
     explanation: "Apego: un sentimiento fuerte hacia un objeto que recuerda a alguien importante. «Apogeo» es el punto más alto de algo, no un sentimiento hacia un objeto, y «dependencia» sugiere que necesita ese objeto para funcionar, cuando aquí solo hay un sentimiento hacia un recuerdo."
@@ -236,5 +219,5 @@ metrics:
   pedantry_proxy: 0.5093
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "inmediatez"
-status: "draft"
+status: "approved"
 lemma: "inmediatez"
 part_of_speech: "sustantivo"
 syllables:
@@ -74,7 +74,7 @@ exercises:
         hint_specific: "«Rapidez» mide su velocidad. ¿Falla su velocidad o el tiempo que le dan?"
   - position: 2
     sentence: "El taller de Efraín funciona al revés que las redes: cambia la {{blank}} por dos días de espera y una pieza mejor."
-    hint_general: "Renuncia a que todo salga al momento a cambio de calidad."
+    hint_general: "Renuncia a que todo salga al momento a cambio de un resultado mejor."
     explanation: "Inmediatez: que todo salga al momento. «Premura» es palabra de escrito formal sobre la prisa con que se pide algo, y «calidad» sería justo lo que gana, no lo que cambia."
     options:
       - position: 1
@@ -153,26 +153,6 @@ exercises:
         why_not: "«Inmadurez» diría que le falta preparación, y la frase describe un método muy pensado."
         hint_specific: "«Inmadurez» acusa de no estar lista. ¿Parece improvisado su método?"
   - position: 6
-    sentence: "En urgencias, la {{blank}} salva vidas; en una discusión de familia, casi siempre las complica."
-    hint_general: "Actuar sin ningún hueco de espera sirve en un sitio y estorba en otro."
-    explanation: "Inmediatez: actuar sin hueco de espera. «Premura» es palabra de escrito formal sobre la prisa con que se pide algo, y «paciencia» diría lo contrario."
-    options:
-      - position: 1
-        text: "inmediatez"
-        is_correct: true
-      - position: 2
-        text: "premura"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Premura» es de escrito formal y habla de la prisa con que se solicita algo, y esta frase compara dos situaciones de la vida."
-        hint_specific: "«Premura» suena a instancia oficial. ¿Con qué tono está escrita esta frase?"
-      - position: 3
-        text: "paciencia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Paciencia» es esperar, y la frase habla de lo que pasa cuando no se espera nada."
-        hint_specific: "«Paciencia» espera. ¿Qué es lo que salva vidas en urgencias?"
-  - position: 7
     sentence: "Al cliente le vendieron {{blank}} y lo que necesitaba era que alguien le explicara bien el presupuesto."
     hint_general: "Le prometieron respuesta al instante y le faltaba otra cosa."
     explanation: "Inmediatez: respuesta al instante. «Prontitud» es palabra de carta formal usada como elogio, e «inmensidad» hablaría de un tamaño enorme."
@@ -192,7 +172,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Prontitud» es palabra de escrito formal y suena a elogio de quien atiende pronto, y aquí se critica lo que le vendieron."
         hint_specific: "«Prontitud» elogia, con tono de carta formal. ¿La frase elogia o critica?"
-  - position: 8
+  - position: 7
     sentence: "La {{blank}} del grupo de mensajes hizo que un malentendido de dos líneas creciera antes de que nadie llamara."
     hint_general: "Al no haber ninguna pausa, el lío creció solo."
     explanation: "Inmediatez: no hubo ninguna pausa. «Inmadurez» acusaría a la gente de no estar preparada, y «cantidad» hablaría de cuántos mensajes hubo."
@@ -241,5 +221,5 @@ metrics:
   family_size: 35
 provenance:
   generator: "flui authoring agent — theme redes-sociales"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8002
 slug: "ocurrencia"
-status: "draft"
+status: "approved"
 lemma: "ocurrencia"
 part_of_speech: "sustantivo"
 syllables:
@@ -38,8 +38,12 @@ themes:
   - slug: "conversacion-cotidiana"
     relevance: 2
 tags:
-  comodin: ["cosa", "tontería"]
-  funcion: ["elogiar", "contar"]
+  comodin:
+    - "cosa"
+    - "tontería"
+  funcion:
+    - "elogiar"
+    - "contar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -72,26 +76,6 @@ exercises:
         why_not: "«Bobada» es coloquial y despacha algo como si no valiera nada, y aquí las frases del niño se guardan y se repiten."
         hint_specific: "«Bobada» quita valor. ¿La tía tira esas frases o las colecciona?"
   - position: 2
-    sentence: "La conversación iba floja hasta que a Nerea se le escapó una {{blank}} sobre el nombre del bar; nadie quedó de blanco y la mesa entera se despertó."
-    hint_general: "Salió sola, en el momento, y no iba contra nadie."
-    explanation: "Ocurrencia: salió sola y no iba contra nadie. Una «broma» se prepara y busca destinatario, y «payasada» es coloquial y reprocha hacer el tonto para que te miren."
-    options:
-      - position: 1
-        text: "payasada"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Payasada» es coloquial y reprocha hacer el tonto para llamar la atención, y a ella se le escapó sin buscar público."
-        hint_specific: "«Payasada» acusa de montar un número. ¿Nerea buscaba que la miraran?"
-      - position: 2
-        text: "broma"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Una «broma» se prepara y suele ir dirigida a alguien, y la frase dice que nadie quedó de blanco."
-        hint_specific: "Una «broma» tiene diana y preparación. ¿Quién era la diana aquí?"
-      - position: 3
-        text: "ocurrencia"
-        is_correct: true
-  - position: 3
     sentence: "Dante llegó tieso a la primera cita, pero una {{blank}} sobre el perro que dormía bajo la barra rompió el hielo antes del primer plato."
     hint_general: "Nació de lo que los dos estaban viendo y no escondía ningún mensaje."
     explanation: "Ocurrencia: nació de lo que los dos veían en ese momento. Un «chiste» se lleva aprendido, y una «indirecta» diría algo a medias para que el otro lo entienda."
@@ -111,7 +95,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «indirecta» dice algo a medias esperando que el otro lo capte, y aquí no hay mensaje escondido."
         hint_specific: "Una «indirecta» siempre esconde algo. ¿Qué mensaje oculto hay en la frase del perro?"
-  - position: 4
+  - position: 3
     sentence: "Cuando Selene contó que se le había ido el tren por dos minutos, Abel respondió con una {{blank}} que la hizo reír a ella primero."
     hint_general: "Una frase graciosa sobre algo real que alivia a quien lo está contando."
     explanation: "Ocurrencia: una frase graciosa que alivia a quien cuenta el apuro. Un «invento» sería algo falso, y una «burla» se reiría de ella, y ella es la primera en reírse."
@@ -131,7 +115,7 @@ exercises:
       - position: 3
         text: "ocurrencia"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "En casa llaman {{blank}} a cada frase que suelta Bárbara, y aun así todos esperan la siguiente con ganas."
     hint_general: "Lo que sueltan sin pensar y a los demás les hace ilusión escuchar."
     explanation: "Ocurrencia: una frase graciosa que los demás esperan con ganas. «Tontería» es coloquial y la despacharía sin valor, y una «idea» puede ser seria y útil, no graciosa."
@@ -151,7 +135,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «idea» puede ser seria, útil y nada graciosa, y lo que aquí se celebra es la gracia de lo que dice."
         hint_specific: "Una «idea» puede ser un plan de trabajo. ¿Qué esperan en esa casa: un plan o una risa?"
-  - position: 6
+  - position: 5
     sentence: "Ulises soltó una {{blank}} en plena cola del cine y hasta quien cobraba las entradas se rio, sin que nadie se sintiera aludido."
     hint_general: "Una salida graciosa del momento que no incomoda a ninguno de los presentes."
     explanation: "Ocurrencia: una salida del momento que a nadie incomoda. Una «impertinencia» molestaría a quien la oye, y una «exageración» solo agrandaría un hecho."
@@ -171,7 +155,7 @@ exercises:
       - position: 3
         text: "ocurrencia"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Cada vez que el grupo se atasca eligiendo restaurante, Otilia suelta una {{blank}} propia y en dos minutos ya están decidiendo otra vez."
     hint_general: "Una frase suya, nacida ahí mismo, que descongela al grupo."
     explanation: "Ocurrencia: una frase suya, nacida ahí mismo, que descongela al grupo. Una «imitación» copiaría a alguien, y una «broma» se prepara antes y busca destinatario."
@@ -191,7 +175,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "Una «broma» se prepara antes y apunta a alguien, y esto sale en el momento para desbloquear la charla."
         hint_specific: "Una «broma» se trae de casa. ¿Cuándo aparece lo que dice Otilia?"
-  - position: 8
+  - position: 7
     sentence: "Nadie recuerda quién ganó la partida, pero la {{blank}} de Wanda al repartir las cartas se cuenta cada año con cariño."
     hint_general: "Una frase del momento que quedó como recuerdo bonito de esa noche."
     explanation: "Ocurrencia: una frase del momento que quedó como buen recuerdo. Un «chiste» funcionaría en cualquier sitio, y una «insolencia» habría ofendido a alguien de la mesa."
@@ -239,5 +223,5 @@ metrics:
   pedantry_proxy: 0.4858
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

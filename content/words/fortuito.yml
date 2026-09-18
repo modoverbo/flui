@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8305
 slug: "fortuito"
-status: "draft"
+status: "approved"
 lemma: "fortuito"
 part_of_speech: "adjetivo"
 syllables:
@@ -36,8 +36,11 @@ themes:
   - slug: "citas"
     relevance: 2
 tags:
-  comodin: ["casualidad"]
-  funcion: ["describir", "contar"]
+  comodin:
+    - "casualidad"
+  funcion:
+    - "describir"
+    - "contar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -109,26 +112,6 @@ exercises:
         why_not: "«Inoportuno» dice que algo llega en mal momento, y esa coincidencia dejó una hora entera de buena charla, nada mal."
         hint_specific: "«Inoportuno» avisa de mal momento. ¿Cómo terminó esa hora de charla entre Leandro y su compañera?"
   - position: 4
-    sentence: "Que a Selene se le cayera el paraguas justo sobre los pies del chico de la fila fue {{blank}}, y terminaron intercambiando número por la disculpa."
-    hint_general: "Habla de algo que pasa sin que nadie lo busque, sin juzgar si fue un descuido."
-    explanation: "Fortuito: pasó sin que nadie lo buscara. «Suertudo» describe a una persona con suerte, no un hecho puntual, y «accidental» pone el foco en el descuido, cuando la frase no juzga eso, solo que nadie lo planeó."
-    options:
-      - position: 1
-        text: "suertudo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Suertudo» describe a una persona con suerte, no un hecho puntual; aquí lo que pasó fue que se le cayó el paraguas, no un rasgo de Selene."
-        hint_specific: "«Suertudo» describe a una persona, no un hecho. ¿La frase habla de cómo es Selene o de lo que pasó con el paraguas?"
-      - position: 2
-        text: "fortuito"
-        is_correct: true
-      - position: 3
-        text: "accidental"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Accidental» pone el foco en el descuido o el error, y la frase no juzga si fue un descuido, solo que nadie lo planeó."
-        hint_specific: "«Accidental» acusa de descuido. ¿La frase juzga un descuido o solo dice que nadie lo planeó?"
-  - position: 5
     sentence: "Nadie coordinó nada, ni siquiera a medias: Cayetano y la prima de la novia llegaron con el mismo color de corbata a la boda, algo {{blank}} que les dio tema de conversación toda la noche."
     hint_general: "Se refiere a algo que pasa sin que nadie lo haya coordinado, ni siquiera un poco."
     explanation: "Fortuito: nadie coordinó nada, ni siquiera a medias. «Coincidente» no aclara si hubo alguna coordinación detrás, e «inesperado» habla de sorpresa, no de si alguien coordinó algo."
@@ -148,27 +131,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Inesperado» solo dice que algo sorprendió, y no aclara si detrás hubo alguna mano organizando un poco las cosas; la frase aclara que nadie coordinó nada, ni siquiera a medias."
         hint_specific: "«Inesperado» habla de sorpresa, no de si alguien coordinó algo. ¿Qué aclara la frase?"
-  - position: 6
-    sentence: "A Norma le tocó, en una lista {{blank}} armada a último momento, la silla justo al lado de la única persona del curso que conocía de otra ciudad."
-    hint_general: "Apunta a algo que sale así, sin ningún plan ni sistema detrás."
-    explanation: "Fortuita: salió así, sin ningún sistema detrás. «Aleatoria» supone un mecanismo pensado para repartir al azar, y la lista se armó a último momento sin ningún sistema, y «providencial» sugiere que el destino intervino, cuando la frase no habla de destino."
-    options:
-      - position: 1
-        text: "aleatoria"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Aleatoria» implica un mecanismo pensado para repartir al azar, y la lista se armó a último momento, sin ningún sistema para sortear los lugares."
-        hint_specific: "«Aleatoria» supone un sistema para sortear. ¿Cómo se armó esa lista, según la frase?"
-      - position: 2
-        text: "fortuita"
-        is_correct: true
-      - position: 3
-        text: "providencial"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Providencial» sugiere que el destino intervino a su favor, y la frase no habla de destino, solo de que la lista salió así, a último momento."
-        hint_specific: "«Providencial» apunta al destino. ¿La frase habla de destino o de cómo se armó la lista?"
-  - position: 7
+  - position: 5
     sentence: "El retraso del vuelo fue lo único {{blank}} de esa tarde, algo en lo que nadie, ni siquiera la aerolínea, tuvo parte: gracias a eso, Ismael terminó tomando un café con la persona que hoy es su pareja."
     hint_general: "Habla de un hecho puntual en el que nadie, ni siquiera la propia aerolínea, tuvo parte."
     explanation: "Fortuito: nadie, ni la aerolínea, tuvo parte en que pasara. «Imprevisible» describe una propiedad general, y aquí se cuenta un caso puntual, y «circunstancial» resta importancia al hecho, cuando la frase le da protagonismo."
@@ -188,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Circunstancial» resta importancia al hecho, como si solo fueran las condiciones del momento, y la frase le da protagonismo: fue lo único de esa tarde en lo que nadie tuvo parte."
         hint_specific: "«Circunstancial» resta importancia. ¿La frase resta importancia al retraso o le da protagonismo?"
-  - position: 8
+  - position: 6
     sentence: "Wanda no buscaba conocer a nadie esa noche: que terminara hablando con el amigo de su amiga toda la fiesta fue {{blank}}, sin que nada ni nadie lo hubiera preparado."
     hint_general: "Se refiere a algo que pasa sin que nada ni nadie lo haya preparado de antemano."
     explanation: "Fortuito: nada ni nadie lo había preparado. «Predestinado» dice que el destino ya lo tenía preparado, y la frase aclara que nada ni nadie lo había preparado, e «involuntario» sugiere ir en contra de su voluntad, cuando ella no fue arrastrada a nada."
@@ -236,5 +199,5 @@ metrics:
   pedantry_proxy: 0.4256
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

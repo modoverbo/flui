@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8309
 slug: "naturalidad"
-status: "draft"
+status: "approved"
 lemma: "naturalidad"
 part_of_speech: "sustantivo"
 syllables:
@@ -38,8 +38,11 @@ themes:
   - slug: "elogio-reconocimiento"
     relevance: 2
 tags:
-  comodin: ["tal cual es"]
-  funcion: ["elogiar", "describir"]
+  comodin:
+    - "tal cual es"
+  funcion:
+    - "elogiar"
+    - "describir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -151,26 +154,6 @@ exercises:
         why_not: "«Gracia» es tener chispa para hacer reír, pero no dice si contarías lo mismo a un desconocido que a tu mejor amigo; eso es justo lo que compara la frase."
         hint_specific: "«Gracia» no compara con quién hablas. ¿Qué comparación hace la frase?"
   - position: 6
-    sentence: "Norma habló con el señor de la fila del banco, que no conocía de nada, con la misma {{blank}} con la que habla con los vecinos de toda la vida, y él le contó hasta el nombre de su perro."
-    hint_general: "Apunta a tratar igual a un desconocido que a los vecinos de toda la vida."
-    explanation: "Naturalidad: trató igual a un desconocido que a los vecinos de siempre. «Llaneza» no depende de si tratas igual a un desconocido que a un vecino de toda la vida, y «calma» no dice si tratas distinto a cada uno."
-    options:
-      - position: 1
-        text: "llaneza"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Llaneza» es una palabra más literaria para la sencillez de trato, pero no depende de si tratas igual a un desconocido que a los vecinos de toda la vida, que es justo la comparación que hace la frase."
-        hint_specific: "«Llaneza» no compara con quién hablas. ¿Qué comparación hace la frase sobre Norma?"
-      - position: 2
-        text: "naturalidad"
-        is_correct: true
-      - position: 3
-        text: "calma"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Calma» describe ausencia de nervios, y alguien puede estar calmado y aun así tratar distinto a un desconocido que a un vecino de toda la vida; la frase dice que Norma los trata igual."
-        hint_specific: "«Calma» no dice si tratas igual a todos. ¿Qué dice la frase sobre cómo trata Norma al señor y a sus vecinos?"
-  - position: 7
     sentence: "En su primera comida con la familia de su novia, Leandro se sirvió el postre sin esperar a que se lo ofrecieran, exactamente como lo haría en su propia casa, con una {{blank}} que a todos les gustó."
     hint_general: "Habla de comportarse en casa ajena exactamente igual que en la propia."
     explanation: "Naturalidad: se comportó en casa ajena igual que en la suya. «Tranquilidad» no dice si cambias tu comportamiento en casa ajena, y «comodidad» tampoco dice si actúas igual que en la tuya."
@@ -190,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Comodidad» es sentirse a gusto, y alguien puede sentirse a gusto y aun así comportarse distinto por estar en casa de otra familia; la frase dice que actuó exactamente igual que en la suya."
         hint_specific: "«Comodidad» no dice si cambias tu comportamiento en casa ajena. ¿Qué dice la frase sobre Leandro?"
-  - position: 8
+  - position: 7
     sentence: "Cuando todos hablaban de un actor que Selene no conocía, ella preguntó quién era exactamente igual que pregunta cualquier otra cosa en el grupo, con una {{blank}} que hizo que nadie se riera."
     hint_general: "Se refiere a no tratar una pregunta distinto de cualquier otra, sin cambiar nada por si suena tonta."
     explanation: "Naturalidad: preguntó igual que siempre, sin cambiar nada. «Seguridad» no dice si cambias cómo preguntas según el tema, y «confianza» tampoco compara cómo tratas distintas preguntas."
@@ -238,5 +221,5 @@ metrics:
   pedantry_proxy: 0.4809
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

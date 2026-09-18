@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7011
 slug: "consuelo"
-status: "draft"
+status: "approved"
 lemma: "consuelo"
 part_of_speech: "sustantivo"
 syllables:
@@ -154,46 +154,6 @@ exercises:
         text: "consuelo"
         is_correct: true
   - position: 6
-    sentence: "A Berta le sirvió de {{blank}} saber que el fallo no había sido solo suyo, aunque el pedido siguiera perdido."
-    hint_general: "Le alivió la pena aunque el problema de fondo siguiera exactamente igual."
-    explanation: "Consuelo: le alivia la pena aunque el problema siga. Un «remedio» habría recuperado el pedido, y «paliativo» es una palabra fría de informe."
-    options:
-      - position: 1
-        text: "consuelo"
-        is_correct: true
-      - position: 2
-        text: "remedio"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un «remedio» habría recuperado el pedido, y el pedido sigue perdido al final de la frase."
-        hint_specific: "Un «remedio» cambia el resultado. ¿Cambió algo del pedido?"
-      - position: 3
-        text: "paliativo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Paliativo» es una palabra fría de informe técnico, y aquí se habla de cómo se siente una compañera."
-        hint_specific: "«Paliativo» pertenece a un documento. ¿De qué habla esta frase, de un papel o de una persona?"
-  - position: 7
-    sentence: "La gente le cuenta cosas a Damián porque reparte {{blank}} con facilidad y consejos con cuentagotas."
-    hint_general: "Acompaña mucho y ordena poco, y por eso los demás se abren con él."
-    explanation: "Consuelo: acompaña mucho y ordena poco. El «ánimo» empujaría a actuar, y un «remedio» prometería arreglar el problema de cada uno."
-    options:
-      - position: 1
-        text: "ánimo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "El «ánimo» empuja a actuar, y lo que hace Damián es quedarse escuchando mientras el otro habla."
-        hint_specific: "El «ánimo» mete prisa hacia adelante. ¿Damián empuja a la gente o la acompaña?"
-      - position: 2
-        text: "consuelo"
-        is_correct: true
-      - position: 3
-        text: "remedio"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un «remedio» prometería arreglar cada problema, y él ni siquiera reparte indicaciones: las da con cuentagotas."
-        hint_specific: "Un «remedio» resuelve. ¿Damián resuelve los problemas de los demás?"
-  - position: 8
     sentence: "El mensaje llegó del lado más raro y le dio el {{blank}} que ya no esperaba de nadie."
     hint_general: "Un mensaje inesperado que acompaña la pena sin cambiar la situación."
     explanation: "Consuelo: un mensaje que acompaña la pena sin cambiar nada. El «ánimo» empujaría a hacer algo, y un «consejo» traería una instrucción."
@@ -242,5 +202,5 @@ metrics:
   family_size: 276
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r5 + reviewer-a2-r5 + reviewer-a3-r5 + reviewer-a4-r5 + reviewer-a5-r5 + reviewer-a6-r5 + reviewer-b1-r5 + reviewer-b2-r5 + reviewer-b3-r5 + reviewer-b4-r5 + reviewer-b5-r5 + reviewer-b6-r5"
+  checked_on: "2026-09-18"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 7009
 slug: "metafora"
-status: "draft"
+status: "approved"
 lemma: "metáfora"
 part_of_speech: "sustantivo"
 syllables:
@@ -29,9 +29,9 @@ replaces:
     after: "Siempre recurre a la metáfora de la montaña"
   - before: "Esa forma de decirlo ya está muy vista"
     after: "Esa metáfora ya está gastada"
-semantic_set_id: "figuras-para-explicar"
 family:
   - "metafórico"
+semantic_set_id: "figuras-para-explicar"
 themes:
   - slug: "docencia"
     relevance: 3
@@ -239,10 +239,10 @@ readings:
     after_phrase: "Era una metáfora: me quitaron el proyecto."
 metrics:
   zipf_overall: 3.9157
-  dispersion_dp: 0.2630
+  dispersion_dp: 0.263
   pedantry_proxy: 0.4966
   family_size: 21
 provenance:
   generator: "flui authoring agent — themes docencia, empatia-escucha, pedir-disculparse, familia-crianza"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a1-r4 + reviewer-b1-r4 + reviewer-a2-r4 + reviewer-b2-r4 + reviewer-a3-r4 + reviewer-a4-r4 + reviewer-b3-r4"
+  checked_on: "2026-09-18"
