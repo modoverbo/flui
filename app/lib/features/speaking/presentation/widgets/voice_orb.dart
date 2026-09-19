@@ -75,7 +75,7 @@ class _VoiceOrbState extends State<VoiceOrb>
 }
 
 class _VoiceOrbPainter extends CustomPainter {
-  const _VoiceOrbPainter({
+  const new({
     required this.state,
     required this.amplitude,
     required this.phase,
@@ -128,31 +128,33 @@ class _VoiceOrbPainter extends CustomPainter {
           math.sin(angle * 5 - phase * .7) * 2;
       final r = radius + wobble;
       final point = center + Offset(math.cos(angle) * r, math.sin(angle) * r);
-      if (index == 0)
+      if (index == 0) {
         path.moveTo(point.dx, point.dy);
-      else
+      } else {
         path.lineTo(point.dx, point.dy);
+      }
     }
     path.close();
-    canvas.drawPath(
-      path,
-      Paint()
-        ..shader = LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: colors,
-        ).createShader(Offset.zero & size),
-    );
-    canvas.drawCircle(
-      center - const Offset(24, 28),
-      radius * .34,
-      Paint()..color = Colors.white.withValues(alpha: .24),
-    );
-    canvas.drawCircle(
-      center,
-      radius * .18,
-      Paint()..color = FluiColors.ink.withValues(alpha: .88),
-    );
+    canvas
+      ..drawPath(
+        path,
+        Paint()
+          ..shader = LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: colors,
+          ).createShader(Offset.zero & size),
+      )
+      ..drawCircle(
+        center - const Offset(24, 28),
+        radius * .34,
+        Paint()..color = Colors.white.withValues(alpha: .24),
+      )
+      ..drawCircle(
+        center,
+        radius * .18,
+        Paint()..color = FluiColors.ink.withValues(alpha: .88),
+      );
   }
 
   @override

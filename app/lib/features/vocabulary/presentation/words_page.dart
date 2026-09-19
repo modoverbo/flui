@@ -213,9 +213,9 @@ class _WordRow extends StatelessWidget {
         width: columns == 1 ? double.infinity : width,
         child: Material(
           color: wordCardColor(index),
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: FluiRadii.cardAll,
-            side: const BorderSide(color: FluiColors.ink, width: 1.5),
+            side: BorderSide(color: FluiColors.ink, width: 1.5),
           ),
           clipBehavior: Clip.antiAlias,
           child: InkWell(

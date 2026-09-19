@@ -1,3 +1,6 @@
+import 'dart:async';
+import 'dart:math' as math;
+
 import 'package:flui/core/theme/contrast.dart';
 import 'package:flui/core/theme/flui_color_rules.dart';
 import 'package:flui/core/theme/flui_colors.dart';
@@ -193,6 +196,106 @@ void main() {
 
       expect(on, FluiMotion.standard);
       expect(off, Duration.zero);
+    });
+
+    test('springs match the documented mass, stiffness and damping', () {
+      expect(fluiSpringFast.mass, 1);
+      expect(fluiSpringFast.stiffness, 500);
+      expect(fluiSpringFast.damping, 30);
+
+      expect(fluiSpringStandard.mass, 1);
+      expect(fluiSpringStandard.stiffness, 300);
+      expect(fluiSpringStandard.damping, 24);
+
+      expect(fluiSpringGentle.mass, 1);
+      expect(fluiSpringGentle.stiffness, 170);
+      expect(fluiSpringGentle.damping, 26);
+    });
+
+    test('fast and standard are underdamped, gentle is near-critical', () {
+      double dampingRatio(SpringDescription spring) =>
+          spring.damping / (2 * math.sqrt(spring.mass * spring.stiffness));
+
+      expect(dampingRatio(fluiSpringFast), closeTo(0.67, 0.01));
+      expect(dampingRatio(fluiSpringFast), lessThan(1), reason: 'underdamped');
+
+      expect(dampingRatio(fluiSpringStandard), closeTo(0.69, 0.01));
+      expect(
+        dampingRatio(fluiSpringStandard),
+        lessThan(1),
+        reason: 'underdamped',
+      );
+
+      expect(dampingRatio(fluiSpringGentle), closeTo(0.997, 0.01));
+      expect(
+        dampingRatio(fluiSpringGentle),
+        lessThan(1),
+        reason: 'still technically underdamped, but near-critical',
+      );
+      expect(
+        dampingRatio(fluiSpringGentle),
+        greaterThan(dampingRatio(fluiSpringStandard)),
+        reason: 'gentle sits closer to critical damping than standard',
+      );
+    });
+
+    testWidgets('driveSpring settles instantly under reduced motion', (
+      tester,
+    ) async {
+      late AnimationController controller;
+      await tester.pumpWidget(
+        MediaQuery(
+          data: const MediaQueryData(disableAnimations: true),
+          child: Builder(
+            builder: (context) {
+              controller = AnimationController(vsync: tester, value: 0);
+              unawaited(
+                FluiMotion.driveSpring(
+                  context,
+                  controller,
+                  fluiSpringStandard,
+                  to: 1,
+                ),
+              );
+              return const SizedBox();
+            },
+          ),
+        ),
+      );
+
+      expect(controller.value, 1);
+      expect(tester.hasRunningAnimations, isFalse);
+      controller.dispose();
+    });
+
+    testWidgets('driveSpring runs a real spring simulation otherwise', (
+      tester,
+    ) async {
+      late AnimationController controller;
+      await tester.pumpWidget(
+        MediaQuery(
+          data: const MediaQueryData(),
+          child: Builder(
+            builder: (context) {
+              controller = AnimationController(vsync: tester, value: 0);
+              unawaited(
+                FluiMotion.driveSpring(
+                  context,
+                  controller,
+                  fluiSpringStandard,
+                  to: 1,
+                ),
+              );
+              return const SizedBox();
+            },
+          ),
+        ),
+      );
+
+      expect(tester.hasRunningAnimations, isTrue);
+      await tester.pumpAndSettle();
+      expect(controller.value, closeTo(1, 0.001));
+      controller.dispose();
     });
   });
 

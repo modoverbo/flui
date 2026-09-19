@@ -1,4 +1,5 @@
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// A foreground on a background, with the contrast it has to reach.
@@ -36,62 +37,83 @@ abstract final class FluiColorRules {
   static const double aaLargeText = 3;
 
   /// Pairs that must stay readable as text.
-  static const List<ColorPair> readable = [
-    ColorPair('charcoal on cream', FluiColors.charcoal, FluiColors.cream),
-    ColorPair('charcoal on surface', FluiColors.charcoal, FluiColors.surface),
-    ColorPair('gray on cream', FluiColors.gray, FluiColors.cream),
-    ColorPair('alert on cream', FluiColors.alert, FluiColors.cream),
-    ColorPair('cream on greenDeep', FluiColors.cream, FluiColors.greenDeep),
-    ColorPair(
+  ///
+  /// The 28 theme-colour pairs (`paper` on each theme surface, `ink` on
+  /// each theme tint) are generated from [FluiThemeColors.all], not
+  /// hand-authored — a themes.yml edit that changes a hue can't drift this
+  /// table (`01-design-system.md` §1.2).
+  static final List<ColorPair> readable = [
+    const ColorPair('charcoal on cream', FluiColors.charcoal, FluiColors.cream),
+    const ColorPair(
+      'charcoal on surface',
+      FluiColors.charcoal,
+      FluiColors.surface,
+    ),
+    const ColorPair('gray on cream', FluiColors.gray, FluiColors.cream),
+    const ColorPair('alert on cream', FluiColors.alert, FluiColors.cream),
+    const ColorPair(
+      'cream on greenDeep',
+      FluiColors.cream,
+      FluiColors.greenDeep,
+    ),
+    const ColorPair(
       'cream on greenSecondary',
       FluiColors.cream,
       FluiColors.greenSecondary,
     ),
-    ColorPair(
+    const ColorPair(
       'cream on progressSurface',
       FluiColors.cream,
       FluiColors.progressSurface,
     ),
-    ColorPair(
+    const ColorPair(
       'creamMuted on greenDeep',
       FluiColors.creamMuted,
       FluiColors.greenDeep,
     ),
-    ColorPair(
+    const ColorPair(
       'creamMuted on greenSecondary',
       FluiColors.creamMuted,
       FluiColors.greenSecondary,
     ),
-    ColorPair(
+    const ColorPair(
       'creamMuted on progressSurface',
       FluiColors.creamMuted,
       FluiColors.progressSurface,
     ),
-    ColorPair(
+    const ColorPair(
       'yellow on greenDeep',
       FluiColors.yellowElectric,
       FluiColors.greenDeep,
     ),
-    ColorPair(
+    const ColorPair(
       'yellow on progressSurface',
       FluiColors.yellowElectric,
       FluiColors.progressSurface,
     ),
-    ColorPair(
+    const ColorPair(
       'charcoal on yellow',
       FluiColors.charcoal,
       FluiColors.yellowElectric,
     ),
-    ColorPair(
+    const ColorPair(
       'charcoal on yellowTint',
       FluiColors.charcoal,
       FluiColors.yellowTint,
     ),
-    ColorPair(
+    const ColorPair(
       'greenDeep on greenTint',
       FluiColors.greenDeep,
       FluiColors.greenTint,
     ),
+    for (final theme in FluiThemeColors.all) ...[
+      ColorPair(
+        'paper on ${theme.slug} theme surface',
+        theme.on,
+        theme.surface,
+      ),
+      ColorPair('ink on ${theme.slug} theme tint', FluiColors.ink, theme.tint),
+    ],
   ];
 
   /// Non-text pairs: borders, icons and the shake outline. They only have to

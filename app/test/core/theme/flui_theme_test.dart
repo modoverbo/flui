@@ -40,18 +40,33 @@ void main() {
   group('FluiTheme.light', () {
     final theme = FluiTheme.light();
 
-    test('maps brand colors into the color scheme', () {
+    test('maps the editorial base into the color scheme', () {
+      // The 6-hue "skill" palette (electricBlue/aqua/coral/acidLime/
+      // softPink/lavender) is retired from ColorScheme per
+      // docs/redesign/01-design-system.md §0: it stays live for the
+      // decorative surfaces that still key off individual hues directly
+      // (bento tones, gradients, chip fills), but no longer drives
+      // primary/secondary/tertiary.
       final scheme = theme.colorScheme;
       expect(scheme.brightness, Brightness.light);
-      expect(scheme.primary, FluiColors.electricBlue);
+      expect(scheme.primary, FluiColors.greenDeep);
       expect(scheme.onPrimary, FluiColors.cream);
-      expect(scheme.secondary, FluiColors.aqua);
-      expect(scheme.tertiary, FluiColors.acidLime);
+      expect(scheme.primaryContainer, FluiColors.greenTint);
+      expect(scheme.onPrimaryContainer, FluiColors.greenDeep);
+      expect(scheme.secondary, FluiColors.greenSecondary);
+      expect(scheme.onSecondary, FluiColors.cream);
+      expect(scheme.tertiary, FluiColors.yellowElectric);
       expect(scheme.onTertiary, FluiColors.charcoal);
+      expect(scheme.tertiaryContainer, FluiColors.yellowTint);
+      expect(scheme.onTertiaryContainer, FluiColors.charcoal);
       expect(scheme.surface, FluiColors.cream);
       expect(scheme.onSurface, FluiColors.charcoal);
       expect(scheme.onSurfaceVariant, FluiColors.gray);
       expect(theme.scaffoldBackgroundColor, FluiColors.cream);
+
+      expect(scheme.primary, isNot(FluiColors.electricBlue));
+      expect(scheme.secondary, isNot(FluiColors.aqua));
+      expect(scheme.tertiary, isNot(FluiColors.acidLime));
     });
 
     test('text theme is built from the type scale', () {

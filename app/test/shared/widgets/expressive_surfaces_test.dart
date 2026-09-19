@@ -29,11 +29,15 @@ void main() {
     tester,
   ) async {
     await tester.pumpWidget(
-      const MaterialApp(home: Scaffold(body: FluiCard(child: Text('idea')))),
+      const MaterialApp(
+        home: Scaffold(body: FluiCard(child: Text('idea'))),
+      ),
     );
 
     final material = tester.widget<Material>(
-      find.ancestor(of: find.text('idea'), matching: find.byType(Material)).first,
+      find
+          .ancestor(of: find.text('idea'), matching: find.byType(Material))
+          .first,
     );
     final shape = material.shape! as RoundedRectangleBorder;
     expect(shape.side.color, FluiColors.ink);

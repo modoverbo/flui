@@ -5,8 +5,8 @@ import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
-import '../../helpers/pump_router.dart';
 import '../../helpers/pump_app.dart';
+import '../../helpers/pump_router.dart';
 
 void main() {
   testWidgets('shows original voice-world artwork', (tester) async {

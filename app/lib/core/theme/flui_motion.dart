@@ -1,3 +1,4 @@
+import 'package:flutter/physics.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Motion tokens. Four durations, one entrance curve, one exit curve and an
@@ -68,4 +69,59 @@ abstract final class FluiMotion {
   /// [duration], or zero when the user asked for reduced motion.
   static Duration resolve(BuildContext context, Duration duration) =>
       reduced(context) ? Duration.zero : duration;
+
+  /// Drives [controller] with [spring] from its current value to [to],
+  /// starting at [velocity] — 0 for a programmatic trigger, or a drag
+  /// gesture's release velocity. Under reduced motion, skips the
+  /// simulation entirely and jumps straight to [to]: the "instant settle"
+  /// every spring falls back to (`06-motion-spec.md`).
+  static TickerFuture driveSpring(
+    BuildContext context,
+    AnimationController controller,
+    SpringDescription spring, {
+    required double to,
+    double velocity = 0,
+  }) {
+    if (reduced(context)) {
+      controller.value = to;
+      return TickerFuture.complete();
+    }
+    return controller.animateWith(
+      SpringSimulation(spring, controller.value, to, velocity),
+    );
+  }
 }
+
+// Spring tokens (`SpringDescription`): the first physics-based motion in
+// the app, used only where the input is a real drag gesture with release
+// velocity (or its ambient/looping near-equivalent) rather than a
+// programmatic duration+curve tween (`06-motion-spec.md`). Drive them with
+// [FluiMotion.driveSpring] or `controller.animateWith(SpringSimulation(...))`
+// directly — not `Curves`, which can't express a starting velocity.
+
+/// Snappy — gesture-driven interactions the user's finger is still
+/// touching (drag release, swipe-to-dismiss the front card). Underdamped,
+/// visible but brief overshoot so a released card feels caught, not just
+/// stopped. Damping ratio ≈ 0.67.
+const fluiSpringFast = SpringDescription(mass: 1, stiffness: 500, damping: 30);
+
+/// The default — card-to-card advance, the next card moving into front
+/// position, feedback card arriving. This is the spring most motion in
+/// `03-card-stack-spec.md`/`06-motion-spec.md` refers to unless stated
+/// otherwise. Underdamped, slightly softer overshoot than [fluiSpringFast].
+/// Damping ratio ≈ 0.69.
+const fluiSpringStandard = SpringDescription(
+  mass: 1,
+  stiffness: 300,
+  damping: 24,
+);
+
+/// Idle/ambient — bubble breathing, gentle emphasis, anything looping or
+/// unprompted by direct touch. Near-critically damped: reaches its target
+/// smoothly, no bounce, so a looping breath doesn't read as jittery.
+/// Damping ratio ≈ 0.997.
+const fluiSpringGentle = SpringDescription(
+  mass: 1,
+  stiffness: 170,
+  damping: 26,
+);

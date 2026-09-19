@@ -9,6 +9,7 @@ abstract final class FluiFonts {
 /// The eight roles of the flui type scale. A screen picks a role, never a
 /// size: that is what keeps the hierarchy from collapsing into one headline.
 enum FluiTypeRole {
+  numeralHero,
   wordHero,
   displayL,
   titleL,
@@ -61,6 +62,14 @@ const _phonetic = TextStyle(
 enum FluiTypeScale {
   /// Phone and narrow windows.
   compact(
+    numeralHero: TextStyle(
+      fontFamily: FluiFonts.display,
+      fontWeight: FontWeight.w800,
+      fontSize: 96,
+      height: 88 / 96,
+      letterSpacing: 96 * -0.03,
+      fontFeatures: [FontFeature.tabularFigures()],
+    ),
     wordHero: TextStyle(
       fontFamily: FluiFonts.display,
       fontWeight: FontWeight.w800,
@@ -93,6 +102,14 @@ enum FluiTypeScale {
 
   /// Web and wide windows.
   wide(
+    numeralHero: TextStyle(
+      fontFamily: FluiFonts.display,
+      fontWeight: FontWeight.w800,
+      fontSize: 144,
+      height: 128 / 144,
+      letterSpacing: 144 * -0.03,
+      fontFeatures: [FontFeature.tabularFigures()],
+    ),
     wordHero: TextStyle(
       fontFamily: FluiFonts.display,
       fontWeight: FontWeight.w800,
@@ -124,6 +141,7 @@ enum FluiTypeScale {
   );
 
   new({
+    required this.numeralHero,
     required this.wordHero,
     required this.displayL,
     required this.titleL,
@@ -132,6 +150,7 @@ enum FluiTypeScale {
 
   /// Roles whose leading must stay at or below 1.05.
   static const Set<FluiTypeRole> displayRoles = {
+    FluiTypeRole.numeralHero,
     FluiTypeRole.wordHero,
     FluiTypeRole.displayL,
   };
@@ -141,6 +160,10 @@ enum FluiTypeScale {
     FluiTypeRole.bodyL,
     FluiTypeRole.body,
   };
+
+  /// Streak counts, the speaking timer, session-complete counters. Numbers
+  /// are content, not metadata, and are sized like the hero word.
+  final TextStyle numeralHero;
 
   /// The word itself, the only place this size is allowed.
   final TextStyle wordHero;
@@ -167,6 +190,7 @@ enum FluiTypeScale {
   TextStyle get phonetic => _phonetic;
 
   TextStyle styleOf(FluiTypeRole role) => switch (role) {
+    FluiTypeRole.numeralHero => numeralHero,
     FluiTypeRole.wordHero => wordHero,
     FluiTypeRole.displayL => displayL,
     FluiTypeRole.titleL => titleL,

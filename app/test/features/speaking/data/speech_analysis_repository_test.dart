@@ -50,14 +50,15 @@ void main() {
       );
     });
 
-    final result = await HttpSpeechAnalysisRepository(
-      endpoint: Uri.parse('http://127.0.0.1:8787/analyze'),
-      client: client,
-    ).analyze(
-      Uint8List.fromList([1, 2, 3]),
-      mimeType: 'audio/wav',
-      duration: const Duration(milliseconds: 4200),
-    );
+    final result =
+        await HttpSpeechAnalysisRepository(
+          endpoint: Uri.parse('http://127.0.0.1:8787/analyze'),
+          client: client,
+        ).analyze(
+          Uint8List.fromList([1, 2, 3]),
+          mimeType: 'audio/wav',
+          duration: const Duration(milliseconds: 4200),
+        );
 
     expect(result.valueOrNull?.text, contains('Organicé'));
     expect(result.valueOrNull?.coaching?.summary, contains('decisión'));
@@ -119,7 +120,7 @@ void main() {
 }
 
 final class _RecordingClient extends http.BaseClient {
-  _RecordingClient(this.respond);
+  new(this.respond);
 
   final http.Response Function(http.Request request) respond;
 

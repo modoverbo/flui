@@ -54,6 +54,14 @@ void main() {
         lineHeight: 28,
         tracking: -0.01,
       );
+      expectRole(
+        FluiTypeScale.compact.numeralHero,
+        family: FluiFonts.display,
+        weight: FontWeight.w800,
+        size: 96,
+        lineHeight: 88,
+        tracking: -0.03,
+      );
     });
 
     test('wide display roles match the web scale', () {
@@ -89,6 +97,14 @@ void main() {
         lineHeight: 30,
         tracking: -0.01,
       );
+      expectRole(
+        FluiTypeScale.wide.numeralHero,
+        family: FluiFonts.display,
+        weight: FontWeight.w800,
+        size: 144,
+        lineHeight: 128,
+        tracking: -0.03,
+      );
     });
 
     test('text roles are Inter and do not change with the viewport', () {
@@ -113,6 +129,15 @@ void main() {
         FluiTypeScale.compact.phonetic.fontFeatures,
         contains(const FontFeature.tabularFigures()),
       );
+    });
+
+    test('numeralHero uses tabular figures so counters do not jitter', () {
+      for (final scale in [FluiTypeScale.compact, FluiTypeScale.wide]) {
+        expect(
+          scale.numeralHero.fontFeatures,
+          contains(const FontFeature.tabularFigures()),
+        );
+      }
     });
 
     test('labels are rendered uppercase', () {

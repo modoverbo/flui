@@ -10,6 +10,16 @@ enum SkillColor { voice, fluency, vocabulary, progress, story, coaching }
 abstract final class FluiColors {
   static const ink = Color(0xFF151426);
   static const paper = Color(0xFFFFF9F2);
+
+  // Decorative "skill" palette (skill-category tones for bento grids,
+  // gradients and chip fills across features/). Retired from
+  // `ColorScheme.primary/secondary/tertiary` in `flui_theme.dart` per
+  // docs/redesign/01-design-system.md §0 — it never was the founder's
+  // multicolour-by-theme decision, and the 28 theme colours in
+  // `flui_theme_colors.dart` are a separate, dedicated token group. Kept
+  // here because it is still live in several feature screens; retiring it
+  // fully is a screen-level change, out of scope for the design-tokens
+  // phase.
   static const electricBlue = Color(0xFF536DFF);
   static const aqua = Color(0xFF46D9D0);
   static const coral = Color(0xFFFF6B61);
@@ -27,10 +37,10 @@ abstract final class FluiColors {
   };
 
   // Brand colors.
-  static const cream = paper;
+  static const Color cream = paper;
   static const greenDeep = Color(0xFF0B3D34);
   static const greenSecondary = Color(0xFF165A4B);
-  static const charcoal = ink;
+  static const Color charcoal = ink;
   static const yellowElectric = Color(0xFFFFD60A);
   static const gray = Color(0xFF687280);
 
@@ -62,7 +72,7 @@ abstract final class FluiColors {
   static const amber = Color(0xFFB26A00);
 
   /// Dark surface for the progress area ("Tu progreso").
-  static const progressSurface = ink;
+  static const Color progressSurface = ink;
 
   /// Center of the green plate gradient (see [plateEdge]).
   static const Color plateCenter = electricBlue;

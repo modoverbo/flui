@@ -6,20 +6,27 @@ import 'package:material_ui/material_ui.dart';
 
 abstract final class FluiTheme {
   /// The app theme: cream background, deep green actions, charcoal text.
+  ///
+  /// `ColorScheme.primary/secondary/tertiary` point at the neutral
+  /// editorial base (`greenDeep`/`greenSecondary`/`yellowElectric`), never
+  /// at the "skill" palette — retired from here per
+  /// `docs/redesign/01-design-system.md` §0. That palette stays live in
+  /// [FluiColors] for the decorative surfaces that still key off individual
+  /// hues directly (bento tones, gradients, chip fills).
   static ThemeData light() {
     const scheme = ColorScheme(
       brightness: Brightness.light,
-      primary: FluiColors.electricBlue,
+      primary: FluiColors.greenDeep,
       onPrimary: FluiColors.cream,
-      primaryContainer: FluiColors.lavender,
-      onPrimaryContainer: FluiColors.ink,
-      secondary: FluiColors.aqua,
-      onSecondary: FluiColors.ink,
-      secondaryContainer: FluiColors.softPink,
-      onSecondaryContainer: FluiColors.ink,
-      tertiary: FluiColors.acidLime,
+      primaryContainer: FluiColors.greenTint,
+      onPrimaryContainer: FluiColors.greenDeep,
+      secondary: FluiColors.greenSecondary,
+      onSecondary: FluiColors.cream,
+      secondaryContainer: FluiColors.greenTint,
+      onSecondaryContainer: FluiColors.greenDeep,
+      tertiary: FluiColors.yellowElectric,
       onTertiary: FluiColors.charcoal,
-      tertiaryContainer: FluiColors.acidLime,
+      tertiaryContainer: FluiColors.yellowTint,
       onTertiaryContainer: FluiColors.charcoal,
       error: FluiColors.alert,
       onError: FluiColors.cream,

@@ -55,10 +55,10 @@ out, income or "99%" claims, and the "#SinMuletillas" trademark.
 
 | Token | Hex | Role | Share |
 |-------|-----|------|------:|
-| `cream` | `#F8F8F6` | App background, surfaces | 60% |
+| `cream` | `#FFF9F2` | App background, surfaces | 60% |
 | `greenDeep` | `#0B3D34` | Primary brand color, headers, primary buttons, "Tuya" | 25% (with `greenSecondary`) |
 | `greenSecondary` | `#165A4B` | Secondary surfaces, "Practica", pressed states | (included above) |
-| `charcoal` | `#0F0F0F` | Primary text, icons | 10% |
+| `charcoal` | `#151426` | Primary text, icons | 10% |
 | `yellowElectric` | `#FFD60A` | Single highlight per screen, "Nueva", celebration | 5% |
 | `gray` | `#687280` | Secondary text on cream only | as needed |
 | `creamMuted` | `#B9C4BF` | Secondary text on any green surface | as needed |
