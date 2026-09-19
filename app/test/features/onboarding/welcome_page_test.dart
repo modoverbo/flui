@@ -84,4 +84,19 @@ void main() {
 
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets(
+    'a viewport shorter than the dock never throws negative constraints',
+    (tester) async {
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.welcome,
+        page: const WelcomePage(),
+        surfaceSize: const Size(360, 120),
+      );
+
+      expect(tester.takeException(), isNull);
+      expect(find.text('Empezar'), findsOneWidget);
+    },
+  );
 }

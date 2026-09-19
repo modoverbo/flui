@@ -1,8 +1,10 @@
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
+import 'package:flui/shared/widgets/choice_chips.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -81,13 +83,16 @@ void main() {
       // The filter chip keeps sentence case; the state chip is set in caps.
       expect(find.text('Tuya'), findsOneWidget);
       expect(find.text('TUYA'), findsOneWidget);
+      // Filters are editorial chips, never Material's native ChoiceChip.
+      expect(find.byType(ChoiceChip), findsNothing);
+      expect(find.widgetWithText(FluiChoiceChip, 'Tuya'), findsOneWidget);
 
-      await tester.tap(find.widgetWithText(ChoiceChip, 'Tuya'));
+      await tester.tap(find.widgetWithText(FluiChoiceChip, 'Tuya'));
       await tester.pumpAndSettle();
       expect(find.text('perspicaz'), findsOneWidget);
       expect(find.text('plantear'), findsNothing);
 
-      await tester.tap(find.widgetWithText(ChoiceChip, 'Practica'));
+      await tester.tap(find.widgetWithText(FluiChoiceChip, 'Practica'));
       await tester.pumpAndSettle();
       expect(find.text('plantear'), findsOneWidget);
       expect(find.text('perspicaz'), findsNothing);
@@ -100,6 +105,26 @@ void main() {
       );
     });
 
+    testWidgets('each card is tinted by its own resolved theme colour', (
+      tester,
+    ) async {
+      await pump(tester, location: AppRoutes.words, page: const WordsPage());
+
+      // «plantear»'s primary theme is "reuniones": the card resolves the
+      // word's theme id to its slug (themesByIdProvider), then
+      // FluiThemeColors.resolve (never the raw id) — the fix from commit
+      // de5bd47, replicated here.
+      final card = tester.widget<Material>(
+        find
+            .ancestor(
+              of: find.text('plantear'),
+              matching: find.byType(Material),
+            )
+            .first,
+      );
+      expect(card.color, FluiThemeColors.resolve('reuniones').tint);
+    });
+
     testWidgets('filters by theme, and only by themes it has words in', (
       tester,
     ) async {
@@ -107,12 +132,14 @@ void main() {
 
       expect(find.text('Todos los temas'), findsOneWidget);
       // «perspicaz», «plantear» and «matizar» all carry "Reuniones".
-      expect(find.widgetWithText(ChoiceChip, 'Reuniones'), findsOneWidget);
+      expect(find.widgetWithText(FluiChoiceChip, 'Reuniones'), findsOneWidget);
       // No word of the repertoire belongs to these, so no dead chip.
-      expect(find.widgetWithText(ChoiceChip, 'Entrevistas'), findsNothing);
-      expect(find.widgetWithText(ChoiceChip, 'Negociación'), findsNothing);
+      expect(find.widgetWithText(FluiChoiceChip, 'Entrevistas'), findsNothing);
+      expect(find.widgetWithText(FluiChoiceChip, 'Negociación'), findsNothing);
 
-      await tester.tap(find.widgetWithText(ChoiceChip, 'Reconocer a otros'));
+      await tester.tap(
+        find.widgetWithText(FluiChoiceChip, 'Reconocer a otros'),
+      );
       await tester.pumpAndSettle();
       expect(find.text('perspicaz'), findsOneWidget);
       expect(find.text('plantear'), findsNothing);
@@ -124,9 +151,11 @@ void main() {
     ) async {
       await pump(tester, location: AppRoutes.words, page: const WordsPage());
 
-      await tester.tap(find.widgetWithText(ChoiceChip, 'Reconocer a otros'));
+      await tester.tap(
+        find.widgetWithText(FluiChoiceChip, 'Reconocer a otros'),
+      );
       await tester.pumpAndSettle();
-      await tester.tap(find.widgetWithText(ChoiceChip, 'Practica'));
+      await tester.tap(find.widgetWithText(FluiChoiceChip, 'Practica'));
       await tester.pumpAndSettle();
 
       expect(
@@ -142,6 +171,24 @@ void main() {
       expect(find.text('Tu repertorio empieza hoy.'), findsOneWidget);
       expect(find.text('Todos los temas'), findsNothing);
     });
+
+    testWidgets(
+      'renders without overflow at 1.3x text scale on a 360px phone',
+      (tester) async {
+        scaleText(tester, 1.3);
+        reduceMotion(tester);
+        await pumpRoutedPage(
+          tester,
+          location: AppRoutes.words,
+          page: const WordsPage(),
+          overrides: fakes.overrides,
+          surfaceSize: const Size(360, 900),
+        );
+        await tester.pumpAndSettle();
+
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 
   group('word detail', () {
@@ -154,6 +201,18 @@ void main() {
       );
 
       expect(find.text('plantear'), findsOneWidget);
+      // The hero: the word itself, tinted by its own resolved theme colour.
+      expect(find.byKey(const Key('wordHero')), findsOneWidget);
+      final hero = tester.widget<DecoratedBox>(
+        find
+            .descendant(
+              of: find.byKey(const Key('wordHero')),
+              matching: find.byType(DecoratedBox),
+            )
+            .first,
+      );
+      final decoration = hero.decoration as BoxDecoration;
+      expect(decoration.color, FluiThemeColors.resolve('reuniones').tint);
       expect(find.text('ASÍ SE USA'), findsOneWidget);
       expect(find.text('REEMPLAZA'), findsWidgets);
       expect(find.text('CUÁNDO NO USARLA'), findsOneWidget);
@@ -205,5 +264,23 @@ void main() {
       expect(find.text('EN CONTEXTO'), findsOneWidget);
       expect(find.byType(ReadingsCarousel), findsOneWidget);
     });
+
+    testWidgets(
+      'renders without overflow at 1.3x text scale on a 360px phone',
+      (tester) async {
+        scaleText(tester, 1.3);
+        reduceMotion(tester);
+        await pumpRoutedPage(
+          tester,
+          location: AppRoutes.wordDetail(plantear.id),
+          page: WordDetailPage(wordId: plantear.id),
+          overrides: fakes.overrides,
+          surfaceSize: const Size(360, 900),
+        );
+        await tester.pumpAndSettle();
+
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

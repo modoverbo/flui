@@ -17,12 +17,19 @@ abstract final class AppRoutes {
   static const paywall = '/paywall';
   static const checkoutReturn = '/checkout/return';
 
-  // App shell (signed in with access): three tabs.
+  // App shell (signed in with access): four tabs.
   static const today = '/today';
   static const timeBudget = '/today/time';
   static const words = '/words';
   static const progress = '/progress';
+
+  /// Habla's tab landing: the challenge's own `ready` phase.
   static const speakingChallenge = '/speaking/challenge';
+
+  /// The challenge itself (recording through comparison), nested under
+  /// [speakingChallenge] but rendered full screen on the root navigator —
+  /// the same take-over-from-a-tab pattern as `/today/time`.
+  static const speakingChallengeLive = '$speakingChallenge/live';
 
   /// Was a tab of its own. "Repaso extra" now lives on Hoy, and the scenes
   /// live in the word detail, so both redirect instead of 404-ing old links.

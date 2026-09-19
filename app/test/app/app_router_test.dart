@@ -165,4 +165,59 @@ void main() {
 
     expect(location(harness), AppRoutes.welcome);
   });
+
+  group('Habla, the fourth shell branch', () {
+    testWidgets(
+      'the old /speaking/challenge deep link still resolves, inside the shell',
+      (tester) async {
+        final harness = AppHarness(signedInAs: ana, access: trialing);
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.speakingChallenge,
+          arrange: (h) => h.planToday(),
+        );
+
+        expect(location(harness), AppRoutes.speakingChallenge);
+        // Still inside the shell: the tab bar renders, Habla selected, and
+        // the landing content is the challenge's own "ready" phase.
+        expect(find.byType(NavigationBar), findsOneWidget);
+        expect(find.text('Habla'), findsOneWidget);
+        expect(find.text('Empezar a hablar'), findsOneWidget);
+      },
+    );
+
+    testWidgets('switching to Habla from another tab lands on "ready"', (
+      tester,
+    ) async {
+      final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+
+      expect(location(harness), AppRoutes.today);
+      await tester.tap(find.text('Habla'));
+      await tester.pumpAndSettle();
+
+      expect(location(harness), AppRoutes.speakingChallenge);
+      expect(find.text('Empezar a hablar'), findsOneWidget);
+    });
+
+    testWidgets(
+      'starting a challenge takes over the full screen, like /session',
+      (tester) async {
+        final harness = AppHarness(signedInAs: ana, access: trialing);
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.speakingChallenge,
+          arrange: (h) => h.planToday(),
+        );
+
+        expect(find.byType(NavigationBar), findsOneWidget);
+        await tester.tap(find.text('Empezar a hablar'));
+        await tester.pumpAndSettle();
+
+        expect(location(harness), AppRoutes.speakingChallengeLive);
+        // Full-screen take-over: the shell's own chrome is gone.
+        expect(find.byType(NavigationBar), findsNothing);
+      },
+    );
+  });
 }

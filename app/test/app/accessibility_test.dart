@@ -4,6 +4,7 @@ import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
+import 'package:flui/shared/widgets/choice_chips.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
@@ -85,6 +86,9 @@ void main() {
           ...find.byType(TextButton).evaluate(),
           ...find.byType(IconButton).evaluate(),
           ...find.byType(ChoiceChip).evaluate(),
+          // Palabras' filter chips: an editorial `FluiChoiceChip`, never a
+          // native `ChoiceChip` (`docs/redesign/01-design-system.md`).
+          ...find.byType(FluiChoiceChip).evaluate(),
         ];
         expect(targets, isNotEmpty, reason: 'nothing to check');
         for (final element in targets) {

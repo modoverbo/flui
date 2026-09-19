@@ -141,8 +141,7 @@ class _PaywallFlowState extends State<PaywallFlow> {
                   ),
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
-                      minHeight:
-                          constraints.maxHeight - StickyCtaDock.reservedHeight,
+                      minHeight: StickyCtaDock.contentMinHeight(constraints),
                     ),
                     child: Center(
                       child: PageFrame.column(

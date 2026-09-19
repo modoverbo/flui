@@ -6,8 +6,11 @@ import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/reading/presentation/providers/context_readings.dart';
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
+import 'package:flui/features/themes/domain/theme.dart';
+import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/mastery_meter_view.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/word_detail_view.dart';
@@ -23,7 +26,9 @@ import 'package:flui/shared/widgets/sticky_cta_dock.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:material_ui/material_ui.dart';
+// The domain entity is called Theme, like Flutter's inherited widget; this
+// screen needs the entity, never the widget.
+import 'package:material_ui/material_ui.dart' hide Theme;
 
 /// `/words/:wordId`: pattern P1 — the word owns the top of the screen, the
 /// rail shows how it is used, and "En contexto" lives here now.
@@ -36,11 +41,13 @@ class WordDetailPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final entry = ref.watch(wordEntryProvider(wordId));
+    final themesById = ref.watch(themesByIdProvider).value;
     return Scaffold(
       body: switch (entry) {
         AsyncValue(hasValue: true, :final WordEntry value) => _Detail(
           entry: value,
           today: ref.watch(clockProvider).localToday(),
+          themesById: themesById,
         ),
         AsyncValue(hasValue: true) || AsyncError() => SafeArea(
           child: PageFrame(
@@ -62,10 +69,31 @@ class WordDetailPage extends ConsumerWidget {
 }
 
 class _Detail extends StatelessWidget {
-  const new({required this.entry, required this.today});
+  const new({
+    required this.entry,
+    required this.today,
+    required this.themesById,
+  });
 
   final WordEntry entry;
   final LocalDate today;
+
+  /// The taxonomy, to resolve this word's own theme colour. `null` while
+  /// still loading — the hero simply keeps the brand plate until it
+  /// resolves.
+  final Map<String, Theme>? themesById;
+
+  /// This word's own resolved theme colour (id -> slug ->
+  /// [FluiThemeColors.resolve]).
+  ///
+  /// Never resolves the raw theme id directly: `FluiThemeColors.resolve`
+  /// only recognises slugs, and a raw id would silently fall back to the
+  /// neutral colour (the bug fixed in commit de5bd47 for the session card;
+  /// replicated as a fix here, not repeated as a bug).
+  FluiThemeColor? get _themeColor {
+    final slug = themesById?[entry.word.themeIds.firstOrNull]?.slug;
+    return slug == null ? null : FluiThemeColors.resolve(slug);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +106,10 @@ class _Detail extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(
           child: WordHeroPlate(
+            key: const Key('wordHero'),
             word: word,
             badge: StateChip(state: entry.progress.state.chipKind),
+            themeColor: _themeColor,
           ),
         ),
         SliverToBoxAdapter(child: SizedBox(height: layout.blockGap)),

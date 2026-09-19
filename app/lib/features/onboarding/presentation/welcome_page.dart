@@ -57,8 +57,7 @@ class WelcomeView extends StatelessWidget {
                 ),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(
-                    minHeight:
-                        constraints.maxHeight - StickyCtaDock.reservedHeight,
+                    minHeight: StickyCtaDock.contentMinHeight(constraints),
                   ),
                   child: IntrinsicHeight(
                     child: PageFrame(

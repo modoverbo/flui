@@ -4,6 +4,7 @@ import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_surfaces.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/highlighted_text.dart';
 import 'package:flui/shared/motion/reveal_lines.dart';
@@ -16,7 +17,13 @@ import 'package:material_ui/material_ui.dart';
 /// Pattern P1, the hero plate: the word owns the top of the screen at
 /// `wordHero`, on the green plate, and everything else is support below it.
 class WordHeroPlate extends StatelessWidget {
-  const new({required this.word, super.key, this.badge, this.reveal = true});
+  const new({
+    required this.word,
+    super.key,
+    this.badge,
+    this.reveal = true,
+    this.themeColor,
+  });
 
   final Word word;
 
@@ -26,6 +33,18 @@ class WordHeroPlate extends StatelessWidget {
   /// Animates the word in. Off when the word is already on screen.
   final bool reveal;
 
+  /// This word's own resolved theme colour (id -> slug ->
+  /// [FluiThemeColors.resolve]).
+  ///
+  /// `null` for the in-session Discover card (`WordDetailView`, whose
+  /// `TrainingCard` shell already carries its own theme accent): the plate
+  /// keeps the brand green gradient there, unchanged. The standalone word
+  /// detail screen passes it, so the plate becomes the theme's light tint
+  /// (`ink` on a 12 % mix stays AAA-readable for every theme, per
+  /// `flui_theme_colors_test.dart`) with `ink` text, so the word visibly
+  /// belongs to its theme.
+  final FluiThemeColor? themeColor;
+
   /// Share of the viewport the plate claims.
   static const double viewportShare = 0.55;
 
@@ -33,6 +52,8 @@ class WordHeroPlate extends StatelessWidget {
   Widget build(BuildContext context) {
     final type = context.type;
     final badge = this.badge;
+    final themeColor = this.themeColor;
+    final onColor = themeColor == null ? FluiColors.cream : FluiColors.ink;
     final minHeight = MediaQuery.sizeOf(context).height * viewportShare;
 
     final lines = <Widget>[
@@ -43,64 +64,73 @@ class WordHeroPlate extends StatelessWidget {
         ),
       Semantics(
         header: true,
-        child: Text(
-          word.lemma,
-          style: type.wordHero.copyWith(color: FluiColors.cream),
-        ),
+        child: Text(word.lemma, style: type.wordHero.copyWith(color: onColor)),
       ),
       Padding(
         padding: const EdgeInsets.only(top: FluiSpacing.sm),
-        child: _Pronunciation(word: word),
+        child: _Pronunciation(word: word, onColor: onColor),
       ),
       Padding(
         padding: const EdgeInsets.only(top: FluiSpacing.lg),
         child: Text(
           word.explanation,
-          style: type.bodyL.copyWith(color: FluiColors.cream),
+          style: type.bodyL.copyWith(color: onColor),
         ),
       ),
     ];
 
-    return FluiPlate.fullBleed(
-      child: SafeArea(
-        bottom: false,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(minHeight: minHeight),
-          child: PageFrame(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: FluiSpacing.xl),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  if (reveal)
-                    RevealLines(children: lines)
-                  else
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      mainAxisSize: MainAxisSize.min,
-                      children: lines,
-                    ),
-                ],
-              ),
+    final content = SafeArea(
+      bottom: false,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(minHeight: minHeight),
+        child: PageFrame(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: FluiSpacing.xl),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                if (reveal)
+                  RevealLines(children: lines)
+                else
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisSize: MainAxisSize.min,
+                    children: lines,
+                  ),
+              ],
             ),
           ),
         ),
       ),
     );
+
+    return themeColor == null
+        ? FluiPlate.fullBleed(child: content)
+        : DecoratedBox(
+            decoration: BoxDecoration(color: themeColor.tint),
+            child: content,
+          );
   }
 }
 
 /// Syllables with the stress marked, then the IPA, in tabular figures.
 class _Pronunciation extends StatelessWidget {
-  const new({required this.word});
+  const new({required this.word, this.onColor = FluiColors.cream});
 
   final Word word;
+
+  /// The hero's text colour: `cream` on the brand plate, `ink` on a theme
+  /// tint. The muted variant on `ink` is plain `ink` too — `creamMuted` is
+  /// only proven readable on the dark plate, and `gray` on a theme tint is
+  /// not a verified AA pair (`flui_color_rules.dart`).
+  final Color onColor;
 
   @override
   Widget build(BuildContext context) {
     final ipa = word.ipaLatam ?? word.ipaEs;
-    final style = context.type.phonetic.copyWith(color: FluiColors.creamMuted);
+    final muted = onColor == FluiColors.cream ? FluiColors.creamMuted : onColor;
+    final style = context.type.phonetic.copyWith(color: muted);
     return Semantics(
       label: context.l10n.wordSyllablesSemantics(word.syllables.join('-')),
       excludeSemantics: true,
@@ -118,7 +148,7 @@ class _Pronunciation extends StatelessWidget {
                     style: index + 1 == word.stressedSyllable
                         ? style.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: FluiColors.cream,
+                            color: onColor,
                           )
                         : null,
                   ),

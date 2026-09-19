@@ -129,8 +129,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
                   ),
                   child: ConstrainedBox(
                     constraints: BoxConstraints(
-                      minHeight:
-                          constraints.maxHeight - StickyCtaDock.reservedHeight,
+                      minHeight: StickyCtaDock.contentMinHeight(constraints),
                     ),
                     child: Center(child: PageFrame.column(child: body)),
                   ),

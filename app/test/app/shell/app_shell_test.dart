@@ -5,7 +5,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../helpers/pump_app.dart';
 
 void main() {
-  const labels = ['Hoy', 'Palabras', 'Tu progreso'];
+  const labels = ['Hoy', 'Palabras', 'Habla', 'Tu progreso'];
 
   Future<List<int>> pumpShell(WidgetTester tester, Size size) async {
     final selected = <int>[];
@@ -20,21 +20,24 @@ void main() {
     return selected;
   }
 
-  testWidgets('phones use a bottom navigation bar with 3 destinations', (
+  testWidgets('phones use a bottom navigation bar with 4 destinations', (
     tester,
   ) async {
     final selected = await pumpShell(tester, const Size(400, 800));
 
     expect(find.byType(NavigationBar), findsOneWidget);
     expect(find.byType(NavigationRail), findsNothing);
-    expect(find.byType(NavigationDestination), findsNWidgets(3));
+    expect(find.byType(NavigationDestination), findsNWidgets(4));
     for (final label in labels) {
       expect(find.text(label), findsOneWidget);
     }
 
-    await tester.tap(find.text('Tu progreso'));
+    await tester.tap(find.text('Habla'));
     expect(selected, [2]);
     expect(find.text('contenido'), findsOneWidget);
+
+    await tester.tap(find.text('Tu progreso'));
+    expect(selected, [2, 3]);
   });
 
   testWidgets('wide screens use a navigation rail', (tester) async {
@@ -55,6 +58,6 @@ void main() {
 
     final rail = tester.widget<NavigationRail>(find.byType(NavigationRail));
     expect(rail.extended, isFalse);
-    expect(rail.destinations, hasLength(3));
+    expect(rail.destinations, hasLength(4));
   });
 }

@@ -106,14 +106,6 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
       key: state.pageKey,
     ),
   ),
-  GoRoute(
-    path: AppRoutes.speakingChallenge,
-    parentNavigatorKey: rootKey,
-    pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
-      const SpeakingChallengePage(),
-      key: state.pageKey,
-    ),
-  ),
   StatefulShellRoute.indexedStack(
     parentNavigatorKey: rootKey,
     builder: (context, state, navigationShell) =>
@@ -144,6 +136,29 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
                 path: ':wordId',
                 builder: (_, state) =>
                     WordDetailPage(wordId: state.pathParameters['wordId']!),
+              ),
+            ],
+          ),
+        ],
+      ),
+      StatefulShellBranch(
+        routes: [
+          // Habla: selecting the tab always lands on the challenge's own
+          // "ready" phase. Starting a challenge goes to `.../live`, a
+          // full-screen take-over on the root navigator, same as
+          // `/today/time` above — the shell chrome disappears exactly like
+          // it does entering `/session` from `/today`.
+          GoRoute(
+            path: AppRoutes.speakingChallenge,
+            builder: (_, _) => const SpeakingTabPage(),
+            routes: [
+              GoRoute(
+                path: 'live',
+                parentNavigatorKey: rootKey,
+                pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
+                  const SpeakingChallengePage(autoStart: true),
+                  key: state.pageKey,
+                ),
               ),
             ],
           ),

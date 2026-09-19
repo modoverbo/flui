@@ -26,29 +26,71 @@ class ChoiceChips<T> extends StatelessWidget {
       runSpacing: FluiSpacing.xs,
       children: [
         for (final value in values)
-          ChoiceChip(
-            label: Text(labelOf(value)),
+          FluiChoiceChip(
+            label: labelOf(value),
             selected: value == selected,
-            onSelected: (_) => onSelected(value),
-            showCheckmark: false,
-            labelStyle: FluiTypeScale.compact.body.copyWith(
-              fontWeight: FontWeight.w600,
-              color: FluiColors.ink,
-            ),
-            labelPadding: const EdgeInsets.symmetric(
-              horizontal: FluiSpacing.xs,
-            ),
-            selectedColor: FluiColors.acidLime,
-            backgroundColor: FluiColors.softPink,
-            side: BorderSide(
-              color: value == selected ? FluiColors.ink : FluiColors.ink,
-            ),
-            shape: const RoundedRectangleBorder(
-              borderRadius: FluiRadii.chipAll,
-            ),
-            materialTapTargetSize: MaterialTapTargetSize.padded,
+            onTap: () => onSelected(value),
           ),
       ],
+    );
+  }
+}
+
+/// One editorial filter chip: a flat, bordered, ink-outlined rectangle
+/// (`FluiRadii.chip`), never Material's own elevated `ChoiceChip`. Flui
+/// chips read as part of the page's editorial type, not a native form
+/// control dropped on top of it.
+class FluiChoiceChip extends StatelessWidget {
+  const new({
+    required this.label,
+    required this.selected,
+    required this.onTap,
+    super.key,
+  });
+
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Semantics(
+      button: true,
+      selected: selected,
+      label: label,
+      excludeSemantics: true,
+      child: Material(
+        color: selected ? FluiColors.acidLime : FluiColors.surface,
+        shape: const RoundedRectangleBorder(
+          borderRadius: FluiRadii.chipAll,
+          side: BorderSide(color: FluiColors.ink),
+        ),
+        clipBehavior: Clip.antiAlias,
+        child: InkWell(
+          onTap: onTap,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              minHeight: FluiSpacing.minTapTarget,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: FluiSpacing.sm,
+                vertical: FluiSpacing.xs,
+              ),
+              child: Center(
+                widthFactor: 1,
+                child: Text(
+                  label,
+                  style: FluiTypeScale.compact.body.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: FluiColors.ink,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flui/core/theme/flui_colors.dart';
-import 'package:flui/features/vocabulary/presentation/words_page.dart';
 import 'package:flui/shared/widgets/bento_grid.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -14,15 +13,6 @@ void main() {
     expect(bentoToneColor(BentoTone.aqua), FluiColors.aqua);
     expect(bentoToneColor(BentoTone.pink), FluiColors.softPink);
     expect(bentoToneColor(BentoTone.lavender), FluiColors.lavender);
-  });
-
-  test('word cards rotate through expressive colors', () {
-    expect(wordCardColor(0), FluiColors.softPink);
-    expect(wordCardColor(1), FluiColors.aqua);
-    expect(wordCardColor(2), FluiColors.acidLime);
-    expect(wordCardColor(3), FluiColors.coral);
-    expect(wordCardColor(4), FluiColors.lavender);
-    expect(wordCardColor(5), FluiColors.softPink);
   });
 
   testWidgets('cards use the expressive ink outline and organic corners', (

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/speaking/data/record_speech_recorder.dart';
@@ -18,15 +19,65 @@ import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/speaking_bubble.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 enum _Phase { ready, recording, analyzing, feedback, comparison, denied, error }
 
+/// Habla's tab landing: the challenge's own `ready` phase (prompt, timer
+/// pill, mic button), promoted out of the full-screen challenge so
+/// selecting the tab always lands here
+/// (`docs/redesign/02-navigation-model.md` Decision A). Starting a
+/// challenge goes to [AppRoutes.speakingChallengeLive] — the unchanged
+/// [SpeakingChallengePage] state machine — which take over the full screen
+/// on the root navigator, the same nested-under-a-branch pattern
+/// `/today/time` already uses (`context.go`, not `context.push`: a pushed
+/// location isn't resolved against a `parentNavigatorKey` route the same
+/// way a full `go` is). See `app_router.dart`.
+class SpeakingTabPage extends StatelessWidget {
+  const new({super.key});
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    backgroundColor: FluiColors.cream,
+    appBar: AppBar(
+      backgroundColor: Colors.transparent,
+      surfaceTintColor: Colors.transparent,
+      title: const Text('Entrenamiento oral'),
+      centerTitle: true,
+    ),
+    body: SafeArea(
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 620),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(24, 12, 24, 36),
+            child: _ReadyView(
+              onStart: () => context.go(AppRoutes.speakingChallengeLive),
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
+}
+
 class SpeakingChallengePage extends ConsumerStatefulWidget {
-  const new({this.recorder, this.analysisRepository, super.key});
+  const new({
+    this.recorder,
+    this.analysisRepository,
+    this.autoStart = false,
+    super.key,
+  });
 
   final SpeechRecorder? recorder;
   final SpeechAnalysisRepository? analysisRepository;
+
+  /// Starts recording as soon as this page mounts, instead of waiting for a
+  /// tap on the mic button. Set when this page is reached from Habla's tab
+  /// landing (the mic tap already happened there), so the take-over goes
+  /// straight to recording rather than showing a redundant second "ready".
+  final bool autoStart;
 
   @override
   ConsumerState<SpeakingChallengePage> createState() =>
@@ -53,6 +104,16 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   late SpeakingMetrics _currentMetrics;
   late SpeakingFeedback _feedback;
   late SpeechTranscript _currentTranscript;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.autoStart) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) unawaited(_start());
+      });
+    }
+  }
 
   @override
   void dispose() {

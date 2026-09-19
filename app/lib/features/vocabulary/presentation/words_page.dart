@@ -6,6 +6,7 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
@@ -178,10 +179,10 @@ class _WordList extends StatelessWidget {
             spacing: FluiSpacing.sm,
             runSpacing: FluiSpacing.sm,
             children: [
-              for (final (index, entry) in visible.indexed)
+              for (final entry in visible)
                 LayoutBuilder(
                   builder: (context, _) =>
-                      _WordRow(entry: entry, columns: columns, index: index),
+                      _WordRow(entry: entry, columns: columns, themes: themes),
                 ),
             ],
           ),
@@ -191,11 +192,24 @@ class _WordList extends StatelessWidget {
 }
 
 class _WordRow extends StatelessWidget {
-  const new({required this.entry, required this.columns, required this.index});
+  const new({required this.entry, required this.columns, required this.themes});
 
   final WordEntry entry;
   final int columns;
-  final int index;
+
+  /// The taxonomy, to resolve this word's own theme colour.
+  final Map<String, Theme> themes;
+
+  /// The word's own theme, resolved id -> slug -> [FluiThemeColors.resolve].
+  ///
+  /// Never resolves the raw theme id directly: `FluiThemeColors.resolve`
+  /// only recognises slugs, and a raw id would silently fall back to the
+  /// neutral colour (the bug fixed in commit de5bd47 for the session card;
+  /// replicated as a fix here, not repeated as a bug).
+  FluiThemeColor get _themeColor {
+    final slug = themes[entry.word.themeIds.firstOrNull]?.slug;
+    return FluiThemeColors.resolve(slug ?? '');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -212,7 +226,7 @@ class _WordRow extends StatelessWidget {
       child: SizedBox(
         width: columns == 1 ? double.infinity : width,
         child: Material(
-          color: wordCardColor(index),
+          color: _themeColor.tint,
           shape: const RoundedRectangleBorder(
             borderRadius: FluiRadii.cardAll,
             side: BorderSide(color: FluiColors.ink, width: 1.5),
@@ -256,11 +270,3 @@ class _WordRow extends StatelessWidget {
     );
   }
 }
-
-Color wordCardColor(int index) => const [
-  FluiColors.softPink,
-  FluiColors.aqua,
-  FluiColors.acidLime,
-  FluiColors.coral,
-  FluiColors.lavender,
-][index % 5];

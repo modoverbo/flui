@@ -187,4 +187,15 @@ void main() {
 
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets(
+    'a viewport shorter than the dock never throws negative constraints',
+    (tester) async {
+      reduceMotion(tester);
+      await pumpIntro(tester, size: const Size(360, 120));
+
+      expect(tester.takeException(), isNull);
+      expect(find.text('Seguir'), findsOneWidget);
+    },
+  );
 }

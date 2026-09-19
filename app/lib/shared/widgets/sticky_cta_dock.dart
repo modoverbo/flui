@@ -30,6 +30,18 @@ class StickyCtaDock extends StatelessWidget {
   /// Bottom padding a scroll view needs so its last line clears the dock.
   static const double reservedHeight = 128;
 
+  /// `minHeight` for content above the dock, given the viewport
+  /// [constraints].
+  ///
+  /// Clamped so a viewport shorter than [reservedHeight] never produces a
+  /// negative minimum height, and an unbounded (infinite) `maxHeight` never
+  /// produces an infinite one.
+  static double contentMinHeight(BoxConstraints constraints) {
+    final maxHeight = constraints.maxHeight;
+    if (!maxHeight.isFinite) return 0;
+    return (maxHeight - reservedHeight).clamp(0, double.infinity);
+  }
+
   @override
   Widget build(BuildContext context) {
     final background = onDark ? FluiColors.greenDeep : FluiColors.cream;
