@@ -97,6 +97,25 @@ join public.themes t on t.slug = v.theme_slug;
         'zanjar': ['negociacion'],
       });
     });
+
+    test('a word absent from word_themes carries no entry', () {
+      const sql = '''
+insert into public.word_themes (word_id, theme_id, relevance, sort_order)
+select w.id, t.id, v.relevance, w.sort_order
+from (values
+  ('perspicaz', 'reuniones', 3)
+) as v (word_slug, theme_slug, relevance)
+join public.words w on w.slug = v.word_slug
+join public.themes t on t.slug = v.theme_slug;
+''';
+
+      final slugs = parseSeedWordThemeSlugs(sql);
+
+      // 'zanjar' never appears in word_themes: callers must default it to
+      // an empty list themselves (seed_themes.dart does, via `?? const []`).
+      expect(slugs.containsKey('zanjar'), isFalse);
+      expect(slugs['perspicaz'], ['reuniones']);
+    });
   });
 
   group('renderSeedFixture', () {
@@ -148,6 +167,15 @@ join public.themes t on t.slug = v.theme_slug;
 
       expect(rendered, contains('const seedWordThemeSlugs'));
       expect(rendered, contains("'perspicaz': ['reuniones', 'entrevistas'],"));
+    });
+
+    test('omits a themeless word from the theme-slug map entirely', () {
+      // A `{'perspicaz': []}` entry would be truthful but wasteful: every
+      // caller already treats a missing key as "no theme" (`?? const []`).
+      final rendered = renderSeedFixture([wordWith()]);
+
+      expect(rendered, contains('const seedWordThemeSlugs'));
+      expect(rendered, isNot(contains("'perspicaz':")));
     });
   });
 

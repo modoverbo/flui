@@ -1,14 +1,33 @@
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/themes/data/dtos/theme_dto.dart';
 import 'package:flui/features/themes/data/fake/seed_themes.dart';
 import 'package:flui/features/themes/data/fake_theme_repository.dart';
 import 'package:flui/features/themes/data/supabase_theme_repository.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
+import 'package:flui/features/vocabulary/domain/word.dart';
+import 'package:flui/shared/widgets/training_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
+import 'package:material_ui/material_ui.dart' hide Theme;
 
 import '../../../helpers/supabase_recorder.dart';
+
+/// The taxonomy lookup a presentation layer needs to go from a `Word`'s
+/// [Word.themeIds] (theme ids, `word_themes.theme_id`) to the slug
+/// `TrainingCard`/`FluiThemeColors.resolve` key on — the same lookup the
+/// Supabase-backed path does through `themesByIdProvider`.
+final Map<String, Theme> _fakeThemesById = {
+  for (final theme in [...seedThemes, ...unpublishedSeedThemes])
+    theme.id: theme,
+};
+
+/// A word's primary (most relevant) theme slug in fake mode, or `null` when
+/// it has none — mirrors how the Supabase path resolves a theme id to a
+/// slug via the theme taxonomy instead of assuming ids and slugs coincide.
+String? _primaryThemeSlug(Word word) =>
+    _fakeThemesById[word.themeIds.firstOrNull]?.slug;
 
 Map<String, Object?> themeRow() => {
   'id': 't1',
@@ -169,6 +188,56 @@ void main() {
       expect(seedWords.every((word) => word.themeIds.isEmpty), isTrue);
       expect(seedWords.every((word) => word.semanticSetId == null), isTrue);
       expect(seedWordsWithThemes, hasLength(seedWords.length));
+    });
+  });
+
+  group('fake-mode word to theme colour resolution', () {
+    Color? edgeColor(WidgetTester tester) {
+      final box = tester.widget<DecoratedBox>(find.byType(DecoratedBox).first);
+      return (box.decoration as BoxDecoration).color;
+    }
+
+    testWidgets(
+      'a fake-mode word with a theme resolves to a non-fallback colour',
+      (tester) async {
+        final word = seedWordsWithThemes.firstWhere(
+          (word) => word.themeIds.isNotEmpty,
+        );
+        final slug = _primaryThemeSlug(word);
+        expect(slug, isNotNull, reason: 'seed word must resolve a theme');
+
+        await tester.pumpWidget(
+          MaterialApp(
+            home: TrainingCard(themeSlug: slug, child: const SizedBox()),
+          ),
+        );
+
+        expect(edgeColor(tester), isNot(FluiThemeColors.fallback.surface));
+        expect(edgeColor(tester), FluiThemeColors.resolve(slug!).surface);
+      },
+    );
+
+    testWidgets('a themeless fake-mode word still renders safely', (
+      tester,
+    ) async {
+      final themed = seedWordsWithThemes.firstWhere(
+        (word) => word.themeIds.isNotEmpty,
+      );
+      final themeless = themed.copyWith(themeIds: const []);
+
+      expect(_primaryThemeSlug(themeless), isNull);
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: TrainingCard(
+            themeSlug: _primaryThemeSlug(themeless),
+            child: const SizedBox(),
+          ),
+        ),
+      );
+
+      expect(tester.takeException(), isNull);
+      expect(edgeColor(tester), FluiThemeColors.fallback.surface);
     });
   });
 }

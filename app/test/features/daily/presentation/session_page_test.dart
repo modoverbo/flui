@@ -1,11 +1,13 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
 import 'package:flui/features/daily/presentation/session_page.dart';
 import 'package:flui/features/exercises/domain/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
+import 'package:flui/shared/widgets/training_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -312,4 +314,156 @@ void main() {
 
     expect(find.text('Mira cómo suena'), findsOneWidget);
   });
+
+  // `_SessionCardStack` used to pass a word's raw theme *id* (a UUID) to
+  // `TrainingCard.themeSlug`, which only ever matches a slug like
+  // `reuniones` — every card silently fell back to grey. These prove the id
+  // is resolved through `themesByIdProvider` first, mirroring `today_page`.
+
+  testWidgets('the front card resolves its word theme id to the theme slug', (
+    tester,
+  ) async {
+    await planNewWord();
+    await pumpSession(tester);
+
+    final card = tester.widget<TrainingCard>(find.byType(TrainingCard).first);
+    final theme = seedTheme('elogio-reconocimiento');
+
+    expect(card.themeSlug, theme.slug);
+    expect(card.themeSlug, isNot(perspicaz.themeIds.first));
+    expect(
+      FluiThemeColors.resolve(card.themeSlug!).surface,
+      isNot(FluiThemeColors.fallback.surface),
+    );
+  });
+
+  testWidgets('a themeless word still renders the session without throwing', (
+    tester,
+  ) async {
+    final untagged = buildWord(id: 'w-untagged', lemma: 'llano');
+    final localFakes = LearningFakes(words: [untagged]);
+    addTearDown(localFakes.dispose);
+    await localFakes.sessions.saveSession(
+      DailySession(
+        localDate: day(13),
+        minutes: 10,
+        plannedWordIds: [untagged.id],
+      ),
+    );
+    reduceMotion(tester);
+
+    await pumpRoutedPage(
+      tester,
+      location: AppRoutes.session,
+      page: const SessionPage(),
+      otherRoutes: const [AppRoutes.today],
+      overrides: localFakes.overrides,
+      surfaceSize: const Size(400, 860),
+    );
+    await tester.pumpAndSettle();
+
+    expect(tester.takeException(), isNull);
+    final card = tester.widget<TrainingCard>(find.byType(TrainingCard).first);
+    expect(card.themeSlug, isNull);
+  });
+
+  testWidgets(
+    'a theme id missing from the taxonomy falls back safely, without throwing',
+    (tester) async {
+      final ghost = buildWord(
+        id: 'w-ghost',
+        lemma: 'espectro',
+        themeIds: const ['no-such-theme-id'],
+      );
+      final localFakes = LearningFakes(words: [ghost]);
+      addTearDown(localFakes.dispose);
+      await localFakes.sessions.saveSession(
+        DailySession(
+          localDate: day(13),
+          minutes: 10,
+          plannedWordIds: [ghost.id],
+        ),
+      );
+      reduceMotion(tester);
+
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.session,
+        page: const SessionPage(),
+        otherRoutes: const [AppRoutes.today],
+        overrides: localFakes.overrides,
+        surfaceSize: const Size(400, 860),
+      );
+      await tester.pumpAndSettle();
+
+      expect(tester.takeException(), isNull);
+      final card = tester.widget<TrainingCard>(find.byType(TrainingCard).first);
+      expect(card.themeSlug, isNull);
+    },
+  );
+
+  testWidgets(
+    'preview cards resolve their own word theme, not the front card theme',
+    (tester) async {
+      final wordA = buildWord(
+        id: 'w-a',
+        lemma: 'alfa',
+        themeIds: [seedTheme('reuniones').id],
+      );
+      final wordB = buildWord(
+        id: 'w-b',
+        lemma: 'beta',
+        sortOrder: 2,
+        themeIds: [seedTheme('matices-precision').id],
+      );
+      final wordC = buildWord(
+        id: 'w-c',
+        lemma: 'gama',
+        sortOrder: 3,
+        themeIds: [seedTheme('paronimos').id],
+      );
+      final localFakes = LearningFakes(words: [wordA, wordB, wordC]);
+      addTearDown(localFakes.dispose);
+      for (final word in [wordA, wordB, wordC]) {
+        await localFakes.progress.saveProgress(
+          buildProgress(
+            wordId: word.id,
+            nextDueOn: day(13),
+            formRecallDone: true,
+            productionDone: true,
+          ),
+        );
+      }
+      await localFakes.sessions.saveSession(
+        DailySession(
+          localDate: day(13),
+          minutes: 10,
+          reviewWordIds: [wordA.id, wordB.id, wordC.id],
+        ),
+      );
+
+      // Deliberately does not reduce motion: positions 1/2 are only
+      // composited when the real stack is on (`03-card-stack-spec.md` §6).
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.session,
+        page: const SessionPage(),
+        otherRoutes: const [AppRoutes.today],
+        overrides: localFakes.overrides,
+        surfaceSize: const Size(400, 860),
+      );
+      await tester.pumpAndSettle();
+
+      final cards = tester
+          .widgetList<TrainingCard>(find.byType(TrainingCard))
+          .toList();
+      final front = cards.firstWhere((c) => c.position == 0);
+      final preview1 = cards.firstWhere((c) => c.position == 1);
+      final preview2 = cards.firstWhere((c) => c.position == 2);
+
+      expect(front.themeSlug, 'reuniones');
+      expect(preview1.themeSlug, 'matices-precision');
+      expect(preview2.themeSlug, 'paronimos');
+    },
+  );
 }

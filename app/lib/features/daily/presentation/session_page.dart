@@ -18,6 +18,8 @@ import 'package:flui/features/exercises/presentation/widgets/production_view.dar
 import 'package:flui/features/profile/domain/streak_calculator.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
+import 'package:flui/features/themes/domain/theme.dart' as taxonomy;
+import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/word_detail_view.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
@@ -190,7 +192,7 @@ class _SessionBody extends StatelessWidget {
 /// each `SessionStep`; it hands `CardStack` already-built cards and stops
 /// doing the transition itself. `SessionFlow`/`SessionController` are read
 /// exactly as they were before — nothing here changes their behaviour.
-class _SessionCardStack extends StatelessWidget {
+class _SessionCardStack extends ConsumerWidget {
   const new({
     required this.state,
     required this.controller,
@@ -201,15 +203,27 @@ class _SessionCardStack extends StatelessWidget {
   final SessionController controller;
   final VoidCallback onExit;
 
+  /// Resolves a word's primary theme *id* to its taxonomy *slug*
+  /// (`TrainingCard.themeSlug` only ever matches a slug, e.g. `reuniones` —
+  /// never the raw UUID). Safe by construction: a themeless word, a
+  /// taxonomy still loading, or an id no longer in the taxonomy all resolve
+  /// to `null`, which `TrainingCard` already renders as its neutral
+  /// fallback (mirrors `today_page.dart`'s `_TodayTheme`).
+  static String? _themeSlugOf(
+    Word? word,
+    Map<String, taxonomy.Theme>? themesById,
+  ) => themesById?[word?.themeIds.firstOrNull]?.slug;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themesById = ref.watch(themesByIdProvider).value;
     final step = state.step;
     final stepKey = step == null
         ? const ValueKey('summary')
         : ValueKey('${state.flow.index}-${step.runtimeType}');
     final frontCard = TrainingCard(
       key: stepKey,
-      themeSlug: state.word?.themeIds.firstOrNull,
+      themeSlug: _themeSlugOf(state.word, themesById),
       child: _StepContent(state: state, controller: controller, onExit: onExit),
     );
 
@@ -229,7 +243,7 @@ class _SessionCardStack extends StatelessWidget {
             '${state.flow.index + 1 + i}-${lookahead[i].runtimeType}',
           ),
           position: i + 1,
-          themeSlug: state.words[lookahead[i].wordId]?.themeIds.firstOrNull,
+          themeSlug: _themeSlugOf(state.words[lookahead[i].wordId], themesById),
           child: _PreviewCardContent(
             word: state.words[lookahead[i].wordId],
             step: lookahead[i],
