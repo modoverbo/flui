@@ -21,6 +21,7 @@ import 'package:flui/features/reading/presentation/widgets/readings_carousel.dar
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/word_detail_view.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
+import 'package:flui/shared/widgets/card_stack.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
@@ -29,6 +30,7 @@ import 'package:flui/shared/widgets/flui_notice.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
+import 'package:flui/shared/widgets/training_card.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -158,7 +160,7 @@ class _SessionBody extends StatelessWidget {
                     ),
                     const SizedBox(height: FluiSpacing.lg),
                   ],
-                  _StepContent(
+                  _SessionCardStack(
                     state: state,
                     controller: controller,
                     onExit: onExit,
@@ -169,6 +171,104 @@ class _SessionBody extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// Composes the current step (and up to two lookahead steps) into a
+/// `CardStack` (`docs/redesign/03-card-stack-spec.md` §4,
+/// `07-component-hierarchy.md`). This widget owns *which* card represents
+/// each `SessionStep`; it hands `CardStack` already-built cards and stops
+/// doing the transition itself. `SessionFlow`/`SessionController` are read
+/// exactly as they were before — nothing here changes their behaviour.
+class _SessionCardStack extends StatelessWidget {
+  const new({
+    required this.state,
+    required this.controller,
+    required this.onExit,
+  });
+
+  final SessionState state;
+  final SessionController controller;
+  final VoidCallback onExit;
+
+  @override
+  Widget build(BuildContext context) {
+    final step = state.step;
+    final stepKey = step == null
+        ? const ValueKey('summary')
+        : ValueKey('${state.flow.index}-${step.runtimeType}');
+    final frontCard = TrainingCard(
+      key: stepKey,
+      themeSlug: state.word?.themeIds.firstOrNull,
+      child: _StepContent(state: state, controller: controller, onExit: onExit),
+    );
+
+    if (step == null) {
+      // The summary is the stack's terminal card: nothing queued behind it.
+      return CardStack(cards: [frontCard]);
+    }
+
+    final lookahead = state.flow.steps
+        .skip(state.flow.index + 1)
+        .take(2)
+        .toList();
+    final previewCards = [
+      for (var i = 0; i < lookahead.length; i++)
+        TrainingCard(
+          key: ValueKey(
+            '${state.flow.index + 1 + i}-${lookahead[i].runtimeType}',
+          ),
+          position: i + 1,
+          themeSlug: state.words[lookahead[i].wordId]?.themeIds.firstOrNull,
+          child: _PreviewCardContent(word: state.words[lookahead[i].wordId]),
+        ),
+    ];
+
+    // Swipe is only meaningful on read-only steps — nothing to answer, so a
+    // swipe can never let the user skip the exercise itself
+    // (`03-card-stack-spec.md` §2). `FinalCheckStep` only once its cloze is
+    // already resolved: swiping mid-answer would bypass grading.
+    final swipeEnabled = switch (step) {
+      DiscoverStep() || ReadingsStep() || SeedingReadingStep() => true,
+      FinalCheckStep() => state.cloze?.isResolved ?? false,
+      _ => false,
+    };
+    void next() => unawaited(controller.continueStep());
+
+    return CardStack(
+      cards: [frontCard, ...previewCards],
+      swipeEnabled: swipeEnabled,
+      onSwipeAdvance: swipeEnabled ? next : null,
+    );
+  }
+}
+
+/// A lookahead card's content: `SessionController` only materialises the
+/// interactive flow state (`cloze`/`formRecall`/`production`) for the
+/// *current* step, so positions 1/2 cannot host the literal future step
+/// widget without exercising controller internals meant for the current
+/// step only. They render a themed, non-interactive peek instead — already
+/// `IgnorePointer`-wrapped by `CardStack`, consistent with the spec's own
+/// "peeking, not composited beyond position 2" performance rule (§5).
+class _PreviewCardContent extends StatelessWidget {
+  const new({required this.word});
+
+  final Word? word;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(FluiSpacing.ml),
+      child: Align(
+        alignment: Alignment.topLeft,
+        child: Text(
+          word?.lemma ?? '',
+          style: context.type.titleL,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+      ),
     );
   }
 }
