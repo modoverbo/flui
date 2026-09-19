@@ -72,6 +72,13 @@ String emitWords(List<Word> words, {ThemeTaxonomy? taxonomy}) {
   final sortOrders = sortOrdersFor(words);
   final catalogue = Catalogue.of(words);
   if (taxonomy != null) buffer.write(_emitThemes(taxonomy));
+  // Collected across every word and emitted as one statement after the last
+  // word block: `confused_word_id` is a foreign key into `public.words`, and
+  // a confusion can name a word that sorts after the one declaring it. A
+  // per-word `word_confusions` insert would then run before its target
+  // word's row exists, and `supabase db reset` fails the FK check while
+  // loading supabase/seed.sql.
+  final confusionRows = <String>[];
   for (var index = 0; index < words.length; index++) {
     final word = words[index];
     final wordId = word.id ?? deterministicWordId(word.slug);
@@ -111,25 +118,19 @@ String emitWords(List<Word> words, {ThemeTaxonomy? taxonomy}) {
       ..writeln('  ${sqlLiteral(word.semanticSetId)},')
       ..writeln('  $sortOrder,')
       ..writeln('  true')
-      ..writeln(');')
-      ..writeln()
-      ..writeln(
-        'insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)',
-      )
-      ..writeln('values');
-    for (var i = 0; i < word.confusions.length; i++) {
-      final confusion = word.confusions[i];
-      final end = i == word.confusions.length - 1 ? ';' : ',';
+      ..writeln(');');
+
+    for (final confusion in word.confusions) {
       // The link is the declaration the app's interference rule trusts first;
       // it stays null only when the confusable word is not in the catalog.
       final other = catalogue.confusableOf(word, confusion);
       final confusedWordId = other == null
           ? null
           : other.id ?? deterministicWordId(other.slug);
-      buffer.writeln(
+      confusionRows.add(
         '  (${sqlLiteral(wordId)}, ${sqlLiteral(confusion.confusedWith)}, '
         '${sqlLiteral(confusedWordId)}, '
-        '${sqlLiteral(confusion.difference)}, ${sqlLiteral(confusion.memoryTrick)})$end',
+        '${sqlLiteral(confusion.difference)}, ${sqlLiteral(confusion.memoryTrick)})',
       );
     }
 
@@ -202,7 +203,31 @@ String emitWords(List<Word> words, {ThemeTaxonomy? taxonomy}) {
         );
     }
   }
-  buffer.write(_emitWordThemes(words));
+  buffer
+    ..write(_emitWordConfusions(confusionRows))
+    ..write(_emitWordThemes(words));
+  return buffer.toString();
+}
+
+/// The `word_confusions` rows of every word, as one statement placed after
+/// the last word block so every `confused_word_id` foreign key resolves.
+String _emitWordConfusions(List<String> rows) {
+  if (rows.isEmpty) return '';
+
+  final buffer = StringBuffer()
+    ..writeln()
+    ..writeln(_rule)
+    ..writeln('-- Word confusions (content/words/<slug>.yml)')
+    ..writeln(_rule)
+    ..writeln()
+    ..writeln(
+      'insert into public.word_confusions (word_id, confused_with, confused_word_id, difference, memory_trick)',
+    )
+    ..writeln('values');
+  for (var i = 0; i < rows.length; i++) {
+    final end = i == rows.length - 1 ? ';' : ',';
+    buffer.writeln('${rows[i]}$end');
+  }
   return buffer.toString();
 }
 

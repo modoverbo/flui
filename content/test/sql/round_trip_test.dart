@@ -336,6 +336,33 @@ values (
       expect(sqlLiteral("l'ami"), "'l''ami'");
       expect(sqlLiteral(null), 'null');
     });
+
+    test(
+      'inserts word_confusions only after every words insert, even when a '
+      'confusion resolves to a word that sorts later',
+      () {
+        // `word_confusions.confused_word_id` is a foreign key into
+        // `public.words`. `alfa` declares a confusion that resolves to
+        // `beta`, which is emitted after it — a per-word emission order
+        // would insert alfa's confusion row before beta's word row exists,
+        // and `supabase db reset` would fail the FK check while loading
+        // supabase/seed.sql.
+        final sql = emitWords([
+          catalogued('alfa', confusedWith: ['beta']),
+          catalogued('beta'),
+        ]);
+
+        final wordsInserts = RegExp(
+          r'insert into public.words\b',
+        ).allMatches(sql).map((m) => m.start).toList();
+        final confusionsInsert = sql.indexOf(
+          'insert into public.word_confusions',
+        );
+
+        expect(wordsInserts, hasLength(2));
+        expect(confusionsInsert, greaterThan(wordsInserts.last));
+      },
+    );
   });
 
   group('confused_word_id', () {
