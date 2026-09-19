@@ -143,29 +143,38 @@ class _SessionBody extends StatelessWidget {
               ),
             ),
           ),
-        Expanded(
-          child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(vertical: context.layout.blockGap),
-            child: PageFrame.column(
+        if (failure != null)
+          PageFrame.column(
+            child: Padding(
+              padding: EdgeInsets.only(top: context.layout.blockGap),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  if (failure != null) ...[
-                    FluiNotice(message: failureMessage(l10n, failure)),
-                    const SizedBox(height: FluiSpacing.sm),
-                    FluiButton.outline(
-                      label: l10n.commonRetry,
-                      isLoading: state.saving,
-                      onPressed: () => unawaited(controller.retrySave()),
-                    ),
-                    const SizedBox(height: FluiSpacing.lg),
-                  ],
-                  _SessionCardStack(
-                    state: state,
-                    controller: controller,
-                    onExit: onExit,
+                  FluiNotice(message: failureMessage(l10n, failure)),
+                  const SizedBox(height: FluiSpacing.sm),
+                  FluiButton.outline(
+                    label: l10n.commonRetry,
+                    isLoading: state.saving,
+                    onPressed: () => unawaited(controller.retrySave()),
                   ),
                 ],
+              ),
+            ),
+          ),
+        // A fixed, layout-stable area: `CardStack` needs bounded height to
+        // give every card the same stable geometry (`03-card-stack-spec.md`
+        // §1) — a card's own content scrolls inside `TrainingCard` instead
+        // of growing this region (unlike the old unbounded
+        // `SingleChildScrollView` that used to wrap it, which let the front
+        // card size the whole stack and hide the shorter preview cards).
+        Expanded(
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: context.layout.blockGap),
+            child: PageFrame.column(
+              child: _SessionCardStack(
+                state: state,
+                controller: controller,
+                onExit: onExit,
               ),
             ),
           ),
@@ -221,7 +230,10 @@ class _SessionCardStack extends StatelessWidget {
           ),
           position: i + 1,
           themeSlug: state.words[lookahead[i].wordId]?.themeIds.firstOrNull,
-          child: _PreviewCardContent(word: state.words[lookahead[i].wordId]),
+          child: _PreviewCardContent(
+            word: state.words[lookahead[i].wordId],
+            step: lookahead[i],
+          ),
         ),
     ];
 
@@ -252,21 +264,48 @@ class _SessionCardStack extends StatelessWidget {
 /// `IgnorePointer`-wrapped by `CardStack`, consistent with the spec's own
 /// "peeking, not composited beyond position 2" performance rule (§5).
 class _PreviewCardContent extends StatelessWidget {
-  const new({required this.word});
+  const new({required this.word, required this.step});
 
   final Word? word;
+  final SessionStep step;
+
+  /// The step's kind, reusing the same labels its own front-card view
+  /// would show — never anything from the exercise itself (no options, no
+  /// correct answer), just enough to read "what's coming" at a glance.
+  static String? _kindLabel(SessionStep step, AppLocalizations l10n) =>
+      switch (step) {
+        DiscoverStep() => l10n.wordTodayBadge,
+        ReadingsStep() || SeedingReadingStep() => l10n.readingsTitle,
+        ReviewClozeStep() => l10n.sessionReviewLabel,
+        FinalCheckStep() => l10n.sessionFinalCheckLabel,
+        RequeueClozeStep() => l10n.sessionRequeueLabel,
+        FormRecallStep() => l10n.formRecallTitle,
+        ProductionStep() => l10n.productionTitle,
+        PracticeClozeStep() => null,
+      };
 
   @override
   Widget build(BuildContext context) {
+    final kind = _kindLabel(step, context.l10n);
     return Padding(
       padding: const EdgeInsets.all(FluiSpacing.ml),
       child: Align(
         alignment: Alignment.topLeft,
-        child: Text(
-          word?.lemma ?? '',
-          style: context.type.titleL,
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (kind != null) ...[
+              FluiLabel(kind),
+              const SizedBox(height: FluiSpacing.xxs),
+            ],
+            Text(
+              word?.lemma ?? '',
+              style: context.type.titleL,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
         ),
       ),
     );

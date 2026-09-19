@@ -254,6 +254,37 @@ void main() {
     expect(find.text('Hoy estás sembrando; mañana cosechas.'), findsOneWidget);
   });
 
+  testWidgets(
+    'the next cards in the stack preview the theme/title, never the answer',
+    (tester) async {
+      // Deliberately does not reduce motion: positions 1/2 are only
+      // composited when the real stack is on (`03-card-stack-spec.md` §6).
+      await planNewWord();
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.session,
+        page: const SessionPage(),
+        otherRoutes: const [AppRoutes.today],
+        overrides: fakes.overrides,
+        surfaceSize: const Size(400, 860),
+      );
+      await tester.pumpAndSettle();
+
+      // Front is Descubre (DiscoverStep); position 1 is Mira (ReadingsStep)
+      // — its kind label must already be visible as a preview, at a glance,
+      // before it becomes the front card.
+      expect(find.bySemanticsLabel('Mira cómo suena'), findsOneWidget);
+      // The exercise itself (Elige, `PracticeClozeStep`) sits at position 2
+      // — its sentence must never leak into the preview, only the
+      // theme/title do. (Distractor text isn't asserted here: Descubre
+      // legitimately shows this word's own confusions, which can
+      // coincidentally share text with a distractor and would make that
+      // assertion flaky, not a real leak from the preview.)
+      final exercise = perspicaz.exercises.first;
+      expect(find.textContaining(exercise.sentenceParts.before), findsNothing);
+    },
+  );
+
   testWidgets('Descubre (read-only) advances on a swipe, with real motion on', (
     tester,
   ) async {

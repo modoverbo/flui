@@ -45,6 +45,14 @@ class CardStack extends StatefulWidget {
   static const List<double> yOffsets = [0, 18, 34];
   static const List<double> opacities = [1.00, 0.85, 0.55];
 
+  /// The stack's own stable card height, capped so positions 1/2 always
+  /// peek out from beneath the front card by a visible margin — the Y
+  /// offsets above are logical pixels, not a fraction of the card, so an
+  /// unbounded card height would shrink that peek to nothing on a tall
+  /// viewport. Content taller than this scrolls inside `TrainingCard`
+  /// instead of growing the card.
+  static const double maxCardHeight = 360;
+
   /// The rest geometry of stack [position] (0 front, 1 next, 2 next+1).
   static CardPositionState restState(int position) => CardPositionState(
     scale: scales[position],
@@ -110,13 +118,31 @@ class _CardStackState extends State<CardStack> {
           ? const SizedBox.shrink()
           : widget.cards.first;
     }
-    if (_transitioning && _previousCards != null) {
-      return _buildTransition(_previousCards!, widget.cards);
-    }
-    return _buildStatic(widget.cards);
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.hasBoundedWidth ? constraints.maxWidth : null;
+        final height = constraints.hasBoundedHeight
+            ? math.min(constraints.maxHeight, CardStack.maxCardHeight)
+            : CardStack.maxCardHeight;
+        if (_transitioning && _previousCards != null) {
+          return _buildTransition(_previousCards!, widget.cards, width, height);
+        }
+        return _buildStatic(widget.cards, width, height);
+      },
+    );
   }
 
-  Widget _buildStatic(List<Widget> cards) {
+  /// Every card (front and preview alike) is boxed at the same [width]x
+  /// [height] before any scale/translate is applied, so the geometry table
+  /// (`03-card-stack-spec.md` §1) always peeks the back cards out from
+  /// beneath the front one — regardless of how tall each card's own content
+  /// happens to be. Deliberately keyless: the card's own identity `Key`
+  /// stays on [card] itself (read by callers via `cards[i].key`), so this
+  /// wrapper never shadows it for `find.byKey` or promotion bookkeeping.
+  static Widget _sized(Widget card, double? width, double height) =>
+      SizedBox(width: width, height: height, child: card);
+
+  Widget _buildStatic(List<Widget> cards, double? width, double height) {
     final layers = <Widget>[];
     for (var i = cards.length - 1; i >= 0; i--) {
       final rest = CardStack.restState(i);
@@ -124,7 +150,10 @@ class _CardStackState extends State<CardStack> {
         offset: Offset(i == 0 ? _dragDx : 0, rest.y),
         child: Opacity(
           opacity: rest.opacity,
-          child: Transform.scale(scale: rest.scale, child: cards[i]),
+          child: Transform.scale(
+            scale: rest.scale,
+            child: _sized(cards[i], width, height),
+          ),
         ),
       );
       if (i != 0) {
@@ -151,7 +180,12 @@ class _CardStackState extends State<CardStack> {
     );
   }
 
-  Widget _buildTransition(List<Widget> previous, List<Widget> next) {
+  Widget _buildTransition(
+    List<Widget> previous,
+    List<Widget> next,
+    double? width,
+    double height,
+  ) {
     // Sign matches swipe direction if swipe-triggered; button-triggered
     // exits are always a gentle counter-clockwise −6° (03-card-stack-spec.md
     // §3).
@@ -164,7 +198,7 @@ class _CardStackState extends State<CardStack> {
       // front-card layer painted last so it stays on top while it leaves.
       for (var i = next.length - 1; i >= 0; i--)
         if (i + 1 >= previous.length)
-          _EnterAtRest(position: i, child: next[i])
+          _EnterAtRest(position: i, child: _sized(next[i], width, height))
         else
           CardTransition(
             key: ValueKey('promote-${next[i].key}'),
@@ -172,7 +206,7 @@ class _CardStackState extends State<CardStack> {
             to: CardStack.restState(i),
             spring: fluiSpringStandard,
             becomesInteractive: i == 0,
-            child: next[i],
+            child: _sized(next[i], width, height),
           ),
       CardTransition(
         key: ValueKey('exit-${previous.first.key}'),
@@ -185,7 +219,7 @@ class _CardStackState extends State<CardStack> {
         ),
         spring: fluiSpringStandard,
         onComplete: _completeTransition,
-        child: previous.first,
+        child: _sized(previous.first, width, height),
       ),
     ];
     // See `_buildStatic`: no `Positioned.fill`, so the `Stack` still sizes

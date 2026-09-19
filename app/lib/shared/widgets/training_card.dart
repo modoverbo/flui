@@ -1,3 +1,4 @@
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:material_ui/material_ui.dart';
@@ -39,19 +40,51 @@ class TrainingCard extends StatelessWidget {
       ? FluiThemeColors.fallback
       : FluiThemeColors.resolve(themeSlug!);
 
+  /// Width of the saturated edge painted around the card (see [build]).
+  static const double _edgeWidth = 4;
+
   @override
   Widget build(BuildContext context) {
     final theme = _theme;
+    // A themeless word resolves to `FluiThemeColors.fallback`, whose
+    // `surface` *is* `FluiColors.paper` — indistinguishable from the page
+    // background at the few pixels of peek a back card gets. That's the
+    // right look for a themeless *front* card (neutral, no invented
+    // colour), but a back card's entire on-screen presence is that edge —
+    // give it a visible neutral instead of disappearing outright.
+    final isFallback = theme == FluiThemeColors.fallback;
+    final edgeColor = position == 0 || !isFallback
+        ? theme.surface
+        : FluiColors.gray;
     return DecoratedBox(
+      // The saturated colour above, painted as the *outer* box and
+      // revealed as a thin edge all the way around once the tinted inner
+      // box insets by `_edgeWidth` below. A `BoxDecoration.border` would be
+      // the more obvious way to draw this, but a non-default `Border`
+      // doesn't reliably paint once this card is nested inside
+      // `CardStack`'s scale/translate/opacity transforms — a second filled
+      // `DecoratedBox` does, so that's what draws the edge here.
       decoration: BoxDecoration(
-        color: theme.tint,
+        color: edgeColor,
         borderRadius: FluiRadii.cardAll,
         boxShadow: position == 0 ? cardStackShadow : const [],
-        border: Border(top: BorderSide(color: theme.surface, width: 4)),
       ),
-      child: ClipRRect(
-        borderRadius: FluiRadii.cardAll,
-        child: Material(color: Colors.transparent, child: child),
+      child: Padding(
+        padding: const EdgeInsets.all(_edgeWidth),
+        child: ClipRRect(
+          borderRadius: FluiRadii.cardAll,
+          child: DecoratedBox(
+            decoration: BoxDecoration(color: theme.tint),
+            child: Material(
+              color: Colors.transparent,
+              // The card itself is a fixed, layout-stable box (`CardStack`
+              // owns that geometry); content taller than it scrolls in
+              // here instead of overflowing or growing the card
+              // (`docs/redesign/03-card-stack-spec.md` §1).
+              child: SingleChildScrollView(child: child),
+            ),
+          ),
+        ),
       ),
     );
   }

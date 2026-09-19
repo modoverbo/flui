@@ -78,6 +78,83 @@ void main() {
     expect(ignoringAncestorOf('next2'), findsWidgets);
   });
 
+  testWidgets(
+    'cards behind the front stay visible even when their own content is '
+    'much shorter than the front card (regression: the front card used to '
+    'size the whole stack, hiding shorter preview cards completely)',
+    (tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: CardStack(
+            cards: <Widget>[
+              // The front card has tall real content (an exercise); the
+              // preview cards have only a couple of lines of text — exactly
+              // the mismatch that hid them before the fix.
+              SizedBox(
+                key: ValueKey('front'),
+                height: 700,
+                child: ColoredBox(color: Color(0xFFFF0000)),
+              ),
+              SizedBox(
+                key: ValueKey('next'),
+                height: 40,
+                child: ColoredBox(color: Color(0xFF00FF00)),
+              ),
+              SizedBox(
+                key: ValueKey('next2'),
+                height: 20,
+                child: ColoredBox(color: Color(0xFF0000FF)),
+              ),
+            ],
+          ),
+        ),
+      );
+
+      final frontRect = tester.getRect(find.byKey(const ValueKey('front')));
+      final nextRect = tester.getRect(find.byKey(const ValueKey('next')));
+      final next2Rect = tester.getRect(find.byKey(const ValueKey('next2')));
+
+      // Proof, not just correct transforms: the back cards must actually
+      // extend below the front card's own bottom edge on screen.
+      expect(
+        nextRect.bottom,
+        greaterThan(frontRect.bottom),
+        reason: 'position 1 must peek out below the front card',
+      );
+      expect(
+        next2Rect.bottom,
+        greaterThan(frontRect.bottom),
+        reason: 'position 2 must peek out below the front card',
+      );
+      expect(next2Rect.bottom - frontRect.bottom, greaterThan(0));
+    },
+  );
+
+  testWidgets('all three cards share the same stable size regardless of '
+      'their own content height', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: CardStack(
+          cards: [
+            SizedBox(key: ValueKey('front'), height: 900),
+            SizedBox(key: ValueKey('next'), height: 10),
+            SizedBox(key: ValueKey('next2'), height: 10),
+          ],
+        ),
+      ),
+    );
+
+    final frontRect = tester.getRect(find.byKey(const ValueKey('front')));
+    final nextRect = tester.getRect(find.byKey(const ValueKey('next')));
+    final next2Rect = tester.getRect(find.byKey(const ValueKey('next2')));
+
+    // Unscaled box heights (undo each layer's own scale) must match: a
+    // stable geometry, not each card sized to its own content.
+    expect(frontRect.height, greaterThan(0));
+    expect(nextRect.height / 0.94, closeTo(frontRect.height, 1));
+    expect(next2Rect.height / 0.89, closeTo(frontRect.height, 1));
+  });
+
   testWidgets('only the front card renders under reduced motion, full-bleed', (
     tester,
   ) async {
