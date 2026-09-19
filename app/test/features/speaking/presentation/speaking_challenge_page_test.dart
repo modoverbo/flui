@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:flui/core/l10n/gen/app_localizations.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_recorder.dart';
 import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
-import 'package:flui/features/speaking/presentation/widgets/voice_orb.dart';
+import 'package:flui/shared/widgets/audio_reactive_bubble.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -27,6 +28,12 @@ void main() {
   testWidgets('shows a clear 45 second oral challenge', (tester) async {
     await tester.pumpWidget(
       MaterialApp(
+        locale: const Locale('es'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          ...GlobalMaterialLocalizations.delegates,
+        ],
         home: SpeakingChallengePage(
           recorder: FakeSpeechRecorder(),
           analysisRepository: FakeSpeechAnalysisRepository(
@@ -40,7 +47,7 @@ void main() {
     expect(find.textContaining('decisión pequeña'), findsOneWidget);
     expect(find.text('45 s'), findsOneWidget);
     expect(find.text('Empezar a hablar'), findsOneWidget);
-    expect(find.byType(VoiceOrb), findsOneWidget);
+    expect(find.byType(AudioReactiveBubble), findsOneWidget);
     expect(find.textContaining('no guardamos tu audio'), findsOneWidget);
   });
 
@@ -49,6 +56,12 @@ void main() {
   ) async {
     await tester.pumpWidget(
       MaterialApp(
+        locale: const Locale('es'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          ...GlobalMaterialLocalizations.delegates,
+        ],
         home: SpeakingChallengePage(
           recorder: FakeSpeechRecorder(),
           analysisRepository: FakeSpeechAnalysisRepository(
@@ -63,7 +76,7 @@ void main() {
       () => Future<void>.delayed(const Duration(milliseconds: 10)),
     );
     await tester.pump();
-    expect(find.byType(VoiceOrb), findsOneWidget);
+    expect(find.byType(AudioReactiveBubble), findsOneWidget);
     expect(find.text('Tarjetas guía'), findsOneWidget);
     expect(find.text('ABRIR'), findsOneWidget);
     await tester.ensureVisible(find.text('Terminar intento'));

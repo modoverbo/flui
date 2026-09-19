@@ -12,9 +12,10 @@ import 'package:flui/features/speaking/domain/speech_recorder.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/speaking/presentation/widgets/speaker_cue_cards.dart';
-import 'package:flui/features/speaking/presentation/widgets/voice_orb.dart';
+import 'package:flui/shared/widgets/audio_reactive_bubble.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
+import 'package:flui/shared/widgets/speaking_bubble.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
@@ -40,10 +41,13 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   static const _analyzer = SpeechAnalyzer();
   _Phase _phase = _Phase.ready;
   Timer? _timer;
-  StreamSubscription<double>? _amplitudeSubscription;
+  // Created once and reused across rebuilds: `_recorder.amplitude` is a
+  // getter that builds a fresh `Stream` on every access, and
+  // `AudioReactiveBubble` resubscribes (resetting its smoothing pipeline)
+  // whenever the stream instance it's given changes identity.
+  late final Stream<double> _amplitudeStream = _recorder.amplitude;
   int _secondsLeft = 45;
   int _attempt = 1;
-  double _amplitude = -60;
   DateTime? _startedAt;
   late SpeakingMetrics _firstMetrics;
   late SpeakingMetrics _currentMetrics;
@@ -53,7 +57,6 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   @override
   void dispose() {
     _timer?.cancel();
-    unawaited(_amplitudeSubscription?.cancel());
     unawaited(_recorder.dispose());
     super.dispose();
   }
@@ -68,9 +71,6 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
       await _recorder.start();
       _startedAt = DateTime.now();
       _secondsLeft = 45;
-      _amplitudeSubscription = _recorder.amplitude.listen((value) {
-        if (mounted) setState(() => _amplitude = value);
-      });
       _timer?.cancel();
       _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
         if (!mounted) return;
@@ -88,8 +88,6 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
 
   Future<void> _finish() async {
     _timer?.cancel();
-    await _amplitudeSubscription?.cancel();
-    _amplitudeSubscription = null;
     if (mounted) setState(() => _phase = _Phase.analyzing);
     try {
       final bytes = await _recorder.stop();
@@ -154,7 +152,7 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
                   _Phase.ready => _ReadyView(onStart: _start),
                   _Phase.recording => _RecordingView(
                     secondsLeft: _secondsLeft,
-                    amplitude: _amplitude,
+                    amplitudeStream: _amplitudeStream,
                     onFinish: _finish,
                   ),
                   _Phase.analyzing => const _AnalyzingView(),
@@ -246,36 +244,32 @@ class _ReadyView extends StatelessWidget {
 class _RecordingView extends StatelessWidget {
   const new({
     required this.secondsLeft,
-    required this.amplitude,
+    required this.amplitudeStream,
     required this.onFinish,
   });
   final int secondsLeft;
-  final double amplitude;
+  final Stream<double> amplitudeStream;
   final VoidCallback onFinish;
 
   @override
-  Widget build(BuildContext context) {
-    final level = ((amplitude + 60) / 60).clamp(0.08, 1.0);
-    return Column(
-      key: const ValueKey('recording'),
-      children: [
-        const FluiLabel('TE ESCUCHO'),
-        const SizedBox(height: 28),
-        Text('$secondsLeft', style: Theme.of(context).textTheme.displayLarge),
-        const Text('segundos restantes'),
-        const SizedBox(height: 42),
-        VoiceOrb(
-          state: VoiceOrbState.recording,
-          amplitude: level,
-          semanticLabel: 'Flui está escuchando tu voz',
-        ),
-        const SizedBox(height: 24),
-        const SpeakerCueCards(),
-        const SizedBox(height: 28),
-        FluiButton.primary(label: 'Terminar intento', onPressed: onFinish),
-      ],
-    );
-  }
+  Widget build(BuildContext context) => Column(
+    key: const ValueKey('recording'),
+    children: [
+      const FluiLabel('TE ESCUCHO'),
+      const SizedBox(height: 28),
+      Text('$secondsLeft', style: Theme.of(context).textTheme.displayLarge),
+      const Text('segundos restantes'),
+      const SizedBox(height: 42),
+      AudioReactiveBubble(
+        state: BubbleState.recording,
+        amplitudeStream: amplitudeStream,
+      ),
+      const SizedBox(height: 24),
+      const SpeakerCueCards(),
+      const SizedBox(height: 28),
+      FluiButton.primary(label: 'Terminar intento', onPressed: onFinish),
+    ],
+  );
 }
 
 class _AnalyzingView extends StatelessWidget {
@@ -284,8 +278,8 @@ class _AnalyzingView extends StatelessWidget {
   Widget build(BuildContext context) => const Column(
     key: ValueKey('analyzing'),
     children: [
-      SizedBox(height: 80),
-      CircularProgressIndicator(color: FluiColors.greenSecondary),
+      SizedBox(height: 56),
+      AudioReactiveBubble(state: BubbleState.processing),
       SizedBox(height: 24),
       Text('Escuchando tu ritmo…', style: TextStyle(fontSize: 22)),
       SizedBox(height: 8),
@@ -486,12 +480,7 @@ class _MicButton extends StatelessWidget {
     behavior: HitTestBehavior.opaque,
     child: Column(
       children: [
-        VoiceOrb(
-          state: VoiceOrbState.listening,
-          amplitude: .2,
-          semanticLabel: 'Empezar grabación',
-          onTap: onTap,
-        ),
+        AudioReactiveBubble(state: BubbleState.ready, onTap: onTap),
         const SizedBox(height: 8),
         const Text(
           'Empezar a hablar',

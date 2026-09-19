@@ -824,5 +824,42 @@
   "introSlideThreeHighlight": "Úsala hoy.",
   "@introSlideThreeHighlight": {
     "description": "Exact ending of introSlideThreeTitle shown in yellow."
+  },
+  "bubbleStateIdle": "En espera",
+  "@bubbleStateIdle": {
+    "description": "Semantics announcement for SpeakingBubble's idle state."
+  },
+  "bubbleStateReady": "Lista para grabar. Toca para empezar.",
+  "@bubbleStateReady": {
+    "description": "Semantics announcement for SpeakingBubble's ready state."
+  },
+  "bubbleStateRecording": "Grabando tu voz",
+  "@bubbleStateRecording": {
+    "description": "Semantics announcement for SpeakingBubble's recording state."
+  },
+  "bubbleStateProcessing": "Procesando tu grabación",
+  "@bubbleStateProcessing": {
+    "description": "Semantics announcement for SpeakingBubble's processing state."
+  },
+  "bubbleStateResult": "Resultado listo",
+  "@bubbleStateResult": {
+    "description": "Semantics announcement for SpeakingBubble's result state."
+  },
+  "bubbleStateError": "Ocurrió un error. Tu grabación se conservó.",
+  "@bubbleStateError": {
+    "description": "Semantics announcement for SpeakingBubble's error state."
+  },
+  "bubbleRecordingSeconds": "{seconds} segundos grabados",
+  "@bubbleRecordingSeconds": {
+    "description": "Live recording timer read out for screen readers.",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "bubbleStopRecording": "Detener grabación",
+  "@bubbleStopRecording": {
+    "description": "Label for the stop-recording affordance shown on the bubble while recording."
   }
 }
