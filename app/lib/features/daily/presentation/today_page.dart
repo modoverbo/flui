@@ -1,11 +1,14 @@
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
+import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/domain/session_plan.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
@@ -14,9 +17,10 @@ import 'package:flui/features/profile/presentation/widgets/week_dots.dart';
 import 'package:flui/features/reading/presentation/providers/context_readings.dart';
 import 'package:flui/features/reading/presentation/widgets/reading_card.dart';
 import 'package:flui/features/themes/domain/theme.dart';
+import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
-import 'package:flui/shared/layout/bento_layout.dart';
-import 'package:flui/shared/widgets/bento_grid.dart';
+import 'package:flui/shared/widgets/card_stack.dart';
+import 'package:flui/shared/widgets/editorial_stat.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
@@ -24,14 +28,16 @@ import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flui/shared/widgets/sticky_cta_dock.dart';
+import 'package:flui/shared/widgets/training_card.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 // The domain entity is called Theme, like Flutter's inherited widget; this
 // screen needs the entity, never the widget.
 import 'package:material_ui/material_ui.dart' hide Theme;
 
-/// "Hoy": an asymmetric bento that reaches the fold, and the one action of
-/// the day docked at the bottom instead of floating over empty space.
+/// "Hoy": today's workout, not a dashboard. The front card of a small stack
+/// is the one unmistakable action of the day; everything else — the theme,
+/// the streak, the editorial numbers — is secondary and reachable below it.
 class TodayPage extends ConsumerWidget {
   const new({super.key});
 
@@ -125,6 +131,22 @@ final class TodayAction {
   final String? hint;
 }
 
+/// The honest one-liner under the greeting — reused as the stack's front
+/// card message whenever there is no word or review to lead with.
+String todaySubtitleFor(AppLocalizations l10n, TodayOverview overview) {
+  if (overview.completed) return l10n.todayDone;
+  if (overview.session == null) return l10n.todayNoSession;
+  if (overview.emptyPlan) {
+    return switch (overview.emptyReason ?? EmptyPlanReason.budgetTooSmall) {
+      EmptyPlanReason.budgetTooSmall => l10n.todayEmptyPlan,
+      EmptyPlanReason.noCandidatesLeft => l10n.todayNoCandidates,
+      EmptyPlanReason.allReviewsDone => l10n.todayBlockedCandidates,
+    };
+  }
+  if (overview.afianzar) return l10n.todayAfianzar;
+  return l10n.todaySubtitle;
+}
+
 class _TodayScaffold extends StatelessWidget {
   const new({required this.overview});
 
@@ -151,7 +173,7 @@ class _TodayScaffold extends StatelessWidget {
                 title: name == null
                     ? l10n.progressGreetingAnonymous
                     : l10n.progressGreeting(name),
-                subtitle: _subtitleFor(l10n, overview),
+                subtitle: todaySubtitleFor(l10n, overview),
               ),
               const SizedBox(height: FluiSpacing.lg),
               const _SpeakingWorkoutCard(),
@@ -159,8 +181,14 @@ class _TodayScaffold extends StatelessWidget {
                 const SizedBox(height: FluiSpacing.md),
                 _TodayTheme(theme: theme, overview: overview),
               ],
+              if (_TodayStack.hasContent(overview)) ...[
+                SizedBox(height: layout.blockGap),
+                _TodayStack(overview: overview),
+              ],
               SizedBox(height: layout.blockGap),
-              _TodayBento(overview: overview),
+              _TodayStreakBlock(overview: overview),
+              SizedBox(height: layout.sectionGap),
+              _TodayEditorialStats(overview: overview),
               SizedBox(height: layout.sectionGap),
               const _ContextScenes(),
             ],
@@ -199,23 +227,11 @@ class _TodayScaffold extends StatelessWidget {
       child: page,
     );
   }
-
-  /// The honest one-liner under the greeting.
-  static String _subtitleFor(AppLocalizations l10n, TodayOverview overview) {
-    if (overview.completed) return l10n.todayDone;
-    if (overview.session == null) return l10n.todayNoSession;
-    if (overview.emptyPlan) {
-      return switch (overview.emptyReason ?? EmptyPlanReason.budgetTooSmall) {
-        EmptyPlanReason.budgetTooSmall => l10n.todayEmptyPlan,
-        EmptyPlanReason.noCandidatesLeft => l10n.todayNoCandidates,
-        EmptyPlanReason.allReviewsDone => l10n.todayBlockedCandidates,
-      };
-    }
-    if (overview.afianzar) return l10n.todayAfianzar;
-    return l10n.todaySubtitle;
-  }
 }
 
+/// The always-available entry point to Habla: a soft, neutral integration
+/// (`docs/redesign/02-navigation-model.md` §1) — speaking is not tied to a
+/// theme, so it never borrows a theme colour (`01-design-system.md` §1.3).
 class _SpeakingWorkoutCard extends StatelessWidget {
   const new();
 
@@ -227,31 +243,26 @@ class _SpeakingWorkoutCard extends StatelessWidget {
       label: 'Entrena tu voz, desafío de 45 segundos',
       child: InkWell(
         onTap: () => context.push(AppRoutes.speakingChallenge),
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: FluiRadii.cardAll,
         child: Ink(
-          padding: const EdgeInsets.all(22),
+          padding: const EdgeInsets.all(FluiSpacing.ml),
           decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [FluiColors.electricBlue, FluiColors.lavender],
-            ),
-            borderRadius: BorderRadius.circular(30),
-            border: Border.all(color: FluiColors.ink, width: 2),
+            color: FluiColors.greenTint,
+            borderRadius: FluiRadii.cardAll,
+            border: Border.all(color: FluiColors.greenDeep, width: 1.5),
           ),
           child: Row(
             children: [
               Container(
-                width: 54,
-                height: 54,
+                width: 48,
+                height: 48,
                 decoration: const BoxDecoration(
-                  color: FluiColors.acidLime,
+                  color: FluiColors.greenDeep,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(
-                  Icons.mic_rounded,
-                  color: FluiColors.ink,
-                  size: 28,
+                child: const FluiGlyphIcon(
+                  FluiGlyph.microphone,
+                  color: FluiColors.cream,
                 ),
               ),
               const SizedBox(width: FluiSpacing.md),
@@ -259,23 +270,23 @@ class _SpeakingWorkoutCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const FluiLabel(
-                      'TU GIMNASIO DE HOY',
-                      color: FluiColors.ink,
-                    ),
+                    const FluiLabel('TU GIMNASIO DE HOY'),
                     const SizedBox(height: 3),
                     Text(
                       'Entrena tu voz',
-                      style: type.titleM.copyWith(color: FluiColors.ink),
+                      style: type.titleM.copyWith(color: FluiColors.charcoal),
                     ),
                     Text(
                       'Pausa de poder · 45 s',
-                      style: type.body.copyWith(color: FluiColors.ink),
+                      style: type.body.copyWith(color: FluiColors.gray),
                     ),
                   ],
                 ),
               ),
-              const Icon(Icons.arrow_forward_rounded, color: FluiColors.ink),
+              const Icon(
+                Icons.arrow_forward_rounded,
+                color: FluiColors.greenDeep,
+              ),
             ],
           ),
         ),
@@ -284,7 +295,9 @@ class _SpeakingWorkoutCard extends StatelessWidget {
   }
 }
 
-/// The theme of the day, and the one tap that changes it.
+/// The theme of the day, and the one tap that changes it. Its name renders
+/// in that theme's own colour — one of the 28 (`01-design-system.md` §1.2)
+/// — instead of a fixed green, so the theme reads as itself.
 ///
 /// When the theme could not supply today's word, this is where the day says
 /// so. A silent substitution would be the same screen either way, and a user
@@ -321,16 +334,14 @@ class _TodayTheme extends StatelessWidget {
     final l10n = context.l10n;
     final type = context.type;
     final message = fallbackMessage(l10n, overview);
+    final accent = FluiThemeColors.resolve(theme.slug).surface;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
           children: [
-            const FluiGlyphIcon(
-              FluiGlyph.onda,
-              color: FluiColors.greenSecondary,
-            ),
+            FluiGlyphIcon(FluiGlyph.onda, color: accent),
             const SizedBox(width: FluiSpacing.xs),
             Expanded(child: FluiLabel(l10n.todayThemeLabel)),
             // Changing theme is free and always available: no minimum streak,
@@ -341,10 +352,7 @@ class _TodayTheme extends StatelessWidget {
             ),
           ],
         ),
-        Text(
-          theme.name,
-          style: type.titleM.copyWith(color: FluiColors.greenDeep),
-        ),
+        Text(theme.name, style: type.titleM.copyWith(color: accent)),
         if (message != null) ...[
           const SizedBox(height: FluiSpacing.xxs),
           Text(message, style: type.body.copyWith(color: FluiColors.gray)),
@@ -354,7 +362,243 @@ class _TodayTheme extends StatelessWidget {
   }
 }
 
-class _TodayBento extends StatelessWidget {
+/// The front card of a small stack that previews what is coming: today's
+/// one thing to do up front — the new word or the extra reviews — with a
+/// peek of what is behind it (`docs/redesign/08-screen-plan.md` —
+/// TodayPage). Rendered only when there is something to lead with; an
+/// empty, done or session-less day already says so once, in the page's
+/// subtitle — the stack never repeats it.
+class _TodayStack extends StatelessWidget {
+  const new({required this.overview});
+
+  final TodayOverview overview;
+
+  /// Whether [overview] has a word or a review to show up front.
+  static bool hasContent(TodayOverview overview) {
+    if (overview.completed) return false;
+    return overview.newWords.isNotEmpty ||
+        overview.dueCount > 0 ||
+        overview.nextReviewOn != null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final themeSlug = overview.theme?.slug;
+    final word = overview.newWords.firstOrNull;
+    final showsWord = word != null;
+
+    final next = overview.nextReviewOn;
+    final Widget frontChild;
+    final Key frontKey;
+    if (showsWord) {
+      frontChild = _TodayWordCard(word: word);
+      frontKey = ValueKey('today-word-${word.id}');
+    } else if (overview.dueCount > 0) {
+      frontChild = _TodayExtraReviewCard(overview: overview);
+      frontKey = const ValueKey('today-extra-review');
+    } else {
+      // hasContent guarantees nextReviewOn is set when the two branches
+      // above are not taken.
+      frontChild = _TodayNextReviewCard(overview: overview, next: next!);
+      frontKey = ValueKey('today-next-review-$next');
+    }
+
+    final cards = <Widget>[
+      TrainingCard(key: frontKey, themeSlug: themeSlug, child: frontChild),
+    ];
+
+    // Only the word front card leaves the due/next-review peek unclaimed;
+    // every other front already used it.
+    if (showsWord && overview.dueCount > 0) {
+      cards.add(
+        TrainingCard(
+          key: const ValueKey('today-peek-reviews'),
+          position: cards.length,
+          themeSlug: themeSlug,
+          child: _TodayPeekCard(
+            glyph: FluiGlyph.review,
+            headline: l10n.todayExtraReview,
+            caption: l10n.todayReviews(overview.dueCount),
+          ),
+        ),
+      );
+    } else if (showsWord && next != null) {
+      cards.add(
+        TrainingCard(
+          key: ValueKey('today-peek-next-review-$next'),
+          position: cards.length,
+          themeSlug: themeSlug,
+          child: _TodayPeekCard(
+            glyph: FluiGlyph.review,
+            headline: l10n.todayNextReviews(
+              overview.nextReviewCount,
+              formatLongDate(next.toDateTime()),
+            ),
+          ),
+        ),
+      );
+    }
+
+    if (cards.length < 3) {
+      cards.add(
+        TrainingCard(
+          key: const ValueKey('today-peek-speaking'),
+          position: cards.length,
+          child: const _TodayPeekCard(
+            glyph: FluiGlyph.microphone,
+            headline: 'Pausa de poder',
+            caption: '45 s',
+          ),
+        ),
+      );
+    }
+
+    return CardStack(cards: cards);
+  }
+}
+
+/// Today's new word, at the same hero size a word gets everywhere else in
+/// the app (`01-design-system.md` §2): a headword is never metadata.
+class _TodayWordCard extends StatelessWidget {
+  const new({required this.word});
+
+  final Word word;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final type = context.type;
+    return Semantics(
+      button: true,
+      label: '${l10n.todayWordTitle}: ${word.lemma}. ${l10n.todayOpenWord}',
+      child: InkWell(
+        onTap: () => context.go(AppRoutes.wordDetail(word.id)),
+        child: Padding(
+          padding: const EdgeInsets.all(FluiSpacing.ml),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              FluiLabel(l10n.todayWordTitle),
+              const SizedBox(height: FluiSpacing.xs),
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  word.lemma,
+                  maxLines: 1,
+                  style: type.wordHero.copyWith(color: FluiColors.charcoal),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// Reviews due today beyond what the plan already covers — a number, not a
+/// KPI tile, and one tap into a free review run.
+class _TodayExtraReviewCard extends StatelessWidget {
+  const new({required this.overview});
+
+  final TodayOverview overview;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    return Padding(
+      padding: const EdgeInsets.all(FluiSpacing.ml),
+      child: EditorialStat(
+        value: '${overview.dueCount}',
+        label: l10n.todayExtraReview,
+        caption: l10n.todayReviews(overview.dueCount),
+        semanticLabel: l10n.todayExtraReview,
+        onTap: () => context.go(AppRoutes.sessionReview),
+      ),
+    );
+  }
+}
+
+/// The next day with reviews waiting, when nothing is due yet today.
+class _TodayNextReviewCard extends StatelessWidget {
+  const new({required this.overview, required this.next});
+
+  final TodayOverview overview;
+  final LocalDate next;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final type = context.type;
+    return Padding(
+      padding: const EdgeInsets.all(FluiSpacing.ml),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          l10n.todayNextReviews(
+            overview.nextReviewCount,
+            formatLongDate(next.toDateTime()),
+          ),
+          style: type.titleM.copyWith(color: FluiColors.charcoal),
+        ),
+      ),
+    );
+  }
+}
+
+/// A back-of-stack peek: themed, non-interactive, just enough to read "what
+/// is coming" at a glance (mirrors `_PreviewCardContent` in
+/// `session_page.dart`).
+class _TodayPeekCard extends StatelessWidget {
+  const new({required this.glyph, required this.headline, this.caption});
+
+  final FluiGlyph glyph;
+  final String headline;
+  final String? caption;
+
+  @override
+  Widget build(BuildContext context) {
+    final type = context.type;
+    final caption = this.caption;
+    return Padding(
+      padding: const EdgeInsets.all(FluiSpacing.ml),
+      child: Row(
+        children: [
+          FluiGlyphIcon(glyph, color: FluiColors.greenSecondary),
+          const SizedBox(width: FluiSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  headline,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: type.titleM.copyWith(color: FluiColors.charcoal),
+                ),
+                if (caption != null)
+                  Text(
+                    caption,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: type.body.copyWith(color: FluiColors.gray),
+                  ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// The week, the streak, on the one dark accent block of the screen — an
+/// editorial block, not a cell in a grid of identical ones.
+class _TodayStreakBlock extends StatelessWidget {
   const new({required this.overview});
 
   final TodayOverview overview;
@@ -363,210 +607,126 @@ class _TodayBento extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final type = context.type;
-    final word = overview.newWords.firstOrNull;
-    final precision = overview.precisionPercent;
-    final owned = overview.showsOwnedHero;
-    // Before the first word there is nothing to count, and a tile reading
-    // "0" is the trope this screen exists to avoid.
-    final counts = owned || overview.practiceWords > 0;
-
-    return BentoGrid(
-      tiles: [
-        // The 2x2 anchor: the week, in the one dark tile of the screen.
-        BentoTile(
-          span: BentoSpan.large,
-          tone: BentoTone.ink,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Row(
-                children: [
-                  const FluiGlyphIcon(
-                    FluiGlyph.streak,
-                    color: FluiColors.creamMuted,
-                  ),
-                  const SizedBox(width: FluiSpacing.xs),
-                  Expanded(
-                    child: FluiLabel(l10n.todayBentoStreakLabel, onDark: true),
-                  ),
-                ],
-              ),
-              const Spacer(),
-              Text(
+    return DecoratedBox(
+      decoration: const BoxDecoration(
+        color: FluiColors.ink,
+        borderRadius: FluiRadii.cardAll,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(FluiSpacing.lg),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                const FluiGlyphIcon(
+                  FluiGlyph.streak,
+                  color: FluiColors.creamMuted,
+                ),
+                const SizedBox(width: FluiSpacing.xs),
+                Expanded(
+                  child: FluiLabel(l10n.todayBentoStreakLabel, onDark: true),
+                ),
+              ],
+            ),
+            const SizedBox(height: FluiSpacing.sm),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerLeft,
+              child: Text(
                 // Has a zero case of its own: "Tu racha empieza con tu
                 // próxima sesión".
                 l10n.progressStreak(overview.streak),
-                style: type.titleL.copyWith(color: FluiColors.cream),
+                style: type.displayL.copyWith(color: FluiColors.cream),
               ),
-              const SizedBox(height: FluiSpacing.xs),
-              Text(
-                l10n.progressWeekDays(overview.activeDaysThisWeek),
-                style: type.body.copyWith(color: FluiColors.creamMuted),
-              ),
-              const SizedBox(height: FluiSpacing.md),
-              WeekDots(activeDays: overview.weekDays),
-            ],
-          ),
+            ),
+            const SizedBox(height: FluiSpacing.xs),
+            Text(
+              l10n.progressWeekDays(overview.activeDaysThisWeek),
+              style: type.body.copyWith(color: FluiColors.creamMuted),
+            ),
+            const SizedBox(height: FluiSpacing.md),
+            WeekDots(activeDays: overview.weekDays),
+          ],
         ),
-        if (word != null && !overview.completed)
-          BentoTile(
-            span: BentoSpan.wide,
-            tone: BentoTone.lime,
-            onTap: () => context.go(AppRoutes.wordDetail(word.id)),
-            semanticLabel: '${l10n.todayWordTitle}: ${word.lemma}',
-            child: Row(
-              children: [
-                const FluiGlyphIcon(
-                  FluiGlyph.wordOfTheDay,
-                  color: FluiColors.charcoal,
-                ),
-                const SizedBox(width: FluiSpacing.sm),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FluiLabel(
-                        l10n.todayWordTitle,
-                        color: FluiColors.charcoal,
-                      ),
-                      Text(
-                        word.lemma,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                        style: type.titleM.copyWith(color: FluiColors.charcoal),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )
-        else if (overview.dueCount > 0)
-          BentoTile(
-            span: BentoSpan.wide,
-            onTap: () => context.go(AppRoutes.sessionReview),
-            semanticLabel: l10n.todayExtraReview,
-            child: Row(
-              children: [
-                const FluiGlyphIcon(
-                  FluiGlyph.review,
-                  color: FluiColors.greenSecondary,
-                ),
-                const SizedBox(width: FluiSpacing.sm),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      FluiLabel(l10n.todayExtraReview),
-                      Text(
-                        l10n.todayReviews(overview.dueCount),
-                        style: type.body.copyWith(color: FluiColors.charcoal),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )
-        else if (overview.nextReviewOn case final next?)
-          BentoTile(
-            span: BentoSpan.wide,
-            child: Row(
-              children: [
-                const FluiGlyphIcon(
-                  FluiGlyph.review,
-                  color: FluiColors.greenSecondary,
-                ),
-                const SizedBox(width: FluiSpacing.sm),
-                Expanded(
-                  child: Text(
-                    l10n.todayNextReviews(
-                      overview.nextReviewCount,
-                      formatLongDate(next.toDateTime()),
-                    ),
-                    style: type.body.copyWith(color: FluiColors.charcoal),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        if (counts)
-          _numberTile(
-            context,
+      ),
+    );
+  }
+}
+
+/// The rest of the numbers: editorial, secondary, and never a bare zero.
+class _TodayEditorialStats extends StatelessWidget {
+  const new({required this.overview});
+
+  final TodayOverview overview;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final owned = overview.showsOwnedHero;
+    // Before the first word there is nothing to count, and a stat reading
+    // "0" is the trope this screen exists to avoid.
+    final counts = owned || overview.practiceWords > 0;
+    final precision = overview.precisionPercent;
+
+    final children = <Widget>[
+      if (counts)
+        SizedBox(
+          width: 150,
+          child: EditorialStat(
             value: owned
                 ? '${overview.ownedWords}'
                 : '${overview.practiceWords}',
             label: owned ? l10n.statOwnedWords : l10n.statPracticeWords,
-            glyph: owned ? FluiGlyph.achievement : FluiGlyph.review,
-            tone: BentoTone.aqua,
           ),
-        if (precision != null)
-          _numberTile(
-            context,
+        ),
+      if (precision != null)
+        SizedBox(
+          width: 150,
+          child: EditorialStat(
             value: l10n.statPrecisionValue(precision),
             label: l10n.statPrecisionLabel,
-            glyph: FluiGlyph.goal,
-            tone: BentoTone.coral,
+            caption: l10n.statPrecisionWindow,
           ),
-        if (!owned)
-          // A sentence needs width: this one is never squeezed into a cell.
-          BentoTile(
-            span: BentoSpan.wide,
-            semanticLabel: l10n.statTowardsFirstOwned,
-            child: Row(
-              children: [
-                const FluiGlyphIcon(
-                  FluiGlyph.goal,
-                  color: FluiColors.greenSecondary,
-                ),
-                const SizedBox(width: FluiSpacing.sm),
-                Expanded(
-                  child: Text(
-                    l10n.statTowardsFirstOwned,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: type.body.copyWith(color: FluiColors.charcoal),
-                  ),
-                ),
-              ],
-            ),
-          ),
-      ],
-    );
-  }
+        ),
+    ];
 
-  /// A number that is only ever rendered when there is something to count.
-  BentoTile _numberTile(
-    BuildContext context, {
-    required String value,
-    required String label,
-    required FluiGlyph glyph,
-    required BentoTone tone,
-  }) {
-    final type = context.type;
-    return BentoTile(
-      span: BentoSpan.small,
-      tone: tone,
-      semanticLabel: '$value $label',
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FluiGlyphIcon(glyph, color: FluiColors.greenSecondary),
-          const Spacer(),
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: Alignment.centerLeft,
-            child: Text(
-              value,
-              maxLines: 1,
-              style: type.titleL.copyWith(color: FluiColors.charcoal),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        if (children.isNotEmpty)
+          Wrap(
+            spacing: FluiSpacing.xl,
+            runSpacing: FluiSpacing.lg,
+            children: children,
+          ),
+        if (!owned) ...[
+          if (children.isNotEmpty) const SizedBox(height: FluiSpacing.md),
+          Semantics(
+            label: l10n.statTowardsFirstOwned,
+            child: ExcludeSemantics(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const FluiGlyphIcon(
+                    FluiGlyph.goal,
+                    color: FluiColors.greenSecondary,
+                  ),
+                  const SizedBox(width: FluiSpacing.sm),
+                  Expanded(
+                    child: Text(
+                      l10n.statTowardsFirstOwned,
+                      style: context.type.body.copyWith(
+                        color: FluiColors.charcoal,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          FluiLabel(label),
         ],
-      ),
+      ],
     );
   }
 }

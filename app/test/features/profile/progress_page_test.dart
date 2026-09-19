@@ -1,4 +1,7 @@
 import 'package:flui/core/clock/clock.dart';
+import 'package:flui/core/theme/contrast.dart';
+import 'package:flui/core/theme/flui_color_rules.dart';
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/exercises/domain/exercise_attempt.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
@@ -145,6 +148,49 @@ void main() {
     );
     await tester.pumpAndSettle();
 
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('is the one dark surface, and its text reads on it', (
+    tester,
+  ) async {
+    await answeredOn(16);
+    await pumpPage(tester);
+
+    final scaffold = tester.widget<Scaffold>(find.byType(Scaffold).last);
+    expect(scaffold.backgroundColor, FluiColors.progressSurface);
+    // Every colour the page actually paints on that surface still clears
+    // WCAG AA — not just the token table in isolation.
+    expect(
+      contrastRatio(FluiColors.cream, FluiColors.progressSurface),
+      greaterThanOrEqualTo(FluiColorRules.aaText),
+    );
+    expect(
+      contrastRatio(FluiColors.creamMuted, FluiColors.progressSurface),
+      greaterThanOrEqualTo(FluiColorRules.aaText),
+    );
+  });
+
+  testWidgets('honours reduced motion for the week dots', (tester) async {
+    for (final d in [13, 16]) {
+      await answeredOn(d);
+    }
+    await tester.pumpFlui(
+      const ProgressPage(),
+      overrides: [
+        ...fakes.overrides,
+        subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+      ],
+      surfaceSize: const Size(400, 2400),
+    );
+    await tester.pump();
+
+    final dots = tester.widgetList<AnimatedContainer>(
+      find.byType(AnimatedContainer),
+    );
+    for (final dot in dots) {
+      expect(dot.duration, Duration.zero);
+    }
     expect(tester.takeException(), isNull);
   });
 }

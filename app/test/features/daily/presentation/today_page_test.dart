@@ -6,7 +6,7 @@ import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
-import 'package:flui/shared/widgets/bento_grid.dart';
+import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -34,7 +34,7 @@ void main() {
         AppRoutes.speakingChallenge,
       ],
       overrides: fakes.overrides,
-      surfaceSize: const Size(400, 900),
+      surfaceSize: const Size(400, 1400),
     );
     await tester.pumpAndSettle();
   }
@@ -63,13 +63,14 @@ void main() {
     expect(find.text('Hola, Ana'), findsOneWidget);
     // The one action of the day is docked, with the budget under it.
     expect(find.text('10 minutos'), findsOneWidget);
-    // Nothing to count on day one, so no tile renders a bare zero at all.
+    // Nothing to count on day one, so no stat renders at all.
     expect(find.text('PALABRAS TUYAS'), findsNothing);
     expect(find.text('EN PRÁCTICA'), findsNothing);
     expect(find.text('PRECISIÓN'), findsNothing);
     expect(find.text('0'), findsNothing);
     expect(find.text('—'), findsNothing);
     expect(find.text('Camino a tu primera palabra tuya.'), findsOneWidget);
+    // The primary action: today's word, on the front card of the stack.
     expect(find.text('TU PALABRA DE HOY'), findsOneWidget);
     expect(find.text('perspicaz'), findsOneWidget);
     expect(find.text('TU RACHA'), findsOneWidget);
@@ -118,6 +119,8 @@ void main() {
     expect(find.text('Empezar'), findsNothing);
     expect(find.text('TU PALABRA DE HOY'), findsNothing);
     expect(find.text('1 de 7 días esta semana'), findsOneWidget);
+    // Done is not dressed up as a card with a number: no stack at all.
+    expect(find.text('Entrena tu voz'), findsOneWidget);
   });
 
   testWidgets('an owned word becomes the hero number', (tester) async {
@@ -328,25 +331,24 @@ void main() {
     });
   });
 
-  testWidgets('the bento anchors on one dark streak tile', (tester) async {
+  testWidgets('the streak is one dark editorial block, not a grid cell', (
+    tester,
+  ) async {
     await plan(newWords: [perspicaz.id]);
     await pumpPage(tester);
 
-    // Exactly one dark plate on the screen, and it is the 2x2 anchor: full
-    // grid width and taller than one cell.
-    final inkTile = find.byWidgetPredicate(
+    // Exactly one dark block on the screen, full content width — an
+    // editorial anchor, not a cell among identical ones.
+    final inkBlock = find.byWidgetPredicate(
       (widget) =>
           widget is DecoratedBox &&
           widget.decoration is BoxDecoration &&
           (widget.decoration as BoxDecoration).color == FluiColors.ink,
     );
-    expect(inkTile, findsOneWidget);
-    final grid = tester.getSize(find.byType(BentoGrid));
-    final anchor = tester.getSize(inkTile);
-    expect(anchor.width, closeTo(grid.width, 1));
-    // Two cells tall, so it anchors the composition instead of sitting in a
-    // row of identical boxes.
-    expect(anchor.height, greaterThan(grid.width / 2));
+    expect(inkBlock, findsOneWidget);
+    final header = tester.getSize(find.byType(PageHeader));
+    final block = tester.getSize(inkBlock);
+    expect(block.width, closeTo(header.width, 1));
     expect(find.text('TU RACHA'), findsOneWidget);
   });
 }

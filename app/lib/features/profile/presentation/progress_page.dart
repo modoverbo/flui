@@ -8,13 +8,14 @@ import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_theme.dart';
 import 'package:flui/features/auth/presentation/controllers/sign_out_controller.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/features/profile/domain/progress_stats.dart';
+import 'package:flui/features/profile/domain/streak_calculator.dart';
 import 'package:flui/features/profile/presentation/providers/progress_overview.dart';
 import 'package:flui/features/profile/presentation/subscription_summary.dart';
 import 'package:flui/features/profile/presentation/widgets/achievement_tile.dart';
 import 'package:flui/features/profile/presentation/widgets/week_dots.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
-import 'package:flui/shared/layout/bento_layout.dart';
-import 'package:flui/shared/widgets/bento_grid.dart';
+import 'package:flui/shared/widgets/editorial_stat.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
@@ -24,8 +25,9 @@ import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// "Tu progreso": the only dark screen. A bento of the week, the numbers and
-/// the reachable achievements, then the plan and the way out.
+/// "Tu progreso": training progress, not a spreadsheet. The week and the
+/// streak lead, editorial numbers follow, then the achievements as cards,
+/// the plan and the way out — all on the app's one dark surface.
 class ProgressPage extends ConsumerWidget {
   const new({super.key});
 
@@ -120,82 +122,21 @@ class _ProgressContent extends ConsumerWidget {
     final layout = context.layout;
     final type = layout.type;
     final streak = overview.streak;
-    final stats = overview.stats;
     final repairable = streak.repairableDate;
     final repairAfter = streak.streakAfterRepair;
     final repairing = ref.watch(streakRepairControllerProvider);
-    final precision = stats.firstTryPrecisionPercent;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        BentoGrid(
-          tiles: [
-            BentoTile(
-              span: BentoSpan.large,
-              tone: BentoTone.ink,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Row(
-                    children: [
-                      const FluiGlyphIcon(
-                        FluiGlyph.streak,
-                        color: FluiColors.creamMuted,
-                      ),
-                      const SizedBox(width: FluiSpacing.xs),
-                      Expanded(
-                        child: FluiLabel(l10n.progressBentoTitle, onDark: true),
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  Text(
-                    l10n.progressStreak(streak.currentStreak),
-                    style: type.titleL.copyWith(color: FluiColors.cream),
-                  ),
-                  const SizedBox(height: FluiSpacing.xs),
-                  Text(
-                    l10n.progressWeekDays(streak.activeDaysThisWeek),
-                    style: type.body.copyWith(color: FluiColors.creamMuted),
-                  ),
-                  const SizedBox(height: FluiSpacing.md),
-                  WeekDots(activeDays: streak.weekDays),
-                ],
-              ),
-            ),
-            _tile(
-              context,
-              value: '${stats.tuya}',
-              label: l10n.statOwnedWords,
-              glyph: FluiGlyph.achievement,
-              tone: BentoTone.lime,
-            ),
-            _tile(
-              context,
-              value: '${stats.practica}',
-              label: l10n.statPracticeWords,
-              glyph: FluiGlyph.review,
-              tone: BentoTone.aqua,
-            ),
-            _tile(
-              context,
-              value: precision == null
-                  ? l10n.commonNoData
-                  : l10n.statPrecisionValue(precision),
-              label: l10n.statPrecisionLabel,
-              glyph: FluiGlyph.goal,
-              tone: BentoTone.coral,
-            ),
-            _tile(
-              context,
-              value: '${stats.activeDays}',
-              label: l10n.statActiveDays,
-              glyph: FluiGlyph.onda,
-              tone: BentoTone.lavender,
-            ),
-          ],
+        _ProgressStreakBlock(streak: streak),
+        SizedBox(height: layout.sectionGap),
+        SectionHeader(
+          title: l10n.progressStatsTitle,
+          onDark: true,
+          glyph: const FluiGlyphIcon(FluiGlyph.goal),
         ),
+        _ProgressNumbers(stats: overview.stats),
         if (repairable != null && repairAfter != null) ...[
           SizedBox(height: layout.blockGap),
           FluiCard(
@@ -243,36 +184,108 @@ class _ProgressContent extends ConsumerWidget {
       ],
     );
   }
+}
 
-  BentoTile _tile(
-    BuildContext context, {
-    required String value,
-    required String label,
-    required FluiGlyph glyph,
-    required BentoTone tone,
-  }) {
+/// The week and the streak: the page's one editorial hero, not a cell in a
+/// grid of identical stat boxes.
+class _ProgressStreakBlock extends StatelessWidget {
+  const new({required this.streak});
+
+  final StreakSummary streak;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final type = context.type;
-    return BentoTile(
-      span: BentoSpan.small,
-      tone: tone,
-      semanticLabel: '$value $label',
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FluiGlyphIcon(glyph, color: FluiColors.ink),
-          const Spacer(),
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            alignment: Alignment.centerLeft,
-            child: Text(
-              value,
-              maxLines: 1,
-              style: type.titleL.copyWith(color: FluiColors.ink),
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            const FluiGlyphIcon(FluiGlyph.streak, color: FluiColors.creamMuted),
+            const SizedBox(width: FluiSpacing.xs),
+            Expanded(child: FluiLabel(l10n.progressBentoTitle, onDark: true)),
+          ],
+        ),
+        const SizedBox(height: FluiSpacing.sm),
+        FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.centerLeft,
+          child: Text(
+            // Has a zero case of its own: "Tu racha empieza con tu próxima
+            // sesión".
+            l10n.progressStreak(streak.currentStreak),
+            style: type.displayL.copyWith(color: FluiColors.cream),
           ),
-          FluiLabel(label, color: FluiColors.ink),
-        ],
-      ),
+        ),
+        const SizedBox(height: FluiSpacing.xs),
+        Text(
+          l10n.progressWeekDays(streak.activeDaysThisWeek),
+          style: type.body.copyWith(color: FluiColors.creamMuted),
+        ),
+        const SizedBox(height: FluiSpacing.md),
+        WeekDots(activeDays: streak.weekDays),
+      ],
+    );
+  }
+}
+
+/// Días activos, palabras tuyas, en práctica y precisión — editorial
+/// numerals, not a KPI tile grid (`docs/redesign/01-design-system.md` §2).
+///
+/// `ProgressStats` has no notion of speaking-attempt counts (the speaking
+/// feature records single attempts but nothing aggregates them into the
+/// learning data this provider reads), so "intentos de habla" is not one of
+/// the numbers here — see the implementation report.
+class _ProgressNumbers extends StatelessWidget {
+  const new({required this.stats});
+
+  final ProgressStats stats;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final precision = stats.firstTryPrecisionPercent;
+    return Wrap(
+      spacing: FluiSpacing.xl,
+      runSpacing: FluiSpacing.lg,
+      children: [
+        SizedBox(
+          width: 150,
+          child: EditorialStat(
+            value: '${stats.activeDays}',
+            label: l10n.statActiveDays,
+            onDark: true,
+          ),
+        ),
+        SizedBox(
+          width: 150,
+          child: EditorialStat(
+            value: '${stats.tuya}',
+            label: l10n.statOwnedWords,
+            onDark: true,
+          ),
+        ),
+        SizedBox(
+          width: 150,
+          child: EditorialStat(
+            value: '${stats.practica}',
+            label: l10n.statPracticeWords,
+            onDark: true,
+          ),
+        ),
+        SizedBox(
+          width: 150,
+          child: EditorialStat(
+            value: precision == null
+                ? l10n.commonNoData
+                : l10n.statPrecisionValue(precision),
+            label: l10n.statPrecisionLabel,
+            caption: l10n.statPrecisionWindow,
+            onDark: true,
+          ),
+        ),
+      ],
     );
   }
 }
