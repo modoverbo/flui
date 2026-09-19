@@ -1,0 +1,228 @@
+schema_version: 1
+sort_order: 9403
+slug: "compasivo"
+status: "draft"
+lemma: "compasivo"
+part_of_speech: "adjetivo"
+syllables: ["com", "pa", "si", "vo"]
+stressed_syllable: 3
+ipa_latam: "[kom.paˈsi.βo]"
+ipa_es: "[kom.paˈsi.βo]"
+explanation: "Que comprende el dolor o el error de otra gente y la trata con cariño en vez de juzgarla."
+example_sentence: "Ante el error de su compañero, Celina fue compasiva y prefirió ayudarlo en vez de señalarlo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona como elogio para quien perdona con calidez; no lo uses como excusa para dejar pasar cualquier cosa."
+when_not_to_use: "No la uses para quien es blando o no pone límites: compasivo comprende el fallo, no lo ignora todo."
+collocations:
+  - "una mirada compasiva"
+  - "un gesto compasivo"
+replaces:
+  - before: "Es alguien que entiende cuando te equivocas y no te trata mal por eso"
+    after: "Es alguien compasivo cuando te equivocas"
+  - before: "Trata con cariño a quien comete un error, sin juzgarlo"
+    after: "Es compasivo con quien comete un error"
+family: ["compasión", "compasivamente"]
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+tags:
+  comodin: ["bueno"]
+  funcion: ["comprender"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "compulsivo"
+    difference: "«Compulsivo» describe un impulso que no se puede controlar; compasivo describe a quien comprende el dolor o el error ajeno."
+    memory_trick: "Compulsivo no se controla; compasivo sí controla su reacción, con calma."
+  - confused_with: "condescendiente"
+    difference: "«Condescendiente» tolera algo por comodidad o quedar bien, casi con aire de superioridad; compasivo comprende con calidez genuina."
+    memory_trick: "El condescendiente tolera desde arriba; el compasivo comprende de igual a igual."
+exercises:
+  - position: 1
+    sentence: "Cuando Manuel rompió el jarrón, su madre fue tan {{blank}} que ni siquiera alzó la voz, solo lo abrazó."
+    hint_general: "Busca la palabra para quien reacciona con calidez ante un error ajeno, en vez de enojarse."
+    explanation: "Compasiva: reacciona con calidez ante el error de su hijo, sin enojo. «Compulsiva» describiría un impulso que no se controla, y «permisiva» diría que no le importó, no que decidió comprender."
+    options:
+      - position: 1
+        text: "compulsiva"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Compulsiva» describe a quien actúa por un impulso que no puede controlar, y aquí la madre reacciona con calma, no con un impulso."
+        hint_specific: "«Compulsiva» habla de un impulso incontrolable. ¿La madre actúa por impulso o con calma?"
+      - position: 2
+        text: "compasiva"
+        is_correct: true
+      - position: 3
+        text: "permisiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Permisiva» describe a quien no pone límites, y aquí la madre sí pudo enojarse, pero eligió comprender antes de reaccionar."
+        hint_specific: "«Permisiva» no pone límites. ¿La frase dice que a la madre no le importó, o que decidió comprender?"
+  - position: 2
+    sentence: "Silvia fue muy {{blank}} cuando su amiga le contó el error que cometió en el trabajo: la escuchó sin juzgarla."
+    hint_general: "Se trata de escuchar el error de alguien y comprenderlo, sin juzgarlo."
+    explanation: "Compasiva: escucha el error de su amiga y lo comprende sin juzgar. «Curiosa» solo indicaría interés por saber más, y «tolerante» solo aceptaría sin protestar, sin la misma calidez."
+    options:
+      - position: 1
+        text: "curiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosa» solo indica interés por saber más, y aquí Silvia además comprende el error sin juzgarlo."
+        hint_specific: "«Curiosa» habla de interés. ¿Silvia solo quiere saber más, o además comprende sin juzgar?"
+      - position: 2
+        text: "compasiva"
+        is_correct: true
+      - position: 3
+        text: "tolerante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tolerante» acepta algo sin protestar, y aquí Silvia no solo lo acepta: comprende el error de su amiga con calidez."
+        hint_specific: "«Tolerante» solo acepta sin protestar. ¿Silvia solo acepta, o además comprende con calidez?"
+  - position: 3
+    sentence: "El abuelo de Joaquín es tan {{blank}} que nunca lo regaña cuando rompe algo sin querer."
+    hint_general: "Busca la palabra para quien no reprocha los descuidos de otra persona por comprenderla."
+    explanation: "Compasivo: no reprocha los descuidos de su nieto porque lo comprende. «Pasivo» describiría a quien no reacciona, y «distraído» hablaría de falta de atención, no del trato hacia el nieto."
+    options:
+      - position: 1
+        text: "pasivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pasivo» describe a quien no actúa ni reacciona, y aquí el abuelo sí reacciona: elige no regañar porque comprende a su nieto."
+        hint_specific: "«Pasivo» describe a quien no hace nada. ¿El abuelo no reacciona, o elige no regañar?"
+      - position: 2
+        text: "compasivo"
+        is_correct: true
+      - position: 3
+        text: "distraído"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distraído» describe a alguien que no presta atención, y aquí se habla de cómo trata a su nieto, no de su propia atención."
+        hint_specific: "«Distraído» habla de falta de atención. ¿La frase describe cómo trata a su nieto o cuánto se distrae él?"
+  - position: 4
+    sentence: "En la revisión trimestral, la gerenta fue {{blank}} con Fernanda por los errores del período, porque sabía que había tenido una mudanza complicada esa temporada."
+    hint_general: "Se trata de comprender la situación detrás de un error, más allá de solo mirar el resultado."
+    explanation: "Compasiva: comprende la situación de Fernanda detrás de los errores. «Buena» es una palabra demasiado general para un texto formal, y «generosa» hablaría de dar de más, no de comprender un motivo."
+    options:
+      - position: 1
+        text: "buena"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Buena» es una palabra muy general y coloquial; en un texto formal conviene una palabra más precisa como «compasiva»."
+        hint_specific: "«Buena» es una palabra muy general. ¿Este texto pide precisión o una palabra de uso diario?"
+      - position: 2
+        text: "compasiva"
+        is_correct: true
+      - position: 3
+        text: "generosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generosa» describe a quien da de más, y aquí la gerenta no da nada material: comprende un motivo detrás de los errores."
+        hint_specific: "«Generosa» habla de dar de más. ¿La gerenta da algo, o comprende una razón?"
+  - position: 5
+    sentence: "Cuando el desconocido le manchó la camisa sin querer, Osvaldo fue {{blank}} y le dijo que no se preocupara."
+    hint_general: "Busca la palabra para quien reacciona con calidez ante un accidente ajeno."
+    explanation: "Compasivo: reacciona con calidez ante el accidente del desconocido. «Indiferente» diría que no le importó, e «educado» hablaría solo de buenos modales, sin comprender el error."
+    options:
+      - position: 1
+        text: "indiferente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferente» describe a quien no le importa nada, y aquí Osvaldo sí reacciona, pero con calidez, no con indiferencia."
+        hint_specific: "«Indiferente» no reacciona. ¿Osvaldo ignora la situación o reacciona con calidez?"
+      - position: 2
+        text: "compasivo"
+        is_correct: true
+      - position: 3
+        text: "educado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Educado» describe buenos modales en general, y aquí Osvaldo, además de cortés, comprende el error del desconocido y no le da importancia."
+        hint_specific: "«Educado» habla de buenos modales. ¿La frase solo habla de modales, o de comprender un error ajeno?"
+  - position: 6
+    sentence: "En su carta de respuesta, la directora se mostró {{blank}} con la familia por el retraso en el trámite."
+    hint_general: "Se trata de mostrar comprensión genuina ante un problema de otra persona."
+    explanation: "Compasiva: muestra comprensión genuina ante el problema de la familia. «Blanda» es coloquial y sugiere falta de firmeza, y «amable» hablaría de buen trato general, sin apuntar al problema concreto."
+    options:
+      - position: 1
+        text: "blanda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Blanda» es coloquial y sugiere debilidad o falta de firmeza, y la carta describe comprensión genuina, no debilidad."
+        hint_specific: "«Blanda» suena a falta de firmeza. ¿La carta muestra debilidad o comprensión genuina?"
+      - position: 2
+        text: "compasiva"
+        is_correct: true
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe buen trato en general, y aquí la directora comprende específicamente el problema de la familia con el trámite."
+        hint_specific: "«Amable» es un buen trato general. ¿La frase habla de trato general o de comprender un problema puntual?"
+  - position: 7
+    sentence: "Isabel fue {{blank}} con Nicolás cuando este olvidó ir a buscarla al aeropuerto: entendió que había tenido una semana horrible."
+    hint_general: "Busca la palabra para quien entiende un olvido ajeno en vez de enojarse por él."
+    explanation: "Compasiva: entiende el olvido de Nicolás y no se enoja. «Rencorosa» guardaría resentimiento, y «despistada» hablaría de la propia distracción de Isabel, no de su reacción."
+    options:
+      - position: 1
+        text: "rencorosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rencorosa» guarda resentimiento, y aquí Isabel hace justo lo contrario: entiende la situación y no se enoja."
+        hint_specific: "«Rencorosa» guarda resentimiento. ¿Isabel guarda resentimiento o lo entiende?"
+      - position: 2
+        text: "compasiva"
+        is_correct: true
+      - position: 3
+        text: "despistada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Despistada» describe a alguien distraído, y aquí se habla de cómo Isabel reacciona ante el olvido de Nicolás, no de su propia distracción."
+        hint_specific: "«Despistada» habla de distracción propia. ¿La frase describe la reacción de Isabel o su despiste?"
+  - position: 8
+    sentence: "El vecindario fue {{blank}} con Teresa después de que olvidara pagar su parte de la fiesta: nadie se lo mencionó dos veces."
+    hint_general: "Se trata de no reprocharle nada a alguien porque se entiende su situación."
+    explanation: "Compasivo: no le reprocha nada a Teresa porque entiende la situación. «Estricto» exigiría cumplir sin excepciones, y «silencioso» solo hablaría de ausencia de ruido, no de dejar pasar el olvido."
+    options:
+      - position: 1
+        text: "estricto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estricto» exige cumplir reglas sin excepciones, y aquí el vecindario, al contrario, dejó pasar el olvido sin reclamos."
+        hint_specific: "«Estricto» no deja pasar nada. ¿El vecindario reclama el olvido o lo deja pasar?"
+      - position: 2
+        text: "compasivo"
+        is_correct: true
+      - position: 3
+        text: "silencioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencioso» describe falta de ruido, y aquí lo importante es que nadie le reprochó nada a Teresa, no que estuvieran callados."
+        hint_specific: "«Silencioso» habla de ausencia de ruido. ¿La frase habla de ruido o de no reprocharle nada?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El jarrón roto"
+    body: "Manuel dejó caer el jarrón favorito de su madre mientras jugaba en la sala. Se quedó paralizado, esperando el reto. Pero ella solo suspiró y lo abrazó: «Fue un accidente, no pasa nada». Manuel entendió que, más que enojo, había comprensión."
+    before_phrase: "No importa, sé que fue sin querer."
+    after_phrase: "Fue muy compasiva conmigo, entendió que fue sin querer."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El café derramado"
+    body: "En la fila del café, un desconocido chocó con Osvaldo y le manchó la camisa entera. Antes de que se disculpara, Osvaldo ya le decía: «Tranquilo, a cualquiera le pasa». El hombre se fue aliviado, sin la incomodidad que esperaba."
+    before_phrase: "No te preocupes, a cualquiera le pasa."
+    after_phrase: "Fui compasivo, a cualquiera le pasa."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los errores del período"
+    body: "En la revisión, la gerenta repasó los números de Fernanda: varios errores, todos en la misma semana de la mudanza. En vez de marcarlos uno por uno, escribió: «Entiendo el contexto; seguro mejoran el próximo período». Fernanda salió de la reunión más tranquila de lo que esperaba."
+    before_phrase: "Entiendo que fue una mala época, no te lo voy a tener en cuenta."
+    after_phrase: "Fui compasiva: entendí el contexto y no te lo tuve en cuenta."
+provenance:
+  generator: "flui authoring agent — batch W5 conflict-fix"
+  gate: null
+  checked_on: "2026-09-18"

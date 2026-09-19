@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 9206
+slug: "parodia"
+status: "draft"
+lemma: "parodia"
+part_of_speech: "sustantivo"
+syllables:
+  - "pa"
+  - "ro"
+  - "dia"
+stressed_syllable: 2
+ipa_latam: "[paˈɾo.dja]"
+ipa_es: "[paˈɾo.dja]"
+explanation: "Copia divertida de algo, como una canción o una película, hecha para dar gracia."
+example_sentence: "El programa hizo una parodia del anuncio famoso, con el mismo eslogan pero al revés."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para hablar de una versión graciosa que copia el estilo de algo conocido para reírse de eso."
+when_not_to_use: "No la uses para una copia seria que no busca dar gracia; aquí el punto es la burla ligera."
+collocations:
+  - "hacer una parodia de algo"
+  - "una parodia musical"
+  - "parodia de una película"
+replaces:
+  - before: "Hicieron una versión graciosa de la canción, cambiándole la letra"
+    after: "Hicieron una parodia de la canción"
+  - before: "Imitaron la película entera para reírse un poco de ella"
+    after: "Hicieron una parodia de la película"
+  - before: "Copiaron el anuncio pero todo al revés, para hacer gracia"
+    after: "Hicieron una parodia del anuncio"
+family:
+  - "parodiar"
+  - "parodista"
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin:
+    - "imitar"
+    - "copiar en broma"
+  funcion:
+    - "bromear"
+    - "criticar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "caricatura"
+    difference: "«Caricatura» exagera uno o dos rasgos sueltos de algo o alguien; esta palabra imita el estilo completo de una obra, con escenas y personajes."
+    memory_trick: "Esta palabra imita la obra entera; la caricatura exagera un rasgo suelto."
+  - confused_with: "imitación"
+    difference: "«Imitación» solo copia algo, sin más intención; esta palabra copia el estilo de algo, pero exagerado y con gracia."
+    memory_trick: "La imitación copia; esta palabra copia y además hace reír."
+exercises:
+  - position: 1
+    sentence: "El grupo de comedia de Nadia subió un video con una {{blank}} del videoclip más visto del verano, cambiando la letra por completo."
+    hint_general: "Es una versión que copia el estilo del videoclip, pero cambiada por completo para dar gracia."
+    explanation: "Parodia: una versión que copia el estilo, pero cambiada para dar gracia. «Paradoja» es una idea que parece contradictoria, sin relación con un video, y «imitación» copiaría el videoclip tal cual, sin cambiar la letra."
+    options:
+      - position: 1
+        text: "paradoja"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Paradoja» es una idea que parece contradictoria pero puede ser cierta, y aquí no hay ninguna idea rara: hay un video que imita el estilo del videoclip para hacer gracia."
+        hint_specific: "«Paradoja» es una idea, no un video. ¿El grupo subió una idea contradictoria o un video gracioso?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "imitación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imitación» copiaría el videoclip tal cual, y aquí el grupo cambia la letra por completo para hacer gracia, no solo copia."
+        hint_specific: "«Imitación» copia sin más. ¿El grupo copia igual o cambia todo para hacer gracia?"
+  - position: 2
+    sentence: "Para la fiesta de la oficina, el equipo de Rodrigo preparó una {{blank}} de la película más taquillera del año, con los jefes como protagonistas."
+    hint_general: "Es una versión exagerada y graciosa de la película, con los jefes en el papel principal."
+    explanation: "Parodia: una versión exagerada y graciosa de la película. «Adaptación» suena a un cambio serio de formato, y aquí lo que hay es una versión pensada para reírse, y «caricatura» exageraría solo un rasgo suelto de cada jefe."
+    options:
+      - position: 1
+        text: "adaptación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adaptación» suena a un cambio serio de formato, como llevar un libro al cine, y aquí lo que hicieron fue una versión exagerada y graciosa para reírse un poco de los jefes."
+        hint_specific: "«Adaptación» suena serio y formal. ¿El equipo buscaba algo serio o algo gracioso?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "caricatura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Caricatura» exageraría un rasgo suelto de cada jefe, y aquí el equipo imita toda la historia de la película, con escenas y todo."
+        hint_specific: "«Caricatura» exagera un rasgo suelto. ¿El equipo exagera un detalle o imita toda una historia?"
+  - position: 3
+    sentence: "El cortometraje de Camila y sus compañeros era una {{blank}} de las telenovelas: el villano con bigote enorme y giros imposibles cada cinco minutos."
+    hint_general: "Es un cortometraje que imita el estilo entero de las telenovelas, de forma exagerada."
+    explanation: "Parodia: un cortometraje que imita el estilo entero de las telenovelas. «Sátira» critica sobre todo con palabras, y aquí hay un cortometraje entero, y «paradoja» es una idea contradictoria, sin relación con esto."
+    options:
+      - position: 1
+        text: "sátira"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sátira» critica con ironía usando palabras, casi siempre en un texto, y aquí lo que hay es un cortometraje entero que imita el estilo de las telenovelas."
+        hint_specific: "«Sátira» se hace sobre todo con palabras. ¿Camila y sus compañeros hicieron un texto o un cortometraje?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "paradoja"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Paradoja» es una idea que parece contradictoria, y el cortometraje no plantea ninguna idea rara: imita el estilo de las telenovelas para hacer gracia."
+        hint_specific: "«Paradoja» es una idea. ¿El cortometraje plantea una idea contradictoria o imita un estilo?"
+  - position: 4
+    sentence: "El músico Baltasar grabó una {{blank}} de la canción de moda, con una letra sobre lo caro que está todo."
+    hint_general: "Es una versión graciosa de la canción de moda, con una letra nueva y distinta."
+    explanation: "Parodia: una versión graciosa de la canción, con letra nueva. «Pastiche» es un término más técnico del mundo del arte, y aquí solo hay una canción cambiada, y «remedo» sería una copia pobre y sin gracia."
+    options:
+      - position: 1
+        text: "pastiche"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pastiche» es un término más técnico del mundo del arte, para mezclar varios estilos, y aquí el músico solo hizo una versión graciosa de una sola canción."
+        hint_specific: "«Pastiche» suena a crítica de arte. ¿El músico mezcla varios estilos o compone otra canción entera para hacer gracia?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "remedo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Remedo» es una imitación pobre y sin gracia, y la canción del músico está hecha con cuidado para hacer reír, no una copia floja."
+        hint_specific: "«Remedo» suena a copia floja. ¿La canción del músico está bien hecha o es una copia floja?"
+  - position: 5
+    sentence: "En la fiesta de disfraces, Elisa y Mateo hicieron una {{blank}} completa de una telenovela famosa, con diálogo, música y final incluido."
+    hint_general: "Es una versión completa de la telenovela, con diálogo y música, hecha de forma exagerada."
+    explanation: "Parodia: una versión completa de la telenovela, exagerada y con música. «Caricatura» exageraría solo un rasgo suelto de un personaje, y aquí hay diálogo, música y final, y «imitación» copiaría la telenovela en serio, sin exagerar."
+    options:
+      - position: 1
+        text: "caricatura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Caricatura» exageraría solo un rasgo suelto de un personaje, y aquí Elisa y Mateo representan diálogo, música y final: la historia entera."
+        hint_specific: "«Caricatura» exagera un rasgo suelto. ¿Elisa y Mateo exageran un detalle o representan la historia entera?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "imitación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imitación» copiaría la telenovela tal cual, y aquí Elisa y Mateo exageran todo para hacer gracia, no la copian en serio."
+        hint_specific: "«Imitación» copia en serio. ¿Elisa y Mateo copian en serio o exageran para hacer gracia?"
+  - position: 6
+    sentence: "El canal de videos de Humberto subió una {{blank}} de los anuncios de perfume, con un actor oliendo su propia camiseta sucia."
+    hint_general: "Es un video que imita el estilo de los anuncios de perfume, de forma exagerada y graciosa."
+    explanation: "Parodia: un video que imita el estilo de los anuncios, de forma exagerada. «Paradoja» es una idea contradictoria, sin relación con un video, y «sátira» se hace sobre todo con palabras, no con actores y cámara."
+    options:
+      - position: 1
+        text: "paradoja"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Paradoja» es una idea contradictoria, y el video no plantea ninguna idea: imita el estilo de los anuncios de perfume para hacer gracia."
+        hint_specific: "«Paradoja» es una idea. ¿El video plantea una idea contradictoria o imita un estilo publicitario?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "sátira"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sátira» critica sobre todo con palabras, y aquí lo que hay es un video que imita el estilo visual de los anuncios, con actor y todo."
+        hint_specific: "«Sátira» se hace con palabras. ¿El canal hizo un texto o un video con actor?"
+  - position: 7
+    sentence: "El club de teatro dirigido por Águeda montó una {{blank}} de la obra más famosa de la ciudad, con los mismos diálogos pero al revés."
+    hint_general: "Es una versión exagerada de la obra, con los mismos diálogos cambiados para dar gracia."
+    explanation: "Parodia: una versión exagerada de la obra, con los diálogos cambiados. «Adaptación» suena a un cambio serio de formato, y aquí lo que hay es una función pensada para reírse, y «remedo» sería una copia pobre y sin gracia."
+    options:
+      - position: 1
+        text: "adaptación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adaptación» suena a un cambio serio de formato, y el club de teatro montó una versión exagerada y graciosa, cambiando los diálogos al revés para hacer reír."
+        hint_specific: "«Adaptación» suena serio y formal. ¿El club buscaba algo serio o algo gracioso?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "remedo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Remedo» es una imitación pobre y sin gracia, y el club de teatro preparó la función con mucho cuidado para hacer reír."
+        hint_specific: "«Remedo» suena a copia floja. ¿La función del club está bien preparada o es una copia floja?"
+  - position: 8
+    sentence: "Para el video del aniversario, los empleados liderados por Simón grabaron una {{blank}} completa del primer anuncio de la empresa, con la misma música pero letra nueva."
+    hint_general: "Es una versión completa del primer anuncio, exagerada y con letra nueva, hecha para dar gracia."
+    explanation: "Parodia: una versión completa del anuncio, exagerada y con letra nueva. «Imitación» copiaría el anuncio tal cual, y aquí cambiaron la letra, y «caricatura» exageraría solo un rasgo suelto del anuncio, no el anuncio entero."
+    options:
+      - position: 1
+        text: "imitación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imitación» copiaría el anuncio tal cual, y los empleados cambiaron la letra para hacer gracia, no solo copiaron."
+        hint_specific: "«Imitación» copia sin más. ¿Los empleados copian igual o componen otra canción para hacer gracia?"
+      - position: 2
+        text: "parodia"
+        is_correct: true
+      - position: 3
+        text: "caricatura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Caricatura» exageraría solo un rasgo suelto del anuncio, y aquí los empleados imitan el anuncio entero, con música y todo."
+        hint_specific: "«Caricatura» exagera un rasgo suelto. ¿Los empleados exageran un detalle o imitan el anuncio entero?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El video del verano"
+    body: "El video de Nadia y su grupo llevaba dos días circulando: la misma coreografía del videoclip más visto del verano, pero con una letra que hablaba del tráfico y las facturas. «Es una parodia, no nos vayan a demandar», bromeó Nadia en la descripción. Ya llevaba medio millón de reproducciones."
+    before_phrase: "Hicimos una versión graciosa del videoclip, cambiándole todo."
+    after_phrase: "Hicimos una parodia del videoclip."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los jefes en la pantalla"
+    body: "El equipo de Rodrigo proyectó su corto en la fiesta de la oficina: los jefes reales, interpretados por sus asistentes, resolviendo una crisis con una calculadora rota. La sala entera se reía a carcajadas, incluidos los jefes. «Buena parodia», dijo uno de ellos al final, aplaudiendo con el resto."
+    before_phrase: "Hicimos un video gracioso imitando a los jefes."
+    after_phrase: "Hicimos una parodia de los jefes."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La obra de la sobremesa"
+    body: "En la sobremesa, los primos improvisaron una versión de la última pelea familiar, exagerando cada grito y cada portazo. Todos terminaron llorando de risa, incluida la tía que había protagonizado la pelea real. «Qué parodia tan buena de mi drama», dijo ella, sirviéndose más café."
+    before_phrase: "Hicieron una versión graciosa y exagerada de la pelea, y me reí de mí misma."
+    after_phrase: "Hicieron una parodia de mi drama, y me reí de mí misma."
+provenance:
+  generator: "flui authoring agent — batch W3 familia-crianza + humor"
+  gate: null
+  checked_on: "2026-09-18"

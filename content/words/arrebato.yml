@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "arrebato"
+status: "draft"
+lemma: "arrebato"
+part_of_speech: "sustantivo"
+syllables: ["a", "rre", "ba", "to"]
+stressed_syllable: 3
+ipa_latam: "[a.reˈβa.to]"
+ipa_es: "[a.reˈβa.to]"
+explanation: "Impulso de golpe y fuerte que hace actuar sin pensarlo mucho, movido por una emoción."
+example_sentence: "En un arrebato, Marina le escribió un mensaje larguísimo a las tres de la mañana."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para explicar una acción hecha sin planearla, movida por una emoción fuerte del momento."
+when_not_to_use: "No lo uses para algo que planeaste con tiempo: el arrebato es siempre repentino, no calculado."
+collocations:
+  - "un arrebato de"
+  - "en un arrebato"
+  - "tener un arrebato"
+family: []
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["me dio por", "de repente hice"]
+  funcion: ["describir impulso"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "arrebol"
+    difference: "El arrebol es el color rojizo que toma el cielo al amanecer o atardecer; el arrebato es un impulso emocional repentino."
+    memory_trick: "El arrebol tiñe el cielo; el arrebato enciende el pecho."
+replaces:
+  - before: "Le dio por escribirle sin pensarlo"
+    after: "Tuvo un arrebato y le escribió"
+  - before: "De repente hizo algo sin planearlo, movido por la emoción"
+    after: "Tuvo un arrebato y actuó sin planearlo"
+exercises:
+  - position: 1
+    sentence: "En un {{blank}}, Marina le escribió un mensaje larguísimo a las tres de la mañana."
+    hint_general: "Un impulso repentino que lleva a actuar sin pensarlo, movido por una emoción."
+    explanation: "Arrebato: un impulso repentino que lleva a actuar sin pensarlo. «Arrebol» es el color rojizo del cielo, y «plan» implica algo pensado con tiempo, justo lo contrario de un mensaje a las tres de la mañana."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo que toma el cielo, sin relación con escribir un mensaje a las tres de la mañana."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de un mensaje de texto?"
+      - position: 3
+        text: "plan"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «plan» implica algo pensado con tiempo, y la frase describe algo repentino, a las tres de la mañana."
+        hint_specific: "Un plan se piensa con tiempo. ¿El mensaje de Marina fue pensado o repentino?"
+  - position: 2
+    sentence: "Fue un {{blank}}: compró dos pasajes para el fin de semana sin consultarlo con nadie."
+    hint_general: "Una decisión repentina, tomada sin pensarlo, movida por la emoción del momento."
+    explanation: "Arrebato: una decisión repentina, tomada sin pensarlo. «Cálculo» implica pensar bien las cosas antes, y «arrebol» es el color del cielo, sin relación con comprar pasajes."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "cálculo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cálculo» implica pensar bien las cosas antes, y la frase dice que compró los pasajes sin consultarlo con nadie."
+        hint_specific: "Un cálculo se piensa con cuidado. ¿La compra de los pasajes fue pensada o repentina?"
+      - position: 3
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo del cielo, sin relación con comprar pasajes de avión."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de un viaje?"
+  - position: 3
+    sentence: "Nadie esperaba que Bruno, tan tranquilo siempre, tuviera un {{blank}} y le cantara una canción en plena calle."
+    hint_general: "Un momento de impulso fuerte que contrasta con la forma de ser habitual de alguien."
+    explanation: "Arrebato: un momento de impulso fuerte que contrasta con lo habitual. «Costumbre» implica algo repetido, y «arrebol» es el color del cielo; ninguno describe este momento excepcional de Bruno."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» implica algo repetido, y la frase dice que Bruno era tranquilo siempre, así que cantar en la calle fue algo excepcional."
+        hint_specific: "Una costumbre se repite seguido. ¿Bruno canta seguido en la calle o fue algo excepcional?"
+      - position: 3
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo del cielo, sin relación con cantarle una canción a alguien en la calle."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de una canción?"
+  - position: 4
+    sentence: "Después del {{blank}} de anoche, Camila releyó el mensaje y se arrepintió un poco de haberlo mandado."
+    hint_general: "El impulso repentino que llevó a hacer algo, visto después con más calma."
+    explanation: "Arrebato: el impulso de golpe que lleva a actuar, visto después con más calma. «Berrinche» es coloquial y sugiere enojo infantil, y «arrebol» es el color del cielo; ninguno describe ese impulso."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "berrinche"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Berrinche» es coloquial y sugiere un enojo infantil, y la frase describe un impulso emocional al escribir, no una rabieta."
+        hint_specific: "«Berrinche» suena a enojo infantil. ¿Camila estaba enojada o tuvo un impulso emocional?"
+      - position: 3
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo del cielo, sin relación con releer un mensaje al día siguiente."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de un mensaje?"
+  - position: 5
+    sentence: "Fue solo un {{blank}}: a la mañana siguiente, ninguno de los dos mencionó el beso de la despedida."
+    hint_general: "Algo que pasó por un impulso del momento, sin que se repitiera después."
+    explanation: "Arrebato: algo que pasó por un impulso del momento, sin repetirse. «Costumbre» implica algo repetido, y «arrebol» es el color del cielo; ninguno describe ese beso de despedida."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» implica algo repetido, y la frase dice que ninguno de los dos volvió a mencionar lo que pasó esa noche."
+        hint_specific: "Una costumbre se repite. ¿El beso se repitió después o quedó en esa sola noche?"
+      - position: 3
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo del cielo, sin relación con un beso de despedida."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de una despedida?"
+  - position: 6
+    sentence: "Sofía tuvo un {{blank}} de celos al ver la foto y le mandó tres mensajes seguidos antes de arrepentirse."
+    hint_general: "Un impulso emocional fuerte que lleva a actuar rápido, sin pensarlo."
+    explanation: "Arrebato: un impulso emocional fuerte que lleva a actuar rápido. «Plan» implica algo pensado con tiempo, y «arrebol» es el color del cielo; ninguno describe ese ataque de celos."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "plan"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «plan» implica algo pensado con tiempo, y la frase describe tres mensajes enviados sin pensar, antes de arrepentirse."
+        hint_specific: "Un plan se piensa con calma. ¿Sofía pensó los mensajes o los mandó sin pensar?"
+      - position: 3
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo del cielo, sin relación con un ataque de celos."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de un ataque de celos?"
+  - position: 7
+    sentence: "En un {{blank}} de sinceridad, Diego le confesó a su cita que llevaba meses nervioso por invitarla a salir."
+    hint_general: "Un impulso repentino que hace decir algo que normalmente se guarda."
+    explanation: "Arrebato: un impulso de golpe que hace decir algo que normalmente se guarda. «Costumbre» implica algo repetido, y «arrebol» es el color del cielo; ninguno describe esa confesión de Diego."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «costumbre» implica algo repetido, y la frase dice que Diego llevaba meses callando eso, así que no era algo habitual decirlo."
+        hint_specific: "Una costumbre se repite. ¿Diego suele confesar esto seguido o llevaba meses callándolo?"
+      - position: 3
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo del cielo, sin relación con una confesión sincera en una cita."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de una confesión?"
+  - position: 8
+    sentence: "Todavía no entiendo qué {{blank}} me hizo aceptar bailar frente a todos esa noche."
+    hint_general: "El impulso repentino que explica una acción que después cuesta entender."
+    explanation: "Arrebato: el impulso de golpe que explica una acción difícil de entender después. «Motivo» sería una razón pensada y clara, y «arrebol» es el color del cielo; ninguno explica ese baile repentino."
+    options:
+      - position: 1
+        text: "arrebato"
+        is_correct: true
+      - position: 2
+        text: "motivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «motivo» sería una razón pensada y clara, y la frase dice que ni la propia persona entiende bien qué la hizo bailar esa noche."
+        hint_specific: "Un motivo es una razón clara. ¿La frase dice que hay una razón clara o que ni ella misma la entiende?"
+      - position: 3
+        text: "arrebol"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «arrebol» es el color rojizo del cielo, sin relación con bailar frente a otras personas."
+        hint_specific: "El arrebol se ve en el cielo. ¿La frase habla del cielo o de bailar frente a otros?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El mensaje de las tres de la mañana"
+    body: "A las tres de la mañana, Marina escribió un mensaje que llevaba semanas guardándose. A la mañana siguiente lo leyó y sintió vergüenza. «Fue un arrebato», le contó a su amiga, «pero no me arrepiento de nada de lo que dije»."
+    before_phrase: "Me dio por escribirle sin pensarlo."
+    after_phrase: "Tuve un arrebato y le escribí."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "emocional"
+    title: "Los pasajes sin consultar"
+    body: "Rubén contó en la oficina que había comprado dos pasajes para el fin de semana sin avisarle a su pareja. «Fue un arrebato total», admitió entre risas, «espero que le guste la sorpresa, porque ya no hay vuelta atrás»."
+    before_phrase: "Me dio por comprarlos sin pensarlo mucho."
+    after_phrase: "Fue un arrebato total."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La confesión que llevaba meses callada"
+    body: "En la cena familiar, su hermano soltó de golpe algo que había callado por años. «Perdón por el arrebato», dijo después, algo avergonzado, «pero llevaba mucho tiempo con esto guardado»."
+    before_phrase: "Perdón por soltarlo así de repente."
+    after_phrase: "Perdón por el arrebato."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

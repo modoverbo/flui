@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "parafrasear"
+status: "draft"
+lemma: "parafrasear"
+part_of_speech: "verbo"
+syllables: ["pa", "ra", "fra", "se", "ar"]
+stressed_syllable: 5
+ipa_latam: "[pa.ɾa.fɾa.seˈaɾ]"
+ipa_es: "[pa.ɾa.fɾa.seˈaɾ]"
+explanation: "Repetir con tus propias palabras lo que alguien dijo, para demostrar atención real."
+example_sentence: "Antes de responder, Marta prefirió parafrasear lo que su compañero acababa de contarle."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo cuando repites la idea de alguien con tus propias palabras, para confirmar que entendiste bien."
+when_not_to_use: "No lo uses para repetir palabra por palabra: parafrasear implica cambiar las palabras, no copiarlas."
+collocations:
+  - "parafrasear lo que dijo"
+  - "parafrasear para confirmar"
+  - "le parafraseó su idea"
+family: ["paráfrasis"]
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["repetir con mis palabras", "confirmar que entendí"]
+  funcion: ["escuchar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "parodiar"
+    difference: "Parodiar es imitar algo para burlarse; parafrasear es repetir la idea de alguien con tus propias palabras, con respeto y para confirmar que la entendiste."
+    memory_trick: "Parodias para hacer reír; parafraseas para entender mejor."
+replaces:
+  - before: "Le repitió con sus palabras lo que había dicho para confirmar que entendió"
+    after: "Le parafraseó lo que había dicho para confirmar que entendió"
+  - before: "Dijo lo mismo que ella, pero con otras palabras"
+    after: "Parafraseó lo que ella dijo"
+exercises:
+  - position: 1
+    sentence: "Antes de responder, Marta prefirió {{blank}} lo que su compañero acababa de contarle sobre el proyecto."
+    hint_general: "Repetir con tus propias palabras lo que alguien dijo, para mostrarle que lo entendiste."
+    explanation: "Parafrasear: repetir con tus propias palabras lo que alguien dijo. «Parodiar» es imitar algo para burlarse, y «grabar» es registrar el sonido, sin repetir la idea con otras palabras."
+    options:
+      - position: 1
+        text: "parafrasear"
+        is_correct: true
+      - position: 2
+        text: "parodiar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parodiar» es imitar algo para burlarse, y aquí Marta busca confirmar que entendió, sin ninguna intención de burla."
+        hint_specific: "Parodiar implica burla. ¿Marta se burla de su compañero o confirma que lo entendió?"
+      - position: 3
+        text: "grabar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grabar» es registrar el sonido tal cual, y aquí Marta repite la idea con sus propias palabras, no con una grabación."
+        hint_specific: "Grabar guarda el sonido exacto. ¿Marta usa sus propias palabras o graba las de él?"
+  - position: 2
+    sentence: "El mediador {{blank}} lo que cada parte decía antes de dejar que la otra respondiera."
+    hint_general: "Repetir con otras palabras lo que alguien dijo, antes de que hable otra persona."
+    explanation: "Parafraseaba: repetía con otras palabras lo que alguien dijo. «Interrumpía» implicaría cortar antes de que terminaran de hablar, y «juzgaba» implicaría opinar, sin relación con repetir la idea."
+    options:
+      - position: 1
+        text: "parafraseaba"
+        is_correct: true
+      - position: 2
+        text: "interrumpía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interrumpir» implica cortar antes de que alguien termine, y la frase dice que el mediador esperaba a que terminaran antes de repetir la idea."
+        hint_specific: "Interrumpir corta a alguien a mitad de frase. ¿El mediador cortaba o esperaba a que terminaran?"
+      - position: 3
+        text: "juzgaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Juzgar» implica dar una opinión sobre lo dicho, y aquí el mediador solo repetía la idea con otras palabras, sin opinar."
+        hint_specific: "Juzgar es dar una opinión. ¿El mediador opinaba sobre lo dicho o solo lo repetía?"
+  - position: 3
+    sentence: "Para asegurarse de haber entendido el reclamo, la asesora {{blank}} el problema del cliente en dos frases simples."
+    hint_general: "Repetir con palabras propias y más simples lo que alguien contó, para confirmar que se entendió."
+    explanation: "Parafraseó: repitió con palabras propias y más simples lo que se dijo. «Ignoró» describe justo lo contrario, y «parodió» implica burla, sin relación con confirmar que se entendió el reclamo."
+    options:
+      - position: 1
+        text: "parafraseó"
+        is_correct: true
+      - position: 2
+        text: "ignoró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» describe justo lo contrario, y la frase dice que la asesora repitió el problema para confirmar que lo había entendido."
+        hint_specific: "Ignorar es no prestar atención. ¿La asesora ignoró el reclamo o lo repitió para confirmarlo?"
+      - position: 3
+        text: "parodió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parodiar» implica imitar algo para burlarse, y aquí la asesora busca confirmar que entendió el reclamo, sin ninguna burla."
+        hint_specific: "Parodiar implica burla. ¿La asesora se burla del cliente o confirma que lo entendió?"
+  - position: 4
+    sentence: "En la terapia de pareja, cada uno debía {{blank}} lo que el otro acababa de decir antes de responder."
+    hint_general: "Repetir con tus palabras lo que dijo otra persona, antes de dar tu propia respuesta."
+    explanation: "Parafrasear: repetir con tus palabras lo que dijo otra persona, antes de responder. «Copiar» implica repetir exactamente igual, sin cambiar las palabras, y «criticar» implica opinar de forma negativa."
+    options:
+      - position: 1
+        text: "parafrasear"
+        is_correct: true
+      - position: 2
+        text: "copiar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» implica repetir exactamente igual, palabra por palabra, y parafrasear pide usar otras palabras, no las mismas."
+        hint_specific: "Copiar repite exactamente igual. ¿La pareja debía repetir igual o con otras palabras?"
+      - position: 3
+        text: "criticar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» implica opinar de forma negativa, y aquí cada uno solo repite la idea del otro, sin opinar sobre ella."
+        hint_specific: "Criticar es opinar de forma negativa. ¿La pareja debía opinar o solo repetir la idea?"
+  - position: 5
+    sentence: "En vez de contradecirla de entrada, Andrés prefirió {{blank}} lo que ella había dicho antes de dar su versión."
+    hint_general: "Repetir con tus propias palabras lo que alguien dijo, antes de dar tu propia opinión."
+    explanation: "Parafrasear: repetir con tus propias palabras lo que alguien dijo. «Chotear» es coloquial y regional, y «parodiar» implica burla; ninguno describe ese gesto antes de dar su versión."
+    options:
+      - position: 1
+        text: "parafrasear"
+        is_correct: true
+      - position: 2
+        text: "chotear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chotear» es coloquial y regional, y aquí se busca nombrar con precisión el gesto de Andrés antes de dar su versión de los hechos."
+        hint_specific: "«Chotear» es una palabra muy regional. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "parodiar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parodiar» implica imitar algo para burlarse, y aquí Andrés busca confirmar que entendió, sin ninguna burla."
+        hint_specific: "Parodiar implica burla. ¿Andrés se burla de ella o confirma que entendió su idea?"
+  - position: 6
+    sentence: "En el taller de comunicación enseñaban a {{blank}} antes de responder, para evitar malentendidos en las discusiones."
+    hint_general: "Repetir la idea de alguien con tus palabras, antes de responder, para evitar confusiones."
+    explanation: "Parafrasear: repetir la idea de alguien con tus palabras, para evitar confusiones. «Adivinar» implica suponer sin confirmar, y «parodiar» implica burla, ninguno evita malentendidos como aquí se busca."
+    options:
+      - position: 1
+        text: "parafrasear"
+        is_correct: true
+      - position: 2
+        text: "adivinar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adivinar» implica suponer algo sin confirmarlo, y parafrasear busca justamente confirmar que se entendió bien la idea."
+        hint_specific: "Adivinar es suponer sin confirmar. ¿La técnica busca suponer o confirmar lo que dijo el otro?"
+      - position: 3
+        text: "parodiar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parodiar» implica imitar algo para burlarse, y la técnica busca evitar malentendidos, no generar burla."
+        hint_specific: "Parodiar implica burla. ¿La técnica busca burlarse o evitar malentendidos?"
+  - position: 7
+    sentence: "Cuando su hijo le contó el problema con su amigo, Elena decidió {{blank}} la historia antes de dar cualquier consejo."
+    hint_general: "Repetir con tus palabras lo que contó otra persona, antes de opinar sobre eso."
+    explanation: "Parafrasear: repetir con tus palabras lo que contó otra persona, antes de opinar. «Minimizar» implicaría restarle importancia, y «parodiar» implica burla, ninguno describe confirmar que se entendió la historia."
+    options:
+      - position: 1
+        text: "parafrasear"
+        is_correct: true
+      - position: 2
+        text: "minimizar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Minimizar» implicaría restarle importancia al problema, y Elena solo repite la historia para confirmar que la entendió, sin restarle peso."
+        hint_specific: "Minimizar resta importancia. ¿Elena le resta importancia al problema o confirma que lo entendió?"
+      - position: 3
+        text: "parodiar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parodiar» implica imitar algo para burlarse, y Elena busca entender bien el problema de su hijo, sin ninguna burla."
+        hint_specific: "Parodiar implica burla. ¿Elena se burla del problema o busca entenderlo bien?"
+  - position: 8
+    sentence: "Antes de firmar el contrato, el abogado {{blank}} cada cláusula para asegurarse de que todos entendían lo mismo."
+    hint_general: "Repetir con palabras más simples lo que dice un texto complicado, para confirmar que se entendió."
+    explanation: "Parafraseó: repitió con palabras más simples cada cláusula. «Firmó» sería aceptar el contrato, algo que aún no había pasado, y «parodió» implica burla, sin relación con revisar un contrato."
+    options:
+      - position: 1
+        text: "parafraseó"
+        is_correct: true
+      - position: 2
+        text: "firmó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Firmar» sería aceptar el contrato, y la frase dice que esto pasó antes de firmar, mientras se revisaba cada cláusula."
+        hint_specific: "Firmar es aceptar el contrato. ¿La frase describe algo antes o después de firmar?"
+      - position: 3
+        text: "parodió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Parodiar» implica imitar algo para burlarse, y el abogado busca que todos entiendan bien cada cláusula, sin ninguna burla."
+        hint_specific: "Parodiar implica burla. ¿El abogado se burla del contrato o busca que se entienda bien?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes de responder"
+    body: "Su compañero le contó un problema largo sobre el proyecto. En vez de responder de inmediato, Marta dijo: «A ver si entendí bien: lo que dices es que el plazo no va a alcanzar». Él asintió, aliviado de sentirse escuchado."
+    before_phrase: "A ver si entendí bien lo que me dijiste."
+    after_phrase: "Voy a parafrasear lo que me dijiste, a ver si entendí bien."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El problema con su amigo"
+    body: "Su hijo llegó llorando después de una pelea con su mejor amigo. Antes de decir nada, Elena repitió la historia con sus propias palabras: «O sea, él te dijo eso delante de todos y tú te sentiste traicionado». Su hijo asintió, y por fin pudo seguir contando."
+    before_phrase: "O sea, lo que me estás contando es que..."
+    after_phrase: "Voy a parafrasear lo que me contaste, para entender bien."
+  - position: 3
+    scene: "social"
+    conversation_type: "emocional"
+    title: "La técnica del mediador"
+    body: "El mediador escuchaba a cada vecino sin interrumpir. Cuando terminaban, repetía la queja con otras palabras antes de dar la palabra al otro. «Solo quiero confirmar que entendí bien», decía, y la tensión de la sala bajaba un poco cada vez."
+    before_phrase: "Solo quiero confirmar que entendí bien lo que dices."
+    after_phrase: "Solo quiero parafrasear lo que dices, para confirmar que entendí bien."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

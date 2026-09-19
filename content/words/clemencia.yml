@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 9008
+slug: "clemencia"
+status: "draft"
+lemma: "clemencia"
+part_of_speech: "sustantivo"
+syllables: ["cle", "men", "cia"]
+stressed_syllable: 2
+ipa_latam: "[kleˈmen.sja]"
+ipa_es: "[kleˈmen.θja]"
+explanation: "Decisión de no castigar con todo el peso posible a quien cometió un error grave."
+example_sentence: "El comité mostró clemencia y redujo la sanción al reconocer que era la primera falta del socio."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve cuando alguien con poder para castigar decide no hacerlo, o hacerlo con menos dureza de la que podría."
+when_not_to_use: "No la uses para el perdón entre iguales, sin ninguna autoridad de por medio, ni para una simple comprensión pasajera."
+collocations:
+  - "pedir clemencia"
+  - "mostrar clemencia"
+  - "actuar con clemencia"
+replaces:
+  - before: "Le pedí que no fuera tan duro conmigo"
+    after: "Le pedí clemencia"
+  - before: "El jefe decidió no despedirla, aunque podía"
+    after: "El jefe mostró clemencia y no la despidió"
+  - before: "Le rogué que lo pensara dos veces antes de castigarme tanto"
+    after: "Le pedí clemencia antes de que decidiera el castigo"
+family:
+  - "clemente"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+  - slug: "negociacion"
+    relevance: 1
+tags:
+  comodin:
+    - "perdonar"
+  funcion:
+    - "no castigar"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "elocuencia"
+    difference: "«Elocuencia» es la habilidad de hablar de forma convincente y clara; esta palabra es la decisión de no castigar con todo el peso posible."
+    memory_trick: "La elocuencia se escucha; esta palabra se concede."
+  - confused_with: "indulgencia"
+    difference: "«Indulgencia» es la actitud tolerante frente a errores cotidianos entre iguales; esta palabra es la decisión de no castigar con todo el peso posible, desde una posición de autoridad."
+    memory_trick: "La clemencia la da quien puede castigar; la indulgencia la tiene quien decide no fijarse tanto en los errores ajenos."
+exercises:
+  - position: 1
+    sentence: "El comité evaluó el caso de Leonardo y decidió mostrar {{blank}}: en vez de expulsarlo, le dieron una última oportunidad con seguimiento."
+    hint_general: "Es la decisión de quien tiene poder para castigar y elige no hacerlo con toda la dureza posible."
+    explanation: "Clemencia: la decisión de quien puede castigar y elige no hacerlo del todo. La «elocuencia» es hablar bien, no perdonar, y la «indulgencia» describe una actitud cotidiana entre iguales, no la decisión de un comité con poder de sanción."
+    options:
+      - position: 1
+        text: "elocuencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «elocuencia» es la habilidad de hablar de forma convincente, y el comité no habla bien ni mal: decide no castigar a Leonardo con toda la dureza posible."
+        hint_specific: "La «elocuencia» tiene que ver con hablar bien. ¿Qué decide el comité, hablar o castigar?"
+      - position: 2
+        text: "clemencia"
+        is_correct: true
+      - position: 3
+        text: "indulgencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indulgencia» describe una actitud tolerante entre iguales en el día a día, y aquí un comité con poder de sanción decide formalmente no expulsar a Leonardo."
+        hint_specific: "Una «indulgencia» no viene de un comité con poder de castigo. ¿Quién decide en esta escena?"
+  - position: 2
+    sentence: "Florencia cometió un error costoso en el cierre del mes, pero su jefe pidió {{blank}} al directorio antes de que la sancionaran."
+    hint_general: "Es pedir que quien tiene el poder de castigar no lo haga con todo su peso."
+    explanation: "Clemencia: pedir que quien tiene poder de castigar no lo haga con todo su peso. Un «perdón» lo pide quien lastimó a otro directamente, y una «comprensión» no necesariamente evita una sanción formal."
+    options:
+      - position: 1
+        text: "perdón"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «perdón» lo pide quien lastimó directamente a otra persona, y aquí el jefe habla con el directorio para evitar una sanción, no para reparar un vínculo personal."
+        hint_specific: "Un «perdón» se pide a quien fue herido. ¿A quién le habla el jefe de Florencia?"
+      - position: 2
+        text: "clemencia"
+        is_correct: true
+      - position: 3
+        text: "comprensión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «comprensión» no siempre evita una sanción formal, y aquí el jefe pide algo más concreto: que el directorio no castigue a Florencia con todo su peso."
+        hint_specific: "Una «comprensión» no siempre cambia una decisión formal. ¿Qué pide exactamente el jefe?"
+  - position: 3
+    sentence: "Matías llegó tarde con la renta otra vez, pero el dueño del departamento decidió tener {{blank}} y no aplicar la multa esta vez."
+    hint_general: "Es la decisión de quien tiene poder para cobrar una sanción y elige no hacerlo esta vez."
+    explanation: "Clemencia: la decisión de quien puede sancionar y elige no hacerlo. Una «compasión» es solo un sentimiento hacia alguien, y una «indulgencia» describe más una actitud tolerante que una decisión formal sobre una multa."
+    options:
+      - position: 1
+        text: "compasión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «compasión» es un sentimiento hacia alguien que sufre, y aquí el dueño toma una decisión concreta: no cobrar la multa, no solo sentir algo por Matías."
+        hint_specific: "Una «compasión» es un sentimiento, no una decisión. ¿Qué decide exactamente el dueño?"
+      - position: 2
+        text: "clemencia"
+        is_correct: true
+      - position: 3
+        text: "indulgencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indulgencia» describe una actitud tolerante en el trato diario, y aquí el dueño toma una decisión puntual y formal: no aplicar la multa de la renta."
+        hint_specific: "Una «indulgencia» es una actitud general, no una decisión puntual. ¿Qué decide el dueño sobre la multa?"
+  - position: 4
+    sentence: "Ariana rompió sin querer una regla importante del equipo, y la capitana pidió {{blank}} en la reunión antes de que la sacaran de la alineación."
+    hint_general: "Es pedir que quien tiene autoridad para sancionar no lo haga del todo."
+    explanation: "Clemencia: pedir que quien tiene autoridad para sancionar no lo haga del todo. Un «perdón» sería el gesto directo entre dos personas, y una «blandura» suena a debilidad, no a una decisión pensada de la capitana."
+    options:
+      - position: 1
+        text: "perdón"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «perdón» sería el gesto directo entre dos personas que se conocen, y aquí la capitana habla en una reunión formal ante todo el equipo, pidiendo que no la saquen de la alineación."
+        hint_specific: "Un «perdón» se pide en privado, entre dos. ¿Dónde habla la capitana de Ariana?"
+      - position: 2
+        text: "clemencia"
+        is_correct: true
+      - position: 3
+        text: "blandura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «blandura» suena a debilidad de carácter, y aquí la capitana no es débil: toma una decisión firme y pensada para defender a Ariana."
+        hint_specific: "Una «blandura» suena a debilidad. ¿La capitana actúa débil o con una decisión firme?"
+  - position: 5
+    sentence: "Guillermo se olvidó de avisar que llegaría tarde a la práctica, y el entrenador decidió tener {{blank}} en vez de sacarlo del próximo partido."
+    hint_general: "Es la decisión de quien puede sancionar y elige suavizar el castigo."
+    explanation: "Clemencia: la decisión de quien puede sancionar y suaviza el castigo. Una «indulgencia» describe más una costumbre tolerante que una decisión sobre un partido, y una «elocuencia» no tiene nada que ver con sancionar o no."
+    options:
+      - position: 1
+        text: "indulgencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indulgencia» describe una costumbre tolerante en el trato diario, y aquí el entrenador toma una decisión puntual sobre un castigo concreto: sacar o no a Guillermo del partido."
+        hint_specific: "Una «indulgencia» es una costumbre, no una decisión puntual. ¿Qué decide el entrenador sobre el partido?"
+      - position: 2
+        text: "elocuencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «elocuencia» tiene que ver con hablar de forma convincente, y el entrenador no habla: decide no sacar a Guillermo del próximo partido."
+        hint_specific: "La «elocuencia» es sobre hablar bien. ¿Qué decisión toma el entrenador, más allá de las palabras?"
+      - position: 3
+        text: "clemencia"
+        is_correct: true
+  - position: 6
+    sentence: "Milagros discutió con su madre y rompió una regla clara de la casa, pero su padre pidió {{blank}} antes de que la castigaran sin salir todo el mes."
+    hint_general: "Es pedir que quien tiene autoridad para castigar reduzca el peso del castigo."
+    explanation: "Clemencia: pedir que quien tiene autoridad reduzca el peso del castigo. Una «comprensión» no siempre cambia el castigo en sí, y una «blandura» suena a debilidad de carácter, no a una decisión firme del padre."
+    options:
+      - position: 1
+        text: "comprensión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «comprensión» no siempre cambia el castigo en sí, y aquí el padre pide algo concreto: que reduzcan el mes entero sin salir que le habían puesto a Milagros."
+        hint_specific: "Una «comprensión» no siempre cambia una decisión. ¿Qué pide exactamente el padre de Milagros?"
+      - position: 2
+        text: "clemencia"
+        is_correct: true
+      - position: 3
+        text: "blandura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «blandura» suena a debilidad de carácter, y el padre no actúa débil: pide con firmeza que reduzcan el castigo antes de que se aplique."
+        hint_specific: "Una «blandura» suena a debilidad. ¿El padre de Milagros actúa débil o con firmeza?"
+  - position: 7
+    sentence: "Lorenzo entregó el informe con dos semanas de retraso, y el consejo decidió tener {{blank}} porque nunca antes había fallado."
+    hint_general: "Es la decisión de un grupo con autoridad de no castigar con todo el peso posible, por una buena trayectoria previa."
+    explanation: "Clemencia: la decisión de no castigar con todo el peso posible, por una buena trayectoria previa. Una «compasión» es solo un sentimiento, y un «perdón» sería el gesto de una sola persona, no de todo un consejo."
+    options:
+      - position: 1
+        text: "compasión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «compasión» es un sentimiento hacia alguien, y aquí el consejo toma una decisión formal, basada en la trayectoria previa de Lorenzo, no solo en un sentimiento."
+        hint_specific: "Una «compasión» es un sentimiento, no una decisión formal. ¿Qué toma el consejo, un sentimiento o una decisión?"
+      - position: 2
+        text: "clemencia"
+        is_correct: true
+      - position: 3
+        text: "perdón"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «perdón» sería el gesto de una sola persona hacia Lorenzo, y aquí es todo un consejo el que decide formalmente no castigarlo con todo el peso posible."
+        hint_specific: "Un «perdón» lo da una sola persona. ¿Quién decide aquí sobre Lorenzo?"
+  - position: 8
+    sentence: "Ainhoa cuidaba a su hermano menor cuando él rompió el jarrón favorito de su madre, y decidió tener {{blank}} y no contarlo esa misma noche."
+    hint_general: "Es la decisión de alguien con cierta autoridad de suavizar las consecuencias de un error ajeno."
+    explanation: "Clemencia: la decisión de suavizar las consecuencias de un error ajeno. Una «indulgencia» describe más una costumbre tolerante en general, y una «blandura» suena a debilidad, no a una decisión pensada de Ainhoa."
+    options:
+      - position: 1
+        text: "clemencia"
+        is_correct: true
+      - position: 2
+        text: "indulgencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indulgencia» describe una costumbre tolerante en general, y aquí Ainhoa toma una decisión puntual sobre un hecho concreto: no contar lo del jarrón esa misma noche."
+        hint_specific: "Una «indulgencia» es una costumbre general. ¿Qué decide Ainhoa sobre esa noche en particular?"
+      - position: 3
+        text: "blandura"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «blandura» suena a debilidad de carácter, y Ainhoa no actúa débil: toma una decisión pensada para proteger a su hermano menor sin mentir del todo."
+        hint_specific: "Una «blandura» suena a debilidad. ¿Ainhoa actúa débil o toma una decisión pensada?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La última oportunidad"
+    body: "El error de Florencia había costado tiempo y dinero al equipo. Su jefe habló con el directorio antes de que decidieran algo: «Pido clemencia: es la primera vez que falla en tres años». El directorio aceptó, con la condición de un seguimiento más cercano durante el próximo trimestre."
+    before_phrase: "Por favor, no sean tan duros con ella, es la primera vez."
+    after_phrase: "Pido clemencia: es la primera vez que falla en tres años."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La regla que se rompió"
+    body: "Milagros sabía que había roto una regla clara de la casa. Su padre habló con su madre antes de decidir el castigo: «Pidamos un poco de clemencia, un mes sin salir es mucho para una vez». Terminaron acordando dos semanas, y una conversación larga con Milagros."
+    before_phrase: "No sean tan duros con ella, por favor, fue solo una vez."
+    after_phrase: "Pidamos un poco de clemencia, un mes es mucho para una vez."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El partido del sábado"
+    body: "Guillermo se había olvidado de avisar que llegaría tarde a la práctica, y temía perderse el partido. El entrenador reunió al equipo: «Voy a tener clemencia esta vez, pero la próxima sí importa el aviso». Guillermo jugó el sábado, y no volvió a olvidarse."
+    before_phrase: "Ojalá no me saquen del partido, fue un descuido."
+    after_phrase: "Voy a tener clemencia esta vez, pero la próxima sí importa."
+provenance:
+  generator: "flui authoring agent — batch W1 pedir-disculparse"
+  gate: null
+  checked_on: "2026-09-18"

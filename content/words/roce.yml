@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "roce"
+status: "draft"
+lemma: "roce"
+part_of_speech: "sustantivo"
+syllables: ["ro", "ce"]
+stressed_syllable: 1
+ipa_latam: "[ˈro.se]"
+ipa_es: "[ˈro.θe]"
+explanation: "Trato frecuente con cierto tipo de gente, que da facilidad para tratar con ellas después."
+example_sentence: "Después de dos años atendiendo clientes internacionales, Marta tenía mucho roce con gente de otras culturas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para explicar por qué alguien se maneja bien en cierto ambiente: lo aprendió por practicarlo mucho."
+when_not_to_use: "No lo uses para hablar de un conflicto puntual: en ese sentido, roce significa fricción, no soltura social."
+collocations:
+  - "tener roce con"
+  - "roce internacional"
+  - "dar roce"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 1
+tags:
+  comodin: ["práctica con gente", "cancha"]
+  funcion: ["describir experiencia"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "trato"
+    difference: "El trato describe cómo alguien se relaciona en general, sea cálido o frío; el roce señala específicamente la práctica acumulada que da soltura frente a cierto tipo de gente."
+    memory_trick: "El roce se gana con la práctica; el trato se tiene, bueno o malo."
+replaces:
+  - before: "Está acostumbrada a tratar con extranjeros"
+    after: "Tiene roce con extranjeros"
+  - before: "Ya tiene práctica hablando con directivos"
+    after: "Ya tiene roce con directivos"
+exercises:
+  - position: 1
+    sentence: "Después de dos años atendiendo clientes de otros países, Marta ya tenía {{blank}} con gente de culturas muy distintas."
+    hint_general: "Habla de la soltura que da tratar seguido con cierto tipo de personas."
+    explanation: "Roce: la soltura que da tratar seguido con cierto tipo de personas. «Choque» sugiere un conflicto puntual, y «suerte» sería algo casual, sin relación con la práctica acumulada."
+    options:
+      - position: 1
+        text: "roce"
+        is_correct: true
+      - position: 2
+        text: "choque"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Choque» sugiere un conflicto puntual, y la frase describe una soltura ganada con la práctica, no un enfrentamiento."
+        hint_specific: "Un choque es un conflicto. ¿La frase habla de una pelea o de práctica acumulada?"
+      - position: 3
+        text: "suerte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «suerte» sería algo casual, y aquí la soltura viene de dos años de práctica constante."
+        hint_specific: "La suerte no se acumula en dos años de trabajo. ¿Aquí hubo práctica o azar?"
+  - position: 2
+    sentence: "Se nota que Bruno tiene {{blank}} con periodistas: responde preguntas incómodas sin ponerse tenso."
+    hint_general: "La soltura que se nota cuando alguien trató mucho con cierto tipo de gente antes."
+    explanation: "Roce: la soltura que se nota por haber tratado mucho con cierto tipo de gente. «Miedo» describiría tensión, y «goce» es disfrute, ninguno de los dos explica esa soltura con periodistas."
+    options:
+      - position: 1
+        text: "miedo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «miedo» describiría tensión frente a los periodistas, y la frase dice que Bruno responde sin ponerse tenso."
+        hint_specific: "El miedo pone tenso. ¿La frase dice que Bruno se pone tenso o que responde con calma?"
+      - position: 2
+        text: "roce"
+        is_correct: true
+      - position: 3
+        text: "goce"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Goce» es disfrute, y la frase describe soltura práctica frente a preguntas incómodas, no un placer."
+        hint_specific: "El goce es disfrute puro. ¿La frase habla de disfrutar o de manejarse con soltura?"
+  - position: 3
+    sentence: "Después de tantos viajes de trabajo, Camila tiene {{blank}} con protocolos de todo tipo, desde cenas formales hasta ferias improvisadas."
+    hint_general: "La soltura que da haber pasado por muchas situaciones parecidas antes."
+    explanation: "Roce: la soltura que da haber pasado por muchas situaciones parecidas. «Alergia» es una reacción física a una sustancia, y «gozo» es puro disfrute, no práctica acumulada en protocolos."
+    options:
+      - position: 1
+        text: "roce"
+        is_correct: true
+      - position: 2
+        text: "alergia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «alergia» es una reacción física a una sustancia, sin relación con manejarse en protocolos de trabajo."
+        hint_specific: "Una alergia es una reacción del cuerpo. ¿La frase habla de salud o de protocolos?"
+      - position: 3
+        text: "gozo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «gozo» es puro disfrute, y la frase describe una soltura práctica ganada con la experiencia, no un placer."
+        hint_specific: "El gozo es disfrute puro. ¿La frase habla de disfrutar o de manejarse con soltura?"
+  - position: 4
+    sentence: "El nuevo vendedor todavía no tiene {{blank}} con clientes difíciles, así que se pone nervioso ante cualquier reclamo."
+    hint_general: "La práctica acumulada que hace falta para no ponerse nervioso frente a cierto tipo de gente."
+    explanation: "Roce: la práctica acumulada para no ponerse nervioso frente a cierto tipo de gente. «Onda» es muy coloquial y vaga, y «goce» es disfrute, no la práctica que aún le falta al vendedor."
+    options:
+      - position: 1
+        text: "onda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Onda» es muy coloquial y vaga, y aquí se busca nombrar con precisión la falta de práctica frente a clientes difíciles."
+        hint_specific: "«Onda» es una palabra muy informal y vaga. ¿La frase pide una palabra precisa o una vaga?"
+      - position: 2
+        text: "roce"
+        is_correct: true
+      - position: 3
+        text: "goce"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Goce» es disfrute, y la frase habla de la falta de práctica frente a clientes difíciles, no de placer."
+        hint_specific: "El goce es disfrute. ¿Al vendedor le falta disfrute o práctica?"
+  - position: 5
+    sentence: "Diez años dando charlas le dieron a Sofía {{blank}} frente a cualquier tipo de público, desde niños hasta directivos."
+    hint_general: "La soltura que da haber estado frente a muchos públicos distintos durante años."
+    explanation: "Roce: la soltura que da haber estado frente a muchos públicos durante años. «Pánico» describe miedo escénico, y «goce» es disfrute; ninguno explica la soltura que ganó Sofía con los años."
+    options:
+      - position: 1
+        text: "roce"
+        is_correct: true
+      - position: 2
+        text: "pánico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «pánico» describe miedo escénico, y la frase dice que Sofía se maneja bien frente a cualquier público, no que le teme."
+        hint_specific: "El pánico paraliza. ¿La frase dice que Sofía se paraliza o que se maneja bien?"
+      - position: 3
+        text: "goce"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Goce» es disfrute, y la frase describe una soltura práctica ganada en diez años de charlas."
+        hint_specific: "El goce es disfrute. ¿La frase habla de disfrutar o de manejarse con soltura?"
+  - position: 6
+    sentence: "Trabajar en tres países distintos le dio a Iván {{blank}} con formas de negociar muy diferentes entre sí."
+    hint_general: "La soltura para adaptarse a estilos de trato muy distintos entre sí."
+    explanation: "Roce: la soltura para adaptarse a estilos de trato muy distintos. «Costumbre» sugiere una rutina fija, y «goce» es disfrute; ninguno explica esa capacidad de adaptarse que ganó Iván."
+    options:
+      - position: 1
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Costumbre» sugiere una rutina fija y repetida, y aquí Iván se adaptó a formas de negociar muy diferentes entre sí."
+        hint_specific: "Una costumbre es siempre igual. ¿Iván repitió lo mismo o se adaptó a formas distintas?"
+      - position: 2
+        text: "roce"
+        is_correct: true
+      - position: 3
+        text: "goce"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Goce» es disfrute, y la frase describe la soltura ganada al negociar en tres países distintos."
+        hint_specific: "El goce es disfrute. ¿La frase habla de disfrutar o de adaptarse con soltura?"
+  - position: 7
+    sentence: "La coordinadora eligió a Lucía para recibir a la delegación extranjera porque tenía más {{blank}} que el resto del equipo."
+    hint_general: "La soltura que hace que alguien sea la persona indicada para tratar con cierto tipo de visitantes."
+    explanation: "Roce: la soltura que hace indicada a una persona para tratar con cierto tipo de visitantes. «Antigüedad» solo cuenta los años en el puesto, y «goce» es disfrute, no esa soltura concreta."
+    options:
+      - position: 1
+        text: "roce"
+        is_correct: true
+      - position: 2
+        text: "antigüedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «antigüedad» solo cuenta los años en el puesto, y la frase habla de una soltura concreta con delegaciones extranjeras, no de tiempo en la empresa."
+        hint_specific: "La antigüedad cuenta años. ¿La frase habla de tiempo en la empresa o de soltura con visitantes?"
+      - position: 3
+        text: "goce"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Goce» es disfrute, y la frase explica por qué Lucía es la indicada por su soltura, no por placer."
+        hint_specific: "El goce es disfrute. ¿La coordinadora elige por disfrute o por soltura práctica?"
+  - position: 8
+    sentence: "Ser hija de diplomáticos le dio a Renata {{blank}} con protocolos que a sus compañeros les costaba entender."
+    hint_general: "La soltura ganada desde chica por haber estado en cierto tipo de ambientes."
+    explanation: "Roce: la soltura ganada desde chica por haber estado en cierto ambiente. «Herencia» habla de algo recibido de familia, no de una práctica personal, y «goce» es disfrute, no soltura."
+    options:
+      - position: 1
+        text: "herencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Herencia» habla de algo recibido de la familia, y la frase describe una soltura ganada por la propia experiencia de Renata."
+        hint_specific: "Una herencia se recibe, no se practica. ¿La frase habla de recibir algo o de haberlo vivido?"
+      - position: 2
+        text: "roce"
+        is_correct: true
+      - position: 3
+        text: "goce"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Goce» es disfrute, y la frase habla de la soltura de Renata con protocolos, no de un placer."
+        hint_specific: "El goce es disfrute. ¿La frase habla de disfrutar los protocolos o de manejarlos con soltura?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Dos años con clientes de todo el mundo"
+    body: "En la reunión de cierre, el gerente comentó: «Marta, se nota que ya tienes roce con clientes internacionales». Ella sonrió: dos años atrás, cualquier llamada en otro idioma la ponía nerviosa; ahora las manejaba sin pensarlo dos veces."
+    before_phrase: "Ya estoy acostumbrada a tratar con gente de otros países."
+    after_phrase: "Ya tengo roce con clientes internacionales."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Frente a cualquier público"
+    body: "«¿Te incomoda hablar frente a directivos?», preguntó la entrevistadora. Sofía respondió: «Para nada, tengo roce con todo tipo de público desde hace años». La entrevistadora anotó la respuesta y pasó a la siguiente pregunta con una sonrisa."
+    before_phrase: "Ya estoy acostumbrada a hablar frente a cualquier público."
+    after_phrase: "Tengo roce con todo tipo de público."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La delegación que nadie quería recibir"
+    body: "Cuando nadie se ofrecía a recibir a la delegación extranjera, Lucía levantó la mano. «Tengo roce con este tipo de protocolo, no me cuesta nada», dijo, y en media hora ya tenía a todos los visitantes cómodos y conversando."
+    before_phrase: "Ya estoy acostumbrada a este tipo de protocolo."
+    after_phrase: "Tengo roce con este tipo de protocolo."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

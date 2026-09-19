@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "aplaudir"
+status: "draft"
+lemma: "aplaudir"
+part_of_speech: "verbo"
+syllables: ["a", "plau", "dir"]
+stressed_syllable: 3
+ipa_latam: "[a.plawˈðiɾ]"
+ipa_es: "[a.plawˈðiɾ]"
+explanation: "Reconocer en voz alta algo bueno que hizo alguien, con ganas y sin quedarse callado."
+example_sentence: "Sus compañeros aplaudieron la decisión de Rocío de decir la verdad, aunque le costara el puesto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo también en sentido figurado, para apoyar una decisión valiente de alguien, no solo para el gesto físico."
+when_not_to_use: "No lo uses para un acuerdo silencioso: aplaudir implica mostrar el apoyo de forma clara, no guardártelo."
+collocations:
+  - "aplaudir la decisión"
+  - "aplaudir el gesto"
+  - "todos aplaudieron"
+family: ["aplauso"]
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["apoyar con ganas", "reconocer en voz alta"]
+  funcion: ["reconocer"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "aplacar"
+    difference: "Aplacar es calmar algo, como un enojo o un conflicto; aplaudir es reconocer en voz alta algo bueno que hizo alguien."
+    memory_trick: "Aplacas una pelea; aplaudes una decisión valiente."
+replaces:
+  - before: "Le dio la razón con ganas por haber dicho la verdad"
+    after: "Aplaudió que dijera la verdad"
+  - before: "Apoyaron en voz alta esa decisión difícil"
+    after: "Aplaudieron esa decisión difícil"
+exercises:
+  - position: 1
+    sentence: "Sus compañeros {{blank}} la decisión de Rocío de decir la verdad, aunque le costara el puesto."
+    hint_general: "Reconocer en voz alta algo bueno que hizo alguien, con ganas."
+    explanation: "Aplaudieron: reconocieron en voz alta algo bueno con ganas. «Aplacaron» es calmar algo, y «cuestionaron» implicaría dudar de la decisión, justo lo contrario de apoyarla."
+    options:
+      - position: 1
+        text: "aplaudieron"
+        is_correct: true
+      - position: 2
+        text: "aplacaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer una decisión valiente de decir la verdad."
+        hint_specific: "Aplacar calma un enojo. ¿Los compañeros calmaron algo o reconocieron la decisión de Rocío?"
+      - position: 3
+        text: "cuestionaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cuestionar» implicaría dudar de la decisión, y la frase dice que sus compañeros la apoyaron, justo lo contrario de dudar."
+        hint_specific: "Cuestionar es dudar de algo. ¿Sus compañeros dudaron de la decisión o la apoyaron?"
+  - position: 2
+    sentence: "El crítico {{blank}} el gesto del director de cambiar el final de la película en el último momento."
+    hint_general: "Reconocer en voz alta un gesto arriesgado que hizo alguien."
+    explanation: "Aplaudió: reconoció en voz alta un gesto arriesgado. «Aplacó» es calmar algo, y «lamentó» expresaría pesar por algo, justo lo contrario de reconocer un buen gesto."
+    options:
+      - position: 1
+        text: "aplaudió"
+        is_correct: true
+      - position: 2
+        text: "lamentó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lamentar» expresaría pesar por algo, y la frase dice que el crítico reconoció con ganas el gesto arriesgado del director."
+        hint_specific: "Lamentar expresa pesar. ¿El crítico lamentó el cambio o lo reconoció con ganas?"
+      - position: 3
+        text: "aplacó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer el gesto de cambiar un final de película."
+        hint_specific: "Aplacar calma un enojo. ¿El crítico calmó algo o reconoció el gesto del director?"
+  - position: 3
+    sentence: "Toda la sala se puso de pie para {{blank}} el discurso más sincero que habían escuchado en años."
+    hint_general: "Reconocer en voz alta, de pie, algo especialmente bueno que se dijo."
+    explanation: "Aplaudir: reconocer en voz alta algo especialmente bueno. «Aplacar» es calmar algo, y «grabar» es registrar el sonido, ninguno describe ese reconocimiento de pie."
+    options:
+      - position: 1
+        text: "aplaudir"
+        is_correct: true
+      - position: 2
+        text: "grabar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grabar» es registrar el sonido tal cual, y la frase describe a la sala reconociendo el discurso de pie, no grabándolo."
+        hint_specific: "Grabar registra el sonido exacto. ¿La sala grabó el discurso o lo reconoció de pie?"
+      - position: 3
+        text: "aplacar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer un discurso sincero."
+        hint_specific: "Aplacar calma un enojo. ¿La sala calmó algo o reconoció el discurso?"
+  - position: 4
+    sentence: "Su padre nunca {{blank}} en voz alta, pero esta vez le dijo que estaba orgulloso de la decisión."
+    hint_general: "Reconocer en voz alta algo bueno, algo que en esta frase casi nunca hace esa persona."
+    explanation: "Aplaudía: reconocía en voz alta algo bueno. «Aplacaba» es calmar algo, y «regañaba» implica reprocharle algo, justo lo contrario de reconocer con orgullo una decisión."
+    options:
+      - position: 1
+        text: "aplaudía"
+        is_correct: true
+      - position: 2
+        text: "regañaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Regañar» implica reprocharle algo a alguien, y la frase dice que su padre le dijo que estaba orgulloso, justo lo contrario de reprocharle."
+        hint_specific: "Regañar es reprochar algo. ¿Su padre reprochaba o reconocía con orgullo?"
+      - position: 3
+        text: "aplacaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer con orgullo una decisión de su hijo."
+        hint_specific: "Aplacar calma un enojo. ¿Su padre calmaba algo o reconocía con orgullo?"
+  - position: 5
+    sentence: "La crítica gastronómica {{blank}} que el restaurante se animara a sacar el plato más caro de la carta."
+    hint_general: "Reconocer en voz alta que alguien tomó una decisión valiente o arriesgada."
+    explanation: "Aplaudió: reconoció en voz alta una decisión valiente. «Copió» implica imitar algo, y «aplacó» es calmar algo, ninguno describe reconocer el riesgo de sacar un plato de la carta."
+    options:
+      - position: 1
+        text: "aplaudió"
+        is_correct: true
+      - position: 2
+        text: "copió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» implica imitar algo, y la frase dice que la crítica reconoció con aprobación la decisión del restaurante, no que la imitara."
+        hint_specific: "Copiar es imitar algo. ¿La crítica copió algo o reconoció la decisión con aprobación?"
+      - position: 3
+        text: "aplacó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer la decisión de sacar un plato caro de la carta."
+        hint_specific: "Aplacar calma un enojo. ¿La crítica calmó algo o reconoció la decisión del restaurante?"
+  - position: 6
+    sentence: "El público {{blank}} de pie cuando el actor mayor terminó su último monólogo en el escenario."
+    hint_general: "Reconocer en voz alta y de pie un momento especialmente emotivo."
+    explanation: "Aplaudió: reconoció en voz alta y de pie un momento emotivo. «Chifló» describe una reacción de rechazo, justo lo contrario, y «aplacó» es calmar algo, sin relación con ese momento."
+    options:
+      - position: 1
+        text: "aplaudió"
+        is_correct: true
+      - position: 2
+        text: "chifló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Chiflar» describe una reacción de rechazo o burla, y la frase describe un reconocimiento emotivo, justo lo contrario de un rechazo."
+        hint_specific: "Chiflar es una reacción de rechazo. ¿El público rechazó el monólogo o lo reconoció con emoción?"
+      - position: 3
+        text: "aplacó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer un monólogo emotivo."
+        hint_specific: "Aplacar calma un enojo. ¿El público calmó algo o reconoció el monólogo?"
+  - position: 7
+    sentence: "En el chat del curso, varios {{blank}} que Bruno se animara a preguntar lo que nadie más se animaba a preguntar."
+    hint_general: "Reconocer en un chat que alguien tuvo el valor de hacer algo que otros evitaban."
+    explanation: "Aplaudieron: reconocieron que alguien tuvo el valor de hacer algo que otros evitaban. «Se coparon» es coloquial y regional, y «aplacaron» es calmar algo, ninguno nombra esa valentía con precisión."
+    options:
+      - position: 1
+        text: "aplaudieron"
+        is_correct: true
+      - position: 2
+        text: "se coparon"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Se coparon» es coloquial y regional, y aquí el chat busca nombrar con precisión que reconocieron el valor de Bruno."
+        hint_specific: "«Se coparon» es muy regional e informal. ¿El chat busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "aplacaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer que alguien se animó a preguntar."
+        hint_specific: "Aplacar calma un enojo. ¿Varios calmaron algo o reconocieron la valentía de Bruno?"
+  - position: 8
+    sentence: "Aunque perdieron el partido, los hinchas {{blank}} el esfuerzo del equipo hasta el último minuto."
+    hint_general: "Reconocer en voz alta el esfuerzo de un grupo, aunque el resultado final no haya sido bueno."
+    explanation: "Aplaudieron: reconocieron en voz alta el esfuerzo de un grupo, sin importar el resultado. «Criticaron» implica señalar fallas, y «aplacaron» es calmar algo, ninguno describe ese reconocimiento."
+    options:
+      - position: 1
+        text: "aplaudieron"
+        is_correct: true
+      - position: 2
+        text: "criticaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» implica señalar fallas, y la frase dice que los hinchas reconocieron el esfuerzo del equipo hasta el último minuto, no que señalaran fallas."
+        hint_specific: "Criticar señala fallas. ¿Los hinchas criticaron al equipo o reconocieron su esfuerzo?"
+      - position: 3
+        text: "aplacaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aplacar» es calmar algo, como un enojo o un conflicto, sin relación con reconocer el esfuerzo de un equipo hasta el final."
+        hint_specific: "Aplacar calma un enojo. ¿Los hinchas calmaron algo o reconocieron el esfuerzo del equipo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La verdad que costó caro"
+    body: "Rocío sabía que decir la verdad en esa reunión podía costarle el puesto, pero la dijo igual. Al salir, un compañero le tocó el hombro: «Quiero aplaudir lo que hiciste ahí adentro, no todos se animan», le dijo, y eso le alcanzó para no arrepentirse."
+    before_phrase: "Quiero decirte que estuvo muy bien lo que hiciste ahí adentro."
+    after_phrase: "Quiero aplaudir lo que hiciste ahí adentro."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El orgullo que casi nunca decía"
+    body: "Su padre nunca fue de grandes palabras, pero esta vez lo miró distinto. «Aplaudo que hayas tomado esa decisión sola, no fue fácil», le dijo, y esas pocas palabras pesaron más que cualquier discurso largo."
+    before_phrase: "Estoy orgulloso de que hayas tomado esa decisión sola."
+    after_phrase: "Aplaudo que hayas tomado esa decisión sola."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La pregunta que nadie hacía"
+    body: "En el chat del curso, nadie se animaba a preguntar lo obvio hasta que Bruno lo hizo. «Aplaudo que hayas preguntado eso, todos lo estábamos pensando», escribió alguien, y en minutos el chat se llenó de mensajes parecidos."
+    before_phrase: "Qué bueno que hayas preguntado eso, todos lo pensábamos."
+    after_phrase: "Aplaudo que hayas preguntado eso, todos lo pensábamos."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,234 @@
+# Word 7 of batch W4 humor. Substitution note: originally assigned "socarrón"
+# (zipf 2.29, dp 0.70 — fails hard, regional-only). Replaced with "picante" in
+# its non-literal sense (a witty, cheeky remark with an edge, not a flavor),
+# which passes: zipf 3.83, dp 0.20. Written carefully to stay about verbal
+# wit — never romantic or sexual — per the brand's "stay off sex" rule; two
+# exercises and the usage notes make that boundary explicit.
+schema_version: 1
+sort_order: 9307
+slug: "picante"
+status: "draft"
+lemma: "picante"
+part_of_speech: "adjetivo"
+syllables: ["pi", "can", "te"]
+stressed_syllable: 2
+ipa_latam: "[piˈkan.te]"
+ipa_es: "[piˈkan.te]"
+explanation: "Que tiene un punto de gracia al hablar o escribir, directo y sin llegar a molestar a nadie."
+example_sentence: "El comentario picante de la presentadora sobre los precios del supermercado se hizo viral esa misma tarde."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona para un comentario con chispa y algo de atrevimiento, dicho con buena intención, no para herir a alguien en concreto."
+when_not_to_use: "No la uses para insinuaciones de tipo romántico ni para un comentario que busca insultar a alguien; aquí el filo va con gracia, no con mala intención."
+collocations:
+  - "comentario picante"
+  - "respuesta picante"
+replaces:
+  - before: "Dijo algo con un poco de mala leche pero gracioso"
+    after: "Dijo un comentario picante"
+  - before: "Respondió con algo directo y con chispa"
+    after: "Respondió con algo picante"
+family: ["picar"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["directo"]
+  funcion: ["comentar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "picajoso"
+    difference: "«Picajoso» describe a quien se ofende con facilidad; «picante» describe el comentario ingenioso y con chispa que alguien dice, todo lo contrario a ofenderse."
+    memory_trick: "El picajoso se enoja fácil; lo picante hace reír fácil."
+  - confused_with: "picoso"
+    difference: "«Picoso» describe la comida con chile o especias fuertes; «picante», en este sentido, describe un comentario con chispa, no un sabor."
+    memory_trick: "Lo picoso se prueba con la boca; lo picante, en este sentido, se nota en lo que dices."
+exercises:
+  - position: 1
+    sentence: "La respuesta que dio la presentadora sobre los precios del supermercado fue tan {{blank}} que el clip se compartió miles de veces esa misma tarde."
+    hint_general: "Busca la palabra para un comentario ingenioso y con chispa, que roza el límite sin cruzarlo."
+    explanation: "Picante: la respuesta ingeniosa de la presentadora se hizo viral. «Picajosa» describe a quien se ofende fácil, y «extensa» solo habla de duración, ninguna explica por qué se compartió tanto."
+    options:
+      - position: 1
+        text: "picajosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Picajosa» describe a alguien que se ofende con facilidad, y la presentadora no se ofendió: fue ella quien lanzó el comentario con gracia."
+        hint_specific: "«Picajosa» describe a quien se enoja fácil. ¿La presentadora se enojó o lanzó un comentario ingenioso?"
+      - position: 2
+        text: "picante"
+        is_correct: true
+      - position: 3
+        text: "extensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extensa» solo habla de duración, y lo que hizo que el clip se compartiera tanto fue lo ingenioso del comentario, no cuánto duraba."
+        hint_specific: "«Extensa» habla de duración. ¿El clip se compartió por largo o por ingenioso?"
+  - position: 2
+    sentence: "Durante la retrospectiva, el comentario de Máximo sobre las reuniones eternas fue tan {{blank}} que quedó anotado en el acta con una carita de risa."
+    hint_general: "Piensa en un comentario de equipo con chispa, directo pero sin mala intención."
+    explanation: "Picante: el comentario ingenioso de Máximo quedó anotado con una carita de risa. «Sofisticado» describe algo elegante y refinado, y «confidencial» habla de algo privado, ninguna encaja con una broma anotada a la vista de todos."
+    options:
+      - position: 1
+        text: "sofisticado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sofisticado» describe algo elegante y refinado, y el comentario de Máximo fue directo y con chispa, más cercano a una broma de equipo que a algo refinado."
+        hint_specific: "«Sofisticado» suena elegante y refinado. ¿Encaja con una broma de equipo anotada con una carita de risa?"
+      - position: 2
+        text: "picante"
+        is_correct: true
+      - position: 3
+        text: "confidencial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confidencial» describe algo que debe mantenerse en privado, y aquí el comentario quedó anotado a la vista de todos en el acta."
+        hint_specific: "«Confidencial» es algo privado. ¿El comentario se guardó en secreto o se anotó para todos?"
+  - position: 3
+    sentence: "Antonella respondió al meme del grupo con un comentario tan {{blank}} sobre su propio jefe que todos temieron que él lo hubiera visto."
+    hint_general: "Busca la palabra para un comentario ingenioso sobre uno mismo, con un poco de atrevimiento."
+    explanation: "Picante: el comentario ingenioso de Antonella sobre su propio jefe asustó al grupo. «Obsceno» describe algo vulgar, y «confuso» describe algo difícil de entender, ninguna encaja con un comentario claro e ingenioso."
+    options:
+      - position: 1
+        text: "obsceno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obsceno» describe algo de mal gusto o vulgar, y el comentario de Antonella fue ingenioso y con chispa, no grosero."
+        hint_specific: "«Obsceno» es algo vulgar o de mal gusto. ¿El comentario de Antonella fue vulgar o ingenioso?"
+      - position: 2
+        text: "picante"
+        is_correct: true
+      - position: 3
+        text: "confuso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confuso» describe algo difícil de entender, y el grupo entendió perfectamente el comentario: por eso temieron que su jefe lo hubiera visto."
+        hint_specific: "«Confuso» es difícil de entender. ¿El grupo entendió el comentario o se quedó confundido?"
+  - position: 4
+    sentence: "En la rueda de prensa, el jugador dio una respuesta tan {{blank}} sobre la derrota que los periodistas se rieron a pesar del resultado."
+    hint_general: "Piensa en una respuesta con filo e ingenio, capaz de hacer reír incluso después de perder."
+    explanation: "Picante: la respuesta ingeniosa del jugador hizo reír a los periodistas. «Desenfadado» describe un tono relajado pero sin filo, y «triste» describe justo lo contrario de lo que provocó la risa."
+    options:
+      - position: 1
+        text: "desenfadado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Desenfadado» describe un tono muy relajado y sin formalidad, y aunque la respuesta fue ingeniosa, mantuvo cierto filo que «desenfadado» no describe del todo."
+        hint_specific: "«Desenfadado» suena a un tono muy relajado, sin filo. ¿La respuesta del jugador solo fue relajada o también tuvo chispa?"
+      - position: 2
+        text: "triste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Triste» describe un tono apagado, y lo que hizo reír a los periodistas fue justo lo contrario: una respuesta con ingenio."
+        hint_specific: "«Triste» es un tono apagado. ¿Eso explica que los periodistas se rieran?"
+      - position: 3
+        text: "picante"
+        is_correct: true
+  - position: 5
+    sentence: "Ezequiel publicó un texto tan {{blank}} sobre las reuniones que empiezan tarde que su propio equipo lo etiquetó en los comentarios."
+    hint_general: "Busca la palabra para un texto ingenioso y con chispa sobre algo que todos reconocen."
+    explanation: "Picante: el texto ingenioso de Ezequiel hizo que su equipo lo etiquetara. «Detallado» habla de dar muchos datos, y «serio» describe un tono formal, ninguna encaja con un texto con chispa."
+    options:
+      - position: 1
+        text: "detallado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallado» habla de dar muchos datos, y lo que hizo que su equipo lo etiquetara fue el ingenio del texto, no la cantidad de información."
+        hint_specific: "«Detallado» habla de muchos datos. ¿Lo etiquetaron por los datos o por el ingenio del texto?"
+      - position: 2
+        text: "picante"
+        is_correct: true
+      - position: 3
+        text: "serio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Serio» describe un tono formal, y lo que llamó la atención del equipo fue justo un tono ingenioso y con chispa, no uno serio."
+        hint_specific: "«Serio» es un tono formal. ¿Eso explica que lo etiquetaran entre risas?"
+  - position: 6
+    sentence: "Constanza le mandó una respuesta tan {{blank}} a su hermano sobre el desorden de su cuarto que él la guardó como estado de perfil."
+    hint_general: "Piensa en una respuesta ingeniosa entre hermanos, con filo pero sin mala intención."
+    explanation: "Picante: la respuesta ingeniosa de Constanza fue tan buena que su hermano la guardó. «Larga» solo habla de longitud, y «amable» describe un tono suave, ninguna explica por qué la guardó."
+    options:
+      - position: 1
+        text: "larga"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Larga» solo habla de longitud, y lo que hizo que su hermano la guardara fue lo ingenioso de la respuesta, no cuánto medía."
+        hint_specific: "«Larga» habla de longitud. ¿La guardó por larga o por ingeniosa?"
+      - position: 2
+        text: "picante"
+        is_correct: true
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe un tono suave, y lo que hizo memorable la respuesta de Constanza fue justo su filo y su ingenio."
+        hint_specific: "«Amable» es un tono suave. ¿La respuesta fue suave o tuvo filo?"
+  - position: 7
+    sentence: "Rodolfo dio una entrevista tan {{blank}} sobre su carrera que los fragmentos se volvieron memes esa misma semana."
+    hint_general: "Busca la palabra para una entrevista directa y con chispa, de esas que la gente comparte."
+    explanation: "Picante: la entrevista ingeniosa de Rodolfo se volvió memes. «Aburrida» describe justo lo contrario, y «formal» describe un tono serio, ninguna explica que se compartiera tanto."
+    options:
+      - position: 1
+        text: "aburrida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburrida» describe justo lo contrario, y lo que hizo que se volviera memes fue lo ingenioso y directo de sus respuestas."
+        hint_specific: "«Aburrida» es lo contrario de interesante. ¿Una entrevista aburrida se vuelve memes?"
+      - position: 2
+        text: "formal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Formal» describe un tono serio y protocolar, y lo que generó los memes fue justo lo contrario: un tono directo y con chispa."
+        hint_specific: "«Formal» es un tono serio. ¿Eso explica que la entrevista se volviera memes?"
+      - position: 3
+        text: "picante"
+        is_correct: true
+  - position: 8
+    sentence: "En el brindis de cumpleaños, Abril hizo un comentario tan {{blank}} sobre sus propios treinta años que todos brindaron entre carcajadas."
+    hint_general: "Piensa en un comentario ingenioso sobre uno mismo, capaz de arrancar carcajadas en un brindis."
+    explanation: "Picante: el comentario ingenioso de Abril sobre sí misma provocó las carcajadas. «Solemne» describe un tono ceremonioso, y «breve» solo habla de duración, ninguna explica la reacción del brindis."
+    options:
+      - position: 1
+        text: "solemne"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Solemne» describe un tono ceremonioso y serio, y lo que provocó las carcajadas fue justo lo contrario: un comentario ingenioso sobre sí misma."
+        hint_specific: "«Solemne» es un tono ceremonioso. ¿Eso provoca carcajadas en un brindis?"
+      - position: 2
+        text: "picante"
+        is_correct: true
+      - position: 3
+        text: "breve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Breve» solo habla de duración, y lo que hizo reír a todos fue el ingenio del comentario, no cuánto duró."
+        hint_specific: "«Breve» habla de duración. ¿Todos brindaron entre risas por la duración o por el ingenio?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El brindis de los treinta"
+    body: "Abril no quería un brindis solemne por sus treinta años. Cuando le tocó hablar, hizo un comentario picante sobre sus propias canas y sus citas por aplicaciones, y todos levantaron la copa entre carcajadas. Nadie quedó mal parado: la única que se rió de algo fue ella misma."
+    before_phrase: "Dije algo con un poco de mala leche pero gracioso sobre mí."
+    after_phrase: "Dije un comentario picante sobre mí misma."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El acta que da risa"
+    body: "En la retrospectiva del proyecto, Máximo soltó un comentario picante sobre las reuniones que nunca terminan a tiempo. El facilitador lo anotó en el acta con una carita de risa, junto a los puntos de mejora. Nadie se lo tomó a mal: todos habían pensado lo mismo."
+    before_phrase: "Dije algo directo y con chispa sobre las reuniones."
+    after_phrase: "Dije algo picante sobre las reuniones."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "emocional"
+    title: "La entrevista que se volvió memes"
+    body: "Rodolfo esperaba preguntas de rutina sobre su carrera, pero decidió responder con más filo del habitual. Sus respuestas, tan picantes como certeras, se convirtieron en memes esa misma semana. «Al menos ahora sí me van a recordar», bromeó después, sin arrepentirse de nada."
+    before_phrase: "Respondí con algo directo y con chispa, sin filtro."
+    after_phrase: "Respondí con algo picante, sin filtro."
+provenance:
+  generator: "flui authoring agent — batch W4 humor"
+  gate: null
+  checked_on: "2026-09-18"

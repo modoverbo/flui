@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "cortejar"
+status: "draft"
+lemma: "cortejar"
+part_of_speech: "verbo"
+syllables: ["cor", "te", "jar"]
+stressed_syllable: 3
+ipa_latam: "[koɾ.teˈxaɾ]"
+ipa_es: "[koɾ.teˈxaɾ]"
+explanation: "Dedicar tiempo y detalles a alguien que te gusta, para mostrar interés poco a poco."
+example_sentence: "Bruno llevaba tres semanas cortejando a su compañera de trabajo con mensajes graciosos cada mañana."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsalo para describir un proceso lento de acercamiento, con gestos y tiempo, no un solo mensaje."
+when_not_to_use: "No lo uses para un primer acercamiento de un solo momento: cortejar implica varios gestos a lo largo del tiempo."
+collocations:
+  - "cortejar a alguien"
+  - "llevar semanas cortejando"
+  - "cortejar con detalles"
+family: ["cortejo"]
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["tirar los perros", "conquistar poco a poco"]
+  funcion: ["seducir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "cortar"
+    difference: "Cortar es interrumpir algo, como una relación o una llamada; cortejar es dedicar tiempo y detalles a alguien que te gusta."
+    memory_trick: "Cortas lo que terminas; cortejas lo que empiezas."
+replaces:
+  - before: "Le está tirando los perros hace semanas"
+    after: "Lo lleva cortejando hace semanas"
+  - before: "Le manda detalles todos los días para gustarle"
+    after: "La cortejando con detalles todos los días"
+exercises:
+  - position: 1
+    sentence: "Bruno llevaba tres semanas {{blank}} a su compañera de trabajo con mensajes graciosos cada mañana."
+    hint_general: "Dedicar tiempo y detalles a alguien que te gusta, poco a poco."
+    explanation: "Cortejando: dedicando tiempo y detalles a alguien que te gusta, poco a poco. «Cortando» sería interrumpir algo, y «acosando» implicaría incomodar a la otra persona, algo que aquí no se menciona."
+    options:
+      - position: 1
+        text: "cortejando"
+        is_correct: true
+      - position: 2
+        text: "cortando"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cortando» sería interrumpir algo, y la frase describe justo lo contrario: tres semanas de mensajes constantes."
+        hint_specific: "Cortar interrumpe algo. ¿Bruno interrumpió el contacto o lo mantuvo tres semanas?"
+      - position: 3
+        text: "acosando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acosar» implicaría incomodar a la otra persona, y la frase solo describe mensajes graciosos, sin ninguna señal de incomodidad."
+        hint_specific: "Acosar incomoda a la otra persona. ¿La frase menciona alguna incomodidad?"
+  - position: 2
+    sentence: "En vez de declararse de golpe, Camila prefirió {{blank}} a Andrés con pequeños gestos durante todo el mes."
+    hint_general: "Acercarse a alguien poco a poco, con gestos, en vez de declararse de una vez."
+    explanation: "Cortejar: acercarse a alguien poco a poco, con gestos. «Ignorar» sería justo lo contrario, y «cortar» sería interrumpir algo, no un acercamiento gradual."
+    options:
+      - position: 1
+        text: "cortejar"
+        is_correct: true
+      - position: 2
+        text: "ignorar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» sería justo lo contrario, y la frase dice que Camila hizo pequeños gestos durante todo el mes."
+        hint_specific: "Ignorar es no prestar atención. ¿Camila ignoró a Andrés o le hizo gestos?"
+      - position: 3
+        text: "cortar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cortar» sería interrumpir algo, y aquí Camila mantuvo pequeños gestos durante un mes entero."
+        hint_specific: "Cortar interrumpe algo. ¿Camila interrumpió el contacto o lo mantuvo un mes?"
+  - position: 3
+    sentence: "El vecino del tercero lleva semanas {{blank}} a la dueña de la panadería con excusas para pasar por ahí."
+    hint_general: "Buscar excusas para acercarse a alguien que te gusta, poco a poco."
+    explanation: "Cortejando: buscando excusas para acercarse a alguien que te gusta. «Engañando» implicaría una mentira importante, y «cortando» sería interrumpir algo; ninguno describe buscar excusas para verla."
+    options:
+      - position: 1
+        text: "cortejando"
+        is_correct: true
+      - position: 2
+        text: "engañando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Engañar» implicaría mentirle sobre algo importante, y la frase solo describe excusas para pasar por la panadería, sin ningún engaño grave."
+        hint_specific: "Engañar implica una mentira importante. ¿El vecino miente sobre algo grave o solo busca excusas para verla?"
+      - position: 3
+        text: "cortando"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cortando» sería interrumpir algo, y aquí el vecino busca excusas para acercarse cada semana, no para alejarse."
+        hint_specific: "Cortar interrumpe algo. ¿El vecino se aleja de la panadería o busca excusas para ir?"
+  - position: 4
+    sentence: "Su forma de {{blank}} era enviar canciones que le recordaban a ella, una distinta cada noche."
+    hint_general: "La forma de acercarse a alguien que te gusta, con gestos pequeños y constantes."
+    explanation: "Cortejar: la forma de acercarse a alguien con gestos pequeños y constantes. «Molestar» implicaría incomodar a la otra persona, y «chamuyar» es coloquial y regional; ninguno nombra este gesto con precisión."
+    options:
+      - position: 1
+        text: "cortejar"
+        is_correct: true
+      - position: 2
+        text: "molestar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Molestar» implicaría incomodar a la otra persona, y la frase describe canciones pensadas especialmente para ella, no algo que la incomodara."
+        hint_specific: "Molestar incomoda a alguien. ¿Las canciones la incomodaban o eran pensadas para ella?"
+      - position: 3
+        text: "chamuyar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chamuyar» es coloquial y muy regional, y aquí se busca nombrar con precisión ese gesto de mandar una canción cada noche."
+        hint_specific: "«Chamuyar» es muy regional e informal. ¿La frase busca una palabra precisa o una muy coloquial?"
+  - position: 5
+    sentence: "Aunque nunca se lo dijo directamente, todos en la oficina notaban que Javier {{blank}} a la nueva diseñadora."
+    hint_general: "Mostrar interés en alguien poco a poco, sin decirlo de forma directa."
+    explanation: "Cortejaba: mostraba interés en alguien poco a poco, sin decirlo directamente. «Evitaba» sería alejarse de la persona, y «cortaba» sería interrumpir algo; ninguno describe ese interés notado por todos."
+    options:
+      - position: 1
+        text: "cortejaba"
+        is_correct: true
+      - position: 2
+        text: "evitaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Evitar» sería alejarse de la persona, y la frase dice que todos notaban el interés de Javier, no que se alejara de ella."
+        hint_specific: "Evitar es alejarse de alguien. ¿Javier se alejaba de la diseñadora o mostraba interés en ella?"
+      - position: 3
+        text: "cortaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cortar» sería interrumpir algo, y la frase describe un interés que se mantenía en el tiempo, sin interrupción."
+        hint_specific: "Cortar interrumpe algo. ¿Javier interrumpió el contacto o mostró interés constante?"
+  - position: 6
+    sentence: "En la novela, el protagonista pasa dos capítulos enteros {{blank}} a la vecina con cartas escritas a mano."
+    hint_general: "Mostrar interés en alguien con gestos y tiempo, en una historia de amor."
+    explanation: "Cortejando: mostrando interés en alguien con gestos y tiempo. «Espiando» implicaría observar a escondidas, y «cortando» sería interrumpir algo; ninguno describe escribir cartas para que ella las lea."
+    options:
+      - position: 1
+        text: "cortejando"
+        is_correct: true
+      - position: 2
+        text: "espiando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Espiar» implicaría observar a escondidas, y las cartas del protagonista estaban pensadas para que la vecina las leyera."
+        hint_specific: "Espiar es observar a escondidas. ¿El protagonista se escondía o escribía cartas para que ella las leyera?"
+      - position: 3
+        text: "cortando"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cortando» sería interrumpir algo, y el protagonista mantiene el gesto durante dos capítulos enteros."
+        hint_specific: "Cortar interrumpe algo. ¿El protagonista interrumpe las cartas o las mantiene por capítulos?"
+  - position: 7
+    sentence: "Rubén no sabía bien cómo {{blank}} sin sonar exagerado, así que empezó por invitarla a caminar los domingos."
+    hint_general: "Mostrar interés en alguien de forma gradual, sin exagerar."
+    explanation: "Cortejar: mostrar interés en alguien de forma gradual, sin exagerar. «Cortar» sería interrumpir algo, y «presionar» implicaría forzar una respuesta, algo que Rubén busca evitar."
+    options:
+      - position: 1
+        text: "cortejar"
+        is_correct: true
+      - position: 2
+        text: "presionar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presionar» implicaría forzar una respuesta, y la frase dice que Rubén buscaba justamente no sonar exagerado."
+        hint_specific: "Presionar fuerza una respuesta. ¿Rubén busca forzar algo o ir despacio?"
+      - position: 3
+        text: "cortar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cortar» sería interrumpir algo, y aquí Rubén busca comenzar un acercamiento, no terminarlo."
+        hint_specific: "Cortar interrumpe algo. ¿Rubén busca terminar algo o empezarlo?"
+  - position: 8
+    sentence: "Después de meses de {{blank}}, por fin Sofía le propuso una cita formal en vez de otro café improvisado."
+    hint_general: "El período de acercamiento gradual antes de dar un paso más formal."
+    explanation: "Cortejo: el período de acercamiento gradual antes de un paso más formal. «Espera» solo describe el paso del tiempo, sin los gestos concretos, y «corte» es interrumpir algo, no un acercamiento."
+    options:
+      - position: 1
+        text: "cortejo"
+        is_correct: true
+      - position: 2
+        text: "espera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Espera» solo describe el paso del tiempo, y la frase implica meses de gestos concretos, no solo esperar sin hacer nada."
+        hint_specific: "Esperar es solo dejar pasar el tiempo. ¿Sofía y la otra persona solo esperaron o hicieron gestos concretos?"
+      - position: 3
+        text: "corte"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Corte» se relaciona con interrumpir algo, y la frase describe meses de acercamiento antes de una cita formal."
+        hint_specific: "Un corte interrumpe algo. ¿La frase describe una interrupción o meses de acercamiento?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "Los mensajes de cada mañana"
+    body: "Cada mañana, Bruno le mandaba a su compañera un meme que le recordaba a una conversación que habían tenido. «Llevas semanas cortejándome con memes», le dijo ella al fin, entre risas, «¿cuándo me invitas un café de verdad?»."
+    before_phrase: "Le tiro los perros hace semanas con mensajitos."
+    after_phrase: "Llevo semanas cortejándola con mensajes."
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "Las canciones de cada noche"
+    body: "Cada noche llegaba una canción distinta, sin ningún mensaje extra. Al décimo día, ella por fin respondió: «Sé que me estás cortejando con esta lista de canciones, y me está funcionando». Esa noche quedaron para verse."
+    before_phrase: "Sé que me está tirando los perros con las canciones."
+    after_phrase: "Sé que me está cortejando con las canciones."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "Los domingos de caminata"
+    body: "Rubén invitó a la vecina a caminar cada domingo, sin prisa por definir nada. Meses después, su madre le preguntó: «¿Todavía la estás cortejando o ya son novios?». Rubén sonrió: «Estamos en eso, vamos despacio»."
+    before_phrase: "¿Todavía le estás tirando los perros o ya son novios?"
+    after_phrase: "¿Todavía la estás cortejando o ya son novios?"
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

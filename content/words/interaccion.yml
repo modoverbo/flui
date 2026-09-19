@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "interaccion"
+status: "draft"
+lemma: "interacción"
+part_of_speech: "sustantivo"
+syllables: ["in", "te", "rac", "ción"]
+stressed_syllable: 4
+ipa_latam: "[in.te.rakˈsjon]"
+ipa_es: "[in.te.rakˈθjon]"
+explanation: "Cuando dos o más personas se comunican y cada una responde a lo que dijo la otra."
+example_sentence: "La entrevistadora valoró más la interacción con el resto del panel que las respuestas ensayadas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para notar que la gente se respondió de verdad, no solo que estuvo presente o que habló mucho."
+when_not_to_use: "No la uses para un monólogo o una sola intervención, por buena que haya sido."
+collocations:
+  - "generar interacción"
+  - "interacción genuina"
+  - "poca interacción"
+replaces:
+  - before: "La gente respondió mucho"
+    after: "Hubo mucha interacción"
+  - before: "Que se metan en la conversación"
+    after: "Que haya interacción real"
+  - before: "Nadie comentó nada"
+    after: "No hubo interacción"
+family: ["interactuar", "interactivo"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["que la gente responda", "que se metan en la conversación"]
+  funcion: ["conectar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "intervención"
+    difference: "«Intervención» es el turno en que alguien habla o actúa por su cuenta; «interacción» es el ida y vuelta entre dos o más personas."
+    memory_trick: "La intervención la hace uno solo; la interacción la hacen entre varios."
+  - confused_with: "reacción"
+    difference: "«Reacción» es la respuesta de una sola persona a algo puntual; «interacción» necesita que las dos partes se respondan a lo largo de un rato."
+exercises:
+  - position: 1
+    sentence: "Marcos habló siete minutos seguidos en la reunión, y cuando terminó, casi nadie hizo preguntas ni comentó nada: hubo muy poca {{blank}} con el resto del equipo."
+    hint_general: "Piensa en si dos personas se responden entre sí, no solo en si una de ellas habla mucho."
+    explanation: "Interacción: hace falta que las dos partes se respondan. «Intervención» es el turno de una sola persona, y «palique» es charla informal que no pega en una reunión de trabajo."
+    options:
+      - position: 1
+        text: "intervención"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Intervención» es el turno en que alguien habla, y aquí el problema es que nadie respondió después, no que Marcos hablara."
+        hint_specific: "«Intervención» describe el turno de una sola persona. ¿El problema es que habló él o que nadie respondió?"
+      - position: 2
+        text: "interacción"
+        is_correct: true
+      - position: 3
+        text: "palique"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Palique» es charla informal sin importancia, y aquí se habla de si el equipo participó, en un contexto de trabajo serio."
+        hint_specific: "«Palique» sirve para charla trivial entre amigos. ¿Encaja ese tono en una reunión de trabajo?"
+  - position: 2
+    sentence: "En la fiesta, Valentina apenas habló, pero se reía con las bromas de los demás y chocaba los vasos en cada brindis: hubo mucha {{blank}}, aunque casi no cruzara palabra."
+    hint_general: "Busca la palabra para cuando la gente participa entre sí, aunque no use muchas palabras."
+    explanation: "Interacción: puede darse sin palabras, con gestos o brindis. «Diálogo» exige que se hablen, y «interrupción» es cortar a alguien a media frase, algo que no pasa aquí."
+    options:
+      - position: 1
+        text: "diálogo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Diálogo» exige un intercambio de palabras, y la frase dice justo que Valentina casi no habló."
+        hint_specific: "«Diálogo» va de palabras que se cruzan. ¿Ella habló mucho en esa fiesta?"
+      - position: 2
+        text: "interrupción"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interrupción» es cortar a alguien mientras habla, y aquí nadie corta a nadie: cada quien participa a su manera."
+        hint_specific: "«Interrupción» corta una conversación en marcha. ¿Alguien corta a otro en esta escena?"
+      - position: 3
+        text: "interacción"
+        is_correct: true
+  - position: 3
+    sentence: "El entrevistador anotó que, aunque el candidato daba buenas respuestas, nunca preguntaba nada ni retomaba lo que él decía: faltaba {{blank}} entre los dos."
+    hint_general: "Se trata de que las dos partes se respondan, no solo de que una hable bien."
+    explanation: "Interacción: exige que el candidato retome lo que dice el entrevistador. «Comunicación» puede darse aunque solo hable uno, y «reacción» sería solo un instante, no toda la charla."
+    options:
+      - position: 1
+        text: "interacción"
+        is_correct: true
+      - position: 2
+        text: "comunicación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comunicación» puede darse aunque solo hable uno; aquí lo que falta es que el candidato responda a lo que dice el entrevistador."
+        hint_specific: "«Comunicación» no exige que ambos participen por igual. ¿El candidato retomaba lo que decía el otro?"
+      - position: 3
+        text: "reacción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reacción» es la respuesta a un momento puntual, y aquí falta todo un ida y vuelta a lo largo de la charla."
+        hint_specific: "«Reacción» es solo una respuesta puntual. ¿Aquí falta un momento o falta todo el intercambio?"
+  - position: 4
+    sentence: "El podcast invitó a los oyentes a escribir preguntas en vivo, y la conductora las fue respondiendo una por una: por primera vez hubo {{blank}} real con la audiencia."
+    hint_general: "La palabra describe que las dos partes se responden de verdad, no solo ruido o palabras sueltas."
+    explanation: "Interacción: la conductora responde una a una las preguntas. «Parloteo» es hablar sin fijarse en nada, y «contacto» solo dice que hay un vínculo, sin intercambio real."
+    options:
+      - position: 1
+        text: "parloteo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parloteo» es charla sin mucho sentido, y aquí la conductora responde con atención cada pregunta, no habla por hablar."
+        hint_specific: "«Parloteo» suena a hablar sin parar y sin fijarse en nada. ¿La conductora improvisa o responde con atención?"
+      - position: 2
+        text: "contacto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Contacto» solo dice que hay un vínculo, sin que haya intercambio real de preguntas y respuestas."
+        hint_specific: "«Contacto» no exige que se respondan uno a otro. ¿Aquí solo hay un vínculo o hay preguntas y respuestas?"
+      - position: 3
+        text: "interacción"
+        is_correct: true
+  - position: 5
+    sentence: "En la videollamada, Rocío hacía sus comentarios y esperaba que los demás asintieran, pero nadie retomaba lo que ella decía: notó que le faltaba {{blank}} con el equipo."
+    hint_general: "Busca la idea de que el grupo responda a lo que alguien dice, no solo que esté presente."
+    explanation: "Interacción: a Rocío le falta que el equipo le responda. «Conexión» habla de un vínculo general, y «aportación» es lo que ella pone de su parte, no lo que recibe."
+    options:
+      - position: 1
+        text: "conexión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conexión» habla de un vínculo o una buena sintonía, y aquí el problema concreto es que nadie responde a lo que ella dice."
+        hint_specific: "«Conexión» describe un vínculo general. ¿Aquí falta un vínculo o faltan respuestas concretas?"
+      - position: 2
+        text: "interacción"
+        is_correct: true
+      - position: 3
+        text: "aportación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aportación» es lo que Rocío pone de su parte, y lo que falta aquí es que el equipo le responda, no que ella aporte más."
+        hint_specific: "«Aportación» es lo que ella pone. ¿El problema es lo que ella aporta o lo que el equipo responde?"
+  - position: 6
+    sentence: "Los primos se sentaron todos juntos en la boda, pero cada uno miraba su teléfono: compartían mesa, no {{blank}}."
+    hint_general: "Piensa en la diferencia entre estar juntos en el mismo sitio y realmente relacionarse."
+    explanation: "Interacción: a los primos les falta hablarse o mirarse. «Compañía» es solo estar en el mismo sitio, y «trato» describe cómo se tratan en general, no si se hablan hoy."
+    options:
+      - position: 1
+        text: "compañía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compañía» es solo estar en el mismo lugar, y la frase ya dice que comparten mesa; lo que falta es que se hablen o se miren."
+        hint_specific: "«Compañía» es solo estar cerca. ¿Aquí falta estar cerca o falta que se hablen?"
+      - position: 2
+        text: "trato"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Trato» habla de cómo se comportan entre sí en general, y aquí el punto es que ni se hablan ni se miran durante la boda."
+        hint_specific: "«Trato» describe el tipo de relación en general. ¿Aquí el problema es el tipo de trato o que no se hablan nada?"
+      - position: 3
+        text: "interacción"
+        is_correct: true
+  - position: 7
+    sentence: "Al final de la entrevista grupal, cada candidato repitió su propio argumento sin responder a lo que decían los demás: hablaron mucho, pero casi no hubo {{blank}} entre ellos."
+    hint_general: "Se trata de que cada uno responda a lo que dice el otro, no solo de hablar por turnos."
+    explanation: "Interacción: a los candidatos les faltó responderse entre sí. «Confrontación» supone un choque de posturas, que aquí no hubo, y «participación» ya se cumplió con que cada uno hablara en su turno."
+    options:
+      - position: 1
+        text: "interacción"
+        is_correct: true
+      - position: 2
+        text: "confrontación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confrontación» supone un choque de posturas, y aquí el problema es que ni siquiera se respondieron, no que discutieran."
+        hint_specific: "«Confrontación» supone un choque de opiniones. ¿Aquí hubo choque o hubo silencio entre ellos?"
+      - position: 3
+        text: "participación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Participación» ya se cumple con que cada uno hable en su turno, y aquí lo que faltó fue responderse entre sí."
+        hint_specific: "«Participación» se cumple con hablar en tu turno. ¿Aquí faltó hablar o faltó responderse?"
+  - position: 8
+    sentence: "El anfitrión del evento presentó a todos, pero durante el cóctel la gente se quedó en sus grupos de siempre: casi no hubo {{blank}} entre invitados que no se conocían."
+    hint_general: "Busca la palabra para cuando dos personas que no se conocían empiezan a relacionarse de verdad."
+    explanation: "Interacción: faltó que los invitados nuevos se mezclaran. «Cordialidad» es un trato amable que no exige mezclarse, y «encuentro» es solo coincidir en el mismo sitio."
+    options:
+      - position: 1
+        text: "cordialidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cordialidad» es un trato amable, y se puede ser cordial sin realmente hablar o mezclarse con quien no conoces."
+        hint_specific: "«Cordialidad» describe el tono del trato. ¿Aquí el problema es el tono o que no se mezclaron?"
+      - position: 2
+        text: "encuentro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encuentro» es solo el hecho de coincidir en el mismo sitio, y aquí el problema es que, aun coincidiendo, no se mezclaron con nadie nuevo."
+        hint_specific: "«Encuentro» es solo coincidir en un lugar. ¿Aquí faltó coincidir o faltó mezclarse?"
+      - position: 3
+        text: "interacción"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La reunión que se sintió distinta"
+    body: "Después de meses de videollamadas donde todos hablaban por turnos, Daniela probó algo distinto: hizo una pregunta abierta y esperó las respuestas antes de seguir. «Por primera vez sentí que había interacción de verdad, no solo una lista de reportes», le contó a su jefe. El equipo se quedó charlando diez minutos más de lo previsto."
+    before_phrase: "Por fin la gente participó un poco."
+    after_phrase: "Por fin hubo interacción de verdad."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Más que preguntas y respuestas"
+    body: "Gabriel llegó con las respuestas ensayadas, pero la charla se desvió hacia un proyecto que ambos conocían. Terminaron comparando opiniones como dos colegas, no como candidato y jurado. Al salir, Gabriel pensó: «Hubo interacción real, no solo un cuestionario»."
+    before_phrase: "Se sintió como una charla normal, no como un interrogatorio."
+    after_phrase: "Hubo interacción real, no solo un cuestionario."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La sobremesa que no fue"
+    body: "Todos se sentaron a comer juntos, pero cada uno miraba su teléfono entre bocado y bocado. Marisol dejó el suyo en otra habitación y empezó a preguntar por el día de cada uno. Poco a poco, los demás también soltaron sus teléfonos. «Al final sí hubo interacción», pensó Marisol, aliviada."
+    before_phrase: "Al menos estuvimos todos juntos en la mesa."
+    after_phrase: "Al final sí hubo interacción de verdad."
+provenance:
+  generator: "hand-authored for redes-sociales theme batch"
+  gate: null
+  checked_on: "2026-09-18"

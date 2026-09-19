@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "jovial"
+status: "draft"
+lemma: "jovial"
+part_of_speech: "adjetivo"
+syllables: ["jo", "vial"]
+stressed_syllable: 2
+ipa_latam: "[xoˈβjal]"
+ipa_es: "[xoˈβjal]"
+explanation: "Que tiene un humor feliz y constante, y anima cualquier charla con su energía."
+example_sentence: "Con su tono jovial, Marta logra que cualquier desconocido se sume enseguida a la charla."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para elogiar el buen humor constante de alguien en una charla o un grupo."
+when_not_to_use: "No lo uses para un entusiasmo forzado o de un solo momento: describe un carácter alegre y estable, no un ánimo pasajero."
+collocations:
+  - "tono jovial"
+  - "carácter jovial"
+  - "un comentario jovial"
+replaces:
+  - before: "Siempre tiene un humor buenísimo y te hace reír"
+    after: "Siempre tiene un humor jovial y te hace reír"
+  - before: "Es una persona muy alegre y ocurrente"
+    after: "Es una persona muy jovial"
+family: ["jovialidad"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["alegre"]
+  funcion: ["elogiar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "juvenil"
+    difference: "«Juvenil» describe algo propio de los jóvenes, como la ropa o un torneo; jovial describe un carácter alegre, a cualquier edad."
+    memory_trick: "Juvenil habla de edad; jovial habla de humor."
+  - confused_with: "alegre"
+    difference: "«Alegre» describe un estado de ánimo que puede durar un momento; jovial describe un carácter alegre y constante que se nota siempre."
+exercises:
+  - position: 1
+    sentence: "Elena cumplía sesenta años, pero su forma {{blank}} de contar historias hizo reír a toda la mesa."
+    hint_general: "Se trata del humor de alguien, no de su edad ni de cuánto la tratan bien."
+    explanation: "Jovial: su humor hace reír a la mesa. «Juvenil» habla de edad, no de humor, y «cordial» es solo un trato amable, sin el efecto de hacer reír."
+    options:
+      - position: 1
+        text: "juvenil"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Juvenil» describe algo propio de los jóvenes, como la ropa o un torneo; aquí lo que se cuenta es que hace reír, no que parezca joven."
+        hint_specific: "«Juvenil» habla de edad, no de humor. ¿Qué logra Elena: parecer joven o hacer reír?"
+      - position: 2
+        text: "cordial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cordial» describe un trato amable y educado, y aquí lo que se destaca es que hace reír a la mesa, no solo que sea agradable."
+        hint_specific: "Cordial es solo trato amable. ¿La mesa se ríe o solo se siente bien tratada?"
+      - position: 3
+        text: "jovial"
+        is_correct: true
+  - position: 2
+    sentence: "En la carta de recomendación, la jefa describió a Rodrigo como una persona {{blank}}, capaz de aligerar cualquier reunión tensa."
+    hint_general: "Piensa en alguien cuyo humor alivia el ambiente de cualquier grupo, no solo en un chiste puntual."
+    explanation: "Jovial: su buen humor alivia el ambiente de cualquier reunión. «Dicharachero» es demasiado coloquial para una carta formal, y «gracioso» se queda en un chiste puntual, no en un efecto constante."
+    options:
+      - position: 1
+        text: "dicharachero"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dicharachero» es muy coloquial, más propio de una charla entre amigos que del lenguaje formal de una carta de recomendación."
+        hint_specific: "«Dicharachero» suena a charla de café, no a carta formal. ¿Qué tono pide una recomendación?"
+      - position: 2
+        text: "jovial"
+        is_correct: true
+      - position: 3
+        text: "gracioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gracioso» describe a alguien que hace reír con chistes puntuales, y aquí se destaca algo más amplio: su humor constante alivia el ambiente de cualquier reunión."
+        hint_specific: "«Gracioso» va de chistes puntuales. ¿La frase habla de un chiste o de un efecto constante en el ambiente?"
+  - position: 3
+    sentence: "En el asado familiar, todos coincidían en que el tío Andrés era el más {{blank}}: contaba un chiste detrás de otro sin cansarse."
+    hint_general: "Busca la palabra para quien no para de hacer reír a los demás, con chistes uno tras otro."
+    explanation: "Jovial: no para de hacer reír con sus chistes. «Afable» es un elogio más formal sobre el trato, y «extrovertido» solo dice que habla mucho, sin los chistes."
+    options:
+      - position: 1
+        text: "afable"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Afable» describe a alguien amable y fácil de tratar, un elogio más formal, y aquí lo que se cuenta es que no para de hacer chistes."
+        hint_specific: "«Afable» es un elogio más formal y tranquilo. ¿El tío solo trata bien o además hace chistes sin parar?"
+      - position: 2
+        text: "extrovertido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extrovertido» dice que alguien disfruta estar con gente y hablar mucho, y aquí lo que se cuenta específicamente es que hace chistes sin parar, no solo que hable."
+        hint_specific: "«Extrovertido» habla en general de sociabilidad. ¿La frase describe hablar mucho o contar chistes sin parar?"
+      - position: 3
+        text: "jovial"
+        is_correct: true
+  - position: 4
+    sentence: "En la feria de trabajo, Tomás se acercó a cada mesa con un humor {{blank}} que hacía que hasta los reclutadores más serios sonrieran."
+    hint_general: "El humor de esta persona contagia buen ánimo a cualquiera que se cruce con ella."
+    explanation: "Jovial: contagia buen humor a cualquiera. «Entusiasta» muestra interés y energía por algo puntual, y «optimista» habla de esperar que el futuro salga bien, no de contagiar humor ahora."
+    options:
+      - position: 1
+        text: "jovial"
+        is_correct: true
+      - position: 2
+        text: "entusiasta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entusiasta» describe muchas ganas y energía por algo concreto, y aquí lo que logra Tomás es contagiar buen humor, no solo mostrar interés."
+        hint_specific: "«Entusiasta» muestra interés y energía. ¿Tomás muestra interés o contagia buen humor?"
+      - position: 3
+        text: "optimista"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Optimista» describe a quien espera que las cosas salgan bien, y aquí lo que se nota es su buen humor contagioso, no una expectativa sobre el futuro."
+        hint_specific: "«Optimista» habla del futuro. ¿La frase habla de expectativas o de contagiar buen humor ahora mismo?"
+  - position: 5
+    sentence: "El abuelo de Marta seguía siendo el más {{blank}} de la familia, aunque ya casi no salía de casa."
+    hint_general: "Se trata de alguien que mantiene su buen humor pase lo que pase."
+    explanation: "Jovial: mantiene el buen humor pase lo que pase. «Activo» habla de moverse, algo que el abuelo ya no hace, y «cariñoso» describe afecto, no humor."
+    options:
+      - position: 1
+        text: "activo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Activo» habla de moverse y hacer cosas, y el abuelo casi no sale de casa; lo que sigue teniendo es buen humor, no actividad."
+        hint_specific: "«Activo» habla de moverse mucho. ¿La frase dice que el abuelo se mueve o que tiene buen humor?"
+      - position: 2
+        text: "jovial"
+        is_correct: true
+      - position: 3
+        text: "cariñoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cariñoso» describe a quien muestra afecto, y aquí lo que se destaca es su humor y su risa, no las muestras de cariño."
+        hint_specific: "«Cariñoso» habla de afecto. ¿La frase resalta el cariño del abuelo o su buen humor?"
+  - position: 6
+    sentence: "Paula abrió la reunión con un comentario {{blank}} que bajó la tensión antes de hablar de los números."
+    hint_general: "Busca la palabra para un comentario que afloja la tensión con humor."
+    explanation: "Jovial: un comentario que afloja la tensión con humor. «Sarcástico» puede incomodar con ironía, y «improvisado» solo dice que no lo preparó, sin hablar de su efecto."
+    options:
+      - position: 1
+        text: "sarcástico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sarcástico» es un comentario con una ironía que puede doler, y aquí el comentario de Paula relaja el ambiente, no lo tensiona con dobles sentidos."
+        hint_specific: "«Sarcástico» puede incomodar. ¿El comentario de Paula tensa o relaja la reunión?"
+      - position: 2
+        text: "improvisado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisado» dice que el comentario no fue preparado, y lo relevante aquí es su tono alegre que relaja el ambiente, no si lo pensó antes o no."
+        hint_specific: "«Improvisado» habla de preparación. ¿La frase importa si lo pensó antes o el efecto que tuvo en el ambiente?"
+      - position: 3
+        text: "jovial"
+        is_correct: true
+  - position: 7
+    sentence: "El nuevo vecino, Simón, se presentó con un tono tan {{blank}} que en cinco minutos ya se estaban riendo todos en el pasillo."
+    hint_general: "El tono de esta persona hace reír a los demás casi enseguida."
+    explanation: "Jovial: su tono hace reír a todos casi enseguida. «Amigable» es solo buen trato, y «curioso» describe interés por los demás, no humor."
+    options:
+      - position: 1
+        text: "jovial"
+        is_correct: true
+      - position: 2
+        text: "amigable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amigable» describe un trato fácil y agradable con cualquiera, y aquí lo que provoca la risa de todos es su sentido del humor, no solo su buen trato."
+        hint_specific: "«Amigable» es solo buen trato. ¿La escena describe buen trato o que hizo reír a todos?"
+      - position: 3
+        text: "curioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curioso» describe a quien hace preguntas por interés, y aquí lo que logra Simón es hacer reír, no mostrar interés por los vecinos."
+        hint_specific: "«Curioso» pregunta por interés. ¿Simón pregunta cosas o hace reír a todos?"
+  - position: 8
+    sentence: "Lucía dirigía el taller con un estilo {{blank}} que hacía que hasta el tema más aburrido se sintiera ligero."
+    hint_general: "El estilo de esta persona vuelve más ligero hasta el tema más pesado, gracias a su humor."
+    explanation: "Jovial: su humor vuelve ligero hasta el tema más pesado. «Dinámico» habla de ritmo, y «paciente» describe tolerancia, ninguno de los dos habla de humor."
+    options:
+      - position: 1
+        text: "dinámico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dinámico» describe ritmo y actividad constante, y aquí lo que aligera el tema es su buen humor, no la velocidad con la que avanza."
+        hint_specific: "«Dinámico» habla de ritmo. ¿Lo que aligera el taller es la velocidad o el humor de Lucía?"
+      - position: 2
+        text: "paciente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciente» describe a quien tolera bien la espera o el error ajeno, y aquí lo que se resalta es su buen humor, no su tolerancia."
+        hint_specific: "«Paciente» tolera esperas o errores. ¿La frase habla de tolerancia o de buen humor?"
+      - position: 3
+        text: "jovial"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El lunes menos temido"
+    body: "El equipo odiaba las reuniones de los lunes hasta que Camila empezó a dirigirlas. Con un comentario jovial sobre el fin de semana, bajaba la tensión antes de mirar la lista de pendientes. «Qué manera tan jovial de arrancar la semana», le dijo un compañero al salir."
+    before_phrase: "Siempre está de buen humor, hasta los lunes."
+    after_phrase: "Qué manera tan jovial de arrancar la semana."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El alma de la terraza"
+    body: "En la terraza, nadie conocía a Bruno antes de esa noche, pero a la hora ya todos se reían con él. Contaba anécdotas sin parar y se reía primero de sus propios errores. «Qué tipo tan jovial», comentó alguien mientras se servía otra bebida."
+    before_phrase: "Qué tipo tan simpático y ocurrente."
+    after_phrase: "Qué tipo tan jovial."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El fin de semana en la cabaña"
+    body: "Después de una semana pesada en el trabajo, la familia se fue a la cabaña. Nadie tenía ganas de nada, hasta que el tío Rubén llegó con su humor de siempre y organizó un juego improvisado después de la cena. «Gracias por venir tan jovial, lo necesitábamos», le dijo su hermana antes de dormir."
+    before_phrase: "Gracias por venir con tan buena energía, lo necesitábamos."
+    after_phrase: "Gracias por venir tan jovial, lo necesitábamos."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,232 @@
+# Word 6 of batch W4 humor. Substitution note: originally assigned "jocoso"
+# (zipf 3.16, dp 0.38 — dispersion just over the 0.35 bar). Replaced with
+# "festivo" in its tone sense (a light, playful way of talking), which passes
+# cleanly: zipf 3.66, dp 0.22.
+schema_version: 1
+sort_order: 9306
+slug: "festivo"
+status: "draft"
+lemma: "festivo"
+part_of_speech: "adjetivo"
+syllables: ["fes", "ti", "vo"]
+stressed_syllable: 2
+ipa_latam: "[fesˈti.βo]"
+ipa_es: "[fesˈti.βo]"
+explanation: "Que tiene un estilo ligero e informal, sin buscar conflicto y sin darle mucha importancia a las cosas."
+example_sentence: "El correo del viernes tenía un tono tan festivo que hasta el cliente más exigente respondió con un emoji de risa."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Describe el tono de una conversación, un mensaje o un evento; no lo confundas con «día festivo», que es un día no laborable."
+when_not_to_use: "No la uses para un tema que pide seriedad real, como una mala noticia; ahí un tono festivo suena fuera de lugar."
+collocations:
+  - "tono festivo"
+  - "ambiente festivo"
+replaces:
+  - before: "Lo dijo en broma, sin ponerse serio"
+    after: "Lo dijo con un tono festivo"
+  - before: "El grupo del trabajo es bien relajado, nadie se lo toma tan en serio"
+    after: "El grupo del trabajo tiene un tono muy festivo"
+family: ["fiesta", "festejar"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["relajado"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "jocoso"
+    difference: "«Jocoso» apunta directo a hacer bromas o chistes; «festivo» es más amplio: un tono alegre y ligero, con o sin chistes de por medio."
+    memory_trick: "Lo jocoso siempre bromea; lo festivo solo aligera el ambiente."
+  - confused_with: "feriado"
+    difference: "«Feriado» es un día no laborable, un descanso marcado en el calendario; «festivo», en este sentido, describe el tono alegre de una charla, no una fecha."
+    memory_trick: "El feriado se marca en el calendario; el tono festivo se nota en cómo hablas."
+exercises:
+  - position: 1
+    sentence: "El correo que mandó Ester los viernes tenía un tono tan {{blank}} que hasta los clientes más serios respondían con algún emoji."
+    hint_general: "Busca la palabra para un tono alegre y ligero, sin ponerse serio."
+    explanation: "Festivo: el tono alegre del correo de Ester hacía responder hasta a los clientes más serios. «Efusivo» describe una emoción exagerada, y «extenso» solo habla de longitud, ninguna explica el tono del correo."
+    options:
+      - position: 1
+        text: "efusivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Efusivo» describe una emoción exagerada o muy entusiasta, y el correo de Ester no exageraba nada: solo tenía un tono ligero y divertido."
+        hint_specific: "«Efusivo» habla de mostrar mucho entusiasmo. ¿El correo exageraba emociones o solo sonaba ligero?"
+      - position: 2
+        text: "festivo"
+        is_correct: true
+      - position: 3
+        text: "extenso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extenso» solo habla de longitud, y lo que hacía responder con emojis a los clientes era el tono del correo, no cuánto medía."
+        hint_specific: "«Extenso» habla de longitud. ¿Los clientes respondían por el tamaño del correo o por su tono?"
+  - position: 2
+    sentence: "El almuerzo dominical de la familia de Rodrigo siempre tiene un ambiente tan {{blank}} que hasta las visitas más tímidas terminan contando chistes."
+    hint_general: "Piensa en un ambiente alegre que anima hasta a quien llega más callado."
+    explanation: "Festivo: el ambiente alegre del almuerzo anima hasta a las visitas más tímidas. «Silencioso» describe justo lo contrario, y «puntual» habla de la hora de llegada, no del ambiente."
+    options:
+      - position: 1
+        text: "silencioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencioso» describe justo lo contrario de lo que ocurre: aquí hasta las visitas tímidas terminan contando chistes, no callándose."
+        hint_specific: "«Silencioso» es lo opuesto a hablar mucho. ¿Las visitas se callan o terminan contando chistes?"
+      - position: 2
+        text: "festivo"
+        is_correct: true
+      - position: 3
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» habla de llegar a tiempo, y lo que describe el ambiente del almuerzo es su tono alegre, no la hora de llegada."
+        hint_specific: "«Puntual» es llegar a horario. ¿Eso describe el ambiente del almuerzo?"
+  - position: 3
+    sentence: "En la despedida de Celia, sus compañeros armaron un video con un tono tan {{blank}} que ella no paró de reír durante toda la proyección."
+    hint_general: "Busca la palabra para un video casero hecho con un tono alegre y divertido."
+    explanation: "Festivo: el tono alegre del video hizo reír a Celia durante toda la proyección. «Lúdico» suena a informe técnico, fuera de lugar aquí, y «editado» habla de la técnica de montaje, no del tono."
+    options:
+      - position: 1
+        text: "lúdico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Lúdico» es una palabra más técnica, típica de un informe sobre actividades recreativas, y aquí se trata de un video casero entre compañeros."
+        hint_specific: "«Lúdico» suena a palabra técnica. ¿Encaja con un video hecho entre compañeros para despedir a alguien?"
+      - position: 2
+        text: "editado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Editado» solo dice que el video fue trabajado con edición, y lo que hizo reír a Celia fue el tono alegre del contenido, no la técnica del montaje."
+        hint_specific: "«Editado» habla de la técnica de montaje. ¿Celia se rió por la edición o por el tono del video?"
+      - position: 3
+        text: "festivo"
+        is_correct: true
+  - position: 4
+    sentence: "El candidato respondió con un tono tan {{blank}} que la entrevistadora, normalmente muy seria, también terminó sonriendo."
+    hint_general: "Piensa en un tono alegre capaz de contagiar hasta a alguien que suele mantenerse serio."
+    explanation: "Festivo: el tono alegre del candidato contagió a la entrevistadora. «Campechano» es demasiado informal y regional para una entrevista, y «nervioso» describe tensión, no alegría."
+    options:
+      - position: 1
+        text: "campechano"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Campechano» describe a alguien de trato muy cercano y sin protocolo, una palabra demasiado informal para el registro de una entrevista formal."
+        hint_specific: "«Campechano» suena muy informal y regional. ¿Encaja con el tono de una entrevista formal?"
+      - position: 2
+        text: "nervioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Nervioso» describe un estado de ánimo tenso, y lo que hizo sonreír a la entrevistadora fue un tono ligero y alegre, no nerviosismo."
+        hint_specific: "«Nervioso» es un estado de tensión. ¿Eso explica la sonrisa de la entrevistadora?"
+      - position: 3
+        text: "festivo"
+        is_correct: true
+  - position: 5
+    sentence: "Damián escribió la tarjeta de cumpleaños con un tono tan {{blank}} que su compañera la leyó en voz alta para toda la oficina."
+    hint_general: "Busca la palabra para un tono alegre que hace que valga la pena leer algo en voz alta."
+    explanation: "Festivo: el tono alegre de la tarjeta hizo que la leyeran en voz alta. «Formal» describe justo lo contrario, y «breve» solo habla de longitud, no del tono."
+    options:
+      - position: 1
+        text: "formal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Formal» describe un tono serio y protocolar, y lo que hizo que la leyeran en voz alta fue justo lo contrario: un tono alegre y divertido."
+        hint_specific: "«Formal» es un tono serio y protocolar. ¿Eso explica que la lean en voz alta entre risas?"
+      - position: 2
+        text: "festivo"
+        is_correct: true
+      - position: 3
+        text: "breve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Breve» solo habla de longitud, y lo que hizo que la compañera la leyera para todos fue el tono divertido, no lo corta que era."
+        hint_specific: "«Breve» habla de longitud. ¿La leyeron por corta o por el tono que tenía?"
+  - position: 6
+    sentence: "Antes del viaje, Luciana mandó un mensaje con un tono tan {{blank}} que todo el grupo llegó al aeropuerto de mejor humor."
+    hint_general: "Piensa en un mensaje con un tono alegre que mejora el humor de todo un grupo."
+    explanation: "Festivo: el tono alegre del mensaje mejoró el humor del grupo antes del viaje. «Detallado» habla de dar muchos datos, y «preocupado» describe un tono de inquietud, ninguna mejora el humor de nadie."
+    options:
+      - position: 1
+        text: "detallado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallado» habla de dar muchos datos, y lo que mejoró el humor del grupo fue el tono alegre del mensaje, no la cantidad de información."
+        hint_specific: "«Detallado» habla de dar muchos datos. ¿El grupo llegó de buen humor por los datos o por el tono?"
+      - position: 2
+        text: "festivo"
+        is_correct: true
+      - position: 3
+        text: "preocupado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preocupado» describe un tono de inquietud, y lo que logró el mensaje de Luciana fue justo lo contrario: poner de buen humor al grupo."
+        hint_specific: "«Preocupado» es un tono de inquietud. ¿Eso pone de buen humor a un grupo antes de un viaje?"
+  - position: 7
+    sentence: "La videollamada con los abuelos tuvo un tono tan {{blank}} que nadie quiso colgar después de la primera hora."
+    hint_general: "Busca la palabra para una charla con un tono tan alegre que nadie quiere que termine."
+    explanation: "Festivo: el tono alegre de la videollamada hizo que nadie quisiera colgar. «Técnico» describe un tono especializado, y «corto» solo habla de duración, ninguna explica que se alargara la llamada."
+    options:
+      - position: 1
+        text: "técnico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Técnico» describe un tono especializado, y lo que hizo que nadie quisiera colgar fue lo alegre y ligero de la charla, no su nivel técnico."
+        hint_specific: "«Técnico» es un tono especializado. ¿Eso explica que nadie quisiera colgar la llamada?"
+      - position: 2
+        text: "festivo"
+        is_correct: true
+      - position: 3
+        text: "corto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corto» solo habla de duración, y lo que mantuvo a todos en la llamada más de una hora fue el buen ambiente, no la brevedad."
+        hint_specific: "«Corto» habla de duración. ¿La llamada duró por ser corta o por el buen ambiente?"
+  - position: 8
+    sentence: "Fabián organizó el cierre del proyecto con un tono tan {{blank}} que el equipo pidió repetir la dinámica en el próximo trimestre."
+    hint_general: "Piensa en un cierre de proyecto con un tono alegre que el equipo quiere repetir."
+    explanation: "Festivo: el tono alegre del cierre hizo que el equipo pidiera repetirlo. «Exigente» describe un tono estricto, y «confidencial» habla de algo privado, ninguna encaja con una dinámica compartida y alegre."
+    options:
+      - position: 1
+        text: "exigente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigente» describe un tono estricto, y lo que hizo que el equipo pidiera repetir la dinámica fue justo lo contrario: un cierre alegre y relajado."
+        hint_specific: "«Exigente» es un tono estricto. ¿Eso hace que un equipo pida repetir la dinámica?"
+      - position: 2
+        text: "festivo"
+        is_correct: true
+      - position: 3
+        text: "confidencial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confidencial» describe algo que debe mantenerse en privado, y lo que pidió el equipo fue repetir una dinámica alegre y compartida, no algo reservado."
+        hint_specific: "«Confidencial» es algo privado y reservado. ¿El equipo pidió repetir algo privado o algo compartido?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El almuerzo de los domingos"
+    body: "La prima de Rodrigo llegó por primera vez a un almuerzo familiar, un poco nerviosa por no conocer a nadie. El tono festivo de la mesa —bromas, anécdotas, risas cruzadas— la hizo sentirse parte del grupo antes del postre. «Siempre es así», le explicó Rodrigo. «Nadie se lo toma tan en serio»."
+    before_phrase: "Aquí nadie se pone serio, todo es en broma."
+    after_phrase: "Aquí el tono siempre es festivo."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El cierre que nadie quería que terminara"
+    body: "Fabián temía que el cierre del proyecto fuera aburrido, como los anteriores. Cambió el formato: menos diapositivas, más anécdotas del equipo. El tono festivo que logró hizo que el cierre se alargara media hora más de lo previsto, y varios pidieron repetir el formato en el siguiente trimestre."
+    before_phrase: "Hicimos el cierre relajado, sin ponernos serios."
+    after_phrase: "Hicimos el cierre con un tono festivo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El mensaje antes del vuelo"
+    body: "El grupo del viaje estaba nervioso por la salida temprana. Luciana mandó un mensaje con un tono tan festivo —comparando la maleta de uno con una mudanza completa— que todos llegaron al aeropuerto riendo en vez de bostezando."
+    before_phrase: "Mandé un mensaje relajado para bajar los nervios."
+    after_phrase: "Mandé un mensaje con un tono festivo para bajar los nervios."
+provenance:
+  generator: "flui authoring agent — batch W4 humor"
+  gate: null
+  checked_on: "2026-09-18"

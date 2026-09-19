@@ -1,0 +1,240 @@
+schema_version: 1
+sort_order: 9204
+slug: "sarcasmo"
+status: "draft"
+lemma: "sarcasmo"
+part_of_speech: "sustantivo"
+syllables:
+  - "sar"
+  - "cas"
+  - "mo"
+stressed_syllable: 2
+ipa_latam: "[saɾˈkas.mo]"
+ipa_es: "[saɾˈkas.mo]"
+explanation: "Forma dura de hablar que dice lo contrario de lo que se piensa, para criticar o herir a alguien."
+example_sentence: "Su sarcasmo dejó a todos incómodos, aunque él insistía en que solo bromeaba."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo cuando quieras nombrar una broma que, en el fondo, busca hacer daño."
+when_not_to_use: "No lo uses para una broma amable entre amigos que nadie recibe como un golpe."
+collocations:
+  - "sarcasmo hiriente"
+  - "responder con sarcasmo"
+  - "un comentario cargado de sarcasmo"
+replaces:
+  - before: "Lo dijo con una burla bastante pesada"
+    after: "Lo dijo con sarcasmo"
+  - before: "Contestó de forma irónica y con mala leche"
+    after: "Contestó con sarcasmo"
+  - before: "Se nota que quería dejarlo mal con esa broma"
+    after: "Se nota el sarcasmo en esa broma"
+family:
+  - "sarcástico"
+  - "sarcásticamente"
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin:
+    - "burla"
+    - "broma pesada"
+  funcion:
+    - "criticar"
+    - "bromear"
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ironía"
+    difference: "«Ironía» dice lo contrario para hacer gracia sin dejar a nadie mal; esta palabra dice lo contrario para herir o dejar en evidencia a alguien."
+    memory_trick: "La ironía guiña; esta palabra pincha."
+  - confused_with: "cinismo"
+    difference: "«Cinismo» es actuar sin vergüenza ante algo que se sabe mal; esta palabra es un modo de hablar irónico y duro, no una forma de actuar."
+    memory_trick: "El cinismo se comporta sin vergüenza; esta palabra se dice con dureza."
+exercises:
+  - position: 1
+    sentence: "Cuando el proyecto se retrasó otra vez, Renata soltó un comentario cargado de {{blank}}: «Qué sorpresa, otra vez a tiempo»."
+    hint_general: "Habla con dureza y dice lo contrario de lo que piensa, para dejar claro que algo salió mal."
+    explanation: "Sarcasmo: dice lo contrario de lo que piensa, con dureza, para criticar. «Espasmo» es una contracción muscular y no tiene nada que ver con hablar, y «ironía» no busca herir, y aquí Renata sí busca señalar el fallo con mala leche."
+    options:
+      - position: 1
+        text: "espasmo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Espasmo» es una contracción muscular repentina, y aquí no hay ningún movimiento del cuerpo: hay una frase que dice lo contrario de lo que se piensa, para criticar."
+        hint_specific: "«Espasmo» es del cuerpo, no de las palabras. ¿Qué suelta Renata: un movimiento o un comentario?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "ironía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ironía» dice lo contrario sin buscar herir, y aquí el tono de Renata busca justo señalar el fallo con mala leche."
+        hint_specific: "«Ironía» no busca doler. ¿El comentario de Renata suena amable o cargado de mala leche?"
+  - position: 2
+    sentence: "Ante la cámara, el candidato Julio respondió con tanto {{blank}} a la pregunta que hasta sus propios asesores se incomodaron."
+    hint_general: "Responde diciendo lo contrario de lo que piensa, con un tono cortante que incomoda."
+    explanation: "Sarcasmo: dice lo contrario de lo que piensa, con un tono cortante. «Mofa» sería una burla más directa y abierta, y aquí el tono es cortante pero no una burla abierta, y «reproche» sería una queja de frente, no una frase irónica."
+    options:
+      - position: 1
+        text: "mofa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mofa» es una burla más cruda y directa, y aquí lo que incomoda es un tono irónico y cortante, no una burla abierta."
+        hint_specific: "«Mofa» es una burla más directa. ¿La respuesta del candidato fue una burla abierta o un tono cortante?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "reproche"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reproche» es una queja directa, y aquí el candidato no se queja de frente: dice lo contrario de lo que piensa para criticar con dureza."
+        hint_specific: "«Reproche» va de frente. ¿El candidato se queja directamente o dice lo contrario de lo que piensa?"
+  - position: 3
+    sentence: "Con {{blank}}, mi tío Rogelio comentó que su compañero de trabajo por fin había hecho algo útil, después de meses sin hacer nada."
+    hint_general: "Dice lo contrario de lo que piensa, con dureza, para señalar que algo tardó demasiado."
+    explanation: "Sarcasmo: dice lo contrario de lo que piensa, con dureza. «Cinismo» describe una forma de actuar sin vergüenza, y aquí solo hay un comentario, y «espasmo» es una contracción muscular, sin nada que ver con hablar."
+    options:
+      - position: 1
+        text: "cinismo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cinismo» es actuar sin vergüenza ante algo que se sabe mal, y aquí no hay ninguna acción, solo un comentario irónico y duro."
+        hint_specific: "«Cinismo» es una forma de actuar. ¿Tu tío actúa así o solo comenta con dureza?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "espasmo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Espasmo» es una contracción muscular repentina, y aquí lo único que ocurre es un comentario irónico y duro."
+        hint_specific: "«Espasmo» es del cuerpo. ¿Tu tío hace un comentario o un movimiento involuntario?"
+  - position: 4
+    sentence: "En plena entrevista en vivo, la presentadora Ondina lanzó una frase con tanto {{blank}} que el estudio entero se quedó en silencio un segundo."
+    hint_general: "Suelta una frase que dice lo contrario de lo pensado, tan cortante que deja a todos incómodos por un segundo."
+    explanation: "Sarcasmo: dice lo contrario de lo pensado, de forma cortante. «Pulla» suena antigua y literaria, y la frase de la presentadora suena muy actual, y «ironía» no busca dejar mal a nadie, y aquí sí lo hace."
+    options:
+      - position: 1
+        text: "pulla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pulla» suena antigua y literaria, y lo que soltó la presentadora fue un comentario irónico y cortante muy de este siglo, dicho en tono directo."
+        hint_specific: "«Pulla» suena a otra época. ¿La frase de la presentadora suena antigua o actual?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "ironía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ironía» no busca dejar mal a nadie, y aquí la frase de la presentadora dejó al estudio en silencio porque buscaba justo eso."
+        hint_specific: "«Ironía» no incomoda a nadie. ¿Por qué se queda el estudio en silencio?"
+  - position: 5
+    sentence: "Cuando su hermano llegó dos horas tarde, Iván lo recibió con {{blank}}: «Qué puntualidad, de verdad»."
+    hint_general: "Le dice lo contrario de lo que piensa, con dureza, para dejarle claro que llegó tarde."
+    explanation: "Sarcasmo: le dice lo contrario de lo que piensa, con dureza. «Reproche» sería decirle de frente que llegó tarde, y aquí Iván lo dice al revés, y «mofa» sería reírse de él delante de otros, cosa que aquí no ocurre."
+    options:
+      - position: 1
+        text: "reproche"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reproche» sería decirle de frente que llegó tarde, y aquí Iván dice lo contrario de lo que piensa para criticarlo con ironía dura."
+        hint_specific: "«Reproche» va directo al grano. ¿Iván se queja de frente o dice lo contrario de lo que piensa?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "mofa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mofa» sería reírse abiertamente de él delante de otros, y aquí Iván solo suelta una frase irónica y cortante, sin hacer un espectáculo."
+        hint_specific: "«Mofa» es una burla abierta. ¿Iván hace un espectáculo o solo suelta una frase?"
+  - position: 6
+    sentence: "El crítico Damián escribió la reseña con tanto {{blank}} que el director de la película respondió en sus redes al día siguiente."
+    hint_general: "Escribe con un tono irónico y cortante, tan fuerte que provoca una respuesta."
+    explanation: "Sarcasmo: escribe con un tono irónico y cortante. «Espasmo» es una contracción muscular, sin relación con un texto, y «cinismo» describe una forma de actuar sin vergüenza, y aquí solo hay un texto escrito con ese tono."
+    options:
+      - position: 1
+        text: "espasmo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Espasmo» es una contracción muscular, y aquí lo que hay es un texto escrito con ironía dura, no ningún movimiento del cuerpo."
+        hint_specific: "«Espasmo» es del cuerpo. ¿El crítico escribió algo o tuvo un movimiento involuntario?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "cinismo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cinismo» describe una forma de actuar sin vergüenza, y aquí lo que hay es un texto escrito con un tono irónico y cortante."
+        hint_specific: "«Cinismo» es una forma de actuar. ¿El crítico actúa así o escribe con ese tono?"
+  - position: 7
+    sentence: "Después de escuchar la misma excusa tres veces, Marta respondió con tanto {{blank}} que su compañero prefirió no dar más explicaciones."
+    hint_general: "Responde diciendo lo contrario de lo que piensa, con dureza, tras escuchar la misma excusa varias veces."
+    explanation: "Sarcasmo: responde diciendo lo contrario de lo que piensa, con dureza. «Pulla» suena antigua y literaria, y Marta responde con un tono bien actual, y «reproche» sería decirle de frente que no le cree."
+    options:
+      - position: 1
+        text: "pulla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pulla» suena antigua y literaria, y Marta respondió con un tono irónico y cortante bien actual, no con una frase de otra época."
+        hint_specific: "«Pulla» suena a otra época. ¿La respuesta de Marta suena antigua o actual?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "reproche"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reproche» sería decirle de frente que no le cree, y Marta dice lo contrario de lo que piensa para criticarlo con ironía dura."
+        hint_specific: "«Reproche» va directo. ¿Marta se queja de frente o dice lo contrario de lo que piensa?"
+  - position: 8
+    sentence: "Bruno leyó el correo de su jefe y detectó tanto {{blank}} entre líneas que decidió responder con mucho cuidado."
+    hint_general: "Detecta un tono que dice lo contrario de lo pensado, cortante, que parece buscar molestar a alguien."
+    explanation: "Sarcasmo: un tono que dice lo contrario de lo pensado, cortante. «Cinismo» describe una forma de actuar sin vergüenza, y aquí Bruno detecta un tono en un texto, y «ironía» no buscaría incomodar a nadie, y aquí sí lo hace."
+    options:
+      - position: 1
+        text: "cinismo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cinismo» describe una forma de actuar sin vergüenza, y aquí Bruno detecta un tono irónico y cortante en un texto, no una forma de actuar."
+        hint_specific: "«Cinismo» es una forma de actuar. ¿Bruno detecta una acción o un tono en el texto?"
+      - position: 2
+        text: "sarcasmo"
+        is_correct: true
+      - position: 3
+        text: "ironía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ironía» no buscaría incomodar a nadie, y Bruno decide responder con cuidado justo porque detecta un tono que busca herir."
+        hint_specific: "«Ironía» no incomoda a nadie. ¿Por qué Bruno decide responder con tanto cuidado?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La pregunta de todos"
+    body: "En la fiesta, alguien le preguntó a Iván si por fin había arreglado su coche. «Sí, claro, funciona perfecto», dijo él, con tanto sarcasmo que todos soltaron una carcajada. El coche llevaba dos semanas parado en el taller."
+    before_phrase: "Lo dijo en plan de burla, todos entendimos que no."
+    after_phrase: "Lo dijo con sarcasmo, y todos entendimos que no."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena tensa"
+    body: "Cuando su padre preguntó por qué llegaba tan tarde, Bruno respondió: «Porque me encanta el tráfico, la verdad». Su padre no se rio. «Guárdate el sarcasmo para tus amigos», le dijo, y la cena siguió en silencio un rato largo."
+    before_phrase: "Se lo dije en plan de burla, medio en serio."
+    after_phrase: "Guárdate el sarcasmo, por favor."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo con doble filo"
+    body: "Marta leyó dos veces el mensaje de su jefe antes de responder. Detectó el sarcasmo entre líneas: «Qué buena idea llegar tarde a la reunión más importante del mes». Decidió responder con calma, sin entrar en el juego, y explicar lo que había pasado."
+    before_phrase: "Detecté la ironía pesada en ese correo."
+    after_phrase: "Detecté el sarcasmo en ese correo."
+provenance:
+  generator: "flui authoring agent — batch W3 familia-crianza + humor"
+  gate: null
+  checked_on: "2026-09-18"

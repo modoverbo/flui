@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "gremio"
+status: "draft"
+lemma: "gremio"
+part_of_speech: "sustantivo"
+syllables: ["gre", "mio"]
+stressed_syllable: 1
+ipa_latam: "[ˈgɾe.mjo]"
+ipa_es: "[ˈgɾe.mjo]"
+explanation: "Grupo de personas que trabajan en el mismo oficio y comparten intereses y problemas comunes."
+example_sentence: "En el congreso, Andrés conoció a la mitad del gremio de arquitectos de la ciudad."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para hablar de tu sector profesional como comunidad, no solo como mercado laboral."
+when_not_to_use: "No lo uses para un solo equipo de trabajo: gremio es el sector entero, más allá de una empresa."
+collocations:
+  - "el gremio de"
+  - "moverse en el gremio"
+  - "todo el gremio"
+replaces:
+  - before: "La gente que trabaja en lo mismo que yo"
+    after: "Mi gremio"
+  - before: "Todos los del sector se conocen"
+    after: "Todo el gremio se conoce"
+family: ["gremial"]
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "conversacion-cotidiana"
+    relevance: 1
+tags:
+  comodin: ["el sector", "la gente del rubro"]
+  funcion: ["identificar", "pertenecer"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sindicato"
+    difference: "El sindicato defiende derechos laborales de sus afiliados; el gremio agrupa a quienes comparten oficio o intereses, sin ser necesariamente una organización de defensa."
+    memory_trick: "El gremio comparte oficio; el sindicato pelea derechos."
+exercises:
+  - position: 1
+    sentence: "En el congreso anual, Andrés reconoció a la mitad del {{blank}} de arquitectos de la ciudad."
+    hint_general: "Nombra al grupo de personas que comparten el mismo oficio."
+    explanation: "Gremio: el grupo de personas que comparten el mismo oficio. «Sindicato» defiende derechos laborales de sus afiliados, y «público» es cualquier persona presente, sin relación con el oficio."
+    options:
+      - position: 1
+        text: "gremio"
+        is_correct: true
+      - position: 2
+        text: "sindicato"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sindicato» es una organización que defiende derechos laborales, y aquí Andrés solo reconoce a colegas de su oficio."
+        hint_specific: "Un sindicato negocia condiciones. ¿Andrés negociaba algo o solo reconocía caras?"
+      - position: 3
+        text: "público"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Público» es cualquier persona presente, y aquí se habla de colegas del mismo oficio, no de asistentes al azar."
+        hint_specific: "El público puede ser de cualquier oficio. ¿Los que reconoció Andrés compartían su oficio?"
+  - position: 2
+    sentence: "Camila decidió unirse a la asociación porque quería moverse más en el {{blank}} de diseño gráfico."
+    hint_general: "Piensa en la comunidad completa de un mismo oficio, más allá de un solo lugar de trabajo."
+    explanation: "Gremio: la comunidad completa de un oficio, más allá de una empresa. «Empresa» es un solo lugar de trabajo, y «gimnasio» no tiene relación con un oficio."
+    options:
+      - position: 1
+        text: "empresa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «empresa» es un solo lugar de trabajo, y aquí Camila busca moverse en todo el sector del diseño, no en una sola oficina."
+        hint_specific: "Una empresa tiene un solo equipo. ¿Camila quiere conocer una oficina o todo el sector?"
+      - position: 2
+        text: "gremio"
+        is_correct: true
+      - position: 3
+        text: "gimnasio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «gimnasio» es un lugar para hacer ejercicio, sin relación con conocer gente del diseño gráfico."
+        hint_specific: "Un gimnasio es para entrenar el cuerpo. ¿Camila busca hacer ejercicio o conocer colegas?"
+  - position: 3
+    sentence: "Los reposteros de la ciudad tienen un chat donde todo el {{blank}} comparte proveedores y consejos."
+    hint_general: "Se refiere a todas las personas de un mismo oficio, como comunidad."
+    explanation: "Gremio: todas las personas de un mismo oficio, como comunidad. «Competencia» sugiere rivalidad, y «premio» es un galardón, sin relación con formar una comunidad de oficio."
+    options:
+      - position: 1
+        text: "gremio"
+        is_correct: true
+      - position: 2
+        text: "competencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Competencia» sugiere rivalidad entre negocios, y el chat muestra que comparten proveedores y consejos entre sí."
+        hint_specific: "La competencia se guarda sus trucos. ¿Aquí los reposteros comparten o se ocultan información?"
+      - position: 3
+        text: "premio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «premio» es un galardón por algo bien hecho, y aquí se habla de una comunidad de oficio que comparte información."
+        hint_specific: "Un premio se entrega por un logro. ¿El chat entrega premios o comparte información?"
+  - position: 4
+    sentence: "Bruno se sorprendió: en esa ciudad pequeña, el {{blank}} de fotógrafos apenas llegaba a veinte personas."
+    hint_general: "Piensa en el conjunto de personas que ejercen el mismo oficio en un lugar."
+    explanation: "Gremio: el conjunto de personas que ejercen el mismo oficio en un lugar. «Estudio» es un solo espacio de trabajo, y «banda» es coloquial y suena a grupo de amigos, no a un oficio compartido."
+    options:
+      - position: 1
+        text: "estudio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «estudio» es un solo espacio de trabajo, y aquí se habla de todos los fotógrafos de la ciudad juntos."
+        hint_specific: "Un estudio tiene una sola dirección. ¿La frase habla de un local o de toda la ciudad?"
+      - position: 2
+        text: "gremio"
+        is_correct: true
+      - position: 3
+        text: "banda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Banda» es coloquial y suena a grupo de amigos, y aquí se habla del oficio compartido por los fotógrafos de la ciudad."
+        hint_specific: "Una banda suena informal, como un grupo de amigos. ¿La frase describe un oficio o una junta de amigos?"
+  - position: 5
+    sentence: "La nueva ley de aranceles tomó por sorpresa a todo el {{blank}} textil del país."
+    hint_general: "El conjunto de negocios y trabajadores de un mismo sector, afectados por igual."
+    explanation: "Gremio: el conjunto de negocios y trabajadores de un mismo sector. «Rubro» habla del tipo de negocio en sí, sin nombrar a las personas que lo forman, y «gimnasio» no tiene relación con la industria textil."
+    options:
+      - position: 1
+        text: "gremio"
+        is_correct: true
+      - position: 2
+        text: "rubro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rubro» nombra el tipo de negocio en sí, y la frase habla de las personas y empresas a las que sorprendió la ley."
+        hint_specific: "El rubro es una categoría de negocio. ¿La ley sorprendió a una categoría o a la gente del sector?"
+      - position: 3
+        text: "gimnasio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «gimnasio» es un lugar para hacer ejercicio, sin relación con la industria textil."
+        hint_specific: "Un gimnasio no fabrica ropa. ¿Qué sector menciona la frase?"
+  - position: 6
+    sentence: "Javier organizó una cena para que el {{blank}} de traductores independientes por fin se conociera en persona."
+    hint_general: "Un grupo de personas del mismo oficio que suele trabajar por separado."
+    explanation: "Gremio: el grupo del mismo oficio, aunque trabajen por separado. «Cliente» es quien contrata el servicio, sin compartir el oficio, y «plantilla» describe a empleados de una sola empresa."
+    options:
+      - position: 1
+        text: "cliente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cliente» contrata el servicio de traducción, y la cena reúne a quienes ejercen el oficio, no a quienes lo contratan."
+        hint_specific: "El cliente contrata, no traduce. ¿La cena reúne a quienes contratan o a quienes traducen?"
+      - position: 2
+        text: "gremio"
+        is_correct: true
+      - position: 3
+        text: "plantilla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Plantilla» describe a los empleados de una sola empresa, y aquí se trata de traductores independientes de varias empresas."
+        hint_specific: "Una plantilla pertenece a una sola empresa. ¿Los traductores independientes comparten una sola empresa?"
+  - position: 7
+    sentence: "Antes de lanzar el producto, la marca invitó a todo el {{blank}} de nutricionistas a probarlo primero."
+    hint_general: "Las personas de un oficio a las que conviene convencer antes que al público general."
+    explanation: "Gremio: las personas de un oficio a las que conviene convencer primero. «Jurado» evalúa para dar un premio, y «gimnasio» no tiene relación con nutricionistas."
+    options:
+      - position: 1
+        text: "gremio"
+        is_correct: true
+      - position: 2
+        text: "jurado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «jurado» evalúa para otorgar un premio, y aquí la marca solo busca que los nutricionistas prueben el producto."
+        hint_specific: "Un jurado da un premio. ¿Aquí se busca un premio o solo la opinión del sector?"
+      - position: 3
+        text: "gimnasio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «gimnasio» es un lugar para hacer ejercicio, sin relación con los nutricionistas como comunidad profesional."
+        hint_specific: "Un gimnasio no evalúa productos de nutrición. ¿La frase habla de un lugar o de un grupo de profesionales?"
+  - position: 8
+    sentence: "Marta llevaba diez años en el {{blank}} y todavía se sorprendía de lo pequeño que era el mundo de la edición de libros."
+    hint_general: "Habla de pertenecer desde hace tiempo al grupo de personas de tu mismo oficio."
+    explanation: "Gremio: el grupo de personas de tu mismo oficio, al que se pertenece con el tiempo. «Negocio» habla de una actividad comercial concreta, y «gimnasio» no tiene relación con la edición de libros."
+    options:
+      - position: 1
+        text: "negocio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Negocio» describe una actividad comercial concreta, y aquí Marta habla de pertenecer a una comunidad de colegas."
+        hint_specific: "Un negocio se administra. ¿Marta habla de administrar algo o de pertenecer a un grupo?"
+      - position: 2
+        text: "gremio"
+        is_correct: true
+      - position: 3
+        text: "gimnasio"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «gimnasio» es un lugar para hacer ejercicio, sin relación con la edición de libros."
+        hint_specific: "Un gimnasio no edita libros. ¿A qué mundo pertenece Marta desde hace diez años?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El congreso anual"
+    body: "En el pasillo del congreso, Andrés reconoció caras que solo había visto en redes. «Este gremio es más pequeño de lo que pensaba», le dijo a una colega, y en media hora ya tenía tres conversaciones pendientes de seguir por correo."
+    before_phrase: "La gente del sector es menos de lo que creía."
+    after_phrase: "Este gremio es más pequeño de lo que pensaba."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Conocer el terreno"
+    body: "«¿Por qué te interesa este puesto?», preguntó la entrevistadora. Camila respondió: «Llevo años siguiendo a este gremio de cerca y quiero dejar de mirarlo desde afuera». La entrevistadora anotó la frase con una sonrisa."
+    before_phrase: "Sigo de cerca a la gente de este sector."
+    after_phrase: "Sigo de cerca a este gremio."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena de traductores"
+    body: "Javier miró la mesa llena de gente que nunca se había visto en persona. «Por fin el gremio completo en una misma mesa», dijo alzando la copa, y todos brindaron por los proyectos que habían compartido sin conocerse."
+    before_phrase: "Por fin toda la gente del sector en un mismo lugar."
+    after_phrase: "Por fin el gremio completo en una misma mesa."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

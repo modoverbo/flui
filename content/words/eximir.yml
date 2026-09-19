@@ -1,0 +1,228 @@
+schema_version: 1
+sort_order: 9103
+slug: "eximir"
+status: "draft"
+lemma: "eximir"
+part_of_speech: "verbo"
+syllables: ["e", "xi", "mir"]
+stressed_syllable: 3
+ipa_latam: "[ek.siˈmir]"
+ipa_es: "[ek.siˈmir]"
+explanation: "Decir que alguien no tiene la culpa de algo, o liberarlo de una obligación que ya no debe cumplir."
+example_sentence: "El testigo declaró que Marta no estaba en el edificio esa noche, lo que la eximió de toda sospecha."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien tanto en un contexto formal, como un trámite, como para aclarar que alguien no tuvo la culpa de algo."
+when_not_to_use: "No la uses cuando alguien sí tiene parte de responsabilidad: eximir es liberar de toda culpa, no repartirla."
+collocations:
+  - "eximir de responsabilidad"
+  - "eximir de culpa"
+  - "eximir de un pago"
+replaces:
+  - before: "Al final dijeron que ella no tuvo nada que ver"
+    after: "Al final la eximieron de toda culpa"
+  - before: "Le dijeron que no tenía que pagar esa multa"
+    after: "Lo eximieron de pagar esa multa"
+  - before: "El jefe aclaró que el error no fue suyo"
+    after: "El jefe lo eximió del error"
+family: ["exención", "eximente"]
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+tags:
+  comodin: ["decir que no tuvo la culpa"]
+  funcion: ["liberar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "existir"
+    difference: "«Existir» es tener realidad o estar presente en algún lugar; «eximir» es liberar a alguien de una culpa o de una obligación. Solo se parecen en el sonido."
+    memory_trick: "Algo existe; a alguien se le exime de algo."
+exercises:
+  - position: 1
+    sentence: "Cuando revisaron las cámaras, el reporte {{blank}} a Bautista de cualquier responsabilidad en el faltante de caja."
+    hint_general: "Busca el verbo para declarar que alguien no tuvo ninguna culpa en lo ocurrido."
+    explanation: "Eximió: declaró que Bautista no tuvo ninguna culpa. «Existió» solo diría que algo es real, y «disculpó» perdonaría una falta que en realidad no ocurrió."
+    options:
+      - position: 1
+        text: "existió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Existir» es tener realidad o estar presente, y el reporte no habla de si Bautista existe: habla de si tuvo o no responsabilidad."
+        hint_specific: "«Existir» solo dice que algo es real o está presente. ¿El reporte habla de eso, o de responsabilidad?"
+      - position: 2
+        text: "eximió"
+        is_correct: true
+      - position: 3
+        text: "disculpó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disculpar» perdona una falta que sí ocurrió, y el reporte muestra que Bautista no hizo nada malo: no hay nada que perdonar."
+        hint_specific: "«Disculpar» supone que hubo una falta real. ¿El reporte encontró que Bautista hizo algo malo?"
+  - position: 2
+    sentence: "La abuela siempre {{blank}} a los nietos más pequeños de lavar los platos después de cenar."
+    hint_general: "Busca el verbo para no pedirles eso a los nietos más pequeños."
+    explanation: "Eximía: no les pedía eso a los más pequeños. «Dispensaba» sonaría a un permiso formal, y «liberaba» sugiere sacar a alguien de algo muy pesado."
+    options:
+      - position: 1
+        text: "dispensaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dispensar» suena a un permiso especial y algo formal, y en una casa entre abuela y nietos no hace falta un trámite tan solemne."
+        hint_specific: "«Dispensar» suena a un permiso formal. ¿Hace falta tanta formalidad en una cocina familiar?"
+      - position: 2
+        text: "eximía"
+        is_correct: true
+      - position: 3
+        text: "liberaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Liberar» sugiere sacar a alguien de algo pesado o injusto, y lavar los platos no es una carga tan grande como para hablar de liberación."
+        hint_specific: "«Liberar» suena a sacar a alguien de algo muy pesado. ¿Lavar platos pesa tanto?"
+  - position: 3
+    sentence: "El comité pidió pruebas antes de que {{blank}} al proveedor de pagar la penalidad por el retraso."
+    hint_general: "Busca el verbo para liberar al proveedor de una obligación, basándose en pruebas."
+    explanation: "Eximiera: liberara al proveedor de una obligación, con pruebas de por medio. «Perdonara» sería una decisión de misericordia sin pruebas, y «justificara» solo explicaría el motivo del retraso, sin resolver el pago."
+    options:
+      - position: 1
+        text: "perdonara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Perdonar» es una decisión de misericordia, sin necesitar pruebas, y aquí el comité pide evidencia antes de decidir, no actúa por compasión."
+        hint_specific: "«Perdonar» no necesita pruebas, solo buena voluntad. ¿El comité actúa por pruebas o por compasión?"
+      - position: 2
+        text: "eximiera"
+        is_correct: true
+      - position: 3
+        text: "justificara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» es explicar por qué pasó algo, y el comité no busca una explicación del retraso: busca decidir si el proveedor debe pagar o no."
+        hint_specific: "«Justificar» explica un motivo, no decide una obligación. ¿El comité quiere una explicación o una decisión sobre el pago?"
+  - position: 4
+    sentence: "El grupo decidió {{blank}} a Marina del pago, porque ella había organizado todo sin cobrar nada."
+    hint_general: "Busca el verbo para que no le toque pagar, porque ya hizo su parte de otra forma."
+    explanation: "Eximir: que no le toque pagar, porque ya hizo su parte. «Liberar» sonaría a sacar a alguien de algo muy pesado, y «dispensar» sería un trámite demasiado formal entre amigos."
+    options:
+      - position: 1
+        text: "eximir"
+        is_correct: true
+      - position: 2
+        text: "liberar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Liberar» sugiere sacar a alguien de algo pesado o injusto, y pagar la cuenta entre amigos no es una carga tan grande como para hablar de liberación."
+        hint_specific: "«Liberar» suena a sacar a alguien de algo muy pesado. ¿Pagar una cuenta entre amigos pesa tanto?"
+      - position: 3
+        text: "dispensar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dispensar» suena a un trámite o un permiso formal, y entre amigos que reparten una cuenta no hace falta tanta formalidad."
+        hint_specific: "«Dispensar» suena a un permiso formal. ¿Hace falta tanta formalidad entre amigos?"
+  - position: 5
+    sentence: "La nueva política {{blank}} a los empleados con más de diez años de hacer horas extra los viernes."
+    hint_general: "Busca el verbo para quitarles esa obligación a los empleados con más años."
+    explanation: "Exime: les quita esa obligación a los empleados con más años. «Existe» solo confirmaría que la política es real, y «libera» sugiere sacar a alguien de algo muy pesado."
+    options:
+      - position: 1
+        text: "existe"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Existir» solo dice que algo es real, y la frase necesita un verbo que hable de quitar una obligación, no de si la política existe."
+        hint_specific: "«Existir» solo confirma que algo es real. ¿La frase habla de quitar una obligación o de si la política es real?"
+      - position: 2
+        text: "exime"
+        is_correct: true
+      - position: 3
+        text: "libera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Liberar» sugiere sacar a alguien de algo pesado o injusto, y hacer una hora extra un viernes no pide una palabra tan fuerte."
+        hint_specific: "«Liberar» suena a sacar a alguien de algo muy pesado. ¿Una hora extra el viernes pesa tanto?"
+  - position: 6
+    sentence: "Renata seguía {{blank}} a su hijo menor de los quehaceres de la casa, y los otros empezaban a quejarse."
+    hint_general: "Busca el verbo para no pedirle eso, una y otra vez, al hijo menor."
+    explanation: "Eximiendo: no pidiéndole eso al hijo menor. «Absolviendo» sonaría a una sentencia de juicio, y «disculpando» perdonaría algo que el hijo hizo mal, cuando en realidad no hizo nada."
+    options:
+      - position: 1
+        text: "absolviendo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Absolver» es una palabra de juicio, casi de tribunal, y repartir cosas de la casa no pide un lenguaje tan formal."
+        hint_specific: "«Absolver» suena a una sentencia de juicio. ¿Repartir cosas en casa necesita un lenguaje tan formal?"
+      - position: 2
+        text: "disculpando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disculpar» perdona algo que el hijo hizo mal, y aquí no hizo nada malo: simplemente no le tocan esas cosas."
+        hint_specific: "«Disculpar» perdona una falta. ¿El hijo menor hizo algo malo, o simplemente no le tocan esas cosas?"
+      - position: 3
+        text: "eximiendo"
+        is_correct: true
+  - position: 7
+    sentence: "Los organizadores {{blank}} a los voluntarios de primer año de coordinar el evento principal."
+    hint_general: "Busca el verbo para no pedirles eso a los voluntarios nuevos."
+    explanation: "Eximieron: no les pidieron eso a los voluntarios nuevos. «Dispensaron» sonaría a un permiso muy formal, y «justificaron» sería dar una razón, no quitar el encargo."
+    options:
+      - position: 1
+        text: "dispensaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dispensar» suena a un permiso especial y algo solemne, y aquí solo se trató de repartir responsabilidades según la experiencia de cada quien."
+        hint_specific: "«Dispensar» suena a un permiso muy formal. ¿Repartir responsabilidades según la experiencia necesita tanta solemnidad?"
+      - position: 2
+        text: "eximieron"
+        is_correct: true
+      - position: 3
+        text: "justificaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» es dar una razón para algo, y los organizadores no explicaron nada: decidieron directamente que ese encargo no era para los voluntarios nuevos."
+        hint_specific: "«Justificar» da una explicación, no quita un encargo. ¿Los organizadores explicaron algo, o decidieron directamente?"
+  - position: 8
+    sentence: "Después de tantos años organizando la cena familiar, la tía Antonella nunca {{blank}} a nadie de traer un plato, ni siquiera a los invitados de última hora."
+    hint_general: "Busca el verbo para no pedirle eso a nadie, ni siquiera a los invitados de última hora."
+    explanation: "Ha eximido: no le ha pedido eso a nadie. «Ha disculpado» perdonaría una falta que no existe, y «ha absuelto» sonaría a una sentencia judicial, demasiado formal para una cena familiar."
+    options:
+      - position: 1
+        text: "ha disculpado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disculpar» perdona algo que alguien hizo mal, y no traer un plato no es una falta que haya que perdonar."
+        hint_specific: "«Disculpar» perdona una falta. ¿No traer un plato es una falta que perdonar?"
+      - position: 2
+        text: "ha absuelto"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Absolver» es una palabra de juicio, casi de tribunal, y organizar una cena familiar no necesita un lenguaje tan solemne."
+        hint_specific: "«Absolver» suena a una sentencia judicial. ¿Una cena familiar pide un lenguaje tan formal?"
+      - position: 3
+        text: "ha eximido"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El jarrón roto"
+    body: "Cuando el jarrón apareció roto en la sala, todos miraron al gato. Pero la cámara de seguridad eximió al gato: había sido el viento, que había tirado la ventana contra la mesa. Nadie tuvo que disculparse con nadie."
+    before_phrase: "Ya, tranquilo, no fue tu culpa, no pasa nada."
+    after_phrase: "La cámara te eximió de toda culpa."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cuenta del asado"
+    body: "El grupo se reunió para hacer cuentas del asado del fin de semana. Alguien propuso eximir a Ricardo del pago: había sido el único que llegó temprano a comprar todo y armar la parrilla. Todos estuvieron de acuerdo entre risas."
+    before_phrase: "Tú no pagues, ya hiciste bastante con llegar temprano."
+    after_phrase: "Te eximimos del pago por llegar temprano."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo que faltaba"
+    body: "El cliente reclamó que nunca recibió el presupuesto. Cuando revisaron el sistema, encontraron que el correo se había perdido por un error técnico, y eso eximió a Carolina de cualquier descuido. Su jefa se lo confirmó frente a todo el equipo."
+    before_phrase: "No fue mi culpa, el correo nunca llegó."
+    after_phrase: "El sistema me eximió de cualquier descuido."
+provenance:
+  generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
+  gate: null
+  checked_on: "2026-09-18"

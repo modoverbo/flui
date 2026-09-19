@@ -1,0 +1,239 @@
+schema_version: 1
+sort_order: 9005
+slug: "compensacion"
+status: "draft"
+lemma: "compensación"
+part_of_speech: "sustantivo"
+syllables: ["com", "pen", "sa", "ción"]
+stressed_syllable: 4
+ipa_latam: "[kom.pen.saˈsjon]"
+ipa_es: "[kom.pen.saˈθjon]"
+explanation: "Algo que le das a alguien para reparar un error que lo afectó."
+example_sentence: "Le ofreció una compensación por las horas perdidas durante la mudanza que él mismo había retrasado."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve cuando alguien te ofrece algo, un gesto o una acción, para equilibrar un daño o una molestia que causó."
+when_not_to_use: "No la uses para un simple regalo sin motivo, ni para un pago que no tiene relación con ningún error previo."
+collocations:
+  - "ofrecer una compensación"
+  - "una compensación justa"
+  - "pedir una compensación"
+replaces:
+  - before: "Le di algo para que se le pasara el enojo por lo que hice"
+    after: "Le ofrecí una compensación por lo que hice"
+  - before: "Como llegamos tarde, les invitamos el postre"
+    after: "Como llegamos tarde, les dimos una compensación con el postre"
+  - before: "Le devolví el favor porque la había dejado esperando"
+    after: "Le di una compensación porque la había dejado esperando"
+family:
+  - "compensar"
+  - "compensatorio"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "conflicto-desacuerdo"
+    relevance: 1
+tags:
+  comodin:
+    - "arreglar las cosas"
+  funcion:
+    - "reparar un daño"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "compasión"
+    difference: "«Compasión» es sentir empatía por el sufrimiento de alguien; esta palabra es algo concreto que se entrega para reparar un daño."
+    memory_trick: "La compasión se siente; esta palabra se entrega."
+  - confused_with: "indemnización"
+    difference: "«Indemnización» es un pago fijado por ley o por un seguro después de un daño probado; esta palabra puede ser cualquier gesto, sin trámite legal de por medio."
+    memory_trick: "La indemnización pasa por un trámite; esta palabra puede ser un simple gesto entre dos personas."
+exercises:
+  - position: 1
+    sentence: "Antonia llegó una hora tarde a la reunión con su socia y, para arreglarlo, le ofreció pagar el almuerzo como {{blank}}."
+    hint_general: "Es un gesto concreto que se ofrece para equilibrar una molestia que uno mismo causó."
+    explanation: "Compensación: un gesto concreto para equilibrar una molestia causada. «Compasión» es sentir empatía por alguien, no un gesto, y un «premio» se da por un mérito, no por un error propio."
+    options:
+      - position: 1
+        text: "compasión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Compasión» es sentir empatía por el sufrimiento de alguien, y Antonia no siente nada hacia su socia: le ofrece algo concreto por haber llegado tarde."
+        hint_specific: "La «compasión» es un sentimiento, no un gesto. ¿Qué le ofrece Antonia exactamente a su socia?"
+      - position: 2
+        text: "compensación"
+        is_correct: true
+      - position: 3
+        text: "premio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «premio» se da por un mérito o un logro, y aquí Antonia ofrece algo por su propio error: haber llegado tarde."
+        hint_specific: "Un «premio» reconoce algo bien hecho. ¿Antonia reconoce un mérito o repara un error suyo?"
+  - position: 2
+    sentence: "La aerolínea perdió las maletas de Emiliano y, al día siguiente, le mandó un vale como {{blank}} por las molestias del viaje."
+    hint_general: "Es un gesto que una empresa ofrece después de haber causado una molestia concreta."
+    explanation: "Compensación: un gesto que ofrece una empresa después de causar una molestia. Una «indemnización» seguiría un trámite legal con un monto fijado, y un «regalo» no tendría ninguna relación con el error de la aerolínea."
+    options:
+      - position: 1
+        text: "indemnización"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indemnización» sigue un trámite legal con un monto fijado por un daño probado, y aquí la aerolínea manda un vale al día siguiente, sin ningún trámite de por medio."
+        hint_specific: "Una «indemnización» pasa por un trámite formal. ¿La aerolínea siguió algún trámite aquí?"
+      - position: 2
+        text: "compensación"
+        is_correct: true
+      - position: 3
+        text: "regalo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «regalo» no tiene relación con ningún error, y el vale de la aerolínea existe justamente porque perdieron las maletas de Emiliano."
+        hint_specific: "Un «regalo» no necesita una causa. ¿Por qué manda la aerolínea ese vale?"
+  - position: 3
+    sentence: "Laura olvidó pasar a buscar a su amiga y, para arreglarlo, le propuso una tarde de compras como {{blank}}."
+    hint_general: "Es un gesto que propone alguien después de haber fallado a otra persona."
+    explanation: "Compensación: un gesto que se propone después de fallar a alguien. Una «propina» se da por un buen servicio, no por un olvido, y un «descuento» solo tiene sentido en una compra, no entre amigas."
+    options:
+      - position: 1
+        text: "propina"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «propina» se deja por un buen servicio en un local, y aquí Laura le propone algo a su amiga por haberla dejado esperando, no por atenderla bien."
+        hint_specific: "Una «propina» se relaciona con un servicio pagado. ¿Hay algún servicio pagado en esta escena?"
+      - position: 2
+        text: "compensación"
+        is_correct: true
+      - position: 3
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descuento» solo tiene sentido dentro de una compra, y aquí no hay ninguna compra de por medio: Laura le propone una tarde juntas a su amiga."
+        hint_specific: "Un «descuento» baja el precio de algo que se compra. ¿Laura y su amiga están comprando algo?"
+  - position: 4
+    sentence: "El dueño del edificio hizo mucho ruido con la obra y le ofreció a Facundo una {{blank}} en la renta del mes siguiente."
+    hint_general: "Es un gesto para equilibrar una molestia concreta que el propio dueño causó."
+    explanation: "Compensación: un gesto para equilibrar una molestia causada. Un «detallito» suena demasiado pequeño y coloquial para el ruido de una obra, y una «recompensa» se suele dar por un mérito, no por una molestia."
+    options:
+      - position: 1
+        text: "detallito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «detallito» es coloquial y suena demasiado pequeño para el ruido de una obra, y aquí el dueño ofrece algo concreto en la renta, no un gesto menor."
+        hint_specific: "Un «detallito» suena a algo mínimo e informal. ¿Qué tan grande es la molestia de la obra?"
+      - position: 2
+        text: "compensación"
+        is_correct: true
+      - position: 3
+        text: "recompensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «recompensa» suele darse por un mérito o un esfuerzo, y aquí el dueño no premia nada: repara una molestia que él mismo causó con la obra."
+        hint_specific: "Una «recompensa» premia algo bien hecho. ¿El dueño premia un mérito o repara una molestia?"
+  - position: 5
+    sentence: "Julieta canceló el viaje familiar a último momento y, semanas después, organizó una escapada como {{blank}} para sus padres."
+    hint_general: "Es un gesto que se organiza después para equilibrar una decisión que afectó a otros."
+    explanation: "Compensación: un gesto que equilibra una decisión que afectó a otros. Un «premio» se da por un mérito, no por una cancelación propia, y una «propina» no tiene sentido entre familia."
+    options:
+      - position: 1
+        text: "premio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «premio» se da por un mérito o un logro, y Julieta organiza la escapada por haber cancelado el viaje, no porque sus padres hayan logrado algo."
+        hint_specific: "Un «premio» reconoce un mérito. ¿Qué mérito de sus padres estaría reconociendo Julieta?"
+      - position: 2
+        text: "compensación"
+        is_correct: true
+      - position: 3
+        text: "propina"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «propina» se relaciona con un servicio pagado, y aquí Julieta organiza algo para su propia familia, sin ningún servicio de por medio."
+        hint_specific: "Una «propina» va con un servicio pagado. ¿Hay algún servicio en esta escena familiar?"
+  - position: 6
+    sentence: "Álvaro rompió sin querer el jarrón de su vecina y le ofreció comprarle uno nuevo como {{blank}}."
+    hint_general: "Es un gesto concreto para reparar un daño que uno mismo causó sin querer."
+    explanation: "Compensación: un gesto concreto para reparar un daño causado sin querer. Una «indemnización» necesitaría un trámite formal, y una «compasión» sería solo un sentimiento, sin ningún gesto de por medio."
+    options:
+      - position: 1
+        text: "indemnización"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «indemnización» sigue un trámite legal o de seguro, y aquí Álvaro resuelve el daño directamente con su vecina, sin ningún trámite formal."
+        hint_specific: "Una «indemnización» necesita un trámite. ¿Álvaro sigue algún trámite con su vecina?"
+      - position: 2
+        text: "compensación"
+        is_correct: true
+      - position: 3
+        text: "compasión"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "La «compasión» es solo un sentimiento de empatía, y Álvaro hace algo más concreto: le ofrece comprarle un jarrón nuevo a su vecina."
+        hint_specific: "La «compasión» no repara nada por sí sola. ¿Qué acción concreta ofrece Álvaro?"
+  - position: 7
+    sentence: "El equipo de Constanza entregó el proyecto con una semana de retraso y le ofrecieron al cliente un mes de servicio extra como {{blank}}."
+    hint_general: "Es un gesto concreto que una empresa ofrece después de haber fallado un plazo prometido."
+    explanation: "Compensación: un gesto concreto tras fallar un plazo prometido. Un «descuento» solo aplicaría a una compra futura, no a lo ya entregado tarde, y un «regalo» no tendría relación con el retraso."
+    options:
+      - position: 1
+        text: "descuento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descuento» baja el precio de algo que se compra, y aquí el equipo de Constanza da un mes de servicio extra, algo que no tiene precio que rebajar."
+        hint_specific: "Un «descuento» rebaja un precio. ¿El equipo rebaja un precio o agrega un servicio?"
+      - position: 2
+        text: "regalo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «regalo» no tiene relación con ningún error, y aquí el mes de servicio extra existe justamente porque el proyecto se entregó tarde."
+        hint_specific: "Un «regalo» no necesita una causa. ¿Por qué ofrece el equipo ese mes extra?"
+      - position: 3
+        text: "compensación"
+        is_correct: true
+  - position: 8
+    sentence: "Manuel se dio cuenta de que le había cobrado de más a un cliente por error y le devolvió el dinero, más una {{blank}} por la confusión."
+    hint_general: "Es un gesto adicional para equilibrar un error concreto en el cobro."
+    explanation: "Compensación: un gesto adicional para equilibrar un error de cobro. Una «recompensa» premia un mérito, no corrige un error, y una «propina» no encaja en una devolución de dinero por equivocación."
+    options:
+      - position: 1
+        text: "compensación"
+        is_correct: true
+      - position: 2
+        text: "recompensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «recompensa» premia un mérito o un esfuerzo, y aquí Manuel no premia nada: corrige un error de cobro que él mismo cometió."
+        hint_specific: "Una «recompensa» reconoce un mérito. ¿Qué mérito estaría reconociendo Manuel?"
+      - position: 3
+        text: "propina"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «propina» se relaciona con un servicio bien hecho, y aquí Manuel corrige un cobro equivocado, no premia un buen servicio."
+        hint_specific: "Una «propina» va después de un buen servicio. ¿Qué corrige Manuel exactamente?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El almuerzo de disculpa"
+    body: "Antonia llegó tarde por segunda vez en la semana. En vez de justificarse otra vez, propuso algo distinto: «Te invito el almuerzo como compensación, en serio». Su socia se rio: «No hace falta, pero acepto». La reunión empezó tarde, pero terminó en buenos términos."
+    before_phrase: "Perdón por llegar tarde otra vez, no sé qué decir."
+    after_phrase: "Te invito el almuerzo como compensación."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El viaje que no fue"
+    body: "Julieta había cancelado el viaje familiar por trabajo, y todavía se sentía mal. Semanas después, apareció con los boletos de una escapada de fin de semana: «Esto es mi compensación por lo del viaje», les dijo a sus padres. Su madre solo atinó a abrazarla."
+    before_phrase: "Perdón por lo del viaje, sé que se hacían ilusión."
+    after_phrase: "Esto es mi compensación por lo del viaje."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El jarrón de la vecina"
+    body: "El balón entró por la ventana y el jarrón terminó en el suelo. Álvaro tocó la puerta de inmediato: «Fue mi culpa, y quiero darte una compensación: te compro uno igual esta misma semana». Su vecina se sorprendió: pocas veces alguien reaccionaba tan rápido."
+    before_phrase: "Perdón por el jarrón, fue sin querer, de verdad."
+    after_phrase: "Quiero darte una compensación: te compro uno igual."
+provenance:
+  generator: "flui authoring agent — batch W1 pedir-disculparse"
+  gate: null
+  checked_on: "2026-09-18"

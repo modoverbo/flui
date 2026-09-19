@@ -1,0 +1,230 @@
+schema_version: 1
+slug: "acogedor"
+status: "draft"
+lemma: "acogedor"
+part_of_speech: "adjetivo"
+syllables: ["a", "co", "ge", "dor"]
+stressed_syllable: 4
+ipa_latam: "[a.ko.xeˈdor]"
+ipa_es: "[a.ko.xeˈdor]"
+explanation: "Que recibe bien a los demás y los hace sentir a gusto sin esfuerzo."
+example_sentence: "Su casa es tan acogedora que uno llega de visita y no quiere irse."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve tanto para un lugar, como una casa o un café, como para una persona que hace sentir bienvenido a cualquiera."
+when_not_to_use: "No la uses solo para decir que algo es cómodo en lo físico, sin que haya ese efecto de sentirse bienvenido."
+collocations:
+  - "un lugar acogedor"
+  - "un ambiente acogedor"
+  - "una casa acogedora"
+replaces:
+  - before: "Se siente como en casa apenas entras"
+    after: "Es un lugar muy acogedor"
+  - before: "Te hace sentir bienvenido enseguida"
+    after: "Es muy acogedor, te hace sentir bienvenido"
+  - before: "Da gusto estar ahí, se siente cálido"
+    after: "Es un ambiente acogedor"
+family: ["acogimiento"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["se siente como en casa", "te hace sentir bienvenido"]
+  funcion: ["describir", "elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acogotar"
+    difference: "«Acogotar» es agarrar a alguien del cuello o, en sentido figurado, abrumarlo; la otra palabra hace justo lo contrario: recibe bien y da tranquilidad."
+    memory_trick: "Lo primero te abre los brazos; acogotar te agarra del cuello."
+  - confused_with: "cómodo"
+    difference: "«Cómodo» describe la comodidad física de un lugar o mueble; la otra palabra describe que ese lugar además te hace sentir bienvenido, algo distinto de lo cómodo que sea."
+    memory_trick: "Un sillón puede ser cómodo y frío a la vez; el otro además te recibe con calidez."
+exercises:
+  - position: 1
+    sentence: "El departamento de Rocío era pequeño y sin muebles nuevos, pero tan {{blank}} que sus amigas preferían quedarse ahí antes que salir."
+    hint_general: "Describe un lugar que hace que uno se sienta bien recibido y en confianza apenas entra."
+    explanation: "Acogedor: un lugar que hace sentir bien recibido apenas se entra. «Acaparador» describe a alguien que acumula cosas para sí, y «cómodo» hablaría solo de comodidad física, algo que el departamento sin muebles nuevos no ofrecía."
+    options:
+      - position: 1
+        text: "acaparador"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acaparador» describe a alguien que acumula cosas para sí mismo, y aquí se habla de un departamento, no de una persona que guarda todo."
+        hint_specific: "«Acaparador» describe a alguien que guarda cosas. ¿La frase habla de una persona o de un lugar?"
+      - position: 2
+        text: "acogedor"
+        is_correct: true
+      - position: 3
+        text: "cómodo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cómodo» hablaría solo de la comodidad física, y la frase dice que el departamento no tenía muebles nuevos, así que la comodidad material no es lo que atrae a las amigas."
+        hint_specific: "«Cómodo» habla de comodidad física. ¿El departamento tenía muebles cómodos según la frase?"
+  - position: 2
+    sentence: "El café de la esquina no tenía decoración cara ni mesas grandes, pero era tan {{blank}} que la gente se quedaba horas conversando."
+    hint_general: "Habla de un lugar donde uno se siente bien recibido, más allá de lo elegante que sea."
+    explanation: "Acogedor: un lugar donde uno se siente bien recibido, más allá de lo elegante que sea. «Calentito» es coloquial y habla de temperatura, y «lujoso» describiría una decoración cara que ese café no tenía."
+    options:
+      - position: 1
+        text: "acogedor"
+        is_correct: true
+      - position: 2
+        text: "calentito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Calentito» es coloquial y diminutivo, y describe más bien una temperatura agradable que el efecto de sentirse bien recibido en ese café."
+        hint_specific: "«Calentito» habla de temperatura, de forma casual. ¿La frase describe temperatura o un efecto sobre la gente?"
+      - position: 3
+        text: "lujoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lujoso» describiría una decoración cara, y la frase aclara que ese café no tenía nada de eso."
+        hint_specific: "«Lujoso» habla de algo caro. ¿La frase dice que el café era caro?"
+  - position: 3
+    sentence: "La habitación del hotel no era grande, pero la reseña decía que era tan {{blank}} que daban ganas de no salir de ahí."
+    hint_general: "Se refiere a un espacio que hace sentir bien recibido, sin que eso dependa del tamaño."
+    explanation: "Acogedora: un espacio que hace sentir bien recibido, sin que eso dependa del tamaño. «Acaparadora» describe a una persona que acumula cosas, y «amplia» hablaría del tamaño, que la reseña no destaca."
+    options:
+      - position: 1
+        text: "acaparadora"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acaparadora» describiría a alguien que acumula cosas para sí, y la reseña habla de una habitación, no de una persona acumulando algo."
+        hint_specific: "«Acaparadora» describe a una persona que guarda cosas. ¿La reseña habla de una persona o de un espacio?"
+      - position: 2
+        text: "amplia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amplia» hablaría del tamaño, y la frase aclara que la habitación no era grande."
+        hint_specific: "«Amplia» mide el tamaño. ¿La habitación era grande según la reseña?"
+      - position: 3
+        text: "acogedora"
+        is_correct: true
+  - position: 4
+    sentence: "La sala de espera de la notaría tenía sillas sencillas, pero era tan {{blank}} que los clientes llegaban antes de la hora solo por gusto de sentarse ahí."
+    hint_general: "Habla de un espacio que hace sentir bien, más allá de lo simple que sea el mobiliario."
+    explanation: "Acogedora: un espacio que hace sentir bien, aunque no tenga nada lujoso. «Cómoda» hablaría solo de sillas confortables, que la frase dice que eran sencillas, y «lujosa» describiría algo caro que esa sala no tenía."
+    options:
+      - position: 1
+        text: "cómoda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cómoda» hablaría solo de que las sillas eran confortables, y la frase dice que eran sencillas, no que fueran especialmente cómodas."
+        hint_specific: "«Cómoda» habla de confort físico. ¿La frase dice que las sillas eran especialmente cómodas?"
+      - position: 2
+        text: "acogedora"
+        is_correct: true
+      - position: 3
+        text: "lujosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lujosa» describiría algo caro y elegante, y la frase aclara que las sillas eran sencillas, sin nada de lujo."
+        hint_specific: "«Lujosa» habla de algo caro. ¿La sala tenía algo lujoso según la frase?"
+  - position: 5
+    sentence: "La librería del barrio era diminuta, apenas cabían diez personas, pero tan {{blank}} que todos terminaban quedándose más de una hora."
+    hint_general: "Se refiere a un lugar que hace sentir bien, sin que eso dependa de cuánto espacio tenga."
+    explanation: "Acogedora: un lugar que hace sentir bien, sin que eso dependa de cuánto espacio tenga. «Calentita» es coloquial y habla de temperatura, y «amplia» hablaría de espacio, cuando la librería era diminuta."
+    options:
+      - position: 1
+        text: "acogedora"
+        is_correct: true
+      - position: 2
+        text: "calentita"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Calentita» es coloquial y diminutiva, y apunta a la temperatura del lugar, no al efecto de sentirse bien recibido entre los libros."
+        hint_specific: "«Calentita» habla de temperatura, en tono informal. ¿La frase describe temperatura o el ánimo de quedarse?"
+      - position: 3
+        text: "amplia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amplia» hablaría de espacio, y la frase dice justo lo contrario: la librería era diminuta."
+        hint_specific: "«Amplia» mide el espacio. ¿La librería era grande según la frase?"
+  - position: 6
+    sentence: "La cabaña que alquilaron no tenía wifi ni televisor, pero era tan {{blank}} que nadie la extrañó."
+    hint_general: "Habla de un lugar que hace sentir bien recibido, aunque le falten lujos modernos."
+    explanation: "Acogedora: un lugar que hace sentir bien recibido, aunque le falten comodidades modernas. «Acaparadora» describe a una persona que acumula cosas, y «cómoda» hablaría de comodidades como el wifi que la cabaña no tenía."
+    options:
+      - position: 1
+        text: "acaparadora"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acaparadora» describiría a alguien que acumula cosas para sí, y la frase habla de una cabaña, no de una persona guardando algo."
+        hint_specific: "«Acaparadora» describe a alguien que guarda cosas. ¿La frase habla de una persona o de un lugar para alquilar?"
+      - position: 2
+        text: "cómoda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cómoda» hablaría de comodidades como el wifi o el televisor, y la frase dice que justo eso faltaba."
+        hint_specific: "«Cómoda» habla de comodidades materiales. ¿La cabaña tenía wifi y televisor?"
+      - position: 3
+        text: "acogedora"
+        is_correct: true
+  - position: 7
+    sentence: "El restaurante nuevo tenía manteles de tela y buena vajilla, pero ningún cliente lo describía como {{blank}}: todos decían que se sentía frío."
+    hint_general: "Se usa para un lugar que hace sentir bien recibido, algo que este restaurante no lograba."
+    explanation: "Acogedor: un lugar que hace sentir bien recibido, algo que este restaurante no lograba. «Lujoso» encajaría con los manteles y la vajilla, y «amplio» hablaría del tamaño, no de la sensación fría que describen los clientes."
+    options:
+      - position: 1
+        text: "lujoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lujoso» encajaría con los manteles de tela y la buena vajilla, y la frase busca justo la palabra contraria a lo que sí describe: un lugar frío."
+        hint_specific: "«Lujoso» sí encajaría con los manteles y la vajilla. ¿La frase busca esa palabra o la contraria?"
+      - position: 2
+        text: "acogedor"
+        is_correct: true
+      - position: 3
+        text: "amplio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amplio» hablaría del tamaño del salón, y la frase no menciona el tamaño: menciona que se sentía frío."
+        hint_specific: "«Amplio» mide el tamaño. ¿La frase habla de tamaño o de sensación?"
+  - position: 8
+    sentence: "La cocina de la abuela tenía las paredes descascaradas, pero era tan {{blank}} que toda la familia terminaba ahí en cada visita."
+    hint_general: "Habla de un espacio que hace que la gente quiera quedarse, más allá de lo bien conservado que esté."
+    explanation: "Acogedora: un espacio que hace que la gente quiera quedarse, más allá de lo bien conservado que esté. «Acaparadora» describe a una persona, y «cómoda» hablaría de mobiliario confortable, cuando la frase menciona paredes descascaradas."
+    options:
+      - position: 1
+        text: "acaparadora"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acaparadora» describiría a una persona que acumula cosas para sí, y la frase habla de una cocina, no de alguien guardando algo."
+        hint_specific: "«Acaparadora» describe a una persona. ¿La frase habla de una persona o de una cocina?"
+      - position: 2
+        text: "acogedora"
+        is_correct: true
+      - position: 3
+        text: "cómoda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cómoda» hablaría de sillas o mobiliario confortable, y la frase menciona paredes descascaradas, no comodidad física."
+        hint_specific: "«Cómoda» habla de confort físico. ¿La frase describe comodidad o el estado de las paredes?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La primera visita"
+    body: "Milagros dudó antes de entrar al departamento nuevo de su amiga: no conocía a nadie más de los invitados. Bastaron cinco minutos, un té caliente y una manta ofrecida sin preguntar para que se sintiera parte del grupo. «Qué lugar tan acogedor», le dijo al despedirse, ya con ganas de volver."
+    before_phrase: "Se siente como en casa apenas entras."
+    after_phrase: "Qué lugar tan acogedor."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La oficina sin cubículos"
+    body: "Cuando Nicolás cambió de trabajo, esperaba una oficina fría como la anterior. En cambio, encontró plantas, una mesa compartida y compañeros que lo invitaron a almorzar el primer día. «Es un lugar muy acogedor», le contó a su pareja esa noche, «no esperaba sentirme tan bien recibido tan rápido»."
+    before_phrase: "Te hacen sentir bienvenido enseguida."
+    after_phrase: "Es un lugar muy acogedor."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La casa que no cambió"
+    body: "Después de veinte años, Leonor volvió a la casa donde creció. Los muebles eran distintos, pero el olor a pan y la mesa siempre puesta seguían ahí. «Sigue siendo tan acogedora como la recuerdo», le dijo a su hermano, y por un momento volvió a sentirse niña otra vez."
+    before_phrase: "Se siente exactamente como en casa, igual que antes."
+    after_phrase: "Sigue siendo tan acogedora como la recuerdo."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "carisma"
+status: "draft"
+lemma: "carisma"
+part_of_speech: "sustantivo"
+syllables: ["ca", "ris", "ma"]
+stressed_syllable: 2
+ipa_latam: "[kaˈɾis.ma]"
+ipa_es: "[kaˈɾis.ma]"
+explanation: "Algo que tiene una persona y que hace que los demás quieran escucharla y seguirla."
+example_sentence: "El nuevo director tiene tanto carisma que la sala entera se calló en cuanto empezó a hablar."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para elogiar a quien conecta con un grupo entero, no solo con una persona."
+when_not_to_use: "No lo uses para alguien simpático en privado: el carisma se nota frente a un grupo."
+collocations:
+  - "tener carisma"
+  - "una persona con mucho carisma"
+  - "el carisma de un líder"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin: ["cae bien", "tiene algo"]
+  funcion: ["elogiar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+replaces:
+  - before: "Tiene algo que hace que todos lo escuchen"
+    after: "Tiene mucho carisma"
+  - before: "Cae bien a todo el mundo apenas habla"
+    after: "Tiene carisma apenas habla"
+confusions:
+  - confused_with: "arrogancia"
+    difference: "La arrogancia aleja porque busca imponerse; el carisma atrae porque genera interés genuino en el grupo."
+    memory_trick: "El carisma suma gente; la arrogancia la espanta."
+exercises:
+  - position: 1
+    sentence: "El nuevo director tiene tanto {{blank}} que la sala entera se quedó en silencio apenas empezó a hablar."
+    hint_general: "Habla de la cualidad que hace que un grupo entero quiera escuchar a alguien."
+    explanation: "Carisma: la cualidad que hace que un grupo entero quiera escuchar a alguien. «Arrogancia» aleja porque busca imponerse, y «cargo» solo nombra el puesto, sin explicar por qué la sala se calló."
+    options:
+      - position: 1
+        text: "carisma"
+        is_correct: true
+      - position: 2
+        text: "arrogancia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «arrogancia» aleja porque busca imponerse, y aquí la sala se calla por interés, no por miedo."
+        hint_specific: "La arrogancia genera distancia. ¿La sala se calló con miedo o con interés?"
+      - position: 3
+        text: "cargo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cargo» solo nombra el puesto que ocupa, y la frase explica por qué la gente lo escucha, no qué puesto tiene."
+        hint_specific: "Un cargo es un título. ¿La frase describe un título o un efecto sobre la sala?"
+  - position: 2
+    sentence: "A pesar de no decir nada gracioso, Rocío tenía tanto {{blank}} que la fiesta entera terminó girando a su alrededor."
+    hint_general: "Piensa en la cualidad que hace que un grupo se acerque a alguien sin motivo evidente."
+    explanation: "Carisma: la cualidad que atrae a un grupo sin motivo evidente. «Suerte» sería algo casual, y «gracia» habla de hacer reír, cuando la frase aclara que no dijo nada gracioso."
+    options:
+      - position: 1
+        text: "suerte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «suerte» sería algo casual, y aquí la fiesta gira en torno a Rocío de forma constante, no por azar."
+        hint_specific: "La suerte pasa una vez. ¿Aquí algo pasó una vez o Rocío atraía todo el tiempo?"
+      - position: 2
+        text: "carisma"
+        is_correct: true
+      - position: 3
+        text: "gracia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gracia» habla de hacer reír, y la frase dice que Rocío no dijo nada gracioso."
+        hint_specific: "La gracia hace reír. ¿La frase dice que Rocío contó chistes?"
+  - position: 3
+    sentence: "En la reseña, el crítico escribió que la actriz tenía tanto {{blank}} en escena que el resto del elenco quedaba en segundo plano."
+    hint_general: "La cualidad que hace que la atención de un grupo se concentre en una sola persona."
+    explanation: "Carisma: la cualidad que concentra la atención de un grupo en una sola persona. «Prisma» es un objeto que descompone la luz, y «talento» habla de habilidad técnica, no del efecto sobre el público."
+    options:
+      - position: 1
+        text: "prisma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prisma» es un objeto que descompone la luz, sin relación con el efecto de una actriz sobre el público."
+        hint_specific: "Un prisma es un objeto de física. ¿La reseña habla de óptica o de una actriz?"
+      - position: 2
+        text: "carisma"
+        is_correct: true
+      - position: 3
+        text: "talento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Talento» habla de habilidad técnica para actuar, y la frase describe el efecto que causa sobre el público, no su técnica."
+        hint_specific: "El talento es una habilidad. ¿La frase habla de una habilidad o de un efecto sobre la sala?"
+  - position: 4
+    sentence: "Nadie entendía cómo Bruno conseguía tantos votos en las asambleas del edificio: puro {{blank}}, decían los vecinos."
+    hint_general: "Piensa en lo que explica que alguien convenza a un grupo sin argumentos evidentes."
+    explanation: "Carisma: lo que explica que alguien convenza a un grupo sin argumentos evidentes. «Enchufe» es coloquial y sugiere favoritismo, y «prisma» es un objeto óptico sin relación con convencer vecinos."
+    options:
+      - position: 1
+        text: "carisma"
+        is_correct: true
+      - position: 2
+        text: "enchufe"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enchufe» es coloquial y sugiere favoritismo injusto, y la frase habla de conseguir votos por atraer a la gente, no por trampas."
+        hint_specific: "Un enchufe suena a trampa. ¿Los vecinos hablan de trampa o de atraer votos?"
+      - position: 3
+        text: "prisma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prisma» es un objeto óptico, sin relación con convencer a los vecinos en una asamblea."
+        hint_specific: "Un prisma no convence a nadie. ¿La frase habla de física o de una asamblea de vecinos?"
+  - position: 5
+    sentence: "La marca eligió a esa deportista para la campaña porque su {{blank}} llenaba estadios incluso cuando perdía."
+    hint_general: "La cualidad que atrae a la gente incluso cuando los resultados no acompañan."
+    explanation: "Carisma: lo que atrae a la gente incluso cuando los resultados no acompañan. «Palmarés» es la lista de logros conseguidos, y «prisma» es un objeto óptico, sin relación con llenar estadios."
+    options:
+      - position: 1
+        text: "palmarés"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «palmarés» es la lista de logros conseguidos, y la frase dice que la gente iba a verla aunque perdiera."
+        hint_specific: "El palmarés se basa en victorias. ¿La frase dice que ganaba siempre?"
+      - position: 2
+        text: "carisma"
+        is_correct: true
+      - position: 3
+        text: "prisma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prisma» es un objeto óptico, sin relación con llenar estadios."
+        hint_specific: "Un prisma no llena estadios. ¿La frase habla de óptica o de una deportista?"
+  - position: 6
+    sentence: "El director de la compañía de teatro repetía que sin {{blank}} en el escenario, hasta el mejor texto suena vacío."
+    hint_general: "La chispa que necesita alguien frente a un público para que sus palabras tengan efecto."
+    explanation: "Carisma: la chispa que necesita alguien frente a un público para que sus palabras tengan efecto. «Guion» es el texto escrito, y «rollo» es coloquial y no describe esa cualidad frente al público."
+    options:
+      - position: 1
+        text: "guion"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «guion» es el texto escrito, y la frase habla de lo que hace que un texto suene vivo frente al público."
+        hint_specific: "El guion está en el papel. ¿La frase habla del papel o del efecto en escena?"
+      - position: 2
+        text: "carisma"
+        is_correct: true
+      - position: 3
+        text: "rollo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Rollo» es coloquial y demasiado vago para esta clase de teatro, que busca nombrar con precisión esa cualidad en escena."
+        hint_specific: "«Rollo» es una palabra muy informal. ¿Esta clase busca precisión o una palabra vaga?"
+  - position: 7
+    sentence: "Aunque el candidato repetía las mismas ideas de siempre, su {{blank}} hacía que sonaran nuevas cada vez."
+    hint_general: "Lo que hace que las mismas palabras suenen distintas según quién las dice."
+    explanation: "Carisma: lo que hace que las mismas palabras suenen distintas según quién las dice. «Discurso» es el contenido de lo que dice, y «prisma» es un objeto óptico, sin relación con hablar en público."
+    options:
+      - position: 1
+        text: "carisma"
+        is_correct: true
+      - position: 2
+        text: "discurso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «discurso» es el contenido de lo que dice, y la frase aclara que las ideas eran las mismas de siempre."
+        hint_specific: "El discurso es el contenido. ¿La frase dice que el contenido cambiaba?"
+      - position: 3
+        text: "prisma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prisma» es un objeto óptico, sin relación con la forma de hablar de un candidato."
+        hint_specific: "Un prisma no habla en público. ¿La frase habla de política o de física?"
+  - position: 8
+    sentence: "Los inversionistas no entendían los números que presentó la fundadora, pero su {{blank}} los convenció de todos modos."
+    hint_general: "Lo que convence a un grupo incluso cuando los datos no terminan de explicarlo todo."
+    explanation: "Carisma: lo que convence a un grupo aunque los datos no lo expliquen todo. «Informe» es el documento con los números, y «prisma» es un objeto óptico, sin relación con convencer a un grupo."
+    options:
+      - position: 1
+        text: "informe"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «informe» es el documento con los números, y la frase dice que esos números no fueron lo que los convenció."
+        hint_specific: "El informe trae los datos. ¿Los números fueron lo que los convenció?"
+      - position: 2
+        text: "carisma"
+        is_correct: true
+      - position: 3
+        text: "prisma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «prisma» es un objeto óptico, sin relación con convencer a un grupo de inversionistas."
+        hint_specific: "Un prisma no convence a inversionistas. ¿La frase habla de física o de una fundadora?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El nuevo director"
+    body: "Nadie esperaba mucho de la reunión mensual. Pero en cuanto el nuevo director tomó la palabra, la sala se quedó en silencio. «Tiene un carisma que no se enseña», le comentó Marina a su compañero al salir, todavía pensando en lo que había dicho."
+    before_phrase: "Tiene algo que hace que todos lo escuchen."
+    after_phrase: "Tiene un carisma que no se enseña."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El puesto de cara al público"
+    body: "«¿Qué crees que te hace buena para este puesto?», preguntó el entrevistador. Valentina respondió: «Tengo carisma con los grupos difíciles; consigo que hasta el cliente más frío termine escuchando». El entrevistador anotó la frase completa."
+    before_phrase: "Caigo bien y la gente me escucha."
+    after_phrase: "Tengo carisma con los grupos difíciles."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El alma de la fiesta"
+    body: "Rocío no había contado ni un chiste, pero para medianoche la fiesta entera giraba a su alrededor. «Tiene un carisma que atrapa sin esfuerzo», dijo alguien en la cocina, y todos asintieron sin necesitar más explicación."
+    before_phrase: "Tiene algo que atrapa a todo el mundo."
+    after_phrase: "Tiene un carisma que atrapa sin esfuerzo."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

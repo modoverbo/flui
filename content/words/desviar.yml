@@ -1,0 +1,239 @@
+schema_version: 1
+slug: "desviar"
+status: "draft"
+lemma: "desviar"
+part_of_speech: "verbo"
+syllables:
+  - "des"
+  - "vi"
+  - "ar"
+stressed_syllable: 3
+ipa_latam: "[des.βiˈar]"
+ipa_es: "[des.βiˈar]"
+explanation: "Cambiar el rumbo de algo: un camino, una conversación o un dinero, hacia otro lado."
+example_sentence: "El moderador notó que el invitado desviaba cada pregunta hacia su nuevo proyecto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar la técnica sin acusar directamente: «Sentí que desviaste la pregunta» abre la conversación en vez de cerrarla."
+when_not_to_use: "No la uses cuando alguien cambia de tema por error o sin querer: eso no es desviar, es distraerse."
+collocations:
+  - "desviar la pregunta"
+  - "desviar el tema"
+  - "desviar la atención"
+replaces:
+  - before: "Cambió de tema para no contestar"
+    after: "Desvió la pregunta"
+  - before: "Le dio vueltas al asunto para no ir al grano"
+    after: "Desvió la conversación"
+  - before: "Miró para otro lado cuando le preguntaron eso"
+    after: "Desvió la mirada cuando le preguntaron eso"
+family:
+  - "desvío"
+  - "desviación"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+tags:
+  comodin:
+    - "cambiar de tema"
+  funcion:
+    - "evitar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "eludir"
+    difference: "«Eludir» escapa por completo de un asunto sin tocarlo; esto sí lo toca, pero lo lleva hacia otro lado."
+    memory_trick: "Eludes lo que evitas del todo; desvías lo que llevas a otro lado."
+  - confused_with: "distraer"
+    difference: "«Distraer» aparta la atención, muchas veces sin intención, sin cambiar el asunto mismo; esto mueve el asunto a propósito hacia otro lugar."
+    memory_trick: "Distraes la atención; desvías el asunto."
+exercises:
+  - position: 1
+    sentence: "Cada vez que le preguntaban por el escándalo, el candidato {{blank}} la conversación hacia los logros de su gestión."
+    hint_general: "Cambia el rumbo de la charla hacia otro tema que le conviene más."
+    explanation: "Desvió: cambió el rumbo de la charla hacia otro tema. «Desvirtuó» sería cambiar el sentido real de algo, no su dirección, y «eludió» sería no tocar el asunto en absoluto, mientras que el candidato sí lo toca antes de cambiar de rumbo."
+    options:
+      - position: 1
+        text: "desvirtuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvirtuar» es cambiar el sentido real de algo, y el candidato no cambió el sentido del escándalo: cambió de tema."
+        hint_specific: "«Desvirtuar» altera el significado de algo. ¿El candidato cambió el significado del escándalo o cambió de tema?"
+      - position: 2
+        text: "eludió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Eludir» sería no tocar el escándalo en absoluto, y la frase dice que empezó a responder antes de virar hacia otro tema."
+        hint_specific: "Eludir no toca el asunto. ¿El candidato ignoró la pregunta desde el inicio o la tomó y la llevó a otro lado?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+  - position: 2
+    sentence: "En la reunión, cuando surgió el tema del sobregasto, Renata {{blank}} la charla hacia los planes del próximo trimestre."
+    hint_general: "Cambia el rumbo de la charla hacia otro asunto que le conviene más discutir."
+    explanation: "Desvió: cambió el rumbo de la charla hacia otro asunto. «Desvirtuó» sería cambiar el sentido de los datos del sobregasto, no el tema, e «ignoró» supondría no responder nada, y ella sí abrió la charla, solo que hacia otro lado."
+    options:
+      - position: 1
+        text: "desvirtuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvirtuar» es cambiar el sentido real de un dato o un argumento, y Renata no alteró ningún dato: cambió de tema."
+        hint_specific: "«Desvirtuar» cambia el sentido de algo. ¿Renata alteró el dato del sobregasto o cambió de tema?"
+      - position: 2
+        text: "ignoró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» sería no responder nada sobre el sobregasto, y la frase dice que llevó la charla hacia otro asunto, no que se quedó en silencio."
+        hint_specific: "Ignorar no dice nada. ¿Renata se quedó callada o llevó la charla a otro tema?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+  - position: 3
+    sentence: "Cuando le preguntaron por qué había dejado su trabajo anterior, Tomás {{blank}} la respuesta hacia lo que había aprendido después."
+    hint_general: "Lleva la respuesta hacia un terreno más cómodo, sin dejar la pregunta sin tocar."
+    explanation: "Desvió: llevó la respuesta hacia un terreno más cómodo. «Capeó» es coloquial y suena a esquivar con maña, un tono que no encaja con un informe de la entrevista, y «distrajo» apartaría la atención sin que Tomás cambiara el tema a propósito."
+    options:
+      - position: 1
+        text: "capeó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Capear» es coloquial y suena a esquivar con maña; en un resumen serio de la entrevista pide un tono más cuidado."
+        hint_specific: "«Capear» suena a esquivar con picardía. ¿Ese tono encaja con un resumen formal de la entrevista?"
+      - position: 2
+        text: "distrajo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distraer» aparta la atención, muchas veces sin querer, y aquí Tomás llevó el tema a propósito hacia otro terreno."
+        hint_specific: "Distraer no siempre es a propósito. ¿Tomás cambió el tema con intención o se distrajo sin más?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando sus padres le preguntaron por las notas, el niño {{blank}} la charla hacia el partido del fin de semana."
+    hint_general: "Cambia el rumbo de la charla hacia un tema que le interesa más."
+    explanation: "Desvió: cambió el rumbo de la charla hacia otro tema. «Desvirtuó» sería cambiar el sentido de algo, y aquí el niño no cambió el sentido de sus notas, solo el tema; «eludió» supondría no tocar el asunto en absoluto, y la charla sí empezó por ahí."
+    options:
+      - position: 1
+        text: "desvirtuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvirtuar» cambia el sentido real de algo, como maquillar un resultado, y aquí el niño solo cambió de tema."
+        hint_specific: "«Desvirtuar» cambia el sentido de un dato. ¿El niño alteró sus notas o solo cambió de tema?"
+      - position: 2
+        text: "eludió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Eludir» sería no tocar el tema de las notas para nada, y la frase dice que la charla llegó a virar hacia el partido, no que se cortó de raíz."
+        hint_specific: "Eludir no toca el asunto. ¿La charla sobre las notas empezó y luego viró, o nunca llegó a tocarse?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+  - position: 5
+    sentence: "La cuenta de la marca {{blank}} los comentarios negativos del lanzamiento hacia los mensajes privados del equipo de atención."
+    hint_general: "Lleva los comentarios difíciles hacia otro canal, en lugar de responder ahí mismo."
+    explanation: "Desvió: llevó los comentarios hacia otro canal. «Desvirtuó» sería cambiar el sentido de las críticas, no su canal, e «ignoró» supondría no atenderlas, y la marca sí las atendió, solo que en otro lugar."
+    options:
+      - position: 1
+        text: "desvirtuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvirtuar» es cambiar el sentido real de algo, y la marca no cambió el sentido de las críticas: las movió a otro canal."
+        hint_specific: "«Desvirtuar» altera el sentido de algo. ¿La marca cambió el sentido de las críticas o el canal donde se atienden?"
+      - position: 2
+        text: "ignoró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» sería no atender los comentarios, y la frase dice que se atendieron, solo que por mensaje privado."
+        hint_specific: "Ignorar no atiende nada. ¿Los comentarios se atendieron en otro canal o se dejaron sin respuesta?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+  - position: 6
+    sentence: "Durante la negociación, el abogado {{blank}} la atención de la cláusula difícil hacia las ventajas generales del contrato."
+    hint_general: "Lleva la atención hacia otra parte del contrato que conviene más resaltar."
+    explanation: "Desvió: llevó la atención hacia otra parte del contrato. «Capeó» es coloquial y suena a esquivar con maña, un tono que no encaja con un informe legal, y «distrajo» apartaría la atención sin que fuera un movimiento calculado como este."
+    options:
+      - position: 1
+        text: "capeó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Capear» es coloquial y suena a esquivar con picardía, un tono que no encaja con el resumen de una negociación legal."
+        hint_specific: "«Capear» suena informal, casi de regateo callejero. ¿Encaja con el tono de un informe legal?"
+      - position: 2
+        text: "distrajo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distraer» aparta la atención, a veces sin ningún plan, y aquí el abogado hizo un movimiento calculado hacia otra parte del contrato."
+        hint_specific: "Distraer puede pasar sin plan. ¿El abogado actuó al azar o con un plan claro?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+  - position: 7
+    sentence: "Cuando el tema de la fiesta se puso incómodo, Coral {{blank}} la charla hacia las vacaciones de todos."
+    hint_general: "Lleva la charla hacia un tema más liviano, en lugar de dejarla en ese punto."
+    explanation: "Desvió: llevó la charla hacia un tema más liviano. «Desvirtuó» sería cambiar el sentido de lo que se estaba diciendo, no el tema, y «eludió» supondría que Coral no dijo nada al respecto, cuando la charla sí llegó a ese punto antes de virar."
+    options:
+      - position: 1
+        text: "desvirtuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvirtuar» cambia el sentido real de lo dicho, y Coral no alteró nada de lo dicho: cambió de tema."
+        hint_specific: "«Desvirtuar» altera el sentido de algo. ¿Coral cambió el sentido de la charla o el tema mismo?"
+      - position: 2
+        text: "eludió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Eludir» sería no tocar el tema incómodo para nada, y la frase dice que la charla llegó a ese punto antes de virar hacia las vacaciones."
+        hint_specific: "Eludir no toca el tema. ¿La charla llegó al punto incómodo o lo evitó desde el principio?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+  - position: 8
+    sentence: "Cada vez que un cliente reclamaba por el retraso, el encargado {{blank}} la culpa hacia el proveedor externo."
+    hint_general: "Lleva la responsabilidad hacia otra persona en lugar de asumirla."
+    explanation: "Desvió: llevó la responsabilidad hacia otra persona. «Desvirtuó» sería cambiar el sentido de los hechos del retraso, no a quién se señala, e «ignoró» supondría no responder al reclamo, y el encargado sí respondía, solo que señalando a otro."
+    options:
+      - position: 1
+        text: "desvirtuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvirtuar» cambia el sentido real de los hechos del retraso, y el encargado no alteró los hechos: movió a quién se señalaba."
+        hint_specific: "«Desvirtuar» cambia el sentido de los hechos. ¿El encargado alteró los hechos del retraso o cambió a quién señalar?"
+      - position: 2
+        text: "ignoró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» sería no responder al reclamo del cliente, y la frase dice que sí respondía, solo que señalando al proveedor."
+        hint_specific: "Ignorar no responde nada. ¿El encargado se quedó callado o señaló a otra parte?"
+      - position: 3
+        text: "desvió"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El terreno más cómodo"
+    body: "El periodista insistió en preguntar por el despido. Tomás no lo negó ni lo escondió: reconoció el hecho en una frase y desvió la respuesta hacia lo que había aprendido después. «Aprendí a pedir ayuda antes de que un problema crezca», cerró, y el periodista pasó a la siguiente pregunta."
+    before_phrase: "Mejor cambio de tema, esto no me conviene."
+    after_phrase: "Desvié la respuesta hacia lo que aprendí."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "El partido del sábado"
+    body: "Apenas se sentaron a cenar, la madre preguntó por las notas. El niño contestó con una frase corta y enseguida desvió la charla hacia el partido del sábado. Ella se dio cuenta, sonrió y dejó pasar el tema hasta después del postre."
+    before_phrase: "Mejor hablamos de otra cosa, esto se puso feo."
+    after_phrase: "Desvié la charla hacia el partido."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La cláusula difícil"
+    body: "El contrato tenía una cláusula que a nadie le gustaba. En vez de detenerse ahí, el abogado desvió la atención hacia las ventajas generales del acuerdo y volvió a la cláusula al final, cuando ya había confianza. «Prefiero mostrar el conjunto antes que un solo punto», explicó su equipo después."
+    before_phrase: "Mejor resalto lo bueno antes de entrar en eso."
+    after_phrase: "Desvié la atención hacia las ventajas generales."
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-18"

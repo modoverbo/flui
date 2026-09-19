@@ -1,0 +1,239 @@
+schema_version: 1
+slug: "reformular"
+status: "draft"
+lemma: "reformular"
+part_of_speech: "verbo"
+syllables:
+  - "re"
+  - "for"
+  - "mu"
+  - "lar"
+stressed_syllable: 4
+ipa_latam: "[re.for.muˈlar]"
+ipa_es: "[re.for.muˈlar]"
+explanation: "Decir lo mismo de otra manera para poder entender mejor la idea."
+example_sentence: "Cuando vio que nadie entendía la pregunta, la moderadora decidió reformularla con un ejemplo concreto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Útil para retomar el control de una pregunta incómoda: «Voy a reformularlo» da tiempo y cambia el enfoque sin sonar evasivo."
+when_not_to_use: "No la uses cuando solo repites lo mismo con las mismas palabras: eso es reiterar, no reformular."
+collocations:
+  - "reformular la pregunta"
+  - "reformular una idea"
+  - "reformular el enunciado"
+replaces:
+  - before: "A ver, lo digo de otra manera"
+    after: "Voy a reformularlo"
+  - before: "Déjame decirlo con otras palabras"
+    after: "Déjame reformularlo"
+  - before: "Te lo explico de otro modo"
+    after: "Te reformulo la pregunta"
+family:
+  - "reformulación"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "docencia"
+    relevance: 2
+tags:
+  comodin:
+    - "decirlo de otra manera"
+  funcion:
+    - "aclarar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reiterar"
+    difference: "«Reiterar» repite lo mismo con las mismas palabras; esto cambia las palabras o el enfoque para que se entienda mejor."
+    memory_trick: "Reiteras lo mismo; reformulas de otro modo."
+  - confused_with: "parafrasear"
+    difference: "«Parafrasear» repite con otras palabras el contenido de alguien más; esto puede además cambiar el enfoque o el alcance de una idea propia."
+    memory_trick: "Parafraseas lo ajeno; reformulas también lo tuyo."
+exercises:
+  - position: 1
+    sentence: "Al ver que la pregunta del periodista mezclaba tres temas a la vez, el vocero prefirió {{blank}}la antes de contestar."
+    hint_general: "Antes de responder, la vuelve a plantear con sus propias palabras para dejarla clara."
+    explanation: "Reformular: la vuelve a plantear con sus propias palabras antes de contestar. «Reformar» es renovar algo, como un edificio o una ley, no cambiar cómo se dice una pregunta; «repetirla» sería decirla igual, y el vocero cambia el planteo."
+    options:
+      - position: 1
+        text: "reformar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es renovar algo físico o una norma, como un edificio o una ley; una pregunta no se renueva, se plantea de otro modo."
+        hint_specific: "«Reformar» se usa con edificios o leyes. ¿El vocero renueva algo o cambia cómo está planteada la pregunta?"
+      - position: 2
+        text: "repetirla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetirla» sería decir la misma pregunta con las mismas palabras, y el vocero cambia el planteo para que quede más clara."
+        hint_specific: "Repetir usa las mismas palabras. ¿El vocero dice lo mismo igual o lo dice de otro modo?"
+      - position: 3
+        text: "reformular"
+        is_correct: true
+  - position: 2
+    sentence: "En la reunión, nadie entendía la instrucción, así que Bruno {{blank}} el pedido con un ejemplo concreto del proyecto."
+    hint_general: "Cambia cómo lo dice y añade un ejemplo para que el equipo lo entienda."
+    explanation: "Reformuló: cambió cómo lo dijo y añadió un ejemplo. «Reformó» es renovar algo, como una oficina o un reglamento, y «manoseó» es coloquial y suena a tocar algo con torpeza, no a explicar mejor."
+    options:
+      - position: 1
+        text: "reformó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es renovar algo físico o un reglamento, y Bruno no cambió ninguna oficina ni ninguna norma: cambió cómo explicó el pedido."
+        hint_specific: "«Reformar» renueva algo físico o una norma. ¿Bruno cambió una oficina o una explicación?"
+      - position: 2
+        text: "manoseó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manosear» es coloquial y sugiere tocar algo con torpeza; en una reunión de trabajo suena fuera de lugar para describir una explicación cuidada."
+        hint_specific: "«Manosear» suena a torpeza. ¿El ejemplo de Bruno suena torpe o cuidado?"
+      - position: 3
+        text: "reformuló"
+        is_correct: true
+  - position: 3
+    sentence: "Ainara vio que nadie entendía el concepto y decidió {{blank}}lo con un ejemplo de la vida diaria."
+    hint_general: "Explica la misma idea de otro modo, con un ejemplo de todos los días."
+    explanation: "Reformular: explica la misma idea de otro modo, con un ejemplo cercano. «Reformar» es renovar algo, no cambiar una explicación, y «aclararlo» sería añadir información sin cambiar cómo está dicho."
+    options:
+      - position: 1
+        text: "reformar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es renovar algo físico o una norma, y aquí Ainara no renueva nada: cambia cómo explica el concepto."
+        hint_specific: "«Reformar» renueva algo. ¿Ainara renueva algo o cambia cómo lo explica?"
+      - position: 2
+        text: "aclararlo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» es sumar información para que se entienda mejor, y la frase dice que usó otro camino: un ejemplo de la vida diaria, no más datos."
+        hint_specific: "Aclarar suma información. ¿Ainara suma datos o cambia el camino con un ejemplo?"
+      - position: 3
+        text: "reformular"
+        is_correct: true
+  - position: 4
+    sentence: "Como su hijo no entendía la regla del videojuego, Renata {{blank}} la explicación usando algo que él sí conocía: las reglas del fútbol."
+    hint_general: "Cambia la explicación y la conecta con algo que el niño ya conoce bien."
+    explanation: "Reformuló: cambió la explicación con algo conocido. «Reformó» es renovar algo, no una explicación, y «repitió» sería decir lo mismo otra vez, sin cambiar nada."
+    options:
+      - position: 1
+        text: "reformó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es renovar algo físico o un reglamento, y Renata no renueva nada: cambia cómo explica la regla."
+        hint_specific: "«Reformar» renueva algo. ¿Renata renueva un objeto o una explicación?"
+      - position: 2
+        text: "repitió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» sería decir lo mismo otra vez, y la frase dice que usó el fútbol para explicarlo de otro modo."
+        hint_specific: "Repetir dice lo mismo igual. ¿Renata usó las mismas palabras o el ejemplo del fútbol?"
+      - position: 3
+        text: "reformuló"
+        is_correct: true
+  - position: 5
+    sentence: "El entrevistador hizo una pregunta muy amplia, y el candidato prefirió {{blank}}la antes de responder, para no perderse en el tema."
+    hint_general: "Antes de responder, la vuelve a plantear más concreta para no perderse."
+    explanation: "Reformular: la vuelve a plantear más concreta antes de responder. «Reformarla» sería renovarla, algo que no se aplica a una pregunta, y «manosearla» es coloquial y suena a tratarla con torpeza."
+    options:
+      - position: 1
+        text: "reformarla"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» se aplica a algo físico o a una norma, y una pregunta no se renueva: se plantea de otro modo."
+        hint_specific: "«Reformar» se usa con normas o edificios. ¿Encaja con una pregunta de entrevista?"
+      - position: 2
+        text: "manosearla"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manosear» es coloquial y sugiere tratar algo con torpeza, y el candidato busca precisión, no dar vueltas sin cuidado."
+        hint_specific: "«Manosear» suena a torpeza. ¿El candidato busca precisión o torpeza?"
+      - position: 3
+        text: "reformular"
+        is_correct: true
+  - position: 6
+    sentence: "Después de leer la queja del cliente tres veces, Coral {{blank}} el problema en una sola frase para la respuesta pública."
+    hint_general: "Convierte una queja larga en una sola frase clara para responder en público."
+    explanation: "Reformuló: convirtió la queja en una sola frase clara. «Reformó» es renovar algo, y «aclaró» sería sumar información, no reducir el problema a una frase distinta."
+    options:
+      - position: 1
+        text: "reformó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es renovar algo físico o un proceso, y Coral no renovó nada: cambió cómo estaba planteado el problema."
+        hint_specific: "«Reformar» renueva algo. ¿Coral renovó un proceso o cambió cómo está dicho el problema?"
+      - position: 2
+        text: "aclaró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» es sumar información para que se entienda mejor, y la frase dice que redujo el problema a una sola frase distinta, no que sumó datos."
+        hint_specific: "Aclarar suma información. ¿Coral sumó datos o cambió la frase?"
+      - position: 3
+        text: "reformuló"
+        is_correct: true
+  - position: 7
+    sentence: "El mensaje de la fiesta generó dudas entre todos, así que Julieta {{blank}} la invitación con la hora y el lugar bien claros."
+    hint_general: "Vuelve a escribir el mensaje con los datos claros para que nadie dude."
+    explanation: "Reformuló: volvió a escribir el mensaje con los datos claros. «Reformó» es renovar algo, no un mensaje, y «repitió» sería mandar el mismo texto de nuevo, que era justo el problema."
+    options:
+      - position: 1
+        text: "reformó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es renovar algo físico o una norma, y Julieta no renovó nada: cambió cómo estaba escrito el mensaje."
+        hint_specific: "«Reformar» renueva algo. ¿Julieta renovó algo o cambió un mensaje?"
+      - position: 2
+        text: "repitió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repetir» sería mandar el mismo texto otra vez, y eso era justo lo que generaba dudas antes del cambio."
+        hint_specific: "Repetir manda el mismo texto. ¿Eso resolvería la duda del grupo?"
+      - position: 3
+        text: "reformuló"
+        is_correct: true
+  - position: 8
+    sentence: "Cuando notó que la otra parte se cerraba con la primera cifra, Simón {{blank}} la propuesta para que sonara más justa para ambos."
+    hint_general: "Cambia cómo presenta la propuesta para que le resulte más aceptable a la otra parte."
+    explanation: "Reformuló: cambió cómo presentó la propuesta para que sonara más justa. «Reformó» es renovar algo, y «manoseó» es coloquial y suena a tratar algo con torpeza, no a negociar con cuidado."
+    options:
+      - position: 1
+        text: "reformó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reformar» es renovar algo físico o un contrato ya firmado, y Simón todavía está negociando, no renovando nada firmado."
+        hint_specific: "«Reformar» renueva algo ya existente. ¿Simón renueva un contrato firmado o cambia una propuesta en curso?"
+      - position: 2
+        text: "manoseó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manosear» es coloquial y sugiere tratar algo con torpeza, y Simón ajustó la propuesta con cuidado para que fuera más justa."
+        hint_specific: "«Manosear» suena a torpeza. ¿Simón actúa con torpeza o con cuidado?"
+      - position: 3
+        text: "reformuló"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta amplia"
+    body: "«Hábleme de un momento difícil en su carrera» sonaba demasiado abierto. El candidato pidió un segundo: «¿Le parece si lo enfoco en un problema concreto de mi último equipo?». Reformuló la pregunta a su terreno y respondió con un ejemplo claro."
+    before_phrase: "A ver, lo digo de otra manera."
+    after_phrase: "¿Le parece si reformulo la pregunta?"
+  - position: 2
+    scene: "familia"
+    conversation_type: "practica"
+    title: "Las reglas del videojuego"
+    body: "Su hijo no entendía por qué no podía pasar de nivel. Renata probó explicarlo de nuevo, pero con las reglas del fútbol: «Es como el fuera de juego: primero tienes que pasar por aquí». El niño lo entendió a la tercera vez, con otro ejemplo."
+    before_phrase: "Te lo explico de otro modo, a ver si así."
+    after_phrase: "Te lo reformulo con el fútbol."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "La queja en una frase"
+    body: "La queja del cliente ocupaba media página y mezclaba tres problemas distintos. Coral la leyó tres veces y escribió una sola frase para la respuesta pública: «El pedido llegó tarde y sin el color solicitado». Su equipo la aprobó sin cambios."
+    before_phrase: "Lo resumo en una frase, a ver si queda claro."
+    after_phrase: "Reformulé el problema en una frase."
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-18"

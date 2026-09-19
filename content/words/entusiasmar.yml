@@ -1,0 +1,240 @@
+schema_version: 1
+slug: "entusiasmar"
+status: "draft"
+lemma: "entusiasmar"
+part_of_speech: "verbo"
+syllables:
+  - "en"
+  - "tu"
+  - "sias"
+  - "mar"
+stressed_syllable: 4
+ipa_latam: "[en.tu.sjasˈmar]"
+ipa_es: "[en.tu.sjasˈmar]"
+explanation: "Despertar en alguien ganas e ilusión por algo, para que se anime a decidir o participar."
+example_sentence: "La vendedora supo entusiasmar al cliente con una demostración corta y directa del producto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona mejor cuando muestras algo concreto que despierta interés real, no cuando solo repites que algo es bueno."
+when_not_to_use: "No la uses para prometer más de lo que puedes cumplir; eso genera desconfianza, no entusiasmo real."
+collocations:
+  - "entusiasmar al cliente"
+  - "entusiasmar con una idea"
+  - "lograr entusiasmar"
+replaces:
+  - before: "Logré que le gustara mucho la propuesta"
+    after: "Logré entusiasmar al cliente con la propuesta"
+  - before: "Quiero que se emocione con esto"
+    after: "Quiero entusiasmarlo con esto"
+  - before: "La presentación puso muy contenta a la gente"
+    after: "La presentación logró entusiasmar a la gente"
+family:
+  - "entusiasmo"
+  - "entusiasta"
+  - "entusiasmado"
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin:
+    - "gustar mucho"
+    - "emocionar"
+  funcion:
+    - "persuadir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "animar"
+    difference: "«Animar» empuja a alguien a hacer algo aunque no sienta mucho por eso; «entusiasmar» hace que sienta ganas reales, no solo que acepte."
+    memory_trick: "Animas para que se mueva; entusiasmas para que quiera moverse."
+  - confused_with: "convencer"
+    difference: "«Convencer» apela a razones y datos para que alguien esté de acuerdo; «entusiasmar» apela a la emoción, no solo a la lógica."
+    memory_trick: "Convences con argumentos; entusiasmas con ganas."
+exercises:
+  - position: 1
+    sentence: "Con una demo de cinco minutos, Marta logró {{blank}} a todo el comité de compras."
+    hint_general: "Busca el verbo para despertar ganas e interés real, no solo dar razones."
+    explanation: "Entusiasmar: despertó interés real en el comité. «Entumecer» es dejar algo rígido, y «convencer» apela a razones, no a las ganas que dejó la demo."
+    options:
+      - position: 1
+        text: "entumecer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entumecer» es dejar algo rígido o sin sensibilidad, como un músculo; nada en la escena queda dormido, al contrario, el comité reacciona con interés."
+        hint_specific: "«Entumecer» habla de dejar algo rígido, no de despertar interés. ¿El comité se queda quieto o reacciona con ganas?"
+      - position: 2
+        text: "entusiasmar"
+        is_correct: true
+      - position: 3
+        text: "convencer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencer» apela a datos y argumentos, y la escena describe una demo que despierta interés, no una lista de razones."
+        hint_specific: "«Convencer» va de razones y datos. ¿La demo dio argumentos o despertó interés?"
+  - position: 2
+    sentence: "La propuesta {{blank}} tanto al director que pidió empezar la próxima semana."
+    hint_general: "El verbo describe cuando algo despierta tantas ganas que la persona quiere actuar ya."
+    explanation: "Entusiasmó: despertó tantas ganas que el director quiso actuar. «Emocionó» puede ser solo un sentimiento sin acción, y «engatusó» sugiere trucos que no aparecen aquí."
+    options:
+      - position: 1
+        text: "emocionó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Emocionó» habla de un sentimiento que puede incluir nostalgia o ternura; aquí el director quiere actuar ya, no solo sintió algo."
+        hint_specific: "«Emocionar» puede ir de nostalgia a ternura. ¿El director solo sintió algo o además quiere actuar?"
+      - position: 2
+        text: "entusiasmó"
+        is_correct: true
+      - position: 3
+        text: "engatusó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Engatusar» sugiere convencer con trucos o halagos, y la frase no dice que hubiera ningún engaño, solo una buena propuesta."
+        hint_specific: "«Engatusar» suena a truco o halago. ¿La escena habla de manipular o de una propuesta que gustó de verdad?"
+  - position: 3
+    sentence: "A los inversionistas les {{blank}} la idea de expandirse a otra ciudad."
+    hint_general: "Busca el verbo para cuando una idea despierta ganas reales de avanzar con ella."
+    explanation: "Entusiasma: despierta ganas reales de avanzar. «Entristece» causa pena, y «impresiona» solo admiración, sin las ganas de actuar."
+    options:
+      - position: 1
+        text: "entristece"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entristecer» es causar tristeza, y a los inversionistas la idea de expandirse no les apena, les genera ganas de avanzar."
+        hint_specific: "«Entristecer» causa pena. ¿La idea de expandirse los pone tristes o con ganas?"
+      - position: 2
+        text: "entusiasma"
+        is_correct: true
+      - position: 3
+        text: "impresiona"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Impresionar» solo genera admiración o sorpresa, sin decir si quieren avanzar; aquí buscan expandirse pronto."
+        hint_specific: "«Impresionar» es solo admiración. ¿Los inversionistas solo admiran la idea o además quieren avanzar con ella?"
+  - position: 4
+    sentence: "El equipo quiere una presentación que {{blank}} a los clientes desde el primer minuto."
+    hint_general: "Buscan el verbo para despertar interés real desde el primer minuto, sin trucos."
+    explanation: "Entusiasme: despierte interés real desde el inicio. «Anime» solo empuja a seguir sin ganas reales, y «engatuse» sugiere trucos que el equipo no quiere usar."
+    options:
+      - position: 1
+        text: "anime"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Animar» empuja a alguien a seguir adelante aunque no sienta mucho interés real; aquí se busca despertar ganas genuinas desde el inicio."
+        hint_specific: "«Animar» solo empuja a seguir, sin ganas reales. ¿El equipo busca solo empujar o despertar interés real?"
+      - position: 2
+        text: "entusiasme"
+        is_correct: true
+      - position: 3
+        text: "engatuse"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Engatusar» sugiere convencer con trucos o halagos, y el equipo busca una presentación honesta que despierte interés real."
+        hint_specific: "«Engatusar» suena a trucos. ¿El equipo busca engañar o despertar interés real?"
+  - position: 5
+    sentence: "Los clientes salieron {{blank}} de la reunión, hablando de fechas para empezar el proyecto."
+    hint_general: "Buscan el adjetivo para cuando alguien sale con muchas ganas de empezar algo."
+    explanation: "Entusiasmados: salieron con ganas de empezar el proyecto. «Entumecidos» describe rigidez física, y «convencidos» dice que aceptaron, sin hablar de las ganas."
+    options:
+      - position: 1
+        text: "entumecidos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entumecidos» describe a alguien con el cuerpo rígido o dormido, y aquí los clientes salen hablando con ganas, no rígidos."
+        hint_specific: "«Entumecido» habla de un cuerpo rígido. ¿Los clientes salen rígidos o con ganas de hablar del proyecto?"
+      - position: 2
+        text: "convencidos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencidos» dice que aceptaron el argumento, no que salieran con ganas de empezar ya; la escena describe entusiasmo, no solo acuerdo."
+        hint_specific: "«Convencido» es solo aceptar un argumento. ¿Los clientes solo aceptaron o además tienen ganas de empezar?"
+      - position: 3
+        text: "entusiasmados"
+        is_correct: true
+  - position: 6
+    sentence: "Antes de la reunión, a Daniela le {{blank}} cada detalle nuevo del producto, y se notaba en su voz."
+    hint_general: "El verbo describe cuando cada detalle nuevo le daba muchas ganas de seguir escuchando."
+    explanation: "Entusiasmaba: cada detalle le daba ganas de seguir. «Engatusaba» describe una táctica hacia otra persona, y «emocionaba» puede ser un sentimiento calmado, sin esas ganas."
+    options:
+      - position: 1
+        text: "engatusaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Engatusar» sugiere que ella intentaba convencer con trucos, y la frase describe lo que ella sentía, no una táctica hacia otros."
+        hint_specific: "«Engatusar» va de convencer a otro con trucos. ¿La frase habla de lo que Daniela sentía o de lo que hacía a otros?"
+      - position: 2
+        text: "entusiasmaba"
+        is_correct: true
+      - position: 3
+        text: "emocionaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Emocionar» puede ser un sentimiento tranquilo o incluso triste; aquí cada detalle la llenaba de ganas de contarlo, no solo de sentir algo."
+        hint_specific: "«Emocionar» puede ser un sentimiento calmado. ¿A Daniela solo le tocaba el corazón o le daba ganas de contarlo?"
+  - position: 7
+    sentence: "Si mantienen el mismo ritmo, el lanzamiento {{blank}} a toda la red de distribuidores."
+    hint_general: "Buscan el verbo para cuando algo despierta ganas reales de sumarse, no solo admiración."
+    explanation: "Entusiasmará: despertará ganas de sumarse. «Entristecerá» causaría pena, y «impresionará» solo genera admiración pasajera, sin esas ganas."
+    options:
+      - position: 1
+        text: "entristecerá"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entristecer» causaría pena entre los distribuidores, y el lanzamiento, si sale bien, les da motivos para alegrarse, no para lamentarse."
+        hint_specific: "«Entristecer» causa pena. ¿El lanzamiento, si va bien, entristece o da ganas?"
+      - position: 2
+        text: "entusiasmará"
+        is_correct: true
+      - position: 3
+        text: "impresionará"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Impresionar» solo genera admiración pasajera, sin decir si la red querrá sumarse con ganas al proyecto."
+        hint_specific: "«Impresionar» es solo admiración pasajera. ¿Buscan solo admiración o que se sumen con ganas?"
+  - position: 8
+    sentence: "Cuando escuchó el plan de expansión, Felipe se {{blank}} tanto que propuso liderar el proyecto piloto."
+    hint_general: "Busca el verbo para cuando algo despierta tantas ganas que la persona se ofrece a liderarlo."
+    explanation: "Entusiasmó: sintió tantas ganas que se ofreció a liderar. «Animó» es solo decidirse sin ganas reales, y «entumeció» es quedar rígido, lo opuesto a proponer algo."
+    options:
+      - position: 1
+        text: "animó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Animarse» es decidirse a hacer algo aunque no sienta mucho entusiasmo; aquí Felipe sintió ganas genuinas, no solo se decidió."
+        hint_specific: "«Animarse» es solo decidirse. ¿Felipe solo se decidió o sintió ganas reales?"
+      - position: 2
+        text: "entumeció"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entumecerse» es quedar rígido o dormido; Felipe reacciona proponiendo liderar algo, todo lo contrario a quedarse quieto."
+        hint_specific: "«Entumecerse» es quedarse rígido. ¿Felipe se queda quieto o propone algo nuevo?"
+      - position: 3
+        text: "entusiasmó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La demo que cambió todo"
+    body: "Rodrigo preparó una demostración de diez minutos, sin diapositivas, solo mostrando el producto en uso. Cuando terminó, la gerente de compras dijo: «Nos entusiasmó tanto que queremos empezar la próxima semana». Rodrigo salió de la sala con la agenda ya llena para el mes."
+    before_phrase: "Les gustó mucho la demo."
+    after_phrase: "La demo los entusiasmó."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Contar el proyecto con ganas"
+    body: "En la entrevista le preguntaron por un proyecto que la hubiera marcado. Valentina contó cómo lideró el lanzamiento de una línea nueva, con detalles y sin exagerar. «Se nota que ese proyecto te entusiasmó de verdad», comentó el entrevistador al final."
+    before_phrase: "Se nota que te gustó mucho ese proyecto."
+    after_phrase: "Se nota que ese proyecto te entusiasmó."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El plan para el fin de semana"
+    body: "Su padre propuso ir a acampar por primera vez en años. Al principio nadie dijo nada, pero cuando mostró las fotos del lugar, algo cambió: «Nos entusiasmaste con esas fotos», le dijo su hija, y ya estaban armando la lista de lo que había que llevar."
+    before_phrase: "Nos encantaron esas fotos, ya queremos ir."
+    after_phrase: "Nos entusiasmaste con esas fotos."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

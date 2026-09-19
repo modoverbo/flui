@@ -1,0 +1,240 @@
+schema_version: 1
+slug: "pasajero"
+status: "draft"
+lemma: "pasajero"
+part_of_speech: "adjetivo"
+syllables:
+  - "pa"
+  - "sa"
+  - "je"
+  - "ro"
+stressed_syllable: 3
+ipa_latam: "[pa.saˈxe.ɾo]"
+ipa_es: "[pa.saˈxe.ɾo]"
+explanation: "Que dura poco tiempo y después desaparece, aunque en el momento se sienta intenso o importante."
+example_sentence: "El interés por ese tema fue pasajero: en dos semanas nadie más lo mencionó."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para explicar por qué algo no merece tanta inversión de tiempo: se sabe de antemano que no va a durar."
+when_not_to_use: "No la uses para alguien que viaja en un transporte; ese es otro sentido de la misma familia de palabras."
+collocations:
+  - "un interés pasajero"
+  - "una moda pasajera"
+  - "un entusiasmo pasajero"
+replaces:
+  - before: "Eso es solo una moda que se va a ir rápido"
+    after: "Eso es una moda pasajera"
+  - before: "Me emocioné, pero se me va a pasar pronto"
+    after: "Fue un entusiasmo pasajero"
+  - before: "Ese tema estuvo de moda un rato y ya nadie habla de él"
+    after: "Ese tema tuvo un interés pasajero"
+family:
+  - "pasaje"
+  - "pasajeramente"
+themes:
+  - slug: "redes-sociales"
+    relevance: 2
+  - slug: "matices-precision"
+    relevance: 1
+tags:
+  comodin:
+    - "que no dura"
+  funcion:
+    - "describir"
+    - "matizar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "fugaz"
+    difference: "«Fugaz» es aún más breve, casi un instante, como una mirada; pasajero puede durar días o semanas antes de desaparecer."
+    memory_trick: "Lo fugaz apenas se ve; lo pasajero se nota, pero no se queda."
+  - confused_with: "transitorio"
+    difference: "«Transitorio» se usa en contextos formales o legales, para una situación provisional; pasajero describe algo cotidiano, como una moda o un interés."
+exercises:
+  - position: 1
+    sentence: "El video sobre el nuevo baile se veía en todos lados esa semana, pero el interés fue {{blank}}: al mes siguiente nadie lo recordaba."
+    hint_general: "Se trata de algo que se siente intenso un tiempo y después desaparece."
+    explanation: "Pasajero: algo que dura un tiempo y después desaparece. «Pasado» describiría algo ya viejo o anticuado, no algo que solo duró poco, y «fugaz» sería casi instantáneo, cuando este interés duró varias semanas."
+    options:
+      - position: 1
+        text: "pasado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Pasado» describiría algo que ya quedó viejo o fuera de moda; aquí el interés no envejeció, simplemente duró poco y se apagó."
+        hint_specific: "«Pasado» describe algo viejo o anticuado. ¿El interés por el baile envejeció, o solo duró poco tiempo?"
+      - position: 2
+        text: "pasajero"
+        is_correct: true
+      - position: 3
+        text: "fugaz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fugaz» describe algo casi instantáneo, como un destello; el interés por el baile duró semanas, no un instante."
+        hint_specific: "«Fugaz» habla de algo casi instantáneo. ¿El interés duró un instante, o varias semanas?"
+  - position: 2
+    sentence: "Valentina le explicó a su jefe que el aumento de seguidores fue {{blank}}: llegó con la publicidad y se fue en cuanto terminó."
+    hint_general: "Apunta a algo que aparece con una causa concreta y se va en cuanto esa causa termina."
+    explanation: "Pasajero: algo que aparece con una causa y se va cuando esa causa termina. «Cortito» es coloquial y en diminutivo, fuera de lugar aquí, y «transitorio» suena demasiado formal o legal para esta charla de trabajo."
+    options:
+      - position: 1
+        text: "cortito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cortito» es una palabra coloquial y en diminutivo; suena fuera de lugar en una explicación que Valentina le da a su jefe."
+        hint_specific: "«Cortito» es coloquial y en diminutivo. ¿Encaja con una explicación seria que Valentina le da a su jefe?"
+      - position: 2
+        text: "transitorio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Transitorio» se usa más en contextos formales o legales, para una situación provisional; aquí se habla de números de seguidores en una charla de trabajo común."
+        hint_specific: "«Transitorio» suena a un término legal o muy formal. ¿Encaja con hablar de seguidores en una charla común de trabajo?"
+      - position: 3
+        text: "pasajero"
+        is_correct: true
+  - position: 3
+    sentence: "Ricardo notó que el entusiasmo de su equipo por la nueva app era {{blank}}: la usaron una semana y después volvieron a las hojas de cálculo de siempre."
+    hint_general: "Habla de algo que entusiasma al principio, pero no se queda."
+    explanation: "Pasajero: algo que entusiasma al principio, pero no se queda. «Momentáneo» describiría algo de un instante, y el entusiasmo duró una semana, y «efímero» subraya lo corto que algo dura, cuando aquí lo central es que no se quedó."
+    options:
+      - position: 1
+        text: "momentáneo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Momentáneo» describe algo que dura un instante muy corto; el entusiasmo de Ricardo duró toda una semana, no un momento."
+        hint_specific: "«Momentáneo» describe algo muy breve, de un instante. ¿El entusiasmo duró un instante, o una semana entera?"
+      - position: 2
+        text: "efímero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Efímero» describe algo extremadamente breve, casi para subrayar lo corto que fue; aquí lo importante es que se apagó, no lo corto que duró."
+        hint_specific: "«Efímero» subraya lo corto que algo dura. ¿La frase insiste en lo corto, o en que volvieron a lo de siempre?"
+      - position: 3
+        text: "pasajero"
+        is_correct: true
+  - position: 4
+    sentence: "En el informe para los inversionistas, Camilo escribió que el pico de visitas de esa semana fue {{blank}}, ligado a una sola campaña de publicidad."
+    hint_general: "Se trata de algo ligado a una causa concreta que desaparece con ella."
+    explanation: "Pasajero: algo ligado a una causa concreta que desaparece con ella. «Caprichoso» es una palabra coloquial que sugiere puro capricho, fuera de lugar en un informe para inversionistas, y «breve» solo mide la duración, sin explicar la causa."
+    options:
+      - position: 1
+        text: "caprichoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Caprichoso» es una palabra coloquial que sugiere puro capricho; no encaja en un informe formal para inversionistas."
+        hint_specific: "«Caprichoso» suena a capricho, muy coloquial. ¿Encaja en un informe formal para inversionistas?"
+      - position: 2
+        text: "breve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Breve» solo dice que algo duró poco tiempo; no explica que ese pico estuviera ligado a una causa concreta que después desapareció."
+        hint_specific: "«Breve» solo mide la duración. ¿La frase solo mide cuánto duró, o también explica por qué desapareció?"
+      - position: 3
+        text: "pasajero"
+        is_correct: true
+  - position: 5
+    sentence: "Norma le aseguró a su hija que el enojo con su mejor amiga sería {{blank}}, y que en unos días iban a volver a hablarse."
+    hint_general: "Apunta a algo que, aunque duela ahora, no se queda para siempre."
+    explanation: "Pasajero: algo que duele ahora pero no se queda para siempre. «Temporal» sugiere un plazo fijo, como un contrato, y «ocasional» describe algo que se repite de vez en cuando; aquí es un solo enojo que va a desaparecer."
+    options:
+      - position: 1
+        text: "temporal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Temporal» describe algo que tiene un plazo definido, como un contrato; un enojo entre amigas no tiene fechas fijas, solo se sabe que no va a durar."
+        hint_specific: "«Temporal» suena a algo con fechas o plazos fijos, como un contrato. ¿El enojo entre las amigas tiene un plazo fijo?"
+      - position: 2
+        text: "ocasional"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ocasional» describe algo que se repite de vez en cuando; aquí se habla de un solo enojo que va a desaparecer, no de algo que vuelve una y otra vez."
+        hint_specific: "«Ocasional» describe algo que se repite de vez en cuando. ¿Norma habla de un enojo que se repite, o de uno que va a pasar?"
+      - position: 3
+        text: "pasajero"
+        is_correct: true
+  - position: 6
+    sentence: "Esteban descubrió que la crisis de la marca en redes fue {{blank}}: bastó una disculpa clara para que los comentarios negativos desaparecieran en dos días."
+    hint_general: "Se trata de algo que apareció con fuerza y se apagó rápido, sin volver."
+    explanation: "Pasajero: algo que apareció con fuerza y se apagó rápido. «Provisional» describiría una medida puesta mientras llega algo definitivo, y «esporádico» describe algo que se repite en distintos momentos; aquí hubo una sola crisis que terminó."
+    options:
+      - position: 1
+        text: "provisional"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Provisional» describe algo puesto mientras se espera una solución definitiva, como una medida; la crisis no fue una medida de nadie, fue algo que ocurrió y se apagó solo."
+        hint_specific: "«Provisional» describe una medida puesta mientras llega algo definitivo. ¿La crisis fue una medida que alguien tomó, o algo que pasó y se apagó?"
+      - position: 2
+        text: "esporádico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esporádico» describe algo que aparece de vez en cuando, en varias ocasiones distintas; aquí hubo una sola crisis, que empezó y terminó."
+        hint_specific: "«Esporádico» describe algo que se repite en distintos momentos. ¿Hubo varias crisis distintas, o solo una que empezó y terminó?"
+      - position: 3
+        text: "pasajero"
+        is_correct: true
+  - position: 7
+    sentence: "Débora notó que el malestar del equipo después del cambio de horario fue {{blank}}: en dos semanas todos se habían acostumbrado."
+    hint_general: "Habla de algo incómodo que se nota al principio y luego se disuelve solo."
+    explanation: "Pasajero: algo incómodo que se nota al principio y se disuelve solo. «Intermitente» describiría algo que va y viene varias veces, y «volátil» describe cambios bruscos e impredecibles; aquí el malestar solo bajó poco a poco hasta desaparecer."
+    options:
+      - position: 1
+        text: "intermitente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Intermitente» describe algo que aparece y desaparece varias veces, como una luz que parpadea; el malestar del equipo fue continuo hasta que se apagó, no algo que iba y venía."
+        hint_specific: "«Intermitente» describe algo que va y viene varias veces. ¿El malestar del equipo iba y venía, o fue continuo hasta desaparecer?"
+      - position: 2
+        text: "volátil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Volátil» describe algo que cambia de forma brusca e impredecible; el malestar del equipo solo bajó de intensidad poco a poco, sin cambios bruscos."
+        hint_specific: "«Volátil» describe cambios bruscos e impredecibles. ¿El malestar del equipo cambió de golpe, o bajó poco a poco?"
+      - position: 3
+        text: "pasajero"
+        is_correct: true
+  - position: 8
+    sentence: "Adrián le explicó a Milagros que ese tipo de polémica en internet siempre es {{blank}}: en una semana, el algoritmo ya está mostrando otra cosa."
+    hint_general: "Se trata de algo que ocupa toda la atención un momento y después el interés general se mueve a otra cosa."
+    explanation: "Pasajero: algo que ocupa la atención un momento y después el interés se mueve a otra cosa. «Inestable» describiría algo que cambia de forma, y «circunstancial» describiría un caso único; aquí Adrián habla de un patrón que se repite siempre."
+    options:
+      - position: 1
+        text: "inestable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inestable» describe algo que cambia constantemente de un estado a otro; la polémica no cambia de forma, simplemente pierde fuerza hasta desaparecer."
+        hint_specific: "«Inestable» describe algo que cambia de un estado a otro. ¿La polémica cambia de forma, o solo pierde fuerza hasta apagarse?"
+      - position: 2
+        text: "circunstancial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Circunstancial» describe algo que depende de una situación puntual y particular; aquí Adrián habla de un patrón que se repite con cualquier polémica, no de un caso único."
+        hint_specific: "«Circunstancial» describe algo ligado a un caso particular. ¿Adrián habla de un caso único, o de algo que pasa siempre con cualquier polémica?"
+      - position: 3
+        text: "pasajero"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El pico que no duró"
+    body: "El equipo de marketing celebró cuando las visitas se triplicaron en un día. Antes de brindar, la analista pidió calma: «Vienen del mismo enlace de la campaña, así que probablemente sea pasajero. Vamos a ver si se sostiene la próxima semana». Tuvo razón: el lunes las cifras volvieron a lo normal."
+    before_phrase: "Esto seguro que no dura, ya se va a bajar."
+    after_phrase: "Probablemente sea pasajero; hay que ver si se sostiene."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La nueva obsesión"
+    body: "Renata le contó a su amigo que ya no podía dejar de escuchar cierta canción. Un mes después, ni la recordaba. «Te dije que era pasajero», se rio su amigo, «a la semana siguiente ya tenías otra canción pegada»."
+    before_phrase: "Seguro se me va a pasar en dos días."
+    after_phrase: "Fue pasajero: a la semana ya tenía otra canción pegada."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El portazo"
+    body: "Después de la discusión, su hijo se encerró en el cuarto y dijo que no quería volver a hablarle. Esa noche, el padre le dijo a su esposa: «Este enojo es pasajero, ya lo conocemos». Al día siguiente, el chico salió a desayunar como si nada."
+    before_phrase: "Seguro se le pasa en un rato, ya lo conocemos."
+    after_phrase: "Este enojo es pasajero, ya lo conocemos."
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-18"

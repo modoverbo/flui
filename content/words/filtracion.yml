@@ -1,0 +1,231 @@
+schema_version: 1
+slug: "filtracion"
+status: "draft"
+lemma: "filtración"
+part_of_speech: "sustantivo"
+syllables:
+  - "fil"
+  - "tra"
+  - "ción"
+stressed_syllable: 3
+ipa_latam: "[fil.tɾaˈsjon]"
+ipa_es: "[fil.tɾaˈθjon]"
+explanation: "Información privada que se hace pública antes de que su responsable decida contarla."
+example_sentence: "Antes de la rueda de prensa ya circulaba una filtración con los nombres del nuevo equipo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien para hablar de información que salió antes de tiempo, sin acusar directamente a quien la soltó."
+when_not_to_use: "No la uses para un simple rumor sin base: supone que alguien con acceso real dejó salir un dato concreto."
+collocations:
+  - "filtración a la prensa"
+  - "filtración de datos"
+  - "evitar una filtración"
+replaces:
+  - before: "Se supo antes de tiempo"
+    after: "Hubo una filtración"
+  - before: "Alguien contó algo que no debía"
+    after: "Hubo una filtración"
+family: ["filtrar", "filtrado"]
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+tags:
+  comodin: ["chisme"]
+  funcion: ["informar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "infiltración"
+    difference: "«Infiltración» es que alguien se introduce a escondidas en un lugar o un grupo; una filtración es que la información salga hacia afuera sin permiso."
+    memory_trick: "Te infiltras hacia adentro; la información se filtra hacia afuera."
+  - confused_with: "difusión"
+    difference: "«Difusión» es dar a conocer algo de forma abierta y con autorización; una filtración escapa sin que nadie la apruebe."
+    memory_trick: "La difusión la autoriza alguien; la filtración se les escapa a todos."
+exercises:
+  - position: 1
+    sentence: "El estudio de animación tuvo que adelantar el tráiler oficial después de que una {{blank}} mostrara los primeros minutos de la película."
+    hint_general: "Piensa en información que se escapa hacia afuera sin que nadie la autorice."
+    explanation: "Filtración: contenido real que sale sin autorización. «Infiltración» es entrar a escondidas en un lugar, no hacer salir contenido, y «pista» es solo una señal, mientras aquí se vieron minutos reales."
+    options:
+      - position: 1
+        text: "infiltración"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Infiltración» es que alguien entra a escondidas en un lugar o un grupo; aquí el contenido salió hacia afuera, y nadie se coló en ningún sitio."
+        hint_specific: "Esa palabra describe a alguien que se cuela en un sitio. ¿Aquí entra alguien, o sale un contenido hacia afuera?"
+      - position: 2
+        text: "filtración"
+        is_correct: true
+      - position: 3
+        text: "pista"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pista» es una señal que ayuda a sospechar algo, no el contenido mismo; aquí se vieron minutos reales de la película, no solo una señal."
+        hint_specific: "Esa palabra es apenas una señal, no el contenido completo. ¿Aquí solo hay una señal, o se vieron minutos reales?"
+  - position: 2
+    sentence: "Los aficionados del equipo ya sabían el nombre del nuevo delantero dos días antes del anuncio, por una {{blank}} que circuló en un grupo de mensajes."
+    hint_general: "Es la palabra para un dato concreto que se escapa antes de que alguien decida contarlo."
+    explanation: "Filtración: un dato concreto que se escapa antes de tiempo. «Sospecha» es una idea sin confirmar y «bomba» es un término muy informal; aquí el nombre ya circulaba como un dato real, contado en tono neutro."
+    options:
+      - position: 1
+        text: "sospecha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sospecha» es una idea sin confirmar; en la frase el nombre ya era un dato concreto que circulaba, no una simple idea sin base."
+        hint_specific: "Esa palabra habla de una idea sin pruebas. ¿El grupo tenía una idea vaga, o un dato concreto?"
+      - position: 2
+        text: "bomba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bomba» es un término muy informal para una noticia impactante, y no encaja con el tono neutro de una noticia sobre un fichaje."
+        hint_specific: "Esa palabra suena a titular sensacionalista de la calle. ¿El tono de la frase es así de informal?"
+      - position: 3
+        text: "filtración"
+        is_correct: true
+  - position: 3
+    sentence: "En la fábrica se habló de los recortes mucho antes del aviso oficial, porque alguien vio una {{blank}} del informe interno."
+    hint_general: "Se trata de un documento que se conoce antes de que la empresa decida compartirlo."
+    explanation: "Filtración: un documento que se conoce antes de que la empresa lo comparta. «Denuncia» implica acusar ante una autoridad, y «primicia» supone permiso para contarlo primero; aquí solo se adelantó un informe interno sin autorización."
+    options:
+      - position: 1
+        text: "denuncia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Denuncia» es acusar formalmente de algo ante una autoridad; aquí nadie acusó a nadie, solo se conoció un documento antes de tiempo."
+        hint_specific: "Esa palabra implica acusar a alguien ante una autoridad. ¿Alguien acusa aquí, o solo se adelanta un documento?"
+      - position: 2
+        text: "filtración"
+        is_correct: true
+      - position: 3
+        text: "primicia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Primicia» es una noticia que un medio consigue contar primero, de forma autorizada; aquí nadie autorizó que se conociera el informe."
+        hint_specific: "Esa palabra supone que alguien decidió contarlo primero, con permiso. ¿Aquí hubo permiso para contarlo?"
+  - position: 4
+    sentence: "La revista tuvo que retirar el reportaje cuando se supo que las fotos venían de una {{blank}} y no de una sesión autorizada."
+    hint_general: "Señala que el material salió por una vía que nadie aprobó."
+    explanation: "Filtración: material que llega sin autorización. «Infiltración» es colarse en un lugar, no hacer llegar fotos, y «difusión» supone permiso; aquí las fotos llegaron sin que nadie las aprobara."
+    options:
+      - position: 1
+        text: "infiltración"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Infiltración» sería que un fotógrafo se colara en el evento; la frase no dice que alguien entrara a un sitio, sino que las fotos llegaron por otra vía."
+        hint_specific: "Esa palabra describe a alguien que se cuela en un lugar. ¿La frase dice que alguien entró a escondidas a algún sitio?"
+      - position: 2
+        text: "difusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Difusión» es dar a conocer algo con permiso; en la frase las fotos llegaron sin que nadie las autorizara."
+        hint_specific: "Esa palabra implica que alguien autorizó compartir el material. ¿La frase dice que hubo permiso?"
+      - position: 3
+        text: "filtración"
+        is_correct: true
+  - position: 5
+    sentence: "Mateo guardaba en secreto el destino del viaje sorpresa, hasta que una {{blank}} de su hermana lo arruinó dos semanas antes."
+    hint_general: "Habla de un secreto que se escapa antes de que su dueño quiera contarlo."
+    explanation: "Filtración: un secreto que se escapa sin que su dueño lo cuente. «Revelación» supone que alguien decide comunicar algo a propósito, y «teoría» es una idea sin certeza; aquí el secreto se le escapó a la hermana sin querer."
+    options:
+      - position: 1
+        text: "revelación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Revelación» suele ser un anuncio que alguien hace a propósito; aquí el secreto se escapó sin que Mateo decidiera contarlo."
+        hint_specific: "Esa palabra implica que alguien decide contar algo a propósito. ¿Aquí alguien decidió contarlo, o se le escapó?"
+      - position: 2
+        text: "teoría"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Teoría» es una idea que alguien propone sin certeza; aquí la hermana no propuso una idea, contó un dato real que arruinó la sorpresa."
+        hint_specific: "Esa palabra es una idea sin certeza. ¿La hermana propuso una idea, o contó algo real?"
+      - position: 3
+        text: "filtración"
+        is_correct: true
+  - position: 6
+    sentence: "Un estudio de videojuegos había planeado un tráiler para el viernes, pero una {{blank}} adelantó las primeras imágenes el martes."
+    hint_general: "El material salió antes de la fecha que la empresa tenía planeada."
+    explanation: "Filtración: material que sale antes de la fecha prevista, sin que la empresa lo decida. «Infiltración» es entrar a un lugar sin permiso, y «versión» es un relato entre varios posibles; aquí las imágenes se adelantaron solas."
+    options:
+      - position: 1
+        text: "infiltración"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Infiltración» sería que alguien entrara sin permiso en las oficinas del estudio; aquí lo que ocurrió es que unas imágenes salieron hacia afuera, no que alguien entrara a un sitio."
+        hint_specific: "Esa palabra habla de entrar a un lugar sin permiso. ¿La frase dice que alguien entró a algún sitio?"
+      - position: 2
+        text: "versión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Versión» es un relato entre varios posibles sobre lo ocurrido; aquí no hay varios relatos, sino imágenes reales que se adelantaron."
+        hint_specific: "Esa palabra habla de un relato entre varios posibles. ¿La frase presenta varias historias, o imágenes reales?"
+      - position: 3
+        text: "filtración"
+        is_correct: true
+  - position: 7
+    sentence: "El programa de cocina cambió el orden de los episodios porque ya existía una {{blank}} sobre quién ganaba la final."
+    hint_general: "Se trata de un dato sobre el resultado que se conoció antes de la emisión."
+    explanation: "Filtración: un dato concreto que se conoce antes de la emisión. «Suposición» es una idea sin pruebas y «bomba» es un término muy informal; aquí ya se sabía con certeza quién ganaba, contado en tono neutro."
+    options:
+      - position: 1
+        text: "suposición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Suposición» es una idea que alguien imagina sin pruebas; aquí el nombre del ganador ya se sabía como un dato concreto, no como una idea imaginada."
+        hint_specific: "Esa palabra es una idea imaginada sin pruebas. ¿En la frase ya se sabía el nombre con certeza?"
+      - position: 2
+        text: "bomba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bomba» es un término muy informal para una noticia impactante, y no encaja con el tono de un texto sobre la producción de un programa."
+        hint_specific: "Esa palabra suena a titular sensacionalista de la calle. ¿El tono de la frase es así de informal?"
+      - position: 3
+        text: "filtración"
+        is_correct: true
+  - position: 8
+    sentence: "El banco revisó sus protocolos de seguridad después de que una {{blank}} de datos de varios clientes llegara a un foro en internet."
+    hint_general: "Habla de información que sale de un sistema sin permiso y aparece en otro lugar."
+    explanation: "Filtración: información que sale de un sistema sin permiso. «Indiscreción» es un comentario que alguien no debió hacer, y «sospecha» es una idea sin confirmar; aquí los datos de los clientes ya estaban publicados en un foro."
+    options:
+      - position: 1
+        text: "indiscreción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiscreción» es contar algo que no te correspondía contar, casi siempre de palabra; aquí se trata de datos que salieron de un sistema, no de un comentario de alguien."
+        hint_specific: "Esa palabra habla de un comentario que alguien no debió hacer. ¿Aquí hay un comentario, o datos que salen de un sistema?"
+      - position: 2
+        text: "sospecha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sospecha» es una idea sin confirmar; aquí los datos ya estaban publicados en un foro, así que no era solo una idea sin pruebas."
+        hint_specific: "Esa palabra es una idea sin confirmar. ¿Los datos ya estaban publicados, o solo se sospechaba algo?"
+      - position: 3
+        text: "filtración"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe que llegó antes"
+    body: "En la oficina corrió el rumor de un cambio de estructura antes de que nadie los llamara a una reunión. «Hubo una filtración», admitió su jefa esa tarde, «y preferimos contarles ahora en detalle, antes de que sigan las versiones sueltas». El equipo respiró y empezó a hacer preguntas concretas."
+    before_phrase: "Se supo antes de tiempo y ahora todos hablan de eso."
+    after_phrase: "Hubo una filtración, y preferimos contarles ahora."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta que ya sabían"
+    body: "Antes de la entrevista, el periodista le mostró su libreta: «Ya sabemos casi todo por una filtración, así que puede hablar con calma». Camila lo pensó un momento y decidió confirmar solo lo que era cierto, sin añadir nada más. Al final, la nota salió tal como ella la había contado."
+    before_phrase: "Ya se sabe casi todo, no sé qué más decir."
+    after_phrase: "Ya sabemos casi todo por una filtración; puede hablar con calma."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La sorpresa que se arruinó"
+    body: "Diego había planeado el viaje durante meses, con fechas y hasta el hotel. «Hubo una filtración», le dijo su hermano riendo, «tu hija ya sabe todo». Diego suspiró, pero al ver la cara feliz de su hija, decidió que la sorpresa igual había valido la pena."
+    before_phrase: "Se le escapó a alguien y ya lo sabe todo."
+    after_phrase: "Hubo una filtración: ya sabe todo."
+provenance:
+  generator: "hand-written by flui content agent"
+  gate: null
+  checked_on: "2026-09-18"

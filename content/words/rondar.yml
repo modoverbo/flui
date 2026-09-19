@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "rondar"
+status: "draft"
+lemma: "rondar"
+part_of_speech: "verbo"
+syllables: ["ron", "dar"]
+stressed_syllable: 2
+ipa_latam: "[ronˈdaɾ]"
+ipa_es: "[ronˈdaɾ]"
+explanation: "Andar cerca de alguien que te gusta, buscando una oportunidad para acercarte más."
+example_sentence: "Desde el asado de fin de año, ese amigo de un amigo aparece en cada plan del grupo donde está Valentina."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para describir a alguien que busca cruzarse con otra persona, sin todavía haber dado el paso."
+when_not_to_use: "No lo uses para describir a alguien que incomoda o persigue de forma insistente: eso ya no es rondar, es acosar."
+collocations:
+  - "rondar a alguien"
+  - "andar rondando"
+  - "llevar semanas rondando"
+family: ["ronda"]
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["andar detrás de", "dar vueltas alrededor"]
+  funcion: ["describir interés"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acechar"
+    difference: "Acechar implica vigilar con intención hostil o amenazante; rondar, en este sentido, es buscar con interés una oportunidad de acercarte, sin ninguna intención de dañar."
+    memory_trick: "Se acecha para atacar; se ronda para acercarse."
+replaces:
+  - before: "Anda detrás de ella buscando una oportunidad para hablarle"
+    after: "La está rondando, buscando una oportunidad para hablarle"
+  - before: "Siempre pasa cerca de su escritorio a ver si se cruzan"
+    after: "Siempre la ronda cerca de su escritorio"
+exercises:
+  - position: 1
+    sentence: "Todos en la oficina notaban que Iván llevaba semanas {{blank}} a la nueva del equipo de diseño."
+    hint_general: "Andar cerca de alguien que te gusta, buscando una oportunidad de acercarte."
+    explanation: "Rondando: andando cerca de alguien que te gusta, buscando una oportunidad. «Acechando» implica una intención hostil, y «evitando» describe justo lo contrario de buscar cruzarse con alguien."
+    options:
+      - position: 1
+        text: "rondando"
+        is_correct: true
+      - position: 2
+        text: "acechando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acechar» implica vigilar con una intención hostil o amenazante, y la frase describe un interés cotidiano de oficina, sin ninguna amenaza."
+        hint_specific: "Acechar implica una intención hostil. ¿La frase describe una amenaza o un interés cotidiano?"
+      - position: 3
+        text: "evitando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Evitar» describe justo lo contrario, y la frase dice que Iván buscaba cruzarse con ella, no alejarse."
+        hint_specific: "Evitar es alejarse de alguien. ¿Iván se aleja de ella o busca cruzarse?"
+  - position: 2
+    sentence: "Desde que la vio en la fiesta, Bruno {{blank}} el mismo café donde ella trabaja cada tarde."
+    hint_general: "Andar cerca de un lugar que frecuenta alguien que te gusta, buscando cruzarte con esa persona."
+    explanation: "Ronda: anda cerca de un lugar que frecuenta esa persona. «Ronca» describe el sonido de alguien durmiendo, y «acecha» implica una intención hostil; ninguno describe pasar por un café buscando a alguien."
+    options:
+      - position: 1
+        text: "ronda"
+        is_correct: true
+      - position: 2
+        text: "ronca"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Roncar» describe el sonido que hace alguien mientras duerme, sin relación con pasar por un café para cruzarse con ella."
+        hint_specific: "Roncar es un sonido al dormir. ¿La frase habla de dormir o de pasar por un café?"
+      - position: 3
+        text: "acecha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acechar» implica una intención hostil o amenazante, y la frase describe un interés cotidiano después de conocerla en una fiesta."
+        hint_specific: "Acechar implica una intención hostil. ¿La frase describe una amenaza o un interés después de una fiesta?"
+  - position: 3
+    sentence: "Camila lleva un mes {{blank}} la cuadra del gimnasio nuevo, con la esperanza de encontrarse con el instructor."
+    hint_general: "Pasar cerca de un lugar buscando cruzarte con alguien que te interesa."
+    explanation: "Rondando: pasando cerca de un lugar buscando cruzarte con alguien. «Vendiendo» describe una actividad comercial, sin relación con buscar a alguien, y «acechando» implica una intención hostil."
+    options:
+      - position: 1
+        text: "rondando"
+        is_correct: true
+      - position: 2
+        text: "vendiendo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vender» describe una actividad comercial, y la frase dice que Camila busca cruzarse con el instructor, no vender nada en esa cuadra."
+        hint_specific: "Vender es una actividad comercial. ¿Camila vende algo en esa cuadra o busca cruzarse con alguien?"
+      - position: 3
+        text: "acechando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acechar» implica una intención hostil o amenazante, y la frase describe la esperanza de un encuentro, no una amenaza."
+        hint_specific: "Acechar implica una intención hostil. ¿Camila tiene una intención hostil o solo espera un encuentro?"
+  - position: 4
+    sentence: "Antes de animarse a hablarle, Diego pasó dos semanas {{blank}} cerca del escritorio de la nueva contadora."
+    hint_general: "Buscar excusas para pasar cerca de alguien que te gusta, sin todavía hablarle."
+    explanation: "Rondando: buscando excusas para pasar cerca de alguien, sin todavía hablarle. «Chamuyando» es coloquial y regional, y «acechando» implica una intención hostil; ninguno describe esa timidez."
+    options:
+      - position: 1
+        text: "rondando"
+        is_correct: true
+      - position: 2
+        text: "chamuyando"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chamuyando» es coloquial y regional, y aquí se busca nombrar con precisión el comportamiento de Diego antes de animarse a hablarle."
+        hint_specific: "«Chamuyando» es muy regional e informal. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "acechando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acechar» implica una intención hostil o amenazante, y la frase describe la timidez de Diego antes de animarse a hablarle."
+        hint_specific: "Acechar implica una intención hostil. ¿Diego tiene una intención hostil o solo timidez?"
+  - position: 5
+    sentence: "El gato del vecino {{blank}} la cocina cada vez que huele que alguien está cocinando pescado."
+    hint_general: "Andar cerca de un lugar, esperando el momento oportuno para algo que quieres."
+    explanation: "Ronda: anda cerca de un lugar, esperando el momento oportuno. «Limpia» describe una actividad doméstica, sin relación con esperar el momento del pescado, y «acecha» implica una intención hostil, más propia de una amenaza."
+    options:
+      - position: 1
+        text: "ronda"
+        is_correct: true
+      - position: 2
+        text: "limpia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Limpiar» describe una actividad doméstica, y la frase dice que el gato busca el pescado, no que limpie la cocina."
+        hint_specific: "Limpiar es una actividad doméstica. ¿El gato limpia la cocina o espera el pescado?"
+      - position: 3
+        text: "acecha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acechar» implica una intención hostil o amenazante, y aquí el gato solo espera el momento del pescado, sin ninguna amenaza."
+        hint_specific: "Acechar implica una amenaza. ¿El gato tiene una intención hostil o solo espera el pescado?"
+  - position: 6
+    sentence: "Aunque nunca se animó a invitarla a salir, Hugo {{blank}} los mismos lugares donde sabía que ella solía estar."
+    hint_general: "Frecuentar los mismos lugares que alguien que te interesa, esperando cruzarte con esa persona."
+    explanation: "Rondaba: frecuentaba los mismos lugares, esperando cruzarse con ella. «Decoraba» describe una actividad distinta, sin relación con buscar a alguien, y «acechaba» implica una intención hostil."
+    options:
+      - position: 1
+        text: "rondaba"
+        is_correct: true
+      - position: 2
+        text: "decoraba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decorar» describe una actividad distinta, sin relación con frecuentar lugares esperando cruzarse con alguien."
+        hint_specific: "Decorar es una actividad de diseño. ¿Hugo decoraba esos lugares o buscaba cruzarse con ella?"
+      - position: 3
+        text: "acechaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acechar» implica una intención hostil o amenazante, y aquí Hugo solo buscaba cruzarse con ella, sin ninguna amenaza."
+        hint_specific: "Acechar implica una amenaza. ¿Hugo tenía una intención hostil o solo timidez?"
+  - position: 7
+    sentence: "El pretendiente {{blank}} la puerta de su edificio cada tarde, esperando encontrársela por casualidad."
+    hint_general: "Pasar cerca de un lugar repetidamente, esperando cruzarte con alguien por casualidad."
+    explanation: "Ronda: pasa cerca de un lugar repetidamente, esperando un encuentro casual. «Pinta» describe una actividad de mantenimiento, sin relación con esperar a alguien, y «acecha» implica una intención hostil."
+    options:
+      - position: 1
+        text: "ronda"
+        is_correct: true
+      - position: 2
+        text: "pinta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pintar» describe una actividad de mantenimiento, y la frase dice que el pretendiente espera un encuentro casual, no que pinte el edificio."
+        hint_specific: "Pintar es una actividad de mantenimiento. ¿El pretendiente pinta el edificio o espera un encuentro?"
+      - position: 3
+        text: "acecha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acechar» implica una intención hostil o amenazante, y aquí el pretendiente solo espera un encuentro casual, sin ninguna amenaza."
+        hint_specific: "Acechar implica una amenaza. ¿El pretendiente tiene una intención hostil o solo espera un encuentro?"
+  - position: 8
+    sentence: "Su hermana le advirtió: «Ese chico lleva todo el verano {{blank}} tu grupo de amigas, y todavía no se anima a nada»."
+    hint_general: "Frecuentar el entorno de alguien, esperando el momento de acercarse."
+    explanation: "Rondando: frecuentando el entorno de alguien, esperando el momento de acercarse. «Ignorando» describe justo lo contrario, y «acosando» implicaría incomodar, algo que la frase no menciona."
+    options:
+      - position: 1
+        text: "rondando"
+        is_correct: true
+      - position: 2
+        text: "ignorando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» describe justo lo contrario, y la frase dice que ese chico pasó todo el verano cerca del grupo de amigas."
+        hint_specific: "Ignorar es no prestar atención. ¿Ese chico ignoró al grupo o pasó el verano cerca de ellas?"
+      - position: 3
+        text: "acosando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acosar» implicaría incomodar a alguien de forma insistente, y la frase no menciona ninguna incomodidad, solo timidez para acercarse."
+        hint_specific: "Acosar implica incomodar a alguien. ¿La frase menciona alguna incomodidad o solo timidez?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "La nueva del equipo de diseño"
+    body: "Marina notó que Iván pasaba por el área de diseño más de lo normal. «Lleva semanas rondándola», le comentó a otra compañera, «a ver cuándo se anima a invitarla un café»."
+    before_phrase: "Anda detrás de ella hace semanas."
+    after_phrase: "Lleva semanas rondándola."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El café de cada tarde"
+    body: "Desde la fiesta, Bruno empezó a pasar por el café donde ella trabajaba, sin animarse a entrar. «¿La vas a rondar toda la semana o le vas a hablar?», le preguntó un amigo, y Bruno solo sonrió, nervioso."
+    before_phrase: "¿Vas a andar detrás de ella toda la semana?"
+    after_phrase: "¿La vas a rondar toda la semana?"
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El chico del verano"
+    body: "Su hermana lo notó antes que nadie: ese chico llevaba semanas apareciendo donde estaba su grupo de amigas. «Te ronda hace rato, y tú ni cuenta te das», le dijo, entre risas, mientras la ayudaba a arreglarse para salir."
+    before_phrase: "Anda detrás de ti hace rato, y ni cuenta te das."
+    after_phrase: "Te ronda hace rato, y ni cuenta te das."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

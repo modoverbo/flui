@@ -1,0 +1,232 @@
+schema_version: 1
+slug: "hermetismo"
+status: "draft"
+lemma: "hermetismo"
+part_of_speech: "sustantivo"
+syllables:
+  - "her"
+  - "me"
+  - "tis"
+  - "mo"
+stressed_syllable: 3
+ipa_latam: "[er.meˈtis.mo]"
+ipa_es: "[er.meˈtis.mo]"
+explanation: "Actitud de no dar ninguna información sobre un tema, aunque insistan en preguntar."
+example_sentence: "La empresa mantuvo hermetismo total sobre la fusión hasta el último día."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Funciona para hablar del silencio total de una persona o una empresa sobre un tema, sin explicar por qué callan."
+when_not_to_use: "No la uses para alguien tímido que simplemente habla poco: implica una decisión deliberada de no soltar información."
+collocations:
+  - "mantener hermetismo"
+  - "romper el hermetismo"
+  - "hermetismo absoluto"
+replaces:
+  - before: "No sueltan ni una palabra sobre eso"
+    after: "Mantienen hermetismo sobre eso"
+  - before: "Se quedaron callados y no dijeron nada"
+    after: "Guardaron hermetismo total"
+family: ["hermético", "herméticamente"]
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+tags:
+  comodin: ["callados"]
+  funcion: ["callar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "discreción"
+    difference: "«Discreción» es cuidar qué detalles se comparten, dando algo pero sin exponer lo delicado; el hermetismo es no dar ninguna información en absoluto."
+    memory_trick: "La discreción mide las palabras; el hermetismo las corta todas."
+  - confused_with: "mutismo"
+    difference: "«Mutismo» es no hablar en general, a veces por costumbre o timidez; el hermetismo es la decisión de no dar información sobre un asunto concreto, pese a que insistan."
+    memory_trick: "El mutismo calla siempre; el hermetismo calla sobre un tema."
+exercises:
+  - position: 1
+    sentence: "El director no soltó ni un dato en la rueda de prensa; los periodistas se fueron con la sensación de que la empresa mantenía {{blank}} total sobre la fusión."
+    hint_general: "Habla de una decisión de no compartir ni un solo detalle sobre un asunto."
+    explanation: "Hermetismo: no compartir ni un solo detalle sobre un asunto. «Hermeticidad» describe qué tan bien sellado está un objeto, no un tema, y «discreción» implica compartir algo con cuidado, mientras aquí no se dio ningún dato."
+    options:
+      - position: 1
+        text: "hermeticidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Hermeticidad» describe qué tan bien sellado está un objeto o un espacio frente al aire o al agua; aquí no se habla de sellar nada, sino de no dar información."
+        hint_specific: "Esa palabra se usa para hablar de envases o espacios bien sellados. ¿La frase habla de sellar algo, o de no dar información?"
+      - position: 2
+        text: "discreción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discreción» es cuidar qué detalles se comparten para no exponer a alguien; aquí la empresa no compartió ningún detalle en absoluto, ni siquiera los más generales."
+        hint_specific: "Esa palabra implica compartir algo, solo que con cuidado. ¿Aquí compartieron algún detalle, aunque fuera general?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+  - position: 2
+    sentence: "Cuando le preguntaron por el escándalo, el actor optó por {{blank}} y cambió de tema sin decir una palabra más."
+    hint_general: "Es la palabra para una postura sostenida de no decir nada sobre un tema."
+    explanation: "Hermetismo: una postura sostenida de no decir nada sobre un tema. «Mutis» es un término de teatro muy coloquial, y «silencio» solo dice que alguien no habla, sin indicar una postura sostenida."
+    options:
+      - position: 1
+        text: "mutis"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mutis» es un término coloquial de teatro para salir de escena sin hablar más; no encaja con el tono de un texto sobre cómo una persona pública maneja las preguntas de la prensa."
+        hint_specific: "Esa palabra viene del lenguaje del teatro y es muy coloquial. ¿El tono de la frase es así de informal?"
+      - position: 2
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencio» es simplemente no hablar, y puede durar un segundo; aquí la actitud es sostenida, una decisión de no dar ninguna información sobre el tema."
+        hint_specific: "Esa palabra solo dice que alguien no habla, sin indicar una postura sostenida. ¿La frase describe algo breve o una actitud mantenida?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+  - position: 3
+    sentence: "El comité guardó {{blank}} sobre los criterios del concurso, y ni los propios participantes supieron cómo se decidió al ganador."
+    hint_general: "Habla de no dar ninguna información sobre cómo se tomó una decisión."
+    explanation: "Hermetismo: no dar ninguna información sobre cómo se decidió algo. «Reserva» implica compartir parte de la información, y «opacidad» describe algo confuso sin que nadie lo busque, mientras aquí el comité decidió activamente no hablar."
+    options:
+      - position: 1
+        text: "reserva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reserva» es cuidar ciertos detalles concretos mientras se comparte el resto; aquí no se supo nada en absoluto sobre los criterios, ni siquiera algo general."
+        hint_specific: "Esa palabra implica compartir parte de la información. ¿Aquí se compartió alguna parte, o nada en absoluto?"
+      - position: 2
+        text: "opacidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Opacidad» describe un sistema poco claro en general, casi siempre sin que nadie lo decida así de forma activa; aquí el comité decidió activamente no dar información."
+        hint_specific: "Esa palabra describe algo poco claro, casi sin querer. ¿Aquí el comité decidió activamente no hablar, o solo resultó confuso sin querer?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+  - position: 4
+    sentence: "La farmacéutica explicó los efectos secundarios con detalle, pero mantuvo {{blank}} total sobre la fórmula exacta del medicamento."
+    hint_general: "Se trata de no revelar un dato concreto, aunque se comparta el resto de la información."
+    explanation: "Hermetismo: no revelar un dato concreto, incluso compartiendo el resto. «Hermeticidad» describe qué tan bien sellado está un envase, no un dato, y «confidencialidad» supone compartir algo con quien debe conocerlo, mientras aquí no se compartió con nadie externo."
+    options:
+      - position: 1
+        text: "hermeticidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Hermeticidad» se usa para describir qué tan bien sellado está un envase o un espacio; aquí no se habla de sellar nada físicamente, sino de no revelar una fórmula."
+        hint_specific: "Esa palabra se usa para hablar de envases bien sellados. ¿Aquí se habla de sellar algo, o de no revelar un dato?"
+      - position: 2
+        text: "confidencialidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confidencialidad» es un acuerdo o una norma que protege información compartida solo con quien debe conocerla; aquí la empresa no compartió la fórmula con nadie fuera de la compañía."
+        hint_specific: "Esa palabra supone que la información sí se comparte, pero solo con ciertas personas. ¿Aquí se compartió la fórmula con alguien externo?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+  - position: 5
+    sentence: "Durante la negociación, los abogados mantuvieron {{blank}} sobre el monto final, y ni sus propios clientes lo sabían todavía."
+    hint_general: "Habla de no soltar un dato concreto, más allá de simple cuidado al hablar."
+    explanation: "Hermetismo: no soltar un dato concreto en absoluto. «Cautela» es actuar con cuidado, no necesariamente callar todo, y «mutis» es un término de teatro muy coloquial, fuera de tono en una negociación legal."
+    options:
+      - position: 1
+        text: "cautela"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cautela» es actuar con cuidado para evitar un error, no necesariamente callar toda la información; aquí ni sus propios clientes conocían el monto, algo más que solo cuidado."
+        hint_specific: "Esa palabra habla de actuar con cuidado, no de no decir nada. ¿Aquí solo hubo cuidado, o silencio total sobre el monto?"
+      - position: 2
+        text: "mutis"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mutis» es un término coloquial de teatro para salir sin hablar más, y no encaja con el tono formal de una negociación legal."
+        hint_specific: "Esa palabra viene del teatro y es muy coloquial. ¿El tono de una negociación legal es formal o informal?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+  - position: 6
+    sentence: "El jurado del concurso literario guardó {{blank}} sobre los finalistas hasta la noche de la gala, para no adelantar nada."
+    hint_general: "Se trata de mantener la misma postura de no hablar durante todo un tiempo, no solo un instante."
+    explanation: "Hermetismo: una decisión de silencio sostenida durante un tiempo. «Silencio» puede ser momentáneo, y «reserva» permite compartir algo con cuidado; aquí no se adelantó ningún nombre durante semanas."
+    options:
+      - position: 1
+        text: "silencio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Silencio» es solo no hablar, y puede ser momentáneo; aquí se trata de una decisión sostenida durante semanas, hasta la noche de la gala."
+        hint_specific: "Esa palabra puede durar solo un instante. ¿Aquí la actitud duró semanas, o un momento?"
+      - position: 2
+        text: "reserva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reserva» implica compartir parte de la información con cuidado; aquí no se adelantó ningún nombre, ni siquiera de forma parcial."
+        hint_specific: "Esa palabra permite compartir algo, con cuidado. ¿Aquí se compartió algún nombre, aunque fuera parcial?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+  - position: 7
+    sentence: "El estudio de cine mantuvo {{blank}} sobre el final de la película, y ni los actores sabían cómo terminaba la historia."
+    hint_general: "Habla de que nadie supiera un dato concreto, no de que algo estuviera bien cerrado físicamente."
+    explanation: "Hermetismo: que nadie supiera un dato concreto. «Hermeticidad» se usa para envases o espacios sellados, no para un final de película, y «opacidad» describe algo confuso sin buscarlo, mientras aquí el estudio lo decidió a propósito."
+    options:
+      - position: 1
+        text: "hermeticidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Hermeticidad» se usa para hablar de qué tan bien sellado está un objeto; aquí lo que se cuida es que nadie cuente el final, no que algo esté sellado."
+        hint_specific: "Esa palabra se usa para envases o espacios sellados. ¿Aquí se habla de sellar algo, o de que nadie cuente el final?"
+      - position: 2
+        text: "opacidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Opacidad» describe un proceso confuso, casi siempre sin que nadie lo busque así; aquí el estudio decidió activamente que nadie supiera el final."
+        hint_specific: "Esa palabra describe algo confuso sin querer. ¿Aquí el estudio decidió activamente ocultar el final?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+  - position: 8
+    sentence: "El comité de ética optó por {{blank}} respecto al caso mientras duraba la investigación interna."
+    hint_general: "Se trata de no compartir nada del caso con nadie fuera del grupo que investiga."
+    explanation: "Hermetismo: no compartir nada del caso con nadie externo. «Confidencialidad» supone compartir la información con quien debe conocerla, y «mutis» es un término de teatro muy coloquial, fuera de tono en un comité de ética."
+    options:
+      - position: 1
+        text: "confidencialidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confidencialidad» supone que la información sí se comparte, pero solo con quienes deben conocerla; aquí el comité no compartió nada del caso con nadie fuera de la investigación."
+        hint_specific: "Esa palabra supone que la información se comparte con alguien autorizado. ¿Aquí se compartió algo con alguien fuera del comité?"
+      - position: 2
+        text: "mutis"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Mutis» es un término coloquial de teatro para retirarse sin hablar, y no encaja con el tono formal de un comité de ética."
+        hint_specific: "Esa palabra viene del teatro y suena informal. ¿El tono de un comité de ética es formal o informal?"
+      - position: 3
+        text: "hermetismo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Lo que no se dijo en la reunión"
+    body: "El área de comunicación pidió hermetismo total mientras duraran las conversaciones con el otro banco. Nadie debía confirmar ni desmentir nada, ni siquiera entre compañeros de otros equipos. Cuando por fin se anunció la fusión, el equipo entendió por qué habían pedido tanto silencio."
+    before_phrase: "No podemos decir nada todavía, mejor no comenten nada."
+    after_phrase: "Pedimos hermetismo total mientras dure la negociación."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta que no tuvo respuesta"
+    body: "El periodista insistió tres veces sobre la fecha del lanzamiento. La directora sonrió: «Entiendo la pregunta, pero por ahora mantenemos hermetismo». Al salir, otro periodista comentó que ese hermetismo, al menos, sonaba más honesto que una respuesta inventada."
+    before_phrase: "No puedo decir nada, prefiero no inventar una respuesta."
+    after_phrase: "Por ahora mantenemos hermetismo sobre eso."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La casa que no se vendía todavía"
+    body: "Los hijos notaron que su padre revisaba papeles por las noches, pero él guardaba hermetismo total sobre lo que estaba decidiendo. Cuando finalmente reunió a la familia, explicó que había pensado vender la casa y quería que decidieran juntos. «Necesitaba tener claro el plan antes de hablarlo», dijo."
+    before_phrase: "No quería decir nada hasta tener todo claro."
+    after_phrase: "Guardé hermetismo hasta tener el plan claro."
+provenance:
+  generator: "hand-written by flui content agent"
+  gate: null
+  checked_on: "2026-09-18"

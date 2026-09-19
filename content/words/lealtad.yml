@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "lealtad"
+status: "draft"
+lemma: "lealtad"
+part_of_speech: "sustantivo"
+syllables: ["le", "al", "tad"]
+stressed_syllable: 3
+ipa_latam: "[le.alˈtad]"
+ipa_es: "[le.alˈtad]"
+explanation: "Mantenerse fiel a alguien incluso cuando eso cuesta esfuerzo o resulta difícil."
+example_sentence: "Después de tantos años, la lealtad de Carolina hacia sus amigos nunca ha cambiado, ni en los momentos difíciles."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien para elogiar una relación duradera: de amistad, de equipo o incluso hacia una causa."
+when_not_to_use: "No la uses para una obediencia ciega ni para alguien que actúa solo por miedo o conveniencia."
+collocations:
+  - "lealtad incondicional"
+  - "lealtad a un amigo"
+  - "demostrar lealtad"
+replaces:
+  - before: "Nunca me ha fallado en años de amistad"
+    after: "Su lealtad nunca ha fallado en años de amistad"
+  - before: "Siempre defiende a sus amigos, cueste lo que cueste"
+    after: "Su lealtad hacia sus amigos no cambia, cueste lo que cueste"
+family: ["leal", "desleal", "deslealtad"]
+themes:
+  - slug: "amistad"
+    relevance: 3
+tags:
+  comodin: ["fiel"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "legalidad"
+    difference: "«Legalidad» es cumplir la ley; «lealtad» es mantenerse fiel a una persona o a un vínculo."
+    memory_trick: "La legalidad se cumple; la lealtad se siente."
+exercises:
+  - position: 1
+    sentence: "Julieta perdió el contrato por no denunciar a su socio ante el banco: eligió su {{blank}} hacia él antes que quedar bien con nadie más."
+    hint_general: "Habla de mantenerse fiel a una persona, incluso cuando eso cuesta algo importante."
+    explanation: "Lealtad: mantenerse fiel a una persona aunque cueste algo importante. «Legalidad» es cumplir la ley, justo lo que Julieta no siguió primero, y «gratitud» supondría devolver un favor, no protegerlo."
+    options:
+      - position: 1
+        text: "legalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Legalidad» es cumplir la ley, y Julieta hizo justo lo contrario: protegió a su socio en vez de seguir el procedimiento formal."
+        hint_specific: "«Legalidad» es seguir la ley sin excepciones. ¿Julieta siguió el procedimiento o protegió a su socio?"
+      - position: 2
+        text: "lealtad"
+        is_correct: true
+      - position: 3
+        text: "gratitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gratitud» es agradecer algo recibido, y aquí no se dice que Julieta le debiera un favor a su socio, solo que se mantuvo de su lado."
+        hint_specific: "«Gratitud» supone deberle algo a alguien. ¿La frase dice que Julieta le debía un favor a su socio?"
+  - position: 2
+    sentence: "Cada vez que a Emilio le va mal, sus amigos de la infancia aparecen sin avisar: eso no es solo costumbre, es {{blank}}."
+    hint_general: "Nombra el vínculo que hace que alguien se mantenga cerca en los momentos difíciles, no solo por costumbre."
+    explanation: "Lealtad: el vínculo que hace que alguien se mantenga cerca en un momento difícil. «Adhesión» suena institucional para unos amigos de la infancia, y «constancia» solo dice que algo se repite en el tiempo."
+    options:
+      - position: 1
+        text: "adhesión"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adhesión» suena a discurso institucional o político, y aquí se habla de amigos de la infancia apareciendo sin avisar."
+        hint_specific: "«Adhesión» suena a algo formal, casi de institución. ¿Encaja con amigos de toda la vida?"
+      - position: 2
+        text: "constancia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constancia» describe seguir haciendo algo con el tiempo, pero no explica por qué esos amigos aparecen justo cuando algo va mal."
+        hint_specific: "«Constancia» habla de seguir en el tiempo, no de por qué alguien aparece en un momento difícil. ¿Es solo cuestión de tiempo aquí?"
+      - position: 3
+        text: "lealtad"
+        is_correct: true
+  - position: 3
+    sentence: "Carolina prefirió avisarle a su compañera antes que a Recursos Humanos: para ella, la {{blank}} con su compañera pesó más que el procedimiento oficial."
+    hint_general: "Se trata de mantenerse del lado de una persona antes que seguir el camino formal."
+    explanation: "Lealtad: mantenerse del lado de una persona antes que seguir el camino formal. «Legalidad» es justo el procedimiento oficial que Carolina no siguió primero, y «obediencia» supondría seguir una orden, no decidir por su cuenta."
+    options:
+      - position: 1
+        text: "legalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Legalidad» es justo el procedimiento oficial que Carolina decidió no seguir primero."
+        hint_specific: "«Legalidad» es el camino oficial. ¿Carolina siguió ese camino primero o avisó a su compañera?"
+      - position: 2
+        text: "obediencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obediencia» es seguir una orden o una regla, y Carolina no obedeció ninguna norma: decidió por su cuenta apoyar a su compañera."
+        hint_specific: "«Obediencia» es seguir una regla. ¿Carolina siguió una regla o decidió algo por su cuenta?"
+      - position: 3
+        text: "lealtad"
+        is_correct: true
+  - position: 4
+    sentence: "Aunque Nicolás y su mejor amigo viven en países distintos desde hace diez años, hablan cada semana: eso es {{blank}}, no solo hábito."
+    hint_general: "Habla de mantenerse fiel a un amigo con el paso del tiempo, más allá de la costumbre."
+    explanation: "Lealtad: mantenerse fiel a un amigo con el paso del tiempo. «Constancia» solo dice que algo se repite, y «gratitud» supondría agradecer un favor puntual, no sostener un vínculo de años."
+    options:
+      - position: 1
+        text: "constancia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constancia» solo dice que algo se repite en el tiempo, y la frase ya descarta que sea solo costumbre."
+        hint_specific: "«Constancia» describe repetir algo. La frase dice que no es solo costumbre: ¿qué palabra añade el compromiso con esa persona?"
+      - position: 2
+        text: "gratitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gratitud» supondría agradecer algo puntual, y aquí se habla de un vínculo sostenido durante diez años, no de un favor recibido."
+        hint_specific: "«Gratitud» es agradecer algo puntual. ¿La frase habla de un favor o de un vínculo de años?"
+      - position: 3
+        text: "lealtad"
+        is_correct: true
+  - position: 5
+    sentence: "Paula defendió a su compañero en la reunión aunque eso le costara quedar mal con su jefe: sus colegas llamaron a eso {{blank}}, aunque a ella le pareció exagerado el término."
+    hint_general: "Nombra el gesto de mantenerse del lado de un compañero incluso cuando resulta incómodo."
+    explanation: "Lealtad: mantenerse del lado de un compañero aunque resulte incómodo. «Devoción» suena demasiado solemne para ese gesto, y «obediencia» supondría seguir lo que otro manda, justo lo contrario de lo que hizo Paula."
+    options:
+      - position: 1
+        text: "devoción"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Devoción» suena casi religioso o romántico, un tono demasiado intenso para describir a un compañero que defiende a otro en una reunión."
+        hint_specific: "«Devoción» suena muy intenso, casi de culto. ¿El gesto de Paula pide una palabra tan solemne?"
+      - position: 2
+        text: "obediencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obediencia» es seguir una orden, y Paula hizo lo contrario de lo que convenía a su jefe, no lo que le mandaban."
+        hint_specific: "«Obediencia» es seguir lo que otro manda. ¿Paula hizo lo que convenía a su jefe?"
+      - position: 3
+        text: "lealtad"
+        is_correct: true
+  - position: 6
+    sentence: "Cuando el negocio familiar entró en crisis, Rodrigo se quedó a ayudar sin cobrar: no era solo {{blank}} por lo que sus padres habían hecho por él, sino algo más."
+    hint_general: "Se refiere a mantenerse al lado de la familia, más allá de un favor concreto que se deba devolver."
+    explanation: "Lealtad: mantenerse al lado de la familia, más allá de un favor concreto. «Gratitud» sería devolver un favor puntual, y «legalidad» habla de cumplir normas, algo ajeno a esta decisión."
+    options:
+      - position: 1
+        text: "gratitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gratitud» sería devolver un favor puntual, pero la frase dice que era algo más que eso."
+        hint_specific: "La frase dice que era «algo más» que devolver un favor. ¿Qué palabra describe ese compromiso más amplio?"
+      - position: 2
+        text: "legalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Legalidad» habla de cumplir normas, y aquí Rodrigo actúa por un vínculo con su familia, no por ninguna norma."
+        hint_specific: "«Legalidad» habla de normas. ¿Rodrigo sigue una norma o un vínculo familiar?"
+      - position: 3
+        text: "lealtad"
+        is_correct: true
+  - position: 7
+    sentence: "Antonia sigue yendo a los partidos del equipo de su amigo de la universidad, aunque ya casi nunca juega: eso es {{blank}}, no solo afición al deporte."
+    hint_general: "Habla de mantenerse cerca de una persona, más allá del interés que uno tenga por sí mismo."
+    explanation: "Lealtad: mantenerse cerca de una persona más allá del propio interés. «Constancia» solo dice que algo se repite, y «obediencia» supondría que alguien se lo ordena, cuando Antonia va por su cuenta."
+    options:
+      - position: 1
+        text: "constancia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constancia» solo dice que algo se repite, y la frase ya aclara que no va solo por costumbre o afición al deporte."
+        hint_specific: "«Constancia» describe repetir algo en el tiempo. ¿Qué añade el vínculo con su amigo, más allá de repetir?"
+      - position: 2
+        text: "obediencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Obediencia» supondría que alguien le pide ir, y Antonia va por su cuenta: nadie se lo ordena."
+        hint_specific: "«Obediencia» es seguir una orden de alguien. ¿Alguien le ordena ir a los partidos?"
+      - position: 3
+        text: "lealtad"
+        is_correct: true
+  - position: 8
+    sentence: "En la entrevista, Matías contó que rechazó una oferta mejor pagada para quedarse con el equipo que lo formó desde el principio: llamó a eso {{blank}}."
+    hint_general: "Nombra el motivo de quedarse cerca de quienes lo apoyaron, incluso con una mejor oferta sobre la mesa."
+    explanation: "Lealtad: quedarse cerca de quienes lo apoyaron, incluso con una mejor oferta sobre la mesa. «Legalidad» no tiene que ver con ninguna norma aquí, y «gratitud» solo mira hacia el pasado, no hacia una decisión futura."
+    options:
+      - position: 1
+        text: "legalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Legalidad» habla de cumplir normas, y la decisión de Matías no tiene que ver con ninguna norma, sino con un vínculo personal."
+        hint_specific: "«Legalidad» es cumplir normas. ¿La decisión de Matías tiene que ver con una norma?"
+      - position: 2
+        text: "gratitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gratitud» sería agradecer lo recibido en el pasado, y Matías habla de quedarse hacia adelante, no solo de agradecer."
+        hint_specific: "«Gratitud» mira hacia atrás, a lo ya recibido. ¿Matías habla del pasado o de una decisión hacia adelante?"
+      - position: 3
+        text: "lealtad"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El error que no delató"
+    body: "Cuando el sistema falló justo antes de la entrega, todos miraron a Rodrigo, el más nuevo del equipo. Julieta sabía que el error venía de un cambio que ella misma había aprobado semanas atrás. Se paró frente a su jefe y dijo: «El error es mío, no de Rodrigo». Nadie olvidó ese gesto en mucho tiempo."
+    before_phrase: "Ella siempre defiende a su equipo."
+    after_phrase: "Ella le tiene lealtad a su equipo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Diez años después"
+    body: "Mi padre perdió su negocio hace diez años y solo dos socios se quedaron a ayudarlo a empezar de nuevo, sin cobrar nada el primer año. Hoy, en su cumpleaños, brindó por ellos con la voz temblorosa: «Ustedes nunca se fueron». Nadie en la mesa necesitó que explicara por qué."
+    before_phrase: "Qué bueno que se quedaron contigo."
+    after_phrase: "Qué lealtad la de ellos, se quedaron contigo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo de siempre"
+    body: "Después de mudarse tres veces de ciudad, Antonia seguía teniendo el mismo grupo de amigas de la secundaria en un chat activo. «Ustedes son de las pocas cosas que no cambiaron», les escribió una noche cualquiera. Nadie respondió con palabras: le mandaron fotos viejas del colegio."
+    before_phrase: "Qué bueno que siguen ahí después de tanto tiempo."
+    after_phrase: "Qué lealtad, siguen ahí después de tanto tiempo."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

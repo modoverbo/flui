@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "esquivo"
+status: "draft"
+lemma: "esquivo"
+part_of_speech: "adjetivo"
+syllables: ["es", "qui", "vo"]
+stressed_syllable: 2
+ipa_latam: "[esˈki.βo]"
+ipa_es: "[esˈki.βo]"
+explanation: "Que evita comprometerse o dar una respuesta clara, y se aleja cuando alguien se acerca demasiado."
+example_sentence: "Sofía le preguntó tres veces qué sentía por ella, y Tomás cambió de tema las tres veces."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para describir a alguien que evita dar señales claras, sin llegar a rechazar del todo."
+when_not_to_use: "No lo uses para quien es frío pero directo: esquivo implica evitar la claridad, no solo mostrar poco afecto."
+collocations:
+  - "ser esquivo con"
+  - "una respuesta esquiva"
+  - "se puso esquivo"
+family: []
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["no se compromete", "juega a las escondidas"]
+  funcion: ["describir actitud"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "distante"
+    difference: "Distante describe frialdad en el trato, aunque sea constante; esquivo describe a quien activamente evita comprometerse o dar una respuesta clara."
+    memory_trick: "El distante no se acerca; el esquivo se escapa cuando lo intentas acercar."
+replaces:
+  - before: "No se compromete con nada ni te da una respuesta clara"
+    after: "Es muy esquivo con los planes"
+  - before: "Cambia de tema cada vez que le preguntas qué somos"
+    after: "Se pone esquivo cada vez que le preguntas qué son"
+exercises:
+  - position: 1
+    sentence: "Después de dos citas, Marta seguía sin saber si a Hugo le gustaba: era demasiado {{blank}} con sus planes."
+    hint_general: "Describe a quien evita dar una respuesta clara sobre lo que quiere."
+    explanation: "Esquivo: quien evita dar una respuesta clara sobre lo que quiere. «Suspicaz» describe a quien desconfía de los demás, y «ocupado» solo habla de falta de tiempo, no de evitar comprometerse."
+    options:
+      - position: 1
+        text: "esquivo"
+        is_correct: true
+      - position: 2
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe a quien desconfía de los demás, y la frase habla de alguien que evita comprometerse, no de alguien que desconfía."
+        hint_specific: "Suspicaz es quien sospecha de los demás. ¿Hugo desconfía de Marta o evita darle una respuesta?"
+      - position: 3
+        text: "ocupado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ocupado» solo habla de falta de tiempo, y la frase describe a alguien que evita comprometerse, no que simplemente tenga la agenda llena."
+        hint_specific: "Ocupado es falta de tiempo. ¿Hugo no tiene tiempo o evita dar una respuesta clara?"
+  - position: 2
+    sentence: "Cada vez que Camila le preguntaba qué eran, Andrés se ponía {{blank}} y cambiaba de tema enseguida."
+    hint_general: "Alguien que evita responder algo, cambiando de tema cuando se acercan a lo importante."
+    explanation: "Esquivo: quien evita responder, cambiando de tema. «Amable» describiría buen trato, sin implicar evitar una pregunta, y «esquinado» no existe con ese sentido en español."
+    options:
+      - position: 1
+        text: "esquivo"
+        is_correct: true
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe buen trato en general, y la frase describe específicamente que Andrés cambiaba de tema para no responder."
+        hint_specific: "Amable describe buen trato, no evitar preguntas. ¿La frase habla del trato de Andrés o de que evita responder?"
+      - position: 3
+        text: "esquinado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Esquinado» no se usa con ese sentido en español, y la frase describe a alguien que evita responder una pregunta directa."
+        hint_specific: "«Esquinado» no describe actitudes de este tipo. ¿Qué palabra conocida describe evitar una respuesta?"
+  - position: 3
+    sentence: "Diego mandaba mensajes cariñosos toda la semana, pero se ponía {{blank}} apenas alguien mencionaba una cita formal."
+    hint_general: "Se aleja o evita el tema justo cuando algo se vuelve más serio."
+    explanation: "Esquivo: quien se aleja o evita el tema cuando algo se vuelve más serio. «Cariñoso» describe justo lo contrario de lo que pasa con el tema de la cita formal, y «suspicaz» describe desconfianza, no evasión."
+    options:
+      - position: 1
+        text: "esquivo"
+        is_correct: true
+      - position: 2
+        text: "cariñoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cariñoso» describe justo lo que Diego era con los mensajes, y la frase distingue eso de su actitud ante una cita formal."
+        hint_specific: "La frase ya usa «cariñosos» para los mensajes. ¿Qué palabra distinta describe su reacción ante la cita formal?"
+      - position: 3
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe desconfianza hacia los demás, y la frase describe a alguien que evita un tema, no que sospeche de algo."
+        hint_specific: "Suspicaz es sospechar de alguien. ¿Diego sospecha de algo o evita un tema?"
+  - position: 4
+    sentence: "El nuevo compañero era {{blank}} en las reuniones: nunca daba su opinión clara sobre nada polémico."
+    hint_general: "Que evita comprometerse con una postura clara frente a un grupo."
+    explanation: "Esquivo: quien evita comprometerse con una postura clara. «Callado» solo describe hablar poco, sin implicar evasión de una postura, y «suspicaz» describe desconfianza, no evitar opinar."
+    options:
+      - position: 1
+        text: "esquivo"
+        is_correct: true
+      - position: 2
+        text: "callado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Callado» solo describe hablar poco, y la frase dice específicamente que evitaba dar una opinión clara sobre temas polémicos."
+        hint_specific: "Callado es hablar poco en general. ¿La frase habla de hablar poco o de evitar opinar sobre temas puntuales?"
+      - position: 3
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe desconfianza hacia los demás, y la frase describe a alguien que evita opinar, no que sospeche de sus compañeros."
+        hint_specific: "Suspicaz es sospechar de alguien. ¿El compañero desconfía o evita opinar?"
+  - position: 5
+    sentence: "Aunque coqueteaba sin parar en las fiestas, Julia se volvía {{blank}} en cuanto alguien le pedía su número."
+    hint_general: "Se escapa o evita el paso siguiente, aunque haya mostrado interés antes."
+    explanation: "Esquiva: se escapa o evita el paso siguiente. «Coqueta» describiría justo el comportamiento anterior en la fiesta, y «suspicaz» describe desconfianza, no evasión del contacto."
+    options:
+      - position: 1
+        text: "coqueta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Coqueta» describe el comportamiento que ya tenía en la fiesta, y la frase distingue eso de su reacción cuando le pedían el número."
+        hint_specific: "La frase ya dice que coqueteaba en la fiesta. ¿Qué palabra distinta describe su reacción al pedirle el número?"
+      - position: 2
+        text: "esquiva"
+        is_correct: true
+      - position: 3
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe desconfianza hacia los demás, y la frase describe a alguien que se escapa del contacto, no que sospeche de algo."
+        hint_specific: "Suspicaz es sospechar de alguien. ¿Julia sospecha de algo o evita el contacto?"
+  - position: 6
+    sentence: "En las entrevistas, el candidato se mostraba {{blank}} cada vez que le preguntaban por su salida de la empresa anterior."
+    hint_general: "Evita dar una respuesta clara sobre un tema incómodo."
+    explanation: "Esquivo: quien evita dar una respuesta clara sobre un tema incómodo. «Zafado» es coloquial y regional, y «suspicaz» describe desconfianza; ninguno nombra con precisión esa evasión."
+    options:
+      - position: 1
+        text: "esquivo"
+        is_correct: true
+      - position: 2
+        text: "zafado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Zafado» es coloquial y regional, y aquí se busca nombrar con precisión la forma en que el candidato evadía la pregunta."
+        hint_specific: "«Zafado» es muy regional e informal. ¿La frase busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe desconfianza hacia los demás, y la frase describe a alguien que evita una pregunta incómoda, no que sospeche de algo."
+        hint_specific: "Suspicaz es sospechar de alguien. ¿El candidato desconfía o evita la pregunta?"
+  - position: 7
+    sentence: "Su hija se ponía {{blank}} cada vez que le preguntaban por qué había dejado el equipo de baloncesto."
+    hint_general: "Evita dar una respuesta clara sobre algo que prefiere no explicar."
+    explanation: "Esquiva: evita dar una respuesta clara sobre algo que prefiere no explicar. «Orgullosa» describiría otra actitud, y «suspicaz» describe desconfianza; ninguna de las dos describe evitar la pregunta."
+    options:
+      - position: 1
+        text: "esquiva"
+        is_correct: true
+      - position: 2
+        text: "orgullosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Orgullosa» describiría otra actitud distinta, y la frase describe específicamente que evitaba responder por qué dejó el equipo."
+        hint_specific: "Orgullosa no implica evitar una pregunta. ¿La frase habla de orgullo o de evitar una respuesta?"
+      - position: 3
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe desconfianza hacia los demás, y la frase describe a alguien que evita una pregunta, no que sospeche de algo."
+        hint_specific: "Suspicaz es sospechar de alguien. ¿La hija desconfía de algo o evita una pregunta?"
+  - position: 8
+    sentence: "Nadie lograba que el nuevo socio firmara nada: se ponía {{blank}} cada vez que se hablaba de fechas concretas."
+    hint_general: "Evita comprometerse con algo concreto, aunque parezca interesado en general."
+    explanation: "Esquivo: quien evita comprometerse con algo concreto. «Generoso» describiría otra cualidad, sin relación con evitar firmar algo, y «suspicaz» describe desconfianza, no evasión de un compromiso."
+    options:
+      - position: 1
+        text: "esquivo"
+        is_correct: true
+      - position: 2
+        text: "generoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generoso» describe otra cualidad, y la frase habla específicamente de evitar comprometerse con fechas concretas, no de dar cosas a los demás."
+        hint_specific: "Generoso no tiene relación con firmar acuerdos. ¿La frase habla de generosidad o de evitar comprometerse?"
+      - position: 3
+        text: "suspicaz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suspicaz» describe desconfianza hacia los demás, y la frase describe a alguien que evita un compromiso, no que sospeche de sus socios."
+        hint_specific: "Suspicaz es sospechar de alguien. ¿El socio desconfía o evita comprometerse?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Dos citas y ninguna respuesta"
+    body: "Marta le contó a su amiga que Hugo la llevaba a cenar cada semana, pero nunca hablaba de lo que eran. «Es muy esquivo con los planes», le dijo, «me encanta salir con él, pero no sé si esto va a algún lado»."
+    before_phrase: "No se compromete con nada, aunque salgamos seguido."
+    after_phrase: "Es muy esquivo con los planes."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "El candidato que cambiaba de tema"
+    body: "«¿Por qué dejaste tu trabajo anterior?», preguntó la entrevistadora por segunda vez. El candidato volvió a desviar la respuesta. Al terminar, ella anotó: «Muy esquivo con esa pregunta puntual, revisar referencias»."
+    before_phrase: "Evita responder esa pregunta cada vez que se la hacen."
+    after_phrase: "Es muy esquivo con esa pregunta."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La pregunta sobre el baloncesto"
+    body: "Cada vez que alguien mencionaba el baloncesto, su hija cambiaba de tema y salía de la sala. Su padre lo notó: «Se pone esquiva con ese tema, mejor no insistir hasta que ella quiera hablar»."
+    before_phrase: "Evita ese tema cada vez que se lo mencionan."
+    after_phrase: "Se pone esquiva con ese tema."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

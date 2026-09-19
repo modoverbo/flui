@@ -1,0 +1,228 @@
+schema_version: 1
+slug: "afinidad"
+status: "draft"
+lemma: "afinidad"
+part_of_speech: "sustantivo"
+syllables: ["a", "fi", "ni", "dad"]
+stressed_syllable: 4
+ipa_latam: "[a.fi.niˈðad]"
+ipa_es: "[a.fi.niˈðad]"
+explanation: "Cuando dos personas coinciden en gustos o forma de ser y conectan sin esfuerzo."
+example_sentence: "Hablamos veinte minutos de música y noté una afinidad rara con alguien que acababa de conocer."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala cuando la conexión con alguien nace de gustos o forma de ser parecidos, no de simple cortesía."
+when_not_to_use: "No la uses para el trato amable de cualquier desconocido: eso es cordialidad, no afinidad."
+collocations:
+  - "tener afinidad con alguien"
+  - "una afinidad inmediata"
+  - "sentir afinidad"
+replaces:
+  - before: "Nos caímos superbién desde el principio"
+    after: "Hubo afinidad desde el principio"
+  - before: "Tenemos muchas cosas en común"
+    after: "Tenemos bastante afinidad"
+family: ["afín"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["alegre"]
+  funcion: ["conectar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "afición"
+    difference: "«Afición» es el gusto por una actividad, como el fútbol o la pintura; esta palabra describe la conexión que sientes con una persona."
+    memory_trick: "La afición es por algo que haces; la afinidad es por alguien que conoces."
+  - confused_with: "compatibilidad"
+    difference: "«Compatibilidad» suena a resultado de un test o de una ficha técnica; esta palabra describe lo que sientes al hablar con alguien, sin necesidad de ningún análisis."
+    memory_trick: "La compatibilidad se calcula; la afinidad se nota en la conversación."
+exercises:
+  - position: 1
+    sentence: "En la fiesta de fin de año, Bruno y una diseñadora de otro equipo hablaron una hora seguida: hubo {{blank}} entre los dos desde la primera broma."
+    hint_general: "Dos personas descubren que piensan y disfrutan cosas parecidas, sin ningún esfuerzo de por medio."
+    explanation: "Afinidad: conexión que nace cuando dos personas coinciden en gustos o forma de ser. «Afición» es el gusto por una actividad, y «cordialidad» es solo el trato amable que se tiene con cualquiera."
+    options:
+      - position: 1
+        text: "afinidad"
+        is_correct: true
+      - position: 2
+        text: "afición"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afición» es el gusto por una actividad puntual, como el cine o el tenis, y aquí lo que surgió fue una conexión entre dos personas."
+        hint_specific: "«Afición» habla de gustos por una actividad. ¿La frase describe un pasatiempo o una conexión entre dos personas?"
+      - position: 3
+        text: "cordialidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cordialidad» es el trato amable que se tiene con cualquiera, y aquí la charla fue mucho más allá de la simple educación."
+        hint_specific: "La cordialidad es solo buen trato. ¿Hablaron una hora por cortesía o por algo más?"
+  - position: 2
+    sentence: "En la boda de su prima, Renata y el acompañante de la novia conversaron toda la cena: notaron una {{blank}} instantánea al hablar de series."
+    hint_general: "Dos personas notan, sin planearlo, que coinciden en gustos casi idénticos."
+    explanation: "Afinidad: dos personas conectan porque coinciden en gustos, sin haberlo planeado. «Afinación» es ajustar un instrumento a su punto exacto, y «empatía» es entender lo que siente otra persona."
+    options:
+      - position: 1
+        text: "afinación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Afinación» es ajustar un instrumento o un motor a su punto exacto; entre dos personas que charlan no hay nada que afinar."
+        hint_specific: "«Afinación» se hace con una guitarra o un motor. ¿De qué habla la cena, de instrumentos o de personas?"
+      - position: 2
+        text: "afinidad"
+        is_correct: true
+      - position: 3
+        text: "empatía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Empatía» es entender lo que siente la otra persona; aquí lo que conecta a los dos es un gusto compartido por las series, no la lectura de una emoción."
+        hint_specific: "La empatía entiende sentimientos. ¿La cena describe sentimientos entendidos o gustos compartidos?"
+  - position: 3
+    sentence: "En la entrevista, el gerente notó cierta {{blank}} con la candidata: los dos habían estudiado la misma carrera en la misma ciudad."
+    hint_general: "Alguien nota que comparte una historia y una forma de ver las cosas con otra persona."
+    explanation: "Afinidad: conexión que nace de una historia compartida, no de un cálculo. «Compatibilidad» suena a resultado técnico, y «simpatía» es caer bien a cualquiera en general."
+    options:
+      - position: 1
+        text: "compatibilidad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Compatibilidad» suena a resultado de un test o de una ficha técnica, y aquí lo que nota el gerente es algo más cercano y humano, no un cálculo."
+        hint_specific: "«Compatibilidad» suena a informe o algoritmo. ¿El gerente hace un cálculo o nota algo espontáneo?"
+      - position: 2
+        text: "afinidad"
+        is_correct: true
+      - position: 3
+        text: "simpatía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Simpatía» es caer bien a cualquiera de entrada, y aquí lo que nota el gerente viene de una historia muy concreta en común, no de un trato agradable general."
+        hint_specific: "La simpatía es caer bien en general. ¿Aquí hay una historia concreta en común o solo buen trato?"
+  - position: 4
+    sentence: "En la reunión de exalumnos, Marcos y un compañero que casi no recordaba descubrieron una {{blank}} que ninguno de los dos esperaba: los dos habían vivido un año en el mismo país."
+    hint_general: "Dos personas descubren que coinciden en algo de fondo, más allá de la charla del momento."
+    explanation: "Afinidad: coincidencia de fondo entre dos personas, más allá del tono de una charla puntual. «Correlación» es un término de estadística, y «sintonía» describe solo que la charla fluye bien en el momento."
+    options:
+      - position: 1
+        text: "correlación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Correlación» es un término estadístico, propio de un informe con números, y aquí dos personas simplemente conectan al hablar de su historia."
+        hint_specific: "«Correlación» aparece en gráficos y estudios. ¿Esta escena habla de datos o de dos personas charlando?"
+      - position: 2
+        text: "sintonía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sintonía» describe que una charla puntual fluye bien en el momento, y aquí lo que descubren viene de algo más de fondo: una historia compartida."
+        hint_specific: "«Sintonía» es sentirse cómodo en una charla puntual. ¿Aquí hay algo de fondo o solo el tono de esa charla?"
+      - position: 3
+        text: "afinidad"
+        is_correct: true
+  - position: 5
+    sentence: "Desde el primer proyecto juntas, Valeria y su nueva jefa mostraron una {{blank}} que sorprendió al resto del equipo: pensaban casi igual sobre cómo resolver cada problema."
+    hint_general: "Dos personas piensan parecido sobre los problemas, casi desde el primer momento que trabajan juntas."
+    explanation: "Afinidad: pensar parecido sobre los problemas, casi desde el primer momento. «Compenetración» se construye trabajando juntas, y «cercanía» es un trato de confianza, no una forma de pensar parecida."
+    options:
+      - position: 1
+        text: "afinidad"
+        is_correct: true
+      - position: 2
+        text: "compenetración"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compenetración» describe que dos personas coordinan bien su trabajo en equipo, y aquí lo que sorprende es que piensan parecido desde antes de empezar a trabajar juntas."
+        hint_specific: "«Compenetración» se construye trabajando codo a codo. ¿Esto ocurrió antes o después de trabajar juntas?"
+      - position: 3
+        text: "cercanía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cercanía» habla de un trato próximo y de confianza, y aquí lo llamativo no es el trato sino que piensan igual sobre los problemas."
+        hint_specific: "«Cercanía» es un trato de confianza. ¿La frase habla del trato o de cómo piensan?"
+  - position: 6
+    sentence: "En la sala de espera del aeropuerto, Noelia y una desconocida hablaron dos horas sin parar: había {{blank}} entre ellas, más allá de compartir el mismo vuelo retrasado."
+    hint_general: "Dos personas, aunque acaban de conocerse, notan que hay algo más que las junta."
+    explanation: "Afinidad: algo más que las junta, más allá de compartir un mismo vuelo. «Conexión» puede ser solo un enlace práctico, y «coincidencia» es que algo pase al mismo tiempo sin relación de fondo."
+    options:
+      - position: 1
+        text: "conexión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conexión» puede ser solo un enlace práctico entre dos cosas, como el vuelo que las juntó, y la frase ya aclara que hay algo más que compartir ese vuelo."
+        hint_specific: "Una conexión de vuelo es solo un enlace práctico. ¿La frase habla de un enlace práctico o de algo más entre ellas?"
+      - position: 2
+        text: "coincidencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Coincidencia» es que dos cosas pasen al mismo tiempo sin ninguna relación de fondo, y la frase dice justo lo contrario: hay algo más entre ellas."
+        hint_specific: "Una coincidencia no implica nada de fondo entre dos personas. ¿Hay algo más entre ellas o fue puro azar?"
+      - position: 3
+        text: "afinidad"
+        is_correct: true
+  - position: 7
+    sentence: "En el club de lectura, Hugo notó {{blank}} con la persona nueva apenas comentaron el primer libro: los dos subrayaban las mismas frases."
+    hint_general: "Dos personas notan que piensan y sienten parecido, desde la primera conversación."
+    explanation: "Afinidad: pensar y sentir parecido desde la primera conversación. «Vínculo» es un lazo que se construye con el tiempo, y «entendimiento» es ponerse de acuerdo sobre algo puntual."
+    options:
+      - position: 1
+        text: "vínculo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vínculo» describe un lazo que se construye con el tiempo, y aquí lo llamativo es lo rápido que conectaron, desde el primer libro."
+        hint_specific: "Un vínculo suele tardar en formarse. ¿Aquí la conexión fue rápida o llevó tiempo?"
+      - position: 2
+        text: "afinidad"
+        is_correct: true
+      - position: 3
+        text: "entendimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Entendimiento» habla de ponerse de acuerdo sobre algo puntual, y aquí lo que se nota es que tienen gustos parecidos, no que resolvieron un desacuerdo."
+        hint_specific: "El entendimiento resuelve diferencias de opinión. ¿Aquí hubo un desacuerdo que resolver?"
+  - position: 8
+    sentence: "Clara solo fue a buscar un café, pero con la barista se armó una {{blank}} rara: las dos citaban la misma serie sin ponerse de acuerdo antes."
+    hint_general: "Dos personas recién conocidas notan que coinciden en gustos muy concretos."
+    explanation: "Afinidad: coincidir en gustos muy concretos entre dos personas recién conocidas. «Amistad» pide más de un encuentro, y «complicidad» se nota en gestos y bromas compartidas después de conocerse."
+    options:
+      - position: 1
+        text: "amistad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amistad» es un lazo que se construye después de verse varias veces, y la frase describe lo que pasó en una sola visita a la cafetería."
+        hint_specific: "Una amistad pide más de un encuentro. ¿Cuántas veces se vieron Clara y la barista en la frase?"
+      - position: 2
+        text: "afinidad"
+        is_correct: true
+      - position: 3
+        text: "complicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Complicidad» se nota en gestos y bromas compartidas después de conocerse un poco, y aquí lo que sorprende es que coinciden en gustos desde la primera charla."
+        hint_specific: "La complicidad se nota en gestos y bromas repetidas. ¿Aquí ya se conocían de antes o fue la primera charla?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La cola del café"
+    body: "Sara esperaba su pedido cuando el hombre de adelante hizo un comentario sobre el libro que llevaba en la mano. Terminaron hablando quince minutos sobre el mismo autor. «Qué rara afinidad, no conozco a nadie más que lo haya leído», le dijo Sara antes de despedirse."
+    before_phrase: "Qué casualidad que también lo leíste."
+    after_phrase: "Qué rara afinidad."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El nuevo del equipo"
+    body: "Iván llevaba dos semanas en el equipo cuando notó que él y su compañera de mesa resolvían los problemas casi de la misma forma. «Tenemos bastante afinidad para esto», le dijo ella un viernes, mientras cerraban un informe juntos antes de lo previsto."
+    before_phrase: "Pensamos parecido para estas cosas."
+    after_phrase: "Tenemos bastante afinidad para esto."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cena con los suegros"
+    body: "Camila llegó nerviosa a la primera cena con la familia de su pareja. Para su sorpresa, con la madre de él terminó hablando de plantas durante una hora. «Con tu mamá hubo afinidad enseguida», le contó después a su pareja, todavía sorprendida."
+    before_phrase: "Con tu mamá nos llevamos superbién desde ya."
+    after_phrase: "Con tu mamá hubo afinidad enseguida."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

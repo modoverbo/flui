@@ -1,0 +1,228 @@
+schema_version: 1
+slug: "instruir"
+status: "draft"
+lemma: "instruir"
+part_of_speech: "verbo"
+syllables: ["ins", "tru", "ir"]
+stressed_syllable: 3
+ipa_latam: "[ins.truˈir]"
+ipa_es: "[ins.truˈir]"
+explanation: "Explicarle a alguien, paso a paso y de forma clara, qué hacer para que actúe solo después."
+example_sentence: "Antes de dejarla sola en la caja, alguien tenía que instruir a la nueva vendedora sobre cómo cerrar el turno."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Suena natural en contextos de trabajo o técnicos, cuando alguien explica los pasos concretos de un proceso nuevo."
+when_not_to_use: "No la uses en un ambiente muy informal entre amigos: ahí «explicar» o «mostrar» suenan más naturales que «instruir»."
+collocations:
+  - "instruir sobre un proceso nuevo"
+  - "instruir a los recién llegados"
+replaces:
+  - before: "Alguien me tiene que explicar bien cómo se hace esto, paso a paso"
+    after: "Alguien me tiene que instruir sobre cómo se hace esto"
+  - before: "Le expliqué todo lo que necesitaba saber antes de dejarlo solo"
+    after: "Lo instruí antes de dejarlo solo"
+family: ["instrucción", "instructor", "instructivo"]
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin: ["explicar"]
+  funcion: ["formar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "instituir"
+    difference: "«Instituir» es crear o establecer algo nuevo, como una norma o una costumbre; «instruir» es explicarle algo a una persona para que sepa hacerlo."
+    memory_trick: "Instituir crea reglas; instruir forma personas."
+  - confused_with: "aleccionar"
+    difference: "«Aleccionar» es corregir a alguien con un tono de reproche, casi regañándolo; «instruir» es explicar los pasos de algo, sin juzgar a la persona."
+exercises:
+  - position: 1
+    sentence: "El gerente nuevo empezó por {{blank}} a todo el equipo sobre el protocolo de emergencias, antes de repartir el trabajo."
+    hint_general: "Piensa en la palabra para explicarle reglas a un grupo con calma, sin regañar a nadie ni crear nada nuevo."
+    explanation: "Instruir: explicarle reglas a un grupo con calma. «Instituir» es crear algo nuevo, como una norma, y «aleccionar» suena a corregir con tono de reproche."
+    options:
+      - position: 1
+        text: "instituir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Instituir» es crear o establecer algo nuevo, como una norma; no se instituye a un equipo de personas."
+        hint_specific: "Instituir crea algo que antes no existía. ¿El gerente crea una norma o explica una ya existente?"
+      - position: 2
+        text: "aleccionar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aleccionar» suena a corregir con un tono de reproche, y aquí el gerente solo explica un protocolo nuevo, sin regañar a nadie."
+        hint_specific: "Aleccionar tiene un tono de regaño. ¿El gerente corrige a alguien o explica algo con calma?"
+      - position: 3
+        text: "instruir"
+        is_correct: true
+  - position: 2
+    sentence: "Mi abuela me {{blank}} sobre la receta de los tamales, en secreto y paso a paso, un domingo tras otro."
+    hint_general: "Busca el verbo para enseñarle algo con cariño y en casa, no como un curso formal."
+    explanation: "Instruyó: le enseñó la receta con cariño, en casa. «Capacitó» suena a un curso técnico o corporativo, y «aconsejó» es dar una opinión suelta, no explicar paso a paso."
+    options:
+      - position: 1
+        text: "capacitó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Capacitar» suena a un curso técnico o corporativo, y aquí es la abuela enseñando una receta familiar en su cocina."
+        hint_specific: "Capacitar suena a un curso formal. ¿La abuela dicta un curso o comparte su receta en casa?"
+      - position: 2
+        text: "instruyó"
+        is_correct: true
+      - position: 3
+        text: "aconsejó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aconsejar» es dar una opinión suelta; la abuela en cambio pasó domingos enteros explicando la receta paso a paso."
+        hint_specific: "Aconsejar es una opinión puntual. ¿La abuela dio un consejo suelto o explicó algo paso a paso durante semanas?"
+  - position: 3
+    sentence: "Antes del maratón, Iván quiso {{blank}} a su amigo sobre cómo distribuir el ritmo en cada tramo."
+    hint_general: "La palabra describe explicarle una técnica a alguien antes de que la use, no acompañarlo mientras corre ni avisarle de un peligro."
+    explanation: "Instruir: explicarle una técnica antes de usarla. «Guiar» es acompañar en el momento, y «advertir» es avisar de un peligro, no enseñar una técnica."
+    options:
+      - position: 1
+        text: "guiar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Guiar» es acompañar el camino en el momento, y aquí Iván explica algo antes de la carrera, no lo acompaña mientras corre."
+        hint_specific: "Guiar es acompañar en el momento mismo. ¿Iván habla antes de correr o mientras corren juntos?"
+      - position: 2
+        text: "advertir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Advertir» es avisar de un peligro; aquí Iván no avisa de un riesgo, le explica una técnica para correr mejor."
+        hint_specific: "Advertir avisa de un riesgo. ¿Iván señala un peligro o comparte una técnica?"
+      - position: 3
+        text: "instruir"
+        is_correct: true
+  - position: 4
+    sentence: "Antes de la prueba práctica, el reclutador {{blank}} a los candidatos sobre las reglas del ejercicio."
+    hint_general: "Busca el verbo para explicar reglas con calma, sin tono de regaño y sin medir todavía a nadie."
+    explanation: "Instruyó: explicó las reglas con calma, antes de medir nada. «Sermoneó» suena a un regaño con moraleja, y «evaluó» es medir si alguien cumple, no explicarle qué hacer."
+    options:
+      - position: 1
+        text: "instruyó"
+        is_correct: true
+      - position: 2
+        text: "sermoneó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sermonear» es hablar con tono de regaño o moraleja, y el reclutador solo explicó las reglas con calma, sin señalar a nadie."
+        hint_specific: "Sermonear suena a un regaño con moraleja. ¿El reclutador regaña a alguien o explica reglas con calma?"
+      - position: 3
+        text: "evaluó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Evaluar» es medir si alguien cumple con algo; aquí el reclutador explicaba las reglas antes de empezar, no estaba midiendo nada todavía."
+        hint_specific: "Evaluar es medir un resultado. ¿El reclutador mide algo o explica las reglas antes de empezar?"
+  - position: 5
+    sentence: "El coordinador del refugio {{blank}} a los nuevos voluntarios en el manejo de los animales antes de dejarlos solos."
+    hint_general: "Piensa en el verbo para explicarle algo a una persona, paso a paso, no en entrenar a un animal."
+    explanation: "Instruyó: explicó a los voluntarios, paso a paso, cómo actuar. «Adiestró» se usa sobre todo para entrenar animales, y «orientó» es dar una indicación general, no pasos concretos."
+    options:
+      - position: 1
+        text: "adiestró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Adiestrar» se usa sobre todo para entrenar animales; aquí se trata de personas, a quienes se les explica, no se les adiestra."
+        hint_specific: "Adiestrar se usa casi siempre con animales. ¿A quién se prepara aquí, a personas o a los animales del refugio?"
+      - position: 2
+        text: "orientó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Orientar» es dar una indicación general; aquí el coordinador dio pasos concretos sobre cómo manejar a los animales, no solo una indicación."
+        hint_specific: "Orientar da una indicación general. ¿El coordinador dio pasos concretos o solo una idea general?"
+      - position: 3
+        text: "instruyó"
+        is_correct: true
+  - position: 6
+    sentence: "Antes de prestarme el auto, mi tío me {{blank}} durante dos fines de semana para que aprendiera a manejar en la ciudad."
+    hint_general: "Busca el verbo para pasar tiempo explicándole algo a alguien, no solo mirarlo o decirle algo una sola vez."
+    explanation: "Instruyó: dedicó dos fines de semana a explicarme. «Vigiló» es solo observar sin intervenir, y «avisó» es un aviso puntual, no una explicación sostenida."
+    options:
+      - position: 1
+        text: "vigiló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vigilar» es solo observar sin intervenir; mi tío no se limitó a mirar, me explicó paso a paso qué hacer."
+        hint_specific: "Vigilar es observar sin intervenir. ¿Mi tío solo miraba o me explicaba qué hacer?"
+      - position: 2
+        text: "instruyó"
+        is_correct: true
+      - position: 3
+        text: "avisó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Avisar» es dar un aviso puntual, y aquí mi tío dedicó dos fines de semana enteros a explicarme, no solo una advertencia."
+        hint_specific: "Avisar es un aviso puntual, de una sola vez. ¿Esto duró un momento o dos fines de semana completos?"
+  - position: 7
+    sentence: "Antes de dejarla usar la cámara sola, Bruno {{blank}} a su hermana menor sobre el uso de cada botón."
+    hint_general: "La palabra describe explicar algo con calma y en detalle, no enseñarlo de pasada ni avisar de un riesgo."
+    explanation: "Instruyó: explicó en detalle, botón por botón. «Mostró» es enseñar algo de pasada, y «previno» es avisar de un riesgo, no explicar un uso."
+    options:
+      - position: 1
+        text: "mostró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mostrar» es enseñar algo de pasada, una sola vez; Bruno en cambio se tomó el tiempo de explicar cada botón, uno por uno."
+        hint_specific: "Mostrar suele ser algo rápido, de pasada. ¿Bruno enseñó rápido o se tomó su tiempo con cada botón?"
+      - position: 2
+        text: "previno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prevenir» es avisar de un riesgo; Bruno no advertía de ningún peligro, explicaba para qué servía cada botón."
+        hint_specific: "Prevenir avisa de un peligro. ¿Bruno señala un riesgo o explica para qué sirve cada botón?"
+      - position: 3
+        text: "instruyó"
+        is_correct: true
+  - position: 8
+    sentence: "En la primera reunión del equipo, la coordinadora {{blank}} a todos sobre cómo se repartía el trabajo semanal."
+    hint_general: "Piensa en el verbo para explicar algo por primera vez a un grupo, sin dar una opinión suelta ni señalar un problema."
+    explanation: "Instruyó: explicó por primera vez cómo funcionaba el reparto. «Aconsejó» es dar una opinión suelta, y «advirtió» es avisar de un riesgo, no presentar algo nuevo."
+    options:
+      - position: 1
+        text: "instruyó"
+        is_correct: true
+      - position: 2
+        text: "aconsejó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aconsejar» es dar una opinión suelta y puntual; la coordinadora en cambio explicó de forma completa cómo funcionaba el reparto del trabajo."
+        hint_specific: "Aconsejar es una opinión puntual. ¿La coordinadora dio una opinión suelta o una explicación completa?"
+      - position: 3
+        text: "advirtió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Advertir» es avisar de un riesgo; en esa primera reunión no había ningún problema que señalar, solo información nueva que explicar."
+        hint_specific: "Advertir avisa de un riesgo. ¿En la primera reunión había un problema que señalar o algo nuevo que explicar?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El protocolo nuevo"
+    body: "Antes de abrir el turno, el gerente reunió a todo el equipo. «Nadie sale a la sala sin saber qué hacer si suena la alarma», dijo, y empezó a instruirlos sobre el protocolo paso a paso. Cuando terminó, hasta la persona más nueva del equipo repitió los pasos sin dudar."
+    before_phrase: "Le expliqué a todos qué hacer, paso a paso."
+    after_phrase: "Instruí a todos sobre el protocolo, paso a paso."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La receta de los domingos"
+    body: "Cada domingo, mi abuela me llamaba a la cocina antes que a nadie más. «Esto no se aprende mirando, se aprende con las manos», decía mientras me instruía sobre la masa de los tamales. Nunca escribió la receta en papel: prefirió pasármela así, un domingo tras otro."
+    before_phrase: "Me enseñó la receta en secreto, paso a paso."
+    after_phrase: "Me instruyó en la receta en secreto, paso a paso."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Antes de la carrera"
+    body: "Iván llevaba tres maratones más que su amigo, así que antes de la carrera se sentaron con un mapa del recorrido. Le explicó cada subida, dónde bajar el ritmo y cuándo guardar fuerza para el final. «Con esto ya sabes por dónde vas», le dijo al terminar de instruirlo. Su amigo cruzó la línea de llegada sin quedarse sin energía a mitad de camino."
+    before_phrase: "Quiso explicarle todo antes de la carrera."
+    after_phrase: "Quiso instruirlo antes de la carrera."
+provenance:
+  generator: "hand-authored for content/words (docencia theme)"
+  gate: null
+  checked_on: "2026-09-18"

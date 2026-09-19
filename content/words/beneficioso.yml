@@ -1,0 +1,241 @@
+schema_version: 1
+slug: "beneficioso"
+status: "draft"
+lemma: "beneficioso"
+part_of_speech: "adjetivo"
+syllables:
+  - "be"
+  - "ne"
+  - "fi"
+  - "cio"
+  - "so"
+stressed_syllable: 4
+ipa_latam: "[be.ne.fiˈsjo.so]"
+ipa_es: "[be.ne.fiˈθjo.so]"
+explanation: "Que trae una ventaja real y concreta a quien lo recibe, más allá de parecer bueno o quedar bonito."
+example_sentence: "El nuevo horario resultó beneficioso para todo el equipo, no solo para los jefes."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para algo que deja una ventaja real y medible, en dinero, tiempo o comodidad."
+when_not_to_use: "No la uses solo porque algo suena positivo; tiene que haber una ventaja concreta detrás."
+collocations:
+  - "acuerdo beneficioso"
+  - "cambio beneficioso"
+  - "trato beneficioso"
+  - "resultado beneficioso"
+replaces:
+  - before: "Le conviene"
+    after: "Le resulta beneficioso"
+  - before: "Es bueno para los dos"
+    after: "Es beneficioso para los dos"
+  - before: "Le hace bien"
+    after: "Le resulta beneficioso"
+family:
+  - "beneficio"
+  - "beneficiar"
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin:
+    - "conviene"
+    - "es bueno"
+  funcion:
+    - "valorar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "rentable"
+    difference: "«Rentable» mide específicamente si algo deja más dinero del que cuesta; esta palabra dice que trae una ventaja real, que puede no ser económica: tiempo, comodidad o una mejor relación con el cliente."
+    memory_trick: "Rentable se mide en dinero; beneficioso se mide en ventajas."
+  - confused_with: "beneficiario"
+    difference: "«Beneficiario» nombra a la persona que recibe algo, un sustantivo o adjetivo para personas; esta palabra describe la ventaja misma que trae una cosa o un cambio."
+    memory_trick: "El beneficiario recibe; lo beneficioso es lo que se recibe."
+exercises:
+  - position: 1
+    sentence: "Marcela le explicó al proveedor que extender el contrato un año más sería {{blank}} para las dos partes, no solo para su empresa."
+    hint_general: "La ventaja no es solo para un lado: alcanza a ambas partes."
+    explanation: "Beneficioso: la ventaja alcanza a las dos partes, no solo a una. «Rentable» se mediría solo en dinero, y «conveniente» hablaría de encajar con el momento, no de dejar una ventaja real."
+    options:
+      - position: 1
+        text: "rentable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rentable» diría que la extensión deja más dinero del que cuesta, y Marcela habla de una ventaja más amplia, no solo de números."
+        hint_specific: "«Rentable» se mide en dinero. ¿Marcela habla solo de plata o de una ventaja más amplia?"
+      - position: 2
+        text: "beneficioso"
+        is_correct: true
+      - position: 3
+        text: "conveniente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conveniente» diría que la extensión encaja bien con este momento, sin decir que además deje una ventaja real para las dos partes."
+        hint_specific: "«Conveniente» habla de encajar con el momento, no de dejar una ventaja real. ¿La frase habla del momento o de la ventaja?"
+  - position: 2
+    sentence: "Cuando Diego leyó el contrato, notó que la cláusula era {{blank}} sobre todo para el cliente, no tanto para la empresa."
+    hint_general: "La cláusula trae una ventaja clara para una de las partes."
+    explanation: "Beneficiosa: la cláusula le da una ventaja clara al cliente. «Beneficiaria» describiría a quien recibe algo, no a lo que lo entrega, y «positiva» solo diría que suena bien, sin decir a quién favorece."
+    options:
+      - position: 1
+        text: "beneficiaria"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Beneficiaria» nombra a quien recibe algo, y una cláusula no recibe nada: es ella la que trae la ventaja al cliente."
+        hint_specific: "«Beneficiaria» describe a quien recibe algo, no a lo que da algo. ¿La cláusula recibe una ventaja o la entrega?"
+      - position: 2
+        text: "beneficiosa"
+        is_correct: true
+      - position: 3
+        text: "positiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Positiva» diría que la cláusula suena bien en general, sin decir con precisión a quién le da la ventaja."
+        hint_specific: "«Positiva» es un juicio general, sin decir a quién le conviene específicamente. ¿La frase dice a quién le conviene o solo que suena bien?"
+  - position: 3
+    sentence: "Andrea armó un programa de referidos {{blank}} para el cliente que recomienda y para el que llega nuevo, no solo para la empresa."
+    hint_general: "El programa deja una ventaja real para los dos clientes, no solo para la empresa."
+    explanation: "Beneficioso: deja una ventaja real para los dos clientes, no solo para la empresa. «Genial» es un elogio vago e informal, y «oportuno» hablaría del momento, no de la ventaja."
+    options:
+      - position: 1
+        text: "genial"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Genial» es un elogio informal y vago, y aquí Andrea explica con precisión a quién le conviene el programa, no solo que le parece genial."
+        hint_specific: "«Genial» es un elogio vago e informal. ¿La frase explica a quién conviene o solo expresa entusiasmo?"
+      - position: 2
+        text: "beneficioso"
+        is_correct: true
+      - position: 3
+        text: "oportuno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Oportuno» diría que el momento para lanzar el programa es el correcto, sin decir que además deje una ventaja real a los clientes."
+        hint_specific: "«Oportuno» habla del momento, no de la ventaja que deja. ¿La frase habla de cuándo o de qué gana cada cliente?"
+  - position: 4
+    sentence: "El nuevo turno resultó {{blank}} para el equipo de la tarde, que por fin pudo coincidir con sus hijos después del colegio."
+    hint_general: "El cambio trajo una ventaja concreta y medible para ese equipo."
+    explanation: "Beneficioso: la ventaja es el tiempo con los hijos, algo concreto y real. «Buenísimo» es un elogio vago, y «rentable» se mediría solo en dinero, no en tiempo."
+    options:
+      - position: 1
+        text: "buenísimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Buenísimo» es un elogio vago y coloquial, y aquí se explica con precisión qué ganó el equipo con el cambio de turno."
+        hint_specific: "«Buenísimo» es un elogio vago e informal. ¿La frase explica qué ganó el equipo o solo lo elogia?"
+      - position: 2
+        text: "beneficioso"
+        is_correct: true
+      - position: 3
+        text: "rentable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rentable» hablaría de si el cambio deja más dinero a la empresa, y aquí la ventaja es el tiempo con los hijos, no una cifra."
+        hint_specific: "«Rentable» se mide en dinero. ¿La ventaja aquí es dinero o tiempo con los hijos?"
+  - position: 5
+    sentence: "La oferta de cambio de plan fue {{blank}} para los clientes antiguos, que pagaron lo mismo por el doble de almacenamiento."
+    hint_general: "Los clientes antiguos ganaron algo concreto: el doble por el mismo precio."
+    explanation: "Beneficiosa: los clientes ganaron el doble por el mismo precio. «Conveniente» hablaría del momento, y «beneficiaria» describiría a quien recibe algo, no a la oferta que lo entrega."
+    options:
+      - position: 1
+        text: "conveniente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conveniente» diría que el momento del cambio les venía bien, sin decir que además hayan ganado el doble de almacenamiento."
+        hint_specific: "«Conveniente» habla del momento, no de lo que ganaron. ¿La frase habla de cuándo o de cuánto ganaron?"
+      - position: 2
+        text: "beneficiosa"
+        is_correct: true
+      - position: 3
+        text: "beneficiaria"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Beneficiaria» nombra a quien recibe algo, y aquí la oferta es la que da la ventaja, no la que la recibe."
+        hint_specific: "«Beneficiaria» describe a quien recibe algo, no a lo que entrega algo. ¿La oferta recibe la ventaja o la entrega?"
+  - position: 6
+    sentence: "La alianza entre las dos empresas terminó siendo {{blank}}: cada una llegó a un público que antes no tenía."
+    hint_general: "Cada empresa ganó algo concreto: un público nuevo."
+    explanation: "Beneficiosa: cada empresa ganó un público que antes no tenía. «Productiva» hablaría de generar resultados en general, y «de diez» es una expresión demasiado coloquial para este contexto."
+    options:
+      - position: 1
+        text: "productiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Productiva» diría que la alianza generó mucho trabajo o resultados, sin decir que cada empresa haya ganado un público nuevo."
+        hint_specific: "«Productiva» habla de generar resultados, no de a quién le llegó una ventaja concreta. ¿La frase habla de trabajo o de un público nuevo?"
+      - position: 2
+        text: "beneficiosa"
+        is_correct: true
+      - position: 3
+        text: "de diez"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De diez» es una expresión coloquial de elogio, y aquí se explica con precisión qué ganó cada empresa."
+        hint_specific: "«De diez» es un elogio informal. ¿La frase explica qué ganó cada empresa o solo la elogia?"
+  - position: 7
+    sentence: "Renegociar las cuotas resultó {{blank}} para el cliente, que terminó pagando lo mismo pero en más tiempo y sin recargos."
+    hint_general: "El cliente terminó con una ventaja concreta: más tiempo y sin recargos."
+    explanation: "Beneficioso: el cliente ganó más tiempo y sin recargos. «Positivo» es un juicio general sin detalle, y «rentable» se mediría en el dinero que gana la empresa, no el cliente."
+    options:
+      - position: 1
+        text: "positivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Positivo» diría que el cambio suena bien en general, sin precisar que el cliente ganó más tiempo y ningún recargo."
+        hint_specific: "«Positivo» es un juicio general. ¿La frase da un detalle concreto o solo dice que suena bien?"
+      - position: 2
+        text: "beneficioso"
+        is_correct: true
+      - position: 3
+        text: "rentable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rentable» hablaría de si la empresa gana más dinero con el cambio, y aquí la ventaja es para el cliente, no para la empresa."
+        hint_specific: "«Rentable» se mide en dinero de quien vende. ¿La frase habla de la empresa o del cliente?"
+  - position: 8
+    sentence: "El nuevo acuerdo de distribución fue {{blank}} para ambas marcas, que duplicaron sus ventas en la misma temporada."
+    hint_general: "Ambas marcas ganaron algo medible: duplicaron sus ventas."
+    explanation: "Beneficioso: ambas marcas duplicaron sus ventas, una ventaja medible. «Oportuno» hablaría del momento, y «genial» es un elogio vago sin ese dato."
+    options:
+      - position: 1
+        text: "oportuno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Oportuno» diría que el acuerdo llegó en el momento justo, sin decir que además haya duplicado las ventas de ambas marcas."
+        hint_specific: "«Oportuno» habla del momento, no del resultado medible. ¿La frase habla de cuándo llegó o de cuánto vendieron?"
+      - position: 2
+        text: "beneficioso"
+        is_correct: true
+      - position: 3
+        text: "genial"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Genial» es un elogio informal y vago, y aquí se explica con un dato concreto lo que ganó cada marca."
+        hint_specific: "«Genial» es un elogio vago. ¿La frase da un dato concreto o solo expresa entusiasmo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El trato que ganó a los dos"
+    body: "Cuando el proveedor pidió más plazo para pagar, Lorena dudó. Después de revisar los números, entendió que también le convenía a ella: podía pedir un volumen mayor a cambio. «Este cambio es beneficioso para los dos», le dijo por teléfono. El proveedor aceptó enseguida."
+    before_phrase: "Esto nos conviene a los dos."
+    after_phrase: "Esto es beneficioso para los dos."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El plan que armó Tomás"
+    body: "En la reunión de amigos, Tomás contó que había cambiado de gimnasio. «Lo mejor es que el plan familiar es beneficioso: pagamos lo mismo de antes, pero ahora entra también mi hermano», dijo mientras servía café. Sus amigos anotaron el dato."
+    before_phrase: "Nos conviene mucho el plan nuevo."
+    after_phrase: "El plan familiar es beneficioso."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La decisión que alivianó la semana"
+    body: "Cuando decidieron turnarse para llevar a los niños al colegio, la mamá de Rocío dudaba si de verdad iba a funcionar. Después de dos semanas, lo confirmó: «Este cambio fue beneficioso para todos, hasta los niños duermen más». La propuesta se quedó para siempre."
+    before_phrase: "Este cambio nos vino bien a todos."
+    after_phrase: "Este cambio fue beneficioso para todos."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

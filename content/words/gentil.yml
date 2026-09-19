@@ -1,0 +1,230 @@
+schema_version: 1
+slug: "gentil"
+status: "draft"
+lemma: "gentil"
+part_of_speech: "adjetivo"
+syllables: ["gen", "til"]
+stressed_syllable: 2
+ipa_latam: "[xenˈtil]"
+ipa_es: "[xenˈtil]"
+explanation: "Que trata a los demás de manera amable, casi sin esfuerzo."
+example_sentence: "Fue muy gentil de tu parte esperarme, aunque llegara tarde."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien para elogiar un gesto concreto: abrir la puerta, ceder el paso, ayudar sin que se lo pidan."
+when_not_to_use: "No la uses para cariño profundo entre personas cercanas, ni para quien solo es cortés por obligación o miedo."
+collocations:
+  - "un gesto gentil"
+  - "ser gentil con alguien"
+  - "de forma gentil"
+replaces:
+  - before: "Qué bueno de tu parte"
+    after: "Qué gentil de tu parte"
+  - before: "Fue muy atento conmigo, casi sin que se lo pidiera"
+    after: "Fue muy gentil conmigo"
+  - before: "Trata a todo el mundo con buenos modales"
+    after: "Es gentil con todo el mundo"
+family: ["gentileza"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["qué bueno de tu parte", "es buena gente"]
+  funcion: ["elogiar", "agradecer"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "gentío"
+    difference: "«Gentío» es una multitud de personas reunidas; la otra palabra describe el trato amable de alguien, no una cantidad de gente."
+    memory_trick: "El gentío se cuenta; el trato amable se nota."
+  - confused_with: "servil"
+    difference: "«Servil» es una cortesía forzada para quedar bien con quien manda o tiene poder; la otra palabra es un trato amable genuino, sin ese interés."
+    memory_trick: "Lo servil busca algo a cambio; el trato amable genuino no busca nada."
+exercises:
+  - position: 1
+    sentence: "Valeria no conocía a nadie en el edificio nuevo, pero un vecino le sostuvo la puerta y le preguntó si necesitaba ayuda con las cajas: fue tan {{blank}} que se sintió bienvenida desde el primer día."
+    hint_general: "Habla de un trato amable y de buenos modales que hace sentir bien a quien lo recibe."
+    explanation: "Gentil: trata a los demás con amabilidad y buenos modales, sin esfuerzo. «Gentío» nombra una multitud de personas, y «servicial» se queda en la ayuda con las cajas, sin nombrar el trato cálido que sintió Valeria."
+    options:
+      - position: 1
+        text: "gentío"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Gentío» es una multitud de personas reunidas, y aquí no hay ninguna multitud: hay un solo vecino tratando bien a Valeria."
+        hint_specific: "«Gentío» describe una cantidad de gente. ¿Cuántas personas ayudaron a Valeria?"
+      - position: 2
+        text: "gentil"
+        is_correct: true
+      - position: 3
+        text: "servicial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servicial» describe a quien ayuda con encargos concretos, y la frase también destaca el trato amable con que la recibió, no solo la ayuda con las cajas."
+        hint_specific: "«Servicial» se centra en la ayuda práctica. ¿La frase solo habla de ayuda o también del trato?"
+  - position: 2
+    sentence: "En la cena, Joaquín le cedió su silla a la señora que acababa de llegar sin que nadie se lo pidiera: qué {{blank}}, pensaron todos."
+    hint_general: "Se usa para un gesto de buenos modales que nadie tuvo que pedir."
+    explanation: "Gentil: un gesto de buenos modales que nadie tuvo que pedir. «Educadito» es un diminutivo coloquial que no encaja con este elogio, y «generoso» supondría dar algo de valor material, no ceder una silla."
+    options:
+      - position: 1
+        text: "educadito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Educadito» es coloquial y suena a diminutivo condescendiente, un tono raro para elogiar un gesto tan natural como ceder la silla."
+        hint_specific: "«Educadito» suena a diminutivo, casi burlón. ¿Ese es el tono de este elogio?"
+      - position: 2
+        text: "gentil"
+        is_correct: true
+      - position: 3
+        text: "generoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generoso» implicaría dar algo de valor o repartir sin esperar nada, y ceder una silla es un gesto de trato, no una entrega material."
+        hint_specific: "«Generoso» habla de dar algo valioso. ¿Ceder una silla es dar algo material?"
+  - position: 3
+    sentence: "Catalina trataba a todos por igual, desde el mensajero hasta la directora, siempre con el mismo tono {{blank}}."
+    hint_general: "Describe un trato de buenos modales que se mantiene igual con cualquiera."
+    explanation: "Gentil: un trato de buenos modales que se mantiene igual con cualquiera. «Gentío» nombra una cantidad de gente, y «servil» sería un trato sumiso según el poder de cada quien, justo lo contrario de tratar igual al mensajero y a la directora."
+    options:
+      - position: 1
+        text: "gentío"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Gentío» nombra a una multitud de personas, y la frase describe cómo trata Catalina a cada una, no una cantidad de gente."
+        hint_specific: "«Gentío» es una palabra para grupos de gente. ¿La frase mide una cantidad o describe un trato?"
+      - position: 2
+        text: "servil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servil» sería un trato sumiso hacia quien tiene poder, y la frase dice justo lo contrario: Catalina trata igual al mensajero y a la directora."
+        hint_specific: "«Servil» cambia según el poder de cada quien. ¿Catalina trata distinto según el cargo?"
+      - position: 3
+        text: "gentil"
+        is_correct: true
+  - position: 4
+    sentence: "Simón ayudó a la señora a subir las bolsas al autobús y bajó a media cuadra antes solo por acompañarla: fue de una manera tan {{blank}} que ella le agradeció dos veces."
+    hint_general: "Se refiere a un trato amable y de buenos modales en un gesto pequeño."
+    explanation: "Gentil: un trato amable y de buenos modales en un gesto pequeño. «Servicial» se queda en la ayuda con las bolsas, y «generoso» supondría dar algo de valor material, no acompañar a alguien."
+    options:
+      - position: 1
+        text: "gentil"
+        is_correct: true
+      - position: 2
+        text: "servicial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servicial» describiría solo la ayuda con las bolsas, y la frase agrega algo más: el trato cálido de acompañarla sin que hiciera falta."
+        hint_specific: "«Servicial» se queda en la ayuda concreta. ¿Qué más hizo Simón, además de ayudar?"
+      - position: 3
+        text: "generoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generoso» sugeriría que dio algo de valor, y aquí lo que se destaca es el trato y el gesto de acompañarla, no una entrega material."
+        hint_specific: "«Generoso» habla de dar algo valioso. ¿Simón dio algo material aquí?"
+  - position: 5
+    sentence: "Elena le devolvió el libro a la vecina con una nota de agradecimiento, un gesto tan {{blank}} que la vecina se lo comentó a toda la cuadra."
+    hint_general: "Habla de un detalle de buenos modales que no todos se toman la molestia de hacer."
+    explanation: "Gentil: un detalle de buenos modales que no todos se toman la molestia de hacer. «Educadito» suena a diminutivo un poco burlón, y «servil» buscaría algo a cambio de quien tiene poder, algo que no aplica entre vecinas."
+    options:
+      - position: 1
+        text: "gentil"
+        is_correct: true
+      - position: 2
+        text: "educadito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Educadito» es coloquial y suena a diminutivo un poco burlón, un tono que no encaja con el comentario sincero de la vecina."
+        hint_specific: "«Educadito» suena diminutivo y algo irónico. ¿El comentario de la vecina busca ese tono?"
+      - position: 3
+        text: "servil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servil» sería un gesto para quedar bien con alguien con poder sobre ella, y aquí Elena solo trata bien a una vecina, sin ningún interés de por medio."
+        hint_specific: "«Servil» busca algo a cambio. ¿Elena espera algo de la vecina?"
+  - position: 6
+    sentence: "El dueño del café nuevo atendía cada mesa con calma, sin apuro y con un trato tan {{blank}} que la gente volvía solo por eso."
+    hint_general: "Describe un trato amable y de buenos modales que hace que cualquiera quiera volver."
+    explanation: "Gentil: un trato amable y de buenos modales que hace que cualquiera quiera volver. «Gentío» nombra cuánta gente entra al café, y «servicial» se queda en atender pedidos, sin nombrar el trato calmado que se nota en el café."
+    options:
+      - position: 1
+        text: "gentío"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Gentío» nombra una multitud de personas, y la frase describe cómo trata el dueño a cada cliente, no cuánta gente entra al café."
+        hint_specific: "«Gentío» habla de cantidad de gente. ¿La frase mide cantidad o describe un trato?"
+      - position: 2
+        text: "gentil"
+        is_correct: true
+      - position: 3
+        text: "servicial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servicial» describiría solo que ayuda con lo que piden, y la frase habla de algo más amplio: el trato calmado que hace que la gente vuelva."
+        hint_specific: "«Servicial» se centra en atender pedidos. ¿La frase habla solo de atender pedidos?"
+  - position: 7
+    sentence: "Hugo rechazó la oferta, pero lo hizo de forma tan {{blank}} que la empresa le dijo que la puerta seguía abierta para más adelante."
+    hint_general: "Se refiere a tratar bien a alguien incluso al decir que no."
+    explanation: "Gentil: tratar bien a alguien incluso al decir que no. «Generoso» supondría dar algo, y Hugo está rechazando una oferta, y «servil» sería un trato sumiso para no molestar, cuando Hugo dice que no con libertad."
+    options:
+      - position: 1
+        text: "gentil"
+        is_correct: true
+      - position: 2
+        text: "generoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generoso» implicaría dar algo de valor, y aquí Hugo está rechazando una oferta, no entregando nada."
+        hint_specific: "«Generoso» habla de dar algo. ¿Qué está haciendo Hugo en la frase, dar o rechazar?"
+      - position: 3
+        text: "servil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servil» sería un trato sumiso para no molestar a quien tiene poder, y aquí Hugo dice que no con total libertad, sin miedo a la respuesta."
+        hint_specific: "«Servil» evita molestar a quien manda. ¿Hugo evita decir que no?"
+  - position: 8
+    sentence: "Nadie esperaba que el sobrino adolescente ayudara a levantar la mesa, pero lo hizo con un trato tan {{blank}} que hasta la abuela lo comentó."
+    hint_general: "Describe un gesto de buenos modales que sorprende porque nadie lo esperaba."
+    explanation: "Gentil: un gesto de buenos modales que sorprende porque nadie lo esperaba. «Gentío» nombra una cantidad de gente, y «servicial» se queda en la ayuda con la mesa, sin nombrar el trato que comentó la abuela."
+    options:
+      - position: 1
+        text: "gentío"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Gentío» nombra una multitud de personas, y en la mesa familiar no hay ninguna multitud, solo un gesto amable de un adolescente."
+        hint_specific: "«Gentío» es sobre cantidad de gente. ¿La frase habla de cantidad o de un gesto?"
+      - position: 2
+        text: "servicial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servicial» describiría solo la ayuda con la mesa, y lo que sorprende a la abuela es además el trato con que lo hizo."
+        hint_specific: "«Servicial» se queda en la ayuda. ¿Qué más nota la abuela, además de la ayuda?"
+      - position: 3
+        text: "gentil"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La puerta que se quedó abierta"
+    body: "En la fiesta de la vecina, un desconocido notó que Marta cargaba dos platos y le abrió la puerta de la cocina sin decir nada, solo con una sonrisa. Ella se lo agradeció al salir. «Qué gentil», comentó después a su pareja, «y ni siquiera lo conocía»."
+    before_phrase: "Qué bueno de su parte, tan atento."
+    after_phrase: "Qué gentil, y ni siquiera lo conocía."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo que nadie esperaba"
+    body: "Después de una reunión tensa, Iván le escribió a su compañera para agradecerle el esfuerzo, aunque el proyecto no había salido como querían. Ella respondió sorprendida: «Qué gesto tan gentil, no hacía falta». El ambiente del equipo cambió esa misma tarde."
+    before_phrase: "Fue bueno de tu parte escribirme eso."
+    after_phrase: "Qué gesto tan gentil, no hacía falta."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El yerno que ayudó sin que se lo pidieran"
+    body: "En la mudanza de sus suegros, Andrés cargó cajas toda la tarde sin quejarse y hasta le llevó un café a la abuela sin que nadie se lo pidiera. «Qué gentil es», le dijo ella a su hija esa noche, «hacía tiempo que no veía algo así»."
+    before_phrase: "Es muy bueno, ayuda sin que se lo pidan."
+    after_phrase: "Qué gentil es, ayuda sin que se lo pidan."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

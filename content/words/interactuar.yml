@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "interactuar"
+status: "draft"
+lemma: "interactuar"
+part_of_speech: "verbo"
+syllables: ["in", "ter", "ac", "tuar"]
+stressed_syllable: 4
+ipa_latam: "[in.te.ɾakˈtwaɾ]"
+ipa_es: "[in.te.ɾakˈtwaɾ]"
+explanation: "Hablar o actuar con otra persona, de modo que cada una responde a lo que hace la otra."
+example_sentence: "En la feria, los visitantes podían interactuar con el producto antes de decidir si lo compraban."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo cuando el intercambio va en dos direcciones, no cuando una sola persona habla y la otra solo escucha."
+when_not_to_use: "No lo uses para describir una presentación donde el público solo mira: ahí nadie responde de vuelta."
+collocations:
+  - "interactuar con"
+  - "interactuar entre sí"
+  - "poder interactuar"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "redes-sociales"
+    relevance: 1
+tags:
+  comodin: ["hablar entre sí", "tener contacto"]
+  funcion: ["vincular"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "actuar"
+    difference: "Actuar es hacer algo por cuenta propia, sin que dependa de otra persona; interactuar implica un intercambio en el que cada uno responde al otro."
+    memory_trick: "Actuar lo haces solo; interactuar lo haces con otro."
+replaces:
+  - before: "La gente puede hablar y responderse entre sí en el evento"
+    after: "La gente puede interactuar entre sí en el evento"
+  - before: "El producto responde a lo que hace la persona que lo prueba"
+    after: "El producto permite interactuar con quien lo prueba"
+exercises:
+  - position: 1
+    sentence: "En la feria, los visitantes podían {{blank}} con el producto antes de decidir si lo compraban."
+    hint_general: "Hacer algo con otra parte, de modo que cada una responde a lo que hace la otra."
+    explanation: "Interactuar: hacer algo con otra parte, en un intercambio de dos direcciones. «Actuar» se hace por cuenta propia, sin depender de otra parte, y «observar» solo implica mirar, sin ningún intercambio."
+    options:
+      - position: 1
+        text: "interactuar"
+        is_correct: true
+      - position: 2
+        text: "actuar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, sin depender de otra parte, y aquí el producto responde a lo que hace cada visitante."
+        hint_specific: "Actuar no necesita respuesta de nadie más. ¿Aquí el producto responde a la persona?"
+      - position: 3
+        text: "observar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Observar» solo implica mirar, sin ningún intercambio, y aquí los visitantes probaban el producto de forma activa."
+        hint_specific: "Observar es solo mirar. ¿Los visitantes solo miraban o también probaban el producto?"
+  - position: 2
+    sentence: "La nueva plataforma permite que los usuarios {{blank}} entre sí, no solo con el contenido de la empresa."
+    hint_general: "Hacer algo entre dos o más personas, de modo que cada una responde a lo que hace la otra."
+    explanation: "Interactúen: hagan algo entre sí, en un intercambio de dos direcciones. «Actúen» se hace por cuenta propia, y «choquen» implica un conflicto, sin relación con comunicarse entre usuarios."
+    options:
+      - position: 1
+        text: "interactúen"
+        is_correct: true
+      - position: 2
+        text: "actúen"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, y aquí la frase distingue eso de comunicarse entre los usuarios mismos."
+        hint_specific: "Actuar no depende de otra persona. ¿La frase habla de comunicarse entre usuarios o de algo individual?"
+      - position: 3
+        text: "choquen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Chocar» implica un conflicto, y la frase no menciona ningún desacuerdo entre los usuarios, solo la posibilidad de comunicarse."
+        hint_specific: "Chocar implica conflicto. ¿La frase menciona algún desacuerdo entre los usuarios?"
+  - position: 3
+    sentence: "Durante el taller, se pidió a los asistentes {{blank}} en grupos pequeños antes de compartir sus ideas con todos."
+    hint_general: "Trabajar juntos, de modo que cada persona responde a lo que dicen las demás."
+    explanation: "Interactuar: trabajar juntos en un intercambio de dos direcciones. «Actuar» se hace por cuenta propia, y «competir» implica medirse contra otros, sin relación con este ejercicio en grupo."
+    options:
+      - position: 1
+        text: "interactuar"
+        is_correct: true
+      - position: 2
+        text: "competir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Competir» implica medirse contra otros para ganar, y aquí se pide trabajar juntos en grupos pequeños, no enfrentarse."
+        hint_specific: "Competir implica medirse contra otro. ¿El taller pide trabajar juntos o enfrentarse?"
+      - position: 3
+        text: "actuar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, y aquí se pide un trabajo conjunto en grupos pequeños."
+        hint_specific: "Actuar no necesita grupo. ¿El taller pide trabajar solo o en grupo?"
+  - position: 4
+    sentence: "El robot del museo está diseñado para {{blank}} con niños, respondiendo a sus preguntas en tiempo real."
+    hint_general: "Responder en el momento a lo que hace o dice otra persona."
+    explanation: "Interactuar: responder en el momento a lo que hace o dice otra persona. «Chatear» es coloquial y se asocia a mensajes de texto, y aquí se habla de un robot físico que responde en tiempo real."
+    options:
+      - position: 1
+        text: "interactuar"
+        is_correct: true
+      - position: 2
+        text: "chatear"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chatear» es coloquial y se asocia a mensajes de texto, y aquí se describe a un robot físico que responde a preguntas en tiempo real."
+        hint_specific: "«Chatear» suena a mensajes de texto. ¿La frase habla de mensajes o de un robot físico?"
+      - position: 3
+        text: "actuar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, y aquí el robot responde específicamente a lo que hacen los niños."
+        hint_specific: "Actuar no depende de una pregunta ajena. ¿El robot responde a los niños o hace algo por su cuenta?"
+  - position: 5
+    sentence: "A Marina le costaba {{blank}} con desconocidos, aunque en su equipo de siempre era la más habladora."
+    hint_general: "Comunicarse con alguien de forma que cada uno responde al otro."
+    explanation: "Interactuar: comunicarse con alguien de forma que cada uno responde al otro. «Actuar» se hace por cuenta propia, y «imponerse» implica hacer valer una postura, sin relación con simplemente comunicarse."
+    options:
+      - position: 1
+        text: "interactuar"
+        is_correct: true
+      - position: 2
+        text: "imponerse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponerse» implica hacer valer una postura frente a otros, y la frase solo habla de la dificultad de Marina para comunicarse con desconocidos."
+        hint_specific: "Imponerse es hacer valer una postura. ¿A Marina le cuesta comunicarse o imponer su opinión?"
+      - position: 3
+        text: "actuar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, y aquí se habla específicamente de comunicarse con otras personas desconocidas."
+        hint_specific: "Actuar no necesita a otra persona. ¿A Marina le cuesta comunicarse con otros o hacer algo sola?"
+  - position: 6
+    sentence: "El nuevo videojuego permite que los jugadores {{blank}} en tiempo real, aunque estén en distintos países."
+    hint_general: "Comunicarse y responderse entre sí, aunque estén lejos físicamente."
+    explanation: "Interactúen: se comuniquen y respondan entre sí, aunque estén lejos. «Actúen» se hace por cuenta propia, y «desconecten» implica cortar la comunicación, justo lo contrario de lo que permite el juego."
+    options:
+      - position: 1
+        text: "interactúen"
+        is_correct: true
+      - position: 2
+        text: "desconecten"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desconectar» implica cortar la comunicación, y el juego permite justo lo contrario: comunicarse en tiempo real."
+        hint_specific: "Desconectar es cortar el contacto. ¿El juego corta o permite la comunicación?"
+      - position: 3
+        text: "actúen"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, y aquí el juego permite que los jugadores se comuniquen entre sí."
+        hint_specific: "Actuar no depende de otro jugador. ¿El juego permite comunicarse entre jugadores o jugar cada uno por su cuenta?"
+  - position: 7
+    sentence: "El estudio mostró que las crías de esa especie aprenden a cazar al {{blank}} con otras crías del grupo."
+    hint_general: "Comportarse con otros de forma que cada uno responde a lo que hace el resto."
+    explanation: "Interactuar: comportarse con otros de forma que cada uno responde al resto. «Actuar» se hace por cuenta propia, y «reproducirse» tiene un sentido biológico distinto, sin relación con jugar entre crías."
+    options:
+      - position: 1
+        text: "interactuar"
+        is_correct: true
+      - position: 2
+        text: "reproducirse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reproducirse» tiene un sentido biológico distinto, y el estudio describe cómo las crías juegan y se comportan entre sí, no cómo se reproducen."
+        hint_specific: "Reproducirse tiene otro sentido biológico. ¿El estudio habla de jugar entre crías o de reproducción?"
+      - position: 3
+        text: "actuar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, y aquí el aprendizaje ocurre justamente al comportarse con otras crías."
+        hint_specific: "Actuar no depende de otras crías. ¿El aprendizaje ocurre solo o con otras crías?"
+  - position: 8
+    sentence: "Antes de lanzar la app, el equipo probó cómo {{blank}} usuarios reales con cada botón de la pantalla."
+    hint_general: "Ver cómo responde una persona a algo, y cómo ese algo responde a la persona."
+    explanation: "Interactuaban: cómo respondían los usuarios a algo, y ese algo a ellos. «Actuaban» se hace por cuenta propia, y «pagaban» habla de una transacción, sin relación con probar botones de una pantalla."
+    options:
+      - position: 1
+        text: "interactuaban"
+        is_correct: true
+      - position: 2
+        text: "pagaban"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pagar» habla de una transacción de dinero, y aquí el equipo probaba cómo respondían los usuarios a cada botón, no cómo pagaban."
+        hint_specific: "Pagar implica dinero. ¿El equipo probaba pagos o el uso de los botones?"
+      - position: 3
+        text: "actuaban"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Actuar» se hace por cuenta propia, y aquí se prueba específicamente la respuesta de los usuarios a cada botón."
+        hint_specific: "Actuar no depende de un botón. ¿El equipo probaba algo individual o la respuesta a cada botón?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Probar el producto en vivo"
+    body: "En su primer stand de feria, Diego dudaba si dejar que la gente tocara el producto. Su jefa lo animó: «Deja que interactúen con él, así se lo llevan de verdad en la cabeza». Al final del día, había repartido el triple de tarjetas de lo que esperaba."
+    before_phrase: "Deja que la gente lo pruebe y lo toque."
+    after_phrase: "Deja que interactúen con él."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Trabajar con desconocidos"
+    body: "«¿Cómo te llevas con equipos que no conoces?», preguntó la entrevistadora. Marina respondió: «Al principio me cuesta interactuar con desconocidos, pero en un par de reuniones ya encuentro mi lugar». La entrevistadora sonrió y anotó la respuesta."
+    before_phrase: "Al principio me cuesta hablar con gente que no conozco."
+    after_phrase: "Al principio me cuesta interactuar con desconocidos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Jugar desde países distintos"
+    body: "Rubén y su primo llevaban meses sin verse en persona, pero cada noche se conectaban al mismo videojuego. «Es raro pensar que interactuamos todos los días sin estar en el mismo país», le dijo su primo entre risas, mientras planeaban la próxima partida."
+    before_phrase: "Nos comunicamos todos los días aunque estemos lejos."
+    after_phrase: "Interactuamos todos los días aunque estemos lejos."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

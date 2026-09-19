@@ -1,0 +1,239 @@
+schema_version: 1
+sort_order: 9209
+slug: "guino"
+status: "draft"
+lemma: "guiño"
+part_of_speech: "sustantivo"
+syllables:
+  - "gui"
+  - "ño"
+stressed_syllable: 1
+ipa_latam: "[ˈgi.ɲo]"
+ipa_es: "[ˈgi.ɲo]"
+explanation: "Cerrar un ojo como aviso pequeño, que solo puede entender quien ya sabe lo mismo que tú."
+example_sentence: "Le hizo un guiño desde el otro lado de la mesa, y ella entendió el chiste sin que nadie más se enterara."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar una seña cómplice, literal o en broma, que solo entienden quienes ya están en el chiste."
+when_not_to_use: "No la uses para una explicación clara y directa; aquí el punto es que se entiende sin decir nada."
+collocations:
+  - "hacer un guiño"
+  - "un guiño cómplice"
+  - "un guiño entre amigos"
+replaces:
+  - before: "Me hizo una seña con el ojo y entendí todo"
+    after: "Me hizo un guiño y entendí todo"
+  - before: "Fue una referencia chiquita que solo entendimos nosotros dos"
+    after: "Fue un guiño que solo entendimos nosotros dos"
+  - before: "Lo dijo en broma, pero era una seña para mí"
+    after: "Fue un guiño para mí, dicho en broma"
+family:
+  - "guiñar"
+  - "guiñada"
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin:
+    - "seña"
+    - "broma privada"
+  funcion:
+    - "bromear"
+    - "comunicar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "guion"
+    difference: "«Guion» es el texto completo que alguien prepara para decir palabra por palabra; esta palabra es una seña pequeña y cómplice, como cerrar un ojo."
+    memory_trick: "El guion se escribe con la mano; esta palabra se hace con el ojo."
+  - confused_with: "codazo"
+    difference: "«Codazo» es un golpe suave con el codo para llamar la atención de alguien; esta palabra se hace con el ojo, no con el cuerpo entero."
+    memory_trick: "El codazo se siente en el brazo; esta palabra se ve en la cara."
+exercises:
+  - position: 1
+    sentence: "Desde el otro lado de la mesa, Cecilia le hizo un {{blank}} a Darío, y él entendió al momento que no debía mencionar el pastel quemado."
+    hint_general: "Es un gesto pequeño y cómplice, como cerrar un ojo, para avisar algo sin palabras."
+    explanation: "Guiño: un gesto pequeño y cómplice, como cerrar un ojo. «Guiso» es un plato de comida cocinada, sin relación con esto, y «seña» es más general y no dice que se trate justo de cerrar un ojo."
+    options:
+      - position: 1
+        text: "guiso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Guiso» es un plato de comida cocinada, y aquí Cecilia no cocinó nada: solo cerró un ojo para avisarle a Darío en silencio."
+        hint_specific: "«Guiso» es comida. ¿Cecilia le sirvió algo o cerró un ojo para avisarle?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "seña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seña» es cualquier gesto para comunicar algo, y aquí lo concreto es que Cecilia cerró un ojo, con complicidad y en broma, no cualquier gesto."
+        hint_specific: "«Seña» es más general. ¿Qué gesto exacto hizo Cecilia: cualquiera o cerrar un ojo?"
+  - position: 2
+    sentence: "Al mencionar el viaje sorpresa, Renata le lanzó un {{blank}} a su hermano desde el otro extremo de la sala."
+    hint_general: "Es un gesto pequeño y en broma entre hermanos, hecho con el ojo."
+    explanation: "Guiño: un gesto pequeño y en broma, hecho con el ojo. «Conspiración» suena a un plan serio, y aquí solo hay un gesto entre hermanos, y «codazo» se da con el codo, no con el ojo."
+    options:
+      - position: 1
+        text: "conspiración"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Conspiración» suena a un plan serio y hasta peligroso, y aquí lo que hubo fue un gesto pequeño y en broma entre hermanos, nada grave."
+        hint_specific: "«Conspiración» suena a plan serio. ¿Lo que hicieron los hermanos fue un plan grave o un gesto pequeño?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "codazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Codazo» se da con el codo, y aquí Renata usó el ojo, no el brazo, para avisarle a su hermano."
+        hint_specific: "«Codazo» es con el codo. ¿Renata usó el ojo o el brazo para avisar?"
+  - position: 3
+    sentence: "Cuando alguien mencionó el apodo secreto, Iván y su prima cruzaron un {{blank}} rápido y ninguno de los dos dijo nada más."
+    hint_general: "Es el gesto concreto que cruzan, cerrar un ojo por un segundo, sin decir nada más."
+    explanation: "Guiño: el gesto concreto de cerrar un ojo por un segundo. «Complicidad» es el vínculo de entenderse sin hablar, no el gesto en sí, y «guiso» es un plato de comida, sin relación con esto."
+    options:
+      - position: 1
+        text: "complicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Complicidad» es el vínculo de entenderse sin hablar, y aquí lo concreto es el gesto exacto que cruzaron: cerrar un ojo por un segundo."
+        hint_specific: "«Complicidad» es el vínculo entero. ¿La frase nombra el vínculo o el gesto concreto que hicieron?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "guiso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Guiso» es un plato de comida, y aquí lo que cruzaron Iván y su prima fue un gesto con el ojo, no comida."
+        hint_specific: "«Guiso» es comida. ¿Iván y su prima compartieron un plato o un gesto?"
+  - position: 4
+    sentence: "El actor Rogelio le dedicó un {{blank}} al público justo antes de decir la frase que todos esperaban del personaje."
+    hint_general: "Es un gesto hecho a propósito con el ojo, parte de la actuación."
+    explanation: "Guiño: un gesto hecho a propósito con el ojo. «Parpadeo» es el cierre involuntario de los ojos, y aquí el actor lo hizo a propósito, y «seña» es más general y no dice que se trate justo de cerrar un ojo."
+    options:
+      - position: 1
+        text: "parpadeo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parpadeo» es el cierre involuntario de los ojos, algo que el cuerpo hace solo, y aquí el actor lo hizo a propósito, como parte de la actuación."
+        hint_specific: "«Parpadeo» es involuntario. ¿El actor cerró el ojo sin querer o a propósito?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "seña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seña» es cualquier gesto para comunicar algo, y aquí lo concreto es que el actor cerró un ojo, con complicidad, no cualquier gesto."
+        hint_specific: "«Seña» es más general. ¿Qué gesto exacto hizo el actor: cualquiera o cerrar un ojo?"
+  - position: 5
+    sentence: "En medio de la entrevista, el director Emilio le hizo un {{blank}} a su compañera Paola cuando el candidato mencionó, sin saberlo, la pregunta que ya habían acordado no hacer."
+    hint_general: "Es un gesto discreto con el ojo para avisar algo entre dos personas."
+    explanation: "Guiño: un gesto discreto con el ojo para avisar algo. «Codazo» se da con el codo, y aquí Emilio usó el ojo, y «conspiración» suena a un plan serio, cuando solo hubo un gesto pequeño."
+    options:
+      - position: 1
+        text: "codazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Codazo» se da con el codo, y aquí el director usó el ojo, un gesto más discreto que un golpe con el brazo."
+        hint_specific: "«Codazo» es con el codo. ¿El director usó el ojo o el brazo para avisar?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "conspiración"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Conspiración» suena a un plan serio y hasta peligroso, y aquí lo que hubo fue un gesto pequeño y cómplice entre dos compañeros."
+        hint_specific: "«Conspiración» suena a plan serio. ¿Lo que hicieron fue un plan grave o un gesto pequeño?"
+  - position: 6
+    sentence: "Bruno le hizo un {{blank}} a su hija desde la puerta, y ella entendió que ya podía abrir su regalo sin esperar a nadie más."
+    hint_general: "Es el gesto concreto que hace Bruno con el ojo desde la puerta."
+    explanation: "Guiño: el gesto concreto de cerrar un ojo. «Guiso» es un plato de comida, sin relación con esto, y «complicidad» es el vínculo de entenderse, no el gesto en sí."
+    options:
+      - position: 1
+        text: "guiso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Guiso» es un plato de comida cocinada, y aquí Bruno no cocinó nada: solo cerró un ojo para avisarle a su hija."
+        hint_specific: "«Guiso» es comida. ¿Bruno le sirvió algo o le hizo una seña con el ojo?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "complicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Complicidad» es el vínculo de entenderse sin hablar, y aquí lo concreto es el gesto exacto: cerrar un ojo desde la puerta."
+        hint_specific: "«Complicidad» es el vínculo entero. ¿La frase nombra el vínculo o el gesto concreto que hizo Bruno?"
+  - position: 7
+    sentence: "Valentina le mandó un {{blank}} por videollamada justo cuando su amiga contó la parte más ridícula de la anécdota que solo ellas dos conocían."
+    hint_general: "Es un gesto hecho a propósito con el ojo, una señal cómplice por videollamada."
+    explanation: "Guiño: un gesto hecho a propósito con el ojo. «Parpadeo» es el cierre involuntario de los ojos, y aquí Valentina lo hizo a propósito, y «codazo» necesita contacto físico, imposible por videollamada."
+    options:
+      - position: 1
+        text: "parpadeo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parpadeo» es el cierre involuntario de los ojos, y aquí Valentina cerró un ojo a propósito, como una seña cómplice para su amiga."
+        hint_specific: "«Parpadeo» es involuntario. ¿Valentina cerró el ojo sin querer o a propósito, como una seña?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "codazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Codazo» se da con el codo, y por videollamada eso no se puede hacer: Valentina solo pudo usar un gesto con el ojo."
+        hint_specific: "«Codazo» necesita contacto físico. ¿Eso es posible por videollamada?"
+  - position: 8
+    sentence: "Cada vez que el abuelo cuenta la misma historia exagerada, Camila y su hermano se cruzan un {{blank}} desde extremos opuestos de la mesa."
+    hint_general: "Es el gesto concreto que se cruzan, cerrar un ojo, desde extremos opuestos de la mesa."
+    explanation: "Guiño: el gesto concreto de cerrar un ojo desde lejos. «Seña» es más general y no dice que se trate justo de cerrar un ojo, y «guiso» es un plato de comida, sin relación con esto."
+    options:
+      - position: 1
+        text: "seña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seña» es cualquier gesto para comunicar algo, y aquí lo concreto es que Camila y su hermano cierran un ojo, un gesto específico y cómplice."
+        hint_specific: "«Seña» es más general. ¿Qué gesto exacto se cruzan: cualquiera o cerrar un ojo?"
+      - position: 2
+        text: "guiño"
+        is_correct: true
+      - position: 3
+        text: "guiso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Guiso» es un plato de comida, y en la mesa lo que se cruzan Camila y su hermano es un gesto con el ojo, no comida."
+        hint_specific: "«Guiso» es comida. ¿Qué se cruzan Camila y su hermano: un plato o un gesto?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El pastel quemado"
+    body: "Cecilia sacó el pastel del horno completamente negro por un lado. Cuando su suegra preguntó si todo iba bien en la cocina, Cecilia le hizo un guiño a Darío desde el otro lado de la mesa. Él entendió al momento y cambió de tema. El pastel, cortado con cuidado, no se notó tanto."
+    before_phrase: "Le hice una seña con el ojo para que no dijera nada."
+    after_phrase: "Le hice un guiño para que no dijera nada."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El regalo antes de tiempo"
+    body: "Bruno sabía que su hija llevaba días esperando para abrir el regalo grande. En la puerta, mientras los demás seguían cenando, le hizo un guiño rápido: podía subir a abrirlo ya. Ella sonrió y desapareció escaleras arriba sin que nadie más se diera cuenta."
+    before_phrase: "Le hice una seña para que subiera a abrir el regalo."
+    after_phrase: "Le hice un guiño para que subiera a abrir el regalo."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La pregunta que no se hizo"
+    body: "El director Emilio y su compañera Paola habían acordado no preguntar por el proyecto cancelado. Cuando el candidato lo mencionó sin saberlo, Emilio le lanzó un guiño rápido a Paola: mejor seguir adelante. La entrevista terminó bien, y nadie notó el intercambio."
+    before_phrase: "Le hice una seña rápida para que siguiéramos adelante."
+    after_phrase: "Le hice un guiño rápido para que siguiéramos adelante."
+provenance:
+  generator: "flui authoring agent — batch W3 familia-crianza + humor"
+  gate: null
+  checked_on: "2026-09-18"

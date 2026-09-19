@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "chispa"
+status: "draft"
+lemma: "chispa"
+part_of_speech: "sustantivo"
+syllables: ["chis", "pa"]
+stressed_syllable: 1
+ipa_latam: "[ˈtʃis.pa]"
+ipa_es: "[ˈtʃis.pa]"
+explanation: "Algo curioso y original en lo que alguien dice, que llama la atención y saca una sonrisa."
+example_sentence: "El anuncio no tenía gran presupuesto, pero la chispa del guion lo hizo inolvidable."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para un comentario o una idea concreta que sorprende por su ingenio, no para describir a alguien en general."
+when_not_to_use: "No la uses para algo profundo o solemne, ni para un rasgo permanente de una persona: la chispa es puntual y ligera."
+collocations:
+  - "tener chispa"
+  - "la chispa de la idea"
+  - "faltarle chispa"
+replaces:
+  - before: "Tiene algo que engancha"
+    after: "Tiene chispa"
+  - before: "Le falta gracia"
+    after: "Le falta chispa"
+  - before: "Fue una ocurrencia graciosa"
+    after: "Fue una ocurrencia con chispa"
+family: ["chispear", "chispeante"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["que enganche", "que tenga gracia"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "chisme"
+    difference: "«Chisme» es un cotilleo o una noticia jugosa sobre alguien; «chispa» es el ingenio rápido que hace gracia, sin necesidad de hablar de nadie."
+    memory_trick: "El chisme cuenta algo de otro; la chispa la pones tú."
+  - confused_with: "gracia"
+    difference: "«Gracia» es el humor o encanto de alguien en general; «chispa» es ese destello rápido e inesperado que sorprende en un momento concreto."
+exercises:
+  - position: 1
+    sentence: "El grupo de la oficina se llenó de mensajes en cuanto alguien soltó un rumor sobre el jefe nuevo, pero lo que de verdad hizo reír a todos fue el comentario de Nadia sobre el café: no contaba nada de nadie, solo tenía {{blank}}."
+    hint_general: "Busca la palabra para un comentario que hace gracia por sí mismo, sin hablar de nadie más."
+    explanation: "Chispa: gracia puntual que no habla de nadie. «Chisme» necesita contar algo de otra persona, y «ingenio» describe una cualidad de fondo, no un comentario suelto."
+    options:
+      - position: 1
+        text: "chisme"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Chisme» es contar algo sobre otra persona, y el comentario de Nadia no hablaba de nadie, solo hacía gracia por sí mismo."
+        hint_specific: "«Chisme» siempre habla de alguien más. ¿El comentario de Nadia contaba algo sobre otra persona?"
+      - position: 2
+        text: "chispa"
+        is_correct: true
+      - position: 3
+        text: "ingenio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ingenio» es una cualidad general para resolver o crear con originalidad, y aquí se trata de un comentario puntual que hizo gracia en el momento."
+        hint_specific: "«Ingenio» describe una cualidad de fondo. ¿Aquí hablamos de un momento puntual o de una cualidad general?"
+  - position: 2
+    sentence: "En la cena, cuando el abuelo contó su historia de siempre, fue el comentario improvisado de Sofía sobre el final el que hizo que todos soltaran una carcajada: tuvo {{blank}}, sin proponérselo."
+    hint_general: "Piensa en un comentario improvisado que hace reír, sin que la persona lo haya planeado."
+    explanation: "Chispa: gracia espontánea en un comentario improvisado. «Agudeza» suena a algo pensado y elaborado, y «gracia» describe un rasgo general de Sofía, no ese momento."
+    options:
+      - position: 1
+        text: "agudeza"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Agudeza» suena a un análisis fino y pensado, y lo de Sofía fue un comentario improvisado en plena cena, no una reflexión elaborada."
+        hint_specific: "«Agudeza» suena a algo pensado y elaborado. ¿El comentario de Sofía fue improvisado o preparado?"
+      - position: 2
+        text: "gracia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gracia» describe el encanto o el humor en general de alguien, y aquí se trata de ese comentario puntual, no de cómo es Sofía siempre."
+        hint_specific: "«Gracia» describe un rasgo general de la persona. ¿La frase habla de un momento o de cómo es Sofía en general?"
+      - position: 3
+        text: "chispa"
+        is_correct: true
+  - position: 3
+    sentence: "La propuesta de Iván no tenía el presupuesto más alto, pero la forma en que la presentó, con dos ejemplos inesperados, fue la que se quedó en la cabeza del cliente: tuvo {{blank}}."
+    hint_general: "Se trata de una forma de contar algo que se queda en la cabeza, aunque el contenido sea sencillo."
+    explanation: "Chispa: el ingenio que se queda en la cabeza. «Donaire» es una palabra antigua fuera de lugar en una reunión de hoy, y «picardía» exige un toque travieso que aquí no hay."
+    options:
+      - position: 1
+        text: "donaire"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Donaire» es una palabra antigua para el encanto al hablar, y suena rara en una sala de reuniones actual, aunque la idea se parezca."
+        hint_specific: "«Donaire» es una palabra muy antigua y literaria. ¿Encaja ese tono en una reunión de trabajo de hoy?"
+      - position: 2
+        text: "picardía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Picardía» sugiere un toque travieso o con doble sentido, y los ejemplos de Iván solo eran originales, sin ninguna intención pícara."
+        hint_specific: "«Picardía» implica un toque travieso o con doble sentido. ¿Los ejemplos de Iván tenían esa intención?"
+      - position: 3
+        text: "chispa"
+        is_correct: true
+  - position: 4
+    sentence: "La publicación de Camila sobre el tráfico de la ciudad no tenía ninguna foto especial, pero el pie de foto tenía tanta {{blank}} que la compartieron cientos de personas."
+    hint_general: "Busca la palabra para el ingenio de una frase corta, no para una idea suelta ni para burlarse de alguien."
+    explanation: "Chispa: el ingenio de una frase corta. «Ocurrencia» es una idea suelta, y «sorna» implica burlarse de alguien, algo que no pasa en el pie de foto de Camila."
+    options:
+      - position: 1
+        text: "ocurrencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ocurrencia» es una idea suelta que se le ocurre a alguien, y aquí no hablamos de una idea aislada, sino de la gracia con la que está escrita la frase."
+        hint_specific: "«Ocurrencia» es una idea puntual que a alguien se le ocurre. ¿El problema aquí es la idea o el modo en que está escrita?"
+      - position: 2
+        text: "chispa"
+        is_correct: true
+      - position: 3
+        text: "sorna"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sorna» es un tono burlón o con retintín, y el pie de foto de Camila hacía gracia sin burlarse de nadie."
+        hint_specific: "«Sorna» implica un tono burlón hacia alguien. ¿El pie de foto se burla de alguien?"
+  - position: 5
+    sentence: "El candidato no tenía la experiencia más larga del grupo, pero respondió con una frase tan {{blank}} que todo el panel se rió y lo recordó al final del día."
+    hint_general: "Piensa en una sola frase ingeniosa, no en hablar mucho ni en mostrar seguridad."
+    explanation: "Chispa: el ingenio de una sola frase. «Labia» es hablar mucho con soltura, y «desparpajo» habla de seguridad al hablar, no del ingenio de lo que se dijo."
+    options:
+      - position: 1
+        text: "labia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Labia» es hablar mucho y con soltura para convencer, y aquí lo que destacó fue una sola frase ingeniosa, no un discurso largo."
+        hint_specific: "«Labia» describe a quien habla mucho y con soltura. ¿Aquí hubo un discurso largo o una sola frase?"
+      - position: 2
+        text: "desparpajo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desparpajo» es hablar con mucha soltura y sin cohibirse, y aquí lo que importó fue el ingenio de la frase, no cuánta seguridad mostró al decirla."
+        hint_specific: "«Desparpajo» habla de la seguridad al hablar. ¿Aquí lo que se recuerda es la seguridad o el ingenio de la frase?"
+      - position: 3
+        text: "chispa"
+        is_correct: true
+  - position: 6
+    sentence: "Durante la videollamada familiar, la sobrina de ocho años contestó una pregunta con tanta {{blank}} que hasta los tíos más serios se rieron."
+    hint_general: "La palabra describe lo ingeniosa que fue una respuesta puntual, no lo segura que sonó."
+    explanation: "Chispa: lo ingeniosa que fue la respuesta de la sobrina. «Desenvoltura» habla de soltura al hablar, y «encanto» describe un atractivo general y constante, no ese momento."
+    options:
+      - position: 1
+        text: "desenvoltura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desenvoltura» describe la soltura para moverse o hablar sin nervios, y aquí lo que hizo reír fue lo ingeniosa que fue la respuesta, no la seguridad con la que habló."
+        hint_specific: "«Desenvoltura» va de hablar sin nervios. ¿Aquí se rieron por su seguridad o por lo ingeniosa que fue la respuesta?"
+      - position: 2
+        text: "encanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encanto» es un atractivo general que tiene alguien todo el tiempo, y aquí la risa vino de una respuesta concreta, no de cómo es ella siempre."
+        hint_specific: "«Encanto» describe un atractivo general y constante. ¿La frase habla de un momento puntual o de cómo es ella siempre?"
+      - position: 3
+        text: "chispa"
+        is_correct: true
+  - position: 7
+    sentence: "Entre tantas publicaciones parecidas sobre el mismo estreno, la de Tomás fue la única con {{blank}}: comparó la película con una cita mala, y todos entendieron la broma al instante."
+    hint_general: "Busca la palabra para una comparación graciosa en un momento concreto, no para una cualidad de siempre."
+    explanation: "Chispa: una comparación graciosa muy concreta. «Viveza» es una cualidad general de Tomás, y «vivacidad» habla de energía al contar algo, no del ingenio de la comparación."
+    options:
+      - position: 1
+        text: "chispa"
+        is_correct: true
+      - position: 2
+        text: "viveza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Viveza» es una rapidez general para darse cuenta de las cosas, y aquí lo que destacó fue una comparación graciosa en concreto, no lo despierto que es Tomás."
+        hint_specific: "«Viveza» describe lo rápido que alguien capta las cosas en general. ¿Aquí se elogia una comparación concreta o una cualidad general?"
+      - position: 3
+        text: "vivacidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vivacidad» describe energía y entusiasmo al hablar, y aquí lo que sorprendió fue la comparación ingeniosa, no la energía con la que se contó."
+        hint_specific: "«Vivacidad» habla de energía al contar algo. ¿Aquí sorprendió la energía o la comparación en sí?"
+  - position: 8
+    sentence: "El resumen del proyecto era el mismo de siempre, pero Elena lo cerró con una frase tan {{blank}} que el cliente la repitió en la siguiente reunión."
+    hint_general: "Se trata del ingenio de una frase concreta, no de una forma de hablar habitual ni de algo que gusta en general."
+    explanation: "Chispa: el ingenio de una frase concreta de Elena. «Gracejo» describe su forma habitual de hablar, y «atractivo» es un gusto vago, no algo concreto que el cliente repitió."
+    options:
+      - position: 1
+        text: "gracejo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gracejo» es un modo de hablar gracioso que alguien tiene siempre, y aquí lo que se recuerda es una sola frase del cierre, no su forma habitual de hablar."
+        hint_specific: "«Gracejo» describe una forma de hablar habitual. ¿La frase habla de un cierre puntual o de cómo habla Elena siempre?"
+      - position: 2
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atractivo» es algo que gusta en general, y aquí lo que hizo que el cliente repitiera la frase fue su ingenio concreto, no un atractivo vago."
+        hint_specific: "«Atractivo» es un gusto general y vago. ¿Aquí el cliente repite una frase concreta o algo vago que le gustó?"
+      - position: 3
+        text: "chispa"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "practica"
+    title: "El pie de foto que sí funcionó"
+    body: "Valentina llevaba semanas publicando fotos casi idénticas sin muchas reacciones. Un día, en vez de describir el lugar, escribió una comparación absurda sobre el clima. «Por fin le encontraste la chispa», le dijo su amiga al ver los comentarios. Esa publicación fue la que más gente compartió en meses."
+    before_phrase: "Por fin encontré algo que engancha."
+    after_phrase: "Por fin le encontré la chispa."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La respuesta que se quedó"
+    body: "Entre tantos candidatos con currículums parecidos, Marco respondió a la pregunta sobre sus errores con una comparación tan ingeniosa que dos entrevistadores se rieron a la vez. Al salir, uno de ellos comentó: «Ese tuvo chispa, me acordaré de él»."
+    before_phrase: "Ese candidato tenía algo distinto."
+    after_phrase: "Ese candidato tuvo chispa."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La broma que salvó la tarde"
+    body: "La comida familiar se había puesto tensa después de un comentario incómodo sobre el trabajo de alguien. Fue el abuelo quien, con una broma rápida sobre sus propios despistes, hizo que todos soltaran la tensión y se rieran. «Tu abuelo siempre tiene esa chispa para arreglar las cosas», le dijo su nieta después."
+    before_phrase: "Tu abuelo siempre sabe cómo arreglar el ambiente."
+    after_phrase: "Tu abuelo siempre tiene esa chispa."
+provenance:
+  generator: "hand-authored for redes-sociales theme batch"
+  gate: null
+  checked_on: "2026-09-18"

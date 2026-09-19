@@ -1,0 +1,238 @@
+schema_version: 1
+slug: "veraz"
+status: "draft"
+lemma: "veraz"
+part_of_speech: "adjetivo"
+syllables:
+  - "ve"
+  - "raz"
+stressed_syllable: 2
+ipa_latam: "[beˈɾas]"
+ipa_es: "[beˈɾaθ]"
+explanation: "Que dice la verdad siempre, sin mentir ni esconder nada importante."
+example_sentence: "El comité valoró que el informe fuera veraz, aunque los números no fueran los que esperaban."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien como elogio a una fuente o a una persona: «Es un testigo veraz» suena directo y sin duda."
+when_not_to_use: "No la uses para algo que solo suena creíble sin estar comprobado: eso es verosímil, no veraz."
+collocations:
+  - "información veraz"
+  - "un testigo veraz"
+  - "una respuesta veraz"
+replaces:
+  - before: "Dice la verdad siempre, no inventa nada"
+    after: "Es una fuente veraz"
+  - before: "Lo que contó era verdad, se comprobó todo"
+    after: "Su relato fue veraz"
+  - before: "Contestó con la verdad, sin adornar nada"
+    after: "Dio una respuesta veraz"
+family:
+  - "veracidad"
+  - "verazmente"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 2
+tags:
+  comodin:
+    - "decir la verdad"
+  funcion:
+    - "informar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "verosímil"
+    difference: "«Verosímil» dice que algo parece cierto porque encaja, aunque no esté comprobado; esto afirma que es cierto de verdad."
+    memory_trick: "Lo veraz está probado; lo verosímil solo se sostiene de pie."
+  - confused_with: "verificable"
+    difference: "«Verificable» describe un dato que se puede comprobar; esto describe a quien dice la verdad, se compruebe o no en el momento."
+    memory_trick: "Veraz es la persona; verificable es el dato."
+exercises:
+  - position: 1
+    sentence: "El periodista repitió la pregunta tres veces, y Aurora, la vocera, dio una versión {{blank}} de los hechos, aunque no fuera la más cómoda de contar."
+    hint_general: "La versión que dio coincide con lo que de verdad pasó, aunque incomode."
+    explanation: "Veraz: la versión coincide con lo que de verdad pasó. «Voraz» habla de un apetito enorme, y «sincera» solo garantiza que no miente a propósito, no que cada dato sea exacto."
+    options:
+      - position: 1
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme o un consumo desmedido, y aquí Aurora está dando información, no comiendo ni consumiendo nada."
+        hint_specific: "«Voraz» va de comer o de consumir sin parar. ¿Encaja con dar una versión de los hechos?"
+      - position: 2
+        text: "sincera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincera» dice que no miente a propósito, pero la frase pide algo más: que los hechos contados sean exactamente como pasaron."
+        hint_specific: "Alguien puede ser sincero y aun así estar mal informado. ¿La frase pide buena intención o hechos exactos?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+  - position: 2
+    sentence: "En la entrevista, Damián dio una respuesta {{blank}} sobre por qué dejó su trabajo anterior, en vez de inventar una excusa bonita."
+    hint_general: "Contó el motivo real, en lugar de una excusa inventada para quedar bien."
+    explanation: "Veraz: contó el motivo real. «Voraz» habla de comer o consumir sin freno, y «confiable» dice que algo merece crédito en general, no que ese motivo en concreto fuera cierto."
+    options:
+      - position: 1
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme, y Damián está respondiendo una pregunta, no describiendo cómo come."
+        hint_specific: "«Voraz» habla de comer con ansia. ¿Eso tiene algo que ver con explicar por qué dejó su trabajo?"
+      - position: 2
+        text: "confiable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confiable» dice que algo merece crédito en general, y aquí lo que importa es que ese motivo en concreto fuera cierto, no una reputación general."
+        hint_specific: "Confiable describe una reputación general. ¿La frase habla de reputación o de un motivo concreto?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+  - position: 3
+    sentence: "En el juicio, Mateo dio una declaración {{blank}}: contó lo que vio, sin cambiar ni un detalle para quedar bien."
+    hint_general: "Contó exactamente lo que vio, sin cambiar nada para quedar mejor parado."
+    explanation: "Veraz: contó exactamente lo que vio. «Clarita» es coloquial y resta la seriedad que pide una declaración judicial, y «sincera» solo asegura que no miente a propósito, no que cada detalle sea exacto."
+    options:
+      - position: 1
+        text: "clarita"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clarita» es una forma coloquial y quita la seriedad que pide una declaración ante un juez."
+        hint_specific: "«Clarita» suena a charla informal. ¿Encaja con el tono de una declaración en un juicio?"
+      - position: 2
+        text: "sincera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincera» garantiza que no miente a propósito, pero la frase insiste en que no cambió ni un detalle, que es cuestión de exactitud."
+        hint_specific: "Alguien sincero puede recordar mal un detalle sin querer. ¿La frase habla de intención o de exactitud?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando su hija le preguntó si sus abuelos se habían llevado bien alguna vez, Ximena decidió darle una respuesta {{blank}}, aunque no fuera bonita de escuchar."
+    hint_general: "Le contó cómo fueron las cosas de verdad, aunque no fuera una historia agradable."
+    explanation: "Veraz: le contó cómo fueron las cosas de verdad. «Voraz» habla de un apetito enorme, y «honesta» describe la intención de no engañar, sin garantizar que cada hecho contado fuera exacto."
+    options:
+      - position: 1
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme, y aquí Ximena está contestando una pregunta sobre su familia, no hablando de comer."
+        hint_specific: "«Voraz» va de comer sin parar. ¿Eso tiene sentido en una charla sobre los abuelos?"
+      - position: 2
+        text: "honesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Honesta» describe la intención de no engañar, y la frase pide además que lo contado coincida con lo que de verdad pasó."
+        hint_specific: "Se puede ser honesto y recordar algo distinto de como fue. ¿La frase pide intención o hechos exactos?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+  - position: 5
+    sentence: "Durante la presentación de resultados, Nicolás fue {{blank}} sobre los números que habían bajado, en vez de maquillarlos con buenas palabras."
+    hint_general: "Contó los números tal cual eran, sin disfrazarlos con buenas palabras."
+    explanation: "Veraz: contó los números tal cual eran. «Voraz» describe un apetito enorme, y «sincero» dice que no engaña a propósito, sin asegurar que cada cifra fuera exacta."
+    options:
+      - position: 1
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme o un gasto desmedido, y aquí Nicolás está presentando cifras, no consumiendo nada."
+        hint_specific: "«Voraz» va de consumir sin freno. ¿Eso encaja con presentar resultados?"
+      - position: 2
+        text: "sincero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincero» dice que no engaña a propósito, y la frase pide además que las cifras mostradas fueran las reales."
+        hint_specific: "Se puede ser sincero y aun así dar una cifra mal calculada sin querer. ¿La frase habla de intención o de exactitud?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+  - position: 6
+    sentence: "Tomás, jefe de prensa del club, publicó un comunicado {{blank}} sobre la lesión del jugador, con la gravedad real y sin suavizarla."
+    hint_general: "El texto contó la gravedad real de la lesión, sin suavizarla para quedar mejor."
+    explanation: "Veraz: contó la gravedad real, sin suavizarla. «Clarito» es coloquial y resta la seriedad que pide un comunicado oficial, y «voraz» habla de un apetito enorme."
+    options:
+      - position: 1
+        text: "clarito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clarito» es coloquial y quita la seriedad que pide un comunicado firmado por un club."
+        hint_specific: "«Clarito» suena a charla entre amigos. ¿Encaja con una nota oficial firmada por el club?"
+      - position: 2
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme, y el comunicado no habla de comer ni de consumir nada."
+        hint_specific: "«Voraz» va de comer o consumir sin freno. ¿Eso tiene sentido en la nota sobre una lesión?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+  - position: 7
+    sentence: "Rocío le preguntó a Coral qué le había parecido su presentación, y Coral fue {{blank}}: le señaló los tres minutos en los que perdió al público, aunque sabía que no era lo que Rocío quería oír."
+    hint_general: "Le contó exactamente lo que notó, aunque no fuera lo que la otra persona esperaba escuchar."
+    explanation: "Veraz: le contó exactamente lo que notó. «Voraz» habla de un apetito enorme, y «sincera» solo asegura que no miente a propósito, sin garantizar que cada detalle señalado sea exacto."
+    options:
+      - position: 1
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme, y Coral está dando una opinión sobre una presentación, no hablando de comida."
+        hint_specific: "«Voraz» va de comer sin parar. ¿Tiene algo que ver con opinar sobre una presentación?"
+      - position: 2
+        text: "sincera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincera» garantiza que no miente a propósito, y la frase insiste en que señaló minutos concretos y exactos, no solo su impresión."
+        hint_specific: "Alguien sincero puede opinar sin fijarse en el detalle exacto. ¿La frase habla de intención o de precisión?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+  - position: 8
+    sentence: "Antes de firmar con el concesionario, Fabián le pidió a un amigo mecánico una opinión {{blank}} sobre el auto usado, no un halago para cerrar la venta rápido."
+    hint_general: "Quiere una opinión que refleje el estado real del auto, no un elogio para cerrar la venta."
+    explanation: "Veraz: quiere una opinión que refleje el estado real del auto. «Voraz» habla de un apetito enorme, y «fiable» dice que la fuente merece confianza en general, no que esa opinión en concreto describa el auto tal cual está."
+    options:
+      - position: 1
+        text: "voraz"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Voraz» describe un apetito enorme o una compra desmedida, y aquí Fabián pide una opinión, no habla de consumo."
+        hint_specific: "«Voraz» va de consumir sin freno. ¿Eso encaja con pedir una opinión sobre un auto?"
+      - position: 2
+        text: "fiable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fiable» dice que la fuente merece confianza en general, y Fabián pide algo más concreto: que esa opinión describa el auto tal cual está."
+        hint_specific: "Alguien fiable puede opinar sin fijarse a fondo en un auto en concreto. ¿La frase pide confianza general o precisión sobre ese auto?"
+      - position: 3
+        text: "veraz"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El motivo real"
+    body: "El reclutador preguntó por qué había dejado el último trabajo. Damián dudó un segundo y decidió no inventar nada: «Discutí con mi jefe directo y no encontramos forma de arreglarlo». El reclutador asintió: «Prefiero una respuesta veraz a una bonita»."
+    before_phrase: "Le voy a decir la verdad, aunque suene mal."
+    after_phrase: "Prefiero darte una respuesta veraz."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La pregunta sobre los abuelos"
+    body: "Su hija quería saber si sus abuelos se habían llevado bien alguna vez. Ximena podía inventar una historia bonita, pero prefirió contarle cómo fueron las cosas de verdad, con sus peleas y sus paces. «Gracias por ser veraz conmigo, mamá», le dijo la niña al final."
+    before_phrase: "Te voy a contar la verdad, aunque no sea bonita."
+    after_phrase: "Voy a ser veraz contigo."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "La rueda de prensa"
+    body: "El periodista repitió la pregunta sobre el retraso de la obra. Aurora no la esquivó: dio los plazos reales y explicó qué había fallado. Al salir, su equipo se lo agradeció: «Fue mejor una versión veraz que una excusa que se cae en dos días»."
+    before_phrase: "Mejor cuento cómo fue todo, sin adornar nada."
+    after_phrase: "Fue mejor una versión veraz."
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-18"

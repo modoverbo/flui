@@ -1,0 +1,233 @@
+schema_version: 1
+slug: "categorico"
+status: "draft"
+lemma: "categórico"
+part_of_speech: "adjetivo"
+syllables:
+  - "ca"
+  - "te"
+  - "gó"
+  - "ri"
+  - "co"
+stressed_syllable: 3
+ipa_latam: "[ka.teˈɣo.ɾi.ko]"
+ipa_es: "[ka.teˈɣo.ɾi.ko]"
+explanation: "Que afirma algo con total seguridad, sin dejar ninguna duda posible."
+example_sentence: "Fue categórico: el proyecto no sigue si no hay presupuesto aprobado."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para cerrar una idea sin dejar margen a discusión, sobre todo cuando antes hubo demasiadas vueltas."
+when_not_to_use: "No la uses para un simple gusto personal: implica una afirmación de hecho, no una preferencia."
+collocations:
+  - "respuesta categórica"
+  - "negativa categórica"
+  - "ser categórico"
+replaces:
+  - before: "Fue clarísimo, no dejó ni un pero"
+    after: "Fue categórico"
+  - before: "Lo dijo muy seguro, sin peros"
+    after: "Lo dijo de forma categórica"
+family: ["categóricamente", "categoría"]
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+tags:
+  comodin: ["clarísimo"]
+  funcion: ["afirmar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "terminante"
+    difference: "«Terminante» se usa sobre todo con negativas y prohibiciones; lo categórico afirma un hecho sin dejar dudas, sea o no una prohibición."
+    memory_trick: "Terminante prohíbe; categórico afirma."
+  - confused_with: "concluyente"
+    difference: "«Concluyente» describe una prueba o un dato que zanja una duda por sí solo; lo categórico describe cómo lo dice la persona, no la fuerza de la prueba."
+    memory_trick: "Lo concluyente está en el dato; lo categórico está en cómo lo dices."
+exercises:
+  - position: 1
+    sentence: "El informe de auditoría no dejó nada suelto: fue {{blank}} al decir que faltaban los comprobantes."
+    hint_general: "No deja ninguna duda al afirmar un hecho concreto."
+    explanation: "Categórico: afirma un hecho sin dejar dudas. «Categorizado» es haber sido clasificado en un grupo, y «concluyente» describe la fuerza de una prueba, no el tono de quien habla; aquí el informe lo dice con total seguridad."
+    options:
+      - position: 1
+        text: "categorizado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Categorizado» significa que algo fue clasificado en un grupo o tipo; el informe no clasifica nada, afirma con seguridad que faltan los comprobantes."
+        hint_specific: "Esa palabra habla de ordenar algo en grupos. ¿El informe ordena datos, o afirma algo con seguridad?"
+      - position: 2
+        text: "categórico"
+        is_correct: true
+      - position: 3
+        text: "concluyente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Concluyente» describe una prueba que zanja una duda por sí sola; aquí lo categórico es el tono del informe al decirlo, no la prueba misma."
+        hint_specific: "Esa palabra describe la fuerza de una prueba, no el tono de quien habla. ¿Aquí hay una prueba, o solo un tono seguro?"
+  - position: 2
+    sentence: "La respuesta del comité fue {{blank}}: el proyecto no se financia este año."
+    hint_general: "Afirma un hecho sin dejar dudas, sin que sea necesariamente una prohibición."
+    explanation: "Categórica: afirma un hecho sin dejar dudas, sea o no una prohibición. «Terminante» se usa sobre todo para negativas y prohibiciones, y «clarita» es coloquial y diminutiva, fuera de tono para la respuesta de un comité."
+    options:
+      - position: 1
+        text: "terminante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Terminante» se usa sobre todo para negativas y prohibiciones directas; aquí el comité no prohíbe nada, solo afirma un hecho sobre el presupuesto."
+        hint_specific: "Esa palabra se usa casi siempre para prohibir algo. ¿El comité prohíbe, o informa un hecho?"
+      - position: 2
+        text: "clarita"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clarita» es una forma coloquial de decir que algo se entiende bien, y no encaja con el tono formal de la respuesta de un comité."
+        hint_specific: "Esa palabra es coloquial y diminutiva. ¿El tono de un comité es formal o informal?"
+      - position: 3
+        text: "categórica"
+        is_correct: true
+  - position: 3
+    sentence: "El veredicto del jurado del concurso de cocina fue {{blank}}: ningún plato alcanzó el nivel para pasar a la final."
+    hint_general: "No deja ninguna duda al explicar por qué se tomó la decisión."
+    explanation: "Categórico: no deja ninguna duda al comunicarlo. «Definitivo» dice que algo no cambiará, sin indicar el tono, y «clarito» es coloquial y diminutivo, fuera de tono para un veredicto oficial."
+    options:
+      - position: 1
+        text: "definitivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Definitivo» dice que algo ya no cambiará, sin indicar el tono con que se comunicó; aquí lo que resalta es que no dejaron ninguna duda al explicarlo."
+        hint_specific: "Esa palabra habla de que algo no cambiará, no de cómo se explicó. ¿La frase describe el tono, o solo que no habrá cambios?"
+      - position: 2
+        text: "clarito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clarito» es una forma coloquial y diminutiva de decir que algo se entiende, y no encaja con el tono de un veredicto oficial de un concurso."
+        hint_specific: "Esa palabra es coloquial y diminutiva. ¿El tono de un veredicto oficial es formal o informal?"
+      - position: 3
+        text: "categórico"
+        is_correct: true
+  - position: 4
+    sentence: "Los correos del proveedor fueron {{blank}}: sin descuento no hay entrega antes de fin de mes."
+    hint_general: "No dejan dudas sobre una condición concreta."
+    explanation: "Categóricos: no dejan dudas sobre una condición. «Categorizados» significa clasificados en carpetas o tipos, y «indiscutibles» describe hechos que nadie puede rebatir, no el tono al escribir; aquí lo que resalta es cómo lo comunicó el proveedor."
+    options:
+      - position: 1
+        text: "categorizados"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Categorizados» significa que los correos fueron clasificados en carpetas o tipos; aquí lo importante es que no dejaron dudas sobre la condición del descuento."
+        hint_specific: "Esa palabra habla de ordenar cosas en carpetas o tipos. ¿Los correos ordenan algo, o afirman una condición sin dudas?"
+      - position: 2
+        text: "indiscutibles"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiscutibles» describe hechos que nadie puede rebatir, no el tono de quien escribe; aquí lo que se nota es cómo el proveedor lo comunicó, sin dejar margen."
+        hint_specific: "Esa palabra habla de hechos que nadie puede rebatir, no del tono al escribir. ¿Aquí importa si se puede rebatir, o cómo se comunicó?"
+      - position: 3
+        text: "categóricos"
+        is_correct: true
+  - position: 5
+    sentence: "La decisión de la directora fue {{blank}}: el evento se cancela, sin excepciones."
+    hint_general: "Comunicada con total seguridad, sin dejar ninguna duda."
+    explanation: "Categórica: comunicada con total seguridad, sin dejar dudas. «Inapelable» viene del lenguaje de sanciones que no se pueden recurrir, y «concluyente» describe la fuerza de una prueba; aquí no hay proceso ni prueba, solo una decisión dicha con seguridad."
+    options:
+      - position: 1
+        text: "inapelable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inapelable» describe algo que no se puede recurrir ni cuestionar formalmente, como una sanción; aquí lo que resalta es la seguridad con la que lo dijo, no un proceso de apelación."
+        hint_specific: "Esa palabra viene del lenguaje de sanciones que no se pueden recurrir. ¿La frase describe un proceso formal, o el tono al decirlo?"
+      - position: 2
+        text: "concluyente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Concluyente» describe una prueba que zanja una duda por sí sola; aquí no hay una prueba, solo una decisión comunicada con total seguridad."
+        hint_specific: "Esa palabra describe la fuerza de una prueba. ¿Aquí hay una prueba, o una decisión comunicada con seguridad?"
+      - position: 3
+        text: "categórica"
+        is_correct: true
+  - position: 6
+    sentence: "El aviso del edificio fue {{blank}}: sin el código de acceso, nadie entra al estacionamiento."
+    hint_general: "No deja margen a discusión sobre una condición para entrar."
+    explanation: "Categórico: no deja margen a discusión. «Terminante» se usa sobre todo para prohibir algo directamente, y «clarito» es coloquial y diminutivo, fuera de tono para un aviso oficial."
+    options:
+      - position: 1
+        text: "terminante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Terminante» se usa sobre todo para negativas y prohibiciones directas; aquí el aviso no prohíbe entrar, explica una condición para poder entrar."
+        hint_specific: "Esa palabra se usa casi siempre para prohibir algo directamente. ¿El aviso prohíbe entrar, o explica una condición?"
+      - position: 2
+        text: "clarito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clarito» es una forma coloquial y diminutiva, y no encaja con el tono de un aviso oficial de un edificio."
+        hint_specific: "Esa palabra es coloquial y diminutiva. ¿El tono de un aviso oficial es formal o informal?"
+      - position: 3
+        text: "categórico"
+        is_correct: true
+  - position: 7
+    sentence: "La postura del sindicato fue {{blank}} desde la primera reunión: sin aumento, no hay acuerdo."
+    hint_general: "No deja dudas desde el principio sobre una condición."
+    explanation: "Categórica: no deja dudas desde el principio. «Categorizada» significa clasificada en un grupo, y «definitiva» dice que algo no cambiará, sin indicar la seguridad con que se comunicó."
+    options:
+      - position: 1
+        text: "categorizada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Categorizada» significa que algo fue clasificado dentro de un grupo o tipo; la postura del sindicato no clasifica nada, afirma una condición sin dejar dudas."
+        hint_specific: "Esa palabra habla de ordenar algo en un grupo. ¿La postura ordena algo, o afirma una condición?"
+      - position: 2
+        text: "definitiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Definitiva» dice que algo ya no cambiará, sin indicar con qué seguridad se comunicó; aquí lo que resalta es que no dejaron ninguna duda al explicarlo desde el principio."
+        hint_specific: "Esa palabra habla de que algo no cambiará, no de la seguridad con que se dijo. ¿Describe el tono, o solo que no cambiará?"
+      - position: 3
+        text: "categórica"
+        is_correct: true
+  - position: 8
+    sentence: "La instrucción del piloto fue {{blank}}: todos debían sentarse de inmediato y guardar silencio."
+    hint_general: "Dicha con total firmeza, sin dejar dudas sobre lo que había que hacer."
+    explanation: "Categórica: dicha con total firmeza. «Indiscutible» describe un hecho que nadie puede rebatir, no el tono de una orden, y «inapelable» viene del lenguaje de sanciones que no se pueden recurrir."
+    options:
+      - position: 1
+        text: "indiscutible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiscutible» describe un hecho que nadie puede rebatir, no el tono con que alguien da una orden; aquí lo que resalta es la firmeza con que el piloto lo dijo."
+        hint_specific: "Esa palabra habla de un hecho que nadie puede rebatir. ¿La frase describe un hecho, o el tono al dar la orden?"
+      - position: 2
+        text: "inapelable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inapelable» viene del lenguaje de sanciones que no se pueden recurrir formalmente; aquí no hay un proceso de apelación, solo una orden dicha con total firmeza."
+        hint_specific: "Esa palabra viene de sanciones que no se pueden recurrir. ¿Aquí hay un proceso formal, o solo una orden firme?"
+      - position: 3
+        text: "categórica"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Sin vueltas con el presupuesto"
+    body: "El equipo esperaba una respuesta ambigua, como siempre. Pero la directora fue categórica: «Sin ese presupuesto, el proyecto no arranca este trimestre». Nadie preguntó más: por fin sabían a qué atenerse."
+    before_phrase: "Como que sí, pero depende, ya veremos."
+    after_phrase: "Fui categórica: sin presupuesto, no arranca."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta directa"
+    body: "El periodista preguntó si la empresa despediría personal este año. El director fue categórico: «No habrá despidos, y lo firmo hoy si hace falta». La sala se quedó en silencio un segundo, sorprendida de una respuesta tan clara."
+    before_phrase: "Bueno, no puedo confirmar nada todavía."
+    after_phrase: "Fui categórico: no habrá despidos."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La respuesta que no dio vueltas"
+    body: "Los hijos insistían en que dejara el turno de noche. Después de escucharlos, su padre fue categórico: «Dejo el turno de noche este mes, ya está decidido». Nadie discutió más: sabían que, cuando hablaba así, ya lo había pensado bien."
+    before_phrase: "Bueno, lo voy a pensar, a ver qué se puede hacer."
+    after_phrase: "Fui categórico: dejo el turno de noche este mes."
+provenance:
+  generator: "hand-written by flui content agent"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "autentico"
+status: "draft"
+lemma: "auténtico"
+part_of_speech: "adjetivo"
+syllables: ["au", "tén", "ti", "co"]
+stressed_syllable: 2
+ipa_latam: "[au.ˈten.ti.ko]"
+ipa_es: "[au.ˈten.ti.ko]"
+explanation: "Que es real y no es falso ni copiado: se corresponde con lo que uno de verdad piensa o siente."
+example_sentence: "Su publicación no tenía grandes efectos, pero sonaba auténtica y por eso la gente confiaba en ella."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para lo que se siente genuino, sin pose ni cálculo, más allá de si es perfecto."
+when_not_to_use: "No la uses solo para decir que un dato es cierto: para eso está «verídico», no «auténtico»."
+collocations:
+  - "contenido auténtico"
+  - "sonar auténtico"
+  - "ser auténtico contigo mismo"
+replaces:
+  - before: "Se ve que es de verdad"
+    after: "Se ve que es auténtico"
+  - before: "No está actuando"
+    after: "Es auténtico"
+  - before: "No copia a nadie"
+    after: "Es auténtico"
+family: ["autenticidad", "auténticamente"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["que se vea real", "que no parezca falso"]
+  funcion: ["describir", "elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "verídico"
+    difference: "«Verídico» dice que un hecho o un dato es cierto; «auténtico» dice que algo o alguien es real y no está fingido."
+    memory_trick: "Un dato es verídico; una persona es auténtica."
+  - confused_with: "original"
+    difference: "«Original» dice que algo es nuevo o distinto de lo demás; «auténtico» dice que es genuino, aunque se parezca a otras cosas."
+exercises:
+  - position: 1
+    sentence: "El video de Lucía no tenía buena luz ni edición, pero mostraba su rutina real de la mañana sin arreglar nada: por eso se sintió tan {{blank}}."
+    hint_general: "Piensa en la palabra para algo que se muestra tal cual es, sin fingir ni arreglar nada."
+    explanation: "Auténtico: se muestra tal cual es, sin fingir. «Artístico» habla del cuidado visual de una imagen, y «verídico» se usa para datos o hechos comprobables, no para cómo se muestra alguien."
+    options:
+      - position: 1
+        text: "artístico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Artístico» habla del cuidado estético de la imagen, y el video de Lucía no tenía buena luz ni edición: lo que se nota es que no fingió nada, no que se viera bonito."
+        hint_specific: "«Artístico» habla de lo cuidada que se ve una imagen. ¿El video de Lucía se destacaba por su cuidado visual o por no fingir nada?"
+      - position: 2
+        text: "auténtico"
+        is_correct: true
+      - position: 3
+        text: "verídico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Verídico» dice que un dato o un hecho es cierto, y aquí no se juzga si lo que cuenta es verdad, sino si se muestra tal como es, sin fingir."
+        hint_specific: "«Verídico» se usa para hechos o datos comprobables. ¿Aquí se habla de un dato o de cómo Lucía se muestra?"
+  - position: 2
+    sentence: "En la presentación, Marta no usó ninguna cifra impresionante ni promesas grandes: solo contó lo que de verdad pasó en el proyecto, con sus fallos incluidos, y por eso sonó {{blank}}."
+    hint_general: "Busca la palabra para un tono que suena real, sin cifras ni promesas grandes de por medio."
+    explanation: "Auténtico: suena real, sin cifras ni promesas grandes. «Fidedigno» es una palabra de informe oficial, y «original» dice que algo es nuevo, no que sea real."
+    options:
+      - position: 1
+        text: "fidedigno"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fidedigno» es una palabra de informe o documento oficial, y suena forzada para describir cómo sonó Marta al hablar con su equipo."
+        hint_specific: "«Fidedigno» suena a un informe formal. ¿Encaja ese tono en cómo Marta le habló a su equipo?"
+      - position: 2
+        text: "original"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Original» dice que algo es nuevo o distinto de lo demás, y aquí lo que se valora es que no ocultó nada, no que fuera una idea nueva."
+        hint_specific: "«Original» habla de que algo es nuevo o distinto. ¿Aquí se valora que no ocultara nada o que tuviera una idea nueva?"
+      - position: 3
+        text: "auténtico"
+        is_correct: true
+  - position: 3
+    sentence: "Cuando le preguntaron por qué había dejado su trabajo anterior, el candidato no dio una respuesta ensayada: contó lo que de verdad sintió en ese momento, y eso lo hizo sonar {{blank}}."
+    hint_general: "Se trata de una respuesta que suena real y sin ensayo, no solo de que sea legal o esperada."
+    explanation: "Auténtico: la respuesta sonó real y sin ensayo. «Legítimo» se usa para lo que cumple una ley o un derecho, y «sincero» solo dice que no miente, sin hablar de si sonó ensayada."
+    options:
+      - position: 1
+        text: "legítimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Legítimo» es una palabra legal, para lo que cumple con la ley o un derecho, y aquí no se habla de derechos, sino de si su respuesta sonaba real."
+        hint_specific: "«Legítimo» se usa para lo que cumple una ley o un derecho. ¿Aquí se habla de derechos o de si la respuesta sonaba real?"
+      - position: 2
+        text: "sincero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincero» describe que alguien no miente al hablar, y aquí el punto no es solo que no mintiera, sino que su respuesta sonó real y sin ensayo."
+        hint_specific: "«Sincero» dice que alguien no miente. ¿Aquí el punto es que no mintiera o que sonara real y sin ensayo?"
+      - position: 3
+        text: "auténtico"
+        is_correct: true
+  - position: 4
+    sentence: "El anuncio mostraba a la actriz usando el producto en su cocina de verdad, sin maquillaje de estudio ni guion visible, y los comentarios decían que se veía {{blank}}."
+    hint_general: "Busca la palabra para algo que se ve tal cual es, sin maquillaje ni guion detrás."
+    explanation: "Auténtico: se ve tal cual es, sin maquillaje ni guion. «Creíble» solo dice que convence, aunque esté actuado, y «natural» describe la forma de comportarse, no lo que hay detrás de cámara."
+    options:
+      - position: 1
+        text: "creíble"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Creíble» dice que algo se puede creer, y un anuncio bien actuado también puede ser creíble sin ser real: aquí lo que se nota es que no hay guion ni maquillaje de estudio."
+        hint_specific: "«Creíble» solo dice que algo convence, aunque esté actuado. ¿El comentario habla de que convence o de que no hay guion ni maquillaje?"
+      - position: 2
+        text: "natural"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Natural» describe una forma de comportarse sin rigidez, y aquí el comentario no habla de su postura, sino de lo que hay detrás de cámara."
+        hint_specific: "«Natural» describe la forma de comportarse. ¿El comentario habla de su postura o de lo que hay detrás de cámara?"
+      - position: 3
+        text: "auténtico"
+        is_correct: true
+  - position: 5
+    sentence: "En vez de escribir la típica carta de agradecimiento, el nieto grabó un video contando, con sus propias palabras y sin ensayar, lo que su abuela significaba para él: quedó {{blank}}."
+    hint_general: "Piensa en un mensaje que suena propio de quien lo dice, sin ensayo previo."
+    explanation: "Auténtico: suena propio del nieto, sin ensayo. «Honesto» dice que no oculta nada, y «real» solo dice que algo existe, sin hablar del tono del mensaje."
+    options:
+      - position: 1
+        text: "honesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Honesto» dice que alguien no engaña ni oculta nada, y aquí el video no se juzga por si oculta algo, sino por sonar propio y sin ensayo."
+        hint_specific: "«Honesto» habla de no ocultar ni engañar. ¿Aquí el video se valora por eso o por sonar propio y sin ensayo?"
+      - position: 2
+        text: "real"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Real» solo dice que algo existe de verdad, y el video obviamente existe: lo que se elogia es que sonó propio del nieto y no ensayado."
+        hint_specific: "«Real» solo dice que algo existe. ¿Aquí se elogia que exista o que suene propio y sin ensayo?"
+      - position: 3
+        text: "auténtico"
+        is_correct: true
+  - position: 6
+    sentence: "En la reunión de cierre, en vez de repetir las frases de siempre sobre el trabajo en equipo, Pedro contó con sus propias palabras lo que había aprendido, incluidos sus errores: su discurso sonó {{blank}}."
+    hint_general: "Se trata de un discurso con palabras propias, más allá de si se preparó antes o no."
+    explanation: "Auténtico: usó sus propias palabras al hablar. «Directo» describe a quien no da rodeos, y «improvisado» dice que algo no se preparó, aunque el discurso de Pedro pudo prepararse antes."
+    options:
+      - position: 1
+        text: "directo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Directo» describe a quien dice las cosas sin rodeos, y aquí lo que se destaca no es que fuera directo, sino que habló con sus propias palabras y no con frases de siempre."
+        hint_specific: "«Directo» describe a quien habla sin rodeos. ¿Aquí se destaca que fuera directo o que usara sus propias palabras?"
+      - position: 2
+        text: "improvisado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Improvisado» dice que algo no se preparó, y el discurso de Pedro pudo prepararse antes: lo que lo hizo sonar auténtico fue que usó sus propias palabras, no que fuera improvisado."
+        hint_specific: "«Improvisado» dice que algo no se preparó de antemano. ¿Aquí importa si se preparó o si usó sus propias palabras?"
+      - position: 3
+        text: "auténtico"
+        is_correct: true
+  - position: 7
+    sentence: "En su segunda entrevista para el pódcast, la invitada dejó de responder con las frases que usa siempre en redes y habló de sus dudas reales sobre el proyecto: se notó mucho más {{blank}}."
+    hint_general: "Busca la palabra para alguien que deja las frases hechas y habla con sus propias dudas."
+    explanation: "Auténtico: dejó las frases hechas y habló con sus dudas propias. «Abierto» habla de compartir más cosas, y «puro» se usa para algo sin mezcla, no para cómo suena una persona."
+    options:
+      - position: 1
+        text: "abierto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abierto» describe a quien comparte más de lo habitual, y aquí lo que cambió no es cuánto contó, sino que dejó las frases hechas y habló con sus propias dudas."
+        hint_specific: "«Abierto» habla de compartir más cosas. ¿Aquí cambió cuánto contó o cómo sonó al contarlo?"
+      - position: 2
+        text: "puro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puro» se usa para algo sin mezcla ni alteración, y no encaja para describir cómo suena alguien al hablar de sus dudas en una entrevista."
+        hint_specific: "«Puro» describe algo sin mezcla. ¿Esa palabra encaja para describir cómo habla una persona?"
+      - position: 3
+        text: "auténtico"
+        is_correct: true
+  - position: 8
+    sentence: "El documental sobre el barrio no usaba música dramática ni entrevistas preparadas: dejaba hablar a los vecinos con sus propias palabras, y por eso se sintió {{blank}}."
+    hint_general: "Piensa en algo que se muestra sin arreglos ni preparación, tal como es de verdad."
+    explanation: "Auténtico: dejó hablar a los vecinos con sus propias palabras. «Fiel» se usa cuando algo respeta un original, y «veraz» se usa para datos ciertos, no para el tono del documental."
+    options:
+      - position: 1
+        text: "fiel"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fiel» se usa para una copia o un relato que respeta el original al detalle, y aquí no hay ningún original que copiar: lo que se nota es que no fue preparado."
+        hint_specific: "«Fiel» se usa cuando algo respeta un original. ¿Aquí hay un original que copiar o simplemente se dejó hablar a los vecinos?"
+      - position: 2
+        text: "veraz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Veraz» dice que la información es cierta, y aquí el documental se valora por su tono, no porque los datos que da sean exactos."
+        hint_specific: "«Veraz» se usa para datos ciertos. ¿Aquí se habla de datos o del tono del documental?"
+      - position: 3
+        text: "auténtico"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "practica"
+    title: "El video sin editar"
+    body: "Renata dudó antes de publicar el video: no tenía buena luz, y se le trababa la voz al final. Lo subió igual, sin cortar nada. Los comentarios no hablaban de la calidad de la imagen, sino de lo bien que se sentía verla hablar así, sin pose. «Esto sí se siente auténtico», escribió alguien."
+    before_phrase: "Se nota que no está actuando."
+    after_phrase: "Se siente auténtico."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "El discurso sin diapositivas"
+    body: "Cuando se le cayó la presentación, Joaquín tuvo que hablar sin diapositivas sobre el año del equipo. Contó lo que de verdad había sido difícil, sin suavizarlo. Al terminar, su jefa le dijo: «Ese discurso sonó mucho más auténtico que cualquier diapositiva que hubieras preparado»."
+    before_phrase: "Sonó de verdad, no como un discurso ensayado."
+    after_phrase: "Sonó mucho más auténtico."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La carta sin corregir"
+    body: "En vez de la típica tarjeta con frases bonitas, Elisa le escribió a su padre una carta contando, con sus propias palabras y sin corregir nada, lo que había significado crecer con él. Él la leyó dos veces. «Es la carta más auténtica que me han escrito», le dijo, con la voz quebrada."
+    before_phrase: "Se nota que salió de verdad del corazón."
+    after_phrase: "Es la carta más auténtica que me han escrito."
+provenance:
+  generator: "hand-authored for redes-sociales theme batch"
+  gate: null
+  checked_on: "2026-09-18"

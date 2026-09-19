@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "polarizar"
+status: "draft"
+lemma: "polarizar"
+part_of_speech: "verbo"
+syllables: ["po", "la", "ri", "zar"]
+stressed_syllable: 4
+ipa_latam: "[po.la.ɾiˈsar]"
+ipa_es: "[po.la.ɾiˈθar]"
+explanation: "Dividir a la gente en dos opiniones fuertes que no llegan a ningún acuerdo sobre un tema."
+example_sentence: "Su publicación sobre trabajar desde casa polarizó a los seguidores: unos la aplaudieron, otros la destrozaron."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Se usa para describir el efecto de una publicación o un comentario que reparte a la audiencia en dos bandos firmes, no una simple diferencia de opiniones."
+when_not_to_use: "No la uses para un desacuerdo pasajero y leve, ni la confundas con «polemizar», que solo abre debate sin repartir a nadie en bandos."
+collocations:
+  - "polarizar a la audiencia"
+  - "polarizar la conversación"
+replaces:
+  - before: "Esa publicación dividió mucho a la gente"
+    after: "Esa publicación polarizó a la gente"
+  - before: "Cada vez que publico algo así, se arma una discusión enorme"
+    after: "Cada vez que publico algo así, polarizo a mis seguidores"
+family: ["polarización", "polarizado"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["dividir mucho"]
+  funcion: ["describir un efecto"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "polemizar"
+    difference: "«Polemizar» es generar debate o controversia sobre un tema; «polarizar» reparte a la gente en dos bandos opuestos, sin términos medios."
+    memory_trick: "Polemizar abre la discusión; polarizar la cierra en dos bandos."
+  - confused_with: "radicalizar"
+    difference: "«Radicalizar» es llevar a alguien hacia posturas más extremas dentro de un bando; «polarizar» es formar los dos bandos que se enfrentan entre sí."
+exercises:
+  - position: 1
+    sentence: "Renata subió una foto de su escritorio impecable y, sin buscarlo, {{blank}} a sus seguidores: unos la aplaudieron por ordenada y otros la acusaron de exagerada."
+    hint_general: "La foto repartió a la gente en dos bandos que no se ponen de acuerdo."
+    explanation: "Polarizó: la publicación repartió a los seguidores en dos bandos opuestos. «Polemizó» es abrir debate sobre un tema, y «provocó» solo dice que causó reacción, sin repartir a nadie en bandos."
+    options:
+      - position: 1
+        text: "polemizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Polemizar» es abrir debate sobre un tema; aquí los seguidores no solo debaten, quedan repartidos en dos bandos claros."
+        hint_specific: "«Polemizar» es generar debate. ¿La frase dice que la gente debate o que queda repartida en dos bandos?"
+      - position: 2
+        text: "provocó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Provocar» solo dice que causó una reacción, sin indicar que los seguidores se repartieran en dos bandos definidos."
+        hint_specific: "«Provocar» solo habla de causar reacción. ¿La frase describe dos bandos opuestos?"
+      - position: 3
+        text: "polarizó"
+        is_correct: true
+  - position: 2
+    sentence: "En el chat de las amigas, un video sobre si el helado de vainilla es aburrido bastó para {{blank}} al grupo entero, y Bruna tuvo que pedir tregua."
+    hint_general: "El grupo quedó repartido en dos posturas firmes por un tema sin importancia."
+    explanation: "Polarizar: el grupo quedó repartido en dos posturas firmes. «Escindir» es un término muy formal para un chat entre amigas, y «alborotar» describe revuelo general, no dos bandos definidos."
+    options:
+      - position: 1
+        text: "escindir"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Escindir» es un término muy formal, propio de informes o instituciones, y no encaja en un chat entre amigas."
+        hint_specific: "«Escindir» suena a informe institucional. ¿Ese tono encaja en un chat entre amigas?"
+      - position: 2
+        text: "alborotar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alborotar» describe un revuelo general, pero no dice que el grupo quedara repartido en dos posturas firmes."
+        hint_specific: "«Alborotar» habla de revuelo, no de bandos. ¿El chat solo se agitó o quedó dividido en dos posturas?"
+      - position: 3
+        text: "polarizar"
+        is_correct: true
+  - position: 3
+    sentence: "El video del gato de Iván subido al borde del balcón bastó para {{blank}} a la cuenta: para unos era gracioso, para otros una imprudencia."
+    hint_general: "Las opiniones sobre el video quedaron repartidas en dos bandos, sin término medio."
+    explanation: "Polarizar: las opiniones quedaron repartidas en dos bandos. «Paralizar» es detener algo por completo, y «enfrentar» solo dice que se oponen, sin indicar que la cuenta entera se repartió en dos posturas."
+    options:
+      - position: 1
+        text: "paralizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Paralizar» es detener algo por completo; aquí las opiniones no se detienen, se reparten en dos bandos."
+        hint_specific: "«Paralizar» implica que algo se detiene del todo. ¿Las opiniones se detienen o se dividen?"
+      - position: 2
+        text: "enfrentar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enfrentar» solo dice que dos posturas se oponen, sin indicar que la cuenta entera quedó repartida en dos bandos firmes."
+        hint_specific: "«Enfrentar» habla de oponerse. ¿La frase dice que toda la cuenta se repartió en dos posturas?"
+      - position: 3
+        text: "polarizar"
+        is_correct: true
+  - position: 4
+    sentence: "Mateo quería que la publicación diera a conocer su nueva colección, pero terminó por {{blank}} al gremio: la mitad la alabó y la otra mitad la destrozó."
+    hint_general: "No se trata de hacerse conocido, sino de repartir a la gente en dos bandos opuestos."
+    explanation: "Polarizar: el gremio quedó repartido en dos bandos opuestos. «Popularizar» es lograr que algo guste a muchos, y aquí la mitad la odió; «incomodar» solo dice que resultó molesta, sin indicar dos bandos definidos."
+    options:
+      - position: 1
+        text: "popularizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Popularizar» es lograr que algo guste a muchos, y aquí la mitad del gremio la odió: no se hizo popular sin más, quedó dividida."
+        hint_specific: "«Popularizar» es lograr que algo guste a muchos. ¿Aquí todos terminaron apreciando la colección?"
+      - position: 2
+        text: "incomodar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Incomodar» dice que algo resulta molesto, pero no que el gremio quedara repartido en dos bandos con posturas opuestas."
+        hint_specific: "«Incomodar» solo habla de molestia. ¿La frase describe dos bandos definidos?"
+      - position: 3
+        text: "polarizar"
+        is_correct: true
+  - position: 5
+    sentence: "En la comida familiar, el tío Simón mencionó la piña en la pizza y el tema bastó para {{blank}} a toda la mesa entre quienes la aman y quienes la odian."
+    hint_general: "El tema, sin ser grave, repartió a toda la mesa en dos posturas firmes."
+    explanation: "Polarizar: el tema repartió a la mesa en dos posturas firmes al instante. «Enconar» describe un conflicto que empeora con el tiempo, y aquí ocurre de inmediato; «irritar» solo dice que algo molesta, sin indicar dos bandos."
+    options:
+      - position: 1
+        text: "enconar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enconar» es un verbo muy literario que describe un conflicto que empeora poco a poco; aquí la mesa se divide al instante, no hay un conflicto que se agrave con el tiempo."
+        hint_specific: "«Enconar» suena a texto literario y habla de algo que empeora con el tiempo. ¿Aquí la mesa se divide al momento o poco a poco?"
+      - position: 2
+        text: "irritar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Irritar» dice que algo molesta a alguien, pero no que la mesa entera quedara repartida en dos bandos con posturas contrarias."
+        hint_specific: "«Irritar» solo habla de molestia. ¿La frase describe dos bandos definidos en la mesa?"
+      - position: 3
+        text: "polarizar"
+        is_correct: true
+  - position: 6
+    sentence: "Ricardo notó que su publicación sobre subir los precios {{blank}} a los clientes de la tienda: unos entendieron el motivo, otros amenazaron con no volver."
+    hint_general: "Los clientes quedaron repartidos en dos posturas firmes por la misma publicación."
+    explanation: "Polarizó: los clientes quedaron repartidos en dos posturas firmes. «Enemistó» diría que se volvieron enemigos entre sí, y aquí siguen siendo clientes; «agitó» solo describe inquietud general, sin dos bandos definidos."
+    options:
+      - position: 1
+        text: "enemistó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enemistar» dice que las personas se vuelven enemigas entre sí, y aquí los clientes siguen siéndolo: solo quedaron repartidos en dos posturas sobre el aumento."
+        hint_specific: "«Enemistar» habla de volverse enemigos. ¿Los clientes dejaron de serlo o solo se dividieron en dos posturas?"
+      - position: 2
+        text: "agitó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agitar» describe inquietud general, sin indicar que los clientes quedaran repartidos en dos posturas claras."
+        hint_specific: "«Agitar» habla de inquietud general. ¿La frase describe dos posturas claras?"
+      - position: 3
+        text: "polarizó"
+        is_correct: true
+  - position: 7
+    sentence: "En la entrevista de trabajo, Camila explicó que su publicación más comentada había logrado {{blank}} a la comunidad: la mitad pedía que siguiera la serie y la otra mitad la criticaba por el tema."
+    hint_general: "La comunidad quedó repartida en dos posturas firmes, no solo interesada o intrigada."
+    explanation: "Polarizar: la comunidad quedó repartida en dos posturas firmes. «Confrontar» implica un careo directo entre personas, y aquí solo hay dos posturas sobre un tema; «picar» solo dice que despertó interés, sin repartir a nadie en bandos."
+    options:
+      - position: 1
+        text: "confrontar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confrontar» implica poner a alguien cara a cara con algo o con otra persona, y aquí no hubo ese careo: la comunidad quedó repartida en dos posturas sobre el tema."
+        hint_specific: "«Confrontar» implica un careo directo. ¿Aquí hay un careo o dos posturas sobre un tema?"
+      - position: 2
+        text: "picar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Picar» solo dice que algo despertó curiosidad o interés, y aquí la comunidad no solo reaccionó: quedó repartida en dos bandos que discuten entre sí."
+        hint_specific: "«Picar» solo habla de despertar interés. ¿La frase describe dos bandos que discuten?"
+      - position: 3
+        text: "polarizar"
+        is_correct: true
+  - position: 8
+    sentence: "La publicación de Valentina sobre cerrar la panadería los domingos {{blank}} a los clientes del barrio en los comentarios."
+    hint_general: "Los comentarios quedaron repartidos en dos posturas firmes sobre la misma decisión."
+    explanation: "Polarizó: los comentarios quedaron repartidos en dos posturas firmes. «Inflamó» describe que una tensión crece en intensidad, sin indicar dos bandos definidos, y «descolocó» solo dice que algo desconcierta, sin repartir a nadie en posturas."
+    options:
+      - position: 1
+        text: "inflamó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inflamar» describe que una tensión crece en intensidad, pero no que los comentarios quedaran repartidos en dos posturas definidas."
+        hint_specific: "«Inflamar» habla de que algo crece en intensidad. ¿La frase describe dos posturas definidas?"
+      - position: 2
+        text: "descolocó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descolocar» dice que algo desconcierta, y aquí los clientes no quedaron confundidos: se repartieron en dos posturas claras."
+        hint_specific: "«Descolocar» habla de desconcertar. ¿Los clientes quedaron confundidos o repartidos en dos posturas?"
+      - position: 3
+        text: "polarizó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La campaña que dividió al equipo"
+    body: "El equipo de marketing revisaba los comentarios de la nueva campaña. «Esto va a polarizar a la audiencia», advirtió Noelia señalando el tono de la publicación. Su jefe sonrió: «Mejor eso que la indiferencia. Ajustemos el mensaje para que divida menos y convenza más»."
+    before_phrase: "Esto va a generar mucha división."
+    after_phrase: "Esto va a polarizar a la audiencia."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El grupo de la familia"
+    body: "Después de que el primo compartiera un meme sobre las reuniones familiares, el chat se llenó de mensajes encontrados. «Ese meme polarizó a toda la familia», escribió la abuela, sorprendida de que un chiste pudiera abrir tanta discusión. Al final, todos se rieron y pidieron que no se volviera a compartir sin avisar."
+    before_phrase: "Ese meme dividió mucho a la familia."
+    after_phrase: "Ese meme polarizó a toda la familia."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta sobre el post viral"
+    body: "«Cuéntame de tu publicación más comentada», pidió la entrevistadora. Julián explicó que un video sobre trabajar desde la cama había logrado polarizar a su comunidad: unos lo defendían como libertad, otros lo criticaban como falta de disciplina. «Aprendí a leer esas reacciones antes de publicar», añadió."
+    before_phrase: "Un video que dividió mucho a la gente."
+    after_phrase: "Un video que logró polarizar a mi comunidad."
+provenance:
+  generator: "claude-sonnet-5"
+  gate: null
+  checked_on: "2026-09-18"

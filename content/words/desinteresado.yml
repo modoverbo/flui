@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "desinteresado"
+status: "draft"
+lemma: "desinteresado"
+part_of_speech: "adjetivo"
+syllables: ["de", "sin", "te", "re", "sa", "do"]
+stressed_syllable: 5
+ipa_latam: "[de.sin.te.reˈsa.ðo]"
+ipa_es: "[de.sin.te.reˈsa.ðo]"
+explanation: "Que ayuda a alguien sin buscar nada para sí mismo, ni dinero ni reconocimiento."
+example_sentence: "Lo que más admiro de Rodrigo es que ayuda de forma desinteresada, sin esperar que se lo agradezcan."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien para elogiar un gesto o una ayuda que no busca nada a cambio."
+when_not_to_use: "No la uses para alguien indiferente que no se involucra, ni para quien espera algo a cambio."
+collocations:
+  - "gesto desinteresado"
+  - "ayuda desinteresada"
+replaces:
+  - before: "Lo hizo sin querer nada a cambio"
+    after: "Lo hizo de forma desinteresada"
+  - before: "Es una persona que ayuda porque sí"
+    after: "Es una persona desinteresada"
+family: ["desinterés", "desinteresadamente"]
+themes:
+  - slug: "amistad"
+    relevance: 3
+tags:
+  comodin: ["buena persona"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "interesado"
+    difference: "«Interesado» actúa buscando un beneficio propio; «desinteresado» actúa sin esperar nada a cambio."
+    memory_trick: "El interesado mira su beneficio; el desinteresado no mira el suyo."
+  - confused_with: "indiferente"
+    difference: "«Indiferente» no le importa lo que pase; «desinteresado» sí se involucra, pero no busca nada para sí."
+    memory_trick: "El indiferente no se mete; el desinteresado se mete sin cobrar nada."
+exercises:
+  - position: 1
+    sentence: "Cuando Valentina se mudó de departamento, su vecino Rodrigo cargó cajas todo el sábado sin pedirle nada a cambio: fue un gesto {{blank}}."
+    hint_general: "Busca la palabra para alguien que ayuda sin buscar nada para sí mismo."
+    explanation: "Desinteresado: ayuda sin buscar nada a cambio. «Interesado» actúa por un beneficio propio, y «indiferente» no se involucra, cuando aquí Rodrigo se pasó el día ayudando."
+    options:
+      - position: 1
+        text: "interesado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interesado» describe a quien busca algo a cambio, y el texto dice justo lo contrario: Rodrigo no pidió nada."
+        hint_specific: "«Interesado» busca algo para sí. ¿Rodrigo pidió algo a cambio de cargar las cajas?"
+      - position: 2
+        text: "desinteresado"
+        is_correct: true
+      - position: 3
+        text: "indiferente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferente» describe a quien no le importa la situación, y Rodrigo se pasó el sábado entero ayudando."
+        hint_specific: "«Indiferente» no se involucra en nada. ¿Rodrigo se involucró o miró desde lejos?"
+  - position: 2
+    sentence: "Nadie supo que fue Sergio quien corrigió el error del informe antes de la reunión; fue una ayuda muy {{blank}}, porque no buscaba que se lo agradecieran."
+    hint_general: "Es la palabra para una ayuda que no busca ningún tipo de reconocimiento."
+    explanation: "Desinteresada: no busca que se lo agradezcan. «Servicial» solo dice que está dispuesto a ayudar, y «generosa» habla de dar con largueza, no de evitar el reconocimiento."
+    options:
+      - position: 1
+        text: "servicial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servicial» describe a quien siempre está dispuesto a ayudar, pero no dice que lo haga sin buscar reconocimiento, como aquí."
+        hint_specific: "«Servicial» habla de estar dispuesto a ayudar. ¿La frase habla de disposición o de no buscar nada a cambio?"
+      - position: 2
+        text: "generosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generosa» habla de dar con largueza, y lo que importa en el texto es que Sergio no buscaba ser reconocido, no cuánto dio."
+        hint_specific: "«Generosa» va de dar mucho. ¿El texto habla de cuánto dio o de que nadie lo supiera?"
+      - position: 3
+        text: "desinteresada"
+        is_correct: true
+  - position: 3
+    sentence: "En la carta de recomendación, la gerente describió a Pablo como un colaborador {{blank}} que ayudaba a cualquiera sin buscar mérito propio."
+    hint_general: "Busca la palabra formal para quien ayuda a cualquiera sin buscar mérito propio."
+    explanation: "Desinteresado: ayuda sin buscar mérito propio. «Buena gente» es demasiado coloquial para una carta formal, y «generoso» habla de dar cosas, no de evitar el mérito."
+    options:
+      - position: 1
+        text: "desinteresado"
+        is_correct: true
+      - position: 2
+        text: "buena gente"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Buena gente» es una expresión coloquial; una carta de recomendación pide un registro más formal."
+        hint_specific: "Piensa en el tono de una carta formal. ¿«Buena gente» encaja en ese tono?"
+      - position: 3
+        text: "generoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generoso» describe a quien da con largueza, y el texto no habla de dar cosas, sino de ayudar sin buscar mérito."
+        hint_specific: "«Generoso» va de dar cosas. ¿El texto habla de dar cosas o de no buscar mérito?"
+  - position: 4
+    sentence: "—No hace falta que me pagues nada, esto lo hago porque quiero —le dijo Bruno a su amigo, que pensó que pocas veces había visto un gesto tan {{blank}}."
+    hint_general: "Es la palabra para un gesto que no espera nada a cambio, dicho con toda naturalidad."
+    explanation: "Desinteresado: no espera nada a cambio. «Altruista» significa algo parecido, pero suena demasiado solemne entre amigos, y «servicial» no dice que lo haga sin esperar nada."
+    options:
+      - position: 1
+        text: "altruista"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Altruista» tiene un tono más solemne y libresco; entre amigos hablando así, sonaría forzado."
+        hint_specific: "Piensa en cómo hablan dos amigos. ¿«Altruista» suena natural en esa charla?"
+      - position: 2
+        text: "desinteresado"
+        is_correct: true
+      - position: 3
+        text: "servicial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servicial» describe a quien siempre está dispuesto a ayudar; no dice que lo haga sin esperar nada a cambio, como aquí."
+        hint_specific: "«Servicial» habla de estar dispuesto. ¿Bruno solo está dispuesto, o además no espera nada?"
+  - position: 5
+    sentence: "Camila donó sangre cada tres meses durante años, sin contárselo casi a nadie: un hábito completamente {{blank}}."
+    hint_general: "Busca la palabra para un hábito de ayudar que no busca nada a cambio, ni siquiera que lo sepan."
+    explanation: "Desinteresado: un hábito que no busca nada a cambio. «Interesado» buscaría algo, y «indiferente» no se involucraría, cuando Camila donó sangre durante años."
+    options:
+      - position: 1
+        text: "interesado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interesado» describe a quien busca algo a cambio, y Camila ni siquiera lo contaba, así que no buscaba reconocimiento."
+        hint_specific: "«Interesado» busca algo. ¿Camila buscaba que la reconocieran por donar?"
+      - position: 2
+        text: "indiferente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferente» describe a quien no le importa nada, y donar sangre durante años muestra justo lo contrario."
+        hint_specific: "«Indiferente» no se involucra. ¿Donar durante años es involucrarse o no?"
+      - position: 3
+        text: "desinteresado"
+        is_correct: true
+  - position: 6
+    sentence: "Iván se quedó tres tardes seguidas enseñándole a la nueva pasante a usar el sistema, sin que nadie se lo pidiera: fue {{blank}}."
+    hint_general: "Es la palabra para ayudar por decisión propia, sin que nadie lo pida y sin esperar nada."
+    explanation: "Desinteresado: ayudar sin que nadie lo pida ni esperar nada. «Atento» solo nota los detalles, y «servicial» no explica por qué lo hizo sin que se lo pidieran."
+    options:
+      - position: 1
+        text: "desinteresado"
+        is_correct: true
+      - position: 2
+        text: "atento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atento» describe a quien está pendiente de los detalles, y aquí lo importante es que nadie se lo pidió y no esperaba nada."
+        hint_specific: "«Atento» va de fijarse en detalles. ¿Lo central aquí son los detalles o que nadie se lo pidió?"
+      - position: 3
+        text: "servicial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Servicial» describe a quien está siempre dispuesto a ayudar, pero no explica por qué lo hizo sin que se lo pidieran ni esperar nada."
+        hint_specific: "«Servicial» va de estar dispuesto. Relee: ¿la frase habla solo de disposición?"
+  - position: 7
+    sentence: "Marta le cedió su lugar en la lista de espera a una compañera que lo necesitaba más que ella: fue una decisión {{blank}}."
+    hint_general: "Busca la palabra para una decisión que no le trae ningún beneficio a quien la toma."
+    explanation: "Desinteresada: una decisión que no beneficia a quien la toma. «Generosa» habla de dar con largueza, y «interesada» describe justo lo contrario de lo que hizo Marta."
+    options:
+      - position: 1
+        text: "generosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generosa» habla de dar con largueza, y aquí lo central es que Marta no ganó nada al cederle el lugar."
+        hint_specific: "«Generosa» va de dar cosas. ¿Marta dio algo material o cedió su propio lugar?"
+      - position: 2
+        text: "interesada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interesada» describe a quien busca algo a cambio, y la frase dice justo lo contrario: Marta perdió su lugar sin recibir nada."
+        hint_specific: "«Interesada» busca algo a cambio. ¿Marta ganó algo al ceder su lugar?"
+      - position: 3
+        text: "desinteresada"
+        is_correct: true
+  - position: 8
+    sentence: "Todos los domingos, un grupo de vecinos limpia la plaza del barrio sin que nadie les pague ni se los pida: una actividad {{blank}}."
+    hint_general: "Es la palabra para una actividad que nadie paga ni exige, hecha porque sí."
+    explanation: "Desinteresada: una actividad que nadie paga ni exige. «Indiferente» no se involucraría, y «altruista» significa algo parecido, pero suena demasiado solemne para un grupo de vecinos."
+    options:
+      - position: 1
+        text: "indiferente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferente» describe a quien no le importa nada, y estos vecinos llevan meses ocupándose de la plaza."
+        hint_specific: "«Indiferente» no se involucra. ¿Limpiar la plaza cada domingo es involucrarse?"
+      - position: 2
+        text: "altruista"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Altruista» tiene el mismo sentido, pero suena demasiado solemne para describir a un grupo de vecinos un domingo cualquiera."
+        hint_specific: "Piensa en cómo se habla de los vecinos de un barrio. ¿«Altruista» suena a charla cotidiana?"
+      - position: 3
+        text: "desinteresada"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe que nadie firmó"
+    body: "Antes de la reunión con el cliente, Rocío notó que la presentación de su compañero tenía cifras mal puestas. Se quedó hasta tarde arreglándolo y nunca se lo contó a nadie. Cuando él lo descubrió semanas después, ella solo dijo: «No hacía falta que lo supieras, lo hice porque sí»."
+    before_phrase: "Lo ayudó sin pedir nada a cambio, sin más."
+    after_phrase: "Fue un gesto totalmente desinteresado."
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "El mandado de los sábados"
+    body: "Todos los sábados, Esteban le llevaba el mandado a su vecina Rosa, que ya no podía caminar largas distancias. Nunca le cobró ni un peso, y cuando ella insistía en pagarle, él sonreía y cambiaba de tema. Rosa terminó por entender que a él no le importaba recibir nada, solo ayudar."
+    before_phrase: "Lo hace sin esperar nada, de puro corazón."
+    after_phrase: "Es un gesto desinteresado, de verdad."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "La herencia repartida"
+    body: "Cuando sus padres decidieron repartir en vida el dinero de la venta de la casa familiar, Irene le cedió su parte a su hermano, que atravesaba una mala racha económica. No quiso que nadie en la familia lo supiera. «No lo hice para que me lo agradecieran», le dijo a su hermano cuando finalmente se enteró."
+    before_phrase: "Lo hizo sin querer nada a cambio."
+    after_phrase: "Fue un gesto completamente desinteresado."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

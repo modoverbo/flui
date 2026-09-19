@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "efimero"
+status: "draft"
+lemma: "efímero"
+part_of_speech: "adjetivo"
+syllables: ["e", "fí", "me", "ro"]
+stressed_syllable: 2
+ipa_latam: "[eˈfi.me.ɾo]"
+ipa_es: "[eˈfi.me.ɾo]"
+explanation: "Que dura muy poco tiempo, aunque haya sido intenso mientras pasaba."
+example_sentence: "El romance de ese verano fue efímero, pero Marina todavía lo recuerda con una sonrisa."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsalo para algo breve pero con peso, no para algo simplemente aburrido y corto."
+when_not_to_use: "No lo uses para algo que terminó por indiferencia: efímero implica que fue intenso, aunque haya durado poco."
+collocations:
+  - "un romance efímero"
+  - "algo efímero pero intenso"
+  - "fue efímero"
+semantic_set_id: "duracion-del-vinculo"
+family: []
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["duró poco pero", "un rollo de verano"]
+  funcion: ["describir duración"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "fugaz"
+    difference: "Fugaz describe la velocidad con la que algo pasa, casi sin darte cuenta; efímero describe algo que dura poco tiempo en total, aunque lo hayas vivido con intensidad."
+    memory_trick: "Lo fugaz pasa rápido; lo efímero dura poco, aunque lo sientas despacio."
+replaces:
+  - before: "Duró poco, pero mientras pasó fue intenso"
+    after: "Fue efímero, pero intenso mientras duró"
+  - before: "Fue solo un rollo de verano que no llegó a nada más"
+    after: "Fue un romance efímero que no llegó a nada más"
+exercises:
+  - position: 1
+    sentence: "El romance de ese verano fue {{blank}}, pero Marina todavía lo recuerda con una sonrisa."
+    hint_general: "Describe algo que dura poco tiempo, aunque haya sido intenso mientras pasaba."
+    explanation: "Efímero: algo que dura poco tiempo, aunque haya sido intenso. «Fugaz» describe la velocidad con la que algo pasa, y «aburrido» describiría algo sin interés, y la frase dice que Marina lo recuerda con una sonrisa."
+    options:
+      - position: 1
+        text: "efímero"
+        is_correct: true
+      - position: 2
+        text: "fugaz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fugaz» describe la velocidad con la que algo pasa, casi sin notarlo, y la frase habla de algo que duró un verano entero, no un instante."
+        hint_specific: "Fugaz describe algo casi instantáneo. ¿El romance duró un instante o todo un verano?"
+      - position: 3
+        text: "aburrido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburrido» describiría algo sin interés, y la frase dice que Marina lo recuerda con una sonrisa, no con indiferencia."
+        hint_specific: "Aburrido implica indiferencia. ¿Marina recuerda el romance con una sonrisa o con indiferencia?"
+  - position: 2
+    sentence: "Fue un cariño {{blank}}, de solo tres semanas, pero de los que se recuerdan por años."
+    hint_general: "Algo breve en el tiempo, pero que deja una marca importante."
+    explanation: "Efímero: algo breve en el tiempo, pero que deja una marca importante. «Fugaz» describe la velocidad, y aquí se habla de tres semanas completas, y «eficiente» describe funcionar bien, sin relación con la duración."
+    options:
+      - position: 1
+        text: "efímero"
+        is_correct: true
+      - position: 2
+        text: "eficiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eficiente» describe que algo funciona bien con poco esfuerzo, sin relación con la duración de un cariño de tres semanas."
+        hint_specific: "Eficiente describe funcionar bien. ¿La frase habla de funcionar bien o de duración?"
+      - position: 3
+        text: "fugaz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fugaz» describe la velocidad con la que algo pasa, casi sin notarlo, y la frase habla de tres semanas completas, no de un instante."
+        hint_specific: "Fugaz describe algo casi instantáneo. ¿Tres semanas son un instante?"
+  - position: 3
+    sentence: "El brillo de esa amistad de verano fue {{blank}}, pero los dos siguen sonriendo cuando la recuerdan."
+    hint_general: "Algo que no duró mucho, aunque haya dejado un buen recuerdo."
+    explanation: "Efímera: algo que no duró mucho, aunque haya dejado un buen recuerdo. «Eficiente» describe funcionar bien, sin relación con la duración, y «falsa» implicaría que no fue real, y la frase dice que ambos la recuerdan con gusto."
+    options:
+      - position: 1
+        text: "eficiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eficiente» describe que algo funciona bien con poco esfuerzo, sin relación con la duración de una amistad de verano."
+        hint_specific: "Eficiente describe funcionar bien. ¿La frase habla de funcionar bien o de duración?"
+      - position: 2
+        text: "efímera"
+        is_correct: true
+      - position: 3
+        text: "falsa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Falsa» implicaría que la amistad no fue real, y la frase dice que ambos siguen sonriendo al recordarla, señal de que sí fue real."
+        hint_specific: "Falsa implica que algo no era real. ¿La frase dice que fue real o inventada?"
+  - position: 4
+    sentence: "El noviazgo de la secundaria fue {{blank}}, pero Rubén siempre lo menciona cuando habla de sus primeros amores."
+    hint_general: "Algo que duró poco tiempo atrás, pero que se recuerda con cariño."
+    explanation: "Efímero: algo que duró poco tiempo, pero que se recuerda con cariño. «Chiquito» es coloquial y suena a algo sin importancia, y «eficiente» describe funcionar bien; ninguno describe ese noviazgo."
+    options:
+      - position: 1
+        text: "efímero"
+        is_correct: true
+      - position: 2
+        text: "chiquito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chiquito» es coloquial y suena a algo sin importancia, y la frase dice que Rubén lo sigue mencionando como algo relevante en su vida."
+        hint_specific: "«Chiquito» suena a algo sin importancia. ¿Rubén lo menciona como algo relevante o sin importancia?"
+      - position: 3
+        text: "eficiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eficiente» describe que algo funciona bien con poco esfuerzo, sin relación con la duración de un noviazgo de secundaria."
+        hint_specific: "Eficiente describe funcionar bien. ¿La frase habla de funcionar bien o de duración?"
+  - position: 5
+    sentence: "La curadora explicó que esa instalación de arte era {{blank}}: solo estaría montada durante un fin de semana."
+    hint_general: "Algo que va a durar poco tiempo, por diseño, aunque tenga mucho valor mientras dura."
+    explanation: "Efímera: algo que va a durar poco tiempo, por diseño. «Permanente» describiría justo lo contrario, y «eficiente» describe funcionar bien, sin relación con cuánto tiempo estaría montada."
+    options:
+      - position: 1
+        text: "efímera"
+        is_correct: true
+      - position: 2
+        text: "permanente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Permanente» describiría justo lo contrario, y la frase dice que la instalación solo estaría montada un fin de semana."
+        hint_specific: "Permanente es algo que dura siempre. ¿La instalación iba a durar siempre o solo un fin de semana?"
+      - position: 3
+        text: "eficiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eficiente» describe que algo funciona bien con poco esfuerzo, sin relación con cuánto tiempo estaría montada la instalación."
+        hint_specific: "Eficiente describe funcionar bien. ¿La frase habla de funcionar bien o de duración?"
+  - position: 6
+    sentence: "Sabían que lo suyo sería {{blank}}, porque ella se mudaba en un mes, pero decidieron disfrutarlo igual."
+    hint_general: "Algo con fecha de fin conocida desde el principio, aunque se disfrute con intensidad."
+    explanation: "Efímero: algo con fecha de fin conocida, aunque se disfrute con intensidad. «Eficiente» describe funcionar bien, y «triste» describiría un sentimiento distinto, cuando la frase dice que decidieron disfrutarlo."
+    options:
+      - position: 1
+        text: "efímero"
+        is_correct: true
+      - position: 2
+        text: "triste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Triste» describiría un sentimiento distinto, y la frase dice que decidieron disfrutarlo, no que estuvieran tristes por adelantado."
+        hint_specific: "Triste describe un sentimiento negativo. ¿La frase dice que decidieron disfrutarlo o estar tristes?"
+      - position: 3
+        text: "eficiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eficiente» describe que algo funciona bien con poco esfuerzo, sin relación con la fecha de fin de una relación."
+        hint_specific: "Eficiente describe funcionar bien. ¿La frase habla de funcionar bien o de una fecha de fin?"
+  - position: 7
+    sentence: "El crítico escribió que la moda de esa década fue {{blank}}: apenas dos años después, ya nadie la usaba."
+    hint_general: "Algo que tuvo su momento, pero que no se mantuvo por mucho tiempo."
+    explanation: "Efímera: algo que tuvo su momento, pero no se mantuvo mucho tiempo. «Eficiente» describe funcionar bien, y «ridícula» sería un juicio de valor distinto, sin relación con cuánto duró esa moda."
+    options:
+      - position: 1
+        text: "efímera"
+        is_correct: true
+      - position: 2
+        text: "ridícula"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ridícula» sería un juicio sobre el estilo de esa moda, y la frase solo habla de cuánto tiempo duró, sin opinar sobre si era ridícula."
+        hint_specific: "Ridícula es un juicio sobre el estilo. ¿La frase opina sobre el estilo o solo sobre la duración?"
+      - position: 3
+        text: "eficiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eficiente» describe que algo funciona bien con poco esfuerzo, sin relación con cuánto duró una moda."
+        hint_specific: "Eficiente describe funcionar bien. ¿La frase habla de funcionar bien o de duración?"
+  - position: 8
+    sentence: "Los fuegos artificiales del final fueron {{blank}}: un minuto de luces, y después solo quedó el humo."
+    hint_general: "Algo que dura muy poco, aunque haya sido impresionante mientras pasaba."
+    explanation: "Efímeros: algo que dura muy poco, aunque haya sido impresionante. «Eficientes» describe funcionar bien, y «costosos» habla de precio, ninguno describe la corta duración de un minuto."
+    options:
+      - position: 1
+        text: "efímeros"
+        is_correct: true
+      - position: 2
+        text: "costosos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Costosos» habla del precio de los fuegos artificiales, y la frase describe cuánto duraron, no cuánto costaron."
+        hint_specific: "Costosos describe el precio. ¿La frase habla de precio o de duración?"
+      - position: 3
+        text: "eficientes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Eficientes» describe que algo funciona bien con poco esfuerzo, sin relación con la corta duración de un minuto de luces."
+        hint_specific: "Eficiente describe funcionar bien. ¿La frase habla de funcionar bien o de duración?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "emocional"
+    title: "El romance de ese verano"
+    body: "Marina contó que apenas duró tres semanas, pero que lo recordaba como si hubiera sido mucho más. «Fue efímero, pero de los buenos», le dijo a su amiga, «de esos que te dejan una sonrisa cada vez que los piensas»."
+    before_phrase: "Duró poco, pero fue de los buenos."
+    after_phrase: "Fue efímero, pero de los buenos."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La instalación de un fin de semana"
+    body: "La curadora explicó al equipo por qué esa pieza solo estaría montada dos días. «Es efímera por diseño», dijo, «parte de su valor está justamente en que no se puede volver a ver»."
+    before_phrase: "Solo va a estar un rato, y eso es parte de su gracia."
+    after_phrase: "Es efímera por diseño."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El primer amor de la secundaria"
+    body: "En la cena, su primo se rió al recordar a su primera novia de la secundaria. «Fue efímero, duramos un mes», dijo, «pero todavía me acuerdo de cada detalle de esas semanas»."
+    before_phrase: "Duró muy poco, pero todavía me acuerdo de todo."
+    after_phrase: "Fue efímero, pero todavía me acuerdo de todo."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

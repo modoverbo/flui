@@ -1,0 +1,228 @@
+schema_version: 1
+slug: "asidero"
+status: "draft"
+lemma: "asidero"
+part_of_speech: "sustantivo"
+syllables: ["a", "si", "de", "ro"]
+stressed_syllable: 3
+ipa_latam: "[a.siˈde.ro]"
+ipa_es: "[a.siˈde.ro]"
+explanation: "Un ejemplo o idea a la que te sujetas para entender algo difícil, o para sentirte más seguro."
+example_sentence: "Cuando todo parecía confuso, aquel diagrama sencillo fue el asidero que le permitió entender el resto de la teoría."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve tanto para una idea que te ayuda a entender algo complicado como para algo emocional a lo que te aferras en un momento difícil."
+when_not_to_use: "No la uses para una excusa inventada para justificar algo: el asidero es real, no un pretexto."
+collocations:
+  - "un buen asidero"
+  - "servir de asidero"
+replaces:
+  - before: "Necesito algo a lo que aferrarme para entender esto"
+    after: "Necesito un asidero para entender esto"
+  - before: "No tengo nada en que apoyarme para explicar esta idea"
+    after: "No tengo ningún asidero para explicar esta idea"
+family: ["asir"]
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "empatia-escucha"
+    relevance: 2
+tags:
+  comodin: ["apoyo"]
+  funcion: ["sostener"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "pretexto"
+    difference: "«Pretexto» es una excusa inventada para justificar algo, muchas veces sin ser sincera; el asidero es algo real a lo que te sujetas para entender o sostenerte."
+    memory_trick: "El pretexto se inventa; el asidero se sostiene."
+  - confused_with: "agarradero"
+    difference: "«Agarradero» es casi siempre un objeto físico, como el mango de una olla; el asidero puede ser también una idea o un apoyo emocional."
+exercises:
+  - position: 1
+    sentence: "Antes de entrar en la teoría, el instructor mostró un ejemplo sencillo: ese primer {{blank}} le bastó al grupo para no perderse después."
+    hint_general: "Piensa en la palabra para un ejemplo concreto que te ayuda a entender algo difícil, no un dato para comparar ni un lugar para cocinar."
+    explanation: "Asidero: ejemplo concreto que ayuda a entender. «Asadero» es un lugar para asar carne, y «referencia» es un dato para comparar, no algo para sostenerse mientras se entiende."
+    options:
+      - position: 1
+        text: "asadero"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Asadero» es un lugar o utensilio para asar carne; no tiene nada que ver con entender una idea difícil."
+        hint_specific: "«Asadero» tiene que ver con cocinar carne. ¿La frase habla de cocina o de entender una teoría?"
+      - position: 2
+        text: "referencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Referencia» es un dato al que puedes volver para comparar; aquí lo que ayudó al grupo fue algo concreto para sostenerse mientras entendía, no solo un dato."
+        hint_specific: "Una referencia sirve para comparar. ¿El grupo necesitaba comparar datos o algo concreto para sostenerse?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+  - position: 2
+    sentence: "Cuando se quedó sin trabajo, su hermana le repetía la misma frase todas las noches; esa frase se convirtió en su {{blank}} durante esos meses."
+    hint_general: "Busca la palabra para algo real a lo que te sostienes en un momento duro, no dinero para vivir ni una excusa inventada."
+    explanation: "Asidero: algo real que sostiene en un momento duro. «Sustento» habla del dinero o la comida para vivir, y «pretexto» es una excusa inventada, no algo real."
+    options:
+      - position: 1
+        text: "sustento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sustento» habla del dinero o la comida para vivir, no de algo emocional a lo que aferrarse en un momento duro."
+        hint_specific: "«Sustento» suena a dinero para vivir. ¿La frase de su hermana era dinero o algo emocional?"
+      - position: 2
+        text: "pretexto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pretexto» es una excusa inventada para justificar algo; la frase de su hermana no era una excusa, era algo real que la sostenía."
+        hint_specific: "Un pretexto se inventa para justificar algo. ¿La frase de su hermana era inventada o algo que la sostenía de verdad?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+  - position: 3
+    sentence: "Después de la separación, quedarse con el perro fue el único {{blank}} que sintió Marina esas primeras semanas."
+    hint_general: "La palabra describe algo real que te sostiene sin impedirte seguir adelante, no una dependencia ni un motivo inventado."
+    explanation: "Asidero: algo real que sostiene sin frenar. «Muleta» sugiere una dependencia que no deja avanzar, y «excusa» es un motivo inventado para no hacer algo."
+    options:
+      - position: 1
+        text: "muleta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Muleta» sugiere una dependencia que no la deja avanzar; aquí el perro solo la ayudó a sostenerse esas primeras semanas, sin impedirle seguir con su vida."
+        hint_specific: "Una muleta puede volverse una dependencia que frena. ¿El perro la frenaba o solo la sostenía?"
+      - position: 2
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Excusa» es un motivo inventado para no hacer algo; el perro no era un motivo para evitar nada, era simplemente lo que la sostenía."
+        hint_specific: "Una excusa se usa para evitar algo. ¿El perro le servía para evitar algo o para sostenerse?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+  - position: 4
+    sentence: "Cuando le preguntaron por qué cambió de carrera, Tomás contó una sola anécdota; esa anécdota fue el {{blank}} de toda su respuesta."
+    hint_general: "Piensa en la palabra para un recuerdo concreto en el que te apoyas para contar algo, no la base lógica de un argumento formal."
+    explanation: "Asidero: recuerdo concreto en el que apoyarse para contar algo. «Fundamento» suena a la base lógica de un argumento formal, y «resumen» sería contar todo de forma corta."
+    options:
+      - position: 1
+        text: "fundamento"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fundamento» suena a la base lógica de un argumento formal; aquí Tomás solo se apoyó en un recuerdo concreto para contar su historia, no armó un argumento legal."
+        hint_specific: "«Fundamento» suena a un argumento formal. ¿Tomás arma un argumento formal o cuenta un recuerdo concreto?"
+      - position: 2
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumen» sería contar todo de forma corta; aquí Tomás no resumió nada, se apoyó en una sola anécdota concreta."
+        hint_specific: "Un resumen condensa todo lo demás. ¿Tomás condensó su historia o se apoyó en un solo recuerdo?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+  - position: 5
+    sentence: "El nuevo sistema tenía cien funciones, pero Camila solo necesitó dominar una pantalla; esa pantalla fue su {{blank}} para entender todo lo demás."
+    hint_general: "Busca la palabra para algo concreto que te ayuda a entender el resto, no una forma de saltarte pasos ni una ayuda genérica."
+    explanation: "Asidero: algo concreto que ayuda a entender el resto. «Atajo» es una forma más corta de llegar a algo, y «apoyo» es una palabra demasiado general."
+    options:
+      - position: 1
+        text: "atajo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atajo» es una forma más corta de llegar a algo, saltándose pasos; aquí Camila no se saltó nada, usó esa pantalla como base para entender el resto."
+        hint_specific: "Un atajo se salta pasos. ¿Camila se saltó pasos o usó una pantalla como base?"
+      - position: 2
+        text: "apoyo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apoyo» es una palabra muy general para cualquier tipo de ayuda; aquí lo específico es que esa pantalla concreta le sirvió de base para todo lo demás."
+        hint_specific: "Apoyo es una palabra muy general. ¿La frase habla de una ayuda cualquiera o de una pantalla concreta?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+  - position: 6
+    sentence: "Cada vez que dudaba, Elena recordaba una frase de su abuelo; esa frase era su {{blank}} en los momentos difíciles."
+    hint_general: "La palabra describe algo concreto en lo que te apoyas para decidir, no algo que solo alivia la tristeza ni te rescata de un peligro."
+    explanation: "Asidero: algo concreto en lo que apoyarse para decidir. «Consuelo» solo alivia la tristeza del momento, y «salvavidas» sugiere que algo te rescata de un peligro inminente."
+    options:
+      - position: 1
+        text: "consuelo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Consuelo» alivia la tristeza en el momento; la frase de su abuelo no solo la consolaba, le daba algo concreto en qué apoyarse para decidir."
+        hint_specific: "El consuelo alivia la tristeza. ¿La frase solo la consolaba o también la ayudaba a decidir?"
+      - position: 2
+        text: "salvavidas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Salvavidas» sugiere que algo la rescata de un peligro inminente; la frase de su abuelo no la rescataba de nada urgente, la ayudaba a sostenerse día a día."
+        hint_specific: "Un salvavidas rescata de un peligro inmediato. ¿Elena estaba en peligro o solo dudaba de algo?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+  - position: 7
+    sentence: "Antes de saltar, la gimnasta siempre miraba el mismo punto fijo en la pared; ese punto era su {{blank}} para no perder el equilibrio."
+    hint_general: "Piensa en la palabra para un punto concreto al que vuelves para no perder el equilibrio, no algo mágico ni algo demasiado general."
+    explanation: "Asidero: un punto concreto al que volver. «Amuleto» sugiere algo mágico que trae suerte, y «base» es una palabra demasiado general para lo específico de ese punto fijo."
+    options:
+      - position: 1
+        text: "amuleto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amuleto» sugiere algo mágico que trae suerte; el punto en la pared no tenía ningún poder mágico, era solo una referencia visual concreta."
+        hint_specific: "Un amuleto trae suerte por magia. ¿Ese punto en la pared tenía algo de mágico?"
+      - position: 2
+        text: "base"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Base» es demasiado general, casi cualquier cosa puede ser una base; aquí lo importante es que ese punto fijo era algo concreto a lo que volver con la mirada."
+        hint_specific: "Base es una palabra muy general. ¿La frase habla de algo genérico o de un punto fijo y concreto?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+  - position: 8
+    sentence: "Para explicar la nueva norma, la abogada usó un solo caso real; ese caso se volvió el {{blank}} para que el resto del equipo entendiera la norma completa."
+    hint_general: "Busca la palabra para un ejemplo completo que ayuda a entender algo, no un caso legal formal ni un fragmento copiado de un texto."
+    explanation: "Asidero: ejemplo completo que ayuda a entender una norma. «Precedente» es un caso anterior usado como referencia legal formal, y «extracto» es solo un fragmento copiado de un texto más largo."
+    options:
+      - position: 1
+        text: "precedente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Precedente» es un caso anterior que sirve de referencia legal formal; aquí el caso no se usaba como precedente jurídico, sino como ejemplo para que el equipo entendiera la norma."
+        hint_specific: "Un precedente sirve como referencia legal formal. ¿La abogada arma un argumento legal o da un ejemplo para explicar?"
+      - position: 2
+        text: "extracto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extracto» es solo una parte copiada de un texto más largo; aquí el caso no era un fragmento de la norma, sino un ejemplo completo que ayudaba a entenderla."
+        hint_specific: "Un extracto es un fragmento copiado de un texto. ¿El caso era un fragmento de la norma o un ejemplo completo?"
+      - position: 3
+        text: "asidero"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La pantalla que lo explicó todo"
+    body: "El sistema nuevo tenía cien funciones y Camila se sintió perdida desde el primer clic. Su compañero le mostró una sola pantalla y le dijo: «Entiende bien esta, el resto se parece». Esa pantalla fue el asidero que necesitaba para no rendirse esa primera semana."
+    before_phrase: "Necesito algo concreto para entender el resto."
+    after_phrase: "Necesito un asidero para entender el resto."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La frase de mi abuelo"
+    body: "Cuando no sabía si aceptar el nuevo trabajo, recordé algo que mi abuelo repetía siempre: «Decide con lo que tienes hoy, no con lo que temes mañana». No sé por qué, pero esa frase se volvió mi asidero cada vez que dudaba de algo grande."
+    before_phrase: "Esa frase es algo a lo que me aferro cuando dudo."
+    after_phrase: "Esa frase es mi asidero cuando dudo."
+  - position: 3
+    scene: "social"
+    conversation_type: "emocional"
+    title: "El perro se quedó"
+    body: "Después de la separación, la casa se sintió enorme y en silencio. Lo único que seguía igual era el perro, esperando su paseo a la misma hora de siempre. «Al menos él no cambió», le dijo Marina a su amiga, y por primera vez en semanas sonrió: había encontrado su asidero sin buscarlo."
+    before_phrase: "El perro es lo único a lo que me sostengo estos días."
+    after_phrase: "El perro es mi asidero estos días."
+provenance:
+  generator: "hand-authored for content/words (docencia theme)"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "disculparse"
+status: "draft"
+lemma: "disculparse"
+part_of_speech: "verbo"
+syllables: ["dis", "cul", "par", "se"]
+stressed_syllable: 3
+ipa_latam: "[dis.kulˈpaɾ.se]"
+ipa_es: "[dis.kulˈpaɾ.se]"
+explanation: "Reconocer ante alguien un error propio, sin buscar razones para defender lo que pasó."
+example_sentence: "Rubén se disculpó con su hermana por el comentario, sin agregar ningún pero."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo cuando alguien reconoce un error sin justificarlo, no cuando solo explica lo que pasó."
+when_not_to_use: "No lo uses para quien explica su versión sin reconocer nada: disculparse implica reconocer el error, no solo contarlo."
+collocations:
+  - "disculparse con alguien"
+  - "disculparse sin peros"
+  - "nunca pidió disculpas"
+family: ["disculpa"]
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["pedir perdón", "reconocer el error"]
+  funcion: ["reparar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "justificarse"
+    difference: "Justificarse es explicar razones para defender lo que hiciste; disculparse es reconocer que hiciste algo mal, sin buscar excusas."
+    memory_trick: "Te justificas para defenderte; te disculpas para reconocer el error."
+replaces:
+  - before: "Reconoció el error sin poner ninguna excusa"
+    after: "Se disculpó sin poner ninguna excusa"
+  - before: "Le pidió perdón por lo que había dicho"
+    after: "Se disculpó por lo que había dicho"
+exercises:
+  - position: 1
+    sentence: "Rubén se {{blank}} con su hermana por el comentario, sin agregar ningún pero."
+    hint_general: "Reconocer ante alguien que le hiciste algo mal, sin buscar excusas para lo que pasó."
+    explanation: "Disculpó: reconoció ante alguien que le hizo algo mal, sin excusas. «Justificó» implica dar razones para defenderse, y «descalificó» quita valor a algo; ninguno describe ese gesto."
+    options:
+      - position: 1
+        text: "disculpó"
+        is_correct: true
+      - position: 2
+        text: "justificó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificar» implica dar razones para defender lo que hizo, y la frase dice que Rubén no agregó ningún pero, solo reconoció el error."
+        hint_specific: "Justificar es dar razones para defenderse. ¿Rubén dio razones o reconoció el error sin peros?"
+      - position: 3
+        text: "descalificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificar» implica quitarle valor a algo o a alguien, sin relación con reconocer un error propio ante su hermana."
+        hint_specific: "Descalificar quita valor a algo. ¿Rubén quitó valor a algo o reconoció su error?"
+  - position: 2
+    sentence: "En vez de dar mil razones, la empresa {{blank}} directamente por el retraso en la entrega."
+    hint_general: "Reconocer el error directamente, sin dar razones para defenderse."
+    explanation: "Se disculpó: reconoció el error directamente. «Se justificó» implica dar razones para defenderse, y «se descalificó» implicaría quitarse valor; ninguno describe esa disculpa directa."
+    options:
+      - position: 1
+        text: "se disculpó"
+        is_correct: true
+      - position: 2
+        text: "se justificó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificarse» implica dar razones para defenderse, y la frase dice que la empresa no dio mil razones, sino que reconoció el error directamente."
+        hint_specific: "Justificarse es dar razones. ¿La empresa dio razones o reconoció el error directamente?"
+      - position: 3
+        text: "se descalificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificarse» implicaría quitarse valor a sí misma, algo distinto de reconocer un error puntual en una entrega."
+        hint_specific: "Descalificarse quita valor propio. ¿La empresa se quitó valor o reconoció el error?"
+  - position: 3
+    sentence: "Después de gritarle sin razón, Camila se {{blank}} apenas se dio cuenta de lo que había hecho."
+    hint_general: "Reconocer que actuaste mal, apenas te das cuenta del error."
+    explanation: "Disculpó: reconoció que actuó mal, apenas se dio cuenta. «Enojó» describe una emoción distinta, y «descalificó» implica quitarle valor a algo, sin relación con reconocer un grito injusto."
+    options:
+      - position: 1
+        text: "disculpó"
+        is_correct: true
+      - position: 2
+        text: "enojó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enojarse» describe una emoción distinta, y la frase dice que Camila reconoció su error apenas se dio cuenta, no que se enojara de nuevo."
+        hint_specific: "Enojarse es una emoción concreta. ¿Camila se enojó o reconoció su error?"
+      - position: 3
+        text: "descalificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificar» implica quitarle valor a algo o a alguien, sin relación con reconocer un grito injusto."
+        hint_specific: "Descalificar quita valor a algo. ¿Camila quitó valor a algo o reconoció su error?"
+  - position: 4
+    sentence: "El chef salió de la cocina para {{blank}} personalmente por la demora con esa mesa."
+    hint_general: "Reconocer un error frente a alguien, en persona, sin excusas."
+    explanation: "Disculparse: reconocer un error frente a alguien, en persona, sin excusas. «Justificarse» implica dar razones, y «descalificarse» implica quitarse valor; ninguno describe ese gesto directo."
+    options:
+      - position: 1
+        text: "disculparse"
+        is_correct: true
+      - position: 2
+        text: "justificarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificarse» implica dar razones para defenderse, y la frase describe un gesto directo de reconocimiento frente a la mesa."
+        hint_specific: "Justificarse es dar razones. ¿El chef salió a dar razones o a reconocer el error?"
+      - position: 3
+        text: "descalificarse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificarse» implicaría quitarse valor a sí mismo, algo distinto de reconocer una demora puntual con una mesa."
+        hint_specific: "Descalificarse quita valor propio. ¿El chef se quitó valor o reconoció la demora?"
+  - position: 5
+    sentence: "En vez de {{blank}}, su compañero se pasó diez minutos explicando por qué no había sido su culpa."
+    hint_general: "Lo que alguien no hace cuando prefiere explicar por qué no tuvo la culpa."
+    explanation: "Disculparse: reconocer el error, sin dar razones para defenderse. «Justificarse» implica dar razones, y «descalificarse» implica quitarse valor; ninguno describe reconocer un error sin más."
+    options:
+      - position: 1
+        text: "disculparse"
+        is_correct: true
+      - position: 2
+        text: "justificarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificarse» implica dar razones para defenderse, y la frase describe exactamente eso: diez minutos explicando por qué no era su culpa."
+        hint_specific: "La frase ya describe diez minutos de explicaciones. ¿Qué palabra nombra lo que el compañero evitó hacer?"
+      - position: 3
+        text: "descalificarse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificarse» implicaría quitarse valor a sí mismo, algo distinto de reconocer un error sin dar explicaciones."
+        hint_specific: "Descalificarse quita valor propio. ¿La frase habla de quitarse valor o de reconocer un error?"
+  - position: 6
+    sentence: "Su jefe nunca {{blank}} por los gritos de esa reunión, y el equipo todavía lo recuerda."
+    hint_general: "Reconocer un mal comportamiento ante otros, algo que en esta frase nunca pasó."
+    explanation: "Se disculpó: reconoció un mal comportamiento ante otros. «Se copó» es coloquial y regional, y «se descalificó» implica quitarse valor, ninguno describe reconocer los gritos de esa reunión."
+    options:
+      - position: 1
+        text: "se disculpó"
+        is_correct: true
+      - position: 2
+        text: "se copó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Se copó» es coloquial y regional, y aquí se busca nombrar con precisión el gesto que el jefe nunca tuvo tras los gritos."
+        hint_specific: "«Se copó» es una palabra muy regional. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "se descalificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificarse» implicaría quitarse valor a sí mismo, algo distinto de reconocer los gritos de una reunión."
+        hint_specific: "Descalificarse quita valor propio. ¿El jefe se quitó valor o reconoció los gritos?"
+  - position: 7
+    sentence: "Antes de que se lo pidieran, el conductor {{blank}} con los pasajeros por el retraso del vuelo."
+    hint_general: "Reconocer un error frente a un grupo, sin que nadie te lo pida."
+    explanation: "Se disculpó: reconoció un error frente a un grupo, sin que se lo pidieran. «Se justificó» implica dar razones, y «se descalificó» implica quitarse valor; ninguno describe ese reconocimiento."
+    options:
+      - position: 1
+        text: "se disculpó"
+        is_correct: true
+      - position: 2
+        text: "se justificó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificarse» implica dar razones para defenderse, y la frase describe un gesto de reconocimiento del retraso, no una defensa."
+        hint_specific: "Justificarse es dar razones. ¿El conductor dio razones o reconoció el retraso?"
+      - position: 3
+        text: "se descalificó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificarse» implicaría quitarse valor a sí mismo, algo distinto de reconocer un retraso de vuelo."
+        hint_specific: "Descalificarse quita valor propio. ¿El conductor se quitó valor o reconoció el retraso?"
+  - position: 8
+    sentence: "Después de la pelea, ninguno de los dos quiso ser el primero en {{blank}}, y pasaron dos días sin hablarse."
+    hint_general: "Reconocer un error primero, algo que ninguno de los dos quiso hacer."
+    explanation: "Disculparse: reconocer un error primero. «Justificarse» implica dar razones, y «descalificarse» implica quitarse valor; ninguno describe dar el primer paso de reconocimiento."
+    options:
+      - position: 1
+        text: "disculparse"
+        is_correct: true
+      - position: 2
+        text: "justificarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Justificarse» implica dar razones para defenderse, y la frase habla de dar el primer paso para reconocer el error, no de defenderse."
+        hint_specific: "Justificarse es dar razones. ¿Ninguno quería dar razones o dar el primer paso de reconocimiento?"
+      - position: 3
+        text: "descalificarse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Descalificarse» implicaría quitarse valor a sí mismo, algo distinto de reconocer un error después de una discusión."
+        hint_specific: "Descalificarse quita valor propio. ¿La frase habla de quitarse valor o de reconocer un error?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El comentario que dolió"
+    body: "Rubén supo apenas lo dijo que había ido demasiado lejos. Esa noche llamó a su hermana: «Me disculpo por el comentario, no tenía derecho a decir eso», le dijo, sin agregar ningún pero. Ella se quedó callada un momento, y después le agradeció la llamada."
+    before_phrase: "Perdón por lo que dije, no tenía derecho."
+    after_phrase: "Me disculpo por lo que dije, no tenía derecho."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El retraso de la entrega"
+    body: "En vez de armar una lista de razones, la gerenta fue directa en el correo: «Nos disculpamos por el retraso, la responsabilidad es nuestra». El cliente respondió en minutos, sorprendido de no tener que insistir para escuchar eso."
+    before_phrase: "Reconocemos que la responsabilidad es nuestra."
+    after_phrase: "Nos disculpamos, la responsabilidad es nuestra."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Los dos días de silencio"
+    body: "Ninguno quería dar el primer paso después de la discusión. Al tercer día, Camila lo llamó: «Me quiero disculpar, dije cosas que no pensaba de verdad». Su amigo respiró aliviado: llevaba dos días esperando esa llamada."
+    before_phrase: "Quiero pedirte perdón, dije cosas que no pensaba."
+    after_phrase: "Me quiero disculpar, dije cosas que no pensaba."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

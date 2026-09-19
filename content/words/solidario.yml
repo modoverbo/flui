@@ -1,0 +1,228 @@
+schema_version: 1
+slug: "solidario"
+status: "draft"
+lemma: "solidario"
+part_of_speech: "adjetivo"
+syllables: ["so", "li", "da", "rio"]
+stressed_syllable: 3
+ipa_latam: "[so.liˈða.rjo]"
+ipa_es: "[so.liˈða.rjo]"
+explanation: "Que apoya a alguien en un problema y lo vive casi como si fuera suyo."
+example_sentence: "El barrio entero fue muy solidario cuando la tienda de doña Marta estuvo a punto de cerrar."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala cuando alguien hace suyo el problema de otro y actúa, no solo cuando lo entiende."
+when_not_to_use: "No la uses solo porque alguien fue amable una vez; pide que haya un problema compartido."
+collocations:
+  - "ser solidario con alguien"
+  - "actitud solidaria"
+  - "gesto solidario"
+replaces:
+  - before: "Se puso de mi lado en un momento difícil"
+    after: "Fue solidario conmigo en un momento difícil"
+  - before: "Ayudó porque le importaba de verdad"
+    after: "Ayudó de forma solidaria"
+family: ["solidaridad", "solidarizarse"]
+themes:
+  - slug: "amistad"
+    relevance: 3
+tags:
+  comodin: ["que ayuda"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "solitario"
+    difference: "«Solitario» describe a quien está o prefiere estar solo; «solidario» describe a quien acompaña y apoya a otros."
+    memory_trick: "El solitario se aparta; el solidario se acerca."
+  - confused_with: "altruista"
+    difference: "«Altruista» ayuda a cualquiera sin que le afecte directamente; «solidario» se pone en el lugar del otro dentro de su propia dificultad."
+    memory_trick: "El altruista da sin mirar de cerca; el solidario mira de cerca y se involucra."
+exercises:
+  - position: 1
+    sentence: "Cuando Marcos se quedó sin trabajo, sus amigos armaron un grupo para pasarle ofertas cada semana: fueron muy {{blank}} con él."
+    hint_general: "Busca la palabra para quienes hacen suyo el problema de otra persona y actúan."
+    explanation: "Solidarios: hacen suyo el problema de Marcos y actúan. «Solitarios» describe a quienes están solos, y «comprensivos» solo entiende la situación, sin organizarse como aquí."
+    options:
+      - position: 1
+        text: "solitarios"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Solitario» describe a quien está o prefiere estar solo, y aquí un grupo entero se organizó para acompañarlo."
+        hint_specific: "«Solitario» habla de estar solo. ¿Un grupo que se organiza está solo?"
+      - position: 2
+        text: "comprensivos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comprensivo» solo entiende la situación; aquí los amigos armaron un grupo y actuaron cada semana."
+        hint_specific: "«Comprensivo» solo entiende. ¿Estos amigos solo entendieron o además actuaron?"
+      - position: 3
+        text: "solidarios"
+        is_correct: true
+  - position: 2
+    sentence: "—Tranquila, yo te ayudo a resolver esto, para eso están los amigos —le dijo Renata a Camila, que atravesaba un momento económico muy difícil; fue un gesto {{blank}}."
+    hint_general: "Es la palabra para quien acompaña a otro en un problema como si fuera propio."
+    explanation: "Solidario: acompaña a otro en su problema como si fuera propio. «Solícito» suena demasiado formal para esa frase, y «compasivo» solo siente pena, sin acompañar como aquí."
+    options:
+      - position: 1
+        text: "solícito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Solícito» suena formal y algo anticuado para una frase dicha entre amigas en una conversación cotidiana."
+        hint_specific: "Piensa en cómo hablan dos amigas. ¿«Solícito» suena a esa conversación?"
+      - position: 2
+        text: "compasivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compasivo» siente pena por la situación, pero la frase describe algo que Renata hace, no solo siente."
+        hint_specific: "«Compasivo» solo siente pena. ¿Renata solo siente pena o además acompaña?"
+      - position: 3
+        text: "solidario"
+        is_correct: true
+  - position: 3
+    sentence: "Cuando a Hugo se le complicó el mes con gastos inesperados, sus vecinos se turnaron para llevarle comida cada noche: un gesto {{blank}} que él no olvida."
+    hint_general: "Piensa en vecinos que tratan el problema de otro como si fuera el suyo."
+    explanation: "Solidario: los vecinos hacen suyo el problema de Hugo. «Asistencial» es un término institucional, y «generoso» habla de dar con largueza, no de compartir el problema."
+    options:
+      - position: 1
+        text: "asistencial"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asistencial» es un término de programas oficiales de ayuda; aquí se trata de vecinos comunes, no de una institución."
+        hint_specific: "«Asistencial» suena a programa oficial. ¿Estos vecinos son una institución?"
+      - position: 2
+        text: "generoso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generoso» habla de dar con largueza, y lo que describe la frase es que compartieron el problema turnándose cada noche."
+        hint_specific: "«Generoso» va de dar cosas. ¿Lo central aquí es dar o turnarse para ayudar?"
+      - position: 3
+        text: "solidario"
+        is_correct: true
+  - position: 4
+    sentence: "Sofía no solo escuchó a su amiga cuando la despidieron: se pasó el fin de semana ayudándola a armar el currículum. Fue {{blank}} de verdad."
+    hint_general: "Busca la palabra para quien no solo entiende el problema, sino que se mete a resolverlo con la otra persona."
+    explanation: "Solidaria: se mete a resolver el problema con su amiga. «Compasiva» solo siente pena, y «atenta» solo nota los detalles, sin meterse a resolver nada."
+    options:
+      - position: 1
+        text: "compasiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compasiva» describe a quien siente pena por el otro; aquí Sofía además se puso a trabajar en el currículum con ella."
+        hint_specific: "«Compasiva» solo siente pena. ¿Sofía solo sintió pena o además trabajó con ella?"
+      - position: 2
+        text: "solidaria"
+        is_correct: true
+      - position: 3
+        text: "atenta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atenta» describe a quien está pendiente de los detalles, no a quien se involucra en el problema del otro."
+        hint_specific: "«Atenta» va de notar detalles. ¿Lo importante aquí es notar o involucrarse?"
+  - position: 5
+    sentence: "Cuando la empresa de su mejor amigo empezó a tener problemas económicos, Andrés decidió invertir sus ahorros para sostenerla un mes más: fue un gesto {{blank}}."
+    hint_general: "Es la palabra para quien hace suyo el problema económico de otra persona."
+    explanation: "Solidario: hace suyo el problema económico de su amigo. «Leal» habla de fidelidad, y «solitario» habla de estar solo, cuando aquí Andrés se involucró de lleno."
+    options:
+      - position: 1
+        text: "leal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Leal» describe fidelidad y compromiso, pero no que alguien comparta el problema económico como si fuera suyo."
+        hint_specific: "«Leal» habla de fidelidad. ¿La frase habla de fidelidad o de compartir un problema económico?"
+      - position: 2
+        text: "solitario"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Solitario» habla de estar solo, y aquí Andrés se involucró directamente en el problema de su amigo."
+        hint_specific: "«Solitario» habla de estar solo. ¿Andrés se apartó o se involucró?"
+      - position: 3
+        text: "solidario"
+        is_correct: true
+  - position: 6
+    sentence: "Todo el barrio se organizó para reconstruir el techo de la casa de Elena después de la tormenta: fue una reacción {{blank}}."
+    hint_general: "Piensa en un barrio entero que trata el problema de un vecino como si fuera de todos."
+    explanation: "Solidaria: el barrio hace suyo el problema de Elena. «Desprendida» habla de dar sin apego, y «comprometida» solo dice que se lo toman en serio, sin compartirlo como propio."
+    options:
+      - position: 1
+        text: "desprendida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desprendida» describe a quien da sin apego a lo material, y aquí el barrio entero se organizó y trabajó junto a Elena."
+        hint_specific: "«Desprendida» va de dar sin apego. ¿Lo central aquí es dar o trabajar junto a ella?"
+      - position: 2
+        text: "comprometida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comprometida» dice que se toman en serio algo, pero no que compartan el problema como propio."
+        hint_specific: "«Comprometida» va de tomarse algo en serio. ¿Eso alcanza para explicar que actuaron como si el techo fuera suyo?"
+      - position: 3
+        text: "solidaria"
+        is_correct: true
+  - position: 7
+    sentence: "Después de que le robaran el auto, los compañeros de Julio se turnaron para llevarlo al trabajo cada mañana durante un mes: fueron {{blank}} con él."
+    hint_general: "Busca la palabra para compañeros que cargan con el problema de otro como si fuera suyo."
+    explanation: "Solidarios: cargan con el problema de Julio como suyo. «Empáticos» solo entiende lo que siente, y «atentos» solo nota los detalles, sin turnarse como aquí."
+    options:
+      - position: 1
+        text: "empáticos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Empático» entiende lo que siente el otro, pero aquí los compañeros además se turnaron un mes entero para ayudarlo."
+        hint_specific: "«Empático» entiende. ¿Turnarse un mes entero es solo entender?"
+      - position: 2
+        text: "atentos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atento» nota los detalles y las necesidades, pero no implica hacerse cargo del problema como aquí."
+        hint_specific: "«Atento» nota detalles. ¿Turnarse un mes entero es solo notar detalles?"
+      - position: 3
+        text: "solidarios"
+        is_correct: true
+  - position: 8
+    sentence: "Cuando el negocio familiar de Noelia estuvo a punto de cerrar, sus clientes de toda la vida empezaron a comprarle el doble solo para ayudarla: fue algo muy {{blank}}."
+    hint_general: "Es la palabra para clientes que hacen suyo el problema de un negocio conocido."
+    explanation: "Solidario: los clientes hacen suyo el problema del negocio de Noelia. «Caritativo» se usa para ayudar a desconocidos, y «fiel» solo habla de constancia, no de compartir el problema."
+    options:
+      - position: 1
+        text: "caritativo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Caritativo» se asocia a ayudar a quien no conoces por compasión general; aquí eran clientes que conocían a Noelia y su negocio de siempre."
+        hint_specific: "«Caritativo» es para ayudar a desconocidos. ¿Los clientes de Noelia eran desconocidos?"
+      - position: 2
+        text: "fiel"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fiel» habla de mantenerse constante con alguien, pero no de hacer suyo un problema económico como aquí."
+        hint_specific: "«Fiel» habla de constancia. ¿La frase habla solo de constancia o de ayudar en un problema?"
+      - position: 3
+        text: "solidario"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "practica"
+    title: "El grupo del barrio"
+    body: "Cuando el auto de Hugo se averió justo antes de un viaje importante, sus vecinos armaron un chat en minutos: uno le prestó el suyo, otro llamó a un mecánico de confianza y otro se ofreció a acompañarlo al taller. Hugo no lo podía creer."
+    before_phrase: "Todos se pusieron de mi lado enseguida."
+    after_phrase: "Fueron muy solidarios conmigo."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "emocional"
+    title: "La carga compartida"
+    body: "Cuando Paula tuvo que viajar de urgencia a otra ciudad por un asunto familiar, sus compañeros se repartieron sus pendientes sin que ella lo pidiera. «No estás sola en esto», le dijo su jefa. Paula volvió al trabajo días después y encontró todo en orden, como si nunca se hubiera ido."
+    before_phrase: "Sentí que hicieron mío el problema."
+    after_phrase: "Fueron muy solidarios en un momento difícil."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "La tienda de la tía"
+    body: "Cuando la tienda de su tía Marta empezó a perder clientes, toda la familia decidió comprar ahí, aunque tuvieran que dar una vuelta más larga. «Es lo mínimo que podemos hacer», dijo su primo Andrés. Marta lloró la primera vez que los vio entrar juntos."
+    before_phrase: "Se portaron como si el problema fuera de todos."
+    after_phrase: "Fueron muy solidarios con ella."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

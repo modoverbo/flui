@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "retroalimentacion"
+status: "draft"
+lemma: "retroalimentación"
+part_of_speech: "sustantivo"
+syllables: ["re", "tro", "a", "li", "men", "ta", "ción"]
+stressed_syllable: 7
+ipa_latam: "[re.tro.a.li.men.taˈsjon]"
+ipa_es: "[re.tro.a.li.men.taˈθjon]"
+explanation: "Comentarios claros sobre cómo hizo algo una persona, dichos para que la próxima vez le salga mejor."
+example_sentence: "Después de la charla le pedí retroalimentación a mi jefa: quería saber qué mejorar para la próxima."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Pídela con una pregunta cerrada («¿Qué cambiarías del cierre?») y la respuesta será mucho más útil."
+when_not_to_use: "No la uses para un halago suelto sin contenido («qué bien te salió») ni para un reproche sin propuesta de mejora."
+collocations:
+  - "pedir retroalimentación"
+  - "dar retroalimentación"
+replaces:
+  - before: "Dime qué tal lo hice"
+    after: "Dame tu retroalimentación"
+  - before: "Cuéntame cosas para mejorar"
+    after: "Necesito tu retroalimentación"
+family: ["retroalimentar"]
+themes:
+  - slug: "docencia"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 3
+tags:
+  comodin: ["cosas para mejorar"]
+  funcion: ["pedir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "argumentación"
+    difference: "«Argumentación» son las razones que sostienen una postura; la retroalimentación es una valoración sobre cómo hizo algo la otra persona, para que mejore."
+    memory_trick: "La argumentación defiende una idea; la retroalimentación mejora una acción."
+  - confused_with: "reproche"
+    difference: "Un reproche solo señala lo que salió mal; la retroalimentación describe qué cambiar la próxima vez."
+    memory_trick: "El reproche cierra la puerta; la retroalimentación abre el paso siguiente."
+exercises:
+  - position: 1
+    sentence: "Tras el cierre del taller, Marisol pidió a su compañero {{blank}} sobre cómo había explicado el ejercicio final."
+    hint_general: "Busca la palabra que nombra una valoración pensada para mejorar la próxima vez."
+    explanation: "Retroalimentación: una valoración concreta para mejorar. «Argumentación» son las razones que sostienen una idea, y «aprobación» solo dice que algo gustó, sin decir qué cambiar."
+    options:
+      - position: 1
+        text: "argumentación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Argumentación» son las razones detrás de una postura; ella no pidió que le defendieran nada, pidió una valoración sobre su explicación."
+        hint_specific: "«Argumentación» sostiene una idea con razones. ¿Marisol quiere razones o quiere saber qué mejorar?"
+      - position: 2
+        text: "retroalimentación"
+        is_correct: true
+      - position: 3
+        text: "aprobación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aprobación» solo confirma que algo estuvo bien; no dice qué cambiar la próxima vez, que es justo lo que ella busca."
+        hint_specific: "La aprobación se queda en «estuvo bien». ¿Marisol se conforma con eso o busca algo más concreto?"
+  - position: 2
+    sentence: "Al terminar la reunión con el proveedor, Damián le escribió: «¿Me das {{blank}} sobre la propuesta que presenté?»."
+    hint_general: "Pide una valoración concreta, no una opinión general ni un dato administrativo."
+    explanation: "Retroalimentación: una valoración sobre su propuesta. «Documentación» son papeles o archivos, y «un cumplido» es un halago suelto sin contenido para mejorar."
+    options:
+      - position: 1
+        text: "documentación"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Documentación» son papeles o archivos de respaldo; Damián no pide papeles, pide una valoración sobre cómo presentó la propuesta."
+        hint_specific: "La documentación son papeles de respaldo. ¿Damián pide archivos o pide una opinión sobre su trabajo?"
+      - position: 2
+        text: "un cumplido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un cumplido es un halago suelto; Damián pide algo con contenido, que le sirva para la próxima propuesta."
+        hint_specific: "Un cumplido no dice qué cambiar. ¿Eso es lo que Damián busca con su pregunta?"
+      - position: 3
+        text: "retroalimentación"
+        is_correct: true
+  - position: 3
+    sentence: "En la sobremesa, mi cuñado me contó cómo le había ido el año y, al final, me pidió {{blank}} sincera sobre su nuevo negocio."
+    hint_general: "Quiere una valoración honesta que le sirva para mejorar el negocio, no un simple «me gusta»."
+    explanation: "Retroalimentación: una valoración honesta y útil. «Bendición» es un permiso o buen deseo, y «un consejo legal» es demasiado formal para una sobremesa entre familia."
+    options:
+      - position: 1
+        text: "retroalimentación"
+        is_correct: true
+      - position: 2
+        text: "bendición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una bendición es un permiso o un buen deseo; mi cuñado no busca aprobación afectiva, busca ideas para mejorar el negocio."
+        hint_specific: "La bendición es un buen deseo. ¿Tu cuñado busca eso o busca ideas concretas?"
+      - position: 3
+        text: "un consejo legal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Un consejo legal» pertenece a una consulta con abogado; en una sobremesa familiar ese registro suena fuera de lugar."
+        hint_specific: "Eso suena a oficina de abogados. ¿Encaja ese tono en una sobremesa familiar?"
+  - position: 4
+    sentence: "Antes de contratarme, la entrevistadora me preguntó cómo suelo reaccionar cuando recibo {{blank}} de mi jefe."
+    hint_general: "Se refiere a los comentarios que un jefe da sobre el trabajo de alguien para que mejore."
+    explanation: "Retroalimentación: los comentarios del jefe sobre el trabajo. «Instrucciones» son órdenes sobre qué hacer, y «un reproche» solo señala el fallo, sin ayudar a corregirlo."
+    options:
+      - position: 1
+        text: "instrucciones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Las instrucciones dicen qué hacer antes de empezar; la pregunta es sobre cómo reacciono a los comentarios que llegan después del trabajo hecho."
+        hint_specific: "Las instrucciones llegan antes de empezar. ¿La pregunta habla del antes o del después?"
+      - position: 2
+        text: "un reproche"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un reproche solo señala lo que salió mal, sin proponer nada; la pregunta habla de algo que ayuda a mejorar."
+        hint_specific: "El reproche no propone mejoras. ¿La pregunta busca eso o algo que ayude a crecer?"
+      - position: 3
+        text: "retroalimentación"
+        is_correct: true
+  - position: 5
+    sentence: "Como el informe no convencía al comité, Lucía pidió {{blank}} punto por punto antes de reescribirlo."
+    hint_general: "Quiere que le señalen, parte por parte, qué cambiar para que el informe funcione."
+    explanation: "Retroalimentación: comentarios punto por punto para mejorar el informe. «Redacción» es el acto de escribir, no una valoración, y «vía libre» sería solo un permiso para seguir sin cambios."
+    options:
+      - position: 1
+        text: "redacción"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Redacción» es el acto de escribir un texto; Lucía ya lo escribió, lo que pide es una valoración de lo que falta corregir."
+        hint_specific: "La redacción es escribir el texto. ¿Lucía pide escribir de nuevo o pide saber qué corregir?"
+      - position: 2
+        text: "vía libre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Vía libre es un permiso para seguir igual; Lucía busca justo lo contrario, señalamientos para cambiar el informe."
+        hint_specific: "Vía libre significa «sigue igual». ¿Eso resuelve por qué el informe no convencía?"
+      - position: 3
+        text: "retroalimentación"
+        is_correct: true
+  - position: 6
+    sentence: "Cada viernes, Noelia se reúne diez minutos con su equipo solo para intercambiar {{blank}} sobre la semana."
+    hint_general: "Es un espacio breve para que el equipo se diga cómo mejorar entre todos."
+    explanation: "Retroalimentación: comentarios para mejorar entre el equipo. «Chismes» es coloquial y habla de comentar la vida ajena, y «facturas» son documentos de cobro, sin relación con mejorar el trabajo."
+    options:
+      - position: 1
+        text: "retroalimentación"
+        is_correct: true
+      - position: 2
+        text: "chismes"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismes» es coloquial y habla de comentar la vida de otros; la reunión de Noelia busca mejorar el trabajo del equipo, no cotillear."
+        hint_specific: "Los chismes hablan de la vida ajena. ¿Ese es el objetivo de esa reunión semanal?"
+      - position: 3
+        text: "facturas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Las facturas son documentos de cobro; no tienen relación con comentar cómo mejorar el trabajo del equipo."
+        hint_specific: "Las facturas son papeles de cobro. ¿Encajan en una charla sobre cómo mejorar la semana?"
+  - position: 7
+    sentence: "Mi hermana terminó de tocar la canción y me miró esperando {{blank}}, no solo un aplauso."
+    hint_general: "Espera comentarios concretos sobre cómo tocó, no solo una reacción vacía."
+    explanation: "Retroalimentación: comentarios concretos sobre cómo tocó. «Ovación» es solo un aplauso entusiasta, y «indiferencia» es no reaccionar en absoluto."
+    options:
+      - position: 1
+        text: "ovación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una ovación es solo un aplauso entusiasta; la frase dice que ella espera algo más que eso."
+        hint_specific: "La ovación es aplauso, nada más. ¿La frase dice que ella busca solo eso?"
+      - position: 2
+        text: "retroalimentación"
+        is_correct: true
+      - position: 3
+        text: "indiferencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Indiferencia es no reaccionar; la frase dice que ella espera algo de su hermana, no silencio."
+        hint_specific: "La indiferencia es no decir nada. ¿Ella espera silencio o espera comentarios?"
+  - position: 8
+    sentence: "Después de la primera versión del logo, el cliente envió {{blank}} tan detallada que el diseñador supo exactamente qué ajustar."
+    hint_general: "Es un comentario tan preciso que deja claro qué cambiar en el trabajo."
+    explanation: "Retroalimentación: un comentario preciso sobre qué cambiar. «Una factura» es un documento de cobro, y «una disculpa» pide perdón, no señala ajustes en el diseño."
+    options:
+      - position: 1
+        text: "retroalimentación"
+        is_correct: true
+      - position: 2
+        text: "una factura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una factura es un documento de cobro; no explica qué ajustar en un logo."
+        hint_specific: "La factura solo cobra. ¿Eso ayuda al diseñador a saber qué cambiar?"
+      - position: 3
+        text: "una disculpa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una disculpa pide perdón por algo; el cliente no se disculpa, señala ajustes concretos para el diseño."
+        hint_specific: "Disculparse es pedir perdón. ¿El cliente pide perdón o señala cambios?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez minutos de viernes"
+    body: "El equipo de Noelia se sienta diez minutos antes de cerrar la semana. «¿Qué cambiamos para la próxima entrega?», pregunta ella, y cada quien suma una idea concreta. Nadie se va con la sensación de haber perdido el tiempo."
+    before_phrase: "Cuéntenme cosas para mejorar."
+    after_phrase: "Démonos retroalimentación."
+  - position: 2
+    scene: "familia"
+    conversation_type: "social"
+    title: "La canción nueva"
+    body: "Mi hermana terminó de tocar y me miró en silencio. «Me gustó mucho el estribillo, pero el final se siente apurado», le dije. Ella sonrió: «Eso sí sirve, gracias»."
+    before_phrase: "Dime qué tal me quedó."
+    after_phrase: "Dame tu retroalimentación."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "emocional"
+    title: "La pregunta incómoda"
+    body: "«¿Cómo reaccionas cuando tu jefe te corrige?», preguntó la entrevistadora. Gabriel respiró antes de contestar: «Al principio me cuesta, pero he aprendido a pedir retroalimentación específica; así no se siente personal»."
+    before_phrase: "No me gusta que me digan mis errores."
+    after_phrase: "Aprendí a pedir retroalimentación específica."
+provenance:
+  generator: "hand-written for content/words, theme docencia"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "sencillez"
+status: "draft"
+lemma: "sencillez"
+part_of_speech: "sustantivo"
+syllables: ["sen", "ci", "llez"]
+stressed_syllable: 3
+ipa_latam: "[sen.siˈʝes]"
+ipa_es: "[sen.θiˈʝeθ]"
+explanation: "Lo que es fácil de hacer o decir, sin vueltas ni cosas de más."
+example_sentence: "Explicó el trámite con tanta sencillez que hasta su abuelo pudo hacerlo solo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Dila para elogiar algo bien resuelto sin vueltas: una explicación, un plan, hasta una fiesta."
+when_not_to_use: "No la uses para decir que algo es pobre o de mala calidad; sencillez no es lo mismo que escasez."
+collocations:
+  - "explicar con sencillez"
+  - "la sencillez del plan"
+replaces:
+  - before: "Lo hizo fácil, sin vueltas"
+    after: "Lo hizo con sencillez"
+  - before: "Es un plan sin complicaciones"
+    after: "Es un plan con sencillez"
+family: ["sencillo", "sencillamente"]
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["fácil", "sin vueltas"]
+  funcion: ["explicar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "simpleza"
+    difference: "«Simpleza» suena a que algo carece de nivel o de cuidado, casi un defecto; la sencillez es una virtud: explicar sin vueltas, sin perder lo importante."
+    memory_trick: "La simpleza empobrece la idea; la sencillez la deja lista para todos."
+exercises:
+  - position: 1
+    sentence: "El nuevo formulario de gastos se rediseñó con tanta {{blank}} que el equipo dejó de mandar correos con dudas."
+    hint_general: "El formulario cambió de forma que ya nadie necesita preguntar cómo usarlo."
+    explanation: "Sencillez: el formulario dejó de generar dudas. «Simpleza» suena a falta de nivel o cuidado, y el formulario mejoró, no empeoró, y «facilidad» hablaría de que a alguien le costó poco hacerlo, no de cómo quedó pensado para quien lo usa."
+    options:
+      - position: 1
+        text: "simpleza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simpleza» suena a falta de nivel o de cuidado, casi un defecto, y aquí el formulario mejoró, no empeoró."
+        hint_specific: "Esa palabra suena a un defecto, a algo pobre. ¿El formulario mejoró o empeoró con el rediseño?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "facilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Facilidad» hablaría de que a alguien le resultó fácil hacer el formulario, no de cómo quedó diseñado para quien lo usa después."
+        hint_specific: "Esa palabra habla de lo fácil que fue hacer algo. ¿La frase habla de quien lo hizo, o de quien lo usa?"
+  - position: 2
+    sentence: "Mateo le explicó a su abuela cómo hacer videollamadas con tanta {{blank}} que ella misma llamó a sus nietos esa tarde."
+    hint_general: "La explicación fue tan fácil de seguir que ella pudo hacerlo sola después."
+    explanation: "Sencillez: la abuela pudo llamar sola después de la explicación. «Minimalismo» es una palabra de diseño o de estilo de vida, fuera de lugar aquí, y «brevedad» diría que la explicación fue corta, cuando lo que importó fue que se entendiera."
+    options:
+      - position: 1
+        text: "minimalismo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Minimalismo» es una palabra de diseño o de estilo de vida, y suena fuera de lugar para contar cómo Mateo le explicó algo a su abuela."
+        hint_specific: "Esa palabra se usa para hablar de decoración o de estilos de vida. ¿Encaja para contar una escena entre abuela y nieto?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "brevedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Brevedad» diría que la explicación fue corta, y lo que permitió que la abuela llamara sola fue que la entendiera, no solo que durara poco."
+        hint_specific: "Esa palabra habla de que algo dura poco tiempo. ¿Lo importante aquí es la duración, o que ella entendiera?"
+  - position: 3
+    sentence: "En la fiesta, Renata organizó el intercambio de regalos con una {{blank}} que hasta los invitados más despistados entendieron las reglas."
+    hint_general: "El juego se armó de forma que hasta los más despistados entendieron las reglas."
+    explanation: "Sencillez: hasta los invitados despistados entendieron las reglas. «Parquedad» es una palabra muy formal para hablar poco, fuera de lugar en una fiesta, y «practicidad» diría que el sistema funcionaba bien, no que fuera fácil de entender."
+    options:
+      - position: 1
+        text: "parquedad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Parquedad» es una palabra muy formal para hablar poco, y no encaja para describir cómo se organizó una dinámica de fiesta."
+        hint_specific: "Esa palabra es formal y poco común en una charla de fiesta. ¿Suena natural para contar cómo se armó un juego?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "practicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Practicidad» diría que el sistema funcionaba bien en la práctica, no que fuera fácil de entender para los invitados despistados."
+        hint_specific: "Esa palabra habla de que algo funciona bien en el día a día. ¿El mérito aquí es que funcionara, o que se entendiera?"
+  - position: 4
+    sentence: "El plan de la reunión se armó con tanta {{blank}} que nadie se perdió entre tantos temas."
+    hint_general: "El plan quedó armado de forma que nadie se perdió entre los temas."
+    explanation: "Sencillez: nadie se perdió entre los temas del plan. «Simpleza» suena a que faltó profundidad, y el plan sí cubría todos los temas, y «modestia» describe a alguien que no presume de lo suyo, no cómo quedó organizado un plan."
+    options:
+      - position: 1
+        text: "simpleza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Simpleza» suena a que faltó profundidad o cuidado, y el plan sí cubría todos los temas, solo que sin vueltas."
+        hint_specific: "Esa palabra sugiere que algo quedó pobre o incompleto. ¿El plan dejó fuera temas, o los cubrió todos?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "modestia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Modestia» describe a alguien que no presume de lo suyo, y aquí lo que se elogia es cómo quedó organizado el plan, no una actitud."
+        hint_specific: "Esa palabra describe una actitud frente a los demás. ¿La frase habla de una persona o de cómo quedó un plan?"
+  - position: 5
+    sentence: "El candidato explicó su proceso de trabajo con una {{blank}} que hizo que todos entendieran sus pasos sin esfuerzo."
+    hint_general: "La forma de explicar sus pasos hizo que todos los entendieran sin esfuerzo."
+    explanation: "Sencillez: todos entendieron sus pasos sin esfuerzo. «Facilidad» hablaría de que a él le costó poco explicarlo, no de que los demás entendieran, y «economía» hablaría de usar pocas palabras, no de que se entendieran los pasos."
+    options:
+      - position: 1
+        text: "facilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Facilidad» hablaría de que a él le costó poco explicarlo, no de que los demás entendieran sus pasos sin esfuerzo."
+        hint_specific: "Esa palabra habla de lo fácil que le resultó a él hablar. ¿La frase habla de él, o de quienes lo escucharon?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "economía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Economía» hablaría de usar pocas palabras, y aquí lo que se destaca es que se entendieran los pasos, no solo que fueran breves."
+        hint_specific: "Esa palabra habla de gastar poco, incluso pocas palabras. ¿El mérito aquí es la cantidad de palabras, o que se entendiera?"
+  - position: 6
+    sentence: "La receta que le pasó su tía tenía tanta {{blank}} que Ana la hizo bien a la primera, sin ayuda de nadie."
+    hint_general: "La receta se pudo seguir bien a la primera, sin ayuda de nadie."
+    explanation: "Sencillez: Ana siguió la receta sola y le salió bien. «Brevedad» diría que la receta era corta, no que fuera fácil de seguir, y «llaneza» describe el trato cercano de una persona, no una receta escrita."
+    options:
+      - position: 1
+        text: "brevedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Brevedad» diría que la receta era corta, y lo que permitió a Ana hacerla sola fue que fuera fácil de seguir, no solo corta."
+        hint_specific: "Esa palabra habla de que algo dura poco o tiene pocos pasos. ¿Lo importante aquí es la duración, o que se entendiera bien?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "llaneza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Llaneza» describe el trato cercano de una persona, no una receta escrita con pasos fáciles de seguir."
+        hint_specific: "Esa palabra describe cómo trata alguien a los demás. ¿La frase habla de una persona o de una receta escrita?"
+  - position: 7
+    sentence: "El instructivo de la máquina nueva tenía tanta {{blank}} que nadie tuvo que llamar a mantenimiento la primera semana."
+    hint_general: "El instructivo se entendió tan bien que nadie llamó a pedir ayuda."
+    explanation: "Sencillez: nadie llamó a mantenimiento porque el instructivo se entendió solo. «Modestia» describe una actitud humilde, no un texto, y «practicidad» diría que la máquina era útil, no que el instructivo se entendiera sin ayuda."
+    options:
+      - position: 1
+        text: "modestia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Modestia» describe a alguien que no presume, y un instructivo no tiene esa cualidad: lo que tenía eran pasos fáciles de seguir."
+        hint_specific: "Esa palabra describe una actitud de una persona. ¿La frase habla de una persona o de un texto?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "practicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Practicidad» diría que la máquina era útil en el día a día, no que el instructivo se entendiera sin ayuda."
+        hint_specific: "Esa palabra habla de qué tan útil es la máquina. ¿Eso es lo que se elogia, o que el texto se entendiera?"
+  - position: 8
+    sentence: "Camila armó el itinerario del viaje con tanta {{blank}} que todo el grupo lo siguió sin confundirse de horarios."
+    hint_general: "El itinerario se entendió tan bien que nadie se confundió de horario."
+    explanation: "Sencillez: nadie se confundió de horario con el itinerario. «Economía» hablaría de gastar poco dinero o pocas palabras, no de que se entendiera, y «llaneza» describe un trato cercano entre personas, no cómo quedó armado un itinerario."
+    options:
+      - position: 1
+        text: "economía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Economía» hablaría de gastar poco dinero o pocas palabras, y aquí el mérito fue que el itinerario se entendiera sin confusiones."
+        hint_specific: "Esa palabra suele hablar de gastar poco. ¿La frase habla de dinero, o de entender los horarios?"
+      - position: 2
+        text: "sencillez"
+        is_correct: true
+      - position: 3
+        text: "llaneza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Llaneza» describe un trato cercano y sin formalidades entre personas, no cómo quedó armado un itinerario de viaje."
+        hint_specific: "Esa palabra describe el trato entre personas. ¿La frase habla de un trato o de un itinerario?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El instructivo que no necesitó ayuda"
+    body: "Después de que tres personas nuevas preguntaran lo mismo, Bruno rehízo el instructivo de la impresora en pasos numerados y sin jerga. Esa semana, nadie volvió a pedirle ayuda. «Con esa sencillez, hasta yo lo entendí», le dijo su compañero."
+    before_phrase: "Que sea fácil de seguir, sin vueltas."
+    after_phrase: "Que tenga sencillez."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Tres botones"
+    body: "Cuando su abuelo se quejó de no entender el celular nuevo, Lucía se sentó con él y le mostró solo tres botones, uno por uno. Al rato, él ya mandaba mensajes de voz. «Qué sencillez, hija, así sí puedo», dijo, aliviado."
+    before_phrase: "Explícamelo fácil, sin tanta vuelta."
+    after_phrase: "Explícamelo con sencillez."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Reglas de una línea"
+    body: "Para el cumpleaños de su hijo, Marisol armó los juegos con reglas de una sola línea cada uno. Ningún niño se quedó sin entender qué hacer. Otra mamá le preguntó cómo lo había logrado: «Todo está en la sencillez», respondió Marisol sonriendo."
+    before_phrase: "Hazlo fácil, para que todos entiendan."
+    after_phrase: "Hazlo con sencillez."
+provenance:
+  generator: "hand-written for content/words"
+  gate: null
+  checked_on: "2026-09-18"

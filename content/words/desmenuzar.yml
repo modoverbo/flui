@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "desmenuzar"
+status: "draft"
+lemma: "desmenuzar"
+part_of_speech: "verbo"
+syllables: ["des", "me", "nu", "zar"]
+stressed_syllable: 4
+ipa_latam: "[des.me.nuˈsar]"
+ipa_es: "[des.me.nuˈθar]"
+explanation: "Separar algo complicado en partes chicas y explicar cada una, para que quede fácil de seguir."
+example_sentence: "El repartidor de la deuda parecía imposible, hasta que Sofía lo desmenuzó gasto por gasto en la pizarra."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para bajar algo denso a algo que se pueda seguir paso a paso, sin perder ningún detalle importante."
+when_not_to_use: "No la uses cuando lo que hace falta es acortar algo largo; eso es «resumir», el sentido contrario."
+collocations:
+  - "desmenuzar un problema"
+  - "desmenuzar un informe"
+replaces:
+  - before: "Te lo explico por partes"
+    after: "Te lo voy a desmenuzar"
+  - before: "Vamos despacito con esto"
+    after: "Vamos a desmenuzar esto"
+family: ["desmenuzamiento"]
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "redaccion-ejecutiva"
+    relevance: 1
+tags:
+  comodin: ["explicarlo por partes"]
+  funcion: ["explicar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "desmentir"
+    difference: "«Desmentir» dice que un hecho contado por ahí no es cierto; esto separa algo complicado en partes para explicarlo, sin negar nada."
+    memory_trick: "Desmientes un rumor; desmenuzas un tema."
+  - confused_with: "resumir"
+    difference: "«Resumir» acorta algo largo dejando lo esencial; esto hace lo contrario, abre cada parte para explicarla con detalle."
+    memory_trick: "Resumir achica; desmenuzar abre."
+exercises:
+  - position: 1
+    sentence: "Antes de llevar el informe al directorio, Nicolás {{blank}} cada cifra en la pizarra para que nadie se quedara con dudas."
+    hint_general: "Abre cada dato en partes chicas para que se entienda bien, sin dejar dudas sueltas."
+    explanation: "Desmenuzó: abrió cada cifra en partes para que se entendiera bien. «Desmintió» diría que las cifras eran falsas, y la frase no habla de eso, y «resumió» sería acortar el informe, justo lo contrario de explicar cifra por cifra."
+    options:
+      - position: 1
+        text: "desmintió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desmentir» es decir que algo contado por ahí no es cierto; Nicolás no niega las cifras, las explica una por una."
+        hint_specific: "Desmentir es negar un hecho. ¿Nicolás niega las cifras o las explica?"
+      - position: 2
+        text: "desmenuzó"
+        is_correct: true
+      - position: 3
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar algo largo; la frase dice que fue cifra por cifra en la pizarra, lo contrario de acortar."
+        hint_specific: "Resumir es acortar. ¿Nicolás acortó el informe o lo abrió cifra por cifra?"
+  - position: 2
+    sentence: "Mi papá {{blank}} la receta de la abuela en pasos tan detallados que hasta mi hermano menor pudo cocinar solo, sin preguntar nada."
+    hint_general: "Cada paso quedó explicado en partes tan chicas que no hizo falta preguntar nada más."
+    explanation: "Desmenuzó: cada paso quedó explicado en partes chicas. «Pormenorizó» tiene un tono de informe de oficina, fuera de lugar en una charla de cocina en casa, y «resumió» sería acortar la receta, y la frase dice que fue con pasos muy detallados."
+    options:
+      - position: 1
+        text: "pormenorizó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pormenorizar» tiene un tono de reporte formal; contar cómo mi papá explicó una receta en casa pide un tono más de todos los días."
+        hint_specific: "Esa palabra suena a informe de oficina. ¿Encaja ese tono para hablar de una receta en casa?"
+      - position: 2
+        text: "desmenuzó"
+        is_correct: true
+      - position: 3
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar; la frase dice que los pasos quedaron muy detallados, lo contrario de acortar la receta."
+        hint_specific: "Resumir es acortar. ¿Los pasos quedaron cortos o muy detallados?"
+  - position: 3
+    sentence: "En la entrevista me pidieron que {{blank}} un problema real que resolví en mi trabajo anterior, paso por paso."
+    hint_general: "Piden que se cuente el problema en partes, paso por paso, no que se juzgue si estuvo bien o mal."
+    explanation: "Desmenuzara: piden contar el problema en partes, paso por paso. «Desmintiera» sería negar que el problema existió, y «criticara» sería juzgarlo, y la pregunta pide explicar los pasos, no opinar sobre ellos."
+    options:
+      - position: 1
+        text: "desmintiera"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desmentir» es negar que algo ocurrió; la entrevistadora no pide negar el problema, pide contarlo paso por paso."
+        hint_specific: "Desmentir niega un hecho. ¿Piden negar el problema o contarlo paso por paso?"
+      - position: 2
+        text: "desmenuzara"
+        is_correct: true
+      - position: 3
+        text: "criticara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» es juzgar si algo estuvo bien o mal; la pregunta pide contar los pasos del problema, no opinar sobre ellos."
+        hint_specific: "Criticar es opinar sobre algo. ¿Piden opinar o piden contar los pasos?"
+  - position: 4
+    sentence: "En la sobremesa, mi tío {{blank}} la trama de la película escena por escena, hasta que todos entendimos el final."
+    hint_general: "Cuenta la historia escena por escena hasta que el final queda claro para todos."
+    explanation: "Desmenuzó: contó la historia escena por escena. «Diseccionó» suena a laboratorio, un tono raro para contar una película en la sobremesa, y «resumió» sería acortar la trama, y la frase dice que fue escena por escena."
+    options:
+      - position: 1
+        text: "diseccionó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Diseccionar» tiene un tono de laboratorio o de ciencia; para contar una película en una sobremesa familiar ese tono suena raro."
+        hint_specific: "Esa palabra suena a sala de laboratorio. ¿Encaja ese tono en una sobremesa familiar?"
+      - position: 2
+        text: "desmenuzó"
+        is_correct: true
+      - position: 3
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar; la frase dice que fue escena por escena, lo contrario de acortar la trama."
+        hint_specific: "Resumir es acortar. ¿Mi tío acortó la trama o la contó escena por escena?"
+  - position: 5
+    sentence: "Antes de firmar, el abogado {{blank}} cada cláusula del contrato para que entendiéramos qué implicaba cada una."
+    hint_general: "Explica cada parte del documento para que se entienda bien lo que dice, sin dejar dudas."
+    explanation: "Desmenuzó: explicó cada parte del contrato para que se entendiera. «Desmintió» diría que el contrato tenía datos falsos, y la frase no habla de eso, y «criticó» sería opinar si el contrato era bueno o malo, no explicar qué implicaba."
+    options:
+      - position: 1
+        text: "desmintió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desmentir» es negar que algo es cierto; el abogado no niega el contrato, lo explica cláusula por cláusula."
+        hint_specific: "Desmentir niega un hecho. ¿El abogado niega el contrato o lo explica?"
+      - position: 2
+        text: "desmenuzó"
+        is_correct: true
+      - position: 3
+        text: "criticó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» es opinar si algo estuvo bien o mal; la frase dice que quería que entendiéramos qué implicaba cada cláusula, no su opinión sobre ellas."
+        hint_specific: "Criticar es dar una opinión. ¿El abogado opina o explica qué implica cada cláusula?"
+  - position: 6
+    sentence: "Cada mes, Alejandra {{blank}} los gastos de la casa con su pareja, partida por partida, antes de decidir en qué ajustar."
+    hint_general: "Revisa cada gasto por separado con su pareja antes de decidir qué cambiar."
+    explanation: "Desmenuza: revisa cada gasto por separado antes de decidir. «Desmiente» diría que los gastos son falsos, y la frase no habla de eso, y «resume» sería acortar la lista de gastos, y la frase dice que va partida por partida."
+    options:
+      - position: 1
+        text: "desmiente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desmentir» es negar que algo es cierto; Alejandra no niega los gastos, los revisa uno por uno con su pareja."
+        hint_specific: "Desmentir niega un hecho. ¿Alejandra niega los gastos o los revisa uno por uno?"
+      - position: 2
+        text: "desmenuza"
+        is_correct: true
+      - position: 3
+        text: "resume"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar una lista; la frase dice que va partida por partida, lo contrario de acortar los gastos."
+        hint_specific: "Resumir es acortar. ¿Alejandra acorta la lista o va partida por partida?"
+  - position: 7
+    sentence: "Antes de empezar la partida, Julián {{blank}} las reglas del juego nuevo carta por carta, hasta que todos entendieron."
+    hint_general: "Explica las reglas por partes, carta por carta, hasta que nadie se queda con dudas."
+    explanation: "Desmenuzó: explicó las reglas por partes hasta que todos entendieron. «Resumió» sería acortar la explicación, y la frase dice que fue carta por carta, y «criticó» sería opinar si el juego era bueno o malo, no explicar sus reglas."
+    options:
+      - position: 1
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar; la frase dice que Julián fue carta por carta, lo contrario de acortar la explicación."
+        hint_specific: "Resumir es acortar. ¿Julián acortó las reglas o las explicó carta por carta?"
+      - position: 2
+        text: "desmenuzó"
+        is_correct: true
+      - position: 3
+        text: "criticó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» es opinar si algo estuvo bien o mal; Julián no opina sobre el juego, explica sus reglas paso por paso."
+        hint_specific: "Criticar es dar una opinión. ¿Julián opina sobre el juego o explica sus reglas?"
+  - position: 8
+    sentence: "Al recibir la queja del cliente, la encargada {{blank}} el reclamo punto por punto antes de responder con una solución clara."
+    hint_general: "Revisa el reclamo por partes antes de dar una respuesta clara con solución."
+    explanation: "Desmenuzó: revisó el reclamo por partes antes de responder. «Resumió» sería acortar el reclamo, y la frase dice que fue punto por punto, y «criticó» sería opinar sobre el cliente, y la frase dice que buscaba dar una solución."
+    options:
+      - position: 1
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar algo; la frase dice que la encargada fue punto por punto, lo contrario de acortar el reclamo."
+        hint_specific: "Resumir es acortar. ¿La encargada acortó el reclamo o lo revisó punto por punto?"
+      - position: 2
+        text: "desmenuzó"
+        is_correct: true
+      - position: 3
+        text: "criticó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» es opinar sobre algo o alguien; la frase dice que buscaba responder con una solución clara, no dar su opinión sobre el cliente."
+        hint_specific: "Criticar es dar una opinión. ¿La encargada opina sobre el cliente o busca una solución?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cifra por cifra"
+    body: "El informe parecía un muro de números. Nicolás lo llevó a la pizarra y fue cifra por cifra: «Esto sube por esto, esto baja por esto otro». Al final, hasta el director más distraído del directorio pudo seguir la historia completa."
+    before_phrase: "Te lo explico por partes."
+    after_phrase: "Te lo voy a desmenuzar."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La receta de la abuela"
+    body: "Mi hermano nunca había cocinado nada. Mi papá se sentó con él y fue paso por paso: «Primero esto, después esperas, recién ahí lo otro». Esa noche, mi hermano sirvió su primer plato solo, orgulloso."
+    before_phrase: "Vamos despacito con esto."
+    after_phrase: "Vamos a desmenuzar la receta paso a paso."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El problema real"
+    body: "«Cuénteme un problema que resolvió», pidió el entrevistador. Valentina no se apuró: fue explicando cada paso que había seguido, desde el primer síntoma hasta la solución final. «Me gusta cómo lo desmenuzó», dijo él al terminar."
+    before_phrase: "Te lo explico por partes."
+    after_phrase: "Voy a desmenuzar el problema paso a paso."
+provenance:
+  generator: "hand-written for content/words, theme docencia"
+  gate: null
+  checked_on: "2026-09-18"

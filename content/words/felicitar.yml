@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "felicitar"
+status: "draft"
+lemma: "felicitar"
+part_of_speech: "verbo"
+syllables: ["fe", "li", "ci", "tar"]
+stressed_syllable: 4
+ipa_latam: "[fe.li.siˈtaɾ]"
+ipa_es: "[fe.li.θiˈtaɾ]"
+explanation: "Decirle a alguien, con palabras concretas, que viste y valoras algo bueno que hizo."
+example_sentence: "Nadie del equipo se tomó un minuto para felicitar a Iván, y eso lo desanimó más de lo que esperaba."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo con algo concreto que la persona hizo, no como un elogio vago sin ningún detalle."
+when_not_to_use: "No lo uses de forma automática sin haber prestado atención: felicitar pierde valor si no nombra algo real."
+collocations:
+  - "felicitar por"
+  - "acercarse a felicitar"
+  - "nadie la felicitó"
+family: ["felicitación"]
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["decirle que estuvo bien", "reconocer el esfuerzo"]
+  funcion: ["reconocer"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "facilitar"
+    difference: "Facilitar es hacer que algo sea más fácil para alguien; felicitar es decirle a alguien que valoras algo bueno que hizo."
+    memory_trick: "Facilitas un trámite; felicitas un logro."
+replaces:
+  - before: "Le dijo que había estado muy bien lo que hizo"
+    after: "La felicitó por lo que hizo"
+  - before: "Se acercó para decirle que le había gustado su trabajo"
+    after: "Se acercó a felicitarla por su trabajo"
+exercises:
+  - position: 1
+    sentence: "Después de la presentación, Andrés se acercó a {{blank}} a Rocío por lo clara que había sido."
+    hint_general: "Decirle a alguien, con palabras concretas, que notaste algo bueno que hizo."
+    explanation: "Felicitar: decirle a alguien con palabras concretas que notaste algo bueno. «Facilitar» es hacer algo más fácil para alguien, y «corregir» implica señalar un error, justo lo contrario de reconocer algo bueno."
+    options:
+      - position: 1
+        text: "felicitar"
+        is_correct: true
+      - position: 2
+        text: "facilitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer lo clara que había sido la presentación de Rocío."
+        hint_specific: "Facilitar hace algo más fácil. ¿Andrés le facilitó algo o reconoció su presentación?"
+      - position: 3
+        text: "corregir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corregir» implica señalar un error, y la frase dice que Andrés reconoció lo clara que había sido la presentación, sin mencionar ningún error."
+        hint_specific: "Corregir señala un error. ¿Andrés señaló un error o reconoció algo bueno?"
+  - position: 2
+    sentence: "El gerente {{blank}} al equipo por cerrar el proyecto tres días antes de lo previsto."
+    hint_general: "Reconocer con palabras concretas un logro de un grupo de personas."
+    explanation: "Felicitó: reconoció con palabras concretas un logro del equipo. «Facilitó» es hacer algo más fácil, y «criticó» implica señalar fallas, justo lo contrario de reconocer un logro."
+    options:
+      - position: 1
+        text: "felicitó"
+        is_correct: true
+      - position: 2
+        text: "criticó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» implica señalar fallas, y la frase dice que el gerente reconoció que el equipo cerró el proyecto antes de lo previsto, un logro."
+        hint_specific: "Criticar señala fallas. ¿El gerente señaló fallas o reconoció un logro?"
+      - position: 3
+        text: "facilitó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer que el equipo terminó antes de lo previsto."
+        hint_specific: "Facilitar hace algo más fácil. ¿El gerente facilitó algo o reconoció el logro del equipo?"
+  - position: 3
+    sentence: "Su madre {{blank}} el esfuerzo de su hijo, aunque el resultado final no hubiera sido perfecto."
+    hint_general: "Reconocer el esfuerzo de alguien, aunque el resultado no sea perfecto."
+    explanation: "Felicitó: reconoció el esfuerzo de alguien, aunque el resultado no fuera perfecto. «Exigió» implica pedir más, justo lo contrario de reconocer lo ya hecho, y «facilitó» es hacer algo más fácil."
+    options:
+      - position: 1
+        text: "felicitó"
+        is_correct: true
+      - position: 2
+        text: "exigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» implica pedir más de alguien, y la frase dice que su madre reconoció el esfuerzo ya hecho, aunque no fuera perfecto."
+        hint_specific: "Exigir pide más. ¿Su madre exigió más o reconoció el esfuerzo ya hecho?"
+      - position: 3
+        text: "facilitó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer el esfuerzo de su hijo."
+        hint_specific: "Facilitar hace algo más fácil. ¿Su madre facilitó algo o reconoció el esfuerzo?"
+  - position: 4
+    sentence: "Nadie {{blank}} a Camila por el ascenso, y ella notó ese silencio incómodo toda la semana."
+    hint_general: "Reconocer un logro de alguien, algo que en esta frase nadie hizo."
+    explanation: "Felicitó: reconoció un logro de alguien. «Facilitó» es hacer algo más fácil, y «ignoró» describe una falta de reconocimiento, aunque la frase habla específicamente de un silencio ante un logro."
+    options:
+      - position: 1
+        text: "felicitó"
+        is_correct: true
+      - position: 2
+        text: "ignoró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» describe no prestar atención en general, y la frase se centra en la falta de un reconocimiento concreto por el ascenso, no en una falta de atención general."
+        hint_specific: "Ignorar es más general. ¿La frase habla de atención en general o de reconocer un logro puntual?"
+      - position: 3
+        text: "facilitó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer el ascenso de Camila."
+        hint_specific: "Facilitar hace algo más fácil. ¿La frase habla de facilitar algo o de reconocer un logro?"
+  - position: 5
+    sentence: "El vecino se tomó el trabajo de tocar la puerta solo para {{blank}} a la familia por el jardín nuevo."
+    hint_general: "Tomarse el trabajo de reconocer algo bueno que hizo otra persona, con un gesto concreto."
+    explanation: "Felicitar: tomarse el trabajo de reconocer algo bueno con un gesto concreto. «Copiar» implica imitar algo, y «facilitar» es hacer algo más fácil, ninguno describe tocar la puerta para reconocer el jardín."
+    options:
+      - position: 1
+        text: "felicitar"
+        is_correct: true
+      - position: 2
+        text: "copiar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» implica imitar algo, y la frase dice que el vecino tocó la puerta para reconocer el jardín, no para imitarlo."
+        hint_specific: "Copiar es imitar algo. ¿El vecino copió el jardín o reconoció el esfuerzo de la familia?"
+      - position: 3
+        text: "facilitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer un jardín nuevo."
+        hint_specific: "Facilitar hace algo más fácil. ¿El vecino facilitó algo o reconoció el jardín?"
+  - position: 6
+    sentence: "En el chat del curso, varios compañeros {{blank}} a Bruno por explicar el tema tan claro."
+    hint_general: "Reconocer con palabras el esfuerzo de alguien que explicó algo bien."
+    explanation: "Felicitaron: reconocieron con palabras el esfuerzo de Bruno. «Chotearon» es coloquial y regional y sugiere burla, y «facilitaron» es hacer algo más fácil, ninguno describe reconocer su explicación."
+    options:
+      - position: 1
+        text: "felicitaron"
+        is_correct: true
+      - position: 2
+        text: "chotearon"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chotearon» es coloquial y regional y sugiere burla, y aquí los compañeros reconocieron con respeto la explicación de Bruno."
+        hint_specific: "«Chotearon» sugiere burla. ¿Los compañeros se burlaron o reconocieron la explicación de Bruno?"
+      - position: 3
+        text: "facilitaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer que Bruno explicó bien el tema."
+        hint_specific: "Facilitar hace algo más fácil. ¿Los compañeros facilitaron algo o reconocieron la explicación?"
+  - position: 7
+    sentence: "El técnico de sonido {{blank}} a la banda por lo bien ensayado que sonó cada canción."
+    hint_general: "Reconocer con palabras concretas el trabajo bien hecho de un grupo."
+    explanation: "Felicitó: reconoció con palabras concretas el trabajo bien hecho de un grupo. «Grabó» describe otra acción técnica, y «facilitó» es hacer algo más fácil, ninguno describe ese reconocimiento."
+    options:
+      - position: 1
+        text: "felicitó"
+        is_correct: true
+      - position: 2
+        text: "grabó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grabar» describe registrar el sonido, y la frase dice que el técnico reconoció con palabras lo bien ensayado que sonó la banda, no que la grabara."
+        hint_specific: "Grabar registra el sonido. ¿El técnico grabó la banda o reconoció su trabajo?"
+      - position: 3
+        text: "facilitó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer que la banda sonó bien ensayada."
+        hint_specific: "Facilitar hace algo más fácil. ¿El técnico facilitó algo o reconoció el trabajo de la banda?"
+  - position: 8
+    sentence: "Antes de hablar de los números del trimestre, la directora se tomó un momento para {{blank}} a cada área por su parte del trabajo."
+    hint_general: "Tomarse un momento para reconocer el trabajo de cada grupo, antes de hablar de otro tema."
+    explanation: "Felicitar: tomarse un momento para reconocer el trabajo de cada grupo. «Auditar» implica revisar cuentas o procesos, y «facilitar» es hacer algo más fácil, ninguno describe ese reconocimiento previo."
+    options:
+      - position: 1
+        text: "felicitar"
+        is_correct: true
+      - position: 2
+        text: "auditar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Auditar» implica revisar cuentas o procesos, y la frase dice que la directora se tomó un momento para reconocer el trabajo, no para revisarlo."
+        hint_specific: "Auditar revisa cuentas o procesos. ¿La directora auditó algo o reconoció el trabajo de cada área?"
+      - position: 3
+        text: "facilitar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Facilitar» es hacer que algo sea más fácil para alguien, sin relación con reconocer el trabajo de cada área antes de hablar de números."
+        hint_specific: "Facilitar hace algo más fácil. ¿La directora facilitó algo o reconoció el trabajo de cada área?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Lo clara que fue la presentación"
+    body: "Apenas Rocío bajó del escenario, Andrés se acercó directo. «Quiero felicitarte, explicaste el tema más difícil del trimestre en diez minutos», le dijo, y Rocío sintió que por fin alguien había prestado atención de verdad."
+    before_phrase: "Quiero decirte que estuvo muy bien lo que hiciste."
+    after_phrase: "Quiero felicitarte por lo que hiciste."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El jardín nuevo"
+    body: "El vecino se tomó el trabajo de tocar la puerta solo para eso. «Vine a felicitarlos por el jardín, quedó precioso», les dijo, y la familia entera salió a mostrarle cada planta con orgullo."
+    before_phrase: "Vine a decirles que el jardín les quedó precioso."
+    after_phrase: "Vine a felicitarlos por el jardín, les quedó precioso."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El esfuerzo, no el resultado"
+    body: "El proyecto de la escuela no había salido como esperaba, pero su madre lo abrazó igual. «Te quiero felicitar por el esfuerzo, eso vale más que la nota», le dijo, y esa frase se le quedó grabada para siempre."
+    before_phrase: "Quiero decirte que valoro el esfuerzo que hiciste."
+    after_phrase: "Te quiero felicitar por el esfuerzo que hiciste."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

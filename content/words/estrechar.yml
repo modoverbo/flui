@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "estrechar"
+status: "draft"
+lemma: "estrechar"
+part_of_speech: "verbo"
+syllables: ["es", "tre", "char"]
+stressed_syllable: 3
+ipa_latam: "[es.tɾeˈtʃaɾ]"
+ipa_es: "[es.tɾeˈtʃaɾ]"
+explanation: "Hacer más cercana una relación con alguien, a través del trato constante."
+example_sentence: "Después del proyecto en común, los dos equipos lograron estrechar lazos que antes no existían."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para hablar de fortalecer un vínculo profesional o personal con el tiempo, no de un solo encuentro."
+when_not_to_use: "No lo uses para un primer contacto puntual: estrechar lazos implica un proceso, no un único encuentro."
+collocations:
+  - "estrechar lazos"
+  - "estrechar la relación"
+  - "estrechar vínculos"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "amistad"
+    relevance: 1
+tags:
+  comodin: ["acercarse más", "fortalecer la relación"]
+  funcion: ["vincular"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "estirar"
+    difference: "Estirar es alargar algo físicamente; estrechar, en este sentido, es acercar una relación con el trato constante."
+    memory_trick: "Se estira una cuerda; se estrecha una relación."
+replaces:
+  - before: "El proyecto los ayudó a acercarse más como equipos"
+    after: "El proyecto les ayudó a estrechar lazos entre equipos"
+  - before: "Quiere fortalecer la relación con ese proveedor"
+    after: "Quiere estrechar la relación con ese proveedor"
+exercises:
+  - position: 1
+    sentence: "Después del proyecto en común, los dos equipos lograron {{blank}} lazos que antes no existían."
+    hint_general: "Hacer más cercana una relación con alguien a través del trato constante."
+    explanation: "Estrechar: hacer más cercana una relación a través del trato constante. «Estirar» alarga algo físicamente, y «romper» significaría terminar la relación, justo lo contrario de lo que lograron."
+    options:
+      - position: 1
+        text: "estrechar"
+        is_correct: true
+      - position: 2
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, como una cuerda, y aquí se habla de acercar una relación entre dos equipos."
+        hint_specific: "Estirar alarga un objeto físico. ¿La frase habla de un objeto o de una relación?"
+      - position: 3
+        text: "romper"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Romper» significaría terminar la relación, y la frase dice justo lo contrario: que los equipos se acercaron más."
+        hint_specific: "Romper termina algo. ¿Los equipos terminaron la relación o se acercaron más?"
+  - position: 2
+    sentence: "El viaje juntos les sirvió a las dos familias para {{blank}} una relación que antes era solo de saludo en la calle."
+    hint_general: "Hacer que un vínculo pase de algo distante a algo más cercano."
+    explanation: "Estrechar: hacer que un vínculo pase de algo distante a algo más cercano. «Estirar» alarga algo físicamente, y «cortar» significaría terminar la relación, no acercarla."
+    options:
+      - position: 1
+        text: "estrechar"
+        is_correct: true
+      - position: 2
+        text: "cortar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cortar» significaría terminar la relación, y la frase dice que el viaje ayudó a que la relación fuera más cercana, no que terminara."
+        hint_specific: "Cortar termina algo. ¿El viaje terminó la relación o la acercó?"
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, y aquí se habla de una relación entre dos familias, no de un objeto."
+        hint_specific: "Estirar alarga un objeto. ¿La frase habla de un objeto o de una relación entre familias?"
+  - position: 3
+    sentence: "Con reuniones mensuales, la nueva directora buscaba {{blank}} el vínculo entre las distintas sucursales."
+    hint_general: "Fortalecer un vínculo entre distintas partes con encuentros constantes."
+    explanation: "Estrechar: fortalecer un vínculo con encuentros constantes. «Vigilar» implica controlar de cerca, sin buscar cercanía, y «estirar» alarga algo físicamente, sin relación con un vínculo entre sucursales."
+    options:
+      - position: 1
+        text: "vigilar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vigilar» implica controlar de cerca, y la frase habla de acercar el vínculo entre sucursales, no de controlarlas."
+        hint_specific: "Vigilar es controlar de cerca. ¿La directora busca controlar o acercar a las sucursales?"
+      - position: 2
+        text: "estrechar"
+        is_correct: true
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, y aquí se habla del vínculo entre sucursales, no de un objeto."
+        hint_specific: "Estirar alarga un objeto. ¿La frase habla de un objeto o de un vínculo entre sucursales?"
+  - position: 4
+    sentence: "Compartir el mismo hobby les permitió {{blank}} una amistad que llevaba años sin pasar de un simple saludo."
+    hint_general: "Hacer más cercana una amistad que antes era distante."
+    explanation: "Estrechar: hacer más cercana una amistad que antes era distante. «Fingir» implica simular algo falso, y «estirar» alarga algo físicamente; ninguno describe esta amistad real."
+    options:
+      - position: 1
+        text: "estrechar"
+        is_correct: true
+      - position: 2
+        text: "fingir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fingir» implica simular algo falso, y la frase describe una amistad real que se hizo más cercana con el tiempo."
+        hint_specific: "Fingir es simular algo falso. ¿La amistad descrita es real o simulada?"
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, y aquí se habla de una amistad entre dos personas, no de un objeto."
+        hint_specific: "Estirar alarga un objeto. ¿La frase habla de un objeto o de una amistad?"
+  - position: 5
+    sentence: "Después de la pelea, los primos hicieron un esfuerzo por {{blank}} la relación que casi se había perdido."
+    hint_general: "Recuperar la cercanía de una relación que estuvo a punto de romperse."
+    explanation: "Estrechar: recuperar la cercanía de una relación que casi se pierde. «Aflojar» implica soltar algo, lo contrario de acercarlo, y «estirar» alarga algo físicamente, sin relación con una amistad."
+    options:
+      - position: 1
+        text: "aflojar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aflojar» implica soltar algo, lo contrario de acercarlo, y la frase dice que los primos hicieron un esfuerzo por recuperar la cercanía."
+        hint_specific: "Aflojar suelta algo. ¿Los primos soltaron la relación o la acercaron de nuevo?"
+      - position: 2
+        text: "estrechar"
+        is_correct: true
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, y aquí se habla de una relación familiar, no de un objeto."
+        hint_specific: "Estirar alarga un objeto. ¿La frase habla de un objeto o de la relación entre primos?"
+  - position: 6
+    sentence: "El intercambio de estudiantes buscaba {{blank}} los lazos culturales entre las dos ciudades hermanadas."
+    hint_general: "Fortalecer vínculos entre dos lugares a través del contacto constante."
+    explanation: "Estrechar: fortalecer vínculos entre dos lugares a través del contacto constante. «Chamuyar» es coloquial y regional, y «estirar» alarga algo físicamente; ninguno describe este objetivo del intercambio."
+    options:
+      - position: 1
+        text: "estrechar"
+        is_correct: true
+      - position: 2
+        text: "chamuyar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chamuyar» es coloquial y regional, y aquí se busca nombrar con precisión el objetivo del intercambio de estudiantes."
+        hint_specific: "«Chamuyar» es muy coloquial y regional. ¿El intercambio busca una palabra precisa o una muy informal?"
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, y aquí se habla de vínculos culturales entre dos ciudades, no de un objeto."
+        hint_specific: "Estirar alarga un objeto. ¿La frase habla de un objeto o de vínculos entre ciudades?"
+  - position: 7
+    sentence: "El nuevo gerente organizó un almuerzo mensual solo para {{blank}} la relación con los proveedores más antiguos."
+    hint_general: "Fortalecer una relación de trabajo con encuentros regulares."
+    explanation: "Estrechar: fortalecer una relación de trabajo con encuentros regulares. «Renegociar» implica cambiar los términos de un contrato, y «estirar» alarga algo físicamente, sin relación con una relación de trabajo."
+    options:
+      - position: 1
+        text: "estrechar"
+        is_correct: true
+      - position: 2
+        text: "renegociar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Renegociar» implica cambiar los términos de un contrato, y el almuerzo mensual busca acercar la relación, no discutir condiciones."
+        hint_specific: "Renegociar cambia condiciones de un contrato. ¿El almuerzo busca cambiar condiciones o acercar la relación?"
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, y aquí se habla de la relación con los proveedores, no de un objeto."
+        hint_specific: "Estirar alarga un objeto. ¿La frase habla de un objeto o de una relación con proveedores?"
+  - position: 8
+    sentence: "Las llamadas semanales ayudaron a Renata y a su hermana a {{blank}} una relación que la distancia había enfriado."
+    hint_general: "Volver a acercar una relación que se había vuelto distante."
+    explanation: "Estrechar: volver a acercar una relación que se había vuelto distante. «Enfriar» significaría alejarla aún más, justo lo contrario, y «estirar» alarga algo físicamente, sin relación con una relación entre hermanas."
+    options:
+      - position: 1
+        text: "enfriar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Enfriar» significaría alejar aún más la relación, y la frase dice que las llamadas ayudaron a acercarla de nuevo."
+        hint_specific: "Enfriar aleja algo. ¿Las llamadas alejaron la relación o la acercaron?"
+      - position: 2
+        text: "estrechar"
+        is_correct: true
+      - position: 3
+        text: "estirar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Estirar» alarga algo físicamente, y aquí se habla de la relación entre las dos hermanas, no de un objeto."
+        hint_specific: "Estirar alarga un objeto. ¿La frase habla de un objeto o de la relación entre hermanas?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los dos equipos que no se hablaban"
+    body: "Antes del proyecto, los dos equipos apenas cruzaban un correo al mes. Cuando terminaron el trabajo juntos, la líder de uno de ellos dijo en la reunión final: «Logramos estrechar lazos que antes ni existían», y propuso mantener el contacto mensual."
+    before_phrase: "Nos ayudó a acercarnos más como equipos."
+    after_phrase: "Nos ayudó a estrechar lazos entre equipos."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El almuerzo con proveedores"
+    body: "«Cuéntame cómo manejas las relaciones a largo plazo», pidió el entrevistador. Andrés contó que organizaba un almuerzo mensual solo para estrechar la relación con sus proveedores más antiguos, sin hablar de negocios."
+    before_phrase: "Busco fortalecer la relación con ellos con el tiempo."
+    after_phrase: "Busco estrechar la relación con ellos con el tiempo."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las llamadas de los domingos"
+    body: "Renata y su hermana vivían en países distintos y casi no se hablaban. Después de meses de llamadas los domingos, su hermana le dijo: «Siento que por fin logramos estrechar la relación, aunque sigamos lejos»."
+    before_phrase: "Siento que por fin nos acercamos de nuevo."
+    after_phrase: "Siento que por fin logramos estrechar la relación."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

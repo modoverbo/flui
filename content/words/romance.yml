@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "romance"
+status: "draft"
+lemma: "romance"
+part_of_speech: "sustantivo"
+syllables: ["ro", "man", "ce"]
+stressed_syllable: 2
+ipa_latam: "[roˈman.se]"
+ipa_es: "[roˈman.θe]"
+explanation: "Relación breve y con mucha emoción entre dos personas, sin el peso de un compromiso formal."
+example_sentence: "Nadie del grupo lo confirmó nunca, pero todos sospechaban del romance entre Sofía y su compañero de canotaje."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para una relación con chispa, pero sin la etiqueta ni el peso de una pareja formal."
+when_not_to_use: "No lo uses para una relación de muchos años y ya asentada: romance implica algo más nuevo o pasajero."
+collocations:
+  - "un romance de verano"
+  - "tener un romance"
+  - "el romance duró poco"
+family: []
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["un rollo", "algo con"]
+  funcion: ["describir relación"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "romanticismo"
+    difference: "El romanticismo es una forma de ver el amor, llena de gestos idealizados; el romance es la relación concreta entre dos personas, con o sin esos gestos."
+    memory_trick: "El romanticismo es una idea; el romance son dos personas."
+replaces:
+  - before: "Tuvieron algo durante el verano, sin ponerle etiqueta"
+    after: "Tuvieron un romance durante el verano"
+  - before: "Empezaron a salir, aunque no formalizaron nada"
+    after: "Empezó un romance entre los dos, sin formalizar nada"
+exercises:
+  - position: 1
+    sentence: "Todos en la playa sabían del {{blank}} entre la instructora de surf y el chico del bar."
+    hint_general: "Una relación breve y con mucha emoción, sin el peso de un compromiso formal."
+    explanation: "Romance: una relación breve y con mucha emoción, sin compromiso formal. «Romanticismo» es una forma de ver el amor en general, y «negocio» habla de una actividad comercial, sin relación con esta pareja."
+    options:
+      - position: 1
+        text: "romance"
+        is_correct: true
+      - position: 2
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de una relación concreta entre dos personas de la playa."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de dos personas concretas?"
+      - position: 3
+        text: "negocio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «negocio» habla de una actividad comercial, sin relación con una relación entre una instructora de surf y un chico del bar."
+        hint_specific: "Un negocio es una actividad comercial. ¿La frase habla de dinero o de una relación entre personas?"
+  - position: 2
+    sentence: "Nadie esperaba que ese {{blank}} de oficina durara tanto: ya llevaban seis meses viéndose a escondidas."
+    hint_general: "Una relación con emoción entre dos personas del mismo trabajo, sin hacerla pública."
+    explanation: "Romance: una relación con emoción entre dos personas, sin hacerla pública. «Romanticismo» es una forma de ver el amor en general, y «contrato» habla de un acuerdo laboral, sin relación con verse a escondidas."
+    options:
+      - position: 1
+        text: "romance"
+        is_correct: true
+      - position: 2
+        text: "contrato"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «contrato» habla de un acuerdo laboral, y la frase describe dos personas viéndose a escondidas, no un documento firmado."
+        hint_specific: "Un contrato es un documento laboral. ¿La frase habla de un documento o de dos personas viéndose?"
+      - position: 3
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de una relación concreta entre dos compañeros de oficina."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de dos personas concretas?"
+  - position: 3
+    sentence: "En la novela, el {{blank}} entre los dos protagonistas empieza en el capítulo tres y termina antes del final."
+    hint_general: "Una relación con emoción entre dos personajes, dentro de una historia."
+    explanation: "Romance: una relación con emoción entre dos personajes de una historia. «Romanticismo» es una forma de ver el amor en general, y «resumen» describe el contenido completo del libro, sin relación con esta relación puntual."
+    options:
+      - position: 1
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de una relación concreta entre dos personajes."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de dos personajes concretos?"
+      - position: 2
+        text: "romance"
+        is_correct: true
+      - position: 3
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «resumen» describe el contenido completo del libro, y la frase habla específicamente de la relación entre dos personajes."
+        hint_specific: "Un resumen cubre todo el libro. ¿La frase habla de todo el libro o solo de la relación entre dos personajes?"
+  - position: 4
+    sentence: "El nuevo {{blank}} de su hermana era el tema de conversación en cada cena familiar."
+    hint_general: "Una relación nueva y con emoción entre dos personas, de la que todos hablan."
+    explanation: "Romance: una relación nueva y con emoción entre dos personas. «Chamba» es coloquial y regional, y «romanticismo» es una idea general; ninguno nombra esta relación concreta."
+    options:
+      - position: 1
+        text: "romance"
+        is_correct: true
+      - position: 2
+        text: "chamba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chamba» es coloquial y regional, y aquí se busca nombrar con precisión la relación de la hermana, tema de las cenas familiares."
+        hint_specific: "«Chamba» es una palabra muy regional. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de la relación concreta de la hermana."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de la relación de la hermana?"
+  - position: 5
+    sentence: "El director confesó en la entrevista que la película se inspiraba en un {{blank}} que había tenido de joven."
+    hint_general: "Una relación pasada con emoción, de la que alguien se inspira años después."
+    explanation: "Romance: una relación pasada con emoción, fuente de inspiración. «Trabajo» habla de una actividad laboral, sin relación con esa historia personal, y «romanticismo» es una idea general, no una relación concreta."
+    options:
+      - position: 1
+        text: "romance"
+        is_correct: true
+      - position: 2
+        text: "trabajo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «trabajo» habla de una actividad laboral, y la frase describe una historia personal de juventud, no una experiencia laboral."
+        hint_specific: "Un trabajo es una actividad laboral. ¿La película se inspira en un empleo o en una historia personal?"
+      - position: 3
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de una relación concreta que vivió el director."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de una relación concreta del director?"
+  - position: 6
+    sentence: "El grupo de amigas se enteró del {{blank}} de Elena por una foto que subió sin pensarlo dos veces."
+    hint_general: "Una relación con emoción que se descubre por una señal indirecta, no porque la persona la cuente."
+    explanation: "Romance: una relación con emoción que se descubre por una señal indirecta. «Romanticismo» es una idea general, y «puesto» habla de un cargo de trabajo, sin relación con una foto que reveló una relación."
+    options:
+      - position: 1
+        text: "romance"
+        is_correct: true
+      - position: 2
+        text: "puesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «puesto» habla de un cargo de trabajo, y la frase describe una relación descubierta por una foto, no un ascenso laboral."
+        hint_specific: "Un puesto es un cargo de trabajo. ¿La foto reveló un ascenso o una relación?"
+      - position: 3
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de la relación concreta de Elena."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de la relación de Elena?"
+  - position: 7
+    sentence: "Después de ese {{blank}} de tres meses, Hugo decidió que ya estaba listo para algo más serio."
+    hint_general: "Una relación breve con emoción, que puede servir de paso hacia algo más serio."
+    explanation: "Romance: una relación breve con emoción, que puede ser un paso previo. «Romanticismo» es una idea general, y «diploma» es un documento de estudios, sin relación con una relación de tres meses."
+    options:
+      - position: 1
+        text: "romance"
+        is_correct: true
+      - position: 2
+        text: "diploma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «diploma» es un documento de estudios, sin relación con una relación de tres meses que llevó a Hugo a otra etapa."
+        hint_specific: "Un diploma es un documento de estudios. ¿La frase habla de estudios o de una relación de tres meses?"
+      - position: 3
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de la relación concreta que tuvo Hugo."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de la relación de Hugo?"
+  - position: 8
+    sentence: "El {{blank}} entre los dos empezó como una broma del grupo y terminó siendo algo real."
+    hint_general: "Una relación con emoción que nació de forma inesperada, sin planearlo."
+    explanation: "Romance: una relación con emoción que nació de forma inesperada. «Romanticismo» es una idea general, y «malentendido» implicaría una confusión, cuando la frase dice que terminó siendo algo real."
+    options:
+      - position: 1
+        text: "romance"
+        is_correct: true
+      - position: 2
+        text: "malentendido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «malentendido» implicaría una confusión sin fundamento, y la frase dice que la relación terminó siendo algo real."
+        hint_specific: "Un malentendido es una confusión. ¿La frase dice que fue una confusión o algo real?"
+      - position: 3
+        text: "romanticismo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «romanticismo» es una forma de ver el amor en general, y la frase habla de la relación concreta que nació entre los dos."
+        hint_specific: "El romanticismo es una idea general. ¿La frase habla de una idea o de la relación entre los dos?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El verano en la playa"
+    body: "Todo el grupo hablaba de lo mismo esa semana: la instructora de surf y el chico del bar no se despegaban. «Es un romance de verano», dijo alguien, «va a durar lo que dura el sol, pero mientras tanto se les ve felices»."
+    before_phrase: "Tienen algo, aunque no le pongan etiqueta."
+    after_phrase: "Tienen un romance de verano."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "El secreto de la oficina"
+    body: "Nadie lo confirmaba, pero todos lo sabían: llevaban meses saliendo del trabajo por separado, con quince minutos de diferencia. «Ese romance de oficina no es tan secreto como creen», le dijo una colega a otra, sin poder disimular la sonrisa."
+    before_phrase: "Ese rollo de oficina no es tan secreto como creen."
+    after_phrase: "Ese romance de oficina no es tan secreto como creen."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La foto que lo delató"
+    body: "Nadie sabía nada hasta que Elena subió una foto sin pensarlo dos veces. Su madre la llamó esa misma tarde: «¿Me vas a contar de este romance o me entero por redes de todo?», preguntó, entre curiosa y divertida."
+    before_phrase: "¿Me vas a contar de esto o me entero por redes?"
+    after_phrase: "¿Me vas a contar de este romance o me entero por redes?"
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

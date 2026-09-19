@@ -1,0 +1,231 @@
+# Word 4 of batch W4 humor. Substitution note: originally assigned "mordaz"
+# (zipf 2.95, dp 0.40 — fails both bars). Replaced with "incisivo" (sharp,
+# cutting wit in a comment or question), which passes: zipf 3.29, dp 0.30.
+schema_version: 1
+sort_order: 9304
+slug: "incisivo"
+status: "draft"
+lemma: "incisivo"
+part_of_speech: "adjetivo"
+syllables: ["in", "ci", "si", "vo"]
+stressed_syllable: 3
+ipa_latam: "[in.siˈsi.βo]"
+ipa_es: "[in.θiˈsi.βo]"
+explanation: "Que sirve para decir las cosas de forma directa y fuerte, y que puede molestar un poco."
+example_sentence: "El crítico hizo un comentario incisivo sobre la actuación, tan certero que el actor no pudo más que reírse."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Funciona bien para elogiar una observación aguda; sobre una persona puede sonar a que hiere sin querer, así que conviene medir el tono."
+when_not_to_use: "No la uses para un comentario cruel sin ninguna gracia; aquí el filo va acompañado de ingenio, no de mala intención."
+collocations:
+  - "comentario incisivo"
+  - "pregunta incisiva"
+replaces:
+  - before: "Hizo un comentario muy directo y con filo"
+    after: "Hizo un comentario incisivo"
+  - before: "Su pregunta fue dura pero acertada"
+    after: "Su pregunta fue incisiva"
+family: ["incisión"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["directo"]
+  funcion: ["criticar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "decisivo"
+    difference: "«Decisivo» es lo que resuelve algo de forma determinante; «incisivo» describe un comentario agudo y con filo, no algo que decide nada."
+    memory_trick: "Lo decisivo resuelve; lo incisivo hiere con gracia."
+  - confused_with: "excesivo"
+    difference: "«Excesivo» es que algo se pasa de la medida; «incisivo» habla de precisión y filo, no de exceso."
+    memory_trick: "Lo excesivo sobra; lo incisivo apunta justo al blanco."
+exercises:
+  - position: 1
+    sentence: "La crítica que escribió Renata sobre la película fue tan {{blank}} que el director la citó en su propia rueda de prensa."
+    hint_general: "Busca la palabra para un comentario agudo y con filo, capaz de dar en el blanco."
+    explanation: "Incisiva: la crítica de Renata fue aguda y dio en el blanco. «Decisiva» habla de resolver algo, y «amable» describe un tono suave, ninguna encaja con un comentario con filo."
+    options:
+      - position: 1
+        text: "decisiva"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Decisiva» describe algo que resuelve o determina un resultado, y aquí lo que impresionó fue el filo del comentario, no que decidiera nada."
+        hint_specific: "«Decisiva» habla de resolver algo. ¿La crítica resolvió una decisión o mostró agudeza?"
+      - position: 2
+        text: "incisiva"
+        is_correct: true
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe un tono suave y complaciente, y lo que citó el director fue justo lo contrario: un comentario con filo."
+        hint_specific: "«Amable» es un tono suave. ¿El director citó algo suave o algo con filo?"
+  - position: 2
+    sentence: "En la despedida de soltero, el discurso de Pablo sobre su amigo fue tan {{blank}} que el novio no paró de reír entre lágrimas."
+    hint_general: "Piensa en un discurso con filo que hace reír, sin dejar mal a nadie."
+    explanation: "Incisivo: el discurso de Pablo tuvo filo y arrancó risas. «Cruel» busca lastimar de verdad, y «vago» describe algo impreciso, sin acertar en ningún detalle."
+    options:
+      - position: 1
+        text: "cruel"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cruel» describe algo hecho para lastimar de verdad, y aquí el novio se rió entre lágrimas de risa, señal de que el filo venía con cariño."
+        hint_specific: "«Cruel» busca hacer daño de verdad. ¿El novio se rió o se sintió herido?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "vago"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vago» describe algo impreciso y sin filo, y el discurso de Pablo acertó justo en los detalles que todos reconocían del novio."
+        hint_specific: "«Vago» es impreciso, sin filo. ¿El discurso fue impreciso o dio justo en el blanco?"
+  - position: 3
+    sentence: "Durante la cena, Débora hizo un comentario tan {{blank}} sobre las manías de su hermano que toda la mesa terminó riendo, incluido él."
+    hint_general: "Se trata de un comentario que da justo en un detalle muy preciso, sin dejar mal a nadie."
+    explanation: "Incisivo: el comentario de Débora fue preciso y arrancó risas de todos, incluido su hermano. «Cáustico» suena más duro y menos afectuoso, y «distraído» describe justo lo contrario: no fijarse en nada."
+    options:
+      - position: 1
+        text: "cáustico"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cáustico» describe un tono duro y casi hiriente, y aquí el comentario hizo reír a todos, incluido el hermano, sin dejar a nadie mal."
+        hint_specific: "«Cáustico» suena más duro y menos afectuoso. ¿El hermano se rió o se sintió atacado?"
+      - position: 2
+        text: "distraído"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distraído» describe a alguien que no presta atención, y el comentario de Débora mostró justo lo contrario: se fijó en un detalle muy preciso."
+        hint_specific: "«Distraído» es no fijarse en nada. ¿El comentario mostró falta de atención o mucha precisión?"
+      - position: 3
+        text: "incisivo"
+        is_correct: true
+  - position: 4
+    sentence: "La periodista hizo una pregunta tan {{blank}} sobre el escándalo que el entrevistado tardó varios segundos en responder, entre risas nerviosas."
+    hint_general: "Busca la palabra para una pregunta directa que deja a alguien sin palabras por un momento."
+    explanation: "Incisiva: la pregunta de la periodista fue directa y dejó al entrevistado sin palabras. «Ingenua» describe una pregunta simple, y «hiriente» sugiere intención de lastimar, algo que la risa nerviosa desmiente."
+    options:
+      - position: 1
+        text: "ingenua"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ingenua» describe una pregunta simple, sin filo, y aquí la pregunta dejó al entrevistado sin palabras por lo directa que fue."
+        hint_specific: "«Ingenua» es una pregunta simple. ¿Esta pregunta dejó sin palabras por ser simple o por ser directa?"
+      - position: 2
+        text: "hiriente"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Hiriente» sugiere una intención de lastimar, y aquí la risa nerviosa muestra sorpresa e ingenio, no una ofensa."
+        hint_specific: "«Hiriente» busca lastimar. ¿La reacción fue de risa nerviosa o de ofensa?"
+      - position: 3
+        text: "incisiva"
+        is_correct: true
+  - position: 5
+    sentence: "La columna que escribió Simón sobre el tráfico de la ciudad fue tan {{blank}} que la compartieron hasta los concejales que critica."
+    hint_general: "Piensa en un texto con filo, capaz de incomodar a quien nombra sin dejar de ser justo."
+    explanation: "Incisiva: la columna de Simón tuvo filo suficiente para que hasta los criticados la compartieran. «Extensa» solo habla de longitud, y «formal» describe un tono serio, ninguna explica por qué se compartió tanto."
+    options:
+      - position: 1
+        text: "extensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extensa» solo dice que el texto es largo, y lo que hizo que se compartiera tanto fue su filo, no su extensión."
+        hint_specific: "«Extensa» habla de longitud. ¿La compartieron por ser larga o por tener filo?"
+      - position: 2
+        text: "incisiva"
+        is_correct: true
+      - position: 3
+        text: "formal"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Formal» describe un tono serio y protocolar, y lo que llamó la atención fue justo la agudeza directa del texto."
+        hint_specific: "«Formal» es un tono serio y protocolar. ¿Eso explica que la compartan tanto?"
+  - position: 6
+    sentence: "El monólogo de Antonia sobre las citas por aplicaciones fue tan {{blank}} que varios asistentes se reconocieron entre risas incómodas."
+    hint_general: "Busca la palabra para algo que describe una situación con tanta precisión que incomoda un poco."
+    explanation: "Incisivo: el monólogo de Antonia describió la situación con tanta precisión que el público se reconoció. «Extraño» solo dice que algo es raro, y «largo» solo habla de duración, ninguna explica la reacción del público."
+    options:
+      - position: 1
+        text: "extraño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extraño» solo dice que algo es raro, y lo que provocó la risa incómoda fue que el monólogo describió a la perfección algo muy reconocible."
+        hint_specific: "«Extraño» es solo raro. ¿El público se reconoció porque era raro o porque era certero?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "largo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largo» solo habla de duración, y lo que generó la reacción del público fue la precisión del monólogo, no cuánto duró."
+        hint_specific: "«Largo» habla de duración. ¿La reacción del público fue por la duración o por lo certero del monólogo?"
+  - position: 7
+    sentence: "Teo respondió con un chiste tan {{blank}} sobre el nuevo corte de pelo de su hermana que ella misma terminó riéndose del cambio."
+    hint_general: "Piensa en un chiste directo que da justo en el blanco, sin llegar a molestar de verdad."
+    explanation: "Incisivo: el chiste de Teo dio justo en el punto y su hermana terminó riéndose con él. «Tímido» describe algo hecho con timidez, y «grosero» sugiere mal gusto, y aquí ella se rió, no se ofendió."
+    options:
+      - position: 1
+        text: "tímido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tímido» describe algo hecho con timidez, y aquí el chiste de Teo fue directo y dio justo en el punto que hizo reír a su hermana."
+        hint_specific: "«Tímido» es hecho con timidez. ¿El chiste de Teo fue tímido o directo?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "grosero"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Grosero» sugiere un comentario de mal gusto, y aquí la propia hermana terminó riéndose, señal de que el chiste tuvo gracia, no mala educación."
+        hint_specific: "«Grosero» es de mal gusto. ¿La hermana se rió o se ofendió?"
+  - position: 8
+    sentence: "El comentario que dio Milagros sobre el diseño fue tan {{blank}} que el equipo cambió la propuesta esa misma tarde."
+    hint_general: "Busca la palabra para un comentario que señala un problema real con tanta precisión que provoca un cambio inmediato."
+    explanation: "Incisivo: el comentario de Milagros señaló un problema con tanta precisión que el equipo cambió la propuesta. «Positivo» solo anima, y «breve» solo habla de duración, ninguna explica el cambio inmediato."
+    options:
+      - position: 1
+        text: "positivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Positivo» describe algo que anima o aprueba, y lo que cambió la propuesta fue un comentario con filo que señaló un problema real."
+        hint_specific: "«Positivo» es un comentario que anima. ¿Ese tipo de comentario cambia una propuesta el mismo día?"
+      - position: 2
+        text: "incisivo"
+        is_correct: true
+      - position: 3
+        text: "breve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Breve» solo dice que el comentario fue corto, y lo que llevó al cambio fue su precisión, no su duración."
+        hint_specific: "«Breve» habla de duración. ¿El cambio se debió a que fue corto o a que fue certero?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La columna que todos compartieron"
+    body: "Simón llevaba meses escribiendo sobre el tráfico de la ciudad sin que nadie lo notara. Esta vez fue distinto: escribió un párrafo tan incisivo sobre la avenida principal que hasta los concejales que criticaba lo compartieron en sus redes. «Al menos leyeron hasta el final», bromeó él."
+    before_phrase: "Escribí algo muy directo y con filo sobre el tema."
+    after_phrase: "Escribí algo incisivo sobre el tema."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La broma que unió a los hermanos"
+    body: "Débora y su hermano llevaban semanas sin hablarse por una discusión tonta. En la cena, ella soltó un comentario tan incisivo sobre sus propias manías —no las de él— que ambos terminaron riendo. La tensión se disolvió antes del postre."
+    before_phrase: "Dije algo directo sobre mí misma para romper el hielo."
+    after_phrase: "Dije algo incisivo sobre mí misma para romper el hielo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El discurso de la despedida"
+    body: "Pablo tenía tres minutos para hablar en la despedida de soltero de su mejor amigo. Preparó un discurso incisivo sobre sus manías de siempre, y el novio se rió tanto que casi no pudo brindar. «Eso sí que dio en el blanco», le dijo alguien al terminar."
+    before_phrase: "Preparé algo muy directo y con filo sobre él."
+    after_phrase: "Preparé un discurso incisivo sobre él."
+provenance:
+  generator: "flui authoring agent — batch W4 humor"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,228 @@
+schema_version: 1
+sort_order: 9402
+slug: "excusar"
+status: "draft"
+lemma: "excusar"
+part_of_speech: "verbo"
+syllables: ["ex", "cu", "sar"]
+stressed_syllable: 3
+ipa_latam: "[eks.kuˈsar]"
+ipa_es: "[eks.kuˈsar]"
+explanation: "Aceptar el error de alguien y no reclamar nada, porque comprendes el motivo que lo explica."
+example_sentence: "Marta decidió excusar el olvido de su amigo porque sabía que había tenido una semana difícil."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para dejar pasar un fallo pequeño sin reproche, cuando entiendes bien la razón detrás."
+when_not_to_use: "No la uses para faltas graves que sí necesitan una disculpa formal, solo para errores pequeños y comprensibles."
+collocations:
+  - "excusar un retraso"
+  - "excusar un olvido"
+replaces:
+  - before: "No pasa nada, entiendo por qué llegaste tarde"
+    after: "Te excuso, entiendo por qué llegaste tarde"
+  - before: "Se le puede perdonar ese descuido, tenía sus razones"
+    after: "Se le puede excusar ese descuido, tenía sus razones"
+family: ["excusa", "excusable"]
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+tags:
+  comodin: ["perdonar"]
+  funcion: ["comprender"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "acusar"
+    difference: "«Acusar» es señalar a alguien como responsable de algo malo; excusar es justamente lo contrario: dejar pasar esa falta."
+    memory_trick: "Acusar señala con el dedo; excusar lo baja."
+  - confused_with: "justificar"
+    difference: "«Justificar» es dar razones para defender algo que hiciste tú mismo; excusar es aceptar, sin reproche, la razón detrás del fallo de otra persona."
+    memory_trick: "Te justificas tú; excusas a otro."
+exercises:
+  - position: 1
+    sentence: "El jefe decidió {{blank}} la tardanza de Marcos porque el metro había fallado esa mañana."
+    hint_general: "Busca el verbo para cuando alguien decide no reprocharle una falta a otra persona porque entiende el motivo."
+    explanation: "Excusar: dejar pasar la tardanza porque hay una razón válida. «Reclamar» exigiría una explicación o una queja, y «aguantar» es coloquial y sugiere sufrir la situación con fastidio."
+    options:
+      - position: 1
+        text: "reclamar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» es exigir una explicación o una compensación, y aquí el jefe hace justo lo contrario: deja pasar la tardanza."
+        hint_specific: "«Reclamar» exige algo. ¿El jefe exige algo o deja pasar la tardanza?"
+      - position: 2
+        text: "excusar"
+        is_correct: true
+      - position: 3
+        text: "aguantar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Aguantar» es coloquial y sugiere sufrir algo con fastidio, y el jefe no sufre la tardanza: simplemente la entiende y la deja pasar."
+        hint_specific: "«Aguantar» suena a sufrir algo con fastidio. ¿El jefe sufre la tardanza o la comprende?"
+  - position: 2
+    sentence: "Verónica prefirió {{blank}} a su hijo por no sacar la basura, porque había estado estudiando toda la tarde para una prueba."
+    hint_general: "Se trata de no reprocharle un descuido a alguien porque hay una razón que lo explica."
+    explanation: "Excusar: entender el motivo de su hijo y no reprocharle nada. «Regañar» sería reprenderlo, y «castigar» sería imponerle una consecuencia negativa."
+    options:
+      - position: 1
+        text: "regañar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Regañar» es reprender a alguien por lo que hizo mal, y aquí Verónica hace lo contrario: entiende el motivo y no lo reprende."
+        hint_specific: "«Regañar» reprende. ¿Verónica reprende a su hijo o entiende su razón?"
+      - position: 2
+        text: "excusar"
+        is_correct: true
+      - position: 3
+        text: "castigar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Castigar» es imponer una consecuencia negativa, y aquí Verónica decide no hacerlo porque comprende el motivo."
+        hint_specific: "«Castigar» impone una consecuencia. ¿Verónica impone algo o lo deja pasar?"
+  - position: 3
+    sentence: "El grupo decidió {{blank}} a Felipe por faltar al cumpleaños, ya que había tenido una emergencia familiar esa misma noche."
+    hint_general: "Busca el verbo para cuando un grupo decide no tomar a mal una ausencia, porque entiende la razón."
+    explanation: "Excusar: el grupo entiende la razón de Felipe y no se la reprocha. «Denunciar» sería reportar formalmente su ausencia, y «compadecer» sería solo sentir pena por él, sin más."
+    options:
+      - position: 1
+        text: "denunciar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Denunciar» es reportar formalmente algo indebido, y aquí el grupo hace lo contrario: entiende a Felipe y no lo reporta ni se lo reprocha."
+        hint_specific: "«Denunciar» reporta algo indebido. ¿El grupo reporta la ausencia de Felipe o la entiende?"
+      - position: 2
+        text: "excusar"
+        is_correct: true
+      - position: 3
+        text: "compadecer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compadecer» es sentir pena por alguien, y aquí el grupo no solo siente pena: decide no reprocharle la ausencia."
+        hint_specific: "«Compadecerse» es sentir pena. ¿El grupo solo siente pena o decide no reprochar nada?"
+  - position: 4
+    sentence: "El comité resolvió {{blank}} el error de forma en la solicitud, porque el resto del documento cumplía con todo lo exigido."
+    hint_general: "Se trata de dejar pasar un error pequeño sin reprochar nada, porque el resto está bien."
+    explanation: "Excusar: el comité entiende el error de forma y lo deja pasar. «Disculpar» es más coloquial para un texto formal, y «señalar» sería justo lo contrario: marcarlo como un problema."
+    options:
+      - position: 1
+        text: "disculpar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Disculpar» es más coloquial y cotidiano; en la resolución formal de un comité conviene un término más técnico como «excusar»."
+        hint_specific: "«Disculpar» es la palabra de todos los días. ¿Este texto suena a trámite formal o a charla informal?"
+      - position: 2
+        text: "excusar"
+        is_correct: true
+      - position: 3
+        text: "señalar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Señalar» sería marcar el error como un problema, y el comité, al contrario, decide pasarlo por alto."
+        hint_specific: "«Señalar» marca un problema. ¿El comité marca el error o lo deja pasar?"
+  - position: 5
+    sentence: "En la cena familiar, Antonia {{blank}} el comentario torpe de su hermano, porque sabía que no lo dijo con mala intención."
+    hint_general: "Busca el verbo para cuando entiendes que un comentario torpe no tuvo mala intención y no se lo reprochas."
+    explanation: "Excusó: entendió que no hubo mala intención y no reprochó el comentario. «Indultó» es un término legal para delitos graves, demasiado formal para una cena familiar, y «criticó» sería justo lo contrario: reprobar el comentario."
+    options:
+      - position: 1
+        text: "indultó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Indultar» es un término legal para perdonar delitos graves, y suena exagerado para un comentario torpe en una cena familiar."
+        hint_specific: "«Indultar» se usa para delitos graves. ¿Esto es una cena familiar o un caso judicial?"
+      - position: 2
+        text: "excusó"
+        is_correct: true
+      - position: 3
+        text: "criticó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Criticar» sería reprobar el comentario, y Antonia hace lo contrario: lo entiende y no se lo reprocha."
+        hint_specific: "«Criticar» reprueba algo. ¿Antonia reprueba el comentario o lo entiende?"
+  - position: 6
+    sentence: "El entrenador de Gonzalo decidió {{blank}} el mal partido, porque el árbitro había cobrado un penal injusto en contra."
+    hint_general: "Se trata de no tomar en cuenta un mal resultado porque hay un motivo externo que lo explica."
+    explanation: "Excusar: el entrenador entiende que el penal injusto influyó y no le reprocha el mal partido a Gonzalo. «Ignorar» sería no darse cuenta del problema, y «premiar» sería reconocerlo como un logro."
+    options:
+      - position: 1
+        text: "ignorar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» es no prestarle atención a algo, y aquí el entrenador sí lo nota, pero decide no tenerlo en cuenta porque entiende la razón."
+        hint_specific: "«Ignorar» no presta atención. ¿El entrenador no se da cuenta del mal partido o lo entiende y lo deja pasar?"
+      - position: 2
+        text: "excusar"
+        is_correct: true
+      - position: 3
+        text: "premiar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Premiar» sería reconocer algo bueno, y aquí se trata de dejar pasar un mal partido, no de reconocerlo como un logro."
+        hint_specific: "«Premiar» reconoce algo bueno. ¿El mal partido es un logro o un tropiezo que se entiende?"
+  - position: 7
+    sentence: "Beatriz {{blank}} a su vecino por el ruido de la mudanza, ya que solo pasó esa tarde y avisó con tiempo."
+    hint_general: "Busca el verbo para cuando entiendes una molestia ajena y decides no reprochársela a nadie."
+    explanation: "Excusó: entendió la situación de su vecino y no le reprochó nada. «Acusó» sería señalarlo como responsable de algo malo, y «soportó» sugiere aguantar el ruido con esfuerzo, no comprenderlo sin problema."
+    options:
+      - position: 1
+        text: "acusó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acusar» es señalar a alguien como responsable de algo malo, y aquí Beatriz hace justo lo contrario: entiende la situación y no lo culpa de nada."
+        hint_specific: "«Acusar» señala con el dedo. ¿Beatriz señala a su vecino o lo entiende?"
+      - position: 2
+        text: "excusó"
+        is_correct: true
+      - position: 3
+        text: "soportó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Soportar» implica aguantar algo con esfuerzo, y aquí Beatriz no sufre el ruido: lo entiende sin problema porque avisaron a tiempo."
+        hint_specific: "«Soportar» implica esfuerzo o molestia. ¿Beatriz sufre el ruido o lo entiende sin problema?"
+  - position: 8
+    sentence: "Ricardo {{blank}} el correo mal redactado de Lorena, porque sabía que lo había escrito a las tres de la mañana antes de un vuelo."
+    hint_general: "Se trata de entender por qué algo salió mal y no tomarlo como un reproche."
+    explanation: "Excusó: entendió por qué el correo salió así y no se lo reprochó. «Corrigió» sería arreglar el texto, y «elogió» sería destacarlo como un acierto."
+    options:
+      - position: 1
+        text: "corrigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corregir» es arreglar lo que está mal escrito, y aquí Ricardo no cambia nada del correo: solo entiende por qué salió así y no se lo reprocha."
+        hint_specific: "«Corregir» arregla un texto. ¿Ricardo arregla el correo o entiende por qué salió así?"
+      - position: 2
+        text: "excusó"
+        is_correct: true
+      - position: 3
+        text: "elogió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elogiar» sería destacar algo como positivo, y el correo mal redactado no es un acierto: Ricardo solo entiende la causa y no lo toma a mal."
+        hint_specific: "«Elogiar» destaca algo bueno. ¿El correo mal escrito es un acierto o un descuido que se entiende?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El comentario torpe"
+    body: "En la cena, el hermano de Antonia soltó un comentario torpe sobre su nuevo trabajo. Ella lo miró, pero enseguida pensó en lo nervioso que había estado esa semana. «Lo excuso, sé que no lo dijo con mala intención», le dijo después a su madre. La cena siguió sin más roces."
+    before_phrase: "No pasa nada, ya sé que no quiso decir eso."
+    after_phrase: "Lo excuso, sé que no lo dijo con mala intención."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La tardanza de Marcos"
+    body: "Marcos llegó veinte minutos tarde a la reunión de amigos, con el pelo mojado y sin aliento. «El bus se rompió a dos cuadras, vine corriendo», explicó. Verónica sonrió: «Te excuso, con esa cara de susto no hace falta que jures nada». El grupo siguió la noche como si nada."
+    before_phrase: "Tranquilo, entiendo que se te complicó."
+    after_phrase: "Te excuso, no hace falta que expliques más."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El correo de las tres de la mañana"
+    body: "Ricardo leyó dos veces el correo de Lorena antes de responder: estaba lleno de errores y frases a medias. Pero recordó que ella había mandado ese mensaje camino al aeropuerto, después de un vuelo cancelado. «La excuso, cualquiera escribe así con esa noche», pensó, y respondió sin comentar nada sobre la redacción."
+    before_phrase: "No le voy a decir nada, tuvo una noche horrible."
+    after_phrase: "La excuso, cualquiera escribe así con esa noche."
+provenance:
+  generator: "flui authoring agent — batch W5 conflict-fix"
+  gate: null
+  checked_on: "2026-09-18"

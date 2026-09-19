@@ -1,0 +1,231 @@
+schema_version: 1
+slug: "solvencia"
+status: "draft"
+lemma: "solvencia"
+part_of_speech: "sustantivo"
+syllables: ["sol", "ven", "cia"]
+stressed_syllable: 2
+ipa_latam: "[solˈβen.sja]"
+ipa_es: "[solˈβen.θja]"
+explanation: "Capacidad real de alguien para pagar sus deudas y cumplir lo que promete."
+example_sentence: "El banco revisó la solvencia de la empresa antes de aprobar el préstamo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para la capacidad real de pagar, no solo para decir que alguien tiene dinero en un momento dado."
+when_not_to_use: "No la uses para decir que alguien es rico o próspero en general: eso no garantiza que cumpla siempre sus pagos."
+collocations:
+  - "solvencia económica"
+  - "demostrar solvencia"
+  - "la solvencia de la empresa"
+  - "falta de solvencia"
+replaces:
+  - before: "Confirmar que la empresa puede pagar lo que debe"
+    after: "Confirmar la solvencia de la empresa"
+  - before: "Tiene con qué responder si algo sale mal"
+    after: "Tiene solvencia para responder si algo sale mal"
+  - before: "Revisar si el cliente cumple siempre con sus pagos"
+    after: "Revisar la solvencia del cliente"
+family: ["solvente", "solventar"]
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin: ["poder pagar"]
+  funcion: ["evaluar confianza financiera"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "liquidez"
+    difference: "«Liquidez» es tener dinero disponible ya mismo; «solvencia» es poder cumplir todas tus deudas a la larga, aunque el dinero no esté en la cuenta hoy."
+    memory_trick: "La liquidez es lo que tienes hoy; la solvencia es lo que puedes cumplir siempre."
+  - confused_with: "vigencia"
+    difference: "«Vigencia» dice si un documento o un permiso sigue siendo válido; «solvencia» dice si alguien puede pagar lo que debe."
+    memory_trick: "La vigencia se revisa en una fecha; la solvencia se revisa en una cuenta."
+exercises:
+  - position: 1
+    sentence: "Antes de prestarle dinero para la nueva maquinaria, el banco confirmó la {{blank}} de la empresa: nunca había dejado una deuda sin pagar."
+    hint_general: "Busca la palabra que dice si alguien puede cumplir sus pagos, no si un documento sigue siendo válido."
+    explanation: "Solvencia: la capacidad de la empresa de cumplir siempre sus pagos. «Vigencia» sería si un documento sigue siendo válido, y «prosperidad» sería ir bien en general, no pagar siempre lo debido."
+    options:
+      - position: 1
+        text: "vigencia"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vigencia» dice si un documento sigue siendo válido, no si alguien puede pagar; aquí se revisa un historial de pagos, no una fecha de caducidad."
+        hint_specific: "La vigencia se revisa en la fecha de un documento. ¿Aquí se revisa una fecha o un historial de pagos?"
+      - position: 2
+        text: "solvencia"
+        is_correct: true
+      - position: 3
+        text: "prosperidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prosperidad» es ir bien en general; aquí lo que importa es si la empresa siempre pagó lo que debía, no si le va bien en general."
+        hint_specific: "La prosperidad habla de ir bien en general. ¿Aquí se habla de eso, o de pagar siempre lo que se debe?"
+  - position: 2
+    sentence: "En la reunión con los inversionistas, el director destacó la {{blank}} de la empresa, respaldada por diez años sin una sola deuda impaga."
+    hint_general: "Busca la palabra formal para la capacidad real de cumplir con los pagos."
+    explanation: "Solvencia: la capacidad de la empresa de cumplir siempre sus pagos, sin una sola deuda impaga en diez años. «Fama» es una palabra informal para una reunión con inversionistas, y «estabilidad» sería no tener grandes cambios en general, no pagar siempre lo debido."
+    options:
+      - position: 1
+        text: "fama"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fama» es una palabra informal para lo que se dice de alguien; en una reunión con inversionistas se necesita un término más preciso y formal."
+        hint_specific: "«Fama» sirve para una charla informal, no para hablar con inversionistas. ¿Qué palabra suena más precisa y formal aquí?"
+      - position: 2
+        text: "solvencia"
+        is_correct: true
+      - position: 3
+        text: "estabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estabilidad» es no tener grandes cambios, en general; aquí se destaca algo más concreto: diez años sin una sola deuda impaga."
+        hint_specific: "La estabilidad habla de pocos cambios en general. ¿Aquí se habla de eso, o de pagar siempre lo que se debe?"
+  - position: 3
+    sentence: "Le presté dinero a mi amigo sin dudar, porque conozco su {{blank}} desde hace años: siempre paga hasta el último centavo."
+    hint_general: "Nombra la capacidad real de alguien para cumplir con lo que debe."
+    explanation: "Solvencia: la capacidad de mi amigo de cumplir siempre con lo que debe. «Reputación» sería una opinión general sobre él, y «puntuación crediticia» es un término bancario, demasiado técnico para hablar de un amigo de toda la vida."
+    options:
+      - position: 1
+        text: "reputación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reputación» es lo que la gente piensa de alguien en general; aquí lo que se conoce es algo más concreto: que siempre paga hasta el último centavo."
+        hint_specific: "La reputación es una opinión general sobre alguien. ¿Aquí se habla de una opinión general o de pagar siempre lo que se debe?"
+      - position: 2
+        text: "puntuación crediticia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Puntuación crediticia» es un término técnico de bancos; entre amigos, para hablar de alguien de toda la vida, suena forzado y frío."
+        hint_specific: "«Puntuación crediticia» es una palabra de bancos. ¿Encaja para hablar de un amigo de toda la vida?"
+      - position: 3
+        text: "solvencia"
+        is_correct: true
+  - position: 4
+    sentence: "El vendedor investigó la {{blank}} del nuevo cliente en dos bancos distintos, antes de fiarle la mercancía."
+    hint_general: "Se trata de comprobar si alguien puede cumplir sus pagos antes de confiar en él."
+    explanation: "Solvencia: la capacidad del cliente de cumplir sus pagos, investigada en dos bancos. «Credibilidad» sería que se crea lo que dice, y «liquidez» sería el dinero disponible ya mismo, no la costumbre de pagar siempre."
+    options:
+      - position: 1
+        text: "credibilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Credibilidad» es que se crea lo que alguien dice; aquí se investiga algo distinto: si puede pagar lo que debe."
+        hint_specific: "La credibilidad es que se crea lo que alguien dice. ¿Aquí se investiga eso, o la capacidad de pagar?"
+      - position: 2
+        text: "solvencia"
+        is_correct: true
+      - position: 3
+        text: "liquidez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Liquidez» es tener dinero disponible ya mismo; el vendedor investiga algo más amplio: si el cliente siempre cumple sus pagos, tenga o no el dinero en ese momento."
+        hint_specific: "La liquidez es el dinero disponible hoy. ¿Aquí se investiga eso, o la costumbre de pagar siempre?"
+  - position: 5
+    sentence: "Renata y su pareja revisaron su {{blank}} antes de pedir la hipoteca del departamento."
+    hint_general: "Nombra la capacidad real de una persona o una pareja de cumplir con un pago grande."
+    explanation: "Solvencia: la capacidad de Renata y su pareja de cumplir con el pago mensual. «Patrimonio» sería todo lo que poseen, y «ahorro» sería solo el dinero guardado, ninguno garantiza poder pagar la hipoteca cada mes."
+    options:
+      - position: 1
+        text: "patrimonio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Patrimonio» es todo lo que alguien posee; aquí lo que importa para la hipoteca es si pueden cumplir el pago mensual, no solo cuánto tienen."
+        hint_specific: "El patrimonio es todo lo que se posee. ¿El banco de la hipoteca mira eso, o si pueden cumplir el pago cada mes?"
+      - position: 2
+        text: "solvencia"
+        is_correct: true
+      - position: 3
+        text: "ahorro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ahorro» es el dinero guardado; la hipoteca depende de si pueden pagar cada mes, no solo de cuánto tengan ahorrado."
+        hint_specific: "El ahorro es el dinero guardado. ¿Alcanza con eso, o hace falta poder pagar cada mes?"
+  - position: 6
+    sentence: "El proveedor aceptó dar crédito a treinta días porque confiaba en la {{blank}} del negocio, avalada por años de pagos puntuales."
+    hint_general: "Nombra la capacidad de un negocio de cumplir con sus pagos a tiempo."
+    explanation: "Solvencia: la capacidad del negocio de cumplir sus pagos, avalada por años de puntualidad. «Puntualidad» sería solo pagar a tiempo, una señal, y «seriedad» sería un rasgo de carácter general, no la capacidad de pago."
+    options:
+      - position: 1
+        text: "puntualidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntualidad» es pagar a tiempo, una señal; aquí la palabra debe nombrar la capacidad completa de cumplir, no solo la puntualidad."
+        hint_specific: "La puntualidad es solo llegar a tiempo con el pago. ¿La frase pide una señal, o la capacidad completa de cumplir?"
+      - position: 2
+        text: "solvencia"
+        is_correct: true
+      - position: 3
+        text: "seriedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seriedad» es un rasgo general de carácter; aquí se habla en concreto de la capacidad de pagar, no del carácter en general."
+        hint_specific: "La seriedad es un rasgo de carácter general. ¿Aquí se habla del carácter, o de poder pagar?"
+  - position: 7
+    sentence: "Gabriel le explicó al nuevo cliente que, aunque era una empresa pequeña, tenía la {{blank}} suficiente para cumplir cualquier contrato grande."
+    hint_general: "Nombra la capacidad de cumplir con un compromiso grande, aunque el negocio sea pequeño."
+    explanation: "Solvencia: la capacidad de la empresa pequeña de cumplir un contrato grande. «Experiencia» sería solo tiempo de práctica, y «estructura» sería cómo está organizado el negocio, ninguna garantiza poder cumplir el pago."
+    options:
+      - position: 1
+        text: "experiencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Experiencia» es el tiempo trabajando en algo; aquí lo que se afirma es que puede cumplir el pago o el compromiso grande, no solo que tiene años de práctica."
+        hint_specific: "La experiencia es tiempo de práctica. ¿Aquí se habla de práctica, o de poder cumplir?"
+      - position: 2
+        text: "estructura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estructura» habla de cómo está organizado el negocio; aquí lo que importa es si puede cumplir el pago o el compromiso, no cómo está organizado."
+        hint_specific: "La estructura es cómo está organizado un negocio. ¿Aquí se habla de organización, o de poder cumplir?"
+      - position: 3
+        text: "solvencia"
+        is_correct: true
+  - position: 8
+    sentence: "Mis papás siempre confiaron en la {{blank}} de mi tío para prestarle dinero, porque nunca dejó una deuda sin pagar."
+    hint_general: "Nombra la capacidad real de alguien de cumplir siempre lo que debe."
+    explanation: "Solvencia: la capacidad de mi tío de cumplir siempre lo que debía. «Generosidad» sería dar con gusto, y «honradez» sería no engañar a nadie, ninguna garantiza poder pagar una deuda."
+    options:
+      - position: 1
+        text: "generosidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Generosidad» es dar con gusto; aquí lo que importa es que mi tío siempre devolvió lo que debía, no que fuera generoso con los demás."
+        hint_specific: "La generosidad es dar con gusto. ¿Aquí se habla de dar, o de devolver siempre lo que se debe?"
+      - position: 2
+        text: "solvencia"
+        is_correct: true
+      - position: 3
+        text: "honradez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Honradez» es no engañar a nadie; alguien honrado podría igual no tener con qué pagar. Aquí lo que se destaca es que siempre pudo cumplir."
+        hint_specific: "La honradez es no engañar. ¿Eso garantiza poder pagar, o solo querer hacerlo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez años sin una deuda"
+    body: "Antes de firmar el crédito a treinta días, el proveedor pidió referencias. Marta las mandó todas: diez años de pagos puntuales, ni un solo atraso. «Con esa solvencia, no necesito nada más», respondió el proveedor, y aprobó el crédito esa misma tarde."
+    before_phrase: "Siempre pago lo que debo, a tiempo."
+    after_phrase: "Mi solvencia habla por mí."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El préstamo para el auto"
+    body: "Cuando su hermano le pidió dinero para el auto, Pablo dudó un momento, pero recordó que nunca le había fallado con un pago. «Confío en tu solvencia», le dijo finalmente, «sé que vas a cumplir». Su hermano sonrió, aliviado."
+    before_phrase: "Sé que siempre cumples con lo que debes."
+    after_phrase: "Confío en tu solvencia."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La entrevista del crédito"
+    body: "En el banco, le preguntaron a Sofía cómo pensaba pagar el crédito para su taller. Ella mostró los estados de cuenta de los últimos tres años: nunca un pago atrasado. El asesor asintió: «Con esta solvencia, el crédito está prácticamente aprobado»."
+    before_phrase: "Siempre voy a poder pagar esto, se lo demuestro."
+    after_phrase: "Con esta solvencia, el crédito está aprobado."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

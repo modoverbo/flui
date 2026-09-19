@@ -1,0 +1,239 @@
+schema_version: 1
+slug: "cercania"
+status: "draft"
+lemma: "cercanía"
+part_of_speech: "sustantivo"
+syllables:
+  - "cer"
+  - "ca"
+  - "ní"
+  - "a"
+stressed_syllable: 3
+ipa_latam: "[seɾ.kaˈni.a]"
+ipa_es: "[θeɾ.kaˈni.a]"
+explanation: "Sensación de confianza y trato natural que hace que alguien te sienta accesible, como a alguien conocido."
+example_sentence: "Responder los comentarios uno por uno le da mucha cercanía a la cuenta, aunque lleve tiempo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para explicar por qué una cuenta o una persona se siente accesible, casi como alguien conocido."
+when_not_to_use: "No la uses para la distancia física entre dos lugares; ahí es solo una cuestión de metros o minutos."
+collocations:
+  - "generar cercanía"
+  - "esa cercanía con los seguidores"
+  - "perder la cercanía"
+replaces:
+  - before: "Esa cuenta se siente muy accesible, como si la conocieras"
+    after: "Esa cuenta tiene mucha cercanía"
+  - before: "Habla como si fuera un amigo, no una marca"
+    after: "Le da cercanía a la marca; habla como un amigo"
+  - before: "Se nota que le importa responder a la gente"
+    after: "Esa cercanía se nota en que responde a la gente"
+family:
+  - "cercano"
+  - "acercar"
+themes:
+  - slug: "redes-sociales"
+    relevance: 2
+  - slug: "conversacion-cotidiana"
+    relevance: 2
+tags:
+  comodin:
+    - "ser cercano"
+  funcion:
+    - "conectar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "familiaridad"
+    difference: "«Familiaridad» viene de conocer a alguien desde hace tiempo; la cercanía puede sentirse desde el primer mensaje, sin conocerse de antes."
+    memory_trick: "La familiaridad se construye con el tiempo; la cercanía se nota desde el primer mensaje."
+  - confused_with: "confianza"
+    difference: "«Confianza» es creer que alguien es fiable y cumple lo que promete; la cercanía es solo que el trato se sienta cálido y natural, sin hablar de si cumple o no."
+exercises:
+  - position: 1
+    sentence: "La cuenta de la clínica ganó mucha {{blank}} desde que el doctor empezó a responder las dudas con su propia voz, no con mensajes genéricos."
+    hint_general: "Se trata de que el trato se sienta cálido y natural, no de lejos."
+    explanation: "Cercanía: un trato cálido y natural, no distante. «Certeza» es estar seguro de un hecho, y «confianza» es creer que alguien cumple lo que promete; aquí lo que cambió fue el tono, no ninguna de esas dos cosas."
+    options:
+      - position: 1
+        text: "certeza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Certeza» es estar seguro de que algo es así; los pacientes no ganan seguridad sobre un hecho, ganan un trato más cálido."
+        hint_specific: "«Certeza» habla de estar seguro de algo. ¿Lo que cambia aquí es la seguridad sobre un dato, o el trato con el doctor?"
+      - position: 2
+        text: "cercanía"
+        is_correct: true
+      - position: 3
+        text: "confianza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confianza» implica creer que alguien cumple lo que promete; aquí el cambio es el tono cálido de las respuestas, no una promesa cumplida."
+        hint_specific: "«Confianza» habla de creer que alguien cumple. ¿La frase habla de cumplir promesas, o de cómo suena al responder?"
+  - position: 2
+    sentence: "Andrea notó que sus publicaciones tenían más {{blank}} cuando contaba anécdotas del día a día, en vez de solo anunciar productos."
+    hint_general: "Apunta al efecto de sentirse al lado de alguien, aunque acabes de conocerlo."
+    explanation: "Cercanía: sentirse cerca de alguien desde el primer contacto. «Buena onda» es una expresión coloquial que no nombra ese efecto con precisión, y «familiaridad» necesita tiempo, algo que las anécdotas nuevas de Andrea no tienen."
+    options:
+      - position: 1
+        text: "buena onda"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Buena onda» es una expresión muy coloquial para un ambiente agradable; no nombra el trato cálido y directo que generan esas anécdotas."
+        hint_specific: "«Buena onda» es una expresión muy informal. ¿Esta frase busca nombrar con precisión ese efecto, o solo decir que el ambiente es agradable?"
+      - position: 2
+        text: "familiaridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Familiaridad» viene de conocer a alguien desde hace tiempo; las anécdotas nuevas de Andrea generan calidez desde el primer post, sin necesitar tiempo."
+        hint_specific: "«Familiaridad» necesita tiempo para construirse. ¿Las anécdotas nuevas de Andrea llevan tiempo funcionando, o generan el efecto enseguida?"
+      - position: 3
+        text: "cercanía"
+        is_correct: true
+  - position: 3
+    sentence: "Simón, que dirige una empresa grande, sorprendió a todos cuando empezó a grabar videos cortos: de pronto, la marca tenía {{blank}}, algo que ningún comunicado formal había logrado."
+    hint_general: "Habla del efecto de sonar cálido y accesible, no distante como un comunicado formal."
+    explanation: "Cercanía: sonar cálido y accesible, no distante. «Empatía» es entender lo que siente otro, y «afecto» es cariño hacia alguien en concreto; los videos de Simón solo cambiaron el tono, no mostraron ninguna de las dos cosas."
+    options:
+      - position: 1
+        text: "empatía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Empatía» es entender lo que siente otra persona; los videos de Simón no muestran que entienda a sus clientes, solo que habla de forma más directa y cálida."
+        hint_specific: "«Empatía» es ponerse en el lugar del otro. ¿Los videos de Simón muestran que entiende a sus clientes, o que habla distinto?"
+      - position: 2
+        text: "afecto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Afecto» es cariño hacia alguien en concreto; los videos no muestran cariño hacia una persona, sino un tono más cálido y accesible en general."
+        hint_specific: "«Afecto» es cariño hacia alguien específico. ¿Los videos muestran cariño por una persona, o un tono general más cálido?"
+      - position: 3
+        text: "cercanía"
+        is_correct: true
+  - position: 4
+    sentence: "Rocío quería que su marca sonara con {{blank}}, aunque su equipo de marketing insistía en usar un tono más corporativo."
+    hint_general: "Se trata de que el trato de la marca se sienta cálido, no de sonar simpático una sola vez."
+    explanation: "Cercanía: un trato cálido y sostenido, no solo caer bien una vez. «Calorcito» es una palabra muy coloquial, fuera de lugar en esta charla, y «simpatía» es caer bien de entrada, algo distinto de lo que busca Rocío."
+    options:
+      - position: 1
+        text: "calorcito"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Calorcito» es una palabra muy coloquial y en diminutivo; no encaja en la conversación sobre el tono de una marca frente al equipo de marketing."
+        hint_specific: "«Calorcito» es una palabra coloquial y en diminutivo. ¿Encaja con una charla sobre el tono formal de una marca?"
+      - position: 2
+        text: "simpatía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Simpatía» es caer bien o resultar agradable a primera vista; Rocío no busca solo caer bien, busca que la marca se sienta cercana en el trato."
+        hint_specific: "«Simpatía» es caer bien de entrada. ¿Rocío busca caer bien una vez, o que el trato se sienta cálido siempre?"
+      - position: 3
+        text: "cercanía"
+        is_correct: true
+  - position: 5
+    sentence: "Pablo, el nuevo community manager, contestaba cada comentario con el nombre de la persona y una broma; en un mes, la cuenta ganó una {{blank}} que antes no tenía."
+    hint_general: "Apunta al vínculo que se genera cuando alguien te trata como a un conocido."
+    explanation: "Cercanía: el vínculo que se genera al tratar a la gente como a un conocido. «Amabilidad» describe cada respuesta suelta, y «calidez» describe el tono de un mensaje; ninguna nombra el vínculo que ganó la cuenta."
+    options:
+      - position: 1
+        text: "amabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amabilidad» es tratar bien a cualquiera, algo puntual en cada respuesta; no describe el efecto general y sostenido que ganó la cuenta."
+        hint_specific: "«Amabilidad» describe cada respuesta suelta. ¿La frase habla de una respuesta, o de un cambio general en la cuenta?"
+      - position: 2
+        text: "calidez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Calidez» describe el tono cálido de cada mensaje; la frase, en cambio, habla del efecto que eso generó entre la cuenta y la gente."
+        hint_specific: "«Calidez» describe el tono de un mensaje. ¿La frase habla del tono, o del efecto entre la cuenta y la gente?"
+      - position: 3
+        text: "cercanía"
+        is_correct: true
+  - position: 6
+    sentence: "Beatriz explicó en la reunión que perdieron seguidores porque dejaron de responder comentarios: «Sin esa {{blank}}, la gente siente que le hablamos a una pared»."
+    hint_general: "Se trata de que la gente sienta que hay alguien real del otro lado, escuchando."
+    explanation: "Cercanía: sentir que hay alguien real escuchando del otro lado. «Cordialidad» es solo buenos modales, y «cariño» es afecto hacia alguien en particular; lo que faltó fue la sensación de que alguien escuchaba."
+    options:
+      - position: 1
+        text: "cordialidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cordialidad» es un trato educado y correcto; a la gente no le falta educación de la marca, le falta sentir que del otro lado hay alguien que escucha."
+        hint_specific: "«Cordialidad» es solo buenos modales. ¿A la gente le falta buena educación, o sentir que alguien escucha?"
+      - position: 2
+        text: "cariño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cariño» es afecto personal hacia alguien concreto; la marca no necesita querer a cada seguidor, solo hacerlo sentir escuchado."
+        hint_specific: "«Cariño» es afecto hacia alguien en particular. ¿La marca necesita querer a cada seguidor, o hacerlo sentir escuchado?"
+      - position: 3
+        text: "cercanía"
+        is_correct: true
+  - position: 7
+    sentence: "Martín, que llevaba años sin publicar nada personal, notó que su primer post contando un momento difícil generó una {{blank}} que ningún logro había conseguido antes."
+    hint_general: "Habla del efecto cálido que deja contar algo real, más que cualquier logro."
+    explanation: "Cercanía: el efecto cálido de contar algo real. «Complicidad» sería un entendimiento compartido sobre algo puntual, y «naturalidad» describe cómo escribió Martín, no el efecto en quien lo leyó."
+    options:
+      - position: 1
+        text: "complicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Complicidad» es un entendimiento compartido sobre algo puntual, como una broma interna; el post de Martín generó un trato más cálido en general, no un guiño compartido."
+        hint_specific: "«Complicidad» es un entendimiento sobre algo puntual, como una broma. ¿El post generó una broma compartida, o un trato más cálido?"
+      - position: 2
+        text: "naturalidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Naturalidad» describe cómo se comportó Martín al escribir, sin exagerar; no describe el efecto que eso tuvo en quien lo leyó."
+        hint_specific: "«Naturalidad» describe cómo escribió Martín. ¿La frase habla de cómo escribió, o de lo que sintió la gente que lo leyó?"
+      - position: 3
+        text: "cercanía"
+        is_correct: true
+  - position: 8
+    sentence: "Alejandra e Iván compararon dos cuentas de la misma categoría: una tenía más seguidores, pero la otra generaba más {{blank}}, y por eso vendía más."
+    hint_general: "Apunta al vínculo cálido que hace que alguien confíe más en una cuenta que en otra."
+    explanation: "Cercanía: el vínculo cálido que genera más confianza. «Sencillez» habla de que algo no es complicado, y «autenticidad» habla de que algo es genuino; ninguna nombra el vínculo que hizo vender más a esa cuenta."
+    options:
+      - position: 1
+        text: "sencillez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sencillez» describe que algo no es complicado ni recargado; no describe el vínculo cálido que hace que alguien confíe y compre."
+        hint_specific: "«Sencillez» habla de que algo no es complicado. ¿La diferencia entre las dos cuentas es lo complicadas que son, o el vínculo que generan?"
+      - position: 2
+        text: "autenticidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Autenticidad» describe que algo es genuino y no una copia; la cuenta puede ser genuina y aun así sentirse distante, que no es el caso aquí."
+        hint_specific: "«Autenticidad» dice que algo es genuino, no copiado. ¿La diferencia es qué tan genuinas son, o qué vínculo generan?"
+      - position: 3
+        text: "cercanía"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El video que reemplazó el comunicado"
+    body: "El equipo de comunicación quería anunciar el cambio de precios con un documento formal. La directora propuso grabar un video corto explicándolo con sus propias palabras. «Así generamos más cercanía», dijo, «la gente prefiere que alguien se lo cuente, no que se lo lean»."
+    before_phrase: "Necesitamos que no suene tan frío y distante."
+    after_phrase: "Necesitamos más cercanía en cómo lo contamos."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La cuenta que empezó a contestar"
+    body: "Nadia le mostró a su amigo la cuenta de un restaurante nuevo: «Mira, contestan cada comentario con el nombre de la persona». Su amigo sonrió: «Por eso tiene tanta cercanía, se siente como hablar con el dueño, no con una marca»."
+    before_phrase: "Se siente como si de verdad te escucharan."
+    after_phrase: "Tiene mucha cercanía, se siente como hablar con el dueño."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El grupo de la familia"
+    body: "Desde que su tía empezó a mandar audios en vez de mensajes de texto al grupo familiar, todos empezaron a contestar más. «Se siente distinto, hay más cercanía», dijo su primo, «antes solo leíamos, ahora sentimos que hablamos con ella»."
+    before_phrase: "Antes solo leíamos los mensajes, ya ni contestábamos."
+    after_phrase: "Ahora hay más cercanía: sentimos que hablamos con ella."
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-18"

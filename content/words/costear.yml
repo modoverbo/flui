@@ -1,0 +1,238 @@
+schema_version: 1
+slug: "costear"
+status: "draft"
+lemma: "costear"
+part_of_speech: "verbo"
+syllables:
+  - "cos"
+  - "te"
+  - "ar"
+stressed_syllable: 3
+ipa_latam: "[kos.teˈar]"
+ipa_es: "[kos.teˈar]"
+explanation: "Pagar o reunir el dinero necesario para algo, cubriendo así el gasto de otra persona."
+example_sentence: "La empresa decidió costear el viaje de los vendedores a la feria del sector."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para dejar claro quién pone el dinero, sobre todo cuando alguien duda si puede pagarlo."
+when_not_to_use: "No la uses para gastos pequeños del día a día; suena natural para montos que requieren decidir si se pueden asumir."
+collocations:
+  - "costear el viaje"
+  - "costear la inversión"
+  - "poder costear algo"
+replaces:
+  - before: "No sé si nos alcanza para pagar eso"
+    after: "No sé si podemos costear eso"
+  - before: "La empresa pagó todo el curso"
+    after: "La empresa costeó todo el curso"
+  - before: "Vamos a juntar el dinero entre los dos"
+    after: "Vamos a costear esto entre los dos"
+family:
+  - "coste"
+  - "costoso"
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin:
+    - "pagar"
+    - "alcanzar para algo"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "costar"
+    difference: "«Costar» dice cuánto vale algo; «costear» dice quién pone el dinero para pagarlo o financiarlo."
+    memory_trick: "El precio cuesta; la empresa costea."
+  - confused_with: "cotizar"
+    difference: "«Cotizar» es calcular y ofrecer un precio; «costear» es reunir o pagar el dinero para cubrir ese precio."
+    memory_trick: "Cotizas antes de saber el precio; costeas después, para pagarlo."
+exercises:
+  - position: 1
+    sentence: "Marisol, la dueña del taller, {{blank}} el traslado de los clientes hasta la planta para que vieran la producción de cerca."
+    hint_general: "Busca el verbo para cuando alguien pone el dinero para cubrir un gasto de otra persona."
+    explanation: "Costeó: puso el dinero para el traslado. «Costó» solo dice el precio, sin decir quién pagó, y «financió» suele implicar un préstamo, que no aparece aquí."
+    options:
+      - position: 1
+        text: "costó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Costó» solo dice cuánto valió el traslado, no quién puso el dinero; aquí se cuenta que Marisol lo pagó."
+        hint_specific: "«Costar» habla del precio, no de quién paga. ¿La frase dice cuánto valió o quién puso el dinero?"
+      - position: 2
+        text: "costeó"
+        is_correct: true
+      - position: 3
+        text: "financió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Financiar» suele implicar un préstamo o un plan de pagos, y aquí Marisol simplemente cubrió el gasto de una vez."
+        hint_specific: "«Financiar» suele llevar un plan de pagos o un préstamo. ¿Aquí hay un préstamo o solo se cubrió el gasto?"
+  - position: 2
+    sentence: "David reconoció que, por ahora, no podía {{blank}} la actualización completa del sistema."
+    hint_general: "Busca el verbo para cuando a alguien no le alcanza el dinero para pagar algo."
+    explanation: "Costear: si le alcanza el dinero para pagar. «Invertir» espera una ganancia futura, y «soltar» el dinero es una expresión coloquial de queja que no está en la frase."
+    options:
+      - position: 1
+        text: "invertir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Invertir» implica esperar una ganancia futura, y aquí David solo habla de si el dinero le alcanza para pagar la actualización."
+        hint_specific: "«Invertir» espera una ganancia futura. ¿David habla de ganar algo o de si le alcanza el dinero?"
+      - position: 2
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» el dinero es una expresión coloquial y algo despectiva; aquí David solo explica su situación con calma, no se queja de dar el dinero."
+        hint_specific: "«Soltar» dinero suena coloquial y de queja. ¿David se queja o solo explica su situación?"
+      - position: 3
+        text: "costear"
+        is_correct: true
+  - position: 3
+    sentence: "Ignacio insistió en que el comité aprobara el presupuesto para que se {{blank}} las capacitaciones de todo el equipo de ventas."
+    hint_general: "Buscan el verbo para que la propia empresa pague las capacitaciones de su equipo."
+    explanation: "Costeen: que la propia empresa pague las capacitaciones. «Coticen» es solo dar un precio, y «subvencionen» suena a una ayuda externa que no aparece aquí."
+    options:
+      - position: 1
+        text: "coticen"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cotizar» es calcular y dar un precio, y aquí el comité ya decidió pagar, no pedir un precio."
+        hint_specific: "«Cotizar» es solo pedir un precio. ¿El comité pide un precio o ya decidió pagar?"
+      - position: 2
+        text: "subvencionen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Subvencionar» suele referirse a una ayuda externa, como del Estado, y aquí es la propia empresa la que paga a su equipo."
+        hint_specific: "«Subvencionar» suena a ayuda externa. ¿Quién paga aquí, la empresa o alguien de afuera?"
+      - position: 3
+        text: "costeen"
+        is_correct: true
+  - position: 4
+    sentence: "Según el contrato que firmó Renata, el proveedor {{blank}} el envío si la compra supera cierto monto."
+    hint_general: "Busca el verbo para cuando alguien se hace cargo de pagar un gasto según lo acordado."
+    explanation: "Costeará: se hará cargo de pagar el envío. «Financiará» suele implicar cuotas, y «costará» solo dice el precio, sin decir quién paga."
+    options:
+      - position: 1
+        text: "financiará"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Financiar» suele implicar cuotas o un préstamo, y aquí el contrato dice que el proveedor cubre el envío de una sola vez."
+        hint_specific: "«Financiar» suele ir con cuotas. ¿El contrato habla de cuotas o de cubrir un gasto de una vez?"
+      - position: 2
+        text: "costeará"
+        is_correct: true
+      - position: 3
+        text: "costará"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Costará» solo dice cuánto vale el envío, y la frase dice quién lo paga, no su precio."
+        hint_specific: "«Costar» habla del precio, no de quién paga. ¿El contrato dice el precio o quién cubre el gasto?"
+  - position: 5
+    sentence: "Los dos socios acordaron {{blank}} el stand de la feria a partes iguales."
+    hint_general: "Busca el verbo para cuando dos personas se reparten el pago de un gasto."
+    explanation: "Costear: repartirse el pago del gasto. «Soltar» el dinero es una expresión coloquial de queja, y «invertir» espera una ganancia directa que aquí no se menciona."
+    options:
+      - position: 1
+        text: "soltar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» el dinero es una expresión coloquial, y aquí los socios llegan a un acuerdo tranquilo, no se quejan de pagar."
+        hint_specific: "«Soltar» dinero suena a queja informal. ¿Los socios se quejan o llegan a un acuerdo?"
+      - position: 2
+        text: "invertir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Invertir» implica esperar una ganancia directa de ese dinero, y aquí solo se reparten el gasto del stand."
+        hint_specific: "«Invertir» espera una ganancia directa. ¿Aquí se busca ganancia o solo repartir un gasto?"
+      - position: 3
+        text: "costear"
+        is_correct: true
+  - position: 6
+    sentence: "Tomás soñaba con exhibir en la feria, pero pocas pymes como la suya podían {{blank}} el espacio de exhibición."
+    hint_general: "Busca el verbo para cuando alguien no tiene el dinero para pagar algo por su cuenta."
+    explanation: "Costear: pagar algo por cuenta propia. «Cotizar» es solo pedir un precio, y «subvencionar» suena a una ayuda externa que no aparece aquí."
+    options:
+      - position: 1
+        text: "cotizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cotizar» es pedir o calcular un precio, y la frase habla de si les alcanza el dinero para pagarlo, no de pedir el precio."
+        hint_specific: "«Cotizar» es solo pedir un precio. ¿La frase habla de pedir un precio o de si alcanza el dinero?"
+      - position: 2
+        text: "costear"
+        is_correct: true
+      - position: 3
+        text: "subvencionar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Subvencionar» suele venir de un tercero, como el Estado, y aquí se habla de si la propia pyme puede pagar el espacio."
+        hint_specific: "«Subvencionar» suena a ayuda externa. ¿La frase habla de la propia pyme o de una ayuda de afuera?"
+  - position: 7
+    sentence: "Mientras Bruno seguía {{blank}} la campaña con recursos propios, decidió buscar un socio inversionista."
+    hint_general: "Buscan el verbo para cuando alguien sigue pagando algo con su propio dinero."
+    explanation: "Costeando: pagando la campaña con dinero propio. «Financiando» suele sugerir deuda o cuotas, y «costando» habla del precio, no de quién paga."
+    options:
+      - position: 1
+        text: "financiando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Financiar» suele sugerir un préstamo o cuotas pendientes, y aquí dice que Bruno usa recursos propios, sin deuda de por medio."
+        hint_specific: "«Financiar» suele llevar deuda o cuotas. ¿Aquí hay deuda o son recursos propios?"
+      - position: 2
+        text: "costeando"
+        is_correct: true
+      - position: 3
+        text: "costando"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Costar» dice cuánto vale algo, y la frase habla de quién pone el dinero para la campaña, no de su precio."
+        hint_specific: "«Costar» habla del precio. ¿La frase dice el precio o quién pone el dinero?"
+  - position: 8
+    sentence: "Muchos clientes prefieren esta tienda porque {{blank}} el envío en compras grandes."
+    hint_general: "Buscan el verbo para cuando un negocio cubre un gasto como parte de su servicio."
+    explanation: "Costean: cubren el gasto como parte del servicio. «Sueltan» el envío suena a queja informal, y «invierten» espera una ganancia directa que no aparece aquí."
+    options:
+      - position: 1
+        text: "sueltan"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Soltar» el envío suena a una expresión coloquial de queja, y la frase describe una política normal de la tienda, no una molestia."
+        hint_specific: "«Soltar» algo suena a queja informal. ¿La frase describe una política o una queja?"
+      - position: 2
+        text: "invierten"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Invertir» implica esperar una ganancia directa de ese dinero, y aquí la tienda solo cubre el envío como parte del servicio."
+        hint_specific: "«Invertir» espera una ganancia directa. ¿La tienda busca ganancia con eso o solo cubre un gasto del servicio?"
+      - position: 3
+        text: "costean"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Quién pone el dinero"
+    body: "El equipo quería llevar a los clientes clave a la planta, pero nadie sabía si el presupuesto alcanzaba. La gerente revisó los números y dijo: «Lo podemos costear, vale la pena que vean la producción de cerca». El viaje se organizó esa misma semana."
+    before_phrase: "No sé si nos alcanza para pagar eso."
+    after_phrase: "Lo podemos costear."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "El curso que pidió"
+    body: "En la entrevista le preguntaron qué necesitaría para crecer en el puesto. Respondió con seguridad: «Me gustaría que la empresa costeara una certificación el próximo año». El entrevistador anotó la respuesta con una sonrisa."
+    before_phrase: "Me gustaría que la empresa pagara un curso."
+    after_phrase: "Me gustaría que la empresa costeara una certificación."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El regalo de graduación"
+    body: "Sus tíos ofrecieron ayudar con el viaje de graduación. «Entre todos podemos costearlo, no tienes que preocuparte por eso», le dijo su tía por teléfono. Ella se quedó en silencio un momento, y luego dijo que sí, con la voz quebrada."
+    before_phrase: "Entre todos podemos juntar el dinero, no te preocupes."
+    after_phrase: "Entre todos podemos costearlo, no tienes que preocuparte."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

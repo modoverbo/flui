@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "gradual"
+status: "draft"
+lemma: "gradual"
+part_of_speech: "adjetivo"
+syllables: ["gra", "du", "al"]
+stressed_syllable: 3
+ipa_latam: "[gra.ðuˈal]"
+ipa_es: "[gra.ðuˈal]"
+explanation: "Que avanza poco a poco, por pasos pequeños, en vez de pasar de golpe."
+example_sentence: "El médico recomendó un aumento gradual del ejercicio, no salir a correr diez kilómetros el primer día."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para pedir tiempo sin sonar a excusa: «prefiero un cambio gradual» suena a plan, no a miedo."
+when_not_to_use: "No la uses para algo que pasó de un solo golpe; para eso está «repentino» o «brusco»."
+collocations:
+  - "cambio gradual"
+  - "aumento gradual"
+replaces:
+  - before: "Poco a poco, sin apurarse"
+    after: "De forma gradual"
+  - before: "Ir de a poquito"
+    after: "Ir de forma gradual"
+family: ["gradualmente", "gradualidad"]
+themes:
+  - slug: "docencia"
+    relevance: 2
+  - slug: "matices-precision"
+    relevance: 1
+tags:
+  comodin: ["poco a poco"]
+  funcion: ["explicar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "residual"
+    difference: "«Residual» describe lo que queda de un proceso ya terminado; «gradual» describe cómo avanza un proceso mientras ocurre, por pasos."
+    memory_trick: "Lo residual es el resto que sobra; lo gradual es el paso que falta."
+  - confused_with: "repentino"
+    difference: "«Repentino» pasa de golpe, sin aviso; «gradual» pasa por etapas, con tiempo entre una y otra."
+    memory_trick: "Lo repentino sorprende; lo gradual avisa paso a paso."
+exercises:
+  - position: 1
+    sentence: "Para que el equipo nuevo no se abrumara, Sara diseñó un plan de aprendizaje {{blank}}: primero lo básico, después los casos difíciles."
+    hint_general: "Describe un plan que avanza por pasos, del más simple al más difícil."
+    explanation: "Gradual: avanza por pasos, de lo simple a lo difícil. «Residual» describe lo que sobra de un proceso, no cómo se organiza uno nuevo, y «repentino» sería sin aviso, justo lo contrario de un plan por etapas."
+    options:
+      - position: 1
+        text: "residual"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Residual» describe lo que queda de algo ya terminado; el plan de Sara recién empieza, no es un resto de otra cosa."
+        hint_specific: "Lo residual es lo que sobra de algo que ya pasó. ¿El plan de Sara empieza o ya terminó?"
+      - position: 2
+        text: "gradual"
+        is_correct: true
+      - position: 3
+        text: "repentino"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repentino» pasa sin aviso y de golpe; el plan de Sara tiene pasos ordenados, de lo básico a lo difícil."
+        hint_specific: "Lo repentino no avisa. ¿El plan de Sara tiene pasos o llega de golpe?"
+  - position: 2
+    sentence: "Mi hijo aprendió a nadar de forma {{blank}}: primero flotaba con ayuda, luego solo, y recién al final soltó la orilla."
+    hint_general: "Cada logro llegó después del anterior, no todos juntos el mismo día."
+    explanation: "Gradual: cada logro llegó después del anterior. «Paulatino» significa casi lo mismo, pero suena a libro de texto y no a como cuenta una madre el progreso de su hijo, y «leve» habla de algo pequeño, no de cómo avanzó."
+    options:
+      - position: 1
+        text: "gradual"
+        is_correct: true
+      - position: 2
+        text: "paulatino"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Paulatino» tiene el mismo sentido pero un tono de libro o informe; contar cómo aprendió a nadar tu hijo pide una palabra más de todos los días."
+        hint_specific: "Esa palabra suena a informe escolar. ¿Así habla una madre de su hijo en una charla normal?"
+      - position: 3
+        text: "leve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Leve» dice que algo fue pequeño o poco importante; la frase no habla de tamaño, habla de pasos uno después del otro."
+        hint_specific: "Leve habla de tamaño, no de pasos. ¿La frase cuenta cuántos pasos dio o qué tan grande fue el logro?"
+  - position: 3
+    sentence: "En la entrevista me preguntaron cómo manejo el cambio en un equipo, y respondí que prefiero un proceso {{blank}}, con tiempo para que la gente se acomode."
+    hint_general: "Prefiere que el cambio avance por etapas, dando tiempo entre una y otra."
+    explanation: "Gradual: avanza por etapas, con tiempo entre una y otra. «Sostenido» describe algo constante en el tiempo, pero no dice que sea por pasos, y «residual» describe lo que queda de un proceso, no cómo se planea uno nuevo."
+    options:
+      - position: 1
+        text: "sostenido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sostenido» dice que algo se mantiene en el tiempo, pero no dice que avance por pasos separados; eso es justo lo que pide la pregunta."
+        hint_specific: "Sostenido habla de mantenerse, no de avanzar por pasos. ¿La respuesta menciona etapas?"
+      - position: 2
+        text: "residual"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Residual» describe lo que sobra de un proceso terminado; aquí se habla de cómo planear uno que recién empieza."
+        hint_specific: "Lo residual es lo que sobra al final. ¿La pregunta es sobre planear un cambio o sobre lo que sobra de uno?"
+      - position: 3
+        text: "gradual"
+        is_correct: true
+  - position: 4
+    sentence: "Después del accidente, la fisioterapeuta insistió en una recuperación {{blank}}: cada semana un poco más de fuerza, nunca de golpe."
+    hint_general: "La mejora llega semana a semana, nunca de una sola vez."
+    explanation: "Gradual: mejora semana a semana, nunca de golpe. «Incremental» dice casi lo mismo, pero suena a informe de negocios, no a lo que dice una fisioterapeuta, y «brusca» sería justo lo contrario: todo de una vez."
+    options:
+      - position: 1
+        text: "incremental"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Incremental» es palabra de reporte o de negocios; una fisioterapeuta explicando una recuperación usa un tono más cercano."
+        hint_specific: "Esa palabra suena a reporte de oficina. ¿Así habla una fisioterapeuta con su paciente?"
+      - position: 2
+        text: "gradual"
+        is_correct: true
+      - position: 3
+        text: "brusca"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Brusca» es todo de una vez, sin etapas; la fisioterapeuta pide justo lo contrario, un poco más cada semana."
+        hint_specific: "Brusco es todo de golpe. ¿La fisioterapeuta pide eso o pide ir semana a semana?"
+  - position: 5
+    sentence: "Mi abuelo dice que dejar de fumar de un día para otro nunca le funcionó, y que solo lo logró bajando la cantidad de forma {{blank}}."
+    hint_general: "Bajó la cantidad poco a poco, no de un día para el otro."
+    explanation: "Gradual: bajó la cantidad poco a poco. «Repentina» sería de un día para otro, justo lo que dice que nunca le funcionó, y «leve» habla de una baja pequeña, no de cómo fue bajando con el tiempo."
+    options:
+      - position: 1
+        text: "repentina"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repentina» es de un día para otro, y el abuelo dice justo que eso nunca le funcionó."
+        hint_specific: "Repentino es de un día para otro. ¿El abuelo dice que eso le funcionó o que no?"
+      - position: 2
+        text: "gradual"
+        is_correct: true
+      - position: 3
+        text: "leve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Leve» habla de una baja pequeña; la frase no dice cuánto bajó, dice con qué ritmo lo hizo."
+        hint_specific: "Leve habla de cantidad pequeña, no de ritmo. ¿La frase habla de cuánto o de cómo bajó?"
+  - position: 6
+    sentence: "Un amigo le enseña guitarra a mi sobrina, y solo pasa al acorde nuevo cuando el anterior quedó firme, en un método {{blank}} que ella agradece."
+    hint_general: "Cada paso nuevo llega recién cuando el anterior ya quedó firme."
+    explanation: "Gradual: cada paso llega cuando el anterior ya quedó firme. «Residual» describe lo que sobra al final de un proceso, no un método para enseñar algo, y «repentino» sería pasar todo junto, sin orden entre pasos."
+    options:
+      - position: 1
+        text: "gradual"
+        is_correct: true
+      - position: 2
+        text: "residual"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Residual» describe lo que sobra de algo terminado; el método de este amigo recién avanza, no es un resto de otra cosa."
+        hint_specific: "Residual es lo que sobra al final. ¿Ese método describe un resto o un avance?"
+      - position: 3
+        text: "repentino"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repentino» sería pasar todos los acordes de golpe, sin esperar a que el anterior quede firme; el método hace justo lo contrario."
+        hint_specific: "Repentino es todo de golpe. ¿Ese amigo enseña todo junto o espera entre acordes?"
+  - position: 7
+    sentence: "El informe del banco habla de una subida {{blank}} del ahorro familiar durante el último año, mes tras mes."
+    hint_general: "Sube mes tras mes, no de una vez ni de forma pareja pero constante."
+    explanation: "Gradual: sube mes tras mes. «Sostenida» dice que se mantiene en el tiempo, pero no que suba por etapas, y «leve» habla de que la subida fue pequeña, no de su ritmo mes a mes."
+    options:
+      - position: 1
+        text: "sostenida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sostenida» dice que algo se mantiene, pero no dice que suba mes tras mes en pasos; el informe describe justamente ese avance por etapas."
+        hint_specific: "Sostenido es mantenerse, no subir por etapas. ¿El informe describe pasos mes a mes?"
+      - position: 2
+        text: "leve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Leve» dice que la subida fue pequeña; el informe no habla de tamaño, habla del ritmo mes tras mes."
+        hint_specific: "Leve habla de tamaño, no de ritmo. ¿El informe describe cuánto subió o cómo fue subiendo?"
+      - position: 3
+        text: "gradual"
+        is_correct: true
+  - position: 8
+    sentence: "Durante el asado, mi cuñado contó que bajó veinte kilos, pero aclaró que fue {{blank}}: un kilo por mes, sin dietas extremas."
+    hint_general: "Bajó de a poco, mes a mes, no de golpe ni con métodos extremos."
+    explanation: "Gradual: bajó de a poco, mes a mes. «Residual» describe lo que sobra de un proceso, no cómo bajó de peso, y «repentino» sería de golpe, justo lo que aclaró que no fue."
+    options:
+      - position: 1
+        text: "residual"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Residual» describe lo que queda de un proceso terminado; mi cuñado no habla de un resto, habla de cómo bajó de peso mes a mes."
+        hint_specific: "Residual es lo que sobra de algo. ¿Mi cuñado habla de un resto o de un ritmo mensual?"
+      - position: 2
+        text: "gradual"
+        is_correct: true
+      - position: 3
+        text: "repentino"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Repentino» sería de golpe; mi cuñado aclaró justo lo contrario, un kilo por mes durante veinte meses."
+        hint_specific: "Repentino es de golpe. ¿Mi cuñado aclaró que bajó de golpe o mes a mes?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El plan de Sara"
+    body: "El equipo nuevo se veía perdido con tanta información. Sara cambió de estrategia: «Vamos a ir por partes, primero lo básico». Dos semanas después, ya manejaban los casos difíciles sin ayuda."
+    before_phrase: "Vamos a ir de a poquito."
+    after_phrase: "Vamos a avanzar de forma gradual."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Soltar la orilla"
+    body: "Primero flotaba agarrado de mi mano. Después nadaba solo, pero cerca del borde. La última tarde de vacaciones, soltó la orilla sin que nadie se lo pidiera. «Fue gradual, pero llegó», le dije a su papá esa noche."
+    before_phrase: "Fue aprendiendo de a poquito."
+    after_phrase: "Fue un progreso gradual."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El asado del cuñado"
+    body: "«¿Veinte kilos? ¿Cómo?», preguntó alguien en la mesa. Mi cuñado se rió: «Nada de milagros. Un kilo por mes, gradual, sin dietas raras». Todos brindaron por eso, más que por cualquier dieta de moda."
+    before_phrase: "Fui bajando de a poco."
+    after_phrase: "Fue un proceso gradual."
+provenance:
+  generator: "hand-written for content/words, theme docencia"
+  gate: null
+  checked_on: "2026-09-18"

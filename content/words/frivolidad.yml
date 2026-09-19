@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "frivolidad"
+status: "draft"
+lemma: "frivolidad"
+part_of_speech: "sustantivo"
+syllables: ["fri", "vo", "li", "dad"]
+stressed_syllable: 4
+ipa_latam: "[fɾi.βo.liˈðad]"
+ipa_es: "[fɾi.βo.liˈðad]"
+explanation: "Tratar algo importante como si no tuviera valor, sin darle el cuidado que merece."
+example_sentence: "Le molestó la frivolidad con la que hablaban del tema en los comentarios, como si no importara a nadie."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para señalar que alguien trató un tema serio con demasiada ligereza, sin darle la importancia que tenía."
+when_not_to_use: "No la uses para un tema que de verdad no era importante; la frivolidad supone que sí lo era y aun así se trató sin cuidado."
+collocations:
+  - "tratar con frivolidad"
+  - "la frivolidad del comentario"
+replaces:
+  - before: "Habló del tema como si no importara nada"
+    after: "Habló del tema con una frivolidad total"
+  - before: "Se lo tomó muy a la ligera"
+    after: "Lo trató con frivolidad"
+family: ["frívolo", "frivolizar"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["a la ligera"]
+  funcion: ["criticar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "superficial"
+    difference: "«Superficial» describe que algo no profundiza en el fondo de un tema; «frivolidad» describe que alguien trata un tema serio sin darle la importancia que merece."
+  - confused_with: "ligereza"
+    difference: "«Ligereza» puede ser positiva, como decidir rápido sin darle muchas vueltas; «frivolidad» siempre es un defecto: tratar algo importante como si no lo fuera."
+    memory_trick: "La ligereza puede ser una virtud; la frivolidad, tratar en serio algo importante como si no importara, siempre es un defecto."
+exercises:
+  - position: 1
+    sentence: "A Julieta le molestó que hablaran del tema con {{blank}} en el video, como si fuera cualquier cosa."
+    hint_general: "Trataban un tema importante como si no tuviera ningún valor."
+    explanation: "Frivolidad: trataron un tema importante sin la seriedad que merecía. «Futilidad» diría que el tema no servía para nada, y «descuido» sería un olvido accidental, no una elección."
+    options:
+      - position: 1
+        text: "futilidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Futilidad» describe que algo no sirve para nada o no tiene sentido, y aquí el tema sí era importante: lo grave fue tratarlo sin seriedad."
+        hint_specific: "«Futilidad» habla de algo sin sentido. ¿El tema no servía para nada o simplemente lo trataron sin seriedad?"
+      - position: 2
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuido» habla de un olvido accidental, y aquí no fue un olvido: eligieron hablar del tema sin darle importancia."
+        hint_specific: "«Descuido» es un olvido accidental. ¿Fue un olvido o una elección de tratar el tema a la ligera?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+  - position: 2
+    sentence: "En la reunión con el comité, Esteban notó que el vocero explicaba el retraso del proyecto con {{blank}}."
+    hint_general: "No le dio al tema la seriedad que el caso merecía."
+    explanation: "Frivolidad: el vocero habló del retraso sin la seriedad que el caso merecía. «Relajo» es muy coloquial para una reunión con el comité, e «indiferencia» diría que no le importaba nada, y sí habló del tema."
+    options:
+      - position: 1
+        text: "relajo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Relajo» es muy coloquial, y una reunión con el comité pide un registro más cuidado."
+        hint_specific: "«Relajo» es coloquial. ¿Ese tono encaja en una reunión con el comité?"
+      - position: 2
+        text: "indiferencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferencia» diría que al vocero no le importaba nada, y aquí sí habló del tema, solo que sin la seriedad que el caso merecía."
+        hint_specific: "«Indiferencia» es no mostrar ningún interés. ¿El vocero no habló del tema o lo trató sin seriedad?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+  - position: 3
+    sentence: "Milagros respondió a la queja del cliente con {{blank}}, y este terminó por cambiar de proveedor."
+    hint_general: "No tomó en serio algo que sí era importante para el cliente."
+    explanation: "Frivolidad: Milagros respondió sin la seriedad que la queja merecía. «Futilidad» diría que la respuesta no sirvió de nada, e «irresponsabilidad» hablaría de no cumplir un deber, y ella sí respondió."
+    options:
+      - position: 1
+        text: "futilidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Futilidad» diría que la respuesta no sirvió para nada, y el problema real fue que Milagros no tomó en serio la queja."
+        hint_specific: "«Futilidad» habla de algo inútil. ¿La respuesta no sirvió o simplemente no fue tomada en serio?"
+      - position: 2
+        text: "irresponsabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Irresponsabilidad» hablaría de no cumplir con un deber, y aquí Milagros sí respondió, solo que sin darle la seriedad que la queja merecía."
+        hint_specific: "«Irresponsabilidad» es no cumplir un deber. ¿Milagros no respondió o respondió sin seriedad?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+  - position: 4
+    sentence: "En el chat con sus amigos, Fabián contó que se había quedado sin trabajo con {{blank}}, y nadie supo si hablaba en serio."
+    hint_general: "Contó algo importante como si no tuviera ninguna importancia."
+    explanation: "Frivolidad: Fabián contó algo serio como si no lo fuera. «Liviandad» es muy literaria para un chat entre amigos, y «desidia» sería falta de ganas para actuar, y él sí lo contó."
+    options:
+      - position: 1
+        text: "liviandad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Liviandad» es una palabra muy literaria, y esto es un chat casual entre amigos."
+        hint_specific: "«Liviandad» suena a texto literario. ¿Ese tono encaja en un chat entre amigos?"
+      - position: 2
+        text: "desidia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desidia» describe pereza o falta de ganas para hacer algo, y aquí Fabián sí contó la noticia, solo que sin la seriedad que el tema merecía."
+        hint_specific: "«Desidia» es falta de ganas para actuar. ¿Fabián no contó nada o lo contó sin seriedad?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+  - position: 5
+    sentence: "A Camilo le sorprendió que su socio firmara el contrato con {{blank}}, sin leer ni una cláusula."
+    hint_general: "No le dio al trámite la importancia que merecía."
+    explanation: "Frivolidad: el socio no le dio al contrato la importancia que merecía. «Informalidad» hablaría de no seguir las normas, e «ingenuidad» sería confiar sin sospechar, y aquí nadie lo engañó."
+    options:
+      - position: 1
+        text: "informalidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Informalidad» describe que algo no sigue las normas esperadas, y aquí el problema no es la forma del trámite, sino no haberlo tomado en serio."
+        hint_specific: "«Informalidad» habla de no seguir las normas. ¿El problema es la forma o la falta de seriedad?"
+      - position: 2
+        text: "ingenuidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ingenuidad» describe a quien confía sin sospechar nada, y aquí el socio no fue engañado: simplemente no le dio importancia al contrato."
+        hint_specific: "«Ingenuidad» es confiar sin sospechar. ¿Lo engañaron o simplemente no le dio importancia?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+  - position: 6
+    sentence: "Teresa trató la situación económica de su compañera con {{blank}} en la publicación, y eso generó muchas quejas en los comentarios."
+    hint_general: "No le dio al tema la seriedad que merecía."
+    explanation: "Frivolidad: Teresa trató un tema serio sin la seriedad que merecía. «Curiosidad» son ganas de saber más, y «alegría» es un sentimiento positivo; ninguna explica las quejas."
+    options:
+      - position: 1
+        text: "curiosidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosidad» describe ganas de saber más, y aquí el problema no fue que Teresa quisiera saber, sino que trató el tema sin la seriedad que merecía."
+        hint_specific: "«Curiosidad» son ganas de saber. ¿El problema es curiosidad o falta de seriedad?"
+      - position: 2
+        text: "alegría"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alegría» describe un sentimiento positivo, y las quejas no fueron porque Teresa estuviera contenta, sino porque no tomó en serio el tema."
+        hint_specific: "«Alegría» es un sentimiento positivo. ¿Las quejas son por su alegría o por la falta de seriedad?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+  - position: 7
+    sentence: "Adrián habló de su propio error con {{blank}}, como si no tuviera ninguna importancia."
+    hint_general: "Habló de algo importante como si no lo fuera."
+    explanation: "Frivolidad: Adrián habló de su error como si no importara. «Vanidad» sería presumir de algo, y «descaro» sería actuar sin vergüenza frente a otros; aquí solo resta importancia al error."
+    options:
+      - position: 1
+        text: "vanidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vanidad» describe a quien se cree superior o presume de algo, y aquí Adrián no presume: solo resta importancia a su propio error."
+        hint_specific: "«Vanidad» es presumir de algo. ¿Adrián presume o resta importancia a su error?"
+      - position: 2
+        text: "descaro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descaro» describe hacer algo sin ninguna vergüenza frente a otros, y aquí Adrián no actúa sin vergüenza: simplemente no le da importancia al error."
+        hint_specific: "«Descaro» es actuar sin vergüenza. ¿Adrián actúa sin vergüenza o solo resta importancia al error?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+  - position: 8
+    sentence: "Sofía comentó la mala reseña con {{blank}}, sin darle mayor importancia al enojo de la clienta."
+    hint_general: "No le dio a la queja la seriedad que merecía."
+    explanation: "Frivolidad: Sofía comentó la queja sin la seriedad que merecía. «Ironía» sería decir lo contrario de lo que piensa, y «desinterés» diría que no le importa nada, y en realidad sí lo comenta."
+    options:
+      - position: 1
+        text: "ironía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ironía» es decir lo contrario de lo que se piensa para señalar algo, y Sofía no dice lo contrario: simplemente no toma en serio el enojo de la clienta."
+        hint_specific: "«Ironía» es decir lo contrario de lo que se piensa. ¿Sofía hace eso o solo resta seriedad al enojo?"
+      - position: 2
+        text: "desinterés"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desinterés» diría que a Sofía no le importa nada el tema, y en realidad sí lo comenta: solo lo hace sin la seriedad que merecía."
+        hint_specific: "«Desinterés» es no mostrar ningún interés. ¿Sofía ignora el tema o lo comenta sin seriedad?"
+      - position: 3
+        text: "frivolidad"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El comentario que no ayudó"
+    body: "Cuando el cliente escribió furioso por el error en su pedido, alguien del equipo respondió con un emoji y un «ya lo vemos». «Eso sonó a frivolidad», señaló la coordinadora en la reunión. «Vamos a responder mostrando que de verdad nos importa». Reescribieron el mensaje entre todos."
+    before_phrase: "Eso sonó como que no nos importaba nada."
+    after_phrase: "Eso sonó a frivolidad."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que dijo de pasada"
+    body: "Mi hermano contó que había perdido su trabajo como si fuera una anécdota graciosa, entre risas. «Me preocupa tu frivolidad con esto», le dije, «puedes hablarlo en serio conmigo». Se quedó callado un momento y después sí me contó cómo se sentía de verdad."
+    before_phrase: "Me preocupa que te lo tomes tan a la ligera."
+    after_phrase: "Me preocupa tu frivolidad con esto."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La broma que no cayó bien"
+    body: "En el grupo, alguien hizo un chiste sobre la mudanza forzada de un vecino, como si fuera cualquier cosa. «No entiendo esa frivolidad con algo que le costó tanto a esa familia», escribió Nadia, y varios le dieron la razón. El chiste se borró a los pocos minutos."
+    before_phrase: "No entiendo que te lo tomes tan a la ligera."
+    after_phrase: "No entiendo esa frivolidad con algo tan serio."
+provenance:
+  generator: "claude-sonnet-5"
+  gate: null
+  checked_on: "2026-09-18"

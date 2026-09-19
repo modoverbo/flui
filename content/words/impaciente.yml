@@ -1,0 +1,240 @@
+schema_version: 1
+slug: "impaciente"
+status: "draft"
+lemma: "impaciente"
+part_of_speech: "adjetivo"
+syllables:
+  - "im"
+  - "pa"
+  - "cien"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[im.paˈsjen.te]"
+ipa_es: "[im.paˈθjen.te]"
+explanation: "Que no soporta esperar y quiere una respuesta o un resultado cuanto antes."
+example_sentence: "El cliente llevaba dos llamadas sin respuesta y ya sonaba impaciente por cerrar el trato."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para describir a alguien sin acusarlo: dice que quiere avanzar ya, no que sea grosero."
+when_not_to_use: "No la uses para quien actúa con brusquedad o levanta la voz; eso ya no es solo querer avanzar rápido."
+collocations:
+  - "cliente impaciente"
+  - "sonar impaciente"
+  - "ponerse impaciente"
+replaces:
+  - before: "El cliente ya no quiere esperar más"
+    after: "El cliente está impaciente"
+  - before: "Me escribió tres veces porque quiere una respuesta ya"
+    after: "Me escribió tres veces, está impaciente por la respuesta"
+  - before: "Se nota que quiere cerrar rápido"
+    after: "Se nota impaciente por cerrar"
+family:
+  - "impaciencia"
+  - "impacientarse"
+  - "impacientemente"
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin:
+    - "que no quiere esperar"
+    - "con prisa"
+  funcion:
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "impetuoso"
+    difference: "«Impetuoso» actúa sin pensar, de forma brusca o precipitada; «impaciente» solo quiere que algo pase pronto, sin perder la calma."
+    memory_trick: "El impetuoso actúa de golpe; el impaciente solo mira el reloj."
+  - confused_with: "impertinente"
+    difference: "«Impertinente» dice o hace algo fuera de lugar; «impaciente» solo quiere avanzar más rápido, sin faltar al respeto."
+    memory_trick: "Lo impertinente incomoda; lo impaciente solo apura."
+exercises:
+  - position: 1
+    sentence: "Marcos llevaba dos correos sin respuesta y sonaba {{blank}} por saber si el pedido llegaría esta semana."
+    hint_general: "Busca la palabra para quien ya no quiere esperar una respuesta."
+    explanation: "Impaciente: no quiere esperar más una respuesta. «Impetuoso» describe a quien actúa de forma brusca, y «ansioso» habla de preocupación, no de querer una fecha ya."
+    options:
+      - position: 1
+        text: "impetuoso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impetuoso» describe a quien actúa de forma brusca o sin pensar, y Marcos solo pregunta con calma por una fecha."
+        hint_specific: "«Impetuoso» habla de actuar de golpe, no de esperar. ¿Marcos actúa de forma brusca o solo pregunta por el plazo?"
+      - position: 2
+        text: "impaciente"
+        is_correct: true
+      - position: 3
+        text: "ansioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ansioso» habla de preocupación por lo que pueda pasar, y Marcos no teme nada: solo quiere la fecha ya."
+        hint_specific: "«Ansioso» apunta a la preocupación. ¿Marcos teme algo o solo quiere una fecha?"
+  - position: 2
+    sentence: "Valentina repetía la misma pregunta en cada reunión: estaba {{blank}} por firmar antes de fin de mes."
+    hint_general: "La persona ya quiere cerrar el trato cuanto antes, sin más vueltas."
+    explanation: "Impaciente: quiere cerrar el trato cuanto antes. «Urgente» describe un plazo, no a una persona, y «pesada» es un reproche coloquial que no está en la frase."
+    options:
+      - position: 1
+        text: "urgente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Urgente» califica un asunto o un plazo, no el ánimo de una persona; aquí describimos cómo está Valentina, no la reunión."
+        hint_specific: "«Urgente» se usa para plazos o asuntos, no para el estado de ánimo de alguien. ¿La frase habla de un plazo o de una persona?"
+      - position: 2
+        text: "impaciente"
+        is_correct: true
+      - position: 3
+        text: "pesada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pesada» es un juicio coloquial para alguien que resulta molesto insistiendo; aquí solo se describen las ganas de cerrar, no una queja sobre ella."
+        hint_specific: "«Pesada» suena a reproche informal. ¿La frase juzga a Valentina o solo describe sus ganas de cerrar?"
+  - position: 3
+    sentence: "Rodrigo interrumpió la presentación dos veces, {{blank}} por conocer el precio final."
+    hint_general: "Quiere saber el dato clave sin esperar a que termines de explicar."
+    explanation: "Impaciente: quiere el dato sin esperar. «Impertinente» sería actuar fuera de lugar, y «nervioso» habla de inquietud, no de las ganas de saber el precio."
+    options:
+      - position: 1
+        text: "impertinente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» sería hablar o actuar fuera de lugar; Rodrigo solo quiere el precio antes de tiempo, no falta al respeto."
+        hint_specific: "«Impertinente» habla de algo fuera de lugar. ¿Rodrigo falta al respeto o solo quiere el dato ya?"
+      - position: 2
+        text: "impaciente"
+        is_correct: true
+      - position: 3
+        text: "nervioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Nervioso» describe inquietud o tensión; Rodrigo no está alterado, solo quiere el dato antes de tiempo."
+        hint_specific: "«Nervioso» habla de inquietud, no de prisa por un dato. ¿Rodrigo está alterado o solo apurado por saber?"
+  - position: 4
+    sentence: "Patricia y su socia llevaban semanas esperando el contrato firmado; ya estaban {{blank}} y llamaban cada dos días."
+    hint_general: "Ya no aguantan más esperar por un papel que debería estar listo."
+    explanation: "Impaciente: no aguanta más la espera. «Desesperada» sugiere perder la esperanza, y «ansiosa» habla de preocupación por el resultado, no solo de la demora."
+    options:
+      - position: 1
+        text: "desesperada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desesperada» implica que ya perdió la esperanza de que el contrato llegue; Patricia solo quiere que llegue pronto, no ha perdido la fe en el trato."
+        hint_specific: "«Desesperada» va más allá: sugiere perder la esperanza. ¿Patricia duda de que el trato se cierre o solo quiere que sea pronto?"
+      - position: 2
+        text: "impaciente"
+        is_correct: true
+      - position: 3
+        text: "ansiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ansiosa» apunta a la preocupación por el resultado, y aquí el problema es solo la demora, no una duda sobre el resultado."
+        hint_specific: "«Ansiosa» habla de preocupación por el resultado. ¿El problema aquí es la demora o el resultado?"
+  - position: 5
+    sentence: "Ignacio revisaba el celular cada cinco minutos durante la feria, {{blank}} por una respuesta del comprador."
+    hint_general: "No deja de mirar el teléfono esperando que le contesten pronto."
+    explanation: "Impaciente: no deja de esperar la respuesta. «Impetuoso» describe a quien actúa de forma brusca, y «urgente» califica un asunto, no el ánimo de Ignacio."
+    options:
+      - position: 1
+        text: "impetuoso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impetuoso» describe a quien actúa sin pensar; Ignacio solo espera, revisando el teléfono, sin hacer nada brusco."
+        hint_specific: "«Impetuoso» va de actuar de golpe. ¿Ignacio actúa o solo espera revisando el teléfono?"
+      - position: 2
+        text: "impaciente"
+        is_correct: true
+      - position: 3
+        text: "urgente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Urgente» describe un asunto que no puede esperar, no el estado de ánimo de quien espera la respuesta."
+        hint_specific: "«Urgente» se aplica a un asunto, no a cómo se siente Ignacio. ¿La frase habla de él o de un plazo?"
+  - position: 6
+    sentence: "Renata cambió de tema tres veces en la llamada, {{blank}} por escuchar el descuento que le ofrecían."
+    hint_general: "Solo quiere llegar de una vez al dato del descuento."
+    explanation: "Impaciente: quiere llegar ya al dato del descuento. «Pesada» es un reproche coloquial que no está en la frase, y «nerviosa» habla de inquietud, no de prisa."
+    options:
+      - position: 1
+        text: "pesada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pesada» es un reproche coloquial por resultar molesta; aquí solo se cuenta que quiere llegar rápido al dato, sin juzgarla."
+        hint_specific: "«Pesada» suena a queja informal. ¿La frase critica a Renata o solo cuenta sus ganas de saber?"
+      - position: 2
+        text: "nerviosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Nerviosa» describe tensión o inquietud, y Renata no está alterada: solo quiere llegar al descuento."
+        hint_specific: "«Nerviosa» habla de inquietud. ¿Renata está alterada o solo quiere ir al grano?"
+      - position: 3
+        text: "impaciente"
+        is_correct: true
+  - position: 7
+    sentence: "Emilio no dejaba de preguntar cuándo firmarían, {{blank}} porque el trimestre estaba por cerrar."
+    hint_general: "Quiere resolver el trato antes de que se acabe el plazo que tiene."
+    explanation: "Impaciente: quiere cerrar antes de que acabe el plazo. «Impertinente» sería preguntar algo fuera de lugar, y «desesperado» sugiere perder la esperanza, no solo tener prisa."
+    options:
+      - position: 1
+        text: "impertinente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impertinente» sería preguntar algo fuera de lugar; Emilio solo pregunta por la fecha de firma, algo del todo razonable."
+        hint_specific: "«Impertinente» va de algo fuera de lugar. ¿Preguntar por la fecha de firma está fuera de lugar aquí?"
+      - position: 2
+        text: "impaciente"
+        is_correct: true
+      - position: 3
+        text: "desesperado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desesperado» sugiere que ya perdió la esperanza en el trato; Emilio solo quiere cerrarlo antes de que acabe el trimestre."
+        hint_specific: "«Desesperado» sugiere perder la esperanza. ¿Emilio duda del trato o solo tiene un plazo encima?"
+  - position: 8
+    sentence: "Con Carolina, cada minuto de espera en la sala de reuniones se notaba: estaba {{blank}} por presentar su propuesta."
+    hint_general: "Quiere que le toque su turno para hablar cuanto antes."
+    explanation: "Impaciente: quiere que le toque su turno ya. «Impetuosa» describe actuar de forma brusca, y «ansiosa» habla de preocupación por el resultado, no de la espera."
+    options:
+      - position: 1
+        text: "impetuosa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Impetuosa» describe a quien actúa sin pensarlo, de forma brusca; Carolina solo espera su turno con las ganas a flor de piel."
+        hint_specific: "«Impetuosa» va de actuar de golpe. ¿Carolina actúa brusco o solo espera su turno?"
+      - position: 2
+        text: "ansiosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ansiosa» habla de preocupación por cómo saldrá la propuesta, y aquí el problema es solo la espera del turno."
+        hint_specific: "«Ansiosa» apunta a la preocupación por el resultado. ¿El problema es la espera o el resultado?"
+      - position: 3
+        text: "impaciente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El comprador que no espera"
+    body: "Rodrigo revisó el pedido por tercera vez y llamó a su vendedora: «¿Ya tienen el precio final? Lo necesito para hoy». Ella respondió con calma: «Entiendo que estés impaciente, dame diez minutos y te confirmo todo». Colgaron, y ella terminó la cotización antes de lo prometido."
+    before_phrase: "Entiendo que quieras que te conteste ya."
+    after_phrase: "Entiendo que estés impaciente."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta que no esperó"
+    body: "En medio de la entrevista, la candidata preguntó: «¿Cuándo empezaría, si me eligen?». El entrevistador sonrió: «Veo que estás impaciente por empezar, eso también cuenta a tu favor». Ella se relajó un poco y siguió respondiendo con más seguridad."
+    before_phrase: "Se nota que quieres empezar ya."
+    after_phrase: "Se nota que estás impaciente por empezar."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El regalo que no llegaba"
+    body: "Su hermano llevaba días preguntando si el envío ya había salido. «Cálmate, llega esta semana», le dijo su madre. Él respondió: «Es que estoy impaciente, quiero verle la cara cuando lo abra». Ella se rió y le prometió avisarle apenas llegara."
+    before_phrase: "Es que ya no aguanto la espera."
+    after_phrase: "Es que estoy impaciente."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

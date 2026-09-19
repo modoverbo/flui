@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "consolidar"
+status: "draft"
+lemma: "consolidar"
+part_of_speech: "verbo"
+syllables: ["con", "so", "li", "dar"]
+stressed_syllable: 4
+ipa_latam: "[kon.so.liˈðar]"
+ipa_es: "[kon.so.liˈðar]"
+explanation: "Hacer que algo quede firme y estable después de un tiempo de trabajo, en vez de quedar a medias."
+example_sentence: "Después de dos años difíciles, la empresa logró consolidar su presencia en el mercado local."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien con procesos que toman tiempo: un hábito, una relación, un puesto de trabajo."
+when_not_to_use: "No la uses para un acuerdo firmado en un solo acto, ni para calmar a alguien que está triste; eso es «consolar»."
+collocations:
+  - "consolidar un hábito"
+  - "consolidar una posición"
+replaces:
+  - before: "Que quede bien fijo esta vez"
+    after: "Vamos a consolidar esto"
+  - before: "Hacer que el equipo funcione de verdad"
+    after: "Consolidar al equipo"
+family: ["consolidación", "consolidado"]
+themes:
+  - slug: "docencia"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin: ["que quede fijo"]
+  funcion: ["afirmar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "consolar"
+    difference: "«Consolar» es acompañar a alguien que sufre; «consolidar» es hacer que algo quede firme con el tiempo."
+    memory_trick: "Consuelas a una persona; consolidas un proceso."
+  - confused_with: "validar"
+    difference: "«Validar» confirma que algo es correcto en un solo momento; «consolidar» necesita tiempo y repetición para quedar firme."
+    memory_trick: "Validar es un sello; consolidar es una raíz que crece."
+exercises:
+  - position: 1
+    sentence: "Después de liderar tres proyectos seguidos con buenos resultados, Renata empezó a {{blank}} su lugar como referente del área."
+    hint_general: "Habla de un lugar que se vuelve firme después de varios logros seguidos, no de un solo momento."
+    explanation: "Consolidar: su lugar se vuelve firme con logros repetidos. «Consolar» es acompañar a alguien triste, y «estrenar» es usar algo por primera vez, sin relación con ganarse un lugar."
+    options:
+      - position: 1
+        text: "consolar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consolar» es acompañar a alguien que sufre; aquí nadie está triste, Renata gana terreno con su trabajo."
+        hint_specific: "«Consolar» va con la tristeza de alguien. ¿La frase habla de tristeza o de resultados?"
+      - position: 2
+        text: "consolidar"
+        is_correct: true
+      - position: 3
+        text: "estrenar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estrenar» es usar algo por primera vez; Renata no empieza de cero, lleva tres proyectos ganando terreno."
+        hint_specific: "Estrenar es la primera vez. ¿Es su primer proyecto o ya lleva varios?"
+  - position: 2
+    sentence: "El nuevo horario de estudio recién {{blank}} después de que mi hijo lo siguió sin fallar durante un mes entero."
+    hint_general: "Un hábito se vuelve firme solo después de repetirlo un buen tiempo, no de un día."
+    explanation: "Se consolidó: el hábito se hizo firme tras un mes de repetición. «Se validó» sería confirmarlo en un solo momento, y «se estrenó» sería usarlo por primera vez."
+    options:
+      - position: 1
+        text: "se validó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Validar» confirma algo en un momento puntual; aquí lo que cuenta es un mes entero de repetición, no una sola confirmación."
+        hint_specific: "Validar pasa en un momento. ¿La frase habla de un momento o de un mes entero?"
+      - position: 2
+        text: "se estrenó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estrenarse» es la primera vez que se usa algo; aquí el horario ya llevaba un mes de uso repetido."
+        hint_specific: "Estrenar es el primer día. ¿La frase habla del primer día o de un mes después?"
+      - position: 3
+        text: "se consolidó"
+        is_correct: true
+  - position: 3
+    sentence: "Mi abuela lloraba por la mudanza y mi tía se sentó a su lado a {{blank}}, sin decir mucho, solo acompañándola."
+    hint_general: "Se trata de estar cerca de alguien que sufre, sin necesidad de hablar mucho."
+    explanation: "Consolarla: acompañar a alguien que sufre. «Consolidarla» sería hacer firme algo con el tiempo, y «corregirla» sería señalarle un error, algo fuera de lugar con alguien que llora."
+    options:
+      - position: 1
+        text: "consolidarla"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consolidar» necesita tiempo y repetición; aquí la tía está con la abuela en un momento de tristeza, no construyendo algo firme."
+        hint_specific: "Consolidar toma tiempo y repetición. ¿La escena describe eso o un solo momento de tristeza?"
+      - position: 2
+        text: "consolarla"
+        is_correct: true
+      - position: 3
+        text: "corregirla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Corregir es señalar un error; la abuela no se equivocó en nada, solo está triste por la mudanza."
+        hint_specific: "Corregir señala un fallo. ¿La abuela cometió algún error en la frase?"
+  - position: 4
+    sentence: "La entrevistadora me preguntó cómo pienso {{blank}} la confianza del equipo si me contratan como jefe."
+    hint_general: "Pregunta cómo se logra, con el tiempo, que la confianza quede firme."
+    explanation: "Consolidar: hacer que la confianza quede firme con el tiempo. «Blindar» sugiere protegerla de un ataque puntual, y «decretar» sería imponerla por orden, algo que la confianza no admite."
+    options:
+      - position: 1
+        text: "blindar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Blindar» es proteger algo de un ataque o un riesgo puntual; la pregunta es sobre construir confianza con el tiempo, no defenderla de un golpe."
+        hint_specific: "Blindar protege de un golpe puntual. ¿La pregunta habla de un ataque o de un proceso largo?"
+      - position: 2
+        text: "consolidar"
+        is_correct: true
+      - position: 3
+        text: "decretar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decretar» es imponer algo por orden; la confianza de un equipo no se ordena, se gana con el tiempo."
+        hint_specific: "Decretar es dar una orden. ¿La confianza de un equipo se gana con una orden?"
+  - position: 5
+    sentence: "Llevaban seis meses saliendo cuando decidieron mudarse juntos, un paso que {{blank}} la relación."
+    hint_general: "Un paso que hace que algo que ya venía creciendo quede más firme."
+    explanation: "Consolidó: el paso hizo más firme algo que ya venía creciendo. «Formalizó» suena a trámite de oficina, fuera de lugar entre una pareja, y «estrenó» sería el primer día juntos, no seis meses después."
+    options:
+      - position: 1
+        text: "formalizó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Formalizar» suena a trámite de oficina o contrato, un tono frío para hablar de una pareja que decide mudarse junta."
+        hint_specific: "Ese verbo suena a papeleo de oficina. ¿Encaja ese tono para hablar de una pareja?"
+      - position: 2
+        text: "estrenó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estrenar» sería el primer día de la relación; aquí ya llevaban seis meses juntos."
+        hint_specific: "Estrenar es el primer día. ¿Llevaban un día juntos o seis meses?"
+      - position: 3
+        text: "consolidó"
+        is_correct: true
+  - position: 6
+    sentence: "Antes de cerrar el trato grande, el gerente prefirió reunirse varias veces con el proveedor para {{blank}} la confianza entre las dos empresas, en vez de firmar y ya."
+    hint_general: "Se logra reuniéndose varias veces, no firmando un solo papel."
+    explanation: "Consolidar: se logra con varias reuniones, no de una vez. «Consolar» es acompañar a alguien triste, y «sellar» sería cerrar todo en un solo acto, justo lo que el gerente evita."
+    options:
+      - position: 1
+        text: "consolar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consolar» es acompañar a alguien que sufre; aquí no hay tristeza de por medio, hay dos empresas construyendo confianza."
+        hint_specific: "Consolar es para alguien triste. ¿Hay tristeza en esta escena entre empresas?"
+      - position: 2
+        text: "sellar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sellar» cierra algo en un solo acto; el gerente eligió justo lo contrario, varias reuniones en vez de firmar y ya."
+        hint_specific: "Sellar es un solo acto. ¿El gerente quiere un solo acto o varias reuniones?"
+      - position: 3
+        text: "consolidar"
+        is_correct: true
+  - position: 7
+    sentence: "Después de un año practicando cada mañana, por fin siento que {{blank}} el hábito de correr antes del trabajo."
+    hint_general: "Un hábito se siente firme después de mucho tiempo repitiéndolo, no de un par de días."
+    explanation: "Consolidé: el hábito quedó firme tras un año de repetición. «Estrené» sería el primer día de correr, y «archivé» es guardar un documento, sin relación con un hábito diario."
+    options:
+      - position: 1
+        text: "estrené"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estrenar» sería el primer día de la rutina; aquí ya pasó un año de práctica constante."
+        hint_specific: "Estrenar es el primer día. ¿La frase habla del primer día o de un año después?"
+      - position: 2
+        text: "consolidé"
+        is_correct: true
+      - position: 3
+        text: "archivé"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Archivar» es guardar un documento; correr cada mañana no es algo que se guarde en una carpeta."
+        hint_specific: "Archivar es guardar papeles. ¿Un hábito de correr se guarda en una carpeta?"
+  - position: 8
+    sentence: "Mi tío bromeó todo el asado, pero cuando habló del negocio familiar dijo, en serio, que quería {{blank}} su lugar en la empresa antes de jubilarse."
+    hint_general: "Quiere que su lugar quede firme y duradero antes de dejar la empresa."
+    explanation: "Consolidar: dejar su lugar firme antes de jubilarse. «Trasladar» es mover algo de sitio, y «acatar» es obedecer una orden, ninguno describe afirmar un lugar propio."
+    options:
+      - position: 1
+        text: "trasladar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Trasladar» es mover algo de un sitio a otro; mi tío no quiere mudar su puesto, quiere dejarlo firme antes de irse."
+        hint_specific: "Trasladar es cambiar de sitio. ¿Mi tío quiere mudar su puesto o afirmarlo?"
+      - position: 2
+        text: "consolidar"
+        is_correct: true
+      - position: 3
+        text: "acatar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acatar» es obedecer una orden; mi tío no obedece a nadie, decide algo sobre su propio lugar en la empresa."
+        hint_specific: "Acatar es obedecer una orden de otro. ¿Mi tío obedece o decide por su cuenta?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres proyectos después"
+    body: "Renata entregó el tercer proyecto del trimestre y su director la llamó aparte: «Ya nadie duda de tu criterio en este equipo». Ella sonrió: llevaba meses trabajando para consolidar ese lugar, sin atajos."
+    before_phrase: "Quiero que quede bien fijo esta vez."
+    after_phrase: "Quiero consolidar mi lugar en el equipo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El horario que por fin funcionó"
+    body: "Durante semanas, mi hijo se resistía a estudiar a la misma hora. Un mes después, se sentaba solo, sin que se lo pidiéramos. «Por fin se consolidó el hábito», le dije a su papá esa noche, aliviada."
+    before_phrase: "Espero que esta vez quede fijo."
+    after_phrase: "Por fin se consolidó el hábito."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La pregunta sobre liderazgo"
+    body: "«¿Cómo construirías confianza con tu nuevo equipo?», preguntó la entrevistadora. Tomás respondió con calma: «Primero escucho, después cumplo lo que prometo; así se consolida la confianza, no de otra forma»."
+    before_phrase: "Hago que el equipo funcione de verdad."
+    after_phrase: "Así se consolida la confianza del equipo."
+provenance:
+  generator: "hand-written for content/words, theme docencia"
+  gate: null
+  checked_on: "2026-09-18"

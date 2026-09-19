@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "suspirar"
+status: "draft"
+lemma: "suspirar"
+part_of_speech: "verbo"
+syllables: ["sus", "pi", "rar"]
+stressed_syllable: 3
+ipa_latam: "[sus.piˈɾaɾ]"
+ipa_es: "[sus.piˈɾaɾ]"
+explanation: "Dejar salir el aire poco a poco, sin querer, cuando piensas mucho en alguien que te gusta."
+example_sentence: "Nadie en la mesa dijo nada, pero todos notaron que Valentina suspiraba cada vez que miraba su teléfono."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para describir ese gesto involuntario que delata que alguien piensa en otra persona."
+when_not_to_use: "No lo uses para un suspiro de cansancio o alivio: aquí se trata solo del que delata pensar en alguien."
+collocations:
+  - "suspirar por alguien"
+  - "suspirar sin darse cuenta"
+  - "la tiene suspirando"
+family: ["suspiro"]
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["está en las nubes por", "no deja de pensar en"]
+  funcion: ["describir gesto"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "susurrar"
+    difference: "Susurrar es hablar muy bajo para que solo alguien cercano te escuche; suspirar es soltar el aire despacio, sin palabras, cuando piensas en alguien."
+    memory_trick: "Susurras palabras al oído; suspiras sin decir nada."
+replaces:
+  - before: "Está en las nubes pensando en él todo el día"
+    after: "Anda suspirando por él todo el día"
+  - before: "Se le escapa un poquito de aire cuando piensa en ella"
+    after: "Suspira sin darse cuenta cuando piensa en ella"
+exercises:
+  - position: 1
+    sentence: "Su compañera de cuarto ya sabía que, cuando Elena {{blank}} sin darse cuenta, estaba pensando en él otra vez."
+    hint_general: "Soltar el aire despacio, sin querer, cuando piensas en alguien que te gusta."
+    explanation: "Suspiraba: soltaba el aire despacio, sin querer, al pensar en alguien. «Susurraba» es hablar muy bajo con palabras, y «gritaba» sería lo contrario de un gesto tan silencioso."
+    options:
+      - position: 1
+        text: "suspiraba"
+        is_correct: true
+      - position: 2
+        text: "susurraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» es hablar muy bajo con palabras, y la frase describe un gesto sin palabras, casi sin darse cuenta."
+        hint_specific: "Susurrar necesita palabras. ¿Elena decía algo en voz baja o soltaba aire sin darse cuenta?"
+      - position: 3
+        text: "gritaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gritar» sería justo lo contrario de un gesto silencioso e involuntario como el que describe la frase."
+        hint_specific: "Gritar es lo contrario de un gesto silencioso. ¿Elena hacía algo ruidoso o algo casi imperceptible?"
+  - position: 2
+    sentence: "Cada vez que veía una foto suya, Andrés {{blank}} sin poder evitarlo."
+    hint_general: "Soltar el aire despacio, sin poder evitarlo, cuando ves algo que te recuerda a alguien."
+    explanation: "Suspiraba: soltaba el aire despacio, sin poder evitarlo. «Susurraba» es hablar muy bajo con palabras, y «reía» sería un gesto distinto, sin esa mezcla de nostalgia que describe la frase."
+    options:
+      - position: 1
+        text: "suspiraba"
+        is_correct: true
+      - position: 2
+        text: "reía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reír» sería un gesto distinto, y la frase describe algo más parecido a un gesto involuntario cargado de nostalgia."
+        hint_specific: "Reír es un gesto de alegría directa. ¿La frase describe risa o un gesto silencioso e involuntario?"
+      - position: 3
+        text: "susurraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» es hablar muy bajo con palabras, y la frase describe un gesto sin palabras, solo al ver una foto."
+        hint_specific: "Susurrar necesita palabras. ¿Andrés decía algo o soltaba aire sin darse cuenta?"
+  - position: 3
+    sentence: "Bruno {{blank}} tan fuerte al leer su mensaje que su compañero de oficina levantó la vista de la pantalla."
+    hint_general: "Soltar el aire despacio, de forma tan notoria que alguien más se da cuenta."
+    explanation: "Suspiró: soltó el aire despacio, de forma notoria. «Tosió» describe un gesto físico distinto, sin relación con pensar en alguien, y «susurró» implica palabras, no un gesto silencioso."
+    options:
+      - position: 1
+        text: "suspiró"
+        is_correct: true
+      - position: 2
+        text: "tosió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Toser» describe un gesto físico distinto, sin relación con pensar en alguien al leer un mensaje."
+        hint_specific: "Toser es un gesto físico sin relación emocional. ¿Bruno reaccionó por un malestar físico o por el mensaje?"
+      - position: 3
+        text: "susurró"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» implica decir algo en voz baja, y la frase describe un gesto silencioso al leer el mensaje, sin palabras."
+        hint_specific: "Susurrar necesita palabras. ¿Bruno dijo algo o soltó aire al leer el mensaje?"
+  - position: 4
+    sentence: "Todo el grupo se dio cuenta de que Camila {{blank}} cada vez que él pasaba cerca de su escritorio."
+    hint_general: "Soltar el aire despacio de forma tan repetida que otras personas lo notan."
+    explanation: "Suspiraba: soltaba el aire despacio de forma repetida, notada por otros. «Chismeaba» es coloquial y describe otra cosa, hablar de más, y «susurraba» implica palabras, no un gesto silencioso."
+    options:
+      - position: 1
+        text: "suspiraba"
+        is_correct: true
+      - position: 2
+        text: "chismeaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismear» es coloquial y describe hablar de más sobre otras personas, algo distinto de un gesto silencioso al verlo pasar."
+        hint_specific: "«Chismear» implica hablar de otros. ¿Camila hablaba de él con el grupo o soltaba aire sin darse cuenta?"
+      - position: 3
+        text: "susurraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» implica decir algo en voz baja, y la frase describe un gesto silencioso, sin palabras, al verlo pasar."
+        hint_specific: "Susurrar necesita palabras. ¿Camila decía algo o soltaba aire al verlo pasar?"
+  - position: 5
+    sentence: "Diego admitió que {{blank}} cada vez que escuchaba esa canción que le recordaba a su ex."
+    hint_general: "Soltar el aire despacio al recordar a alguien, aunque ya no estén juntos."
+    explanation: "Suspiraba: soltaba el aire despacio al recordar a alguien. «Cantaba» describe un gesto distinto, con voz, y «susurraba» implica palabras, sin relación con este gesto silencioso al escuchar una canción."
+    options:
+      - position: 1
+        text: "suspiraba"
+        is_correct: true
+      - position: 2
+        text: "cantaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cantar» describe un gesto con voz y melodía, y la frase describe un gesto silencioso al escuchar la canción, no cantarla."
+        hint_specific: "Cantar necesita voz y melodía. ¿Diego cantaba la canción o soltaba aire al escucharla?"
+      - position: 3
+        text: "susurraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» implica decir algo en voz baja, y la frase describe un gesto silencioso al escuchar la canción, sin palabras."
+        hint_specific: "Susurrar necesita palabras. ¿Diego decía algo o soltaba aire al escuchar la canción?"
+  - position: 6
+    sentence: "Marina no podía dejar de {{blank}} desde que él le mandó ese mensaje a la medianoche."
+    hint_general: "No poder dejar de soltar el aire despacio, pensando en alguien."
+    explanation: "Suspirar: no poder dejar de soltar el aire despacio, pensando en alguien. «Susurrar» implica palabras en voz baja, y «trabajar» describe una actividad distinta, sin relación con ese gesto involuntario."
+    options:
+      - position: 1
+        text: "suspirar"
+        is_correct: true
+      - position: 2
+        text: "trabajar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Trabajar» describe una actividad distinta, sin relación con el gesto involuntario que provoca un mensaje a la medianoche."
+        hint_specific: "Trabajar es una actividad concreta. ¿La frase habla de trabajar o de un gesto involuntario?"
+      - position: 3
+        text: "susurrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» implica decir algo en voz baja, y la frase describe un gesto silencioso, sin palabras, tras recibir el mensaje."
+        hint_specific: "Susurrar necesita palabras. ¿Marina decía algo o soltaba aire tras el mensaje?"
+  - position: 7
+    sentence: "Rubén {{blank}} tan seguido en las reuniones que sus compañeros ya bromeaban con que estaba enamorado."
+    hint_general: "Soltar el aire despacio con tanta frecuencia que hasta otros lo notan y comentan."
+    explanation: "Suspiraba: soltaba el aire despacio con tanta frecuencia que otros lo notaban. «Bostezaba» describe cansancio, y «susurraba» implica palabras, ninguno explica por qué bromeaban con que estaba enamorado."
+    options:
+      - position: 1
+        text: "suspiraba"
+        is_correct: true
+      - position: 2
+        text: "bostezaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Bostezar» describe cansancio o sueño, y la frase describe un gesto que sus compañeros asociaban con estar enamorado, no con sueño."
+        hint_specific: "Bostezar es señal de cansancio. ¿Los compañeros bromeaban con sueño o con estar enamorado?"
+      - position: 3
+        text: "susurraba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» implica decir algo en voz baja, y la frase describe un gesto silencioso, sin palabras, en las reuniones."
+        hint_specific: "Susurrar necesita palabras. ¿Rubén decía algo o soltaba aire en las reuniones?"
+  - position: 8
+    sentence: "Después de colgar el teléfono, Sofía se quedó {{blank}} mirando el techo por un buen rato."
+    hint_general: "Soltar el aire despacio y quedarte pensando en alguien después de hablar con esa persona."
+    explanation: "Suspirando: soltando el aire despacio y quedándose pensando en alguien. «Trabajando» describe una actividad distinta, y «susurrando» implica palabras, ninguno describe ese momento después de colgar."
+    options:
+      - position: 1
+        text: "suspirando"
+        is_correct: true
+      - position: 2
+        text: "trabajando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Trabajar» describe una actividad distinta, y la frase describe a Sofía mirando el techo después de colgar el teléfono, no trabajando."
+        hint_specific: "Trabajar es una actividad concreta. ¿Sofía trabajaba o miraba el techo pensando?"
+      - position: 3
+        text: "susurrando"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Susurrar» implica decir algo en voz baja, y la frase describe a Sofía en silencio, mirando el techo, sin hablar."
+        hint_specific: "Susurrar necesita palabras. ¿Sofía decía algo o estaba en silencio mirando el techo?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El gesto que la delataba"
+    body: "Su compañera de cuarto ya lo sabía identificar: cuando Elena se quedaba mirando el teléfono y soltaba el aire despacio, sin darse cuenta, era porque pensaba en él otra vez. «Estás suspirando de nuevo», le dijo entre risas."
+    before_phrase: "Estás en las nubes pensando en él otra vez."
+    after_phrase: "Estás suspirando de nuevo."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "La canción de la oficina"
+    body: "Cada vez que sonaba esa canción en la radio de la oficina, Diego se quedaba callado un momento. «Sé que suspiras cuando suena esa canción», le dijo un compañero, «no hace falta que lo niegues»."
+    before_phrase: "Sé que te quedas pensando en ella cuando suena esa canción."
+    after_phrase: "Sé que suspiras cuando suena esa canción."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Después de colgar el teléfono"
+    body: "Sofía se quedó mirando el techo un buen rato después de colgar. Su hermana entró al cuarto y la encontró así. «Llevas media hora suspirando», le dijo, sentándose a su lado, «cuéntame qué te dijo»."
+    before_phrase: "Llevas media hora en las nubes."
+    after_phrase: "Llevas media hora suspirando."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

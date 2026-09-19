@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "interesarse"
+status: "draft"
+lemma: "interesarse"
+part_of_speech: "verbo"
+syllables: ["in", "te", "re", "sar", "se"]
+stressed_syllable: 4
+ipa_latam: "[in.te.ɾeˈsaɾ.se]"
+ipa_es: "[in.te.ɾeˈsaɾ.se]"
+explanation: "Preguntar por alguien o por lo que le pasa, con ganas reales de saber la respuesta."
+example_sentence: "Después de la operación, hasta su vecino más callado se interesó por cómo seguía su padre."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para un gesto concreto de preguntar por alguien, no solo para sentir curiosidad en silencio."
+when_not_to_use: "No lo uses para curiosear sobre la vida de alguien sin buena intención: interesarse implica preguntar con cuidado genuino."
+collocations:
+  - "interesarse por alguien"
+  - "se interesó por cómo estaba"
+  - "nadie se interesó"
+family: []
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["preguntar cómo está", "preocuparse por"]
+  funcion: ["preguntar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "curiosear"
+    difference: "Curiosear es indagar por simple curiosidad, a veces sin buena intención; interesarse es preguntar por alguien con cuidado genuino."
+    memory_trick: "Curioseas por saber un chisme; te interesas por cuidar a alguien."
+replaces:
+  - before: "Le preguntó cómo estaba de verdad, con ganas de saber"
+    after: "Se interesó por cómo estaba de verdad"
+  - before: "Preguntó por su papá aunque casi no lo conocía"
+    after: "Se interesó por su papá aunque casi no lo conocía"
+exercises:
+  - position: 1
+    sentence: "Después de la operación, hasta su vecino más callado se {{blank}} por cómo seguía su padre."
+    hint_general: "Preguntar por alguien con ganas reales de saber la respuesta."
+    explanation: "Interesó: preguntó por alguien con ganas reales de saber. «Curioseó» implica indagar sin buena intención, y «olvidó» describe justo lo contrario de preguntar por alguien."
+    options:
+      - position: 1
+        text: "interesó"
+        is_correct: true
+      - position: 2
+        text: "curioseó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosear» implica indagar por simple curiosidad, a veces sin buena intención, y aquí el vecino pregunta con cuidado genuino."
+        hint_specific: "Curiosear puede ser indiscreto. ¿El vecino pregunta con cuidado o solo indaga por chisme?"
+      - position: 3
+        text: "olvidó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Olvidar» describe justo lo contrario, y la frase dice que el vecino preguntó por el padre, no que se olvidara de él."
+        hint_specific: "Olvidar es no acordarse de algo. ¿El vecino se olvidó del padre o preguntó por él?"
+  - position: 2
+    sentence: "Nadie del equipo se {{blank}} por cómo le había ido a Camila en la entrevista médica de esa mañana."
+    hint_general: "Preguntar por alguien con cuidado genuino, algo que en esta frase nadie hizo."
+    explanation: "Interesó: preguntó por alguien con cuidado genuino. «Interceptó» es detener algo en su camino, y «felicitó» implica celebrar un logro, sin relación con preguntar por una entrevista médica."
+    options:
+      - position: 1
+        text: "interesó"
+        is_correct: true
+      - position: 2
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, como un balón o un mensaje, sin relación con preguntar por la entrevista médica de Camila."
+        hint_specific: "Interceptar detiene algo físico. ¿La frase habla de detener algo o de preguntar por Camila?"
+      - position: 3
+        text: "felicitó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Felicitar» implica celebrar un logro, y la frase dice que nadie preguntó nada, no que hubiera algo que celebrar."
+        hint_specific: "Felicitar celebra un logro. ¿La frase habla de celebrar algo o de que nadie preguntó nada?"
+  - position: 3
+    sentence: "El nuevo del equipo se {{blank}} por cada uno de sus compañeros antes de hablar de su propio trabajo."
+    hint_general: "Preguntar por otras personas antes de hablar de uno mismo."
+    explanation: "Interesó: preguntó por otras personas antes de hablar de sí mismo. «Presumió» implica hablar bien de uno mismo, justo lo contrario, y «interceptó» es detener algo físico."
+    options:
+      - position: 1
+        text: "interesó"
+        is_correct: true
+      - position: 2
+        text: "presumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presumir» implica hablar bien de uno mismo, justo lo contrario de preguntar por los demás antes de hablar de su propio trabajo."
+        hint_specific: "Presumir habla de uno mismo. ¿El nuevo hablaba de sí mismo o preguntaba por sus compañeros?"
+      - position: 3
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con preguntar por los compañeros de equipo."
+        hint_specific: "Interceptar detiene algo físico. ¿El nuevo detuvo algo o preguntó por sus compañeros?"
+  - position: 4
+    sentence: "Aunque apenas se conocían, la vecina se {{blank}} por la salud de su madre cada vez que se cruzaban."
+    hint_general: "Preguntar por la situación de alguien, incluso sin conocerlo mucho."
+    explanation: "Interesaba: preguntaba por la situación de alguien, incluso sin conocerlo mucho. «Chismeaba» es coloquial y sugiere hablar mal de otros, y «interceptaba» es detener algo físico; ninguno describe esa pregunta."
+    options:
+      - position: 1
+        text: "interesaba"
+        is_correct: true
+      - position: 2
+        text: "chismeaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismear» es coloquial y sugiere hablar mal de otros, y aquí la vecina preguntaba con cuidado genuino por la salud de la madre."
+        hint_specific: "Chismear implica hablar mal de alguien. ¿La vecina hablaba mal o preguntaba con cuidado?"
+      - position: 3
+        text: "interceptaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con preguntar por la salud de la madre de alguien."
+        hint_specific: "Interceptar detiene algo físico. ¿La vecina detenía algo o preguntaba por la salud de la madre?"
+  - position: 5
+    sentence: "El entrenador nuevo se {{blank}} por la vida de cada jugador fuera de la cancha, no solo por su rendimiento."
+    hint_general: "Preguntar por la vida de alguien más allá de lo que ese vínculo exige."
+    explanation: "Interesaba: preguntaba por la vida de alguien más allá de lo esperado. «Evaluaba» implica medir un rendimiento, y «interceptaba» es detener algo físico; ninguno describe eso."
+    options:
+      - position: 1
+        text: "interesaba"
+        is_correct: true
+      - position: 2
+        text: "evaluaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Evaluar» implica medir un rendimiento, y la frase distingue eso de preguntar por la vida de cada jugador fuera de la cancha."
+        hint_specific: "Evaluar mide un rendimiento. ¿La frase habla de medir el rendimiento o de preguntar por su vida?"
+      - position: 3
+        text: "interceptaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con preguntar por la vida de cada jugador."
+        hint_specific: "Interceptar detiene algo físico. ¿El entrenador detenía algo o preguntaba por sus jugadores?"
+  - position: 6
+    sentence: "Después de años sin hablarse, su tío se {{blank}} por cómo le había ido en la universidad."
+    hint_general: "Preguntar por alguien después de mucho tiempo sin contacto."
+    explanation: "Interesó: preguntó por alguien después de mucho tiempo sin contacto. «Ninguneó» implica ignorar a propósito, y «interceptó» es detener algo físico; ninguno describe preguntar por su vida."
+    options:
+      - position: 1
+        text: "interesó"
+        is_correct: true
+      - position: 2
+        text: "ninguneó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ningunear» implica ignorar a alguien a propósito, justo lo contrario de preguntar por cómo le había ido en la universidad."
+        hint_specific: "Ningunear es ignorar a propósito. ¿El tío ignoró a su sobrino o preguntó por él?"
+      - position: 3
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con preguntar por los años de universidad de alguien."
+        hint_specific: "Interceptar detiene algo físico. ¿El tío detuvo algo o preguntó por la universidad?"
+  - position: 7
+    sentence: "La directora se tomó un momento para {{blank}} por la familia de cada empleado antes de la reunión de resultados."
+    hint_general: "Tomarse un momento para preguntar por la vida personal de alguien, antes de un tema de trabajo."
+    explanation: "Interesarse: tomarse un momento para preguntar por la vida personal de alguien. «Preocuparse» implica una carga de ansiedad, y «interceptarse» no tiene ese sentido reflexivo; ninguno describe esa pregunta."
+    options:
+      - position: 1
+        text: "interesarse"
+        is_correct: true
+      - position: 2
+        text: "preocuparse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preocuparse» implica una carga de ansiedad sobre algo, y la frase describe solo una pregunta breve y genuina antes de la reunión."
+        hint_specific: "Preocuparse implica ansiedad. ¿La directora sintió ansiedad o solo preguntó con cuidado?"
+      - position: 3
+        text: "interceptarse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptarse» no tiene el sentido de detener algo en su camino de forma reflexiva ni relación con preguntar por una familia."
+        hint_specific: "Interceptar detiene algo físico. ¿La directora detuvo algo o preguntó por las familias?"
+  - position: 8
+    sentence: "Su suegra empezó a {{blank}} por sus proyectos personales, y eso cambió por completo la relación entre las dos."
+    hint_general: "Empezar a preguntar por los proyectos de alguien, con cuidado genuino."
+    explanation: "Interesarse: empezar a preguntar por los proyectos de alguien, con cuidado genuino. «Competir» implica medirse contra otra persona, y «interceptarse» no tiene ese sentido reflexivo; ninguno describe esa pregunta."
+    options:
+      - position: 1
+        text: "interesarse"
+        is_correct: true
+      - position: 2
+        text: "competir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Competir» implica medirse contra otra persona, y la frase dice que la suegra empezó a preguntar por los proyectos, no a competir con ella."
+        hint_specific: "Competir es medirse contra alguien. ¿La suegra competía o preguntaba con cuidado?"
+      - position: 3
+        text: "interceptarse"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptarse» no tiene el sentido de detener algo en su camino de forma reflexiva ni relación con preguntar por proyectos personales."
+        hint_specific: "Interceptar detiene algo físico. ¿La suegra detuvo algo o preguntó por sus proyectos?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El vecino más callado"
+    body: "Después de la operación de su padre, Marina no esperaba que su vecino más reservado le preguntara nada. «Me interesé por saber cómo sigue, espero que esté mejor», le dijo un día en el ascensor, y esas pocas palabras la ayudaron más de lo que él imaginaba."
+    before_phrase: "Quería saber cómo sigue tu padre de verdad."
+    after_phrase: "Me interesé por saber cómo sigue tu padre."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El tío después de tanto tiempo"
+    body: "Llevaban años sin hablar más que en las fiestas de fin de año. Esta vez, su tío se sentó a su lado y le preguntó por sus estudios con calma. «Nunca pensé que te interesarías tanto por mi carrera», le dijo, sorprendido."
+    before_phrase: "Nunca pensé que preguntarías tanto por mi carrera."
+    after_phrase: "Nunca pensé que te interesarías tanto por mi carrera."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Antes de los resultados"
+    body: "Antes de repasar los números del trimestre, la directora se tomó cinco minutos para preguntar por la familia de cada uno. «Me gusta interesarme por ustedes antes de hablar de números», dijo, y el ambiente de la reunión cambió por completo."
+    before_phrase: "Me gusta preguntar por la gente antes de hablar de números."
+    after_phrase: "Me gusta interesarme por la gente antes de hablar de números."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

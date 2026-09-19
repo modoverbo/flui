@@ -1,0 +1,229 @@
+schema_version: 1
+slug: "profundizar"
+status: "draft"
+lemma: "profundizar"
+part_of_speech: "verbo"
+syllables: ["pro", "fun", "di", "zar"]
+stressed_syllable: 4
+ipa_latam: "[pro.fun.diˈsar]"
+ipa_es: "[pro.fun.diˈθar]"
+explanation: "Explorar un tema con cuidado y más allá de lo básico, en vez de quedarse con la primera idea."
+example_sentence: "En la segunda cita, dejaron las preguntas superficiales y profundizaron en lo que cada uno esperaba de una relación."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala cuando pasas de lo general a lo importante de un tema, ya sea solo o con otra persona."
+when_not_to_use: "No la uses para hablar de investigar datos sueltos: hace falta ir más allá de lo obvio en un tema ya planteado."
+collocations:
+  - "profundizar en un tema"
+  - "profundizar en la relación"
+  - "sin profundizar demasiado"
+replaces:
+  - before: "Meterse más a fondo en el tema"
+    after: "Profundizar en el tema"
+  - before: "No quedarse en lo superficial"
+    after: "Profundizar en el asunto"
+  - before: "Hablar más en detalle de algo"
+    after: "Profundizar en algo"
+family: ["profundidad", "profundo"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 2
+tags:
+  comodin: ["ir más a fondo", "no quedarse en lo superficial"]
+  funcion: ["explicar", "precisar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "profetizar"
+    difference: "«Profetizar» es anunciar algo que va a pasar en el futuro; «profundizar» es explorar con más detalle algo que ya está sobre la mesa."
+    memory_trick: "Profetizas el futuro; profundizas en el presente."
+  - confused_with: "indagar"
+    difference: "«Indagar» busca información nueva que no tenías; «profundizar» va más hondo en algo que ya conoces o que ya se dijo."
+exercises:
+  - position: 1
+    sentence: "En la reunión de cierre de año, en vez de solo repetir las cifras generales, el equipo decidió {{blank}} en qué había fallado el plan de marketing y por qué."
+    hint_general: "Piensa en ir más allá de las cifras generales para entender por qué falló algo concreto."
+    explanation: "Profundizar: el equipo revisó con detalle lo que ya había pasado. «Profetizar» es anunciar el futuro, y «aclarar» es despejar una confusión que aquí no existía."
+    options:
+      - position: 1
+        text: "profetizar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Profetizar» es anunciar algo que va a pasar en el futuro, y aquí el equipo no predijo nada: revisó con detalle lo que ya había pasado."
+        hint_specific: "«Profetizar» habla de anunciar el futuro. ¿El equipo predijo algo o revisó con detalle lo que ya pasó?"
+      - position: 2
+        text: "profundizar"
+        is_correct: true
+      - position: 3
+        text: "aclarar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» es despejar una confusión o una duda, y aquí no había ninguna confusión: el equipo quería entender con más detalle una causa, no aclarar un malentendido."
+        hint_specific: "«Aclarar» sirve para despejar dudas o confusiones. ¿Aquí había una confusión que despejar?"
+  - position: 2
+    sentence: "El entrevistador no se conformó con la primera respuesta sobre el conflicto con su jefe anterior, y le pidió al candidato que {{blank}} un poco más en lo que había pasado."
+    hint_general: "Busca la palabra para pedirle a alguien que cuente con más detalle algo que ya mencionó."
+    explanation: "Profundizara: se pedía contar con más detalle algo ya dicho. «Dilucidara» es una palabra muy formal para una entrevista, y «indagara» habla de buscar datos nuevos, no de detallar algo ya mencionado."
+    options:
+      - position: 1
+        text: "dilucidara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dilucidar» es una palabra muy formal, típica de informes o debates serios, y suena forzada para pedirle a alguien en una entrevista que cuente más."
+        hint_specific: "«Dilucidar» es una palabra muy formal y algo rígida. ¿Encaja ese tono en una conversación de entrevista?"
+      - position: 2
+        text: "indagara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indagar» es investigar buscando datos nuevos, y aquí no se pedían datos nuevos, sino que el candidato contara con más detalle algo que ya había mencionado."
+        hint_specific: "«Indagar» habla de buscar datos nuevos. ¿Aquí se pedían datos nuevos o más detalle de algo ya dicho?"
+      - position: 3
+        text: "profundizara"
+        is_correct: true
+  - position: 3
+    sentence: "En el video, en vez de solo opinar sobre la noticia como todos, el creador decidió {{blank}} en las cifras reales detrás del titular."
+    hint_general: "Se trata de meterse en los datos concretos detrás de una noticia, no solo opinar por encima."
+    explanation: "Profundizar: el creador se metió en las cifras detrás del titular. «Diseccionar» suena a un término de laboratorio, y «explorar» es recorrer un tema por encima, no meterse en cifras concretas."
+    options:
+      - position: 1
+        text: "diseccionar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Diseccionar» es un término casi clínico, para cortar algo en partes con precisión de laboratorio, y suena raro para un video que solo revisa cifras con calma."
+        hint_specific: "«Diseccionar» suena a un término de laboratorio. ¿Encaja ese tono para un video que revisa cifras con calma?"
+      - position: 2
+        text: "explorar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explorar» es recorrer un tema en general sin ir necesariamente muy hondo, y aquí el creador se metió específicamente en las cifras detrás del titular."
+        hint_specific: "«Explorar» es recorrer un tema por encima. ¿Aquí el creador se quedó por encima o se metió en las cifras concretas?"
+      - position: 3
+        text: "profundizar"
+        is_correct: true
+  - position: 4
+    sentence: "Después de que su hija le contara que quería cambiar de carrera, Marisol no la interrumpió: dejó que {{blank}} en sus razones antes de opinar."
+    hint_general: "Piensa en dejar que alguien explique el fondo de sus razones, con calma y sin prisa."
+    explanation: "Profundizara: dejó que su hija explicara el fondo de sus razones. «Analizara» implica separar algo con frialdad, y «detallara» es dar datos sueltos, no explicar el fondo de algo."
+    options:
+      - position: 1
+        text: "analizara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Analizar» es separar algo en partes para estudiarlo con frialdad, y aquí Marisol solo quería que su hija contara sus razones con calma, no que las desarmara paso a paso."
+        hint_specific: "«Analizar» implica separar algo en partes con frialdad. ¿Aquí hacía falta ese método o solo contar con calma?"
+      - position: 2
+        text: "detallara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallar» es dar datos concretos uno por uno, y aquí lo que Marisol quería no eran más datos sueltos, sino que su hija explicara el fondo de sus razones."
+        hint_specific: "«Detallar» es dar datos concretos uno por uno. ¿Aquí faltaban datos sueltos o entender el fondo de las razones?"
+      - position: 3
+        text: "profundizara"
+        is_correct: true
+  - position: 5
+    sentence: "El informe tenía que ser breve, así que Renato decidió {{blank}} solo en el punto que más dudas generaba y dejar el resto apenas mencionado."
+    hint_general: "Busca la palabra para ir hondo en un solo punto, sin alargar el resto del texto."
+    explanation: "Profundizar: Renato fue hondo en un solo punto del informe. «Extenderse» habla de alargar un texto, y «examinar» es revisar algo para comprobar su estado, no entender mejor un punto."
+    options:
+      - position: 1
+        text: "extenderse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extenderse» habla de alargar un texto o una explicación, y el informe tenía que ser breve: lo que hizo Renato fue ir hondo en un solo punto, no alargar el texto."
+        hint_specific: "«Extenderse» habla de alargar un texto. ¿El informe debía ser largo o solo ir hondo en un punto?"
+      - position: 2
+        text: "examinar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Examinar» es revisar algo con cuidado para comprobar su estado, y aquí Renato no comprobaba nada: buscaba entender mejor un punto que generaba dudas."
+        hint_specific: "«Examinar» es revisar algo para comprobar su estado. ¿Aquí se comprobaba algo o se buscaba entender mejor un punto?"
+      - position: 3
+        text: "profundizar"
+        is_correct: true
+  - position: 6
+    sentence: "El hilo que publicó Nadia sobre el tema no se quedó en la idea general: {{blank}} en tres ejemplos concretos de su propia experiencia."
+    hint_general: "Se trata de meterse más en una idea con ejemplos concretos, no solo alargar el texto."
+    explanation: "Profundizó: Nadia fue más hondo en su idea con ejemplos concretos. «Desarrolló» habla de construir una idea nueva paso a paso, y «amplió» habla de hacer algo más largo, no más concreto."
+    options:
+      - position: 1
+        text: "desarrolló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desarrollar» es ir construyendo una idea paso a paso, y aquí Nadia no construyó una idea nueva: se metió más hondo en la que ya tenía con ejemplos concretos."
+        hint_specific: "«Desarrollar» habla de construir una idea paso a paso. ¿Aquí se construyó una idea nueva o se fue más hondo en la misma?"
+      - position: 2
+        text: "amplió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ampliar» es hacer más grande o más largo algo, y aquí Nadia no alargó el hilo: fue más específica y concreta con tres ejemplos de su vida."
+        hint_specific: "«Ampliar» habla de hacer algo más grande o más largo. ¿Aquí el hilo se hizo más largo o más concreto?"
+      - position: 3
+        text: "profundizó"
+        is_correct: true
+  - position: 7
+    sentence: "Antes de la segunda entrevista, Beto no se conformó con leer la misión de la empresa: {{blank}} en los proyectos concretos que había hecho el equipo ese año."
+    hint_general: "Piensa en meterse más en unos proyectos concretos, más allá de la información básica."
+    explanation: "Profundizó: Beto se metió más hondo en proyectos concretos. «Investigó» habla de buscar información desde cero, y «abordó» es empezar a tratar un tema, no ir más hondo en uno ya conocido."
+    options:
+      - position: 1
+        text: "profundizó"
+        is_correct: true
+      - position: 2
+        text: "investigó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Investigar» es buscar información nueva desde cero, y aquí Beto ya tenía la información básica de la empresa: lo que hizo fue meterse más hondo en unos proyectos concretos."
+        hint_specific: "«Investigar» habla de buscar información desde cero. ¿Aquí Beto partía de cero o ya sabía lo básico y fue más hondo?"
+      - position: 3
+        text: "abordó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Abordar» es empezar a tratar un tema, y aquí Beto ya conocía el tema: lo que hizo fue meterse más hondo en proyectos concretos, no empezar desde el principio."
+        hint_specific: "«Abordar» habla de empezar a tratar un tema. ¿Aquí Beto empezaba el tema o ya lo conocía y fue más hondo?"
+  - position: 8
+    sentence: "En vez de solo decir que el viaje había sido caro, Camilo {{blank}} con su pareja en qué gastos valían la pena repetir y cuáles no."
+    hint_general: "Busca la palabra para hablar a fondo sobre qué gastos valen la pena, no solo hacer una lista."
+    explanation: "Profundizó: Camilo habló a fondo con su pareja sobre los gastos. «Desglosó» es separar un total en partes numéricas, y «sondeó» es tantear una opinión sin comprometerse, no hablar a fondo."
+    options:
+      - position: 1
+        text: "desglosó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desglosar» es separar un total en partes, número por número, y aquí Camilo no hizo una lista de gastos: habló con su pareja sobre qué valía la pena repetir."
+        hint_specific: "«Desglosar» es separar un total en partes numéricas. ¿Aquí se hizo una lista de números o se habló del valor de cada gasto?"
+      - position: 2
+        text: "sondeó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sondear» es tantear con cuidado la opinión de alguien sin comprometerse, y aquí Camilo no solo tanteó: habló a fondo con su pareja sobre los gastos."
+        hint_specific: "«Sondear» es tantear la opinión de alguien con cuidado. ¿Aquí solo se tanteó o se habló a fondo del tema?"
+      - position: 3
+        text: "profundizó"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La pregunta que no se quedó en la superficie"
+    body: "Cuando el equipo presentó los resultados del trimestre, todos aplaudieron el crecimiento general, pero nadie explicaba de dónde venía. Marisol pidió profundizar en los números antes de celebrar. Esa pregunta fue la que realmente abrió la conversación en la siguiente reunión."
+    before_phrase: "Vamos a meternos más en los números."
+    after_phrase: "Vamos a profundizar en los números."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Más allá del currículum"
+    body: "El entrevistador dejó a un lado las preguntas típicas y le pidió al candidato que profundizara en un proyecto que había fallado. La respuesta, con dudas incluidas, dijo más que cualquier logro de la hoja de vida."
+    before_phrase: "Cuéntame un poco más de eso."
+    after_phrase: "Profundicemos en ese proyecto."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La conversación que faltaba"
+    body: "Cuando su hijo dijo que quería dejar la universidad, Rosa no reaccionó de inmediato. Le pidió que se sentaran a hablar con calma y que profundizara en lo que sentía, no solo en la decisión. Al final de la charla, entendió mucho más de lo que esperaba."
+    before_phrase: "Cuéntame bien qué es lo que sientes."
+    after_phrase: "Profundicemos en lo que sientes."
+provenance:
+  generator: "hand-authored for redes-sociales theme batch"
+  gate: null
+  checked_on: "2026-09-18"

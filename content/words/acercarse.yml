@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "acercarse"
+status: "draft"
+lemma: "acercarse"
+part_of_speech: "verbo"
+syllables: ["a", "cer", "car", "se"]
+stressed_syllable: 3
+ipa_latam: "[a.seɾˈkaɾ.se]"
+ipa_es: "[a.θeɾˈkaɾ.se]"
+explanation: "Caminar hacia alguien para hablarle o para saber cómo está, cuando esa persona parece necesitarlo."
+example_sentence: "Nadie más se movió, pero Marta se acercó a la chica que lloraba sola en la escalera."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para ese gesto concreto de ir hacia alguien que parece necesitar compañía, no solo estar cerca por casualidad."
+when_not_to_use: "No lo uses para describir una cercanía física casual: acercarse implica una intención de ir hacia alguien."
+collocations:
+  - "acercarse a alguien"
+  - "acercarse en silencio"
+  - "nadie quiso acercarse"
+family: []
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["ir a ver cómo está", "acercarse a hablar"]
+  funcion: ["acompañar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "cercar"
+    difference: "Cercar es rodear algo, como un terreno o un espacio; acercarse es ir hacia alguien para hablarle o acompañarlo."
+    memory_trick: "Cercas un terreno; te acercas a una persona."
+replaces:
+  - before: "Fue a ver cómo estaba la chica que lloraba sola"
+    after: "Se acercó a la chica que lloraba sola"
+  - before: "Se fue caminando hacia su amigo para preguntarle qué pasaba"
+    after: "Se acercó a su amigo para preguntarle qué pasaba"
+exercises:
+  - position: 1
+    sentence: "Nadie más se movió, pero Marta {{blank}} a la chica que lloraba sola en la escalera."
+    hint_general: "Ir hacia alguien para hablarle o saber cómo está, cuando parece necesitarlo."
+    explanation: "Se acercó: fue hacia alguien que parecía necesitar compañía. «Se cercó» implica rodear un espacio, y «se alejó» describe justo lo contrario de ir hacia la chica."
+    options:
+      - position: 1
+        text: "se acercó"
+        is_correct: true
+      - position: 2
+        text: "se cercó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con ir hacia una persona que llora sola."
+        hint_specific: "Cercar rodea un espacio físico. ¿Marta rodeó algo o fue hacia la chica?"
+      - position: 3
+        text: "se alejó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alejarse» describe justo lo contrario, y la frase dice que Marta fue hacia la chica, mientras nadie más se movía."
+        hint_specific: "Alejarse es lo contrario de ir hacia alguien. ¿Marta fue hacia la chica o se alejó de ella?"
+  - position: 2
+    sentence: "Bruno {{blank}} a su compañero apenas notó que llevaba días sin hablar en las reuniones."
+    hint_general: "Ir hacia alguien apenas notas que algo no anda bien."
+    explanation: "Se acercó: fue hacia alguien apenas notó que algo no andaba bien. «Se cercó» implica rodear un espacio, y «se burló» describe una reacción muy distinta a preocuparse por un compañero."
+    options:
+      - position: 1
+        text: "se acercó"
+        is_correct: true
+      - position: 2
+        text: "se burló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Burlarse» describe una reacción muy distinta, y la frase dice que Bruno notó algo preocupante y fue hacia su compañero, no que se riera de él."
+        hint_specific: "Burlarse es reírse de alguien. ¿Bruno se burló de su compañero o fue hacia él preocupado?"
+      - position: 3
+        text: "se cercó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con ir hacia un compañero de trabajo."
+        hint_specific: "Cercar rodea un espacio físico. ¿Bruno rodeó algo o fue hacia su compañero?"
+  - position: 3
+    sentence: "En vez de esperar a que ella hablara primero, Diego {{blank}} y le preguntó directamente qué le pasaba."
+    hint_general: "Ir hacia alguien en lugar de esperar a que esa persona dé el primer paso."
+    explanation: "Se acercó: fue hacia alguien en lugar de esperar. «Se cercó» implica rodear un espacio, y «se escondió» describe justo lo contrario de ir a preguntarle qué le pasaba."
+    options:
+      - position: 1
+        text: "se acercó"
+        is_correct: true
+      - position: 2
+        text: "se escondió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esconderse» describe justo lo contrario, y la frase dice que Diego fue directamente a preguntarle qué le pasaba, no que se escondiera."
+        hint_specific: "Esconderse es lo contrario de ir hacia alguien. ¿Diego se escondió o fue a preguntarle?"
+      - position: 3
+        text: "se cercó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con ir a preguntarle algo a alguien."
+        hint_specific: "Cercar rodea un espacio físico. ¿Diego rodeó algo o fue a preguntarle?"
+  - position: 4
+    sentence: "El vecino nuevo todavía no {{blank}} a nadie del edificio, aunque lleva un mes viviendo ahí."
+    hint_general: "Ir hacia alguien para conocerlo, algo que en esta frase todavía no pasó."
+    explanation: "Se ha acercado: ha ido hacia alguien para conocerlo. «Se ha copado» es coloquial y regional, y «se ha cercado» implica rodear un espacio, ninguno describe ir a conocer a los vecinos."
+    options:
+      - position: 1
+        text: "se ha acercado"
+        is_correct: true
+      - position: 2
+        text: "se ha copado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Se ha copado» es coloquial y regional, y aquí se busca nombrar con precisión que el vecino nuevo todavía no fue a conocer a nadie."
+        hint_specific: "«Se ha copado» es una palabra muy regional. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "se ha cercado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con ir a conocer a los vecinos del edificio."
+        hint_specific: "Cercar rodea un espacio físico. ¿El vecino rodeó algo o fue a conocer a alguien?"
+  - position: 5
+    sentence: "Después de ver que su hija no probaba bocado, su padre {{blank}} despacio, sin decir nada todavía."
+    hint_general: "Ir hacia alguien con cuidado, incluso antes de decir una palabra."
+    explanation: "Se acercó: fue hacia alguien con cuidado, incluso antes de hablar. «Se cercó» implica rodear un espacio, y «se distrajo» describe algo muy distinto a prestar atención a su hija."
+    options:
+      - position: 1
+        text: "se acercó"
+        is_correct: true
+      - position: 2
+        text: "se distrajo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distraerse» describe apartar la atención de algo, y la frase dice que su padre prestó atención y fue hacia ella con cuidado."
+        hint_specific: "Distraerse aparta la atención. ¿Su padre se distrajo o prestó atención a su hija?"
+      - position: 3
+        text: "se cercó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con ir hacia una hija preocupada."
+        hint_specific: "Cercar rodea un espacio físico. ¿Su padre rodeó algo o fue hacia ella?"
+  - position: 6
+    sentence: "La coordinadora {{blank}} a cada nuevo integrante durante la primera semana, para que nadie se sintiera solo."
+    hint_general: "Ir hacia cada persona nueva de un grupo, para que se sienta incluida."
+    explanation: "Se acercaba: iba hacia cada persona nueva del grupo. «Se cercaba» implica rodear un espacio, y «se alejaba» describe justo lo contrario de buscar que nadie se sintiera solo."
+    options:
+      - position: 1
+        text: "se acercaba"
+        is_correct: true
+      - position: 2
+        text: "se alejaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alejarse» describe justo lo contrario, y la frase dice que la coordinadora buscaba que nadie se sintiera solo, yendo hacia cada persona nueva."
+        hint_specific: "Alejarse es lo contrario de ir hacia alguien. ¿La coordinadora se alejaba o iba hacia cada persona nueva?"
+      - position: 3
+        text: "se cercaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con ir hacia cada persona nueva del grupo."
+        hint_specific: "Cercar rodea un espacio físico. ¿La coordinadora rodeaba algo o iba hacia cada persona nueva?"
+  - position: 7
+    sentence: "Cuando vio que su amigo se había quedado solo en la fiesta, Elena {{blank}} y se quedó charlando con él toda la noche."
+    hint_general: "Ir hacia alguien que parece estar solo, para acompañarlo."
+    explanation: "Se acercó: fue hacia alguien que parecía estar solo. «Se cercó» implica rodear un espacio, y «se rió» describe otra reacción, sin relación con acompañar a un amigo solo en una fiesta."
+    options:
+      - position: 1
+        text: "se acercó"
+        is_correct: true
+      - position: 2
+        text: "se rió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reírse» describe otra reacción, y la frase dice que Elena se quedó charlando con su amigo toda la noche, no que se riera de la situación."
+        hint_specific: "Reírse es una reacción de humor. ¿Elena se rió o se quedó charlando con su amigo?"
+      - position: 3
+        text: "se cercó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con acompañar a un amigo solo en una fiesta."
+        hint_specific: "Cercar rodea un espacio físico. ¿Elena rodeó algo o fue hacia su amigo?"
+  - position: 8
+    sentence: "Aunque no sabía qué decir, Hugo {{blank}} a su padre después de que perdiera el negocio y solo lo abrazó."
+    hint_general: "Ir hacia alguien en un momento difícil, aunque no sepas qué decir."
+    explanation: "Se acercó: fue hacia alguien en un momento difícil, aunque no supiera qué decir. «Se cercó» implica rodear un espacio, y «se apartó» describe justo lo contrario de ir hacia su padre."
+    options:
+      - position: 1
+        text: "se acercó"
+        is_correct: true
+      - position: 2
+        text: "se apartó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apartarse» describe justo lo contrario, y la frase dice que Hugo fue hacia su padre y lo abrazó, no que se alejara de él."
+        hint_specific: "Apartarse es lo contrario de ir hacia alguien. ¿Hugo se apartó de su padre o fue hacia él?"
+      - position: 3
+        text: "se cercó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cercar» es rodear un espacio o un terreno, sin relación con ir hacia un padre que perdió su negocio."
+        hint_specific: "Cercar rodea un espacio físico. ¿Hugo rodeó algo o fue hacia su padre?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La escalera"
+    body: "Nadie más se movió cuando la vieron llorar en la escalera. Marta se acercó, se sentó a su lado sin decir nada, y esperó. Minutos después, la chica empezó a hablar. «Gracias por acercarte, nadie más lo hizo», le dijo al final."
+    before_phrase: "Gracias por venir a ver cómo estaba, nadie más lo hizo."
+    after_phrase: "Gracias por acercarte, nadie más lo hizo."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "emocional"
+    title: "Los días de silencio"
+    body: "Llevaba días sin decir casi nada en las reuniones. Bruno lo notó y, al terminar una, se acercó a su escritorio. «Quería acercarme a preguntarte si todo está bien», le dijo con calma, y su compañero por fin contó lo que le pasaba."
+    before_phrase: "Quería venir a preguntarte si todo está bien."
+    after_phrase: "Quería acercarme a preguntarte si todo está bien."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Después de la mala noticia"
+    body: "Hugo no encontraba palabras para su padre, así que no dijo nada. Se acercó despacio y lo abrazó fuerte. Su padre, sin soltarlo, le dijo al oído: «Con que te acercaras ya era suficiente»."
+    before_phrase: "Con que vinieras a mi lado ya era suficiente."
+    after_phrase: "Con que te acercaras ya era suficiente."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

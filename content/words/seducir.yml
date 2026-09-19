@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "seducir"
+status: "draft"
+lemma: "seducir"
+part_of_speech: "verbo"
+syllables: ["se", "du", "cir"]
+stressed_syllable: 3
+ipa_latam: "[se.ðuˈsiɾ]"
+ipa_es: "[se.ðuˈθiɾ]"
+explanation: "Atraer a alguien con encanto, hasta el punto de despertarle mucho interés."
+example_sentence: "Con su forma de contar anécdotas, Pablo terminó por seducir a toda la mesa esa noche."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo tanto para el encanto entre dos personas como para una idea o propuesta que atrapa a un grupo."
+when_not_to_use: "No lo uses para describir un engaño con mala intención: seducir es atraer con encanto, no manipular con mentiras."
+collocations:
+  - "seducir con"
+  - "el poder de seducir"
+  - "seducir a la audiencia"
+family: ["seducción", "seductor"]
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["encantar", "atraer"]
+  funcion: ["atraer"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sedar"
+    difference: "Sedar es calmar o adormecer a alguien, normalmente con un medicamento; seducir es atraer a alguien con encanto."
+    memory_trick: "Sedar calma; seducir despierta el interés."
+replaces:
+  - before: "Le encanta a todo el mundo con lo que cuenta"
+    after: "Sabe seducir a todo el mundo con lo que cuenta"
+  - before: "Logró que le gustara mucho con su forma de ser"
+    after: "Logró seducirla con su forma de ser"
+exercises:
+  - position: 1
+    sentence: "Con su forma de contar anécdotas, Pablo terminó por {{blank}} a toda la mesa esa noche."
+    hint_general: "Atraer a alguien con encanto, hasta despertarle mucho interés."
+    explanation: "Seducir: atraer a alguien con encanto, hasta despertarle mucho interés. «Sedar» es calmar con un medicamento, y «aburrir» describe justo lo contrario de despertar interés."
+    options:
+      - position: 1
+        text: "seducir"
+        is_correct: true
+      - position: 2
+        text: "sedar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedar» es calmar o adormecer a alguien, normalmente con un medicamento, y aquí Pablo despertó el interés de toda la mesa con sus anécdotas."
+        hint_specific: "Sedar adormece a alguien. ¿Pablo adormeció a la mesa o despertó su interés?"
+      - position: 3
+        text: "aburrir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburrir» describe justo lo contrario de despertar interés, y la frase dice que Pablo terminó atrapando a toda la mesa."
+        hint_specific: "Aburrir apaga el interés. ¿Pablo apagó o despertó el interés de la mesa?"
+  - position: 2
+    sentence: "La propuesta del arquitecto {{blank}} al comité desde la primera imagen del proyecto."
+    hint_general: "Atrapar el interés de un grupo desde el primer momento."
+    explanation: "Sedujo: atrapó el interés de un grupo desde el primer momento. «Sedó» es calmar con un medicamento, y «amenazó» describe generar miedo, ninguno de los dos describe atrapar el interés de un comité."
+    options:
+      - position: 1
+        text: "sedujo"
+        is_correct: true
+      - position: 2
+        text: "sedó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedar» es calmar o adormecer a alguien con un medicamento, y aquí la propuesta despertó el interés del comité, no lo adormeció."
+        hint_specific: "Sedar adormece a alguien. ¿La propuesta adormeció al comité o despertó su interés?"
+      - position: 3
+        text: "amenazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amenazar» describe generar miedo, y la frase dice que la propuesta gustó desde la primera imagen, no que generara temor."
+        hint_specific: "Amenazar genera miedo. ¿La propuesta generó miedo o interés en el comité?"
+  - position: 3
+    sentence: "Marina no necesita hablar mucho para {{blank}}: le basta con escuchar de verdad a quien tiene enfrente."
+    hint_general: "Atraer a alguien con encanto, aunque sea de forma silenciosa."
+    explanation: "Seducir: atraer a alguien con encanto, aunque sea de forma silenciosa. «Sedar» es calmar con un medicamento, y «interrogar» implica hacer muchas preguntas para obtener información, no para atraer."
+    options:
+      - position: 1
+        text: "seducir"
+        is_correct: true
+      - position: 2
+        text: "interrogar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interrogar» implica hacer muchas preguntas para obtener información, y la frase describe a Marina escuchando, no interrogando."
+        hint_specific: "Interrogar busca información concreta. ¿Marina interroga o solo escucha con atención?"
+      - position: 3
+        text: "sedar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedar» es calmar o adormecer a alguien con un medicamento, sin relación con atraer a alguien escuchando."
+        hint_specific: "Sedar adormece a alguien. ¿Marina adormece a la otra persona o la atrae escuchando?"
+  - position: 4
+    sentence: "El candidato logró {{blank}} a los votantes indecisos con una sola frase bien pensada."
+    hint_general: "Atrapar el interés de un grupo indeciso con algo que dice o hace."
+    explanation: "Seducir: atrapar el interés de un grupo indeciso. «Camelar» es coloquial y regional, y «sedar» es calmar con un medicamento; ninguno describe el efecto de esa frase política."
+    options:
+      - position: 1
+        text: "seducir"
+        is_correct: true
+      - position: 2
+        text: "camelar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Camelar» es coloquial y regional, y aquí se busca nombrar con precisión el efecto de una frase política sobre los votantes."
+        hint_specific: "«Camelar» es muy regional e informal. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "sedar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedar» es calmar o adormecer a alguien con un medicamento, sin relación con ganar el interés de votantes indecisos."
+        hint_specific: "Sedar adormece a alguien. ¿El candidato adormeció a los votantes o ganó su interés?"
+  - position: 5
+    sentence: "Todos en la sala quedaron {{blank}} con la forma en que la actriz presentó su nueva película."
+    hint_general: "Atraídos con encanto por algo que alguien dijo o hizo frente a un grupo."
+    explanation: "Seducidos: atraídos con encanto por algo que alguien dijo o hizo. «Sedados» describiría calmados con un medicamento, y «amenazados» describiría un temor, ninguno de los dos describe el efecto de la presentación."
+    options:
+      - position: 1
+        text: "seducidos"
+        is_correct: true
+      - position: 2
+        text: "sedados"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedado» describe a alguien calmado con un medicamento, y la sala quedó encantada con la presentación, no adormecida."
+        hint_specific: "Sedado describe a alguien adormecido. ¿La sala quedó adormecida o encantada?"
+      - position: 3
+        text: "amenazados"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amenazado» describe un temor, y la frase dice que la sala quedó encantada con la presentación, no atemorizada."
+        hint_specific: "Amenazado describe temor. ¿La sala sintió temor o encanto?"
+  - position: 6
+    sentence: "Después de escuchar la propuesta, los inversionistas quedaron tan {{blank}} que firmaron esa misma tarde."
+    hint_general: "Atraídos con tanto interés que deciden actuar de inmediato."
+    explanation: "Seducidos: atraídos con tanto interés que deciden actuar de inmediato. «Sedados» describiría calmados con un medicamento, y «presionados» implica firmar por obligación, no por entusiasmo."
+    options:
+      - position: 1
+        text: "seducidos"
+        is_correct: true
+      - position: 2
+        text: "sedados"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedado» describe a alguien calmado con un medicamento, y los inversionistas actuaron con entusiasmo, no adormecidos."
+        hint_specific: "Sedado describe a alguien adormecido. ¿Los inversionistas actuaron con sueño o con entusiasmo?"
+      - position: 3
+        text: "presionados"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presionado» implica actuar por obligación, y la frase dice que firmaron encantados con la propuesta, no forzados."
+        hint_specific: "Presionado describe algo forzado. ¿Los inversionistas firmaron forzados o encantados?"
+  - position: 7
+    sentence: "Julia sabe {{blank}} a cualquier cliente difícil con solo dos preguntas bien elegidas."
+    hint_general: "Atraer y ganar el interés de alguien difícil, con pocas palabras bien pensadas."
+    explanation: "Seducir: atraer y ganar el interés de alguien difícil. «Sedar» es calmar con un medicamento, y «engañar» implica mentir, sin relación con ganar el interés de un cliente."
+    options:
+      - position: 1
+        text: "seducir"
+        is_correct: true
+      - position: 2
+        text: "engañar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Engañar» implica mentir, y la frase no menciona ninguna mentira, solo dos preguntas bien elegidas que despiertan interés."
+        hint_specific: "Engañar implica mentir. ¿La frase menciona alguna mentira de Julia?"
+      - position: 3
+        text: "sedar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedar» es calmar o adormecer a alguien con un medicamento, sin relación con ganar el interés de un cliente difícil."
+        hint_specific: "Sedar adormece a alguien. ¿Julia adormece al cliente o gana su interés?"
+  - position: 8
+    sentence: "El aroma del pan recién horneado {{blank}} a cualquiera que pasara cerca de la puerta."
+    hint_general: "Atraer con encanto, aunque no se trate de una persona hablando."
+    explanation: "Seducía: atraía con encanto, aunque no fuera una persona hablando. «Sedaba» es calmar con un medicamento, y «espantaba» describe justo lo contrario de atraer a la gente hacia la puerta."
+    options:
+      - position: 1
+        text: "seducía"
+        is_correct: true
+      - position: 2
+        text: "sedaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sedar» es calmar o adormecer a alguien con un medicamento, sin relación con el aroma de un pan recién horneado."
+        hint_specific: "Sedar adormece a alguien. ¿El aroma adormecía a la gente o la atraía?"
+      - position: 3
+        text: "espantaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Espantar» describe justo lo contrario de atraer, y la frase dice que el aroma atraía a cualquiera que pasara cerca."
+        hint_specific: "Espantar aleja a la gente. ¿El aroma alejaba o atraía a la gente?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "Las anécdotas de la cena"
+    body: "Pablo no tenía intención de ser el centro de atención, pero cada anécdota que contaba hacía que todos se acercaran más. «Terminaste seduciendo a toda la mesa sin proponértelo», le dijo una amiga al final de la noche, y él solo se encogió de hombros."
+    before_phrase: "Le encantaste a todo el mundo sin proponértelo."
+    after_phrase: "Terminaste seduciendo a toda la mesa."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La propuesta que ganó al comité"
+    body: "Desde la primera imagen del proyecto, el comité dejó de mirar el reloj. «Los sedujiste desde la primera diapositiva», le dijo su colega al arquitecto, «no tuviste que convencer a nadie de nada»."
+    before_phrase: "Les encantó desde la primera imagen."
+    after_phrase: "Los sedujiste desde la primera diapositiva."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Dos preguntas bien elegidas"
+    body: "Su padre siempre había sido difícil de convencer para cualquier plan nuevo. Pero con solo dos preguntas sobre su juventud, Julia logró que aceptara. «Sabes seducir hasta a los más difíciles», le dijo su madre entre risas."
+    before_phrase: "Sabes ganarte a cualquiera con pocas palabras."
+    after_phrase: "Sabes seducir hasta a los más difíciles."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

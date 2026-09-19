@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "nexo"
+status: "draft"
+lemma: "nexo"
+part_of_speech: "sustantivo"
+syllables: ["ne", "xo"]
+stressed_syllable: 1
+ipa_latam: "[ˈnek.so]"
+ipa_es: "[ˈnek.so]"
+explanation: "Alguien o algo que conecta a dos personas o grupos que antes no tenían relación entre sí."
+example_sentence: "Marta fue el nexo entre la agencia y el cliente que finalmente firmó el contrato."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para nombrar a la persona o el hecho concreto que unió dos partes que no se conocían."
+when_not_to_use: "No lo uses para una amistad cercana: nexo describe una conexión que sirve para algo, no un cariño."
+collocations:
+  - "ser el nexo entre"
+  - "nexo común"
+  - "servir de nexo"
+replaces:
+  - before: "Ella fue quien nos puso en contacto"
+    after: "Ella fue el nexo entre nosotros"
+  - before: "Lo que conecta a los dos proyectos"
+    after: "El nexo entre los dos proyectos"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin: ["contacto", "puente"]
+  funcion: ["conectar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "anexo"
+    difference: "«Anexo» es un documento adjunto a otro; no describe a una persona ni una relación entre dos partes."
+    memory_trick: "El anexo se adjunta; el nexo conecta."
+exercises:
+  - position: 1
+    sentence: "En la feria del sector, Marta terminó siendo el {{blank}} entre dos empresas que llevaban años sin hablarse."
+    hint_general: "Busca la palabra para quien conecta a dos partes que antes no tenían relación."
+    explanation: "Nexo: la persona que conecta a dos partes sin relación previa. «Anexo» es un documento adjunto, y «intermediario» sugiere un cargo formal de negociación que aquí no existe."
+    options:
+      - position: 1
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» es un documento que se adjunta a otro, y aquí se habla de una persona que conecta a dos empresas."
+        hint_specific: "«Anexo» va con papeles y correos, no con personas que conectan partes."
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "intermediario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Intermediario» implica un cargo formal de negociación, y Marta solo puso en contacto a dos empresas sin negociar nada."
+        hint_specific: "El intermediario negocia entre partes. ¿Marta negoció algo o solo las conectó?"
+  - position: 2
+    sentence: "Diego notó que el interés por la música en vivo era el {{blank}} entre los tres nuevos compañeros de piso."
+    hint_general: "Señala lo que conecta a personas que, sin eso, no tendrían relación."
+    explanation: "Nexo: lo que conecta a personas sin relación previa. «Coincidencia» sugiere algo casual y sin peso, y «pretexto» implicaría una excusa falsa para acercarse."
+    options:
+      - position: 1
+        text: "nexo"
+        is_correct: true
+      - position: 2
+        text: "coincidencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Coincidencia» sugiere algo casual y sin peso, y aquí ese interés compartido es lo que realmente los une como grupo."
+        hint_specific: "Una coincidencia no siempre une a un grupo. ¿Aquí ese gusto compartido los mantiene juntos?"
+      - position: 3
+        text: "pretexto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pretexto» implica una excusa falsa para acercarse, y el gusto por la música en vivo es real, no inventado."
+        hint_specific: "Un pretexto esconde otra intención. ¿Ese interés compartido es fingido?"
+  - position: 3
+    sentence: "En el documental contaron que el comercio del siglo XIX fue el {{blank}} que unió a esas dos ciudades portuarias."
+    hint_general: "Habla de lo que conectó a dos lugares que antes no tenían ninguna relación."
+    explanation: "Nexo: lo que unió a dos ciudades sin relación previa. «Anexo» sería un territorio añadido, y «rodeo» es dar vueltas antes de decir algo, sin relación con conectar lugares."
+    options:
+      - position: 1
+        text: "rodeo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rodeo» es dar vueltas antes de decir algo directamente, y aquí se habla de comercio uniendo dos ciudades."
+        hint_specific: "Un rodeo es una forma indirecta de hablar. ¿La frase habla de hablar o de conectar ciudades?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» sería un territorio añadido a otro, y aquí el comercio conecta dos ciudades que siguen siendo independientes."
+        hint_specific: "Un anexo se añade a un todo mayor. ¿Las dos ciudades dejaron de ser independientes?"
+  - position: 4
+    sentence: "Para el reclutador, el máster en datos fue el {{blank}} que explicaba por qué esa candidata había cambiado de sector."
+    hint_general: "Busca lo que conecta dos etapas que, sin ese dato, no se entenderían juntas."
+    explanation: "Nexo: lo que conecta dos etapas que, sin él, no se entenderían. «Requisito» sería una condición obligatoria, y «adorno» es coloquial y resta valor real al dato."
+    options:
+      - position: 1
+        text: "requisito"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Requisito» es una condición obligatoria para algo, y aquí el máster solo explica un cambio de sector, no lo exige."
+        hint_specific: "Un requisito se exige antes de algo. ¿El máster era obligatorio o solo explica el cambio?"
+      - position: 2
+        text: "nexo"
+        is_correct: true
+      - position: 3
+        text: "adorno"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Adorno» es coloquial y sugiere que el dato solo decora el currículum, cuando en realidad explica el cambio de sector."
+        hint_specific: "Un adorno no explica nada, solo decora. ¿El máster explicaba el cambio o solo lucía bien?"
+  - position: 5
+    sentence: "Bruno se dio cuenta de que su antiguo jefe podía ser el {{blank}} para entrar en esa empresa."
+    hint_general: "Piensa en la persona que puede conectarte con alguien a quien no tienes acceso."
+    explanation: "Nexo: la persona que conecta con alguien a quien no tienes acceso. «Enchufe» es coloquial y sugiere favoritismo, y «aval» es una garantía formal por escrito, no una conexión personal."
+    options:
+      - position: 1
+        text: "nexo"
+        is_correct: true
+      - position: 2
+        text: "enchufe"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enchufe» es coloquial y sugiere favoritismo injusto, cuando aquí Bruno solo piensa en pedir una presentación."
+        hint_specific: "Un enchufe suena a trampa. ¿Bruno busca hacer trampa o pedir una presentación?"
+      - position: 3
+        text: "aval"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aval» es una garantía formal por escrito, y aquí Bruno solo piensa en una presentación entre personas."
+        hint_specific: "Un aval se firma. ¿Bruno piensa en un documento o en una presentación?"
+  - position: 6
+    sentence: "Clara y su vecina no tenían nada en común hasta que el perro de la esquina se convirtió en su {{blank}}."
+    hint_general: "Algo que conecta a dos personas que antes no tenían de qué hablar."
+    explanation: "Nexo: lo que conecta a dos personas sin nada en común antes. «Casualidad» resta peso a algo que ahora las une de verdad, y «anexo» es un documento adjunto."
+    options:
+      - position: 1
+        text: "casualidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Casualidad» resta peso a algo que sigue uniéndolas cada día, no a un hecho que ocurrió una sola vez."
+        hint_specific: "Una casualidad pasa una vez. ¿El perro las sigue uniendo cada día?"
+      - position: 2
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» es un documento que se adjunta a otro, y aquí se habla de lo que conecta a dos vecinas."
+        hint_specific: "Un anexo se adjunta a un papel, no conecta a dos personas."
+      - position: 3
+        text: "nexo"
+        is_correct: true
+  - position: 7
+    sentence: "Óscar presentó el informe como el {{blank}} entre las quejas del equipo y la caída de ventas del trimestre."
+    hint_general: "Lo que conecta dos hechos que antes parecían no tener relación entre sí."
+    explanation: "Nexo: lo que conecta dos hechos sin relación aparente. «Culpable» sería quien causó el problema, y «anexo» sería un documento añadido, no la relación entre los dos datos."
+    options:
+      - position: 1
+        text: "nexo"
+        is_correct: true
+      - position: 2
+        text: "culpable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Culpable» señala a quien causó el problema, y el informe solo muestra una relación entre dos hechos, sin acusar a nadie."
+        hint_specific: "Un culpable carga con la falta. ¿El informe acusa a alguien o conecta dos datos?"
+      - position: 3
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» sería un documento añadido al informe, y aquí el informe mismo es lo que conecta dos hechos."
+        hint_specific: "Un anexo se agrega a un informe. ¿El informe se agrega a sí mismo o conecta dos datos?"
+  - position: 8
+    sentence: "La coordinadora del evento actuó como {{blank}} entre los ponentes y la organización durante los tres días."
+    hint_general: "La persona que mantiene comunicadas a dos partes durante todo un proceso."
+    explanation: "Nexo: quien mantiene comunicadas a dos partes durante un proceso. «Portavoz» habla en nombre de una sola parte, y «anexo» es un documento adjunto."
+    options:
+      - position: 1
+        text: "portavoz"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Portavoz» habla en nombre de una sola parte, y aquí la coordinadora comunica a ponentes y organización entre sí."
+        hint_specific: "Un portavoz representa a un solo lado. ¿Ella representa solo a un lado o conecta a los dos?"
+      - position: 2
+        text: "anexo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Anexo» es un documento adjunto, y aquí se describe el papel de una persona durante el evento."
+        hint_specific: "Un anexo no cumple un papel durante tres días; una persona sí."
+      - position: 3
+        text: "nexo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La presentación que faltaba"
+    body: "En la conferencia del sector, Andrés vio que dos personas de su interés profesional no se conocían. «Yo puedo ser el nexo», pensó, y las presentó con dos frases: a qué se dedicaba cada una y por qué debían hablar. Diez minutos después, seguían conversando solas."
+    before_phrase: "Yo los puedo poner en contacto."
+    after_phrase: "Yo puedo ser el nexo."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El dato que conecta"
+    body: "«¿Por qué pasaste de diseño a datos?», preguntó la reclutadora. Valentina no dudó: «El máster fue el nexo: seguí resolviendo problemas visuales, pero con números en vez de imágenes». La reclutadora anotó la respuesta con una sonrisa."
+    before_phrase: "Lo que conecta las dos cosas es que..."
+    after_phrase: "El nexo entre las dos cosas es que..."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El perro de la esquina"
+    body: "Rubén y su vecino nunca habían cruzado más de un saludo. Hasta que el perro de la esquina empezó a seguir a los dos cada tarde. «Creo que este perro es nuestro nexo», dijo Rubén riendo, y desde entonces caminaban juntos cada día."
+    before_phrase: "Lo único que tenemos en común es el perro."
+    after_phrase: "Este perro es nuestro nexo."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

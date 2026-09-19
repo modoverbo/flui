@@ -1,0 +1,231 @@
+schema_version: 1
+slug: "reticencia"
+status: "draft"
+lemma: "reticencia"
+part_of_speech: "sustantivo"
+syllables: ["re", "ti", "cen", "cia"]
+stressed_syllable: 3
+ipa_latam: "[re.tiˈsen.sja]"
+ipa_es: "[re.tiˈθen.θja]"
+explanation: "Actitud de quien tiene dudas sobre algo y no las dice del todo, aunque se le nota."
+example_sentence: "El cliente firmó el contrato, pero noté una reticencia que no llegó a explicar."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsala para nombrar una duda que alguien no dice del todo, pero que se percibe en su actitud."
+when_not_to_use: "No la uses para un rechazo claro y explicado: ahí la persona ya dijo que no, y no queda nada sin decir."
+collocations:
+  - "mostrar reticencia"
+  - "cierta reticencia a firmar"
+  - "vencer la reticencia del cliente"
+  - "hablar con reticencia"
+replaces:
+  - before: "Se nota que no está muy convencido, pero no dice por qué"
+    after: "Noto cierta reticencia, aunque no la explique"
+  - before: "Le cuesta decir que no confía del todo en la propuesta"
+    after: "Muestra una reticencia que no termina de explicar"
+  - before: "Contestó, pero con algo de desconfianza que no dijo abiertamente"
+    after: "Contestó con una reticencia que prefirió no explicar"
+family: ["reticente", "reticentemente"]
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin: ["duda"]
+  funcion: ["señalar una duda no dicha"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "recelo"
+    difference: "«Recelo» es desconfiar abiertamente de algo o de alguien; «reticencia» es la reserva que se nota sin que la persona la explique."
+    memory_trick: "El recelo se ve en la cara; la reticencia se nota en lo que calla."
+  - confused_with: "retención"
+    difference: "«Retención» es no entregar algo, casi siempre un pago o un dato; «reticencia» es la reserva que alguien muestra al hablar, no al pagar."
+    memory_trick: "La retención frena el dinero; la reticencia frena las palabras."
+exercises:
+  - position: 1
+    sentence: "Marcos notó cierta {{blank}} en el cliente al hablar del contrato, aunque nunca dijo abiertamente que dudaba."
+    hint_general: "La palabra nombra una reserva que se nota, aunque la persona no la diga con todas sus letras."
+    explanation: "Reticencia: la reserva que Marcos notó sin que el cliente la explicara. «Retención» es no soltar un pago, y «desconfianza» sería un rechazo más claro y directo."
+    options:
+      - position: 1
+        text: "retención"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Retención» es no entregar algo, casi siempre dinero; aquí nadie retiene nada, solo se nota una reserva al hablar."
+        hint_specific: "«Retención» tiene que ver con no soltar un pago. ¿De eso habla la frase, o de una actitud?"
+      - position: 2
+        text: "reticencia"
+        is_correct: true
+      - position: 3
+        text: "desconfianza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desconfianza» es más fuerte y directa; el cliente no mostró rechazo, solo una reserva que no explicó."
+        hint_specific: "La desconfianza se nota más clara. Relee: ¿el cliente rechazó algo o solo dudó un poco?"
+  - position: 2
+    sentence: "Paola redactó el informe para la gerencia y describió con precisión la {{blank}} que notaba en el cliente, aunque este al final sí renovó el contrato."
+    hint_general: "Busca la palabra formal para nombrar una duda que no se dice del todo."
+    explanation: "Reticencia: la reserva del cliente que Paola describió con precisión. «Cosa» es demasiado genérica y coloquial para un informe, e «indecisión» diría que no logró decidirse, cuando sí renovó."
+    options:
+      - position: 1
+        text: "cosa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cosa» es una palabra muy genérica y coloquial; un informe para la gerencia pide un término preciso, no un comodín."
+        hint_specific: "«Cosa» es demasiado genérica para un informe. ¿Qué palabra nombra exactamente esa reserva?"
+      - position: 2
+        text: "indecisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indecisión» describe a alguien que no logra decidirse; aquí el cliente ya decidió renovar, solo mostró una reserva al hablarlo."
+        hint_specific: "«Indecisión» es no poder decidir. ¿El cliente dejó de decidir, o solo se mostró reservado?"
+      - position: 3
+        text: "reticencia"
+        is_correct: true
+  - position: 3
+    sentence: "Ignacio percibió {{blank}} en la voz del proveedor cuando mencionaron el nuevo plazo de pago, aunque aceptó sin poner ningún problema."
+    hint_general: "Apunta a una reserva que se siente en el tono, aunque la persona termine aceptando."
+    explanation: "Reticencia: la reserva que Ignacio notó en el tono, sin que el proveedor la explicara. «Indiferencia» sería no darle importancia al tema, y «cautela» sería actuar con más cuidado, no solo sonar reservado."
+    options:
+      - position: 1
+        text: "indiferencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferencia» es no importarle el tema; aquí el proveedor sí está atento, solo se nota reservado."
+        hint_specific: "La indiferencia es no prestar atención. ¿El proveedor ignoraba el tema o solo dudaba un poco?"
+      - position: 2
+        text: "reticencia"
+        is_correct: true
+      - position: 3
+        text: "cautela"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cautela» es actuar con cuidado para evitar un error; aquí el proveedor no actuó distinto, solo sonó reservado al hablar."
+        hint_specific: "La cautela se nota en cómo actúas. ¿Aquí cambió su forma de actuar, o solo su forma de hablar?"
+  - position: 4
+    sentence: "Renata sintió que su padre mostraba {{blank}} cuando le contó que dejaría el trabajo estable por uno nuevo, aunque él no dijo una palabra en contra."
+    hint_general: "Nombra una reserva que se nota, aunque nadie diga nada en voz alta."
+    explanation: "Reticencia: la reserva silenciosa que Renata sintió en su padre. «Recelo» sería una desconfianza más directa, y «tristeza» sería un sentimiento de pena, no una duda callada."
+    options:
+      - position: 1
+        text: "recelo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recelo» implica desconfiar directamente de la decisión; el padre de Renata no mostró rechazo, solo guardó una reserva silenciosa."
+        hint_specific: "El recelo se nota como desconfianza activa. ¿El padre desconfió en voz alta o solo se quedó callado?"
+      - position: 2
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tristeza» es un sentimiento de pena, y aquí no se describe pena sino una reserva silenciosa sobre la decisión."
+        hint_specific: "La tristeza es un sentimiento de pena. ¿La frase habla de pena o de duda callada?"
+      - position: 3
+        text: "reticencia"
+        is_correct: true
+  - position: 5
+    sentence: "En la sobremesa, su prima notó una {{blank}} rara en Felipe cuando le preguntaron si iba a mudarse, y se rieron de lo callado que estaba."
+    hint_general: "Busca la palabra para esa reserva que se nota, sin que haga falta sonar solemne."
+    explanation: "Reticencia: la reserva que notaron en Felipe al hablar de la mudanza. «Circunspección» sería válida en un texto muy formal, no en una sobremesa, y «timidez» hablaría de vergüenza para hablar, no de una duda callada."
+    options:
+      - position: 1
+        text: "circunspección"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Circunspección» sería correcta en un texto muy formal, pero en una sobremesa entre familia suena forzada y pedante."
+        hint_specific: "«Circunspección» es una palabra muy solemne. ¿Encaja en una charla de sobremesa entre risas?"
+      - position: 2
+        text: "timidez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Timidez» es no atreverse a hablar por vergüenza; aquí Felipe respondió, solo mostró una reserva sobre el tema."
+        hint_specific: "La timidez es no animarse a hablar. ¿Felipe se quedó callado del todo, o solo dudó al responder?"
+      - position: 3
+        text: "reticencia"
+        is_correct: true
+  - position: 6
+    sentence: "Andrea, la entrevistadora, notó {{blank}} en la respuesta del candidato cuando le preguntó por qué había dejado su empleo anterior."
+    hint_general: "Nombra la reserva que se nota en alguien que no cuenta todo lo que piensa."
+    explanation: "Reticencia: la reserva que Andrea notó en la respuesta del candidato. «Evasión» sería no responder en absoluto, y «nerviosismo» hablaría de ansiedad física, no de una actitud reservada."
+    options:
+      - position: 1
+        text: "evasión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Evasión» sería esquivar la pregunta por completo; el candidato sí respondió, solo con una reserva notable."
+        hint_specific: "La evasión es no responder. ¿El candidato evitó la pregunta o solo respondió con reserva?"
+      - position: 2
+        text: "reticencia"
+        is_correct: true
+      - position: 3
+        text: "nerviosismo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Nerviosismo» describe ansiedad física, como temblar o titubear; aquí lo que se nota es una reserva en lo que dice, no nervios."
+        hint_specific: "El nerviosismo se nota en el cuerpo. ¿Aquí se describe una actitud al hablar o un temblor?"
+  - position: 7
+    sentence: "Gonzalo detectó {{blank}} en el correo del cliente: aceptaba el precio, pero evitaba confirmar la fecha de pago."
+    hint_general: "Se trata de una reserva que se nota entre líneas, en lo que alguien evita decir del todo."
+    explanation: "Reticencia: la reserva que Gonzalo notó en lo que el cliente evitaba confirmar. «Ambigüedad» sería un mensaje confuso, y «hostilidad» sería una actitud agresiva, ninguna de las dos presente aquí."
+    options:
+      - position: 1
+        text: "ambigüedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ambigüedad» es que un mensaje admite más de una lectura; el correo del cliente era claro, solo mostraba una reserva sobre la fecha."
+        hint_specific: "La ambigüedad hace que algo se pueda leer de dos formas. ¿El correo era confuso o solo reservado en un punto?"
+      - position: 2
+        text: "hostilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Hostilidad» implica una actitud agresiva; el cliente aceptó el precio con tranquilidad, solo evitó un punto."
+        hint_specific: "La hostilidad es una actitud de ataque. ¿El correo del cliente sonaba agresivo?"
+      - position: 3
+        text: "reticencia"
+        is_correct: true
+  - position: 8
+    sentence: "Silvana le preguntó a su amiga si le gustaba el nuevo trabajo, y notó una {{blank}} que la hizo sospechar que algo no iba bien."
+    hint_general: "Nombra esa reserva que hace sospechar que hay algo sin decir."
+    explanation: "Reticencia: la reserva que Silvana notó en su amiga al hablar del trabajo. «Melancolía» sería un estado de tristeza, y «extrañeza» sería solo sorpresa, no la sensación de que algo queda sin decir."
+    options:
+      - position: 1
+        text: "melancolía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Melancolía» es una tristeza suave y duradera; aquí lo que se nota es una reserva al hablar, no un estado de ánimo triste."
+        hint_specific: "La melancolía es un tipo de tristeza. ¿La frase habla de tristeza o de algo que la amiga no cuenta del todo?"
+      - position: 2
+        text: "reticencia"
+        is_correct: true
+      - position: 3
+        text: "extrañeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extrañeza» es la sensación de sorpresa ante algo raro; aquí lo que nota Silvana es una reserva en cómo habla su amiga, no solo sorpresa."
+        hint_specific: "La extrañeza es sorpresa por algo raro. ¿Silvana se sorprendió, o notó que su amiga no contaba todo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Lo que no dijo el cliente"
+    body: "Martina colgó el teléfono y releyó sus notas: el cliente aceptó el precio, pero notó cierta reticencia al hablar de la fecha de pago. Se lo contó a su jefe antes de enviar el contrato. «Aceptó todo, pero algo en su tono no me cerró del todo», le dijo. Su jefe asintió: «Entonces llámalo mañana antes de mandarlo, y resuelve esa reticencia primero»."
+    before_phrase: "Aceptó todo, pero algo no me cerró del todo."
+    after_phrase: "Noté cierta reticencia en su tono."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que no dijo su hermano"
+    body: "Cuando Bruno le contó a su hermano que dejaría su trabajo fijo para independizarse, esperaba un «qué bien». En cambio, notó una reticencia que su hermano no explicó del todo: preguntas cortas, silencios largos. Esa noche Bruno le escribió: «Sentí tu reticencia hoy. Si tienes dudas, prefiero que me las digas»."
+    before_phrase: "Sentí que no estabas del todo convencido, aunque no dijiste nada."
+    after_phrase: "Sentí tu reticencia hoy."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta que quedó en el aire"
+    body: "Durante la entrevista, Camilo preguntó por qué el candidato había dejado su empleo anterior. La respuesta fue correcta, pero con una reticencia que Camilo anotó en su libreta. Al terminar, comentó con la otra entrevistadora: «Contestó bien, pero noté una reticencia rara justo ahí»."
+    before_phrase: "Contestó bien, pero algo no terminó de decir del todo."
+    after_phrase: "Noté una reticencia justo ahí."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

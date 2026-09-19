@@ -1,0 +1,230 @@
+# Word 10 of batch W4 humor, written as assigned. Passes metrics cleanly:
+# zipf 3.84, dp 0.26.
+schema_version: 1
+sort_order: 9310
+slug: "bromear"
+status: "draft"
+lemma: "bromear"
+part_of_speech: "verbo"
+syllables: ["bro", "me", "ar"]
+stressed_syllable: 3
+ipa_latam: "[bɾo.meˈar]"
+ipa_es: "[bɾo.meˈar]"
+explanation: "Decir cosas de forma ligera para divertir a la gente, jugar con las palabras, sin ningún problema real."
+example_sentence: "Los hermanos empezaron a bromear sobre quién cocinaba peor, y la cena terminó entre risas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Casi siempre lleva «con» o «sobre»: bromear con alguien, bromear sobre un tema. Funciona bien entre iguales, sin dejar a nadie fuera del chiste."
+when_not_to_use: "No la uses cuando el tema requiere seriedad real, como una mala noticia; ahí bromear suena fuera de lugar."
+collocations:
+  - "bromear con alguien"
+  - "bromear sobre algo"
+replaces:
+  - before: "Lo dijo en plan de broma, para relajar el ambiente"
+    after: "Lo dijo bromeando, para relajar el ambiente"
+  - before: "Nos reímos y jugamos con el tema toda la noche"
+    after: "Bromeamos con el tema toda la noche"
+family: ["broma", "bromista"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["reírse con"]
+  funcion: ["relajar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "burlarse"
+    difference: "«Bromear» es jugar con humor sin buscar dejar mal a nadie; «burlarse», en cambio, se ríe de algo o de alguien, a veces con desprecio."
+    memory_trick: "Bromeas con alguien; te burlas de algo o de alguien."
+  - confused_with: "bromuro"
+    difference: "«Bromuro» es un compuesto químico, sin ninguna relación con el humor; «bromear» es jugar con las palabras para divertir."
+    memory_trick: "Comparten las primeras letras, pero uno está en el laboratorio y el otro en la sobremesa."
+exercises:
+  - position: 1
+    sentence: "Los hermanos empezaron a {{blank}} sobre quién cocinaba peor, y la cena terminó entre risas de los dos."
+    hint_general: "Busca el verbo para decir cosas en tono ligero, sin ningún problema real de por medio."
+    explanation: "Bromear: los hermanos jugaron con el tema de la cocina sin ningún problema real. «Discutir» implica un desacuerdo serio, y «competir» sugiere que uno quiere ganarle al otro, ninguna encaja con el tono ligero de la cena."
+    options:
+      - position: 1
+        text: "discutir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» implica un desacuerdo serio, y la cena terminó entre risas de los dos, señal de que no hubo ningún conflicto real."
+        hint_specific: "«Discutir» implica un desacuerdo serio. ¿La cena terminó en risas o en tensión?"
+      - position: 2
+        text: "bromear"
+        is_correct: true
+      - position: 3
+        text: "competir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Competir» sugiere que uno quiere ganarle al otro, y aquí los hermanos solo jugaban con el tema, sin buscar ganar nada."
+        hint_specific: "«Competir» es buscar ganarle a alguien. ¿Los hermanos buscaban ganar o solo reírse juntos?"
+  - position: 2
+    sentence: "Antes de la reunión más difícil del trimestre, el equipo {{blank}} un rato en el chat para bajar la tensión."
+    hint_general: "Piensa en jugar con las palabras un rato, sin ningún problema real, para relajar el ambiente."
+    explanation: "Bromeó: el equipo jugó un rato en el chat para bajar la tensión antes de la reunión. «Bromuro» es un compuesto químico sin relación con el chat, y «reflexionó» es pensar en serio, justo lo contrario de relajar el ambiente."
+    options:
+      - position: 1
+        text: "bromuro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Bromuro» es un compuesto químico, y en el chat del equipo nadie hablaba de química: solo buscaban relajar el ambiente."
+        hint_specific: "«Bromuro» es un compuesto químico de laboratorio. ¿Eso encaja con un chat de equipo antes de una reunión?"
+      - position: 2
+        text: "reflexionó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reflexionar» es pensar algo en serio, y lo que hizo el equipo fue jugar con las palabras para bajar la tensión, no ponerse a pensar."
+        hint_specific: "«Reflexionar» es pensar algo en serio. ¿El chat del equipo buscaba pensar en serio o relajar el ambiente?"
+      - position: 3
+        text: "bromeó"
+        is_correct: true
+  - position: 3
+    sentence: "Durante la entrevista, el candidato {{blank}} con soltura sobre sus propios nervios, y el ambiente se relajó enseguida."
+    hint_general: "Busca el verbo para hablar en tono ligero de algo propio, sin que suene fuera de lugar."
+    explanation: "Bromeó: el candidato jugó con el tema de sus propios nervios y relajó el ambiente. «Presumió» es hablar bien de uno mismo con orgullo, y «disculpó» es pedir perdón, ninguna encaja con un comentario ligero sobre sí mismo."
+    options:
+      - position: 1
+        text: "presumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presumir» es hablar bien de uno mismo con orgullo, y aquí el candidato se rió de sus propios nervios, no presumió de nada."
+        hint_specific: "«Presumir» es hablar con orgullo de uno mismo. ¿El candidato presumió o se rió de sus propios nervios?"
+      - position: 2
+        text: "bromeó"
+        is_correct: true
+      - position: 3
+        text: "disculpó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disculparse» es pedir perdón por algo, y el candidato no pidió perdón: solo comentó sus nervios en tono ligero."
+        hint_specific: "«Disculparse» es pedir perdón. ¿El candidato pidió perdón o habló en tono ligero?"
+  - position: 4
+    sentence: "En el informe final del proyecto, el equipo evitó cualquier línea que pudiera sonar a que {{blank}} con un tema tan delicado como el del presupuesto."
+    hint_general: "Piensa en tratar un tema en tono ligero, algo que no encajaría en un informe serio."
+    explanation: "Bromearan: el equipo evitó sonar como si tratara el presupuesto en tono ligero. «Vacilaran» es muy coloquial para un informe formal, y «mintieran» es decir algo falso, algo muy distinto de un tono ligero."
+    options:
+      - position: 1
+        text: "vacilaran"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vacilar» en este sentido es muy coloquial, demasiado informal para el tono cuidado de un informe final de proyecto."
+        hint_specific: "«Vacilar» suena muy coloquial. ¿Encaja con el tono cuidado de un informe final?"
+      - position: 2
+        text: "mintieran"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mentir» es decir algo falso, y lo que el equipo evitó fue sonar poco serio con el presupuesto, no decir mentiras."
+        hint_specific: "«Mentir» es decir algo falso. ¿El equipo quería evitar sonar poco serio o evitar decir mentiras?"
+      - position: 3
+        text: "bromearan"
+        is_correct: true
+  - position: 5
+    sentence: "En el grupo familiar, la tía Noelia {{blank}} cada Navidad sobre el pavo que se le quema un poco todos los años."
+    hint_general: "Piensa en un comentario ligero y repetido cada año, sin que nadie se ofenda."
+    explanation: "Bromea: la tía Noelia hace un comentario ligero cada Navidad sobre el pavo, sin que nadie se ofenda. «Se queja» es protestar en serio, y «se disculpa» es pedir perdón, ninguna encaja con el tono ligero de la escena."
+    options:
+      - position: 1
+        text: "se queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Quejarse» es protestar en serio por algo, y la escena describe un comentario ligero que se repite cada año entre risas."
+        hint_specific: "«Quejarse» es protestar en serio. ¿El comentario de la tía Noelia es una protesta o una broma repetida?"
+      - position: 2
+        text: "bromea"
+        is_correct: true
+      - position: 3
+        text: "se disculpa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disculparse» es pedir perdón por algo, y la tía Noelia no pide perdón por el pavo: hace un comentario ligero cada año."
+        hint_specific: "«Disculparse» es pedir perdón. ¿La tía Noelia pide perdón o hace un comentario ligero?"
+  - position: 6
+    sentence: "Los vecinos del quinto piso siempre {{blank}} sobre quién saca la basura más tarde, sin que eso arruine nunca la buena relación entre ellos."
+    hint_general: "Busca el verbo para un tema cotidiano tratado en tono ligero, entre vecinos que se llevan bien."
+    explanation: "Bromean: los vecinos tratan el tema de la basura en tono ligero, sin arruinar su buena relación. «Pelean» implica un conflicto real, y «compiten» sugiere que uno quiere ganar, ninguna encaja con una buena relación."
+    options:
+      - position: 1
+        text: "pelean"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pelear» implica un conflicto real, y la frase aclara que eso nunca arruina la buena relación entre los vecinos."
+        hint_specific: "«Pelear» implica un conflicto real. ¿Eso arruinaría la buena relación entre vecinos?"
+      - position: 2
+        text: "bromean"
+        is_correct: true
+      - position: 3
+        text: "compiten"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Competir» sugiere que uno quiere ganarle al otro, y aquí los vecinos solo tratan el tema en tono ligero, sin buscar ganar nada."
+        hint_specific: "«Competir» es buscar ganarle a alguien. ¿Los vecinos buscan ganar o solo llevan el tema con humor?"
+  - position: 7
+    sentence: "Cuando el jefe llegó tarde por primera vez en años, todo el equipo {{blank}} con él sobre el cambio de costumbre, y él se rió también."
+    hint_general: "Piensa en un comentario ligero y compartido, que hace reír incluso a quien lo protagoniza."
+    explanation: "Bromeó: el equipo hizo un comentario ligero sobre el jefe, y hasta él se rió. «Reprochó» es señalar un error con molestia, y «investigó» es buscar información, ninguna encaja con un tono compartido de risa."
+    options:
+      - position: 1
+        text: "reprochó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reprochar» es señalar un error con molestia, y aquí hasta el jefe se rió, señal de que no hubo ningún reproche real."
+        hint_specific: "«Reprochar» es señalar algo con molestia. ¿El jefe se rió o se sintió señalado?"
+      - position: 2
+        text: "bromeó"
+        is_correct: true
+      - position: 3
+        text: "investigó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Investigar» es buscar información sobre algo, y el equipo no investigó nada: solo hizo un comentario ligero que hizo reír a todos."
+        hint_specific: "«Investigar» es buscar información. ¿El equipo investigó el retraso o solo hizo un comentario ligero?"
+  - position: 8
+    sentence: "Las amigas {{blank}} durante horas sobre las citas que habían tenido esa semana, sin ponerse serias en ningún momento."
+    hint_general: "Busca el verbo para pasar horas hablando en tono ligero de algo, sin ponerse serias."
+    explanation: "Bromearon: las amigas pasaron horas en tono ligero, sin ponerse serias. «Analizaron» implica un tono más serio y detallado, y «lamentaron» es sentir pena, ninguna encaja con una charla ligera y divertida."
+    options:
+      - position: 1
+        text: "analizaron"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Analizar» tiene un tono más serio y detallado, y la frase aclara que las amigas no se pusieron serias en ningún momento."
+        hint_specific: "«Analizar» suena a un tono más serio y detallado. ¿La frase describe una charla seria o una charla ligera?"
+      - position: 2
+        text: "bromearon"
+        is_correct: true
+      - position: 3
+        text: "lamentaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Lamentarse» es sentir pena por algo, y las amigas pasaron horas riendo del tema, sin ponerse serias ni sentir pena."
+        hint_specific: "«Lamentarse» es sentir pena. ¿Las amigas sintieron pena o pasaron horas riendo?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El pavo de cada Navidad"
+    body: "Cada Nochebuena, la tía Noelia jura que este año el pavo le va a quedar perfecto, y cada año se le quema un poco por un lado. Ya nadie se sorprende: bromean con ella desde que empieza a servir la cena, y ella misma se ríe primero que nadie."
+    before_phrase: "Nos reímos con ella del pavo quemado, año tras año."
+    after_phrase: "Bromeamos con ella del pavo quemado, año tras año."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El chat antes de la reunión difícil"
+    body: "El equipo sabía que la reunión con el cliente iba a ser tensa. Diez minutos antes, alguien mandó un meme al chat y todos empezaron a bromear sobre el peor escenario posible. Cuando entraron a la llamada, la tensión había bajado varios grados."
+    before_phrase: "Nos reímos un rato en el chat para relajarnos antes de la reunión."
+    after_phrase: "Bromeamos un rato en el chat para relajarnos antes de la reunión."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Las citas de la semana"
+    body: "Las amigas se juntaron a cenar y, como cada viernes, terminaron hablando de las citas que habían tenido. Bromearon durante horas sobre las señales de alarma más ridículas que habían visto esa semana, y ninguna se tomó nada demasiado en serio."
+    before_phrase: "Nos reímos toda la noche de las citas, sin ponernos serias."
+    after_phrase: "Bromeamos toda la noche sobre las citas, sin ponernos serias."
+provenance:
+  generator: "flui authoring agent — batch W4 humor"
+  gate: null
+  checked_on: "2026-09-18"

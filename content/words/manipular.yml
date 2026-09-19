@@ -1,0 +1,239 @@
+schema_version: 1
+slug: "manipular"
+status: "draft"
+lemma: "manipular"
+part_of_speech: "verbo"
+syllables:
+  - "ma"
+  - "ni"
+  - "pu"
+  - "lar"
+stressed_syllable: 4
+ipa_latam: "[ma.ni.puˈlaɾ]"
+ipa_es: "[ma.ni.puˈlaɾ]"
+explanation: "Hacer que alguien crea o actúe distinto, con información falsa o solo una parte de ella, para tu beneficio."
+example_sentence: "El entrevistador lo acusó de manipular las cifras para que sonaran mejor de lo que eran."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve como acusación seria: dices que alguien engañó a propósito, no que simplemente convenció a otros."
+when_not_to_use: "No la uses para un simple error o una exageración sin mala intención; aquí hay alguien manejando a propósito lo que otros creen."
+collocations:
+  - "manipular la información"
+  - "manipular a la opinión pública"
+  - "manipular las cifras"
+replaces:
+  - before: "Están retorciendo lo que dije"
+    after: "Están manipulando lo que dije"
+  - before: "Le están metiendo ideas a la gente a propósito"
+    after: "Le están manipulando la cabeza a la gente"
+  - before: "Cambiaron los números para que se vieran mejor"
+    after: "Manipularon los números para que se vieran mejor"
+family:
+  - "manipulación"
+  - "manipulador"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin:
+    - "engañar a propósito"
+  funcion:
+    - "acusar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "manejar"
+    difference: "«Manejar» es simplemente controlar o llevar algo, sin mala intención; manipular añade el engaño para sacar ventaja de alguien."
+    memory_trick: "Manejas un auto; manipulas una verdad."
+  - confused_with: "persuadir"
+    difference: "«Persuadir» convence con argumentos abiertos y a la vista; manipular oculta la intención real detrás del mensaje."
+exercises:
+  - position: 1
+    sentence: "En plena entrevista, el periodista acusó al director de la empresa de {{blank}} el video para que pareciera que la fila del lanzamiento había sido ordenada desde el inicio."
+    hint_general: "Busca el verbo para cuando alguien altera un contenido a propósito, para que parezca otra cosa distinta de lo que pasó."
+    explanation: "Manipular: alterar el video a propósito. «Maniobrar» es moverse con habilidad en una situación, no alterar un contenido, y «convencer» es lograr un cambio de opinión con argumentos a la vista, no cambiar el video mismo."
+    options:
+      - position: 1
+        text: "maniobrar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Maniobrar» es mover algo con habilidad, como un vehículo o una situación táctica, y aquí se acusa de alterar el contenido de un video."
+        hint_specific: "«Maniobrar» se usa con vehículos o situaciones tácticas. ¿De qué acusan al director: de moverse con habilidad o de alterar un video?"
+      - position: 2
+        text: "manipular"
+        is_correct: true
+      - position: 3
+        text: "convencer"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencer» es lograr que alguien cambie de opinión con argumentos a la vista, y aquí la acusación es que se alteró el video mismo, no que se debatiera con nadie."
+        hint_specific: "«Convencer» usa argumentos abiertos. ¿La acusación habla de un debate o de un video alterado?"
+  - position: 2
+    sentence: "Wilfredo se dio cuenta de que Anabel había {{blank}} el acta de la reunión para que su error no apareciera en ningún lado."
+    hint_general: "Piensa en cambiar un documento a propósito para que un error no se note."
+    explanation: "Manipulado: cambió el acta a propósito para esconder su error. «Enredado» es coloquial y sugiere un lío confuso, y aquí pasó algo más concreto, y «engañado» sería hacer creer algo falso en el momento, no alterar un documento que otros leerían después."
+    options:
+      - position: 1
+        text: "enredado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enredar» es coloquial y sugiere meter a alguien en un lío confuso, y aquí lo que pasó fue más concreto: cambió un documento a propósito."
+        hint_specific: "«Enredado» suena a lío confuso, en tono coloquial. ¿Qué hizo exactamente Anabel con el acta?"
+      - position: 2
+        text: "manipulado"
+        is_correct: true
+      - position: 3
+        text: "engañado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Engañar» sería hacerle creer algo falso a una persona en el momento, y aquí el problema es que alteró un documento que después leerían varios más."
+        hint_specific: "«Engañado» apunta a un momento puntual. ¿El problema es algo que dijo o un documento que cambió?"
+  - position: 3
+    sentence: "Cirilo le advirtió a su amiga que ese chico siempre {{blank}} las conversaciones del grupo para que todos terminen opinando como él."
+    hint_general: "Se trata de dirigir lo que un grupo cree, con información a medias y de forma calculada."
+    explanation: "Manipula: dirige lo que el grupo cree, con medias verdades. «Influye» es afectar una opinión de forma abierta, y aquí se advierte algo más calculado, y «maniobra» se usa con vehículos o situaciones tácticas, no con lo que la gente cree."
+    options:
+      - position: 1
+        text: "influye"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Influir» es afectar la opinión de alguien de forma abierta, y aquí se advierte de algo más calculado: dirigir la charla con información a medias para que todos acaben pensando igual."
+        hint_specific: "«Influye» es un efecto abierto y general. ¿Cirilo advierte de algo abierto o de algo calculado?"
+      - position: 2
+        text: "manipula"
+        is_correct: true
+      - position: 3
+        text: "maniobra"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Maniobrar» es mover algo o a alguien con destreza en una situación, y aquí el problema es más concreto: dirige lo que el grupo cree con medias verdades."
+        hint_specific: "«Maniobra» se usa con vehículos o situaciones. ¿La advertencia habla de moverse con destreza o de dirigir lo que el grupo cree?"
+  - position: 4
+    sentence: "Leonor notó que su padre {{blank}} la historia del viaje para que pareciera que la decisión había sido de todos, y no solo suya."
+    hint_general: "Busca el verbo para cambiar la versión de una historia a propósito, para quedar mejor."
+    explanation: "Manipulaba: cambiaba la versión de los hechos para quedar mejor. «Enredaba» es coloquial y sugiere confundir sin más, y aquí arma una versión concreta, y «convencía» es lograr un cambio de opinión con razones claras, no cambiar los hechos mismos."
+    options:
+      - position: 1
+        text: "enredaba"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enredar» es coloquial y sugiere confundir sin más, y aquí el padre arma una versión concreta de la historia para quedar bien."
+        hint_specific: "«Enredaba» suena a confusión general, en tono coloquial. ¿El padre solo confunde o arma una versión concreta?"
+      - position: 2
+        text: "manipulaba"
+        is_correct: true
+      - position: 3
+        text: "convencía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencer» es lograr que alguien cambie de opinión con razones claras, y aquí el padre cambia la versión de los hechos, no da razones."
+        hint_specific: "«Convencía» da razones claras. ¿El padre da razones o cambia la historia?"
+  - position: 5
+    sentence: "Durante el debate, la moderadora le pidió a Gonzalo que dejara de {{blank}} las estadísticas de su propio anuncio de campaña."
+    hint_general: "Piensa en presentar unos datos de forma torcida a propósito, ocultando parte de la información."
+    explanation: "Manipular: presentar los datos de forma torcida a propósito. «Exagerar» agranda algo sin ocultar nada, y aquí se oculta parte de los datos, y «engañar» sería un dato falso puntual, cuando la acusación es más amplia: cómo presentó todo el conjunto."
+    options:
+      - position: 1
+        text: "exagerar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exagerar» agranda algo sin necesariamente ocultar información, y aquí la acusación es que presentó las estadísticas de forma torcida a propósito, ocultando parte de los datos."
+        hint_specific: "«Exagerar» agranda, pero no esconde. ¿La acusación habla de agrandar un número o de ocultar parte de los datos?"
+      - position: 2
+        text: "manipular"
+        is_correct: true
+      - position: 3
+        text: "engañar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Engañar» sería un dato falso puntual, y la acusación aquí es más amplia: presentó todo el conjunto de estadísticas de forma torcida a propósito."
+        hint_specific: "«Engañar» apunta a un solo dato falso. ¿La acusación habla de un dato suelto o de cómo presentó todo el conjunto?"
+  - position: 6
+    sentence: "El equipo de marketing {{blank}} los datos de la encuesta antes de mostrárselos a la directora, para que el resultado se viera mejor de lo que era."
+    hint_general: "Se refiere a cambiar un resultado antes de mostrarlo, para que se vea mejor de lo que es."
+    explanation: "Manipuló: cambió el resultado antes de mostrarlo. «Interpretó» explica un dato sin cambiarlo, y aquí el equipo alteró el resultado, y «enredó» es coloquial y sugiere confusión general, no un cambio concreto de un resultado."
+    options:
+      - position: 1
+        text: "interpretó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interpretar» un dato es explicarlo sin cambiarlo, y aquí el equipo alteró el resultado antes de mostrarlo, no solo lo explicó."
+        hint_specific: "«Interpretó» solo explica, sin cambiar nada. ¿El resultado se explicó o se cambió?"
+      - position: 2
+        text: "manipuló"
+        is_correct: true
+      - position: 3
+        text: "enredó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enredar» es coloquial y sugiere crear confusión en general, y aquí el equipo hizo algo más concreto: cambió el resultado a propósito antes de mostrarlo."
+        hint_specific: "«Enredó» suena a confusión general, en tono coloquial. ¿Qué hizo exactamente el equipo con el resultado?"
+  - position: 7
+    sentence: "En la fiesta, Yolanda se rió al descubrir que su amigo había {{blank}} la foto del evento para que pareciera mucho más concurrido de lo que estuvo: no era solo cuestión de brillo, sino de gente que nunca estuvo ahí."
+    hint_general: "Busca el verbo para cambiar una imagen a propósito, para engañar sobre lo que realmente pasó."
+    explanation: "Manipulado: cambió la foto a propósito para engañar sobre la asistencia. «Retocado» mejora el aspecto de una foto, como el brillo, y aquí se cambió lo que en realidad pasó, y «alterado» es más general y no dice que fuera para engañar sobre la asistencia."
+    options:
+      - position: 1
+        text: "retocado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retocar» una foto suele mejorar su aspecto, como el brillo o el color, y la frase aclara que no era solo eso, sino gente que nunca estuvo ahí."
+        hint_specific: "«Retocado» mejora el aspecto, como el brillo. ¿La frase habla solo de brillo?"
+      - position: 2
+        text: "manipulado"
+        is_correct: true
+      - position: 3
+        text: "alterado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alterado» es un cambio en general, y la frase señala algo más específico: cambiar la foto a propósito para engañar sobre cuánta gente había."
+        hint_specific: "«Alterado» es un cambio general. ¿La frase habla de un cambio cualquiera o de uno hecho para engañar?"
+  - position: 8
+    sentence: "Fátima le explicó a su hija que los anuncios muchas veces {{blank}} lo que la gente cree necesitar, mostrando solo una parte de la historia."
+    hint_general: "Piensa en mostrar solo una parte de la historia a propósito, para dirigir lo que alguien cree necesitar."
+    explanation: "Manipulan: dirigen lo que la gente cree necesitar, mostrando solo una parte. «Influyen» describe un efecto abierto y general, y aquí hay algo más deliberado, y «convencen» supone razones claras y visibles, cuando el punto es que ocultan parte de la información."
+    options:
+      - position: 1
+        text: "influyen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Influir» describe un efecto general y abierto, y aquí Fátima habla de algo más deliberado: mostrar solo una parte de la historia a propósito."
+        hint_specific: "«Influyen» es un efecto general y abierto. ¿Fátima habla de algo abierto o de algo deliberado?"
+      - position: 2
+        text: "manipulan"
+        is_correct: true
+      - position: 3
+        text: "convencen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Convencer» supone dar razones claras y visibles, y aquí el punto es que los anuncios ocultan parte de la información para lograr su efecto."
+        hint_specific: "«Convencen» da razones visibles. ¿Los anuncios muestran toda la información o solo una parte?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El video del inicio"
+    body: "El periodista puso el video completo junto al recorte que circulaba. «Aquí se ve que cortaron los primeros minutos», dijo, «eso es manipular la imagen de lo que pasó». El director no supo qué responder."
+    before_phrase: "Están cortando el video para que parezca otra cosa."
+    after_phrase: "Eso es manipular la imagen de lo que pasó."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El acta que faltaba"
+    body: "Wilfredo comparó su copia del acta con la que circuló después de la reunión. Faltaba justo el párrafo sobre el retraso de Anabel. «No se te olvidó por accidente», le dijo, «manipulaste el documento para que tu error no quedara escrito»."
+    before_phrase: "Cambiaste el documento para que no se notara tu error."
+    after_phrase: "Manipulaste el documento para que tu error no quedara escrito."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La versión del viaje"
+    body: "Cada vez que alguien contaba el viaje, la versión de su padre cambiaba un poco. Leonor lo notó por fin: «Papá, sé que manipulas la historia para que parezca que todos decidimos, y en realidad fuiste tú solo». Él se quedó callado un momento y luego sonrió, medio avergonzado."
+    before_phrase: "Estás cambiando la historia para quedar bien."
+    after_phrase: "Sé que manipulas la historia para quedar bien con todos."
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-18"

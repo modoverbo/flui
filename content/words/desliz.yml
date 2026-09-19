@@ -1,0 +1,238 @@
+schema_version: 1
+slug: "desliz"
+status: "draft"
+lemma: "desliz"
+part_of_speech: "sustantivo"
+syllables:
+  - "des"
+  - "liz"
+stressed_syllable: 2
+ipa_latam: "[desˈlis]"
+ipa_es: "[desˈliθ]"
+explanation: "Comentario que se escapa sin querer y que después complica la conversación."
+example_sentence: "En medio de la entrevista tuvo un desliz y mencionó una cifra que todavía no era pública."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para quitarle peso a un momento incómodo sin minimizarlo del todo: «Fue un desliz» reconoce el fallo sin dramatizar."
+when_not_to_use: "No la uses para algo dicho a propósito: siempre es sin querer, nunca una estrategia."
+collocations:
+  - "tener un desliz"
+  - "cometer un desliz"
+  - "un pequeño desliz"
+replaces:
+  - before: "Se le escapó decir algo que no debía"
+    after: "Tuvo un desliz"
+  - before: "Metió la pata con esa frase"
+    after: "Esa frase fue un desliz"
+  - before: "Dijo de más sin darse cuenta"
+    after: "Tuvo un desliz sin darse cuenta"
+family:
+  - "deslizar"
+  - "deslizamiento"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 1
+tags:
+  comodin:
+    - "decir de más"
+  funcion:
+    - "reconocer"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "lapsus"
+    difference: "«Lapsus» es un tropiezo puntual al hablar o escribir, casi siempre una sola palabra; esto puede ser también un comentario entero o un gesto fuera de lugar."
+    memory_trick: "El lapsus cambia una palabra; el desliz cambia el momento entero."
+  - confused_with: "torpeza"
+    difference: "«Torpeza» describe una forma de ser poco hábil en general; esto nombra un momento puntual, no un rasgo de la persona."
+    memory_trick: "La torpeza es constante; el desliz pasa una vez."
+exercises:
+  - position: 1
+    sentence: "El actor tuvo un {{blank}} en la entrevista y soltó un detalle del final de la película que todavía era secreto."
+    hint_general: "Se le escapó un dato que no debía contar, sin darse cuenta a tiempo."
+    explanation: "Desliz: se le escapó un dato sin darse cuenta. «Deslealtad» supone traicionar a propósito a alguien, y el actor no traicionó a nadie: se le fue un dato sin querer; «patinazo» es coloquial y suena a chiste para una entrevista de cine seria."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» es traicionar a propósito a alguien, y el actor no traicionó a nadie: el dato se le escapó sin querer."
+        hint_specific: "«Deslealtad» implica hacerlo a propósito. ¿El actor planeó contar ese dato o se le escapó?"
+      - position: 2
+        text: "patinazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Patinazo» es coloquial y suena a chiste de sobremesa, un tono que no encaja con una entrevista de cine seria sobre el estreno."
+        hint_specific: "«Patinazo» suena informal, casi a broma. ¿Encaja con el tono de una entrevista sobre una película?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 2
+    sentence: "Martina respondió al correo equivocado y tuvo un {{blank}}: la propuesta de precios llegó al cliente antes de tiempo."
+    hint_general: "Un fallo al elegir el destinatario hizo que algo llegara antes de lo que debía."
+    explanation: "Desliz: un fallo al elegir el destinatario adelantó el envío. «Deslealtad» sería hacerlo a propósito para perjudicar a alguien, y Martina no quiso perjudicar a nadie; «imprudencia» describe un rasgo de cómo actúa siempre, no este correo puntual."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» es actuar a propósito contra alguien, y Martina no quiso perjudicar al cliente: eligió mal el destinatario sin darse cuenta."
+        hint_specific: "«Deslealtad» es intencional. ¿Martina planeó adelantar el envío o fue sin querer?"
+      - position: 2
+        text: "imprudencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imprudencia» describe una forma de actuar sin cuidado en general, y la frase habla de un solo correo, un momento puntual."
+        hint_specific: "«Imprudencia» describe cómo actúa alguien siempre. ¿La frase habla de un rasgo o de un correo puntual?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 3
+    sentence: "En la cena, el abuelo tuvo un {{blank}} y mencionó la fiesta sorpresa delante de la cumpleañera."
+    hint_general: "Sin querer, dijo algo que se suponía que nadie debía saber todavía."
+    explanation: "Desliz: dijo sin querer algo que era secreto. «Deslealtad» sería contarlo a propósito para arruinar la sorpresa, y el abuelo no quiso arruinar nada; «descuido» describe falta de atención en general, no esa frase concreta."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» es hacerlo a propósito para perjudicar a alguien, y el abuelo no quería arruinar la sorpresa: se le escapó."
+        hint_specific: "«Deslealtad» es a propósito. ¿El abuelo quería arruinar la sorpresa o se le escapó sin querer?"
+      - position: 2
+        text: "descuido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descuido» habla de falta de atención en general, y la frase señala una frase concreta dicha en un momento concreto."
+        hint_specific: "«Descuido» describe un rasgo general de atención. ¿La frase habla de un rasgo o de una frase concreta?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 4
+    sentence: "En la sobremesa, Ignacio tuvo un {{blank}} y contó el motivo de la ruptura de su amigo, que era información privada."
+    hint_general: "Contó algo privado sin haberlo pensado antes de hablar."
+    explanation: "Desliz: contó algo privado sin pensarlo. «Deslealtad» sería contarlo a propósito para dañar a su amigo, y aquí no hubo esa intención; «patinazo» es coloquial y le quita peso a un tema que sí importa a su amigo."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» es traicionar a propósito la confianza de alguien, y la frase no dice que Ignacio quisiera dañar a su amigo."
+        hint_specific: "«Deslealtad» implica intención de dañar. ¿La frase dice que Ignacio quería contarlo o que se le escapó?"
+      - position: 2
+        text: "patinazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Patinazo» es coloquial y le resta peso al hecho, y contar algo privado de un amigo merece un tono más cuidado."
+        hint_specific: "«Patinazo» suena a chiste sin importancia. ¿Contar algo privado de un amigo merece ese tono?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 5
+    sentence: "Durante la reunión, Facundo tuvo un {{blank}} con un chiste que incomodó a la nueva clienta."
+    hint_general: "Un comentario le salió mal y dejó a alguien incómodo, sin que lo hubiera planeado."
+    explanation: "Desliz: un comentario que le salió mal sin planearlo. «Deslealtad» sería algo hecho a propósito contra la empresa o la clienta, y aquí solo fue un chiste que no calculó; «torpeza» describe un rasgo constante, no ese chiste puntual."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» supone actuar a propósito contra alguien, y Facundo solo hizo un chiste que calculó mal, sin mala intención."
+        hint_specific: "«Deslealtad» es intencional. ¿Facundo planeó incomodar a la clienta o se le fue el chiste?"
+      - position: 2
+        text: "torpeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Torpeza» describe una forma de ser poco hábil en general, y la frase habla de un chiste puntual en una reunión, no de un rasgo de Facundo."
+        hint_specific: "«Torpeza» describe un rasgo constante. ¿La frase habla de cómo es Facundo siempre o de un chiste puntual?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 6
+    sentence: "La cuenta de la marca tuvo un {{blank}}: publicó por error el borrador de la campaña, con los precios todavía sin revisar."
+    hint_general: "Se publicó por error algo que todavía no estaba listo para salir."
+    explanation: "Desliz: se publicó sin querer algo que aún no estaba listo. «Deslealtad» sería publicarlo a propósito para dañar a la marca, y aquí el equipo no quiso hacerlo público todavía; «patinazo» es coloquial y suena a un tono que no encaja con la nota interna que sigue a este tipo de fallo."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» es actuar a propósito contra la marca, y la frase describe algo publicado sin querer, no una traición."
+        hint_specific: "«Deslealtad» es a propósito. ¿La cuenta publicó eso a propósito o sin querer?"
+      - position: 2
+        text: "patinazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Patinazo» es coloquial, y el reporte interno de una publicación equivocada suele pedir un tono más serio que ese."
+        hint_specific: "«Patinazo» suena informal, casi gracioso. ¿Encaja con el reporte interno de una publicación equivocada?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 7
+    sentence: "En la entrevista de trabajo, Camila tuvo un {{blank}} y criticó a su jefe anterior más de lo que había planeado."
+    hint_general: "Se le fue la mano al hablar de algo que quería mencionar solo por encima."
+    explanation: "Desliz: se le fue la mano al hablar de un tema que quería tocar apenas. «Deslealtad» sería criticarlo a propósito para quedar bien, y aquí se le escapó; «imprudencia» describe un rasgo general de Camila, no ese momento concreto de la entrevista."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» supone hacerlo a propósito, y la frase dice que Camila había planeado tocar el tema apenas, no explayarse."
+        hint_specific: "«Deslealtad» es un plan a propósito. ¿Camila planeó criticar tanto o se le fue la mano?"
+      - position: 2
+        text: "imprudencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imprudencia» describe una forma de actuar sin cuidado en general, y la frase habla de un momento concreto de esa entrevista."
+        hint_specific: "«Imprudencia» describe un rasgo constante. ¿La frase habla de cómo es Camila siempre o de un momento concreto?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+  - position: 8
+    sentence: "En plena negociación, Rodrigo tuvo un {{blank}} y dijo el número mínimo que estaba dispuesto a aceptar."
+    hint_general: "Reveló sin querer un dato que pensaba guardarse hasta el final."
+    explanation: "Desliz: reveló sin querer un dato que pensaba guardarse. «Deslealtad» sería revelarlo a propósito para favorecer a la otra parte, y Rodrigo no quería eso; «patinazo» es coloquial y le quita seriedad a un dato clave de la negociación."
+    options:
+      - position: 1
+        text: "deslealtad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Deslealtad» es revelar algo a propósito para favorecer al otro lado, y Rodrigo no quería soltar ese número: se le escapó."
+        hint_specific: "«Deslealtad» es a propósito. ¿Rodrigo quería revelar ese número o se le escapó?"
+      - position: 2
+        text: "patinazo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Patinazo» es coloquial y le resta seriedad a un dato clave de una negociación importante."
+        hint_specific: "«Patinazo» suena a anécdota graciosa. ¿Encaja con un dato clave de una negociación?"
+      - position: 3
+        text: "desliz"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El dato que no debía salir"
+    body: "El actor hablaba con soltura del rodaje cuando, sin darse cuenta, contó cómo terminaba la película. El periodista abrió los ojos y anotó rápido. Al salir, su agente le avisó: «Tuviste un desliz con el final, pero ya está publicado, no hay vuelta atrás»."
+    before_phrase: "Se me escapó, no debí decir eso."
+    after_phrase: "Tuve un desliz con el final."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La fiesta sorpresa"
+    body: "El abuelo mencionó la fiesta sorpresa justo delante de la cumpleañera, sin darse cuenta de lo que acababa de hacer. Todos se quedaron en silencio un segundo, hasta que ella se rio: «No pasa nada, abuelo, fue solo un desliz». La fiesta siguió igual de bien."
+    before_phrase: "Se me escapó, perdón, no quería arruinarlo."
+    after_phrase: "Fue solo un desliz, abuelo."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "El borrador publicado"
+    body: "La cuenta de la marca publicó por error el borrador de la campaña, con precios que todavía no estaban confirmados. El equipo lo bajó en minutos y escribió una nota corta: «Tuvimos un desliz técnico; los precios finales se publican mañana». Nadie exageró la respuesta."
+    before_phrase: "Se publicó algo que no debía salir todavía."
+    after_phrase: "Tuvimos un desliz técnico."
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-18"

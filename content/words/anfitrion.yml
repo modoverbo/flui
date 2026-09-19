@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "anfitrion"
+status: "draft"
+lemma: "anfitrión"
+part_of_speech: "sustantivo"
+syllables: ["an", "fi", "trión"]
+stressed_syllable: 3
+ipa_latam: "[an.fiˈtɾjon]"
+ipa_es: "[an.fiˈtɾjon]"
+explanation: "Persona que organiza una reunión y recibe bien a quienes llegan a ella."
+example_sentence: "Como anfitrión, Diego presentó a cada invitado con dos datos que los hicieran hablar entre sí."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para elogiar a quien organiza un evento y cuida el ambiente, no solo la logística."
+when_not_to_use: "No lo uses para quien solo presta un espacio sin ocuparse de los invitados: eso es prestar la casa, no ser anfitrión."
+collocations:
+  - "hacer de anfitrión"
+  - "buen anfitrión"
+  - "el anfitrión del evento"
+replaces:
+  - before: "El que organiza todo en las cenas"
+    after: "El anfitrión de las cenas"
+  - before: "Se encarga de que todos estén cómodos"
+    after: "Hace de anfitrión con todos"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "small-talk"
+    relevance: 1
+tags:
+  comodin: ["el que organiza"]
+  funcion: ["acoger", "presentar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "huésped"
+    difference: "El «huésped» es quien recibe hospitalidad; el anfitrión es quien la ofrece y organiza el encuentro."
+    memory_trick: "El anfitrión invita; el huésped es invitado."
+exercises:
+  - position: 1
+    sentence: "En la cena de la empresa, Diego hizo de {{blank}}: presentó a cada persona con un dato que abriera conversación."
+    hint_general: "Nombra a quien organiza el encuentro y cuida que los demás se sientan cómodos."
+    explanation: "Anfitrión: quien organiza el encuentro y cuida a los invitados. «Huésped» es quien recibe la hospitalidad, y «camarero» solo sirve la mesa, sin ocuparse de presentar a nadie."
+    options:
+      - position: 1
+        text: "anfitrión"
+        is_correct: true
+      - position: 2
+        text: "huésped"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «huésped» es quien recibe la hospitalidad, y aquí Diego es quien organiza y presenta a los demás."
+        hint_specific: "El huésped llega a la cena de otro. ¿Diego llegó o la organizó?"
+      - position: 3
+        text: "camarero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «camarero» sirve la mesa, y aquí Diego presenta a las personas entre sí, no sirve la comida."
+        hint_specific: "Un camarero sirve platos. ¿Diego servía la mesa o presentaba invitados?"
+  - position: 2
+    sentence: "Cuando llegaron las primeras parejas, Renata ya tenía preparado el papel de {{blank}}: música suave y una lista de temas para romper el hielo."
+    hint_general: "Piensa en quien prepara el encuentro para que todos se sientan a gusto."
+    explanation: "Anfitriona: quien prepara el encuentro para que los invitados estén a gusto. «Invitada» es quien asiste sin organizar nada, y «jefa» es coloquial y no describe este papel social."
+    options:
+      - position: 1
+        text: "invitada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «invitada» asiste al encuentro sin organizarlo, y aquí Renata preparó la música y los temas de conversación."
+        hint_specific: "Una invitada llega sin preparar nada. ¿Renata llegó o preparó el encuentro?"
+      - position: 2
+        text: "anfitriona"
+        is_correct: true
+      - position: 3
+        text: "jefa"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Jefa» es coloquial y habla de mando en el trabajo, y aquí se trata del papel social de organizar una reunión en casa."
+        hint_specific: "Una jefa manda en el trabajo. ¿Aquí se habla de una oficina o de una reunión en casa?"
+  - position: 3
+    sentence: "El hotel boutique se promociona por tener el mejor {{blank}} de la región: alguien que recuerda el nombre de cada huésped."
+    hint_general: "Busca a la persona que recibe y cuida a quienes llegan a un lugar."
+    explanation: "Anfitrión: quien recibe y cuida a los huéspedes. «Anfiteatro» es un espacio para espectáculos, y «huésped» es justamente a quien se recibe, no quien recibe."
+    options:
+      - position: 1
+        text: "anfitrión"
+        is_correct: true
+      - position: 2
+        text: "anfiteatro"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «anfiteatro» es un espacio para espectáculos, y aquí se habla de una persona que trata bien a cada huésped."
+        hint_specific: "Un anfiteatro es un lugar, no una persona. ¿La frase habla de un espacio o de un trato personal?"
+      - position: 3
+        text: "huésped"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «huésped» es quien se aloja y recibe la atención, no quien la ofrece."
+        hint_specific: "El huésped se aloja en el hotel. ¿El hotel recibe o es recibido?"
+  - position: 4
+    sentence: "Aunque el salón era prestado, Julia se comportó como {{blank}}: acomodó las sillas y recibió a cada persona en la puerta."
+    hint_general: "Describe a quien se ocupa de recibir y acomodar a las personas, aunque el lugar no sea suyo."
+    explanation: "Anfitriona: quien recibe y acomoda a los invitados, aunque el espacio no sea suyo. «Dueña» habla solo de propiedad, y «invitada» es quien asiste sin organizar nada."
+    options:
+      - position: 1
+        text: "dueña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dueña» solo indica de quién es el espacio, y la frase dice que el salón era prestado, no suyo."
+        hint_specific: "La dueña es propietaria del lugar. ¿El salón era de Julia?"
+      - position: 2
+        text: "invitada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «invitada» asiste sin organizar nada, y aquí Julia acomodó las sillas y recibió a cada persona."
+        hint_specific: "Una invitada no recibe en la puerta. ¿Julia recibió o fue recibida?"
+      - position: 3
+        text: "anfitriona"
+        is_correct: true
+  - position: 5
+    sentence: "Antes de que llegara el primer cliente, el gerente repasó su papel de {{blank}} con el equipo de ventas."
+    hint_general: "Piensa en quien recibe y guía a los visitantes de un evento comercial."
+    explanation: "Anfitrión: quien recibe y guía a los visitantes del evento. «Vendedor» se centra en cerrar tratos, y «guardia» es coloquial y sugiere control, no bienvenida."
+    options:
+      - position: 1
+        text: "anfitrión"
+        is_correct: true
+      - position: 2
+        text: "vendedor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «vendedor» se centra en cerrar tratos, y aquí se habla de recibir y guiar a quienes llegan al evento."
+        hint_specific: "Un vendedor busca cerrar un trato. ¿El texto habla de vender o de recibir?"
+      - position: 3
+        text: "guardia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Guardia» es coloquial y sugiere vigilancia, y aquí se trata de dar la bienvenida a los clientes, no de controlarlos."
+        hint_specific: "Un guardia vigila la entrada. ¿El equipo debía vigilar o dar la bienvenida?"
+  - position: 6
+    sentence: "En la boda de su prima, Marina asumió el rol de {{blank}} y se aseguró de que ninguna mesa quedara en silencio."
+    hint_general: "La persona que cuida que todos los invitados se sientan incluidos durante el encuentro."
+    explanation: "Anfitriona: quien cuida que todos se sientan incluidos. «Novia» describe otro papel en la boda, y «mesera» solo sirve la comida, sin cuidar el ambiente entre invitados."
+    options:
+      - position: 1
+        text: "novia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Novia» describe otro papel dentro de la boda, y el texto dice que Marina es prima, no la que se casa."
+        hint_specific: "La novia es quien se casa. ¿La frase dice que Marina se casaba?"
+      - position: 2
+        text: "mesera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «mesera» sirve la comida, y aquí Marina se ocupa de que la conversación fluya entre las mesas."
+        hint_specific: "Una mesera sirve platos. ¿Marina servía comida o cuidaba el ambiente?"
+      - position: 3
+        text: "anfitriona"
+        is_correct: true
+  - position: 7
+    sentence: "El podcast entrevistó al mejor {{blank}} de eventos corporativos de la ciudad, famoso por no dejar a nadie solo."
+    hint_general: "Se refiere a quien organiza el evento y cuida que nadie quede aislado."
+    explanation: "Anfitrión: quien organiza el evento y cuida que nadie quede aislado. «Organizador» habla solo de logística, y «influencer» es coloquial y habla de fama, no de cuidar a los invitados."
+    options:
+      - position: 1
+        text: "organizador"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Organizador» describe solo la logística del evento, y aquí se elogia además el trato con cada invitado."
+        hint_specific: "Un organizador arma la logística. ¿La frase habla solo de logística o también de trato humano?"
+      - position: 2
+        text: "anfitrión"
+        is_correct: true
+      - position: 3
+        text: "influencer"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Influencer» es coloquial y habla de fama en redes, y aquí se elogia el trato con los invitados en persona."
+        hint_specific: "Un influencer suma seguidores. ¿El podcast habla de seguidores o de trato en persona?"
+  - position: 8
+    sentence: "Pablo, que apenas conocía a la mitad de los invitados, terminó actuando como {{blank}} sin que nadie se lo pidiera."
+    hint_general: "Alguien que asume el papel de cuidar a los invitados aunque nadie se lo haya pedido."
+    explanation: "Anfitrión: quien cuida a los invitados aunque nadie se lo pida. «Extraño» describe a alguien sin relación con el grupo, y «jefe» es coloquial y habla de mando, no de cuidar el ambiente."
+    options:
+      - position: 1
+        text: "anfitrión"
+        is_correct: true
+      - position: 2
+        text: "extraño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extraño» describe a alguien sin relación con el grupo, y Pablo termina cuidando activamente a los invitados."
+        hint_specific: "Un extraño no se involucra con nadie. ¿Pablo se mantuvo al margen?"
+      - position: 3
+        text: "jefe"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Jefe» es coloquial y habla de mando en el trabajo, y aquí se trata de cuidar el ambiente entre invitados."
+        hint_specific: "Un jefe da órdenes. ¿Pablo daba órdenes o cuidaba el ambiente?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La cena con el cliente nuevo"
+    body: "Antes de la cena, el gerente le dijo a Sofía: «Tú eres la anfitriona esta noche». Sofía llegó temprano, revisó la mesa y preparó dos preguntas para cada invitado. Cuando el cliente se fue, dijo que era la mejor cena de trabajo del año."
+    before_phrase: "Yo me encargo de que todos estén cómodos."
+    after_phrase: "Esta noche soy la anfitriona."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "La casa siempre abierta"
+    body: "Cada domingo, Tomás recibía a quien quisiera pasar. «Eres un anfitrión nato», le dijo un amigo nuevo, sorprendido de que se acordara de su nombre y de que no comía picante. Tomás solo sonrió: llevaba años practicando eso."
+    before_phrase: "Siempre te acuerdas de todo lo de tus invitados."
+    after_phrase: "Eres un anfitrión nato."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La primera Navidad en su casa"
+    body: "Era la primera vez que Elena recibía a toda la familia en su casa nueva. Su madre la vio moverse entre las mesas, presentando a los primos que no se conocían. «Ya eres la anfitriona de esta familia», le dijo al oído, y Elena sintió que por fin tenía su lugar."
+    before_phrase: "Ahora yo organizo la Navidad."
+    after_phrase: "Ahora yo soy la anfitriona de esta familia."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

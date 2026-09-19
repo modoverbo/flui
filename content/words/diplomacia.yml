@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "diplomacia"
+status: "draft"
+lemma: "diplomacia"
+part_of_speech: "sustantivo"
+syllables: ["di", "plo", "ma", "cia"]
+stressed_syllable: 3
+ipa_latam: "[di.plo.ˈma.sja]"
+ipa_es: "[di.plo.ˈma.θja]"
+explanation: "Habilidad para decir algo difícil sin hacer sentir mal a nadie ni cerrar la conversación."
+example_sentence: "Con mucha diplomacia, Elena le dijo al proveedor que el plazo no le servía, sin cerrar la puerta a seguir trabajando juntos."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para elogiar a quien dice algo incómodo sin generar un conflicto innecesario."
+when_not_to_use: "No lo uses para quien evita decir la verdad por miedo: eso es no confrontar, no diplomacia."
+collocations:
+  - "con diplomacia"
+  - "usar la diplomacia"
+  - "falta de diplomacia"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+tags:
+  comodin: ["con tacto", "sin ofender"]
+  funcion: ["suavizar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "hipocresía"
+    difference: "La hipocresía esconde lo que realmente piensas; la diplomacia dice lo que piensas, pero elige bien las palabras."
+    memory_trick: "La diplomacia elige las palabras; la hipocresía esconde la verdad."
+replaces:
+  - before: "Se lo dijo con mucho tacto para que no se ofendiera"
+    after: "Se lo dijo con diplomacia para que no se ofendiera"
+  - before: "Sabe decir las cosas difíciles sin generar pelea"
+    after: "Tiene diplomacia para decir las cosas difíciles"
+exercises:
+  - position: 1
+    sentence: "Con mucha {{blank}}, Elena le avisó al proveedor que el plazo no le servía, sin cerrar la puerta a seguir trabajando juntos."
+    hint_general: "La forma de decir algo delicado sin ofender ni cortar la relación."
+    explanation: "Diplomacia: la forma de decir algo delicado sin ofender ni cortar la relación. «Hipocresía» esconde lo que realmente se piensa, y «prisa» describe rapidez, sin relación con cuidar las palabras."
+    options:
+      - position: 1
+        text: "diplomacia"
+        is_correct: true
+      - position: 2
+        text: "hipocresía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «hipocresía» esconde lo que realmente se piensa, y Elena sí dice la verdad sobre el plazo, solo con cuidado."
+        hint_specific: "La hipocresía esconde la verdad. ¿Elena esconde o dice lo que piensa?"
+      - position: 3
+        text: "prisa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «prisa» describe rapidez, y aquí lo importante es cómo se dijo el mensaje, no la velocidad con la que se dijo."
+        hint_specific: "La prisa habla de velocidad. ¿La frase describe rapidez o cuidado al hablar?"
+  - position: 2
+    sentence: "Le hizo falta {{blank}} al gerente para anunciar los recortes sin que medio equipo renunciara esa misma semana."
+    hint_general: "Lo que hace falta para dar una noticia difícil sin provocar una reacción peor."
+    explanation: "Diplomacia: lo que hace falta para dar una noticia difícil sin provocar una reacción peor. «Diploma» es un documento que certifica estudios, y «franqueza» sería decir todo sin cuidar la forma."
+    options:
+      - position: 1
+        text: "diploma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «diploma» es un documento que certifica estudios, sin relación con anunciar recortes al equipo."
+        hint_specific: "Un diploma se cuelga en la pared. ¿La frase habla de un documento o de una forma de hablar?"
+      - position: 2
+        text: "diplomacia"
+        is_correct: true
+      - position: 3
+        text: "franqueza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «franqueza» sería decir todo sin cuidar la forma, y la frase pide justamente lo contrario: cuidar cómo se dice."
+        hint_specific: "La franqueza no cuida las formas. ¿El gerente necesitaba solo sinceridad o también cuidado?"
+  - position: 3
+    sentence: "Marta manejó la queja del cliente con tanta {{blank}} que terminaron renovando el contrato por dos años más."
+    hint_general: "La habilidad para resolver un conflicto sin que la relación se rompa."
+    explanation: "Diplomacia: la habilidad para resolver un conflicto sin romper la relación. «Suerte» sería algo casual, y «diploma» es un documento que certifica estudios, sin relación con manejar una queja."
+    options:
+      - position: 1
+        text: "diplomacia"
+        is_correct: true
+      - position: 2
+        text: "suerte"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «suerte» sería algo casual, y aquí Marta manejó la queja con una habilidad concreta, no por azar."
+        hint_specific: "La suerte no se maneja, solo pasa. ¿Marta manejó algo o solo tuvo suerte?"
+      - position: 3
+        text: "diploma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «diploma» es un documento que certifica estudios, sin relación con manejar una queja de un cliente."
+        hint_specific: "Un diploma no maneja quejas. ¿La frase habla de un documento o de una forma de actuar?"
+  - position: 4
+    sentence: "Sin nada de {{blank}}, el nuevo jefe soltó las críticas delante de todo el equipo y varios se fueron molestos."
+    hint_general: "Lo que le faltó a alguien que dijo algo delicado de la peor manera posible."
+    explanation: "Diplomacia: lo que le faltó al jefe para decir las críticas sin ofender. «Tacto» es casi lo mismo, pero se usa para el trato en general, y «paja» es coloquial y no describe esta habilidad."
+    options:
+      - position: 1
+        text: "diplomacia"
+        is_correct: true
+      - position: 2
+        text: "tacto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tacto» describe el cuidado en el trato en general, y aquí se habla específicamente de cómo se comunicó una crítica delicada frente al equipo."
+        hint_specific: "El tacto es más general. ¿La frase habla del trato diario o de una crítica puntual?"
+      - position: 3
+        text: "paja"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Paja» es coloquial y habla de relleno sin sustancia, y aquí se busca nombrar con precisión el cuidado que le faltó al jefe."
+        hint_specific: "«Paja» habla de relleno vacío. ¿La frase pide una palabra precisa o una muy informal?"
+  - position: 5
+    sentence: "Antes de la reunión con los dos socios enfrentados, contrataron a un mediador conocido por su {{blank}}."
+    hint_general: "La habilidad para acercar a dos partes que están en conflicto."
+    explanation: "Diplomacia: la habilidad para acercar a dos partes en conflicto. «Autoridad» impone una decisión desde arriba, y «diploma» es un documento que certifica estudios, sin relación con acercar posturas."
+    options:
+      - position: 1
+        text: "autoridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «autoridad» impone una decisión desde arriba, y un mediador busca acercar posturas, no imponer nada."
+        hint_specific: "La autoridad impone. ¿Un mediador impone una decisión o acerca posturas?"
+      - position: 2
+        text: "diplomacia"
+        is_correct: true
+      - position: 3
+        text: "diploma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «diploma» es un documento que certifica estudios, sin relación con acercar a dos socios enfrentados."
+        hint_specific: "Un diploma no acerca a nadie. ¿La frase habla de un documento o de una habilidad?"
+  - position: 6
+    sentence: "Rubén tuvo que usar toda su {{blank}} para explicarle a su suegra que este año pasarían la Navidad en otra casa."
+    hint_general: "La habilidad para dar una noticia incómoda sin que la otra persona se sienta rechazada."
+    explanation: "Diplomacia: la habilidad para dar una noticia incómoda sin que la otra persona se sienta rechazada. «Mentira» sería inventar una excusa falsa, y «diploma» es un documento, no una forma de comunicar."
+    options:
+      - position: 1
+        text: "diplomacia"
+        is_correct: true
+      - position: 2
+        text: "mentira"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «mentira» sería inventar una excusa falsa, y la frase no dice que Rubén inventara nada, solo que eligió bien las palabras."
+        hint_specific: "Una mentira inventa algo falso. ¿Rubén inventó una excusa o solo cuidó cómo lo dijo?"
+      - position: 3
+        text: "diploma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «diploma» es un documento que certifica estudios, sin relación con hablar con la suegra sobre la Navidad."
+        hint_specific: "Un diploma no explica nada a una suegra. ¿La frase habla de un documento o de una conversación?"
+  - position: 7
+    sentence: "El capitán del equipo resolvió la pelea entre dos compañeros con una {{blank}} que ninguno esperaba de él."
+    hint_general: "La habilidad para calmar un conflicto entre dos personas sin tomar partido de forma brusca."
+    explanation: "Diplomacia: la habilidad para calmar un conflicto sin tomar partido de forma brusca. «Fuerza» impone una solución por la mala, y «diploma» es un documento, sin relación con resolver una pelea."
+    options:
+      - position: 1
+        text: "fuerza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «fuerza» impone una solución de forma brusca, y la frase dice que el capitán resolvió la pelea con una habilidad que sorprendió a todos, no con imposición."
+        hint_specific: "La fuerza impone sin cuidado. ¿El capitán impuso una solución o la manejó con cuidado?"
+      - position: 2
+        text: "diplomacia"
+        is_correct: true
+      - position: 3
+        text: "diploma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «diploma» es un documento que certifica estudios, sin relación con resolver una pelea entre compañeros."
+        hint_specific: "Un diploma no resuelve peleas. ¿La frase habla de un documento o de una habilidad?"
+  - position: 8
+    sentence: "Aunque no estaba de acuerdo con el plan, la nueva directora lo cuestionó con tanta {{blank}} que nadie se sintió atacado."
+    hint_general: "La habilidad para cuestionar algo sin que la otra persona se sienta atacada."
+    explanation: "Diplomacia: la habilidad para cuestionar algo sin que nadie se sienta atacado. «Sumisión» sería aceptar el plan sin decir nada, y la frase dice que sí lo cuestionó, aunque con cuidado."
+    options:
+      - position: 1
+        text: "sumisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «sumisión» sería aceptar el plan sin decir nada, y la frase dice que la directora sí lo cuestionó, solo que con cuidado."
+        hint_specific: "La sumisión no cuestiona nada. ¿La directora aceptó en silencio o cuestionó el plan?"
+      - position: 2
+        text: "diplomacia"
+        is_correct: true
+      - position: 3
+        text: "diploma"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «diploma» es un documento que certifica estudios, sin relación con cuestionar un plan de trabajo."
+        hint_specific: "Un diploma no cuestiona planes. ¿La frase habla de un documento o de una forma de hablar?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El plazo que no servía"
+    body: "Elena leyó el correo del proveedor tres veces antes de responder. «Necesito diplomacia para esto», pensó, y escribió: «El plazo que propones no nos funciona, pero nos encantaría ver otras fechas posibles». La respuesta llegó en media hora, sin ningún reclamo."
+    before_phrase: "Se lo tengo que decir con mucho tacto."
+    after_phrase: "Necesito diplomacia para esto."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Manejar un conflicto"
+    body: "«Cuéntame de un momento en que resolviste un conflicto difícil», pidió el entrevistador. Bruno contó cómo, con diplomacia, había logrado que dos áreas enfrentadas volvieran a trabajar juntas sin que nadie sintiera que había perdido."
+    before_phrase: "Supe manejarlo con mucho cuidado."
+    after_phrase: "Lo manejé con diplomacia."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La Navidad en otra casa"
+    body: "Rubén practicó la frase varias veces antes de llamar a su suegra. Cuando por fin habló, usó tanta diplomacia que ella misma terminó proponiendo verse antes, en una comida aparte. «Menos mal que lo pensé bien», le dijo después a su pareja."
+    before_phrase: "Se lo tengo que decir con mucho cuidado."
+    after_phrase: "Le hablé con diplomacia."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

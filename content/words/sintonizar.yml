@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "sintonizar"
+status: "draft"
+lemma: "sintonizar"
+part_of_speech: "verbo"
+syllables: ["sin", "to", "ni", "zar"]
+stressed_syllable: 4
+ipa_latam: "[sin.to.niˈsaɾ]"
+ipa_es: "[sin.to.niˈθaɾ]"
+explanation: "Entender de inmediato el estado de ánimo de alguien, con una conexión casi automática."
+example_sentence: "Desde el primer día de trabajo juntos, Marina y su compañero sintonizaron sin necesitar explicarse mucho."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para describir esa conexión rápida en la que dos personas entienden lo mismo sin mucho esfuerzo."
+when_not_to_use: "No lo uses para coincidencias técnicas de horario: sintonizar, en este sentido, describe una conexión emocional."
+collocations:
+  - "sintonizar con alguien"
+  - "sintonizar rápido"
+  - "sin sintonizar"
+family: ["sintonía"]
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["estar en la misma onda", "entenderse sin hablar"]
+  funcion: ["conectar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "sincronizar"
+    difference: "Sincronizar es hacer que dos cosas coincidan en el tiempo, como dos relojes; sintonizar es entender el ánimo de alguien de forma casi inmediata."
+    memory_trick: "Sincronizas relojes; sintonizas con una persona."
+replaces:
+  - before: "Se entendieron rápido sin necesitar explicarse mucho"
+    after: "Sintonizaron rápido sin necesitar explicarse mucho"
+  - before: "Captó enseguida cómo se sentía, sin que ella dijera nada"
+    after: "Sintonizó enseguida con cómo se sentía, sin que ella dijera nada"
+exercises:
+  - position: 1
+    sentence: "Desde el primer día de trabajo juntos, Marina y su compañero {{blank}} sin necesitar explicarse mucho."
+    hint_general: "Entender de inmediato el estado de ánimo de alguien, casi sin esfuerzo."
+    explanation: "Sintonizaron: entendieron de inmediato el ánimo del otro, casi sin esfuerzo. «Sincronizaron» hace coincidir horarios o movimientos, y «discutieron» describe un desacuerdo, justo lo contrario."
+    options:
+      - position: 1
+        text: "sintonizaron"
+        is_correct: true
+      - position: 2
+        text: "sincronizaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, como relojes o pasos, sin relación con entender el ánimo de alguien."
+        hint_specific: "Sincronizar coincide en el tiempo, como relojes. ¿La frase habla de horarios o de entenderse sin explicaciones?"
+      - position: 3
+        text: "discutieron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» describe un desacuerdo, y la frase dice que se entendieron sin necesitar explicarse mucho, justo lo contrario de discutir."
+        hint_specific: "Discutir es un desacuerdo. ¿Marina y su compañero discutieron o se entendieron rápido?"
+  - position: 2
+    sentence: "Desde la primera cita, Hugo sintió que {{blank}} con ella de una forma que no le pasaba seguido."
+    hint_general: "Sentir una conexión rápida con alguien, algo que no ocurre siempre."
+    explanation: "Sintonizaba: sentía una conexión rápida con alguien. «Sincronizaba» hace coincidir horarios o movimientos, y «competía» implica medirse contra otra persona, sin relación con esa conexión."
+    options:
+      - position: 1
+        text: "sintonizaba"
+        is_correct: true
+      - position: 2
+        text: "competía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Competir» implica medirse contra otra persona, y la frase describe una conexión, no una rivalidad entre Hugo y su cita."
+        hint_specific: "Competir es medirse contra alguien. ¿Hugo competía con ella o sentía una conexión?"
+      - position: 3
+        text: "sincronizaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, sin relación con sentir una conexión emocional en una cita."
+        hint_specific: "Sincronizar coincide en el tiempo. ¿Hugo habla de horarios o de una conexión con ella?"
+  - position: 3
+    sentence: "El nuevo director {{blank}} con el equipo casi de inmediato, algo que su antecesor nunca logró."
+    hint_general: "Entender el ánimo de un grupo casi de inmediato, algo que no todos logran."
+    explanation: "Sintonizó: entendió el ánimo de un grupo casi de inmediato. «Sincronizó» hace coincidir horarios o movimientos, y «amenazó» implica generar miedo, sin relación con conectar con un equipo."
+    options:
+      - position: 1
+        text: "sintonizó"
+        is_correct: true
+      - position: 2
+        text: "amenazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amenazar» implica generar miedo, y la frase dice que el director conectó bien con el equipo, algo que su antecesor no logró."
+        hint_specific: "Amenazar genera miedo. ¿El director amenazó al equipo o conectó bien con ellos?"
+      - position: 3
+        text: "sincronizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, sin relación con entender el ánimo de un equipo de trabajo."
+        hint_specific: "Sincronizar coincide en el tiempo. ¿La frase habla de horarios o de entender al equipo?"
+  - position: 4
+    sentence: "Aunque hablaban idiomas distintos, los dos músicos {{blank}} apenas empezaron a tocar juntos."
+    hint_general: "Entenderse casi sin palabras, incluso entre personas que hablan idiomas distintos."
+    explanation: "Sintonizaron: se entendieron casi sin palabras, incluso hablando idiomas distintos. «Copiaron» implica imitar algo, y «sincronizaron» hace coincidir horarios o movimientos; ninguno describe esa conexión."
+    options:
+      - position: 1
+        text: "sintonizaron"
+        is_correct: true
+      - position: 2
+        text: "copiaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» implica imitar algo, y la frase describe una conexión mutua entre los dos músicos, no que uno imitara al otro."
+        hint_specific: "Copiar es imitar a alguien. ¿Los músicos se copiaron o se conectaron mutuamente?"
+      - position: 3
+        text: "sincronizaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, y aquí se describe una conexión de ánimo, más allá del ritmo exacto de la música."
+        hint_specific: "Sincronizar coincide en el tiempo exacto. ¿La frase habla solo de ritmo o de una conexión más amplia?"
+  - position: 5
+    sentence: "La psicóloga {{blank}} con el niño desde la primera sesión, algo que sorprendió incluso a sus padres."
+    hint_general: "Conectar con el ánimo de alguien desde el primer encuentro."
+    explanation: "Sintonizó: conectó con el ánimo de alguien desde el primer encuentro. «Chapeó» es coloquial y regional, y «sincronizó» hace coincidir horarios; ninguno nombra esa conexión con precisión."
+    options:
+      - position: 1
+        text: "sintonizó"
+        is_correct: true
+      - position: 2
+        text: "chapeó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chapeó» es coloquial y regional, y aquí se busca nombrar con precisión la conexión de la psicóloga con el niño."
+        hint_specific: "«Chapeó» es una palabra muy regional. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "sincronizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, sin relación con la conexión emocional de la primera sesión."
+        hint_specific: "Sincronizar coincide en el tiempo. ¿La frase habla de horarios o de una conexión emocional?"
+  - position: 6
+    sentence: "Bruno notó que {{blank}} mejor con sus abuelos que con la mayoría de la gente de su edad."
+    hint_general: "Conectar mejor con alguien de otra generación que con personas de la misma edad."
+    explanation: "Sintonizaba: conectaba mejor con alguien de otra generación. «Sincronizaba» hace coincidir horarios o movimientos, y «discutía» describe un desacuerdo, ninguno describe esa buena conexión."
+    options:
+      - position: 1
+        text: "sintonizaba"
+        is_correct: true
+      - position: 2
+        text: "discutía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» describe un desacuerdo, y la frase dice que Bruno conectaba mejor con sus abuelos, no que discutiera con ellos."
+        hint_specific: "Discutir es un desacuerdo. ¿Bruno discutía con sus abuelos o conectaba bien con ellos?"
+      - position: 3
+        text: "sincronizaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, sin relación con conectar mejor con una generación distinta."
+        hint_specific: "Sincronizar coincide en el tiempo. ¿La frase habla de horarios o de conectar con sus abuelos?"
+  - position: 7
+    sentence: "El nuevo integrante de la banda {{blank}} con el resto desde el primer ensayo, y todos lo notaron."
+    hint_general: "Conectar bien con un grupo desde el primer encuentro, de forma notoria."
+    explanation: "Sintonizó: conectó bien con un grupo desde el primer encuentro. «Sincronizó» hace coincidir horarios o movimientos, y «reemplazó» implica ocupar el lugar de otro, sin relación con esa conexión."
+    options:
+      - position: 1
+        text: "sintonizó"
+        is_correct: true
+      - position: 2
+        text: "reemplazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reemplazar» implica ocupar el lugar de otra persona, y la frase describe una buena conexión, no un reemplazo dentro de la banda."
+        hint_specific: "Reemplazar es ocupar un lugar. ¿El nuevo integrante reemplazó a alguien o conectó bien con el grupo?"
+      - position: 3
+        text: "sincronizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, y aquí se describe una conexión de ánimo desde el primer ensayo."
+        hint_specific: "Sincronizar coincide en el tiempo exacto. ¿La frase habla solo de tiempos o de una conexión más amplia?"
+  - position: 8
+    sentence: "Después de años sin hablarse, las dos hermanas {{blank}} de nuevo apenas se sentaron a tomar un café."
+    hint_general: "Volver a entenderse rápido con alguien, después de mucho tiempo sin hablarse."
+    explanation: "Sintonizaron: volvieron a entenderse rápido, después de mucho tiempo. «Sincronizaron» hace coincidir horarios o movimientos, y «pelearon» implica un conflicto, sin relación con ese reencuentro."
+    options:
+      - position: 1
+        text: "sintonizaron"
+        is_correct: true
+      - position: 2
+        text: "pelearon"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pelear» implica un conflicto, y la frase describe un reencuentro cálido entre las dos hermanas, no una pelea."
+        hint_specific: "Pelear es un conflicto. ¿Las hermanas pelearon o se entendieron rápido de nuevo?"
+      - position: 3
+        text: "sincronizaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sincronizar» es hacer que dos cosas coincidan en el tiempo, sin relación con volver a conectar emocionalmente después de años."
+        hint_specific: "Sincronizar coincide en el tiempo. ¿La frase habla de horarios o de una conexión emocional?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Sin necesitar explicarse mucho"
+    body: "Desde la primera reunión, Marina notó que su compañero terminaba sus ideas antes de que ella las dijera del todo. «Sintonizamos desde el primer día», le comentó a otra colega, «con él no hace falta explicar todo dos veces»."
+    before_phrase: "Nos entendimos rápido desde el primer día."
+    after_phrase: "Sintonizamos desde el primer día."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Los dos músicos"
+    body: "Uno hablaba portugués y el otro apenas entendía algunas palabras, pero en cuanto empezaron a tocar, algo hizo clic. «No necesitamos el mismo idioma para sintonizar», dijo uno de ellos entre risas, mientras el público aplaudía de pie."
+    before_phrase: "No necesitamos el mismo idioma para entendernos."
+    after_phrase: "No necesitamos el mismo idioma para sintonizar."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El café después de años"
+    body: "Llevaban años sin hablarse más que por mensajes cortos. Pero apenas se sentaron a tomar un café, algo volvió a fluir entre ellas. «Sigo sintonizando contigo como cuando éramos chicas», le dijo su hermana, sorprendida de lo fácil que había sido."
+    before_phrase: "Sigo entendiéndome contigo como cuando éramos chicas."
+    after_phrase: "Sigo sintonizando contigo como cuando éramos chicas."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

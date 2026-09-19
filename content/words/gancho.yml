@@ -1,0 +1,238 @@
+schema_version: 1
+slug: "gancho"
+status: "draft"
+lemma: "gancho"
+part_of_speech: "sustantivo"
+syllables:
+  - "gan"
+  - "cho"
+stressed_syllable: 1
+ipa_latam: "[ˈɡan.tʃo]"
+ipa_es: "[ˈɡan.tʃo]"
+explanation: "Frase o idea inicial que capta la atención al instante y hace que alguien siga leyendo o escuchando."
+example_sentence: "La primera línea del post fue tan buena que funcionó como gancho: nadie dejó de leer hasta el final."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para hablar del arranque de un texto, un video o una charla: la parte que decide si alguien se queda."
+when_not_to_use: "No la uses para el contenido completo ni para el cierre: es solo la entrada, no lo que sostiene después."
+collocations:
+  - "el gancho de la publicación"
+  - "un buen gancho inicial"
+  - "perder el gancho"
+replaces:
+  - before: "Necesito una frase que atrape desde el principio"
+    after: "Necesito un buen gancho para abrir la publicación"
+  - before: "Si la primera línea no llama la atención, nadie sigue leyendo"
+    after: "Si el gancho no funciona, nadie sigue leyendo"
+  - before: "Empezó con algo que hizo que me quedara leyendo"
+    after: "Empezó con un gancho que me hizo quedarme leyendo"
+family:
+  - "enganchar"
+  - "ganchudo"
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "algo llamativo"
+  funcion:
+    - "abrir"
+    - "atraer"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "cebo"
+    difference: "«Cebo» promete algo que la publicación no cumple, solo para generar clics; el gancho capta la atención y el resto del contenido lo sostiene."
+    memory_trick: "El cebo engaña; el gancho cumple."
+  - confused_with: "anzuelo"
+    difference: "«Anzuelo» se usa para algo que busca que alguien caiga en un engaño; el gancho de una publicación busca que sigas leyendo, sin necesidad de engañarte."
+exercises:
+  - position: 1
+    sentence: "Antes de enviar el boletín, Camila reescribió la primera línea para que funcionara como {{blank}} y la gente no lo cerrara enseguida."
+    hint_general: "Apunta a la parte inicial de un texto que hace que alguien decida seguir leyendo."
+    explanation: "Gancho: la parte inicial que hace que alguien siga leyendo. «Resumen» contaría el final antes de tiempo, y «cacho» es solo un fragmento cualquiera de texto, sin explicar por qué alguien seguiría leyendo."
+    options:
+      - position: 1
+        text: "resumen"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un resumen cuenta el final antes de tiempo; aquí se busca justo lo contrario: que sigan leyendo hasta el final."
+        hint_specific: "Un resumen ya cuenta cómo termina. ¿Camila quiere adelantar el final o hacer que sigan leyendo?"
+      - position: 2
+        text: "gancho"
+        is_correct: true
+      - position: 3
+        text: "cacho"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cacho» solo es un fragmento cualquiera de texto; no explica por qué alguien seguiría leyendo el boletín."
+        hint_specific: "«Cacho» solo describe un fragmento cualquiera. ¿La frase habla de un fragmento cualquiera o de algo pensado para atrapar?"
+  - position: 2
+    sentence: "Tomás sabía que sin un buen {{blank}}, su publicación se perdería entre cientos de fotos de comida."
+    hint_general: "Se trata de lo que hace que una publicación destaque entre muchas otras parecidas."
+    explanation: "Gancho: lo que hace que una publicación destaque entre otras. «Cebo» promete algo que después no cumple, y «carnada» es una palabra muy coloquial, de pesca, fuera de lugar al hablar de contenido."
+    options:
+      - position: 1
+        text: "cebo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un cebo promete algo que después no cumple; la publicación de Tomás sí sostiene lo que promete."
+        hint_specific: "Un cebo promete y después no cumple. ¿La publicación de Tomás engaña a quien la lee?"
+      - position: 2
+        text: "carnada"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Carnada» es una palabra muy coloquial y de pesca; suena fuera de lugar para hablar de estrategia de contenido."
+        hint_specific: "«Carnada» es una palabra de pesca, muy coloquial. ¿Encaja con hablar de una publicación en redes?"
+      - position: 3
+        text: "gancho"
+        is_correct: true
+  - position: 3
+    sentence: "En la entrevista, Renata explicó que su trabajo como editora empieza por encontrar el {{blank}} de cada nota antes de escribir el resto."
+    hint_general: "Habla de la parte que se piensa primero porque decide si alguien sigue leyendo la nota entera."
+    explanation: "Gancho: la parte que se piensa primero para que alguien siga leyendo. «Titular» es el encabezado formal de la nota, y «arranque» es solo el inicio, sin implicar que atrape a nadie."
+    options:
+      - position: 1
+        text: "titular"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El titular es el encabezado formal de la nota; Renata habla de la frase pensada para que alguien no la suelte, algo más específico."
+        hint_specific: "El titular es el encabezado formal de arriba. ¿Renata habla de ese encabezado o de lo que atrapa al lector?"
+      - position: 2
+        text: "arranque"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El arranque es solo el inicio de la nota; no toda nota empieza pensada para atrapar, y de eso habla justamente Renata."
+        hint_specific: "Un arranque es solo el inicio, sin más. ¿Renata habla de cualquier inicio o de uno pensado para atrapar?"
+      - position: 3
+        text: "gancho"
+        is_correct: true
+  - position: 4
+    sentence: "Julián le mostró a su hermana el primer renglón de su publicación: «¿Esto sirve de {{blank}}?», le preguntó, nervioso por si nadie seguía leyendo."
+    hint_general: "Pregunta si esa primera línea logra que alguien quiera seguir leyendo el resto."
+    explanation: "Gancho: la línea que logra que alguien siga leyendo. «Ganso» es una palabra coloquial para algo torpe o ridículo, y «anzuelo» suele implicar que alguien cae en una trampa, algo que Julián no busca."
+    options:
+      - position: 1
+        text: "ganso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Ganso» es una palabra coloquial para algo torpe o ridículo; no encaja con la pregunta nerviosa y sincera de Julián."
+        hint_specific: "«Ganso» es una palabra coloquial para algo torpe. ¿Julián pregunta si escribió algo torpe, o si atrapa al lector?"
+      - position: 2
+        text: "anzuelo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un anzuelo suele implicar que alguien cae en una trampa; Julián solo quiere que su hermana siga leyendo, no engañarla."
+        hint_specific: "Un anzuelo suele implicar una trampa. ¿Julián busca engañar a quien lo lea, o solo que siga leyendo?"
+      - position: 3
+        text: "gancho"
+        is_correct: true
+  - position: 5
+    sentence: "El cliente pidió cambiar el {{blank}} de la campaña: quería algo que se sintiera curioso, no solo llamativo."
+    hint_general: "Se refiere a la frase inicial que despierta curiosidad y hace que alguien quiera saber más."
+    explanation: "Gancho: la frase inicial que despierta curiosidad. «Adelanto» ya cuenta parte del contenido, y «extracto» es solo un fragmento tomado de otra parte, no algo pensado para atrapar."
+    options:
+      - position: 1
+        text: "adelanto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un adelanto ya muestra parte del contenido; el cliente pedía algo que despertara curiosidad sin revelar de más."
+        hint_specific: "Un adelanto ya revela parte de lo que viene. ¿El cliente pedía revelar contenido, o despertar curiosidad?"
+      - position: 2
+        text: "extracto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un extracto es un fragmento tomado de otra parte; el cliente pedía algo escrito a propósito para atrapar, no un recorte."
+        hint_specific: "Un extracto es un fragmento tomado de otro texto. ¿El cliente pedía un fragmento, o algo pensado para atrapar?"
+      - position: 3
+        text: "gancho"
+        is_correct: true
+  - position: 6
+    sentence: "Ignacio probó diez versiones distintas de la misma foto, buscando cuál servía mejor de {{blank}} para la publicación."
+    hint_general: "Busca la versión que mejor logra que alguien se detenga a mirar la publicación completa."
+    explanation: "Gancho: lo que logra que alguien se detenga a mirar. «Encabezado» es solo el título formal de arriba, y «presentación» es demasiado general, no algo pensado para detener a alguien que va pasando."
+    options:
+      - position: 1
+        text: "encabezado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un encabezado es solo el título formal de arriba; Ignacio probaba fotos, no encabezados de texto."
+        hint_specific: "Un encabezado es un título de texto, no una foto. ¿Con qué está probando Ignacio diez versiones?"
+      - position: 2
+        text: "presentación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una presentación es demasiado general; no describe específicamente lo que detiene a alguien que va pasando fotos."
+        hint_specific: "Una presentación es un concepto muy general. ¿Ignacio busca algo general, o algo puntual que detenga a la gente?"
+      - position: 3
+        text: "gancho"
+        is_correct: true
+  - position: 7
+    sentence: "Paula señaló que la publicación fallaba desde el {{blank}}: nadie se detenía a leer la segunda línea."
+    hint_general: "Habla del punto exacto donde la publicación debía atrapar y no lo logró."
+    explanation: "Gancho: el punto donde la publicación debía atrapar y no lo logró. «Detonante» sugiere algo que provoca una reacción fuerte, y «premisa» es solo la idea de base, no la frase que atrapa."
+    options:
+      - position: 1
+        text: "detonante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un detonante provoca una reacción fuerte, casi siempre negativa; aquí el problema es que nadie seguía leyendo, no que hubiera una reacción exagerada."
+        hint_specific: "Un detonante provoca una reacción fuerte. ¿El problema de esa publicación fue una reacción fuerte, o que nadie seguía leyendo?"
+      - position: 2
+        text: "premisa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una premisa es solo la idea de base del texto; Paula habla del punto exacto que debía atrapar a quien lo leyera."
+        hint_specific: "Una premisa es la idea de base de un texto. ¿Paula habla de la idea de base, o del punto que debía atrapar?"
+      - position: 3
+        text: "gancho"
+        is_correct: true
+  - position: 8
+    sentence: "Diego cerró la publicación sin revisar el {{blank}}, y al día siguiente casi nadie la había abierto."
+    hint_general: "Se trata de la parte que decide, ya desde el principio, si alguien se detiene a leer."
+    explanation: "Gancho: la parte que decide, desde el principio, si alguien se detiene a leer. «Provocación» busca generar polémica, no necesariamente atrapar, y «portada» es solo la imagen visible, sin implicar una frase pensada para atrapar."
+    options:
+      - position: 1
+        text: "provocación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una provocación busca generar polémica; el problema de Diego no fue de polémica, sino que nadie se detenía a leer."
+        hint_specific: "Una provocación busca generar polémica. ¿El problema de Diego fue de polémica, o de que nadie leía?"
+      - position: 2
+        text: "portada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una portada es solo la imagen visible de la publicación; Diego habla de la frase que decide si alguien se queda leyendo."
+        hint_specific: "Una portada es solo la imagen visible. ¿Diego habla de la imagen, o de la frase que decide si se quedan leyendo?"
+      - position: 3
+        text: "gancho"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La frase que faltaba"
+    body: "El equipo llevaba media hora mirando el borrador del post. «Empieza con el dato, no con la disculpa», dijo Marina. Reescribieron la primera línea y de pronto todos quisieron seguir leyendo. «Ahí está el gancho», sonrió el jefe de contenido."
+    before_phrase: "Necesitamos algo que llame la atención al principio."
+    after_phrase: "Necesitamos un buen gancho."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El post que casi no publicó"
+    body: "Valeria le mostró el borrador a su amiga antes de publicarlo. «Tu primera línea es muy plana», le dijo Carla. «Arranca con la pregunta, no con el resumen». Valeria cambió el orden y su amiga asintió: «Ahora sí tiene gancho»."
+    before_phrase: "No sé si esto atrapa a alguien."
+    after_phrase: "Ahora sí tiene gancho."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El primer video"
+    body: "Bruno le enseñó a su padre el primer video que grabó para sus seguidores. «Se nota que estás nervioso al principio», dijo su padre con cariño. «Prueba a empezar por la parte que más te emociona a ti: ese es tu gancho». Bruno grabó de nuevo, y esta vez no se detuvo hasta el final."
+    before_phrase: "No sé cómo hacer que alguien no se aburra en los primeros segundos."
+    after_phrase: "Ese es tu gancho: la parte que más te emociona."
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-18"

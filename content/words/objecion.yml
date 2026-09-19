@@ -1,0 +1,231 @@
+schema_version: 1
+slug: "objecion"
+status: "draft"
+lemma: "objeción"
+part_of_speech: "sustantivo"
+syllables: ["ob", "je", "ción"]
+stressed_syllable: 3
+ipa_latam: "[oβ.xeˈsjon]"
+ipa_es: "[oβ.xeˈθjon]"
+explanation: "Razón que alguien da para no aceptar una propuesta o un plan tal como está."
+example_sentence: "El cliente planteó una objeción sobre el plazo de entrega antes de firmar el contrato."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsala cuando alguien da una razón concreta para no aceptar algo todavía, no para una simple queja."
+when_not_to_use: "No la uses para una queja después de los hechos: la objeción se plantea antes de decidir, no después."
+collocations:
+  - "plantear una objeción"
+  - "responder a una objeción"
+  - "una objeción de peso"
+  - "superar la objeción"
+replaces:
+  - before: "Tiene un problema con una parte del trato, y lo dice"
+    after: "Tiene una objeción sobre una parte del trato"
+  - before: "Dijo que no estaba de acuerdo con el plazo, y explicó por qué"
+    after: "Planteó una objeción sobre el plazo"
+  - before: "Puso una razón concreta para no firmar todavía"
+    after: "Puso una objeción para no firmar todavía"
+family: ["objetar", "objetable"]
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin: ["un pero"]
+  funcion: ["dar una razón para no aceptar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "objetivo"
+    difference: "«Objetivo» es el propósito que persigues; «objeción» es la razón que alguien da para no estar de acuerdo con algo."
+    memory_trick: "El objetivo se persigue; la objeción se responde."
+  - confused_with: "reparo"
+    difference: "«Reparo» es una duda más leve, casi una incomodidad, y a veces ni se dice en voz alta; «objeción» es una razón concreta y declarada para no aceptar algo."
+    memory_trick: "El reparo se calla; la objeción se plantea."
+exercises:
+  - position: 1
+    sentence: "Plantear {{blank}} no significa que el cliente no quiera comprar; muchas veces solo busca más información antes de decidir."
+    hint_general: "Nombra la razón que alguien da para no aceptar algo todavía, no el propósito que persigue."
+    explanation: "Objeción: la razón que el cliente plantea antes de decidir, sin dejar de querer comprar. «Objetivo» es el propósito que se persigue, no una razón, y «duda» sería algo más vago, sin pedir información concreta."
+    options:
+      - position: 1
+        text: "objetivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Objetivo» es el propósito que se persigue, no una razón para desistir; aquí el cliente sigue queriendo comprar, solo pregunta más."
+        hint_specific: "Un objetivo es un propósito que se persigue. ¿La frase habla de perseguir algo, o de dar una razón para no aceptar?"
+      - position: 2
+        text: "duda"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Duda» es más vaga y no exige una razón concreta; aquí el cliente busca información puntual, algo más cercano a una razón declarada."
+        hint_specific: "Una duda puede quedarse sin explicar. ¿Aquí el cliente solo duda, o pide algo concreto?"
+      - position: 3
+        text: "objeción"
+        is_correct: true
+  - position: 2
+    sentence: "El cliente aceptó casi todo el contrato, pero puso {{blank}} sobre la cláusula de cancelación."
+    hint_general: "Nombra las razones concretas que alguien da para no aceptar del todo una parte del trato."
+    explanation: "Objeciones: las razones concretas que el cliente puso sobre la cláusula de cancelación, antes de aceptar del todo. «Peros» es muy coloquial para un contrato, y «quejas» serían protestas por algo ya pasado, no una razón dicha antes de aceptar."
+    options:
+      - position: 1
+        text: "peros"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Peros» es una forma muy coloquial de decirlo; en una negociación de contrato se usa un término más preciso."
+        hint_specific: "«Peros» es una palabra muy informal para un contrato. ¿Qué palabra suena más precisa aquí?"
+      - position: 2
+        text: "objeciones"
+        is_correct: true
+      - position: 3
+        text: "quejas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Quejas» son molestias por algo que ya pasó; aquí el cliente da una razón antes de aceptar del todo, no protesta por algo ya hecho."
+        hint_specific: "Una queja llega después de un hecho. ¿Aquí el cliente protesta por algo pasado, o da una razón antes de aceptar?"
+  - position: 3
+    sentence: "El cliente explicó con firmeza su {{blank}} sobre el precio: quería un descuento del 10 % antes de firmar."
+    hint_general: "Nombra la razón firme que alguien da antes de aceptar un precio."
+    explanation: "Objeción: la razón firme que el cliente dio para pedir un descuento antes de firmar. «Reparo» sería una duda más callada, y «excusa» sonaría a un pretexto poco sincero, no a una razón real."
+    options:
+      - position: 1
+        text: "reparo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reparo» es una duda más leve, casi callada; aquí el cliente habló con firmeza y pidió algo concreto, un descuento del 10 %."
+        hint_specific: "Un reparo suele quedar a medias, sin decirse del todo. ¿Aquí el cliente habló con firmeza o se quedó callado?"
+      - position: 2
+        text: "objeción"
+        is_correct: true
+      - position: 3
+        text: "excusa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Excusa» sugiere un pretexto poco sincero; aquí el cliente da una razón real para pedir el descuento, no una excusa para evitar algo."
+        hint_specific: "Una excusa suena poco sincera. ¿Aquí el cliente da una razón real, o busca evitar algo con un pretexto?"
+  - position: 4
+    sentence: "Entre risas, mis amigos me hicieron una {{blank}} por elegir otra vez el mismo restaurante para el cumpleaños."
+    hint_general: "Nombra la razón, aunque sea en broma, que alguien da para no estar de acuerdo con algo."
+    explanation: "Objeción: la razón, en broma, que mis amigos dieron por el restaurante repetido. «Impugnación» es un término legal, exagerado para una broma de cumpleaños, y «burla» sería solo tomar el pelo, sin dar un motivo."
+    options:
+      - position: 1
+        text: "impugnación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Impugnación» es un término legal para desafiar una decisión oficial; entre amigos bromeando por un restaurante, suena exagerado."
+        hint_specific: "«Impugnación» es una palabra de trámites legales. ¿Encaja en una broma de cumpleaños?"
+      - position: 2
+        text: "objeción"
+        is_correct: true
+      - position: 3
+        text: "burla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Burla» es solo tomar el pelo, sin dar una razón; aquí mis amigos sí dieron un motivo: elegir otra vez el mismo restaurante."
+        hint_specific: "Una burla no necesita una razón. ¿Aquí mis amigos dieron un motivo, o solo se burlaron sin más?"
+  - position: 5
+    sentence: "La vendedora anotó la {{blank}} del cliente sobre el color disponible y prometió revisar otras opciones."
+    hint_general: "Nombra la razón concreta que un cliente da para no aceptar algo todavía."
+    explanation: "Objeción: la razón concreta que el cliente dio sobre el color disponible. «Insatisfacción» sería un malestar general, y «sugerencia» sería proponer algo nuevo, no dar una razón para no aceptar."
+    options:
+      - position: 1
+        text: "insatisfacción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insatisfacción» es un malestar general; aquí el cliente dio un motivo puntual: el color disponible."
+        hint_specific: "La insatisfacción es un malestar general. ¿Aquí hay un malestar general, o un motivo puntual sobre el color?"
+      - position: 2
+        text: "objeción"
+        is_correct: true
+      - position: 3
+        text: "sugerencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sugerencia» es proponer algo nuevo; aquí el cliente no propuso nada, dio una razón para no aceptar el color disponible."
+        hint_specific: "Una sugerencia propone algo. ¿Aquí el cliente propuso algo, o dio una razón para no aceptar?"
+  - position: 6
+    sentence: "Durante la llamada, el gerente escuchó cada {{blank}} del cliente y respondió una por una antes de cerrar el trato."
+    hint_general: "Nombra cada razón concreta que alguien da antes de aceptar un trato."
+    explanation: "Objeción: cada razón que el cliente dio antes de cerrar el trato. «Inconveniente» sería cualquier problema práctico, y «pregunta» sería solo buscar información, no dar una razón de desacuerdo."
+    options:
+      - position: 1
+        text: "inconveniente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inconveniente» puede ser cualquier problema práctico; aquí se trata en concreto de razones para no estar de acuerdo con el trato, que el gerente responde una por una."
+        hint_specific: "Un inconveniente puede ser cualquier problema práctico. ¿Aquí se resuelven problemas prácticos, o se responden razones de desacuerdo?"
+      - position: 2
+        text: "objeción"
+        is_correct: true
+      - position: 3
+        text: "pregunta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pregunta» busca información; aquí el cliente no solo pregunta, da razones para no estar de acuerdo, y el gerente las responde una por una."
+        hint_specific: "Una pregunta busca información. ¿Aquí el cliente solo pregunta, o da razones de desacuerdo?"
+  - position: 7
+    sentence: "El candidato planteó una {{blank}} sobre la fecha de inicio, porque tenía un compromiso familiar esa semana."
+    hint_general: "Nombra la razón concreta que alguien da para pedir un cambio antes de aceptar."
+    explanation: "Objeción: la razón que el candidato dio sobre la fecha de inicio. «Petición» sería pedir algo nuevo, y «excepción» sería el trato especial que le concedan, no la razón que dio."
+    options:
+      - position: 1
+        text: "petición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Petición» es pedir algo nuevo; aquí el candidato no pidió algo extra, dio una razón para no aceptar la fecha tal como estaba."
+        hint_specific: "Una petición pide algo nuevo. ¿Aquí se pide algo extra, o se da una razón para cambiar la fecha?"
+      - position: 2
+        text: "objeción"
+        is_correct: true
+      - position: 3
+        text: "excepción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Excepción» sería el trato especial que le concedan, no la razón que él dio para pedirlo."
+        hint_specific: "Una excepción es lo que te conceden. ¿Aquí se habla de lo que pide, o de lo que le conceden?"
+  - position: 8
+    sentence: "Cuando planearon las vacaciones familiares, mi hermana puso una {{blank}} sobre el destino: no quería volar tantas horas con los niños."
+    hint_general: "Nombra la razón concreta que alguien da para no estar de acuerdo con un plan."
+    explanation: "Objeción: la razón que mi hermana dio sobre el destino, por las horas de vuelo con los niños. «Advertencia» sería solo avisar de un riesgo, y «sospecha» sería desconfiar sin pruebas, no dar una razón concreta."
+    options:
+      - position: 1
+        text: "advertencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Advertencia» avisa de un riesgo; aquí mi hermana no solo avisó, dio una razón para no estar de acuerdo con el destino elegido."
+        hint_specific: "Una advertencia avisa de un riesgo. ¿Aquí solo se avisa, o se da una razón para no aceptar el destino?"
+      - position: 2
+        text: "objeción"
+        is_correct: true
+      - position: 3
+        text: "sospecha"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sospecha» es desconfiar de algo sin pruebas; mi hermana dio una razón clara y concreta: el vuelo era muy largo para los niños."
+        hint_specific: "Una sospecha es desconfiar sin pruebas. ¿Aquí hay una razón clara, o solo desconfianza?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La objeción del color"
+    body: "La clienta dudó al ver el catálogo: quería el modelo, pero no en ese color. Valentina anotó la objeción y prometió revisar el inventario de la fábrica. Al día siguiente le escribió: «Buenas noticias: sí tenemos el color que buscabas». La clienta confirmó el pedido esa misma tarde."
+    before_phrase: "Le gusta todo, menos el color."
+    after_phrase: "Anoté su objeción sobre el color."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Una fecha que no encajaba"
+    body: "El reclutador ofreció el puesto para empezar el lunes siguiente, pero Andrés planteó una objeción: tenía un compromiso familiar esa semana. «Entiendo tu objeción», respondió el reclutador, «podemos empezar la semana después». Andrés aceptó de inmediato."
+    before_phrase: "Tengo un problema con esa fecha, ¿se puede cambiar?"
+    after_phrase: "Quiero plantear una objeción sobre la fecha."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las horas de vuelo"
+    body: "Cuando planearon las vacaciones, Camila puso una objeción sobre el destino: eran muchas horas de vuelo con los niños pequeños. Su esposo lo pensó un momento: «Tienes razón, busquemos algo más cerca». Cambiaron el destino esa misma noche."
+    before_phrase: "Es mucho vuelo para los niños, no sé si conviene."
+    after_phrase: "Tengo una objeción sobre el destino."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,239 @@
+schema_version: 1
+slug: "puntualizar"
+status: "draft"
+lemma: "puntualizar"
+part_of_speech: "verbo"
+syllables:
+  - "pun"
+  - "tua"
+  - "li"
+  - "zar"
+stressed_syllable: 4
+ipa_latam: "[pun.twa.liˈsaɾ]"
+ipa_es: "[pun.twa.liˈθaɾ]"
+explanation: "Añadir un dato concreto a lo que ya se dijo, para que no queden dudas sobre eso."
+example_sentence: "Antes de seguir, quiero puntualizar que esa cifra corresponde solo al primer trimestre."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Es ideal para corregir un detalle sin sonar como si contradijeras todo lo anterior."
+when_not_to_use: "No la uses para dar una opinión nueva sin relación con lo dicho, ni para cambiar de tema."
+collocations:
+  - "puntualizar algo"
+  - "quiero puntualizar que"
+  - "puntualizar un dato"
+replaces:
+  - before: "Solo para ser más exacto"
+    after: "Solo para puntualizar"
+  - before: "Voy a corregir un detallito nada más"
+    after: "Voy a puntualizar un detalle nada más"
+  - before: "Déjame afinar ese punto"
+    after: "Déjame puntualizar ese punto"
+family:
+  - "puntual"
+  - "puntualización"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "matices-precision"
+    relevance: 2
+tags:
+  comodin:
+    - "ser más exacto"
+  funcion:
+    - "precisar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "recalcar"
+    difference: "«Recalcar» insiste con fuerza en algo que ya se dijo, para que no se olvide; esta palabra añade un detalle preciso que faltaba, sin necesidad de repetir nada."
+    memory_trick: "Recalcas lo que ya sabían; puntualizas lo que faltaba."
+  - confused_with: "opinar"
+    difference: "«Opinar» da un punto de vista personal; esta palabra corrige o precisa un dato concreto, no una opinión."
+exercises:
+  - position: 1
+    sentence: "En la rueda de prensa, la directora quiso {{blank}} que el crecimiento del 20 % era solo de la división digital, no de toda la empresa."
+    hint_general: "Busca el verbo para precisar a qué parte exacta de algo aplica un dato, sin suavizar nada."
+    explanation: "Puntualizar: precisar a qué parte de la empresa aplica el dato. «Puntuar» es poner puntos a algo o marcar signos de un texto, y aquí no hay nada que puntuar así, y «matizar» suaviza una afirmación con un pero, cuando aquí solo se precisa un dato."
+    options:
+      - position: 1
+        text: "puntuar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Puntuar» es asignar puntos a algo o poner los signos de un texto, y aquí no hay nada que puntuar de esa forma: solo un dato que precisar."
+        hint_specific: "«Puntuar» pide números o signos de puntuación. ¿Qué hay que puntuar en esta rueda de prensa?"
+      - position: 2
+        text: "puntualizar"
+        is_correct: true
+      - position: 3
+        text: "matizar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Matizar» suaviza una afirmación con un pero, y aquí no se suaviza nada: se precisa a qué parte de la empresa aplica el dato."
+        hint_specific: "«Matizar» añade un pero a algo dicho. ¿La directora suaviza el dato o precisa a quién aplica?"
+  - position: 2
+    sentence: "En la reunión, Abelardo {{blank}} que el presupuesto aprobado era de 40 mil, no de 45 mil como alguien había dicho de pasada."
+    hint_general: "Piensa en corregir un número exacto que alguien dijo mal, sin que el original estuviera mal del todo."
+    explanation: "Puntualizó: corrigió la cifra exacta del presupuesto. «Apostilló» es un término formal y poco usado para anotar algo al margen, y aquí solo habló en voz alta, y «corrigió» sonaría a que el número anterior estaba mal por completo."
+    options:
+      - position: 1
+        text: "apostilló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apostillar» es un término formal y algo anticuado para anotar algo al margen de un texto, y aquí Abelardo solo corrigió un número en voz alta, en una reunión normal."
+        hint_specific: "«Apostillar» suena a anotación formal en un documento. ¿Dónde habló Abelardo, en un texto o en una reunión?"
+      - position: 2
+        text: "puntualizó"
+        is_correct: true
+      - position: 3
+        text: "corrigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corregir» sonaría a que el número anterior estaba mal por completo, y aquí solo faltaba precisar la cifra exacta que se había aprobado."
+        hint_specific: "«Corregir» supone que el número estaba mal. ¿El presupuesto estaba mal o solo faltaba precisarlo?"
+  - position: 3
+    sentence: "Mientras Soledad contaba la anécdota del viaje, Nicanor {{blank}} que el vuelo se había retrasado dos horas, no toda la tarde como sonaba en su versión."
+    hint_general: "Se trata de precisar un dato exacto dentro de una historia que ya se contaba."
+    explanation: "Puntualizó: precisó cuánto duró el retraso. «Matizó» añadiría un pero sin cambiar un dato concreto, y «aclaró» resolvería una confusión sobre lo dicho, cuando aquí no había confusión, solo un dato impreciso."
+    options:
+      - position: 1
+        text: "matizó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Matizar» añadiría un pero a la historia sin cambiar un dato concreto, y aquí Nicanor corrige exactamente cuánto duró el retraso."
+        hint_specific: "«Matizó» añade un pero, sin cambiar un número. ¿Nicanor cambia un dato o solo suaviza la historia?"
+      - position: 2
+        text: "puntualizó"
+        is_correct: true
+      - position: 3
+        text: "aclaró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» resuelve una confusión sobre lo que se dijo, y aquí no había confusión: solo faltaba precisar la duración exacta del retraso."
+        hint_specific: "«Aclarar» resuelve una confusión. ¿Había confusión sobre lo que pasó, o solo faltaba un dato exacto?"
+  - position: 4
+    sentence: "Cuando su hija contó que el perro se había perdido «todo el día», Berenice {{blank}} que en realidad fueron solo cuarenta minutos."
+    hint_general: "Busca el verbo para ajustar un dato exacto de algo que se contó de forma aproximada."
+    explanation: "Puntualizó: ajustó el tiempo exacto que el perro estuvo perdido. «Corrigió» sonaría a que la versión de su hija estaba mal por completo, y «apostilló» es un término formal y poco usado en una conversación de mesa."
+    options:
+      - position: 1
+        text: "corrigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corregir» sonaría a que la versión de su hija estaba mal por completo, y Berenice solo ajustó cuánto tiempo pasó en realidad."
+        hint_specific: "«Corregir» supone que todo estaba mal. ¿Berenice cambia toda la historia o solo el tiempo exacto?"
+      - position: 2
+        text: "puntualizó"
+        is_correct: true
+      - position: 3
+        text: "apostilló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Apostillar» es un término formal y poco usado en la conversación diaria, y aquí Berenice solo hizo un comentario rápido en la mesa."
+        hint_specific: "«Apostillar» suena a anotación formal de un documento. ¿Dónde habló Berenice, en un texto o en la mesa?"
+  - position: 5
+    sentence: "Salvador {{blank}} en la entrevista que la lesión fue en el tobillo izquierdo, no en la rodilla como habían dicho algunos medios."
+    hint_general: "Piensa en corregir un dato concreto sobre uno mismo, frente a una versión que circulaba distinta."
+    explanation: "Puntualizó: corrigió el dato exacto sobre su lesión. «Puntuó» habla de dar puntos con números o marcar signos de un texto, y «comentó» es demasiado general para corregir un dato médico preciso."
+    options:
+      - position: 1
+        text: "puntuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Puntuar» habla de dar puntos a algo con números o de marcar los signos de un texto, y aquí Salvador corrige un dato sobre su propio cuerpo."
+        hint_specific: "«Puntuar» pide números o signos de puntuación. ¿Qué corrige Salvador en la entrevista?"
+      - position: 2
+        text: "puntualizó"
+        is_correct: true
+      - position: 3
+        text: "comentó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Comentar» es demasiado general para una entrevista donde se corrige un dato médico preciso; aquí hace falta algo más exacto que un comentario cualquiera."
+        hint_specific: "«Comentar» es muy general. ¿Salvador da una opinión suelta o corrige un dato exacto?"
+  - position: 6
+    sentence: "Al final del informe, Delfina {{blank}} que la cifra de ventas incluía impuestos, para que nadie la comparara mal con la del año pasado."
+    hint_general: "Se refiere a añadir un dato exacto al final de algo, para que no se entienda mal."
+    explanation: "Puntualizó: precisó si la cifra incluía impuestos. «Matizó» suavizaría una afirmación con un pero, y «aclaró» resolvería una confusión ya existente, cuando Delfina se adelantó antes de que alguien la entendiera mal."
+    options:
+      - position: 1
+        text: "matizó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Matizar» suavizaría una afirmación con un pero, y aquí Delfina precisa un dato concreto: si la cifra incluye impuestos o no."
+        hint_specific: "«Matizó» suaviza con un pero. ¿Delfina suaviza algo o precisa un dato exacto?"
+      - position: 2
+        text: "puntualizó"
+        is_correct: true
+      - position: 3
+        text: "aclaró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» resolvería una confusión ya existente, y aquí Delfina se adelantó a precisar el dato antes de que alguien lo entendiera mal."
+        hint_specific: "«Aclarar» resuelve una confusión que ya existe. ¿Delfina responde a una confusión o se adelanta a precisar un dato?"
+  - position: 7
+    sentence: "Bajo la publicación viral, Ubaldo {{blank}} que el estudio citado era de hace quince años, no reciente como decía el texto."
+    hint_general: "Busca el verbo para precisar un dato exacto dentro de algo que ya circulaba."
+    explanation: "Puntualizó: precisó la fecha exacta del estudio. «Puntuó» habla de dar puntos o marcar signos en un texto, y «corrigió» sonaría a que todo el dato citado era falso, cuando solo faltaba precisar cuándo se hizo."
+    options:
+      - position: 1
+        text: "puntuó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Puntuar» habla de dar puntos o de marcar signos en un texto, y aquí Ubaldo corrige la fecha exacta de un estudio."
+        hint_specific: "«Puntuar» pide dar puntos o marcar signos. ¿Qué hace Ubaldo con la fecha del estudio?"
+      - position: 2
+        text: "puntualizó"
+        is_correct: true
+      - position: 3
+        text: "corrigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corregir» sonaría a que todo el dato citado era falso, y Ubaldo solo precisó cuándo se había hecho el estudio."
+        hint_specific: "«Corregir» supone que el dato era falso. ¿El estudio era falso o solo estaba mal fechado?"
+  - position: 8
+    sentence: "En la reunión familiar, Esperanza {{blank}} que la boda de los abuelos fue en 1962, no en 1965 como todos repetían."
+    hint_general: "Piensa en corregir un año exacto que todos repetían mal en una historia familiar."
+    explanation: "Puntualizó: corrigió el año exacto de la boda. «Aclaró» resolvería una confusión sobre lo dicho, y aquí no había confusión, solo un dato mal repetido, y «matizó» suavizaría una afirmación con un pero, sin corregir ningún año."
+    options:
+      - position: 1
+        text: "aclaró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aclarar» resolvería una confusión sobre lo que se dijo, y aquí no había confusión: solo un dato que todos repetían mal."
+        hint_specific: "«Aclarar» resuelve una confusión. ¿Había confusión sobre la boda, o solo un año mal repetido?"
+      - position: 2
+        text: "puntualizó"
+        is_correct: true
+      - position: 3
+        text: "matizó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Matizar» suavizaría una afirmación con un pero, y Esperanza solo corrigió un año exacto, sin suavizar nada."
+        hint_specific: "«Matizó» suaviza con un pero. ¿Esperanza suaviza algo o corrige un año exacto?"
+readings:
+  - position: 1
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Solo la división digital"
+    body: "Un periodista repitió el 20 % de crecimiento como si fuera de toda la empresa. La directora no lo dejó pasar: «Quiero puntualizar algo: ese número es solo de la división digital». La sala anotó la corrección antes de la siguiente pregunta."
+    before_phrase: "Solo para ser más exacto, esa cifra es de una sola área."
+    after_phrase: "Quiero puntualizar algo antes de seguir."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cuarenta, no cuarenta y cinco"
+    body: "Alguien mencionó de pasada 45 mil como el presupuesto aprobado. Abelardo levantó la mano un segundo: «Puntualizo un dato: fueron 40 mil, no 45». Nadie se molestó, y la reunión siguió sin más confusión sobre el número."
+    before_phrase: "Voy a corregir un detallito nada más."
+    after_phrase: "Puntualizo un dato antes de que sigamos."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Cuarenta minutos, no todo el día"
+    body: "Su hija contó, entre lágrimas de alivio, que el perro había estado perdido «todo el día». Berenice la abrazó y después, con cariño, puntualizó: «Fueron cuarenta minutos, mi amor, pero entiendo que se sintieran eternos». La niña asintió, todavía agitada."
+    before_phrase: "Déjame afinar ese detalle, aunque sé que se sintió eterno."
+    after_phrase: "Puntualizo que fueron cuarenta minutos, aunque se sintieron eternos."
+provenance:
+  generator: "flui authoring agent — theme medios-entrevistas"
+  gate: null
+  checked_on: "2026-09-18"

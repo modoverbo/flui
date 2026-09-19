@@ -1,0 +1,239 @@
+schema_version: 1
+sort_order: 9003
+slug: "suplica"
+status: "draft"
+lemma: "súplica"
+part_of_speech: "sustantivo"
+syllables: ["sú", "pli", "ca"]
+stressed_syllable: 1
+ipa_latam: "[ˈsu.pli.ka]"
+ipa_es: "[ˈsu.pli.ka]"
+explanation: "Petición hecha con mucha urgencia y sentimiento, casi sin fuerzas, a quien puede darte lo que más necesitas."
+example_sentence: "Le hizo una súplica a su jefe para que le diera una última oportunidad antes de perder el puesto."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para un pedido cargado de emoción, cuando sientes que dependes por completo de la respuesta del otro."
+when_not_to_use: "No la uses para un pedido tranquilo y cotidiano, ni para una petición que haces sin gran urgencia."
+collocations:
+  - "una súplica desesperada"
+  - "hacer una súplica"
+  - "escuchar una súplica"
+replaces:
+  - before: "Le rogué que no se fuera, casi llorando"
+    after: "Le hice una súplica para que no se fuera"
+  - before: "Le pedí por favor, con toda mi alma, que me diera otra oportunidad"
+    after: "Le hice una súplica para que me diera otra oportunidad"
+  - before: "Le pedí desesperada que me ayudara"
+    after: "Le lancé una súplica para que me ayudara"
+family:
+  - "suplicar"
+  - "suplicante"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "familia-crianza"
+    relevance: 1
+tags:
+  comodin:
+    - "pedir por favor"
+  funcion:
+    - "pedir con urgencia"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "suplicio"
+    difference: "Un «suplicio» es un sufrimiento o un tormento; esta palabra es el pedido desesperado que haces, no el sufrimiento en sí mismo."
+    memory_trick: "El suplicio se sufre; esta palabra se pide."
+  - confused_with: "clamor"
+    difference: "Un «clamor» es un grito colectivo y público, de mucha gente a la vez; esta palabra suele ser un pedido personal, casi siempre en privado."
+    memory_trick: "El clamor suena en la plaza; esta palabra se dice de rodillas, a solas."
+exercises:
+  - position: 1
+    sentence: "Alejandra le escribió a su jefe una {{blank}} pidiéndole, con la voz quebrada, una última oportunidad antes de perder el puesto."
+    hint_general: "Es un pedido cargado de emoción, hecho por alguien que siente que no le quedan más fuerzas."
+    explanation: "Súplica: un pedido cargado de emoción, casi sin fuerzas. Una «réplica» sería una respuesta o una copia de algo, y un «ruego» sería una petición educada, sin ese quiebre en la voz."
+    options:
+      - position: 1
+        text: "réplica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «réplica» es una respuesta a lo que alguien dijo, o una copia de algo, y Alejandra no responde ni copia nada: le pide a su jefe, con la voz quebrada, una oportunidad."
+        hint_specific: "Una «réplica» contesta algo dicho antes. ¿Alejandra contesta algo o pide algo?"
+      - position: 2
+        text: "súplica"
+        is_correct: true
+      - position: 3
+        text: "ruego"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «ruego» es una petición educada y tranquila, y aquí la voz quebrada de Alejandra muestra una urgencia mucho más fuerte, casi desesperada."
+        hint_specific: "Un «ruego» se dice con calma. ¿Cómo describe la frase la voz de Alejandra?"
+  - position: 2
+    sentence: "Bruno le mandó un mensaje a su mejor amigo con una {{blank}} para que no cortara la relación por un malentendido de hace años."
+    hint_general: "Pide, con mucho sentimiento, que la otra persona no tome una decisión que le duele profundamente."
+    explanation: "Súplica: un pedido con mucho sentimiento sobre algo que duele profundamente. Una «petición» sonaría demasiado neutra para un mensaje así, y una «exigencia» le quitaría al otro la libertad de decidir."
+    options:
+      - position: 1
+        text: "petición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «petición» suena neutra y tranquila, y el mensaje de Bruno está cargado de sentimiento por una amistad de años que no quiere perder."
+        hint_specific: "Una «petición» no siempre lleva tanta emoción. ¿Qué siente Bruno al escribir ese mensaje?"
+      - position: 2
+        text: "súplica"
+        is_correct: true
+      - position: 3
+        text: "exigencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «exigencia» le quita al otro la libertad de decidir, y Bruno hace lo contrario: pide con humildad que su amigo reconsidere."
+        hint_specific: "Una «exigencia» no deja mucho margen para decir que no. ¿Bruno exige algo o pide con humildad?"
+  - position: 3
+    sentence: "Teresa fue a hablar con el dueño del departamento y le hizo una {{blank}} para que le diera dos semanas más antes de pagar la renta completa."
+    hint_general: "Pide con urgencia un poco más de tiempo para algo que la agobia."
+    explanation: "Súplica: pide con urgencia un poco más de tiempo. Un «clamor» sería un grito colectivo y público, y un «pedido» sonaría demasiado plano para describir la urgencia de Teresa."
+    options:
+      - position: 1
+        text: "clamor"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «clamor» es un grito colectivo y público, y Teresa habla en privado, uno a uno, con el dueño del departamento."
+        hint_specific: "Un «clamor» lo hace mucha gente a la vez, en voz alta. ¿Con cuántas personas habla Teresa?"
+      - position: 2
+        text: "súplica"
+        is_correct: true
+      - position: 3
+        text: "pedido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «pedido» es plano y neutro, y la escena describe a Teresa buscando al dueño en persona, agobiada por la fecha del pago."
+        hint_specific: "Un «pedido» no siempre muestra agobio. ¿Cómo se siente Teresa en esa conversación?"
+  - position: 4
+    sentence: "Ignacio llamó a su hermana a medianoche con una {{blank}}: que llegara a tiempo a la boda, aunque tuviera que cancelar todo lo demás."
+    hint_general: "Pide, con mucha urgencia y emoción, algo que le importa muchísimo."
+    explanation: "Súplica: pide con mucha urgencia algo que le importa muchísimo. Un «ultimátum» impondría una condición con amenaza, y una «solicitud» sonaría demasiado formal para una llamada a medianoche."
+    options:
+      - position: 1
+        text: "ultimátum"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «ultimátum» impone una condición con una amenaza detrás, y aquí Ignacio no amenaza nada: pide con emoción que su hermana llegue."
+        hint_specific: "Un «ultimátum» trae una amenaza. ¿Ignacio amenaza a su hermana o le pide algo con el corazón?"
+      - position: 2
+        text: "súplica"
+        is_correct: true
+      - position: 3
+        text: "solicitud"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «solicitud» suena formal y de trámite, y aquí Ignacio llama a medianoche, con la voz cargada de emoción, no con un papel de por medio."
+        hint_specific: "Una «solicitud» suena a trámite. ¿Cómo describe la frase esa llamada de medianoche?"
+  - position: 5
+    sentence: "Beatriz le escribió una carta a su expareja con una {{blank}} sincera para que no se fuera enojado después de la discusión."
+    hint_general: "Escribe con el corazón, pidiendo que el otro no se aleje después de un momento difícil."
+    explanation: "Súplica: pide con el corazón que el otro no se aleje. Un «reproche» sería un señalamiento de culpa, y una «queja» solo describiría su malestar, sin pedir nada en concreto."
+    options:
+      - position: 1
+        text: "reproche"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «reproche» le echa en cara algo al otro, y la carta de Beatriz no acusa a nadie: pide con sinceridad que no se aleje enojado."
+        hint_specific: "Un «reproche» señala una culpa. ¿La carta de Beatriz acusa a alguien o le pide algo?"
+      - position: 2
+        text: "súplica"
+        is_correct: true
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» describe un malestar sin pedir nada concreto, y Beatriz sí pide algo concreto: que su expareja no se vaya enojado."
+        hint_specific: "Una «queja» no siempre pide algo. ¿Qué le pide Beatriz al final de la carta?"
+  - position: 6
+    sentence: "Octavio le mandó al proveedor un audio lleno de {{blank}}s, casi lloriqueando, para que le adelantara el pedido dos días."
+    hint_general: "Pide con desesperación algo urgente, con un tono que roza el llanto."
+    explanation: "Súplica: pide con desesperación, casi al borde del llanto. Un «lloriqueo» es una queja infantil y quejumbrosa sin dirección clara, y un «reclamo» exigiría reparar algo que ya salió mal."
+    options:
+      - position: 1
+        text: "lloriqueo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «lloriqueo» es una queja infantil sin dirección clara, y Octavio sí tiene un pedido concreto: que le adelanten el pedido dos días."
+        hint_specific: "Un «lloriqueo» no pide nada en concreto, solo se queja. ¿Qué le pide exactamente Octavio al proveedor?"
+      - position: 2
+        text: "súplica"
+        is_correct: true
+      - position: 3
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «reclamo» exige reparar algo que ya salió mal, y Octavio no reclama ningún error: pide un favor urgente para adelantar el pedido."
+        hint_specific: "Un «reclamo» corrige un error pasado. ¿El proveedor cometió algún error en esta escena?"
+  - position: 7
+    sentence: "Miriam se arrodilló frente a su abuela y le hizo una {{blank}} para que la perdonara antes de que fuera demasiado tarde para hablarlo."
+    hint_general: "Pide perdón con todo su cuerpo y su voz, sintiendo que el tiempo se acaba."
+    explanation: "Súplica: pide perdón con todo el cuerpo, sintiendo que el tiempo se acaba. Una «objeción» respondería a un argumento, no a un perdón, y un «reproche» acusaría a la abuela, en vez de pedirle algo."
+    options:
+      - position: 1
+        text: "objeción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «objeción» responde a un argumento dentro de un debate, y aquí Miriam no discute nada: pide perdón arrodillada frente a su abuela."
+        hint_specific: "Una «objeción» rebate una idea. ¿Miriam discute algo o pide perdón?"
+      - position: 2
+        text: "súplica"
+        is_correct: true
+      - position: 3
+        text: "reproche"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «reproche» acusaría a la abuela de algo, y Miriam hace lo contrario: se arrodilla y pide perdón con todo el cuerpo."
+        hint_specific: "Un «reproche» señala una culpa ajena. ¿Miriam acusa a su abuela o le pide algo?"
+  - position: 8
+    sentence: "Adrián le envió al cliente una {{blank}} por escrito para que no cancelara el contrato justo antes de la firma final."
+    hint_general: "Pide, con mucho sentimiento, que el otro no tome una decisión que puede arruinar meses de trabajo."
+    explanation: "Súplica: pide con mucho sentimiento que no se tome una decisión grave. Un «reclamo» exigiría reparar un error ya cometido, y una «exigencia» le quitaría al cliente la libertad de decidir."
+    options:
+      - position: 1
+        text: "súplica"
+        is_correct: true
+      - position: 2
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «reclamo» exige reparar un error ya cometido, y aquí el cliente todavía no ha hecho nada: Adrián solo pide que no cancele."
+        hint_specific: "Un «reclamo» corrige un error pasado. ¿El cliente ya cometió algún error?"
+      - position: 3
+        text: "exigencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «exigencia» le quita al cliente la libertad de decidir, y Adrián hace lo contrario: le pide con sentimiento que reconsidere."
+        hint_specific: "Una «exigencia» no deja margen para decidir. ¿Adrián exige algo o pide con sentimiento?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "emocional"
+    title: "La última oportunidad"
+    body: "El proyecto había fallado y Alejandra sabía que podían despedirla. En vez de justificarse, le escribió a su jefe con honestidad: «Te hago una súplica: dame una oportunidad más y te demuestro que puedo arreglarlo». Su jefe respondió al día siguiente con una reunión, no con una carta de salida."
+    before_phrase: "Te pido, por favor, que no me despidas."
+    after_phrase: "Te hago una súplica: dame una oportunidad más."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "De rodillas frente a la abuela"
+    body: "Habían pasado tres años sin hablarse por una discusión tonta. Miriam viajó al pueblo y, sentada junto a la cama de su abuela, le dijo: «Esto es una súplica, no una visita cualquiera: perdóname». Su abuela le tomó la mano sin decir nada, y eso fue suficiente."
+    before_phrase: "Perdóname, por favor, ya no aguanto estar así."
+    after_phrase: "Esto es una súplica: perdóname."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El audio de las diez de la noche"
+    body: "El pedido llegaba tarde y el evento era al día siguiente. Octavio le mandó al proveedor un audio de dos minutos, sin rodeos: «Es casi una súplica: necesito el pedido mañana a primera hora». El proveedor lo llamó de vuelta en cinco minutos y lo resolvió."
+    before_phrase: "Por favor, por favor, necesito esto mañana."
+    after_phrase: "Es casi una súplica: lo necesito mañana a primera hora."
+provenance:
+  generator: "flui authoring agent — batch W1 pedir-disculparse"
+  gate: null
+  checked_on: "2026-09-18"

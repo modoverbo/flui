@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "indignacion"
+status: "draft"
+lemma: "indignación"
+part_of_speech: "sustantivo"
+syllables: ["in", "dig", "na", "ción"]
+stressed_syllable: 4
+ipa_latam: "[in.diɣ.naˈsjon]"
+ipa_es: "[in.diɣ.naˈθjon]"
+explanation: "Ira fuerte y justa que sientes cuando alguien no te respeta o comete una injusticia."
+example_sentence: "Sintió una indignación enorme al leer los comentarios injustos bajo su publicación."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Nombra un enojo con causa clara y visible; no la uses para una molestia pequeña o sin motivo firme detrás."
+when_not_to_use: "No la uses para un fastidio leve o pasajero, ni la confundas con «indignidad», que es el acto vergonzoso que comete otra persona."
+collocations:
+  - "sentir indignación"
+  - "una ola de indignación"
+replaces:
+  - before: "Me dio muchísima rabia leer eso"
+    after: "Sentí una indignación enorme al leerlo"
+  - before: "A la gente le molestó muchísimo la noticia"
+    after: "La noticia provocó indignación en la gente"
+family: ["indignar", "indignado"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["mucha rabia"]
+  funcion: ["nombrar una emoción"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "indignidad"
+    difference: "«Indignidad» es un acto vergonzoso o una falta de dignidad; «indignación» es el enojo que sientes tú frente a una injusticia."
+    memory_trick: "La indignidad la comete alguien; la indignación la sientes tú."
+  - confused_with: "furia"
+    difference: "«Furia» es una ira intensa y casi descontrolada; «indignación» es un enojo con una causa moral clara, por una injusticia o una falta de respeto."
+exercises:
+  - position: 1
+    sentence: "A Lucía le costaba disimular la {{blank}} cuando leía los comentarios injustos bajo su publicación sobre el aumento de precios."
+    hint_general: "Es el enojo fuerte que sientes cuando algo te parece injusto."
+    explanation: "Indignación: el enojo fuerte que siente Lucía frente a algo injusto. «Indignidad» sería un acto vergonzoso cometido por otra persona, no lo que ella siente; «tristeza» sería un sentimiento distinto, de pena, no de enojo."
+    options:
+      - position: 1
+        text: "indignidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignidad» es un acto vergonzoso que comete alguien, y aquí la frase describe lo que Lucía siente, no lo que otra persona hizo."
+        hint_specific: "«Indignidad» es algo que alguien comete. ¿La frase habla de un acto o de lo que siente Lucía?"
+      - position: 2
+        text: "indignación"
+        is_correct: true
+      - position: 3
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tristeza» es un sentimiento de pena, y lo que siente Lucía frente a los comentarios injustos es enojo, no pena."
+        hint_specific: "«Tristeza» es pena. ¿Lucía siente pena o enojo ante esos comentarios?"
+  - position: 2
+    sentence: "En la reunión con inversionistas, Emilio explicó con calma la {{blank}} que había generado el error de facturación entre los clientes."
+    hint_general: "Es el enojo fuerte y con causa que provoca un trato que se siente injusto."
+    explanation: "Indignación: el enojo con causa que sintieron los clientes. «Cabreo» es muy coloquial para una reunión con inversionistas, y «decepción» es sentir que algo no cumplió lo esperado, sin la fuerza de una injusticia."
+    options:
+      - position: 1
+        text: "cabreo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cabreo» es una palabra muy coloquial, y una reunión con inversionistas pide un registro más cuidado."
+        hint_specific: "«Cabreo» es muy coloquial. ¿Ese tono encaja en una reunión con inversionistas?"
+      - position: 2
+        text: "decepción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decepción» es sentir que algo no cumplió lo esperado, y los clientes no solo esperaban más: sintieron un cobro injusto."
+        hint_specific: "«Decepción» es esperar algo y no obtenerlo. ¿Los clientes solo esperaban más o sintieron algo injusto?"
+      - position: 3
+        text: "indignación"
+        is_correct: true
+  - position: 3
+    sentence: "Marta no podía ocultar la {{blank}} en su voz mientras contaba que la habían dejado esperando dos horas sin ninguna explicación."
+    hint_general: "Es el enojo fuerte que no logras esconder ante un trato injusto."
+    explanation: "Indignación: el enojo que Marta no logra esconder tras un trato injusto. «Indignidad» sería un acto vergonzoso cometido por otra persona, no un tono de voz; «irritación» es una molestia más leve y pasajera."
+    options:
+      - position: 1
+        text: "indignidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignidad» es un acto vergonzoso que comete alguien, y la frase describe un tono de voz, no un acto en sí."
+        hint_specific: "«Indignidad» nombra un acto vergonzoso. ¿La frase habla de un acto o de un tono de voz?"
+      - position: 2
+        text: "indignación"
+        is_correct: true
+      - position: 3
+        text: "irritación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Irritación» es una molestia más leve y pasajera, y esperar dos horas sin explicación provoca algo mucho más fuerte."
+        hint_specific: "«Irritación» es leve y pasa rápido. ¿Dos horas sin explicación provocan algo leve o algo más fuerte?"
+  - position: 4
+    sentence: "En la cena familiar, Ariel contó con {{blank}} cómo el vecino había estacionado otra vez sobre la vereda."
+    hint_general: "Es el enojo fuerte y con causa que sientes ante algo que te parece injusto."
+    explanation: "Indignación: el enojo con causa que siente Ariel por el vecino. «Reprobación» es una palabra muy formal para una cena familiar, y «fastidio» es una molestia leve, no un enojo fuerte."
+    options:
+      - position: 1
+        text: "reprobación"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Reprobación» es una palabra muy formal, propia de un informe o un comunicado, y no de una cena familiar contando una anécdota."
+        hint_specific: "«Reprobación» suena a informe formal. ¿Ese tono encaja en una cena en familia?"
+      - position: 2
+        text: "fastidio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fastidio» es una molestia leve, y lo que Ariel sintió por el vecino fue un enojo mucho más fuerte, no solo una molestia pasajera."
+        hint_specific: "«Fastidio» es leve y pasajero. ¿Ariel sintió algo leve o algo más fuerte?"
+      - position: 3
+        text: "indignación"
+        is_correct: true
+  - position: 5
+    sentence: "Paola respondió con {{blank}} a quienes la acusaron de mentir en su publicación, cuando en realidad había mostrado las pruebas desde el principio."
+    hint_general: "Es el enojo justo que sientes cuando te acusan de algo que no hiciste."
+    explanation: "Indignación: el enojo justo de Paola ante una acusación falsa. «Rencor» es un resentimiento que dura mucho tiempo, y «asombro» es solo sorpresa, sin el enojo de sentirse tratada de forma injusta."
+    options:
+      - position: 1
+        text: "rencor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rencor» es un resentimiento que dura mucho tiempo, y aquí Paola responde en el momento, ante una acusación injusta."
+        hint_specific: "«Rencor» dura en el tiempo. ¿Paola responde en el momento o guarda algo por mucho tiempo?"
+      - position: 2
+        text: "asombro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asombro» es sorpresa, y lo que sintió Paola no fue solo sorpresa: fue un enojo justo frente a una acusación falsa."
+        hint_specific: "«Asombro» es sorpresa. ¿Paola solo se sorprende o también siente que fue injusto?"
+      - position: 3
+        text: "indignación"
+        is_correct: true
+  - position: 6
+    sentence: "Nicolás llamó al servicio de soporte y transmitió su {{blank}} al descubrir que le habían cobrado dos veces por el mismo pedido."
+    hint_general: "Es el enojo fuerte que sientes cuando te tratan de forma injusta."
+    explanation: "Indignación: el enojo fuerte de Nicolás ante un cobro injusto. «Malestar» describe una incomodidad más general, sin esa fuerza de injusticia, e «indignidad» sería un acto vergonzoso cometido por otra persona, no lo que él siente."
+    options:
+      - position: 1
+        text: "malestar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Malestar» describe una incomodidad general, sin la fuerza de sentir que se cometió algo injusto contra él."
+        hint_specific: "«Malestar» es más general. ¿Aquí solo hay incomodidad o también la sensación de una injusticia?"
+      - position: 2
+        text: "indignidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Indignidad» sería un acto vergonzoso cometido por otra persona, y la frase describe lo que Nicolás sintió, no un acto en sí."
+        hint_specific: "«Indignidad» nombra un acto vergonzoso. ¿La frase habla de un acto o de lo que sintió Nicolás?"
+      - position: 3
+        text: "indignación"
+        is_correct: true
+  - position: 7
+    sentence: "Rosa no logró disimular la {{blank}} cuando el jurado descartó su proyecto sin siquiera leerlo completo."
+    hint_general: "Es el enojo fuerte que sientes cuando algo te parece muy injusto."
+    explanation: "Indignación: el enojo fuerte de Rosa ante un trato injusto. «Consternación» es un shock mezclado con preocupación, y «desilusión» es sentir que algo no salió como se esperaba, sin la fuerza de una injusticia."
+    options:
+      - position: 1
+        text: "consternación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Consternación» es un shock mezclado con preocupación, y lo que sintió Rosa fue un enojo claro por sentirse tratada de forma injusta."
+        hint_specific: "«Consternación» mezcla shock y preocupación. ¿Rosa está en shock o siente que fue injusto?"
+      - position: 2
+        text: "desilusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desilusión» es sentir que algo no salió como se esperaba, y aquí Rosa no solo se desilusionó: sintió que fue un trato injusto."
+        hint_specific: "«Desilusión» es no obtener lo que se esperaba. ¿Rosa solo esperaba algo distinto o siente una injusticia?"
+      - position: 3
+        text: "indignación"
+        is_correct: true
+  - position: 8
+    sentence: "Ignacio publicó una respuesta llena de {{blank}} después de que la marca ignorara su reclamo por tercera vez."
+    hint_general: "Es el enojo fuerte que sientes cuando te ignoran de forma injusta."
+    explanation: "Indignación: el enojo fuerte de Ignacio ante un reclamo ignorado. «Hastío» es el cansancio de algo repetido, y «desconfianza» es no creer en algo, sin la fuerza de sentirse tratado de forma injusta."
+    options:
+      - position: 1
+        text: "hastío"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Hastío» es el cansancio de algo repetido, y lo que muestra la respuesta de Ignacio es un enojo por sentirse ignorado de forma injusta, no solo cansancio."
+        hint_specific: "«Hastío» es cansancio de algo repetido. ¿La respuesta de Ignacio muestra cansancio o enojo?"
+      - position: 2
+        text: "desconfianza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desconfianza» es no creer en algo o alguien, y la respuesta de Ignacio no duda de la marca: reclama por un trato que le parece injusto."
+        hint_specific: "«Desconfianza» es no creer en algo. ¿Ignacio duda de la marca o reclama por un trato injusto?"
+      - position: 3
+        text: "indignación"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La respuesta al cliente"
+    body: "El equipo de atención al cliente leyó el mensaje furioso del usuario. «Entiendo tu indignación», empezó a escribir la encargada, «y quiero mostrarte exactamente qué pasó con el cobro». El cliente respondió media hora después, ya más tranquilo."
+    before_phrase: "Entiendo que te dio mucha rabia."
+    after_phrase: "Entiendo tu indignación."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las mismas reglas para todos"
+    body: "Mi hermano llegó tarde otra vez y nadie dijo nada; a mí me habían regañado por lo mismo la semana pasada. Se lo dije a mi madre con voz firme: «Siento indignación, no es por él, es porque las reglas deberían ser iguales para los dos». Ella lo pensó un momento y me dio la razón."
+    before_phrase: "Me da muchísima rabia que no sea igual para los dos."
+    after_phrase: "Siento indignación porque las reglas deberían ser iguales para los dos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Lo que vio en la publicación"
+    body: "Valeria le mostró a su amiga la publicación de una vecina que exigía que echaran a una familia del edificio por tener un perro pequeño. «Mira, esto me da una indignación tremenda», dijo, mientras le mostraba los comentarios. Su amiga leyó todo y asintió: «Tienes toda la razón, eso no se puede pedir»."
+    before_phrase: "Esto me da muchísima rabia."
+    after_phrase: "Esto me da una indignación tremenda."
+provenance:
+  generator: "claude-sonnet-5"
+  gate: null
+  checked_on: "2026-09-18"

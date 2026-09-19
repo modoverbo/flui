@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "semblanza"
+status: "draft"
+lemma: "semblanza"
+part_of_speech: "sustantivo"
+syllables: ["sem", "blan", "za"]
+stressed_syllable: 2
+ipa_latam: "[semˈblan.sa]"
+ipa_es: "[semˈblan.θa]"
+explanation: "Texto breve que cuenta quién es una persona: su trayectoria, sus logros y lo que la hace distinta."
+example_sentence: "Antes del evento, la organización pidió a cada ponente una semblanza de cinco líneas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para pedir o describir esa presentación corta que alguien da de sí mismo antes de un evento."
+when_not_to_use: "No lo uses para un currículum completo con fechas: la semblanza es corta y se lee en voz alta o en una tarjeta."
+collocations:
+  - "escribir una semblanza"
+  - "una breve semblanza"
+  - "pedir una semblanza"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "entrevistas"
+    relevance: 1
+tags:
+  comodin: ["mini currículum", "presentación corta"]
+  funcion: ["presentar"]
+  canal: "escrito"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "semblante"
+    difference: "El semblante es la expresión del rostro de alguien; la semblanza es un texto breve sobre su trayectoria."
+    memory_trick: "El semblante se ve en la cara; la semblanza se lee en un papel."
+replaces:
+  - before: "El texto corto que cuenta quién eres antes del evento"
+    after: "La semblanza que cuenta quién eres antes del evento"
+  - before: "Un resumen de tu trayectoria para presentarte"
+    after: "Una semblanza de tu trayectoria para presentarte"
+exercises:
+  - position: 1
+    sentence: "Antes del panel, la organización pidió a cada invitado una {{blank}} de cinco líneas para leer en voz alta."
+    hint_general: "Un texto muy corto que cuenta quién es alguien antes de que hable en público."
+    explanation: "Semblanza: un texto corto que cuenta quién es alguien antes de que hable. «Semblante» es la expresión del rostro, y «reseña» evalúa una obra o un libro, no presenta a una persona."
+    options:
+      - position: 1
+        text: "semblanza"
+        is_correct: true
+      - position: 2
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la expresión del rostro de alguien, y aquí se pide un texto escrito, no una expresión facial."
+        hint_specific: "El semblante se ve en la cara. ¿Aquí se pide algo para leer o una expresión facial?"
+      - position: 3
+        text: "reseña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «reseña» evalúa una obra o un libro, y aquí el texto presenta a una persona, no juzga un trabajo."
+        hint_specific: "Una reseña opina sobre una obra. ¿Aquí se opina sobre un libro o se presenta a alguien?"
+  - position: 2
+    sentence: "Camila escribió su {{blank}} de tres formas distintas según el evento: una para prensa y otra más informal para redes."
+    hint_general: "El texto corto donde cuentas tu trayectoria y lo que te hace distinta."
+    explanation: "Semblanza: el texto corto donde cuentas tu trayectoria. «Currículum» es un documento largo con fechas y cargos, y «semblante» es la expresión del rostro, no un texto."
+    options:
+      - position: 1
+        text: "currículum"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «currículum» es un documento largo con fechas y cargos, y aquí se habla de un texto corto y adaptable para leer en un evento."
+        hint_specific: "El currículum lleva fechas y cargos. ¿Este texto es largo y formal o corto y adaptable?"
+      - position: 2
+        text: "semblanza"
+        is_correct: true
+      - position: 3
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la expresión del rostro, y aquí se habla de un texto escrito de distintas formas."
+        hint_specific: "El semblante no se escribe de tres formas. ¿La frase habla de un texto o de una cara?"
+  - position: 3
+    sentence: "En la revista del gremio, cada nuevo socio recibe una {{blank}} de dos párrafos junto a su foto."
+    hint_general: "Un texto breve que presenta a alguien junto a su imagen."
+    explanation: "Semblanza: un texto breve que presenta a alguien junto a su imagen. «Sentencia» es una decisión judicial, y «semblante» es la expresión del rostro, no un texto sobre la persona."
+    options:
+      - position: 1
+        text: "sentencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «sentencia» es una decisión judicial, sin relación con presentar a un nuevo socio del gremio."
+        hint_specific: "Una sentencia la dicta un juez. ¿La revista es un tribunal?"
+      - position: 2
+        text: "semblanza"
+        is_correct: true
+      - position: 3
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la expresión del rostro, y aquí se habla de un texto que acompaña a la foto, no de una expresión."
+        hint_specific: "El semblante se nota en la cara de la foto. ¿La revista pide una cara o un texto?"
+  - position: 4
+    sentence: "Antes del debate, el moderador leyó una {{blank}} corta de cada candidato para que el público supiera con quién hablaba."
+    hint_general: "Un texto breve que ubica al público sobre quién es cada persona antes de escucharla."
+    explanation: "Semblanza: un texto breve que ubica al público sobre quién es cada persona. «Acusación» sería un señalamiento de culpa, y «bronca» es coloquial y habla de enojo, sin relación con presentar a un candidato."
+    options:
+      - position: 1
+        text: "semblanza"
+        is_correct: true
+      - position: 2
+        text: "acusación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «acusación» señala una culpa, y aquí el moderador solo presenta a cada candidato antes de que hable."
+        hint_specific: "Una acusación señala una culpa. ¿El moderador acusa a alguien o solo presenta?"
+      - position: 3
+        text: "bronca"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bronca» es coloquial y habla de enojo, y aquí el moderador solo lee un texto informativo antes del debate."
+        hint_specific: "«Bronca» suena a enojo. ¿El moderador se enoja o presenta información?"
+  - position: 5
+    sentence: "El museo colgó una {{blank}} de cada artista junto a sus cuadros, con datos de su formación y su estilo."
+    hint_general: "Un texto que acompaña una obra y presenta a quien la hizo."
+    explanation: "Semblanza: un texto que presenta a quien hizo la obra. «Etiqueta» solo da el título y la fecha de la obra, y «semblante» es la expresión del rostro, no un texto informativo."
+    options:
+      - position: 1
+        text: "etiqueta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «etiqueta» suele dar solo el título y la fecha de la obra, y aquí el texto cuenta la formación y el estilo del artista."
+        hint_specific: "Una etiqueta suele ser muy corta y técnica. ¿Este texto habla de formación y estilo?"
+      - position: 2
+        text: "semblanza"
+        is_correct: true
+      - position: 3
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la expresión del rostro, y aquí se habla de un texto colgado junto a los cuadros."
+        hint_specific: "El semblante no se cuelga en la pared. ¿El museo cuelga un texto o una expresión?"
+  - position: 6
+    sentence: "Antes de firmar el contrato, la editorial le pidió a Hugo una {{blank}} de una página para la contratapa del libro."
+    hint_general: "Un texto corto sobre quién es el autor, pensado para que lo lea cualquier lector."
+    explanation: "Semblanza: un texto corto sobre quién es el autor. «Sinopsis» resume la historia del libro, no habla del autor, y «semblante» es la expresión del rostro, no un texto."
+    options:
+      - position: 1
+        text: "sinopsis"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «sinopsis» resume la historia del libro, y aquí la editorial pide un texto sobre el autor, no sobre la trama."
+        hint_specific: "La sinopsis cuenta la trama del libro. ¿La editorial pide algo sobre la historia o sobre Hugo?"
+      - position: 2
+        text: "semblanza"
+        is_correct: true
+      - position: 3
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la expresión del rostro, y aquí se pide un texto para la contratapa del libro."
+        hint_specific: "El semblante no va en una contratapa. ¿La editorial pide un texto o una expresión facial?"
+  - position: 7
+    sentence: "La cadena de radio abre cada entrevista con una {{blank}} de treinta segundos sobre el invitado del día."
+    hint_general: "Una presentación muy breve que ubica al oyente sobre quién habla a continuación."
+    explanation: "Semblanza: una presentación breve que ubica al oyente sobre el invitado. «Publicidad» vende un producto, no presenta a una persona, y «semblante» es la expresión del rostro, no un texto sonoro."
+    options:
+      - position: 1
+        text: "publicidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "La «publicidad» vende un producto o servicio, y aquí la radio presenta a la persona que será entrevistada."
+        hint_specific: "La publicidad vende algo. ¿La radio vende un producto o presenta a alguien?"
+      - position: 2
+        text: "semblanza"
+        is_correct: true
+      - position: 3
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la expresión del rostro, y en la radio nadie ve la cara del invitado."
+        hint_specific: "En la radio no se ve el semblante de nadie. ¿La frase habla de radio o de televisión?"
+  - position: 8
+    sentence: "Para el homenaje, sus compañeros de trabajo prepararon una {{blank}} que repasaba treinta años de carrera en la empresa."
+    hint_general: "Un texto que repasa la trayectoria de alguien para un momento especial."
+    explanation: "Semblanza: un texto que repasa la trayectoria de alguien para un momento especial. «Denuncia» señala una irregularidad, y «semblante» es la expresión del rostro, no un texto sobre una carrera."
+    options:
+      - position: 1
+        text: "semblanza"
+        is_correct: true
+      - position: 2
+        text: "denuncia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «denuncia» señala una irregularidad, y aquí los compañeros celebran una trayectoria, no señalan un problema."
+        hint_specific: "Una denuncia señala un problema. ¿El homenaje celebra o denuncia algo?"
+      - position: 3
+        text: "semblante"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «semblante» es la expresión del rostro, y aquí se habla de un texto que repasa treinta años de carrera."
+        hint_specific: "El semblante no repasa una carrera de treinta años. ¿La frase habla de una cara o de un texto?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Cinco líneas para el panel"
+    body: "Dos días antes del panel, llegó el correo: «Necesitamos tu semblanza de cinco líneas para el programa». Andrés dudó un rato sobre qué contar y terminó escribiendo lo que más le gustaba de su trabajo, no solo los cargos que había tenido."
+    before_phrase: "Necesito un resumen corto sobre quién soy."
+    after_phrase: "Necesito mi semblanza para el programa."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Antes del debate"
+    body: "«Vamos a leer una breve semblanza de cada candidato antes de empezar», anunció el moderador. Valentina escuchó cómo describían su trayectoria en treinta segundos y sintió que, por una vez, la presentación no sonaba a lista de méritos."
+    before_phrase: "Van a contar rápido quién soy antes de hablar."
+    after_phrase: "Van a leer mi semblanza antes de empezar."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La contratapa del libro"
+    body: "Hugo releyó su propia semblanza para la contratapa del libro por quinta vez. «Suena raro escribir sobre uno mismo», le dijo a su amiga. Ella se rió: «Por eso te la corregí yo, para que no sonaras tan modesto»."
+    before_phrase: "Tengo que escribir algo corto sobre mí para el libro."
+    after_phrase: "Tengo que escribir mi semblanza para el libro."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

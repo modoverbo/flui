@@ -1,0 +1,233 @@
+schema_version: 1
+slug: "diplomatico"
+status: "draft"
+lemma: "diplomático"
+part_of_speech: "adjetivo"
+syllables:
+  - "di"
+  - "plo"
+  - "má"
+  - "ti"
+  - "co"
+stressed_syllable: 3
+ipa_latam: "[di.plo.ˈma.ti.ko]"
+ipa_es: "[di.plo.ˈma.ti.ko]"
+explanation: "Que trata un asunto con cuidado, sin herir a nadie, aunque tenga que decir algo que no gusta."
+example_sentence: "Fue diplomático al decir que el plan necesitaba ajustes, sin culpar a nadie del equipo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para decir algo incómodo sin sonar brusco, cuidando cómo lo dices sin dejar de decirlo."
+when_not_to_use: "No la uses para alguien que simplemente evita el tema: aquí sí se dice lo incómodo, solo que con cuidado."
+collocations:
+  - "respuesta diplomática"
+  - "ser diplomático"
+  - "un modo diplomático de decirlo"
+replaces:
+  - before: "Lo dijo con mucho tacto"
+    after: "Lo dijo de forma diplomática"
+  - before: "Supo decirlo sin que nadie se ofendiera"
+    after: "Fue diplomático al decirlo"
+family: ["diplomacia", "diplomáticamente"]
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+tags:
+  comodin: ["suave"]
+  funcion: ["suavizar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "hipócrita"
+    difference: "«Hipócrita» finge pensar algo distinto de lo que realmente piensa; ser diplomático es decir la verdad incómoda, solo que con cuidado en la forma."
+    memory_trick: "El hipócrita oculta lo que piensa; el diplomático lo dice con cuidado."
+  - confused_with: "condescendiente"
+    difference: "«Condescendiente» cede o suaviza tanto que casi no dice nada, para no incomodar; lo diplomático sí dice lo incómodo, solo que con una forma cuidada."
+    memory_trick: "Lo condescendiente calla para no molestar; lo diplomático habla con cuidado."
+exercises:
+  - position: 1
+    sentence: "Aunque solo llevaba un mes en el puesto, Renata fue {{blank}} al explicarle al cliente por qué el plazo se movía una semana."
+    hint_general: "Dice algo incómodo cuidando la forma, sin dejar de decirlo."
+    explanation: "Diplomática: dice algo incómodo cuidando la forma. «Diplomada» es tener el título de un curso o una carrera, y «amable» describe un trato agradable en general, sin relación con decir algo incómodo; aquí Renata explicó un problema real sin sonar brusca."
+    options:
+      - position: 1
+        text: "diplomada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Diplomada» significa que alguien terminó una carrera o un curso y tiene el título; aquí no se habla de estudios, sino de cómo explicó algo incómodo."
+        hint_specific: "Esa palabra habla de haber terminado un curso o una carrera. ¿La frase habla de estudios, o de cómo explicó algo?"
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe un trato agradable en general, sin relación con decir algo incómodo; aquí lo importante es que explicó un problema real sin sonar brusca."
+        hint_specific: "Esa palabra describe un trato agradable en general. ¿Aquí lo importante es ser agradable, o decir algo incómodo con cuidado?"
+      - position: 3
+        text: "diplomática"
+        is_correct: true
+  - position: 2
+    sentence: "El comentario del crítico fue {{blank}}: señaló los fallos de la obra sin humillar al director frente a todos."
+    hint_general: "Dice algo incómodo con claridad, sin humillar a nadie."
+    explanation: "Diplomático: dice algo incómodo con claridad, sin humillar a nadie. «Sutil» sugiere algo casi imperceptible, y «suave» es un término coloquial para el tono, fuera de tono en un texto sobre una crítica concreta."
+    options:
+      - position: 1
+        text: "sutil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sutil» describe algo dicho de forma tan indirecta que casi no se nota; aquí el crítico sí dijo los fallos con claridad, solo que sin humillar a nadie."
+        hint_specific: "Esa palabra sugiere algo casi imperceptible. ¿El crítico dijo los fallos con claridad, o los escondió?"
+      - position: 2
+        text: "suave"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Suave» es un término coloquial para un tono agradable, y no encaja con el tono de una crítica que sí señala fallos concretos."
+        hint_specific: "Esa palabra es coloquial y habla solo del tono. ¿El texto describe solo el tono, o también qué se dijo con cuidado?"
+      - position: 3
+        text: "diplomático"
+        is_correct: true
+  - position: 3
+    sentence: "Los organizadores fueron {{blank}} al anunciar el cambio de fecha: explicaron el motivo y ofrecieron una alternativa a quienes no pudieran asistir."
+    hint_general: "Explican un cambio incómodo con cuidado, ofreciendo una alternativa."
+    explanation: "Diplomáticos: explican un cambio incómodo con cuidado, ofreciendo alternativas. «Prudentes» habla de evitar un riesgo, y «considerados» describe a personas atentas en general, sin relación directa con explicar el cambio y dar una opción."
+    options:
+      - position: 1
+        text: "prudentes"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prudentes» describe a quien evita un riesgo o un error, sin relación con cuidar cómo se dice algo incómodo; aquí lo que hicieron fue anunciarlo con cuidado, no evitarlo."
+        hint_specific: "Esa palabra habla de evitar un riesgo. ¿Aquí evitaron anunciar el cambio, o lo explicaron con cuidado?"
+      - position: 2
+        text: "considerados"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Considerados» describe a personas atentas con los demás en general; aquí lo que resalta es que explicaron el cambio con cuidado y dieron una alternativa, no solo que fueran atentos."
+        hint_specific: "Esa palabra describe a alguien atento en general. ¿Aquí lo importante es explicar con cuidado y dar opciones, o solo ser atentos?"
+      - position: 3
+        text: "diplomáticos"
+        is_correct: true
+  - position: 4
+    sentence: "El técnico fue {{blank}} al decirle al vecino que la reparación no estaba incluida en la garantía."
+    hint_general: "Da una mala noticia cuidando cómo la dice."
+    explanation: "Diplomático: da una mala noticia cuidando la forma. «Diplomado» es tener un título de un curso o una carrera, y «considerado» describe a alguien atento en general, sin relación directa con dar esa noticia incómoda."
+    options:
+      - position: 1
+        text: "diplomado"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Diplomado» significa que alguien tiene un título de un curso o una carrera; aquí no se habla de estudios, sino de cómo dio una mala noticia."
+        hint_specific: "Esa palabra habla de tener un título. ¿La frase habla de estudios, o de cómo dio una noticia incómoda?"
+      - position: 2
+        text: "considerado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Considerado» describe a alguien atento con los demás en general; aquí lo que resalta es que dio una noticia incómoda sin sonar brusco, no solo que fuera atento."
+        hint_specific: "Esa palabra describe a alguien atento en general. ¿Aquí lo importante es dar una mala noticia con cuidado, o ser atento en general?"
+      - position: 3
+        text: "diplomático"
+        is_correct: true
+  - position: 5
+    sentence: "La entrenadora fue {{blank}} al explicar por qué dejó a la capitana fuera del equipo titular: dio motivos claros sin exponerla frente a la prensa."
+    hint_general: "Da un motivo real e incómodo sin exponer a nadie frente a otros."
+    explanation: "Diplomática: da una información incómoda sin exponer a nadie. «Cautelosa» habla de evitar un riesgo, y «suave» es un término coloquial para el tono, fuera de tono en un texto sobre una decisión deportiva."
+    options:
+      - position: 1
+        text: "cautelosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cautelosa» describe a quien evita un riesgo actuando con cuidado, sin relación directa con decir algo incómodo con tacto; aquí ella sí explicó el motivo real, solo que sin exponer a la jugadora."
+        hint_specific: "Esa palabra habla de evitar un riesgo. ¿Aquí evitó dar el motivo, o lo dio con cuidado?"
+      - position: 2
+        text: "suave"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Suave» es un término coloquial para un tono agradable, y no encaja con el tono de una entrenadora explicando una decisión deportiva."
+        hint_specific: "Esa palabra es coloquial y habla solo del tono. ¿El texto describe solo el tono, o también cómo cuidó a la jugadora?"
+      - position: 3
+        text: "diplomática"
+        is_correct: true
+  - position: 6
+    sentence: "El director del coro fue {{blank}} al decirle a Marcos que necesitaba más ensayo antes del concierto."
+    hint_general: "Dice algo difícil de escuchar cuidando la forma en que lo dice."
+    explanation: "Diplomático: dice algo difícil de escuchar cuidando la forma. «Amable» describe un trato agradable en general, y «sutil» sugiere algo casi imperceptible; aquí Marcos entendió con claridad lo que necesitaba mejorar."
+    options:
+      - position: 1
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe un trato agradable en general, sin relación con decir algo incómodo; aquí lo importante es que le dijo algo difícil de escuchar, cuidando la forma."
+        hint_specific: "Esa palabra describe un trato agradable en general. ¿Aquí lo importante es ser agradable, o decir algo difícil con cuidado?"
+      - position: 2
+        text: "sutil"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sutil» describe algo dicho de forma tan indirecta que casi no se nota; aquí Marcos entendió con claridad que necesitaba ensayar más."
+        hint_specific: "Esa palabra sugiere algo casi imperceptible. ¿Marcos entendió con claridad, o quedó confundido?"
+      - position: 3
+        text: "diplomático"
+        is_correct: true
+  - position: 7
+    sentence: "La nueva encargada fue {{blank}} al explicarle a su antecesor que el proyecto cambiaría de enfoque."
+    hint_general: "Explica un cambio incómodo cuidando la forma en que lo dice."
+    explanation: "Diplomática: explica un cambio incómodo cuidando la forma. «Diplomada» es tener el título de un curso o una carrera, y «considerada» describe a alguien atento en general, sin relación directa con explicar ese cambio."
+    options:
+      - position: 1
+        text: "diplomada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Diplomada» significa que alguien tiene el título de un curso o una carrera; aquí no se habla de estudios, sino de cómo explicó un cambio incómodo."
+        hint_specific: "Esa palabra habla de tener un título. ¿La frase habla de estudios, o de cómo explicó un cambio?"
+      - position: 2
+        text: "considerada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Considerada» describe a alguien atento con los demás en general; aquí lo que resalta es que explicó un cambio incómodo sin sonar brusca, no solo que fuera atenta."
+        hint_specific: "Esa palabra describe a alguien atento en general. ¿Aquí lo importante es explicar un cambio con cuidado, o ser atenta en general?"
+      - position: 3
+        text: "diplomática"
+        is_correct: true
+  - position: 8
+    sentence: "La mediadora fue {{blank}} al resumir la queja de ambas partes sin tomar partido por ninguna."
+    hint_general: "Resume un conflicto con cuidado, sin favorecer a ninguna de las partes."
+    explanation: "Diplomática: resume un conflicto sin tomar partido por nadie. «Prudente» habla de evitar un riesgo, y «amable» describe un trato agradable en general, sin relación directa con no favorecer a ninguna de las partes."
+    options:
+      - position: 1
+        text: "prudente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prudente» describe a quien evita un riesgo o un error; aquí lo que hizo fue resumir la queja de ambas partes con cuidado, no evitar el tema."
+        hint_specific: "Esa palabra habla de evitar un riesgo. ¿Aquí evitó el tema, o lo resumió con cuidado?"
+      - position: 2
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe un trato agradable en general, sin relación con resumir un conflicto sin tomar partido; aquí lo que resalta es que no favoreció a ninguna de las partes."
+        hint_specific: "Esa palabra describe un trato agradable en general. ¿Aquí lo importante es ser agradable, o no tomar partido?"
+      - position: 3
+        text: "diplomática"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La forma de decirlo"
+    body: "Antes de la reunión, Sara pensó cómo decirle a su compañero que su parte del informe tenía errores de cálculo. Fue diplomática: «El resto está muy bien armado; solo revisemos juntos estos tres números». Él corrigió todo esa misma tarde, sin sentirse señalado."
+    before_phrase: "Tuve que decírselo con mucho cuidado para que no se sintiera mal."
+    after_phrase: "Fui diplomática: se lo dije con cuidado, sin señalarlo."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta incómoda"
+    body: "El periodista preguntó directamente si el retraso del proyecto era culpa del equipo técnico. El director fue diplomático: «Hubo varios factores, y el equipo técnico trabajó con lo que tenía; ya estamos ajustando el plan». Contestó sin esquivar la pregunta ni señalar a nadie."
+    before_phrase: "No quiero decir nada que suene mal para nadie del equipo."
+    after_phrase: "Fui diplomático: contesté sin señalar a nadie."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que había que decir"
+    body: "Bruno no sabía cómo decirle a su abuela que este año no podrían viajar juntos por el trabajo de todos. Fue diplomático: «Este año se nos complica el viaje, pero organicemos una comida grande el mismo fin de semana». Su abuela sonrió: «Con que estemos juntos, me alcanza»."
+    before_phrase: "No sabía cómo decírselo sin que se pusiera triste."
+    after_phrase: "Fui diplomático: se lo dije con cuidado."
+provenance:
+  generator: "hand-written by flui content agent"
+  gate: null
+  checked_on: "2026-09-18"

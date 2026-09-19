@@ -1,0 +1,237 @@
+schema_version: 1
+sort_order: 9001
+slug: "inconformidad"
+status: "draft"
+lemma: "inconformidad"
+part_of_speech: "sustantivo"
+syllables: ["in", "con", "for", "mi", "dad"]
+stressed_syllable: 5
+ipa_latam: "[in.kon.foɾ.miˈðad]"
+ipa_es: "[in.kon.foɾ.miˈðad]"
+explanation: "Lo que dices con calma cuando algo no te convence, antes de aceptarlo o de seguir adelante sin más."
+example_sentence: "Mandé un correo mostrando mi inconformidad con el cambio de turno antes de que se aprobara."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para dejar constancia de que algo no te parece bien, sin montar un conflicto ni exigir nada todavía."
+when_not_to_use: "No la uses para un enojo explosivo, ni para algo que ya decidiste aceptar sin más vueltas."
+collocations:
+  - "expresar tu inconformidad"
+  - "mostrar inconformidad con algo"
+  - "manifestar tu inconformidad por escrito"
+replaces:
+  - before: "No estoy muy de acuerdo con esto, pero bueno"
+    after: "Quiero dejar constancia de mi inconformidad con esto"
+  - before: "Me quejé un poco por el cambio de turno"
+    after: "Expresé mi inconformidad por el cambio de turno"
+  - before: "No me cayó bien la decisión, la verdad"
+    after: "Tengo cierta inconformidad con la decisión"
+family:
+  - "conforme"
+  - "conformidad"
+  - "inconforme"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "conflicto-desacuerdo"
+    relevance: 2
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "queja"
+  funcion:
+    - "expresar desacuerdo"
+  canal: "ambos"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "incomodidad"
+    difference: "«Incomodidad» es una molestia física o de ambiente; esta palabra es un desacuerdo que expresas con palabras sobre una decisión o un cambio."
+    memory_trick: "La incomodidad se siente en el cuerpo; esta se dice con palabras."
+exercises:
+  - position: 1
+    sentence: "Marta mandó un correo mostrando su {{blank}} con el cambio de turno, sin pedir nada todavía, solo dejando constancia."
+    hint_general: "Deja por escrito que algo no le parece bien, sin exigir todavía ningún cambio."
+    explanation: "Inconformidad: deja constancia de un desacuerdo sin exigir nada. Una «incomodidad» sería una molestia física, y una «pataleta» es una reacción infantil, y ella escribe con calma."
+    options:
+      - position: 1
+        text: "incomodidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Incomodidad» es una molestia del cuerpo o del ambiente, y Marta escribe sobre un cambio de turno con el que no está de acuerdo, no sobre algo que le molesta físicamente."
+        hint_specific: "«Incomodidad» se siente en el cuerpo o en una silla. ¿De qué habla el correo de Marta?"
+      - position: 2
+        text: "inconformidad"
+        is_correct: true
+      - position: 3
+        text: "pataleta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pataleta» es una reacción infantil y ruidosa, y Marta manda un correo tranquilo dejando constancia, sin gritar ni exigir nada."
+        hint_specific: "Una «pataleta» es un berrinche. ¿Cómo describe la frase el correo de Marta?"
+  - position: 2
+    sentence: "Iván no gritó ni exigió nada en la reunión: solo dijo, con voz firme, que quería anotar su {{blank}} con la nueva política de gastos."
+    hint_general: "Quiere que su desacuerdo quede anotado, sin montar una escena."
+    explanation: "Inconformidad: quiere que su desacuerdo quede anotado, sin escena. Una «pataleta» sería gritar y exigir, y un «reclamo» pediría reparar algo que ya salió mal."
+    options:
+      - position: 1
+        text: "pataleta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pataleta» implica gritar y montar una escena, y la frase dice justo lo contrario: Iván habla con voz firme, sin gritar."
+        hint_specific: "Una «pataleta» se nota a gritos. ¿Cómo habla Iván en la reunión?"
+      - position: 2
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «reclamo» exige que se repare algo que ya salió mal, y Iván solo quiere dejar anotado que no está de acuerdo, no pide ninguna reparación."
+        hint_specific: "Un «reclamo» pide arreglar un daño ya hecho. ¿Pide Iván que arreglen algo?"
+      - position: 3
+        text: "inconformidad"
+        is_correct: true
+  - position: 3
+    sentence: "En la encuesta interna, Renata escribió su {{blank}} con el nuevo horario y explicó, en dos líneas, por qué no le convencía."
+    hint_general: "Escribe brevemente por qué algo no le convence, sin pedir un cambio inmediato."
+    explanation: "Inconformidad: explica por qué algo no le convence, sin exigir un cambio. Un «disgusto» sería enfado por algo ya pasado, y una «queja» suena a lamento repetido, no a una explicación puntual."
+    options:
+      - position: 1
+        text: "disgusto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «disgusto» es enfado por algo que ya pasó, y Renata no se enfada: explica en dos líneas por qué el horario no le convence."
+        hint_specific: "Un «disgusto» va de sentirse mal por algo hecho. ¿Explica Renata un enfado o una razón?"
+      - position: 2
+        text: "inconformidad"
+        is_correct: true
+      - position: 3
+        text: "queja"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «queja» suena a lamento que se repite, y Renata hace justo lo contrario: da una explicación puntual y concreta en dos líneas."
+        hint_specific: "Una «queja» se repite varias veces. ¿Cuántas líneas escribió Renata?"
+  - position: 4
+    sentence: "Los vecinos del tercer piso firmaron una carta con su {{blank}} sobre la obra del edificio, pidiendo solo que se les avisara con tiempo."
+    hint_general: "Firman una carta para dejar claro que algo no les parece bien, con una petición pequeña."
+    explanation: "Inconformidad: dejan claro que algo no les parece bien, con una petición pequeña. Una «protesta» implicaría una manifestación colectiva ruidosa, y un «reclamo» exigiría reparar un daño ya hecho."
+    options:
+      - position: 1
+        text: "protesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «protesta» suele ser una manifestación colectiva y ruidosa, y aquí los vecinos solo firman una carta pidiendo que se les avise con tiempo."
+        hint_specific: "Una «protesta» suele salir a la calle. ¿Qué hacen los vecinos: firman una carta o se manifiestan?"
+      - position: 2
+        text: "inconformidad"
+        is_correct: true
+      - position: 3
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «reclamo» exige reparar un daño que ya ocurrió, y los vecinos escriben antes de que empiece la obra, no después de un daño."
+        hint_specific: "Un «reclamo» llega después del daño. ¿La obra ya empezó o todavía no?"
+  - position: 5
+    sentence: "Simón no dijo nada en la sala, pero después le escribió a su jefa un mensaje con su {{blank}} sobre la manera en que se repartió el trabajo del mes."
+    hint_general: "Escribe después, con calma, para explicar por qué algo no le pareció justo."
+    explanation: "Inconformidad: explica con calma por qué algo no le pareció justo. Un «rezongo» es una queja murmurada entre dientes, y un «descontento» describe solo cómo se siente, sin explicar nada."
+    options:
+      - position: 1
+        text: "rezongo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «rezongo» es una queja murmurada entre dientes, casi para uno mismo, y Simón escribe un mensaje claro y directo a su jefa."
+        hint_specific: "Un «rezongo» se dice entre dientes, casi sin que nadie lo oiga. ¿Cómo le habla Simón a su jefa?"
+      - position: 2
+        text: "inconformidad"
+        is_correct: true
+      - position: 3
+        text: "descontento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «descontento» describe cómo se siente alguien, sin más, y Simón hace algo distinto: le escribe a su jefa para explicar la razón."
+        hint_specific: "Un «descontento» es solo un sentimiento. ¿Simón solo siente algo, o además lo explica por escrito?"
+  - position: 6
+    sentence: "Paola llenó el formulario del banco y, en la casilla de comentarios, anotó su {{blank}} con la demora del trámite."
+    hint_general: "Usa la casilla del formulario para anotar por qué algo no le pareció bien."
+    explanation: "Inconformidad: anota por escrito, en un formulario, por qué algo no le pareció bien. Un «berrinche» sería una rabieta, impropia de un formulario, y una «cantaleta» es una queja repetida en voz alta."
+    options:
+      - position: 1
+        text: "berrinche"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «berrinche» es una rabieta, algo que no cabe en la casilla de comentarios de un formulario de banco, y Paola solo escribe una anotación breve."
+        hint_specific: "Un «berrinche» es propio de una rabieta, no de un formulario. ¿Dónde escribe Paola exactamente?"
+      - position: 2
+        text: "cantaleta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «cantaleta» es una queja que se repite una y otra vez en voz alta, y Paola solo hace una anotación puntual en un formulario."
+        hint_specific: "Una «cantaleta» se repite muchas veces. ¿Cuántas veces anota algo Paola?"
+      - position: 3
+        text: "inconformidad"
+        is_correct: true
+  - position: 7
+    sentence: "Gonzalo levantó la mano en la asamblea del edificio y pidió que quedara escrita su {{blank}} con el aumento de la cuota, antes de pasar a votar."
+    hint_general: "Pide que quede anotado su desacuerdo antes de que el grupo decida algo."
+    explanation: "Inconformidad: pide que quede anotado su desacuerdo antes de la votación. Una «objeción» se usa más en un debate formal de argumentos, y un «malestar» describe solo cómo se siente el cuerpo o el ánimo."
+    options:
+      - position: 1
+        text: "objeción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «objeción» suele responder a un argumento concreto dentro de un debate, y Gonzalo no discute un argumento: deja anotado que el aumento no le parece bien."
+        hint_specific: "Una «objeción» rebate un argumento puntual. ¿Gonzalo discute un argumento o anota un desacuerdo general?"
+      - position: 2
+        text: "malestar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «malestar» describe cómo se siente el cuerpo o el ánimo, y Gonzalo pide algo más concreto: que su desacuerdo quede escrito en el acta."
+        hint_specific: "Un «malestar» es solo una sensación. ¿Qué pide Gonzalo que hagan con lo que dice?"
+      - position: 3
+        text: "inconformidad"
+        is_correct: true
+  - position: 8
+    sentence: "Lucía terminó la llamada con el proveedor y, para que quedara registro, envió después un correo resumiendo su {{blank}} con el retraso de la entrega."
+    hint_general: "Pone por escrito, con calma, por qué el retraso no le pareció aceptable."
+    explanation: "Inconformidad: pone por escrito, con calma, un desacuerdo con lo ocurrido. Un «disgusto» describiría solo su enfado, y una «pataleta» sería una reacción exagerada, lejos del tono de un correo de trabajo."
+    options:
+      - position: 1
+        text: "inconformidad"
+        is_correct: true
+      - position: 2
+        text: "disgusto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «disgusto» describe solo el enfado de Lucía, y el correo hace algo más: deja registro por escrito de un desacuerdo concreto con el retraso."
+        hint_specific: "Un «disgusto» es un sentimiento, no un registro escrito. ¿Para qué envía Lucía el correo?"
+      - position: 3
+        text: "pataleta"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «pataleta» es una reacción exagerada y ruidosa, y Lucía escribe un correo de trabajo tranquilo, solo para dejar constancia."
+        hint_specific: "Una «pataleta» no encaja en un correo de trabajo tranquilo. ¿Cómo describe la frase el correo de Lucía?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La casilla de comentarios"
+    body: "El formulario de salida pedía opinar sobre el proceso. Antes de enviarlo, Renata escribió dos líneas explicando por qué el reparto del trabajo del mes no le había parecido justo. «No es un drama», le dijo a su compañero, «solo quiero dejar mi inconformidad por escrito». Su jefa la llamó esa misma semana."
+    before_phrase: "No me pareció justo, pero bueno, ya fue."
+    after_phrase: "Quiero dejar mi inconformidad por escrito."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La cuota del edificio"
+    body: "En la asamblea, su tío quería aprobar el aumento sin discutirlo. Gonzalo levantó la mano: «Antes de votar, quiero que quede mi inconformidad en el acta». No cambió el resultado, pero su prima le sonrió: «Al menos quedó dicho»."
+    before_phrase: "A mí no me gusta, pero bueno, que se vote."
+    after_phrase: "Quiero que quede mi inconformidad en el acta."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del edificio"
+    body: "Todos hablaban del ruido de la obra, pero nadie quería escribir nada. Paola mandó un mensaje al grupo: «Yo ya dejé mi inconformidad en el buzón de la administración, por si alguien más quiere sumarse». Dos vecinos respondieron esa misma tarde."
+    before_phrase: "A mí tampoco me gusta esta obra, pero qué se le va a hacer."
+    after_phrase: "Ya dejé mi inconformidad en el buzón de la administración."
+provenance:
+  generator: "flui authoring agent — batch W1 pedir-disculparse"
+  gate: null
+  checked_on: "2026-09-18"

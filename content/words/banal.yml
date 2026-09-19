@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "banal"
+status: "draft"
+lemma: "banal"
+part_of_speech: "adjetivo"
+syllables: ["ba", "nal"]
+stressed_syllable: 2
+ipa_latam: "[baˈnal]"
+ipa_es: "[baˈnal]"
+explanation: "Tan común y repetido que no aporta nada nuevo ni interesante."
+example_sentence: "El comentario le pareció banal: la misma frase que ya había leído cien veces esa semana."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para señalar que algo es tan común y repetido que no aporta nada nuevo, aunque no sea falso ni esté mal dicho."
+when_not_to_use: "No la uses para algo simplemente breve o sencillo; banal implica que ya se ha dicho tantas veces que perdió su valor."
+collocations:
+  - "comentario banal"
+  - "frase banal"
+replaces:
+  - before: "Es lo mismo que dice todo el mundo"
+    after: "Es un comentario banal"
+  - before: "Ya lo he leído mil veces, no dice nada nuevo"
+    after: "Es una frase banal que no aporta nada nuevo"
+family: ["banalidad", "banalizar"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["lo mismo de siempre"]
+  funcion: ["criticar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "cabal"
+    difference: "«Cabal» describe a alguien íntegro que cumple lo que promete sin fallar en nada; «banal» describe algo sin importancia ni sustancia propia."
+    memory_trick: "Cabal cumple su palabra; banal no tiene peso que cumplir."
+  - confused_with: "superficial"
+    difference: "«Superficial» describe que algo no profundiza en un tema; «banal» describe que algo es tan común y repetido que no tiene valor propio."
+exercises:
+  - position: 1
+    sentence: "A Ismael el comentario le pareció {{blank}}: la misma frase motivacional que ya había visto cien veces esa semana."
+    hint_general: "Es algo tan repetido que ya no aporta nada nuevo."
+    explanation: "Banal: la frase está tan repetida que ya no aporta nada nuevo. «Venal» habla de dejarse sobornar, y «baladí» describe un asunto sin importancia, no una frase repetida."
+    options:
+      - position: 1
+        text: "venal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Venal» describe a quien se deja sobornar o corromper por dinero, y aquí no hay ningún soborno: solo una frase muy repetida."
+        hint_specific: "«Venal» habla de dejarse sobornar. ¿Hay algún soborno en esta escena?"
+      - position: 2
+        text: "baladí"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Baladí» describe un asunto sin importancia, y el problema aquí no es que el tema no importe, sino que la frase está demasiado repetida."
+        hint_specific: "«Baladí» habla de un asunto sin importancia. ¿El problema es la importancia del tema o que la frase ya se repitió demasiado?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+  - position: 2
+    sentence: "Norma le dijo a su amiga, entre risas, que el chiste del grupo ya estaba {{blank}} de tanto repetirlo."
+    hint_general: "Ya se repitió tantas veces que perdió la gracia."
+    explanation: "Banal: el chiste ya está tan repetido que perdió la gracia. «Manido» es una palabra muy formal para una charla entre amigas, y «vulgar» habla de mal gusto, no de repetición."
+    options:
+      - position: 1
+        text: "manido"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Manido» es una palabra muy formal y literaria, y esta es una charla entre amigas, entre risas."
+        hint_specific: "«Manido» suena a crítica literaria. ¿Ese tono encaja en una charla entre amigas?"
+      - position: 2
+        text: "vulgar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vulgar» describe algo de mal gusto o grosero, y el problema del chiste no es que sea de mal gusto, sino que ya lo repitieron demasiado."
+        hint_specific: "«Vulgar» habla de mal gusto. ¿El problema es el gusto del chiste o que ya se repitió mucho?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+  - position: 3
+    sentence: "Pablo señaló que el eslogan de la campaña era {{blank}}: se parecía a cualquier otro que ya circulaba en internet."
+    hint_general: "Se parece a muchos otros que ya circulan por todas partes."
+    explanation: "Banal: el eslogan se parece a muchos otros ya vistos. «Venal» habla de dejarse sobornar, y «mediocre» habla de poca calidad, no de que se repita tanto."
+    options:
+      - position: 1
+        text: "venal"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Venal» describe a alguien que se deja corromper por dinero, y el problema del eslogan no es una corrupción, sino que ya se parece a muchos otros."
+        hint_specific: "«Venal» habla de dejarse sobornar. ¿El eslogan tiene que ver con un soborno?"
+      - position: 2
+        text: "mediocre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mediocre» dice que algo tiene poca calidad, y el problema del eslogan no era su calidad, sino que era igual a muchos otros ya vistos."
+        hint_specific: "«Mediocre» habla de poca calidad. ¿El problema es la calidad o que se parece a otros muchos?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+  - position: 4
+    sentence: "En el informe final, Luciana anotó que el argumento del proveedor era {{blank}} y pidió una propuesta con algo distinto."
+    hint_general: "Ya se usó tantas veces que perdió su valor."
+    explanation: "Banal: el argumento ya se usó demasiadas veces. «Trillado» es muy coloquial para un informe formal, y «aburrido» habla de no entretener, no de repetición."
+    options:
+      - position: 1
+        text: "trillado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Trillado» es una palabra muy coloquial, y un informe final pide un registro más cuidado."
+        hint_specific: "«Trillado» es coloquial. ¿Ese tono encaja en un informe formal?"
+      - position: 2
+        text: "aburrido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburrido» dice que algo no entretiene, y el problema del argumento no era que aburriera, sino que ya se había usado muchas veces."
+        hint_specific: "«Aburrido» habla de no entretener. ¿El problema es que aburre o que ya se usó muchas veces?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+  - position: 5
+    sentence: "Hernán notó que la disculpa de su primo sonaba {{blank}}, igual a la que usaba cada vez que llegaba tarde."
+    hint_general: "Ya perdió su valor de tanto repetirse siempre igual."
+    explanation: "Banal: la disculpa perdió su valor de tanto repetirse. «Predecible» habla de anticipar algo, y «corriente» habla de lo común, sin la idea de que ya perdió su valor."
+    options:
+      - position: 1
+        text: "predecible"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Predecible» dice que algo se puede anticipar, y el problema de la disculpa no era que se supiera de antemano, sino que ya se había usado tantas veces que perdió valor."
+        hint_specific: "«Predecible» habla de anticipar algo. ¿El problema es que se anticipa o que ya perdió valor de tanto repetirse?"
+      - position: 2
+        text: "corriente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corriente» dice que algo es común, sin la idea de que ya se repitió tantas veces que dejó de significar algo."
+        hint_specific: "«Corriente» habla de lo común. ¿El problema es solo que sea común o que ya perdió su valor de tanto repetirse?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+  - position: 6
+    sentence: "A Ofelia le pareció {{blank}} el pie de foto que puso su amiga, calcado de cualquier otra publicación del mismo estilo."
+    hint_general: "Se parece a muchos otros que ya se han visto antes."
+    explanation: "Banal: el pie de foto se parece a muchos otros ya vistos. «Soso» habla de falta de gracia, y «flojo» habla de poca calidad, no de que se repita tanto."
+    options:
+      - position: 1
+        text: "soso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Soso» describe algo sin gracia ni sabor, y el problema del pie de foto no era la falta de gracia, sino que era igual a muchos otros ya vistos."
+        hint_specific: "«Soso» habla de falta de gracia. ¿El problema es la gracia o que se parece a otros muchos?"
+      - position: 2
+        text: "flojo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Flojo» dice que algo tiene poca fuerza o calidad, y el problema del pie de foto no era su calidad, sino que ya se parecía a muchos otros."
+        hint_specific: "«Flojo» habla de poca calidad. ¿El problema es la calidad o que se repite mucho?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+  - position: 7
+    sentence: "Matías respondió con una frase {{blank}} sobre el trabajo en equipo, la misma que dicen todos en cualquier entrevista."
+    hint_general: "Es la misma frase que ya dice todo el mundo, sin nada propio."
+    explanation: "Banal: la frase de Matías ya la dice todo el mundo. «Insulso» habla de falta de sabor propio, y «gracioso» habla de hacer reír; ninguno describe que esté tan repetida."
+    options:
+      - position: 1
+        text: "insulso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insulso» describe algo sin gracia ni sabor propio, y el problema de la frase no es que le falte gracia, sino que ya la dice todo el mundo."
+        hint_specific: "«Insulso» habla de falta de sabor propio. ¿El problema es la gracia de la frase o que ya la usa todo el mundo?"
+      - position: 2
+        text: "gracioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gracioso» describe algo que hace reír, y el problema de la frase de Matías no tiene que ver con el humor, sino con lo repetida que está."
+        hint_specific: "«Gracioso» habla de hacer reír. ¿El problema es la falta de humor o que ya la dice todo el mundo?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+  - position: 8
+    sentence: "Daniela dejó de seguir esa cuenta porque cada publicación le parecía más {{blank}}, con el mismo mensaje de siempre repetido de otra forma."
+    hint_general: "Repite siempre el mismo mensaje, solo que dicho de otra forma."
+    explanation: "Banal: las publicaciones repiten siempre el mismo mensaje. «Insustancial» habla de falta de contenido, y «genérico» habla de falta de algo específico, no de repetición constante."
+    options:
+      - position: 1
+        text: "insustancial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insustancial» dice que algo carece de contenido o de fondo, y el problema de esas publicaciones no era la falta de contenido, sino que repetían siempre el mismo mensaje."
+        hint_specific: "«Insustancial» habla de falta de contenido. ¿El problema es la falta de contenido o que repiten siempre lo mismo?"
+      - position: 2
+        text: "genérico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Genérico» dice que algo no tiene nada específico, y el problema de esas publicaciones no era la falta de detalle, sino que repetían el mismo mensaje una y otra vez."
+        hint_specific: "«Genérico» habla de falta de algo específico. ¿El problema es la falta de detalle o la repetición constante?"
+      - position: 3
+        text: "banal"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El eslogan que ya existía"
+    body: "El equipo de marketing revisó tres propuestas de eslogan. «Esta es banal», dijo Lorena, señalando la segunda: «la vi el mes pasado en otra marca, casi con las mismas palabras». Volvieron a la mesa de trabajo con una idea más propia."
+    before_phrase: "Esta ya la vi en todos lados, no dice nada nuevo."
+    after_phrase: "Esta es banal."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El mismo mensaje de siempre"
+    body: "Bruno le mostró a su amigo una cuenta que seguía por costumbre. «Mira, cada publicación es más banal que la anterior: siempre el mismo mensaje con otras palabras», comentó. Su amigo se rió y confesó que la había dejado de ver hacía meses."
+    before_phrase: "Siempre dice lo mismo de siempre, no aporta nada."
+    after_phrase: "Cada publicación es más banal que la anterior."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "La respuesta que evitó"
+    body: "«¿Por qué quieres este puesto?», preguntó la entrevistadora. Camilo dudó un segundo: «Casi respondo algo banal, como “me apasiona el trabajo en equipo”, pero prefiero contarte lo que aprendí en mi último proyecto». La entrevistadora sonrió y le pidió que continuara."
+    before_phrase: "Casi digo lo mismo que dice todo el mundo."
+    after_phrase: "Casi respondo algo banal."
+provenance:
+  generator: "claude-sonnet-5"
+  gate: null
+  checked_on: "2026-09-18"

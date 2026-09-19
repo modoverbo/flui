@@ -1,0 +1,230 @@
+schema_version: 1
+slug: "empatico"
+status: "draft"
+lemma: "empático"
+part_of_speech: "adjetivo"
+syllables: ["em", "pa", "ti", "co"]
+stressed_syllable: 2
+ipa_latam: "[emˈpa.ti.ko]"
+ipa_es: "[emˈpa.ti.ko]"
+explanation: "Capaz de entender lo que siente otra persona y hacérselo notar."
+example_sentence: "Antes de dar su opinión, Marcos dijo algo tan empático que su colega por fin se sintió escuchada."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona mejor como elogio hacia otra persona que quiere sentirse comprendida; sobre ti mismo suena raro decirlo."
+when_not_to_use: "No la uses para quien solo escucha por cortesía sin registrar lo que el otro siente, ni para decir simplemente que alguien es amable."
+collocations:
+  - "una respuesta empática"
+  - "una mirada empática"
+  - "ser empático con alguien"
+replaces:
+  - before: "Se puso en mi lugar de verdad"
+    after: "Fue muy empático conmigo"
+  - before: "Entendió cómo me sentía sin que se lo explicara"
+    after: "Fue empático y entendió cómo me sentía"
+  - before: "Supo leer que estaba mal"
+    after: "Fue empático y supo leer que estaba mal"
+family: ["empatía", "empatizar"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["se pone en tu lugar", "te entiende"]
+  funcion: ["elogiar", "describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "apático"
+    difference: "«Apático» describe a quien no muestra interés ni reacciona ante nada; el otro entiende lo que siente el otro y se lo hace notar."
+    memory_trick: "El apático no siente nada; el otro siente contigo."
+  - confused_with: "compasivo"
+    difference: "«Compasivo» siente pena por el otro y quiere ayudarlo; el otro entiende exactamente lo que el otro siente, sin que eso implique lástima."
+    memory_trick: "La compasión da pena; el otro da comprensión."
+exercises:
+  - position: 1
+    sentence: "Cuando Valentina le contó que la habían despedido, Ricardo no dijo mucho, pero fue tan {{blank}} que ella sintió que por fin alguien entendía lo que estaba sintiendo."
+    hint_general: "Se trata de captar lo que siente otra persona y demostrárselo sin necesidad de muchas palabras."
+    explanation: "Empático: capta lo que siente otra persona y se lo hace notar. «Apático» describe indiferencia total, y «compasivo» sentiría pena por Valentina, cuando lo que ella sintió fue comprensión, no lástima."
+    options:
+      - position: 1
+        text: "empático"
+        is_correct: true
+      - position: 2
+        text: "apático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apático» describe a quien no muestra interés ni reacciona ante nada, y aquí Ricardo hizo justo lo contrario: hizo que Valentina se sintiera comprendida."
+        hint_specific: "«Apático» describe indiferencia total. ¿Ricardo mostró indiferencia o comprensión?"
+      - position: 3
+        text: "compasivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compasivo» sentiría pena por Valentina y querría ayudarla, y la frase no habla de lástima: habla de que ella se sintió comprendida."
+        hint_specific: "«Compasivo» va de sentir pena. ¿La frase habla de pena o de sentirse entendida?"
+  - position: 2
+    sentence: "El feedback de su jefa fue directo, pero tan {{blank}} que Camila no sintió que la estuvieran regañando, sino que la entendían."
+    hint_general: "Apunta a quien nota lo que siente la otra persona y lo deja ver, sin dejar de ser directa."
+    explanation: "Empática: nota lo que siente la otra persona y lo deja ver, sin dejar de ser directa. «Sensiblera» es coloquial y sugiere un exceso de sentimentalismo que no encaja con un mensaje profesional, y «atenta» habla de notar detalles prácticos, no sentimientos."
+    options:
+      - position: 1
+        text: "empática"
+        is_correct: true
+      - position: 2
+        text: "sensiblera"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sensiblera» es coloquial y despectiva, y sugiere un exceso de sentimentalismo que no encaja con un mensaje directo y profesional."
+        hint_specific: "«Sensiblera» suena a exagerar los sentimientos. ¿Este mensaje busca ese tono?"
+      - position: 3
+        text: "atenta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atenta» describe a quien nota detalles o necesidades prácticas, y la frase habla de que Camila se sintió comprendida en lo que sentía, no atendida en algo puntual."
+        hint_specific: "«Atenta» nota detalles. ¿La frase habla de un detalle o de un sentimiento?"
+  - position: 3
+    sentence: "Esteban llegó nervioso a su primera clase de escalada, y la instructora fue tan {{blank}} que notó su miedo antes de que él dijera una palabra."
+    hint_general: "Habla de quien percibe lo que siente alguien sin que se lo cuenten."
+    explanation: "Empática: percibe lo que siente alguien sin que se lo cuenten. «Apática» sería no reaccionar ante nada, y «comprensiva» perdona errores, algo que no aparece en la escena."
+    options:
+      - position: 1
+        text: "empática"
+        is_correct: true
+      - position: 2
+        text: "apática"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apática» describiría indiferencia total, y la instructora hizo lo contrario: notó el miedo de Esteban sin que él dijera nada."
+        hint_specific: "«Apática» es no reaccionar ante nada. ¿La instructora ignoró a Esteban o notó su miedo?"
+      - position: 3
+        text: "comprensiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comprensiva» describe una actitud tolerante ante errores, y aquí no hubo ningún error que perdonar: hubo un miedo que se notó sin palabras."
+        hint_specific: "«Comprensiva» perdona fallos. ¿Esteban cometió algún error en la frase?"
+  - position: 4
+    sentence: "En medio de la fiesta, Lucía se dio cuenta de que Marina estaba a punto de llorar, y fue tan {{blank}} que la sacó a hablar afuera sin que nadie más lo notara."
+    hint_general: "Se refiere a captar lo que siente alguien incluso en medio del ruido y actuar con delicadeza."
+    explanation: "Empática: capta lo que siente alguien incluso en medio del ruido y actúa con delicadeza. «Compasiva» sentiría pena por Marina, y «atenta» notaría un detalle práctico, no una emoción."
+    options:
+      - position: 1
+        text: "compasiva"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compasiva» sentiría pena por Marina, y la frase destaca algo distinto: que Lucía notó su tristeza antes que nadie y actuó con delicadeza."
+        hint_specific: "«Compasiva» siente pena. ¿La frase habla de pena o de notar algo a tiempo?"
+      - position: 2
+        text: "empática"
+        is_correct: true
+      - position: 3
+        text: "atenta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atenta» notaría un detalle práctico, como que le faltaba una silla, y aquí lo que nota Lucía es un sentimiento, no un detalle."
+        hint_specific: "«Atenta» nota detalles prácticos. ¿Qué nota Lucía en esta escena?"
+  - position: 5
+    sentence: "El operador del banco no siguió el guion al pie de la letra: fue tan {{blank}} que Diego colgó sintiéndose escuchado, no solo atendido."
+    hint_general: "Habla de quien entiende lo que siente la otra persona detrás del reclamo, no solo el trámite."
+    explanation: "Empático: entiende lo que siente la otra persona detrás del reclamo, no solo el trámite. «Sensiblero» es coloquial y sugiere un exceso teatral de emoción, y «comprensivo» perdonaría un error que Diego no cometió."
+    options:
+      - position: 1
+        text: "empático"
+        is_correct: true
+      - position: 2
+        text: "sensiblero"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Sensiblero» es coloquial y despectivo, y sugiere un exceso teatral de emoción, muy distinto de que Diego se sintiera escuchado con naturalidad."
+        hint_specific: "«Sensiblero» exagera la emoción. ¿La llamada buscaba ese exceso o sonar natural?"
+      - position: 3
+        text: "comprensivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comprensivo» toleraría un error de Diego, y la frase no menciona ningún error: menciona que se sintió escuchado en lo que sentía."
+        hint_specific: "«Comprensivo» perdona errores. ¿Diego cometió algún error en la llamada?"
+  - position: 6
+    sentence: "Ismael llegó al gimnasio agotado por una semana difícil, y el entrenador fue tan {{blank}} que cambió la rutina sin que él tuviera que explicar nada."
+    hint_general: "Apunta a quien percibe el estado de ánimo de alguien y ajusta su trato en consecuencia."
+    explanation: "Empático: percibe el estado de ánimo de alguien y ajusta su trato en consecuencia. «Apático» no reacciona ante nada, y «atento» notaría un detalle práctico, no el ánimo de Ismael."
+    options:
+      - position: 1
+        text: "empático"
+        is_correct: true
+      - position: 2
+        text: "apático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apático» sería no reaccionar ante nada, y el entrenador hizo justo lo contrario: cambió la rutina al notar el estado de Ismael."
+        hint_specific: "«Apático» no reacciona a nada. ¿El entrenador reaccionó o ignoró a Ismael?"
+      - position: 3
+        text: "atento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atento» notaría un detalle práctico, como que llegó tarde, y aquí lo que se nota es el ánimo de Ismael, no un detalle puntual."
+        hint_specific: "«Atento» va de detalles prácticos. ¿Qué nota el entrenador en esta escena?"
+  - position: 7
+    sentence: "Antonia trabajaba concentrada, pero su compañero fue tan {{blank}} que le acercó un café sin decir nada, justo cuando más lo necesitaba."
+    hint_general: "Se refiere a notar lo que necesita alguien sin que lo pida, a partir de cómo se siente."
+    explanation: "Empático: nota lo que necesita alguien sin que lo pida, a partir de cómo se siente. «Compasivo» sentiría lástima por Antonia, y «comprensivo» perdonaría un error que ella no cometió."
+    options:
+      - position: 1
+        text: "empático"
+        is_correct: true
+      - position: 2
+        text: "compasivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compasivo» sentiría lástima por Antonia, y la frase no describe lástima: describe que su compañero notó justo lo que necesitaba en ese momento."
+        hint_specific: "«Compasivo» siente lástima. ¿La frase habla de lástima o de notar una necesidad?"
+      - position: 3
+        text: "comprensivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Comprensivo» toleraría algún error de Antonia, y la frase no menciona ningún error, solo que alguien notó su cansancio sin que lo dijera."
+        hint_specific: "«Comprensivo» perdona errores. ¿Qué error comete Antonia en la frase?"
+  - position: 8
+    sentence: "El vecino nuevo apenas conocía a Emilio, pero fue tan {{blank}} que notó el nudo en su garganta al hablar de la mudanza."
+    hint_general: "Habla de notar una emoción que la otra persona ni siquiera dijo en voz alta."
+    explanation: "Empático: nota una emoción que la otra persona ni siquiera dijo en voz alta. «Apático» no reacciona ante nada, y «compasivo» sentiría lástima por la mudanza, no percepción de una emoción callada."
+    options:
+      - position: 1
+        text: "empático"
+        is_correct: true
+      - position: 2
+        text: "apático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Apático» sería no reaccionar ante nada, y el vecino hizo lo contrario: notó una emoción que Emilio ni siquiera dijo en voz alta."
+        hint_specific: "«Apático» no nota nada. ¿El vecino notó algo o lo ignoró?"
+      - position: 3
+        text: "compasivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compasivo» sentiría lástima por la mudanza, y la frase no habla de lástima: habla de que el vecino notó una emoción no dicha."
+        hint_specific: "«Compasivo» siente lástima. ¿La frase describe lástima o percepción?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El nudo que nadie explicó"
+    body: "En la cena de fin de año, el tío Rodrigo notó que su sobrina apenas tocaba el postre. No preguntó nada delante de todos: la buscó en la cocina y le dijo «cuéntame, aquí no hay prisa». Ella se lo contó todo. «Qué empático es mi tío», le dijo después a su hermana."
+    before_phrase: "Se dio cuenta de que algo andaba mal."
+    after_phrase: "Qué empático es mi tío."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El comentario que cambió la reunión"
+    body: "Cuando Sofía presentó un proyecto que no convenció a nadie, su compañero no atacó la idea: dijo «entiendo por qué llegaste a esto, y creo que con otro enfoque puede funcionar». Sofía terminó la reunión con ganas de seguir trabajando, no con ganas de rendirse. «Fue muy empático con mi propuesta», les contó luego a los demás."
+    before_phrase: "Se puso en mi lugar antes de opinar."
+    after_phrase: "Fue muy empático con mi propuesta."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La charla en la fila del supermercado"
+    body: "Dos desconocidas coincidieron en la fila y una mencionó que llevaba una semana agotadora. La otra no dio consejos: solo dijo «se nota, y tiene sentido que estés así». Se despidieron con una sonrisa. «Qué mujer tan empática», pensó la primera camino a casa."
+    before_phrase: "Entendió perfecto cómo me sentía, sin que se lo explicara."
+    after_phrase: "Qué mujer tan empática."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,239 @@
+schema_version: 1
+sort_order: 9010
+slug: "reivindicar"
+status: "draft"
+lemma: "reivindicar"
+part_of_speech: "verbo"
+syllables: ["rei", "vin", "di", "car"]
+stressed_syllable: 4
+ipa_latam: "[rei̯.βin.diˈkar]"
+ipa_es: "[rei̯.βin.diˈkar]"
+explanation: "Pedir con fuerza algo que te pertenece por derecho, o reclamar como propio un logro."
+example_sentence: "El equipo decidió reivindicar públicamente el mérito del proyecto después de que otro departamento se lo atribuyera."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve tanto para pedir un derecho que te corresponde como para reclamar el crédito de algo que hiciste tú."
+when_not_to_use: "No la uses para un capricho sin fundamento, ni para un pedido educado que la otra persona puede rechazar sin problema."
+collocations:
+  - "reivindicar un derecho"
+  - "reivindicar el mérito de algo"
+  - "reivindicar su trabajo"
+replaces:
+  - before: "Quiero que se reconozca que esto fue idea mía"
+    after: "Quiero reivindicar que esto fue idea mía"
+  - before: "Vamos a pedir que nos den lo que nos corresponde"
+    after: "Vamos a reivindicar lo que nos corresponde"
+  - before: "Por fin dijo que ese trabajo era suyo"
+    after: "Por fin reivindicó ese trabajo como suyo"
+family:
+  - "reivindicación"
+  - "reivindicativo"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "liderazgo-feedback"
+    relevance: 1
+tags:
+  comodin:
+    - "pedir lo justo"
+  funcion:
+    - "reclamar un derecho"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "reincidir"
+    difference: "«Reincidir» es volver a cometer el mismo error o la misma falta; esta palabra es pedir con fuerza algo que te pertenece, o reclamar un mérito propio."
+    memory_trick: "Quien reincide repite un error; quien hace esto reclama un derecho."
+  - confused_with: "exigir"
+    difference: "«Exigir» es pedir algo de un modo que no admite un no, sin importar si tienes razón; esta palabra reclama algo apoyado en un derecho o un mérito real."
+    memory_trick: "Se exige aunque no haya razón; esto se hace apoyado en un derecho concreto."
+exercises:
+  - position: 1
+    sentence: "En la reunión, Renato decidió {{blank}} la idea original del proyecto, después de que otro equipo se la atribuyera sin decir nada."
+    hint_general: "Es reclamar como propio algo que hiciste, cuando otra persona se lo atribuye sin razón."
+    explanation: "Reivindicar: reclamar como propio algo que hiciste. «Reincidir» es volver a cometer el mismo error, y «exigir» pide algo sin importar si hay razón, mientras que Renato tiene un motivo real: la idea fue suya."
+    options:
+      - position: 1
+        text: "reincidir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reincidir» es volver a cometer el mismo error, y Renato no comete ningún error: reclama una idea que de verdad fue suya."
+        hint_specific: "«Reincidir» habla de repetir una falta. ¿Renato repite un error o reclama algo suyo?"
+      - position: 2
+        text: "reivindicar"
+        is_correct: true
+      - position: 3
+        text: "exigir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» pide algo de un modo que no admite un no, sin importar la razón, y aquí Renato tiene un motivo concreto y comprobable: la idea fue suya desde el principio."
+        hint_specific: "«Exigir» no siempre necesita una razón real detrás. ¿Renato tiene un motivo concreto para reclamar?"
+  - position: 2
+    sentence: "Los repartidores del turno noche decidieron {{blank}} un espacio para guardar sus bicicletas, algo que ya les habían prometido hace meses."
+    hint_general: "Es pedir con fuerza algo que corresponde por un acuerdo previo, no un capricho nuevo."
+    explanation: "Reivindicar: pedir con fuerza algo que corresponde por un acuerdo previo. «Quejarse» suena pasivo y sin una petición concreta, y «reclamar» apuntaría más a corregir un error puntual que a sostener un derecho ya prometido."
+    options:
+      - position: 1
+        text: "quejarse"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Quejarse» suena pasivo y sin una petición concreta, y los repartidores hacen algo más firme: piden formalmente algo que ya les habían prometido."
+        hint_specific: "«Quejarse» no siempre pide algo en concreto. ¿Qué piden exactamente los repartidores?"
+      - position: 2
+        text: "reivindicar"
+        is_correct: true
+      - position: 3
+        text: "reclamar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» apunta más a corregir un error puntual, y aquí los repartidores sostienen un derecho que ya les habían prometido desde hace meses, no un error reciente."
+        hint_specific: "«Reclamar» suele responder a un error puntual. ¿Desde cuándo esperan los repartidores este espacio?"
+  - position: 3
+    sentence: "Camila diseñó el logo de la marca, pero otra persona lo presentó como propio; meses después, decidió {{blank}} públicamente la autoría."
+    hint_general: "Es reclamar en público el mérito de algo que hiciste tú, aunque otro lo haya presentado como suyo."
+    explanation: "Reivindicar: reclamar en público el mérito de un trabajo propio. «Apropiarse» sería tomar algo que no es tuyo, justo lo que hizo la otra persona, y «alardear» presume de algo sin necesariamente demostrar que es cierto."
+    options:
+      - position: 1
+        text: "apropiarse"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apropiarse» de algo es tomarlo sin que te pertenezca, y eso fue justo lo que hizo la otra persona con el logo, no Camila, que sí lo diseñó."
+        hint_specific: "«Apropiarse» es tomar algo ajeno. ¿Quién diseñó el logo realmente, Camila o la otra persona?"
+      - position: 2
+        text: "reivindicar"
+        is_correct: true
+      - position: 3
+        text: "alardear"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alardear» es presumir de algo, a veces sin pruebas, y Camila hace algo distinto: demuestra con hechos que el diseño fue suyo desde el principio."
+        hint_specific: "«Alardear» no siempre demuestra nada. ¿Camila solo presume, o tiene pruebas del diseño?"
+  - position: 4
+    sentence: "Los vecinos del barrio se organizaron para {{blank}} la construcción de una plaza en el terreno abandonado hace diez años."
+    hint_general: "Es pedir con fuerza y de forma organizada algo que consideran justo para la comunidad."
+    explanation: "Reivindicar: pedir con fuerza y de forma organizada algo justo. «Protestar» describe la forma de manifestarse, sin nombrar lo que piden en concreto, y «gritar» describe solo el tono, no una petición organizada."
+    options:
+      - position: 1
+        text: "protestar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Protestar» describe la forma de manifestarse, sin nombrar lo que se pide en concreto, y los vecinos sí tienen un pedido claro: la plaza en el terreno abandonado."
+        hint_specific: "«Protestar» no siempre nombra un pedido concreto. ¿Qué piden exactamente los vecinos?"
+      - position: 2
+        text: "reivindicar"
+        is_correct: true
+      - position: 3
+        text: "gritar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gritar» describe solo el tono de una voz, y los vecinos hacen algo más organizado: se reúnen para pedir formalmente la construcción de la plaza."
+        hint_specific: "«Gritar» describe un tono, no una organización. ¿Cómo se organizan los vecinos del barrio?"
+  - position: 5
+    sentence: "Después de años de ser la que planeaba todo en silencio, Gimena finalmente {{blank}} frente a su familia el mérito de organizar cada viaje."
+    hint_general: "Es reclamar frente a otros el mérito de algo que siempre hiciste, aunque nadie lo notara."
+    explanation: "Reivindicó: reclamó frente a otros el mérito de algo que siempre hizo. «Reincidió» sería repetir un error, algo que Gimena no cometió, y «exigió» pide sin importar la razón, mientras que ella tiene un mérito real que mostrar."
+    options:
+      - position: 1
+        text: "reivindicó"
+        is_correct: true
+      - position: 2
+        text: "reincidió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reincidir» es volver a cometer un error, y Gimena no comete ningún error: muestra con hechos el mérito de organizar cada viaje familiar."
+        hint_specific: "«Reincidir» habla de repetir una falta. ¿Gimena comete un error o reclama un mérito?"
+      - position: 3
+        text: "exigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» pide algo sin importar si hay una razón real, y Gimena tiene un mérito concreto que mostrar: años de planear los viajes en silencio."
+        hint_specific: "«Exigir» no siempre necesita una razón demostrable. ¿Gimena tiene pruebas de su mérito?"
+  - position: 6
+    sentence: "Ezequiel terminó el informe solo, sin ayuda de nadie, y en la próxima junta pensaba {{blank}} el crédito completo del trabajo."
+    hint_general: "Es reclamar el mérito completo de un trabajo hecho sin ayuda de nadie más."
+    explanation: "Reivindicar: reclamar el mérito completo de un trabajo propio. «Alardear» presumiría del trabajo sin necesariamente demostrarlo, y «gritar» describe solo un tono, no una petición formal en una junta."
+    options:
+      - position: 1
+        text: "alardear"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alardear» es presumir de algo, a veces sin pruebas, y Ezequiel puede demostrar con hechos que terminó el informe solo, sin ayuda de nadie."
+        hint_specific: "«Alardear» no siempre demuestra nada. ¿Ezequiel puede probar que trabajó solo?"
+      - position: 2
+        text: "reivindicar"
+        is_correct: true
+      - position: 3
+        text: "gritar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Gritar» describe solo un tono de voz, y Ezequiel planea algo más formal: pedir el crédito completo en la próxima junta de trabajo."
+        hint_specific: "«Gritar» describe un tono, no una petición formal. ¿Dónde planea hablar Ezequiel?"
+  - position: 7
+    sentence: "Yolanda y sus compañeras de turno llevaban meses pidiendo un horario más justo, hasta que decidieron {{blank}} juntas frente a la gerencia."
+    hint_general: "Es pedir con fuerza y en grupo algo que consideran justo, después de mucho tiempo esperando."
+    explanation: "Reivindicar: pedir con fuerza y en grupo algo justo, después de esperar. «Reclamar» apuntaría más a corregir un error puntual, y «protestar» describe la forma de manifestarse, sin apuntar al pedido concreto del horario."
+    options:
+      - position: 1
+        text: "reclamar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» apunta más a corregir un error puntual y reciente, y aquí Yolanda y sus compañeras sostienen un pedido de meses, no un error de un solo día."
+        hint_specific: "«Reclamar» suele responder a algo puntual. ¿Desde cuándo piden esto Yolanda y sus compañeras?"
+      - position: 2
+        text: "reivindicar"
+        is_correct: true
+      - position: 3
+        text: "protestar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Protestar» describe la forma de manifestarse, sin nombrar lo que se pide en concreto, y aquí el pedido es claro: un horario más justo para todo el turno."
+        hint_specific: "«Protestar» no siempre nombra el pedido. ¿Qué piden exactamente Yolanda y sus compañeras?"
+  - position: 8
+    sentence: "Braulio entregó el trabajo a tiempo, pero el cliente tardaba semanas en pagarle, así que decidió {{blank}} el pago pendiente por escrito."
+    hint_general: "Es pedir con fuerza y por escrito algo que corresponde por un trabajo ya entregado."
+    explanation: "Reivindicar: pedir con fuerza, por escrito, algo que corresponde por un trabajo ya entregado. «Exigir» pide sin importar si hay razón, y «reincidir» sería repetir un error, algo que no describe la situación de Braulio."
+    options:
+      - position: 1
+        text: "exigir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» pide algo sin importar si hay una razón real detrás, y Braulio tiene un motivo concreto y comprobable: entregó el trabajo a tiempo y todavía no le pagan."
+        hint_specific: "«Exigir» no siempre necesita una razón demostrable. ¿Braulio tiene una razón concreta para pedir el pago?"
+      - position: 2
+        text: "reivindicar"
+        is_correct: true
+      - position: 3
+        text: "reincidir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Reincidir» es volver a cometer el mismo error, y Braulio no comete ningún error: pide por escrito un pago que ya le corresponde por un trabajo entregado."
+        hint_specific: "«Reincidir» habla de repetir una falta. ¿Braulio comete un error o pide algo que le corresponde?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La idea original"
+    body: "Otro equipo presentó como suya la idea que Renato había propuesto meses atrás. En la siguiente reunión, tomó la palabra con calma: «Quiero reivindicar algo: esta idea salió de nuestro equipo, y tengo los correos que lo muestran». Nadie discutió, y el proyecto volvió a su nombre."
+    before_phrase: "Esa idea fue mía, aunque nadie lo diga."
+    after_phrase: "Quiero reivindicar algo: esta idea salió de nuestro equipo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La que organizaba todo"
+    body: "Gimena llevaba años armando cada viaje familiar en silencio, sin que nadie lo mencionara en las fotos ni en las conversaciones. En la cena de fin de año, se animó: «Quiero reivindicar algo: cada viaje que hicimos salió de mis noches planeando todo». Su familia se quedó en silencio, y después la aplaudió."
+    before_phrase: "Bueno, yo armé todo, pero da igual."
+    after_phrase: "Quiero reivindicar algo: cada viaje salió de mis noches planeando todo."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El espacio para las bicicletas"
+    body: "Los repartidores del turno noche llevaban meses sin un lugar seguro para dejar sus bicicletas. Un grupo decidió reunirse con la gerencia: «Venimos a reivindicar algo que ya nos habían prometido hace tiempo», dijo uno de ellos. Dos semanas después, el espacio estaba listo."
+    before_phrase: "Nos prometieron un espacio para las bicicletas hace meses."
+    after_phrase: "Venimos a reivindicar algo que ya nos habían prometido."
+provenance:
+  generator: "flui authoring agent — batch W1 pedir-disculparse"
+  gate: null
+  checked_on: "2026-09-18"

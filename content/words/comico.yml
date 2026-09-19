@@ -1,0 +1,232 @@
+# Word 5 of batch W4 humor. Substitution note: originally assigned
+# "desternillante" (zipf 1.81, dp 0.94, not in dictionary — fails hard).
+# Replaced with "cómico" (funny, makes people laugh), which passes cleanly:
+# zipf 3.71, dp 0.26.
+schema_version: 1
+sort_order: 9305
+slug: "comico"
+status: "draft"
+lemma: "cómico"
+part_of_speech: "adjetivo"
+syllables: ["có", "mi", "co"]
+stressed_syllable: 1
+ipa_latam: "[ˈko.mi.ko]"
+ipa_es: "[ˈko.mi.ko]"
+explanation: "Hace mucha risa y sirve para divertir a la gente, en una película, una escena o una historia."
+example_sentence: "La escena final de la película fue tan cómica que el público entero terminó aplaudiendo entre carcajadas."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve tanto para algo hecho a propósito para divertir, como una película o un video, como para una situación graciosa sin querer."
+when_not_to_use: "No la confundas con lo relacionado al espacio o al universo; no tiene ninguna relación con eso."
+collocations:
+  - "escena cómica"
+  - "video cómico"
+replaces:
+  - before: "Fue muy chistoso, no pude parar de reír"
+    after: "Fue muy cómico, no pude parar de reír"
+  - before: "Hizo una película muy divertida"
+    after: "Hizo una película muy cómica"
+family: ["comedia", "comediante"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["chistoso"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "cósmico"
+    difference: "«Cósmico» se refiere al espacio o al universo; «cómico» describe algo que hace reír, sin relación con el espacio."
+    memory_trick: "Una letra cambia el planeta entero: lo cósmico mira las estrellas, lo cómico mira la risa."
+  - confused_with: "grotesco"
+    difference: "«Grotesco» describe algo ridículo o exagerado hasta lo absurdo, casi incómodo de ver; «cómico» solo dice que algo hace reír, sin ese tono negativo."
+    memory_trick: "Lo grotesco incomoda; lo cómico entretiene."
+exercises:
+  - position: 1
+    sentence: "La nueva película de Renato resultó tan {{blank}} que los niños pidieron verla dos veces seguidas ese mismo fin de semana."
+    hint_general: "Busca la palabra para algo pensado para hacer reír a los niños."
+    explanation: "Cómica: la película hizo reír tanto a los niños que pidieron verla otra vez. «Cósmica» habla del espacio, y «triste» es lo contrario de lo que sintieron los niños."
+    options:
+      - position: 1
+        text: "cósmica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Cósmica» habla del espacio o el universo, y la película de Renato solo buscaba hacer reír a los niños."
+        hint_specific: "«Cósmica» tiene que ver con el espacio. ¿La película trataba sobre eso o buscaba hacer reír?"
+      - position: 2
+        text: "cómica"
+        is_correct: true
+      - position: 3
+        text: "triste"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Triste» describe lo contrario de lo que buscaban los niños: algo que entristece, y ellos pidieron verla de nuevo de lo bien que se rieron."
+        hint_specific: "«Triste» es lo contrario de divertido. ¿Los niños pidieron verla de nuevo por tristeza o por diversión?"
+  - position: 2
+    sentence: "El video que grabó Ariadna para la fiesta de fin de año fue tan {{blank}} que lo pasaron tres veces durante la cena."
+    hint_general: "Piensa en algo que hace reír tanto que el grupo pide verlo de nuevo."
+    explanation: "Cómico: el video de Ariadna hizo reír tanto que lo repitieron tres veces. «Largo» solo habla de duración, y «profesional» habla de calidad técnica, ninguna explica por qué lo repitieron."
+    options:
+      - position: 1
+        text: "largo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largo» solo habla de duración, y lo que hizo que lo repitieran tres veces fue lo divertido del video, no cuánto duraba."
+        hint_specific: "«Largo» habla de duración. ¿Lo repitieron por ser largo o por hacer reír?"
+      - position: 2
+        text: "cómico"
+        is_correct: true
+      - position: 3
+        text: "profesional"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Profesional» describe la calidad técnica, y lo que celebraron todos fue el efecto de risa del video, no su producción."
+        hint_specific: "«Profesional» habla de calidad técnica. ¿Lo repitieron por la calidad o por la risa que causaba?"
+  - position: 3
+    sentence: "El video casero del cumpleaños de la abuela resultó tan {{blank}} que la familia lo comparte cada año por su grupo."
+    hint_general: "Busca la palabra para algo grabado en casa que hace reír a toda la familia cada año."
+    explanation: "Cómico: el video casero hace reír a la familia cada año. «Jocoso» suena a una palabra de libro, fuera de lugar para hablar de un video casero, y «antiguo» solo dice que el video es viejo."
+    options:
+      - position: 1
+        text: "jocoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Jocoso» es una palabra de tono más formal y de libro, y para hablar de un video casero de cumpleaños se usa un tono mucho más cercano."
+        hint_specific: "«Jocoso» suena a un texto formal. ¿Encaja con hablar de un video casero en familia?"
+      - position: 2
+        text: "antiguo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Antiguo» solo dice que el video es viejo, y lo que hace que la familia lo comparta cada año es lo mucho que hace reír, no su antigüedad."
+        hint_specific: "«Antiguo» habla del tiempo que tiene algo. ¿Lo comparten por viejo o por gracioso?"
+      - position: 3
+        text: "cómico"
+        is_correct: true
+  - position: 4
+    sentence: "El candidato respondió con un comentario tan {{blank}} que rompió la tensión de la entrevista, aunque mantuvo el tono profesional en todo momento."
+    hint_general: "Piensa en algo que hace reír y rompe la tensión sin perder la formalidad del momento."
+    explanation: "Cómico: el comentario del candidato hizo reír y rompió la tensión sin perder el tono profesional. «Chistoso» es muy coloquial para una entrevista, y «confuso» habla de algo difícil de entender, no de algo gracioso."
+    options:
+      - position: 1
+        text: "chistoso"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chistoso» es una palabra muy coloquial, y la frase aclara que el candidato mantuvo un tono profesional, más cercano a «cómico» que a una palabra tan informal."
+        hint_specific: "«Chistoso» suena muy informal. ¿Encaja con un tono que se mantiene profesional?"
+      - position: 2
+        text: "confuso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confuso» describe algo difícil de entender, y lo que rompió la tensión fue un comentario que hizo reír, no que costara entender."
+        hint_specific: "«Confuso» es difícil de entender. ¿El comentario rompió la tensión por confuso o por gracioso?"
+      - position: 3
+        text: "cómico"
+        is_correct: true
+  - position: 5
+    sentence: "El texto que publicó Ismael sobre su mudanza fue tan {{blank}} que se hizo viral en un día."
+    hint_general: "Busca la palabra para un texto que hace reír a tanta gente que se comparte muy rápido."
+    explanation: "Cómico: el texto de Ismael hizo reír a tanta gente que se hizo viral. «Detallado» habla de muchos datos, y «sincero» habla de honestidad, ninguna explica que se compartiera tanto."
+    options:
+      - position: 1
+        text: "detallado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallado» describe un texto con muchos datos, y lo que hizo viral el texto de Ismael fue lo mucho que hizo reír, no la cantidad de datos."
+        hint_specific: "«Detallado» habla de muchos datos. ¿El texto se hizo viral por eso o por la risa que causó?"
+      - position: 2
+        text: "sincero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sincero» describe algo honesto, y lo que compartió tanta gente fue lo divertido del texto, no solo su honestidad."
+        hint_specific: "«Sincero» es contar la verdad. ¿Eso explica por qué se hizo viral en un día?"
+      - position: 3
+        text: "cómico"
+        is_correct: true
+  - position: 6
+    sentence: "El monólogo de Carolina en la noche de improvisación fue tan {{blank}} que el público pidió que se quedara diez minutos más."
+    hint_general: "Piensa en algo que hace reír tanto al público que pide más tiempo en el escenario."
+    explanation: "Cómico: el monólogo de Carolina hizo reír tanto que el público pidió más. «Extenso» solo habla de duración, y «nervioso» describe un estado de ánimo, ninguna explica por qué pidieron más."
+    options:
+      - position: 1
+        text: "extenso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extenso» solo habla de duración, y lo que hizo que el público pidiera más fue la risa que provocó, no cuánto duró."
+        hint_specific: "«Extenso» habla de duración. ¿El público pidió más por la duración o por la risa?"
+      - position: 2
+        text: "cómico"
+        is_correct: true
+      - position: 3
+        text: "nervioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Nervioso» describe un estado de ánimo, y lo que se notó en el escenario fue un monólogo que hizo reír a todos, no nerviosismo."
+        hint_specific: "«Nervioso» es un estado de ánimo. ¿El público pidió más por eso o por la risa que sintió?"
+  - position: 7
+    sentence: "Gonzalo hizo una imitación tan {{blank}} de su propio jefe que hasta su esposa, que ya la había visto antes, se rió de nuevo."
+    hint_general: "Busca la palabra para una imitación que hace reír incluso a quien ya la vio antes."
+    explanation: "Cómica: la imitación de Gonzalo hizo reír de nuevo a su esposa, que ya la conocía. «Exacta» habla de parecido perfecto, y «corta» solo habla de duración, ninguna explica la segunda risa."
+    options:
+      - position: 1
+        text: "exacta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exacta» dice que la imitación fue igual al original, y lo que hizo reír de nuevo a su esposa fue lo divertida que resultó, más allá del parecido."
+        hint_specific: "«Exacta» habla de parecido perfecto. ¿Su esposa se rió por el parecido o por la gracia?"
+      - position: 2
+        text: "cómica"
+        is_correct: true
+      - position: 3
+        text: "corta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corta» solo habla de duración, y lo que provocó la segunda risa de su esposa fue lo divertida que fue, no cuánto duró."
+        hint_specific: "«Corta» habla de duración. ¿Su esposa se rió de nuevo por la duración o por la gracia?"
+  - position: 8
+    sentence: "La entrevista que le hicieron a Daniela en la radio fue tan {{blank}} que la subieron a todas las redes del programa esa misma noche."
+    hint_general: "Piensa en una entrevista que hace tanto reír que se comparte esa misma noche en todas partes."
+    explanation: "Cómica: la entrevista de Daniela hizo reír tanto que la compartieron esa misma noche. «Larga» solo habla de duración, y «seria» describe un tono sin humor, justo lo contrario."
+    options:
+      - position: 1
+        text: "larga"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Larga» solo habla de duración, y lo que hizo que la subieran a todas las redes fue lo divertida que resultó, no cuánto duró."
+        hint_specific: "«Larga» habla de duración. ¿La subieron a las redes por larga o por graciosa?"
+      - position: 2
+        text: "seria"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seria» describe un tono formal y sin humor, y lo que hizo que se compartiera tanto fue justo lo contrario: un tono divertido."
+        hint_specific: "«Seria» es un tono formal. ¿Eso explica que la compartieran tanto esa misma noche?"
+      - position: 3
+        text: "cómica"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El video que nunca envejece"
+    body: "Cada cumpleaños de la abuela, alguien pone el video de hace diez años en que el perro se robó el pastel. Es tan cómico que hasta los primos que no lo vivieron se ríen igual que los que estaban ahí. Ya nadie se acuerda de quién lo grabó, pero nadie falla en pedirlo."
+    before_phrase: "Es un video muy gracioso, siempre hace reír."
+    after_phrase: "Es un video muy cómico, siempre hace reír."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El video de la fiesta"
+    body: "Ariadna dudó antes de mostrar el video que había editado para la fiesta de fin de año: no sabía si sería demasiado. Resultó tan cómico que el equipo pidió verlo dos veces más antes del brindis. «Deberías dedicarte a esto», le dijo su jefa, todavía riendo."
+    before_phrase: "Quedó muy gracioso, hizo reír a todos."
+    after_phrase: "Quedó muy cómico, hizo reír a todos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La noche de improvisación"
+    body: "Carolina subió al escenario sin saber de qué hablaría; alguien del público le gritó un tema al azar: «el metro a las siete de la mañana». Lo que siguió fue tan cómico que el público le pidió diez minutos más, y ella terminó improvisando media hora."
+    before_phrase: "Estuvo muy gracioso, el público no paraba de reír."
+    after_phrase: "Estuvo muy cómico, el público no paraba de reír."
+provenance:
+  generator: "flui authoring agent — batch W4 humor"
+  gate: null
+  checked_on: "2026-09-18"

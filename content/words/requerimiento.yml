@@ -1,0 +1,239 @@
+schema_version: 1
+sort_order: 9002
+slug: "requerimiento"
+status: "draft"
+lemma: "requerimiento"
+part_of_speech: "sustantivo"
+syllables: ["re", "que", "ri", "mien", "to"]
+stressed_syllable: 4
+ipa_latam: "[re.ke.ɾiˈmjen.to]"
+ipa_es: "[re.ke.ɾiˈmjen.to]"
+explanation: "Aviso formal y por escrito que le pide a alguien cumplir algo, con consecuencias claras si no lo hace."
+example_sentence: "El banco le envió un requerimiento de pago con un plazo de diez días para resolver la deuda."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para un aviso formal con plazo, de una empresa, un banco o una entidad a otra persona."
+when_not_to_use: "No la uses para un pedido informal entre compañeros, ni para una petición amable que la otra persona puede rechazar sin problema."
+collocations:
+  - "enviar un requerimiento"
+  - "un requerimiento de pago"
+  - "responder a un requerimiento"
+replaces:
+  - before: "Le mandé una carta exigiendo que pagara"
+    after: "Le envié un requerimiento de pago"
+  - before: "El banco nos exigió por escrito que corrigiéramos el error"
+    after: "El banco nos mandó un requerimiento para corregir el error"
+  - before: "Nos llegó un aviso diciendo que había que entregar unos papeles"
+    after: "Nos llegó un requerimiento para entregar unos papeles"
+family:
+  - "requerir"
+  - "requerido"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "negociacion"
+    relevance: 2
+  - slug: "correos-mensajes"
+    relevance: 1
+tags:
+  comodin:
+    - "exigir"
+  funcion:
+    - "exigir formalmente"
+  canal: "escrito"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ruego"
+    difference: "Un «ruego» es una petición educada que la otra persona puede rechazar sin consecuencias; esta palabra la manda quien tiene autoridad y hay que cumplirla."
+    memory_trick: "El ruego se atiende si se quiere; esta se acata."
+  - confused_with: "recogimiento"
+    difference: "«Recogimiento» es un estado de calma o quietud interior; no tiene nada que ver con un aviso formal que exige una respuesta."
+    memory_trick: "El recogimiento es silencio hacia dentro; el otro es un papel con plazo hacia fuera."
+exercises:
+  - position: 1
+    sentence: "Daniela abrió el sobre del banco y encontró un {{blank}} de pago con un plazo de diez días marcado en rojo."
+    hint_general: "Es un aviso formal por escrito, con un plazo claro y consecuencias si no se cumple."
+    explanation: "Requerimiento: un aviso formal con plazo y consecuencias. Un «recogimiento» es un estado de calma interior, y un «ruego» lo manda quien no tiene autoridad para exigir nada."
+    options:
+      - position: 1
+        text: "recogimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Recogimiento» es un estado de calma o quietud interior, y el sobre de Daniela trae un aviso formal con un plazo marcado, no una invitación a la calma."
+        hint_specific: "El «recogimiento» se vive por dentro, en silencio. ¿Qué trae exactamente el sobre del banco?"
+      - position: 2
+        text: "requerimiento"
+        is_correct: true
+      - position: 3
+        text: "ruego"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «ruego» lo escribe quien no puede obligar a nada y acepta un no, y el banco tiene autoridad para fijar un plazo con consecuencias."
+        hint_specific: "Un «ruego» se puede rechazar sin más. ¿Puede Daniela ignorar el plazo marcado en rojo?"
+  - position: 2
+    sentence: "Rodrigo dejó de llamar por teléfono y le mandó al proveedor un {{blank}} por escrito, con copia a su jefa, para que quedara registro del plazo."
+    hint_general: "Es un aviso formal por escrito, con copia a otra persona, para que quede constancia del plazo."
+    explanation: "Requerimiento: un aviso formal por escrito, con constancia del plazo. Una «exigencia» dicha por teléfono no deja registro, y una «solicitud» sonaría demasiado tranquila para fijar un plazo con copia a la jefa."
+    options:
+      - position: 1
+        text: "exigencia"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Una «exigencia» dicha por teléfono no deja ningún registro, y Rodrigo hace justo lo contrario: escribe con copia a su jefa para que quede constancia."
+        hint_specific: "Una «exigencia» se dice, no siempre se archiva. ¿Qué hace Rodrigo para que quede registro?"
+      - position: 2
+        text: "requerimiento"
+        is_correct: true
+      - position: 3
+        text: "solicitud"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «solicitud» suena tranquila y neutra, y aquí Rodrigo deja de llamar para fijar un plazo formal, con copia a su jefa como respaldo."
+        hint_specific: "Una «solicitud» no suele llevar copia a un superior como respaldo. ¿Para qué le pone copia a su jefa?"
+  - position: 3
+    sentence: "Carolina recibió del municipio un {{blank}} para presentar los planos actualizados antes de que terminara el mes."
+    hint_general: "Es un aviso oficial, con fecha límite, que viene de una entidad con autoridad para exigirlo."
+    explanation: "Requerimiento: un aviso oficial con fecha límite. Un «recordatorio» sería un simple aviso amable sin consecuencias, y una «petición» no tiene autoridad detrás para fijar un plazo."
+    options:
+      - position: 1
+        text: "recordatorio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «recordatorio» es un aviso amable sin consecuencias si se ignora, y el municipio fija una fecha límite con autoridad para exigirla."
+        hint_specific: "Un «recordatorio» no trae plazo obligatorio. ¿Quién le escribe a Carolina y con qué autoridad?"
+      - position: 2
+        text: "petición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «petición» no tiene autoridad para imponer un plazo, y el municipio sí puede exigir los planos antes de fin de mes."
+        hint_specific: "Una «petición» se puede rechazar sin sanción. ¿Puede Carolina ignorar la fecha límite sin problema?"
+      - position: 3
+        text: "requerimiento"
+        is_correct: true
+  - position: 4
+    sentence: "Esteban le pasó el {{blank}} de la aseguradora a su abogada, porque el plazo para responder vencía en una semana."
+    hint_general: "Es un aviso formal y oficial que necesita una respuesta antes de una fecha concreta."
+    explanation: "Requerimiento: un aviso formal que necesita respuesta antes de una fecha. Un «recado» es coloquial y sirve para un mensaje breve, y una «súplica» sería una petición desesperada, no un documento con plazo."
+    options:
+      - position: 1
+        text: "recado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recado» es coloquial y se usa para un mensaje breve o una gestión pequeña, y Esteban lleva un documento oficial con un plazo legal a su abogada."
+        hint_specific: "Un «recado» es un mensaje corto e informal. ¿A quién le lleva Esteban ese papel y para qué?"
+      - position: 2
+        text: "requerimiento"
+        is_correct: true
+      - position: 3
+        text: "súplica"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «súplica» es una petición desesperada de quien no tiene poder, y aquí es la aseguradora la que exige una respuesta con plazo."
+        hint_specific: "Una «súplica» la hace quien no puede exigir nada. ¿Quién tiene el poder de fijar el plazo aquí?"
+  - position: 5
+    sentence: "Fernanda contestó el {{blank}} de la administración del edificio adjuntando el comprobante de pago de la cuota atrasada."
+    hint_general: "Responde a un aviso formal que le exigía resolver algo con un documento como prueba."
+    explanation: "Requerimiento: un aviso formal que exige resolver algo, con prueba de por medio. Un «reclamo» lo presentaría ella si algo hubiera salido mal, y un «ruego» no tendría autoridad para exigir el pago."
+    options:
+      - position: 1
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «reclamo» lo presenta quien pide que se repare algo, y aquí es Fernanda quien responde a un aviso que le exige pagar, no al revés."
+        hint_specific: "Un «reclamo» lo hace quien exige algo. ¿Quién exige aquí, Fernanda o la administración?"
+      - position: 2
+        text: "requerimiento"
+        is_correct: true
+      - position: 3
+        text: "ruego"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «ruego» lo escribe quien no tiene autoridad y acepta un no, y la administración sí puede exigir el pago de la cuota."
+        hint_specific: "Un «ruego» se puede ignorar sin consecuencias. ¿Puede Fernanda ignorar la cuota atrasada?"
+  - position: 6
+    sentence: "Joaquín le mandó un {{blank}} formal al inquilino, dándole quince días para reparar el daño en la pared."
+    hint_general: "Envía un aviso con autoridad, con plazo y con una consecuencia clara si no se cumple."
+    explanation: "Requerimiento: un aviso con autoridad, plazo y consecuencia. Un «chisme» sería un comentario sin ninguna autoridad, y una «objeción» respondería a un argumento, no fijaría un plazo para reparar algo."
+    options:
+      - position: 1
+        text: "chisme"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «chisme» es un comentario informal sin ninguna autoridad detrás, y Joaquín envía un documento formal con un plazo de quince días."
+        hint_specific: "Un «chisme» no tiene plazo ni autoridad. ¿Qué trae exactamente ese documento formal?"
+      - position: 2
+        text: "objeción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «objeción» responde a un argumento dentro de un debate, y aquí Joaquín no discute nada: fija un plazo para reparar un daño."
+        hint_specific: "Una «objeción» rebate un argumento. ¿Joaquín discute algo o fija un plazo?"
+      - position: 3
+        text: "requerimiento"
+        is_correct: true
+  - position: 7
+    sentence: "Silvia guardó el {{blank}} de la aduana en una carpeta aparte, porque necesitaba los documentos originales antes del viernes."
+    hint_general: "Guarda un aviso oficial que le exige entregar unos documentos antes de una fecha concreta."
+    explanation: "Requerimiento: un aviso oficial que exige entregar documentos con fecha. Un «anuncio» solo informa algo, sin exigir una respuesta, y un «comentario» no tiene ningún peso oficial."
+    options:
+      - position: 1
+        text: "anuncio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «anuncio» solo informa algo, sin exigir ninguna respuesta, y la aduana le pide a Silvia entregar unos documentos antes del viernes."
+        hint_specific: "Un «anuncio» no exige respuesta. ¿Qué le pide la aduana a Silvia?"
+      - position: 2
+        text: "requerimiento"
+        is_correct: true
+      - position: 3
+        text: "comentario"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «comentario» no tiene ningún peso oficial, y esto viene de la aduana, con una fecha límite para entregar los documentos originales."
+        hint_specific: "Un «comentario» no tiene autoridad detrás. ¿De qué entidad viene este papel?"
+  - position: 8
+    sentence: "Máximo firmó de recibido el {{blank}} de la universidad y empezó a reunir los certificados que le pedían."
+    hint_general: "Recibe un aviso oficial con una lista de documentos y un plazo para entregarlos."
+    explanation: "Requerimiento: un aviso oficial con lista de documentos y plazo. Un «recado» es coloquial y serviría para un mensaje breve, y un «rumor» no tiene ninguna autoridad ni exige nada en concreto."
+    options:
+      - position: 1
+        text: "requerimiento"
+        is_correct: true
+      - position: 2
+        text: "recado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Recado» es coloquial y sirve para un mensaje breve, y Máximo firma de recibido un documento oficial con una lista de certificados."
+        hint_specific: "Un «recado» no se firma de recibido. ¿Qué hace Máximo con ese papel?"
+      - position: 3
+        text: "rumor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «rumor» no tiene ninguna autoridad ni exige nada en concreto, y aquí hay un documento firmado con una lista clara de certificados."
+        hint_specific: "Un «rumor» no se firma ni se archiva. ¿Qué hizo Máximo con ese papel?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El sobre rojo"
+    body: "El correo llegó marcado como urgente. Daniela lo abrió despacio: era un requerimiento de pago del banco, con diez días para resolver la deuda. Llamó a su hermano, que trabaja en finanzas, y en una hora ya tenía un plan. «No era el fin del mundo», le contó después, «solo tenía un plazo»."
+    before_phrase: "Me llegó un aviso raro del banco, no sé qué hacer."
+    after_phrase: "Me llegó un requerimiento de pago, y ya tengo un plan."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La pared del pasillo"
+    body: "Joaquín no quería pelear con su inquilino, así que redactó el aviso con cuidado: quince días para reparar el daño de la pared. «Es un requerimiento formal, no un reproche», le explicó su esposa cuando lo leyó. El inquilino respondió al tercer día, y la pared quedó lista antes del plazo."
+    before_phrase: "Le voy a mandar un mensaje bien enojado por lo de la pared."
+    after_phrase: "Le mando un requerimiento formal, con plazo, y ya."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La cuota atrasada"
+    body: "En la cena, Fernanda contó que había recibido un aviso de la administración del edificio. «Al principio me asusté», dijo, «pero era solo un requerimiento por la cuota atrasada, y ya lo resolví con el comprobante». Sus amigos se rieron aliviados: todos habían pensado algo peor."
+    before_phrase: "Me llegó un papel del edificio y no sé qué es."
+    after_phrase: "Era solo un requerimiento por la cuota, y ya lo resolví."
+provenance:
+  generator: "flui authoring agent — batch W1 pedir-disculparse"
+  gate: null
+  checked_on: "2026-09-18"

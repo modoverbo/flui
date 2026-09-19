@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "entretenido"
+status: "draft"
+lemma: "entretenido"
+part_of_speech: "adjetivo"
+syllables: ["en", "tre", "te", "ni", "do"]
+stressed_syllable: 4
+ipa_latam: "[en.tɾe.teˈni.ðo]"
+ipa_es: "[en.tɾe.teˈni.ðo]"
+explanation: "Que mantiene el interés de quien escucha, sin que la charla se haga larga y difícil."
+example_sentence: "La reunión se alargó una hora más de lo previsto porque el ponente fue tan entretenido que nadie miró el reloj."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para elogiar una charla, una persona o un contenido que mantiene enganchado sin esfuerzo."
+when_not_to_use: "No la uses solo para algo cómico que hace reír, ni para un tema serio que nadie disfruta aunque sea importante."
+collocations:
+  - "charla entretenida"
+  - "persona entretenida"
+  - "resultar entretenido"
+replaces:
+  - before: "La charla no se hizo nada pesada"
+    after: "La charla fue muy entretenida"
+  - before: "El rato se pasó volando hablando con él"
+    after: "Fue un rato entretenido hablando con él"
+family: ["entretener", "entretenimiento"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["no se hace pesado", "se pasa rápido"]
+  funcion: ["describir", "elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "entendido"
+    difference: "«Entendido» es quien sabe mucho de un tema; la otra palabra mantiene el interés de quien escucha, sin que eso diga nada sobre sus conocimientos."
+    memory_trick: "El entendido sabe del tema; el entretenido hace que quieras seguir escuchando."
+  - confused_with: "gracioso"
+    difference: "«Gracioso» hace reír con sus ocurrencias; la otra palabra mantiene el interés de la charla, aunque no cuente ni un chiste."
+exercises:
+  - position: 1
+    sentence: "En el club de lectura, Renata no era la que más sabía del libro, pero fue tan {{blank}} contando lo que pensaba que nadie quería que terminara la reunión."
+    hint_general: "Se trata de mantener el interés de un grupo, sin que la charla se haga pesada."
+    explanation: "Entretenida: mantiene el interés de un grupo sin hacerse pesada. «Entendida» habla de cuánto sabe alguien del tema, y «divertida» apunta a hacer reír, cuando lo que describe la frase es que nadie quería que la reunión terminara."
+    options:
+      - position: 1
+        text: "entendida"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Entendida» describe a quien sabe mucho de un tema, y la frase aclara que Renata no era la que más sabía: lo que hacía era mantener enganchado al grupo."
+        hint_specific: "«Entendida» habla de cuánto sabe alguien. ¿La frase dice que Renata sabía más, o que mantenía a todos enganchados?"
+      - position: 2
+        text: "entretenida"
+        is_correct: true
+      - position: 3
+        text: "divertida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Divertida» diría que hacía reír, y la frase no habla de risa: habla de que nadie quería que la reunión terminara."
+        hint_specific: "«Divertida» apunta a hacer reír. ¿La frase menciona risas, o las ganas de seguir escuchando?"
+  - position: 2
+    sentence: "En el informe de cierre del proyecto, el jefe de Simón escribió que sus presentaciones eran tan {{blank}} que el equipo entero prestaba atención hasta el final."
+    hint_general: "Apunta a mantener la atención de un grupo durante toda una presentación."
+    explanation: "Entretenidas: mantienen la atención de un grupo hasta el final. «Enganchantes» es un término demasiado coloquial para un informe de cierre, e «instructivas» diría que enseñan algo, no que mantienen la atención."
+    options:
+      - position: 1
+        text: "enganchantes"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enganchantes» es un término coloquial y publicitario, un tono que no encaja con el lenguaje más neutro de un informe de cierre de proyecto."
+        hint_specific: "Esa palabra suena a lenguaje publicitario. ¿Un informe de cierre de proyecto pide ese tono?"
+      - position: 2
+        text: "entretenidas"
+        is_correct: true
+      - position: 3
+        text: "instructivas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Instructivas» diría que enseñan algo útil, y la frase destaca otra cosa: que mantenían la atención del equipo hasta el final."
+        hint_specific: "«Instructivas» habla de enseñar algo. ¿La frase mide cuánto enseñan, o cuánto mantienen la atención?"
+  - position: 3
+    sentence: "El taller de cerámica no tenía nada de lujoso, pero la instructora hacía que las dos horas se sintieran tan {{blank}} que nadie miraba el reloj."
+    hint_general: "Habla de que el tiempo pasa rápido porque la actividad mantiene enganchada a la gente."
+    explanation: "Entretenidas: mantienen enganchada a la gente, tanto que el tiempo pasa volando. «Amenas» solo diría que no aburren, y «ligeras» hablaría de rapidez sin explicar por qué nadie miraba el reloj."
+    options:
+      - position: 1
+        text: "amenas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amenas» diría solo que las horas pasaban sin aburrir, y la frase cuenta algo más fuerte: nadie miraba el reloj, como si el tiempo hubiera desaparecido."
+        hint_specific: "«Amenas» solo dice que no aburre. ¿La frase describe algo más intenso que eso?"
+      - position: 2
+        text: "entretenidas"
+        is_correct: true
+      - position: 3
+        text: "ligeras"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ligeras» hablaría de que las horas pasaron rápido y sin peso, pero no explica por qué nadie quería mirar el reloj, que es lo que cuenta la frase."
+        hint_specific: "«Ligeras» solo habla de rapidez. ¿La frase explica por qué nadie miraba el reloj, o solo que el tiempo pasó rápido?"
+  - position: 4
+    sentence: "Andrés no había viajado tanto como los demás, pero sus historias eran tan {{blank}} que todos pedían una más antes de irse a dormir."
+    hint_general: "Se trata de historias que hacen que la gente quiera seguir escuchando, sin que aburran."
+    explanation: "Entretenidas: hacen que la gente quiera seguir escuchando. «Interesantes» apunta a datos valiosos, y «graciosas» apunta a hacer reír, cuando lo que describe la frase es el deseo de escuchar una historia más."
+    options:
+      - position: 1
+        text: "interesantes"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interesantes» diría que aportan datos valiosos, y la frase no mide eso: mide que todos querían escuchar una historia más antes de dormir."
+        hint_specific: "«Interesantes» apunta a datos valiosos. ¿La frase habla de datos, o de ganas de seguir escuchando?"
+      - position: 2
+        text: "entretenidas"
+        is_correct: true
+      - position: 3
+        text: "graciosas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Graciosas» diría que hacían reír con chistes, y la frase no menciona risas: menciona que todos querían una historia más."
+        hint_specific: "«Graciosas» apunta a hacer reír. ¿La frase menciona risas, o solo ganas de seguir escuchando?"
+  - position: 5
+    sentence: "El reporte trimestral de Julieta no debía sonar a publicidad, pero los inversionistas comentaron que sus explicaciones fueron tan {{blank}} que se leyeron el documento entero de una sentada."
+    hint_general: "Apunta a un texto que mantiene el interés de quien lo lee, sin hacerse pesado."
+    explanation: "Entretenidas: mantienen el interés de quien lee, sin hacerse pesadas. «Enganchantes» es un término publicitario fuera de lugar en un reporte para inversionistas, y «carismáticas» describiría a una persona en vivo, no un documento escrito."
+    options:
+      - position: 1
+        text: "enganchantes"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Enganchantes» es un término coloquial y publicitario, justo el tono que un reporte para inversionistas debía evitar."
+        hint_specific: "Esa palabra suena a lenguaje de publicidad. ¿Un reporte para inversionistas busca ese tono?"
+      - position: 2
+        text: "carismáticas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Carismáticas» describiría el efecto de una persona sobre un grupo al hablar en vivo, y aquí se elogia un documento escrito, no una presencia en persona."
+        hint_specific: "«Carismáticas» describe el efecto de alguien en persona. ¿Aquí se habla de una persona hablando, o de un documento escrito?"
+      - position: 3
+        text: "entretenidas"
+        is_correct: true
+  - position: 6
+    sentence: "El guía del tour hablaba de historia antigua, tema que normalmente aburre a Mateo, pero el recorrido fue tan {{blank}} que terminó sacando fotos de cada edificio."
+    hint_general: "Se trata de un tema que deja de aburrir y mantiene el interés de quien escucha."
+    explanation: "Entretenido: mantiene el interés de quien escucha, aunque el tema no suela gustarle. «Instructivo» mide cuánto se aprende, y «encantador» describiría que alguien cae bien, no que un tema dejó de aburrir."
+    options:
+      - position: 1
+        text: "instructivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Instructivo» diría que Mateo aprendió datos útiles, y la frase destaca otra cosa: que dejó de aburrirse y terminó fotografiando cada edificio."
+        hint_specific: "«Instructivo» habla de aprender datos. ¿La frase mide aprendizaje, o el interés que despertó?"
+      - position: 2
+        text: "entretenido"
+        is_correct: true
+      - position: 3
+        text: "encantador"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encantador» describiría que el guía cae bien de inmediato, y la frase habla de algo distinto: que el tema dejó de ser aburrido para Mateo."
+        hint_specific: "«Encantador» habla de caer bien. ¿La frase describe al guía o al tema que dejó de aburrir?"
+  - position: 7
+    sentence: "La videollamada con la abuela de Rocío iba a durar diez minutos, pero sus anécdotas fueron tan {{blank}} que se alargó una hora."
+    hint_general: "Habla de anécdotas que hacen que nadie quiera colgar."
+    explanation: "Entretenidas: hacen que nadie quiera colgar. «Sonrientes» describiría el gesto de la cara de la abuela, y «largas» solo mediría la duración, sin explicar por qué la llamada se alargó sola."
+    options:
+      - position: 1
+        text: "sonrientes"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sonrientes» describiría el gesto de la cara de la abuela, y la frase no habla de su cara: habla de que sus anécdotas alargaron la llamada una hora."
+        hint_specific: "«Sonrientes» describe un gesto en la cara. ¿La frase habla de un gesto, o de por qué se alargó la llamada?"
+      - position: 2
+        text: "entretenidas"
+        is_correct: true
+      - position: 3
+        text: "largas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Largas» solo diría que duraron mucho, y la frase explica algo distinto: por qué la familia quiso seguir escuchando y alargó la llamada."
+        hint_specific: "«Largas» solo mide la duración. ¿La frase mide la duración, o por qué nadie quería colgar?"
+  - position: 8
+    sentence: "En el stand de la feria, Diego no vendía nada caro, pero sus demostraciones eran tan {{blank}} que se formaba fila para verlo."
+    hint_general: "Se trata de algo que hace que la gente quiera quedarse a verlo completo."
+    explanation: "Entretenidas: hacen que la gente quiera quedarse a verlas completas. «Vistosas» hablaría solo del aspecto visual, y «populares» supondría fama previa, cuando la fila se formó ahí mismo, en esa feria."
+    options:
+      - position: 1
+        text: "vistosas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vistosas» hablaría de que llamaban la atención por su aspecto, y la fila se formaba por otra razón: la gente quería quedarse a ver toda la demostración."
+        hint_specific: "«Vistosas» habla del aspecto visual. ¿La frase explica por qué se formaba fila por el aspecto, o por las ganas de quedarse?"
+      - position: 2
+        text: "entretenidas"
+        is_correct: true
+      - position: 3
+        text: "populares"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Populares» diría que ya eran conocidas de antes, y la frase describe lo contrario: la fila se formaba ahí mismo, en esa feria."
+        hint_specific: "«Populares» supone fama previa. ¿La fila se formó por fama previa, o en el momento?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El que nunca cuenta la misma historia igual"
+    body: "En la sobremesa, alguien le pidió a Martín que contara otra vez cómo se había perdido en sus vacaciones. Lo hizo con detalles nuevos que nadie recordaba, y todos volvieron a reírse como la primera vez. «Es tan entretenido que podría contarla cien veces y seguiríamos escuchando», dijo su hermana."
+    before_phrase: "Cuenta las cosas de un modo que se pasa volando el rato."
+    after_phrase: "Es tan entretenido que podríamos escucharlo cien veces."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La reunión que nadie quería que terminara"
+    body: "El equipo esperaba una reunión aburrida sobre el nuevo sistema, pero la persona que la presentó usó ejemplos tan concretos que nadie miró el celular. «Fue una presentación entretenida de verdad», comentó alguien al salir, «entendí todo sin esfuerzo»."
+    before_phrase: "La presentación no se hizo pesada para nada."
+    after_phrase: "Fue una presentación entretenida de verdad."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Las historias del abuelo"
+    body: "Cada domingo, el abuelo de Iván contaba la misma anécdota de su primer trabajo, pero siempre con un detalle distinto. Iván, que ya la sabía de memoria, seguía escuchando con atención. «Sigue siendo tan entretenida como la primera vez», le dijo a su prima, sin dejar de sonreír."
+    before_phrase: "Nunca se hace pesada, aunque ya la haya escuchado mil veces."
+    after_phrase: "Sigue siendo tan entretenida como la primera vez."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "confidente"
+status: "draft"
+lemma: "confidente"
+part_of_speech: "sustantivo"
+syllables: ["con", "fi", "den", "te"]
+stressed_syllable: 3
+ipa_latam: "[kon.fiˈðen.te]"
+ipa_es: "[kon.fiˈðen.te]"
+explanation: "Persona a la que le cuentas algo que no cuentas a cualquiera, porque te entiende y no lo repetirá."
+example_sentence: "Valeria es mi confidente desde la universidad: le cuento cosas que no le cuento a nadie más."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Se usa para nombrar a la persona de confianza que guarda tus secretos, sin importar su género: «mi confidente»."
+when_not_to_use: "No la uses para alguien que solo cotillea contigo, ni para un conocido con el que hablas una sola vez."
+collocations:
+  - "mi confidente"
+  - "ser el confidente de alguien"
+  - "confidente de toda la vida"
+replaces:
+  - before: "Es la persona a la que le cuento todo"
+    after: "Es mi confidente: le cuento todo"
+  - before: "Con ella puedo hablar de lo que sea sin que lo repita"
+    after: "Ella es mi confidente, puedo hablar de lo que sea sin que lo repita"
+family: ["confidencia", "confidencial"]
+themes:
+  - slug: "amistad"
+    relevance: 3
+tags:
+  comodin: ["persona de confianza"]
+  funcion: ["describir"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "vidente"
+    difference: "«Vidente» dice que alguien predice el futuro; «confidente» es quien guarda los secretos que ya le cuentas."
+    memory_trick: "El vidente adivina lo que vendrá; el confidente guarda lo que ya pasó."
+  - confused_with: "delator"
+    difference: "«Delator» cuenta lo que debía callar; el confidente hace justo lo contrario: guarda lo que le confías."
+exercises:
+  - position: 1
+    sentence: "Valeria no necesita magia para saber cuándo algo me pasa: es mi {{blank}}, le cuento todo antes que a nadie."
+    hint_general: "Nombra a la persona a la que le cuentas lo que no le cuentas a cualquiera."
+    explanation: "Confidente: la persona a la que le cuentas lo que no le cuentas a cualquiera. «Vidente» predice cosas sin que se las cuenten, y «testigo» solo presencia algo desde fuera."
+    options:
+      - position: 1
+        text: "vidente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vidente» es quien dice predecir el futuro, y la frase aclara que Valeria no usa magia, solo escucha lo que le cuentan."
+        hint_specific: "«Vidente» predice cosas sin que se las cuenten. ¿La frase dice que Valeria adivina o que le cuentan las cosas?"
+      - position: 2
+        text: "testigo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Testigo» es quien presencia algo desde fuera, y aquí Valeria es la persona elegida para contarle las cosas, no alguien que solo las presencia."
+        hint_specific: "«Testigo» observa algo desde fuera. ¿A Valeria le cuentan las cosas o solo las presencia?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+  - position: 2
+    sentence: "Simón guarda cada secreto que le cuento desde el colegio: más que un {{blank}} de travesuras, es la persona que sabe lo que de verdad me preocupa."
+    hint_general: "Nombra a la persona a quien le cuentas lo que de verdad te preocupa, no solo con quien haces planes."
+    explanation: "Confidente: la persona que sabe lo que de verdad te preocupa. «Compinche» suena a alguien con quien haces travesuras, y «consejero» se centra en dar consejos, no en guardar lo que le cuentas."
+    options:
+      - position: 1
+        text: "compinche"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Compinche» es informal y suena a alguien con quien haces travesuras, y la frase aclara que Simón es mucho más que eso."
+        hint_specific: "«Compinche» suena a alguien con quien haces travesuras. ¿Simón solo hace planes contigo o sabe lo que de verdad te preocupa?"
+      - position: 2
+        text: "consejero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Consejero» da consejos sobre qué hacer, y aquí lo que se destaca es que Simón sabe lo que le preocupa a esa persona, no que le diga qué hacer."
+        hint_specific: "«Consejero» se centra en dar consejos. ¿La frase habla de recibir consejos o de que alguien sepa lo que te preocupa?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+  - position: 3
+    sentence: "Camila fue la única a quien mi abuela le contó por qué dejó su pueblo: mi abuela decía que Camila era su {{blank}}, no alguien que solo estuviera presente."
+    hint_general: "Se refiere a la persona elegida para guardar algo que no se cuenta a cualquiera."
+    explanation: "Confidente: la persona a quien alguien le confía algo que no cuenta al resto. «Testigo» solo está presente cuando algo pasa, y «vidente» adivina sin que se lo cuenten."
+    options:
+      - position: 1
+        text: "testigo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Testigo» es quien está presente cuando algo pasa, y la frase aclara que Camila no era solo eso, sino a quien mi abuela eligió contarle algo."
+        hint_specific: "«Testigo» solo está presente. La frase dice que Camila era «algo más» que eso: ¿qué palabra encaja con recibir un secreto?"
+      - position: 2
+        text: "vidente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vidente» predice cosas sin que se las cuenten, y aquí mi abuela le contó su historia, no le pidió que la adivinara."
+        hint_specific: "«Vidente» adivina sin que le cuenten. ¿Mi abuela le contó su historia o le pidió que la adivinara?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+  - position: 4
+    sentence: "Joaquín nunca repitió lo que le conté, ni siquiera cuando discutimos: ahí entendí que no era un {{blank}}, sino justo lo contrario."
+    hint_general: "Habla de alguien que guarda lo que le cuentas, incluso si la relación se complica."
+    explanation: "Confidente: alguien que guarda lo que le cuentas, incluso si la relación se complica. «Delator» es quien cuenta lo que debía callar, y «consejero» se centra en aconsejar, no en guardar un secreto."
+    options:
+      - position: 1
+        text: "delator"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Delator» es quien cuenta lo que debía callar, y la frase dice que Joaquín hizo justo lo contrario: no repitió nada."
+        hint_specific: "«Delator» cuenta lo que debía callar. ¿Joaquín repitió lo que le contaste o lo guardó?"
+      - position: 2
+        text: "consejero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Consejero» da consejos sobre qué hacer, y lo que destaca la frase es que guardó el secreto, no que haya aconsejado nada."
+        hint_specific: "«Consejero» se centra en aconsejar. ¿La frase habla de un consejo o de guardar un secreto?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+  - position: 5
+    sentence: "Fernanda no es solo la persona con la que negocio los contratos: fuera de la oficina es mi {{blank}}, la que sabe lo que de verdad pienso."
+    hint_general: "Nombra a la persona con la que hablas de lo que de verdad te importa, más allá del trabajo."
+    explanation: "Confidente: la persona con la que hablas de lo que de verdad te importa. «Interlocutor» es un término formal para una negociación, y «consejera» se centra en dar consejos, no en saber lo que piensas."
+    options:
+      - position: 1
+        text: "interlocutor"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Interlocutor» es un término formal para quien participa en una conversación o negociación, y la frase habla de algo más personal, fuera de la oficina."
+        hint_specific: "«Interlocutor» suena a negociación formal. La frase habla de «fuera de la oficina»: ¿qué palabra encaja con lo personal?"
+      - position: 2
+        text: "consejera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Consejera» se centra en dar consejos, y aquí lo que se resalta es que Fernanda sabe lo que esa persona de verdad piensa, no que le diga qué hacer."
+        hint_specific: "«Consejera» da consejos. ¿La frase habla de recibir consejos o de que alguien sepa lo que piensas?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+  - position: 6
+    sentence: "Álvaro fue el único que supo que dejaría mi trabajo antes de decírselo a mi familia: es mi {{blank}} desde la universidad."
+    hint_general: "Nombra a la persona a quien le cuentas una decisión importante antes que a nadie más."
+    explanation: "Confidente: la persona a quien le cuentas una decisión importante antes que a nadie más. «Vidente» predice el futuro sin que se lo cuenten, y «testigo» presencia algo sin que se lo cuenten a propósito."
+    options:
+      - position: 1
+        text: "vidente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vidente» predice el futuro sin que se lo cuenten, y aquí Álvaro lo supo porque se lo conté yo, no porque lo adivinara."
+        hint_specific: "«Vidente» adivina sin que le cuenten. ¿Álvaro lo adivinó o se lo contaste tú?"
+      - position: 2
+        text: "testigo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Testigo» presencia algo sin que se lo cuenten a propósito, y aquí Álvaro fue elegido a propósito para contarle la decisión primero."
+        hint_specific: "«Testigo» presencia algo sin buscarlo. ¿A Álvaro lo elegiste a propósito para contarle esto primero?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+  - position: 7
+    sentence: "Mariana sabe desde hace un año que renuncié antes de decírselo a mi jefe, y jamás dijo una palabra: es mi {{blank}}, no alguien que reparte secretos ajenos."
+    hint_general: "Nombra a quien guarda lo que le cuentas, sin repetirlo a los demás."
+    explanation: "Confidente: quien guarda lo que le cuentas, sin repetirlo a los demás. «Delatora» es quien cuenta lo que debía callar, y «consejera» se centra en aconsejar, no en guardar un secreto."
+    options:
+      - position: 1
+        text: "delatora"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Delatora» es quien cuenta lo que debía callar, y la frase aclara que Mariana hizo lo contrario: guardó el secreto un año entero."
+        hint_specific: "«Delatora» reparte lo que debía callar. ¿Mariana repitió tu secreto o lo guardó?"
+      - position: 2
+        text: "consejera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Consejera» se centra en dar consejos, y lo que resalta la frase es que guardó el secreto, no que te haya aconsejado algo."
+        hint_specific: "«Consejera» aconseja. ¿La frase destaca un consejo o el hecho de guardar el secreto?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+  - position: 8
+    sentence: "Después de la ruptura, Gael fue el único a quien le conté cómo me sentía de verdad, sin filtrar nada: se ganó ser mi {{blank}}."
+    hint_general: "Nombra a la persona con la que puedes hablar de lo que de verdad sientes, sin guardarte nada."
+    explanation: "Confidente: la persona con la que puedes hablar de lo que de verdad sientes. «Testigo» solo presencia algo, y «vidente» adivina cosas sin que se las digan."
+    options:
+      - position: 1
+        text: "testigo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Testigo» solo presencia algo, y aquí Gael no solo estuvo presente, sino que recibió lo que sentía sin filtrar nada."
+        hint_specific: "«Testigo» solo presencia. ¿Gael solo estuvo presente o recibió lo que sentías?"
+      - position: 2
+        text: "vidente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vidente» predice cosas sin que se las digan, y aquí conté lo que sentía sin que nadie lo adivinara."
+        hint_specific: "«Vidente» adivina sin que le digan nada. ¿Le contaste cómo te sentías o lo adivinó?"
+      - position: 3
+        text: "confidente"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La persona indicada"
+    body: "Antes de renunciar, Fernanda solo se lo contó a una compañera del equipo de diseño, alguien que nunca compartía nada de lo que le confiaban. «Necesitaba decírselo a alguien antes de hacerlo oficial», le explicó semanas después. La compañera solo asintió: ya lo sabía desde el primer día."
+    before_phrase: "Es la única persona a la que le cuento estas cosas."
+    after_phrase: "Es mi confidente en el trabajo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Lo que le conté a mi tía"
+    body: "Cuando decidí cambiar de carrera a mitad del semestre, solo se lo dije a mi tía, no a mis padres todavía. Ella escuchó sin juzgar y solo preguntó: «¿Ya sabes cómo se lo vas a decir a ellos?». Nunca dijo una palabra hasta que yo mismo lo conté en casa."
+    before_phrase: "Es la única con la que puedo hablar de esto sin que se lo cuente a nadie."
+    after_phrase: "Mi tía es mi confidente para estas cosas."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Después de tantos años"
+    body: "Camila y Joaquín se conocen desde el colegio y siguen contándose las cosas que no le dicen a nadie más, aunque ahora vivan en países distintos. «Sigues siendo la primera persona a la que le cuento todo», le escribió Camila una noche. Joaquín respondió con un audio de quince minutos."
+    before_phrase: "Eres la persona a la que le cuento todo."
+    after_phrase: "Eres mi confidente de siempre."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

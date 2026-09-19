@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "atraccion"
+status: "draft"
+lemma: "atracción"
+part_of_speech: "sustantivo"
+syllables: ["a", "trac", "ción"]
+stressed_syllable: 3
+ipa_latam: "[a.trakˈsjon]"
+ipa_es: "[a.trakˈθjon]"
+explanation: "Ganas de acercarte a alguien que te gusta, aunque todavía no sepas bien qué va a pasar."
+example_sentence: "Desde la primera charla en el ascensor, Lucía sintió una atracción que no se esperaba."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para nombrar ese interés inicial que sientes por alguien, antes de saber si hay algo más."
+when_not_to_use: "No lo uses para un cariño ya construido con el tiempo: la atracción es ese interés del principio."
+collocations:
+  - "sentir atracción"
+  - "una atracción instantánea"
+  - "atracción mutua"
+family: []
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["me gusta", "me llama la atención"]
+  funcion: ["describir interés"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "atractivo"
+    difference: "Atractivo describe una cualidad de una persona o una cosa; atracción es lo que sientes tú hacia esa persona o cosa."
+    memory_trick: "El atractivo está en la otra persona; la atracción está en ti."
+replaces:
+  - before: "Me gusta mucho, aunque no sé bien por qué"
+    after: "Siento atracción, aunque no sé bien por qué"
+  - before: "Hubo algo entre los dos desde el principio"
+    after: "Hubo atracción entre los dos desde el principio"
+exercises:
+  - position: 1
+    sentence: "Desde la primera charla en el ascensor, Lucía sintió una {{blank}} que no se esperaba."
+    hint_general: "Ganas de acercarte a alguien que te gusta, aunque no sepas bien qué va a pasar."
+    explanation: "Atracción: ganas de acercarte a alguien que te gusta. «Atractivo» describe una cualidad de la otra persona, no lo que siente Lucía, y «curiosidad» sería un interés más general, sin ese componente de gustarle."
+    options:
+      - position: 1
+        text: "atracción"
+        is_correct: true
+      - position: 2
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de la otra persona, y la frase habla de lo que Lucía sintió, no de una cualidad ajena."
+        hint_specific: "El atractivo describe a la otra persona. ¿La frase habla de una cualidad ajena o de lo que sintió Lucía?"
+      - position: 3
+        text: "curiosidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Curiosidad» sería un interés más general, y la frase describe algo más parecido a que la otra persona le gustó, no solo interés."
+        hint_specific: "La curiosidad es un interés general. ¿La frase describe solo curiosidad o algo que le gustó?"
+  - position: 2
+    sentence: "Andrés no sabía si era {{blank}} o solo ganas de tener compañía, así que decidió esperar antes de invitarla a salir."
+    hint_general: "Ganas de acercarte a alguien porque te gusta, distinto de solo querer compañía."
+    explanation: "Atracción: ganas de acercarte a alguien porque te gusta. «Soledad» describe la falta de compañía, y «atractivo» describe una cualidad ajena; ninguno describe lo que sentía Andrés."
+    options:
+      - position: 1
+        text: "atracción"
+        is_correct: true
+      - position: 2
+        text: "soledad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Soledad» describe la falta de compañía, y la frase distingue eso de lo que sentía Andrés, algo más parecido a que ella le gustaba."
+        hint_specific: "La soledad es falta de compañía. ¿La frase distingue dos cosas o describe solo la soledad?"
+      - position: 3
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de la otra persona, y aquí se habla de lo que sentía Andrés, no de una cualidad ajena."
+        hint_specific: "El atractivo describe a la otra persona. ¿La frase habla de una cualidad ajena o de lo que sentía Andrés?"
+  - position: 3
+    sentence: "Los dos sintieron una {{blank}} tan fuerte que terminaron hablando hasta que cerraron el bar."
+    hint_general: "Un interés mutuo que hace que dos personas quieran quedarse charlando."
+    explanation: "Atracción: un interés mutuo que hace querer quedarse hablando. «Rechazo» describe justo lo contrario, y «atractivo» describe una cualidad de una sola persona, no algo sentido entre los dos."
+    options:
+      - position: 1
+        text: "atracción"
+        is_correct: true
+      - position: 2
+        text: "rechazo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rechazo» describe justo lo contrario, y la frase dice que se quedaron hablando hasta que cerraron el bar."
+        hint_specific: "El rechazo aleja a la gente. ¿Los dos se alejaron o se quedaron charlando?"
+      - position: 3
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de una sola persona, y la frase habla de algo sentido entre los dos al mismo tiempo."
+        hint_specific: "El atractivo describe a una sola persona. ¿La frase habla de una cualidad de uno o de algo entre los dos?"
+  - position: 4
+    sentence: "Marina admitió que sentía {{blank}} por su nuevo compañero de equipo, aunque prefería mantenerlo en secreto."
+    hint_general: "Ganas de acercarte a alguien que trabaja cerca de ti, aunque prefieras no decirlo."
+    explanation: "Atracción: ganas de acercarte a alguien, aunque prefieras no decirlo. «Respeto» describe una valoración profesional, sin ese componente de gustarle, y «atractivo» describe una cualidad ajena, no lo que ella sentía."
+    options:
+      - position: 1
+        text: "atracción"
+        is_correct: true
+      - position: 2
+        text: "respeto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Respeto» describe una valoración profesional, y la frase dice que Marina prefería mantenerlo en secreto, algo más propio de un interés personal."
+        hint_specific: "El respeto no suele mantenerse en secreto. ¿Por qué Marina querría esconder solo respeto?"
+      - position: 3
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de la otra persona, y la frase habla de lo que sentía Marina, no de una cualidad ajena."
+        hint_specific: "El atractivo describe a la otra persona. ¿La frase habla de una cualidad ajena o de lo que sentía Marina?"
+  - position: 5
+    sentence: "Nadie entendía la {{blank}} tan fuerte entre esos dos personajes tan distintos de la serie."
+    hint_general: "El interés mutuo entre dos personas, aunque parezcan muy distintas entre sí."
+    explanation: "Atracción: el interés mutuo entre dos personas, aunque sean distintas. «Rivalidad» describe una competencia, y «atractivo» describe una cualidad de una sola persona, no algo entre dos."
+    options:
+      - position: 1
+        text: "rivalidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rivalidad» describe una competencia entre dos personas, y la frase habla de un interés mutuo, no de una competencia."
+        hint_specific: "La rivalidad es competencia. ¿Los personajes compiten entre sí o sienten interés mutuo?"
+      - position: 2
+        text: "atracción"
+        is_correct: true
+      - position: 3
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de una sola persona, y la frase habla de algo sentido entre los dos personajes."
+        hint_specific: "El atractivo describe a una sola persona. ¿La frase habla de una cualidad de uno o de algo entre los dos?"
+  - position: 6
+    sentence: "Rubén sentía una {{blank}} tremenda, pero también un poco de miedo de arruinar la amistad si decía algo."
+    hint_general: "Un interés fuerte por alguien, mezclado con dudas sobre qué hacer al respecto."
+    explanation: "Atracción: un interés fuerte por alguien, mezclado con dudas. «Bajón» es coloquial y no describe ese interés, y «atractivo» describe una cualidad ajena, no lo que sentía Rubén."
+    options:
+      - position: 1
+        text: "atracción"
+        is_correct: true
+      - position: 2
+        text: "bajón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Bajón» es coloquial y describe una tristeza pasajera, y la frase habla de un interés fuerte por alguien, no de tristeza."
+        hint_specific: "«Bajón» suena a tristeza pasajera. ¿Rubén siente tristeza o interés por alguien?"
+      - position: 3
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de la otra persona, y la frase habla de lo que sentía Rubén, no de una cualidad ajena."
+        hint_specific: "El atractivo describe a la otra persona. ¿La frase habla de una cualidad ajena o de lo que sentía Rubén?"
+  - position: 7
+    sentence: "La psicóloga explicó que la {{blank}} inicial no siempre predice si una relación va a funcionar a largo plazo."
+    hint_general: "El interés del principio entre dos personas, distinto de lo que sostiene una relación con el tiempo."
+    explanation: "Atracción: el interés del principio entre dos personas. «Compromiso» describe algo construido con el tiempo, y «atractivo» describe una cualidad de una persona, no un interés compartido."
+    options:
+      - position: 1
+        text: "atracción"
+        is_correct: true
+      - position: 2
+        text: "compromiso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compromiso» describe algo construido con el tiempo, y la frase distingue ese interés inicial de lo que sostiene una relación después."
+        hint_specific: "El compromiso se construye con el tiempo. ¿La frase habla del principio o de lo construido después?"
+      - position: 3
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de una persona, y la frase habla de un interés compartido entre dos, no de una cualidad."
+        hint_specific: "El atractivo describe a una sola persona. ¿La frase habla de una cualidad o de un interés compartido?"
+  - position: 8
+    sentence: "Después de meses sin verse, la {{blank}} entre ellos seguía intacta, como si no hubiera pasado el tiempo."
+    hint_general: "El interés que sigue sintiéndose entre dos personas, aunque haya pasado tiempo sin verse."
+    explanation: "Atracción: el interés que sigue sintiéndose entre dos personas. «Costumbre» implica algo que se mantiene por repetición, y «atractivo» describe una cualidad ajena; ninguno describe ese interés compartido."
+    options:
+      - position: 1
+        text: "atracción"
+        is_correct: true
+      - position: 2
+        text: "costumbre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Costumbre» implica algo que se mantiene por repetición, y la frase dice que no se habían visto en meses, sin esa repetición constante."
+        hint_specific: "Una costumbre necesita repetición. ¿Se vieron seguido esos meses o no se vieron nada?"
+      - position: 3
+        text: "atractivo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Atractivo» describe una cualidad de una persona, y la frase habla de algo sentido entre los dos, no de una cualidad."
+        hint_specific: "El atractivo describe a una sola persona. ¿La frase habla de una cualidad o de algo entre los dos?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "La charla en el ascensor"
+    body: "Lucía subió al ascensor pensando en el informe pendiente, y bajó pensando en otra cosa. «Sentí una atracción que no me esperaba», le contó a una amiga esa noche, todavía sorprendida por lo rápido que había pasado."
+    before_phrase: "Me gustó de una forma que no me esperaba."
+    after_phrase: "Sentí una atracción que no me esperaba."
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "El miedo a arruinar la amistad"
+    body: "Rubén llevaba meses callando lo que sentía por su mejor amigo de la universidad. «Es una atracción tremenda, pero no quiero arruinar lo que tenemos», le confesó a su hermana, buscando el valor para decidir qué hacer."
+    before_phrase: "Me gusta muchísimo, pero no quiero arruinar la amistad."
+    after_phrase: "Siento una atracción tremenda, pero no quiero arruinar la amistad."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "Los personajes de la serie"
+    body: "Toda la familia discutía sobre la nueva temporada durante la cena. «No entiendo esa atracción entre esos dos, son tan distintos», dijo su tía, y todos en la mesa empezaron a defender su teoría favorita."
+    before_phrase: "No entiendo qué les gusta a esos dos entre sí."
+    after_phrase: "No entiendo esa atracción entre esos dos."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

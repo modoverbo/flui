@@ -1,0 +1,238 @@
+schema_version: 1
+slug: "posponer"
+status: "draft"
+lemma: "posponer"
+part_of_speech: "verbo"
+syllables:
+  - "pos"
+  - "po"
+  - "ner"
+stressed_syllable: 3
+ipa_latam: "[pos.poˈner]"
+ipa_es: "[pos.poˈner]"
+explanation: "Dejar algo para otro momento en lugar de decidirlo o hacerlo ahora."
+example_sentence: "El cliente dijo que le interesaba, pero prefirió posponer la decisión hasta hablarlo con su socio."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar sin presión que alguien necesita más tiempo, sin decir que la venta se perdió."
+when_not_to_use: "No la uses cuando el cliente ya dijo que no le interesa: ahí no hay nada que posponer, solo aceptar el no."
+collocations:
+  - "posponer la decisión"
+  - "posponer la compra"
+  - "posponer la firma"
+replaces:
+  - before: "Dice que lo va a pensar y ya me avisa"
+    after: "Prefiere posponer la decisión"
+  - before: "Lo vamos a dejar para más adelante"
+    after: "Vamos a posponerlo"
+  - before: "Todavía no se decide, quiere esperar"
+    after: "Quiere posponer la compra"
+family:
+  - "posposición"
+  - "pospuesto"
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin:
+    - "dejarlo para después"
+    - "pensarlo"
+  funcion:
+    - "aplazar decisión"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "proponer"
+    difference: "«Proponer» es plantear una idea, una oferta o un plan nuevo; «posponer» es dejar para más adelante una decisión que ya está sobre la mesa."
+    memory_trick: "Propones algo nuevo; pospones algo que ya existe."
+  - confused_with: "suponer"
+    difference: "«Suponer» es dar algo por cierto sin comprobarlo; «posponer» es dejar una decisión o una acción para más adelante."
+    memory_trick: "Supones sin pruebas; pospones sin decidir."
+exercises:
+  - position: 1
+    sentence: "Iván le explicó a su gerente que el cliente quería {{blank}} la firma hasta hablarlo con su socio."
+    hint_general: "El cliente no dice que no: solo pide más tiempo antes de comprometerse con la firma."
+    explanation: "Posponer: el cliente solo pide más tiempo antes de firmar. «Proponer» sería plantear algo nuevo, y aquí no ofrece nada distinto, y «descartar» sería decir que no de forma definitiva, cuando todavía quiere hablarlo con su socio."
+    options:
+      - position: 1
+        text: "posponer"
+        is_correct: true
+      - position: 2
+        text: "proponer"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proponer» es plantear una idea o una oferta nueva, y aquí el cliente no propone nada: solo quiere más tiempo antes de firmar lo ya hablado."
+        hint_specific: "«Proponer» es ofrecer algo nuevo. ¿El cliente está ofreciendo algo, o pidiendo tiempo?"
+      - position: 3
+        text: "descartar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descartar» es decidir que no, de forma definitiva, y el cliente solo quiere más tiempo, no cerrar la puerta."
+        hint_specific: "«Descartar» es decir que no del todo. ¿El cliente cerró la puerta, o solo pidió tiempo?"
+  - position: 2
+    sentence: "Renata avisó al equipo que la clienta {{blank}} la renovación del plan mientras revisa el presupuesto con su contador."
+    hint_general: "La clienta sigue interesada: solo necesita más tiempo para revisar el presupuesto antes de decidir."
+    explanation: "Pospone: deja la renovación para más adelante mientras revisa números. «Supone» sería dar algo por cierto sin comprobarlo, y ella está justo comprobando, y «cancela» sería anular la renovación del todo, cuando ella solo la está revisando."
+    options:
+      - position: 1
+        text: "pospone"
+        is_correct: true
+      - position: 2
+        text: "supone"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suponer» es dar algo por cierto sin comprobarlo, y la clienta está revisando el presupuesto con su contador, no adivinando nada."
+        hint_specific: "«Suponer» es dar algo por hecho sin revisar. ¿Ella está revisando, o dando algo por hecho?"
+      - position: 3
+        text: "cancela"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cancelar» sería anular la renovación del todo, y ella sigue revisando el presupuesto, no descartó el plan."
+        hint_specific: "«Cancelar» sería anular el plan entero. ¿Ella lo anuló, o solo pidió tiempo para revisarlo?"
+  - position: 3
+    sentence: "Tomás le contó a su jefe que el cliente había pedido {{blank}} la reunión para la semana siguiente."
+    hint_general: "El cliente no dijo que no a la reunión: solo pidió tenerla más adelante."
+    explanation: "Posponer: el cliente pidió tener la reunión más adelante, no eliminarla. «Estirar» suena demasiado coloquial para un reporte al jefe, y «evitar» sería no tener la reunión en absoluto, cuando el cliente solo la movió a la semana siguiente."
+    options:
+      - position: 1
+        text: "posponer"
+        is_correct: true
+      - position: 2
+        text: "estirar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Estirar» es muy coloquial para un reporte al jefe; en ese contexto conviene una palabra más neutra para la misma idea."
+        hint_specific: "«Estirar» suena demasiado informal para hablar con el jefe. ¿Encaja ese tono en un reporte de trabajo?"
+      - position: 3
+        text: "evitar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Evitar» es no tener la reunión en absoluto, y el cliente solo pidió cambiarla a la semana siguiente, no eliminarla."
+        hint_specific: "«Evitar» es no tener la reunión de ninguna forma. ¿El cliente la eliminó, o solo pidió otra fecha?"
+  - position: 4
+    sentence: "Carolina notó que su cliente, indeciso desde la demo, {{blank}} la decisión una semana más."
+    hint_general: "Sigue indeciso, así que deja la decisión para dentro de unos días más, no la resuelve ahora."
+    explanation: "Pospuso: el cliente dejó la decisión para más adelante, sin resolverla todavía. «Propuso» sería plantear algo nuevo, y aquí no ofreció nada, y «rechazó» sería decir que no de forma definitiva, algo que no tiene sentido si sigue indeciso «una semana más»."
+    options:
+      - position: 1
+        text: "pospuso"
+        is_correct: true
+      - position: 2
+        text: "propuso"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Proponer» es plantear algo nuevo, y aquí el cliente no propuso nada: solo pidió más tiempo para decidir sobre lo mismo."
+        hint_specific: "«Proponer» es ofrecer algo distinto. ¿El cliente ofreció algo nuevo, o solo pidió más días?"
+      - position: 3
+        text: "rechazó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rechazar» es decir que no de forma definitiva, y decir que no «una semana más» no tiene sentido: si sigue indeciso, no ha rechazado nada todavía."
+        hint_specific: "«Rechazar» es cerrar el tema del todo. ¿Sigue indeciso, o ya dijo que no?"
+  - position: 5
+    sentence: "En el almuerzo, Esteban le contó a su compañera que el cliente prefería {{blank}} la compra hasta después de las fiestas."
+    hint_general: "El cliente sigue pensando en comprar, solo que prefiere esperar a después de las fiestas."
+    explanation: "Posponer: el cliente sigue con la compra en mente, solo la deja para después de las fiestas. «Dilatar» suena a trámite legal, fuera de lugar en una charla de almuerzo, y «olvidar» sería dejar de pensar en la compra, cuando en realidad sigue teniéndola presente."
+    options:
+      - position: 1
+        text: "posponer"
+        is_correct: true
+      - position: 2
+        text: "dilatar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Dilatar» suena a trámite legal o médico; en una charla de almuerzo entre compañeros conviene una palabra más simple para lo mismo."
+        hint_specific: "«Dilatar» suena a trámite formal. ¿Encaja ese tono en una charla de almuerzo?"
+      - position: 3
+        text: "olvidar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Olvidar» sería dejar de pensar en la compra, y el cliente la sigue teniendo presente, solo para después de las fiestas."
+        hint_specific: "«Olvidar» es dejar de pensar en algo. ¿El cliente la tiene presente, o ya no piensa en ella?"
+  - position: 6
+    sentence: "Paola le preguntó directamente a la clienta si {{blank}} el pedido para el próximo trimestre, sin tocar ninguna condición del contrato."
+    hint_general: "Paola quiere saber si el pedido se queda para más adelante, sin cambiar nada del contrato."
+    explanation: "Pospondrá: el pedido se movería al próximo trimestre, sin cambiar el contrato. «Supondrá» sería dar algo por hecho sin preguntar, y Paola pregunta justamente para no suponer nada, y «negociará» implica discutir condiciones, algo que la frase descarta."
+    options:
+      - position: 1
+        text: "pospondrá"
+        is_correct: true
+      - position: 2
+        text: "supondrá"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Suponer» es dar algo por hecho sin comprobarlo, y Paola pregunta directamente a la clienta para no suponer nada."
+        hint_specific: "«Suponer» es dar algo por hecho sin preguntar. ¿Paola está preguntando, o dando algo por hecho?"
+      - position: 3
+        text: "negociará"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Negociar» implica discutir condiciones o precio, y aquí nada del contrato cambia, solo la fecha del pedido."
+        hint_specific: "«Negociar» es discutir condiciones. ¿Algo del contrato cambia, o solo la fecha?"
+  - position: 7
+    sentence: "Julián revisó su lista de seguimientos y vio que aún no había {{blank}} la llamada con el cliente que pidió más tiempo."
+    hint_general: "Julián busca el verbo para una llamada que quedó para otro momento, no para una que ya se resolvió."
+    explanation: "Pospuesto: la llamada quedó para otro momento, sin eliminarla ni resolverla. «Descartado» sería quitarla de la lista por completo, y «confirmado» sería fijarla ya, y ninguna de las dos encaja con un cliente que solo pidió más tiempo."
+    options:
+      - position: 1
+        text: "pospuesto"
+        is_correct: true
+      - position: 2
+        text: "descartado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Descartar» sería quitar la llamada de la lista por completo, y el cliente solo pidió más tiempo, no dijo que no."
+        hint_specific: "«Descartar» es quitar algo de la lista para siempre. ¿El cliente dijo que no, o solo pidió tiempo?"
+      - position: 3
+        text: "confirmado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confirmar» sería fijar la llamada ya, y justo lo que pasó fue lo contrario: quedó para después."
+        hint_specific: "«Confirmar» es fijar algo ya. ¿La llamada quedó fijada, o quedó para más adelante?"
+  - position: 8
+    sentence: "Marina le explicó a su jefa que probablemente {{blank}} la visita al cliente hasta tener el contrato revisado por legal."
+    hint_general: "Marina explica que la visita se queda para después de que legal revise el contrato."
+    explanation: "Pospondría: la visita queda para después de la revisión legal, sin cancelarla ni fijarla ya. «Cancelaría» sería anularla del todo, y «confirmaría» sería fijarla ya, y Marina no dice ninguna de las dos cosas."
+    options:
+      - position: 1
+        text: "pospondría"
+        is_correct: true
+      - position: 2
+        text: "cancelaría"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cancelar» sería anular la visita del todo, y Marina solo habla de esperar a que legal revise el contrato, no de cancelarla."
+        hint_specific: "«Cancelar» es anular algo por completo. ¿Marina anula la visita, o solo espera una revisión?"
+      - position: 3
+        text: "confirmaría"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confirmar» sería fijar la visita ya, y lo que Marina explica es justo que se espera antes de eso."
+        hint_specific: "«Confirmar» es fijar algo ya. ¿La visita queda fijada, o queda a la espera?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La respuesta que no cierra la puerta"
+    body: "Bruno terminó la llamada y anotó lo que había pasado. El cliente no dijo que no: pidió posponer la decisión hasta la próxima semana, cuando su socio estuviera de vuelta. «Perfecto», le dijo Bruno, «te escribo el lunes para retomarlo». Colgó tranquilo: no había perdido la venta, solo tenía que esperar unos días más."
+    before_phrase: "Dice que lo va a pensar, no sé si va a comprar."
+    after_phrase: "Pidió posponer la decisión hasta la próxima semana."
+  - position: 2
+    scene: "social"
+    conversation_type: "emocional"
+    title: "Un café después del trabajo"
+    body: "Daniela le contó a su amiga que llevaba tres meses con un cliente que no terminaba de decidirse. «Cada vez que creo que va a firmar, pide posponerlo un poco más», dijo, algo cansada. Su amiga la escuchó y le dijo que eso no significaba que hubiera perdido al cliente, solo que necesitaba más tiempo. Daniela respiró hondo: todavía había una posibilidad abierta."
+    before_phrase: "Otra vez me dijo que lo va a dejar para después."
+    after_phrase: "Otra vez pidió posponerlo un poco más."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "Contar el día en la cena"
+    body: "En la cena, el hijo de Marisol le preguntó cómo le había ido con el cliente grande. «Bien», respondió ella, «pidió posponer la compra hasta enero, cuando cierre el presupuesto del año». Su esposo sonrió: «Entonces todavía hay esperanza». Marisol asintió: prefería eso a un no definitivo."
+    before_phrase: "Me dijo que lo iba a dejar para más adelante."
+    after_phrase: "Pidió posponer la compra hasta enero."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

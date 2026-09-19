@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "vertigo"
+status: "draft"
+lemma: "vértigo"
+part_of_speech: "sustantivo"
+syllables: ["vér", "ti", "go"]
+stressed_syllable: 1
+ipa_latam: "[ˈbeɾ.ti.ɣo]"
+ipa_es: "[ˈbeɾ.ti.ɣo]"
+explanation: "Sensación fuerte de emoción y miedo juntos, como cuando algo te toma por sorpresa."
+example_sentence: "Cada vez que Andrés le escribía, a Camila le daba un vértigo raro en el estómago."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para describir esa mezcla de emoción y nervios que provoca alguien que te gusta, no un miedo real."
+when_not_to_use: "No lo uses para el mareo físico por altura: en esta situación, vértigo es una sensación emocional, no física."
+collocations:
+  - "dar vértigo"
+  - "sentir vértigo por alguien"
+  - "un vértigo en el estómago"
+family: []
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["me pone nervioso", "siento algo raro"]
+  funcion: ["describir sensación"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "mareo"
+    difference: "El mareo tiene una causa física, como el movimiento o la altura; el vértigo, en este sentido, es una sensación emocional de nervios y emoción por alguien."
+    memory_trick: "El mareo lo causa el cuerpo; el vértigo lo causa la persona que te gusta."
+replaces:
+  - before: "Me pone muy nervioso, aunque en el buen sentido"
+    after: "Me da vértigo, aunque en el buen sentido"
+  - before: "Siento algo raro en el estómago cuando me escribe"
+    after: "Siento vértigo cuando me escribe"
+exercises:
+  - position: 1
+    sentence: "Cada vez que Andrés le escribía, a Camila le daba un {{blank}} raro en el estómago."
+    hint_general: "Una sensación fuerte de emoción y nervios juntos por alguien que te gusta."
+    explanation: "Vértigo: una sensación fuerte de emoción y nervios juntos. «Mareo» tiene una causa física, como el movimiento, y «alivio» describe calma, justo lo contrario de esa mezcla de nervios."
+    options:
+      - position: 1
+        text: "vértigo"
+        is_correct: true
+      - position: 2
+        text: "mareo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «mareo» tiene una causa física, como el movimiento o la altura, y aquí la sensación la provoca un mensaje de Andrés."
+        hint_specific: "El mareo tiene una causa física. ¿El estómago de Camila reacciona a un mensaje o a un movimiento físico?"
+      - position: 3
+        text: "alivio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alivio» describe una sensación de calma, y la frase describe justo lo contrario: una mezcla de nervios en el estómago."
+        hint_specific: "El alivio es calma. ¿Camila siente calma o nervios con esos mensajes?"
+  - position: 2
+    sentence: "Sofía sintió un {{blank}} apenas él le tomó la mano, aunque no dijeron nada durante un buen rato."
+    hint_general: "Una mezcla de emoción y nervios que aparece de golpe, sin necesitar palabras."
+    explanation: "Vértigo: una mezcla de emoción y nervios que aparece de golpe. «Vórtice» es un remolino físico de aire o agua, y «cansancio» habla de falta de energía, sin relación con la emoción de ese momento."
+    options:
+      - position: 1
+        text: "vértigo"
+        is_correct: true
+      - position: 2
+        text: "vórtice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vórtice» es un remolino físico de aire o agua, sin relación con la emoción de que alguien te tome la mano."
+        hint_specific: "Un vórtice es un remolino físico. ¿La frase habla de un fenómeno físico o de una emoción?"
+      - position: 3
+        text: "cansancio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «cansancio» habla de falta de energía, y la frase describe una emoción fuerte al sentir esa mano, no sueño."
+        hint_specific: "El cansancio es falta de energía. ¿Sofía siente sueño o una emoción fuerte?"
+  - position: 3
+    sentence: "Le daba {{blank}} solo de pensar en la primera cita, aunque también tenía muchas ganas de que llegara."
+    hint_general: "Nervios mezclados con emoción, incluso antes de que pase algo."
+    explanation: "Vértigo: nervios mezclados con emoción, incluso antes de que algo pase. «Vórtice» es un remolino físico, y «pereza» sería falta de ganas, cuando la frase dice que tenía muchas ganas de que llegara la cita."
+    options:
+      - position: 1
+        text: "vórtice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vórtice» es un remolino físico de aire o agua, sin relación con pensar en una primera cita."
+        hint_specific: "Un vórtice es un remolino físico. ¿La frase habla de un fenómeno físico o de pensar en una cita?"
+      - position: 2
+        text: "vértigo"
+        is_correct: true
+      - position: 3
+        text: "pereza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pereza» sería falta de ganas, y la frase dice que tenía muchas ganas de que llegara la cita, justo lo contrario."
+        hint_specific: "La pereza es falta de ganas. ¿La frase dice que tenía ganas o pereza de la cita?"
+  - position: 4
+    sentence: "Bruno sintió un {{blank}} tremendo cuando ella le devolvió la mirada desde el otro lado de la sala."
+    hint_general: "Una emoción fuerte y repentina al notar que alguien también se fija en ti."
+    explanation: "Vértigo: una emoción fuerte y repentina al notar interés mutuo. «Chucho» es coloquial y regional, y «vórtice» es un remolino físico; ninguno describe esa mirada."
+    options:
+      - position: 1
+        text: "vértigo"
+        is_correct: true
+      - position: 2
+        text: "chucho"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chucho» es coloquial y regional, y aquí se busca nombrar con precisión la sensación de Bruno al recibir esa mirada."
+        hint_specific: "«Chucho» es una palabra muy regional. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "vórtice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vórtice» es un remolino físico de aire o agua, sin relación con recibir una mirada desde el otro lado de la sala."
+        hint_specific: "Un vórtice es un remolino físico. ¿La frase habla de un fenómeno físico o de una mirada?"
+  - position: 5
+    sentence: "El primer beso le dio a Elena un {{blank}} que no sentía desde hacía años."
+    hint_general: "Una sensación de emoción y nervios intensa, poco común de sentir."
+    explanation: "Vértigo: una sensación de emoción y nervios intensa. «Alivio» describe calma, justo lo contrario, y «vórtice» es un remolino físico, sin relación con un beso."
+    options:
+      - position: 1
+        text: "vértigo"
+        is_correct: true
+      - position: 2
+        text: "alivio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alivio» describe una sensación de calma, y la frase describe una emoción intensa, algo que Elena no sentía hacía años."
+        hint_specific: "El alivio es calma. ¿El beso le dio calma o una emoción intensa?"
+      - position: 3
+        text: "vórtice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vórtice» es un remolino físico de aire o agua, sin relación con la emoción de un primer beso."
+        hint_specific: "Un vórtice es un remolino físico. ¿La frase habla de un fenómeno físico o de un beso?"
+  - position: 6
+    sentence: "Diego admitió que cada mensaje de ella le daba el mismo {{blank}} que sentía antes de subir a un escenario."
+    hint_general: "Una mezcla de nervios y emoción, comparable a la que se siente antes de algo importante."
+    explanation: "Vértigo: una mezcla de nervios y emoción comparable a un momento importante. «Sueño» habla de necesitar dormir, y «vórtice» es un remolino físico, ninguno describe esa comparación de Diego."
+    options:
+      - position: 1
+        text: "vértigo"
+        is_correct: true
+      - position: 2
+        text: "sueño"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sueño» habla de necesitar dormir, y la frase compara la sensación con subir a un escenario, no con estar cansado."
+        hint_specific: "El sueño es necesitar dormir. ¿Diego compara la sensación con dormir o con subir a un escenario?"
+      - position: 3
+        text: "vórtice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vórtice» es un remolino físico de aire o agua, sin relación con la emoción de recibir un mensaje."
+        hint_specific: "Un vórtice es un remolino físico. ¿La frase habla de un fenómeno físico o de un mensaje?"
+  - position: 7
+    sentence: "Julia sintió un {{blank}} apenas escuchó su voz por teléfono después de tanto tiempo sin hablar."
+    hint_general: "Una emoción fuerte que aparece al reencontrarte con alguien importante, aunque sea solo por voz."
+    explanation: "Vértigo: una emoción fuerte al reencontrarte con alguien importante. «Fastidio» describe molestia, y «vórtice» es un remolino físico, ninguno describe la emoción de Julia al escuchar esa voz."
+    options:
+      - position: 1
+        text: "vértigo"
+        is_correct: true
+      - position: 2
+        text: "fastidio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fastidio» describe molestia, y la frase describe una emoción fuerte, no una incomodidad por la llamada."
+        hint_specific: "El fastidio es molestia. ¿Julia siente molestia o una emoción fuerte al escuchar esa voz?"
+      - position: 3
+        text: "vórtice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vórtice» es un remolino físico de aire o agua, sin relación con escuchar una voz por teléfono."
+        hint_specific: "Un vórtice es un remolino físico. ¿La frase habla de un fenómeno físico o de una llamada?"
+  - position: 8
+    sentence: "Cada vez que se cruzaban en el pasillo, a los dos les daba el mismo {{blank}} de siempre."
+    hint_general: "La misma mezcla de nervios y emoción que se repite cada vez que dos personas se encuentran."
+    explanation: "Vértigo: la misma mezcla de nervios y emoción que se repite. «Aburrimiento» describiría falta de interés, y «vórtice» es un remolino físico, ninguno describe ese encuentro repetido en el pasillo."
+    options:
+      - position: 1
+        text: "vértigo"
+        is_correct: true
+      - position: 2
+        text: "aburrimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburrimiento» describiría falta de interés, y la frase dice que sentían lo mismo cada vez, algo que no encaja con estar aburridos."
+        hint_specific: "El aburrimiento es falta de interés. ¿Cada cruce en el pasillo les aburre o les emociona?"
+      - position: 3
+        text: "vórtice"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «vórtice» es un remolino físico de aire o agua, sin relación con cruzarse en un pasillo."
+        hint_specific: "Un vórtice es un remolino físico. ¿La frase habla de un fenómeno físico o de un cruce de pasillo?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "emocional"
+    title: "El mensaje que llegó"
+    body: "Cada vez que el teléfono de Camila vibraba con su nombre, algo se movía en su estómago. «Me da un vértigo raro cuando me escribe», le confesó a su amiga, «y no sé si eso es buena o mala señal»."
+    before_phrase: "Me pone nervioso en el buen sentido cuando me escribe."
+    after_phrase: "Me da vértigo cuando me escribe."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "La mirada desde el otro lado de la sala"
+    body: "En la fiesta de la empresa, Bruno cruzó miradas con alguien del otro equipo. «Sentí un vértigo tremendo, como hacía tiempo no me pasaba», le contó después a un compañero, todavía con la sonrisa puesta."
+    before_phrase: "Sentí algo fuerte en el estómago, como hacía tiempo no me pasaba."
+    after_phrase: "Sentí un vértigo tremendo, como hacía tiempo no me pasaba."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La llamada después de tanto tiempo"
+    body: "Julia no esperaba escuchar esa voz después de tantos meses. «Me dio vértigo apenas contestó», le contó a su hermana, «como si el tiempo no hubiera pasado para nada entre los dos»."
+    before_phrase: "Sentí algo fuerte apenas contestó."
+    after_phrase: "Me dio vértigo apenas contestó."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

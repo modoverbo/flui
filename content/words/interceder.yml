@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "interceder"
+status: "draft"
+lemma: "interceder"
+part_of_speech: "verbo"
+syllables: ["in", "ter", "ce", "der"]
+stressed_syllable: 4
+ipa_latam: "[in.teɾ.seˈðeɾ]"
+ipa_es: "[in.teɾ.θeˈðeɾ]"
+explanation: "Hablar a favor de alguien ante otra persona, para pedirle algo o defenderlo."
+example_sentence: "Cuando la salida escolar se complicó, la tutora intercedió por el grupo ante la dirección del colegio."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo cuando alguien usa su posición o su voz para defender a otra persona frente a un tercero."
+when_not_to_use: "No lo uses para dar tu propia opinión sobre algo: interceder implica hablar a favor de otra persona, no de ti mismo."
+collocations:
+  - "interceder por alguien"
+  - "interceder ante"
+  - "nadie intercedió"
+family: ["intercesión"]
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["hablar por alguien", "salir en defensa de"]
+  funcion: ["defender"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "interceptar"
+    difference: "Interceptar es detener algo en su camino, como un balón o un mensaje; interceder es hablar a favor de alguien ante otra persona."
+    memory_trick: "Interceptas un pase; intercedes por una persona."
+replaces:
+  - before: "Habló con el jefe a favor de su compañero"
+    after: "Intercedió por su compañero ante el jefe"
+  - before: "Salió en su defensa frente al director"
+    after: "Intercedió por él ante el director"
+exercises:
+  - position: 1
+    sentence: "Cuando la actividad grupal salió mal, la tutora {{blank}} por el grupo ante la dirección del colegio."
+    hint_general: "Hablar a favor de alguien ante otra persona, para pedirle algo o defenderlo."
+    explanation: "Intercedió: habló a favor de alguien ante otra persona. «Interceptó» es detener algo en su camino, y «acusó» sería señalar una culpa, justo lo contrario de defender al grupo."
+    options:
+      - position: 1
+        text: "intercedió"
+        is_correct: true
+      - position: 2
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, como un balón o un mensaje, sin relación con hablar a favor de un grupo."
+        hint_specific: "Interceptar detiene algo físico. ¿La tutora detuvo algo o habló a favor del grupo?"
+      - position: 3
+        text: "acusó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Acusar» sería señalar una culpa, justo lo contrario de defender al grupo ante la dirección del colegio."
+        hint_specific: "Acusar señala una culpa. ¿La tutora acusó al grupo o lo defendió?"
+  - position: 2
+    sentence: "Nadie {{blank}} por Rubén cuando el resto del equipo lo culpó del error frente al gerente."
+    hint_general: "Hablar a favor de alguien ante otra persona, cuando esa persona necesita defensa."
+    explanation: "Intercedió: habló a favor de alguien que necesitaba defensa. «Interceptó» es detener algo en su camino, y «rió» describe una reacción distinta, sin relación con defender a alguien."
+    options:
+      - position: 1
+        text: "intercedió"
+        is_correct: true
+      - position: 2
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, como un balón o un mensaje, sin relación con defender a Rubén frente al gerente."
+        hint_specific: "Interceptar detiene algo físico. ¿La frase habla de detener algo o de defender a Rubén?"
+      - position: 3
+        text: "rió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reír» describe una reacción distinta, y la frase habla de la falta de alguien que hablara a favor de Rubén, no de risas."
+        hint_specific: "Reír es una reacción de humor. ¿La frase habla de risas o de defender a Rubén?"
+  - position: 3
+    sentence: "El capitán del equipo {{blank}} ante el árbitro para que no expulsaran a su compañero más joven."
+    hint_general: "Hablar a favor de alguien ante una autoridad, para pedirle algo concreto."
+    explanation: "Intercedió: habló a favor de alguien ante una autoridad. «Interceptó» es detener algo en su camino, y «discutió» implica un desacuerdo, sin implicar que fuera a favor de su compañero."
+    options:
+      - position: 1
+        text: "intercedió"
+        is_correct: true
+      - position: 2
+        text: "discutió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Discutir» implica un desacuerdo, y la frase dice que el capitán habló específicamente a favor de su compañero, con un pedido concreto."
+        hint_specific: "Discutir es tener un desacuerdo. ¿El capitán solo discutió con el árbitro o pidió algo a favor de su compañero?"
+      - position: 3
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, como un balón, sin relación con hablar a favor de un compañero ante el árbitro."
+        hint_specific: "Interceptar detiene algo físico. ¿El capitán detuvo algo o habló a favor de su compañero?"
+  - position: 4
+    sentence: "Su abuela siempre {{blank}} por los nietos cuando alguno se metía en problemas con sus padres."
+    hint_general: "Hablar a favor de alguien de la familia, cuando esa persona tiene un problema con otro familiar."
+    explanation: "Intercedía: hablaba a favor de alguien de la familia. «Regañaba» implicaría reprocharle algo, justo lo contrario, y «interceptaba» es detener algo físico, sin relación con defender a los nietos."
+    options:
+      - position: 1
+        text: "intercedía"
+        is_correct: true
+      - position: 2
+        text: "regañaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Regañar» implicaría reprocharle algo al nieto, justo lo contrario de hablar a su favor frente a los padres."
+        hint_specific: "Regañar es reprochar algo. ¿La abuela reprochaba o defendía a los nietos?"
+      - position: 3
+        text: "interceptaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con hablar a favor de los nietos frente a sus padres."
+        hint_specific: "Interceptar detiene algo físico. ¿La abuela detenía algo o hablaba a favor de los nietos?"
+  - position: 5
+    sentence: "La vecina más antigua {{blank}} ante el resto del edificio para que aceptaran la nueva mascota del quinto piso."
+    hint_general: "Hablar a favor de algo o alguien ante un grupo, para conseguir su aprobación."
+    explanation: "Intercedió: habló a favor de algo ante un grupo, para conseguir su aprobación. «Chismeó» es coloquial y sugiere hablar mal de otros, y «interceptó» es detener algo físico; ninguno describe defenderla."
+    options:
+      - position: 1
+        text: "intercedió"
+        is_correct: true
+      - position: 2
+        text: "chismeó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismear» es coloquial y sugiere hablar mal de otros, y aquí la vecina habló a favor de la mascota, no en contra de nadie."
+        hint_specific: "Chismear implica hablar mal de alguien. ¿La vecina habló mal de alguien o a favor de la mascota?"
+      - position: 3
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con hablar a favor de una mascota ante los vecinos."
+        hint_specific: "Interceptar detiene algo físico. ¿La vecina detuvo algo o habló a favor de la mascota?"
+  - position: 6
+    sentence: "El sindicato {{blank}} por los trabajadores más nuevos, que todavía no se animaban a reclamar solos."
+    hint_general: "Hablar a favor de un grupo de personas, cuando ese grupo todavía no puede defenderse solo."
+    explanation: "Intercedió: habló a favor de un grupo que no podía defenderse solo. «Contrató» implica un acuerdo laboral distinto, y «interceptó» es detener algo físico, ninguno describe hablar a su favor."
+    options:
+      - position: 1
+        text: "intercedió"
+        is_correct: true
+      - position: 2
+        text: "contrató"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Contratar» implica un acuerdo laboral, y la frase habla del sindicato defendiendo a trabajadores que ya estaban contratados."
+        hint_specific: "Contratar es un acuerdo laboral nuevo. ¿El sindicato contrató o defendió a los trabajadores?"
+      - position: 3
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con hablar a favor de los trabajadores más nuevos."
+        hint_specific: "Interceptar detiene algo físico. ¿El sindicato detuvo algo o habló a favor de los trabajadores?"
+  - position: 7
+    sentence: "La directora {{blank}} ante el banco para que le dieran más tiempo a la familia con el pago."
+    hint_general: "Hablar a favor de alguien ante una institución, para pedirle una excepción."
+    explanation: "Intercedió: habló a favor de alguien ante una institución. «Firmó» implica un acuerdo formal ya cerrado, y «interceptó» es detener algo físico, ninguno describe pedir una excepción para la familia."
+    options:
+      - position: 1
+        text: "intercedió"
+        is_correct: true
+      - position: 2
+        text: "firmó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Firmar» implica un acuerdo formal ya cerrado, y la frase dice que la directora pidió una excepción, algo previo a cualquier firma."
+        hint_specific: "Firmar cierra un acuerdo. ¿La directora firmó algo o pidió una excepción?"
+      - position: 3
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con pedir una excepción a un banco."
+        hint_specific: "Interceptar detiene algo físico. ¿La directora detuvo algo o pidió una excepción?"
+  - position: 8
+    sentence: "Su compañero de banco {{blank}} ante la coordinadora para que no la cambiaran de turno esa semana."
+    hint_general: "Hablar a favor de alguien ante quien decide, para evitar un cambio que le complicaría la vida."
+    explanation: "Intercedió: habló a favor de alguien ante quien decide. «Avisó» solo implica informar, sin defender activamente, y «interceptó» es detener algo físico, ninguno describe pedir por ella."
+    options:
+      - position: 1
+        text: "intercedió"
+        is_correct: true
+      - position: 2
+        text: "avisó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Avisar» solo implica informar sobre algo, y la frase dice que su compañero pidió activamente que no la cambiaran de turno."
+        hint_specific: "Avisar es solo informar. ¿Su compañero solo informó o pidió algo a favor de ella?"
+      - position: 3
+        text: "interceptó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Interceptar» es detener algo en su camino, sin relación con pedir que no cambiaran de turno a una compañera."
+        hint_specific: "Interceptar detiene algo físico. ¿Su compañero detuvo algo o pidió algo a favor de ella?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El error frente al gerente"
+    body: "Cuando el equipo culpó a Rubén por el error, nadie dijo nada en su defensa. Al día siguiente, su compañera fue a hablar con el gerente: «Quiero interceder por Rubén, el error fue de todos, no solo de él»."
+    before_phrase: "Quiero hablar a su favor, el error fue de todos."
+    after_phrase: "Quiero interceder por él, el error fue de todos."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La abuela de siempre"
+    body: "Cada vez que alguno de los nietos se metía en problemas, la abuela aparecía con su taza de té y su calma habitual. «Yo intercedo por él», les decía a sus padres, «déjenme hablar antes de que decidan el castigo»."
+    before_phrase: "Yo hablo a su favor antes de que decidan nada."
+    after_phrase: "Yo intercedo por él antes de que decidan nada."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La mascota del quinto piso"
+    body: "En la reunión de vecinos, varios se quejaban del perro nuevo del quinto piso. La vecina más antigua tomó la palabra: «Quiero interceder por esa familia, el perro no molesta a nadie y ellos llevan años cuidando este edificio»."
+    before_phrase: "Quiero hablar a favor de esa familia."
+    after_phrase: "Quiero interceder por esa familia."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

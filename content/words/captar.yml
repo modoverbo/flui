@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "captar"
+status: "draft"
+lemma: "captar"
+part_of_speech: "verbo"
+syllables: ["cap", "tar"]
+stressed_syllable: 2
+ipa_latam: "[kapˈtaɾ]"
+ipa_es: "[kapˈtaɾ]"
+explanation: "Conseguir el interés de alguien, o entender rápido una idea sin necesitar toda la explicación."
+example_sentence: "El nuevo local logró captar clientes solo con el aroma del café en la puerta."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo tanto para atraer gente nueva como para explicar que entendiste una idea al vuelo."
+when_not_to_use: "No lo uses cuando ya conseguiste retener a alguien por mucho tiempo: eso es fidelizar, no captar."
+collocations:
+  - "captar la atención"
+  - "captar clientes"
+  - "captar la idea"
+family: ["captación"]
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "ventas"
+    relevance: 2
+tags:
+  comodin: ["atraer", "engancharse"]
+  funcion: ["atraer", "entender"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "capturar"
+    difference: "Capturar es tomar algo por la fuerza o encerrarlo; captar es conseguir el interés de alguien o entender algo, sin ninguna fuerza."
+    memory_trick: "Se captura a un animal; se capta una idea o una mirada."
+replaces:
+  - before: "El local consigue que la gente se fije en él"
+    after: "El local logra captar a la gente"
+  - before: "Entendí la idea a la primera, sin que me explicaran mucho"
+    after: "Capté la idea a la primera"
+exercises:
+  - position: 1
+    sentence: "El nuevo local logró {{blank}} clientes solo con el aroma del café que llegaba hasta la calle."
+    hint_general: "Conseguir el interés de alguien sin usar la fuerza ni imponer nada."
+    explanation: "Captar: conseguir el interés de alguien sin usar la fuerza. «Capturar» implica tomar algo por la fuerza, y «fidelizar» habla de mantener a alguien mucho tiempo, no de atraerlo por primera vez."
+    options:
+      - position: 1
+        text: "captar"
+        is_correct: true
+      - position: 2
+        text: "capturar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza o encerrarlo, y aquí el aroma solo despierta interés, sin ninguna fuerza."
+        hint_specific: "Capturar implica fuerza o encierro. ¿El aroma encierra a alguien o solo despierta interés?"
+      - position: 3
+        text: "fidelizar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fidelizar» habla de mantener a un cliente durante mucho tiempo, y aquí se trata de atraerlo por primera vez con el aroma."
+        hint_specific: "Fidelizar es un proceso largo. ¿La frase habla de la primera vez o de mantener al cliente años?"
+  - position: 2
+    sentence: "Aunque el informe era largo, Camila logró {{blank}} la idea central en la primera página."
+    hint_general: "Entender algo rápido, sin que haga falta que te lo cuenten todo."
+    explanation: "Captar: entender algo rápido, sin que te lo cuenten todo. «Resumir» implica condensar el contenido en menos palabras, y «capturar» implica tomar algo por la fuerza, sin relación con entender una idea."
+    options:
+      - position: 1
+        text: "resumir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» implica condensar el contenido en menos palabras, y aquí Camila entendió la idea central rápido, sin necesariamente acortar el texto."
+        hint_specific: "Resumir es acortar un texto. ¿Camila acortó el informe o entendió la idea?"
+      - position: 2
+        text: "captar"
+        is_correct: true
+      - position: 3
+        text: "capturar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza o encerrarlo, sin relación con entender la idea de un informe."
+        hint_specific: "Capturar implica fuerza. ¿Camila usó fuerza o solo entendió la idea?"
+  - position: 3
+    sentence: "La ONG cambió su campaña porque ya no lograba {{blank}} donantes jóvenes con los mismos mensajes de siempre."
+    hint_general: "Conseguir el interés de un grupo nuevo de personas."
+    explanation: "Captar: conseguir el interés de un grupo nuevo de personas. «Retener» habla de mantener a quienes ya donan, y «capturar» implica fuerza, sin relación con conseguir donantes."
+    options:
+      - position: 1
+        text: "captar"
+        is_correct: true
+      - position: 2
+        text: "retener"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Retener» habla de mantener a quienes ya donan, y la frase dice que la ONG buscaba donantes jóvenes nuevos."
+        hint_specific: "Retener es mantener a quien ya está. ¿La ONG busca donantes nuevos o mantener a los de siempre?"
+      - position: 3
+        text: "capturar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza, sin relación con conseguir el interés de donantes jóvenes."
+        hint_specific: "Capturar implica fuerza. ¿La ONG usa fuerza o busca despertar interés?"
+  - position: 4
+    sentence: "Bruno no {{blank}} el chiste hasta diez minutos después, cuando todos ya se habían olvidado del tema."
+    hint_general: "Entender algo, aunque sea con retraso respecto al resto del grupo."
+    explanation: "Captó: entendió algo, aunque con retraso respecto al grupo. «Pilló» es coloquial y regional para esta misma idea, y «capturó» implica fuerza, sin relación con entender un chiste."
+    options:
+      - position: 1
+        text: "captó"
+        is_correct: true
+      - position: 2
+        text: "pilló"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pilló» es coloquial y muy regional, y aquí se busca nombrar con precisión el hecho de entender el chiste tarde."
+        hint_specific: "«Pilló» es muy coloquial y regional. ¿La frase pide una palabra precisa o una muy informal?"
+      - position: 3
+        text: "capturó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza, sin relación con entender un chiste con retraso."
+        hint_specific: "Capturar implica fuerza o encierro. ¿Bruno encerró algo o entendió algo tarde?"
+  - position: 5
+    sentence: "La marca contrató a esa actriz porque su imagen {{blank}} justo al público que buscaban: jóvenes profesionales."
+    hint_general: "Conseguir el interés de un tipo concreto de público."
+    explanation: "Captaba: conseguía el interés de un tipo concreto de público. «Capturaba» implica fuerza o encierro, y «vendía» habla de una transacción concreta, no de despertar interés con una imagen."
+    options:
+      - position: 1
+        text: "captaba"
+        is_correct: true
+      - position: 2
+        text: "capturaba"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza, y aquí la imagen de la actriz solo despertaba interés en el público."
+        hint_specific: "Capturar implica fuerza. ¿La imagen encerraba al público o despertaba su interés?"
+      - position: 3
+        text: "vendía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vender» implica una transacción concreta, y aquí se habla del efecto de una imagen sobre el interés del público, no de una venta directa."
+        hint_specific: "Vender implica una transacción. ¿La frase habla de una venta o de despertar interés?"
+  - position: 6
+    sentence: "El podcast creció rápido porque supo {{blank}} a un público que ningún otro programa había buscado antes."
+    hint_general: "Conseguir el interés de un público que nadie más había buscado antes."
+    explanation: "Captar: conseguir el interés de un público que nadie más había buscado. «Estafar» implica engañar para sacar provecho, y «capturar» implica fuerza; ninguno describe lo que hizo el podcast."
+    options:
+      - position: 1
+        text: "captar"
+        is_correct: true
+      - position: 2
+        text: "estafar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estafar» implica engañar para sacar provecho, y la frase no menciona ningún engaño, solo un público que nadie más había buscado."
+        hint_specific: "Estafar implica un engaño. ¿La frase menciona algún engaño?"
+      - position: 3
+        text: "capturar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza, sin relación con conseguir el interés de un público nuevo."
+        hint_specific: "Capturar implica fuerza. ¿El podcast usó fuerza o despertó interés?"
+  - position: 7
+    sentence: "Elena tiene un talento raro para {{blank}} lo que alguien siente aunque esa persona no diga una palabra."
+    hint_general: "Entender algo sutil, sin que haga falta que te lo digan con palabras."
+    explanation: "Captar: entender algo sutil sin que lo digan con palabras. «Inventar» implica crear algo que no existe, y «capturar» implica fuerza; ninguno describe lo que hace Elena con lo que percibe."
+    options:
+      - position: 1
+        text: "captar"
+        is_correct: true
+      - position: 2
+        text: "inventar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inventar» implica crear algo que no existe, y la frase dice que Elena percibe algo real que la otra persona siente."
+        hint_specific: "Inventar crea algo falso. ¿Elena inventa lo que siente el otro o lo percibe de verdad?"
+      - position: 3
+        text: "capturar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza, sin relación con percibir lo que siente otra persona."
+        hint_specific: "Capturar implica fuerza. ¿Elena usa fuerza o percibe algo sutil?"
+  - position: 8
+    sentence: "El video de quince segundos {{blank}} más miradas que el anuncio largo que habían pagado tan caro."
+    hint_general: "Conseguir la atención de más personas que otra cosa con la que se compara."
+    explanation: "Captó: consiguió la atención de más personas que el anuncio largo. «Espantó» implica alejar a la gente, justo lo contrario, y «capturó» implica fuerza, sin relación con conseguir miradas."
+    options:
+      - position: 1
+        text: "captó"
+        is_correct: true
+      - position: 2
+        text: "espantó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Espantar» implica alejar a la gente, y la frase dice que el video consiguió más miradas, justo lo contrario de espantar."
+        hint_specific: "Espantar aleja a la gente. ¿El video alejó miradas o las consiguió?"
+      - position: 3
+        text: "capturó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Capturar» implica tomar algo por la fuerza, sin relación con conseguir más miradas que otro anuncio."
+        hint_specific: "Capturar implica fuerza. ¿El video usó fuerza o consiguió atención?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El aroma en la puerta"
+    body: "El dueño del local nuevo no gastó nada en publicidad el primer mes. «Con el aroma del café en la puerta ya capto suficiente gente», le explicó a un proveedor, mientras la fila llegaba hasta la esquina."
+    before_phrase: "Con el aroma ya consigo que la gente se fije en el local."
+    after_phrase: "Con el aroma ya capto suficiente gente."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Entender rápido"
+    body: "«¿Cómo trabajas con información técnica que no dominas?», preguntó el entrevistador. Camila respondió: «Suelo captar la idea central rápido, aunque no entienda cada detalle al principio». El entrevistador asintió y anotó la respuesta."
+    before_phrase: "Entiendo la idea rápido, aunque no domine cada detalle."
+    after_phrase: "Suelo captar la idea central rápido."
+  - position: 3
+    scene: "social"
+    conversation_type: "emocional"
+    title: "Lo que no dijo"
+    body: "Elena notó que su amigo estaba raro apenas se sentó a la mesa. «Capté que algo pasaba, aunque no dijiste nada», le dijo más tarde, y él terminó contándole todo lo que había callado durante la cena."
+    before_phrase: "Me di cuenta de que algo pasaba, aunque no dijiste nada."
+    after_phrase: "Capté que algo pasaba, aunque no dijiste nada."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

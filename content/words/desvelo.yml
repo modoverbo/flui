@@ -1,0 +1,237 @@
+schema_version: 1
+sort_order: 9203
+slug: "desvelo"
+status: "draft"
+lemma: "desvelo"
+part_of_speech: "sustantivo"
+syllables:
+  - "des"
+  - "ve"
+  - "lo"
+stressed_syllable: 2
+ipa_latam: "[des.ˈbe.lo]"
+ipa_es: "[des.ˈbe.lo]"
+explanation: "El esfuerzo y las noches sin dormir bien que alguien dedica a cuidar de otra persona con cariño."
+example_sentence: "Los desvelos de criar a un hijo pequeño no se notan hasta que por fin duerme toda la noche."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar el esfuerzo y las noches perdidas que cuesta cuidar a alguien, con cariño de fondo."
+when_not_to_use: "No la uses para un simple cansancio del día a día sin nadie a quien cuidar detrás."
+collocations:
+  - "los desvelos de criar a un hijo"
+  - "tantos desvelos"
+  - "valer la pena esos desvelos"
+replaces:
+  - before: "Todo lo que no dormiste por cuidarlo"
+    after: "Todos los desvelos que pasaste por cuidarlo"
+  - before: "El esfuerzo de tantas noches sin dormir por ella"
+    after: "El desvelo de tantas noches por ella"
+  - before: "Tanto esfuerzo y cansancio invertido en criar a sus hijos"
+    after: "Tanto desvelo invertido en criar a sus hijos"
+family:
+  - "desvelar"
+  - "desvelado"
+themes:
+  - slug: "familia-crianza"
+    relevance: 3
+tags:
+  comodin:
+    - "esfuerzo"
+    - "no dormir por alguien"
+  funcion:
+    - "agradecer"
+    - "describir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "desvarío"
+    difference: "«Desvarío» es una idea sin sentido, casi de delirio; esta palabra es el esfuerzo cariñoso de no dormir por cuidar a alguien."
+    memory_trick: "El desvarío pierde la cabeza; esta palabra pierde el sueño por amor."
+exercises:
+  - position: 1
+    sentence: "Mi madre dice que todos sus {{blank}} valieron la pena el día que me vio graduarme."
+    hint_general: "Habla de las noches sin dormir bien que pasó por cuidarte cuando eras pequeño."
+    explanation: "Desvelos: las noches sin dormir bien que pasó por cuidarme. «Desvaríos» sería tener ideas sin sentido, y mi madre no habla de eso, y «sacrificios» es más general y no nombra el sueño perdido en concreto."
+    options:
+      - position: 1
+        text: "desvaríos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvarío» es una idea sin sentido, casi un delirio, y mi madre no habla de ideas raras, sino de noches sin dormir por mí."
+        hint_specific: "«Desvarío» es perder la cabeza, no el sueño. ¿De qué habla tu madre: de ideas raras o de esfuerzo?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "sacrificios"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sacrificio» es renunciar a algo en general, y aquí lo concreto es el sueño perdido, no cualquier renuncia."
+        hint_specific: "«Sacrificio» es más general. ¿Qué es exactamente lo que perdió tu madre: el sueño o algo más amplio?"
+  - position: 2
+    sentence: "Después del parto, los primeros {{blank}} de Renata fueron los más duros: apenas dormía una hora seguida."
+    hint_general: "Habla de las noches sin dormir bien que pasó por su bebé recién nacido."
+    explanation: "Desvelos: las noches sin dormir bien que pasó por su bebé. «Vigilias» suena solemne y religioso, y aquí solo hay un bebé que no la deja dormir, y «insomnios» es no poder dormir en general, sin decir nada del bebé."
+    options:
+      - position: 1
+        text: "vigilias"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vigilia» suena solemne y religiosa, como la noche antes de una fiesta importante, y aquí solo hay un bebé que no deja dormir."
+        hint_specific: "«Vigilia» suena a ceremonia. ¿Hay algo solemne aquí o solo un bebé despierto?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "insomnios"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insomnio» es no poder dormir en general, y aquí lo importante no es solo no dormir, sino todo lo que hace Renata por su bebé esas noches."
+        hint_specific: "«Insomnio» es solo no dormir. ¿La frase habla solo de no dormir o también de cuidar al bebé?"
+  - position: 3
+    sentence: "Nadie vio los {{blank}} de Octavio para que su hija aprendiera a leer antes de entrar al colegio."
+    hint_general: "Habla de las noches que perdió preparando a su hija para el colegio."
+    explanation: "Desvelos: las noches que perdió preparando a su hija. «Esfuerzos» es más general y no dice nada sobre las noches, y «desvaríos» sería tener ideas sin sentido, y aquí no hay ninguna idea rara."
+    options:
+      - position: 1
+        text: "esfuerzos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esfuerzo» es más general y no dice nada sobre las noches, y aquí lo que se destaca es el tiempo que perdió de dormir."
+        hint_specific: "«Esfuerzo» es más general. ¿Qué se destaca aquí: el trabajo en general o las noches sin dormir?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "desvaríos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvarío» es una idea sin sentido, y aquí no hay ninguna idea rara: hay noches dedicadas a enseñarle a leer."
+        hint_specific: "«Desvarío» es perder la cabeza. ¿Octavio pierde la cabeza o pierde el sueño?"
+  - position: 4
+    sentence: "Entre entregas de trabajo y pañales, los {{blank}} de Marisol esa temporada no se los quitaba nadie."
+    hint_general: "Habla de las noches sin dormir que tuvo esa temporada, entre estudiar y cuidar a sus hijos."
+    explanation: "Desvelos: las noches sin dormir que tuvo esa temporada. «Trasnochadas» suena a fiesta o a plan nocturno elegido, y lo de Marisol no fue ninguna elección, y «preocupaciones» es solo el malestar de pensar en algo."
+    options:
+      - position: 1
+        text: "trasnochadas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Trasnochada» suena a fiesta o a plan nocturno elegido, y lo de Marisol no fue ninguna elección: fue no poder dormir por sus hijos y por el trabajo pendiente."
+        hint_specific: "«Trasnochada» suena a plan de fiesta. ¿Marisol eligió quedarse despierta por diversión?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "preocupaciones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preocupación» es solo el malestar de pensar en algo, y aquí lo concreto es que Marisol no dormía por las noches."
+        hint_specific: "«Preocupación» es solo un malestar. ¿La frase habla solo de pensar en algo o también de no dormir?"
+  - position: 5
+    sentence: "Cuando por fin durmió toda la noche, Beto sintió que los {{blank}} de esos primeros meses habían terminado."
+    hint_general: "Habla de las noches sin dormir que pasó cuidando a su bebé los primeros meses."
+    explanation: "Desvelos: las noches sin dormir que pasó cuidando a su bebé. «Sacrificios» es más general, y lo concreto que terminó fueron las noches sin dormir, y «insomnios» es no poder dormir en general, sin nombrar el cuidado del bebé."
+    options:
+      - position: 1
+        text: "sacrificios"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sacrificio» es renunciar a algo en general, y aquí lo concreto que terminó esa noche fueron las noches sin dormir."
+        hint_specific: "«Sacrificio» es más general. ¿Qué terminó exactamente esa noche: una renuncia general o las noches sin dormir?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "insomnios"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insomnio» es no poder dormir en general, y aquí lo que se cuenta es todo lo que hizo Beto por su bebé, no solo la falta de sueño."
+        hint_specific: "«Insomnio» es solo no dormir. ¿La frase habla solo de no dormir o también de cuidar al bebé?"
+  - position: 6
+    sentence: "La abuela de Camilo recuerda sus propios {{blank}} de hace treinta años como si fueran de ayer."
+    hint_general: "Recuerda las noches sin dormir que pasó por sus hijos hace treinta años."
+    explanation: "Desvelos: las noches sin dormir que pasó por sus hijos. «Desvaríos» sería tener ideas sin sentido, y la abuela no recuerda eso, y «vigilias» suena solemne y religioso, sin nada de esa ceremonia aquí."
+    options:
+      - position: 1
+        text: "desvaríos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Desvarío» es una idea sin sentido, y la abuela no recuerda ideas raras: recuerda noches enteras sin dormir por cuidar a sus hijos."
+        hint_specific: "«Desvarío» es perder la cabeza. ¿Qué recuerda la abuela: ideas raras o noches sin dormir?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "vigilias"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vigilia» suena solemne y religiosa, y la abuela solo recuerda noches despierta por sus hijos pequeños, sin nada de ceremonia."
+        hint_specific: "«Vigilia» suena a ceremonia. ¿Hay algo solemne en el recuerdo de la abuela?"
+  - position: 7
+    sentence: "Después de tantos {{blank}}, Perla por fin vio a su hijo caminar solo por el pasillo del hospital."
+    hint_general: "Habla de las noches sin dormir que pasó junto a la cama de su hijo en el hospital."
+    explanation: "Desvelos: las noches sin dormir que pasó junto a la cama de su hijo. «Esfuerzos» es más general, y aquí se destacan las noches concretas sin dormir, y «preocupaciones» es solo el malestar de pensar en algo."
+    options:
+      - position: 1
+        text: "esfuerzos"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esfuerzo» es más general, y aquí lo que se destaca son las noches concretas sin dormir junto a la cama de su hijo."
+        hint_specific: "«Esfuerzo» es más general. ¿Qué se destaca: el trabajo en general o las noches sin dormir?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "preocupaciones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Preocupación» es solo el malestar de pensar en algo, y aquí lo concreto son las noches que Perla pasó sin dormir junto a su hijo."
+        hint_specific: "«Preocupación» es solo un malestar. ¿La frase habla solo de pensar en algo o también de no dormir?"
+  - position: 8
+    sentence: "Sergio bromea con que sus {{blank}} de padre primerizo le quitaron diez años de vida, aunque los volvería a vivir todos."
+    hint_general: "Bromea sobre las noches sin dormir que vivió como padre primerizo."
+    explanation: "Desvelos: las noches sin dormir que vivió como padre primerizo. «Trasnochadas» suena a plan nocturno elegido, y Sergio no eligió quedarse despierto por diversión, y «insomnios» es no poder dormir en general, sin nombrar todo lo que vivió como padre."
+    options:
+      - position: 1
+        text: "trasnochadas"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Trasnochada» suena a plan nocturno elegido, y Sergio no eligió quedarse despierto por diversión: fue por su bebé recién nacido."
+        hint_specific: "«Trasnochada» suena a plan de fiesta. ¿Sergio eligió quedarse despierto por diversión?"
+      - position: 2
+        text: "desvelos"
+        is_correct: true
+      - position: 3
+        text: "insomnios"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insomnio» es no poder dormir en general, y Sergio bromea sobre todo lo que vivió como padre primerizo, no solo sobre no dormir."
+        hint_specific: "«Insomnio» es solo no dormir. ¿Sergio bromea solo sobre no dormir o sobre toda la experiencia de ser padre?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Diez años que valieron la pena"
+    body: "Perla se sentó junto a la cama del hospital sin dormir, otra vez. Cuando su hijo por fin dio los primeros pasos solo por el pasillo, ella se echó a llorar de alivio. «Todos esos desvelos valieron la pena», le dijo a su marido esa noche, ya con la luz apagada."
+    before_phrase: "Tantas noches sin dormir por él valieron la pena."
+    after_phrase: "Todos esos desvelos valieron la pena."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Sobremesa de abuelas"
+    body: "En la sobremesa, la abuela de Camilo contaba sus desvelos de hace treinta años como si fueran de ayer: la fiebre de una noche, el llanto de otra. Las demás abuelas asentían, cada una con su propia historia. Nadie se quejaba: hablaban de eso con una sonrisa."
+    before_phrase: "Me acuerdo de esas noches sin dormir como si fuera ayer."
+    after_phrase: "Me acuerdo de esos desvelos como si fuera ayer."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El café de las siete"
+    body: "Marisol llegó a la oficina con el segundo café antes de las ocho. «Entre entregas de trabajo y pañales, mis desvelos esta semana no se los quita nadie», le dijo a su jefe, medio en broma. Él le ofreció mover una reunión para que pudiera dormir una hora más al día siguiente."
+    before_phrase: "No he dormido nada esta semana entre los niños y las entregas de trabajo."
+    after_phrase: "Mis desvelos esta semana no se los quita nadie."
+provenance:
+  generator: "flui authoring agent — batch W3 familia-crianza + humor"
+  gate: null
+  checked_on: "2026-09-18"

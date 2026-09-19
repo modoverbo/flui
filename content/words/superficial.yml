@@ -1,0 +1,228 @@
+schema_version: 1
+slug: "superficial"
+status: "draft"
+lemma: "superficial"
+part_of_speech: "adjetivo"
+syllables: ["su", "per", "fi", "cial"]
+stressed_syllable: 4
+ipa_latam: "[su.per.fiˈsjal]"
+ipa_es: "[su.per.fiˈθjal]"
+explanation: "Que no llega al fondo de un tema y se queda solo en lo primero que se ve."
+example_sentence: "El video resumía el tema de forma tan superficial que parecía que no lo habían investigado."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para señalar que un contenido, una conversación o un análisis se quedó en la superficie, sin profundizar en lo importante."
+when_not_to_use: "No la uses para algo simplemente corto o bien resumido; superficial implica que faltó profundidad, no solo brevedad."
+collocations:
+  - "análisis superficial"
+  - "conversación superficial"
+replaces:
+  - before: "Ese análisis no profundiza en nada"
+    after: "Ese análisis es superficial"
+  - before: "Solo se queda en lo primero que se ve"
+    after: "Se queda en algo superficial"
+family: ["superficialidad", "superficialmente"]
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+tags:
+  comodin: ["que no profundiza"]
+  funcion: ["criticar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "artificial"
+    difference: "«Artificial» describe algo fingido o hecho por el ser humano en vez de darse de forma natural; «superficial» describe algo real que simplemente no profundiza en el fondo del tema."
+    memory_trick: "Lo artificial finge ser otra cosa; lo superficial de verdad existe, solo que no se mete a fondo."
+  - confused_with: "banal"
+    difference: "«Banal» dice que algo carece de importancia o de sustancia propia; «superficial» dice que algo importante se trató sin ir al fondo."
+  - confused_with: "frivolidad"
+    difference: "«Frivolidad» describe que alguien trata un tema serio sin darle la importancia que merece; «superficial» describe que algo no profundiza en el fondo de un tema."
+exercises:
+  - position: 1
+    sentence: "El video de Bianca resumía el problema del estacionamiento en el barrio de forma tan {{blank}} que parecía que no había investigado nada."
+    hint_general: "No profundizó en el tema; se quedó solo en lo primero que se veía."
+    explanation: "Superficial: el video no profundizó en el tema. «Artificial» habla de fingir, y aquí no hay fingimiento; «simple» habla de sencillez, no de falta de profundidad."
+    options:
+      - position: 1
+        text: "artificial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Artificial» describe algo fingido o poco natural, y el video de Bianca no finge nada: simplemente no profundiza en el tema."
+        hint_specific: "«Artificial» habla de fingir, no de faltar profundidad. ¿El video finge algo o solo no profundiza?"
+      - position: 2
+        text: "superficial"
+        is_correct: true
+      - position: 3
+        text: "simple"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Simple» solo dice que algo es sencillo de entender, sin decir que le faltó profundidad o investigación."
+        hint_specific: "«Simple» habla de sencillez. ¿El problema es que sea fácil de entender o que no investigó lo suficiente?"
+  - position: 2
+    sentence: "Rodrigo le contó a su hermana, en dos frases sueltas, por qué el informe del consultor le pareció tan {{blank}}."
+    hint_general: "El texto no llegó al fondo del tema, aunque fuera corto."
+    explanation: "Superficial: el informe no profundizó en el tema. «Somero» es un término muy formal para una charla rápida entre hermanos, y «básico» habla de cubrir solo lo esencial, no de faltar profundidad."
+    options:
+      - position: 1
+        text: "somero"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Somero» es una palabra muy formal y literaria, y esta es una charla entre hermanos en dos frases sueltas."
+        hint_specific: "«Somero» suena a informe técnico. ¿Ese tono encaja en una charla rápida entre hermanos?"
+      - position: 2
+        text: "básico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Básico» dice que algo cubre solo lo esencial, sin decir que le faltó profundidad al analizar el tema."
+        hint_specific: "«Básico» habla de lo esencial. ¿El problema es que cubra poco o que no profundice?"
+      - position: 3
+        text: "superficial"
+        is_correct: true
+  - position: 3
+    sentence: "Damián preparó una presentación tan {{blank}} sobre las ventas que nadie entendió qué había fallado realmente."
+    hint_general: "Faltó profundidad en los puntos importantes de la presentación."
+    explanation: "Superficial: la presentación no profundizó en lo importante. «Superfluo» habla de algo que sobra, y «vago» habla de falta de claridad, no de falta de profundidad."
+    options:
+      - position: 1
+        text: "superfluo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Superfluo» describe algo innecesario o de más, y aquí el problema no es que sobre información, sino que faltó profundidad."
+        hint_specific: "«Superfluo» habla de algo que sobra. ¿La presentación tenía de más o le faltó profundidad?"
+      - position: 2
+        text: "vago"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vago» dice que algo no queda claro o preciso, y aquí el problema es que no profundizó, aunque lo que dijo sí se entendía."
+        hint_specific: "«Vago» habla de falta de claridad. ¿No se entendió lo que dijo o faltó profundidad?"
+      - position: 3
+        text: "superficial"
+        is_correct: true
+  - position: 4
+    sentence: "En el correo formal a la aerolínea, Cecilia explicó por qué la respuesta del equipo de soporte le había parecido tan {{blank}}."
+    hint_general: "La respuesta no llegó al fondo del reclamo."
+    explanation: "Superficial: la respuesta no profundizó en el reclamo. «Flojo» es muy coloquial para un correo formal, y «ligero» habla de poco peso, no de falta de profundidad."
+    options:
+      - position: 1
+        text: "flojo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Flojo» es muy coloquial, y un correo formal a una aerolínea pide un registro más cuidado."
+        hint_specific: "«Flojo» es coloquial. ¿Ese tono encaja en un correo formal?"
+      - position: 2
+        text: "ligero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ligero» dice que algo pesa poco o es leve, y aquí el problema es que la respuesta no profundizó en el reclamo, no que fuera breve sin más."
+        hint_specific: "«Ligero» habla de poco peso. ¿El problema es que fue breve o que no profundizó?"
+      - position: 3
+        text: "superficial"
+        is_correct: true
+  - position: 5
+    sentence: "Gonzalo notó que su interés por los comentarios era muy {{blank}}: leía la primera línea y pasaba al siguiente post."
+    hint_general: "No profundiza en los temas, aunque sí le interesan de verdad."
+    explanation: "Superficial: Gonzalo no profundiza en los temas, aunque sí se interesa. «Artificial» habla de fingir interés, y «frívolo» habla de no tomar nada en serio."
+    options:
+      - position: 1
+        text: "artificial"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Artificial» describe algo fingido, y aquí Gonzalo sí se interesa de verdad, solo que no profundiza en nada."
+        hint_specific: "«Artificial» habla de fingir interés. ¿Gonzalo finge o solo no profundiza?"
+      - position: 2
+        text: "frívolo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frívolo» describe a quien no toma nada en serio, y Gonzalo sí se toma en serio los temas: solo no profundiza en ellos."
+        hint_specific: "«Frívolo» habla de no tomar nada en serio. ¿Gonzalo no toma nada en serio o solo no profundiza?"
+      - position: 3
+        text: "superficial"
+        is_correct: true
+  - position: 6
+    sentence: "La charla de Antonia sobre productividad resultó {{blank}}: solo repitió frases que ya había visto en cualquier publicación."
+    hint_general: "No hubo ninguna idea nueva ni un punto tratado a fondo."
+    explanation: "Superficial: la charla no profundizó en ningún punto. «Superfluo» habla de algo que sobra, y «vacío» diría que no quedó ninguna idea, cuando sí hubo ideas, solo que conocidas."
+    options:
+      - position: 1
+        text: "superfluo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Superfluo» describe algo que sobra o no hace falta, y aquí el problema no es que sobrara nada, sino que no profundizó en ningún punto."
+        hint_specific: "«Superfluo» habla de algo que sobra. ¿El problema es que sobre algo o que falte profundidad?"
+      - position: 2
+        text: "vacío"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vacío» diría que no queda ninguna idea, y aquí sí hubo ideas, solo que ya conocidas y sin profundizar en ellas."
+        hint_specific: "«Vacío» dice que no queda nada. ¿No hubo ninguna idea o solo faltó profundidad?"
+      - position: 3
+        text: "superficial"
+        is_correct: true
+  - position: 7
+    sentence: "Felipe se dio cuenta de que su explicación a su hija sobre el tema había sido {{blank}} y decidió sentarse a hablarlo con calma otro día."
+    hint_general: "Faltó ir más al fondo del tema con calma."
+    explanation: "Superficial: la explicación de Felipe no profundizó lo suficiente. «Plano» habla de falta de matices, y «trivial» habla de poca importancia, no de falta de profundidad."
+    options:
+      - position: 1
+        text: "plano"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Plano» describe algo sin matices ni relieve, y el problema de Felipe no fue la falta de matices, sino no haber profundizado lo suficiente."
+        hint_specific: "«Plano» habla de falta de matices. ¿El problema fueron los matices o la falta de profundidad?"
+      - position: 2
+        text: "trivial"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Trivial» dice que algo no tiene importancia, y el tema sí era importante: lo que faltó fue profundizar en él."
+        hint_specific: "«Trivial» habla de poca importancia. ¿El tema no importaba o solo faltó profundizarlo?"
+      - position: 3
+        text: "superficial"
+        is_correct: true
+  - position: 8
+    sentence: "Los clientes comentaron que la descripción del nuevo menú de Marina era {{blank}} y pidieron que contara también de dónde salían los ingredientes."
+    hint_general: "Faltó contar algo de fondo, más allá de lo primero que se ve."
+    explanation: "Superficial: la descripción no contaba nada de fondo. «Aburrido» habla de no entretener, y «gracioso» habla de hacer reír; ninguno describe la falta de profundidad."
+    options:
+      - position: 1
+        text: "aburrido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aburrido» dice que algo no entretiene, y los clientes no se quejaron de que fuera aburrida, sino de que no contara nada de fondo sobre los ingredientes."
+        hint_specific: "«Aburrido» habla de no entretener. ¿Los clientes piden más diversión o más contenido de fondo?"
+      - position: 2
+        text: "gracioso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Gracioso» describe algo que hace reír, y lo que piden los clientes no es humor, sino más información de fondo sobre los ingredientes."
+        hint_specific: "«Gracioso» habla de hacer reír. ¿Piden humor o piden más contenido de fondo?"
+      - position: 3
+        text: "superficial"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe que faltaba profundizar"
+    body: "El equipo revisó el informe de redes antes de enviarlo. «Esto quedó un poco superficial», dijo la coordinadora, señalando la primera página. «Vamos a agregar por qué bajó el alcance, no solo que bajó». En media hora tenían una versión con más sustancia."
+    before_phrase: "Esto se quedó muy en la superficie."
+    after_phrase: "Esto quedó un poco superficial."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Más allá de lo primero"
+    body: "Mi hija me contó su día en dos frases y siguió con el celular. «Siento que hablamos de forma muy superficial últimamente», le dije, sin reproche. Ella levantó la vista, sorprendida, y por primera vez en semanas me contó algo que de verdad le preocupaba."
+    before_phrase: "Siento que ya no hablamos de nada de verdad."
+    after_phrase: "Siento que hablamos de forma muy superficial últimamente."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Lo que aprendió a cambiar"
+    body: "«Cuéntame de un error que corregiste», pidió el entrevistador. Valeria contó que sus primeros análisis eran muy superficiales: solo miraba los números grandes. «Ahora reviso el porqué de cada cifra antes de sacar conclusiones», explicó, y notó que la entrevistadora anotaba algo con interés."
+    before_phrase: "Antes me quedaba solo con lo primero que veía."
+    after_phrase: "Mis primeros análisis eran muy superficiales."
+provenance:
+  generator: "claude-sonnet-5"
+  gate: null
+  checked_on: "2026-09-18"

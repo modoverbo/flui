@@ -1,0 +1,238 @@
+schema_version: 1
+slug: "sondeo"
+status: "draft"
+lemma: "sondeo"
+part_of_speech: "sustantivo"
+syllables:
+  - "son"
+  - "de"
+  - "o"
+stressed_syllable: 2
+ipa_latam: "[son.ˈde.o]"
+ipa_es: "[son.ˈde.o]"
+explanation: "Pregunta rápida y no oficial para saber qué piensa la gente antes de decidir o hablar en público."
+example_sentence: "Antes de la reunión, hice un sondeo rápido entre mis compañeros para saber qué opinaban del cambio de horario."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien para mostrar que consultaste antes de proponer algo: «Hice un sondeo rápido y la mayoría prefiere…»."
+when_not_to_use: "No la uses para un estudio con metodología y muestra definida: para eso está «encuesta»."
+collocations:
+  - "hacer un sondeo"
+  - "sondeo de opinión"
+  - "un sondeo rápido"
+replaces:
+  - before: "Pregunté por ahí a ver qué piensan"
+    after: "Hice un sondeo rápido a ver qué piensan"
+  - before: "Miré cómo estaba el ambiente antes de proponerlo"
+    after: "Hice un sondeo antes de proponerlo"
+  - before: "Cada uno dijo lo que le parecía y contamos"
+    after: "Hicimos un sondeo y contamos las respuestas"
+family:
+  - "sondear"
+themes:
+  - slug: "medios-entrevistas"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 2
+tags:
+  comodin:
+    - "preguntar por ahí"
+  funcion:
+    - "consultar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "encuesta"
+    difference: "«Encuesta» es un estudio con metodología y muestra definida; esto es una consulta rápida y sin ese rigor."
+    memory_trick: "La encuesta se diseña durante semanas; el sondeo se hace en un rato."
+  - confused_with: "tantear"
+    difference: "«Tantear» explora con cuidado la reacción de una sola persona; esto reúne en poco tiempo la opinión de varias."
+    memory_trick: "Tanteas a uno; sondeas a varios."
+exercises:
+  - position: 1
+    sentence: "Antes de anunciar el cambio de turnos, Marta hizo un {{blank}} rápido entre el equipo para ver si preferían empezar antes o después."
+    hint_general: "Es una consulta breve y sin trámite para saber qué prefiere la gente antes de anunciar algo."
+    explanation: "Sondeo: consulta breve antes de anunciar el cambio. «Sorteo» reparte algo al azar, y «veredicto» sería una decisión ya tomada, no una consulta previa."
+    options:
+      - position: 1
+        text: "sorteo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sorteo» es repartir algo al azar entre varias personas, y aquí Marta no reparte nada: pregunta preferencias."
+        hint_specific: "«Sorteo» reparte algo al azar, como un premio. ¿Marta reparte algo o pregunta opiniones?"
+      - position: 2
+        text: "sondeo"
+        is_correct: true
+      - position: 3
+        text: "veredicto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Veredicto» es una decisión ya cerrada, y Marta todavía está reuniendo preferencias antes de anunciar nada."
+        hint_specific: "Un veredicto ya está decidido. ¿Marta anuncia algo cerrado o todavía está preguntando?"
+  - position: 2
+    sentence: "Antes de hablar con los periodistas, Ezequiel lanzó un {{blank}} entre sus compañeros para saber qué mensaje sonaba mejor."
+    hint_general: "Consulta rápida a varias personas para elegir qué decir antes de salir a hablar."
+    explanation: "Sondeo: consulta rápida antes de hablar con la prensa. «Sorteo» reparte algo al azar, y «encuesta» supondría un estudio formal con muestra, no una consulta entre compañeros."
+    options:
+      - position: 1
+        text: "sorteo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sorteo» reparte algo al azar entre participantes, y aquí Ezequiel busca opiniones, no reparte nada."
+        hint_specific: "Un sorteo entrega un premio al azar. ¿Ezequiel entrega algo o pregunta qué mensaje suena mejor?"
+      - position: 2
+        text: "encuesta"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encuesta» implica un estudio con metodología y muestra amplia, y aquí solo pregunta a sus compañeros de pasillo."
+        hint_specific: "Una encuesta formal lleva semanas de diseño. ¿Ezequiel tiene ese tiempo antes de hablar con la prensa?"
+      - position: 3
+        text: "sondeo"
+        is_correct: true
+  - position: 3
+    sentence: "El grupo no se ponía de acuerdo con el destino, así que Noelia hizo un {{blank}} rápido por el chat para ver qué opción ganaba."
+    hint_general: "Pregunta a todo el grupo por el chat para ver cuál opción prefiere la mayoría."
+    explanation: "Sondeo: consulta rápida al grupo por el chat. «Chismorreo» es hablar de la vida ajena, no reunir preferencias, y «debate» sería una discusión abierta entre todos, no una consulta breve."
+    options:
+      - position: 1
+        text: "chismorreo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismorreo» es coloquial y habla de comentar la vida de otros, y aquí Noelia solo reúne preferencias sobre un destino."
+        hint_specific: "El chismorreo habla de la vida ajena. ¿El chat de Noelia comenta vidas ajenas o elige un destino?"
+      - position: 2
+        text: "debate"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Debate» es una discusión abierta donde todos argumentan a la vez, y el chat solo junta preferencias una por una."
+        hint_specific: "Un debate discute en voz alta entre todos. ¿El grupo discute o cada uno solo responde por su lado?"
+      - position: 3
+        text: "sondeo"
+        is_correct: true
+  - position: 4
+    sentence: "Dos días antes de lanzar el nombre nuevo del producto, Renata hizo un {{blank}} entre varios clientes para ver cómo sonaba."
+    hint_general: "Pregunta a varias personas cómo suena algo antes de lanzarlo de forma oficial."
+    explanation: "Sondeo: consulta a varios clientes antes del lanzamiento. «Sorteo» reparte algo al azar, y «pronóstico» sería una predicción sobre el futuro, no una consulta directa a la gente."
+    options:
+      - position: 1
+        text: "sorteo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sorteo» es repartir un premio al azar entre los clientes, y Renata no reparte nada: pide su opinión."
+        hint_specific: "Un sorteo entrega algo por azar. ¿Renata entrega un premio o pregunta cómo suena el nombre?"
+      - position: 2
+        text: "pronóstico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pronóstico» es una predicción sobre lo que pasará, y aquí Renata pregunta directamente a los clientes, no adivina nada."
+        hint_specific: "Un pronóstico se hace sin preguntar a nadie. ¿Renata adivina o consulta a sus clientes?"
+      - position: 3
+        text: "sondeo"
+        is_correct: true
+  - position: 5
+    sentence: "En el chat del edificio, Iván lanzó un {{blank}} breve para saber si la mayoría quería cambiar el horario de la puerta."
+    hint_general: "Consulta corta por el chat del edificio para ver qué prefiere la mayoría de los vecinos."
+    explanation: "Sondeo: consulta breve a los vecinos por el chat. «Cotilleo» es coloquial y sugiere hablar de la vida de otros, y «decisión» sería el resultado final, no la consulta previa."
+    options:
+      - position: 1
+        text: "cotilleo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cotilleo» es coloquial y sugiere comentar asuntos ajenos, y aquí Iván solo reúne preferencias sobre un horario."
+        hint_specific: "El cotilleo comenta la vida de otros. ¿Iván comenta vidas ajenas o pregunta sobre un horario?"
+      - position: 2
+        text: "decisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decisión» es el resultado ya cerrado, y el chat de Iván todavía está reuniendo preferencias antes de decidir nada."
+        hint_specific: "Una decisión ya está tomada. ¿El chat de Iván cierra algo o todavía está preguntando?"
+      - position: 3
+        text: "sondeo"
+        is_correct: true
+  - position: 6
+    sentence: "Antes de anunciar el destino navideño, Gustavo hizo un {{blank}} en la cena: cada uno escribió su preferencia en un papel."
+    hint_general: "Reúne la preferencia de cada uno con un papel antes de anunciar un destino."
+    explanation: "Sondeo: reúne preferencias en papel antes de anunciar el destino. «Sorteo» reparte algo al azar, y «rumor» sería algo que circula sin confirmarse, no una consulta directa."
+    options:
+      - position: 1
+        text: "sorteo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sorteo» reparte un premio al azar entre los presentes, y aquí cada papel expresa una preferencia real, no un premio."
+        hint_specific: "Un sorteo entrega algo por azar. ¿Los papeles de la cena reparten un premio o expresan una preferencia?"
+      - position: 2
+        text: "rumor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rumor» es algo que circula sin que nadie lo confirme, y aquí cada persona escribe su preferencia de forma directa."
+        hint_specific: "Un rumor nadie lo firma. ¿Los papeles de la cena tienen nombre o circulan sin firma?"
+      - position: 3
+        text: "sondeo"
+        is_correct: true
+  - position: 7
+    sentence: "El equipo de comunicación revisó un {{blank}} reciente en redes antes de que la vocera saliera a hablar con la prensa."
+    hint_general: "Revisan lo que piensa la gente en redes antes de que alguien hable en público."
+    explanation: "Sondeo: revisión de lo que piensa la gente en redes antes de hablar. «Sorteo» reparte algo al azar, e «impresión» sería la sensación de una sola persona, no lo que piensa un grupo."
+    options:
+      - position: 1
+        text: "sorteo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sorteo» reparte un premio al azar, y el equipo de comunicación no reparte nada: revisa opiniones."
+        hint_specific: "Un sorteo entrega algo por azar entre participantes. ¿El equipo entrega un premio o revisa opiniones?"
+      - position: 2
+        text: "impresión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Impresión» es la sensación de una sola persona, y el equipo revisa lo que piensa mucha gente en redes."
+        hint_specific: "Una impresión es de una sola persona. ¿El equipo mira a una persona o a muchas en redes?"
+      - position: 3
+        text: "sondeo"
+        is_correct: true
+  - position: 8
+    sentence: "Antes de firmar el préstamo, Simón hizo un {{blank}} entre sus amigos que ya habían pasado por lo mismo."
+    hint_general: "Pregunta a quienes ya vivieron algo parecido antes de tomar una decisión importante."
+    explanation: "Sondeo: consulta a sus amigos antes de firmar. «Sorteo» reparte algo al azar, y «conjetura» sería una suposición sin preguntar a nadie."
+    options:
+      - position: 1
+        text: "sorteo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sorteo» reparte algo al azar entre varias personas, y aquí Simón no reparte nada: pregunta experiencias."
+        hint_specific: "Un sorteo entrega algo por azar. ¿Simón entrega algo o pregunta a sus amigos?"
+      - position: 2
+        text: "conjetura"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conjetura» es una suposición hecha sin consultar a nadie, y Simón habla justo con quienes ya vivieron lo mismo."
+        hint_specific: "Una conjetura se hace sin preguntar. ¿Simón supone solo o habla con sus amigos?"
+      - position: 3
+        text: "sondeo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El horario que nadie proponía"
+    body: "El equipo llevaba semanas quejándose del horario de entrada, pero nadie decía nada en la reunión. Marta hizo un sondeo rápido por el chat: tres preguntas, cinco minutos. Con las respuestas en mano, propuso el cambio en la siguiente reunión y nadie se sorprendió."
+    before_phrase: "Pregunté por ahí a ver qué pensaban."
+    after_phrase: "Hice un sondeo rápido antes de proponerlo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El papel doblado"
+    body: "Cada Navidad terminaba en la misma discusión sobre el destino del viaje familiar. Este año, Gustavo repartió papelitos: «Hagamos un sondeo, cada uno escribe su idea y contamos». Ganó la playa, y por primera vez nadie se fue enojado de la mesa."
+    before_phrase: "A ver qué dice cada uno, sin pelear."
+    after_phrase: "Hagamos un sondeo, sin pelear."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Antes del micrófono"
+    body: "Minutos antes de que la vocera saliera a hablar con la prensa, el equipo revisó un sondeo hecho esa misma mañana entre los vecinos afectados. «La gente pide plazos, no promesas», resumió alguien. La vocera ajustó dos frases y salió."
+    before_phrase: "Averigüé rápido qué piensa la gente."
+    after_phrase: "Hicimos un sondeo esta mañana."
+provenance:
+  generator: "flui authoring agent"
+  gate: null
+  checked_on: "2026-09-18"

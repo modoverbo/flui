@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "embajador"
+status: "draft"
+lemma: "embajador"
+part_of_speech: "sustantivo"
+syllables: ["em", "ba", "ja", "dor"]
+stressed_syllable: 4
+ipa_latam: "[em.ba.xaˈðoɾ]"
+ipa_es: "[em.ba.xaˈðoɾ]"
+explanation: "Persona que representa a un grupo o una marca y habla bien de ella en cualquier lugar."
+example_sentence: "La empresa eligió a tres clientes fieles como embajadores para la próxima campaña."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para quien recomienda algo por convicción propia, sin que se lo pidan cada vez."
+when_not_to_use: "No lo uses para alguien que solo compró un producto una vez: el embajador lo defiende de forma constante."
+collocations:
+  - "embajador de la marca"
+  - "hacer de embajador"
+  - "embajador natural"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "ventas"
+    relevance: 1
+tags:
+  comodin: ["el que la recomienda siempre"]
+  funcion: ["representar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "embajada"
+    difference: "La embajada es la institución o el edificio; el embajador es la persona que representa algo o a alguien."
+    memory_trick: "La embajada es el lugar; el embajador es la persona."
+replaces:
+  - before: "Es quien más recomienda la marca sin que se lo pidan"
+    after: "Es el embajador de la marca"
+  - before: "Habla bien de la empresa dondequiera que va"
+    after: "Es un embajador natural de la empresa"
+exercises:
+  - position: 1
+    sentence: "La marca eligió a tres clientes fieles como {{blank}} para la campaña de este año."
+    hint_general: "Personas que representan a una marca y hablan bien de ella por su cuenta."
+    explanation: "Embajadores: personas que representan a una marca y hablan bien de ella por su cuenta. «Empleados» trabajan directamente para la empresa, y «embajadas» son edificios, no personas."
+    options:
+      - position: 1
+        text: "embajadores"
+        is_correct: true
+      - position: 2
+        text: "empleados"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Los «empleados» trabajan directamente para la empresa, y aquí se habla de clientes que la recomiendan por convicción propia."
+        hint_specific: "Un empleado cobra un sueldo de la empresa. ¿Los elegidos eran clientes o trabajadores?"
+      - position: 3
+        text: "embajadas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Las «embajadas» son edificios o instituciones, y aquí se habla de personas elegidas para una campaña."
+        hint_specific: "Una embajada es un edificio. ¿La frase habla de un lugar o de personas?"
+  - position: 2
+    sentence: "Sin que nadie se lo pidiera, Camila se convirtió en {{blank}} de su gimnasio: hablaba de él en cada reunión."
+    hint_general: "Alguien que recomienda algo por su cuenta, sin que nadie se lo pida."
+    explanation: "Embajadora: alguien que recomienda algo por su cuenta, sin que nadie se lo pida. «Dueña» habla de propiedad, y «embajada» es un edificio, ninguna de las dos describe ese rol de Camila."
+    options:
+      - position: 1
+        text: "embajadora"
+        is_correct: true
+      - position: 2
+        text: "dueña"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dueña» habla de propiedad sobre el negocio, y la frase no dice que Camila fuera dueña del gimnasio, solo que lo recomendaba."
+        hint_specific: "Una dueña es propietaria. ¿La frase dice que Camila era dueña del gimnasio?"
+      - position: 3
+        text: "embajada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «embajada» es un edificio o institución, y aquí se habla de una persona que recomienda un gimnasio."
+        hint_specific: "Una embajada es un lugar. ¿La frase habla de un edificio o de una persona?"
+  - position: 3
+    sentence: "El actor firmó como {{blank}} de la fundación y ahora aparece en cada evento hablando de su causa."
+    hint_general: "Alguien que representa públicamente a una causa u organización."
+    explanation: "Embajador: alguien que representa públicamente a una causa u organización. «Donante» solo aporta dinero, sin necesariamente hablar en público de la causa, y «embajada» es un edificio."
+    options:
+      - position: 1
+        text: "embajador"
+        is_correct: true
+      - position: 2
+        text: "donante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «donante» solo aporta dinero, y aquí el actor aparece en eventos hablando públicamente de la causa."
+        hint_specific: "Un donante aporta dinero. ¿La frase dice que el actor solo dona o que también habla en público?"
+      - position: 3
+        text: "embajada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «embajada» es un edificio o institución, y aquí se habla de una persona firmando un acuerdo con la fundación."
+        hint_specific: "Una embajada no firma acuerdos como persona. ¿La frase habla de un edificio o de un actor?"
+  - position: 4
+    sentence: "El hotel invita cada año a un chef reconocido para que sea {{blank}} de su cocina en redes sociales."
+    hint_general: "Alguien que representa y promueve algo, usando su propia reputación."
+    explanation: "Embajador: alguien que representa y promueve algo con su propia reputación. «Cocinero» solo prepara los platos, sin necesariamente promoverlos en redes, y «embajada» es un edificio."
+    options:
+      - position: 1
+        text: "cocinero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cocinero» prepara los platos, y aquí se habla de alguien que promueve la cocina del hotel en redes sociales."
+        hint_specific: "Un cocinero prepara comida. ¿La frase habla de cocinar o de promover en redes?"
+      - position: 2
+        text: "embajador"
+        is_correct: true
+      - position: 3
+        text: "embajada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «embajada» es un edificio o institución, y aquí se habla de un chef que promueve la cocina del hotel."
+        hint_specific: "Una embajada no cocina ni publica en redes. ¿La frase habla de un edificio o de un chef?"
+  - position: 5
+    sentence: "Después de recuperarse, la exdeportista aceptó ser {{blank}} de la campaña contra el sedentarismo."
+    hint_general: "Alguien que presta su historia y su nombre para representar una causa."
+    explanation: "Embajadora: alguien que presta su historia y su nombre para representar una causa. «Paciente» describe a quien recibe tratamiento, y «embajada» es un edificio, ninguna de las dos explica este rol."
+    options:
+      - position: 1
+        text: "embajadora"
+        is_correct: true
+      - position: 2
+        text: "paciente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciente» describe a quien recibe tratamiento, y la frase dice que ya se recuperó y ahora representa la campaña."
+        hint_specific: "Un paciente está en tratamiento. ¿La frase dice que aún está en tratamiento?"
+      - position: 3
+        text: "embajada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «embajada» es un edificio o institución, y aquí se habla de una exdeportista que representa una campaña."
+        hint_specific: "Una embajada no se recupera de nada. ¿La frase habla de un edificio o de una persona?"
+  - position: 6
+    sentence: "La universidad nombró a la exalumna astronauta {{blank}} honoraria para que hablara de ciencia en los colegios."
+    hint_general: "Alguien que representa a una institución frente a otros públicos, por su prestigio."
+    explanation: "Embajadora: alguien que representa a una institución frente a otros públicos, por su prestigio. «Directora» implica un cargo de gestión diaria, y «embajada» es un edificio, no una persona."
+    options:
+      - position: 1
+        text: "directora"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Directora» implica un cargo de gestión diaria dentro de la institución, y aquí se habla de un rol honorario para representar a la universidad."
+        hint_specific: "Una directora gestiona el día a día. ¿La astronauta gestiona la universidad o solo la representa?"
+      - position: 2
+        text: "embajadora"
+        is_correct: true
+      - position: 3
+        text: "embajada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «embajada» es un edificio o institución, y aquí se nombra a una persona para un rol honorario."
+        hint_specific: "Una embajada no da charlas en colegios. ¿La frase habla de un edificio o de una persona?"
+  - position: 7
+    sentence: "El barrio entero considera a don Raúl el {{blank}} de la plaza: siempre la defiende ante cualquier cambio."
+    hint_general: "Alguien que defiende algo de forma constante, aunque nadie se lo haya pedido oficialmente."
+    explanation: "Embajador: alguien que defiende algo de forma constante, sin cargo oficial. «Fanático» es coloquial y suena obsesivo, y «embajada» es un edificio; ninguna de las dos explica ese respeto del barrio."
+    options:
+      - position: 1
+        text: "embajador"
+        is_correct: true
+      - position: 2
+        text: "fanático"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Fanático» es coloquial y suena obsesivo, y la frase describe a alguien que representa y defiende la plaza con respeto, no con obsesión."
+        hint_specific: "«Fanático» suena exagerado. ¿La frase busca una palabra exagerada o una que explique por qué confían en él?"
+      - position: 3
+        text: "embajada"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «embajada» es un edificio o institución, y aquí se habla de una persona que defiende una plaza del barrio."
+        hint_specific: "Una embajada no defiende plazas. ¿La frase habla de un edificio o de una persona?"
+  - position: 8
+    sentence: "La app de idiomas paga a creadores de contenido para que sean {{blank}} frente a su comunidad de seguidores."
+    hint_general: "Personas que representan a una marca frente a un público que ya las sigue y confía en ellas."
+    explanation: "Embajadores: personas que representan a una marca frente a un público que confía en ellas. «Programadores» diseñan la app técnicamente, y «embajadas» son edificios, ninguno describe ese rol."
+    options:
+      - position: 1
+        text: "embajadores"
+        is_correct: true
+      - position: 2
+        text: "programadores"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Los «programadores» diseñan la app técnicamente, y aquí se paga a creadores de contenido para hablarle a su comunidad."
+        hint_specific: "Un programador escribe código. ¿La app les paga por programar o por hablarle a su comunidad?"
+      - position: 3
+        text: "embajadas"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Las «embajadas» son edificios o instituciones, y aquí se habla de creadores de contenido frente a sus seguidores."
+        hint_specific: "Una embajada no tiene seguidores en redes. ¿La frase habla de un edificio o de personas?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Los tres clientes fieles"
+    body: "El equipo de marketing eligió a un cliente que llevaba años recomendando el producto sin que nadie se lo pidiera. «Ya eres embajador nuestro», le dijo la directora, «solo queremos hacerlo oficial y darte algo a cambio»."
+    before_phrase: "Ya recomiendas el producto todo el tiempo."
+    after_phrase: "Ya eres embajador nuestro."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Hablar bien de la marca"
+    body: "«¿Por qué crees que encajas con nuestra cultura?», preguntó la entrevistadora. Diego respondió: «Ya uso el producto hace años y hablo bien de él sin que nadie me lo pida; sería un embajador natural de la marca»."
+    before_phrase: "Ya hablo bien del producto sin que nadie me lo pida."
+    after_phrase: "Sería un embajador natural de la marca."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El defensor de la plaza"
+    body: "Cuando el ayuntamiento propuso cerrar la plaza, don Raúl fue el primero en juntar firmas. «Es el embajador de este lugar», dijo una vecina, «lleva treinta años cuidándola como si fuera suya»."
+    before_phrase: "Es quien más defiende esta plaza."
+    after_phrase: "Es el embajador de este lugar."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

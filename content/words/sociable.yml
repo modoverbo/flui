@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "sociable"
+status: "draft"
+lemma: "sociable"
+part_of_speech: "adjetivo"
+syllables: ["so", "cia", "ble"]
+stressed_syllable: 2
+ipa_latam: "[soˈsja.βle]"
+ipa_es: "[soˈθja.βle]"
+explanation: "Que le gusta tratar con gente y le resulta fácil acercarse a personas nuevas."
+example_sentence: "Después de dos semanas en el nuevo barrio, Tomás ya saludaba por nombre a la mitad de los vecinos: es muy sociable."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para describir a alguien que disfruta el contacto con gente nueva, no solo a quien es simpático con los conocidos."
+when_not_to_use: "No lo uses para quien solo es amable con su círculo cercano: sociable implica buscar gente nueva, no solo tratarla bien."
+collocations:
+  - "una persona sociable"
+  - "muy sociable"
+  - "ser poco sociable"
+family: ["sociabilidad"]
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "small-talk"
+    relevance: 1
+tags:
+  comodin: ["le gusta la gente", "buena onda con todos"]
+  funcion: ["describir personalidad"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "social"
+    difference: "«Social» describe algo relacionado con la sociedad o un grupo, en general; «sociable» describe a una persona que disfruta tratar con gente nueva."
+    memory_trick: "Un evento es social; una persona es sociable."
+replaces:
+  - before: "Le gusta mucho hablar con gente que no conoce"
+    after: "Es muy sociable"
+  - before: "Se le da bien hacer amigos nuevos rápido"
+    after: "Es sociable y hace amigos rápido"
+exercises:
+  - position: 1
+    sentence: "Nadie se aburre en las fiestas de Marina: es tan {{blank}} que ya conoce a la mitad de los invitados en diez minutos."
+    hint_general: "Describe a quien disfruta acercarse a personas que no conoce."
+    explanation: "Sociable: quien disfruta acercarse a personas que no conoce. «Social» describe algo relacionado con la sociedad, no a una persona en concreto, y «ruidosa» habla de volumen, no de buscar gente nueva."
+    options:
+      - position: 1
+        text: "sociable"
+        is_correct: true
+      - position: 2
+        text: "social"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Social» describe algo relacionado con la sociedad o un evento en general, y aquí se describe una cualidad concreta de Marina."
+        hint_specific: "«Social» describe un tipo de evento, no a una persona. ¿La frase habla de una fiesta o de Marina?"
+      - position: 3
+        text: "ruidosa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ruidosa» habla de volumen alto, y la frase describe a alguien que conoce gente rápido, no a alguien que hace ruido."
+        hint_specific: "Ruidosa describe volumen. ¿La frase habla de volumen o de conocer gente rápido?"
+  - position: 2
+    sentence: "Aunque trabaja sola desde casa, Camila es muy {{blank}} y siempre encuentra una excusa para salir a conocer gente."
+    hint_general: "Que le gusta tratar con gente y busca acercarse a personas nuevas."
+    explanation: "Sociable: que le gusta tratar con gente y busca acercarse a personas nuevas. «Solitaria» describiría justo lo contrario, y «social» describe algo relacionado con la sociedad, no una cualidad personal."
+    options:
+      - position: 1
+        text: "solitaria"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Solitaria» describiría justo lo contrario, y la frase dice que Camila siempre busca una excusa para salir a conocer gente."
+        hint_specific: "Solitaria es lo contrario. ¿Camila busca estar sola o busca conocer gente?"
+      - position: 2
+        text: "sociable"
+        is_correct: true
+      - position: 3
+        text: "social"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Social» describe algo relacionado con la sociedad en general, y aquí se describe una cualidad concreta de Camila."
+        hint_specific: "«Social» no describe a una persona directamente. ¿La frase habla de Camila o de un tema general?"
+  - position: 3
+    sentence: "El nuevo vendedor es tan {{blank}} que en su primera semana ya tenía el número de todos los clientes frecuentes."
+    hint_general: "Que le resulta fácil acercarse a personas que acaba de conocer."
+    explanation: "Sociable: a quien le resulta fácil acercarse a personas que acaba de conocer. «Puntual» describe cumplir horarios, sin relación con hacer contactos, y «social» describe algo general, no una cualidad personal."
+    options:
+      - position: 1
+        text: "sociable"
+        is_correct: true
+      - position: 2
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» describe a quien cumple los horarios, y la frase habla de la facilidad para hacer contactos, no de llegar a tiempo."
+        hint_specific: "Puntual describe horarios. ¿La frase habla de horarios o de hacer contactos?"
+      - position: 3
+        text: "social"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Social» describe algo relacionado con la sociedad en general, y aquí se describe una cualidad concreta del vendedor."
+        hint_specific: "«Social» no describe directamente a una persona. ¿La frase habla del vendedor o de un tema general?"
+  - position: 4
+    sentence: "Aunque el evento estaba lleno de desconocidos, Bruno se mostró tan {{blank}} que terminó organizando otro encuentro para el mes siguiente."
+    hint_general: "Que disfruta el contacto con gente nueva, incluso en un lugar lleno de desconocidos."
+    explanation: "Sociable: quien disfruta el contacto con gente nueva. «Grosero» describe mal trato, justo lo contrario, y «social» describe algo relacionado con la sociedad en general, no una cualidad concreta de Bruno."
+    options:
+      - position: 1
+        text: "sociable"
+        is_correct: true
+      - position: 2
+        text: "grosero"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grosero» describe mal trato hacia los demás, justo lo contrario de organizar otro encuentro con esas personas."
+        hint_specific: "Grosero es lo contrario. ¿Bruno trató mal a la gente o organizó otro encuentro con ellos?"
+      - position: 3
+        text: "social"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Social» describe algo relacionado con la sociedad en general, y aquí se describe una cualidad concreta de Bruno."
+        hint_specific: "«Social» no describe directamente a una persona. ¿La frase habla de Bruno o de un tema general?"
+  - position: 5
+    sentence: "De chica, Julia era tímida, pero con los años se volvió tan {{blank}} que ahora organiza las cenas de todo el barrio."
+    hint_general: "Describe a alguien a quien le gusta cada vez más tratar con gente nueva."
+    explanation: "Sociable: a quien le gusta cada vez más tratar con gente nueva. «Tímida» describe lo contrario, y «amable» describe buen trato en general, sin implicar buscar gente nueva."
+    options:
+      - position: 1
+        text: "sociable"
+        is_correct: true
+      - position: 2
+        text: "tímida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tímida» describe lo contrario, y la frase dice que Julia cambió y ahora organiza cenas para todo el barrio."
+        hint_specific: "Tímida es lo contrario. ¿La frase dice que Julia sigue igual o que cambió?"
+      - position: 3
+        text: "amable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amable» describe buen trato en general, y la frase destaca específicamente que Julia busca organizar encuentros con mucha gente."
+        hint_specific: "Amable no implica buscar gente nueva. ¿La frase habla solo de buen trato o de organizar encuentros grandes?"
+  - position: 6
+    sentence: "El perfil que buscaban para atención al cliente era alguien {{blank}}, capaz de charlar con cualquier persona que entrara."
+    hint_general: "Que disfruta hablar con cualquier persona nueva que se le acerque."
+    explanation: "Sociable: quien disfruta hablar con cualquier persona nueva. «Buena gente» es coloquial y demasiado general, y «social» describe algo de la sociedad en general, no a una persona."
+    options:
+      - position: 1
+        text: "sociable"
+        is_correct: true
+      - position: 2
+        text: "buena gente"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Buena gente» es coloquial y demasiado general, y aquí se busca nombrar con precisión la facilidad para hablar con cualquiera."
+        hint_specific: "«Buena gente» es una frase muy informal y general. ¿El anuncio pide una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "social"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Social» describe algo relacionado con la sociedad en general, y aquí se busca describir una cualidad de la persona candidata."
+        hint_specific: "«Social» no describe directamente a una persona. ¿El anuncio busca un tema general o una cualidad concreta?"
+  - position: 7
+    sentence: "En la mudanza, lo primero que hizo Elena fue tocar la puerta de los vecinos: siempre fue muy {{blank}}."
+    hint_general: "Que busca acercarse a gente nueva apenas tiene la oportunidad."
+    explanation: "Sociable: quien busca acercarse a gente nueva apenas tiene la oportunidad. «Desconfiada» describiría lo contrario, y «puntual» describe cumplir horarios, sin relación con buscar a los vecinos."
+    options:
+      - position: 1
+        text: "sociable"
+        is_correct: true
+      - position: 2
+        text: "desconfiada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desconfiada» describiría lo contrario, y la frase dice que Elena tocó la puerta de los vecinos apenas llegó, sin dudarlo."
+        hint_specific: "Desconfiada es lo contrario. ¿Elena evitó a los vecinos o los buscó?"
+      - position: 3
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» describe cumplir horarios, y la frase habla de la facilidad de Elena para acercarse a gente nueva."
+        hint_specific: "Puntual describe horarios. ¿La frase habla de horarios o de acercarse a los vecinos?"
+  - position: 8
+    sentence: "El perro de la familia es tan {{blank}} que corre a saludar a cualquiera que entre por la puerta."
+    hint_general: "Describe a quien busca el contacto con cualquiera que se acerque, sin desconfiar."
+    explanation: "Sociable: quien busca el contacto con cualquiera que se acerque. «Agresivo» describiría un rechazo hacia los desconocidos, y «social» describe algo de la sociedad en general, no a un animal."
+    options:
+      - position: 1
+        text: "sociable"
+        is_correct: true
+      - position: 2
+        text: "agresivo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Agresivo» describiría un rechazo hacia los desconocidos, y la frase dice que el perro corre a saludar a cualquiera."
+        hint_specific: "Agresivo es rechazo. ¿El perro ataca o saluda a los desconocidos?"
+      - position: 3
+        text: "social"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Social» describe algo relacionado con la sociedad en general, y aquí se describe una cualidad concreta del perro."
+        hint_specific: "«Social» no describe directamente a un animal. ¿La frase habla de una cualidad del perro o de un tema general?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Diez minutos y ya los conoce a todos"
+    body: "En la fiesta de fin de año, Marina ya había hablado con casi todo el equipo antes de que sirvieran la cena. «No sé cómo lo haces», le dijo un compañero nuevo. «Es que soy muy sociable, me cuesta quedarme callada en un rincón», respondió ella riendo."
+    before_phrase: "Me gusta mucho hablar con gente nueva."
+    after_phrase: "Soy muy sociable."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "El perfil para atención al cliente"
+    body: "«¿Cómo te llevas con desconocidos?», preguntó la entrevistadora. Bruno respondió: «Soy bastante sociable, disfruto conocer gente nueva y me cuesta poco entablar conversación». La entrevistadora sonrió y anotó la respuesta con interés."
+    before_phrase: "Me llevo bien con gente que no conozco."
+    after_phrase: "Soy bastante sociable."
+  - position: 3
+    scene: "familia"
+    conversation_type: "social"
+    title: "Los vecinos nuevos"
+    body: "Apenas terminaron de bajar las cajas, Elena ya había tocado tres puertas del edificio. «Siempre fuiste así de sociable», le dijo su hermano, «en la otra casa conocías a todo el barrio antes de que termináramos de mudarnos»."
+    before_phrase: "Siempre te gustó conocer a todos los vecinos."
+    after_phrase: "Siempre fuiste así de sociable."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

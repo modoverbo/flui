@@ -1,0 +1,228 @@
+schema_version: 1
+sort_order: 9104
+slug: "resarcir"
+status: "draft"
+lemma: "resarcir"
+part_of_speech: "verbo"
+syllables: ["re", "sar", "cir"]
+stressed_syllable: 3
+ipa_latam: "[re.sarˈsir]"
+ipa_es: "[re.sarˈθir]"
+explanation: "Pagar o hacer algo bueno por un perjuicio causado a alguien, para dejar las cosas en paz."
+example_sentence: "La empresa aceptó resarcir a los clientes por el vuelo cancelado con un bono de viaje."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Se usa mucho cuando el daño se puede reparar con dinero, un gesto o un cambio concreto, no solo con palabras."
+when_not_to_use: "No la uses para un simple «lo siento»: resarcir implica reparar el daño de alguna forma concreta."
+collocations:
+  - "resarcir el daño"
+  - "resarcir a alguien"
+  - "resarcir económicamente"
+replaces:
+  - before: "La empresa dijo que le iba a devolver el dinero por las molestias"
+    after: "La empresa se comprometió a resarcirlo por las molestias"
+  - before: "Le compró un regalo para compensar el mal rato"
+    after: "Le regaló algo para resarcirla del mal rato"
+  - before: "Al final le pagaron por el daño que le hicieron al auto"
+    after: "Al final lo resarcieron por el daño al auto"
+family: ["resarcimiento"]
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+tags:
+  comodin: ["compensar de alguna forma"]
+  funcion: ["compensar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "zurcir"
+    difference: "«Zurcir» es coser o remendar tela rota; «resarcir» es compensar un daño o un perjuicio causado a alguien. Solo se parecen en el sonido."
+    memory_trick: "Zurces una tela; resarces un daño."
+exercises:
+  - position: 1
+    sentence: "Después de romper la cerca con el auto, Cristóbal {{blank}} a sus vecinos pagando la reparación completa."
+    hint_general: "Busca el verbo para compensar un daño con algo concreto, no solo con palabras."
+    explanation: "Resarció: compensó el daño con algo concreto, pagando la reparación. «Zurció» sería coser tela, y «disculpó» sería solo pedir perdón, sin pagar nada."
+    options:
+      - position: 1
+        text: "zurció"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Zurcir» es coser o remendar tela, y aquí nadie cose nada: alguien paga por arreglar una cerca."
+        hint_specific: "«Zurcir» es de costura, para arreglar tela. ¿Aquí se arregla ropa o una cerca?"
+      - position: 2
+        text: "resarció"
+        is_correct: true
+      - position: 3
+        text: "disculpó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disculpar» es solo pedir perdón con palabras, y la frase dice que además pagó la reparación completa: hizo algo más que disculparse."
+        hint_specific: "«Disculpar» son solo palabras. ¿La frase dice que además pagó algo?"
+  - position: 2
+    sentence: "Cada vez que llegaba tarde a buscar a los niños, mi tío los {{blank}} con un helado camino a casa."
+    hint_general: "Busca el verbo para reparar, con un gesto concreto, la espera que él mismo causó."
+    explanation: "Resarcía: reparaba, con un gesto concreto, la espera que él mismo causaba. «Recompensaba» premiaría algo bueno, y «compensaba» no exige que haya una culpa detrás."
+    options:
+      - position: 1
+        text: "recompensaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recompensar» es premiar algo bueno que alguien hizo, y aquí no había ningún mérito que premiar: había una tardanza que reparar."
+        hint_specific: "«Recompensar» premia algo bueno. ¿Llegar tarde es algo que se premia?"
+      - position: 2
+        text: "resarcía"
+        is_correct: true
+      - position: 3
+        text: "compensaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compensar» es más general y no exige que haya una culpa de por medio, y aquí el tío sí llegaba tarde: había algo concreto que reparar."
+        hint_specific: "«Compensar» no siempre supone una culpa. ¿Aquí hay una tardanza de la que el tío es responsable?"
+  - position: 3
+    sentence: "El contrato exigía que el proveedor {{blank}} a la empresa por cada día de retraso en la entrega."
+    hint_general: "Busca el verbo para compensar, de alguna forma, cada día de retraso."
+    explanation: "Resarciera: compensara, de alguna forma, cada día de retraso. «Restituyera» devolvería exactamente lo mismo que se quitó, y «reembolsara» solo devolvería un pago anterior."
+    options:
+      - position: 1
+        text: "restituyera"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Restituir» es devolver exactamente lo que se quitó, y un retraso no se puede devolver: solo se puede compensar de otra forma."
+        hint_specific: "«Restituir» devuelve lo mismo que se quitó. ¿Se puede devolver un día perdido?"
+      - position: 2
+        text: "resarciera"
+        is_correct: true
+      - position: 3
+        text: "reembolsara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reembolsar» es devolver un dinero que ya se pagó, y el contrato no habla de devolver un pago anterior, sino de compensar cada día de retraso."
+        hint_specific: "«Reembolsar» devuelve un pago anterior. ¿El contrato habla de devolver algo que ya se pagó?"
+  - position: 4
+    sentence: "Después de perder el taladro que le había prestado su vecino, Agustín no sabía cómo {{blank}} a su vecino por la pérdida."
+    hint_general: "Busca el verbo para compensar, de alguna forma, lo que se perdió."
+    explanation: "Resarcir: compensar, de alguna forma, lo que se perdió. «Indemnizar» sonaría a un trámite de seguros, y «zurcir» sería coser tela, algo que no tiene nada que ver aquí."
+    options:
+      - position: 1
+        text: "indemnizar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Indemnizar» es un trámite de seguros o de tribunales, y aquí solo hay un vecino que perdió un taladro prestado: no hace falta ese lenguaje tan formal."
+        hint_specific: "«Indemnizar» suena a seguros o a tribunales. ¿Perder un taladro prestado necesita ese lenguaje?"
+      - position: 2
+        text: "resarcir"
+        is_correct: true
+      - position: 3
+        text: "zurcir"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Zurcir» es coser o remendar tela, y aquí no hay ninguna tela rota: hay un taladro perdido."
+        hint_specific: "«Zurcir» es de costura. ¿Aquí se habla de ropa o de un taladro?"
+  - position: 5
+    sentence: "«Sé que llegué tarde a tu cumpleaños, pero te {{blank}} invitándote a cenar este fin de semana», le dijo Iván a su hermana."
+    hint_general: "Busca el verbo para compensar, con un gesto concreto, el daño causado."
+    explanation: "Resarzo: compenso, con un gesto concreto, el daño causado. «Recompenso» premiaría algo bueno, y «disculpo» sería solo pedir perdón con palabras."
+    options:
+      - position: 1
+        text: "recompenso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recompensar» es premiar algo bueno, y llegar tarde no es algo bueno que haya que premiar: es un daño que hay que reparar."
+        hint_specific: "«Recompensar» premia algo bueno. ¿Llegar tarde a un cumpleaños es algo que se premia?"
+      - position: 2
+        text: "disculpo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Disculpar» es solo pedir perdón con palabras, y aquí además ofrece una cena: hace algo más que disculparse."
+        hint_specific: "«Disculpar» son solo palabras. ¿Aquí se ofrece algo más que una disculpa?"
+      - position: 3
+        text: "resarzo"
+        is_correct: true
+  - position: 6
+    sentence: "La aerolínea llevaba dos semanas {{blank}} a los pasajeros del vuelo cancelado con bonos de viaje."
+    hint_general: "Busca el verbo para compensar, de alguna forma, a los pasajeros afectados."
+    explanation: "Resarciendo: compensando, de alguna forma, a los pasajeros afectados. «Indemnizando» sonaría a un trámite de seguros, y «reembolsando» sería devolver exactamente el dinero pagado."
+    options:
+      - position: 1
+        text: "indemnizando"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Indemnizar» suena a un trámite de seguros o de tribunales, y aquí la aerolínea simplemente entrega bonos de viaje a sus pasajeros."
+        hint_specific: "«Indemnizar» suena a seguros o tribunales. ¿La frase describe un trámite legal, o bonos de viaje?"
+      - position: 2
+        text: "resarciendo"
+        is_correct: true
+      - position: 3
+        text: "reembolsando"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reembolsar» es devolver un dinero que ya se pagó, y un bono de viaje no es exactamente el dinero del boleto: es otra forma de compensar."
+        hint_specific: "«Reembolsar» devuelve el dinero pagado. ¿Un bono de viaje es lo mismo que devolver ese dinero?"
+  - position: 7
+    sentence: "Los vecinos que rompieron la reja del jardín comunitario {{blank}} al edificio pagando entre todos una reja nueva."
+    hint_general: "Busca el verbo para compensar, con dinero entre todos, el daño que causaron."
+    explanation: "Resarcieron: compensaron, con dinero entre todos, el daño que causaron. «Reembolsaron» devolvería un pago anterior que no existió, y «restituyeron» devolvería exactamente lo mismo que se rompió."
+    options:
+      - position: 1
+        text: "reembolsaron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reembolsar» es devolver un dinero ya pagado, y aquí nadie había pagado nada antes: pusieron dinero nuevo para reparar el daño."
+        hint_specific: "«Reembolsar» devuelve un pago anterior. ¿Aquí hay un pago anterior que devolver?"
+      - position: 2
+        text: "resarcieron"
+        is_correct: true
+      - position: 3
+        text: "restituyeron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Restituir» es devolver exactamente lo que se quitó, y una reja rota no se puede devolver igual: se repara con una nueva."
+        hint_specific: "«Restituir» devuelve lo mismo que se quitó. ¿Se puede devolver una reja rota tal cual?"
+  - position: 8
+    sentence: "Desde el accidente con el coche prestado, Soledad todavía no {{blank}} a su cuñado por completo."
+    hint_general: "Busca el verbo para compensar, del todo, el daño causado con el coche prestado."
+    explanation: "Ha resarcido: ha compensado, del todo, el daño causado. «Ha indemnizado» sonaría a un trámite legal, y «ha recompensado» premiaría algo bueno, cuando en realidad hay un daño que reparar."
+    options:
+      - position: 1
+        text: "ha indemnizado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Indemnizar» suena a un trámite de seguros o de tribunales, y aquí se trata de un arreglo personal entre cuñados, no de un proceso legal."
+        hint_specific: "«Indemnizar» suena a seguros o tribunales. ¿Aquí hay un trámite legal, o un arreglo entre familiares?"
+      - position: 2
+        text: "ha recompensado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recompensar» es premiar algo bueno, y prestar el coche no fue el problema: el problema fue el accidente que hay que reparar."
+        hint_specific: "«Recompensar» premia algo bueno. ¿Aquí hay algo bueno que premiar, o un daño que reparar?"
+      - position: 3
+        text: "ha resarcido"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El florero de la abuela"
+    body: "Mientras jugaban a la pelota en la sala, los primos rompieron el florero que había sido de la abuela. Entre los tres juntaron su domingo y compraron uno parecido para resarcirla. Ella sonrió: «Lo importante no era el florero, pero gracias por el gesto»."
+    before_phrase: "Perdón por romperlo, no sabíamos qué hacer."
+    after_phrase: "Juntamos para resarcirte por el florero."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El vestido manchado"
+    body: "En la fiesta, Camila chocó con Valentina y le manchó el vestido de vino tinto. Al día siguiente, le mandó el número de una tintorería y se ofreció a resarcirla del costo de la limpieza. Valentina le agradeció el detalle y quedaron en verse la próxima semana."
+    before_phrase: "Perdón por lo del vestido, yo pago la tintorería."
+    after_phrase: "Quiero resarcirte por lo del vestido."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El envío perdido"
+    body: "El paquete del cliente se perdió en el reparto y llegó dos semanas tarde. Rodrigo llamó personalmente para explicar lo ocurrido y ofreció resarcir al cliente con el envío gratis del próximo pedido. El cliente aceptó y siguió comprando en la tienda."
+    before_phrase: "Lamentamos el retraso, le devolvemos el envío."
+    after_phrase: "Queremos resarcirlo con el próximo envío gratis."
+provenance:
+  generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
+  gate: null
+  checked_on: "2026-09-18"

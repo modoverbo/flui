@@ -1,0 +1,232 @@
+# Word 9 of batch W4 humor, written as assigned. Passes metrics cleanly:
+# zipf 3.22, dp 0.29. Same brand-voice caution as the brief: every exercise
+# and reading aims the exaggeration at an idea, a policy, a format, or
+# self-directed teasing — never at a person's traits, body, or nationality.
+schema_version: 1
+sort_order: 9309
+slug: "ridiculizar"
+status: "draft"
+lemma: "ridiculizar"
+part_of_speech: "verbo"
+syllables: ["ri", "di", "cu", "li", "zar"]
+stressed_syllable: 5
+ipa_latam: "[ri.ði.ku.liˈsar]"
+ipa_es: "[ri.ði.ku.liˈθar]"
+explanation: "Hacer una versión muy grande de las fallas de una idea, para mostrar lo débil que es ante el público."
+example_sentence: "El columnista ridiculizó la propuesta de ley exagerando cada uno de sus puntos más débiles."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Funciona mejor con ideas, argumentos o decisiones públicas; usarla sobre una persona en concreto suena agresivo."
+when_not_to_use: "No la uses para el físico, el origen o la forma de hablar de alguien; ahí deja de ser crítica y se vuelve un ataque."
+collocations:
+  - "ridiculizar una idea"
+  - "ridiculizar un argumento"
+replaces:
+  - before: "Se burló de la propuesta hasta dejarla como una tontería"
+    after: "Ridiculizó la propuesta"
+  - before: "Exageró tanto el argumento que quedó como un chiste"
+    after: "Ridiculizó el argumento"
+family: ["ridículo", "ridiculez"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["burlarse de"]
+  funcion: ["criticar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "criticar"
+    difference: "«Criticar» es evaluar algo señalando lo bueno y lo malo; «ridiculizar» exagera solo lo malo hasta que parezca absurdo."
+    memory_trick: "Criticar pesa los dos lados; ridiculizar solo se queda con el peor."
+  - confused_with: "parodiar"
+    difference: "«Parodiar» imita el estilo de algo para divertir, sin necesariamente atacarlo; «ridiculizar» busca dejarlo mal, no solo imitarlo."
+    memory_trick: "Parodiar copia el estilo; ridiculizar apunta al fallo."
+exercises:
+  - position: 1
+    sentence: "El cómico {{blank}} la nueva ley de estacionamiento en su monólogo, imaginando a la policía multando hasta las bicicletas estacionadas."
+    hint_general: "Busca el verbo para exagerar los puntos débiles de algo hasta que suene absurdo."
+    explanation: "Ridiculizó: el cómico exageró los puntos débiles de la ley hasta que sonara absurda. «Radicalizó» es volver algo más extremo, y «explicó» es aclarar con información, ninguna encaja con exagerar para hacer reír."
+    options:
+      - position: 1
+        text: "radicalizó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Radicalizar» es volver más extremista una postura, y aquí el cómico no cambió ninguna postura: exageró la ley hasta que sonara absurda."
+        hint_specific: "«Radicalizar» es volver algo más extremo. ¿El cómico cambió una postura o exageró algo hasta lo absurdo?"
+      - position: 2
+        text: "ridiculizó"
+        is_correct: true
+      - position: 3
+        text: "explicó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Explicar» es aclarar algo con información, y el cómico no aclaró nada: exageró los puntos débiles de la ley para hacer reír."
+        hint_specific: "«Explicar» es aclarar con información. ¿El cómico aclaró la ley o exageró sus puntos débiles?"
+  - position: 2
+    sentence: "En la revista interna, Nicolás {{blank}} la política de «cero correos después de las seis», con una tira cómica sobre alguien escondiéndose para revisar el celular."
+    hint_general: "Piensa en exagerar una política de la empresa hasta que suene absurda, con humor."
+    explanation: "Ridiculizó: Nicolás exageró la política hasta volverla absurda, con una tira cómica. «Resumió» es acortar sin exagerar, y «aprobó» es estar de acuerdo, ninguna encaja con mostrar lo absurdo de algo."
+    options:
+      - position: 1
+        text: "resumió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resumir» es acortar algo sin cambiar su sentido, y Nicolás exageró la política hasta volverla absurda, no solo la resumió."
+        hint_specific: "«Resumir» es acortar sin exagerar. ¿Nicolás resumió la política o la exageró hasta lo absurdo?"
+      - position: 2
+        text: "ridiculizó"
+        is_correct: true
+      - position: 3
+        text: "aprobó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aprobar» es estar de acuerdo con algo, y la tira cómica de Nicolás mostraba justo lo contrario: lo absurdo de la política."
+        hint_specific: "«Aprobar» es estar de acuerdo. ¿La tira cómica mostraba acuerdo o lo absurdo de la política?"
+  - position: 3
+    sentence: "El actor {{blank}} con cariño su propio acento al llegar a la ciudad, imitándose a sí mismo frente a todo el público."
+    hint_general: "Busca el verbo para exagerar algo de uno mismo, con cariño, frente a otros."
+    explanation: "Ridiculizó: el actor exageró su propio acento con cariño, frente al público. «Vituperó» tiene un tono muy duro y literario, y «ocultó» es esconder algo, justo lo contrario de mostrarlo exagerado."
+    options:
+      - position: 1
+        text: "vituperó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Vituperar» tiene un tono muy duro y literario, y aquí el actor se rió de sí mismo con cariño, sin ningún ataque serio."
+        hint_specific: "«Vituperar» suena muy duro y literario. ¿El actor se atacó con dureza o se rió de sí mismo con cariño?"
+      - position: 2
+        text: "ocultó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ocultar» es esconder algo, y el actor hizo justo lo contrario: mostró su acento frente a todo el público, exagerándolo para hacer reír."
+        hint_specific: "«Ocultar» es esconder algo. ¿El actor escondió su acento o lo mostró exagerado frente a todos?"
+      - position: 3
+        text: "ridiculizó"
+        is_correct: true
+  - position: 4
+    sentence: "Durante el debate televisado, la candidata evitó cualquier comentario que pudiera sonar a que {{blank}} la propuesta de su rival, y prefirió rebatirla con datos."
+    hint_general: "Piensa en dar a entender que alguien exagera algo hasta volverlo absurdo, sin decirlo directamente."
+    explanation: "Ridiculizara: la candidata evitó sonar como si exagerara la propuesta de su rival hasta lo absurdo. «Troleara» es muy informal para un debate televisado, e «ignorara» es no prestar atención, algo distinto de rebatir con datos."
+    options:
+      - position: 1
+        text: "troleara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Trolear» es una palabra de internet, muy informal para describir un debate televisado formal."
+        hint_specific: "«Trolear» es una palabra muy informal de internet. ¿Encaja con el tono de un debate televisado formal?"
+      - position: 2
+        text: "ignorara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» es no prestar atención a algo, y la candidata sí prestó atención: prefirió rebatir la propuesta con datos, en vez de exagerarla para burlarse."
+        hint_specific: "«Ignorar» es no prestar atención. ¿La candidata ignoró la propuesta o la rebatió con datos?"
+      - position: 3
+        text: "ridiculizara"
+        is_correct: true
+  - position: 5
+    sentence: "Estela {{blank}} en su columna el trámite para renovar el pasaporte, describiendo una fila imaginaria que daba la vuelta al edificio tres veces."
+    hint_general: "Busca el verbo para exagerar un trámite lento hasta volverlo una escena absurda, con humor."
+    explanation: "Ridiculizó: Estela exageró el trámite con una fila imaginaria absurda. «Documentó» es registrar con datos reales, y «defendió» es tomar partido a favor, ninguna encaja con inventar una exageración."
+    options:
+      - position: 1
+        text: "documentó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Documentar» es registrar algo con datos reales, y Estela inventó una fila imaginaria para exagerar el trámite, no lo documentó con hechos."
+        hint_specific: "«Documentar» es registrar con datos reales. ¿Estela documentó el trámite o inventó una exageración?"
+      - position: 2
+        text: "ridiculizó"
+        is_correct: true
+      - position: 3
+        text: "defendió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Defender» es tomar partido a favor de algo, y la columna de Estela hacía justo lo contrario: mostraba el trámite como algo absurdo."
+        hint_specific: "«Defender» es tomar partido a favor. ¿La columna defendía el trámite o lo mostraba absurdo?"
+  - position: 6
+    sentence: "En la fiesta, Facundo {{blank}} su propio baile de la boda, repitiendo el paso torpe que hizo hace años frente a todos los invitados."
+    hint_general: "Piensa en exagerar algo torpe de uno mismo, entre risas, para divertir a los demás."
+    explanation: "Ridiculizó: Facundo exageró su propio baile torpe frente a todos, entre risas. «Recordó» es solo traer algo a la memoria, y «grabó» es registrar con una cámara, ninguna encaja con actuarlo exagerado en vivo."
+    options:
+      - position: 1
+        text: "recordó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recordar» es traer algo a la memoria sin exagerar, y Facundo hizo mucho más: repitió y exageró el paso torpe para hacer reír a todos."
+        hint_specific: "«Recordar» es solo traer algo a la memoria. ¿Facundo solo recordó el baile o lo exageró para reírse de sí mismo?"
+      - position: 2
+        text: "ridiculizó"
+        is_correct: true
+      - position: 3
+        text: "grabó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grabar» es registrar algo con una cámara, y aquí Facundo lo actuó en vivo frente a los invitados, exagerándolo."
+        hint_specific: "«Grabar» es registrar con una cámara. ¿Facundo grabó el baile o lo actuó exagerado en vivo?"
+  - position: 7
+    sentence: "El grupo de teatro {{blank}} la moda de las dietas milagro, con una escena sobre alguien que solo come humo de incienso."
+    hint_general: "Busca el verbo para exagerar una moda hasta convertirla en una escena absurda de teatro."
+    explanation: "Ridiculiza: el grupo de teatro exagera la moda de las dietas con una escena absurda. «Investiga» es buscar información, y «promueve» es apoyar algo, ninguna encaja con inventar una escena para hacer reír."
+    options:
+      - position: 1
+        text: "investiga"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Investigar» es buscar información sobre algo, y el grupo de teatro no investigó: inventó una escena absurda para hacer reír."
+        hint_specific: "«Investigar» es buscar información. ¿El grupo investiga la moda o inventa una escena absurda?"
+      - position: 2
+        text: "ridiculiza"
+        is_correct: true
+      - position: 3
+        text: "promueve"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Promover» es apoyar algo para que se use más, y la escena del grupo de teatro hace justo lo contrario: muestra lo absurdo de la moda."
+        hint_specific: "«Promover» es apoyar algo. ¿La escena promueve la moda o muestra lo absurdo?"
+  - position: 8
+    sentence: "En la reunión de cierre, Matías {{blank}} el formato de las presentaciones eternas, con una diapositiva falsa que decía «continuará en la próxima reunión»."
+    hint_general: "Piensa en exagerar un problema conocido de la oficina hasta convertirlo en una broma."
+    explanation: "Ridiculizó: Matías exageró el formato de las presentaciones eternas con una diapositiva falsa. «Corrigió» es arreglar un error puntual, y «archivó» es guardar algo sin más, ninguna encaja con exagerar para hacer reír."
+    options:
+      - position: 1
+        text: "corrigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corregir» es arreglar un error puntual, y Matías exageró el problema completo del formato para hacer reír a todos."
+        hint_specific: "«Corregir» es arreglar un error puntual. ¿Matías corrigió un detalle o exageró todo el formato?"
+      - position: 2
+        text: "ridiculizó"
+        is_correct: true
+      - position: 3
+        text: "archivó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Archivar» es guardar algo sin más, y Matías hizo lo contrario: mostró el problema del formato de forma exagerada y divertida."
+        hint_specific: "«Archivar» es guardar algo sin más. ¿Matías archivó el tema o lo mostró exagerado?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La tira cómica de la revista interna"
+    body: "Nicolás dibujaba una tira cómica cada mes para la revista interna de la empresa. Cuando llegó la nueva política de «cero correos después de las seis», ridiculizó el tema con un personaje escondido bajo el escritorio revisando el celular. El área de recursos humanos terminó pidiéndole la tira enmarcada."
+    before_phrase: "Exageré tanto la política que quedó como un chiste."
+    after_phrase: "Ridiculicé la política con una tira cómica."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El baile de la boda"
+    body: "En cada fiesta familiar, alguien pide que Facundo repita el paso torpe que hizo en su propia boda. Él mismo ridiculiza el momento cada vez, exagerándolo un poco más, y todos terminan llorando de risa, incluida su esposa, que estuvo ahí para verlo la primera vez."
+    before_phrase: "Exagero mi propio baile torpe para hacer reír a todos."
+    after_phrase: "Ridiculizo mi propio baile torpe para hacer reír a todos."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La dieta del humo"
+    body: "El grupo de teatro de barrio buscaba un tema para su próxima función y alguien propuso las dietas milagro que circulaban en redes. Ridiculizaron la moda con una escena sobre una mujer que solo comía humo de incienso, y la función se llenó tres fines de semana seguidos."
+    before_phrase: "Nos burlamos tanto de la moda que quedó como un chiste."
+    after_phrase: "Ridiculizamos la moda con una escena de teatro."
+provenance:
+  generator: "flui authoring agent — batch W4 humor"
+  gate: null
+  checked_on: "2026-09-18"

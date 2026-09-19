@@ -1,0 +1,228 @@
+schema_version: 1
+sort_order: 9101
+slug: "implorar"
+status: "draft"
+lemma: "implorar"
+part_of_speech: "verbo"
+syllables: ["im", "plo", "rar"]
+stressed_syllable: 3
+ipa_latam: "[im.ploˈrar]"
+ipa_es: "[im.ploˈrar]"
+explanation: "Pedir algo con mucha urgencia y sentimiento, casi de rodillas, porque de verdad lo necesitas."
+example_sentence: "Cuando el médico dijo que no había nada más que hacer, la familia le imploró que probara un último tratamiento."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Suena natural en momentos de mucha necesidad o dolor; no la uses para un pedido cualquiera."
+when_not_to_use: "No la uses para pedir algo simple o de rutina: suena forzada si solo quieres que te pasen el pan."
+collocations:
+  - "implorar perdón"
+  - "implorar clemencia"
+  - "implorar ayuda"
+replaces:
+  - before: "Le rogué de mil maneras que no se fuera"
+    after: "Le imploré que no se fuera"
+  - before: "Casi de rodillas le pedí una última oportunidad"
+    after: "Le imploré una última oportunidad"
+  - before: "Le supliqué tanto que hasta me dio vergüenza"
+    after: "Le imploré tanto que hasta me dio vergüenza"
+family: ["imploración", "implorante"]
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+tags:
+  comodin: ["rogar mucho"]
+  funcion: ["suplicar"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "explorar"
+    difference: "«Explorar» es investigar o recorrer un lugar o un tema; «implorar» es pedir algo con mucha urgencia emocional. Solo se parecen en el sonido."
+    memory_trick: "Exploras un lugar; imploras a una persona."
+exercises:
+  - position: 1
+    sentence: "Cuando el médico dijo que no quedaban opciones, Renata le {{blank}} que probara un último tratamiento."
+    hint_general: "Busca el verbo para pedir algo con mucha desesperación, casi sin fuerzas."
+    explanation: "Imploró: pidió con desesperación, sin poder hacer nada más. «Explorar» es investigar un lugar, y «exigió» sería dar una orden, algo que ella no puede hacer aquí."
+    options:
+      - position: 1
+        text: "explorar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Explorar» es investigar algo, y aquí nadie investiga: Renata pide algo con desesperación."
+        hint_specific: "«Explorar» va de investigar o descubrir. ¿Renata quiere descubrir algo o está pidiendo desesperada?"
+      - position: 2
+        text: "imploró"
+        is_correct: true
+      - position: 3
+        text: "exigió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» es dar una orden con autoridad, y Renata no tiene ningún poder sobre el médico: solo puede pedir con desesperación."
+        hint_specific: "«Exigir» suena a orden. ¿Renata está en posición de exigir o de rogar?"
+  - position: 2
+    sentence: "De niño, Emilio le {{blank}} a su padre cada domingo que lo llevara al parque."
+    hint_general: "Busca el verbo para pedir algo muchas veces, en voz alta y con muchas ganas."
+    explanation: "Imploraba: pedía en voz alta, una y otra vez. «Mendigaba» sería pedir limosna a un desconocido, y «anhelaba» es un deseo silencioso que no se dice."
+    options:
+      - position: 1
+        text: "imploraba"
+        is_correct: true
+      - position: 2
+        text: "mendigaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mendigar» es pedir limosna o ayuda material a desconocidos, y Emilio le pedía algo a su propio padre, no dinero ni comida."
+        hint_specific: "«Mendigar» se asocia a pedir limosna. ¿Emilio pide dinero o pide un paseo?"
+      - position: 3
+        text: "anhelaba"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anhelar» es desear algo en silencio, y Emilio lo decía en voz alta, cada domingo, directamente a su padre."
+        hint_specific: "«Anhelar» es un deseo callado. ¿Emilio se queda callado o se lo pide a su padre?"
+  - position: 3
+    sentence: "Nadie esperaba que Julia le {{blank}} al gerente una segunda oportunidad, casi entre lágrimas, después de lo ocurrido."
+    hint_general: "Busca el verbo para pedir algo con mucha humildad, sabiendo que no tienes ningún derecho a recibirlo."
+    explanation: "Implorara: pedir con humildad algo que sabes que no te deben. «Solicitara» sería un trámite frío, y «reclamara» supondría creer que tiene derecho a esa oportunidad."
+    options:
+      - position: 1
+        text: "solicitara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Solicitar» es un trámite formal y frío, y aquí Julia se lo pide casi entre lágrimas: no es un formulario, es una súplica."
+        hint_specific: "«Solicitar» suena a trámite de oficina. ¿Esta escena es un formulario o una súplica con lágrimas?"
+      - position: 2
+        text: "reclamara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» es exigir algo que sientes que te corresponde, y Julia sabe que no tiene ningún derecho a esa segunda oportunidad."
+        hint_specific: "«Reclamar» supone tener derecho a algo. ¿Julia cree que se lo deben, o sabe que depende de la buena voluntad del gerente?"
+      - position: 3
+        text: "implorara"
+        is_correct: true
+  - position: 4
+    sentence: "Simón no quería {{blank}}, pero después de la ruptura entendió que era su única opción para que ella volviera."
+    hint_general: "Es el verbo para pedirle a alguien, con mucha humildad, que vuelva."
+    explanation: "Implorar: pedir con mucha humildad que alguien vuelva. «Explorar» es investigar algo nuevo, y «pretender» sería dar por hecho algo que Simón no tiene ninguna certeza de conseguir."
+    options:
+      - position: 1
+        text: "implorar"
+        is_correct: true
+      - position: 2
+        text: "explorar"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Explorar» es investigar algo nuevo, y Simón no quiere investigar nada: quiere que su ex regrese."
+        hint_specific: "«Explorar» habla de investigar. ¿Simón quiere descubrir algo o recuperar a alguien?"
+      - position: 3
+        text: "pretender"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pretender» es dar por hecho que algo va a pasar, casi con seguridad, y Simón no tiene ninguna certeza: solo le queda pedir con humildad."
+        hint_specific: "«Pretender» suena a dar algo por seguro. ¿Simón está seguro de que ella va a volver?"
+  - position: 5
+    sentence: "«Te {{blank}} que no cuelgues, mamá, solo escúchame un minuto», le dijo Daniela por teléfono."
+    hint_general: "Busca el verbo para pedirle a alguien, con mucha humildad, que te preste un minuto."
+    explanation: "Imploro: pido con mucha humildad que me escuchen. «Mendigo» sería pedir limosna a un desconocido, y «reclamo» sería exigir algo que se supone que me deben."
+    options:
+      - position: 1
+        text: "imploro"
+        is_correct: true
+      - position: 2
+        text: "mendigo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mendigar» es pedir limosna a un desconocido, y Daniela le habla a su propia madre, no le pide dinero."
+        hint_specific: "«Mendigar» es cosa de pedir limosna. ¿Daniela le pide dinero a su madre?"
+      - position: 3
+        text: "reclamo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» es exigir algo que crees que te deben, y Daniela solo pide un minuto de atención, no exige nada."
+        hint_specific: "«Reclamar» supone exigir un derecho. ¿Daniela exige algo o solo pide que la escuchen?"
+  - position: 6
+    sentence: "Con la mirada baja y {{blank}} en silencio, Octavio esperó la respuesta del comité de becas."
+    hint_general: "Busca el gesto silencioso de quien pide algo con todo el cuerpo, sin decir una palabra."
+    explanation: "Implorando: pidiendo con gestos, sin palabras. «Clamando» sería alzar la voz, lo contrario del silencio de la escena, y «desesperándose» describe un sentimiento, no un gesto hacia el comité."
+    options:
+      - position: 1
+        text: "clamando"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Clamar» es gritar o pedir en voz muy alta, y la escena dice que Octavio está en silencio: no encajan juntas."
+        hint_specific: "«Clamar» va de gritar o alzar la voz. ¿La escena dice que Octavio grita o que calla?"
+      - position: 2
+        text: "implorando"
+        is_correct: true
+      - position: 3
+        text: "desesperándose"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desesperarse» describe lo que siente por dentro, y la frase necesita un gesto dirigido al comité, no solo una emoción interna."
+        hint_specific: "«Desesperarse» habla de un sentimiento propio. ¿La frase pide un gesto hacia el comité o solo una emoción?"
+  - position: 7
+    sentence: "Los tres hermanos le {{blank}} a su padre que los dejara quedarse una noche más en la playa."
+    hint_general: "Busca el verbo para pedir algo con muchas ganas, sabiendo que la decisión no es tuya."
+    explanation: "Imploraron: pidieron con muchas ganas algo que no dependía de ellos. «Exigieron» sonaría a orden, y «desearon» es un deseo que no se dice en voz alta."
+    options:
+      - position: 1
+        text: "exigieron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Exigir» es pedir con autoridad, como si tuvieran derecho a decidir, y los hermanos dependen por completo del permiso de su padre."
+        hint_specific: "«Exigir» suena a orden. ¿Los hermanos tienen el poder de decidir o dependen del permiso de su padre?"
+      - position: 2
+        text: "imploraron"
+        is_correct: true
+      - position: 3
+        text: "desearon"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desear» es un deseo callado, y la frase dice que se lo pidieron directamente a su padre, en voz alta."
+        hint_specific: "«Desear» no necesita decirse en voz alta. ¿Los hermanos se lo pidieron directamente a su padre?"
+  - position: 8
+    sentence: "Aunque nunca lo admitiría en público, más de una vez Nicolás le {{blank}} a su jefe una segunda oportunidad."
+    hint_general: "Busca el verbo para pedir, con vergüenza y humildad, algo que no se tiene derecho a recibir."
+    explanation: "Ha implorado: ha pedido con vergüenza algo que no le correspondía. «Ha solicitado» sería un trámite frío, y «ha reclamado» supondría creer que tenía derecho a esa oportunidad."
+    options:
+      - position: 1
+        text: "ha solicitado"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Solicitar» es un trámite formal, como llenar un papel, y la frase dice que es algo que Nicolás nunca admitiría en público: es más humillante que un simple trámite."
+        hint_specific: "«Solicitar» suena a formulario. ¿Por qué Nicolás no lo admitiría en público si fuera solo un trámite?"
+      - position: 2
+        text: "ha reclamado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Reclamar» es exigir algo que se supone que te deben, y Nicolás sabe que una segunda oportunidad no es un derecho suyo."
+        hint_specific: "«Reclamar» supone tener derecho a algo. ¿Una segunda oportunidad es algo que se debe, o un favor?"
+      - position: 3
+        text: "ha implorado"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La última llamada"
+    body: "Cuando su abuela empeoró, Marina tomó el teléfono con las manos temblorosas. «Implórale al doctor que venga esta noche», le dijo su tía. Marina llamó y, con la voz quebrada, le imploró que no esperara hasta mañana. El doctor llegó antes de las diez."
+    before_phrase: "Por favor, por favor, ven esta noche."
+    after_phrase: "Le imploré que viniera esta noche."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El último baile"
+    body: "En la boda de su prima, Felipe vio que la fiesta se acababa y él aún no había bailado con Verónica. Se acercó y, medio en broma, medio en serio, le imploró un último baile antes de que sonara la última canción. Ella se rio y le dio la mano."
+    before_phrase: "Ay, por favor, uno más, el último."
+    after_phrase: "Te imploro un último baile."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Segunda oportunidad"
+    body: "Después del error en el informe, Cristóbal pensó que lo despedirían. Reunió el valor y le imploró a su jefa que le dejara corregirlo antes de mostrárselo al cliente. Su jefa aceptó, con una condición: que fuera la última vez."
+    before_phrase: "Deme una oportunidad más, se lo pido de verdad."
+    after_phrase: "Le imploré una oportunidad más."
+provenance:
+  generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
+  gate: null
+  checked_on: "2026-09-18"

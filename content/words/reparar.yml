@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "reparar"
+status: "draft"
+lemma: "reparar"
+part_of_speech: "verbo"
+syllables: ["re", "pa", "rar"]
+stressed_syllable: 3
+ipa_latam: "[re.paˈɾaɾ]"
+ipa_es: "[re.paˈɾaɾ]"
+explanation: "Notar algo o a alguien que antes había pasado sin llamar la atención."
+example_sentence: "Solo alguien tan observador como Hugo podía reparar en un detalle tan pequeño como ese."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsalo con la palabra «en» para notar un detalle sutil: «reparar en algo», nunca solo «reparar algo» con este sentido."
+when_not_to_use: "No lo uses sin la palabra «en» si quieres este sentido: sin ella, reparar significa arreglar algo roto."
+collocations:
+  - "reparar en algo"
+  - "reparar en un detalle"
+  - "nadie reparó en"
+family: []
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["fijarse en", "notar algo"]
+  funcion: ["observar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "arreglar"
+    difference: "Arreglar es solucionar algo que está roto o mal; reparar en algo, con esta preposición, es notar un detalle que antes había pasado desapercibido."
+    memory_trick: "Arreglas lo roto; reparas en lo que nadie había visto."
+replaces:
+  - before: "Notó el gesto triste que nadie más había visto"
+    after: "Reparó en el gesto triste que nadie más había visto"
+  - before: "Se fijó en un detalle que a los demás se les pasó"
+    after: "Reparó en un detalle que a los demás se les pasó"
+exercises:
+  - position: 1
+    sentence: "Nadie más lo notó, pero Sofía {{blank}} en el gesto triste que hizo su amiga al saludar."
+    hint_general: "Notar algo que antes había pasado sin llamar la atención de nadie más."
+    explanation: "Reparó: notó algo que había pasado sin llamar la atención. «Pensó» sugiere reflexionar sobre algo ya sabido, y «arregló» implica solucionar algo roto, sin relación con notar un gesto."
+    options:
+      - position: 1
+        text: "reparó"
+        is_correct: true
+      - position: 2
+        text: "pensó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pensar en» sugiere reflexionar sobre algo ya conocido, y la frase describe notar por primera vez un gesto que nadie más había visto."
+        hint_specific: "Pensar en algo es reflexionar sobre lo ya sabido. ¿Sofía reflexionó sobre algo conocido o notó algo nuevo?"
+      - position: 3
+        text: "arregló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arreglar» implica solucionar algo que está roto o mal, sin relación con notar un gesto triste en un saludo."
+        hint_specific: "Arreglar soluciona algo roto. ¿Sofía arregló algo o notó un gesto?"
+  - position: 2
+    sentence: "Mientras arreglaba la impresora, el técnico {{blank}} en un cable suelto que nadie había visto antes."
+    hint_general: "Notar un detalle sutil mientras se hace otra cosa al mismo tiempo."
+    explanation: "Reparó: notó un detalle sutil mientras hacía otra cosa. «Repartió» implica distribuir algo entre varios, y «pensó» sugiere reflexionar sobre algo ya sabido, ninguno describe notar el cable."
+    options:
+      - position: 1
+        text: "reparó"
+        is_correct: true
+      - position: 2
+        text: "repartió"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Repartir» implica distribuir algo entre varias personas, sin relación con notar un cable suelto detrás de una impresora."
+        hint_specific: "Repartir distribuye algo entre varios. ¿El técnico repartió algo o notó un cable?"
+      - position: 3
+        text: "pensó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pensar en» sugiere reflexionar sobre algo ya conocido, y aquí el técnico notó por primera vez el cable mientras arreglaba la impresora."
+        hint_specific: "Pensar en algo es reflexionar sobre lo ya sabido. ¿El técnico reflexionó o notó algo nuevo?"
+  - position: 3
+    sentence: "Bruno {{blank}} en el silencio de su compañero recién al final de la reunión, cuando ya era tarde para preguntar."
+    hint_general: "Notar un detalle, aunque sea recién al final de un momento importante."
+    explanation: "Reparó: notó un detalle, aunque fuera al final de la reunión. «Insistió» implica repetir un pedido, y «arregló» implica solucionar algo roto, ninguno describe notar el silencio de alguien."
+    options:
+      - position: 1
+        text: "reparó"
+        is_correct: true
+      - position: 2
+        text: "insistió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistir» implica repetir un pedido varias veces, y la frase describe a Bruno notando el silencio de su compañero, no repitiendo nada."
+        hint_specific: "Insistir es repetir un pedido. ¿Bruno insistió en algo o notó el silencio de su compañero?"
+      - position: 3
+        text: "arregló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arreglar» implica solucionar algo que está roto o mal, sin relación con notar el silencio de un compañero en una reunión."
+        hint_specific: "Arreglar soluciona algo roto. ¿Bruno arregló algo o notó un silencio?"
+  - position: 4
+    sentence: "Nadie {{blank}} en que Camila llevaba días sin sonreír, hasta que ella misma lo dijo en voz alta."
+    hint_general: "Notar un cambio de ánimo en alguien, algo que en esta frase nadie hizo hasta tarde."
+    explanation: "Reparó: notó un cambio de ánimo en alguien. «Pensó» sugiere reflexionar sobre algo ya sabido, y «arregló» implica solucionar algo roto, ninguno describe notar que Camila no sonreía."
+    options:
+      - position: 1
+        text: "reparó"
+        is_correct: true
+      - position: 2
+        text: "pensó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Pensar en» sugiere reflexionar sobre algo ya conocido, y la frase describe que nadie había notado antes que Camila no sonreía."
+        hint_specific: "Pensar en algo es reflexionar sobre lo sabido. ¿La frase habla de reflexionar o de notar algo por primera vez?"
+      - position: 3
+        text: "arregló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arreglar» implica solucionar algo que está roto o mal, sin relación con notar que Camila llevaba días sin sonreír."
+        hint_specific: "Arreglar soluciona algo roto. ¿Alguien arregló algo o notó que Camila no sonreía?"
+  - position: 5
+    sentence: "El guía {{blank}} en un detalle del cuadro que ningún otro turista del grupo había notado."
+    hint_general: "Notar un detalle en algo, que otras personas presentes no notaron."
+    explanation: "Reparó: notó un detalle que otras personas presentes no notaron. «Copió» implica reproducir algo, sin relación con notar un detalle en un cuadro, y «arregló» implica solucionar algo roto."
+    options:
+      - position: 1
+        text: "reparó"
+        is_correct: true
+      - position: 2
+        text: "copió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Copiar» implica reproducir algo, y la frase dice que el guía notó un detalle en el cuadro, no que lo copiara."
+        hint_specific: "Copiar es reproducir algo. ¿El guía copió el cuadro o notó un detalle en él?"
+      - position: 3
+        text: "arregló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arreglar» implica solucionar algo que está roto o mal, sin relación con notar un detalle de un cuadro."
+        hint_specific: "Arreglar soluciona algo roto. ¿El guía arregló el cuadro o notó un detalle en él?"
+  - position: 6
+    sentence: "Fue recién en la segunda lectura del contrato que el abogado {{blank}} en una cláusula que cambiaba todo."
+    hint_general: "Notar un detalle importante, aunque sea en una segunda revisión."
+    explanation: "Reparó: notó un detalle importante, aunque fuera en una segunda revisión. «Chusmeó» es coloquial y regional, y «arregló» implica solucionar algo roto, ninguno describe notar una cláusula."
+    options:
+      - position: 1
+        text: "reparó"
+        is_correct: true
+      - position: 2
+        text: "chusmeó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chusmeó» es coloquial y regional, y aquí se busca nombrar con precisión el momento en que el abogado notó la cláusula."
+        hint_specific: "«Chusmeó» es una palabra muy regional. ¿El texto busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "arregló"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arreglar» implica solucionar algo que está roto o mal, sin relación con notar una cláusula en una segunda lectura."
+        hint_specific: "Arreglar soluciona algo roto. ¿El abogado arregló el contrato o notó una cláusula en él?"
+  - position: 7
+    sentence: "Con los años, Elena aprendió a {{blank}} en pequeños gestos que antes se le pasaban por alto."
+    hint_general: "Aprender a notar detalles pequeños, algo que antes no se lograba hacer."
+    explanation: "Reparar: aprender a notar detalles pequeños, algo que antes no se lograba. «Insistir» implica repetir un pedido, y «arreglar» implica solucionar algo roto, ninguno describe notar gestos pequeños."
+    options:
+      - position: 1
+        text: "reparar"
+        is_correct: true
+      - position: 2
+        text: "insistir"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Insistir» implica repetir un pedido varias veces, sin relación con aprender a notar pequeños gestos de otras personas."
+        hint_specific: "Insistir es repetir un pedido. ¿Elena aprendió a insistir o a notar pequeños gestos?"
+      - position: 3
+        text: "arreglar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arreglar» implica solucionar algo que está roto o mal, sin relación con notar pequeños gestos de otras personas."
+        hint_specific: "Arreglar soluciona algo roto. ¿Elena aprendió a arreglar algo o a notar gestos?"
+  - position: 8
+    sentence: "Solo alguien tan atento como Hugo podía {{blank}} en el cambio de tono de esa última frase."
+    hint_general: "Notar un cambio sutil, algo que solo alguien muy atento logra hacer."
+    explanation: "Reparar: notar un cambio sutil, algo que solo alguien muy atento logra. «Grabar» es registrar el sonido tal cual, y «arreglar» implica solucionar algo roto, ninguno describe notar un cambio de tono."
+    options:
+      - position: 1
+        text: "reparar"
+        is_correct: true
+      - position: 2
+        text: "grabar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grabar» es registrar el sonido tal cual, y la frase describe notar un cambio sutil de tono, no registrarlo con un aparato."
+        hint_specific: "Grabar registra el sonido exacto. ¿Hugo grabó la frase o notó un cambio de tono en ella?"
+      - position: 3
+        text: "arreglar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arreglar» implica solucionar algo que está roto o mal, sin relación con notar un cambio de tono en una frase."
+        hint_specific: "Arreglar soluciona algo roto. ¿Hugo arregló la frase o notó un cambio de tono?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "El gesto que nadie vio"
+    body: "En medio del bullicio de la fiesta, casi nadie notó el gesto de su amiga al saludar. Sofía sí lo notó. «Reparé en tu cara cuando llegaste, ¿estás bien de verdad?», le preguntó más tarde, y su amiga por fin bajó la guardia."
+    before_phrase: "Me fijé en tu cara cuando llegaste, ¿estás bien?"
+    after_phrase: "Reparé en tu cara cuando llegaste, ¿estás bien?"
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "emocional"
+    title: "El silencio en la reunión"
+    body: "Bruno lo notó recién al final, cuando ya todos se estaban levantando. «Reparé en tu silencio durante toda la reunión, ¿pasó algo?», le preguntó a su compañero antes de que se fuera, y ese gesto abrió la conversación que faltaba."
+    before_phrase: "Noté tu silencio durante toda la reunión, ¿pasó algo?"
+    after_phrase: "Reparé en tu silencio durante toda la reunión, ¿pasó algo?"
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Los días sin sonreír"
+    body: "Nadie en la casa lo había mencionado, pero su hermana sí lo había notado. «Reparé en que llevas días sin sonreír, y no hace falta que me cuentes todo, solo quería que lo supieras», le dijo, sentándose a su lado."
+    before_phrase: "Me di cuenta de que llevas días sin sonreír."
+    after_phrase: "Reparé en que llevas días sin sonreír."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,237 @@
+schema_version: 1
+slug: "fiable"
+status: "draft"
+lemma: "fiable"
+part_of_speech: "adjetivo"
+syllables:
+  - "fia"
+  - "ble"
+stressed_syllable: 1
+ipa_latam: "[ˈfja.βle]"
+ipa_es: "[ˈfja.βle]"
+explanation: "Que merece confianza porque cumple lo que promete cada vez, sin fallar cuando más lo necesitas."
+example_sentence: "Elegimos ese proveedor porque en tres años nunca nos falló: es fiable."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para algo o alguien que cumple una y otra vez, no solo la primera vez que lo probaste."
+when_not_to_use: "No la uses para algo que solo suena bien o parece sincero por un momento; hace falta que ya lo haya demostrado."
+collocations:
+  - "proveedor fiable"
+  - "dato fiable"
+  - "sistema fiable"
+  - "fuente fiable"
+replaces:
+  - before: "Es de fiar"
+    after: "Es fiable"
+  - before: "Nunca falla"
+    after: "Es muy fiable"
+  - before: "Se puede confiar en esto"
+    after: "Esto es fiable"
+family:
+  - "fiabilidad"
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin:
+    - "de fiar"
+    - "seguro"
+  funcion:
+    - "valorar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "fiel"
+    difference: "«Fiel» describe la lealtad de alguien hacia una persona o una causa; esta palabra describe algo que funciona o cumple sin fallar, no un vínculo afectivo."
+    memory_trick: "El fiel no te abandona; el fiable no te falla."
+  - confused_with: "creíble"
+    difference: "«Creíble» dice que algo parece cierto al escucharlo, aunque sea la primera vez; esta palabra describe algo que ya demostró que cumple, con hechos detrás."
+    memory_trick: "Lo creíble convence al oírlo; lo fiable convence con el tiempo."
+exercises:
+  - position: 1
+    sentence: "Camila cambió de proveedor tres veces hasta encontrar uno {{blank}}: en dos años nunca le llegó un pedido incompleto."
+    hint_general: "Busca la palabra para alguien que cumple una y otra vez, sin fallar."
+    explanation: "Fiable: cumple sin fallar, pedido tras pedido. «Viable» hablaría de si el negocio puede sostenerse, y «honesto» de si el proveedor engaña, no de si sus entregas fallan."
+    options:
+      - position: 1
+        text: "viable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Viable» diría que el proveedor puede sostenerse como negocio, no que sus pedidos lleguen siempre completos."
+        hint_specific: "«Viable» habla de si un negocio puede sostenerse, no de si cumple cada pedido. ¿La frase habla de sostener un negocio o de cumplir entregas?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "honesto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Honesto» diría que el proveedor no engaña, y aquí lo que importa es que sus pedidos llegan completos cada vez, no su sinceridad."
+        hint_specific: "«Honesto» habla de sinceridad, no de que algo se repita sin fallar. ¿La frase habla de sinceridad o de que no falle?"
+  - position: 2
+    sentence: "Rodrigo probó tres programas de facturación antes de quedarse con el más {{blank}}, el que nunca se colgó durante el cierre de mes."
+    hint_general: "El sistema no falla justo cuando más se lo necesita."
+    explanation: "Fiable: no se cuelga y cumple justo cuando más se necesita. «Estable» solo diría que no se cae, y «de fiar» es una expresión demasiado coloquial para comparar programas."
+    options:
+      - position: 1
+        text: "estable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Estable» diría que el programa no se cae ni cambia de golpe, pero no dice que además cumpla lo que promete cada cierre de mes."
+        hint_specific: "«Estable» dice que algo no se cae, no que cumpla lo prometido cada vez. ¿La frase habla de caerse o de cumplir?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "de fiar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De fiar» es una expresión coloquial, y aquí Rodrigo compara programas con un criterio técnico, no con una frase de conversación."
+        hint_specific: "«De fiar» suena a conversación informal. ¿Encaja al comparar programas con un criterio técnico?"
+  - position: 3
+    sentence: "Antes de tomar decisiones con esos números, Valentina pidió una fuente {{blank}}: un reporte que coincidiera mes a mes con lo que factura el banco."
+    hint_general: "Busca la palabra para algo que demostró cumplir, no solo algo que se puede revisar."
+    explanation: "Fiable: ya demostró que sus números coinciden mes a mes. «Verificable» diría que se puede comprobar el dato, y «constante» diría que llega siempre con la misma frecuencia, sin garantizar que coincida."
+    options:
+      - position: 1
+        text: "verificable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Verificable» diría que Valentina puede comprobar el dato por su cuenta, y aquí lo que pide es un reporte que ya demostró coincidir mes a mes."
+        hint_specific: "«Verificable» habla de poder comprobar un dato, no de que ya haya demostrado cumplir siempre. ¿La frase pide comprobar o pide algo que ya cumplió?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "constante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constante» diría que el reporte llega siempre con la misma frecuencia, sin decir si sus números coinciden con el banco."
+        hint_specific: "«Constante» habla de frecuencia, no de si los números coinciden con el banco. ¿La frase habla de frecuencia o de coincidir con el banco?"
+  - position: 4
+    sentence: "Después de dos entregas tarde, Ignacio buscó un transportista más {{blank}}, aunque cobrara un poco más por el servicio."
+    hint_general: "Busca la palabra para alguien que cumple siempre, no solo a veces a tiempo."
+    explanation: "Fiable: cumple siempre, no solo a veces. «Puntual» solo hablaría de la hora de llegada, y «segurísimo» es una exageración coloquial fuera de lugar aquí."
+    options:
+      - position: 1
+        text: "puntual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Puntual» diría que llega a la hora acordada, pero no garantiza que el paquete llegue completo o en buen estado cada vez."
+        hint_specific: "«Puntual» solo habla de la hora de llegada. ¿La frase habla solo de horarios o de cumplir en general?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "segurísimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Segurísimo» es una exageración coloquial que no encaja al describir un criterio serio para elegir transportista."
+        hint_specific: "«Segurísimo» suena a exageración informal. ¿Encaja al explicar por qué cambió de transportista?"
+  - position: 5
+    sentence: "Noelia migró su tienda a una plataforma de pagos más {{blank}}, después de que la anterior le fallara dos veces en un mes."
+    hint_general: "Busca la palabra para una plataforma que no vuelve a fallar."
+    explanation: "Fiable: no vuelve a fallar en los pagos. «Sólido» hablaría de fortaleza o respaldo económico, y «viable» de si el negocio puede sostenerse, sin garantizar que no falle."
+    options:
+      - position: 1
+        text: "sólido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sólido» diría que la plataforma es fuerte o respaldada económicamente, sin decir que deje de fallar en los pagos."
+        hint_specific: "«Sólido» habla de fortaleza o respaldo, no de que algo deje de fallar. ¿La frase habla de respaldo económico o de dejar de fallar?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "viable"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Viable» diría que la plataforma puede sostenerse como negocio, no que dejará de fallar en los cobros."
+        hint_specific: "«Viable» habla de si un negocio se sostiene, no de que deje de fallar. ¿Habla de sostener el negocio o de dejar de fallar?"
+  - position: 6
+    sentence: "La fábrica contrató a un técnico {{blank}} para el mantenimiento, porque ningún equipo se detuvo desde que él quedó a cargo."
+    hint_general: "Busca la palabra para alguien cuyo trabajo no falla desde que está a cargo."
+    explanation: "Fiable: desde que está a cargo, ningún equipo se detuvo. «Responsable» hablaría de cumplir obligaciones, y «de fiar» es una expresión demasiado coloquial para este contexto técnico."
+    options:
+      - position: 1
+        text: "responsable"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Responsable» diría que el técnico cumple con sus obligaciones, sin decir que además ningún equipo se haya detenido desde que llegó."
+        hint_specific: "«Responsable» habla de cumplir obligaciones, no de que los equipos dejen de fallar. ¿La frase habla de obligaciones o de resultados?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "de fiar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«De fiar» es una expresión coloquial, y aquí se describe con un criterio técnico el trabajo de mantenimiento de una fábrica."
+        hint_specific: "«De fiar» suena a conversación informal. ¿Encaja para describir el trabajo técnico de una fábrica?"
+  - position: 7
+    sentence: "Para armar la cotización, Bruno solo usó cifras de una fuente {{blank}}: la misma que otros tres proveedores del rubro también consultan."
+    hint_general: "La fuente ya demostró que sus cifras se sostienen, no solo que suenan bien."
+    explanation: "Fiable: otros proveedores del rubro también la consultan porque se sostiene. «Creíble» diría que suena cierta al leerla, y «fiel» hablaría de lealtad, algo que no aplica a una fuente de cifras."
+    options:
+      - position: 1
+        text: "creíble"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Creíble» diría que las cifras suenan ciertas al leerlas, sin decir que otros proveedores del rubro también las respalden."
+        hint_specific: "«Creíble» dice si algo suena cierto al oírlo, no si otros ya la respaldan. ¿Habla de sonar cierto o de ser respaldada?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "fiel"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Fiel» describe lealtad hacia alguien o algo, y una fuente de cifras no es leal: es consistente o no lo es."
+        hint_specific: "«Fiel» habla de lealtad, no de que unas cifras se sostengan. ¿Una fuente de cifras puede tener lealtad?"
+  - position: 8
+    sentence: "Silvia firmó con ese distribuidor porque llevaba diez años entregando a tiempo, y eso lo hacía {{blank}} frente a otros más nuevos."
+    hint_general: "Diez años de entregas a tiempo son la prueba, no solo la promesa."
+    explanation: "Fiable: diez años entregando a tiempo son la prueba. «Conveniente» hablaría de que encaja con el momento, y «constante» de que entrega con frecuencia, sin garantizar el plazo."
+    options:
+      - position: 1
+        text: "conveniente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Conveniente» diría que el distribuidor encaja bien con el momento de Silvia, sin hablar de los diez años de entregas a tiempo."
+        hint_specific: "«Conveniente» habla de que algo encaja con el momento, no de un historial de años. ¿La frase habla del momento o del historial?"
+      - position: 2
+        text: "fiable"
+        is_correct: true
+      - position: 3
+        text: "constante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constante» diría que entrega con la misma frecuencia, sin decir que además cumpla siempre el plazo prometido."
+        hint_specific: "«Constante» habla de frecuencia, no de cumplir el plazo prometido. ¿La frase habla de frecuencia o de cumplir el plazo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El proveedor que no falla"
+    body: "Durante meses, Marcelo probó tres proveedores distintos para su cafetería. Con dos de ellos, el pedido llegaba incompleto cada tanto. «Me quedo con este», les dijo a sus socios, «es fiable, nunca me ha fallado un pedido». Firmaron el contrato esa misma semana."
+    before_phrase: "Este nunca falla, me quedo con él."
+    after_phrase: "Es fiable, me quedo con él."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta sobre las herramientas"
+    body: "El entrevistador le preguntó a Daniela qué sistema usaba en su trabajo anterior. «Uno bastante fiable», respondió, «en dos años nunca perdimos un dato». El entrevistador anotó algo y sonrió."
+    before_phrase: "Uno que nunca fallaba."
+    after_phrase: "Uno bastante fiable."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El plomero de siempre"
+    body: "Cuando el caño se rompió un domingo, la abuela de Julián no dudó: «Llama a Ernesto, es fiable, lleva veinte años arreglando cosas en esta casa y nunca nos ha dejado con un problema a medias». Julián marcó el número enseguida."
+    before_phrase: "Llama al que nunca nos deja mal."
+    after_phrase: "Llama a Ernesto, es fiable."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

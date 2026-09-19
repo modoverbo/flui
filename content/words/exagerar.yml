@@ -1,0 +1,228 @@
+schema_version: 1
+sort_order: 9401
+slug: "exagerar"
+status: "draft"
+lemma: "exagerar"
+part_of_speech: "verbo"
+syllables: ["e", "xa", "ge", "rar"]
+stressed_syllable: 4
+ipa_latam: "[ek.sa.xeˈɾar]"
+ipa_es: "[ek.sa.xeˈɾar]"
+explanation: "Contar algo más grande, mejor o peor de lo que es, para dar risa o sorprender a la gente."
+example_sentence: "En sus historias de viaje, Tobías siempre exagera un poco los peligros que vivió."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien cuando cuentas una anécdota y todos saben que agrandas los hechos para divertir, sin buscar engañar a nadie."
+when_not_to_use: "No la uses cuando alguien inventa datos para engañar de verdad, ni para describir un hecho contado tal cual pasó."
+collocations:
+  - "exagerar una anécdota"
+  - "exagerar los hechos"
+replaces:
+  - before: "Cuenta las cosas mucho más grandes de lo que son, para que suene más gracioso"
+    after: "Exagera las cosas para que suene más gracioso"
+  - before: "Le pone mucho drama a la historia para hacer reír"
+    after: "Exagera la historia para hacer reír"
+family: ["exageración", "exagerado"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["agrandar"]
+  funcion: ["divertir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "exasperar"
+    difference: "«Exasperar» es sacar de quicio a alguien con enfado; exagerar es agrandar un relato para divertir, sin enfadar a nadie."
+    memory_trick: "Exagerar divierte; exasperar enfada."
+  - confused_with: "mentir"
+    difference: "«Mentir» es afirmar algo falso para engañar; exagerar es agrandar un hecho real, y todos saben que no es literal."
+    memory_trick: "Quien exagera no engaña: solo agranda lo que sí pasó."
+exercises:
+  - position: 1
+    sentence: "Renata contó la pesca del fin de semana y, como siempre, {{blank}} un poco el tamaño del pez para sacar risas."
+    hint_general: "Busca el verbo para cuando alguien agranda un hecho real solo para divertir, sin intención de engañar."
+    explanation: "Exageró: agrandó el tamaño del pez para divertir, sin intención de engañar. «Exasperó» sería sacar de quicio a alguien, y «mintió» supondría inventar algo que no pasó."
+    options:
+      - position: 1
+        text: "exasperó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Exasperar» es sacar de quicio a alguien con enfado, y en la sobremesa todos se ríen, nadie se enoja."
+        hint_specific: "«Exasperar» tiene que ver con el enojo. ¿La escena describe risas o enfado?"
+      - position: 2
+        text: "exageró"
+        is_correct: true
+      - position: 3
+        text: "mintió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Mentir» es inventar algo que no ocurrió, y aquí el pez existió: solo creció un poco al contarlo."
+        hint_specific: "Quien miente inventa un hecho entero. ¿El pez existió o fue pura invención?"
+  - position: 2
+    sentence: "Cada Navidad, el abuelo de Simón {{blank}} la nevada de su infancia hasta convertirla en una tormenta enorme."
+    hint_general: "Se trata de agrandar un recuerdo real para hacerlo más entretenido al contarlo."
+    explanation: "Exagera: agranda un recuerdo real para entretener a sus nietos. «Presume» sería hacer alarde de algo propio, y «dramatiza» agrandaría el lado grave o triste, no el gracioso."
+    options:
+      - position: 1
+        text: "presume"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presumir» es hacer alarde de algo propio para quedar bien, y aquí el abuelo cuenta un recuerdo para entretener a sus nietos, no para lucirse."
+        hint_specific: "«Presumir» busca quedar bien uno mismo. ¿El abuelo busca lucirse o hacer reír a los nietos?"
+      - position: 2
+        text: "exagera"
+        is_correct: true
+      - position: 3
+        text: "dramatiza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Dramatizar» agranda el lado grave o triste de algo, y aquí la anécdota del abuelo busca hacer reír, no alarmar."
+        hint_specific: "«Dramatizar» apunta a lo grave o triste. ¿La escena busca alarmar o divertir?"
+  - position: 3
+    sentence: "En la boda, Daniela {{blank}} en su discurso las hazañas escolares del novio, y el salón entero soltó una carcajada."
+    hint_general: "Busca el verbo para cuando un discurso agranda logros reales hasta sacar risas."
+    explanation: "Exageró: agrandó las hazañas escolares del novio hasta sacar una carcajada. «Resaltó» las habría puesto en primer plano sin agrandarlas, y «alabó» solo las habría elogiado como ciertas."
+    options:
+      - position: 1
+        text: "resaltó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resaltar» pone en primer plano algo cierto sin agrandarlo, y aquí las hazañas crecen hasta sacar una carcajada."
+        hint_specific: "«Resaltar» no agranda nada, solo lo destaca. ¿El discurso agranda los hechos o solo los destaca?"
+      - position: 2
+        text: "exageró"
+        is_correct: true
+      - position: 3
+        text: "alabó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alabar» es elogiar cualidades reales sin agrandarlas, y aquí las hazañas escolares se agrandan hasta hacer reír a todos."
+        hint_specific: "«Alabar» elogia sin agrandar. ¿El discurso agranda los hechos o solo los elogia?"
+  - position: 4
+    sentence: "En el informe trimestral, Iván tendió a {{blank}} los resultados de ventas para impresionar al directorio."
+    hint_general: "Se trata de presentar un resultado real de forma más favorable de lo que es."
+    explanation: "Exagerar: presentar un resultado real de forma más favorable. «Inflar» es coloquial y no encaja en un informe formal, y «falsificar» implicaría inventar datos falsos, algo distinto de exagerar unos reales."
+    options:
+      - position: 1
+        text: "inflar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Inflar» los resultados es coloquial y encajaría en una charla informal, no en un informe formal ante el directorio."
+        hint_specific: "«Inflar» suena a conversación informal. ¿Este texto es un chat entre amigos o un informe formal?"
+      - position: 2
+        text: "exagerar"
+        is_correct: true
+      - position: 3
+        text: "falsificar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Falsificar» implica inventar datos falsos a propósito para engañar, y aquí los números son reales, solo se presentan de forma más favorable."
+        hint_specific: "«Falsificar» acusa de inventar datos falsos. ¿El texto dice que los números eran falsos?"
+  - position: 5
+    sentence: "En la reunión con recursos humanos, Alejandro evitó {{blank}} lo que había visto esa tarde en la oficina."
+    hint_general: "Busca el verbo para cuando alguien agranda lo que vio, en vez de contarlo tal cual."
+    explanation: "Exagerar: agrandar lo que vio, en vez de contarlo tal cual. «Pintar» es coloquial y no encaja en una reunión formal, e «inventar» sería crear algo que nunca ocurrió."
+    options:
+      - position: 1
+        text: "pintar"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pintar» algo es coloquial y no encaja en una reunión formal con recursos humanos, donde se espera precisión."
+        hint_specific: "«Pintar» sirve para el habla informal entre amigos. ¿Esto ocurre en una charla casual o en una reunión formal?"
+      - position: 2
+        text: "exagerar"
+        is_correct: true
+      - position: 3
+        text: "inventar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inventar» es crear algo que no ocurrió, y aquí Alejandro solo corre el riesgo de agrandar lo que sí vio."
+        hint_specific: "«Inventar» crea un hecho desde cero. ¿Alejandro vio algo real o nada de nada?"
+  - position: 6
+    sentence: "En el grupo de chat, Cecilia siempre {{blank}} lo cansada que quedó después del gimnasio, y todos responden con risas."
+    hint_general: "Se trata de agrandar algo real para que la historia suene más divertida en el chat."
+    explanation: "Exagera: agranda lo cansada que quedó, para hacer reír al chat. «Sufre» solo describe un sentimiento real, y «detalla» sería contar con precisión, sin agrandar nada."
+    options:
+      - position: 1
+        text: "sufre"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sufrir» describe cómo se siente de verdad, sin agrandar nada, y el chat se ríe porque ella lo cuenta con humor agrandado."
+        hint_specific: "«Sufrir» solo describe un sentimiento real. ¿El chat se ríe de un dato exacto o de un relato agrandado?"
+      - position: 2
+        text: "exagera"
+        is_correct: true
+      - position: 3
+        text: "detalla"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallar» es contar con precisión, sin agrandar nada, y el chat se ríe justo porque ella agranda su cansancio."
+        hint_specific: "«Detallar» apunta a la precisión. ¿El chat se ríe de algo exacto o agrandado?"
+  - position: 7
+    sentence: "Durante la fiesta, Emilio {{blank}} el susto que se llevó con la araña para que la historia sonara más divertida."
+    hint_general: "Busca el verbo para cuando alguien agranda un susto real para que la anécdota sea más graciosa."
+    explanation: "Exageró: agrandó el susto a propósito para que la historia sonara más divertida. «Recordó» solo habría traído el hecho a la memoria tal cual, y «ocultó» habría escondido parte de lo ocurrido."
+    options:
+      - position: 1
+        text: "recordó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Recordar» es traer un hecho a la memoria tal cual pasó, y aquí Emilio agranda el susto a propósito para divertir."
+        hint_specific: "«Recordar» no agranda nada. ¿La historia se cuenta tal cual o más grande de lo real?"
+      - position: 2
+        text: "exageró"
+        is_correct: true
+      - position: 3
+        text: "ocultó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ocultar» es esconder una parte de lo ocurrido, y aquí Emilio no esconde nada: agranda el susto para la risa."
+        hint_specific: "«Ocultar» esconde información. ¿Emilio esconde algo o lo agranda?"
+  - position: 8
+    sentence: "Rosa siempre {{blank}} la altura del cerro que subieron, hasta hacerlo sonar como el Everest."
+    hint_general: "Se trata de agrandar una cifra real hasta hacerla sonar imposible, solo para la broma."
+    explanation: "Exagera: agranda la altura del cerro hasta compararla con el Everest. «Calcula» buscaría un número exacto, y «confunde» sería un error sin querer, no una broma a propósito."
+    options:
+      - position: 1
+        text: "calcula"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Calcular» busca un número exacto, y aquí Rosa hace justo lo contrario: agranda la altura para la broma."
+        hint_specific: "«Calcular» busca precisión. ¿Rosa busca un dato exacto o una broma?"
+      - position: 2
+        text: "exagera"
+        is_correct: true
+      - position: 3
+        text: "confunde"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confundir» sería algo sin querer, y aquí Rosa agranda la altura a propósito, para que la anécdota suene más divertida."
+        hint_specific: "«Confundir» pasa sin querer. ¿Rosa se equivoca sin querer o agranda algo a propósito?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La pesca del sábado"
+    body: "En la sobremesa, Renata contó que casi pescó un pez enorme, y todos sabían que exageraba un poco. «Lo prometo, era como una barca», decía entre risas. Nadie le creyó del todo, pero la historia fue la mejor del almuerzo."
+    before_phrase: "No sé, capaz me la conté más grande de lo que fue."
+    after_phrase: "Lo sé, un poco lo exageré."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La nevada del abuelo"
+    body: "Cada Navidad, el abuelo de Simón exageraba la nevada de su infancia hasta convertirla en una tormenta enorme. Los nietos ya sabían el final de memoria, pero igual pedían que la contara otra vez. Esa exageración, año tras año, se había vuelto parte de la fiesta."
+    before_phrase: "Siempre le pone mucho drama a esa historia."
+    after_phrase: "Siempre la exagera un poco, y por eso nos encanta."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La anécdota del lunes"
+    body: "En la reunión de equipo, Tobías contó cómo casi pierde el vuelo el fin de semana, y como siempre, exageró cada detalle hasta que la sala entera terminó riendo. Su jefa sonrió: «Contigo nunca sé qué parte es verdad». Tobías guiñó un ojo: «La mitad, más o menos»."
+    before_phrase: "Le pongo mucho color a mis historias para que sean más divertidas."
+    after_phrase: "Las exagero un poco para que sean más divertidas."
+provenance:
+  generator: "flui authoring agent — batch W5 conflict-fix"
+  gate: null
+  checked_on: "2026-09-18"

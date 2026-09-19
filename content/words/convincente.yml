@@ -1,0 +1,240 @@
+schema_version: 1
+slug: "convincente"
+status: "draft"
+lemma: "convincente"
+part_of_speech: "adjetivo"
+syllables:
+  - "con"
+  - "vin"
+  - "cen"
+  - "te"
+stressed_syllable: 3
+ipa_latam: "[kom.binˈsen.te]"
+ipa_es: "[kom.binˈθen.te]"
+explanation: "Que logra que alguien cambie de idea o se decida, porque lo que dice o muestra tiene buenos argumentos."
+example_sentence: "La demo fue tan convincente que el cliente firmó ahí mismo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala para un argumento, una demo o una presentación que logra decidir a alguien, no solo que suena bien."
+when_not_to_use: "No la uses para algo que solo es agradable de escuchar sin cambiar la decisión de nadie."
+collocations:
+  - "argumento convincente"
+  - "presentación convincente"
+  - "demo convincente"
+  - "razón convincente"
+replaces:
+  - before: "Lo explicó muy bien"
+    after: "Fue muy convincente"
+  - before: "Me terminó de convencer"
+    after: "Estuvo convincente"
+  - before: "Sonó bien armado"
+    after: "Sonó convincente"
+family:
+  - "convencer"
+  - "convicción"
+themes:
+  - slug: "ventas"
+    relevance: 3
+tags:
+  comodin:
+    - "que convence"
+    - "bien armado"
+  funcion:
+    - "persuadir"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "concluyente"
+    difference: "«Concluyente» dice que una prueba cierra la duda por completo, sin dejar otra opción; esta palabra dice que un argumento logra que alguien cambie de opinión, aunque queden dudas razonables."
+    memory_trick: "Lo concluyente cierra el caso; lo convincente abre la mente."
+  - confused_with: "elocuente"
+    difference: "«Elocuente» describe la forma de hablar, clara y con gracia; esta palabra describe el efecto: que la otra persona termina de acuerdo."
+    memory_trick: "Elocuente es cómo habla; convincente es lo que logra."
+exercises:
+  - position: 1
+    sentence: "Valeria armó un argumento tan {{blank}} que el cliente, que llevaba meses dudando, firmó esa misma tarde."
+    hint_general: "El argumento logró que alguien que dudaba se decidiera."
+    explanation: "Convincente: el argumento logró que el cliente se decidiera a firmar. «Consciente» hablaría de darse cuenta de algo, y «elocuente» de cómo se expresa Valeria, no del resultado."
+    options:
+      - position: 1
+        text: "consciente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Consciente» diría que el cliente se dio cuenta de algo, no que el argumento lo hiciera decidirse a firmar."
+        hint_specific: "«Consciente» habla de darse cuenta de algo, no de decidir algo. ¿El cliente solo se dio cuenta o terminó firmando?"
+      - position: 2
+        text: "convincente"
+        is_correct: true
+      - position: 3
+        text: "elocuente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elocuente» describiría lo bien que Valeria se expresa, sin decir que eso haya sido lo que decidió al cliente a firmar."
+        hint_specific: "«Elocuente» habla de cómo se expresa alguien, no de si decide por otra persona. ¿Habla de la forma de hablar o del resultado?"
+  - position: 2
+    sentence: "La demo de Joaquín fue tan {{blank}} que dos inversionistas pidieron reunirse esa misma semana."
+    hint_general: "La demo logró que quisieran seguir hablando de inmediato."
+    explanation: "Convincente: logró que pidieran otra reunión de inmediato. «Concluyente» diría que cerró la duda del todo, y «sólida» hablaría de qué tan bien armada estaba, sin hablar del efecto."
+    options:
+      - position: 1
+        text: "concluyente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concluyente» diría que la demo cerró la duda por completo, y aquí lo que pasó es que dos inversionistas quisieron seguir hablando, no que ya estuviera todo decidido."
+        hint_specific: "«Concluyente» cierra una duda del todo. ¿La demo cerró el tema o abrió una conversación?"
+      - position: 2
+        text: "convincente"
+        is_correct: true
+      - position: 3
+        text: "sólida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sólida» diría que la demo estaba bien armada por dentro, sin decir que eso haya movido a los inversionistas a pedir otra reunión."
+        hint_specific: "«Sólida» dice que algo está bien armado, no que mueva a alguien a actuar. ¿Habla del armado o del efecto en los inversionistas?"
+  - position: 3
+    sentence: "En la negociación, Rosa dio un argumento {{blank}} sobre por qué ese precio tenía sentido, y el comprador bajó la guardia."
+    hint_general: "El argumento logró que el comprador cambiara de actitud."
+    explanation: "Convincente: logró que el comprador bajara la guardia. «Brutal» es una expresión coloquial fuera de lugar aquí, y «claro» solo diría que se entendió, sin decir que convenció."
+    options:
+      - position: 1
+        text: "brutal"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Brutal» es una expresión coloquial de asombro, y aquí se describe con seriedad un argumento de negociación, no una reacción exagerada."
+        hint_specific: "«Brutal» suena a exclamación informal. ¿Encaja al describir con seriedad un argumento de negociación?"
+      - position: 2
+        text: "convincente"
+        is_correct: true
+      - position: 3
+        text: "claro"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Claro» diría que el argumento se entendió bien, sin decir que además haya logrado que el comprador cambiara de actitud."
+        hint_specific: "«Claro» habla de que algo se entiende, no de que además decida a alguien. ¿El comprador solo entendió o también cambió de actitud?"
+  - position: 4
+    sentence: "Frente al comité, Esteban presentó cifras tan {{blank}} que aprobaron el presupuesto sin más preguntas."
+    hint_general: "Las cifras lograron que aprobaran el presupuesto sin dudar más."
+    explanation: "Convincentes: las cifras lograron la aprobación sin más preguntas. «Detalladas» hablaría de cuánta información tenían, y «conscientes» de darse cuenta de algo, no de decidir."
+    options:
+      - position: 1
+        text: "detalladas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detalladas» diría que las cifras tenían mucha información, sin decir que eso haya sido lo que logró la aprobación sin más preguntas."
+        hint_specific: "«Detalladas» habla de la cantidad de información, no de si logran una decisión. ¿El comité solo recibió información o decidió aprobar?"
+      - position: 2
+        text: "convincentes"
+        is_correct: true
+      - position: 3
+        text: "conscientes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Conscientes» diría que el comité se dio cuenta de algo, y aquí lo que hicieron fue aprobar el presupuesto, una decisión, no solo una idea."
+        hint_specific: "«Conscientes» habla de darse cuenta de algo, no de decidir algo. ¿El comité solo notó algo o tomó una decisión?"
+  - position: 5
+    sentence: "El testimonio del cliente resultó tan {{blank}} que Marina lo empezó a usar en cada propuesta nueva."
+    hint_general: "El testimonio funciona tan bien que ahora lo repite en cada propuesta."
+    explanation: "Convincente: por eso Marina lo usa en cada propuesta nueva. «Buenísimo» es un elogio vago y coloquial, y «apasionado» hablaría del tono emocional, no del efecto que logró."
+    options:
+      - position: 1
+        text: "buenísimo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Buenísimo» es una palabra vaga y coloquial que no dice por qué Marina decidió usar justo ese testimonio en sus propuestas."
+        hint_specific: "«Buenísimo» es un elogio vago e informal. ¿Explica por qué Marina lo eligió para sus propuestas?"
+      - position: 2
+        text: "convincente"
+        is_correct: true
+      - position: 3
+        text: "apasionado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apasionado» diría que el cliente habló con mucha emoción, sin decir que eso haya sido lo que llevó a Marina a usarlo siempre."
+        hint_specific: "«Apasionado» habla del tono emocional, no de si algo logra su efecto. ¿La frase habla del tono o del resultado?"
+  - position: 6
+    sentence: "El correo que envió Nicolás fue tan {{blank}} que el proveedor aceptó extender el plazo de pago sin pelear."
+    hint_general: "El correo logró que el proveedor cambiara de postura sin resistirse."
+    explanation: "Convincente: logró que el proveedor cediera sin pelear. «Elocuente» hablaría de cómo estaba redactado, y «concluyente» de que cerró el tema del todo, algo que no pasó aquí."
+    options:
+      - position: 1
+        text: "elocuente"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Elocuente» describiría lo bien redactado que estaba el correo, sin decir que eso haya sido lo que hizo ceder al proveedor."
+        hint_specific: "«Elocuente» habla de cómo está escrito algo, no de si logra su efecto. ¿La frase habla de la redacción o del resultado?"
+      - position: 2
+        text: "convincente"
+        is_correct: true
+      - position: 3
+        text: "concluyente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Concluyente» diría que el correo cerró el tema del todo, y aquí lo que pasó es que el proveedor cedió en un punto, no que ya no quedara nada por hablar."
+        hint_specific: "«Concluyente» cierra un tema por completo. ¿El correo cerró todo o solo logró que cediera en un punto?"
+  - position: 7
+    sentence: "Después de la llamada, la clienta le dijo a Pablo que su explicación había sido {{blank}} y que lo pensaría con otros ojos."
+    hint_general: "La explicación logró que ella empezara a verlo distinto."
+    explanation: "Convincente: logró que ella empezara a verlo distinto. «Impactante» diría que la sorprendió, y «detallada» que dio mucha información, sin decir que la hiciera cambiar de parecer."
+    options:
+      - position: 1
+        text: "impactante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Impactante» diría que la explicación la sorprendió o la marcó, sin decir que eso haya cambiado su forma de pensarlo."
+        hint_specific: "«Impactante» habla de causar una fuerte impresión, no de cambiar una decisión. ¿La frase habla de sorpresa o de cambiar de parecer?"
+      - position: 2
+        text: "convincente"
+        is_correct: true
+      - position: 3
+        text: "detallada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Detallada» diría que la explicación tuvo mucha información, sin decir que eso la haya hecho pensarlo distinto."
+        hint_specific: "«Detallada» habla de cuánta información dio Pablo, no de si logró cambiar su parecer. ¿La frase habla de información o de cambiar de parecer?"
+  - position: 8
+    sentence: "El caso de éxito que mostró Renata resultó tan {{blank}} que el resto del equipo lo pidió para usarlo con otros clientes."
+    hint_general: "El caso logró que el equipo entero quisiera repetirlo con otros clientes."
+    explanation: "Convincente: logró que el equipo lo pidiera para otros clientes. «Impactante» hablaría de la impresión que causó, y «sólido» de qué tan bien armado estaba, sin hablar de esa decisión."
+    options:
+      - position: 1
+        text: "impactante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Impactante» diría que el caso causó una fuerte impresión, sin decir que por eso el equipo decidiera usarlo con otros clientes."
+        hint_specific: "«Impactante» habla de causar una fuerte impresión, no de que el equipo decida repetirlo. ¿La frase habla de impresión o de una decisión del equipo?"
+      - position: 2
+        text: "convincente"
+        is_correct: true
+      - position: 3
+        text: "sólido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sólido» diría que el caso estaba bien armado por dentro, sin decir que eso haya sido lo que llevó al equipo a pedirlo para otros clientes."
+        hint_specific: "«Sólido» dice que algo está bien armado, no que logre que otros lo usen. ¿Habla del armado o de la decisión del equipo?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El argumento que cerró el trato"
+    body: "Después de dos reuniones sin avances, Camilo cambió el enfoque de su propuesta: en vez de hablar de funciones, mostró números concretos del ahorro. El cliente se quedó callado un momento y dijo: «Eso sí es convincente, firmemos». Camilo respiró tranquilo."
+    before_phrase: "Eso sí me terminó de convencer."
+    after_phrase: "Eso sí es convincente."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "El ejemplo que cambió la cara del entrevistador"
+    body: "Cuando le preguntaron por un logro concreto, Sofía contó cómo había resuelto una queja difícil con datos y calma. El entrevistador, que hasta entonces solo tomaba notas, levantó la vista: «Ese ejemplo fue muy convincente». Sofía salió de la sala con otra energía."
+    before_phrase: "Ese ejemplo estuvo muy bien armado."
+    after_phrase: "Ese ejemplo fue muy convincente."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La charla de la sobremesa"
+    body: "Lucía llevaba semanas queriendo mudarse más cerca del trabajo, pero su papá dudaba. Esa noche armó una lista simple: menos tiempo en el bus, más tiempo para dormir, el mismo gasto de siempre. Su papá la miró y sonrió: «Ese argumento sí fue convincente»."
+    before_phrase: "Ese argumento sí me terminó de convencer."
+    after_phrase: "Ese argumento sí fue convincente."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

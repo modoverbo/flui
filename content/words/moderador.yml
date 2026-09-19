@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "moderador"
+status: "draft"
+lemma: "moderador"
+part_of_speech: "sustantivo"
+syllables: ["mo", "de", "ra", "dor"]
+stressed_syllable: 4
+ipa_latam: "[mo.ðe.ɾaˈðoɾ]"
+ipa_es: "[mo.ðe.ɾaˈðoɾ]"
+explanation: "Persona que dirige un debate en grupo, da la palabra a cada uno y evita que se salga de tema."
+example_sentence: "Nadie quería ese rol incómodo, así que Camila terminó de moderadora en la mesa redonda de fin de año."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para el rol de quien reparte turnos de palabra en un debate, panel o mesa redonda."
+when_not_to_use: "No lo uses para quien resuelve un conflicto entre dos partes: ese rol es de mediador, no de moderador."
+collocations:
+  - "el moderador del panel"
+  - "hacer de moderador"
+  - "moderador de la charla"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "reuniones"
+    relevance: 1
+tags:
+  comodin: ["el que dirige la charla"]
+  funcion: ["dirigir", "repartir turnos"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "mediador"
+    difference: "El mediador busca resolver un conflicto entre dos partes; el moderador dirige el orden de una charla o un debate, sin que necesariamente haya un conflicto."
+    memory_trick: "El mediador resuelve peleas; el moderador reparte turnos de palabra."
+replaces:
+  - before: "El que reparte los turnos de palabra en el panel"
+    after: "El moderador del panel"
+  - before: "Se encarga de que el debate no se vaya de tema"
+    after: "Hace de moderador en el debate"
+exercises:
+  - position: 1
+    sentence: "El {{blank}} cortó al panelista con amabilidad para darle tiempo a los otros dos invitados."
+    hint_general: "Quien dirige un debate y reparte los turnos entre los participantes."
+    explanation: "Moderador: quien dirige un debate y reparte los turnos entre los participantes. «Mediador» resuelve un conflicto entre dos partes, y «público» solo escucha, sin dirigir nada."
+    options:
+      - position: 1
+        text: "moderador"
+        is_correct: true
+      - position: 2
+        text: "mediador"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mediador» resuelve un conflicto entre dos partes, y aquí solo se reparte el tiempo de palabra entre tres invitados, sin ningún conflicto de por medio."
+        hint_specific: "Un mediador resuelve un conflicto. ¿Aquí hay una pelea entre dos partes?"
+      - position: 3
+        text: "público"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «público» solo escucha, y aquí alguien dirige activamente el orden de la charla."
+        hint_specific: "El público escucha, no dirige. ¿Quién corta y da la palabra en la frase?"
+  - position: 2
+    sentence: "Antes del debate presidencial, el canal eligió a una periodista conocida por ser {{blank}} justa con todos los candidatos."
+    hint_general: "Quien dirige el orden de un debate sin favorecer a ninguna de las partes."
+    explanation: "Moderadora: quien dirige el orden de un debate sin favorecer a nadie. «Jueza» decide un resultado legal, y «público» solo escucha, sin dirigir el orden del debate."
+    options:
+      - position: 1
+        text: "moderadora"
+        is_correct: true
+      - position: 2
+        text: "jueza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «jueza» decide un resultado legal, y aquí la periodista solo dirige el orden y los tiempos del debate."
+        hint_specific: "Una jueza dicta sentencias. ¿La periodista decide un resultado legal o dirige el debate?"
+      - position: 3
+        text: "público"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "El «público» solo escucha, y aquí la periodista dirige activamente el orden entre los candidatos."
+        hint_specific: "El público escucha, no dirige. ¿La periodista solo escucha o reparte los turnos?"
+  - position: 3
+    sentence: "En la mesa redonda, Andrés hizo de {{blank}} y se aseguró de que cada invitado hablara el mismo tiempo."
+    hint_general: "Quien se asegura de que cada participante de una charla tenga su turno."
+    explanation: "Moderador: quien se asegura de que cada participante tenga su turno. «Mediador» resuelve un conflicto entre dos partes, y «cronista» solo narra lo que pasa, sin dirigir los turnos."
+    options:
+      - position: 1
+        text: "moderador"
+        is_correct: true
+      - position: 2
+        text: "cronista"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «cronista» narra lo que sucede, y aquí Andrés dirige activamente los tiempos de cada invitado."
+        hint_specific: "Un cronista narra, no reparte turnos. ¿Andrés narra la mesa redonda o dirige los turnos?"
+      - position: 3
+        text: "mediador"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mediador» resuelve un conflicto entre dos partes, y aquí Andrés solo reparte el tiempo entre varios invitados."
+        hint_specific: "Un mediador resuelve conflictos. ¿La mesa redonda tiene un conflicto que resolver?"
+  - position: 4
+    sentence: "El grupo de lectura del barrio elige cada mes a alguien distinto para ser {{blank}} de la charla."
+    hint_general: "Quien dirige el orden de una charla informal entre varias personas."
+    explanation: "Moderador: quien dirige el orden de una charla entre varias personas. «Anfitrión» solo recibe a los invitados en su casa, y «mediador» resuelve un conflicto entre dos partes."
+    options:
+      - position: 1
+        text: "moderador"
+        is_correct: true
+      - position: 2
+        text: "anfitrión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «anfitrión» solo recibe a los invitados en su casa, y aquí el rol elegido es dirigir el orden de la charla, no recibir gente."
+        hint_specific: "Un anfitrión recibe en su casa. ¿El grupo elige a quien recibe o a quien dirige la charla?"
+      - position: 3
+        text: "mediador"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mediador» resuelve un conflicto entre dos partes, y el grupo de lectura no menciona ningún conflicto que resolver."
+        hint_specific: "Un mediador resuelve conflictos. ¿El grupo de lectura tiene un conflicto?"
+  - position: 5
+    sentence: "Sin nadie que hiciera de {{blank}}, la reunión se fue de tema y terminó una hora tarde."
+    hint_general: "Quien evita que una charla se salga de tema y reparte los turnos."
+    explanation: "Moderador: quien evita que una charla se salga de tema. «Jefe» impone decisiones desde arriba, y «espectador» solo mira, sin dirigir el orden de la reunión."
+    options:
+      - position: 1
+        text: "moderador"
+        is_correct: true
+      - position: 2
+        text: "jefe"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «jefe» impone decisiones desde arriba, y aquí falta alguien que reparta turnos y mantenga el tema, no que dé órdenes."
+        hint_specific: "Un jefe impone decisiones. ¿A la reunión le faltaba orden o le faltaba alguien que mandara?"
+      - position: 3
+        text: "espectador"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «espectador» solo mira, y aquí falta alguien que dirija activamente el orden de la reunión."
+        hint_specific: "Un espectador solo mira. ¿A la reunión le faltaba alguien que mirara o alguien que dirigiera?"
+  - position: 6
+    sentence: "El canal de streaming contrató a alguien solo para hacer de {{blank}} del chat durante las transmisiones en vivo."
+    hint_general: "Quien pone orden en las intervenciones de un grupo durante un evento en vivo."
+    explanation: "Moderador: quien pone orden en las intervenciones de un grupo en vivo. «Chamo» es coloquial y regional, y «mediador» resuelve un conflicto puntual, no ordena un chat en vivo."
+    options:
+      - position: 1
+        text: "moderador"
+        is_correct: true
+      - position: 2
+        text: "chamo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chamo» es coloquial y regional, y aquí se busca nombrar con precisión un puesto de trabajo dentro del canal."
+        hint_specific: "«Chamo» es una palabra muy regional. ¿El canal contrató un puesto formal o busca una palabra informal?"
+      - position: 3
+        text: "mediador"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mediador» resuelve un conflicto entre dos partes, y aquí se ordenan las intervenciones del chat, sin ningún conflicto puntual."
+        hint_specific: "Un mediador resuelve conflictos. ¿El chat tiene un conflicto entre dos partes?"
+  - position: 7
+    sentence: "Los dos candidatos al puesto se enfrentaron en una entrevista grupal, con la jefa de recursos humanos como {{blank}}."
+    hint_general: "Quien reparte los turnos de palabra entre dos personas que compiten por el mismo puesto."
+    explanation: "Moderadora: quien reparte los turnos entre dos personas en una entrevista grupal. «Aliada» tomaría partido por una de las dos, y «mediadora» resuelve un conflicto, sin que aquí exista uno entre los candidatos."
+    options:
+      - position: 1
+        text: "moderadora"
+        is_correct: true
+      - position: 2
+        text: "aliada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «aliada» tomaría partido por uno de los dos candidatos, y aquí la jefa de recursos humanos se mantiene neutral repartiendo turnos."
+        hint_specific: "Una aliada toma partido. ¿La jefa favorece a uno de los candidatos o reparte los turnos por igual?"
+      - position: 3
+        text: "mediadora"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Una «mediadora» resuelve un conflicto entre dos partes, y aquí los dos candidatos no están en conflicto entre sí, solo compiten por el mismo puesto."
+        hint_specific: "Una mediadora resuelve conflictos. ¿Los dos candidatos están peleados entre sí?"
+  - position: 8
+    sentence: "Cansada de las peleas en los comentarios, la creadora de contenido nombró a un amigo {{blank}} de su comunidad en línea."
+    hint_general: "Alguien que pone orden en las intervenciones de un grupo grande de personas."
+    explanation: "Moderador: alguien que pone orden en las intervenciones de un grupo grande. «Mediador» resuelve un conflicto puntual, y «espectador» solo mira, sin poner orden en nada."
+    options:
+      - position: 1
+        text: "moderador"
+        is_correct: true
+      - position: 2
+        text: "mediador"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «mediador» resuelve un conflicto entre dos partes puntuales, y aquí se busca poner orden de forma constante en toda la comunidad."
+        hint_specific: "Un mediador resuelve un conflicto puntual. ¿Aquí se busca resolver una pelea o poner orden constante?"
+      - position: 3
+        text: "espectador"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «espectador» solo mira, y aquí el amigo tiene el rol activo de poner orden en los comentarios."
+        hint_specific: "Un espectador solo mira. ¿El amigo solo mira los comentarios o pone orden en ellos?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Repartir el tiempo entre tres"
+    body: "Antes del panel, Andrés repasó sus notas: tres invitados, treinta minutos. «Recuerda que eres el moderador, no otro panelista», le dijo su colega, «tu trabajo es que los tres hablen, no hablar tú»."
+    before_phrase: "Yo me encargo de repartir el tiempo de palabra."
+    after_phrase: "Yo soy el moderador del panel."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Dirigir un debate difícil"
+    body: "«Cuéntame de alguna vez que manejaste una discusión tensa», pidió el entrevistador. La periodista contó cómo, como moderadora de un debate político, había logrado que ambos candidatos respetaran sus tiempos sin perder el control de la charla."
+    before_phrase: "Dirigí el debate y repartí bien los tiempos."
+    after_phrase: "Fui la moderadora del debate."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo de lectura"
+    body: "Este mes le tocó a Sofía elegir el libro y dirigir la charla. «Odio ser la moderadora, nunca sé a quién darle la palabra primero», se quejó entre risas, aunque terminó llevando la conversación mejor que nadie del grupo."
+    before_phrase: "Odio ser quien reparte los turnos de palabra."
+    after_phrase: "Odio ser la moderadora del grupo."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"

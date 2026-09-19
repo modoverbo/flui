@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "generosidad"
+status: "draft"
+lemma: "generosidad"
+part_of_speech: "sustantivo"
+syllables: ["ge", "ne", "ro", "si", "dad"]
+stressed_syllable: 5
+ipa_latam: "[xe.ne.ɾo.siˈðad]"
+ipa_es: "[xe.ne.ɾo.siˈðad]"
+explanation: "Disposición a dar tiempo, ayuda o cosas propias sin esperar nada a cambio."
+example_sentence: "La generosidad de Facundo se nota en los pequeños detalles: siempre trae algo de más para compartir."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona como elogio cálido cuando alguien da tiempo, ayuda o algo suyo sin que se lo pidan."
+when_not_to_use: "No la uses para quien da solo para quedar bien o espera algo a cambio."
+collocations:
+  - "generosidad de alguien"
+  - "actuar con generosidad"
+  - "gran generosidad"
+replaces:
+  - before: "Siempre comparte lo que tiene sin que se lo pidan"
+    after: "Tiene una generosidad que se nota: comparte lo que tiene sin que se lo pidan"
+  - before: "Es muy bueno, siempre da una mano cuando puede"
+    after: "Su generosidad se nota: siempre da una mano cuando puede"
+family: ["generoso", "generosa", "generosamente"]
+themes:
+  - slug: "amistad"
+    relevance: 3
+tags:
+  comodin: ["buena persona"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "generalidad"
+    difference: "«Generalidad» habla de lo común a un grupo, en general; «generosidad» habla de dar algo propio sin esperar nada a cambio."
+    memory_trick: "La generalidad describe a todos por igual; la generosidad se nota en los detalles de uno."
+exercises:
+  - position: 1
+    sentence: "Leonor no recibió ese curso por ser parte del equipo: se lo pagó su jefa de su propio bolsillo, sin que nadie se lo pidiera, y así fue como todos hablaron de su {{blank}}."
+    hint_general: "Habla de dar algo propio a alguien, sin que nadie se lo pida."
+    explanation: "Generosidad: dar algo propio a alguien sin que nadie se lo pida. «Generalidad» describe algo común a todo un grupo, y «amabilidad» es solo un trato agradable, no pagar algo costoso."
+    options:
+      - position: 1
+        text: "generalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Generalidad» describe algo común a todo un grupo, y aquí el gesto fue solo de la jefa hacia Leonor, no una política para todo el equipo."
+        hint_specific: "«Generalidad» habla de algo que aplica a todos por igual. ¿El curso lo pagó la empresa para todos o la jefa solo para Leonor?"
+      - position: 2
+        text: "amabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amabilidad» es tratar bien a alguien, y aquí el gesto fue pagar un curso completo, no solo un trato agradable."
+        hint_specific: "«Amabilidad» es un buen trato. ¿La frase habla de un trato agradable o de pagar algo costoso?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+  - position: 2
+    sentence: "Damián compartió la mitad de su almuerzo con un compañero que había olvidado el suyo: sus amigos bromean con que eso fue puro {{blank}}, como si hubiera salvado una vida."
+    hint_general: "Nombra el gesto de compartir algo propio sin que nadie se lo pida, sin exagerar lo que significa."
+    explanation: "Generosidad: compartir algo propio sin que nadie lo pida. «Magnanimidad» suena solemne, casi heroico, para compartir un almuerzo, y «desprendimiento» se usa más para renunciar a algo grande."
+    options:
+      - position: 1
+        text: "magnanimidad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Magnanimidad» suena solemne, casi de gran héroe, y la frase deja claro que compartir el almuerzo no fue para tanto."
+        hint_specific: "«Magnanimidad» suena muy solemne, casi heroico. ¿Compartir un almuerzo pide una palabra tan grande?"
+      - position: 2
+        text: "desprendimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desprendimiento» se usa más para renunciar a algo importante o material de forma definitiva, y aquí solo se comparte la mitad de un almuerzo."
+        hint_specific: "«Desprendimiento» suena a renunciar a algo grande. ¿Compartir medio almuerzo es renunciar a algo así de importante?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+  - position: 3
+    sentence: "Cecilia no habló de una política de la empresa: contó que su compañera le prestó su auto por dos semanas sin condiciones, y llamó a eso {{blank}}."
+    hint_general: "Se refiere al gesto de dar algo propio sin pedir nada a cambio."
+    explanation: "Generosidad: dar algo propio sin pedir nada a cambio. «Generalidad» describe una regla para todos, y «altruismo» suena a un sacrificio grande, más que prestar un auto por dos semanas."
+    options:
+      - position: 1
+        text: "generalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Generalidad» describe una regla o política que aplica a todos, y la frase aclara que no se trata de eso, sino de un gesto personal."
+        hint_specific: "«Generalidad» habla de una regla para todos. ¿Prestar el auto por dos semanas es una regla o un gesto personal?"
+      - position: 2
+        text: "altruismo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Altruismo» suena a un sacrificio grande por el bien de otros, y prestar un auto por dos semanas es un gesto más cotidiano."
+        hint_specific: "«Altruismo» suena a un sacrificio grande. ¿Prestar un auto por dos semanas es algo tan extremo?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+  - position: 4
+    sentence: "Facundo regaló su bicicleta a un vecino que la necesitaba más que él, sin esperar nada a cambio: eso fue {{blank}}, no solo un favor cualquiera."
+    hint_general: "Habla de dar algo propio a alguien que lo necesita, sin buscar nada para uno mismo."
+    explanation: "Generosidad: dar algo propio a alguien que lo necesita, sin buscar nada para uno mismo. «Desprendimiento» describe soltar algo propio casi con indiferencia, y «amabilidad» es solo un trato agradable, no regalar una bicicleta."
+    options:
+      - position: 1
+        text: "desprendimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desprendimiento» describe soltar algo propio, casi con indiferencia sobre a quién llega, y aquí Facundo pensó primero en la necesidad de su vecino."
+        hint_specific: "«Desprendimiento» es soltar algo, sin enfocarse en quién lo recibe. ¿La frase resalta que pensó en la necesidad de su vecino?"
+      - position: 2
+        text: "amabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amabilidad» es un trato agradable, y regalar una bicicleta es mucho más que un trato agradable."
+        hint_specific: "«Amabilidad» es un buen trato, no necesariamente dar algo propio. ¿Regalar una bicicleta es solo un buen trato?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+  - position: 5
+    sentence: "Rosario invitó a cenar a todo el grupo sin dejar que nadie pagara nada: alguien bromeó diciendo que actuó con {{blank}}, como en una novela antigua."
+    hint_general: "Nombra el gesto de pagar o compartir algo propio con el grupo, sin esperar nada a cambio."
+    explanation: "Generosidad: pagar o compartir algo propio con el grupo sin esperar nada a cambio. «Esplendidez» suena a un tono anticuado para una cena entre amigos, y «altruismo» suena a un sacrificio mayor."
+    options:
+      - position: 1
+        text: "esplendidez"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Esplendidez» suena a un tono antiguo, casi de novela, y la broma del grupo confirma que resulta exagerado para una cena entre amigos."
+        hint_specific: "«Esplendidez» suena a un tono anticuado, casi de otra época. ¿Una cena entre amigos pide una palabra tan solemne?"
+      - position: 2
+        text: "altruismo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Altruismo» suena a un sacrificio grande por el bien ajeno, y pagar una cena entre amigos es un gesto más cercano y cotidiano."
+        hint_specific: "«Altruismo» suena a un sacrificio grande. ¿Pagar una cena entre amigos es un sacrificio así de grande?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+  - position: 6
+    sentence: "Ignacio no solo saludó con una sonrisa a su vecina nueva: le prestó las herramientas para armar sus muebles toda la semana, y eso no fue solo {{blank}}, fue algo más."
+    hint_general: "Habla de dar tiempo o algo propio a alguien, más allá de un simple gesto amable."
+    explanation: "Generosidad: dar tiempo o algo propio a alguien, más allá de un gesto amable. «Amabilidad» es tratar bien, como un saludo, y «generalidad» describe algo común a todos, no un gesto hacia una sola vecina."
+    options:
+      - position: 1
+        text: "amabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amabilidad» es tratar bien a alguien, como el saludo con una sonrisa, y prestar las herramientas toda la semana es más que eso."
+        hint_specific: "«Amabilidad» es un trato agradable, como el saludo. ¿Prestar herramientas toda la semana es solo un saludo amable?"
+      - position: 2
+        text: "generalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Generalidad» describe algo común a todos, y aquí se trata de un gesto concreto hacia su vecina nueva, no de una regla general."
+        hint_specific: "«Generalidad» habla de algo común a todos. ¿Prestar herramientas a una sola vecina es una regla general?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+  - position: 7
+    sentence: "Milagros donó los ahorros de un año a la campaña de su sobrino, sin pedirle explicaciones de nada: sus padres no sabían si llamarlo {{blank}} o simple confianza."
+    hint_general: "Nombra el gesto de dar algo propio importante a alguien, sin pedir nada a cambio."
+    explanation: "Generosidad: dar algo propio importante a alguien, sin pedir nada a cambio. «Desprendimiento» describe soltar algo propio sin más, y «altruismo» se usa más para ayudar a desconocidos, no a un sobrino."
+    options:
+      - position: 1
+        text: "desprendimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Desprendimiento» encaja con renunciar a un ahorro, pero suena a soltar algo sin más, y aquí también hay un cuidado especial por su sobrino."
+        hint_specific: "«Desprendimiento» es soltar algo propio. ¿La frase resalta solo soltar el dinero o también el cuidado por su sobrino?"
+      - position: 2
+        text: "altruismo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Altruismo» suena a ayudar a alguien sin ningún vínculo cercano, y aquí se trata de su propio sobrino, no de un desconocido."
+        hint_specific: "«Altruismo» se usa más para ayudar a desconocidos. ¿La campaña era de un desconocido o de su sobrino?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+  - position: 8
+    sentence: "Esteban se quedó hasta tarde ayudando a un colega nuevo con su primer informe, sin que nadie se lo pidiera: para su equipo, eso resume su {{blank}}."
+    hint_general: "Nombra la cualidad de dar tiempo o ayuda a alguien sin que nadie te lo pida."
+    explanation: "Generosidad: dar tiempo o ayuda a alguien sin que nadie te lo pida. «Generalidad» describe algo común a un grupo entero, y «amabilidad» es solo un trato agradable, no dar tiempo propio."
+    options:
+      - position: 1
+        text: "generalidad"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Generalidad» habla de algo común a un grupo entero, y la frase describe un gesto concreto de Esteban hacia un solo colega."
+        hint_specific: "«Generalidad» describe algo común a todos. ¿Ayudar a un solo colega nuevo es algo general o un gesto concreto?"
+      - position: 2
+        text: "amabilidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amabilidad» es un trato agradable, y quedarse hasta tarde a ayudar con un informe es dar tiempo propio, no solo un buen trato."
+        hint_specific: "«Amabilidad» es un trato agradable. ¿Quedarse hasta tarde ayudando es solo un trato agradable, o algo más?"
+      - position: 3
+        text: "generosidad"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El curso pagado"
+    body: "Cuando Leonor mencionó que quería tomar un curso pero no le alcanzaba el sueldo ese mes, su jefa no dijo nada en el momento. Dos días después le llegó la confirmación de la inscripción, ya pagada. «No hacía falta que dijeras nada más», le dijo su jefa cuando Leonor intentó agradecerle frente a todos."
+    before_phrase: "Qué buena tu jefa, no tenía que hacer eso."
+    after_phrase: "Qué generosidad la de tu jefa, no tenía que hacer eso."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La bicicleta de mi vecino"
+    body: "Cuando mi bicicleta se rompió justo antes de un viaje largo, mi vecino Facundo me prestó la suya sin que se la pidiera dos veces. Al despedirme le pregunté cuándo la necesitaba de vuelta, y solo respondió: «Cuando puedas, no hay apuro». Se la devolví una semana después con una nota de agradecimiento."
+    before_phrase: "Qué bueno de tu parte, muchas gracias."
+    after_phrase: "Qué generosidad de tu parte, muchas gracias."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La cena de despedida"
+    body: "Antes de mudarse al extranjero, Rosario invitó a todo su grupo de amigos a cenar y no dejó que nadie pagara nada, ni siquiera la propina. «Es lo menos que puedo hacer después de todo lo que me dieron ustedes», dijo al final de la noche. Nadie supo qué responder, así que brindaron otra vez."
+    before_phrase: "Qué detalle que pagara todo, no tenía que hacerlo."
+    after_phrase: "Qué generosidad que pagara todo, no tenía que hacerlo."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

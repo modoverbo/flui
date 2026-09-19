@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "torpeza"
+status: "draft"
+lemma: "torpeza"
+part_of_speech: "sustantivo"
+syllables: ["tor", "pe", "za"]
+stressed_syllable: 2
+ipa_latam: "[toɾˈpe.sa]"
+ipa_es: "[toɾˈpe.θa]"
+explanation: "Falta de cuidado que hace que un gesto o un comentario salga mal y moleste un poco a los demás."
+example_sentence: "Se le trabó la lengua justo al presentar a los dos jefes, y esa torpeza quedó flotando un momento incómodo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar un desliz social sin dramatizarlo, como reconocer un comentario que salió mal."
+when_not_to_use: "No la uses para un error grave o hecho a propósito: es para pequeños tropiezos, no para faltas serias."
+collocations:
+  - "una torpeza"
+  - "cometer una torpeza"
+  - "torpeza social"
+replaces:
+  - before: "Fue un momento incómodo, se le escapó un comentario feo"
+    after: "Fue una torpeza, se le escapó un comentario feo"
+  - before: "Metí la pata al confundir los nombres de los dos"
+    after: "Cometí una torpeza al confundir los nombres de los dos"
+family: ["torpe", "torpemente"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["metida de pata"]
+  funcion: ["disculparse"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "torpor"
+    difference: "«Torpor» es un estado de lentitud o adormecimiento del cuerpo o la mente; la torpeza es un desliz puntual por falta de cuidado."
+    memory_trick: "El torpor te frena el cuerpo entero; la torpeza solo te falla en un momento."
+exercises:
+  - position: 1
+    sentence: "Bruno confundió el nombre del jefe con el de su ex en pleno brindis; todos notaron su {{blank}} y fingieron no haberlo escuchado."
+    hint_general: "Nombra un desliz que incomoda un poco, sin ser grave, delante de otros."
+    explanation: "Torpeza: un desliz que incomoda un poco, sin mala intención. «Torpor» es sentirse lento o adormecido, y «equivocación» es confundirse con un dato cualquiera, sin el matiz incómodo de este momento."
+    options:
+      - position: 1
+        text: "torpor"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Torpor» es sentirse lento o adormecido, y aquí nadie está cansado: alguien dijo el nombre equivocado en voz alta."
+        hint_specific: "El torpor tiene que ver con el sueño o el cansancio. ¿Aquí alguien está adormecido o dijo algo indebido?"
+      - position: 2
+        text: "equivocación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Equivocación» es confundirse con un dato cualquiera, y aquí lo que incomoda es lo torpe del momento delante de todos."
+        hint_specific: "Una equivocación puede ser un dato cualquiera. ¿Aquí solo hay un dato mal dicho o algo más incómodo?"
+      - position: 3
+        text: "torpeza"
+        is_correct: true
+  - position: 2
+    sentence: "Fernanda se trabó al presentar al nuevo director y lo llamó por el nombre de su antecesor; notó la {{blank}} apenas terminó la frase."
+    hint_general: "Describe darse cuenta, justo después, de que algo salió mal por un descuido."
+    explanation: "Torpeza: darse cuenta de un descuido justo después de cometerlo. «Confusión» solo describe mezclar dos datos, y «metedura de pata» es una expresión muy coloquial para este relato más neutro."
+    options:
+      - position: 1
+        text: "confusión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Confusión» solo dice que se mezclaron los nombres, y la frase apunta además a lo incómodo del momento, no solo al dato mezclado."
+        hint_specific: "La confusión es solo mezclar datos. ¿La frase señala solo eso o también lo incómodo del momento?"
+      - position: 2
+        text: "torpeza"
+        is_correct: true
+      - position: 3
+        text: "metedura de pata"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Metedura de pata» es una expresión muy coloquial, y el relato usa un tono más neutro para contar lo que pasó en la presentación."
+        hint_specific: "Esa expresión es muy coloquial. ¿El relato tiene un tono informal o más neutro?"
+  - position: 3
+    sentence: "En la cena, Emilio le preguntó a su tía por su esposo, sin saber que se habían separado; fue una {{blank}} que nadie supo cómo arreglar."
+    hint_general: "Señala un desliz sin mala intención, que deja un momento raro en la mesa."
+    explanation: "Torpeza: un desliz sin mala intención que incomoda a todos. «Indiscreción» sería preguntar algo privado a propósito, y «grosería» implica una falta de respeto intencional, algo que Emilio no buscaba."
+    options:
+      - position: 1
+        text: "indiscreción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiscreción» sería preguntar algo privado a propósito, y Emilio no sabía nada de la separación: fue un descuido, no una falta de tacto intencional."
+        hint_specific: "La indiscreción implica preguntar algo privado a propósito. ¿Emilio sabía de la separación?"
+      - position: 2
+        text: "grosería"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Grosería» implica una falta de respeto intencional, y aquí Emilio no tenía manera de saber lo que había pasado."
+        hint_specific: "La grosería suele ser algo intencional. ¿Emilio actuó a propósito o sin saber?"
+      - position: 3
+        text: "torpeza"
+        is_correct: true
+  - position: 4
+    sentence: "Rosa quiso sonar segura y terminó tuteando por error al entrevistador más formal de la sala; notó la {{blank}} en el acto."
+    hint_general: "Apunta a darse cuenta, en el momento, de que algo salió mal por falta de cuidado."
+    explanation: "Torpeza: darse cuenta, en el momento, de un desliz puntual. «Informalidad» describe un estilo relajado en general, y «vergüenza» es lo que se siente después, no el desliz mismo."
+    options:
+      - position: 1
+        text: "informalidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Informalidad» describe un estilo relajado en general, y aquí el problema fue un desliz puntual en medio de la entrevista."
+        hint_specific: "La informalidad es un estilo general. ¿Aquí se describe un estilo o un desliz puntual?"
+      - position: 2
+        text: "torpeza"
+        is_correct: true
+      - position: 3
+        text: "vergüenza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vergüenza» es lo que siente después del momento, y la frase nombra el desliz mismo, no la emoción que vino después."
+        hint_specific: "La vergüenza es una emoción posterior. ¿La frase nombra el desliz o lo que sintió después?"
+  - position: 5
+    sentence: "Simón le dio la mano a alguien que ya conocía, como si fuera la primera vez; se rió de su propia {{blank}} antes de que el otro dijera nada."
+    hint_general: "Habla de reírse del propio desliz, apenas ocurre, sin que nadie más lo señale."
+    explanation: "Torpeza: reírse del propio desliz apenas ocurre. «Distracción» es no prestar atención en general, y «inseguridad» es una duda interna, no un hecho ya ocurrido."
+    options:
+      - position: 1
+        text: "distracción"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Distracción» describe no prestar atención en general, y aquí lo que se nombra es el propio desliz social, ya hecho."
+        hint_specific: "La distracción es no prestar atención. ¿La frase nombra la falta de atención o el desliz ya ocurrido?"
+      - position: 2
+        text: "torpeza"
+        is_correct: true
+      - position: 3
+        text: "inseguridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Inseguridad» es dudar de uno mismo, y la frase describe un hecho concreto que pasó, no una duda interna."
+        hint_specific: "La inseguridad es una duda interna. ¿La frase describe una duda o algo que ya ocurrió?"
+  - position: 6
+    sentence: "A Daniela se le olvidó silenciar el micrófono y todos escucharon el comentario que le hizo a su gato; fue una {{blank}} memorable en la reunión."
+    hint_general: "Describe un desliz que queda como anécdota, aunque nadie quiso que pasara."
+    explanation: "Torpeza: un desliz que queda como anécdota de la reunión. «Metida de pata» es una expresión muy coloquial para este relato, e «imprudencia» implica un riesgo asumido a propósito, no un descuido con el micrófono."
+    options:
+      - position: 1
+        text: "metida de pata"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Metida de pata» es una expresión muy coloquial, y contar la reunión así, en un texto más neutro, suena fuera de tono."
+        hint_specific: "Esa expresión es muy coloquial para este relato. ¿El texto usa un tono informal o más neutro?"
+      - position: 2
+        text: "imprudencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imprudencia» implica un riesgo asumido a propósito, y aquí nadie decidió arriesgarse: fue un descuido con el micrófono."
+        hint_specific: "La imprudencia es un riesgo tomado a propósito. ¿Aquí alguien decidió arriesgarse o fue un descuido?"
+      - position: 3
+        text: "torpeza"
+        is_correct: true
+  - position: 7
+    sentence: "Alberto brindó por la pareja y, por los nervios, mencionó el nombre del ex de la novia; toda la mesa notó la {{blank}}."
+    hint_general: "Señala un desliz que se nota en toda la mesa, sin mala intención detrás."
+    explanation: "Torpeza: un desliz puntual que nota toda la mesa. «Falta de tacto» describe un rasgo general de alguien, y «osadía» implica animarse a algo a propósito, no un nombre que se escapó por los nervios."
+    options:
+      - position: 1
+        text: "falta de tacto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Falta de tacto» describe una forma de ser en general, y la frase apunta a un momento puntual, no a un rasgo constante de Alberto."
+        hint_specific: "La falta de tacto es un rasgo general. ¿La frase habla de un rasgo o de un momento puntual?"
+      - position: 2
+        text: "torpeza"
+        is_correct: true
+      - position: 3
+        text: "osadía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Osadía» implica animarse a algo a propósito, y aquí a Alberto se le escapó el nombre por los nervios, no por valentía calculada."
+        hint_specific: "La osadía es algo que se hace a propósito. ¿A Alberto se le escapó el nombre o lo dijo a propósito?"
+  - position: 8
+    sentence: "Noelia quiso hacer un cumplido y terminó comparando a su cuñada con su ex; se disculpó enseguida por la {{blank}}."
+    hint_general: "Nombra el desliz por el que alguien se disculpa enseguida, sin haberlo buscado."
+    explanation: "Torpeza: un desliz sin mala intención por el que alguien se disculpa. «Ligereza» describe actuar sin pensar en general, y «ofensa» implica una intención de herir que Noelia no tenía."
+    options:
+      - position: 1
+        text: "ligereza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ligereza» describe actuar sin pensar en general, y aquí lo que se nombra es ese comentario puntual que la incomodó."
+        hint_specific: "La ligereza es un modo de actuar en general. ¿Aquí se nombra un modo de ser o un comentario puntual?"
+      - position: 2
+        text: "torpeza"
+        is_correct: true
+      - position: 3
+        text: "ofensa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ofensa» implica una intención de herir, y Noelia no quería lastimar a nadie: fue un comentario que salió mal."
+        hint_specific: "La ofensa suele llevar intención de herir. ¿Noelia quería lastimar a alguien o solo se le escapó algo?"
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "practica"
+    title: "El nombre equivocado"
+    body: "En el brindis, Bruno mezcló el nombre del jefe con el de alguien más. Se hizo un silencio corto. «Fue una torpeza, perdón», dijo, y levantó la copa de nuevo. Todos rieron y siguieron la fiesta como si nada."
+    before_phrase: "Perdón, se me mezclaron los nombres, qué vergüenza."
+    after_phrase: "Perdón, fue una torpeza."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El comentario sobre la cuñada"
+    body: "Noelia quiso hacerle un cumplido a su cuñada y terminó comparándola con su ex, delante de toda la familia. Se dio cuenta al segundo y se disculpó: «Fue una torpeza mía, no quise decir eso». Su cuñada sonrió, más aliviada que molesta."
+    before_phrase: "Uy, perdón, no debí decir eso así."
+    after_phrase: "Fue una torpeza mía, perdón."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "social"
+    title: "El micrófono abierto"
+    body: "A mitad de la videollamada, Daniela se dio cuenta de que llevaba diez minutos sin silenciar el micrófono, hablándole a su gato entre punto y punto. «Qué torpeza», escribió en el chat, y todos pusieron emojis de risa. La reunión siguió sin más drama."
+    before_phrase: "Qué vergüenza, se me olvidó apagar el micrófono."
+    after_phrase: "Qué torpeza, se me olvidó apagar el micrófono."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

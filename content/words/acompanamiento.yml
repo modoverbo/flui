@@ -1,0 +1,228 @@
+schema_version: 1
+slug: "acompanamiento"
+status: "draft"
+lemma: "acompañamiento"
+part_of_speech: "sustantivo"
+syllables: ["a", "com", "pa", "ña", "mien", "to"]
+stressed_syllable: 5
+ipa_latam: "[a.kom.pa.ɲaˈmjen.to]"
+ipa_es: "[a.kom.pa.ɲaˈmjen.to]"
+explanation: "Estar junto a alguien y ayudarlo paso a paso mientras aprende algo difícil o decide qué hacer."
+example_sentence: "El primer mes en el puesto nuevo fue mucho más fácil gracias al acompañamiento de mi compañera de equipo."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsala cuando quieras reconocer que alguien estuvo presente y activo mientras aprendías algo, no solo dando consejos sueltos desde lejos."
+when_not_to_use: "No la confundas con «seguimiento», que es revisar resultados desde fuera; tampoco la uses para alguien que solo estuvo presente sin ayudar en nada."
+collocations:
+  - "acompañamiento constante"
+  - "brindar acompañamiento"
+replaces:
+  - before: "Estuve ahí ayudándola en todo el proceso, no la dejé sola"
+    after: "Le di acompañamiento en todo el proceso"
+  - before: "Necesito a alguien que me ayude paso a paso mientras aprendo esto"
+    after: "Necesito acompañamiento mientras aprendo esto"
+family: ["acompañar", "acompañante"]
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "liderazgo-feedback"
+    relevance: 2
+tags:
+  comodin: ["ayuda"]
+  funcion: ["guiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "seguimiento"
+    difference: "«Seguimiento» es revisar el avance desde fuera y de vez en cuando; el acompañamiento implica estar presente durante el proceso."
+    memory_trick: "El seguimiento observa de lejos; el acompañamiento camina al lado."
+  - confused_with: "asesoría"
+    difference: "«Asesoría» es un consejo técnico, a menudo pagado, sobre un punto concreto; el acompañamiento es estar presente en todo el proceso, no solo dar una recomendación."
+exercises:
+  - position: 1
+    sentence: "Cuando llegó al equipo, a Daniel le asignaron una compañera para que el primer mes tuviera {{blank}} constante, no solo una charla de bienvenida."
+    hint_general: "Piensa en la palabra para estar presente y guiar a alguien paso a paso mientras aprende algo nuevo en su trabajo."
+    explanation: "Acompañamiento: presencia constante que guía paso a paso. «Acompasamiento» es ajustar el ritmo de dos cosas, y «seguimiento» es revisar el avance desde fuera, sin estar presente."
+    options:
+      - position: 1
+        text: "acompasamiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Acompasamiento» es ajustar el ritmo de dos cosas para que coincidan, como pasos de baile; no describe que alguien esté presente guiándolo."
+        hint_specific: "«Acompasamiento» tiene que ver con igualar un ritmo. ¿La frase habla de sincronizar algo o de estar presente?"
+      - position: 2
+        text: "seguimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguimiento» es revisar el avance desde fuera de vez en cuando, y aquí la compañera está presente todo el primer mes."
+        hint_specific: "El seguimiento se hace desde lejos y de vez en cuando. ¿La compañera está presente o revisa desde fuera?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+  - position: 2
+    sentence: "Marta corrió al lado de la bici sujetando apenas el asiento; ese {{blank}} fue lo que le dio seguridad a su hija para soltarse sola."
+    hint_general: "Busca la palabra para la presencia cercana que ayuda a alguien a atreverse a hacer algo nuevo."
+    explanation: "Acompañamiento: presencia cercana que da seguridad. «Asesoría» suena a un consejo técnico que se cobra, y «vigilancia» es observar para que nadie se equivoque."
+    options:
+      - position: 1
+        text: "asesoría"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Asesoría» suena a un servicio profesional que se cobra, y aquí una madre corre al lado de su hija sin dar ningún consejo técnico."
+        hint_specific: "«Asesoría» suena a algo que se contrata. ¿Aquí alguien cobra por ayudar o solo corre al lado?"
+      - position: 2
+        text: "vigilancia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Vigilancia» es observar para que nadie se equivoque; aquí lo que ayuda a la niña es sentir compañía, no que la controlen."
+        hint_specific: "La vigilancia busca que nadie falle. ¿A la niña la controlan o la acompañan mientras se anima?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+  - position: 3
+    sentence: "Sofía se apuntó a cerámica sin saber nada, y lo que más agradeció fue el {{blank}} de su amiga, que ya llevaba dos años en eso."
+    hint_general: "La palabra describe estar presente sesión tras sesión, no solo dar una ayuda puntual al principio."
+    explanation: "Acompañamiento: presencia sostenida en cada sesión. «Asistencia» suena a una ayuda puntual o técnica, y «orientación» es señalar el camino solo al principio."
+    options:
+      - position: 1
+        text: "asistencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Asistencia» suena a una ayuda puntual o técnica, y aquí la amiga estuvo presente clase tras clase, no solo una vez."
+        hint_specific: "La asistencia suele ser algo puntual. ¿La amiga ayudó una vez o estuvo presente todo el tiempo?"
+      - position: 2
+        text: "orientación"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Orientación» es señalar el camino al principio; aquí la amiga siguió presente en cada sesión, no solo dio una indicación inicial."
+        hint_specific: "Orientar es señalar el camino una vez. ¿La amiga solo indicó el camino o siguió presente después?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+  - position: 4
+    sentence: "Antes de la entrevista final, Rodrigo practicó tres veces con su mentora, y ese {{blank}} le quitó buena parte de los nervios."
+    hint_general: "Se trata de la presencia de alguien que practica contigo, sin ponerte a prueba desde arriba."
+    explanation: "Acompañamiento: presencia que practica contigo, sin ponerte a prueba. «Tutelaje» suena a una figura legal que decide por otro, y «supervisión» es revisar desde una posición de control."
+    options:
+      - position: 1
+        text: "tutelaje"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Tutelaje» suena a una figura legal que decide por alguien, y aquí la mentora solo practicó con él, sin ninguna autoridad formal."
+        hint_specific: "El tutelaje implica una autoridad formal sobre otra persona. ¿La mentora decide por Rodrigo o practica con él?"
+      - position: 2
+        text: "supervisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Supervisión» es revisar que algo se haga bien desde una posición de control; aquí la mentora practicaba con él, no lo evaluaba desde arriba."
+        hint_specific: "Supervisar es revisar desde una posición de control. ¿La mentora controla o practica al lado de Rodrigo?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+  - position: 5
+    sentence: "Cuando Julián empezó como voluntario en el comedor, el coordinador le ofreció {{blank}} durante las primeras semanas para que no se sintiera perdido."
+    hint_general: "Piensa en la palabra para alguien presente que te guía mientras aprendes cómo funciona un lugar nuevo."
+    explanation: "Acompañamiento: presencia que guía a alguien mientras aprende. «Respaldo» es el apoyo que te cubre si algo sale mal, y «cuidado» es proteger a alguien frágil."
+    options:
+      - position: 1
+        text: "respaldo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Respaldo» es el apoyo que te cubre si algo sale mal, y aquí lo que recibió Julián fue alguien presente para guiarlo día a día."
+        hint_specific: "El respaldo se nota cuando algo sale mal. ¿Julián necesitaba que lo cubrieran o que lo guiaran día a día?"
+      - position: 2
+        text: "cuidado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cuidado» es proteger a alguien frágil; a Julián no lo protegían de nada, lo guiaban mientras aprendía cómo funcionaba el comedor."
+        hint_specific: "Cuidar es proteger a alguien frágil. ¿A Julián lo protegían o lo guiaban mientras aprendía?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+  - position: 6
+    sentence: "Cada domingo, Elena se sentaba con su padre a repasar la aplicación del banco; ese {{blank}} paciente evitó más de un susto."
+    hint_general: "Busca la palabra para sentarse al lado de alguien y repasar los pasos con él, no solo revisar a distancia."
+    explanation: "Acompañamiento: sentarse al lado y repasar los pasos juntos. «Atención» solo dice que alguien está pendiente, y «monitoreo» es revisar algo a distancia."
+    options:
+      - position: 1
+        text: "atención"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Atención» solo dice que alguien está pendiente; aquí Elena hacía algo más concreto: se sentaba a repasar los pasos con él."
+        hint_specific: "Prestar atención es solo estar pendiente. ¿Elena solo estaba pendiente o se sentaba a repasar con él?"
+      - position: 2
+        text: "monitoreo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Monitoreo» es revisar algo a distancia, casi como un panel de control, y aquí Elena estaba sentada al lado de su padre."
+        hint_specific: "Monitorear es revisar desde lejos. ¿Elena estaba lejos o sentada junto a su padre?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+  - position: 7
+    sentence: "El entrenador no se limitó a dar instrucciones desde la banca: el {{blank}} que le dio a la nueva jugadora fue caminar con ella cada ejercicio."
+    hint_general: "La palabra describe caminar al lado de alguien en cada ejercicio, no solo animarla desde lejos."
+    explanation: "Acompañamiento: caminar al lado en cada ejercicio. «Tutela» implica decidir por otra persona, y «apoyo» puede ser solo una palabra de aliento desde lejos."
+    options:
+      - position: 1
+        text: "tutela"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Tutela» implica que alguien toma decisiones por otra persona; aquí la jugadora decidía sola, solo tenía a alguien al lado."
+        hint_specific: "La tutela decide por otra persona. ¿La jugadora decide sola o alguien decide por ella?"
+      - position: 2
+        text: "apoyo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apoyo» puede ser una palabra de aliento desde lejos; aquí el entrenador caminaba al lado de ella en cada ejercicio, no solo la animaba."
+        hint_specific: "El apoyo puede darse desde lejos, con una palabra. ¿El entrenador solo anima o camina al lado?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+  - position: 8
+    sentence: "Mientras Camila armaba su primer currículum, su hermano se sentó con ella cada noche; ese {{blank}} fue lo que más la ayudó a no rendirse."
+    hint_general: "Piensa en la palabra para estar presente noche tras noche, ayudando de verdad, no solo estando cerca sin decir nada."
+    explanation: "Acompañamiento: presencia activa noche tras noche. «Compañía» es solo estar presente, y «seguimiento» sería preguntar de vez en cuando cómo va algo."
+    options:
+      - position: 1
+        text: "compañía"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Compañía» es solo estar presente; aquí el hermano además la ayudaba noche tras noche a mejorar el currículum, no solo le hacía compañía en silencio."
+        hint_specific: "Hacer compañía es solo estar presente. ¿El hermano solo está ahí o ayuda activamente cada noche?"
+      - position: 2
+        text: "seguimiento"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Seguimiento» sería preguntar cómo iba el currículum de vez en cuando; aquí el hermano se sentaba con ella cada noche."
+        hint_specific: "El seguimiento pregunta de vez en cuando. ¿El hermano pregunta a veces o está presente cada noche?"
+      - position: 3
+        text: "acompañamiento"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La primera semana"
+    body: "A Daniel le tocaba aprender el sistema nuevo solo, hasta que su gerente le asignó una compañera para las primeras semanas. «No hace falta que sepas todo hoy —le dijo ella—, para eso estoy aquí». Ese acompañamiento cambió cómo Daniel llegaba cada mañana: con dudas, no con miedo."
+    before_phrase: "Necesito a alguien que me ayude mientras aprendo esto."
+    after_phrase: "Necesito acompañamiento mientras aprendo esto."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Aprender a soltar el manubrio"
+    body: "Marta corrió al lado de la bicicleta sosteniendo apenas el asiento. Cuando soltó sin avisar, su hija pedaleó sola y gritó de la sorpresa. «¡No me soltaste hasta que estuve lista!», le dijo después, agradecida. Ese acompañamiento fue justo lo que necesitaba para animarse a intentarlo."
+    before_phrase: "Estuve ahí todo el tiempo, ayudándote."
+    after_phrase: "Te di acompañamiento todo el tiempo."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "Antes de la entrevista final"
+    body: "Rodrigo practicó tres veces con su mentora antes de la entrevista final, cada vez con preguntas distintas. «Ya sabes las respuestas —le dijo ella al terminar—, ahora solo falta que te creas lo que dices». Ese acompañamiento le quitó buena parte de los nervios con los que había llegado."
+    before_phrase: "Alguien que me ayudara a prepararme para esto."
+    after_phrase: "Tuve acompañamiento para prepararme para esto."
+provenance:
+  generator: "hand-authored for content/words (docencia theme)"
+  gate: null
+  checked_on: "2026-09-18"

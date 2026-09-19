@@ -1,0 +1,238 @@
+schema_version: 1
+sort_order: 9004
+slug: "remordimiento"
+status: "draft"
+lemma: "remordimiento"
+part_of_speech: "sustantivo"
+syllables: ["re", "mor", "di", "mien", "to"]
+stressed_syllable: 4
+ipa_latam: "[re.moɾ.ðiˈmjen.to]"
+ipa_es: "[re.moɾ.ðiˈmjen.to]"
+explanation: "Peso interno por haber tratado mal a alguien que te importa, que no te deja tranquilo."
+example_sentence: "Sintió un remordimiento tan fuerte que llamó a su amigo para pedirle perdón esa misma noche."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para nombrar ese peso interno que no te deja en paz hasta que reparas o reconoces lo que hiciste."
+when_not_to_use: "No la uses para una tristeza simple sin culpa de por medio, ni para el enojo que sientes hacia otra persona."
+collocations:
+  - "sentir remordimiento"
+  - "un remordimiento constante"
+  - "cargar con el remordimiento"
+replaces:
+  - before: "Me siento mal por lo que le dije"
+    after: "Tengo remordimiento por lo que le dije"
+  - before: "No dejo de pensar en lo mal que hice"
+    after: "El remordimiento no me deja pensar en otra cosa"
+  - before: "Todavía me pesa lo que pasó entre nosotros"
+    after: "Todavía siento remordimiento por lo que pasó entre nosotros"
+family:
+  - "remorder"
+themes:
+  - slug: "pedir-disculparse"
+    relevance: 3
+  - slug: "conversaciones-dificiles"
+    relevance: 2
+  - slug: "amistad"
+    relevance: 1
+tags:
+  comodin:
+    - "sentirse mal"
+  funcion:
+    - "sentir culpa"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "rendimiento"
+    difference: "«Rendimiento» mide cuánto produces o logras; esta palabra es el malestar que sientes por dentro cuando lastimaste a alguien."
+    memory_trick: "El rendimiento se mide en resultados; esta palabra se siente en la conciencia."
+  - confused_with: "culpa"
+    difference: "«Culpa» es el hecho de haber actuado mal; esta palabra es lo que sientes por dentro después de eso, aunque nadie más lo sepa."
+    memory_trick: "La culpa es un hecho; esta palabra es un sentimiento."
+exercises:
+  - position: 1
+    sentence: "Rosario le habló mal a su amiga sin pensarlo y, apenas colgó el teléfono, sintió un {{blank}} que no la dejó tranquila en toda la tarde."
+    hint_general: "Es un malestar interno por haber lastimado a alguien, que no se va con facilidad."
+    explanation: "Remordimiento: un malestar interno por haber lastimado a alguien. Un «rendimiento» mide resultados o logros, y una «tristeza» no siempre viene de haber hecho algo mal."
+    options:
+      - position: 1
+        text: "rendimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «rendimiento» mide cuánto produce o logra alguien, y Rosario no habla de resultados: siente un malestar por haber lastimado a su amiga."
+        hint_specific: "Un «rendimiento» se mide en números o logros. ¿De qué habla la frase, de resultados o de un malestar interno?"
+      - position: 2
+        text: "remordimiento"
+        is_correct: true
+      - position: 3
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «tristeza» puede sentirse sin haber hecho nada malo, y aquí el malestar de Rosario viene justamente de algo que ella misma dijo."
+        hint_specific: "Una «tristeza» no siempre viene de un error propio. ¿Por qué se siente mal Rosario exactamente?"
+  - position: 2
+    sentence: "Leandro no fue al cumpleaños de su compañero de equipo y, dos días después, seguía cargando con el {{blank}} en la oficina."
+    hint_general: "Es un peso interno que sigue presente días después de haber fallado a alguien."
+    explanation: "Remordimiento: un peso interno por haber fallado a alguien. Una «culpa» es el hecho de haber actuado mal, un «bajón» es coloquial y sin causa concreta, y esto describe lo que Leandro sigue sintiendo por dentro."
+    options:
+      - position: 1
+        text: "culpa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «culpa» es el hecho de haber faltado al cumpleaños, y aquí la frase describe algo distinto: lo que Leandro sigue sintiendo por dentro dos días después."
+        hint_specific: "Una «culpa» es el hecho en sí. ¿Qué describe la frase, el hecho o lo que Leandro sigue sintiendo?"
+      - position: 2
+        text: "remordimiento"
+        is_correct: true
+      - position: 3
+        text: "bajón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «bajón» es coloquial y describe sentirse decaído en general, sin apuntar a un error concreto, y Leandro sabe exactamente por qué se siente así: por no haber ido a la fiesta."
+        hint_specific: "Un «bajón» no siempre tiene una causa clara. ¿Leandro sabe por qué se siente así?"
+  - position: 3
+    sentence: "Nicolás le dijo algo hiriente a su hermano durante la discusión y esa noche no pudo dormir por el {{blank}}."
+    hint_general: "Es lo que impide dormir después de haber lastimado a alguien con palabras."
+    explanation: "Remordimiento: impide dormir después de haber lastimado con palabras. Un «rencor» se siente hacia el otro, no hacia uno mismo, y una «vergüenza» tiene más que ver con que otros lo vean, no con haber herido a alguien."
+    options:
+      - position: 1
+        text: "rencor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «rencor» es un resentimiento hacia otra persona, y aquí Nicolás no está enojado con su hermano: no puede dormir por lo que él mismo dijo."
+        hint_specific: "Un «rencor» se siente hacia el otro. ¿Con quién está enojado Nicolás en esta escena, con su hermano o consigo mismo?"
+      - position: 2
+        text: "remordimiento"
+        is_correct: true
+      - position: 3
+        text: "vergüenza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «vergüenza» tiene que ver con que otros te vean mal, y aquí Nicolás está solo, de noche, pensando en el daño que causó, no en cómo lo ven los demás."
+        hint_specific: "Una «vergüenza» depende de la mirada de otros. ¿Hay alguien más despierto viendo a Nicolás en esta escena?"
+  - position: 4
+    sentence: "Verónica criticó con dureza el trabajo de su compañera delante de todo el equipo y, al salir de la reunión, sintió un {{blank}} que la hizo volver a disculparse."
+    hint_general: "Es un malestar que empuja a volver atrás y reconocer un error frente a otra persona."
+    explanation: "Remordimiento: un malestar que empuja a reconocer un error frente a otra persona. Un «pesar» es una palabra más formal y literaria, y un «bajón» es coloquial y no apunta a un error concreto."
+    options:
+      - position: 1
+        text: "pesar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «pesar» es una palabra formal y algo literaria para la tristeza, y la frase describe algo más concreto: un malestar que la lleva de vuelta a disculparse por lo que dijo."
+        hint_specific: "Un «pesar» suena más literario y general. ¿Qué la hace volver a disculparse exactamente?"
+      - position: 2
+        text: "remordimiento"
+        is_correct: true
+      - position: 3
+        text: "bajón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «bajón» es coloquial y describe sentirse decaído sin razón concreta, y Verónica sabe exactamente por qué se siente mal: por lo que dijo delante del equipo."
+        hint_specific: "Un «bajón» no señala una causa concreta. ¿Verónica sabe por qué se siente así?"
+  - position: 5
+    sentence: "Pablo le prometió a su sobrino que iría a verlo el sábado y, cuando no pudo cumplir, el {{blank}} lo acompañó toda la semana siguiente."
+    hint_general: "Es un malestar que dura días después de haber roto una promesa a alguien querido."
+    explanation: "Remordimiento: un malestar que dura días después de romper una promesa. Una «culpa» es el hecho de haber fallado, y un «rencor» se dirige hacia otra persona, no hacia uno mismo."
+    options:
+      - position: 1
+        text: "culpa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «culpa» es el hecho de no haber cumplido la promesa, y la frase describe algo distinto: lo que Pablo siente por dentro toda la semana siguiente."
+        hint_specific: "Una «culpa» es el hecho en sí, no lo que se siente después. ¿Qué lo acompaña toda la semana?"
+      - position: 2
+        text: "remordimiento"
+        is_correct: true
+      - position: 3
+        text: "rencor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «rencor» se siente hacia otra persona, y aquí Pablo no está enojado con su sobrino: está mal consigo mismo por no haber cumplido."
+        hint_specific: "Un «rencor» apunta hacia otro. ¿Con quién está mal Pablo en esta escena?"
+  - position: 6
+    sentence: "Ximena salió del chat familiar después de la pelea y, ya más calmada, el {{blank}} la hizo escribir un mensaje pidiendo disculpas."
+    hint_general: "Es lo que empuja a escribir y reconocer un error después de haber reaccionado mal."
+    explanation: "Remordimiento: empuja a reconocer un error después de reaccionar mal. Una «vergüenza» depende de que otros lo sepan, y un «rendimiento» mide resultados, no sentimientos por algo hecho."
+    options:
+      - position: 1
+        text: "vergüenza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «vergüenza» depende de que otros se enteren de algo, y aquí Ximena escribe sola, más calmada, por algo que ella sabe que hizo mal, sin que nadie la esté mirando."
+        hint_specific: "Una «vergüenza» necesita testigos. ¿Quién está mirando a Ximena mientras escribe el mensaje?"
+      - position: 2
+        text: "rendimiento"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Un «rendimiento» mide resultados o logros, y Ximena no piensa en resultados: siente un malestar por cómo reaccionó en la pelea familiar."
+        hint_specific: "Un «rendimiento» se mide en logros. ¿De qué habla realmente esta frase?"
+      - position: 3
+        text: "remordimiento"
+        is_correct: true
+  - position: 7
+    sentence: "Cecilia se quedó callada cuando hablaron mal de su amiga en la mesa, y esa noche el {{blank}} le pesó tanto que la llamó para contarle todo."
+    hint_general: "Es un malestar tan fuerte que empuja a confesar algo que se guardó callado."
+    explanation: "Remordimiento: un malestar tan fuerte que empuja a confesar algo callado. Un «bajón» es coloquial y no apunta a un error concreto, y un «rencor» se dirige a otra persona, no a uno mismo."
+    options:
+      - position: 1
+        text: "bajón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "Un «bajón» es coloquial y describe sentirse decaído sin una razón concreta, y Cecilia sabe exactamente por qué llama a su amiga esa noche."
+        hint_specific: "Un «bajón» no tiene una causa clara. ¿Cecilia sabe por qué se siente así?"
+      - position: 2
+        text: "remordimiento"
+        is_correct: true
+      - position: 3
+        text: "rencor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «rencor» se siente hacia otra persona, y aquí Cecilia está mal consigo misma por haberse quedado callada, no enojada con nadie más."
+        hint_specific: "Un «rencor» apunta hacia el otro. ¿Con quién está mal Cecilia, con su amiga o consigo misma?"
+  - position: 8
+    sentence: "Fabián revisó el mensaje que había mandado enojado y, antes de que su amigo lo leyera, el {{blank}} lo hizo llamar para retractarse."
+    hint_general: "Es un malestar interno tan fuerte que hace actuar rápido para corregir algo dicho de mala manera."
+    explanation: "Remordimiento: un malestar interno que hace actuar rápido para corregir algo. Un «pesar» suena más formal y menos urgente, y una «tristeza» no siempre nace de un error propio."
+    options:
+      - position: 1
+        text: "remordimiento"
+        is_correct: true
+      - position: 2
+        text: "pesar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Un «pesar» es una palabra más formal y literaria, y la frase describe algo más urgente: lo que hace a Fabián llamar de inmediato antes de que su amigo lea el mensaje."
+        hint_specific: "Un «pesar» suena más lento y literario. ¿Con qué urgencia actúa Fabián?"
+      - position: 3
+        text: "tristeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «tristeza» puede sentirse sin haber hecho nada malo, y aquí Fabián reacciona justamente porque sabe que su mensaje estuvo mal."
+        hint_specific: "Una «tristeza» no siempre viene de un error propio. ¿Por qué reacciona así Fabián?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La crítica en la reunión"
+    body: "Verónica había sido dura con el trabajo de su compañera, delante de todo el equipo. Al salir, no pudo quedarse callada: «Tengo un remordimiento horrible, me pasé de la raya». Volvió a la sala, se disculpó en privado, y su compañera se lo agradeció con una sonrisa."
+    before_phrase: "Me siento fatal por cómo hablé en la reunión."
+    after_phrase: "Tengo un remordimiento horrible, me pasé de la raya."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La promesa del sábado"
+    body: "Pablo le había prometido a su sobrino que iría a verlo, pero el trabajo se lo impidió. Toda la semana cargó con un remordimiento que no lo dejaba en paz. El domingo siguiente llegó temprano, con un regalo, y le dijo: «Perdón por el sábado, esta semana no te fallo»."
+    before_phrase: "Me sentí muy mal por no haber ido."
+    after_phrase: "Cargué con un remordimiento toda la semana."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El silencio en la mesa"
+    body: "Cecilia se había quedado callada cuando el grupo habló mal de su amiga. Esa noche, el remordimiento le pesó tanto que la llamó. «No dije nada, y me siento fatal por eso», le confesó. Su amiga se lo agradeció: «Gracias por contármelo, eso ya vale mucho»."
+    before_phrase: "Me quedé callada y ahora me siento mal por eso."
+    after_phrase: "El remordimiento me pesó tanto que te tenía que llamar."
+provenance:
+  generator: "flui authoring agent — batch W1 pedir-disculparse"
+  gate: null
+  checked_on: "2026-09-18"

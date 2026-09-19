@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "duradero"
+status: "draft"
+lemma: "duradero"
+part_of_speech: "adjetivo"
+syllables: ["du", "ra", "de", "ro"]
+stressed_syllable: 3
+ipa_latam: "[du.ɾaˈðe.ɾo]"
+ipa_es: "[du.ɾaˈðe.ɾo]"
+explanation: "Que se mantiene en el tiempo, sin gastarse rápido ni terminar de un día para otro."
+example_sentence: "Sus abuelos siempre dicen que el secreto de un cariño duradero es reírse juntos cada día."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para elogiar una relación que resiste el paso del tiempo, no solo un buen comienzo."
+when_not_to_use: "No lo uses para algo que recién empieza: duradero se confirma con el tiempo, no desde el primer día."
+collocations:
+  - "un amor duradero"
+  - "una relación duradera"
+  - "algo duradero"
+semantic_set_id: "duracion-del-vinculo"
+family: []
+themes:
+  - slug: "citas"
+    relevance: 3
+tags:
+  comodin: ["que dura", "para toda la vida"]
+  funcion: ["describir duración"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "constante"
+    difference: "Constante describe algo regular y sin pausas, como llamarse todos los días; duradero describe que una relación resiste el paso del tiempo, aunque tenga pausas."
+    memory_trick: "Lo constante se repite seguido; lo duradero simplemente no se acaba."
+replaces:
+  - before: "Es un cariño que resiste el paso del tiempo"
+    after: "Es un cariño duradero"
+  - before: "Llevan años juntos y todavía se quieren igual"
+    after: "Tienen un amor duradero"
+exercises:
+  - position: 1
+    sentence: "Sus abuelos siempre dicen que el secreto de un cariño {{blank}} es reírse juntos cada día."
+    hint_general: "Que se mantiene en el tiempo, sin desgastarse ni terminar rápido."
+    explanation: "Duradero: que se mantiene en el tiempo, sin desgastarse. «Constante» describe algo regular y sin pausas, y «divertido» habla de pasarla bien, sin implicar que algo resista el tiempo."
+    options:
+      - position: 1
+        text: "duradero"
+        is_correct: true
+      - position: 2
+        text: "constante"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Constante» describe algo regular y sin pausas, y la frase habla de resistir el paso del tiempo, no de una rutina fija de todos los días."
+        hint_specific: "Constante implica regularidad sin pausas. ¿La frase habla de una rutina fija o de resistir el paso del tiempo?"
+      - position: 3
+        text: "divertido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Divertido» habla de pasarla bien, y la frase se enfoca en que el cariño resista el paso del tiempo, no solo en que sea entretenido."
+        hint_specific: "Divertido es pasarla bien. ¿La frase habla de entretenimiento o de resistir el tiempo?"
+  - position: 2
+    sentence: "El terapeuta de pareja explicó que un vínculo {{blank}} se construye con pequeños gestos diarios, no con un solo gran gesto."
+    hint_general: "Que resiste el paso del tiempo, construido poco a poco."
+    explanation: "Duradero: que resiste el paso del tiempo, construido poco a poco. «Durazno» es una fruta, y «perfecto» implicaría algo sin fallas; ninguno describe construir un vínculo con el tiempo."
+    options:
+      - position: 1
+        text: "duradero"
+        is_correct: true
+      - position: 2
+        text: "durazno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Durazno» es una fruta, y no tiene relación con que algo resista el paso del tiempo."
+        hint_specific: "Un durazno es una fruta. ¿La frase habla de una fruta o de un vínculo que resiste el tiempo?"
+      - position: 3
+        text: "perfecto"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Perfecto» implicaría algo sin fallas, y la frase habla de construir con gestos diarios, no de que la relación sea impecable."
+        hint_specific: "Perfecto implica ausencia de fallas. ¿La frase habla de perfección o de construir con el tiempo?"
+  - position: 3
+    sentence: "A diferencia de otras parejas del grupo, la de Camila resultó ser {{blank}}: siguen juntos quince años después."
+    hint_general: "Que se mantiene en el tiempo, a diferencia de otras relaciones más cortas."
+    explanation: "Duradera: que se mantiene en el tiempo, a diferencia de otras relaciones. «Divertida» habla de pasarla bien, y «durazno» es una fruta; ninguna explica los quince años juntos."
+    options:
+      - position: 1
+        text: "divertida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Divertida» habla de pasarla bien, y la frase se enfoca en que la relación sigue después de quince años, no en si es entretenida."
+        hint_specific: "Divertida es pasarla bien. ¿La frase habla de entretenimiento o de los quince años juntos?"
+      - position: 2
+        text: "duradera"
+        is_correct: true
+      - position: 3
+        text: "durazno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Durazno» es una fruta, y no tiene relación con una relación que dura quince años."
+        hint_specific: "Un durazno es una fruta. ¿La frase habla de una fruta o de una relación de quince años?"
+  - position: 4
+    sentence: "Su tía siempre dice que un matrimonio {{blank}} necesita más paciencia que pasión."
+    hint_general: "Que se mantiene en el tiempo, más allá de la emoción del principio."
+    explanation: "Duradero: que se mantiene en el tiempo, más allá de la emoción del principio. «Apasionado» describe intensidad emocional, y «durazno» es una fruta; ninguno describe un matrimonio de muchos años."
+    options:
+      - position: 1
+        text: "duradero"
+        is_correct: true
+      - position: 2
+        text: "apasionado"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Apasionado» describe intensidad emocional, y la frase distingue eso de la paciencia necesaria para que algo resista el tiempo."
+        hint_specific: "Apasionado describe intensidad. ¿La frase habla de intensidad o de resistir el paso del tiempo?"
+      - position: 3
+        text: "durazno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Durazno» es una fruta, y no tiene relación con que algo resista el paso del tiempo."
+        hint_specific: "Un durazno es una fruta. ¿La frase habla de una fruta o de un matrimonio de muchos años?"
+  - position: 5
+    sentence: "El artículo sobre parejas jóvenes hablaba de qué hace que un noviazgo sea {{blank}} y no termine a los pocos meses."
+    hint_general: "Que se mantiene en el tiempo, en vez de terminar rápido."
+    explanation: "Duradero: que se mantiene en el tiempo, en vez de terminar rápido. «Chido» es coloquial y regional, y «durazno» es una fruta; ninguno nombra con precisión qué hace resistir a un noviazgo."
+    options:
+      - position: 1
+        text: "duradero"
+        is_correct: true
+      - position: 2
+        text: "chido"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chido» es coloquial y regional, y aquí se busca nombrar con precisión qué hace que un noviazgo resista el paso del tiempo."
+        hint_specific: "«Chido» es una palabra muy regional. ¿El artículo busca una palabra precisa o una muy coloquial?"
+      - position: 3
+        text: "durazno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Durazno» es una fruta, y no tiene relación con que algo resista el paso del tiempo."
+        hint_specific: "Un durazno es una fruta. ¿La frase habla de una fruta o de un noviazgo que no termina rápido?"
+  - position: 6
+    sentence: "Después de dos matrimonios cortos, Marta por fin encontró algo {{blank}} con Hugo."
+    hint_general: "Algo que se mantiene en el tiempo, a diferencia de relaciones anteriores más cortas."
+    explanation: "Duradero: algo que se mantiene en el tiempo, a diferencia de relaciones más cortas. «Rico» habla de dinero, sin relación con la duración, y «durazno» es una fruta, sin relación con una relación de pareja."
+    options:
+      - position: 1
+        text: "duradero"
+        is_correct: true
+      - position: 2
+        text: "rico"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rico» habla de tener mucho dinero, sin relación con que una relación resista el paso del tiempo."
+        hint_specific: "Rico habla de dinero. ¿La frase habla de dinero o de duración de la relación?"
+      - position: 3
+        text: "durazno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Durazno» es una fruta, y no tiene relación con que algo resista el paso del tiempo."
+        hint_specific: "Un durazno es una fruta. ¿La frase habla de una fruta o de lo que encontró Marta con Hugo?"
+  - position: 7
+    sentence: "El columnista escribió que las mejores amistades son las que se vuelven {{blank}} después de una crisis superada juntos."
+    hint_general: "Que se mantiene en el tiempo, incluso después de pasar por un momento difícil."
+    explanation: "Duraderas: que se mantienen en el tiempo, incluso después de una crisis. «Frágiles» describiría justo lo contrario, y «duraznos» son una fruta; ninguna describe superar una crisis juntos."
+    options:
+      - position: 1
+        text: "duraderas"
+        is_correct: true
+      - position: 2
+        text: "frágiles"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Frágil» describiría justo lo contrario, y la frase dice que esas amistades superaron una crisis juntas, algo que fortalece, no debilita."
+        hint_specific: "Frágil es lo contrario de resistente. ¿Las amistades se rompieron con la crisis o la superaron?"
+      - position: 3
+        text: "duraznos"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Duradazas» no es una palabra que exista en español, aunque suene parecida a la que describe algo que resiste el tiempo."
+        hint_specific: "Un durazno es una fruta. ¿La frase habla de una fruta o de una amistad que resiste una crisis?"
+  - position: 8
+    sentence: "Aunque empezó como algo casual, la relación resultó ser {{blank}}: ya llevan cinco años juntos."
+    hint_general: "Que se mantiene en el tiempo, aunque haya empezado sin muchas expectativas."
+    explanation: "Duradera: que se mantiene en el tiempo, aunque empezara sin expectativas. «Casual» describe justo el inicio que menciona la frase, y «durazno» es una fruta, sin relación con cómo resultó la relación."
+    options:
+      - position: 1
+        text: "duradera"
+        is_correct: true
+      - position: 2
+        text: "casual"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Casual» describe justo cómo empezó la relación, y la frase distingue eso de cómo resultó ser después de cinco años."
+        hint_specific: "La frase ya dice que empezó como algo casual. ¿Qué palabra describe cómo resultó después?"
+      - position: 3
+        text: "durazno"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Durazno» es una fruta, y no tiene relación con una relación que dura quince años."
+        hint_specific: "Un durazno es una fruta. ¿La frase habla de una fruta o de una relación de cinco años?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El secreto de los abuelos"
+    body: "En cada cena familiar, alguien terminaba preguntándoles el secreto. «Un cariño duradero se construye riéndose juntos cada día», repetía el abuelo, mientras su esposa asentía, cincuenta años después de la primera cita."
+    before_phrase: "Lo que hace que un cariño resista el tiempo es reírse juntos."
+    after_phrase: "Lo que hace que un cariño sea duradero es reírse juntos."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "Quince años después"
+    body: "En la reunión de exalumnos, todos se sorprendieron al ver que Camila seguía con la misma pareja de la secundaria. «Nunca pensé que sería tan duradero», admitió ella, «pero acá seguimos, quince años después»."
+    before_phrase: "Nunca pensé que iba a durar tanto tiempo."
+    after_phrase: "Nunca pensé que sería tan duradero."
+  - position: 3
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El artículo sobre parejas jóvenes"
+    body: "Para la nota, Rubén entrevistó a varias parejas de más de diez años. «Todas coincidían en algo: lo duradero no depende de la pasión del principio, sino de la paciencia después», escribió en su columna esa semana."
+    before_phrase: "Lo que hace que dure no es la pasión del principio."
+    after_phrase: "Lo duradero no depende de la pasión del principio."
+provenance:
+  generator: "authored for the citas theme"
+  gate: null
+  checked_on: "2026-09-18"

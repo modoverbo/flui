@@ -1,0 +1,228 @@
+schema_version: 1
+slug: "companerismo"
+status: "draft"
+lemma: "compañerismo"
+part_of_speech: "sustantivo"
+syllables: ["com", "pa", "ñe", "ris", "mo"]
+stressed_syllable: 4
+ipa_latam: "[kom.pa.ɲeˈɾis.mo]"
+ipa_es: "[kom.pa.ɲeˈɾis.mo]"
+explanation: "Ayuda y buen trato entre personas que comparten un equipo, un grupo o una actividad."
+example_sentence: "El compañerismo del equipo se nota cuando alguien se queda a ayudar sin que se lo pidan."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Funciona bien para describir el buen trato entre colegas o compañeros de equipo, incluso sin ser amigos cercanos."
+when_not_to_use: "No la uses para una amistad profunda ni para favores que solo benefician a unos pocos."
+collocations:
+  - "compañerismo entre colegas"
+  - "buen compañerismo"
+  - "falta de compañerismo"
+replaces:
+  - before: "En mi equipo nos ayudamos mucho entre todos"
+    after: "En mi equipo hay mucho compañerismo"
+  - before: "Se nota que se apoyan de verdad en el trabajo"
+    after: "Se nota el compañerismo en el trabajo"
+family: ["compañero", "compañía"]
+themes:
+  - slug: "amistad"
+    relevance: 3
+tags:
+  comodin: ["buen ambiente"]
+  funcion: ["reconocer"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "compadrazgo"
+    difference: "«Compadrazgo» es una red de favores entre allegados que deja fuera al resto; «compañerismo» es ayudar a todos por igual, sin esperar nada a cambio."
+    memory_trick: "El compadrazgo reparte favores a unos pocos; el compañerismo ayuda a todos por igual."
+  - confused_with: "camaradería"
+    difference: "«Camaradería» surge de golpe entre quienes acaban de coincidir; «compañerismo» es el trato leal y constante entre quienes ya comparten equipo o rutina."
+    memory_trick: "La camaradería nace en un rato; el compañerismo se construye con los días."
+exercises:
+  - position: 1
+    sentence: "En el equipo de Andrea nadie exige nada a cambio: eso demuestra {{blank}}, no favores para unos pocos."
+    hint_general: "Se trata del trato de apoyo mutuo entre quienes trabajan juntos, sin favorecer a unos más que a otros."
+    explanation: "Compañerismo: ayuda mutua sin esperar nada a cambio. «Compadrazgo» reparte favores solo entre algunos, y «amistad» es un vínculo personal, no el trato dentro de un equipo."
+    options:
+      - position: 1
+        text: "compadrazgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Compadrazgo» reparte favores solo entre los cercanos, y la frase dice que aquí nadie exige nada a cambio."
+        hint_specific: "«Compadrazgo» reparte favores solo entre los cercanos. ¿La frase habla de ayudar a todos o solo a algunos?"
+      - position: 2
+        text: "compañerismo"
+        is_correct: true
+      - position: 3
+        text: "amistad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amistad» es un vínculo personal más profundo, y la frase habla del trato dentro de un equipo, no de una relación cercana."
+        hint_specific: "«Amistad» es un vínculo personal más profundo. ¿La frase habla del equipo entero o de una relación cercana?"
+  - position: 2
+    sentence: "Cuando Tomás se mudó de ciudad, sus antiguos colegas lo llamaron solo para saber cómo estaba: eso fue {{blank}}, sin más."
+    hint_general: "Nombra el gesto de cuidarse entre quienes trabajaron juntos, sin que nadie se lo pidiera."
+    explanation: "Compañerismo: el cuidado que surge entre quienes compartieron un trabajo. «Solidaridad» se reserva para ayudar ante una dificultad seria, y «camaradería» suena a discurso solemne para una simple llamada."
+    options:
+      - position: 1
+        text: "solidaridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Solidaridad» se usa más para apoyar a alguien en una dificultad concreta, y aquí solo se preocupan por él sin que haya un problema grave."
+        hint_specific: "«Solidaridad» suena a ayuda ante una dificultad seria. ¿Tomás está pasando por una crisis aquí?"
+      - position: 2
+        text: "camaradería"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Camaradería» suena a discurso militar o político, y entre excompañeros que solo hacen una llamada resulta demasiado solemne."
+        hint_specific: "«Camaradería» tiene un tono más solemne, casi de discurso. ¿Encaja con una simple llamada entre excompañeros?"
+      - position: 3
+        text: "compañerismo"
+        is_correct: true
+  - position: 3
+    sentence: "En la panadería familiar de Marina, los empleados nuevos notan enseguida {{blank}}, no una red de favores para unos pocos."
+    hint_general: "Se trata de un ambiente donde todos se ayudan por igual, no de un círculo cerrado de favores."
+    explanation: "Compañerismo: un ambiente donde todos se ayudan por igual. «Compadrazgo» es la red de favores cerrada que la frase descarta, y «unión» solo dice que están juntos, sin decir que se ayudan."
+    options:
+      - position: 1
+        text: "compadrazgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Compadrazgo» es justo la red de favores cerrada que la frase descarta, no el ambiente abierto que describe."
+        hint_specific: "«Compadrazgo» es un círculo cerrado de favores. La frase dice que no es eso: ¿qué palabra sí encaja?"
+      - position: 2
+        text: "unión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Unión» dice que un grupo está unido, pero no precisa que se ayuden entre sí en el trabajo diario, que es lo que describe la frase."
+        hint_specific: "«Unión» solo dice que están juntos. ¿La frase habla de estar juntos o de ayudarse en el día a día?"
+      - position: 3
+        text: "compañerismo"
+        is_correct: true
+  - position: 4
+    sentence: "Bruno explicó en la entrevista que su equipo funciona gracias a {{blank}}, más que a la simpatía entre sus integrantes."
+    hint_general: "Se refiere al buen trato y apoyo entre colegas, no a lo simpáticos que sean entre ellos."
+    explanation: "Compañerismo: el trato de apoyo entre colegas. «Amistad» es un lazo personal más profundo, y «solidaridad» se asocia a ayudar ante un problema puntual, no al día a día de un equipo."
+    options:
+      - position: 1
+        text: "amistad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amistad» describe un vínculo personal cercano, y Bruno distingue justo eso de lo que valora en un equipo de trabajo."
+        hint_specific: "Bruno contrasta esta palabra con la simpatía personal. ¿Habla de un lazo íntimo o del trato dentro del equipo?"
+      - position: 2
+        text: "solidaridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Solidaridad» se asocia más a apoyar en un problema puntual, y aquí Bruno habla del trato diario de un equipo, no de una crisis."
+        hint_specific: "«Solidaridad» suena a ayuda en un problema puntual. ¿Bruno habla de una crisis o del día a día del equipo?"
+      - position: 3
+        text: "compañerismo"
+        is_correct: true
+  - position: 5
+    sentence: "En la despedida de Sebastián, sus colegas prepararon un video conmovedor que mostraba {{blank}}, no un simple trámite de oficina."
+    hint_general: "Nombra el buen trato y apoyo que hay entre quienes trabajaron juntos."
+    explanation: "Compañerismo: lo que se nota en un gesto sincero entre colegas. «Compadreo» es coloquial y suena a reparto de favores, y «unión» no nombra el apoyo mutuo que muestra el video."
+    options:
+      - position: 1
+        text: "compadreo"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Compadreo» es un término coloquial y con aire de crítica, como quien reparte favores, y no encaja con un gesto conmovedor y sincero."
+        hint_specific: "«Compadreo» suena informal y hasta crítico. ¿El video fue un gesto sincero o un reparto de favores?"
+      - position: 2
+        text: "unión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Unión» dice que el grupo estaba junto, pero no señala el apoyo mutuo que muestra preparar un video así."
+        hint_specific: "«Unión» solo dice que estaban juntos. ¿La frase resalta estar juntos o el apoyo mutuo que se nota en el video?"
+      - position: 3
+        text: "compañerismo"
+        is_correct: true
+  - position: 6
+    sentence: "El entrenador de Renata repite siempre que un equipo gana partidos gracias a {{blank}}, no solo al talento individual."
+    hint_general: "Habla del apoyo mutuo entre jugadores, no de lo talentosos que sean por separado."
+    explanation: "Compañerismo: el apoyo entre jugadores de un equipo. «Compadrazgo» favorece a unos pocos, y «amistad» habla de cercanía personal fuera de la cancha, no del juego en sí."
+    options:
+      - position: 1
+        text: "compadrazgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Compadrazgo» implica favorecer a unos jugadores sobre otros, y el entrenador habla justo de lo contrario: apoyarse todos por igual."
+        hint_specific: "«Compadrazgo» favorece a unos pocos. ¿El entrenador pide favoritismo o apoyo entre todos?"
+      - position: 2
+        text: "amistad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amistad» habla de cercanía personal fuera de la cancha, y el entrenador se refiere al apoyo dentro del juego, no a si son amigos."
+        hint_specific: "«Amistad» es un lazo personal. ¿El entrenador habla de ser amigos o de apoyarse en el juego?"
+      - position: 3
+        text: "compañerismo"
+        is_correct: true
+  - position: 7
+    sentence: "Los vecinos del edificio de Iván se turnan para regar las plantas cuando alguien viaja: eso demuestra {{blank}} entre ellos."
+    hint_general: "Se refiere al gesto de ayudarse entre quienes viven en el mismo edificio, sin que nadie tenga un problema grave."
+    explanation: "Compañerismo: ayudarse entre quienes comparten un espacio. «Solidaridad» suena a ayuda ante algo serio, y «unión» no nombra el gesto concreto de turnarse para ayudar."
+    options:
+      - position: 1
+        text: "solidaridad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Solidaridad» suele usarse cuando alguien enfrenta una dificultad seria, y aquí solo se turnan un cuidado sencillo entre vecinos."
+        hint_specific: "«Solidaridad» suena a ayuda ante algo serio. ¿Regar plantas mientras alguien viaja es una dificultad grave?"
+      - position: 2
+        text: "unión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Unión» dice que los vecinos están unidos, pero no nombra el gesto concreto de turnarse para ayudarse."
+        hint_specific: "«Unión» no nombra el gesto de ayudarse por turnos. ¿La frase describe solo estar unidos o algo más concreto?"
+      - position: 3
+        text: "compañerismo"
+        is_correct: true
+  - position: 8
+    sentence: "El primer día de trabajo de Diego, alguien lo ayudó sin que se lo pidiera y sin esperar nada a cambio: a eso él lo llama {{blank}}."
+    hint_general: "Nombra el gesto de ayudar a alguien del grupo sin buscar nada para uno mismo."
+    explanation: "Compañerismo: ayudar a alguien del grupo sin esperar nada a cambio. «Compadrazgo» espera algo a cambio dentro de un círculo cerrado, y «amistad» supondría que ya se conocían bien."
+    options:
+      - position: 1
+        text: "compadrazgo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Compadrazgo» implica ayudar esperando algo a cambio dentro de un círculo cerrado, y aquí la ayuda llega sin condiciones."
+        hint_specific: "«Compadrazgo» espera algo a cambio. ¿La frase dice que se ayudó sin esperar nada?"
+      - position: 2
+        text: "amistad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Amistad» supondría que ya se conocían bien, y aquí alguien ayuda a un compañero nuevo el primer día, sin ese vínculo previo."
+        hint_specific: "«Amistad» supone conocerse ya. ¿Es el primer día de esa persona en la oficina?"
+      - position: 3
+        text: "compañerismo"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El primer proyecto grande"
+    body: "Cuando el proyecto se retrasó, nadie señaló culpables. Renata se quedó una hora más para ayudar a un compañero con la parte que no entendía, sin que nadie se lo pidiera. «Así se sale adelante», dijo su jefa al ver el resultado final. El equipo entregó a tiempo y nadie recordó de quién había sido el error."
+    before_phrase: "Qué bien se llevan todos en ese equipo."
+    after_phrase: "Hay mucho compañerismo en ese equipo."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La mudanza de mi hermano"
+    body: "Cuando mi hermano perdió el trabajo, sus excompañeros de oficina organizaron una lista para ayudarlo con contactos, sin que él lo pidiera. Me contó la historia con la voz quebrada: «No esperaba que se acordaran de mí». Le dije que eso no era casualidad, sino algo que él mismo había sembrado durante años."
+    before_phrase: "Qué suerte que se acuerdan de ti."
+    after_phrase: "Ese compañerismo no es casualidad, lo sembraste tú."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "El grupo del fútbol de los domingos"
+    body: "Después de diez años jugando juntos los domingos, el grupo de Bruno ya no habla solo de fútbol. Cuando alguien falta por una mala semana, los demás le escriben aparte para preguntar cómo está. «Este grupo dejó de ser solo un partido hace rato», dice Bruno cada vez que alguien nuevo se une."
+    before_phrase: "Este grupo se lleva muy bien."
+    after_phrase: "En este grupo hay compañerismo de verdad."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

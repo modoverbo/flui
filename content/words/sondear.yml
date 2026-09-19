@@ -1,0 +1,225 @@
+schema_version: 1
+slug: "sondear"
+status: "draft"
+lemma: "sondear"
+part_of_speech: "verbo"
+syllables: ["son", "de", "ar"]
+stressed_syllable: 3
+ipa_latam: "[son.deˈaɾ]"
+ipa_es: "[son.deˈaɾ]"
+explanation: "Hacer preguntas suaves para saber qué piensa alguien, sin presionarlo a responder directo."
+example_sentence: "Sin decirlo directamente, Iván llevaba días sondeando si su equipo estaba listo para el cambio."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para ese momento en que preguntas con suavidad, antes de ir directo a un tema delicado."
+when_not_to_use: "No lo uses para un interrogatorio directo: sondear implica preguntas suaves, no exigir una respuesta."
+collocations:
+  - "sondear el ánimo"
+  - "sondear la opinión"
+  - "sondear con preguntas simples"
+family: []
+themes:
+  - slug: "empatia-escucha"
+    relevance: 3
+tags:
+  comodin: ["tantear el terreno", "ver cómo anda"]
+  funcion: ["preguntar con suavidad"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "interrogar"
+    difference: "Interrogar implica hacer preguntas directas y formales, casi como en un interrogatorio; sondear es preguntar con suavidad, sin presionar a nadie."
+    memory_trick: "Interrogas con dureza; sondeas con suavidad."
+replaces:
+  - before: "Le preguntó de a poquito cómo estaba, sin ir directo al tema"
+    after: "Sondeó cómo estaba, sin ir directo al tema"
+  - before: "Preguntó con cuidado qué opinaba antes de proponer el cambio"
+    after: "Sondeó su opinión antes de proponer el cambio"
+exercises:
+  - position: 1
+    sentence: "Antes de hablar del tema serio, Elena prefirió {{blank}} el ánimo de su hermano con preguntas simples."
+    hint_general: "Hacer preguntas suaves para saber qué piensa alguien, sin presionarlo a responder directo."
+    explanation: "Sondear: hacer preguntas suaves para saber qué piensa alguien. «Interrogar» implica preguntas directas y formales, y «ignorar» describe justo lo contrario de intentar saber cómo está."
+    options:
+      - position: 1
+        text: "sondear"
+        is_correct: true
+      - position: 2
+        text: "interrogar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Interrogar» implica preguntas directas y formales, casi como un interrogatorio, y Elena solo hace preguntas simples y suaves."
+        hint_specific: "Interrogar es directo y formal. ¿Elena hace un interrogatorio o preguntas suaves?"
+      - position: 3
+        text: "ignorar"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» describe justo lo contrario, y la frase dice que Elena quiere saber cómo está su hermano antes de hablar del tema serio."
+        hint_specific: "Ignorar es no prestar atención. ¿Elena ignora a su hermano o busca saber cómo está?"
+  - position: 2
+    sentence: "El vendedor {{blank}} las necesidades del cliente antes de mostrarle cualquier producto."
+    hint_general: "Hacer preguntas suaves para entender lo que alguien necesita, antes de ofrecer algo."
+    explanation: "Sondeó: hizo preguntas suaves para entender lo que alguien necesita. «Sonó» es un verbo sin relación con preguntar, y «presionó» implica exigir algo, justo lo contrario de preguntar con cuidado."
+    options:
+      - position: 1
+        text: "sondeó"
+        is_correct: true
+      - position: 2
+        text: "sonó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sonar» describe un ruido o una alarma, sin relación con preguntar por las necesidades de un cliente."
+        hint_specific: "Sonar es hacer ruido. ¿La frase habla de un ruido o de preguntas al cliente?"
+      - position: 3
+        text: "presionó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Presionar» implica exigir algo, y la frase describe preguntas suaves antes de mostrar cualquier producto, no una exigencia."
+        hint_specific: "Presionar es exigir algo. ¿El vendedor exigió una respuesta o preguntó con calma?"
+  - position: 3
+    sentence: "Antes de proponer el cambio de horario, la coordinadora {{blank}} la opinión de cada uno por separado."
+    hint_general: "Hacer preguntas suaves a cada persona por separado, antes de proponer algo nuevo."
+    explanation: "Sondeó: hizo preguntas suaves a cada persona, antes de anunciar un cambio. «Anunció» implica comunicar algo decidido, y «sonó» es hacer ruido; ninguno describe esas preguntas previas."
+    options:
+      - position: 1
+        text: "sondeó"
+        is_correct: true
+      - position: 2
+        text: "anunció"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Anunciar» implica comunicar algo ya decidido, y la frase dice que esto pasó antes de proponer el cambio, no después."
+        hint_specific: "Anunciar comunica algo decidido. ¿La coordinadora anunció el cambio o preguntó antes de proponerlo?"
+      - position: 3
+        text: "sonó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sonar» describe un ruido o una alarma, sin relación con preguntar la opinión de cada persona."
+        hint_specific: "Sonar es hacer ruido. ¿La frase habla de un ruido o de preguntas a cada persona?"
+  - position: 4
+    sentence: "Antes de invitarlo a salir, Rubén {{blank}} con cuidado si tenía pareja, sin preguntarlo directamente."
+    hint_general: "Hacer preguntas indirectas para saber algo delicado, sin preguntarlo directamente."
+    explanation: "Sondeó: hizo preguntas indirectas para saber algo delicado. «Averiguó» puede incluir métodos directos, y «sonó» es hacer ruido; ninguno describe esa pregunta con cuidado de Rubén."
+    options:
+      - position: 1
+        text: "sondeó"
+        is_correct: true
+      - position: 2
+        text: "averiguó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Averiguar» puede incluir preguntar directamente o buscar información de otras formas, y la frase aclara que Rubén evitó preguntar de forma directa."
+        hint_specific: "Averiguar no siempre es indirecto. ¿La frase aclara que Rubén preguntó directo o con cuidado?"
+      - position: 3
+        text: "sonó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sonar» describe un ruido o una alarma, sin relación con preguntar con cuidado si alguien tiene pareja."
+        hint_specific: "Sonar es hacer ruido. ¿La frase habla de un ruido o de una pregunta indirecta?"
+  - position: 5
+    sentence: "El periodista {{blank}} a los vecinos antes de escribir la nota, para saber qué pensaban del cambio en la plaza."
+    hint_general: "Hacer preguntas suaves a varias personas, para conocer su opinión antes de escribir algo."
+    explanation: "Sondeó: hizo preguntas suaves a varias personas, para conocer su opinión. «Chismoseó» es coloquial y sugiere curiosear sin buena intención, y «sonó» es hacer ruido; ninguno describe esa nota."
+    options:
+      - position: 1
+        text: "sondeó"
+        is_correct: true
+      - position: 2
+        text: "chismoseó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Chismosear» es coloquial y sugiere curiosear sin buena intención, y aquí el periodista busca información seria para su nota."
+        hint_specific: "«Chismosear» suena a curiosidad sin buena intención. ¿El periodista busca información seria o solo chisme?"
+      - position: 3
+        text: "sonó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sonar» describe un ruido o una alarma, sin relación con preguntar la opinión de los vecinos."
+        hint_specific: "Sonar es hacer ruido. ¿La frase habla de un ruido o de preguntas a los vecinos?"
+  - position: 6
+    sentence: "Antes de pedirle el aumento, Camila {{blank}} el humor de su jefa con un par de comentarios simples."
+    hint_general: "Hacer preguntas o comentarios suaves para saber el estado de ánimo de alguien, antes de pedir algo."
+    explanation: "Sondeó: hizo comentarios suaves para saber el ánimo de alguien, antes de pedir algo. «Ignoró» describe justo lo contrario, y «sonó» es un verbo sin relación con conocer el ánimo de alguien."
+    options:
+      - position: 1
+        text: "sondeó"
+        is_correct: true
+      - position: 2
+        text: "ignoró"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ignorar» describe justo lo contrario, y la frase dice que Camila prestó atención al humor de su jefa antes de pedir el aumento."
+        hint_specific: "Ignorar es no prestar atención. ¿Camila ignoró el humor de su jefa o le prestó atención?"
+      - position: 3
+        text: "sonó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sonar» describe un ruido o una alarma, sin relación con conocer el humor de una jefa antes de pedir un aumento."
+        hint_specific: "Sonar es hacer ruido. ¿La frase habla de un ruido o del humor de la jefa?"
+  - position: 7
+    sentence: "El director de la compañía de teatro {{blank}} el interés del grupo antes de proponer la obra más difícil del año."
+    hint_general: "Hacer preguntas suaves a un grupo, para saber su interés antes de proponer algo más exigente."
+    explanation: "Sondeó: hizo preguntas suaves a un grupo, para saber su interés antes de proponer algo. «Impuso» implica decidir sin consultar, justo lo contrario, y «sonó» no tiene relación con conocer un interés."
+    options:
+      - position: 1
+        text: "sondeó"
+        is_correct: true
+      - position: 2
+        text: "impuso"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Imponer» implica decidir sin consultar a nadie, justo lo contrario de preguntar el interés del grupo antes de proponer la obra."
+        hint_specific: "Imponer es decidir sin consultar. ¿El director impuso la obra o preguntó antes?"
+      - position: 3
+        text: "sonó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sonar» describe un ruido o una alarma, sin relación con conocer el interés de un grupo de teatro."
+        hint_specific: "Sonar es hacer ruido. ¿La frase habla de un ruido o del interés del grupo?"
+  - position: 8
+    sentence: "Antes de anunciar la mudanza, sus padres {{blank}} cómo se sentiría con el cambio de colegio."
+    hint_general: "Hacer preguntas suaves a alguien, para saber cómo se sentiría con un cambio importante."
+    explanation: "Sondearon: hicieron preguntas suaves para saber cómo se sentiría con un cambio importante. «Decidieron» implica una resolución tomada, y «sonaron» es hacer ruido; ninguno describe esas preguntas previas."
+    options:
+      - position: 1
+        text: "sondearon"
+        is_correct: true
+      - position: 2
+        text: "decidieron"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Decidir» implica una resolución ya tomada, y la frase dice que esto pasó antes de anunciar la mudanza, cuando todavía preguntaban."
+        hint_specific: "Decidir es una resolución tomada. ¿Sus padres ya habían decidido o todavía preguntaban?"
+      - position: 3
+        text: "sonaron"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Sonar» describe un ruido o una alarma, sin relación con preguntar cómo se sentiría con un cambio de colegio."
+        hint_specific: "Sonar es hacer ruido. ¿La frase habla de un ruido o de preguntas sobre el cambio de colegio?"
+readings:
+  - position: 1
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "Antes del tema serio"
+    body: "Elena sabía que la conversación iba a ser difícil, así que empezó despacio. «¿Cómo estuvo tu semana?», le preguntó a su hermano, sondeando su ánimo antes de contarle lo que en verdad quería decirle."
+    before_phrase: "Le pregunté de a poquito cómo estaba antes de ir al tema."
+    after_phrase: "Sondeé su ánimo antes de ir al tema."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El humor antes del aumento"
+    body: "Camila no quería llegar directo a pedir el aumento con su jefa de mal humor. «Voy a sondear cómo anda antes de hablar de plata», le dijo a una compañera, y esperó hasta el mediodía para entrar a su oficina."
+    before_phrase: "Voy a ver cómo anda antes de hablar de plata."
+    after_phrase: "Voy a sondear cómo anda antes de hablar de plata."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La opinión de los vecinos"
+    body: "Antes de escribir la nota, el periodista se paseó por la plaza hablando con quien se cruzaba. «Estoy sondeando qué piensa la gente del cambio», les explicaba, y anotaba cada respuesta con cuidado."
+    before_phrase: "Estoy preguntando de a poco qué piensa la gente."
+    after_phrase: "Estoy sondeando qué piensa la gente."
+provenance:
+  generator: "authored for the empatia-escucha theme"
+  gate: null
+  checked_on: "2026-09-18"

@@ -1,0 +1,230 @@
+schema_version: 1
+slug: "carismatico"
+status: "draft"
+lemma: "carismático"
+part_of_speech: "adjetivo"
+syllables: ["ca", "ris", "ma", "ti", "co"]
+stressed_syllable: 3
+ipa_latam: "[ka.ɾisˈma.ti.ko]"
+ipa_es: "[ka.ɾisˈma.ti.ko]"
+explanation: "Que atrae a la gente y hace que quieran escucharlo, casi sin esfuerzo."
+example_sentence: "El nuevo director es tan carismático que la sala entera se calló en cuanto empezó a hablar."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Sirve para elogiar a quien capta la atención de un grupo entero sin proponérselo; sobre ti mismo suena a presumir."
+when_not_to_use: "No la uses para quien solo cae bien a una persona en privado, ni para alguien con un cargo importante pero sin ese efecto sobre la gente."
+collocations:
+  - "persona carismática"
+  - "líder carismático"
+  - "presencia carismática"
+replaces:
+  - before: "Tiene algo que atrae a todo el mundo"
+    after: "Es muy carismático"
+  - before: "Cae buenísimo apenas abre la boca"
+    after: "Es carismático apenas abre la boca"
+  - before: "Tiene una energía que atrapa a la gente"
+    after: "Tiene una presencia carismática"
+family: ["carismáticamente"]
+themes:
+  - slug: "small-talk"
+    relevance: 3
+tags:
+  comodin: ["cae muy bien", "tiene algo especial"]
+  funcion: ["elogiar", "describir"]
+  canal: "hablado"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "caritativo"
+    difference: "«Caritativo» es quien ayuda a los necesitados; el otro atrae a la gente con su sola presencia, sin que medie ninguna ayuda."
+    memory_trick: "El caritativo da limosna; el otro capta miradas."
+  - confused_with: "encantador"
+    difference: "«Encantador» es simplemente agradable de tratar; el otro además arrastra a un grupo entero y logra que quiera seguirlo."
+    memory_trick: "Lo encantador cae bien a solas; el otro arrastra multitudes."
+exercises:
+  - position: 1
+    sentence: "Andrea consiguió que la sala entera dejara de mirar el celular en cuanto tomó la palabra: es tan {{blank}} que hasta los más tímidos terminaron opinando."
+    hint_general: "Se trata de la cualidad que hace que un grupo entero preste atención a alguien sin esfuerzo."
+    explanation: "Carismática: atrae la atención de un grupo entero sin esfuerzo. «Caritativa» ayuda a quien lo necesita, y «extrovertida» describe la energía propia de Andrea, no el efecto que causa en los demás."
+    options:
+      - position: 1
+        text: "caritativa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Caritativa» describe a quien ayuda a los necesitados, y aquí nadie habla de ayudar a nadie: se describe el efecto de Andrea sobre la sala."
+        hint_specific: "«Caritativa» tiene que ver con ayudar a quien lo necesita. ¿La frase habla de ayuda o de atención?"
+      - position: 2
+        text: "carismática"
+        is_correct: true
+      - position: 3
+        text: "extrovertida"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extrovertida» describe la energía propia de Andrea con la gente, y la frase cuenta el efecto que causa en los demás, no cómo es ella por dentro."
+        hint_specific: "«Extrovertida» habla de la energía de una persona. ¿La frase describe a Andrea o a la sala?"
+  - position: 2
+    sentence: "Mauricio apenas llevaba diez minutos en la feria y ya tenía a tres desconocidos pendientes de lo que decía: es {{blank}}, y se nota enseguida."
+    hint_general: "Habla de alguien que atrae a la gente casi sin proponérselo."
+    explanation: "Carismático: atrae a la gente casi sin proponérselo. «Simpaticón» es coloquial y no explica por qué desconocidos se quedan pendientes de él, y «popular» supone fama previa que la escena no menciona."
+    options:
+      - position: 1
+        text: "simpaticón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Simpaticón» es coloquial y suena a alguien que cae bien de forma simpática, pero no explica por qué desconocidos se quedan pendientes de lo que dice."
+        hint_specific: "«Simpaticón» es informal y algo exagerado. ¿Esta descripción busca un tono así de casual?"
+      - position: 2
+        text: "popular"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Popular» dice que mucha gente lo conoce o lo quiere, y aquí el efecto ocurre con desconocidos en diez minutos, no por fama previa."
+        hint_specific: "«Popular» habla de ser conocido de antes. ¿Mauricio ya era conocido en esa feria?"
+      - position: 3
+        text: "carismático"
+        is_correct: true
+  - position: 3
+    sentence: "Nadie esperaba que el primo lejano de la novia se robara la conversación en la boda, pero resultó ser tan {{blank}} que hasta los abuelos terminaron riendo con él."
+    hint_general: "Apunta a la cualidad que hace que un grupo entero quiera seguir escuchando a alguien."
+    explanation: "Carismático: hace que un grupo entero quiera seguir escuchando a alguien. «Aristocrático» habla de origen social, y «encantador» solo dice que resulta agradable, no que se robara la conversación de toda la boda."
+    options:
+      - position: 1
+        text: "carismático"
+        is_correct: true
+      - position: 2
+        text: "aristocrático"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aristocrático» habla de pertenecer a la nobleza o de modales refinados por cuna, y nada en la frase habla de su origen o su clase social."
+        hint_specific: "«Aristocrático» se refiere a un origen social. ¿La frase habla de su familia o de cómo hizo reír a los abuelos?"
+      - position: 3
+        text: "encantador"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encantador» dice que resulta agradable de tratar, y la frase cuenta algo más grande: que se robó la conversación de toda la boda."
+        hint_specific: "«Encantador» describe a alguien agradable. ¿La frase habla solo de caer bien o de dominar la conversación?"
+  - position: 4
+    sentence: "El panel había entrevistado a quince candidatos esa semana, pero ninguno tan {{blank}} como Renata, que los tuvo enganchados hasta la última pregunta."
+    hint_general: "Se refiere a quien mantiene a un grupo entero enganchado sin esforzarse por lograrlo."
+    explanation: "Carismática: mantiene enganchado a un grupo entero sin esforzarse por lograrlo. «Caritativa» ayuda a los necesitados, y «aplicada» describe dedicación al trabajo, no el efecto que Renata causa en el panel."
+    options:
+      - position: 1
+        text: "caritativa"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Caritativa» describe a quien ayuda a los necesitados, y la entrevista no dice nada sobre ayudar a otros: habla de mantener enganchado al panel."
+        hint_specific: "«Caritativa» va de ayudar a alguien. ¿El panel necesitaba ayuda o atención?"
+      - position: 2
+        text: "carismática"
+        is_correct: true
+      - position: 3
+        text: "aplicada"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Aplicada» describe a quien es responsable y trabaja con dedicación, y la frase no habla de esfuerzo, sino de que el panel quedó enganchado con ella."
+        hint_specific: "«Aplicada» habla de dedicación al trabajo. ¿La frase mide dedicación o el efecto en el panel?"
+  - position: 5
+    sentence: "En el edificio nadie sabía cómo se llamaba el vecino nuevo, pero todos coincidían en que era {{blank}}: bastaban dos frases en el ascensor para que quisieras seguir hablando."
+    hint_general: "Describe a quien logra que una charla breve dé ganas de continuar."
+    explanation: "Carismático: logra que una charla breve dé ganas de continuar. «Simpaticón» es un tono demasiado casual para lo que cuentan los vecinos, y «encantador» solo dice que agrada, sin la fuerza de esta descripción."
+    options:
+      - position: 1
+        text: "carismático"
+        is_correct: true
+      - position: 2
+        text: "simpaticón"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Simpaticón» es coloquial y algo exagerado, y los vecinos hablan con un tono más sobrio sobre alguien que apenas conocen."
+        hint_specific: "«Simpaticón» suena casual y exagerado. ¿El comentario de los vecinos busca ese tono?"
+      - position: 3
+        text: "encantador"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encantador» dice que resulta agradable, y la frase describe algo más fuerte: dos frases bastan para no querer dejar de hablar con él."
+        hint_specific: "«Encantador» solo dice que agrada. ¿La frase describe algo más intenso que agradar?"
+  - position: 6
+    sentence: "El taller de fin de semana lo daba un desconocido, y aun así nadie se levantó antes de tiempo: el instructor resultó ser {{blank}}, de esos que hacen que dos horas se sientan como veinte minutos."
+    hint_general: "Habla de quien atrapa la atención de un grupo entero sin que se note el esfuerzo."
+    explanation: "Carismático: atrapa la atención de un grupo entero sin que se note el esfuerzo. «Extrovertido» describe la energía propia del instructor, y «popular» supone que ya era conocido, cuando la frase dice que era un desconocido."
+    options:
+      - position: 1
+        text: "extrovertido"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Extrovertido» describe la energía propia del instructor con la gente, y la frase cuenta el efecto sobre el grupo: dos horas que se sintieron cortas."
+        hint_specific: "«Extrovertido» habla de energía personal. ¿La frase describe al instructor o su efecto en el grupo?"
+      - position: 2
+        text: "carismático"
+        is_correct: true
+      - position: 3
+        text: "popular"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Popular» diría que ya era conocido antes del taller, y la frase aclara que era un desconocido."
+        hint_specific: "«Popular» supone fama previa. ¿Lo conocían antes de ese taller?"
+  - position: 7
+    sentence: "En la asamblea del edificio, Tomás no tenía ningún cargo, pero bastaba que pidiera la palabra para que todos dejaran de hablar entre ellos: es que es muy {{blank}}."
+    hint_general: "Apunta a la cualidad que hace que un grupo entero se calle para escuchar a alguien, sin que tenga ningún puesto."
+    explanation: "Carismático: hace que un grupo entero se calle para escuchar a alguien, sin necesidad de ningún cargo. «Caritativo» ayuda a los necesitados, y «popular» supone fama previa que Tomás no tenía."
+    options:
+      - position: 1
+        text: "carismático"
+        is_correct: true
+      - position: 2
+        text: "caritativo"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Caritativo» describe a quien ayuda a los necesitados, y la asamblea no menciona ninguna ayuda: describe por qué todos se callan para escucharlo."
+        hint_specific: "«Caritativo» tiene que ver con dar ayuda. ¿La asamblea habla de ayuda o de atención?"
+      - position: 3
+        text: "popular"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Popular» diría que ya lo conocían y apreciaban de antes, y la frase dice justo lo contrario: no tenía ningún cargo ni fama previa."
+        hint_specific: "«Popular» supone fama previa. ¿Tomás ya era conocido en la asamblea?"
+  - position: 8
+    sentence: "Nadie había invitado a Paola pensando en que animara la cena, pero terminó siendo el centro de la noche: es tan {{blank}} que ni ella se lo esperaba, dijeron todos al despedirse."
+    hint_general: "Se usa para quien termina siendo el centro de una reunión sin que nadie lo esperara."
+    explanation: "Carismática: termina siendo el centro de una reunión sin que nadie lo esperara. «Encantadora» solo dice que cayó bien, y «aristocrática» habla de un origen social del que la cena no dice nada."
+    options:
+      - position: 1
+        text: "encantadora"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Encantadora» dice que resultó agradable, y la frase cuenta algo mayor: terminó siendo el centro de toda la cena."
+        hint_specific: "«Encantadora» solo dice que cayó bien. ¿La frase describe algo más grande que caer bien?"
+      - position: 2
+        text: "carismática"
+        is_correct: true
+      - position: 3
+        text: "aristocrática"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Aristocrática» habla de un origen social o de modales refinados por cuna, y la cena no dice nada sobre su familia o su clase social."
+        hint_specific: "«Aristocrática» habla de origen social. ¿La frase cuenta algo de su familia?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La sala que se quedó callada"
+    body: "El nuevo gerente de ventas llevaba dos semanas en la empresa cuando pidió la palabra en la reunión general. Nadie esperaba gran cosa, pero en cinco minutos la sala entera dejó de mirar el teléfono. «Este tipo es carismático de verdad», comentó un compañero al salir, todavía pensando en lo que había dicho."
+    before_phrase: "Tiene algo que hace que todos lo escuchen."
+    after_phrase: "Este tipo es carismático de verdad."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "social"
+    title: "La pregunta que no esperaban"
+    body: "Al final de la entrevista grupal, le preguntaron a Bruno por qué debían elegirlo a él. Contestó con una anécdota corta y una broma bien puesta, y hasta los otros candidatos se rieron. «Fue el más carismático de los seis», comentó después la reclutadora al revisar sus notas."
+    before_phrase: "Cae superbién en cuanto abre la boca."
+    after_phrase: "Fue el más carismático de los seis."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El primo que nadie recordaba"
+    body: "En la boda de su prima, Julieta se sentó junto a un pariente lejano al que no veía desde niña. Para el postre, media mesa reía con sus historias. «No sabía que era tan carismático», le dijo a su madre esa noche, todavía sorprendida."
+    before_phrase: "No sabía que tenía tanta labia."
+    after_phrase: "No sabía que era tan carismático."
+provenance:
+  generator: "authored for the ventas/small-talk/amistad batch"
+  gate: null
+  checked_on: "2026-09-18"

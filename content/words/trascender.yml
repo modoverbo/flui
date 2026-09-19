@@ -1,0 +1,242 @@
+schema_version: 1
+slug: "trascender"
+status: "draft"
+lemma: "trascender"
+part_of_speech: "verbo"
+syllables:
+  - "tras"
+  - "cen"
+  - "der"
+stressed_syllable: 3
+ipa_latam: "[tras.senˈdeɾ]"
+ipa_es: "[tras.θenˈdeɾ]"
+explanation: "Llegar más allá del grupo o momento en que algo empezó, y alcanzar gente o lugares nuevos."
+example_sentence: "La publicación trascendió el grupo de amigos que la compartió primero y llegó a gente que nunca los había seguido."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Sirve para explicar por qué algo llegó más lejos de lo esperado, más allá del círculo donde nació."
+when_not_to_use: "No la uses para un simple aumento de vistas dentro del mismo grupo de siempre; ahí no hay nada nuevo que alcanzar."
+collocations:
+  - "trascender las fronteras"
+  - "trascender el círculo inicial"
+  - "una idea que trasciende"
+replaces:
+  - before: "Eso se hizo viral más allá de nuestro grupo"
+    after: "Eso trascendió más allá de nuestro grupo"
+  - before: "La noticia llegó a gente que no nos sigue"
+    after: "La noticia trascendió a gente que no nos sigue"
+  - before: "Ese comentario se fue mucho más lejos de lo que pensé"
+    after: "Ese comentario trascendió mucho más de lo que pensé"
+family:
+  - "trascendencia"
+  - "trascendental"
+themes:
+  - slug: "redes-sociales"
+    relevance: 3
+  - slug: "persuasion-storytelling"
+    relevance: 2
+tags:
+  comodin:
+    - "llegar lejos"
+  funcion:
+    - "describir"
+    - "narrar"
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "transcurrir"
+    difference: "«Transcurrir» habla del paso del tiempo, como los minutos de una reunión; trascender habla de llegar más allá del lugar donde algo empezó."
+    memory_trick: "Transcurre el tiempo; trasciende el mensaje."
+  - confused_with: "trastornar"
+    difference: "«Trastornar» es alterar o desordenar algo; trascender solo dice que algo llegó más lejos, sin implicar ningún desorden."
+  - confused_with: "resonar"
+    difference: "«Resonar» es que alguien reconozca algo propio en un mensaje, aunque se quede en un grupo pequeño; trascender es que ese mensaje llegue más allá de donde empezó."
+    memory_trick: "Lo que resuena golpea cerca; lo que trasciende viaja lejos."
+exercises:
+  - position: 1
+    sentence: "El informe que Emiliano preparó solo para su equipo {{blank}} hasta la dirección general, que ahora lo pide como modelo."
+    hint_general: "Se trata de llegar más allá del grupo donde algo empezó."
+    explanation: "Trascendió: llegó más allá del equipo donde empezó. «Trastornó» hablaría de desordenar algo, y el informe no desordenó nada, y «creció» diría que se hizo más grande, no que llegó a gente nueva."
+    options:
+      - position: 1
+        text: "trastornó"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Trastornar» es desordenar o alterar algo; el informe no alteró nada en la dirección general, solo llegó hasta ahí y gustó."
+        hint_specific: "«Trastornar» habla de desordenar algo. ¿El informe desordenó algo en la dirección general, o solo llegó hasta ahí?"
+      - position: 2
+        text: "trascendió"
+        is_correct: true
+      - position: 3
+        text: "creció"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Crecer» diría que el informe se hizo más grande o más largo; lo que pasó es que llegó a un público nuevo, no que cambiara de tamaño."
+        hint_specific: "«Crecer» hablaría de hacerse más grande. ¿El informe cambió de tamaño, o llegó a gente nueva?"
+  - position: 2
+    sentence: "Julieta subió el video sin muchas expectativas, pero {{blank}} más allá de su cuenta y llegó a personas que no la seguían."
+    hint_general: "Apunta a llegar a gente que no formaba parte del círculo original."
+    explanation: "Trascendió: llegó a gente que no formaba parte del círculo original. «Explotó» es coloquial y solo sugiere un crecimiento repentino, y «avanzó» sugiere pasos uno tras otro; ninguna nombra que llegó a gente nueva."
+    options:
+      - position: 1
+        text: "explotó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Explotó» es una expresión muy coloquial para algo que crece de golpe; no dice, como esta frase, que haya llegado a gente fuera de la cuenta de Julieta."
+        hint_specific: "«Explotó» es una expresión coloquial para un crecimiento repentino. ¿La frase busca decir eso, o que llegó a gente nueva?"
+      - position: 2
+        text: "avanzó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Avanzar» sugiere un progreso hacia adelante, paso a paso; el video no avanzó poco a poco, llegó de golpe a gente fuera de la cuenta de Julieta."
+        hint_specific: "«Avanzar» sugiere pasos, uno tras otro. ¿El video avanzó poco a poco, o llegó de golpe a gente nueva?"
+      - position: 3
+        text: "trascendió"
+        is_correct: true
+  - position: 3
+    sentence: "Gonzalo dio esa entrevista para un pódcast pequeño, pero {{blank}} y terminó citada en medios de otros países."
+    hint_general: "Habla de llegar mucho más lejos de lo que su origen pequeño hacía esperar."
+    explanation: "Trascendió: llegó mucho más lejos de lo que su origen pequeño hacía esperar. «Viajó» sugeriría un desplazamiento de un lugar a otro, y «rebasó» necesitaría un límite concreto que se supera; aquí no hay ninguna de las dos cosas."
+    options:
+      - position: 1
+        text: "viajó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Viajar» sugiere un desplazamiento físico, como cuando algo se mueve de un lugar a otro; una entrevista citada en otros medios no se movió, se multiplicó en varios lugares a la vez."
+        hint_specific: "«Viajar» sugiere que algo se desplaza de un lugar a otro. ¿La entrevista se movió, o apareció citada en varios sitios a la vez?"
+      - position: 2
+        text: "rebasó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Rebasar» necesita un límite claro que algo supera, como un presupuesto; aquí no hay un límite fijo que la entrevista haya superado, solo llegó más lejos de lo esperado."
+        hint_specific: "«Rebasar» necesita un límite concreto que algo supera. ¿Qué límite exacto superó esta entrevista?"
+      - position: 3
+        text: "trascendió"
+        is_correct: true
+  - position: 4
+    sentence: "Cristina esperaba que la campaña funcionara solo en su ciudad, pero {{blank}} y otras oficinas de la empresa empezaron a copiarla."
+    hint_general: "Se trata de llegar más allá del lugar donde algo nació y provocar que otros lo repitan."
+    explanation: "Trascendió: llegó más allá de su ciudad y otras oficinas la copiaron. «Pegó» es coloquial y solo dice que algo gustó, y «prosperó» diría que le fue bien, sin decir que otras oficinas la copiaron."
+    options:
+      - position: 1
+        text: "pegó"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Pegó» es una expresión coloquial para decir que algo gustó mucho; no dice, como esta frase, que haya llegado hasta otras oficinas de la empresa."
+        hint_specific: "«Pegó» es una expresión coloquial para algo que gusta mucho. ¿La frase habla de que gustó, o de que llegó a otras oficinas?"
+      - position: 2
+        text: "prosperó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Prosperar» diría que a la campaña le fue bien; no dice que otras oficinas hayan empezado a copiarla fuera de la ciudad de Cristina."
+        hint_specific: "«Prosperar» solo dice que algo le fue bien. ¿La frase dice que le fue bien, o que otras oficinas la copiaron?"
+      - position: 3
+        text: "trascendió"
+        is_correct: true
+  - position: 5
+    sentence: "Nicolás no esperaba que su comentario en la reunión {{blank}} hasta la dirección, pero alguien lo repitió en otra junta."
+    hint_general: "Apunta a salir del grupo donde algo se dijo y aparecer en otro espacio distinto."
+    explanation: "Trascendiera: saliera del grupo donde se dijo y apareciera en otro espacio. «Llegara» solo diría que algo alcanzó un lugar, sin salir de su círculo, y «calara» describiría que una idea se asienta en el pensamiento de alguien, no que se repita en otro lado."
+    options:
+      - position: 1
+        text: "llegara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Llegar» solo dice que algo alcanzó un lugar; no explica que haya salido del círculo de la reunión y se haya repetido en otra junta distinta."
+        hint_specific: "«Llegar» solo dice que algo alcanzó un lugar. ¿La frase dice que llegó, o que salió del grupo y se repitió en otro lado?"
+      - position: 2
+        text: "trascendiera"
+        is_correct: true
+      - position: 3
+        text: "calara"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Calar» describe que una idea se asienta poco a poco en la forma de pensar de alguien; aquí lo que pasó es que el comentario se repitió en otro espacio, no que cambiara cómo piensa la dirección."
+        hint_specific: "«Calar» describe que una idea se asienta en cómo piensa alguien. ¿El comentario cambió cómo piensa la dirección, o simplemente se repitió en otra junta?"
+  - position: 6
+    sentence: "Ariana escribió una frase corta al final de su publicación, y esa frase {{blank}} más que el resto del texto: la gente solo citaba esa línea."
+    hint_general: "Se trata de que una sola parte de un texto se vuelva más importante que el resto."
+    explanation: "Trascendió: esa frase se volvió más citada que el resto del texto. «Prendió» es coloquial y habla de ponerse de moda rápido, y «cundió» describiría que algo se extiende rápido entre un grupo; ninguna dice que se volvió lo más citado."
+    options:
+      - position: 1
+        text: "prendió"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Prender» es una expresión coloquial para decir que algo se puso de moda rápido; no explica, como esta frase, que se haya vuelto más citada que el resto del texto."
+        hint_specific: "«Prender» es coloquial para algo que se pone de moda. ¿La frase busca decir eso, o que se volvió la más citada del texto?"
+      - position: 2
+        text: "cundió"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Cundir» describe que algo se extiende rápido entre un grupo, como una alarma; no dice que esa frase se haya vuelto más importante que el resto del texto, solo que se supo rápido."
+        hint_specific: "«Cundir» describe que algo se extiende rápido, como una alarma. ¿La frase dice que se supo rápido, o que se volvió la más citada?"
+      - position: 3
+        text: "trascendió"
+        is_correct: true
+  - position: 7
+    sentence: "Federico contó su historia en un video de tres minutos, y esa historia {{blank}} de un modo que ninguna cifra de su empresa había logrado antes."
+    hint_general: "Apunta a llegar mucho más lejos que cualquier dato o cifra."
+    explanation: "Trascendió: llegó mucho más lejos que cualquier cifra de la empresa. «Arraigó» describiría que algo se asienta y se queda fijo, y «resonó» describiría la marca emocional que algo deja; aquí lo que importa es lo lejos que llegó."
+    options:
+      - position: 1
+        text: "arraigó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arraigar» describe que una idea se asienta y se queda fija en un lugar durante mucho tiempo; el video de Federico llegó lejos rápido, no dice que se haya quedado fijo en algún sitio."
+        hint_specific: "«Arraigar» describe que algo se asienta y se queda fijo. ¿La frase habla de que algo se quedó fijo, o de que llegó lejos?"
+      - position: 2
+        text: "resonó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Resonar» describe que algo deja una marca emocional en quien lo escucha; la frase no habla de la marca que dejó, sino de que llegó más lejos que cualquier cifra de la empresa."
+        hint_specific: "«Resonar» describe la marca emocional que algo deja. ¿La frase habla de la marca que dejó, o de qué tan lejos llegó?"
+      - position: 3
+        text: "trascendió"
+        is_correct: true
+  - position: 8
+    sentence: "El proyecto de Lorena empezó como un encargo pequeño del área de diseño, pero {{blank}} hasta convertirse en el ejemplo que toda la empresa menciona."
+    hint_general: "Se trata de que algo pequeño se convierta en el ejemplo que todos mencionan."
+    explanation: "Trascendió: algo pequeño se convirtió en el ejemplo que todos mencionan. «Alcanzó» necesitaría un objetivo o cifra concreta que aquí no aparece, y «sonó» solo diría que algo se hizo conocido, no que se volviera el ejemplo de toda la empresa."
+    options:
+      - position: 1
+        text: "alcanzó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Alcanzar» necesita decir qué objetivo o qué cifra se logró; aquí no hay un objetivo concreto, sino que el proyecto llegó a un lugar mucho más grande del que empezó."
+        hint_specific: "«Alcanzar» necesita un objetivo o cifra concreta. ¿Qué objetivo exacto alcanzó el proyecto de Lorena?"
+      - position: 2
+        text: "sonó"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Sonar» dice que algo se hizo conocido o se comentó; no dice que se haya convertido en el ejemplo que toda la empresa menciona, solo que se supo de él."
+        hint_specific: "«Sonar» dice que algo se hizo conocido. ¿La frase dice que se supo de él, o que se volvió el ejemplo de la empresa?"
+      - position: 3
+        text: "trascendió"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "La presentación que llegó a otra área"
+    body: "Cristina armó una presentación interna solo para su equipo de ventas. Dos semanas después, alguien de finanzas se la pidió prestada. «No pensé que esto trascendiera fuera de nuestro equipo», le dijo a su jefe, todavía sorprendida. Ahora la usan como plantilla en toda la empresa."
+    before_phrase: "No pensé que esto fuera a llegar tan lejos."
+    after_phrase: "No pensé que esto trascendiera de nuestro equipo."
+  - position: 2
+    scene: "social"
+    conversation_type: "social"
+    title: "El video del cumpleaños"
+    body: "Milena grabó a su abuela soplando las velas y lo subió solo para sus primos. Una semana después, alguien lo compartió en un grupo de nietos de todo el país. «Nunca pensé que un video tan simple trascendiera así», le contó a su hermano, todavía incrédula."
+    before_phrase: "Nunca pensé que iba a llegar tan lejos."
+    after_phrase: "Nunca pensé que trascendiera así."
+  - position: 3
+    scene: "entrevista"
+    conversation_type: "emocional"
+    title: "La pregunta que siguió sonando"
+    body: "En la entrevista de radio, Rodrigo respondió con una frase corta sobre por qué había dejado su trabajo anterior. Meses después, esa frase seguía apareciendo citada en artículos que ni siquiera hablaban de él. «Esa respuesta trascendió más que todo lo demás que dije ese día», reconoció, entre sorprendido e incómodo."
+    before_phrase: "Esa respuesta llegó mucho más lejos de lo que pensé."
+    after_phrase: "Esa respuesta trascendió más que todo lo demás que dije."
+provenance:
+  generator: "flui authoring agent — theme redes-sociales"
+  gate: null
+  checked_on: "2026-09-18"

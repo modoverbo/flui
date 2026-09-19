@@ -1,0 +1,226 @@
+schema_version: 1
+slug: "didactico"
+status: "draft"
+lemma: "didáctico"
+part_of_speech: "adjetivo"
+syllables: ["di", "dac", "ti", "co"]
+stressed_syllable: 2
+ipa_latam: "[diˈðak.ti.ko]"
+ipa_es: "[diˈðak.ti.ko]"
+explanation: "Que explica algo paso a paso, de forma que cualquiera lo pueda entender y aprender."
+example_sentence: "Su forma de explicar el contrato fue tan didáctica que todos entendieron sin preguntar dos veces."
+register: "neutral"
+pedantry_risk: 2
+usage_tip: "Úsala para elogiar a alguien que explica bien, paso a paso, no solo para hablar de aulas."
+when_not_to_use: "No la uses para calificar a alguien de sermoneador; eso describe un tono de regaño, no una buena explicación."
+collocations:
+  - "forma didáctica"
+  - "explicación didáctica"
+replaces:
+  - before: "Explica muy bien, paso a paso"
+    after: "Explica de forma didáctica"
+  - before: "Lo cuenta para que cualquiera entienda"
+    after: "Lo cuenta de forma didáctica"
+family: ["didáctica", "didactismo"]
+themes:
+  - slug: "docencia"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+tags:
+  comodin: ["que explica bien"]
+  funcion: ["explicar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "moralizante"
+    difference: "«Moralizante» suena a sermón o regaño disfrazado de consejo; lo didáctico ayuda a entender, sin querer sermonear a nadie."
+    memory_trick: "Lo moralizante te regaña; lo didáctico te enseña."
+exercises:
+  - position: 1
+    sentence: "La forma en que Renata explicó el nuevo proceso fue tan {{blank}} que el equipo lo aplicó sin repasar el manual."
+    hint_general: "La forma de explicar hizo que el equipo pudiera aplicar el proceso sin leer nada más."
+    explanation: "Didáctica: el equipo aplicó el proceso sin repasar el manual. «Dialéctica» tiene que ver con debatir ideas contrapuestas, no con explicar para que se entienda, y «magistral» dice que algo estuvo hecho con brillantez, sin asegurar que se pudiera aplicar sin ayuda."
+    options:
+      - position: 1
+        text: "dialéctica"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dialéctica» tiene que ver con el método de debatir ideas contrapuestas, no con explicar un proceso para que se entienda."
+        hint_specific: "Esa palabra tiene que ver con debatir posturas opuestas. ¿Renata debatió algo, o explicó un proceso?"
+      - position: 2
+        text: "didáctica"
+        is_correct: true
+      - position: 3
+        text: "magistral"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Magistral» dice que algo estuvo hecho con brillantez, pero no asegura que el equipo pudiera aplicarlo sin repasar nada más."
+        hint_specific: "Esa palabra habla de brillantez, no de si se pudo aplicar solo. ¿La frase habla de brillo, o de que el equipo actuó sin ayuda?"
+  - position: 2
+    sentence: "El manual de la nueva herramienta quedó tan {{blank}} que nadie tuvo que preguntarle nada al equipo de soporte."
+    hint_general: "El manual se entendió tan bien que nadie necesitó ayuda extra del equipo de soporte."
+    explanation: "Didáctico: nadie tuvo que preguntar nada al equipo de soporte. «Instruccional» es un término de diseño educativo o corporativo, forzado en una charla normal, y «ameno» diría que fue agradable de leer, sin asegurar que se entendiera cada paso."
+    options:
+      - position: 1
+        text: "instruccional"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Instruccional» es un término de diseño educativo o corporativo, y suena forzado en una charla normal sobre un manual."
+        hint_specific: "Esa palabra suena a jerga de diseño de cursos o capacitaciones. ¿Encaja en una charla informal sobre un manual?"
+      - position: 2
+        text: "didáctico"
+        is_correct: true
+      - position: 3
+        text: "ameno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ameno» dice que algo resulta agradable de leer, pero no asegura que el equipo entendiera cada paso sin preguntar."
+        hint_specific: "Esa palabra habla de que algo se disfruta al leerlo. ¿La frase habla de disfrutar, o de entender sin preguntar?"
+  - position: 3
+    sentence: "La presentación que dio Camila en la conferencia fue tan {{blank}} que hasta quienes no sabían nada del tema tomaron notas."
+    hint_general: "La presentación se explicó tan bien que hasta quienes no sabían del tema pudieron seguirla."
+    explanation: "Didáctica: hasta quienes no sabían del tema tomaron notas. «Moralizante» suena a sermón o regaño con forma de consejo, fuera de lugar aquí, y «formativa» diría que dejó un aprendizaje de fondo, sin asegurar que fuera fácil de seguir para principiantes."
+    options:
+      - position: 1
+        text: "moralizante"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Moralizante» suena a sermón o regaño con forma de consejo, y aquí lo que se elogia es que se explicó bien, sin regañar a nadie."
+        hint_specific: "Esa palabra suena a un regaño disfrazado de consejo. ¿La escena habla de un regaño, o de una buena explicación?"
+      - position: 2
+        text: "didáctica"
+        is_correct: true
+      - position: 3
+        text: "formativa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Formativa» diría que la charla dejó un aprendizaje de fondo, pero no asegura que fuera fácil de seguir para quienes no sabían nada."
+        hint_specific: "Esa palabra habla de un aprendizaje de fondo, con el tiempo. ¿La frase destaca eso, o que se entendiera ahí mismo?"
+  - position: 4
+    sentence: "El video que grabó Sofía para explicarle el trámite a su tía fue tan {{blank}} que ella lo hizo sola sin llamar a nadie."
+    hint_general: "El video explicó los pasos tan bien que la tía pudo hacer el trámite sola."
+    explanation: "Didáctico: la tía hizo el trámite sola gracias al video. «Dialéctico» tiene que ver con debatir ideas contrapuestas, y el video no discute nada, solo explica pasos, y «esclarecedor» diría que aclaró una duda puntual, no que guiara todo el trámite paso a paso."
+    options:
+      - position: 1
+        text: "dialéctico"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Dialéctico» tiene que ver con debatir ideas contrapuestas, y el video de Sofía no discute nada, solo explica un trámite paso a paso."
+        hint_specific: "Esa palabra tiene que ver con debatir posturas opuestas. ¿El video discutía algo, o explicaba pasos?"
+      - position: 2
+        text: "didáctico"
+        is_correct: true
+      - position: 3
+        text: "esclarecedor"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esclarecedor» diría que el video aclaró una duda puntual, y aquí lo logrado fue que su tía siguiera todos los pasos del trámite sola."
+        hint_specific: "Esa palabra habla de resolver una sola duda. ¿La tía tenía una duda puntual, o necesitaba guía en todo el trámite?"
+  - position: 5
+    sentence: "La charla que dio el nuevo gerente sobre el presupuesto fue tan {{blank}} que hasta el área de diseño entendió los números."
+    hint_general: "La charla explicó los números de forma que hasta quienes no manejan cifras los entendieron."
+    explanation: "Didáctica: hasta el área de diseño entendió los números. «Magistral» dice que algo estuvo hecho con brillantez, sin asegurar que se entendieran los números, y «orientadora» diría que dio un rumbo general, no que explicara los números en detalle."
+    options:
+      - position: 1
+        text: "magistral"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Magistral» dice que algo estuvo hecho con brillantez, pero no asegura que el área de diseño entendiera los números."
+        hint_specific: "Esa palabra habla de brillantez al hacer algo. ¿La frase destaca el brillo, o que se entendieran los números?"
+      - position: 2
+        text: "didáctica"
+        is_correct: true
+      - position: 3
+        text: "orientadora"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Orientadora» diría que la charla dio un rumbo general, y aquí lo que se destaca es que se entendieran los números en detalle."
+        hint_specific: "Esa palabra habla de dar un rumbo general, sin entrar en detalle. ¿La frase habla de un rumbo, o de entender números exactos?"
+  - position: 6
+    sentence: "El taller de cocina que armó Julián para sus amigos fue tan {{blank}} que todos repitieron la receta esa misma semana."
+    hint_general: "El taller enseñó los pasos tan bien que todos pudieron repetir la receta después."
+    explanation: "Didáctico: todos repitieron la receta esa misma semana. «Ameno» dice que el taller fue agradable, sin asegurar que aprendieran a repetirlo solos, y «formativo» diría que dejó un aprendizaje de fondo, no que se pudiera repetir enseguida."
+    options:
+      - position: 1
+        text: "ameno"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ameno» dice que el taller fue agradable, pero no asegura que sus amigos aprendieran a repetir la receta solos."
+        hint_specific: "Esa palabra habla de pasar un buen rato. ¿La frase destaca eso, o que pudieran repetir la receta?"
+      - position: 2
+        text: "didáctico"
+        is_correct: true
+      - position: 3
+        text: "formativo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Formativo» diría que el taller dejó un aprendizaje de fondo, y aquí lo que se destaca es que lo pudieran repetir enseguida."
+        hint_specific: "Esa palabra habla de un aprendizaje que se nota con el tiempo. ¿La frase habla de eso, o de repetir la receta esa misma semana?"
+  - position: 7
+    sentence: "La explicación que dio la candidata sobre su experiencia fue tan {{blank}} que el panel no tuvo que pedirle que aclarara nada."
+    hint_general: "La explicación cubrió todo tan bien que no quedó nada por aclarar después."
+    explanation: "Didáctica: no quedó nada por aclarar. «Esclarecedora» diría que resolvió una duda puntual, y aquí no había una duda previa que resolver, y «orientadora» diría que dio un rumbo general, no que dejara todo entendido."
+    options:
+      - position: 1
+        text: "esclarecedora"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Esclarecedora» diría que resolvió una duda puntual, y aquí lo que se logró fue que todo quedara entendido desde el principio, sin dudas previas que aclarar."
+        hint_specific: "Esa palabra sirve para resolver una duda que ya existía. ¿Había una duda previa, o el panel entendió todo desde el inicio?"
+      - position: 2
+        text: "didáctica"
+        is_correct: true
+      - position: 3
+        text: "orientadora"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Orientadora» diría que dio un rumbo general sobre su experiencia, y aquí el mérito fue que no quedara nada por aclarar."
+        hint_specific: "Esa palabra habla de dar un rumbo, sin entrar en cada detalle. ¿El panel necesitaba un rumbo, o entender cada detalle?"
+  - position: 8
+    sentence: "El resumen que armó Diego del proyecto fue tan {{blank}} que el cliente lo entendió sin necesitar una reunión aparte."
+    hint_general: "El resumen explicó el proyecto tan bien que no hizo falta una reunión más."
+    explanation: "Didáctico: el cliente entendió el resumen sin una reunión aparte. «Ilustrativo» diría que dio un buen ejemplo del proyecto, sin asegurar que se entendiera todo, e «instruccional» es un término de diseño educativo, forzado para describir un resumen enviado a un cliente."
+    options:
+      - position: 1
+        text: "ilustrativo"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ilustrativo» diría que el resumen dio un buen ejemplo del proyecto, pero no asegura que el cliente entendiera todo sin más preguntas."
+        hint_specific: "Esa palabra habla de dar un buen ejemplo. ¿El resumen dio un ejemplo puntual, o explicó todo el proyecto?"
+      - position: 2
+        text: "didáctico"
+        is_correct: true
+      - position: 3
+        text: "instruccional"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Instruccional» es un término de diseño educativo o corporativo, y suena forzado para describir un resumen que le mandaron a un cliente."
+        hint_specific: "Esa palabra suena a jerga de cursos o capacitaciones. ¿Encaja en un resumen mandado a un cliente?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El resumen que cerró el tema"
+    body: "Después de dos reuniones sin avanzar, Diego mandó un resumen de una página con lo esencial del proyecto. El cliente respondió en minutos: «Perfecto, no hace falta otra llamada». Su jefa lo felicitó: «Qué resumen tan didáctico»."
+    before_phrase: "Que se explique bien, paso a paso."
+    after_phrase: "Que quede didáctico."
+  - position: 2
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "El trámite de la tía"
+    body: "La tía de Sofía llevaba semanas sin animarse a hacer el trámite sola. Sofía grabó un video corto, mostrando cada pantalla con calma. Esa tarde, su tía lo hizo sin llamarla ni una vez. «Tu video fue tan didáctico que hasta me dio confianza», le escribió."
+    before_phrase: "Te lo explico para que lo puedas hacer sola."
+    after_phrase: "Te dejo algo didáctico para que lo hagas sola."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "La receta que todos repitieron"
+    body: "En su taller de cocina improvisado, Julián explicó cada paso mientras cocinaba, sin apuro. Sus amigos tomaron fotos de los pasos, no del plato. A la semana, tres de ellos ya habían repetido la receta en casa. «Qué manera tan didáctica de explicarlo», le dijo uno por el chat."
+    before_phrase: "Explicas tan bien que cualquiera puede seguirte."
+    after_phrase: "Tienes una manera muy didáctica de explicar."
+provenance:
+  generator: "hand-written for content/words"
+  gate: null
+  checked_on: "2026-09-18"

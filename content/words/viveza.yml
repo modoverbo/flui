@@ -1,0 +1,232 @@
+# Word 1 of batch W4 humor. Substitution note: originally assigned "gracejo"
+# (zipf 2.11, dp 0.88 — fails metrics, regional-only). Replaced with "viveza",
+# a close semantic neighbor (natural wit/quickness in how someone tells
+# things) that passes: zipf 3.08, dp 0.25.
+schema_version: 1
+sort_order: 9301
+slug: "viveza"
+status: "draft"
+lemma: "viveza"
+part_of_speech: "sustantivo"
+syllables: ["vi", "ve", "za"]
+stressed_syllable: 2
+ipa_latam: "[bi.ˈβe.sa]"
+ipa_es: "[bi.ˈβe.θa]"
+explanation: "Rapidez y gracia natural para decir o contar algo, que sorprende o causa risa de manera natural."
+example_sentence: "Contó lo que pasó con tanta viveza que hasta el jefe más serio soltó una carcajada."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Elogia el modo de contar algo, no el contenido: se aplica a cómo se dice, no a lo que se dice."
+when_not_to_use: "No la confundas con la habilidad para sacar ventaja de una situación; aquí solo hay gracia al hablar, nada calculado."
+collocations:
+  - "hablar con viveza"
+  - "contar algo con viveza"
+replaces:
+  - before: "Lo cuenta muy bien y hace reír a todos"
+    after: "Lo cuenta con mucha viveza"
+  - before: "Tiene mucha chispa para hablar"
+    after: "Tiene mucha viveza para hablar"
+family: ["vivo", "avivar"]
+themes:
+  - slug: "humor"
+    relevance: 3
+tags:
+  comodin: ["chispa"]
+  funcion: ["elogiar"]
+  canal: "ambos"
+  formalidad: "neutral"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "astucia"
+    difference: "«Astucia» es la habilidad para sacar ventaja o engañar a alguien; «viveza» es solo gracia y rapidez al hablar, sin buscar nada a cambio."
+    memory_trick: "La astucia calcula; la viveza solo entretiene."
+  - confused_with: "vileza"
+    difference: "«Vileza» nombra una acción baja o despreciable; «viveza» es un elogio sobre el modo en que alguien cuenta las cosas."
+    memory_trick: "Una letra las separa y el significado las opone: la vileza hiere, la viveza divierte."
+exercises:
+  - position: 1
+    sentence: "En la cena, Diego contó la anécdota del vuelo perdido con tanta {{blank}} que todos terminaron llorando de risa."
+    hint_general: "Busca la palabra que describe la gracia y la rapidez con que alguien cuenta algo."
+    explanation: "Viveza: la gracia y rapidez con que Diego contó la historia. «Vileza» sería una acción despreciable, y «ingenio» apunta a la idea, no al modo de contarla."
+    options:
+      - position: 1
+        text: "vileza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vileza» es una acción despreciable, y aquí nadie hizo nada malo: solo contó una historia divertida."
+        hint_specific: "«Vileza» describe algo cruel o despreciable. ¿La escena en la cena tiene algo de eso?"
+      - position: 2
+        text: "viveza"
+        is_correct: true
+      - position: 3
+        text: "ingenio"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Ingenio» habla de encontrar ideas originales, y aquí lo que sorprende es el modo divertido de contarlo, no la idea en sí."
+        hint_specific: "«Ingenio» es para ideas originales. ¿Aquí se premia la idea o el modo de contarla?"
+  - position: 2
+    sentence: "Marta respondió a la pregunta trampa del entrevistador con tanta {{blank}} que el resto del panel se rió con ella."
+    hint_general: "Piensa en la agilidad para responder algo difícil sin quedarse callada."
+    explanation: "Viveza: la agilidad con que Marta respondió y arrancó una risa. «Serenidad» describe calma, no gracia al hablar, y «arrogancia» suena a soberbia, y aquí el panel se ríe con ella, no de ella."
+    options:
+      - position: 1
+        text: "serenidad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Serenidad» describe calma frente a la presión, y la frase premia la gracia de la respuesta, no la tranquilidad."
+        hint_specific: "«Serenidad» habla de mantener la calma. ¿Aquí lo que sorprende es la calma o la gracia?"
+      - position: 2
+        text: "arrogancia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Arrogancia» suena a soberbia, y el panel se ríe con Marta, señal de que la respuesta cayó bien, no mal."
+        hint_specific: "«Arrogancia» molesta a quien escucha. ¿El panel se ríe con ella o se incomoda?"
+      - position: 3
+        text: "viveza"
+        is_correct: true
+  - position: 3
+    sentence: "Andrés apenas tuvo un segundo para pensar, pero improvisó con tanta {{blank}} que convirtió el error en el mejor momento de la boda."
+    hint_general: "Se trata de la agilidad para salir bien de un momento incómodo, casi sin pensar."
+    explanation: "Viveza: la agilidad con que Andrés salvó el momento. «Torpeza» es justo lo contrario, y «paciencia» describe esperar con calma, no reaccionar rápido."
+    options:
+      - position: 1
+        text: "viveza"
+        is_correct: true
+      - position: 2
+        text: "torpeza"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Torpeza» es hacer algo mal o con poca gracia, y aquí Andrés convierte el error en algo bueno."
+        hint_specific: "«Torpeza» describe algo hecho sin gracia. ¿El resultado aquí fue torpe o afortunado?"
+      - position: 3
+        text: "paciencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Paciencia» es esperar con calma, y aquí no hubo tiempo para esperar: la reacción fue casi inmediata."
+        hint_specific: "«Paciencia» va de esperar. ¿Andrés tuvo tiempo de esperar o reaccionó al instante?"
+  - position: 4
+    sentence: "Aunque el informe era aburrido, Lucía lo presentó con una {{blank}} que mantuvo despierta a toda la sala."
+    hint_general: "Piensa en la gracia que convierte algo aburrido en algo que da gusto escuchar."
+    explanation: "Viveza: la gracia con que Lucía presentó un tema aburrido. «Precisión» habla de exactitud en los datos, y «vileza» describe una acción despreciable, algo que no ocurre aquí."
+    options:
+      - position: 1
+        text: "precisión"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Precisión» habla de datos exactos, y lo que mantuvo despierta a la sala fue la gracia al contarlo, no la exactitud de las cifras."
+        hint_specific: "«Precisión» es sobre exactitud. ¿La sala se mantuvo despierta por los datos o por cómo se contaron?"
+      - position: 2
+        text: "viveza"
+        is_correct: true
+      - position: 3
+        text: "vileza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vileza» describe una acción despreciable, y presentar un informe con gracia no tiene nada de eso."
+        hint_specific: "«Vileza» suena parecido pero es algo cruel. ¿Hay algo cruel en presentar un informe?"
+  - position: 5
+    sentence: "Rocío escribió la felicitación de cumpleaños con tanta {{blank}} que su abuela la leyó tres veces seguidas, riendo cada vez."
+    hint_general: "Busca la palabra para el toque gracioso que hace disfrutar un texto corto."
+    explanation: "Viveza: el toque gracioso del mensaje que hizo reír a la abuela. «Corrección» solo dice que el texto está bien escrito, sin hablar de gracia, y «brevedad» describe que es corto, no que sea divertido."
+    options:
+      - position: 1
+        text: "corrección"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Corrección» dice que el texto está bien escrito, y lo que hizo reír a la abuela fue la gracia, no la ortografía."
+        hint_specific: "«Corrección» habla de estar bien escrito. ¿La abuela se rió por eso?"
+      - position: 2
+        text: "brevedad"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Brevedad» solo dice que el mensaje es corto, y la frase premia la gracia, no la extensión del texto."
+        hint_specific: "«Brevedad» habla de un texto corto. ¿Eso explica por qué la abuela se rió?"
+      - position: 3
+        text: "viveza"
+        is_correct: true
+  - position: 6
+    sentence: "El guía del museo tenía fama de aburrido, pero contaba las batallas con una {{blank}} que llenaba la sala cada semana."
+    hint_general: "La palabra describe el don de contar algo con gracia, no de saber mucho del tema."
+    explanation: "Viveza: el don de contar las batallas con gracia. «Erudición» habla de saber mucho de un tema, y «solemnidad» describe un tono serio, justo lo contrario de lo que llena el salón cada semana."
+    options:
+      - position: 1
+        text: "erudición"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Erudición» describe saber mucho de un tema, y aquí lo que atrae a la gente es el modo de contarlo, no la cantidad de datos."
+        hint_specific: "«Erudición» es sobre cuánto sabe alguien. ¿El salón se llena por eso o por cómo lo cuenta?"
+      - position: 2
+        text: "solemnidad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Solemnidad» describe un tono serio y ceremonioso, y un salón que se llena cada semana busca justo lo contrario: gracia y entretenimiento."
+        hint_specific: "«Solemnidad» suena a tono serio. ¿Ese tono llena una sala cada semana?"
+      - position: 3
+        text: "viveza"
+        is_correct: true
+  - position: 7
+    sentence: "Nadie esperaba que Gabriel, tan callado siempre, respondiera al comentario incómodo con tal {{blank}} que toda la mesa terminó aplaudiendo."
+    hint_general: "Se trata de una reacción rápida y graciosa que sorprende porque nadie la esperaba."
+    explanation: "Viveza: la reacción rápida y graciosa de Gabriel. «Timidez» describe justo lo contrario de lo que ocurrió, y «indiferencia» sería no reaccionar, cuando aquí hubo una respuesta que sorprendió a todos."
+    options:
+      - position: 1
+        text: "viveza"
+        is_correct: true
+      - position: 2
+        text: "timidez"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Timidez» describe a quien evita hablar, y en la frase Gabriel responde de un modo que sorprende a toda la mesa."
+        hint_specific: "«Timidez» es no animarse a hablar. ¿Gabriel se quedó callado o respondió?"
+      - position: 3
+        text: "indiferencia"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "«Indiferencia» sería no reaccionar, y aquí la mesa entera termina aplaudiendo la respuesta de Gabriel."
+        hint_specific: "«Indiferencia» es no darle importancia a algo. ¿Eso encaja con una mesa que aplaude?"
+  - position: 8
+    sentence: "Entre currículums parecidos, el de Paula se notó por la {{blank}} con la que describía cada trabajo anterior, sin sonar a plantilla."
+    hint_general: "Piensa en el toque personal y gracioso que hace destacar un texto entre otros parecidos."
+    explanation: "Viveza: el toque personal y gracioso que hizo destacar el currículum de Paula. «Formalidad» describe un tono serio y estándar, justo lo que la frase dice que evitó, y «vileza» no tiene relación con escribir un currículum."
+    options:
+      - position: 1
+        text: "formalidad"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Formalidad» describe un tono serio y estándar, y la frase dice que su currículum no sonaba a plantilla, es decir, no era el tono esperado."
+        hint_specific: "«Formalidad» es sonar como todos los demás. ¿Eso es lo que hizo destacar a Paula?"
+      - position: 2
+        text: "vileza"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "«Vileza» describe una acción despreciable, y escribir un currículum con gracia no tiene nada de despreciable."
+        hint_specific: "«Vileza» suena parecido pero habla de algo cruel. ¿Eso encaja con un currículum bien escrito?"
+      - position: 3
+        text: "viveza"
+        is_correct: true
+readings:
+  - position: 1
+    scene: "social"
+    conversation_type: "social"
+    title: "La sobremesa que no acababa"
+    body: "Nadie quería levantarse de la mesa mientras Tomás seguía hablando. Contaba el viaje en tren con tanta viveza —las voces, las pausas, el final inesperado— que hasta quien ya lo había escuchado antes volvió a reírse. «Cuéntalo otra vez», le pidieron, y él no se hizo de rogar."
+    before_phrase: "Cuenta las cosas muy bien, hace reír a todos."
+    after_phrase: "Cuenta las cosas con mucha viveza."
+  - position: 2
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "El informe que sí se leyó"
+    body: "El jefe pidió un resumen del trimestre y esperaba diez minutos de números. Nuria lo presentó con tanta viveza que la sala se rió dos veces antes de llegar a la última diapositiva. «Así sí se entienden las cifras», dijo alguien al salir."
+    before_phrase: "Lo explica muy bien y no aburre a nadie."
+    after_phrase: "Lo explica con mucha viveza."
+  - position: 3
+    scene: "familia"
+    conversation_type: "emocional"
+    title: "La historia de siempre"
+    body: "Cada Navidad, el tío contaba la misma anécdota del asado quemado, y cada año sonaba distinta. La abuela decía que era su viveza la que la hacía nueva cada vez, aunque los detalles fueran los mismos de siempre. Este año, hasta el primo más pequeño se quedó a escucharla completa."
+    before_phrase: "Cuenta lo mismo de siempre, pero de una forma que engancha."
+    after_phrase: "Lo cuenta con una viveza que engancha."
+provenance:
+  generator: "flui authoring agent — batch W4 humor"
+  gate: null
+  checked_on: "2026-09-18"

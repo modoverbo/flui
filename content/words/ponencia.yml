@@ -1,0 +1,227 @@
+schema_version: 1
+slug: "ponencia"
+status: "draft"
+lemma: "ponencia"
+part_of_speech: "sustantivo"
+syllables: ["po", "nen", "cia"]
+stressed_syllable: 2
+ipa_latam: "[poˈnen.sja]"
+ipa_es: "[poˈnen.θja]"
+explanation: "Charla que una persona da frente a un público sobre un tema que domina, dentro de un evento."
+example_sentence: "Después de años de práctica, Rocío por fin se animó a proponer una ponencia para el congreso del sector."
+register: "neutral"
+pedantry_risk: 1
+usage_tip: "Úsalo para hablar de tu propia charla en un evento, como forma de generar contactos antes o después."
+when_not_to_use: "No lo uses para una charla espontánea entre colegas: la ponencia se prepara y tiene un horario fijo dentro de un evento."
+collocations:
+  - "dar una ponencia"
+  - "presentar una ponencia"
+  - "asistir a una ponencia"
+family: []
+themes:
+  - slug: "networking"
+    relevance: 3
+  - slug: "presentaciones-oratoria"
+    relevance: 2
+tags:
+  comodin: ["la charla del evento"]
+  funcion: ["exponer"]
+  canal: "hablado"
+  formalidad: "formal"
+  variedad: "panhispanico"
+confusions:
+  - confused_with: "ponente"
+    difference: "El ponente es la persona que habla; la ponencia es la charla misma que esa persona presenta."
+    memory_trick: "El ponente sube al escenario; la ponencia es lo que dice ahí arriba."
+replaces:
+  - before: "La charla que dio en el evento sobre su proyecto"
+    after: "La ponencia que dio sobre su proyecto"
+  - before: "Voy a dar una charla en el congreso"
+    after: "Voy a dar una ponencia en el congreso"
+exercises:
+  - position: 1
+    sentence: "La {{blank}} sobre inteligencia artificial fue la más comentada de todo el congreso."
+    hint_general: "Una charla que alguien prepara para presentar frente a un público, dentro de un evento."
+    explanation: "Ponencia: una charla preparada para presentar frente a un público dentro de un evento. «Ponente» es la persona que la presenta, no la charla, y «pausa» es un descanso, sin relación con exponer un tema."
+    options:
+      - position: 1
+        text: "ponencia"
+        is_correct: true
+      - position: 2
+        text: "ponente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «ponente» es la persona que presenta la charla, y aquí se habla del contenido de la charla en sí, no de quien la dio."
+        hint_specific: "El ponente sube al escenario. ¿La frase habla de una persona o del contenido que presentó?"
+      - position: 3
+        text: "pausa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «pausa» es un descanso dentro del evento, y aquí se habla de una charla sobre un tema concreto."
+        hint_specific: "Una pausa es tiempo sin actividad. ¿La frase habla de un descanso o de una charla?"
+  - position: 2
+    sentence: "Diego pasó tres semanas preparando su {{blank}} sobre economía circular para el foro universitario."
+    hint_general: "Lo que alguien prepara con tiempo para exponer frente a un público en un evento."
+    explanation: "Ponencia: lo que alguien prepara con tiempo para exponer frente a un público. «Broma» es un chiste, sin relación con exponer un tema en un foro, y «pausa» es un descanso."
+    options:
+      - position: 1
+        text: "broma"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «broma» es un chiste, y Diego preparó un contenido serio sobre economía circular para exponerlo."
+        hint_specific: "Una broma busca hacer reír. ¿Diego preparó un chiste o un contenido sobre economía?"
+      - position: 2
+        text: "ponencia"
+        is_correct: true
+      - position: 3
+        text: "pausa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «pausa» es un descanso dentro del evento, y Diego preparó contenido para exponer, no un momento de descanso."
+        hint_specific: "Una pausa no se prepara durante tres semanas. ¿Diego preparó un descanso o un contenido?"
+  - position: 3
+    sentence: "El programa del congreso marcaba dos {{blank}} por la mañana y un panel de preguntas después del almuerzo."
+    hint_general: "Charlas programadas dentro del horario oficial de un evento."
+    explanation: "Ponencias: charlas programadas dentro del horario oficial de un evento. «Ponentes» son las personas que las dan, no las charlas en sí, y «pausas» son descansos, no exposiciones."
+    options:
+      - position: 1
+        text: "ponencias"
+        is_correct: true
+      - position: 2
+        text: "ponentes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Los «ponentes» son las personas que dan las charlas, y el programa marca los espacios de las charlas en sí, no a las personas."
+        hint_specific: "Los ponentes son personas. ¿El programa marca personas o bloques de horario?"
+      - position: 3
+        text: "pausas"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Las «pausas» son descansos, y la frase distingue esos bloques del panel de preguntas después del almuerzo, así que son exposiciones."
+        hint_specific: "Una pausa es tiempo sin actividad. ¿El programa marca descansos o bloques con contenido?"
+  - position: 4
+    sentence: "Antes de subir al escenario para su {{blank}}, Marina repasó las diapositivas una última vez."
+    hint_general: "El momento en que alguien expone su tema frente al público del evento."
+    explanation: "Ponencia: el momento en que alguien expone su tema frente al público. «Cháchara» es coloquial y suena a charla sin sustancia, y «pausa» es un descanso, sin relación con exponer un tema con diapositivas."
+    options:
+      - position: 1
+        text: "ponencia"
+        is_correct: true
+      - position: 2
+        text: "cháchara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cháchara» es coloquial y suena a charla sin sustancia, y Marina preparó diapositivas para una exposición seria frente al público."
+        hint_specific: "«Cháchara» suena informal y sin preparar. ¿Marina improvisó o preparó diapositivas?"
+      - position: 3
+        text: "pausa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «pausa» es un descanso, y aquí Marina se prepara para exponer, no para descansar."
+        hint_specific: "Una pausa no lleva diapositivas. ¿Marina se prepara para descansar o para exponer?"
+  - position: 5
+    sentence: "El comité seleccionó solo veinte {{blank}} de las cien que se presentaron para el simposio."
+    hint_general: "Propuestas de charla que se envían para ser evaluadas antes de un evento."
+    explanation: "Ponencias: propuestas de charla que se envían para ser evaluadas antes de un evento. «Invitaciones» las envía la organización, y «ponentes» son las personas, no las cien propuestas enviadas."
+    options:
+      - position: 1
+        text: "ponencias"
+        is_correct: true
+      - position: 2
+        text: "invitaciones"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Las «invitaciones» las envía la organización a los asistentes, y aquí se habla de propuestas que la gente envió para participar."
+        hint_specific: "Una invitación la envía el organizador. ¿La frase habla de invitar o de propuestas recibidas?"
+      - position: 3
+        text: "ponentes"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "Los «ponentes» son las personas, y aquí se habla de cien propuestas de contenido enviadas al comité."
+        hint_specific: "Los ponentes son personas, no propuestas. ¿El comité seleccionó personas o propuestas de contenido?"
+  - position: 6
+    sentence: "Después de su {{blank}}, Bruno recibió cinco tarjetas de personas que querían seguir la conversación."
+    hint_general: "Lo que alguien expone frente a un público y que puede abrir contactos después."
+    explanation: "Ponencia: lo que alguien expone frente a un público, y que puede abrir contactos. «Cháchara» es coloquial y suena informal, y «pausa» es un descanso, sin relación con exponer un tema."
+    options:
+      - position: 1
+        text: "ponencia"
+        is_correct: true
+      - position: 2
+        text: "cháchara"
+        is_correct: false
+        distractor_type: "register"
+        why_not: "«Cháchara» es coloquial y suena a charla sin sustancia, y la frase describe una exposición que generó interés real entre el público."
+        hint_specific: "«Cháchara» no suele generar tarjetas de contacto. ¿La escena describe algo informal o una exposición seria?"
+      - position: 3
+        text: "pausa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «pausa» es un descanso, y aquí Bruno expuso un tema que generó interés en el público."
+        hint_specific: "Una pausa no genera tarjetas de contacto. ¿Bruno descansó o expuso un tema?"
+  - position: 7
+    sentence: "La revista del sector publicó un resumen de la {{blank}} más citada del año en el área de salud."
+    hint_general: "Una exposición formal que después puede ser resumida o citada por otros medios."
+    explanation: "Ponencia: una exposición formal que después puede ser resumida o citada. «Entrevista» tiene preguntas y respuestas, y «ponente» es la persona, no el contenido que la revista resumió."
+    options:
+      - position: 1
+        text: "entrevista"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «entrevista» tiene preguntas y respuestas entre dos personas, y aquí se trata de una exposición de un especialista frente a un público."
+        hint_specific: "Una entrevista tiene preguntas y respuestas. ¿La frase describe un diálogo o una exposición?"
+      - position: 2
+        text: "ponencia"
+        is_correct: true
+      - position: 3
+        text: "ponente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «ponente» es la persona que expone, y la revista resumió el contenido de la exposición, no a la persona."
+        hint_specific: "El ponente es una persona. ¿La revista resumió a una persona o un contenido?"
+  - position: 8
+    sentence: "Cada {{blank}} del simposio tenía veinte minutos, seguidos de cinco minutos de preguntas del público."
+    hint_general: "Cada bloque de exposición dentro del horario fijo de un evento."
+    explanation: "Ponencia: cada bloque de exposición dentro del horario fijo de un evento. «Pausa» es un descanso sin preguntas del público, y «ponente» es la persona, no el bloque de tiempo."
+    options:
+      - position: 1
+        text: "ponencia"
+        is_correct: true
+      - position: 2
+        text: "pausa"
+        is_correct: false
+        distractor_type: "near_synonym"
+        why_not: "Una «pausa» es un descanso, y la frase describe un bloque con preguntas del público al final, propio de una exposición."
+        hint_specific: "Una pausa no tiene preguntas del público. ¿El bloque descrito es un descanso o una exposición?"
+      - position: 3
+        text: "ponente"
+        is_correct: false
+        distractor_type: "paronym"
+        why_not: "El «ponente» es la persona que expone, y la frase habla del bloque de tiempo, no de la persona."
+        hint_specific: "El ponente es una persona, no un bloque de veinte minutos. ¿La frase mide tiempo o describe a alguien?"
+readings:
+  - position: 1
+    scene: "trabajo"
+    conversation_type: "practica"
+    title: "Tres semanas de preparación"
+    body: "Diego llevaba tres semanas ensayando su ponencia sobre economía circular. Cuando terminó, su jefa le dijo: «Se notó la preparación, sonaste seguro todo el tiempo». Esa noche, Diego durmió mejor que en semanas."
+    before_phrase: "Voy a dar una charla en el foro."
+    after_phrase: "Voy a dar una ponencia en el foro."
+  - position: 2
+    scene: "entrevista"
+    conversation_type: "practica"
+    title: "Hablar frente a un público difícil"
+    body: "«¿Tienes experiencia hablando frente a grupos grandes?», preguntó la reclutadora. Marina contó que había dado una ponencia frente a doscientas personas y que, después, cinco de ellas la buscaron para seguir la conversación."
+    before_phrase: "Di una charla frente a un público grande."
+    after_phrase: "Di una ponencia frente a un público grande."
+  - position: 3
+    scene: "social"
+    conversation_type: "social"
+    title: "Las tarjetas después de la charla"
+    body: "Bruno bajó del escenario todavía con el micrófono en la mano. En minutos, cinco personas se acercaron con sus tarjetas. «Tu ponencia me dejó pensando toda la tarde», le dijo una de ellas, y quedaron en tomar un café esa misma semana."
+    before_phrase: "Tu charla me dejó pensando toda la tarde."
+    after_phrase: "Tu ponencia me dejó pensando toda la tarde."
+provenance:
+  generator: "authored for the networking theme"
+  gate: null
+  checked_on: "2026-09-18"
