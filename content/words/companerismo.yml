@@ -1,9 +1,14 @@
 schema_version: 1
 slug: "companerismo"
-status: "draft"
+status: "approved"
 lemma: "compañerismo"
 part_of_speech: "sustantivo"
-syllables: ["com", "pa", "ñe", "ris", "mo"]
+syllables:
+  - "com"
+  - "pa"
+  - "ñe"
+  - "ris"
+  - "mo"
 stressed_syllable: 4
 ipa_latam: "[kom.pa.ɲeˈɾis.mo]"
 ipa_es: "[kom.pa.ɲeˈɾis.mo]"
@@ -22,13 +27,17 @@ replaces:
     after: "En mi equipo hay mucho compañerismo"
   - before: "Se nota que se apoyan de verdad en el trabajo"
     after: "Se nota el compañerismo en el trabajo"
-family: ["compañero", "compañía"]
+family:
+  - "compañero"
+  - "compañía"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["buen ambiente"]
-  funcion: ["reconocer"]
+  comodin:
+    - "buen ambiente"
+  funcion:
+    - "reconocer"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -224,5 +233,5 @@ readings:
     after_phrase: "En este grupo hay compañerismo de verdad."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

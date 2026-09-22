@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "gentil"
-status: "draft"
+status: "approved"
 lemma: "gentil"
 part_of_speech: "adjetivo"
-syllables: ["gen", "til"]
+syllables:
+  - "gen"
+  - "til"
 stressed_syllable: 2
 ipa_latam: "[xenˈtil]"
 ipa_es: "[xenˈtil]"
@@ -24,13 +26,18 @@ replaces:
     after: "Fue muy gentil conmigo"
   - before: "Trata a todo el mundo con buenos modales"
     after: "Es gentil con todo el mundo"
-family: ["gentileza"]
+family:
+  - "gentileza"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["qué bueno de tu parte", "es buena gente"]
-  funcion: ["elogiar", "agradecer"]
+  comodin:
+    - "qué bueno de tu parte"
+    - "es buena gente"
+  funcion:
+    - "elogiar"
+    - "agradecer"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -226,5 +233,5 @@ readings:
     after_phrase: "Qué gentil es, ayuda sin que se lo pidan."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

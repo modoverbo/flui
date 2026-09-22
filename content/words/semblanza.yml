@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "semblanza"
-status: "draft"
+status: "approved"
 lemma: "semblanza"
 part_of_speech: "sustantivo"
-syllables: ["sem", "blan", "za"]
+syllables:
+  - "sem"
+  - "blan"
+  - "za"
 stressed_syllable: 2
 ipa_latam: "[semˈblan.sa]"
 ipa_es: "[semˈblan.θa]"
@@ -17,6 +20,11 @@ collocations:
   - "escribir una semblanza"
   - "una breve semblanza"
   - "pedir una semblanza"
+replaces:
+  - before: "El texto corto que cuenta quién eres antes del evento"
+    after: "La semblanza que cuenta quién eres antes del evento"
+  - before: "Un resumen de tu trayectoria para presentarte"
+    after: "Una semblanza de tu trayectoria para presentarte"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +32,11 @@ themes:
   - slug: "entrevistas"
     relevance: 1
 tags:
-  comodin: ["mini currículum", "presentación corta"]
-  funcion: ["presentar"]
+  comodin:
+    - "mini currículum"
+    - "presentación corta"
+  funcion:
+    - "presentar"
   canal: "escrito"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +44,6 @@ confusions:
   - confused_with: "semblante"
     difference: "El semblante es la expresión del rostro de alguien; la semblanza es un texto breve sobre su trayectoria."
     memory_trick: "El semblante se ve en la cara; la semblanza se lee en un papel."
-replaces:
-  - before: "El texto corto que cuenta quién eres antes del evento"
-    after: "La semblanza que cuenta quién eres antes del evento"
-  - before: "Un resumen de tu trayectoria para presentarte"
-    after: "Una semblanza de tu trayectoria para presentarte"
 exercises:
   - position: 1
     sentence: "Antes del panel, la organización pidió a cada invitado una {{blank}} de cinco líneas para leer en voz alta."
@@ -223,5 +229,5 @@ readings:
     after_phrase: "Tengo que escribir mi semblanza para el libro."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

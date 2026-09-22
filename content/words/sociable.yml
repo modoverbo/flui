@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "sociable"
-status: "draft"
+status: "approved"
 lemma: "sociable"
 part_of_speech: "adjetivo"
-syllables: ["so", "cia", "ble"]
+syllables:
+  - "so"
+  - "cia"
+  - "ble"
 stressed_syllable: 2
 ipa_latam: "[soˈsja.βle]"
 ipa_es: "[soˈθja.βle]"
@@ -17,15 +20,24 @@ collocations:
   - "una persona sociable"
   - "muy sociable"
   - "ser poco sociable"
-family: ["sociabilidad"]
+replaces:
+  - before: "Le gusta mucho hablar con gente que no conoce"
+    after: "Es muy sociable"
+  - before: "Se le da bien hacer amigos nuevos rápido"
+    after: "Es sociable y hace amigos rápido"
+family:
+  - "sociabilidad"
 themes:
   - slug: "networking"
     relevance: 3
   - slug: "small-talk"
     relevance: 1
 tags:
-  comodin: ["le gusta la gente", "buena onda con todos"]
-  funcion: ["describir personalidad"]
+  comodin:
+    - "le gusta la gente"
+    - "buena onda con todos"
+  funcion:
+    - "describir personalidad"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +45,6 @@ confusions:
   - confused_with: "social"
     difference: "«Social» describe algo relacionado con la sociedad o un grupo, en general; «sociable» describe a una persona que disfruta tratar con gente nueva."
     memory_trick: "Un evento es social; una persona es sociable."
-replaces:
-  - before: "Le gusta mucho hablar con gente que no conoce"
-    after: "Es muy sociable"
-  - before: "Se le da bien hacer amigos nuevos rápido"
-    after: "Es sociable y hace amigos rápido"
 exercises:
   - position: 1
     sentence: "Nadie se aburre en las fiestas de Marina: es tan {{blank}} que ya conoce a la mitad de los invitados en diez minutos."
@@ -223,5 +230,5 @@ readings:
     after_phrase: "Siempre fuiste así de sociable."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

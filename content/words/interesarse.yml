@@ -1,9 +1,14 @@
 schema_version: 1
 slug: "interesarse"
-status: "draft"
+status: "approved"
 lemma: "interesarse"
 part_of_speech: "verbo"
-syllables: ["in", "te", "re", "sar", "se"]
+syllables:
+  - "in"
+  - "te"
+  - "re"
+  - "sar"
+  - "se"
 stressed_syllable: 4
 ipa_latam: "[in.te.ɾeˈsaɾ.se]"
 ipa_es: "[in.te.ɾeˈsaɾ.se]"
@@ -17,13 +22,21 @@ collocations:
   - "interesarse por alguien"
   - "se interesó por cómo estaba"
   - "nadie se interesó"
+replaces:
+  - before: "Le preguntó cómo estaba de verdad, con ganas de saber"
+    after: "Se interesó por cómo estaba de verdad"
+  - before: "Preguntó por su papá aunque casi no lo conocía"
+    after: "Se interesó por su papá aunque casi no lo conocía"
 family: []
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["preguntar cómo está", "preocuparse por"]
-  funcion: ["preguntar"]
+  comodin:
+    - "preguntar cómo está"
+    - "preocuparse por"
+  funcion:
+    - "preguntar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +44,6 @@ confusions:
   - confused_with: "curiosear"
     difference: "Curiosear es indagar por simple curiosidad, a veces sin buena intención; interesarse es preguntar por alguien con cuidado genuino."
     memory_trick: "Curioseas por saber un chisme; te interesas por cuidar a alguien."
-replaces:
-  - before: "Le preguntó cómo estaba de verdad, con ganas de saber"
-    after: "Se interesó por cómo estaba de verdad"
-  - before: "Preguntó por su papá aunque casi no lo conocía"
-    after: "Se interesó por su papá aunque casi no lo conocía"
 exercises:
   - position: 1
     sentence: "Después de la operación, hasta su vecino más callado se {{blank}} por cómo seguía su padre."
@@ -221,5 +229,5 @@ readings:
     after_phrase: "Me gusta interesarme por la gente antes de hablar de números."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

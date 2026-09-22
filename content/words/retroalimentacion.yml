@@ -1,9 +1,16 @@
 schema_version: 1
 slug: "retroalimentacion"
-status: "draft"
+status: "approved"
 lemma: "retroalimentación"
 part_of_speech: "sustantivo"
-syllables: ["re", "tro", "a", "li", "men", "ta", "ción"]
+syllables:
+  - "re"
+  - "tro"
+  - "a"
+  - "li"
+  - "men"
+  - "ta"
+  - "ción"
 stressed_syllable: 7
 ipa_latam: "[re.tro.a.li.men.taˈsjon]"
 ipa_es: "[re.tro.a.li.men.taˈθjon]"
@@ -21,15 +28,18 @@ replaces:
     after: "Dame tu retroalimentación"
   - before: "Cuéntame cosas para mejorar"
     after: "Necesito tu retroalimentación"
-family: ["retroalimentar"]
+family:
+  - "retroalimentar"
 themes:
   - slug: "docencia"
     relevance: 2
   - slug: "liderazgo-feedback"
     relevance: 3
 tags:
-  comodin: ["cosas para mejorar"]
-  funcion: ["pedir"]
+  comodin:
+    - "cosas para mejorar"
+  funcion:
+    - "pedir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -225,5 +235,5 @@ readings:
     after_phrase: "Aprendí a pedir retroalimentación específica."
 provenance:
   generator: "hand-written for content/words, theme docencia"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

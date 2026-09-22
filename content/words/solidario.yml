@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "solidario"
-status: "draft"
+status: "approved"
 lemma: "solidario"
 part_of_speech: "adjetivo"
-syllables: ["so", "li", "da", "rio"]
+syllables:
+  - "so"
+  - "li"
+  - "da"
+  - "rio"
 stressed_syllable: 3
 ipa_latam: "[so.liˈða.rjo]"
 ipa_es: "[so.liˈða.rjo]"
@@ -22,13 +26,17 @@ replaces:
     after: "Fue solidario conmigo en un momento difícil"
   - before: "Ayudó porque le importaba de verdad"
     after: "Ayudó de forma solidaria"
-family: ["solidaridad", "solidarizarse"]
+family:
+  - "solidaridad"
+  - "solidarizarse"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["que ayuda"]
-  funcion: ["elogiar"]
+  comodin:
+    - "que ayuda"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -224,5 +232,5 @@ readings:
     after_phrase: "Fueron muy solidarios con ella."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

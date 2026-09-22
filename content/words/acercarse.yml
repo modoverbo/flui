@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "acercarse"
-status: "draft"
+status: "approved"
 lemma: "acercarse"
 part_of_speech: "verbo"
-syllables: ["a", "cer", "car", "se"]
+syllables:
+  - "a"
+  - "cer"
+  - "car"
+  - "se"
 stressed_syllable: 3
 ipa_latam: "[a.seɾˈkaɾ.se]"
 ipa_es: "[a.θeɾˈkaɾ.se]"
@@ -17,13 +21,21 @@ collocations:
   - "acercarse a alguien"
   - "acercarse en silencio"
   - "nadie quiso acercarse"
+replaces:
+  - before: "Fue a ver cómo estaba la chica que lloraba sola"
+    after: "Se acercó a la chica que lloraba sola"
+  - before: "Se fue caminando hacia su amigo para preguntarle qué pasaba"
+    after: "Se acercó a su amigo para preguntarle qué pasaba"
 family: []
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["ir a ver cómo está", "acercarse a hablar"]
-  funcion: ["acompañar"]
+  comodin:
+    - "ir a ver cómo está"
+    - "acercarse a hablar"
+  funcion:
+    - "acompañar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +43,6 @@ confusions:
   - confused_with: "cercar"
     difference: "Cercar es rodear algo, como un terreno o un espacio; acercarse es ir hacia alguien para hablarle o acompañarlo."
     memory_trick: "Cercas un terreno; te acercas a una persona."
-replaces:
-  - before: "Fue a ver cómo estaba la chica que lloraba sola"
-    after: "Se acercó a la chica que lloraba sola"
-  - before: "Se fue caminando hacia su amigo para preguntarle qué pasaba"
-    after: "Se acercó a su amigo para preguntarle qué pasaba"
 exercises:
   - position: 1
     sentence: "Nadie más se movió, pero Marta {{blank}} a la chica que lloraba sola en la escalera."
@@ -221,5 +228,5 @@ readings:
     after_phrase: "Con que te acercaras ya era suficiente."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

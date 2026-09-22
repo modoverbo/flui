@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "desencanto"
-status: "draft"
+status: "approved"
 lemma: "desencanto"
 part_of_speech: "sustantivo"
-syllables: ["de", "sen", "can", "to"]
+syllables:
+  - "de"
+  - "sen"
+  - "can"
+  - "to"
 stressed_syllable: 3
 ipa_latam: "[de.senˈkan.to]"
 ipa_es: "[de.senˈkan.to]"
@@ -17,13 +21,21 @@ collocations:
   - "un desencanto con"
   - "sentir desencanto"
   - "el desencanto fue creciendo"
+replaces:
+  - before: "Ya se le bajaron las ganas de seguir viéndolo"
+    after: "Le quedó un desencanto y ya no tiene ganas de seguir viéndolo"
+  - before: "Cada cita cancelada le quitaba un poco más la ilusión"
+    after: "Cada cita cancelada le sumaba desencanto"
 family: []
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["se me bajó el interés", "ya no es lo mismo"]
-  funcion: ["describir pérdida de interés"]
+  comodin:
+    - "se me bajó el interés"
+    - "ya no es lo mismo"
+  funcion:
+    - "describir pérdida de interés"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,33 +43,8 @@ confusions:
   - confused_with: "desengaño"
     difference: "El desengaño surge de descubrir que alguien te mintió o te engañó; el desencanto es una pérdida de ilusión más lenta, sin que necesariamente haya mediado un engaño."
     memory_trick: "El desengaño llega de golpe con la mentira; el desencanto llega despacio, sin ella."
-replaces:
-  - before: "Ya se le bajaron las ganas de seguir viéndolo"
-    after: "Le quedó un desencanto y ya no tiene ganas de seguir viéndolo"
-  - before: "Cada cita cancelada le quitaba un poco más la ilusión"
-    after: "Cada cita cancelada le sumaba desencanto"
 exercises:
   - position: 1
-    sentence: "Después de la tercera cita cancelada, a Rocío le quedó un {{blank}} que le costaba explicar."
-    hint_general: "La pérdida de interés o ilusión por alguien que antes gustaba mucho."
-    explanation: "Desencanto: la pérdida de interés o ilusión por alguien que antes gustaba. «Desengaño» surge de descubrir una mentira, y «cansancio» habla de falta de energía física, no de perder la ilusión."
-    options:
-      - position: 1
-        text: "desencanto"
-        is_correct: true
-      - position: 2
-        text: "desengaño"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "El «desengaño» surge de descubrir una mentira, y la frase no menciona ningún engaño, solo citas canceladas una tras otra."
-        hint_specific: "El desengaño necesita una mentira descubierta. ¿La frase menciona algún engaño?"
-      - position: 3
-        text: "cansancio"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "El «cansancio» habla de falta de energía física, y la frase describe la pérdida de la ilusión, no el sueño o el esfuerzo físico."
-        hint_specific: "El cansancio es físico. ¿Rocío perdió energía o ilusión?"
-  - position: 2
     sentence: "El {{blank}} con la ciudad le llegó de a poco: primero el tráfico, después el ruido, y al final ya nada le gustaba."
     hint_general: "La pérdida gradual del interés o la ilusión por un lugar."
     explanation: "Desencanto: la pérdida gradual del interés por un lugar. «Odio» es un sentimiento fuerte y directo, y «descanso» es dejar de trabajar o dormir; ninguno describe esa pérdida lenta de interés."
@@ -77,7 +64,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Descanso» habla de dejar de trabajar o de dormir, sin relación con perder el interés por una ciudad."
         hint_specific: "Un descanso es dejar de trabajar. ¿La frase habla de descansar o de perder el interés por la ciudad?"
-  - position: 3
+  - position: 2
     sentence: "Su {{blank}} con las aplicaciones de citas creció tanto que borró todas el mismo día."
     hint_general: "La pérdida de interés que llega poco a poco, hasta que ya no queda nada de ilusión."
     explanation: "Desencanto: la pérdida de interés que llega poco a poco. «Curiosidad» sería justo lo contrario, un interés por algo nuevo, y «descanso» es dejar de trabajar o dormir, sin relación con borrar las aplicaciones."
@@ -97,7 +84,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Descanso» habla de dejar de trabajar o de dormir, sin relación con perder el interés por las aplicaciones de citas."
         hint_specific: "Un descanso es dejar de trabajar. ¿La frase habla de dormir o de perder el interés?"
-  - position: 4
+  - position: 3
     sentence: "Después de conocerlo mejor, el {{blank}} de Camila fue creciendo cita tras cita, hasta que dejó de responderle."
     hint_general: "La pérdida de ilusión con alguien, que crece con el tiempo hasta desaparecer del todo."
     explanation: "Desencanto: la pérdida de ilusión con alguien, que crece con el tiempo. «Bajón» es coloquial y suena a tristeza pasajera, y «descanso» es dejar de trabajar o dormir; ninguno describe este proceso."
@@ -117,7 +104,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Descanso» habla de dejar de trabajar o de dormir, sin relación con perder la ilusión por alguien."
         hint_specific: "Un descanso es dejar de trabajar. ¿La frase habla de dormir o de perder la ilusión?"
-  - position: 5
+  - position: 4
     sentence: "El {{blank}} llegó tan de a poco que Javier ni notó el momento exacto en que dejó de importarle el resultado del equipo."
     hint_general: "La pérdida gradual del interés por algo que antes importaba mucho."
     explanation: "Desencanto: la pérdida gradual del interés por algo que antes importaba. «Furia» es un enojo intenso y repentino, y «descanso» es dejar de trabajar o dormir; ninguno describe algo tan lento."
@@ -137,7 +124,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Descanso» habla de dejar de trabajar o de dormir, sin relación con perder el interés por un equipo."
         hint_specific: "Un descanso es dejar de trabajar. ¿La frase habla de dormir o de perder el interés por el equipo?"
-  - position: 6
+  - position: 5
     sentence: "Tras años en el mismo puesto, un {{blank}} silencioso se instaló en Marta, aunque nadie en la oficina lo notara."
     hint_general: "Una pérdida de ilusión que se instala despacio, sin que se note desde afuera."
     explanation: "Desencanto: una pérdida de ilusión que se instala despacio. «Descanso» habla de dejar de trabajar o de dormir, y «furia» es un enojo intenso, ninguno describe algo silencioso que nadie nota."
@@ -157,7 +144,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "La «furia» es un enojo intenso, y la frase describe algo silencioso que nadie en la oficina notaba, no un enojo visible."
         hint_specific: "La furia se nota desde afuera. ¿Lo que sentía Marta se notaba o era silencioso?"
-  - position: 7
+  - position: 6
     sentence: "El {{blank}} de Rubén con las redes sociales empezó el día que notó que todos mostraban una vida que no vivían."
     hint_general: "La pérdida de ilusión por algo, a partir de un motivo concreto que la origina."
     explanation: "Desencanto: la pérdida de ilusión por algo, a partir de un motivo concreto. «Descanso» habla de dejar de trabajar o de dormir, y «furia» es un enojo intenso, ninguno describe esa pérdida de ilusión."
@@ -177,7 +164,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "La «furia» es un enojo intenso y repentino, y la frase describe algo que Rubén fue sintiendo con el tiempo, no un estallido."
         hint_specific: "La furia estalla de golpe. ¿Rubén tuvo un estallido o fue sintiendo algo con el tiempo?"
-  - position: 8
+  - position: 7
     sentence: "Tanto {{blank}} le dejó esa relación que tardó un año en volver a aceptar una cita."
     hint_general: "La cantidad de pérdida de ilusión que puede dejar una relación que no funcionó."
     explanation: "Desencanto: la pérdida de ilusión que puede dejar una relación que no funcionó. «Descanso» habla de dejar de trabajar o de dormir, y «furia» es un enojo intenso, ninguno explica por qué tardó un año en aceptar otra cita."
@@ -221,5 +208,5 @@ readings:
     after_phrase: "Esa relación me dejó un desencanto grande."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

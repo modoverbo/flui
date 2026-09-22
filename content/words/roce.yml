@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "roce"
-status: "draft"
+status: "approved"
 lemma: "roce"
 part_of_speech: "sustantivo"
-syllables: ["ro", "ce"]
+syllables:
+  - "ro"
+  - "ce"
 stressed_syllable: 1
 ipa_latam: "[ˈro.se]"
 ipa_es: "[ˈro.θe]"
@@ -17,6 +19,11 @@ collocations:
   - "tener roce con"
   - "roce internacional"
   - "dar roce"
+replaces:
+  - before: "Está acostumbrada a tratar con extranjeros"
+    after: "Tiene roce con extranjeros"
+  - before: "Ya tiene práctica hablando con directivos"
+    after: "Ya tiene roce con directivos"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +31,11 @@ themes:
   - slug: "entrevistas"
     relevance: 1
 tags:
-  comodin: ["práctica con gente", "cancha"]
-  funcion: ["describir experiencia"]
+  comodin:
+    - "práctica con gente"
+    - "cancha"
+  funcion:
+    - "describir experiencia"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +43,6 @@ confusions:
   - confused_with: "trato"
     difference: "El trato describe cómo alguien se relaciona en general, sea cálido o frío; el roce señala específicamente la práctica acumulada que da soltura frente a cierto tipo de gente."
     memory_trick: "El roce se gana con la práctica; el trato se tiene, bueno o malo."
-replaces:
-  - before: "Está acostumbrada a tratar con extranjeros"
-    after: "Tiene roce con extranjeros"
-  - before: "Ya tiene práctica hablando con directivos"
-    after: "Ya tiene roce con directivos"
 exercises:
   - position: 1
     sentence: "Después de dos años atendiendo clientes de otros países, Marta ya tenía {{blank}} con gente de culturas muy distintas."
@@ -223,5 +228,5 @@ readings:
     after_phrase: "Tengo roce con este tipo de protocolo."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

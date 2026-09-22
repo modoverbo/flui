@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "aclaracion"
-status: "draft"
+status: "approved"
 lemma: "aclaración"
 part_of_speech: "sustantivo"
 syllables:
@@ -132,26 +132,6 @@ exercises:
         why_not: "«Declaración» sería anunciar algo nuevo desde cero, y aquí Emiliano solo está corrigiendo cómo su hijo entendió el castigo."
         hint_specific: "«Declaración» anuncia algo desde cero. ¿Emiliano anuncia un castigo nuevo o corrige uno que ya existía?"
   - position: 5
-    sentence: "Después de que varios medios entendieran mal el comunicado, la vocera del hospital hizo una {{blank}}: el nuevo horario aplica solo a urgencias, no a consultas generales."
-    hint_general: "Piensa en corregir, en una rueda de prensa, a quién aplica realmente una medida."
-    explanation: "Aclaración: corrige a quién aplica el horario, tras el malentendido. «Precisión» añade un detalle a algo ya claro, y aquí había confusión de por medio, y «corrección» sugeriría que el horario original estaba mal, cuando solo faltaba explicarlo."
-    options:
-      - position: 1
-        text: "precisión"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Precisión» añade un detalle más exacto a algo que ya estaba claro, y aquí el problema es que los medios habían entendido mal, no que faltara un detalle."
-        hint_specific: "«Precisión» supone que algo ya estaba claro. ¿Los medios habían entendido bien el comunicado?"
-      - position: 2
-        text: "aclaración"
-        is_correct: true
-      - position: 3
-        text: "corrección"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Corrección» sonaría a que el horario original estaba mal y hay que cambiarlo, y en realidad el horario no cambió: solo se explicó mejor a quién aplica."
-        hint_specific: "«Corrección» supone que algo estaba mal y cambia. ¿El horario cambió o solo se explicó mejor?"
-  - position: 6
     sentence: "El área legal envió una {{blank}} al cliente: la cláusula 4 no aplicaba a los pagos ya realizados."
     hint_general: "Se refiere a explicar, en pocas líneas, a qué parte de un texto aplica una regla."
     explanation: "Aclaración: explica a qué pagos aplicaba la cláusula. «Declaración» sería un anuncio nuevo y formal, y aquí solo se precisa una cláusula existente, y «corrección» diría que el texto estaba mal redactado, cuando el texto era correcto."
@@ -171,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Corrección» diría que la cláusula estaba mal escrita, y en realidad el texto era correcto: solo hacía falta explicar a qué pagos aplicaba."
         hint_specific: "«Corrección» supone que el texto estaba mal. ¿La cláusula estaba mal escrita?"
-  - position: 7
+  - position: 6
     sentence: "Tras la ola de comentarios, el chef subió un video con una {{blank}}: nunca dijo que la receta llevara mantequilla, sino aceite."
     hint_general: "Busca la palabra para corregir un dato puntual que la gente entendió mal, sin pedir perdón por nada."
     explanation: "Aclaración: corrige el ingrediente que se entendió mal. «Disculpa» pide perdón por un error, y el chef no se equivocó, y «explicación» sugeriría contar todo el proceso, cuando basta con corregir un ingrediente."
@@ -191,7 +171,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Explicación» podría alargarse contando todo el proceso de la receta, y aquí solo hacía falta corregir un ingrediente mal entendido."
         hint_specific: "«Explicación» puede alargarse mucho. ¿El chef necesita contar todo el proceso o corregir un ingrediente?"
-  - position: 8
+  - position: 7
     sentence: "Antes de que el comentario de la abuela se malinterpretara más, su nieta hizo una {{blank}} en el grupo familiar: no se refería a nadie en particular."
     hint_general: "Piensa en un mensaje corto para que un comentario no se malinterprete más de la cuenta."
     explanation: "Aclaración: corrige a quién se refería el comentario. «Comunicado» suena a un aviso oficial de una institución, y esto es un mensaje familiar, y «corrección» sonaría a que lo que dijo la abuela estaba mal y había que enmendarlo."
@@ -235,5 +215,5 @@ readings:
     after_phrase: "Una aclaración: no se refería a nadie en particular."
 provenance:
   generator: "flui authoring agent — theme medios-entrevistas"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

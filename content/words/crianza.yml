@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 9201
 slug: "crianza"
-status: "draft"
+status: "approved"
 lemma: "crianza"
 part_of_speech: "sustantivo"
 syllables:
@@ -168,26 +168,6 @@ exercises:
         why_not: "«Atención» es más general, y aquí se describe un estilo completo, con horarios y reglas concretas."
         hint_specific: "«Atención» es más general que un estilo completo. ¿Qué cambian exactamente Silvia y su pareja?"
   - position: 7
-    sentence: "Ignacio dice que su {{blank}} le dejó una cosa clara: nadie en casa alzaba la voz para discutir."
-    hint_general: "Habla de cómo lo educaron y del ambiente que vivió en casa de niño."
-    explanation: "Crianza: cómo lo educaron y el ambiente de casa que vivió. «Educación» sumaría también lo aprendido en la escuela, y aquí habla solo del ambiente de casa, y «apego» sería solo el vínculo, no algo aprendido en toda la infancia."
-    options:
-      - position: 1
-        text: "educación"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Educación» incluye también lo aprendido en la escuela, y aquí Ignacio habla solo del ambiente que vivió en casa."
-        hint_specific: "«Educación» suma también la escuela. ¿Ignacio habla del aula o de casa?"
-      - position: 2
-        text: "crianza"
-        is_correct: true
-      - position: 3
-        text: "apego"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Apego» es el vínculo afectivo con alguien, y aquí Ignacio aprende algo de todo lo que vivió en casa, no solo un sentimiento."
-        hint_specific: "«Apego» es un vínculo, no algo aprendido en toda la infancia. ¿Qué aprende Ignacio de su casa?"
-  - position: 8
     sentence: "Norma y su hermano tuvieron la misma {{blank}}, aunque cada uno la recuerda de forma distinta."
     hint_general: "Los dos vivieron el mismo proceso de crecer y aprender en la misma casa."
     explanation: "Crianza: el mismo proceso de crecer y aprender que vivieron ambos. «Disciplina» solo nombraría las normas, y aquí se habla de todo el proceso, y «atención» es más general y no nombra un proceso compartido y concreto."
@@ -231,5 +211,5 @@ readings:
     after_phrase: "Estoy cambiando el estilo de crianza."
 provenance:
   generator: "flui authoring agent — batch W3 familia-crianza + humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

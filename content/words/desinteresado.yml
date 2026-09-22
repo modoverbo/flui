@@ -1,9 +1,15 @@
 schema_version: 1
 slug: "desinteresado"
-status: "draft"
+status: "approved"
 lemma: "desinteresado"
 part_of_speech: "adjetivo"
-syllables: ["de", "sin", "te", "re", "sa", "do"]
+syllables:
+  - "de"
+  - "sin"
+  - "te"
+  - "re"
+  - "sa"
+  - "do"
 stressed_syllable: 5
 ipa_latam: "[de.sin.te.reˈsa.ðo]"
 ipa_es: "[de.sin.te.reˈsa.ðo]"
@@ -21,13 +27,17 @@ replaces:
     after: "Lo hizo de forma desinteresada"
   - before: "Es una persona que ayuda porque sí"
     after: "Es una persona desinteresada"
-family: ["desinterés", "desinteresadamente"]
+family:
+  - "desinterés"
+  - "desinteresadamente"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["buena persona"]
-  funcion: ["elogiar"]
+  comodin:
+    - "buena persona"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -100,26 +110,6 @@ exercises:
         why_not: "«Generoso» describe a quien da con largueza, y el texto no habla de dar cosas, sino de ayudar sin buscar mérito."
         hint_specific: "«Generoso» va de dar cosas. ¿El texto habla de dar cosas o de no buscar mérito?"
   - position: 4
-    sentence: "—No hace falta que me pagues nada, esto lo hago porque quiero —le dijo Bruno a su amigo, que pensó que pocas veces había visto un gesto tan {{blank}}."
-    hint_general: "Es la palabra para un gesto que no espera nada a cambio, dicho con toda naturalidad."
-    explanation: "Desinteresado: no espera nada a cambio. «Altruista» significa algo parecido, pero suena demasiado solemne entre amigos, y «servicial» no dice que lo haga sin esperar nada."
-    options:
-      - position: 1
-        text: "altruista"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Altruista» tiene un tono más solemne y libresco; entre amigos hablando así, sonaría forzado."
-        hint_specific: "Piensa en cómo hablan dos amigos. ¿«Altruista» suena natural en esa charla?"
-      - position: 2
-        text: "desinteresado"
-        is_correct: true
-      - position: 3
-        text: "servicial"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Servicial» describe a quien siempre está dispuesto a ayudar; no dice que lo haga sin esperar nada a cambio, como aquí."
-        hint_specific: "«Servicial» habla de estar dispuesto. ¿Bruno solo está dispuesto, o además no espera nada?"
-  - position: 5
     sentence: "Camila donó sangre cada tres meses durante años, sin contárselo casi a nadie: un hábito completamente {{blank}}."
     hint_general: "Busca la palabra para un hábito de ayudar que no busca nada a cambio, ni siquiera que lo sepan."
     explanation: "Desinteresado: un hábito que no busca nada a cambio. «Interesado» buscaría algo, y «indiferente» no se involucraría, cuando Camila donó sangre durante años."
@@ -139,7 +129,7 @@ exercises:
       - position: 3
         text: "desinteresado"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Iván se quedó tres tardes seguidas enseñándole a la nueva pasante a usar el sistema, sin que nadie se lo pidiera: fue {{blank}}."
     hint_general: "Es la palabra para ayudar por decisión propia, sin que nadie lo pida y sin esperar nada."
     explanation: "Desinteresado: ayudar sin que nadie lo pida ni esperar nada. «Atento» solo nota los detalles, y «servicial» no explica por qué lo hizo sin que se lo pidieran."
@@ -159,7 +149,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Servicial» describe a quien está siempre dispuesto a ayudar, pero no explica por qué lo hizo sin que se lo pidieran ni esperar nada."
         hint_specific: "«Servicial» va de estar dispuesto. Relee: ¿la frase habla solo de disposición?"
-  - position: 7
+  - position: 6
     sentence: "Marta le cedió su lugar en la lista de espera a una compañera que lo necesitaba más que ella: fue una decisión {{blank}}."
     hint_general: "Busca la palabra para una decisión que no le trae ningún beneficio a quien la toma."
     explanation: "Desinteresada: una decisión que no beneficia a quien la toma. «Generosa» habla de dar con largueza, y «interesada» describe justo lo contrario de lo que hizo Marta."
@@ -176,26 +166,6 @@ exercises:
         distractor_type: "paronym"
         why_not: "«Interesada» describe a quien busca algo a cambio, y la frase dice justo lo contrario: Marta perdió su lugar sin recibir nada."
         hint_specific: "«Interesada» busca algo a cambio. ¿Marta ganó algo al ceder su lugar?"
-      - position: 3
-        text: "desinteresada"
-        is_correct: true
-  - position: 8
-    sentence: "Todos los domingos, un grupo de vecinos limpia la plaza del barrio sin que nadie les pague ni se los pida: una actividad {{blank}}."
-    hint_general: "Es la palabra para una actividad que nadie paga ni exige, hecha porque sí."
-    explanation: "Desinteresada: una actividad que nadie paga ni exige. «Indiferente» no se involucraría, y «altruista» significa algo parecido, pero suena demasiado solemne para un grupo de vecinos."
-    options:
-      - position: 1
-        text: "indiferente"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Indiferente» describe a quien no le importa nada, y estos vecinos llevan meses ocupándose de la plaza."
-        hint_specific: "«Indiferente» no se involucra. ¿Limpiar la plaza cada domingo es involucrarse?"
-      - position: 2
-        text: "altruista"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Altruista» tiene el mismo sentido, pero suena demasiado solemne para describir a un grupo de vecinos un domingo cualquiera."
-        hint_specific: "Piensa en cómo se habla de los vecinos de un barrio. ¿«Altruista» suena a charla cotidiana?"
       - position: 3
         text: "desinteresada"
         is_correct: true
@@ -223,5 +193,5 @@ readings:
     after_phrase: "Fue un gesto completamente desinteresado."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

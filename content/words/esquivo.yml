@@ -1,14 +1,17 @@
 schema_version: 1
 slug: "esquivo"
-status: "draft"
+status: "approved"
 lemma: "esquivo"
 part_of_speech: "adjetivo"
-syllables: ["es", "qui", "vo"]
+syllables:
+  - "es"
+  - "qui"
+  - "vo"
 stressed_syllable: 2
 ipa_latam: "[esˈki.βo]"
 ipa_es: "[esˈki.βo]"
 explanation: "Que evita comprometerse o dar una respuesta clara, y se aleja cuando alguien se acerca demasiado."
-example_sentence: "Sofía le preguntó tres veces qué sentía por ella, y Tomás cambió de tema las tres veces."
+example_sentence: "Sofía le preguntó tres veces qué sentía por ella, y Tomás se puso esquivo las tres veces."
 register: "neutral"
 pedantry_risk: 1
 usage_tip: "Úsalo para describir a alguien que evita dar señales claras, sin llegar a rechazar del todo."
@@ -17,13 +20,21 @@ collocations:
   - "ser esquivo con"
   - "una respuesta esquiva"
   - "se puso esquivo"
+replaces:
+  - before: "No se compromete con nada ni te da una respuesta clara"
+    after: "Es muy esquivo con los planes"
+  - before: "Cambia de tema cada vez que le preguntas qué somos"
+    after: "Se pone esquivo cada vez que le preguntas qué son"
 family: []
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["no se compromete", "juega a las escondidas"]
-  funcion: ["describir actitud"]
+  comodin:
+    - "no se compromete"
+    - "juega a las escondidas"
+  funcion:
+    - "describir actitud"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +42,6 @@ confusions:
   - confused_with: "distante"
     difference: "Distante describe frialdad en el trato, aunque sea constante; esquivo describe a quien activamente evita comprometerse o dar una respuesta clara."
     memory_trick: "El distante no se acerca; el esquivo se escapa cuando lo intentas acercar."
-replaces:
-  - before: "No se compromete con nada ni te da una respuesta clara"
-    after: "Es muy esquivo con los planes"
-  - before: "Cambia de tema cada vez que le preguntas qué somos"
-    after: "Se pone esquivo cada vez que le preguntas qué son"
 exercises:
   - position: 1
     sentence: "Después de dos citas, Marta seguía sin saber si a Hugo le gustaba: era demasiado {{blank}} con sus planes."
@@ -221,5 +227,5 @@ readings:
     after_phrase: "Se pone esquiva con ese tema."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "percatarse"
-status: "draft"
+status: "approved"
 lemma: "percatarse"
 part_of_speech: "verbo"
-syllables: ["per", "ca", "tar", "se"]
+syllables:
+  - "per"
+  - "ca"
+  - "tar"
+  - "se"
 stressed_syllable: 3
 ipa_latam: "[peɾ.kaˈtaɾ.se]"
 ipa_es: "[peɾ.kaˈtaɾ.se]"
@@ -17,13 +21,21 @@ collocations:
   - "percatarse de algo"
   - "sin percatarse"
   - "nadie se percató"
+replaces:
+  - before: "Se dio cuenta de que algo andaba mal sin que nadie se lo dijera"
+    after: "Se percató de que algo andaba mal sin que nadie se lo dijera"
+  - before: "Notó que su amigo estaba raro esa tarde"
+    after: "Se percató de que su amigo estaba raro esa tarde"
 family: []
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["darse cuenta", "notar algo"]
-  funcion: ["observar"]
+  comodin:
+    - "darse cuenta"
+    - "notar algo"
+  funcion:
+    - "observar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +43,6 @@ confusions:
   - confused_with: "percance"
     difference: "Un percance es un problema o contratiempo imprevisto; percatarse es notar algo que estaba ahí, sin que nadie te lo haya señalado."
     memory_trick: "El percance te pasa a ti; percatarte es lo que tú notas en otra persona."
-replaces:
-  - before: "Se dio cuenta de que algo andaba mal sin que nadie se lo dijera"
-    after: "Se percató de que algo andaba mal sin que nadie se lo dijera"
-  - before: "Notó que su amigo estaba raro esa tarde"
-    after: "Se percató de que su amigo estaba raro esa tarde"
 exercises:
   - position: 1
     sentence: "Fue Marina quien se {{blank}} de que su compañero llevaba días sin hablar en las reuniones."
@@ -221,5 +228,5 @@ readings:
     after_phrase: "Recién ahora me percato de lo triste que te veías."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

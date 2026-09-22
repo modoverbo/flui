@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "anfitrion"
-status: "draft"
+status: "approved"
 lemma: "anfitrión"
 part_of_speech: "sustantivo"
-syllables: ["an", "fi", "trión"]
+syllables:
+  - "an"
+  - "fi"
+  - "trión"
 stressed_syllable: 3
 ipa_latam: "[an.fiˈtɾjon]"
 ipa_es: "[an.fiˈtɾjon]"
@@ -29,8 +32,11 @@ themes:
   - slug: "small-talk"
     relevance: 1
 tags:
-  comodin: ["el que organiza"]
-  funcion: ["acoger", "presentar"]
+  comodin:
+    - "el que organiza"
+  funcion:
+    - "acoger"
+    - "presentar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -223,5 +229,5 @@ readings:
     after_phrase: "Ahora yo soy la anfitriona de esta familia."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

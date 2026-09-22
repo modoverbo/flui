@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "sintonizar"
-status: "draft"
+status: "approved"
 lemma: "sintonizar"
 part_of_speech: "verbo"
-syllables: ["sin", "to", "ni", "zar"]
+syllables:
+  - "sin"
+  - "to"
+  - "ni"
+  - "zar"
 stressed_syllable: 4
 ipa_latam: "[sin.to.niˈsaɾ]"
 ipa_es: "[sin.to.niˈθaɾ]"
@@ -17,13 +21,21 @@ collocations:
   - "sintonizar con alguien"
   - "sintonizar rápido"
   - "sin sintonizar"
-family: ["sintonía"]
+replaces:
+  - before: "Se entendieron rápido sin necesitar explicarse mucho"
+    after: "Sintonizaron rápido sin necesitar explicarse mucho"
+  - before: "Captó enseguida cómo se sentía, sin que ella dijera nada"
+    after: "Sintonizó enseguida con cómo se sentía, sin que ella dijera nada"
+family: []
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["estar en la misma onda", "entenderse sin hablar"]
-  funcion: ["conectar"]
+  comodin:
+    - "estar en la misma onda"
+    - "entenderse sin hablar"
+  funcion:
+    - "conectar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +43,9 @@ confusions:
   - confused_with: "sincronizar"
     difference: "Sincronizar es hacer que dos cosas coincidan en el tiempo, como dos relojes; sintonizar es entender el ánimo de alguien de forma casi inmediata."
     memory_trick: "Sincronizas relojes; sintonizas con una persona."
-replaces:
-  - before: "Se entendieron rápido sin necesitar explicarse mucho"
-    after: "Sintonizaron rápido sin necesitar explicarse mucho"
-  - before: "Captó enseguida cómo se sentía, sin que ella dijera nada"
-    after: "Sintonizó enseguida con cómo se sentía, sin que ella dijera nada"
+  - confused_with: "sintetizar"
+    difference: "«Sintetizar» reduce un texto o una idea a lo esencial; sintonizar es entender el ánimo de alguien de forma casi inmediata, sin resumir nada."
+    memory_trick: "Sintetizas un texto; sintonizas con una persona."
 exercises:
   - position: 1
     sentence: "Desde el primer día de trabajo juntos, Marina y su compañero {{blank}} sin necesitar explicarse mucho."
@@ -221,5 +231,5 @@ readings:
     after_phrase: "Sigo sintonizando contigo como cuando éramos chicas."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 8108
 slug: "reciprocidad"
-status: "draft"
+status: "approved"
 lemma: "reciprocidad"
 part_of_speech: "sustantivo"
 syllables:
@@ -38,8 +38,10 @@ themes:
   - slug: "amistad"
     relevance: 2
 tags:
-  comodin: ["parejo"]
-  funcion: ["describir"]
+  comodin:
+    - "parejo"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -238,5 +240,5 @@ metrics:
   pedantry_proxy: 0.3456
 provenance:
   generator: "authored for the humor, citas, amistad and small-talk themes"
-  gate: null
-  checked_on: "2026-09-15"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

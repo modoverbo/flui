@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "convincente"
-status: "draft"
+status: "approved"
 lemma: "convincente"
 part_of_speech: "adjetivo"
 syllables:
@@ -51,6 +51,21 @@ confusions:
   - confused_with: "elocuente"
     difference: "«Elocuente» describe la forma de hablar, clara y con gracia; esta palabra describe el efecto: que la otra persona termina de acuerdo."
     memory_trick: "Elocuente es cómo habla; convincente es lo que logra."
+  - confused_with: "conmover"
+    difference: "«Conmover» hace que alguien sienta algo, aunque siga pensando igual; ser convincente cambia lo que esa persona piensa."
+    memory_trick: "Conmover llega al pecho; convencer llega a la cabeza."
+  - confused_with: "conquistar"
+    difference: "«Conquistar» es ganarte el cariño de alguien con gestos y tiempo; ser convincente es lograr que acepte una idea o un argumento."
+    memory_trick: "Conquistas con gestos; convences con razones."
+  - confused_with: "contundente"
+    difference: "Algo «contundente» además de convencer no deja lugar a dudas; ser convincente es lograr que alguien acepte tu argumento, aunque puedan quedar algunas dudas razonables."
+    memory_trick: "Lo contundente no deja réplica; lo convincente persuade."
+  - confused_with: "deslumbrar"
+    difference: "«Deslumbrar» deja a alguien asombrado, un efecto que dura poco; ser convincente deja a alguien con razones que se sostienen en el tiempo."
+    memory_trick: "El deslumbrado aplaude; el convencido argumenta."
+  - confused_with: "entusiasmar"
+    difference: "«Entusiasmar» apela a la emoción y a las ganas; ser convincente apela a razones y datos para que alguien esté de acuerdo."
+    memory_trick: "Entusiasmas con ganas; convences con argumentos."
 exercises:
   - position: 1
     sentence: "Valeria armó un argumento tan {{blank}} que el cliente, que llevaba meses dudando, firmó esa misma tarde."
@@ -236,5 +251,5 @@ readings:
     after_phrase: "Ese argumento sí fue convincente."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

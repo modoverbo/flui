@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "solvencia"
-status: "draft"
+status: "approved"
 lemma: "solvencia"
 part_of_speech: "sustantivo"
-syllables: ["sol", "ven", "cia"]
+syllables:
+  - "sol"
+  - "ven"
+  - "cia"
 stressed_syllable: 2
 ipa_latam: "[solˈβen.sja]"
 ipa_es: "[solˈβen.θja]"
@@ -25,13 +28,17 @@ replaces:
     after: "Tiene solvencia para responder si algo sale mal"
   - before: "Revisar si el cliente cumple siempre con sus pagos"
     after: "Revisar la solvencia del cliente"
-family: ["solvente", "solventar"]
+family:
+  - "solvente"
+  - "solventar"
 themes:
   - slug: "ventas"
     relevance: 3
 tags:
-  comodin: ["poder pagar"]
-  funcion: ["evaluar confianza financiera"]
+  comodin:
+    - "poder pagar"
+  funcion:
+    - "evaluar confianza financiera"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -42,6 +49,9 @@ confusions:
   - confused_with: "vigencia"
     difference: "«Vigencia» dice si un documento o un permiso sigue siendo válido; «solvencia» dice si alguien puede pagar lo que debe."
     memory_trick: "La vigencia se revisa en una fecha; la solvencia se revisa en una cuenta."
+  - confused_with: "subsanar"
+    difference: "«Subsanar» repara una falta propia en algo que ya entregaste; tener solvencia es poder cumplir tus deudas u obligaciones, sin relación con corregir un error."
+    memory_trick: "Subsanas un error propio; la solvencia paga lo que debes."
 exercises:
   - position: 1
     sentence: "Antes de prestarle dinero para la nueva maquinaria, el banco confirmó la {{blank}} de la empresa: nunca había dejado una deuda sin pagar."
@@ -227,5 +237,5 @@ readings:
     after_phrase: "Con esta solvencia, el crédito está aprobado."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

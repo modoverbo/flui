@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "manipular"
-status: "draft"
+status: "approved"
 lemma: "manipular"
 part_of_speech: "verbo"
 syllables:
@@ -172,26 +172,6 @@ exercises:
         why_not: "«Enredar» es coloquial y sugiere crear confusión en general, y aquí el equipo hizo algo más concreto: cambió el resultado a propósito antes de mostrarlo."
         hint_specific: "«Enredó» suena a confusión general, en tono coloquial. ¿Qué hizo exactamente el equipo con el resultado?"
   - position: 7
-    sentence: "En la fiesta, Yolanda se rió al descubrir que su amigo había {{blank}} la foto del evento para que pareciera mucho más concurrido de lo que estuvo: no era solo cuestión de brillo, sino de gente que nunca estuvo ahí."
-    hint_general: "Busca el verbo para cambiar una imagen a propósito, para engañar sobre lo que realmente pasó."
-    explanation: "Manipulado: cambió la foto a propósito para engañar sobre la asistencia. «Retocado» mejora el aspecto de una foto, como el brillo, y aquí se cambió lo que en realidad pasó, y «alterado» es más general y no dice que fuera para engañar sobre la asistencia."
-    options:
-      - position: 1
-        text: "retocado"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Retocar» una foto suele mejorar su aspecto, como el brillo o el color, y la frase aclara que no era solo eso, sino gente que nunca estuvo ahí."
-        hint_specific: "«Retocado» mejora el aspecto, como el brillo. ¿La frase habla solo de brillo?"
-      - position: 2
-        text: "manipulado"
-        is_correct: true
-      - position: 3
-        text: "alterado"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Alterado» es un cambio en general, y la frase señala algo más específico: cambiar la foto a propósito para engañar sobre cuánta gente había."
-        hint_specific: "«Alterado» es un cambio general. ¿La frase habla de un cambio cualquiera o de uno hecho para engañar?"
-  - position: 8
     sentence: "Fátima le explicó a su hija que los anuncios muchas veces {{blank}} lo que la gente cree necesitar, mostrando solo una parte de la historia."
     hint_general: "Piensa en mostrar solo una parte de la historia a propósito, para dirigir lo que alguien cree necesitar."
     explanation: "Manipulan: dirigen lo que la gente cree necesitar, mostrando solo una parte. «Influyen» describe un efecto abierto y general, y aquí hay algo más deliberado, y «convencen» supone razones claras y visibles, cuando el punto es que ocultan parte de la información."
@@ -235,5 +215,5 @@ readings:
     after_phrase: "Sé que manipulas la historia para quedar bien con todos."
 provenance:
   generator: "flui authoring agent — theme medios-entrevistas"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

@@ -1,9 +1,13 @@
 schema_version: 1
-status: "draft"
 slug: "afectuoso"
+status: "approved"
 lemma: "afectuoso"
 part_of_speech: "adjetivo"
-syllables: ["a", "fec", "tuo", "so"]
+syllables:
+  - "a"
+  - "fec"
+  - "tuo"
+  - "so"
 stressed_syllable: 3
 ipa_latam: "[a.fekˈtwo.so]"
 ipa_es: "[a.fekˈtwo.so]"
@@ -22,13 +26,17 @@ replaces:
     after: "Es muy afectuoso"
   - before: "Me escribió algo muy tierno y cercano"
     after: "Me escribió un mensaje afectuoso"
-family: ["afecto", "afectuosamente"]
+family:
+  - "afecto"
+  - "afectuosamente"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["cariñoso"]
-  funcion: ["elogiar"]
+  comodin:
+    - "cariñoso"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -101,26 +109,6 @@ exercises:
         why_not: "«Compasivo» describe a quien se conmueve ante el sufrimiento de otra persona; aquí no hay ningún dolor de por medio, solo cariño que se expresa con abrazos y palabras."
         hint_specific: "«Compasivo» responde al sufrimiento de alguien. ¿Hay algún dolor en esta escena?"
   - position: 4
-    sentence: "A Tomás no se le dan bien los regalos ni recuerda fechas, pero cuando está contigo te abraza fuerte y te repite lo importante que eres para él: es {{blank}}, aunque nunca lo demuestre con cosas."
-    hint_general: "Piensa en alguien que expresa su cariño con palabras y abrazos, aunque no se le den bien otras cosas."
-    explanation: "Afectuoso: expresa cariño con abrazos y palabras, aunque no con regalos. «Mimoso» es un término casi infantil, para mascotas o bebés. «Detallista» dice que acierta con regalos y fechas, y la frase dice justo lo contrario."
-    options:
-      - position: 1
-        text: "mimoso"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Mimoso» es un término casi infantil, para mascotas o bebés, y aquí se describe a un adulto que expresa cariño con palabras y abrazos."
-        hint_specific: "«Mimoso» se usa para bebés o mascotas. ¿Encaja para describir a un adulto que habla así?"
-      - position: 2
-        text: "afectuoso"
-        is_correct: true
-      - position: 3
-        text: "detallista"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Detallista» dice que alguien recuerda fechas y acierta con los regalos, y la frase aclara justo lo contrario: no se le dan bien esas cosas."
-        hint_specific: "«Detallista» habla de acertar con regalos y fechas. ¿La frase dice que a Tomás se le dan bien esas cosas?"
-  - position: 5
     sentence: "A Nadia le encanta dejar notas de «buenos días» y abrazar a sus compañeros cuando llegan: todos coinciden en que es muy {{blank}}, nunca resulta pesada."
     hint_general: "Busca la palabra para quien muestra cariño de forma natural, sin resultar excesiva."
     explanation: "Afectuosa: muestra cariño de forma natural, sin resultar pesada. «Empalagosa» describe un cariño que cansa, y la frase aclara que nunca resulta pesada. «Cercana» habla de confianza, pero no explica las notas y los abrazos."
@@ -140,7 +128,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Cercana» dice que la relación es próxima y de confianza, pero no explica las notas y los abrazos que reparte cada mañana."
         hint_specific: "«Cercana» habla de una relación de confianza. ¿Eso explica las notas y los abrazos de cada mañana?"
-  - position: 6
+  - position: 5
     sentence: "Aunque Emilio es muy reservado en el trabajo, con sus amigos de siempre es completamente distinto: los abraza, les escribe mensajes largos y les dice lo mucho que los quiere. Es {{blank}} con quienes de verdad conoce."
     hint_general: "La palabra describe a quien muestra abiertamente el cariño que siente por la gente cercana."
     explanation: "Afectuoso: muestra abiertamente el cariño con abrazos y mensajes. «Afectado» describe a quien actúa con artificialidad, y aquí Emilio se muestra genuino. «Atento» habla de fijarse en necesidades, no de abrazos y palabras de cariño."
@@ -160,7 +148,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Atento» describe a quien se fija en los detalles y necesidades de otros, y aquí lo que se cuenta son abrazos, mensajes y palabras de cariño."
         hint_specific: "«Atento» va de fijarse en necesidades ajenas. ¿La frase habla de eso o de abrazos y palabras?"
-  - position: 7
+  - position: 6
     sentence: "Julieta cumplió años y sus amigas llenaron su casa de fotos juntas, notas escritas a mano y un video con mensajes de cada una: fueron muy {{blank}} con ella."
     hint_general: "Piensa en la palabra para quien expresa su cariño con gestos como fotos, notas o mensajes."
     explanation: "Afectuosas: expresaron su cariño con fotos, notas y mensajes. «Compasivas» responde al sufrimiento de alguien, y aquí no hay ningún dolor. «Cercanas» habla de confianza, pero no explica ese despliegue de cariño."
@@ -180,7 +168,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Cercanas» dice que la relación es próxima y de confianza, pero no explica por qué llenaron la casa de fotos, notas y mensajes."
         hint_specific: "«Cercana» habla de una relación de confianza. ¿Eso explica las fotos, las notas y los mensajes?"
-  - position: 8
+  - position: 7
     sentence: "Nunca dudes de lo que siente Gonzalo por su familia: los llama todos los domingos solo para decirles que los extraña, sin ningún motivo especial. Es tan {{blank}} que sus amigos bromean con eso, aunque en el fondo lo adoran así."
     hint_general: "Busca la palabra para quien expresa su cariño con palabras, de forma constante y genuina."
     explanation: "Afectuoso: expresa su cariño con palabras, de forma constante y genuina. «Afectado» describe a quien actúa con artificialidad, y esas llamadas nacen de un cariño real. «Empalagoso» describe un cariño que cansa, y aquí sus amigos lo adoran así."
@@ -224,5 +212,5 @@ readings:
     after_phrase: "Aquí el trato es muy afectuoso."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

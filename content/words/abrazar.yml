@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "abrazar"
-status: "draft"
+status: "approved"
 lemma: "abrazar"
 part_of_speech: "verbo"
-syllables: ["a", "bra", "zar"]
+syllables:
+  - "a"
+  - "bra"
+  - "zar"
 stressed_syllable: 3
 ipa_latam: "[a.βɾaˈsaɾ]"
 ipa_es: "[a.βɾaˈθaɾ]"
@@ -17,13 +20,22 @@ collocations:
   - "abrazar fuerte"
   - "abrazar sin decir nada"
   - "abrazar a alguien"
-family: ["abrazo"]
+replaces:
+  - before: "La rodeó fuerte con los brazos sin decir nada"
+    after: "La abrazó fuerte sin decir nada"
+  - before: "La rodeó con los brazos para consolarla"
+    after: "La abrazó para consolarla"
+family:
+  - "abrazo"
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["dar un abrazo", "apretar fuerte"]
-  funcion: ["consolar"]
+  comodin:
+    - "dar un abrazo"
+    - "apretar fuerte"
+  funcion:
+    - "consolar"
   canal: "ambos"
   formalidad: "informal"
   variedad: "panhispanico"
@@ -31,11 +43,6 @@ confusions:
   - confused_with: "abrasar"
     difference: "Abrasar es quemar algo con fuego o calor intenso; abrazar es rodear a alguien con los brazos para mostrarle cariño."
     memory_trick: "El fuego abrasa; los brazos abrazan."
-replaces:
-  - before: "La rodeó fuerte con los brazos sin decir nada"
-    after: "La abrazó fuerte sin decir nada"
-  - before: "La rodeó con los brazos para consolarla"
-    after: "La abrazó para consolarla"
 exercises:
   - position: 1
     sentence: "Sin decir nada, Marta {{blank}} a su amiga apenas la vio llegar con esa cara."
@@ -221,5 +228,5 @@ readings:
     after_phrase: "Por fin puedo abrazarte sin sentir esa distancia."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "indignacion"
-status: "draft"
+status: "approved"
 lemma: "indignación"
 part_of_speech: "sustantivo"
-syllables: ["in", "dig", "na", "ción"]
+syllables:
+  - "in"
+  - "dig"
+  - "na"
+  - "ción"
 stressed_syllable: 4
 ipa_latam: "[in.diɣ.naˈsjon]"
 ipa_es: "[in.diɣ.naˈθjon]"
@@ -21,13 +25,17 @@ replaces:
     after: "Sentí una indignación enorme al leerlo"
   - before: "A la gente le molestó muchísimo la noticia"
     after: "La noticia provocó indignación en la gente"
-family: ["indignar", "indignado"]
+family:
+  - "indignar"
+  - "indignado"
 themes:
   - slug: "redes-sociales"
     relevance: 3
 tags:
-  comodin: ["mucha rabia"]
-  funcion: ["nombrar una emoción"]
+  comodin:
+    - "mucha rabia"
+  funcion:
+    - "nombrar una emoción"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -37,6 +45,9 @@ confusions:
     memory_trick: "La indignidad la comete alguien; la indignación la sientes tú."
   - confused_with: "furia"
     difference: "«Furia» es una ira intensa y casi descontrolada; «indignación» es un enojo con una causa moral clara, por una injusticia o una falta de respeto."
+  - confused_with: "indagar"
+    difference: "«Indagar» solo busca información sobre algo, sin implicar enojo; la indignación es el enfado que sientes frente a una injusticia."
+    memory_trick: "Indagar busca datos; la indignación es el enfado que sigue después."
 exercises:
   - position: 1
     sentence: "A Lucía le costaba disimular la {{blank}} cuando leía los comentarios injustos bajo su publicación sobre el aumento de precios."
@@ -222,5 +233,5 @@ readings:
     after_phrase: "Esto me da una indignación tremenda."
 provenance:
   generator: "claude-sonnet-5"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

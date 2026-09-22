@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 9107
 slug: "tolerante"
-status: "draft"
+status: "approved"
 lemma: "tolerante"
 part_of_speech: "adjetivo"
-syllables: ["to", "le", "ran", "te"]
+syllables:
+  - "to"
+  - "le"
+  - "ran"
+  - "te"
 stressed_syllable: 3
 ipa_latam: "[to.leˈɾan.te]"
 ipa_es: "[to.leˈɾan.te]"
@@ -25,13 +29,17 @@ replaces:
     after: "Ella es tolerante con las diferencias de opinión"
   - before: "No le importa que hagan las cosas distinto a como las haría él"
     after: "Es tolerante con que hagan las cosas distinto"
-family: ["tolerancia", "tolerar"]
+family:
+  - "tolerancia"
+  - "tolerar"
 themes:
   - slug: "pedir-disculparse"
     relevance: 3
 tags:
-  comodin: ["no meterse en lo de los demás"]
-  funcion: ["aceptar"]
+  comodin:
+    - "no meterse en lo de los demás"
+  funcion:
+    - "aceptar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -39,6 +47,9 @@ confusions:
   - confused_with: "tolerable"
     difference: "«Tolerable» describe algo que se puede soportar, como un dolor o una espera; «tolerante» describe a una persona que acepta diferencias sin pelear. Uno califica una cosa, el otro a alguien."
     memory_trick: "Algo es tolerable; alguien es tolerante."
+  - confused_with: "acoger"
+    difference: "«Acoger» es recibir a alguien o algo con gusto, de buena gana; ser tolerante es aguantar algo que no te agrada, sin necesariamente disfrutarlo."
+    memory_trick: "Acoges con gusto; toleras a pesar de todo."
 exercises:
   - position: 1
     sentence: "Aunque prefiere el silencio, mi padre es muy {{blank}} con que mi hermano trabaje desde su cuarto con música a todo volumen."
@@ -121,26 +132,6 @@ exercises:
         text: "tolerantes"
         is_correct: true
   - position: 5
-    sentence: "Los vecinos del edificio son bastante {{blank}} con los horarios de cada quien, mientras no molesten después de medianoche."
-    hint_general: "Busca la palabra para quienes aceptan horarios distintos, dentro de un límite razonable."
-    explanation: "Tolerantes: aceptan horarios distintos, dentro de un límite razonable. «Permisivos» no pondría ningún límite, y «indiferentes» sería no importarles nada, cuando sí les importa el límite de la medianoche."
-    options:
-      - position: 1
-        text: "permisivos"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Permisivo» es dejar hacer sin ningún límite, y la frase pone un límite claro: no molestar después de medianoche."
-        hint_specific: "«Permisivo» no pone límites. ¿La frase menciona algún límite?"
-      - position: 2
-        text: "tolerantes"
-        is_correct: true
-      - position: 3
-        text: "indiferentes"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Indiferente» es no importarle nada a nadie, y la frase muestra que sí les importa: por eso ponen el límite de la medianoche."
-        hint_specific: "«Indiferente» es no tener ninguna preferencia. ¿A los vecinos les importa algo aquí?"
-  - position: 6
     sentence: "Aunque no le gusta el desorden, Paulina se ha vuelto más {{blank}} con el cuarto de su hija adolescente."
     hint_general: "Busca la palabra para quien acepta algo que no le gusta del todo, sin pelear por eso."
     explanation: "Tolerante: acepta algo que no le gusta del todo, sin pelear por eso. «Pasiva» sería no reaccionar ante nada, y «condescendiente» sonaría a aguantar algo con cierta superioridad."
@@ -160,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Condescendiente» suena a aguantar algo con cierta superioridad, y aquí se trata de un cambio genuino de actitud hacia su hija, no de una superioridad."
         hint_specific: "«Condescendiente» suena a cierta superioridad. ¿La frase describe un cambio genuino, o esa actitud?"
-  - position: 7
+  - position: 6
     sentence: "En esa empresa son muy {{blank}} con los horarios flexibles, siempre que se cumplan los objetivos del mes."
     hint_general: "Busca la palabra para quienes aceptan una forma distinta de organizar el trabajo, con una condición clara."
     explanation: "Tolerantes: aceptan una forma distinta de organizar el trabajo, con una condición clara. «Tolerables» calificaría una cosa, no una actitud, y «pacientes» sería esperar sin quejarse, no aceptar una forma distinta."
@@ -180,7 +171,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Paciente» es esperar sin quejarse, y aquí no se trata de esperar: se trata de aceptar una forma distinta de organizar el horario."
         hint_specific: "«Paciente» es esperar sin quejarse. ¿La frase habla de esperar, o de aceptar una forma distinta de trabajar?"
-  - position: 8
+  - position: 7
     sentence: "Pese a las diferencias con su yerno, don Ernesto ha sido siempre {{blank}} con las decisiones de su hija."
     hint_general: "Busca la palabra para quien acepta las decisiones de otro, aunque no siempre esté de acuerdo."
     explanation: "Tolerante: acepta las decisiones de otro, aunque no siempre esté de acuerdo. «Sumiso» implicaría ceder por debilidad, y «ecuánime» sonaría a un lenguaje muy formal de justicia."
@@ -224,5 +215,5 @@ readings:
     after_phrase: "Soy tolerante con los distintos estilos de trabajo."
 provenance:
   generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 9401
 slug: "exagerar"
-status: "draft"
+status: "approved"
 lemma: "exagerar"
 part_of_speech: "verbo"
-syllables: ["e", "xa", "ge", "rar"]
+syllables:
+  - "e"
+  - "xa"
+  - "ge"
+  - "rar"
 stressed_syllable: 4
 ipa_latam: "[ek.sa.xeˈɾar]"
 ipa_es: "[ek.sa.xeˈɾar]"
@@ -22,13 +26,17 @@ replaces:
     after: "Exagera las cosas para que suene más gracioso"
   - before: "Le pone mucho drama a la historia para hacer reír"
     after: "Exagera la historia para hacer reír"
-family: ["exageración", "exagerado"]
+family:
+  - "exageración"
+  - "exagerado"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["agrandar"]
-  funcion: ["divertir"]
+  comodin:
+    - "agrandar"
+  funcion:
+    - "divertir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -39,6 +47,9 @@ confusions:
   - confused_with: "mentir"
     difference: "«Mentir» es afirmar algo falso para engañar; exagerar es agrandar un hecho real, y todos saben que no es literal."
     memory_trick: "Quien exagera no engaña: solo agranda lo que sí pasó."
+  - confused_with: "tergiversar"
+    difference: "«Tergiversar» cambia el sentido de lo que pasó, aunque el tamaño de los hechos se quede igual; exagerar solo agranda lo que ya hay, sin cambiar su sentido."
+    memory_trick: "Tergiversar gira el sentido; exagerar infla el tamaño."
 exercises:
   - position: 1
     sentence: "Renata contó la pesca del fin de semana y, como siempre, {{blank}} un poco el tamaño del pez para sacar risas."
@@ -101,26 +112,6 @@ exercises:
         why_not: "«Alabar» es elogiar cualidades reales sin agrandarlas, y aquí las hazañas escolares se agrandan hasta hacer reír a todos."
         hint_specific: "«Alabar» elogia sin agrandar. ¿El discurso agranda los hechos o solo los elogia?"
   - position: 4
-    sentence: "En el informe trimestral, Iván tendió a {{blank}} los resultados de ventas para impresionar al directorio."
-    hint_general: "Se trata de presentar un resultado real de forma más favorable de lo que es."
-    explanation: "Exagerar: presentar un resultado real de forma más favorable. «Inflar» es coloquial y no encaja en un informe formal, y «falsificar» implicaría inventar datos falsos, algo distinto de exagerar unos reales."
-    options:
-      - position: 1
-        text: "inflar"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Inflar» los resultados es coloquial y encajaría en una charla informal, no en un informe formal ante el directorio."
-        hint_specific: "«Inflar» suena a conversación informal. ¿Este texto es un chat entre amigos o un informe formal?"
-      - position: 2
-        text: "exagerar"
-        is_correct: true
-      - position: 3
-        text: "falsificar"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Falsificar» implica inventar datos falsos a propósito para engañar, y aquí los números son reales, solo se presentan de forma más favorable."
-        hint_specific: "«Falsificar» acusa de inventar datos falsos. ¿El texto dice que los números eran falsos?"
-  - position: 5
     sentence: "En la reunión con recursos humanos, Alejandro evitó {{blank}} lo que había visto esa tarde en la oficina."
     hint_general: "Busca el verbo para cuando alguien agranda lo que vio, en vez de contarlo tal cual."
     explanation: "Exagerar: agrandar lo que vio, en vez de contarlo tal cual. «Pintar» es coloquial y no encaja en una reunión formal, e «inventar» sería crear algo que nunca ocurrió."
@@ -140,7 +131,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Inventar» es crear algo que no ocurrió, y aquí Alejandro solo corre el riesgo de agrandar lo que sí vio."
         hint_specific: "«Inventar» crea un hecho desde cero. ¿Alejandro vio algo real o nada de nada?"
-  - position: 6
+  - position: 5
     sentence: "En el grupo de chat, Cecilia siempre {{blank}} lo cansada que quedó después del gimnasio, y todos responden con risas."
     hint_general: "Se trata de agrandar algo real para que la historia suene más divertida en el chat."
     explanation: "Exagera: agranda lo cansada que quedó, para hacer reír al chat. «Sufre» solo describe un sentimiento real, y «detalla» sería contar con precisión, sin agrandar nada."
@@ -160,7 +151,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Detallar» es contar con precisión, sin agrandar nada, y el chat se ríe justo porque ella agranda su cansancio."
         hint_specific: "«Detallar» apunta a la precisión. ¿El chat se ríe de algo exacto o agrandado?"
-  - position: 7
+  - position: 6
     sentence: "Durante la fiesta, Emilio {{blank}} el susto que se llevó con la araña para que la historia sonara más divertida."
     hint_general: "Busca el verbo para cuando alguien agranda un susto real para que la anécdota sea más graciosa."
     explanation: "Exageró: agrandó el susto a propósito para que la historia sonara más divertida. «Recordó» solo habría traído el hecho a la memoria tal cual, y «ocultó» habría escondido parte de lo ocurrido."
@@ -180,7 +171,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Ocultar» es esconder una parte de lo ocurrido, y aquí Emilio no esconde nada: agranda el susto para la risa."
         hint_specific: "«Ocultar» esconde información. ¿Emilio esconde algo o lo agranda?"
-  - position: 8
+  - position: 7
     sentence: "Rosa siempre {{blank}} la altura del cerro que subieron, hasta hacerlo sonar como el Everest."
     hint_general: "Se trata de agrandar una cifra real hasta hacerla sonar imposible, solo para la broma."
     explanation: "Exagera: agranda la altura del cerro hasta compararla con el Everest. «Calcula» buscaría un número exacto, y «confunde» sería un error sin querer, no una broma a propósito."
@@ -224,5 +215,5 @@ readings:
     after_phrase: "Las exagero un poco para que sean más divertidas."
 provenance:
   generator: "flui authoring agent — batch W5 conflict-fix"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

@@ -1,12 +1,13 @@
-# Word 10 of batch W4 humor, written as assigned. Passes metrics cleanly:
-# zipf 3.84, dp 0.26.
 schema_version: 1
 sort_order: 9310
 slug: "bromear"
-status: "draft"
+status: "approved"
 lemma: "bromear"
 part_of_speech: "verbo"
-syllables: ["bro", "me", "ar"]
+syllables:
+  - "bro"
+  - "me"
+  - "ar"
 stressed_syllable: 3
 ipa_latam: "[bɾo.meˈar]"
 ipa_es: "[bɾo.meˈar]"
@@ -24,13 +25,17 @@ replaces:
     after: "Lo dijo bromeando, para relajar el ambiente"
   - before: "Nos reímos y jugamos con el tema toda la noche"
     after: "Bromeamos con el tema toda la noche"
-family: ["broma", "bromista"]
+family:
+  - "broma"
+  - "bromista"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["reírse con"]
-  funcion: ["relajar"]
+  comodin:
+    - "reírse con"
+  funcion:
+    - "relajar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -41,6 +46,9 @@ confusions:
   - confused_with: "bromuro"
     difference: "«Bromuro» es un compuesto químico, sin ninguna relación con el humor; «bromear» es jugar con las palabras para divertir."
     memory_trick: "Comparten las primeras letras, pero uno está en el laboratorio y el otro en la sobremesa."
+  - confused_with: "ocurrencia"
+    difference: "Una «ocurrencia» sale sola, en el momento, sin ir dirigida a nadie en particular; bromear es justamente dirigir ese humor a alguien, casi siempre preparado."
+    memory_trick: "La ocurrencia se escapa sola; bromear se hace con alguien."
 exercises:
   - position: 1
     sentence: "Los hermanos empezaron a {{blank}} sobre quién cocinaba peor, y la cena terminó entre risas de los dos."
@@ -226,5 +234,5 @@ readings:
     after_phrase: "Bromeamos toda la noche sobre las citas, sin ponernos serias."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

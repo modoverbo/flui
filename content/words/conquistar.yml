@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "conquistar"
-status: "draft"
+status: "approved"
 lemma: "conquistar"
 part_of_speech: "verbo"
-syllables: ["con", "quis", "tar"]
+syllables:
+  - "con"
+  - "quis"
+  - "tar"
 stressed_syllable: 3
 ipa_latam: "[koŋ.kisˈtaɾ]"
 ipa_es: "[koŋ.kisˈtaɾ]"
@@ -17,13 +20,22 @@ collocations:
   - "conquistar a alguien"
   - "lograr conquistarla"
   - "el arte de conquistar"
-family: ["conquista"]
+replaces:
+  - before: "Quiere que su vecina se fije en él poco a poco"
+    after: "Quiere conquistar a su vecina poco a poco"
+  - before: "Se ganó el cariño de esa persona con paciencia"
+    after: "Logró conquistarla con paciencia"
+family:
+  - "conquista"
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["ligar", "enamorar"]
-  funcion: ["seducir"]
+  comodin:
+    - "ligar"
+    - "enamorar"
+  funcion:
+    - "seducir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +43,6 @@ confusions:
   - confused_with: "convencer"
     difference: "Convencer es lograr que alguien acepte una idea o un argumento; conquistar es ganarte el cariño de alguien con gestos y tiempo."
     memory_trick: "Convences con razones; conquistas con gestos."
-replaces:
-  - before: "Quiere que su vecina se fije en él poco a poco"
-    after: "Quiere conquistar a su vecina poco a poco"
-  - before: "Se ganó el cariño de esa persona con paciencia"
-    after: "Logró conquistarla con paciencia"
 exercises:
   - position: 1
     sentence: "Nico no tenía un plan claro, pero sabía que quería {{blank}} a su vecina antes de fin de año."
@@ -221,5 +228,5 @@ readings:
     after_phrase: "Nos conquistaste a todos con esas preguntas."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

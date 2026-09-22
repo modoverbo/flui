@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "tertulia"
-status: "draft"
+status: "approved"
 lemma: "tertulia"
 part_of_speech: "sustantivo"
-syllables: ["ter", "tu", "lia"]
+syllables:
+  - "ter"
+  - "tu"
+  - "lia"
 stressed_syllable: 2
 ipa_latam: "[teɾˈtu.lja]"
 ipa_es: "[teɾˈtu.lja]"
@@ -17,6 +20,11 @@ collocations:
   - "una tertulia sobre"
   - "organizar una tertulia"
   - "tertulia literaria"
+replaces:
+  - before: "La juntada semanal para hablar de temas del sector"
+    after: "La tertulia semanal sobre temas del sector"
+  - before: "Nos reunimos a charlar sin agenda fija"
+    after: "Armamos una tertulia sin agenda fija"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +32,12 @@ themes:
   - slug: "small-talk"
     relevance: 1
 tags:
-  comodin: ["juntada para hablar", "charla de grupo"]
-  funcion: ["conversar", "vincular"]
+  comodin:
+    - "juntada para hablar"
+    - "charla de grupo"
+  funcion:
+    - "conversar"
+    - "vincular"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +45,6 @@ confusions:
   - confused_with: "conferencia"
     difference: "La conferencia es una exposición formal de una persona hacia un público; la tertulia es una charla entre varios, sin un único orador."
     memory_trick: "En la conferencia uno habla; en la tertulia todos hablan."
-replaces:
-  - before: "La juntada semanal para hablar de temas del sector"
-    after: "La tertulia semanal sobre temas del sector"
-  - before: "Nos reunimos a charlar sin agenda fija"
-    after: "Armamos una tertulia sin agenda fija"
 exercises:
   - position: 1
     sentence: "Cada viernes, un grupo de diseñadores organiza una {{blank}} en el café para hablar de tendencias, sin presentaciones ni horario cerrado."
@@ -140,26 +147,6 @@ exercises:
         why_not: "Una «tortilla» es un plato de comida, sin relación con hablar en el ascensor."
         hint_specific: "Una tortilla no se improvisa en un ascensor. ¿La frase habla de comida o de una charla?"
   - position: 6
-    sentence: "El bar del barrio se hizo famoso por la {{blank}} de los jubilados que se sentaban ahí cada tarde a debatir de fútbol."
-    hint_general: "Una charla habitual de grupo, sin ningún objetivo más que conversar."
-    explanation: "Tertulia: una charla habitual de grupo, sin más objetivo que conversar. «Peña» es coloquial y muy regional, y «tortilla» es un plato de comida, sin relación con debatir de fútbol."
-    options:
-      - position: 1
-        text: "peña"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Peña» es coloquial y muy regional, y aquí se busca nombrar con precisión el tipo de charla que sostenían cada tarde."
-        hint_specific: "«Peña» es una palabra muy regional. ¿Buscamos una palabra precisa o una muy informal?"
-      - position: 2
-        text: "tertulia"
-        is_correct: true
-      - position: 3
-        text: "tortilla"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Una «tortilla» es un plato de comida, sin relación con debatir de fútbol cada tarde."
-        hint_specific: "Una tortilla no debate de fútbol. ¿La frase habla de comida o de una charla habitual?"
-  - position: 7
     sentence: "Tras la proyección, el cineclub organizó una {{blank}} abierta para que el público comentara la película con el director."
     hint_general: "Un espacio de charla abierta entre varias personas después de un evento."
     explanation: "Tertulia: un espacio de charla abierta entre varias personas. «Encuesta» recoge respuestas cerradas y por escrito, y «tortilla» es un plato de comida, sin relación con comentar una película."
@@ -179,7 +166,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Una «tortilla» es un plato de comida, sin relación con comentar una película con el director."
         hint_specific: "Una tortilla no comenta películas. ¿La frase habla de comida o de una charla?"
-  - position: 8
+  - position: 7
     sentence: "Rubén extrañaba las {{blank}} de sobremesa de su abuela, donde tres generaciones hablaban de todo hasta tarde."
     hint_general: "Momentos de charla larga entre varias personas, sin prisa ni tema fijo."
     explanation: "Tertulias: momentos de charla larga entre varias personas, sin prisa. «Siestas» son momentos de descanso, no de conversación, y «tortillas» son un plato de comida, sin relación con hablar hasta tarde."
@@ -223,5 +210,5 @@ readings:
     after_phrase: "Extraño esas tertulias de sobremesa."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

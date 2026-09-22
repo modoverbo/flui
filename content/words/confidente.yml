@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "confidente"
-status: "draft"
+status: "approved"
 lemma: "confidente"
 part_of_speech: "sustantivo"
-syllables: ["con", "fi", "den", "te"]
+syllables:
+  - "con"
+  - "fi"
+  - "den"
+  - "te"
 stressed_syllable: 3
 ipa_latam: "[kon.fiˈðen.te]"
 ipa_es: "[kon.fiˈðen.te]"
@@ -22,13 +26,17 @@ replaces:
     after: "Es mi confidente: le cuento todo"
   - before: "Con ella puedo hablar de lo que sea sin que lo repita"
     after: "Ella es mi confidente, puedo hablar de lo que sea sin que lo repita"
-family: ["confidencia", "confidencial"]
+family:
+  - "confidencia"
+  - "confidencial"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["persona de confianza"]
-  funcion: ["describir"]
+  comodin:
+    - "persona de confianza"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -100,26 +108,6 @@ exercises:
         text: "confidente"
         is_correct: true
   - position: 4
-    sentence: "Joaquín nunca repitió lo que le conté, ni siquiera cuando discutimos: ahí entendí que no era un {{blank}}, sino justo lo contrario."
-    hint_general: "Habla de alguien que guarda lo que le cuentas, incluso si la relación se complica."
-    explanation: "Confidente: alguien que guarda lo que le cuentas, incluso si la relación se complica. «Delator» es quien cuenta lo que debía callar, y «consejero» se centra en aconsejar, no en guardar un secreto."
-    options:
-      - position: 1
-        text: "delator"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Delator» es quien cuenta lo que debía callar, y la frase dice que Joaquín hizo justo lo contrario: no repitió nada."
-        hint_specific: "«Delator» cuenta lo que debía callar. ¿Joaquín repitió lo que le contaste o lo guardó?"
-      - position: 2
-        text: "consejero"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Consejero» da consejos sobre qué hacer, y lo que destaca la frase es que guardó el secreto, no que haya aconsejado nada."
-        hint_specific: "«Consejero» se centra en aconsejar. ¿La frase habla de un consejo o de guardar un secreto?"
-      - position: 3
-        text: "confidente"
-        is_correct: true
-  - position: 5
     sentence: "Fernanda no es solo la persona con la que negocio los contratos: fuera de la oficina es mi {{blank}}, la que sabe lo que de verdad pienso."
     hint_general: "Nombra a la persona con la que hablas de lo que de verdad te importa, más allá del trabajo."
     explanation: "Confidente: la persona con la que hablas de lo que de verdad te importa. «Interlocutor» es un término formal para una negociación, y «consejera» se centra en dar consejos, no en saber lo que piensas."
@@ -139,7 +127,7 @@ exercises:
       - position: 3
         text: "confidente"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Álvaro fue el único que supo que dejaría mi trabajo antes de decírselo a mi familia: es mi {{blank}} desde la universidad."
     hint_general: "Nombra a la persona a quien le cuentas una decisión importante antes que a nadie más."
     explanation: "Confidente: la persona a quien le cuentas una decisión importante antes que a nadie más. «Vidente» predice el futuro sin que se lo cuenten, y «testigo» presencia algo sin que se lo cuenten a propósito."
@@ -159,7 +147,7 @@ exercises:
       - position: 3
         text: "confidente"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Mariana sabe desde hace un año que renuncié antes de decírselo a mi jefe, y jamás dijo una palabra: es mi {{blank}}, no alguien que reparte secretos ajenos."
     hint_general: "Nombra a quien guarda lo que le cuentas, sin repetirlo a los demás."
     explanation: "Confidente: quien guarda lo que le cuentas, sin repetirlo a los demás. «Delatora» es quien cuenta lo que debía callar, y «consejera» se centra en aconsejar, no en guardar un secreto."
@@ -179,7 +167,7 @@ exercises:
       - position: 3
         text: "confidente"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Después de la ruptura, Gael fue el único a quien le conté cómo me sentía de verdad, sin filtrar nada: se ganó ser mi {{blank}}."
     hint_general: "Nombra a la persona con la que puedes hablar de lo que de verdad sientes, sin guardarte nada."
     explanation: "Confidente: la persona con la que puedes hablar de lo que de verdad sientes. «Testigo» solo presencia algo, y «vidente» adivina cosas sin que se las digan."
@@ -223,5 +211,5 @@ readings:
     after_phrase: "Eres mi confidente de siempre."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

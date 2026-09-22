@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "filtracion"
-status: "draft"
+status: "approved"
 lemma: "filtración"
 part_of_speech: "sustantivo"
 syllables:
@@ -25,13 +25,17 @@ replaces:
     after: "Hubo una filtración"
   - before: "Alguien contó algo que no debía"
     after: "Hubo una filtración"
-family: ["filtrar", "filtrado"]
+family:
+  - "filtrar"
+  - "filtrado"
 themes:
   - slug: "medios-entrevistas"
     relevance: 3
 tags:
-  comodin: ["chisme"]
-  funcion: ["informar"]
+  comodin:
+    - "chisme"
+  funcion:
+    - "informar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -124,26 +128,6 @@ exercises:
         text: "filtración"
         is_correct: true
   - position: 5
-    sentence: "Mateo guardaba en secreto el destino del viaje sorpresa, hasta que una {{blank}} de su hermana lo arruinó dos semanas antes."
-    hint_general: "Habla de un secreto que se escapa antes de que su dueño quiera contarlo."
-    explanation: "Filtración: un secreto que se escapa sin que su dueño lo cuente. «Revelación» supone que alguien decide comunicar algo a propósito, y «teoría» es una idea sin certeza; aquí el secreto se le escapó a la hermana sin querer."
-    options:
-      - position: 1
-        text: "revelación"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Revelación» suele ser un anuncio que alguien hace a propósito; aquí el secreto se escapó sin que Mateo decidiera contarlo."
-        hint_specific: "Esa palabra implica que alguien decide contar algo a propósito. ¿Aquí alguien decidió contarlo, o se le escapó?"
-      - position: 2
-        text: "teoría"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Teoría» es una idea que alguien propone sin certeza; aquí la hermana no propuso una idea, contó un dato real que arruinó la sorpresa."
-        hint_specific: "Esa palabra es una idea sin certeza. ¿La hermana propuso una idea, o contó algo real?"
-      - position: 3
-        text: "filtración"
-        is_correct: true
-  - position: 6
     sentence: "Un estudio de videojuegos había planeado un tráiler para el viernes, pero una {{blank}} adelantó las primeras imágenes el martes."
     hint_general: "El material salió antes de la fecha que la empresa tenía planeada."
     explanation: "Filtración: material que sale antes de la fecha prevista, sin que la empresa lo decida. «Infiltración» es entrar a un lugar sin permiso, y «versión» es un relato entre varios posibles; aquí las imágenes se adelantaron solas."
@@ -163,7 +147,7 @@ exercises:
       - position: 3
         text: "filtración"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "El programa de cocina cambió el orden de los episodios porque ya existía una {{blank}} sobre quién ganaba la final."
     hint_general: "Se trata de un dato sobre el resultado que se conoció antes de la emisión."
     explanation: "Filtración: un dato concreto que se conoce antes de la emisión. «Suposición» es una idea sin pruebas y «bomba» es un término muy informal; aquí ya se sabía con certeza quién ganaba, contado en tono neutro."
@@ -183,7 +167,7 @@ exercises:
       - position: 3
         text: "filtración"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "El banco revisó sus protocolos de seguridad después de que una {{blank}} de datos de varios clientes llegara a un foro en internet."
     hint_general: "Habla de información que sale de un sistema sin permiso y aparece en otro lugar."
     explanation: "Filtración: información que sale de un sistema sin permiso. «Indiscreción» es un comentario que alguien no debió hacer, y «sospecha» es una idea sin confirmar; aquí los datos de los clientes ya estaban publicados en un foro."
@@ -227,5 +211,5 @@ readings:
     after_phrase: "Hubo una filtración: ya sabe todo."
 provenance:
   generator: "hand-written by flui content agent"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

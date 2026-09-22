@@ -1,9 +1,14 @@
 schema_version: 1
 slug: "carismatico"
-status: "draft"
+status: "approved"
 lemma: "carismático"
 part_of_speech: "adjetivo"
-syllables: ["ca", "ris", "ma", "ti", "co"]
+syllables:
+  - "ca"
+  - "ris"
+  - "ma"
+  - "ti"
+  - "co"
 stressed_syllable: 3
 ipa_latam: "[ka.ɾisˈma.ti.ko]"
 ipa_es: "[ka.ɾisˈma.ti.ko]"
@@ -24,13 +29,18 @@ replaces:
     after: "Es carismático apenas abre la boca"
   - before: "Tiene una energía que atrapa a la gente"
     after: "Tiene una presencia carismática"
-family: ["carismáticamente"]
+family:
+  - "carismáticamente"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["cae muy bien", "tiene algo especial"]
-  funcion: ["elogiar", "describir"]
+  comodin:
+    - "cae muy bien"
+    - "tiene algo especial"
+  funcion:
+    - "elogiar"
+    - "describir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -226,5 +236,5 @@ readings:
     after_phrase: "No sabía que era tan carismático."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

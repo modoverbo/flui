@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "afinidad"
-status: "draft"
+status: "approved"
 lemma: "afinidad"
 part_of_speech: "sustantivo"
-syllables: ["a", "fi", "ni", "dad"]
+syllables:
+  - "a"
+  - "fi"
+  - "ni"
+  - "dad"
 stressed_syllable: 4
 ipa_latam: "[a.fi.niˈðad]"
 ipa_es: "[a.fi.niˈðad]"
@@ -22,13 +26,15 @@ replaces:
     after: "Hubo afinidad desde el principio"
   - before: "Tenemos muchas cosas en común"
     after: "Tenemos bastante afinidad"
-family: ["afín"]
+family: []
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["alegre"]
-  funcion: ["conectar"]
+  comodin:
+    - "alegre"
+  funcion:
+    - "conectar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -121,46 +127,6 @@ exercises:
         text: "afinidad"
         is_correct: true
   - position: 5
-    sentence: "Desde el primer proyecto juntas, Valeria y su nueva jefa mostraron una {{blank}} que sorprendió al resto del equipo: pensaban casi igual sobre cómo resolver cada problema."
-    hint_general: "Dos personas piensan parecido sobre los problemas, casi desde el primer momento que trabajan juntas."
-    explanation: "Afinidad: pensar parecido sobre los problemas, casi desde el primer momento. «Compenetración» se construye trabajando juntas, y «cercanía» es un trato de confianza, no una forma de pensar parecida."
-    options:
-      - position: 1
-        text: "afinidad"
-        is_correct: true
-      - position: 2
-        text: "compenetración"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Compenetración» describe que dos personas coordinan bien su trabajo en equipo, y aquí lo que sorprende es que piensan parecido desde antes de empezar a trabajar juntas."
-        hint_specific: "«Compenetración» se construye trabajando codo a codo. ¿Esto ocurrió antes o después de trabajar juntas?"
-      - position: 3
-        text: "cercanía"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cercanía» habla de un trato próximo y de confianza, y aquí lo llamativo no es el trato sino que piensan igual sobre los problemas."
-        hint_specific: "«Cercanía» es un trato de confianza. ¿La frase habla del trato o de cómo piensan?"
-  - position: 6
-    sentence: "En la sala de espera del aeropuerto, Noelia y una desconocida hablaron dos horas sin parar: había {{blank}} entre ellas, más allá de compartir el mismo vuelo retrasado."
-    hint_general: "Dos personas, aunque acaban de conocerse, notan que hay algo más que las junta."
-    explanation: "Afinidad: algo más que las junta, más allá de compartir un mismo vuelo. «Conexión» puede ser solo un enlace práctico, y «coincidencia» es que algo pase al mismo tiempo sin relación de fondo."
-    options:
-      - position: 1
-        text: "conexión"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Conexión» puede ser solo un enlace práctico entre dos cosas, como el vuelo que las juntó, y la frase ya aclara que hay algo más que compartir ese vuelo."
-        hint_specific: "Una conexión de vuelo es solo un enlace práctico. ¿La frase habla de un enlace práctico o de algo más entre ellas?"
-      - position: 2
-        text: "coincidencia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Coincidencia» es que dos cosas pasen al mismo tiempo sin ninguna relación de fondo, y la frase dice justo lo contrario: hay algo más entre ellas."
-        hint_specific: "Una coincidencia no implica nada de fondo entre dos personas. ¿Hay algo más entre ellas o fue puro azar?"
-      - position: 3
-        text: "afinidad"
-        is_correct: true
-  - position: 7
     sentence: "En el club de lectura, Hugo notó {{blank}} con la persona nueva apenas comentaron el primer libro: los dos subrayaban las mismas frases."
     hint_general: "Dos personas notan que piensan y sienten parecido, desde la primera conversación."
     explanation: "Afinidad: pensar y sentir parecido desde la primera conversación. «Vínculo» es un lazo que se construye con el tiempo, y «entendimiento» es ponerse de acuerdo sobre algo puntual."
@@ -180,7 +146,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Entendimiento» habla de ponerse de acuerdo sobre algo puntual, y aquí lo que se nota es que tienen gustos parecidos, no que resolvieron un desacuerdo."
         hint_specific: "El entendimiento resuelve diferencias de opinión. ¿Aquí hubo un desacuerdo que resolver?"
-  - position: 8
+  - position: 6
     sentence: "Clara solo fue a buscar un café, pero con la barista se armó una {{blank}} rara: las dos citaban la misma serie sin ponerse de acuerdo antes."
     hint_general: "Dos personas recién conocidas notan que coinciden en gustos muy concretos."
     explanation: "Afinidad: coincidir en gustos muy concretos entre dos personas recién conocidas. «Amistad» pide más de un encuentro, y «complicidad» se nota en gestos y bromas compartidas después de conocerse."
@@ -224,5 +190,5 @@ readings:
     after_phrase: "Con tu mamá hubo afinidad enseguida."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

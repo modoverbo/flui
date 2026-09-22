@@ -1,9 +1,12 @@
 schema_version: 1
-status: "draft"
 slug: "perdurar"
+status: "draft"
 lemma: "perdurar"
 part_of_speech: "verbo"
-syllables: ["per", "du", "rar"]
+syllables:
+  - "per"
+  - "du"
+  - "rar"
 stressed_syllable: 3
 ipa_latam: "[per.ðuˈrar]"
 ipa_es: "[per.ðuˈrar]"
@@ -22,13 +25,17 @@ replaces:
     after: "Esa amistad ha logrado perdurar"
   - before: "Ese recuerdo no se va a borrar nunca"
     after: "Ese recuerdo va a perdurar"
-family: ["perdurable", "perdurabilidad"]
+family:
+  - "perdurable"
+  - "perdurabilidad"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["durar"]
-  funcion: ["describir"]
+  comodin:
+    - "durar"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -81,26 +88,6 @@ exercises:
         why_not: "«Resistir» describe aguantar una presión o un ataque puntual, y aquí no hay ninguna presión: es un cariño que sigue vivo con los años."
         hint_specific: "«Resistir» habla de aguantar una presión puntual. ¿Hay alguna presión en esta escena?"
   - position: 3
-    sentence: "Muchos negocios familiares cierran antes de la segunda generación, pero el de los Herrera {{blank}} desde hace casi cien años."
-    hint_general: "Busca el verbo para un negocio que sigue en pie después de muchos años."
-    explanation: "Perdura: el negocio sigue fuerte desde hace casi cien años. «Perturba» es alterar la calma de algo, y aquí nada se altera. «Sobrevive» sugiere escapar de una amenaza puntual, y aquí no hay ninguna."
-    options:
-      - position: 1
-        text: "perturba"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Perturbar» es alterar la calma de algo, y aquí no se altera nada: el negocio sigue en pie."
-        hint_specific: "«Perturbar» habla de alterar la calma de algo. ¿El negocio se altera o se mantiene en pie?"
-      - position: 2
-        text: "sobrevive"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Sobrevivir» sugiere superar por poco una amenaza cercana, y aquí no hay ninguna amenaza puntual: el negocio simplemente sigue fuerte con los años."
-        hint_specific: "«Sobrevivir» sugiere escapar por poco de una amenaza. ¿Hay alguna amenaza puntual en esta frase?"
-      - position: 3
-        text: "perdura"
-        is_correct: true
-  - position: 4
     sentence: "En la sobremesa familiar, el tío de Bruno siempre repite que el verdadero legado de una generación no está en los edificios, sino en las ideas que {{blank}} de una generación a otra."
     hint_general: "Piensa en el verbo para algo que se transmite y sigue vivo de generación en generación."
     explanation: "Perduran: las ideas siguen vivas de generación en generación. «Aguantan» es muy coloquial para un tono reflexivo como este. «Se mantienen» dice que algo sigue igual, sin cambios, y aquí lo que importa es que las ideas pasan de una generación a otra."
@@ -120,7 +107,7 @@ exercises:
       - position: 3
         text: "perduran"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Aunque el grupo de amigas de la universidad ya no se ve tan seguido, la confianza que tienen {{blank}} después de tantos años."
     hint_general: "Busca el verbo para un vínculo que sigue firme aunque pase el tiempo."
     explanation: "Perdura: la confianza sigue firme después de tantos años. «Se prolonga» dice que algo se extiende más de lo previsto, no que siga firme. «Resiste» habla de aguantar una presión puntual, y aquí no hay ninguna."
@@ -140,27 +127,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Resistir» describe aguantar una presión puntual, y aquí no hay ninguna presión: solo el paso natural del tiempo."
         hint_specific: "«Resistir» habla de aguantar una presión puntual. ¿Hay alguna presión aquí, o solo el paso del tiempo?"
-  - position: 6
-    sentence: "El apodo que le pusieron a Fernando en la primaria {{blank}} hasta hoy: todos sus amigos de la infancia todavía lo llaman así."
-    hint_general: "Piensa en el verbo para algo que se queda con una persona durante muchos años."
-    explanation: "Perdura: el apodo se sigue usando después de tantos años. «Perturba» es alterar la calma de alguien, y este apodo no altera a nadie. «Se mantiene» dice que algo sigue igual, sin cambios, no que se siga usando con los años."
-    options:
-      - position: 1
-        text: "perturba"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Perturbar» es alterar la calma de alguien, y ese apodo no altera a nadie: simplemente se quedó con los años."
-        hint_specific: "«Perturbar» habla de alterar la calma de alguien. ¿Ese apodo altera a alguien o simplemente se quedó?"
-      - position: 2
-        text: "se mantiene"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Mantenerse» dice que algo sigue igual, sin cambios; aquí lo que se destaca es que el apodo sigue usándose después de tantos años, no que no haya cambiado."
-        hint_specific: "«Mantenerse» habla de seguir igual, sin cambios. ¿Eso es lo que importa aquí, o que se sigue usando después de tantos años?"
-      - position: 3
-        text: "perdura"
-        is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Los mensajes de voz que se mandaban Renata y su mejor amiga durante la universidad ya no existen, pero la costumbre de contarse todo {{blank}}."
     hint_general: "Busca el verbo para una costumbre que sigue viva después de mucho tiempo."
     explanation: "Perdura: la costumbre sigue viva con los años. «Sobrevive» sugiere escapar de una amenaza puntual, y aquí no hay ninguna. «Resiste» habla de aguantar una presión puntual, y tampoco la hay."
@@ -180,7 +147,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Resistir» describe aguantar una presión puntual, y aquí no hay ninguna presión: la costumbre sigue viva de forma natural."
         hint_specific: "«Resistir» habla de aguantar una presión puntual. ¿Hay alguna presión en esta frase?"
-  - position: 8
+  - position: 6
     sentence: "Los abuelos de Sol se conocieron a los quince años, en un pueblo donde todos los vecinos se conocían de toda la vida. Setenta años después, ese amor {{blank}}."
     hint_general: "Piensa en el verbo para un sentimiento que sigue vivo después de muchísimos años."
     explanation: "Perdura: ese amor sigue vivo setenta años después. «Aguanta» es muy coloquial para hablar de soportar algo incómodo, y aquí se cuenta un amor que sigue vivo. «Perturba» es alterar la calma de algo, y este amor no altera nada."

@@ -3,7 +3,13 @@ slug: "participativo"
 status: "draft"
 lemma: "participativo"
 part_of_speech: "adjetivo"
-syllables: ["par", "ti", "ci", "pa", "ti", "vo"]
+syllables:
+  - "par"
+  - "ti"
+  - "ci"
+  - "pa"
+  - "ti"
+  - "vo"
 stressed_syllable: 5
 ipa_latam: "[par.ti.si.paˈti.βo]"
 ipa_es: "[par.ti.θi.paˈti.βo]"
@@ -21,15 +27,20 @@ replaces:
     after: "Quiero que la reunión sea participativa"
   - before: "Un jefe al que le gusta preguntar qué piensa el equipo"
     after: "Un jefe con un estilo participativo"
-family: ["participar", "participación", "participante"]
+family:
+  - "participar"
+  - "participación"
+  - "participante"
 themes:
   - slug: "docencia"
     relevance: 3
   - slug: "reuniones"
     relevance: 2
 tags:
-  comodin: ["interactivo"]
-  funcion: ["involucrar"]
+  comodin:
+    - "interactivo"
+  funcion:
+    - "involucrar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -61,26 +72,6 @@ exercises:
         text: "participativas"
         is_correct: true
   - position: 2
-    sentence: "En casa de Renata, las decisiones sobre las vacaciones son {{blank}}: cada quien dice adónde quiere ir antes de elegir el destino juntos."
-    hint_general: "Piensa en el adjetivo para decisiones donde cada quien dice lo que quiere antes de elegir juntos, sin que nadie decida solo."
-    explanation: "Participativas: cada quien opina antes de elegir juntos. «Horizontales» es un término de oficina sobre estructuras sin jefes, y «democráticas» implica que al final se vota y gana la mayoría."
-    options:
-      - position: 1
-        text: "horizontales"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Horizontales» es una palabra de oficina para describir estructuras sin jefes, y aquí se trata solo de una familia que se pregunta unos a otros."
-        hint_specific: "«Horizontales» suena a un término de oficina sobre jerarquías. ¿Esta escena habla de una empresa o de una familia?"
-      - position: 2
-        text: "democráticas"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Democráticas» implica que al final se vota y gana la mayoría; aquí solo se trata de que todos digan lo que quieren antes de elegir juntos."
-        hint_specific: "Lo democrático se resuelve con una votación. ¿Aquí alguien vota o solo dicen lo que quieren antes de elegir?"
-      - position: 3
-        text: "participativas"
-        is_correct: true
-  - position: 3
     sentence: "El club de lectura de Pablo es muy {{blank}}: cualquiera puede proponer el próximo libro y todos votan juntos qué leer."
     hint_general: "La palabra describe un espacio donde cualquiera propone algo y decide junto con los demás, no solo un lugar donde entra cualquiera."
     explanation: "Participativo: cualquiera propone y decide junto con los demás. «Populista» sugiere agradar a la mayoría con fines propios, y «abierto» solo dice que cualquiera puede entrar."
@@ -100,7 +91,7 @@ exercises:
       - position: 3
         text: "participativo"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "En la entrevista, Camila preguntó si el equipo tenía un estilo {{blank}} o si las decisiones las tomaba solo el jefe."
     hint_general: "Busca el adjetivo para un equipo donde todos opinan antes de decidir, y no solo una persona desde arriba."
     explanation: "Participativo: todos opinan antes de que se decida algo. «Flexible» habla de horarios que se adaptan, y «inclusivo» dice que nadie queda fuera por quién es."
@@ -120,7 +111,7 @@ exercises:
       - position: 3
         text: "participativo"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "El taller que dio Marcos fue muy {{blank}}: cada quince minutos paraba para que el grupo hiciera preguntas y propusiera ejemplos."
     hint_general: "Piensa en el adjetivo para algo donde el grupo interviene en vivo, con preguntas y ejemplos propios, no solo escucha en silencio."
     explanation: "Participativo: el grupo interviene en vivo con preguntas y ejemplos. «Consultivo» es un término de comités donde se pide opinión pero otro decide, y «dialogante» solo describe a alguien dispuesto a escuchar si le preguntan."
@@ -140,7 +131,7 @@ exercises:
       - position: 3
         text: "participativo"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Entre los tres hermanos, decidir quién hacía qué en la casa fue un proceso {{blank}}: cada uno dijo qué prefería antes de asignar nada."
     hint_general: "La palabra describe asignar algo después de que cada uno dijo lo que prefería, no solo hacerlo todos al mismo tiempo."
     explanation: "Participativo: cada uno opinó antes de repartir algo. «Colaborativo» describe hacer algo juntos al mismo tiempo, y «accesible» dice que algo es fácil de entender, no que se invite a opinar."
@@ -160,7 +151,7 @@ exercises:
       - position: 3
         text: "participativo"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "La reunión de vecinos fue tan {{blank}} que hasta la señora del tercer piso, que nunca hablaba, propuso una idea para el jardín."
     hint_general: "Busca el adjetivo para una reunión donde hasta quien casi nunca habla se anima a proponer algo."
     explanation: "Participativa: hasta quien casi nunca habla propuso algo. «Concurrida» solo dice que fue mucha gente, y «ordenada» dice que hubo buen orden, no que se animara a hablar a quien calla."
@@ -180,7 +171,7 @@ exercises:
       - position: 3
         text: "participativa"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Antes de firmar el contrato, Iker preguntó si el equipo de diseño era {{blank}} o si las decisiones bajaban ya tomadas desde arriba."
     hint_general: "Piensa en el adjetivo para un equipo que decide junto, y no en uno que solo recibe las decisiones ya tomadas."
     explanation: "Participativo: el equipo decide junto, no solo recibe decisiones. «Receptivo» dice que escuchan si alguien habla, y «inclusivo» dice que nadie queda fuera por quién es."

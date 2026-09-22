@@ -1,15 +1,12 @@
-# Word 2 of batch W4 humor. Substitution note: originally assigned "bufón"
-# (zipf 3.08, dp 0.33 — actually passed metrics), but the slug was claimed by
-# another concurrent author before this file could be written (words/bufon.yml
-# already reserved). Replaced with "gracia" in its humor/wit sense ("tener
-# gracia", "hacer gracia"), which passes cleanly: zipf 4.64, dp 0.17.
 schema_version: 1
 sort_order: 9302
 slug: "gracia"
-status: "draft"
+status: "approved"
 lemma: "gracia"
 part_of_speech: "sustantivo"
-syllables: ["gra", "cia"]
+syllables:
+  - "gra"
+  - "cia"
 stressed_syllable: 1
 ipa_latam: "[ˈgɾa.sja]"
 ipa_es: "[ˈgɾa.θja]"
@@ -28,13 +25,17 @@ replaces:
     after: "Tiene mucha gracia contando cosas"
   - before: "Lo que dijo fue muy divertido"
     after: "Lo que dijo tuvo mucha gracia"
-family: ["gracioso", "graciosamente"]
+family:
+  - "gracioso"
+  - "graciosamente"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["simpático"]
-  funcion: ["elogiar"]
+  comodin:
+    - "simpático"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -45,6 +46,12 @@ confusions:
   - confused_with: "agrado"
     difference: "«Agrado» es que algo resulte agradable o guste, sin llegar a provocar risa; «gracia» apunta directo al efecto cómico."
     memory_trick: "Algo de tu agrado te gusta; algo con gracia, además, te hace reír."
+  - confused_with: "ameno"
+    difference: "Algo «ameno» se sigue con gusto sin necesidad de hacer reír; la gracia es justamente ese chispazo que provoca la risa."
+    memory_trick: "Lo ameno entretiene sin reír; la gracia hace reír."
+  - confused_with: "chispa"
+    difference: "«Chispa» es un destello ingenioso y puntual, que sorprende en un momento concreto; la gracia es el encanto o el humor de alguien en general, no solo un chispazo."
+    memory_trick: "La chispa dura un instante; la gracia se nota siempre."
 exercises:
   - position: 1
     sentence: "Sara tiene tanta {{blank}} contando lo que le pasa cada mañana en el metro que sus compañeros esperan el café solo para escucharla."
@@ -87,26 +94,6 @@ exercises:
         why_not: "«Exactitud» habla de datos correctos, y lo que cambió el ambiente de la sala fue el modo de contarlos, no su precisión."
         hint_specific: "«Exactitud» es sobre datos correctos. ¿Eso explica por qué el director cambió el gesto?"
   - position: 3
-    sentence: "En la sobremesa familiar, el tío Emilio cuenta la misma historia del auto averiado con tanta {{blank}} que suena nueva cada vez."
-    hint_general: "Piensa en lo que hace que una historia repetida siga divirtiendo a la familia año tras año."
-    explanation: "Gracia: lo que hace sonar nueva una historia repetida. «Jocosidad» suena a palabra de libro, fuera de lugar en una sobremesa, y «paciencia» describe esperar con calma, no contar algo divertido."
-    options:
-      - position: 1
-        text: "jocosidad"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Jocosidad» es una palabra de tono formal y de libro, y una sobremesa familiar pide un tono mucho más cercano."
-        hint_specific: "«Jocosidad» suena a texto formal. ¿Encaja con una charla de sobremesa entre familia?"
-      - position: 2
-        text: "gracia"
-        is_correct: true
-      - position: 3
-        text: "paciencia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Paciencia» es esperar con calma, y lo que mantiene viva la historia año tras año es el modo de contarla, no la espera."
-        hint_specific: "«Paciencia» habla de esperar. ¿Eso explica por qué la historia sigue sonando nueva?"
-  - position: 4
     sentence: "Durante la entrevista formal, Renata respondió con tanta {{blank}} a la pregunta incómoda que todo el panel terminó sonriendo."
     hint_general: "Busca la palabra para una respuesta que resulta divertida sin dejar de ser adecuada al momento."
     explanation: "Gracia: la respuesta divertida que ganó una sonrisa del panel. «Choteo» es una palabra demasiado informal para una entrevista, y «franqueza» habla de sinceridad, no de un efecto cómico."
@@ -126,7 +113,7 @@ exercises:
       - position: 3
         text: "gracia"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Cecilia escribió el mensaje de despedida del grupo con tanta {{blank}} que varios compañeros lo guardaron para releerlo después."
     hint_general: "Piensa en el toque divertido que hace que un texto corto valga la pena guardarse."
     explanation: "Gracia: el toque divertido que hizo memorable el mensaje de Cecilia. «Sencillez» solo dice que el texto es fácil de entender, y «amabilidad» describe un trato amable, sin hablar del efecto cómico."
@@ -146,7 +133,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Amabilidad» describe un trato amable, y lo que hizo guardar el mensaje fue su efecto divertido, no su cortesía."
         hint_specific: "«Amabilidad» es tratar bien a alguien. ¿Eso explica por qué guardaron el mensaje?"
-  - position: 6
+  - position: 5
     sentence: "Bruno explicó las reglas nuevas del edificio con tanta {{blank}} que hasta los vecinos más quejosos terminaron de buen humor."
     hint_general: "Busca la palabra para un aviso serio que se cuenta de un modo que cae bien."
     explanation: "Gracia: el modo divertido con que Bruno explicó un aviso serio. «Sensatez» describe buen juicio, no un efecto cómico, y «modestia» habla de no presumir, algo sin relación con el ambiente que se generó."
@@ -166,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Modestia» habla de no presumir, y aquí lo que se nota es el modo divertido de dar un aviso, no la humildad de quien lo da."
         hint_specific: "«Modestia» es no presumir. ¿Eso explica el buen humor de los vecinos?"
-  - position: 7
+  - position: 6
     sentence: "Adriana contó el malentendido del vuelo cancelado con tanta {{blank}} que sus seguidores pidieron que grabara el relato completo."
     hint_general: "Piensa en lo que convierte un mal momento en una historia que da gusto escuchar."
     explanation: "Gracia: lo que convirtió un mal momento en una historia que da gusto escuchar. «Sinceridad» habla de decir la verdad, no de un efecto cómico, y «espontaneidad» es actuar sin planear, algo distinto de resultar divertida."
@@ -186,7 +173,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Espontaneidad» es actuar sin planear, y lo que atrajo a sus seguidores fue el resultado divertido del relato, no si lo pensó antes."
         hint_specific: "«Espontaneidad» es no planear algo. ¿Eso es lo que pidieron volver a escuchar los seguidores?"
-  - position: 8
+  - position: 7
     sentence: "Martín, el vecino más callado del piso, sorprendió a todos en la fiesta de fin de año con una {{blank}} que nadie le conocía."
     hint_general: "Busca la palabra para un lado divertido que nadie esperaba de alguien tan callado."
     explanation: "Gracia: el lado divertido que sorprendió a todos en Martín. «Delicadeza» describe cuidado al tratar algo, y «cortesía» habla de buenos modales, ninguna relacionada con hacer reír a los demás."
@@ -230,5 +217,5 @@ readings:
     after_phrase: "Lo explicó con mucha gracia."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

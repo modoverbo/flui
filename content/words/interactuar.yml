@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "interactuar"
-status: "draft"
+status: "approved"
 lemma: "interactuar"
 part_of_speech: "verbo"
-syllables: ["in", "ter", "ac", "tuar"]
+syllables:
+  - "in"
+  - "ter"
+  - "ac"
+  - "tuar"
 stressed_syllable: 4
 ipa_latam: "[in.te.ɾakˈtwaɾ]"
 ipa_es: "[in.te.ɾakˈtwaɾ]"
@@ -17,6 +21,11 @@ collocations:
   - "interactuar con"
   - "interactuar entre sí"
   - "poder interactuar"
+replaces:
+  - before: "La gente puede hablar y responderse entre sí en el evento"
+    after: "La gente puede interactuar entre sí en el evento"
+  - before: "El producto responde a lo que hace la persona que lo prueba"
+    after: "El producto permite interactuar con quien lo prueba"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +33,11 @@ themes:
   - slug: "redes-sociales"
     relevance: 1
 tags:
-  comodin: ["hablar entre sí", "tener contacto"]
-  funcion: ["vincular"]
+  comodin:
+    - "hablar entre sí"
+    - "tener contacto"
+  funcion:
+    - "vincular"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +45,6 @@ confusions:
   - confused_with: "actuar"
     difference: "Actuar es hacer algo por cuenta propia, sin que dependa de otra persona; interactuar implica un intercambio en el que cada uno responde al otro."
     memory_trick: "Actuar lo haces solo; interactuar lo haces con otro."
-replaces:
-  - before: "La gente puede hablar y responderse entre sí en el evento"
-    after: "La gente puede interactuar entre sí en el evento"
-  - before: "El producto responde a lo que hace la persona que lo prueba"
-    after: "El producto permite interactuar con quien lo prueba"
 exercises:
   - position: 1
     sentence: "En la feria, los visitantes podían {{blank}} con el producto antes de decidir si lo compraban."
@@ -223,5 +230,5 @@ readings:
     after_phrase: "Interactuamos todos los días aunque estemos lejos."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

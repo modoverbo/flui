@@ -1,14 +1,16 @@
 schema_version: 1
 slug: "rondar"
-status: "draft"
+status: "approved"
 lemma: "rondar"
 part_of_speech: "verbo"
-syllables: ["ron", "dar"]
+syllables:
+  - "ron"
+  - "dar"
 stressed_syllable: 2
 ipa_latam: "[ronˈdaɾ]"
 ipa_es: "[ronˈdaɾ]"
 explanation: "Andar cerca de alguien que te gusta, buscando una oportunidad para acercarte más."
-example_sentence: "Desde el asado de fin de año, ese amigo de un amigo aparece en cada plan del grupo donde está Valentina."
+example_sentence: "Desde el asado de fin de año, ese amigo de un amigo ronda a Valentina en cada plan del grupo."
 register: "neutral"
 pedantry_risk: 1
 usage_tip: "Úsalo para describir a alguien que busca cruzarse con otra persona, sin todavía haber dado el paso."
@@ -17,13 +19,22 @@ collocations:
   - "rondar a alguien"
   - "andar rondando"
   - "llevar semanas rondando"
-family: ["ronda"]
+replaces:
+  - before: "Anda detrás de ella buscando una oportunidad para hablarle"
+    after: "La está rondando, buscando una oportunidad para hablarle"
+  - before: "Siempre pasa cerca de su escritorio a ver si se cruzan"
+    after: "Siempre la ronda cerca de su escritorio"
+family:
+  - "ronda"
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["andar detrás de", "dar vueltas alrededor"]
-  funcion: ["describir interés"]
+  comodin:
+    - "andar detrás de"
+    - "dar vueltas alrededor"
+  funcion:
+    - "describir interés"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +42,6 @@ confusions:
   - confused_with: "acechar"
     difference: "Acechar implica vigilar con intención hostil o amenazante; rondar, en este sentido, es buscar con interés una oportunidad de acercarte, sin ninguna intención de dañar."
     memory_trick: "Se acecha para atacar; se ronda para acercarse."
-replaces:
-  - before: "Anda detrás de ella buscando una oportunidad para hablarle"
-    after: "La está rondando, buscando una oportunidad para hablarle"
-  - before: "Siempre pasa cerca de su escritorio a ver si se cruzan"
-    after: "Siempre la ronda cerca de su escritorio"
 exercises:
   - position: 1
     sentence: "Todos en la oficina notaban que Iván llevaba semanas {{blank}} a la nueva del equipo de diseño."
@@ -118,26 +124,6 @@ exercises:
         why_not: "«Acechar» implica una intención hostil o amenazante, y la frase describe la timidez de Diego antes de animarse a hablarle."
         hint_specific: "Acechar implica una intención hostil. ¿Diego tiene una intención hostil o solo timidez?"
   - position: 5
-    sentence: "El gato del vecino {{blank}} la cocina cada vez que huele que alguien está cocinando pescado."
-    hint_general: "Andar cerca de un lugar, esperando el momento oportuno para algo que quieres."
-    explanation: "Ronda: anda cerca de un lugar, esperando el momento oportuno. «Limpia» describe una actividad doméstica, sin relación con esperar el momento del pescado, y «acecha» implica una intención hostil, más propia de una amenaza."
-    options:
-      - position: 1
-        text: "ronda"
-        is_correct: true
-      - position: 2
-        text: "limpia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Limpiar» describe una actividad doméstica, y la frase dice que el gato busca el pescado, no que limpie la cocina."
-        hint_specific: "Limpiar es una actividad doméstica. ¿El gato limpia la cocina o espera el pescado?"
-      - position: 3
-        text: "acecha"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Acechar» implica una intención hostil o amenazante, y aquí el gato solo espera el momento del pescado, sin ninguna amenaza."
-        hint_specific: "Acechar implica una amenaza. ¿El gato tiene una intención hostil o solo espera el pescado?"
-  - position: 6
     sentence: "Aunque nunca se animó a invitarla a salir, Hugo {{blank}} los mismos lugares donde sabía que ella solía estar."
     hint_general: "Frecuentar los mismos lugares que alguien que te interesa, esperando cruzarte con esa persona."
     explanation: "Rondaba: frecuentaba los mismos lugares, esperando cruzarse con ella. «Decoraba» describe una actividad distinta, sin relación con buscar a alguien, y «acechaba» implica una intención hostil."
@@ -157,7 +143,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Acechar» implica una intención hostil o amenazante, y aquí Hugo solo buscaba cruzarse con ella, sin ninguna amenaza."
         hint_specific: "Acechar implica una amenaza. ¿Hugo tenía una intención hostil o solo timidez?"
-  - position: 7
+  - position: 6
     sentence: "El pretendiente {{blank}} la puerta de su edificio cada tarde, esperando encontrársela por casualidad."
     hint_general: "Pasar cerca de un lugar repetidamente, esperando cruzarte con alguien por casualidad."
     explanation: "Ronda: pasa cerca de un lugar repetidamente, esperando un encuentro casual. «Pinta» describe una actividad de mantenimiento, sin relación con esperar a alguien, y «acecha» implica una intención hostil."
@@ -177,7 +163,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Acechar» implica una intención hostil o amenazante, y aquí el pretendiente solo espera un encuentro casual, sin ninguna amenaza."
         hint_specific: "Acechar implica una amenaza. ¿El pretendiente tiene una intención hostil o solo espera un encuentro?"
-  - position: 8
+  - position: 7
     sentence: "Su hermana le advirtió: «Ese chico lleva todo el verano {{blank}} tu grupo de amigas, y todavía no se anima a nada»."
     hint_general: "Frecuentar el entorno de alguien, esperando el momento de acercarse."
     explanation: "Rondando: frecuentando el entorno de alguien, esperando el momento de acercarse. «Ignorando» describe justo lo contrario, y «acosando» implicaría incomodar, algo que la frase no menciona."
@@ -221,5 +207,5 @@ readings:
     after_phrase: "Te ronda hace rato, y ni cuenta te das."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

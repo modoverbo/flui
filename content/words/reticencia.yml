@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "reticencia"
-status: "draft"
+status: "approved"
 lemma: "reticencia"
 part_of_speech: "sustantivo"
-syllables: ["re", "ti", "cen", "cia"]
+syllables:
+  - "re"
+  - "ti"
+  - "cen"
+  - "cia"
 stressed_syllable: 3
 ipa_latam: "[re.tiˈsen.sja]"
 ipa_es: "[re.tiˈθen.θja]"
@@ -25,13 +29,17 @@ replaces:
     after: "Muestra una reticencia que no termina de explicar"
   - before: "Contestó, pero con algo de desconfianza que no dijo abiertamente"
     after: "Contestó con una reticencia que prefirió no explicar"
-family: ["reticente", "reticentemente"]
+family:
+  - "reticente"
+  - "reticentemente"
 themes:
   - slug: "ventas"
     relevance: 3
 tags:
-  comodin: ["duda"]
-  funcion: ["señalar una duda no dicha"]
+  comodin:
+    - "duda"
+  funcion:
+    - "señalar una duda no dicha"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -144,26 +152,6 @@ exercises:
         text: "reticencia"
         is_correct: true
   - position: 6
-    sentence: "Andrea, la entrevistadora, notó {{blank}} en la respuesta del candidato cuando le preguntó por qué había dejado su empleo anterior."
-    hint_general: "Nombra la reserva que se nota en alguien que no cuenta todo lo que piensa."
-    explanation: "Reticencia: la reserva que Andrea notó en la respuesta del candidato. «Evasión» sería no responder en absoluto, y «nerviosismo» hablaría de ansiedad física, no de una actitud reservada."
-    options:
-      - position: 1
-        text: "evasión"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Evasión» sería esquivar la pregunta por completo; el candidato sí respondió, solo con una reserva notable."
-        hint_specific: "La evasión es no responder. ¿El candidato evitó la pregunta o solo respondió con reserva?"
-      - position: 2
-        text: "reticencia"
-        is_correct: true
-      - position: 3
-        text: "nerviosismo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Nerviosismo» describe ansiedad física, como temblar o titubear; aquí lo que se nota es una reserva en lo que dice, no nervios."
-        hint_specific: "El nerviosismo se nota en el cuerpo. ¿Aquí se describe una actitud al hablar o un temblor?"
-  - position: 7
     sentence: "Gonzalo detectó {{blank}} en el correo del cliente: aceptaba el precio, pero evitaba confirmar la fecha de pago."
     hint_general: "Se trata de una reserva que se nota entre líneas, en lo que alguien evita decir del todo."
     explanation: "Reticencia: la reserva que Gonzalo notó en lo que el cliente evitaba confirmar. «Ambigüedad» sería un mensaje confuso, y «hostilidad» sería una actitud agresiva, ninguna de las dos presente aquí."
@@ -183,7 +171,7 @@ exercises:
       - position: 3
         text: "reticencia"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Silvana le preguntó a su amiga si le gustaba el nuevo trabajo, y notó una {{blank}} que la hizo sospechar que algo no iba bien."
     hint_general: "Nombra esa reserva que hace sospechar que hay algo sin decir."
     explanation: "Reticencia: la reserva que Silvana notó en su amiga al hablar del trabajo. «Melancolía» sería un estado de tristeza, y «extrañeza» sería solo sorpresa, no la sensación de que algo queda sin decir."
@@ -227,5 +215,5 @@ readings:
     after_phrase: "Noté una reticencia justo ahí."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

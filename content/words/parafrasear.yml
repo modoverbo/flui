@@ -1,9 +1,14 @@
 schema_version: 1
 slug: "parafrasear"
-status: "draft"
+status: "approved"
 lemma: "parafrasear"
 part_of_speech: "verbo"
-syllables: ["pa", "ra", "fra", "se", "ar"]
+syllables:
+  - "pa"
+  - "ra"
+  - "fra"
+  - "se"
+  - "ar"
 stressed_syllable: 5
 ipa_latam: "[pa.ɾa.fɾa.seˈaɾ]"
 ipa_es: "[pa.ɾa.fɾa.seˈaɾ]"
@@ -17,13 +22,22 @@ collocations:
   - "parafrasear lo que dijo"
   - "parafrasear para confirmar"
   - "le parafraseó su idea"
-family: ["paráfrasis"]
+replaces:
+  - before: "Le repitió con sus palabras lo que había dicho para confirmar que entendió"
+    after: "Le parafraseó lo que había dicho para confirmar que entendió"
+  - before: "Dijo lo mismo que ella, pero con otras palabras"
+    after: "Parafraseó lo que ella dijo"
+family:
+  - "paráfrasis"
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["repetir con mis palabras", "confirmar que entendí"]
-  funcion: ["escuchar"]
+  comodin:
+    - "repetir con mis palabras"
+    - "confirmar que entendí"
+  funcion:
+    - "escuchar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +45,9 @@ confusions:
   - confused_with: "parodiar"
     difference: "Parodiar es imitar algo para burlarse; parafrasear es repetir la idea de alguien con tus propias palabras, con respeto y para confirmar que la entendiste."
     memory_trick: "Parodias para hacer reír; parafraseas para entender mejor."
-replaces:
-  - before: "Le repitió con sus palabras lo que había dicho para confirmar que entendió"
-    after: "Le parafraseó lo que había dicho para confirmar que entendió"
-  - before: "Dijo lo mismo que ella, pero con otras palabras"
-    after: "Parafraseó lo que ella dijo"
+  - confused_with: "reformular"
+    difference: "«Reformular» puede cambiar el enfoque o el alcance de una idea, incluso propia; parafrasear solo repite con otras palabras el contenido de alguien más, sin cambiar su alcance."
+    memory_trick: "Reformulas también lo tuyo; parafraseas lo ajeno."
 exercises:
   - position: 1
     sentence: "Antes de responder, Marta prefirió {{blank}} lo que su compañero acababa de contarle sobre el proyecto."
@@ -221,5 +233,5 @@ readings:
     after_phrase: "Solo quiero parafrasear lo que dices, para confirmar que entendí bien."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

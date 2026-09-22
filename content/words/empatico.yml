@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "empatico"
-status: "draft"
+status: "approved"
 lemma: "empático"
 part_of_speech: "adjetivo"
-syllables: ["em", "pa", "ti", "co"]
+syllables:
+  - "em"
+  - "pa"
+  - "ti"
+  - "co"
 stressed_syllable: 2
 ipa_latam: "[emˈpa.ti.ko]"
 ipa_es: "[emˈpa.ti.ko]"
@@ -24,13 +28,19 @@ replaces:
     after: "Fue empático y entendió cómo me sentía"
   - before: "Supo leer que estaba mal"
     after: "Fue empático y supo leer que estaba mal"
-family: ["empatía", "empatizar"]
+family:
+  - "empatía"
+  - "empatizar"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["se pone en tu lugar", "te entiende"]
-  funcion: ["elogiar", "describir"]
+  comodin:
+    - "se pone en tu lugar"
+    - "te entiende"
+  funcion:
+    - "elogiar"
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -41,6 +51,9 @@ confusions:
   - confused_with: "compasivo"
     difference: "«Compasivo» siente pena por el otro y quiere ayudarlo; el otro entiende exactamente lo que el otro siente, sin que eso implique lástima."
     memory_trick: "La compasión da pena; el otro da comprensión."
+  - confused_with: "simpatía"
+    difference: "La «simpatía» es un trato agradable que hace sentir cómoda a la otra persona, aunque no sepas nada de lo que siente; ser empático es entender exactamente lo que esa persona siente."
+    memory_trick: "La simpatía acompaña; la empatía entiende."
 exercises:
   - position: 1
     sentence: "Cuando Valentina le contó que la habían despedido, Ricardo no dijo mucho, pero fue tan {{blank}} que ella sintió que por fin alguien entendía lo que estaba sintiendo."
@@ -123,26 +136,6 @@ exercises:
         why_not: "«Atenta» notaría un detalle práctico, como que le faltaba una silla, y aquí lo que nota Lucía es un sentimiento, no un detalle."
         hint_specific: "«Atenta» nota detalles prácticos. ¿Qué nota Lucía en esta escena?"
   - position: 5
-    sentence: "El operador del banco no siguió el guion al pie de la letra: fue tan {{blank}} que Diego colgó sintiéndose escuchado, no solo atendido."
-    hint_general: "Habla de quien entiende lo que siente la otra persona detrás del reclamo, no solo el trámite."
-    explanation: "Empático: entiende lo que siente la otra persona detrás del reclamo, no solo el trámite. «Sensiblero» es coloquial y sugiere un exceso teatral de emoción, y «comprensivo» perdonaría un error que Diego no cometió."
-    options:
-      - position: 1
-        text: "empático"
-        is_correct: true
-      - position: 2
-        text: "sensiblero"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Sensiblero» es coloquial y despectivo, y sugiere un exceso teatral de emoción, muy distinto de que Diego se sintiera escuchado con naturalidad."
-        hint_specific: "«Sensiblero» exagera la emoción. ¿La llamada buscaba ese exceso o sonar natural?"
-      - position: 3
-        text: "comprensivo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Comprensivo» toleraría un error de Diego, y la frase no menciona ningún error: menciona que se sintió escuchado en lo que sentía."
-        hint_specific: "«Comprensivo» perdona errores. ¿Diego cometió algún error en la llamada?"
-  - position: 6
     sentence: "Ismael llegó al gimnasio agotado por una semana difícil, y el entrenador fue tan {{blank}} que cambió la rutina sin que él tuviera que explicar nada."
     hint_general: "Apunta a quien percibe el estado de ánimo de alguien y ajusta su trato en consecuencia."
     explanation: "Empático: percibe el estado de ánimo de alguien y ajusta su trato en consecuencia. «Apático» no reacciona ante nada, y «atento» notaría un detalle práctico, no el ánimo de Ismael."
@@ -162,7 +155,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Atento» notaría un detalle práctico, como que llegó tarde, y aquí lo que se nota es el ánimo de Ismael, no un detalle puntual."
         hint_specific: "«Atento» va de detalles prácticos. ¿Qué nota el entrenador en esta escena?"
-  - position: 7
+  - position: 6
     sentence: "Antonia trabajaba concentrada, pero su compañero fue tan {{blank}} que le acercó un café sin decir nada, justo cuando más lo necesitaba."
     hint_general: "Se refiere a notar lo que necesita alguien sin que lo pida, a partir de cómo se siente."
     explanation: "Empático: nota lo que necesita alguien sin que lo pida, a partir de cómo se siente. «Compasivo» sentiría lástima por Antonia, y «comprensivo» perdonaría un error que ella no cometió."
@@ -182,7 +175,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Comprensivo» toleraría algún error de Antonia, y la frase no menciona ningún error, solo que alguien notó su cansancio sin que lo dijera."
         hint_specific: "«Comprensivo» perdona errores. ¿Qué error comete Antonia en la frase?"
-  - position: 8
+  - position: 7
     sentence: "El vecino nuevo apenas conocía a Emilio, pero fue tan {{blank}} que notó el nudo en su garganta al hablar de la mudanza."
     hint_general: "Habla de notar una emoción que la otra persona ni siquiera dijo en voz alta."
     explanation: "Empático: nota una emoción que la otra persona ni siquiera dijo en voz alta. «Apático» no reacciona ante nada, y «compasivo» sentiría lástima por la mudanza, no percepción de una emoción callada."
@@ -226,5 +219,5 @@ readings:
     after_phrase: "Qué mujer tan empática."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

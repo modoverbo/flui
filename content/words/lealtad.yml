@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "lealtad"
-status: "draft"
+status: "approved"
 lemma: "lealtad"
 part_of_speech: "sustantivo"
-syllables: ["le", "al", "tad"]
+syllables:
+  - "le"
+  - "al"
+  - "tad"
 stressed_syllable: 3
 ipa_latam: "[le.alˈtad]"
 ipa_es: "[le.alˈtad]"
@@ -22,13 +25,18 @@ replaces:
     after: "Su lealtad nunca ha fallado en años de amistad"
   - before: "Siempre defiende a sus amigos, cueste lo que cueste"
     after: "Su lealtad hacia sus amigos no cambia, cueste lo que cueste"
-family: ["leal", "desleal", "deslealtad"]
+family:
+  - "leal"
+  - "desleal"
+  - "deslealtad"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["fiel"]
-  funcion: ["elogiar"]
+  comodin:
+    - "fiel"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -36,6 +44,9 @@ confusions:
   - confused_with: "legalidad"
     difference: "«Legalidad» es cumplir la ley; «lealtad» es mantenerse fiel a una persona o a un vínculo."
     memory_trick: "La legalidad se cumple; la lealtad se siente."
+  - confused_with: "incondicional"
+    difference: "Ser «incondicional» es apoyar a alguien sin límite ni reproche, pase lo que pase; la lealtad es no traicionar ni cambiar de bando, sin llegar necesariamente a ese extremo."
+    memory_trick: "Lo incondicional no pone límites; la lealtad no traiciona."
 exercises:
   - position: 1
     sentence: "Julieta perdió el contrato por no denunciar a su socio ante el banco: eligió su {{blank}} hacia él antes que quedar bien con nadie más."
@@ -138,26 +149,6 @@ exercises:
         text: "lealtad"
         is_correct: true
   - position: 6
-    sentence: "Cuando el negocio familiar entró en crisis, Rodrigo se quedó a ayudar sin cobrar: no era solo {{blank}} por lo que sus padres habían hecho por él, sino algo más."
-    hint_general: "Se refiere a mantenerse al lado de la familia, más allá de un favor concreto que se deba devolver."
-    explanation: "Lealtad: mantenerse al lado de la familia, más allá de un favor concreto. «Gratitud» sería devolver un favor puntual, y «legalidad» habla de cumplir normas, algo ajeno a esta decisión."
-    options:
-      - position: 1
-        text: "gratitud"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Gratitud» sería devolver un favor puntual, pero la frase dice que era algo más que eso."
-        hint_specific: "La frase dice que era «algo más» que devolver un favor. ¿Qué palabra describe ese compromiso más amplio?"
-      - position: 2
-        text: "legalidad"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Legalidad» habla de cumplir normas, y aquí Rodrigo actúa por un vínculo con su familia, no por ninguna norma."
-        hint_specific: "«Legalidad» habla de normas. ¿Rodrigo sigue una norma o un vínculo familiar?"
-      - position: 3
-        text: "lealtad"
-        is_correct: true
-  - position: 7
     sentence: "Antonia sigue yendo a los partidos del equipo de su amigo de la universidad, aunque ya casi nunca juega: eso es {{blank}}, no solo afición al deporte."
     hint_general: "Habla de mantenerse cerca de una persona, más allá del interés que uno tenga por sí mismo."
     explanation: "Lealtad: mantenerse cerca de una persona más allá del propio interés. «Constancia» solo dice que algo se repite, y «obediencia» supondría que alguien se lo ordena, cuando Antonia va por su cuenta."
@@ -174,26 +165,6 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Obediencia» supondría que alguien le pide ir, y Antonia va por su cuenta: nadie se lo ordena."
         hint_specific: "«Obediencia» es seguir una orden de alguien. ¿Alguien le ordena ir a los partidos?"
-      - position: 3
-        text: "lealtad"
-        is_correct: true
-  - position: 8
-    sentence: "En la entrevista, Matías contó que rechazó una oferta mejor pagada para quedarse con el equipo que lo formó desde el principio: llamó a eso {{blank}}."
-    hint_general: "Nombra el motivo de quedarse cerca de quienes lo apoyaron, incluso con una mejor oferta sobre la mesa."
-    explanation: "Lealtad: quedarse cerca de quienes lo apoyaron, incluso con una mejor oferta sobre la mesa. «Legalidad» no tiene que ver con ninguna norma aquí, y «gratitud» solo mira hacia el pasado, no hacia una decisión futura."
-    options:
-      - position: 1
-        text: "legalidad"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Legalidad» habla de cumplir normas, y la decisión de Matías no tiene que ver con ninguna norma, sino con un vínculo personal."
-        hint_specific: "«Legalidad» es cumplir normas. ¿La decisión de Matías tiene que ver con una norma?"
-      - position: 2
-        text: "gratitud"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Gratitud» sería agradecer lo recibido en el pasado, y Matías habla de quedarse hacia adelante, no solo de agradecer."
-        hint_specific: "«Gratitud» mira hacia atrás, a lo ya recibido. ¿Matías habla del pasado o de una decisión hacia adelante?"
       - position: 3
         text: "lealtad"
         is_correct: true
@@ -221,5 +192,5 @@ readings:
     after_phrase: "Qué lealtad, siguen ahí después de tanto tiempo."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-b"
+  checked_on: "2026-09-22"

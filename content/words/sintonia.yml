@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "sintonia"
-status: "draft"
+status: "approved"
 lemma: "sintonía"
 part_of_speech: "sustantivo"
-syllables: ["sin", "to", "ní", "a"]
+syllables:
+  - "sin"
+  - "to"
+  - "ní"
+  - "a"
 stressed_syllable: 3
 ipa_latam: "[sin.toˈni.a]"
 ipa_es: "[sin.toˈni.a]"
@@ -22,13 +26,16 @@ replaces:
     after: "Con ella hubo sintonía enseguida"
   - before: "Nos entendimos perfecto desde el primer minuto"
     after: "Tuvimos sintonía desde el primer minuto"
-family: ["sintonizar", "sintonizado"]
+family:
+  - "sintonizado"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["conectar"]
-  funcion: ["describir"]
+  comodin:
+    - "conectar"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -98,26 +105,6 @@ exercises:
         why_not: "«Corazonada» es una intuición sobre algo que va a pasar, y aquí lo que sintieron fue una conexión con la otra persona, no una predicción."
         hint_specific: "La corazonada anticipa un hecho futuro. ¿Aquí se anticipa algo o se siente una conexión con alguien?"
   - position: 4
-    sentence: "Valentina salió de la entrevista sorprendida: sintió una {{blank}} inesperada con la persona que la evaluaba, aunque nunca se habían visto."
-    hint_general: "Nombra esa sensación de entenderse con alguien recién conocido, sin ningún esfuerzo."
-    explanation: "Sintonía: sintió una conexión inmediata con un desconocido. «Complicidad» necesita un secreto o una broma compartida, y «química» es una forma muy coloquial de decirlo, fuera de tono en ese relato."
-    options:
-      - position: 1
-        text: "complicidad"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Complicidad» es la conexión de quienes comparten un secreto o una broma, y aquí se trata de un entendimiento inmediato con una desconocida."
-        hint_specific: "La complicidad suele ir con secretos o bromas compartidas. ¿Hay algo de eso en la escena?"
-      - position: 2
-        text: "química"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Química» es una expresión muy coloquial y algo manida, y contarlo así en el relato de una entrevista suena informal para ese tono."
-        hint_specific: "Esa palabra es una expresión muy informal y manida. ¿Encaja con el tono de contar una entrevista?"
-      - position: 3
-        text: "sintonía"
-        is_correct: true
-  - position: 5
     sentence: "Ignacio empezó a ir a la clase de escalada solo por hacer ejercicio, pero con su compañera de cuerda surgió una {{blank}} que ninguno de los dos esperaba."
     hint_general: "Se trata de una conexión inesperada que surge sin que nadie la busque."
     explanation: "Sintonía: surgió una conexión que ninguno esperaba. «Cercanía» es sentirse a gusto con alguien, y «curiosidad» es solo querer saber más, no haber conectado ya."
@@ -137,7 +124,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Curiosidad» es querer saber más de alguien, y la frase describe algo que ya sintieron los dos, no solo ganas de conocerse."
         hint_specific: "La curiosidad es querer saber más. ¿Aquí ya sintieron algo o solo querían conocerse?"
-  - position: 6
+  - position: 5
     sentence: "El primer día, Camila y su nuevo jefe encontraron tanta {{blank}} que la reunión de bienvenida se alargó una hora sin que nadie lo notara."
     hint_general: "Describe cuando una reunión fluye tan bien que el tiempo pasa sin notarse."
     explanation: "Sintonía: la reunión fluyó tan bien que se alargó sola. «Conformidad» es estar de acuerdo con algo, y «coordinación» es organizarse bien, no la conexión personal que sintieron."
@@ -157,7 +144,7 @@ exercises:
       - position: 3
         text: "sintonía"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "Norma solo salió a tirar la basura, pero con la vecina nueva surgió tanta {{blank}} que se quedaron charlando media hora en la puerta."
     hint_general: "Nombra la conexión que hace que una charla breve se alargue sola."
     explanation: "Sintonía: dos vecinas conectaron enseguida en la puerta. «Avenencia» es un acuerdo formal entre partes, y «cordialidad» es un trato amable general, no ese entendimiento instantáneo."
@@ -177,7 +164,7 @@ exercises:
       - position: 3
         text: "sintonía"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Tomás fue al evento sin ganas, pero con uno de los organizadores hubo tanta {{blank}} que terminaron armando planes para colaborar en un proyecto juntos."
     hint_general: "Habla de conectar tan bien con alguien que surgen ganas de seguir en contacto."
     explanation: "Sintonía: conectaron tan bien que surgieron planes de trabajo juntos. «Camaradería» es compañerismo de grupo, y «disposición» es estar abierto a algo, no haber conectado ya."
@@ -221,5 +208,5 @@ readings:
     after_phrase: "Hubo sintonía desde la primera pregunta."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

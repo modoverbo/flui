@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "romance"
-status: "draft"
+status: "approved"
 lemma: "romance"
 part_of_speech: "sustantivo"
-syllables: ["ro", "man", "ce"]
+syllables:
+  - "ro"
+  - "man"
+  - "ce"
 stressed_syllable: 2
 ipa_latam: "[roˈman.se]"
 ipa_es: "[roˈman.θe]"
@@ -17,13 +20,21 @@ collocations:
   - "un romance de verano"
   - "tener un romance"
   - "el romance duró poco"
+replaces:
+  - before: "Tuvieron algo durante el verano, sin ponerle etiqueta"
+    after: "Tuvieron un romance durante el verano"
+  - before: "Empezaron a salir, aunque no formalizaron nada"
+    after: "Empezó un romance entre los dos, sin formalizar nada"
 family: []
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["un rollo", "algo con"]
-  funcion: ["describir relación"]
+  comodin:
+    - "un rollo"
+    - "algo con"
+  funcion:
+    - "describir relación"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +42,6 @@ confusions:
   - confused_with: "romanticismo"
     difference: "El romanticismo es una forma de ver el amor, llena de gestos idealizados; el romance es la relación concreta entre dos personas, con o sin esos gestos."
     memory_trick: "El romanticismo es una idea; el romance son dos personas."
-replaces:
-  - before: "Tuvieron algo durante el verano, sin ponerle etiqueta"
-    after: "Tuvieron un romance durante el verano"
-  - before: "Empezaron a salir, aunque no formalizaron nada"
-    after: "Empezó un romance entre los dos, sin formalizar nada"
 exercises:
   - position: 1
     sentence: "Todos en la playa sabían del {{blank}} entre la instructora de surf y el chico del bar."
@@ -221,5 +227,5 @@ readings:
     after_phrase: "¿Me vas a contar de este romance o me entero por redes?"
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

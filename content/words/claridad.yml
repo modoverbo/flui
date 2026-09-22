@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "claridad"
-status: "draft"
+status: "approved"
 lemma: "claridad"
 part_of_speech: "sustantivo"
-syllables: ["cla", "ri", "dad"]
+syllables:
+  - "cla"
+  - "ri"
+  - "dad"
 stressed_syllable: 3
 ipa_latam: "[kla.ɾiˈðad]"
 ipa_es: "[kla.ɾiˈðad]"
@@ -21,15 +24,18 @@ replaces:
     after: "Que haya claridad en lo que digo"
   - before: "Necesito que no queden dudas"
     after: "Necesito que haya claridad"
-family: ["claro", "aclarar"]
+family:
+  - "claro"
 themes:
   - slug: "docencia"
     relevance: 3
   - slug: "matices-precision"
     relevance: 2
 tags:
-  comodin: ["que se entienda"]
-  funcion: ["explicar"]
+  comodin:
+    - "que se entienda"
+  funcion:
+    - "explicar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -40,6 +46,9 @@ confusions:
   - confused_with: "franqueza"
     difference: "«Franqueza» es decir lo que piensas tal cual, aunque sea incómodo; la claridad es que se entienda lo que dices, con buenas o malas noticias."
     memory_trick: "Con franqueza dices la verdad; con claridad logras que te entiendan."
+  - confused_with: "inequívoco"
+    difference: "Algo «inequívoco» no admite ninguna otra interpretación posible; la claridad es que se entienda sin esfuerzo, aunque en teoría admitiera más de una lectura."
+    memory_trick: "Lo inequívoco no deja dudas; lo claro se entiende sin esfuerzo."
 exercises:
   - position: 1
     sentence: "Antes de la auditoría, Renata pidió que el reporte se explicara con {{blank}}, sin tecnicismos que solo entendiera el equipo de finanzas."
@@ -102,46 +111,6 @@ exercises:
         why_not: "«Obviedad» diría que el motivo ya se sabía de antemano, y en la frase nadie lo sabía hasta que Julián lo contó."
         hint_specific: "Esa palabra describe algo que ya se sabía sin que nadie lo dijera. ¿El grupo ya sabía el motivo antes de que Julián hablara?"
   - position: 4
-    sentence: "La candidata respondió a la pregunta más difícil con una {{blank}} que sorprendió a todo el panel."
-    hint_general: "La respuesta se entendió tan bien que impresionó a quienes escuchaban."
-    explanation: "Claridad: la respuesta se entendió tan bien que sorprendió al panel. «Diafanidad» es una palabra muy literaria que casi nadie usa para una entrevista de trabajo, y «exactitud» diría que los datos eran precisos, cuando lo que sorprendió fue que se entendiera la respuesta."
-    options:
-      - position: 1
-        text: "diafanidad"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Diafanidad» es una palabra muy literaria y poco usada; suena forzada para describir una respuesta en una entrevista de trabajo."
-        hint_specific: "Esa palabra suena a texto literario, casi nadie la dice en voz alta. ¿Encaja en una entrevista de trabajo?"
-      - position: 2
-        text: "claridad"
-        is_correct: true
-      - position: 3
-        text: "exactitud"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Exactitud» diría que los datos eran precisos, y lo que sorprendió al panel fue que se entendiera la respuesta, no que fuera exacta."
-        hint_specific: "Esa palabra habla de datos correctos. ¿Al panel le sorprendió lo correcto de los datos, o lo bien que se entendió?"
-  - position: 5
-    sentence: "El gerente pidió que el correo se reescribiera con más {{blank}}, porque nadie del equipo había entendido cuál era el siguiente paso."
-    hint_general: "El mensaje necesitaba explicarse mejor para que se entendiera el siguiente paso."
-    explanation: "Claridad: nadie entendió el siguiente paso, así que hacía falta más de ella. «Clarividencia» habla de prever cosas antes de que pasen, no de entender un correo ya escrito, y «precisión» hablaría de datos exactos, cuando el problema era que nadie entendía el mensaje."
-    options:
-      - position: 1
-        text: "clarividencia"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Clarividencia» habla de prever cosas antes de que pasen, y el problema del correo no era adivinar el futuro, sino que se entendiera el paso siguiente."
-        hint_specific: "Esa palabra habla de anticipar el futuro. ¿El problema del correo era adivinar algo, o entender algo ya escrito?"
-      - position: 2
-        text: "claridad"
-        is_correct: true
-      - position: 3
-        text: "precisión"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Precisión» hablaría de que faltaban datos exactos, y el problema era que nadie entendía el mensaje, aunque los datos estuvieran completos."
-        hint_specific: "Esa palabra habla de datos exactos. ¿El problema del correo eran los datos, o que nadie entendía el paso siguiente?"
-  - position: 6
     sentence: "Durante la cena, la abuela contó su decisión de mudarse a otra ciudad con una {{blank}} que dejó a todos tranquilos."
     hint_general: "Lo que contó se entendió tan bien que todos quedaron en paz con la decisión."
     explanation: "Claridad: la familia entendió bien la decisión y quedó tranquila. «Transparencia» diría que no escondía nada, pero lo que tranquilizó fue entender las razones, y «sinceridad» dice que no mintió, cuando lo que tranquilizó fue entender el porqué."
@@ -161,7 +130,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Sinceridad» dice que no mintió, y lo que tranquilizó a la familia fue entender el porqué, no solo confiar en que decía la verdad."
         hint_specific: "Esa palabra habla de decir la verdad. ¿La familia quedó tranquila por confiar, o por entender el motivo?"
-  - position: 7
+  - position: 5
     sentence: "En el grupo del barrio, Norma explicó el cambio de horario de la reunión con tanta {{blank}} que nadie volvió a preguntar por el chat."
     hint_general: "El aviso se entendió tan bien que nadie tuvo que preguntar de nuevo."
     explanation: "Claridad: el aviso se entendió y nadie volvió a preguntar. «Franqueza» habla de decir las cosas sin filtro, y aquí no había nada incómodo que admitir, y «obviedad» diría que el horario ya se sabía, cuando el aviso fue necesario justo porque nadie lo sabía."
@@ -181,7 +150,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Obviedad» diría que el nuevo horario ya se sabía, y el mensaje de Norma fue necesario justamente porque nadie lo sabía."
         hint_specific: "Esa palabra describe algo que ya se sabía. ¿El grupo ya conocía el nuevo horario antes del aviso?"
-  - position: 8
+  - position: 6
     sentence: "El entrevistador valoró la {{blank}} con la que el candidato explicó un proyecto técnico a alguien sin ese conocimiento."
     hint_general: "Lo valorado fue que alguien sin conocimientos previos entendiera todo el proyecto."
     explanation: "Claridad: alguien sin conocimientos previos entendió todo. «Exactitud» hablaría de que los números eran correctos, no de si se entendía el proyecto, y «precisión» hablaría de datos ajustados al detalle, cuando el mérito fue que alguien sin ese conocimiento entendiera todo."
@@ -225,5 +194,5 @@ readings:
     after_phrase: "Lo expliqué con claridad."
 provenance:
   generator: "hand-written for content/words"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-b"
+  checked_on: "2026-09-22"

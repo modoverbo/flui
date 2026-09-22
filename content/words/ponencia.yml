@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "ponencia"
-status: "draft"
+status: "approved"
 lemma: "ponencia"
 part_of_speech: "sustantivo"
-syllables: ["po", "nen", "cia"]
+syllables:
+  - "po"
+  - "nen"
+  - "cia"
 stressed_syllable: 2
 ipa_latam: "[poˈnen.sja]"
 ipa_es: "[poˈnen.θja]"
@@ -17,6 +20,11 @@ collocations:
   - "dar una ponencia"
   - "presentar una ponencia"
   - "asistir a una ponencia"
+replaces:
+  - before: "La charla que dio en el evento sobre su proyecto"
+    after: "La ponencia que dio sobre su proyecto"
+  - before: "Voy a dar una charla en el congreso"
+    after: "Voy a dar una ponencia en el congreso"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +32,10 @@ themes:
   - slug: "presentaciones-oratoria"
     relevance: 2
 tags:
-  comodin: ["la charla del evento"]
-  funcion: ["exponer"]
+  comodin:
+    - "la charla del evento"
+  funcion:
+    - "exponer"
   canal: "hablado"
   formalidad: "formal"
   variedad: "panhispanico"
@@ -33,11 +43,6 @@ confusions:
   - confused_with: "ponente"
     difference: "El ponente es la persona que habla; la ponencia es la charla misma que esa persona presenta."
     memory_trick: "El ponente sube al escenario; la ponencia es lo que dice ahí arriba."
-replaces:
-  - before: "La charla que dio en el evento sobre su proyecto"
-    after: "La ponencia que dio sobre su proyecto"
-  - before: "Voy a dar una charla en el congreso"
-    after: "Voy a dar una ponencia en el congreso"
 exercises:
   - position: 1
     sentence: "La {{blank}} sobre inteligencia artificial fue la más comentada de todo el congreso."
@@ -223,5 +228,5 @@ readings:
     after_phrase: "Tu ponencia me dejó pensando toda la tarde."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

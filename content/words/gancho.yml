@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "gancho"
-status: "draft"
+status: "approved"
 lemma: "gancho"
 part_of_speech: "sustantivo"
 syllables:
@@ -91,46 +91,6 @@ exercises:
         text: "gancho"
         is_correct: true
   - position: 3
-    sentence: "En la entrevista, Renata explicó que su trabajo como editora empieza por encontrar el {{blank}} de cada nota antes de escribir el resto."
-    hint_general: "Habla de la parte que se piensa primero porque decide si alguien sigue leyendo la nota entera."
-    explanation: "Gancho: la parte que se piensa primero para que alguien siga leyendo. «Titular» es el encabezado formal de la nota, y «arranque» es solo el inicio, sin implicar que atrape a nadie."
-    options:
-      - position: 1
-        text: "titular"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "El titular es el encabezado formal de la nota; Renata habla de la frase pensada para que alguien no la suelte, algo más específico."
-        hint_specific: "El titular es el encabezado formal de arriba. ¿Renata habla de ese encabezado o de lo que atrapa al lector?"
-      - position: 2
-        text: "arranque"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "El arranque es solo el inicio de la nota; no toda nota empieza pensada para atrapar, y de eso habla justamente Renata."
-        hint_specific: "Un arranque es solo el inicio, sin más. ¿Renata habla de cualquier inicio o de uno pensado para atrapar?"
-      - position: 3
-        text: "gancho"
-        is_correct: true
-  - position: 4
-    sentence: "Julián le mostró a su hermana el primer renglón de su publicación: «¿Esto sirve de {{blank}}?», le preguntó, nervioso por si nadie seguía leyendo."
-    hint_general: "Pregunta si esa primera línea logra que alguien quiera seguir leyendo el resto."
-    explanation: "Gancho: la línea que logra que alguien siga leyendo. «Ganso» es una palabra coloquial para algo torpe o ridículo, y «anzuelo» suele implicar que alguien cae en una trampa, algo que Julián no busca."
-    options:
-      - position: 1
-        text: "ganso"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Ganso» es una palabra coloquial para algo torpe o ridículo; no encaja con la pregunta nerviosa y sincera de Julián."
-        hint_specific: "«Ganso» es una palabra coloquial para algo torpe. ¿Julián pregunta si escribió algo torpe, o si atrapa al lector?"
-      - position: 2
-        text: "anzuelo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "Un anzuelo suele implicar que alguien cae en una trampa; Julián solo quiere que su hermana siga leyendo, no engañarla."
-        hint_specific: "Un anzuelo suele implicar una trampa. ¿Julián busca engañar a quien lo lea, o solo que siga leyendo?"
-      - position: 3
-        text: "gancho"
-        is_correct: true
-  - position: 5
     sentence: "El cliente pidió cambiar el {{blank}} de la campaña: quería algo que se sintiera curioso, no solo llamativo."
     hint_general: "Se refiere a la frase inicial que despierta curiosidad y hace que alguien quiera saber más."
     explanation: "Gancho: la frase inicial que despierta curiosidad. «Adelanto» ya cuenta parte del contenido, y «extracto» es solo un fragmento tomado de otra parte, no algo pensado para atrapar."
@@ -150,7 +110,7 @@ exercises:
       - position: 3
         text: "gancho"
         is_correct: true
-  - position: 6
+  - position: 4
     sentence: "Ignacio probó diez versiones distintas de la misma foto, buscando cuál servía mejor de {{blank}} para la publicación."
     hint_general: "Busca la versión que mejor logra que alguien se detenga a mirar la publicación completa."
     explanation: "Gancho: lo que logra que alguien se detenga a mirar. «Encabezado» es solo el título formal de arriba, y «presentación» es demasiado general, no algo pensado para detener a alguien que va pasando."
@@ -170,7 +130,7 @@ exercises:
       - position: 3
         text: "gancho"
         is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Paula señaló que la publicación fallaba desde el {{blank}}: nadie se detenía a leer la segunda línea."
     hint_general: "Habla del punto exacto donde la publicación debía atrapar y no lo logró."
     explanation: "Gancho: el punto donde la publicación debía atrapar y no lo logró. «Detonante» sugiere algo que provoca una reacción fuerte, y «premisa» es solo la idea de base, no la frase que atrapa."
@@ -190,7 +150,7 @@ exercises:
       - position: 3
         text: "gancho"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Diego cerró la publicación sin revisar el {{blank}}, y al día siguiente casi nadie la había abierto."
     hint_general: "Se trata de la parte que decide, ya desde el principio, si alguien se detiene a leer."
     explanation: "Gancho: la parte que decide, desde el principio, si alguien se detiene a leer. «Provocación» busca generar polémica, no necesariamente atrapar, y «portada» es solo la imagen visible, sin implicar una frase pensada para atrapar."
@@ -234,5 +194,5 @@ readings:
     after_phrase: "Ese es tu gancho: la parte que más te emociona."
 provenance:
   generator: "flui authoring agent — theme redes-sociales"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

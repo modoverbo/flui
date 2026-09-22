@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "duradero"
-status: "draft"
+status: "approved"
 lemma: "duradero"
 part_of_speech: "adjetivo"
-syllables: ["du", "ra", "de", "ro"]
+syllables:
+  - "du"
+  - "ra"
+  - "de"
+  - "ro"
 stressed_syllable: 3
 ipa_latam: "[du.ɾaˈðe.ɾo]"
 ipa_es: "[du.ɾaˈðe.ɾo]"
@@ -17,14 +21,22 @@ collocations:
   - "un amor duradero"
   - "una relación duradera"
   - "algo duradero"
-semantic_set_id: "duracion-del-vinculo"
+replaces:
+  - before: "Es un cariño que resiste el paso del tiempo"
+    after: "Es un cariño duradero"
+  - before: "Llevan años juntos y todavía se quieren igual"
+    after: "Tienen un amor duradero"
 family: []
+semantic_set_id: "duracion-del-vinculo"
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["que dura", "para toda la vida"]
-  funcion: ["describir duración"]
+  comodin:
+    - "que dura"
+    - "para toda la vida"
+  funcion:
+    - "describir duración"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -32,11 +44,6 @@ confusions:
   - confused_with: "constante"
     difference: "Constante describe algo regular y sin pausas, como llamarse todos los días; duradero describe que una relación resiste el paso del tiempo, aunque tenga pausas."
     memory_trick: "Lo constante se repite seguido; lo duradero simplemente no se acaba."
-replaces:
-  - before: "Es un cariño que resiste el paso del tiempo"
-    after: "Es un cariño duradero"
-  - before: "Llevan años juntos y todavía se quieren igual"
-    after: "Tienen un amor duradero"
 exercises:
   - position: 1
     sentence: "Sus abuelos siempre dicen que el secreto de un cariño {{blank}} es reírse juntos cada día."
@@ -222,5 +229,5 @@ readings:
     after_phrase: "Lo duradero no depende de la pasión del principio."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

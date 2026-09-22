@@ -1,10 +1,15 @@
 schema_version: 1
 sort_order: 9106
 slug: "arrepentido"
-status: "draft"
+status: "approved"
 lemma: "arrepentido"
 part_of_speech: "adjetivo"
-syllables: ["a", "rre", "pen", "ti", "do"]
+syllables:
+  - "a"
+  - "rre"
+  - "pen"
+  - "ti"
+  - "do"
 stressed_syllable: 4
 ipa_latam: "[a.re.penˈti.do]"
 ipa_es: "[a.re.penˈti.do]"
@@ -25,13 +30,16 @@ replaces:
     after: "Puso cara de arrepentido"
   - before: "Dijo que lo sentía mucho y se le notó"
     after: "Dijo que estaba arrepentido y se le notó"
-family: ["arrepentimiento"]
+family:
+  - "arrepentimiento"
 themes:
   - slug: "pedir-disculparse"
     relevance: 3
 tags:
-  comodin: ["sentirse mal por algo"]
-  funcion: ["disculparse"]
+  comodin:
+    - "sentirse mal por algo"
+  funcion:
+    - "disculparse"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -81,26 +89,6 @@ exercises:
         why_not: "«Triste» es un sentimiento general que no tiene que ver con haber hecho algo mal, y aquí la amiga la perdona justamente porque nota que lamenta su propio error."
         hint_specific: "«Triste» no supone haber hecho algo mal. ¿Aquí hay un error de por medio?"
   - position: 3
-    sentence: "En la reunión, Ignacio admitió el error frente a todos, con un tono tan {{blank}} que nadie insistió más en el tema."
-    hint_general: "Busca la palabra para el tono de quien de verdad lamenta lo que hizo."
-    explanation: "Arrepentido: el tono de quien de verdad lamenta lo que hizo. «Contrito» significa casi lo mismo, pero suena muy literario para una oficina, y «culpable» solo diría quién tuvo la culpa, sin describir el tono."
-    options:
-      - position: 1
-        text: "contrito"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Contrito» significa casi lo mismo, pero es una palabra muy literaria y solemne, y en una reunión de oficina suena forzada."
-        hint_specific: "«Contrito» es una palabra muy literaria. ¿Encaja ese tono tan solemne en una reunión de oficina?"
-      - position: 2
-        text: "culpable"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Culpable» dice que alguien tiene la culpa, no describe el tono con el que lo admitió, y aquí lo que se nota es cómo lo dijo, no solo el hecho de tener la culpa."
-        hint_specific: "«Culpable» solo dice quién tiene la culpa. ¿La frase habla del tono con el que lo dijo, o solo de quién tuvo la culpa?"
-      - position: 3
-        text: "arrepentido"
-        is_correct: true
-  - position: 4
     sentence: "Los mellizos se quedaron tan {{blank}} después de romper la ventana del vecino que juntaron sus ahorros para pagarla."
     hint_general: "Busca la palabra para quienes de verdad sienten haber hecho algo mal."
     explanation: "Arrepentidos: de verdad sienten haber hecho algo mal. «Culpables» solo diría quién tuvo la culpa, y «apenados» sería un malestar general, sin el gesto de pagar la ventana."
@@ -120,7 +108,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Apenado» es un malestar general, y la frase cuenta algo más concreto: que juntaron el dinero para pagar la ventana, mostrando que de verdad lo sienten."
         hint_specific: "«Apenado» es un malestar general. ¿Aquí hacen algo concreto para reparar el daño?"
-  - position: 5
+  - position: 4
     sentence: "Las hermanas quedaron tan {{blank}} por haber discutido frente a los invitados que se disculparon con todos al final de la cena."
     hint_general: "Busca la palabra para quienes de verdad lamentan lo que hicieron."
     explanation: "Arrepentidas: de verdad lamentan lo que hicieron. «Apenadas» sería un malestar general, y «avergonzadas» sería sentir vergüenza por cómo las ven, no por el daño causado."
@@ -140,27 +128,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Avergonzado» es sentir vergüenza por cómo te ven, y lo que se cuenta aquí es que lamentan lo que hicieron, no solo que quedaron mal frente a los demás."
         hint_specific: "«Avergonzado» es sobre cómo te ven los demás. ¿Aquí importa más verse mal, o lamentar lo que pasó?"
-  - position: 6
-    sentence: "El correo de disculpas de Martín sonaba tan {{blank}} que el cliente decidió darle otra oportunidad."
-    hint_general: "Busca la palabra para el tono de un mensaje que de verdad lamenta algo."
-    explanation: "Arrepentido: el tono de un mensaje que de verdad lamenta algo. «Repentino» hablaría de algo súbito, y «contrito» significa casi lo mismo, pero suena demasiado literario para un correo normal."
-    options:
-      - position: 1
-        text: "repentino"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Repentino» describe algo que pasa de golpe, y un correo no puede sonar «de golpe»: la frase habla del tono del mensaje, no de su rapidez."
-        hint_specific: "«Repentino» habla de algo súbito. ¿Un correo puede sonar «de golpe»?"
-      - position: 2
-        text: "arrepentido"
-        is_correct: true
-      - position: 3
-        text: "contrito"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Contrito» significa casi lo mismo, pero es una palabra muy literaria, y un correo de disculpas normal no necesita ese tono tan solemne."
-        hint_specific: "«Contrito» es muy literario. ¿Un correo de disculpas normal necesita ese tono tan solemne?"
-  - position: 7
+  - position: 5
     sentence: "Después de gritarle a su hijo sin motivo, Marcela se sintió tan {{blank}} que le pidió perdón esa misma noche."
     hint_general: "Busca la palabra para quien de verdad lamenta lo que hizo y actúa para repararlo."
     explanation: "Arrepentida: de verdad lamenta lo que hizo y actúa para repararlo. «Triste» no supone un error propio, y «culpable» solo diría quién tuvo la culpa, sin contar lo que hizo después."
@@ -180,7 +148,7 @@ exercises:
       - position: 3
         text: "arrepentida"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Los socios quedaron tan {{blank}} por la decisión apresurada que revirtieron el contrato al día siguiente."
     hint_general: "Busca la palabra para quienes de verdad lamentan una decisión y actúan para cambiarla."
     explanation: "Arrepentidos: de verdad lamentan una decisión y actúan para cambiarla. «Consternados» sería una palabra demasiado fuerte y dramática, y «avergonzados» sería sentir vergüenza por cómo los ven, no por la decisión misma."
@@ -224,5 +192,5 @@ readings:
     after_phrase: "Estoy arrepentido y quiero corregirlo."
 provenance:
   generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

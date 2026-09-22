@@ -1,10 +1,12 @@
 schema_version: 1
 sort_order: 9102
 slug: "ceder"
-status: "draft"
+status: "approved"
 lemma: "ceder"
 part_of_speech: "verbo"
-syllables: ["ce", "der"]
+syllables:
+  - "ce"
+  - "der"
 stressed_syllable: 2
 ipa_latam: "[seˈder]"
 ipa_es: "[θeˈder]"
@@ -25,13 +27,15 @@ replaces:
     after: "Preferí ceder para no seguir peleando"
   - before: "Está bien, tú ganas, no vale la pena seguir discutiendo"
     after: "Está bien, cedo, no vale la pena seguir discutiendo"
-family: ["cesión"]
+family: []
 themes:
   - slug: "pedir-disculparse"
     relevance: 3
 tags:
-  comodin: ["dar el brazo a torcer"]
-  funcion: ["negociar"]
+  comodin:
+    - "dar el brazo a torcer"
+  funcion:
+    - "negociar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -81,26 +85,6 @@ exercises:
         why_not: "«Someterse» implica perder el control frente a alguien con más poder, y Marina mantenía el control de la negociación en todo momento."
         hint_specific: "«Someterse» habla de perder el control frente a otro. ¿Marina pierde el control de la negociación?"
   - position: 3
-    sentence: "Su madre esperaba que, por una vez, Tomás {{blank}} en la discusión con su hermana sobre el cuarto."
-    hint_general: "Busca el verbo para que deje de insistir en lo suyo y acepte compartir."
-    explanation: "Cediera: que dejara de insistir en lo suyo y aceptara compartir. «Claudicara» sonaría demasiado solemne para una discusión de hermanos, y «transigiera» sería tolerar sin cambiar realmente de postura."
-    options:
-      - position: 1
-        text: "claudicara"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Claudicar» es un verbo muy literario que suena a rendirse en una causa importante, y aquí solo se trata de compartir el cuarto con su hermana."
-        hint_specific: "«Claudicar» suena grave, casi solemne. ¿Discutir por un cuarto pide una palabra tan seria?"
-      - position: 2
-        text: "transigiera"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Transigir» es tolerar algo sin estar de acuerdo, sin cambiar tu postura, y la madre quiere que Tomás cambie de postura, no solo que aguante."
-        hint_specific: "«Transigir» es aguantar sin cambiar de opinión. ¿La madre quiere que Tomás aguante o que cambie de postura?"
-      - position: 3
-        text: "cediera"
-        is_correct: true
-  - position: 4
     sentence: "Nadie quería moverse de su destino preferido, y después de media hora alguien tuvo que {{blank}}."
     hint_general: "Busca el verbo para dejar de insistir en tu idea y aceptar la del otro."
     explanation: "Ceder: dejar de insistir en tu idea y aceptar la del otro. «Acatar» sería obedecer una norma, y «resignarse» sería aceptar algo sin que nadie más esté de por medio."
@@ -120,7 +104,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Resignarse» es aceptar algo sin que nadie te lo pida, casi por cansancio, y aquí hace falta aceptar la idea de alguien más para seguir eligiendo juntos."
         hint_specific: "«Resignarse» no necesita a otra persona enfrente. ¿Aquí hace falta aceptar la idea de alguien más?"
-  - position: 5
+  - position: 4
     sentence: "«Está bien, {{blank}}: vemos la película que tú quieres», le dijo Paula a su compañero de cuarto."
     hint_general: "Busca el verbo para dejar de insistir en lo tuyo y aceptar lo que pide el otro."
     explanation: "Cedo: dejo de insistir y acepto lo que pide el otro. «Accedo» respondería a un pedido puntual, y «me someto» es una palabra demasiado fuerte para elegir una película."
@@ -140,7 +124,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Someterse» suena a perder todo el control frente al otro, y elegir una película no pesa tanto como para hablar de sometimiento."
         hint_specific: "«Someterse» es una palabra fuerte, de perder el control. ¿Elegir una película pesa tanto?"
-  - position: 6
+  - position: 5
     sentence: "Poco a poco, {{blank}} en algunos puntos, el equipo logró cerrar el acuerdo antes del mediodía."
     hint_general: "Busca el verbo para dejar de insistir en algunos puntos y avanzar hacia un acuerdo."
     explanation: "Cediendo: dejando de insistir en algunos puntos para avanzar. «Concediendo» sonaría a otorgar desde el poder, y «capitulando» es una palabra muy solemne, demasiado dramática para una reunión."
@@ -160,7 +144,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Capitular» es una palabra muy solemne, de derrota total, y aquí solo se trata de una reunión de trabajo que termina en acuerdo."
         hint_specific: "«Capitular» suena a una rendición total y dramática. ¿Una reunión de trabajo necesita una palabra tan fuerte?"
-  - position: 7
+  - position: 6
     sentence: "Tras varias llamadas, los suegros de Renata {{blank}} y aceptaron pasar la Navidad en la otra casa."
     hint_general: "Busca el verbo para dejar de insistir en su idea y aceptar la del otro."
     explanation: "Cedieron: dejaron de insistir en su idea y aceptaron la del otro. «Concedieron» sonaría a otorgar un favor desde una posición fuerte, y «acataron» sería obedecer una orden que nadie les dio."
@@ -180,7 +164,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Acatar» es obedecer una regla o una decisión ajena, y aquí nadie les ordenó nada: decidieron dejar de insistir por su cuenta."
         hint_specific: "«Acatar» va de obedecer una orden. ¿Alguien les dio una orden a los suegros?"
-  - position: 8
+  - position: 7
     sentence: "En veinte años de sociedad, Ignacio nunca {{blank}} en lo esencial, aunque sí en los detalles pequeños."
     hint_general: "Busca el verbo para dejar de insistir en algo, aunque sea solo en los detalles pequeños."
     explanation: "Ha cedido: ha dejado de insistir, aunque solo en detalles pequeños. «Ha claudicado» sonaría a abandonar una causa importante, y «se ha resignado» no necesita a nadie enfrente pidiendo algo."
@@ -224,5 +208,5 @@ readings:
     after_phrase: "Cedo en el plazo, pero pido revisiones mensuales."
 provenance:
   generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

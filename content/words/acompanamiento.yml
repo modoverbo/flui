@@ -1,9 +1,15 @@
 schema_version: 1
 slug: "acompanamiento"
-status: "draft"
+status: "approved"
 lemma: "acompañamiento"
 part_of_speech: "sustantivo"
-syllables: ["a", "com", "pa", "ña", "mien", "to"]
+syllables:
+  - "a"
+  - "com"
+  - "pa"
+  - "ña"
+  - "mien"
+  - "to"
 stressed_syllable: 5
 ipa_latam: "[a.kom.pa.ɲaˈmjen.to]"
 ipa_es: "[a.kom.pa.ɲaˈmjen.to]"
@@ -21,15 +27,19 @@ replaces:
     after: "Le di acompañamiento en todo el proceso"
   - before: "Necesito a alguien que me ayude paso a paso mientras aprendo esto"
     after: "Necesito acompañamiento mientras aprendo esto"
-family: ["acompañar", "acompañante"]
+family:
+  - "acompañar"
+  - "acompañante"
 themes:
   - slug: "docencia"
     relevance: 3
   - slug: "liderazgo-feedback"
     relevance: 2
 tags:
-  comodin: ["ayuda"]
-  funcion: ["guiar"]
+  comodin:
+    - "ayuda"
+  funcion:
+    - "guiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -224,5 +234,5 @@ readings:
     after_phrase: "Tuve acompañamiento para prepararme para esto."
 provenance:
   generator: "hand-authored for content/words (docencia theme)"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

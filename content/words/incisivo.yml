@@ -1,13 +1,14 @@
-# Word 4 of batch W4 humor. Substitution note: originally assigned "mordaz"
-# (zipf 2.95, dp 0.40 — fails both bars). Replaced with "incisivo" (sharp,
-# cutting wit in a comment or question), which passes: zipf 3.29, dp 0.30.
 schema_version: 1
 sort_order: 9304
 slug: "incisivo"
-status: "draft"
+status: "approved"
 lemma: "incisivo"
 part_of_speech: "adjetivo"
-syllables: ["in", "ci", "si", "vo"]
+syllables:
+  - "in"
+  - "ci"
+  - "si"
+  - "vo"
 stressed_syllable: 3
 ipa_latam: "[in.siˈsi.βo]"
 ipa_es: "[in.θiˈsi.βo]"
@@ -25,13 +26,16 @@ replaces:
     after: "Hizo un comentario incisivo"
   - before: "Su pregunta fue dura pero acertada"
     after: "Su pregunta fue incisiva"
-family: ["incisión"]
+family:
+  - "incisión"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["directo"]
-  funcion: ["criticar"]
+  comodin:
+    - "directo"
+  funcion:
+    - "criticar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -227,5 +231,5 @@ readings:
     after_phrase: "Preparé un discurso incisivo sobre él."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

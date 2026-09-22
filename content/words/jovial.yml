@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "jovial"
-status: "draft"
+status: "approved"
 lemma: "jovial"
 part_of_speech: "adjetivo"
-syllables: ["jo", "vial"]
+syllables:
+  - "jo"
+  - "vial"
 stressed_syllable: 2
 ipa_latam: "[xoˈβjal]"
 ipa_es: "[xoˈβjal]"
@@ -22,13 +24,16 @@ replaces:
     after: "Siempre tiene un humor jovial y te hace reír"
   - before: "Es una persona muy alegre y ocurrente"
     after: "Es una persona muy jovial"
-family: ["jovialidad"]
+family:
+  - "jovialidad"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["alegre"]
-  funcion: ["elogiar"]
+  comodin:
+    - "alegre"
+  funcion:
+    - "elogiar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -223,5 +228,5 @@ readings:
     after_phrase: "Gracias por venir tan jovial, lo necesitábamos."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

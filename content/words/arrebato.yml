@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "arrebato"
-status: "draft"
+status: "approved"
 lemma: "arrebato"
 part_of_speech: "sustantivo"
-syllables: ["a", "rre", "ba", "to"]
+syllables:
+  - "a"
+  - "rre"
+  - "ba"
+  - "to"
 stressed_syllable: 3
 ipa_latam: "[a.reˈβa.to]"
 ipa_es: "[a.reˈβa.to]"
@@ -17,13 +21,21 @@ collocations:
   - "un arrebato de"
   - "en un arrebato"
   - "tener un arrebato"
+replaces:
+  - before: "Le dio por escribirle sin pensarlo"
+    after: "Tuvo un arrebato y le escribió"
+  - before: "De repente hizo algo sin planearlo, movido por la emoción"
+    after: "Tuvo un arrebato y actuó sin planearlo"
 family: []
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["me dio por", "de repente hice"]
-  funcion: ["describir impulso"]
+  comodin:
+    - "me dio por"
+    - "de repente hice"
+  funcion:
+    - "describir impulso"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +43,9 @@ confusions:
   - confused_with: "arrebol"
     difference: "El arrebol es el color rojizo que toma el cielo al amanecer o atardecer; el arrebato es un impulso emocional repentino."
     memory_trick: "El arrebol tiñe el cielo; el arrebato enciende el pecho."
-replaces:
-  - before: "Le dio por escribirle sin pensarlo"
-    after: "Tuvo un arrebato y le escribió"
-  - before: "De repente hizo algo sin planearlo, movido por la emoción"
-    after: "Tuvo un arrebato y actuó sin planearlo"
+  - confused_with: "arranque"
+    difference: "Un «arranque» es simplemente el comienzo de algo, sin implicar pérdida de control; el arrebato es un impulso repentino que te hace actuar sin pensar."
+    memory_trick: "El arranque solo empieza; el arrebato además te arrastra."
 exercises:
   - position: 1
     sentence: "En un {{blank}}, Marina le escribió un mensaje larguísimo a las tres de la mañana."
@@ -221,5 +231,5 @@ readings:
     after_phrase: "Perdón por el arrebato."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

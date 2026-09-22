@@ -1,10 +1,14 @@
 schema_version: 1
 sort_order: 9110
 slug: "pertenencia"
-status: "draft"
+status: "approved"
 lemma: "pertenencia"
 part_of_speech: "sustantivo"
-syllables: ["per", "te", "nen", "cia"]
+syllables:
+  - "per"
+  - "te"
+  - "nen"
+  - "cia"
 stressed_syllable: 3
 ipa_latam: "[per.teˈnen.sja]"
 ipa_es: "[per.teˈnen.θja]"
@@ -25,13 +29,16 @@ replaces:
     after: "Siente pertenencia con la familia, no solo de visita"
   - before: "Le costó, pero ya siente que aquí encaja"
     after: "Le costó, pero ya siente pertenencia aquí"
-family: ["pertenecer"]
+family:
+  - "pertenecer"
 themes:
   - slug: "familia-crianza"
     relevance: 3
 tags:
-  comodin: ["sentir que encajas"]
-  funcion: ["integrar"]
+  comodin:
+    - "sentir que encajas"
+  funcion:
+    - "integrar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -61,26 +68,6 @@ exercises:
         why_not: "«Costumbre» es acostumbrarte a algo por repetición, y la frase habla de algo más profundo: sentir que ese lugar ya es suyo, no solo estar acostumbrados."
         hint_specific: "«Costumbre» es solo acostumbrarse. ¿La frase habla de acostumbrarse, o de sentir que el lugar es suyo?"
   - position: 2
-    sentence: "Aunque sus padres se separaron, en casa de sus abuelos Camila siempre sintió {{blank}}."
-    hint_general: "Busca la palabra para sentir que un lugar es tuyo de verdad, más allá de lo cómodo que sea."
-    explanation: "Pertenencia: sentir que un lugar es tuyo de verdad. «Comodidad» solo hablaría de sentirse a gusto físicamente, y «arraigo» significa algo parecido, pero es una palabra muy formal, de trámites legales."
-    options:
-      - position: 1
-        text: "comodidad"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Comodidad» habla de sentirse a gusto físicamente, y la frase cuenta algo más hondo: sentir que ese es su lugar en el mundo, no solo estar cómoda."
-        hint_specific: "«Comodidad» es sentirse a gusto físicamente. ¿La frase habla de algo más profundo que eso?"
-      - position: 2
-        text: "pertenencia"
-        is_correct: true
-      - position: 3
-        text: "arraigo"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Arraigo» significa algo parecido, pero es una palabra muy formal, que se usa en trámites legales, y aquí se cuenta el sentimiento de una niña en casa de sus abuelos."
-        hint_specific: "«Arraigo» se usa mucho en trámites legales. ¿Esta frase necesita ese tono tan formal?"
-  - position: 3
     sentence: "Después de un año difícil, el equipo por fin empezó a sentir {{blank}} con el nuevo proyecto."
     hint_general: "Busca la palabra para sentir que algo ya es parte tuya, que tienes tu lugar ahí."
     explanation: "Pertenencia: sentir que algo ya es parte tuya, que tienes tu lugar ahí. «Identidad» hablaría de quiénes son, y «adscripción» sería un trámite administrativo, no un sentimiento."
@@ -100,7 +87,7 @@ exercises:
       - position: 3
         text: "pertenencia"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Al volver al pueblo después de veinte años, don Ernesto sintió una {{blank}} que ni él mismo esperaba."
     hint_general: "Busca la palabra para sentir, en el presente, que un lugar sigue siendo tuyo."
     explanation: "Pertenencia: sentir, en el presente, que un lugar sigue siendo tuyo. «Nostalgia» sería extrañar el pasado, y «permanencia» se mide en tiempo, no en sentimiento."
@@ -120,7 +107,7 @@ exercises:
       - position: 3
         text: "pertenencia"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Le tomó meses, pero finalmente Valeria sintió {{blank}} en el equipo de vóley del barrio."
     hint_general: "Busca la palabra para sentir que un grupo ya es parte de tu vida."
     explanation: "Pertenencia: sentir que un grupo ya es parte de tu vida. «Costumbre» sería solo acostumbrarse, y «comodidad» hablaría de sentirse a gusto, sin ese sentimiento más profundo."
@@ -140,7 +127,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Comodidad» habla de sentirse a gusto, y la frase cuenta algo más hondo: que Valeria siente que ese equipo es parte de su vida, no solo que está a gusto ahí."
         hint_specific: "«Comodidad» es sentirse a gusto. ¿La frase habla de algo más profundo que eso?"
-  - position: 6
+  - position: 5
     sentence: "En la familia ensamblada, a los niños les tomó tiempo sentir {{blank}} con sus nuevos hermanastros."
     hint_general: "Busca la palabra para sentir que alguien ya es parte de tu familia."
     explanation: "Pertenencia: sentir que alguien ya es parte de tu familia. «Identidad» hablaría de quiénes son, y «arraigo» significa algo parecido, pero es una palabra muy formal."
@@ -160,7 +147,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Arraigo» significa algo parecido, pero es una palabra muy formal, y aquí se cuenta el sentimiento de unos niños con sus nuevos hermanastros."
         hint_specific: "«Arraigo» es una palabra muy formal. ¿Esta frase necesita ese tono tan formal?"
-  - position: 7
+  - position: 6
     sentence: "Cuando le preguntaron por qué seguía en la empresa después de tantos años, Rodrigo habló de {{blank}}, no de dinero."
     hint_general: "Busca la palabra para el sentimiento de que un lugar es tuyo, más allá del sueldo."
     explanation: "Pertenencia: el sentimiento de que un lugar es tuyo, más allá del sueldo. «Permanencia» se mide en tiempo, y «adscripción» sería un trámite administrativo, no un sentimiento."
@@ -180,7 +167,7 @@ exercises:
       - position: 3
         text: "pertenencia"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Tras la adopción, lo que más le costó a Sofía no fue el papeleo, sino construir {{blank}} con su nueva familia."
     hint_general: "Busca la palabra para el sentimiento de que una familia nueva ya es la tuya."
     explanation: "Pertenencia: el sentimiento de que una familia nueva ya es la tuya. «Nostalgia» sería extrañar el pasado, y «costumbre» sería solo acostumbrarse, sin ese sentimiento más profundo."
@@ -224,5 +211,5 @@ readings:
     after_phrase: "Siento pertenencia con la empresa, no solo un sueldo."
 provenance:
   generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

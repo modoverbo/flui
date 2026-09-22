@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "embajador"
-status: "draft"
+status: "approved"
 lemma: "embajador"
 part_of_speech: "sustantivo"
-syllables: ["em", "ba", "ja", "dor"]
+syllables:
+  - "em"
+  - "ba"
+  - "ja"
+  - "dor"
 stressed_syllable: 4
 ipa_latam: "[em.ba.xaˈðoɾ]"
 ipa_es: "[em.ba.xaˈðoɾ]"
@@ -17,6 +21,11 @@ collocations:
   - "embajador de la marca"
   - "hacer de embajador"
   - "embajador natural"
+replaces:
+  - before: "Es quien más recomienda la marca sin que se lo pidan"
+    after: "Es el embajador de la marca"
+  - before: "Habla bien de la empresa dondequiera que va"
+    after: "Es un embajador natural de la empresa"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +33,10 @@ themes:
   - slug: "ventas"
     relevance: 1
 tags:
-  comodin: ["el que la recomienda siempre"]
-  funcion: ["representar"]
+  comodin:
+    - "el que la recomienda siempre"
+  funcion:
+    - "representar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +44,6 @@ confusions:
   - confused_with: "embajada"
     difference: "La embajada es la institución o el edificio; el embajador es la persona que representa algo o a alguien."
     memory_trick: "La embajada es el lugar; el embajador es la persona."
-replaces:
-  - before: "Es quien más recomienda la marca sin que se lo pidan"
-    after: "Es el embajador de la marca"
-  - before: "Habla bien de la empresa dondequiera que va"
-    after: "Es un embajador natural de la empresa"
 exercises:
   - position: 1
     sentence: "La marca eligió a tres clientes fieles como {{blank}} para la campaña de este año."
@@ -223,5 +229,5 @@ readings:
     after_phrase: "Es el embajador de este lugar."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

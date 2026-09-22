@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "chispa"
-status: "draft"
+status: "approved"
 lemma: "chispa"
 part_of_speech: "sustantivo"
-syllables: ["chis", "pa"]
+syllables:
+  - "chis"
+  - "pa"
 stressed_syllable: 1
 ipa_latam: "[ˈtʃis.pa]"
 ipa_es: "[ˈtʃis.pa]"
@@ -24,13 +26,18 @@ replaces:
     after: "Le falta chispa"
   - before: "Fue una ocurrencia graciosa"
     after: "Fue una ocurrencia con chispa"
-family: ["chispear", "chispeante"]
+family:
+  - "chispear"
+  - "chispeante"
 themes:
   - slug: "redes-sociales"
     relevance: 3
 tags:
-  comodin: ["que enganche", "que tenga gracia"]
-  funcion: ["elogiar"]
+  comodin:
+    - "que enganche"
+    - "que tenga gracia"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -225,5 +232,5 @@ readings:
     after_phrase: "Tu abuelo siempre tiene esa chispa."
 provenance:
   generator: "hand-authored for redes-sociales theme batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

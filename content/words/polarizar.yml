@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "polarizar"
-status: "draft"
+status: "approved"
 lemma: "polarizar"
 part_of_speech: "verbo"
-syllables: ["po", "la", "ri", "zar"]
+syllables:
+  - "po"
+  - "la"
+  - "ri"
+  - "zar"
 stressed_syllable: 4
 ipa_latam: "[po.la.ɾiˈsar]"
 ipa_es: "[po.la.ɾiˈθar]"
@@ -21,13 +25,17 @@ replaces:
     after: "Esa publicación polarizó a la gente"
   - before: "Cada vez que publico algo así, se arma una discusión enorme"
     after: "Cada vez que publico algo así, polarizo a mis seguidores"
-family: ["polarización", "polarizado"]
+family:
+  - "polarización"
+  - "polarizado"
 themes:
   - slug: "redes-sociales"
     relevance: 3
 tags:
-  comodin: ["dividir mucho"]
-  funcion: ["describir un efecto"]
+  comodin:
+    - "dividir mucho"
+  funcion:
+    - "describir un efecto"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -222,5 +230,5 @@ readings:
     after_phrase: "Un video que logró polarizar a mi comunidad."
 provenance:
   generator: "claude-sonnet-5"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

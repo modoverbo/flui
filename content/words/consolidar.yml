@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "consolidar"
-status: "draft"
+status: "approved"
 lemma: "consolidar"
 part_of_speech: "verbo"
-syllables: ["con", "so", "li", "dar"]
+syllables:
+  - "con"
+  - "so"
+  - "li"
+  - "dar"
 stressed_syllable: 4
 ipa_latam: "[kon.so.liˈðar]"
 ipa_es: "[kon.so.liˈðar]"
@@ -21,15 +25,19 @@ replaces:
     after: "Vamos a consolidar esto"
   - before: "Hacer que el equipo funcione de verdad"
     after: "Consolidar al equipo"
-family: ["consolidación", "consolidado"]
+family:
+  - "consolidación"
+  - "consolidado"
 themes:
   - slug: "docencia"
     relevance: 2
   - slug: "liderazgo-feedback"
     relevance: 2
 tags:
-  comodin: ["que quede fijo"]
-  funcion: ["afirmar"]
+  comodin:
+    - "que quede fijo"
+  funcion:
+    - "afirmar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -225,5 +233,5 @@ readings:
     after_phrase: "Así se consolida la confianza del equipo."
 provenance:
   generator: "hand-written for content/words, theme docencia"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

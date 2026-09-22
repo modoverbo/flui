@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "autentico"
-status: "draft"
+status: "approved"
 lemma: "auténtico"
 part_of_speech: "adjetivo"
-syllables: ["au", "tén", "ti", "co"]
+syllables:
+  - "au"
+  - "tén"
+  - "ti"
+  - "co"
 stressed_syllable: 2
 ipa_latam: "[au.ˈten.ti.ko]"
 ipa_es: "[au.ˈten.ti.ko]"
@@ -24,13 +28,19 @@ replaces:
     after: "Es auténtico"
   - before: "No copia a nadie"
     after: "Es auténtico"
-family: ["autenticidad", "auténticamente"]
+family:
+  - "autenticidad"
+  - "auténticamente"
 themes:
   - slug: "redes-sociales"
     relevance: 3
 tags:
-  comodin: ["que se vea real", "que no parezca falso"]
-  funcion: ["describir", "elogiar"]
+  comodin:
+    - "que se vea real"
+    - "que no parezca falso"
+  funcion:
+    - "describir"
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -102,26 +112,6 @@ exercises:
         text: "auténtico"
         is_correct: true
   - position: 4
-    sentence: "El anuncio mostraba a la actriz usando el producto en su cocina de verdad, sin maquillaje de estudio ni guion visible, y los comentarios decían que se veía {{blank}}."
-    hint_general: "Busca la palabra para algo que se ve tal cual es, sin maquillaje ni guion detrás."
-    explanation: "Auténtico: se ve tal cual es, sin maquillaje ni guion. «Creíble» solo dice que convence, aunque esté actuado, y «natural» describe la forma de comportarse, no lo que hay detrás de cámara."
-    options:
-      - position: 1
-        text: "creíble"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Creíble» dice que algo se puede creer, y un anuncio bien actuado también puede ser creíble sin ser real: aquí lo que se nota es que no hay guion ni maquillaje de estudio."
-        hint_specific: "«Creíble» solo dice que algo convence, aunque esté actuado. ¿El comentario habla de que convence o de que no hay guion ni maquillaje?"
-      - position: 2
-        text: "natural"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Natural» describe una forma de comportarse sin rigidez, y aquí el comentario no habla de su postura, sino de lo que hay detrás de cámara."
-        hint_specific: "«Natural» describe la forma de comportarse. ¿El comentario habla de su postura o de lo que hay detrás de cámara?"
-      - position: 3
-        text: "auténtico"
-        is_correct: true
-  - position: 5
     sentence: "En vez de escribir la típica carta de agradecimiento, el nieto grabó un video contando, con sus propias palabras y sin ensayar, lo que su abuela significaba para él: quedó {{blank}}."
     hint_general: "Piensa en un mensaje que suena propio de quien lo dice, sin ensayo previo."
     explanation: "Auténtico: suena propio del nieto, sin ensayo. «Honesto» dice que no oculta nada, y «real» solo dice que algo existe, sin hablar del tono del mensaje."
@@ -141,7 +131,7 @@ exercises:
       - position: 3
         text: "auténtico"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "En la reunión de cierre, en vez de repetir las frases de siempre sobre el trabajo en equipo, Pedro contó con sus propias palabras lo que había aprendido, incluidos sus errores: su discurso sonó {{blank}}."
     hint_general: "Se trata de un discurso con palabras propias, más allá de si se preparó antes o no."
     explanation: "Auténtico: usó sus propias palabras al hablar. «Directo» describe a quien no da rodeos, y «improvisado» dice que algo no se preparó, aunque el discurso de Pedro pudo prepararse antes."
@@ -161,7 +151,7 @@ exercises:
       - position: 3
         text: "auténtico"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "En su segunda entrevista para el pódcast, la invitada dejó de responder con las frases que usa siempre en redes y habló de sus dudas reales sobre el proyecto: se notó mucho más {{blank}}."
     hint_general: "Busca la palabra para alguien que deja las frases hechas y habla con sus propias dudas."
     explanation: "Auténtico: dejó las frases hechas y habló con sus dudas propias. «Abierto» habla de compartir más cosas, y «puro» se usa para algo sin mezcla, no para cómo suena una persona."
@@ -181,7 +171,7 @@ exercises:
       - position: 3
         text: "auténtico"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "El documental sobre el barrio no usaba música dramática ni entrevistas preparadas: dejaba hablar a los vecinos con sus propias palabras, y por eso se sintió {{blank}}."
     hint_general: "Piensa en algo que se muestra sin arreglos ni preparación, tal como es de verdad."
     explanation: "Auténtico: dejó hablar a los vecinos con sus propias palabras. «Fiel» se usa cuando algo respeta un original, y «veraz» se usa para datos ciertos, no para el tono del documental."
@@ -225,5 +215,5 @@ readings:
     after_phrase: "Es la carta más auténtica que me han escrito."
 provenance:
   generator: "hand-authored for redes-sociales theme batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

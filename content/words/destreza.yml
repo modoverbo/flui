@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "destreza"
-status: "draft"
+status: "approved"
 lemma: "destreza"
 part_of_speech: "sustantivo"
-syllables: ["des", "tre", "za"]
+syllables:
+  - "des"
+  - "tre"
+  - "za"
 stressed_syllable: 2
 ipa_latam: "[desˈtre.sa]"
 ipa_es: "[desˈtre.θa]"
@@ -21,15 +24,19 @@ replaces:
     after: "Tiene destreza para hacerlo"
   - before: "Tiene buena mano para esto"
     after: "Tiene destreza para esto"
-family: ["diestro", "adiestrar"]
+family:
+  - "diestro"
+  - "adiestrar"
 themes:
   - slug: "docencia"
     relevance: 2
   - slug: "liderazgo-feedback"
     relevance: 1
 tags:
-  comodin: ["se le da bien"]
-  funcion: ["elogiar"]
+  comodin:
+    - "se le da bien"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -62,26 +69,6 @@ exercises:
         why_not: "«Aptitud» sería una capacidad que ya traía sin practicar; la frase describe justo lo contrario, algo ganado a fuerza de armar muebles antes."
         hint_specific: "La aptitud no necesita práctica previa. ¿La frase dice que Ramiro ya había hecho esto antes?"
   - position: 2
-    sentence: "En la entrevista expliqué que mi mayor {{blank}} es resolver conflictos entre compañeros, algo que fui puliendo con años de práctica."
-    hint_general: "Es algo que se fue puliendo con el tiempo, no un don de siempre."
-    explanation: "Destreza: se fue puliendo con años de práctica. «Maña» es coloquial y suena informal para una entrevista de trabajo, y «talento» sería un don de siempre, y la frase dice justo que se fue puliendo con la práctica."
-    options:
-      - position: 1
-        text: "maña"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Maña» es una palabra coloquial; una entrevista de trabajo pide un tono más cuidado para describir una fortaleza."
-        hint_specific: "Esa palabra suena a charla informal entre amigos. ¿Encaja ese tono en una entrevista de trabajo?"
-      - position: 2
-        text: "destreza"
-        is_correct: true
-      - position: 3
-        text: "talento"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Talento» sugiere un don de siempre; la frase dice que esa fortaleza se fue puliendo con años de práctica, no que ya la tenía."
-        hint_specific: "El talento no necesita pulirse con años. ¿La frase habla de un don o de algo entrenado?"
-  - position: 3
     sentence: "Mi sobrino arma modelos de avión con {{blank}} que deja a todos boquiabiertos en cada cumpleaños."
     hint_general: "Cada vez lo hace mejor, como algo entrenado, no como un golpe de buena fortuna."
     explanation: "Destreza: se nota entrenada, no cuestión de suerte. «Competencia» suena a jerga de oficina, fuera de lugar para hablar de un niño en un cumpleaños, y «suerte» sería algo casual, y la frase dice que pasa en cada cumpleaños, no una sola vez."
@@ -101,7 +88,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Suerte» sería un resultado casual; la frase dice que pasa en cada cumpleaños, no una sola vez por casualidad."
         hint_specific: "La suerte no se repite siempre. ¿La frase dice que pasa una vez o en cada cumpleaños?"
-  - position: 4
+  - position: 3
     sentence: "En la clase de baile grupal, Valentina se mueve con {{blank}} que dejó claro que llevaba años practicando."
     hint_general: "Se nota que lleva años entrenando ese movimiento, no que nació sabiendo bailar."
     explanation: "Destreza: se nota entrenada durante años. «Certeza» es estar seguro de algo, no un movimiento del cuerpo, y «aptitud» sería un don de siempre, y la frase dice que llevaba años practicando."
@@ -121,7 +108,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Aptitud» sería un don desde siempre; la frase dice que llevaba años practicando, lo contrario de algo que ya traía sin esfuerzo."
         hint_specific: "La aptitud no pide años de práctica. ¿La frase menciona años practicando?"
-  - position: 5
+  - position: 4
     sentence: "El cirujano explicó que la técnica requiere años de práctica antes de operar con {{blank}}."
     hint_general: "Se necesitan años de práctica antes de llegar a hacerlo bien."
     explanation: "Destreza: se necesitan años de práctica para lograrla. «Talento» sería un don de siempre, sin necesidad de años, y «maña» es coloquial, un tono fuera de lugar para explicar una técnica quirúrgica."
@@ -141,7 +128,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Maña» es coloquial; para explicar una técnica quirúrgica con años de práctica detrás, ese tono suena fuera de lugar."
         hint_specific: "Esa palabra suena a charla informal. ¿Encaja ese tono para hablar de una técnica quirúrgica?"
-  - position: 6
+  - position: 5
     sentence: "Cuando me preguntaron por mis fortalezas, mencioné {{blank}} que gané organizando eventos grandes bajo presión."
     hint_general: "Es algo ganado con la práctica de organizar eventos, no un golpe de buena fortuna."
     explanation: "Destreza: se gana organizando eventos una y otra vez. «Certeza» es estar seguro de algo, no una habilidad práctica, y «suerte» sería algo casual, y la frase dice que se ganó con la práctica."
@@ -161,7 +148,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Suerte» sería un resultado casual; la frase dice que se ganó organizando eventos, algo repetido y entrenado, no un golpe de fortuna."
         hint_specific: "La suerte no se gana con la práctica. ¿La frase dice que fue casual o que se ganó con el tiempo?"
-  - position: 7
+  - position: 6
     sentence: "Mi abuela borda manteles con {{blank}} que aprendió de su propia madre, hilo por hilo, durante años."
     hint_general: "Es algo que le enseñaron hilo por hilo y que fue aprendiendo durante años."
     explanation: "Destreza: se aprendió hilo por hilo durante años. «Aptitud» sería un don de siempre, sin necesidad de que se lo enseñaran, y «competencia» suena a jerga de oficina, fuera de lugar para hablar de bordado en familia."
@@ -181,7 +168,7 @@ exercises:
         distractor_type: "register"
         why_not: "«Competencia» suena a jerga de oficina o recursos humanos; para hablar del bordado que le enseñó su madre, ese tono no encaja."
         hint_specific: "Esa palabra suena a reporte de recursos humanos. ¿Encaja ese tono para hablar del bordado de mi abuela?"
-  - position: 8
+  - position: 7
     sentence: "Durante el torneo de ajedrez del barrio, noté {{blank}} con la que mi vecino anticipaba cada jugada del rival."
     hint_general: "Se nota una habilidad entrenada para prever los movimientos del otro jugador."
     explanation: "Destreza: una habilidad entrenada para prever jugadas. «Talento» sería un don de siempre, y la frase habla de anticipar jugadas con práctica, y «certeza» es estar seguro de algo, no una habilidad para jugar."
@@ -225,5 +212,5 @@ readings:
     after_phrase: "Tengo destreza para resolver conflictos."
 provenance:
   generator: "hand-written for content/words, theme docencia"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

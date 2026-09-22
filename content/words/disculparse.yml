@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "disculparse"
-status: "draft"
+status: "approved"
 lemma: "disculparse"
 part_of_speech: "verbo"
-syllables: ["dis", "cul", "par", "se"]
+syllables:
+  - "dis"
+  - "cul"
+  - "par"
+  - "se"
 stressed_syllable: 3
 ipa_latam: "[dis.kulˈpaɾ.se]"
 ipa_es: "[dis.kulˈpaɾ.se]"
@@ -17,13 +21,22 @@ collocations:
   - "disculparse con alguien"
   - "disculparse sin peros"
   - "nunca pidió disculpas"
-family: ["disculpa"]
+replaces:
+  - before: "Reconoció el error sin poner ninguna excusa"
+    after: "Se disculpó sin poner ninguna excusa"
+  - before: "Le pidió perdón por lo que había dicho"
+    after: "Se disculpó por lo que había dicho"
+family:
+  - "disculpa"
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["pedir perdón", "reconocer el error"]
-  funcion: ["reparar"]
+  comodin:
+    - "pedir perdón"
+    - "reconocer el error"
+  funcion:
+    - "reparar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +44,9 @@ confusions:
   - confused_with: "justificarse"
     difference: "Justificarse es explicar razones para defender lo que hiciste; disculparse es reconocer que hiciste algo mal, sin buscar excusas."
     memory_trick: "Te justificas para defenderte; te disculpas para reconocer el error."
-replaces:
-  - before: "Reconoció el error sin poner ninguna excusa"
-    after: "Se disculpó sin poner ninguna excusa"
-  - before: "Le pidió perdón por lo que había dicho"
-    after: "Se disculpó por lo que había dicho"
+  - confused_with: "aclaración"
+    difference: "Una «aclaración» solo agrega información para evitar un malentendido, sin pedir perdón por nada; disculparse es reconocer que hiciste algo mal."
+    memory_trick: "La aclaración informa; disculparse repara."
 exercises:
   - position: 1
     sentence: "Rubén se {{blank}} con su hermana por el comentario, sin agregar ningún pero."
@@ -221,5 +232,5 @@ readings:
     after_phrase: "Me quiero disculpar, dije cosas que no pensaba."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

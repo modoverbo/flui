@@ -1,14 +1,13 @@
-# Word 1 of batch W4 humor. Substitution note: originally assigned "gracejo"
-# (zipf 2.11, dp 0.88 — fails metrics, regional-only). Replaced with "viveza",
-# a close semantic neighbor (natural wit/quickness in how someone tells
-# things) that passes: zipf 3.08, dp 0.25.
 schema_version: 1
 sort_order: 9301
 slug: "viveza"
-status: "draft"
+status: "approved"
 lemma: "viveza"
 part_of_speech: "sustantivo"
-syllables: ["vi", "ve", "za"]
+syllables:
+  - "vi"
+  - "ve"
+  - "za"
 stressed_syllable: 2
 ipa_latam: "[bi.ˈβe.sa]"
 ipa_es: "[bi.ˈβe.θa]"
@@ -26,13 +25,17 @@ replaces:
     after: "Lo cuenta con mucha viveza"
   - before: "Tiene mucha chispa para hablar"
     after: "Tiene mucha viveza para hablar"
-family: ["vivo", "avivar"]
+family:
+  - "vivo"
+  - "avivar"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["chispa"]
-  funcion: ["elogiar"]
+  comodin:
+    - "chispa"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -228,5 +231,5 @@ readings:
     after_phrase: "Lo cuenta con una viveza que engancha."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

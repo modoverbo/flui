@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 9101
 slug: "implorar"
-status: "draft"
+status: "approved"
 lemma: "implorar"
 part_of_speech: "verbo"
-syllables: ["im", "plo", "rar"]
+syllables:
+  - "im"
+  - "plo"
+  - "rar"
 stressed_syllable: 3
 ipa_latam: "[im.ploˈrar]"
 ipa_es: "[im.ploˈrar]"
@@ -25,13 +28,17 @@ replaces:
     after: "Le imploré una última oportunidad"
   - before: "Le supliqué tanto que hasta me dio vergüenza"
     after: "Le imploré tanto que hasta me dio vergüenza"
-family: ["imploración", "implorante"]
+family:
+  - "imploración"
+  - "implorante"
 themes:
   - slug: "pedir-disculparse"
     relevance: 3
 tags:
-  comodin: ["rogar mucho"]
-  funcion: ["suplicar"]
+  comodin:
+    - "rogar mucho"
+  funcion:
+    - "suplicar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -224,5 +231,5 @@ readings:
     after_phrase: "Le imploré una oportunidad más."
 provenance:
   generator: "flui authoring agent — batch W2 pedir-disculparse + familia-crianza"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

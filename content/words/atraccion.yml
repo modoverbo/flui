@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "atraccion"
-status: "draft"
+status: "approved"
 lemma: "atracción"
 part_of_speech: "sustantivo"
-syllables: ["a", "trac", "ción"]
+syllables:
+  - "a"
+  - "trac"
+  - "ción"
 stressed_syllable: 3
 ipa_latam: "[a.trakˈsjon]"
 ipa_es: "[a.trakˈθjon]"
@@ -17,13 +20,21 @@ collocations:
   - "sentir atracción"
   - "una atracción instantánea"
   - "atracción mutua"
+replaces:
+  - before: "Me gusta mucho, aunque no sé bien por qué"
+    after: "Siento atracción, aunque no sé bien por qué"
+  - before: "Hubo algo entre los dos desde el principio"
+    after: "Hubo atracción entre los dos desde el principio"
 family: []
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["me gusta", "me llama la atención"]
-  funcion: ["describir interés"]
+  comodin:
+    - "me gusta"
+    - "me llama la atención"
+  funcion:
+    - "describir interés"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +42,6 @@ confusions:
   - confused_with: "atractivo"
     difference: "Atractivo describe una cualidad de una persona o una cosa; atracción es lo que sientes tú hacia esa persona o cosa."
     memory_trick: "El atractivo está en la otra persona; la atracción está en ti."
-replaces:
-  - before: "Me gusta mucho, aunque no sé bien por qué"
-    after: "Siento atracción, aunque no sé bien por qué"
-  - before: "Hubo algo entre los dos desde el principio"
-    after: "Hubo atracción entre los dos desde el principio"
 exercises:
   - position: 1
     sentence: "Desde la primera charla en el ascensor, Lucía sintió una {{blank}} que no se esperaba."
@@ -221,5 +227,5 @@ readings:
     after_phrase: "No entiendo esa atracción entre esos dos."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

@@ -3,7 +3,11 @@ slug: "profundizar"
 status: "draft"
 lemma: "profundizar"
 part_of_speech: "verbo"
-syllables: ["pro", "fun", "di", "zar"]
+syllables:
+  - "pro"
+  - "fun"
+  - "di"
+  - "zar"
 stressed_syllable: 4
 ipa_latam: "[pro.fun.diˈsar]"
 ipa_es: "[pro.fun.diˈθar]"
@@ -24,13 +28,19 @@ replaces:
     after: "Profundizar en el asunto"
   - before: "Hablar más en detalle de algo"
     after: "Profundizar en algo"
-family: ["profundidad", "profundo"]
+family:
+  - "profundidad"
+  - "profundo"
 themes:
   - slug: "redes-sociales"
     relevance: 2
 tags:
-  comodin: ["ir más a fondo", "no quedarse en lo superficial"]
-  funcion: ["explicar", "precisar"]
+  comodin:
+    - "ir más a fondo"
+    - "no quedarse en lo superficial"
+  funcion:
+    - "explicar"
+    - "precisar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -82,26 +92,6 @@ exercises:
         text: "profundizara"
         is_correct: true
   - position: 3
-    sentence: "En el video, en vez de solo opinar sobre la noticia como todos, el creador decidió {{blank}} en las cifras reales detrás del titular."
-    hint_general: "Se trata de meterse en los datos concretos detrás de una noticia, no solo opinar por encima."
-    explanation: "Profundizar: el creador se metió en las cifras detrás del titular. «Diseccionar» suena a un término de laboratorio, y «explorar» es recorrer un tema por encima, no meterse en cifras concretas."
-    options:
-      - position: 1
-        text: "diseccionar"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Diseccionar» es un término casi clínico, para cortar algo en partes con precisión de laboratorio, y suena raro para un video que solo revisa cifras con calma."
-        hint_specific: "«Diseccionar» suena a un término de laboratorio. ¿Encaja ese tono para un video que revisa cifras con calma?"
-      - position: 2
-        text: "explorar"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Explorar» es recorrer un tema en general sin ir necesariamente muy hondo, y aquí el creador se metió específicamente en las cifras detrás del titular."
-        hint_specific: "«Explorar» es recorrer un tema por encima. ¿Aquí el creador se quedó por encima o se metió en las cifras concretas?"
-      - position: 3
-        text: "profundizar"
-        is_correct: true
-  - position: 4
     sentence: "Después de que su hija le contara que quería cambiar de carrera, Marisol no la interrumpió: dejó que {{blank}} en sus razones antes de opinar."
     hint_general: "Piensa en dejar que alguien explique el fondo de sus razones, con calma y sin prisa."
     explanation: "Profundizara: dejó que su hija explicara el fondo de sus razones. «Analizara» implica separar algo con frialdad, y «detallara» es dar datos sueltos, no explicar el fondo de algo."
@@ -121,7 +111,7 @@ exercises:
       - position: 3
         text: "profundizara"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "El informe tenía que ser breve, así que Renato decidió {{blank}} solo en el punto que más dudas generaba y dejar el resto apenas mencionado."
     hint_general: "Busca la palabra para ir hondo en un solo punto, sin alargar el resto del texto."
     explanation: "Profundizar: Renato fue hondo en un solo punto del informe. «Extenderse» habla de alargar un texto, y «examinar» es revisar algo para comprobar su estado, no entender mejor un punto."
@@ -141,7 +131,7 @@ exercises:
       - position: 3
         text: "profundizar"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "El hilo que publicó Nadia sobre el tema no se quedó en la idea general: {{blank}} en tres ejemplos concretos de su propia experiencia."
     hint_general: "Se trata de meterse más en una idea con ejemplos concretos, no solo alargar el texto."
     explanation: "Profundizó: Nadia fue más hondo en su idea con ejemplos concretos. «Desarrolló» habla de construir una idea nueva paso a paso, y «amplió» habla de hacer algo más largo, no más concreto."
@@ -161,27 +151,7 @@ exercises:
       - position: 3
         text: "profundizó"
         is_correct: true
-  - position: 7
-    sentence: "Antes de la segunda entrevista, Beto no se conformó con leer la misión de la empresa: {{blank}} en los proyectos concretos que había hecho el equipo ese año."
-    hint_general: "Piensa en meterse más en unos proyectos concretos, más allá de la información básica."
-    explanation: "Profundizó: Beto se metió más hondo en proyectos concretos. «Investigó» habla de buscar información desde cero, y «abordó» es empezar a tratar un tema, no ir más hondo en uno ya conocido."
-    options:
-      - position: 1
-        text: "profundizó"
-        is_correct: true
-      - position: 2
-        text: "investigó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Investigar» es buscar información nueva desde cero, y aquí Beto ya tenía la información básica de la empresa: lo que hizo fue meterse más hondo en unos proyectos concretos."
-        hint_specific: "«Investigar» habla de buscar información desde cero. ¿Aquí Beto partía de cero o ya sabía lo básico y fue más hondo?"
-      - position: 3
-        text: "abordó"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Abordar» es empezar a tratar un tema, y aquí Beto ya conocía el tema: lo que hizo fue meterse más hondo en proyectos concretos, no empezar desde el principio."
-        hint_specific: "«Abordar» habla de empezar a tratar un tema. ¿Aquí Beto empezaba el tema o ya lo conocía y fue más hondo?"
-  - position: 8
+  - position: 6
     sentence: "En vez de solo decir que el viaje había sido caro, Camilo {{blank}} con su pareja en qué gastos valían la pena repetir y cuáles no."
     hint_general: "Busca la palabra para hablar a fondo sobre qué gastos valen la pena, no solo hacer una lista."
     explanation: "Profundizó: Camilo habló a fondo con su pareja sobre los gastos. «Desglosó» es separar un total en partes numéricas, y «sondeó» es tantear una opinión sin comprometerse, no hablar a fondo."

@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "carisma"
-status: "draft"
+status: "approved"
 lemma: "carisma"
 part_of_speech: "sustantivo"
-syllables: ["ca", "ris", "ma"]
+syllables:
+  - "ca"
+  - "ris"
+  - "ma"
 stressed_syllable: 2
 ipa_latam: "[kaˈɾis.ma]"
 ipa_es: "[kaˈɾis.ma]"
@@ -17,6 +20,11 @@ collocations:
   - "tener carisma"
   - "una persona con mucho carisma"
   - "el carisma de un líder"
+replaces:
+  - before: "Tiene algo que hace que todos lo escuchen"
+    after: "Tiene mucho carisma"
+  - before: "Cae bien a todo el mundo apenas habla"
+    after: "Tiene carisma apenas habla"
 family: []
 themes:
   - slug: "networking"
@@ -24,20 +32,21 @@ themes:
   - slug: "persuasion-storytelling"
     relevance: 2
 tags:
-  comodin: ["cae bien", "tiene algo"]
-  funcion: ["elogiar"]
+  comodin:
+    - "cae bien"
+    - "tiene algo"
+  funcion:
+    - "elogiar"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
-replaces:
-  - before: "Tiene algo que hace que todos lo escuchen"
-    after: "Tiene mucho carisma"
-  - before: "Cae bien a todo el mundo apenas habla"
-    after: "Tiene carisma apenas habla"
 confusions:
   - confused_with: "arrogancia"
     difference: "La arrogancia aleja porque busca imponerse; el carisma atrae porque genera interés genuino en el grupo."
     memory_trick: "El carisma suma gente; la arrogancia la espanta."
+  - confused_with: "simpatía"
+    difference: "La «simpatía» hace que la gente esté a gusto contigo, en un trato cercano; el carisma además arrastra y hace que quieran seguirte, incluso en grupo."
+    memory_trick: "La simpatía acoge; el carisma arrastra."
 exercises:
   - position: 1
     sentence: "El nuevo director tiene tanto {{blank}} que la sala entera se quedó en silencio apenas empezó a hablar."
@@ -223,5 +232,5 @@ readings:
     after_phrase: "Tiene un carisma que atrapa sin esfuerzo."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

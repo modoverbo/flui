@@ -1,9 +1,11 @@
 schema_version: 1
 slug: "gremio"
-status: "draft"
+status: "approved"
 lemma: "gremio"
 part_of_speech: "sustantivo"
-syllables: ["gre", "mio"]
+syllables:
+  - "gre"
+  - "mio"
 stressed_syllable: 1
 ipa_latam: "[ˈgɾe.mjo]"
 ipa_es: "[ˈgɾe.mjo]"
@@ -22,15 +24,20 @@ replaces:
     after: "Mi gremio"
   - before: "Todos los del sector se conocen"
     after: "Todo el gremio se conoce"
-family: ["gremial"]
+family:
+  - "gremial"
 themes:
   - slug: "networking"
     relevance: 3
   - slug: "conversacion-cotidiana"
     relevance: 1
 tags:
-  comodin: ["el sector", "la gente del rubro"]
-  funcion: ["identificar", "pertenecer"]
+  comodin:
+    - "el sector"
+    - "la gente del rubro"
+  funcion:
+    - "identificar"
+    - "pertenecer"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -120,26 +127,6 @@ exercises:
         why_not: "«Banda» es coloquial y suena a grupo de amigos, y aquí se habla del oficio compartido por los fotógrafos de la ciudad."
         hint_specific: "Una banda suena informal, como un grupo de amigos. ¿La frase describe un oficio o una junta de amigos?"
   - position: 5
-    sentence: "La nueva ley de aranceles tomó por sorpresa a todo el {{blank}} textil del país."
-    hint_general: "El conjunto de negocios y trabajadores de un mismo sector, afectados por igual."
-    explanation: "Gremio: el conjunto de negocios y trabajadores de un mismo sector. «Rubro» habla del tipo de negocio en sí, sin nombrar a las personas que lo forman, y «gimnasio» no tiene relación con la industria textil."
-    options:
-      - position: 1
-        text: "gremio"
-        is_correct: true
-      - position: 2
-        text: "rubro"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Rubro» nombra el tipo de negocio en sí, y la frase habla de las personas y empresas a las que sorprendió la ley."
-        hint_specific: "El rubro es una categoría de negocio. ¿La ley sorprendió a una categoría o a la gente del sector?"
-      - position: 3
-        text: "gimnasio"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "Un «gimnasio» es un lugar para hacer ejercicio, sin relación con la industria textil."
-        hint_specific: "Un gimnasio no fabrica ropa. ¿Qué sector menciona la frase?"
-  - position: 6
     sentence: "Javier organizó una cena para que el {{blank}} de traductores independientes por fin se conociera en persona."
     hint_general: "Un grupo de personas del mismo oficio que suele trabajar por separado."
     explanation: "Gremio: el grupo del mismo oficio, aunque trabajen por separado. «Cliente» es quien contrata el servicio, sin compartir el oficio, y «plantilla» describe a empleados de una sola empresa."
@@ -159,7 +146,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Plantilla» describe a los empleados de una sola empresa, y aquí se trata de traductores independientes de varias empresas."
         hint_specific: "Una plantilla pertenece a una sola empresa. ¿Los traductores independientes comparten una sola empresa?"
-  - position: 7
+  - position: 6
     sentence: "Antes de lanzar el producto, la marca invitó a todo el {{blank}} de nutricionistas a probarlo primero."
     hint_general: "Las personas de un oficio a las que conviene convencer antes que al público general."
     explanation: "Gremio: las personas de un oficio a las que conviene convencer primero. «Jurado» evalúa para dar un premio, y «gimnasio» no tiene relación con nutricionistas."
@@ -179,7 +166,7 @@ exercises:
         distractor_type: "paronym"
         why_not: "Un «gimnasio» es un lugar para hacer ejercicio, sin relación con los nutricionistas como comunidad profesional."
         hint_specific: "Un gimnasio no evalúa productos de nutrición. ¿La frase habla de un lugar o de un grupo de profesionales?"
-  - position: 8
+  - position: 7
     sentence: "Marta llevaba diez años en el {{blank}} y todavía se sorprendía de lo pequeño que era el mundo de la edición de libros."
     hint_general: "Habla de pertenecer desde hace tiempo al grupo de personas de tu mismo oficio."
     explanation: "Gremio: el grupo de personas de tu mismo oficio, al que se pertenece con el tiempo. «Negocio» habla de una actividad comercial concreta, y «gimnasio» no tiene relación con la edición de libros."
@@ -223,5 +210,5 @@ readings:
     after_phrase: "Por fin el gremio completo en una misma mesa."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

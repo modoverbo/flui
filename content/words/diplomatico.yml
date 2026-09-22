@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "diplomatico"
-status: "draft"
+status: "approved"
 lemma: "diplomático"
 part_of_speech: "adjetivo"
 syllables:
@@ -27,13 +27,16 @@ replaces:
     after: "Lo dijo de forma diplomática"
   - before: "Supo decirlo sin que nadie se ofendiera"
     after: "Fue diplomático al decirlo"
-family: ["diplomacia", "diplomáticamente"]
+family:
+  - "diplomáticamente"
 themes:
   - slug: "medios-entrevistas"
     relevance: 3
 tags:
-  comodin: ["suave"]
-  funcion: ["suavizar"]
+  comodin:
+    - "suave"
+  funcion:
+    - "suavizar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -86,26 +89,6 @@ exercises:
         text: "diplomático"
         is_correct: true
   - position: 3
-    sentence: "Los organizadores fueron {{blank}} al anunciar el cambio de fecha: explicaron el motivo y ofrecieron una alternativa a quienes no pudieran asistir."
-    hint_general: "Explican un cambio incómodo con cuidado, ofreciendo una alternativa."
-    explanation: "Diplomáticos: explican un cambio incómodo con cuidado, ofreciendo alternativas. «Prudentes» habla de evitar un riesgo, y «considerados» describe a personas atentas en general, sin relación directa con explicar el cambio y dar una opción."
-    options:
-      - position: 1
-        text: "prudentes"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Prudentes» describe a quien evita un riesgo o un error, sin relación con cuidar cómo se dice algo incómodo; aquí lo que hicieron fue anunciarlo con cuidado, no evitarlo."
-        hint_specific: "Esa palabra habla de evitar un riesgo. ¿Aquí evitaron anunciar el cambio, o lo explicaron con cuidado?"
-      - position: 2
-        text: "considerados"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Considerados» describe a personas atentas con los demás en general; aquí lo que resalta es que explicaron el cambio con cuidado y dieron una alternativa, no solo que fueran atentos."
-        hint_specific: "Esa palabra describe a alguien atento en general. ¿Aquí lo importante es explicar con cuidado y dar opciones, o solo ser atentos?"
-      - position: 3
-        text: "diplomáticos"
-        is_correct: true
-  - position: 4
     sentence: "El técnico fue {{blank}} al decirle al vecino que la reparación no estaba incluida en la garantía."
     hint_general: "Da una mala noticia cuidando cómo la dice."
     explanation: "Diplomático: da una mala noticia cuidando la forma. «Diplomado» es tener un título de un curso o una carrera, y «considerado» describe a alguien atento en general, sin relación directa con dar esa noticia incómoda."
@@ -125,7 +108,7 @@ exercises:
       - position: 3
         text: "diplomático"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "La entrenadora fue {{blank}} al explicar por qué dejó a la capitana fuera del equipo titular: dio motivos claros sin exponerla frente a la prensa."
     hint_general: "Da un motivo real e incómodo sin exponer a nadie frente a otros."
     explanation: "Diplomática: da una información incómoda sin exponer a nadie. «Cautelosa» habla de evitar un riesgo, y «suave» es un término coloquial para el tono, fuera de tono en un texto sobre una decisión deportiva."
@@ -145,7 +128,7 @@ exercises:
       - position: 3
         text: "diplomática"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "El director del coro fue {{blank}} al decirle a Marcos que necesitaba más ensayo antes del concierto."
     hint_general: "Dice algo difícil de escuchar cuidando la forma en que lo dice."
     explanation: "Diplomático: dice algo difícil de escuchar cuidando la forma. «Amable» describe un trato agradable en general, y «sutil» sugiere algo casi imperceptible; aquí Marcos entendió con claridad lo que necesitaba mejorar."
@@ -165,7 +148,7 @@ exercises:
       - position: 3
         text: "diplomático"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "La nueva encargada fue {{blank}} al explicarle a su antecesor que el proyecto cambiaría de enfoque."
     hint_general: "Explica un cambio incómodo cuidando la forma en que lo dice."
     explanation: "Diplomática: explica un cambio incómodo cuidando la forma. «Diplomada» es tener el título de un curso o una carrera, y «considerada» describe a alguien atento en general, sin relación directa con explicar ese cambio."
@@ -185,7 +168,7 @@ exercises:
       - position: 3
         text: "diplomática"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "La mediadora fue {{blank}} al resumir la queja de ambas partes sin tomar partido por ninguna."
     hint_general: "Resume un conflicto con cuidado, sin favorecer a ninguna de las partes."
     explanation: "Diplomática: resume un conflicto sin tomar partido por nadie. «Prudente» habla de evitar un riesgo, y «amable» describe un trato agradable en general, sin relación directa con no favorecer a ninguna de las partes."
@@ -229,5 +212,5 @@ readings:
     after_phrase: "Fui diplomático: se lo dije con cuidado."
 provenance:
   generator: "hand-written by flui content agent"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

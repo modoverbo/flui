@@ -3,7 +3,11 @@ slug: "comprensible"
 status: "draft"
 lemma: "comprensible"
 part_of_speech: "adjetivo"
-syllables: ["com", "pren", "si", "ble"]
+syllables:
+  - "com"
+  - "pren"
+  - "si"
+  - "ble"
 stressed_syllable: 3
 ipa_latam: "[kom.pɾenˈsi.βle]"
 ipa_es: "[kom.pɾenˈsi.βle]"
@@ -21,15 +25,19 @@ replaces:
     after: "Que sea comprensible"
   - before: "Está explicado súper fácil"
     after: "Está explicado de forma comprensible"
-family: ["comprensión", "incomprensible"]
+family:
+  - "comprensión"
+  - "incomprensible"
 themes:
   - slug: "docencia"
     relevance: 3
   - slug: "presentaciones-oratoria"
     relevance: 2
 tags:
-  comodin: ["fácil de entender"]
-  funcion: ["explicar"]
+  comodin:
+    - "fácil de entender"
+  funcion:
+    - "explicar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -99,46 +107,6 @@ exercises:
         why_not: "«Notorio» dice que algo es conocido o llamativo, no que el lenguaje usado se pudiera seguir paso a paso."
         hint_specific: "Lo notorio ya se nota o se sabe. ¿La frase habla de fama o de entender algo nuevo?"
   - position: 4
-    sentence: "En la sobremesa, Diego explicó cómo funciona el seguro del auto de forma tan {{blank}} que hasta su tío, que nunca entiende esos papeles, se quedó tranquilo."
-    hint_general: "La explicación logró que alguien que normalmente no entiende esos temas se quedara tranquilo."
-    explanation: "Comprensible: el tío entendió y se quedó tranquilo. «Comprensivo» se usa para alguien que entiende y perdona a otra persona, no para una explicación, y «digerible» diría que no resultó pesado escucharla, pero no asegura que se haya entendido el tema."
-    options:
-      - position: 1
-        text: "comprensivo"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Comprensivo» se usa para alguien que entiende y perdona a otra persona, y aquí se elogia una explicación, no una actitud hacia alguien."
-        hint_specific: "«Comprensivo» describe cómo tratas a otra persona. ¿La frase habla de un trato o de entender un tema?"
-      - position: 2
-        text: "comprensible"
-        is_correct: true
-      - position: 3
-        text: "digerible"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Digerible» dice que algo no resulta pesado o cansado, pero no asegura que el tío entendiera el funcionamiento del seguro, solo que lo toleró bien."
-        hint_specific: "Lo digerible es lo que no cansa de escuchar. ¿La frase dice que el tío entendió, o solo que no se aburrió?"
-  - position: 5
-    sentence: "El informe financiero llegó tan {{blank}} que la directora, que odia los números, pudo explicarlo ella misma en la junta."
-    hint_general: "El informe se entendió tan bien que alguien que no domina el tema pudo explicarlo a otros."
-    explanation: "Comprensible: la directora pudo explicarlo ella misma. «Clarito» es un diminutivo muy coloquial, fuera de lugar en una junta directiva, y «descifrable» sugeriría un código difícil que se resuelve con esfuerzo, cuando aquí no hizo falta ningún esfuerzo extra."
-    options:
-      - position: 1
-        text: "clarito"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Clarito» es un diminutivo muy coloquial, y suena fuera de lugar para describir un informe financiero en una junta directiva."
-        hint_specific: "«Clarito» suena a charla informal entre amigos. ¿Encaja para hablar de un informe en una junta?"
-      - position: 2
-        text: "comprensible"
-        is_correct: true
-      - position: 3
-        text: "descifrable"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Descifrable» sugiere un código o un mensaje oculto que se resuelve con esfuerzo, y la directora no tuvo que hacer ningún esfuerzo extra."
-        hint_specific: "Lo descifrable exige trabajo para resolverlo. ¿La directora tuvo que esforzarse o lo entendió de inmediato?"
-  - position: 6
     sentence: "El candidato explicó su experiencia de forma tan {{blank}} que el reclutador no tuvo que pedirle que repitiera nada."
     hint_general: "La explicación fue tan clara que nadie necesitó pedir que se repitiera."
     explanation: "Comprensible: el reclutador no tuvo que pedir que repitiera nada. «Elocuente» describe a quien se expresa con fuerza y convence, pero no asegura que cada detalle se haya entendido, y «evidente» diría que ya se sabía de antemano, no que se explicara con éxito."
@@ -158,7 +126,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Evidente» diría que la experiencia ya se conocía de antemano, y aquí el mérito es que el candidato supo explicarla bien."
         hint_specific: "Lo evidente no necesita explicación. ¿El reclutador ya sabía todo, o el candidato se lo tuvo que contar?"
-  - position: 7
+  - position: 5
     sentence: "Cuando Rocío contó cómo funciona su plan de ahorro, lo explicó de forma tan {{blank}} que sus amigas, que nunca habían tocado el tema, entendieron todo a la primera."
     hint_general: "La explicación funcionó tan bien que personas sin ninguna base previa entendieron todo de inmediato."
     explanation: "Comprensible: las amigas entendieron todo a la primera. «Ameno» dice que algo resulta agradable de escuchar, pero no garantiza que se entendiera cada parte, y «cercano» describe un trato afectuoso, no si el plan se entendió."
@@ -178,7 +146,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Cercano» describe un trato afectuoso o cálido, y aquí lo que se valora es que el plan de ahorro se entendiera, no el trato de Rocío."
         hint_specific: "Lo cercano habla de un trato cálido con alguien. ¿La frase habla del trato o de entender un plan?"
-  - position: 8
+  - position: 6
     sentence: "Antes de firmar el contrato de alquiler, Iván le explicó cada cláusula a su abuela con un lenguaje tan {{blank}} que ella entendió todo sin ayuda."
     hint_general: "El lenguaje usado permitió que alguien sin experiencia con contratos entendiera todo por su cuenta."
     explanation: "Comprensible: la abuela entendió todo sin ayuda. «Razonable» diría que las condiciones del contrato eran justas, no que la explicación se entendiera, y «detallado» diría que no faltaba ningún dato, cuando lo que se valora aquí es que ella lo entendiera sola."

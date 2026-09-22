@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "vertigo"
-status: "draft"
+status: "approved"
 lemma: "vértigo"
 part_of_speech: "sustantivo"
-syllables: ["vér", "ti", "go"]
+syllables:
+  - "vér"
+  - "ti"
+  - "go"
 stressed_syllable: 1
 ipa_latam: "[ˈbeɾ.ti.ɣo]"
 ipa_es: "[ˈbeɾ.ti.ɣo]"
@@ -17,13 +20,21 @@ collocations:
   - "dar vértigo"
   - "sentir vértigo por alguien"
   - "un vértigo en el estómago"
+replaces:
+  - before: "Me pone muy nervioso, aunque en el buen sentido"
+    after: "Me da vértigo, aunque en el buen sentido"
+  - before: "Siento algo raro en el estómago cuando me escribe"
+    after: "Siento vértigo cuando me escribe"
 family: []
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["me pone nervioso", "siento algo raro"]
-  funcion: ["describir sensación"]
+  comodin:
+    - "me pone nervioso"
+    - "siento algo raro"
+  funcion:
+    - "describir sensación"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +42,6 @@ confusions:
   - confused_with: "mareo"
     difference: "El mareo tiene una causa física, como el movimiento o la altura; el vértigo, en este sentido, es una sensación emocional de nervios y emoción por alguien."
     memory_trick: "El mareo lo causa el cuerpo; el vértigo lo causa la persona que te gusta."
-replaces:
-  - before: "Me pone muy nervioso, aunque en el buen sentido"
-    after: "Me da vértigo, aunque en el buen sentido"
-  - before: "Siento algo raro en el estómago cuando me escribe"
-    after: "Siento vértigo cuando me escribe"
 exercises:
   - position: 1
     sentence: "Cada vez que Andrés le escribía, a Camila le daba un {{blank}} raro en el estómago."
@@ -221,5 +227,5 @@ readings:
     after_phrase: "Me dio vértigo apenas contestó."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

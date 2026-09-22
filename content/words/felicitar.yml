@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "felicitar"
-status: "draft"
+status: "approved"
 lemma: "felicitar"
 part_of_speech: "verbo"
-syllables: ["fe", "li", "ci", "tar"]
+syllables:
+  - "fe"
+  - "li"
+  - "ci"
+  - "tar"
 stressed_syllable: 4
 ipa_latam: "[fe.li.siˈtaɾ]"
 ipa_es: "[fe.li.θiˈtaɾ]"
@@ -17,13 +21,22 @@ collocations:
   - "felicitar por"
   - "acercarse a felicitar"
   - "nadie la felicitó"
-family: ["felicitación"]
+replaces:
+  - before: "Le dijo que había estado muy bien lo que hizo"
+    after: "La felicitó por lo que hizo"
+  - before: "Se acercó para decirle que le había gustado su trabajo"
+    after: "Se acercó a felicitarla por su trabajo"
+family:
+  - "felicitación"
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["decirle que estuvo bien", "reconocer el esfuerzo"]
-  funcion: ["reconocer"]
+  comodin:
+    - "decirle que estuvo bien"
+    - "reconocer el esfuerzo"
+  funcion:
+    - "reconocer"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +44,6 @@ confusions:
   - confused_with: "facilitar"
     difference: "Facilitar es hacer que algo sea más fácil para alguien; felicitar es decirle a alguien que valoras algo bueno que hizo."
     memory_trick: "Facilitas un trámite; felicitas un logro."
-replaces:
-  - before: "Le dijo que había estado muy bien lo que hizo"
-    after: "La felicitó por lo que hizo"
-  - before: "Se acercó para decirle que le había gustado su trabajo"
-    after: "Se acercó a felicitarla por su trabajo"
 exercises:
   - position: 1
     sentence: "Después de la presentación, Andrés se acercó a {{blank}} a Rocío por lo clara que había sido."
@@ -221,5 +229,5 @@ readings:
     after_phrase: "Te quiero felicitar por el esfuerzo que hiciste."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

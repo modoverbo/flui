@@ -1,9 +1,15 @@
 schema_version: 1
 slug: "camaraderia"
-status: "draft"
+status: "approved"
 lemma: "camaradería"
 part_of_speech: "sustantivo"
-syllables: ["ca", "ma", "ra", "de", "rí", "a"]
+syllables:
+  - "ca"
+  - "ma"
+  - "ra"
+  - "de"
+  - "rí"
+  - "a"
 stressed_syllable: 5
 ipa_latam: "[ka.ma.ɾa.ðeˈɾi.a]"
 ipa_es: "[ka.ma.ɾa.ðeˈɾi.a]"
@@ -24,13 +30,16 @@ replaces:
     after: "Se generó camaradería enseguida entre los que estábamos en la fila"
   - before: "En el viaje de trabajo todos se llevaron bien aunque no se conocían"
     after: "En el viaje de trabajo hubo camaradería aunque no se conocían"
-family: ["camarada"]
+family:
+  - "camarada"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["nos llevamos bien"]
-  funcion: ["describir"]
+  comodin:
+    - "nos llevamos bien"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -226,5 +235,5 @@ readings:
     after_phrase: "Se armó una camaradería preciosa desde el primer día."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

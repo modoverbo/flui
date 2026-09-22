@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "confiable"
-status: "draft"
+status: "approved"
 lemma: "confiable"
 part_of_speech: "adjetivo"
-syllables: ["con", "fia", "ble"]
+syllables:
+  - "con"
+  - "fia"
+  - "ble"
 stressed_syllable: 2
 ipa_latam: "[konˈfja.βle]"
 ipa_es: "[konˈfja.βle]"
@@ -22,13 +25,18 @@ replaces:
     after: "Es una persona confiable"
   - before: "Cumple siempre lo que promete"
     after: "Es muy confiable"
-family: ["confianza", "confiar"]
+family:
+  - "confianza"
+  - "confiar"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["de fiar", "buena persona"]
-  funcion: ["elogiar"]
+  comodin:
+    - "de fiar"
+    - "buena persona"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -39,6 +47,12 @@ confusions:
   - confused_with: "creíble"
     difference: "«Creíble» dice que algo o alguien resulta fácil de creer en el momento; «confiable» dice que esa persona cumple con lo que promete a lo largo del tiempo."
     memory_trick: "Lo creíble convence una vez; lo confiable cumple siempre."
+  - confused_with: "cercanía"
+    difference: "«Cercanía» es que el trato se sienta cálido y natural, sin decir si esa persona cumple lo que promete; ser confiable es cumplir con lo que dices, más allá de si el trato es cercano."
+    memory_trick: "La cercanía se siente en el trato; la confianza se gana con hechos."
+  - confused_with: "complicidad"
+    difference: "La «complicidad» es entenderse con alguien sin palabras, con gestos o miradas; ser confiable es que esa persona cumpla lo que promete, aunque no haya esa conexión especial."
+    memory_trick: "La complicidad se nota en un gesto; la confianza se gana con hechos."
 exercises:
   - position: 1
     sentence: "Marina le prestó las llaves de su casa a Diego sin dudarlo ni un segundo: sabe que es {{blank}}, siempre cumple lo que promete."
@@ -101,26 +115,6 @@ exercises:
         text: "confiable"
         is_correct: true
   - position: 4
-    sentence: "Renata le pidió a Andrés que le regara las plantas durante su viaje de dos semanas, y no tuvo que preocuparse ni un día: es {{blank}}."
-    hint_general: "Busca la palabra para una persona que cumple lo que promete, sin que tengas que estar encima."
-    explanation: "Confiable: cumple lo prometido sin que nadie esté encima. «Fiable» se usa más para objetos o servicios, y «puntual» solo habla de llegar a tiempo."
-    options:
-      - position: 1
-        text: "fiable"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Fiable» se usa más para objetos, aparatos o servicios que funcionan bien; aquí se habla de una persona que cumplió lo prometido."
-        hint_specific: "«Fiable» suele hablar de objetos o servicios. ¿La frase habla de un objeto o de una persona?"
-      - position: 2
-        text: "puntual"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Puntual» solo habla de llegar a tiempo, y aquí lo que importa es que cumplió con cuidar las plantas durante dos semanas enteras."
-        hint_specific: "«Puntual» solo habla de horarios. ¿La frase habla de un horario o de cumplir un compromiso durante dos semanas?"
-      - position: 3
-        text: "confiable"
-        is_correct: true
-  - position: 5
     sentence: "El nuevo gerente eligió a Julio para manejar la caja del evento porque en cinco años nunca faltó un centavo: es un empleado {{blank}}."
     hint_general: "Es la palabra para alguien que demuestra, con hechos, que merece que dependan de él."
     explanation: "Confiable: demuestra con hechos que se puede confiar en él. «Confiado» describe a quien confía fácilmente, no a quien es digno de confianza, y «sincero» solo habla de no mentir."
@@ -140,7 +134,7 @@ exercises:
       - position: 3
         text: "confiable"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Cuando Noelia promete ayudar con algo, lo hace sin que nadie tenga que recordárselo: sus amigos saben que es {{blank}}."
     hint_general: "Busca la palabra para quien cumple lo que promete, sin que haya que recordárselo."
     explanation: "Confiable: cumple lo que promete sin que haya que recordárselo. «Creíble» solo dice que algo suena verosímil en el momento, y «sincera» solo habla de no mentir."
@@ -160,7 +154,7 @@ exercises:
       - position: 3
         text: "confiable"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "El equipo asignó el proyecto más delicado a Marcos porque, en diez años, jamás dejó a nadie esperando una respuesta: es el más {{blank}} del grupo."
     hint_general: "Es la palabra para quien, con los años, demuestra que se puede depender de él."
     explanation: "Confiable: demuestra con los años que se puede depender de él. «Puntual» solo habla de llegar a tiempo a citas, y «solvente» se usa para temas de dinero."
@@ -177,26 +171,6 @@ exercises:
         distractor_type: "register"
         why_not: "«Solvente» se usa para temas de dinero, y aquí se está hablando de la manera de trabajar de Marcos, no de sus finanzas."
         hint_specific: "«Solvente» es un término de dinero. ¿La frase habla de finanzas?"
-      - position: 3
-        text: "confiable"
-        is_correct: true
-  - position: 8
-    sentence: "Cuando Silvia tiene un problema serio, no llama a la persona más simpática, sino a la más {{blank}}, la que sabe que va a cumplir."
-    hint_general: "Busca la palabra para la persona en la que puedes apoyarte cuando algo importa de verdad."
-    explanation: "Confiable: la persona en la que puedes apoyarte porque cumple. «Fiable» describe mejor cosas o servicios, y «confiado» describe a quien confía fácilmente, no a quien merece confianza."
-    options:
-      - position: 1
-        text: "fiable"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Fiable» describe mejor cosas o servicios; aquí Silvia elige entre personas, no entre objetos."
-        hint_specific: "«Fiable» suele hablar de cosas o servicios. ¿Silvia elige entre objetos o entre personas?"
-      - position: 2
-        text: "confiado"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Confiado» describiría a quien confía fácilmente, no a la persona en la que ella confía."
-        hint_specific: "«Confiado» describe a quien confía en otros. ¿La frase habla de quién confía o de en quién se confía?"
       - position: 3
         text: "confiable"
         is_correct: true
@@ -224,5 +198,5 @@ readings:
     after_phrase: "Es el amigo más confiable que tengo."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "desviar"
-status: "draft"
+status: "approved"
 lemma: "desviar"
 part_of_speech: "verbo"
 syllables:
@@ -152,26 +152,6 @@ exercises:
         text: "desvió"
         is_correct: true
   - position: 6
-    sentence: "Durante la negociación, el abogado {{blank}} la atención de la cláusula difícil hacia las ventajas generales del contrato."
-    hint_general: "Lleva la atención hacia otra parte del contrato que conviene más resaltar."
-    explanation: "Desvió: llevó la atención hacia otra parte del contrato. «Capeó» es coloquial y suena a esquivar con maña, un tono que no encaja con un informe legal, y «distrajo» apartaría la atención sin que fuera un movimiento calculado como este."
-    options:
-      - position: 1
-        text: "capeó"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Capear» es coloquial y suena a esquivar con picardía, un tono que no encaja con el resumen de una negociación legal."
-        hint_specific: "«Capear» suena informal, casi de regateo callejero. ¿Encaja con el tono de un informe legal?"
-      - position: 2
-        text: "distrajo"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Distraer» aparta la atención, a veces sin ningún plan, y aquí el abogado hizo un movimiento calculado hacia otra parte del contrato."
-        hint_specific: "Distraer puede pasar sin plan. ¿El abogado actuó al azar o con un plan claro?"
-      - position: 3
-        text: "desvió"
-        is_correct: true
-  - position: 7
     sentence: "Cuando el tema de la fiesta se puso incómodo, Coral {{blank}} la charla hacia las vacaciones de todos."
     hint_general: "Lleva la charla hacia un tema más liviano, en lugar de dejarla en ese punto."
     explanation: "Desvió: llevó la charla hacia un tema más liviano. «Desvirtuó» sería cambiar el sentido de lo que se estaba diciendo, no el tema, y «eludió» supondría que Coral no dijo nada al respecto, cuando la charla sí llegó a ese punto antes de virar."
@@ -191,7 +171,7 @@ exercises:
       - position: 3
         text: "desvió"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Cada vez que un cliente reclamaba por el retraso, el encargado {{blank}} la culpa hacia el proveedor externo."
     hint_general: "Lleva la responsabilidad hacia otra persona en lugar de asumirla."
     explanation: "Desvió: llevó la responsabilidad hacia otra persona. «Desvirtuó» sería cambiar el sentido de los hechos del retraso, no a quién se señala, e «ignoró» supondría no responder al reclamo, y el encargado sí respondía, solo que señalando a otro."
@@ -235,5 +215,5 @@ readings:
     after_phrase: "Desvié la atención hacia las ventajas generales."
 provenance:
   generator: "flui authoring agent"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "aplaudir"
-status: "draft"
+status: "approved"
 lemma: "aplaudir"
 part_of_speech: "verbo"
-syllables: ["a", "plau", "dir"]
+syllables:
+  - "a"
+  - "plau"
+  - "dir"
 stressed_syllable: 3
 ipa_latam: "[a.plawˈðiɾ]"
 ipa_es: "[a.plawˈðiɾ]"
@@ -17,13 +20,22 @@ collocations:
   - "aplaudir la decisión"
   - "aplaudir el gesto"
   - "todos aplaudieron"
-family: ["aplauso"]
+replaces:
+  - before: "Le dio la razón con ganas por haber dicho la verdad"
+    after: "Aplaudió que dijera la verdad"
+  - before: "Apoyaron en voz alta esa decisión difícil"
+    after: "Aplaudieron esa decisión difícil"
+family:
+  - "aplauso"
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["apoyar con ganas", "reconocer en voz alta"]
-  funcion: ["reconocer"]
+  comodin:
+    - "apoyar con ganas"
+    - "reconocer en voz alta"
+  funcion:
+    - "reconocer"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +43,6 @@ confusions:
   - confused_with: "aplacar"
     difference: "Aplacar es calmar algo, como un enojo o un conflicto; aplaudir es reconocer en voz alta algo bueno que hizo alguien."
     memory_trick: "Aplacas una pelea; aplaudes una decisión valiente."
-replaces:
-  - before: "Le dio la razón con ganas por haber dicho la verdad"
-    after: "Aplaudió que dijera la verdad"
-  - before: "Apoyaron en voz alta esa decisión difícil"
-    after: "Aplaudieron esa decisión difícil"
 exercises:
   - position: 1
     sentence: "Sus compañeros {{blank}} la decisión de Rocío de decir la verdad, aunque le costara el puesto."
@@ -221,5 +228,5 @@ readings:
     after_phrase: "Aplaudo que hayas preguntado eso, todos lo pensábamos."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

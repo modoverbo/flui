@@ -1,14 +1,13 @@
-# Word 6 of batch W4 humor. Substitution note: originally assigned "jocoso"
-# (zipf 3.16, dp 0.38 — dispersion just over the 0.35 bar). Replaced with
-# "festivo" in its tone sense (a light, playful way of talking), which passes
-# cleanly: zipf 3.66, dp 0.22.
 schema_version: 1
 sort_order: 9306
 slug: "festivo"
-status: "draft"
+status: "approved"
 lemma: "festivo"
 part_of_speech: "adjetivo"
-syllables: ["fes", "ti", "vo"]
+syllables:
+  - "fes"
+  - "ti"
+  - "vo"
 stressed_syllable: 2
 ipa_latam: "[fesˈti.βo]"
 ipa_es: "[fesˈti.βo]"
@@ -26,13 +25,17 @@ replaces:
     after: "Lo dijo con un tono festivo"
   - before: "El grupo del trabajo es bien relajado, nadie se lo toma tan en serio"
     after: "El grupo del trabajo tiene un tono muy festivo"
-family: ["fiesta", "festejar"]
+family:
+  - "fiesta"
+  - "festejar"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["relajado"]
-  funcion: ["describir"]
+  comodin:
+    - "relajado"
+  funcion:
+    - "describir"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -228,5 +231,5 @@ readings:
     after_phrase: "Mandé un mensaje con un tono festivo para bajar los nervios."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

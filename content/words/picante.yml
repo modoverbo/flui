@@ -1,16 +1,13 @@
-# Word 7 of batch W4 humor. Substitution note: originally assigned "socarrón"
-# (zipf 2.29, dp 0.70 — fails hard, regional-only). Replaced with "picante" in
-# its non-literal sense (a witty, cheeky remark with an edge, not a flavor),
-# which passes: zipf 3.83, dp 0.20. Written carefully to stay about verbal
-# wit — never romantic or sexual — per the brand's "stay off sex" rule; two
-# exercises and the usage notes make that boundary explicit.
 schema_version: 1
 sort_order: 9307
 slug: "picante"
-status: "draft"
+status: "approved"
 lemma: "picante"
 part_of_speech: "adjetivo"
-syllables: ["pi", "can", "te"]
+syllables:
+  - "pi"
+  - "can"
+  - "te"
 stressed_syllable: 2
 ipa_latam: "[piˈkan.te]"
 ipa_es: "[piˈkan.te]"
@@ -28,13 +25,16 @@ replaces:
     after: "Dijo un comentario picante"
   - before: "Respondió con algo directo y con chispa"
     after: "Respondió con algo picante"
-family: ["picar"]
+family:
+  - "picar"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["directo"]
-  funcion: ["comentar"]
+  comodin:
+    - "directo"
+  funcion:
+    - "comentar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -230,5 +230,5 @@ readings:
     after_phrase: "Respondí con algo picante, sin filtro."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

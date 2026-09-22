@@ -1,15 +1,14 @@
-# Word 3 of batch W4 humor. Substitution note: originally assigned "disparate"
-# (zipf 3.38, dp 0.365 — dispersion just over the 0.35 bar). The task's own
-# suggested fallbacks (chascarrillo, jocosidad) both failed harder (dp 0.94
-# and 0.58). Replaced with "tontería" in its humor sense (a silly remark said
-# on purpose to make people laugh), which passes: zipf 3.26, dp 0.28.
 schema_version: 1
 sort_order: 9303
 slug: "tonteria"
-status: "draft"
+status: "approved"
 lemma: "tontería"
 part_of_speech: "sustantivo"
-syllables: ["ton", "te", "rí", "a"]
+syllables:
+  - "ton"
+  - "te"
+  - "rí"
+  - "a"
 stressed_syllable: 3
 ipa_latam: "[ton.teˈɾi.a]"
 ipa_es: "[ton.teˈɾi.a]"
@@ -27,13 +26,17 @@ replaces:
     after: "Dijo una tontería que nos hizo reír a todos"
   - before: "Hicimos un chiste tonto para relajar el ambiente"
     after: "Soltamos unas tonterías para relajar el ambiente"
-family: ["tonto", "tontamente"]
+family:
+  - "tonto"
+  - "tontamente"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["chiste"]
-  funcion: ["relajar"]
+  comodin:
+    - "chiste"
+  funcion:
+    - "relajar"
   canal: "ambos"
   formalidad: "informal"
   variedad: "panhispanico"
@@ -86,26 +89,6 @@ exercises:
         why_not: "«Torpeza» es actuar mal por falta de habilidad, y aquí Emiliano dijo el comentario a propósito para divertir, no por error."
         hint_specific: "«Torpeza» es algo hecho sin querer. ¿Emiliano lo dijo por error o a propósito?"
   - position: 3
-    sentence: "Mientras jugaban a las cartas, el abuelo soltó una {{blank}} sobre las reglas que hizo reír a los nietos toda la noche."
-    hint_general: "Busca la palabra para un comentario inventado, sin sentido, que hizo reír a los nietos toda la noche."
-    explanation: "Tontería: el comentario inventado del abuelo que hizo reír a los nietos. «Sandez» suena a libro serio, fuera de lugar en una noche de cartas, y «exageración» agranda algo real, no inventa un chiste nuevo."
-    options:
-      - position: 1
-        text: "sandez"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Sandez» es una palabra de tono muy formal y de libro, y una noche de cartas en familia pide un tono mucho más cercano."
-        hint_specific: "«Sandez» suena a texto serio y antiguo. ¿Encaja con una noche de cartas en familia?"
-      - position: 2
-        text: "tontería"
-        is_correct: true
-      - position: 3
-        text: "exageración"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Exageración» es agrandar algo real, y aquí el abuelo no exageró nada: inventó un comentario gracioso sobre las reglas."
-        hint_specific: "«Exageración» agranda algo que ya existe. ¿El abuelo agrandó algo o inventó un chiste nuevo?"
-  - position: 4
     sentence: "Durante la conferencia de prensa, la vocera soltó una {{blank}} sobre el clima que relajó a todos los periodistas presentes."
     hint_general: "Piensa en un comentario breve y gracioso que sirvió para relajar una sala tensa de periodistas."
     explanation: "Tontería: el comentario gracioso de la vocera que relajó la sala. «Payasada» suena a un acto exagerado, y «ligereza» es hablar sin pensar, ninguna encaja con un chiste bien calculado."
@@ -125,7 +108,7 @@ exercises:
       - position: 3
         text: "tontería"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Valentina le mandó una {{blank}} sobre el clima a su amiga justo cuando esta estaba a punto de llorar de estrés, y logró hacerla reír."
     hint_general: "Busca la palabra para un mensaje corto e inventado, pensado solo para sacarle una risa a alguien estresado."
     explanation: "Tontería: el mensaje gracioso que Valentina mandó para animar a su amiga. «Advertencia» es un aviso de riesgo, y «curiosidad» es un dato llamativo, ninguna busca solo divertir."
@@ -145,7 +128,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Curiosidad» es un dato llamativo, y el mensaje de Valentina no informó nada: fue un comentario inventado para divertir."
         hint_specific: "«Curiosidad» es un dato interesante. ¿El mensaje de Valentina informó algo o solo hizo reír?"
-  - position: 6
+  - position: 5
     sentence: "El primer día de Joaquín en la oficina, su compañero de equipo soltó una {{blank}} sobre la cafetera rota que rompió el hielo enseguida."
     hint_general: "Piensa en un comentario inventado, no un hecho real, que sirvió para hacer sentir cómodo a alguien nuevo."
     explanation: "Tontería: el comentario inventado que rompió el hielo con Joaquín. «Anécdota» cuenta algo que pasó de verdad, y «descuido» es algo accidental, ninguna encaja con un chiste dicho a propósito."
@@ -165,7 +148,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Descuido» es algo que pasa sin querer, por falta de atención, y aquí el compañero lo dijo a propósito para romper el hielo."
         hint_specific: "«Descuido» es algo accidental. ¿El comentario fue accidental o buscado a propósito?"
-  - position: 7
+  - position: 6
     sentence: "Ximena publicó una {{blank}} sobre los lunes que consiguió miles de comentarios en pocas horas."
     hint_general: "Busca la palabra para un comentario gracioso, no una idea profunda ni un problema serio."
     explanation: "Tontería: el comentario gracioso que Ximena publicó sobre los lunes. «Reflexión» es un pensamiento serio, y «denuncia» señala un problema grave, ninguna busca solo hacer reír."
@@ -185,7 +168,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Denuncia» es señalar un problema serio ante otros, y aquí Ximena solo buscó hacer reír con un comentario sobre los lunes."
         hint_specific: "«Denuncia» señala un problema grave. ¿Eso es lo que buscó Ximena o solo quiso divertir?"
-  - position: 8
+  - position: 7
     sentence: "En su discurso de despedida, Álvaro soltó una {{blank}} sobre las reuniones eternas que hizo aplaudir entre risas a toda la oficina."
     hint_general: "Piensa en un comentario dicho de frente, en tono de broma, sobre algo que todos reconocen."
     explanation: "Tontería: el comentario gracioso de Álvaro sobre las reuniones eternas. «Queja» es una protesta seria, e «insinuación» se dice sin ser directo, ninguna encaja con un chiste dicho de frente."
@@ -229,5 +212,5 @@ readings:
     after_phrase: "Escribí una tontería para que por fin lo lean."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "credibilidad"
-status: "draft"
+status: "approved"
 lemma: "credibilidad"
 part_of_speech: "sustantivo"
 syllables:
@@ -27,13 +27,16 @@ replaces:
     after: "Perdió credibilidad"
   - before: "Se ganó la confianza de todos con hechos"
     after: "Se ganó credibilidad con hechos"
-family: ["creíble"]
+family:
+  - "creíble"
 themes:
   - slug: "medios-entrevistas"
     relevance: 3
 tags:
-  comodin: ["confiable"]
-  funcion: ["evaluar"]
+  comodin:
+    - "confiable"
+  funcion:
+    - "evaluar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -86,26 +89,6 @@ exercises:
         text: "credibilidad"
         is_correct: true
   - position: 3
-    sentence: "La clínica perdió {{blank}} cuando dos pacientes contaron que el diagnóstico no coincidía con lo que les habían dicho."
-    hint_general: "Se trata de lo que se pierde cuando lo dicho no coincide con los hechos."
-    explanation: "Credibilidad: lo que se pierde cuando lo dicho no coincide con los hechos. «Reputación» es la opinión general sobre un lugar, que puede bajar por otros motivos, y «autoridad» es el peso de un experto, no si lo dicho resultó cierto."
-    options:
-      - position: 1
-        text: "reputación"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Reputación» es la opinión general sobre un lugar, y puede bajar por precio o trato; aquí el problema concreto es que lo dicho no coincidió con la realidad."
-        hint_specific: "Esa palabra es la opinión general sobre un lugar, por muchos motivos distintos. ¿Aquí el problema es uno muy concreto?"
-      - position: 2
-        text: "autoridad"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Autoridad» es el peso que tiene la opinión de un experto; aquí el problema no es si saben mucho, sino si lo que dijeron resultó cierto."
-        hint_specific: "Esa palabra habla del peso de un experto. ¿El problema aquí es de conocimiento o de que algo no coincidió?"
-      - position: 3
-        text: "credibilidad"
-        is_correct: true
-  - position: 4
     sentence: "La directora de comunicación mantuvo su {{blank}} intacta porque nunca prometió una fecha que no pudiera cumplir."
     hint_general: "Habla de algo que se cuida cumpliendo exactamente lo que se promete."
     explanation: "Credibilidad: lo que se cuida cumpliendo lo prometido. «Incredulidad» es la duda hacia algo, no algo positivo que se cuide, y «imagen» es solo cómo se ve algo desde afuera, sin relación directa con cumplir promesas."
@@ -125,27 +108,7 @@ exercises:
       - position: 3
         text: "credibilidad"
         is_correct: true
-  - position: 5
-    sentence: "Tras el tercer proyecto entregado a tiempo, Julián se ganó {{blank}} suficiente para liderar el siguiente equipo sin que nadie lo cuestionara."
-    hint_general: "Habla de algo que se gana con un patrón de resultados, no con una sola vez."
-    explanation: "Credibilidad: lo que se gana con un patrón demostrado de resultados. «Aprobación» es aceptar una decisión puntual, y «confianza» es un sentimiento que alguien decide dar, no algo apoyado en tres entregas comprobables."
-    options:
-      - position: 1
-        text: "aprobación"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Aprobación» es que alguien acepte una decisión puntual; aquí lo que ganó fue algo más amplio, ligado a que cumplió tres veces seguidas."
-        hint_specific: "Esa palabra habla de aceptar algo puntual. ¿Aquí se trata de una sola decisión, o de un patrón repetido?"
-      - position: 2
-        text: "confianza"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Confianza» es un sentimiento que otra persona decide darte; aquí lo que ganó se apoya en un patrón comprobable de tres entregas cumplidas."
-        hint_specific: "Esa palabra es un sentimiento que alguien decide darte. ¿Aquí se trata de un sentimiento, o de un patrón demostrado?"
-      - position: 3
-        text: "credibilidad"
-        is_correct: true
-  - position: 6
+  - position: 4
     sentence: "El restaurante recuperó {{blank}} después de que el nuevo chef explicara en redes cada cambio en la carta y cumpliera lo que prometía."
     hint_general: "Se trata de algo que se recupera cumpliendo lo que se dice, no solo con una buena foto."
     explanation: "Credibilidad: lo que se recupera cumpliendo lo que se dice. «Reputación» puede subir solo por verse bien, y «cartel» es un término coloquial para la fama pasajera, fuera de tono en un texto sobre cumplir promesas."
@@ -165,7 +128,7 @@ exercises:
       - position: 3
         text: "credibilidad"
         is_correct: true
-  - position: 7
+  - position: 5
     sentence: "Después de acertar tres pronósticos seguidos, el analista ganó {{blank}} entre sus colegas, que empezaron a citar sus informes."
     hint_general: "Habla de algo que se gana acertando varias veces seguidas, no desde el primer día."
     explanation: "Credibilidad: lo que se gana acertando varias veces seguidas. «Autoridad» es el peso que da el conocimiento técnico desde el primer día, y «fama» es solo ser conocido, sin relación con acertar pronósticos."
@@ -185,7 +148,7 @@ exercises:
       - position: 3
         text: "credibilidad"
         is_correct: true
-  - position: 8
+  - position: 6
     sentence: "Nadie dudó del resultado del estudio: el equipo llevaba años publicando datos que después se confirmaban, y eso les dio {{blank}} total en el sector."
     hint_general: "Habla de algo que se gana cuando los datos se confirman con el tiempo."
     explanation: "Credibilidad: lo que se gana cuando los datos se confirman con el tiempo. «Incredulidad» es la duda hacia algo, justo lo contrario de lo que sintió el sector, y «imagen» es solo cómo se ve algo desde afuera."
@@ -229,5 +192,5 @@ readings:
     after_phrase: "Estoy recuperando credibilidad, aunque me tome tiempo."
 provenance:
   generator: "hand-written by flui content agent"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-b"
+  checked_on: "2026-09-22"

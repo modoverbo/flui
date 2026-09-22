@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "fraternal"
-status: "draft"
+status: "approved"
 lemma: "fraternal"
 part_of_speech: "adjetivo"
-syllables: ["fra", "ter", "nal"]
+syllables:
+  - "fra"
+  - "ter"
+  - "nal"
 stressed_syllable: 3
 ipa_latam: "[fɾa.terˈnal]"
 ipa_es: "[fɾa.terˈnal]"
@@ -22,13 +25,17 @@ replaces:
     after: "Tenemos una relación fraternal"
   - before: "Le tengo un cariño como de familia"
     after: "Le tengo un cariño fraternal"
-family: ["fraternidad", "fraternizar"]
+family:
+  - "fraternidad"
+  - "fraternizar"
 themes:
   - slug: "amistad"
     relevance: 3
 tags:
-  comodin: ["como hermanos"]
-  funcion: ["elogiar"]
+  comodin:
+    - "como hermanos"
+  funcion:
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -61,26 +68,6 @@ exercises:
         why_not: "«Cordial» describe un trato amable y cortés, más superficial que el vínculo cercano que describe la frase."
         hint_specific: "«Cordial» es solo amabilidad. ¿Llamar todos los días es solo amabilidad?"
   - position: 2
-    sentence: "—Cuídate, hermano, aquí estoy para lo que sea —le escribió Tomás a su amigo Julio, con quien tenía un trato {{blank}} desde la universidad."
-    hint_general: "Es la palabra para un trato tan próximo que parece el de dos hermanos."
-    explanation: "Fraternal: un trato tan cercano como el de hermanos. «Fraterno» significa lo mismo, pero suena demasiado literario para un mensaje entre amigos, y «cercano» no tiene ese matiz de hermanos."
-    options:
-      - position: 1
-        text: "fraterno"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Fraterno» significa lo mismo, pero es una forma poco usada en un mensaje de texto entre amigos."
-        hint_specific: "Piensa en un mensaje de texto entre amigos. ¿«Fraterno» suena a ese tipo de mensaje?"
-      - position: 2
-        text: "cercano"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Cercano» solo dice que hay poca distancia entre ellos, sin el matiz de cariño de hermanos que tiene la frase."
-        hint_specific: "«Cercano» solo habla de distancia. ¿La frase habla solo de distancia o de un cariño como de hermanos?"
-      - position: 3
-        text: "fraternal"
-        is_correct: true
-  - position: 3
     sentence: "En su discurso de despedida, Gabriel dijo que su socio de veinte años había sido para él un amigo {{blank}}."
     hint_general: "Busca la palabra precisa para un cariño parecido al de hermanos, apropiada para un discurso."
     explanation: "Fraternal: un amigo tan cercano como un hermano. «Como un hermano más» es una frase de charla informal, y «entrañable» no señala el matiz específico de hermanos."
@@ -100,7 +87,7 @@ exercises:
       - position: 3
         text: "fraternal"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "Después de diez años trabajando codo a codo, Camila y Renata se llevaban como si fueran hermanas: una amistad {{blank}}, sin jerarquías de por medio."
     hint_general: "Es la palabra para una amistad que se siente igual que la de dos hermanas."
     explanation: "Fraternal: una amistad sin jerarquías, como la de hermanas. «Paternal» supone justo una jerarquía, y «cercana» no tiene el matiz de hermanas que pide la frase."
@@ -120,7 +107,7 @@ exercises:
       - position: 3
         text: "fraternal"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Diego conoció a su compañero de cuarto en la universidad y, veinte años después, siguen teniendo una relación {{blank}}, como si fueran de la misma sangre."
     hint_general: "Busca la palabra para un vínculo que se siente como el de un hermano, aunque no haya parentesco."
     explanation: "Fraternal: un vínculo que se siente como el de hermanos. «Familiar» solo habla de parentesco o de algo conocido, y «entrañable» no señala ese matiz de hermanos."
@@ -140,7 +127,7 @@ exercises:
       - position: 3
         text: "fraternal"
         is_correct: true
-  - position: 6
+  - position: 5
     sentence: "Los vecinos de toda la vida se trataban con un cariño {{blank}}, de esos que se construyen después de treinta años puerta con puerta."
     hint_general: "Busca la palabra para el cariño hondo que se siente casi como entre hermanos."
     explanation: "Fraternal: un cariño hondo, casi de hermanos. «Afectuoso» describe cariño en general, y «cordial» describe solo un trato amable, más ligero que este vínculo."
@@ -160,7 +147,7 @@ exercises:
       - position: 3
         text: "fraternal"
         is_correct: true
-  - position: 7
+  - position: 6
     sentence: "El director de la obra trataba a los actores del elenco con una complicidad {{blank}}, de igual a igual, después de meses ensayando juntos."
     hint_general: "Es la palabra para un vínculo de igual a igual, tan próximo como el de hermanos."
     explanation: "Fraternal: un vínculo de igual a igual, como el de hermanos. «Paternal» supone justo lo contrario, una jerarquía, y «cordial» solo describe amabilidad."
@@ -180,7 +167,7 @@ exercises:
       - position: 3
         text: "fraternal"
         is_correct: true
-  - position: 8
+  - position: 7
     sentence: "Después del viaje que hicieron juntos por Sudamérica, Bruno y Esteban quedaron unidos por un lazo {{blank}} que ninguno de los dos esperaba."
     hint_general: "Busca la palabra para un lazo que, sin ser parientes de sangre, se siente igual al de hermanos."
     explanation: "Fraternal: un lazo que se siente igual al de hermanos. «Íntimo» dice que es muy personal, y «familiar» habla de parentesco, sin el matiz de hermanos que pide la frase."
@@ -224,5 +211,5 @@ readings:
     after_phrase: "Tenemos un cariño fraternal desde niños."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

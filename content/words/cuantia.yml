@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "cuantia"
-status: "draft"
+status: "approved"
 lemma: "cuantía"
 part_of_speech: "sustantivo"
-syllables: ["cuan", "tí", "a"]
+syllables:
+  - "cuan"
+  - "tí"
+  - "a"
 stressed_syllable: 2
 ipa_latam: "[kwanˈti.a]"
 ipa_es: "[kwanˈti.a]"
@@ -25,13 +28,16 @@ replaces:
     after: "La cuantía final del trato"
   - before: "Necesito saber el número exacto antes de firmar"
     after: "Necesito saber la cuantía exacta antes de firmar"
-family: ["cuantioso", "cuantificar"]
+family:
+  - "cuantioso"
 themes:
   - slug: "ventas"
     relevance: 3
 tags:
-  comodin: ["cantidad"]
-  funcion: ["precisar una cifra"]
+  comodin:
+    - "cantidad"
+  funcion:
+    - "precisar una cifra"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -44,26 +50,6 @@ confusions:
     memory_trick: "La garantía protege; la cuantía se cuenta."
 exercises:
   - position: 1
-    sentence: "El proveedor pidió que el contrato especificara la {{blank}} exacta que la empresa pagaría por cada día de retraso en la entrega."
-    hint_general: "Busca la palabra que nombra la cifra exacta de un pago, no una promesa sobre lo que pase después."
-    explanation: "Cuantía: la cifra exacta que se pagaría por cada día de retraso. «Garantía» es una promesa, no una cifra, y «suma» sería el resultado de sumar varias cifras, no la fijada aquí."
-    options:
-      - position: 1
-        text: "garantía"
-        is_correct: false
-        distractor_type: "paronym"
-        why_not: "«Garantía» es la promesa de responder si algo falla, no una cifra que se paga; aquí se habla de un pago concreto por cada día."
-        hint_specific: "«Garantía» es una promesa, no un número. ¿La frase pide una cifra o una promesa?"
-      - position: 2
-        text: "cuantía"
-        is_correct: true
-      - position: 3
-        text: "suma"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Suma» es el resultado de sumar varias cifras; aquí se fija una sola cifra por cada día de atraso, no el resultado de sumar otras."
-        hint_specific: "Una suma junta varias cifras. ¿Aquí se suman números o se fija uno solo?"
-  - position: 2
     sentence: "Antes de aceptar el pedido, Bruno quiso confirmar la {{blank}} total, aunque fuera solo un anticipo pequeño."
     hint_general: "Busca la palabra para una cifra exacta de dinero, sea grande o pequeña."
     explanation: "Cuantía: la cifra exacta del pedido, aunque fuera un anticipo pequeño. «Millonada» es coloquial y exagera el monto, y «ganancia» sería lo que queda después de gastos, no el total a pagar."
@@ -83,7 +69,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Ganancia» es lo que se gana después de restar gastos; aquí se habla del total del pedido, no de una utilidad."
         hint_specific: "La ganancia es lo que queda después de gastos. ¿Aquí se habla de una ganancia o del total a pagar?"
-  - position: 3
+  - position: 2
     sentence: "Daniela revisó la cotización dos veces para asegurarse de que la {{blank}} coincidiera con lo acordado en la llamada."
     hint_general: "Nombra la cifra exacta que debe coincidir con lo que se acordó de palabra."
     explanation: "Cuantía: la cifra exacta que debía coincidir con lo acordado. «Tarifa» es un precio general de catálogo, y «valoración» sería un cálculo aproximado, no la cifra ya acordada."
@@ -103,7 +89,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Valoración» es una estimación de cuánto vale algo; aquí se necesita la cifra exacta ya acordada, no un cálculo aproximado."
         hint_specific: "Una valoración es un cálculo aproximado. ¿Aquí hace falta un estimado o una cifra exacta?"
-  - position: 4
+  - position: 3
     sentence: "En la cena de despedida, Iván bromeó preguntando cuál era la {{blank}} exacta que cada uno debía aportar, aunque todos sabían que eran solo cinco dólares."
     hint_general: "Busca la palabra precisa para una cifra de dinero, aunque sea una broma entre amigos."
     explanation: "Cuantía: la cifra exacta que Iván pidió en broma, aunque fueran solo cinco dólares. «Exacción» es un término legal para un cobro forzoso, y «aportación» sería lo que cada uno pone, sin la idea de una cifra tan exacta."
@@ -123,7 +109,7 @@ exercises:
       - position: 3
         text: "cuantía"
         is_correct: true
-  - position: 5
+  - position: 4
     sentence: "Lorena le explicó al cliente que la {{blank}} del descuento dependía del volumen total de la compra."
     hint_general: "Nombra la cifra exacta de un descuento o de un pago, según lo que se compre."
     explanation: "Cuantía: la cifra exacta del descuento según el volumen de compra. «Proporción» sería una relación entre partes, no una cifra fija, y «rebaja» ya es el descuento mismo, no la cifra que lo define."
@@ -143,7 +129,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Rebaja» ya es el descuento mismo; no puede haber «la rebaja del descuento», así que aquí hace falta la cifra exacta, no otro descuento."
         hint_specific: "Una rebaja es un descuento. ¿Puede un descuento tener su propio descuento?"
-  - position: 6
+  - position: 5
     sentence: "El vendedor detalló en el recibo la {{blank}} total del pedido, que incluía impuestos y envío."
     hint_general: "Se trata de la cifra final y exacta de todo el pedido junto."
     explanation: "Cuantía: la cifra final del pedido con impuestos y envío incluidos. «Cuota» es un pago parcial que se repite, y «tasación» sería calcular un valor, no anotar la cifra ya definida."
@@ -163,27 +149,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Tasación» es calcular cuánto vale algo; aquí ya está calculado, solo falta anotar la cifra final que incluye impuestos y envío."
         hint_specific: "Una tasación calcula un valor aproximado. ¿Aquí se necesita calcular o solo anotar la cifra final?"
-  - position: 7
-    sentence: "Mateo le prestó dinero a su primo y anotó en una libreta la {{blank}} exacta, para no olvidarla."
-    hint_general: "Nombra la cifra de dinero que alguien anota para no olvidarla."
-    explanation: "Cuantía: la cifra de dinero que Mateo anotó para no olvidarla. «Deuda» es el compromiso de devolver el dinero, no la cifra en sí, y «constancia» sería un registro escrito, no el número."
-    options:
-      - position: 1
-        text: "deuda"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Deuda» es el compromiso de devolver el dinero, no la cifra concreta que se anota; aquí se anota un número, no la obligación en sí."
-        hint_specific: "La deuda es el compromiso de pagar. ¿Aquí se anota un compromiso o una cifra?"
-      - position: 2
-        text: "cuantía"
-        is_correct: true
-      - position: 3
-        text: "constancia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Constancia» es un registro o una prueba escrita de algo, no la cifra de dinero en sí; aquí lo que se anota es un número."
-        hint_specific: "Una constancia es una prueba escrita. ¿Aquí se anota una prueba, o un número de dinero?"
-  - position: 8
+  - position: 6
     sentence: "En la entrevista, Camila prefirió no decir la {{blank}} exacta que esperaba ganar, y dejó el tema para la segunda reunión."
     hint_general: "Nombra la cifra concreta de dinero que alguien prefiere no decir todavía."
     explanation: "Cuantía: la cifra exacta que Camila prefirió no decir todavía. «Expectativa» sería una idea general, no un número, y «pretensión» sería lo que aspira a conseguir, no la cifra misma."
@@ -227,5 +193,5 @@ readings:
     after_phrase: "Esta es la cuantía exacta que espero."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

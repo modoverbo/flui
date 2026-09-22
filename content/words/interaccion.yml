@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "interaccion"
-status: "draft"
+status: "approved"
 lemma: "interacción"
 part_of_speech: "sustantivo"
-syllables: ["in", "te", "rac", "ción"]
+syllables:
+  - "in"
+  - "te"
+  - "rac"
+  - "ción"
 stressed_syllable: 4
 ipa_latam: "[in.te.rakˈsjon]"
 ipa_es: "[in.te.rakˈθjon]"
@@ -24,13 +28,17 @@ replaces:
     after: "Que haya interacción real"
   - before: "Nadie comentó nada"
     after: "No hubo interacción"
-family: ["interactuar", "interactivo"]
+family:
+  - "interactivo"
 themes:
   - slug: "redes-sociales"
     relevance: 3
 tags:
-  comodin: ["que la gente responda", "que se metan en la conversación"]
-  funcion: ["conectar"]
+  comodin:
+    - "que la gente responda"
+    - "que se metan en la conversación"
+  funcion:
+    - "conectar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -225,5 +233,5 @@ readings:
     after_phrase: "Al final sí hubo interacción de verdad."
 provenance:
   generator: "hand-authored for redes-sociales theme batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

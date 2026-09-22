@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "instruir"
-status: "draft"
+status: "approved"
 lemma: "instruir"
 part_of_speech: "verbo"
-syllables: ["ins", "tru", "ir"]
+syllables:
+  - "ins"
+  - "tru"
+  - "ir"
 stressed_syllable: 3
 ipa_latam: "[ins.truˈir]"
 ipa_es: "[ins.truˈir]"
@@ -21,15 +24,20 @@ replaces:
     after: "Alguien me tiene que instruir sobre cómo se hace esto"
   - before: "Le expliqué todo lo que necesitaba saber antes de dejarlo solo"
     after: "Lo instruí antes de dejarlo solo"
-family: ["instrucción", "instructor", "instructivo"]
+family:
+  - "instrucción"
+  - "instructor"
+  - "instructivo"
 themes:
   - slug: "docencia"
     relevance: 3
   - slug: "liderazgo-feedback"
     relevance: 2
 tags:
-  comodin: ["explicar"]
-  funcion: ["formar"]
+  comodin:
+    - "explicar"
+  funcion:
+    - "formar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -224,5 +232,5 @@ readings:
     after_phrase: "Quiso instruirlo antes de la carrera."
 provenance:
   generator: "hand-authored for content/words (docencia theme)"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

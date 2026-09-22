@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "encantador"
-status: "draft"
+status: "approved"
 lemma: "encantador"
 part_of_speech: "adjetivo"
-syllables: ["en", "can", "ta", "dor"]
+syllables:
+  - "en"
+  - "can"
+  - "ta"
+  - "dor"
 stressed_syllable: 4
 ipa_latam: "[en.kan.taˈðor]"
 ipa_es: "[en.kan.taˈðor]"
@@ -22,13 +26,20 @@ replaces:
     after: "Es encantador desde que lo conoces"
   - before: "Es súper agradable hablar con él"
     after: "Es encantador, da gusto hablar con él"
-family: ["encanto", "encantar", "encantadoramente"]
+family:
+  - "encanto"
+  - "encantar"
+  - "encantadoramente"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["cae muy bien", "agradable"]
-  funcion: ["elogiar", "describir"]
+  comodin:
+    - "cae muy bien"
+    - "agradable"
+  funcion:
+    - "elogiar"
+    - "describir"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -38,28 +49,11 @@ confusions:
     memory_trick: "El embaucador actúa para ganar algo; el encantador simplemente cae bien."
   - confused_with: "seductor"
     difference: "«Seductor» busca atraer con una intención romántica o interesada; la otra palabra solo hace que la charla resulte agradable, sin ese propósito."
+  - confused_with: "carismático"
+    difference: "Ser «carismático» además arrastra a un grupo entero y hace que quieran seguirte; lo encantador solo cae bien en el trato cercano."
+    memory_trick: "Lo encantador agrada de cerca; lo carismático arrastra multitudes."
 exercises:
   - position: 1
-    sentence: "Mariana apenas llevaba diez minutos en el club de lectura y ya todos querían sentarse a su lado: es tan {{blank}} que da gusto conocerla."
-    hint_general: "Se trata de caer bien de inmediato a quien acaba de conocerte."
-    explanation: "Encantadora: cae bien de inmediato a quien la conoce. «Carismática» domina a un grupo entero, y «entretenida» mantiene el interés en una charla larga; aquí bastan diez minutos para que caiga bien."
-    options:
-      - position: 1
-        text: "carismática"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Carismática» describe a quien domina la atención de un grupo entero; aquí el efecto es más simple: cae bien de inmediato a quien se sienta a su lado."
-        hint_specific: "«Carismática» habla de dominar a un grupo entero. ¿La frase describe eso o solo que cae bien de cerca?"
-      - position: 2
-        text: "entretenida"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Entretenida» diría que mantiene enganchada una charla larga, y aquí lo que se destaca es lo rápido que cae bien, en solo diez minutos."
-        hint_specific: "«Entretenida» habla de mantener el interés en una charla larga. ¿Diez minutos alcanzan para eso, o solo para caer bien?"
-      - position: 3
-        text: "encantadora"
-        is_correct: true
-  - position: 2
     sentence: "Tomás llegó solo a la fiesta de la empresa, sin conocer a nadie, y a los cinco minutos ya tenía conversación con media sala: es {{blank}}, no hay otra explicación."
     hint_general: "Apunta a alguien que cae bien de inmediato, sin ningún esfuerzo ni interés oculto."
     explanation: "Encantador: cae bien de inmediato, sin esfuerzo ni interés oculto. «Embaucador» finge encanto para sacar algo a cambio, y «seductor» busca conquistar, cuando aquí solo cayó bien a toda la sala."
@@ -79,7 +73,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Seductor» sugiere una intención romántica o de conquista, y la escena solo describe que cayó bien a toda la sala, sin ese propósito."
         hint_specific: "«Seductor» apunta a conquistar a alguien. ¿La frase habla de conquista o de caer bien en general?"
-  - position: 3
+  - position: 2
     sentence: "Nadie en el panel esperaba reírse en una entrevista, pero Valeria fue tan {{blank}} desde el saludo que todos bajaron la guardia."
     hint_general: "Se trata de caer bien de inmediato, desde el primer saludo."
     explanation: "Encantadora: cae bien de inmediato, desde el saludo. «Simpaticona» es un halago demasiado informal para describir un panel de entrevista, y «sonriente» solo nombra su gesto, no el efecto que causó en el panel."
@@ -99,7 +93,7 @@ exercises:
       - position: 3
         text: "encantadora"
         is_correct: true
-  - position: 4
+  - position: 3
     sentence: "El vecino nuevo, Ignacio, solo llevaba una caja en las manos cuando ya estaba hablando con media escalera: qué tipo tan {{blank}}, comentaron después."
     hint_general: "Habla de caer bien enseguida a un grupo de desconocidos."
     explanation: "Encantador: cae bien enseguida a un grupo de desconocidos. «Cautivador» sugiere un efecto casi hipnótico, y «jovial» describe el humor de alguien, no lo rápido que cayó bien con una simple caja en las manos."
@@ -119,27 +113,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Jovial» describe un carácter de humor alegre y constante, y la escena no habla de su humor: habla de lo rápido que cayó bien a los vecinos."
         hint_specific: "«Jovial» describe el humor de alguien. ¿La frase habla de humor o de caer bien de inmediato?"
-  - position: 5
-    sentence: "La clienta nueva del café solo pidió un té, pero charló con la barista como si se conocieran de toda la vida: es {{blank}}, dijo la barista después."
-    hint_general: "Se trata de caer bien de inmediato, incluso a alguien que solo pasó un momento por un lugar."
-    explanation: "Encantadora: cae bien de inmediato, incluso en un encuentro breve. «Simpaticona» es un comentario demasiado casual para esa descripción, y «carismática» habla de dominar a un grupo entero, cuando aquí solo hay dos personas charlando."
-    options:
-      - position: 1
-        text: "simpaticona"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Simpaticona» es coloquial y suena a un comentario entre amigas, un tono más casual que el que usaría la barista para describir a una clienta que acaba de conocer."
-        hint_specific: "«Simpaticona» tiene un tono muy casual. ¿La barista describe así a una desconocida, o busca algo más neutro?"
-      - position: 2
-        text: "carismática"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Carismática» describe a quien domina a un grupo entero, y aquí solo hay dos personas charlando, no ningún grupo que dominar."
-        hint_specific: "«Carismática» habla de dominar un grupo. ¿Aquí hay un grupo, o solo dos personas hablando?"
-      - position: 3
-        text: "encantadora"
-        is_correct: true
-  - position: 6
+  - position: 4
     sentence: "Nadie conocía al invitado de la cena, pero antes del primer plato ya todos querían saber más de él: resultó ser {{blank}}."
     hint_general: "Apunta a caer bien de inmediato, antes incluso de conocerlo bien."
     explanation: "Encantador: cae bien de inmediato, antes incluso de conocerlo bien. «Entretenido» habla de mantener el interés en una charla larga, y «amable» solo describe buenos modales, sin la curiosidad que despertó este invitado."
@@ -159,7 +133,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Amable» solo describe buenos modales, y la frase cuenta algo más fuerte: que todos quedaron con ganas de saber más de él desde el principio."
         hint_specific: "«Amable» describe solo buenos modales. ¿La frase describe solo modales, o algo que despertó curiosidad por él?"
-  - position: 7
+  - position: 5
     sentence: "La primera cena con los suegros de Noelia no fue nada tensa: bastaron dos chistes de su parte para que todos dijeran qué {{blank}} es."
     hint_general: "Se trata de caer bien de inmediato a toda una familia que acaba de conocerte."
     explanation: "Encantadora: cae bien de inmediato a toda una familia. «Seductora» sugiere una intención de conquista fuera de lugar en una cena familiar, y «graciosa» se queda solo en los chistes, sin nombrar el efecto general que causó."
@@ -179,7 +153,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Graciosa» solo diría que hace reír con chistes, y la frase describe algo más amplio: que cayó bien a toda la familia desde el principio."
         hint_specific: "«Graciosa» se queda en los chistes. ¿La frase habla solo de chistes, o de caer bien en general?"
-  - position: 8
+  - position: 6
     sentence: "El nuevo cliente no había firmado nada todavía, pero después de la primera llamada el equipo ya decía que Emilio era {{blank}}."
     hint_general: "Apunta a caer bien de inmediato, incluso antes de cerrar nada en concreto."
     explanation: "Encantador: cae bien de inmediato, incluso antes de cerrar nada. «Cautivador» sugiere un efecto casi hipnótico, y «jovial» describe el humor de alguien, no lo rápido que cayó bien en una sola llamada."
@@ -223,5 +197,5 @@ readings:
     after_phrase: "Es encantadora, tráela más seguido."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

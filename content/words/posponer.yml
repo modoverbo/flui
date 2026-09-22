@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "posponer"
-status: "draft"
+status: "approved"
 lemma: "posponer"
 part_of_speech: "verbo"
 syllables:
@@ -49,6 +49,15 @@ confusions:
   - confused_with: "suponer"
     difference: "«Suponer» es dar algo por cierto sin comprobarlo; «posponer» es dejar una decisión o una acción para más adelante."
     memory_trick: "Supones sin pruebas; pospones sin decidir."
+  - confused_with: "exponer"
+    difference: "«Exponer» es presentar una idea ante otros ahora mismo; posponer es justo lo contrario, dejar algo para más adelante."
+    memory_trick: "Exponer se hace hoy; posponer se deja para después."
+  - confused_with: "prorrogar"
+    difference: "«Prorrogar» fija una nueva fecha concreta para algo que ya tenía plazo; posponer solo aparta la decisión, sin fijar cuándo se retoma."
+    memory_trick: "Prorrogar pone otra fecha; posponer solo aparta."
+  - confused_with: "sopesar"
+    difference: "«Sopesar» es pensar una decisión ahora, con cuidado; posponer es justo dejarla para más tarde, sin decidir todavía."
+    memory_trick: "Quien sopesa decide ahora; quien pospone decide después."
 exercises:
   - position: 1
     sentence: "Iván le explicó a su gerente que el cliente quería {{blank}} la firma hasta hablarlo con su socio."
@@ -234,5 +243,5 @@ readings:
     after_phrase: "Pidió posponer la compra hasta enero."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

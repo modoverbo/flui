@@ -1,10 +1,13 @@
 schema_version: 1
 sort_order: 9402
 slug: "excusar"
-status: "draft"
+status: "approved"
 lemma: "excusar"
 part_of_speech: "verbo"
-syllables: ["ex", "cu", "sar"]
+syllables:
+  - "ex"
+  - "cu"
+  - "sar"
 stressed_syllable: 3
 ipa_latam: "[eks.kuˈsar]"
 ipa_es: "[eks.kuˈsar]"
@@ -22,13 +25,17 @@ replaces:
     after: "Te excuso, entiendo por qué llegaste tarde"
   - before: "Se le puede perdonar ese descuido, tenía sus razones"
     after: "Se le puede excusar ese descuido, tenía sus razones"
-family: ["excusa", "excusable"]
+family:
+  - "excusa"
+  - "excusable"
 themes:
   - slug: "pedir-disculparse"
     relevance: 3
 tags:
-  comodin: ["perdonar"]
-  funcion: ["comprender"]
+  comodin:
+    - "perdonar"
+  funcion:
+    - "comprender"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -101,26 +108,6 @@ exercises:
         why_not: "«Compadecer» es sentir pena por alguien, y aquí el grupo no solo siente pena: decide no reprocharle la ausencia."
         hint_specific: "«Compadecerse» es sentir pena. ¿El grupo solo siente pena o decide no reprochar nada?"
   - position: 4
-    sentence: "El comité resolvió {{blank}} el error de forma en la solicitud, porque el resto del documento cumplía con todo lo exigido."
-    hint_general: "Se trata de dejar pasar un error pequeño sin reprochar nada, porque el resto está bien."
-    explanation: "Excusar: el comité entiende el error de forma y lo deja pasar. «Disculpar» es más coloquial para un texto formal, y «señalar» sería justo lo contrario: marcarlo como un problema."
-    options:
-      - position: 1
-        text: "disculpar"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Disculpar» es más coloquial y cotidiano; en la resolución formal de un comité conviene un término más técnico como «excusar»."
-        hint_specific: "«Disculpar» es la palabra de todos los días. ¿Este texto suena a trámite formal o a charla informal?"
-      - position: 2
-        text: "excusar"
-        is_correct: true
-      - position: 3
-        text: "señalar"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Señalar» sería marcar el error como un problema, y el comité, al contrario, decide pasarlo por alto."
-        hint_specific: "«Señalar» marca un problema. ¿El comité marca el error o lo deja pasar?"
-  - position: 5
     sentence: "En la cena familiar, Antonia {{blank}} el comentario torpe de su hermano, porque sabía que no lo dijo con mala intención."
     hint_general: "Busca el verbo para cuando entiendes que un comentario torpe no tuvo mala intención y no se lo reprochas."
     explanation: "Excusó: entendió que no hubo mala intención y no reprochó el comentario. «Indultó» es un término legal para delitos graves, demasiado formal para una cena familiar, y «criticó» sería justo lo contrario: reprobar el comentario."
@@ -140,7 +127,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Criticar» sería reprobar el comentario, y Antonia hace lo contrario: lo entiende y no se lo reprocha."
         hint_specific: "«Criticar» reprueba algo. ¿Antonia reprueba el comentario o lo entiende?"
-  - position: 6
+  - position: 5
     sentence: "El entrenador de Gonzalo decidió {{blank}} el mal partido, porque el árbitro había cobrado un penal injusto en contra."
     hint_general: "Se trata de no tomar en cuenta un mal resultado porque hay un motivo externo que lo explica."
     explanation: "Excusar: el entrenador entiende que el penal injusto influyó y no le reprocha el mal partido a Gonzalo. «Ignorar» sería no darse cuenta del problema, y «premiar» sería reconocerlo como un logro."
@@ -160,7 +147,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Premiar» sería reconocer algo bueno, y aquí se trata de dejar pasar un mal partido, no de reconocerlo como un logro."
         hint_specific: "«Premiar» reconoce algo bueno. ¿El mal partido es un logro o un tropiezo que se entiende?"
-  - position: 7
+  - position: 6
     sentence: "Beatriz {{blank}} a su vecino por el ruido de la mudanza, ya que solo pasó esa tarde y avisó con tiempo."
     hint_general: "Busca el verbo para cuando entiendes una molestia ajena y decides no reprochársela a nadie."
     explanation: "Excusó: entendió la situación de su vecino y no le reprochó nada. «Acusó» sería señalarlo como responsable de algo malo, y «soportó» sugiere aguantar el ruido con esfuerzo, no comprenderlo sin problema."
@@ -180,7 +167,7 @@ exercises:
         distractor_type: "near_synonym"
         why_not: "«Soportar» implica aguantar algo con esfuerzo, y aquí Beatriz no sufre el ruido: lo entiende sin problema porque avisaron a tiempo."
         hint_specific: "«Soportar» implica esfuerzo o molestia. ¿Beatriz sufre el ruido o lo entiende sin problema?"
-  - position: 8
+  - position: 7
     sentence: "Ricardo {{blank}} el correo mal redactado de Lorena, porque sabía que lo había escrito a las tres de la mañana antes de un vuelo."
     hint_general: "Se trata de entender por qué algo salió mal y no tomarlo como un reproche."
     explanation: "Excusó: entendió por qué el correo salió así y no se lo reprochó. «Corrigió» sería arreglar el texto, y «elogió» sería destacarlo como un acierto."
@@ -224,5 +211,5 @@ readings:
     after_phrase: "La excuso, cualquiera escribe así con esa noche."
 provenance:
   generator: "flui authoring agent — batch W5 conflict-fix"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

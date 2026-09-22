@@ -1,14 +1,15 @@
-# Word 9 of batch W4 humor, written as assigned. Passes metrics cleanly:
-# zipf 3.22, dp 0.29. Same brand-voice caution as the brief: every exercise
-# and reading aims the exaggeration at an idea, a policy, a format, or
-# self-directed teasing — never at a person's traits, body, or nationality.
 schema_version: 1
 sort_order: 9309
 slug: "ridiculizar"
-status: "draft"
+status: "approved"
 lemma: "ridiculizar"
 part_of_speech: "verbo"
-syllables: ["ri", "di", "cu", "li", "zar"]
+syllables:
+  - "ri"
+  - "di"
+  - "cu"
+  - "li"
+  - "zar"
 stressed_syllable: 5
 ipa_latam: "[ri.ði.ku.liˈsar]"
 ipa_es: "[ri.ði.ku.liˈθar]"
@@ -26,13 +27,17 @@ replaces:
     after: "Ridiculizó la propuesta"
   - before: "Exageró tanto el argumento que quedó como un chiste"
     after: "Ridiculizó el argumento"
-family: ["ridículo", "ridiculez"]
+family:
+  - "ridículo"
+  - "ridiculez"
 themes:
   - slug: "humor"
     relevance: 3
 tags:
-  comodin: ["burlarse de"]
-  funcion: ["criticar"]
+  comodin:
+    - "burlarse de"
+  funcion:
+    - "criticar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -228,5 +233,5 @@ readings:
     after_phrase: "Ridiculizamos la moda con una escena de teatro."
 provenance:
   generator: "flui authoring agent — batch W4 humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

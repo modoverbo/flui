@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "estrechar"
-status: "draft"
+status: "approved"
 lemma: "estrechar"
 part_of_speech: "verbo"
-syllables: ["es", "tre", "char"]
+syllables:
+  - "es"
+  - "tre"
+  - "char"
 stressed_syllable: 3
 ipa_latam: "[es.tɾeˈtʃaɾ]"
 ipa_es: "[es.tɾeˈtʃaɾ]"
@@ -17,6 +20,11 @@ collocations:
   - "estrechar lazos"
   - "estrechar la relación"
   - "estrechar vínculos"
+replaces:
+  - before: "El proyecto los ayudó a acercarse más como equipos"
+    after: "El proyecto les ayudó a estrechar lazos entre equipos"
+  - before: "Quiere fortalecer la relación con ese proveedor"
+    after: "Quiere estrechar la relación con ese proveedor"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +32,11 @@ themes:
   - slug: "amistad"
     relevance: 1
 tags:
-  comodin: ["acercarse más", "fortalecer la relación"]
-  funcion: ["vincular"]
+  comodin:
+    - "acercarse más"
+    - "fortalecer la relación"
+  funcion:
+    - "vincular"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +44,6 @@ confusions:
   - confused_with: "estirar"
     difference: "Estirar es alargar algo físicamente; estrechar, en este sentido, es acercar una relación con el trato constante."
     memory_trick: "Se estira una cuerda; se estrecha una relación."
-replaces:
-  - before: "El proyecto los ayudó a acercarse más como equipos"
-    after: "El proyecto les ayudó a estrechar lazos entre equipos"
-  - before: "Quiere fortalecer la relación con ese proveedor"
-    after: "Quiere estrechar la relación con ese proveedor"
 exercises:
   - position: 1
     sentence: "Después del proyecto en común, los dos equipos lograron {{blank}} lazos que antes no existían."
@@ -223,5 +229,5 @@ readings:
     after_phrase: "Siento que por fin logramos estrechar la relación."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

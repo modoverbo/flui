@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "interceder"
-status: "draft"
+status: "approved"
 lemma: "interceder"
 part_of_speech: "verbo"
-syllables: ["in", "ter", "ce", "der"]
+syllables:
+  - "in"
+  - "ter"
+  - "ce"
+  - "der"
 stressed_syllable: 4
 ipa_latam: "[in.teɾ.seˈðeɾ]"
 ipa_es: "[in.teɾ.θeˈðeɾ]"
@@ -17,13 +21,22 @@ collocations:
   - "interceder por alguien"
   - "interceder ante"
   - "nadie intercedió"
-family: ["intercesión"]
+replaces:
+  - before: "Habló con el jefe a favor de su compañero"
+    after: "Intercedió por su compañero ante el jefe"
+  - before: "Salió en su defensa frente al director"
+    after: "Intercedió por él ante el director"
+family:
+  - "intercesión"
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["hablar por alguien", "salir en defensa de"]
-  funcion: ["defender"]
+  comodin:
+    - "hablar por alguien"
+    - "salir en defensa de"
+  funcion:
+    - "defender"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +44,6 @@ confusions:
   - confused_with: "interceptar"
     difference: "Interceptar es detener algo en su camino, como un balón o un mensaje; interceder es hablar a favor de alguien ante otra persona."
     memory_trick: "Interceptas un pase; intercedes por una persona."
-replaces:
-  - before: "Habló con el jefe a favor de su compañero"
-    after: "Intercedió por su compañero ante el jefe"
-  - before: "Salió en su defensa frente al director"
-    after: "Intercedió por él ante el director"
 exercises:
   - position: 1
     sentence: "Cuando la actividad grupal salió mal, la tutora {{blank}} por el grupo ante la dirección del colegio."
@@ -221,5 +229,5 @@ readings:
     after_phrase: "Quiero interceder por esa familia."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

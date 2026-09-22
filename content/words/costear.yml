@@ -1,6 +1,6 @@
 schema_version: 1
 slug: "costear"
-status: "draft"
+status: "approved"
 lemma: "costear"
 part_of_speech: "verbo"
 syllables:
@@ -49,6 +49,9 @@ confusions:
   - confused_with: "cotizar"
     difference: "«Cotizar» es calcular y ofrecer un precio; «costear» es reunir o pagar el dinero para cubrir ese precio."
     memory_trick: "Cotizas antes de saber el precio; costeas después, para pagarlo."
+  - confused_with: "desembolso"
+    difference: "Un «desembolso» es el momento concreto en que se paga una cantidad de dinero; costear es hacerse cargo de cubrir ese gasto, no solo el instante del pago."
+    memory_trick: "El desembolso ocurre el día del pago; costear es asumir el gasto entero."
 exercises:
   - position: 1
     sentence: "Marisol, la dueña del taller, {{blank}} el traslado de los clientes hasta la planta para que vieran la producción de cerca."
@@ -234,5 +237,5 @@ readings:
     after_phrase: "Entre todos podemos costearlo, no tienes que preocuparte."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

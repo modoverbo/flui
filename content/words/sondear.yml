@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "sondear"
-status: "draft"
+status: "approved"
 lemma: "sondear"
 part_of_speech: "verbo"
-syllables: ["son", "de", "ar"]
+syllables:
+  - "son"
+  - "de"
+  - "ar"
 stressed_syllable: 3
 ipa_latam: "[son.deˈaɾ]"
 ipa_es: "[son.deˈaɾ]"
@@ -17,13 +20,21 @@ collocations:
   - "sondear el ánimo"
   - "sondear la opinión"
   - "sondear con preguntas simples"
+replaces:
+  - before: "Le preguntó de a poquito cómo estaba, sin ir directo al tema"
+    after: "Sondeó cómo estaba, sin ir directo al tema"
+  - before: "Preguntó con cuidado qué opinaba antes de proponer el cambio"
+    after: "Sondeó su opinión antes de proponer el cambio"
 family: []
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["tantear el terreno", "ver cómo anda"]
-  funcion: ["preguntar con suavidad"]
+  comodin:
+    - "tantear el terreno"
+    - "ver cómo anda"
+  funcion:
+    - "preguntar con suavidad"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +42,9 @@ confusions:
   - confused_with: "interrogar"
     difference: "Interrogar implica hacer preguntas directas y formales, casi como en un interrogatorio; sondear es preguntar con suavidad, sin presionar a nadie."
     memory_trick: "Interrogas con dureza; sondeas con suavidad."
-replaces:
-  - before: "Le preguntó de a poquito cómo estaba, sin ir directo al tema"
-    after: "Sondeó cómo estaba, sin ir directo al tema"
-  - before: "Preguntó con cuidado qué opinaba antes de proponer el cambio"
-    after: "Sondeó su opinión antes de proponer el cambio"
+  - confused_with: "tantear"
+    difference: "«Tantear» cabe en una charla con una sola persona, explorando con cuidado su reacción; sondear se usa sobre todo con grupos, encuestas y cifras."
+    memory_trick: "Tanteas a uno; sondeas a cien."
 exercises:
   - position: 1
     sentence: "Antes de hablar del tema serio, Elena prefirió {{blank}} el ánimo de su hermano con preguntas simples."
@@ -221,5 +230,5 @@ readings:
     after_phrase: "Estoy sondeando qué piensa la gente."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

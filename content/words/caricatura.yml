@@ -1,7 +1,7 @@
 schema_version: 1
 sort_order: 9205
 slug: "caricatura"
-status: "draft"
+status: "approved"
 lemma: "caricatura"
 part_of_speech: "sustantivo"
 syllables:
@@ -175,26 +175,6 @@ exercises:
         why_not: "«Caricia» es un gesto de cariño con la mano, y Valeria hizo un dibujo, no un gesto."
         hint_specific: "«Caricia» es un gesto. ¿Valeria hizo un gesto o un dibujo?"
   - position: 7
-    sentence: "El cómico Emilio cerró su número con una {{blank}} del cantante famoso: peluca ridícula y tres gestos exagerados, nada más."
-    hint_general: "Es una versión que exagera solo un par de rasgos del cantante, en poco tiempo."
-    explanation: "Caricatura: una versión que exagera solo un par de rasgos, en poco tiempo. «Parodia» imitaría también la canción entera y el espectáculo, y «mamarracho» es casi un insulto para algo hecho sin cuidado."
-    options:
-      - position: 1
-        text: "parodia"
-        is_correct: false
-        distractor_type: "near_synonym"
-        why_not: "«Parodia» imitaría también la canción entera y el espectáculo del cantante, y aquí el cómico solo exagera la peluca y unos gestos, en pocos segundos."
-        hint_specific: "«Parodia» imita un espectáculo entero. ¿El cómico imita todo el show o solo unos gestos?"
-      - position: 2
-        text: "caricatura"
-        is_correct: true
-      - position: 3
-        text: "mamarracho"
-        is_correct: false
-        distractor_type: "register"
-        why_not: "«Mamarracho» es casi un insulto para algo hecho sin cuidado, y el número del cómico está pensado con cuidado para hacer reír."
-        hint_specific: "«Mamarracho» es casi un insulto. ¿El número busca insultar o hacer reír con cuidado?"
-  - position: 8
     sentence: "Antes de irse de la empresa, sus compañeros le regalaron a Ignacio una {{blank}} suya con la taza de café gigante que siempre llevaba."
     hint_general: "Es un dibujo que exagera con cariño un detalle muy suyo."
     explanation: "Caricatura: un dibujo que exagera con cariño un detalle muy suyo. «Retrato» buscaría fidelidad, no exageración, y «sátira» sería un texto, no un dibujo de regalo."
@@ -238,5 +218,5 @@ readings:
     after_phrase: "Le hice una caricatura y no paró de reír."
 provenance:
   generator: "flui authoring agent — batch W3 familia-crianza + humor"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b"
+  checked_on: "2026-09-22"

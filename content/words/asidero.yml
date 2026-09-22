@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "asidero"
-status: "draft"
+status: "approved"
 lemma: "asidero"
 part_of_speech: "sustantivo"
-syllables: ["a", "si", "de", "ro"]
+syllables:
+  - "a"
+  - "si"
+  - "de"
+  - "ro"
 stressed_syllable: 3
 ipa_latam: "[a.siˈde.ro]"
 ipa_es: "[a.siˈde.ro]"
@@ -21,15 +25,18 @@ replaces:
     after: "Necesito un asidero para entender esto"
   - before: "No tengo nada en que apoyarme para explicar esta idea"
     after: "No tengo ningún asidero para explicar esta idea"
-family: ["asir"]
+family:
+  - "asir"
 themes:
   - slug: "docencia"
     relevance: 3
   - slug: "empatia-escucha"
     relevance: 2
 tags:
-  comodin: ["apoyo"]
-  funcion: ["sostener"]
+  comodin:
+    - "apoyo"
+  funcion:
+    - "sostener"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -224,5 +231,5 @@ readings:
     after_phrase: "El perro es mi asidero estos días."
 provenance:
   generator: "hand-authored for content/words (docencia theme)"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

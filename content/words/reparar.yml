@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "reparar"
-status: "draft"
+status: "approved"
 lemma: "reparar"
 part_of_speech: "verbo"
-syllables: ["re", "pa", "rar"]
+syllables:
+  - "re"
+  - "pa"
+  - "rar"
 stressed_syllable: 3
 ipa_latam: "[re.paˈɾaɾ]"
 ipa_es: "[re.paˈɾaɾ]"
@@ -17,13 +20,21 @@ collocations:
   - "reparar en algo"
   - "reparar en un detalle"
   - "nadie reparó en"
+replaces:
+  - before: "Notó el gesto triste que nadie más había visto"
+    after: "Reparó en el gesto triste que nadie más había visto"
+  - before: "Se fijó en un detalle que a los demás se les pasó"
+    after: "Reparó en un detalle que a los demás se les pasó"
 family: []
 themes:
   - slug: "empatia-escucha"
     relevance: 3
 tags:
-  comodin: ["fijarse en", "notar algo"]
-  funcion: ["observar"]
+  comodin:
+    - "fijarse en"
+    - "notar algo"
+  funcion:
+    - "observar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +42,6 @@ confusions:
   - confused_with: "arreglar"
     difference: "Arreglar es solucionar algo que está roto o mal; reparar en algo, con esta preposición, es notar un detalle que antes había pasado desapercibido."
     memory_trick: "Arreglas lo roto; reparas en lo que nadie había visto."
-replaces:
-  - before: "Notó el gesto triste que nadie más había visto"
-    after: "Reparó en el gesto triste que nadie más había visto"
-  - before: "Se fijó en un detalle que a los demás se les pasó"
-    after: "Reparó en un detalle que a los demás se les pasó"
 exercises:
   - position: 1
     sentence: "Nadie más lo notó, pero Sofía {{blank}} en el gesto triste que hizo su amiga al saludar."
@@ -221,5 +227,5 @@ readings:
     after_phrase: "Reparé en que llevas días sin sonreír."
 provenance:
   generator: "authored for the empatia-escucha theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

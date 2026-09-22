@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "moderador"
-status: "draft"
+status: "approved"
 lemma: "moderador"
 part_of_speech: "sustantivo"
-syllables: ["mo", "de", "ra", "dor"]
+syllables:
+  - "mo"
+  - "de"
+  - "ra"
+  - "dor"
 stressed_syllable: 4
 ipa_latam: "[mo.ðe.ɾaˈðoɾ]"
 ipa_es: "[mo.ðe.ɾaˈðoɾ]"
@@ -17,6 +21,11 @@ collocations:
   - "el moderador del panel"
   - "hacer de moderador"
   - "moderador de la charla"
+replaces:
+  - before: "El que reparte los turnos de palabra en el panel"
+    after: "El moderador del panel"
+  - before: "Se encarga de que el debate no se vaya de tema"
+    after: "Hace de moderador en el debate"
 family: []
 themes:
   - slug: "networking"
@@ -24,8 +33,11 @@ themes:
   - slug: "reuniones"
     relevance: 1
 tags:
-  comodin: ["el que dirige la charla"]
-  funcion: ["dirigir", "repartir turnos"]
+  comodin:
+    - "el que dirige la charla"
+  funcion:
+    - "dirigir"
+    - "repartir turnos"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -33,11 +45,6 @@ confusions:
   - confused_with: "mediador"
     difference: "El mediador busca resolver un conflicto entre dos partes; el moderador dirige el orden de una charla o un debate, sin que necesariamente haya un conflicto."
     memory_trick: "El mediador resuelve peleas; el moderador reparte turnos de palabra."
-replaces:
-  - before: "El que reparte los turnos de palabra en el panel"
-    after: "El moderador del panel"
-  - before: "Se encarga de que el debate no se vaya de tema"
-    after: "Hace de moderador en el debate"
 exercises:
   - position: 1
     sentence: "El {{blank}} cortó al panelista con amabilidad para darle tiempo a los otros dos invitados."
@@ -223,5 +230,5 @@ readings:
     after_phrase: "Odio ser la moderadora del grupo."
 provenance:
   generator: "authored for the networking theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

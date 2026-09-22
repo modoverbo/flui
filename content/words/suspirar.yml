@@ -1,9 +1,12 @@
 schema_version: 1
 slug: "suspirar"
-status: "draft"
+status: "approved"
 lemma: "suspirar"
 part_of_speech: "verbo"
-syllables: ["sus", "pi", "rar"]
+syllables:
+  - "sus"
+  - "pi"
+  - "rar"
 stressed_syllable: 3
 ipa_latam: "[sus.piˈɾaɾ]"
 ipa_es: "[sus.piˈɾaɾ]"
@@ -17,13 +20,22 @@ collocations:
   - "suspirar por alguien"
   - "suspirar sin darse cuenta"
   - "la tiene suspirando"
-family: ["suspiro"]
+replaces:
+  - before: "Está en las nubes pensando en él todo el día"
+    after: "Anda suspirando por él todo el día"
+  - before: "Se le escapa un poquito de aire cuando piensa en ella"
+    after: "Suspira sin darse cuenta cuando piensa en ella"
+family:
+  - "suspiro"
 themes:
   - slug: "citas"
     relevance: 3
 tags:
-  comodin: ["está en las nubes por", "no deja de pensar en"]
-  funcion: ["describir gesto"]
+  comodin:
+    - "está en las nubes por"
+    - "no deja de pensar en"
+  funcion:
+    - "describir gesto"
   canal: "hablado"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -31,11 +43,9 @@ confusions:
   - confused_with: "susurrar"
     difference: "Susurrar es hablar muy bajo para que solo alguien cercano te escuche; suspirar es soltar el aire despacio, sin palabras, cuando piensas en alguien."
     memory_trick: "Susurras palabras al oído; suspiras sin decir nada."
-replaces:
-  - before: "Está en las nubes pensando en él todo el día"
-    after: "Anda suspirando por él todo el día"
-  - before: "Se le escapa un poquito de aire cuando piensa en ella"
-    after: "Suspira sin darse cuenta cuando piensa en ella"
+  - confused_with: "respiro"
+    difference: "Un «respiro» es un rato entero de calma o de pausa; suspirar es soltar el aire despacio, sin palabras, en un solo instante."
+    memory_trick: "El respiro dura una tarde; el suspiro dura un segundo."
 exercises:
   - position: 1
     sentence: "Su compañera de cuarto ya sabía que, cuando Elena {{blank}} sin darse cuenta, estaba pensando en él otra vez."
@@ -221,5 +231,5 @@ readings:
     after_phrase: "Llevas media hora suspirando."
 provenance:
   generator: "authored for the citas theme"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"

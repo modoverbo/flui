@@ -1,9 +1,13 @@
 schema_version: 1
 slug: "acogedor"
-status: "draft"
+status: "approved"
 lemma: "acogedor"
 part_of_speech: "adjetivo"
-syllables: ["a", "co", "ge", "dor"]
+syllables:
+  - "a"
+  - "co"
+  - "ge"
+  - "dor"
 stressed_syllable: 4
 ipa_latam: "[a.ko.xeˈdor]"
 ipa_es: "[a.ko.xeˈdor]"
@@ -24,13 +28,18 @@ replaces:
     after: "Es muy acogedor, te hace sentir bienvenido"
   - before: "Da gusto estar ahí, se siente cálido"
     after: "Es un ambiente acogedor"
-family: ["acogimiento"]
+family:
+  - "acogimiento"
 themes:
   - slug: "small-talk"
     relevance: 3
 tags:
-  comodin: ["se siente como en casa", "te hace sentir bienvenido"]
-  funcion: ["describir", "elogiar"]
+  comodin:
+    - "se siente como en casa"
+    - "te hace sentir bienvenido"
+  funcion:
+    - "describir"
+    - "elogiar"
   canal: "ambos"
   formalidad: "neutral"
   variedad: "panhispanico"
@@ -226,5 +235,5 @@ readings:
     after_phrase: "Sigue siendo tan acogedora como la recuerdo."
 provenance:
   generator: "authored for the ventas/small-talk/amistad batch"
-  gate: null
-  checked_on: "2026-09-18"
+  gate: "dual-blind reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-a + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-b + reviewer-a"
+  checked_on: "2026-09-22"
