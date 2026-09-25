@@ -23,8 +23,22 @@ void main() {
   setUp(() => fakes = LearningFakes());
   tearDown(() => fakes.dispose());
 
-  Future<void> pumpPage(WidgetTester tester) async {
-    reduceMotion(tester);
+  Future<void> pumpPage(
+    WidgetTester tester, {
+    bool reduced = true,
+    Size surfaceSize = const Size(400, 1400),
+    double textScale = 1,
+  }) async {
+    if (reduced) {
+      reduceMotion(tester);
+    } else {
+      tester.platformDispatcher.accessibilityFeaturesTestValue =
+          const FakeAccessibilityFeatures();
+      addTearDown(
+        tester.platformDispatcher.clearAccessibilityFeaturesTestValue,
+      );
+    }
+    if (textScale != 1) scaleText(tester, textScale);
     await pumpRoutedPage(
       tester,
       location: AppRoutes.today,
@@ -36,7 +50,7 @@ void main() {
         AppRoutes.categoryCatalog('trabajo'),
       ],
       overrides: fakes.overrides,
-      surfaceSize: const Size(400, 1400),
+      surfaceSize: surfaceSize,
     );
     await tester.pumpAndSettle();
   }
@@ -116,6 +130,73 @@ void main() {
     );
   });
 
+  testWidgets('the front category exposes three distinct colored back layers', (
+    tester,
+  ) async {
+    await pumpPage(tester);
+
+    final backColors = <Color>{};
+    for (var layer = 0; layer < 3; layer++) {
+      final back = find.byKey(ValueKey('category-card-back-0-$layer'));
+      expect(back, findsOneWidget);
+      final decoration = tester.widget<DecoratedBox>(back).decoration;
+      expect(decoration, isA<BoxDecoration>());
+      backColors.add((decoration as BoxDecoration).color!);
+    }
+
+    expect(backColors, hasLength(3));
+  });
+
+  testWidgets('arrow navigation promotes the next card with depth motion', (
+    tester,
+  ) async {
+    await pumpPage(tester, reduced: false);
+
+    final next = find.byTooltip('Categoría siguiente');
+    await tester.ensureVisible(next);
+    await tester.pumpAndSettle();
+    await tester.tap(next);
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 80));
+    final during = tester
+        .widget<Transform>(
+          find.byKey(const ValueKey('category-card-transform-1')),
+        )
+        .transform;
+
+    expect(during.getTranslation().y, greaterThan(12));
+    expect(during.getTranslation().x, lessThan(-40));
+    expect(during.entry(0, 0).abs(), lessThan(0.9));
+    expect(find.text('En el trabajo'), findsOneWidget);
+  });
+
+  for (final width in [320.0, 360.0, 432.0]) {
+    testWidgets('the layered deck fits ${width.toInt()}px at 1.3x text', (
+      tester,
+    ) async {
+      await pumpPage(tester, surfaceSize: Size(width, 1400), textScale: 1.3);
+
+      expect(tester.takeException(), isNull);
+      expect(
+        find.byKey(const ValueKey('category-card-back-0-2')),
+        findsOneWidget,
+      );
+    });
+  }
+
+  testWidgets('reduced motion advances to the next category immediately', (
+    tester,
+  ) async {
+    await pumpPage(tester);
+    final next = find.byTooltip('Categoría siguiente');
+    await tester.ensureVisible(next);
+    await tester.pumpAndSettle();
+    await tester.tap(next);
+    await tester.pump();
+
+    expect(find.text('Con la gente'), findsOneWidget);
+  });
+
   testWidgets('activating a category opens its catalog directly', (
     tester,
   ) async {
@@ -138,11 +219,22 @@ void main() {
   testWidgets('swiping the deck brings the next family to the front', (
     tester,
   ) async {
-    await pumpPage(tester);
-    await tester.drag(
-      find.byKey(const ValueKey('category-deck')),
-      const Offset(-250, 0),
+    await pumpPage(tester, reduced: false);
+    final deck = find.byKey(const ValueKey('category-deck'));
+    await tester.timedDrag(
+      deck,
+      const Offset(-120, 0),
+      const Duration(milliseconds: 120),
     );
+    await tester.pump(const Duration(milliseconds: 40));
+    final incoming = tester
+        .widget<Transform>(
+          find.byKey(const ValueKey('category-card-transform-1')),
+        )
+        .transform;
+    expect(incoming.getTranslation().y, greaterThan(12));
+    expect(incoming.getTranslation().x, lessThan(-40));
+    expect(incoming.entry(0, 0).abs(), lessThan(0.9));
     await tester.pumpAndSettle();
 
     expect(find.text('Con la gente'), findsOneWidget);
