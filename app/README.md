@@ -43,6 +43,47 @@ flutter run -d chrome --web-port 3000 --dart-define-from-file=config/local.json
 New users have no access until a Whop trial starts; see the repo README for the dev entitlement
 snippet or a webhook tunnel.
 
+## On a phone or emulator
+
+Fastest loop for layout work: run on Chrome (see above) and toggle DevTools' device toolbar
+(`Ctrl+Shift+M`). Use a real phone to judge touch, voice and performance.
+
+### Android phone over USB (no Android Studio needed)
+
+1. On the phone, enable **Developer options** → **USB debugging**, then plug it in.
+2. Accept the **"Allow USB debugging?"** prompt on the phone (tick "Always allow").
+   `adb devices` must list it as `device`; `unauthorized` means the prompt was not accepted yet
+   (replug, or revoke USB debugging authorizations and replug).
+3. Run it:
+
+   ```bash
+   flutter devices                                   # copy the phone's device id
+   flutter run -d <device-id> --dart-define-from-file=config/fake.json
+   ```
+
+Press `r` for hot reload, `R` for hot restart, `q` to quit. Run `flutter run` from your own
+terminal: hot reload needs its stdin.
+
+| Gotcha | Fix |
+|--------|-----|
+| First build takes ~4 min | Gradle downloads its dependencies and may install missing build-tools; later builds are much faster |
+| `INSTALL_FAILED_UPDATE_INCOMPATIBLE` | An install signed with another key exists; Flutter uninstalls it (its data is lost) and retries |
+| Fake backend state is gone on relaunch | Expected: it lives in memory |
+| Local Supabase unreachable from the phone | `127.0.0.1` is the phone itself; run `adb reverse tcp:54421 tcp:54421` before `flutter run` with `config/local.json` |
+
+### Android emulator
+
+Needs hardware acceleration: your user must be in the `kvm` group
+(`sudo usermod -aG kvm $USER`, then log out and back in). Then:
+
+```bash
+flutter emulators                                 # list AVDs
+flutter emulators --launch <avd-id>
+flutter run -d emulator-5554 --dart-define-from-file=config/fake.json
+```
+
+The Supabase config works unchanged on the emulator through `adb reverse` as above.
+
 ## Configuration
 
 `--dart-define-from-file=config/<env>.json`, parsed by `lib/core/config/app_config.dart`.

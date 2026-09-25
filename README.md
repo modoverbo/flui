@@ -63,6 +63,9 @@ flutter run -d chrome --web-port 3000 --dart-define-from-file=config/local.json
 
 `config/local.json` is git-ignored; copy it from `config/local.example.json`.
 
+No backend at hand? Use `config/fake.json` (in-memory fake backend). To see the app on an Android
+phone or emulator, see [app/README.md](app/README.md#on-a-phone-or-emulator).
+
 ## Documentation
 
 | Doc | Read it when |
