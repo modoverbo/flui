@@ -2,6 +2,7 @@ import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
@@ -42,19 +43,32 @@ class AuthLayout extends StatelessWidget {
             child: FluiLogo(symbolSize: 32),
           ),
           SizedBox(height: layout.blockGap),
-          Semantics(
-            header: true,
-            child: Text(
-              title,
-              style: type.titleL.copyWith(color: FluiColors.charcoal),
+          FluiCard(
+            padding: EdgeInsets.all(
+              layout.isWide ? FluiSpacing.xl : FluiSpacing.ml,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Semantics(
+                  header: true,
+                  child: Text(
+                    title,
+                    style: type.titleL.copyWith(color: FluiColors.charcoal),
+                  ),
+                ),
+                if (subtitle != null) ...[
+                  const SizedBox(height: FluiSpacing.xs),
+                  Text(
+                    subtitle,
+                    style: type.bodyL.copyWith(color: FluiColors.gray),
+                  ),
+                ],
+                SizedBox(height: layout.blockGap),
+                ...children,
+              ],
             ),
           ),
-          if (subtitle != null) ...[
-            const SizedBox(height: FluiSpacing.xs),
-            Text(subtitle, style: type.bodyL.copyWith(color: FluiColors.gray)),
-          ],
-          SizedBox(height: layout.blockGap),
-          ...children,
         ],
       ),
     );

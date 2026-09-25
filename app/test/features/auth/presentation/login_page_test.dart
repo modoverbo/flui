@@ -2,6 +2,7 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../helpers/pump_app.dart';
@@ -22,6 +23,21 @@ void main() {
   );
 
   Finder field(String label) => fluiField(label);
+
+  testWidgets('groups sign-in fields in the editorial paper card', (
+    tester,
+  ) async {
+    await pumpLogin(tester);
+
+    expect(
+      find.ancestor(of: field('Correo'), matching: find.byType(FluiCard)),
+      findsOneWidget,
+    );
+    expect(
+      find.ancestor(of: field('Contraseña'), matching: find.byType(FluiCard)),
+      findsOneWidget,
+    );
+  });
 
   testWidgets('empty submit shows kind validation messages', (tester) async {
     await pumpLogin(tester);
