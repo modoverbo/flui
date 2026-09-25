@@ -1,6 +1,8 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/date/local_date.dart';
+import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
@@ -11,7 +13,9 @@ import 'package:flui/features/reading/presentation/providers/context_readings.da
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
+import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
+import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/mastery_meter_view.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/word_detail_view.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
@@ -40,42 +44,64 @@ class WordDetailPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
-    final entry = ref.watch(wordEntryProvider(wordId));
+    final wordsById = ref.watch(wordsByIdProvider);
+    final entry = ref.watch(wordEntryProvider(wordId)).asData?.value;
     final themesById = ref.watch(themesByIdProvider).value;
+    final word = wordsById.asData?.value[wordId];
     return Scaffold(
-      body: switch (entry) {
-        AsyncValue(hasValue: true, :final WordEntry value) => _Detail(
-          entry: value,
-          today: ref.watch(clockProvider).localToday(),
-          themesById: themesById,
-        ),
-        AsyncValue(hasValue: true) || AsyncError() => SafeArea(
-          child: PageFrame(
-            child: Padding(
-              padding: const EdgeInsets.only(top: FluiSpacing.xl),
-              child: EmptyState(
-                title: l10n.wordNotFound,
-                message: l10n.wordsEmptyBody,
-                actionLabel: l10n.wordBackToWords,
-                onAction: () => context.go(AppRoutes.words),
+      body: word != null
+          ? _Detail(
+              word: word,
+              entry: entry,
+              today: ref.watch(clockProvider).localToday(),
+              themesById: themesById,
+            )
+          : wordsById.hasError
+          ? SafeArea(
+              child: PageFrame(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: FluiSpacing.xl),
+                  child: EmptyState(
+                    title: l10n.todayLoadError,
+                    message: switch (wordsById.error) {
+                      final Failure failure => failureMessage(l10n, failure),
+                      _ => l10n.errorUnexpected,
+                    },
+                    actionLabel: l10n.commonRetry,
+                    onAction: () => ref.invalidate(catalogProvider),
+                  ),
+                ),
+              ),
+            )
+          : wordsById.isLoading
+          ? Center(child: LoadingWave(semanticLabel: l10n.commonLoading))
+          : SafeArea(
+              child: PageFrame(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: FluiSpacing.xl),
+                  child: EmptyState(
+                    title: l10n.wordNotFound,
+                    message: l10n.wordsEmptyBody,
+                    actionLabel: l10n.wordBackToWords,
+                    onAction: () => context.go(AppRoutes.words),
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-        _ => Center(child: LoadingWave(semanticLabel: l10n.commonLoading)),
-      },
     );
   }
 }
 
 class _Detail extends StatelessWidget {
   const new({
+    required this.word,
     required this.entry,
     required this.today,
     required this.themesById,
   });
 
-  final WordEntry entry;
+  final Word word;
+  final WordEntry? entry;
   final LocalDate today;
 
   /// The taxonomy, to resolve this word's own theme colour. `null` while
@@ -91,7 +117,7 @@ class _Detail extends StatelessWidget {
   /// neutral colour (the bug fixed in commit de5bd47 for the session card;
   /// replicated as a fix here, not repeated as a bug).
   FluiThemeColor? get _themeColor {
-    final slug = themesById?[entry.word.themeIds.firstOrNull]?.slug;
+    final slug = themesById?[word.themeIds.firstOrNull]?.slug;
     return slug == null ? null : FluiThemeColors.resolve(slug);
   }
 
@@ -99,8 +125,8 @@ class _Detail extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final layout = context.layout;
-    final word = entry.word;
-    final due = entry.progress.nextDueOn;
+    final progress = entry?.progress;
+    final due = progress?.nextDueOn;
 
     final body = CustomScrollView(
       slivers: [
@@ -108,7 +134,9 @@ class _Detail extends StatelessWidget {
           child: WordHeroPlate(
             key: const Key('wordHero'),
             word: word,
-            badge: StateChip(state: entry.progress.state.chipKind),
+            badge: progress == null
+                ? null
+                : StateChip(state: progress.state.chipKind),
             themeColor: _themeColor,
           ),
         ),
@@ -140,12 +168,14 @@ class _Detail extends StatelessWidget {
                   ),
                   SizedBox(height: layout.sectionGap),
                 ],
-                SectionHeader(
-                  title: l10n.masteryTitle,
-                  glyph: const FluiGlyphIcon(FluiGlyph.goal),
-                ),
-                MasteryMeterView(progress: entry.progress),
-                if (due != null && !entry.isDue) ...[
+                if (progress != null) ...[
+                  SectionHeader(
+                    title: l10n.masteryTitle,
+                    glyph: const FluiGlyphIcon(FluiGlyph.goal),
+                  ),
+                  MasteryMeterView(progress: progress),
+                ],
+                if (due != null && entry?.isDue == false) ...[
                   const SizedBox(height: FluiSpacing.md),
                   Text(
                     l10n.wordNextReview(formatLongDate(due.toDateTime())),
@@ -177,7 +207,7 @@ class _Detail extends StatelessWidget {
       ],
     );
 
-    if (!entry.isDue) return scroll;
+    if (entry?.isDue != true) return scroll;
     return StickyCtaDock(
       dock: FluiButton.primary(
         label: l10n.wordPracticeNow,

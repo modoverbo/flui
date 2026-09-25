@@ -2,6 +2,8 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
+import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
+import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
 import 'package:flui/shared/widgets/choice_chips.dart';
@@ -235,6 +237,46 @@ void main() {
       expect(find.text('Próximo repaso: 30 de septiembre'), findsOneWidget);
     });
 
+    testWidgets('a published word without progress still shows its detail', (
+      tester,
+    ) async {
+      final publishedWord = seedWord('elocuente');
+      await pump(
+        tester,
+        location: AppRoutes.wordDetail(publishedWord.id),
+        page: WordDetailPage(wordId: publishedWord.id),
+      );
+
+      expect(find.text('elocuente'), findsOneWidget);
+      expect(find.text('No encontramos esta palabra.'), findsNothing);
+      expect(find.text('EL CAMINO DE ESTA PALABRA'), findsNothing);
+      expect(find.text('Practicar ahora'), findsNothing);
+    });
+
+    testWidgets('progress errors do not hide published word content', (
+      tester,
+    ) async {
+      final publishedWord = seedWord('elocuente');
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.wordDetail(publishedWord.id),
+        page: WordDetailPage(wordId: publishedWord.id),
+        overrides: [
+          ...fakes.overrides,
+          wordEntryProvider(publishedWord.id).overrideWith(
+            (ref) async => throw StateError('progress unavailable'),
+          ),
+        ],
+        surfaceSize: const Size(400, 1400),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('elocuente'), findsOneWidget);
+      expect(find.text('No encontramos esta palabra.'), findsNothing);
+      expect(find.text('Practicar ahora'), findsNothing);
+    });
+
     testWidgets('an unknown word says so', (tester) async {
       await pump(
         tester,
@@ -243,6 +285,38 @@ void main() {
       );
 
       expect(find.text('No encontramos esta palabra.'), findsOneWidget);
+    });
+
+    testWidgets('catalog load errors offer retry instead of not-found', (
+      tester,
+    ) async {
+      final publishedWord = seedWord('elocuente');
+      var catalogAttempts = 0;
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.wordDetail(publishedWord.id),
+        page: WordDetailPage(wordId: publishedWord.id),
+        overrides: [
+          ...fakes.overrides,
+          catalogProvider.overrideWith((ref) async {
+            catalogAttempts++;
+            if (catalogAttempts == 1) throw StateError('catalog unavailable');
+            return [publishedWord];
+          }),
+        ],
+        surfaceSize: const Size(400, 1400),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('No encontramos esta palabra.'), findsNothing);
+      expect(find.text('Reintentar'), findsOneWidget);
+
+      await tester.tap(find.text('Reintentar'));
+      await tester.pumpAndSettle();
+
+      expect(catalogAttempts, 2);
+      expect(find.text('elocuente'), findsOneWidget);
     });
 
     testWidgets('the detail shows the mastery meter and the scenes', (
