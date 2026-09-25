@@ -310,6 +310,13 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(location(harness), returnLocation);
+    expect(find.text(word.lemma), findsOneWidget);
+    final catalogScrollable = find.descendant(
+      of: find.byType(CustomScrollView),
+      matching: find.byType(Scrollable),
+    );
+    tester.state<ScrollableState>(catalogScrollable).position.jumpTo(0);
+    await tester.pumpAndSettle();
     expect(find.text(theme.name), findsOneWidget);
     expect(find.text(word.lemma), findsOneWidget);
   });
