@@ -86,14 +86,24 @@ class AppShellScaffold extends StatelessWidget {
                   destinations: [
                     for (final (index, (glyph, label)) in items.indexed)
                       NavigationDestination(
-                        icon: FluiGlyphIcon(
-                          glyph,
-                          size: FluiIconSize.tab,
-                          color: index == selectedIndex
-                              ? FluiColors.greenDeep
-                              : FluiColors.gray,
+                        icon: Semantics(
+                          hint: index == ShellDestination.progress.index
+                              ? l10n.navProgress
+                              : null,
+                          child: FluiGlyphIcon(
+                            glyph,
+                            size: FluiIconSize.tab,
+                            color: index == selectedIndex
+                                ? FluiColors.greenDeep
+                                : FluiColors.gray,
+                          ),
                         ),
-                        label: label,
+                        label: index == ShellDestination.progress.index
+                            ? l10n.navProgressShort
+                            : label,
+                        tooltip: index == ShellDestination.progress.index
+                            ? l10n.navProgress
+                            : null,
                       ),
                   ],
                 ),

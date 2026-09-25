@@ -28,16 +28,46 @@ void main() {
     expect(find.byType(NavigationBar), findsOneWidget);
     expect(find.byType(NavigationRail), findsNothing);
     expect(find.byType(NavigationDestination), findsNWidgets(4));
-    for (final label in labels) {
+    for (final label in labels.take(3)) {
       expect(find.text(label), findsOneWidget);
     }
+    expect(find.text('Progreso'), findsOneWidget);
 
     await tester.tap(find.text('Habla'));
     expect(selected, [2]);
     expect(find.text('contenido'), findsOneWidget);
 
-    await tester.tap(find.text('Tu progreso'));
+    await tester.tap(find.text('Progreso'));
     expect(selected, [2, 3]);
+  });
+
+  testWidgets('phone navigation labels fit inside the clipped bar', (
+    tester,
+  ) async {
+    for (final width in [432.0, 360.0, 320.0]) {
+      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      await pumpShell(tester, Size(width, 800));
+
+      expect(find.text('Progreso'), findsOneWidget);
+      final progressDestination = tester.widget<NavigationDestination>(
+        find.ancestor(
+          of: find.text('Progreso'),
+          matching: find.byType(NavigationDestination),
+        ),
+      );
+      expect(progressDestination.tooltip, 'Tu progreso');
+      expect(
+        find.byWidgetPredicate(
+          (widget) =>
+              widget is Semantics && widget.properties.hint == 'Tu progreso',
+        ),
+        findsOneWidget,
+      );
+      final barRect = tester.getRect(find.byType(NavigationBar));
+      final progressLabelRect = tester.getRect(find.text('Progreso'));
+      expect(progressLabelRect.left, greaterThanOrEqualTo(barRect.left));
+      expect(progressLabelRect.right, lessThanOrEqualTo(barRect.right));
+    }
   });
 
   testWidgets('wide screens use a navigation rail', (tester) async {

@@ -78,7 +78,14 @@ void main() {
     expect(find.text('Hoy'), findsOneWidget);
     expect(find.text('Palabras'), findsOneWidget);
     expect(find.text('Habla'), findsOneWidget);
-    expect(find.text('Tu progreso'), findsOneWidget);
+    expect(find.text('Progreso'), findsOneWidget);
+    final progressDestination = tester.widget<NavigationDestination>(
+      find.ancestor(
+        of: find.text('Progreso'),
+        matching: find.byType(NavigationDestination),
+      ),
+    );
+    expect(progressDestination.tooltip, 'Tu progreso');
   });
 
   testWidgets('the time budget is asked once per local day', (tester) async {
