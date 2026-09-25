@@ -8,7 +8,7 @@ import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/subscription/domain/access_gate.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
-import 'package:flui/shared/widgets/flui_plate.dart';
+import 'package:flui/shared/widgets/flui_logo.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,47 +26,41 @@ class SplashPage extends ConsumerWidget {
     final failed = ref.watch(accessGateProvider) == AccessGate.error;
 
     return Scaffold(
-      backgroundColor: FluiColors.greenDeep,
-      body: FluiPlate.fullBleed(
-        child: SafeArea(
-          child: Center(
-            child: PageFrame.column(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  LoadingWave(
-                    semanticLabel: l10n.commonLoading,
-                    color: FluiColors.cream,
-                    size: 96,
+      backgroundColor: FluiColors.paper,
+      body: SafeArea(
+        child: Center(
+          child: PageFrame.column(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const FluiLogo(symbolSize: 48),
+                SizedBox(height: layout.blockGap),
+                LoadingWave(semanticLabel: l10n.commonLoading, size: 72),
+                if (failed) ...[
+                  SizedBox(height: layout.blockGap),
+                  Text(
+                    l10n.splashError,
+                    textAlign: TextAlign.center,
+                    style: layout.type.bodyL.copyWith(color: FluiColors.ink),
                   ),
-                  if (failed) ...[
-                    SizedBox(height: layout.blockGap),
-                    Text(
-                      l10n.splashError,
-                      textAlign: TextAlign.center,
-                      style: layout.type.bodyL.copyWith(
-                        color: FluiColors.cream,
-                      ),
-                    ),
-                    const SizedBox(height: FluiSpacing.md),
-                    FluiButton.accent(
-                      label: l10n.commonRetry,
-                      expand: false,
-                      onPressed: () {
-                        final userId = ref.read(authUserProvider).value?.id;
-                        if (userId == null) return;
-                        unawaited(
-                          ref
-                              .read(
-                                accessStatusControllerProvider(userId).notifier,
-                              )
-                              .refresh(),
-                        );
-                      },
-                    ),
-                  ],
+                  const SizedBox(height: FluiSpacing.md),
+                  FluiButton.primary(
+                    label: l10n.commonRetry,
+                    expand: false,
+                    onPressed: () {
+                      final userId = ref.read(authUserProvider).value?.id;
+                      if (userId == null) return;
+                      unawaited(
+                        ref
+                            .read(
+                              accessStatusControllerProvider(userId).notifier,
+                            )
+                            .refresh(),
+                      );
+                    },
+                  ),
                 ],
-              ),
+              ],
             ),
           ),
         ),

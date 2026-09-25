@@ -2,12 +2,14 @@ import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/themes/data/fake/seed_themes.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
+import 'package:flui/shared/widgets/flui_logo.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -62,6 +64,23 @@ void main() {
     expect(find.text('Tu repertorio empieza hoy.'), findsOneWidget);
   });
 
+  testWidgets('mobile shell keeps four editorial destinations on paper', (
+    tester,
+  ) async {
+    final harness = AppHarness(signedInAs: ana, access: trialing);
+    await harness.pumpApp(tester, arrange: (h) => h.planToday());
+
+    final navigation = tester.widget<NavigationBar>(find.byType(NavigationBar));
+    expect(navigation.destinations, hasLength(4));
+    expect(navigation.backgroundColor, FluiColors.surface);
+    expect(navigation.indicatorColor, FluiColors.greenTint);
+    expect(navigation.selectedIndex, 0);
+    expect(find.text('Hoy'), findsOneWidget);
+    expect(find.text('Palabras'), findsOneWidget);
+    expect(find.text('Habla'), findsOneWidget);
+    expect(find.text('Tu progreso'), findsOneWidget);
+  });
+
   testWidgets('the time budget is asked once per local day', (tester) async {
     final harness = AppHarness(signedInAs: ana, access: trialing);
     await harness.pumpApp(tester);
@@ -109,6 +128,14 @@ void main() {
     );
 
     expect(find.byType(NavigationRail), findsOneWidget);
+    expect(find.byType(NavigationBar), findsNothing);
+    final navigation = tester.widget<NavigationRail>(
+      find.byType(NavigationRail),
+    );
+    expect(navigation.destinations, hasLength(4));
+    expect(navigation.backgroundColor, FluiColors.paper);
+    expect(navigation.indicatorColor, FluiColors.greenTint);
+    expect(navigation.selectedIndex, 0);
   });
 
   testWidgets('a reloaded /checkout/return waits for access, then continues', (
@@ -147,8 +174,27 @@ void main() {
 
     expect(location(harness), startsWith(AppRoutes.splash));
     expect(find.text('No pudimos conectar con flui.'), findsOneWidget);
+    expect(find.byType(FluiLogo), findsOneWidget);
 
     await tester.tap(find.text('Reintentar'));
+    await tester.pumpAndSettle();
+
+    expect(location(harness), AppRoutes.today);
+  });
+
+  testWidgets('unknown routes show a recovery action', (tester) async {
+    final harness = AppHarness(signedInAs: ana, access: trialing);
+    await harness.pumpApp(
+      tester,
+      initialLocation: '/missing-page',
+      arrange: (h) => h.planToday(),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('No encontramos esta página.'), findsOneWidget);
+    expect(find.text('Ir al inicio'), findsOneWidget);
+    expect(find.byType(FluiLogo), findsOneWidget);
+    await tester.tap(find.text('Ir al inicio'));
     await tester.pumpAndSettle();
 
     expect(location(harness), AppRoutes.today);

@@ -64,19 +64,20 @@ class AppShellScaffold extends StatelessWidget {
         final width = constraints.maxWidth;
         if (width < FluiBreakpoints.rail) {
           return Scaffold(
+            backgroundColor: FluiColors.paper,
             body: child,
             bottomNavigationBar: SafeArea(
               minimum: const EdgeInsets.fromLTRB(14, 0, 14, 12),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(28),
                 child: NavigationBar(
-                  backgroundColor: FluiColors.ink,
-                  indicatorColor: FluiColors.acidLime,
+                  backgroundColor: FluiColors.surface,
+                  indicatorColor: FluiColors.greenTint,
                   labelTextStyle: WidgetStateProperty.resolveWith(
                     (states) => TextStyle(
                       color: states.contains(WidgetState.selected)
-                          ? FluiColors.acidLime
-                          : FluiColors.creamMuted,
+                          ? FluiColors.ink
+                          : FluiColors.gray,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -89,8 +90,8 @@ class AppShellScaffold extends StatelessWidget {
                           glyph,
                           size: FluiIconSize.tab,
                           color: index == selectedIndex
-                              ? FluiColors.ink
-                              : FluiColors.creamMuted,
+                              ? FluiColors.greenDeep
+                              : FluiColors.gray,
                         ),
                         label: label,
                       ),
@@ -103,6 +104,7 @@ class AppShellScaffold extends StatelessWidget {
 
         final extended = width >= FluiBreakpoints.extendedRail;
         return Scaffold(
+          backgroundColor: FluiColors.paper,
           body: Row(
             children: [
               SafeArea(
@@ -110,9 +112,18 @@ class AppShellScaffold extends StatelessWidget {
                 child: NavigationRail(
                   extended: extended,
                   minExtendedWidth: 220,
+                  backgroundColor: FluiColors.paper,
+                  indicatorColor: FluiColors.greenTint,
                   labelType: extended
                       ? NavigationRailLabelType.none
                       : NavigationRailLabelType.all,
+                  selectedLabelTextStyle: const TextStyle(
+                    color: FluiColors.ink,
+                    fontWeight: FontWeight.w700,
+                  ),
+                  unselectedLabelTextStyle: const TextStyle(
+                    color: FluiColors.gray,
+                  ),
                   selectedIndex: selectedIndex,
                   onDestinationSelected: onDestinationSelected,
                   leading: Padding(
