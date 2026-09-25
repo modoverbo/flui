@@ -1,5 +1,7 @@
 # 09 — Implementation Plan
 
+> **Historical implementation plan.** Its tasks and risks describe the pre-implementation proposal and are not a live backlog. Several listed changes have since shipped, while others were not selected. Use [10 — Shipped User Flows](10-shipped-user-flows.md) for current user-facing behavior and the active task ledger for ongoing work.
+
 Ordered by priority, per the founder's stated sequence: card stack → speaking → bubble → transitions → vocabulary cards → home/progress. Each step is sized (S = &lt;1 day, M = 2–4 days, L = &gt;1 week, roughly, for one engineer) with required tests and its main risk. This is a plan for a *future* implementation phase — no code is written as part of this Phase 0 document.
 
 ## 1. Card stack — `CardStack`, `TrainingCard`, `CardTransition` (L)

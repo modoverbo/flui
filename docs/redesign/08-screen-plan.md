@@ -1,5 +1,7 @@
 # 08 — Screen Plan
 
+> **Historical screen plan.** This records proposed work before implementation; statements such as replacing the session renderer or making the speaking page a tab entry point are not current work items. The shipped route and screen behavior is documented in [10 — Shipped User Flows](10-shipped-user-flows.md).
+
 Screen by screen: what changes, what stays, which existing file it lives in. Ordered core loop first, then support.
 
 ## Core loop

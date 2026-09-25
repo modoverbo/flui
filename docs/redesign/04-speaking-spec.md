@@ -1,5 +1,7 @@
 # 04 — Speaking Spec
 
+> **Historical proposal.** This file preserves the visual/state-machine exploration, not the shipped microphone interaction contract. The current challenge uses press-and-hold to record, release to submit once, and written results without TTS. See [10 — Shipped User Flows](10-shipped-user-flows.md).
+
 The 45-second challenge, end to end. This wraps the existing `speaking` feature (`app/lib/features/speaking/**`, contributed separately, clean-architecture, already functional) in the new visual language — it does not replace any of its domain/data logic. Everything in §2 and §4 already exists in code today; the redesign changes presentation only.
 
 ## 1. What already exists (read before designing anything new)

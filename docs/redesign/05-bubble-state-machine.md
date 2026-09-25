@@ -1,5 +1,7 @@
 # 05 — Bubble State Machine
 
+> **Historical proposal.** The bubble/shader design and its proposed state machine are exploratory rationale, not a description of the shipped speaking UI. For the current hold-to-record interaction and written-result behavior, see [10 — Shipped User Flows](10-shipped-user-flows.md).
+
 The liquid-glass bubble is both the logo mark and the speaking-recording indicator — one object, two contexts (welcome screen, recording). This document specifies its states and answers the critical open question with evidence.
 
 ## 1. Critical open question: does the current recording implementation expose live amplitude?

@@ -1,8 +1,6 @@
-# 00 — Current UI Map
+# 00 — Historical UI Map (Pre-Redesign Snapshot)
 
-Phase 0 inventory of every route, screen, shared widget, and design token in the app today, with file paths, as input to the redesign. Compiled by reading the router, shell, feature `presentation/` folders, `shared/widgets`, `shared/motion`, and `core/theme` directly (Flutter 3.47.4, Dart 3.13.3, `material_ui`, Riverpod 3 + codegen, go_router 18, freezed 4).
-
-Dependency rule in force everywhere: `presentation → domain ← data`; domain is pure Dart (no Flutter/Supabase/Riverpod imports). The redesign must not break this.
+Historical Phase 0 inventory of the app before the approved editorial redesign. It is retained as context, not as a description of current routes or a current implementation plan. For shipped behavior, use [10 — Shipped User Flows](10-shipped-user-flows.md). The dependency rule recorded for this inventory was `presentation → domain ← data`; domain was intended to remain pure Dart.
 
 ## 1. Routes
 

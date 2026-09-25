@@ -1,5 +1,7 @@
 # 02 — Navigation Model
 
+> **Historical proposal.** This file preserves the original navigation discussion and its rationale. Its pending root-to-shell promotion is already shipped, and its pre-redesign catalog assumptions are superseded. Do not use this proposal as the current route contract; see [10 — Shipped User Flows](10-shipped-user-flows.md).
+
 ## 1. Target nav: Hoy / Palabras / Habla / Progreso
 
 Four shell destinations, up from the current three (`docs/brand.md` already lists "Habla" as a planned tab, confirming this isn't a new invention). Mapping onto existing code:
