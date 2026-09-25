@@ -11,6 +11,7 @@ import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/domain/session_plan.dart';
+import 'package:flui/features/daily/presentation/category_artwork.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
 import 'package:flui/features/daily/presentation/providers/today_overview.dart';
@@ -284,7 +285,7 @@ class _CategoryDeckState extends State<_CategoryDeck> {
         Text(l10n.categoryDeckSubtitle, style: layout.type.body),
         const SizedBox(height: FluiSpacing.md),
         SizedBox(
-          height: 188,
+          height: 216,
           child: PageView.builder(
             key: const ValueKey('category-deck'),
             controller: _pageController,
@@ -343,19 +344,11 @@ class _CategoryDeckCard extends StatelessWidget {
   final ThemeFamily family;
   final int index;
 
-  Color get _color => switch (family) {
-    ThemeFamily.trabajo => FluiColors.electricBlue,
-    ThemeFamily.social => FluiColors.softPink,
-    ThemeFamily.publico => FluiColors.aqua,
-    ThemeFamily.precision => FluiColors.acidLime,
-    ThemeFamily.emocion => FluiColors.lavender,
-  };
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final label = themeFamilyLabel(l10n, family);
-    final color = _color;
+    final color = CategoryArtwork.cardColorFor(family);
     const ink = FluiColors.ink;
     return Semantics(
       button: true,
@@ -402,9 +395,25 @@ class _CategoryDeckCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            '${index + 1}'.padLeft(2, '0'),
-                            style: context.type.label.copyWith(color: ink),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 4),
+                                child: Text(
+                                  '${index + 1}'.padLeft(2, '0'),
+                                  style: context.type.label.copyWith(
+                                    color: ink,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 92,
+                                height: 72,
+                                child: CategoryArtwork(family: family),
+                              ),
+                            ],
                           ),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.end,

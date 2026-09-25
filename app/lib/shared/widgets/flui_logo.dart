@@ -1,38 +1,28 @@
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_type_scale.dart';
-import 'package:flui/shared/widgets/flui_symbol.dart';
+import 'package:flui/shared/widgets/flui_brand_mark.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Symbol plus the lowercase "flui" wordmark (Plus Jakarta Sans ExtraBold).
+/// The multicolor brand mark plus the lowercase "flui" wordmark.
 class FluiLogo extends StatelessWidget {
   const new({
     super.key,
     this.axis = Axis.horizontal,
     this.onDark = false,
     this.symbolSize = 40,
-    this.accentSymbol = false,
   });
 
   static const wordmark = 'flui';
 
   final Axis axis;
 
-  /// On deep green: cream wordmark and cream symbol.
+  /// On deep green: cream wordmark; the multicolor mark remains unchanged.
   final bool onDark;
   final double symbolSize;
 
-  /// Yellow symbol on deep green, when the screen has no other highlight.
-  final bool accentSymbol;
-
   @override
   Widget build(BuildContext context) {
-    final symbol = FluiSymbol(
-      size: symbolSize,
-      tone: onDark && accentSymbol
-          ? FluiSymbolTone.yellow
-          : FluiSymbolTone.green,
-      color: onDark && !accentSymbol ? FluiColors.cream : null,
-    );
+    final symbol = FluiBrandMark(size: symbolSize);
     final text = Text(
       wordmark,
       style: FluiTypeScale.compact.displayL.copyWith(

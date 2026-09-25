@@ -2,6 +2,7 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
+import 'package:flui/features/daily/presentation/category_artwork.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
@@ -90,6 +91,7 @@ void main() {
     for (final label in ['En el trabajo']) {
       expect(find.text(label), findsOneWidget);
     }
+    expect(find.byType(CategoryArtwork), findsWidgets);
     for (final label in [
       'Con la gente',
       'Delante de gente',

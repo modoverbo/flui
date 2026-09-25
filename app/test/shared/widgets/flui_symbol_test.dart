@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/shared/widgets/flui_brand_mark.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
 import 'package:flui/shared/widgets/flui_symbol.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
@@ -59,7 +60,7 @@ void main() {
 
     final wordmark = tester.widget<Text>(find.text('flui'));
     expect(wordmark.style?.color, FluiColors.cream);
-    expect(find.byType(FluiSymbol), findsOneWidget);
+    expect(find.byType(FluiBrandMark), findsOneWidget);
   });
 
   testWidgets('FluiLogo stacked variant places the symbol above', (
@@ -67,7 +68,7 @@ void main() {
   ) async {
     await tester.pumpFlui(const FluiLogo(axis: Axis.vertical));
 
-    final symbol = tester.getCenter(find.byType(FluiSymbol));
+    final symbol = tester.getCenter(find.byType(FluiBrandMark));
     final text = tester.getCenter(find.text('flui'));
     expect(symbol.dy, lessThan(text.dy));
   });

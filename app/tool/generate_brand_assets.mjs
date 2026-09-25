@@ -32,14 +32,22 @@ const header = `<!-- flui symbol. Derived from Tabler Icons "ripple" (MIT, Copyr
 const symbolSvg = (color) =>
   `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">\n  ${header}\n  ${group(color)}\n</svg>\n`;
 
+const brandMarkContents = `<g id="flui-brand-mark" stroke="#151426" stroke-width="1.5" stroke-linejoin="round">
+  <g transform="rotate(-12 35 68)"><rect x="10" y="35" width="48" height="66" rx="8" fill="#151426"/></g>
+  <g transform="rotate(2 65 61)"><rect x="40" y="20" width="49" height="80" rx="8" fill="#0B3D34"/></g>
+  <g transform="rotate(12 92 68)"><rect x="70" y="35" width="48" height="66" rx="8" fill="#FFD60A"/></g>
+  <path id="flui-brand-wave" d="M8 57c13 0 16-11 30-11s16 18 30 18 16-15 30-15 16 11 22 9v12c-7 2-14-9-22-9s-17 15-30 15-17-18-30-18-17 11-30 11Z" fill="#FFF9F2" stroke="none"/>
+</g>`;
+const brandMarkSvg = `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img"><title>flui brand mark</title>${brandMarkContents}</svg>\n`;
+
 // Icon on a deep green tile. scale = symbol size relative to the tile, radius in tile units (48).
 const iconSvg = ({ scale, radius }) => {
-  const offset = (48 - 48 * scale) / 2;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">\n  ${header}\n  <rect width="48" height="48" rx="${radius}" fill="${GREEN}"/>\n  <g transform="translate(${fmt(offset)} ${fmt(offset)}) scale(${scale})">\n  ${group(YELLOW)}\n  </g>\n</svg>\n`;
+  const offset = (128 - 128 * scale) / 2;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">\n  <title>flui app icon</title>\n  <rect width="128" height="128" rx="${radius * (128 / 48)}" fill="${GREEN}"/>\n  <g transform="translate(${fmt(offset)} ${fmt(offset)}) scale(${scale})">${brandMarkContents}</g>\n</svg>\n`;
 };
 const transparentSvg = ({ scale }) => {
-  const offset = (48 - 48 * scale) / 2;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><g transform="translate(${fmt(offset)} ${fmt(offset)}) scale(${scale})">${group(YELLOW)}</g></svg>`;
+  const offset = (128 - 128 * scale) / 2;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><g transform="translate(${fmt(offset)} ${fmt(offset)}) scale(${scale})">${brandMarkContents}</g></svg>`;
 };
 const png = (svg, size, out) => {
   const data = new Resvg(svg, { fitTo: { mode: 'width', value: size } }).render().asPng();
@@ -50,6 +58,7 @@ const png = (svg, size, out) => {
 fs.mkdirSync(`${APP}/assets/brand`, { recursive: true });
 fs.writeFileSync(`${APP}/assets/brand/flui_symbol.svg`, symbolSvg(YELLOW));
 fs.writeFileSync(`${APP}/assets/brand/flui_symbol_green.svg`, symbolSvg(GREEN));
+fs.writeFileSync(`${APP}/assets/brand/flui_brand_mark.svg`, brandMarkSvg);
 
 const rounded = iconSvg({ scale: 0.7, radius: 11 });
 const fullBleed = iconSvg({ scale: 0.72, radius: 0 });
