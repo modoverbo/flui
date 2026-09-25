@@ -1,0 +1,39 @@
+# Flui editorial redesign
+
+## Objective
+
+Deliver the approved full-app editorial visual direction, beginning with an animated five-family category deck on Inicio, a published-word catalog with optional theme filters, and press-and-hold speaking. Preserve existing learning, subscription, and speech-analysis contracts.
+
+## Why and scope
+
+The current app feels too formal for an expressive vocabulary product. The user approved a lively card direction, the rightmost overlapping-card/wave logo concept, five category illustrations, two reference navigation patterns, and written-only speaking feedback. The approved specification is Engram observation #62 (`design/app-redesign/written-spec`); the implementation plan is observation #69 (`design/app-redesign/implementation-plan`). Those observations are the design authority.
+
+Visible taxonomy: five `ThemeFamily` category cards → deduplicated published words → existing word detail. Themes remain optional filters within a category; `Todos` is the default. A word can appear once in each applicable family. The existing four-tab shell and daily speaking action remain.
+
+Out of scope: new data taxonomy or schema, a new microphone placement on every word, TTS, provider/model migration, changes to session/learning rules, push or PR creation. The earlier Groq Whisper + OpenAI analysis preference is tracked separately.
+
+## Constraints and delivery
+
+- Authorized scope: local repository changes and Conventional Commits directly on `main`; no worktree, branch, push, or PR. This latest explicit user direction supersedes the earlier Single PR preference. The historical `size:exception` does not govern direct-main delivery.
+- Strict TDD: enabled by project instructions; use RED → GREEN → REFACTOR for behavior changes. Runner: `cd app && flutter test`; focused commands are in Engram plan #69.
+- Functional closure checks for app work: `cd app && dart format --set-exit-if-changed lib test integration_test`, `flutter analyze && dart analyze`, `flutter test`, `flutter test integration_test -d flutter-tester`. Report unavailable checks, never infer a pass.
+- Delivery budget: likely well above ~400 authored lines. This is a planning/review warning, not permission to omit tests or compress code. Direct-main commits remain small work units.
+- `.codegraph/` is an untracked tool index and must never be staged.
+
+## Tasks
+
+- [x] **T01 — Published family projection.** Derive family word lists from published catalog and themes, preserving catalog order and deduplicating word IDs within each family. Route: delegated direct (new logic and tests in multiple files; preparation requires code reads). Check: focused projection RED/GREEN test, format/analyze, catalog edge cases. Commit: `feat(vocabulary): derive published words by category family`. Evidence: RED failed behaviorally with empty projection; GREEN passed 5 focused tests. `dart format --set-exit-if-changed lib test integration_test`, `flutter analyze && dart analyze`, 1,082 Flutter tests, and 1 `flutter-tester` integration test passed. Parent reran the focused test: 5 passed. Runtime N/A (pure projection; UI runtime is T03). Rollback: remove projection and focused test without touching existing repertoire/detail behavior. Commit hash: pending.
+- [ ] **T02 — Catalog-backed word detail.** Make `/words/:wordId` display valid published words even without user progress; preserve mastery/review actions only for introduced words. Route: delegated direct (page/widget/tests). Check: published-unintroduced regression RED/GREEN, introduced progress behavior, not-found, accessibility. Commit: `feat(vocabulary): show published words before introduction`. Evidence: pending.
+- [ ] **T03 — Category deck and catalog navigation.** Add the five-card Inicio deck, category word cards, optional family-local theme filters, and detail/back-state restoration; retain daily CTA and shell. Route: delegated direct (routes/pages/tests). Check: navigation/filter/empty/error/reduced-motion tests and mobile runtime smoke. Commit: `feat(vocabulary): add category deck and catalog flow`. Evidence: pending.
+- [ ] **T04 — Production brand and category artwork.** Redraw the selected overlapping-card/wave concept as a vector logo master with platform variants; bring the five approved category illustrations into project assets with optimized transparent outputs and accessible, label-led category cards. Keep tiny functional icons vector-based. Route: delegated direct (generator/assets/widgets/tests). Check: generator determinism, launcher sizes, image load/semantics, contrast and in-card mobile proof. Commit: `feat(brand): add editorial logo and category artwork`. Evidence: pending.
+- [ ] **T05 — Press-and-hold speaking.** Replace the existing tap/stop microphone interaction with press/hold/release single-submit, reactive hold motion, cancellation and errors; keep analysis contract and written results. Route: delegated direct (stateful UI/tests). Check: RED/GREEN lifecycle, double-release, permission, too-short, navigation-away, no TTS, runtime mic when available. Commit: `feat(speaking): record speech on microphone hold`. Evidence: pending.
+- [ ] **T06 — Shell and fallback visual pass.** Apply shared editorial treatment to four-tab shell, splash and not-found while preserving routes/responsive navigation. Route: delegated direct (multiple widgets/tests). Check: routing/accessibility widget tests and mobile/wide visual smoke. Commit: `feat(ui): apply editorial navigation and fallback surfaces`. Evidence: pending.
+- [ ] **T07 — Daily flow visual pass.** Restyle time budget and session pages without changing learning state or completion logic. Route: delegated direct (multiple pages/tests). Check: daily widget tests and fake-backend session runtime. Commit: `feat(ui): apply editorial design to daily learning flow`. Evidence: pending.
+- [ ] **T08 — Repertoire and progress visual pass.** Restyle Words and Progress while keeping Words as the user's introduced repertoire, not the new published catalog. Route: delegated direct (pages/tests). Check: vocabulary/progress/accessibility tests and mobile/wide smoke. Commit: `feat(ui): redesign repertoire and progress surfaces`. Evidence: pending.
+- [ ] **T09 — Speaking visual pass.** Align ready/recording/result surfaces with the editorial system without changing T05 behavior. Route: delegated direct (page/widgets/tests). Check: speaking and accessibility tests, valid/error runtime scenarios. Commit: `feat(ui): redesign speaking surfaces`. Evidence: pending.
+- [ ] **T10 — Entry and account visual pass.** Restyle onboarding, authentication and subscription surfaces without changing their validation, payment or state contracts. Route: delegated direct (many routed pages/tests). Check: auth/subscription/routing/accessibility suites and fake-backend walkthrough. Commit: `feat(ui): redesign onboarding and account flows`. Evidence: pending.
+- [ ] **T11 — Reconcile redesign documentation.** Update conflicting `docs/redesign/` guidance to describe shipped behavior accurately and preserve historical rationale. Route: delegated direct (multiple documentation files). Check: structural readback against Engram spec and actual shipped routes, no artificial tests. Commit: `docs(redesign): reconcile category-flow guidance`. Evidence: pending.
+
+## Progress and next step
+
+All tasks pending. Baseline on `main`: `cd app && flutter test` exited 0 with 1,077 passing tests; `cd app && flutter analyze && dart analyze` exited 0 with no issues. Before T01 source edits, verify the exact current provider/test APIs. After each task, record RED/GREEN evidence, full applicable checks, runtime result or N/A, rollback boundary, native review status if enabled, and commit hash here and in the Engram mirror. Next: T01.
