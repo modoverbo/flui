@@ -16,12 +16,15 @@ final class FakeSpeechRecorder implements SpeechRecorder {
   new({
     this.permission = true,
     this.permissionResult,
+    this.startResult,
     this.recording = const [1, 2, 3],
   });
 
   final bool permission;
   final Completer<bool>? permissionResult;
+  final Completer<void>? startResult;
   final List<int> recording;
+  final events = <String>[];
   int permissionRequests = 0;
   int starts = 0;
   int stops = 0;
@@ -32,10 +35,14 @@ final class FakeSpeechRecorder implements SpeechRecorder {
   @override
   Future<void> cancel() async {
     cancellations++;
+    events.add('cancel');
   }
 
   @override
-  Future<void> dispose() async {}
+  Future<void> dispose() async {
+    events.add('dispose');
+  }
+
   @override
   Future<bool> requestPermission() async {
     permissionRequests++;
@@ -45,6 +52,9 @@ final class FakeSpeechRecorder implements SpeechRecorder {
   @override
   Future<void> start() async {
     starts++;
+    events.add('start-requested');
+    await startResult?.future;
+    events.add('start-completed');
   }
 
   @override
@@ -324,6 +334,96 @@ void main() {
     expect(recorder.starts, 0);
     expect(recorder.stops, 0);
     expect(repository.calls, 0);
+  });
+
+  testWidgets('release while start is pending cancels after start completes', (
+    tester,
+  ) async {
+    final startResult = Completer<void>();
+    final recorder = FakeSpeechRecorder(startResult: startResult);
+    await tester.pumpWidget(
+      MaterialApp(
+        locale: const Locale('es'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          ...GlobalMaterialLocalizations.delegates,
+        ],
+        home: SpeakingChallengePage(recorder: recorder),
+      ),
+    );
+
+    final press = await _pressMicrophone(tester);
+    expect(recorder.events, ['start-requested']);
+    await press.up();
+    startResult.complete();
+    await tester.pump();
+    await tester.pump();
+
+    expect(recorder.events, ['start-requested', 'start-completed', 'cancel']);
+  });
+
+  testWidgets(
+    'pointer cancellation waits for pending start before cancelling',
+    (tester) async {
+      final startResult = Completer<void>();
+      final recorder = FakeSpeechRecorder(startResult: startResult);
+      await tester.pumpWidget(
+        MaterialApp(
+          locale: const Locale('es'),
+          supportedLocales: AppLocalizations.supportedLocales,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            ...GlobalMaterialLocalizations.delegates,
+          ],
+          home: SpeakingChallengePage(recorder: recorder),
+        ),
+      );
+
+      final press = await _pressMicrophone(tester);
+      await press.cancel();
+      await tester.pump();
+
+      expect(recorder.events, ['start-requested']);
+      startResult.complete();
+      await tester.pump();
+      await tester.pump();
+
+      expect(recorder.events, ['start-requested', 'start-completed', 'cancel']);
+    },
+  );
+
+  testWidgets('leaving while start is pending cancels before disposal', (
+    tester,
+  ) async {
+    final startResult = Completer<void>();
+    final recorder = FakeSpeechRecorder(startResult: startResult);
+    await tester.pumpWidget(
+      MaterialApp(
+        locale: const Locale('es'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          ...GlobalMaterialLocalizations.delegates,
+        ],
+        home: SpeakingChallengePage(recorder: recorder),
+      ),
+    );
+
+    await _pressMicrophone(tester);
+    await tester.pumpWidget(const MaterialApp(home: SizedBox()));
+    expect(recorder.events, ['start-requested']);
+
+    startResult.complete();
+    await tester.pump();
+    await tester.pump();
+
+    expect(recorder.events, [
+      'start-requested',
+      'start-completed',
+      'cancel',
+      'dispose',
+    ]);
   });
 
   testWidgets('leaving during a hold cancels without analyzing', (

@@ -95,6 +95,7 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   bool _recorderActive = false;
   bool _startPending = false;
   bool _cancellationPending = false;
+  Future<void>? _recorderStartFuture;
   Future<void>? _cancelFuture;
   int _holdGeneration = 0;
   int? _activePointer;
@@ -148,7 +149,15 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
         setState(() => _phase = _Phase.denied);
         return;
       }
-      await _recorder.start();
+      final recorderStart = _recorder.start();
+      _recorderStartFuture = recorderStart;
+      try {
+        await recorderStart;
+      } finally {
+        if (identical(_recorderStartFuture, recorderStart)) {
+          _recorderStartFuture = null;
+        }
+      }
       if (!mounted || !_holdRequested || generation != _holdGeneration) {
         await _cancelRecorder();
         return;
@@ -229,6 +238,15 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   }
 
   Future<void> _cancelAndCaptureFailure() async {
+    final pendingStart = _recorderStartFuture;
+    if (pendingStart != null) {
+      try {
+        await pendingStart;
+      } on Object catch (_) {
+        // The start failure is handled by the start flow; cancellation remains
+        // best-effort cleanup for any partial platform startup.
+      }
+    }
     try {
       await _recorder.cancel();
     } on Object catch (_) {
