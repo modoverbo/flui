@@ -2,6 +2,7 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/time_budget_page.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -39,6 +40,13 @@ void main() {
     await pumpPage(tester);
 
     expect(find.text('¿Cuánto tiempo tienes hoy?'), findsOneWidget);
+    expect(
+      find.ancestor(
+        of: find.text('¿Cuánto tiempo tienes hoy?'),
+        matching: find.byType(FluiCard),
+      ),
+      findsOneWidget,
+    );
     for (final (minutes, line) in [
       ('5 min', 'Solo repasos'),
       ('10 min', '1 palabra nueva + repaso'),

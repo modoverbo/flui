@@ -26,6 +26,7 @@ import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
 import 'package:flui/shared/widgets/card_stack.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/flui_notice.dart';
@@ -120,28 +121,35 @@ class _SessionBody extends StatelessWidget {
         if (!state.isFinished)
           PageFrame.column(
             child: Padding(
-              padding: const EdgeInsets.only(top: FluiSpacing.xs),
-              child: Row(
-                children: [
-                  IconButton(
-                    tooltip: l10n.sessionCloseTooltip,
-                    onPressed: () => unawaited(_confirmClose(context)),
-                    icon: const Icon(LucideIcons.x),
-                  ),
-                  const SizedBox(width: FluiSpacing.xs),
-                  FluiLabel(l10n.sessionStepOf(flow.position, flow.total)),
-                  const SizedBox(width: FluiSpacing.sm),
-                  Expanded(
-                    child: FluiProgressBar(
-                      value: flow.total == 0 ? 1 : flow.index / flow.total,
-                      semanticLabel: l10n.sessionProgress(
-                        flow.position,
-                        flow.total,
-                      ),
-                      height: 6,
+              padding: const EdgeInsets.only(top: FluiSpacing.sm),
+              child: FluiCard(
+                color: FluiColors.aqua,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: FluiSpacing.xs,
+                  vertical: FluiSpacing.xxs,
+                ),
+                child: Row(
+                  children: [
+                    IconButton(
+                      tooltip: l10n.sessionCloseTooltip,
+                      onPressed: () => unawaited(_confirmClose(context)),
+                      icon: const Icon(LucideIcons.x),
                     ),
-                  ),
-                ],
+                    const SizedBox(width: FluiSpacing.xs),
+                    FluiLabel(l10n.sessionStepOf(flow.position, flow.total)),
+                    const SizedBox(width: FluiSpacing.sm),
+                    Expanded(
+                      child: FluiProgressBar(
+                        value: flow.total == 0 ? 1 : flow.index / flow.total,
+                        semanticLabel: l10n.sessionProgress(
+                          flow.position,
+                          flow.total,
+                        ),
+                        height: 6,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

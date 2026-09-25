@@ -7,6 +7,7 @@ import 'package:flui/features/daily/presentation/controllers/session_controller.
 import 'package:flui/features/daily/presentation/session_page.dart';
 import 'package:flui/features/exercises/domain/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/training_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
@@ -65,6 +66,10 @@ void main() {
     expect(find.text('TU PALABRA DE HOY'), findsOneWidget);
     expect(find.text('perspicaz'), findsOneWidget);
     expect(find.text('1 DE 7'), findsOneWidget);
+    expect(
+      find.ancestor(of: find.text('1 DE 7'), matching: find.byType(FluiCard)),
+      findsOneWidget,
+    );
     expect(find.text('REEMPLAZA'), findsWidgets);
     expect(find.text('CUÁNDO NO USARLA'), findsOneWidget);
     expect(find.text('NO LA CONFUNDAS CON'), findsOneWidget);

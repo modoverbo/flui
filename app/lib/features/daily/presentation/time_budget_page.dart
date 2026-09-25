@@ -14,6 +14,7 @@ import 'package:flui/features/themes/presentation/providers/theme_providers.dart
 import 'package:flui/features/themes/presentation/widgets/theme_choice_card.dart';
 import 'package:flui/features/themes/presentation/widgets/theme_explorer_sheet.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/flui_notice.dart';
@@ -87,30 +88,40 @@ class TimeBudgetPage extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(height: layout.blockGap),
-                  Row(
-                    children: [
-                      const FluiGlyphIcon(
-                        FluiGlyph.goal,
-                        color: FluiColors.greenSecondary,
-                      ),
-                      const SizedBox(width: FluiSpacing.xs),
-                      FluiLabel(l10n.todayBentoTimeLabel),
-                    ],
-                  ),
-                  const SizedBox(height: FluiSpacing.sm),
-                  Semantics(
-                    header: true,
-                    child: Text(
-                      l10n.timeBudgetTitle,
-                      style: layout.type.titleL.copyWith(
-                        color: FluiColors.charcoal,
-                      ),
+                  FluiCard(
+                    color: FluiColors.aqua,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            const FluiGlyphIcon(
+                              FluiGlyph.goal,
+                              color: FluiColors.greenDeep,
+                            ),
+                            const SizedBox(width: FluiSpacing.xs),
+                            FluiLabel(l10n.todayBentoTimeLabel),
+                          ],
+                        ),
+                        const SizedBox(height: FluiSpacing.sm),
+                        Semantics(
+                          header: true,
+                          child: Text(
+                            l10n.timeBudgetTitle,
+                            style: layout.type.titleL.copyWith(
+                              color: FluiColors.charcoal,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: FluiSpacing.xs),
+                        Text(
+                          l10n.timeBudgetBody,
+                          style: layout.type.bodyL.copyWith(
+                            color: FluiColors.charcoal,
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SizedBox(height: FluiSpacing.xs),
-                  Text(
-                    l10n.timeBudgetBody,
-                    style: layout.type.bodyL.copyWith(color: FluiColors.gray),
                   ),
                   SizedBox(height: layout.blockGap),
                   for (final budget in TimeBudget.values) ...[
