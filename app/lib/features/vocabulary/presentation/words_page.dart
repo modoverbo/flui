@@ -4,7 +4,6 @@ import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
-import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
@@ -15,6 +14,7 @@ import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
 import 'package:flui/shared/widgets/choice_chips.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
@@ -200,12 +200,9 @@ class _WordRow extends StatelessWidget {
   /// The taxonomy, to resolve this word's own theme colour.
   final Map<String, Theme> themes;
 
-  /// The word's own theme, resolved id -> slug -> [FluiThemeColors.resolve].
-  ///
-  /// Never resolves the raw theme id directly: `FluiThemeColors.resolve`
-  /// only recognises slugs, and a raw id would silently fall back to the
-  /// neutral colour (the bug fixed in commit de5bd47 for the session card;
-  /// replicated as a fix here, not repeated as a bug).
+  /// The word's own accent, resolved id -> slug -> [FluiThemeColors.resolve].
+  /// Never resolves the raw theme id directly: the color registry recognises
+  /// slugs, and a raw id would silently fall back to the neutral accent.
   FluiThemeColor get _themeColor {
     final slug = themes[entry.word.themeIds.firstOrNull]?.slug;
     return FluiThemeColors.resolve(slug ?? '');
@@ -225,45 +222,45 @@ class _WordRow extends StatelessWidget {
       constraints: BoxConstraints(maxWidth: width),
       child: SizedBox(
         width: columns == 1 ? double.infinity : width,
-        child: Material(
-          color: _themeColor.tint,
-          shape: const RoundedRectangleBorder(
-            borderRadius: FluiRadii.cardAll,
-            side: BorderSide(color: FluiColors.ink, width: 1.5),
-          ),
-          clipBehavior: Clip.antiAlias,
-          child: InkWell(
-            onTap: () => context.go(AppRoutes.wordDetail(entry.word.id)),
-            child: Padding(
-              padding: const EdgeInsets.all(FluiSpacing.md),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          entry.word.lemma,
-                          style: type.titleM.copyWith(
-                            color: FluiColors.charcoal,
-                          ),
-                        ),
-                        const SizedBox(height: FluiSpacing.xxs),
-                        Text(
-                          entry.word.explanation,
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                          style: type.body.copyWith(color: FluiColors.gray),
-                        ),
-                      ],
-                    ),
+        child: FluiCard(
+          onTap: () => context.go(AppRoutes.wordDetail(entry.word.id)),
+          color: FluiColors.surface,
+          padding: const EdgeInsets.all(FluiSpacing.md),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: FluiSpacing.xxs),
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: _themeColor.surface,
+                    borderRadius: BorderRadius.circular(FluiSpacing.xxs),
                   ),
-                  const SizedBox(width: FluiSpacing.sm),
-                  StateChip(state: entry.progress.state.chipKind),
-                ],
+                  child: const SizedBox(width: 5, height: 40),
+                ),
               ),
-            ),
+              const SizedBox(width: FluiSpacing.sm),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      entry.word.lemma,
+                      style: type.titleM.copyWith(color: FluiColors.ink),
+                    ),
+                    const SizedBox(height: FluiSpacing.xxs),
+                    Text(
+                      entry.word.explanation,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: type.body.copyWith(color: FluiColors.gray),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: FluiSpacing.sm),
+              StateChip(state: entry.progress.state.chipKind),
+            ],
           ),
         ),
       ),

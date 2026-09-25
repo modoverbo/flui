@@ -5,7 +5,6 @@ import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_theme.dart';
 import 'package:flui/features/auth/presentation/controllers/sign_out_controller.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/profile/domain/progress_stats.dart';
@@ -26,8 +25,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// "Tu progreso": training progress, not a spreadsheet. The week and the
-/// streak lead, editorial numbers follow, then the achievements as cards,
-/// the plan and the way out — all on the app's one dark surface.
+/// streak leads, editorial numbers follow, then achievements as cards, the
+/// plan and the way out — on the same paper surface as the rest of the app.
 class ProgressPage extends ConsumerWidget {
   const new({super.key});
 
@@ -41,68 +40,55 @@ class ProgressPage extends ConsumerWidget {
     final overview = ref.watch(progressOverviewProvider);
     final name = user?.displayName;
 
-    return Theme(
-      data: FluiTheme.progressSurface(),
-      child: Scaffold(
-        backgroundColor: FluiColors.progressSurface,
-        body: SafeArea(
-          child: SingleChildScrollView(
-            child: PageFrame(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  SizedBox(height: layout.blockGap),
-                  PageHeader(
-                    title: l10n.progressTitle,
-                    onDark: true,
-                    subtitle: name == null || name.trim().isEmpty
-                        ? l10n.progressGreetingAnonymous
-                        : l10n.progressGreeting(name),
+    return Scaffold(
+      backgroundColor: FluiColors.paper,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: PageFrame(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: layout.blockGap),
+                PageHeader(
+                  title: l10n.progressTitle,
+                  subtitle: name == null || name.trim().isEmpty
+                      ? l10n.progressGreetingAnonymous
+                      : l10n.progressGreeting(name),
+                ),
+                SizedBox(height: layout.blockGap),
+                switch (overview) {
+                  AsyncValue(hasValue: true, :final value?) => _ProgressContent(
+                    overview: value,
                   ),
-                  SizedBox(height: layout.blockGap),
-                  switch (overview) {
-                    AsyncValue(hasValue: true, :final value?) =>
-                      _ProgressContent(overview: value),
-                    AsyncError() => Text(
-                      l10n.todayLoadError,
-                      style: layout.type.bodyL.copyWith(
-                        color: FluiColors.creamMuted,
-                      ),
-                    ),
-                    _ => Center(
-                      child: LoadingWave(
-                        semanticLabel: l10n.commonLoading,
-                        color: FluiColors.cream,
-                      ),
-                    ),
-                  },
-                  SizedBox(height: layout.sectionGap),
-                  SectionHeader(
-                    title: l10n.progressAccountTitle,
-                    onDark: true,
-                    glyph: const FluiGlyphIcon(FluiGlyph.goal),
+                  AsyncError() => Text(
+                    l10n.todayLoadError,
+                    style: layout.type.bodyL.copyWith(color: FluiColors.gray),
                   ),
-                  FluiCard(
-                    onDark: true,
-                    child: Text(
-                      subscriptionSummary(l10n, access),
-                      style: layout.type.bodyL.copyWith(
-                        color: FluiColors.cream,
-                      ),
-                    ),
+                  _ => Center(
+                    child: LoadingWave(semanticLabel: l10n.commonLoading),
                   ),
-                  SizedBox(height: layout.blockGap),
-                  FluiButton.outline(
-                    label: l10n.progressSignOut,
-                    isLoading: signingOut,
-                    onDark: true,
-                    onPressed: () => unawaited(
-                      ref.read(signOutControllerProvider.notifier).signOut(),
-                    ),
+                },
+                SizedBox(height: layout.sectionGap),
+                SectionHeader(
+                  title: l10n.progressAccountTitle,
+                  glyph: const FluiGlyphIcon(FluiGlyph.goal),
+                ),
+                FluiCard(
+                  child: Text(
+                    subscriptionSummary(l10n, access),
+                    style: layout.type.bodyL.copyWith(color: FluiColors.ink),
                   ),
-                  SizedBox(height: layout.sectionGap),
-                ],
-              ),
+                ),
+                SizedBox(height: layout.blockGap),
+                FluiButton.outline(
+                  label: l10n.progressSignOut,
+                  isLoading: signingOut,
+                  onPressed: () => unawaited(
+                    ref.read(signOutControllerProvider.notifier).signOut(),
+                  ),
+                ),
+                SizedBox(height: layout.sectionGap),
+              ],
             ),
           ),
         ),
@@ -133,14 +119,12 @@ class _ProgressContent extends ConsumerWidget {
         SizedBox(height: layout.sectionGap),
         SectionHeader(
           title: l10n.progressStatsTitle,
-          onDark: true,
           glyph: const FluiGlyphIcon(FluiGlyph.goal),
         ),
         _ProgressNumbers(stats: overview.stats),
         if (repairable != null && repairAfter != null) ...[
           SizedBox(height: layout.blockGap),
           FluiCard(
-            onDark: true,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -149,7 +133,7 @@ class _ProgressContent extends ConsumerWidget {
                     formatLongDate(repairable.toDateTime()),
                     repairAfter,
                   ),
-                  style: type.body.copyWith(color: FluiColors.creamMuted),
+                  style: type.body.copyWith(color: FluiColors.gray),
                 ),
                 const SizedBox(height: FluiSpacing.md),
                 FluiButton.accent(
@@ -168,13 +152,12 @@ class _ProgressContent extends ConsumerWidget {
           SizedBox(height: layout.blockGap),
           Text(
             l10n.progressRepairUsed,
-            style: type.body.copyWith(color: FluiColors.creamMuted),
+            style: type.body.copyWith(color: FluiColors.gray),
           ),
         ],
         SizedBox(height: layout.sectionGap),
         SectionHeader(
           title: l10n.progressAchievementsTitle,
-          onDark: true,
           glyph: const FluiGlyphIcon(FluiGlyph.achievement),
         ),
         for (final achievement in overview.achievements) ...[
@@ -197,35 +180,41 @@ class _ProgressStreakBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final type = context.type;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Row(
-          children: [
-            const FluiGlyphIcon(FluiGlyph.streak, color: FluiColors.creamMuted),
-            const SizedBox(width: FluiSpacing.xs),
-            Expanded(child: FluiLabel(l10n.progressBentoTitle, onDark: true)),
-          ],
-        ),
-        const SizedBox(height: FluiSpacing.sm),
-        FittedBox(
-          fit: BoxFit.scaleDown,
-          alignment: Alignment.centerLeft,
-          child: Text(
-            // Has a zero case of its own: "Tu racha empieza con tu próxima
-            // sesión".
-            l10n.progressStreak(streak.currentStreak),
-            style: type.displayL.copyWith(color: FluiColors.cream),
+    return FluiCard(
+      color: FluiColors.aqua,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Row(
+            children: [
+              const FluiGlyphIcon(FluiGlyph.streak, color: FluiColors.ink),
+              const SizedBox(width: FluiSpacing.xs),
+              Expanded(child: FluiLabel(l10n.progressBentoTitle)),
+            ],
           ),
-        ),
-        const SizedBox(height: FluiSpacing.xs),
-        Text(
-          l10n.progressWeekDays(streak.activeDaysThisWeek),
-          style: type.body.copyWith(color: FluiColors.creamMuted),
-        ),
-        const SizedBox(height: FluiSpacing.md),
-        WeekDots(activeDays: streak.weekDays),
-      ],
+          const SizedBox(height: FluiSpacing.sm),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            alignment: Alignment.centerLeft,
+            child: Text(
+              // Has a zero case of its own: "Tu racha empieza con tu próxima
+              // sesión".
+              l10n.progressStreak(streak.currentStreak),
+              style: type.displayL.copyWith(color: FluiColors.ink),
+            ),
+          ),
+          const SizedBox(height: FluiSpacing.xs),
+          Text(
+            l10n.progressWeekDays(streak.activeDaysThisWeek),
+            style: type.body.copyWith(color: FluiColors.ink),
+          ),
+          const SizedBox(height: FluiSpacing.md),
+          Semantics(
+            explicitChildNodes: true,
+            child: WeekDots(activeDays: streak.weekDays, onDark: false),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -255,7 +244,6 @@ class _ProgressNumbers extends StatelessWidget {
           child: EditorialStat(
             value: '${stats.activeDays}',
             label: l10n.statActiveDays,
-            onDark: true,
           ),
         ),
         SizedBox(
@@ -263,7 +251,6 @@ class _ProgressNumbers extends StatelessWidget {
           child: EditorialStat(
             value: '${stats.tuya}',
             label: l10n.statOwnedWords,
-            onDark: true,
           ),
         ),
         SizedBox(
@@ -271,7 +258,6 @@ class _ProgressNumbers extends StatelessWidget {
           child: EditorialStat(
             value: '${stats.practica}',
             label: l10n.statPracticeWords,
-            onDark: true,
           ),
         ),
         SizedBox(
@@ -282,7 +268,6 @@ class _ProgressNumbers extends StatelessWidget {
                 : l10n.statPrecisionValue(precision),
             label: l10n.statPrecisionLabel,
             caption: l10n.statPrecisionWindow,
-            onDark: true,
           ),
         ),
       ],

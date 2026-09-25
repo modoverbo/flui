@@ -1,4 +1,5 @@
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
@@ -82,6 +83,7 @@ void main() {
       for (final lemma in ['perspicaz', 'plantear', 'matizar']) {
         expect(find.text(lemma), findsOneWidget);
       }
+      expect(find.text('elocuente'), findsNothing);
       // The filter chip keeps sentence case; the state chip is set in caps.
       expect(find.text('Tuya'), findsOneWidget);
       expect(find.text('TUYA'), findsOneWidget);
@@ -107,15 +109,13 @@ void main() {
       );
     });
 
-    testWidgets('each card is tinted by its own resolved theme colour', (
+    testWidgets('each repertoire card carries its theme accent', (
       tester,
     ) async {
       await pump(tester, location: AppRoutes.words, page: const WordsPage());
 
-      // «plantear»'s primary theme is "reuniones": the card resolves the
-      // word's theme id to its slug (themesByIdProvider), then
-      // FluiThemeColors.resolve (never the raw id) — the fix from commit
-      // de5bd47, replicated here.
+      // «plantear» uses the published «reuniones» theme. The surface stays
+      // paper-white while a compact marker carries that theme's accent.
       final card = tester.widget<Material>(
         find
             .ancestor(
@@ -124,7 +124,25 @@ void main() {
             )
             .first,
       );
-      expect(card.color, FluiThemeColors.resolve('reuniones').tint);
+      expect(card.color, FluiColors.surface);
+      expect(
+        find.descendant(
+          of: find
+              .ancestor(
+                of: find.text('plantear'),
+                matching: find.byType(Material),
+              )
+              .first,
+          matching: find.byWidgetPredicate(
+            (widget) =>
+                widget is DecoratedBox &&
+                widget.decoration is BoxDecoration &&
+                (widget.decoration as BoxDecoration).color ==
+                    FluiThemeColors.resolve('reuniones').surface,
+          ),
+        ),
+        findsOneWidget,
+      );
     });
 
     testWidgets('filters by theme, and only by themes it has words in', (
@@ -191,6 +209,24 @@ void main() {
         expect(tester.takeException(), isNull);
       },
     );
+
+    testWidgets('renders the repertoire across a wide viewport', (
+      tester,
+    ) async {
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.words,
+        page: const WordsPage(),
+        overrides: fakes.overrides,
+        surfaceSize: const Size(1280, 900),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('perspicaz'), findsOneWidget);
+      expect(find.text('plantear'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
   });
 
   group('word detail', () {

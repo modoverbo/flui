@@ -6,13 +6,14 @@ import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Monday to Sunday of the current week, for dark surfaces. An active day is
-/// a yellow bar: a streak moment, one of yellow's four roles.
+/// Monday to Sunday of the current week. An active day is a yellow bar: a
+/// streak moment, one of yellow's four roles.
 class WeekDots extends StatelessWidget {
-  const new({required this.activeDays, super.key});
+  const new({required this.activeDays, super.key, this.onDark = true});
 
   /// Seven values, Monday first.
   final List<bool> activeDays;
+  final bool onDark;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,9 @@ class WeekDots extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: activeDays[i]
                           ? FluiColors.yellowElectric
-                          : FluiColors.greenSecondary,
+                          : (onDark
+                                ? FluiColors.greenSecondary
+                                : FluiColors.outline),
                       borderRadius: FluiRadii.pill,
                     ),
                   ),
@@ -47,7 +50,7 @@ class WeekDots extends StatelessWidget {
                   Text(
                     initials[i],
                     style: FluiTypeScale.compact.label.copyWith(
-                      color: FluiColors.creamMuted,
+                      color: onDark ? FluiColors.creamMuted : FluiColors.gray,
                     ),
                   ),
                 ],

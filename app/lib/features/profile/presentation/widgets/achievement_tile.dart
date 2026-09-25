@@ -3,7 +3,6 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_surfaces.dart';
 import 'package:flui/features/profile/domain/achievements.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
@@ -45,13 +44,13 @@ class AchievementTile extends StatelessWidget {
     );
     return DecoratedBox(
       decoration: BoxDecoration(
-        color: FluiColors.greenDeep,
+        color: FluiColors.surface,
         borderRadius: FluiRadii.cardAll,
         border: Border.fromBorderSide(
           done
-              // An unlocked achievement is a yellow moment.
-              ? const BorderSide(color: FluiColors.yellowElectric, width: 2)
-              : FluiSurfaces.hairlineOnGreen,
+              // An unlocked achievement gets the stronger accent border.
+              ? const BorderSide(color: FluiColors.greenSecondary, width: 2)
+              : const BorderSide(color: FluiColors.outline),
         ),
       ),
       child: Padding(
@@ -63,7 +62,7 @@ class AchievementTile extends StatelessWidget {
               padding: const EdgeInsets.only(top: 2),
               child: FluiGlyphIcon(
                 glyphOf(achievement),
-                color: done ? FluiColors.yellowElectric : FluiColors.creamMuted,
+                color: done ? FluiColors.greenSecondary : FluiColors.gray,
               ),
             ),
             const SizedBox(width: FluiSpacing.sm),
@@ -75,12 +74,12 @@ class AchievementTile extends StatelessWidget {
                     titleOf(l10n, achievement),
                     style: type.body.copyWith(
                       fontWeight: FontWeight.w600,
-                      color: FluiColors.cream,
+                      color: FluiColors.ink,
                     ),
                   ),
                   Text(
                     done ? l10n.achievementCompleted : progress,
-                    style: type.body.copyWith(color: FluiColors.creamMuted),
+                    style: type.body.copyWith(color: FluiColors.gray),
                   ),
                   if (!done && achievement.target > 1) ...[
                     const SizedBox(height: FluiSpacing.xs),
@@ -88,7 +87,6 @@ class AchievementTile extends StatelessWidget {
                       value: achievement.fraction,
                       semanticLabel: progress,
                       height: 6,
-                      onDark: true,
                     ),
                   ],
                 ],

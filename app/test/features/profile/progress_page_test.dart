@@ -151,23 +151,50 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('is the one dark surface, and its text reads on it', (
+  testWidgets('renders across a wide viewport', (tester) async {
+    reduceMotion(tester);
+    await tester.pumpFlui(
+      const ProgressPage(),
+      overrides: [
+        ...fakes.overrides,
+        subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+      ],
+      surfaceSize: const Size(1280, 900),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Tu progreso'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('uses the light editorial surface with readable text', (
     tester,
   ) async {
     await answeredOn(16);
     await pumpPage(tester);
 
     final scaffold = tester.widget<Scaffold>(find.byType(Scaffold).last);
-    expect(scaffold.backgroundColor, FluiColors.progressSurface);
-    // Every colour the page actually paints on that surface still clears
-    // WCAG AA — not just the token table in isolation.
+    expect(scaffold.backgroundColor, FluiColors.paper);
     expect(
-      contrastRatio(FluiColors.cream, FluiColors.progressSurface),
+      contrastRatio(FluiColors.ink, FluiColors.paper),
       greaterThanOrEqualTo(FluiColorRules.aaText),
     );
     expect(
-      contrastRatio(FluiColors.creamMuted, FluiColors.progressSurface),
+      contrastRatio(FluiColors.gray, FluiColors.paper),
       greaterThanOrEqualTo(FluiColorRules.aaText),
+    );
+    expect(
+      tester
+          .widget<Material>(
+            find
+                .ancestor(
+                  of: find.text('1 día seguido'),
+                  matching: find.byType(Material),
+                )
+                .first,
+          )
+          .color,
+      FluiColors.aqua,
     );
   });
 
