@@ -186,7 +186,7 @@ void main() {
         // the landing content is the challenge's own "ready" phase.
         expect(find.byType(NavigationBar), findsOneWidget);
         expect(find.text('Habla'), findsOneWidget);
-        expect(find.text('Empezar a hablar'), findsOneWidget);
+        expect(find.text('Abrir ejercicio'), findsOneWidget);
       },
     );
 
@@ -201,28 +201,28 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(location(harness), AppRoutes.speakingChallenge);
-      expect(find.text('Empezar a hablar'), findsOneWidget);
+      expect(find.text('Abrir ejercicio'), findsOneWidget);
     });
 
-    testWidgets(
-      'starting a challenge takes over the full screen, like /session',
-      (tester) async {
-        final harness = AppHarness(signedInAs: ana, access: trialing);
-        await harness.pumpApp(
-          tester,
-          initialLocation: AppRoutes.speakingChallenge,
-          arrange: (h) => h.planToday(),
-        );
+    testWidgets('opening a challenge takes over full screen before recording', (
+      tester,
+    ) async {
+      final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.speakingChallenge,
+        arrange: (h) => h.planToday(),
+      );
 
-        expect(find.byType(NavigationBar), findsOneWidget);
-        await tester.tap(find.text('Empezar a hablar'));
-        await tester.pumpAndSettle();
+      expect(find.byType(NavigationBar), findsOneWidget);
+      await tester.tap(find.text('Abrir ejercicio'));
+      await tester.pumpAndSettle();
 
-        expect(location(harness), AppRoutes.speakingChallengeLive);
-        // Full-screen take-over: the shell's own chrome is gone.
-        expect(find.byType(NavigationBar), findsNothing);
-      },
-    );
+      expect(location(harness), AppRoutes.speakingChallengeLive);
+      // Full-screen take-over: the shell's own chrome is gone.
+      expect(find.byType(NavigationBar), findsNothing);
+      expect(find.text('Empezar a hablar'), findsOneWidget);
+    });
   });
 
   testWidgets('category detail back restores its family filter and page', (

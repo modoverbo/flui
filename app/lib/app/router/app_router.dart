@@ -172,7 +172,7 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
                 path: 'live',
                 parentNavigatorKey: rootKey,
                 pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
-                  const SpeakingChallengePage(autoStart: true),
+                  const SpeakingChallengePage(),
                   key: state.pageKey,
                 ),
               ),

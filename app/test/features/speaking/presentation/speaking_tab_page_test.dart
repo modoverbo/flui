@@ -8,7 +8,7 @@ import '../../../helpers/reduce_motion.dart';
 
 void main() {
   group('SpeakingTabPage', () {
-    testWidgets("is Habla's landing: the ready view, mic button included", (
+    testWidgets("is Habla's landing: the ready view opens the exercise", (
       tester,
     ) async {
       reduceMotion(tester);
@@ -20,7 +20,7 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Empezar a hablar'), findsOneWidget);
+      expect(find.text('Abrir ejercicio'), findsOneWidget);
     });
 
     testWidgets('honours reduced motion: no looping animation is scheduled', (

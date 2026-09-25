@@ -17,19 +17,28 @@ import 'package:flui/shared/widgets/audio_reactive_bubble.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/speaking_bubble.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
-enum _Phase { ready, recording, analyzing, feedback, comparison, denied, error }
+enum _Phase {
+  ready,
+  permission,
+  recording,
+  analyzing,
+  feedback,
+  comparison,
+  denied,
+  error,
+}
 
-/// Habla's tab landing: the challenge's own `ready` phase (prompt, timer
-/// pill, mic button), promoted out of the full-screen challenge so
-/// selecting the tab always lands here
-/// (`docs/redesign/02-navigation-model.md` Decision A). Starting a
-/// challenge goes to [AppRoutes.speakingChallengeLive] — the unchanged
-/// [SpeakingChallengePage] state machine — which take over the full screen
+/// Habla's tab landing: a prompt, timer pill, and navigation CTA. The
+/// microphone stays on the full-screen challenge so selecting the tab never
+/// begins capture (`docs/redesign/02-navigation-model.md` Decision A).
+/// Opening a challenge goes to [AppRoutes.speakingChallengeLive] — the
+/// [SpeakingChallengePage] state machine — which takes over the full screen
 /// on the root navigator, the same nested-under-a-branch pattern
 /// `/today/time` already uses (`context.go`, not `context.push`: a pushed
 /// location isn't resolved against a `parentNavigatorKey` route the same
@@ -53,7 +62,8 @@ class SpeakingTabPage extends StatelessWidget {
           child: SingleChildScrollView(
             padding: const EdgeInsets.fromLTRB(24, 12, 24, 36),
             child: _ReadyView(
-              onStart: () => context.go(AppRoutes.speakingChallengeLive),
+              navigationOnly: true,
+              onStart: (_) => context.go(AppRoutes.speakingChallengeLive),
             ),
           ),
         ),
@@ -63,21 +73,10 @@ class SpeakingTabPage extends StatelessWidget {
 }
 
 class SpeakingChallengePage extends ConsumerStatefulWidget {
-  const new({
-    this.recorder,
-    this.analysisRepository,
-    this.autoStart = false,
-    super.key,
-  });
+  const new({this.recorder, this.analysisRepository, super.key});
 
   final SpeechRecorder? recorder;
   final SpeechAnalysisRepository? analysisRepository;
-
-  /// Starts recording as soon as this page mounts, instead of waiting for a
-  /// tap on the mic button. Set when this page is reached from Habla's tab
-  /// landing (the mic tap already happened there), so the take-over goes
-  /// straight to recording rather than showing a redundant second "ready".
-  final bool autoStart;
 
   @override
   ConsumerState<SpeakingChallengePage> createState() =>
@@ -92,6 +91,13 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   static const _analyzer = SpeechAnalyzer();
   _Phase _phase = _Phase.ready;
   Timer? _timer;
+  bool _holdRequested = false;
+  bool _recorderActive = false;
+  bool _startPending = false;
+  bool _cancellationPending = false;
+  Future<void>? _cancelFuture;
+  int _holdGeneration = 0;
+  int? _activePointer;
   // Created once and reused across rebuilds: `_recorder.amplitude` is a
   // getter that builds a fresh `Stream` on every access, and
   // `AudioReactiveBubble` resubscribes (resetting its smoothing pipeline)
@@ -99,6 +105,7 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   late final Stream<double> _amplitudeStream = _recorder.amplitude;
   int _secondsLeft = 45;
   int _attempt = 1;
+  DateTime? _recordingStartedAt;
   DateTime? _startedAt;
   late SpeakingMetrics _firstMetrics;
   late SpeakingMetrics _currentMetrics;
@@ -106,50 +113,143 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
   late SpeechTranscript _currentTranscript;
 
   @override
-  void initState() {
-    super.initState();
-    if (widget.autoStart) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted) unawaited(_start());
-      });
-    }
-  }
-
-  @override
   void dispose() {
     _timer?.cancel();
-    unawaited(_recorder.dispose());
+    if (_holdRequested || _recorderActive || _cancelFuture != null) {
+      unawaited(_cancelAndDisposeRecorder());
+    } else {
+      unawaited(_recorder.dispose());
+    }
     super.dispose();
   }
 
-  Future<void> _start() async {
+  void _pressMicrophone(int? pointer) {
+    if (_phase != _Phase.ready ||
+        _holdRequested ||
+        _startPending ||
+        _cancellationPending) {
+      return;
+    }
+    _activePointer = pointer;
+    _holdRequested = true;
+    _cancelFuture = null;
+    _startPending = true;
+    unawaited(_startHold(++_holdGeneration));
+  }
+
+  Future<void> _startHold(int generation) async {
     try {
-      setState(() => _phase = _Phase.ready);
-      if (!await _recorder.requestPermission()) {
-        if (mounted) setState(() => _phase = _Phase.denied);
+      if (mounted) setState(() => _phase = _Phase.permission);
+      final permitted = await _recorder.requestPermission();
+      if (!mounted || !_holdRequested || generation != _holdGeneration) return;
+      if (!permitted) {
+        _holdRequested = false;
+        _activePointer = null;
+        setState(() => _phase = _Phase.denied);
         return;
       }
       await _recorder.start();
-      _startedAt = DateTime.now();
+      if (!mounted || !_holdRequested || generation != _holdGeneration) {
+        await _cancelRecorder();
+        return;
+      }
+      _recorderActive = true;
+      _recordingStartedAt = DateTime.now();
+      _startedAt = _recordingStartedAt;
       _secondsLeft = 45;
       _timer?.cancel();
       _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
         if (!mounted) return;
         if (_secondsLeft <= 1) {
-          unawaited(_finish());
+          _holdRequested = false;
+          _activePointer = null;
+          unawaited(_submitRecording());
         } else {
           setState(() => _secondsLeft--);
         }
       });
-      if (mounted) setState(() => _phase = _Phase.recording);
+      setState(() => _phase = _Phase.recording);
     } on Object catch (_) {
-      if (mounted) setState(() => _phase = _Phase.error);
+      if (generation == _holdGeneration && _holdRequested) {
+        _holdRequested = false;
+        _activePointer = null;
+        if (mounted) setState(() => _phase = _Phase.error);
+      }
+    } finally {
+      _startPending = false;
     }
   }
 
-  Future<void> _finish() async {
+  void _releaseMicrophone(int? pointer) {
+    if (!_holdRequested || (pointer != null && pointer != _activePointer)) {
+      return;
+    }
+    _holdRequested = false;
+    _holdGeneration++;
+    _activePointer = null;
+    if (_phase == _Phase.permission) {
+      if (mounted) setState(() => _phase = _Phase.ready);
+      return;
+    }
+    if (_phase != _Phase.recording) return;
+    final elapsed = DateTime.now().difference(
+      _recordingStartedAt ?? DateTime.now(),
+    );
+    if (elapsed < const Duration(milliseconds: 600)) {
+      _timer?.cancel();
+      unawaited(_cancelRecorder());
+      if (mounted) setState(() => _phase = _Phase.ready);
+      return;
+    }
+    unawaited(_submitRecording());
+  }
+
+  void _cancelMicrophone(int? pointer) {
+    if (!_holdRequested || (pointer != null && pointer != _activePointer)) {
+      return;
+    }
+    _holdRequested = false;
+    _holdGeneration++;
+    _activePointer = null;
     _timer?.cancel();
-    if (mounted) setState(() => _phase = _Phase.analyzing);
+    if (_phase == _Phase.recording || _phase == _Phase.permission) {
+      unawaited(_cancelRecorder());
+      if (mounted) setState(() => _phase = _Phase.ready);
+    }
+  }
+
+  Future<void> _cancelRecorder() {
+    final inFlight = _cancelFuture;
+    if (inFlight != null) return inFlight;
+    _cancellationPending = true;
+    _recorderActive = false;
+    final cancellation = _cancelAndCaptureFailure();
+    _cancelFuture = cancellation;
+    return cancellation;
+  }
+
+  Future<void> _cancelAndCaptureFailure() async {
+    try {
+      await _recorder.cancel();
+    } on Object catch (_) {
+      // Cancellation is a best-effort discard; disposal still releases the
+      // recorder even if the platform plugin has already stopped it.
+    } finally {
+      _cancellationPending = false;
+    }
+  }
+
+  Future<void> _cancelAndDisposeRecorder() async {
+    if (_holdRequested || _recorderActive) await _cancelRecorder();
+    if (_cancelFuture case final cancellation?) await cancellation;
+    await _recorder.dispose();
+  }
+
+  Future<void> _submitRecording() async {
+    if (_phase != _Phase.recording || !_recorderActive) return;
+    _timer?.cancel();
+    _recorderActive = false;
+    setState(() => _phase = _Phase.analyzing);
     try {
       final bytes = await _recorder.stop();
       if (bytes.isEmpty) throw StateError('empty recording');
@@ -188,63 +288,68 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
 
   Future<void> _retry() async {
     _attempt = 2;
-    await _start();
+    setState(() => _phase = _Phase.ready);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: FluiColors.cream,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        surfaceTintColor: Colors.transparent,
-        title: const Text('Entrenamiento oral'),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 620),
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(24, 12, 24, 36),
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 240),
-                child: switch (_phase) {
-                  _Phase.ready => _ReadyView(onStart: _start),
-                  _Phase.recording => _RecordingView(
-                    secondsLeft: _secondsLeft,
-                    amplitudeStream: _amplitudeStream,
-                    onFinish: _finish,
-                  ),
-                  _Phase.analyzing => const _AnalyzingView(),
-                  _Phase.feedback => _FeedbackView(
-                    feedback: _feedback,
-                    transcript: _currentTranscript,
-                    onRetry: _retry,
-                  ),
-                  _Phase.comparison => _ComparisonView(
-                    before: _firstMetrics,
-                    after: _currentMetrics,
-                  ),
-                  _Phase.denied => _RecoveryView(
-                    icon: LucideIcons.mic_off,
-                    title: 'Necesitamos acceso al micrófono',
-                    message:
-                        'Actívalo en los permisos del navegador y vuelve a '
-                        'intentarlo.',
-                    action: 'Intentar de nuevo',
-                    onAction: _start,
-                  ),
-                  _Phase.error => _RecoveryView(
-                    icon: LucideIcons.rotate_ccw,
-                    title: 'No pudimos analizar este intento',
-                    message:
-                        'Tu audio no se guardó. Puedes grabarlo otra vez '
-                        'ahora mismo.',
-                    action: 'Grabar de nuevo',
-                    onAction: _start,
-                  ),
-                },
+    return Listener(
+      onPointerUp: (event) => _releaseMicrophone(event.pointer),
+      onPointerCancel: (event) => _cancelMicrophone(event.pointer),
+      child: Scaffold(
+        backgroundColor: FluiColors.cream,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          surfaceTintColor: Colors.transparent,
+          title: const Text('Entrenamiento oral'),
+          centerTitle: true,
+        ),
+        body: SafeArea(
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 620),
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.fromLTRB(24, 12, 24, 36),
+                child: AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 240),
+                  child: switch (_phase) {
+                    _Phase.ready => _ReadyView(onStart: _pressMicrophone),
+                    _Phase.permission => const _PermissionView(),
+                    _Phase.recording => _RecordingView(
+                      secondsLeft: _secondsLeft,
+                      amplitudeStream: _amplitudeStream,
+                      onFinish: () => _releaseMicrophone(null),
+                    ),
+                    _Phase.analyzing => const _AnalyzingView(),
+                    _Phase.feedback => _FeedbackView(
+                      feedback: _feedback,
+                      transcript: _currentTranscript,
+                      onRetry: _retry,
+                    ),
+                    _Phase.comparison => _ComparisonView(
+                      before: _firstMetrics,
+                      after: _currentMetrics,
+                    ),
+                    _Phase.denied => _RecoveryView(
+                      icon: LucideIcons.mic_off,
+                      title: 'Necesitamos acceso al micrófono',
+                      message:
+                          'Actívalo en los permisos del navegador y vuelve a '
+                          'intentarlo.',
+                      action: 'Intentar de nuevo',
+                      onAction: () => setState(() => _phase = _Phase.ready),
+                    ),
+                    _Phase.error => _RecoveryView(
+                      icon: LucideIcons.rotate_ccw,
+                      title: 'No pudimos analizar este intento',
+                      message:
+                          'Tu audio no se guardó. Puedes grabarlo otra vez '
+                          'ahora mismo.',
+                      action: 'Grabar de nuevo',
+                      onAction: () => setState(() => _phase = _Phase.ready),
+                    ),
+                  },
+                ),
               ),
             ),
           ),
@@ -255,8 +360,9 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
 }
 
 class _ReadyView extends StatelessWidget {
-  const new({required this.onStart});
-  final VoidCallback onStart;
+  const new({required this.onStart, this.navigationOnly = false});
+  final void Function(int?) onStart;
+  final bool navigationOnly;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -278,11 +384,13 @@ class _ReadyView extends StatelessWidget {
       const SizedBox(height: FluiSpacing.xl),
       const _TimePill(label: '45 s'),
       const SizedBox(height: FluiSpacing.xl),
-      Semantics(
-        button: true,
-        label: 'Empezar grabación de voz',
-        child: _MicButton(onTap: onStart),
-      ),
+      if (navigationOnly)
+        FluiButton.primary(
+          label: 'Abrir ejercicio',
+          onPressed: () => onStart(null),
+        )
+      else
+        _MicButton(onPress: onStart),
       const SizedBox(height: FluiSpacing.lg),
       const Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -302,6 +410,25 @@ class _ReadyView extends StatelessWidget {
   );
 }
 
+class _PermissionView extends StatelessWidget {
+  const new();
+
+  @override
+  Widget build(BuildContext context) => Column(
+    key: const ValueKey('permission'),
+    children: [
+      const SizedBox(height: 48),
+      const AudioReactiveBubble(state: BubbleState.processing),
+      const SizedBox(height: 24),
+      Semantics(
+        liveRegion: true,
+        label: 'Preparando el micrófono',
+        child: const Text('Preparando el micrófono…'),
+      ),
+    ],
+  );
+}
+
 class _RecordingView extends StatelessWidget {
   const new({
     required this.secondsLeft,
@@ -316,7 +443,11 @@ class _RecordingView extends StatelessWidget {
   Widget build(BuildContext context) => Column(
     key: const ValueKey('recording'),
     children: [
-      const FluiLabel('TE ESCUCHO'),
+      Semantics(
+        liveRegion: true,
+        label: 'Grabando. Mantén pulsado y suelta para analizar.',
+        child: const FluiLabel('TE ESCUCHO'),
+      ),
       const SizedBox(height: 28),
       Text('$secondsLeft', style: Theme.of(context).textTheme.displayLarge),
       const Text('segundos restantes'),
@@ -328,7 +459,27 @@ class _RecordingView extends StatelessWidget {
       const SizedBox(height: 24),
       const SpeakerCueCards(),
       const SizedBox(height: 28),
-      FluiButton.primary(label: 'Terminar intento', onPressed: onFinish),
+      Focus(
+        onKeyEvent: (node, event) {
+          if (event is KeyDownEvent &&
+              (event.logicalKey == LogicalKeyboardKey.enter ||
+                  event.logicalKey == LogicalKeyboardKey.space)) {
+            onFinish();
+            return KeyEventResult.handled;
+          }
+          return KeyEventResult.ignored;
+        },
+        child: Semantics(
+          button: true,
+          label: 'Terminar intento y analizar',
+          hint: 'Detiene la grabación para recibir comentarios escritos.',
+          onTap: onFinish,
+          child: const Padding(
+            padding: EdgeInsets.all(12),
+            child: Text('Suelta para detener y analizar'),
+          ),
+        ),
+      ),
     ],
   );
 }
@@ -336,15 +487,22 @@ class _RecordingView extends StatelessWidget {
 class _AnalyzingView extends StatelessWidget {
   const new();
   @override
-  Widget build(BuildContext context) => const Column(
-    key: ValueKey('analyzing'),
+  Widget build(BuildContext context) => Column(
+    key: const ValueKey('analyzing'),
     children: [
-      SizedBox(height: 56),
-      AudioReactiveBubble(state: BubbleState.processing),
-      SizedBox(height: 24),
-      Text('Escuchando tu ritmo…', style: TextStyle(fontSize: 22)),
-      SizedBox(height: 8),
-      Text('Buscamos pausas y patrones útiles, no una nota perfecta.'),
+      const SizedBox(height: 56),
+      const AudioReactiveBubble(state: BubbleState.processing),
+      const SizedBox(height: 24),
+      Semantics(
+        liveRegion: true,
+        label: 'Analizando tu voz',
+        child: const Text(
+          'Escuchando tu ritmo…',
+          style: TextStyle(fontSize: 22),
+        ),
+      ),
+      const SizedBox(height: 8),
+      const Text('Buscamos pausas y patrones útiles, no una nota perfecta.'),
     ],
   );
 }
@@ -533,26 +691,35 @@ class _ComparisonView extends StatelessWidget {
 }
 
 class _MicButton extends StatelessWidget {
-  const new({required this.onTap});
-  final VoidCallback onTap;
+  const new({required this.onPress});
+  final void Function(int?) onPress;
+
   @override
-  Widget build(BuildContext context) => GestureDetector(
-    onTap: onTap,
+  Widget build(BuildContext context) => Listener(
     behavior: HitTestBehavior.opaque,
-    child: Column(
-      children: [
-        AudioReactiveBubble(state: BubbleState.ready, onTap: onTap),
-        const SizedBox(height: 8),
-        const Text(
-          'Empezar a hablar',
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+    onPointerDown: (event) => onPress(event.pointer),
+    child: Semantics(
+      button: true,
+      label: 'Mantén pulsado para grabar',
+      hint: 'Suelta para detener y analizar. Una pulsación breve se descarta.',
+      onTap: () => onPress(null),
+      child: const ExcludeSemantics(
+        child: Column(
+          children: [
+            AudioReactiveBubble(state: BubbleState.ready),
+            SizedBox(height: 8),
+            Text(
+              'Empezar a hablar',
+              style: TextStyle(fontWeight: FontWeight.w800, fontSize: 17),
+            ),
+            SizedBox(height: 4),
+            Text(
+              'Mantén pulsado para grabar; suelta para analizar',
+              style: TextStyle(color: FluiColors.gray),
+            ),
+          ],
         ),
-        const SizedBox(height: 4),
-        const Text(
-          'Toca la esfera cuando estés listo',
-          style: TextStyle(color: FluiColors.gray),
-        ),
-      ],
+      ),
     ),
   );
 }
