@@ -3,12 +3,14 @@ import 'dart:typed_data';
 
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/l10n/gen/app_localizations.dart';
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_recorder.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
 import 'package:flui/shared/widgets/audio_reactive_bubble.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -79,6 +81,17 @@ final class CountingAnalysisRepository implements SpeechAnalysisRepository {
   }
 }
 
+final class PendingAnalysisRepository implements SpeechAnalysisRepository {
+  final result = Completer<Result<SpeechTranscript>>();
+
+  @override
+  Future<Result<SpeechTranscript>> analyze(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+  }) => result.future;
+}
+
 Future<TestGesture> _pressMicrophone(WidgetTester tester) async {
   final gesture = await tester.startGesture(
     tester.getCenter(find.byType(AudioReactiveBubble).first),
@@ -119,7 +132,118 @@ void main() {
     expect(find.text('Empezar a hablar'), findsOneWidget);
     expect(find.bySemanticsLabel('Mantén pulsado para grabar'), findsOneWidget);
     expect(find.byType(AudioReactiveBubble), findsOneWidget);
+    expect(find.byType(FluiCard), findsNWidgets(2));
+    expect(
+      tester.widget<FluiCard>(find.byType(FluiCard).first).color,
+      FluiColors.aqua,
+    );
     expect(find.textContaining('no guardamos tu audio'), findsOneWidget);
+  });
+
+  testWidgets('permission and recording states keep their live announcements', (
+    tester,
+  ) async {
+    final permissionResult = Completer<bool>();
+    await tester.pumpWidget(
+      MaterialApp(
+        locale: const Locale('es'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          ...GlobalMaterialLocalizations.delegates,
+        ],
+        home: SpeakingChallengePage(
+          recorder: FakeSpeechRecorder(permissionResult: permissionResult),
+        ),
+      ),
+    );
+
+    final press = await _pressMicrophone(tester);
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Semantics &&
+            widget.properties.liveRegion == true &&
+            widget.properties.label == 'Preparando el micrófono',
+      ),
+      findsOneWidget,
+    );
+    expect(find.byType(FluiCard), findsWidgets);
+
+    permissionResult.complete(true);
+    await tester.pump();
+    await tester.pump();
+    await _holdLongEnough(tester);
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Semantics &&
+            widget.properties.liveRegion == true &&
+            widget.properties.label ==
+                'Grabando. Mantén pulsado y suelta para analizar.',
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Semantics &&
+            widget.properties.liveRegion != true &&
+            widget.properties.label == '45 segundos restantes',
+      ),
+      findsOneWidget,
+    );
+
+    await press.cancel();
+    await tester.pump();
+  });
+
+  testWidgets('analyzing state uses a written, announced progress surface', (
+    tester,
+  ) async {
+    final repository = PendingAnalysisRepository();
+    await tester.pumpWidget(
+      MaterialApp(
+        locale: const Locale('es'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          ...GlobalMaterialLocalizations.delegates,
+        ],
+        home: SpeakingChallengePage(
+          recorder: FakeSpeechRecorder(),
+          analysisRepository: repository,
+        ),
+      ),
+    );
+
+    final press = await _pressMicrophone(tester);
+    await _holdLongEnough(tester);
+    await press.up();
+    await tester.pump();
+
+    expect(find.text('Escuchando tu ritmo…'), findsOneWidget);
+    expect(find.byType(FluiCard), findsOneWidget);
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Semantics &&
+            widget.properties.liveRegion == true &&
+            widget.properties.label == 'Analizando tu voz',
+      ),
+      findsOneWidget,
+    );
+
+    repository.result.complete(
+      const Result.ok(
+        SpeechTranscript(
+          text: 'Una frase clara.',
+          words: [],
+          duration: Duration(seconds: 1),
+        ),
+      ),
+    );
+    await tester.pump();
   });
 
   testWidgets('releasing a hold submits each speaking attempt once', (
@@ -154,6 +278,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 700));
     await tester.pump();
     expect(find.text('Inténtalo otra vez'), findsOneWidget);
+    expect(find.byType(FluiCard).evaluate().length, greaterThanOrEqualTo(4));
     expect(find.textContaining('3 detectadas'), findsOneWidget);
     expect(find.text('LO QUE ENTENDÍ'), findsOneWidget);
     expect(find.textContaining('Eh pues tomé una decisión'), findsOneWidget);
@@ -177,6 +302,7 @@ void main() {
     await tester.pump(const Duration(milliseconds: 700));
     await tester.pump();
     expect(find.text('Antes vs. ahora'), findsOneWidget);
+    expect(find.byType(FluiCard).evaluate().length, greaterThanOrEqualTo(4));
     expect(find.text('3 → 0'), findsOneWidget);
   });
 
@@ -238,6 +364,18 @@ void main() {
     expect(recorder.stops, 0);
     expect(repository.calls, 0);
     expect(find.text('Necesitamos acceso al micrófono'), findsOneWidget);
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Semantics &&
+            widget.properties.liveRegion == true &&
+            widget.properties.label?.startsWith(
+                  'Necesitamos acceso al micrófono.',
+                ) ==
+                true,
+      ),
+      findsOneWidget,
+    );
   });
 
   testWidgets('releasing a long hold submits exactly once', (tester) async {
@@ -518,5 +656,18 @@ void main() {
     expect(repository.calls, 0);
     expect(find.text('No pudimos analizar este intento'), findsOneWidget);
     expect(find.text('Grabar de nuevo'), findsOneWidget);
+    expect(
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Semantics &&
+            widget.properties.liveRegion == true &&
+            widget.properties.label?.startsWith(
+                  'No pudimos analizar este intento.',
+                ) ==
+                true,
+      ),
+      findsOneWidget,
+    );
+    expect(find.byType(FluiCard), findsWidgets);
   });
 }

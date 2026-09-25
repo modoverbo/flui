@@ -15,6 +15,7 @@ import 'package:flui/features/speaking/presentation/providers/speaking_providers
 import 'package:flui/features/speaking/presentation/widgets/speaker_cue_cards.dart';
 import 'package:flui/shared/widgets/audio_reactive_bubble.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/speaking_bubble.dart';
 import 'package:flutter/services.dart';
@@ -389,12 +390,15 @@ class _ReadyView extends StatelessWidget {
     children: [
       const FluiLabel('PAUSA DE PODER'),
       const SizedBox(height: FluiSpacing.sm),
-      Text(
-        'Cuéntame una decisión pequeña que mejoró tu día.',
-        style: Theme.of(context).textTheme.headlineMedium
-            ?.copyWith(fontWeight: FontWeight.w800, color: FluiColors.charcoal),
+      FluiCard(
+        color: FluiColors.aqua,
+        child: Text(
+          'Cuéntame una decisión pequeña que mejoró tu día.',
+          style: Theme.of(context).textTheme.headlineMedium
+              ?.copyWith(fontWeight: FontWeight.w800, color: FluiColors.ink),
+        ),
       ),
-      const SizedBox(height: FluiSpacing.md),
+      const SizedBox(height: FluiSpacing.lg),
       const Text(
         'Habla con naturalidad. Busca una idea clara y haz una pausa antes '
         'de tu conclusión.',
@@ -410,19 +414,24 @@ class _ReadyView extends StatelessWidget {
       else
         _MicButton(onPress: onStart),
       const SizedBox(height: FluiSpacing.lg),
-      const Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(LucideIcons.shield_check, size: 16, color: FluiColors.gray),
-          SizedBox(width: 8),
-          Flexible(
-            child: Text(
-              'Procesamos este intento y no guardamos tu audio.',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: FluiColors.gray),
+      const FluiCard(
+        padding: EdgeInsets.all(FluiSpacing.md),
+        child: Row(
+          children: [
+            Icon(
+              LucideIcons.shield_check,
+              size: 18,
+              color: FluiColors.greenDeep,
             ),
-          ),
-        ],
+            SizedBox(width: FluiSpacing.sm),
+            Expanded(
+              child: Text(
+                'Procesamos este intento y no guardamos tu audio.',
+                style: TextStyle(color: FluiColors.ink),
+              ),
+            ),
+          ],
+        ),
       ),
     ],
   );
@@ -434,14 +443,26 @@ class _PermissionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
     key: const ValueKey('permission'),
+    crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
       const SizedBox(height: 48),
-      const AudioReactiveBubble(state: BubbleState.processing),
-      const SizedBox(height: 24),
-      Semantics(
-        liveRegion: true,
-        label: 'Preparando el micrófono',
-        child: const Text('Preparando el micrófono…'),
+      FluiCard(
+        color: FluiColors.aqua,
+        child: Column(
+          children: [
+            const AudioReactiveBubble(state: BubbleState.processing, size: 144),
+            const SizedBox(height: FluiSpacing.md),
+            Semantics(
+              liveRegion: true,
+              label: 'Preparando el micrófono',
+              child: const Text(
+                'Preparando el micrófono…',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+            ),
+          ],
+        ),
       ),
     ],
   );
@@ -460,23 +481,48 @@ class _RecordingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
     key: const ValueKey('recording'),
+    crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
-      Semantics(
-        liveRegion: true,
-        label: 'Grabando. Mantén pulsado y suelta para analizar.',
-        child: const FluiLabel('TE ESCUCHO'),
+      const FluiLabel('TE ESCUCHO'),
+      const SizedBox(height: FluiSpacing.md),
+      FluiCard(
+        color: FluiColors.softPink,
+        child: Column(
+          children: [
+            Semantics(
+              liveRegion: true,
+              label: 'Grabando. Mantén pulsado y suelta para analizar.',
+              child: const Text(
+                'Grabando',
+                style: TextStyle(fontWeight: FontWeight.w800),
+              ),
+            ),
+            const SizedBox(height: FluiSpacing.xs),
+            Semantics(
+              label: '$secondsLeft segundos restantes',
+              child: ExcludeSemantics(
+                child: Text(
+                  '$secondsLeft',
+                  style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                    color: FluiColors.ink,
+                    fontWeight: FontWeight.w800,
+                  ),
+                ),
+              ),
+            ),
+            const Text('segundos restantes'),
+          ],
+        ),
       ),
-      const SizedBox(height: 28),
-      Text('$secondsLeft', style: Theme.of(context).textTheme.displayLarge),
-      const Text('segundos restantes'),
-      const SizedBox(height: 42),
+      const SizedBox(height: FluiSpacing.lg),
       AudioReactiveBubble(
         state: BubbleState.recording,
         amplitudeStream: amplitudeStream,
+        size: 176,
       ),
-      const SizedBox(height: 24),
+      const SizedBox(height: FluiSpacing.lg),
       const SpeakerCueCards(),
-      const SizedBox(height: 28),
+      const SizedBox(height: FluiSpacing.md),
       Focus(
         onKeyEvent: (node, event) {
           if (event is KeyDownEvent &&
@@ -494,7 +540,15 @@ class _RecordingView extends StatelessWidget {
           onTap: onFinish,
           child: const Padding(
             padding: EdgeInsets.all(12),
-            child: Text('Suelta para detener y analizar'),
+            child: FluiCard(
+              color: FluiColors.yellowTint,
+              padding: EdgeInsets.all(FluiSpacing.md),
+              child: Text(
+                'Suelta para detener y analizar',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontWeight: FontWeight.w700),
+              ),
+            ),
           ),
         ),
       ),
@@ -507,20 +561,32 @@ class _AnalyzingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
     key: const ValueKey('analyzing'),
+    crossAxisAlignment: CrossAxisAlignment.stretch,
     children: [
       const SizedBox(height: 56),
-      const AudioReactiveBubble(state: BubbleState.processing),
-      const SizedBox(height: 24),
-      Semantics(
-        liveRegion: true,
-        label: 'Analizando tu voz',
-        child: const Text(
-          'Escuchando tu ritmo…',
-          style: TextStyle(fontSize: 22),
+      FluiCard(
+        color: FluiColors.lavender,
+        child: Column(
+          children: [
+            const AudioReactiveBubble(state: BubbleState.processing, size: 144),
+            const SizedBox(height: FluiSpacing.md),
+            Semantics(
+              liveRegion: true,
+              label: 'Analizando tu voz',
+              child: const Text(
+                'Escuchando tu ritmo…',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
+              ),
+            ),
+            const SizedBox(height: FluiSpacing.xs),
+            const Text(
+              'Buscamos pausas y patrones útiles, no una nota perfecta.',
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
-      const SizedBox(height: 8),
-      const Text('Buscamos pausas y patrones útiles, no una nota perfecta.'),
     ],
   );
 }
@@ -543,13 +609,23 @@ class _FeedbackView extends StatelessWidget {
       const SizedBox(height: 8),
       Text(
         'Ya tienes una base.',
-        style: Theme.of(context).textTheme.headlineMedium,
+        style: Theme.of(context).textTheme.headlineMedium
+            ?.copyWith(fontWeight: FontWeight.w800, color: FluiColors.ink),
       ),
       const SizedBox(height: 24),
       if (transcript.coaching case final coaching?) ...[
         const FluiLabel('LO QUE ENTENDÍ'),
         const SizedBox(height: 8),
-        Text(coaching.summary),
+        FluiCard(
+          color: FluiColors.aqua,
+          child: Text(
+            coaching.summary,
+            style: const TextStyle(
+              color: FluiColors.ink,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+        ),
         const SizedBox(height: 14),
         _InsightCard(
           label: 'ESTRUCTURA · ESTIMACIÓN',
@@ -595,27 +671,24 @@ class _InsightCard extends StatelessWidget {
   final String detail;
 
   @override
-  Widget build(BuildContext context) => Container(
-    margin: const EdgeInsets.only(top: 10),
-    padding: const EdgeInsets.all(16),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(18),
-    ),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: const TextStyle(
-            color: FluiColors.greenSecondary,
-            fontSize: 12,
-            fontWeight: FontWeight.w800,
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(top: FluiSpacing.sm),
+    child: FluiCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: const TextStyle(
+              color: FluiColors.greenDeep,
+              fontSize: 12,
+              fontWeight: FontWeight.w800,
+            ),
           ),
-        ),
-        const SizedBox(height: 6),
-        Text(detail),
-      ],
+          const SizedBox(height: 6),
+          Text(detail),
+        ],
+      ),
     ),
   );
 }
@@ -637,7 +710,8 @@ class _ComparisonView extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           'Antes vs. ahora',
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: Theme.of(context).textTheme.headlineMedium
+              ?.copyWith(fontWeight: FontWeight.w800, color: FluiColors.ink),
         ),
         const SizedBox(height: 24),
         _CompareRow(
@@ -661,19 +735,15 @@ class _ComparisonView extends StatelessWidget {
               : 'Observa el ritmo',
         ),
         const SizedBox(height: 28),
-        Container(
-          padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
-            color: FluiColors.greenSecondary,
-            borderRadius: BorderRadius.circular(24),
-          ),
+        FluiCard(
+          color: FluiColors.aqua,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 'LO QUE CAMBIÓ',
                 style: TextStyle(
-                  color: Colors.white70,
+                  color: FluiColors.ink,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -683,7 +753,7 @@ class _ComparisonView extends StatelessWidget {
                     ? 'Reduciste tus muletillas en el segundo intento.'
                     : 'Ya tienes una referencia real para tu próximo intento.',
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: FluiColors.ink,
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
                 ),
@@ -764,27 +834,27 @@ class _Signal extends StatelessWidget {
   final String title;
   final String detail;
   @override
-  Widget build(BuildContext context) => Container(
-    margin: const EdgeInsets.only(bottom: 10),
-    padding: const EdgeInsets.all(16),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(18),
-    ),
-    child: Row(
-      children: [
-        Icon(icon, color: FluiColors.greenSecondary),
-        const SizedBox(width: 14),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title, style: const TextStyle(fontWeight: FontWeight.w800)),
-              Text(detail, style: const TextStyle(color: FluiColors.gray)),
-            ],
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: FluiSpacing.sm),
+    child: FluiCard(
+      child: Row(
+        children: [
+          Icon(icon, color: FluiColors.greenDeep),
+          const SizedBox(width: FluiSpacing.sm),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(fontWeight: FontWeight.w800),
+                ),
+                Text(detail, style: const TextStyle(color: FluiColors.gray)),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }
@@ -793,15 +863,14 @@ class _CoachCue extends StatelessWidget {
   const new({required this.cue});
   final String cue;
   @override
-  Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.all(18),
-    decoration: BoxDecoration(
-      color: FluiColors.yellowTint,
-      borderRadius: BorderRadius.circular(18),
-    ),
+  Widget build(BuildContext context) => FluiCard(
+    color: FluiColors.yellowTint,
     child: Text(
       'Tu reto: $cue',
-      style: const TextStyle(fontWeight: FontWeight.w700),
+      style: const TextStyle(
+        color: FluiColors.ink,
+        fontWeight: FontWeight.w700,
+      ),
     ),
   );
 }
@@ -818,34 +887,34 @@ class _CompareRow extends StatelessWidget {
   final String after;
   final String improvement;
   @override
-  Widget build(BuildContext context) => Container(
-    margin: const EdgeInsets.only(bottom: 10),
-    padding: const EdgeInsets.all(16),
-    decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(18),
-    ),
-    child: Row(
-      children: [
-        Expanded(
-          child: Text(
-            label,
-            style: const TextStyle(fontWeight: FontWeight.w700),
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.only(bottom: FluiSpacing.sm),
+    child: FluiCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(label, style: const TextStyle(fontWeight: FontWeight.w800)),
+          const SizedBox(height: FluiSpacing.xs),
+          Wrap(
+            spacing: FluiSpacing.sm,
+            runSpacing: FluiSpacing.xs,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              Text(
+                '$before → $after',
+                style: const TextStyle(fontWeight: FontWeight.w800),
+              ),
+              Text(
+                improvement,
+                style: const TextStyle(
+                  color: FluiColors.greenDeep,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ],
           ),
-        ),
-        Text(
-          '$before → $after',
-          style: const TextStyle(fontWeight: FontWeight.w800),
-        ),
-        const SizedBox(width: 10),
-        Text(
-          improvement,
-          style: const TextStyle(
-            color: FluiColors.greenSecondary,
-            fontWeight: FontWeight.w800,
-          ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }
@@ -864,21 +933,37 @@ class _RecoveryView extends StatelessWidget {
   final String action;
   final VoidCallback onAction;
   @override
-  Widget build(BuildContext context) => Column(
-    key: ValueKey(title),
-    children: [
-      const SizedBox(height: 48),
-      Icon(icon, size: 56, color: FluiColors.greenSecondary),
-      const SizedBox(height: 20),
-      Text(
-        title,
-        textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.headlineSmall,
-      ),
-      const SizedBox(height: 10),
-      Text(message, textAlign: TextAlign.center),
-      const SizedBox(height: 24),
-      FluiButton.primary(label: action, onPressed: onAction),
-    ],
+  Widget build(BuildContext context) => Semantics(
+    container: true,
+    liveRegion: true,
+    label: '$title. $message',
+    child: Column(
+      key: ValueKey(title),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SizedBox(height: 48),
+        FluiCard(
+          color: FluiColors.yellowTint,
+          child: Column(
+            children: [
+              Icon(icon, size: 48, color: FluiColors.greenDeep),
+              const SizedBox(height: FluiSpacing.md),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  color: FluiColors.ink,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+              const SizedBox(height: FluiSpacing.sm),
+              Text(message, textAlign: TextAlign.center),
+            ],
+          ),
+        ),
+        const SizedBox(height: FluiSpacing.lg),
+        FluiButton.primary(label: action, onPressed: onAction),
+      ],
+    ),
   );
 }
