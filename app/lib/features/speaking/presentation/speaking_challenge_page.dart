@@ -53,6 +53,7 @@ class SpeakingTabPage extends StatelessWidget {
     appBar: AppBar(
       backgroundColor: Colors.transparent,
       surfaceTintColor: Colors.transparent,
+      systemOverlayStyle: SystemUiOverlayStyle.dark,
       title: const Text('Entrenamiento oral'),
       centerTitle: true,
     ),
@@ -320,6 +321,7 @@ class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           surfaceTintColor: Colors.transparent,
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
           title: const Text('Entrenamiento oral'),
           centerTitle: true,
         ),
