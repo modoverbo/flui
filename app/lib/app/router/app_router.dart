@@ -21,6 +21,7 @@ import 'package:flui/features/subscription/presentation/pages/checkout_return_pa
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
 import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
+import 'package:flui/features/vocabulary/presentation/category_catalog_page.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
 import 'package:go_router/go_router.dart';
@@ -118,6 +119,19 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
             builder: (_, _) => const TodayPage(),
             routes: [
               GoRoute(
+                path: 'categories/:family',
+                parentNavigatorKey: rootKey,
+                builder: (_, state) => CategoryCatalogPage(
+                  familySlug: state.pathParameters['family']!,
+                  initialThemeId: state.uri.queryParameters['theme'],
+                  initialScrollOffset:
+                      double.tryParse(
+                        state.uri.queryParameters['offset'] ?? '',
+                      ) ??
+                      0,
+                ),
+              ),
+              GoRoute(
                 path: 'time',
                 parentNavigatorKey: rootKey,
                 builder: (_, _) => const TimeBudgetPage(),
@@ -134,8 +148,10 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
             routes: [
               GoRoute(
                 path: ':wordId',
-                builder: (_, state) =>
-                    WordDetailPage(wordId: state.pathParameters['wordId']!),
+                builder: (context, state) => _WordDetailRoute(
+                  wordId: state.pathParameters['wordId']!,
+                  returnLocation: state.uri.queryParameters['returnTo'],
+                ),
               ),
             ],
           ),
@@ -175,6 +191,25 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
     ],
   ),
 ];
+
+/// A catalog entry is reached from the category flow with an explicit return
+/// location because GoRouter switches shell branches for `/words/:wordId`.
+class _WordDetailRoute extends StatelessWidget {
+  const new({required this.wordId, this.returnLocation});
+
+  final String wordId;
+  final String? returnLocation;
+
+  @override
+  Widget build(BuildContext context) => PopScope<void>(
+    canPop: returnLocation == null,
+    onPopInvokedWithResult: (didPop, _) {
+      final destination = returnLocation;
+      if (!didPop && destination != null) context.go(destination);
+    },
+    child: WordDetailPage(wordId: wordId),
+  );
+}
 
 SessionMode _modeOf(Uri uri) {
   final mode = uri.queryParameters['mode'];

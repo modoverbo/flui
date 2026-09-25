@@ -1,9 +1,13 @@
 import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
+import 'package:flui/features/themes/data/fake/seed_themes.dart';
+import 'package:flui/features/vocabulary/domain/word_progress.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -219,5 +223,93 @@ void main() {
         expect(find.byType(NavigationBar), findsNothing);
       },
     );
+  });
+
+  testWidgets('category detail back restores its family filter and page', (
+    tester,
+  ) async {
+    final theme = seedThemes.first;
+    final word = seedWordsWithThemes.firstWhere(
+      (word) => word.themeIds.contains(theme.id),
+    );
+    final harness = AppHarness(signedInAs: ana, access: trialing);
+    await harness.pumpApp(
+      tester,
+      initialLocation: AppRoutes.categoryCatalog(theme.family.name),
+      arrange: (h) => h.planToday(),
+    );
+    expect(location(harness), AppRoutes.categoryCatalog(theme.family.name));
+
+    await tester.ensureVisible(find.text(theme.name));
+    await tester.tap(find.text(theme.name));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text(word.lemma));
+    await tester.ensureVisible(find.byType(FluiCard).first);
+    await tester.tap(find.byType(FluiCard).first);
+    await tester.pumpAndSettle();
+
+    final detailLocation = Uri.parse(location(harness));
+    expect(detailLocation.path, AppRoutes.wordDetail(word.id));
+    final returnLocation = detailLocation.queryParameters['returnTo'];
+    expect(returnLocation, contains('theme=${theme.id}'));
+    expect(find.text(word.lemma), findsOneWidget);
+    await tester.binding.handlePopRoute();
+    await tester.pumpAndSettle();
+
+    expect(location(harness), returnLocation);
+    expect(find.text(theme.name), findsOneWidget);
+    expect(find.text(word.lemma), findsOneWidget);
+  });
+
+  testWidgets(
+    'Words detail keeps the selected shell tab and returns to Words',
+    (tester) async {
+      final theme = seedThemes.first;
+      final word = seedWordsWithThemes.firstWhere(
+        (word) => word.themeIds.contains(theme.id),
+      );
+      final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.words,
+        arrange: (harness) async {
+          await harness.planToday();
+          await harness.wordProgress.saveProgress(
+            WordProgress.introduced(
+              wordId: word.id,
+              today: LocalDate.fromDateTime(harness.clock.now()),
+            ),
+          );
+        },
+      );
+
+      expect(find.byType(NavigationBar), findsOneWidget);
+      await tester.tap(find.text(word.lemma));
+      await tester.pumpAndSettle();
+
+      expect(location(harness), AppRoutes.wordDetail(word.id));
+      expect(find.byType(NavigationBar), findsOneWidget);
+      expect(find.text('Palabras'), findsOneWidget);
+
+      await tester.binding.handlePopRoute();
+      await tester.pumpAndSettle();
+      expect(location(harness), AppRoutes.words);
+      expect(find.text(word.lemma), findsOneWidget);
+    },
+  );
+
+  testWidgets('direct category link back falls back to Today', (tester) async {
+    final theme = seedThemes.first;
+    final harness = AppHarness(signedInAs: ana, access: trialing);
+    await harness.pumpApp(
+      tester,
+      initialLocation: AppRoutes.categoryCatalog(theme.family.name),
+      arrange: (h) => h.planToday(),
+    );
+
+    await tester.tap(find.byTooltip('Volver'));
+    await tester.pumpAndSettle();
+
+    expect(location(harness), AppRoutes.today);
   });
 }

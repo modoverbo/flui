@@ -1,7 +1,9 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
+import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
+import 'package:flui/features/vocabulary/presentation/category_catalog_page.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
 import 'package:flui/shared/widgets/choice_chips.dart';
@@ -39,6 +41,12 @@ void main() {
     (name: 'welcome', location: AppRoutes.welcome, page: const WelcomePage()),
     (name: 'intro', location: AppRoutes.intro, page: const IntroPage()),
     (name: 'palabras', location: AppRoutes.words, page: const WordsPage()),
+    (name: 'hoy', location: AppRoutes.today, page: const TodayPage()),
+    (
+      name: 'category catalog',
+      location: AppRoutes.categoryCatalog('trabajo'),
+      page: const CategoryCatalogPage(familySlug: 'trabajo'),
+    ),
     (
       name: 'word detail',
       location: AppRoutes.wordDetail(seedWord('perspicaz').id),
@@ -105,6 +113,24 @@ void main() {
   });
 
   group('semantics', () {
+    testWidgets('the category deck exposes button and keyboard controls', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await pumpScreen(tester, (
+        name: 'hoy',
+        location: AppRoutes.today,
+        page: const TodayPage(),
+      ), size: const Size(420, 1400));
+
+      expect(
+        tester.getSemantics(find.bySemanticsLabel('En el trabajo')),
+        isSemantics(label: 'En el trabajo', isButton: true),
+      );
+      expect(find.byTooltip('Categoría siguiente'), findsOneWidget);
+      semantics.dispose();
+    });
+
     testWidgets('the intro options announce their state and group', (
       tester,
     ) async {

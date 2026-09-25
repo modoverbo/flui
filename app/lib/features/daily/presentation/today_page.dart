@@ -6,6 +6,7 @@ import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
@@ -17,6 +18,7 @@ import 'package:flui/features/profile/presentation/widgets/week_dots.dart';
 import 'package:flui/features/reading/presentation/providers/context_readings.dart';
 import 'package:flui/features/reading/presentation/widgets/reading_card.dart';
 import 'package:flui/features/themes/domain/theme.dart';
+import 'package:flui/features/themes/presentation/widgets/theme_explorer_sheet.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:flui/shared/widgets/card_stack.dart';
@@ -177,6 +179,8 @@ class _TodayScaffold extends StatelessWidget {
               ),
               const SizedBox(height: FluiSpacing.lg),
               const _SpeakingWorkoutCard(),
+              const SizedBox(height: FluiSpacing.lg),
+              const _CategoryDeck(),
               if (overview.theme case final theme?) ...[
                 const SizedBox(height: FluiSpacing.md),
                 _TodayTheme(theme: theme, overview: overview),
@@ -225,6 +229,213 @@ class _TodayScaffold extends StatelessWidget {
         ],
       ),
       child: page,
+    );
+  }
+}
+
+/// The five existing content families as a browsable, horizontal card deck.
+/// The overlapping paper layers are decorative; each card is independently
+/// focusable and opens immediately, with no animation gate or extra picker.
+class _CategoryDeck extends StatefulWidget {
+  const new();
+
+  @override
+  State<_CategoryDeck> createState() => _CategoryDeckState();
+}
+
+class _CategoryDeckState extends State<_CategoryDeck> {
+  late final PageController _pageController = PageController(
+    viewportFraction: 0.84,
+  );
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void _movePage(BuildContext context, int delta) {
+    if (!_pageController.hasClients) return;
+    final currentPage = _pageController.page?.round() ?? 0;
+    final targetPage = (currentPage + delta).clamp(
+      0,
+      ThemeFamily.values.length - 1,
+    );
+    if (FluiMotion.reduced(context)) {
+      _pageController.jumpToPage(targetPage);
+      return;
+    }
+    _pageController.animateToPage(
+      targetPage,
+      duration: FluiMotion.quick,
+      curve: Curves.easeOutCubic,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final layout = context.layout;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(l10n.categoryDeckTitle, style: layout.type.titleL),
+        const SizedBox(height: FluiSpacing.xs),
+        Text(l10n.categoryDeckSubtitle, style: layout.type.body),
+        const SizedBox(height: FluiSpacing.md),
+        SizedBox(
+          height: 188,
+          child: PageView.builder(
+            key: const ValueKey('category-deck'),
+            controller: _pageController,
+            itemCount: ThemeFamily.values.length,
+            itemBuilder: (context, index) => AnimatedBuilder(
+              animation: _pageController,
+              builder: (context, child) {
+                final page = _pageController.hasClients
+                    ? _pageController.page ??
+                          _pageController.initialPage.toDouble()
+                    : _pageController.initialPage.toDouble();
+                final distance = (page - index).abs().clamp(0.0, 1.0);
+                return Transform.translate(
+                  offset: Offset(0, distance * 9),
+                  child: Transform.scale(
+                    alignment: Alignment.topCenter,
+                    scale: 1 - (distance * 0.045),
+                    child: child,
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(right: FluiSpacing.sm),
+                child: _CategoryDeckCard(
+                  family: ThemeFamily.values[index],
+                  index: index,
+                ),
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: FluiSpacing.xs),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+              tooltip: l10n.categoryDeckPrevious,
+              onPressed: () => _movePage(context, -1),
+              icon: const Icon(Icons.arrow_back_rounded),
+            ),
+            IconButton(
+              tooltip: l10n.categoryDeckNext,
+              onPressed: () => _movePage(context, 1),
+              icon: const Icon(Icons.arrow_forward_rounded),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _CategoryDeckCard extends StatelessWidget {
+  const new({required this.family, required this.index});
+
+  final ThemeFamily family;
+  final int index;
+
+  Color get _color => switch (family) {
+    ThemeFamily.trabajo => FluiColors.electricBlue,
+    ThemeFamily.social => FluiColors.softPink,
+    ThemeFamily.publico => FluiColors.aqua,
+    ThemeFamily.precision => FluiColors.acidLime,
+    ThemeFamily.emocion => FluiColors.lavender,
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final label = themeFamilyLabel(l10n, family);
+    final color = _color;
+    const ink = FluiColors.ink;
+    return Semantics(
+      button: true,
+      label: label,
+      onTap: () => context.push(AppRoutes.categoryCatalog(family.name)),
+      excludeSemantics: true,
+      child: SizedBox(
+        width: 252,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 7,
+              right: 0,
+              top: 8,
+              bottom: 0,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  color: color.withValues(alpha: 0.42),
+                  borderRadius: BorderRadius.circular(26),
+                  border: Border.all(color: FluiColors.ink),
+                ),
+              ),
+            ),
+            Positioned.fill(
+              right: 8,
+              bottom: 8,
+              child: AnimatedContainer(
+                key: ValueKey('category-card-${family.name}'),
+                duration: FluiMotion.resolve(context, FluiMotion.quick),
+                decoration: BoxDecoration(
+                  color: color,
+                  borderRadius: BorderRadius.circular(26),
+                  border: Border.all(color: FluiColors.ink, width: 1.5),
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () =>
+                        context.push(AppRoutes.categoryCatalog(family.name)),
+                    borderRadius: BorderRadius.circular(26),
+                    child: Padding(
+                      padding: const EdgeInsets.all(FluiSpacing.ml),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            '${index + 1}'.padLeft(2, '0'),
+                            style: context.type.label.copyWith(color: ink),
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  label,
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: context.type.titleL.copyWith(
+                                    color: ink,
+                                  ),
+                                ),
+                              ),
+                              const Icon(
+                                Icons.arrow_outward_rounded,
+                                semanticLabel: '',
+                                color: FluiColors.ink,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

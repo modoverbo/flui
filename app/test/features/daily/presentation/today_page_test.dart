@@ -28,10 +28,11 @@ void main() {
       tester,
       location: AppRoutes.today,
       page: const TodayPage(),
-      otherRoutes: const [
+      otherRoutes: [
         AppRoutes.session,
         AppRoutes.timeBudget,
         AppRoutes.speakingChallenge,
+        AppRoutes.categoryCatalog('trabajo'),
       ],
       overrides: fakes.overrides,
       surfaceSize: const Size(400, 1400),
@@ -79,6 +80,70 @@ void main() {
     await tester.tap(find.text('Empezar'));
     await tester.pumpAndSettle();
     expect(find.text('route:${AppRoutes.session}'), findsOneWidget);
+  });
+
+  testWidgets('Hoy shows five directly accessible category destinations', (
+    tester,
+  ) async {
+    await pumpPage(tester);
+
+    for (final label in ['En el trabajo']) {
+      expect(find.text(label), findsOneWidget);
+    }
+    for (final label in [
+      'Con la gente',
+      'Delante de gente',
+      'Decirlo exacto',
+      'Lo que cuesta decir',
+    ]) {
+      await tester.tap(find.byTooltip('Categoría siguiente'));
+      await tester.pumpAndSettle();
+      expect(find.text(label), findsOneWidget);
+    }
+    expect(find.text('Entrena tu voz'), findsOneWidget);
+    expect(find.text('Explorar temas'), findsNothing);
+    expect(find.byTooltip('Categoría anterior'), findsOneWidget);
+    expect(find.byType(PageView), findsOneWidget);
+    expect(
+      tester
+          .widget<AnimatedContainer>(
+            find.byKey(const ValueKey('category-card-emocion')),
+          )
+          .duration,
+      Duration.zero,
+    );
+  });
+
+  testWidgets('activating a category opens its catalog directly', (
+    tester,
+  ) async {
+    await pumpPage(tester);
+    await tester.drag(
+      find.byType(SingleChildScrollView).first,
+      const Offset(0, -420),
+    );
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('En el trabajo'));
+    await tester.tap(find.text('En el trabajo'));
+    await tester.pumpAndSettle();
+
+    expect(
+      find.text('route:${AppRoutes.categoryCatalog('trabajo')}'),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('swiping the deck brings the next family to the front', (
+    tester,
+  ) async {
+    await pumpPage(tester);
+    await tester.drag(
+      find.byKey(const ValueKey('category-deck')),
+      const Offset(-250, 0),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Con la gente'), findsOneWidget);
   });
 
   testWidgets('Hoy opens the oral workout without replacing vocabulary', (

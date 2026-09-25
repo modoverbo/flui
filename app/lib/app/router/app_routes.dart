@@ -19,6 +19,23 @@ abstract final class AppRoutes {
 
   // App shell (signed in with access): four tabs.
   static const today = '/today';
+  static String categoryCatalog(
+    String family, {
+    String? themeId,
+    double? scrollOffset,
+  }) {
+    final queryParameters = <String, String>{
+      'theme': ?themeId,
+      if (scrollOffset case final scrollOffset? when scrollOffset > 0)
+        'offset': scrollOffset.toStringAsFixed(1),
+    };
+    if (queryParameters.isEmpty) return '$today/categories/$family';
+    return Uri(
+      path: '$today/categories/$family',
+      queryParameters: queryParameters,
+    ).toString();
+  }
+
   static const timeBudget = '/today/time';
   static const words = '/words';
   static const progress = '/progress';
@@ -47,6 +64,14 @@ abstract final class AppRoutes {
 
   static String wordDetail(String wordId) =>
       '$words/${Uri.encodeComponent(wordId)}';
+
+  static String wordDetailFromCategory({
+    required String wordId,
+    required String returnLocation,
+  }) => Uri(
+    path: wordDetail(wordId),
+    queryParameters: {'returnTo': returnLocation},
+  ).toString();
 
   /// Routes that need today's time budget first (asked once per local day).
   /// "Tu progreso" stays reachable for the account and sign out.
