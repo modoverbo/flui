@@ -1,0 +1,27 @@
+# Editorial public-flow refresh
+
+## Objective and authority
+
+Implement the approved professional, minimalist public welcome/onboarding/plan redesign without changing learning, authentication, subscription, billing, or signed-in category behavior. The written design is `docs/superpowers/specs/2026-09-25-editorial-public-flow-refresh-design.md`; the six-unit implementation plan is `docs/superpowers/plans/2026-09-25-editorial-public-flow-refresh.md`. The user approved both stages before product implementation.
+
+## Scope and constraints
+
+- Authorized scope: local presentation and focused tests for the public flow; Conventional Commits directly on `main` by explicit user direction. No worktree, PR, push, remote service, native/RDD review, or changes to `/today/time` and the Inicio category/word decks.
+- Strict TDD is enabled by project instructions: observe RED → GREEN → REFACTOR for each behavior/layout unit. Runner: `cd app && flutter test`; focused files are named in the plan.
+- At every work-unit closure, run from `app/`: `dart format --set-exit-if-changed lib test integration_test`, `flutter analyze && dart analyze`, `flutter test`, and `flutter test integration_test -d flutter-tester`. Run `git diff --check` before each commit. Record failures or unavailable checks honestly.
+- Reuse current localization, catalog plan facts, trial/reminder wording, route boundaries, design tokens, SVG/glyphs and reduced-motion helpers. No new raster art by default; a specific visual gap may justify a generated asset only after review.
+- Final visual proof: 320/360/432 logical widths and API 36 emulator. Physical TECNO CM5 installation/interaction requires explicit target-and-operation authorization at execution; otherwise mark it pending.
+- Delivery strategy: direct-main local work units, not PR delivery. Forecast: approximately 900–1,500 authored changed lines over six tasks (advisory only; do not code-golf or omit tests). Keep a running count from commits.
+
+## Tasks and evidence
+
+- [x] **P01 — Public welcome.** Route: delegated direct (welcome presentation + widget tests; source preparation spans existing tokens/components). Acceptance: light editorial welcome, compact native brand proof, existing start/sign-in routes, responsive and reduced-motion-safe. Evidence: audited theme/brand tokens; focused widget test RED on the former green canvas, then GREEN (8 tests); independent check found a yellow CTA mismatch, corrected via RED on the button variant and GREEN with the green primary CTA; C1 format, C2 Flutter/Dart analysis, C3 full app suite (1,147 tests), C4 integration suite, and `git diff --check` all passed. Parent spot-check repeated C1, focused tests, and diff check after the final test-name edit. Widget tests covered 320/360/432 logical widths; visual/device proof is pending final verification. Commit: `066a760` (177 authored changed lines). Rollback: revert this commit alone.
+- [ ] **P02 — Benefit-step navigation.** Route: delegated direct (intro presentation + focused tests). Acceptance: first three benefits move horizontally by swipe and explicit controls, with accessible progress/back/skip and reduced-motion immediate state; preserve six-step order. Evidence: pending. Commit: pending. Rollback: benefit pager portion of intro and tests only.
+- [ ] **P03 — Answer cards and micro-lesson.** Route: delegated direct (intro/questions/lesson presentation + tests). Acceptance: multiple contexts persist, tone remains exclusive, lesson feedback/retry/gate unchanged, cards readable above dock. Evidence: pending. Commit: pending. Rollback: answer/lesson styling and tests only.
+- [ ] **P04 — Personalized plan summary.** Route: delegated direct (paywall flow presentation + tests). Acceptance: compact saved-answer-only summary with honest fallback, unchanged plan progress and route handoff. Evidence: pending. Commit: pending. Rollback: summary presentation and tests only.
+- [ ] **P05 — Trial timeline refinement.** Route: delegated direct (timeline + paywall-flow tests). Acceptance: clearer sequential nodes on the existing animated connector, truthful reminder modes and trial/billing copy, reduced-motion final state. Evidence: pending. Commit: pending. Rollback: timeline presentation and tests only.
+- [ ] **P06 — Comparable plan cards.** Route: delegated direct (plan-card/paywall-flow presentation + tests). Acceptance: catalog-sourced pricing, explicit selected state, honest terms, unchanged preview persistence/registration and signed-in checkout behavior. Evidence: pending. Commit: pending. Rollback: plan-card presentation and tests only.
+
+## Progress and next step
+
+P01 is complete; P02–P06 are pending. The first-write token audit mapped cream `#FFF9F2`, charcoal `#151426`, deep green `#0B3D34`, and yellow `#FFD60A`, with yellow reserved for the readable headline accent on the welcome canvas. Implement P02 next; after each unit, record observed RED/GREEN, closure checks, visual evidence, work-unit commit hash, authored changed-line count, and next task. Mirror this full document to Engram topic `odd/editorial-public-flow-refresh/tasks` after every task update.
