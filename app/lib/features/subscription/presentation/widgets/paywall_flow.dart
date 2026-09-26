@@ -1,6 +1,7 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/presentation/widgets/onboarding_questions.dart';
@@ -13,7 +14,6 @@ import 'package:flui/shared/widgets/choice_chips.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
-import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flui/shared/widgets/sticky_cta_dock.dart';
@@ -136,6 +136,7 @@ class _PaywallFlowState extends State<PaywallFlow> {
               // the dock, so page 2 never ends in half a screen of nothing.
               child: LayoutBuilder(
                 builder: (context, constraints) => SingleChildScrollView(
+                  key: ValueKey(step),
                   padding: const EdgeInsets.only(
                     bottom: StickyCtaDock.reservedHeight,
                   ),
@@ -224,8 +225,7 @@ class _PlanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final layout = context.layout;
-    final type = layout.type;
+    final type = context.layout.type;
     final trimmed = name?.trim();
     final contexts = joinContexts([
       for (final scene in answers.orderedContexts)
@@ -236,29 +236,22 @@ class _PlanPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SizedBox(height: layout.blockGap),
-        FluiPlate(
-          padding: EdgeInsets.all(
-            layout.isWide ? FluiSpacing.xl : FluiSpacing.ml,
-          ),
-          child: RevealLines(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Semantics(
-                header: true,
-                child: Text(
-                  trimmed == null || trimmed.isEmpty
-                      ? l10n.paywallPlanReadyAnonymous
-                      : l10n.paywallPlanReady(trimmed),
-                  style: type.displayL.copyWith(color: FluiColors.cream),
-                ),
+        const SizedBox(height: FluiSpacing.md),
+        RevealLines(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Semantics(
+              header: true,
+              child: Text(
+                trimmed == null || trimmed.isEmpty
+                    ? l10n.paywallPlanReadyAnonymous
+                    : l10n.paywallPlanReady(trimmed),
+                style: type.titleL.copyWith(color: FluiColors.charcoal),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        SizedBox(height: layout.blockGap),
-        // Three lines, each one an answer the user gave us. No invented
-        // "join 12,000 learners": we do not have that number.
+        const SizedBox(height: FluiSpacing.md),
         _CheckRow(
           glyph: FluiGlyph.inContext,
           text: contexts.isEmpty
@@ -273,37 +266,55 @@ class _PlanPage extends StatelessWidget {
                   ToneQuestion.labelsOf(l10n, tone).$1.toLowerCase(),
                 ),
         ),
-        _CheckRow(glyph: FluiGlyph.wordOfTheDay, text: l10n.paywallPlanRhythm),
+        _CheckRow(
+          glyph: FluiGlyph.wordOfTheDay,
+          text: l10n.paywallPlanRhythm,
+          emphasis: true,
+        ),
       ],
     );
   }
 }
 
 class _CheckRow extends StatelessWidget {
-  const new({required this.glyph, required this.text});
+  const new({required this.glyph, required this.text, this.emphasis = false});
 
   final FluiGlyph glyph;
   final String text;
+  final bool emphasis;
 
   @override
   Widget build(BuildContext context) {
+    final color = emphasis ? FluiColors.greenDeep : FluiColors.greenTint;
+    final foreground = emphasis ? FluiColors.cream : FluiColors.greenDeep;
+
     return Padding(
-      padding: const EdgeInsets.only(bottom: FluiSpacing.md),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 4),
-            child: FluiGlyphIcon(glyph, color: FluiColors.greenSecondary),
+      padding: const EdgeInsets.only(bottom: FluiSpacing.xs),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: FluiRadii.cardAll,
+          border: emphasis ? null : Border.all(color: FluiColors.outline),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(FluiSpacing.md),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: FluiGlyphIcon(glyph, color: foreground),
+              ),
+              const SizedBox(width: FluiSpacing.sm),
+              Expanded(
+                child: Text(
+                  text,
+                  style: context.type.bodyL.copyWith(color: foreground),
+                ),
+              ),
+            ],
           ),
-          const SizedBox(width: FluiSpacing.sm),
-          Expanded(
-            child: Text(
-              text,
-              style: context.type.bodyL.copyWith(color: FluiColors.charcoal),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
@@ -402,6 +413,14 @@ class _ChoosePage extends StatelessWidget {
           ),
         ),
         SizedBox(height: layout.blockGap),
+        Text(
+          l10n.paywallTrialSafety,
+          style: type.body.copyWith(
+            color: FluiColors.greenDeep,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: FluiSpacing.md),
         for (final plan in ordered(plans)) ...[
           PlanCard(
             plan: plan,

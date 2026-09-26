@@ -24,5 +24,15 @@ String failureMessage(AppLocalizations l10n, Failure failure) {
       SubscriptionErrorCode.unauthorized ||
       SubscriptionErrorCode.unknown => l10n.paywallCheckoutError,
     },
+    SpeechAnalysisFailure(:final code) => switch (code) {
+      SpeechAnalysisErrorCode.accessRequired =>
+        l10n.speechAnalysisAccessRequired,
+      SpeechAnalysisErrorCode.accessUnavailable =>
+        l10n.speechAnalysisAccessUnavailable,
+      SpeechAnalysisErrorCode.dailyLimitReached =>
+        l10n.speechAnalysisDailyLimitReached,
+      SpeechAnalysisErrorCode.rateLimited => l10n.speechAnalysisRateLimited,
+      SpeechAnalysisErrorCode.unknown => l10n.errorUnexpected,
+    },
   };
 }

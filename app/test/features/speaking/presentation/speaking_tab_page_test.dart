@@ -8,6 +8,23 @@ import '../../../helpers/reduce_motion.dart';
 
 void main() {
   group('SpeakingTabPage', () {
+    testWidgets('uses dark status icons over the cream surface', (
+      tester,
+    ) async {
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.speakingChallenge,
+        page: const SpeakingTabPage(),
+      );
+
+      final appBar = tester.widget<AppBar>(find.byType(AppBar));
+      expect(
+        appBar.systemOverlayStyle?.statusBarIconBrightness,
+        Brightness.dark,
+      );
+    });
+
     testWidgets("is Habla's landing: the ready view opens the exercise", (
       tester,
     ) async {

@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/supabase/data_error_mapper.dart';
+import 'package:flui/features/speaking/data/speech_analysis_error_mapper.dart';
 import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -72,6 +73,14 @@ final class SupabaseSpeechAnalysisRepository
                   retryCue: analysis['retryCue'] as String,
                 ),
         ),
+      );
+    } on FunctionsFetchException catch (error) {
+      // No response reached the client (network/transport failure): keep
+      // going through the transport error mapper, same as any other call.
+      return Result.err(mapDataError(error));
+    } on FunctionException catch (error) {
+      return Result.err(
+        mapSpeechAnalysisErrorCode(readSpeechAnalysisErrorCode(error.details)),
       );
     } on Object catch (error) {
       return Result.err(mapDataError(error));

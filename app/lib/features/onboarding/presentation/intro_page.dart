@@ -4,6 +4,7 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
@@ -13,9 +14,7 @@ import 'package:flui/features/onboarding/presentation/widgets/onboarding_questio
 import 'package:flui/shared/motion/reveal_lines.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
-import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
-import 'package:flui/shared/widgets/headline_text.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flui/shared/widgets/sticky_cta_dock.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
@@ -23,7 +22,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// The steps before the account: three plates that make the promise, two
+/// The steps before the account: three benefit pages that make the promise, two
 /// questions that make it personal, and one real word so the promise is
 /// something the user has already felt.
 enum OnboardingStep { promise, rhythm, ownership, contexts, tone, lesson }
@@ -36,21 +35,41 @@ class IntroPage extends ConsumerStatefulWidget {
 }
 
 class _IntroPageState extends ConsumerState<IntroPage> {
+  static const _benefitTransitionDuration = Duration(milliseconds: 220);
+
   var _index = 0;
   var _lessonDone = false;
+  var _movingForward = true;
 
   OnboardingStep get _step => OnboardingStep.values[_index];
 
   void _finish() => context.go(AppRoutes.plan);
 
   void _next() {
+    if (_index < 2) return _moveBenefit(forward: true);
     if (_index == OnboardingStep.values.length - 1) return _finish();
     setState(() => _index++);
   }
 
   void _back() {
     if (_index == 0) return context.go(AppRoutes.welcome);
+    if (_index <= 2) return _moveBenefit(forward: false);
     setState(() => _index--);
+  }
+
+  void _moveBenefit({required bool forward}) {
+    setState(() {
+      _movingForward = forward;
+      _index += forward ? 1 : -1;
+    });
+  }
+
+  void _onBenefitSwipe(DragEndDetails details) {
+    if (details.primaryVelocity case final velocity?
+        when velocity.abs() >= 250) {
+      if (velocity < 0 && _index < 2) return _moveBenefit(forward: true);
+      if (velocity > 0 && _index > 0) return _moveBenefit(forward: false);
+    }
   }
 
   @override
@@ -61,7 +80,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
         OnboardingAnswers.empty;
     final controller = ref.read(onboardingAnswersControllerProvider.notifier);
     final step = _step;
-    final onDark = step != OnboardingStep.lesson;
+    const onDark = false;
 
     final body = switch (step) {
       OnboardingStep.promise => _Slide(
@@ -99,8 +118,45 @@ class _IntroPageState extends ConsumerState<IntroPage> {
       _ => true,
     };
 
+    final pageBody = _index < 3
+        ? GestureDetector(
+            onHorizontalDragEnd: _onBenefitSwipe,
+            child: AnimatedSwitcher(
+              duration: FluiMotion.resolve(context, _benefitTransitionDuration),
+              switchInCurve: FluiMotion.enter,
+              switchOutCurve: FluiMotion.exit,
+              layoutBuilder: (currentChild, previousChildren) => Stack(
+                alignment: Alignment.center,
+                children: [
+                  for (final previousChild in previousChildren)
+                    ExcludeSemantics(child: previousChild),
+                  ?currentChild,
+                ],
+              ),
+              transitionBuilder: (child, animation) {
+                return AnimatedBuilder(
+                  animation: animation,
+                  child: child,
+                  builder: (context, child) {
+                    final direction = _movingForward ? 1.0 : -1.0;
+                    final isExiting =
+                        animation.status == AnimationStatus.reverse;
+                    final offset =
+                        (isExiting ? -direction : direction) *
+                        (1 - animation.value);
+                    return FractionalTranslation(
+                      translation: Offset(offset, 0),
+                      child: child,
+                    );
+                  },
+                );
+              },
+              child: KeyedSubtree(key: ValueKey(step), child: body),
+            ),
+          )
+        : body;
+
     final content = StickyCtaDock(
-      onDark: onDark,
       dock: _Dock(
         label: step == OnboardingStep.lesson
             ? l10n.onboardingSeePlan
@@ -131,7 +187,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
                     constraints: BoxConstraints(
                       minHeight: StickyCtaDock.contentMinHeight(constraints),
                     ),
-                    child: Center(child: PageFrame.column(child: body)),
+                    child: Center(child: PageFrame.column(child: pageBody)),
                   ),
                 ),
               ),
@@ -141,10 +197,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
       ),
     );
 
-    return Scaffold(
-      backgroundColor: onDark ? FluiColors.greenDeep : FluiColors.cream,
-      body: onDark ? FluiPlate.fullBleed(child: content) : content,
-    );
+    return Scaffold(backgroundColor: FluiColors.cream, body: content);
   }
 }
 
@@ -236,8 +289,7 @@ class _Rail extends StatelessWidget {
   }
 }
 
-/// One promise, on the plate, with the noun that carries it in yellow.
-/// No pastel icon tile: there is nothing an icon would add here.
+/// One promise, on paper, with its key phrase in deep green for contrast.
 class _Slide extends StatelessWidget {
   const new({required this.title, required this.highlight, required this.body});
 
@@ -249,30 +301,36 @@ class _Slide extends StatelessWidget {
   Widget build(BuildContext context) {
     final layout = context.layout;
     final type = layout.type;
+    final highlightStart = title.endsWith(highlight) && highlight.isNotEmpty
+        ? title.length - highlight.length
+        : title.length;
     return Padding(
       padding: EdgeInsets.symmetric(vertical: layout.sectionGap),
       child: RevealLines(
         key: ValueKey(title),
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HeadlineText(text: title, highlight: highlight, style: type.displayL),
+          Semantics(
+            header: true,
+            child: Text.rich(
+              TextSpan(
+                style: type.displayL.copyWith(color: FluiColors.ink),
+                children: [
+                  TextSpan(text: title.substring(0, highlightStart)),
+                  if (highlightStart < title.length)
+                    TextSpan(
+                      text: title.substring(highlightStart),
+                      style: const TextStyle(color: FluiColors.greenDeep),
+                    ),
+                ],
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(top: FluiSpacing.lg),
             child: Text(
               body,
-              style: type.bodyL.copyWith(color: FluiColors.creamMuted),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: FluiSpacing.xxl),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              // Bleeds off the gutter: the mark is a field, not a spot
-              // illustration sitting in a column.
-              child: Transform.translate(
-                offset: const Offset(-FluiSpacing.xxl, 0),
-                child: const PlateWaveMark(size: 240, opacity: 0.16),
-              ),
+              style: type.bodyL.copyWith(color: FluiColors.ink),
             ),
           ),
         ],

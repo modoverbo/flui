@@ -1,7 +1,11 @@
+import 'dart:ui' show Tristate;
+
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/l10n/gen/app_localizations_es.dart';
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
@@ -15,6 +19,8 @@ import 'package:flui/features/subscription/presentation/pages/paywall_page.dart'
 import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/features/subscription/presentation/widgets/plan_card.dart';
+import 'package:flui/features/subscription/presentation/widgets/trial_timeline.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -22,6 +28,9 @@ import '../../../helpers/pump_router.dart';
 import '../../../helpers/reduce_motion.dart';
 
 void main() {
+  const noReminderCopy =
+      'Faltan 2 días. La fecha exacta está en Tu progreso, siempre a la vista.';
+
   late FakeAuthRepository auth;
   late FakeSubscriptionRepository subscriptions;
   late FakeCheckoutLauncher launcher;
@@ -55,7 +64,10 @@ void main() {
 
   tearDown(() => auth.dispose());
 
-  Future<void> pumpPaywall(WidgetTester tester) async {
+  Future<void> pumpPaywall(
+    WidgetTester tester, {
+    Size surfaceSize = const Size(420, 1600),
+  }) async {
     reduceMotion(tester);
     await pumpRoutedPage(
       tester,
@@ -67,7 +79,7 @@ void main() {
         checkoutLauncherProvider.overrideWithValue(launcher),
         onboardingStoreProvider.overrideWithValue(store),
       ],
-      surfaceSize: const Size(420, 1600),
+      surfaceSize: surfaceSize,
     );
     await tester.pumpAndSettle();
   }
@@ -119,6 +131,7 @@ void main() {
         findsOneWidget,
       );
       expect(find.text('Día 5'), findsOneWidget);
+      expect(find.text(noReminderCopy), findsOneWidget);
       expect(find.text('Día 8'), findsOneWidget);
       expect(
         find.text('Empieza tu plan. Cancelas cuando quieras.'),
@@ -127,6 +140,20 @@ void main() {
       expect(
         find.text('Si cancelas antes del día 8, no pagas nada.'),
         findsOneWidget,
+      );
+      expect(find.text(r'Hoy pagas US$0.'), findsOneWidget);
+    });
+
+    test('uses reminder copy only when the reminder is enabled', () {
+      final l10n = AppLocalizationsEs();
+
+      expect(
+        TrialTimeline.nodesOf(l10n, remindersEnabled: true)[1].body,
+        'Te avisamos. Faltan 2 días.',
+      );
+      expect(
+        TrialTimeline.nodesOf(l10n, remindersEnabled: false)[1].body,
+        noReminderCopy,
       );
     });
 
@@ -150,6 +177,69 @@ void main() {
         findsOneWidget,
       );
     });
+
+    testWidgets('exposes each milestone as one ordered semantic stop', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await pumpPaywall(tester);
+      await next(tester);
+
+      const milestones = [
+        'Hoy. Acceso completo. No te cobramos nada.',
+        'Día 5. $noReminderCopy',
+        'Día 8. Empieza tu plan. Cancelas cuando quieras.',
+      ];
+      final firstMilestone = tester.getSemantics(find.text('Hoy'));
+      var root = firstMilestone;
+      var parent = root.parent;
+      while (parent != null) {
+        root = parent;
+        parent = root.parent;
+      }
+      final renderedLabels = <String>[];
+      bool visit(SemanticsNode node) {
+        final label = node.getSemanticsData().label;
+        if (label.isNotEmpty) renderedLabels.add(label);
+        node.visitChildren(visit);
+        return true;
+      }
+
+      visit(root);
+
+      expect(
+        renderedLabels.where(milestones.contains),
+        milestones,
+        reason: 'each milestone should be announced once in visual order',
+      );
+      expect(renderedLabels, isNot(contains('Hoy')));
+      expect(
+        renderedLabels,
+        isNot(contains('Acceso completo. No te cobramos nada.')),
+      );
+      semantics.dispose();
+    });
+
+    testWidgets('keeps the trial milestones and dock clear on a short screen', (
+      tester,
+    ) async {
+      await pumpPaywall(tester, surfaceSize: const Size(320, 560));
+      await next(tester);
+
+      expect(find.text('Hoy'), findsOneWidget);
+      expect(find.text('Día 5'), findsOneWidget);
+      expect(find.text('Día 8'), findsOneWidget);
+      final safety = find.text('Si cancelas antes del día 8, no pagas nada.');
+      expect(safety, findsOneWidget);
+      expect(find.text('Seguir'), findsOneWidget);
+      await tester.ensureVisible(safety);
+      await tester.pumpAndSettle();
+      expect(
+        tester.getRect(safety).bottom,
+        lessThanOrEqualTo(tester.getRect(find.text('Seguir')).top),
+      );
+      expect(tester.takeException(), isNull);
+    });
   });
 
   group('page 3: elige tu plan', () {
@@ -159,7 +249,7 @@ void main() {
       await next(tester);
     }
 
-    testWidgets('leads with the quarterly plan and its real prices', (
+    testWidgets('compares catalog plans with the same editorial hierarchy', (
       tester,
     ) async {
       await toChoice(tester);
@@ -171,18 +261,170 @@ void main() {
       expect(find.text('Mensual'), findsOneWidget);
       expect(find.text(r'US$ 6.99 al mes'), findsOneWidget);
 
-      // Recommended first, dominant, and its badge above the card fold.
+      // Recommendation controls order, not a different card hierarchy.
       final cards = tester.widgetList<PlanCard>(find.byType(PlanCard)).toList();
       expect(cards.first.plan.id, 'quarterly');
       expect(cards.first.recommended, isTrue);
+      expect(cards.last.plan.id, 'monthly');
       expect(cards.last.recommended, isFalse);
+      final quarterlyPrice = tester
+          .widget<Text>(find.text(r'US$ 16.15 cada 3 meses'))
+          .style;
+      final monthlyPrice = tester
+          .widget<Text>(find.text(r'US$ 6.99 al mes'))
+          .style;
+      expect(quarterlyPrice?.fontSize, monthlyPrice?.fontSize);
       expect(
-        tester.getSize(find.byType(PlanCard).first).height,
-        greaterThan(tester.getSize(find.byType(PlanCard).last).height),
+        tester.widget<Text>(find.text('Trimestral')).style?.color,
+        FluiColors.charcoal,
       );
       expect(
-        tester.getRect(find.text('AHORRA 23%')).top,
-        lessThan(tester.getRect(find.text('Trimestral')).top),
+        tester.widget<Text>(find.text('Mensual')).style?.color,
+        FluiColors.charcoal,
+      );
+      expect(find.text('Plan seleccionado'), findsOneWidget);
+    });
+
+    testWidgets(
+      'exposes exactly the active plan as selected to assistive tech',
+      (tester) async {
+        final semantics = tester.ensureSemantics();
+        await toChoice(tester);
+
+        SemanticsData planSemantics(String label) => tester
+            .getSemantics(
+              find.bySemanticsLabel(RegExp('^${RegExp.escape(label)}\\.')),
+            )
+            .getSemanticsData();
+
+        expect(
+          planSemantics('Trimestral').flagsCollection.isSelected,
+          Tristate.isTrue,
+        );
+        expect(
+          planSemantics('Mensual').flagsCollection.isSelected,
+          Tristate.isFalse,
+        );
+
+        final monthlyPlan = find.semantics.byLabel(RegExp(r'^Mensual\.'));
+        expect(
+          monthlyPlan.evaluate().single.getSemanticsData().hasAction(
+            SemanticsAction.tap,
+          ),
+          isTrue,
+        );
+        tester.semantics.tap(monthlyPlan);
+        await tester.pumpAndSettle();
+
+        expect(
+          planSemantics('Trimestral').flagsCollection.isSelected,
+          Tristate.isFalse,
+        );
+        expect(
+          planSemantics('Mensual').flagsCollection.isSelected,
+          Tristate.isTrue,
+        );
+        expect(
+          tester
+              .widgetList<Material>(
+                find.descendant(
+                  of: find.byType(PlanCard).first,
+                  matching: find.byType(Material),
+                ),
+              )
+              .single
+              .animationDuration,
+          Duration.zero,
+          reason: 'plan selection settles immediately when motion is reduced',
+        );
+        semantics.dispose();
+      },
+    );
+
+    testWidgets('keeps plan facts and the checkout dock reachable at 320px', (
+      tester,
+    ) async {
+      await pumpPaywall(tester, surfaceSize: const Size(320, 560));
+      await next(tester);
+      await next(tester);
+
+      const trialSafety = 'Si cancelas antes del día 8, no pagas nada.';
+      expect(find.text(trialSafety), findsOneWidget);
+      expect(find.text(r'Hoy pagas US$0.'), findsOneWidget);
+      expect(find.text('Empezar prueba gratis'), findsOneWidget);
+      await tester.ensureVisible(find.text(trialSafety));
+      await tester.pumpAndSettle();
+      expect(
+        tester.getRect(find.text(trialSafety)).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
+      );
+      await tester.ensureVisible(find.text(r'US$ 16.15 cada 3 meses'));
+      await tester.ensureVisible(find.text(r'US$ 6.99 al mes'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Trimestral'), findsOneWidget);
+      expect(find.text('Mensual'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      expect(
+        tester.getRect(find.text(r'US$ 6.99 al mes')).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
+      );
+    });
+
+    testWidgets('resets scroll when moving between trial and plan choice', (
+      tester,
+    ) async {
+      await pumpPaywall(tester, surfaceSize: const Size(432, 800));
+      await next(tester);
+
+      final scrollable = find.byType(Scrollable).first;
+      double scrollOffset() =>
+          tester.state<ScrollableState>(scrollable).position.pixels;
+      final trialSafety = find.text(
+        'Si cancelas antes del día 8, no pagas nada.',
+      );
+      await tester.ensureVisible(trialSafety);
+      await tester.pumpAndSettle();
+      expect(scrollOffset(), greaterThan(0));
+
+      await next(tester);
+
+      final choiceTitle = find.text('Elige tu plan');
+      final selectedPlan = find.byType(PlanCard).first;
+      expect(choiceTitle, findsOneWidget);
+      expect(scrollOffset(), 0);
+      expect(
+        tester.getRect(choiceTitle).top,
+        greaterThanOrEqualTo(tester.getRect(scrollable).top),
+      );
+      expect(
+        tester.getRect(choiceTitle).bottom,
+        lessThanOrEqualTo(tester.getRect(selectedPlan).top),
+      );
+      expect(
+        tester.getRect(selectedPlan).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
+      );
+
+      await tester.tap(find.byType(IconButton).first);
+      await tester.pumpAndSettle();
+      expect(find.text('Cómo funciona tu prueba'), findsOneWidget);
+      expect(scrollOffset(), 0);
+
+      await next(tester);
+      expect(find.text('Elige tu plan'), findsOneWidget);
+      expect(scrollOffset(), 0);
+      expect(
+        tester.getRect(find.byType(PlanCard).first).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
       );
     });
 
@@ -205,6 +447,7 @@ void main() {
       expect(find.text('¿Cómo cancelo?'), findsOneWidget);
 
       expect(find.text('¿Cómo cancelo?'), findsOneWidget);
+      await tester.ensureVisible(find.text('¿Cómo cancelo?'));
       await tester.tap(find.text('¿Cómo cancelo?'));
       await tester.pumpAndSettle();
       expect(
@@ -296,7 +539,10 @@ void main() {
   });
 
   group('/plan before the account exists', () {
-    Future<void> pumpPreview(WidgetTester tester) async {
+    Future<void> pumpPreview(
+      WidgetTester tester, {
+      Size surfaceSize = const Size(420, 1600),
+    }) async {
       reduceMotion(tester);
       await pumpRoutedPage(
         tester,
@@ -307,10 +553,121 @@ void main() {
           subscriptionRepositoryProvider.overrideWithValue(subscriptions),
           onboardingStoreProvider.overrideWithValue(store),
         ],
-        surfaceSize: const Size(420, 1600),
+        surfaceSize: surfaceSize,
       );
       await tester.pumpAndSettle();
     }
+
+    testWidgets('shows a compact editorial summary from saved answers', (
+      tester,
+    ) async {
+      await store.writeAnswers(
+        const OnboardingAnswers(
+          contexts: {Scene.trabajo, Scene.entrevista},
+          tone: SpeakingTone.precise,
+        ),
+      );
+      await pumpPreview(tester);
+
+      expect(find.text('Tu plan está listo.'), findsOneWidget);
+      expect(find.text('Palabras para trabajo y entrevista.'), findsOneWidget);
+      expect(find.text('Con el tono que elegiste: preciso.'), findsOneWidget);
+      expect(
+        find.text('Una palabra al día, en el tiempo que tengas.'),
+        findsOneWidget,
+      );
+
+      final title = tester.widget<Text>(find.text('Tu plan está listo.'));
+      expect(title.style?.color, FluiColors.charcoal);
+      expect(title.style?.fontSize, lessThan(40));
+      expect(
+        find.byWidgetPredicate(
+          (widget) =>
+              widget is DecoratedBox &&
+              widget.decoration is BoxDecoration &&
+              (widget.decoration as BoxDecoration).color ==
+                  FluiColors.greenTint,
+        ),
+        findsNWidgets(2),
+      );
+      expect(
+        find.byWidgetPredicate(
+          (widget) =>
+              widget is DecoratedBox &&
+              widget.decoration is BoxDecoration &&
+              (widget.decoration as BoxDecoration).color ==
+                  FluiColors.greenDeep,
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('uses the existing general copy when answers are missing', (
+      tester,
+    ) async {
+      await store.writeAnswers(OnboardingAnswers.empty);
+      await pumpPreview(tester);
+
+      expect(find.text('Tu plan está listo.'), findsOneWidget);
+      expect(
+        find.text('Palabras para cualquier conversación.'),
+        findsOneWidget,
+      );
+      expect(find.text('Con el tono que elijas.'), findsOneWidget);
+      expect(
+        find.text('Una palabra al día, en el tiempo que tengas.'),
+        findsOneWidget,
+      );
+      expect(find.text('Palabras para trabajo y entrevista.'), findsNothing);
+      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
+    });
+
+    testWidgets('does not imply an unanswered tone for a partial answer', (
+      tester,
+    ) async {
+      await store.writeAnswers(
+        const OnboardingAnswers(contexts: {Scene.entrevista}),
+      );
+      await pumpPreview(tester);
+
+      expect(find.text('Palabras para entrevista.'), findsOneWidget);
+      expect(find.text('Con el tono que elijas.'), findsOneWidget);
+      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
+    });
+
+    testWidgets('does not imply an unanswered context for a partial answer', (
+      tester,
+    ) async {
+      await store.writeAnswers(
+        const OnboardingAnswers(tone: SpeakingTone.precise),
+      );
+      await pumpPreview(tester);
+
+      expect(
+        find.text('Palabras para cualquier conversación.'),
+        findsOneWidget,
+      );
+      expect(find.text('Con el tono que elegiste: preciso.'), findsOneWidget);
+      expect(find.text('Palabras para entrevista.'), findsNothing);
+    });
+
+    testWidgets('keeps the summary dock reachable on a short narrow screen', (
+      tester,
+    ) async {
+      await pumpPreview(tester, surfaceSize: const Size(320, 560));
+
+      expect(find.text('Seguir'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      expect(
+        tester.getRect(find.text('Seguir')).bottom,
+        lessThanOrEqualTo(560),
+      );
+
+      await tester.tap(find.text('Seguir'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Cómo funciona tu prueba'), findsOneWidget);
+    });
 
     testWidgets('shows real prices without an account, then asks for one', (
       tester,

@@ -268,7 +268,7 @@ class _CategoryDeckState extends State<_CategoryDeck> {
     }
     _pageController.animateToPage(
       targetPage,
-      duration: FluiMotion.quick,
+      duration: FluiMotion.standard,
       curve: Curves.easeOutCubic,
     );
   }
@@ -286,32 +286,56 @@ class _CategoryDeckState extends State<_CategoryDeck> {
         const SizedBox(height: FluiSpacing.md),
         SizedBox(
           height: 216,
-          child: PageView.builder(
-            key: const ValueKey('category-deck'),
-            controller: _pageController,
-            itemCount: ThemeFamily.values.length,
-            itemBuilder: (context, index) => AnimatedBuilder(
-              animation: _pageController,
-              builder: (context, child) {
-                final page = _pageController.hasClients
-                    ? _pageController.page ??
-                          _pageController.initialPage.toDouble()
-                    : _pageController.initialPage.toDouble();
-                final distance = (page - index).abs().clamp(0.0, 1.0);
-                return Transform.translate(
-                  offset: Offset(0, distance * 9),
-                  child: Transform.scale(
-                    alignment: Alignment.topCenter,
-                    scale: 1 - (distance * 0.045),
+          child: LayoutBuilder(
+            builder: (context, constraints) => PageView.builder(
+              key: const ValueKey('category-deck'),
+              controller: _pageController,
+              itemCount: ThemeFamily.values.length,
+              itemBuilder: (context, index) => AnimatedBuilder(
+                animation: _pageController,
+                builder: (context, child) {
+                  final page = _pageController.hasClients
+                      ? _pageController.page ??
+                            _pageController.initialPage.toDouble()
+                      : _pageController.initialPage.toDouble();
+                  final progress = (page - index).clamp(-1.0, 1.0);
+                  final distance = progress.abs();
+                  final isIncoming = progress < 0;
+                  final scale = isIncoming
+                      ? 0.74 + ((1 - distance) * 0.26)
+                      : 1 - (distance * 0.08);
+                  final horizontalOffset =
+                      progress * constraints.maxWidth * 0.65;
+                  final verticalOffset = isIncoming
+                      ? distance * 32
+                      : -distance * 30;
+                  final depthOffset = isIncoming
+                      ? -distance * 80
+                      : distance * 60;
+                  final transform = Matrix4.identity()
+                    ..setEntry(3, 2, 0.0016)
+                    ..translateByDouble(
+                      horizontalOffset,
+                      verticalOffset,
+                      depthOffset,
+                      1,
+                    )
+                    ..rotateY(-progress * 0.42)
+                    ..rotateX(distance * (isIncoming ? 0.12 : -0.1))
+                    ..scaleByDouble(scale, scale, 1, 1);
+                  return Transform(
+                    key: ValueKey('category-card-transform-$index'),
+                    alignment: Alignment.center,
+                    transform: transform,
                     child: child,
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: FluiSpacing.sm),
+                  child: _CategoryDeckCard(
+                    family: ThemeFamily.values[index],
+                    index: index,
                   ),
-                );
-              },
-              child: Padding(
-                padding: const EdgeInsets.only(right: FluiSpacing.sm),
-                child: _CategoryDeckCard(
-                  family: ThemeFamily.values[index],
-                  index: index,
                 ),
               ),
             ),
@@ -349,6 +373,7 @@ class _CategoryDeckCard extends StatelessWidget {
     final l10n = context.l10n;
     final label = themeFamilyLabel(l10n, family);
     final color = CategoryArtwork.cardColorFor(family);
+    const families = ThemeFamily.values;
     const ink = FluiColors.ink;
     return Semantics(
       button: true,
@@ -356,25 +381,33 @@ class _CategoryDeckCard extends StatelessWidget {
       onTap: () => context.push(AppRoutes.categoryCatalog(family.name)),
       excludeSemantics: true,
       child: SizedBox(
-        width: 252,
+        width: double.infinity,
         child: Stack(
           children: [
-            Positioned(
-              left: 7,
-              right: 0,
-              top: 8,
-              bottom: 0,
-              child: DecoratedBox(
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.42),
-                  borderRadius: BorderRadius.circular(26),
-                  border: Border.all(color: FluiColors.ink),
+            for (var layer = 0; layer < 3; layer++)
+              Positioned(
+                left: 8 + (layer * 4),
+                right: layer * 2,
+                top: 8 + (layer * 5),
+                bottom: 0,
+                child: ExcludeSemantics(
+                  child: IgnorePointer(
+                    child: DecoratedBox(
+                      key: ValueKey('category-card-back-$index-$layer'),
+                      decoration: BoxDecoration(
+                        color: CategoryArtwork.cardColorFor(
+                          families[(index + layer + 1) % families.length],
+                        ),
+                        borderRadius: BorderRadius.circular(26),
+                        border: Border.all(color: FluiColors.ink),
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
             Positioned.fill(
-              right: 8,
-              bottom: 8,
+              right: 18,
+              bottom: 12,
               child: AnimatedContainer(
                 key: ValueKey('category-card-${family.name}'),
                 duration: FluiMotion.resolve(context, FluiMotion.quick),

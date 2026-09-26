@@ -1,6 +1,7 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_surfaces.dart';
@@ -190,6 +191,7 @@ class _OptionTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final right = revealed && option.isCorrect;
+    final chosenWrong = chosen && !right;
     final type = context.type;
     return Semantics(
       button: true,
@@ -198,12 +200,24 @@ class _OptionTile extends StatelessWidget {
       label: option.text,
       excludeSemantics: true,
       child: Material(
-        color: right ? FluiColors.greenTint : FluiColors.surface,
+        animationDuration: FluiMotion.resolve(
+          context,
+          const Duration(milliseconds: 160),
+        ),
+        color: right
+            ? FluiColors.greenTint
+            : chosenWrong
+            ? FluiColors.cream
+            : FluiColors.surface,
         shape: RoundedRectangleBorder(
           borderRadius: FluiRadii.cardAll,
           side: BorderSide(
-            color: right ? FluiColors.greenDeep : FluiColors.outline,
-            width: right ? 2 : 1,
+            color: right
+                ? FluiColors.greenDeep
+                : chosenWrong
+                ? FluiColors.ink
+                : FluiColors.outline,
+            width: right || chosenWrong ? 2 : 1,
           ),
         ),
         clipBehavior: Clip.antiAlias,

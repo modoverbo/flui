@@ -174,9 +174,9 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   expect(find.text('4 DE 5'), findsOneWidget);
   await tapText('Volver a Hoy');
 
-  // Hoy is done for today, and Tu progreso counts the day.
+  // Hoy is done for today, and Progreso counts the day.
   expect(find.text('Hoy ya sumaste. Vuelve mañana.'), findsOneWidget);
-  await tapText('Tu progreso');
+  await tapText('Progreso');
   expect(find.text('1 de 7 días esta semana'), findsOneWidget);
   expect(find.text('Hola, Ana'), findsOneWidget);
   expect(find.textContaining('Prueba gratis hasta el'), findsOneWidget);

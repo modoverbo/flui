@@ -5,9 +5,15 @@ const ORIGIN = "http://localhost:3000";
 
 function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
   const calls: Array<{ bytes: Uint8Array; mimeType: string }> = [];
+  const hasAccessCalls: string[] = [];
+  const evaluateCalls: string[] = [];
   const deps: SpeechAnalyzeDeps = {
     allowedOrigins: [ORIGIN],
     getUserId: (token) => Promise.resolve(token === "valid-jwt" ? "u1" : null),
+    hasAccess: (userId) => {
+      hasAccessCalls.push(userId);
+      return Promise.resolve(true);
+    },
     transcribe: (bytes, mimeType) => {
       calls.push({ bytes, mimeType });
       return Promise.resolve({
@@ -20,17 +26,19 @@ function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
         ],
       });
     },
-    evaluate: () =>
-      Promise.resolve({
+    evaluate: (text) => {
+      evaluateCalls.push(text);
+      return Promise.resolve({
         summary: "Explica una decisión y su resultado.",
         structure: "Idea clara; falta un cierre.",
         vocabulary: "Vocabulario concreto pero poco variado.",
         strength: "Conecta la acción con su beneficio.",
         retryCue: "Cierra con una frase que resuma el aprendizaje.",
-      }),
+      });
+    },
     ...overrides,
   };
-  return { handler: createSpeechAnalyzeHandler(deps), calls };
+  return { handler: createSpeechAnalyzeHandler(deps), calls, hasAccessCalls, evaluateCalls };
 }
 
 function post(body: unknown, authorization = "Bearer valid-jwt") {
@@ -54,10 +62,33 @@ function validBody() {
 }
 
 Deno.test("rejects unauthenticated speech requests", async () => {
-  const { handler, calls } = setup();
+  const { handler, calls, hasAccessCalls } = setup();
   const response = await handler(post(validBody(), ""));
   assertEquals(response.status, 401);
   assertEquals(calls.length, 0);
+  assertEquals(hasAccessCalls.length, 0);
+});
+
+Deno.test("denies analysis for an authenticated user without access", async () => {
+  const { handler, calls, evaluateCalls } = setup({
+    hasAccess: () => Promise.resolve(false),
+  });
+  const response = await handler(post(validBody()));
+  assertEquals(response.status, 403);
+  assertEquals((await response.json()).error.code, "access_required");
+  assertEquals(calls.length, 0);
+  assertEquals(evaluateCalls.length, 0);
+});
+
+Deno.test("fails closed with 503 when the access check is unavailable", async () => {
+  const { handler, calls, evaluateCalls } = setup({
+    hasAccess: () => Promise.reject(new Error("db unreachable")),
+  });
+  const response = await handler(post(validBody()));
+  assertEquals(response.status, 503);
+  assertEquals((await response.json()).error.code, "access_unavailable");
+  assertEquals(calls.length, 0);
+  assertEquals(evaluateCalls.length, 0);
 });
 
 Deno.test("rejects unsupported audio and invalid duration", async () => {

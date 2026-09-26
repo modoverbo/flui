@@ -108,6 +108,25 @@ Future<void> _holdLongEnough(WidgetTester tester) async {
 }
 
 void main() {
+  testWidgets('uses dark status icons over the cream exercise surface', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        locale: const Locale('es'),
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          ...GlobalMaterialLocalizations.delegates,
+        ],
+        home: SpeakingChallengePage(recorder: FakeSpeechRecorder()),
+      ),
+    );
+
+    final appBar = tester.widget<AppBar>(find.byType(AppBar));
+    expect(appBar.systemOverlayStyle?.statusBarIconBrightness, Brightness.dark);
+  });
+
   testWidgets('shows a clear 45 second oral challenge', (tester) async {
     await tester.pumpWidget(
       MaterialApp(

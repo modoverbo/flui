@@ -9,15 +9,25 @@ import '../../helpers/pump_app.dart';
 import '../../helpers/pump_router.dart';
 
 void main() {
-  testWidgets('shows original voice-world artwork', (tester) async {
+  testWidgets('uses an editorial canvas and compact native product proof', (
+    tester,
+  ) async {
     await tester.pumpFlui(
       WelcomeView(onStart: () {}, onSignIn: () {}),
       surfaceSize: const Size(390, 844),
     );
+
     expect(
-      find.image(const AssetImage('assets/textures/flui-voice-world.png')),
+      find.byWidgetPredicate(
+        (widget) =>
+            widget is Scaffold && widget.backgroundColor == FluiColors.cream,
+      ),
       findsOneWidget,
     );
+    expect(find.text('Habla como quieres sonar.'), findsOneWidget);
+    expect(find.text('«Es muy listo, se da cuenta de todo»'), findsOneWidget);
+    expect(find.text('«Es muy perspicaz»'), findsOneWidget);
+    expect(find.byType(Image), findsNothing);
   });
   Future<void> pumpWelcome(WidgetTester tester) => pumpRoutedPage(
     tester,
@@ -26,7 +36,7 @@ void main() {
     otherRoutes: [AppRoutes.intro, AppRoutes.login],
   );
 
-  testWidgets('shows the brand, tagline and one yellow call to action', (
+  testWidgets('shows the brand, highlighted tagline and green action', (
     tester,
   ) async {
     await pumpWelcome(tester);
@@ -45,15 +55,16 @@ void main() {
       return true;
     });
     final highlighted = spans.singleWhere((span) => span.text == 'sonar.');
-    expect(highlighted.style?.color, FluiColors.yellowElectric);
+    expect(highlighted.style?.color, FluiColors.charcoal);
+    expect(highlighted.style?.backgroundColor, FluiColors.yellowElectric);
 
     final start = tester.widget<FluiButton>(
       find.widgetWithText(FluiButton, 'Empezar'),
     );
-    expect(start.variant, FluiButtonVariant.accent);
+    expect(start.variant, FluiButtonVariant.primary);
     expect(find.text('Ya tengo una cuenta'), findsOneWidget);
     final scaffold = tester.widget<Scaffold>(find.byType(Scaffold).first);
-    expect(scaffold.backgroundColor, FluiColors.greenDeep);
+    expect(scaffold.backgroundColor, FluiColors.cream);
   });
 
   testWidgets('Empezar opens the intro', (tester) async {
@@ -83,6 +94,34 @@ void main() {
     );
 
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('fits the editorial layout at a 360 logical-pixel width', (
+    tester,
+  ) async {
+    await pumpRoutedPage(
+      tester,
+      location: AppRoutes.welcome,
+      page: const WelcomePage(),
+      surfaceSize: const Size(360, 800),
+    );
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('Empezar'), findsOneWidget);
+  });
+
+  testWidgets('fits the editorial layout at a 432 logical-pixel width', (
+    tester,
+  ) async {
+    await pumpRoutedPage(
+      tester,
+      location: AppRoutes.welcome,
+      page: const WelcomePage(),
+      surfaceSize: const Size(432, 844),
+    );
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('Empezar'), findsOneWidget);
   });
 
   testWidgets(
