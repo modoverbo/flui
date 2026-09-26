@@ -1,15 +1,18 @@
 import 'dart:async';
-import 'dart:math' as math;
 
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/audio/application/hold_to_record.dart';
+import 'package:flui/core/audio/audio_providers.dart';
+import 'package:flui/core/audio/recorded_audio.dart';
+import 'package:flui/core/audio/speech_recorder.dart';
+import 'package:flui/core/clock/clock.dart';
+import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/features/speaking/data/record_speech_recorder.dart';
 import 'package:flui/features/speaking/domain/speaking_feedback.dart';
 import 'package:flui/features/speaking/domain/speaking_metrics.dart';
 import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_analyzer.dart';
-import 'package:flui/features/speaking/domain/speech_recorder.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/speaking/presentation/widgets/speaker_cue_cards.dart';
@@ -86,201 +89,99 @@ class SpeakingChallengePage extends ConsumerStatefulWidget {
 }
 
 class _SpeakingChallengePageState extends ConsumerState<SpeakingChallengePage> {
-  late final SpeechRecorder _recorder =
-      widget.recorder ?? RecordSpeechRecorder();
+  // Permission/hold-timer/start-cancel race handling lives entirely in
+  // `HoldToRecord` (`core/audio`) now — this widget only forwards pointer
+  // events to it and renders its state stream (design §2/§3.2, D2). A
+  // directly-injected `recorder` (tests) never touches `ref`, so these
+  // widget tests keep working with no `ProviderScope` at all.
+  late final HoldToRecord _holdToRecord = HoldToRecord(
+    widget.recorder ?? ref.read(speechRecorderFactoryProvider)(),
+    minDuration: const Duration(milliseconds: 600),
+    maxDuration: const Duration(seconds: 45),
+    clock: widget.recorder == null
+        ? ref.read(clockProvider)
+        : const SystemClock(),
+  );
   late final SpeechAnalysisRepository _analysisRepository =
       widget.analysisRepository ?? ref.read(speechAnalysisRepositoryProvider);
   static const _analyzer = SpeechAnalyzer();
+  StreamSubscription<HoldToRecordState>? _holdSubscription;
   _Phase _phase = _Phase.ready;
-  Timer? _timer;
-  bool _holdRequested = false;
-  bool _recorderActive = false;
-  bool _startPending = false;
-  bool _cancellationPending = false;
-  Future<void>? _recorderStartFuture;
-  Future<void>? _cancelFuture;
-  int _holdGeneration = 0;
   int? _activePointer;
-  // Created once and reused across rebuilds: `_recorder.amplitude` is a
+  // Created once and reused across rebuilds: `HoldToRecord.amplitude` is a
   // getter that builds a fresh `Stream` on every access, and
   // `AudioReactiveBubble` resubscribes (resetting its smoothing pipeline)
   // whenever the stream instance it's given changes identity.
-  late final Stream<double> _amplitudeStream = _recorder.amplitude;
+  late final Stream<double> _amplitudeStream = _holdToRecord.amplitude;
   int _secondsLeft = 45;
   int _attempt = 1;
-  DateTime? _recordingStartedAt;
-  DateTime? _startedAt;
   late SpeakingMetrics _firstMetrics;
   late SpeakingMetrics _currentMetrics;
   late SpeakingFeedback _feedback;
   late SpeechTranscript _currentTranscript;
 
   @override
+  void initState() {
+    super.initState();
+    _holdSubscription = _holdToRecord.states.listen(_onHoldState);
+  }
+
+  @override
   void dispose() {
-    _timer?.cancel();
-    if (_holdRequested || _recorderActive || _cancelFuture != null) {
-      unawaited(_cancelAndDisposeRecorder());
-    } else {
-      unawaited(_recorder.dispose());
-    }
+    unawaited(_holdSubscription?.cancel());
+    unawaited(_holdToRecord.dispose());
     super.dispose();
   }
 
-  void _pressMicrophone(int? pointer) {
-    if (_phase != _Phase.ready ||
-        _holdRequested ||
-        _startPending ||
-        _cancellationPending) {
-      return;
+  void _onHoldState(HoldToRecordState state) {
+    if (!mounted) return;
+    switch (state) {
+      case HoldToRecordIdle():
+        if (_phase == _Phase.permission || _phase == _Phase.recording) {
+          setState(() => _phase = _Phase.ready);
+        }
+      case HoldToRecordRequestingPermission():
+        setState(() => _phase = _Phase.permission);
+      case HoldToRecordRecording(:final secondsLeft):
+        setState(() {
+          _phase = _Phase.recording;
+          _secondsLeft = secondsLeft;
+        });
+      case HoldToRecordFinishing():
+        setState(() => _phase = _Phase.analyzing);
+      case HoldToRecordDenied():
+        setState(() => _phase = _Phase.denied);
+      case HoldToRecordFailed():
+        setState(() => _phase = _Phase.error);
+      case HoldToRecordFinished(:final audio):
+        unawaited(_analyzeRecording(audio));
     }
-    _activePointer = pointer;
-    _holdRequested = true;
-    _cancelFuture = null;
-    _startPending = true;
-    unawaited(_startHold(++_holdGeneration));
   }
 
-  Future<void> _startHold(int generation) async {
-    try {
-      if (mounted) setState(() => _phase = _Phase.permission);
-      final permitted = await _recorder.requestPermission();
-      if (!mounted || !_holdRequested || generation != _holdGeneration) return;
-      if (!permitted) {
-        _holdRequested = false;
-        _activePointer = null;
-        setState(() => _phase = _Phase.denied);
-        return;
-      }
-      final recorderStart = _recorder.start();
-      _recorderStartFuture = recorderStart;
-      try {
-        await recorderStart;
-      } finally {
-        if (identical(_recorderStartFuture, recorderStart)) {
-          _recorderStartFuture = null;
-        }
-      }
-      if (!mounted || !_holdRequested || generation != _holdGeneration) {
-        await _cancelRecorder();
-        return;
-      }
-      _recorderActive = true;
-      _recordingStartedAt = DateTime.now();
-      _startedAt = _recordingStartedAt;
-      _secondsLeft = 45;
-      _timer?.cancel();
-      _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-        if (!mounted) return;
-        if (_secondsLeft <= 1) {
-          _holdRequested = false;
-          _activePointer = null;
-          unawaited(_submitRecording());
-        } else {
-          setState(() => _secondsLeft--);
-        }
-      });
-      setState(() => _phase = _Phase.recording);
-    } on Object catch (_) {
-      if (generation == _holdGeneration && _holdRequested) {
-        _holdRequested = false;
-        _activePointer = null;
-        if (mounted) setState(() => _phase = _Phase.error);
-      }
-    } finally {
-      _startPending = false;
-    }
+  void _pressMicrophone(int? pointer) {
+    if (_phase != _Phase.ready) return;
+    _activePointer = pointer;
+    _holdToRecord.press();
   }
 
   void _releaseMicrophone(int? pointer) {
-    if (!_holdRequested || (pointer != null && pointer != _activePointer)) {
-      return;
-    }
-    _holdRequested = false;
-    _holdGeneration++;
+    if (pointer != null && pointer != _activePointer) return;
     _activePointer = null;
-    if (_phase == _Phase.permission) {
-      if (mounted) setState(() => _phase = _Phase.ready);
-      return;
-    }
-    if (_phase != _Phase.recording) return;
-    final elapsed = DateTime.now().difference(
-      _recordingStartedAt ?? DateTime.now(),
-    );
-    if (elapsed < const Duration(milliseconds: 600)) {
-      _timer?.cancel();
-      unawaited(_cancelRecorder());
-      if (mounted) setState(() => _phase = _Phase.ready);
-      return;
-    }
-    unawaited(_submitRecording());
+    _holdToRecord.release();
   }
 
   void _cancelMicrophone(int? pointer) {
-    if (!_holdRequested || (pointer != null && pointer != _activePointer)) {
-      return;
-    }
-    _holdRequested = false;
-    _holdGeneration++;
+    if (pointer != null && pointer != _activePointer) return;
     _activePointer = null;
-    _timer?.cancel();
-    if (_phase == _Phase.recording || _phase == _Phase.permission) {
-      unawaited(_cancelRecorder());
-      if (mounted) setState(() => _phase = _Phase.ready);
-    }
+    _holdToRecord.cancel();
   }
 
-  Future<void> _cancelRecorder() {
-    final inFlight = _cancelFuture;
-    if (inFlight != null) return inFlight;
-    _cancellationPending = true;
-    _recorderActive = false;
-    final cancellation = _cancelAndCaptureFailure();
-    _cancelFuture = cancellation;
-    return cancellation;
-  }
-
-  Future<void> _cancelAndCaptureFailure() async {
-    final pendingStart = _recorderStartFuture;
-    if (pendingStart != null) {
-      try {
-        await pendingStart;
-      } on Object catch (_) {
-        // The start failure is handled by the start flow; cancellation remains
-        // best-effort cleanup for any partial platform startup.
-      }
-    }
+  Future<void> _analyzeRecording(RecordedAudio audio) async {
     try {
-      await _recorder.cancel();
-    } on Object catch (_) {
-      // Cancellation is a best-effort discard; disposal still releases the
-      // recorder even if the platform plugin has already stopped it.
-    } finally {
-      _cancellationPending = false;
-    }
-  }
-
-  Future<void> _cancelAndDisposeRecorder() async {
-    if (_holdRequested || _recorderActive) await _cancelRecorder();
-    if (_cancelFuture case final cancellation?) await cancellation;
-    await _recorder.dispose();
-  }
-
-  Future<void> _submitRecording() async {
-    if (_phase != _Phase.recording || !_recorderActive) return;
-    _timer?.cancel();
-    _recorderActive = false;
-    setState(() => _phase = _Phase.analyzing);
-    try {
-      final bytes = await _recorder.stop();
-      if (bytes.isEmpty) throw StateError('empty recording');
-      final elapsed = DateTime.now().difference(_startedAt ?? DateTime.now());
-      final duration = Duration(
-        milliseconds: math.max(500, elapsed.inMilliseconds),
-      );
       final result = await _analysisRepository.analyze(
-        bytes,
-        mimeType: 'audio/wav',
-        duration: duration,
+        audio.bytes,
+        mimeType: audio.mimeType,
+        duration: audio.duration,
       );
       final transcript = result.valueOrNull;
       if (transcript == null || transcript.text.trim().isEmpty) {

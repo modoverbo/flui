@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:typed_data';
 
+import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/l10n/gen/app_localizations.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
-import 'package:flui/features/speaking/domain/speech_recorder.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
 import 'package:flui/shared/widgets/audio_reactive_bubble.dart';

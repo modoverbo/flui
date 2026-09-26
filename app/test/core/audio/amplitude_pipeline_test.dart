@@ -1,4 +1,4 @@
-import 'package:flui/features/speaking/domain/amplitude_pipeline.dart';
+import 'package:flui/core/audio/amplitude_pipeline.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

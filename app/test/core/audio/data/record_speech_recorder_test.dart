@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:flui/features/speaking/data/record_speech_recorder.dart';
+import 'package:flui/core/audio/data/record_speech_recorder.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:record/record.dart';
 
