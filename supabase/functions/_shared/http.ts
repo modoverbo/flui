@@ -4,6 +4,8 @@ export type ErrorCode =
   | "method_not_allowed"
   | "origin_not_allowed"
   | "unauthorized"
+  | "access_required"
+  | "access_unavailable"
   | "invalid_body"
   | "invalid_payload"
   | "invalid_signature"

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:flui/core/error/failure.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/data/http_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/data/supabase_speech_analysis_repository.dart';
@@ -115,6 +116,136 @@ void main() {
       expect(body['audioBase64'], base64Encode([1, 2, 3]));
       expect(body['mimeType'], 'audio/wav');
       expect(body['durationMs'], 1200);
+    },
+  );
+
+  test(
+    'supabase analysis maps 403 access_required to SpeechAnalysisFailure',
+    () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) => http.Response(
+          jsonEncode({
+            'error': {
+              'code': 'access_required',
+              'message': 'An active subscription or trial is required.',
+            },
+          }),
+          403,
+          headers: {'content-type': 'application/json'},
+          request: request,
+        ),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeechAnalysisRepository(recorder.client)
+          .analyze(
+            Uint8List.fromList([1, 2, 3]),
+            mimeType: 'audio/wav',
+            duration: const Duration(seconds: 1),
+          );
+
+      expect(
+        result.failureOrNull,
+        const SpeechAnalysisFailure(SpeechAnalysisErrorCode.accessRequired),
+      );
+    },
+  );
+
+  test(
+    'supabase analysis maps 503 access_unavailable to SpeechAnalysisFailure',
+    () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) => http.Response(
+          jsonEncode({
+            'error': {
+              'code': 'access_unavailable',
+              'message': 'Could not verify access. Try again shortly.',
+            },
+          }),
+          503,
+          headers: {'content-type': 'application/json'},
+          request: request,
+        ),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeechAnalysisRepository(recorder.client)
+          .analyze(
+            Uint8List.fromList([1, 2, 3]),
+            mimeType: 'audio/wav',
+            duration: const Duration(seconds: 1),
+          );
+
+      expect(
+        result.failureOrNull,
+        const SpeechAnalysisFailure(SpeechAnalysisErrorCode.accessUnavailable),
+      );
+    },
+  );
+
+  test(
+    'http analysis maps 403 access_required to SpeechAnalysisFailure',
+    () async {
+      final client = _RecordingClient(
+        (_) => http.Response(
+          jsonEncode({
+            'error': {
+              'code': 'access_required',
+              'message': 'An active subscription or trial is required.',
+            },
+          }),
+          403,
+          headers: {'content-type': 'application/json'},
+        ),
+      );
+
+      final result =
+          await HttpSpeechAnalysisRepository(
+            endpoint: Uri.parse('http://127.0.0.1:8787/analyze'),
+            client: client,
+          ).analyze(
+            Uint8List.fromList([1, 2, 3]),
+            mimeType: 'audio/wav',
+            duration: const Duration(seconds: 1),
+          );
+
+      expect(
+        result.failureOrNull,
+        const SpeechAnalysisFailure(SpeechAnalysisErrorCode.accessRequired),
+      );
+    },
+  );
+
+  test(
+    'http analysis maps 503 access_unavailable to SpeechAnalysisFailure',
+    () async {
+      final client = _RecordingClient(
+        (_) => http.Response(
+          jsonEncode({
+            'error': {
+              'code': 'access_unavailable',
+              'message': 'Could not verify access. Try again shortly.',
+            },
+          }),
+          503,
+          headers: {'content-type': 'application/json'},
+        ),
+      );
+
+      final result =
+          await HttpSpeechAnalysisRepository(
+            endpoint: Uri.parse('http://127.0.0.1:8787/analyze'),
+            client: client,
+          ).analyze(
+            Uint8List.fromList([1, 2, 3]),
+            mimeType: 'audio/wav',
+            duration: const Duration(seconds: 1),
+          );
+
+      expect(
+        result.failureOrNull,
+        const SpeechAnalysisFailure(SpeechAnalysisErrorCode.accessUnavailable),
+      );
     },
   );
 }

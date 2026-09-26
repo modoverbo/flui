@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
+import 'package:flui/features/speaking/data/speech_analysis_error_mapper.dart';
 import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:http/http.dart' as http;
@@ -35,7 +36,10 @@ final class HttpSpeechAnalysisRepository implements SpeechAnalysisRepository {
         }),
       );
       if (response.statusCode != 200) {
-        return Result.err(UnexpectedFailure('speech_${response.statusCode}'));
+        final body = jsonDecode(response.body);
+        return Result.err(
+          mapSpeechAnalysisErrorCode(readSpeechAnalysisErrorCode(body)),
+        );
       }
       final json = jsonDecode(response.body) as Map<String, dynamic>;
       return Result.ok(_parseTranscript(json, duration));

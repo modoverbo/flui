@@ -24,6 +24,8 @@ export interface SpeechCoaching {
 export interface SpeechAnalyzeDeps {
   allowedOrigins: string[];
   getUserId(token: string): Promise<string | null>;
+  /** True when the user may spend a paid analysis call. Throws on infrastructure failure. */
+  hasAccess(userId: string): Promise<boolean>;
   transcribe(bytes: Uint8Array, mimeType: string): Promise<ProviderTranscript>;
   evaluate(text: string): Promise<SpeechCoaching>;
   log?: (message: string, details?: Record<string, unknown>) => void;
@@ -50,6 +52,24 @@ export function createSpeechAnalyzeHandler(
       const token = bearerToken(request.headers.get("Authorization"));
       const userId = token ? await deps.getUserId(token) : null;
       if (!userId) throw new HttpError(401, "unauthorized", "Sign in to analyze speech.");
+
+      let hasAccess: boolean;
+      try {
+        hasAccess = await deps.hasAccess(userId);
+      } catch {
+        throw new HttpError(
+          503,
+          "access_unavailable",
+          "Could not verify access. Try again shortly.",
+        );
+      }
+      if (!hasAccess) {
+        throw new HttpError(
+          403,
+          "access_required",
+          "An active subscription or trial is required.",
+        );
+      }
 
       const body = await request.json().catch(() => {
         throw new HttpError(400, "invalid_body", "Expected a JSON audio payload.");

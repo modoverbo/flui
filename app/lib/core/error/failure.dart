@@ -111,3 +111,28 @@ final class SubscriptionFailure extends Failure {
   @override
   String toString() => 'SubscriptionFailure($code)';
 }
+
+enum SpeechAnalysisErrorCode {
+  accessRequired,
+  accessUnavailable,
+  dailyLimitReached,
+  rateLimited,
+  unknown,
+}
+
+@immutable
+final class SpeechAnalysisFailure extends Failure {
+  const new(this.code);
+
+  final SpeechAnalysisErrorCode code;
+
+  @override
+  bool operator ==(Object other) =>
+      other is SpeechAnalysisFailure && other.code == code;
+
+  @override
+  int get hashCode => Object.hash(SpeechAnalysisFailure, code);
+
+  @override
+  String toString() => 'SpeechAnalysisFailure($code)';
+}
