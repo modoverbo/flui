@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/form_recall_prompt.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flutter_test/flutter_test.dart';

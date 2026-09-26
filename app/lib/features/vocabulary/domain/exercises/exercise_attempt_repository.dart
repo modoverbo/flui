@@ -1,6 +1,6 @@
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 
 /// The signed-in user's `exercise_attempts` (append-only).
 abstract interface class ExerciseAttemptRepository {

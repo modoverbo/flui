@@ -1,7 +1,7 @@
 import 'package:flui/core/date/local_date.dart';
-import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/themes/domain/theme.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';

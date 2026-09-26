@@ -1,4 +1,4 @@
-import 'package:flui/features/exercises/domain/text_matching.dart';
+import 'package:flui/features/vocabulary/domain/exercises/text_matching.dart';
 import 'package:meta/meta.dart';
 
 /// The written forms that count as using a word.

@@ -3,7 +3,7 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/features/exercises/domain/production_check.dart';
+import 'package:flui/features/vocabulary/domain/exercises/production_check.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/highlighted_text.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_text_field.dart';

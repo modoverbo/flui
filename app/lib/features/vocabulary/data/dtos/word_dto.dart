@@ -1,6 +1,6 @@
-import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/themes/data/dtos/theme_dto.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

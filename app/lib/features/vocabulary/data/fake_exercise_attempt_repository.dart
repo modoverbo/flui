@@ -1,8 +1,8 @@
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/fake/fake_remote.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt_repository.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt_repository.dart';
 
 /// In-memory `exercise_attempts`, append-only, per user.
 final class FakeExerciseAttemptRepository

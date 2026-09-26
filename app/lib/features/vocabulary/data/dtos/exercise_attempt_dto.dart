@@ -1,5 +1,5 @@
 import 'package:flui/core/date/local_date.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

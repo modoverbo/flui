@@ -1,7 +1,6 @@
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
-import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/vocabulary/data/dtos/word_dto.dart';
 import 'package:flui/features/vocabulary/data/dtos/word_progress_dto.dart';
@@ -10,6 +9,7 @@ import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_word_progress_repository.dart';
 import 'package:flui/features/vocabulary/data/supabase_content_repository.dart';
 import 'package:flui/features/vocabulary/data/supabase_word_progress_repository.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';

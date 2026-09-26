@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 
 /// Rows of `supabase/seed.sql` by table name (without `public.`).

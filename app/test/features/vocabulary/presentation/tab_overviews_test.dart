@@ -1,9 +1,9 @@
 import 'package:flui/features/daily/domain/daily_session.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
 import 'package:flui/features/profile/domain/achievements.dart';
 import 'package:flui/features/profile/presentation/providers/progress_overview.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/reading/presentation/providers/context_readings.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
