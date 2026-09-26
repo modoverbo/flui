@@ -136,6 +136,7 @@ class _PaywallFlowState extends State<PaywallFlow> {
               // the dock, so page 2 never ends in half a screen of nothing.
               child: LayoutBuilder(
                 builder: (context, constraints) => SingleChildScrollView(
+                  key: ValueKey(step),
                   padding: const EdgeInsets.only(
                     bottom: StickyCtaDock.reservedHeight,
                   ),

@@ -375,6 +375,59 @@ void main() {
       );
     });
 
+    testWidgets('resets scroll when moving between trial and plan choice', (
+      tester,
+    ) async {
+      await pumpPaywall(tester, surfaceSize: const Size(432, 800));
+      await next(tester);
+
+      final scrollable = find.byType(Scrollable).first;
+      double scrollOffset() =>
+          tester.state<ScrollableState>(scrollable).position.pixels;
+      final trialSafety = find.text(
+        'Si cancelas antes del día 8, no pagas nada.',
+      );
+      await tester.ensureVisible(trialSafety);
+      await tester.pumpAndSettle();
+      expect(scrollOffset(), greaterThan(0));
+
+      await next(tester);
+
+      final choiceTitle = find.text('Elige tu plan');
+      final selectedPlan = find.byType(PlanCard).first;
+      expect(choiceTitle, findsOneWidget);
+      expect(scrollOffset(), 0);
+      expect(
+        tester.getRect(choiceTitle).top,
+        greaterThanOrEqualTo(tester.getRect(scrollable).top),
+      );
+      expect(
+        tester.getRect(choiceTitle).bottom,
+        lessThanOrEqualTo(tester.getRect(selectedPlan).top),
+      );
+      expect(
+        tester.getRect(selectedPlan).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
+      );
+
+      await tester.tap(find.byType(IconButton).first);
+      await tester.pumpAndSettle();
+      expect(find.text('Cómo funciona tu prueba'), findsOneWidget);
+      expect(scrollOffset(), 0);
+
+      await next(tester);
+      expect(find.text('Elige tu plan'), findsOneWidget);
+      expect(scrollOffset(), 0);
+      expect(
+        tester.getRect(find.byType(PlanCard).first).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
+      );
+    });
+
     testWidgets('lists five benefits and three objections', (tester) async {
       await toChoice(tester);
 
