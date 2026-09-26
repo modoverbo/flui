@@ -1,3 +1,5 @@
+import 'dart:ui' show Tristate;
+
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/config/feature_flags.dart';
@@ -247,7 +249,7 @@ void main() {
       await next(tester);
     }
 
-    testWidgets('leads with the quarterly plan and its real prices', (
+    testWidgets('compares catalog plans with the same editorial hierarchy', (
       tester,
     ) async {
       await toChoice(tester);
@@ -259,18 +261,117 @@ void main() {
       expect(find.text('Mensual'), findsOneWidget);
       expect(find.text(r'US$ 6.99 al mes'), findsOneWidget);
 
-      // Recommended first, dominant, and its badge above the card fold.
+      // Recommendation controls order, not a different card hierarchy.
       final cards = tester.widgetList<PlanCard>(find.byType(PlanCard)).toList();
       expect(cards.first.plan.id, 'quarterly');
       expect(cards.first.recommended, isTrue);
+      expect(cards.last.plan.id, 'monthly');
       expect(cards.last.recommended, isFalse);
+      final quarterlyPrice = tester
+          .widget<Text>(find.text(r'US$ 16.15 cada 3 meses'))
+          .style;
+      final monthlyPrice = tester
+          .widget<Text>(find.text(r'US$ 6.99 al mes'))
+          .style;
+      expect(quarterlyPrice?.fontSize, monthlyPrice?.fontSize);
       expect(
-        tester.getSize(find.byType(PlanCard).first).height,
-        greaterThan(tester.getSize(find.byType(PlanCard).last).height),
+        tester.widget<Text>(find.text('Trimestral')).style?.color,
+        FluiColors.charcoal,
       );
       expect(
-        tester.getRect(find.text('AHORRA 23%')).top,
-        lessThan(tester.getRect(find.text('Trimestral')).top),
+        tester.widget<Text>(find.text('Mensual')).style?.color,
+        FluiColors.charcoal,
+      );
+      expect(find.text('Plan seleccionado'), findsOneWidget);
+    });
+
+    testWidgets(
+      'exposes exactly the active plan as selected to assistive tech',
+      (tester) async {
+        final semantics = tester.ensureSemantics();
+        await toChoice(tester);
+
+        SemanticsData planSemantics(String label) => tester
+            .getSemantics(
+              find.bySemanticsLabel(RegExp('^${RegExp.escape(label)}\\.')),
+            )
+            .getSemanticsData();
+
+        expect(
+          planSemantics('Trimestral').flagsCollection.isSelected,
+          Tristate.isTrue,
+        );
+        expect(
+          planSemantics('Mensual').flagsCollection.isSelected,
+          Tristate.isFalse,
+        );
+
+        final monthlyPlan = find.semantics.byLabel(RegExp(r'^Mensual\.'));
+        expect(
+          monthlyPlan.evaluate().single.getSemanticsData().hasAction(
+            SemanticsAction.tap,
+          ),
+          isTrue,
+        );
+        tester.semantics.tap(monthlyPlan);
+        await tester.pumpAndSettle();
+
+        expect(
+          planSemantics('Trimestral').flagsCollection.isSelected,
+          Tristate.isFalse,
+        );
+        expect(
+          planSemantics('Mensual').flagsCollection.isSelected,
+          Tristate.isTrue,
+        );
+        expect(
+          tester
+              .widgetList<Material>(
+                find.descendant(
+                  of: find.byType(PlanCard).first,
+                  matching: find.byType(Material),
+                ),
+              )
+              .single
+              .animationDuration,
+          Duration.zero,
+          reason: 'plan selection settles immediately when motion is reduced',
+        );
+        semantics.dispose();
+      },
+    );
+
+    testWidgets('keeps plan facts and the checkout dock reachable at 320px', (
+      tester,
+    ) async {
+      await pumpPaywall(tester, surfaceSize: const Size(320, 560));
+      await next(tester);
+      await next(tester);
+
+      const trialSafety = 'Si cancelas antes del día 8, no pagas nada.';
+      expect(find.text(trialSafety), findsOneWidget);
+      expect(find.text(r'Hoy pagas US$0.'), findsOneWidget);
+      expect(find.text('Empezar prueba gratis'), findsOneWidget);
+      await tester.ensureVisible(find.text(trialSafety));
+      await tester.pumpAndSettle();
+      expect(
+        tester.getRect(find.text(trialSafety)).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
+      );
+      await tester.ensureVisible(find.text(r'US$ 16.15 cada 3 meses'));
+      await tester.ensureVisible(find.text(r'US$ 6.99 al mes'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Trimestral'), findsOneWidget);
+      expect(find.text('Mensual'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      expect(
+        tester.getRect(find.text(r'US$ 6.99 al mes')).bottom,
+        lessThanOrEqualTo(
+          tester.getRect(find.text('Empezar prueba gratis')).top,
+        ),
       );
     });
 

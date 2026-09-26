@@ -412,6 +412,14 @@ class _ChoosePage extends StatelessWidget {
           ),
         ),
         SizedBox(height: layout.blockGap),
+        Text(
+          l10n.paywallTrialSafety,
+          style: type.body.copyWith(
+            color: FluiColors.greenDeep,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(height: FluiSpacing.md),
         for (final plan in ordered(plans)) ...[
           PlanCard(
             plan: plan,

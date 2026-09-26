@@ -2,19 +2,19 @@ import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_surfaces.dart';
 import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:flui/features/subscription/domain/subscription_plan.dart';
-import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// A plan on the paywall.
 ///
-/// The recommended plan is the dark one and it is physically bigger; its
-/// savings badge sits *above* the card so it is read before the price, not
-/// after it. Prices always come from `subscription_plans`.
+/// Plans share one hierarchy so catalog prices and billing terms are easy to
+/// compare. Recommendation is conveyed by ordering; the selected state is
+/// explicit and independent from that recommendation. Prices always come
+/// from `subscription_plans`.
 class PlanCard extends StatelessWidget {
   const new({
     required this.plan,
@@ -27,7 +27,7 @@ class PlanCard extends StatelessWidget {
   final SubscriptionPlan plan;
   final bool selected;
 
-  /// The plan we lead with: dark plate, larger type, badge above the fold.
+  /// The catalog's recommendation; the surrounding list controls ordering.
   final bool recommended;
   final VoidCallback onSelected;
 
@@ -49,92 +49,85 @@ class PlanCard extends StatelessWidget {
           )
         : null;
 
-    final body = Padding(
-      padding: EdgeInsets.all(recommended ? FluiSpacing.lg : FluiSpacing.md),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  plan.label,
-                  style: (recommended ? type.titleM : type.body).copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: recommended ? FluiColors.cream : FluiColors.charcoal,
-                  ),
-                ),
-                const SizedBox(height: FluiSpacing.xxs),
-                Text(
-                  priceText,
-                  style: (recommended ? type.titleL : type.bodyL).copyWith(
-                    color: recommended ? FluiColors.cream : FluiColors.charcoal,
-                  ),
-                ),
-                if (monthly != null)
-                  Text(
-                    monthly,
-                    style: type.body.copyWith(
-                      color: recommended
-                          ? FluiColors.creamMuted
-                          : FluiColors.gray,
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          const SizedBox(width: FluiSpacing.sm),
-          _SelectionMark(selected: selected, onDark: recommended),
-        ],
-      ),
-    );
-
     final card = Semantics(
       selected: selected,
       inMutuallyExclusiveGroup: true,
       button: true,
       label: [plan.label, priceText, ?monthly, ?savingsLabel].join('. '),
+      onTap: onSelected,
       excludeSemantics: true,
       child: Material(
-        color: recommended ? Colors.transparent : FluiColors.surface,
+        animationDuration: FluiMotion.resolve(
+          context,
+          const Duration(milliseconds: 160),
+        ),
+        color: selected ? FluiColors.greenTint : FluiColors.surface,
         shape: RoundedRectangleBorder(
           borderRadius: FluiRadii.cardAll,
           side: selected
-              ? BorderSide(
-                  color: recommended
-                      ? FluiColors.yellowElectric
-                      : FluiColors.greenDeep,
-                  width: 2,
-                )
-              : FluiSurfaces.hairline(onDark: recommended),
+              ? const BorderSide(color: FluiColors.greenDeep, width: 2)
+              : const BorderSide(color: FluiColors.outline),
         ),
         clipBehavior: Clip.antiAlias,
-        child: Stack(
-          children: [
-            if (recommended)
-              const Positioned.fill(
-                child: FluiPlate(
-                  borderRadius: FluiRadii.cardAll,
-                  child: SizedBox.expand(),
-                ),
+        child: InkWell(
+          borderRadius: FluiRadii.cardAll,
+          focusColor: FluiColors.greenDeep.withValues(alpha: 0.16),
+          splashColor: FluiColors.greenDeep.withValues(alpha: 0.16),
+          onTap: onSelected,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              minHeight: FluiSpacing.minTapTarget,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(FluiSpacing.md),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          plan.label,
+                          style: type.titleM.copyWith(
+                            fontWeight: FontWeight.w600,
+                            color: FluiColors.charcoal,
+                          ),
+                        ),
+                      ),
+                      _SelectionMark(selected: selected),
+                    ],
+                  ),
+                  if (selected) ...[
+                    const SizedBox(height: FluiSpacing.xxs),
+                    Text(
+                      l10n.paywallPlanSelected,
+                      style: FluiTypeScale.compact.label.copyWith(
+                        color: FluiColors.greenDeep,
+                      ),
+                    ),
+                  ],
+                  const SizedBox(height: FluiSpacing.xs),
+                  Text(
+                    priceText,
+                    style: type.bodyL.copyWith(color: FluiColors.charcoal),
+                  ),
+                  if (monthly != null)
+                    Text(
+                      monthly,
+                      style: type.body.copyWith(color: FluiColors.gray),
+                    ),
+                  if (savingsLabel != null) ...[
+                    const SizedBox(height: FluiSpacing.xs),
+                    _SavingsBadge(label: savingsLabel),
+                  ],
+                ],
               ),
-            InkWell(onTap: onSelected, child: body),
-          ],
+            ),
+          ),
         ),
       ),
     );
-
-    if (savingsLabel == null) return card;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        // Above the card fold: the reason to look at this one first.
-        _SavingsBadge(label: savingsLabel),
-        const SizedBox(height: FluiSpacing.xs),
-        card,
-      ],
-    );
+    return card;
   }
 }
 
@@ -166,40 +159,28 @@ class _SavingsBadge extends StatelessWidget {
 }
 
 class _SelectionMark extends StatelessWidget {
-  const new({required this.selected, required this.onDark});
+  const new({required this.selected});
 
   final bool selected;
-  final bool onDark;
 
   @override
   Widget build(BuildContext context) {
-    final color = onDark ? FluiColors.cream : FluiColors.greenDeep;
     return SizedBox.square(
       dimension: 24,
       child: DecoratedBox(
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(
-            color: selected
-                ? (onDark ? FluiColors.yellowElectric : color)
-                : (onDark ? FluiColors.creamMuted : FluiColors.outline),
+            color: selected ? FluiColors.greenDeep : FluiColors.outline,
             width: 2,
           ),
-          color: selected
-              ? (onDark ? FluiColors.yellowElectric : color)
-              : Colors.transparent,
+          color: selected ? FluiColors.greenDeep : Colors.transparent,
         ),
         child: selected
-            ? Center(
-                child: SizedBox.square(
-                  dimension: 8,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: onDark ? FluiColors.charcoal : FluiColors.cream,
-                    ),
-                  ),
-                ),
+            ? const Icon(
+                Icons.check_rounded,
+                color: FluiColors.surface,
+                size: 16,
               )
             : null,
       ),
