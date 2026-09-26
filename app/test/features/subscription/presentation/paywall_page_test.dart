@@ -2,6 +2,7 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/l10n/gen/app_localizations_es.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
@@ -16,6 +17,8 @@ import 'package:flui/features/subscription/presentation/pages/paywall_page.dart'
 import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/features/subscription/presentation/widgets/plan_card.dart';
+import 'package:flui/features/subscription/presentation/widgets/trial_timeline.dart';
+import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -23,6 +26,9 @@ import '../../../helpers/pump_router.dart';
 import '../../../helpers/reduce_motion.dart';
 
 void main() {
+  const noReminderCopy =
+      'Faltan 2 días. La fecha exacta está en Tu progreso, siempre a la vista.';
+
   late FakeAuthRepository auth;
   late FakeSubscriptionRepository subscriptions;
   late FakeCheckoutLauncher launcher;
@@ -56,7 +62,10 @@ void main() {
 
   tearDown(() => auth.dispose());
 
-  Future<void> pumpPaywall(WidgetTester tester) async {
+  Future<void> pumpPaywall(
+    WidgetTester tester, {
+    Size surfaceSize = const Size(420, 1600),
+  }) async {
     reduceMotion(tester);
     await pumpRoutedPage(
       tester,
@@ -68,7 +77,7 @@ void main() {
         checkoutLauncherProvider.overrideWithValue(launcher),
         onboardingStoreProvider.overrideWithValue(store),
       ],
-      surfaceSize: const Size(420, 1600),
+      surfaceSize: surfaceSize,
     );
     await tester.pumpAndSettle();
   }
@@ -120,6 +129,7 @@ void main() {
         findsOneWidget,
       );
       expect(find.text('Día 5'), findsOneWidget);
+      expect(find.text(noReminderCopy), findsOneWidget);
       expect(find.text('Día 8'), findsOneWidget);
       expect(
         find.text('Empieza tu plan. Cancelas cuando quieras.'),
@@ -128,6 +138,20 @@ void main() {
       expect(
         find.text('Si cancelas antes del día 8, no pagas nada.'),
         findsOneWidget,
+      );
+      expect(find.text(r'Hoy pagas US$0.'), findsOneWidget);
+    });
+
+    test('uses reminder copy only when the reminder is enabled', () {
+      final l10n = AppLocalizationsEs();
+
+      expect(
+        TrialTimeline.nodesOf(l10n, remindersEnabled: true)[1].body,
+        'Te avisamos. Faltan 2 días.',
+      );
+      expect(
+        TrialTimeline.nodesOf(l10n, remindersEnabled: false)[1].body,
+        noReminderCopy,
       );
     });
 
@@ -150,6 +174,69 @@ void main() {
         ),
         findsOneWidget,
       );
+    });
+
+    testWidgets('exposes each milestone as one ordered semantic stop', (
+      tester,
+    ) async {
+      final semantics = tester.ensureSemantics();
+      await pumpPaywall(tester);
+      await next(tester);
+
+      const milestones = [
+        'Hoy. Acceso completo. No te cobramos nada.',
+        'Día 5. $noReminderCopy',
+        'Día 8. Empieza tu plan. Cancelas cuando quieras.',
+      ];
+      final firstMilestone = tester.getSemantics(find.text('Hoy'));
+      var root = firstMilestone;
+      var parent = root.parent;
+      while (parent != null) {
+        root = parent;
+        parent = root.parent;
+      }
+      final renderedLabels = <String>[];
+      bool visit(SemanticsNode node) {
+        final label = node.getSemanticsData().label;
+        if (label.isNotEmpty) renderedLabels.add(label);
+        node.visitChildren(visit);
+        return true;
+      }
+
+      visit(root);
+
+      expect(
+        renderedLabels.where(milestones.contains),
+        milestones,
+        reason: 'each milestone should be announced once in visual order',
+      );
+      expect(renderedLabels, isNot(contains('Hoy')));
+      expect(
+        renderedLabels,
+        isNot(contains('Acceso completo. No te cobramos nada.')),
+      );
+      semantics.dispose();
+    });
+
+    testWidgets('keeps the trial milestones and dock clear on a short screen', (
+      tester,
+    ) async {
+      await pumpPaywall(tester, surfaceSize: const Size(320, 560));
+      await next(tester);
+
+      expect(find.text('Hoy'), findsOneWidget);
+      expect(find.text('Día 5'), findsOneWidget);
+      expect(find.text('Día 8'), findsOneWidget);
+      final safety = find.text('Si cancelas antes del día 8, no pagas nada.');
+      expect(safety, findsOneWidget);
+      expect(find.text('Seguir'), findsOneWidget);
+      await tester.ensureVisible(safety);
+      await tester.pumpAndSettle();
+      expect(
+        tester.getRect(safety).bottom,
+        lessThanOrEqualTo(tester.getRect(find.text('Seguir')).top),
+      );
+      expect(tester.takeException(), isNull);
     });
   });
 

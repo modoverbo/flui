@@ -112,19 +112,36 @@ class _Node extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: EdgeInsets.only(bottom: isLast ? 0 : FluiSpacing.lg),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    node.label,
-                    style: type.titleM.copyWith(color: FluiColors.charcoal),
+              child: Semantics(
+                container: true,
+                excludeSemantics: true,
+                label: '${node.label}. ${node.body}',
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    color: FluiColors.surface,
+                    border: Border.all(color: FluiColors.outline),
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  const SizedBox(height: FluiSpacing.xxs),
-                  Text(
-                    node.body,
-                    style: type.body.copyWith(color: FluiColors.charcoal),
+                  child: Padding(
+                    padding: const EdgeInsets.all(FluiSpacing.md),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          node.label,
+                          style: type.titleM.copyWith(
+                            color: FluiColors.greenDeep,
+                          ),
+                        ),
+                        const SizedBox(height: FluiSpacing.xxs),
+                        Text(
+                          node.body,
+                          style: type.body.copyWith(color: FluiColors.charcoal),
+                        ),
+                      ],
+                    ),
                   ),
-                ],
+                ),
               ),
             ),
           ),
