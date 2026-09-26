@@ -6,7 +6,7 @@ import 'package:flui/features/daily/presentation/controllers/time_budget_control
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
 import 'package:flui/features/daily/presentation/providers/today_overview.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';

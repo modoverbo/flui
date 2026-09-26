@@ -5,7 +5,7 @@ import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
 import 'package:flui/features/daily/presentation/session_page.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/training_card.dart';

@@ -1,8 +1,8 @@
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/features/daily/domain/session_flow.dart';
 import 'package:flui/features/daily/domain/session_step.dart';
-import 'package:flui/features/exercises/domain/cloze_attempt_flow.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_attempt_flow.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';

@@ -1,5 +1,5 @@
-import 'package:flui/features/exercises/domain/cloze_attempt_flow.dart';
-import 'package:flui/features/exercises/presentation/widgets/cloze_view.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_attempt_flow.dart';
+import 'package:flui/features/vocabulary/presentation/widgets/cloze_view.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 

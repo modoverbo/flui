@@ -1,7 +1,7 @@
-import 'package:flui/features/exercises/domain/form_recall_check.dart';
-import 'package:flui/features/exercises/presentation/widgets/form_recall_view.dart';
+import 'package:flui/features/vocabulary/domain/exercises/form_recall_check.dart';
 import 'package:flui/features/vocabulary/domain/form_recall_prompt.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
+import 'package:flui/features/vocabulary/presentation/widgets/form_recall_view.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 

@@ -1,5 +1,5 @@
-import 'package:flui/features/exercises/domain/text_matching.dart';
-import 'package:flui/features/exercises/domain/word_forms.dart';
+import 'package:flui/features/vocabulary/domain/exercises/text_matching.dart';
+import 'package:flui/features/vocabulary/domain/exercises/word_forms.dart';
 import 'package:meta/meta.dart';
 
 enum FormRecallStatus { pending, accepted, revealed }

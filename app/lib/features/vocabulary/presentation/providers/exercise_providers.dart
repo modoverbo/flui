@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flui/features/exercises/domain/exercise_attempt_repository.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'exercise_providers.g.dart';

@@ -1,4 +1,4 @@
-import 'package:flui/features/exercises/domain/session_frustration_guard.dart';
+import 'package:flui/features/vocabulary/domain/exercises/session_frustration_guard.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

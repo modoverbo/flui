@@ -3,9 +3,9 @@ import 'package:flui/core/error/result.dart';
 import 'package:flui/core/fake/fake_remote.dart';
 import 'package:flui/core/supabase/data_error_mapper.dart';
 import 'package:flui/core/supabase/paged_query.dart';
-import 'package:flui/features/exercises/data/dtos/exercise_attempt_dto.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt_repository.dart';
+import 'package:flui/features/vocabulary/data/dtos/exercise_attempt_dto.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt_repository.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// `exercise_attempts` of the signed-in user (insert and select only).

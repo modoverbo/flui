@@ -1,8 +1,8 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/features/exercises/domain/word_forms.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/reading/presentation/widgets/reading_card.dart';
+import 'package:flui/features/vocabulary/domain/exercises/word_forms.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';

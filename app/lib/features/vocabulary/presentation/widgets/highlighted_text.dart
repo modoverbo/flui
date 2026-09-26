@@ -1,5 +1,5 @@
-import 'package:flui/features/exercises/domain/text_matching.dart';
-import 'package:flui/features/exercises/domain/word_forms.dart';
+import 'package:flui/features/vocabulary/domain/exercises/text_matching.dart';
+import 'package:flui/features/vocabulary/domain/exercises/word_forms.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// [text] with every form of a word in bold ("Su mirada era **perspicaz**").

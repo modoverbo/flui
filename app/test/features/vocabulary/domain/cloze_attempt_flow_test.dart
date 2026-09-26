@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flui/features/exercises/domain/cloze_attempt_flow.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_attempt_flow.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flutter_test/flutter_test.dart';
 

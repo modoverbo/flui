@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:flui/features/exercises/domain/cloze_exercise.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:meta/meta.dart';
 

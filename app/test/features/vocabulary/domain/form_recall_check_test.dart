@@ -1,5 +1,5 @@
-import 'package:flui/features/exercises/domain/form_recall_check.dart';
-import 'package:flui/features/exercises/domain/word_forms.dart';
+import 'package:flui/features/vocabulary/domain/exercises/form_recall_check.dart';
+import 'package:flui/features/vocabulary/domain/exercises/word_forms.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

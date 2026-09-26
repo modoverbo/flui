@@ -1,9 +1,9 @@
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
-import 'package:flui/features/exercises/data/dtos/exercise_attempt_dto.dart';
-import 'package:flui/features/exercises/data/fake_exercise_attempt_repository.dart';
-import 'package:flui/features/exercises/data/supabase_exercise_attempt_repository.dart';
-import 'package:flui/features/exercises/domain/exercise_attempt.dart';
+import 'package:flui/features/vocabulary/data/dtos/exercise_attempt_dto.dart';
+import 'package:flui/features/vocabulary/data/fake_exercise_attempt_repository.dart';
+import 'package:flui/features/vocabulary/data/supabase_exercise_attempt_repository.dart';
+import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
