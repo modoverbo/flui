@@ -7,6 +7,7 @@ import 'package:flui/features/onboarding/presentation/providers/onboarding_provi
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/shared/motion/feedback_motion.dart';
+import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -35,38 +36,202 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('the three slides set the key noun in yellow', (tester) async {
+  testWidgets(
+    'the three benefit headlines emphasize their key phrase in green',
+    (tester) async {
+      reduceMotion(tester);
+      await pumpIntro(tester);
+
+      Color? highlightOf(String plain, String tail) {
+        final finder = find.byWidgetPredicate(
+          (widget) => widget is RichText && widget.text.toPlainText() == plain,
+        );
+        expect(finder, findsOneWidget);
+        final spans = <TextSpan>[];
+        (tester.widget<RichText>(finder).text as TextSpan).visitChildren((
+          span,
+        ) {
+          if (span is TextSpan && span.text != null) spans.add(span);
+          return true;
+        });
+        return spans.singleWhere((span) => span.text == tail).style?.color;
+      }
+
+      expect(
+        highlightOf('No te faltan ideas. Te faltan palabras.', 'palabras.'),
+        FluiColors.greenDeep,
+      );
+      await next(tester);
+      expect(
+        highlightOf('Tú eliges cuánto. flui se adapta.', 'se adapta.'),
+        FluiColors.greenDeep,
+      );
+      await next(tester);
+      expect(
+        highlightOf('Aprende una palabra. Úsala hoy.', 'Úsala hoy.'),
+        FluiColors.greenDeep,
+      );
+    },
+  );
+
+  testWidgets('benefit steps use an editorial paper surface and green action', (
+    tester,
+  ) async {
     reduceMotion(tester);
     await pumpIntro(tester);
 
-    Color? highlightOf(String plain, String tail) {
-      final finder = find.byWidgetPredicate(
-        (widget) => widget is RichText && widget.text.toPlainText() == plain,
+    void expectEditorialSurface() {
+      expect(
+        tester.widget<Scaffold>(find.byType(Scaffold).last).backgroundColor,
+        FluiColors.cream,
       );
-      expect(finder, findsOneWidget);
-      final spans = <TextSpan>[];
-      (tester.widget<RichText>(finder).text as TextSpan).visitChildren((span) {
-        if (span is TextSpan && span.text != null) spans.add(span);
-        return true;
-      });
-      return spans.singleWhere((span) => span.text == tail).style?.color;
+      expect(find.byType(FluiPlate), findsNothing);
+      expect(
+        tester
+            .widget<FilledButton>(find.byType(FilledButton).last)
+            .style!
+            .backgroundColor!
+            .resolve(const <WidgetState>{}),
+        FluiColors.greenDeep,
+      );
     }
 
+    expectEditorialSurface();
     expect(
-      highlightOf('No te faltan ideas. Te faltan palabras.', 'palabras.'),
-      FluiColors.yellowElectric,
+      tester
+          .widget<Text>(
+            find.text(
+              'flui te ayuda a encontrar la palabra que encaja, '
+              'justo cuando la necesitas.',
+            ),
+          )
+          .style!
+          .color,
+      FluiColors.ink,
     );
     await next(tester);
-    expect(
-      highlightOf('Tú eliges cuánto. flui se adapta.', 'se adapta.'),
-      FluiColors.yellowElectric,
-    );
+    expectEditorialSurface();
     await next(tester);
-    expect(
-      highlightOf('Aprende una palabra. Úsala hoy.', 'Úsala hoy.'),
-      FluiColors.yellowElectric,
-    );
+    expectEditorialSurface();
   });
+
+  testWidgets('benefit pages can be swiped one at a time with progress', (
+    tester,
+  ) async {
+    reduceMotion(tester);
+    await pumpIntro(tester);
+
+    expect(
+      find.text('No te faltan ideas. Te faltan palabras.'),
+      findsOneWidget,
+    );
+    expect(find.text('Tú eliges cuánto. flui se adapta.'), findsNothing);
+    expect(find.bySemanticsLabel('Paso 1 de 6'), findsOneWidget);
+
+    await tester.fling(
+      find.text('No te faltan ideas. Te faltan palabras.'),
+      const Offset(-280, 0),
+      1000,
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('No te faltan ideas. Te faltan palabras.'), findsNothing);
+    expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
+    expect(find.text('Aprende una palabra. Úsala hoy.'), findsNothing);
+    expect(find.bySemanticsLabel('Paso 2 de 6'), findsOneWidget);
+  });
+
+  testWidgets(
+    'accessible controls move between benefits and return to welcome',
+    (tester) async {
+      reduceMotion(tester);
+      await pumpIntro(tester);
+
+      await next(tester);
+      expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
+      expect(find.bySemanticsLabel('Paso 2 de 6'), findsOneWidget);
+
+      await tester.tap(find.byTooltip('Atrás'));
+      await tester.pumpAndSettle();
+      expect(
+        find.text('No te faltan ideas. Te faltan palabras.'),
+        findsOneWidget,
+      );
+      expect(find.bySemanticsLabel('Paso 1 de 6'), findsOneWidget);
+
+      await tester.tap(find.byTooltip('Atrás'));
+      await tester.pumpAndSettle();
+      expect(find.text('route:/welcome'), findsOneWidget);
+    },
+  );
+
+  testWidgets('reduced motion swaps to the selected benefit immediately', (
+    tester,
+  ) async {
+    reduceMotion(tester);
+    await pumpIntro(tester);
+
+    await tester.fling(
+      find.text('No te faltan ideas. Te faltan palabras.'),
+      const Offset(-280, 0),
+      1000,
+    );
+    await tester.pump();
+
+    expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
+    expect(find.text('No te faltan ideas. Te faltan palabras.'), findsNothing);
+  });
+
+  testWidgets(
+    'benefit transitions slide in their direction and expose one page',
+    (tester) async {
+      await pumpIntro(tester);
+
+      final firstPage = find.text('No te faltan ideas. Te faltan palabras.');
+      final secondPage = find.text('Tú eliges cuánto. flui se adapta.');
+      final firstCenter = tester.getCenter(firstPage);
+
+      await tester.tap(find.text('Seguir'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 110));
+
+      expect(
+        find.bySemanticsLabel(RegExp(r'^No te faltan ideas\.')),
+        findsNothing,
+      );
+      expect(
+        find.bySemanticsLabel(RegExp(r'^Tú eliges cuánto\.')),
+        findsOneWidget,
+      );
+      expect(find.bySemanticsLabel('Paso 2 de 6'), findsOneWidget);
+      expect(tester.getCenter(firstPage).dx, lessThan(firstCenter.dx));
+      expect(tester.getCenter(secondPage).dx, greaterThan(firstCenter.dx));
+    },
+  );
+
+  testWidgets(
+    'benefit back and question boundary preserve the six-step order',
+    (tester) async {
+      reduceMotion(tester);
+      await pumpIntro(tester);
+
+      await next(tester);
+      await next(tester);
+      expect(find.text('Aprende una palabra. Úsala hoy.'), findsOneWidget);
+
+      await tester.tap(find.byTooltip('Atrás'));
+      await tester.pumpAndSettle();
+      expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
+
+      await next(tester);
+      await next(tester);
+      expect(find.text('¿Dónde te traiciona el vocabulario?'), findsOneWidget);
+
+      await tester.tap(find.byTooltip('Atrás'));
+      await tester.pumpAndSettle();
+      expect(find.text('Aprende una palabra. Úsala hoy.'), findsOneWidget);
+    },
+  );
 
   testWidgets('no slide ships a pastel icon tile', (tester) async {
     reduceMotion(tester);
