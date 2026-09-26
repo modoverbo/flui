@@ -1,7 +1,7 @@
 import 'dart:async';
 
+import 'package:flui/core/audio/amplitude_pipeline.dart';
 import 'package:flui/core/theme/flui_motion.dart';
-import 'package:flui/features/speaking/domain/amplitude_pipeline.dart';
 import 'package:flui/shared/widgets/speaking_bubble.dart';
 import 'package:material_ui/material_ui.dart';
 

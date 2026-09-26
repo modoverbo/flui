@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:flui/features/speaking/domain/speech_recorder.dart';
+import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:record/record.dart';
 
 const speechStreamConfig = RecordConfig(
