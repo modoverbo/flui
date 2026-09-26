@@ -14,7 +14,6 @@ import 'package:flui/features/onboarding/presentation/widgets/onboarding_questio
 import 'package:flui/shared/motion/reveal_lines.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
-import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:flui/shared/widgets/flui_progress_bar.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flui/shared/widgets/sticky_cta_dock.dart';
@@ -81,8 +80,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
         OnboardingAnswers.empty;
     final controller = ref.read(onboardingAnswersControllerProvider.notifier);
     final step = _step;
-    final isBenefitStep = _index < 3;
-    final onDark = !isBenefitStep && step != OnboardingStep.lesson;
+    const onDark = false;
 
     final body = switch (step) {
       OnboardingStep.promise => _Slide(
@@ -159,7 +157,6 @@ class _IntroPageState extends ConsumerState<IntroPage> {
         : body;
 
     final content = StickyCtaDock(
-      onDark: onDark,
       dock: _Dock(
         label: step == OnboardingStep.lesson
             ? l10n.onboardingSeePlan
@@ -200,10 +197,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
       ),
     );
 
-    return Scaffold(
-      backgroundColor: onDark ? FluiColors.greenDeep : FluiColors.cream,
-      body: onDark ? FluiPlate.fullBleed(child: content) : content,
-    );
+    return Scaffold(backgroundColor: FluiColors.cream, body: content);
   }
 }
 

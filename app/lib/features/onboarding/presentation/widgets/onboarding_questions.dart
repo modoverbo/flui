@@ -1,13 +1,12 @@
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
+import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/core/theme/flui_surfaces.dart';
 import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/reading/presentation/scene_label.dart';
-import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
@@ -105,11 +104,11 @@ class _QuestionLayout extends StatelessWidget {
             header: true,
             child: Text(
               title,
-              style: type.titleL.copyWith(color: FluiColors.cream),
+              style: type.titleL.copyWith(color: FluiColors.ink),
             ),
           ),
           const SizedBox(height: FluiSpacing.xs),
-          FluiLabel(hint, onDark: true),
+          FluiLabel(hint),
           SizedBox(height: layout.blockGap),
           for (final child in children) ...[
             child,
@@ -121,7 +120,7 @@ class _QuestionLayout extends StatelessWidget {
   }
 }
 
-class _Option extends StatelessWidget {
+class _Option extends StatefulWidget {
   const new({
     required this.title,
     required this.selected,
@@ -137,28 +136,58 @@ class _Option extends StatelessWidget {
   final VoidCallback onTap;
 
   @override
+  State<_Option> createState() => _OptionState();
+}
+
+class _OptionState extends State<_Option> {
+  var _focused = false;
+
+  @override
   Widget build(BuildContext context) {
     final type = context.type;
-    final body = this.body;
+    final title = widget.title;
+    final selected = widget.selected;
+    final multiple = widget.multiple;
+    final body = widget.body;
     return Semantics(
       button: true,
       selected: selected,
+      toggled: multiple ? selected : null,
+      focused: _focused,
       inMutuallyExclusiveGroup: !multiple,
       label: body == null ? title : '$title. $body',
       excludeSemantics: true,
       child: Material(
-        color: selected
-            ? FluiColors.greenSecondary
-            : FluiColors.greenDeep.withValues(alpha: 0.5),
+        animationDuration: FluiMotion.resolve(
+          context,
+          const Duration(milliseconds: 160),
+        ),
+        color: selected ? FluiColors.greenTint : FluiColors.surface,
         shape: RoundedRectangleBorder(
           borderRadius: FluiRadii.cardAll,
-          side: selected
-              ? const BorderSide(color: FluiColors.yellowElectric, width: 2)
-              : FluiSurfaces.hairlineOnGreen,
+          side: BorderSide(
+            color: _focused
+                ? FluiColors.ink
+                : selected
+                ? FluiColors.greenDeep
+                : FluiColors.outline,
+            width: _focused
+                ? 3
+                : selected
+                ? 2
+                : 1,
+          ),
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
-          onTap: onTap,
+          borderRadius: FluiRadii.cardAll,
+          focusColor: FluiColors.greenDeep.withValues(alpha: 0.16),
+          splashColor: FluiColors.greenDeep.withValues(alpha: 0.16),
+          onFocusChange: (focused) {
+            if (_focused == focused) return;
+            setState(() => _focused = focused);
+          },
+          onTap: widget.onTap,
           child: ConstrainedBox(
             constraints: const BoxConstraints(
               minHeight: FluiSpacing.minTapTarget + FluiSpacing.md,
@@ -179,30 +208,29 @@ class _Option extends StatelessWidget {
                           title,
                           style: type.body.copyWith(
                             fontWeight: FontWeight.w600,
-                            color: FluiColors.cream,
+                            color: FluiColors.ink,
                           ),
                         ),
                         if (body != null)
                           Text(
                             body,
-                            style: type.body.copyWith(
-                              color: FluiColors.creamMuted,
-                            ),
+                            style: type.body.copyWith(color: FluiColors.gray),
                           ),
                       ],
                     ),
                   ),
                   const SizedBox(width: FluiSpacing.sm),
                   if (selected)
-                    const FluiGlyphIcon(
-                      FluiGlyph.achievement,
-                      color: FluiColors.yellowElectric,
+                    const Icon(
+                      LucideIcons.check,
+                      size: 20,
+                      color: FluiColors.greenDeep,
                     )
                   else
                     const Icon(
                       LucideIcons.circle,
                       size: 20,
-                      color: FluiColors.creamMuted,
+                      color: FluiColors.gray,
                     ),
                 ],
               ),

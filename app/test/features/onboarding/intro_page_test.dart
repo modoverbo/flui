@@ -1,3 +1,5 @@
+import 'dart:ui' show Tristate;
+
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
@@ -8,6 +10,7 @@ import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/shared/motion/feedback_motion.dart';
 import 'package:flui/shared/widgets/flui_plate.dart';
+import 'package:flutter/services.dart' show LogicalKeyboardKey;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -271,6 +274,61 @@ void main() {
     await tester.tap(find.text('Trabajo'));
     await tester.pumpAndSettle();
     expect(cta().onPressed, isNotNull);
+    expect(
+      tester
+          .widget<Material>(
+            find
+                .ancestor(
+                  of: find.text('Trabajo'),
+                  matching: find.byType(Material),
+                )
+                .first,
+          )
+          .animationDuration,
+      Duration.zero,
+    );
+
+    await tester.tap(find.text('Social'));
+    await tester.pumpAndSettle();
+    expect(cta().onPressed, isNotNull);
+    expect(
+      await store.readAnswers(),
+      const OnboardingAnswers(contexts: {Scene.trabajo, Scene.social}),
+    );
+
+    final workSemantics = tester.getSemantics(
+      find
+          .ancestor(of: find.text('Trabajo'), matching: find.byType(Semantics))
+          .first,
+    );
+    final socialSemantics = tester.getSemantics(
+      find
+          .ancestor(of: find.text('Social'), matching: find.byType(Semantics))
+          .first,
+    );
+    expect(
+      workSemantics.getSemanticsData().flagsCollection.isToggled,
+      Tristate.isTrue,
+    );
+    expect(
+      socialSemantics.getSemanticsData().flagsCollection.isToggled,
+      Tristate.isTrue,
+    );
+
+    await tester.tap(find.text('Trabajo'));
+    await tester.pumpAndSettle();
+    expect(cta().onPressed, isNotNull);
+    expect(
+      await store.readAnswers(),
+      const OnboardingAnswers(contexts: {Scene.social}),
+    );
+    await tester.tap(find.text('Social'));
+    await tester.pumpAndSettle();
+    expect(cta().onPressed, isNull);
+    expect(await store.readAnswers(), OnboardingAnswers.empty);
+
+    await tester.tap(find.text('Trabajo'));
+    await tester.pumpAndSettle();
     await next(tester);
 
     expect(find.text('¿Cómo quieres sonar?'), findsOneWidget);
@@ -278,14 +336,134 @@ void main() {
     await tester.tap(find.text('Preciso'));
     await tester.pumpAndSettle();
     expect(cta().onPressed, isNotNull);
+    await tester.tap(find.text('Cercano'));
+    await tester.pumpAndSettle();
+    expect(cta().onPressed, isNotNull);
 
     expect(
       await store.readAnswers(),
       const OnboardingAnswers(
         contexts: {Scene.trabajo},
-        tone: SpeakingTone.precise,
+        tone: SpeakingTone.warm,
       ),
     );
+    expect(
+      tester
+          .getSemantics(
+            find
+                .ancestor(
+                  of: find.text('Cercano'),
+                  matching: find.byType(Semantics),
+                )
+                .first,
+          )
+          .getSemanticsData()
+          .flagsCollection
+          .isSelected,
+      Tristate.isTrue,
+    );
+    expect(
+      tester
+          .getSemantics(
+            find
+                .ancestor(
+                  of: find.text('Cercano'),
+                  matching: find.byType(Semantics),
+                )
+                .first,
+          )
+          .getSemanticsData()
+          .flagsCollection
+          .isInMutuallyExclusiveGroup,
+      isTrue,
+    );
+    expect(
+      tester
+          .getSemantics(
+            find
+                .ancestor(
+                  of: find.text('Preciso'),
+                  matching: find.byType(Semantics),
+                )
+                .first,
+          )
+          .getSemanticsData()
+          .flagsCollection
+          .isSelected,
+      Tristate.isFalse,
+    );
+  });
+
+  testWidgets('answer steps use the same paper and ink composition', (
+    tester,
+  ) async {
+    reduceMotion(tester);
+    await pumpIntro(tester);
+    for (var i = 0; i < 3; i++) {
+      await next(tester);
+    }
+
+    void expectPaperSurface() {
+      expect(
+        tester.widget<Scaffold>(find.byType(Scaffold).last).backgroundColor,
+        FluiColors.cream,
+      );
+      expect(find.byType(FluiPlate), findsNothing);
+    }
+
+    expectPaperSurface();
+    await tester.tap(find.text('Trabajo'));
+    await tester.pumpAndSettle();
+    await next(tester);
+    expectPaperSurface();
+    await tester.tap(find.text('Preciso'));
+    await tester.pumpAndSettle();
+    await next(tester);
+    expectPaperSurface();
+
+    expect(
+      tester.widget<Text>(find.text(seedWords.first.lemma).last).style!.color,
+      FluiColors.ink,
+    );
+  });
+
+  testWidgets('answer cards show a visible keyboard focus state', (
+    tester,
+  ) async {
+    reduceMotion(tester);
+    final semantics = tester.ensureSemantics();
+    await pumpIntro(tester);
+    for (var i = 0; i < 3; i++) {
+      await next(tester);
+    }
+
+    for (var i = 0; i < 3; i++) {
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+    }
+
+    final context = tester.getSemantics(find.bySemanticsLabel('Trabajo'));
+    expect(
+      context.getSemanticsData().flagsCollection.isFocused,
+      Tristate.isTrue,
+    );
+    final card = tester.widget<Material>(
+      find
+          .ancestor(of: find.text('Trabajo'), matching: find.byType(Material))
+          .first,
+    );
+    expect((card.shape! as RoundedRectangleBorder).side.color, FluiColors.ink);
+    expect((card.shape! as RoundedRectangleBorder).side.width, 3);
+
+    final inkWell = tester.widget<InkWell>(
+      find
+          .ancestor(of: find.text('Trabajo'), matching: find.byType(InkWell))
+          .first,
+    );
+    expect(inkWell.focusColor, isNotNull);
+    expect(inkWell.splashColor, isNotNull);
+    expect(inkWell.splashColor, isNot(Colors.transparent));
+    semantics.dispose();
   });
 
   testWidgets('the micro-lesson uses a real word and only then lets you on', (
@@ -319,6 +497,20 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Casi. Mira la frase otra vez.'), findsOneWidget);
     expect(find.byType(ShakeBox), findsOneWidget);
+    expect(
+      tester.widget<FilledButton>(find.byType(FilledButton).last).onPressed,
+      isNull,
+    );
+    final wrongChoice = tester.widget<Material>(
+      find
+          .ancestor(of: find.text(wrong.text), matching: find.byType(Material))
+          .first,
+    );
+    expect(
+      (wrongChoice.shape! as RoundedRectangleBorder).side.color,
+      FluiColors.ink,
+    );
+    expect((wrongChoice.shape! as RoundedRectangleBorder).side.width, 2);
 
     await tester.tap(find.text(word.exercises.first.correctOption.text).last);
     await tester.pumpAndSettle();
@@ -345,10 +537,37 @@ void main() {
     expect(find.text('route:/plan'), findsOneWidget);
   });
 
-  testWidgets('fits at 130 % text size on a phone', (tester) async {
+  testWidgets('answer and lesson cards fit at 130 % text on a narrow phone', (
+    tester,
+  ) async {
     reduceMotion(tester);
     scaleText(tester, 1.3);
-    await pumpIntro(tester, size: const Size(360, 780));
+    await pumpIntro(tester, size: const Size(320, 780));
+    for (var i = 0; i < 3; i++) {
+      await next(tester);
+    }
+    expect(tester.takeException(), isNull);
+
+    await tester.ensureVisible(find.text('Familia'));
+    expect(find.text('Familia'), findsOneWidget);
+    expect(find.text('Seguir'), findsOneWidget);
+    expect(tester.getRect(find.text('Seguir')).bottom, lessThanOrEqualTo(780));
+
+    await tester.tap(find.text('Trabajo'));
+    await tester.pumpAndSettle();
+    await next(tester);
+    await tester.tap(find.text('Preciso'));
+    await tester.pumpAndSettle();
+    await next(tester);
+    expect(tester.takeException(), isNull);
+    final correct = seedWords.first.exercises.first.correctOption.text;
+    await tester.ensureVisible(find.text(correct).last);
+    expect(find.text(correct), findsWidgets);
+    expect(find.text('Ver mi plan'), findsOneWidget);
+    expect(
+      tester.getRect(find.text('Ver mi plan')).bottom,
+      lessThanOrEqualTo(780),
+    );
 
     expect(tester.takeException(), isNull);
   });
