@@ -7,8 +7,8 @@
 // seed, so rerun this after editing the seed.
 import 'dart:io';
 
-import 'package:flui/features/exercises/domain/cloze_exercise.dart';
 import 'package:flui/features/reading/domain/reading.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 
 import 'seed/seed_parser.dart';
@@ -44,7 +44,7 @@ String renderSeedFixture(
     ..writeln('// ignore_for_file: lines_longer_than_80_chars')
     ..writeln()
     ..writeln(
-      "import 'package:flui/features/exercises/domain/cloze_exercise.dart';",
+      "import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';",
     )
     ..writeln("import 'package:flui/features/reading/domain/reading.dart';")
     ..writeln("import 'package:flui/features/vocabulary/domain/word.dart';")
