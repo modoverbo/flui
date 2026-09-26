@@ -2,6 +2,7 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
@@ -205,6 +206,7 @@ void main() {
       expect(find.text('¿Cómo cancelo?'), findsOneWidget);
 
       expect(find.text('¿Cómo cancelo?'), findsOneWidget);
+      await tester.ensureVisible(find.text('¿Cómo cancelo?'));
       await tester.tap(find.text('¿Cómo cancelo?'));
       await tester.pumpAndSettle();
       expect(
@@ -296,7 +298,10 @@ void main() {
   });
 
   group('/plan before the account exists', () {
-    Future<void> pumpPreview(WidgetTester tester) async {
+    Future<void> pumpPreview(
+      WidgetTester tester, {
+      Size surfaceSize = const Size(420, 1600),
+    }) async {
       reduceMotion(tester);
       await pumpRoutedPage(
         tester,
@@ -307,10 +312,121 @@ void main() {
           subscriptionRepositoryProvider.overrideWithValue(subscriptions),
           onboardingStoreProvider.overrideWithValue(store),
         ],
-        surfaceSize: const Size(420, 1600),
+        surfaceSize: surfaceSize,
       );
       await tester.pumpAndSettle();
     }
+
+    testWidgets('shows a compact editorial summary from saved answers', (
+      tester,
+    ) async {
+      await store.writeAnswers(
+        const OnboardingAnswers(
+          contexts: {Scene.trabajo, Scene.entrevista},
+          tone: SpeakingTone.precise,
+        ),
+      );
+      await pumpPreview(tester);
+
+      expect(find.text('Tu plan está listo.'), findsOneWidget);
+      expect(find.text('Palabras para trabajo y entrevista.'), findsOneWidget);
+      expect(find.text('Con el tono que elegiste: preciso.'), findsOneWidget);
+      expect(
+        find.text('Una palabra al día, en el tiempo que tengas.'),
+        findsOneWidget,
+      );
+
+      final title = tester.widget<Text>(find.text('Tu plan está listo.'));
+      expect(title.style?.color, FluiColors.charcoal);
+      expect(title.style?.fontSize, lessThan(40));
+      expect(
+        find.byWidgetPredicate(
+          (widget) =>
+              widget is DecoratedBox &&
+              widget.decoration is BoxDecoration &&
+              (widget.decoration as BoxDecoration).color ==
+                  FluiColors.greenTint,
+        ),
+        findsNWidgets(2),
+      );
+      expect(
+        find.byWidgetPredicate(
+          (widget) =>
+              widget is DecoratedBox &&
+              widget.decoration is BoxDecoration &&
+              (widget.decoration as BoxDecoration).color ==
+                  FluiColors.greenDeep,
+        ),
+        findsOneWidget,
+      );
+    });
+
+    testWidgets('uses the existing general copy when answers are missing', (
+      tester,
+    ) async {
+      await store.writeAnswers(OnboardingAnswers.empty);
+      await pumpPreview(tester);
+
+      expect(find.text('Tu plan está listo.'), findsOneWidget);
+      expect(
+        find.text('Palabras para cualquier conversación.'),
+        findsOneWidget,
+      );
+      expect(find.text('Con el tono que elijas.'), findsOneWidget);
+      expect(
+        find.text('Una palabra al día, en el tiempo que tengas.'),
+        findsOneWidget,
+      );
+      expect(find.text('Palabras para trabajo y entrevista.'), findsNothing);
+      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
+    });
+
+    testWidgets('does not imply an unanswered tone for a partial answer', (
+      tester,
+    ) async {
+      await store.writeAnswers(
+        const OnboardingAnswers(contexts: {Scene.entrevista}),
+      );
+      await pumpPreview(tester);
+
+      expect(find.text('Palabras para entrevista.'), findsOneWidget);
+      expect(find.text('Con el tono que elijas.'), findsOneWidget);
+      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
+    });
+
+    testWidgets('does not imply an unanswered context for a partial answer', (
+      tester,
+    ) async {
+      await store.writeAnswers(
+        const OnboardingAnswers(tone: SpeakingTone.precise),
+      );
+      await pumpPreview(tester);
+
+      expect(
+        find.text('Palabras para cualquier conversación.'),
+        findsOneWidget,
+      );
+      expect(find.text('Con el tono que elegiste: preciso.'), findsOneWidget);
+      expect(find.text('Palabras para entrevista.'), findsNothing);
+    });
+
+    testWidgets('keeps the summary dock reachable on a short narrow screen', (
+      tester,
+    ) async {
+      await pumpPreview(tester, surfaceSize: const Size(320, 560));
+
+      expect(find.text('Seguir'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      expect(
+        tester.getRect(find.text('Seguir')).bottom,
+        lessThanOrEqualTo(560),
+      );
+
+      await tester.tap(find.text('Seguir'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Cómo funciona tu prueba'), findsOneWidget);
+    });
 
     testWidgets('shows real prices without an account, then asks for one', (
       tester,
