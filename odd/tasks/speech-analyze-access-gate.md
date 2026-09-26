@@ -53,4 +53,10 @@ From `git diff --numstat` (tracked files) + `wc -l` on the 2 new files, addition
 
 ## Progress and next step
 
-A01 and A02 done, all closure checks green. One commit made on `fix/speech-analyze-access-gate` (hash recorded by the writer in its handback report, since amending here would only be to attach that hash and the report already carries it). Next step: none required for U1 — ready for the user's delivery decision (this branch was authorized organically, outside the SDD stacked-to-main chain, so push/PR remains the user's call).
+A01 and A02 done, all closure checks green. Work-unit commit: `c91a771` on `fix/speech-analyze-access-gate`.
+
+Parent verification: reviewed the handler diff (access check runs after the 401 check and before body parsing; RPC error or non-boolean result fails closed with 503) and repeated `cd supabase/functions && deno task ci` → 88 passed, 0 failed.
+
+Review: receipt-driven development is off (global), so no native review ran. `gentle-ai review assess --base-ref dae83a3 --committed-only` reported risk `medium` (595 changed lines incl. the feature document, `review_due_reason: slice_budget_reached`); per the RDD-off tier, writer self-verification plus the parent spot check apply.
+
+Delivery note: the diff is above the ~400-line PR budget, mostly because of the `groq.ts` extraction (moved code). Next step: the user decides push/PR for this branch; U2 waits until the SDD dispatcher/store mismatch is resolved.
