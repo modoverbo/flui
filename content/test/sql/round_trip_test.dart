@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:content/src/library/challenge_source.dart';
+import 'package:content/src/model/challenge.dart';
 import 'package:content/src/model/word.dart';
 import 'package:content/src/model/word_yaml.dart';
 import 'package:content/src/model/yaml_map.dart';
@@ -16,6 +18,16 @@ import '../support/validation_harness.dart';
 final String seedPath = p.normalize(
   p.join(Directory.current.path, '..', 'supabase', 'seed.sql'),
 );
+
+/// The authored challenges in emission order. The seed carries them after
+/// the words, and they are not imported back from SQL, so a byte-for-byte
+/// reproduction of the seed reads them from `content/challenges/`.
+List<Challenge> authoredChallenges() => approvedChallengesInOrder([
+  for (final source in loadChallengeSources(
+    p.join(Directory.current.path, 'challenges'),
+  ))
+    Challenge.fromMap(source.raw),
+]);
 
 /// A catalogue word with a new identity, its family and its confusions.
 ///
@@ -179,6 +191,7 @@ values (
       final emitted = emitSeed(
         preamble: parts.preamble,
         words: approvedWordsInOrder(words),
+        challenges: authoredChallenges(),
       );
 
       expect(emitted.length, seedSql.length);
@@ -195,7 +208,11 @@ values (
       ];
 
       expect(
-        emitSeed(preamble: parts.preamble, words: approvedWordsInOrder(words)),
+        emitSeed(
+          preamble: parts.preamble,
+          words: approvedWordsInOrder(words),
+          challenges: authoredChallenges(),
+        ),
         seedSql,
       );
     });
@@ -438,7 +455,10 @@ values (
           ..['stressed_syllable'] = 1,
       );
       final rows = confusionRows(
-        emitWords([catalogued('talante', confusedWith: ['tajante']), tajante]),
+        emitWords([
+          catalogued('talante', confusedWith: ['tajante']),
+          tajante,
+        ]),
       );
 
       expect(
