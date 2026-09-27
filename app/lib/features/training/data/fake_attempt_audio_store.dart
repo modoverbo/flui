@@ -28,6 +28,18 @@ final class FakeAttemptAudioStore with FakeRemote implements AttemptAudioStore {
     required String mimeType,
   }) async {
     final failure = await simulateCall();
+    // Mirrors `speaking_audio_insert_own` (the STORAGE object-insert
+    // policy, migration `20260913120800_speaking_history.sql`): an object
+    // insert is accepted only while the row is currently 'pending'. upload()
+    // is only ever called for an attempt the repository already inserted as
+    // 'pending' (design part-3 §5's write order), so an untracked attempt is
+    // treated as 'pending' here too, not the DB's unrelated 'none' default
+    // (see delete()'s different treatment below). Any other current status
+    // — 'stored' (already uploaded) or 'failed' (never re-armed to
+    // 'pending', see U13a.6) — is rejected the same way a real 403 rejects
+    // it: the row is left completely unchanged, path/mime included.
+    final current = _statusByAttemptId[attemptId];
+    if (current != null && current is! AudioRetentionPending) return;
     final extension = extensionForAudioMime(mimeType);
     final userId = currentUserId();
     final next = failure != null || extension == null || userId == null
@@ -36,18 +48,7 @@ final class FakeAttemptAudioStore with FakeRemote implements AttemptAudioStore {
             path: '$userId/$attemptId.$extension',
             mime: mimeType,
           );
-    // upload() is only ever called for an attempt the repository already
-    // inserted as 'pending' (design part-3 §5's write order), so an
-    // untracked attempt is treated as 'pending' here, not the DB's
-    // unrelated 'none' default (see delete()'s different treatment below).
-    final current =
-        _statusByAttemptId[attemptId] ?? const AudioRetention.pending();
-    if (AudioRetention.isAllowedTransition(current, next)) {
-      _statusByAttemptId[attemptId] = next;
-    }
-    // A rejected transition (e.g. a failed retry on an already-'stored'
-    // attempt) mirrors `speaking_attempts_guard_audio` rejecting the same
-    // update server-side: the row is left unchanged.
+    _statusByAttemptId[attemptId] = next;
   }
 
   @override

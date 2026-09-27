@@ -129,6 +129,51 @@ void main() {
       expect(store.statusOf('a1'), isA<AudioRetentionStored>());
     });
 
+    // Mirrors `speaking_audio_insert_own` (the STORAGE object-insert policy,
+    // not the wider row-update guard trigger): an object insert is only
+    // accepted while the row is 'pending', so a re-upload on an
+    // already-'stored' attempt must never overwrite its path/mime, even
+    // when the retry carries different bytes/mime type.
+    test('a re-upload on an already-stored attempt does not change its path '
+        "or mime (storage only accepts an insert while 'pending')", () async {
+      final store = FakeAttemptAudioStore(currentUserId: () => 'u1');
+      await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+      expect(
+        store.statusOf('a1'),
+        const AudioRetention.stored(path: 'u1/a1.wav', mime: 'audio/wav'),
+      );
+
+      await store.upload(
+        attemptId: 'a1',
+        bytes: _bytes,
+        mimeType: 'audio/webm',
+      );
+
+      expect(
+        store.statusOf('a1'),
+        const AudioRetention.stored(path: 'u1/a1.wav', mime: 'audio/wav'),
+      );
+    });
+
+    // Same storage-policy rule as above: a row that is already 'failed' is
+    // also not 'pending', so a direct retry (without first re-arming the
+    // row back to 'pending', per U13a.6) is rejected the same way a real
+    // 403 rejects it — the attempt simply stays 'failed'.
+    test('an upload on an already-failed attempt is rejected like the real '
+        "403 and stays 'failed'", () async {
+      final store = FakeAttemptAudioStore(currentUserId: () => 'u1')
+        ..nextFailure = const NetworkFailure();
+      await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+      expect(store.statusOf('a1'), const AudioRetention.failed());
+
+      // No queued failure this time: a real retry would still be rejected
+      // by speaking_audio_insert_own before ever reaching the network,
+      // because the row is not 'pending'.
+      await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+
+      expect(store.statusOf('a1'), const AudioRetention.failed());
+    });
+
     test('deletion is idempotent and marks the attempt deleted', () async {
       final store = FakeAttemptAudioStore(currentUserId: () => 'u1');
       await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
@@ -144,14 +189,31 @@ void main() {
     // Shared contract with SupabaseAttemptAudioStore's equivalent group
     // below (GAP C): delete() on a non-stored, non-deleted attempt fails
     // like the real store, mirroring the guard trigger's `stored ->
-    // deleted`-only rule.
-    test('delete() on an attempt that was never stored fails', () async {
+    // deleted`-only rule. A 'pending' attempt's row was inserted but never
+    // uploaded — the Fake has no way to record a literal
+    // `AudioRetention.pending` value at rest (upload() only ever writes
+    // 'stored'/'failed'), so this untracked/never-called-upload() state IS
+    // that 'pending' case (see upload()'s own comment above).
+    test('delete() on a pending attempt (never uploaded) fails and stays '
+        'untracked', () async {
       final store = FakeAttemptAudioStore(currentUserId: () => 'u1');
 
       final result = await store.delete(attemptId: 'a1');
 
       expect(result.isOk, isFalse);
       expect(store.statusOf('a1'), isNull);
+    });
+
+    test("delete() on a failed attempt fails and keeps it 'failed'", () async {
+      final store = FakeAttemptAudioStore(currentUserId: () => 'u1')
+        ..nextFailure = const NetworkFailure();
+      await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+      expect(store.statusOf('a1'), const AudioRetention.failed());
+
+      final result = await store.delete(attemptId: 'a1');
+
+      expect(result.isOk, isFalse);
+      expect(store.statusOf('a1'), const AudioRetention.failed());
     });
   });
 
@@ -171,6 +233,7 @@ void main() {
         recorder.client,
         currentUserId: () => 'u1',
       ).upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+      await pumpEventQueue();
 
       expect(recorder.requests, hasLength(2));
       final uploadRequest = recorder.requests.first;
@@ -189,6 +252,52 @@ void main() {
       expect(body['audio_status'], 'stored');
       expect(body['audio_path'], 'u1/a1.wav');
       expect(body['audio_mime'], 'audio/wav');
+    });
+
+    test("upload's early-return branch (no signed-in user) never issues a "
+        'storage request', () async {
+      final recorder = SupabaseRecorder(respond: (request) => null);
+      addTearDown(recorder.dispose);
+
+      await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => null,
+      ).upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+      await pumpEventQueue();
+
+      expect(
+        recorder.requests.any(
+          (r) => r.url.path.startsWith('/storage/v1/object/'),
+        ),
+        isFalse,
+      );
+      expect(recorder.requests, hasLength(1));
+      final body =
+          recorder.bodyOf(recorder.requests.single)! as Map<String, Object?>;
+      expect(body['audio_status'], 'failed');
+    });
+
+    test("upload's early-return branch (unsupported mime type) never issues "
+        'a storage request', () async {
+      final recorder = SupabaseRecorder(respond: (request) => null);
+      addTearDown(recorder.dispose);
+
+      await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/aac');
+      await pumpEventQueue();
+
+      expect(
+        recorder.requests.any(
+          (r) => r.url.path.startsWith('/storage/v1/object/'),
+        ),
+        isFalse,
+      );
+      expect(recorder.requests, hasLength(1));
+      final body =
+          recorder.bodyOf(recorder.requests.single)! as Map<String, Object?>;
+      expect(body['audio_status'], 'failed');
     });
 
     // Regression guards (decision: orphan cleanup is server-side, U21, never
@@ -387,6 +496,10 @@ void main() {
       expect(secondBody['audio_status'], 'failed');
     });
 
+    // The fixture's audio_path deliberately uses a DIFFERENT extension than
+    // the `<uid>/<attemptId>.wav` shape a naive convention-based path would
+    // guess, proving the removed path comes from the row's own audio_path
+    // column, not reconstructed from attemptId/currentUserId.
     test('delete resolves the path from the row, updates the row, then '
         'removes the object', () async {
       final recorder = SupabaseRecorder(
@@ -394,7 +507,7 @@ void main() {
           if (request.method == 'GET' &&
               request.url.path == '/rest/v1/speaking_attempts') {
             return [
-              {'audio_status': 'stored', 'audio_path': 'u1/a1.wav'},
+              {'audio_status': 'stored', 'audio_path': 'u1/a1.webm'},
             ];
           }
           if (request.method == 'PATCH' &&
@@ -420,13 +533,58 @@ void main() {
       expect(recorder.requests, hasLength(3));
       expect(recorder.requests[0].method, 'GET');
       expect(recorder.requests[1].method, 'PATCH');
+      // The update is guarded on the row's source status, closing the
+      // TOCTOU race with a concurrent status change since the select above.
+      expect(
+        recorder.requests[1].url.queryParameters['audio_status'],
+        'eq.stored',
+      );
       final updateBody =
           recorder.bodyOf(recorder.requests[1])! as Map<String, Object?>;
       expect(updateBody['audio_status'], 'deleted');
       final removeRequest = recorder.requests[2];
       expect(removeRequest.method, 'DELETE');
       expect(jsonDecode(removeRequest.body), {
-        'prefixes': ['u1/a1.wav'],
+        'prefixes': ['u1/a1.webm'],
+      });
+    });
+
+    // A stronger variant of the same proof: a path that doesn't even follow
+    // the `<uid>/<attemptId>.<ext>` shape at all (e.g. a legacy/migrated
+    // object) is still removed exactly as stored on the row — the store
+    // never reconstructs a path from attemptId/currentUserId for delete().
+    test("delete removes the object at the row's audio_path even when it "
+        'does not follow the <uid>/<attemptId>.<ext> convention', () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) {
+          if (request.method == 'GET') {
+            return [
+              {
+                'audio_status': 'stored',
+                'audio_path': 'legacy/2020-06-01-migrated-recording.ogg',
+              },
+            ];
+          }
+          if (request.method == 'PATCH') {
+            return [
+              {'id': 'a1', 'audio_status': 'deleted'},
+            ];
+          }
+          return <Object?>[];
+        },
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).delete(attemptId: 'a1');
+
+      expect(result.isOk, isTrue);
+      final removeRequest = recorder.requests.last;
+      expect(removeRequest.method, 'DELETE');
+      expect(jsonDecode(removeRequest.body), {
+        'prefixes': ['legacy/2020-06-01-migrated-recording.ogg'],
       });
     });
 
@@ -448,6 +606,7 @@ void main() {
         recorder.client,
         currentUserId: () => 'u1',
       ).delete(attemptId: 'a1');
+      await pumpEventQueue();
 
       expect(result.isOk, isTrue);
       expect(recorder.requests, hasLength(1));
@@ -470,9 +629,35 @@ void main() {
         recorder.client,
         currentUserId: () => 'u1',
       ).delete(attemptId: 'a1');
+      await pumpEventQueue();
 
       expect(result.isOk, isFalse);
       expect(recorder.requests, hasLength(1));
+    });
+
+    test("delete on a 'failed' attempt fails without any write or storage "
+        'call', () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) {
+          if (request.method == 'GET') {
+            return [
+              {'audio_status': 'failed', 'audio_path': null},
+            ];
+          }
+          return null;
+        },
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).delete(attemptId: 'a1');
+      await pumpEventQueue();
+
+      expect(result.isOk, isFalse);
+      expect(recorder.requests, hasLength(1));
+      expect(recorder.requests.single.method, 'GET');
     });
 
     test('delete on an attempt whose row is not found fails', () async {
@@ -485,6 +670,7 @@ void main() {
         recorder.client,
         currentUserId: () => 'u1',
       ).delete(attemptId: 'a1');
+      await pumpEventQueue();
 
       expect(result.isOk, isFalse);
       expect(recorder.requests, hasLength(1));

@@ -27,9 +27,9 @@ abstract interface class AttemptAudioStore {
   });
 
   /// Removes the stored object referenced by [attemptId]'s own row — the
-  /// object path is resolved server-side from that row, never trusted from
-  /// a caller-supplied value, so a caller can never remove another
-  /// attempt's object.
+  /// object path is resolved client-side through an RLS-scoped select of
+  /// the attempt's own row, never trusted from a caller-supplied value, so
+  /// a caller can never remove another attempt's object.
   ///
   /// Requires the row to currently be `stored`; anything else (never
   /// uploaded, still `pending`/`failed`) fails. Idempotent when the row is
