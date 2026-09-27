@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://flui.app/schema/challenge.schema.json",
+  "title": "flui challenge",
+  "description": "One authored training/diagnosis challenge of the flui catalog. The authoritative implementation of these rules is content/lib/src/validation/challenge_validators.dart; this document exists so editors and agents can see the shape. Content strings are Spanish.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "status",
+    "purpose",
+    "skill",
+    "difficulty",
+    "prompt",
+    "focus",
+    "transfer_prompts",
+    "target_seconds"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Database identity. Derived deterministically from the slug by content:emit.",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "sort_order": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Emission order. Never authored: assigned by content:emit's deterministic ordering (purpose, diagnosis_slot, mode, difficulty, slug)."
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "File name must equal slug."
+    },
+    "status": {
+      "enum": ["draft", "validated", "gated", "approved"],
+      "description": "Same authoring gate as words: only approved is emitted."
+    },
+    "purpose": { "enum": ["training", "diagnosis"] },
+    "diagnosis_slot": {
+      "type": ["integer", "null"],
+      "minimum": 1,
+      "maximum": 3,
+      "description": "Required iff purpose = diagnosis; null otherwise."
+    },
+    "skill": { "enum": ["thinking", "language", "voice"] },
+    "mode": {
+      "enum": [
+        "think_and_speak",
+        "speak_with_precision",
+        "master_your_voice",
+        "real_situations",
+        null
+      ],
+      "description": "Required iff purpose = training; null otherwise."
+    },
+    "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "prompt": { "type": "string", "minLength": 10, "maxLength": 280 },
+    "cue": { "type": ["string", "null"], "maxLength": 200 },
+    "focus": { "type": "string", "minLength": 5, "maxLength": 200 },
+    "focus_behaviors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Wire codes from content/lib/src/model/behavior_catalog.dart, matching the challenge's skill."
+    },
+    "transfer_prompts": {
+      "type": "array",
+      "maxItems": 3,
+      "items": { "type": "string", "minLength": 1 },
+      "description": ">=1 for training, 0-3 for diagnosis."
+    },
+    "target_seconds": { "type": "integer", "minimum": 15, "maximum": 60 }
+  }
+}
