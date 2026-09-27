@@ -78,6 +78,17 @@ class TrainingLoopView extends ConsumerStatefulWidget {
 class _TrainingLoopViewState extends ConsumerState<TrainingLoopView> {
   MicRegistration? _registration;
 
+  /// Keeps `loopMicTargetProvider` (autoDispose) ALIVE for as long as this
+  /// widget is registered. A plain `ref.read(...)` in [initState] does NOT
+  /// do this: with no watcher left after that single read, Riverpod
+  /// disposes the provider on the next microtask, which runs the
+  /// `LoopMicTarget`'s own `ref.onDispose(target.dispose)` — closing its
+  /// subscription and leaving its captured `Ref` unusable, while
+  /// `MicTargetRegistry` keeps pointing at that now-dead target. A real
+  /// mic delivery through the registry would then throw or silently do
+  /// nothing (orchestrator review finding on commit 72fe2f1).
+  ProviderSubscription<LoopMicTarget>? _targetSubscription;
+
   @override
   void initState() {
     super.initState();
@@ -88,21 +99,32 @@ class _TrainingLoopViewState extends ConsumerState<TrainingLoopView> {
   void didUpdateWidget(covariant TrainingLoopView oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.request != widget.request) {
-      _registration?.dispose();
+      _unregister();
       _register();
     }
   }
 
   void _register() {
-    final target = ref.read(loopMicTargetProvider(widget.request));
+    final subscription = ref.listenManual(
+      loopMicTargetProvider(widget.request),
+      (_, _) {},
+    );
+    _targetSubscription = subscription;
     _registration = ref
         .read(micTargetRegistryProvider)
-        .register(target, layer: MicLayer.branch);
+        .register(subscription.read(), layer: MicLayer.branch);
+  }
+
+  void _unregister() {
+    _registration?.dispose();
+    _registration = null;
+    _targetSubscription?.close();
+    _targetSubscription = null;
   }
 
   @override
   void dispose() {
-    _registration?.dispose();
+    _unregister();
     super.dispose();
   }
 

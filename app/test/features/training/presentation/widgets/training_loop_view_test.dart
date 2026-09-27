@@ -387,6 +387,43 @@ void main() {
       },
     );
   });
+
+  group(
+    'TrainingLoopView — the registered LoopMicTarget stays deliverable',
+    () {
+      testWidgets('a delivery through the registry-resolved target reaches the '
+          'controller even well after mount (autoDispose must not tear down '
+          'the registered target — orchestrator review finding on 72fe2f1)', (
+        tester,
+      ) async {
+        await buildContainer();
+        await tester.pumpWithContainer(
+          const TrainingLoopView(request: _request),
+          container,
+        );
+        // Let every pending microtask — including autoDispose's own
+        // teardown check for a provider nothing is watching anymore —
+        // run before the shell mic would ever actually deliver, exactly
+        // like a real session (mount, then wait, then speak). A few
+        // extra empty pumps flush any additional autoDispose microtask
+        // rounds without relying on a real (fake-clock-unsafe) Timer.
+        await tester.pumpAndSettle();
+        await tester.pump();
+        await tester.pump();
+
+        final registry = container.read(micTargetRegistryProvider);
+        final (target, _) = registry.resolve();
+
+        final delivery = await target.deliver(_audio());
+
+        expect(delivery, isA<MicAccepted>());
+        expect(
+          container.read(trainingLoopControllerProvider(_request)).loop.phase,
+          LoopPhase.feedback,
+        );
+      });
+    },
+  );
 }
 
 /// Scans every rendered [Text] for a numeric confidence/score pattern
