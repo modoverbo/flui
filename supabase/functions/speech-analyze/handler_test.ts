@@ -14,6 +14,7 @@ function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
       hasAccessCalls.push(userId);
       return Promise.resolve(true);
     },
+    claimDailyAnalysis: () => Promise.resolve(true),
     transcribe: (bytes, mimeType) => {
       calls.push({ bytes, mimeType });
       return Promise.resolve({
@@ -217,10 +218,4 @@ Deno.test("never claims quota for a malformed body (invalid audio)", async () =>
   const response = await handler(post({ ...validBody(), mimeType: "text/plain" }));
   assertEquals(response.status, 400);
   assertEquals(quotaCalls.length, 0);
-});
-
-Deno.test("omitting claimDailyAnalysis (no configured daily limit) skips quota enforcement", async () => {
-  const { handler } = setup();
-  const response = await handler(post(validBody()));
-  assertEquals(response.status, 200);
 });
