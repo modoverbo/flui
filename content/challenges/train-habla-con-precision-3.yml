@@ -1,0 +1,18 @@
+slug: "train-habla-con-precision-3"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "language"
+mode: "speak_with_precision"
+difficulty: 3
+prompt: "Explícame cómo funciona algo que usas todos los días, con palabras exactas y sin repetir ideas."
+cue: null
+focus: "Sé preciso y no digas la misma idea dos veces."
+focus_behaviors:
+  - "repeated_word"
+  - "vague_word"
+  - "precise_word"
+transfer_prompts:
+  - "Explícame cómo funciona otra cosa que usas a menudo, con la misma precisión."
+  - "Explícale a alguien nuevo en tu trabajo cómo hacer un trámite sencillo, sin repetir ideas."
+target_seconds: 45

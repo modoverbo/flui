@@ -1,0 +1,16 @@
+slug: "train-piensa-y-habla-2"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "thinking"
+mode: "think_and_speak"
+difficulty: 2
+prompt: "Cuéntame cómo resolviste un problema pequeño esta semana."
+cue: "Di primero el problema y luego lo que hiciste."
+focus: "Ve directo a tu idea principal antes de dar detalles."
+focus_behaviors:
+  - "main_point_late"
+  - "clear_main_point"
+transfer_prompts:
+  - "Ahora cuéntame otro problema que resolviste hace poco: ¿qué hiciste primero?"
+target_seconds: 30
