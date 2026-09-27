@@ -1,0 +1,36 @@
+name: audio-retention
+
+# Daily sweep (decisions #430, #522): expires weekly-milestone speaking-audio
+# older than 90 days (diagnosis baselines are never touched) and reconciles
+# storage orphans older than a 24 h grace period. Must be live before the
+# speakingGym flag flip (U19-style requirement, see U21 in the tasks doc).
+
+on:
+  schedule:
+    - cron: "30 3 * * *" # daily, 03:30 UTC
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  retain:
+    name: Expire milestone audio and reconcile orphans
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    # Secrets live in the "production" environment, not at repository level.
+    environment: production
+    steps:
+      - name: Call the audio-retention Edge Function
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          AUDIO_RETENTION_SECRET: ${{ secrets.AUDIO_RETENTION_SECRET }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$AUDIO_RETENTION_SECRET" ]; then
+            echo "::error::SUPABASE_URL and AUDIO_RETENTION_SECRET secrets are required"
+            exit 1
+          fi
+          curl --fail --silent --show-error --max-time 60 \
+            -X POST \
+            -H "x-audio-retention-secret: $AUDIO_RETENTION_SECRET" \
+            "$SUPABASE_URL/functions/v1/audio-retention" > /dev/null
+          echo "Audio retention run triggered."
