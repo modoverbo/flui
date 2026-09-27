@@ -30,6 +30,33 @@ sealed class AudioRetention {
     AudioRetentionFailed() => 'failed',
     AudioRetentionDeleted() => 'deleted',
   };
+
+  /// Whether a write may transition `audio_status` from [from] (`null` for
+  /// a row that was never written yet, i.e. the server default `none`) to
+  /// [to]. Mirrors `speaking_attempts_guard_audio` (migration
+  /// `20260913120800_speaking_history.sql`): `none`/`deleted` are terminal;
+  /// `pending -> stored|failed`; `failed -> pending|stored`; `stored ->
+  /// deleted`; same status is always an allowed no-op.
+  ///
+  /// `FakeAttemptAudioStore.delete()` uses this to reject the same
+  /// row-update transitions the database trigger rejects. This mirrors only
+  /// that trigger's ROW-update rules, not `speaking_audio_insert_own`'s
+  /// stricter STORAGE-object insert policy (an upload is only accepted for
+  /// a currently-`pending` row) — `FakeAttemptAudioStore.upload()` enforces
+  /// that narrower rule separately, so the two stores each match the
+  /// database's actual behavior rather than matching each other beyond
+  /// what either one mirrors.
+  static bool isAllowedTransition(AudioRetention? from, AudioRetention to) {
+    final fromStatus = from?.wireStatus ?? 'none';
+    final toStatus = to.wireStatus;
+    if (fromStatus == toStatus) return true;
+    return switch (fromStatus) {
+      'pending' => toStatus == 'stored' || toStatus == 'failed',
+      'failed' => toStatus == 'pending' || toStatus == 'stored',
+      'stored' => toStatus == 'deleted',
+      _ => false, // 'none'/'deleted' are terminal.
+    };
+  }
 }
 
 @immutable

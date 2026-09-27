@@ -6,6 +6,9 @@ String failureMessage(AppLocalizations l10n, Failure failure) {
   return switch (failure) {
     NetworkFailure() => l10n.errorNetwork,
     ConfigFailure() || UnexpectedFailure() => l10n.errorUnexpected,
+    // Diagnosis surfaces (U14a/U14c) show the retake-available date instead
+    // of this generic copy; this branch only keeps the switch exhaustive.
+    SkillProfileFailure() => l10n.errorUnexpected,
     AuthFailure(:final code) => switch (code) {
       AuthErrorCode.invalidCredentials => l10n.authErrorInvalidCredentials,
       AuthErrorCode.emailAlreadyInUse => l10n.authErrorEmailInUse,

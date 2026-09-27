@@ -137,3 +137,27 @@ final class SpeechAnalysisFailure extends Failure {
   @override
   String toString() => 'SpeechAnalysisFailure($code)';
 }
+
+enum SkillProfileErrorCode {
+  /// The server trigger rejected a retake less than 30 days after the
+  /// previous diagnosis (design part-3 §5, `skill_profiles_before_insert`).
+  retakeTooSoon,
+  unknown,
+}
+
+@immutable
+final class SkillProfileFailure extends Failure {
+  const new(this.code);
+
+  final SkillProfileErrorCode code;
+
+  @override
+  bool operator ==(Object other) =>
+      other is SkillProfileFailure && other.code == code;
+
+  @override
+  int get hashCode => Object.hash(SkillProfileFailure, code);
+
+  @override
+  String toString() => 'SkillProfileFailure($code)';
+}
