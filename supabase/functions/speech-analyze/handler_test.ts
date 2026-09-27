@@ -255,14 +255,15 @@ Deno.test("loads a published challenge and passes its prompt/skill/focus to eval
     focus: "Usa un conector claro entre tus ideas.",
     focusBehaviors: ["weak_connector"],
   };
+  const challengeUuid = "3f1d2c4b-5a6e-4f70-8a9b-0c1d2e3f4a5b";
   const { handler, loadChallengeCalls, evaluateChallengeArgs } = setup({
     loadChallenge: (challengeId) => {
-      return Promise.resolve(challengeId === "c1" ? challenge : null);
+      return Promise.resolve(challengeId === challengeUuid ? challenge : null);
     },
   });
-  const response = await handler(post({ ...validBody(), challengeId: "c1" }));
+  const response = await handler(post({ ...validBody(), challengeId: challengeUuid }));
   assertEquals(response.status, 200);
-  assertEquals(loadChallengeCalls, ["c1"]);
+  assertEquals(loadChallengeCalls, [challengeUuid]);
   assertEquals(evaluateChallengeArgs, [challenge]);
 });
 
@@ -281,6 +282,15 @@ Deno.test("returns 400 unknown_challenge for an unknown/unpublished challengeId,
   assertEquals(quotaCalls.length, 0);
   assertEquals(calls.length, 0);
   assertEquals(evaluateCalls.length, 0);
+});
+
+Deno.test("returns 400 unknown_challenge for a malformed challengeId without querying for it", async () => {
+  const { handler, loadChallengeCalls, calls } = setup();
+  const response = await handler(post({ ...validBody(), challengeId: "not-a-uuid" }));
+  assertEquals(response.status, 400);
+  assertEquals((await response.json()).error.code, "unknown_challenge");
+  assertEquals(loadChallengeCalls.length, 0);
+  assertEquals(calls.length, 0);
 });
 
 Deno.test("returns 400 invalid_body when challengeId is present but empty", async () => {

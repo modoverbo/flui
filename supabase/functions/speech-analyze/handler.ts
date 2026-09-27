@@ -74,6 +74,9 @@ export interface SpeechAnalyzeDeps {
 
 const allowedMimeTypes = new Set(["audio/wav", "audio/webm", "audio/ogg", "audio/m4a"]);
 const maxDecodedBytes = 5 * 1024 * 1024;
+// Challenge ids are uuids. Rejecting other shapes here keeps a malformed id
+// from reaching Postgres, where the uuid cast would surface as a 500.
+const uuidShape = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 interface WireBehaviorCode {
   wireCode: string;
@@ -232,6 +235,9 @@ export function createSpeechAnalyzeHandler(
       }
       let challenge: ChallengeContext | undefined;
       if (typeof challengeIdRaw === "string") {
+        if (!uuidShape.test(challengeIdRaw)) {
+          throw new HttpError(400, "unknown_challenge", "That challenge is not available.");
+        }
         challenge = (await deps.loadChallenge(challengeIdRaw)) ?? undefined;
         if (!challenge) {
           throw new HttpError(400, "unknown_challenge", "That challenge is not available.");
