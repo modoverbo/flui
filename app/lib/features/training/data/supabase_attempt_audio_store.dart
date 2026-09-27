@@ -45,42 +45,30 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
         mime: mimeType,
       );
       if (!stored) {
-        // The object landed in the bucket but nothing points at it: an
-        // orphan with no 'stored' row would be invisible to every deletion
-        // flow that walks stored rows (consent revocation, account
-        // deletion, retention sweep) — remove it before giving up.
-        await _compensateOrphan(attemptId, path);
+        // The 'stored' update failed (e.g. its response was lost) — the
+        // uploaded object is never removed from here: a retried upload on
+        // an attempt that already IS 'stored' is rejected by the server,
+        // and a client that then deleted the object on that rejection
+        // would destroy a correctly stored recording. Orphan objects (this
+        // one, or one left by a client that never got to run this line at
+        // all) are reconciled server-side by a scheduled sweep (U21),
+        // which can read the true row state instead of guessing from a
+        // possibly-lost response.
+        await _markStatus(attemptId, 'failed');
       }
     } on Object catch (error, stackTrace) {
       // Fire-and-forget: an upload failure never reaches the caller, only
       // the attempt's audio_status. The call may have actually succeeded
-      // server-side even though the client saw an error/timeout, so remove
-      // whatever might have landed at [path] before marking the row failed.
+      // server-side even though the client saw an error/timeout — never
+      // remove the object client-side for the same reason as above.
       _logFailure('upload audio for', attemptId, error, stackTrace);
-      await _compensateOrphan(attemptId, path);
+      await _markStatus(attemptId, 'failed');
     }
-  }
-
-  /// Best-effort removal of a possibly-orphaned object at [path], followed
-  /// by marking [attemptId] `failed`. Removing an already-gone object is
-  /// harmless (the storage API's delete is idempotent).
-  Future<void> _compensateOrphan(String attemptId, String path) async {
-    try {
-      await _client.storage.from(_bucket).remove([path]);
-    } on Object catch (error, stackTrace) {
-      _logFailure(
-        'remove orphaned audio object for',
-        attemptId,
-        error,
-        stackTrace,
-      );
-    }
-    await _markStatus(attemptId, 'failed');
   }
 
   /// Returns whether the update was applied. A `false` result never throws
-  /// — the caller decides whether a failed status update leaves an orphan
-  /// that needs compensating.
+  /// — a failed status update is logged (never silently swallowed) and left
+  /// for server-side reconciliation (U21), never compensated client-side.
   Future<bool> _markStatus(
     String attemptId,
     String status, {
