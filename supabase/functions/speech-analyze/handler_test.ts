@@ -14,6 +14,7 @@ function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
       hasAccessCalls.push(userId);
       return Promise.resolve(true);
     },
+    claimDailyAnalysis: () => Promise.resolve(true),
     transcribe: (bytes, mimeType) => {
       calls.push({ bytes, mimeType });
       return Promise.resolve({
@@ -145,4 +146,76 @@ Deno.test("rejects payloads larger than five megabytes", async () => {
   }));
   assertEquals(response.status, 413);
   assertEquals(calls.length, 0);
+});
+
+Deno.test("claims a daily quota unit before calling the provider", async () => {
+  const quotaCalls: string[] = [];
+  const { handler, calls } = setup({
+    claimDailyAnalysis: (userId) => {
+      quotaCalls.push(userId);
+      return Promise.resolve(true);
+    },
+  });
+  const response = await handler(post(validBody()));
+  assertEquals(response.status, 200);
+  assertEquals(quotaCalls, ["u1"]);
+  assertEquals(calls.length, 1);
+});
+
+Deno.test("denies analysis with 429 daily_limit_reached once the quota is exhausted, no provider call", async () => {
+  const { handler, calls, evaluateCalls } = setup({
+    claimDailyAnalysis: () => Promise.resolve(false),
+  });
+  const response = await handler(post(validBody()));
+  assertEquals(response.status, 429);
+  assertEquals((await response.json()).error.code, "daily_limit_reached");
+  assertEquals(calls.length, 0);
+  assertEquals(evaluateCalls.length, 0);
+});
+
+Deno.test("fails closed with 503 when the quota check is unavailable, no provider call", async () => {
+  const { handler, calls, evaluateCalls } = setup({
+    claimDailyAnalysis: () => Promise.reject(new Error("db unreachable")),
+  });
+  const response = await handler(post(validBody()));
+  assertEquals(response.status, 503);
+  assertEquals((await response.json()).error.code, "access_unavailable");
+  assertEquals(calls.length, 0);
+  assertEquals(evaluateCalls.length, 0);
+});
+
+Deno.test("never claims quota for an unauthenticated or access-denied request", async () => {
+  const noAuthQuota: string[] = [];
+  const noAuth = setup({
+    claimDailyAnalysis: (userId) => {
+      noAuthQuota.push(userId);
+      return Promise.resolve(true);
+    },
+  });
+  await noAuth.handler(post(validBody(), ""));
+  assertEquals(noAuthQuota.length, 0);
+
+  const noAccessQuota: string[] = [];
+  const noAccess = setup({
+    hasAccess: () => Promise.resolve(false),
+    claimDailyAnalysis: (userId) => {
+      noAccessQuota.push(userId);
+      return Promise.resolve(true);
+    },
+  });
+  await noAccess.handler(post(validBody()));
+  assertEquals(noAccessQuota.length, 0);
+});
+
+Deno.test("never claims quota for a malformed body (invalid audio)", async () => {
+  const quotaCalls: string[] = [];
+  const { handler } = setup({
+    claimDailyAnalysis: (userId) => {
+      quotaCalls.push(userId);
+      return Promise.resolve(true);
+    },
+  });
+  const response = await handler(post({ ...validBody(), mimeType: "text/plain" }));
+  assertEquals(response.status, 400);
+  assertEquals(quotaCalls.length, 0);
 });
