@@ -16,7 +16,7 @@
   },
   "tasks": {
     "test": "deno test",
-    "check": "deno check whop-checkout/index.ts whop-webhook/index.ts speech-analyze/index.ts",
+    "check": "deno check whop-checkout/index.ts whop-webhook/index.ts speech-analyze/index.ts audio-retention/index.ts",
     "ci": "deno fmt --check && deno lint && deno task check && deno task test"
   }
 }

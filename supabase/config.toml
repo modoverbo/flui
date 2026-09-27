@@ -401,6 +401,12 @@ enabled = true
 # Webhooks signature (WHOP_WEBHOOK_SECRET) inside the function.
 verify_jwt = false
 
+[functions.audio-retention]
+enabled = true
+# Called only by the daily scheduled workflow, not a signed-in user. Authenticity is verified with
+# the AUDIO_RETENTION_SECRET header (constant-time compare) inside the function.
+verify_jwt = false
+
 [analytics]
 enabled = true
 port = 54427
