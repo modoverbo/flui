@@ -31,6 +31,39 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
       return;
     }
     final path = '$userId/$attemptId.$extension';
+    final first = await _attemptUpload(
+      attemptId: attemptId,
+      path: path,
+      bytes: bytes,
+      mimeType: mimeType,
+    );
+    if (first == _UploadOutcome.succeeded) return;
+
+    // One background retry this session (design part-3 §5 "Milestones":
+    // "stored (or failed, one background retry this session)"). The row is
+    // now 'failed' from the attempt above — `speaking_audio_insert_own`
+    // (the STORAGE object-insert policy) accepts an object only into a
+    // 'pending' row, so re-arm before trying again; the guard trigger
+    // allows failed->pending (U13a.6).
+    await _markStatus(attemptId, 'pending');
+    await _attemptUpload(
+      attemptId: attemptId,
+      path: path,
+      bytes: bytes,
+      mimeType: mimeType,
+    );
+  }
+
+  /// Uploads the object and marks the row accordingly. Returns whether the
+  /// STORAGE upload itself succeeded (a subsequent 'stored'/'failed'
+  /// row-write failure is a separate, never-retried-here concern — see the
+  /// existing comment below — so it is never treated as retryable).
+  Future<_UploadOutcome> _attemptUpload({
+    required String attemptId,
+    required String path,
+    required Uint8List bytes,
+    required String mimeType,
+  }) async {
     try {
       await _client.storage
           .from(_bucket)
@@ -39,32 +72,45 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
             bytes,
             fileOptions: FileOptions(contentType: mimeType),
           );
-      final stored = await _markStatus(
-        attemptId,
-        'stored',
-        path: path,
-        mime: mimeType,
-      );
-      if (!stored) {
-        // The 'stored' update failed (e.g. its response was lost) — the
-        // uploaded object is never removed from here: a retried upload on
-        // an attempt that already IS 'stored' is rejected by the server,
-        // and a client that then deleted the object on that rejection
-        // would destroy a correctly stored recording. Orphan objects (this
-        // one, or one left by a client that never got to run this line at
-        // all) are reconciled server-side by a scheduled sweep (U21),
-        // which can read the true row state instead of guessing from a
-        // possibly-lost response.
-        await _markStatus(attemptId, 'failed');
+    } on StorageException catch (error, stackTrace) {
+      if (error.statusCode == '409') {
+        // The object already exists at this attempt's own canonical path —
+        // a prior storage insert actually succeeded server-side even
+        // though this client never observed that success (dropped
+        // response, app restart mid-upload...). Recognize it as stored
+        // rather than re-marking a perfectly good recording as failed.
+        await _markStatus(attemptId, 'stored', path: path, mime: mimeType);
+        return _UploadOutcome.succeeded;
       }
-    } on Object catch (error, stackTrace) {
-      // Fire-and-forget: an upload failure never reaches the caller, only
-      // the attempt's audio_status. The call may have actually succeeded
-      // server-side even though the client saw an error/timeout — never
-      // remove the object client-side for the same reason as above.
       _logFailure('upload audio for', attemptId, error, stackTrace);
       await _markStatus(attemptId, 'failed');
+      return _UploadOutcome.retryableFailure;
+    } on Object catch (error, stackTrace) {
+      _logFailure('upload audio for', attemptId, error, stackTrace);
+      await _markStatus(attemptId, 'failed');
+      return _UploadOutcome.retryableFailure;
     }
+    final stored = await _markStatus(
+      attemptId,
+      'stored',
+      path: path,
+      mime: mimeType,
+    );
+    if (!stored) {
+      // The 'stored' update failed (e.g. its response was lost) — the
+      // uploaded object is never removed from here: a retried upload on
+      // an attempt that already IS 'stored' is rejected by the server,
+      // and a client that then deleted the object on that rejection
+      // would destroy a correctly stored recording. Orphan objects (this
+      // one, or one left by a client that never got to run this line at
+      // all) are reconciled server-side by a scheduled sweep (U21),
+      // which can read the true row state instead of guessing from a
+      // possibly-lost response. Never retried by upload() itself: the
+      // storage object is already there, so a retried storage call would
+      // only ever hit the 409 branch above.
+      await _markStatus(attemptId, 'failed');
+    }
+    return _UploadOutcome.succeeded;
   }
 
   /// Returns whether the update was applied. A `false` result never throws
@@ -164,3 +210,8 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
     return const Result.ok(null);
   }
 }
+
+/// The outcome of one storage-upload attempt (U13a.6): whether it succeeded
+/// (including the 409-as-stored case) or failed in a way worth one
+/// background retry this session.
+enum _UploadOutcome { succeeded, retryableFailure }
