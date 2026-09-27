@@ -11,6 +11,7 @@ const handler = createSpeechAnalyzeHandler({
   allowedOrigins: parseAllowedOrigins("http://127.0.0.1:3000,http://localhost:3000"),
   getUserId: (token) => Promise.resolve(token === "local-dev" ? "local-developer" : null),
   hasAccess: () => Promise.resolve(true),
+  claimDailyAnalysis: () => Promise.resolve(true),
   transcribe: groq.transcribe,
   evaluate: groq.evaluate,
 });

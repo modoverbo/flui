@@ -26,6 +26,12 @@ export interface SpeechAnalyzeDeps {
   getUserId(token: string): Promise<string | null>;
   /** True when the user may spend a paid analysis call. Throws on infrastructure failure. */
   hasAccess(userId: string): Promise<boolean>;
+  /**
+   * Claims one paid analysis unit for the caller's current UTC day. Returns
+   * false once the daily limit is reached. Throws on infrastructure failure.
+   * Omitted entirely (no configured daily limit) skips quota enforcement.
+   */
+  claimDailyAnalysis?(userId: string): Promise<boolean>;
   transcribe(bytes: Uint8Array, mimeType: string): Promise<ProviderTranscript>;
   evaluate(text: string): Promise<SpeechCoaching>;
   log?: (message: string, details?: Record<string, unknown>) => void;
@@ -99,6 +105,26 @@ export function createSpeechAnalyzeHandler(
           bytes.length === 0 ? "invalid_audio" : "payload_too_large",
           bytes.length === 0 ? "Audio payload is empty." : "Audio payload is too large.",
         );
+      }
+
+      if (deps.claimDailyAnalysis) {
+        let allowed: boolean;
+        try {
+          allowed = await deps.claimDailyAnalysis(userId);
+        } catch {
+          throw new HttpError(
+            503,
+            "access_unavailable",
+            "Could not verify access. Try again shortly.",
+          );
+        }
+        if (!allowed) {
+          throw new HttpError(
+            429,
+            "daily_limit_reached",
+            "You have reached today's analysis limit.",
+          );
+        }
       }
 
       let transcript: ProviderTranscript;

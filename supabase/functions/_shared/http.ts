@@ -14,6 +14,7 @@ export type ErrorCode =
   | "invalid_audio"
   | "no_speech"
   | "payload_too_large"
+  | "daily_limit_reached"
   | "rate_limited"
   | "upstream_error"
   | "internal_error";

@@ -20,6 +20,13 @@ const admin = createClient(supabaseUrl, serviceRoleKey, {
 
 const groq = createGroqProvider(groqApiKey, { timeoutMs: 15_000 });
 
+// Unset -> no quota enforcement (existing unlimited behavior). Set to a
+// non-numeric value -> also treated as unset, never crashes the function.
+const dailyLimitRaw = Deno.env.get("SPEECH_ANALYZE_DAILY_LIMIT")?.trim();
+const dailyLimit = dailyLimitRaw && Number.isFinite(Number(dailyLimitRaw))
+  ? Number(dailyLimitRaw)
+  : undefined;
+
 const handler = createSpeechAnalyzeHandler({
   allowedOrigins,
   async getUserId(token) {
@@ -31,6 +38,17 @@ const handler = createSpeechAnalyzeHandler({
     if (error) throw error;
     if (typeof data !== "boolean") {
       throw new Error("has_access returned a non-boolean value.");
+    }
+    return data;
+  },
+  claimDailyAnalysis: dailyLimit === undefined ? undefined : async (userId) => {
+    const { data, error } = await admin.rpc("claim_speech_analysis", {
+      p_user_id: userId,
+      p_daily_limit: dailyLimit,
+    });
+    if (error) throw error;
+    if (typeof data !== "boolean") {
+      throw new Error("claim_speech_analysis returned a non-boolean value.");
     }
     return data;
   },
