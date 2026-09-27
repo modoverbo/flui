@@ -59,6 +59,22 @@ const handler = createSpeechAnalyzeHandler({
     }
     return data;
   },
+  async loadChallenge(challengeId) {
+    const { data, error } = await admin
+      .from("challenges")
+      .select("prompt, skill, focus, focus_behaviors")
+      .eq("id", challengeId)
+      .eq("published", true)
+      .maybeSingle();
+    if (error) throw error;
+    if (!data) return null;
+    return {
+      prompt: data.prompt as string,
+      skill: data.skill as string,
+      focus: data.focus as string,
+      focusBehaviors: (data.focus_behaviors as string[] | null) ?? [],
+    };
+  },
   transcribe: groq.transcribe,
   evaluate: groq.evaluate,
 });

@@ -1,5 +1,9 @@
 import { assertEquals } from "jsr:@std/assert@1.0.19";
-import { createSpeechAnalyzeHandler, type SpeechAnalyzeDeps } from "./handler.ts";
+import {
+  type ChallengeContext,
+  createSpeechAnalyzeHandler,
+  type SpeechAnalyzeDeps,
+} from "./handler.ts";
 
 const ORIGIN = "http://localhost:3000";
 
@@ -7,7 +11,9 @@ function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
   const calls: Array<{ bytes: Uint8Array; mimeType: string }> = [];
   const hasAccessCalls: string[] = [];
   const evaluateCalls: string[] = [];
-  const deps: SpeechAnalyzeDeps = {
+  const evaluateChallengeArgs: Array<ChallengeContext | undefined> = [];
+  const loadChallengeCalls: string[] = [];
+  const baseDeps: SpeechAnalyzeDeps = {
     allowedOrigins: [ORIGIN],
     getUserId: (token) => Promise.resolve(token === "valid-jwt" ? "u1" : null),
     hasAccess: (userId) => {
@@ -15,6 +21,7 @@ function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
       return Promise.resolve(true);
     },
     claimDailyAnalysis: () => Promise.resolve(true),
+    loadChallenge: () => Promise.resolve(null),
     transcribe: (bytes, mimeType) => {
       calls.push({ bytes, mimeType });
       return Promise.resolve({
@@ -27,19 +34,39 @@ function setup(overrides: Partial<SpeechAnalyzeDeps> = {}) {
         ],
       });
     },
-    evaluate: (text) => {
+    evaluate: (text, challenge) => {
       evaluateCalls.push(text);
+      evaluateChallengeArgs.push(challenge);
       return Promise.resolve({
-        summary: "Explica una decisión y su resultado.",
-        structure: "Idea clara; falta un cierre.",
-        vocabulary: "Vocabulario concreto pero poco variado.",
-        strength: "Conecta la acción con su beneficio.",
-        retryCue: "Cierra con una frase que resuma el aprendizaje.",
+        coaching: {
+          summary: "Explica una decisión y su resultado.",
+          structure: "Idea clara; falta un cierre.",
+          vocabulary: "Vocabulario concreto pero poco variado.",
+          strength: "Conecta la acción con su beneficio.",
+          retryCue: "Cierra con una frase que resuma el aprendizaje.",
+        },
+        observations: [],
       });
     },
     ...overrides,
   };
-  return { handler: createSpeechAnalyzeHandler(deps), calls, hasAccessCalls, evaluateCalls };
+  // `loadChallenge` is always wrapped so `loadChallengeCalls` tracks every
+  // call regardless of whether a test overrides the resolution behavior.
+  const deps: SpeechAnalyzeDeps = {
+    ...baseDeps,
+    loadChallenge: (challengeId) => {
+      loadChallengeCalls.push(challengeId);
+      return baseDeps.loadChallenge(challengeId);
+    },
+  };
+  return {
+    handler: createSpeechAnalyzeHandler(deps),
+    calls,
+    hasAccessCalls,
+    evaluateCalls,
+    evaluateChallengeArgs,
+    loadChallengeCalls,
+  };
 }
 
 function post(body: unknown, authorization = "Bearer valid-jwt") {
@@ -120,6 +147,7 @@ Deno.test("returns transcript and semantic coaching grounded in it", async () =>
       strength: "Conecta la acción con su beneficio.",
       retryCue: "Cierra con una frase que resuma el aprendizaje.",
     },
+    observations: [],
   });
   assertEquals([...calls[0].bytes], [1, 2, 3]);
   assertEquals(calls[0].mimeType, "audio/wav");
@@ -218,4 +246,154 @@ Deno.test("never claims quota for a malformed body (invalid audio)", async () =>
   const response = await handler(post({ ...validBody(), mimeType: "text/plain" }));
   assertEquals(response.status, 400);
   assertEquals(quotaCalls.length, 0);
+});
+
+Deno.test("loads a published challenge and passes its prompt/skill/focus to evaluate", async () => {
+  const challenge: ChallengeContext = {
+    prompt: "Cuéntame un reto que resolviste esta semana.",
+    skill: "language",
+    focus: "Usa un conector claro entre tus ideas.",
+    focusBehaviors: ["weak_connector"],
+  };
+  const { handler, loadChallengeCalls, evaluateChallengeArgs } = setup({
+    loadChallenge: (challengeId) => {
+      return Promise.resolve(challengeId === "c1" ? challenge : null);
+    },
+  });
+  const response = await handler(post({ ...validBody(), challengeId: "c1" }));
+  assertEquals(response.status, 200);
+  assertEquals(loadChallengeCalls, ["c1"]);
+  assertEquals(evaluateChallengeArgs, [challenge]);
+});
+
+Deno.test("returns 400 unknown_challenge for an unknown/unpublished challengeId, no quota claimed, no provider call", async () => {
+  const quotaCalls: string[] = [];
+  const { handler, calls, evaluateCalls } = setup({
+    loadChallenge: () => Promise.resolve(null),
+    claimDailyAnalysis: (userId) => {
+      quotaCalls.push(userId);
+      return Promise.resolve(true);
+    },
+  });
+  const response = await handler(post({ ...validBody(), challengeId: "missing" }));
+  assertEquals(response.status, 400);
+  assertEquals((await response.json()).error.code, "unknown_challenge");
+  assertEquals(quotaCalls.length, 0);
+  assertEquals(calls.length, 0);
+  assertEquals(evaluateCalls.length, 0);
+});
+
+Deno.test("returns 400 invalid_body when challengeId is present but empty", async () => {
+  const { handler, loadChallengeCalls } = setup();
+  const response = await handler(post({ ...validBody(), challengeId: "" }));
+  assertEquals(response.status, 400);
+  assertEquals((await response.json()).error.code, "invalid_body");
+  assertEquals(loadChallengeCalls.length, 0);
+});
+
+Deno.test("never loads a challenge when challengeId is omitted (regression, default prompt)", async () => {
+  const { handler, loadChallengeCalls, evaluateChallengeArgs } = setup();
+  const response = await handler(post(validBody()));
+  assertEquals(response.status, 200);
+  assertEquals(loadChallengeCalls.length, 0);
+  assertEquals(evaluateChallengeArgs, [undefined]);
+});
+
+Deno.test("sanitizes AI-reported observations against the closed catalog", async () => {
+  const { handler } = setup({
+    evaluate: () =>
+      Promise.resolve({
+        coaching: {
+          summary: "s",
+          structure: "s",
+          vocabulary: "s",
+          strength: "s",
+          retryCue: "s",
+        },
+        observations: [
+          // Unknown code -> dropped.
+          { skill: "thinking", code: "not_a_real_code", polarity: "opportunity" },
+          // Skill/area mismatch -> dropped.
+          { skill: "language", code: "main_point_late", polarity: "opportunity" },
+          // Polarity mismatch -> dropped.
+          { skill: "thinking", code: "main_point_late", polarity: "strength" },
+          // Voice/fluency codes are never AI-judged (D12) -> dropped even
+          // though they exist in the catalog.
+          { skill: "voice", code: "pace_fast", polarity: "opportunity" },
+          // Non-string fields -> dropped.
+          { skill: "thinking", code: 42, polarity: "opportunity" },
+          // 7 valid entries below; only the first 6 (cap) are kept.
+          {
+            skill: "thinking",
+            code: "main_point_late",
+            polarity: "opportunity",
+            evidence: "Empezaste con el contexto antes de tu punto.",
+          },
+          // Evidence longer than 160 chars is truncated, not dropped.
+          {
+            skill: "language",
+            code: "vague_word",
+            polarity: "opportunity",
+            evidence: "x".repeat(200),
+          },
+          // Extra numeric field is never echoed back (no-number contract).
+          {
+            skill: "language",
+            code: "repeated_word",
+            polarity: "opportunity",
+            confidence: 0.9,
+          },
+          { skill: "language", code: "weak_connector", polarity: "opportunity" },
+          { skill: "language", code: "register_mismatch", polarity: "opportunity" },
+          { skill: "thinking", code: "no_closing", polarity: "opportunity" },
+          // Beyond the cap of 6 valid entries -> dropped.
+          { skill: "thinking", code: "clear_main_point", polarity: "strength" },
+        ],
+      }),
+  });
+  const response = await handler(post(validBody()));
+  const body = await response.json();
+  assertEquals(response.status, 200);
+  assertEquals(body.observations.length, 6);
+  assertEquals(body.observations[0], {
+    skill: "thinking",
+    code: "main_point_late",
+    polarity: "opportunity",
+    evidence: "Empezaste con el contexto antes de tu punto.",
+  });
+  assertEquals(body.observations[1].evidence.length, 160);
+  assertEquals(Object.keys(body.observations[2]).sort(), ["code", "polarity", "skill"]);
+  assertEquals("confidence" in body.observations[2], false);
+  assertEquals(
+    body.observations.map((entry: { code: string }) => entry.code),
+    [
+      "main_point_late",
+      "vague_word",
+      "repeated_word",
+      "weak_connector",
+      "register_mismatch",
+      "no_closing",
+    ],
+  );
+});
+
+Deno.test("defaults to an empty observations array when evaluate returns something malformed", async () => {
+  const { handler } = setup({
+    evaluate: () =>
+      Promise.resolve({
+        coaching: {
+          summary: "s",
+          structure: "s",
+          vocabulary: "s",
+          strength: "s",
+          retryCue: "s",
+        },
+        observations: "not-an-array",
+        // deno-lint-ignore no-explicit-any
+      } as any),
+  });
+  const response = await handler(post(validBody()));
+  const body = await response.json();
+  assertEquals(response.status, 200);
+  assertEquals(body.observations, []);
 });
