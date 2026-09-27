@@ -1,0 +1,16 @@
+slug: "train-habla-con-precision-2"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "language"
+mode: "speak_with_precision"
+difficulty: 2
+prompt: "Cuéntame tu rutina de un día normal sin repetir las mismas palabras."
+cue: "Cuando vayas a repetir una palabra, busca otra parecida."
+focus: "Evita repetir la misma palabra; usa sinónimos."
+focus_behaviors:
+  - "repeated_word"
+  - "varied_vocabulary"
+transfer_prompts:
+  - "Ahora cuéntame tu fin de semana sin repetir las mismas palabras."
+target_seconds: 30

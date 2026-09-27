@@ -1,0 +1,16 @@
+slug: "train-habla-con-precision-1"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "language"
+mode: "speak_with_precision"
+difficulty: 1
+prompt: "Describe tu lugar favorito para descansar, sin decir «bonito» ni «bien»."
+cue: "Busca palabras más exactas que «bonito»."
+focus: "Cambia palabras vagas por otras más precisas."
+focus_behaviors:
+  - "vague_word"
+  - "precise_word"
+transfer_prompts:
+  - "Ahora describe tu comida favorita sin usar «rico» ni «bueno»."
+target_seconds: 20

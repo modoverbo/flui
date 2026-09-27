@@ -1,0 +1,16 @@
+slug: "train-situaciones-reales-1"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "language"
+mode: "real_situations"
+difficulty: 1
+prompt: "Imagina que llegas a una reunión de trabajo y te presentas al grupo. Hazlo ahora."
+cue: "Di tu nombre, tu rol y algo breve sobre ti."
+focus: "Usa un tono profesional, ni muy formal ni muy casual."
+focus_behaviors:
+  - "register_mismatch"
+  - "precise_word"
+transfer_prompts:
+  - "Ahora imagina que te presentas en una entrevista de trabajo. Hazlo ahora."
+target_seconds: 20

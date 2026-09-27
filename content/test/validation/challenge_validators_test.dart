@@ -182,14 +182,230 @@ void main() {
   });
 
   group('ChallengeValidatorRegistry', () {
-    test('lists the raw and challenge-level validators', () {
+    test('lists the raw, challenge-level and library-level validators', () {
       expect(ChallengeValidatorRegistry.rawValidators, isNotEmpty);
       expect(ChallengeValidatorRegistry.challengeValidators, isNotEmpty);
+      expect(ChallengeValidatorRegistry.libraryValidators, isNotEmpty);
       expect(
         ChallengeValidatorRegistry.all().length,
         ChallengeValidatorRegistry.rawValidators.length +
-            ChallengeValidatorRegistry.challengeValidators.length,
+            ChallengeValidatorRegistry.challengeValidators.length +
+            ChallengeValidatorRegistry.libraryValidators.length,
       );
+    });
+  });
+
+  group('UniqueChallengeSlugsValidator', () {
+    const validator = UniqueChallengeSlugsValidator();
+
+    test('passes when every slug is distinct', () {
+      final a = Challenge.fromMap(_validTrainingRaw());
+      final b = Challenge.fromMap(_validDiagnosisRaw());
+      expect(validator.validateChallengeLibrary([a, b]), isEmpty);
+    });
+
+    test('fails when two challenges share a slug', () {
+      final a = Challenge.fromMap(_validTrainingRaw());
+      final b = Challenge.fromMap(
+        _validTrainingRaw()..['prompt'] = 'Otra consigna diferente y válida.',
+      );
+      final issues = validator.validateChallengeLibrary([a, b]);
+      expect(issues, isNotEmpty);
+      expect(issues.first.isBlocking, isTrue);
+    });
+  });
+
+  group('DiagnosisSlotCoverageValidator', () {
+    const validator = DiagnosisSlotCoverageValidator();
+
+    Challenge diagnosisAt(int slot, {String status = 'approved'}) =>
+        Challenge.fromMap(
+          _validDiagnosisRaw()
+            ..['slug'] = 'diagnostico-slot-$slot-${status.hashCode}'
+            ..['diagnosis_slot'] = slot
+            ..['status'] = status,
+        );
+
+    test('blocks a slot with zero approved challenges', () {
+      final challenges = [diagnosisAt(1), diagnosisAt(1), diagnosisAt(2)];
+      final issues = validator.validateChallengeLibrary(challenges);
+      expect(
+        issues.any((i) => i.isBlocking && i.location.contains('[3]')),
+        isTrue,
+        reason: issues.map((i) => i.toString()).join('\n'),
+      );
+    });
+
+    test('warns (not blocks) a slot with exactly one approved challenge', () {
+      final challenges = [
+        diagnosisAt(1),
+        diagnosisAt(2),
+        diagnosisAt(2),
+        diagnosisAt(3),
+        diagnosisAt(3),
+      ];
+      final issues = validator.validateChallengeLibrary(challenges);
+      final slot1 = issues.where((i) => i.location.contains('[1]'));
+      expect(slot1, isNotEmpty);
+      expect(slot1.every((i) => !i.isBlocking), isTrue);
+      expect(issues.any((i) => i.location.contains('[2]')), isFalse);
+      expect(issues.any((i) => i.location.contains('[3]')), isFalse);
+    });
+
+    test('a draft challenge does not count toward coverage', () {
+      final challenges = [
+        diagnosisAt(1, status: 'draft'),
+        diagnosisAt(2),
+        diagnosisAt(2),
+        diagnosisAt(3),
+        diagnosisAt(3),
+      ];
+      final issues = validator.validateChallengeLibrary(challenges);
+      expect(
+        issues.any((i) => i.isBlocking && i.location.contains('[1]')),
+        isTrue,
+      );
+    });
+
+    test('passes with 2 approved challenges in every slot', () {
+      final challenges = [
+        diagnosisAt(1),
+        diagnosisAt(1),
+        diagnosisAt(2),
+        diagnosisAt(2),
+        diagnosisAt(3),
+        diagnosisAt(3),
+      ];
+      expect(validator.validateChallengeLibrary(challenges), isEmpty);
+    });
+  });
+
+  group('TrainingModeCoverageValidator', () {
+    const validator = TrainingModeCoverageValidator();
+
+    Challenge trainingAt(
+      TrainingMode mode,
+      int difficulty, {
+      String status = 'approved',
+    }) => Challenge.fromMap(
+      _validTrainingRaw()
+        ..['slug'] = 'entreno-${mode.wireName}-$difficulty-${status.hashCode}'
+        ..['mode'] = mode.wireName
+        ..['difficulty'] = difficulty
+        ..['status'] = status,
+    );
+
+    test('blocks a mode missing an approved difficulty-1 challenge', () {
+      final challenges = [
+        trainingAt(TrainingMode.thinkAndSpeak, 2),
+        trainingAt(TrainingMode.thinkAndSpeak, 3),
+      ];
+      final issues = validator.validateChallengeLibrary(challenges);
+      expect(
+        issues.any(
+          (i) =>
+              i.isBlocking &&
+              i.location.contains('think_and_speak') &&
+              i.location.contains('[1]'),
+        ),
+        isTrue,
+        reason: issues.map((i) => i.toString()).join('\n'),
+      );
+    });
+
+    test('warns (not blocks) a mode missing difficulty 2 or 3', () {
+      // Every other mode is fully covered so only speak_with_precision's
+      // gaps show up in this assertion.
+      final challenges = [
+        trainingAt(TrainingMode.thinkAndSpeak, 1),
+        trainingAt(TrainingMode.thinkAndSpeak, 2),
+        trainingAt(TrainingMode.thinkAndSpeak, 3),
+        trainingAt(TrainingMode.speakWithPrecision, 1),
+        trainingAt(TrainingMode.masterYourVoice, 1),
+        trainingAt(TrainingMode.masterYourVoice, 2),
+        trainingAt(TrainingMode.masterYourVoice, 3),
+        trainingAt(TrainingMode.realSituations, 1),
+        trainingAt(TrainingMode.realSituations, 2),
+        trainingAt(TrainingMode.realSituations, 3),
+      ];
+      final issues = validator
+          .validateChallengeLibrary(challenges)
+          .where((i) => i.location.contains('speak_with_precision'))
+          .toList();
+      expect(issues.length, 2);
+      expect(issues.every((i) => !i.isBlocking), isTrue);
+    });
+
+    test('passes a fully covered mode', () {
+      final challenges = [
+        trainingAt(TrainingMode.masterYourVoice, 1),
+        trainingAt(TrainingMode.masterYourVoice, 2),
+        trainingAt(TrainingMode.masterYourVoice, 3),
+      ];
+      final issues = validator.validateChallengeLibrary(challenges);
+      expect(
+        issues.where((i) => i.location.contains('master_your_voice')),
+        isEmpty,
+      );
+    });
+  });
+
+  group('ChallengeBrandValidator', () {
+    const validator = ChallengeBrandValidator();
+
+    test('passes clean training and diagnosis challenges', () {
+      expect(
+        validator.validateChallenge(Challenge.fromMap(_validTrainingRaw())),
+        isEmpty,
+      );
+      expect(
+        validator.validateChallenge(Challenge.fromMap(_validDiagnosisRaw())),
+        isEmpty,
+      );
+    });
+
+    test('fails on a banned school-vocabulary word in the prompt', () {
+      final challenge = Challenge.fromMap(
+        _validTrainingRaw()
+          ..['prompt'] = 'Cuéntame sobre tu examen favorito de la escuela.',
+      );
+      final issues = validator.validateChallenge(challenge);
+      expect(issues, isNotEmpty);
+      expect(issues.first.location, 'prompt');
+    });
+
+    test('fails when the focus addresses the learner as "usted"', () {
+      final challenge = Challenge.fromMap(
+        _validTrainingRaw()..['focus'] = 'Cuente usted su idea con calma.',
+      );
+      final issues = validator.validateChallenge(challenge);
+      expect(issues, isNotEmpty);
+    });
+
+    test('fails on a regional term in a transfer prompt', () {
+      final challenge = Challenge.fromMap(
+        _validTrainingRaw()
+          ..['transfer_prompts'] = ['Cuéntame cómo fue tu día en el curro.'],
+      );
+      final issues = validator.validateChallenge(challenge);
+      expect(issues, isNotEmpty);
+      expect(issues.first.location, 'transfer_prompts[0]');
+    });
+
+    test('fails on a sensitive topic in the cue', () {
+      final challenge = Challenge.fromMap(
+        _validTrainingRaw()..['cue'] = 'Habla de las elecciones de tu país.',
+      );
+      final issues = validator.validateChallenge(challenge);
+      expect(issues, isNotEmpty);
+    });
+
+    test('fails on a straight double quote (typography)', () {
+      final challenge = Challenge.fromMap(
+        _validTrainingRaw()..['prompt'] = 'Cuéntame qué significa "tranquilo".',
+      );
+      final issues = validator.validateChallenge(challenge);
+      expect(issues, isNotEmpty);
     });
   });
 }

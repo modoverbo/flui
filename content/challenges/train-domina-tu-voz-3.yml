@@ -1,0 +1,17 @@
+slug: "train-domina-tu-voz-3"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "voice"
+mode: "master_your_voice"
+difficulty: 3
+prompt: "Cuéntame una anécdota que te haya pasado hace poco, de principio a fin."
+cue: null
+focus: "Mantén un volumen constante del principio al final."
+focus_behaviors:
+  - "volume_unstable"
+  - "steady_volume"
+transfer_prompts:
+  - "Cuéntame otra anécdota reciente, manteniendo el mismo volumen."
+  - "Cuéntame algo gracioso que te haya pasado, con un volumen constante."
+target_seconds: 45

@@ -1,0 +1,16 @@
+slug: "train-piensa-y-habla-1"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "thinking"
+mode: "think_and_speak"
+difficulty: 1
+prompt: "Cuéntame qué hiciste esta mañana, de principio a fin."
+cue: "Empieza por lo primero que hiciste."
+focus: "Ordena tus ideas: primero, después, al final."
+focus_behaviors:
+  - "no_clear_structure"
+  - "ordered_ideas"
+transfer_prompts:
+  - "Ahora cuéntame qué harás el resto del día, en el mismo orden."
+target_seconds: 20

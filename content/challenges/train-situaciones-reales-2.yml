@@ -1,0 +1,16 @@
+slug: "train-situaciones-reales-2"
+status: "approved"
+purpose: "training"
+diagnosis_slot: null
+skill: "language"
+mode: "real_situations"
+difficulty: 2
+prompt: "Un compañero propone una idea con la que no estás de acuerdo. Explícale tu punto de vista sin sonar brusco."
+cue: "Empieza reconociendo su idea antes de dar la tuya."
+focus: "Discrepa con respeto, sin sonar tajante."
+focus_behaviors:
+  - "weak_connector"
+  - "register_mismatch"
+transfer_prompts:
+  - "Ahora imagina que no estás de acuerdo con un plan familiar. Explica tu punto de vista con el mismo respeto."
+target_seconds: 30
