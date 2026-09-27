@@ -32,6 +32,7 @@ String failureMessage(AppLocalizations l10n, Failure failure) {
       SpeechAnalysisErrorCode.dailyLimitReached =>
         l10n.speechAnalysisDailyLimitReached,
       SpeechAnalysisErrorCode.rateLimited => l10n.speechAnalysisRateLimited,
+      SpeechAnalysisErrorCode.noSpeech => l10n.speechAnalysisNoSpeech,
       SpeechAnalysisErrorCode.unknown => l10n.errorUnexpected,
     },
   };

@@ -281,6 +281,151 @@ void main() {
     },
   );
 
+  test('fake transcribe returns a coaching-free transcript', () async {
+    final repository = FakeSpeechAnalysisRepository();
+
+    final result = await repository.transcribe(
+      Uint8List.fromList([1, 2, 3]),
+      mimeType: 'audio/wav',
+      duration: const Duration(seconds: 5),
+    );
+
+    final transcript = result.valueOrNull!;
+    expect(transcript.text, isNotEmpty);
+    expect(transcript.coaching, isNull);
+    expect(transcript.observations, isEmpty);
+  });
+
+  test('local transcribe posts mode=transcribe and parses a coaching-free '
+      'transcript', () async {
+    late http.Request captured;
+    final client = _RecordingClient((request) {
+      captured = request;
+      return http.Response(
+        jsonEncode({
+          'text': 'Casa',
+          'words': [
+            {'text': 'Casa', 'start': 0.0, 'end': 0.4},
+          ],
+          'durationMs': 900,
+        }),
+        200,
+        headers: {'content-type': 'application/json'},
+      );
+    });
+
+    final result =
+        await HttpSpeechAnalysisRepository(
+          endpoint: Uri.parse('http://127.0.0.1:8787/analyze'),
+          client: client,
+        ).transcribe(
+          Uint8List.fromList([1, 2, 3]),
+          mimeType: 'audio/wav',
+          duration: const Duration(milliseconds: 900),
+        );
+
+    expect(result.valueOrNull?.text, 'Casa');
+    expect(result.valueOrNull?.coaching, isNull);
+    final body = jsonDecode(captured.body) as Map<String, dynamic>;
+    expect(body['mode'], 'transcribe');
+    expect(body.containsKey('challengeId'), false);
+  });
+
+  test('supabase transcribe posts mode=transcribe and parses a coaching-free '
+      'transcript', () async {
+    final recorder = SupabaseRecorder(
+      respond: (request) {
+        if (request.url.path.endsWith('/functions/v1/speech-analyze')) {
+          return http.Response(
+            jsonEncode({
+              'text': 'Casa',
+              'words': [
+                {'text': 'Casa', 'start': 0.0, 'end': 0.4},
+              ],
+              'durationMs': 900,
+            }),
+            200,
+            headers: {'content-type': 'application/json'},
+            request: request,
+          );
+        }
+        return const [];
+      },
+    );
+    addTearDown(recorder.dispose);
+
+    final result = await SupabaseSpeechAnalysisRepository(recorder.client)
+        .transcribe(
+          Uint8List.fromList([1, 2, 3]),
+          mimeType: 'audio/wav',
+          duration: const Duration(milliseconds: 900),
+        );
+
+    expect(result.valueOrNull?.text, 'Casa');
+    expect(result.valueOrNull?.coaching, isNull);
+    final body = jsonDecode(recorder.last.body) as Map<String, dynamic>;
+    expect(body['mode'], 'transcribe');
+  });
+
+  test(
+    'supabase analysis maps 422 no_speech to SpeechAnalysisFailure',
+    () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) => http.Response(
+          jsonEncode({
+            'error': {
+              'code': 'no_speech',
+              'message': 'No speech was detected.',
+            },
+          }),
+          422,
+          headers: {'content-type': 'application/json'},
+          request: request,
+        ),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeechAnalysisRepository(recorder.client)
+          .transcribe(
+            Uint8List.fromList([1, 2, 3]),
+            mimeType: 'audio/wav',
+            duration: const Duration(seconds: 1),
+          );
+
+      expect(
+        result.failureOrNull,
+        const SpeechAnalysisFailure(SpeechAnalysisErrorCode.noSpeech),
+      );
+    },
+  );
+
+  test('http analysis maps 422 no_speech to SpeechAnalysisFailure', () async {
+    final client = _RecordingClient(
+      (_) => http.Response(
+        jsonEncode({
+          'error': {'code': 'no_speech', 'message': 'No speech was detected.'},
+        }),
+        422,
+        headers: {'content-type': 'application/json'},
+      ),
+    );
+
+    final result =
+        await HttpSpeechAnalysisRepository(
+          endpoint: Uri.parse('http://127.0.0.1:8787/analyze'),
+          client: client,
+        ).transcribe(
+          Uint8List.fromList([1, 2, 3]),
+          mimeType: 'audio/wav',
+          duration: const Duration(seconds: 1),
+        );
+
+    expect(
+      result.failureOrNull,
+      const SpeechAnalysisFailure(SpeechAnalysisErrorCode.noSpeech),
+    );
+  });
+
   test(
     'http analysis maps 503 access_unavailable to SpeechAnalysisFailure',
     () async {

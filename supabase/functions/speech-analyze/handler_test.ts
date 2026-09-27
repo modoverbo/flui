@@ -397,3 +397,78 @@ Deno.test("defaults to an empty observations array when evaluate returns somethi
   assertEquals(response.status, 200);
   assertEquals(body.observations, []);
 });
+
+Deno.test("mode=transcribe skips evaluate entirely and returns text-only", async () => {
+  const { handler, calls, evaluateCalls } = setup();
+  const response = await handler(post({ ...validBody(), mode: "transcribe" }));
+  const body = await response.json();
+  assertEquals(response.status, 200);
+  assertEquals(evaluateCalls.length, 0);
+  assertEquals(calls.length, 1);
+  assertEquals(body, {
+    text: "Una idea clara",
+    durationMs: 1200,
+    words: [
+      { text: "Una", start: 0, end: 0.2 },
+      { text: "idea", start: 0.3, end: 0.6 },
+      { text: "clara", start: 0.7, end: 1 },
+    ],
+  });
+  assertEquals("analysis" in body, false);
+  assertEquals("observations" in body, false);
+});
+
+Deno.test("mode=transcribe with challengeId is rejected as invalid_body (mutually exclusive)", async () => {
+  const { handler, loadChallengeCalls } = setup();
+  const response = await handler(
+    post({ ...validBody(), mode: "transcribe", challengeId: "c1" }),
+  );
+  assertEquals(response.status, 400);
+  assertEquals((await response.json()).error.code, "invalid_body");
+  assertEquals(loadChallengeCalls.length, 0);
+});
+
+Deno.test("an unknown mode value is rejected as invalid_body", async () => {
+  const { handler } = setup();
+  const response = await handler(post({ ...validBody(), mode: "summarize" }));
+  assertEquals(response.status, 400);
+  assertEquals((await response.json()).error.code, "invalid_body");
+});
+
+Deno.test("mode=transcribe claims exactly one quota unit, same as analyze mode", async () => {
+  const quotaCalls: string[] = [];
+  const { handler } = setup({
+    claimDailyAnalysis: (userId) => {
+      quotaCalls.push(userId);
+      return Promise.resolve(true);
+    },
+  });
+  const response = await handler(post({ ...validBody(), mode: "transcribe" }));
+  assertEquals(response.status, 200);
+  assertEquals(quotaCalls, ["u1"]);
+});
+
+Deno.test("mode=transcribe reaches access (403) and quota (429) gates exactly like analyze mode", async () => {
+  const noAccess = setup({ hasAccess: () => Promise.resolve(false) });
+  const noAccessResponse = await noAccess.handler(
+    post({ ...validBody(), mode: "transcribe" }),
+  );
+  assertEquals(noAccessResponse.status, 403);
+  assertEquals((await noAccessResponse.json()).error.code, "access_required");
+
+  const quotaExhausted = setup({ claimDailyAnalysis: () => Promise.resolve(false) });
+  const quotaResponse = await quotaExhausted.handler(
+    post({ ...validBody(), mode: "transcribe" }),
+  );
+  assertEquals(quotaResponse.status, 429);
+  assertEquals((await quotaResponse.json()).error.code, "daily_limit_reached");
+});
+
+Deno.test("mode=transcribe with an empty Whisper transcript returns 422 no_speech", async () => {
+  const { handler } = setup({
+    transcribe: () => Promise.resolve({ text: "   ", durationSeconds: 0.4, words: [] }),
+  });
+  const response = await handler(post({ ...validBody(), mode: "transcribe" }));
+  assertEquals(response.status, 422);
+  assertEquals((await response.json()).error.code, "no_speech");
+});

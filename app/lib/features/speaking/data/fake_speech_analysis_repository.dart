@@ -19,47 +19,84 @@ final class FakeSpeechAnalysisRepository implements SpeechAnalysisRepository {
     required Duration duration,
     String? challengeId,
   }) async {
-    if (latency > Duration.zero) await Future<void>.delayed(latency);
-    final failure = nextFailure;
-    nextFailure = null;
-    if (failure != null) return Result.err(failure);
-    if (audio.isEmpty) return const Result.err(UnexpectedFailure('no_speech'));
+    final rejected = await _rejectIfNeeded(audio);
+    if (rejected != null) return rejected;
 
-    _attempt++;
-    final text = _attempt.isOdd
-        ? 'Eh pues tomé una decisión importante y o sea la decisión fue '
-              'organizar mejor mi mañana para trabajar con más claridad.'
-        : 'Organicé mi mañana antes de comenzar. Eso me permitió trabajar '
-              'con más claridad y terminar el día con menos presión.';
-    final tokens = text.split(' ');
-    final seconds = duration.inMilliseconds / 1000;
-    final step = seconds / tokens.length;
+    final text = _nextText();
+    final isOdd = _attempt.isOdd;
     return Result.ok(
       SpeechTranscript(
         text: text,
         duration: duration,
         coaching: SpeechCoaching(
-          summary: _attempt.isOdd
+          summary: isOdd
               ? 'Explicaste que organizar tu mañana mejoró tu claridad.'
               : 'Explicaste el efecto de organizar tu mañana.',
-          structure: _attempt.isOdd
+          structure: isOdd
               ? 'Presentas la decisión y el beneficio; falta un cierre.'
               : 'La secuencia acción, resultado y cierre es clara.',
-          vocabulary: _attempt.isOdd
+          vocabulary: isOdd
               ? 'Usaste “organizar” y “claridad”; “decisión” se repite.'
               : 'Usaste verbos concretos y evitaste repeticiones dominantes.',
           strength: 'Relacionas una acción concreta con su resultado.',
           retryCue: 'Cierra con una frase de máximo 10 palabras.',
         ),
-        words: [
-          for (var index = 0; index < tokens.length; index++)
-            SpeechWord(
-              text: tokens[index],
-              startSeconds: index * step,
-              endSeconds: index * step + step * .7,
-            ),
-        ],
+        words: _words(text, duration),
       ),
     );
+  }
+
+  @override
+  Future<Result<SpeechTranscript>> transcribe(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+  }) async {
+    final rejected = await _rejectIfNeeded(audio);
+    if (rejected != null) return rejected;
+
+    final text = _nextText();
+    return Result.ok(
+      SpeechTranscript(
+        text: text,
+        duration: duration,
+        words: _words(text, duration),
+      ),
+    );
+  }
+
+  /// Shared latency/failure/empty-audio handling for [analyze]/[transcribe].
+  /// Returns a rejecting [Result] when the caller must stop here, or null to
+  /// continue building a successful transcript.
+  Future<Result<SpeechTranscript>?> _rejectIfNeeded(Uint8List audio) async {
+    if (latency > Duration.zero) await Future<void>.delayed(latency);
+    final failure = nextFailure;
+    nextFailure = null;
+    if (failure != null) return Result.err(failure);
+    if (audio.isEmpty) return const Result.err(UnexpectedFailure('no_speech'));
+    return null;
+  }
+
+  String _nextText() {
+    _attempt++;
+    return _attempt.isOdd
+        ? 'Eh pues tomé una decisión importante y o sea la decisión fue '
+              'organizar mejor mi mañana para trabajar con más claridad.'
+        : 'Organicé mi mañana antes de comenzar. Eso me permitió trabajar '
+              'con más claridad y terminar el día con menos presión.';
+  }
+
+  List<SpeechWord> _words(String text, Duration duration) {
+    final tokens = text.split(' ');
+    final seconds = duration.inMilliseconds / 1000;
+    final step = seconds / tokens.length;
+    return [
+      for (var index = 0; index < tokens.length; index++)
+        SpeechWord(
+          text: tokens[index],
+          startSeconds: index * step,
+          endSeconds: index * step + step * .7,
+        ),
+    ];
   }
 }
