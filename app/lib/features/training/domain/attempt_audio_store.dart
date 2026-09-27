@@ -26,12 +26,20 @@ abstract interface class AttemptAudioStore {
     required String mimeType,
   });
 
-  /// Removes the stored object at [path] (idempotent when it is already
-  /// gone) and marks [attemptId]'s row `deleted`.
-  Future<Result<void>> delete({
-    required String attemptId,
-    required String path,
-  });
+  /// Removes the stored object referenced by [attemptId]'s own row — the
+  /// object path is resolved server-side from that row, never trusted from
+  /// a caller-supplied value, so a caller can never remove another
+  /// attempt's object.
+  ///
+  /// Requires the row to currently be `stored`; anything else (never
+  /// uploaded, still `pending`/`failed`) fails. Idempotent when the row is
+  /// already `deleted`: succeeds without a storage call.
+  ///
+  /// The row is marked `deleted` BEFORE the object is removed: if the
+  /// object removal itself then fails, the row is already consistent and
+  /// the orphaned object is reconciled server-side by the retention sweep
+  /// (24 h grace period) rather than left pointing at a missing object.
+  Future<Result<void>> delete({required String attemptId});
 }
 
 /// Maps a `speaking_attempts.audio_mime` / bucket-allowed MIME type to the

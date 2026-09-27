@@ -30,6 +30,28 @@ sealed class AudioRetention {
     AudioRetentionFailed() => 'failed',
     AudioRetentionDeleted() => 'deleted',
   };
+
+  /// Whether a write may transition `audio_status` from [from] (`null` for
+  /// a row that was never written yet, i.e. the server default `none`) to
+  /// [to]. Mirrors `speaking_attempts_guard_audio` (migration
+  /// `20260913120800_speaking_history.sql`): `none`/`deleted` are terminal;
+  /// `pending -> stored|failed`; `failed -> pending|stored`; `stored ->
+  /// deleted`; same status is always an allowed no-op.
+  ///
+  /// `FakeAttemptAudioStore` uses this to reject the same transitions the
+  /// real database trigger rejects, so it behaves identically to
+  /// `SupabaseAttemptAudioStore` for shared contract tests.
+  static bool isAllowedTransition(AudioRetention? from, AudioRetention to) {
+    final fromStatus = from?.wireStatus ?? 'none';
+    final toStatus = to.wireStatus;
+    if (fromStatus == toStatus) return true;
+    return switch (fromStatus) {
+      'pending' => toStatus == 'stored' || toStatus == 'failed',
+      'failed' => toStatus == 'pending' || toStatus == 'stored',
+      'stored' => toStatus == 'deleted',
+      _ => false, // 'none'/'deleted' are terminal.
+    };
+  }
 }
 
 @immutable

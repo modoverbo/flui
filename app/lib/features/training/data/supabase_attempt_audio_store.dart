@@ -1,6 +1,7 @@
 import 'dart:developer' as developer;
 import 'dart:typed_data';
 
+import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/supabase/data_error_mapper.dart';
 import 'package:flui/features/training/domain/attempt_audio_store.dart';
@@ -106,25 +107,60 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
   }
 
   @override
-  Future<Result<void>> delete({
-    required String attemptId,
-    required String path,
-  }) async {
+  Future<Result<void>> delete({required String attemptId}) async {
+    // The object path is resolved from the attempt's own row (RLS-scoped
+    // to its owner), never trusted from a caller — a caller can never
+    // remove another attempt's object this way.
+    final Map<String, dynamic>? row;
     try {
-      // The storage API's delete is idempotent: removing an already-gone
-      // object still succeeds (design part-3 §5).
-      await _client.storage.from(_bucket).remove([path]);
+      row = await _client
+          .from('speaking_attempts')
+          .select('audio_status, audio_path')
+          .eq('id', attemptId)
+          .maybeSingle();
     } on Object catch (error) {
       return Result.err(mapDataError(error));
     }
+    final status = row?['audio_status'] as String? ?? 'none';
+    if (status == 'deleted') {
+      // Idempotent: nothing left to remove, and no write is issued.
+      return const Result.ok(null);
+    }
+    if (status != 'stored') {
+      return const Result.err(UnexpectedFailure('attempt_not_stored'));
+    }
+    final path = row!['audio_path']! as String;
+
+    final List<dynamic> updatedRows;
     try {
-      await _client
+      // Guarded on the source status: a concurrent delete (or any change
+      // since the select above) makes this match zero rows instead of
+      // silently overwriting a row someone else already resolved.
+      updatedRows = await _client
           .from('speaking_attempts')
           .update({'audio_status': 'deleted'})
-          .eq('id', attemptId);
-      return const Result.ok(null);
+          .eq('id', attemptId)
+          .eq('audio_status', 'stored')
+          .select();
     } on Object catch (error) {
+      // The row update itself failed or is unconfirmed — never remove the
+      // object here: an inconsistent 'stored' row pointing at a missing
+      // object is worse than a harmless orphan reconciled server-side.
       return Result.err(mapDataError(error));
     }
+    if (updatedRows.length != 1) {
+      return const Result.err(UnexpectedFailure('attempt_not_stored'));
+    }
+
+    try {
+      // The row is already 'deleted' at this point, so a failed object
+      // removal here leaves only a harmless orphan, never an inconsistent
+      // row — reconciled server-side by the retention sweep's 24 h grace
+      // period. Never fail the whole delete() for a storage-only error.
+      await _client.storage.from(_bucket).remove([path]);
+    } on Object catch (error, stackTrace) {
+      _logFailure('remove the stored object for', attemptId, error, stackTrace);
+    }
+    return const Result.ok(null);
   }
 }
