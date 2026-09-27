@@ -75,6 +75,7 @@ final class CountingAnalysisRepository implements SpeechAnalysisRepository {
     Uint8List audio, {
     required String mimeType,
     required Duration duration,
+    String? challengeId,
   }) {
     calls++;
     return _delegate.analyze(audio, mimeType: mimeType, duration: duration);
@@ -89,6 +90,7 @@ final class PendingAnalysisRepository implements SpeechAnalysisRepository {
     Uint8List audio, {
     required String mimeType,
     required Duration duration,
+    String? challengeId,
   }) => result.future;
 }
 

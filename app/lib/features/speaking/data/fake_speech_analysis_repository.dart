@@ -17,6 +17,7 @@ final class FakeSpeechAnalysisRepository implements SpeechAnalysisRepository {
     Uint8List audio, {
     required String mimeType,
     required Duration duration,
+    String? challengeId,
   }) async {
     if (latency > Duration.zero) await Future<void>.delayed(latency);
     final failure = nextFailure;

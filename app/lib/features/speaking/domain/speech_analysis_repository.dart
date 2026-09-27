@@ -8,5 +8,6 @@ abstract interface class SpeechAnalysisRepository {
     Uint8List audio, {
     required String mimeType,
     required Duration duration,
+    String? challengeId,
   });
 }

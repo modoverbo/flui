@@ -13,6 +13,7 @@ export type ErrorCode =
   | "already_subscribed"
   | "invalid_audio"
   | "no_speech"
+  | "unknown_challenge"
   | "payload_too_large"
   | "daily_limit_reached"
   | "rate_limited"

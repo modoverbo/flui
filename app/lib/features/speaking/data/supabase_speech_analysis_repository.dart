@@ -20,59 +20,32 @@ final class SupabaseSpeechAnalysisRepository
     Uint8List audio, {
     required String mimeType,
     required Duration duration,
+    String? challengeId,
   }) async {
     if (audio.isEmpty) {
       return const Result.err(UnexpectedFailure('no_speech'));
     }
     try {
+      final requestBody = <String, dynamic>{
+        'audioBase64': base64Encode(audio),
+        'mimeType': mimeType,
+        'durationMs': duration.inMilliseconds,
+      };
+      if (challengeId != null) requestBody['challengeId'] = challengeId;
       final response = await _client.functions.invoke(
         'speech-analyze',
-        body: {
-          'audioBase64': base64Encode(audio),
-          'mimeType': mimeType,
-          'durationMs': duration.inMilliseconds,
-        },
+        body: requestBody,
       );
       final data = response.data;
       if (data is! Map) {
         return const Result.err(UnexpectedFailure('invalid_speech_response'));
       }
       final json = Map<String, dynamic>.from(data);
-      final rawWords = json['words'];
-      if (json['text'] is! String || rawWords is! List) {
+      if (json['text'] is! String || json['words'] is! List) {
         return const Result.err(UnexpectedFailure('invalid_speech_response'));
       }
-      final rawAnalysis = json['analysis'];
-      final analysis = rawAnalysis is Map
-          ? Map<String, dynamic>.from(rawAnalysis)
-          : null;
       return Result.ok(
-        SpeechTranscript(
-          text: json['text'] as String,
-          duration: Duration(
-            milliseconds:
-                (json['durationMs'] as num?)?.round() ??
-                duration.inMilliseconds,
-          ),
-          words: [
-            for (final raw in rawWords)
-              if (raw is Map)
-                SpeechWord(
-                  text: raw['text'] as String,
-                  startSeconds: (raw['start'] as num).toDouble(),
-                  endSeconds: (raw['end'] as num).toDouble(),
-                ),
-          ],
-          coaching: analysis == null
-              ? null
-              : SpeechCoaching(
-                  summary: analysis['summary'] as String,
-                  structure: analysis['structure'] as String,
-                  vocabulary: analysis['vocabulary'] as String,
-                  strength: analysis['strength'] as String,
-                  retryCue: analysis['retryCue'] as String,
-                ),
-        ),
+        SpeechTranscript.fromJson(json, fallbackDuration: duration),
       );
     } on FunctionsFetchException catch (error) {
       // No response reached the client (network/transport failure): keep

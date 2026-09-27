@@ -1,5 +1,6 @@
 import { corsHeaders, isOriginAllowed, preflightResponse } from "../_shared/cors.ts";
 import { bearerToken, errorResponse, HttpError, jsonResponse } from "../_shared/http.ts";
+import behaviorCodesData from "./behavior_codes.json" with { type: "json" };
 
 export interface TranscriptWord {
   text: string;
@@ -21,6 +22,33 @@ export interface SpeechCoaching {
   retryCue: string;
 }
 
+/** One sanitized `observations[]` entry in the response payload (design §9). */
+export interface SpeechObservation {
+  skill: string;
+  code: string;
+  polarity: string;
+  evidence?: string;
+}
+
+/** A published challenge's server-resolved prompt context (D18). */
+export interface ChallengeContext {
+  prompt: string;
+  skill: string;
+  focus: string;
+  focusBehaviors: string[];
+}
+
+export interface SpeechEvaluation {
+  coaching: SpeechCoaching;
+  /**
+   * Raw, not-yet-sanitized AI-reported observations. Untyped on purpose:
+   * this is untrusted provider output, sanitized against the closed
+   * `BehaviorCode` catalog by `sanitizeObservations` below before ever
+   * reaching a response (never fails the response, design §9).
+   */
+  observations: unknown;
+}
+
 export interface SpeechAnalyzeDeps {
   allowedOrigins: string[];
   getUserId(token: string): Promise<string | null>;
@@ -33,13 +61,87 @@ export interface SpeechAnalyzeDeps {
    * wiring path can silently ship with the quota disabled.
    */
   claimDailyAnalysis(userId: string): Promise<boolean>;
+  /**
+   * Loads a published challenge's server-resolved prompt context (D18).
+   * Returns null when `challengeId` does not resolve to a published
+   * challenge. Not called at all when the request omits `challengeId`.
+   */
+  loadChallenge(challengeId: string): Promise<ChallengeContext | null>;
   transcribe(bytes: Uint8Array, mimeType: string): Promise<ProviderTranscript>;
-  evaluate(text: string): Promise<SpeechCoaching>;
+  evaluate(text: string, challenge?: ChallengeContext): Promise<SpeechEvaluation>;
   log?: (message: string, details?: Record<string, unknown>) => void;
 }
 
 const allowedMimeTypes = new Set(["audio/wav", "audio/webm", "audio/ogg", "audio/m4a"]);
 const maxDecodedBytes = 5 * 1024 * 1024;
+
+interface WireBehaviorCode {
+  wireCode: string;
+  area: string;
+  polarity: string;
+}
+
+// Voice/fluency behaviors are always measured client-side, never AI-judged
+// (design D12) -- only thinking/language codes are trusted from `evaluate`.
+const aiObservableCodes = new Map<string, WireBehaviorCode>(
+  (behaviorCodesData as WireBehaviorCode[])
+    .filter((entry) => entry.area === "thinking" || entry.area === "language")
+    .map((entry) => [entry.wireCode, entry]),
+);
+
+const maxObservations = 6;
+const maxEvidenceLength = 160;
+
+/**
+ * Sanitizes raw AI-reported observations against the closed catalog: unknown
+ * codes, skill/polarity mismatches, and non-string fields are dropped;
+ * evidence is truncated rather than rejected; the result never exceeds
+ * `maxObservations`. Never throws -- a malformed `observations` value (e.g.
+ * not an array) sanitizes to an empty array (design §9, "never failing the
+ * response").
+ */
+function sanitizeObservations(raw: unknown): SpeechObservation[] {
+  if (!Array.isArray(raw)) return [];
+  const sanitized: SpeechObservation[] = [];
+  for (const entry of raw) {
+    if (sanitized.length >= maxObservations) break;
+    if (entry === null || typeof entry !== "object") continue;
+    const record = entry as Record<string, unknown>;
+    const { code, skill, polarity } = record;
+    if (typeof code !== "string" || typeof skill !== "string" || typeof polarity !== "string") {
+      continue;
+    }
+    const known = aiObservableCodes.get(code);
+    if (!known || known.area !== skill || known.polarity !== polarity) continue;
+    const evidenceRaw = record.evidence;
+    const evidence = typeof evidenceRaw === "string" && evidenceRaw.trim().length > 0
+      ? evidenceRaw.trim().slice(0, maxEvidenceLength)
+      : undefined;
+    sanitized.push(evidence ? { skill, code, polarity, evidence } : { skill, code, polarity });
+  }
+  return sanitized;
+}
+
+/** Runs the Whisper transcription call and maps provider/empty-speech errors. */
+async function transcribeAudio(
+  deps: Pick<SpeechAnalyzeDeps, "transcribe">,
+  bytes: Uint8Array,
+  mimeType: string,
+): Promise<ProviderTranscript> {
+  let transcript: ProviderTranscript;
+  try {
+    transcript = await deps.transcribe(bytes, mimeType);
+  } catch (error) {
+    if (error instanceof Response && error.status === 429) {
+      throw new HttpError(429, "rate_limited", "Speech analysis is busy. Try again shortly.");
+    }
+    throw new HttpError(502, "upstream_error", "Speech analysis is temporarily unavailable.");
+  }
+  if (!transcript.text.trim()) {
+    throw new HttpError(422, "no_speech", "No speech was detected.");
+  }
+  return transcript;
+}
 
 export function createSpeechAnalyzeHandler(
   deps: SpeechAnalyzeDeps,
@@ -108,6 +210,21 @@ export function createSpeechAnalyzeHandler(
         );
       }
 
+      const challengeIdRaw = body.challengeId;
+      if (
+        challengeIdRaw !== undefined &&
+        (typeof challengeIdRaw !== "string" || challengeIdRaw.length === 0)
+      ) {
+        throw new HttpError(400, "invalid_body", "challengeId must be a non-empty string.");
+      }
+      let challenge: ChallengeContext | undefined;
+      if (typeof challengeIdRaw === "string") {
+        challenge = (await deps.loadChallenge(challengeIdRaw)) ?? undefined;
+        if (!challenge) {
+          throw new HttpError(400, "unknown_challenge", "That challenge is not available.");
+        }
+      }
+
       let quotaAllowed: boolean;
       try {
         quotaAllowed = await deps.claimDailyAnalysis(userId);
@@ -126,21 +243,11 @@ export function createSpeechAnalyzeHandler(
         );
       }
 
-      let transcript: ProviderTranscript;
+      const transcript = await transcribeAudio(deps, bytes, mimeType);
+
+      let evaluation: SpeechEvaluation;
       try {
-        transcript = await deps.transcribe(bytes, mimeType);
-      } catch (error) {
-        if (error instanceof Response && error.status === 429) {
-          throw new HttpError(429, "rate_limited", "Speech analysis is busy. Try again shortly.");
-        }
-        throw new HttpError(502, "upstream_error", "Speech analysis is temporarily unavailable.");
-      }
-      if (!transcript.text.trim()) {
-        throw new HttpError(422, "no_speech", "No speech was detected.");
-      }
-      let analysis: SpeechCoaching;
-      try {
-        analysis = await deps.evaluate(transcript.text.trim());
+        evaluation = await deps.evaluate(transcript.text.trim(), challenge);
       } catch (error) {
         if (error instanceof Response && error.status === 429) {
           throw new HttpError(429, "rate_limited", "Speech analysis is busy. Try again shortly.");
@@ -151,7 +258,8 @@ export function createSpeechAnalyzeHandler(
         text: transcript.text.trim(),
         durationMs: Math.round(transcript.durationSeconds * 1000),
         words: transcript.words,
-        analysis,
+        analysis: evaluation.coaching,
+        observations: sanitizeObservations(evaluation.observations),
       }, cors);
     } catch (error) {
       if (error instanceof HttpError) {

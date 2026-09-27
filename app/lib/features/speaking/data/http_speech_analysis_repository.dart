@@ -20,20 +20,23 @@ final class HttpSpeechAnalysisRepository implements SpeechAnalysisRepository {
     Uint8List audio, {
     required String mimeType,
     required Duration duration,
+    String? challengeId,
   }) async {
     if (audio.isEmpty) return const Result.err(UnexpectedFailure('no_speech'));
     try {
+      final requestBody = <String, dynamic>{
+        'audioBase64': base64Encode(audio),
+        'mimeType': mimeType,
+        'durationMs': duration.inMilliseconds,
+      };
+      if (challengeId != null) requestBody['challengeId'] = challengeId;
       final response = await _client.post(
         endpoint,
         headers: const {
           'authorization': 'Bearer local-dev',
           'content-type': 'application/json',
         },
-        body: jsonEncode({
-          'audioBase64': base64Encode(audio),
-          'mimeType': mimeType,
-          'durationMs': duration.inMilliseconds,
-        }),
+        body: jsonEncode(requestBody),
       );
       if (response.statusCode != 200) {
         final body = jsonDecode(response.body);
@@ -42,46 +45,11 @@ final class HttpSpeechAnalysisRepository implements SpeechAnalysisRepository {
         );
       }
       final json = jsonDecode(response.body) as Map<String, dynamic>;
-      return Result.ok(_parseTranscript(json, duration));
+      return Result.ok(
+        SpeechTranscript.fromJson(json, fallbackDuration: duration),
+      );
     } on Object {
       return const Result.err(UnexpectedFailure('speech_unavailable'));
     }
-  }
-
-  SpeechTranscript _parseTranscript(
-    Map<String, dynamic> json,
-    Duration fallbackDuration,
-  ) {
-    final rawAnalysis = json['analysis'];
-    final analysis = rawAnalysis is Map
-        ? Map<String, dynamic>.from(rawAnalysis)
-        : null;
-    final rawWords = json['words'] as List? ?? const [];
-    return SpeechTranscript(
-      text: json['text'] as String,
-      duration: Duration(
-        milliseconds:
-            (json['durationMs'] as num?)?.round() ??
-            fallbackDuration.inMilliseconds,
-      ),
-      words: [
-        for (final raw in rawWords)
-          if (raw is Map)
-            SpeechWord(
-              text: raw['text'] as String,
-              startSeconds: (raw['start'] as num).toDouble(),
-              endSeconds: (raw['end'] as num).toDouble(),
-            ),
-      ],
-      coaching: analysis == null
-          ? null
-          : SpeechCoaching(
-              summary: analysis['summary'] as String,
-              structure: analysis['structure'] as String,
-              vocabulary: analysis['vocabulary'] as String,
-              strength: analysis['strength'] as String,
-              retryCue: analysis['retryCue'] as String,
-            ),
-    );
   }
 }
