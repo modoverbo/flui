@@ -1,0 +1,201 @@
+-- speaking-audio storage: private bucket for milestone/diagnosis attempts.
+-- Select/insert/delete restricted to the caller's own `<uid>/` folder;
+-- insert additionally requires public.has_access() (#422: no spend on
+-- non-paying users) AND a matching pending speaking_attempts row (diagnosis
+-- or a milestone week) AND profiles.audio_retention_consent = true. No
+-- update policy exists at all. Also covers the consent columns added to
+-- profiles.
+begin;
+select plan(25);
+
+select is(
+  (select count(*)::int from storage.buckets where id = 'speaking-audio'),
+  1,
+  'the speaking-audio bucket exists'
+);
+select has_column('public', 'profiles', 'audio_retention_consent', 'profiles.audio_retention_consent exists');
+select has_column('public', 'profiles', 'audio_consent_updated_at', 'profiles.audio_consent_updated_at exists');
+
+select tests.create_user('audio-owner@example.com') as owner_id \gset
+select tests.create_user('audio-other@example.com') as other_id \gset
+select tests.create_user('audio-no-access@example.com') as no_access_id \gset
+select tests.create_user('audio-expired@example.com') as expired_id \gset
+
+insert into public.entitlements (user_id, whop_membership_id, whop_plan_id, status, current_period_end, trial_ends_at)
+values
+  (:'owner_id', 'mem_audio_owner', 'plan_test', 'active', now() + interval '10 days', null),
+  (:'expired_id', 'mem_audio_expired', 'plan_test', 'expired', now() - interval '1 day', null);
+
+-- anon cannot write into the bucket at all -------------------------------------------
+select tests.authenticate_as_anon();
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name) values ('speaking-audio', %L || '/x.wav') $$, :'owner_id'),
+  '42501', null, 'anon cannot insert into speaking-audio'
+);
+select tests.clear_authentication();
+
+-- access gate (#422): even with a valid pending eligible attempt AND consent
+-- already granted, a signed-in user without access (or with an expired
+-- entitlement) cannot upload. The attempt rows are inserted as postgres
+-- (bypassing RLS) so this isolates the storage policy's OWN access check
+-- from the separate access gate now on speaking_attempts' insert policy.
+insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status)
+values
+  ('00000000-0000-4000-d000-000000000010', :'no_access_id', gen_random_uuid(), 'diagnosis', 'first', current_date,
+   'Preséntate en pocas frases, sin prisa.', 15000, 'pending'),
+  ('00000000-0000-4000-d000-000000000011', :'expired_id', gen_random_uuid(), 'diagnosis', 'first', current_date,
+   'Preséntate en pocas frases, sin prisa.', 15000, 'pending');
+update public.profiles set audio_retention_consent = true where id in (:'no_access_id', :'expired_id');
+
+select tests.authenticate_as(:'no_access_id');
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000010.wav') $$, :'no_access_id'),
+  '42501', null, 'a signed-in user without an entitlement cannot upload, even with a matching pending attempt and consent'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'expired_id');
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000011.wav') $$, :'expired_id'),
+  '42501', null, 'a signed-in user with an expired entitlement cannot upload, even with a matching pending attempt and consent'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'owner_id');
+
+-- fixture: a pending diagnosis attempt, eligible for storage ------------------------
+select lives_ok(
+  format($$ insert into public.speaking_attempts
+              (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status)
+            values ('00000000-0000-4000-d000-000000000001', %L, gen_random_uuid(), 'diagnosis', 'first', current_date,
+                    'Preséntate en pocas frases, sin prisa.', 15000, 'pending') $$, :'owner_id'),
+  'owner records a pending diagnosis attempt'
+);
+
+-- insert blocked before consent is granted -------------------------------------------
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000001.wav') $$, :'owner_id'),
+  '42501', null, 'upload is rejected before audio_retention_consent is granted'
+);
+
+-- consent grant sets audio_consent_updated_at ----------------------------------------
+select lives_ok(
+  $$ update public.profiles set audio_retention_consent = true where id = (select auth.uid()) $$,
+  'owner grants audio retention consent'
+);
+select isnt(
+  (select audio_consent_updated_at from public.profiles where id = :'owner_id'::uuid),
+  null,
+  'audio_consent_updated_at is set once consent changes'
+);
+
+-- a non-uuid filename is denied cleanly, never raises a cast exception --------------
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/not-a-uuid.wav') $$, :'owner_id'),
+  '42501', null, 'a non-uuid filename is rejected as a policy denial, not a runtime cast error'
+);
+
+-- insert blocked into another user's folder ------------------------------------------
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000001.wav') $$, :'other_id'),
+  '42501', null, 'upload is rejected into another user''s folder'
+);
+
+-- insert blocked when the attempt is not pending / not milestone-or-diagnosis -------
+select lives_ok(
+  format($$ insert into public.speaking_attempts
+              (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status)
+            values ('00000000-0000-4000-d000-000000000002', %L, gen_random_uuid(), 'lab', 'repeat', current_date,
+                    'Repetí el mismo argumento con más precisión.', 12000, 'none') $$, :'owner_id'),
+  'owner records a non-eligible attempt'
+);
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000002.wav') $$, :'owner_id'),
+  '42501', null, 'upload is rejected for a non-pending, non-milestone, non-diagnosis attempt'
+);
+
+-- successful upload: diagnosis branch -------------------------------------------------
+select lives_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000001.wav') $$, :'owner_id'),
+  'owner uploads audio for their own pending diagnosis attempt'
+);
+
+-- successful upload: weekly milestone branch (not diagnosis) -------------------------
+select lives_ok(
+  format($$ insert into public.speaking_attempts
+              (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status, milestone_week)
+            values ('00000000-0000-4000-d000-000000000003', %L, gen_random_uuid(), 'daily', 'first', current_date,
+                    'Hoy hablé sobre mi rutina matutina con calma.', 15000, 'pending', date_trunc('week', current_date)::date) $$,
+         :'owner_id'),
+  'owner records a pending weekly-milestone attempt'
+);
+select lives_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000003.wav') $$, :'owner_id'),
+  'owner uploads audio for their own pending milestone attempt'
+);
+
+select is(
+  (select count(*)::int from storage.objects where bucket_id = 'speaking-audio' and (storage.foldername(name))[1] = :'owner_id'),
+  2,
+  'exactly the 2 successful uploads are stored in the owner''s folder'
+);
+select tests.clear_authentication();
+
+-- another signed-in user cannot see or delete the owner's audio ----------------------
+-- (storage.objects also guards direct SQL deletes behind
+-- storage.allow_delete_query; set for this session so the RLS delete
+-- policies themselves are what gets exercised below)
+set local storage.allow_delete_query = 'true';
+
+select tests.authenticate_as(:'other_id');
+select is(
+  (select count(*)::int from storage.objects where bucket_id = 'speaking-audio'),
+  0,
+  'another signed-in user sees no rows in the owner''s speaking-audio folder'
+);
+select lives_ok(
+  format($$ delete from storage.objects where bucket_id = 'speaking-audio' and name = %L || '/00000000-0000-4000-d000-000000000001.wav' $$, :'owner_id'),
+  'another user''s delete on the owner''s object completes without error'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'owner_id');
+select is(
+  (select count(*)::int from storage.objects where bucket_id = 'speaking-audio' and name = :'owner_id' || '/00000000-0000-4000-d000-000000000001.wav'),
+  1,
+  'the owner''s object survives another user''s delete attempt (RLS silently filtered it out)'
+);
+
+-- there is no update policy on the bucket at all: an update matches no rows ----------
+select lives_ok(
+  format($$ update storage.objects set metadata = '{"note": "x"}'::jsonb
+            where bucket_id = 'speaking-audio' and name = %L || '/00000000-0000-4000-d000-000000000001.wav' $$, :'owner_id'),
+  'the owner''s update statement itself does not error'
+);
+select is(
+  (select metadata from storage.objects where bucket_id = 'speaking-audio' and name = :'owner_id' || '/00000000-0000-4000-d000-000000000001.wav'),
+  null::jsonb,
+  'no client, not even the owner, can update a speaking-audio object (no update policy matches any row)'
+);
+
+-- the owner can delete their own object ----------------------------------------------
+select lives_ok(
+  format($$ delete from storage.objects where bucket_id = 'speaking-audio' and name = %L || '/00000000-0000-4000-d000-000000000001.wav' $$, :'owner_id'),
+  'owner deletes their own object'
+);
+select is(
+  (select count(*)::int from storage.objects where bucket_id = 'speaking-audio' and name = :'owner_id' || '/00000000-0000-4000-d000-000000000001.wav'),
+  0,
+  'the object is gone after the owner deletes it'
+);
+
+select * from finish();
+rollback;
