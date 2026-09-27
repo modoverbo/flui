@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:content/src/model/catalogue.dart';
+import 'package:content/src/model/challenge.dart';
 import 'package:content/src/model/theme.dart';
 import 'package:content/src/model/word.dart';
 import 'package:crypto/crypto.dart';
@@ -31,6 +32,11 @@ String deterministicWordId(String slug) => _uuidFrom('flui.word:$slug');
 
 String deterministicExerciseId(String slug, int position) =>
     _uuidFrom('flui.exercise:$slug:$position');
+
+/// Deterministic identity for a challenge that has none yet, mirroring
+/// [deterministicWordId].
+String deterministicChallengeId(String slug) =>
+    _uuidFrom('flui.challenge:$slug');
 
 String _uuidFrom(String seed) {
   final bytes = sha1.convert(utf8.encode(seed)).bytes.sublist(0, 16);
@@ -308,12 +314,88 @@ String _emitWordThemes(List<Word> words) {
   return buffer.toString();
 }
 
-/// Full seed file: the preserved preamble plus the emitted word section.
+/// Full seed file: the preserved preamble plus the emitted word and
+/// challenge sections. [challenges] defaults to empty, which keeps this
+/// byte-identical to a call with no `challenges` argument at all — the
+/// contract `content/challenges/` must hold until content is authored there
+/// (U6a/U6b).
 String emitSeed({
   required String preamble,
   required List<Word> words,
+  List<Challenge> challenges = const [],
   ThemeTaxonomy? taxonomy,
-}) => '$preamble${emitWords(words, taxonomy: taxonomy)}';
+}) =>
+    '$preamble${emitWords(words, taxonomy: taxonomy)}'
+    '${emitChallenges(challenges)}';
+
+/// Renders the challenges section of `supabase/seed.sql`, ordered by
+/// (purpose, diagnosis_slot, mode, difficulty, slug) so re-running the
+/// emitter with unchanged content produces byte-identical output. Empty
+/// input renders nothing, so a catalog with no challenges yet leaves
+/// `emitSeed` unchanged from today.
+String emitChallenges(List<Challenge> challenges) {
+  if (challenges.isEmpty) return '';
+
+  final buffer = StringBuffer()
+    ..writeln()
+    ..writeln(_rule)
+    ..writeln('-- Challenges (content/challenges/<slug>.yml)')
+    ..writeln(_rule)
+    ..writeln()
+    ..writeln('insert into public.challenges')
+    ..writeln(
+      '  (id, slug, purpose, diagnosis_slot, skill, mode, difficulty, prompt, cue,',
+    )
+    ..writeln(
+      '   focus, focus_behaviors, transfer_prompts, target_seconds, sort_order, published)',
+    )
+    ..writeln('values');
+  for (var index = 0; index < challenges.length; index++) {
+    final challenge = challenges[index];
+    final id = challenge.id ?? deterministicChallengeId(challenge.slug);
+    final end = index == challenges.length - 1 ? ';' : ',';
+    final mode = challenge.mode == null
+        ? 'null'
+        : sqlLiteral(challenge.mode!.wireName);
+    buffer
+      ..writeln(
+        '  (${sqlLiteral(id)}, ${sqlLiteral(challenge.slug)}, '
+        '${sqlLiteral(challenge.purpose.name)},',
+      )
+      ..writeln(
+        '   ${challenge.diagnosisSlot ?? 'null'}, ${sqlLiteral(challenge.skill.name)}, $mode,',
+      )
+      ..writeln(
+        '   ${challenge.difficulty}, ${sqlLiteral(challenge.prompt)}, '
+        '${sqlLiteral(challenge.cue)},',
+      )
+      ..writeln('   ${sqlLiteral(challenge.focus)},')
+      ..writeln('   ${_sqlArray(challenge.focusBehaviors)},')
+      ..writeln('   ${_sqlArray(challenge.transferPrompts)},')
+      ..writeln('   ${challenge.targetSeconds}, ${index + 1}, true)$end');
+  }
+  return buffer.toString();
+}
+
+/// Challenges that reach the database, in a stable order: (purpose,
+/// diagnosis_slot, mode, difficulty, slug). `sort_order` is never authored
+/// for challenges (unlike words): it is always this emission index.
+List<Challenge> approvedChallengesInOrder(List<Challenge> challenges) => [
+  for (final challenge in challenges)
+    if (challenge.status == ChallengeStatus.approved) challenge,
+]..sort(_compareChallenges);
+
+int _compareChallenges(Challenge a, Challenge b) {
+  var cmp = a.purpose.index.compareTo(b.purpose.index);
+  if (cmp != 0) return cmp;
+  cmp = (a.diagnosisSlot ?? 0).compareTo(b.diagnosisSlot ?? 0);
+  if (cmp != 0) return cmp;
+  cmp = (a.mode?.index ?? -1).compareTo(b.mode?.index ?? -1);
+  if (cmp != 0) return cmp;
+  cmp = a.difficulty.compareTo(b.difficulty);
+  if (cmp != 0) return cmp;
+  return a.slug.compareTo(b.slug);
+}
 
 /// The `sort_order` to write for each of [words], already in emission order.
 ///
@@ -325,7 +407,9 @@ String emitSeed({
 List<int> sortOrdersFor(List<Word> words) {
   var next = 0;
   for (final word in words) {
-    if (word.sortOrder != null && word.sortOrder! > next) next = word.sortOrder!;
+    if (word.sortOrder != null && word.sortOrder! > next) {
+      next = word.sortOrder!;
+    }
   }
   return [
     for (final word in words)
