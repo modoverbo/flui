@@ -96,6 +96,13 @@ final class LoopRequest {
   );
 }
 
+/// [TrainingLoopState.failureCode] when an analyzed attempt could not be
+/// persisted after one automatic retry (see [TrainingLoopController.submit]
+/// and [TrainingLoopController.retrySave]). Reuses the existing
+/// `analysisFailed` phase (the "retryable failure" pattern already built for
+/// [SpeechAnalysisErrorCode]) rather than adding a new [LoopPhase].
+const notSavedFailureCode = 'not_saved';
+
 bool _listEquals(List<String> a, List<String> b) {
   if (identical(a, b)) return true;
   if (a.length != b.length) return false;
@@ -141,6 +148,30 @@ final class TrainingLoopControllerState {
       );
 }
 
+/// Everything [TrainingLoopController._onAnalysisSuccess] already computed
+/// for an attempt that analyzed successfully but could not be persisted —
+/// held so [TrainingLoopController.retrySave] can retry the SAVE only,
+/// never a second paid analysis.
+final class _PendingSave {
+  const new({
+    required this.attempt,
+    required this.audio,
+    required this.step,
+    required this.observations,
+    required this.metrics,
+    required this.challenge,
+    required this.aiRetryCue,
+  });
+
+  final SpeakingAttempt attempt;
+  final RecordedAudio audio;
+  final AttemptKind step;
+  final List<Observation> observations;
+  final VoiceMetrics metrics;
+  final Challenge? challenge;
+  final String? aiRetryCue;
+}
+
 /// Drives one training-loop session (design §10, §19.2, §19.9 U13a).
 ///
 /// Owns NO recording (D23/D25): a screen registers a `LoopMicTarget` wrapping
@@ -158,6 +189,11 @@ class TrainingLoopController extends _$TrainingLoopController {
   List<Challenge>? _catalog;
   List<Observation>? _firstObservations;
   VoiceMetrics? _firstMetrics;
+
+  /// Set only while an analyzed attempt is waiting to be saved (both the
+  /// automatic and a manual [retrySave] failed at least once) — never
+  /// silently dropped, and never re-analyzed to recover it.
+  _PendingSave? _pendingSave;
 
   @override
   TrainingLoopControllerState build(LoopRequest request) {
@@ -198,6 +234,15 @@ class TrainingLoopController extends _$TrainingLoopController {
   /// calling this while still showing `feedback`/`comparison` advances the
   /// loop first, exactly as an explicit "Continuar" tap would.
   Future<MicDelivery> submit(RecordedAudio audio) async {
+    if (_pendingSave != null) {
+      // Never continue past an analyzed-but-unsaved attempt: a fresh
+      // analysis here would silently orphan it (and spend a second paid
+      // quota unit) instead of surfacing the save failure.
+      return const MicDeliveryFailed(
+        'Todavía no guardamos tu intento anterior. Reintenta guardarlo '
+        'antes de grabar otra vez.',
+      );
+    }
     if (_loop.state.phase == LoopPhase.feedback ||
         _loop.state.phase == LoopPhase.comparison) {
       _loop.continueToNextStep();
@@ -317,12 +362,119 @@ class TrainingLoopController extends _$TrainingLoopController {
       milestoneWeek: shouldRetain ? localDate.startOfIsoWeek : null,
     );
 
+    final inserted = await _insertWithRetry(attempt);
+    if (!ref.mounted) return const MicAccepted();
+
+    return switch (inserted) {
+      Err() => _onSaveFailed(
+        attempt: attempt,
+        audio: audio,
+        step: step,
+        observations: observations,
+        metrics: metrics,
+        challenge: challenge,
+        aiRetryCue: transcript.coaching?.retryCue,
+      ),
+      Ok(:final value) => _afterSaved(
+        stored: value,
+        audioForUpload: audio,
+        step: step,
+        observations: observations,
+        metrics: metrics,
+        challenge: challenge,
+        aiRetryCue: transcript.coaching?.retryCue,
+      ),
+    };
+  }
+
+  /// Inserts [attempt], retrying exactly once more on failure (design part-3
+  /// §5's write order assumes a persisted row; a transient failure here
+  /// must never silently lose an already-paid-for analysis). Never retries
+  /// the analysis itself — only this save.
+  Future<Result<SpeakingAttempt>> _insertWithRetry(
+    SpeakingAttempt attempt,
+  ) async {
+    final repository = ref.read(speakingAttemptRepositoryProvider);
+    final first = await repository.insert(attempt);
+    if (first is Ok<SpeakingAttempt> || !ref.mounted) return first;
+    return await repository.insert(attempt);
+  }
+
+  /// Both the automatic retry in [_insertWithRetry] and a manual
+  /// [retrySave] failed. Keeps the already-analyzed attempt in memory
+  /// (never re-analyzed — no second quota unit) and surfaces a retryable
+  /// "not saved" state: the loop MUST NOT advance (diagnosis stays on the
+  /// same slot) and no feedback is shown as if the step were complete.
+  MicDelivery _onSaveFailed({
+    required SpeakingAttempt attempt,
+    required RecordedAudio audio,
+    required AttemptKind step,
+    required List<Observation> observations,
+    required VoiceMetrics metrics,
+    required Challenge? challenge,
+    required String? aiRetryCue,
+  }) {
+    _pendingSave = _PendingSave(
+      attempt: attempt,
+      audio: audio,
+      step: step,
+      observations: observations,
+      metrics: metrics,
+      challenge: challenge,
+      aiRetryCue: aiRetryCue,
+    );
+    _loop.analysisFailed(notSavedFailureCode);
+    state = state._withLoop(_loop.state);
+    return const MicDeliveryFailed(
+      'No pudimos guardar tu intento. Toca reintentar para guardarlo sin '
+      'grabar de nuevo.',
+    );
+  }
+
+  /// Retries ONLY the save of a [_pendingSave] attempt — never re-analyzes.
+  /// On success, continues exactly where [_afterSaved] would have (upload
+  /// decision, feedback, loop advance); on failure, stays in the same
+  /// "not saved" state so this can be tapped again.
+  Future<MicDelivery> retrySave() async {
+    final pending = _pendingSave;
+    if (pending == null) {
+      return const MicDeliveryFailed(
+        'No hay ningún intento pendiente de guardar.',
+      );
+    }
     final inserted = await ref
         .read(speakingAttemptRepositoryProvider)
-        .insert(attempt);
+        .insert(pending.attempt);
     if (!ref.mounted) return const MicAccepted();
-    final stored = inserted.valueOrNull ?? attempt;
+    if (inserted case Err()) {
+      return const MicDeliveryFailed(
+        'Seguimos sin poder guardar tu intento. Inténtalo de nuevo.',
+      );
+    }
+    _pendingSave = null;
+    return _afterSaved(
+      stored: (inserted as Ok<SpeakingAttempt>).value,
+      audioForUpload: pending.audio,
+      step: pending.step,
+      observations: pending.observations,
+      metrics: pending.metrics,
+      challenge: pending.challenge,
+      aiRetryCue: pending.aiRetryCue,
+    );
+  }
 
+  /// The attempt is durably saved as [stored]: decides the milestone
+  /// upload, composes feedback, and advances the loop. Shared by the
+  /// straight-through success path and a successful [retrySave].
+  MicDelivery _afterSaved({
+    required SpeakingAttempt stored,
+    required RecordedAudio audioForUpload,
+    required AttemptKind step,
+    required List<Observation> observations,
+    required VoiceMetrics metrics,
+    required Challenge? challenge,
+    required String? aiRetryCue,
+  }) {
     if (stored.audio is AudioRetentionPending) {
       // Fire-and-forget (design part-3 §5): training never waits on upload.
       unawaited(
@@ -330,8 +482,8 @@ class TrainingLoopController extends _$TrainingLoopController {
             .read(attemptAudioStoreProvider)
             .upload(
               attemptId: stored.id,
-              bytes: audio.bytes,
-              mimeType: audio.mimeType,
+              bytes: audioForUpload.bytes,
+              mimeType: audioForUpload.mimeType,
             ),
       );
     }
@@ -341,7 +493,7 @@ class TrainingLoopController extends _$TrainingLoopController {
         : const FeedbackComposer().compose(
             observations: observations,
             challengeArea: _areaOf(challenge.skill),
-            aiRetryCue: transcript.coaching?.retryCue,
+            aiRetryCue: aiRetryCue,
           );
 
     if (step == AttemptKind.first) {

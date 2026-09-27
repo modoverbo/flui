@@ -64,6 +64,8 @@ final class LoopMicTarget implements MicTarget {
       actionLabel: 'Grabar tu transferencia',
       hint: 'Aplica lo que acabas de practicar.',
     ),
+    LoopPhase.analysisFailed when loop.failureCode == notSavedFailureCode =>
+      const MicPrompt(actionLabel: 'Intento pendiente de guardar'),
     LoopPhase.analysisFailed => const MicPrompt(
       actionLabel: 'Reintentar grabación',
     ),
@@ -84,8 +86,11 @@ final class LoopMicTarget implements MicTarget {
   /// view, design §19.8); `recording/analyzing` are busy;
   /// `accessRequired` is blocked with the "Reactivar" CTA;
   /// `analysisFailed` is ready for a re-record UNLESS its own failure was a
-  /// daily-limit rejection, which stays blocked until tomorrow; `summary`
-  /// passes through to whatever the registry resolves beneath it.
+  /// daily-limit rejection (stays blocked until tomorrow) or the attempt
+  /// simply was not saved yet (blocked — a fresh recording here would
+  /// silently orphan the unsaved one instead of retrying its save, see the
+  /// orchestrator review fix); `summary` passes through to whatever the
+  /// registry resolves beneath it.
   static MicAvailability _availabilityFor(TrainingLoopState loop) =>
       switch (loop.phase) {
         LoopPhase.focus ||
@@ -98,12 +103,16 @@ final class LoopMicTarget implements MicTarget {
           'Reactiva tu acceso para seguir practicando.',
           cta: MicBlockedCta(label: 'Reactivar', route: '/paywall'),
         ),
-        LoopPhase.analysisFailed =>
-          loop.failureCode == 'dailyLimitReached'
-              ? const MicBlocked(
-                  'Ya usaste tus análisis de hoy. Vuelve mañana.',
-                )
-              : const MicReady(),
+        LoopPhase.analysisFailed => switch (loop.failureCode) {
+          'dailyLimitReached' => const MicBlocked(
+            'Ya usaste tus análisis de hoy. Vuelve mañana.',
+          ),
+          notSavedFailureCode => const MicBlocked(
+            'No pudimos guardar tu intento. Reintenta guardarlo antes de '
+            'grabar de nuevo.',
+          ),
+          _ => const MicReady(),
+        },
         LoopPhase.summary => const MicPassThrough(),
       };
 }
