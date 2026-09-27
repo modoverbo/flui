@@ -1,10 +1,11 @@
 -- speaking_attempts: append-only history of every analyzed speaking attempt.
--- Own rows only; insert requires a fresh (none/pending) status with no stored
--- path yet; the guard trigger only allows pending->stored|failed,
+-- Own rows only; insert additionally requires public.has_access() (#422: no
+-- spend on non-paying users) and a fresh (none/pending) status with no
+-- stored path yet; the guard trigger only allows pending->stored|failed,
 -- failed->pending|stored, stored->deleted (forcing the path to null); none
 -- and deleted are terminal. One milestone per (user, ISO week).
 begin;
-select plan(21);
+select plan(23);
 
 select has_table('public', 'speaking_attempts', 'speaking_attempts table exists');
 select is_empty(
@@ -15,6 +16,13 @@ select is_empty(
 
 select tests.create_user('speaking-owner@example.com') as owner_id \gset
 select tests.create_user('speaking-other@example.com') as other_id \gset
+select tests.create_user('speaking-no-access@example.com') as no_access_id \gset
+select tests.create_user('speaking-expired@example.com') as expired_id \gset
+
+insert into public.entitlements (user_id, whop_membership_id, whop_plan_id, status, current_period_end, trial_ends_at)
+values
+  (:'owner_id', 'mem_speaking_owner', 'plan_test', 'active', now() + interval '10 days', null),
+  (:'expired_id', 'mem_speaking_expired', 'plan_test', 'expired', now() - interval '1 day', null);
 
 -- anon: no access at all -------------------------------------------------------------
 select tests.authenticate_as_anon();
@@ -23,6 +31,26 @@ select throws_ok(
   $$ insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms)
      values (gen_random_uuid(), gen_random_uuid(), gen_random_uuid(), 'daily', 'first', current_date, 'Hola.', 1000) $$,
   '42501', null, 'anon cannot insert speaking_attempts');
+select tests.clear_authentication();
+
+-- access gate (#422): a signed-in user without access, or with an expired
+-- entitlement, cannot insert an attempt at all, even an otherwise-valid one --
+select tests.authenticate_as(:'no_access_id');
+select throws_ok(
+  format($$ insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms)
+            values (gen_random_uuid(), %L, gen_random_uuid(), 'diagnosis', 'first', current_date,
+                    'Preséntate en pocas frases, sin prisa.', 15000) $$, :'no_access_id'),
+  '42501', null, 'a signed-in user without an entitlement cannot insert speaking_attempts'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'expired_id');
+select throws_ok(
+  format($$ insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms)
+            values (gen_random_uuid(), %L, gen_random_uuid(), 'diagnosis', 'first', current_date,
+                    'Preséntate en pocas frases, sin prisa.', 15000) $$, :'expired_id'),
+  '42501', null, 'a signed-in user with an expired entitlement cannot insert speaking_attempts'
+);
 select tests.clear_authentication();
 
 -- owner: RLS insert check rejects a non-fresh row ------------------------------------
