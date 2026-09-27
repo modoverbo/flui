@@ -38,10 +38,12 @@ void main(List<String> arguments) {
 
   final words = approvedWordsInOrder(library.words);
   if (words.isEmpty) fail('no word has status: approved, nothing to emit');
+  final challenges = approvedChallengesInOrder(library.challenges);
 
   final sql = emitSeed(
     preamble: preambleFile.readAsStringSync(),
     words: words,
+    challenges: challenges,
   );
 
   if (args.flag('stdout')) {
@@ -64,6 +66,7 @@ void main(List<String> arguments) {
     ..parent.createSync(recursive: true)
     ..writeAsStringSync(sql);
   stdout.writeln(
-    'wrote ${words.length} approved words to ${p.relative(target.path)}',
+    'wrote ${words.length} approved words and ${challenges.length} approved '
+    'challenges to ${p.relative(target.path)}',
   );
 }

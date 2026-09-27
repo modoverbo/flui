@@ -41,6 +41,11 @@ final class ContentPaths {
 
   String get schemaFile => p.join(root, 'schema', 'word.schema.json');
 
+  String get challengesDir => p.join(root, 'challenges');
+
+  String get challengeSchemaFile =>
+      p.join(root, 'schema', 'challenge.schema.json');
+
   String get dataDir => p.join(root, 'data');
 
   String get commonLemmasFile => p.join(dataDir, 'common_lemmas_es.txt');
