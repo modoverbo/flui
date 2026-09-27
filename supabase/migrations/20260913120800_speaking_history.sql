@@ -182,3 +182,88 @@ drop trigger if exists skill_profiles_before_insert on public.skill_profiles;
 create trigger skill_profiles_before_insert
   before insert on public.skill_profiles
   for each row execute function public.skill_profiles_before_insert();
+
+-- Audio retention consent (additive on profiles) ---------------------------------------------------------
+
+alter table public.profiles
+  add column if not exists audio_retention_consent boolean,
+  add column if not exists audio_consent_updated_at timestamptz;
+
+comment on column public.profiles.audio_retention_consent is 'null = not asked yet. Gates whether a milestone/diagnosis attempt''s audio may be uploaded to speaking-audio.';
+comment on column public.profiles.audio_consent_updated_at is 'Server-clock timestamp of the last change to audio_retention_consent; trigger-set.';
+
+grant update (audio_retention_consent) on table public.profiles to authenticated;
+
+create or replace function public.profiles_set_audio_consent_updated_at()
+returns trigger
+language plpgsql
+set search_path = ''
+as $$
+begin
+  if new.audio_retention_consent is distinct from old.audio_retention_consent then
+    new.audio_consent_updated_at := now();
+  end if;
+  return new;
+end;
+$$;
+
+comment on function public.profiles_set_audio_consent_updated_at() is 'Trigger function: keeps audio_consent_updated_at current whenever audio_retention_consent changes.';
+
+revoke all on function public.profiles_set_audio_consent_updated_at() from public, anon, authenticated;
+
+drop trigger if exists profiles_set_audio_consent_updated_at on public.profiles;
+create trigger profiles_set_audio_consent_updated_at
+  before update on public.profiles
+  for each row execute function public.profiles_set_audio_consent_updated_at();
+
+-- speaking-audio bucket and storage policies -------------------------------------------------------------
+--
+-- U8b.0 spike finding: `storage.buckets`/`storage.objects` are created by the
+-- base Postgres image's own initialization, independent of whether the
+-- storage-api service container is started. Verified locally: reproducing
+-- CI's `-x realtime,storage-api,imgproxy,mailpit,postgres-meta,studio,
+-- edge-runtime,logflare,vector,supavisor` exclusion still yields a fully
+-- migrated `storage` schema (`to_regclass('storage.buckets')` and
+-- `to_regclass('storage.objects')` both resolve). No CI workflow change is
+-- needed; the exclusion is kept as-is.
+
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('speaking-audio', 'speaking-audio', false, 2097152, array['audio/wav', 'audio/webm', 'audio/ogg', 'audio/mp4'])
+on conflict (id) do nothing;
+
+drop policy if exists speaking_audio_select_own on storage.objects;
+create policy speaking_audio_select_own on storage.objects
+  for select to authenticated
+  using (
+    bucket_id = 'speaking-audio'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+  );
+
+drop policy if exists speaking_audio_insert_own on storage.objects;
+create policy speaking_audio_insert_own on storage.objects
+  for insert to authenticated
+  with check (
+    bucket_id = 'speaking-audio'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+    and exists (
+      select 1
+      from public.speaking_attempts sa
+      where sa.id = split_part(storage.filename(name), '.', 1)::uuid
+        and sa.user_id = (select auth.uid())
+        and sa.audio_status = 'pending'
+        and (sa.context = 'diagnosis' or sa.milestone_week is not null)
+    )
+    and coalesce((select p.audio_retention_consent from public.profiles p where p.id = (select auth.uid())), false)
+  );
+
+drop policy if exists speaking_audio_delete_own on storage.objects;
+create policy speaking_audio_delete_own on storage.objects
+  for delete to authenticated
+  using (
+    bucket_id = 'speaking-audio'
+    and (storage.foldername(name))[1] = (select auth.uid())::text
+  );
+
+comment on policy speaking_audio_select_own on storage.objects is 'Read own speaking-audio objects only.';
+comment on policy speaking_audio_insert_own on storage.objects is 'Upload only into your own folder, only for a pending attempt eligible for storage (diagnosis or a milestone week), and only with audio retention consent.';
+comment on policy speaking_audio_delete_own on storage.objects is 'Delete own speaking-audio objects only. No update policy exists: audio is immutable once uploaded.';
