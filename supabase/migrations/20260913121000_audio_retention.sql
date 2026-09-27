@@ -17,7 +17,12 @@
 --     either. 20260913121100_speaking_attempts_integrity.sql's trigger
 --     already prevents any row from ever holding a non-canonical or
 --     shared audio_path going forward; this guard only matters for data
---     written before that trigger existed.
+--     written before that trigger existed. Hardening H2: the canonical check
+--     is an EXACT equality against `<user_id>/<id>.<ext>` for ext in the
+--     same allowed list the write-side trigger uses (wav, webm, ogg, mp4) --
+--     not `split_part(audio_path, '.', 1)`, which only inspects the text
+--     before the FIRST dot and so would wrongly still match a multi-dot
+--     legacy path like `<user_id>/<id>.x.wav`.
 -- (b) Orphaned speaking-audio objects: any object in the speaking-audio
 --     bucket older than a 24 h grace period whose name is not the audio_path
 --     of a speaking_attempts row currently audio_status = 'stored' (decision
@@ -38,8 +43,12 @@ as $$
     and sa.audio_status = 'stored'
     and sa.context <> 'diagnosis'
     and sa.created_at < now() - interval '90 days'
-    and split_part(sa.audio_path, '/', 1) = sa.user_id::text
-    and split_part(split_part(sa.audio_path, '/', 2), '.', 1) = sa.id::text
+    and sa.audio_path in (
+      sa.user_id::text || '/' || sa.id::text || '.wav',
+      sa.user_id::text || '/' || sa.id::text || '.webm',
+      sa.user_id::text || '/' || sa.id::text || '.ogg',
+      sa.user_id::text || '/' || sa.id::text || '.mp4'
+    )
     and not exists (
       select 1
       from public.speaking_attempts other

@@ -271,6 +271,36 @@ Deno.test("an expired-milestone item whose audioPath filename does not match its
   assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
 });
 
+// Mutation-testing finding M-D4: the two tests above use userId/foreign-folder
+// pairs of DIFFERENT string lengths ("victim-uid" vs "attacker-uid"), so the
+// slice-by-prefix-length arithmetic inside isOwnCanonicalPath already
+// misaligns the extracted filename stem even without the `startsWith` guard,
+// letting a mutant that deletes `startsWith(userId + '/')` survive. Use a
+// foreign folder of the SAME length as userId (realistic 36-char UUIDs, like
+// real user/attempt ids) so only the `startsWith` check -- not an accidental
+// length mismatch -- can reject it.
+Deno.test("an expired-milestone item whose audioPath folder is a DIFFERENT user's id of the SAME length as the real userId is skipped, never updated or removed", async () => {
+  const userId = "7b1e2f90-aaaa-4bbb-8ccc-111122223333";
+  const foreignUserId = "9c2f3a81-bbbb-4ccc-8ddd-222233334444";
+  const attemptId = "a1b2c3d4-1111-4222-8333-444455556666";
+  const item: ExpiredMilestoneAudio = {
+    attemptId,
+    userId,
+    audioPath: `${foreignUserId}/${attemptId}.wav`,
+  };
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(
+    calls,
+    [],
+    "a same-length foreign folder must never be treated as the item's own folder",
+  );
+  assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
+});
+
 Deno.test("an expired-milestone item shaped exactly like <userId>/<attemptId>.<ext> is still processed normally", async () => {
   const item = milestone("a1", "u1");
   const { handler, calls } = setup({
@@ -279,6 +309,112 @@ Deno.test("an expired-milestone item shaped exactly like <userId>/<attemptId>.<e
   const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
   assertEquals(response.status, 200);
   assertEquals(calls, ["markAttemptDeleted:a1:u1/a1.wav", "removeObject:u1/a1.wav"]);
+});
+
+// Hardening H1: isOwnCanonicalPath must be an EXACT match against
+// `${userId}/${attemptId}.${ext}` for ext in the same allowed set the DB
+// write-side guard trigger enforces (wav, webm, ogg, mp4) -- not merely "a
+// dot exists somewhere and the part before the LAST dot equals attemptId",
+// which silently accepted any suffix after that dot as an already-validated
+// extension.
+Deno.test("H1: an expired-milestone item whose audioPath has no extension at all is skipped", async () => {
+  const userId = "7b1e2f90-aaaa-4bbb-8ccc-111122223333";
+  const attemptId = "a1b2c3d4-1111-4222-8333-444455556666";
+  const item: ExpiredMilestoneAudio = {
+    attemptId,
+    userId,
+    audioPath: `${userId}/${attemptId}`,
+  };
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(calls, [], "a path with no extension must never be treated as canonical");
+  assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
+});
+
+Deno.test("H1: an expired-milestone item whose extension embeds a raw or percent-encoded path separator ('/' or '%2F') is skipped", async () => {
+  const userId = "7b1e2f90-aaaa-4bbb-8ccc-111122223333";
+  const attemptId = "a1b2c3d4-1111-4222-8333-444455556666";
+  const rawSlashItem: ExpiredMilestoneAudio = {
+    attemptId,
+    userId,
+    audioPath: `${userId}/${attemptId}.wav/etc`,
+  };
+  const encodedSlashItem: ExpiredMilestoneAudio = {
+    attemptId,
+    userId,
+    audioPath: `${userId}/${attemptId}.wav%2Fetc`,
+  };
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([rawSlashItem, encodedSlashItem]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(
+    calls,
+    [],
+    "an extension embedding a raw or percent-encoded path separator must never be treated as canonical",
+  );
+  assertEquals(body.expiredMilestones, { seen: 2, acted: 0, failed: 2 });
+});
+
+Deno.test("H1: an expired-milestone item with a multi-dot filename (<attemptId>.x.wav) is skipped", async () => {
+  const userId = "7b1e2f90-aaaa-4bbb-8ccc-111122223333";
+  const attemptId = "a1b2c3d4-1111-4222-8333-444455556666";
+  const item: ExpiredMilestoneAudio = {
+    attemptId,
+    userId,
+    audioPath: `${userId}/${attemptId}.x.wav`,
+  };
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(
+    calls,
+    [],
+    "an extra dot segment before the extension must never be treated as canonical",
+  );
+  assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
+});
+
+Deno.test("H1: an expired-milestone item with a disallowed extension is skipped", async () => {
+  const userId = "7b1e2f90-aaaa-4bbb-8ccc-111122223333";
+  const attemptId = "a1b2c3d4-1111-4222-8333-444455556666";
+  const item: ExpiredMilestoneAudio = {
+    attemptId,
+    userId,
+    audioPath: `${userId}/${attemptId}.png`,
+  };
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(
+    calls,
+    [],
+    "an extension outside {wav, webm, ogg, mp4} must never be treated as canonical",
+  );
+  assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
+});
+
+Deno.test("H1: expired-milestone items with each allowed extension (wav, webm, ogg, mp4) are still processed normally", async () => {
+  const userId = "7b1e2f90-aaaa-4bbb-8ccc-111122223333";
+  const items = ["wav", "webm", "ogg", "mp4"].map((ext, index) => {
+    const attemptId = `a1b2c3d4-1111-4222-8333-44445555666${index}`;
+    return milestone(attemptId, userId, `${userId}/${attemptId}.${ext}`);
+  });
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve(items),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(calls.length, items.length * 2, "every allowed extension must still be processed");
+  assertEquals(body.expiredMilestones, { seen: items.length, acted: items.length, failed: 0 });
 });
 
 // Security review finding F4: the fake previously ignored the audioPath

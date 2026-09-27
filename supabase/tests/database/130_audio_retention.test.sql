@@ -12,7 +12,7 @@
 -- fixture setup, which runs as postgres and is not subject to the
 -- authenticated-role column grants).
 begin;
-select plan(28);
+select plan(32);
 
 select has_function(
   'public', 'select_expired_milestone_audio', array['integer'],
@@ -146,8 +146,17 @@ values ('speaking-audio', :'pending_id' || '/00000000-0000-4000-e000-00000000000
 
 -- security review finding F3: audio_status = 'stored' and the 90-day rule
 -- must both still be enforced even when a row is otherwise expiry-shaped
--- (milestone_week set, ancient, non-diagnosis) -- a mutant dropping the
--- `audio_status = 'stored'` filter would wrongly select these.
+-- (milestone_week set, ancient, non-diagnosis). Fixtures 0007/0008 (deleted
+-- and failed respectively) pin this overall behavior, but they do NOT by
+-- themselves kill a mutant that merely drops the literal
+-- `audio_status = 'stored'` predicate from select_expired_milestone_audio's
+-- WHERE clause: the table's own `speaking_attempts_audio_path_matches_status`
+-- CHECK constraint guarantees any non-'stored' row's audio_path is null, so
+-- the canonical-path requirement (security review finding F1) already
+-- excludes these rows regardless of that predicate. Mutation-testing
+-- finding S3 identified that exact predicate-drop as an equivalent mutant
+-- for this reason -- it is not separately tested here, and these fixtures
+-- are kept only as a documentation/regression pin of the overall behavior.
 insert into public.speaking_attempts
   (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status, milestone_week)
 values (
@@ -200,6 +209,78 @@ values (
   'Fixture que sigue referenciando el mismo objeto.', 15000, 'stored', :'other_dup_id' || '/00000000-0000-4000-e000-00000000000d.wav',
   date_trunc('week', current_date)::date, now()
 );
+
+-- Mutation-testing finding M-S8: two more legacy-shaped rows, each with a
+-- NON-canonical audio_path that is NOT referenced by any other stored row --
+-- isolating the canonical-path predicate itself, independent of the
+-- `not exists (... another stored row ...)` duplicate guard the fixtures
+-- above already exercise. Only reachable by bypassing triggers, same as the
+-- legacy-duplicate fixture above.
+select tests.create_user('retention-legacy-noncanon@example.com') as legacy_noncanon_id \gset
+select tests.create_user('retention-legacy-wrongid@example.com') as legacy_wrongid_id \gset
+
+-- (a) folder is an unrelated, unreferenced user id -- not this row's own
+-- user_id, and not any real user's folder either.
+insert into public.speaking_attempts
+  (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status, audio_path, milestone_week, created_at)
+values (
+  '00000000-0000-4000-e000-00000000000e', :'legacy_noncanon_id', gen_random_uuid(), 'daily', 'first', current_date,
+  'Fixture legado con carpeta ajena y no referenciada.', 15000, 'stored',
+  '11111111-1111-4111-8111-111111111111/22222222-2222-4222-8222-222222222222.wav',
+  date_trunc('week', current_date)::date, now() - interval '95 days'
+);
+
+-- (b) folder is this row's OWN user_id, but the filename references a
+-- different, unreferenced attempt id (not this row's own id).
+insert into public.speaking_attempts
+  (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status, audio_path, milestone_week, created_at)
+values (
+  '00000000-0000-4000-e000-00000000000f', :'legacy_wrongid_id', gen_random_uuid(), 'daily', 'first', current_date,
+  'Fixture legado con id de archivo ajeno dentro de la propia carpeta.', 15000, 'stored',
+  :'legacy_wrongid_id' || '/33333333-3333-4333-8333-333333333333.wav',
+  date_trunc('week', current_date)::date, now() - interval '95 days'
+);
+
+-- Mutation-testing finding M-S9: an expired CANONICAL milestone row A, plus a
+-- legacy row B whose audio_path is manually set (bypassing the trigger) to
+-- A's exact own canonical path. A's own audio_path already passes the
+-- canonical-path predicate, so only the `not exists (... another stored row
+-- ...)` duplicate guard can exclude it -- isolating that predicate from the
+-- canonical-path one, the opposite isolation from M-S8 above.
+select tests.create_user('retention-dupcanon-a@example.com') as dupcanon_a_id \gset
+select tests.create_user('retention-dupcanon-b@example.com') as dupcanon_b_id \gset
+
+insert into public.speaking_attempts
+  (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status, audio_path, milestone_week, created_at)
+values (
+  '00000000-0000-4000-e000-000000000010', :'dupcanon_a_id', gen_random_uuid(), 'daily', 'first', current_date,
+  'Fixture A: propio path canónico, referenciado también por B.', 15000, 'stored',
+  :'dupcanon_a_id' || '/00000000-0000-4000-e000-000000000010.wav',
+  date_trunc('week', current_date)::date, now() - interval '95 days'
+);
+insert into public.speaking_attempts
+  (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status, audio_path, milestone_week, created_at)
+values (
+  '00000000-0000-4000-e000-000000000011', :'dupcanon_b_id', gen_random_uuid(), 'daily', 'first', current_date,
+  'Fixture B: legado, referencia el path canónico exacto de A.', 15000, 'stored',
+  :'dupcanon_a_id' || '/00000000-0000-4000-e000-000000000010.wav',
+  date_trunc('week', current_date)::date, now()
+);
+
+-- Hardening H2: a legacy multi-dot filename ('<id>.x.wav') under the row's
+-- own canonical folder. The old split_part(audio_path, '.', 1)-based check
+-- only inspected the text before the FIRST dot, so it wrongly still matched
+-- this shape; the exact-equality check must reject it.
+select tests.create_user('retention-legacy-multidot@example.com') as legacy_multidot_id \gset
+insert into public.speaking_attempts
+  (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status, audio_path, milestone_week, created_at)
+values (
+  '00000000-0000-4000-e000-000000000012', :'legacy_multidot_id', gen_random_uuid(), 'daily', 'first', current_date,
+  'Fixture legado con nombre de archivo multi-punto.', 15000, 'stored',
+  :'legacy_multidot_id' || '/00000000-0000-4000-e000-000000000012.x.wav',
+  date_trunc('week', current_date)::date, now() - interval '95 days'
+);
+
 set local session_replication_role = default;
 
 -- select_expired_milestone_audio ----------------------------------------------------------------
@@ -243,6 +324,22 @@ select is_empty(
 select is_empty(
   format($$ select * from public.select_expired_milestone_audio(500) where attempt_id = %L $$, '00000000-0000-4000-e000-00000000000c'),
   'an expired milestone whose audio_path is also referenced by another stored row is never selected (defense in depth for legacy data)'
+);
+select is_empty(
+  format($$ select * from public.select_expired_milestone_audio(500) where attempt_id = %L $$, '00000000-0000-4000-e000-00000000000e'),
+  'M-S8: an expired legacy row whose audio_path folder is a different, unreferenced user id is never selected'
+);
+select is_empty(
+  format($$ select * from public.select_expired_milestone_audio(500) where attempt_id = %L $$, '00000000-0000-4000-e000-00000000000f'),
+  'M-S8: an expired legacy row whose audio_path filename is a different, unreferenced attempt id (own folder) is never selected'
+);
+select is_empty(
+  format($$ select * from public.select_expired_milestone_audio(500) where attempt_id = %L $$, '00000000-0000-4000-e000-000000000010'),
+  'M-S9: an expired milestone whose OWN canonical audio_path is also referenced by another stored row is never selected'
+);
+select is_empty(
+  format($$ select * from public.select_expired_milestone_audio(500) where attempt_id = %L $$, '00000000-0000-4000-e000-000000000012'),
+  'H2: a legacy row with a multi-dot filename (<id>.x.wav) is never selected (exact match, not split_part on the first dot)'
 );
 select is(
   (select count(*)::int from public.select_expired_milestone_audio(0)),

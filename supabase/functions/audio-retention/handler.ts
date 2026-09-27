@@ -68,20 +68,35 @@ function errorMessage(error: unknown): string {
 }
 
 /**
- * Defense in depth (security review finding F1): even though DB selection
- * is scoped to a row's own canonical <user_id>/<id>.<ext> path, this Edge
- * Function independently verifies ownership before ever calling
- * removeObject with service-role credentials -- it never trusts a selected
- * item's audioPath to already be safe, in case the DB-side guard is ever
- * bypassed, weakened, or acting on pre-fix data.
+ * Extensions the DB write-side guard trigger accepts for a canonical
+ * speaking_attempts audio_path (see the `in (...)` list in
+ * speaking_attempts_guard_audio, migration
+ * 20260913121100_speaking_attempts_integrity.sql). Kept in sync with that
+ * list so this Edge Function's own ownership check never accepts a shape
+ * the DB trigger would reject going forward.
+ */
+const CANONICAL_AUDIO_EXTENSIONS = ["wav", "webm", "ogg", "mp4"] as const;
+
+/**
+ * Defense in depth (security review finding F1, hardened further per H1):
+ * even though DB selection is scoped to a row's own canonical
+ * <user_id>/<id>.<ext> path, this Edge Function independently verifies
+ * ownership before ever calling removeObject with service-role
+ * credentials -- it never trusts a selected item's audioPath to already be
+ * safe, in case the DB-side guard is ever bypassed, weakened, or acting on
+ * pre-fix data.
+ *
+ * This is an EXACT match against `${userId}/${attemptId}.${ext}` for ext in
+ * CANONICAL_AUDIO_EXTENSIONS -- not "starts with the user's folder and the
+ * part before the last dot equals the attempt id", which silently accepted
+ * any suffix after that last dot (no extension at all, an extension
+ * embedding a raw or percent-encoded path separator, or an extension
+ * outside the allowed set) as if it were already a validated extension.
  */
 function isOwnCanonicalPath(item: ExpiredMilestoneAudio): boolean {
-  const prefix = `${item.userId}/`;
-  if (!item.audioPath.startsWith(prefix)) return false;
-  const rest = item.audioPath.slice(prefix.length);
-  const dotIndex = rest.lastIndexOf(".");
-  const stem = dotIndex === -1 ? rest : rest.slice(0, dotIndex);
-  return stem === item.attemptId;
+  return CANONICAL_AUDIO_EXTENSIONS.some(
+    (ext) => item.audioPath === `${item.userId}/${item.attemptId}.${ext}`,
+  );
 }
 
 async function processExpiredMilestones(
