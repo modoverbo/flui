@@ -75,6 +75,23 @@ void main() {
       expect((await repository.history()).valueOrNull, hasLength(2));
     });
 
+    test('history returns the most recently saved profile first', () async {
+      var now = DateTime.utc(2026);
+      final repository = FakeSkillProfileRepository(
+        currentUserId: () => 'u1',
+        now: () => now,
+      );
+      final first = await repository.save(sessionId: 's1', profile: _profile);
+      now = now.add(const Duration(days: 30));
+
+      final second = await repository.save(sessionId: 's2', profile: _profile);
+
+      expect((await repository.history()).valueOrNull, [
+        second.valueOrNull,
+        first.valueOrNull,
+      ]);
+    });
+
     test('a retake less than 30 days later is rejected', () async {
       var now = DateTime.utc(2026);
       final repository = FakeSkillProfileRepository(
@@ -118,6 +135,67 @@ void main() {
         recorder.last.url.queryParameters['order'],
         'diagnosed_at.desc.nullslast',
       );
+    });
+
+    test('latest returns null when no profile has been saved yet', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <Object?>[]);
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSkillProfileRepository(recorder.client)
+          .latest();
+
+      expect(result.isOk, isTrue);
+      expect(result.valueOrNull, isNull);
+    });
+
+    test(
+      'history orders newest first and requests the profile columns',
+      () async {
+        final recorder = SupabaseRecorder(
+          respond: (_) => [
+            _row(id: 's2', diagnosedAt: '2026-10-14T10:00:00+00:00'),
+            _row(),
+          ],
+        );
+        addTearDown(recorder.dispose);
+
+        final result = await SupabaseSkillProfileRepository(recorder.client)
+            .history();
+
+        expect(result.valueOrNull!.map((record) => record.id), ['s2', 's1']);
+        expect(recorder.last.url.path, '/rest/v1/skill_profiles');
+        expect(
+          recorder.last.url.queryParameters['order'],
+          'diagnosed_at.desc.nullslast',
+        );
+      },
+    );
+
+    test('pages through history past the PostgREST cap', () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) => request.url.queryParameters['offset'] == '0'
+            ? List.filled(1000, _row())
+            : [_row()],
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSkillProfileRepository(recorder.client)
+          .history();
+
+      expect(result.valueOrNull, hasLength(1001));
+      expect(recorder.requests, hasLength(2));
+    });
+
+    test('maps transport errors to a network failure on history', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSkillProfileRepository(recorder.client)
+          .history();
+
+      expect(result.failureOrNull, const NetworkFailure());
     });
 
     test('save inserts the profile and returns the closed row', () async {

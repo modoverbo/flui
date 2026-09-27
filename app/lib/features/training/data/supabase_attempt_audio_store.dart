@@ -1,3 +1,4 @@
+import 'dart:developer' as developer;
 import 'dart:typed_data';
 
 import 'package:flui/core/error/result.dart';
@@ -37,15 +38,50 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
             bytes,
             fileOptions: FileOptions(contentType: mimeType),
           );
-      await _markStatus(attemptId, 'stored', path: path, mime: mimeType);
-    } on Object catch (_) {
+      final stored = await _markStatus(
+        attemptId,
+        'stored',
+        path: path,
+        mime: mimeType,
+      );
+      if (!stored) {
+        // The object landed in the bucket but nothing points at it: an
+        // orphan with no 'stored' row would be invisible to every deletion
+        // flow that walks stored rows (consent revocation, account
+        // deletion, retention sweep) — remove it before giving up.
+        await _compensateOrphan(attemptId, path);
+      }
+    } on Object catch (error, stackTrace) {
       // Fire-and-forget: an upload failure never reaches the caller, only
-      // the attempt's audio_status.
-      await _markStatus(attemptId, 'failed');
+      // the attempt's audio_status. The call may have actually succeeded
+      // server-side even though the client saw an error/timeout, so remove
+      // whatever might have landed at [path] before marking the row failed.
+      _logFailure('upload audio for', attemptId, error, stackTrace);
+      await _compensateOrphan(attemptId, path);
     }
   }
 
-  Future<void> _markStatus(
+  /// Best-effort removal of a possibly-orphaned object at [path], followed
+  /// by marking [attemptId] `failed`. Removing an already-gone object is
+  /// harmless (the storage API's delete is idempotent).
+  Future<void> _compensateOrphan(String attemptId, String path) async {
+    try {
+      await _client.storage.from(_bucket).remove([path]);
+    } on Object catch (error, stackTrace) {
+      _logFailure(
+        'remove orphaned audio object for',
+        attemptId,
+        error,
+        stackTrace,
+      );
+    }
+    await _markStatus(attemptId, 'failed');
+  }
+
+  /// Returns whether the update was applied. A `false` result never throws
+  /// — the caller decides whether a failed status update leaves an orphan
+  /// that needs compensating.
+  Future<bool> _markStatus(
     String attemptId,
     String status, {
     String? path,
@@ -60,9 +96,25 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
             'audio_mime': ?mime,
           })
           .eq('id', attemptId);
-    } on Object catch (_) {
-      // Nothing left to report: the caller never awaits this outcome.
+      return true;
+    } on Object catch (error, stackTrace) {
+      _logFailure('mark $status for', attemptId, error, stackTrace);
+      return false;
     }
+  }
+
+  void _logFailure(
+    String action,
+    String attemptId,
+    Object error,
+    StackTrace stackTrace,
+  ) {
+    developer.log(
+      'Failed to $action attempt $attemptId',
+      name: 'SupabaseAttemptAudioStore',
+      error: error,
+      stackTrace: stackTrace,
+    );
   }
 
   @override

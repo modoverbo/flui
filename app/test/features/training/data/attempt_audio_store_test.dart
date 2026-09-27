@@ -117,10 +117,89 @@ void main() {
         currentUserId: () => 'u1',
       ).upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
 
-      expect(recorder.requests, hasLength(2));
+      // The compensating remove is also attempted (and also fails here,
+      // harmlessly) before the row is marked failed.
+      expect(recorder.requests, hasLength(3));
       final body =
           recorder.bodyOf(recorder.requests.last)! as Map<String, Object?>;
       expect(body['audio_status'], 'failed');
+    });
+
+    test('an upload throw removes any orphaned object before marking the row '
+        'failed', () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) {
+          if (request.url.path.startsWith('/storage/v1/object/')) {
+            if (request.method == 'POST') {
+              throw http.ClientException('offline');
+            }
+            return <Object?>[]; // remove succeeds
+          }
+          return null; // row update succeeds
+        },
+      );
+      addTearDown(recorder.dispose);
+
+      await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+
+      // The failing upload POST, the compensating remove, and the
+      // failed-status update are all observed — the request is recorded
+      // by the test double even though the call itself threw.
+      expect(recorder.requests, hasLength(3));
+      expect(
+        recorder.requests[0].url.path,
+        '/storage/v1/object/speaking-audio/u1/a1.wav',
+      );
+      final removeRequest = recorder.requests[1];
+      expect(removeRequest.method, 'DELETE');
+      expect(jsonDecode(removeRequest.body), {
+        'prefixes': ['u1/a1.wav'],
+      });
+      final updateRequest = recorder.requests[2];
+      expect(updateRequest.url.path, '/rest/v1/speaking_attempts');
+      final body = recorder.bodyOf(updateRequest)! as Map<String, Object?>;
+      expect(body['audio_status'], 'failed');
+    });
+
+    test('a row-update failure after a successful upload removes the orphaned '
+        'object and attempts to mark the row failed', () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) {
+          if (request.url.path.startsWith('/storage/v1/object/')) {
+            return request.method == 'DELETE'
+                ? <Object?>[]
+                : {'Key': 'speaking-audio/u1/a1.wav'};
+          }
+          if (request.url.path == '/rest/v1/speaking_attempts') {
+            throw http.ClientException('offline');
+          }
+          return null;
+        },
+      );
+      addTearDown(recorder.dispose);
+
+      await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+
+      // upload POST, failed 'stored' update attempt, compensating remove,
+      // failed 'failed' update attempt.
+      expect(recorder.requests, hasLength(4));
+      expect(
+        recorder.requests[0].url.path,
+        '/storage/v1/object/speaking-audio/u1/a1.wav',
+      );
+      expect(recorder.requests[1].url.path, '/rest/v1/speaking_attempts');
+      final removeRequest = recorder.requests[2];
+      expect(removeRequest.method, 'DELETE');
+      expect(jsonDecode(removeRequest.body), {
+        'prefixes': ['u1/a1.wav'],
+      });
+      expect(recorder.requests[3].url.path, '/rest/v1/speaking_attempts');
     });
 
     test('delete removes the object then marks the row deleted', () async {
