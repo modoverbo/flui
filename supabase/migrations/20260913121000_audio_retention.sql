@@ -10,7 +10,14 @@
 --     milestone_week check constraint already guarantees a diagnosis row can
 --     never carry a milestone_week -- decision #430 keeps diagnosis baseline
 --     audio for the account lifetime and this selection must never expire
---     it, regardless of how old it is.
+--     it, regardless of how old it is. Security review finding F1
+--     (defense in depth, read side): only a row's own canonical
+--     <user_id>/<id>.<ext> audio_path is ever selected, and a path still
+--     referenced by ANOTHER audio_status = 'stored' row is never selected
+--     either. 20260913121100_speaking_attempts_integrity.sql's trigger
+--     already prevents any row from ever holding a non-canonical or
+--     shared audio_path going forward; this guard only matters for data
+--     written before that trigger existed.
 -- (b) Orphaned speaking-audio objects: any object in the speaking-audio
 --     bucket older than a 24 h grace period whose name is not the audio_path
 --     of a speaking_attempts row currently audio_status = 'stored' (decision
@@ -25,18 +32,27 @@ stable
 security definer
 set search_path = ''
 as $$
-  select id, user_id, audio_path
-  from public.speaking_attempts
-  where milestone_week is not null
-    and audio_status = 'stored'
-    and context <> 'diagnosis'
-    and created_at < now() - interval '90 days'
-  order by created_at asc
+  select sa.id, sa.user_id, sa.audio_path
+  from public.speaking_attempts sa
+  where sa.milestone_week is not null
+    and sa.audio_status = 'stored'
+    and sa.context <> 'diagnosis'
+    and sa.created_at < now() - interval '90 days'
+    and split_part(sa.audio_path, '/', 1) = sa.user_id::text
+    and split_part(split_part(sa.audio_path, '/', 2), '.', 1) = sa.id::text
+    and not exists (
+      select 1
+      from public.speaking_attempts other
+      where other.id <> sa.id
+        and other.audio_status = 'stored'
+        and other.audio_path = sa.audio_path
+    )
+  order by sa.created_at asc
   limit p_batch_size;
 $$;
 
 comment on function public.select_expired_milestone_audio(integer) is
-  'Selects weekly-milestone speaking_attempts rows whose stored audio is older than 90 days (decision #430). Diagnosis baselines are never selected. service_role only, bounded by p_batch_size.';
+  'Selects weekly-milestone speaking_attempts rows whose stored audio is older than 90 days (decision #430), whose audio_path is the row''s own canonical <user_id>/<id>.<ext> path, and whose path is not also referenced by another stored row (security review finding F1, defense in depth). Diagnosis baselines are never selected. service_role only, bounded by p_batch_size.';
 
 revoke all on function public.select_expired_milestone_audio(integer) from public, anon, authenticated;
 grant execute on function public.select_expired_milestone_audio(integer) to service_role;

@@ -55,11 +55,18 @@ select tests.clear_authentication();
 
 -- owner: RLS insert check rejects a non-fresh row ------------------------------------
 select tests.authenticate_as(:'owner_id');
+-- 23514, not 42501: 20260913121100_speaking_attempts_integrity.sql's guard
+-- trigger (security review finding F1) now validates audio_path shape on
+-- INSERT too, and BEFORE ROW triggers always run before RLS's WITH CHECK is
+-- evaluated -- 'owner_id/x.wav' is rejected as non-canonical (it can never
+-- equal '<owner_id>/<freshly generated id>.wav') before RLS's own
+-- "audio_path is null" requirement is ever reached. The insert is still
+-- rejected either way; only the surfaced error code changed.
 select throws_ok(
   format($$ insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_path)
             values (gen_random_uuid(), %L, gen_random_uuid(), 'daily', 'first', current_date,
                     'Hoy hablé sobre mi rutina matutina con calma.', 15000, %L || '/x.wav') $$, :'owner_id', :'owner_id'),
-  '42501', null, 'insert is rejected when audio_path is already set');
+  '23514', null, 'insert is rejected when audio_path is already set');
 select throws_ok(
   format($$ insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status)
             values (gen_random_uuid(), %L, gen_random_uuid(), 'daily', 'first', current_date,

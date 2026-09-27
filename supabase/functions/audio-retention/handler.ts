@@ -67,6 +67,23 @@ function errorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
 }
 
+/**
+ * Defense in depth (security review finding F1): even though DB selection
+ * is scoped to a row's own canonical <user_id>/<id>.<ext> path, this Edge
+ * Function independently verifies ownership before ever calling
+ * removeObject with service-role credentials -- it never trusts a selected
+ * item's audioPath to already be safe, in case the DB-side guard is ever
+ * bypassed, weakened, or acting on pre-fix data.
+ */
+function isOwnCanonicalPath(item: ExpiredMilestoneAudio): boolean {
+  const prefix = `${item.userId}/`;
+  if (!item.audioPath.startsWith(prefix)) return false;
+  const rest = item.audioPath.slice(prefix.length);
+  const dotIndex = rest.lastIndexOf(".");
+  const stem = dotIndex === -1 ? rest : rest.slice(0, dotIndex);
+  return stem === item.attemptId;
+}
+
 async function processExpiredMilestones(
   deps: Pick<AudioRetentionDeps, "markAttemptDeleted" | "removeObject" | "log">,
   items: ExpiredMilestoneAudio[],
@@ -77,6 +94,16 @@ async function processExpiredMilestones(
   let acted = 0;
   let failed = 0;
   for (const item of items) {
+    if (!isOwnCanonicalPath(item)) {
+      failed++;
+      log(
+        "audio-retention: expired-milestone item failed the ownership check, object left in place",
+        {
+          attemptId: item.attemptId,
+        },
+      );
+      continue;
+    }
     try {
       // Row update FIRST, then object removal: an attempt still reachable by
       // the guarded update is the only one whose object may be removed.

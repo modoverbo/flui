@@ -18,8 +18,8 @@ function setup(overrides: Partial<AudioRetentionDeps> = {}) {
     secret: SECRET,
     selectExpiredMilestones: () => Promise.resolve([]),
     selectOrphanedObjects: () => Promise.resolve([]),
-    markAttemptDeleted(attemptId, _audioPath) {
-      calls.push(`markAttemptDeleted:${attemptId}`);
+    markAttemptDeleted(attemptId, audioPath) {
+      calls.push(`markAttemptDeleted:${attemptId}:${audioPath}`);
       const outcome = markAttemptDeletedResults.get(attemptId);
       if (outcome instanceof Error) return Promise.reject(outcome);
       return Promise.resolve(outcome ?? true);
@@ -49,8 +49,12 @@ function post(headers: Record<string, string> = {}, search = "") {
   });
 }
 
-function milestone(attemptId: string, audioPath = `${attemptId}.wav`): ExpiredMilestoneAudio {
-  return { attemptId, userId: "u1", audioPath };
+function milestone(
+  attemptId: string,
+  userId = "u1",
+  audioPath = `${userId}/${attemptId}.wav`,
+): ExpiredMilestoneAudio {
+  return { attemptId, userId, audioPath };
 }
 
 function orphan(objectName: string): OrphanedAudioObject {
@@ -121,7 +125,7 @@ Deno.test("selection results are acted on exactly: row update runs before object
   });
   const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
   assertEquals(response.status, 200);
-  assertEquals(calls, ["markAttemptDeleted:a1", "removeObject:a1.wav"]);
+  assertEquals(calls, ["markAttemptDeleted:a1:u1/a1.wav", "removeObject:u1/a1.wav"]);
 });
 
 Deno.test("a row-update failure (guarded update matched no row) skips object removal entirely", async () => {
@@ -133,7 +137,7 @@ Deno.test("a row-update failure (guarded update matched no row) skips object rem
   const body = await response.json();
   assertEquals(
     calls,
-    ["markAttemptDeleted:a1"],
+    ["markAttemptDeleted:a1:u1/a1.wav"],
     "removeObject must never run after a failed guarded update",
   );
   assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
@@ -146,7 +150,7 @@ Deno.test("a row-update that throws also skips object removal and is counted as 
   markAttemptDeletedResults.set("a1", new Error("db unavailable"));
   const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
   const body = await response.json();
-  assertEquals(calls, ["markAttemptDeleted:a1"]);
+  assertEquals(calls, ["markAttemptDeleted:a1:u1/a1.wav"]);
   assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
 });
 
@@ -159,11 +163,11 @@ Deno.test("per-item failures never abort the batch: the remaining expired-milest
   const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
   const body = await response.json();
   assertEquals(calls, [
-    "markAttemptDeleted:a1",
-    "removeObject:a1.wav",
-    "markAttemptDeleted:a2",
-    "markAttemptDeleted:a3",
-    "removeObject:a3.wav",
+    "markAttemptDeleted:a1:u1/a1.wav",
+    "removeObject:u1/a1.wav",
+    "markAttemptDeleted:a2:u1/a2.wav",
+    "markAttemptDeleted:a3:u1/a3.wav",
+    "removeObject:u1/a3.wav",
   ]);
   assertEquals(body.expiredMilestones, { seen: 3, acted: 2, failed: 1 });
 });
@@ -195,8 +199,8 @@ Deno.test("the function only acts on exactly what selection returned, nothing el
   });
   await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
   assertEquals(calls, [
-    "markAttemptDeleted:expired-only",
-    "removeObject:expired-only.wav",
+    "markAttemptDeleted:expired-only:u1/expired-only.wav",
+    "removeObject:u1/expired-only.wav",
     "removeObject:orphan-only.wav",
   ]);
 });
@@ -223,4 +227,72 @@ Deno.test("an empty selection on both sides returns an all-zero, non-dry-run res
     expiredMilestones: { seen: 0, acted: 0, failed: 0 },
     orphans: { seen: 0, acted: 0, failed: 0 },
   });
+});
+
+// Security review finding F1 (defense in depth): the Edge Function must
+// never trust a selected item's audioPath to already belong to its userId,
+// even though the DB selection is now itself scoped to the row's own
+// canonical path.
+Deno.test("an expired-milestone item whose audioPath belongs to a different user's folder is skipped, never updated or removed", async () => {
+  const item: ExpiredMilestoneAudio = {
+    attemptId: "a1",
+    userId: "victim-uid",
+    audioPath: "attacker-uid/a1.wav",
+  };
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(
+    calls,
+    [],
+    "neither markAttemptDeleted nor removeObject may run for a foreign-owned path",
+  );
+  assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
+});
+
+Deno.test("an expired-milestone item whose audioPath filename does not match its own attemptId is skipped, never updated or removed", async () => {
+  const item: ExpiredMilestoneAudio = {
+    attemptId: "a1",
+    userId: "u1",
+    audioPath: "u1/some-other-attempt.wav",
+  };
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  const body = await response.json();
+  assertEquals(
+    calls,
+    [],
+    "a mismatched filename stem must never be acted on, even inside the right folder",
+  );
+  assertEquals(body.expiredMilestones, { seen: 1, acted: 0, failed: 1 });
+});
+
+Deno.test("an expired-milestone item shaped exactly like <userId>/<attemptId>.<ext> is still processed normally", async () => {
+  const item = milestone("a1", "u1");
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  assertEquals(response.status, 200);
+  assertEquals(calls, ["markAttemptDeleted:a1:u1/a1.wav", "removeObject:u1/a1.wav"]);
+});
+
+// Security review finding F4: the fake previously ignored the audioPath
+// argument entirely, so a mutant that reconstructed a path from attemptId
+// instead of forwarding the selected item's own audioPath would still pass.
+Deno.test("markAttemptDeleted receives the exact selected audioPath, not one derived from the attempt id", async () => {
+  const item = milestone("f7c2-attempt", "7b1e2f90-aaaa-bbbb-cccc-111122223333");
+  const { handler, calls } = setup({
+    selectExpiredMilestones: () => Promise.resolve([item]),
+  });
+  const response = await handler(post({ [RETENTION_SECRET_HEADER]: SECRET }));
+  assertEquals(response.status, 200);
+  assertEquals(calls, [
+    `markAttemptDeleted:${item.attemptId}:${item.audioPath}`,
+    `removeObject:${item.audioPath}`,
+  ]);
 });
