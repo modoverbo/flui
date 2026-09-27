@@ -4,7 +4,7 @@ import 'dart:typed_data';
 import 'package:flui/core/audio/data/bytes_source.dart';
 import 'package:flui/core/audio/data/bytes_source_stub.dart'
     if (dart.library.io) 'package:flui/core/audio/data/bytes_source_io.dart'
-    if (dart.library.html) 'package:flui/core/audio/data/bytes_source_web.dart';
+    if (dart.library.js_interop) 'package:flui/core/audio/data/bytes_source_web.dart';
 import 'package:flui/core/audio/speech_player.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
