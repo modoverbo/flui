@@ -9,6 +9,7 @@ SpeechAnalysisFailure mapSpeechAnalysisErrorCode(String? code) {
     'access_unavailable' => SpeechAnalysisErrorCode.accessUnavailable,
     'daily_limit_reached' => SpeechAnalysisErrorCode.dailyLimitReached,
     'rate_limited' => SpeechAnalysisErrorCode.rateLimited,
+    'no_speech' => SpeechAnalysisErrorCode.noSpeech,
     _ => SpeechAnalysisErrorCode.unknown,
   };
   return SpeechAnalysisFailure(mapped);

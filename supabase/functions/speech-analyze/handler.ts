@@ -74,6 +74,9 @@ export interface SpeechAnalyzeDeps {
 
 const allowedMimeTypes = new Set(["audio/wav", "audio/webm", "audio/ogg", "audio/m4a"]);
 const maxDecodedBytes = 5 * 1024 * 1024;
+// Challenge ids are uuids. Rejecting other shapes here keeps a malformed id
+// from reaching Postgres, where the uuid cast would surface as a 500.
+const uuidShape = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 interface WireBehaviorCode {
   wireCode: string;
@@ -210,7 +213,20 @@ export function createSpeechAnalyzeHandler(
         );
       }
 
+      const modeRaw = body.mode;
+      const mode = modeRaw === undefined ? "analyze" : modeRaw;
+      if (mode !== "analyze" && mode !== "transcribe") {
+        throw new HttpError(400, "invalid_body", 'mode must be "analyze" or "transcribe".');
+      }
+
       const challengeIdRaw = body.challengeId;
+      if (mode === "transcribe" && challengeIdRaw !== undefined) {
+        throw new HttpError(
+          400,
+          "invalid_body",
+          "challengeId is not supported in transcribe mode.",
+        );
+      }
       if (
         challengeIdRaw !== undefined &&
         (typeof challengeIdRaw !== "string" || challengeIdRaw.length === 0)
@@ -219,6 +235,9 @@ export function createSpeechAnalyzeHandler(
       }
       let challenge: ChallengeContext | undefined;
       if (typeof challengeIdRaw === "string") {
+        if (!uuidShape.test(challengeIdRaw)) {
+          throw new HttpError(400, "unknown_challenge", "That challenge is not available.");
+        }
         challenge = (await deps.loadChallenge(challengeIdRaw)) ?? undefined;
         if (!challenge) {
           throw new HttpError(400, "unknown_challenge", "That challenge is not available.");
@@ -244,6 +263,14 @@ export function createSpeechAnalyzeHandler(
       }
 
       const transcript = await transcribeAudio(deps, bytes, mimeType);
+
+      if (mode === "transcribe") {
+        return jsonResponse(200, {
+          text: transcript.text.trim(),
+          durationMs: Math.round(transcript.durationSeconds * 1000),
+          words: transcript.words,
+        }, cors);
+      }
 
       let evaluation: SpeechEvaluation;
       try {

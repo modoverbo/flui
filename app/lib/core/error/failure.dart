@@ -117,6 +117,7 @@ enum SpeechAnalysisErrorCode {
   accessUnavailable,
   dailyLimitReached,
   rateLimited,
+  noSpeech,
   unknown,
 }
 

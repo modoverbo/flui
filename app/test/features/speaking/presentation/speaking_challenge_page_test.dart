@@ -80,6 +80,13 @@ final class CountingAnalysisRepository implements SpeechAnalysisRepository {
     calls++;
     return _delegate.analyze(audio, mimeType: mimeType, duration: duration);
   }
+
+  @override
+  Future<Result<SpeechTranscript>> transcribe(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+  }) => _delegate.transcribe(audio, mimeType: mimeType, duration: duration);
 }
 
 final class PendingAnalysisRepository implements SpeechAnalysisRepository {
@@ -91,6 +98,13 @@ final class PendingAnalysisRepository implements SpeechAnalysisRepository {
     required String mimeType,
     required Duration duration,
     String? challengeId,
+  }) => result.future;
+
+  @override
+  Future<Result<SpeechTranscript>> transcribe(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
   }) => result.future;
 }
 

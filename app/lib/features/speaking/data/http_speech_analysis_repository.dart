@@ -21,6 +21,30 @@ final class HttpSpeechAnalysisRepository implements SpeechAnalysisRepository {
     required String mimeType,
     required Duration duration,
     String? challengeId,
+  }) => _send(
+    audio,
+    mimeType: mimeType,
+    duration: duration,
+    extra: challengeId == null ? const {} : {'challengeId': challengeId},
+  );
+
+  @override
+  Future<Result<SpeechTranscript>> transcribe(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+  }) => _send(
+    audio,
+    mimeType: mimeType,
+    duration: duration,
+    extra: const {'mode': 'transcribe'},
+  );
+
+  Future<Result<SpeechTranscript>> _send(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+    required Map<String, dynamic> extra,
   }) async {
     if (audio.isEmpty) return const Result.err(UnexpectedFailure('no_speech'));
     try {
@@ -28,8 +52,8 @@ final class HttpSpeechAnalysisRepository implements SpeechAnalysisRepository {
         'audioBase64': base64Encode(audio),
         'mimeType': mimeType,
         'durationMs': duration.inMilliseconds,
+        ...extra,
       };
-      if (challengeId != null) requestBody['challengeId'] = challengeId;
       final response = await _client.post(
         endpoint,
         headers: const {

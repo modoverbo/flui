@@ -21,6 +21,30 @@ final class SupabaseSpeechAnalysisRepository
     required String mimeType,
     required Duration duration,
     String? challengeId,
+  }) => _invoke(
+    audio,
+    mimeType: mimeType,
+    duration: duration,
+    extra: challengeId == null ? const {} : {'challengeId': challengeId},
+  );
+
+  @override
+  Future<Result<SpeechTranscript>> transcribe(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+  }) => _invoke(
+    audio,
+    mimeType: mimeType,
+    duration: duration,
+    extra: const {'mode': 'transcribe'},
+  );
+
+  Future<Result<SpeechTranscript>> _invoke(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+    required Map<String, dynamic> extra,
   }) async {
     if (audio.isEmpty) {
       return const Result.err(UnexpectedFailure('no_speech'));
@@ -30,8 +54,8 @@ final class SupabaseSpeechAnalysisRepository
         'audioBase64': base64Encode(audio),
         'mimeType': mimeType,
         'durationMs': duration.inMilliseconds,
+        ...extra,
       };
-      if (challengeId != null) requestBody['challengeId'] = challengeId;
       final response = await _client.functions.invoke(
         'speech-analyze',
         body: requestBody,
