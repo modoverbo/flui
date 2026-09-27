@@ -1,6 +1,10 @@
 import 'dart:convert';
 
 import 'package:flui/features/reading/domain/reading.dart';
+import 'package:flui/features/training/domain/behavior_code.dart';
+import 'package:flui/features/training/domain/challenge.dart';
+import 'package:flui/features/training/domain/skill.dart';
+import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 
@@ -153,6 +157,50 @@ List<Word> parseSeedWords(String sql) {
   }
   return words..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
 }
+
+/// Published challenges of the seed (`content/challenges/<slug>.yml`),
+/// ordered by `sort_order` — same pattern as [parseSeedWords].
+List<Challenge> parseSeedChallenges(String sql) {
+  final rows =
+      parseSeedRows(sql)['challenges'] ?? const <Map<String, Object?>>[];
+  final challenges = <Challenge>[];
+  for (final row in rows) {
+    if (row['published'] != true) continue;
+    final mode = row['mode'] as String?;
+    challenges.add(
+      Challenge(
+        id: row['id']! as String,
+        slug: row['slug']! as String,
+        purpose: ChallengePurpose.values.byName(row['purpose']! as String),
+        skill: Skill.values.byName(row['skill']! as String),
+        difficulty: row['difficulty']! as int,
+        prompt: row['prompt']! as String,
+        cue: row['cue'] as String?,
+        focus: row['focus']! as String,
+        focusBehaviors: [
+          for (final wireCode
+              in (row['focus_behaviors']! as List<Object?>).cast<String>())
+            ?BehaviorCode.fromWireCode(wireCode),
+        ],
+        transferPrompts: (row['transfer_prompts']! as List<Object?>)
+            .cast<String>(),
+        targetDuration: Duration(seconds: row['target_seconds']! as int),
+        sortOrder: row['sort_order']! as int,
+        diagnosisSlot: row['diagnosis_slot'] as int?,
+        mode: mode == null ? null : _trainingModeFromWire(mode),
+      ),
+    );
+  }
+  return challenges..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
+}
+
+TrainingMode _trainingModeFromWire(String wireMode) => switch (wireMode) {
+  'think_and_speak' => TrainingMode.thinkAndSpeak,
+  'speak_with_precision' => TrainingMode.speakWithPrecision,
+  'master_your_voice' => TrainingMode.masterYourVoice,
+  'real_situations' => TrainingMode.realSituations,
+  _ => throw FormatException('Unknown training mode', wireMode),
+};
 
 enum _Kind { word, string, number, symbol }
 
