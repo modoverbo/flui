@@ -1,11 +1,12 @@
 -- speaking-audio storage: private bucket for milestone/diagnosis attempts.
 -- Select/insert/delete restricted to the caller's own `<uid>/` folder;
--- insert additionally requires a matching pending speaking_attempts row
--- (diagnosis or a milestone week) AND profiles.audio_retention_consent =
--- true. No update policy exists at all. Also covers the consent columns
--- added to profiles.
+-- insert additionally requires public.has_access() (#422: no spend on
+-- non-paying users) AND a matching pending speaking_attempts row (diagnosis
+-- or a milestone week) AND profiles.audio_retention_consent = true. No
+-- update policy exists at all. Also covers the consent columns added to
+-- profiles.
 begin;
-select plan(22);
+select plan(25);
 
 select is(
   (select count(*)::int from storage.buckets where id = 'speaking-audio'),
@@ -17,12 +18,48 @@ select has_column('public', 'profiles', 'audio_consent_updated_at', 'profiles.au
 
 select tests.create_user('audio-owner@example.com') as owner_id \gset
 select tests.create_user('audio-other@example.com') as other_id \gset
+select tests.create_user('audio-no-access@example.com') as no_access_id \gset
+select tests.create_user('audio-expired@example.com') as expired_id \gset
+
+insert into public.entitlements (user_id, whop_membership_id, whop_plan_id, status, current_period_end, trial_ends_at)
+values
+  (:'owner_id', 'mem_audio_owner', 'plan_test', 'active', now() + interval '10 days', null),
+  (:'expired_id', 'mem_audio_expired', 'plan_test', 'expired', now() - interval '1 day', null);
 
 -- anon cannot write into the bucket at all -------------------------------------------
 select tests.authenticate_as_anon();
 select throws_ok(
   format($$ insert into storage.objects (bucket_id, name) values ('speaking-audio', %L || '/x.wav') $$, :'owner_id'),
   '42501', null, 'anon cannot insert into speaking-audio'
+);
+select tests.clear_authentication();
+
+-- access gate (#422): even with a valid pending eligible attempt AND consent
+-- already granted, a signed-in user without access (or with an expired
+-- entitlement) cannot upload. The attempt rows are inserted as postgres
+-- (bypassing RLS) so this isolates the storage policy's OWN access check
+-- from the separate access gate now on speaking_attempts' insert policy.
+insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, audio_status)
+values
+  ('00000000-0000-4000-d000-000000000010', :'no_access_id', gen_random_uuid(), 'diagnosis', 'first', current_date,
+   'Preséntate en pocas frases, sin prisa.', 15000, 'pending'),
+  ('00000000-0000-4000-d000-000000000011', :'expired_id', gen_random_uuid(), 'diagnosis', 'first', current_date,
+   'Preséntate en pocas frases, sin prisa.', 15000, 'pending');
+update public.profiles set audio_retention_consent = true where id in (:'no_access_id', :'expired_id');
+
+select tests.authenticate_as(:'no_access_id');
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000010.wav') $$, :'no_access_id'),
+  '42501', null, 'a signed-in user without an entitlement cannot upload, even with a matching pending attempt and consent'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'expired_id');
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/00000000-0000-4000-d000-000000000011.wav') $$, :'expired_id'),
+  '42501', null, 'a signed-in user with an expired entitlement cannot upload, even with a matching pending attempt and consent'
 );
 select tests.clear_authentication();
 
@@ -53,6 +90,13 @@ select isnt(
   (select audio_consent_updated_at from public.profiles where id = :'owner_id'::uuid),
   null,
   'audio_consent_updated_at is set once consent changes'
+);
+
+-- a non-uuid filename is denied cleanly, never raises a cast exception --------------
+select throws_ok(
+  format($$ insert into storage.objects (bucket_id, name)
+            values ('speaking-audio', %L || '/not-a-uuid.wav') $$, :'owner_id'),
+  '42501', null, 'a non-uuid filename is rejected as a policy denial, not a runtime cast error'
 );
 
 -- insert blocked into another user's folder ------------------------------------------

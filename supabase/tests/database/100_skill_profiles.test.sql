@@ -1,9 +1,10 @@
--- skill_profiles: one row per closed diagnosis session. The before-insert
--- trigger sets kind (baseline if no prior row, retake otherwise) from the
--- server clock, ignoring whatever the client sends, and rejects a retake
--- less than 30 days after the previous one.
+-- skill_profiles: one row per closed diagnosis session. Insert additionally
+-- requires public.has_access() (#422: diagnosis runs only after trial
+-- start). The before-insert trigger sets kind (baseline if no prior row,
+-- retake otherwise) from the server clock, ignoring whatever the client
+-- sends, and rejects a retake less than 30 days after the previous one.
 begin;
-select plan(15);
+select plan(17);
 
 select has_table('public', 'skill_profiles', 'skill_profiles table exists');
 select is_empty(
@@ -17,6 +18,15 @@ select tests.create_user('profile-owner@example.com') as owner_id \gset
 select tests.create_user('profile-other@example.com') as other_id \gset
 select tests.create_user('profile-area@example.com') as area_user_id \gset
 select tests.create_user('profile-strengths@example.com') as strengths_user_id \gset
+select tests.create_user('profile-no-access@example.com') as no_access_id \gset
+select tests.create_user('profile-expired@example.com') as expired_id \gset
+
+insert into public.entitlements (user_id, whop_membership_id, whop_plan_id, status, current_period_end, trial_ends_at)
+values
+  (:'owner_id', 'mem_profile_owner', 'plan_test', 'active', now() + interval '10 days', null),
+  (:'area_user_id', 'mem_profile_area', 'plan_test', 'active', now() + interval '10 days', null),
+  (:'strengths_user_id', 'mem_profile_strengths', 'plan_test', 'active', now() + interval '10 days', null),
+  (:'expired_id', 'mem_profile_expired', 'plan_test', 'expired', now() - interval '1 day', null);
 
 -- anon: no access at all -------------------------------------------------------------
 select tests.authenticate_as_anon();
@@ -25,6 +35,26 @@ select throws_ok(
   $$ insert into public.skill_profiles (id, user_id, kind, top_area, second_area, top_behavior, second_behavior, strengths)
      values (gen_random_uuid(), gen_random_uuid(), 'baseline', 'thinking', 'language', 'main_point_late', 'vague_word', '["clear_main_point"]'::jsonb) $$,
   '42501', null, 'anon cannot insert skill_profiles');
+select tests.clear_authentication();
+
+-- access gate (#422): a signed-in user without access, or with an expired
+-- entitlement, cannot close a diagnosis at all -----------------------------
+select tests.authenticate_as(:'no_access_id');
+select throws_ok(
+  format($$ insert into public.skill_profiles (id, user_id, kind, top_area, second_area, top_behavior, second_behavior, strengths)
+            values (gen_random_uuid(), %L, 'baseline', 'thinking', 'language',
+                    'main_point_late', 'vague_word', '["clear_main_point"]'::jsonb) $$, :'no_access_id'),
+  '42501', null, 'a signed-in user without an entitlement cannot insert skill_profiles'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'expired_id');
+select throws_ok(
+  format($$ insert into public.skill_profiles (id, user_id, kind, top_area, second_area, top_behavior, second_behavior, strengths)
+            values (gen_random_uuid(), %L, 'baseline', 'thinking', 'language',
+                    'main_point_late', 'vague_word', '["clear_main_point"]'::jsonb) $$, :'expired_id'),
+  '42501', null, 'a signed-in user with an expired entitlement cannot insert skill_profiles'
+);
 select tests.clear_authentication();
 
 -- owner: first diagnosis always closes as baseline, ignoring the client's kind ------

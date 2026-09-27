@@ -60,9 +60,12 @@ create policy speaking_attempts_insert_own on public.speaking_attempts
   for insert to authenticated
   with check (
     user_id = (select auth.uid())
+    and (select public.has_access())
     and audio_path is null
     and audio_status in ('none', 'pending')
   );
+
+comment on policy speaking_attempts_insert_own on public.speaking_attempts is '#422: no spend on non-paying users -- insert requires an active/trialing entitlement (public.has_access()), never just a signed-in session.';
 
 drop policy if exists speaking_attempts_update_own on public.speaking_attempts;
 create policy speaking_attempts_update_own on public.speaking_attempts
@@ -143,7 +146,10 @@ create policy skill_profiles_select_own on public.skill_profiles
 
 drop policy if exists skill_profiles_insert_own on public.skill_profiles;
 create policy skill_profiles_insert_own on public.skill_profiles
-  for insert to authenticated with check (user_id = (select auth.uid()));
+  for insert to authenticated
+  with check (user_id = (select auth.uid()) and (select public.has_access()));
+
+comment on policy skill_profiles_insert_own on public.skill_profiles is '#422: diagnosis only runs for a paying/trialing user (public.has_access()).';
 
 -- Trigger: server clock, and kind/30-day-retake enforcement, ignoring the client's kind.
 create or replace function public.skill_profiles_before_insert()
@@ -245,10 +251,20 @@ create policy speaking_audio_insert_own on storage.objects
   with check (
     bucket_id = 'speaking-audio'
     and (storage.foldername(name))[1] = (select auth.uid())::text
+    and (select public.has_access())
     and exists (
       select 1
       from public.speaking_attempts sa
-      where sa.id = split_part(storage.filename(name), '.', 1)::uuid
+      where sa.id = (
+        -- CASE guarantees short-circuit evaluation (unlike AND, whose operand
+        -- order Postgres does not guarantee): a non-uuid filename must be
+        -- denied by policy, never raise a cast exception.
+        case
+          when storage.filename(name) ~ '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\.[A-Za-z0-9]+$'
+          then split_part(storage.filename(name), '.', 1)::uuid
+          else null
+        end
+      )
         and sa.user_id = (select auth.uid())
         and sa.audio_status = 'pending'
         and (sa.context = 'diagnosis' or sa.milestone_week is not null)
@@ -265,5 +281,5 @@ create policy speaking_audio_delete_own on storage.objects
   );
 
 comment on policy speaking_audio_select_own on storage.objects is 'Read own speaking-audio objects only.';
-comment on policy speaking_audio_insert_own on storage.objects is 'Upload only into your own folder, only for a pending attempt eligible for storage (diagnosis or a milestone week), and only with audio retention consent.';
+comment on policy speaking_audio_insert_own on storage.objects is '#422: requires public.has_access(). Upload only into your own folder, only for a pending attempt eligible for storage (diagnosis or a milestone week), and only with audio retention consent. A non-uuid filename is denied by policy (CASE-guarded), never a cast exception.';
 comment on policy speaking_audio_delete_own on storage.objects is 'Delete own speaking-audio objects only. No update policy exists: audio is immutable once uploaded.';
