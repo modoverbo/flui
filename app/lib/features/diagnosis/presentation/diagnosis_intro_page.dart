@@ -4,6 +4,9 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/auth/presentation/controllers/sign_out_controller.dart';
+import 'package:flui/features/diagnosis/domain/diagnosis_resume_policy.dart';
+import 'package:flui/features/diagnosis/presentation/diagnosis_gate.dart';
+import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
@@ -28,6 +31,15 @@ class DiagnosisIntroPage extends ConsumerWidget {
     final l10n = context.l10n;
     final signingOut = ref.watch(signOutControllerProvider);
     final consent = ref.watch(_consentProvider);
+    // A retake continuation (gate already `completed`) must keep the
+    // `?retake=1` query param, or the router's own rule 5 would immediately
+    // bounce `/diagnosis/live` back to `/today` (design part-3 §11).
+    final isRetake =
+        ref.watch(diagnosisGateProvider) == DiagnosisGate.completed;
+    final asyncResume = ref.watch(diagnosisResumeProvider);
+    final resume = asyncResume.value;
+    final answered = resume is DiagnosisResume ? resume.answered.length : 0;
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -53,6 +65,12 @@ class DiagnosisIntroPage extends ConsumerWidget {
                     ],
                   ),
                 ),
+                if (resume is DiagnosisResume) ...[
+                  const SizedBox(height: FluiSpacing.lg),
+                  FluiCard(
+                    child: Text(l10n.diagnosisIntroResumeProgress(answered, 3)),
+                  ),
+                ],
                 const SizedBox(height: FluiSpacing.lg),
                 consent.when(
                   data: (granted) => granted == null
@@ -63,8 +81,14 @@ class DiagnosisIntroPage extends ConsumerWidget {
                 ),
                 const SizedBox(height: FluiSpacing.lg),
                 FluiButton.primary(
-                  label: l10n.diagnosisIntroStart,
-                  onPressed: () => context.go(AppRoutes.diagnosisLive),
+                  label: resume is DiagnosisResume
+                      ? l10n.diagnosisIntroContinue
+                      : l10n.diagnosisIntroStart,
+                  onPressed: () => context.go(
+                    isRetake
+                        ? '${AppRoutes.diagnosisLive}?retake=1'
+                        : AppRoutes.diagnosisLive,
+                  ),
                 ),
                 const SizedBox(height: FluiSpacing.lg),
                 FluiButton.text(

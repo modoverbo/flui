@@ -408,27 +408,63 @@ void main() {
       expect(result.failureOrNull, const NetworkFailure());
     });
 
-    test('latestDiagnosisAttempts queries context=diagnosis, newest first, '
-        'capped at 3, RLS scopes rows to the owner', () async {
+    test('latestDiagnosisAttempts first finds the newest diagnosis session '
+        "id, then queries only that session's rows, newest first, capped "
+        'at 3, RLS scopes rows to the owner — never a global top-3 across '
+        'sessions (D38: resume/stale-row correctness)', () async {
       final rows = [
         _attemptRow(_attempt(id: 'n1', context: TrainingContext.diagnosis)),
         _attemptRow(_attempt(id: 'n2', context: TrainingContext.diagnosis)),
       ];
-      final recorder = SupabaseRecorder(respond: (_) => rows);
+      final recorder = SupabaseRecorder(
+        respond: (request) =>
+            request.url.queryParameters['select'] == 'session_id'
+            ? [
+                {'session_id': 'newest-session'},
+              ]
+            : rows,
+      );
       addTearDown(recorder.dispose);
 
       final result = await SupabaseSpeakingAttemptRepository(recorder.client)
           .latestDiagnosisAttempts();
 
       expect(result.valueOrNull?.map((a) => a.id), ['n1', 'n2']);
-      expect(recorder.last.method, 'GET');
-      expect(recorder.last.url.path, '/rest/v1/speaking_attempts');
-      expect(recorder.last.url.queryParameters['context'], 'eq.diagnosis');
+      expect(recorder.requests, hasLength(2));
+
+      final sessionQuery = recorder.requests.first;
+      expect(sessionQuery.method, 'GET');
+      expect(sessionQuery.url.path, '/rest/v1/speaking_attempts');
+      expect(sessionQuery.url.queryParameters['select'], 'session_id');
+      expect(sessionQuery.url.queryParameters['context'], 'eq.diagnosis');
       expect(
-        recorder.last.url.queryParameters['order'],
+        sessionQuery.url.queryParameters['order'],
         'created_at.desc.nullslast',
       );
-      expect(recorder.last.url.queryParameters['limit'], '3');
+      expect(sessionQuery.url.queryParameters['limit'], '1');
+
+      final rowsQuery = recorder.requests.last;
+      expect(rowsQuery.method, 'GET');
+      expect(rowsQuery.url.path, '/rest/v1/speaking_attempts');
+      expect(rowsQuery.url.queryParameters['context'], 'eq.diagnosis');
+      expect(rowsQuery.url.queryParameters['session_id'], 'eq.newest-session');
+      expect(
+        rowsQuery.url.queryParameters['order'],
+        'created_at.desc.nullslast',
+      );
+      expect(rowsQuery.url.queryParameters['limit'], '3');
+    });
+
+    test('latestDiagnosisAttempts is empty when no diagnosis session exists '
+        'yet — never queries the second time', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <Object?>[]);
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .latestDiagnosisAttempts();
+
+      expect(result.valueOrNull, isEmpty);
+      expect(recorder.requests, hasLength(1));
     });
 
     test('latestDiagnosisAttempts maps transport errors', () async {
