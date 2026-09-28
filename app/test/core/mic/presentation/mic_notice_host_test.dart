@@ -1,11 +1,9 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/mic/mic_controller.dart';
-import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/mic/mic_target_registry.dart';
 import 'package:flui/core/mic/presentation/mic_notice_host.dart';
 import 'package:flutter_test/flutter_test.dart';

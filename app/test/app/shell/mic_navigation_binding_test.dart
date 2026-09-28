@@ -22,7 +22,7 @@ final class _FakeMicTarget implements MicTarget {
   @override
   final Duration maxDuration = const Duration(seconds: 30);
 
-  MicAvailability _availability;
+  final MicAvailability _availability;
 
   @override
   MicAvailability get availability => _availability;
@@ -58,7 +58,8 @@ final class _FakeSpeechRecorder implements SpeechRecorder {
   @override
   Future<bool> requestPermission() async {
     final pending = permissionResult;
-    return pending == null ? true : await pending.future;
+    if (pending != null) return await pending.future;
+    return true;
   }
 
   @override

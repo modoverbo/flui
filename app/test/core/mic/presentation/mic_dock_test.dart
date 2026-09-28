@@ -10,7 +10,6 @@ import 'package:flui/core/mic/mic_target_registry.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/mic/presentation/mic_dock.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:material_ui/material_ui.dart';
 
 import '../../../helpers/pump_app.dart';
 
@@ -86,7 +85,7 @@ void main() {
     expect(find.byType(MicButton), findsOneWidget);
   });
 
-  testWidgets('shows the resolved target\'s prompt while idle', (tester) async {
+  testWidgets("shows the resolved target's prompt while idle", (tester) async {
     final controller = build();
     addTearDown(() => unawaited(controller.dispose()));
     await tester.pumpFlui(MicDock(controller: controller));

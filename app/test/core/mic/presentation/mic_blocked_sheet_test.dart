@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/mic/mic_controller.dart';
@@ -10,7 +9,6 @@ import 'package:flui/core/mic/mic_target_registry.dart';
 import 'package:flui/core/mic/presentation/mic_blocked_sheet.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:material_ui/material_ui.dart';
 
 import '../../../helpers/pump_app.dart';
 
