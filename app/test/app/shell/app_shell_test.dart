@@ -1,13 +1,20 @@
 import 'package:flui/app/shell/app_shell_scaffold.dart';
+import 'package:flui/core/config/feature_flags.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../helpers/pump_app.dart';
 
 void main() {
-  const labels = ['Hoy', 'Entrenar', 'Palabras', 'Tu progreso'];
+  // speakingGym OFF (the default, unchanged since before U16).
+  const labels = ['Hoy', 'Palabras', 'Habla', 'Tu progreso'];
 
-  Future<List<int>> pumpShell(WidgetTester tester, Size size) async {
+  Future<List<int>> pumpShell(
+    WidgetTester tester,
+    Size size, {
+    List<Override> overrides = const [],
+  }) async {
     final selected = <int>[];
     await tester.pumpFlui(
       AppShellScaffold(
@@ -15,6 +22,7 @@ void main() {
         onDestinationSelected: selected.add,
         child: const Text('contenido'),
       ),
+      overrides: overrides,
       surfaceSize: size,
     );
     return selected;
@@ -33,12 +41,12 @@ void main() {
     }
     expect(find.text('Progreso'), findsOneWidget);
 
-    await tester.tap(find.text('Entrenar'));
-    expect(selected, [1]);
+    await tester.tap(find.text('Habla'));
+    expect(selected, [2]);
     expect(find.text('contenido'), findsOneWidget);
 
     await tester.tap(find.text('Progreso'));
-    expect(selected, [1, 3]);
+    expect(selected, [2, 3]);
   });
 
   testWidgets('phone navigation labels fit inside the clipped bar', (
@@ -80,7 +88,7 @@ void main() {
     }
 
     await tester.tap(find.text('Palabras'));
-    expect(selected, [2]);
+    expect(selected, [1]);
   });
 
   testWidgets('tablets use a compact rail', (tester) async {
@@ -89,5 +97,30 @@ void main() {
     final rail = tester.widget<NavigationRail>(find.byType(NavigationRail));
     expect(rail.extended, isFalse);
     expect(rail.destinations, hasLength(4));
+  });
+
+  group('speakingGym ON (U16)', () {
+    const gymLabels = ['Hoy', 'Entrenar', 'Palabras', 'Tu progreso'];
+    final gymOn = [speakingGymEnabledProvider.overrideWithValue(true)];
+
+    testWidgets('reorders to Hoy/Entrenar/Palabras/Progreso', (tester) async {
+      final selected = await pumpShell(
+        tester,
+        const Size(400, 800),
+        overrides: gymOn,
+      );
+
+      expect(find.byType(NavigationDestination), findsNWidgets(4));
+      for (final label in gymLabels.take(3)) {
+        expect(find.text(label), findsOneWidget);
+      }
+      expect(find.text('Habla'), findsNothing);
+
+      await tester.tap(find.text('Entrenar'));
+      expect(selected, [1]);
+
+      await tester.tap(find.text('Palabras'));
+      expect(selected, [1, 2]);
+    });
   });
 }

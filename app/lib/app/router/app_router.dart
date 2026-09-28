@@ -4,6 +4,7 @@ import 'package:flui/app/router/app_redirect.dart';
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/app/router/flui_transitions.dart';
 import 'package:flui/app/shell/app_shell.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/pages/password_reset_page.dart';
 import 'package:flui/features/auth/presentation/pages/register_page.dart';
@@ -16,6 +17,7 @@ import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
+import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
 import 'package:flui/features/subscription/presentation/pages/checkout_return_page.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
 import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
@@ -45,6 +47,10 @@ GoRouter goRouter(Ref ref) {
     ..listen(accessGateProvider, (_, _) => refresh.notify())
     ..listen(dailyGateProvider, (_, _) => refresh.notify());
 
+  // The router is built once at startup (design D17): no runtime toggling,
+  // so a plain read (not watch) is enough here.
+  final speakingGym = ref.read(speakingGymEnabledProvider);
+
   // Created per router so tests can build many routers.
   final rootKey = GlobalKey<NavigatorState>(debugLabel: 'root');
   final router = GoRouter(
@@ -56,9 +62,10 @@ GoRouter goRouter(Ref ref) {
       access: ref.read(accessGateProvider),
       daily: ref.read(dailyGateProvider),
       location: state.uri,
+      speakingGym: speakingGym,
     ),
     errorBuilder: (context, state) => const NotFoundPage(),
-    routes: _routes(rootKey),
+    routes: _routes(rootKey, speakingGym: speakingGym),
   );
   ref.onDispose(() {
     router.dispose();
@@ -67,7 +74,10 @@ GoRouter goRouter(Ref ref) {
   return router;
 }
 
-List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
+List<RouteBase> _routes(
+  GlobalKey<NavigatorState> rootKey, {
+  required bool speakingGym,
+}) => [
   GoRoute(path: AppRoutes.root, builder: (_, _) => const SplashPage()),
   GoRoute(path: AppRoutes.splash, builder: (_, _) => const SplashPage()),
   GoRoute(path: AppRoutes.welcome, builder: (_, _) => const WelcomePage()),
@@ -117,86 +127,128 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
     // `MicLayerScope` per branch without changing this behavior.
     navigatorContainerBuilder: (context, navigationShell, children) =>
         IndexedStack(index: navigationShell.currentIndex, children: children),
-    branches: [
-      StatefulShellBranch(
+    branches: speakingGym ? _gymBranches(rootKey) : _originalBranches(rootKey),
+  ),
+];
+
+/// Shell branches while `speakingGym` is OFF (the default, unchanged since
+/// before U16): Hoy, Palabras, Habla, Progreso — matches
+/// `app_shell_scaffold.dart`'s `ShellDestination` order exactly.
+List<StatefulShellBranch> _originalBranches(
+  GlobalKey<NavigatorState> rootKey,
+) => [
+  _todayBranch(rootKey),
+  _wordsBranch(),
+  StatefulShellBranch(
+    routes: [
+      // Habla: selecting the tab always lands on the challenge's own
+      // "ready" phase. Starting a challenge goes to `.../live`, a
+      // full-screen take-over on the root navigator, same as
+      // `/today/time` above — the shell chrome disappears exactly like
+      // it does entering `/session` from `/today`.
+      GoRoute(
+        path: AppRoutes.speakingChallenge,
+        builder: (_, _) => const SpeakingTabPage(),
         routes: [
           GoRoute(
-            path: AppRoutes.today,
-            builder: (_, _) => const TodayPage(),
-            routes: [
-              GoRoute(
-                path: 'categories/:family',
-                parentNavigatorKey: rootKey,
-                builder: (_, state) => CategoryCatalogPage(
-                  familySlug: state.pathParameters['family']!,
-                  initialThemeId: state.uri.queryParameters['theme'],
-                  initialScrollOffset:
-                      double.tryParse(
-                        state.uri.queryParameters['offset'] ?? '',
-                      ) ??
-                      0,
-                ),
-              ),
-              GoRoute(
-                path: 'time',
-                parentNavigatorKey: rootKey,
-                builder: (_, _) => const TimeBudgetPage(),
-              ),
-            ],
-          ),
-        ],
-      ),
-      StatefulShellBranch(
-        routes: [
-          // ENTRENAR (U16, replacing the retired Habla/speaking-challenge
-          // tab): selecting the tab lands on the mode picker; a mode's own
-          // loop is a branch child, not a root-navigator take-over (design
-          // D30) — unlike the retired `/speaking/challenge/live`.
-          GoRoute(
-            path: AppRoutes.train,
-            builder: (_, _) => const TrainingLabPage(),
-            routes: [
-              GoRoute(
-                path: ':mode',
-                builder: (context, state) {
-                  final mode = _trainingModeOf(state.pathParameters['mode']);
-                  return mode == null
-                      ? const NotFoundPage()
-                      : TrainingLabModePage(mode: mode);
-                },
-              ),
-            ],
-          ),
-        ],
-      ),
-      StatefulShellBranch(
-        routes: [
-          GoRoute(
-            path: AppRoutes.words,
-            builder: (_, _) => const WordsPage(),
-            routes: [
-              GoRoute(
-                path: ':wordId',
-                builder: (context, state) => _WordDetailRoute(
-                  wordId: state.pathParameters['wordId']!,
-                  returnLocation: state.uri.queryParameters['returnTo'],
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-      StatefulShellBranch(
-        routes: [
-          GoRoute(
-            path: AppRoutes.progress,
-            builder: (_, _) => const ProgressPage(),
+            path: 'live',
+            parentNavigatorKey: rootKey,
+            pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
+              const SpeakingChallengePage(),
+              key: state.pageKey,
+            ),
           ),
         ],
       ),
     ],
   ),
+  _progressBranch(),
 ];
+
+/// Shell branches while `speakingGym` is ON (U16): Hoy, ENTRENAR, Palabras,
+/// Progreso — matches `app_shell_scaffold.dart`'s `GymShellDestination`
+/// order exactly. ENTRENAR replaces Habla's slot; `/speaking/challenge`
+/// deep links redirect to it via `AppRoutes.gymRetiredRoutes`.
+List<StatefulShellBranch> _gymBranches(GlobalKey<NavigatorState> rootKey) => [
+  _todayBranch(rootKey),
+  StatefulShellBranch(
+    routes: [
+      // ENTRENAR (U16, replacing the Habla/speaking-challenge tab):
+      // selecting the tab lands on the mode picker; a mode's own loop is
+      // a branch child, not a root-navigator take-over (design D30) —
+      // unlike Habla's `/speaking/challenge/live`.
+      GoRoute(
+        path: AppRoutes.train,
+        builder: (_, _) => const TrainingLabPage(),
+        routes: [
+          GoRoute(
+            path: ':mode',
+            builder: (context, state) {
+              final mode = _trainingModeOf(state.pathParameters['mode']);
+              return mode == null
+                  ? const NotFoundPage()
+                  : TrainingLabModePage(mode: mode);
+            },
+          ),
+        ],
+      ),
+    ],
+  ),
+  _wordsBranch(),
+  _progressBranch(),
+];
+
+StatefulShellBranch _todayBranch(
+  GlobalKey<NavigatorState> rootKey,
+) => StatefulShellBranch(
+  routes: [
+    GoRoute(
+      path: AppRoutes.today,
+      builder: (_, _) => const TodayPage(),
+      routes: [
+        GoRoute(
+          path: 'categories/:family',
+          parentNavigatorKey: rootKey,
+          builder: (_, state) => CategoryCatalogPage(
+            familySlug: state.pathParameters['family']!,
+            initialThemeId: state.uri.queryParameters['theme'],
+            initialScrollOffset:
+                double.tryParse(state.uri.queryParameters['offset'] ?? '') ?? 0,
+          ),
+        ),
+        GoRoute(
+          path: 'time',
+          parentNavigatorKey: rootKey,
+          builder: (_, _) => const TimeBudgetPage(),
+        ),
+      ],
+    ),
+  ],
+);
+
+StatefulShellBranch _wordsBranch() => StatefulShellBranch(
+  routes: [
+    GoRoute(
+      path: AppRoutes.words,
+      builder: (_, _) => const WordsPage(),
+      routes: [
+        GoRoute(
+          path: ':wordId',
+          builder: (context, state) => _WordDetailRoute(
+            wordId: state.pathParameters['wordId']!,
+            returnLocation: state.uri.queryParameters['returnTo'],
+          ),
+        ),
+      ],
+    ),
+  ],
+);
+
+StatefulShellBranch _progressBranch() => StatefulShellBranch(
+  routes: [
+    GoRoute(path: AppRoutes.progress, builder: (_, _) => const ProgressPage()),
+  ],
+);
 
 TrainingMode? _trainingModeOf(String? raw) =>
     TrainingMode.values.where((mode) => mode.name == raw).firstOrNull;

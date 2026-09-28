@@ -1,27 +1,39 @@
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
 import 'package:flui/shared/widgets/flui_symbol.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Order of the shell branches. Keep in sync with `app_router.dart`.
+/// Order of the shell branches while `speakingGym` is OFF (the default,
+/// unchanged since before U16). Keep in sync with `app_router.dart`'s
+/// `_originalBranches`.
 ///
 /// Four tabs: "Practica" became the "Repaso extra" action on Hoy and "En
 /// contexto" became a section of the word detail, because both were places
-/// the user had to remember to visit. "Habla" — a root-only speaking
-/// challenge promoted to a tab — was itself retired by U16: ENTRENAR takes
-/// its slot with the training-lab mode picker (`TrainingLabPage`), and its
-/// own loop routes are branch children (no root-navigator take-over,
-/// design D30), unlike the old `/speaking/challenge/live`.
-enum ShellDestination { today, train, words, progress }
+/// the user had to remember to visit. "Habla" is a root-only speaking
+/// challenge promoted to a tab: selecting it always lands on the challenge's
+/// own `ready` phase, and starting a challenge still takes over the full
+/// screen exactly like `/session` does, via a nested root-navigator route.
+enum ShellDestination { today, words, habla, progress }
+
+/// Order of the shell branches while `speakingGym` is ON (U16). ENTRENAR
+/// takes Habla's slot with the training-lab mode picker (`TrainingLabPage`),
+/// and its own loop routes are branch children (no root-navigator
+/// take-over, design D30), unlike Habla's `/speaking/challenge/live`. Keep
+/// in sync with `app_router.dart`'s `_gymBranches`.
+enum GymShellDestination { today, train, words, progress }
 
 /// Navigation chrome: bottom bar on phones, side rail on wide screens.
 ///
 /// The tab glyphs are the custom family at 22 px, never a library icon
-/// inside a tinted square.
-class AppShellScaffold extends StatelessWidget {
+/// inside a tinted square. Reads `speakingGymEnabledProvider` (design D17/
+/// D32) to pick which of the two destination sets above is live; flag off
+/// renders byte-identical to the pre-U16 shell.
+class AppShellScaffold extends ConsumerWidget {
   const new({
     required this.selectedIndex,
     required this.onDestinationSelected,
@@ -36,28 +48,53 @@ class AppShellScaffold extends StatelessWidget {
   static FluiGlyph glyphOf(ShellDestination destination) =>
       switch (destination) {
         ShellDestination.today => FluiGlyph.onda,
-        ShellDestination.train => FluiGlyph.microphone,
         // The word-entry glyph: a dictionary entry, which is what the
         // repertoire is.
         ShellDestination.words => FluiGlyph.wordOfTheDay,
+        ShellDestination.habla => FluiGlyph.microphone,
         ShellDestination.progress => FluiGlyph.streak,
       };
 
+  static FluiGlyph gymGlyphOf(GymShellDestination destination) =>
+      switch (destination) {
+        GymShellDestination.today => FluiGlyph.onda,
+        GymShellDestination.train => FluiGlyph.microphone,
+        GymShellDestination.words => FluiGlyph.wordOfTheDay,
+        GymShellDestination.progress => FluiGlyph.streak,
+      };
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
-    final items = [
-      for (final destination in ShellDestination.values)
-        (
-          glyphOf(destination),
-          switch (destination) {
-            ShellDestination.today => l10n.navToday,
-            ShellDestination.train => l10n.navTrain,
-            ShellDestination.words => l10n.navWords,
-            ShellDestination.progress => l10n.navProgress,
-          },
-        ),
-    ];
+    final speakingGym = ref.watch(speakingGymEnabledProvider);
+    final items = speakingGym
+        ? [
+            for (final destination in GymShellDestination.values)
+              (
+                gymGlyphOf(destination),
+                switch (destination) {
+                  GymShellDestination.today => l10n.navToday,
+                  GymShellDestination.train => l10n.navTrain,
+                  GymShellDestination.words => l10n.navWords,
+                  GymShellDestination.progress => l10n.navProgress,
+                },
+              ),
+          ]
+        : [
+            for (final destination in ShellDestination.values)
+              (
+                glyphOf(destination),
+                switch (destination) {
+                  ShellDestination.today => l10n.navToday,
+                  ShellDestination.words => l10n.navWords,
+                  ShellDestination.habla => l10n.navHabla,
+                  ShellDestination.progress => l10n.navProgress,
+                },
+              ),
+          ];
+    // Progress stays the LAST destination in both sets, so this index
+    // works regardless of which set is active.
+    final progressIndex = items.length - 1;
 
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -87,7 +124,7 @@ class AppShellScaffold extends StatelessWidget {
                     for (final (index, (glyph, label)) in items.indexed)
                       NavigationDestination(
                         icon: Semantics(
-                          hint: index == ShellDestination.progress.index
+                          hint: index == progressIndex
                               ? l10n.navProgress
                               : null,
                           child: FluiGlyphIcon(
@@ -98,10 +135,10 @@ class AppShellScaffold extends StatelessWidget {
                                 : FluiColors.gray,
                           ),
                         ),
-                        label: index == ShellDestination.progress.index
+                        label: index == progressIndex
                             ? l10n.navProgressShort
                             : label,
-                        tooltip: index == ShellDestination.progress.index
+                        tooltip: index == progressIndex
                             ? l10n.navProgress
                             : null,
                       ),

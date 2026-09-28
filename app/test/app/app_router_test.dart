@@ -1,5 +1,6 @@
 import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/theme/flui_colors.dart';
@@ -11,6 +12,7 @@ import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -77,8 +79,8 @@ void main() {
     expect(navigation.indicatorColor, FluiColors.greenTint);
     expect(navigation.selectedIndex, 0);
     expect(find.text('Hoy'), findsOneWidget);
-    expect(find.text('Entrenar'), findsOneWidget);
     expect(find.text('Palabras'), findsOneWidget);
+    expect(find.text('Habla'), findsOneWidget);
     expect(find.text('Progreso'), findsOneWidget);
     final progressDestination = tester.widget<NavigationDestination>(
       find.ancestor(
@@ -224,11 +226,102 @@ void main() {
     expect(location(harness), AppRoutes.welcome);
   });
 
-  group('Entrenar, the second shell branch (U16, retires Habla)', () {
-    testWidgets('the old /speaking/challenge deep link redirects into train', (
+  group('Habla, the fourth shell branch (speakingGym OFF, the default)', () {
+    testWidgets(
+      'the old /speaking/challenge deep link still resolves, inside the shell',
+      (tester) async {
+        final harness = AppHarness(signedInAs: ana, access: trialing);
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.speakingChallenge,
+          arrange: (h) => h.planToday(),
+        );
+
+        expect(location(harness), AppRoutes.speakingChallenge);
+        // Still inside the shell: the tab bar renders, Habla selected, and
+        // the landing content is the challenge's own "ready" phase.
+        expect(find.byType(NavigationBar), findsOneWidget);
+        expect(find.text('Habla'), findsOneWidget);
+        expect(find.text('Abrir ejercicio'), findsOneWidget);
+      },
+    );
+
+    testWidgets('switching to Habla from another tab lands on "ready"', (
       tester,
     ) async {
       final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+
+      expect(location(harness), AppRoutes.today);
+      await tester.tap(find.text('Habla'));
+      await tester.pumpAndSettle();
+
+      expect(location(harness), AppRoutes.speakingChallenge);
+      expect(find.text('Abrir ejercicio'), findsOneWidget);
+    });
+
+    testWidgets('opening a challenge takes over full screen before recording', (
+      tester,
+    ) async {
+      final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.speakingChallenge,
+        arrange: (h) => h.planToday(),
+      );
+
+      expect(find.byType(NavigationBar), findsOneWidget);
+      await tester.tap(find.text('Abrir ejercicio'));
+      await tester.pumpAndSettle();
+
+      expect(location(harness), AppRoutes.speakingChallengeLive);
+      // Full-screen take-over: the shell's own chrome is gone.
+      expect(find.byType(NavigationBar), findsNothing);
+      expect(find.text('Empezar a hablar'), findsOneWidget);
+    });
+
+    testWidgets(
+      'the shell matches the pre-U16 app exactly: same 4 tab labels/order, '
+      'Habla page opens, no train route reachable',
+      (tester) async {
+        final harness = AppHarness(signedInAs: ana, access: trialing);
+        await harness.pumpApp(tester, arrange: (h) => h.planToday());
+
+        final navigation = tester.widget<NavigationBar>(
+          find.byType(NavigationBar),
+        );
+        expect(navigation.destinations, hasLength(4));
+        expect(navigation.selectedIndex, 0);
+        expect(find.text('Hoy'), findsOneWidget);
+        expect(find.text('Palabras'), findsOneWidget);
+        expect(find.text('Habla'), findsOneWidget);
+        expect(find.text('Progreso'), findsOneWidget);
+        expect(find.text('Entrenar'), findsNothing);
+
+        harness.container.read(goRouterProvider).go(AppRoutes.train);
+        await tester.pumpAndSettle();
+
+        // /train is not a route while the flag is off: NotFoundPage, never
+        // the training-lab mode picker.
+        expect(find.text('Piensa y habla'), findsNothing);
+        expect(find.text('No encontramos esta página.'), findsOneWidget);
+      },
+    );
+  });
+
+  group('Entrenar, the second shell branch (speakingGym ON, U16)', () {
+    List<Override> gymOn() => [
+      speakingGymEnabledProvider.overrideWithValue(true),
+    ];
+
+    testWidgets('the old /speaking/challenge deep link redirects into train', (
+      tester,
+    ) async {
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: gymOn(),
+      );
       await harness.pumpApp(
         tester,
         initialLocation: AppRoutes.speakingChallenge,
@@ -245,7 +338,11 @@ void main() {
     testWidgets('switching to Entrenar from another tab lands on the picker', (
       tester,
     ) async {
-      final harness = AppHarness(signedInAs: ana, access: trialing);
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: gymOn(),
+      );
       await harness.pumpApp(tester, arrange: (h) => h.planToday());
 
       expect(location(harness), AppRoutes.today);
@@ -260,7 +357,11 @@ void main() {
       'starting a mode stays on the branch navigator, unlike the retired '
       'full-screen speaking-challenge take-over',
       (tester) async {
-        final harness = AppHarness(signedInAs: ana, access: trialing);
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: gymOn(),
+        );
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.train,
