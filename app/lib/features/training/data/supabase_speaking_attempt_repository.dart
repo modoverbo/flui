@@ -66,4 +66,21 @@ final class SupabaseSpeakingAttemptRepository
       return Result.err(mapDataError(error));
     }
   }
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> latestDiagnosisAttempts() async {
+    try {
+      final rows = await _client
+          .from('speaking_attempts')
+          .select(SpeakingAttemptDto.columns)
+          .eq('context', 'diagnosis')
+          .order('created_at', ascending: false)
+          .limit(3);
+      return Result.ok([
+        for (final row in rows) SpeakingAttemptDto.fromJson(row).toDomain(),
+      ]);
+    } on Object catch (error) {
+      return Result.err(mapDataError(error));
+    }
+  }
 }

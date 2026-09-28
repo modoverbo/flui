@@ -8,6 +8,7 @@ import 'package:meta/meta.dart';
 /// `quick` (decision #450.3, D33, design §19.13) is single-shot: focus ->
 /// feedback -> summary, never repeat/comparison/transfer either — but,
 /// unlike diagnosis, it DOES show feedback for its one attempt.
+@immutable
 sealed class LoopScript {
   const new();
 
@@ -21,23 +22,61 @@ sealed class LoopScript {
       DiagnosisLoopScript;
 }
 
+@immutable
 final class FullLoopScript extends LoopScript {
   const new();
+
+  @override
+  bool operator ==(Object other) => other is FullLoopScript;
+
+  @override
+  int get hashCode => (FullLoopScript).hashCode;
 }
 
+@immutable
 final class WordUseLoopScript extends LoopScript {
   const new();
+
+  @override
+  bool operator ==(Object other) => other is WordUseLoopScript;
+
+  @override
+  int get hashCode => (WordUseLoopScript).hashCode;
 }
 
+@immutable
 final class QuickLoopScript extends LoopScript {
   const new();
+
+  @override
+  bool operator ==(Object other) => other is QuickLoopScript;
+
+  @override
+  int get hashCode => (QuickLoopScript).hashCode;
 }
 
+/// Unlike the other 3 (fieldless, trivially `const`-canonicalized), this
+/// one carries fields a caller may only know at runtime (`totalSlots` from
+/// a fetched catalog) — so it needs real value equality: a widget that
+/// rebuilds its `LoopRequest` every build (e.g. `DiagnosisPage`, U14a)
+/// would otherwise spawn a brand-new, non-`const` instance each time,
+/// breaking `LoopRequest.==` and silently resetting its loop's
+/// `TrainingLoopController` to a fresh one on every rebuild.
+@immutable
 final class DiagnosisLoopScript extends LoopScript {
   const new({required this.totalSlots, this.startSlot = 1});
 
   final int totalSlots;
   final int startSlot;
+
+  @override
+  bool operator ==(Object other) =>
+      other is DiagnosisLoopScript &&
+      other.totalSlots == totalSlots &&
+      other.startSlot == startSlot;
+
+  @override
+  int get hashCode => Object.hash(DiagnosisLoopScript, totalSlots, startSlot);
 }
 
 /// A [TrainingLoop]'s current step. `recording`/`analyzing`/

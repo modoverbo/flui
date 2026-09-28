@@ -9,10 +9,10 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/training/domain/attempt_comparison.dart';
 import 'package:flui/features/training/domain/attempt_kind.dart';
-import 'package:flui/features/training/domain/behavior_code.dart';
 import 'package:flui/features/training/domain/challenge.dart';
 import 'package:flui/features/training/domain/feedback.dart';
 import 'package:flui/features/training/domain/training_loop.dart';
+import 'package:flui/features/training/presentation/behavior_code_copy.dart';
 import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/features/training/presentation/controllers/training_loop_controller.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
@@ -230,34 +230,6 @@ class _BlockedPanel extends StatelessWidget {
   }
 }
 
-/// The closed-catalog Spanish rendering of an observed behavior — never a
-/// number, never the raw wire code (spec `training-engine`: feedback is
-/// expressed as observable behaviors).
-String _behaviorLine(AppLocalizations l10n, BehaviorCode code) =>
-    switch (code) {
-      BehaviorCode.mainPointLate => l10n.behaviorMainPointLate,
-      BehaviorCode.noClearStructure => l10n.behaviorNoClearStructure,
-      BehaviorCode.missingExample => l10n.behaviorMissingExample,
-      BehaviorCode.noClosing => l10n.behaviorNoClosing,
-      BehaviorCode.clearMainPoint => l10n.behaviorClearMainPoint,
-      BehaviorCode.orderedIdeas => l10n.behaviorOrderedIdeas,
-      BehaviorCode.vagueWord => l10n.behaviorVagueWord,
-      BehaviorCode.repeatedWord => l10n.behaviorRepeatedWord,
-      BehaviorCode.weakConnector => l10n.behaviorWeakConnector,
-      BehaviorCode.registerMismatch => l10n.behaviorRegisterMismatch,
-      BehaviorCode.preciseWord => l10n.behaviorPreciseWord,
-      BehaviorCode.variedVocabulary => l10n.behaviorVariedVocabulary,
-      BehaviorCode.paceFast => l10n.behaviorPaceFast,
-      BehaviorCode.paceSlow => l10n.behaviorPaceSlow,
-      BehaviorCode.longPauses => l10n.behaviorLongPauses,
-      BehaviorCode.fillerHeavy => l10n.behaviorFillerHeavy,
-      BehaviorCode.volumeUnstable => l10n.behaviorVolumeUnstable,
-      BehaviorCode.steadyPace => l10n.behaviorSteadyPace,
-      BehaviorCode.controlledFillers => l10n.behaviorControlledFillers,
-      BehaviorCode.steadyVolume => l10n.behaviorSteadyVolume,
-      BehaviorCode.usefulPauses => l10n.behaviorUsefulPauses,
-    };
-
 /// The current phase's card, plus the ordinary (non-speech) taps design
 /// §19.8 keeps: Continuar, Salir. Reintentar/Reintentar-guardar/Reactivar
 /// live inside their own phase card since they only apply there.
@@ -454,13 +426,13 @@ class _FeedbackBody extends StatelessWidget {
         if (feedback?.primary case final primary?) ...[
           FluiLabel(l10n.loopOpportunityLabel),
           const SizedBox(height: FluiSpacing.xs),
-          FluiCard(child: Text(_behaviorLine(l10n, primary.code))),
+          FluiCard(child: Text(behaviorCodeLine(l10n, primary.code))),
           const SizedBox(height: FluiSpacing.sm),
         ],
         if (feedback?.strength case final strength?) ...[
           FluiLabel(l10n.loopStrengthLabel),
           const SizedBox(height: FluiSpacing.xs),
-          FluiCard(child: Text(_behaviorLine(l10n, strength.code))),
+          FluiCard(child: Text(behaviorCodeLine(l10n, strength.code))),
           const SizedBox(height: FluiSpacing.sm),
         ],
         if (feedback != null) ...[
@@ -538,7 +510,7 @@ class _ChangeLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final behavior = _behaviorLine(l10n, change.code);
+    final behavior = behaviorCodeLine(l10n, change.code);
     final text = change.kind == ObservationChangeKind.resolved
         ? l10n.loopChangeResolved(behavior)
         : l10n.loopChangeAppeared(behavior);

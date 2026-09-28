@@ -13,6 +13,8 @@ import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/daily/data/fake_daily_session_repository.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
+import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
@@ -65,6 +67,10 @@ final class AppHarness {
   FakeExerciseAttemptRepository get attempts =>
       container.read(exerciseAttemptRepositoryProvider)
           as FakeExerciseAttemptRepository;
+
+  FakeSkillProfileRepository get skillProfiles =>
+      container.read(skillProfileRepositoryProvider)
+          as FakeSkillProfileRepository;
 
   /// Saves today's time budget so the app skips "¿Cuánto tiempo tienes hoy?".
   Future<void> planToday({int minutes = 10}) async {
