@@ -1,6 +1,7 @@
 import 'dart:ui' show Tristate;
 
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
@@ -582,4 +583,75 @@ void main() {
       expect(find.text('Seguir'), findsOneWidget);
     },
   );
+
+  group('with speakingGym on (U14b)', () {
+    Future<void> pumpIntroGym(WidgetTester tester) async {
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.intro,
+        page: const IntroPage(),
+        otherRoutes: [AppRoutes.plan, AppRoutes.welcome],
+        overrides: [
+          onboardingStoreProvider.overrideWithValue(store),
+          speakingGymEnabledProvider.overrideWithValue(true),
+        ],
+        surfaceSize: const Size(420, 1400),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('never shows the retired preference-question screens, going '
+        'straight from the third benefit slide to the micro-lesson', (
+      tester,
+    ) async {
+      reduceMotion(tester);
+      await pumpIntroGym(tester);
+      expect(find.bySemanticsLabel('Paso 1 de 4'), findsOneWidget);
+
+      await next(tester);
+      expect(find.bySemanticsLabel('Paso 2 de 4'), findsOneWidget);
+      await next(tester);
+      expect(find.bySemanticsLabel('Paso 3 de 4'), findsOneWidget);
+      await next(tester);
+
+      expect(find.text('¿Dónde te traiciona el vocabulario?'), findsNothing);
+      expect(find.text('¿Cómo quieres sonar?'), findsNothing);
+      expect(find.bySemanticsLabel('Paso 4 de 4'), findsOneWidget);
+      final word = seedWords.first;
+      expect(find.text(word.lemma), findsWidgets);
+    });
+
+    testWidgets(
+      'never persists a retired answer, and completing the micro-lesson '
+      'still reaches the plan',
+      (tester) async {
+        reduceMotion(tester);
+        await pumpIntroGym(tester);
+        await next(tester);
+        await next(tester);
+        await next(tester);
+
+        final word = seedWords.first;
+        await tester.tap(
+          find.text(word.exercises.first.correctOption.text).last,
+        );
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Ver mi plan'));
+        await tester.pumpAndSettle();
+
+        expect(find.text('route:/plan'), findsOneWidget);
+        expect(await store.readAnswers(), OnboardingAnswers.empty);
+      },
+    );
+
+    testWidgets('Saltar still goes straight to the plan', (tester) async {
+      reduceMotion(tester);
+      await pumpIntroGym(tester);
+
+      await tester.tap(find.text('Saltar'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('route:/plan'), findsOneWidget);
+    });
+  });
 }

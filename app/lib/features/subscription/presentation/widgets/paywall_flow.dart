@@ -9,6 +9,8 @@ import 'package:flui/features/reading/presentation/scene_label.dart';
 import 'package:flui/features/subscription/domain/subscription_plan.dart';
 import 'package:flui/features/subscription/presentation/widgets/plan_card.dart';
 import 'package:flui/features/subscription/presentation/widgets/trial_timeline.dart';
+import 'package:flui/features/training/domain/skill_profile.dart';
+import 'package:flui/features/training/presentation/behavior_code_copy.dart';
 import 'package:flui/shared/motion/reveal_lines.dart';
 import 'package:flui/shared/widgets/choice_chips.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
@@ -45,6 +47,8 @@ class PaywallFlow extends StatefulWidget {
     super.key,
     this.name,
     this.answers = OnboardingAnswers.empty,
+    this.speakingGym = false,
+    this.skillProfile,
     this.initialStep = PaywallStep.plan,
     this.isBusy = false,
     this.header,
@@ -59,7 +63,21 @@ class PaywallFlow extends StatefulWidget {
   /// Runs with the selected plan id on the last step.
   final ValueChanged<String> onFinish;
   final String? name;
+
+  /// The two retired preference-question answers. Ignored on page 1 once
+  /// [speakingGym] is on — see [skillProfile] (decision #422/#430, U14b).
   final OnboardingAnswers answers;
+
+  /// Selects page 1's 2-state copy (U14b, spec `paywall-copy`): while on,
+  /// page 1 never echoes [answers] (the retired onboarding questions), and
+  /// instead uses [skillProfile] — static generic copy when null (no
+  /// diagnosis yet), profile-echo copy once one exists.
+  final bool speakingGym;
+
+  /// The signed-in user's most recently diagnosed profile, if any. Only
+  /// meaningful while [speakingGym] is on; always null before the account
+  /// exists (page 1's preview mode), since diagnosis runs after signup.
+  final SkillProfile? skillProfile;
   final PaywallStep initialStep;
   final bool isBusy;
 
@@ -152,6 +170,8 @@ class _PaywallFlowState extends State<PaywallFlow> {
                             PaywallStep.plan => _PlanPage(
                               name: widget.name,
                               answers: widget.answers,
+                              speakingGym: widget.speakingGym,
+                              skillProfile: widget.skillProfile,
                             ),
                             PaywallStep.trial => const _TrialPage(),
                             PaywallStep.choose => _ChoosePage(
@@ -216,22 +236,32 @@ class _Rail extends StatelessWidget {
 }
 
 /// Page 1: the plan, in the user's own words.
+///
+/// Two independent sources feed its "we know you" row, never both at once
+/// (spec `paywall-copy`, decision #422/#430 C2): [answers], the retired
+/// preference questions, while [speakingGym] is off; [skillProfile], the
+/// diagnosis result, while it is on. [speakingGym] on with no
+/// [skillProfile] yet (the first-ever view, since diagnosis runs after
+/// trial start) renders static, profile-independent copy — it never
+/// fabricates a signal that does not exist yet.
 class _PlanPage extends StatelessWidget {
-  const new({required this.name, required this.answers});
+  const new({
+    required this.name,
+    required this.answers,
+    this.speakingGym = false,
+    this.skillProfile,
+  });
 
   final String? name;
   final OnboardingAnswers answers;
+  final bool speakingGym;
+  final SkillProfile? skillProfile;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final type = context.layout.type;
     final trimmed = name?.trim();
-    final contexts = joinContexts([
-      for (final scene in answers.orderedContexts)
-        sceneLabel(l10n, scene).toLowerCase(),
-    ]);
-    final tone = answers.tone;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -252,20 +282,7 @@ class _PlanPage extends StatelessWidget {
           ],
         ),
         const SizedBox(height: FluiSpacing.md),
-        _CheckRow(
-          glyph: FluiGlyph.inContext,
-          text: contexts.isEmpty
-              ? l10n.paywallPlanContextsAny
-              : l10n.paywallPlanContexts(contexts),
-        ),
-        _CheckRow(
-          glyph: FluiGlyph.register,
-          text: tone == null
-              ? l10n.paywallPlanToneAny
-              : l10n.paywallPlanTone(
-                  ToneQuestion.labelsOf(l10n, tone).$1.toLowerCase(),
-                ),
-        ),
+        ...speakingGym ? _gymRows(l10n) : _onboardingRows(l10n),
         _CheckRow(
           glyph: FluiGlyph.wordOfTheDay,
           text: l10n.paywallPlanRhythm,
@@ -273,6 +290,42 @@ class _PlanPage extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  List<Widget> _onboardingRows(AppLocalizations l10n) {
+    final contexts = joinContexts([
+      for (final scene in answers.orderedContexts)
+        sceneLabel(l10n, scene).toLowerCase(),
+    ]);
+    final tone = answers.tone;
+    return [
+      _CheckRow(
+        glyph: FluiGlyph.inContext,
+        text: contexts.isEmpty
+            ? l10n.paywallPlanContextsAny
+            : l10n.paywallPlanContexts(contexts),
+      ),
+      _CheckRow(
+        glyph: FluiGlyph.register,
+        text: tone == null
+            ? l10n.paywallPlanToneAny
+            : l10n.paywallPlanTone(
+                ToneQuestion.labelsOf(l10n, tone).$1.toLowerCase(),
+              ),
+      ),
+    ];
+  }
+
+  List<Widget> _gymRows(AppLocalizations l10n) {
+    final profile = skillProfile;
+    return [
+      _CheckRow(
+        glyph: FluiGlyph.inContext,
+        text: profile == null
+            ? l10n.paywallPlanGymGeneric
+            : l10n.paywallPlanGymEcho(skillAreaLine(l10n, profile.topArea)),
+      ),
+    ];
   }
 }
 
