@@ -18,6 +18,7 @@ import 'package:flui/core/mic/presentation/mic_blocked_sheet.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
+import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
@@ -412,6 +413,57 @@ void main() {
         // the training-lab mode picker.
         expect(find.text('Piensa y habla'), findsNothing);
         expect(find.text('No encontramos esta página.'), findsOneWidget);
+      },
+    );
+  });
+
+  group("HOY's own loop, /today/train (speakingGym ON, U15a)", () {
+    const seededChallengeId = '072b6134-a2b7-4e79-86bf-5a6aeeb5118c';
+
+    testWidgets('/today/train is unreachable while the flag is off', (
+      tester,
+    ) async {
+      final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+
+      harness.container.read(goRouterProvider).go(AppRoutes.todayTrain);
+      await tester.pumpAndSettle();
+
+      expect(find.text('No encontramos esta página.'), findsOneWidget);
+    });
+
+    testWidgets(
+      'a session with a persisted challenge starts the loop on the branch '
+      "navigator, not a full-screen take-over — HOY's context, unlike "
+      "ENTRENAR's",
+      (tester) async {
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.todayTrain,
+          arrange: (h) async {
+            harness.skillProfiles.seedProfile(_seededProfile);
+            await harness.dailySessions.saveSession(
+              DailySession(
+                localDate: harness.clock.localToday(),
+                minutes: 10,
+                challengeId: seededChallengeId,
+              ),
+            );
+          },
+        );
+
+        expect(
+          find.text('Cuéntame qué hiciste esta mañana, de principio a fin.'),
+          findsOneWidget,
+        );
+        // Branch child, not a root-navigator take-over (design D30): the
+        // shell chrome stays, same as ENTRENAR's `/train/:mode`.
+        expect(find.byType(FluiBottomBar), findsOneWidget);
       },
     );
   });

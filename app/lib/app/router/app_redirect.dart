@@ -116,7 +116,10 @@ String? _destinationFor(
                   AppRoutes.publicRoutes.contains(path)
               ? Uri(path: AppRoutes.today)
               : target;
-          if (!AppRoutes.needsDailyBudget(resolved.path)) {
+          if (!AppRoutes.needsDailyBudget(
+            resolved.path,
+            speakingGym: speakingGym,
+          )) {
             return resolved.toString();
           }
           return switch (daily) {
