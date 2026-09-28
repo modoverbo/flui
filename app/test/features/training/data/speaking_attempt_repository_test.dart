@@ -211,6 +211,59 @@ void main() {
 
       expect((await repository.usedChallengeIdsSince(day(1))).isOk, isFalse);
     });
+
+    test('latestDiagnosisAttempts returns only the newest diagnosis '
+        "session's rows, current user only", () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      final other = FakeSpeakingAttemptRepository(currentUserId: () => 'u2');
+      // An older, already-closed diagnosis session.
+      await repository.insert(
+        _attempt(context: TrainingContext.diagnosis)
+            .copyWith(id: 'old-1', sessionId: 'old-session'),
+      );
+      // A non-diagnosis attempt in between must never be picked up.
+      await repository.insert(_attempt().copyWith(id: 'daily-1'));
+      // The newest (in-progress or just-finished) diagnosis session.
+      await repository.insert(
+        _attempt(context: TrainingContext.diagnosis)
+            .copyWith(id: 'new-1', sessionId: 'new-session'),
+      );
+      await repository.insert(
+        _attempt(context: TrainingContext.diagnosis)
+            .copyWith(id: 'new-2', sessionId: 'new-session'),
+      );
+      await other.insert(
+        _attempt(context: TrainingContext.diagnosis)
+            .copyWith(id: 'other-1', sessionId: 'new-session'),
+      );
+
+      final result = await repository.latestDiagnosisAttempts();
+
+      expect(result.valueOrNull?.map((a) => a.id).toSet(), {'new-1', 'new-2'});
+    });
+
+    test(
+      'latestDiagnosisAttempts is empty with no diagnosis attempts yet',
+      () async {
+        final repository = FakeSpeakingAttemptRepository(
+          currentUserId: () => 'u1',
+        );
+
+        final result = await repository.latestDiagnosisAttempts();
+
+        expect(result.valueOrNull, isEmpty);
+      },
+    );
+
+    test('latestDiagnosisAttempts fails without a signed-in user', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => null,
+      );
+
+      expect((await repository.latestDiagnosisAttempts()).isOk, isFalse);
+    });
   });
 
   group('SupabaseSpeakingAttemptRepository', () {
@@ -351,6 +404,41 @@ void main() {
 
       final result = await SupabaseSpeakingAttemptRepository(recorder.client)
           .usedChallengeIdsSince(day(1));
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+
+    test('latestDiagnosisAttempts queries context=diagnosis, newest first, '
+        'capped at 3, RLS scopes rows to the owner', () async {
+      final rows = [
+        _attemptRow(_attempt(id: 'n1', context: TrainingContext.diagnosis)),
+        _attemptRow(_attempt(id: 'n2', context: TrainingContext.diagnosis)),
+      ];
+      final recorder = SupabaseRecorder(respond: (_) => rows);
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .latestDiagnosisAttempts();
+
+      expect(result.valueOrNull?.map((a) => a.id), ['n1', 'n2']);
+      expect(recorder.last.method, 'GET');
+      expect(recorder.last.url.path, '/rest/v1/speaking_attempts');
+      expect(recorder.last.url.queryParameters['context'], 'eq.diagnosis');
+      expect(
+        recorder.last.url.queryParameters['order'],
+        'created_at.desc.nullslast',
+      );
+      expect(recorder.last.url.queryParameters['limit'], '3');
+    });
+
+    test('latestDiagnosisAttempts maps transport errors', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .latestDiagnosisAttempts();
 
       expect(result.failureOrNull, const NetworkFailure());
     });

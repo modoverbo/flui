@@ -25,6 +25,16 @@ final class FakeSkillProfileRepository
 
   final _recordsByUser = <String, List<SkillProfileRecord>>{};
 
+  /// Seeds an already-diagnosed profile for the signed-in user, bypassing
+  /// `save()`'s async retake-cooldown check — matches
+  /// `FakeSubscriptionRepository.grantAccess`'s synchronous-seed shape, for
+  /// tests that need diagnosis already completed rather than exercising it.
+  void seedProfile(SkillProfileRecord record) {
+    final userId = currentUserId();
+    if (userId == null) return;
+    _recordsByUser.putIfAbsent(userId, () => []).add(record);
+  }
+
   @override
   Future<Result<SkillProfileRecord?>> latest() async {
     if (await simulateCall() case final failure?) return Result.err(failure);

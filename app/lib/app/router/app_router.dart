@@ -15,6 +15,10 @@ import 'package:flui/features/daily/presentation/providers/daily_providers.dart'
 import 'package:flui/features/daily/presentation/session_page.dart';
 import 'package:flui/features/daily/presentation/time_budget_page.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
+import 'package:flui/features/diagnosis/presentation/diagnosis_gate.dart';
+import 'package:flui/features/diagnosis/presentation/diagnosis_intro_page.dart';
+import 'package:flui/features/diagnosis/presentation/diagnosis_page.dart';
+import 'package:flui/features/diagnosis/presentation/diagnosis_result_page.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
@@ -46,7 +50,8 @@ GoRouter goRouter(Ref ref) {
   ref
     ..listen(authStatusProvider, (_, _) => refresh.notify())
     ..listen(accessGateProvider, (_, _) => refresh.notify())
-    ..listen(dailyGateProvider, (_, _) => refresh.notify());
+    ..listen(dailyGateProvider, (_, _) => refresh.notify())
+    ..listen(diagnosisGateProvider, (_, _) => refresh.notify());
 
   // The router is built once at startup (design D17): no runtime toggling,
   // so a plain read (not watch) is enough here.
@@ -64,6 +69,7 @@ GoRouter goRouter(Ref ref) {
       daily: ref.read(dailyGateProvider),
       location: state.uri,
       speakingGym: speakingGym,
+      diagnosis: ref.read(diagnosisGateProvider),
     ),
     errorBuilder: (context, state) => const NotFoundPage(),
     routes: _routes(rootKey, speakingGym: speakingGym),
@@ -119,6 +125,12 @@ List<RouteBase> _routes(
       key: state.pageKey,
     ),
   ),
+  // The mandatory diagnosis (design part-3 §11, D16, U14a): reachable only
+  // while speakingGym is on — flag off, these paths are unregistered and
+  // hit NotFoundPage, matching "diagnosis routes must be unreachable".
+  // Root-navigator, outside the shell: the gate blocks every tab, so there
+  // is no chrome to keep, unlike ENTRENAR's own in-branch loop screens.
+  if (speakingGym) ..._diagnosisRoutes(rootKey),
   StatefulShellRoute(
     parentNavigatorKey: rootKey,
     builder: (context, state, navigationShell) =>
@@ -251,6 +263,24 @@ StatefulShellBranch _wordsBranch() => StatefulShellBranch(
     ),
   ],
 );
+
+List<RouteBase> _diagnosisRoutes(GlobalKey<NavigatorState> rootKey) => [
+  GoRoute(
+    path: AppRoutes.diagnosis,
+    parentNavigatorKey: rootKey,
+    builder: (_, _) => const DiagnosisIntroPage(),
+  ),
+  GoRoute(
+    path: AppRoutes.diagnosisLive,
+    parentNavigatorKey: rootKey,
+    builder: (_, _) => const DiagnosisPage(),
+  ),
+  GoRoute(
+    path: AppRoutes.diagnosisResult,
+    parentNavigatorKey: rootKey,
+    builder: (_, _) => const DiagnosisResultPage(),
+  ),
+];
 
 StatefulShellBranch _progressBranch() => StatefulShellBranch(
   routes: [

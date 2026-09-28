@@ -18,6 +18,9 @@ import 'package:flui/features/daily/data/fake_daily_session_repository.dart';
 import 'package:flui/features/daily/data/supabase_daily_session_repository.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
+import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/data/supabase_skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/onboarding/data/preferences_onboarding_store.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
@@ -164,6 +167,11 @@ List<Override> fakeBackendOverrides({
     audioConsentRepositoryProvider.overrideWithValue(
       FakeAudioConsentRepository(currentUserId: currentUserId),
     ),
+    // Mandatory diagnosis (U14a): built by U12b, first reachable via the
+    // diagnosis gate once `speakingGym` is on.
+    skillProfileRepositoryProvider.overrideWithValue(
+      FakeSkillProfileRepository(currentUserId: currentUserId),
+    ),
     checkoutLauncherProvider.overrideWith(
       (ref) => FakeCheckoutLauncher(
         subscriptions: subscriptions,
@@ -224,6 +232,9 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     ),
     audioConsentRepositoryProvider.overrideWithValue(
       SupabaseAudioConsentRepository(client, currentUserId: currentUserId),
+    ),
+    skillProfileRepositoryProvider.overrideWithValue(
+      SupabaseSkillProfileRepository(client),
     ),
   ];
 }

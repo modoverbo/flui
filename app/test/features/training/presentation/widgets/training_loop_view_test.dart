@@ -105,6 +105,10 @@ final class _FlakyAttemptRepository implements SpeakingAttemptRepository {
   @override
   Future<Result<Set<String>>> usedChallengeIdsSince(LocalDate since) async =>
       const Result.ok(<String>{});
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> latestDiagnosisAttempts() async =>
+      const Result.ok(<SpeakingAttempt>[]);
 }
 
 const _challenge = Challenge(

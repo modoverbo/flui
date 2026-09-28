@@ -82,6 +82,19 @@ abstract final class AppRoutes {
     speakingChallengeLive: train,
   };
 
+  /// The mandatory diagnosis (design part-3 §11, D16), reached from the
+  /// router's own redirect while `speakingGym` is on — not part of any
+  /// shell branch: the gate blocks every tab, so all 3 pages take over the
+  /// root navigator directly, the same pattern as [session].
+  static const diagnosis = '/diagnosis';
+  static const diagnosisLive = '$diagnosis/live';
+  static const diagnosisResult = '$diagnosis/result';
+  static const Set<String> diagnosisRoutes = {
+    diagnosis,
+    diagnosisLive,
+    diagnosisResult,
+  };
+
   // Full screen, outside the shell.
   static const session = '/session';
   static const sessionReview = '/session?mode=review';

@@ -174,4 +174,53 @@ void main() {
       expect(loop.state.slot, 1);
     });
   });
+
+  group('LoopScript value equality (U14a regression)', () {
+    // A consumer that rebuilds its `LoopRequest` every widget build (e.g.
+    // `DiagnosisPage`, whose `totalSlots` comes from a runtime challenge
+    // count and therefore can never be a `const` script) needs two
+    // separately-constructed scripts with the same fields to compare
+    // equal — otherwise `LoopRequest.==` never matches across rebuilds and
+    // every rebuild spawns a brand-new `TrainingLoopController`, silently
+    // resetting the loop to slot 1 forever.
+    test(
+      'two non-const DiagnosisLoopScript with the same fields are equal',
+      () {
+        // Deliberately non-const: proves the value-equality fix itself,
+        // not const canonicalization (which would pass either way).
+        // ignore: prefer_const_constructors
+        final a = LoopScript.diagnosis(totalSlots: 3);
+        // Same reason as `a` above.
+        // ignore: prefer_const_constructors
+        final b = LoopScript.diagnosis(totalSlots: 3);
+
+        expect(a, b);
+        expect(a.hashCode, b.hashCode);
+      },
+    );
+
+    test('a different totalSlots/startSlot is not equal', () {
+      // Deliberately non-const — see the first test in this group.
+      // ignore: prefer_const_constructors
+      final a = LoopScript.diagnosis(totalSlots: 3);
+      // Same reason as `a` above.
+      // ignore: prefer_const_constructors
+      final b = LoopScript.diagnosis(totalSlots: 3, startSlot: 2);
+
+      expect(a == b, isFalse);
+    });
+
+    test('the fieldless scripts are equal by type alone', () {
+      // Deliberately non-const — see the first test in this group.
+      // ignore: prefer_const_constructors
+      expect(LoopScript.full(), LoopScript.full());
+      // Same reason as above.
+      // ignore: prefer_const_constructors
+      expect(LoopScript.wordUse(), LoopScript.wordUse());
+      // Same reason as above.
+      // ignore: prefer_const_constructors
+      expect(LoopScript.quick(), LoopScript.quick());
+      expect(const LoopScript.full() == const LoopScript.wordUse(), isFalse);
+    });
+  });
 }

@@ -23,4 +23,13 @@ abstract interface class SpeakingAttemptRepository {
   /// list already fetched for the daily plan; quick practice has no such
   /// list to reuse, hence this dedicated query).
   Future<Result<Set<String>>> usedChallengeIdsSince(LocalDate since);
+
+  /// The newest diagnosis session's attempts (at most 3 rows,
+  /// `context='diagnosis'` only) — used to compute the profile once the
+  /// loop reaches its summary step (U14a) and, later, to resume a paused
+  /// diagnosis (U14c, design D38). Diagnosis is mandatory and gated: only
+  /// one diagnosis session is ever in progress for a user, so the most
+  /// recent up-to-3 diagnosis rows always belong to that single session —
+  /// no explicit session id filter is needed.
+  Future<Result<List<SpeakingAttempt>>> latestDiagnosisAttempts();
 }

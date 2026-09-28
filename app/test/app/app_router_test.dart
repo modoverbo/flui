@@ -19,9 +19,13 @@ import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
+import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/themes/data/fake/seed_themes.dart';
 import 'package:flui/features/training/data/fake_speaking_attempt_repository.dart';
+import 'package:flui/features/training/domain/behavior_code.dart';
+import 'package:flui/features/training/domain/skill.dart';
+import 'package:flui/features/training/domain/skill_profile.dart';
 import 'package:flui/features/training/domain/training_context.dart';
 import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
@@ -97,6 +101,29 @@ final class _FakeMicTarget implements MicTarget {
 }
 
 final AppLocalizations _l10n = lookupAppLocalizations(const Locale('es'));
+
+/// U14a: diagnosis is now mandatory whenever `speakingGym` is on and access
+/// is granted. Every real-path test below exercises something else entirely
+/// (ENTRENAR, the mic, quick practice) and needs the signed-in user's
+/// diagnosis already completed so `appRedirect` never detours it to
+/// `/diagnosis` first — mirrors `FakeSubscriptionRepository.grantAccess`'s
+/// own synchronous-seed shape.
+final _seededProfile = SkillProfileRecord(
+  id: 'seed-diagnosis',
+  kind: SkillProfileKind.baseline,
+  diagnosedAt: DateTime(2026, 9),
+  profile: const SkillProfile(
+    topArea: SkillArea.thinking,
+    secondArea: SkillArea.language,
+    strengths: <BehaviorCode>[],
+    evidence: <DiagnosisEvidence>[],
+  ),
+);
+
+Future<void> _planAndCompleteDiagnosis(AppHarness harness) async {
+  await harness.planToday();
+  harness.skillProfiles.seedProfile(_seededProfile);
+}
 
 void main() {
   const ana = AppUser(
@@ -405,7 +432,7 @@ void main() {
       await harness.pumpApp(
         tester,
         initialLocation: AppRoutes.speakingChallenge,
-        arrange: (h) => h.planToday(),
+        arrange: _planAndCompleteDiagnosis,
       );
 
       expect(location(harness), AppRoutes.train);
@@ -423,7 +450,7 @@ void main() {
         access: trialing,
         overrides: gymOn(),
       );
-      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+      await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
 
       expect(location(harness), AppRoutes.today);
       await tester.tap(find.text('Entrenar'));
@@ -445,7 +472,7 @@ void main() {
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.train,
-          arrange: (h) => h.planToday(),
+          arrange: _planAndCompleteDiagnosis,
         );
 
         expect(find.byType(FluiBottomBar), findsOneWidget);
@@ -479,7 +506,7 @@ void main() {
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
-          arrange: (h) => h.planToday(),
+          arrange: _planAndCompleteDiagnosis,
         );
 
         final registry = harness.container.read(micTargetRegistryProvider);
@@ -530,7 +557,7 @@ void main() {
           access: trialing,
           overrides: gymOn(),
         );
-        await harness.pumpApp(tester, arrange: (h) => h.planToday());
+        await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
         // Lands on Hoy (branch 0) by default.
 
         harness.container
@@ -588,7 +615,7 @@ void main() {
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
-          arrange: (h) => h.planToday(),
+          arrange: _planAndCompleteDiagnosis,
         );
         final controller = harness.container.read(micControllerProvider)!;
 
@@ -630,7 +657,7 @@ void main() {
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
-          arrange: (h) => h.planToday(),
+          arrange: _planAndCompleteDiagnosis,
         );
         final controller = harness.container.read(micControllerProvider)!;
 
@@ -685,7 +712,7 @@ void main() {
       await harness.pumpApp(
         tester,
         initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
-        arrange: (h) => h.planToday(),
+        arrange: _planAndCompleteDiagnosis,
       );
       // A controllable target outranks the real LoopMicTarget so the
       // delivery's completion is deterministic, not a race against the
@@ -746,7 +773,7 @@ void main() {
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
-          arrange: (h) => h.planToday(),
+          arrange: _planAndCompleteDiagnosis,
         );
         harness.container
             .read(micTargetRegistryProvider)
@@ -824,7 +851,7 @@ void main() {
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.progress,
-          arrange: (h) => h.planToday(),
+          arrange: _planAndCompleteDiagnosis,
         );
 
         final controller = harness.container.read(micControllerProvider)!;
@@ -904,7 +931,7 @@ void main() {
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
-      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+      await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
 
       // First activation on HOY: the quick-practice prompt appears.
       await tester.tap(find.byType(MicButton));
@@ -964,7 +991,7 @@ void main() {
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
-      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+      await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
 
       await tester.tap(find.byType(MicButton));
       await tester.pumpAndSettle();
@@ -1013,7 +1040,7 @@ void main() {
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
-      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+      await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
 
       await tester.tap(find.byType(MicButton));
       await tester.pumpAndSettle();

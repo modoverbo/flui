@@ -3,6 +3,7 @@ import 'package:flui/core/error/result.dart';
 import 'package:flui/core/fake/fake_remote.dart';
 import 'package:flui/features/training/domain/speaking_attempt.dart';
 import 'package:flui/features/training/domain/speaking_attempt_repository.dart';
+import 'package:flui/features/training/domain/training_context.dart';
 
 /// In-memory `speaking_attempts`, one list per user, append-only.
 final class FakeSpeakingAttemptRepository
@@ -58,5 +59,27 @@ final class FakeSpeakingAttemptRepository
         if (attempt.challengeId != null && !attempt.localDate.isBefore(since))
           attempt.challengeId!,
     });
+  }
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> latestDiagnosisAttempts() async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    final diagnosisAttempts = <SpeakingAttempt>[
+      for (final attempt
+          in _attemptsByUser[userId] ?? const <SpeakingAttempt>[])
+        if (attempt.context == TrainingContext.diagnosis) attempt,
+    ];
+    if (diagnosisAttempts.isEmpty) return const Result.ok(<SpeakingAttempt>[]);
+    // Diagnosis is a single mandatory in-flight session at a time (the gate
+    // blocks everything else), so the most recently inserted diagnosis
+    // attempt's session id is always the newest session.
+    final newestSessionId = diagnosisAttempts.last.sessionId;
+    return Result.ok(<SpeakingAttempt>[
+      for (final attempt in diagnosisAttempts)
+        if (attempt.sessionId == newestSessionId) attempt,
+    ]);
   }
 }
