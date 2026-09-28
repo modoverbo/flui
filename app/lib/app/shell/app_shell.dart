@@ -3,6 +3,8 @@ import 'package:flui/app/shell/mic_navigation_binding.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/presentation/mic_notice_host.dart';
+import 'package:flui/features/training/presentation/quick/quick_practice_panel_host.dart';
+import 'package:flui/features/training/presentation/quick/quick_practice_target.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
@@ -16,10 +18,13 @@ import 'package:material_ui/material_ui.dart';
 /// only on an explicit tab tap.
 ///
 /// While `speakingGym` is on (D32), also owns the app-lifetime
-/// `MicNavigationBinding` (U23d, design §19.6) and wraps the shell in a
-/// `MicNoticeHost` — both are entirely absent from the tree while the flag
-/// is off, so the flag-off shell has zero mic-notice/navigation-binding
-/// side effects (production safety: every push auto-deploys the web app).
+/// `MicNavigationBinding` (U23d, design §19.6), wraps the shell in a
+/// `MicNoticeHost`, installs `QuickPracticeTarget` as the registry's
+/// fallback and wraps the shell in a `QuickPracticePanelHost` (U23e,
+/// design §19.13) — all entirely absent from the tree while the flag is
+/// off, so the flag-off shell has zero mic-notice/navigation-binding/
+/// quick-practice side effects (production safety: every push
+/// auto-deploys the web app).
 class AppShell extends ConsumerStatefulWidget {
   const new({required this.navigationShell, super.key});
 
@@ -39,11 +44,21 @@ class _AppShellState extends ConsumerState<AppShell> {
     if (_boundOnce) return;
     _boundOnce = true;
     if (!ref.read(speakingGymEnabledProvider)) return;
+    final quickPracticeTarget = ref.read(quickPracticeTargetProvider);
     _binding = MicNavigationBinding(
       registry: ref.read(micTargetRegistryProvider),
       controllerOf: () => ref.read(micControllerProvider),
       routerSource: GoRouterLocationSource(GoRouter.of(context)),
+      // Orchestrator review finding (U23e): a stale quick-practice prompt
+      // otherwise kept resolving mic taps against the WRONG target after
+      // any navigation or registry change — see QuickPracticeTarget's own
+      // doc comment for the full dismissal rule.
+      onLocationChanged: quickPracticeTarget.onRouterLocationChanged,
+      onRegistryEvent: quickPracticeTarget.onRegistryChanged,
     );
+    // Overrides U23b's ExplainedFallbackTarget once, for the shell's
+    // lifetime (design §19.13, decision #450.3).
+    ref.read(micTargetRegistryProvider).setFallback(quickPracticeTarget);
   }
 
   @override
@@ -62,6 +77,9 @@ class _AppShellState extends ConsumerState<AppShell> {
     // the mic session at all (D32), matching `AppShellScaffold`'s own
     // guard for the same provider.
     final micController = speakingGym ? ref.watch(micControllerProvider) : null;
+    final quickPracticeTarget = speakingGym
+        ? ref.watch(quickPracticeTargetProvider)
+        : null;
     final scaffold = AppShellScaffold(
       selectedIndex: widget.navigationShell.currentIndex,
       onDestinationSelected: (index) => widget.navigationShell.goBranch(
@@ -70,8 +88,13 @@ class _AppShellState extends ConsumerState<AppShell> {
       ),
       child: widget.navigationShell,
     );
-    return speakingGym
-        ? MicNoticeHost(controller: micController, child: scaffold)
-        : scaffold;
+    if (!speakingGym) return scaffold;
+    return MicNoticeHost(
+      controller: micController,
+      child: QuickPracticePanelHost(
+        target: quickPracticeTarget,
+        child: scaffold,
+      ),
+    );
   }
 }

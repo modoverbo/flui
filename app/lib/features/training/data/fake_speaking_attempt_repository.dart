@@ -45,4 +45,18 @@ final class FakeSpeakingAttemptRepository
     _attemptsByUser.putIfAbsent(userId, () => []).add(stored);
     return Result.ok(stored);
   }
+
+  @override
+  Future<Result<Set<String>>> usedChallengeIdsSince(LocalDate since) async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    final attempts = _attemptsByUser[userId] ?? const [];
+    return Result.ok({
+      for (final attempt in attempts)
+        if (attempt.challengeId != null && !attempt.localDate.isBefore(since))
+          attempt.challengeId!,
+    });
+  }
 }

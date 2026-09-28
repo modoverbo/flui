@@ -5,6 +5,7 @@ import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/clock/clock_providers.dart';
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/l10n/gen/app_localizations.dart';
@@ -100,6 +101,10 @@ final class _FlakyAttemptRepository implements SpeakingAttemptRepository {
     inserted.add(attempt);
     return Result.ok(attempt);
   }
+
+  @override
+  Future<Result<Set<String>>> usedChallengeIdsSince(LocalDate since) async =>
+      const Result.ok(<String>{});
 }
 
 const _challenge = Challenge(

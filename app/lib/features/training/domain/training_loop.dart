@@ -5,13 +5,17 @@ import 'package:meta/meta.dart';
 /// daily/lab sessions; `wordUse` backs vocabulary spoken-use; `diagnosis`
 /// is measure-only (decision #430, spec conflict C1): it never shows
 /// feedback/comparison and never records a repeat or transfer attempt.
-/// `quick` practice is added by a later unit (U23e).
+/// `quick` (decision #450.3, D33, design §19.13) is single-shot: focus ->
+/// feedback -> summary, never repeat/comparison/transfer either — but,
+/// unlike diagnosis, it DOES show feedback for its one attempt.
 sealed class LoopScript {
   const new();
 
   const factory full() = FullLoopScript;
 
   const factory wordUse() = WordUseLoopScript;
+
+  const factory quick() = QuickLoopScript;
 
   const factory diagnosis({required int totalSlots, int startSlot}) =
       DiagnosisLoopScript;
@@ -22,6 +26,10 @@ final class FullLoopScript extends LoopScript {
 }
 
 final class WordUseLoopScript extends LoopScript {
+  const new();
+}
+
+final class QuickLoopScript extends LoopScript {
   const new();
 }
 
@@ -90,7 +98,9 @@ final class TrainingLoop {
   TrainingLoopState state;
 
   static TrainingLoopState _initial(LoopScript script) => switch (script) {
-    FullLoopScript() || WordUseLoopScript() => const TrainingLoopState(
+    FullLoopScript() ||
+    WordUseLoopScript() ||
+    QuickLoopScript() => const TrainingLoopState(
       phase: LoopPhase.focus,
       attemptStep: AttemptKind.first,
     ),
@@ -112,6 +122,7 @@ final class TrainingLoop {
     state = switch (script) {
       FullLoopScript() => _advanceFull(),
       WordUseLoopScript() => _advanceWordUse(),
+      QuickLoopScript() => _advanceQuick(),
       DiagnosisLoopScript(:final totalSlots) => _advanceDiagnosis(totalSlots),
     };
   }
@@ -133,7 +144,10 @@ final class TrainingLoop {
 
   /// Moves from a passive [LoopPhase.feedback]/[LoopPhase.comparison] into
   /// the next speak step. Diagnosis never reaches those phases, so it
-  /// never needs this.
+  /// never needs this. [QuickLoopScript] only ever reaches `feedback` for
+  /// its one attempt — this always closes it straight to [LoopPhase.summary]
+  /// instead of a repeat step (decision #450.3: quick practice never
+  /// enters repeat/comparison/transfer).
   void continueToNextStep() {
     if (state.phase != LoopPhase.feedback &&
         state.phase != LoopPhase.comparison) {
@@ -141,6 +155,10 @@ final class TrainingLoop {
         'continueToNextStep is only valid from feedback/comparison, '
         'was ${state.phase}',
       );
+    }
+    if (script is QuickLoopScript) {
+      state = const TrainingLoopState(phase: LoopPhase.summary);
+      return;
     }
     final nextStep = switch (state.attemptStep) {
       AttemptKind.first => AttemptKind.repeat,
@@ -181,6 +199,21 @@ final class TrainingLoop {
     ),
     AttemptKind.transfer ||
     null => throw StateError('wordUse has no transfer step'),
+  };
+
+  /// The one and only speak step of a [QuickLoopScript]: `first` ->
+  /// `feedback`. There is no valid state to advance FROM other than
+  /// `first` — quick practice never records a repeat or transfer attempt
+  /// (decision #450.3), so [analysisSucceeded] is never called again for
+  /// this session after this.
+  TrainingLoopState _advanceQuick() => switch (state.attemptStep) {
+    AttemptKind.first => const TrainingLoopState(
+      phase: LoopPhase.feedback,
+      attemptStep: AttemptKind.first,
+    ),
+    AttemptKind.repeat ||
+    AttemptKind.transfer ||
+    null => throw StateError('quick has no repeat/transfer step'),
   };
 
   TrainingLoopState _advanceDiagnosis(int totalSlots) {

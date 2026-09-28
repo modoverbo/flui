@@ -5,7 +5,7 @@
 -- failed->pending|stored, stored->deleted (forcing the path to null); none
 -- and deleted are terminal. One milestone per (user, ISO week).
 begin;
-select plan(23);
+select plan(25);
 
 select has_table('public', 'speaking_attempts', 'speaking_attempts table exists');
 select is_empty(
@@ -167,6 +167,27 @@ select throws_ok(
      values (gen_random_uuid(), gen_random_uuid(), gen_random_uuid(), 'daily', 'first', current_date,
              'Estado incoherente con la ruta.', 5000, 'stored') $$,
   '23514', null, 'audio_status = stored requires a non-null audio_path'
+);
+
+-- U23e.8 (design part-3 §19.13, decision #450.3, D33): a quick-practice
+-- attempt is a legal row (unlike a truly invalid context), but it is
+-- excluded from milestone retention at the DB level — the SAME
+-- milestone_week-shape constraint that already restricts it to
+-- (daily, lab) restricts it away from 'quick' too. Progression's own
+-- exclusion of 'quick' (Progression.levelFor) is pure client-side Dart
+-- logic with no DB counterpart to check here.
+select lives_ok(
+  format($$ insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms)
+            values (gen_random_uuid(), %L, gen_random_uuid(), 'quick', 'first', current_date,
+                    'Práctica rápida de un solo intento.', 8000) $$, :'owner_id'),
+  'context = quick is a legal, ordinary attempt row (no milestone claimed)'
+);
+select throws_ok(
+  format($$ insert into public.speaking_attempts (id, user_id, session_id, context, kind, local_date, transcript, duration_ms, milestone_week)
+            values (gen_random_uuid(), %L, gen_random_uuid(), 'quick', 'first', current_date,
+                    'Un quick practice nunca es hito.', 5000, date_trunc('week', current_date)::date) $$, :'owner_id'),
+  '23514', null,
+  'milestone_week requires context in (daily, lab) — quick is excluded, same as word'
 );
 
 select * from finish();

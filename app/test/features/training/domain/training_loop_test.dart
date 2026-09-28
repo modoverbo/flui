@@ -97,6 +97,38 @@ void main() {
     );
   });
 
+  group('quick loop is single-shot (decision #450.3, D33, §19.13)', () {
+    test(
+      'runs focus -> feedback -> summary, never repeat/comparison/transfer',
+      () {
+        final loop = TrainingLoop(const LoopScript.quick())
+          ..startRecording()
+          ..startAnalyzing()
+          ..analysisSucceeded();
+        expect(loop.state.phase, LoopPhase.feedback);
+        expect(loop.state.attemptStep, AttemptKind.first);
+
+        loop.continueToNextStep();
+        expect(loop.state.phase, LoopPhase.summary);
+        expect(loop.state.attemptStep, isNull);
+      },
+    );
+
+    test('an access-required failure preserves the focus step for retry', () {
+      final loop = TrainingLoop(const LoopScript.quick())
+        ..startRecording()
+        ..startAnalyzing()
+        ..accessRequired();
+
+      expect(loop.state.phase, LoopPhase.accessRequired);
+      expect(loop.state.attemptStep, AttemptKind.first);
+
+      loop.retry();
+      expect(loop.state.phase, LoopPhase.focus);
+      expect(loop.state.attemptStep, AttemptKind.first);
+    });
+  });
+
   group('diagnosis loop is measure-only (decision #430, spec conflict C1)', () {
     test('never enters feedback, comparison, or a repeat/transfer step', () {
       final loop = TrainingLoop(const LoopScript.diagnosis(totalSlots: 3));
