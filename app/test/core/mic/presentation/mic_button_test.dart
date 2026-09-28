@@ -254,6 +254,48 @@ void main() {
     },
   );
 
+  testWidgets(
+    'a blocked pointer-down tap opens the matching blocked sheet instead of '
+    'starting a recording (U23d)',
+    (tester) async {
+      controller = build()..setAccessGranted(false);
+      addTearDown(() => unawaited(controller.dispose()));
+      await tester.pumpFlui(MicButton(controller: controller));
+
+      await tester.startGesture(tester.getCenter(find.byType(MicButton)));
+      await _flush(tester);
+
+      expect(
+        find.text('Reactiva tu acceso para seguir practicando.'),
+        findsOneWidget,
+      );
+      expect(find.text('Reactivar'), findsOneWidget);
+      expect(controller.state, isNot(isA<MicRecording>()));
+    },
+  );
+
+  testWidgets(
+    'a blocked semantic/keyboard activation also opens the sheet, never '
+    'toggling the mic',
+    (tester) async {
+      final handle = tester.ensureSemantics();
+      controller = build()..setAccessGranted(false);
+      addTearDown(() => unawaited(controller.dispose()));
+      await tester.pumpFlui(MicButton(controller: controller));
+
+      final semantics = tester.getSemantics(find.byType(MicButton));
+      _performSemanticTap(tester, semantics.id);
+      await _flush(tester);
+
+      expect(
+        find.text('Reactiva tu acceso para seguir practicando.'),
+        findsOneWidget,
+      );
+      expect(controller.state, isNot(isA<MicRecording>()));
+      handle.dispose();
+    },
+  );
+
   testWidgets('reduced motion never builds the pulsing ring, even while '
       'recording', (tester) async {
     controller = build();

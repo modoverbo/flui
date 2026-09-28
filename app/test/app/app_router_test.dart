@@ -13,6 +13,7 @@ import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/mic_target.dart';
+import 'package:flui/core/mic/presentation/mic_blocked_sheet.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
@@ -22,6 +23,7 @@ import 'package:flui/features/themes/data/fake/seed_themes.dart';
 import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
+import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
 import 'package:flutter_riverpod/misc.dart';
@@ -57,8 +59,15 @@ final class _FakeSpeechRecorder implements SpeechRecorder {
 /// A minimal fake with a distinctive, controllable prompt — used to prove
 /// the mic's idle label actually reflects whichever branch is active,
 /// without depending on the real training loop's exact copy strings.
+/// [pendingDelivery], when set, makes [deliver] hang until completed — the
+/// deterministic way to prove an in-flight delivery is never cancelled by
+/// navigation at the real, full-app level (U23d).
 final class _FakeMicTarget implements MicTarget {
-  new({required this.prompt});
+  new({
+    required this.prompt,
+    this.pendingDelivery,
+    this.deliveryResult = const MicAccepted(),
+  });
 
   @override
   final MicPrompt prompt;
@@ -72,8 +81,15 @@ final class _FakeMicTarget implements MicTarget {
   @override
   Stream<void> get changes => const Stream.empty();
 
+  final Completer<MicDelivery>? pendingDelivery;
+  final MicDelivery deliveryResult;
+
   @override
-  Future<MicDelivery> deliver(RecordedAudio audio) async => const MicAccepted();
+  Future<MicDelivery> deliver(RecordedAudio audio) async {
+    final pending = pendingDelivery;
+    if (pending != null) return await pending.future;
+    return deliveryResult;
+  }
 }
 
 void main() {
@@ -541,6 +557,239 @@ void main() {
         label = tester.getSemantics(find.byType(MicButton)).label;
         expect(label, distinctiveLabel);
         handle.dispose();
+      },
+    );
+  });
+
+  group('U23d — MicNavigationBinding, notices, blocked sheets (real path)', () {
+    List<Override> gymOn() => [
+      speakingGymEnabledProvider.overrideWithValue(true),
+    ];
+
+    testWidgets(
+      'starting a capture via the real bottom-bar mic then switching tabs '
+      'cancels it, with the cancelledByNavigation notice visible',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            ...gymOn(),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
+          arrange: (h) => h.planToday(),
+        );
+        final controller = harness.container.read(micControllerProvider)!;
+
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        expect(controller.state, isA<MicRecording>());
+
+        await tester.tap(find.text('Hoy'));
+        await tester.pump();
+
+        expect(controller.state, isA<MicIdle>());
+        expect(
+          find.text('Grabación cancelada: cambiaste de pantalla.'),
+          findsOneWidget,
+        );
+
+        await gesture.up();
+        await tester.pumpAndSettle();
+      },
+    );
+
+    testWidgets(
+      'backgrounding the app cancels an active recording silently; the '
+      'cancelledByBackground notice appears only once resumed',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            ...gymOn(),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
+          arrange: (h) => h.planToday(),
+        );
+        final controller = harness.container.read(micControllerProvider)!;
+
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        expect(controller.state, isA<MicRecording>());
+
+        tester.binding.handleAppLifecycleStateChanged(AppLifecycleState.hidden);
+        await tester.pump();
+
+        expect(controller.state, isA<MicIdle>());
+        expect(
+          find.text('Grabación cancelada: la app pasó a segundo plano.'),
+          findsNothing,
+        );
+
+        tester.binding.handleAppLifecycleStateChanged(
+          AppLifecycleState.inactive,
+        );
+        tester.binding.handleAppLifecycleStateChanged(
+          AppLifecycleState.resumed,
+        );
+        await tester.pump();
+
+        expect(
+          find.text('Grabación cancelada: la app pasó a segundo plano.'),
+          findsOneWidget,
+        );
+
+        await gesture.up();
+        await tester.pumpAndSettle();
+      },
+    );
+
+    testWidgets('an in-flight delivery is NEVER cancelled by navigating away', (
+      tester,
+    ) async {
+      final recorder = _FakeSpeechRecorder();
+      final pendingDelivery = Completer<MicDelivery>();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          ...gymOn(),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
+        arrange: (h) => h.planToday(),
+      );
+      // A controllable target outranks the real LoopMicTarget so the
+      // delivery's completion is deterministic, not a race against the
+      // fake backend's own (zero-latency but still async) pipeline.
+      harness.container
+          .read(micTargetRegistryProvider)
+          .register(
+            _FakeMicTarget(
+              prompt: const MicPrompt(actionLabel: 'Grabar'),
+              pendingDelivery: pendingDelivery,
+            ),
+            layer: MicLayer.branch,
+          );
+      await tester.pump();
+      final controller = harness.container.read(micControllerProvider)!;
+
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byType(MicButton)),
+      );
+      for (var i = 0; i < 3; i++) {
+        await tester.pump();
+      }
+      harness.clock.advance(const Duration(milliseconds: 700));
+      await gesture.up();
+      for (var i = 0; i < 5; i++) {
+        await tester.pump();
+      }
+      expect(controller.state, isA<MicDelivering>());
+
+      await tester.tap(find.text('Hoy'));
+      await tester.pump();
+
+      expect(controller.state, isA<MicDelivering>());
+      expect(
+        find.text('Grabación cancelada: cambiaste de pantalla.'),
+        findsNothing,
+      );
+
+      pendingDelivery.complete(const MicAccepted());
+      await tester.pumpAndSettle();
+
+      expect(controller.state, isA<MicIdle>());
+    });
+
+    testWidgets(
+      'a blocked mic tap (quota reached) opens the quota sheet, with no '
+      'retry offered',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            ...gymOn(),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
+          arrange: (h) => h.planToday(),
+        );
+        harness.container
+            .read(micTargetRegistryProvider)
+            .register(
+              _FakeMicTarget(
+                prompt: const MicPrompt(actionLabel: 'Grabar'),
+                deliveryResult: const MicDailyLimitReached(),
+              ),
+              layer: MicLayer.branch,
+            );
+        await tester.pump();
+
+        // One real recording cycle that reports the quota as reached,
+        // latching the mic.
+        final firstGesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        harness.clock.advance(const Duration(milliseconds: 700));
+        await firstGesture.up();
+        await tester.pumpAndSettle();
+
+        // The next tap must open the quota sheet instead of starting a
+        // capture. `TrainingLoopView`'s own inline status panel ALSO shows
+        // this same block/message persistently (design §19.5's generic
+        // "explained, blocked" rendering, U13b) — scope to the sheet
+        // itself so this asserts the sheet opened, not just the panel.
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
+
+        expect(find.byType(MicBlockedSheet), findsOneWidget);
+        expect(
+          find.descendant(
+            of: find.byType(MicBlockedSheet),
+            matching: find.text(
+              'Ya usaste tus análisis de hoy. Vuelve mañana.',
+            ),
+          ),
+          findsOneWidget,
+        );
+        expect(
+          find.descendant(
+            of: find.byType(MicBlockedSheet),
+            matching: find.byType(FluiButton),
+          ),
+          findsNothing,
+        );
       },
     );
   });
