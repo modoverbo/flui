@@ -44,16 +44,21 @@ class _AppShellState extends ConsumerState<AppShell> {
     if (_boundOnce) return;
     _boundOnce = true;
     if (!ref.read(speakingGymEnabledProvider)) return;
+    final quickPracticeTarget = ref.read(quickPracticeTargetProvider);
     _binding = MicNavigationBinding(
       registry: ref.read(micTargetRegistryProvider),
       controllerOf: () => ref.read(micControllerProvider),
       routerSource: GoRouterLocationSource(GoRouter.of(context)),
+      // Orchestrator review finding (U23e): a stale quick-practice prompt
+      // otherwise kept resolving mic taps against the WRONG target after
+      // any navigation or registry change — see QuickPracticeTarget's own
+      // doc comment for the full dismissal rule.
+      onLocationChanged: quickPracticeTarget.onRouterLocationChanged,
+      onRegistryEvent: quickPracticeTarget.onRegistryChanged,
     );
     // Overrides U23b's ExplainedFallbackTarget once, for the shell's
     // lifetime (design §19.13, decision #450.3).
-    ref
-        .read(micTargetRegistryProvider)
-        .setFallback(ref.read(quickPracticeTargetProvider));
+    ref.read(micTargetRegistryProvider).setFallback(quickPracticeTarget);
   }
 
   @override
