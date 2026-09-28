@@ -173,6 +173,44 @@ void main() {
 
       expect((await repository.insert(_attempt())).isOk, isFalse);
     });
+
+    test('usedChallengeIdsSince returns distinct challenge ids on/after the '
+        'given date, current user only', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      final other = FakeSpeakingAttemptRepository(currentUserId: () => 'u2');
+      await repository.insert(
+        _attempt().copyWith(id: 'a1', localDate: day(10), challengeId: 'c1'),
+      );
+      await repository.insert(
+        _attempt().copyWith(id: 'a2', localDate: day(14), challengeId: 'c1'),
+      );
+      await repository.insert(
+        _attempt().copyWith(id: 'a3', localDate: day(14), challengeId: 'c2'),
+      );
+      await repository.insert(
+        _attempt().copyWith(id: 'a4', localDate: day(7), challengeId: 'c3'),
+      );
+      await repository.insert(
+        _attempt().copyWith(id: 'a5', localDate: day(14)),
+      );
+      await other.insert(
+        _attempt().copyWith(id: 'a6', localDate: day(14), challengeId: 'c9'),
+      );
+
+      final result = await repository.usedChallengeIdsSince(day(9));
+
+      expect(result.valueOrNull, {'c1', 'c2'});
+    });
+
+    test('usedChallengeIdsSince fails without a signed-in user', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => null,
+      );
+
+      expect((await repository.usedChallengeIdsSince(day(1))).isOk, isFalse);
+    });
   });
 
   group('SupabaseSpeakingAttemptRepository', () {
@@ -279,6 +317,40 @@ void main() {
 
       final result = await SupabaseSpeakingAttemptRepository(recorder.client)
           .insert(_attempt());
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+
+    test('usedChallengeIdsSince queries challenge_id filtered by local_date, '
+        'RLS scopes rows to the owner', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => [
+          {'challenge_id': 'c1'},
+          {'challenge_id': 'c2'},
+          {'challenge_id': 'c1'},
+          {'challenge_id': null},
+        ],
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .usedChallengeIdsSince(day(14));
+
+      expect(result.valueOrNull, {'c1', 'c2'});
+      expect(recorder.last.method, 'GET');
+      expect(recorder.last.url.path, '/rest/v1/speaking_attempts');
+      expect(recorder.last.url.queryParameters['select'], 'challenge_id');
+      expect(recorder.last.url.queryParameters['local_date'], 'gte.2026-09-14');
+    });
+
+    test('usedChallengeIdsSince maps transport errors', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .usedChallengeIdsSince(day(1));
 
       expect(result.failureOrNull, const NetworkFailure());
     });

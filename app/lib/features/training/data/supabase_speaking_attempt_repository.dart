@@ -1,3 +1,4 @@
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/supabase/data_error_mapper.dart';
 import 'package:flui/features/training/data/dtos/speaking_attempt_dto.dart';
@@ -48,5 +49,21 @@ final class SupabaseSpeakingAttemptRepository
         .select(SpeakingAttemptDto.columns)
         .single();
     return SpeakingAttemptDto.fromJson(row).toDomain();
+  }
+
+  @override
+  Future<Result<Set<String>>> usedChallengeIdsSince(LocalDate since) async {
+    try {
+      final rows = await _client
+          .from('speaking_attempts')
+          .select('challenge_id')
+          .gte('local_date', since.toIso());
+      return Result.ok({
+        for (final row in rows)
+          if (row['challenge_id'] case final String id) id,
+      });
+    } on Object catch (error) {
+      return Result.err(mapDataError(error));
+    }
   }
 }
