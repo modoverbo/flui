@@ -7,6 +7,7 @@ import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/themes/data/fake/seed_themes.dart';
+import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
@@ -76,8 +77,8 @@ void main() {
     expect(navigation.indicatorColor, FluiColors.greenTint);
     expect(navigation.selectedIndex, 0);
     expect(find.text('Hoy'), findsOneWidget);
+    expect(find.text('Entrenar'), findsOneWidget);
     expect(find.text('Palabras'), findsOneWidget);
-    expect(find.text('Habla'), findsOneWidget);
     expect(find.text('Progreso'), findsOneWidget);
     final progressDestination = tester.widget<NavigationDestination>(
       find.ancestor(
@@ -223,41 +224,8 @@ void main() {
     expect(location(harness), AppRoutes.welcome);
   });
 
-  group('Habla, the fourth shell branch', () {
-    testWidgets(
-      'the old /speaking/challenge deep link still resolves, inside the shell',
-      (tester) async {
-        final harness = AppHarness(signedInAs: ana, access: trialing);
-        await harness.pumpApp(
-          tester,
-          initialLocation: AppRoutes.speakingChallenge,
-          arrange: (h) => h.planToday(),
-        );
-
-        expect(location(harness), AppRoutes.speakingChallenge);
-        // Still inside the shell: the tab bar renders, Habla selected, and
-        // the landing content is the challenge's own "ready" phase.
-        expect(find.byType(NavigationBar), findsOneWidget);
-        expect(find.text('Habla'), findsOneWidget);
-        expect(find.text('Abrir ejercicio'), findsOneWidget);
-      },
-    );
-
-    testWidgets('switching to Habla from another tab lands on "ready"', (
-      tester,
-    ) async {
-      final harness = AppHarness(signedInAs: ana, access: trialing);
-      await harness.pumpApp(tester, arrange: (h) => h.planToday());
-
-      expect(location(harness), AppRoutes.today);
-      await tester.tap(find.text('Habla'));
-      await tester.pumpAndSettle();
-
-      expect(location(harness), AppRoutes.speakingChallenge);
-      expect(find.text('Abrir ejercicio'), findsOneWidget);
-    });
-
-    testWidgets('opening a challenge takes over full screen before recording', (
+  group('Entrenar, the second shell branch (U16, retires Habla)', () {
+    testWidgets('the old /speaking/challenge deep link redirects into train', (
       tester,
     ) async {
       final harness = AppHarness(signedInAs: ana, access: trialing);
@@ -267,15 +235,51 @@ void main() {
         arrange: (h) => h.planToday(),
       );
 
+      expect(location(harness), AppRoutes.train);
+      // Still inside the shell: the tab bar renders, and the landing
+      // content is the mode picker, never a 404.
       expect(find.byType(NavigationBar), findsOneWidget);
-      await tester.tap(find.text('Abrir ejercicio'));
+      expect(find.text('Piensa y habla'), findsOneWidget);
+    });
+
+    testWidgets('switching to Entrenar from another tab lands on the picker', (
+      tester,
+    ) async {
+      final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+
+      expect(location(harness), AppRoutes.today);
+      await tester.tap(find.text('Entrenar'));
       await tester.pumpAndSettle();
 
-      expect(location(harness), AppRoutes.speakingChallengeLive);
-      // Full-screen take-over: the shell's own chrome is gone.
-      expect(find.byType(NavigationBar), findsNothing);
-      expect(find.text('Empezar a hablar'), findsOneWidget);
+      expect(location(harness), AppRoutes.train);
+      expect(find.text('Piensa y habla'), findsOneWidget);
     });
+
+    testWidgets(
+      'starting a mode stays on the branch navigator, unlike the retired '
+      'full-screen speaking-challenge take-over',
+      (tester) async {
+        final harness = AppHarness(signedInAs: ana, access: trialing);
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.train,
+          arrange: (h) => h.planToday(),
+        );
+
+        expect(find.byType(NavigationBar), findsOneWidget);
+        await tester.tap(find.text('Piensa y habla'));
+        await tester.pumpAndSettle();
+
+        expect(
+          location(harness),
+          AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
+        );
+        // Branch child, not a root-navigator take-over (design D30): the
+        // shell chrome stays, unlike the retired speaking-challenge "live".
+        expect(find.byType(NavigationBar), findsOneWidget);
+      },
+    );
   });
 
   testWidgets('category detail back restores its family filter and page', (

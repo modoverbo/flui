@@ -1,3 +1,5 @@
+import 'package:flui/features/training/domain/training_mode.dart';
+
 /// Route paths. Keep them lowercase: go_router matching is case-sensitive.
 abstract final class AppRoutes {
   static const root = '/';
@@ -40,13 +42,21 @@ abstract final class AppRoutes {
   static const words = '/words';
   static const progress = '/progress';
 
-  /// Habla's tab landing: the challenge's own `ready` phase.
+  /// Retired (U16): was Habla's tab landing, the speaking-challenge's own
+  /// `ready` phase. Replaced by [train] — see [retiredRoutes].
   static const speakingChallenge = '/speaking/challenge';
 
-  /// The challenge itself (recording through comparison), nested under
-  /// [speakingChallenge] but rendered full screen on the root navigator —
-  /// the same take-over-from-a-tab pattern as `/today/time`.
+  /// Retired alongside [speakingChallenge] — see [retiredRoutes].
   static const speakingChallengeLive = '$speakingChallenge/live';
+
+  /// ENTRENAR's tab landing: 4 training-mode cards (U16), replacing the
+  /// old Habla/speaking-challenge tab.
+  static const train = '/train';
+
+  /// One training-lab mode's own loop, nested under [train] but rendered
+  /// on the branch navigator, not a full-screen take-over (design D30) —
+  /// unlike the retired [speakingChallengeLive].
+  static String trainMode(TrainingMode mode) => '$train/${mode.name}';
 
   /// Was a tab of its own. "Repaso extra" now lives on Hoy, and the scenes
   /// live in the word detail, so both redirect instead of 404-ing old links.
@@ -55,6 +65,8 @@ abstract final class AppRoutes {
   static const Map<String, String> retiredRoutes = {
     practice: today,
     reading: words,
+    speakingChallenge: train,
+    speakingChallengeLive: train,
   };
 
   // Full screen, outside the shell.

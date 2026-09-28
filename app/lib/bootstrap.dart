@@ -37,6 +37,15 @@ import 'package:flui/features/subscription/presentation/providers/subscription_p
 import 'package:flui/features/themes/data/fake_theme_repository.dart';
 import 'package:flui/features/themes/data/supabase_theme_repository.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
+import 'package:flui/features/training/data/fake_attempt_audio_store.dart';
+import 'package:flui/features/training/data/fake_audio_consent_repository.dart';
+import 'package:flui/features/training/data/fake_challenge_repository.dart';
+import 'package:flui/features/training/data/fake_speaking_attempt_repository.dart';
+import 'package:flui/features/training/data/supabase_attempt_audio_store.dart';
+import 'package:flui/features/training/data/supabase_audio_consent_repository.dart';
+import 'package:flui/features/training/data/supabase_challenge_repository.dart';
+import 'package:flui/features/training/data/supabase_speaking_attempt_repository.dart';
+import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_exercise_attempt_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_word_progress_repository.dart';
@@ -140,6 +149,21 @@ List<Override> fakeBackendOverrides({
           ? FakeSpeechAnalysisRepository(latency: latency)
           : HttpSpeechAnalysisRepository(endpoint: config.speechAnalysisUrl!),
     ),
+    // Training-lab loop (U16 onward): built by U12a/U12b, first reachable
+    // from real navigation via ENTRENAR (U16) — wiring it here was missing
+    // until now (see apply-progress for this gap).
+    challengeRepositoryProvider.overrideWithValue(
+      FakeChallengeRepository(latency: latency),
+    ),
+    speakingAttemptRepositoryProvider.overrideWithValue(
+      FakeSpeakingAttemptRepository(currentUserId: currentUserId),
+    ),
+    attemptAudioStoreProvider.overrideWithValue(
+      FakeAttemptAudioStore(currentUserId: currentUserId),
+    ),
+    audioConsentRepositoryProvider.overrideWithValue(
+      FakeAudioConsentRepository(currentUserId: currentUserId),
+    ),
     checkoutLauncherProvider.overrideWith(
       (ref) => FakeCheckoutLauncher(
         subscriptions: subscriptions,
@@ -188,6 +212,18 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     ),
     speechAnalysisRepositoryProvider.overrideWithValue(
       SupabaseSpeechAnalysisRepository(client),
+    ),
+    challengeRepositoryProvider.overrideWithValue(
+      SupabaseChallengeRepository(client),
+    ),
+    speakingAttemptRepositoryProvider.overrideWithValue(
+      SupabaseSpeakingAttemptRepository(client),
+    ),
+    attemptAudioStoreProvider.overrideWithValue(
+      SupabaseAttemptAudioStore(client, currentUserId: currentUserId),
+    ),
+    audioConsentRepositoryProvider.overrideWithValue(
+      SupabaseAudioConsentRepository(client, currentUserId: currentUserId),
     ),
   ];
 }

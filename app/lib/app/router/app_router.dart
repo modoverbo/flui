@@ -16,11 +16,12 @@ import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
-import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
 import 'package:flui/features/subscription/presentation/pages/checkout_return_page.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
 import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
+import 'package:flui/features/training/domain/training_mode.dart';
+import 'package:flui/features/training/presentation/training_lab_page.dart';
 import 'package:flui/features/vocabulary/presentation/category_catalog_page.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
@@ -107,10 +108,15 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
       key: state.pageKey,
     ),
   ),
-  StatefulShellRoute.indexedStack(
+  StatefulShellRoute(
     parentNavigatorKey: rootKey,
     builder: (context, state, navigationShell) =>
         AppShell(navigationShell: navigationShell),
+    // The default `StatefulShellRoute.indexedStack` container, spelled out
+    // explicitly (U16) so a later unit (U23c) can wrap it with
+    // `MicLayerScope` per branch without changing this behavior.
+    navigatorContainerBuilder: (context, navigationShell, children) =>
+        IndexedStack(index: navigationShell.currentIndex, children: children),
     branches: [
       StatefulShellBranch(
         routes: [
@@ -142,6 +148,29 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
       ),
       StatefulShellBranch(
         routes: [
+          // ENTRENAR (U16, replacing the retired Habla/speaking-challenge
+          // tab): selecting the tab lands on the mode picker; a mode's own
+          // loop is a branch child, not a root-navigator take-over (design
+          // D30) — unlike the retired `/speaking/challenge/live`.
+          GoRoute(
+            path: AppRoutes.train,
+            builder: (_, _) => const TrainingLabPage(),
+            routes: [
+              GoRoute(
+                path: ':mode',
+                builder: (context, state) {
+                  final mode = _trainingModeOf(state.pathParameters['mode']);
+                  return mode == null
+                      ? const NotFoundPage()
+                      : TrainingLabModePage(mode: mode);
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+      StatefulShellBranch(
+        routes: [
           GoRoute(
             path: AppRoutes.words,
             builder: (_, _) => const WordsPage(),
@@ -159,29 +188,6 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
       ),
       StatefulShellBranch(
         routes: [
-          // Habla: selecting the tab always lands on the challenge's own
-          // "ready" phase. Starting a challenge goes to `.../live`, a
-          // full-screen take-over on the root navigator, same as
-          // `/today/time` above — the shell chrome disappears exactly like
-          // it does entering `/session` from `/today`.
-          GoRoute(
-            path: AppRoutes.speakingChallenge,
-            builder: (_, _) => const SpeakingTabPage(),
-            routes: [
-              GoRoute(
-                path: 'live',
-                parentNavigatorKey: rootKey,
-                pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
-                  const SpeakingChallengePage(),
-                  key: state.pageKey,
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-      StatefulShellBranch(
-        routes: [
           GoRoute(
             path: AppRoutes.progress,
             builder: (_, _) => const ProgressPage(),
@@ -191,6 +197,9 @@ List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
     ],
   ),
 ];
+
+TrainingMode? _trainingModeOf(String? raw) =>
+    TrainingMode.values.where((mode) => mode.name == raw).firstOrNull;
 
 /// A catalog entry is reached from the category flow with an explicit return
 /// location because GoRouter switches shell branches for `/words/:wordId`.

@@ -5,7 +5,7 @@ import 'package:material_ui/material_ui.dart';
 import '../../helpers/pump_app.dart';
 
 void main() {
-  const labels = ['Hoy', 'Palabras', 'Habla', 'Tu progreso'];
+  const labels = ['Hoy', 'Entrenar', 'Palabras', 'Tu progreso'];
 
   Future<List<int>> pumpShell(WidgetTester tester, Size size) async {
     final selected = <int>[];
@@ -33,12 +33,12 @@ void main() {
     }
     expect(find.text('Progreso'), findsOneWidget);
 
-    await tester.tap(find.text('Habla'));
-    expect(selected, [2]);
+    await tester.tap(find.text('Entrenar'));
+    expect(selected, [1]);
     expect(find.text('contenido'), findsOneWidget);
 
     await tester.tap(find.text('Progreso'));
-    expect(selected, [2, 3]);
+    expect(selected, [1, 3]);
   });
 
   testWidgets('phone navigation labels fit inside the clipped bar', (
@@ -80,7 +80,7 @@ void main() {
     }
 
     await tester.tap(find.text('Palabras'));
-    expect(selected, [1]);
+    expect(selected, [2]);
   });
 
   testWidgets('tablets use a compact rail', (tester) async {

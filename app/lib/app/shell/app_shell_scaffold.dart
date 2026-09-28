@@ -8,14 +8,14 @@ import 'package:material_ui/material_ui.dart';
 
 /// Order of the shell branches. Keep in sync with `app_router.dart`.
 ///
-/// Four tabs, not five: "Practica" became the "Repaso extra" action on Hoy
-/// and "En contexto" became a section of the word detail, because both were
-/// places the user had to remember to visit. "Habla" was promoted from a
-/// root-only route to a real tab (`docs/redesign/02-navigation-model.md`):
-/// selecting it always lands on the speaking challenge's `ready` phase, and
-/// starting a challenge still takes over the full screen exactly like
-/// `/session` does, via a nested root-navigator route in `app_router.dart`.
-enum ShellDestination { today, words, habla, progress }
+/// Four tabs: "Practica" became the "Repaso extra" action on Hoy and "En
+/// contexto" became a section of the word detail, because both were places
+/// the user had to remember to visit. "Habla" — a root-only speaking
+/// challenge promoted to a tab — was itself retired by U16: ENTRENAR takes
+/// its slot with the training-lab mode picker (`TrainingLabPage`), and its
+/// own loop routes are branch children (no root-navigator take-over,
+/// design D30), unlike the old `/speaking/challenge/live`.
+enum ShellDestination { today, train, words, progress }
 
 /// Navigation chrome: bottom bar on phones, side rail on wide screens.
 ///
@@ -36,10 +36,10 @@ class AppShellScaffold extends StatelessWidget {
   static FluiGlyph glyphOf(ShellDestination destination) =>
       switch (destination) {
         ShellDestination.today => FluiGlyph.onda,
+        ShellDestination.train => FluiGlyph.microphone,
         // The word-entry glyph: a dictionary entry, which is what the
         // repertoire is.
         ShellDestination.words => FluiGlyph.wordOfTheDay,
-        ShellDestination.habla => FluiGlyph.microphone,
         ShellDestination.progress => FluiGlyph.streak,
       };
 
@@ -52,8 +52,8 @@ class AppShellScaffold extends StatelessWidget {
           glyphOf(destination),
           switch (destination) {
             ShellDestination.today => l10n.navToday,
+            ShellDestination.train => l10n.navTrain,
             ShellDestination.words => l10n.navWords,
-            ShellDestination.habla => l10n.navHabla,
             ShellDestination.progress => l10n.navProgress,
           },
         ),
