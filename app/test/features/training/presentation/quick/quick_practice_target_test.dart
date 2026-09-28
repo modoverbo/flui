@@ -6,6 +6,7 @@ import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/mic/mic_controller.dart';
+import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/mic/mic_target_registry.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
@@ -63,8 +64,32 @@ final class _FakeSpeechRecorder implements SpeechRecorder {
   Future<void> dispose() async {}
 }
 
+/// A minimal `MicReady` target — used to make the registry resolve to
+/// something OTHER than [QuickPracticeTarget].
+final class _FakeMicTarget implements MicTarget {
+  const new();
+
+  @override
+  MicPrompt get prompt => const MicPrompt(actionLabel: 'Otro objetivo');
+
+  @override
+  Duration get maxDuration => const Duration(seconds: 30);
+
+  @override
+  MicAvailability get availability => const MicReady();
+
+  @override
+  Stream<void> get changes => const Stream.empty();
+
+  @override
+  Future<MicDelivery> deliver(RecordedAudio audio) async => const MicAccepted();
+}
+
 void main() {
-  ProviderContainer build({List<Challenge> challenges = const [_challenge1]}) {
+  ProviderContainer build({
+    List<Challenge> challenges = const [_challenge1],
+    MicTargetRegistry? registry,
+  }) {
     final consent = FakeAudioConsentRepository(currentUserId: () => 'u1');
     unawaited(consent.write(granted: true));
     return ProviderContainer(
@@ -83,6 +108,8 @@ void main() {
           FakeChallengeRepository(challenges: challenges),
         ),
         clockProvider.overrideWithValue(FixedClock(DateTime(2026, 9, 28))),
+        if (registry != null)
+          micTargetRegistryProvider.overrideWithValue(registry),
       ],
     );
   }
@@ -173,5 +200,125 @@ void main() {
     // the quick-practice prompt is never shown, so the target stays
     // unprepared/untouched.
     expect(target.availability, isA<MicPrepare>());
+  });
+
+  group('dismissal on navigation/registry change '
+      '(orchestrator review finding on feat/quick-practice)', () {
+    test('onRegistryChanged dismisses a prepared session once another '
+        'target wins resolve()', () async {
+      final registry = MicTargetRegistry();
+      final testContainer = build(registry: registry);
+      addTearDown(testContainer.dispose);
+      final target = testContainer.read(quickPracticeTargetProvider);
+      registry.setFallback(target);
+      await (target.availability as MicPrepare).onActivate();
+      expect(target.currentRequest, isNotNull);
+
+      registry.register(const _FakeMicTarget(), layer: MicLayer.branch);
+      target.onRegistryChanged();
+
+      expect(target.currentRequest, isNull);
+      expect(target.availability, isA<MicPrepare>());
+    });
+
+    test(
+      'onRegistryChanged is a no-op while the quick target is still '
+      'resolved (an irrelevant registry event on an inactive branch)',
+      () async {
+        final registry = MicTargetRegistry();
+        final testContainer = build(registry: registry);
+        addTearDown(testContainer.dispose);
+        final target = testContainer.read(quickPracticeTargetProvider);
+        registry.setFallback(target);
+        await (target.availability as MicPrepare).onActivate();
+
+        registry.register(
+          const _FakeMicTarget(),
+          layer: MicLayer.branch,
+          branch: 5,
+        );
+        target.onRegistryChanged();
+
+        expect(target.currentRequest, isNotNull);
+      },
+    );
+
+    test(
+      'onRouterLocationChanged unconditionally dismisses a prepared '
+      'session, even when the quick target is STILL resolved (any '
+      'navigation invalidates a not-yet-recorded prepared session)',
+      () async {
+        final registry = MicTargetRegistry();
+        final testContainer = build(registry: registry);
+        addTearDown(testContainer.dispose);
+        final target = testContainer.read(quickPracticeTargetProvider);
+        registry.setFallback(target);
+        await (target.availability as MicPrepare).onActivate();
+
+        target.onRouterLocationChanged();
+
+        expect(target.currentRequest, isNull);
+        expect(target.availability, isA<MicPrepare>());
+      },
+    );
+
+    test('neither trigger cancels an in-flight delivery; settling '
+        're-checks resolution and dismisses only if another target now '
+        'wins', () async {
+      final registry = MicTargetRegistry();
+      final testContainer = build(registry: registry);
+      addTearDown(testContainer.dispose);
+      final target = testContainer.read(quickPracticeTargetProvider);
+      registry.setFallback(target);
+      await (target.availability as MicPrepare).onActivate();
+
+      final delivery = target.deliver(_audio());
+      // Mid-flight: navigation/registry events must not clear the
+      // request — the analysis/save must never be interrupted.
+      target.onRouterLocationChanged();
+      registry.register(const _FakeMicTarget(), layer: MicLayer.branch);
+      target.onRegistryChanged();
+      expect(target.currentRequest, isNotNull);
+
+      await delivery;
+
+      // Another target now wins -> dismissed once delivery settled.
+      expect(target.currentRequest, isNull);
+    });
+
+    test(
+      'a delivery that settles while the quick target is still '
+      'resolved keeps the request (feedback/summary stays visible)',
+      () async {
+        final registry = MicTargetRegistry();
+        final testContainer = build(registry: registry);
+        addTearDown(testContainer.dispose);
+        final target = testContainer.read(quickPracticeTargetProvider);
+        registry.setFallback(target);
+        await (target.availability as MicPrepare).onActivate();
+
+        await target.deliver(_audio());
+
+        expect(target.currentRequest, isNotNull);
+      },
+    );
+
+    test('the feedback/summary phase (already delivered) also dismisses '
+        'on the next navigation/registry change that loses resolution — '
+        'the attempt is already saved', () async {
+      final registry = MicTargetRegistry();
+      final testContainer = build(registry: registry);
+      addTearDown(testContainer.dispose);
+      final target = testContainer.read(quickPracticeTargetProvider);
+      registry.setFallback(target);
+      await (target.availability as MicPrepare).onActivate();
+      await target.deliver(_audio());
+      expect(target.currentRequest, isNotNull);
+
+      registry.register(const _FakeMicTarget(), layer: MicLayer.branch);
+      target.onRegistryChanged();
+
+      expect(target.currentRequest, isNull);
+    });
   });
 }

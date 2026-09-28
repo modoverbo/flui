@@ -4,6 +4,7 @@ import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/id/id_providers.dart';
+import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/features/training/domain/challenge.dart';
 import 'package:flui/features/training/domain/quick_practice_picker.dart';
@@ -40,6 +41,12 @@ final class QuickPracticeTarget implements MicTarget {
   Challenge? _picked;
   LoopRequest? _request;
   bool _prepared = false;
+
+  /// True only while [deliver] is awaiting the shared training loop's
+  /// analysis/persistence — the ONE phase [onRegistryChanged]/
+  /// [onRouterLocationChanged] must never interrupt (design §19.13: an
+  /// already-started paid analysis always completes and is saved).
+  bool _delivering = false;
 
   /// The request currently backing the quick-practice panel — set once
   /// [_activate] resolves, and kept alive through delivery/feedback/summary
@@ -107,15 +114,25 @@ final class QuickPracticeTarget implements MicTarget {
     // Ready for a FRESH quick practice immediately, independent of how
     // long the panel keeps showing this one's feedback/summary.
     _prepared = false;
+    _delivering = true;
     _changes.add(null);
-    if (request == null) {
-      return const MicDeliveryFailed(
-        'No hay ningún reto disponible ahora mismo.',
-      );
+    try {
+      if (request == null) {
+        return const MicDeliveryFailed(
+          'No hay ningún reto disponible ahora mismo.',
+        );
+      }
+      return await _ref
+          .read(trainingLoopControllerProvider(request).notifier)
+          .submit(audio);
+    } finally {
+      _delivering = false;
+      // The analysis/save always completed (never interrupted, design
+      // §19.13) — only NOW, once settled, is it safe to check whether
+      // another target has since won `resolve()` and dismiss if so. The
+      // attempt is already saved either way.
+      if (!_isStillResolved()) _dismissSilently();
     }
-    return await _ref
-        .read(trainingLoopControllerProvider(request).notifier)
-        .submit(audio);
   }
 
   /// "Otro reto" (design §19.13): re-picks without consuming a gesture or
@@ -126,11 +143,43 @@ final class QuickPracticeTarget implements MicTarget {
   /// §19.13: "nothing was ever captured, so there is nothing to cancel"):
   /// discards the prepared/finished state. The next activation starts a
   /// brand-new quick practice from scratch.
-  void dismiss() {
+  void dismiss() => _dismissSilently();
+
+  void _dismissSilently() {
     _picked = null;
     _request = null;
     _prepared = false;
     _changes.add(null);
+  }
+
+  bool _isStillResolved() =>
+      identical(_ref.read(micTargetRegistryProvider).resolve().$1, this);
+
+  /// Called on ANY router path change (design §19.13: navigating away —
+  /// even to a screen that would ALSO resolve to this fallback, e.g. the
+  /// ENTRENAR mode picker — invalidates a prepared-but-not-yet-recorded
+  /// quick practice session; the next activation from any screen starts
+  /// a brand-new one, unconditionally). Never interrupts an in-flight
+  /// [deliver] — the settled check there is what re-evaluates dismissal
+  /// once the delivery completes (orchestrator review finding on
+  /// feat/quick-practice).
+  void onRouterLocationChanged() => _dismissIfNotDelivering();
+
+  /// Called on any `MicTargetRegistry.changes` event (registration,
+  /// disposal, or fallback change). Unlike [onRouterLocationChanged],
+  /// this only reacts when the registry's resolved target is actually no
+  /// longer this one — a registration/disposal on an inactive branch or
+  /// root stack must not dismiss an otherwise-still-valid prepared
+  /// session on the currently active one.
+  void onRegistryChanged() {
+    if (_isStillResolved()) return;
+    _dismissIfNotDelivering();
+  }
+
+  void _dismissIfNotDelivering() {
+    if (_delivering) return; // never cancel an in-flight delivery
+    if (_request == null) return; // nothing shown, nothing to dismiss
+    _dismissSilently();
   }
 
   void disposeTarget() => unawaited(_changes.close());
