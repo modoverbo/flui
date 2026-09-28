@@ -5,12 +5,14 @@ import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/app/shell/flui_bottom_bar.dart';
 import 'package:flui/core/audio/audio_providers.dart';
+import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/mic/mic_providers.dart';
+import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
@@ -50,6 +52,28 @@ final class _FakeSpeechRecorder implements SpeechRecorder {
 
   @override
   Future<void> dispose() async {}
+}
+
+/// A minimal fake with a distinctive, controllable prompt — used to prove
+/// the mic's idle label actually reflects whichever branch is active,
+/// without depending on the real training loop's exact copy strings.
+final class _FakeMicTarget implements MicTarget {
+  new({required this.prompt});
+
+  @override
+  final MicPrompt prompt;
+
+  @override
+  final Duration maxDuration = const Duration(seconds: 30);
+
+  @override
+  MicAvailability get availability => const MicReady();
+
+  @override
+  Stream<void> get changes => const Stream.empty();
+
+  @override
+  Future<MicDelivery> deliver(RecordedAudio audio) async => const MicAccepted();
 }
 
 void main() {
@@ -469,6 +493,54 @@ void main() {
         await tester.pumpAndSettle();
         final (onHoy, _) = registry.resolve();
         expect(onHoy, isNot(isA<LoopMicTarget>()));
+      },
+    );
+
+    testWidgets(
+      "switching tabs refreshes the mic's visible idle label to the newly "
+      'active branch (orchestrator review finding on U23c: setActiveBranch '
+      'must notify MicController, not just flip an internal index)',
+      (tester) async {
+        final handle = tester.ensureSemantics();
+        const distinctiveLabel = 'ETIQUETA_DISTINTIVA_ENTRENAR';
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: gymOn(),
+        );
+        await harness.pumpApp(tester, arrange: (h) => h.planToday());
+        // Lands on Hoy (branch 0) by default.
+
+        harness.container
+            .read(micTargetRegistryProvider)
+            .register(
+              _FakeMicTarget(
+                prompt: const MicPrompt(actionLabel: distinctiveLabel),
+              ),
+              layer: MicLayer.branch,
+              branch: 1,
+            );
+        await tester.pump();
+
+        // Still on Hoy: the ENTRENAR-only target must not be visible yet.
+        var label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, isNot(distinctiveLabel));
+
+        await tester.tap(find.text('Entrenar'));
+        await tester.pumpAndSettle();
+        label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, distinctiveLabel);
+
+        await tester.tap(find.text('Hoy'));
+        await tester.pumpAndSettle();
+        label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, isNot(distinctiveLabel));
+
+        await tester.tap(find.text('Entrenar'));
+        await tester.pumpAndSettle();
+        label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, distinctiveLabel);
+        handle.dispose();
       },
     );
   });

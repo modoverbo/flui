@@ -41,8 +41,21 @@ final class MicTargetRegistry {
   /// was registered under. Kept as a method (design §19.4/§19.7 call it
   /// `setActiveBranch(i)`), not a setter, to match the frozen contract
   /// other units wire against.
-  // ignore: use_setters_to_change_properties
-  void setActiveBranch(int index) => _activeBranch = index;
+  ///
+  /// Notifies [changes] ONLY when the index actually changes — `AppShell`
+  /// calls this on every rebuild (not only on a real tab switch), so a
+  /// same-index call must be silent, both to avoid a notify loop and so
+  /// `MicController`'s idle prompt doesn't needlessly refresh. A real
+  /// change must notify: otherwise `MicController` (which only refreshes
+  /// its idle prompt/label on [changes]) keeps showing the PREVIOUS
+  /// branch's target after a tab switch, until some unrelated
+  /// registration happens to fire a notification first (orchestrator
+  /// review finding on U23c).
+  void setActiveBranch(int index) {
+    if (_activeBranch == index) return;
+    _activeBranch = index;
+    _notifyChanged();
+  }
 
   /// Replaces the fallback used when nothing else resolves (U23e overrides
   /// this with `QuickPracticeTarget`, design §19.4/D27). Kept as a method
