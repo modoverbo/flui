@@ -193,6 +193,27 @@ final class MicController {
     unawaited(_beginCapture(toggle: true));
   }
 
+  /// Cancels the current capture and discards it — a no-op (returns
+  /// `false`) unless [state] is [MicRequestingPermission] or
+  /// [MicRecording]; an in-flight [MicFinishing]/[MicDelivering] is NEVER
+  /// cancelled here (design D28). Emits no notice itself — `emitNotice` is
+  /// a separate call so `MicNavigationBinding` (U23d) can show
+  /// `cancelledByNavigation` immediately or defer `cancelledByBackground`
+  /// until the app is visible again.
+  bool cancelActiveCapture() {
+    if (_state is! MicRequestingPermission && _state is! MicRecording) {
+      return false;
+    }
+    _holdToRecord.cancel();
+    return true;
+  }
+
+  /// Emits [notice] on [notices] directly — the other half of
+  /// [cancelActiveCapture], and how `MicNavigationBinding` (U23d) shows a
+  /// notice that was deliberately deferred (e.g. `cancelledByBackground`,
+  /// only shown once the app resumes, never while backgrounded).
+  void emitNotice(MicNotice notice) => _emitNotice(notice);
+
   Future<void> _beginCapture({required bool toggle}) async {
     // 1. An analysis is already in flight for the previous attempt.
     if (_delivering) {

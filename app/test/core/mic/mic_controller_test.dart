@@ -61,9 +61,14 @@ final class _FakeMicTarget implements MicTarget {
 /// mutable so a test can flip it after `MicController` has already
 /// captured this exact instance via its `recorderFactory`.
 final class _FakeSpeechRecorder implements SpeechRecorder {
-  new({this.permission = true});
+  new({this.permission = true, this.permissionResult});
 
   bool permission;
+
+  /// When set, [requestPermission] awaits this instead of resolving
+  /// immediately — lets a test hold the controller in
+  /// `MicRequestingPermission` deliberately (U23d cancellation tests).
+  final Completer<bool>? permissionResult;
   int starts = 0;
   int stops = 0;
 
@@ -71,7 +76,11 @@ final class _FakeSpeechRecorder implements SpeechRecorder {
   Stream<double> get amplitude => const Stream.empty();
 
   @override
-  Future<bool> requestPermission() async => permission;
+  Future<bool> requestPermission() async {
+    final pending = permissionResult;
+    if (pending != null) return await pending.future;
+    return permission;
+  }
 
   @override
   Future<void> start() async => starts++;
@@ -516,6 +525,90 @@ void main() {
       await _flush();
 
       expect(notices, [MicNotice.permissionDenied]);
+    });
+  });
+
+  group('cancelActiveCapture (U23d, used by MicNavigationBinding)', () {
+    test('cancels a capture stuck in RequestingPermission, discarding it '
+        'with no delivery attempted', () async {
+      final registry = MicTargetRegistry()
+        ..register(_FakeMicTarget(), layer: MicLayer.branch);
+      final permissionResult = Completer<bool>();
+      final controller = build(
+        registry: registry,
+        recorderFactory: () =>
+            _FakeSpeechRecorder(permissionResult: permissionResult),
+      );
+      addTearDown(controller.dispose);
+
+      controller.toggle();
+      await _flush();
+      expect(controller.state, isA<MicRequestingPermission>());
+
+      final cancelled = controller.cancelActiveCapture();
+      await _flush();
+
+      expect(cancelled, isTrue);
+      expect(controller.state, isA<MicIdle>());
+      permissionResult.complete(true);
+      await _flush();
+    });
+
+    test('cancels an active Recording, discarding it with no delivery '
+        'attempted', () async {
+      final registry = MicTargetRegistry();
+      final target = _FakeMicTarget();
+      registry.register(target, layer: MicLayer.branch);
+      final controller = build(registry: registry);
+      addTearDown(controller.dispose);
+
+      controller.toggle();
+      await _flush();
+      expect(controller.state, isA<MicRecording>());
+
+      final cancelled = controller.cancelActiveCapture();
+      await _flush();
+
+      expect(cancelled, isTrue);
+      expect(controller.state, isA<MicIdle>());
+      expect(target.deliverCalls, 0);
+    });
+
+    test('is a no-op while idle or delivering — an in-flight delivery is '
+        'NEVER cancelled', () async {
+      final clock = FixedClock(DateTime(2026));
+      final registry = MicTargetRegistry();
+      final target = _FakeMicTarget()
+        ..pendingDelivery = Completer<MicDelivery>();
+      registry.register(target, layer: MicLayer.branch);
+      final controller = build(registry: registry, clock: clock);
+      addTearDown(controller.dispose);
+
+      expect(controller.cancelActiveCapture(), isFalse);
+
+      await recordAndDeliver(controller, clock);
+      expect(controller.state, isA<MicDelivering>());
+      expect(controller.cancelActiveCapture(), isFalse);
+      expect(controller.state, isA<MicDelivering>());
+
+      target.pendingDelivery!.complete(const MicAccepted());
+      await _flush();
+      expect(target.deliverCalls, 1);
+    });
+  });
+
+  group('emitNotice (U23d, used by MicNavigationBinding to defer the '
+      'background-cancel notice until the app is visible again)', () {
+    test('re-emits exactly the given notice on the notices stream', () async {
+      final controller = build();
+      addTearDown(controller.dispose);
+      final notices = <MicNotice>[];
+      controller.notices.listen(notices.add);
+
+      controller.emitNotice(MicNotice.cancelledByBackground);
+      await _flush();
+
+      expect(notices, [MicNotice.cancelledByBackground]);
     });
   });
 }
