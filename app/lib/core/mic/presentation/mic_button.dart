@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flui/core/mic/mic_controller.dart';
+import 'package:flui/core/mic/mic_target.dart';
+import 'package:flui/core/mic/presentation/mic_blocked_sheet.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
@@ -78,7 +82,45 @@ class _MicButtonState extends State<MicButton>
     super.dispose();
   }
 
-  void _activate() => widget.controller.toggle();
+  /// The latched block on the controller's CURRENT idle state, if any
+  /// (design §19.6): a gesture while blocked opens the matching sheet
+  /// instead of reaching `MicController` at all — the controller would
+  /// only re-emit the identical `MicIdle(block: ...)` itself (D31), never
+  /// start a capture.
+  MicBlocked? get _currentBlock {
+    final state = widget.controller.state;
+    return state is MicIdle ? state.block : null;
+  }
+
+  void _activate() {
+    final block = _currentBlock;
+    if (block != null) {
+      unawaited(
+        showMicBlockedSheet(
+          context,
+          block: block,
+          controller: widget.controller,
+        ),
+      );
+      return;
+    }
+    widget.controller.toggle();
+  }
+
+  void _pointerDown() {
+    final block = _currentBlock;
+    if (block != null) {
+      unawaited(
+        showMicBlockedSheet(
+          context,
+          block: block,
+          controller: widget.controller,
+        ),
+      );
+      return;
+    }
+    widget.controller.pointerDown();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +164,7 @@ class _MicButtonState extends State<MicButton>
                   // `HoldToRecord`'s own down/up timing, never by a
                   // `GestureDetector.onTap` here — that would double-fire
                   // alongside these pointer callbacks for the same gesture.
-                  onPointerDown: (_) => widget.controller.pointerDown(),
+                  onPointerDown: (_) => _pointerDown(),
                   onPointerUp: (_) => widget.controller.pointerUp(),
                   onPointerCancel: (_) => widget.controller.pointerCancel(),
                   child: SizedBox.square(
