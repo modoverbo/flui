@@ -178,6 +178,30 @@ void main() {
         expect(fired, 3);
       },
     );
+
+    test('setActiveBranch to a different index fires changes (so MicController '
+        "can refresh its idle prompt to the newly-active branch's target); "
+        'setting the SAME index again fires nothing — AppShell calls this on '
+        'every rebuild, so it must not notify/churn when the branch has not '
+        'actually changed', () async {
+      final registry = MicTargetRegistry();
+      var fired = 0;
+      registry.changes.listen((_) => fired++);
+
+      registry.setActiveBranch(1);
+      await Future<void>.delayed(Duration.zero);
+      expect(fired, 1);
+
+      // Same index again (as AppShell does on every rebuild while the
+      // user stays on the same tab) — no notification.
+      registry.setActiveBranch(1);
+      await Future<void>.delayed(Duration.zero);
+      expect(fired, 1);
+
+      registry.setActiveBranch(0);
+      await Future<void>.delayed(Duration.zero);
+      expect(fired, 2);
+    });
   });
 
   group('token identity', () {

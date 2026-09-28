@@ -1,14 +1,26 @@
+import 'dart:async';
+import 'dart:typed_data';
+
 import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/app/shell/flui_bottom_bar.dart';
+import 'package:flui/core/audio/audio_providers.dart';
+import 'package:flui/core/audio/recorded_audio.dart';
+import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/mic/mic_controller.dart';
+import 'package:flui/core/mic/mic_providers.dart';
+import 'package:flui/core/mic/mic_target.dart';
+import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/themes/data/fake/seed_themes.dart';
 import 'package:flui/features/training/domain/training_mode.dart';
+import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
@@ -17,6 +29,52 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../integration_test/support/app_harness.dart';
+
+/// A controllable fake, ported from `mic_button_test.dart`'s — the real
+/// path only needs a permission-granted recorder that finishes instantly.
+final class _FakeSpeechRecorder implements SpeechRecorder {
+  new();
+
+  @override
+  Stream<double> get amplitude => const Stream.empty();
+
+  @override
+  Future<bool> requestPermission() async => true;
+
+  @override
+  Future<void> start() async {}
+
+  @override
+  Future<Uint8List> stop() async => Uint8List.fromList(const [1, 2, 3]);
+
+  @override
+  Future<void> cancel() async {}
+
+  @override
+  Future<void> dispose() async {}
+}
+
+/// A minimal fake with a distinctive, controllable prompt — used to prove
+/// the mic's idle label actually reflects whichever branch is active,
+/// without depending on the real training loop's exact copy strings.
+final class _FakeMicTarget implements MicTarget {
+  new({required this.prompt});
+
+  @override
+  final MicPrompt prompt;
+
+  @override
+  final Duration maxDuration = const Duration(seconds: 30);
+
+  @override
+  MicAvailability get availability => const MicReady();
+
+  @override
+  Stream<void> get changes => const Stream.empty();
+
+  @override
+  Future<MicDelivery> deliver(RecordedAudio audio) async => const MicAccepted();
+}
 
 void main() {
   const ana = AppUser(
@@ -331,7 +389,7 @@ void main() {
       expect(location(harness), AppRoutes.train);
       // Still inside the shell: the tab bar renders, and the landing
       // content is the mode picker, never a 404.
-      expect(find.byType(NavigationBar), findsOneWidget);
+      expect(find.byType(FluiBottomBar), findsOneWidget);
       expect(find.text('Piensa y habla'), findsOneWidget);
     });
 
@@ -368,7 +426,7 @@ void main() {
           arrange: (h) => h.planToday(),
         );
 
-        expect(find.byType(NavigationBar), findsOneWidget);
+        expect(find.byType(FluiBottomBar), findsOneWidget);
         await tester.tap(find.text('Piensa y habla'));
         await tester.pumpAndSettle();
 
@@ -378,7 +436,111 @@ void main() {
         );
         // Branch child, not a root-navigator take-over (design D30): the
         // shell chrome stays, unlike the retired speaking-challenge "live".
-        expect(find.byType(NavigationBar), findsOneWidget);
+        expect(find.byType(FluiBottomBar), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      "tapping the shell mic delivers to the ENTRENAR branch's registered "
+      'LoopMicTarget; switching to Hoy changes what the mic resolves '
+      '(U23c real-path wiring)',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            ...gymOn(),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.trainMode(TrainingMode.thinkAndSpeak),
+          arrange: (h) => h.planToday(),
+        );
+
+        final registry = harness.container.read(micTargetRegistryProvider);
+        final (onEntrenar, _) = registry.resolve();
+        expect(onEntrenar, isA<LoopMicTarget>());
+
+        final controller = harness.container.read(micControllerProvider);
+        expect(controller, isNotNull);
+        final notices = <MicNotice>[];
+        controller!.notices.listen(notices.add);
+
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        expect(controller.state, isA<MicRecording>());
+
+        harness.clock.advance(const Duration(milliseconds: 700));
+        await gesture.up();
+        await tester.pumpAndSettle();
+
+        // The delivery actually reached the registered target (not the
+        // explained fallback, which would have emitted deliveryFailed):
+        // the mic settles back to idle with no failure notice.
+        expect(notices, isNot(contains(MicNotice.deliveryFailed)));
+        expect(controller.state, isA<MicIdle>());
+        expect((controller.state as MicIdle).block, isNull);
+
+        // Switching tabs changes which target the mic resolves against.
+        await tester.tap(find.text('Hoy'));
+        await tester.pumpAndSettle();
+        final (onHoy, _) = registry.resolve();
+        expect(onHoy, isNot(isA<LoopMicTarget>()));
+      },
+    );
+
+    testWidgets(
+      "switching tabs refreshes the mic's visible idle label to the newly "
+      'active branch (orchestrator review finding on U23c: setActiveBranch '
+      'must notify MicController, not just flip an internal index)',
+      (tester) async {
+        final handle = tester.ensureSemantics();
+        const distinctiveLabel = 'ETIQUETA_DISTINTIVA_ENTRENAR';
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: gymOn(),
+        );
+        await harness.pumpApp(tester, arrange: (h) => h.planToday());
+        // Lands on Hoy (branch 0) by default.
+
+        harness.container
+            .read(micTargetRegistryProvider)
+            .register(
+              _FakeMicTarget(
+                prompt: const MicPrompt(actionLabel: distinctiveLabel),
+              ),
+              layer: MicLayer.branch,
+              branch: 1,
+            );
+        await tester.pump();
+
+        // Still on Hoy: the ENTRENAR-only target must not be visible yet.
+        var label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, isNot(distinctiveLabel));
+
+        await tester.tap(find.text('Entrenar'));
+        await tester.pumpAndSettle();
+        label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, distinctiveLabel);
+
+        await tester.tap(find.text('Hoy'));
+        await tester.pumpAndSettle();
+        label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, isNot(distinctiveLabel));
+
+        await tester.tap(find.text('Entrenar'));
+        await tester.pumpAndSettle();
+        label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, distinctiveLabel);
+        handle.dispose();
       },
     );
   });

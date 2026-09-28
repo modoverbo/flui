@@ -5,6 +5,7 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/app/router/flui_transitions.dart';
 import 'package:flui/app/shell/app_shell.dart';
 import 'package:flui/core/config/feature_flags.dart';
+import 'package:flui/core/mic/presentation/mic_layer_scope.dart';
 import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/pages/password_reset_page.dart';
 import 'package:flui/features/auth/presentation/pages/register_page.dart';
@@ -123,10 +124,17 @@ List<RouteBase> _routes(
     builder: (context, state, navigationShell) =>
         AppShell(navigationShell: navigationShell),
     // The default `StatefulShellRoute.indexedStack` container, spelled out
-    // explicitly (U16) so a later unit (U23c) can wrap it with
-    // `MicLayerScope` per branch without changing this behavior.
+    // explicitly (U16) so each branch can be wrapped with `MicLayerScope`
+    // (U23c, design §19.7) without changing the underlying behavior:
+    // still one `IndexedStack` keeping every branch's navigator alive.
     navigatorContainerBuilder: (context, navigationShell, children) =>
-        IndexedStack(index: navigationShell.currentIndex, children: children),
+        IndexedStack(
+          index: navigationShell.currentIndex,
+          children: [
+            for (final (index, child) in children.indexed)
+              MicLayerScope(branch: index, child: child),
+          ],
+        ),
     branches: speakingGym ? _gymBranches(rootKey) : _originalBranches(rootKey),
   ),
 ];
