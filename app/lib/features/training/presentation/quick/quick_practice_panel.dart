@@ -214,14 +214,15 @@ class _Actions extends ConsumerWidget {
   final AppLocalizations l10n;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) => Row(
-    mainAxisAlignment: MainAxisAlignment.end,
+  Widget build(BuildContext context, WidgetRef ref) => Wrap(
+    alignment: WrapAlignment.end,
+    spacing: FluiSpacing.sm,
+    runSpacing: FluiSpacing.xs,
     children: [
       FluiButton.text(
         label: l10n.quickPracticeCloseAction,
         onPressed: () => ref.read(quickPracticeTargetProvider).dismiss(),
       ),
-      const SizedBox(width: FluiSpacing.sm),
       FluiButton.outline(
         label: l10n.quickPracticeAnotherAction,
         expand: false,
