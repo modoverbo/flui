@@ -1,5 +1,8 @@
+import 'package:flui/app/shell/flui_bottom_bar.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/l10n.dart';
+import 'package:flui/core/mic/mic_providers.dart';
+import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
@@ -67,6 +70,9 @@ class AppShellScaffold extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final speakingGym = ref.watch(speakingGymEnabledProvider);
+    // Only watched when the flag is on: the flag-off shell never touches
+    // the mic session at all (D32).
+    final micController = speakingGym ? ref.watch(micControllerProvider) : null;
     final items = speakingGym
         ? [
             for (final destination in GymShellDestination.values)
@@ -103,49 +109,63 @@ class AppShellScaffold extends ConsumerWidget {
           return Scaffold(
             backgroundColor: FluiColors.paper,
             body: child,
-            bottomNavigationBar: SafeArea(
-              minimum: const EdgeInsets.fromLTRB(14, 0, 14, 12),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(28),
-                child: NavigationBar(
-                  backgroundColor: FluiColors.surface,
-                  indicatorColor: FluiColors.greenTint,
-                  labelTextStyle: WidgetStateProperty.resolveWith(
-                    (states) => TextStyle(
-                      color: states.contains(WidgetState.selected)
-                          ? FluiColors.ink
-                          : FluiColors.gray,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  selectedIndex: selectedIndex,
-                  onDestinationSelected: onDestinationSelected,
-                  destinations: [
-                    for (final (index, (glyph, label)) in items.indexed)
-                      NavigationDestination(
-                        icon: Semantics(
-                          hint: index == progressIndex
-                              ? l10n.navProgress
-                              : null,
-                          child: FluiGlyphIcon(
-                            glyph,
-                            size: FluiIconSize.tab,
-                            color: index == selectedIndex
-                                ? FluiColors.greenDeep
+            bottomNavigationBar: speakingGym
+                ? FluiBottomBar(
+                    items: [
+                      for (final (index, entry) in items.indexed)
+                        if (index == progressIndex)
+                          (entry.$1, l10n.navProgressShort)
+                        else
+                          entry,
+                    ],
+                    selectedIndex: selectedIndex,
+                    onDestinationSelected: onDestinationSelected,
+                    progressIndex: progressIndex,
+                    micController: micController,
+                  )
+                : SafeArea(
+                    minimum: const EdgeInsets.fromLTRB(14, 0, 14, 12),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(28),
+                      child: NavigationBar(
+                        backgroundColor: FluiColors.surface,
+                        indicatorColor: FluiColors.greenTint,
+                        labelTextStyle: WidgetStateProperty.resolveWith(
+                          (states) => TextStyle(
+                            color: states.contains(WidgetState.selected)
+                                ? FluiColors.ink
                                 : FluiColors.gray,
+                            fontWeight: FontWeight.w700,
                           ),
                         ),
-                        label: index == progressIndex
-                            ? l10n.navProgressShort
-                            : label,
-                        tooltip: index == progressIndex
-                            ? l10n.navProgress
-                            : null,
+                        selectedIndex: selectedIndex,
+                        onDestinationSelected: onDestinationSelected,
+                        destinations: [
+                          for (final (index, (glyph, label)) in items.indexed)
+                            NavigationDestination(
+                              icon: Semantics(
+                                hint: index == progressIndex
+                                    ? l10n.navProgress
+                                    : null,
+                                child: FluiGlyphIcon(
+                                  glyph,
+                                  size: FluiIconSize.tab,
+                                  color: index == selectedIndex
+                                      ? FluiColors.greenDeep
+                                      : FluiColors.gray,
+                                ),
+                              ),
+                              label: index == progressIndex
+                                  ? l10n.navProgressShort
+                                  : label,
+                              tooltip: index == progressIndex
+                                  ? l10n.navProgress
+                                  : null,
+                            ),
+                        ],
                       ),
-                  ],
-                ),
-              ),
-            ),
+                    ),
+                  ),
           );
         }
 
@@ -177,7 +197,9 @@ class AppShellScaffold extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(
                       vertical: FluiSpacing.lg,
                     ),
-                    child: extended
+                    child: speakingGym && micController != null
+                        ? MicButton(controller: micController)
+                        : extended
                         ? const FluiLogo(symbolSize: 32)
                         : const FluiSymbol(size: 32, semanticLabel: 'flui'),
                   ),

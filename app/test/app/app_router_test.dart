@@ -1,5 +1,6 @@
 import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/app/shell/flui_bottom_bar.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
@@ -331,7 +332,7 @@ void main() {
       expect(location(harness), AppRoutes.train);
       // Still inside the shell: the tab bar renders, and the landing
       // content is the mode picker, never a 404.
-      expect(find.byType(NavigationBar), findsOneWidget);
+      expect(find.byType(FluiBottomBar), findsOneWidget);
       expect(find.text('Piensa y habla'), findsOneWidget);
     });
 
@@ -368,7 +369,7 @@ void main() {
           arrange: (h) => h.planToday(),
         );
 
-        expect(find.byType(NavigationBar), findsOneWidget);
+        expect(find.byType(FluiBottomBar), findsOneWidget);
         await tester.tap(find.text('Piensa y habla'));
         await tester.pumpAndSettle();
 
@@ -378,7 +379,7 @@ void main() {
         );
         // Branch child, not a root-navigator take-over (design D30): the
         // shell chrome stays, unlike the retired speaking-challenge "live".
-        expect(find.byType(NavigationBar), findsOneWidget);
+        expect(find.byType(FluiBottomBar), findsOneWidget);
       },
     );
   });

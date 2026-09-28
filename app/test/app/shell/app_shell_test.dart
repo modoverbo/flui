@@ -1,4 +1,5 @@
 import 'package:flui/app/shell/app_shell_scaffold.dart';
+import 'package:flui/app/shell/flui_bottom_bar.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -99,18 +100,21 @@ void main() {
     expect(rail.destinations, hasLength(4));
   });
 
-  group('speakingGym ON (U16)', () {
+  group('speakingGym ON (U16 shell reorder, U23c mic bar)', () {
     const gymLabels = ['Hoy', 'Entrenar', 'Palabras', 'Tu progreso'];
     final gymOn = [speakingGymEnabledProvider.overrideWithValue(true)];
 
-    testWidgets('reorders to Hoy/Entrenar/Palabras/Progreso', (tester) async {
+    testWidgets('phones show FluiBottomBar (not the M3 NavigationBar) with Hoy/'
+        'Entrenar/Palabras/Progreso', (tester) async {
       final selected = await pumpShell(
         tester,
         const Size(400, 800),
         overrides: gymOn,
       );
 
-      expect(find.byType(NavigationDestination), findsNWidgets(4));
+      expect(find.byType(FluiBottomBar), findsOneWidget);
+      expect(find.byType(NavigationBar), findsNothing);
+      expect(find.byType(NavigationDestination), findsNothing);
       for (final label in gymLabels.take(3)) {
         expect(find.text(label), findsOneWidget);
       }
@@ -121,6 +125,25 @@ void main() {
 
       await tester.tap(find.text('Palabras'));
       expect(selected, [1, 2]);
+    });
+
+    testWidgets('wide screens still use a NavigationRail with 4 destinations', (
+      tester,
+    ) async {
+      final selected = await pumpShell(
+        tester,
+        const Size(1280, 800),
+        overrides: gymOn,
+      );
+
+      expect(find.byType(NavigationRail), findsOneWidget);
+      expect(find.byType(FluiBottomBar), findsNothing);
+      for (final label in gymLabels) {
+        expect(find.text(label), findsOneWidget);
+      }
+
+      await tester.tap(find.text('Palabras'));
+      expect(selected, [2]);
     });
   });
 }
