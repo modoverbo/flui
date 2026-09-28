@@ -9,6 +9,9 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
@@ -20,6 +23,8 @@ import 'package:flui/features/subscription/presentation/pages/plan_preview_page.
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/features/subscription/presentation/widgets/plan_card.dart';
 import 'package:flui/features/subscription/presentation/widgets/trial_timeline.dart';
+import 'package:flui/features/training/domain/skill.dart';
+import 'package:flui/features/training/domain/skill_profile.dart';
 import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
@@ -693,5 +698,112 @@ void main() {
       expect(await store.readSelectedPlanId(), 'monthly');
       expect(subscriptions.checkoutRequests, isEmpty);
     });
+  });
+
+  group('with speakingGym on (U14b, 2-state copy)', () {
+    late FakeSkillProfileRepository skillProfiles;
+
+    setUp(() {
+      skillProfiles = FakeSkillProfileRepository(
+        currentUserId: () => auth.currentUser?.id,
+      );
+    });
+
+    Future<void> pumpPaywallGym(WidgetTester tester) async {
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.paywall,
+        page: const PaywallPage(),
+        overrides: [
+          authRepositoryProvider.overrideWithValue(auth),
+          subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+          checkoutLauncherProvider.overrideWithValue(launcher),
+          onboardingStoreProvider.overrideWithValue(store),
+          skillProfileRepositoryProvider.overrideWithValue(skillProfiles),
+          speakingGymEnabledProvider.overrideWithValue(true),
+        ],
+        surfaceSize: const Size(420, 1600),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('first-ever view (no skill profile yet) renders static, '
+        'profile-independent copy — never the retired onboarding echo', (
+      tester,
+    ) async {
+      await pumpPaywallGym(tester);
+
+      expect(
+        find.text('Vas a practicar con retos reales de hablar.'),
+        findsOneWidget,
+      );
+      expect(find.text('Palabras para trabajo y entrevista.'), findsNothing);
+      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
+      expect(find.text('Palabras para cualquier conversación.'), findsNothing);
+      expect(find.text('Con el tono que elijas.'), findsNothing);
+    });
+
+    testWidgets('reactivation view (an existing skill profile) echoes the '
+        'top-opportunity area', (tester) async {
+      skillProfiles.seedProfile(
+        SkillProfileRecord(
+          id: 'diag-1',
+          kind: SkillProfileKind.baseline,
+          diagnosedAt: DateTime(2026, 9, 5),
+          profile: const SkillProfile(
+            topArea: SkillArea.thinking,
+            secondArea: SkillArea.language,
+            strengths: [],
+            evidence: [],
+          ),
+        ),
+      );
+      await pumpPaywallGym(tester);
+
+      expect(
+        find.text('Vas a seguir trabajando en cómo organizas tus ideas.'),
+        findsOneWidget,
+      );
+      expect(
+        find.text('Vas a practicar con retos reales de hablar.'),
+        findsNothing,
+      );
+    });
+  });
+
+  group('/plan before the account exists, with speakingGym on', () {
+    Future<void> pumpPreviewGym(WidgetTester tester) async {
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.plan,
+        page: const PlanPreviewPage(),
+        otherRoutes: [AppRoutes.register],
+        overrides: [
+          subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+          onboardingStoreProvider.overrideWithValue(store),
+          speakingGymEnabledProvider.overrideWithValue(true),
+        ],
+        surfaceSize: const Size(420, 1600),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets(
+      'always renders the static copy — a profile can never exist before '
+      'the account does',
+      (tester) async {
+        await pumpPreviewGym(tester);
+
+        expect(
+          find.text('Vas a practicar con retos reales de hablar.'),
+          findsOneWidget,
+        );
+        expect(find.text('Palabras para trabajo y entrevista.'), findsNothing);
+        expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
+        expect(tester.takeException(), isNull);
+      },
+    );
   });
 }

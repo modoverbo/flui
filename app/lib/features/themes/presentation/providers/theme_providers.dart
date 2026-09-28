@@ -1,7 +1,9 @@
 import 'package:flui/core/clock/clock_providers.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
+import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/domain/theme_recommender.dart';
@@ -45,10 +47,19 @@ Future<List<Theme>> offeredThemes(Ref ref) async {
 
 /// The three cards the daily prompt opens on, ranked from the two pre-signup
 /// answers (Patall 2008: choice helps most at 2-4 options).
+///
+/// The two preference questions are retired behind `speakingGym` (U14b):
+/// while the flag is on, this never reads [onboardingAnswersControllerProvider]
+/// (those screens are never shown, so the answers can never be real) and
+/// falls back to [OnboardingAnswers.empty], which [ThemeRecommender] already
+/// turns into its own catalog-order default.
 @Riverpod(keepAlive: true)
 Future<List<Theme>> recommendedThemes(Ref ref) async {
   final offered = await ref.watch(offeredThemesProvider.future);
-  final answers = await ref.watch(onboardingAnswersControllerProvider.future);
+  final speakingGym = ref.watch(speakingGymEnabledProvider);
+  final answers = speakingGym
+      ? OnboardingAnswers.empty
+      : await ref.watch(onboardingAnswersControllerProvider.future);
   return ThemeRecommender.recommend(themes: offered, answers: answers);
 }
 

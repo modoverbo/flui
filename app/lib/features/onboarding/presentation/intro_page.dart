@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
@@ -25,7 +26,21 @@ import 'package:material_ui/material_ui.dart';
 /// The steps before the account: three benefit pages that make the promise, two
 /// questions that make it personal, and one real word so the promise is
 /// something the user has already felt.
+///
+/// The two preference questions ([contexts], [tone]) are retired behind
+/// `speakingGym` (U14b): the spoken diagnosis replaces them, so a new
+/// signup with the flag on never sees either screen — see
+/// [_IntroPageState._steps].
 enum OnboardingStep { promise, rhythm, ownership, contexts, tone, lesson }
+
+/// The steps shown with `speakingGym` on: the two retired preference
+/// questions are skipped entirely.
+const List<OnboardingStep> _speakingGymSteps = [
+  OnboardingStep.promise,
+  OnboardingStep.rhythm,
+  OnboardingStep.ownership,
+  OnboardingStep.lesson,
+];
 
 class IntroPage extends ConsumerStatefulWidget {
   const new({super.key});
@@ -41,13 +56,19 @@ class _IntroPageState extends ConsumerState<IntroPage> {
   var _lessonDone = false;
   var _movingForward = true;
 
-  OnboardingStep get _step => OnboardingStep.values[_index];
+  /// The step sequence: full when `speakingGym` is off (matches today), the
+  /// two retired questions skipped when it is on.
+  List<OnboardingStep> get _steps => ref.read(speakingGymEnabledProvider)
+      ? _speakingGymSteps
+      : OnboardingStep.values;
+
+  OnboardingStep get _step => _steps[_index];
 
   void _finish() => context.go(AppRoutes.plan);
 
   void _next() {
     if (_index < 2) return _moveBenefit(forward: true);
-    if (_index == OnboardingStep.values.length - 1) return _finish();
+    if (_index == _steps.length - 1) return _finish();
     setState(() => _index++);
   }
 
@@ -170,7 +191,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
           children: [
             _Rail(
               index: _index,
-              total: OnboardingStep.values.length,
+              total: _steps.length,
               onDark: onDark,
               onBack: _back,
               onSkip: _finish,

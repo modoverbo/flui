@@ -113,10 +113,5 @@ class _ResultBody extends StatelessWidget {
       : behaviorCodeLine(l10n, behavior);
 
   static String _areaLabel(AppLocalizations l10n, SkillArea area) =>
-      switch (area) {
-        SkillArea.thinking => l10n.diagnosisAreaThinking,
-        SkillArea.language => l10n.diagnosisAreaLanguage,
-        SkillArea.voice => l10n.diagnosisAreaVoice,
-        SkillArea.fluency => l10n.diagnosisAreaFluency,
-      };
+      skillAreaLine(l10n, area);
 }
