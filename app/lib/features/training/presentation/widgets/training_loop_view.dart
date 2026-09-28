@@ -4,6 +4,7 @@ import 'package:flui/core/l10n/gen/app_localizations.dart';
 import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/mic_target.dart';
+import 'package:flui/core/mic/presentation/mic_target_scope.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/training/domain/attempt_comparison.dart';
@@ -45,111 +46,59 @@ final _challengeByIdProvider = FutureProvider.autoDispose
       return null;
     });
 
-/// The reusable training-loop screen body (design §10, §19.8, §13 — U13b).
+/// The reusable training-loop screen body (design §10, §19.8, §13 — U13b,
+/// migrated to `MicTargetScope` in U23c).
 ///
 /// Owns NO record affordance of its own: capture happens exclusively
 /// through the shell's single mic (decision #448). This widget only shows
 /// a passive status panel reflecting [MicController] and a phase-specific
-/// card, and registers a [LoopMicTarget] so the mic knows what to deliver
-/// recorded audio to.
+/// card, and wraps its content in a [MicTargetScope] registering a
+/// [LoopMicTarget] so the mic knows what to deliver recorded audio to.
 ///
-/// **Deviation from design/detail-2 (documented, see apply-progress)**:
-/// detail-2's own acceptance line says "`MicTargetScope` wraps the loop
-/// view, registering `LoopMicTarget` in `initState`/`didUpdateWidget`/
-/// `dispose`" — but `MicTargetScope` (and `MicLayerScope`, which would
-/// supply the active branch index) are U23c deliverables, and U13b lands
-/// BEFORE U23c in the units' own dependency sequence
-/// (`U23a→U23b→U13a→U13b→U16→U23c→...`). This widget therefore performs
-/// that exact registration lifecycle itself, directly against
-/// [micTargetRegistryProvider], with [MicLayer.branch] at the registry's
-/// default active branch (0) — the same effect `MicTargetScope` will have
-/// once it exists. U23c/U16 are expected to either supply the real branch
-/// index once shell wiring exists, or replace this with the shared
-/// `MicTargetScope` widget outright.
-class TrainingLoopView extends ConsumerStatefulWidget {
+/// `MicTargetScope` registers on whichever [MicLayer]/branch the nearest
+/// `MicLayerScope` ancestor resolves to (design §19.4/§19.7) — for this
+/// widget that is always the real ENTRENAR branch index once mounted
+/// inside the router's shell, not a hardcoded branch 0 (the U13b-era
+/// deviation this migration removes).
+class TrainingLoopView extends ConsumerWidget {
   const new({required this.request, super.key});
 
   final LoopRequest request;
 
   @override
-  ConsumerState<TrainingLoopView> createState() => _TrainingLoopViewState();
-}
-
-class _TrainingLoopViewState extends ConsumerState<TrainingLoopView> {
-  MicRegistration? _registration;
-
-  /// Keeps `loopMicTargetProvider` (autoDispose) ALIVE for as long as this
-  /// widget is registered. A plain `ref.read(...)` in [initState] does NOT
-  /// do this: with no watcher left after that single read, Riverpod
-  /// disposes the provider on the next microtask, which runs the
-  /// `LoopMicTarget`'s own `ref.onDispose(target.dispose)` — closing its
-  /// subscription and leaving its captured `Ref` unusable, while
-  /// `MicTargetRegistry` keeps pointing at that now-dead target. A real
-  /// mic delivery through the registry would then throw or silently do
-  /// nothing (orchestrator review finding on commit 72fe2f1).
-  ProviderSubscription<LoopMicTarget>? _targetSubscription;
-
-  @override
-  void initState() {
-    super.initState();
-    _register();
-  }
-
-  @override
-  void didUpdateWidget(covariant TrainingLoopView oldWidget) {
-    super.didUpdateWidget(oldWidget);
-    if (oldWidget.request != widget.request) {
-      _unregister();
-      _register();
-    }
-  }
-
-  void _register() {
-    final subscription = ref.listenManual(
-      loopMicTargetProvider(widget.request),
-      (_, _) {},
-    );
-    _targetSubscription = subscription;
-    _registration = ref
-        .read(micTargetRegistryProvider)
-        .register(subscription.read(), layer: MicLayer.branch);
-  }
-
-  void _unregister() {
-    _registration?.dispose();
-    _registration = null;
-    _targetSubscription?.close();
-    _targetSubscription = null;
-  }
-
-  @override
-  void dispose() {
-    _unregister();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final state = ref.watch(trainingLoopControllerProvider(widget.request));
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(trainingLoopControllerProvider(request));
     final micController = ref.watch(micControllerProvider);
-    return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 620),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(24, 12, 24, 36),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              _StatusPanel(controller: micController),
-              const SizedBox(height: FluiSpacing.lg),
-              _PhaseBody(
-                state: state,
-                request: widget.request,
-                controller: ref.read(
-                  trainingLoopControllerProvider(widget.request).notifier,
+    // `ref.watch` here (not `ref.read`) is what keeps the autoDispose
+    // `loopMicTargetProvider` alive for as long as this widget is built —
+    // matching the exact same instance `MicTargetScope` registers and
+    // `didUpdateWidget` updates on a `request` change, without the manual
+    // `ref.listenManual` lifecycle U13b needed before `MicTargetScope`
+    // existed (orchestrator review finding on commit 72fe2f1, now
+    // structurally impossible to regress: the target is only ever read via
+    // `watch`).
+    final target = ref.watch(loopMicTargetProvider(request));
+    return MicTargetScope(
+      target: target,
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 620),
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(24, 12, 24, 36),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _StatusPanel(controller: micController),
+                const SizedBox(height: FluiSpacing.lg),
+                _PhaseBody(
+                  state: state,
+                  request: request,
+                  controller: ref.read(
+                    trainingLoopControllerProvider(request).notifier,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
