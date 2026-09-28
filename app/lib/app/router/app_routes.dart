@@ -1,3 +1,5 @@
+import 'package:flui/features/training/domain/training_mode.dart';
+
 /// Route paths. Keep them lowercase: go_router matching is case-sensitive.
 abstract final class AppRoutes {
   static const root = '/';
@@ -40,13 +42,27 @@ abstract final class AppRoutes {
   static const words = '/words';
   static const progress = '/progress';
 
-  /// Habla's tab landing: the challenge's own `ready` phase.
+  /// Habla's tab landing: the challenge's own `ready` phase. Live while
+  /// `speakingGym` is off; redirects to [train] while it is on (design D32,
+  /// U16) — see [gymRetiredRoutes].
   static const speakingChallenge = '/speaking/challenge';
 
   /// The challenge itself (recording through comparison), nested under
   /// [speakingChallenge] but rendered full screen on the root navigator —
-  /// the same take-over-from-a-tab pattern as `/today/time`.
+  /// the same take-over-from-a-tab pattern as `/today/time`. Retired
+  /// alongside [speakingChallenge] while `speakingGym` is on.
   static const speakingChallengeLive = '$speakingChallenge/live';
+
+  /// ENTRENAR's tab landing: 4 training-mode cards (U16), replacing the
+  /// Habla/speaking-challenge tab ONLY while `speakingGym` is on (design
+  /// D32) — not reachable while it is off.
+  static const train = '/train';
+
+  /// One training-lab mode's own loop, nested under [train] but rendered
+  /// on the branch navigator, not a full-screen take-over (design D30) —
+  /// unlike [speakingChallengeLive]. Only reachable while `speakingGym` is
+  /// on.
+  static String trainMode(TrainingMode mode) => '$train/${mode.name}';
 
   /// Was a tab of its own. "Repaso extra" now lives on Hoy, and the scenes
   /// live in the word detail, so both redirect instead of 404-ing old links.
@@ -55,6 +71,15 @@ abstract final class AppRoutes {
   static const Map<String, String> retiredRoutes = {
     practice: today,
     reading: words,
+  };
+
+  /// Retired ONLY while `speakingGym` is on (U16, design D32) — consulted
+  /// by `appRedirect`'s `speakingGym` parameter, never unconditionally like
+  /// [retiredRoutes]. While the flag is off, [speakingChallenge]/
+  /// [speakingChallengeLive] resolve to their own live routes instead.
+  static const Map<String, String> gymRetiredRoutes = {
+    speakingChallenge: train,
+    speakingChallengeLive: train,
   };
 
   // Full screen, outside the shell.

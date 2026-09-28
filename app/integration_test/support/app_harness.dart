@@ -28,15 +28,23 @@ import 'package:material_ui/material_ui.dart';
 /// The whole app on the in-memory backend from `bootstrap.dart`, with an
 /// instant clock so polling never waits in real time.
 final class AppHarness {
-  new({AppUser? signedInAs, AccessStatus? access})
-    : _initialUser = signedInAs,
-      _initialAccess = access;
+  new({
+    AppUser? signedInAs,
+    AccessStatus? access,
+    List<Override> overrides = const [],
+  }) : _initialUser = signedInAs,
+       _initialAccess = access,
+       _extraOverrides = overrides;
 
   /// The same fake wiring as `BACKEND=fake`, without artificial latency.
   final List<Override> backend = fakeBackendOverrides(latency: Duration.zero);
   final clock = FixedClock(DateTime(2026, 9, 13, 10));
   final AppUser? _initialUser;
   final AccessStatus? _initialAccess;
+
+  /// Extra overrides a test needs (e.g. `speakingGymEnabledProvider`),
+  /// applied AFTER [backend] so they can override any of it too.
+  final List<Override> _extraOverrides;
   late ProviderContainer container;
 
   FakeAuthRepository get auth =>
@@ -86,6 +94,7 @@ final class AppHarness {
           (duration) async => clock.advance(duration),
         ),
         routerInitialLocationProvider.overrideWithValue(initialLocation),
+        ..._extraOverrides,
       ],
       retry: (_, _) => null,
     );
