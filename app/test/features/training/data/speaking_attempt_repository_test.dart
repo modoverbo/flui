@@ -264,6 +264,36 @@ void main() {
 
       expect((await repository.latestDiagnosisAttempts()).isOk, isFalse);
     });
+
+    test('recentAttemptsSince returns attempts on/after the date, newest '
+        'first, current user only', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      final other = FakeSpeakingAttemptRepository(currentUserId: () => 'u2');
+      await repository.insert(
+        _attempt().copyWith(id: 'old', localDate: day(7)),
+      );
+      await repository.insert(
+        _attempt().copyWith(id: 'a1', localDate: day(10)),
+      );
+      await repository.insert(
+        _attempt().copyWith(id: 'a2', localDate: day(14)),
+      );
+      await other.insert(_attempt().copyWith(id: 'other', localDate: day(14)));
+
+      final result = await repository.recentAttemptsSince(day(9));
+
+      expect(result.valueOrNull?.map((a) => a.id), ['a2', 'a1']);
+    });
+
+    test('recentAttemptsSince fails without a signed-in user', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => null,
+      );
+
+      expect((await repository.recentAttemptsSince(day(1))).isOk, isFalse);
+    });
   });
 
   group('SupabaseSpeakingAttemptRepository', () {
@@ -475,6 +505,40 @@ void main() {
 
       final result = await SupabaseSpeakingAttemptRepository(recorder.client)
           .latestDiagnosisAttempts();
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+
+    test('recentAttemptsSince queries every column filtered by local_date, '
+        'newest first, RLS scopes rows to the owner', () async {
+      final rows = [
+        _attemptRow(_attempt(id: 'a2')),
+        _attemptRow(_attempt()),
+      ];
+      final recorder = SupabaseRecorder(respond: (_) => rows);
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .recentAttemptsSince(day(14));
+
+      expect(result.valueOrNull?.map((a) => a.id), ['a2', 'a1']);
+      expect(recorder.last.method, 'GET');
+      expect(recorder.last.url.path, '/rest/v1/speaking_attempts');
+      expect(recorder.last.url.queryParameters['local_date'], 'gte.2026-09-14');
+      expect(
+        recorder.last.url.queryParameters['order'],
+        'created_at.desc.nullslast',
+      );
+    });
+
+    test('recentAttemptsSince maps transport errors', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .recentAttemptsSince(day(1));
 
       expect(result.failureOrNull, const NetworkFailure());
     });

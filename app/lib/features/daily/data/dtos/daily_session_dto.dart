@@ -20,6 +20,13 @@ abstract class DailySessionDto with _$DailySessionDto {
     /// leave yesterday's theme on a day the user planned without one.
     @JsonKey(includeIfNull: true) String? themeId,
     DateTime? completedAt,
+
+    /// Always written, even as null: same reasoning as [themeId] — a
+    /// re-plan (e.g. changing the duration) that no longer picks a
+    /// training focus must not leave a stale one behind.
+    @JsonKey(includeIfNull: true) String? focusArea,
+    @JsonKey(includeIfNull: true) String? challengeId,
+    @Default(<String>[]) List<String> wovenWordIds,
   }) = _DailySessionDto;
 
   factory fromJson(Map<String, dynamic> json) =>
@@ -34,13 +41,16 @@ abstract class DailySessionDto with _$DailySessionDto {
         plannedWordIds: session.plannedWordIds,
         reviewWordIds: session.reviewWordIds,
         themeId: session.themeId,
+        focusArea: session.focusArea,
+        challengeId: session.challengeId,
+        wovenWordIds: session.wovenWordIds,
       );
 
   const new _();
 
   static const columns =
       'local_date, minutes, planned_word_ids, review_word_ids, theme_id, '
-      'completed_at';
+      'completed_at, focus_area, challenge_id, woven_word_ids';
 
   DailySession toDomain() => DailySession(
     localDate: LocalDate.parse(localDate),
@@ -49,5 +59,8 @@ abstract class DailySessionDto with _$DailySessionDto {
     reviewWordIds: reviewWordIds,
     themeId: themeId,
     completedAt: completedAt,
+    focusArea: focusArea,
+    challengeId: challengeId,
+    wovenWordIds: wovenWordIds,
   );
 }

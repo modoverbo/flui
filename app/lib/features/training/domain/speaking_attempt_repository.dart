@@ -35,4 +35,10 @@ abstract interface class SpeakingAttemptRepository {
   /// 30-day retake can leave stale diagnosis rows behind — a plain
   /// top-3-by-recency query would silently mix those into the current run.
   Future<Result<List<SpeakingAttempt>>> latestDiagnosisAttempts();
+
+  /// Every attempt (any context) with `localDate >= since`, most recent
+  /// first — the raw rows `TrainingPlanner.planDay`'s caller (`PlanToday`,
+  /// U15a) summarizes into `TrainingAttemptSummary` for its 14-day
+  /// recency/focus-shift window (design part-3 §7).
+  Future<Result<List<SpeakingAttempt>>> recentAttemptsSince(LocalDate since);
 }
