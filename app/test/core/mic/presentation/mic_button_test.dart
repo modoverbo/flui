@@ -73,6 +73,21 @@ Future<void> _flush(WidgetTester tester) async {
   }
 }
 
+/// Simulates an assistive-tech "double tap to activate" on the semantics
+/// node [id] — the only stable API for this in the current Flutter SDK is
+/// through the deprecated `pipelineOwner` accessor; the suggested
+/// `rootPipelineOwner` replacement resolves to a different `SemanticsOwner`
+/// in this harness and silently no-ops (see engram bug/fakeasync-hang note).
+void _performSemanticTap(WidgetTester tester, int id) {
+  // `rootPipelineOwner.semanticsOwner` (the suggested replacement) resolves
+  // to a different owner in this harness and silently no-ops.
+  // ignore: deprecated_member_use
+  tester.binding.pipelineOwner.semanticsOwner!.performAction(
+    id,
+    SemanticsAction.tap,
+  );
+}
+
 void main() {
   late FixedClock clock;
   late MicController controller;
@@ -157,20 +172,14 @@ void main() {
     final semantics = tester.getSemantics(find.byType(MicButton));
     expect(semantics.getSemanticsData().hasAction(SemanticsAction.tap), isTrue);
 
-    tester.binding.pipelineOwner.semanticsOwner!.performAction(
-      semantics.id,
-      SemanticsAction.tap,
-    );
+    _performSemanticTap(tester, semantics.id);
     await _flush(tester);
 
     expect(controller.state, isA<MicRecording>());
 
     // Stop the recording (a second semantic tap toggles it off) so no
     // countdown timer is left pending once the test ends.
-    tester.binding.pipelineOwner.semanticsOwner!.performAction(
-      semantics.id,
-      SemanticsAction.tap,
-    );
+    _performSemanticTap(tester, semantics.id);
     await _flush(tester);
     handle.dispose();
   });

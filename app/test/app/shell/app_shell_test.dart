@@ -104,8 +104,8 @@ void main() {
     const gymLabels = ['Hoy', 'Entrenar', 'Palabras', 'Tu progreso'];
     final gymOn = [speakingGymEnabledProvider.overrideWithValue(true)];
 
-    testWidgets('phones show FluiBottomBar (not the M3 NavigationBar) with Hoy/'
-        'Entrenar/Palabras/Progreso', (tester) async {
+    testWidgets('phones show FluiBottomBar (not the M3 NavigationBar) with '
+        'Hoy/Entrenar/Palabras/Progreso', (tester) async {
       final selected = await pumpShell(
         tester,
         const Size(400, 800),

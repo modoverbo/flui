@@ -6,9 +6,10 @@ import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/mic/mic_target_registry.dart';
 import 'package:flui/core/mic/presentation/mic_layer_scope.dart';
 import 'package:flui/core/mic/presentation/mic_target_scope.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
+
+import '../../../helpers/pump_app.dart';
 
 final class _FakeMicTarget implements MicTarget {
   new({required this.prompt});
@@ -39,13 +40,9 @@ void main() {
       final registry = MicTargetRegistry();
       final target = _FakeMicTarget(prompt: const MicPrompt(actionLabel: 'A'));
 
-      await tester.pumpWidget(
-        ProviderScope(
-          overrides: [micTargetRegistryProvider.overrideWithValue(registry)],
-          child: MaterialApp(
-            home: MicTargetScope(target: target, child: const SizedBox()),
-          ),
-        ),
+      await tester.pumpFlui(
+        MicTargetScope(target: target, child: const SizedBox()),
+        overrides: [micTargetRegistryProvider.overrideWithValue(registry)],
       );
 
       final (resolved, _) = registry.resolve();
@@ -63,19 +60,19 @@ void main() {
     final registry = MicTargetRegistry();
     final first = _FakeMicTarget(prompt: const MicPrompt(actionLabel: 'A'));
     final second = _FakeMicTarget(prompt: const MicPrompt(actionLabel: 'B'));
+    final overrides = [micTargetRegistryProvider.overrideWithValue(registry)];
 
-    Widget build(MicTarget target) => ProviderScope(
-      overrides: [micTargetRegistryProvider.overrideWithValue(registry)],
-      child: MaterialApp(
-        home: MicTargetScope(target: target, child: const SizedBox()),
-      ),
+    await tester.pumpFlui(
+      MicTargetScope(target: first, child: const SizedBox()),
+      overrides: overrides,
     );
-
-    await tester.pumpWidget(build(first));
     var (resolved, _) = registry.resolve();
     expect(resolved, same(first));
 
-    await tester.pumpWidget(build(second));
+    await tester.pumpFlui(
+      MicTargetScope(target: second, child: const SizedBox()),
+      overrides: overrides,
+    );
     (resolved, _) = registry.resolve();
     expect(resolved, same(second));
   });
@@ -93,13 +90,9 @@ void main() {
         prompt: const MicPrompt(actionLabel: 'root'),
       );
 
-      await tester.pumpWidget(
-        ProviderScope(
-          overrides: [micTargetRegistryProvider.overrideWithValue(registry)],
-          child: MaterialApp(
-            home: MicTargetScope(target: rootTarget, child: const SizedBox()),
-          ),
-        ),
+      await tester.pumpFlui(
+        MicTargetScope(target: rootTarget, child: const SizedBox()),
+        overrides: [micTargetRegistryProvider.overrideWithValue(registry)],
       );
 
       // Root always wins over a branch entry (registry.resolve()'s own
@@ -120,30 +113,26 @@ void main() {
       prompt: const MicPrompt(actionLabel: 'branch1'),
     );
 
-    await tester.pumpWidget(
-      ProviderScope(
-        overrides: [micTargetRegistryProvider.overrideWithValue(registry)],
-        child: MaterialApp(
-          home: Column(
-            children: [
-              MicLayerScope(
-                branch: 0,
-                child: MicTargetScope(
-                  target: branch0Target,
-                  child: const SizedBox(),
-                ),
-              ),
-              MicLayerScope(
-                branch: 1,
-                child: MicTargetScope(
-                  target: branch1Target,
-                  child: const SizedBox(),
-                ),
-              ),
-            ],
+    await tester.pumpFlui(
+      Column(
+        children: [
+          MicLayerScope(
+            branch: 0,
+            child: MicTargetScope(
+              target: branch0Target,
+              child: const SizedBox(),
+            ),
           ),
-        ),
+          MicLayerScope(
+            branch: 1,
+            child: MicTargetScope(
+              target: branch1Target,
+              child: const SizedBox(),
+            ),
+          ),
+        ],
       ),
+      overrides: [micTargetRegistryProvider.overrideWithValue(registry)],
     );
 
     registry.setActiveBranch(0);
