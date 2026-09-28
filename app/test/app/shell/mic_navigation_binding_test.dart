@@ -401,6 +401,67 @@ void main() {
     });
   });
 
+  group('extra location/registry callbacks '
+      '(orchestrator review finding on feat/quick-practice, U23e)', () {
+    testWidgets(
+      'onLocationChanged fires on a real router path change, never on '
+      'a same-uri notification',
+      (tester) async {
+        controller = buildController();
+        addTearDown(() => unawaited(controller.dispose()));
+        var calls = 0;
+        binding = MicNavigationBinding(
+          registry: registry,
+          controllerOf: () => controller,
+          routerSource: router,
+          onLocationChanged: () => calls++,
+        );
+        addTearDown(binding.dispose);
+
+        router.go('/today'); // same uri as the initial location
+        await _flush(tester);
+        expect(calls, 0);
+
+        router.go('/train');
+        await _flush(tester);
+        expect(calls, 1);
+      },
+    );
+
+    testWidgets('onRegistryEvent fires on every registry.changes event, '
+        'independent of whether a capture is bound', (tester) async {
+      controller = buildController();
+      addTearDown(() => unawaited(controller.dispose()));
+      var calls = 0;
+      binding = MicNavigationBinding(
+        registry: registry,
+        controllerOf: () => controller,
+        routerSource: router,
+        onRegistryEvent: () => calls++,
+      );
+      addTearDown(binding.dispose);
+
+      registry.register(_FakeMicTarget(), layer: MicLayer.branch);
+      await _flush(tester);
+
+      expect(calls, 1);
+    });
+
+    testWidgets('both callbacks default to null and are simply skipped', (
+      tester,
+    ) async {
+      controller = buildController();
+      addTearDown(() => unawaited(controller.dispose()));
+      binding = buildBinding(); // no extra callbacks supplied
+      addTearDown(binding.dispose);
+
+      router.go('/train');
+      registry.register(_FakeMicTarget(), layer: MicLayer.branch);
+      await _flush(tester);
+      // No crash is the assertion.
+    });
+  });
+
   testWidgets('with no signed-in controller yet, every trigger is a silent '
       'no-op', (tester) async {
     controller = buildController();

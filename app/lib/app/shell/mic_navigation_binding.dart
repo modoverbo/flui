@@ -53,6 +53,8 @@ final class MicNavigationBinding {
     required this.registry,
     required MicController? Function() controllerOf,
     required this.routerSource,
+    this.onLocationChanged,
+    this.onRegistryEvent,
     // Named `controllerOf` (not `_controllerOf`) so external callers (the
     // shell, tests) can pass it — an initializing formal would force the
     // private field name onto the public constructor signature (same
@@ -75,6 +77,20 @@ final class MicNavigationBinding {
   final MicController? Function() _controllerOf;
   final MicRouterLocationSource routerSource;
 
+  /// Fires on every REAL router path change (never on a same-uri
+  /// notification) — `QuickPracticeTarget.onRouterLocationChanged` (U23e,
+  /// design §19.13) is this binding's intended consumer: any navigation
+  /// invalidates a prepared-but-not-yet-recorded quick-practice session,
+  /// independent of whether the resolved mic target itself changes.
+  final VoidCallback? onLocationChanged;
+
+  /// Fires on every [MicTargetRegistry.changes] event, independent of
+  /// whether a capture happens to be bound —
+  /// `QuickPracticeTarget.onRegistryChanged` (U23e) is this binding's
+  /// intended consumer; it decides for itself whether the event actually
+  /// changed who `resolve()` returns.
+  final VoidCallback? onRegistryEvent;
+
   late final AppLifecycleListener _lifecycleListener;
   late final StreamSubscription<void> _registrySubscription;
   late Uri _location;
@@ -85,17 +101,21 @@ final class MicNavigationBinding {
     if (next == _location) return;
     _location = next;
     _cancel(MicNotice.cancelledByNavigation);
+    onLocationChanged?.call();
   }
 
   void _onRegistryChanged() {
     final controller = _controllerOf();
-    if (controller == null) return;
-    final boundToken = controller.boundToken;
-    if (boundToken == null) return;
-    final (_, token) = registry.resolve();
-    if (!identical(token, boundToken)) {
-      _cancel(MicNotice.cancelledByNavigation);
+    if (controller != null) {
+      final boundToken = controller.boundToken;
+      if (boundToken != null) {
+        final (_, token) = registry.resolve();
+        if (!identical(token, boundToken)) {
+          _cancel(MicNotice.cancelledByNavigation);
+        }
+      }
     }
+    onRegistryEvent?.call();
   }
 
   void _onBackgrounded() {
