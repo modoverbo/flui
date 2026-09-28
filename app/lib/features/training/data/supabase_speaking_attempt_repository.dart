@@ -70,10 +70,26 @@ final class SupabaseSpeakingAttemptRepository
   @override
   Future<Result<List<SpeakingAttempt>>> latestDiagnosisAttempts() async {
     try {
+      // The newest diagnosis session's id first (D38) — a plain "top 3 by
+      // created_at" would mix rows from an older, already-closed or
+      // abandoned session into a resumed/retaken one, since a session can
+      // have fewer than 3 rows while paused. This query never selects rows
+      // itself, only the id to scope the second query by.
+      final latest = await _client
+          .from('speaking_attempts')
+          .select('session_id')
+          .eq('context', 'diagnosis')
+          .order('created_at', ascending: false)
+          .limit(1)
+          .maybeSingle();
+      final sessionId = latest?['session_id'] as String?;
+      if (sessionId == null) return const Result.ok(<SpeakingAttempt>[]);
+
       final rows = await _client
           .from('speaking_attempts')
           .select(SpeakingAttemptDto.columns)
           .eq('context', 'diagnosis')
+          .eq('session_id', sessionId)
           .order('created_at', ascending: false)
           .limit(3);
       return Result.ok([

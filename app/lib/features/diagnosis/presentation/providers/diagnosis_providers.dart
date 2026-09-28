@@ -1,5 +1,7 @@
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/id/id_providers.dart';
+import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
+import 'package:flui/features/diagnosis/domain/diagnosis_resume_policy.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/training/domain/challenge.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
@@ -66,8 +68,35 @@ Future<List<Challenge>> diagnosisChallenges(Ref ref) async {
 
 /// One diagnosis session id, generated once and kept stable for as long as
 /// something watches it (autoDispose) — matches `training_lab_page.dart`'s
-/// `labSessionIdProvider` shape (U16).
+/// `labSessionIdProvider` shape (U16). Only used for a FRESH session
+/// (`DiagnosisFresh`, [diagnosisResumeProvider]) — a resumed session reuses
+/// its own already-persisted `sessionId` instead (design D38, U14c).
 // ignore: specify_nonobvious_property_types
 final diagnosisSessionIdProvider = Provider.autoDispose<String>(
   (ref) => ref.read(idGeneratorProvider).generate(),
 );
+
+/// What the diagnosis intro/live screens (and PROGRESO's paused-retake
+/// entry) should do next, computed fresh on every read from already
+/// persisted state (design D38, U14c): never a client-owned progress flag.
+@riverpod
+Future<DiagnosisResumeDecision> diagnosisResume(Ref ref) async {
+  final attemptsResult = await ref
+      .read(speakingAttemptRepositoryProvider)
+      .latestDiagnosisAttempts();
+  final attempts = attemptsResult.valueOrNull ?? const [];
+
+  final userId = ref.read(currentUserIdProvider);
+  final profile = userId == null
+      ? null
+      : await ref.read(latestSkillProfileProvider(userId).future);
+
+  final challenges = await ref.read(diagnosisChallengesProvider.future);
+  final challengesById = {for (final c in challenges) c.id: c};
+
+  return const DiagnosisResumePolicy().decide(
+    latestDiagnosisAttempts: attempts,
+    latestProfile: profile,
+    challengesById: challengesById,
+  );
+}

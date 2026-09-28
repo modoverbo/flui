@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
@@ -7,6 +9,8 @@ import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/auth/presentation/controllers/sign_out_controller.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/features/diagnosis/domain/diagnosis_resume_policy.dart';
+import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/profile/domain/progress_stats.dart';
 import 'package:flui/features/profile/domain/streak_calculator.dart';
 import 'package:flui/features/profile/presentation/providers/progress_overview.dart';
@@ -22,6 +26,7 @@ import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
 import 'package:flui/shared/widgets/page_frame.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// "Tu progreso": training progress, not a spreadsheet. The week and the
@@ -79,6 +84,14 @@ class ProgressPage extends ConsumerWidget {
                     style: layout.type.bodyL.copyWith(color: FluiColors.ink),
                   ),
                 ),
+                // Only ever built while the flag is on: flag-off never
+                // watches `speakingGymEnabledProvider`'s dependents, so
+                // production (flag off) makes no new diagnosis queries and
+                // shows no diagnosis entry here (U14c).
+                if (ref.watch(speakingGymEnabledProvider)) ...[
+                  SizedBox(height: layout.blockGap),
+                  const _DiagnosisResumeEntry(),
+                ],
                 SizedBox(height: layout.blockGap),
                 FluiButton.outline(
                   label: l10n.progressSignOut,
@@ -271,6 +284,36 @@ class _ProgressNumbers extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// PROGRESO's paused-retake entry point (design §10, U14c): shown only
+/// while an open (unanswered/unclosed) diagnosis session already exists —
+/// only reachable here once the gate is `completed` (a retake in
+/// progress), since a `required` baseline blocks navigation to this page
+/// entirely. Starting a brand-new retake (when none is in progress) is a
+/// later unit's entry point (U18b); this is resume-only.
+class _DiagnosisResumeEntry extends ConsumerWidget {
+  const new();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = context.l10n;
+    final resume = ref.watch(diagnosisResumeProvider).value;
+    if (resume is! DiagnosisResume) return const SizedBox.shrink();
+    return FluiCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(l10n.progressDiagnosisResumeTitle),
+          const SizedBox(height: FluiSpacing.sm),
+          FluiButton.outline(
+            label: l10n.progressDiagnosisResumeAction,
+            onPressed: () => context.go('${AppRoutes.diagnosisLive}?retake=1'),
+          ),
+        ],
+      ),
     );
   }
 }

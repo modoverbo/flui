@@ -25,11 +25,14 @@ abstract interface class SpeakingAttemptRepository {
   Future<Result<Set<String>>> usedChallengeIdsSince(LocalDate since);
 
   /// The newest diagnosis session's attempts (at most 3 rows,
-  /// `context='diagnosis'` only) — used to compute the profile once the
-  /// loop reaches its summary step (U14a) and, later, to resume a paused
-  /// diagnosis (U14c, design D38). Diagnosis is mandatory and gated: only
-  /// one diagnosis session is ever in progress for a user, so the most
-  /// recent up-to-3 diagnosis rows always belong to that single session —
-  /// no explicit session id filter is needed.
+  /// `context='diagnosis'`, all sharing the same `sessionId`) — used to
+  /// compute the profile once the loop reaches its summary step (U14a)
+  /// and, to resume a paused diagnosis (U14c, design D38).
+  ///
+  /// Explicitly scoped to the newest session's id, never just "the most
+  /// recent up-to-3 diagnosis rows": pause/resume means a session can have
+  /// fewer than 3 rows while open, and an older abandoned session or a
+  /// 30-day retake can leave stale diagnosis rows behind — a plain
+  /// top-3-by-recency query would silently mix those into the current run.
   Future<Result<List<SpeakingAttempt>>> latestDiagnosisAttempts();
 }

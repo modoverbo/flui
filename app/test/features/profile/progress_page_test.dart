@@ -1,14 +1,29 @@
 import 'package:flui/core/clock/clock.dart';
+import 'package:flui/core/config/feature_flags.dart';
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/theme/contrast.dart';
 import 'package:flui/core/theme/flui_color_rules.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
+import 'package:flui/features/training/data/fake_challenge_repository.dart';
+import 'package:flui/features/training/data/fake_speaking_attempt_repository.dart';
+import 'package:flui/features/training/domain/attempt_kind.dart';
+import 'package:flui/features/training/domain/behavior_code.dart';
+import 'package:flui/features/training/domain/challenge.dart';
+import 'package:flui/features/training/domain/skill.dart';
+import 'package:flui/features/training/domain/speaking_attempt.dart';
+import 'package:flui/features/training/domain/training_context.dart';
+import 'package:flui/features/training/domain/voice_metrics.dart';
+import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/grade.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
+import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -219,5 +234,109 @@ void main() {
       expect(dot.duration, Duration.zero);
     }
     expect(tester.takeException(), isNull);
+  });
+
+  group('Diagnosis paused-retake entry (U14c)', () {
+    const metrics = VoiceMetrics(
+      longPauses: 0,
+      usefulPauses: 0,
+      fillerCount: 0,
+    );
+
+    Challenge diagnosisChallenge({required String id, required int slot}) =>
+        Challenge(
+          id: id,
+          slug: id,
+          purpose: ChallengePurpose.diagnosis,
+          skill: Skill.thinking,
+          difficulty: 1,
+          prompt: 'Prompt $id',
+          focus: 'Focus $id',
+          focusBehaviors: const <BehaviorCode>[],
+          transferPrompts: const <String>[],
+          targetDuration: const Duration(seconds: 30),
+          sortOrder: 1,
+          diagnosisSlot: slot,
+        );
+
+    Future<List<Override>> diagnosisOverrides({
+      required List<SpeakingAttempt> seededAttempts,
+    }) async {
+      final speakingAttempts = FakeSpeakingAttemptRepository(
+        currentUserId: () => fakes.auth.currentUser?.id,
+      );
+      for (final attempt in seededAttempts) {
+        await speakingAttempts.insert(attempt);
+      }
+      return [
+        speakingGymEnabledProvider.overrideWithValue(true),
+        challengeRepositoryProvider.overrideWithValue(
+          FakeChallengeRepository(
+            challenges: [
+              diagnosisChallenge(id: 'c1', slot: 1),
+              diagnosisChallenge(id: 'c2', slot: 2),
+              diagnosisChallenge(id: 'c3', slot: 3),
+            ],
+          ),
+        ),
+        speakingAttemptRepositoryProvider.overrideWithValue(speakingAttempts),
+        skillProfileRepositoryProvider.overrideWithValue(
+          FakeSkillProfileRepository(
+            currentUserId: () => fakes.auth.currentUser?.id,
+          ),
+        ),
+      ];
+    }
+
+    testWidgets('flag on, no open diagnosis session: the entry stays hidden', (
+      tester,
+    ) async {
+      await tester.pumpFlui(
+        const ProgressPage(),
+        overrides: [
+          ...fakes.overrides,
+          subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+          ...await diagnosisOverrides(seededAttempts: const []),
+        ],
+        surfaceSize: const Size(400, 2400),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text(l10nEs.progressDiagnosisResumeAction), findsNothing);
+    });
+
+    testWidgets(
+      'flag on, an open (paused) retake session exists: the entry shows',
+      (tester) async {
+        await tester.pumpFlui(
+          const ProgressPage(),
+          overrides: [
+            ...fakes.overrides,
+            subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+            ...await diagnosisOverrides(
+              seededAttempts: [
+                SpeakingAttempt(
+                  id: 'a1',
+                  sessionId: 'retake-session',
+                  context: TrainingContext.diagnosis,
+                  kind: AttemptKind.first,
+                  localDate: LocalDate(2026, 9, 14),
+                  transcript: 'Respuesta de la reevaluación.',
+                  duration: const Duration(seconds: 20),
+                  metrics: metrics,
+                  audio: const AudioRetention.none(),
+                  challengeId: 'c1',
+                ),
+              ],
+            ),
+          ],
+          surfaceSize: const Size(400, 2400),
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.text(l10nEs.progressDiagnosisResumeTitle), findsOneWidget);
+        expect(find.text(l10nEs.progressDiagnosisResumeAction), findsOneWidget);
+      },
+    );
   });
 }

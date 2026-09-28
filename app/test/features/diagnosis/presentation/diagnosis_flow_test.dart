@@ -5,19 +5,29 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/audio/audio_providers.dart';
 import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/config/feature_flags.dart';
+import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/diagnosis/presentation/diagnosis_result_page.dart';
 import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
+import 'package:flui/features/training/domain/attempt_kind.dart';
+import 'package:flui/features/training/domain/behavior_code.dart';
+import 'package:flui/features/training/domain/skill.dart';
+import 'package:flui/features/training/domain/skill_profile.dart';
+import 'package:flui/features/training/domain/speaking_attempt.dart';
+import 'package:flui/features/training/domain/training_context.dart';
+import 'package:flui/features/training/domain/voice_metrics.dart';
 import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
+import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import '../../../../integration_test/support/app_harness.dart';
@@ -167,6 +177,311 @@ void main() {
 
         expect(_location(harness), AppRoutes.diagnosisLive);
         expect(find.text(l10nEs.loopRetryAction), findsNothing);
+      },
+    );
+  });
+
+  group('Diagnosis pause/resume (U14c, real path)', () {
+    testWidgets(
+      'pausing after slot 1 lands on the intro with resume copy, the gate '
+      'still requires diagnosis without trapping the user in a redirect '
+      'loop, and resuming continues the SAME session at slot 2 so the '
+      "final profile uses exactly the current run's 3 attempts",
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: _ana,
+          access: _trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.diagnosisLive,
+          arrange: (h) => h.planToday(),
+        );
+
+        // Slot 1: while a capture is in flight, "Continuar después" must be
+        // disabled — a take mid-capture must never be lost (D39).
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        final pauseButtonDuringCapture = tester.widget<FluiButton>(
+          find.ancestor(
+            of: find.text(l10nEs.diagnosisPauseAction),
+            matching: find.byType(FluiButton),
+          ),
+        );
+        expect(pauseButtonDuringCapture.onPressed, isNull);
+        harness.clock.advance(const Duration(milliseconds: 700));
+        await gesture.up();
+        await tester.pumpAndSettle();
+
+        // Now idle on slot 2's focus phase: "Continuar después" is enabled.
+        expect(
+          find.text(l10nEs.diagnosisSlotLabel(2, 3).toUpperCase()),
+          findsOneWidget,
+        );
+        await tester.tap(find.text(l10nEs.diagnosisPauseAction));
+        await tester.pumpAndSettle();
+
+        expect(_location(harness), AppRoutes.diagnosis);
+        expect(
+          find.text(l10nEs.diagnosisIntroResumeProgress(1, 3)),
+          findsOneWidget,
+        );
+        expect(find.text(l10nEs.diagnosisIntroContinue), findsOneWidget);
+        expect(find.text(l10nEs.diagnosisIntroStart), findsNothing);
+
+        // The gate keeps blocking every other path — no redirect loop that
+        // traps the user, just an honest bounce back to the intro.
+        harness.container.read(goRouterProvider).go(AppRoutes.today);
+        await tester.pumpAndSettle();
+        expect(_location(harness), AppRoutes.diagnosis);
+
+        // Resuming continues at slot 2, on the SAME session as slot 1.
+        await tester.ensureVisible(find.text(l10nEs.diagnosisIntroContinue));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text(l10nEs.diagnosisIntroContinue));
+        await tester.pumpAndSettle();
+        expect(_location(harness), AppRoutes.diagnosisLive);
+        expect(
+          find.text(l10nEs.diagnosisSlotLabel(2, 3).toUpperCase()),
+          findsOneWidget,
+        );
+
+        await _recordOneSlot(tester, harness);
+        await _recordOneSlot(tester, harness);
+
+        expect(_location(harness), AppRoutes.diagnosisResult);
+        final diagnosisAttempts = harness
+            .speakingAttempts
+            .attemptsForCurrentUser
+            .where((a) => a.context == TrainingContext.diagnosis)
+            .toList();
+        // Exactly 3 rows total, all sharing one session id — pause/resume
+        // never fragments the run across 2 sessions (D38).
+        expect(diagnosisAttempts, hasLength(3));
+        expect(diagnosisAttempts.map((a) => a.sessionId).toSet(), hasLength(1));
+      },
+    );
+  });
+
+  group('Diagnosis stale rows and retake (U14c, real path)', () {
+    testWidgets("a closed baseline's rows never leak into a later retake's "
+        'profile — the retake starts fresh at slot 1 and the finished '
+        "profile is computed from exactly the retake's own 3 attempts", (
+      tester,
+    ) async {
+      final recorder = _FakeSpeechRecorder();
+      const baselineSessionId = 'baseline-session';
+      final harness = AppHarness(
+        signedInAs: _ana,
+        access: _trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      // Seeds a CLOSED baseline (3 stale rows + a matching profile) before
+      // the widget tree ever mounts — the gate is `completed` from the
+      // start, exactly like a real user who diagnosed long ago.
+      await harness.pumpApp(
+        tester,
+        arrange: (h) async {
+          await h.planToday();
+          final challenges = await h.container.read(
+            diagnosisChallengesProvider.future,
+          );
+          for (final challenge in challenges) {
+            await h.speakingAttempts.insert(
+              SpeakingAttempt(
+                id: 'baseline-${challenge.id}',
+                sessionId: baselineSessionId,
+                context: TrainingContext.diagnosis,
+                kind: AttemptKind.first,
+                localDate: LocalDate.fromDateTime(h.clock.now()),
+                transcript: 'Respuesta de la evaluación inicial.',
+                duration: const Duration(seconds: 20),
+                metrics: const VoiceMetrics(
+                  longPauses: 0,
+                  usefulPauses: 0,
+                  fillerCount: 0,
+                ),
+                audio: const AudioRetention.none(),
+                challengeId: challenge.id,
+              ),
+            );
+          }
+          h.skillProfiles.seedProfile(
+            SkillProfileRecord(
+              id: baselineSessionId,
+              kind: SkillProfileKind.baseline,
+              // `FakeSkillProfileRepository`'s retake cooldown is measured
+              // against real wall-clock time (`DateTime.now`), not the
+              // harness's `FixedClock` — seeded 31 real days in the past so
+              // the retake below is never rejected as too-soon.
+              diagnosedAt: DateTime.now().subtract(const Duration(days: 31)),
+              profile: const SkillProfile(
+                topArea: SkillArea.thinking,
+                secondArea: SkillArea.language,
+                strengths: <BehaviorCode>[],
+                evidence: <DiagnosisEvidence>[],
+              ),
+            ),
+          );
+        },
+      );
+
+      // The gate is already `completed` — the diagnosis routes are simply
+      // unreachable via redirect; a direct visit stays on the intro.
+      harness.container.read(goRouterProvider).go(AppRoutes.diagnosis);
+      await tester.pumpAndSettle();
+      expect(_location(harness), AppRoutes.diagnosis);
+      expect(find.text(l10nEs.diagnosisIntroStart), findsOneWidget);
+      expect(find.text(l10nEs.diagnosisIntroContinue), findsNothing);
+
+      await tester.ensureVisible(find.text(l10nEs.diagnosisIntroStart));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10nEs.diagnosisIntroStart));
+      await tester.pumpAndSettle();
+      expect(
+        find.text(l10nEs.diagnosisSlotLabel(1, 3).toUpperCase()),
+        findsOneWidget,
+      );
+      for (var slot = 1; slot <= 3; slot++) {
+        await _recordOneSlot(tester, harness);
+      }
+      expect(_location(harness), AppRoutes.diagnosisResult);
+
+      // The retake closed with its OWN session, never the baseline's —
+      // and `latestDiagnosisAttempts()` (feeding the profile) returns
+      // exactly the retake's 3 rows, never the baseline's stale ones.
+      final all = harness.speakingAttempts.attemptsForCurrentUser.toList();
+      expect(all, hasLength(6));
+      final retakeRows =
+          (await harness.speakingAttempts.latestDiagnosisAttempts())
+              .valueOrNull!;
+      expect(retakeRows, hasLength(3));
+      expect(
+        retakeRows.map((a) => a.sessionId).toSet(),
+        isNot(contains(baselineSessionId)),
+      );
+    });
+  });
+
+  group('PROGRESO paused-retake entry (U14c, real path)', () {
+    testWidgets(
+      'tapping "Continuar reevaluación" resumes the SAME paused retake at '
+      'its next unanswered slot',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        const baselineSessionId = 'baseline-session';
+        const retakeSessionId = 'retake-session';
+        final harness = AppHarness(
+          signedInAs: _ana,
+          access: _trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        // A closed baseline PLUS a retake already paused after slot 1 —
+        // the gate is `completed` (baseline closed it), so PROGRESO is
+        // directly reachable without the mandatory-diagnosis redirect.
+        await harness.pumpApp(
+          tester,
+          arrange: (h) async {
+            await h.planToday();
+            final challenges = await h.container.read(
+              diagnosisChallengesProvider.future,
+            );
+            for (final challenge in challenges) {
+              await h.speakingAttempts.insert(
+                SpeakingAttempt(
+                  id: 'baseline-${challenge.id}',
+                  sessionId: baselineSessionId,
+                  context: TrainingContext.diagnosis,
+                  kind: AttemptKind.first,
+                  localDate: LocalDate.fromDateTime(h.clock.now()),
+                  transcript: 'Respuesta de la evaluación inicial.',
+                  duration: const Duration(seconds: 20),
+                  metrics: const VoiceMetrics(
+                    longPauses: 0,
+                    usefulPauses: 0,
+                    fillerCount: 0,
+                  ),
+                  audio: const AudioRetention.none(),
+                  challengeId: challenge.id,
+                ),
+              );
+            }
+            h.skillProfiles.seedProfile(
+              SkillProfileRecord(
+                id: baselineSessionId,
+                kind: SkillProfileKind.baseline,
+                diagnosedAt: DateTime.now().subtract(const Duration(days: 31)),
+                profile: const SkillProfile(
+                  topArea: SkillArea.thinking,
+                  secondArea: SkillArea.language,
+                  strengths: <BehaviorCode>[],
+                  evidence: <DiagnosisEvidence>[],
+                ),
+              ),
+            );
+            // The retake was started and paused right after slot 1.
+            await h.speakingAttempts.insert(
+              SpeakingAttempt(
+                id: 'retake-slot1',
+                sessionId: retakeSessionId,
+                context: TrainingContext.diagnosis,
+                kind: AttemptKind.first,
+                localDate: LocalDate.fromDateTime(h.clock.now()),
+                transcript: 'Respuesta de la reevaluación, paso 1.',
+                duration: const Duration(seconds: 20),
+                metrics: const VoiceMetrics(
+                  longPauses: 0,
+                  usefulPauses: 0,
+                  fillerCount: 0,
+                ),
+                audio: const AudioRetention.none(),
+                challengeId: challenges.first.id,
+              ),
+            );
+          },
+          initialLocation: AppRoutes.progress,
+        );
+
+        expect(_location(harness), AppRoutes.progress);
+        expect(find.text(l10nEs.progressDiagnosisResumeAction), findsOneWidget);
+
+        await tester.ensureVisible(
+          find.text(l10nEs.progressDiagnosisResumeAction),
+        );
+        await tester.pumpAndSettle();
+        await tester.tap(find.text(l10nEs.progressDiagnosisResumeAction));
+        await tester.pumpAndSettle();
+
+        expect(_location(harness), '${AppRoutes.diagnosisLive}?retake=1');
+        expect(
+          find.text(l10nEs.diagnosisSlotLabel(2, 3).toUpperCase()),
+          findsOneWidget,
+        );
+
+        await _recordOneSlot(tester, harness);
+        await _recordOneSlot(tester, harness);
+
+        expect(_location(harness), AppRoutes.diagnosisResult);
+        final retakeRows =
+            (await harness.speakingAttempts.latestDiagnosisAttempts())
+                .valueOrNull!;
+        expect(retakeRows, hasLength(3));
+        expect(retakeRows.map((a) => a.sessionId).toSet(), {retakeSessionId});
       },
     );
   });
