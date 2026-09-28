@@ -10,6 +10,7 @@ import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/l10n/gen/app_localizations.dart';
 import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/mic_target.dart';
@@ -91,6 +92,8 @@ final class _FakeMicTarget implements MicTarget {
     return deliveryResult;
   }
 }
+
+final AppLocalizations _l10n = lookupAppLocalizations(const Locale('es'));
 
 void main() {
   const ana = AppUser(
@@ -790,6 +793,91 @@ void main() {
           ),
           findsNothing,
         );
+      },
+    );
+  });
+
+  group('PROGRESO, quick practice fallback (U23e, real path)', () {
+    List<Override> gymOn() => [
+      speakingGymEnabledProvider.overrideWithValue(true),
+    ];
+
+    testWidgets(
+      'the mic on a tab with no registered target shows the quick-practice '
+      'prompt without recording; the next activation records and delivers; '
+      'feedback then summary appear; the mic label is correct at each '
+      'phase',
+      (tester) async {
+        final handle = tester.ensureSemantics();
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            ...gymOn(),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.progress,
+          arrange: (h) => h.planToday(),
+        );
+
+        final controller = harness.container.read(micControllerProvider)!;
+
+        // PROGRESO has no resolvable spoken action: the registry falls
+        // through to the quick-practice fallback.
+        final registry = harness.container.read(micTargetRegistryProvider);
+        expect(registry.resolve().$1, isNot(isA<LoopMicTarget>()));
+
+        // First activation: prompt-first (design §19.13/decision #450.3),
+        // no capture started.
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
+
+        expect(controller.state, isA<MicIdle>());
+        expect(find.text(_l10n.quickPracticeThinkingHeadline), findsOneWidget);
+        var label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, 'Responder');
+
+        // Second activation: records and delivers for the same picked
+        // challenge.
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        expect(controller.state, isA<MicRecording>());
+        harness.clock.advance(const Duration(milliseconds: 700));
+        await gesture.up();
+        await tester.pumpAndSettle();
+
+        expect(find.text(_l10n.quickPracticeFeedbackHeadline), findsOneWidget);
+        // Ready for a FRESH quick practice again, independent of the
+        // panel still showing this one's feedback.
+        label = tester.getSemantics(find.byType(MicButton)).label;
+        expect(label, isNot('Responder'));
+
+        await tester.tap(find.text(_l10n.loopContinueAction));
+        await tester.pumpAndSettle();
+
+        expect(find.text(_l10n.quickPracticeSummaryTitle), findsOneWidget);
+        handle.dispose();
+      },
+    );
+
+    testWidgets(
+      'a user without access never sees the quick-practice prompt — the '
+      'app-wide paywall redirect applies before the shell (and its mic) '
+      'ever renders',
+      (tester) async {
+        final harness = AppHarness(signedInAs: ana, overrides: gymOn());
+        await harness.pumpApp(tester, initialLocation: AppRoutes.progress);
+
+        expect(location(harness), AppRoutes.paywall);
+        expect(find.byType(MicButton), findsNothing);
       },
     );
   });
