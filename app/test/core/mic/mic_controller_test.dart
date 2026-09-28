@@ -20,14 +20,18 @@ final class _FakeMicTarget implements MicTarget {
     this.maxDuration = const Duration(seconds: 30),
     MicAvailability? availability,
     this.deliveryResult = const MicAccepted(),
-  }) : prompt = prompt ?? const MicPrompt(actionLabel: 'Grabar'),
+  }) : _prompt = prompt ?? const MicPrompt(actionLabel: 'Grabar'),
        _availability = availability ?? const MicReady();
 
   @override
-  final MicPrompt prompt;
+  final Duration maxDuration;
+
+  MicPrompt _prompt;
 
   @override
-  final Duration maxDuration;
+  MicPrompt get prompt => _prompt;
+
+  set prompt(MicPrompt value) => _prompt = value;
 
   MicAvailability _availability;
 
@@ -346,6 +350,28 @@ void main() {
 
       expect(controller.state, isA<MicIdle>());
       expect(target.deliverCalls, 0);
+    });
+
+    test('onActivate completing refreshes the idle prompt to reflect the '
+        'target after activation (the mic must not show a stale label — '
+        'same class of bug as the U23c setActiveBranch finding)', () async {
+      final registry = MicTargetRegistry();
+      final target = _FakeMicTarget(
+        prompt: const MicPrompt(actionLabel: 'Practicar en voz alta'),
+      );
+      target.availability = MicPrepare('Practicar en voz alta', () async {
+        target
+          ..prompt = const MicPrompt(actionLabel: 'Responder')
+          ..availability = const MicReady();
+      });
+      registry.register(target, layer: MicLayer.branch);
+      final controller = build(registry: registry);
+      addTearDown(controller.dispose);
+
+      controller.pointerDown();
+      await _flush();
+
+      expect((controller.state as MicIdle).prompt.actionLabel, 'Responder');
     });
   });
 

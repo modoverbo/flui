@@ -238,6 +238,13 @@ final class MicController {
         return;
       case MicPrepare(:final onActivate):
         await onActivate();
+        // Re-emit: the mic must reflect the target's new prompt/
+        // availability right away (e.g. "Practicar en voz alta" ->
+        // "Responder" once a quick-practice challenge is picked), not
+        // wait for some unrelated event to happen to refresh it — the
+        // same class of stale-label bug as the U23c `setActiveBranch`
+        // finding.
+        if (_state is MicIdle) _emit(_idleState());
         return;
       case MicReady():
       case MicPassThrough():
