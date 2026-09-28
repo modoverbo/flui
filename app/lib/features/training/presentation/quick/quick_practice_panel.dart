@@ -63,7 +63,13 @@ class _QuickPracticePanelState extends ConsumerState<QuickPracticePanel> {
     final state = ref.watch(trainingLoopControllerProvider(widget.request));
     final l10n = AppLocalizations.of(context);
     final body = switch (state.loop.phase) {
-      LoopPhase.feedback => _FeedbackBody(l10n: l10n, feedback: state.feedback),
+      LoopPhase.feedback => _FeedbackBody(
+        l10n: l10n,
+        feedback: state.feedback,
+        onContinue: () => ref
+            .read(trainingLoopControllerProvider(widget.request).notifier)
+            .continueToNextStep(),
+      ),
       LoopPhase.summary => _SummaryBody(l10n: l10n, feedback: state.feedback),
       _ when widget.challenge == null => _NoChallengeBody(l10n: l10n),
       _ =>
@@ -133,10 +139,15 @@ class _ReadyBody extends StatelessWidget {
 }
 
 class _FeedbackBody extends StatelessWidget {
-  const new({required this.l10n, required this.feedback});
+  const new({
+    required this.l10n,
+    required this.feedback,
+    required this.onContinue,
+  });
 
   final AppLocalizations l10n;
   final domain.Feedback? feedback;
+  final VoidCallback onContinue;
 
   @override
   Widget build(BuildContext context) => FluiCard(
@@ -149,6 +160,11 @@ class _FeedbackBody extends StatelessWidget {
         ),
         const SizedBox(height: FluiSpacing.sm),
         Text(feedback?.summary ?? ''),
+        const SizedBox(height: FluiSpacing.sm),
+        FluiButton.primary(
+          label: l10n.loopContinueAction,
+          onPressed: onContinue,
+        ),
       ],
     ),
   );

@@ -171,11 +171,13 @@ void main() {
       QuickPracticePanel(request: request, challenge: target.currentChallenge),
       container,
     );
-    final controller = container.read(
-      trainingLoopControllerProvider(request).notifier,
-    );
-    await controller.submit(_audio());
-    controller.continueToNextStep();
+    await container
+        .read(trainingLoopControllerProvider(request).notifier)
+        .submit(_audio());
+    await tester.pump();
+    expect(find.text(_l10n.quickPracticeFeedbackHeadline), findsOneWidget);
+
+    await tester.tap(find.text(_l10n.loopContinueAction));
     await tester.pump();
 
     expect(find.text(_l10n.quickPracticeSummaryTitle), findsOneWidget);
