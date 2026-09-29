@@ -25,7 +25,9 @@ import 'package:flui/features/diagnosis/presentation/providers/diagnosis_provide
 import 'package:flui/features/onboarding/data/preferences_onboarding_store.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
+import 'package:flui/features/profile/data/fake_account_deletion_repository.dart';
 import 'package:flui/features/profile/data/fake_streak_repair_repository.dart';
+import 'package:flui/features/profile/data/supabase_account_deletion_repository.dart';
 import 'package:flui/features/profile/data/supabase_streak_repair_repository.dart';
 import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
@@ -186,6 +188,13 @@ List<Override> fakeBackendOverrides({
         onReturn: () => ref.read(goRouterProvider).go(AppRoutes.checkoutReturn),
       ),
     ),
+    // "Eliminar mi cuenta" (U22e): not deployed to production yet, but
+    // harmless to wire everywhere — the entry point stays behind
+    // `speakingGymEnabledProvider` (U22e.4), so it is unreachable while the
+    // flag is off in every backend.
+    accountDeletionRepositoryProvider.overrideWithValue(
+      FakeAccountDeletionRepository(),
+    ),
   ];
 }
 
@@ -251,6 +260,13 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     ),
     skillProfileRepositoryProvider.overrideWithValue(
       SupabaseSkillProfileRepository(client),
+    ),
+    // "Eliminar mi cuenta" (U22e) calls `account-delete`. That function is
+    // NOT deployed to production yet (per this task's production-safety
+    // rule); wiring the real adapter here is safe regardless, since the
+    // entry point stays behind `speakingGymEnabledProvider` (U22e.4).
+    accountDeletionRepositoryProvider.overrideWithValue(
+      SupabaseAccountDeletionRepository(client),
     ),
   ];
 }

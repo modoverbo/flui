@@ -161,3 +161,36 @@ final class SkillProfileFailure extends Failure {
   @override
   String toString() => 'SkillProfileFailure($code)';
 }
+
+enum AccountDeletionErrorCode {
+  /// `billing_unavailable` (Whop unreachable) or `entitlement_unavailable`
+  /// (could not read the caller's own entitlement row) — retry shortly.
+  billingUnavailable,
+
+  /// `whop_membership_not_found` or `membership_id_missing` — the stored
+  /// membership id is missing or wrong; retrying will not help, only
+  /// support can fix it.
+  membershipNotFound,
+
+  /// `storage_cleanup_failed` or `account_deletion_failed` — the account
+  /// still exists; a plain retry is expected to work.
+  deletionFailed,
+  unknown,
+}
+
+@immutable
+final class AccountDeletionFailure extends Failure {
+  const new(this.code);
+
+  final AccountDeletionErrorCode code;
+
+  @override
+  bool operator ==(Object other) =>
+      other is AccountDeletionFailure && other.code == code;
+
+  @override
+  int get hashCode => Object.hash(AccountDeletionFailure, code);
+
+  @override
+  String toString() => 'AccountDeletionFailure($code)';
+}
