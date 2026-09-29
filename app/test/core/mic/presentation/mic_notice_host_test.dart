@@ -4,6 +4,7 @@ import 'dart:typed_data';
 import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/mic/mic_controller.dart';
+import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/mic/mic_target_registry.dart';
 import 'package:flui/core/mic/presentation/mic_notice_host.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -133,6 +134,12 @@ void main() {
     (
       MicNotice.planFailed,
       'No pudimos preparar tu sesión de hoy. Inténtalo de nuevo.',
+    ),
+    (
+      // U17b (design D34-D37): the distinct noSpeech copy must actually
+      // reach the user, not fall back to the generic deliveryFailed text.
+      MicNotice.noSpeech,
+      noSpeechDeliveryMessage,
     ),
   ]) {
     testWidgets('shows its own distinct copy for $notice', (tester) async {

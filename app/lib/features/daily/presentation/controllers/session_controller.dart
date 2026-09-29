@@ -1,13 +1,16 @@
+import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
+import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/riverpod/ref_futures.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/daily/domain/session_flow.dart';
 import 'package:flui/features/daily/domain/session_planner.dart';
 import 'package:flui/features/daily/domain/session_step.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
+import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/vocabulary/domain/exercises/cloze_attempt_flow.dart';
 import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
 import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
@@ -290,6 +293,44 @@ class SessionController extends _$SessionController {
   Future<void> takeFormRecallHint() =>
       _updateFormRecall((check) => check.takeHint());
 
+  /// The spoken counterpart of [submitFormRecall] (design D34-D36, U17b):
+  /// transcribes [audio] (`mode=transcribe`, no LLM, 1 quota unit) and
+  /// matches it through [FormRecallCheck.submitHeard].
+  ///
+  /// Guarded at this domain primitive, not only by the mic target's own
+  /// `availability` (the U17 review-finding pattern: a UI-level gate alone
+  /// let a second path spend quota on a resolved/inactive step) — never
+  /// transcribes when the current step is not [FormRecallStep], the check
+  /// is already resolved, or a save is already in flight.
+  Future<MicDelivery> answerFormRecallAloud(RecordedAudio audio) async {
+    final current = state.value;
+    final check = current?.formRecall;
+    if (current == null ||
+        check == null ||
+        current.step is! FormRecallStep ||
+        check.isResolved ||
+        current.saving) {
+      return const MicDeliveryFailed('No hay ningún paso activo para grabar.');
+    }
+    final transcribed = await ref
+        .read(speechAnalysisRepositoryProvider)
+        .transcribe(
+          audio.bytes,
+          mimeType: audio.mimeType,
+          duration: audio.duration,
+        );
+    if (!ref.mounted) return const MicAccepted();
+    return switch (transcribed) {
+      Err(:final failure) => _micDeliveryForTranscribeFailure(failure),
+      Ok(:final value) => await _onFormRecallHeard(value.text),
+    };
+  }
+
+  Future<MicDelivery> _onFormRecallHeard(String transcript) async {
+    await _updateFormRecall((check) => check.submitHeard(transcript));
+    return const MicAccepted();
+  }
+
   void submitProduction(String text) {
     final current = state.value;
     final production = current?.production;
@@ -335,6 +376,61 @@ class SessionController extends _$SessionController {
       apply: after == null ? null : (s) => _withProgress(s, before, after),
       then: continueStep,
     );
+  }
+
+  /// The spoken counterpart of [submitProduction] (design D34-D36, U17b):
+  /// transcribes [audio] and feeds the transcript through the SAME
+  /// unchanged [ProductionFlow.submit] the typed path uses (D35 — only
+  /// form recall gets a new matcher; production's existing text-based
+  /// validator already works fine against a transcript string).
+  ///
+  /// Guarded at this domain primitive (see [answerFormRecallAloud]'s own
+  /// doc): never transcribes when the current step is not [ProductionStep],
+  /// the flow has already left the writing phase, or a save is in flight.
+  Future<MicDelivery> answerProductionAloud(RecordedAudio audio) async {
+    final current = state.value;
+    final production = current?.production;
+    if (current == null ||
+        production == null ||
+        current.step is! ProductionStep ||
+        production.phase != ProductionPhase.writing ||
+        current.saving) {
+      return const MicDeliveryFailed('No hay ningún paso activo para grabar.');
+    }
+    final transcribed = await ref
+        .read(speechAnalysisRepositoryProvider)
+        .transcribe(
+          audio.bytes,
+          mimeType: audio.mimeType,
+          duration: audio.duration,
+        );
+    if (!ref.mounted) return const MicAccepted();
+    return switch (transcribed) {
+      Err(:final failure) => _micDeliveryForTranscribeFailure(failure),
+      Ok(:final value) => _onProductionHeard(value.text),
+    };
+  }
+
+  MicDelivery _onProductionHeard(String transcript) {
+    final current = state.value;
+    final production = current?.production;
+    if (current == null || production == null) return const MicAccepted();
+    _set(current.copyWith(production: production.submit(transcript)));
+    return const MicAccepted();
+  }
+
+  /// "Continuar sin hablar" (design D36): the view offers this ONLY while
+  /// the mic is latched/blocked. Advances past the current Úsala step
+  /// WITHOUT persisting `form_recall_done`/`production_done` — both stay
+  /// false, so the step resurfaces on a later visit, mirroring every other
+  /// non-graded step's own [SessionFlow.completeStep] call (`DiscoverStep`,
+  /// `ReadingsStep`).
+  Future<void> skipSpokenStep() async {
+    final current = state.value;
+    final step = current?.step;
+    if (current == null || current.saving) return;
+    if (step is! FormRecallStep && step is! ProductionStep) return;
+    await _advance(current.flow.completeStep());
   }
 
   Future<void> retrySave() => _flush();
@@ -512,6 +608,32 @@ class SessionController extends _$SessionController {
       ref.read(learningDataControllerProvider(_userId ?? '').notifier);
 
   void _set(SessionState next) => state = AsyncData(next);
+}
+
+/// Maps a `transcribe` failure to the [MicDelivery] the mic controller
+/// expects (design D34-D37): access/quota latch the mic exactly like the
+/// full-analysis loop path (`TrainingLoopController._onAnalysisFailure`);
+/// `noSpeech` gets the distinct copy (no hint consumed, since the caller
+/// never even reaches [FormRecallCheck.submitHeard]/[ProductionFlow.submit]
+/// on this branch); everything else falls back to a generic message.
+MicDelivery _micDeliveryForTranscribeFailure(Failure failure) {
+  final code = failure is SpeechAnalysisFailure
+      ? failure.code
+      : SpeechAnalysisErrorCode.unknown;
+  return switch (code) {
+    SpeechAnalysisErrorCode.accessRequired => const MicAccessRequired(),
+    SpeechAnalysisErrorCode.dailyLimitReached => const MicDailyLimitReached(),
+    // The exact shared literal (U17b): lets `MicController` pick the
+    // dedicated `MicNotice.noSpeech` notice over the generic one.
+    SpeechAnalysisErrorCode.noSpeech => const MicDeliveryFailed(
+      noSpeechDeliveryMessage,
+    ),
+    SpeechAnalysisErrorCode.accessUnavailable ||
+    SpeechAnalysisErrorCode.rateLimited ||
+    SpeechAnalysisErrorCode.unknown => const MicDeliveryFailed(
+      'No pudimos enviar tu grabación. Inténtalo de nuevo.',
+    ),
+  };
 }
 
 /// Words for a free run: everything past `nueva`, the ones due furthest in

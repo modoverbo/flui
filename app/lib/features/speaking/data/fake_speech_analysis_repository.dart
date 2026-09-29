@@ -12,6 +12,18 @@ final class FakeSpeechAnalysisRepository implements SpeechAnalysisRepository {
   Failure? nextFailure;
   int _attempt = 0;
 
+  /// Overrides the NEXT [transcribe] call's transcript text exactly once
+  /// (consumed then reset to `null`), so real-path tests can prove a
+  /// specific spoken answer matches/mismatches (U17b) without depending on
+  /// [_nextText]'s fixed alternating sentences. Never affects [analyze].
+  String? nextTranscribeText;
+
+  /// How many times [transcribe] has been called — real-path tests use
+  /// this to prove the mic's call count matches the number of recordings
+  /// made (U17b's own quota-honesty requirement), independent of
+  /// [analyze]'s own call count.
+  int transcribeCalls = 0;
+
   @override
   Future<Result<SpeechTranscript>> analyze(
     Uint8List audio, {
@@ -52,10 +64,13 @@ final class FakeSpeechAnalysisRepository implements SpeechAnalysisRepository {
     required String mimeType,
     required Duration duration,
   }) async {
+    transcribeCalls++;
     final rejected = await _rejectIfNeeded(audio);
     if (rejected != null) return rejected;
 
-    final text = _nextText();
+    final override = nextTranscribeText;
+    nextTranscribeText = null;
+    final text = override ?? _nextText();
     return Result.ok(
       SpeechTranscript(
         text: text,

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flui/core/mic/mic_controller.dart';
+import 'package:flui/core/mic/mic_target.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Shows a dismissible, distinct-copy notice (design §19.6, D43) whenever
@@ -87,4 +88,5 @@ String _copyFor(MicNotice notice) => switch (notice) {
     'No pudimos enviar tu grabación. Vuelve a intentarlo.',
   MicNotice.planFailed =>
     'No pudimos preparar tu sesión de hoy. Inténtalo de nuevo.',
+  MicNotice.noSpeech => noSpeechDeliveryMessage,
 };

@@ -200,4 +200,4 @@ table-driven tests. Interpretations where the spec leaves room:
 | Today's local date | `clockProvider` → `clock.today()`; `FixedClock` in tests |
 | Errors | return `Result<T>`, map with `failureMessage(l10n, failure)`; add `Failure` subtypes as needed |
 | UI | `shared/widgets/` (buttons, cards, `StateChip`, `StatTile`, `FluiProgressBar`, `EmptyState`, `LoadingWave`) and `core/theme/` tokens |
-| Tests | `test/helpers/`: `createTestContainer`, `pumpFlui`, `pumpRoutedPage`, `AppHarness` and `runFirstRunFlow` in `integration_test/support/` (shared with the VM tests) |
+| Tests | `test/helpers/`: `createTestContainer`, `pumpFlui`, `pumpRoutedPage`; `AppHarness` in `integration_test/support/`; flows (`runFirstRunFlow`, etc.) in `integration_test/flows/`, registered together from the single `integration_test/app_test.dart` entry point so `flutter test integration_test -d flutter-tester` launches the device once |

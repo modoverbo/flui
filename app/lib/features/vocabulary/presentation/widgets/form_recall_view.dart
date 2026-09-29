@@ -1,15 +1,23 @@
 import 'package:flui/core/l10n/l10n.dart';
+import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/vocabulary/domain/exercises/form_recall_check.dart';
+import 'package:flui/features/vocabulary/presentation/widgets/spoken_answer_controls.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_notice.dart';
 import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Úsala (1/2): type the word from its meaning and a masked sentence.
+/// Úsala (1/2): recall the word from its meaning and a masked sentence.
+///
+/// Typed ([onSubmit], via `FluiTextField`) by default; while [speakingGym]
+/// is on (design D36, U17b), the field and its submit button are replaced
+/// by [SpokenAnswerControls] — the answer comes from the shell's mic
+/// (`FormRecallMicTarget`) instead, and [check]'s own `lastHeard` shows
+/// what was heard. Hint/reveal/continue stay taps either way.
 class FormRecallView extends StatefulWidget {
   const new({
     required this.check,
@@ -22,6 +30,9 @@ class FormRecallView extends StatefulWidget {
     this.sentenceBefore,
     this.sentenceAfter,
     this.busy = false,
+    this.speakingGym = false,
+    this.micController,
+    this.onSkip,
   });
 
   final FormRecallCheck check;
@@ -33,6 +44,17 @@ class FormRecallView extends StatefulWidget {
   final VoidCallback onHint;
   final VoidCallback onContinue;
   final bool busy;
+
+  /// U17b: shows [SpokenAnswerControls] instead of the typed field/button.
+  final bool speakingGym;
+
+  /// Required (and used) only while [speakingGym] is on.
+  final MicController? micController;
+
+  /// "Continuar sin hablar" — only offered while the mic is blocked
+  /// (`SpokenAnswerControls` itself gates visibility). Required only while
+  /// [speakingGym] is on.
+  final VoidCallback? onSkip;
 
   @override
   State<FormRecallView> createState() => _FormRecallViewState();
@@ -104,13 +126,20 @@ class _FormRecallViewState extends State<FormRecallView> {
           ),
         ],
         const SizedBox(height: FluiSpacing.lg),
-        FluiTextField(
-          label: l10n.formRecallFieldLabel,
-          controller: _controller,
-          enabled: check.status == FormRecallStatus.pending && !widget.busy,
-          textInputAction: TextInputAction.done,
-          onSubmitted: (_) => _submit(),
-        ),
+        if (!widget.speakingGym)
+          FluiTextField(
+            label: l10n.formRecallFieldLabel,
+            controller: _controller,
+            enabled: check.status == FormRecallStatus.pending && !widget.busy,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (_) => _submit(),
+          )
+        else if (widget.micController case final controller?)
+          SpokenAnswerControls(
+            controller: controller,
+            heardText: check.lastHeard,
+            onSkip: widget.onSkip ?? () {},
+          ),
         if (check.hintsUsed >= 1) ...[
           const SizedBox(height: FluiSpacing.sm),
           FluiNotice(
@@ -159,12 +188,14 @@ class _FormRecallViewState extends State<FormRecallView> {
             onPressed: widget.onContinue,
           )
         else ...[
-          FluiButton.primary(
-            label: l10n.formRecallCheck,
-            isLoading: widget.busy,
-            onPressed: _submit,
-          ),
-          const SizedBox(height: FluiSpacing.xs),
+          if (!widget.speakingGym) ...[
+            FluiButton.primary(
+              label: l10n.formRecallCheck,
+              isLoading: widget.busy,
+              onPressed: _submit,
+            ),
+            const SizedBox(height: FluiSpacing.xs),
+          ],
           Center(
             child: FluiButton.text(
               label: check.hintsUsed >= FormRecallCheck.maxHints

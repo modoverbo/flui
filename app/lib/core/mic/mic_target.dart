@@ -103,6 +103,18 @@ final class MicDeliveryFailed extends MicDelivery {
   final String message;
 }
 
+/// The exact [MicDeliveryFailed.message] reserved for a `noSpeech`
+/// transcription outcome (design D34-D37, U17b): `MicController._deliver`
+/// compares a delivery-failed message against this literal to choose the
+/// dedicated `MicNotice.noSpeech` notice instead of the generic
+/// `deliveryFailed` one, so the design's own distinct copy actually
+/// reaches the user (previously the per-call message was silently
+/// discarded). Any caller building a noSpeech [MicDeliveryFailed]
+/// (`SessionController.answerFormRecallAloud`/`answerProductionAloud`,
+/// `TrainingLoopController._messageFor`) MUST use this exact constant
+/// rather than a fresh literal, so the notice mapping stays correct.
+const noSpeechDeliveryMessage = 'No te escuchamos bien. Inténtalo otra vez.';
+
 /// A screen's spoken action, registered with `MicTargetRegistry` so the
 /// shell's single mic can resolve and trigger whichever one is currently
 /// on top (design §19.2, §19.4). Feature-agnostic: `MicController` never

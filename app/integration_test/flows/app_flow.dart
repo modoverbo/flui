@@ -3,7 +3,20 @@ import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
-import 'app_harness.dart';
+import '../support/app_harness.dart';
+
+/// Registers this flow's `testWidgets` case — called once from the single
+/// `integration_test/app_test.dart` entry point (not its own `main()`), so
+/// every flow shares one `flutter-tester` app launch instead of each
+/// `_test.dart` file relaunching the device.
+void registerAppFlowTests() {
+  testWidgets(
+    'first day: register → paywall → time budget → session → progress',
+    (tester) async {
+      await runFirstRunFlow(tester);
+    },
+  );
+}
 
 /// First day on the fake backend:
 /// welcome → intro → plan preview (real prices, no account yet) → register →

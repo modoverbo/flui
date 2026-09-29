@@ -560,6 +560,28 @@ void main() {
       expect(notices, [MicNotice.deliveryFailed]);
     });
 
+    test('a failed delivery carrying the exact noSpeechDeliveryMessage emits '
+        'the dedicated noSpeech notice, not the generic deliveryFailed one '
+        '(U17b, design D34-D37: the distinct copy must actually reach the '
+        'user)', () async {
+      final clock = FixedClock(DateTime(2026));
+      final registry = MicTargetRegistry()
+        ..register(
+          _FakeMicTarget(
+            deliveryResult: const MicDeliveryFailed(noSpeechDeliveryMessage),
+          ),
+          layer: MicLayer.branch,
+        );
+      final controller = build(registry: registry, clock: clock);
+      addTearDown(controller.dispose);
+      final notices = <MicNotice>[];
+      controller.notices.listen(notices.add);
+
+      await recordAndDeliver(controller, clock);
+
+      expect(notices, [MicNotice.noSpeech]);
+    });
+
     test('a denied permission emits permissionDenied, distinct from tooShort '
         'or deliveryFailed', () async {
       final registry = MicTargetRegistry()
