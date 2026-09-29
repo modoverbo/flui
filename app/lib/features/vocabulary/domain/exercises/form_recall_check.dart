@@ -1,15 +1,18 @@
+import 'package:flui/features/vocabulary/domain/exercises/spoken_answer.dart';
 import 'package:flui/features/vocabulary/domain/exercises/text_matching.dart';
 import 'package:flui/features/vocabulary/domain/exercises/word_forms.dart';
 import 'package:meta/meta.dart';
 
 enum FormRecallStatus { pending, accepted, revealed }
 
-/// Typed recall of a word from its meaning and a masked sentence.
+/// Typed or spoken recall of a word from its meaning and a masked sentence.
 ///
-/// Answers are compared lowercase, trimmed and without diacritics against the
-/// expected form, the lemma and its known forms. One typo (edit distance 1)
-/// is tolerated for forms of 6 letters or more. Up to two hints (the second
-/// is the first letter), then the word is revealed.
+/// Typed answers ([submit]) are compared lowercase, trimmed and without
+/// diacritics against the expected form, the lemma and its known forms. One
+/// typo (edit distance 1) is tolerated for forms of 6 letters or more.
+/// Spoken answers ([submitHeard]) additionally tolerate the [spanishSoundKey]
+/// homophones of [SpokenAnswer.matchesForm] (design D35). Up to two hints
+/// (the second is the first letter), then the word is revealed.
 @immutable
 final class FormRecallCheck {
   const new({
@@ -18,6 +21,7 @@ final class FormRecallCheck {
     this.hintsUsed = 0,
     this.status = FormRecallStatus.pending,
     this.lastAnswerRejected = false,
+    this.lastHeard,
   });
 
   static const maxHints = 2;
@@ -29,6 +33,10 @@ final class FormRecallCheck {
   final int hintsUsed;
   final FormRecallStatus status;
   final bool lastAnswerRejected;
+
+  /// The last transcript heard through [submitHeard], for the UI's
+  /// "Escuché: «...»" display. `null` until a spoken answer is submitted.
+  final String? lastHeard;
 
   bool get isResolved => status != FormRecallStatus.pending;
 
@@ -66,22 +74,54 @@ final class FormRecallCheck {
   /// "Pista": the next hint, or the reveal after [maxHints].
   FormRecallCheck takeHint() => isResolved ? this : _nextHint(rejected: false);
 
-  FormRecallCheck _nextHint({required bool rejected}) {
-    if (hintsUsed >= maxHints) {
-      return _copy(status: FormRecallStatus.revealed, rejected: rejected);
+  /// The spoken counterpart of [submit]: [transcript] is a speech-to-text
+  /// result rather than typed input.
+  ///
+  /// An empty transcript (no words heard) leaves the state entirely
+  /// unchanged — no hint is consumed, mirroring the caller never having
+  /// spoken. Otherwise this has the same accept/hint/reveal shape as
+  /// [submit], but matches through [SpokenAnswer.matchesForm] (window scan +
+  /// typo tolerance + Spanish sound key) instead of [accepts]. Stores
+  /// [transcript] in [lastHeard] whenever it is actually evaluated.
+  FormRecallCheck submitHeard(String transcript) {
+    if (isResolved || wordTokens(transcript).isEmpty) return this;
+    final heard = transcript.trim();
+    if (SpokenAnswer.matchesForm(
+      transcript,
+      expectedForm: expectedForm,
+      forms: forms,
+    )) {
+      return _copy(
+        status: FormRecallStatus.accepted,
+        rejected: false,
+        heard: heard,
+      );
     }
-    return _copy(hints: hintsUsed + 1, rejected: rejected);
+    return _nextHint(rejected: true, heard: heard);
+  }
+
+  FormRecallCheck _nextHint({required bool rejected, String? heard}) {
+    if (hintsUsed >= maxHints) {
+      return _copy(
+        status: FormRecallStatus.revealed,
+        rejected: rejected,
+        heard: heard,
+      );
+    }
+    return _copy(hints: hintsUsed + 1, rejected: rejected, heard: heard);
   }
 
   FormRecallCheck _copy({
     required bool rejected,
     int? hints,
     FormRecallStatus? status,
+    String? heard,
   }) => FormRecallCheck(
     expectedForm: expectedForm,
     forms: forms,
     hintsUsed: hints ?? hintsUsed,
     status: status ?? this.status,
     lastAnswerRejected: rejected,
+    lastHeard: heard ?? lastHeard,
   );
 }

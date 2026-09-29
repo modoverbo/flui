@@ -91,4 +91,52 @@ void main() {
       expect(accepted.takeHint(), accepted);
     });
   });
+
+  group('FormRecallCheck.submitHeard', () {
+    FormRecallCheck start() =>
+        const FormRecallCheck(expectedForm: 'perspicaz', forms: perspicaz);
+
+    test(
+      'an empty transcript leaves the state unchanged, no hint consumed',
+      () {
+        final check = start().submitHeard('   ');
+
+        expect(check.status, FormRecallStatus.pending);
+        expect(check.hintsUsed, 0);
+        expect(check.lastHeard, isNull);
+        expect(check, start());
+      },
+    );
+
+    test('a matching heard transcript accepts and stores lastHeard', () {
+      final check = start().submitHeard('Yo diría que es muy perspicaz');
+
+      expect(check.status, FormRecallStatus.accepted);
+      expect(check.hintsUsed, 0);
+      expect(check.countsAsDone, isTrue);
+      expect(check.lastHeard, 'Yo diría que es muy perspicaz');
+    });
+
+    test('a mismatching heard transcript gives hints with typed parity', () {
+      final one = start().submitHeard('creo que es muy listo');
+      expect(one.status, FormRecallStatus.pending);
+      expect(one.hintsUsed, 1);
+      expect(one.lastAnswerRejected, isTrue);
+      expect(one.lastHeard, 'creo que es muy listo');
+
+      final two = one.submitHeard('diría que es avispado');
+      expect(two.hintsUsed, 2);
+      expect(two.firstLetter, 'p');
+
+      final revealed = two.submitHeard('me parece agudo');
+      expect(revealed.status, FormRecallStatus.revealed);
+      expect(revealed.countsAsDone, isFalse);
+    });
+
+    test('a resolved check ignores more heard input too', () {
+      final accepted = start().submitHeard('qué persona tan perspicaz');
+
+      expect(accepted.submitHeard('otra cosa'), accepted);
+    });
+  });
 }
