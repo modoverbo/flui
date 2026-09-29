@@ -1,6 +1,7 @@
 import 'package:integration_test/integration_test.dart';
 
 import 'flows/app_flow.dart';
+import 'flows/progress_playback.dart';
 import 'flows/spoken_usala.dart';
 
 /// The single `integration_test` bundle entry point. `flutter test
@@ -14,4 +15,5 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
   registerAppFlowTests();
   registerSpokenUsalaTests();
+  registerProgressPlaybackTests();
 }
