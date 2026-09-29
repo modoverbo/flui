@@ -1,16 +1,12 @@
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
-import 'package:flui/core/fake/fake_remote.dart';
 import 'package:flui/core/riverpod/ref_futures.dart';
-import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
-import 'package:flui/features/daily/domain/daily_session.dart';
-import 'package:flui/features/daily/domain/session_planner.dart';
 import 'package:flui/features/daily/domain/time_budget.dart';
+import 'package:flui/features/daily/presentation/controllers/plan_today.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/presentation/providers/exercise_providers.dart';
-import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -77,6 +73,11 @@ class TimeBudgetController extends _$TimeBudgetController {
 
   /// Plans with [budget] and [themeId] and saves today's session (recomputing
   /// an existing one). Returns whether it was saved.
+  ///
+  /// Delegates the actual planning/persistence to `PlanToday` (extracted in
+  /// U15a so HOY's budget-free chips/mic entry point shares this exact
+  /// save path) — this controller only owns the "¿Cuánto tiempo tienes
+  /// hoy?" screen's own saving/failure UI state.
   Future<bool> start(TimeBudget budget, {String? themeId}) async {
     if (state.saving) return false;
     state = state.copyWith(
@@ -85,49 +86,11 @@ class TimeBudgetController extends _$TimeBudgetController {
       saving: true,
       failure: null,
     );
-    try {
-      final userId = (await ref.readFuture(authUserProvider.future))?.id;
-      if (userId == null) throw notSignedInFailure;
-      final catalog = await ref.readFuture(catalogProvider.future);
-      final themes = await ref.readFuture(themesProvider.future);
-      final data = await ref.readFuture(
-        learningDataControllerProvider(userId).future,
-      );
-      final today = ref.read(clockProvider).localToday();
-      final inputs = SessionPlanInputs.derive(
-        catalog: catalog,
-        progress: data.progress,
-        today: today,
-        themes: themes,
-        themeId: themeId,
-      );
-      final plan = SessionPlanner.plan(
-        budgetMinutes: budget.minutes,
-        today: today,
-        dueReviews: inputs.dueReviews,
-        candidates: inputs.candidates,
-        recentIntroductions: inputs.recentIntroductions,
-        themeId: themeId,
-        practiceWords: inputs.practiceWords,
-        neighbourThemeIds: inputs.neighbourThemeIds,
-      );
-      final result = await ref
-          .read(learningDataControllerProvider(userId).notifier)
-          .saveSession(
-            DailySession(
-              localDate: today,
-              minutes: budget.minutes,
-              plannedWordIds: plan.newWordIds,
-              reviewWordIds: plan.reviewWordIds,
-              themeId: themeId,
-            ),
-          );
-      if (!ref.mounted) return result.isOk;
-      state = state.copyWith(saving: false, failure: result.failureOrNull);
-      return result.isOk;
-    } on Failure catch (failure) {
-      if (ref.mounted) state = state.copyWith(saving: false, failure: failure);
-      return false;
-    }
+    final result = await ref
+        .read(planTodayProvider)
+        .run(budget: budget, themeId: themeId);
+    if (!ref.mounted) return result.isOk;
+    state = state.copyWith(saving: false, failure: result.failureOrNull);
+    return result.isOk;
   }
 }

@@ -67,8 +67,8 @@ class _MicNoticeHostState extends State<MicNoticeHost> {
 
 /// The distinct copy per code (design D43). `cancelledByNavigation`,
 /// `cancelledByBackground`, and `tooShort` use the design's own normative
-/// wording verbatim; `permissionDenied`/`busy`/`deliveryFailed` follow the
-/// same neutral, "tú" voice.
+/// wording verbatim; `permissionDenied`/`busy`/`deliveryFailed`/
+/// `planFailed` follow the same neutral, "tú" voice.
 String _copyFor(MicNotice notice) => switch (notice) {
   MicNotice.cancelledByNavigation =>
     'Grabación cancelada: cambiaste de pantalla.',
@@ -85,4 +85,6 @@ String _copyFor(MicNotice notice) => switch (notice) {
         'momento.',
   MicNotice.deliveryFailed =>
     'No pudimos enviar tu grabación. Vuelve a intentarlo.',
+  MicNotice.planFailed =>
+    'No pudimos preparar tu sesión de hoy. Inténtalo de nuevo.',
 };

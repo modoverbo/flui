@@ -130,6 +130,10 @@ void main() {
       MicNotice.deliveryFailed,
       'No pudimos enviar tu grabación. Vuelve a intentarlo.',
     ),
+    (
+      MicNotice.planFailed,
+      'No pudimos preparar tu sesión de hoy. Inténtalo de nuevo.',
+    ),
   ]) {
     testWidgets('shows its own distinct copy for $notice', (tester) async {
       final controller = build();

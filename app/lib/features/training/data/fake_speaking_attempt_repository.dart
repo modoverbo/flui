@@ -82,4 +82,20 @@ final class FakeSpeakingAttemptRepository
         if (attempt.sessionId == newestSessionId) attempt,
     ]);
   }
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> recentAttemptsSince(
+    LocalDate since,
+  ) async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    final attempts = <SpeakingAttempt>[
+      for (final attempt
+          in _attemptsByUser[userId] ?? const <SpeakingAttempt>[])
+        if (!attempt.localDate.isBefore(since)) attempt,
+    ]..sort((a, b) => b.localDate.compareTo(a.localDate));
+    return Result.ok(attempts);
+  }
 }

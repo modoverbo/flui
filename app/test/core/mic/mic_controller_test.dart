@@ -50,6 +50,8 @@ final class _FakeMicTarget implements MicTarget {
   @override
   Stream<void> get changes => _changesController.stream;
 
+  void notifyChanged() => _changesController.add(null);
+
   @override
   Future<MicDelivery> deliver(RecordedAudio audio) async {
     deliverCalls++;
@@ -372,6 +374,29 @@ void main() {
       await _flush();
 
       expect((controller.state as MicIdle).prompt.actionLabel, 'Responder');
+    });
+
+    test("the idle label refreshes when the resolved target's OWN `changes` "
+        'stream fires, with no registry event and no gesture at all (U15a '
+        'review fix: TodayStartTarget notifies on a label change that '
+        'happens entirely off-gesture, e.g. once a session persisted before '
+        'the page ever mounted becomes visible)', () async {
+      final registry = MicTargetRegistry();
+      final target = _FakeMicTarget(
+        prompt: const MicPrompt(actionLabel: 'Empezar'),
+      );
+      registry.register(target, layer: MicLayer.branch);
+      final controller = build(registry: registry);
+      addTearDown(controller.dispose);
+
+      expect((controller.state as MicIdle).prompt.actionLabel, 'Empezar');
+
+      target
+        ..prompt = const MicPrompt(actionLabel: 'Continuar')
+        ..notifyChanged();
+      await _flush();
+
+      expect((controller.state as MicIdle).prompt.actionLabel, 'Continuar');
     });
   });
 

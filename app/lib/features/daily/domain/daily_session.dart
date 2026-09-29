@@ -20,6 +20,20 @@ abstract class DailySession with _$DailySession {
     /// recomputes the plan exactly like [minutes] does.
     String? themeId,
     DateTime? completedAt,
+
+    /// `TrainingPlanner.planDay`'s chosen `SkillArea` (wire value, e.g.
+    /// `'thinking'`) for today's speaking goal, `null` before the planner
+    /// has run (flag off, or a session saved before this field existed —
+    /// design part-3 §5, U15a).
+    String? focusArea,
+
+    /// The challenge picked for today's first speaking round, `null` when
+    /// the planner had nothing published to offer.
+    String? challengeId,
+
+    /// Up to 3 due review word ids woven into the speaking loop's transfer
+    /// step (U15b weaves them; U15a only persists the planner's picks).
+    @Default(<String>[]) List<String> wovenWordIds,
   }) = _DailySession;
 
   const new _();
@@ -27,4 +41,8 @@ abstract class DailySession with _$DailySession {
   bool get isCompleted => completedAt != null;
 
   bool get isEmpty => plannedWordIds.isEmpty && reviewWordIds.isEmpty;
+
+  /// Whether `TrainingPlanner.planDay` has already run for this session —
+  /// its result is persisted once and never re-rolled on a plain reload.
+  bool get hasTrainingPlan => challengeId != null || focusArea != null;
 }

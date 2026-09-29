@@ -18,6 +18,7 @@ import 'package:flui/core/mic/presentation/mic_blocked_sheet.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
+import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
@@ -45,6 +46,10 @@ import '../../integration_test/support/app_harness.dart';
 final class _FakeSpeechRecorder implements SpeechRecorder {
   new();
 
+  /// Observable proof a real recording actually started — U15a's review
+  /// fix hinges on HOY's mic NEVER calling this on its first press.
+  int startCalls = 0;
+
   @override
   Stream<double> get amplitude => const Stream.empty();
 
@@ -52,7 +57,7 @@ final class _FakeSpeechRecorder implements SpeechRecorder {
   Future<bool> requestPermission() async => true;
 
   @override
-  Future<void> start() async {}
+  Future<void> start() async => startCalls++;
 
   @override
   Future<Uint8List> stop() async => Uint8List.fromList(const [1, 2, 3]);
@@ -412,6 +417,219 @@ void main() {
         // the training-lab mode picker.
         expect(find.text('Piensa y habla'), findsNothing);
         expect(find.text('No encontramos esta página.'), findsOneWidget);
+      },
+    );
+  });
+
+  group("HOY's own loop, /today/train (speakingGym ON, U15a)", () {
+    const seededChallengeId = '072b6134-a2b7-4e79-86bf-5a6aeeb5118c';
+
+    testWidgets('/today/train is unreachable while the flag is off', (
+      tester,
+    ) async {
+      final harness = AppHarness(signedInAs: ana, access: trialing);
+      await harness.pumpApp(tester, arrange: (h) => h.planToday());
+
+      harness.container.read(goRouterProvider).go(AppRoutes.todayTrain);
+      await tester.pumpAndSettle();
+
+      expect(find.text('No encontramos esta página.'), findsOneWidget);
+    });
+
+    testWidgets(
+      'a session with a persisted challenge starts the loop on the branch '
+      "navigator, not a full-screen take-over — HOY's context, unlike "
+      "ENTRENAR's",
+      (tester) async {
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.todayTrain,
+          arrange: (h) async {
+            harness.skillProfiles.seedProfile(_seededProfile);
+            await harness.dailySessions.saveSession(
+              DailySession(
+                localDate: harness.clock.localToday(),
+                minutes: 10,
+                challengeId: seededChallengeId,
+              ),
+            );
+          },
+        );
+
+        expect(
+          find.text('Cuéntame qué hiciste esta mañana, de principio a fin.'),
+          findsOneWidget,
+        );
+        // Branch child, not a root-navigator take-over (design D30): the
+        // shell chrome stays, same as ENTRENAR's `/train/:mode`.
+        expect(find.byType(FluiBottomBar), findsOneWidget);
+      },
+    );
+
+    testWidgets('(a) picking a duration then tapping the bottom-bar mic on HOY '
+        'plans the session and navigates to /today/train WITHOUT recording '
+        "anything — the challenge prompt shows, the mic label is the loop's "
+        '(U15a review fix: HOY never records directly)', (tester) async {
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        arrange: (h) async => h.skillProfiles.seedProfile(_seededProfile),
+      );
+
+      await tester.tap(find.text('30 min'));
+      await tester.pumpAndSettle();
+
+      // A single TAP (not a hold gesture): `TodayStartTarget.availability`
+      // is always `MicPrepare`, which never leads to a capture on this
+      // same gesture — matches `QuickPracticeTarget`'s own established
+      // first-activation shape.
+      await tester.tap(find.byType(MicButton));
+      await tester.pumpAndSettle();
+
+      expect(recorder.startCalls, 0);
+      final saved =
+          (await harness.dailySessions.fetchSessions()).valueOrNull!.single;
+      expect(saved.minutes, 30);
+      expect(saved.challengeId, isNotNull);
+      expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
+      expect(location(harness), AppRoutes.todayTrain);
+
+      // The mic is now bound to the loop's registered LoopMicTarget, not
+      // TodayStartTarget — same real-path assertion style as the
+      // ENTRENAR mic test above.
+      final registry = harness.container.read(micTargetRegistryProvider);
+      final (onLoop, _) = registry.resolve();
+      expect(onLoop, isA<LoopMicTarget>());
+    });
+
+    testWidgets('(b) the NEXT mic press, on /today/train, actually records and '
+        'delivers to the loop', (tester) async {
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        arrange: (h) async => h.skillProfiles.seedProfile(_seededProfile),
+      );
+      await tester.tap(find.text('30 min'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byType(MicButton));
+      await tester.pumpAndSettle();
+      expect(location(harness), AppRoutes.todayTrain);
+
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byType(MicButton)),
+      );
+      for (var i = 0; i < 3; i++) {
+        await tester.pump();
+      }
+      harness.clock.advance(const Duration(milliseconds: 700));
+      await gesture.up();
+      await tester.pumpAndSettle();
+
+      expect(recorder.startCalls, 1);
+      expect(harness.speakingAttempts.attemptsForCurrentUser, hasLength(1));
+    });
+
+    testWidgets('(c) with a plan already persisted, the HOY mic press shows '
+        '"Continuar la sesión de hoy" and navigates without re-planning', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        arrange: (h) async {
+          h.skillProfiles.seedProfile(_seededProfile);
+          await h.dailySessions.saveSession(
+            DailySession(
+              localDate: h.clock.localToday(),
+              minutes: 20,
+              challengeId: seededChallengeId,
+            ),
+          );
+        },
+      );
+
+      expect(
+        tester.getSemantics(find.byType(MicButton)).label,
+        'Continuar la sesión de hoy',
+      );
+      await tester.tap(find.byType(MicButton));
+      await tester.pumpAndSettle();
+
+      expect(recorder.startCalls, 0);
+      expect(location(harness), AppRoutes.todayTrain);
+      final saved =
+          (await harness.dailySessions.fetchSessions()).valueOrNull!.single;
+      // Unchanged — still 20, never re-planned to a chip default.
+      expect(saved.minutes, 20);
+      handle.dispose();
+    });
+
+    testWidgets(
+      '(d) a planning failure shows the notice, keeps the user on HOY, '
+      'and records nothing',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          arrange: (h) async => h.skillProfiles.seedProfile(_seededProfile),
+        );
+        harness.dailySessions.nextFailure = const NetworkFailure();
+
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
+
+        expect(
+          find.text(
+            'No pudimos preparar tu sesión de hoy. Inténtalo de '
+            'nuevo.',
+          ),
+          findsOneWidget,
+        );
+        expect(location(harness), AppRoutes.today);
+        expect(recorder.startCalls, 0);
+        expect(
+          (await harness.dailySessions.fetchSessions()).valueOrNull,
+          isEmpty,
+        );
+        expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
       },
     );
   });
@@ -918,62 +1136,72 @@ void main() {
       speakingGymEnabledProvider.overrideWithValue(true),
     ];
 
-    testWidgets('1. HOY mic -> prompt visible -> switch to ENTRENAR and open a '
-        'mode -> the quick overlay is gone; a mic tap delivers to the '
-        'loop target, not quick practice, and the mic label is the '
-        "loop's", (tester) async {
-      final recorder = _FakeSpeechRecorder();
-      final harness = AppHarness(
-        signedInAs: ana,
-        access: trialing,
-        overrides: [
-          ...gymOn(),
-          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
-        ],
-      );
-      await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
+    testWidgets(
+      '1. PROGRESO mic -> prompt visible -> switch to ENTRENAR and open a '
+      'mode -> the quick overlay is gone; a mic tap delivers to the '
+      "loop target, not quick practice, and the mic label is the loop's "
+      // HOY itself is no longer a valid quick-practice site once U15a's
+      // TodayStartTarget is always registered there (design part-3
+      // §11/§19.4: HOY's mic never falls back to quick practice) — this
+      // scenario now anchors on PROGRESO, which never registers a target
+      // of its own, same as the dedicated PROGRESO group above.
+      '(PROGRESO replaces HOY as the no-target tab, U15a)',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            ...gymOn(),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
+        await tester.tap(find.text('Progreso'));
+        await tester.pumpAndSettle();
 
-      // First activation on HOY: the quick-practice prompt appears.
-      await tester.tap(find.byType(MicButton));
-      await tester.pumpAndSettle();
-      expect(find.text(_l10n.quickPracticeThinkingHeadline), findsOneWidget);
+        // First activation on PROGRESO: the quick-practice prompt appears.
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
+        expect(find.text(_l10n.quickPracticeThinkingHeadline), findsOneWidget);
 
-      // Switch to ENTRENAR and open a mode — registers a
-      // LoopMicTarget, which now wins `resolve()`.
-      await tester.tap(find.text('Entrenar'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Piensa y habla'));
-      await tester.pumpAndSettle();
+        // Switch to ENTRENAR and open a mode — registers a
+        // LoopMicTarget, which now wins `resolve()`.
+        await tester.tap(find.text('Entrenar'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Piensa y habla'));
+        await tester.pumpAndSettle();
 
-      // The quick overlay is gone — no stale prompt/think/ready text
-      // anywhere in the tree.
-      expect(find.text(_l10n.quickPracticeThinkingHeadline), findsNothing);
-      expect(find.text(_l10n.quickPracticeReadyHint), findsNothing);
+        // The quick overlay is gone — no stale prompt/think/ready text
+        // anywhere in the tree.
+        expect(find.text(_l10n.quickPracticeThinkingHeadline), findsNothing);
+        expect(find.text(_l10n.quickPracticeReadyHint), findsNothing);
 
-      final registry = harness.container.read(micTargetRegistryProvider);
-      expect(registry.resolve().$1, isA<LoopMicTarget>());
+        final registry = harness.container.read(micTargetRegistryProvider);
+        expect(registry.resolve().$1, isA<LoopMicTarget>());
 
-      // A mic tap now records into the LOOP, never into quick
-      // practice.
-      final gesture = await tester.startGesture(
-        tester.getCenter(find.byType(MicButton)),
-      );
-      for (var i = 0; i < 3; i++) {
-        await tester.pump();
-      }
-      harness.clock.advance(const Duration(milliseconds: 700));
-      await gesture.up();
-      await tester.pumpAndSettle();
+        // A mic tap now records into the LOOP, never into quick
+        // practice.
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        harness.clock.advance(const Duration(milliseconds: 700));
+        await gesture.up();
+        await tester.pumpAndSettle();
 
-      final attempts = harness.container.read(
-        speakingAttemptRepositoryProvider,
-      ) as FakeSpeakingAttemptRepository;
-      expect(
-        attempts.attemptsForCurrentUser.last.context,
-        isNot(TrainingContext.quick),
-      );
-      expect(find.text(_l10n.quickPracticeThinkingHeadline), findsNothing);
-    });
+        final attempts = harness.container.read(
+          speakingAttemptRepositoryProvider,
+        ) as FakeSpeakingAttemptRepository;
+        expect(
+          attempts.attemptsForCurrentUser.last.context,
+          isNot(TrainingContext.quick),
+        );
+        expect(find.text(_l10n.quickPracticeThinkingHeadline), findsNothing);
+      },
+    );
 
     testWidgets('2. a quick-practice delivery already past Finishing is never '
         'cancelled by an immediately-following tab switch — the attempt '
@@ -992,6 +1220,11 @@ void main() {
         ],
       );
       await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
+      // PROGRESO (not HOY): U15a's TodayStartTarget is always registered
+      // on HOY once the flag is on, so HOY is no longer a valid
+      // quick-practice site — see test 1's own note above.
+      await tester.tap(find.text('Progreso'));
+      await tester.pumpAndSettle();
 
       await tester.tap(find.byType(MicButton));
       await tester.pumpAndSettle();
@@ -1028,45 +1261,51 @@ void main() {
       expect(find.text(_l10n.quickPracticeSummaryTitle), findsNothing);
     });
 
-    testWidgets('3. with the prompt showing, switching away and back to HOY '
-        'leaves no stale panel; the next mic tap is a fresh first '
-        'activation, not an immediate capture', (tester) async {
-      final recorder = _FakeSpeechRecorder();
-      final harness = AppHarness(
-        signedInAs: ana,
-        access: trialing,
-        overrides: [
-          ...gymOn(),
-          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
-        ],
-      );
-      await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
+    testWidgets(
+      '3. with the prompt showing, switching away and back to PROGRESO '
+      'leaves no stale panel; the next mic tap is a fresh first '
+      'activation, not an immediate capture (PROGRESO replaces HOY as the '
+      'no-target tab, U15a)',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            ...gymOn(),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
+        await tester.tap(find.text('Progreso'));
+        await tester.pumpAndSettle();
 
-      await tester.tap(find.byType(MicButton));
-      await tester.pumpAndSettle();
-      expect(find.text(_l10n.quickPracticeThinkingHeadline), findsOneWidget);
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
+        expect(find.text(_l10n.quickPracticeThinkingHeadline), findsOneWidget);
 
-      // ENTRENAR's mode PICKER (no mode open) never registers a
-      // target of its own — quick practice is STILL what resolve()
-      // returns there. The route change alone must still dismiss.
-      await tester.tap(find.text('Entrenar'));
-      await tester.pumpAndSettle();
-      await tester.tap(find.text('Hoy'));
-      await tester.pumpAndSettle();
+        // ENTRENAR's mode PICKER (no mode open) never registers a
+        // target of its own — quick practice is STILL what resolve()
+        // returns there. The route change alone must still dismiss.
+        await tester.tap(find.text('Entrenar'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Progreso'));
+        await tester.pumpAndSettle();
 
-      expect(find.text(_l10n.quickPracticeThinkingHeadline), findsNothing);
-      expect(find.text(_l10n.quickPracticeReadyHint), findsNothing);
-      final controller = harness.container.read(micControllerProvider)!;
-      expect(controller.state, isA<MicIdle>());
+        expect(find.text(_l10n.quickPracticeThinkingHeadline), findsNothing);
+        expect(find.text(_l10n.quickPracticeReadyHint), findsNothing);
+        final controller = harness.container.read(micControllerProvider)!;
+        expect(controller.state, isA<MicIdle>());
 
-      // The next mic tap starts a FRESH first activation, not an
-      // immediate capture.
-      await tester.tap(find.byType(MicButton));
-      await tester.pumpAndSettle();
+        // The next mic tap starts a FRESH first activation, not an
+        // immediate capture.
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
 
-      expect(controller.state, isA<MicIdle>());
-      expect(find.text(_l10n.quickPracticeThinkingHeadline), findsOneWidget);
-    });
+        expect(controller.state, isA<MicIdle>());
+        expect(find.text(_l10n.quickPracticeThinkingHeadline), findsOneWidget);
+      },
+    );
   });
 
   testWidgets('category detail back restores its family filter and page', (

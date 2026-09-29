@@ -15,6 +15,7 @@ import 'package:flui/features/daily/presentation/providers/daily_providers.dart'
 import 'package:flui/features/daily/presentation/session_page.dart';
 import 'package:flui/features/daily/presentation/time_budget_page.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
+import 'package:flui/features/daily/presentation/today_train_page.dart';
 import 'package:flui/features/diagnosis/presentation/diagnosis_gate.dart';
 import 'package:flui/features/diagnosis/presentation/diagnosis_intro_page.dart';
 import 'package:flui/features/diagnosis/presentation/diagnosis_page.dart';
@@ -190,7 +191,7 @@ List<StatefulShellBranch> _originalBranches(
 /// order exactly. ENTRENAR replaces Habla's slot; `/speaking/challenge`
 /// deep links redirect to it via `AppRoutes.gymRetiredRoutes`.
 List<StatefulShellBranch> _gymBranches(GlobalKey<NavigatorState> rootKey) => [
-  _todayBranch(rootKey),
+  _todayBranch(rootKey, speakingGym: true),
   StatefulShellBranch(
     routes: [
       // ENTRENAR (U16, replacing the Habla/speaking-challenge tab):
@@ -219,8 +220,9 @@ List<StatefulShellBranch> _gymBranches(GlobalKey<NavigatorState> rootKey) => [
 ];
 
 StatefulShellBranch _todayBranch(
-  GlobalKey<NavigatorState> rootKey,
-) => StatefulShellBranch(
+  GlobalKey<NavigatorState> rootKey, {
+  bool speakingGym = false,
+}) => StatefulShellBranch(
   routes: [
     GoRoute(
       path: AppRoutes.today,
@@ -241,6 +243,11 @@ StatefulShellBranch _todayBranch(
           parentNavigatorKey: rootKey,
           builder: (_, _) => const TimeBudgetPage(),
         ),
+        // HOY's own loop (U15a): a branch child, not a root-navigator
+        // take-over (design D30, matches ENTRENAR's `/train/:mode`) —
+        // only reachable while `speakingGym` is on.
+        if (speakingGym)
+          GoRoute(path: 'train', builder: (_, _) => const TodayTrainPage()),
       ],
     ),
   ],

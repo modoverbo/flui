@@ -1,9 +1,16 @@
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/theme/flui_colors.dart';
+import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/category_artwork.dart';
 import 'package:flui/features/daily/presentation/today_page.dart';
+import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
+import 'package:flui/features/subscription/domain/access_status.dart';
+import 'package:flui/features/training/domain/behavior_code.dart';
+import 'package:flui/features/training/domain/skill.dart';
+import 'package:flui/features/training/domain/skill_profile.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
@@ -11,6 +18,7 @@ import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
+import '../../../../integration_test/support/app_harness.dart';
 import '../../../helpers/learning_builders.dart';
 import '../../../helpers/learning_fakes.dart';
 import '../../../helpers/pump_router.dart';
@@ -509,5 +517,88 @@ void main() {
     final block = tester.getSize(inkBlock);
     expect(block.width, closeTo(header.width, 1));
     expect(find.text('TU RACHA'), findsOneWidget);
+  });
+
+  group('speakingGym on — HOY budget-free chips (U15a)', () {
+    const ana = AppUser(
+      id: 'ignored',
+      email: 'ana@correo.com',
+      displayName: 'Ana',
+    );
+    const trialing = AccessStatus(
+      hasAccess: true,
+      entitlementStatus: EntitlementStatus.trialing,
+    );
+    final seededProfile = SkillProfileRecord(
+      id: 'seed-diagnosis',
+      kind: SkillProfileKind.baseline,
+      diagnosedAt: DateTime(2026, 9),
+      profile: const SkillProfile(
+        topArea: SkillArea.thinking,
+        secondArea: SkillArea.language,
+        strengths: <BehaviorCode>[],
+        evidence: <DiagnosisEvidence>[],
+      ),
+    );
+
+    Future<AppHarness> pumpGym(WidgetTester tester) async {
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
+      );
+      await harness.pumpApp(
+        tester,
+        arrange: (h) async => h.skillProfiles.seedProfile(seededProfile),
+      );
+      return harness;
+    }
+
+    testWidgets(
+      'no session yet: duration chips render with a provisional plan',
+      (tester) async {
+        await pumpGym(tester);
+
+        expect(find.text('5 min'), findsOneWidget);
+        expect(find.text('10 min'), findsOneWidget);
+        expect(find.text('20 min'), findsOneWidget);
+        expect(find.text('30 min'), findsOneWidget);
+        expect(find.text('Empezar'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      'changing a chip re-plans the provisional plan in memory, no write '
+      'until START',
+      (tester) async {
+        final harness = await pumpGym(tester);
+
+        await tester.tap(find.text('30 min'));
+        await tester.pumpAndSettle();
+
+        expect(
+          (await harness.dailySessions.fetchSessions()).valueOrNull,
+          isEmpty,
+        );
+      },
+    );
+
+    testWidgets(
+      'tapping START persists the plan (word + training) and navigates to '
+      '/today/train',
+      (tester) async {
+        final harness = await pumpGym(tester);
+
+        await tester.tap(find.text('30 min'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Empezar'));
+        await tester.pumpAndSettle();
+
+        final saved =
+            (await harness.dailySessions.fetchSessions()).valueOrNull!.single;
+        expect(saved.minutes, 30);
+        expect(saved.challengeId, isNotNull);
+      },
+    );
   });
 }

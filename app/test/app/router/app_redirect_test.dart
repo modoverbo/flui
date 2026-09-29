@@ -130,6 +130,37 @@ void main() {
     (DailyGate.unavailable, splashFrom('/today'), '/today'),
   ];
 
+  // Once speakingGym is on (U15a, design D41): HOY shows duration chips
+  // instead of requiring a persisted session first, so `/today` itself no
+  // longer needs the budget guard — but its own loop route, `/session`
+  // and `/words*` all still do, unchanged.
+  final gymDailyCases = <(DailyGate, String location, String?)>[
+    (DailyGate.needsBudget, '/today', null),
+    (DailyGate.needsBudget, '/today/train', '/today/time'),
+    (DailyGate.needsBudget, '/session', '/today/time'),
+    (DailyGate.needsBudget, '/words', '/today/time'),
+    (DailyGate.planned, '/today', null),
+    (DailyGate.planned, '/today/train', null),
+    (DailyGate.unknown, '/today', null),
+  ];
+
+  group('daily time budget guard — speakingGym on (U15a)', () {
+    for (final (daily, location, expected) in gymDailyCases) {
+      test('granted + $daily at $location -> $expected', () {
+        expect(
+          appRedirect(
+            auth: inn,
+            access: granted,
+            daily: daily,
+            location: Uri.parse(location),
+            speakingGym: true,
+          ),
+          expected,
+        );
+      });
+    }
+  });
+
   group('daily time budget guard', () {
     for (final (daily, location, expected) in dailyCases) {
       test('granted + $daily at $location -> $expected', () {

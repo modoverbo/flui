@@ -99,4 +99,22 @@ final class SupabaseSpeakingAttemptRepository
       return Result.err(mapDataError(error));
     }
   }
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> recentAttemptsSince(
+    LocalDate since,
+  ) async {
+    try {
+      final rows = await _client
+          .from('speaking_attempts')
+          .select(SpeakingAttemptDto.columns)
+          .gte('local_date', since.toIso())
+          .order('created_at', ascending: false);
+      return Result.ok([
+        for (final row in rows) SpeakingAttemptDto.fromJson(row).toDomain(),
+      ]);
+    } on Object catch (error) {
+      return Result.err(mapDataError(error));
+    }
+  }
 }

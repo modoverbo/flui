@@ -1,17 +1,25 @@
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/error/result.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
+import 'package:flui/core/mic/presentation/mic_target_scope.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
+import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/domain/session_plan.dart';
+import 'package:flui/features/daily/domain/time_budget.dart';
 import 'package:flui/features/daily/presentation/category_artwork.dart';
+import 'package:flui/features/daily/presentation/controllers/plan_today.dart';
+import 'package:flui/features/daily/presentation/controllers/time_budget_controller.dart';
+import 'package:flui/features/daily/presentation/controllers/today_start_target.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
 import 'package:flui/features/daily/presentation/providers/today_overview.dart';
@@ -20,6 +28,7 @@ import 'package:flui/features/reading/presentation/providers/context_readings.da
 import 'package:flui/features/reading/presentation/widgets/reading_card.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/presentation/widgets/theme_explorer_sheet.dart';
+import 'package:flui/features/training/domain/training_planner.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:flui/shared/widgets/card_stack.dart';
@@ -41,6 +50,12 @@ import 'package:material_ui/material_ui.dart' hide Theme;
 /// "Hoy": today's workout, not a dashboard. The front card of a small stack
 /// is the one unmistakable action of the day; everything else — the theme,
 /// the streak, the editorial numbers — is secondary and reachable below it.
+///
+/// While `speakingGymEnabledProvider` is on (U15a, design D41), registers
+/// `TodayStartTarget` with the shell's mic via `MicTargetScope` — entirely
+/// absent from the tree while the flag is off (production safety: every
+/// push auto-deploys the web app), matching `TrainingLoopView`'s own
+/// established guard for the same class of provider.
 class TodayPage extends ConsumerWidget {
   const new({super.key});
 
@@ -48,7 +63,7 @@ class TodayPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final overview = ref.watch(todayOverviewProvider);
-    return Scaffold(
+    final body = Scaffold(
       body: switch (overview) {
         AsyncValue(hasValue: true, :final value?) => _TodayScaffold(
           overview: value,
@@ -73,6 +88,10 @@ class TodayPage extends ConsumerWidget {
         _ => Center(child: LoadingWave(semanticLabel: l10n.commonLoading)),
       },
     );
+    if (!ref.watch(speakingGymEnabledProvider)) return body;
+    final target = ref.watch(todayStartTargetProvider)
+      ..onSessionStarted = () => context.go(AppRoutes.todayTrain);
+    return MicTargetScope(target: target, child: body);
   }
 }
 
@@ -178,6 +197,8 @@ class _TodayScaffold extends StatelessWidget {
                     : l10n.progressGreeting(name),
                 subtitle: todaySubtitleFor(l10n, overview),
               ),
+              const SizedBox(height: FluiSpacing.lg),
+              _TrainingGoalCard(session: overview.session),
               const SizedBox(height: FluiSpacing.lg),
               const _SpeakingWorkoutCard(),
               const SizedBox(height: FluiSpacing.lg),
@@ -476,6 +497,110 @@ class _CategoryDeckCard extends StatelessWidget {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+/// A provisional (never persisted) preview of today's speaking goal at the
+/// requested `TimeBudget` — recomputed whenever the chip selection
+/// changes, so the card re-plans in memory without writing anything until
+/// START/the mic is tapped (design part-3 §11, U15a).
+// ignore: specify_nonobvious_property_types
+final _provisionalTrainingGoalProvider = FutureProvider.autoDispose
+    .family<DailyTrainingPlan?, TimeBudget>(
+      (ref, budget) => ref.read(planTodayProvider).previewTrainingGoal(budget),
+    );
+
+/// HOY's budget-free speaking-goal card (U15a, design D41, decision
+/// #450.4): entirely absent while `speakingGymEnabledProvider` is off — no
+/// provider it reads is ever touched in that case (production safety).
+///
+/// With NO [session] yet: duration chips (preselected via
+/// `preselectedBudgetProvider`), a provisional plan preview, and a START
+/// button that calls `PlanToday.run` then navigates to
+/// `AppRoutes.todayTrain`. With a [session] already planned: the same card
+/// shows its persisted goal and a "Continuar" button that only navigates
+/// (the plan was already saved — see `TodayStartTarget`'s own equivalent
+/// mic-driven path for the exact same two states).
+class _TrainingGoalCard extends ConsumerWidget {
+  const new({required this.session});
+
+  final DailySession? session;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    if (!ref.watch(speakingGymEnabledProvider)) return const SizedBox.shrink();
+    final l10n = context.l10n;
+    final type = context.type;
+    final existingBudget = session == null
+        ? null
+        : TimeBudget.tryFromMinutes(session!.minutes);
+    final selected =
+        existingBudget ??
+        ref.watch(todaySelectedBudgetProvider) ??
+        ref.watch(preselectedBudgetProvider).value ??
+        TimeBudget.fallback;
+    final preview = session == null
+        ? ref.watch(_provisionalTrainingGoalProvider(selected)).value
+        : null;
+    final prompt = existingBudget != null
+        ? null // The persisted plan speaks for itself once /today/train opens.
+        : (preview?.challenge?.prompt ?? l10n.todayTrainingGoalUnavailable);
+
+    return Semantics(
+      container: true,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: FluiColors.greenTint,
+          borderRadius: FluiRadii.cardAll,
+          border: Border.all(color: FluiColors.greenDeep, width: 1.5),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(FluiSpacing.ml),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              FluiLabel(l10n.todayTrainingGoalLabel),
+              const SizedBox(height: FluiSpacing.xs),
+              Text(
+                prompt ?? l10n.todayTrainingGoalSubtitle,
+                style: type.titleM.copyWith(color: FluiColors.charcoal),
+              ),
+              const SizedBox(height: FluiSpacing.md),
+              Wrap(
+                spacing: FluiSpacing.sm,
+                children: [
+                  for (final budget in TimeBudget.values)
+                    ChoiceChip(
+                      label: Text('${budget.minutes} min'),
+                      selected: budget == selected,
+                      onSelected: existingBudget != null
+                          ? null
+                          : (_) => ref
+                                .read(todaySelectedBudgetProvider.notifier)
+                                .select(budget),
+                    ),
+                ],
+              ),
+              const SizedBox(height: FluiSpacing.md),
+              FluiButton.primary(
+                label: existingBudget != null
+                    ? l10n.todayContinue
+                    : l10n.todayStart,
+                onPressed: () async {
+                  if (existingBudget == null) {
+                    final result = await ref
+                        .read(planTodayProvider)
+                        .run(budget: selected);
+                    if (result case Err()) return;
+                  }
+                  if (context.mounted) context.go(AppRoutes.todayTrain);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

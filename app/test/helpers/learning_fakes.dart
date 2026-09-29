@@ -1,11 +1,14 @@
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/clock/clock_providers.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/daily/data/fake_daily_session_repository.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
+import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
+import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/profile/data/fake_streak_repair_repository.dart';
@@ -14,6 +17,9 @@ import 'package:flui/features/themes/data/fake/seed_themes.dart';
 import 'package:flui/features/themes/data/fake_theme_repository.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
+import 'package:flui/features/training/data/fake_challenge_repository.dart';
+import 'package:flui/features/training/data/fake_speaking_attempt_repository.dart';
+import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_exercise_attempt_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_word_progress_repository.dart';
@@ -24,6 +30,12 @@ import 'package:flutter_riverpod/misc.dart';
 
 /// In-memory learning backend for one signed-in user and a fixed clock
 /// (Sunday 2026-09-13, 10:00).
+///
+/// [speakingGym] additionally overrides `speakingGymEnabledProvider` and
+/// registers the training-gym fakes ([challenges], [speakingAttempts],
+/// [skillProfiles]) needed by U15a's HOY flow — harmless and unused while
+/// it stays `false` (the default), so every pre-existing flag-off test
+/// using this fixture is unaffected.
 final class LearningFakes {
   new({
     DateTime? now,
@@ -32,6 +44,7 @@ final class LearningFakes {
     InMemoryOnboardingStore? onboarding,
     String displayName = 'Ana',
     bool signedIn = true,
+    this.speakingGym = false,
   }) : clock = FixedClock(now ?? DateTime(2026, 9, 13, 10)),
        auth = FakeAuthRepository(
          initialUser: signedIn
@@ -52,6 +65,12 @@ final class LearningFakes {
     );
     sessions = FakeDailySessionRepository(currentUserId: _userId);
     repairs = FakeStreakRepairRepository(currentUserId: _userId);
+    challenges = FakeChallengeRepository();
+    speakingAttempts = FakeSpeakingAttemptRepository(currentUserId: _userId);
+    skillProfiles = FakeSkillProfileRepository(
+      currentUserId: _userId,
+      now: clock.now,
+    );
   }
 
   final FixedClock clock;
@@ -59,10 +78,14 @@ final class LearningFakes {
   final FakeContentRepository content;
   final FakeThemeRepository themes;
   final InMemoryOnboardingStore onboarding;
+  final bool speakingGym;
   late final FakeWordProgressRepository progress;
   late final FakeExerciseAttemptRepository attempts;
   late final FakeDailySessionRepository sessions;
   late final FakeStreakRepairRepository repairs;
+  late FakeChallengeRepository challenges;
+  late final FakeSpeakingAttemptRepository speakingAttempts;
+  late final FakeSkillProfileRepository skillProfiles;
 
   static const userId = 'user-1';
 
@@ -81,6 +104,18 @@ final class LearningFakes {
     streakRepairRepositoryProvider.overrideWithValue(repairs),
     clockProvider.overrideWithValue(clock),
     shuffleRandomProvider.overrideWithValue(null),
+    // Only registered when requested: several pre-existing flag-on tests
+    // already compose their OWN override list for these same 4 providers
+    // (`speakingGymEnabledProvider` + the 3 training-gym repositories) on
+    // top of `fakes.overrides` — always including them here would collide
+    // with that established pattern ("Tried to override a provider
+    // twice").
+    if (speakingGym) ...[
+      speakingGymEnabledProvider.overrideWithValue(true),
+      challengeRepositoryProvider.overrideWithValue(challenges),
+      speakingAttemptRepositoryProvider.overrideWithValue(speakingAttempts),
+      skillProfileRepositoryProvider.overrideWithValue(skillProfiles),
+    ],
   ];
 
   Future<void> dispose() => auth.dispose();

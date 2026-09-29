@@ -39,6 +39,11 @@ abstract final class AppRoutes {
   }
 
   static const timeBudget = '/today/time';
+
+  /// HOY's own speaking loop (U15a, design D41), a branch child of [today]
+  /// (design D30 — no `parentNavigatorKey`, unlike [timeBudget]). Only
+  /// reachable while `speakingGym` is on.
+  static const todayTrain = '$today/train';
   static const words = '/words';
   static const progress = '/progress';
 
@@ -113,8 +118,15 @@ abstract final class AppRoutes {
 
   /// Routes that need today's time budget first (asked once per local day).
   /// "Tu progreso" stays reachable for the account and sign out.
-  static bool needsDailyBudget(String path) =>
-      path == today ||
+  ///
+  /// While [speakingGym] is on (U15a, design D41), [today] itself no
+  /// longer needs a persisted session first — it shows duration chips and
+  /// a provisional plan instead — but its own loop route ([todayTrain])
+  /// picks up the requirement in its place, since starting the loop
+  /// always implies a session already exists by then.
+  static bool needsDailyBudget(String path, {bool speakingGym = false}) =>
+      (!speakingGym && path == today) ||
+      (speakingGym && path == todayTrain) ||
       path == session ||
       path == words ||
       path.startsWith('$words/');
