@@ -5,13 +5,16 @@ import 'package:flui/core/audio/data/fake_speech_player.dart';
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
+import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/theme/contrast.dart';
 import 'package:flui/core/theme/flui_color_rules.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
+import 'package:flui/features/profile/data/fake_account_deletion_repository.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
+import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
@@ -673,7 +676,188 @@ void main() {
       );
       expect(find.text(l10nEs.audioSettingsTitle), findsNothing);
       expect(find.text(l10nEs.progressRetakeTitle), findsNothing);
+      // "Eliminar mi cuenta" calls `account-delete`, which is not deployed
+      // to production yet (U22e production-safety rule): the entry must be
+      // unreachable while the flag is off, in every backend.
+      expect(find.text(l10nEs.accountDeletionTitle), findsNothing);
       expect(tester.takeException(), isNull);
     });
+  });
+
+  group('Account deletion (U22e)', () {
+    late LearningFakes gymFakes;
+    late FakeSubscriptionRepository gymSubscriptions;
+    late FakeAccountDeletionRepository accountDeletion;
+
+    setUp(() {
+      gymFakes = LearningFakes(
+        now: DateTime(2026, 9, 20, 9),
+        speakingGym: true,
+      );
+      gymSubscriptions =
+          FakeSubscriptionRepository(
+            clock: gymFakes.clock,
+            currentUserId: () => gymFakes.auth.currentUser?.id,
+          )..grantAccess(
+            AccessStatus(
+              hasAccess: true,
+              entitlementStatus: EntitlementStatus.trialing,
+              trialEndsAt: DateTime(2026, 9, 27),
+            ),
+          );
+      accountDeletion = FakeAccountDeletionRepository();
+    });
+
+    tearDown(() => gymFakes.dispose());
+
+    Future<void> pumpGymPage(WidgetTester tester) async {
+      await tester.pumpFlui(
+        const ProgressPage(),
+        overrides: [
+          ...gymFakes.overrides,
+          subscriptionRepositoryProvider.overrideWithValue(gymSubscriptions),
+          accountDeletionRepositoryProvider.overrideWithValue(accountDeletion),
+        ],
+        surfaceSize: const Size(400, 4200),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    Future<void> openBothConfirmations(WidgetTester tester) async {
+      await tester.tap(find.text(l10nEs.accountDeletionAction));
+      await tester.pumpAndSettle();
+      expect(find.text(l10nEs.accountDeletionConfirmTitle), findsOneWidget);
+      await tester.tap(find.text(l10nEs.accountDeletionContinueAction));
+      await tester.pumpAndSettle();
+      expect(
+        find.text(l10nEs.accountDeletionFinalConfirmTitle),
+        findsOneWidget,
+      );
+    }
+
+    testWidgets('cancelling the first dialog calls nothing', (tester) async {
+      await pumpGymPage(tester);
+
+      await tester.tap(find.text(l10nEs.accountDeletionAction));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10nEs.audioSettingsCancelAction));
+      await tester.pumpAndSettle();
+
+      expect(accountDeletion.callCount, 0);
+      expect(gymFakes.auth.currentUser, isNotNull);
+    });
+
+    testWidgets('confirming both dialogs deletes exactly once and signs out', (
+      tester,
+    ) async {
+      await pumpGymPage(tester);
+
+      await openBothConfirmations(tester);
+      await tester.tap(find.text(l10nEs.accountDeletionFinalConfirmAction));
+      await tester.pumpAndSettle();
+
+      expect(accountDeletion.callCount, 1);
+      expect(gymFakes.auth.currentUser, isNull);
+    });
+
+    testWidgets(
+      'a billing failure keeps the user signed in with a "try again later" '
+      'message, and stays retryable',
+      (tester) async {
+        accountDeletion.nextFailure = const AccountDeletionFailure(
+          AccountDeletionErrorCode.billingUnavailable,
+        );
+        await pumpGymPage(tester);
+
+        await openBothConfirmations(tester);
+        await tester.tap(find.text(l10nEs.accountDeletionFinalConfirmAction));
+        await tester.pump();
+        for (var i = 0; i < 10; i++) {
+          await tester.pump(const Duration(milliseconds: 50));
+        }
+
+        expect(
+          find.text(l10nEs.accountDeletionErrorBillingUnavailable),
+          findsOneWidget,
+        );
+        expect(gymFakes.auth.currentUser, isNotNull);
+        expect(accountDeletion.callCount, 1);
+
+        // Retryable: the Fake cleared `nextFailure` after one use, so a
+        // second confirmation succeeds.
+        await tester.pumpAndSettle();
+        await openBothConfirmations(tester);
+        await tester.tap(find.text(l10nEs.accountDeletionFinalConfirmAction));
+        await tester.pumpAndSettle();
+
+        expect(accountDeletion.callCount, 2);
+        expect(gymFakes.auth.currentUser, isNull);
+      },
+    );
+
+    testWidgets(
+      'a membership-not-found failure shows the contact-support message',
+      (tester) async {
+        accountDeletion.nextFailure = const AccountDeletionFailure(
+          AccountDeletionErrorCode.membershipNotFound,
+        );
+        await pumpGymPage(tester);
+
+        await openBothConfirmations(tester);
+        await tester.tap(find.text(l10nEs.accountDeletionFinalConfirmAction));
+        await tester.pump();
+        for (var i = 0; i < 10; i++) {
+          await tester.pump(const Duration(milliseconds: 50));
+        }
+
+        expect(
+          find.text(l10nEs.accountDeletionErrorContactSupport),
+          findsOneWidget,
+        );
+        expect(gymFakes.auth.currentUser, isNotNull);
+      },
+    );
+
+    testWidgets('a storage/deletion failure shows the "try again" message', (
+      tester,
+    ) async {
+      accountDeletion.nextFailure = const AccountDeletionFailure(
+        AccountDeletionErrorCode.deletionFailed,
+      );
+      await pumpGymPage(tester);
+
+      await openBothConfirmations(tester);
+      await tester.tap(find.text(l10nEs.accountDeletionFinalConfirmAction));
+      await tester.pump();
+      for (var i = 0; i < 10; i++) {
+        await tester.pump(const Duration(milliseconds: 50));
+      }
+
+      expect(find.text(l10nEs.accountDeletionErrorTryAgain), findsOneWidget);
+      expect(gymFakes.auth.currentUser, isNotNull);
+    });
+
+    testWidgets(
+      'double-tapping the final confirm button still sends a single request',
+      (tester) async {
+        accountDeletion = FakeAccountDeletionRepository(
+          latency: const Duration(milliseconds: 50),
+        );
+        await pumpGymPage(tester);
+
+        await openBothConfirmations(tester);
+        await tester.tap(find.text(l10nEs.accountDeletionFinalConfirmAction));
+        // No pump in between: both taps race the same frame, before the
+        // dialog (and its own Future) has resolved even once.
+        await tester.tap(
+          find.text(l10nEs.accountDeletionFinalConfirmAction),
+          warnIfMissed: false,
+        );
+        await tester.pumpAndSettle();
+
+        expect(accountDeletion.callCount, 1);
+        expect(gymFakes.auth.currentUser, isNull);
+      },
+    );
   });
 }

@@ -38,5 +38,17 @@ String failureMessage(AppLocalizations l10n, Failure failure) {
       SpeechAnalysisErrorCode.noSpeech => l10n.speechAnalysisNoSpeech,
       SpeechAnalysisErrorCode.unknown => l10n.errorUnexpected,
     },
+    // "Eliminar mi cuenta" (U22e): a distinct, honest message per bucket —
+    // never the generic unexpected-error copy, so the user knows whether to
+    // retry now, retry later, or contact support.
+    AccountDeletionFailure(:final code) => switch (code) {
+      AccountDeletionErrorCode.billingUnavailable =>
+        l10n.accountDeletionErrorBillingUnavailable,
+      AccountDeletionErrorCode.membershipNotFound =>
+        l10n.accountDeletionErrorContactSupport,
+      AccountDeletionErrorCode.deletionFailed =>
+        l10n.accountDeletionErrorTryAgain,
+      AccountDeletionErrorCode.unknown => l10n.errorUnexpected,
+    },
   };
 }

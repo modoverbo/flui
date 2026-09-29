@@ -7,6 +7,7 @@ import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
+import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
@@ -21,6 +22,7 @@ import 'package:flui/features/profile/domain/before_now_audio.dart';
 import 'package:flui/features/profile/domain/progress_evidence.dart';
 import 'package:flui/features/profile/domain/progress_stats.dart';
 import 'package:flui/features/profile/domain/streak_calculator.dart';
+import 'package:flui/features/profile/presentation/providers/account_deletion_controller.dart';
 import 'package:flui/features/profile/presentation/providers/progress_evidence_overview.dart';
 import 'package:flui/features/profile/presentation/providers/progress_overview.dart';
 import 'package:flui/features/profile/presentation/subscription_summary.dart';
@@ -380,6 +382,8 @@ class _EvidenceSection extends ConsumerWidget {
         },
         SizedBox(height: layout.blockGap),
         const _RetakeEntry(),
+        SizedBox(height: layout.blockGap),
+        const _AccountDeletionCard(),
       ],
     );
   }
@@ -837,5 +841,109 @@ class _RetakeEntry extends ConsumerWidget {
         ],
       ),
     );
+  }
+}
+
+/// "Eliminar mi cuenta" (U22e, decision #434): a deliberately confirmed,
+/// irreversible action. A two-step confirmation — an explanatory dialog,
+/// then a separate final destructive confirm — since the design does not
+/// specify one and this deletes the account and cancels billing.
+///
+/// On success this signs the user out (the router then lands on the
+/// signed-out screen, same as the plain "Cerrar sesión" button above). On
+/// failure it never signs out: the account is still intact per
+/// `account-delete`'s fail-closed contract, so a distinct, honest message is
+/// shown and the action stays retryable.
+class _AccountDeletionCard extends ConsumerWidget {
+  const new();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = context.l10n;
+    final layout = context.layout;
+    final deleting = ref.watch(accountDeletionControllerProvider);
+
+    return FluiCard(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            l10n.accountDeletionTitle,
+            style: layout.type.body.copyWith(fontWeight: FontWeight.w600),
+          ),
+          const SizedBox(height: FluiSpacing.sm),
+          Text(
+            l10n.accountDeletionDescription,
+            style: layout.type.body.copyWith(color: FluiColors.gray),
+          ),
+          const SizedBox(height: FluiSpacing.sm),
+          FluiButton.outline(
+            label: l10n.accountDeletionAction,
+            isLoading: deleting,
+            onPressed: () => unawaited(_confirmAndDelete(context, ref)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _confirmAndDelete(BuildContext context, WidgetRef ref) async {
+    final l10n = context.l10n;
+
+    // Step 1: explain what gets deleted and the billing consequence.
+    final proceed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.accountDeletionConfirmTitle),
+        content: Text(l10n.accountDeletionConfirmBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.audioSettingsCancelAction),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            child: Text(l10n.accountDeletionContinueAction),
+          ),
+        ],
+      ),
+    );
+    if (proceed != true || !context.mounted) return;
+
+    // Step 2: the destructive action itself, styled distinctly.
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: Text(l10n.accountDeletionFinalConfirmTitle),
+        content: Text(l10n.accountDeletionFinalConfirmBody),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(false),
+            child: Text(l10n.audioSettingsCancelAction),
+          ),
+          TextButton(
+            onPressed: () => Navigator.of(dialogContext).pop(true),
+            style: TextButton.styleFrom(foregroundColor: FluiColors.alert),
+            child: Text(l10n.accountDeletionFinalConfirmAction),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true || !context.mounted) return;
+
+    final result = await ref
+        .read(accountDeletionControllerProvider.notifier)
+        .delete();
+    // `null` means a second call landed while one was already in flight
+    // (idempotent UI): nothing new happened, so nothing new is shown.
+    if (result == null || !context.mounted) return;
+    switch (result) {
+      case Ok():
+        await ref.read(signOutControllerProvider.notifier).signOut();
+      case Err(:final failure):
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(SnackBar(content: Text(failureMessage(l10n, failure))));
+    }
   }
 }
