@@ -18,6 +18,12 @@ export type ErrorCode =
   | "daily_limit_reached"
   | "rate_limited"
   | "upstream_error"
+  | "entitlement_unavailable"
+  | "membership_id_missing"
+  | "whop_membership_not_found"
+  | "billing_unavailable"
+  | "storage_cleanup_failed"
+  | "account_deletion_failed"
   | "internal_error";
 
 /** An error that maps directly to an HTTP response `{ error: { code, message } }`. */
