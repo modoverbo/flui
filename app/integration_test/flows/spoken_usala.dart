@@ -6,6 +6,7 @@ import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
@@ -16,9 +17,8 @@ import 'package:flui/features/training/domain/behavior_code.dart';
 import 'package:flui/features/training/domain/skill.dart';
 import 'package:flui/features/training/domain/skill_profile.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:integration_test/integration_test.dart';
 
-import 'support/app_harness.dart';
+import '../support/app_harness.dart';
 
 const _ana = AppUser(id: 'u1', email: 'ana@correo.com', displayName: 'Ana');
 const _trialing = AccessStatus(
@@ -63,9 +63,11 @@ final _seededProfile = SkillProfileRecord(
   ),
 );
 
-void main() {
-  IntegrationTestWidgetsFlutterBinding.ensureInitialized();
-
+/// Registers this flow's `testWidgets` cases — called once from the
+/// single `integration_test/app_test.dart` entry point (not its own
+/// `main()`), so every flow shares one `flutter-tester` app launch instead
+/// of each `_test.dart` file relaunching the device.
+void registerSpokenUsalaTests() {
   /// Full spoken Úsala flow (design D34-D37, U17b): form recall (mismatch
   /// -> hint, then a matching spoken answer accepts), then production
   /// (a valid spoken sentence reaches the self-check), and a blocked mic
@@ -278,4 +280,87 @@ void main() {
       expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
     },
   );
+
+  /// A `noSpeech` transcribe outcome shows the design's own distinct copy
+  /// (D34-D37) rather than the generic "delivery failed" notice —
+  /// `MicController`'s dedicated `MicNotice.noSpeech` reaching
+  /// `MicNoticeHost` for real, not just at the unit level. No hint is
+  /// consumed (the transcript never reaches `submitHeard`) and exactly
+  /// one transcribe call is made.
+  testWidgets('/session spoken Úsala: a noSpeech transcribe result shows the '
+      'distinct copy, consumes no hint, and makes exactly one transcribe '
+      'call', (tester) async {
+    final recorder = _FakeSpeechRecorder();
+    final harness = AppHarness(
+      signedInAs: _ana,
+      access: _trialing,
+      overrides: [
+        speakingGymEnabledProvider.overrideWithValue(true),
+        speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+      ],
+    );
+    final perspicaz = seedWordsWithThemes.firstWhere(
+      (w) => w.lemma == 'perspicaz',
+    );
+
+    await harness.pumpApp(
+      tester,
+      initialLocation: AppRoutes.session,
+      arrange: (h) async {
+        h.skillProfiles.seedProfile(_seededProfile);
+        await h.dailySessions.saveSession(
+          DailySession(
+            localDate: h.clock.localToday(),
+            minutes: 10,
+            plannedWordIds: [perspicaz.id],
+          ),
+        );
+      },
+    );
+
+    Future<void> tapText(String text) async {
+      final finder = find.text(text);
+      await tester.ensureVisible(finder);
+      await tester.pumpAndSettle();
+      await tester.tap(finder);
+      await tester.pumpAndSettle();
+    }
+
+    await tapText('Ver en contexto');
+    await tapText('Continuar');
+    await tapText('perspicaz');
+    await tapText('Confirmar');
+    await tapText('Continuar');
+    expect(find.text('Ahora dilo tú.'), findsOneWidget);
+
+    harness.speech.nextFailure = const SpeechAnalysisFailure(
+      SpeechAnalysisErrorCode.noSpeech,
+    );
+
+    final gesture = await tester.startGesture(
+      tester.getCenter(find.byType(MicButton)),
+    );
+    for (var i = 0; i < 3; i++) {
+      await tester.pump();
+    }
+    harness.clock.advance(const Duration(milliseconds: 700));
+    await gesture.up();
+    // Bounded pumps, never `pumpAndSettle()`: the SnackBar's own
+    // multi-second auto-dismiss timer would otherwise make the notice
+    // gone by the time the assertion below runs (the same class of
+    // gotcha `mic_notice_host_test.dart` documents for the widget-test
+    // fake clock — real here, but the effect on an unbounded settle is
+    // the same: the transient notice would be dismissed first).
+    for (var i = 0; i < 5; i++) {
+      await tester.pump(const Duration(milliseconds: 100));
+    }
+
+    expect(find.text(noSpeechDeliveryMessage), findsOneWidget);
+    // No hint consumed: the transcribe failure never reaches
+    // FormRecallCheck.submitHeard at all, so the hint notice never
+    // appears and the field stays exactly as it was.
+    expect(find.text('Tiene 3 sílabas.'), findsNothing);
+    expect(harness.speech.transcribeCalls, 1);
+    expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
+  });
 }

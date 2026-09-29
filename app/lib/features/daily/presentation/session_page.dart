@@ -6,6 +6,7 @@ import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/mic/mic_providers.dart';
+import 'package:flui/core/mic/presentation/mic_notice_host.dart';
 import 'package:flui/core/mic/presentation/mic_target_scope.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
@@ -57,7 +58,7 @@ class SessionPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final session = ref.watch(sessionControllerProvider(mode));
-    return Scaffold(
+    final scaffold = Scaffold(
       body: SafeArea(
         child: switch (session) {
           AsyncValue(hasValue: true, :final value?) => _SessionBody(
@@ -78,6 +79,16 @@ class SessionPage extends ConsumerWidget {
           _ => Center(child: LoadingWave(semanticLabel: l10n.commonLoading)),
         },
       ),
+    );
+    // `/session` is a root-navigator screen outside the shell (design D36),
+    // so it never gets `AppShell`'s own `MicNoticeHost` — wired here
+    // instead, entirely absent from the tree while the flag is off
+    // (production safety), matching `AppShell`'s established guard for the
+    // same provider.
+    if (!ref.watch(speakingGymEnabledProvider)) return scaffold;
+    return MicNoticeHost(
+      controller: ref.watch(micControllerProvider),
+      child: scaffold,
     );
   }
 }

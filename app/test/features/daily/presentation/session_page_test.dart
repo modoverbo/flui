@@ -1,11 +1,20 @@
+import 'dart:typed_data';
+
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/audio/audio_providers.dart';
+import 'package:flui/core/audio/speech_recorder.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
+import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
 import 'package:flui/features/daily/presentation/session_page.dart';
+import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
+import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
+import 'package:flui/features/subscription/domain/access_gate.dart';
+import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
@@ -18,6 +27,30 @@ import '../../../helpers/learning_builders.dart';
 import '../../../helpers/learning_fakes.dart';
 import '../../../helpers/pump_router.dart';
 import '../../../helpers/reduce_motion.dart';
+
+/// A controllable fake recorder (U17b real-path notice test): permission-
+/// granted, finishes instantly, no real platform channel.
+final class _FakeSpeechRecorder implements SpeechRecorder {
+  new();
+
+  @override
+  Stream<double> get amplitude => const Stream.empty();
+
+  @override
+  Future<bool> requestPermission() async => true;
+
+  @override
+  Future<void> start() async {}
+
+  @override
+  Future<Uint8List> stop() async => Uint8List.fromList(const [1, 2, 3]);
+
+  @override
+  Future<void> cancel() async {}
+
+  @override
+  Future<void> dispose() async {}
+}
 
 void main() {
   late LearningFakes fakes;
@@ -595,5 +628,61 @@ void main() {
       expect(find.text('Comprobar'), findsNothing);
       expect(find.byType(MicButton), findsOneWidget);
     });
+
+    testWidgets(
+      'flag on: a noSpeech delivery shows the distinct notice on /session '
+      '(root-navigator screen, no shell chrome)',
+      (tester) async {
+        final gymFakes = LearningFakes(speakingGym: true);
+        addTearDown(gymFakes.dispose);
+        await gymFakes.sessions.saveSession(
+          DailySession(
+            localDate: gymFakes.today,
+            minutes: 10,
+            plannedWordIds: [perspicaz.id],
+          ),
+        );
+        final recorder = _FakeSpeechRecorder();
+        final speech = FakeSpeechAnalysisRepository(latency: Duration.zero)
+          ..nextFailure = const SpeechAnalysisFailure(
+            SpeechAnalysisErrorCode.noSpeech,
+          );
+        reduceMotion(tester);
+        await pumpRoutedPage(
+          tester,
+          location: AppRoutes.session,
+          page: const SessionPage(),
+          otherRoutes: const [AppRoutes.today],
+          overrides: [
+            ...gymFakes.overrides,
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+            speechAnalysisRepositoryProvider.overrideWithValue(speech),
+            accessGateProvider.overrideWith((ref) => AccessGate.granted),
+          ],
+          surfaceSize: const Size(400, 1400),
+        );
+        await tester.pumpAndSettle();
+        await reachFormRecallStep(tester);
+
+        final gesture = await tester.startGesture(
+          tester.getCenter(find.byType(MicButton)),
+        );
+        for (var i = 0; i < 3; i++) {
+          await tester.pump();
+        }
+        gymFakes.clock.advance(const Duration(milliseconds: 700));
+        await gesture.up();
+        // Bounded pumps, never `pumpAndSettle()`: under the fake clock a
+        // full settle fast-forwards THROUGH the SnackBar's own
+        // multi-second auto-dismiss timer, so the notice would already be
+        // gone by the time this assertion runs.
+        for (var i = 0; i < 10; i++) {
+          await tester.pump(const Duration(milliseconds: 50));
+        }
+
+        expect(find.text(noSpeechDeliveryMessage), findsOneWidget);
+        expect(speech.transcribeCalls, 1);
+      },
+    );
   });
 }
