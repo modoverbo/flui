@@ -65,4 +65,18 @@ final class FakeAttemptAudioStore with FakeRemote implements AttemptAudioStore {
     _statusByAttemptId[attemptId] = const AudioRetention.deleted();
     return const Result.ok(null);
   }
+
+  @override
+  Future<Result<Uri>> signedUrlFor({required String path}) async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+    // Mirrors the storage `select` policy scoping reads to the caller's own
+    // `<uid>/` folder — a path this store was never handed for this user
+    // never resolves to a URL, real or fake.
+    if (!path.startsWith('$userId/')) {
+      return const Result.err(UnexpectedFailure('not_own_path'));
+    }
+    return Result.ok(Uri.parse('fake://speaking-audio/$path'));
+  }
 }

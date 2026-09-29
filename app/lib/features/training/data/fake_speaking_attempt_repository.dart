@@ -107,4 +107,49 @@ final class FakeSpeakingAttemptRepository
     ]..sort((a, b) => b.localDate.compareTo(a.localDate));
     return Result.ok(attempts);
   }
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> attemptsForSession(
+    String sessionId,
+  ) async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    return Result.ok(<SpeakingAttempt>[
+      for (final attempt
+          in _attemptsByUser[userId] ?? const <SpeakingAttempt>[])
+        if (attempt.sessionId == sessionId) attempt,
+    ]);
+  }
+
+  @override
+  Future<Result<SpeakingAttempt?>> latestStoredMilestone() async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    SpeakingAttempt? latest;
+    for (final attempt
+        in _attemptsByUser[userId] ?? const <SpeakingAttempt>[]) {
+      final week = attempt.milestoneWeek;
+      if (week == null || attempt.audio is! AudioRetentionStored) continue;
+      final latestWeek = latest?.milestoneWeek;
+      if (latestWeek == null || week.isAfter(latestWeek)) latest = attempt;
+    }
+    return Result.ok(latest);
+  }
+
+  @override
+  Future<Result<Set<String>>> storedAudioAttemptIds() async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    return Result.ok({
+      for (final attempt
+          in _attemptsByUser[userId] ?? const <SpeakingAttempt>[])
+        if (attempt.audio is AudioRetentionStored) attempt.id,
+    });
+  }
 }

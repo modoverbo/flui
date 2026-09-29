@@ -41,4 +41,23 @@ abstract interface class SpeakingAttemptRepository {
   /// U15a) summarizes into `TrainingAttemptSummary` for its 14-day
   /// recency/focus-shift window (design part-3 §7).
   Future<Result<List<SpeakingAttempt>>> recentAttemptsSince(LocalDate since);
+
+  /// Every attempt sharing [sessionId], oldest first — used to fetch a
+  /// SPECIFIC diagnosis session's rows (e.g. the original baseline) once a
+  /// later retake has made [latestDiagnosisAttempts] point elsewhere
+  /// (profile domain U18b: the before→now audio pair and, with a completed
+  /// retake, the formal before-window).
+  Future<Result<List<SpeakingAttempt>>> attemptsForSession(String sessionId);
+
+  /// The most recent attempt whose audio is currently [AudioRetentionStored]
+  /// and whose `milestoneWeek` is set — the "now" side of PROGRESO's
+  /// then-vs-now playback pair (design part-3 §5 "Milestones"; profile
+  /// domain U18b). `null` when no weekly milestone has retained audio yet.
+  Future<Result<SpeakingAttempt?>> latestStoredMilestone();
+
+  /// Every attempt id whose audio is currently [AudioRetentionStored], for
+  /// the signed-in user — the smallest query "delete all stored audio"
+  /// (profile domain U18b) needs to scope bulk deletion to exactly the
+  /// objects that exist, never touching another user's rows or objects.
+  Future<Result<Set<String>>> storedAudioAttemptIds();
 }

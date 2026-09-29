@@ -40,6 +40,14 @@ abstract interface class AttemptAudioStore {
   /// the orphaned object is reconciled server-side by the retention sweep
   /// (24 h grace period) rather than left pointing at a missing object.
   Future<Result<void>> delete({required String attemptId});
+
+  /// A time-limited signed URL to play back the object at [path] (design
+  /// part-3 §3's playback contract: 300 s TTL) — [path] is an already-known
+  /// `AudioRetentionStored.path` from the attempt's own row, never
+  /// reconstructed from an id, so a caller can only ever ask for a path it
+  /// was already handed (RLS's own-folder select policy still applies
+  /// server-side; a path outside the caller's own folder fails).
+  Future<Result<Uri>> signedUrlFor({required String path});
 }
 
 /// Maps a `speaking_attempts.audio_mime` / bucket-allowed MIME type to the

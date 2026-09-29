@@ -117,4 +117,54 @@ final class SupabaseSpeakingAttemptRepository
       return Result.err(mapDataError(error));
     }
   }
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> attemptsForSession(
+    String sessionId,
+  ) async {
+    try {
+      final rows = await _client
+          .from('speaking_attempts')
+          .select(SpeakingAttemptDto.columns)
+          .eq('session_id', sessionId)
+          .order('created_at', ascending: true);
+      return Result.ok([
+        for (final row in rows) SpeakingAttemptDto.fromJson(row).toDomain(),
+      ]);
+    } on Object catch (error) {
+      return Result.err(mapDataError(error));
+    }
+  }
+
+  @override
+  Future<Result<SpeakingAttempt?>> latestStoredMilestone() async {
+    try {
+      final row = await _client
+          .from('speaking_attempts')
+          .select(SpeakingAttemptDto.columns)
+          .eq('audio_status', 'stored')
+          .not('milestone_week', 'is', null)
+          .order('milestone_week', ascending: false)
+          .limit(1)
+          .maybeSingle();
+      return Result.ok(
+        row == null ? null : SpeakingAttemptDto.fromJson(row).toDomain(),
+      );
+    } on Object catch (error) {
+      return Result.err(mapDataError(error));
+    }
+  }
+
+  @override
+  Future<Result<Set<String>>> storedAudioAttemptIds() async {
+    try {
+      final rows = await _client
+          .from('speaking_attempts')
+          .select('id')
+          .eq('audio_status', 'stored');
+      return Result.ok({for (final row in rows) row['id'] as String});
+    } on Object catch (error) {
+      return Result.err(mapDataError(error));
+    }
+  }
 }

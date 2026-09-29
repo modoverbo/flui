@@ -294,6 +294,177 @@ void main() {
 
       expect((await repository.recentAttemptsSince(day(1))).isOk, isFalse);
     });
+
+    test(
+      'attemptsForSession returns only that session\'s rows, oldest '
+      'first, current user only (U18b, before/now baseline lookup)',
+      () async {
+        final repository = FakeSpeakingAttemptRepository(
+          currentUserId: () => 'u1',
+        );
+        final other = FakeSpeakingAttemptRepository(currentUserId: () => 'u2');
+        await repository.insert(
+          _attempt(context: TrainingContext.diagnosis)
+              .copyWith(id: 'baseline-1', sessionId: 'baseline'),
+        );
+        await repository.insert(
+          _attempt(context: TrainingContext.diagnosis)
+              .copyWith(id: 'baseline-2', sessionId: 'baseline'),
+        );
+        await repository.insert(
+          _attempt(context: TrainingContext.diagnosis)
+              .copyWith(id: 'retake-1', sessionId: 'retake'),
+        );
+        await other.insert(
+          _attempt(context: TrainingContext.diagnosis)
+              .copyWith(id: 'other-1', sessionId: 'baseline'),
+        );
+
+        final result = await repository.attemptsForSession('baseline');
+
+        expect(result.valueOrNull?.map((a) => a.id), [
+          'baseline-1',
+          'baseline-2',
+        ]);
+      },
+    );
+
+    test('attemptsForSession is empty for an unknown session id', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+
+      final result = await repository.attemptsForSession('nope');
+
+      expect(result.valueOrNull, isEmpty);
+    });
+
+    test('attemptsForSession fails without a signed-in user', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => null,
+      );
+
+      expect((await repository.attemptsForSession('s1')).isOk, isFalse);
+    });
+
+    test('latestStoredMilestone returns the most recent stored-milestone '
+        'attempt, current user only (U18b, then-vs-now playback)', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      final other = FakeSpeakingAttemptRepository(currentUserId: () => 'u2');
+      // Not a milestone: no milestoneWeek.
+      await repository.insert(_attempt().copyWith(id: 'plain'));
+      await repository.insert(
+        _attempt(
+          audio: const AudioRetention.stored(
+            path: 'u1/older.wav',
+            mime: 'audio/wav',
+          ),
+        ).copyWith(id: 'older', milestoneWeek: day(7)),
+      );
+      await repository.insert(
+        _attempt(
+          audio: const AudioRetention.stored(
+            path: 'u1/newer.wav',
+            mime: 'audio/wav',
+          ),
+        ).copyWith(id: 'newer', milestoneWeek: day(14)),
+      );
+      await other.insert(
+        _attempt(
+          audio: const AudioRetention.stored(
+            path: 'u2/theirs.wav',
+            mime: 'audio/wav',
+          ),
+        ).copyWith(id: 'theirs', milestoneWeek: day(21)),
+      );
+
+      final result = await repository.latestStoredMilestone();
+
+      expect(result.valueOrNull?.id, 'newer');
+    });
+
+    test('latestStoredMilestone ignores a milestone week whose audio was '
+        'later deleted', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      await repository.insert(
+        _attempt(audio: const AudioRetention.deleted())
+            .copyWith(id: 'deleted', milestoneWeek: day(14)),
+      );
+
+      final result = await repository.latestStoredMilestone();
+
+      expect(result.valueOrNull, isNull);
+    });
+
+    test(
+      'latestStoredMilestone is null with no stored milestone yet',
+      () async {
+        final repository = FakeSpeakingAttemptRepository(
+          currentUserId: () => 'u1',
+        );
+
+        final result = await repository.latestStoredMilestone();
+
+        expect(result.valueOrNull, isNull);
+      },
+    );
+
+    test('latestStoredMilestone fails without a signed-in user', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => null,
+      );
+
+      expect((await repository.latestStoredMilestone()).isOk, isFalse);
+    });
+
+    test('storedAudioAttemptIds returns every stored-audio attempt id, '
+        'current user only (U18b, delete-all)', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      final other = FakeSpeakingAttemptRepository(currentUserId: () => 'u2');
+      await repository.insert(
+        _attempt(
+          audio: const AudioRetention.stored(
+            path: 'u1/a1.wav',
+            mime: 'audio/wav',
+          ),
+        ).copyWith(id: 'a1'),
+      );
+      await repository.insert(_attempt().copyWith(id: 'a2'));
+      await repository.insert(
+        _attempt(
+          audio: const AudioRetention.stored(
+            path: 'u1/a3.wav',
+            mime: 'audio/wav',
+          ),
+        ).copyWith(id: 'a3'),
+      );
+      await other.insert(
+        _attempt(
+          audio: const AudioRetention.stored(
+            path: 'u2/a4.wav',
+            mime: 'audio/wav',
+          ),
+        ).copyWith(id: 'a4'),
+      );
+
+      final result = await repository.storedAudioAttemptIds();
+
+      expect(result.valueOrNull, {'a1', 'a3'});
+    });
+
+    test('storedAudioAttemptIds fails without a signed-in user', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => null,
+      );
+
+      expect((await repository.storedAudioAttemptIds()).isOk, isFalse);
+    });
   });
 
   group('SupabaseSpeakingAttemptRepository', () {
@@ -536,6 +707,116 @@ void main() {
 
       final result = await SupabaseSpeakingAttemptRepository(recorder.client)
           .recentAttemptsSince(day(1));
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+
+    test('attemptsForSession queries every column filtered by session_id, '
+        'oldest first, RLS scopes rows to the owner (U18b)', () async {
+      final rows = [
+        _attemptRow(_attempt(id: 'b1')),
+        _attemptRow(_attempt(id: 'b2')),
+      ];
+      final recorder = SupabaseRecorder(respond: (_) => rows);
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .attemptsForSession('baseline');
+
+      expect(result.valueOrNull?.map((a) => a.id), ['b1', 'b2']);
+      expect(recorder.last.method, 'GET');
+      expect(recorder.last.url.path, '/rest/v1/speaking_attempts');
+      expect(recorder.last.url.queryParameters['session_id'], 'eq.baseline');
+      expect(
+        recorder.last.url.queryParameters['order'],
+        'created_at.asc.nullslast',
+      );
+    });
+
+    test('attemptsForSession maps transport errors', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .attemptsForSession('s1');
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+
+    test('latestStoredMilestone queries a stored, milestone-tagged row, '
+        'newest first, capped at 1 (U18b, then-vs-now playback)', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => [_attemptRow(_attempt(id: 'newest'))],
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .latestStoredMilestone();
+
+      expect(result.valueOrNull?.id, 'newest');
+      expect(recorder.last.method, 'GET');
+      expect(recorder.last.url.queryParameters['audio_status'], 'eq.stored');
+      expect(
+        recorder.last.url.queryParameters['milestone_week'],
+        'not.is.null',
+      );
+      expect(
+        recorder.last.url.queryParameters['order'],
+        'milestone_week.desc.nullslast',
+      );
+      expect(recorder.last.url.queryParameters['limit'], '1');
+    });
+
+    test('latestStoredMilestone is null when nothing matches', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <Object?>[]);
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .latestStoredMilestone();
+
+      expect(result.valueOrNull, isNull);
+    });
+
+    test('latestStoredMilestone maps transport errors', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .latestStoredMilestone();
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+
+    test('storedAudioAttemptIds queries only stored-audio ids, RLS scopes '
+        'rows to the owner (U18b, delete-all)', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => [
+          {'id': 'a1'},
+          {'id': 'a3'},
+        ],
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .storedAudioAttemptIds();
+
+      expect(result.valueOrNull, {'a1', 'a3'});
+      expect(recorder.last.url.queryParameters['select'], 'id');
+      expect(recorder.last.url.queryParameters['audio_status'], 'eq.stored');
+    });
+
+    test('storedAudioAttemptIds maps transport errors', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSpeakingAttemptRepository(recorder.client)
+          .storedAudioAttemptIds();
 
       expect(result.failureOrNull, const NetworkFailure());
     });
