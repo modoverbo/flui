@@ -32,6 +32,7 @@ import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flui/features/training/presentation/training_lab_page.dart';
 import 'package:flui/features/vocabulary/presentation/category_catalog_page.dart';
 import 'package:flui/features/vocabulary/presentation/word_detail_page.dart';
+import 'package:flui/features/vocabulary/presentation/word_speak_page.dart';
 import 'package:flui/features/vocabulary/presentation/words_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
@@ -215,7 +216,7 @@ List<StatefulShellBranch> _gymBranches(GlobalKey<NavigatorState> rootKey) => [
       ),
     ],
   ),
-  _wordsBranch(),
+  _wordsBranch(speakingGym: true),
   _progressBranch(),
 ];
 
@@ -253,23 +254,36 @@ StatefulShellBranch _todayBranch(
   ],
 );
 
-StatefulShellBranch _wordsBranch() => StatefulShellBranch(
-  routes: [
-    GoRoute(
-      path: AppRoutes.words,
-      builder: (_, _) => const WordsPage(),
+StatefulShellBranch _wordsBranch({bool speakingGym = false}) =>
+    StatefulShellBranch(
       routes: [
         GoRoute(
-          path: ':wordId',
-          builder: (context, state) => _WordDetailRoute(
-            wordId: state.pathParameters['wordId']!,
-            returnLocation: state.uri.queryParameters['returnTo'],
-          ),
+          path: AppRoutes.words,
+          builder: (_, _) => const WordsPage(),
+          routes: [
+            GoRoute(
+              path: ':wordId',
+              builder: (context, state) => _WordDetailRoute(
+                wordId: state.pathParameters['wordId']!,
+                returnLocation: state.uri.queryParameters['returnTo'],
+              ),
+              routes: [
+                // PALABRAS' own spoken-use loop (U17): a branch child of
+                // the word detail, not a root-navigator take-over (design
+                // D30, matches ENTRENAR's `/train/:mode`) — only reachable
+                // while `speakingGym` is on.
+                if (speakingGym)
+                  GoRoute(
+                    path: 'speak',
+                    builder: (context, state) =>
+                        WordSpeakPage(wordId: state.pathParameters['wordId']!),
+                  ),
+              ],
+            ),
+          ],
         ),
       ],
-    ),
-  ],
-);
+    );
 
 List<RouteBase> _diagnosisRoutes(GlobalKey<NavigatorState> rootKey) => [
   GoRoute(

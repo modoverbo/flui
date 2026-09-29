@@ -1590,4 +1590,153 @@ void main() {
 
     expect(location(harness), AppRoutes.today);
   });
+
+  group('Palabras spoken-use (speakingGym ON, U17)', () {
+    // Real `seedWordsWithThemes` id (not a synthetic fixture): the mic's
+    // capture/analysis pipeline runs against the REAL app —
+    // `speechAnalysisRepositoryProvider`/`contentRepositoryProvider` are
+    // already fixed by `AppHarness`'s own backend. "claridad" is chosen
+    // because `FakeSpeechAnalysisRepository`'s fixed first-attempt
+    // transcript ("...organizar mejor mi mañana para trabajar con más
+    // claridad.") naturally contains it (same word U15b's own real-path
+    // group uses).
+    const claridadId = 'a3bff3b7-ff0a-4b41-be29-f722a6e2ea94'; // claridad
+
+    Future<void> seedDueWord(AppHarness h) async {
+      h.skillProfiles.seedProfile(_seededProfile);
+      await h.planToday();
+      await h.wordProgress.saveProgress(
+        WordProgress(
+          wordId: claridadId,
+          state: WordState.practica,
+          introducedOn: LocalDate(2026, 9, 1),
+          nextDueOn: h.clock.localToday(),
+        ),
+      );
+    }
+
+    Future<void> holdToRecord(WidgetTester tester, AppHarness harness) async {
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byType(MicButton)),
+      );
+      for (var i = 0; i < 3; i++) {
+        await tester.pump();
+      }
+      harness.clock.advance(const Duration(milliseconds: 700));
+      await gesture.up();
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets("PALABRAS shows today's due word", (tester) async {
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
+      );
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.words,
+        arrange: seedDueWord,
+      );
+
+      expect(find.text('claridad'), findsWidgets);
+      expect(
+        tester.getSemantics(find.byType(MicButton)).label,
+        'Úsala en voz alta',
+      );
+    });
+
+    testWidgets('no due words -> no crash, ordinary empty state', (
+      tester,
+    ) async {
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
+      );
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.words,
+        arrange: (h) async {
+          h.skillProfiles.seedProfile(_seededProfile);
+          await h.planToday();
+        },
+      );
+
+      expect(find.text('Tu repertorio empieza hoy.'), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('recording the due word via the mic saves it (context=word), '
+        'advances only its mastery, and hands off to its own speak loop', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.words,
+        arrange: seedDueWord,
+      );
+
+      await holdToRecord(tester, harness);
+
+      final saved = harness.speakingAttempts.attemptsForCurrentUser.single;
+      expect(saved.context, TrainingContext.word);
+      expect(saved.wordsUsed, [claridadId]);
+      final progress =
+          (await harness.wordProgress.fetchProgress()).valueOrNull!;
+      final after = progress.single;
+      expect(after.ladderStep, 1);
+      expect(after.productionDone, isTrue);
+      expect(location(harness), AppRoutes.wordSpeak(claridadId));
+      // The word's own LoopMicTarget takes over from here (feedback
+      // phase, not the static "Úsala en voz alta" first prompt).
+      expect(
+        tester.getSemantics(find.byType(MicButton)).label,
+        isNot('Úsala en voz alta'),
+      );
+      handle.dispose();
+    });
+
+    testWidgets(
+      'leaving the word-detail screen before recording never saves an '
+      'attempt, and the mic shows no stale word prompt on another tab',
+      (tester) async {
+        final handle = tester.ensureSemantics();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.wordDetail(claridadId),
+          arrange: seedDueWord,
+        );
+        expect(
+          tester.getSemantics(find.byType(MicButton)).label,
+          'Úsala en voz alta',
+        );
+
+        await tester.tap(find.text('Hoy'));
+        await tester.pumpAndSettle();
+
+        expect(
+          tester.getSemantics(find.byType(MicButton)).label,
+          isNot('Úsala en voz alta'),
+        );
+        expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
+        handle.dispose();
+      },
+    );
+  });
 }

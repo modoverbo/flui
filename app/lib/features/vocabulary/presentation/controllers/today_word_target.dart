@@ -31,15 +31,30 @@ final class TodayWordTarget implements MicTarget {
   WordSpeakTarget? _delegate;
   StreamSubscription<void>? _delegateSubscription;
 
+  /// Whether [todayWordsProvider] has resolved at least once. `false` (not
+  /// yet confirmed) must NEVER resolve to [MicPassThrough]: the registry
+  /// skips a passthrough target and resolves the fallback instead (design
+  /// §19.4), and `MicController` only subscribes to whichever target it
+  /// CURRENTLY resolves (`_subscribeToResolvedTarget`) — so a passthrough
+  /// shown before the due word is even known would bind the controller to
+  /// the FALLBACK's `changes`, never this target's, and a due word
+  /// arriving moments later would silently never reach the mic label.
+  bool _resolved = false;
+
   /// Called once [deliver] actually saves the top due word's first attempt
   /// — the widget layer navigates to `AppRoutes.wordSpeak(wordId)` in
   /// response (same pattern as `TodayStartTarget.onSessionStarted`).
   void Function(String wordId)? onWordSpeakStarted;
 
   void _rebuild() {
-    final due = _ref.read(todayWordsProvider).value ?? const [];
+    final today = _ref.read(todayWordsProvider);
+    _resolved = today.hasValue;
+    final due = today.value ?? const [];
     final wordId = due.isEmpty ? null : due.first.word.id;
-    if (wordId == _delegate?.wordId) return;
+    if (wordId == _delegate?.wordId) {
+      _changes.add(null);
+      return;
+    }
     unawaited(_delegateSubscription?.cancel());
     _delegate?.dispose();
     final delegate = wordId == null ? null : WordSpeakTarget(_ref, wordId);
@@ -60,8 +75,18 @@ final class TodayWordTarget implements MicTarget {
       _delegate?.maxDuration ?? const Duration(seconds: 30);
 
   @override
-  MicAvailability get availability =>
-      _delegate?.availability ?? const MicPassThrough();
+  MicAvailability get availability {
+    final delegate = _delegate;
+    if (delegate != null) return delegate.availability;
+    if (!_resolved) {
+      // Still loading `todayWordsProvider`: never passthrough (see
+      // `_resolved`'s own doc) — busy is accurate (nothing to record YET)
+      // and, critically, keeps this target the one `MicController`
+      // resolves and subscribes to.
+      return const MicBusy('Cargando tus palabras de hoy…');
+    }
+    return const MicPassThrough();
+  }
 
   @override
   Stream<void> get changes => _changes.stream;

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:typed_data';
 
 import 'package:flui/core/audio/recorded_audio.dart';
@@ -46,58 +47,63 @@ RecordedAudio _audio() => RecordedAudio(
   levelsDbfs: const [-30, -28],
 );
 
+/// Builds a fresh container wired the same way every time, swapping in
+/// [progress] so a test can control its latency independently (the "still
+/// loading" race below needs a SEPARATE, artificially-delayed repository —
+/// reusing the shared zero-latency one would never reproduce the gap).
+ProviderContainer _buildContainer(FakeWordProgressRepository progress) {
+  final consent = FakeAudioConsentRepository(currentUserId: () => _ana.id);
+  unawaited(consent.write(granted: true));
+  // Keeps `authUserProvider`/`todayWordsProvider` alive across the async
+  // gaps below — `TodayWordTarget`'s own constructor listens to
+  // `todayWordsProvider`, but nothing else retains that chain in a plain
+  // `ProviderContainer` test (matches `today_start_target_test.dart`'s own
+  // established convention).
+  return ProviderContainer(
+      overrides: [
+        authRepositoryProvider.overrideWithValue(
+          FakeAuthRepository(initialUser: _ana),
+        ),
+        speechAnalysisRepositoryProvider.overrideWithValue(
+          FakeSpeechAnalysisRepository(latency: Duration.zero),
+        ),
+        speakingAttemptRepositoryProvider.overrideWithValue(
+          FakeSpeakingAttemptRepository(currentUserId: () => _ana.id),
+        ),
+        attemptAudioStoreProvider.overrideWithValue(
+          FakeAttemptAudioStore(currentUserId: () => _ana.id),
+        ),
+        audioConsentRepositoryProvider.overrideWithValue(consent),
+        challengeRepositoryProvider.overrideWithValue(
+          FakeChallengeRepository(),
+        ),
+        contentRepositoryProvider.overrideWithValue(
+          FakeContentRepository(words: [_due, _laterDue]),
+        ),
+        wordProgressRepositoryProvider.overrideWithValue(progress),
+        dailySessionRepositoryProvider.overrideWithValue(
+          FakeDailySessionRepository(currentUserId: () => _ana.id),
+        ),
+        exerciseAttemptRepositoryProvider.overrideWithValue(
+          FakeExerciseAttemptRepository(currentUserId: () => _ana.id),
+        ),
+        streakRepairRepositoryProvider.overrideWithValue(
+          FakeStreakRepairRepository(currentUserId: () => _ana.id),
+        ),
+        clockProvider.overrideWithValue(FixedClock(DateTime(2026, 9, 13, 10))),
+      ],
+    )
+    ..listen(authUserProvider, (_, _) {})
+    ..listen(todayWordTargetProvider, (_, _) {});
+}
+
 void main() {
   late ProviderContainer container;
   late FakeWordProgressRepository wordProgress;
 
-  setUp(() async {
+  setUp(() {
     wordProgress = FakeWordProgressRepository(currentUserId: () => _ana.id);
-    final consent = FakeAudioConsentRepository(currentUserId: () => _ana.id);
-    await consent.write(granted: true);
-    // Keeps `authUserProvider`/`todayWordsProvider` alive across the async
-    // gaps below — `TodayWordTarget`'s own constructor listens to
-    // `todayWordsProvider`, but nothing else retains that chain in a plain
-    // `ProviderContainer` test (matches `today_start_target_test.dart`'s
-    // own established convention).
-    container =
-        ProviderContainer(
-            overrides: [
-              authRepositoryProvider.overrideWithValue(
-                FakeAuthRepository(initialUser: _ana),
-              ),
-              speechAnalysisRepositoryProvider.overrideWithValue(
-                FakeSpeechAnalysisRepository(latency: Duration.zero),
-              ),
-              speakingAttemptRepositoryProvider.overrideWithValue(
-                FakeSpeakingAttemptRepository(currentUserId: () => _ana.id),
-              ),
-              attemptAudioStoreProvider.overrideWithValue(
-                FakeAttemptAudioStore(currentUserId: () => _ana.id),
-              ),
-              audioConsentRepositoryProvider.overrideWithValue(consent),
-              challengeRepositoryProvider.overrideWithValue(
-                FakeChallengeRepository(),
-              ),
-              contentRepositoryProvider.overrideWithValue(
-                FakeContentRepository(words: [_due, _laterDue]),
-              ),
-              wordProgressRepositoryProvider.overrideWithValue(wordProgress),
-              dailySessionRepositoryProvider.overrideWithValue(
-                FakeDailySessionRepository(currentUserId: () => _ana.id),
-              ),
-              exerciseAttemptRepositoryProvider.overrideWithValue(
-                FakeExerciseAttemptRepository(currentUserId: () => _ana.id),
-              ),
-              streakRepairRepositoryProvider.overrideWithValue(
-                FakeStreakRepairRepository(currentUserId: () => _ana.id),
-              ),
-              clockProvider.overrideWithValue(
-                FixedClock(DateTime(2026, 9, 13, 10)),
-              ),
-            ],
-          )
-          ..listen(authUserProvider, (_, _) {})
-          ..listen(todayWordTargetProvider, (_, _) {});
+    container = _buildContainer(wordProgress);
   });
   tearDown(() => container.dispose());
 
@@ -163,4 +169,27 @@ void main() {
       await subscription.cancel();
     },
   );
+
+  test('before todayWordsProvider resolves, availability is never '
+      'MicPassThrough — a registry that skips straight to the fallback while '
+      'still loading would never learn about a later due word, since it only '
+      'listens to whichever target it currently resolves', () async {
+    final delayedProgress = FakeWordProgressRepository(
+      currentUserId: () => _ana.id,
+      latency: const Duration(milliseconds: 50),
+    );
+    await delayedProgress.saveProgress(
+      buildProgress(wordId: _due.id, nextDueOn: day(13)),
+    );
+    final delayed = _buildContainer(delayedProgress);
+    addTearDown(delayed.dispose);
+
+    final target = delayed.read(todayWordTargetProvider);
+    expect(target.availability, isNot(isA<MicPassThrough>()));
+
+    await delayed.read(authUserProvider.future);
+    await delayed.read(todayWordsProvider.future);
+
+    expect(target.availability, isA<MicReady>());
+  });
 }
