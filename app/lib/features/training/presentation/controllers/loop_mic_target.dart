@@ -5,8 +5,9 @@ import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/features/training/domain/attempt_kind.dart';
 import 'package:flui/features/training/domain/training_loop.dart';
 import 'package:flui/features/training/presentation/controllers/training_loop_controller.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart'
-    show ProviderSubscription;
+import 'package:flui/features/vocabulary/domain/word.dart';
+import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'loop_mic_target.g.dart';
@@ -21,18 +22,30 @@ final class LoopMicTarget implements MicTarget {
       trainingLoopControllerProvider(_request),
       (_, _) => _changes.add(null),
     );
+    // Only when this session actually wove words in (U15b, design D15):
+    // an ENTRENAR/diagnosis loop, which never carries `targetWordIds`,
+    // never touches the word catalog at all. Re-fires `changes` if the
+    // catalog is still loading when this target is first registered, so
+    // the mic's hint picks up the word text as soon as it arrives.
+    if (_request.targetWordIds.isNotEmpty) {
+      _wordsSubscription = _ref.listen(
+        wordsByIdProvider,
+        (_, _) => _changes.add(null),
+      );
+    }
   }
 
   final Ref _ref;
   final LoopRequest _request;
   final _changes = StreamController<void>.broadcast();
   late final ProviderSubscription<TrainingLoopControllerState> _subscription;
+  ProviderSubscription<AsyncValue<Map<String, Word>>>? _wordsSubscription;
 
   TrainingLoopState get _loop =>
       _ref.read(trainingLoopControllerProvider(_request)).loop;
 
   @override
-  MicPrompt get prompt => _promptFor(_loop);
+  MicPrompt get prompt => _promptFor(_loop, _wovenWordTexts);
 
   @override
   Duration get maxDuration => const Duration(seconds: 60);
@@ -48,21 +61,42 @@ final class LoopMicTarget implements MicTarget {
       .read(trainingLoopControllerProvider(_request).notifier)
       .submit(audio);
 
-  /// Releases the subscription feeding [changes]. A widget registering this
-  /// target via `MicTargetScope` calls this from its own `dispose()`.
+  /// Releases the subscriptions feeding [changes]. A widget registering
+  /// this target via `MicTargetScope` calls this from its own `dispose()`.
   void dispose() {
     _subscription.close();
+    _wordsSubscription?.close();
     unawaited(_changes.close());
   }
 
-  static MicPrompt _promptFor(TrainingLoopState loop) => switch (loop.phase) {
+  /// The catalog text of every [LoopRequest.targetWordIds] entry that has
+  /// already loaded, in order — `const []` if there are none woven in, or
+  /// if the catalog has not resolved yet (a safe default: the hint simply
+  /// stays generic until [wordsByIdProvider] fires [changes]).
+  List<String> get _wovenWordTexts {
+    final ids = _request.targetWordIds;
+    if (ids.isEmpty) return const <String>[];
+    final wordsById = _ref.read(wordsByIdProvider).value;
+    if (wordsById == null) return const <String>[];
+    return [
+      for (final id in ids)
+        if (wordsById[id] case final word?) word.lemma,
+    ];
+  }
+
+  static MicPrompt _promptFor(
+    TrainingLoopState loop,
+    List<String> wovenWords,
+  ) => switch (loop.phase) {
     LoopPhase.focus when loop.attemptStep == AttemptKind.first =>
       const MicPrompt(actionLabel: 'Grabar tu respuesta'),
     LoopPhase.focus => const MicPrompt(actionLabel: 'Grabar tu intento'),
     LoopPhase.feedback => const MicPrompt(actionLabel: 'Grabar tu repetición'),
-    LoopPhase.comparison => const MicPrompt(
+    LoopPhase.comparison => MicPrompt(
       actionLabel: 'Grabar tu transferencia',
-      hint: 'Aplica lo que acabas de practicar.',
+      hint: wovenWords.isEmpty
+          ? 'Aplica lo que acabas de practicar.'
+          : 'Usa ${_wordList(wovenWords)} en tu respuesta.',
     ),
     LoopPhase.analysisFailed when loop.failureCode == notSavedFailureCode =>
       const MicPrompt(actionLabel: 'Intento pendiente de guardar'),
@@ -115,6 +149,17 @@ final class LoopMicTarget implements MicTarget {
         },
         LoopPhase.summary => const MicPassThrough(),
       };
+
+  /// "«a»", "«a» y «b»", "«a», «b» y «c»" — weaving 1-3 words (decision
+  /// #450.4's own limit, enforced upstream by `TrainingPlanner.planDay`)
+  /// into one natural-Spanish list.
+  static String _wordList(List<String> words) => switch (words.length) {
+    1 => '«${words[0]}»',
+    2 => '«${words[0]}» y «${words[1]}»',
+    _ =>
+      '${words.sublist(0, words.length - 1).map((w) => '«$w»').join(', ')} '
+          'y «${words.last}»',
+  };
 }
 
 /// One [LoopMicTarget] per [LoopRequest] (mirrors the family it wraps): a

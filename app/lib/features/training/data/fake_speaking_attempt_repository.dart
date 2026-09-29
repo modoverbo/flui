@@ -1,4 +1,5 @@
 import 'package:flui/core/date/local_date.dart';
+import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/fake/fake_remote.dart';
 import 'package:flui/features/training/domain/speaking_attempt.dart';
@@ -19,6 +20,13 @@ final class FakeSpeakingAttemptRepository
   final _attemptsByUser = <String, List<SpeakingAttempt>>{};
   final _claimedMilestoneWeeksByUser = <String, Set<LocalDate>>{};
 
+  /// When true, [insert] always fails with a [NetworkFailure] until reset
+  /// back to false — unlike a single-shot `nextFailure` field, this stays
+  /// on across the controller's automatic retry too, so a real-path test
+  /// can deterministically reach and then recover from the "not saved"
+  /// state (`TrainingLoopController.retrySave`).
+  bool failInserts = false;
+
   /// Every attempt recorded so far for the signed-in user, insertion order.
   List<SpeakingAttempt> get attemptsForCurrentUser =>
       List.unmodifiable(_attemptsByUser[currentUserId()] ?? const []);
@@ -26,6 +34,7 @@ final class FakeSpeakingAttemptRepository
   @override
   Future<Result<SpeakingAttempt>> insert(SpeakingAttempt attempt) async {
     if (await simulateCall() case final failure?) return Result.err(failure);
+    if (failInserts) return const Result.err(NetworkFailure());
     final userId = currentUserId();
     if (userId == null) return const Result.err(notSignedInFailure);
 
