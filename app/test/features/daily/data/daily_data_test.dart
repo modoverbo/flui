@@ -175,4 +175,81 @@ void main() {
       });
     });
   });
+
+  group('SupabaseDailySessionRepository — flag-gated training-plan columns '
+      '(U15a review fix: production migrations are manual, PostgREST '
+      'rejects unknown columns, so the flag-off shape must stay '
+      'byte-identical to main)', () {
+    test('flag off (default): fetchSessions selects EXACTLY the pre-U15a '
+        'column set, nothing more', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <Object?>[]);
+      addTearDown(recorder.dispose);
+
+      await SupabaseDailySessionRepository(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).fetchSessions();
+
+      expect(
+        recorder.last.url.queryParameters['select'],
+        'local_date,minutes,planned_word_ids,review_word_ids,'
+        'theme_id,completed_at',
+      );
+    });
+
+    test('flag off (default): saveSession upserts EXACTLY the pre-U15a '
+        'payload keys — no focus_area/challenge_id/woven_word_ids', () async {
+      final recorder = SupabaseRecorder(respond: (_) => null);
+      addTearDown(recorder.dispose);
+
+      await SupabaseDailySessionRepository(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).saveSession(session);
+
+      final body = recorder.bodyOf(recorder.last)! as Map<String, Object?>;
+      expect(body.keys.toSet(), {
+        'user_id',
+        'local_date',
+        'minutes',
+        'planned_word_ids',
+        'review_word_ids',
+        'theme_id',
+      });
+    });
+
+    test('flag on (includeTrainingPlan: true): fetchSessions also selects '
+        'the training-plan columns', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <Object?>[]);
+      addTearDown(recorder.dispose);
+
+      await SupabaseDailySessionRepository(
+        recorder.client,
+        currentUserId: () => 'u1',
+        includeTrainingPlan: true,
+      ).fetchSessions();
+
+      final select = recorder.last.url.queryParameters['select']!;
+      expect(select, contains('focus_area'));
+      expect(select, contains('challenge_id'));
+      expect(select, contains('woven_word_ids'));
+    });
+
+    test('flag on (includeTrainingPlan: true): saveSession also upserts '
+        'the training-plan keys', () async {
+      final recorder = SupabaseRecorder(respond: (_) => null);
+      addTearDown(recorder.dispose);
+
+      await SupabaseDailySessionRepository(
+        recorder.client,
+        currentUserId: () => 'u1',
+        includeTrainingPlan: true,
+      ).saveSession(session.copyWith(focusArea: 'thinking', challengeId: 'c1'));
+
+      final body = recorder.bodyOf(recorder.last)! as Map<String, Object?>;
+      expect(body['focus_area'], 'thinking');
+      expect(body['challenge_id'], 'c1');
+      expect(body.containsKey('woven_word_ids'), isTrue);
+    });
+  });
 }

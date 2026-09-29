@@ -6,6 +6,7 @@ import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/config/app_config.dart';
 import 'package:flui/core/config/app_config_provider.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
@@ -212,8 +213,16 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     exerciseAttemptRepositoryProvider.overrideWithValue(
       SupabaseExerciseAttemptRepository(client, currentUserId: currentUserId),
     ),
-    dailySessionRepositoryProvider.overrideWithValue(
-      SupabaseDailySessionRepository(client, currentUserId: currentUserId),
+    // includeTrainingPlan (U15a review fix) is wired from
+    // speakingGymEnabledProvider, not read eagerly here: production
+    // migrations are applied manually, so the flag is the only signal
+    // that the U7 migration's columns actually exist.
+    dailySessionRepositoryProvider.overrideWith(
+      (ref) => SupabaseDailySessionRepository(
+        client,
+        currentUserId: currentUserId,
+        includeTrainingPlan: ref.watch(speakingGymEnabledProvider),
+      ),
     ),
     streakRepairRepositoryProvider.overrideWithValue(
       SupabaseStreakRepairRepository(client, currentUserId: currentUserId),
