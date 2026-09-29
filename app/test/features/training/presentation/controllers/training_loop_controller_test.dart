@@ -167,6 +167,15 @@ const _diagnosisRequest = LoopRequest(
   challengeIds: ['c1', 'c1', 'c1'],
 );
 
+// Deliberately no `targetWordIds`: this group only exercises the
+// finished-loop guard, not `SpokenWordUse`'s own detection/mastery wiring
+// (already covered elsewhere).
+const _wordUseRequest = LoopRequest(
+  context: TrainingContext.word,
+  sessionId: 's-word',
+  script: LoopScript.wordUse(),
+);
+
 RecordedAudio _audio({Duration duration = const Duration(seconds: 12)}) =>
     RecordedAudio(
       bytes: Uint8List.fromList(List<int>.filled(10, 1)),
@@ -321,6 +330,58 @@ void main() {
 
       expect(delivery, isA<MicDeliveryFailed>());
       expect(attempts.attemptsForCurrentUser, isEmpty);
+    });
+  });
+
+  group('TrainingLoopController.submit — wordUse has no transfer step '
+      '(orchestrator review finding: a finished loop must refuse before '
+      'any paid analysis, never throw)', () {
+    test("submitting again after comparison (wordUse's own terminal phase, "
+        'it has no summary) makes zero analyze calls and returns a '
+        'MicDeliveryFailed instead of throwing', () async {
+      final counting = _CountingSpeechAnalysisRepository(speech);
+      final localContainer = ProviderContainer(
+        overrides: [
+          speechAnalysisRepositoryProvider.overrideWithValue(counting),
+          speakingAttemptRepositoryProvider.overrideWithValue(attempts),
+          attemptAudioStoreProvider.overrideWithValue(audioStore),
+          audioConsentRepositoryProvider.overrideWithValue(consent),
+          challengeRepositoryProvider.overrideWithValue(
+            FakeChallengeRepository(challenges: const [_challenge]),
+          ),
+          clockProvider.overrideWithValue(FixedClock(DateTime(2026, 9, 28))),
+        ],
+      );
+      addTearDown(localContainer.dispose);
+      final notifier = localContainer.read(
+        trainingLoopControllerProvider(_wordUseRequest).notifier,
+      );
+
+      await notifier.submit(_audio()); // -> feedback (first)
+      await notifier.submit(_audio()); // -> comparison (repeat, finished)
+      expect(
+        localContainer
+            .read(trainingLoopControllerProvider(_wordUseRequest))
+            .loop
+            .phase,
+        LoopPhase.comparison,
+      );
+      expect(counting.analyzeCallCount, 2);
+      final savedBefore = attempts.attemptsForCurrentUser.length;
+
+      final delivery = await notifier.submit(_audio());
+
+      expect(delivery, isA<MicDeliveryFailed>());
+      // Not a StateError, not a crash — a plain, non-throwing refusal.
+      expect(counting.analyzeCallCount, 2); // unchanged: no 3rd call
+      expect(attempts.attemptsForCurrentUser.length, savedBefore);
+      expect(
+        localContainer
+            .read(trainingLoopControllerProvider(_wordUseRequest))
+            .loop
+            .phase,
+        LoopPhase.comparison,
+      );
     });
   });
 

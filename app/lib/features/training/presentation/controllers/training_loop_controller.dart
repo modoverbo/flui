@@ -248,6 +248,22 @@ class TrainingLoopController extends _$TrainingLoopController {
         'antes de grabar otra vez.',
       );
     }
+    if (_loop.isWordUseFinished) {
+      // Orchestrator review finding: `wordUse` has no `transfer` step, so
+      // its own `comparison` (reached after the repeat attempt) IS its
+      // terminal state — `continueToNextStep`'s otherwise-generic advance
+      // would push it into an attempt step `analysisSucceeded` can never
+      // resolve, throwing only AFTER a paid analysis (and a persisted
+      // attempt row) already happened. Refuse here instead, before any
+      // of that runs — the mic itself is expected to stop offering this
+      // target's `deliver` once finished (`LoopMicTarget`/`WordSpeakTarget`
+      // resolve accordingly), so reaching this branch at all means
+      // something upstream still tried anyway; fail cleanly, never throw.
+      return const MicDeliveryFailed(
+        'Ya completaste esta palabra. Vuelve a intentarlo para una nueva '
+        'sesión.',
+      );
+    }
     if (_loop.state.phase == LoopPhase.feedback ||
         _loop.state.phase == LoopPhase.comparison) {
       _loop.continueToNextStep();

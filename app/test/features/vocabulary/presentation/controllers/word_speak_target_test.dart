@@ -289,5 +289,44 @@ void main() {
           (await wordProgress.fetchProgress()).valueOrNull!.single;
       expect(afterSecondLoop.ladderStep, 1);
     });
+
+    test('while still finished (same instance, before any re-entry), offers '
+        '"Practicar otra vez" as MicPrepare — never MicReady with the '
+        'generic loop\'s own "Grabar tu transferencia" label, and never '
+        'passthrough to quick practice either', () async {
+      final firstMount = mount();
+      final first = firstMount.read();
+      await first.deliver(_audio()); // -> feedback
+      await first.deliver(_audio()); // -> comparison (finished)
+
+      expect(first.prompt.actionLabel, 'Practicar otra vez');
+      expect(first.availability, isA<MicPrepare>());
+    });
+
+    test('activating "Practicar otra vez" starts a fresh loop with NO capture '
+        'on that same activation — only resetIfFinished runs, matching '
+        "MicPrepare's own contract", () async {
+      final firstMount = mount();
+      final first = firstMount.read();
+      await first.deliver(_audio()); // -> feedback
+      await first.deliver(_audio()); // -> comparison (finished)
+      final finishedRequest = first.request;
+      final savedBefore = attempts.attemptsForCurrentUser.length;
+
+      final prepare = first.availability as MicPrepare;
+      await prepare.onActivate();
+
+      // No capture happened from the activation itself.
+      expect(attempts.attemptsForCurrentUser.length, savedBefore);
+      // A fresh loop, ready for a real recording next.
+      expect(first.request.sessionId, isNot(finishedRequest.sessionId));
+      expect(first.prompt.actionLabel, 'Úsala en voz alta');
+      expect(first.availability, isA<MicReady>());
+
+      // The NEXT press records that fresh loop's first attempt normally.
+      final delivery = await first.deliver(_audio());
+      expect(delivery, isA<MicAccepted>());
+      expect(attempts.attemptsForCurrentUser.length, savedBefore + 1);
+    });
   });
 }

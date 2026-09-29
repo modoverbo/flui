@@ -150,6 +150,23 @@ final class TrainingLoop {
     ),
   };
 
+  /// Whether the CURRENT phase is [WordUseLoopScript]'s own terminal
+  /// state — no further speak step exists to continue into (orchestrator
+  /// review finding). `wordUse`'s two-step script (`first` -> `repeat`)
+  /// has no `transfer` step, unlike `full`/`diagnosis`'s longer
+  /// sequences, so it never reaches `LoopPhase.summary`; `comparison`
+  /// (reached once the repeat attempt's own analysis succeeds) is as far
+  /// as it ever advances. `continueToNextStep`'s otherwise-generic
+  /// `repeat -> transfer` step would push it into an attempt step
+  /// [analysisSucceeded] can never resolve (`_advanceWordUse` throws for
+  /// `transfer`) — callers (`TrainingLoopController.submit`) must check
+  /// this and refuse BEFORE any paid analysis runs, never let the error
+  /// surface only after the fact.
+  bool get isWordUseFinished =>
+      script is WordUseLoopScript &&
+      state.phase == LoopPhase.comparison &&
+      state.attemptStep == AttemptKind.repeat;
+
   /// The user starts speaking the current step's prompt.
   void startRecording() => _setPhase(LoopPhase.recording);
 

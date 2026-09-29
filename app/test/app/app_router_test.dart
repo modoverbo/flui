@@ -1806,5 +1806,87 @@ void main() {
         handle.dispose();
       },
     );
+
+    testWidgets(
+      'orchestrator review finding: finishing a word loop and STAYING on '
+      'the speak page offers "Practicar otra vez" (never the invalid '
+      '"Grabar tu transferencia" label); tapping it starts a fresh loop '
+      'with no capture, and the next press records normally',
+      (tester) async {
+        final handle = tester.ensureSemantics();
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.wordDetail(claridadId),
+          arrange: seedDueWord,
+        );
+
+        // First attempt: navigates to the word's own speak loop.
+        await holdToRecord(tester, harness);
+        expect(location(harness), AppRoutes.wordSpeak(claridadId));
+        // Repeat attempt: reaches `comparison` — wordUse's own terminal
+        // phase (no `summary`) — while STAYING on `/words/:id/speak`.
+        await holdToRecord(tester, harness);
+        final firstLoopCount =
+            harness.speakingAttempts.attemptsForCurrentUser.length;
+        final afterFirstLoop =
+            (await harness.wordProgress.fetchProgress()).valueOrNull!.single;
+        expect(afterFirstLoop.ladderStep, 1);
+
+        // Still on the speak page: `TrainingLoopView`'s own `LoopMicTarget`
+        // is registered on TOP of `WordDetailPage`'s `WordSpeakTarget`
+        // (still mounted underneath, covered but never disposed). The
+        // finished `LoopMicTarget` now resolves `MicPassThrough`, so the
+        // registry falls through to `WordSpeakTarget`'s own "Practicar
+        // otra vez" — never the generic loop's stale "Grabar tu
+        // transferencia", and never a silent fallback to quick practice.
+        expect(location(harness), AppRoutes.wordSpeak(claridadId));
+        expect(
+          tester.getSemantics(find.byType(MicButton)).label,
+          'Practicar otra vez',
+        );
+
+        // A single TAP (not a hold gesture): `MicPrepare` never leads to a
+        // capture on this same gesture — matches `TodayStartTarget`'s own
+        // established first-activation shape.
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
+
+        // No capture happened from the activation itself.
+        expect(
+          harness.speakingAttempts.attemptsForCurrentUser.length,
+          firstLoopCount,
+        );
+        // A fresh loop: `WordSpeakPage` itself watches
+        // `wordSpeakSessionIdProvider(wordId)`, so it rebuilds
+        // `TrainingLoopView` against the NEW session id, which re-registers
+        // its OWN `LoopMicTarget` fresh (`MicReady`, `LoopPhase.focus`'s
+        // own "Grabar tu respuesta" — the same first-attempt wording every
+        // OTHER loop context uses; `WordSpeakTarget`'s "Úsala en voz alta"
+        // is specifically the WORD-DETAIL page's own first-entry cue, not
+        // required again while already inside the speak flow). Never the
+        // stale finished label, never passthrough.
+        final freshLabel = tester.getSemantics(find.byType(MicButton)).label;
+        expect(freshLabel, isNot('Practicar otra vez'));
+        expect(freshLabel, isNot('Grabar tu transferencia'));
+
+        // The next press records that fresh loop's own first attempt.
+        await holdToRecord(tester, harness);
+
+        expect(
+          harness.speakingAttempts.attemptsForCurrentUser.length,
+          firstLoopCount + 1,
+        );
+        handle.dispose();
+      },
+    );
   });
 }

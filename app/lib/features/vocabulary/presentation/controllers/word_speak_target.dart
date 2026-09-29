@@ -127,15 +127,33 @@ final class WordSpeakTarget implements MicTarget {
   }
 
   @override
-  MicPrompt get prompt => _isFirstUnstarted
-      ? const MicPrompt(actionLabel: 'Úsala en voz alta')
-      : _loop.prompt;
+  MicPrompt get prompt {
+    if (_isFirstUnstarted) {
+      return const MicPrompt(actionLabel: 'Úsala en voz alta');
+    }
+    if (_isFinished) return const MicPrompt(actionLabel: 'Practicar otra vez');
+    return _loop.prompt;
+  }
 
   @override
   Duration get maxDuration => _loop.maxDuration;
 
+  /// Orchestrator review finding: `_loop.availability` alone would resolve
+  /// `MicPassThrough` once finished (see `LoopMicTarget`'s own fix) — an
+  /// honest "nothing more to offer" for a GENERIC loop target that cannot
+  /// itself start a new session. `WordSpeakTarget` CAN (it owns
+  /// [resetIfFinished]), so it offers a real action instead of falling
+  /// through to the registry's fallback (quick practice): `MicPrepare`
+  /// shows "Practicar otra vez" with no capture on that same activation —
+  /// only [resetIfFinished] runs, minting a fresh loop; the FOLLOWING mic
+  /// activation records that fresh loop's own first attempt normally.
   @override
-  MicAvailability get availability => _loop.availability;
+  MicAvailability get availability {
+    if (_isFinished) {
+      return MicPrepare('Practicar otra vez', () async => resetIfFinished());
+    }
+    return _loop.availability;
+  }
 
   @override
   Stream<void> get changes => _loop.changes;
