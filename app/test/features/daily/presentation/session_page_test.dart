@@ -1,6 +1,7 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
+import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_theme_colors.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
@@ -471,4 +472,57 @@ void main() {
       expect(preview2.themeSlug, 'paronimos');
     },
   );
+
+  group('spoken Úsala (U17b)', () {
+    Future<void> reachFormRecallStep(WidgetTester tester) async {
+      await tapVisible(tester, 'Ver en contexto');
+      await tapVisible(tester, 'Continuar');
+      final exercise = perspicaz.exercises.first;
+      await tapVisible(tester, exercise.correctOption.text);
+      await tapVisible(tester, 'Confirmar');
+      await tapVisible(tester, 'Continuar');
+    }
+
+    testWidgets('flag off: form recall stays typed, no mic', (tester) async {
+      await planNewWord();
+      await pumpSession(tester);
+      await reachFormRecallStep(tester);
+
+      expect(find.byType(TextField), findsOneWidget);
+      expect(find.text('Comprobar'), findsOneWidget);
+      expect(find.byType(MicButton), findsNothing);
+    });
+
+    testWidgets(
+      'flag on: form recall drops the typed field for the shell mic',
+      (tester) async {
+        final gymFakes = LearningFakes(speakingGym: true);
+        addTearDown(gymFakes.dispose);
+        await gymFakes.sessions.saveSession(
+          DailySession(
+            localDate: gymFakes.today,
+            minutes: 10,
+            plannedWordIds: [perspicaz.id],
+          ),
+        );
+        reduceMotion(tester);
+        await pumpRoutedPage(
+          tester,
+          location: AppRoutes.session,
+          page: const SessionPage(),
+          otherRoutes: const [AppRoutes.today],
+          overrides: gymFakes.overrides,
+          surfaceSize: const Size(400, 1400),
+        );
+        await tester.pumpAndSettle();
+        await reachFormRecallStep(tester);
+
+        expect(find.byType(TextField), findsNothing);
+        expect(find.text('Comprobar'), findsNothing);
+        expect(find.byType(MicButton), findsOneWidget);
+        // Hint stays a tap even under the flag (design D36).
+        expect(find.text('Pista'), findsOneWidget);
+      },
+    );
+  });
 }

@@ -1,7 +1,15 @@
+import 'dart:typed_data';
+
+import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/error/failure.dart';
+import 'package:flui/core/error/result.dart';
+import 'package:flui/core/mic/mic_target.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/domain/session_step.dart';
 import 'package:flui/features/daily/presentation/controllers/session_controller.dart';
+import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
+import 'package:flui/features/speaking/domain/speech_transcript.dart';
+import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/vocabulary/domain/exercises/cloze_attempt_flow.dart';
 import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart';
 import 'package:flui/features/vocabulary/domain/exercises/form_recall_check.dart';
@@ -15,6 +23,48 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../../helpers/learning_builders.dart';
 import '../../../helpers/learning_fakes.dart';
 import '../../../helpers/test_container.dart';
+
+/// A transcribe-only double: [onTranscribe] controls the outcome per call
+/// (`Result.ok`/`Result.err`, matching or mismatching text), and
+/// [transcribeCalls] proves exactly how many quota-spending calls a test's
+/// actions actually made (D37/R20 regression guard). `analyze` is never
+/// used by these tests (spoken word exercises never call it, D34).
+final class _ControllableTranscribeRepository
+    implements SpeechAnalysisRepository {
+  Result<SpeechTranscript> Function(Uint8List audio)? onTranscribe;
+  int transcribeCalls = 0;
+
+  @override
+  Future<Result<SpeechTranscript>> analyze(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+    String? challengeId,
+  }) => throw UnimplementedError('spoken Úsala never calls analyze (D34)');
+
+  @override
+  Future<Result<SpeechTranscript>> transcribe(
+    Uint8List audio, {
+    required String mimeType,
+    required Duration duration,
+  }) async {
+    transcribeCalls++;
+    final handler = onTranscribe;
+    if (handler == null) {
+      return Result.ok(
+        SpeechTranscript(text: '', duration: duration, words: const []),
+      );
+    }
+    return handler(audio);
+  }
+}
+
+RecordedAudio _fakeAudio() => RecordedAudio(
+  bytes: Uint8List.fromList(const [1, 2, 3]),
+  mimeType: 'audio/wav',
+  duration: const Duration(seconds: 2),
+  levelsDbfs: const [],
+);
 
 abstract final class ExerciseAttemptFixture {
   static ExerciseAttempt good(String wordId, String exerciseId) =>
@@ -393,5 +443,258 @@ void main() {
 
     final saved = (await fakes.sessions.fetchSessions()).valueOrNull!.single;
     expect(saved.isCompleted, isFalse);
+  });
+
+  group('spoken Úsala (U17b, design D34-D37)', () {
+    late _ControllableTranscribeRepository speech;
+    late ProviderContainer spokenContainer;
+
+    setUp(() {
+      speech = _ControllableTranscribeRepository();
+      spokenContainer = createTestContainer(
+        overrides: [
+          ...fakes.overrides,
+          speechAnalysisRepositoryProvider.overrideWithValue(speech),
+        ],
+      );
+    });
+
+    Future<SessionController> openSpoken(SessionMode mode) {
+      spokenContainer.listen(sessionControllerProvider(mode), (_, _) {});
+      return spokenContainer
+          .read(sessionControllerProvider(mode).future)
+          .then(
+            (_) =>
+                spokenContainer.read(sessionControllerProvider(mode).notifier),
+          );
+    }
+
+    SessionState readSpoken(SessionMode mode) =>
+        spokenContainer.read(sessionControllerProvider(mode)).requireValue;
+
+    /// Descubre -> Mira -> Elige (correct) -> FormRecallStep, matching the
+    /// pre-existing "a first day" test's own sequence above.
+    Future<SessionController> reachFormRecall() async {
+      final session = await openSpoken(daily);
+      await session.continueStep();
+      await session.continueStep();
+      await session.answerCloze(option(perspicaz, 1, 'perspicaz'));
+      await session.continueStep();
+      expect(readSpoken(daily).step, isA<FormRecallStep>());
+      return session;
+    }
+
+    test('a matching transcript accepts and persists formRecallDone, one '
+        'transcribe call', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await reachFormRecall();
+      speech.onTranscribe = (_) => const Result.ok(
+        SpeechTranscript(
+          text: 'perspicaz',
+          duration: Duration(seconds: 2),
+          words: [],
+        ),
+      );
+
+      final delivery = await session.answerFormRecallAloud(_fakeAudio());
+
+      expect(delivery, isA<MicAccepted>());
+      expect(readSpoken(daily).formRecall!.status, FormRecallStatus.accepted);
+      expect(readSpoken(daily).formRecall!.lastHeard, 'perspicaz');
+      expect(
+        (await fakes.progress.fetchProgress())
+            .valueOrNull!
+            .single
+            .formRecallDone,
+        isTrue,
+      );
+      expect(speech.transcribeCalls, 1);
+    });
+
+    test(
+      'a mismatching transcript shows the next hint, no persistence',
+      () async {
+        await planToday(newWords: [perspicaz.id]);
+        final session = await reachFormRecall();
+        speech.onTranscribe = (_) => const Result.ok(
+          SpeechTranscript(
+            text: 'gato',
+            duration: Duration(seconds: 2),
+            words: [],
+          ),
+        );
+
+        final delivery = await session.answerFormRecallAloud(_fakeAudio());
+
+        expect(delivery, isA<MicAccepted>());
+        expect(readSpoken(daily).formRecall!.status, FormRecallStatus.pending);
+        expect(readSpoken(daily).formRecall!.hintsUsed, 1);
+        expect(readSpoken(daily).formRecall!.lastHeard, 'gato');
+        expect(
+          (await fakes.progress.fetchProgress())
+              .valueOrNull!
+              .single
+              .formRecallDone,
+          isFalse,
+        );
+      },
+    );
+
+    test('a noSpeech transcribe failure returns the distinct copy and consumes '
+        'no hint', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await reachFormRecall();
+      speech.onTranscribe = (_) => const Result.err(
+        SpeechAnalysisFailure(SpeechAnalysisErrorCode.noSpeech),
+      );
+
+      final delivery = await session.answerFormRecallAloud(_fakeAudio());
+
+      expect(
+        delivery,
+        isA<MicDeliveryFailed>().having(
+          (d) => d.message,
+          'message',
+          'No te escuchamos bien. Inténtalo otra vez.',
+        ),
+      );
+      expect(readSpoken(daily).formRecall!.status, FormRecallStatus.pending);
+      expect(readSpoken(daily).formRecall!.hintsUsed, 0);
+      expect(readSpoken(daily).formRecall!.lastHeard, isNull);
+    });
+
+    test(
+      'an access-required failure latches, a quota failure latches',
+      () async {
+        await planToday(newWords: [perspicaz.id]);
+        final accessSession = await reachFormRecall();
+        speech.onTranscribe = (_) => const Result.err(
+          SpeechAnalysisFailure(SpeechAnalysisErrorCode.accessRequired),
+        );
+        expect(
+          await accessSession.answerFormRecallAloud(_fakeAudio()),
+          isA<MicAccessRequired>(),
+        );
+
+        speech.onTranscribe = (_) => const Result.err(
+          SpeechAnalysisFailure(SpeechAnalysisErrorCode.dailyLimitReached),
+        );
+        expect(
+          await accessSession.answerFormRecallAloud(_fakeAudio()),
+          isA<MicDailyLimitReached>(),
+        );
+      },
+    );
+
+    test('never transcribes an already-resolved form recall step (no quota '
+        'spent on a resolved step)', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await reachFormRecall();
+      await session.submitFormRecall('perspicaz');
+      expect(readSpoken(daily).formRecall!.status, FormRecallStatus.accepted);
+
+      final delivery = await session.answerFormRecallAloud(_fakeAudio());
+
+      expect(delivery, isA<MicDeliveryFailed>());
+      expect(speech.transcribeCalls, 0);
+    });
+
+    test('never transcribes when the current step is not form recall (no '
+        'quota spent on an inactive step)', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await openSpoken(daily);
+      expect(readSpoken(daily).step, isA<DiscoverStep>());
+
+      final delivery = await session.answerFormRecallAloud(_fakeAudio());
+
+      expect(delivery, isA<MicDeliveryFailed>());
+      expect(speech.transcribeCalls, 0);
+    });
+
+    test('a matching production transcript moves to the self-check phase, one '
+        'transcribe call', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await reachFormRecall();
+      await session.submitFormRecall('perspicaz');
+      await session.continueStep(); // -> readings (scenes held back)
+      await session.continueStep(); // -> ProductionStep
+      expect(readSpoken(daily).step, isA<ProductionStep>());
+      speech.onTranscribe = (_) => const Result.ok(
+        SpeechTranscript(
+          text: 'Tu pregunta fue muy perspicaz, Carla.',
+          duration: Duration(seconds: 4),
+          words: [],
+        ),
+      );
+
+      final delivery = await session.answerProductionAloud(_fakeAudio());
+
+      expect(delivery, isA<MicAccepted>());
+      expect(readSpoken(daily).production!.phase, ProductionPhase.selfCheck);
+      expect(
+        readSpoken(daily).production!.sentence,
+        'Tu pregunta fue muy perspicaz, Carla.',
+      );
+      expect(speech.transcribeCalls, 1);
+    });
+
+    test('a noSpeech production transcribe failure returns the distinct copy, '
+        'no state change', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await reachFormRecall();
+      await session.submitFormRecall('perspicaz');
+      await session.continueStep();
+      await session.continueStep();
+      expect(readSpoken(daily).step, isA<ProductionStep>());
+      speech.onTranscribe = (_) => const Result.err(
+        SpeechAnalysisFailure(SpeechAnalysisErrorCode.noSpeech),
+      );
+
+      final delivery = await session.answerProductionAloud(_fakeAudio());
+
+      expect(
+        delivery,
+        isA<MicDeliveryFailed>().having(
+          (d) => d.message,
+          'message',
+          'No te escuchamos bien. Inténtalo otra vez.',
+        ),
+      );
+      expect(readSpoken(daily).production!.phase, ProductionPhase.writing);
+      expect(readSpoken(daily).production!.sentence, '');
+    });
+
+    test('never transcribes production once the self-check phase is reached '
+        '(no quota on a resolved step)', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await reachFormRecall();
+      await session.submitFormRecall('perspicaz');
+      await session.continueStep();
+      await session.continueStep();
+      session.submitProduction('Tu pregunta fue muy perspicaz, Carla.');
+      expect(readSpoken(daily).production!.phase, ProductionPhase.selfCheck);
+
+      final delivery = await session.answerProductionAloud(_fakeAudio());
+
+      expect(delivery, isA<MicDeliveryFailed>());
+      expect(speech.transcribeCalls, 0);
+    });
+
+    test('"Continuar sin hablar" advances without persisting formRecallDone, '
+        'the step resurfaces on the next plan', () async {
+      await planToday(newWords: [perspicaz.id]);
+      final session = await reachFormRecall();
+
+      await session.skipSpokenStep();
+
+      expect(readSpoken(daily).step, isNot(isA<FormRecallStep>()));
+      expect(
+        (await fakes.progress.fetchProgress())
+            .valueOrNull!
+            .single
+            .formRecallDone,
+        isFalse,
+      );
+    });
   });
 }

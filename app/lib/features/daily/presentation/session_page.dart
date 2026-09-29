@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
+import 'package:flui/core/mic/mic_providers.dart';
+import 'package:flui/core/mic/presentation/mic_target_scope.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
@@ -18,6 +21,7 @@ import 'package:flui/features/reading/presentation/widgets/readings_carousel.dar
 import 'package:flui/features/themes/domain/theme.dart' as taxonomy;
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
+import 'package:flui/features/vocabulary/presentation/controllers/form_recall_mic_target.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/cloze_view.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/form_recall_view.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/production_view.dart';
@@ -351,6 +355,7 @@ class _StepContent extends ConsumerWidget {
     final step = state.step;
     final word = state.word;
     final busy = state.saving;
+    final speakingGym = ref.watch(speakingGymEnabledProvider);
     void next() => unawaited(controller.continueStep());
 
     if (step == null || word == null) {
@@ -465,18 +470,40 @@ class _StepContent extends ConsumerWidget {
         null => const SizedBox.shrink(),
       },
       FormRecallStep() => switch ((state.formRecall, state.formRecallPrompt)) {
-        (final check?, final prompt?) => FormRecallView(
-          key: stepKey,
-          check: check,
-          explanation: prompt.explanation,
-          sentenceBefore: prompt.before,
-          sentenceAfter: prompt.after,
-          syllableCount: word.syllables.length,
-          busy: busy,
-          onSubmit: (text) => unawaited(controller.submitFormRecall(text)),
-          onHint: () => unawaited(controller.takeFormRecallHint()),
-          onContinue: next,
-        ),
+        (final check?, final prompt?) =>
+          !speakingGym
+              ? FormRecallView(
+                  key: stepKey,
+                  check: check,
+                  explanation: prompt.explanation,
+                  sentenceBefore: prompt.before,
+                  sentenceAfter: prompt.after,
+                  syllableCount: word.syllables.length,
+                  busy: busy,
+                  onSubmit: (text) =>
+                      unawaited(controller.submitFormRecall(text)),
+                  onHint: () => unawaited(controller.takeFormRecallHint()),
+                  onContinue: next,
+                )
+              : MicTargetScope(
+                  target: ref.watch(formRecallMicTargetProvider(state.mode)),
+                  child: FormRecallView(
+                    key: stepKey,
+                    check: check,
+                    explanation: prompt.explanation,
+                    sentenceBefore: prompt.before,
+                    sentenceAfter: prompt.after,
+                    syllableCount: word.syllables.length,
+                    busy: busy,
+                    onSubmit: (text) =>
+                        unawaited(controller.submitFormRecall(text)),
+                    onHint: () => unawaited(controller.takeFormRecallHint()),
+                    onContinue: next,
+                    speakingGym: true,
+                    micController: ref.watch(micControllerProvider),
+                    onSkip: () => unawaited(controller.skipSpokenStep()),
+                  ),
+                ),
         _ => const SizedBox.shrink(),
       },
       ProductionStep() => switch (state.production) {
