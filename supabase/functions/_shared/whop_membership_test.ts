@@ -145,10 +145,15 @@ Deno.test("cancelMembership rejects a 200 response with a malformed membership p
   assertEquals(error.status, 200);
 });
 
-Deno.test("cancelMembership resolves alreadyGone on 404, never guessing success", async () => {
+Deno.test("cancelMembership rejects 404 as membership_not_found instead of assuming success", async () => {
   const fetchImpl = () => Promise.resolve(Response.json({ error: "not_found" }, { status: 404 }));
-  const result = await cancelMembership(client(fetchImpl), MEMBERSHIP_ID);
-  assertEquals(result, { outcome: "alreadyGone" });
+  const error = await assertRejects(
+    () => cancelMembership(client(fetchImpl), MEMBERSHIP_ID),
+    CancelMembershipError,
+  );
+  assertEquals(error.reason, "membership_not_found");
+  assertEquals(error.status, 404);
+  assertEquals(error.message.includes(SECRET_API_KEY), false);
 });
 
 Deno.test("cancelMembership on 409 follows up with GET and resolves alreadyCanceled when already terminal", async () => {

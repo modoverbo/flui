@@ -13,10 +13,22 @@
  *   membership stays active until the paid period ends, no refund.
  * - Optional `Idempotency-Key` header (<= 255 chars; a replay within 24h
  *   returns the stored response).
- * - 200 returns the Membership (`status` + `cancel_at_period_end`). 404
- *   means the membership is unknown. 409 is Conflict with no documented
- *   meaning, so this helper re-reads the membership via `GET
- *   {baseUrl}/memberships/{id}` before deciding.
+ * - 200 returns the Membership (`status` + `cancel_at_period_end`). 409 is
+ *   Conflict with no documented meaning, so this helper re-reads the
+ *   membership via `GET {baseUrl}/memberships/{id}` before deciding.
+ *
+ * 404 is deliberately NOT treated as success. The spike never confirmed
+ * that a canceled Whop membership returns 404 — a canceled membership still
+ * exists (`GET` on it returns `status: "canceled"`/`"expired"`). A 404
+ * means this id is unknown to the company the API key belongs to, which in
+ * practice means `WHOP_API_BASE_URL`/the stored id point at the wrong
+ * environment or company, or the stored `whop_membership_id` is corrupt —
+ * every one of those is a misconfiguration, not a canceled membership.
+ * Treating 404 as success would let the caller (U22b) delete the account
+ * while the real membership keeps renewing and charging the user, exactly
+ * what fail-closed exists to prevent. 404 rejects with the distinct reason
+ * `membership_not_found` so U22b can surface a specific "contact support"
+ * message rather than folding it into a generic failure.
  */
 import type { WhopClientOptions } from "./checkout.ts";
 
@@ -55,7 +67,6 @@ export interface CancelMembershipOptions {
 
 export type CancelMembershipResult =
   | { outcome: "canceled"; status: WhopMembershipStatus; cancelAtPeriodEnd: boolean }
-  | { outcome: "alreadyGone" }
   | { outcome: "alreadyCanceled"; status: WhopMembershipStatus; cancelAtPeriodEnd: boolean };
 
 export type CancelMembershipErrorReason =
@@ -64,7 +75,8 @@ export type CancelMembershipErrorReason =
   | "timeout"
   | "http_error"
   | "unexpected_response"
-  | "unresolved_conflict";
+  | "unresolved_conflict"
+  | "membership_not_found";
 
 /**
  * A typed, fail-closed error. `status` is Whop's HTTP status when one
@@ -203,7 +215,12 @@ export async function cancelMembership(
   }
 
   if (response.status === 404) {
-    return { outcome: "alreadyGone" };
+    throw new CancelMembershipError(
+      "membership_not_found",
+      404,
+      "Whop does not know this membership id (wrong environment/company, or a corrupt stored id) " +
+        "— not the same as a canceled membership, which still exists and returns 200.",
+    );
   }
 
   if (response.status === 409) {
