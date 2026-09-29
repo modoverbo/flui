@@ -61,6 +61,12 @@ enum MicNotice {
   permissionDenied,
   busy,
   deliveryFailed,
+
+  /// A `MicPrepare.onActivate` step failed before any capture ever
+  /// started (e.g. `TodayStartTarget`'s `PlanToday.run` — U15a review
+  /// fix): distinct from [deliveryFailed], which always implies a
+  /// recording was already captured and sent.
+  planFailed,
 }
 
 /// Owns the shell's single [HoldToRecord] for the signed-in session (D23)
@@ -90,6 +96,7 @@ final class MicController {
       (_) => _refreshIdlePrompt(),
     );
     _emit(_idleState());
+    _subscribeToResolvedTarget();
   }
 
   final MicTargetRegistry _registry;
@@ -97,6 +104,17 @@ final class MicController {
   final HoldToRecord _holdToRecord;
   late final StreamSubscription<HoldToRecordState> _holdSubscription;
   late final StreamSubscription<void> _registrySubscription;
+
+  /// Tracks whichever [MicTarget] the registry CURRENTLY resolves to, so a
+  /// label/prompt/availability change that target fires entirely on its
+  /// own — off-gesture, with no registry registration/deregistration event
+  /// — still refreshes the visible idle prompt (U15a review fix:
+  /// `TodayStartTarget`'s label flips from "Empezar" to "Continuar" purely
+  /// because `todayOverviewProvider` resolved, with no capture and no
+  /// registry change involved). Re-subscribed on every
+  /// [_refreshIdlePrompt] call, since the resolved target itself may have
+  /// changed too.
+  StreamSubscription<void>? _targetChangesSubscription;
 
   final _stateController = StreamController<MicState>.broadcast();
   final _noticeController = StreamController<MicNotice>.broadcast();
@@ -339,7 +357,20 @@ final class MicController {
   }
 
   void _refreshIdlePrompt() {
+    _subscribeToResolvedTarget();
     if (_state is MicIdle) _emit(_idleState());
+  }
+
+  /// Re-subscribes to whichever [MicTarget] `_registry.resolve()` CURRENTLY
+  /// returns — cancels any previous subscription first, so this stays a
+  /// single, always-current subscription regardless of how many times the
+  /// resolved target changes.
+  void _subscribeToResolvedTarget() {
+    unawaited(_targetChangesSubscription?.cancel());
+    final (target, _) = _registry.resolve();
+    _targetChangesSubscription = target.changes.listen(
+      (_) => _refreshIdlePrompt(),
+    );
   }
 
   void _refreshIdleBlock() {
@@ -377,6 +408,7 @@ final class MicController {
   Future<void> dispose() async {
     await _holdSubscription.cancel();
     await _registrySubscription.cancel();
+    await _targetChangesSubscription?.cancel();
     await _holdToRecord.dispose();
     await _stateController.close();
     await _noticeController.close();

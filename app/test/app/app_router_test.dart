@@ -46,6 +46,10 @@ import '../../integration_test/support/app_harness.dart';
 final class _FakeSpeechRecorder implements SpeechRecorder {
   new();
 
+  /// Observable proof a real recording actually started — U15a's review
+  /// fix hinges on HOY's mic NEVER calling this on its first press.
+  int startCalls = 0;
+
   @override
   Stream<double> get amplitude => const Stream.empty();
 
@@ -53,7 +57,7 @@ final class _FakeSpeechRecorder implements SpeechRecorder {
   Future<bool> requestPermission() async => true;
 
   @override
-  Future<void> start() async {}
+  Future<void> start() async => startCalls++;
 
   @override
   Future<Uint8List> stop() async => Uint8List.fromList(const [1, 2, 3]);
@@ -467,11 +471,10 @@ void main() {
       },
     );
 
-    testWidgets('picking a duration then tapping the bottom-bar mic starts the '
-        'session with that duration and plan: it lands in the loop for '
-        "today's first planned challenge, and the mic label is correct", (
-      tester,
-    ) async {
+    testWidgets('(a) picking a duration then tapping the bottom-bar mic on HOY '
+        'plans the session and navigates to /today/train WITHOUT recording '
+        "anything — the challenge prompt shows, the mic label is the loop's "
+        '(U15a review fix: HOY never records directly)', (tester) async {
       final recorder = _FakeSpeechRecorder();
       final harness = AppHarness(
         signedInAs: ana,
@@ -489,6 +492,50 @@ void main() {
       await tester.tap(find.text('30 min'));
       await tester.pumpAndSettle();
 
+      // A single TAP (not a hold gesture): `TodayStartTarget.availability`
+      // is always `MicPrepare`, which never leads to a capture on this
+      // same gesture — matches `QuickPracticeTarget`'s own established
+      // first-activation shape.
+      await tester.tap(find.byType(MicButton));
+      await tester.pumpAndSettle();
+
+      expect(recorder.startCalls, 0);
+      final saved =
+          (await harness.dailySessions.fetchSessions()).valueOrNull!.single;
+      expect(saved.minutes, 30);
+      expect(saved.challengeId, isNotNull);
+      expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
+      expect(location(harness), AppRoutes.todayTrain);
+
+      // The mic is now bound to the loop's registered LoopMicTarget, not
+      // TodayStartTarget — same real-path assertion style as the
+      // ENTRENAR mic test above.
+      final registry = harness.container.read(micTargetRegistryProvider);
+      final (onLoop, _) = registry.resolve();
+      expect(onLoop, isA<LoopMicTarget>());
+    });
+
+    testWidgets('(b) the NEXT mic press, on /today/train, actually records and '
+        'delivers to the loop', (tester) async {
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        arrange: (h) async => h.skillProfiles.seedProfile(_seededProfile),
+      );
+      await tester.tap(find.text('30 min'));
+      await tester.pumpAndSettle();
+      await tester.tap(find.byType(MicButton));
+      await tester.pumpAndSettle();
+      expect(location(harness), AppRoutes.todayTrain);
+
       final gesture = await tester.startGesture(
         tester.getCenter(find.byType(MicButton)),
       );
@@ -499,19 +546,92 @@ void main() {
       await gesture.up();
       await tester.pumpAndSettle();
 
+      expect(recorder.startCalls, 1);
+      expect(harness.speakingAttempts.attemptsForCurrentUser, hasLength(1));
+    });
+
+    testWidgets('(c) with a plan already persisted, the HOY mic press shows '
+        '"Continuar la sesión de hoy" and navigates without re-planning', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        arrange: (h) async {
+          h.skillProfiles.seedProfile(_seededProfile);
+          await h.dailySessions.saveSession(
+            DailySession(
+              localDate: h.clock.localToday(),
+              minutes: 20,
+              challengeId: seededChallengeId,
+            ),
+          );
+        },
+      );
+
+      expect(
+        tester.getSemantics(find.byType(MicButton)).label,
+        'Continuar la sesión de hoy',
+      );
+      await tester.tap(find.byType(MicButton));
+      await tester.pumpAndSettle();
+
+      expect(recorder.startCalls, 0);
+      expect(location(harness), AppRoutes.todayTrain);
       final saved =
           (await harness.dailySessions.fetchSessions()).valueOrNull!.single;
-      expect(saved.minutes, 30);
-      expect(saved.challengeId, isNotNull);
-      expect(harness.speakingAttempts.attemptsForCurrentUser, hasLength(1));
-
-      // The mic is now bound to the running loop's LoopMicTarget, not
-      // the pre-session default — same real-path assertion style as the
-      // ENTRENAR mic test above.
-      final registry = harness.container.read(micTargetRegistryProvider);
-      final (onHoy, _) = registry.resolve();
-      expect(onHoy, isA<LoopMicTarget>());
+      // Unchanged — still 20, never re-planned to a chip default.
+      expect(saved.minutes, 20);
+      handle.dispose();
     });
+
+    testWidgets(
+      '(d) a planning failure shows the notice, keeps the user on HOY, '
+      'and records nothing',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          arrange: (h) async => h.skillProfiles.seedProfile(_seededProfile),
+        );
+        harness.dailySessions.nextFailure = const NetworkFailure();
+
+        await tester.tap(find.byType(MicButton));
+        await tester.pumpAndSettle();
+
+        expect(
+          find.text(
+            'No pudimos preparar tu sesión de hoy. Inténtalo de '
+            'nuevo.',
+          ),
+          findsOneWidget,
+        );
+        expect(location(harness), AppRoutes.today);
+        expect(recorder.startCalls, 0);
+        expect(
+          (await harness.dailySessions.fetchSessions()).valueOrNull,
+          isEmpty,
+        );
+        expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
+      },
+    );
   });
 
   group('Entrenar, the second shell branch (speakingGym ON, U16)', () {

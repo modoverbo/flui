@@ -2,27 +2,23 @@ import 'dart:async';
 
 import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/error/result.dart';
+import 'package:flui/core/mic/mic_controller.dart';
+import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/mic_target.dart';
-import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/domain/time_budget.dart';
 import 'package:flui/features/daily/presentation/controllers/plan_today.dart';
 import 'package:flui/features/daily/presentation/controllers/time_budget_controller.dart';
 import 'package:flui/features/daily/presentation/providers/today_overview.dart';
-import 'package:flui/features/training/domain/training_context.dart';
-import 'package:flui/features/training/domain/training_loop.dart';
-import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
-import 'package:flui/features/training/presentation/controllers/training_loop_controller.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart'
-    show ProviderSubscription;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'today_start_target.g.dart';
 
 /// The currently-active chip on HOY's budget-free card, `null` before the
 /// user has touched a chip (the card still shows the preselected one —
-/// design part-3 §11 U15a). `TodayStartTarget.deliver` reads this at the
-/// moment of the mic gesture, so a duration changed just before tapping
-/// the mic is the one that plans the day, never a stale default.
+/// design part-3 §11 U15a). `TodayStartTarget.onActivate` reads this at
+/// the moment of the mic gesture, so a duration changed just before
+/// tapping the mic is the one that plans the day, never a stale default.
 @riverpod
 class TodaySelectedBudget extends _$TodaySelectedBudget {
   @override
@@ -35,101 +31,88 @@ class TodaySelectedBudget extends _$TodaySelectedBudget {
   void select(TimeBudget budget) => state = budget;
 }
 
-/// HOY's own `MicTarget` (design part-3 §11, decision #450.4): before
-/// today's `daily_sessions` row exists, a single mic gesture both plans
-/// and records — `deliver` persists the day's plan (`PlanToday.run`, at
-/// whichever duration [TodaySelectedBudgetProvider] currently holds) and
-/// THEN forwards the just-captured audio into the loop it just created,
-/// equivalent to tapping START, never quick practice (no second
-/// activation is required). Once a session exists, this target simply
-/// delegates to that day's `LoopMicTarget` for the rest of the loop.
+/// HOY's own `MicTarget` (design part-3 §11, decision #450.4 —
+/// ORCHESTRATOR REVIEW FIX, U15a): the mic on HOY NEVER records directly.
+///
+/// Its availability is ALWAYS `MicPrepare`, labeled "Empezar la sesión de
+/// hoy" (no session yet) or "Continuar la sesión de hoy" (one already
+/// exists) — matching `QuickPracticeTarget`'s own established two-phase
+/// shape, because `MicController._beginCapture`'s `MicPrepare` branch
+/// structurally never proceeds into a capture on the SAME gesture (it
+/// `await`s `onActivate()` then returns). `onActivate` plans today's
+/// session if one doesn't exist yet (`PlanToday.run`, at whichever
+/// duration [TodaySelectedBudgetProvider] currently holds, defaulting to
+/// `preselectedBudgetProvider`) and then navigates to
+/// `AppRoutes.todayTrain` — it NEVER captures audio itself. Recording the
+/// visible challenge is entirely `/today/train`'s own `LoopMicTarget`'s
+/// job from that point on; this target does not proxy its prompt,
+/// availability, or delivery.
 final class TodayStartTarget implements MicTarget {
-  new(this._ref);
+  new(this._ref) {
+    _overviewSubscription = _ref.listen(
+      todayOverviewProvider,
+      (_, _) => _changes.add(null),
+    );
+  }
 
   final Ref _ref;
   final _changes = StreamController<void>.broadcast();
-  LoopRequest? _request;
-  ProviderSubscription<LoopMicTarget>? _loopSubscription;
+  late final ProviderSubscription<AsyncValue<TodayOverview>>
+  _overviewSubscription;
 
-  /// Called once, right after this target's FIRST `deliver` successfully
-  /// plans and submits today's session — the widget layer navigates to
-  /// `AppRoutes.todayTrain` in response. `MicTarget` has no navigation
-  /// primitive of its own (documented deviation, see apply-progress): no
-  /// other target in `core/mic` has needed to navigate before this one.
+  /// Called once `onActivate` finds or creates today's session — the
+  /// widget layer navigates to `AppRoutes.todayTrain` in response.
+  /// `MicTarget` has no navigation primitive of its own (documented
+  /// deviation, see apply-progress): no other target in `core/mic` has
+  /// needed to navigate before this one.
   void Function()? onSessionStarted;
 
-  LoopRequest _requestFor(DailySession session) => LoopRequest(
-    context: TrainingContext.daily,
-    sessionId: session.localDate.toIso(),
-    script: const LoopScript.full(),
-    challengeId: session.challengeId,
-    targetWordIds: session.wovenWordIds,
+  bool get _hasSession =>
+      _ref.read(todayOverviewProvider).value?.session != null;
+
+  @override
+  MicPrompt get prompt => MicPrompt(
+    actionLabel: _hasSession
+        ? 'Continuar la sesión de hoy'
+        : 'Empezar la sesión de hoy',
   );
 
-  /// `null` while no session exists yet for today. Resolved once from
-  /// `todayOverviewProvider`'s current (already-settled) value the first
-  /// time something asks — never re-derived from it after this target's
-  /// OWN `deliver` just wrote a session, which reads back the value
-  /// `PlanToday.run` itself returned instead (a just-written provider can
-  /// still serve a stale cached value for a moment — U14c's own learning).
-  LoopMicTarget? get _loopTarget {
-    final cached = _request;
-    if (cached != null) return _ref.read(loopMicTargetProvider(cached));
-    final session = _ref.read(todayOverviewProvider).value?.session;
-    if (session == null) return null;
-    return _attach(session);
-  }
-
-  LoopMicTarget _attach(DailySession session) {
-    final request = _requestFor(session);
-    _request = request;
-    _loopSubscription?.close();
-    _loopSubscription = _ref.listen(
-      loopMicTargetProvider(request),
-      (_, _) => _changes.add(null),
-    );
-    _changes.add(null);
-    return _ref.read(loopMicTargetProvider(request));
-  }
+  @override
+  Duration get maxDuration => const Duration(seconds: 60);
 
   @override
-  MicPrompt get prompt =>
-      _loopTarget?.prompt ??
-      const MicPrompt(actionLabel: 'Grabar tu respuesta de hoy');
-
-  @override
-  Duration get maxDuration =>
-      _loopTarget?.maxDuration ?? const Duration(seconds: 60);
-
-  @override
-  MicAvailability get availability =>
-      _loopTarget?.availability ?? const MicReady();
+  MicAvailability get availability => MicPrepare(prompt.actionLabel, _activate);
 
   @override
   Stream<void> get changes => _changes.stream;
 
-  @override
-  Future<MicDelivery> deliver(RecordedAudio audio) async {
-    var loop = _loopTarget;
-    final startingFresh = loop == null;
-    if (loop == null) {
+  Future<void> _activate() async {
+    if (!_hasSession) {
       final preselected = await _ref.read(preselectedBudgetProvider.future);
       final selected = _ref.read(todaySelectedBudgetProvider) ?? preselected;
       final result = await _ref.read(planTodayProvider).run(budget: selected);
       if (result case Err()) {
-        return const MicDeliveryFailed(
-          'No pudimos preparar tu sesión. Inténtalo de nuevo.',
-        );
+        _ref.read(micControllerProvider)?.emitNotice(MicNotice.planFailed);
+        return;
       }
-      loop = _attach((result as Ok<DailySession>).value);
     }
-    final delivery = await loop.deliver(audio);
-    if (startingFresh) onSessionStarted?.call();
-    return delivery;
+    onSessionStarted?.call();
+  }
+
+  @override
+  Future<MicDelivery> deliver(RecordedAudio audio) async {
+    // `MicPrepare` never leads to a capture on THIS target (see the class
+    // doc): once a session exists, `/today/train`'s own registered
+    // `LoopMicTarget` is what the registry resolves against, so this is
+    // unreachable in practice — kept only because `MicTarget.deliver` is
+    // a non-optional part of the interface.
+    return const MicDeliveryFailed(
+      'HOY no graba directamente: abre tu sesión de hoy primero.',
+    );
   }
 
   void disposeTarget() {
-    _loopSubscription?.close();
+    _overviewSubscription.close();
     unawaited(_changes.close());
   }
 }
