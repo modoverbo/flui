@@ -401,6 +401,12 @@ enabled = true
 # Webhooks signature (WHOP_WEBHOOK_SECRET) inside the function.
 verify_jwt = false
 
+[functions.account-delete]
+enabled = true
+# The gateway requires a valid user JWT; the function also resolves the user with auth.getUser()
+# and only ever acts on that bearer token's own uid.
+verify_jwt = true
+
 [functions.audio-retention]
 enabled = true
 # Called only by the daily scheduled workflow, not a signed-in user. Authenticity is verified with

@@ -212,6 +212,53 @@ Deno.test("entitlements for unknown users are acknowledged and ignored", async (
   assertEquals(repository.events.get("msg_1")?.processed, true);
 });
 
+Deno.test(
+  "regression (U22b, decision #894): membership.cancel_at_period_end_changed for an already-deleted user is acknowledged 200, never upserts an orphan row",
+  async () => {
+    // Simulates the account-delete ordering (U22b): the user was deleted
+    // AFTER Whop was told cancel_at_period_end=true, so this event arrives
+    // for a user_id the `entitlements` FK to auth.users can no longer
+    // satisfy -- the repository's saveEntitlement (backed by that FK)
+    // reports unknown_user exactly as it would for a real 23503 violation.
+    const repository = new FakeRepository();
+    repository.saveResult = "unknown_user";
+    const response = await handlerWith(repository)(
+      await signedRequest(
+        membershipEvent("membership.cancel_at_period_end_changed", {
+          status: "active",
+          cancel_at_period_end: true,
+        }),
+        "msg_deleted_user_1",
+      ),
+    );
+    assertEquals(response.status, 200);
+    assertEquals(await response.json(), { status: "ignored", reason: "unknown_user" });
+    assertEquals(repository.events.get("msg_deleted_user_1")?.processed, true);
+    assertEquals(repository.entitlements.size, 0);
+  },
+);
+
+Deno.test(
+  "regression (U22b, decision #894): membership.deactivated for an already-deleted user is acknowledged 200, never upserts an orphan row",
+  async () => {
+    // Same scenario at the far end of the "at period end" window: Whop
+    // deactivates the membership once the paid period elapses, long after
+    // the account (and its entitlements row) is already gone.
+    const repository = new FakeRepository();
+    repository.saveResult = "unknown_user";
+    const response = await handlerWith(repository)(
+      await signedRequest(
+        membershipEvent("membership.deactivated", { status: "canceled" }),
+        "msg_deleted_user_2",
+      ),
+    );
+    assertEquals(response.status, 200);
+    assertEquals(await response.json(), { status: "ignored", reason: "unknown_user" });
+    assertEquals(repository.events.get("msg_deleted_user_2")?.processed, true);
+    assertEquals(repository.entitlements.size, 0);
+  },
+);
+
 Deno.test("database failures return 500 so Whop retries, and the event stays pending", async () => {
   const repository = new FakeRepository();
   repository.failOnSave = true;
