@@ -1,9 +1,11 @@
 # ADR 0004: Whop payments, card-upfront trial and entitlements
 
-- **Status:** Accepted (revised 2026-09-13: the in-app no-card trial was replaced by a Whop trial)
+- **Status:** Accepted (revised 2026-09-13: the in-app no-card trial was replaced by a Whop trial;
+  amended 2026-09-29: account deletion cancels the membership, see decision 9)
 - **Date:** 2026-09-13
 - **Evidence:** [research/mvp-frontend-only.md](../research/mvp-frontend-only.md), Whop docs
-  (checkout configurations, memberships, webhooks), verified 2026-09-13
+  (checkout configurations, memberships, webhooks), verified 2026-09-13; membership cancellation
+  verified 2026-09-29 against Whop's live OpenAPI spec (`https://api.whop.com/api/v1/openapi.json`)
 
 ## Context
 
@@ -52,6 +54,26 @@ Whop facts that shape the design:
    receipts apply. Cancelling must stay one click away (Whop `manage_url`). No dark patterns.
 8. **Local development:** use `supabase/snippets/grant_dev_entitlement.sql` (dev only) or a tunnel to
    `supabase functions serve` for real sandbox webhooks.
+9. **Account deletion cancels the membership, fail closed.** `account-delete` deletes only the
+   caller's own account and runs, in order: read the entitlement → cancel the membership → remove
+   every object under `speaking-audio/<uid>/` → delete the auth user. Any failure stops the chain, so
+   an account is never deleted while its membership may still renew.
+   - **Cancel at period end, not immediately** (founder decision): `POST /memberships/{id}/cancel`
+     with `cancel_at_period_end: true` stops renewal; access in Whop lasts until the paid period
+     ends. There is no refund. The call is skipped when the entitlement is not live or is already
+     `cancel_at_period_end`, and uses a deterministic `Idempotency-Key` so a retry cannot double-act.
+   - **Response handling** (`_shared/whop_membership.ts`): a 200 counts only if the membership is
+     `cancel_at_period_end` or already canceled, expired or completed. A 409 has no documented
+     meaning, so it is resolved by `GET /memberships/{id}` and succeeds only on those same states. A
+     404 fails closed as `membership_not_found`: a canceled membership still exists, so a 404 means a
+     wrong environment, company or id, and deleting the account would leave a live membership
+     billing. Every other failure also stops the deletion.
+   - **Later webhooks:** Whop still sends `membership.cancel_at_period_end_changed` and, at period
+     end, `membership.deactivated`. The `entitlements` row is gone with the user (`on delete cascade`),
+     so the write hits a foreign-key violation that `whop-webhook` maps to `unknown_user` and answers
+     200; Whop stops retrying and no orphan row is created.
+   - The `whop_webhook_events` log is not tied to the user and survives deletion; it stores full
+     payloads, which may include the buyer's Whop identity. Minimising it is an open follow-up.
 
 ## Consequences
 
@@ -62,6 +84,10 @@ Whop facts that shape the design:
 - The webhook may lag behind the redirect; the app must poll `my_access()`.
 - Entitlements are written only by the service role; pgTAP tests prove clients cannot write them.
 - Web-only payments avoid app-store billing rules for now (ADR 0005).
+- Account deletion depends on Whop being reachable: while it is down, deletion fails with
+  `billing_unavailable` and the user must retry. A `whop_membership_not_found` failure needs a human
+  to check the configuration or the stored membership id.
+- `WHOP_API_KEY` needs the `membership:cancel` (or `member:manage`) scope for `account-delete`.
 
 ## Alternatives considered
 
