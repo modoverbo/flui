@@ -511,10 +511,7 @@ void main() {
 
     test('recentAttemptsSince queries every column filtered by local_date, '
         'newest first, RLS scopes rows to the owner', () async {
-      final rows = [
-        _attemptRow(_attempt(id: 'a2')),
-        _attemptRow(_attempt()),
-      ];
+      final rows = [_attemptRow(_attempt(id: 'a2')), _attemptRow(_attempt())];
       final recorder = SupabaseRecorder(respond: (_) => rows);
       addTearDown(recorder.dispose);
 
