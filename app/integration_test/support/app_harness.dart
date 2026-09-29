@@ -15,6 +15,8 @@ import 'package:flui/features/daily/domain/daily_session.dart';
 import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
 import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
+import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
+import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
@@ -77,6 +79,14 @@ final class AppHarness {
   FakeSpeakingAttemptRepository get speakingAttempts =>
       container.read(speakingAttemptRepositoryProvider)
           as FakeSpeakingAttemptRepository;
+
+  /// The shared `speechAnalysisRepositoryProvider` fake (U17b): tests
+  /// control the NEXT `transcribe()` call's text via
+  /// `speech.nextTranscribeText` instead of re-overriding the provider,
+  /// which `fakeBackendOverrides` already declares once.
+  FakeSpeechAnalysisRepository get speech =>
+      container.read(speechAnalysisRepositoryProvider)
+          as FakeSpeechAnalysisRepository;
 
   /// Saves today's time budget so the app skips "¿Cuánto tiempo tienes hoy?".
   Future<void> planToday({int minutes = 10}) async {

@@ -22,6 +22,7 @@ import 'package:flui/features/themes/domain/theme.dart' as taxonomy;
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/controllers/form_recall_mic_target.dart';
+import 'package:flui/features/vocabulary/presentation/controllers/production_mic_target.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/cloze_view.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/form_recall_view.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/production_view.dart';
@@ -507,17 +508,36 @@ class _StepContent extends ConsumerWidget {
         _ => const SizedBox.shrink(),
       },
       ProductionStep() => switch (state.production) {
-        final production? => ProductionView(
-          key: stepKey,
-          flow: production,
-          lemma: word.lemma,
-          beforePhrase: _situation(word),
-          busy: busy,
-          onSubmit: controller.submitProduction,
-          onConfirm: () => unawaited(controller.confirmProduction()),
-          onRevise: controller.reviseProduction,
-          onToggle: controller.toggleProductionRubric,
-        ),
+        final production? =>
+          !speakingGym
+              ? ProductionView(
+                  key: stepKey,
+                  flow: production,
+                  lemma: word.lemma,
+                  beforePhrase: _situation(word),
+                  busy: busy,
+                  onSubmit: controller.submitProduction,
+                  onConfirm: () => unawaited(controller.confirmProduction()),
+                  onRevise: controller.reviseProduction,
+                  onToggle: controller.toggleProductionRubric,
+                )
+              : MicTargetScope(
+                  target: ref.watch(productionMicTargetProvider(state.mode)),
+                  child: ProductionView(
+                    key: stepKey,
+                    flow: production,
+                    lemma: word.lemma,
+                    beforePhrase: _situation(word),
+                    busy: busy,
+                    onSubmit: controller.submitProduction,
+                    onConfirm: () => unawaited(controller.confirmProduction()),
+                    onRevise: controller.reviseProduction,
+                    onToggle: controller.toggleProductionRubric,
+                    speakingGym: true,
+                    micController: ref.watch(micControllerProvider),
+                    onSkip: () => unawaited(controller.skipSpokenStep()),
+                  ),
+                ),
         null => const SizedBox.shrink(),
       },
     };

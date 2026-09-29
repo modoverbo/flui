@@ -1,15 +1,27 @@
 import 'package:flui/core/l10n/l10n.dart';
+import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/vocabulary/domain/exercises/production_check.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/highlighted_text.dart';
+import 'package:flui/features/vocabulary/presentation/widgets/spoken_answer_controls.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
+import 'package:flui/shared/widgets/flui_notice.dart';
 import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Úsala (2/2): the user's own sentence, then "¿Suena natural?".
+/// Úsala (2/2): the user's own sentence (writing phase), then
+/// "¿Suena natural?" (self-check).
+///
+/// Typed ([onSubmit], via `FluiTextField`) by default during the writing
+/// phase; while [speakingGym] is on (design D36, U17b), the field and its
+/// submit button are replaced by [SpokenAnswerControls] — the sentence
+/// comes from the shell's mic (`ProductionMicTarget`) instead, and
+/// [flow]'s own `sentence` (set by `ProductionFlow.submit` either way)
+/// shows what was heard. The self-check phase is unaffected either way —
+/// it has never had a text field.
 class ProductionView extends StatefulWidget {
   const new({
     required this.flow,
@@ -21,6 +33,9 @@ class ProductionView extends StatefulWidget {
     required this.onToggle,
     super.key,
     this.busy = false,
+    this.speakingGym = false,
+    this.micController,
+    this.onSkip,
   });
 
   final ProductionFlow flow;
@@ -33,6 +48,18 @@ class ProductionView extends StatefulWidget {
   final VoidCallback onRevise;
   final ValueChanged<ProductionRubric> onToggle;
   final bool busy;
+
+  /// U17b: shows [SpokenAnswerControls] instead of the typed field/button
+  /// during the writing phase.
+  final bool speakingGym;
+
+  /// Required (and used) only while [speakingGym] is on.
+  final MicController? micController;
+
+  /// "Continuar sin hablar" — only offered while the mic is blocked
+  /// (`SpokenAnswerControls` itself gates visibility). Required only while
+  /// [speakingGym] is on.
+  final VoidCallback? onSkip;
 
   @override
   State<ProductionView> createState() => _ProductionViewState();
@@ -145,32 +172,48 @@ class _ProductionViewState extends State<ProductionView> {
           style: type.bodyL.copyWith(color: FluiColors.charcoal),
         ),
         const SizedBox(height: FluiSpacing.lg),
-        FluiTextField(
-          label: l10n.productionFieldLabel,
-          controller: _controller,
-          textCapitalization: TextCapitalization.sentences,
-          keyboardType: TextInputType.text,
-          textInputAction: TextInputAction.done,
-          onSubmitted: widget.onSubmit,
-          errorText: switch (issue) {
-            ProductionIssue.tooShort => l10n.productionTooShort,
-            ProductionIssue.missingWord => l10n.productionMissingWord(
-              widget.lemma,
-            ),
-            ProductionIssue.repeated => l10n.productionRepeatedWords,
-            ProductionIssue.copiedModel => l10n.productionTooSimilar,
-            null => null,
-          },
-        ),
-        const SizedBox(height: FluiSpacing.lg),
-        FluiButton.primary(
-          label: l10n.productionSubmit,
-          isLoading: widget.busy,
-          onPressed: () => widget.onSubmit(_controller.text),
-        ),
+        if (!widget.speakingGym) ...[
+          FluiTextField(
+            label: l10n.productionFieldLabel,
+            controller: _controller,
+            textCapitalization: TextCapitalization.sentences,
+            keyboardType: TextInputType.text,
+            textInputAction: TextInputAction.done,
+            onSubmitted: widget.onSubmit,
+            errorText: _issueMessage(issue, l10n, widget.lemma),
+          ),
+          const SizedBox(height: FluiSpacing.lg),
+          FluiButton.primary(
+            label: l10n.productionSubmit,
+            isLoading: widget.busy,
+            onPressed: () => widget.onSubmit(_controller.text),
+          ),
+        ] else if (widget.micController case final controller?) ...[
+          if (_issueMessage(issue, l10n, widget.lemma) case final message?) ...[
+            FluiNotice(message: message),
+            const SizedBox(height: FluiSpacing.sm),
+          ],
+          SpokenAnswerControls(
+            controller: controller,
+            heardText: flow.sentence.isEmpty ? null : flow.sentence,
+            onSkip: widget.onSkip ?? () {},
+          ),
+        ],
       ],
     );
   }
+
+  static String? _issueMessage(
+    ProductionIssue? issue,
+    AppLocalizations l10n,
+    String lemma,
+  ) => switch (issue) {
+    ProductionIssue.tooShort => l10n.productionTooShort,
+    ProductionIssue.missingWord => l10n.productionMissingWord(lemma),
+    ProductionIssue.repeated => l10n.productionRepeatedWords,
+    ProductionIssue.copiedModel => l10n.productionTooSimilar,
+    null => null,
+  };
 }
 
 /// One rubric line: a checkbox the user ticks about their own sentence.

@@ -10,6 +10,7 @@ import 'package:flui/features/vocabulary/domain/exercises/exercise_attempt.dart'
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/training_card.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -524,5 +525,75 @@ void main() {
         expect(find.text('Pista'), findsOneWidget);
       },
     );
+
+    Future<void> reachProductionStep(WidgetTester tester) async {
+      await reachFormRecallStep(tester);
+      await tester.enterText(find.byType(TextField), 'perspicaz');
+      await tapVisible(tester, 'Comprobar');
+      await tapVisible(tester, 'Continuar'); // formRecall -> readings
+      await tapVisible(tester, 'Continuar'); // readings -> production
+    }
+
+    testWidgets('flag off: production stays typed, no mic', (tester) async {
+      await planNewWord();
+      await pumpSession(tester);
+      await reachProductionStep(tester);
+
+      expect(find.byType(TextField), findsOneWidget);
+      expect(find.text('Comprobar'), findsOneWidget);
+      expect(find.byType(MicButton), findsNothing);
+    });
+
+    testWidgets('flag on: production drops the typed field for the shell mic', (
+      tester,
+    ) async {
+      // The FormRecallStep along the way has no typed field under the
+      // flag (proven by the test above); it is fast-forwarded here
+      // through the domain method directly (exactly what the mic would
+      // have called) so this test stays focused on the PRODUCTION step.
+      final gymFakes = LearningFakes(speakingGym: true);
+      addTearDown(gymFakes.dispose);
+      await gymFakes.sessions.saveSession(
+        DailySession(
+          localDate: gymFakes.today,
+          minutes: 10,
+          plannedWordIds: [perspicaz.id],
+        ),
+      );
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: AppRoutes.session,
+        page: const SessionPage(),
+        otherRoutes: const [AppRoutes.today],
+        overrides: gymFakes.overrides,
+        surfaceSize: const Size(400, 1400),
+      );
+      await tester.pumpAndSettle();
+      await tapVisible(tester, 'Ver en contexto');
+      await tapVisible(tester, 'Continuar');
+      final exercise = perspicaz.exercises.first;
+      await tapVisible(tester, exercise.correctOption.text);
+      await tapVisible(tester, 'Confirmar');
+      await tapVisible(tester, 'Continuar');
+
+      // No typed field under the flag (proven by the test above): fast
+      // forward past FormRecallStep through the domain method directly
+      // — exactly what a successful mic delivery would have called —
+      // so this test stays focused on the PRODUCTION step.
+      final container = ProviderScope.containerOf(
+        tester.element(find.byType(SessionPage)),
+      );
+      await container
+          .read(sessionControllerProvider(SessionMode.daily).notifier)
+          .submitFormRecall('perspicaz');
+      await tester.pumpAndSettle();
+      await tapVisible(tester, 'Continuar'); // formRecall -> readings
+      await tapVisible(tester, 'Continuar'); // readings -> production
+
+      expect(find.byType(TextField), findsNothing);
+      expect(find.text('Comprobar'), findsNothing);
+      expect(find.byType(MicButton), findsOneWidget);
+    });
   });
 }
