@@ -1,7 +1,9 @@
 import 'package:flui/app/router/app_routes.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
+import 'package:flui/core/mic/presentation/mic_target_scope.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
@@ -10,7 +12,9 @@ import 'package:flui/features/daily/presentation/today_page.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
 import 'package:flui/features/vocabulary/domain/word_state.dart';
+import 'package:flui/features/vocabulary/presentation/controllers/today_word_target.dart';
 import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
+import 'package:flui/features/vocabulary/presentation/providers/today_words.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
 import 'package:flui/shared/widgets/choice_chips.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
@@ -27,6 +31,12 @@ import 'package:material_ui/material_ui.dart' hide Theme;
 
 /// "Palabras": the repertoire, filterable by state. Two columns on a wide
 /// window, so the list uses the page instead of a strip down the middle.
+///
+/// While `speakingGymEnabledProvider` is on (U17), shows today's due words
+/// at the top and registers `TodayWordTarget` with the shell's mic via
+/// `MicTargetScope` — entirely absent from the tree while the flag is off
+/// (production safety: every push auto-deploys the web app), matching
+/// `TodayPage`'s own established guard for the same class of provider.
 class WordsPage extends ConsumerStatefulWidget {
   const new({super.key});
 
@@ -44,8 +54,12 @@ class _WordsPageState extends ConsumerState<WordsPage> {
     final layout = context.layout;
     final words = ref.watch(myWordsProvider);
     final themes = ref.watch(themesByIdProvider).value ?? const {};
+    final speakingGym = ref.watch(speakingGymEnabledProvider);
+    final todayWords = speakingGym
+        ? ref.watch(todayWordsProvider).value ?? const <WordEntry>[]
+        : const <WordEntry>[];
 
-    return Scaffold(
+    final body = Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: PageFrame(
@@ -65,6 +79,10 @@ class _WordsPageState extends ConsumerState<WordsPage> {
                     subtitle: l10n.wordsSubtitle,
                   ),
                 },
+                if (todayWords.isNotEmpty) ...[
+                  SizedBox(height: layout.blockGap),
+                  _TodayWords(entries: todayWords),
+                ],
                 SizedBox(height: layout.blockGap),
                 switch (words) {
                   AsyncValue(hasValue: true, :final value?)
@@ -99,6 +117,64 @@ class _WordsPageState extends ConsumerState<WordsPage> {
           ),
         ),
       ),
+    );
+    if (!speakingGym) return body;
+    final target = ref.watch(todayWordTargetProvider)
+      ..onWordSpeakStarted = (wordId) =>
+          context.go(AppRoutes.wordSpeak(wordId));
+    return MicTargetScope(target: target, child: body);
+  }
+}
+
+/// Today's 1-3 active words (design D41-adjacent, U17): the mic action
+/// ("Úsala en voz alta") lives on `TodayWordTarget`, never an in-screen
+/// record button — this section only shows what is due, the hint text
+/// points at the mic.
+class _TodayWords extends StatelessWidget {
+  const new({required this.entries});
+
+  final List<WordEntry> entries;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final layout = context.layout;
+    return Column(
+      key: const Key('todayWords'),
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        FluiLabel(l10n.wordsTodayTitle),
+        const SizedBox(height: FluiSpacing.xs),
+        for (final entry in entries)
+          Padding(
+            padding: const EdgeInsets.only(bottom: FluiSpacing.sm),
+            child: FluiCard(
+              color: FluiColors.surface,
+              padding: const EdgeInsets.all(FluiSpacing.md),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    entry.word.lemma,
+                    style: layout.type.titleM.copyWith(color: FluiColors.ink),
+                  ),
+                  const SizedBox(height: FluiSpacing.xxs),
+                  Text(
+                    entry.word.explanation,
+                    style: layout.type.body.copyWith(color: FluiColors.gray),
+                  ),
+                  const SizedBox(height: FluiSpacing.xs),
+                  Text(
+                    l10n.wordsTodaySpeakHint,
+                    style: layout.type.body.copyWith(
+                      color: FluiColors.greenSecondary,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

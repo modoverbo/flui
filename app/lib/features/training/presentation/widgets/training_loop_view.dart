@@ -273,8 +273,19 @@ class _PhaseBody extends StatelessWidget {
         l10n: l10n,
       ),
     };
+    // Orchestrator review finding: a finished `wordUse` loop (`comparison`,
+    // no `transfer` step) otherwise matched this same feedback/comparison
+    // check, showing "Continuar" — tapping it reached
+    // `TrainingLoopController.continueToNextStep`'s generic advance and
+    // pushed the loop into an invalid `focus/transfer` state. The mic
+    // itself already offers "Practicar otra vez" for this exact state
+    // (`WordSpeakTarget`'s own `MicPrepare` mapping) — "Continuar" has
+    // nothing valid to continue INTO here, so it is hidden; "Salir" stays.
+    final finished = isWordUseLoopFinished(request.script, loop);
     final showContinue =
-        loop.phase == LoopPhase.feedback || loop.phase == LoopPhase.comparison;
+        !finished &&
+        (loop.phase == LoopPhase.feedback ||
+            loop.phase == LoopPhase.comparison);
     final showExit = loop.phase != LoopPhase.summary;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

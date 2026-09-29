@@ -224,7 +224,20 @@ class TrainingLoopController extends _$TrainingLoopController {
   /// design §19.8). A no-op from any other phase: the mic itself also
   /// auto-advances on [submit] (design §19.2 "feedback -> ready(repeat)"),
   /// so a double-advance here would otherwise throw.
+  ///
+  /// Orchestrator review finding: a finished `wordUse` loop (`comparison`,
+  /// no `transfer` step) matched the phase check above, so tapping
+  /// "Continuar" reached `TrainingLoop.continueToNextStep()`'s generic
+  /// advance and pushed it into `focus/transfer` — from which a LATER mic
+  /// press no longer matched [submit]'s own `isWordUseFinished` guard
+  /// (the phase had already moved on), reaching a paid `analyze()` call
+  /// and a persisted bogus row before finally throwing. `TrainingLoop`'s
+  /// own [TrainingLoop.continueToNextStep] is now itself a no-op for this
+  /// exact state (see its doc), so this check is defense in depth — state
+  /// is left completely unchanged (not even a redundant re-emit) when
+  /// already finished, matching [submit]'s own early return.
   void continueToNextStep() {
+    if (_loop.isWordUseFinished) return;
     if (_loop.state.phase != LoopPhase.feedback &&
         _loop.state.phase != LoopPhase.comparison) {
       return;
@@ -246,6 +259,22 @@ class TrainingLoopController extends _$TrainingLoopController {
       return const MicDeliveryFailed(
         'Todavía no guardamos tu intento anterior. Reintenta guardarlo '
         'antes de grabar otra vez.',
+      );
+    }
+    if (_loop.isWordUseFinished) {
+      // Orchestrator review finding: `wordUse` has no `transfer` step, so
+      // its own `comparison` (reached after the repeat attempt) IS its
+      // terminal state — `continueToNextStep`'s otherwise-generic advance
+      // would push it into an attempt step `analysisSucceeded` can never
+      // resolve, throwing only AFTER a paid analysis (and a persisted
+      // attempt row) already happened. Refuse here instead, before any
+      // of that runs — the mic itself is expected to stop offering this
+      // target's `deliver` once finished (`LoopMicTarget`/`WordSpeakTarget`
+      // resolve accordingly), so reaching this branch at all means
+      // something upstream still tried anyway; fail cleanly, never throw.
+      return const MicDeliveryFailed(
+        'Ya completaste esta palabra. Vuelve a intentarlo para una nueva '
+        'sesión.',
       );
     }
     if (_loop.state.phase == LoopPhase.feedback ||

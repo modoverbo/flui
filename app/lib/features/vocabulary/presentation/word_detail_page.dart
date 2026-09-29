@@ -1,10 +1,12 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/clock/clock_providers.dart';
+import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/formatters.dart';
 import 'package:flui/core/l10n/l10n.dart';
+import 'package:flui/core/mic/presentation/mic_target_scope.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
@@ -13,14 +15,19 @@ import 'package:flui/features/reading/presentation/providers/context_readings.da
 import 'package:flui/features/reading/presentation/widgets/readings_carousel.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/presentation/providers/theme_providers.dart';
+import 'package:flui/features/vocabulary/domain/exercises/cloze_exercise.dart';
+import 'package:flui/features/vocabulary/domain/exercises/word_forms.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
+import 'package:flui/features/vocabulary/presentation/controllers/word_speak_target.dart';
 import 'package:flui/features/vocabulary/presentation/providers/my_words.dart';
 import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
+import 'package:flui/features/vocabulary/presentation/widgets/highlighted_text.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/mastery_meter_view.dart';
 import 'package:flui/features/vocabulary/presentation/widgets/word_detail_view.dart';
 import 'package:flui/features/vocabulary/presentation/word_state_kind.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
+import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:flui/shared/widgets/flui_label.dart';
 import 'package:flui/shared/widgets/loading_wave.dart';
@@ -36,6 +43,13 @@ import 'package:material_ui/material_ui.dart' hide Theme;
 
 /// `/words/:wordId`: pattern P1 — the word owns the top of the screen, the
 /// rail shows how it is used, and "En contexto" lives here now.
+///
+/// While `speakingGymEnabledProvider` is on (U17), shows the word's cloze
+/// exercise alongside the catalog info ("cloze in one place") and registers
+/// `WordSpeakTarget` with the shell's mic via `MicTargetScope` — entirely
+/// absent from the tree while the flag is off (production safety: every
+/// push auto-deploys the web app), matching `WordsPage`'s own established
+/// guard for the same class of provider.
 class WordDetailPage extends ConsumerWidget {
   const new({required this.wordId, super.key});
 
@@ -48,13 +62,15 @@ class WordDetailPage extends ConsumerWidget {
     final entry = ref.watch(wordEntryProvider(wordId)).asData?.value;
     final themesById = ref.watch(themesByIdProvider).value;
     final word = wordsById.asData?.value[wordId];
-    return Scaffold(
+    final speakingGym = ref.watch(speakingGymEnabledProvider);
+    final body = Scaffold(
       body: word != null
           ? _Detail(
               word: word,
               entry: entry,
               today: ref.watch(clockProvider).localToday(),
               themesById: themesById,
+              speakingGym: speakingGym,
             )
           : wordsById.hasError
           ? SafeArea(
@@ -89,6 +105,10 @@ class WordDetailPage extends ConsumerWidget {
               ),
             ),
     );
+    if (!speakingGym) return body;
+    final target = ref.watch(wordSpeakTargetProvider(wordId))
+      ..onDelivered = () => context.go(AppRoutes.wordSpeak(wordId));
+    return MicTargetScope(target: target, child: body);
   }
 }
 
@@ -98,11 +118,15 @@ class _Detail extends StatelessWidget {
     required this.entry,
     required this.today,
     required this.themesById,
+    required this.speakingGym,
   });
 
   final Word word;
   final WordEntry? entry;
   final LocalDate today;
+
+  /// U17: shows the cloze card + mic hint only while the flag is on.
+  final bool speakingGym;
 
   /// The taxonomy, to resolve this word's own theme colour. `null` while
   /// still loading — the hero simply keeps the brand plate until it
@@ -156,6 +180,13 @@ class _Detail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
+                if (speakingGym && word.exercises.isNotEmpty) ...[
+                  _PracticeCard(
+                    exercise: _lowestPosition(word.exercises),
+                    forms: word.forms,
+                  ),
+                  SizedBox(height: layout.sectionGap),
+                ],
                 WordNotes(word: word),
                 if (word.readings.isNotEmpty) ...[
                   SectionHeader(
@@ -214,6 +245,64 @@ class _Detail extends StatelessWidget {
         onPressed: () => context.go(AppRoutes.sessionReview),
       ),
       child: scroll,
+    );
+  }
+
+  static ClozeExercise _lowestPosition(List<ClozeExercise> exercises) =>
+      exercises.reduce((a, b) => a.position <= b.position ? a : b);
+}
+
+/// "Cloze in one place" (U17, detail-3's own PALABRAS acceptance text):
+/// the word's own fill-in-the-blank exercise, filled with its correct
+/// answer, shown alongside the catalog info instead of only reachable
+/// through `/session`. The spoken action itself is the mic
+/// ("Úsala en voz alta", `WordSpeakTarget`) — this card is informational,
+/// never a second typed exercise / record button.
+class _PracticeCard extends StatelessWidget {
+  const new({required this.exercise, required this.forms});
+
+  final ClozeExercise exercise;
+  final WordForms forms;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final layout = context.layout;
+    final parts = exercise.sentenceParts;
+    final filled =
+        '${parts.before}${exercise.correctOption.text}${parts.after}';
+    return PageFrame(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SectionHeader(
+            title: l10n.wordPracticeCardTitle,
+            glyph: const FluiGlyphIcon(FluiGlyph.goal),
+          ),
+          FluiCard(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HighlightedText(
+                  text: filled,
+                  forms: forms,
+                  style: layout.type.bodyL.copyWith(color: FluiColors.charcoal),
+                ),
+                const SizedBox(height: FluiSpacing.sm),
+                Text(
+                  exercise.explanation,
+                  style: layout.type.body.copyWith(color: FluiColors.gray),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: FluiSpacing.sm),
+          Text(
+            l10n.wordSpeakHint,
+            style: layout.type.body.copyWith(color: FluiColors.greenSecondary),
+          ),
+        ],
+      ),
     );
   }
 }

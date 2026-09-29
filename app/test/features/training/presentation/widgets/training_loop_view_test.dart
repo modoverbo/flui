@@ -130,6 +130,12 @@ const _challenge = Challenge(
   sortOrder: 1,
 );
 
+const _wordUseRequest = LoopRequest(
+  context: TrainingContext.word,
+  sessionId: 's-word',
+  script: LoopScript.wordUse(),
+);
+
 const _request = LoopRequest(
   context: TrainingContext.daily,
   sessionId: 's1',
@@ -220,8 +226,8 @@ void main() {
     addTearDown(container.dispose);
   }
 
-  TrainingLoopController controller() =>
-      container.read(trainingLoopControllerProvider(_request).notifier);
+  TrainingLoopController controller({LoopRequest request = _request}) =>
+      container.read(trainingLoopControllerProvider(request).notifier);
 
   group('TrainingLoopView — no view-owned record/permission/timer widget', () {
     testWidgets(
@@ -438,6 +444,55 @@ void main() {
       });
     },
   );
+
+  group('TrainingLoopView — a finished wordUse loop hides "Continuar" '
+      '(orchestrator review finding: it reached the generic '
+      'continueToNextStep advance, unguarded, and pushed the loop into an '
+      'invalid focus/transfer state)', () {
+    testWidgets('"Continuar" is not shown once comparison/repeat is reached; '
+        '"Salir" stays', (tester) async {
+      await buildContainer();
+      await controller(request: _wordUseRequest).submit(_audio());
+      await controller(request: _wordUseRequest).submit(_audio());
+      expect(
+        container
+            .read(trainingLoopControllerProvider(_wordUseRequest))
+            .loop
+            .phase,
+        LoopPhase.comparison,
+      );
+
+      await tester.pumpWithContainer(
+        const TrainingLoopView(request: _wordUseRequest),
+        container,
+      );
+
+      expect(find.text(_l10n.loopContinueAction), findsNothing);
+      expect(find.text(_l10n.loopExitAction), findsOneWidget);
+    });
+
+    testWidgets(
+      'a full-script comparison (NOT wordUse) still shows "Continuar" — '
+      'completely unaffected',
+      (tester) async {
+        await buildContainer();
+        await controller().submit(_audio());
+        await controller().submit(_audio());
+        expect(
+          container.read(trainingLoopControllerProvider(_request)).loop.phase,
+          LoopPhase.comparison,
+        );
+
+        await tester.pumpWithContainer(
+          const TrainingLoopView(request: _request),
+          container,
+        );
+
+        expect(find.text(_l10n.loopContinueAction), findsOneWidget);
+        expect(find.text(_l10n.loopExitAction), findsOneWidget);
+      },
+    );
+  });
 }
 
 /// Scans every rendered [Text] for a numeric confidence/score pattern

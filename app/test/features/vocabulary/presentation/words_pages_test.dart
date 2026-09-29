@@ -393,4 +393,110 @@ void main() {
       },
     );
   });
+
+  group('Palabras — speakingGym ON (U17)', () {
+    late LearningFakes gymFakes;
+
+    Future<void> seedGym() async {
+      gymFakes = LearningFakes(speakingGym: true);
+      await gymFakes.progress.saveProgress(
+        buildProgress(
+          wordId: perspicaz.id,
+          state: WordState.tuya,
+          introducedOn: day(1),
+          nextDueOn: day(30),
+        ),
+      );
+      await gymFakes.progress.saveProgress(
+        buildProgress(
+          wordId: plantear.id,
+          introducedOn: day(5),
+          nextDueOn: day(13),
+        ),
+      );
+      await gymFakes.progress.saveProgress(
+        buildProgress(
+          wordId: matizar.id,
+          state: WordState.nueva,
+          introducedOn: day(12),
+          nextDueOn: day(14),
+        ),
+      );
+    }
+
+    tearDown(() => gymFakes.dispose());
+
+    Future<void> pumpGym(
+      WidgetTester tester, {
+      required String location,
+      required Widget page,
+    }) async {
+      reduceMotion(tester);
+      await pumpRoutedPage(
+        tester,
+        location: location,
+        page: page,
+        otherRoutes: [AppRoutes.wordSpeak(plantear.id)],
+        overrides: gymFakes.overrides,
+        surfaceSize: const Size(400, 1400),
+      );
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets(
+      "today's due word surfaces at the top, no in-screen record button",
+      (tester) async {
+        await seedGym();
+        await pumpGym(
+          tester,
+          location: AppRoutes.words,
+          page: const WordsPage(),
+        );
+
+        expect(find.text('TUS PALABRAS DE HOY'), findsOneWidget);
+        // «plantear» is due today (day 13); «matizar»/«perspicaz» are not.
+        expect(
+          find.descendant(
+            of: find.byKey(const Key('todayWords')),
+            matching: find.text('plantear'),
+          ),
+          findsOneWidget,
+        );
+        expect(find.textContaining('Grabar'), findsNothing);
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('no due word today -> no today-words section, no crash', (
+      tester,
+    ) async {
+      gymFakes = LearningFakes(speakingGym: true);
+      await pumpGym(tester, location: AppRoutes.words, page: const WordsPage());
+
+      expect(find.text('TUS PALABRAS DE HOY'), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets(
+      'the word detail shows its cloze exercise alongside catalog info, '
+      'with a mic hint instead of a record button',
+      (tester) async {
+        await seedGym();
+        await pumpGym(
+          tester,
+          location: AppRoutes.wordDetail(plantear.id),
+          page: WordDetailPage(wordId: plantear.id),
+        );
+
+        expect(find.text('PRACTICA ESTA PALABRA'), findsOneWidget);
+        expect(find.text(plantear.exercises.first.explanation), findsOneWidget);
+        expect(
+          find.text('Toca el micrófono para responder en voz alta.'),
+          findsOneWidget,
+        );
+        expect(find.textContaining('Grabar'), findsNothing);
+        expect(tester.takeException(), isNull);
+      },
+    );
+  });
 }

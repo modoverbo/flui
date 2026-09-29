@@ -43,6 +43,12 @@ const _request = LoopRequest(
   challengeId: 'c1',
 );
 
+const _wordUseRequest = LoopRequest(
+  context: TrainingContext.word,
+  sessionId: 's-word',
+  script: LoopScript.wordUse(),
+);
+
 RecordedAudio _audio() => RecordedAudio(
   bytes: Uint8List.fromList(List<int>.filled(10, 1)),
   mimeType: 'audio/wav',
@@ -189,5 +195,47 @@ void main() {
 
     expect(fired, greaterThan(0));
     await subscription.cancel();
+  });
+
+  group('a finished wordUse loop (comparison — wordUse has no summary '
+      'phase, orchestrator review finding)', () {
+    LoopMicTarget wordTarget() =>
+        container.read(loopMicTargetProvider(_wordUseRequest));
+
+    test("resolves MicPassThrough, never MicReady with the full script's own "
+        '"Grabar tu transferencia" label — recording there has no valid '
+        'next step', () async {
+      final notifier = container.read(
+        trainingLoopControllerProvider(_wordUseRequest).notifier,
+      );
+      await notifier.submit(_audio()); // -> feedback
+      await notifier.submit(_audio()); // -> comparison (finished)
+      expect(
+        container
+            .read(trainingLoopControllerProvider(_wordUseRequest))
+            .loop
+            .phase,
+        LoopPhase.comparison,
+      );
+
+      expect(wordTarget().availability, isA<MicPassThrough>());
+      expect(wordTarget().prompt.actionLabel, isNot('Grabar tu transferencia'));
+    });
+
+    test('a full-script comparison (NOT wordUse) is completely unaffected — '
+        'still MicReady with its own transfer-step label', () async {
+      final notifier = container.read(
+        trainingLoopControllerProvider(_request).notifier,
+      );
+      await notifier.submit(_audio()); // -> feedback
+      await notifier.submit(_audio()); // -> comparison
+      expect(
+        container.read(trainingLoopControllerProvider(_request)).loop.phase,
+        LoopPhase.comparison,
+      );
+
+      expect(target().availability, isA<MicReady>());
+      expect(target().prompt.actionLabel, 'Grabar tu transferencia');
+    });
   });
 }

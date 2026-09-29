@@ -95,6 +95,30 @@ void main() {
         expect(loop.state.attemptStep, AttemptKind.repeat);
       },
     );
+
+    test('continueToNextStep on the finished loop (comparison/repeat) is a '
+        'no-op: never enters focus/transfer, isWordUseFinished stays true '
+        '(orchestrator review finding: the "Continuar" button reached this '
+        'same generic advance, unguarded, from TrainingLoopController)', () {
+      final loop = TrainingLoop(const LoopScript.wordUse())
+        ..startRecording()
+        ..startAnalyzing()
+        ..analysisSucceeded() // -> feedback(first)
+        ..continueToNextStep() // -> focus(repeat)
+        ..startRecording()
+        ..startAnalyzing()
+        ..analysisSucceeded(); // -> comparison(repeat), finished
+      expect(loop.state.phase, LoopPhase.comparison);
+      expect(loop.state.attemptStep, AttemptKind.repeat);
+      expect(loop.isWordUseFinished, isTrue);
+
+      loop.continueToNextStep();
+
+      expect(loop.state.phase, LoopPhase.comparison);
+      expect(loop.state.attemptStep, AttemptKind.repeat);
+      expect(loop.state.attemptStep, isNot(AttemptKind.transfer));
+      expect(loop.isWordUseFinished, isTrue);
+    });
   });
 
   group('quick loop is single-shot (decision #450.3, D33, §19.13)', () {

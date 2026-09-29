@@ -31,6 +31,7 @@ import 'package:flui/features/training/domain/speaking_attempt.dart';
 import 'package:flui/features/training/domain/speaking_attempt_repository.dart';
 import 'package:flui/features/training/domain/training_context.dart';
 import 'package:flui/features/training/domain/training_loop.dart';
+import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/features/training/presentation/controllers/training_loop_controller.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
@@ -165,6 +166,15 @@ const _diagnosisRequest = LoopRequest(
   sessionId: 's-diag',
   script: LoopScript.diagnosis(totalSlots: 3),
   challengeIds: ['c1', 'c1', 'c1'],
+);
+
+// Deliberately no `targetWordIds`: this group only exercises the
+// finished-loop guard, not `SpokenWordUse`'s own detection/mastery wiring
+// (already covered elsewhere).
+const _wordUseRequest = LoopRequest(
+  context: TrainingContext.word,
+  sessionId: 's-word',
+  script: LoopScript.wordUse(),
 );
 
 RecordedAudio _audio({Duration duration = const Duration(seconds: 12)}) =>
@@ -322,6 +332,121 @@ void main() {
       expect(delivery, isA<MicDeliveryFailed>());
       expect(attempts.attemptsForCurrentUser, isEmpty);
     });
+  });
+
+  group('TrainingLoopController.submit — wordUse has no transfer step '
+      '(orchestrator review finding: a finished loop must refuse before '
+      'any paid analysis, never throw)', () {
+    test("submitting again after comparison (wordUse's own terminal phase, "
+        'it has no summary) makes zero analyze calls and returns a '
+        'MicDeliveryFailed instead of throwing', () async {
+      final counting = _CountingSpeechAnalysisRepository(speech);
+      final localContainer = ProviderContainer(
+        overrides: [
+          speechAnalysisRepositoryProvider.overrideWithValue(counting),
+          speakingAttemptRepositoryProvider.overrideWithValue(attempts),
+          attemptAudioStoreProvider.overrideWithValue(audioStore),
+          audioConsentRepositoryProvider.overrideWithValue(consent),
+          challengeRepositoryProvider.overrideWithValue(
+            FakeChallengeRepository(challenges: const [_challenge]),
+          ),
+          clockProvider.overrideWithValue(FixedClock(DateTime(2026, 9, 28))),
+        ],
+      );
+      addTearDown(localContainer.dispose);
+      final notifier = localContainer.read(
+        trainingLoopControllerProvider(_wordUseRequest).notifier,
+      );
+
+      await notifier.submit(_audio()); // -> feedback (first)
+      await notifier.submit(_audio()); // -> comparison (repeat, finished)
+      expect(
+        localContainer
+            .read(trainingLoopControllerProvider(_wordUseRequest))
+            .loop
+            .phase,
+        LoopPhase.comparison,
+      );
+      expect(counting.analyzeCallCount, 2);
+      final savedBefore = attempts.attemptsForCurrentUser.length;
+
+      final delivery = await notifier.submit(_audio());
+
+      expect(delivery, isA<MicDeliveryFailed>());
+      // Not a StateError, not a crash — a plain, non-throwing refusal.
+      expect(counting.analyzeCallCount, 2); // unchanged: no 3rd call
+      expect(attempts.attemptsForCurrentUser.length, savedBefore);
+      expect(
+        localContainer
+            .read(trainingLoopControllerProvider(_wordUseRequest))
+            .loop
+            .phase,
+        LoopPhase.comparison,
+      );
+    });
+
+    test(
+      'calling continueToNextStep() directly (the "Continuar" button path, '
+      'orchestrator review finding on 4e58ac7) leaves the finished state '
+      'unchanged, keeps offering "Practicar otra vez", and a mic press '
+      'after that still makes zero analyze calls and saves zero attempts',
+      () async {
+        final counting = _CountingSpeechAnalysisRepository(speech);
+        final localContainer = ProviderContainer(
+          overrides: [
+            speechAnalysisRepositoryProvider.overrideWithValue(counting),
+            speakingAttemptRepositoryProvider.overrideWithValue(attempts),
+            attemptAudioStoreProvider.overrideWithValue(audioStore),
+            audioConsentRepositoryProvider.overrideWithValue(consent),
+            challengeRepositoryProvider.overrideWithValue(
+              FakeChallengeRepository(challenges: const [_challenge]),
+            ),
+            clockProvider.overrideWithValue(FixedClock(DateTime(2026, 9, 28))),
+          ],
+        );
+        addTearDown(localContainer.dispose);
+        final notifier = localContainer.read(
+          trainingLoopControllerProvider(_wordUseRequest).notifier,
+        );
+
+        await notifier.submit(_audio()); // -> feedback (first)
+        await notifier.submit(_audio()); // -> comparison (repeat, finished)
+        expect(
+          localContainer
+              .read(trainingLoopControllerProvider(_wordUseRequest))
+              .loop
+              .phase,
+          LoopPhase.comparison,
+        );
+        final savedBefore = attempts.attemptsForCurrentUser.length;
+
+        notifier.continueToNextStep();
+
+        expect(
+          localContainer
+              .read(trainingLoopControllerProvider(_wordUseRequest))
+              .loop
+              .phase,
+          LoopPhase.comparison,
+        );
+        expect(
+          localContainer
+              .read(trainingLoopControllerProvider(_wordUseRequest))
+              .loop
+              .attemptStep,
+          AttemptKind.repeat,
+        );
+        final mic = localContainer.read(loopMicTargetProvider(_wordUseRequest));
+        expect(mic.prompt.actionLabel, 'Práctica en voz alta');
+        expect(mic.availability, isA<MicPassThrough>());
+
+        final delivery = await notifier.submit(_audio());
+
+        expect(delivery, isA<MicDeliveryFailed>());
+        expect(counting.analyzeCallCount, 2); // unchanged: no 3rd call
+        expect(attempts.attemptsForCurrentUser.length, savedBefore);
+      },
+    );
   });
 
   group('TrainingLoopController — never continues with an unsaved attempt '

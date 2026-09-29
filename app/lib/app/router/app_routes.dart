@@ -108,6 +108,13 @@ abstract final class AppRoutes {
   static String wordDetail(String wordId) =>
       '$words/${Uri.encodeComponent(wordId)}';
 
+  /// PALABRAS' own spoken-use loop (U17, design §19.4): a branch child of
+  /// [wordDetail], not a full-screen take-over (design D30, matches
+  /// [todayTrain]/[trainMode]). Reached from `TodayWordTarget`/
+  /// `WordSpeakTarget`'s first captured attempt, never tapped directly.
+  /// Only reachable while `speakingGym` is on.
+  static String wordSpeak(String wordId) => '${wordDetail(wordId)}/speak';
+
   static String wordDetailFromCategory({
     required String wordId,
     required String returnLocation,

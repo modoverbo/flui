@@ -44,14 +44,34 @@ final class LoopMicTarget implements MicTarget {
   TrainingLoopState get _loop =>
       _ref.read(trainingLoopControllerProvider(_request)).loop;
 
+  /// Orchestrator review finding: `wordUse` has no `transfer` step, so its
+  /// own `comparison` (reached once the repeat attempt's analysis
+  /// succeeds) IS its terminal state — it never reaches `LoopPhase.summary`
+  /// the way `full`/`quick`/`diagnosis` do. The generic phase mapping below
+  /// (`_promptFor`/`_availabilityFor`, deliberately UNCHANGED — every other
+  /// script's own comparison/summary handling stays exactly as it was)
+  /// would otherwise show `MicReady` with `full`'s own transfer-step label
+  /// ("Grabar tu transferencia") forever, and recording there has no valid
+  /// next step (`TrainingLoopController.submit` now refuses it before any
+  /// paid analysis, but the mic itself must never offer it in the first
+  /// place). Checked here, not inside the static helpers, so `full`,
+  /// `diagnosis` and `quick`'s own mappings stay byte-identical. Shares the
+  /// exact same condition `TrainingLoop.continueToNextStep`/
+  /// `TrainingLoopView`'s own "Continuar" visibility use
+  /// ([isWordUseLoopFinished]), not a re-derived copy.
+  bool get _isWordUseFinished => isWordUseLoopFinished(_request.script, _loop);
+
   @override
-  MicPrompt get prompt => _promptFor(_loop, _wovenWordTexts);
+  MicPrompt get prompt => _isWordUseFinished
+      ? const MicPrompt(actionLabel: 'Práctica en voz alta')
+      : _promptFor(_loop, _wovenWordTexts);
 
   @override
   Duration get maxDuration => const Duration(seconds: 60);
 
   @override
-  MicAvailability get availability => _availabilityFor(_loop);
+  MicAvailability get availability =>
+      _isWordUseFinished ? const MicPassThrough() : _availabilityFor(_loop);
 
   @override
   Stream<void> get changes => _changes.stream;
