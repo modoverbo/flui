@@ -936,14 +936,14 @@ class _AccountDeletionCard extends ConsumerWidget {
         .delete();
     // `null` means a second call landed while one was already in flight
     // (idempotent UI): nothing new happened, so nothing new is shown.
+    //
+    // On success the controller has ALREADY signed out (it does not wait
+    // for or depend on this widget) — this only ever shows a failure
+    // SnackBar, and only when there is still a `context` to show it on.
     if (result == null || !context.mounted) return;
-    switch (result) {
-      case Ok():
-        await ref.read(signOutControllerProvider.notifier).signOut();
-      case Err(:final failure):
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text(failureMessage(l10n, failure))));
+    if (result case Err(:final failure)) {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(failureMessage(l10n, failure))));
     }
   }
 }

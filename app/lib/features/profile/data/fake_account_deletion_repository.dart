@@ -9,8 +9,12 @@ final class FakeAccountDeletionRepository implements AccountDeletionRepository {
   new({this.latency = Duration.zero});
 
   /// Artificial delay before resolving — lets tests observe the "in flight"
-  /// window (e.g. a double tap landing before the first call resolves).
-  final Duration latency;
+  /// window (e.g. a double tap landing before the first call resolves, or a
+  /// tab switch/navigation away while the request is still running).
+  /// Mutable so a test can set it on the instance `fakeBackendOverrides`
+  /// already wired, instead of re-overriding the provider (which
+  /// `AppHarness` cannot do — see its own `accountDeletion` getter).
+  Duration latency;
   Failure? nextFailure;
   int callCount = 0;
 
