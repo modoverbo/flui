@@ -623,8 +623,10 @@ MicDelivery _micDeliveryForTranscribeFailure(Failure failure) {
   return switch (code) {
     SpeechAnalysisErrorCode.accessRequired => const MicAccessRequired(),
     SpeechAnalysisErrorCode.dailyLimitReached => const MicDailyLimitReached(),
+    // The exact shared literal (U17b): lets `MicController` pick the
+    // dedicated `MicNotice.noSpeech` notice over the generic one.
     SpeechAnalysisErrorCode.noSpeech => const MicDeliveryFailed(
-      'No te escuchamos bien. Inténtalo otra vez.',
+      noSpeechDeliveryMessage,
     ),
     SpeechAnalysisErrorCode.accessUnavailable ||
     SpeechAnalysisErrorCode.rateLimited ||

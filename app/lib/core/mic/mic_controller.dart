@@ -67,6 +67,13 @@ enum MicNotice {
   /// fix): distinct from [deliveryFailed], which always implies a
   /// recording was already captured and sent.
   planFailed,
+
+  /// A delivery failed because nothing intelligible was heard (design
+  /// D34-D37, U17b) — distinct from the generic [deliveryFailed] so the
+  /// user knows to simply try again, not that something went wrong.
+  /// Chosen whenever the failed delivery's own message equals
+  /// [noSpeechDeliveryMessage].
+  noSpeech,
 }
 
 /// Owns the shell's single [HoldToRecord] for the signed-in session (D23)
@@ -337,8 +344,12 @@ final class MicController {
           _accessLatched = true;
         case MicDailyLimitReached():
           _quotaLatchedUtcDate = _clock.now().toUtc();
-        case MicDeliveryFailed():
-          _emitNotice(MicNotice.deliveryFailed);
+        case MicDeliveryFailed(:final message):
+          _emitNotice(
+            message == noSpeechDeliveryMessage
+                ? MicNotice.noSpeech
+                : MicNotice.deliveryFailed,
+          );
       }
     } finally {
       _delivering = false;

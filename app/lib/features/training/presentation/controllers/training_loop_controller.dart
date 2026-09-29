@@ -647,8 +647,9 @@ class TrainingLoopController extends _$TrainingLoopController {
   static String _messageFor(SpeechAnalysisErrorCode code) => switch (code) {
     SpeechAnalysisErrorCode.rateLimited =>
       'Estamos ocupados. Inténtalo en unos segundos.',
-    SpeechAnalysisErrorCode.noSpeech =>
-      'No te escuchamos bien. Inténtalo otra vez.',
+    // Shared with `MicController` (U17b): the exact literal lets it pick
+    // the dedicated `MicNotice.noSpeech` notice over the generic one.
+    SpeechAnalysisErrorCode.noSpeech => noSpeechDeliveryMessage,
     SpeechAnalysisErrorCode.accessRequired ||
     SpeechAnalysisErrorCode.accessUnavailable ||
     SpeechAnalysisErrorCode.dailyLimitReached ||
