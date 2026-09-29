@@ -116,6 +116,9 @@ List<Override> fakeBackendOverrides({
     latency: latency,
   );
   final sessions = FakeDailySessionRepository(currentUserId: currentUserId);
+  final speakingAttempts = FakeSpeakingAttemptRepository(
+    currentUserId: currentUserId,
+  );
   if (config.devBypassAuth) {
     subscriptions.grantAccess(const AccessStatus(hasAccess: true));
     sessions.seedSession(
@@ -159,11 +162,15 @@ List<Override> fakeBackendOverrides({
     challengeRepositoryProvider.overrideWithValue(
       FakeChallengeRepository(latency: latency),
     ),
-    speakingAttemptRepositoryProvider.overrideWithValue(
-      FakeSpeakingAttemptRepository(currentUserId: currentUserId),
-    ),
+    speakingAttemptRepositoryProvider.overrideWithValue(speakingAttempts),
     attemptAudioStoreProvider.overrideWithValue(
-      FakeAttemptAudioStore(currentUserId: currentUserId),
+      FakeAttemptAudioStore(
+        currentUserId: currentUserId,
+        // Mirrors one real `speaking_attempts` row: an upload/delete here
+        // updates the SAME attempt's `audio` field on `speakingAttempts`,
+        // instead of the two fakes silently disagreeing (U18b).
+        onAudioChanged: speakingAttempts.updateAudio,
+      ),
     ),
     audioConsentRepositoryProvider.overrideWithValue(
       FakeAudioConsentRepository(currentUserId: currentUserId),

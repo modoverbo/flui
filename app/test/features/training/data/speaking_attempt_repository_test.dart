@@ -296,7 +296,7 @@ void main() {
     });
 
     test(
-      'attemptsForSession returns only that session\'s rows, oldest '
+      "attemptsForSession returns only that session's rows, oldest "
       'first, current user only (U18b, before/now baseline lookup)',
       () async {
         final repository = FakeSpeakingAttemptRepository(
@@ -464,6 +464,43 @@ void main() {
       );
 
       expect((await repository.storedAudioAttemptIds()).isOk, isFalse);
+    });
+
+    test("updateAudio replaces the stored attempt's audio field in place "
+        '(U18b: keeps FakeAttemptAudioStore and this repository consistent, '
+        'mirroring one real speaking_attempts row)', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      await repository.insert(
+        _attempt(
+          audio: const AudioRetention.stored(
+            path: 'u1/a1.wav',
+            mime: 'audio/wav',
+          ),
+        ).copyWith(id: 'a1'),
+      );
+
+      repository.updateAudio('a1', const AudioRetention.deleted());
+
+      expect(
+        repository.attemptsForCurrentUser.single.audio,
+        const AudioRetention.deleted(),
+      );
+    });
+
+    test('updateAudio is a no-op for an unknown attempt id', () async {
+      final repository = FakeSpeakingAttemptRepository(
+        currentUserId: () => 'u1',
+      );
+      await repository.insert(_attempt().copyWith(id: 'a1'));
+
+      repository.updateAudio('nope', const AudioRetention.deleted());
+
+      expect(
+        repository.attemptsForCurrentUser.single.audio,
+        const AudioRetention.none(),
+      );
     });
   });
 
