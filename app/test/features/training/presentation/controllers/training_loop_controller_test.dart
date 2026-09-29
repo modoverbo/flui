@@ -7,6 +7,13 @@ import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/mic/mic_target.dart';
+import 'package:flui/features/auth/data/fake_auth_repository.dart';
+import 'package:flui/features/auth/domain/app_user.dart';
+import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/features/daily/data/fake_daily_session_repository.dart';
+import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
+import 'package:flui/features/profile/data/fake_streak_repair_repository.dart';
+import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
 import 'package:flui/features/speaking/data/fake_speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_analysis_repository.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
@@ -26,8 +33,15 @@ import 'package:flui/features/training/domain/training_context.dart';
 import 'package:flui/features/training/domain/training_loop.dart';
 import 'package:flui/features/training/presentation/controllers/training_loop_controller.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
+import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
+import 'package:flui/features/vocabulary/data/fake_exercise_attempt_repository.dart';
+import 'package:flui/features/vocabulary/data/fake_word_progress_repository.dart';
+import 'package:flui/features/vocabulary/presentation/providers/exercise_providers.dart';
+import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import '../../../../helpers/learning_builders.dart';
 
 /// An insert that fails its first [failNextCalls] calls, then succeeds —
 /// lets a test drive the controller's own automatic-retry-then-give-up
@@ -502,6 +516,177 @@ void main() {
         trainingLoopControllerProvider(_diagnosisRequest),
       );
       expect(advanced.loop.slot, 2);
+    });
+  });
+
+  group('TrainingLoopController.submit — spoken-use -> mastery (U15b, '
+      'design D15)', () {
+    // "organizar"/"claridad" are chosen because `FakeSpeechAnalysisRepository`'s
+    // fixed first-attempt transcript ("...decisión importante... organizar
+    // mejor mi mañana para trabajar con más claridad.") actually contains
+    // "organizar" but never "trayectoria".
+    final usedWord = buildWord(id: 'w-organizar', lemma: 'organizar');
+    final unusedWord = buildWord(id: 'w-trayectoria', lemma: 'trayectoria');
+    const ana = AppUser(id: 'u1', email: 'ana@correo.com');
+    final wovenRequest = LoopRequest(
+      context: TrainingContext.daily,
+      sessionId: 's1',
+      script: const LoopScript.full(),
+      challengeId: 'c1',
+      targetWordIds: [usedWord.id, unusedWord.id],
+    );
+
+    ProviderContainer buildWiredContainer({
+      SpeakingAttemptRepository? attemptRepository,
+    }) {
+      final built = ProviderContainer(
+        overrides: [
+          authRepositoryProvider.overrideWithValue(
+            FakeAuthRepository(initialUser: ana),
+          ),
+          speechAnalysisRepositoryProvider.overrideWithValue(speech),
+          speakingAttemptRepositoryProvider.overrideWithValue(
+            attemptRepository ?? attempts,
+          ),
+          attemptAudioStoreProvider.overrideWithValue(audioStore),
+          audioConsentRepositoryProvider.overrideWithValue(consent),
+          challengeRepositoryProvider.overrideWithValue(
+            FakeChallengeRepository(challenges: const [_challenge]),
+          ),
+          contentRepositoryProvider.overrideWithValue(
+            FakeContentRepository(words: [usedWord, unusedWord]),
+          ),
+          wordProgressRepositoryProvider.overrideWithValue(
+            FakeWordProgressRepository(currentUserId: () => 'u1'),
+          ),
+          dailySessionRepositoryProvider.overrideWithValue(
+            FakeDailySessionRepository(currentUserId: () => 'u1'),
+          ),
+          exerciseAttemptRepositoryProvider.overrideWithValue(
+            FakeExerciseAttemptRepository(currentUserId: () => 'u1'),
+          ),
+          streakRepairRepositoryProvider.overrideWithValue(
+            FakeStreakRepairRepository(currentUserId: () => 'u1'),
+          ),
+          clockProvider.overrideWithValue(FixedClock(DateTime(2026, 9, 28))),
+        ],
+      );
+      addTearDown(built.dispose);
+      return built;
+    }
+
+    Future<void> seedDueProgress(ProviderContainer container) async {
+      final wordProgress = container.read(
+        wordProgressRepositoryProvider,
+      ) as FakeWordProgressRepository;
+      await wordProgress.saveProgress(
+        buildProgress(wordId: usedWord.id, nextDueOn: day(28)),
+      );
+      await wordProgress.saveProgress(
+        buildProgress(wordId: unusedWord.id, nextDueOn: day(28)),
+      );
+    }
+
+    test(
+      'detected word advances mastery; the other target word is untouched',
+      () async {
+        final container = buildWiredContainer();
+        await seedDueProgress(container);
+
+        final delivery = await container
+            .read(trainingLoopControllerProvider(wovenRequest).notifier)
+            .submit(_audio());
+
+        expect(delivery, isA<MicAccepted>());
+        final saved = attempts.attemptsForCurrentUser.single;
+        expect(saved.targetWordIds, [usedWord.id, unusedWord.id]);
+        expect(saved.wordsUsed, [usedWord.id]);
+
+        final progress =
+            (await container
+                    .read(wordProgressRepositoryProvider)
+                    .fetchProgress())
+                .valueOrNull!;
+        final usedAfter = progress.firstWhere(
+          (row) => row.wordId == usedWord.id,
+        );
+        final unusedAfter = progress.firstWhere(
+          (row) => row.wordId == unusedWord.id,
+        );
+        expect(usedAfter.ladderStep, 1);
+        expect(usedAfter.productionDone, isTrue);
+        expect(usedAfter.nextDueOn, isNot(day(28)));
+        // Unused word: byte-identical to the seeded row.
+        expect(unusedAfter.ladderStep, 0);
+        expect(unusedAfter.productionDone, isFalse);
+        expect(unusedAfter.nextDueOn, day(28));
+      },
+    );
+
+    test('no target words -> never touches word_progress at all', () async {
+      final container = buildWiredContainer();
+      await seedDueProgress(container);
+      const plainRequest = LoopRequest(
+        context: TrainingContext.daily,
+        sessionId: 's1',
+        script: LoopScript.full(),
+        challengeId: 'c1',
+      );
+
+      await container
+          .read(trainingLoopControllerProvider(plainRequest).notifier)
+          .submit(_audio());
+
+      final progress =
+          (await container.read(wordProgressRepositoryProvider).fetchProgress())
+              .valueOrNull!;
+      expect(
+        progress.firstWhere((row) => row.wordId == usedWord.id).ladderStep,
+        0,
+      );
+    });
+
+    test('an unsaved attempt never records mastery', () async {
+      final flaky = _FlakyAttemptRepository(failNextCalls: 999);
+      final container = buildWiredContainer(attemptRepository: flaky);
+      await seedDueProgress(container);
+
+      final delivery = await container
+          .read(trainingLoopControllerProvider(wovenRequest).notifier)
+          .submit(_audio());
+
+      expect(delivery, isA<MicDeliveryFailed>());
+      expect(flaky.inserted, isEmpty);
+      final progress =
+          (await container.read(wordProgressRepositoryProvider).fetchProgress())
+              .valueOrNull!;
+      expect(
+        progress.firstWhere((row) => row.wordId == usedWord.id).ladderStep,
+        0,
+      );
+    });
+
+    test('retrySave records mastery exactly once, never twice', () async {
+      final flaky = _FlakyAttemptRepository(failNextCalls: 999);
+      final container = buildWiredContainer(attemptRepository: flaky);
+      await seedDueProgress(container);
+      final controller = container.read(
+        trainingLoopControllerProvider(wovenRequest).notifier,
+      );
+      await controller.submit(_audio());
+      flaky.failNextCalls = 0;
+
+      final delivery = await controller.retrySave();
+
+      expect(delivery, isA<MicAccepted>());
+      expect(flaky.inserted, hasLength(1));
+      final progress =
+          (await container.read(wordProgressRepositoryProvider).fetchProgress())
+              .valueOrNull!;
+      final usedAfter = progress.firstWhere((row) => row.wordId == usedWord.id);
+      // A single ladder advance (step 1) — never double-counted by the
+      // failed automatic retry AND the manual retrySave.
+      expect(usedAfter.ladderStep, 1);
     });
   });
 }

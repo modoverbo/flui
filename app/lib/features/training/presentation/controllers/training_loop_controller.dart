@@ -7,6 +7,9 @@ import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/id/id_providers.dart';
 import 'package:flui/core/mic/mic_target.dart';
+import 'package:flui/core/riverpod/ref_futures.dart';
+import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
+import 'package:flui/features/daily/presentation/providers/learning_data_controller.dart';
 import 'package:flui/features/speaking/domain/speech_transcript.dart';
 import 'package:flui/features/speaking/presentation/providers/speaking_providers.dart';
 import 'package:flui/features/training/domain/attempt_comparison.dart';
@@ -24,6 +27,8 @@ import 'package:flui/features/training/domain/training_loop.dart';
 import 'package:flui/features/training/domain/voice_metrics.dart';
 import 'package:flui/features/training/domain/voice_metrics_calculator.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
+import 'package:flui/features/vocabulary/domain/spoken_word_use.dart';
+import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
 import 'package:meta/meta.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -327,6 +332,12 @@ class TrainingLoopController extends _$TrainingLoopController {
         ),
     ]);
 
+    final wordsUsed = await _detectWordsUsed(
+      targetWordIds: _request.targetWordIds,
+      transcript: transcript.text,
+    );
+    if (!ref.mounted) return const MicAccepted();
+
     final consentGranted = await _consentGranted();
     if (!ref.mounted) return const MicAccepted();
     final localDate = ref.read(clockProvider).localToday();
@@ -358,6 +369,7 @@ class TrainingLoopController extends _$TrainingLoopController {
           : const AudioRetention.none(),
       observations: observations,
       targetWordIds: _request.targetWordIds,
+      wordsUsed: wordsUsed,
       challengeId: challenge?.id,
       milestoneWeek: shouldRetain ? localDate.startOfIsoWeek : null,
     );
@@ -375,7 +387,7 @@ class TrainingLoopController extends _$TrainingLoopController {
         challenge: challenge,
         aiRetryCue: transcript.coaching?.retryCue,
       ),
-      Ok(:final value) => _afterSaved(
+      Ok(:final value) => await _afterSaved(
         stored: value,
         audioForUpload: audio,
         step: step,
@@ -452,7 +464,7 @@ class TrainingLoopController extends _$TrainingLoopController {
       );
     }
     _pendingSave = null;
-    return _afterSaved(
+    return await _afterSaved(
       stored: (inserted as Ok<SpeakingAttempt>).value,
       audioForUpload: pending.audio,
       step: pending.step,
@@ -464,9 +476,13 @@ class TrainingLoopController extends _$TrainingLoopController {
   }
 
   /// The attempt is durably saved as [stored]: decides the milestone
-  /// upload, composes feedback, and advances the loop. Shared by the
-  /// straight-through success path and a successful [retrySave].
-  MicDelivery _afterSaved({
+  /// upload, composes feedback, advances the loop, and — for any word
+  /// detected as actually spoken (design D15) — records mastery exactly
+  /// once for this attempt. Shared by the straight-through success path
+  /// and a successful [retrySave], which is exactly what keeps mastery
+  /// recording from ever firing twice for the same attempt: this method
+  /// runs once per successful save, never once per save ATTEMPT.
+  Future<MicDelivery> _afterSaved({
     required SpeakingAttempt stored,
     required RecordedAudio audioForUpload,
     required AttemptKind step,
@@ -474,7 +490,7 @@ class TrainingLoopController extends _$TrainingLoopController {
     required VoiceMetrics metrics,
     required Challenge? challenge,
     required String? aiRetryCue,
-  }) {
+  }) async {
     if (stored.audio is AudioRetentionPending) {
       // Fire-and-forget (design part-3 §5): training never waits on upload.
       unawaited(
@@ -521,7 +537,57 @@ class TrainingLoopController extends _$TrainingLoopController {
       }
     }
     state = next;
+
+    if (stored.wordsUsed.isNotEmpty) {
+      await _recordSpokenUse(stored.wordsUsed);
+      if (!ref.mounted) return const MicAccepted();
+    }
     return const MicAccepted();
+  }
+
+  /// The subset of [targetWordIds] that [transcript] actually uses
+  /// (design D15) — `const []` without ever touching the word catalog
+  /// when [targetWordIds] is empty, so a challenge-only loop (ENTRENAR,
+  /// diagnosis) never pays for a catalog fetch it has no use for.
+  Future<List<String>> _detectWordsUsed({
+    required List<String> targetWordIds,
+    required String transcript,
+  }) async {
+    if (targetWordIds.isEmpty) return const <String>[];
+    final wordsById = await ref.readFuture(wordsByIdProvider.future);
+    if (!ref.mounted) return const <String>[];
+    return SpokenWordUse.detect(
+      targetWordIds: targetWordIds,
+      wordsById: wordsById,
+      transcript: transcript,
+    );
+  }
+
+  /// Records mastery for every word in [wordsUsed] (design D15). Never
+  /// touched for an unsaved attempt (only called from [_afterSaved], i.e.
+  /// after a successful save) and never twice for the same attempt (see
+  /// [_afterSaved]'s doc). A write failure here is swallowed — the
+  /// already-saved speaking attempt and the loop itself are never put at
+  /// risk by a mastery-write failure (design: "no penalty").
+  Future<void> _recordSpokenUse(List<String> wordsUsed) async {
+    final userId = (await ref.readFuture(authUserProvider.future))?.id;
+    if (userId == null || !ref.mounted) return;
+    final data = await ref.readFuture(
+      learningDataControllerProvider(userId).future,
+    );
+    if (!ref.mounted) return;
+    final today = ref.read(clockProvider).localToday();
+    final now = ref.read(clockProvider).now();
+    for (final wordId in wordsUsed) {
+      final progress = data.progressOf(wordId);
+      if (progress == null) continue;
+      final after = SpokenWordUse.review(progress, today: today, now: now);
+      if (after == null) continue;
+      await ref
+          .read(learningDataControllerProvider(userId).notifier)
+          .saveProgress(after);
+      if (!ref.mounted) return;
+    }
   }
 
   Future<bool> _consentGranted() async {

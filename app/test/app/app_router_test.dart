@@ -32,6 +32,7 @@ import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/domain/word_progress.dart';
+import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
@@ -630,6 +631,193 @@ void main() {
           isEmpty,
         );
         expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
+      },
+    );
+  });
+
+  group("HOY's woven words -> mic hint + mastery (speakingGym ON, U15b)", () {
+    // Real `seedWordsWithThemes` ids (not synthetic fixtures): the mic's
+    // hint and the spoken-use detection both run against the REAL app —
+    // `speechAnalysisRepositoryProvider`/`contentRepositoryProvider` are
+    // already fixed by `AppHarness`'s own backend, so the words are picked
+    // so that `FakeSpeechAnalysisRepository`'s first-attempt fixed
+    // transcript ("...organizar mejor mi mañana para trabajar con más
+    // claridad.") naturally uses "claridad" (lemma) and never "perspicaz".
+    const claridadId = 'a3bff3b7-ff0a-4b41-be29-f722a6e2ea94'; // claridad
+    const perspicazId = 'a0000000-0000-4000-8000-000000000001'; // perspicaz
+    const seededChallengeId = '072b6134-a2b7-4e79-86bf-5a6aeeb5118c';
+
+    Future<void> seedWovenWords(AppHarness h) async {
+      h.skillProfiles.seedProfile(_seededProfile);
+      final today = h.clock.localToday();
+      await h.wordProgress.saveProgress(
+        WordProgress(
+          wordId: claridadId,
+          state: WordState.practica,
+          introducedOn: LocalDate(2026, 9, 1),
+          nextDueOn: today,
+        ),
+      );
+      await h.wordProgress.saveProgress(
+        WordProgress(
+          wordId: perspicazId,
+          state: WordState.practica,
+          introducedOn: LocalDate(2026, 9, 1),
+          nextDueOn: today,
+        ),
+      );
+      await h.dailySessions.saveSession(
+        DailySession(
+          localDate: today,
+          minutes: 10,
+          challengeId: seededChallengeId,
+          wovenWordIds: [claridadId, perspicazId],
+        ),
+      );
+    }
+
+    Future<void> holdToRecord(WidgetTester tester, AppHarness harness) async {
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byType(MicButton)),
+      );
+      for (var i = 0; i < 3; i++) {
+        await tester.pump();
+      }
+      harness.clock.advance(const Duration(milliseconds: 700));
+      await gesture.up();
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets(
+      'recording detects the spoken word, advances only its mastery, and '
+      'the transfer-step hint then shows both woven words',
+      (tester) async {
+        final handle = tester.ensureSemantics();
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.todayTrain,
+          arrange: seedWovenWords,
+        );
+
+        await holdToRecord(tester, harness);
+
+        final saved = harness.speakingAttempts.attemptsForCurrentUser.single;
+        expect(saved.targetWordIds, [claridadId, perspicazId]);
+        expect(saved.wordsUsed, [claridadId]);
+        final progress =
+            (await harness.wordProgress.fetchProgress()).valueOrNull!;
+        final claridadAfter = progress.firstWhere(
+          (row) => row.wordId == claridadId,
+        );
+        final perspicazAfter = progress.firstWhere(
+          (row) => row.wordId == perspicazId,
+        );
+        expect(claridadAfter.ladderStep, 1);
+        expect(claridadAfter.productionDone, isTrue);
+        // The unused word is byte-identical to what was seeded.
+        expect(perspicazAfter.ladderStep, 0);
+        expect(perspicazAfter.productionDone, isFalse);
+        expect(perspicazAfter.nextDueOn, harness.clock.localToday());
+
+        await holdToRecord(tester, harness); // repeat attempt -> comparison
+
+        final hint = tester.getSemantics(find.byType(MicButton)).hint;
+        expect(hint, contains('claridad'));
+        expect(hint, contains('perspicaz'));
+        handle.dispose();
+      },
+    );
+
+    testWidgets('no due words woven in -> the mic hint stays generic', (
+      tester,
+    ) async {
+      final handle = tester.ensureSemantics();
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: ana,
+        access: trialing,
+        overrides: [
+          speakingGymEnabledProvider.overrideWithValue(true),
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.todayTrain,
+        arrange: (h) async {
+          h.skillProfiles.seedProfile(_seededProfile);
+          await h.dailySessions.saveSession(
+            DailySession(
+              localDate: h.clock.localToday(),
+              minutes: 10,
+              challengeId: seededChallengeId,
+            ),
+          );
+        },
+      );
+
+      await holdToRecord(tester, harness);
+      await holdToRecord(tester, harness); // repeat attempt -> comparison
+
+      final hint = tester.getSemantics(find.byType(MicButton)).hint;
+      expect(hint, 'Aplica lo que acabas de practicar.');
+      handle.dispose();
+    });
+
+    testWidgets(
+      'retrySave after a failed insert saves once and records mastery '
+      'exactly once, never twice',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.todayTrain,
+          arrange: seedWovenWords,
+        );
+        harness.speakingAttempts.failInserts = true;
+
+        await holdToRecord(tester, harness);
+
+        expect(find.text('Reintentar guardar'), findsOneWidget);
+        expect(harness.speakingAttempts.attemptsForCurrentUser, isEmpty);
+        final beforeRetry =
+            (await harness.wordProgress.fetchProgress()).valueOrNull!;
+        expect(
+          beforeRetry.firstWhere((row) => row.wordId == claridadId).ladderStep,
+          0,
+        );
+
+        harness.speakingAttempts.failInserts = false;
+        await tester.tap(find.text('Reintentar guardar'));
+        await tester.pumpAndSettle();
+
+        expect(harness.speakingAttempts.attemptsForCurrentUser, hasLength(1));
+        final afterRetry =
+            (await harness.wordProgress.fetchProgress()).valueOrNull!;
+        // Exactly one ladder advance — the failed automatic retry inside
+        // the first `submit()` call never recorded mastery (the attempt
+        // was never saved), and the manual `retrySave` recorded it once.
+        expect(
+          afterRetry.firstWhere((row) => row.wordId == claridadId).ladderStep,
+          1,
+        );
       },
     );
   });
