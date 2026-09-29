@@ -55,11 +55,11 @@ final class LoopMicTarget implements MicTarget {
   /// next step (`TrainingLoopController.submit` now refuses it before any
   /// paid analysis, but the mic itself must never offer it in the first
   /// place). Checked here, not inside the static helpers, so `full`,
-  /// `diagnosis` and `quick`'s own mappings stay byte-identical.
-  bool get _isWordUseFinished =>
-      _request.script is WordUseLoopScript &&
-      _loop.phase == LoopPhase.comparison &&
-      _loop.attemptStep == AttemptKind.repeat;
+  /// `diagnosis` and `quick`'s own mappings stay byte-identical. Shares the
+  /// exact same condition `TrainingLoop.continueToNextStep`/
+  /// `TrainingLoopView`'s own "Continuar" visibility use
+  /// ([isWordUseLoopFinished]), not a re-derived copy.
+  bool get _isWordUseFinished => isWordUseLoopFinished(_request.script, _loop);
 
   @override
   MicPrompt get prompt => _isWordUseFinished

@@ -31,6 +31,7 @@ import 'package:flui/features/training/domain/speaking_attempt.dart';
 import 'package:flui/features/training/domain/speaking_attempt_repository.dart';
 import 'package:flui/features/training/domain/training_context.dart';
 import 'package:flui/features/training/domain/training_loop.dart';
+import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/features/training/presentation/controllers/training_loop_controller.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
@@ -383,6 +384,69 @@ void main() {
         LoopPhase.comparison,
       );
     });
+
+    test(
+      'calling continueToNextStep() directly (the "Continuar" button path, '
+      'orchestrator review finding on 4e58ac7) leaves the finished state '
+      'unchanged, keeps offering "Practicar otra vez", and a mic press '
+      'after that still makes zero analyze calls and saves zero attempts',
+      () async {
+        final counting = _CountingSpeechAnalysisRepository(speech);
+        final localContainer = ProviderContainer(
+          overrides: [
+            speechAnalysisRepositoryProvider.overrideWithValue(counting),
+            speakingAttemptRepositoryProvider.overrideWithValue(attempts),
+            attemptAudioStoreProvider.overrideWithValue(audioStore),
+            audioConsentRepositoryProvider.overrideWithValue(consent),
+            challengeRepositoryProvider.overrideWithValue(
+              FakeChallengeRepository(challenges: const [_challenge]),
+            ),
+            clockProvider.overrideWithValue(FixedClock(DateTime(2026, 9, 28))),
+          ],
+        );
+        addTearDown(localContainer.dispose);
+        final notifier = localContainer.read(
+          trainingLoopControllerProvider(_wordUseRequest).notifier,
+        );
+
+        await notifier.submit(_audio()); // -> feedback (first)
+        await notifier.submit(_audio()); // -> comparison (repeat, finished)
+        expect(
+          localContainer
+              .read(trainingLoopControllerProvider(_wordUseRequest))
+              .loop
+              .phase,
+          LoopPhase.comparison,
+        );
+        final savedBefore = attempts.attemptsForCurrentUser.length;
+
+        notifier.continueToNextStep();
+
+        expect(
+          localContainer
+              .read(trainingLoopControllerProvider(_wordUseRequest))
+              .loop
+              .phase,
+          LoopPhase.comparison,
+        );
+        expect(
+          localContainer
+              .read(trainingLoopControllerProvider(_wordUseRequest))
+              .loop
+              .attemptStep,
+          AttemptKind.repeat,
+        );
+        final mic = localContainer.read(loopMicTargetProvider(_wordUseRequest));
+        expect(mic.prompt.actionLabel, 'Práctica en voz alta');
+        expect(mic.availability, isA<MicPassThrough>());
+
+        final delivery = await notifier.submit(_audio());
+
+        expect(delivery, isA<MicDeliveryFailed>());
+        expect(counting.analyzeCallCount, 2); // unchanged: no 3rd call
+        expect(attempts.attemptsForCurrentUser.length, savedBefore);
+      },
+    );
   });
 
   group('TrainingLoopController — never continues with an unsaved attempt '

@@ -224,7 +224,20 @@ class TrainingLoopController extends _$TrainingLoopController {
   /// design §19.8). A no-op from any other phase: the mic itself also
   /// auto-advances on [submit] (design §19.2 "feedback -> ready(repeat)"),
   /// so a double-advance here would otherwise throw.
+  ///
+  /// Orchestrator review finding: a finished `wordUse` loop (`comparison`,
+  /// no `transfer` step) matched the phase check above, so tapping
+  /// "Continuar" reached `TrainingLoop.continueToNextStep()`'s generic
+  /// advance and pushed it into `focus/transfer` — from which a LATER mic
+  /// press no longer matched [submit]'s own `isWordUseFinished` guard
+  /// (the phase had already moved on), reaching a paid `analyze()` call
+  /// and a persisted bogus row before finally throwing. `TrainingLoop`'s
+  /// own [TrainingLoop.continueToNextStep] is now itself a no-op for this
+  /// exact state (see its doc), so this check is defense in depth — state
+  /// is left completely unchanged (not even a redundant re-emit) when
+  /// already finished, matching [submit]'s own early return.
   void continueToNextStep() {
+    if (_loop.isWordUseFinished) return;
     if (_loop.state.phase != LoopPhase.feedback &&
         _loop.state.phase != LoopPhase.comparison) {
       return;

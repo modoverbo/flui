@@ -125,6 +125,24 @@ final class TrainingLoopState {
       'TrainingLoopState($phase, step: $attemptStep, slot: $slot)';
 }
 
+/// Whether [state] is [WordUseLoopScript]'s own terminal state under
+/// [script] — no further speak step exists to continue into (orchestrator
+/// review finding). `wordUse`'s two-step script (`first` -> `repeat`) has
+/// no `transfer` step, unlike `full`/`diagnosis`'s longer sequences, so it
+/// never reaches `LoopPhase.summary`; `comparison` (reached once the
+/// repeat attempt's own analysis succeeds) is as far as it ever advances.
+///
+/// A plain top-level function (not only [TrainingLoop.isWordUseFinished])
+/// so every caller that only has `script`/`state` apart — never a full
+/// [TrainingLoop] instance — can check the SAME condition instead of
+/// re-deriving it: `LoopMicTarget` (has a `LoopRequest`, not a
+/// `TrainingLoop`) and `TrainingLoopView`'s own phase body (deciding
+/// whether to show "Continuar") both use this directly.
+bool isWordUseLoopFinished(LoopScript script, TrainingLoopState state) =>
+    script is WordUseLoopScript &&
+    state.phase == LoopPhase.comparison &&
+    state.attemptStep == AttemptKind.repeat;
+
 /// Drives one training session through its [script]'s steps.
 ///
 /// Pure state machine: it never records or analyzes audio itself — the
@@ -152,20 +170,11 @@ final class TrainingLoop {
 
   /// Whether the CURRENT phase is [WordUseLoopScript]'s own terminal
   /// state — no further speak step exists to continue into (orchestrator
-  /// review finding). `wordUse`'s two-step script (`first` -> `repeat`)
-  /// has no `transfer` step, unlike `full`/`diagnosis`'s longer
-  /// sequences, so it never reaches `LoopPhase.summary`; `comparison`
-  /// (reached once the repeat attempt's own analysis succeeds) is as far
-  /// as it ever advances. `continueToNextStep`'s otherwise-generic
-  /// `repeat -> transfer` step would push it into an attempt step
-  /// [analysisSucceeded] can never resolve (`_advanceWordUse` throws for
-  /// `transfer`) — callers (`TrainingLoopController.submit`) must check
-  /// this and refuse BEFORE any paid analysis runs, never let the error
-  /// surface only after the fact.
-  bool get isWordUseFinished =>
-      script is WordUseLoopScript &&
-      state.phase == LoopPhase.comparison &&
-      state.attemptStep == AttemptKind.repeat;
+  /// review finding). See the top-level [isWordUseLoopFinished] this
+  /// delegates to for the full rationale; a getter here so callers that
+  /// already hold a [TrainingLoop] (`TrainingLoopController`) don't need
+  /// to pass `script`/`state` apart.
+  bool get isWordUseFinished => isWordUseLoopFinished(script, state);
 
   /// The user starts speaking the current step's prompt.
   void startRecording() => _setPhase(LoopPhase.recording);
@@ -216,6 +225,14 @@ final class TrainingLoop {
       state = const TrainingLoopState(phase: LoopPhase.summary);
       return;
     }
+    // Orchestrator review finding: `wordUse`'s own terminal `comparison`
+    // state has no valid next step — the generic `repeat -> transfer`
+    // advance below would otherwise push it into an attempt step
+    // `analysisSucceeded`/`_advanceWordUse` can never resolve. A no-op:
+    // the finished state is already stable and correct, there is nothing
+    // to continue INTO (the mic itself offers "Practicar otra vez"
+    // instead — a NEW loop, not a continuation of this one).
+    if (isWordUseFinished) return;
     final nextStep = switch (state.attemptStep) {
       AttemptKind.first => AttemptKind.repeat,
       AttemptKind.repeat => AttemptKind.transfer,
