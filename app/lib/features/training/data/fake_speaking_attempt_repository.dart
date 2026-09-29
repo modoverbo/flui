@@ -31,6 +31,23 @@ final class FakeSpeakingAttemptRepository
   List<SpeakingAttempt> get attemptsForCurrentUser =>
       List.unmodifiable(_attemptsByUser[currentUserId()] ?? const []);
 
+  /// Replaces attempt [attemptId]'s `audio` field in place, wherever it
+  /// lives — a no-op if no attempt with that id is known. A real
+  /// `speaking_attempts` row is the single source of truth for both its
+  /// content AND its `audio_status`, so `FakeAttemptAudioStore` calls this
+  /// (via its `onAudioChanged` callback, wired in `bootstrap.dart`) to
+  /// mirror that: two independently-constructed fakes would otherwise
+  /// silently disagree about whether an attempt's audio is still stored
+  /// after `AttemptAudioStore.upload`/`delete` (U18b).
+  void updateAudio(String attemptId, AudioRetention audio) {
+    for (final attempts in _attemptsByUser.values) {
+      final index = attempts.indexWhere((a) => a.id == attemptId);
+      if (index == -1) continue;
+      attempts[index] = attempts[index].copyWith(audio: audio);
+      return;
+    }
+  }
+
   @override
   Future<Result<SpeakingAttempt>> insert(SpeakingAttempt attempt) async {
     if (await simulateCall() case final failure?) return Result.err(failure);
@@ -106,5 +123,50 @@ final class FakeSpeakingAttemptRepository
         if (!attempt.localDate.isBefore(since)) attempt,
     ]..sort((a, b) => b.localDate.compareTo(a.localDate));
     return Result.ok(attempts);
+  }
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> attemptsForSession(
+    String sessionId,
+  ) async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    return Result.ok(<SpeakingAttempt>[
+      for (final attempt
+          in _attemptsByUser[userId] ?? const <SpeakingAttempt>[])
+        if (attempt.sessionId == sessionId) attempt,
+    ]);
+  }
+
+  @override
+  Future<Result<SpeakingAttempt?>> latestStoredMilestone() async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    SpeakingAttempt? latest;
+    for (final attempt
+        in _attemptsByUser[userId] ?? const <SpeakingAttempt>[]) {
+      final week = attempt.milestoneWeek;
+      if (week == null || attempt.audio is! AudioRetentionStored) continue;
+      final latestWeek = latest?.milestoneWeek;
+      if (latestWeek == null || week.isAfter(latestWeek)) latest = attempt;
+    }
+    return Result.ok(latest);
+  }
+
+  @override
+  Future<Result<Set<String>>> storedAudioAttemptIds() async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+
+    return Result.ok({
+      for (final attempt
+          in _attemptsByUser[userId] ?? const <SpeakingAttempt>[])
+        if (attempt.audio is AudioRetentionStored) attempt.id,
+    });
   }
 }

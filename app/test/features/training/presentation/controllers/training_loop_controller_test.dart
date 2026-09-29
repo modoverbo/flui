@@ -78,6 +78,19 @@ final class _FlakyAttemptRepository implements SpeakingAttemptRepository {
   Future<Result<List<SpeakingAttempt>>> recentAttemptsSince(
     LocalDate since,
   ) async => const Result.ok(<SpeakingAttempt>[]);
+
+  @override
+  Future<Result<List<SpeakingAttempt>>> attemptsForSession(
+    String sessionId,
+  ) async => const Result.ok(<SpeakingAttempt>[]);
+
+  @override
+  Future<Result<SpeakingAttempt?>> latestStoredMilestone() async =>
+      const Result.ok(null);
+
+  @override
+  Future<Result<Set<String>>> storedAudioAttemptIds() async =>
+      const Result.ok(<String>{});
 }
 
 /// Counts `analyze`/`transcribe` calls so a test can assert a save failure
@@ -138,6 +151,10 @@ final class _CountingAttemptAudioStore implements AttemptAudioStore {
   @override
   Future<Result<void>> delete({required String attemptId}) =>
       _inner.delete(attemptId: attemptId);
+
+  @override
+  Future<Result<Uri>> signedUrlFor({required String path}) =>
+      _inner.signedUrlFor(path: path);
 }
 
 const _challenge = Challenge(

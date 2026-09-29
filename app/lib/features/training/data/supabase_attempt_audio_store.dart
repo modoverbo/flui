@@ -209,6 +209,22 @@ final class SupabaseAttemptAudioStore implements AttemptAudioStore {
     }
     return const Result.ok(null);
   }
+
+  /// Matches design part-3 §3's playback contract (`SpeechPlayer.playUrl`
+  /// via a signed Storage URL, 300 s TTL).
+  static const _signedUrlTtlSeconds = 300;
+
+  @override
+  Future<Result<Uri>> signedUrlFor({required String path}) async {
+    try {
+      final signed = await _client.storage
+          .from(_bucket)
+          .createSignedUrl(path, _signedUrlTtlSeconds);
+      return Result.ok(Uri.parse(signed));
+    } on Object catch (error) {
+      return Result.err(mapDataError(error));
+    }
+  }
 }
 
 /// The outcome of one storage-upload attempt (U13a.6): whether it succeeded

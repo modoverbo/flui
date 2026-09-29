@@ -8,9 +8,21 @@ import 'package:flui/features/training/domain/speaking_attempt.dart';
 
 /// In-memory `speaking-audio` bucket + the `audio_status` it drives.
 final class FakeAttemptAudioStore with FakeRemote implements AttemptAudioStore {
-  new({required this.currentUserId, this.latency = Duration.zero});
+  new({
+    required this.currentUserId,
+    this.latency = Duration.zero,
+    this.onAudioChanged,
+  });
 
   final String? Function() currentUserId;
+
+  /// Notified with every status this store itself writes (`upload`'s
+  /// `stored`/`failed`, `delete`'s `deleted`) — wired to a paired
+  /// `FakeSpeakingAttemptRepository.updateAudio` (U18b) so a caller that
+  /// re-fetches attempts afterwards sees the same status this store
+  /// reports via [statusOf], exactly as one real `speaking_attempts` row
+  /// would. `null` (the default) keeps every existing caller unchanged.
+  final void Function(String attemptId, AudioRetention audio)? onAudioChanged;
 
   @override
   final Duration latency;
@@ -49,6 +61,7 @@ final class FakeAttemptAudioStore with FakeRemote implements AttemptAudioStore {
             mime: mimeType,
           );
     _statusByAttemptId[attemptId] = next;
+    onAudioChanged?.call(attemptId, next);
   }
 
   @override
@@ -63,6 +76,21 @@ final class FakeAttemptAudioStore with FakeRemote implements AttemptAudioStore {
     }
     // Idempotent: an already-'deleted' attempt is a same-status no-op.
     _statusByAttemptId[attemptId] = const AudioRetention.deleted();
+    onAudioChanged?.call(attemptId, const AudioRetention.deleted());
     return const Result.ok(null);
+  }
+
+  @override
+  Future<Result<Uri>> signedUrlFor({required String path}) async {
+    if (await simulateCall() case final failure?) return Result.err(failure);
+    final userId = currentUserId();
+    if (userId == null) return const Result.err(notSignedInFailure);
+    // Mirrors the storage `select` policy scoping reads to the caller's own
+    // `<uid>/` folder — a path this store was never handed for this user
+    // never resolves to a URL, real or fake.
+    if (!path.startsWith('$userId/')) {
+      return const Result.err(UnexpectedFailure('not_own_path'));
+    }
+    return Result.ok(Uri.parse('fake://speaking-audio/$path'));
   }
 }

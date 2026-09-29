@@ -856,5 +856,164 @@ void main() {
 
       expect(result.failureOrNull, const NetworkFailure());
     });
+
+    test('signedUrlFor requests the bucket sign endpoint and returns the '
+        'full URL (U18b, playback)', () async {
+      final recorder = SupabaseRecorder(
+        respond: (request) => {
+          'signedURL':
+              '/storage/v1/object/sign/speaking-audio/u1/a1.wav'
+              '?token=abc',
+        },
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).signedUrlFor(path: 'u1/a1.wav');
+
+      expect(result.isOk, isTrue);
+      expect(
+        result.valueOrNull.toString(),
+        'https://test.supabase.co/storage/v1/storage/v1/object/sign/'
+        'speaking-audio/u1/a1.wav?token=abc',
+      );
+      expect(recorder.last.method, 'POST');
+      expect(
+        recorder.last.url.path,
+        '/storage/v1/object/sign/speaking-audio/u1/a1.wav',
+      );
+      final body = recorder.bodyOf(recorder.last)! as Map<String, Object?>;
+      expect(body['expiresIn'], 300);
+    });
+
+    test('signedUrlFor maps a transport error to a network failure', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => throw http.ClientException('offline'),
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).signedUrlFor(path: 'u1/a1.wav');
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+
+    test('signedUrlFor maps a missing signedURL response to a failure '
+        '(never a null Uri)', () async {
+      final recorder = SupabaseRecorder(respond: (_) => <String, Object?>{});
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseAttemptAudioStore(
+        recorder.client,
+        currentUserId: () => 'u1',
+      ).signedUrlFor(path: 'u1/a1.wav');
+
+      expect(result.isOk, isFalse);
+    });
+  });
+
+  group('FakeAttemptAudioStore.signedUrlFor (U18b, playback)', () {
+    test("resolves a URL for the caller's own path", () async {
+      final store = FakeAttemptAudioStore(currentUserId: () => 'u1');
+
+      final result = await store.signedUrlFor(path: 'u1/a1.wav');
+
+      expect(result.isOk, isTrue);
+      expect(result.valueOrNull, isNotNull);
+    });
+
+    test("rejects a path outside the signed-in user's own folder, mirroring "
+        'the RLS own-folder policy', () async {
+      final store = FakeAttemptAudioStore(currentUserId: () => 'u1');
+
+      final result = await store.signedUrlFor(path: 'someone-else/a1.wav');
+
+      expect(result.isOk, isFalse);
+    });
+
+    test('fails without a signed-in user', () async {
+      final store = FakeAttemptAudioStore(currentUserId: () => null);
+
+      final result = await store.signedUrlFor(path: 'u1/a1.wav');
+
+      expect(result.isOk, isFalse);
+    });
+
+    test('surfaces a queued failure like every other call', () async {
+      final store = FakeAttemptAudioStore(currentUserId: () => 'u1')
+        ..nextFailure = const NetworkFailure();
+
+      final result = await store.signedUrlFor(path: 'u1/a1.wav');
+
+      expect(result.failureOrNull, const NetworkFailure());
+    });
+  });
+
+  group('FakeAttemptAudioStore.onAudioChanged (U18b, keeps a paired '
+      'SpeakingAttemptRepository consistent)', () {
+    test('upload notifies the new stored status', () async {
+      final changes = <(String, AudioRetention)>[];
+      final store = FakeAttemptAudioStore(
+        currentUserId: () => 'u1',
+        onAudioChanged: (id, audio) => changes.add((id, audio)),
+      );
+
+      await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+
+      expect(changes, [
+        (
+          'a1',
+          const AudioRetention.stored(path: 'u1/a1.wav', mime: 'audio/wav'),
+        ),
+      ]);
+    });
+
+    test('delete notifies the deleted status', () async {
+      final changes = <(String, AudioRetention)>[];
+      final store = FakeAttemptAudioStore(
+        currentUserId: () => 'u1',
+        onAudioChanged: (id, audio) => changes.add((id, audio)),
+      );
+      await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+      changes.clear();
+
+      await store.delete(attemptId: 'a1');
+
+      expect(changes, [('a1', const AudioRetention.deleted())]);
+    });
+
+    test('a failed upload never notifies', () async {
+      final changes = <(String, AudioRetention)>[];
+      final store = FakeAttemptAudioStore(
+        currentUserId: () => 'u1',
+        onAudioChanged: (id, audio) => changes.add((id, audio)),
+      )..nextFailure = const NetworkFailure();
+
+      await store.upload(attemptId: 'a1', bytes: _bytes, mimeType: 'audio/wav');
+
+      // upload() never returns a failure for an infra error — it marks the
+      // attempt 'failed' instead — so onAudioChanged DOES fire, with the
+      // 'failed' status, not silently.
+      expect(changes, [('a1', const AudioRetention.failed())]);
+    });
+
+    test(
+      'no callback is required (defaults to null, backward compatible)',
+      () async {
+        final store = FakeAttemptAudioStore(currentUserId: () => 'u1');
+
+        await store.upload(
+          attemptId: 'a1',
+          bytes: _bytes,
+          mimeType: 'audio/wav',
+        );
+
+        expect(store.statusOf('a1'), isA<AudioRetentionStored>());
+      },
+    );
   });
 }
