@@ -52,6 +52,13 @@ final class TodayWordTarget implements MicTarget {
     final due = today.value ?? const [];
     final wordId = due.isEmpty ? null : due.first.word.id;
     if (wordId == _delegate?.wordId) {
+      // The SAME word stays due across rebuilds (e.g. its loop finished
+      // without the word being detected as spoken, so mastery never
+      // advanced it past today) — no navigation-driven reconstruction
+      // happens in that case, so this is the only place that can catch a
+      // finished delegate and start it fresh again (see
+      // `WordSpeakTarget.resetIfFinished`'s own doc).
+      _delegate?.resetIfFinished();
       _changes.add(null);
       return;
     }

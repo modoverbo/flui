@@ -19,6 +19,8 @@ import 'package:flui/features/training/data/fake_audio_consent_repository.dart';
 import 'package:flui/features/training/data/fake_challenge_repository.dart';
 import 'package:flui/features/training/data/fake_speaking_attempt_repository.dart';
 import 'package:flui/features/training/domain/training_context.dart';
+import 'package:flui/features/training/domain/training_loop.dart';
+import 'package:flui/features/training/presentation/controllers/training_loop_controller.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/data/fake_exercise_attempt_repository.dart';
@@ -99,7 +101,16 @@ void main() {
     container.listen(authUserProvider, (_, _) {});
   });
 
-  WordSpeakTarget target() => container.read(wordSpeakTargetProvider(_word.id));
+  // Keeps whichever `wordSpeakTargetProvider(wordId)` entry is currently
+  // live pinned across an `await` gap — a bare `.read()` survives only
+  // within the SAME synchronous frame; tests that `await` after reading
+  // (or explicitly `container.invalidate(...)` + re-read, simulating a
+  // fresh mount) need this or the autoDispose entry can be torn down
+  // mid-test, taking its own `Ref` down with it.
+  WordSpeakTarget target() {
+    container.listen(wordSpeakTargetProvider(_word.id), (_, _) {});
+    return container.read(wordSpeakTargetProvider(_word.id));
+  }
 
   test(
     'the unstarted first attempt is labeled "Úsala en voz alta" and ready',
@@ -176,5 +187,107 @@ void main() {
 
     expect(fired, greaterThan(0));
     await subscription.cancel();
+  });
+
+  group('finished loop resets on the NEXT construction (orchestrator review '
+      'finding: keepAlive session id + keepAlive controller leaked a '
+      'finished loop forever)', () {
+    // A real "leave `/words/:id`, come back" cycle disposes the OLD
+    // `WordSpeakTarget` (its `MicTargetScope` registration unmounts,
+    // `wordSpeakTargetProvider`'s last listener drops, autoDispose tears
+    // it down — `dispose()` closes its wrapped `LoopMicTarget`'s own
+    // subscriptions) BEFORE the new mount ever reads a fresh instance.
+    // `.close()` on the subscription below is what reproduces that exact
+    // release; skipping it would leave the OLD `LoopMicTarget` subscribed
+    // to the finished `TrainingLoopController` at the same time the reset
+    // tries to invalidate it — an artifact of a bare `ProviderContainer`
+    // test, not a real production path.
+    ProviderSubscription<WordSpeakTarget> mount() =>
+        container.listen(wordSpeakTargetProvider(_word.id), (_, _) {});
+
+    test('a loop finished (comparison — wordUse has no summary phase) mints a '
+        'new session id, so the word is offered again instead of staying '
+        "stuck offering the previous loop's own finished state", () async {
+      final firstMount = mount();
+      final first = firstMount.read();
+      await first.deliver(_audio()); // -> feedback
+      await first.deliver(_audio()); // -> comparison (finished)
+      final finishedRequest = first.request;
+      expect(
+        container
+            .read(trainingLoopControllerProvider(finishedRequest))
+            .loop
+            .phase,
+        LoopPhase.comparison,
+      );
+
+      firstMount.close();
+      await Future<void>.delayed(Duration.zero);
+      container.invalidate(wordSpeakTargetProvider(_word.id));
+      final second = mount().read();
+
+      // A brand new session/loop, never stuck at the finished one, and
+      // never falling through to a lab-fallback/quick-practice
+      // passthrough either.
+      expect(second.request.sessionId, isNot(finishedRequest.sessionId));
+      expect(second.prompt.actionLabel, 'Úsala en voz alta');
+      expect(second.availability, isA<MicReady>());
+      // `resetIfFinished` deliberately does NOT invalidate the OLD
+      // `TrainingLoopController` family entry — see its own doc comment
+      // in `word_speak_target.dart`: doing so was verified (in complete
+      // isolation AND in a real app run) to crash the app later via a
+      // scheduled Riverpod refresh (`LateInitializationError` on a
+      // `late final` field, from calling `build()` twice on the SAME
+      // cached notifier object once it has zero listeners — a
+      // pre-existing property of any `keepAlive` class-based Notifier,
+      // not something this fix could safely patch). The OLD entry is
+      // simply abandoned — proven safe because it still `exists()`
+      // (nothing crashed reaching this point) while `second` operates
+      // on a genuinely different, independent session id.
+      expect(
+        container.exists(trainingLoopControllerProvider(finishedRequest)),
+        isTrue,
+      );
+    });
+
+    test(
+      'a loop still mid-flow (feedback, not yet comparison) is NOT reset — '
+      'resuming exactly where it left off, matching the resume pattern used '
+      'elsewhere (design says nothing to the contrary for word context)',
+      () async {
+        final firstMount = mount();
+        final first = firstMount.read();
+        await first.deliver(_audio()); // -> feedback, not finished yet
+        final midFlowRequest = first.request;
+
+        firstMount.close();
+        container.invalidate(wordSpeakTargetProvider(_word.id));
+        final second = mount().read();
+
+        expect(second.request.sessionId, midFlowRequest.sessionId);
+        expect(second.prompt.actionLabel, 'Grabar tu repetición');
+      },
+    );
+
+    test('mastery does not over-count: completing the loop again after a '
+        'reset, on the SAME day, never advances the ladder a second time '
+        "(SpokenWordUse.review's own isDueOn(today) guard)", () async {
+      final firstMount = mount();
+      final first = firstMount.read();
+      await first.deliver(_audio()); // -> feedback, ladderStep 1
+      await first.deliver(_audio()); // -> comparison, still ladderStep 1
+      final afterFirstLoop =
+          (await wordProgress.fetchProgress()).valueOrNull!.single;
+      expect(afterFirstLoop.ladderStep, 1);
+
+      firstMount.close();
+      container.invalidate(wordSpeakTargetProvider(_word.id));
+      final second = mount().read();
+      await second.deliver(_audio()); // fresh first attempt, same day
+
+      final afterSecondLoop =
+          (await wordProgress.fetchProgress()).valueOrNull!.single;
+      expect(afterSecondLoop.ladderStep, 1);
+    });
   });
 }

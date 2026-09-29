@@ -1738,5 +1738,73 @@ void main() {
         handle.dispose();
       },
     );
+
+    testWidgets(
+      'orchestrator review finding: completing a word loop, leaving, and '
+      're-entering starts a FRESH loop (never stuck offering "Grabar tu '
+      'transferencia" forever, never silently falls through to quick '
+      'practice) and mastery does not double-advance the same day',
+      (tester) async {
+        final handle = tester.ensureSemantics();
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: ana,
+          access: trialing,
+          overrides: [
+            speakingGymEnabledProvider.overrideWithValue(true),
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.wordDetail(claridadId),
+          arrange: seedDueWord,
+        );
+
+        // First attempt: navigates to the word's own speak loop.
+        await holdToRecord(tester, harness);
+        expect(location(harness), AppRoutes.wordSpeak(claridadId));
+        // Repeat attempt: reaches the loop's own finished state
+        // (`comparison` — `wordUse` has no `summary` phase).
+        await holdToRecord(tester, harness);
+        final afterFirstLoop =
+            (await harness.wordProgress.fetchProgress()).valueOrNull!.single;
+        expect(afterFirstLoop.ladderStep, 1);
+
+        // Leave the loop entirely: exit back to the word detail, then all
+        // the way back to the PALABRAS list, then re-enter the SAME word
+        // — a real "go back, re-enter" round trip, not merely popping one
+        // level (which keeps the SAME `WordDetailPage` instance mounted,
+        // covered but never torn down, underneath the loop page).
+        await tester.tap(find.text('Salir'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('Palabras'));
+        await tester.pumpAndSettle();
+        await tester.tap(find.text('claridad'));
+        await tester.pumpAndSettle();
+
+        expect(location(harness), AppRoutes.wordDetail(claridadId));
+        // Fresh loop: the static first-attempt label, never the finished
+        // loop's own stale "Grabar tu transferencia", and never a
+        // passthrough to quick practice either.
+        expect(
+          tester.getSemantics(find.byType(MicButton)).label,
+          'Úsala en voz alta',
+        );
+
+        // Recording again, same day: mastery must not double-advance —
+        // `SpokenWordUse.review`'s own `isDueOn(today)` guard is what
+        // enforces this (unmodified by this fix), proven here end-to-end.
+        await holdToRecord(tester, harness);
+        final afterSecondLoop =
+            (await harness.wordProgress.fetchProgress()).valueOrNull!.single;
+        expect(afterSecondLoop.ladderStep, 1);
+        expect(
+          harness.speakingAttempts.attemptsForCurrentUser.length,
+          greaterThan(2),
+        );
+        handle.dispose();
+      },
+    );
   });
 }
