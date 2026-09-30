@@ -122,5 +122,56 @@ void main() {
         ]);
       },
     );
+
+    test('an all-opportunity diagnosis across exactly the top/second areas '
+        'legitimately produces empty strengths (fix/diagnosis-profile-save: '
+        'the production shape that a since-relaxed skill_profiles DB '
+        'constraint used to reject)', () {
+      final result = profiler.profile([
+        _attempt(1, [
+          _obs(BehaviorCode.noClearStructure),
+          _obs(BehaviorCode.missingExample),
+          _obs(BehaviorCode.noClosing),
+          _obs(BehaviorCode.vagueWord),
+          _obs(BehaviorCode.repeatedWord),
+          _obs(BehaviorCode.weakConnector),
+        ]),
+        _attempt(2, const []),
+        _attempt(3, [
+          _obs(BehaviorCode.noClearStructure),
+          _obs(BehaviorCode.missingExample),
+          _obs(BehaviorCode.noClosing),
+          _obs(BehaviorCode.vagueWord),
+          _obs(BehaviorCode.repeatedWord),
+          _obs(BehaviorCode.weakConnector),
+        ]),
+      ]);
+
+      final profile = (result as DiagnosisProfileComplete).profile;
+      expect(profile.topArea, SkillArea.thinking);
+      expect(profile.secondArea, SkillArea.language);
+      expect(profile.topBehavior, isNotNull);
+      expect(profile.secondBehavior, isNotNull);
+      expect(profile.strengths, isEmpty);
+    });
+
+    test('an area with zero opportunities anywhere but still ranked second '
+        'gets a null secondBehavior — the old assumption that only a '
+        'zero-opportunities-everywhere diagnosis leaves a behavior null was '
+        'wrong (fix/diagnosis-profile-save)', () {
+      final result = profiler.profile([
+        _attempt(1, [_obs(BehaviorCode.volumeUnstable, source: _measured)]),
+        _attempt(2, const []),
+        _attempt(3, const []),
+      ]);
+
+      final profile = (result as DiagnosisProfileComplete).profile;
+      expect(profile.topArea, SkillArea.voice);
+      expect(profile.topBehavior, BehaviorCode.volumeUnstable);
+      // thinking outranks language/fluency by priority once every area
+      // ties at zero opportunities.
+      expect(profile.secondArea, SkillArea.thinking);
+      expect(profile.secondBehavior, isNull);
+    });
   });
 }

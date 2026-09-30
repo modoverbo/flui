@@ -25,6 +25,15 @@ final class FakeSkillProfileRepository
 
   final _recordsByUser = <String, List<SkillProfileRecord>>{};
 
+  /// When true, [save] always fails with a [NetworkFailure] until reset
+  /// back to false — unlike a single-shot `nextFailure` (also consumed by
+  /// an unrelated `latest()`/`history()` read, e.g. the diagnosis gate's
+  /// own lookup), this stays on until the test flips it back, so a
+  /// real-path test can deterministically reproduce a repeatedly failing
+  /// save (fix/diagnosis-profile-save) and then recover from it once "the
+  /// backend accepts it".
+  bool failSaves = false;
+
   /// Seeds an already-diagnosed profile for the signed-in user, bypassing
   /// `save()`'s async retake-cooldown check — matches
   /// `FakeSubscriptionRepository.grantAccess`'s synchronous-seed shape, for
@@ -59,6 +68,7 @@ final class FakeSkillProfileRepository
     required String sessionId,
     required SkillProfile profile,
   }) async {
+    if (failSaves) return const Result.err(NetworkFailure());
     if (await simulateCall() case final failure?) return Result.err(failure);
     final userId = currentUserId();
     if (userId == null) return const Result.err(notSignedInFailure);
