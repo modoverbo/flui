@@ -29,6 +29,7 @@ import 'package:flui/features/training/domain/voice_metrics_calculator.dart';
 import 'package:flui/features/training/presentation/providers/training_providers.dart';
 import 'package:flui/features/vocabulary/domain/spoken_word_use.dart';
 import 'package:flui/features/vocabulary/presentation/providers/vocabulary_providers.dart';
+import 'package:flutter_riverpod/misc.dart' show KeepAliveLink;
 import 'package:meta/meta.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -186,7 +187,19 @@ final class _PendingSave {
 /// every completed step immediately (D20 — resilient to a Whop checkout
 /// redirect mid-session, R11), and fires the milestone audio upload
 /// fire-and-forget through `AttemptAudioStore` (design part-3 §5).
-@Riverpod(keepAlive: true)
+///
+/// Lifetime: auto-disposed, except while a session is mid-flow. From the first
+/// [submit] until the loop reaches `summary` the controller pins itself with a
+/// `KeepAliveLink`, so leaving the screen mid-session and coming back resumes
+/// exactly where the user stopped (the attempts are already saved). At
+/// `summary` the pin is released: leaving the finished screen disposes the
+/// state (and the audio bytes held for retry), and the next entry with the
+/// same request starts clean instead of replaying a stale summary.
+///
+/// A finished `wordUse` loop has no `summary`; its caller (`WordSpeakTarget`)
+/// still reads the finished state to mint a fresh session id, so the pin stays
+/// until that caller hands it back through [release].
+@riverpod
 class TrainingLoopController extends _$TrainingLoopController {
   late final LoopRequest _request;
   late final TrainingLoop _loop;
@@ -200,11 +213,41 @@ class TrainingLoopController extends _$TrainingLoopController {
   /// silently dropped, and never re-analyzed to recover it.
   _PendingSave? _pendingSave;
 
+  /// Pins the controller while a session is mid-flow (see the class doc).
+  KeepAliveLink? _midFlowLink;
+
   @override
   TrainingLoopControllerState build(LoopRequest request) {
     _request = request;
     _loop = TrainingLoop(request.script);
+    ref.onDispose(_releaseResources);
+    listenSelf((_, _) => _syncMidFlowPin());
     return TrainingLoopControllerState(loop: _loop.state);
+  }
+
+  /// Pins from the first attempt on; releases at `summary`.
+  void _syncMidFlowPin() {
+    if (_loop.state.phase == LoopPhase.summary) {
+      release();
+    } else if (_lastAudio != null) {
+      _midFlowLink ??= ref.keepAlive();
+    }
+  }
+
+  /// Drops the mid-flow pin: the controller (and the audio it holds) is
+  /// disposed as soon as nothing listens to it anymore.
+  void release() {
+    _midFlowLink?.close();
+    _midFlowLink = null;
+  }
+
+  void _releaseResources() {
+    _midFlowLink = null;
+    _lastAudio = null;
+    _pendingSave = null;
+    _firstObservations = null;
+    _firstMetrics = null;
+    _catalog = null;
   }
 
   /// Resubmits the most recently delivered audio ("Reintentar" — design

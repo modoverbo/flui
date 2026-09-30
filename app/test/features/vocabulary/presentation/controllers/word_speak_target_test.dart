@@ -232,21 +232,12 @@ void main() {
       expect(second.request.sessionId, isNot(finishedRequest.sessionId));
       expect(second.prompt.actionLabel, 'Úsala en voz alta');
       expect(second.availability, isA<MicReady>());
-      // `resetIfFinished` deliberately does NOT invalidate the OLD
-      // `TrainingLoopController` family entry — see its own doc comment
-      // in `word_speak_target.dart`: doing so was verified (in complete
-      // isolation AND in a real app run) to crash the app later via a
-      // scheduled Riverpod refresh (`LateInitializationError` on a
-      // `late final` field, from calling `build()` twice on the SAME
-      // cached notifier object once it has zero listeners — a
-      // pre-existing property of any `keepAlive` class-based Notifier,
-      // not something this fix could safely patch). The OLD entry is
-      // simply abandoned — proven safe because it still `exists()`
-      // (nothing crashed reaching this point) while `second` operates
-      // on a genuinely different, independent session id.
+      // The OLD finished entry was handed back through `release()`, so it
+      // is disposed once nothing listens to it (no app-lifetime leak).
+      await Future<void>.delayed(Duration.zero);
       expect(
         container.exists(trainingLoopControllerProvider(finishedRequest)),
-        isTrue,
+        isFalse,
       );
     });
 

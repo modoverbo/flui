@@ -831,4 +831,91 @@ void main() {
       expect(usedAfter.ladderStep, 1);
     });
   });
+
+  group('TrainingLoopController — lifetime (leak fix)', () {
+    // Models a screen watching the controller: the subscription is what
+    // keeps an autoDispose provider alive while the screen is mounted.
+    ProviderSubscription<TrainingLoopControllerState> mount(
+      LoopRequest request,
+    ) => container.listen(trainingLoopControllerProvider(request), (_, _) {});
+
+    test('an untouched loop is released once its screen is left', () async {
+      final screen = mount(_request);
+      expect(container.exists(trainingLoopControllerProvider(_request)), true);
+
+      screen.close();
+      await pumpEventQueue();
+
+      expect(container.exists(trainingLoopControllerProvider(_request)), false);
+    });
+
+    test(
+      'a finished loop (summary) is released on exit, so re-entering the '
+      'same session starts clean instead of showing the stale summary',
+      () async {
+        var screen = mount(_request);
+        final notifier = container.read(
+          trainingLoopControllerProvider(_request).notifier,
+        );
+        await notifier.submit(_audio()); // first -> feedback
+        await notifier.submit(_audio()); // repeat -> comparison
+        await notifier.submit(_audio()); // transfer -> summary
+        expect(screen.read().loop.phase, LoopPhase.summary);
+        expect(screen.read().comparison, isNotNull);
+
+        screen.close();
+        await pumpEventQueue();
+        expect(
+          container.exists(trainingLoopControllerProvider(_request)),
+          false,
+        );
+
+        screen = mount(_request);
+        expect(screen.read().loop.phase, LoopPhase.focus);
+        expect(screen.read().feedback, isNull);
+        expect(screen.read().comparison, isNull);
+      },
+    );
+
+    test('a finished wordUse loop (no summary) stays pinned until its '
+        'owner calls release()', () async {
+      final screen = mount(_wordUseRequest);
+      final notifier = container.read(
+        trainingLoopControllerProvider(_wordUseRequest).notifier,
+      );
+      await notifier.submit(_audio());
+      await notifier.submit(_audio());
+      screen.close();
+      await pumpEventQueue();
+      expect(
+        container.exists(trainingLoopControllerProvider(_wordUseRequest)),
+        true,
+      );
+
+      notifier.release();
+      await pumpEventQueue();
+
+      expect(
+        container.exists(trainingLoopControllerProvider(_wordUseRequest)),
+        false,
+      );
+    });
+
+    test('a loop left mid-flow stays alive so the user resumes where they '
+        'stopped', () async {
+      var screen = mount(_request);
+      await container
+          .read(trainingLoopControllerProvider(_request).notifier)
+          .submit(_audio());
+      expect(screen.read().loop.phase, LoopPhase.feedback);
+
+      screen.close();
+      await pumpEventQueue();
+
+      expect(container.exists(trainingLoopControllerProvider(_request)), true);
+      screen = mount(_request);
+      expect(screen.read().loop.phase, LoopPhase.feedback);
+      expect(screen.read().feedback, isNotNull);
+    });
+  });
 }

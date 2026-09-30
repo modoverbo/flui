@@ -465,19 +465,21 @@ void main() {
     testWidgets('"Continuar" is not shown once comparison/repeat is reached; '
         '"Salir" stays', (tester) async {
       await buildContainer();
+      // Mounted first, like the real screen: its watch is what keeps the
+      // (auto-disposed) controller alive while the loop is driven.
+      await tester.pumpWithContainer(
+        const TrainingLoopView(request: _wordUseRequest),
+        container,
+      );
       await controller(request: _wordUseRequest).submit(_audio());
       await controller(request: _wordUseRequest).submit(_audio());
+      await tester.pump();
       expect(
         container
             .read(trainingLoopControllerProvider(_wordUseRequest))
             .loop
             .phase,
         LoopPhase.comparison,
-      );
-
-      await tester.pumpWithContainer(
-        const TrainingLoopView(request: _wordUseRequest),
-        container,
       );
 
       expect(find.text(_l10n.loopContinueAction), findsNothing);
@@ -489,16 +491,16 @@ void main() {
       'completely unaffected',
       (tester) async {
         await buildContainer();
-        await controller().submit(_audio());
-        await controller().submit(_audio());
-        expect(
-          container.read(trainingLoopControllerProvider(_request)).loop.phase,
-          LoopPhase.comparison,
-        );
-
         await tester.pumpWithContainer(
           const TrainingLoopView(request: _request),
           container,
+        );
+        await controller().submit(_audio());
+        await controller().submit(_audio());
+        await tester.pump();
+        expect(
+          container.read(trainingLoopControllerProvider(_request)).loop.phase,
+          LoopPhase.comparison,
         );
 
         expect(find.text(_l10n.loopContinueAction), findsOneWidget);

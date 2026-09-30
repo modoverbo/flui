@@ -103,24 +103,14 @@ final class WordSpeakTarget implements MicTarget {
   /// nothing to the contrary for word context; matches the resume pattern
   /// already established for daily sessions, `LoopResumePolicy`).
   ///
-  /// Deliberately does NOT call `ref.invalidate` on the finished
-  /// [TrainingLoopController] family entry — verified (in complete
-  /// isolation AND in a real app run) to crash: `ref.invalidate` on a
-  /// `keepAlive` class-based Notifier does not construct a fresh instance
-  /// once it has zero listeners, so a later flush calls `build()` again on
-  /// the SAME object and throws `LateInitializationError` on its `late
-  /// final _request` field — reproducible from the framework's OWN
-  /// scheduled refresh, not only from an explicit re-read. The finished
-  /// entry is simply abandoned instead: nothing in this app ever reads
-  /// that exact (now-superseded) [LoopRequest] again, so its stale
-  /// `comparison` state is harmless — it stays cached (a bounded, modest
-  /// memory footprint: one entry per DISTINCT word finished this app
-  /// session, the same `keepAlive` tradeoff every other loop context in
-  /// this app — lab, quick practice, diagnosis — already makes) rather
-  /// than crashing the app trying to reclaim it.
+  /// The finished [TrainingLoopController] entry is handed back through
+  /// its `release()` (it stays pinned until then because this very check
+  /// reads its finished state); it is disposed as soon as nothing listens to
+  /// it, so a finished word loop is never kept for the app's lifetime.
   void resetIfFinished() {
     if (!_isFinished) return;
     _loop.dispose();
+    _ref.read(trainingLoopControllerProvider(request).notifier).release();
     _ref.invalidate(wordSpeakSessionIdProvider(wordId));
     request = requestFor(_ref, wordId);
     _loop = LoopMicTarget(_ref, request);
