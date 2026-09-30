@@ -96,31 +96,45 @@ const maxObservations = 6;
 const maxEvidenceLength = 160;
 
 /**
- * Sanitizes raw AI-reported observations against the closed catalog: unknown
- * codes, skill/polarity mismatches, and non-string fields are dropped;
- * evidence is truncated rather than rejected; the result never exceeds
- * `maxObservations`. Never throws -- a malformed `observations` value (e.g.
- * not an array) sanitizes to an empty array (design §9, "never failing the
- * response").
+ * Models often scramble `{skill, code, polarity}` (code in `skill`, the same
+ * code repeated in every field, ...), so the wire code is the first of
+ * `code`, `skill`, `polarity` that is a known AI-observable code.
+ */
+function resolveWireCode(record: Record<string, unknown>): WireBehaviorCode | undefined {
+  for (const candidate of [record.code, record.skill, record.polarity]) {
+    if (typeof candidate !== "string") continue;
+    const known = aiObservableCodes.get(candidate);
+    if (known) return known;
+  }
+  return undefined;
+}
+
+/**
+ * Sanitizes raw AI-reported observations against the closed catalog: entries
+ * without a recognisable AI-observable code are dropped; `skill`/`polarity`
+ * always come from the catalog, never from the model; duplicate codes keep
+ * the first; evidence is truncated rather than rejected; the result never
+ * exceeds `maxObservations`. Never throws -- a malformed `observations` value
+ * (e.g. not an array) sanitizes to an empty array (design §9, "never failing
+ * the response").
  */
 function sanitizeObservations(raw: unknown): SpeechObservation[] {
   if (!Array.isArray(raw)) return [];
   const sanitized: SpeechObservation[] = [];
+  const seenCodes = new Set<string>();
   for (const entry of raw) {
     if (sanitized.length >= maxObservations) break;
     if (entry === null || typeof entry !== "object") continue;
     const record = entry as Record<string, unknown>;
-    const { code, skill, polarity } = record;
-    if (typeof code !== "string" || typeof skill !== "string" || typeof polarity !== "string") {
-      continue;
-    }
-    const known = aiObservableCodes.get(code);
-    if (!known || known.area !== skill || known.polarity !== polarity) continue;
+    const known = resolveWireCode(record);
+    if (!known || seenCodes.has(known.wireCode)) continue;
+    seenCodes.add(known.wireCode);
     const evidenceRaw = record.evidence;
     const evidence = typeof evidenceRaw === "string" && evidenceRaw.trim().length > 0
       ? evidenceRaw.trim().slice(0, maxEvidenceLength)
       : undefined;
-    sanitized.push(evidence ? { skill, code, polarity, evidence } : { skill, code, polarity });
+    const observation = { skill: known.area, code: known.wireCode, polarity: known.polarity };
+    sanitized.push(evidence ? { ...observation, evidence } : observation);
   }
   return sanitized;
 }

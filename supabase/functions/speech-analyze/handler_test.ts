@@ -323,10 +323,6 @@ Deno.test("sanitizes AI-reported observations against the closed catalog", async
         observations: [
           // Unknown code -> dropped.
           { skill: "thinking", code: "not_a_real_code", polarity: "opportunity" },
-          // Skill/area mismatch -> dropped.
-          { skill: "language", code: "main_point_late", polarity: "opportunity" },
-          // Polarity mismatch -> dropped.
-          { skill: "thinking", code: "main_point_late", polarity: "strength" },
           // Voice/fluency codes are never AI-judged (D12) -> dropped even
           // though they exist in the catalog.
           { skill: "voice", code: "pace_fast", polarity: "opportunity" },
@@ -385,6 +381,117 @@ Deno.test("sanitizes AI-reported observations against the closed catalog", async
       "no_closing",
     ],
   );
+});
+
+async function sanitizedObservations(observations: unknown) {
+  const { handler } = setup({
+    evaluate: () =>
+      Promise.resolve({
+        coaching: { summary: "s", structure: "s", vocabulary: "s", strength: "s", retryCue: "s" },
+        observations,
+        // deno-lint-ignore no-explicit-any
+      } as any),
+  });
+  const response = await handler(post(validBody()));
+  assertEquals(response.status, 200);
+  return (await response.json()).observations as Array<Record<string, string>>;
+}
+
+Deno.test("keeps a valid catalog code and takes skill/polarity from the catalog", async () => {
+  const observations = await sanitizedObservations([
+    { skill: "language", code: "main_point_late", polarity: "strength", evidence: " punto " },
+    { code: "clear_main_point" },
+    { skill: "thinking", code: "no_closing", polarity: 7 },
+  ]);
+  assertEquals(observations, [
+    { skill: "thinking", code: "main_point_late", polarity: "opportunity", evidence: "punto" },
+    { skill: "thinking", code: "clear_main_point", polarity: "strength" },
+    { skill: "thinking", code: "no_closing", polarity: "opportunity" },
+  ]);
+});
+
+Deno.test("recovers a code the model put in the skill field", async () => {
+  const observations = await sanitizedObservations([
+    { skill: "main_point_late", code: "thinking", polarity: "opportunity" },
+    { skill: "vague_word", code: "junk", polarity: "language" },
+  ]);
+  assertEquals(observations, [
+    { skill: "thinking", code: "main_point_late", polarity: "opportunity" },
+    { skill: "language", code: "vague_word", polarity: "opportunity" },
+  ]);
+});
+
+Deno.test("recovers a code the model put in the polarity field", async () => {
+  const observations = await sanitizedObservations([
+    { skill: "thinking", code: "opportunity", polarity: "no_closing" },
+  ]);
+  assertEquals(observations, [
+    { skill: "thinking", code: "no_closing", polarity: "opportunity" },
+  ]);
+});
+
+Deno.test("recovers an entry whose three fields all repeat the code", async () => {
+  const observations = await sanitizedObservations([
+    { skill: "clear_main_point", code: "clear_main_point", polarity: "clear_main_point" },
+  ]);
+  assertEquals(observations, [
+    { skill: "thinking", code: "clear_main_point", polarity: "strength" },
+  ]);
+});
+
+Deno.test("drops entries with no recognisable AI-observable code in any field", async () => {
+  const observations = await sanitizedObservations([
+    { skill: "thinking", code: "not_a_real_code", polarity: "opportunity" },
+    { skill: "thinking", code: "opportunity", polarity: "strength" },
+    { skill: "language" },
+    {},
+    null,
+    "main_point_late",
+    { skill: 1, code: 2, polarity: 3 },
+  ]);
+  assertEquals(observations, []);
+});
+
+Deno.test("drops voice/fluency codes wherever the model puts them", async () => {
+  const observations = await sanitizedObservations([
+    { skill: "voice", code: "pace_fast", polarity: "opportunity" },
+    { skill: "pace_fast", code: "voice", polarity: "opportunity" },
+    { skill: "fluency", code: "filler_heavy", polarity: "filler_heavy" },
+  ]);
+  assertEquals(observations, []);
+});
+
+Deno.test("collapses duplicate codes keeping the first and still caps at six", async () => {
+  const observations = await sanitizedObservations([
+    { skill: "thinking", code: "main_point_late", polarity: "opportunity", evidence: "first" },
+    { skill: "main_point_late", code: "thinking", polarity: "opportunity", evidence: "second" },
+    { code: "no_clear_structure" },
+    { code: "missing_example" },
+    { code: "no_closing" },
+    { code: "clear_main_point" },
+    { code: "ordered_ideas" },
+    { code: "vague_word" },
+  ]);
+  assertEquals(observations.map((entry) => entry.code), [
+    "main_point_late",
+    "no_clear_structure",
+    "missing_example",
+    "no_closing",
+    "clear_main_point",
+    "ordered_ideas",
+  ]);
+  assertEquals(observations[0].evidence, "first");
+});
+
+Deno.test("evidence is trimmed, truncated to 160 chars and omitted when empty", async () => {
+  const observations = await sanitizedObservations([
+    { code: "vague_word", evidence: "  " + "y".repeat(200) + "  " },
+    { code: "repeated_word", evidence: "   " },
+    { code: "weak_connector", evidence: 5 },
+  ]);
+  assertEquals(observations[0].evidence, "y".repeat(160));
+  assertEquals("evidence" in observations[1], false);
+  assertEquals("evidence" in observations[2], false);
 });
 
 Deno.test("defaults to an empty observations array when evaluate returns something malformed", async () => {
