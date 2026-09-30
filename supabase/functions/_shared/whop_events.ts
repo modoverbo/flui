@@ -181,6 +181,49 @@ export function entitlementUpdateFromEvent(
   };
 }
 
+/**
+ * What `whop_webhook_events.payload` keeps of an event: enough to debug idempotency and ordering
+ * problems, nothing that identifies the buyer. Keys mirror the table's allow-list CHECK.
+ */
+export interface MinimizedWhopPayload {
+  timestamp?: string;
+  membership_id?: string;
+  plan_id?: string;
+  status?: string;
+  app_user_id?: string;
+}
+
+const MAX_STORED_VALUE_LENGTH = 128;
+
+function stored(value: unknown): string | undefined {
+  const text = typeof value === "number" && Number.isFinite(value) ? String(value) : value;
+  return nonEmptyString(text)?.slice(0, MAX_STORED_VALUE_LENGTH);
+}
+
+/**
+ * Reduces a Whop webhook envelope to the fields worth keeping. The full body carries the buyer's
+ * Whop identity (email, name, ...) and the log outlives account deletion (ADR 0004, decision 9),
+ * so everything else is dropped before the insert. `app_user_id` is kept only when it is a UUID.
+ */
+export function minimizeWhopPayload(envelope: WhopEnvelope): MinimizedWhopPayload {
+  const membership = envelope.data;
+  const rawUserId = isRecord(membership.metadata) ? membership.metadata.app_user_id : undefined;
+  const plan = isRecord(membership.plan) ? membership.plan.id : undefined;
+
+  const minimized: MinimizedWhopPayload = {
+    timestamp: stored(envelope.timestamp),
+    membership_id: stored(membership.id),
+    plan_id: stored(plan) ?? stored(membership.plan_id),
+    status: stored(membership.status),
+    app_user_id: typeof rawUserId === "string" && UUID_PATTERN.test(rawUserId)
+      ? rawUserId.toLowerCase()
+      : undefined,
+  };
+  return Object.fromEntries(
+    Object.entries(minimized).filter(([, value]) => value !== undefined),
+  ) as MinimizedWhopPayload;
+}
+
 /** True when the event belongs to a different Whop company than the configured one. */
 export function isForeignAccount(envelope: WhopEnvelope, companyId: string | undefined): boolean {
   if (!companyId) return false;

@@ -72,8 +72,12 @@ Whop facts that shape the design:
      end, `membership.deactivated`. The `entitlements` row is gone with the user (`on delete cascade`),
      so the write hits a foreign-key violation that `whop-webhook` maps to `unknown_user` and answers
      200; Whop stops retrying and no orphan row is created.
-   - The `whop_webhook_events` log is not tied to the user and survives deletion; it stores full
-     payloads, which may include the buyer's Whop identity. Minimising it is an open follow-up.
+   - The `whop_webhook_events` log is not tied to the user and survives deletion, so its payload is
+     minimised: `whop-webhook` stores only `timestamp`, `membership_id`, `plan_id`, `status` and
+     `app_user_id` (the webhook id and event type are their own columns) and drops the rest of the
+     body, including the buyer's Whop identity. A CHECK constraint enforces that allow-list, and
+     migration `20260930130000_whop_webhook_events_minimize_payload.sql` scrubbed the rows stored
+     before it.
 
 ## Consequences
 

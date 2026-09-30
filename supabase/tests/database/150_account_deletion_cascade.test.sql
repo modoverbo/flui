@@ -39,10 +39,11 @@
 -- carries no `user_id` column and no FK to `auth.users` at all (checked by
 -- assertion 1's exhaustive enumeration below -- it simply does not appear).
 -- It is a service-role-only idempotency/audit log of verified Whop webhook
--- deliveries, keyed by `webhook_id`. Its `payload` column stores the raw
--- Whop event body, which embeds `metadata.app_user_id` (this app's user id,
--- per `_shared/whop_events.ts`) and Whop's own membership/plan identifiers,
--- but as opaque JSON, not a first-class column -- there is no FK to add.
+-- deliveries, keyed by `webhook_id`. Its `payload` column stores a
+-- minimised Whop event (`_shared/whop_events.ts` `minimizeWhopPayload`: this
+-- app's user id from `metadata.app_user_id` plus Whop's membership/plan ids,
+-- status and timestamp; never the buyer's identity), but as opaque JSON, not a
+-- first-class column -- there is no FK to add.
 -- This is a deliberate retention decision (idempotency requires remembering
 -- which webhook ids were already processed, indefinitely, independent of
 -- whether the subscriber account still exists), not a gap: `whop-webhook`'s
