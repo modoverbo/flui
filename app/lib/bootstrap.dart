@@ -6,7 +6,6 @@ import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/clock/clock_providers.dart';
 import 'package:flui/core/config/app_config.dart';
 import 'package:flui/core/config/app_config_provider.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
@@ -177,8 +176,6 @@ List<Override> fakeBackendOverrides({
     audioConsentRepositoryProvider.overrideWithValue(
       FakeAudioConsentRepository(currentUserId: currentUserId),
     ),
-    // Mandatory diagnosis (U14a): built by U12b, first reachable via the
-    // diagnosis gate once `speakingGym` is on.
     skillProfileRepositoryProvider.overrideWithValue(
       FakeSkillProfileRepository(currentUserId: currentUserId),
     ),
@@ -188,10 +185,6 @@ List<Override> fakeBackendOverrides({
         onReturn: () => ref.read(goRouterProvider).go(AppRoutes.checkoutReturn),
       ),
     ),
-    // "Eliminar mi cuenta" (U22e): not deployed to production yet, but
-    // harmless to wire everywhere — the entry point stays behind
-    // `speakingGymEnabledProvider` (U22e.4), so it is unreachable while the
-    // flag is off in every backend.
     accountDeletionRepositoryProvider.overrideWithValue(
       FakeAccountDeletionRepository(),
     ),
@@ -229,16 +222,8 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     exerciseAttemptRepositoryProvider.overrideWithValue(
       SupabaseExerciseAttemptRepository(client, currentUserId: currentUserId),
     ),
-    // includeTrainingPlan (U15a review fix) is wired from
-    // speakingGymEnabledProvider, not read eagerly here: production
-    // migrations are applied manually, so the flag is the only signal
-    // that the U7 migration's columns actually exist.
-    dailySessionRepositoryProvider.overrideWith(
-      (ref) => SupabaseDailySessionRepository(
-        client,
-        currentUserId: currentUserId,
-        includeTrainingPlan: ref.watch(speakingGymEnabledProvider),
-      ),
+    dailySessionRepositoryProvider.overrideWithValue(
+      SupabaseDailySessionRepository(client, currentUserId: currentUserId),
     ),
     streakRepairRepositoryProvider.overrideWithValue(
       SupabaseStreakRepairRepository(client, currentUserId: currentUserId),
@@ -261,10 +246,8 @@ Future<List<Override>> supabaseBackendOverrides(AppConfig config) async {
     skillProfileRepositoryProvider.overrideWithValue(
       SupabaseSkillProfileRepository(client),
     ),
-    // "Eliminar mi cuenta" (U22e) calls `account-delete`. That function is
-    // NOT deployed to production yet (per this task's production-safety
-    // rule); wiring the real adapter here is safe regardless, since the
-    // entry point stays behind `speakingGymEnabledProvider` (U22e.4).
+    // "Eliminar mi cuenta" (U22e) calls `account-delete` — must be deployed
+    // to production before this ships (see the PR's pre-merge checklist).
     accountDeletionRepositoryProvider.overrideWithValue(
       SupabaseAccountDeletionRepository(client),
     ),

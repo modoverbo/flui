@@ -41,54 +41,43 @@ abstract final class AppRoutes {
   static const timeBudget = '/today/time';
 
   /// HOY's own speaking loop (U15a, design D41), a branch child of [today]
-  /// (design D30 — no `parentNavigatorKey`, unlike [timeBudget]). Only
-  /// reachable while `speakingGym` is on.
+  /// (design D30 — no `parentNavigatorKey`, unlike [timeBudget]).
   static const todayTrain = '$today/train';
   static const words = '/words';
   static const progress = '/progress';
 
-  /// Habla's tab landing: the challenge's own `ready` phase. Live while
-  /// `speakingGym` is off; redirects to [train] while it is on (design D32,
-  /// U16) — see [gymRetiredRoutes].
+  /// The old Habla/speaking-challenge tab's landing route. Retired (U16,
+  /// design D32) — deep links redirect to [train] via [retiredRoutes].
   static const speakingChallenge = '/speaking/challenge';
 
-  /// The challenge itself (recording through comparison), nested under
-  /// [speakingChallenge] but rendered full screen on the root navigator —
-  /// the same take-over-from-a-tab pattern as `/today/time`. Retired
-  /// alongside [speakingChallenge] while `speakingGym` is on.
+  /// The old challenge-recording route, nested under [speakingChallenge].
+  /// Retired alongside it (U16) — see [retiredRoutes].
   static const speakingChallengeLive = '$speakingChallenge/live';
 
   /// ENTRENAR's tab landing: 4 training-mode cards (U16), replacing the
-  /// Habla/speaking-challenge tab ONLY while `speakingGym` is on (design
-  /// D32) — not reachable while it is off.
+  /// old Habla/speaking-challenge tab.
   static const train = '/train';
 
   /// One training-lab mode's own loop, nested under [train] but rendered
-  /// on the branch navigator, not a full-screen take-over (design D30) —
-  /// unlike [speakingChallengeLive]. Only reachable while `speakingGym` is
-  /// on.
+  /// on the branch navigator, not a full-screen take-over (design D30).
   static String trainMode(TrainingMode mode) => '$train/${mode.name}';
 
   /// Was a tab of its own. "Repaso extra" now lives on Hoy, and the scenes
   /// live in the word detail, so both redirect instead of 404-ing old links.
   static const practice = '/practice';
   static const reading = '/reading';
+
+  /// Deep links to retired routes redirect here instead of 404-ing.
+  /// [speakingChallenge]/[speakingChallengeLive] were the old Habla tab
+  /// (U16, design D32), replaced by [train].
   static const Map<String, String> retiredRoutes = {
     practice: today,
     reading: words,
-  };
-
-  /// Retired ONLY while `speakingGym` is on (U16, design D32) — consulted
-  /// by `appRedirect`'s `speakingGym` parameter, never unconditionally like
-  /// [retiredRoutes]. While the flag is off, [speakingChallenge]/
-  /// [speakingChallengeLive] resolve to their own live routes instead.
-  static const Map<String, String> gymRetiredRoutes = {
     speakingChallenge: train,
     speakingChallengeLive: train,
   };
 
-  /// The mandatory diagnosis (design part-3 §11, D16), reached from the
-  /// router's own redirect while `speakingGym` is on — not part of any
+  /// The mandatory diagnosis (design part-3 §11, D16) — not part of any
   /// shell branch: the gate blocks every tab, so all 3 pages take over the
   /// root navigator directly, the same pattern as [session].
   static const diagnosis = '/diagnosis';
@@ -112,7 +101,6 @@ abstract final class AppRoutes {
   /// [wordDetail], not a full-screen take-over (design D30, matches
   /// [todayTrain]/[trainMode]). Reached from `TodayWordTarget`/
   /// `WordSpeakTarget`'s first captured attempt, never tapped directly.
-  /// Only reachable while `speakingGym` is on.
   static String wordSpeak(String wordId) => '${wordDetail(wordId)}/speak';
 
   static String wordDetailFromCategory({
@@ -126,14 +114,13 @@ abstract final class AppRoutes {
   /// Routes that need today's time budget first (asked once per local day).
   /// "Tu progreso" stays reachable for the account and sign out.
   ///
-  /// While [speakingGym] is on (U15a, design D41), [today] itself no
-  /// longer needs a persisted session first — it shows duration chips and
-  /// a provisional plan instead — but its own loop route ([todayTrain])
-  /// picks up the requirement in its place, since starting the loop
-  /// always implies a session already exists by then.
-  static bool needsDailyBudget(String path, {bool speakingGym = false}) =>
-      (!speakingGym && path == today) ||
-      (speakingGym && path == todayTrain) ||
+  /// [today] itself no longer needs a persisted session first (U15a,
+  /// design D41) — it shows duration chips and a provisional plan instead
+  /// — but its own loop route ([todayTrain]) picks up the requirement in
+  /// its place, since starting the loop always implies a session already
+  /// exists by then.
+  static bool needsDailyBudget(String path) =>
+      path == todayTrain ||
       path == session ||
       path == words ||
       path.startsWith('$words/');

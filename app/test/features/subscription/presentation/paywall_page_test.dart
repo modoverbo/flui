@@ -12,10 +12,8 @@ import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
-import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
-import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/subscription/data/fake_checkout_launcher.dart';
 import 'package:flui/features/subscription/data/fake_subscription_repository.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
@@ -40,6 +38,7 @@ void main() {
   late FakeSubscriptionRepository subscriptions;
   late FakeCheckoutLauncher launcher;
   late InMemoryOnboardingStore store;
+  late FakeSkillProfileRepository skillProfiles;
   late int returns;
 
   setUp(() {
@@ -59,11 +58,9 @@ void main() {
       subscriptions: subscriptions,
       onReturn: () => returns++,
     );
-    store = InMemoryOnboardingStore(
-      answers: const OnboardingAnswers(
-        contexts: {Scene.trabajo, Scene.entrevista},
-        tone: SpeakingTone.precise,
-      ),
+    store = InMemoryOnboardingStore();
+    skillProfiles = FakeSkillProfileRepository(
+      currentUserId: () => auth.currentUser?.id,
     );
   });
 
@@ -83,6 +80,7 @@ void main() {
         subscriptionRepositoryProvider.overrideWithValue(subscriptions),
         checkoutLauncherProvider.overrideWithValue(launcher),
         onboardingStoreProvider.overrideWithValue(store),
+        skillProfileRepositoryProvider.overrideWithValue(skillProfiles),
       ],
       surfaceSize: surfaceSize,
     );
@@ -95,17 +93,46 @@ void main() {
   }
 
   group('page 1: tu plan', () {
-    testWidgets('greets by name and echoes the onboarding answers', (
-      tester,
-    ) async {
+    testWidgets('greets by name; no skill profile yet renders static, '
+        'profile-independent copy', (tester) async {
       await pumpPaywall(tester);
 
       expect(find.text('Tu plan está listo, Ana.'), findsOneWidget);
-      expect(find.text('Palabras para trabajo y entrevista.'), findsOneWidget);
-      expect(find.text('Con el tono que elegiste: preciso.'), findsOneWidget);
+      expect(
+        find.text('Vas a practicar con retos reales de hablar.'),
+        findsOneWidget,
+      );
       expect(
         find.text('Una palabra al día, en el tiempo que tengas.'),
         findsOneWidget,
+      );
+    });
+
+    testWidgets('an existing skill profile echoes the top-opportunity area', (
+      tester,
+    ) async {
+      skillProfiles.seedProfile(
+        SkillProfileRecord(
+          id: 'diag-1',
+          kind: SkillProfileKind.baseline,
+          diagnosedAt: DateTime(2026, 9, 5),
+          profile: const SkillProfile(
+            topArea: SkillArea.thinking,
+            secondArea: SkillArea.language,
+            strengths: [],
+            evidence: [],
+          ),
+        ),
+      );
+      await pumpPaywall(tester);
+
+      expect(
+        find.text('Vas a seguir trabajando en cómo organizas tus ideas.'),
+        findsOneWidget,
+      );
+      expect(
+        find.text('Vas a practicar con retos reales de hablar.'),
+        findsNothing,
       );
     });
 
@@ -563,24 +590,29 @@ void main() {
       await tester.pumpAndSettle();
     }
 
-    testWidgets('shows a compact editorial summary from saved answers', (
+    testWidgets(
+      'always renders the static copy — a profile can never exist before '
+      'the account does',
+      (tester) async {
+        await pumpPreview(tester);
+
+        expect(find.text('Tu plan está listo.'), findsOneWidget);
+        expect(
+          find.text('Vas a practicar con retos reales de hablar.'),
+          findsOneWidget,
+        );
+        expect(
+          find.text('Una palabra al día, en el tiempo que tengas.'),
+          findsOneWidget,
+        );
+        expect(tester.takeException(), isNull);
+      },
+    );
+
+    testWidgets('the title composition uses editorial hierarchy', (
       tester,
     ) async {
-      await store.writeAnswers(
-        const OnboardingAnswers(
-          contexts: {Scene.trabajo, Scene.entrevista},
-          tone: SpeakingTone.precise,
-        ),
-      );
       await pumpPreview(tester);
-
-      expect(find.text('Tu plan está listo.'), findsOneWidget);
-      expect(find.text('Palabras para trabajo y entrevista.'), findsOneWidget);
-      expect(find.text('Con el tono que elegiste: preciso.'), findsOneWidget);
-      expect(
-        find.text('Una palabra al día, en el tiempo que tengas.'),
-        findsOneWidget,
-      );
 
       final title = tester.widget<Text>(find.text('Tu plan está listo.'));
       expect(title.style?.color, FluiColors.charcoal);
@@ -593,7 +625,7 @@ void main() {
               (widget.decoration as BoxDecoration).color ==
                   FluiColors.greenTint,
         ),
-        findsNWidgets(2),
+        findsOneWidget,
       );
       expect(
         find.byWidgetPredicate(
@@ -605,55 +637,6 @@ void main() {
         ),
         findsOneWidget,
       );
-    });
-
-    testWidgets('uses the existing general copy when answers are missing', (
-      tester,
-    ) async {
-      await store.writeAnswers(OnboardingAnswers.empty);
-      await pumpPreview(tester);
-
-      expect(find.text('Tu plan está listo.'), findsOneWidget);
-      expect(
-        find.text('Palabras para cualquier conversación.'),
-        findsOneWidget,
-      );
-      expect(find.text('Con el tono que elijas.'), findsOneWidget);
-      expect(
-        find.text('Una palabra al día, en el tiempo que tengas.'),
-        findsOneWidget,
-      );
-      expect(find.text('Palabras para trabajo y entrevista.'), findsNothing);
-      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
-    });
-
-    testWidgets('does not imply an unanswered tone for a partial answer', (
-      tester,
-    ) async {
-      await store.writeAnswers(
-        const OnboardingAnswers(contexts: {Scene.entrevista}),
-      );
-      await pumpPreview(tester);
-
-      expect(find.text('Palabras para entrevista.'), findsOneWidget);
-      expect(find.text('Con el tono que elijas.'), findsOneWidget);
-      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
-    });
-
-    testWidgets('does not imply an unanswered context for a partial answer', (
-      tester,
-    ) async {
-      await store.writeAnswers(
-        const OnboardingAnswers(tone: SpeakingTone.precise),
-      );
-      await pumpPreview(tester);
-
-      expect(
-        find.text('Palabras para cualquier conversación.'),
-        findsOneWidget,
-      );
-      expect(find.text('Con el tono que elegiste: preciso.'), findsOneWidget);
-      expect(find.text('Palabras para entrevista.'), findsNothing);
     });
 
     testWidgets('keeps the summary dock reachable on a short narrow screen', (
@@ -698,112 +681,5 @@ void main() {
       expect(await store.readSelectedPlanId(), 'monthly');
       expect(subscriptions.checkoutRequests, isEmpty);
     });
-  });
-
-  group('with speakingGym on (U14b, 2-state copy)', () {
-    late FakeSkillProfileRepository skillProfiles;
-
-    setUp(() {
-      skillProfiles = FakeSkillProfileRepository(
-        currentUserId: () => auth.currentUser?.id,
-      );
-    });
-
-    Future<void> pumpPaywallGym(WidgetTester tester) async {
-      reduceMotion(tester);
-      await pumpRoutedPage(
-        tester,
-        location: AppRoutes.paywall,
-        page: const PaywallPage(),
-        overrides: [
-          authRepositoryProvider.overrideWithValue(auth),
-          subscriptionRepositoryProvider.overrideWithValue(subscriptions),
-          checkoutLauncherProvider.overrideWithValue(launcher),
-          onboardingStoreProvider.overrideWithValue(store),
-          skillProfileRepositoryProvider.overrideWithValue(skillProfiles),
-          speakingGymEnabledProvider.overrideWithValue(true),
-        ],
-        surfaceSize: const Size(420, 1600),
-      );
-      await tester.pumpAndSettle();
-    }
-
-    testWidgets('first-ever view (no skill profile yet) renders static, '
-        'profile-independent copy — never the retired onboarding echo', (
-      tester,
-    ) async {
-      await pumpPaywallGym(tester);
-
-      expect(
-        find.text('Vas a practicar con retos reales de hablar.'),
-        findsOneWidget,
-      );
-      expect(find.text('Palabras para trabajo y entrevista.'), findsNothing);
-      expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
-      expect(find.text('Palabras para cualquier conversación.'), findsNothing);
-      expect(find.text('Con el tono que elijas.'), findsNothing);
-    });
-
-    testWidgets('reactivation view (an existing skill profile) echoes the '
-        'top-opportunity area', (tester) async {
-      skillProfiles.seedProfile(
-        SkillProfileRecord(
-          id: 'diag-1',
-          kind: SkillProfileKind.baseline,
-          diagnosedAt: DateTime(2026, 9, 5),
-          profile: const SkillProfile(
-            topArea: SkillArea.thinking,
-            secondArea: SkillArea.language,
-            strengths: [],
-            evidence: [],
-          ),
-        ),
-      );
-      await pumpPaywallGym(tester);
-
-      expect(
-        find.text('Vas a seguir trabajando en cómo organizas tus ideas.'),
-        findsOneWidget,
-      );
-      expect(
-        find.text('Vas a practicar con retos reales de hablar.'),
-        findsNothing,
-      );
-    });
-  });
-
-  group('/plan before the account exists, with speakingGym on', () {
-    Future<void> pumpPreviewGym(WidgetTester tester) async {
-      reduceMotion(tester);
-      await pumpRoutedPage(
-        tester,
-        location: AppRoutes.plan,
-        page: const PlanPreviewPage(),
-        otherRoutes: [AppRoutes.register],
-        overrides: [
-          subscriptionRepositoryProvider.overrideWithValue(subscriptions),
-          onboardingStoreProvider.overrideWithValue(store),
-          speakingGymEnabledProvider.overrideWithValue(true),
-        ],
-        surfaceSize: const Size(420, 1600),
-      );
-      await tester.pumpAndSettle();
-    }
-
-    testWidgets(
-      'always renders the static copy — a profile can never exist before '
-      'the account does',
-      (tester) async {
-        await pumpPreviewGym(tester);
-
-        expect(
-          find.text('Vas a practicar con retos reales de hablar.'),
-          findsOneWidget,
-        );
-        expect(find.text('Palabras para trabajo y entrevista.'), findsNothing);
-        expect(find.text('Con el tono que elegiste: preciso.'), findsNothing);
-        expect(tester.takeException(), isNull);
-      },
-    );
   });
 }

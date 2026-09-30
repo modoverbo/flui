@@ -9,23 +9,20 @@ import 'package:flui/features/training/domain/training_mode.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  group('speaking-challenge deep links, gated by speakingGym (U16, D32)', () {
-    test('gymRetiredRoutes maps both old paths to train; the unconditional '
-        'retiredRoutes never does (that would break the flag-off shell)', () {
+  group('speaking-challenge deep links (U16, D32)', () {
+    test('retiredRoutes maps both old paths to train', () {
       expect(
-        AppRoutes.gymRetiredRoutes[AppRoutes.speakingChallenge],
+        AppRoutes.retiredRoutes[AppRoutes.speakingChallenge],
         AppRoutes.train,
       );
       expect(
-        AppRoutes.gymRetiredRoutes[AppRoutes.speakingChallengeLive],
+        AppRoutes.retiredRoutes[AppRoutes.speakingChallengeLive],
         AppRoutes.train,
       );
-      expect(AppRoutes.retiredRoutes[AppRoutes.speakingChallenge], isNull);
-      expect(AppRoutes.retiredRoutes[AppRoutes.speakingChallengeLive], isNull);
     });
 
-    test('speakingGym ON redirects a granted, signed-in visit to either old '
-        'path, never 404s', () {
+    test('redirects a granted, signed-in visit to either old path, never '
+        '404s', () {
       for (final oldPath in [
         AppRoutes.speakingChallenge,
         AppRoutes.speakingChallengeLive,
@@ -35,27 +32,9 @@ void main() {
           access: AccessGate.granted,
           daily: DailyGate.planned,
           location: Uri.parse(oldPath),
-          speakingGym: true,
         );
 
         expect(result, AppRoutes.train, reason: 'redirecting $oldPath');
-      }
-    });
-
-    test('speakingGym OFF (the default) never redirects either old path — '
-        'they stay live routes', () {
-      for (final oldPath in [
-        AppRoutes.speakingChallenge,
-        AppRoutes.speakingChallengeLive,
-      ]) {
-        final result = appRedirect(
-          auth: AuthStatus.signedIn,
-          access: AccessGate.granted,
-          daily: DailyGate.planned,
-          location: Uri.parse(oldPath),
-        );
-
-        expect(result, isNull, reason: 'staying at $oldPath');
       }
     });
   });

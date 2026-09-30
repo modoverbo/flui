@@ -7,8 +7,7 @@ import 'package:material_ui/material_ui.dart';
 
 /// The integration widget: wires a raw dBFS amplitude [Stream] (typically
 /// `SpeechRecorder.amplitude`) through [AmplitudePipeline] into
-/// [SpeakingBubble], replacing `VoiceOrb`'s role in
-/// `SpeakingChallengePage`.
+/// [SpeakingBubble].
 ///
 /// Per `docs/redesign/05-bubble-state-machine.md` §4 step 4: the pipeline
 /// updates once per ~120ms recorder tick, but the widget renders at 60fps

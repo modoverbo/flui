@@ -63,7 +63,8 @@ void main() {
         .cloze!;
     await c.answerCloze(cloze.exercise.correctOption.id);
     await c.continueStep(); // -> formRecall
-    await c.submitFormRecall('perspicaz');
+    speech.nextTranscribeText = 'perspicaz';
+    await c.answerFormRecallAloud(_audio());
     await c.continueStep(); // -> readings (scenes held back)
     await c.continueStep(); // -> production
   }
@@ -87,7 +88,8 @@ void main() {
   test('is a pass-through once the self-check phase is reached, no further '
       'capture', () async {
     await reachProduction();
-    controller().submitProduction('Tu pregunta fue muy perspicaz, Carla.');
+    speech.nextTranscribeText = 'Tu pregunta fue muy perspicaz, Carla.';
+    await controller().answerProductionAloud(_audio());
     final target = container.read(productionMicTargetProvider(mode));
     expect(target.availability, isA<MicPassThrough>());
   });
@@ -123,7 +125,8 @@ void main() {
     final sub = target.changes.listen((_) => fired++);
     addTearDown(sub.cancel);
 
-    controller().submitProduction('demasiado corto');
+    speech.nextTranscribeText = 'demasiado corto';
+    await controller().answerProductionAloud(_audio());
     await Future<void>.delayed(Duration.zero);
 
     expect(fired, greaterThan(0));

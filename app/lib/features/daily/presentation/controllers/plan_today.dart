@@ -1,5 +1,4 @@
 import 'package:flui/core/clock/clock_providers.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
@@ -31,15 +30,12 @@ const _flatDifficulty = 1;
 
 /// Plans and saves today's `daily_sessions` row (design part-3 §5, U15a):
 /// the word-review plan (`SessionPlanner`, unchanged — composed, not
-/// rewritten) plus, while `speakingGymEnabledProvider` is on, the speaking
-/// goal (`TrainingPlanner.planDay`) woven into the SAME row's
-/// `focus_area`/`challenge_id`/`woven_word_ids` columns.
+/// rewritten) plus the speaking goal (`TrainingPlanner.planDay`) woven into
+/// the SAME row's `focus_area`/`challenge_id`/`woven_word_ids` columns.
 ///
 /// Extracted from `TimeBudgetController.start` so both the existing
-/// "¿Cuánto tiempo tienes hoy?" flow and HOY's new budget-free chips/mic
-/// entry point (`TodayStartTarget`) share one persistence path. Flag off,
-/// this is byte-identical to `TimeBudgetController.start`'s prior body —
-/// no training fields are ever computed or written.
+/// "¿Cuánto tiempo tienes hoy?" flow and HOY's budget-free chips/mic entry
+/// point (`TodayStartTarget`) share one persistence path.
 final class PlanToday {
   const new(this._ref);
 
@@ -82,15 +78,12 @@ final class PlanToday {
         neighbourThemeIds: inputs.neighbourThemeIds,
       );
 
-      DailyTrainingPlan? trainingPlan;
-      if (_ref.read(speakingGymEnabledProvider)) {
-        trainingPlan = await _trainingPlan(
-          userId: userId,
-          today: today,
-          budgetMinutes: budget.minutes,
-          dueReviewWordIds: wordPlan.reviewWordIds,
-        );
-      }
+      final trainingPlan = await _trainingPlan(
+        userId: userId,
+        today: today,
+        budgetMinutes: budget.minutes,
+        dueReviewWordIds: wordPlan.reviewWordIds,
+      );
 
       final session = DailySession(
         localDate: today,
@@ -120,10 +113,8 @@ final class PlanToday {
   /// [budget] — HOY's chips card uses this before a session exists, so
   /// changing a chip re-plans in memory without writing anything (design
   /// part-3 §11 U15a: "changing a chip re-plans the provisional plan").
-  /// `null` while signed out, without a diagnosis profile yet, or with the
-  /// flag off.
+  /// `null` while signed out or without a diagnosis profile yet.
   Future<DailyTrainingPlan?> previewTrainingGoal(TimeBudget budget) async {
-    if (!_ref.read(speakingGymEnabledProvider)) return null;
     final userId = (await _ref.readFuture(authUserProvider.future))?.id;
     if (userId == null) return null;
     final catalog = await _ref.readFuture(catalogProvider.future);

@@ -1,10 +1,8 @@
 import 'dart:async';
 
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
 import 'package:flui/features/subscription/presentation/widgets/paywall_flow.dart';
@@ -28,23 +26,18 @@ class PlanPreviewPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
     final plans = ref.watch(subscriptionPlansProvider);
-    final answers =
-        ref.watch(onboardingAnswersControllerProvider).value ??
-        OnboardingAnswers.empty;
     final selected = ref.watch(preselectedPlanProvider).value;
-    // No skill profile is ever passed here: this page runs before the
-    // account exists, and diagnosis only runs after signup+trial start
-    // (spec `spoken-diagnosis`), so a profile can never exist yet (U14b).
-    final speakingGym = ref.watch(speakingGymEnabledProvider);
 
     return Scaffold(
       body: switch (plans) {
         AsyncValue(hasValue: true, :final value?) when value.isNotEmpty =>
+          // No skill profile is ever passed here: this page runs before the
+          // account exists, and diagnosis only runs after signup+trial
+          // start (spec `spoken-diagnosis`), so a profile can never exist
+          // yet (U14b).
           PaywallFlow(
             mode: PaywallMode.preview,
             plans: value,
-            answers: answers,
-            speakingGym: speakingGym,
             selectedPlanId: selected,
             onSelected: (id) => unawaited(
               ref.read(preselectedPlanProvider.notifier).choose(id),

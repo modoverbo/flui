@@ -57,7 +57,7 @@ SkillProfileRecord _profileRecord() => SkillProfileRecord(
 void main() {
   late LearningFakes fakes;
 
-  setUp(() => fakes = LearningFakes(speakingGym: true));
+  setUp(() => fakes = LearningFakes());
   tearDown(() => fakes.dispose());
 
   ProviderContainer container({List<Challenge>? challenges}) {
@@ -68,9 +68,8 @@ void main() {
   }
 
   group('PlanToday.run — word plan (regression, U15a.1-U15a.3)', () {
-    test('flag off: persists exactly what SessionPlanner.plan computes, no '
-        'training fields', () async {
-      fakes = LearningFakes();
+    test('with no diagnosis profile: persists exactly what '
+        'SessionPlanner.plan computes, no training fields', () async {
       final ref = container();
       addTearDown(ref.dispose);
 
@@ -102,25 +101,27 @@ void main() {
       expect(persisted.wovenWordIds, isEmpty);
     });
 
-    test('flag on: the word plan is unchanged, only the training fields are '
-        'new', () async {
-      final ref = container();
-      addTearDown(ref.dispose);
+    test(
+      'the word plan is deterministic regardless of the training fields',
+      () async {
+        final ref = container();
+        addTearDown(ref.dispose);
 
-      await ref.read(planTodayProvider).run(budget: TimeBudget.ten);
-      final withFlag =
-          (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+        await ref.read(planTodayProvider).run(budget: TimeBudget.ten);
+        final first =
+            (await fakes.sessions.fetchSessions()).valueOrNull!.single;
 
-      fakes = LearningFakes();
-      final refFlagOff = container();
-      addTearDown(refFlagOff.dispose);
-      await refFlagOff.read(planTodayProvider).run(budget: TimeBudget.ten);
-      final withoutFlag =
-          (await fakes.sessions.fetchSessions()).valueOrNull!.single;
+        fakes = LearningFakes();
+        final refAgain = container();
+        addTearDown(refAgain.dispose);
+        await refAgain.read(planTodayProvider).run(budget: TimeBudget.ten);
+        final second =
+            (await fakes.sessions.fetchSessions()).valueOrNull!.single;
 
-      expect(withFlag.plannedWordIds, withoutFlag.plannedWordIds);
-      expect(withFlag.reviewWordIds, withoutFlag.reviewWordIds);
-    });
+        expect(first.plannedWordIds, second.plannedWordIds);
+        expect(first.reviewWordIds, second.reviewWordIds);
+      },
+    );
   });
 
   group('PlanToday.run — training plan (U15a.2)', () {
@@ -246,8 +247,7 @@ void main() {
   });
 
   group('PlanToday.previewTrainingGoal (U15a.4-U15a.5)', () {
-    test('flag off: always null', () async {
-      fakes = LearningFakes();
+    test('with no diagnosis profile: always null', () async {
       final ref = container();
       addTearDown(ref.dispose);
 
@@ -258,8 +258,8 @@ void main() {
       expect(preview, isNull);
     });
 
-    test('flag on, signed out: null, never throws', () async {
-      fakes = LearningFakes(signedIn: false, speakingGym: true);
+    test('signed out: null, never throws', () async {
+      fakes = LearningFakes(signedIn: false);
       final ref = container();
       addTearDown(ref.dispose);
 
@@ -270,24 +270,21 @@ void main() {
       expect(preview, isNull);
     });
 
-    test(
-      'flag on, with a profile: previews without persisting anything',
-      () async {
-        fakes.skillProfiles.seedProfile(_profileRecord());
-        final ref = container(
-          challenges: [_challenge(id: 'c-thinking', skill: Skill.thinking)],
-        );
-        addTearDown(ref.dispose);
+    test('with a profile: previews without persisting anything', () async {
+      fakes.skillProfiles.seedProfile(_profileRecord());
+      final ref = container(
+        challenges: [_challenge(id: 'c-thinking', skill: Skill.thinking)],
+      );
+      addTearDown(ref.dispose);
 
-        final preview = await ref
-            .read(planTodayProvider)
-            .previewTrainingGoal(TimeBudget.twenty);
+      final preview = await ref
+          .read(planTodayProvider)
+          .previewTrainingGoal(TimeBudget.twenty);
 
-        expect(preview, isNotNull);
-        expect(preview!.challenge?.id, 'c-thinking');
-        expect((await fakes.sessions.fetchSessions()).valueOrNull, isEmpty);
-      },
-    );
+      expect(preview, isNotNull);
+      expect(preview!.challenge?.id, 'c-thinking');
+      expect((await fakes.sessions.fetchSessions()).valueOrNull, isEmpty);
+    });
 
     test(
       'changing the duration re-plans the provisional plan in memory',

@@ -287,15 +287,11 @@ class SessionController extends _$SessionController {
     _set(current.copyWith(cloze: cloze.dismissFeedback()));
   }
 
-  Future<void> submitFormRecall(String text) =>
-      _updateFormRecall((check) => check.submit(text));
-
   Future<void> takeFormRecallHint() =>
       _updateFormRecall((check) => check.takeHint());
 
-  /// The spoken counterpart of [submitFormRecall] (design D34-D36, U17b):
-  /// transcribes [audio] (`mode=transcribe`, no LLM, 1 quota unit) and
-  /// matches it through [FormRecallCheck.submitHeard].
+  /// Transcribes [audio] (design D34-D36, U17b: `mode=transcribe`, no LLM,
+  /// 1 quota unit) and matches it through [FormRecallCheck.submitHeard].
   ///
   /// Guarded at this domain primitive, not only by the mic target's own
   /// `availability` (the U17 review-finding pattern: a UI-level gate alone
@@ -329,13 +325,6 @@ class SessionController extends _$SessionController {
   Future<MicDelivery> _onFormRecallHeard(String transcript) async {
     await _updateFormRecall((check) => check.submitHeard(transcript));
     return const MicAccepted();
-  }
-
-  void submitProduction(String text) {
-    final current = state.value;
-    final production = current?.production;
-    if (current == null || production == null) return;
-    _set(current.copyWith(production: production.submit(text)));
   }
 
   /// Ticks or unticks one item of the self-check rubric.
@@ -378,11 +367,11 @@ class SessionController extends _$SessionController {
     );
   }
 
-  /// The spoken counterpart of [submitProduction] (design D34-D36, U17b):
-  /// transcribes [audio] and feeds the transcript through the SAME
-  /// unchanged [ProductionFlow.submit] the typed path uses (D35 — only
-  /// form recall gets a new matcher; production's existing text-based
-  /// validator already works fine against a transcript string).
+  /// Transcribes [audio] and feeds the transcript through the SAME
+  /// unchanged [ProductionFlow.submit] used for a typed answer (design
+  /// D34-D36, U17b; D35 — only form recall gets a new matcher; production's
+  /// existing text-based validator already works fine against a transcript
+  /// string).
   ///
   /// Guarded at this domain primitive (see [answerFormRecallAloud]'s own
   /// doc): never transcribes when the current step is not [ProductionStep],

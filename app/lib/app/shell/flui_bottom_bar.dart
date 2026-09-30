@@ -4,11 +4,10 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/shared/widgets/flui_glyph.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// The phone-width shell chrome while `speakingGym` is on (design §19.7,
-/// D29): the same floating surface as the pre-existing `NavigationBar`
-/// (radius 28, margins 14/12, [FluiColors.surface]), but with a 72 dp
-/// center gap and a raised 64 dp circular [MicButton] instead of a 4th
-/// ordinary destination.
+/// The phone-width shell chrome (design §19.7, D29): a floating surface
+/// (radius 28, margins 14/12, [FluiColors.surface]) with a 72 dp center gap
+/// and a raised 64 dp circular [MicButton] instead of a 4th ordinary
+/// destination.
 ///
 /// [items] holds exactly the 4 destinations (HOY, ENTRENAR, PALABRAS,
 /// PROGRESO); the mic sits between index 1 and index 2 and is never one of

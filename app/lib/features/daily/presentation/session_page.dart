@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
@@ -82,10 +81,7 @@ class SessionPage extends ConsumerWidget {
     );
     // `/session` is a root-navigator screen outside the shell (design D36),
     // so it never gets `AppShell`'s own `MicNoticeHost` — wired here
-    // instead, entirely absent from the tree while the flag is off
-    // (production safety), matching `AppShell`'s established guard for the
-    // same provider.
-    if (!ref.watch(speakingGymEnabledProvider)) return scaffold;
+    // instead.
     return MicNoticeHost(
       controller: ref.watch(micControllerProvider),
       child: scaffold,
@@ -367,7 +363,6 @@ class _StepContent extends ConsumerWidget {
     final step = state.step;
     final word = state.word;
     final busy = state.saving;
-    final speakingGym = ref.watch(speakingGymEnabledProvider);
     void next() => unawaited(controller.continueStep());
 
     if (step == null || word == null) {
@@ -482,73 +477,40 @@ class _StepContent extends ConsumerWidget {
         null => const SizedBox.shrink(),
       },
       FormRecallStep() => switch ((state.formRecall, state.formRecallPrompt)) {
-        (final check?, final prompt?) =>
-          !speakingGym
-              ? FormRecallView(
-                  key: stepKey,
-                  check: check,
-                  explanation: prompt.explanation,
-                  sentenceBefore: prompt.before,
-                  sentenceAfter: prompt.after,
-                  syllableCount: word.syllables.length,
-                  busy: busy,
-                  onSubmit: (text) =>
-                      unawaited(controller.submitFormRecall(text)),
-                  onHint: () => unawaited(controller.takeFormRecallHint()),
-                  onContinue: next,
-                )
-              : MicTargetScope(
-                  target: ref.watch(formRecallMicTargetProvider(state.mode)),
-                  child: FormRecallView(
-                    key: stepKey,
-                    check: check,
-                    explanation: prompt.explanation,
-                    sentenceBefore: prompt.before,
-                    sentenceAfter: prompt.after,
-                    syllableCount: word.syllables.length,
-                    busy: busy,
-                    onSubmit: (text) =>
-                        unawaited(controller.submitFormRecall(text)),
-                    onHint: () => unawaited(controller.takeFormRecallHint()),
-                    onContinue: next,
-                    speakingGym: true,
-                    micController: ref.watch(micControllerProvider),
-                    onSkip: () => unawaited(controller.skipSpokenStep()),
-                  ),
-                ),
+        (final check?, final prompt?) => MicTargetScope(
+          target: ref.watch(formRecallMicTargetProvider(state.mode)),
+          child: FormRecallView(
+            key: stepKey,
+            check: check,
+            explanation: prompt.explanation,
+            sentenceBefore: prompt.before,
+            sentenceAfter: prompt.after,
+            syllableCount: word.syllables.length,
+            busy: busy,
+            onHint: () => unawaited(controller.takeFormRecallHint()),
+            onContinue: next,
+            micController: ref.watch(micControllerProvider),
+            onSkip: () => unawaited(controller.skipSpokenStep()),
+          ),
+        ),
         _ => const SizedBox.shrink(),
       },
       ProductionStep() => switch (state.production) {
-        final production? =>
-          !speakingGym
-              ? ProductionView(
-                  key: stepKey,
-                  flow: production,
-                  lemma: word.lemma,
-                  beforePhrase: _situation(word),
-                  busy: busy,
-                  onSubmit: controller.submitProduction,
-                  onConfirm: () => unawaited(controller.confirmProduction()),
-                  onRevise: controller.reviseProduction,
-                  onToggle: controller.toggleProductionRubric,
-                )
-              : MicTargetScope(
-                  target: ref.watch(productionMicTargetProvider(state.mode)),
-                  child: ProductionView(
-                    key: stepKey,
-                    flow: production,
-                    lemma: word.lemma,
-                    beforePhrase: _situation(word),
-                    busy: busy,
-                    onSubmit: controller.submitProduction,
-                    onConfirm: () => unawaited(controller.confirmProduction()),
-                    onRevise: controller.reviseProduction,
-                    onToggle: controller.toggleProductionRubric,
-                    speakingGym: true,
-                    micController: ref.watch(micControllerProvider),
-                    onSkip: () => unawaited(controller.skipSpokenStep()),
-                  ),
-                ),
+        final production? => MicTargetScope(
+          target: ref.watch(productionMicTargetProvider(state.mode)),
+          child: ProductionView(
+            key: stepKey,
+            flow: production,
+            lemma: word.lemma,
+            beforePhrase: _situation(word),
+            busy: busy,
+            onConfirm: () => unawaited(controller.confirmProduction()),
+            onRevise: controller.reviseProduction,
+            onToggle: controller.toggleProductionRubric,
+            micController: ref.watch(micControllerProvider),
+            onSkip: () => unawaited(controller.skipSpokenStep()),
+          ),
+        ),
         null => const SizedBox.shrink(),
       },
     };

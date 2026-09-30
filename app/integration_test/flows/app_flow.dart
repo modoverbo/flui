@@ -1,7 +1,12 @@
+import 'dart:typed_data';
+
+import 'package:flui/app/shell/flui_bottom_bar.dart';
+import 'package:flui/core/audio/audio_providers.dart';
+import 'package:flui/core/audio/speech_recorder.dart';
+import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_type_scale.dart';
 import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:material_ui/material_ui.dart';
 
 import '../support/app_harness.dart';
 
@@ -11,21 +16,53 @@ import '../support/app_harness.dart';
 /// `_test.dart` file relaunching the device.
 void registerAppFlowTests() {
   testWidgets(
-    'first day: register → paywall → time budget → session → progress',
+    'first day: register → paywall → trial → diagnosis → HOY → session → '
+    'progress',
     (tester) async {
       await runFirstRunFlow(tester);
     },
   );
 }
 
+/// A permission-granted recorder that finishes instantly, real enough for
+/// `HoldToRecord` to drive a full pointer-down/up cycle through
+/// `MicController` (ported from `diagnosis_flow_test.dart`'s own).
+final class _FakeSpeechRecorder implements SpeechRecorder {
+  new();
+
+  @override
+  Stream<double> get amplitude => const Stream.empty();
+
+  @override
+  Future<bool> requestPermission() async => true;
+
+  @override
+  Future<void> start() async {}
+
+  @override
+  Future<Uint8List> stop() async => Uint8List.fromList(const [1, 2, 3]);
+
+  @override
+  Future<void> cancel() async {}
+
+  @override
+  Future<void> dispose() async {}
+}
+
 /// First day on the fake backend:
-/// welcome → intro → plan preview (real prices, no account yet) → register →
-/// paywall on the decision step → fake checkout → time budget (10 min) → Hoy
-/// → session for one new word (Descubre, one scene, Elige with a "Casi.",
+/// welcome → intro (benefits + micro-lesson, skippable) → plan preview (real
+/// prices, no account yet) → register → paywall on the decision step → fake
+/// checkout → the mandatory diagnosis (3 mic slots) → HOY → the word daily
+/// session for one new word (Descubre, one scene, Elige with a "Casi.",
 /// Úsala recall, the rest of the scenes, Úsala production, final check) →
 /// summary → Hoy done → Tu progreso.
 Future<void> runFirstRunFlow(WidgetTester tester) async {
-  final harness = AppHarness();
+  final recorder = _FakeSpeechRecorder();
+  final harness = AppHarness(
+    overrides: [
+      speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+    ],
+  );
   await harness.pumpApp(tester);
 
   Future<void> tapText(String text) async {
@@ -46,12 +83,29 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
     value,
   );
 
+  /// Presses the shell/root mic for long enough to clear `HoldToRecord`'s
+  /// minimum hold, then releases — one captured attempt. [heardText]
+  /// overrides the fake transcribe repository's NEXT result exactly once
+  /// (D34's word-exercise path, `mode=transcribe`) — `null` for a plain
+  /// analyze-only capture (e.g. diagnosis), which never reads it.
+  Future<void> recordOneCapture({String? heardText}) async {
+    if (heardText != null) harness.speech.nextTranscribeText = heardText;
+    final gesture = await tester.startGesture(
+      tester.getCenter(find.byType(MicButton)),
+    );
+    for (var i = 0; i < 3; i++) {
+      await tester.pump();
+    }
+    harness.clock.advance(const Duration(milliseconds: 700));
+    await gesture.up();
+    await tester.pumpAndSettle();
+  }
+
   // Welcome.
   expect(find.text('Empezar'), findsOneWidget);
   await tapText('Empezar');
 
-  // Intro: the promise, then the questions and the micro-lesson, all
-  // skippable.
+  // Intro: the promise, then the micro-lesson, both skippable.
   expect(find.text('No te faltan ideas. Te faltan palabras.'), findsOneWidget);
   await tapText('Saltar');
 
@@ -84,9 +138,30 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   await tapText('Empezar prueba gratis');
 
   // Fake checkout returns to /checkout/return, which polls until the fake
-  // webhook grants the trial, then the router opens the two questions of the
-  // day: how long, and about what.
+  // webhook grants the trial, then the mandatory diagnosis gate (U14a)
+  // takes over — before anything else, including the daily time budget.
   expect(harness.subscriptions.checkoutRequests, ['quarterly']);
+  expect(find.text('Antes de empezar: una evaluación rápida'), findsOneWidget);
+  await tapText('Empezar');
+
+  // Diagnosis: 3 mic slots, measure-only (no feedback/comparison step
+  // between them) — each capture auto-advances to the next slot.
+  for (var slot = 1; slot <= 3; slot++) {
+    await recordOneCapture();
+  }
+
+  // The profile is real, derived from the 3 captured attempts — never
+  // fabricated.
+  expect(find.text('Tu perfil de expresión oral'), findsOneWidget);
+  await tapText('Ir a HOY');
+
+  // HOY, with the diagnosis done. The word daily session is a separate
+  // action from the speaking loop's own chips card above it — pick the
+  // time budget from the sticky dock, same as before diagnosis existed.
+  expect(find.byType(FluiBottomBar), findsOneWidget);
+  expect(find.text('Hola, Ana'), findsOneWidget);
+  await tapText('Elegir tiempo');
+
   expect(find.text('¿Cuánto tiempo tienes hoy?'), findsOneWidget);
   await tapText('10 min');
 
@@ -99,8 +174,7 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   await tapText('Empezar');
 
   // Hoy, with the chosen theme and a word that belongs to it.
-  expect(find.byType(NavigationBar), findsOneWidget);
-  expect(find.text('Hola, Ana'), findsOneWidget);
+  expect(find.byType(FluiBottomBar), findsOneWidget);
   expect(find.text('10 minutos'), findsOneWidget);
   expect(find.text('TEMA DE HOY'), findsOneWidget);
   expect(find.text('Reconocer a otros'), findsOneWidget);
@@ -133,10 +207,9 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   expect(find.text('¡Eso es!'), findsOneWidget);
   await tapText('Continuar');
 
-  // Úsala: form recall, then production with the self-check.
+  // Úsala: form recall by mic, then production with the self-check.
   expect(find.text('Ahora dilo tú.'), findsOneWidget);
-  await fill('Tu palabra', 'perspicaz');
-  await tapText('Comprobar');
+  await recordOneCapture(heardText: 'perspicaz');
   expect(find.text('¡Eso es!'), findsOneWidget);
   await tapText('Continuar');
 
@@ -151,11 +224,9 @@ Future<void> runFirstRunFlow(WidgetTester tester) async {
   await tapText('Continuar');
 
   expect(find.text('Úsala'), findsOneWidget);
-  await fill(
-    'Tu frase',
-    'Carla hizo una pregunta muy perspicaz en la reunión.',
+  await recordOneCapture(
+    heardText: 'Carla hizo una pregunta muy perspicaz en la reunión.',
   );
-  await tapText('Comprobar');
   expect(find.text('¿Suena natural?'), findsOneWidget);
   // The model sentence is shown to compare against, and every rubric item
   // has to be ticked before the sentence is accepted.

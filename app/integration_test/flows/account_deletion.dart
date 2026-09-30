@@ -1,6 +1,5 @@
 import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/gen/app_localizations.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
@@ -42,11 +41,7 @@ void registerAccountDeletionTests() {
 /// through both dialogs, and the app really navigates away (through the
 /// live router) once the account is gone — not just a mocked sign-out.
 Future<void> runAccountDeletionFlow(WidgetTester tester) async {
-  final harness = AppHarness(
-    signedInAs: _ana,
-    access: _trialing,
-    overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-  );
+  final harness = AppHarness(signedInAs: _ana, access: _trialing);
 
   await harness.pumpApp(
     tester,
@@ -91,11 +86,7 @@ Future<void> runAccountDeletionFlow(WidgetTester tester) async {
 /// fake resolves, and only then lets it resolve — the app must still end up
 /// signed out once it does, not leave a local session for a deleted user.
 Future<void> runAccountDeletionTabSwitchFlow(WidgetTester tester) async {
-  final harness = AppHarness(
-    signedInAs: _ana,
-    access: _trialing,
-    overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-  );
+  final harness = AppHarness(signedInAs: _ana, access: _trialing);
 
   await harness.pumpApp(
     tester,

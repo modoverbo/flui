@@ -4,7 +4,6 @@ import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/audio/audio_providers.dart';
 import 'package:flui/core/audio/speech_recorder.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/mic/mic_providers.dart';
@@ -100,7 +99,6 @@ void main() {
           signedInAs: _ana,
           access: _trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -153,7 +151,6 @@ void main() {
           signedInAs: _ana,
           access: _trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -193,7 +190,6 @@ void main() {
           signedInAs: _ana,
           access: _trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -284,7 +280,6 @@ void main() {
         signedInAs: _ana,
         access: _trialing,
         overrides: [
-          speakingGymEnabledProvider.overrideWithValue(true),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -387,7 +382,6 @@ void main() {
           signedInAs: _ana,
           access: _trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );

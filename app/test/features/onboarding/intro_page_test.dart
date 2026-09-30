@@ -1,17 +1,11 @@
-import 'dart:ui' show Tristate;
-
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/theme/flui_colors.dart';
-import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
-import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/shared/motion/feedback_motion.dart';
 import 'package:flui/shared/widgets/flui_plate.dart';
-import 'package:flutter/services.dart' show LogicalKeyboardKey;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -130,7 +124,7 @@ void main() {
       findsOneWidget,
     );
     expect(find.text('Tú eliges cuánto. flui se adapta.'), findsNothing);
-    expect(find.bySemanticsLabel('Paso 1 de 6'), findsOneWidget);
+    expect(find.bySemanticsLabel('Paso 1 de 4'), findsOneWidget);
 
     await tester.fling(
       find.text('No te faltan ideas. Te faltan palabras.'),
@@ -142,7 +136,7 @@ void main() {
     expect(find.text('No te faltan ideas. Te faltan palabras.'), findsNothing);
     expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
     expect(find.text('Aprende una palabra. Úsala hoy.'), findsNothing);
-    expect(find.bySemanticsLabel('Paso 2 de 6'), findsOneWidget);
+    expect(find.bySemanticsLabel('Paso 2 de 4'), findsOneWidget);
   });
 
   testWidgets(
@@ -153,7 +147,7 @@ void main() {
 
       await next(tester);
       expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
-      expect(find.bySemanticsLabel('Paso 2 de 6'), findsOneWidget);
+      expect(find.bySemanticsLabel('Paso 2 de 4'), findsOneWidget);
 
       await tester.tap(find.byTooltip('Atrás'));
       await tester.pumpAndSettle();
@@ -161,7 +155,7 @@ void main() {
         find.text('No te faltan ideas. Te faltan palabras.'),
         findsOneWidget,
       );
-      expect(find.bySemanticsLabel('Paso 1 de 6'), findsOneWidget);
+      expect(find.bySemanticsLabel('Paso 1 de 4'), findsOneWidget);
 
       await tester.tap(find.byTooltip('Atrás'));
       await tester.pumpAndSettle();
@@ -207,35 +201,35 @@ void main() {
         find.bySemanticsLabel(RegExp(r'^Tú eliges cuánto\.')),
         findsOneWidget,
       );
-      expect(find.bySemanticsLabel('Paso 2 de 6'), findsOneWidget);
+      expect(find.bySemanticsLabel('Paso 2 de 4'), findsOneWidget);
       expect(tester.getCenter(firstPage).dx, lessThan(firstCenter.dx));
       expect(tester.getCenter(secondPage).dx, greaterThan(firstCenter.dx));
     },
   );
 
-  testWidgets(
-    'benefit back and question boundary preserve the six-step order',
-    (tester) async {
-      reduceMotion(tester);
-      await pumpIntro(tester);
+  testWidgets('benefit back and lesson boundary preserve the four-step order', (
+    tester,
+  ) async {
+    reduceMotion(tester);
+    await pumpIntro(tester);
 
-      await next(tester);
-      await next(tester);
-      expect(find.text('Aprende una palabra. Úsala hoy.'), findsOneWidget);
+    await next(tester);
+    await next(tester);
+    expect(find.text('Aprende una palabra. Úsala hoy.'), findsOneWidget);
 
-      await tester.tap(find.byTooltip('Atrás'));
-      await tester.pumpAndSettle();
-      expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
+    await tester.tap(find.byTooltip('Atrás'));
+    await tester.pumpAndSettle();
+    expect(find.text('Tú eliges cuánto. flui se adapta.'), findsOneWidget);
 
-      await next(tester);
-      await next(tester);
-      expect(find.text('¿Dónde te traiciona el vocabulario?'), findsOneWidget);
+    await next(tester);
+    await next(tester);
+    final word = seedWords.first;
+    expect(find.text(word.lemma), findsWidgets);
 
-      await tester.tap(find.byTooltip('Atrás'));
-      await tester.pumpAndSettle();
-      expect(find.text('Aprende una palabra. Úsala hoy.'), findsOneWidget);
-    },
-  );
+    await tester.tap(find.byTooltip('Atrás'));
+    await tester.pumpAndSettle();
+    expect(find.text('Aprende una palabra. Úsala hoy.'), findsOneWidget);
+  });
 
   testWidgets('no slide ships a pastel icon tile', (tester) async {
     reduceMotion(tester);
@@ -258,215 +252,6 @@ void main() {
     );
   });
 
-  testWidgets('the two questions gate the way forward and are saved', (
-    tester,
-  ) async {
-    reduceMotion(tester);
-    await pumpIntro(tester);
-    await next(tester);
-    await next(tester);
-    await next(tester);
-
-    expect(find.text('¿Dónde te traiciona el vocabulario?'), findsOneWidget);
-    FilledButton cta() =>
-        tester.widget<FilledButton>(find.byType(FilledButton).last);
-    expect(cta().onPressed, isNull);
-
-    await tester.tap(find.text('Trabajo'));
-    await tester.pumpAndSettle();
-    expect(cta().onPressed, isNotNull);
-    expect(
-      tester
-          .widget<Material>(
-            find
-                .ancestor(
-                  of: find.text('Trabajo'),
-                  matching: find.byType(Material),
-                )
-                .first,
-          )
-          .animationDuration,
-      Duration.zero,
-    );
-
-    await tester.tap(find.text('Social'));
-    await tester.pumpAndSettle();
-    expect(cta().onPressed, isNotNull);
-    expect(
-      await store.readAnswers(),
-      const OnboardingAnswers(contexts: {Scene.trabajo, Scene.social}),
-    );
-
-    final workSemantics = tester.getSemantics(
-      find
-          .ancestor(of: find.text('Trabajo'), matching: find.byType(Semantics))
-          .first,
-    );
-    final socialSemantics = tester.getSemantics(
-      find
-          .ancestor(of: find.text('Social'), matching: find.byType(Semantics))
-          .first,
-    );
-    expect(
-      workSemantics.getSemanticsData().flagsCollection.isToggled,
-      Tristate.isTrue,
-    );
-    expect(
-      socialSemantics.getSemanticsData().flagsCollection.isToggled,
-      Tristate.isTrue,
-    );
-
-    await tester.tap(find.text('Trabajo'));
-    await tester.pumpAndSettle();
-    expect(cta().onPressed, isNotNull);
-    expect(
-      await store.readAnswers(),
-      const OnboardingAnswers(contexts: {Scene.social}),
-    );
-    await tester.tap(find.text('Social'));
-    await tester.pumpAndSettle();
-    expect(cta().onPressed, isNull);
-    expect(await store.readAnswers(), OnboardingAnswers.empty);
-
-    await tester.tap(find.text('Trabajo'));
-    await tester.pumpAndSettle();
-    await next(tester);
-
-    expect(find.text('¿Cómo quieres sonar?'), findsOneWidget);
-    expect(cta().onPressed, isNull);
-    await tester.tap(find.text('Preciso'));
-    await tester.pumpAndSettle();
-    expect(cta().onPressed, isNotNull);
-    await tester.tap(find.text('Cercano'));
-    await tester.pumpAndSettle();
-    expect(cta().onPressed, isNotNull);
-
-    expect(
-      await store.readAnswers(),
-      const OnboardingAnswers(
-        contexts: {Scene.trabajo},
-        tone: SpeakingTone.warm,
-      ),
-    );
-    expect(
-      tester
-          .getSemantics(
-            find
-                .ancestor(
-                  of: find.text('Cercano'),
-                  matching: find.byType(Semantics),
-                )
-                .first,
-          )
-          .getSemanticsData()
-          .flagsCollection
-          .isSelected,
-      Tristate.isTrue,
-    );
-    expect(
-      tester
-          .getSemantics(
-            find
-                .ancestor(
-                  of: find.text('Cercano'),
-                  matching: find.byType(Semantics),
-                )
-                .first,
-          )
-          .getSemanticsData()
-          .flagsCollection
-          .isInMutuallyExclusiveGroup,
-      isTrue,
-    );
-    expect(
-      tester
-          .getSemantics(
-            find
-                .ancestor(
-                  of: find.text('Preciso'),
-                  matching: find.byType(Semantics),
-                )
-                .first,
-          )
-          .getSemanticsData()
-          .flagsCollection
-          .isSelected,
-      Tristate.isFalse,
-    );
-  });
-
-  testWidgets('answer steps use the same paper and ink composition', (
-    tester,
-  ) async {
-    reduceMotion(tester);
-    await pumpIntro(tester);
-    for (var i = 0; i < 3; i++) {
-      await next(tester);
-    }
-
-    void expectPaperSurface() {
-      expect(
-        tester.widget<Scaffold>(find.byType(Scaffold).last).backgroundColor,
-        FluiColors.cream,
-      );
-      expect(find.byType(FluiPlate), findsNothing);
-    }
-
-    expectPaperSurface();
-    await tester.tap(find.text('Trabajo'));
-    await tester.pumpAndSettle();
-    await next(tester);
-    expectPaperSurface();
-    await tester.tap(find.text('Preciso'));
-    await tester.pumpAndSettle();
-    await next(tester);
-    expectPaperSurface();
-
-    expect(
-      tester.widget<Text>(find.text(seedWords.first.lemma).last).style!.color,
-      FluiColors.ink,
-    );
-  });
-
-  testWidgets('answer cards show a visible keyboard focus state', (
-    tester,
-  ) async {
-    reduceMotion(tester);
-    final semantics = tester.ensureSemantics();
-    await pumpIntro(tester);
-    for (var i = 0; i < 3; i++) {
-      await next(tester);
-    }
-
-    for (var i = 0; i < 3; i++) {
-      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
-      await tester.pump();
-    }
-
-    final context = tester.getSemantics(find.bySemanticsLabel('Trabajo'));
-    expect(
-      context.getSemanticsData().flagsCollection.isFocused,
-      Tristate.isTrue,
-    );
-    final card = tester.widget<Material>(
-      find
-          .ancestor(of: find.text('Trabajo'), matching: find.byType(Material))
-          .first,
-    );
-    expect((card.shape! as RoundedRectangleBorder).side.color, FluiColors.ink);
-    expect((card.shape! as RoundedRectangleBorder).side.width, 3);
-
-    final inkWell = tester.widget<InkWell>(
-      find
-          .ancestor(of: find.text('Trabajo'), matching: find.byType(InkWell))
-          .first,
-    );
-    expect(inkWell.focusColor, isNotNull);
-    expect(inkWell.splashColor, isNotNull);
-    expect(inkWell.splashColor, isNot(Colors.transparent));
-    semantics.dispose();
-  });
-
   testWidgets('the micro-lesson uses a real word and only then lets you on', (
     tester,
   ) async {
@@ -475,12 +260,6 @@ void main() {
     for (var i = 0; i < 3; i++) {
       await next(tester);
     }
-    await tester.tap(find.text('Trabajo'));
-    await tester.pumpAndSettle();
-    await next(tester);
-    await tester.tap(find.text('Preciso'));
-    await tester.pumpAndSettle();
-    await next(tester);
 
     final word = seedWords.first;
     expect(find.text(word.lemma), findsWidgets);
@@ -538,7 +317,7 @@ void main() {
     expect(find.text('route:/plan'), findsOneWidget);
   });
 
-  testWidgets('answer and lesson cards fit at 130 % text on a narrow phone', (
+  testWidgets('the lesson card fits at 130 % text on a narrow phone', (
     tester,
   ) async {
     reduceMotion(tester);
@@ -547,19 +326,6 @@ void main() {
     for (var i = 0; i < 3; i++) {
       await next(tester);
     }
-    expect(tester.takeException(), isNull);
-
-    await tester.ensureVisible(find.text('Familia'));
-    expect(find.text('Familia'), findsOneWidget);
-    expect(find.text('Seguir'), findsOneWidget);
-    expect(tester.getRect(find.text('Seguir')).bottom, lessThanOrEqualTo(780));
-
-    await tester.tap(find.text('Trabajo'));
-    await tester.pumpAndSettle();
-    await next(tester);
-    await tester.tap(find.text('Preciso'));
-    await tester.pumpAndSettle();
-    await next(tester);
     expect(tester.takeException(), isNull);
     final correct = seedWords.first.exercises.first.correctOption.text;
     await tester.ensureVisible(find.text(correct).last);
@@ -584,74 +350,24 @@ void main() {
     },
   );
 
-  group('with speakingGym on (U14b)', () {
-    Future<void> pumpIntroGym(WidgetTester tester) async {
-      await pumpRoutedPage(
-        tester,
-        location: AppRoutes.intro,
-        page: const IntroPage(),
-        otherRoutes: [AppRoutes.plan, AppRoutes.welcome],
-        overrides: [
-          onboardingStoreProvider.overrideWithValue(store),
-          speakingGymEnabledProvider.overrideWithValue(true),
-        ],
-        surfaceSize: const Size(420, 1400),
-      );
-      await tester.pumpAndSettle();
-    }
+  testWidgets('never shows the retired preference-question screens, going '
+      'straight from the third benefit slide to the micro-lesson', (
+    tester,
+  ) async {
+    reduceMotion(tester);
+    await pumpIntro(tester);
+    expect(find.bySemanticsLabel('Paso 1 de 4'), findsOneWidget);
 
-    testWidgets('never shows the retired preference-question screens, going '
-        'straight from the third benefit slide to the micro-lesson', (
-      tester,
-    ) async {
-      reduceMotion(tester);
-      await pumpIntroGym(tester);
-      expect(find.bySemanticsLabel('Paso 1 de 4'), findsOneWidget);
+    await next(tester);
+    expect(find.bySemanticsLabel('Paso 2 de 4'), findsOneWidget);
+    await next(tester);
+    expect(find.bySemanticsLabel('Paso 3 de 4'), findsOneWidget);
+    await next(tester);
 
-      await next(tester);
-      expect(find.bySemanticsLabel('Paso 2 de 4'), findsOneWidget);
-      await next(tester);
-      expect(find.bySemanticsLabel('Paso 3 de 4'), findsOneWidget);
-      await next(tester);
-
-      expect(find.text('¿Dónde te traiciona el vocabulario?'), findsNothing);
-      expect(find.text('¿Cómo quieres sonar?'), findsNothing);
-      expect(find.bySemanticsLabel('Paso 4 de 4'), findsOneWidget);
-      final word = seedWords.first;
-      expect(find.text(word.lemma), findsWidgets);
-    });
-
-    testWidgets(
-      'never persists a retired answer, and completing the micro-lesson '
-      'still reaches the plan',
-      (tester) async {
-        reduceMotion(tester);
-        await pumpIntroGym(tester);
-        await next(tester);
-        await next(tester);
-        await next(tester);
-
-        final word = seedWords.first;
-        await tester.tap(
-          find.text(word.exercises.first.correctOption.text).last,
-        );
-        await tester.pumpAndSettle();
-        await tester.tap(find.text('Ver mi plan'));
-        await tester.pumpAndSettle();
-
-        expect(find.text('route:/plan'), findsOneWidget);
-        expect(await store.readAnswers(), OnboardingAnswers.empty);
-      },
-    );
-
-    testWidgets('Saltar still goes straight to the plan', (tester) async {
-      reduceMotion(tester);
-      await pumpIntroGym(tester);
-
-      await tester.tap(find.text('Saltar'));
-      await tester.pumpAndSettle();
-
-      expect(find.text('route:/plan'), findsOneWidget);
-    });
+    expect(find.text('¿Dónde te traiciona el vocabulario?'), findsNothing);
+    expect(find.text('¿Cómo quieres sonar?'), findsNothing);
+    expect(find.bySemanticsLabel('Paso 4 de 4'), findsOneWidget);
+    final word = seedWords.first;
+    expect(find.text(word.lemma), findsWidgets);
   });
 }

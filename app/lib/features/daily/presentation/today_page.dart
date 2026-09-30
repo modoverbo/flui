@@ -1,5 +1,4 @@
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/error/result.dart';
@@ -51,11 +50,8 @@ import 'package:material_ui/material_ui.dart' hide Theme;
 /// is the one unmistakable action of the day; everything else — the theme,
 /// the streak, the editorial numbers — is secondary and reachable below it.
 ///
-/// While `speakingGymEnabledProvider` is on (U15a, design D41), registers
-/// `TodayStartTarget` with the shell's mic via `MicTargetScope` — entirely
-/// absent from the tree while the flag is off (production safety: every
-/// push auto-deploys the web app), matching `TrainingLoopView`'s own
-/// established guard for the same class of provider.
+/// Registers `TodayStartTarget` with the shell's mic via `MicTargetScope`
+/// (U15a, design D41).
 class TodayPage extends ConsumerWidget {
   const new({super.key});
 
@@ -88,7 +84,6 @@ class TodayPage extends ConsumerWidget {
         _ => Center(child: LoadingWave(semanticLabel: l10n.commonLoading)),
       },
     );
-    if (!ref.watch(speakingGymEnabledProvider)) return body;
     final target = ref.watch(todayStartTargetProvider)
       ..onSessionStarted = () => context.go(AppRoutes.todayTrain);
     return MicTargetScope(target: target, child: body);
@@ -514,8 +509,7 @@ final _provisionalTrainingGoalProvider = FutureProvider.autoDispose
     );
 
 /// HOY's budget-free speaking-goal card (U15a, design D41, decision
-/// #450.4): entirely absent while `speakingGymEnabledProvider` is off — no
-/// provider it reads is ever touched in that case (production safety).
+/// #450.4).
 ///
 /// With NO [session] yet: duration chips (preselected via
 /// `preselectedBudgetProvider`), a provisional plan preview, and a START
@@ -531,7 +525,6 @@ class _TrainingGoalCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    if (!ref.watch(speakingGymEnabledProvider)) return const SizedBox.shrink();
     final l10n = context.l10n;
     final type = context.type;
     final existingBudget = session == null

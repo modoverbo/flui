@@ -1,5 +1,3 @@
-import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
-import 'package:flui/features/reading/domain/reading.dart';
 import 'package:flui/features/themes/domain/theme.dart';
 import 'package:flui/features/themes/domain/theme_recommender.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -31,11 +29,8 @@ void main() {
   final all = [trabajo, publico, emocion, precision, social];
 
   group('ThemeRecommender', () {
-    test('with no answers it keeps the catalog order', () {
-      final ranked = ThemeRecommender.rank(
-        themes: all,
-        answers: OnboardingAnswers.empty,
-      );
+    test('keeps the catalog order', () {
+      final ranked = ThemeRecommender.rank(themes: all);
 
       expect(ranked.map((t) => t.slug), [
         'reuniones',
@@ -48,56 +43,7 @@ void main() {
 
     test('offers exactly three recommendations', () {
       expect(ThemeRecommender.recommendedCount, 3);
-      expect(
-        ThemeRecommender.recommend(
-          themes: all,
-          answers: OnboardingAnswers.empty,
-        ),
-        hasLength(3),
-      );
-    });
-
-    test('a user who struggles at work gets work themes first', () {
-      const answers = OnboardingAnswers(contexts: {Scene.trabajo});
-
-      final ranked = ThemeRecommender.rank(themes: all, answers: answers);
-
-      expect(ranked.first.slug, 'reuniones');
-    });
-
-    test('a user who struggles at home gets the emotional family first', () {
-      const answers = OnboardingAnswers(contexts: {Scene.familia});
-
-      final ranked = ThemeRecommender.rank(themes: all, answers: answers);
-
-      expect(ranked.first.slug, 'desacuerdos');
-    });
-
-    test('interviews pull the public-speaking family up', () {
-      const answers = OnboardingAnswers(contexts: {Scene.entrevista});
-
-      final ranked = ThemeRecommender.rank(themes: all, answers: answers);
-
-      expect(ranked.first.slug, 'presentaciones');
-    });
-
-    test('wanting to sound precise pulls the precision family up', () {
-      const answers = OnboardingAnswers(tone: SpeakingTone.precise);
-
-      final ranked = ThemeRecommender.rank(themes: all, answers: answers);
-
-      expect(ranked.first.slug, 'matices');
-    });
-
-    test('wanting to sound warm pulls the social side up', () {
-      const answers = OnboardingAnswers(
-        contexts: {Scene.social},
-        tone: SpeakingTone.warm,
-      );
-
-      final ranked = ThemeRecommender.rank(themes: all, answers: answers);
-
-      expect(ranked.take(2).map((t) => t.slug), containsAll(['reconocer']));
+      expect(ThemeRecommender.recommend(themes: all), hasLength(3));
     });
 
     test('only themes that are live today are recommended', () {
@@ -107,22 +53,14 @@ void main() {
         sortOrder: 0,
       );
 
-      final ranked = ThemeRecommender.rank(
-        themes: [soon, ...all],
-        answers: const OnboardingAnswers(contexts: {Scene.trabajo}),
-      );
+      final ranked = ThemeRecommender.rank(themes: [soon, ...all]);
 
       expect(ranked.map((t) => t.slug), isNot(contains('pronto')));
     });
 
     test('ties break by catalog order, so the list never shuffles', () {
-      const answers = OnboardingAnswers(contexts: {Scene.trabajo});
-
-      final first = ThemeRecommender.rank(themes: all, answers: answers);
-      final second = ThemeRecommender.rank(
-        themes: all.reversed.toList(),
-        answers: answers,
-      );
+      final first = ThemeRecommender.rank(themes: all);
+      final second = ThemeRecommender.rank(themes: all.reversed.toList());
 
       expect(
         first.map((t) => t.slug).toList(),
@@ -135,13 +73,7 @@ void main() {
     });
 
     test('recommend never returns more than the catalog holds', () {
-      expect(
-        ThemeRecommender.recommend(
-          themes: [trabajo],
-          answers: OnboardingAnswers.empty,
-        ),
-        hasLength(1),
-      );
+      expect(ThemeRecommender.recommend(themes: [trabajo]), hasLength(1));
     });
   });
 }

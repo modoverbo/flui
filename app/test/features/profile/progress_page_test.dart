@@ -3,15 +3,12 @@ import 'dart:typed_data';
 import 'package:flui/core/audio/audio_providers.dart';
 import 'package:flui/core/audio/data/fake_speech_player.dart';
 import 'package:flui/core/clock/clock.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/theme/contrast.dart';
 import 'package:flui/core/theme/flui_color_rules.dart';
 import 'package:flui/core/theme/flui_colors.dart';
-import 'package:flui/features/diagnosis/data/fake_skill_profile_repository.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
-import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
 import 'package:flui/features/profile/data/fake_account_deletion_repository.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
 import 'package:flui/features/profile/presentation/providers/profile_providers.dart';
@@ -21,7 +18,6 @@ import 'package:flui/features/subscription/presentation/providers/subscription_p
 import 'package:flui/features/training/data/fake_attempt_audio_store.dart';
 import 'package:flui/features/training/data/fake_audio_consent_repository.dart';
 import 'package:flui/features/training/data/fake_challenge_repository.dart';
-import 'package:flui/features/training/data/fake_speaking_attempt_repository.dart';
 import 'package:flui/features/training/domain/attempt_kind.dart';
 import 'package:flui/features/training/domain/behavior_code.dart';
 import 'package:flui/features/training/domain/challenge.dart';
@@ -100,6 +96,7 @@ void main() {
       findsOneWidget,
     );
 
+    await tester.ensureVisible(find.text('Cerrar sesión'));
     await tester.tap(find.text('Cerrar sesión'));
     await tester.pump();
     expect(fakes.auth.currentUser, isNull);
@@ -272,44 +269,34 @@ void main() {
           diagnosisSlot: slot,
         );
 
-    Future<List<Override>> diagnosisOverrides({
+    // Mutates `fakes`' own training-gym fakes (already wired by
+    // `fakes.overrides`) instead of returning separate overrides for the
+    // same 3 providers — Riverpod throws "Tried to override a provider
+    // twice" if both are spread into the same container.
+    Future<void> seedDiagnosisFakes({
       required List<SpeakingAttempt> seededAttempts,
     }) async {
-      final speakingAttempts = FakeSpeakingAttemptRepository(
-        currentUserId: () => fakes.auth.currentUser?.id,
+      fakes.challenges = FakeChallengeRepository(
+        challenges: [
+          diagnosisChallenge(id: 'c1', slot: 1),
+          diagnosisChallenge(id: 'c2', slot: 2),
+          diagnosisChallenge(id: 'c3', slot: 3),
+        ],
       );
       for (final attempt in seededAttempts) {
-        await speakingAttempts.insert(attempt);
+        await fakes.speakingAttempts.insert(attempt);
       }
-      return [
-        speakingGymEnabledProvider.overrideWithValue(true),
-        challengeRepositoryProvider.overrideWithValue(
-          FakeChallengeRepository(
-            challenges: [
-              diagnosisChallenge(id: 'c1', slot: 1),
-              diagnosisChallenge(id: 'c2', slot: 2),
-              diagnosisChallenge(id: 'c3', slot: 3),
-            ],
-          ),
-        ),
-        speakingAttemptRepositoryProvider.overrideWithValue(speakingAttempts),
-        skillProfileRepositoryProvider.overrideWithValue(
-          FakeSkillProfileRepository(
-            currentUserId: () => fakes.auth.currentUser?.id,
-          ),
-        ),
-      ];
     }
 
-    testWidgets('flag on, no open diagnosis session: the entry stays hidden', (
+    testWidgets('no open diagnosis session: the entry stays hidden', (
       tester,
     ) async {
+      await seedDiagnosisFakes(seededAttempts: const []);
       await tester.pumpFlui(
         const ProgressPage(),
         overrides: [
           ...fakes.overrides,
           subscriptionRepositoryProvider.overrideWithValue(subscriptions),
-          ...await diagnosisOverrides(seededAttempts: const []),
         ],
         surfaceSize: const Size(400, 2400),
       );
@@ -318,39 +305,38 @@ void main() {
       expect(find.text(l10nEs.progressDiagnosisResumeAction), findsNothing);
     });
 
-    testWidgets(
-      'flag on, an open (paused) retake session exists: the entry shows',
-      (tester) async {
-        await tester.pumpFlui(
-          const ProgressPage(),
-          overrides: [
-            ...fakes.overrides,
-            subscriptionRepositoryProvider.overrideWithValue(subscriptions),
-            ...await diagnosisOverrides(
-              seededAttempts: [
-                SpeakingAttempt(
-                  id: 'a1',
-                  sessionId: 'retake-session',
-                  context: TrainingContext.diagnosis,
-                  kind: AttemptKind.first,
-                  localDate: LocalDate(2026, 9, 14),
-                  transcript: 'Respuesta de la reevaluación.',
-                  duration: const Duration(seconds: 20),
-                  metrics: metrics,
-                  audio: const AudioRetention.none(),
-                  challengeId: 'c1',
-                ),
-              ],
-            ),
-          ],
-          surfaceSize: const Size(400, 2400),
-        );
-        await tester.pumpAndSettle();
+    testWidgets('an open (paused) retake session exists: the entry shows', (
+      tester,
+    ) async {
+      await seedDiagnosisFakes(
+        seededAttempts: [
+          SpeakingAttempt(
+            id: 'a1',
+            sessionId: 'retake-session',
+            context: TrainingContext.diagnosis,
+            kind: AttemptKind.first,
+            localDate: LocalDate(2026, 9, 14),
+            transcript: 'Respuesta de la reevaluación.',
+            duration: const Duration(seconds: 20),
+            metrics: metrics,
+            audio: const AudioRetention.none(),
+            challengeId: 'c1',
+          ),
+        ],
+      );
+      await tester.pumpFlui(
+        const ProgressPage(),
+        overrides: [
+          ...fakes.overrides,
+          subscriptionRepositoryProvider.overrideWithValue(subscriptions),
+        ],
+        surfaceSize: const Size(400, 2400),
+      );
+      await tester.pumpAndSettle();
 
-        expect(find.text(l10nEs.progressDiagnosisResumeTitle), findsOneWidget);
-        expect(find.text(l10nEs.progressDiagnosisResumeAction), findsOneWidget);
-      },
-    );
+      expect(find.text(l10nEs.progressDiagnosisResumeTitle), findsOneWidget);
+      expect(find.text(l10nEs.progressDiagnosisResumeAction), findsOneWidget);
+    });
   });
 
   group('PROGRESO evidence, playback, audio settings, retake (U18b)', () {
@@ -368,10 +354,7 @@ void main() {
     late FakeSpeechPlayer fakePlayer;
 
     setUp(() {
-      gymFakes = LearningFakes(
-        now: DateTime(2026, 9, 20, 9),
-        speakingGym: true,
-      );
+      gymFakes = LearningFakes(now: DateTime(2026, 9, 20, 9));
       gymSubscriptions =
           FakeSubscriptionRepository(
             clock: gymFakes.clock,
@@ -657,31 +640,6 @@ void main() {
       );
       expect(button.onPressed, isNotNull);
     });
-
-    testWidgets('flag off: the page is unchanged (no evidence section, no '
-        'new queries)', (tester) async {
-      await tester.pumpFlui(
-        const ProgressPage(),
-        overrides: [
-          ...fakes.overrides,
-          subscriptionRepositoryProvider.overrideWithValue(subscriptions),
-        ],
-        surfaceSize: const Size(400, 2400),
-      );
-      await tester.pumpAndSettle();
-
-      expect(
-        find.text(l10nEs.progressEvidenceTitle.toUpperCase()),
-        findsNothing,
-      );
-      expect(find.text(l10nEs.audioSettingsTitle), findsNothing);
-      expect(find.text(l10nEs.progressRetakeTitle), findsNothing);
-      // "Eliminar mi cuenta" calls `account-delete`, which is not deployed
-      // to production yet (U22e production-safety rule): the entry must be
-      // unreachable while the flag is off, in every backend.
-      expect(find.text(l10nEs.accountDeletionTitle), findsNothing);
-      expect(tester.takeException(), isNull);
-    });
   });
 
   group('Account deletion (U22e)', () {
@@ -690,10 +648,7 @@ void main() {
     late FakeAccountDeletionRepository accountDeletion;
 
     setUp(() {
-      gymFakes = LearningFakes(
-        now: DateTime(2026, 9, 20, 9),
-        speakingGym: true,
-      );
+      gymFakes = LearningFakes(now: DateTime(2026, 9, 20, 9));
       gymSubscriptions =
           FakeSubscriptionRepository(
             clock: gymFakes.clock,

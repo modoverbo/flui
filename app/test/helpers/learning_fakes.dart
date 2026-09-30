@@ -1,6 +1,5 @@
 import 'package:flui/core/clock/clock.dart';
 import 'package:flui/core/clock/clock_providers.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
@@ -31,11 +30,11 @@ import 'package:flutter_riverpod/misc.dart';
 /// In-memory learning backend for one signed-in user and a fixed clock
 /// (Sunday 2026-09-13, 10:00).
 ///
-/// [speakingGym] additionally overrides `speakingGymEnabledProvider` and
-/// registers the training-gym fakes ([challenges], [speakingAttempts],
-/// [skillProfiles]) needed by U15a's HOY flow — harmless and unused while
-/// it stays `false` (the default), so every pre-existing flag-off test
-/// using this fixture is unaffected.
+/// Also registers the training-gym fakes ([challenges], [speakingAttempts],
+/// [skillProfiles]) needed by the HOY/ENTRENAR/diagnosis flows. A caller
+/// that needs its own instance of any of these 3 providers must override
+/// them AFTER spreading [overrides], not add a duplicate — Riverpod throws
+/// "Tried to override a provider twice" otherwise.
 final class LearningFakes {
   new({
     DateTime? now,
@@ -44,7 +43,6 @@ final class LearningFakes {
     InMemoryOnboardingStore? onboarding,
     String displayName = 'Ana',
     bool signedIn = true,
-    this.speakingGym = false,
   }) : clock = FixedClock(now ?? DateTime(2026, 9, 13, 10)),
        auth = FakeAuthRepository(
          initialUser: signedIn
@@ -78,7 +76,6 @@ final class LearningFakes {
   final FakeContentRepository content;
   final FakeThemeRepository themes;
   final InMemoryOnboardingStore onboarding;
-  final bool speakingGym;
   late final FakeWordProgressRepository progress;
   late final FakeExerciseAttemptRepository attempts;
   late final FakeDailySessionRepository sessions;
@@ -104,18 +101,9 @@ final class LearningFakes {
     streakRepairRepositoryProvider.overrideWithValue(repairs),
     clockProvider.overrideWithValue(clock),
     shuffleRandomProvider.overrideWithValue(null),
-    // Only registered when requested: several pre-existing flag-on tests
-    // already compose their OWN override list for these same 4 providers
-    // (`speakingGymEnabledProvider` + the 3 training-gym repositories) on
-    // top of `fakes.overrides` — always including them here would collide
-    // with that established pattern ("Tried to override a provider
-    // twice").
-    if (speakingGym) ...[
-      speakingGymEnabledProvider.overrideWithValue(true),
-      challengeRepositoryProvider.overrideWithValue(challenges),
-      speakingAttemptRepositoryProvider.overrideWithValue(speakingAttempts),
-      skillProfileRepositoryProvider.overrideWithValue(skillProfiles),
-    ],
+    challengeRepositoryProvider.overrideWithValue(challenges),
+    speakingAttemptRepositoryProvider.overrideWithValue(speakingAttempts),
+    skillProfileRepositoryProvider.overrideWithValue(skillProfiles),
   ];
 
   Future<void> dispose() => auth.dispose();

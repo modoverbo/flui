@@ -50,8 +50,8 @@ final class AppHarness {
   final AppUser? _initialUser;
   final AccessStatus? _initialAccess;
 
-  /// Extra overrides a test needs (e.g. `speakingGymEnabledProvider`),
-  /// applied AFTER [backend] so they can override any of it too.
+  /// Extra overrides a test needs, applied AFTER [backend] so they can
+  /// override any of it too.
   final List<Override> _extraOverrides;
   late ProviderContainer container;
 

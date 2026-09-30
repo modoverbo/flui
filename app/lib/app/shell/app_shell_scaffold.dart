@@ -1,5 +1,4 @@
 import 'package:flui/app/shell/flui_bottom_bar.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
@@ -11,31 +10,16 @@ import 'package:flui/shared/widgets/flui_symbol.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// Order of the shell branches while `speakingGym` is OFF (the default,
-/// unchanged since before U16). Keep in sync with `app_router.dart`'s
-/// `_originalBranches`.
-///
-/// Four tabs: "Practica" became the "Repaso extra" action on Hoy and "En
-/// contexto" became a section of the word detail, because both were places
-/// the user had to remember to visit. "Habla" is a root-only speaking
-/// challenge promoted to a tab: selecting it always lands on the challenge's
-/// own `ready` phase, and starting a challenge still takes over the full
-/// screen exactly like `/session` does, via a nested root-navigator route.
-enum ShellDestination { today, words, habla, progress }
-
-/// Order of the shell branches while `speakingGym` is ON (U16). ENTRENAR
-/// takes Habla's slot with the training-lab mode picker (`TrainingLabPage`),
-/// and its own loop routes are branch children (no root-navigator
-/// take-over, design D30), unlike Habla's `/speaking/challenge/live`. Keep
-/// in sync with `app_router.dart`'s `_gymBranches`.
-enum GymShellDestination { today, train, words, progress }
+/// Order of the shell branches (U16). ENTRENAR carries the training-lab
+/// mode picker (`TrainingLabPage`), and its own loop routes are branch
+/// children (no root-navigator take-over, design D30). Keep in sync with
+/// `app_router.dart`'s shell branches.
+enum ShellDestination { today, train, words, progress }
 
 /// Navigation chrome: bottom bar on phones, side rail on wide screens.
 ///
 /// The tab glyphs are the custom family at 22 px, never a library icon
-/// inside a tinted square. Reads `speakingGymEnabledProvider` (design D17/
-/// D32) to pick which of the two destination sets above is live; flag off
-/// renders byte-identical to the pre-U16 shell.
+/// inside a tinted square.
 class AppShellScaffold extends ConsumerWidget {
   const new({
     required this.selectedIndex,
@@ -51,55 +35,30 @@ class AppShellScaffold extends ConsumerWidget {
   static FluiGlyph glyphOf(ShellDestination destination) =>
       switch (destination) {
         ShellDestination.today => FluiGlyph.onda,
+        ShellDestination.train => FluiGlyph.microphone,
         // The word-entry glyph: a dictionary entry, which is what the
         // repertoire is.
         ShellDestination.words => FluiGlyph.wordOfTheDay,
-        ShellDestination.habla => FluiGlyph.microphone,
         ShellDestination.progress => FluiGlyph.streak,
-      };
-
-  static FluiGlyph gymGlyphOf(GymShellDestination destination) =>
-      switch (destination) {
-        GymShellDestination.today => FluiGlyph.onda,
-        GymShellDestination.train => FluiGlyph.microphone,
-        GymShellDestination.words => FluiGlyph.wordOfTheDay,
-        GymShellDestination.progress => FluiGlyph.streak,
       };
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = context.l10n;
-    final speakingGym = ref.watch(speakingGymEnabledProvider);
-    // Only watched when the flag is on: the flag-off shell never touches
-    // the mic session at all (D32).
-    final micController = speakingGym ? ref.watch(micControllerProvider) : null;
-    final items = speakingGym
-        ? [
-            for (final destination in GymShellDestination.values)
-              (
-                gymGlyphOf(destination),
-                switch (destination) {
-                  GymShellDestination.today => l10n.navToday,
-                  GymShellDestination.train => l10n.navTrain,
-                  GymShellDestination.words => l10n.navWords,
-                  GymShellDestination.progress => l10n.navProgress,
-                },
-              ),
-          ]
-        : [
-            for (final destination in ShellDestination.values)
-              (
-                glyphOf(destination),
-                switch (destination) {
-                  ShellDestination.today => l10n.navToday,
-                  ShellDestination.words => l10n.navWords,
-                  ShellDestination.habla => l10n.navHabla,
-                  ShellDestination.progress => l10n.navProgress,
-                },
-              ),
-          ];
-    // Progress stays the LAST destination in both sets, so this index
-    // works regardless of which set is active.
+    final micController = ref.watch(micControllerProvider);
+    final items = [
+      for (final destination in ShellDestination.values)
+        (
+          glyphOf(destination),
+          switch (destination) {
+            ShellDestination.today => l10n.navToday,
+            ShellDestination.train => l10n.navTrain,
+            ShellDestination.words => l10n.navWords,
+            ShellDestination.progress => l10n.navProgress,
+          },
+        ),
+    ];
+    // Progress stays the LAST destination, so this index works regardless.
     final progressIndex = items.length - 1;
 
     return LayoutBuilder(
@@ -109,63 +68,19 @@ class AppShellScaffold extends ConsumerWidget {
           return Scaffold(
             backgroundColor: FluiColors.paper,
             body: child,
-            bottomNavigationBar: speakingGym
-                ? FluiBottomBar(
-                    items: [
-                      for (final (index, entry) in items.indexed)
-                        if (index == progressIndex)
-                          (entry.$1, l10n.navProgressShort)
-                        else
-                          entry,
-                    ],
-                    selectedIndex: selectedIndex,
-                    onDestinationSelected: onDestinationSelected,
-                    progressIndex: progressIndex,
-                    micController: micController,
-                  )
-                : SafeArea(
-                    minimum: const EdgeInsets.fromLTRB(14, 0, 14, 12),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(28),
-                      child: NavigationBar(
-                        backgroundColor: FluiColors.surface,
-                        indicatorColor: FluiColors.greenTint,
-                        labelTextStyle: WidgetStateProperty.resolveWith(
-                          (states) => TextStyle(
-                            color: states.contains(WidgetState.selected)
-                                ? FluiColors.ink
-                                : FluiColors.gray,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        selectedIndex: selectedIndex,
-                        onDestinationSelected: onDestinationSelected,
-                        destinations: [
-                          for (final (index, (glyph, label)) in items.indexed)
-                            NavigationDestination(
-                              icon: Semantics(
-                                hint: index == progressIndex
-                                    ? l10n.navProgress
-                                    : null,
-                                child: FluiGlyphIcon(
-                                  glyph,
-                                  size: FluiIconSize.tab,
-                                  color: index == selectedIndex
-                                      ? FluiColors.greenDeep
-                                      : FluiColors.gray,
-                                ),
-                              ),
-                              label: index == progressIndex
-                                  ? l10n.navProgressShort
-                                  : label,
-                              tooltip: index == progressIndex
-                                  ? l10n.navProgress
-                                  : null,
-                            ),
-                        ],
-                      ),
-                    ),
-                  ),
+            bottomNavigationBar: FluiBottomBar(
+              items: [
+                for (final (index, entry) in items.indexed)
+                  if (index == progressIndex)
+                    (entry.$1, l10n.navProgressShort)
+                  else
+                    entry,
+              ],
+              selectedIndex: selectedIndex,
+              onDestinationSelected: onDestinationSelected,
+              progressIndex: progressIndex,
+              micController: micController,
+            ),
           );
         }
 
@@ -197,11 +112,13 @@ class AppShellScaffold extends ConsumerWidget {
                     padding: const EdgeInsets.symmetric(
                       vertical: FluiSpacing.lg,
                     ),
-                    child: speakingGym && micController != null
-                        ? MicButton(controller: micController)
-                        : extended
-                        ? const FluiLogo(symbolSize: 32)
-                        : const FluiSymbol(size: 32, semanticLabel: 'flui'),
+                    // Null only for the brief instant around sign-out/
+                    // sign-in (mirrors `FluiBottomBar`'s own guard).
+                    child: switch (micController) {
+                      final controller? => MicButton(controller: controller),
+                      null when extended => const FluiLogo(symbolSize: 32),
+                      null => const FluiSymbol(size: 32, semanticLabel: 'flui'),
+                    },
                   ),
                   destinations: [
                     for (final (index, (glyph, label)) in items.indexed)
