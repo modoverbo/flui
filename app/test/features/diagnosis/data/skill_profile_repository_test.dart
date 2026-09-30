@@ -21,6 +21,29 @@ const _profile = SkillProfile(
   ],
 );
 
+/// A legitimate `DiagnosisProfiler` output matching the production bug
+/// (fix/diagnosis-profile-save): every observation across all 3 attempts
+/// was an opportunity in exactly the top/second areas, so strengths is
+/// empty and — separately — an area with zero opportunities anywhere
+/// leaves its behavior null. Never fabricated to satisfy a shape.
+const _honestGapsProfile = SkillProfile(
+  topArea: SkillArea.thinking,
+  secondArea: SkillArea.language,
+  topBehavior: BehaviorCode.noClearStructure,
+  secondBehavior: BehaviorCode.vagueWord,
+  strengths: [],
+  evidence: [
+    DiagnosisEvidence(attemptId: 'a1', code: BehaviorCode.noClearStructure),
+  ],
+);
+
+const _nullBehaviorProfile = SkillProfile(
+  topArea: SkillArea.voice,
+  secondArea: SkillArea.thinking,
+  strengths: [],
+  evidence: [],
+);
+
 Map<String, Object?> _row({
   String id = 's1',
   String kind = 'baseline',
@@ -212,6 +235,56 @@ void main() {
       expect(body['top_area'], 'thinking');
       expect(body.containsKey('kind'), isFalse);
       expect(body.containsKey('diagnosed_at'), isFalse);
+    });
+
+    test('save writes empty strengths and never omits a null top/second '
+        'behavior (fix/diagnosis-profile-save: an all-opportunity diagnosis '
+        'is a legitimate shape, never fabricated to satisfy one)', () async {
+      final recorder = SupabaseRecorder(respond: (_) => _row());
+      addTearDown(recorder.dispose);
+
+      await SupabaseSkillProfileRepository(recorder.client)
+          .save(sessionId: 's1', profile: _honestGapsProfile);
+
+      final body = recorder.bodyOf(recorder.last)! as Map<String, Object?>;
+      expect(body['strengths'], <Object?>[]);
+      expect(body['top_behavior'], 'no_clear_structure');
+      expect(body['second_behavior'], 'vague_word');
+    });
+
+    test('save writes explicit JSON null for a null top/second behavior, '
+        'never omitting the key', () async {
+      final recorder = SupabaseRecorder(respond: (_) => _row());
+      addTearDown(recorder.dispose);
+
+      await SupabaseSkillProfileRepository(recorder.client)
+          .save(sessionId: 's1', profile: _nullBehaviorProfile);
+
+      final body = recorder.bodyOf(recorder.last)! as Map<String, Object?>;
+      expect(body.containsKey('top_behavior'), isTrue);
+      expect(body['top_behavior'], isNull);
+      expect(body.containsKey('second_behavior'), isTrue);
+      expect(body['second_behavior'], isNull);
+      expect(body['strengths'], <Object?>[]);
+    });
+
+    test('latest round-trips a row with null behaviors and empty strengths '
+        'back into an honest profile, never fabricating either', () async {
+      final recorder = SupabaseRecorder(
+        respond: (_) => _row()
+          ..['top_behavior'] = null
+          ..['second_behavior'] = null
+          ..['strengths'] = <Object?>[],
+      );
+      addTearDown(recorder.dispose);
+
+      final result = await SupabaseSkillProfileRepository(recorder.client)
+          .latest();
+
+      final profile = result.valueOrNull!.profile;
+      expect(profile.topBehavior, isNull);
+      expect(profile.secondBehavior, isNull);
+      expect(profile.strengths, isEmpty);
     });
 
     test('maps a retake_too_soon trigger error to a typed failure', () async {
