@@ -179,6 +179,57 @@ void main() {
     );
   });
 
+  group('Diagnosis mic notices (real path)', () {
+    testWidgets(
+      'a take released too early surfaces the mic notice on the live page '
+      '(/diagnosis/live sits outside the shell, so it hosts its own '
+      'MicNoticeHost) and never advances the slot',
+      (tester) async {
+        final recorder = _FakeSpeechRecorder();
+        final harness = AppHarness(
+          signedInAs: _ana,
+          access: _trialing,
+          overrides: [
+            speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+          ],
+        );
+        await harness.pumpApp(
+          tester,
+          initialLocation: AppRoutes.diagnosisLive,
+          arrange: (h) => h.planToday(),
+        );
+
+        // Tap to start, tap to stop with the clock frozen: below the mic's
+        // minimum take length.
+        for (var tap = 0; tap < 2; tap++) {
+          final gesture = await tester.startGesture(
+            tester.getCenter(find.byType(MicButton)),
+          );
+          for (var i = 0; i < 3; i++) {
+            await tester.pump();
+          }
+          await gesture.up();
+          for (var i = 0; i < 3; i++) {
+            await tester.pump();
+          }
+        }
+        // Not `pumpAndSettle`: it would outlast the snackbar's own timer.
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(
+          find.textContaining('Fue muy corto y no lo enviamos'),
+          findsOneWidget,
+        );
+        expect(_location(harness), AppRoutes.diagnosisLive);
+        expect(
+          find.text(l10nEs.diagnosisSlotLabel(1, 3).toUpperCase()),
+          findsOneWidget,
+        );
+      },
+    );
+  });
+
   group('Diagnosis pause/resume (U14c, real path)', () {
     testWidgets(
       'pausing after slot 1 lands on the intro with resume copy, the gate '
