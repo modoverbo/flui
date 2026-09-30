@@ -1,17 +1,11 @@
-import 'dart:async';
-
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_layout.dart';
 import 'package:flui/core/theme/flui_motion.dart';
 import 'package:flui/core/theme/flui_radii.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
-import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
-import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/onboarding/presentation/widgets/micro_lesson_view.dart';
-import 'package:flui/features/onboarding/presentation/widgets/onboarding_questions.dart';
 import 'package:flui/shared/motion/reveal_lines.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
@@ -23,24 +17,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
-/// The steps before the account: three benefit pages that make the promise, two
-/// questions that make it personal, and one real word so the promise is
-/// something the user has already felt.
-///
-/// The two preference questions ([contexts], [tone]) are retired behind
-/// `speakingGym` (U14b): the spoken diagnosis replaces them, so a new
-/// signup with the flag on never sees either screen — see
-/// [_IntroPageState._steps].
-enum OnboardingStep { promise, rhythm, ownership, contexts, tone, lesson }
-
-/// The steps shown with `speakingGym` on: the two retired preference
-/// questions are skipped entirely.
-const List<OnboardingStep> _speakingGymSteps = [
-  OnboardingStep.promise,
-  OnboardingStep.rhythm,
-  OnboardingStep.ownership,
-  OnboardingStep.lesson,
-];
+/// The steps before the account: three benefit pages that make the promise,
+/// and one real word so the promise is something the user has already felt.
+/// The two preference questions that used to follow the benefits are
+/// retired (U14b): the spoken diagnosis replaces them.
+enum OnboardingStep { promise, rhythm, ownership, lesson }
 
 class IntroPage extends ConsumerStatefulWidget {
   const new({super.key});
@@ -56,11 +37,7 @@ class _IntroPageState extends ConsumerState<IntroPage> {
   var _lessonDone = false;
   var _movingForward = true;
 
-  /// The step sequence: full when `speakingGym` is off (matches today), the
-  /// two retired questions skipped when it is on.
-  List<OnboardingStep> get _steps => ref.read(speakingGymEnabledProvider)
-      ? _speakingGymSteps
-      : OnboardingStep.values;
+  List<OnboardingStep> get _steps => OnboardingStep.values;
 
   OnboardingStep get _step => _steps[_index];
 
@@ -96,10 +73,6 @@ class _IntroPageState extends ConsumerState<IntroPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final answers =
-        ref.watch(onboardingAnswersControllerProvider).value ??
-        OnboardingAnswers.empty;
-    final controller = ref.read(onboardingAnswersControllerProvider.notifier);
     final step = _step;
     const onDark = false;
 
@@ -119,22 +92,12 @@ class _IntroPageState extends ConsumerState<IntroPage> {
         highlight: l10n.introSlideThreeHighlight,
         body: l10n.introSlideThreeBody,
       ),
-      OnboardingStep.contexts => ContextsQuestion(
-        selected: answers.contexts,
-        onToggle: (scene) => unawaited(controller.toggleContext(scene)),
-      ),
-      OnboardingStep.tone => ToneQuestion(
-        selected: answers.tone,
-        onSelected: (tone) => unawaited(controller.chooseTone(tone)),
-      ),
       OnboardingStep.lesson => MicroLessonView(
         onResolved: () => setState(() => _lessonDone = true),
       ),
     };
 
     final canContinue = switch (step) {
-      OnboardingStep.contexts => answers.contexts.isNotEmpty,
-      OnboardingStep.tone => answers.tone != null,
       OnboardingStep.lesson => _lessonDone,
       _ => true,
     };

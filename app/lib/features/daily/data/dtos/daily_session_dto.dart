@@ -48,35 +48,16 @@ abstract class DailySessionDto with _$DailySessionDto {
 
   const new _();
 
-  /// The pre-U15a column set — kept byte-identical to `main` since
-  /// production migrations are applied manually and PostgREST rejects an
-  /// unknown column outright. Never changes.
   static const _baseColumns =
       'local_date, minutes, planned_word_ids, review_word_ids, theme_id, '
       'completed_at';
 
-  /// `focus_area`/`challenge_id`/`woven_word_ids` — only ever selected or
-  /// written when the caller confirms (via `includeTrainingPlan`) that the
-  /// U7 migration is actually live, i.e. `speakingGymEnabledProvider` is on.
+  /// `focus_area`/`challenge_id`/`woven_word_ids` — the U7 migration's
+  /// training-plan columns, always selected and written.
   static const trainingPlanColumns = 'focus_area, challenge_id, woven_word_ids';
 
-  static const trainingPlanKeys = [
-    'focus_area',
-    'challenge_id',
-    'woven_word_ids',
-  ];
+  static String columns() => '$_baseColumns, $trainingPlanColumns';
 
-  static String columns({bool includeTrainingPlan = false}) =>
-      includeTrainingPlan
-      ? '$_baseColumns, $trainingPlanColumns'
-      : _baseColumns;
-
-  /// [toJson] always writes the training-plan keys (the freezed/
-  /// json_serializable `includeIfNull: true` annotation is compile-time,
-  /// not runtime) — callers writing to a backend where those columns may
-  /// not exist yet MUST strip [trainingPlanKeys] from the result
-  /// themselves when `includeTrainingPlan` is false. See
-  /// `SupabaseDailySessionRepository.saveSession`.
   DailySession toDomain() => DailySession(
     localDate: LocalDate.parse(localDate),
     minutes: minutes,

@@ -1,13 +1,11 @@
 import 'dart:async';
 
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
 import 'package:flui/features/auth/presentation/controllers/sign_out_controller.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/features/diagnosis/presentation/providers/diagnosis_providers.dart';
-import 'package:flui/features/onboarding/domain/onboarding_answers.dart';
 import 'package:flui/features/onboarding/presentation/providers/onboarding_providers.dart';
 import 'package:flui/features/subscription/presentation/controllers/checkout_controller.dart';
 import 'package:flui/features/subscription/presentation/providers/subscription_providers.dart';
@@ -42,17 +40,12 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
     final checkout = ref.watch(checkoutControllerProvider);
     final signingOut = ref.watch(signOutControllerProvider);
     final user = ref.watch(authUserProvider).value;
-    final answers =
-        ref.watch(onboardingAnswersControllerProvider).value ??
-        OnboardingAnswers.empty;
     final preselected = ref.watch(preselectedPlanProvider).value;
     final failure = checkout.failure;
-    // The retired onboarding questions never echo once speakingGym is on
-    // (U14b); page 1 instead echoes the diagnosed skill profile, once one
-    // exists — a lapsed-entitlement reactivation view, never the first-ever
-    // one (diagnosis runs after trial start, so no profile exists yet then).
-    final speakingGym = ref.watch(speakingGymEnabledProvider);
-    final skillProfile = speakingGym && user != null
+    // Page 1 echoes the diagnosed skill profile, once one exists — a
+    // lapsed-entitlement reactivation view, never the first-ever one
+    // (diagnosis runs after trial start, so no profile exists yet then).
+    final skillProfile = user != null
         ? ref.watch(latestSkillProfileProvider(user.id)).value?.profile
         : null;
 
@@ -63,8 +56,6 @@ class _PaywallPageState extends ConsumerState<PaywallPage> {
             mode: PaywallMode.checkout,
             plans: value,
             name: user?.displayName,
-            answers: answers,
-            speakingGym: speakingGym,
             skillProfile: skillProfile,
             initialStep: preselected == null
                 ? PaywallStep.plan

@@ -7,32 +7,27 @@ import 'package:flui/features/vocabulary/domain/exercises/form_recall_check.dart
 import 'package:flui/features/vocabulary/presentation/widgets/spoken_answer_controls.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_notice.dart';
-import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Úsala (1/2): recall the word from its meaning and a masked sentence.
 ///
-/// Typed ([onSubmit], via `FluiTextField`) by default; while [speakingGym]
-/// is on (design D36, U17b), the field and its submit button are replaced
-/// by [SpokenAnswerControls] — the answer comes from the shell's mic
-/// (`FormRecallMicTarget`) instead, and [check]'s own `lastHeard` shows
-/// what was heard. Hint/reveal/continue stay taps either way.
+/// The answer comes from the shell's mic (`FormRecallMicTarget`) via
+/// [SpokenAnswerControls] (design D36, U17b) — [check]'s own `lastHeard`
+/// shows what was heard. Hint/reveal/continue stay taps.
 class FormRecallView extends StatefulWidget {
   const new({
     required this.check,
     required this.explanation,
     required this.syllableCount,
-    required this.onSubmit,
     required this.onHint,
     required this.onContinue,
+    required this.onSkip,
     super.key,
     this.sentenceBefore,
     this.sentenceAfter,
     this.busy = false,
-    this.speakingGym = false,
     this.micController,
-    this.onSkip,
   });
 
   final FormRecallCheck check;
@@ -40,40 +35,24 @@ class FormRecallView extends StatefulWidget {
   final String? sentenceBefore;
   final String? sentenceAfter;
   final int syllableCount;
-  final ValueChanged<String> onSubmit;
   final VoidCallback onHint;
   final VoidCallback onContinue;
   final bool busy;
 
-  /// U17b: shows [SpokenAnswerControls] instead of the typed field/button.
-  final bool speakingGym;
-
-  /// Required (and used) only while [speakingGym] is on.
+  /// Null only for the brief instant around sign-out/sign-in (mirrors
+  /// `FluiBottomBar`'s own guard) — the mic controls stay empty rather
+  /// than crashing.
   final MicController? micController;
 
   /// "Continuar sin hablar" — only offered while the mic is blocked
-  /// (`SpokenAnswerControls` itself gates visibility). Required only while
-  /// [speakingGym] is on.
-  final VoidCallback? onSkip;
+  /// (`SpokenAnswerControls` itself gates visibility).
+  final VoidCallback onSkip;
 
   @override
   State<FormRecallView> createState() => _FormRecallViewState();
 }
 
 class _FormRecallViewState extends State<FormRecallView> {
-  final _controller = TextEditingController();
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  void _submit() {
-    if (_controller.text.trim().isEmpty) return;
-    widget.onSubmit(_controller.text);
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -126,19 +105,11 @@ class _FormRecallViewState extends State<FormRecallView> {
           ),
         ],
         const SizedBox(height: FluiSpacing.lg),
-        if (!widget.speakingGym)
-          FluiTextField(
-            label: l10n.formRecallFieldLabel,
-            controller: _controller,
-            enabled: check.status == FormRecallStatus.pending && !widget.busy,
-            textInputAction: TextInputAction.done,
-            onSubmitted: (_) => _submit(),
-          )
-        else if (widget.micController case final controller?)
+        if (widget.micController case final controller?)
           SpokenAnswerControls(
             controller: controller,
             heardText: check.lastHeard,
-            onSkip: widget.onSkip ?? () {},
+            onSkip: widget.onSkip,
           ),
         if (check.hintsUsed >= 1) ...[
           const SizedBox(height: FluiSpacing.sm),
@@ -188,14 +159,6 @@ class _FormRecallViewState extends State<FormRecallView> {
             onPressed: widget.onContinue,
           )
         else ...[
-          if (!widget.speakingGym) ...[
-            FluiButton.primary(
-              label: l10n.formRecallCheck,
-              isLoading: widget.busy,
-              onPressed: _submit,
-            ),
-            const SizedBox(height: FluiSpacing.xs),
-          ],
           Center(
             child: FluiButton.text(
               label: check.hintsUsed >= FormRecallCheck.maxHints

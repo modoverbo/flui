@@ -91,7 +91,7 @@ final class HoldToRecordFinished extends HoldToRecordState {
 /// U23a) are additive: they classify a single gesture recognizer into both
 /// a hold and a tap-to-toggle, so `MicController` (U23b) never needs two
 /// recognizers. [press]/[release]/[cancel] keep their original U2 behavior
-/// unchanged for the one remaining direct consumer, `SpeakingChallengePage`.
+/// unchanged — [pointerDown]/[pointerUp] delegate to them.
 final class HoldToRecord {
   new(
     this._recorder, {
@@ -136,10 +136,9 @@ final class HoldToRecord {
 
   /// Raw dBFS amplitude samples, e.g. for a level-meter widget. Stops
   /// emitting once the recording stops or is cancelled (the underlying
-  /// [SpeechRecorder] contract). Kept unchanged for the one remaining
-  /// direct consumer (`SpeakingChallengePage`); opens a fresh platform
-  /// stream on every access. New capture-owning code should prefer
-  /// [levels], which shares one subscription (D45).
+  /// [SpeechRecorder] contract). Opens a fresh platform stream on every
+  /// access — new capture-owning code should prefer [levels], which
+  /// shares one subscription (D45).
   Stream<double> get amplitude => _recorder.amplitude;
 
   /// Raw dBFS samples collected via exactly ONE subscription to

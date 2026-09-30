@@ -1,6 +1,5 @@
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/clock/clock_providers.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
@@ -44,12 +43,9 @@ import 'package:material_ui/material_ui.dart' hide Theme;
 /// `/words/:wordId`: pattern P1 — the word owns the top of the screen, the
 /// rail shows how it is used, and "En contexto" lives here now.
 ///
-/// While `speakingGymEnabledProvider` is on (U17), shows the word's cloze
-/// exercise alongside the catalog info ("cloze in one place") and registers
-/// `WordSpeakTarget` with the shell's mic via `MicTargetScope` — entirely
-/// absent from the tree while the flag is off (production safety: every
-/// push auto-deploys the web app), matching `WordsPage`'s own established
-/// guard for the same class of provider.
+/// Shows the word's cloze exercise alongside the catalog info ("cloze in
+/// one place", U17) and registers `WordSpeakTarget` with the shell's mic
+/// via `MicTargetScope`.
 class WordDetailPage extends ConsumerWidget {
   const new({required this.wordId, super.key});
 
@@ -62,7 +58,6 @@ class WordDetailPage extends ConsumerWidget {
     final entry = ref.watch(wordEntryProvider(wordId)).asData?.value;
     final themesById = ref.watch(themesByIdProvider).value;
     final word = wordsById.asData?.value[wordId];
-    final speakingGym = ref.watch(speakingGymEnabledProvider);
     final body = Scaffold(
       body: word != null
           ? _Detail(
@@ -70,7 +65,6 @@ class WordDetailPage extends ConsumerWidget {
               entry: entry,
               today: ref.watch(clockProvider).localToday(),
               themesById: themesById,
-              speakingGym: speakingGym,
             )
           : wordsById.hasError
           ? SafeArea(
@@ -105,7 +99,6 @@ class WordDetailPage extends ConsumerWidget {
               ),
             ),
     );
-    if (!speakingGym) return body;
     final target = ref.watch(wordSpeakTargetProvider(wordId))
       ..onDelivered = () => context.go(AppRoutes.wordSpeak(wordId));
     return MicTargetScope(target: target, child: body);
@@ -118,15 +111,11 @@ class _Detail extends StatelessWidget {
     required this.entry,
     required this.today,
     required this.themesById,
-    required this.speakingGym,
   });
 
   final Word word;
   final WordEntry? entry;
   final LocalDate today;
-
-  /// U17: shows the cloze card + mic hint only while the flag is on.
-  final bool speakingGym;
 
   /// The taxonomy, to resolve this word's own theme colour. `null` while
   /// still loading — the hero simply keeps the brand plate until it
@@ -180,7 +169,7 @@ class _Detail extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                if (speakingGym && word.exercises.isNotEmpty) ...[
+                if (word.exercises.isNotEmpty) ...[
                   _PracticeCard(
                     exercise: _lowestPosition(word.exercises),
                     forms: word.forms,

@@ -4,7 +4,6 @@ import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/audio/audio_providers.dart';
 import 'package:flui/core/audio/speech_player.dart';
 import 'package:flui/core/clock/clock_providers.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/result.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
@@ -79,14 +78,9 @@ class ProgressPage extends ConsumerWidget {
                 // audio settings, retake) is PRIMARY content per spec
                 // `progress`: it renders ABOVE the streak/stats/achievements
                 // gamification block below, which stays exactly as-is and
-                // becomes visually secondary. Only ever built while the
-                // flag is on (production safety, U14c's established
-                // pattern): flag-off never watches any of its dependent
-                // providers.
-                if (ref.watch(speakingGymEnabledProvider)) ...[
-                  const _EvidenceSection(),
-                  SizedBox(height: layout.sectionGap),
-                ],
+                // becomes visually secondary.
+                const _EvidenceSection(),
+                SizedBox(height: layout.sectionGap),
                 switch (overview) {
                   AsyncValue(hasValue: true, :final value?) => _ProgressContent(
                     overview: value,
@@ -110,14 +104,8 @@ class ProgressPage extends ConsumerWidget {
                     style: layout.type.bodyL.copyWith(color: FluiColors.ink),
                   ),
                 ),
-                // Only ever built while the flag is on: flag-off never
-                // watches `speakingGymEnabledProvider`'s dependents, so
-                // production (flag off) makes no new diagnosis queries and
-                // shows no diagnosis entry here (U14c).
-                if (ref.watch(speakingGymEnabledProvider)) ...[
-                  SizedBox(height: layout.blockGap),
-                  const _DiagnosisResumeEntry(),
-                ],
+                SizedBox(height: layout.blockGap),
+                const _DiagnosisResumeEntry(),
                 SizedBox(height: layout.blockGap),
                 FluiButton.outline(
                   label: l10n.progressSignOut,

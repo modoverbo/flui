@@ -1,5 +1,4 @@
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/failure_messages.dart';
 import 'package:flui/core/l10n/l10n.dart';
@@ -32,11 +31,8 @@ import 'package:material_ui/material_ui.dart' hide Theme;
 /// "Palabras": the repertoire, filterable by state. Two columns on a wide
 /// window, so the list uses the page instead of a strip down the middle.
 ///
-/// While `speakingGymEnabledProvider` is on (U17), shows today's due words
-/// at the top and registers `TodayWordTarget` with the shell's mic via
-/// `MicTargetScope` — entirely absent from the tree while the flag is off
-/// (production safety: every push auto-deploys the web app), matching
-/// `TodayPage`'s own established guard for the same class of provider.
+/// Shows today's due words at the top (U17) and registers `TodayWordTarget`
+/// with the shell's mic via `MicTargetScope`.
 class WordsPage extends ConsumerStatefulWidget {
   const new({super.key});
 
@@ -54,10 +50,8 @@ class _WordsPageState extends ConsumerState<WordsPage> {
     final layout = context.layout;
     final words = ref.watch(myWordsProvider);
     final themes = ref.watch(themesByIdProvider).value ?? const {};
-    final speakingGym = ref.watch(speakingGymEnabledProvider);
-    final todayWords = speakingGym
-        ? ref.watch(todayWordsProvider).value ?? const <WordEntry>[]
-        : const <WordEntry>[];
+    final todayWords =
+        ref.watch(todayWordsProvider).value ?? const <WordEntry>[];
 
     final body = Scaffold(
       body: SafeArea(
@@ -118,7 +112,6 @@ class _WordsPageState extends ConsumerState<WordsPage> {
         ),
       ),
     );
-    if (!speakingGym) return body;
     final target = ref.watch(todayWordTargetProvider)
       ..onWordSpeakStarted = (wordId) =>
           context.go(AppRoutes.wordSpeak(wordId));

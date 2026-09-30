@@ -10,24 +10,15 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 
 /// `daily_sessions` of the signed-in user.
 ///
-/// [includeTrainingPlan] MUST stay `false` unless the caller has confirmed
-/// the U7 migration (`focus_area`/`challenge_id`/`woven_word_ids`) is
-/// actually live — production migrations are applied manually, so nothing
-/// guarantees it. `false` (the default) selects/writes the exact pre-U15a
-/// column set, byte-identical to `main`; PostgREST 400s on an unknown
-/// column, so a stray extra column here would break HOY for every
-/// production user, flag or no flag. Wired from `speakingGymEnabledProvider`
-/// in `bootstrap.dart`.
+/// Selects/writes the full column set, including the U7 migration's
+/// training-plan columns (`focus_area`/`challenge_id`/`woven_word_ids`) —
+/// those migrations must be live in production before this ships (see the
+/// PR's pre-merge checklist).
 final class SupabaseDailySessionRepository implements DailySessionRepository {
-  const new(
-    this._client, {
-    required this.currentUserId,
-    this.includeTrainingPlan = false,
-  });
+  const new(this._client, {required this.currentUserId});
 
   final SupabaseClient _client;
   final String? Function() currentUserId;
-  final bool includeTrainingPlan;
 
   @override
   Future<Result<List<DailySession>>> fetchSessions() async {
@@ -35,9 +26,7 @@ final class SupabaseDailySessionRepository implements DailySessionRepository {
       final rows = await fetchAllPages(
         (from, to) => _client
             .from('daily_sessions')
-            .select(
-              DailySessionDto.columns(includeTrainingPlan: includeTrainingPlan),
-            )
+            .select(DailySessionDto.columns())
             .order('local_date', ascending: true)
             .range(from, to),
       );
@@ -58,9 +47,6 @@ final class SupabaseDailySessionRepository implements DailySessionRepository {
         session,
         userId: userId,
       ).toJson();
-      if (!includeTrainingPlan) {
-        DailySessionDto.trainingPlanKeys.forEach(payload.remove);
-      }
       await _client
           .from('daily_sessions')
           .upsert(payload, onConflict: 'user_id,local_date');

@@ -13,32 +13,17 @@ import 'package:flui/features/subscription/domain/access_gate.dart';
 /// With access, the app routes ([AppRoutes.needsDailyBudget]) first ask for
 /// today's time budget when [daily] has no session for today.
 ///
-/// [speakingGym] gates [AppRoutes.gymRetiredRoutes] (design D32, U16):
-/// while it is off (the default), the old Habla/speaking-challenge routes
-/// stay live and this redirect never fires for them.
-///
-/// [diagnosis] gates the mandatory diagnosis (design part-3 §11, D16):
-/// while it defaults to [DiagnosisGate.notRequired] (`speakingGym` off),
-/// every branch below that reads it is unreachable, so this behaves
-/// byte-identically to before diagnosis existed.
+/// [diagnosis] gates the mandatory diagnosis (design part-3 §11, D16).
 String? appRedirect({
   required AuthStatus auth,
   required AccessGate access,
   required DailyGate daily,
   required Uri location,
-  bool speakingGym = false,
   DiagnosisGate diagnosis = DiagnosisGate.notRequired,
 }) {
   final atSplash = location.path == AppRoutes.splash;
   final target = atSplash ? _rememberedLocation(location) : location;
-  final destination = _destinationFor(
-    auth,
-    access,
-    daily,
-    target,
-    speakingGym,
-    diagnosis,
-  );
+  final destination = _destinationFor(auth, access, daily, target, diagnosis);
 
   if (destination == null) {
     // State still unknown: wait on the splash.
@@ -53,7 +38,6 @@ String? _destinationFor(
   AccessGate access,
   DailyGate daily,
   Uri target,
-  bool speakingGym,
   DiagnosisGate diagnosis,
 ) {
   final path = target.path;
@@ -81,14 +65,9 @@ String? _destinationFor(
                 ? AppRoutes.diagnosis
                 : AppRoutes.timeBudget;
           }
-          // 2. Old deep links to the tabs that were merged away still win.
+          // 2. Old deep links to retired tabs still win, incl. Habla ->
+          //    ENTRENAR (U16).
           if (AppRoutes.retiredRoutes[path] case final moved?) return moved;
-          // Habla -> ENTRENAR (U16), only while speakingGym is on.
-          if (speakingGym) {
-            if (AppRoutes.gymRetiredRoutes[path] case final moved?) {
-              return moved;
-            }
-          }
           // 3. Unknown/error diagnosis waits, exactly like AccessGate.
           if (diagnosis == DiagnosisGate.unknown ||
               diagnosis == DiagnosisGate.error) {
@@ -116,10 +95,7 @@ String? _destinationFor(
                   AppRoutes.publicRoutes.contains(path)
               ? Uri(path: AppRoutes.today)
               : target;
-          if (!AppRoutes.needsDailyBudget(
-            resolved.path,
-            speakingGym: speakingGym,
-          )) {
+          if (!AppRoutes.needsDailyBudget(resolved.path)) {
             return resolved.toString();
           }
           return switch (daily) {

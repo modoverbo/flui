@@ -1,6 +1,5 @@
 import 'package:flui/app/shell/app_shell_scaffold.dart';
 import 'package:flui/app/shell/mic_navigation_binding.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/presentation/mic_notice_host.dart';
 import 'package:flui/features/training/presentation/quick/quick_practice_panel_host.dart';
@@ -17,14 +16,10 @@ import 'package:material_ui/material_ui.dart';
 /// visible tab, including on deep links and programmatic navigation, not
 /// only on an explicit tab tap.
 ///
-/// While `speakingGym` is on (D32), also owns the app-lifetime
-/// `MicNavigationBinding` (U23d, design §19.6), wraps the shell in a
-/// `MicNoticeHost`, installs `QuickPracticeTarget` as the registry's
-/// fallback and wraps the shell in a `QuickPracticePanelHost` (U23e,
-/// design §19.13) — all entirely absent from the tree while the flag is
-/// off, so the flag-off shell has zero mic-notice/navigation-binding/
-/// quick-practice side effects (production safety: every push
-/// auto-deploys the web app).
+/// Also owns the app-lifetime `MicNavigationBinding` (U23d, design §19.6),
+/// wraps the shell in a `MicNoticeHost`, installs `QuickPracticeTarget` as
+/// the registry's fallback and wraps the shell in a
+/// `QuickPracticePanelHost` (U23e, design §19.13).
 class AppShell extends ConsumerStatefulWidget {
   const new({required this.navigationShell, super.key});
 
@@ -43,7 +38,6 @@ class _AppShellState extends ConsumerState<AppShell> {
     super.didChangeDependencies();
     if (_boundOnce) return;
     _boundOnce = true;
-    if (!ref.read(speakingGymEnabledProvider)) return;
     final quickPracticeTarget = ref.read(quickPracticeTargetProvider);
     _binding = MicNavigationBinding(
       registry: ref.read(micTargetRegistryProvider),
@@ -72,14 +66,8 @@ class _AppShellState extends ConsumerState<AppShell> {
     ref
         .read(micTargetRegistryProvider)
         .setActiveBranch(widget.navigationShell.currentIndex);
-    final speakingGym = ref.watch(speakingGymEnabledProvider);
-    // Only watched when the flag is on: the flag-off shell never touches
-    // the mic session at all (D32), matching `AppShellScaffold`'s own
-    // guard for the same provider.
-    final micController = speakingGym ? ref.watch(micControllerProvider) : null;
-    final quickPracticeTarget = speakingGym
-        ? ref.watch(quickPracticeTargetProvider)
-        : null;
+    final micController = ref.watch(micControllerProvider);
+    final quickPracticeTarget = ref.watch(quickPracticeTargetProvider);
     final scaffold = AppShellScaffold(
       selectedIndex: widget.navigationShell.currentIndex,
       onDestinationSelected: (index) => widget.navigationShell.goBranch(
@@ -88,7 +76,6 @@ class _AppShellState extends ConsumerState<AppShell> {
       ),
       child: widget.navigationShell,
     );
-    if (!speakingGym) return scaffold;
     return MicNoticeHost(
       controller: micController,
       child: QuickPracticePanelHost(

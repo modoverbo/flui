@@ -9,33 +9,28 @@ import 'package:flui/features/vocabulary/presentation/widgets/highlighted_text.d
 import 'package:flui/features/vocabulary/presentation/widgets/spoken_answer_controls.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_notice.dart';
-import 'package:flui/shared/widgets/flui_text_field.dart';
 import 'package:material_ui/material_ui.dart';
 
 /// Úsala (2/2): the user's own sentence (writing phase), then
 /// "¿Suena natural?" (self-check).
 ///
-/// Typed ([onSubmit], via `FluiTextField`) by default during the writing
-/// phase; while [speakingGym] is on (design D36, U17b), the field and its
-/// submit button are replaced by [SpokenAnswerControls] — the sentence
-/// comes from the shell's mic (`ProductionMicTarget`) instead, and
-/// [flow]'s own `sentence` (set by `ProductionFlow.submit` either way)
-/// shows what was heard. The self-check phase is unaffected either way —
-/// it has never had a text field.
+/// During the writing phase, the sentence comes from the shell's mic
+/// (`ProductionMicTarget`) via [SpokenAnswerControls] (design D36, U17b) —
+/// [flow]'s own `sentence` (set by `ProductionFlow.submit`) shows what was
+/// heard. The self-check phase is unaffected — it has never had a text
+/// field.
 class ProductionView extends StatefulWidget {
   const new({
     required this.flow,
     required this.lemma,
     required this.beforePhrase,
-    required this.onSubmit,
     required this.onConfirm,
     required this.onRevise,
     required this.onToggle,
+    required this.onSkip,
     super.key,
     this.busy = false,
-    this.speakingGym = false,
     this.micController,
-    this.onSkip,
   });
 
   final ProductionFlow flow;
@@ -43,37 +38,25 @@ class ProductionView extends StatefulWidget {
 
   /// A vague phrase the word replaces, used as the situation.
   final String beforePhrase;
-  final ValueChanged<String> onSubmit;
   final VoidCallback onConfirm;
   final VoidCallback onRevise;
   final ValueChanged<ProductionRubric> onToggle;
   final bool busy;
 
-  /// U17b: shows [SpokenAnswerControls] instead of the typed field/button
-  /// during the writing phase.
-  final bool speakingGym;
-
-  /// Required (and used) only while [speakingGym] is on.
+  /// Null only for the brief instant around sign-out/sign-in (mirrors
+  /// `FluiBottomBar`'s own guard) — the mic controls stay empty rather
+  /// than crashing.
   final MicController? micController;
 
   /// "Continuar sin hablar" — only offered while the mic is blocked
-  /// (`SpokenAnswerControls` itself gates visibility). Required only while
-  /// [speakingGym] is on.
-  final VoidCallback? onSkip;
+  /// (`SpokenAnswerControls` itself gates visibility).
+  final VoidCallback onSkip;
 
   @override
   State<ProductionView> createState() => _ProductionViewState();
 }
 
 class _ProductionViewState extends State<ProductionView> {
-  late final _controller = TextEditingController(text: widget.flow.sentence);
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
@@ -172,23 +155,7 @@ class _ProductionViewState extends State<ProductionView> {
           style: type.bodyL.copyWith(color: FluiColors.charcoal),
         ),
         const SizedBox(height: FluiSpacing.lg),
-        if (!widget.speakingGym) ...[
-          FluiTextField(
-            label: l10n.productionFieldLabel,
-            controller: _controller,
-            textCapitalization: TextCapitalization.sentences,
-            keyboardType: TextInputType.text,
-            textInputAction: TextInputAction.done,
-            onSubmitted: widget.onSubmit,
-            errorText: _issueMessage(issue, l10n, widget.lemma),
-          ),
-          const SizedBox(height: FluiSpacing.lg),
-          FluiButton.primary(
-            label: l10n.productionSubmit,
-            isLoading: widget.busy,
-            onPressed: () => widget.onSubmit(_controller.text),
-          ),
-        ] else if (widget.micController case final controller?) ...[
+        if (widget.micController case final controller?) ...[
           if (_issueMessage(issue, l10n, widget.lemma) case final message?) ...[
             FluiNotice(message: message),
             const SizedBox(height: FluiSpacing.sm),
@@ -196,7 +163,7 @@ class _ProductionViewState extends State<ProductionView> {
           SpokenAnswerControls(
             controller: controller,
             heardText: flow.sentence.isEmpty ? null : flow.sentence,
-            onSkip: widget.onSkip ?? () {},
+            onSkip: widget.onSkip,
           ),
         ],
       ],

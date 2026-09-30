@@ -4,7 +4,6 @@ import 'package:flui/app/router/app_redirect.dart';
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/app/router/flui_transitions.dart';
 import 'package:flui/app/shell/app_shell.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/mic/presentation/mic_layer_scope.dart';
 import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/pages/password_reset_page.dart';
@@ -23,7 +22,6 @@ import 'package:flui/features/diagnosis/presentation/diagnosis_result_page.dart'
 import 'package:flui/features/onboarding/presentation/intro_page.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/features/profile/presentation/progress_page.dart';
-import 'package:flui/features/speaking/presentation/speaking_challenge_page.dart';
 import 'package:flui/features/subscription/presentation/pages/checkout_return_page.dart';
 import 'package:flui/features/subscription/presentation/pages/paywall_page.dart';
 import 'package:flui/features/subscription/presentation/pages/plan_preview_page.dart';
@@ -55,10 +53,6 @@ GoRouter goRouter(Ref ref) {
     ..listen(dailyGateProvider, (_, _) => refresh.notify())
     ..listen(diagnosisGateProvider, (_, _) => refresh.notify());
 
-  // The router is built once at startup (design D17): no runtime toggling,
-  // so a plain read (not watch) is enough here.
-  final speakingGym = ref.read(speakingGymEnabledProvider);
-
   // Created per router so tests can build many routers.
   final rootKey = GlobalKey<NavigatorState>(debugLabel: 'root');
   final router = GoRouter(
@@ -70,11 +64,10 @@ GoRouter goRouter(Ref ref) {
       access: ref.read(accessGateProvider),
       daily: ref.read(dailyGateProvider),
       location: state.uri,
-      speakingGym: speakingGym,
       diagnosis: ref.read(diagnosisGateProvider),
     ),
     errorBuilder: (context, state) => const NotFoundPage(),
-    routes: _routes(rootKey, speakingGym: speakingGym),
+    routes: _routes(rootKey),
   );
   ref.onDispose(() {
     router.dispose();
@@ -83,10 +76,7 @@ GoRouter goRouter(Ref ref) {
   return router;
 }
 
-List<RouteBase> _routes(
-  GlobalKey<NavigatorState> rootKey, {
-  required bool speakingGym,
-}) => [
+List<RouteBase> _routes(GlobalKey<NavigatorState> rootKey) => [
   GoRoute(path: AppRoutes.root, builder: (_, _) => const SplashPage()),
   GoRoute(path: AppRoutes.splash, builder: (_, _) => const SplashPage()),
   GoRoute(path: AppRoutes.welcome, builder: (_, _) => const WelcomePage()),
@@ -127,12 +117,10 @@ List<RouteBase> _routes(
       key: state.pageKey,
     ),
   ),
-  // The mandatory diagnosis (design part-3 §11, D16, U14a): reachable only
-  // while speakingGym is on — flag off, these paths are unregistered and
-  // hit NotFoundPage, matching "diagnosis routes must be unreachable".
-  // Root-navigator, outside the shell: the gate blocks every tab, so there
-  // is no chrome to keep, unlike ENTRENAR's own in-branch loop screens.
-  if (speakingGym) ..._diagnosisRoutes(rootKey),
+  // The mandatory diagnosis (design part-3 §11, D16, U14a). Root-navigator,
+  // outside the shell: the gate blocks every tab, so there is no chrome to
+  // keep, unlike ENTRENAR's own in-branch loop screens.
+  ..._diagnosisRoutes(rootKey),
   StatefulShellRoute(
     parentNavigatorKey: rootKey,
     builder: (context, state, navigationShell) =>
@@ -149,50 +137,16 @@ List<RouteBase> _routes(
               MicLayerScope(branch: index, child: child),
           ],
         ),
-    branches: speakingGym ? _gymBranches(rootKey) : _originalBranches(rootKey),
+    branches: _shellBranches(rootKey),
   ),
 ];
 
-/// Shell branches while `speakingGym` is OFF (the default, unchanged since
-/// before U16): Hoy, Palabras, Habla, Progreso — matches
-/// `app_shell_scaffold.dart`'s `ShellDestination` order exactly.
-List<StatefulShellBranch> _originalBranches(
-  GlobalKey<NavigatorState> rootKey,
-) => [
+/// Shell branches (U16): Hoy, ENTRENAR, Palabras, Progreso — matches
+/// `app_shell_scaffold.dart`'s `ShellDestination` order exactly. ENTRENAR
+/// replaced the old Habla/speaking-challenge tab; `/speaking/challenge`
+/// deep links redirect to it via `AppRoutes.retiredRoutes`.
+List<StatefulShellBranch> _shellBranches(GlobalKey<NavigatorState> rootKey) => [
   _todayBranch(rootKey),
-  _wordsBranch(),
-  StatefulShellBranch(
-    routes: [
-      // Habla: selecting the tab always lands on the challenge's own
-      // "ready" phase. Starting a challenge goes to `.../live`, a
-      // full-screen take-over on the root navigator, same as
-      // `/today/time` above — the shell chrome disappears exactly like
-      // it does entering `/session` from `/today`.
-      GoRoute(
-        path: AppRoutes.speakingChallenge,
-        builder: (_, _) => const SpeakingTabPage(),
-        routes: [
-          GoRoute(
-            path: 'live',
-            parentNavigatorKey: rootKey,
-            pageBuilder: (_, state) => FluiTransitions.sharedAxisZ(
-              const SpeakingChallengePage(),
-              key: state.pageKey,
-            ),
-          ),
-        ],
-      ),
-    ],
-  ),
-  _progressBranch(),
-];
-
-/// Shell branches while `speakingGym` is ON (U16): Hoy, ENTRENAR, Palabras,
-/// Progreso — matches `app_shell_scaffold.dart`'s `GymShellDestination`
-/// order exactly. ENTRENAR replaces Habla's slot; `/speaking/challenge`
-/// deep links redirect to it via `AppRoutes.gymRetiredRoutes`.
-List<StatefulShellBranch> _gymBranches(GlobalKey<NavigatorState> rootKey) => [
-  _todayBranch(rootKey, speakingGym: true),
   StatefulShellBranch(
     routes: [
       // ENTRENAR (U16, replacing the Habla/speaking-challenge tab):
@@ -216,14 +170,13 @@ List<StatefulShellBranch> _gymBranches(GlobalKey<NavigatorState> rootKey) => [
       ),
     ],
   ),
-  _wordsBranch(speakingGym: true),
+  _wordsBranch(),
   _progressBranch(),
 ];
 
 StatefulShellBranch _todayBranch(
-  GlobalKey<NavigatorState> rootKey, {
-  bool speakingGym = false,
-}) => StatefulShellBranch(
+  GlobalKey<NavigatorState> rootKey,
+) => StatefulShellBranch(
   routes: [
     GoRoute(
       path: AppRoutes.today,
@@ -245,45 +198,40 @@ StatefulShellBranch _todayBranch(
           builder: (_, _) => const TimeBudgetPage(),
         ),
         // HOY's own loop (U15a): a branch child, not a root-navigator
-        // take-over (design D30, matches ENTRENAR's `/train/:mode`) —
-        // only reachable while `speakingGym` is on.
-        if (speakingGym)
-          GoRoute(path: 'train', builder: (_, _) => const TodayTrainPage()),
+        // take-over (design D30, matches ENTRENAR's `/train/:mode`).
+        GoRoute(path: 'train', builder: (_, _) => const TodayTrainPage()),
       ],
     ),
   ],
 );
 
-StatefulShellBranch _wordsBranch({bool speakingGym = false}) =>
-    StatefulShellBranch(
+StatefulShellBranch _wordsBranch() => StatefulShellBranch(
+  routes: [
+    GoRoute(
+      path: AppRoutes.words,
+      builder: (_, _) => const WordsPage(),
       routes: [
         GoRoute(
-          path: AppRoutes.words,
-          builder: (_, _) => const WordsPage(),
+          path: ':wordId',
+          builder: (context, state) => _WordDetailRoute(
+            wordId: state.pathParameters['wordId']!,
+            returnLocation: state.uri.queryParameters['returnTo'],
+          ),
           routes: [
+            // PALABRAS' own spoken-use loop (U17): a branch child of the
+            // word detail, not a root-navigator take-over (design D30,
+            // matches ENTRENAR's `/train/:mode`).
             GoRoute(
-              path: ':wordId',
-              builder: (context, state) => _WordDetailRoute(
-                wordId: state.pathParameters['wordId']!,
-                returnLocation: state.uri.queryParameters['returnTo'],
-              ),
-              routes: [
-                // PALABRAS' own spoken-use loop (U17): a branch child of
-                // the word detail, not a root-navigator take-over (design
-                // D30, matches ENTRENAR's `/train/:mode`) — only reachable
-                // while `speakingGym` is on.
-                if (speakingGym)
-                  GoRoute(
-                    path: 'speak',
-                    builder: (context, state) =>
-                        WordSpeakPage(wordId: state.pathParameters['wordId']!),
-                  ),
-              ],
+              path: 'speak',
+              builder: (context, state) =>
+                  WordSpeakPage(wordId: state.pathParameters['wordId']!),
             ),
           ],
         ),
       ],
-    );
+    ),
+  ],
+);
 
 List<RouteBase> _diagnosisRoutes(GlobalKey<NavigatorState> rootKey) => [
   GoRoute(
