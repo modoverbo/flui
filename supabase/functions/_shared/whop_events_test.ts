@@ -6,6 +6,7 @@ import {
   entitlementUpdateFromEvent,
   isForeignAccount,
   mapWhopMembershipStatus,
+  minimizeWhopPayload,
   parseWhopEnvelope,
   type StoredEntitlement,
   type WhopEnvelope,
@@ -327,4 +328,71 @@ Deno.test("a new membership that grants access replaces an inactive one without 
   if (decision.kind !== "write") return;
   assertEquals(decision.row.whop_membership_id, "mem_new");
   assertEquals(decision.row.trial_ends_at, null);
+});
+
+// minimizeWhopPayload -----------------------------------------------------------------------
+
+Deno.test("minimizeWhopPayload keeps only the debugging fields and drops the buyer identity", () => {
+  const minimized = minimizeWhopPayload(
+    envelope("membership.activated", {
+      id: "mem_1",
+      status: "trialing",
+      plan: { id: "plan_monthly", title: "Flui mensual" },
+      metadata: { app_user_id: USER_ID, note: "internal" },
+      user: { id: "user_1", email: "buyer@example.com", name: "Ana Buyer", username: "ana" },
+      member: { id: "mber_1", user: { email: "buyer@example.com" } },
+      email: "buyer@example.com",
+      renewal_period_end: "2026-09-20T12:00:00Z",
+      payment_method: { card: { last4: "4242" } },
+    }),
+  );
+
+  assertEquals(minimized, {
+    timestamp: "2026-09-13T11:59:00Z",
+    membership_id: "mem_1",
+    plan_id: "plan_monthly",
+    status: "trialing",
+    app_user_id: USER_ID,
+  });
+  const serialized = JSON.stringify(minimized);
+  for (const leaked of ["buyer@example.com", "Ana Buyer", "4242", "internal", "user_1"]) {
+    assertEquals(serialized.includes(leaked), false, `${leaked} must not be stored`);
+  }
+});
+
+Deno.test("minimizeWhopPayload reads the versioned layout (plan_id) and unix timestamps", () => {
+  assertEquals(
+    minimizeWhopPayload(
+      envelope("membership.deactivated", {
+        id: "mem_2",
+        plan_id: "plan_yearly",
+        metadata: { app_user_id: USER_ID.toUpperCase() },
+      }, { timestamp: 1789300000 }),
+    ),
+    {
+      timestamp: "1789300000",
+      membership_id: "mem_2",
+      plan_id: "plan_yearly",
+      app_user_id: USER_ID,
+    },
+  );
+});
+
+Deno.test("minimizeWhopPayload omits absent fields and never stores a non-UUID app_user_id", () => {
+  assertEquals(
+    minimizeWhopPayload(
+      envelope("payment.succeeded", { metadata: { app_user_id: "buyer@example.com" } }, {
+        timestamp: undefined,
+      }),
+    ),
+    {},
+  );
+});
+
+Deno.test("minimizeWhopPayload caps every stored value so the row stays tiny", () => {
+  const minimized = minimizeWhopPayload(
+    envelope("membership.activated", { id: "m".repeat(5000), status: "s".repeat(5000) }),
+  );
+  assertEquals(minimized.membership_id?.length, 128);
+  assertEquals(minimized.status?.length, 128);
 });

@@ -127,9 +127,6 @@ ones this ADR adds.
 
 ## Follow-ups
 
-- `whop_webhook_events.payload` stores the full webhook body, which may include the buyer's Whop
-  identity, and is not tied to the user (survives account deletion). Minimizing it is open (tracked
-  since ADR-0004).
 - `micControllerProvider`'s `keepAlive` lifetime was never load-tested for a long-running tab left
   open across multiple sign-in/sign-out cycles; watch for a `HoldToRecord`/platform-recorder leak.
 - `MicNoticeHost` has not been exercised on a real diagnosis-failure device path (only the fake

@@ -9,6 +9,7 @@ const NOW = new Date("2026-09-13T12:00:00Z");
 
 class FakeRepository implements WebhookRepository {
   events = new Map<string, { eventType: string; processed: boolean }>();
+  payloads = new Map<string, unknown>();
   entitlements = new Map<string, StoredEntitlement>();
   saveResult: "saved" | "unknown_user" | "membership_conflict" = "saved";
   failOnSave = false;
@@ -19,6 +20,7 @@ class FakeRepository implements WebhookRepository {
       return Promise.resolve(existing.processed ? "processed" as const : "pending" as const);
     }
     this.events.set(event.webhookId, { eventType: event.eventType, processed: false });
+    this.payloads.set(event.webhookId, event.payload);
     return Promise.resolve("new" as const);
   }
   markProcessed(webhookId: string) {
@@ -268,4 +270,45 @@ Deno.test("database failures return 500 so Whop retries, and the event stays pen
   assertEquals(response.status, 500);
   assertEquals((await response.json()).error.code, "internal_error");
   assertEquals(repository.events.get("msg_1")?.processed, false);
+});
+
+Deno.test("the stored event payload is minimized: no buyer identity reaches the database", async () => {
+  const repository = new FakeRepository();
+  const response = await handlerWith(repository)(
+    await signedRequest(
+      membershipEvent("membership.activated", {
+        user: { id: "user_1", email: "buyer@example.com", name: "Ana Buyer" },
+        email: "buyer@example.com",
+        payment_method: { card: { last4: "4242" } },
+      }),
+    ),
+  );
+
+  assertEquals((await response.json()).status, "applied");
+  assertEquals(repository.payloads.get("msg_1"), {
+    timestamp: "2026-09-13T11:59:00Z",
+    membership_id: "mem_1",
+    plan_id: "plan_monthly",
+    status: "trialing",
+    app_user_id: USER_ID,
+  });
+  assertEquals(
+    JSON.stringify(repository.payloads.get("msg_1")).includes("buyer@example.com"),
+    false,
+  );
+});
+
+Deno.test("an ignored event is also stored minimized", async () => {
+  const repository = new FakeRepository();
+  const response = await handlerWith(repository)(
+    await signedRequest(
+      membershipEvent("payment.succeeded", { user: { email: "buyer@example.com" } }),
+    ),
+  );
+
+  assertEquals((await response.json()).reason, "not_a_membership_event");
+  assertEquals(
+    JSON.stringify(repository.payloads.get("msg_1")).includes("buyer@example.com"),
+    false,
+  );
 });

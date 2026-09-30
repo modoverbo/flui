@@ -2,7 +2,8 @@
  * POST /functions/v1/whop-webhook  (called by Whop; JWT verification disabled)
  *
  * 1. Verify the Standard Webhooks signature with WHOP_WEBHOOK_SECRET (401 otherwise).
- * 2. Record the event by `webhook-id` (idempotency; Whop delivers at least once).
+ * 2. Record the event by `webhook-id` (idempotency; Whop delivers at least once), storing only a
+ *    minimized payload (ids, status, app user id) so no buyer PII is kept.
  * 3. Map membership events to `entitlements` (see _shared/whop_events.ts).
  * 4. Answer 200 for anything handled or deliberately ignored; 500 on storage
  *    failures so that Whop retries (the event stays pending and is reprocessed).
@@ -16,6 +17,7 @@ import {
   type EntitlementRow,
   entitlementUpdateFromEvent,
   isForeignAccount,
+  minimizeWhopPayload,
   parseWhopEnvelope,
   type StoredEntitlement,
 } from "../_shared/whop_events.ts";
@@ -76,7 +78,8 @@ export function createWebhookHandler(
       const recorded = await repository.recordEvent({
         webhookId,
         eventType: envelope.type,
-        payload,
+        // Never the raw body: it carries the buyer's identity and outlives account deletion.
+        payload: minimizeWhopPayload(envelope),
       });
       if (recorded === "processed") {
         return jsonResponse(200, { status: "duplicate" });
