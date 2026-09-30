@@ -4,7 +4,7 @@
 -- retake otherwise) from the server clock, ignoring whatever the client
 -- sends, and rejects a retake less than 30 days after the previous one.
 begin;
-select plan(17);
+select plan(21);
 
 select has_table('public', 'skill_profiles', 'skill_profiles table exists');
 select is_empty(
@@ -20,13 +20,15 @@ select tests.create_user('profile-area@example.com') as area_user_id \gset
 select tests.create_user('profile-strengths@example.com') as strengths_user_id \gset
 select tests.create_user('profile-no-access@example.com') as no_access_id \gset
 select tests.create_user('profile-expired@example.com') as expired_id \gset
+select tests.create_user('profile-honest-gaps@example.com') as honest_gaps_id \gset
 
 insert into public.entitlements (user_id, whop_membership_id, whop_plan_id, status, current_period_end, trial_ends_at)
 values
   (:'owner_id', 'mem_profile_owner', 'plan_test', 'active', now() + interval '10 days', null),
   (:'area_user_id', 'mem_profile_area', 'plan_test', 'active', now() + interval '10 days', null),
   (:'strengths_user_id', 'mem_profile_strengths', 'plan_test', 'active', now() + interval '10 days', null),
-  (:'expired_id', 'mem_profile_expired', 'plan_test', 'expired', now() - interval '1 day', null);
+  (:'expired_id', 'mem_profile_expired', 'plan_test', 'expired', now() - interval '1 day', null),
+  (:'honest_gaps_id', 'mem_profile_honest_gaps', 'plan_test', 'active', now() + interval '10 days', null);
 
 -- anon: no access at all -------------------------------------------------------------
 select tests.authenticate_as_anon();
@@ -125,12 +127,47 @@ select throws_ok(
 );
 select tests.clear_authentication();
 
+-- Honest gaps (fix/diagnosis-profile-save): DiagnosisProfiler legitimately
+-- produces an empty strengths list (strengths come only from areas other
+-- than top/second) and a null top/second behavior (its area had zero
+-- observed opportunities across all 3 attempts) — the constraints must
+-- accept that shape rather than trap every such diagnosis on a failing
+-- insert, while still rejecting a blank string or a non-array payload.
 select tests.authenticate_as(:'strengths_user_id');
-select throws_ok(
+select lives_ok(
   format($$ insert into public.skill_profiles (id, user_id, kind, top_area, second_area, top_behavior, second_behavior, strengths)
             values (gen_random_uuid(), %L, 'baseline', 'thinking', 'language',
                     'main_point_late', 'vague_word', '[]'::jsonb) $$, :'strengths_user_id'),
-  '23514', null, 'strengths must have at least one entry'
+  'strengths may be an empty array'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'area_user_id');
+select throws_ok(
+  format($$ insert into public.skill_profiles (id, user_id, kind, top_area, second_area, top_behavior, second_behavior, strengths)
+            values (gen_random_uuid(), %L, 'baseline', 'thinking', 'language',
+                    'main_point_late', 'vague_word', '{}'::jsonb) $$, :'area_user_id'),
+  '23514', null, 'a non-array strengths payload is still rejected'
+);
+select tests.clear_authentication();
+
+select tests.authenticate_as(:'honest_gaps_id');
+select throws_ok(
+  format($$ insert into public.skill_profiles (id, user_id, kind, top_area, second_area, top_behavior, second_behavior, strengths)
+            values (gen_random_uuid(), %L, 'baseline', 'thinking', 'language',
+                    '   ', 'vague_word', '[]'::jsonb) $$, :'honest_gaps_id'),
+  '23514', null, 'a blank top_behavior is still rejected'
+);
+select lives_ok(
+  format($$ insert into public.skill_profiles (id, user_id, kind, top_area, second_area, top_behavior, second_behavior, strengths)
+            values ('00000000-0000-4000-c000-000000000010', %L, 'baseline', 'voice', 'thinking',
+                    null, 'no_closing', '[]'::jsonb) $$, :'honest_gaps_id'),
+  'a null top_behavior (zero opportunities in its area) is accepted'
+);
+select is(
+  (select top_behavior is null from public.skill_profiles where id = '00000000-0000-4000-c000-000000000010'),
+  true,
+  'top_behavior is stored as a real null, not an empty string'
 );
 select tests.clear_authentication();
 
