@@ -9,6 +9,7 @@ import 'package:flui/core/l10n/l10n.dart';
 import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/mic/mic_providers.dart';
 import 'package:flui/core/mic/presentation/mic_dock.dart';
+import 'package:flui/core/mic/presentation/mic_notice_host.dart';
 import 'package:flui/core/mic/presentation/mic_target_scope.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/core/theme/flui_spacing.dart';
@@ -214,57 +215,62 @@ class _DiagnosisLoopState extends ConsumerState<_DiagnosisLoop> {
         (_loopAllowsPause(state.loop.phase) ||
             state.loop.phase == LoopPhase.summary);
 
-    return MicTargetScope(
-      target: target,
-      child: PopScope(
-        // System back behaves identically to the "Continuar después" tap
-        // (D39): blocked while a take is mid-capture/delivery, otherwise
-        // pauses to the intro.
-        canPop: false,
-        onPopInvokedWithResult: (didPop, _) {
-          if (didPop || !canPause) return;
-          _pause();
-        },
-        child: Scaffold(
-          body: SafeArea(
-            child: SingleChildScrollView(
-              child: PageFrame.column(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    const SizedBox(height: FluiSpacing.lg),
-                    if (state.loop.slot case final slot?)
-                      FluiLabel(
-                        l10n.diagnosisSlotLabel(
-                          slot,
-                          widget.challengeIds.length,
+    // `/diagnosis/live` is a root-navigator screen outside `AppShell`, so it
+    // hosts its own notice surface (same pattern as `SessionPage`).
+    return MicNoticeHost(
+      controller: micController,
+      child: MicTargetScope(
+        target: target,
+        child: PopScope(
+          // System back behaves identically to the "Continuar después" tap
+          // (D39): blocked while a take is mid-capture/delivery, otherwise
+          // pauses to the intro.
+          canPop: false,
+          onPopInvokedWithResult: (didPop, _) {
+            if (didPop || !canPause) return;
+            _pause();
+          },
+          child: Scaffold(
+            body: SafeArea(
+              child: SingleChildScrollView(
+                child: PageFrame.column(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      const SizedBox(height: FluiSpacing.lg),
+                      if (state.loop.slot case final slot?)
+                        FluiLabel(
+                          l10n.diagnosisSlotLabel(
+                            slot,
+                            widget.challengeIds.length,
+                          ),
                         ),
+                      const SizedBox(height: FluiSpacing.md),
+                      _DiagnosisPhaseBody(
+                        state: state,
+                        request: request,
+                        saveError: _saveError,
+                        finishing: _finishing,
+                        onRetrySave: () => unawaited(_finish(request)),
+                        l10n: l10n,
                       ),
-                    const SizedBox(height: FluiSpacing.md),
-                    _DiagnosisPhaseBody(
-                      state: state,
-                      request: request,
-                      saveError: _saveError,
-                      finishing: _finishing,
-                      onRetrySave: () => unawaited(_finish(request)),
-                      l10n: l10n,
-                    ),
-                    const SizedBox(height: FluiSpacing.md),
-                    FluiButton.text(
-                      label: l10n.diagnosisPauseAction,
-                      onPressed: canPause ? _pause : null,
-                    ),
-                    if (!canPause) ...[
-                      const SizedBox(height: FluiSpacing.xs),
-                      Text(
-                        l10n.diagnosisPauseDisabledHint,
-                        style: Theme.of(context).textTheme.bodySmall,
+                      const SizedBox(height: FluiSpacing.md),
+                      FluiButton.text(
+                        label: l10n.diagnosisPauseAction,
+                        onPressed: canPause ? _pause : null,
                       ),
+                      if (!canPause) ...[
+                        const SizedBox(height: FluiSpacing.xs),
+                        Text(
+                          l10n.diagnosisPauseDisabledHint,
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ],
+                      const SizedBox(height: FluiSpacing.xl),
+                      if (micController != null)
+                        MicDock(controller: micController),
                     ],
-                    const SizedBox(height: FluiSpacing.xl),
-                    if (micController != null)
-                      MicDock(controller: micController),
-                  ],
+                  ),
                 ),
               ),
             ),
