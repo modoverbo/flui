@@ -1,4 +1,3 @@
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
@@ -30,15 +29,11 @@ void main() {
   late FakeSkillProfileRepository profiles;
   late ProviderContainer container;
 
-  ProviderContainer buildContainer({
-    bool speakingGym = true,
-    AppUser? initialUser,
-  }) {
+  ProviderContainer buildContainer({AppUser? initialUser}) {
     auth = FakeAuthRepository(initialUser: initialUser);
     profiles = FakeSkillProfileRepository(currentUserId: () => initialUser?.id);
     container = createTestContainer(
       overrides: [
-        speakingGymEnabledProvider.overrideWithValue(speakingGym),
         authRepositoryProvider.overrideWithValue(auth),
         skillProfileRepositoryProvider.overrideWithValue(profiles),
       ],
@@ -49,16 +44,6 @@ void main() {
 
   void keepAlive(ProviderListenable<Object?> provider) =>
       container.listen(provider, (_, _) {}, fireImmediately: true);
-
-  test(
-    'notRequired when speakingGym is off, regardless of everything else',
-    () {
-      buildContainer(speakingGym: false);
-      keepAlive(diagnosisGateProvider);
-
-      expect(container.read(diagnosisGateProvider), DiagnosisGate.notRequired);
-    },
-  );
 
   test('unknown while the signed-in user id is not known yet', () {
     buildContainer();

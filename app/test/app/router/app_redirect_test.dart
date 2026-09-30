@@ -103,25 +103,29 @@ void main() {
   });
 
   // Once per local day: without today's session the app asks for the time
-  // budget first. Tu progreso stays reachable (account and sign out).
+  // budget first. Tu progreso stays reachable (account and sign out). HOY
+  // shows duration chips instead of requiring a persisted session first
+  // (U15a, design D41), so `/today` itself never needs the budget guard —
+  // but its own loop route, `/session` and `/words*` all still do.
   final dailyCases = <(DailyGate, String location, String?)>[
-    (DailyGate.needsBudget, '/today', '/today/time'),
-    (DailyGate.needsBudget, '/', '/today/time'),
-    (DailyGate.needsBudget, '/login', '/today/time'),
+    (DailyGate.needsBudget, '/today', null),
+    (DailyGate.needsBudget, '/today/train', '/today/time'),
+    (DailyGate.needsBudget, '/session', '/today/time'),
     (DailyGate.needsBudget, '/words', '/today/time'),
     (DailyGate.needsBudget, '/words/abc', '/today/time'),
     (DailyGate.needsBudget, '/practice', '/today'),
     (DailyGate.needsBudget, '/reading', '/words'),
-    (DailyGate.needsBudget, '/session', '/today/time'),
     (DailyGate.needsBudget, '/checkout/return', '/today/time'),
     (DailyGate.needsBudget, splashFrom('/words'), '/today/time'),
     (DailyGate.needsBudget, '/today/time', null),
     (DailyGate.needsBudget, '/progress', null),
-    (DailyGate.unknown, '/today', splashFrom('/today')),
+    (DailyGate.unknown, '/today', null),
     (DailyGate.unknown, '/session', splashFrom('/session')),
-    (DailyGate.unknown, splashFrom('/today'), null),
+    (DailyGate.unknown, splashFrom('/today'), '/today'),
     (DailyGate.unknown, '/today/time', null),
     (DailyGate.unknown, '/progress', null),
+    (DailyGate.planned, '/today', null),
+    (DailyGate.planned, '/today/train', null),
     (DailyGate.planned, '/session', null),
     (DailyGate.planned, '/session?mode=review', null),
     (DailyGate.planned, '/words/abc', null),
@@ -129,37 +133,6 @@ void main() {
     (DailyGate.unavailable, '/today', null),
     (DailyGate.unavailable, splashFrom('/today'), '/today'),
   ];
-
-  // Once speakingGym is on (U15a, design D41): HOY shows duration chips
-  // instead of requiring a persisted session first, so `/today` itself no
-  // longer needs the budget guard — but its own loop route, `/session`
-  // and `/words*` all still do, unchanged.
-  final gymDailyCases = <(DailyGate, String location, String?)>[
-    (DailyGate.needsBudget, '/today', null),
-    (DailyGate.needsBudget, '/today/train', '/today/time'),
-    (DailyGate.needsBudget, '/session', '/today/time'),
-    (DailyGate.needsBudget, '/words', '/today/time'),
-    (DailyGate.planned, '/today', null),
-    (DailyGate.planned, '/today/train', null),
-    (DailyGate.unknown, '/today', null),
-  ];
-
-  group('daily time budget guard — speakingGym on (U15a)', () {
-    for (final (daily, location, expected) in gymDailyCases) {
-      test('granted + $daily at $location -> $expected', () {
-        expect(
-          appRedirect(
-            auth: inn,
-            access: granted,
-            daily: daily,
-            location: Uri.parse(location),
-            speakingGym: true,
-          ),
-          expected,
-        );
-      });
-    }
-  });
 
   group('daily time budget guard', () {
     for (final (daily, location, expected) in dailyCases) {
@@ -201,15 +174,14 @@ void main() {
   // DiagnosisGate x AccessGate.granted (design part-3 §11, D16). Every
   // existing case above (and every case not listed here) passes no
   // `diagnosis:` argument at all, defaulting to `DiagnosisGate.notRequired`
-  // — proof that flag-off behaves byte-identically to the redirect table
-  // above, with zero new branches ever evaluated.
-  group('diagnosis gate (speakingGym on)', () {
+  // — proof the table above is unaffected, with zero new branches ever
+  // evaluated for it.
+  group('diagnosis gate', () {
     String? redirect(DiagnosisGate diagnosis, String location) => appRedirect(
       auth: inn,
       access: granted,
       daily: DailyGate.planned,
       location: Uri.parse(location),
-      speakingGym: true,
       diagnosis: diagnosis,
     );
 

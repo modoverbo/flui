@@ -7,6 +7,9 @@ import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/themes/data/fake/seed_themes.dart';
 import 'package:flui/features/themes/domain/theme.dart' as theme_model;
+import 'package:flui/features/training/domain/behavior_code.dart';
+import 'package:flui/features/training/domain/skill.dart';
+import 'package:flui/features/training/domain/skill_profile.dart';
 import 'package:flui/features/vocabulary/data/fake_content_repository.dart';
 import 'package:flui/features/vocabulary/domain/word.dart';
 import 'package:flui/features/vocabulary/presentation/category_catalog_page.dart';
@@ -30,6 +33,22 @@ import '../../../../integration_test/support/app_harness.dart';
 import '../../../helpers/learning_fakes.dart';
 import '../../../helpers/pump_router.dart';
 
+/// Diagnosis is mandatory once access is granted (U14a) — every real-path
+/// `AppHarness` test below exercises something else entirely and needs the
+/// signed-in user's diagnosis already completed so `appRedirect` never
+/// detours it to `/diagnosis` first.
+Future<void> _completeDiagnosis(AppHarness harness) => harness.skillProfiles
+    .save(
+      sessionId: 'seed-diagnosis',
+      profile: const SkillProfile(
+        topArea: SkillArea.thinking,
+        secondArea: SkillArea.language,
+        strengths: <BehaviorCode>[],
+        evidence: <DiagnosisEvidence>[],
+      ),
+    )
+    .then((_) {});
+
 void main() {
   const ana = AppUser(id: 'user', email: 'ana@example.com', displayName: 'Ana');
   const access = AccessStatus(
@@ -48,7 +67,10 @@ void main() {
     await harness.pumpApp(
       tester,
       initialLocation: AppRoutes.categoryCatalog(theme.family.name),
-      arrange: (harness) => harness.planToday(),
+      arrange: (harness) async {
+        await harness.planToday();
+        await _completeDiagnosis(harness);
+      },
     );
 
     expect(find.text('Todos'), findsOneWidget);
@@ -70,7 +92,10 @@ void main() {
     await harness.pumpApp(
       tester,
       initialLocation: AppRoutes.categoryCatalog(theme.family.name),
-      arrange: (harness) => harness.planToday(),
+      arrange: (harness) async {
+        await harness.planToday();
+        await _completeDiagnosis(harness);
+      },
     );
 
     expect(find.text(_partOfSpeechLabel(word.partOfSpeech)), findsOneWidget);
@@ -515,7 +540,10 @@ void main() {
     await harness.pumpApp(
       tester,
       initialLocation: AppRoutes.categoryCatalog(theme.family.name),
-      arrange: (harness) => harness.planToday(),
+      arrange: (harness) async {
+        await harness.planToday();
+        await _completeDiagnosis(harness);
+      },
     );
 
     await tester.tap(find.text(theme.name));
@@ -533,6 +561,7 @@ void main() {
       initialLocation: AppRoutes.categoryCatalog(theme.family.name),
       arrange: (harness) async {
         await harness.planToday();
+        await _completeDiagnosis(harness);
         (harness.container.read(
           contentRepositoryProvider,
         ) as FakeContentRepository).nextFailure = const NetworkFailure();

@@ -1,8 +1,6 @@
 import 'package:flui/app/router/app_router.dart';
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
-import 'package:flui/features/onboarding/presentation/widgets/onboarding_questions.dart';
 import 'package:flui/features/training/domain/skill.dart';
 import 'package:flui/features/training/domain/skill_profile.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -24,27 +22,20 @@ String _location(AppHarness harness) => harness.container
     .toString();
 
 void main() {
-  group('Paywall (U14b, real path, speakingGym on)', () {
+  group('Paywall (U14b, real path)', () {
     testWidgets(
       'a new signed-in user with no access sees the static paywall copy, '
       'never a retired onboarding screen, starts the trial, and is routed '
       'straight into the mandatory diagnosis',
       (tester) async {
-        final harness = AppHarness(
-          signedInAs: _ana,
-          overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-        );
+        final harness = AppHarness(signedInAs: _ana);
         await harness.pumpApp(tester, initialLocation: AppRoutes.paywall);
 
         // Page 1: no skill profile exists yet (diagnosis has not run) —
         // static, profile-independent copy, never the retired onboarding
-        // echo and never the retired question widgets themselves.
+        // echo.
         expect(_location(harness), AppRoutes.paywall);
         expect(find.text(l10nEs.paywallPlanGymGeneric), findsOneWidget);
-        expect(find.text(l10nEs.paywallPlanContextsAny), findsNothing);
-        expect(find.text(l10nEs.paywallPlanToneAny), findsNothing);
-        expect(find.byType(ContextsQuestion), findsNothing);
-        expect(find.byType(ToneQuestion), findsNothing);
 
         await tester.tap(find.text(l10nEs.paywallNext));
         await tester.pumpAndSettle();
@@ -73,10 +64,7 @@ void main() {
       'a reactivation view (existing profile, lapsed entitlement) echoes '
       'the top-opportunity area instead of the static copy',
       (tester) async {
-        final harness = AppHarness(
-          signedInAs: _ana,
-          overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-        );
+        final harness = AppHarness(signedInAs: _ana);
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.paywall,

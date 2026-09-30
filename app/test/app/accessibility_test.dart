@@ -131,33 +131,6 @@ void main() {
       semantics.dispose();
     });
 
-    testWidgets('the intro options announce their state and group', (
-      tester,
-    ) async {
-      final semantics = tester.ensureSemantics();
-      await pumpScreen(tester, (
-        name: 'intro',
-        location: AppRoutes.intro,
-        page: const IntroPage(),
-      ), size: const Size(420, 1400));
-      for (var i = 0; i < 3; i++) {
-        await tester.tap(find.text('Seguir'));
-        await tester.pumpAndSettle();
-      }
-
-      expect(
-        tester.getSemantics(find.bySemanticsLabel('Trabajo')),
-        isSemantics(label: 'Trabajo', isButton: true, isSelected: false),
-      );
-      await tester.tap(find.text('Trabajo'));
-      await tester.pumpAndSettle();
-      expect(
-        tester.getSemantics(find.bySemanticsLabel('Trabajo')),
-        isSemantics(label: 'Trabajo', isButton: true, isSelected: true),
-      );
-      semantics.dispose();
-    });
-
     testWidgets('the mastery meter is read as one progress statement', (
       tester,
     ) async {

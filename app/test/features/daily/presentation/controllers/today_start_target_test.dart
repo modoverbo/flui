@@ -54,7 +54,7 @@ void main() {
   late _WatchedSpeechRecorder recorder;
 
   setUp(() {
-    fakes = LearningFakes(speakingGym: true);
+    fakes = LearningFakes();
     recorder = _WatchedSpeechRecorder();
   });
   tearDown(() => fakes.dispose());

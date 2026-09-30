@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/audio/audio_providers.dart';
 import 'package:flui/core/audio/data/fake_speech_player.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
@@ -51,7 +50,6 @@ Future<void> runProgressPlaybackFlow(WidgetTester tester) async {
     signedInAs: _ana,
     access: _trialing,
     overrides: [
-      speakingGymEnabledProvider.overrideWithValue(true),
       speechPlayerFactoryProvider.overrideWithValue(() => fakePlayer),
     ],
   );

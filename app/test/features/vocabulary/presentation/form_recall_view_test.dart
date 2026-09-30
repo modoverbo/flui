@@ -19,9 +19,8 @@ import '../../../helpers/learning_fakes.dart';
 import '../../../helpers/pump_app.dart';
 
 class _RecallHost extends StatefulWidget {
-  const new({super.key, this.speakingGym = false, this.micController});
+  const new({super.key, this.micController});
 
-  final bool speakingGym;
   final MicController? micController;
 
   @override
@@ -52,10 +51,8 @@ class _RecallHostState extends State<_RecallHost> {
       sentenceBefore: _prompt.before,
       sentenceAfter: _prompt.after,
       syllableCount: _word.syllables.length,
-      onSubmit: (text) => setState(() => _check = _check.submit(text)),
       onHint: () => setState(() => _check = _check.takeHint()),
       onContinue: () {},
-      speakingGym: widget.speakingGym,
       micController: widget.micController,
       onSkip: () => setState(() => _skipped = true),
     ),
@@ -114,14 +111,33 @@ MicController _buildMicController({bool accessGranted = true}) {
 }
 
 void main() {
-  Future<void> pumpRecall(WidgetTester tester) =>
-      tester.pumpFlui(const _RecallHost(), surfaceSize: const Size(400, 1200));
+  testWidgets('drops FluiTextField and the typed submit button', (
+    tester,
+  ) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    await tester.pumpFlui(
+      _RecallHost(micController: controller),
+      surfaceSize: const Size(400, 1200),
+    );
+
+    expect(find.text('Ahora dilo tú.'), findsOneWidget);
+    expect(find.byType(TextField), findsNothing);
+    expect(find.text('Comprobar'), findsNothing);
+    expect(find.byType(MicButton), findsOneWidget);
+    // Hint stays a tap (design D36).
+    expect(find.text('Pista'), findsOneWidget);
+  });
 
   testWidgets('two hints (syllables, first letter), then the reveal', (
     tester,
   ) async {
-    await pumpRecall(tester);
-    expect(find.text('Ahora dilo tú.'), findsOneWidget);
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    await tester.pumpFlui(
+      _RecallHost(micController: controller),
+      surfaceSize: const Size(400, 1200),
+    );
 
     await tester.tap(find.text('Pista'));
     await tester.pump();
@@ -140,98 +156,90 @@ void main() {
     expect(find.text('Continuar'), findsOneWidget);
   });
 
-  testWidgets('a wrong answer says "Casi." and gives the first hint', (
-    tester,
-  ) async {
-    await pumpRecall(tester);
+  testWidgets('a mismatching heard transcript says "Casi." and gives the '
+      'first hint', (tester) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    final state = GlobalKey<_RecallHostState>();
+    await tester.pumpFlui(
+      _RecallHost(key: state, micController: controller),
+      surfaceSize: const Size(400, 1200),
+    );
 
-    await tester.enterText(find.byType(TextField), 'listo');
-    await tester.tap(find.text('Comprobar'));
+    state.currentState!.speak('listo');
     await tester.pump();
 
     expect(find.text('Casi. Prueba otra vez.'), findsOneWidget);
     expect(find.text('Tiene 3 sílabas.'), findsOneWidget);
   });
 
-  testWidgets('accepts accents, case and one typo', (tester) async {
-    await pumpRecall(tester);
+  testWidgets('accepts accents, case and one typo in the heard transcript', (
+    tester,
+  ) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    final state = GlobalKey<_RecallHostState>();
+    await tester.pumpFlui(
+      _RecallHost(key: state, micController: controller),
+      surfaceSize: const Size(400, 1200),
+    );
 
-    await tester.enterText(fluiField('Tu palabra'), 'PERSPÍKAZ');
-    await tester.tap(find.text('Comprobar'));
+    state.currentState!.speak('PERSPÍKAZ');
     await tester.pump();
 
     expect(find.text('¡Eso es!'), findsOneWidget);
     expect(find.text('Continuar'), findsOneWidget);
   });
 
-  group('speakingGym on (U17b spoken Úsala)', () {
-    testWidgets('drops FluiTextField and the typed submit button', (
-      tester,
-    ) async {
-      final controller = _buildMicController();
-      addTearDown(() => unawaited(controller.dispose()));
-      await tester.pumpFlui(
-        _RecallHost(speakingGym: true, micController: controller),
-        surfaceSize: const Size(400, 1200),
-      );
-
-      expect(find.byType(TextField), findsNothing);
-      expect(find.text('Comprobar'), findsNothing);
-      expect(find.byType(MicButton), findsOneWidget);
-      // Hint stays a tap even under the flag (design D36).
-      expect(find.text('Pista'), findsOneWidget);
-    });
-
-    testWidgets('shows the heard text once submitHeard set lastHeard', (
-      tester,
-    ) async {
-      final controller = _buildMicController();
-      addTearDown(() => unawaited(controller.dispose()));
-      final state = GlobalKey<_RecallHostState>();
-      await tester.pumpFlui(
-        _RecallHost(key: state, speakingGym: true, micController: controller),
-        surfaceSize: const Size(400, 1200),
-      );
-
-      state.currentState!.speak('gato');
-      await tester.pump();
-
-      expect(find.text('Escuché: «gato»'), findsOneWidget);
-    });
-
-    testWidgets(
-      '"Continuar sin hablar" appears only while the mic is blocked and '
-      'calls onSkip',
-      (tester) async {
-        final controller = _buildMicController(accessGranted: false);
-        addTearDown(() => unawaited(controller.dispose()));
-        final state = GlobalKey<_RecallHostState>();
-        await tester.pumpFlui(
-          _RecallHost(key: state, speakingGym: true, micController: controller),
-          surfaceSize: const Size(400, 1200),
-        );
-
-        expect(find.text('Continuar sin hablar'), findsOneWidget);
-        await tester.tap(find.text('Continuar sin hablar'));
-        await tester.pump();
-        expect(state.currentState!.skipped, isTrue);
-      },
+  testWidgets('shows the heard text once submitHeard set lastHeard', (
+    tester,
+  ) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    final state = GlobalKey<_RecallHostState>();
+    await tester.pumpFlui(
+      _RecallHost(key: state, micController: controller),
+      surfaceSize: const Size(400, 1200),
     );
 
-    testWidgets('"Continuar" still shows once accepted', (tester) async {
-      final controller = _buildMicController();
+    state.currentState!.speak('gato');
+    await tester.pump();
+
+    expect(find.text('Escuché: «gato»'), findsOneWidget);
+  });
+
+  testWidgets(
+    '"Continuar sin hablar" appears only while the mic is blocked and '
+    'calls onSkip',
+    (tester) async {
+      final controller = _buildMicController(accessGranted: false);
       addTearDown(() => unawaited(controller.dispose()));
       final state = GlobalKey<_RecallHostState>();
       await tester.pumpFlui(
-        _RecallHost(key: state, speakingGym: true, micController: controller),
+        _RecallHost(key: state, micController: controller),
         surfaceSize: const Size(400, 1200),
       );
 
-      state.currentState!.speak('perspicaz');
+      expect(find.text('Continuar sin hablar'), findsOneWidget);
+      await tester.tap(find.text('Continuar sin hablar'));
       await tester.pump();
+      expect(state.currentState!.skipped, isTrue);
+    },
+  );
 
-      expect(find.text('¡Eso es!'), findsOneWidget);
-      expect(find.text('Continuar'), findsOneWidget);
-    });
+  testWidgets('"Continuar" still shows once accepted', (tester) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    final state = GlobalKey<_RecallHostState>();
+    await tester.pumpFlui(
+      _RecallHost(key: state, micController: controller),
+      surfaceSize: const Size(400, 1200),
+    );
+
+    state.currentState!.speak('perspicaz');
+    await tester.pump();
+
+    expect(find.text('¡Eso es!'), findsOneWidget);
+    expect(find.text('Continuar'), findsOneWidget);
   });
 }

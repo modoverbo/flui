@@ -51,6 +51,23 @@ void main() {
 
   tearDown(() => fakes.dispose());
 
+  // "Today's words" (U17) can show the same lemma the repertoire list below
+  // also shows, when that word is due today — this excludes that duplicate,
+  // so filter/list assertions below only ever see the repertoire list's
+  // own copy.
+  Finder repertoireText(String lemma) {
+    final all = find.text(lemma).evaluate().toSet();
+    final inToday = find
+        .descendant(
+          of: find.byKey(const Key('todayWords')),
+          matching: find.text(lemma),
+        )
+        .evaluate()
+        .toSet();
+    final onlyRepertoire = all.difference(inToday);
+    return find.byElementPredicate(onlyRepertoire.contains);
+  }
+
   Future<void> pump(
     WidgetTester tester, {
     required String location,
@@ -80,9 +97,12 @@ void main() {
         otherRoutes: [AppRoutes.wordDetail(plantear.id)],
       );
 
-      for (final lemma in ['perspicaz', 'plantear', 'matizar']) {
+      for (final lemma in ['perspicaz', 'matizar']) {
         expect(find.text(lemma), findsOneWidget);
       }
+      // «plantear» is also due today (U17's own top section), so it
+      // renders twice: once there, once in the repertoire list below.
+      expect(find.text('plantear'), findsNWidgets(2));
       expect(find.text('elocuente'), findsNothing);
       // The filter chip keeps sentence case; the state chip is set in caps.
       expect(find.text('Tuya'), findsOneWidget);
@@ -94,14 +114,16 @@ void main() {
       await tester.tap(find.widgetWithText(FluiChoiceChip, 'Tuya'));
       await tester.pumpAndSettle();
       expect(find.text('perspicaz'), findsOneWidget);
-      expect(find.text('plantear'), findsNothing);
+      // The state filter only narrows the repertoire list; «plantear» stays
+      // visible once, in the unaffected today's-words section.
+      expect(repertoireText('plantear'), findsNothing);
 
       await tester.tap(find.widgetWithText(FluiChoiceChip, 'Practica'));
       await tester.pumpAndSettle();
-      expect(find.text('plantear'), findsOneWidget);
+      expect(repertoireText('plantear'), findsOneWidget);
       expect(find.text('perspicaz'), findsNothing);
 
-      await tester.tap(find.text('plantear'));
+      await tester.tap(repertoireText('plantear'));
       await tester.pumpAndSettle();
       expect(
         find.text('route:${AppRoutes.wordDetail(plantear.id)}'),
@@ -116,10 +138,12 @@ void main() {
 
       // «plantear» uses the published «reuniones» theme. The surface stays
       // paper-white while a compact marker carries that theme's accent.
+      // «plantear» is also due today (U17's own top section) — scope to
+      // the repertoire list's own copy.
       final card = tester.widget<Material>(
         find
             .ancestor(
-              of: find.text('plantear'),
+              of: repertoireText('plantear'),
               matching: find.byType(Material),
             )
             .first,
@@ -129,7 +153,7 @@ void main() {
         find.descendant(
           of: find
               .ancestor(
-                of: find.text('plantear'),
+                of: repertoireText('plantear'),
                 matching: find.byType(Material),
               )
               .first,
@@ -162,7 +186,7 @@ void main() {
       );
       await tester.pumpAndSettle();
       expect(find.text('perspicaz'), findsOneWidget);
-      expect(find.text('plantear'), findsNothing);
+      expect(repertoireText('plantear'), findsNothing);
       expect(find.text('matizar'), findsNothing);
     });
 
@@ -224,7 +248,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('perspicaz'), findsOneWidget);
-      expect(find.text('plantear'), findsOneWidget);
+      expect(repertoireText('plantear'), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
   });
@@ -394,11 +418,11 @@ void main() {
     );
   });
 
-  group('Palabras — speakingGym ON (U17)', () {
+  group("Palabras — today's words (U17)", () {
     late LearningFakes gymFakes;
 
     Future<void> seedGym() async {
-      gymFakes = LearningFakes(speakingGym: true);
+      gymFakes = LearningFakes();
       await gymFakes.progress.saveProgress(
         buildProgress(
           wordId: perspicaz.id,
@@ -470,7 +494,7 @@ void main() {
     testWidgets('no due word today -> no today-words section, no crash', (
       tester,
     ) async {
-      gymFakes = LearningFakes(speakingGym: true);
+      gymFakes = LearningFakes();
       await pumpGym(tester, location: AppRoutes.words, page: const WordsPage());
 
       expect(find.text('TUS PALABRAS DE HOY'), findsNothing);

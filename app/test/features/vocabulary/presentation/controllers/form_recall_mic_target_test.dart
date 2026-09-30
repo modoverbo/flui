@@ -105,7 +105,8 @@ void main() {
     () async {
       await reachFormRecall();
       final c = controller();
-      await c.submitFormRecall('perspicaz');
+      speech.nextTranscribeText = 'perspicaz';
+      await c.answerFormRecallAloud(_audio());
 
       final target = container.read(formRecallMicTargetProvider(mode));
       expect(target.availability, isA<MicPassThrough>());

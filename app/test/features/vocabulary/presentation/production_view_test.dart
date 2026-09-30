@@ -19,9 +19,8 @@ import '../../../helpers/pump_app.dart';
 const _forms = WordForms(lemma: 'perspicaz', isVerb: false);
 
 class _ProductionHost extends StatefulWidget {
-  const new({super.key, this.speakingGym = false, this.micController});
+  const new({super.key, this.micController});
 
-  final bool speakingGym;
   final MicController? micController;
 
   @override
@@ -43,11 +42,9 @@ class _ProductionHostState extends State<_ProductionHost> {
       flow: _flow,
       lemma: 'perspicaz',
       beforePhrase: 'era muy lista',
-      onSubmit: (text) => setState(() => _flow = _flow.submit(text)),
       onConfirm: () => setState(() => _flow = _flow.confirmNatural()),
       onRevise: () => setState(() => _flow = _flow.rejectNatural()),
       onToggle: (item) => setState(() => _flow = _flow.toggle(item)),
-      speakingGym: widget.speakingGym,
       micController: widget.micController,
       onSkip: () => setState(() => _skipped = true),
     ),
@@ -106,91 +103,69 @@ MicController _buildMicController({bool accessGranted = true}) {
 }
 
 void main() {
-  testWidgets('typed path (flag off): field + submit button', (tester) async {
+  testWidgets('drops FluiTextField and the typed submit button', (
+    tester,
+  ) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
     await tester.pumpFlui(
-      const _ProductionHost(),
+      _ProductionHost(micController: controller),
       surfaceSize: const Size(400, 1200),
     );
 
-    expect(find.byType(TextField), findsOneWidget);
-    expect(find.text('Comprobar'), findsOneWidget);
-    expect(find.byType(MicButton), findsNothing);
+    expect(find.byType(TextField), findsNothing);
+    expect(find.text('Comprobar'), findsNothing);
+    expect(find.byType(MicButton), findsOneWidget);
+  });
 
-    await tester.enterText(
-      find.byType(TextField),
-      'Ella fue muy perspicaz con la respuesta.',
+  testWidgets('shows the heard sentence once one was transcribed', (
+    tester,
+  ) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    final key = GlobalKey<_ProductionHostState>();
+    await tester.pumpFlui(
+      _ProductionHost(key: key, micController: controller),
+      surfaceSize: const Size(400, 1200),
     );
-    await tester.tap(find.text('Comprobar'));
+
+    key.currentState!.speak('demasiado corto');
+    await tester.pump();
+
+    expect(find.text('Escuché: «demasiado corto»'), findsOneWidget);
+  });
+
+  testWidgets(
+    '"Continuar sin hablar" appears only while the mic is blocked and '
+    'calls onSkip',
+    (tester) async {
+      final controller = _buildMicController(accessGranted: false);
+      addTearDown(() => unawaited(controller.dispose()));
+      await tester.pumpFlui(
+        _ProductionHost(micController: controller),
+        surfaceSize: const Size(400, 1200),
+      );
+
+      expect(find.text('Continuar sin hablar'), findsOneWidget);
+      await tester.tap(find.text('Continuar sin hablar'));
+      await tester.pump();
+    },
+  );
+
+  testWidgets('moves to the self-check phase on a valid heard sentence', (
+    tester,
+  ) async {
+    final controller = _buildMicController();
+    addTearDown(() => unawaited(controller.dispose()));
+    final key = GlobalKey<_ProductionHostState>();
+    await tester.pumpFlui(
+      _ProductionHost(key: key, micController: controller),
+      surfaceSize: const Size(400, 1200),
+    );
+
+    key.currentState!.speak('Ella fue muy perspicaz con la respuesta.');
     await tester.pump();
 
     expect(find.text('¿Suena natural?'), findsOneWidget);
-  });
-
-  group('speakingGym on (U17b spoken Úsala)', () {
-    testWidgets('drops FluiTextField and the typed submit button', (
-      tester,
-    ) async {
-      final controller = _buildMicController();
-      addTearDown(() => unawaited(controller.dispose()));
-      await tester.pumpFlui(
-        _ProductionHost(speakingGym: true, micController: controller),
-        surfaceSize: const Size(400, 1200),
-      );
-
-      expect(find.byType(TextField), findsNothing);
-      expect(find.text('Comprobar'), findsNothing);
-      expect(find.byType(MicButton), findsOneWidget);
-    });
-
-    testWidgets('shows the heard sentence once one was transcribed', (
-      tester,
-    ) async {
-      final controller = _buildMicController();
-      addTearDown(() => unawaited(controller.dispose()));
-      final key = GlobalKey<_ProductionHostState>();
-      await tester.pumpFlui(
-        _ProductionHost(key: key, speakingGym: true, micController: controller),
-        surfaceSize: const Size(400, 1200),
-      );
-
-      key.currentState!.speak('demasiado corto');
-      await tester.pump();
-
-      expect(find.text('Escuché: «demasiado corto»'), findsOneWidget);
-    });
-
-    testWidgets(
-      '"Continuar sin hablar" appears only while the mic is blocked and '
-      'calls onSkip',
-      (tester) async {
-        final controller = _buildMicController(accessGranted: false);
-        addTearDown(() => unawaited(controller.dispose()));
-        await tester.pumpFlui(
-          _ProductionHost(speakingGym: true, micController: controller),
-          surfaceSize: const Size(400, 1200),
-        );
-
-        expect(find.text('Continuar sin hablar'), findsOneWidget);
-        await tester.tap(find.text('Continuar sin hablar'));
-        await tester.pump();
-      },
-    );
-
-    testWidgets('moves to the self-check phase on a valid heard sentence', (
-      tester,
-    ) async {
-      final controller = _buildMicController();
-      addTearDown(() => unawaited(controller.dispose()));
-      final key = GlobalKey<_ProductionHostState>();
-      await tester.pumpFlui(
-        _ProductionHost(key: key, speakingGym: true, micController: controller),
-        surfaceSize: const Size(400, 1200),
-      );
-
-      key.currentState!.speak('Ella fue muy perspicaz con la respuesta.');
-      await tester.pump();
-
-      expect(find.text('¿Suena natural?'), findsOneWidget);
-    });
   });
 }

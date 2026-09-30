@@ -81,6 +81,7 @@ abstract final class ExerciseAttemptFixture {
 void main() {
   late LearningFakes fakes;
   late ProviderContainer container;
+  late _ControllableTranscribeRepository speech;
   final perspicaz = seedWord('perspicaz');
   final plantear = seedWord('plantear');
 
@@ -89,7 +90,13 @@ void main() {
 
   setUp(() {
     fakes = LearningFakes();
-    container = createTestContainer(overrides: fakes.overrides);
+    speech = _ControllableTranscribeRepository();
+    container = createTestContainer(
+      overrides: [
+        ...fakes.overrides,
+        speechAnalysisRepositoryProvider.overrideWithValue(speech),
+      ],
+    );
   });
 
   tearDown(() => fakes.dispose());
@@ -158,7 +165,14 @@ void main() {
     expect(read(daily).step, isA<FormRecallStep>());
     expect(read(daily).formRecallPrompt!.hasSentence, isTrue);
 
-    await session.submitFormRecall('perspikaz');
+    speech.onTranscribe = (_) => const Result.ok(
+      SpeechTranscript(
+        text: 'perspikaz',
+        duration: Duration(seconds: 2),
+        words: [],
+      ),
+    );
+    await session.answerFormRecallAloud(_fakeAudio());
     expect(read(daily).formRecall!.status, FormRecallStatus.accepted);
     expect(
       (await fakes.progress.fetchProgress()).valueOrNull!.single.formRecallDone,
@@ -171,13 +185,22 @@ void main() {
 
     await session.continueStep();
     expect(read(daily).step, isA<ProductionStep>());
-    session.submitProduction('Hola');
+    speech.onTranscribe = (_) => const Result.ok(
+      SpeechTranscript(text: 'Hola', duration: Duration(seconds: 1), words: []),
+    );
+    await session.answerProductionAloud(_fakeAudio());
     expect(read(daily).production!.issue, ProductionIssue.tooShort);
-    session.submitProduction('Tu pregunta fue muy perspicaz, Carla.');
+    speech.onTranscribe = (_) => const Result.ok(
+      SpeechTranscript(
+        text: 'Tu pregunta fue muy perspicaz, Carla.',
+        duration: Duration(seconds: 3),
+        words: [],
+      ),
+    );
+    await session.answerProductionAloud(_fakeAudio());
     expect(read(daily).production!.phase, ProductionPhase.selfCheck);
-    session
-      ..reviseProduction()
-      ..submitProduction('Tu pregunta fue muy perspicaz, Carla.');
+    session.reviseProduction();
+    await session.answerProductionAloud(_fakeAudio());
 
     // The rubric gates acceptance: one tap on "Sí" is not enough.
     await session.confirmProduction();
@@ -219,7 +242,14 @@ void main() {
     expect(read(daily).step, isA<ReadingsStep>());
     await session.continueStep();
     expect(read(daily).step, isA<ProductionStep>());
-    session.submitProduction('Mi jefa es muy perspicaz con los clientes.');
+    speech.onTranscribe = (_) => const Result.ok(
+      SpeechTranscript(
+        text: 'Mi jefa es muy perspicaz con los clientes.',
+        duration: Duration(seconds: 3),
+        words: [],
+      ),
+    );
+    await session.answerProductionAloud(_fakeAudio());
     ProductionRubric.values.forEach(session.toggleProductionRubric);
     await session.confirmProduction();
 
@@ -590,13 +620,21 @@ void main() {
         'spent on a resolved step)', () async {
       await planToday(newWords: [perspicaz.id]);
       final session = await reachFormRecall();
-      await session.submitFormRecall('perspicaz');
+      speech.onTranscribe = (_) => const Result.ok(
+        SpeechTranscript(
+          text: 'perspicaz',
+          duration: Duration(seconds: 2),
+          words: [],
+        ),
+      );
+      await session.answerFormRecallAloud(_fakeAudio());
       expect(readSpoken(daily).formRecall!.status, FormRecallStatus.accepted);
+      final callsBeforeRetry = speech.transcribeCalls;
 
       final delivery = await session.answerFormRecallAloud(_fakeAudio());
 
       expect(delivery, isA<MicDeliveryFailed>());
-      expect(speech.transcribeCalls, 0);
+      expect(speech.transcribeCalls, callsBeforeRetry);
     });
 
     test('never transcribes when the current step is not form recall (no '
@@ -615,10 +653,18 @@ void main() {
         'transcribe call', () async {
       await planToday(newWords: [perspicaz.id]);
       final session = await reachFormRecall();
-      await session.submitFormRecall('perspicaz');
+      speech.onTranscribe = (_) => const Result.ok(
+        SpeechTranscript(
+          text: 'perspicaz',
+          duration: Duration(seconds: 2),
+          words: [],
+        ),
+      );
+      await session.answerFormRecallAloud(_fakeAudio());
       await session.continueStep(); // -> readings (scenes held back)
       await session.continueStep(); // -> ProductionStep
       expect(readSpoken(daily).step, isA<ProductionStep>());
+      final callsBeforeProduction = speech.transcribeCalls;
       speech.onTranscribe = (_) => const Result.ok(
         SpeechTranscript(
           text: 'Tu pregunta fue muy perspicaz, Carla.',
@@ -635,14 +681,21 @@ void main() {
         readSpoken(daily).production!.sentence,
         'Tu pregunta fue muy perspicaz, Carla.',
       );
-      expect(speech.transcribeCalls, 1);
+      expect(speech.transcribeCalls, callsBeforeProduction + 1);
     });
 
     test('a noSpeech production transcribe failure returns the distinct copy, '
         'no state change', () async {
       await planToday(newWords: [perspicaz.id]);
       final session = await reachFormRecall();
-      await session.submitFormRecall('perspicaz');
+      speech.onTranscribe = (_) => const Result.ok(
+        SpeechTranscript(
+          text: 'perspicaz',
+          duration: Duration(seconds: 2),
+          words: [],
+        ),
+      );
+      await session.answerFormRecallAloud(_fakeAudio());
       await session.continueStep();
       await session.continueStep();
       expect(readSpoken(daily).step, isA<ProductionStep>());
@@ -668,16 +721,31 @@ void main() {
         '(no quota on a resolved step)', () async {
       await planToday(newWords: [perspicaz.id]);
       final session = await reachFormRecall();
-      await session.submitFormRecall('perspicaz');
+      speech.onTranscribe = (_) => const Result.ok(
+        SpeechTranscript(
+          text: 'perspicaz',
+          duration: Duration(seconds: 2),
+          words: [],
+        ),
+      );
+      await session.answerFormRecallAloud(_fakeAudio());
       await session.continueStep();
       await session.continueStep();
-      session.submitProduction('Tu pregunta fue muy perspicaz, Carla.');
+      speech.onTranscribe = (_) => const Result.ok(
+        SpeechTranscript(
+          text: 'Tu pregunta fue muy perspicaz, Carla.',
+          duration: Duration(seconds: 4),
+          words: [],
+        ),
+      );
+      await session.answerProductionAloud(_fakeAudio());
       expect(readSpoken(daily).production!.phase, ProductionPhase.selfCheck);
+      final callsBeforeRetry = speech.transcribeCalls;
 
       final delivery = await session.answerProductionAloud(_fakeAudio());
 
       expect(delivery, isA<MicDeliveryFailed>());
-      expect(speech.transcribeCalls, 0);
+      expect(speech.transcribeCalls, callsBeforeRetry);
     });
 
     test('"Continuar sin hablar" advances without persisting formRecallDone, '

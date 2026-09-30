@@ -7,7 +7,6 @@ import 'package:flui/app/shell/flui_bottom_bar.dart';
 import 'package:flui/core/audio/audio_providers.dart';
 import 'package:flui/core/audio/recorded_audio.dart';
 import 'package:flui/core/audio/speech_recorder.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/date/local_date.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/l10n/gen/app_localizations.dart';
@@ -19,7 +18,6 @@ import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
 import 'package:flui/features/daily/domain/daily_session.dart';
-import 'package:flui/features/daily/presentation/providers/daily_providers.dart';
 import 'package:flui/features/diagnosis/domain/skill_profile_repository.dart';
 import 'package:flui/features/subscription/domain/access_status.dart';
 import 'package:flui/features/themes/data/fake/seed_themes.dart';
@@ -36,7 +34,6 @@ import 'package:flui/features/vocabulary/domain/word_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flui/shared/widgets/flui_logo.dart';
-import 'package:flutter_riverpod/misc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:material_ui/material_ui.dart';
 
@@ -108,8 +105,8 @@ final class _FakeMicTarget implements MicTarget {
 
 final AppLocalizations _l10n = lookupAppLocalizations(const Locale('es'));
 
-/// U14a: diagnosis is now mandatory whenever `speakingGym` is on and access
-/// is granted. Every real-path test below exercises something else entirely
+/// U14a: diagnosis is mandatory once access is granted. Every real-path
+/// test below exercises something else entirely
 /// (ENTRENAR, the mic, quick practice) and needs the signed-in user's
 /// diagnosis already completed so `appRedirect` never detours it to
 /// `/diagnosis` first — mirrors `FakeSubscriptionRepository.grantAccess`'s
@@ -166,11 +163,10 @@ void main() {
     expect(location(harness), AppRoutes.paywall);
   });
 
-  testWidgets('subscribers with a plan land on Hoy and can switch tabs', (
-    tester,
-  ) async {
+  testWidgets('subscribers with a completed diagnosis land on Hoy and can '
+      'switch tabs', (tester) async {
     final harness = AppHarness(signedInAs: ana, access: trialing);
-    await harness.pumpApp(tester, arrange: (h) => h.planToday());
+    await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
 
     expect(location(harness), AppRoutes.today);
     await tester.tap(find.text('Palabras'));
@@ -184,50 +180,15 @@ void main() {
     tester,
   ) async {
     final harness = AppHarness(signedInAs: ana, access: trialing);
-    await harness.pumpApp(tester, arrange: (h) => h.planToday());
+    await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
 
-    final navigation = tester.widget<NavigationBar>(find.byType(NavigationBar));
-    expect(navigation.destinations, hasLength(4));
-    expect(navigation.backgroundColor, FluiColors.surface);
-    expect(navigation.indicatorColor, FluiColors.greenTint);
-    expect(navigation.selectedIndex, 0);
+    final bar = tester.widget<FluiBottomBar>(find.byType(FluiBottomBar));
+    expect(bar.items, hasLength(4));
+    expect(bar.selectedIndex, 0);
     expect(find.text('Hoy'), findsOneWidget);
+    expect(find.text('Entrenar'), findsOneWidget);
     expect(find.text('Palabras'), findsOneWidget);
-    expect(find.text('Habla'), findsOneWidget);
     expect(find.text('Progreso'), findsOneWidget);
-    final progressDestination = tester.widget<NavigationDestination>(
-      find.ancestor(
-        of: find.text('Progreso'),
-        matching: find.byType(NavigationDestination),
-      ),
-    );
-    expect(progressDestination.tooltip, 'Tu progreso');
-  });
-
-  testWidgets('the time budget is asked once per local day', (tester) async {
-    final harness = AppHarness(signedInAs: ana, access: trialing);
-    await harness.pumpApp(tester);
-
-    expect(location(harness), AppRoutes.timeBudget);
-    harness.container.read(goRouterProvider).go(AppRoutes.words);
-    await tester.pumpAndSettle();
-    expect(location(harness), AppRoutes.timeBudget);
-
-    await tester.tap(find.text('Empezar'));
-    await tester.pumpAndSettle();
-    expect(location(harness), AppRoutes.today);
-
-    harness.container.read(goRouterProvider).go(AppRoutes.words);
-    await tester.pumpAndSettle();
-    expect(location(harness), AppRoutes.words);
-
-    // A new local day asks again.
-    harness.clock.advance(const Duration(days: 1));
-    harness.container.invalidate(dailyGateProvider);
-    await tester.pumpAndSettle();
-    harness.container.read(goRouterProvider).go(AppRoutes.today);
-    await tester.pumpAndSettle();
-    expect(location(harness), AppRoutes.timeBudget);
   });
 
   testWidgets('deep links wait for the plan, then continue', (tester) async {
@@ -235,7 +196,7 @@ void main() {
     await harness.pumpApp(
       tester,
       initialLocation: AppRoutes.words,
-      arrange: (h) => h.planToday(),
+      arrange: _planAndCompleteDiagnosis,
     );
 
     expect(location(harness), AppRoutes.words);
@@ -247,11 +208,10 @@ void main() {
     await harness.pumpApp(
       tester,
       size: const Size(1280, 800),
-      arrange: (h) => h.planToday(),
+      arrange: _planAndCompleteDiagnosis,
     );
 
     expect(find.byType(NavigationRail), findsOneWidget);
-    expect(find.byType(NavigationBar), findsNothing);
     final navigation = tester.widget<NavigationRail>(
       find.byType(NavigationRail),
     );
@@ -261,9 +221,8 @@ void main() {
     expect(navigation.selectedIndex, 0);
   });
 
-  testWidgets('a reloaded /checkout/return waits for access, then continues', (
-    tester,
-  ) async {
+  testWidgets('a reloaded /checkout/return waits for access, then goes to '
+      'diagnosis', (tester) async {
     final harness = AppHarness(signedInAs: ana);
     await harness.pumpApp(
       tester,
@@ -271,8 +230,7 @@ void main() {
       arrange: (harness) => harness.subscriptions.completeCheckout(),
     );
 
-    expect(location(harness), AppRoutes.timeBudget);
-    expect(find.text('¿Cuánto tiempo tienes hoy?'), findsOneWidget);
+    expect(location(harness), AppRoutes.diagnosis);
   });
 
   testWidgets('/checkout/return without a webhook ends in a retry', (
@@ -290,7 +248,7 @@ void main() {
     await harness.pumpApp(
       tester,
       arrange: (harness) async {
-        await harness.planToday();
+        await _planAndCompleteDiagnosis(harness);
         harness.subscriptions.nextFailure = const NetworkFailure();
       },
     );
@@ -310,7 +268,7 @@ void main() {
     await harness.pumpApp(
       tester,
       initialLocation: '/missing-page',
-      arrange: (h) => h.planToday(),
+      arrange: _planAndCompleteDiagnosis,
     );
     await tester.pumpAndSettle();
 
@@ -327,9 +285,14 @@ void main() {
     tester,
   ) async {
     final harness = AppHarness(signedInAs: ana, access: trialing);
-    await harness.pumpApp(tester, initialLocation: AppRoutes.progress);
+    await harness.pumpApp(
+      tester,
+      initialLocation: AppRoutes.progress,
+      // Diagnosis done, but no session planned yet: Tu progreso stays
+      // reachable before choosing today's time.
+      arrange: (h) async => h.skillProfiles.seedProfile(_seededProfile),
+    );
 
-    // Tu progreso stays reachable before choosing today's time.
     expect(location(harness), AppRoutes.progress);
     await tester.ensureVisible(find.text('Cerrar sesión'));
     await tester.pumpAndSettle();
@@ -339,114 +302,15 @@ void main() {
     expect(location(harness), AppRoutes.welcome);
   });
 
-  group('Habla, the fourth shell branch (speakingGym OFF, the default)', () {
-    testWidgets(
-      'the old /speaking/challenge deep link still resolves, inside the shell',
-      (tester) async {
-        final harness = AppHarness(signedInAs: ana, access: trialing);
-        await harness.pumpApp(
-          tester,
-          initialLocation: AppRoutes.speakingChallenge,
-          arrange: (h) => h.planToday(),
-        );
-
-        expect(location(harness), AppRoutes.speakingChallenge);
-        // Still inside the shell: the tab bar renders, Habla selected, and
-        // the landing content is the challenge's own "ready" phase.
-        expect(find.byType(NavigationBar), findsOneWidget);
-        expect(find.text('Habla'), findsOneWidget);
-        expect(find.text('Abrir ejercicio'), findsOneWidget);
-      },
-    );
-
-    testWidgets('switching to Habla from another tab lands on "ready"', (
-      tester,
-    ) async {
-      final harness = AppHarness(signedInAs: ana, access: trialing);
-      await harness.pumpApp(tester, arrange: (h) => h.planToday());
-
-      expect(location(harness), AppRoutes.today);
-      await tester.tap(find.text('Habla'));
-      await tester.pumpAndSettle();
-
-      expect(location(harness), AppRoutes.speakingChallenge);
-      expect(find.text('Abrir ejercicio'), findsOneWidget);
-    });
-
-    testWidgets('opening a challenge takes over full screen before recording', (
-      tester,
-    ) async {
-      final harness = AppHarness(signedInAs: ana, access: trialing);
-      await harness.pumpApp(
-        tester,
-        initialLocation: AppRoutes.speakingChallenge,
-        arrange: (h) => h.planToday(),
-      );
-
-      expect(find.byType(NavigationBar), findsOneWidget);
-      await tester.tap(find.text('Abrir ejercicio'));
-      await tester.pumpAndSettle();
-
-      expect(location(harness), AppRoutes.speakingChallengeLive);
-      // Full-screen take-over: the shell's own chrome is gone.
-      expect(find.byType(NavigationBar), findsNothing);
-      expect(find.text('Empezar a hablar'), findsOneWidget);
-    });
-
-    testWidgets(
-      'the shell matches the pre-U16 app exactly: same 4 tab labels/order, '
-      'Habla page opens, no train route reachable',
-      (tester) async {
-        final harness = AppHarness(signedInAs: ana, access: trialing);
-        await harness.pumpApp(tester, arrange: (h) => h.planToday());
-
-        final navigation = tester.widget<NavigationBar>(
-          find.byType(NavigationBar),
-        );
-        expect(navigation.destinations, hasLength(4));
-        expect(navigation.selectedIndex, 0);
-        expect(find.text('Hoy'), findsOneWidget);
-        expect(find.text('Palabras'), findsOneWidget);
-        expect(find.text('Habla'), findsOneWidget);
-        expect(find.text('Progreso'), findsOneWidget);
-        expect(find.text('Entrenar'), findsNothing);
-
-        harness.container.read(goRouterProvider).go(AppRoutes.train);
-        await tester.pumpAndSettle();
-
-        // /train is not a route while the flag is off: NotFoundPage, never
-        // the training-lab mode picker.
-        expect(find.text('Piensa y habla'), findsNothing);
-        expect(find.text('No encontramos esta página.'), findsOneWidget);
-      },
-    );
-  });
-
-  group("HOY's own loop, /today/train (speakingGym ON, U15a)", () {
+  group("HOY's own loop, /today/train (U15a)", () {
     const seededChallengeId = '072b6134-a2b7-4e79-86bf-5a6aeeb5118c';
-
-    testWidgets('/today/train is unreachable while the flag is off', (
-      tester,
-    ) async {
-      final harness = AppHarness(signedInAs: ana, access: trialing);
-      await harness.pumpApp(tester, arrange: (h) => h.planToday());
-
-      harness.container.read(goRouterProvider).go(AppRoutes.todayTrain);
-      await tester.pumpAndSettle();
-
-      expect(find.text('No encontramos esta página.'), findsOneWidget);
-    });
 
     testWidgets(
       'a session with a persisted challenge starts the loop on the branch '
       "navigator, not a full-screen take-over — HOY's context, unlike "
       "ENTRENAR's",
       (tester) async {
-        final harness = AppHarness(
-          signedInAs: ana,
-          access: trialing,
-          overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-        );
+        final harness = AppHarness(signedInAs: ana, access: trialing);
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.todayTrain,
@@ -481,7 +345,6 @@ void main() {
         signedInAs: ana,
         access: trialing,
         overrides: [
-          speakingGymEnabledProvider.overrideWithValue(true),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -523,7 +386,6 @@ void main() {
         signedInAs: ana,
         access: trialing,
         overrides: [
-          speakingGymEnabledProvider.overrideWithValue(true),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -561,7 +423,6 @@ void main() {
         signedInAs: ana,
         access: trialing,
         overrides: [
-          speakingGymEnabledProvider.overrideWithValue(true),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -604,7 +465,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -635,7 +495,7 @@ void main() {
     );
   });
 
-  group("HOY's woven words -> mic hint + mastery (speakingGym ON, U15b)", () {
+  group("HOY's woven words -> mic hint + mastery (U15b)", () {
     // Real `seedWordsWithThemes` ids (not synthetic fixtures): the mic's
     // hint and the spoken-use detection both run against the REAL app —
     // `speechAnalysisRepositoryProvider`/`contentRepositoryProvider` are
@@ -698,7 +558,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -746,7 +605,6 @@ void main() {
         signedInAs: ana,
         access: trialing,
         overrides: [
-          speakingGymEnabledProvider.overrideWithValue(true),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -782,7 +640,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -822,19 +679,11 @@ void main() {
     );
   });
 
-  group('Entrenar, the second shell branch (speakingGym ON, U16)', () {
-    List<Override> gymOn() => [
-      speakingGymEnabledProvider.overrideWithValue(true),
-    ];
-
+  group('Entrenar, the second shell branch (U16)', () {
     testWidgets('the old /speaking/challenge deep link redirects into train', (
       tester,
     ) async {
-      final harness = AppHarness(
-        signedInAs: ana,
-        access: trialing,
-        overrides: gymOn(),
-      );
+      final harness = AppHarness(signedInAs: ana, access: trialing);
       await harness.pumpApp(
         tester,
         initialLocation: AppRoutes.speakingChallenge,
@@ -851,11 +700,7 @@ void main() {
     testWidgets('switching to Entrenar from another tab lands on the picker', (
       tester,
     ) async {
-      final harness = AppHarness(
-        signedInAs: ana,
-        access: trialing,
-        overrides: gymOn(),
-      );
+      final harness = AppHarness(signedInAs: ana, access: trialing);
       await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
 
       expect(location(harness), AppRoutes.today);
@@ -870,11 +715,7 @@ void main() {
       'starting a mode stays on the branch navigator, unlike the retired '
       'full-screen speaking-challenge take-over',
       (tester) async {
-        final harness = AppHarness(
-          signedInAs: ana,
-          access: trialing,
-          overrides: gymOn(),
-        );
+        final harness = AppHarness(signedInAs: ana, access: trialing);
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.train,
@@ -905,7 +746,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            ...gymOn(),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -958,11 +798,7 @@ void main() {
       (tester) async {
         final handle = tester.ensureSemantics();
         const distinctiveLabel = 'ETIQUETA_DISTINTIVA_ENTRENAR';
-        final harness = AppHarness(
-          signedInAs: ana,
-          access: trialing,
-          overrides: gymOn(),
-        );
+        final harness = AppHarness(signedInAs: ana, access: trialing);
         await harness.pumpApp(tester, arrange: _planAndCompleteDiagnosis);
         // Lands on Hoy (branch 0) by default.
 
@@ -1001,10 +837,6 @@ void main() {
   });
 
   group('U23d — MicNavigationBinding, notices, blocked sheets (real path)', () {
-    List<Override> gymOn() => [
-      speakingGymEnabledProvider.overrideWithValue(true),
-    ];
-
     testWidgets(
       'starting a capture via the real bottom-bar mic then switching tabs '
       'cancels it, with the cancelledByNavigation notice visible',
@@ -1014,7 +846,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            ...gymOn(),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -1056,7 +887,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            ...gymOn(),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -1111,7 +941,6 @@ void main() {
         signedInAs: ana,
         access: trialing,
         overrides: [
-          ...gymOn(),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -1172,7 +1001,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            ...gymOn(),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -1234,10 +1062,6 @@ void main() {
   });
 
   group('PROGRESO, quick practice fallback (U23e, real path)', () {
-    List<Override> gymOn() => [
-      speakingGymEnabledProvider.overrideWithValue(true),
-    ];
-
     testWidgets(
       'the mic on a tab with no registered target shows the quick-practice '
       'prompt without recording; the next activation records and delivers; '
@@ -1250,7 +1074,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            ...gymOn(),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -1309,7 +1132,7 @@ void main() {
       'app-wide paywall redirect applies before the shell (and its mic) '
       'ever renders',
       (tester) async {
-        final harness = AppHarness(signedInAs: ana, overrides: gymOn());
+        final harness = AppHarness(signedInAs: ana);
         await harness.pumpApp(tester, initialLocation: AppRoutes.progress);
 
         expect(location(harness), AppRoutes.paywall);
@@ -1320,10 +1143,6 @@ void main() {
 
   group('quick-practice dismissal on navigation/registry change '
       '(orchestrator review finding, U23e real path)', () {
-    List<Override> gymOn() => [
-      speakingGymEnabledProvider.overrideWithValue(true),
-    ];
-
     testWidgets(
       '1. PROGRESO mic -> prompt visible -> switch to ENTRENAR and open a '
       'mode -> the quick overlay is gone; a mic tap delivers to the '
@@ -1340,7 +1159,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            ...gymOn(),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -1403,7 +1221,6 @@ void main() {
         signedInAs: ana,
         access: trialing,
         overrides: [
-          ...gymOn(),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -1460,7 +1277,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            ...gymOn(),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -1507,7 +1323,7 @@ void main() {
     await harness.pumpApp(
       tester,
       initialLocation: AppRoutes.categoryCatalog(theme.family.name),
-      arrange: (h) => h.planToday(),
+      arrange: _planAndCompleteDiagnosis,
     );
     expect(location(harness), AppRoutes.categoryCatalog(theme.family.name));
 
@@ -1551,7 +1367,7 @@ void main() {
         tester,
         initialLocation: AppRoutes.words,
         arrange: (harness) async {
-          await harness.planToday();
+          await _planAndCompleteDiagnosis(harness);
           await harness.wordProgress.saveProgress(
             WordProgress.introduced(
               wordId: word.id,
@@ -1561,12 +1377,12 @@ void main() {
         },
       );
 
-      expect(find.byType(NavigationBar), findsOneWidget);
+      expect(find.byType(FluiBottomBar), findsOneWidget);
       await tester.tap(find.text(word.lemma));
       await tester.pumpAndSettle();
 
       expect(location(harness), AppRoutes.wordDetail(word.id));
-      expect(find.byType(NavigationBar), findsOneWidget);
+      expect(find.byType(FluiBottomBar), findsOneWidget);
       expect(find.text('Palabras'), findsOneWidget);
 
       await tester.binding.handlePopRoute();
@@ -1582,7 +1398,7 @@ void main() {
     await harness.pumpApp(
       tester,
       initialLocation: AppRoutes.categoryCatalog(theme.family.name),
-      arrange: (h) => h.planToday(),
+      arrange: _planAndCompleteDiagnosis,
     );
 
     await tester.tap(find.byTooltip('Volver'));
@@ -1591,7 +1407,7 @@ void main() {
     expect(location(harness), AppRoutes.today);
   });
 
-  group('Palabras spoken-use (speakingGym ON, U17)', () {
+  group('Palabras spoken-use (U17)', () {
     // Real `seedWordsWithThemes` id (not a synthetic fixture): the mic's
     // capture/analysis pipeline runs against the REAL app —
     // `speechAnalysisRepositoryProvider`/`contentRepositoryProvider` are
@@ -1628,11 +1444,7 @@ void main() {
     }
 
     testWidgets("PALABRAS shows today's due word", (tester) async {
-      final harness = AppHarness(
-        signedInAs: ana,
-        access: trialing,
-        overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-      );
+      final harness = AppHarness(signedInAs: ana, access: trialing);
       await harness.pumpApp(
         tester,
         initialLocation: AppRoutes.words,
@@ -1649,11 +1461,7 @@ void main() {
     testWidgets('no due words -> no crash, ordinary empty state', (
       tester,
     ) async {
-      final harness = AppHarness(
-        signedInAs: ana,
-        access: trialing,
-        overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-      );
+      final harness = AppHarness(signedInAs: ana, access: trialing);
       await harness.pumpApp(
         tester,
         initialLocation: AppRoutes.words,
@@ -1677,7 +1485,6 @@ void main() {
         signedInAs: ana,
         access: trialing,
         overrides: [
-          speakingGymEnabledProvider.overrideWithValue(true),
           speechRecorderFactoryProvider.overrideWithValue(() => recorder),
         ],
       );
@@ -1712,11 +1519,7 @@ void main() {
       'attempt, and the mic shows no stale word prompt on another tab',
       (tester) async {
         final handle = tester.ensureSemantics();
-        final harness = AppHarness(
-          signedInAs: ana,
-          access: trialing,
-          overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-        );
+        final harness = AppHarness(signedInAs: ana, access: trialing);
         await harness.pumpApp(
           tester,
           initialLocation: AppRoutes.wordDetail(claridadId),
@@ -1751,7 +1554,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );
@@ -1819,7 +1621,6 @@ void main() {
           signedInAs: ana,
           access: trialing,
           overrides: [
-            speakingGymEnabledProvider.overrideWithValue(true),
             speechRecorderFactoryProvider.overrideWithValue(() => recorder),
           ],
         );

@@ -1,5 +1,4 @@
 import 'package:flui/app/router/app_routes.dart';
-import 'package:flui/core/config/feature_flags.dart';
 import 'package:flui/core/error/failure.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/auth/domain/app_user.dart';
@@ -270,7 +269,9 @@ void main() {
     );
     await pumpPage(tester);
 
-    expect(find.text('Continuar'), findsOneWidget);
+    // Both the sticky CTA dock and the always-present speaking-goal card
+    // say "Continuar" once a session exists (U15a).
+    expect(find.text('Continuar'), findsNWidgets(2));
     expect(find.text('Cambiar tiempo'), findsNothing);
   });
 
@@ -519,7 +520,7 @@ void main() {
     expect(find.text('TU RACHA'), findsOneWidget);
   });
 
-  group('speakingGym on — HOY budget-free chips (U15a)', () {
+  group('HOY budget-free chips (U15a)', () {
     const ana = AppUser(
       id: 'ignored',
       email: 'ana@correo.com',
@@ -542,11 +543,7 @@ void main() {
     );
 
     Future<AppHarness> pumpGym(WidgetTester tester) async {
-      final harness = AppHarness(
-        signedInAs: ana,
-        access: trialing,
-        overrides: [speakingGymEnabledProvider.overrideWithValue(true)],
-      );
+      final harness = AppHarness(signedInAs: ana, access: trialing);
       await harness.pumpApp(
         tester,
         arrange: (h) async => h.skillProfiles.seedProfile(seededProfile),
