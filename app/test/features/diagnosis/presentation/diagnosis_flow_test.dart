@@ -24,6 +24,7 @@ import 'package:flui/features/training/domain/skill_profile.dart';
 import 'package:flui/features/training/domain/speaking_attempt.dart';
 import 'package:flui/features/training/domain/training_context.dart';
 import 'package:flui/features/training/domain/voice_metrics.dart';
+import 'package:flui/features/training/presentation/behavior_code_copy.dart';
 import 'package:flui/features/training/presentation/controllers/loop_mic_target.dart';
 import 'package:flui/shared/widgets/empty_state.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
@@ -480,6 +481,115 @@ void main() {
     );
   });
 
+  group('Diagnosis profile save failure never traps the user '
+      '(fix/diagnosis-profile-save)', () {
+    testWidgets('resuming a session with all 3 slots answered but no saved '
+        'profile: a failed save leaves "Continuar después" usable, and '
+        're-entering retries the save, which succeeds once the backend '
+        'accepts it', (tester) async {
+      const sessionId = 'stuck-session';
+      final harness = AppHarness(signedInAs: _ana, access: _trialing);
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.diagnosisLive,
+        arrange: (h) async {
+          await h.planToday();
+          final challenges = await h.container.read(
+            diagnosisChallengesProvider.future,
+          );
+          for (final challenge in challenges) {
+            await h.speakingAttempts.insert(
+              SpeakingAttempt(
+                id: 'stuck-${challenge.id}',
+                sessionId: sessionId,
+                context: TrainingContext.diagnosis,
+                kind: AttemptKind.first,
+                localDate: LocalDate.fromDateTime(h.clock.now()),
+                transcript: 'Respuesta de la evaluación.',
+                duration: const Duration(seconds: 20),
+                metrics: const VoiceMetrics(
+                  longPauses: 0,
+                  usefulPauses: 0,
+                  fillerCount: 0,
+                ),
+                audio: const AudioRetention.none(),
+                challengeId: challenge.id,
+              ),
+            );
+          }
+          // Mirrors the production bug: every attempt to save the
+          // computed profile fails the same way (there, a real DB
+          // constraint on an all-opportunity profile; here, any
+          // failure the repository returns) until the test flips it
+          // back off, simulating the DB accepting it on a later try.
+          h.skillProfiles.failSaves = true;
+        },
+      );
+
+      expect(find.text(l10nEs.diagnosisSaveFailedMessage), findsOneWidget);
+      await tester.ensureVisible(find.text(l10nEs.diagnosisPauseAction));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10nEs.diagnosisPauseAction));
+      await tester.pumpAndSettle();
+
+      expect(_location(harness), AppRoutes.diagnosis);
+      expect(find.text(l10nEs.diagnosisIntroContinue), findsOneWidget);
+
+      // The backend now accepts the save — re-entering retries it
+      // automatically (D38) and this time it succeeds.
+      harness.skillProfiles.failSaves = false;
+      await tester.ensureVisible(find.text(l10nEs.diagnosisIntroContinue));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10nEs.diagnosisIntroContinue));
+      await tester.pumpAndSettle();
+
+      expect(_location(harness), AppRoutes.diagnosisResult);
+    });
+
+    testWidgets('a failed save at the end of the live loop leaves "Continuar '
+        'después" usable again once nothing is in flight, and retrying '
+        'succeeds', (tester) async {
+      final recorder = _FakeSpeechRecorder();
+      final harness = AppHarness(
+        signedInAs: _ana,
+        access: _trialing,
+        overrides: [
+          speechRecorderFactoryProvider.overrideWithValue(() => recorder),
+        ],
+      );
+      await harness.pumpApp(
+        tester,
+        initialLocation: AppRoutes.diagnosisLive,
+        arrange: (h) => h.planToday(),
+      );
+
+      await _recordOneSlot(tester, harness);
+      await _recordOneSlot(tester, harness);
+      harness.skillProfiles.failSaves = true;
+      await _recordOneSlot(tester, harness);
+
+      // Still on the live screen (the save failed), but never
+      // trapped: pausing is enabled again now that the failed save
+      // stopped, and retrying is offered.
+      expect(_location(harness), AppRoutes.diagnosisLive);
+      expect(find.text(l10nEs.diagnosisSaveFailedMessage), findsOneWidget);
+      final pauseButton = tester.widget<FluiButton>(
+        find.ancestor(
+          of: find.text(l10nEs.diagnosisPauseAction),
+          matching: find.byType(FluiButton),
+        ),
+      );
+      expect(pauseButton.onPressed, isNotNull);
+
+      // The backend now accepts the save — retrying succeeds.
+      harness.skillProfiles.failSaves = false;
+      await tester.tap(find.text(l10nEs.diagnosisRetryAction));
+      await tester.pumpAndSettle();
+
+      expect(_location(harness), AppRoutes.diagnosisResult);
+    });
+  });
+
   group('DiagnosisResultPage never fabricates a profile', () {
     testWidgets('shows an honest message, never a fabricated profile, when '
         'no profile has been saved yet', (tester) async {
@@ -497,6 +607,50 @@ void main() {
       expect(find.byType(EmptyState), findsOneWidget);
       expect(find.text(l10nEs.diagnosisResultUnavailable), findsOneWidget);
       expect(find.text(l10nEs.diagnosisAreaThinking), findsNothing);
+    });
+
+    testWidgets('renders the honest gaps of an all-opportunity diagnosis '
+        '(fix/diagnosis-profile-save): a null second behavior falls back to '
+        'the area label, and an empty strengths list renders no strengths '
+        'section at all — never a crash, never a fabricated line', (
+      tester,
+    ) async {
+      final repository = FakeSkillProfileRepository(currentUserId: () => 'u1')
+        ..seedProfile(
+          SkillProfileRecord(
+            id: 's1',
+            kind: SkillProfileKind.baseline,
+            diagnosedAt: DateTime(2026, 9, 14),
+            profile: const SkillProfile(
+              topArea: SkillArea.thinking,
+              secondArea: SkillArea.voice,
+              topBehavior: BehaviorCode.noClearStructure,
+              strengths: [],
+              evidence: [],
+            ),
+          ),
+        );
+      await tester.pumpFlui(
+        const DiagnosisResultPage(),
+        overrides: [
+          currentUserIdProvider.overrideWithValue('u1'),
+          skillProfileRepositoryProvider.overrideWithValue(repository),
+        ],
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text(l10nEs.diagnosisResultTitle), findsOneWidget);
+      // The top behavior renders as usual; the second area has no
+      // behavior at all (zero opportunities anywhere), so it falls back
+      // to the plain area label instead of fabricating one.
+      expect(
+        find.text(behaviorCodeLine(l10nEs, BehaviorCode.noClearStructure)),
+        findsOneWidget,
+      );
+      expect(find.text(skillAreaLine(l10nEs, SkillArea.voice)), findsOneWidget);
+      // No strengths were observed anywhere: the whole section is
+      // omitted, never rendered empty or fabricated.
+      expect(find.text(l10nEs.diagnosisResultStrengthsLabel), findsNothing);
     });
   });
 }

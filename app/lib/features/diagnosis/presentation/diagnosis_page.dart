@@ -107,16 +107,35 @@ class DiagnosisPage extends ConsumerWidget {
   }
 }
 
-/// The 4 loop phases "Continuar después" stays enabled for (design D39):
+/// The loop phases "Continuar después" stays enabled for (design D39):
 /// nothing is being captured or delivered in any of them, so pausing never
 /// loses a take. Diagnosis (`LoopScript.diagnosis`, C1) never reaches
 /// [LoopPhase.feedback]/[LoopPhase.comparison] itself, but the check stays
 /// complete rather than assuming that.
+///
+/// [LoopPhase.summary] is handled separately by the caller (see
+/// `_DiagnosisLoopState.build`'s `canPause`, fix/diagnosis-profile-save):
+/// it is NOT in this table because a save is usually in flight there, but
+/// once that save fails and stops (`_finishing` back to `false`), nothing
+/// is capturing or delivering anymore either — the user must not stay
+/// trapped on a "no pudimos guardar" screen with no way to leave.
 bool _loopAllowsPause(LoopPhase phase) =>
     phase == LoopPhase.focus ||
     phase == LoopPhase.feedback ||
     phase == LoopPhase.analysisFailed ||
     phase == LoopPhase.permissionDenied;
+
+/// Shared by the loop's own pause button and the resume-profiling screen's
+/// escape after a failed save (fix/diagnosis-profile-save): D20 already
+/// persisted each answered slot as it completed, so there is nothing left
+/// to lose by leaving. Invalidates [diagnosisResumeProvider] first: it is
+/// `autoDispose` and this same-frame navigation can otherwise resurrect its
+/// stale cached decision (computed before this session's latest attempt
+/// was persisted) instead of recomputing for the intro's next read.
+void _pauseToIntro(WidgetRef ref) {
+  ref.invalidate(diagnosisResumeProvider);
+  ref.read(goRouterProvider).go(AppRoutes.diagnosis);
+}
 
 class _DiagnosisLoop extends ConsumerStatefulWidget {
   const new({
@@ -182,9 +201,18 @@ class _DiagnosisLoopState extends ConsumerState<_DiagnosisLoop> {
 
     // "Continuar después" (D39): a take mid-capture/delivery must never be
     // lost, so this is disabled whenever the mic itself is not idle, on
-    // top of the loop's own pausable-phase check above.
+    // top of the loop's own pausable-phase check above. `!_finishing` also
+    // covers `LoopPhase.summary` (fix/diagnosis-profile-save): the phase
+    // itself never leaves summary, so once a save fails and `_finishing`
+    // goes back to `false`, nothing is in flight anymore and pausing must
+    // become available again — the mic stays blocked only while the save
+    // that phase started is actually in flight.
     final micIdle = _micState == null || _micState is MicIdle;
-    final canPause = micIdle && _loopAllowsPause(state.loop.phase);
+    final canPause =
+        !_finishing &&
+        micIdle &&
+        (_loopAllowsPause(state.loop.phase) ||
+            state.loop.phase == LoopPhase.summary);
 
     return MicTargetScope(
       target: target,
@@ -246,16 +274,7 @@ class _DiagnosisLoopState extends ConsumerState<_DiagnosisLoop> {
     );
   }
 
-  /// Navigates to the intro (design D39) — nothing further to save, D20
-  /// already persisted each answered slot as it completed. Invalidates
-  /// [diagnosisResumeProvider] first: it is `autoDispose` and this
-  /// same-frame navigation can otherwise resurrect its stale cached
-  /// decision (computed before this session's latest attempt was
-  /// persisted) instead of recomputing for the intro's next read.
-  void _pause() {
-    ref.invalidate(diagnosisResumeProvider);
-    ref.read(goRouterProvider).go(AppRoutes.diagnosis);
-  }
+  void _pause() => _pauseToIntro(ref);
 
   /// The loop reached `summary`: computes the profile from the just-saved
   /// attempts and persists it — never fabricated, and never advancing past
@@ -368,6 +387,16 @@ class _DiagnosisResumeProfilingState
                       FluiButton.outline(
                         label: l10n.diagnosisRetryAction,
                         onPressed: () => unawaited(_run()),
+                      ),
+                      const SizedBox(height: FluiSpacing.sm),
+                      // fix/diagnosis-profile-save: a repeatedly failing
+                      // save must never trap the user here — nothing is
+                      // being recorded on this screen (D38/D39), so leaving
+                      // loses nothing. Resuming later retries the save via
+                      // this same widget.
+                      FluiButton.text(
+                        label: l10n.diagnosisPauseAction,
+                        onPressed: () => _pauseToIntro(ref),
                       ),
                     ],
                   ),
