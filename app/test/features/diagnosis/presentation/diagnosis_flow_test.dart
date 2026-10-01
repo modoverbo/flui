@@ -82,7 +82,13 @@ Future<void> _recordOneSlot(WidgetTester tester, AppHarness harness) async {
   for (var i = 0; i < 3; i++) {
     await tester.pump();
   }
-  harness.clock.advance(const Duration(milliseconds: 700));
+  // A duration long enough that VoiceMetricsCalculator's words-per-minute
+  // reading (now wired into every attempt's observations, see
+  // MeasuredObservations) lands in the steady 100-170 wpm band for this
+  // fixture's ~20-word transcripts — 700ms would compute a physically
+  // impossible ~1000+ wpm, which is a recorder-fake artifact, not a real
+  // measured signal.
+  harness.clock.advance(const Duration(seconds: 9));
   await gesture.up();
   await tester.pumpAndSettle();
 }
@@ -133,8 +139,19 @@ void main() {
         // for real here, not stubbed.
         expect(_location(harness), AppRoutes.diagnosisResult);
         expect(find.text(l10nEs.diagnosisResultTitle), findsOneWidget);
+        // Top area: this fixture's odd-numbered attempts' transcript is
+        // filler-dense ("eh", "pues", "o sea"), so `filler_heavy` (measured,
+        // never AI-judged) is the real top opportunity across 2 of 3
+        // attempts — rendered as its own behavior sentence, not the bare
+        // area label.
+        expect(find.text(l10nEs.behaviorFillerHeavy), findsOneWidget);
+        // Second area: the fake AI analyzer never reports a thinking/
+        // language observation, so thinking wins the tie-break with a null
+        // behavior (honest gap) and falls back to its bare area label.
         expect(find.text(l10nEs.diagnosisAreaThinking), findsOneWidget);
-        expect(find.text(l10nEs.diagnosisAreaLanguage), findsOneWidget);
+        // Strength: every attempt's pace measured steady, surfaced as the
+        // one strength outside the top/second areas.
+        expect(find.text(l10nEs.behaviorSteadyPace), findsOneWidget);
 
         // The gate now stops redirecting: /today is reachable afterward.
         harness.container.read(goRouterProvider).go(AppRoutes.today);

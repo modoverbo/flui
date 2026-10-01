@@ -1578,6 +1578,11 @@ void main() {
         // — a real "go back, re-enter" round trip, not merely popping one
         // level (which keeps the SAME `WordDetailPage` instance mounted,
         // covered but never torn down, underneath the loop page).
+        // The comparison screen now also lists the merged measured
+        // voice/fluency observation changes alongside the AI-derived ones,
+        // so "Salir" can sit below the fold — scroll it into view first.
+        await tester.ensureVisible(find.text('Salir'));
+        await tester.pumpAndSettle();
         await tester.tap(find.text('Salir'));
         await tester.pumpAndSettle();
         await tester.tap(find.text('Palabras'));

@@ -17,6 +17,7 @@ import 'package:flui/features/training/domain/attempt_kind.dart';
 import 'package:flui/features/training/domain/challenge.dart';
 import 'package:flui/features/training/domain/feedback.dart';
 import 'package:flui/features/training/domain/feedback_composer.dart';
+import 'package:flui/features/training/domain/measured_observations.dart';
 import 'package:flui/features/training/domain/milestone_policy.dart';
 import 'package:flui/features/training/domain/observation.dart';
 import 'package:flui/features/training/domain/observation_mapper.dart';
@@ -394,15 +395,23 @@ class TrainingLoopController extends _$TrainingLoopController {
       transcript: transcript,
       levelsDbfs: audio.levelsDbfs,
     );
-    final observations = const ObservationMapper().fromAnalysis([
-      for (final observation in transcript.observations)
-        RawObservation(
-          skill: observation.skill,
-          code: observation.code,
-          polarity: observation.polarity,
-          evidence: observation.evidence,
-        ),
-    ]);
+    // Thinking/language observations come only from the AI's reading of the
+    // transcript; voice/fluency observations come only from these measured
+    // metrics (design D12: voice/fluency is never AI-judged) — the two
+    // halves are disjoint by construction, so concatenating them never
+    // double-counts a behavior.
+    final observations = [
+      ...const ObservationMapper().fromAnalysis([
+        for (final observation in transcript.observations)
+          RawObservation(
+            skill: observation.skill,
+            code: observation.code,
+            polarity: observation.polarity,
+            evidence: observation.evidence,
+          ),
+      ]),
+      ...const MeasuredObservations().from(metrics),
+    ];
 
     final wordsUsed = await _detectWordsUsed(
       targetWordIds: _request.targetWordIds,

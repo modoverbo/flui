@@ -26,6 +26,7 @@ import 'package:flui/features/training/domain/attempt_audio_store.dart';
 import 'package:flui/features/training/domain/attempt_kind.dart';
 import 'package:flui/features/training/domain/behavior_code.dart';
 import 'package:flui/features/training/domain/challenge.dart';
+import 'package:flui/features/training/domain/observation.dart';
 import 'package:flui/features/training/domain/skill.dart';
 import 'package:flui/features/training/domain/speaking_attempt.dart';
 import 'package:flui/features/training/domain/speaking_attempt_repository.dart';
@@ -194,13 +195,15 @@ const _wordUseRequest = LoopRequest(
   script: LoopScript.wordUse(),
 );
 
-RecordedAudio _audio({Duration duration = const Duration(seconds: 12)}) =>
-    RecordedAudio(
-      bytes: Uint8List.fromList(List<int>.filled(10, 1)),
-      mimeType: 'audio/wav',
-      duration: duration,
-      levelsDbfs: const [-30, -28, -32],
-    );
+RecordedAudio _audio({
+  Duration duration = const Duration(seconds: 12),
+  List<double> levelsDbfs = const [-30, -28, -32],
+}) => RecordedAudio(
+  bytes: Uint8List.fromList(List<int>.filled(10, 1)),
+  mimeType: 'audio/wav',
+  duration: duration,
+  levelsDbfs: levelsDbfs,
+);
 
 void main() {
   late FakeSpeechAnalysisRepository speech;
@@ -263,6 +266,62 @@ void main() {
       expect(audioStore.statusOf(repeat.id), isNull);
     });
   });
+
+  group(
+    'TrainingLoopController.submit — measured voice/fluency observations',
+    () {
+      test('merges MeasuredObservations into the persisted attempt alongside '
+          'the AI-derived ones (never AI-judged, design D12)', () async {
+        // The fake analyzer never reports AI observations, so this attempt
+        // proves the measured half of the list is populated on its own:
+        // the default steady pace/volume fixture below yields
+        // steadyPace/steadyVolume, both source=measured.
+        await controller().submit(_audio());
+
+        final saved = attempts.attemptsForCurrentUser.single;
+        final codes = saved.observations.map((o) => o.code).toSet();
+        expect(codes, contains(BehaviorCode.steadyPace));
+        expect(codes, contains(BehaviorCode.steadyVolume));
+        for (final observation in saved.observations) {
+          expect(observation.source, ObservationSource.measured);
+        }
+      });
+
+      test('a pace that crosses MeasuredObservations.fastWpm is persisted as '
+          'pace_fast, not silently dropped', () async {
+        // 21 words / 3s = 420 wpm, well past the 170 fastWpm threshold.
+        await controller().submit(_audio(duration: const Duration(seconds: 3)));
+
+        final saved = attempts.attemptsForCurrentUser.single;
+        final paceObservations = saved.observations.where(
+          (o) => o.code == BehaviorCode.paceFast,
+        );
+        expect(paceObservations, hasLength(1));
+        expect(paceObservations.single.source, ObservationSource.measured);
+      });
+
+      test('the AI-derived and measured halves never overlap in area: every '
+          'observation on a saved attempt is either AI thinking/language or '
+          'measured voice/fluency, never both for the same code', () async {
+        await controller().submit(_audio());
+
+        final saved = attempts.attemptsForCurrentUser.single;
+        for (final observation in saved.observations) {
+          final area = observation.code.area;
+          final isVoiceOrFluency =
+              area == SkillArea.voice || area == SkillArea.fluency;
+          expect(
+            observation.source == ObservationSource.measured,
+            isVoiceOrFluency,
+            reason:
+                '${observation.code.wireCode} ($area) came from '
+                '${observation.source} but only voice/fluency codes may '
+                'be measured',
+          );
+        }
+      });
+    },
+  );
 
   group('TrainingLoopController.submit — exit before completing the loop', () {
     test('preserves the first attempt and never fabricates a repeat or '
