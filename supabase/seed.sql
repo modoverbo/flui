@@ -43238,7 +43238,7 @@ with exercise as (
     'a518b9fc-13cd-4b14-9f16-ea3a748e022d',
     '1ab13cb0-bbc3-4112-9f5a-37179229804f',
     'Antes de entrar en la teoría, el instructor mostró un ejemplo sencillo: ese primer {{blank}} le bastó al grupo para no perderse después.',
-    'Piensa en la palabra para un ejemplo concreto que te ayuda a entender algo difícil, no un dato para comparar ni un lugar para cocinar.',
+    'Piensa en la palabra para un ejemplo que te ayuda a entender algo difícil, no un dato para comparar ni un lugar para cocinar.',
     'Asidero: ejemplo concreto que ayuda a entender. «Asadero» es un lugar para asar carne, y «referencia» es un dato para comparar, no algo para sostenerse mientras se entiende.',
     1
   )
@@ -43343,7 +43343,7 @@ with exercise as (
     'eaa9c6cc-eca2-4576-9501-4e8b3d9241d0',
     '1ab13cb0-bbc3-4112-9f5a-37179229804f',
     'Cada vez que dudaba, Elena recordaba una frase de su abuelo; esa frase era su {{blank}} en los momentos difíciles.',
-    'La palabra describe algo concreto en lo que te apoyas para decidir, no algo que solo alivia la tristeza ni te rescata de un peligro.',
+    'La palabra describe algo en lo que te apoyas para decidir, no algo que solo alivia la tristeza ni te rescata de un peligro.',
     'Asidero: algo concreto en lo que apoyarse para decidir. «Consuelo» solo alivia la tristeza del momento, y «salvavidas» sugiere que algo te rescata de un peligro inminente.',
     6
   )

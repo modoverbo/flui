@@ -420,7 +420,8 @@ final class LengthCapsValidator extends WordValidator {
 
   @override
   String get description =>
-      'explanation <= 20 words, hint_general and hint_specific <= 25 words';
+      'explanation <= 20 words, hint_general <= 24 words, '
+      'hint_specific <= 25 words';
 
   @override
   Severity get severity => Severity.blocking;
@@ -429,6 +430,7 @@ final class LengthCapsValidator extends WordValidator {
   List<Issue> validateWord(Word word, LibraryContext context) {
     final issues = <Issue>[];
     final maxExplanation = context.options.explanationMaxWords;
+    final maxHintGeneral = context.options.hintGeneralMaxWords;
     final maxHint = context.options.hintMaxWords;
 
     final explanationWords = countWords(word.explanation);
@@ -444,13 +446,13 @@ final class LengthCapsValidator extends WordValidator {
     }
     for (final exercise in word.exercises) {
       final hintWords = countWords(exercise.hintGeneral);
-      if (hintWords > maxHint) {
+      if (hintWords > maxHintGeneral) {
         issues.add(
           _issue(
             this,
             word.slug,
             'exercises[${exercise.position}].hint_general',
-            'hint_general has $hintWords words, the cap is $maxHint',
+            'hint_general has $hintWords words, the cap is $maxHintGeneral',
           ),
         );
       }

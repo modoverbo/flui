@@ -15,6 +15,10 @@ final class ValidationOptions {
     this.minEligiblePerDay = 3,
     this.enableCatalogSimulation = true,
     this.explanationMaxWords = 20,
+    // supabase/tests/database/060_seed_content.test.sql asserts hint_general
+    // is "shorter than 25 words" (a strict `< 25`), not `<= 25`: this cap is
+    // the highest word count hint_general may actually reach.
+    this.hintGeneralMaxWords = 24,
     this.hintMaxWords = 25,
     this.leakStemLength = 5,
     this.maxPedantryForApproved = 2,
@@ -41,6 +45,10 @@ final class ValidationOptions {
   /// off so an authoring agent can self-check one file.
   final bool enableCatalogSimulation;
   final int explanationMaxWords;
+
+  /// `hint_general`'s own cap — stricter than [hintMaxWords] because the
+  /// database asserts it is shorter than 25 words, not at most 25.
+  final int hintGeneralMaxWords;
   final int hintMaxWords;
   final int leakStemLength;
   final int maxPedantryForApproved;
@@ -61,6 +69,7 @@ final class ValidationOptions {
     enableCatalogSimulation:
         enableCatalogSimulation ?? this.enableCatalogSimulation,
     explanationMaxWords: explanationMaxWords,
+    hintGeneralMaxWords: hintGeneralMaxWords,
     hintMaxWords: hintMaxWords,
     leakStemLength: leakStemLength,
     maxPedantryForApproved: maxPedantryForApproved,

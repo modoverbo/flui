@@ -217,7 +217,7 @@ The correct option carries **only** `position`, `text`, `is_correct: true`.
 
 | Moment | Field | Job |
 |---|---|---|
-| First wrong answer | `hint_general` | points at the **meaning**, ≤ 25 words |
+| First wrong answer | `hint_general` | points at the **meaning**, ≤ 24 words |
 | Second wrong answer | `hint_specific` of the option just chosen | contrasts *that* distractor with the sentence |
 | After it resolves | `explanation` | names the answer and why **each** distractor fails |
 
