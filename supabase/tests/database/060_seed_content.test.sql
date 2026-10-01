@@ -62,13 +62,23 @@ select is_empty(
      where c.confused_word_id = w.id or lower(btrim(c.confused_with)) = lower(w.lemma) $$,
   'no word is declared confusable with itself'
 );
+-- `content:emit` (content/lib/src/model/catalogue.dart, `Catalogue.wordNamed`)
+-- resolves `confused_with` to a catalogue word by its lemma *or* by one of its
+-- `family` members, case- and accent-insensitively — see AUTHORING.md §2d.
+-- `gracioso` legitimately links to `gracia` that way, with `family` carrying
+-- `gracioso`. So the id a confusion carries must name that word either as its
+-- lemma or as one of the family forms it also goes by, not only as the lemma.
 select is_empty(
   $$ select w.slug || ' -> ' || c.confused_with
      from public.word_confusions c
      join public.words w on w.id = c.word_id
      join public.words target on target.id = c.confused_word_id
-     where lower(btrim(c.confused_with)) <> lower(target.lemma) $$,
-  'a confusion that carries a word id names that same word'
+     where lower(btrim(c.confused_with)) <> lower(target.lemma)
+       and not exists (
+         select 1 from unnest(target.family) f
+         where lower(btrim(c.confused_with)) = lower(f)
+       ) $$,
+  'a confusion that carries a word id names that same word, by its lemma or a family member'
 );
 select is_empty(
   $$ select lower(lemma) from public.words where published
