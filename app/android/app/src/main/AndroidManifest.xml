@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- flui is backend-driven (Supabase, Whop, Groq): every screen needs network access.
+         Flutter's debug/profile manifests add this automatically for hot reload, but a
+         release build only gets it if it is declared here too. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="flui"
         android:name="${applicationName}"
