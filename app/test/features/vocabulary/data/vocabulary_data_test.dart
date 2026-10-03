@@ -126,8 +126,6 @@ void main() {
     test('selects every column the mapper reads', () {
       for (final column in [
         'part_of_speech',
-        'word_confusions(',
-        'exercises(',
         'exercise_options(',
         'readings(',
         'before_phrase',
@@ -135,6 +133,27 @@ void main() {
       ]) {
         expect(WordDto.columns, contains(column));
       }
+    });
+
+    test(
+      'disambiguates the word_confusions embed by its word_id relationship',
+      () {
+        // word_confusions has two FKs to words (word_id and confused_word_id),
+        // so PostgREST refuses a bare `word_confusions(...)` embed with
+        // PGRST201 ("more than one relationship was found"). This must
+        // always name the word_id side explicitly, or every screen that
+        // reads the catalog (Hoy, Entrenar, Palabras, diagnosis) fails.
+        expect(
+          WordDto.columns,
+          contains('word_confusions!word_confusions_word_id_fkey('),
+        );
+      },
+    );
+
+    test('disambiguates the exercises embed by its word_id relationship', () {
+      // exercises also has two FKs to words (word_id and secondary_word_id,
+      // the B side of a "contraste" item), the same PGRST201 ambiguity.
+      expect(WordDto.columns, contains('exercises!exercises_word_id_fkey('));
     });
   });
 

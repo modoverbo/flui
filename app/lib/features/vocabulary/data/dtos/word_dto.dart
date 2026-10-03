@@ -47,9 +47,15 @@ abstract class WordDto with _$WordDto {
       'pedantry_risk, usage_tip, when_not_to_use, collocations, replaces, '
       'family, semantic_set_id, sort_order, '
       '${WordThemeDto.columns}, '
-      'word_confusions(id, word_id, confused_with, confused_word_id, '
-      'difference, memory_trick), '
-      'exercises(id, word_id, sentence, hint_general, explanation, position, '
+      // word_confusions has two FKs to words (word_id, confused_word_id), so
+      // a bare `word_confusions(...)` embed is ambiguous to PostgREST
+      // (PGRST201). Pin it to the word_id side: this word's own confusions.
+      'word_confusions!word_confusions_word_id_fkey(id, word_id, '
+      'confused_with, confused_word_id, difference, memory_trick), '
+      // exercises also has two FKs to words (word_id, secondary_word_id --
+      // the B side of a "contraste" item): the same PGRST201 ambiguity.
+      'exercises!exercises_word_id_fkey(id, word_id, sentence, hint_general, '
+      'explanation, position, '
       'exercise_options(id, text, is_correct, distractor_type, why_not, '
       'hint_specific, position)), '
       'readings(id, word_id, scene, conversation_type, title, body, '
