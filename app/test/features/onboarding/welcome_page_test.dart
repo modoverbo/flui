@@ -3,6 +3,7 @@ import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/onboarding/presentation/welcome_page.dart';
 import 'package:flui/shared/widgets/flui_button.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../helpers/pump_app.dart';
@@ -29,7 +30,7 @@ void main() {
     expect(find.text('«Es muy perspicaz»'), findsOneWidget);
     expect(find.byType(Image), findsNothing);
   });
-  Future<void> pumpWelcome(WidgetTester tester) => pumpRoutedPage(
+  Future<GoRouter> pumpWelcome(WidgetTester tester) => pumpRoutedPage(
     tester,
     location: AppRoutes.welcome,
     page: const WelcomePage(),
@@ -84,6 +85,46 @@ void main() {
 
     expect(find.text('route:/login'), findsOneWidget);
   });
+
+  testWidgets('Empezar pushes the intro, so the Android back button returns to '
+      'welcome instead of exiting the app', (tester) async {
+    final router = await pumpWelcome(tester);
+
+    await tester.tap(find.text('Empezar'));
+    await tester.pumpAndSettle();
+
+    // A push keeps welcome underneath on the Navigator stack; a go()
+    // would have replaced it, leaving nothing for the system back
+    // button to pop to.
+    expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+    expect(router.routerDelegate.canPop(), isTrue);
+
+    await router.routerDelegate.popRoute();
+    await tester.pumpAndSettle();
+
+    expect(find.text('Empezar'), findsOneWidget);
+    expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+  });
+
+  testWidgets(
+    'Ya tengo una cuenta pushes login, so the Android back button returns '
+    'to welcome instead of exiting the app',
+    (tester) async {
+      final router = await pumpWelcome(tester);
+
+      await tester.tap(find.text('Ya tengo una cuenta'));
+      await tester.pumpAndSettle();
+
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await router.routerDelegate.popRoute();
+      await tester.pumpAndSettle();
+
+      expect(find.text('Empezar'), findsOneWidget);
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+    },
+  );
 
   testWidgets('fits a small phone without overflow', (tester) async {
     await pumpRoutedPage(

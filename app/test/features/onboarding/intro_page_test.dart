@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flui/app/router/app_routes.dart';
 import 'package:flui/core/theme/flui_colors.dart';
 import 'package:flui/features/onboarding/domain/onboarding_store.dart';
@@ -7,6 +9,7 @@ import 'package:flui/features/vocabulary/data/fake/seed_content.dart';
 import 'package:flui/shared/motion/feedback_motion.dart';
 import 'package:flui/shared/widgets/flui_plate.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../helpers/pump_router.dart';
@@ -17,8 +20,8 @@ void main() {
 
   setUp(() => store = InMemoryOnboardingStore());
 
-  Future<void> pumpIntro(WidgetTester tester, {Size? size}) async {
-    await pumpRoutedPage(
+  Future<GoRouter> pumpIntro(WidgetTester tester, {Size? size}) async {
+    final router = await pumpRoutedPage(
       tester,
       location: AppRoutes.intro,
       page: const IntroPage(),
@@ -27,6 +30,7 @@ void main() {
       surfaceSize: size ?? const Size(420, 1400),
     );
     await tester.pumpAndSettle();
+    return router;
   }
 
   Future<void> next(WidgetTester tester) async {
@@ -370,4 +374,70 @@ void main() {
     final word = seedWords.first;
     expect(find.text(word.lemma), findsWidgets);
   });
+
+  testWidgets(
+    'Saltar pushes the plan, so the Android back button returns to intro '
+    'instead of exiting the app',
+    (tester) async {
+      reduceMotion(tester);
+      final router = await pumpIntro(tester);
+
+      await tester.tap(find.text('Saltar'));
+      await tester.pumpAndSettle();
+
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await router.routerDelegate.popRoute();
+      await tester.pumpAndSettle();
+
+      expect(
+        find.text('No te faltan ideas. Te faltan palabras.'),
+        findsOneWidget,
+      );
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+    },
+  );
+
+  testWidgets(
+    'when reached by pushing (as from welcome), the first slide\'s "Atrás" '
+    'pops to whatever is actually underneath instead of a hardcoded go() '
+    'to welcome',
+    (tester) async {
+      reduceMotion(tester);
+      // Start on an unrelated stub ("plan") underneath, then push the real
+      // intro on top of it — the one-page-deep shape welcome's (now
+      // pushed) navigation produces. If `_back()` still did a hardcoded
+      // `go(welcome)` instead of popping, we'd land on the welcome stub
+      // instead of the plan stub that is genuinely underneath.
+      final router = await pumpRoutedPage(
+        tester,
+        location: AppRoutes.intro,
+        page: const IntroPage(),
+        otherRoutes: [AppRoutes.plan, AppRoutes.welcome],
+        initialLocation: AppRoutes.plan,
+        overrides: [onboardingStoreProvider.overrideWithValue(store)],
+        surfaceSize: const Size(420, 1400),
+      );
+      expect(find.text('route:/plan'), findsOneWidget);
+
+      // `push()`'s Future only completes once the pushed page is popped,
+      // so it must not be awaited here. Bounded pumps, not pumpAndSettle:
+      // some looping motion on this freshly-pushed instance never fully
+      // settles under the test binding.
+      unawaited(router.push(AppRoutes.intro));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await tester.tap(find.byTooltip('Atrás'));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+      expect(find.text('route:/plan'), findsOneWidget);
+      expect(find.text('route:/welcome'), findsNothing);
+    },
+  );
 }

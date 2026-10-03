@@ -154,6 +154,117 @@ void main() {
     expect(find.text('Empezar'), findsOneWidget);
   });
 
+  testWidgets(
+    'the Android back button returns from a pushed onboarding screen to '
+    'welcome instead of exiting the app',
+    (tester) async {
+      final harness = AppHarness();
+      await harness.pumpApp(tester);
+
+      await tester.tap(find.text('Empezar'));
+      await tester.pumpAndSettle();
+
+      final router = harness.container.read(goRouterProvider);
+      // A push keeps welcome underneath on the Navigator stack; a go()
+      // would have replaced it, leaving nothing for the system back
+      // button to pop to.
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await router.routerDelegate.popRoute();
+      await tester.pumpAndSettle();
+
+      expect(location(harness), AppRoutes.welcome);
+      expect(find.text('Empezar'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'a successful sign-in after pushing into login leaves no back path '
+    'into the login screen',
+    (tester) async {
+      final harness = AppHarness();
+      await harness.pumpApp(tester);
+
+      // Seed a known account, signed out, then reach login the same way a
+      // real user does: tapping through from welcome (now a push).
+      await harness.auth.signUp(
+        displayName: 'Ana',
+        email: 'ana@correo.com',
+        password: 'secreta123',
+      );
+      await harness.auth.signOut();
+      await tester.pumpAndSettle();
+      expect(location(harness), AppRoutes.welcome);
+
+      await tester.tap(find.text('Ya tengo una cuenta'));
+      await tester.pumpAndSettle();
+
+      final router = harness.container.read(goRouterProvider);
+      // `location()` (`currentConfiguration.uri`) only reflects declarative
+      // matches, by design excluding an `ImperativeRouteMatch` — it still
+      // reads `/welcome` right after a push. Content is the reliable
+      // signal that login is actually on screen.
+      expect(find.text('Entrar'), findsOneWidget);
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      // Sign in exactly like the real login form does: the page itself
+      // never navigates on success (see `LoginPage`'s doc comment) — only
+      // the auth-status redirect moves the user on. This is the case the
+      // push conversion must not break: the redirect has to fully replace
+      // the stack, not just swap the top of it.
+      await harness.auth.signIn(
+        email: 'ana@correo.com',
+        password: 'secreta123',
+      );
+      await tester.pumpAndSettle();
+
+      expect(location(harness), isNot(AppRoutes.login));
+      expect(location(harness), isNot(AppRoutes.welcome));
+      expect(router.routerDelegate.canPop(), isFalse);
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+    },
+  );
+
+  testWidgets(
+    'completing sign-up after a deep onboarding push chain leaves no back '
+    'path into onboarding',
+    (tester) async {
+      final harness = AppHarness();
+      await harness.pumpApp(tester);
+      expect(location(harness), AppRoutes.welcome);
+
+      final router = harness.container.read(goRouterProvider);
+      // The same push chain the real taps now produce: welcome -> intro ->
+      // plan -> register (Saltar/Seguir and "Crear mi cuenta" each push).
+      // Each push's Future only completes once popped, so none is awaited
+      // here — same as the app itself never awaiting a push.
+      unawaited(router.push(AppRoutes.intro));
+      await tester.pumpAndSettle();
+      unawaited(router.push(AppRoutes.plan));
+      await tester.pumpAndSettle();
+      unawaited(router.push(AppRoutes.register));
+      await tester.pumpAndSettle();
+
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(4));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await harness.auth.signUp(
+        displayName: 'Ana',
+        email: 'ana2@correo.com',
+        password: 'secreta123',
+      );
+      await tester.pumpAndSettle();
+
+      expect(location(harness), isNot(AppRoutes.register));
+      expect(location(harness), isNot(AppRoutes.plan));
+      expect(location(harness), isNot(AppRoutes.intro));
+      expect(location(harness), isNot(AppRoutes.welcome));
+      expect(router.routerDelegate.canPop(), isFalse);
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+    },
+  );
+
   testWidgets('signed in users without access land on the paywall', (
     tester,
   ) async {

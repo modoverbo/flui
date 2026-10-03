@@ -3,6 +3,7 @@ import 'package:flui/features/auth/data/fake_auth_repository.dart';
 import 'package:flui/features/auth/presentation/pages/register_page.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_ui/material_ui.dart';
 
 import '../../../helpers/pump_app.dart';
@@ -13,7 +14,7 @@ void main() {
 
   tearDown(() => auth.dispose());
 
-  Future<void> pumpRegister(WidgetTester tester) => pumpRoutedPage(
+  Future<GoRouter> pumpRegister(WidgetTester tester) => pumpRoutedPage(
     tester,
     location: AppRoutes.register,
     page: const RegisterPage(),
@@ -78,5 +79,49 @@ void main() {
       find.widgetWithText(OutlinedButton, 'Continuar con Google (muy pronto)'),
     );
     expect(google.onPressed, isNull);
+  });
+
+  testWidgets(
+    '"Ya tengo una cuenta" pushes login, so back returns to the register '
+    'form instead of exiting the app',
+    (tester) async {
+      auth = FakeAuthRepository();
+      final router = await pumpRegister(tester);
+
+      await tester.ensureVisible(find.text('Ya tengo una cuenta'));
+      await tester.tap(find.text('Ya tengo una cuenta'));
+      await tester.pumpAndSettle();
+
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await router.routerDelegate.popRoute();
+      await tester.pumpAndSettle();
+
+      expect(fluiField('Nombre'), findsOneWidget);
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+    },
+  );
+
+  testWidgets('confirmation screen pushes login, so back returns to the '
+      'confirmation message instead of exiting the app', (tester) async {
+    auth = FakeAuthRepository(requireEmailConfirmation: true);
+    final router = await pumpRegister(tester);
+
+    await fillAndSubmit(tester);
+    await tester.pump();
+    expect(find.text('Revisa tu correo'), findsOneWidget);
+
+    await tester.tap(find.text('Ir a entrar'));
+    await tester.pumpAndSettle();
+
+    expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+    expect(router.routerDelegate.canPop(), isTrue);
+
+    await router.routerDelegate.popRoute();
+    await tester.pumpAndSettle();
+
+    expect(find.text('Revisa tu correo'), findsOneWidget);
+    expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
   });
 }

@@ -4,6 +4,7 @@ import 'package:flui/features/auth/presentation/pages/login_page.dart';
 import 'package:flui/features/auth/presentation/providers/auth_providers.dart';
 import 'package:flui/shared/widgets/flui_card.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../helpers/pump_app.dart';
 import '../../../helpers/pump_router.dart';
@@ -14,7 +15,7 @@ void main() {
   setUp(() => auth = FakeAuthRepository());
   tearDown(() => auth.dispose());
 
-  Future<void> pumpLogin(WidgetTester tester) => pumpRoutedPage(
+  Future<GoRouter> pumpLogin(WidgetTester tester) => pumpRoutedPage(
     tester,
     location: AppRoutes.login,
     page: const LoginPage(),
@@ -109,4 +110,45 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('route:/register'), findsOneWidget);
   });
+
+  testWidgets(
+    'password reset is pushed on top of login, so back returns to login '
+    'instead of exiting the app',
+    (tester) async {
+      final router = await pumpLogin(tester);
+
+      await tester.tap(find.text('¿Olvidaste tu contraseña?'));
+      await tester.pumpAndSettle();
+
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await router.routerDelegate.popRoute();
+      await tester.pumpAndSettle();
+
+      expect(field('Correo'), findsOneWidget);
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+    },
+  );
+
+  testWidgets(
+    'register is pushed on top of login, so back returns to login instead '
+    'of exiting the app',
+    (tester) async {
+      final router = await pumpLogin(tester);
+
+      await tester.ensureVisible(find.text('Crear una cuenta'));
+      await tester.tap(find.text('Crear una cuenta'));
+      await tester.pumpAndSettle();
+
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(2));
+      expect(router.routerDelegate.canPop(), isTrue);
+
+      await router.routerDelegate.popRoute();
+      await tester.pumpAndSettle();
+
+      expect(field('Correo'), findsOneWidget);
+      expect(router.routerDelegate.currentConfiguration.matches, hasLength(1));
+    },
+  );
 }

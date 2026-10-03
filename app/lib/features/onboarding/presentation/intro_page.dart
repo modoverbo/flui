@@ -41,7 +41,9 @@ class _IntroPageState extends ConsumerState<IntroPage> {
 
   OnboardingStep get _step => _steps[_index];
 
-  void _finish() => context.go(AppRoutes.plan);
+  // A push (not go) so the Android back button returns to welcome instead
+  // of exiting the app — go() would replace the stack.
+  void _finish() => context.push(AppRoutes.plan);
 
   void _next() {
     if (_index < 2) return _moveBenefit(forward: true);
@@ -50,7 +52,13 @@ class _IntroPageState extends ConsumerState<IntroPage> {
   }
 
   void _back() {
-    if (_index == 0) return context.go(AppRoutes.welcome);
+    if (_index == 0) {
+      // If welcome pushed us here, popping keeps that same instance
+      // instead of replacing the stack with a fresh one. Deep-linked
+      // straight to /intro (no welcome underneath), go() is the only way
+      // back.
+      return context.canPop() ? context.pop() : context.go(AppRoutes.welcome);
+    }
     if (_index <= 2) return _moveBenefit(forward: false);
     setState(() => _index--);
   }

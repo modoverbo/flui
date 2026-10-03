@@ -81,7 +81,12 @@ class _PasswordResetPageState extends ConsumerState<PasswordResetPage> {
         Center(
           child: FluiButton.text(
             label: l10n.resetBackToLogin,
-            onPressed: () => context.go(AppRoutes.login),
+            // If login pushed us here, pop keeps that same instance
+            // instead of replacing the stack with a fresh one.
+            // Deep-linked straight to /reset-password (no login
+            // underneath), go() is the only way back.
+            onPressed: () =>
+                context.canPop() ? context.pop() : context.go(AppRoutes.login),
           ),
         ),
       ],

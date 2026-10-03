@@ -44,7 +44,9 @@ class PlanPreviewPage extends ConsumerWidget {
             ),
             onFinish: (id) async {
               await ref.read(preselectedPlanProvider.notifier).choose(id);
-              if (context.mounted) context.go(AppRoutes.register);
+              // Push (not go) so back returns to the plan instead of
+              // exiting the app.
+              if (context.mounted) unawaited(context.push(AppRoutes.register));
             },
           ),
         AsyncValue(hasValue: true) || AsyncError() => SafeArea(

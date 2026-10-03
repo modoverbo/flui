@@ -22,8 +22,12 @@ class WelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WelcomeView(
-      onStart: () => context.go(AppRoutes.intro),
-      onSignIn: () => context.go(AppRoutes.login),
+      // Forward steps in the onboarding/auth flow push (not go) so the
+      // Android back button returns to the previous screen instead of
+      // exiting the app — go() would replace the stack and leave nothing
+      // to pop to.
+      onStart: () => context.push(AppRoutes.intro),
+      onSignIn: () => context.push(AppRoutes.login),
     );
   }
 }

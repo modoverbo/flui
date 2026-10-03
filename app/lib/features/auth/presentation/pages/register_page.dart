@@ -66,7 +66,8 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
           const SizedBox(height: FluiSpacing.lg),
           FluiButton.primary(
             label: l10n.registerGoToLogin,
-            onPressed: () => context.go(AppRoutes.login),
+            // Push (not go) so back returns here instead of exiting.
+            onPressed: () => context.push(AppRoutes.login),
           ),
         ],
       );
@@ -126,7 +127,8 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
         Center(
           child: FluiButton.text(
             label: l10n.registerHaveAccount,
-            onPressed: () => context.go(AppRoutes.login),
+            // Push (not go) so back returns to register instead of exiting.
+            onPressed: () => context.push(AppRoutes.login),
           ),
         ),
       ],

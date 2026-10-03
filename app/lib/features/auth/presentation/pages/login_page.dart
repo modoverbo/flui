@@ -76,7 +76,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           alignment: Alignment.centerRight,
           child: FluiButton.text(
             label: l10n.loginForgotPassword,
-            onPressed: () => context.go(AppRoutes.resetPassword),
+            // Push (not go) so back returns to login instead of exiting.
+            onPressed: () => context.push(AppRoutes.resetPassword),
           ),
         ),
         if (failure != null) ...[
@@ -93,7 +94,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         Center(
           child: FluiButton.text(
             label: l10n.loginNoAccount,
-            onPressed: () => context.go(AppRoutes.register),
+            // Push (not go) so back returns to login instead of exiting.
+            onPressed: () => context.push(AppRoutes.register),
           ),
         ),
       ],
