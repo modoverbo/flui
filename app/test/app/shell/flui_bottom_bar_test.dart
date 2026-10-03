@@ -167,4 +167,59 @@ void main() {
     );
     expect((container.decoration! as BoxDecoration).color, FluiColors.surface);
   });
+
+  testWidgets(
+    'the mic stays raised above the pill and clear of a 3-button nav bar '
+    'inset, not sunk behind it',
+    (tester) async {
+      Future<Rect> micAndPillGap(double bottomInset) async {
+        final controller = buildController();
+        addTearDown(() => unawaited(controller.dispose()));
+        await tester.binding.setSurfaceSize(const Size(400, 800));
+        addTearDown(() => tester.binding.setSurfaceSize(null));
+        await tester.pumpWidget(
+          MaterialApp(
+            home: MediaQuery(
+              data: MediaQueryData(
+                padding: EdgeInsets.only(bottom: bottomInset),
+                viewPadding: EdgeInsets.only(bottom: bottomInset),
+                size: const Size(400, 800),
+              ),
+              child: Scaffold(
+                body: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: FluiBottomBar(
+                    items: _items,
+                    selectedIndex: 0,
+                    onDestinationSelected: (_) {},
+                    progressIndex: 3,
+                    micController: controller,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        );
+        await tester.pump();
+
+        final micRect = tester.getRect(find.byType(MicButton));
+        final pillRect = tester.getRect(find.byType(ClipRRect));
+        // A device-reported system-bar height, never overlapped.
+        expect(
+          micRect.bottom,
+          lessThanOrEqualTo(800 - bottomInset),
+          reason: 'the mic circle must stay clear of the system nav bar inset',
+        );
+        return Rect.fromLTRB(0, pillRect.top - micRect.top, 0, 0);
+      }
+
+      final noInset = await micAndPillGap(0);
+      final threeButtonInset = await micAndPillGap(48);
+
+      // The raise above the pill is a fixed design constant: it must not
+      // change just because the device also has a system nav bar, or the
+      // mic drifts down relative to the pill and lands on top of it.
+      expect(threeButtonInset.top, noInset.top);
+    },
+  );
 }

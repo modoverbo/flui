@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flui/core/mic/mic_controller.dart';
 import 'package:flui/core/mic/presentation/mic_button.dart';
 import 'package:flui/core/theme/flui_colors.dart';
@@ -40,14 +42,27 @@ class FluiBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = micController;
+    // The pill and the raised mic circle must move together against the
+    // device's own bottom inset (a 3-button nav bar, a gesture pill, ...),
+    // or they drift apart and the mic sinks behind the system bar. Compute
+    // it once and apply it to both instead of letting a `SafeArea` push
+    // only the pill while the mic's `Positioned.bottom` stays fixed.
+    final safePadding = MediaQuery.paddingOf(context);
+    final bottomInset = safePadding.bottom;
+    final barBottomMargin = 12 + bottomInset;
     return SizedBox(
-      height: 64 + _micRaise + _micDiameter / 2,
+      height: 64 + _micRaise + _micDiameter / 2 + bottomInset,
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.bottomCenter,
         children: [
-          SafeArea(
-            minimum: const EdgeInsets.fromLTRB(14, 0, 14, 12),
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+              math.max(14, safePadding.left),
+              0,
+              math.max(14, safePadding.right),
+              barBottomMargin,
+            ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(28),
               child: Container(
@@ -70,7 +85,7 @@ class FluiBottomBar extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 12 + 64 - _micRaise - _micDiameter / 2,
+            bottom: barBottomMargin + 64 - _micRaise - _micDiameter / 2,
             child: controller == null
                 ? const SizedBox.square(dimension: _micDiameter)
                 : MicButton(controller: controller),
